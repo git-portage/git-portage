@@ -1,3 +1,8 @@
+18.11.2000
+
+	- Update bind 8.2.2.5 -> 9.0.1			(achim)
+	  [ This version works with glibc-2.2 ]
+
 17.11.2000
 	- Update portage					(drobbins)
 		[ dev-ruby category added to portage.py ]

@@ -299,7 +299,7 @@
 ./net-mail/qmail/qmail-1.03-r1.ebuild
 ./net-mail/tnef/tnef-0.13.ebuild
 ./net-mail/vlnx/vlnx-407e-r1.ebuild
-./net-misc/bind/bind-8.2.2.5-r1.ebuild
+./net-misc/bind/bind-9.0.1.ebuild
 ./net-misc/dhcp/dhcp-3.0_beta0206.ebuild
 ./net-misc/hylafax/hylafax-cvs-000614-r1.ebuild
 ./net-misc/ipchains-firewall/ipchains-firewall-1.7.0-r1.ebuild
