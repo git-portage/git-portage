@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/nss/Attic/nss-3.8.ebuild,v 1.10 2003/07/20 16:22:51 liquidx Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/nss/Attic/nss-3.8.ebuild,v 1.10.2.1 2003/07/27 05:05:32 avenj Exp $
 
 S=${WORKDIR}/${P}
 

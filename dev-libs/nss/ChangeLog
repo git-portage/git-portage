@@ -1,6 +1,6 @@
 # ChangeLog for dev-libs/nss
 # Copyright 2000-2003 Gentoo Technologies, Inc.; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/nss/ChangeLog,v 1.10 2003/07/20 16:22:51 liquidx Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/nss/ChangeLog,v 1.10.2.1 2003/07/27 05:05:32 avenj Exp $
 
   20 Jul 2003; Alastair Tse <liquidx@gentoo.org> nss-3.8.ebuild:
   workaround for linux-2.6 (#24626)
