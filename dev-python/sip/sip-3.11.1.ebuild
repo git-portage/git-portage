@@ -1,24 +1,21 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/sip/Attic/sip-4.1.ebuild,v 1.1 2004/09/21 13:12:33 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/sip/Attic/sip-3.11.1.ebuild,v 1.1 2004/09/24 22:50:51 carlo Exp $
 
 inherit distutils
 
-MY_P=${P/_/}
-S=${WORKDIR}/${MY_P}
-
 DESCRIPTION="SIP is a tool for generating bindings for C++ classes so that they can be used by Python."
 HOMEPAGE="http://www.riverbankcomputing.co.uk/sip/"
-SRC_URI="mirror://gentoo/${MY_P}.tar.gz"
+SRC_URI="mirror://gentoo/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~amd64"
-IUSE="doc"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha"
+IUSE=""
 
 DEPEND="virtual/libc
 	x11-libs/qt
-	>=dev-lang/python-2.3"
+	virtual/python"
 
 src_compile(){
 	distutils_python_version
@@ -33,9 +30,8 @@ src_compile(){
 src_install() {
 	einstall DESTDIR=${D} || die
 	dodoc ChangeLog LICENSE NEWS README THANKS TODO
-	if use doc ; then dohtml doc/* ; fi
 }
 
 pkg_postinst() {
-	einfo "Please note, that you have to emerge PyQt again, when upgrading from sip-3.x."
+	einfo "Please note, that you have to emerge PyQt again, when upgrading from an earlier sip-3.x version."
 }
