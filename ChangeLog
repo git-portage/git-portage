@@ -1,5 +1,22 @@
 27.08.2000	
 
+	- Bew XML-XSLT 0.24 (perl)		(achim)
+	- New XML-DOM 1.2.5 (perl)		(achim)
+	  [One error in tests]
+	- New XML-DT 0.14 (perl)		(achim)
+	- New XML-Catalog 0.01 (perl)		(achim)
+	- New XML-Encoding 1.01 (perl)		(achim)
+	- New mod_perl 1.24			(achim)
+	  [Apache templates needs work]
+	- New libwww-perl 5.48			(achim)
+	- New Digest-MD5 2.09 (perl)		(achim)
+	- New URI 1.0.8 (perl)			(achim)
+	- New MIME-Base64 2.11 (perl)		(achim)
+	- New HTML-Parser 3.10 (perl)		(achim)
+	- New libnet 1.0703 (perl)		(achim)
+	- New XML-Sablot 0.43 (perl)		(achim)
+	- New libxml-perl 0.07			(achim)
+	- New XML-Parser 2.29 (perl)		(achim)
 	- Modified gettext-0.10.35		(achim)
 	  [Lisp File get's installed inside the
 	   install-dir now]
