@@ -1,6 +1,16 @@
-MD5 89dfd904e437224ce6f19830e1800136 librsync-0.9.7.ebuild 671
-MD5 4e92f613a7be785c2ce2246a289e7ad8 ChangeLog 1607
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 7e2d63482afa89459b863deb16b2b2ff librsync-0.9.7.ebuild 672
+MD5 f7b92396716bd2ab715005f380a13080 ChangeLog 1607
 MD5 a2e699d81f4d39f9beef307ff78d9b41 librsync-0.9.6.ebuild 707
 MD5 f8d10f350e91f30316ea4e1bd1e76470 metadata.xml 254
 MD5 d0c1f5fb5a02f40c16491c2c003dadf5 files/digest-librsync-0.9.6 66
 MD5 3271b117997d294c547e95009ef7070d files/digest-librsync-0.9.7 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBpIfIEZCkKN40op4RAmWuAJ9V5Zl9MOAAHyGZFvvnMdlEN/90hgCdEtXn
+upoI28nquykK5TXecRBE5PI=
+=HqCA
+-----END PGP SIGNATURE-----
