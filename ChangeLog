@@ -1,5 +1,9 @@
 date 28 Mar 2001
 
+upd net-fs/samba-2.0.5 to 2.2.0_alpha3
+achim
+ALPHA release for testing only
+
 upd kde-base/kdelibs-2.1-r2 to 2.1.1
 achim
 Bugfix release
