@@ -1,8 +1,11 @@
-MD5 45ae682dfaaf5fe69a86542cf117fea9 ChangeLog 11298
-MD5 5ad92df94d2a705eb6aac1b800745d28 libsdl-1.2.6-r3.ebuild 3009
-MD5 87ce9a11d3d96bb4f40159fc1005feaf libsdl-1.2.7-r3.ebuild 3955
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 8b148518f8cd226384a5d6b5225157e7 ChangeLog 11509
+MD5 cbbab78f5125f834ffb0f83be4957736 libsdl-1.2.6-r3.ebuild 3013
+MD5 7f079469132865bdd25780277639f098 libsdl-1.2.7-r3.ebuild 3960
 MD5 baaaa69f33ef9027dac84ee4ff02773b metadata.xml 974
-MD5 202310e320f56df5b06249de3ea07559 libsdl-1.2.8-r1.ebuild 4199
+MD5 728e299d2d9609736e689947a1f0b76b libsdl-1.2.8-r1.ebuild 4203
 MD5 0c2020ec3ce37ea0612064c52d1014b1 files/1.2.6-alsa-1.0.0.patch 557
 MD5 4f1ce33c931d461bed06277f60341085 files/1.2.6-nobuggy-X.patch 568
 MD5 71a857d2bbcc34c4807638eb5d710f2e files/1.2.7-26headers.patch 1017
@@ -23,3 +26,10 @@ MD5 5d1fcf4587b0ce9cd723aa69f9ef7dba files/1.2.8-amd64-endian.patch 651
 MD5 e6471a33cb0d62a807640ef3eccffb5f files/1.2.8-direct-8bit-color.patch 7414
 MD5 e0c6c6ffc15475282fc864b8f52f0abf files/1.2.8-linux26.patch 1268
 MD5 4ce5ec18eafcf0b1c6caf31c9f67cb1d files/digest-libsdl-1.2.8-r1 62
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFCH469FdQwWVoAgN4RAuuBAJ0QQSsmGDK6LJgwRsM9NjjumV7z5ACfVQAb
+ZbfxW+HTEqQDFm6S/0cHZcU=
+=4BiK
+-----END PGP SIGNATURE-----
