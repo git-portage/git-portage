@@ -1,19 +1,25 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/subversion/Attic/subversion-0.24.1.ebuild,v 1.5 2003/06/26 20:17:17 pauldv Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/subversion/Attic/subversion-0.26.0.ebuild,v 1.1 2003/07/24 20:39:48 pauldv Exp $
 
 inherit libtool
 
 DB_VERSION="4.0.14"
 DESCRIPTION="A compelling replacement for CVS"
 SRC_URI="berkdb? ( http://www.sleepycat.com/update/snapshot/db-${DB_VERSION}.tar.gz )
-	http://subversion.tigris.org/files/documents/15/4761/${P}.tar.gz"
+	http://subversion.tigris.org/files/documents/15/5322/${PN}-${PV}.tar.gz"
 HOMEPAGE="http://subversion.tigris.org/"
 
 SLOT="0"
 LICENSE="Apache-1.1"
 KEYWORDS="~x86 ~ppc"
 IUSE="ssl apache2 berkdb python"
+
+S=${WORKDIR}/${PN}-${PV}
+
+if [ "${SVN_REPOS_LOC}x" = "x" ]; then
+	SVN_REPOS_LOC="/home/svn"
+fi
 
 #
 #
@@ -53,7 +59,7 @@ pkg_setup() {
 	
 src_unpack() {
 	cd ${WORKDIR}
-	unpack ${P}.tar.gz
+	unpack ${PN}-${PV}.tar.gz
 	use berkdb && ( has_version =db-4* || (
 		unpack db-${DB_VERSION}.tar.gz
 	) )
@@ -165,6 +171,7 @@ src_install () {
 			mkdir -p ${D}/usr/lib/python2.2/site-packages
 			cp -r tools/cvs2svn/rcsparse ${D}/usr/lib/python2.2/site-packages
 			mv ${D}/usr/lib/svn-python/svn ${D}/usr/lib/python2.2/site-packages
+			mv ${D}/usr/lib/svn-python/libsvn ${D}/usr/lib/python2.2/site-packages
 			rmdir ${D}/usr/lib/svn-python
 		fi
 	fi
@@ -182,7 +189,7 @@ src_install () {
 	cd ${S}
 	echo "installing html book"
 	dohtml -r doc/book/book/book.html doc/book/book/styles.css doc/book/book/images
-	if use apache; then
+	if use apache2; then
 		mkdir -p ${D}/etc/apache2/conf/modules.d
 		cat <<EOF >${D}/etc/apache2/conf/modules.d/47_mod_dav_svn.conf
 <IfDefine SVN>
@@ -191,10 +198,10 @@ src_install () {
   </IfModule>
   <Location /svn/repos>
     DAV svn
-    SVNPath /home/svn/repos
+    SVNPath ${SVN_REPOS_LOC}/repos
     AuthType Basic
     AuthName "Subversion repository"
-    AuthUserFile /home/svn/conf/svnusers
+    AuthUserFile ${SVN_REPOS_LOC}/conf/svnusers
     Require valid-user
   </Location>
 </IfDefine>
@@ -204,7 +211,7 @@ EOF
 
 pkg_postinst() {
 	if use berkdb; then
-		if use apache; then
+		if use apache2; then
 			einfo "Subversion has multiple server types. To enable the http based version"
 			einfo "you must edit /etc/conf.d/apache2 to include both \"-D DAV\" and \"-D SVN\""
 			einfo ""
@@ -215,10 +222,10 @@ pkg_postinst() {
 			einfo "problems with your repository then run the following command:"
 			einfo "    su apache -c \"db4_recover -h /path/to/repos\""
 		fi
-		if use apache; then
+		if use apache2; then
 			einfo "To allow web access a htpasswd file needs to be created using the"
 			einfo "following command:"
-			einfo "   htpasswd2 -m -c /home/svn/conf/svnusers USERNAME"
+			einfo "   htpasswd2 -m -c ${SVN_REPOS_LOC}/conf/svnusers USERNAME"
 		fi
 	else
 		einfo "Your subversion is client only as the server is only build when"
@@ -230,19 +237,19 @@ pkg_config() {
 	if [ ! -x /usr/bin/svnadmin ]; then
 		die "You seem to only have build the subversion client"
 	fi
-	einfo ">>> Initializing the database ..."
-	if [ -f /home/svn/repos ] ; then
+	einfo ">>> Initializing the database in ${SVN_REPOS_LOC}..."
+	if [ -f ${SVN_REPOS_LOC}/repos ] ; then
         echo "A subversion repository already exists and I will not overwrite it."
-		echo "Delete /home/svn/repos first if you're sure you want to have a clean version."
+		echo "Delete ${SVN_REPOS_LOC}/repos first if you're sure you want to have a clean version."
 	else
-		mkdir -p /home/svn
+		mkdir -p ${SVN_REPOS_LOC}
 		einfo ">>> Populating repository directory ..."
 		# create initial repository
-		/usr/bin/svnadmin create /home/svn/repos
+		/usr/bin/svnadmin create ${SVN_REPOS_LOC}/repos
 
 		einfo ">>> Setting repository permissions ..."
-		chown -Rf apache.apache /home/svn/repos
-		chmod -Rf 755 /home/svn/repos
+		chown -Rf apache.apache ${SVN_REPOS_LOC}/repos
+		chmod -Rf 755 ${SVN_REPOS_LOC}/repos
 	fi
 }
 
