@@ -1,5 +1,15 @@
-MD5 3841473aa05ba29e7b7e50ceb0854a13 ChangeLog 527
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 0a820598061b8025807efce68b34c942 ChangeLog 527
 MD5 41d6c0ba999d7b4af929e07368693a3f metadata.xml 261
 MD5 1935ca0fd31173128a09e2e98e455d2d mod_proxy_html-2.4.3.ebuild 740
 MD5 277e79d3f0824115ab0bebc80eaca046 files/27_mod_proxy_html.conf 245
 MD5 13b126a10cbce1cfad294254b0ed4a34 files/digest-mod_proxy_html-2.4.3 60
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCHzw8mPFBzbX68WERAqtlAKCQs/ft1EHAiWoecw3hiox/u/wOPQCeNKTc
+77mXGaD0b6i04pI2srD5Cv0=
+=kaFA
+-----END PGP SIGNATURE-----
