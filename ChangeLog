@@ -1,5 +1,17 @@
 date 09 Jan 2001
 
+upd net-misc/djbdns-1.02 to 1.02-r1
+drobbins
+supervise and initscript update (enhancements as well)
+
+upd sys-apps/dcron-2.7 to 2.7-r1
+drobbins
+supervise and initscript update
+
+upd sys-apps/xinetd-2.1.8.8_p3-r3 to 2.1.8.8_p3-r4
+drobbins
+supervise and initscript update
+
 upd net-fs/samba-2.0.7-r2 to 2.0.7-r3
 drobbins
 supervise and initscript update
