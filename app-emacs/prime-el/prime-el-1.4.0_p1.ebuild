@@ -1,19 +1,21 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/prime-el/Attic/prime-el-1.2.1.ebuild,v 1.3 2004/01/18 22:12:43 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/prime-el/Attic/prime-el-1.4.0_p1.ebuild,v 1.1 2004/03/02 19:52:40 usata Exp $
 
 inherit elisp
 
 IUSE=""
 
+MY_P="${P/_p/.}"
+
 DESCRIPTION="PRIME Client for Emacs"
 HOMEPAGE="http://taiyaki.org/prime/"
-SRC_URI="http://prime.sourceforge.jp/src/${P}.tar.gz"
+SRC_URI="http://prime.sourceforge.jp/src/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="x86"
+KEYWORDS="~x86 ~ppc"
 SLOT="0"
-S="${WORKDIR}/${P}"
+S="${WORKDIR}/${MY_P}"
 
 DEPEND="app-emacs/apel
 	app-emacs/mell
@@ -42,7 +44,7 @@ src_compile() {
 
 src_install() {
 
-	einstall DESTDIR=${D} || die
+	make DESTDIR=${D} install || die
 	make DESTDIR=${D} install-etc || die
 
 	elisp-site-file-install ${FILESDIR}/50prime-el-gentoo.el
