@@ -1,11 +1,11 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/ntp/Attic/ntp-4.1.1a.ebuild,v 1.10 2002/12/15 10:44:21 bjb Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/ntp/Attic/ntp-4.1.1b-r1.ebuild,v 1.1 2002/12/16 16:19:06 vapier Exp $
 
-S=${WORKDIR}/${P}
 DESCRIPTION="Network Time Protocol suite/programs"
 SRC_URI="http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/${P}.tar.gz"
 HOMEPAGE="http://www.ntp.org/"
+
 LICENSE="as-is"
 KEYWORDS="x86 ppc sparc alpha"
 SLOT="0"
@@ -25,18 +25,13 @@ src_unpack() {
 src_compile() {
 	cp configure configure.orig
 	sed -e "s:-Wpointer-arith::" configure.orig > configure
-#	If there is a reason why we need -lncurses in LDFLAGS, please
-#	read the ChangeLog and contact me, jnelson@gentoo.org
-#	LDFLAGS="$LDFLAGS -L/lib -lncurses"
 
-	./configure --prefix=/usr --mandir=/usr/share/man \
-	--host=${CHOST} --build=${CHOST} || die
-
+	econf --build=${CHOST}
 	emake || die
 }
 
-src_install () {
-	make prefix=${D}/usr mandir=${D}/usr/share/man install || die
+src_install() {
+	einstall
 
 	dodoc ChangeLog INSTALL NEWS README TODO WHERE-TO-START
 	insinto /usr/share/doc/${PF}/html ; doins html/*.htm
@@ -45,6 +40,6 @@ src_install () {
 
 	insinto /usr/share/ntp ; doins scripts/*
 
-	exeinto /etc/init.d ; newexe ${FILESDIR}/ntpd.rc6 ntpd
-	insinto /etc/conf.d ; newins ${FILESDIR}/ntpd.confd ntpd
+	exeinto /etc/init.d ; newexe ${FILESDIR}/ntpd.rc ntpd
+	insinto /etc ; newins ${FILESDIR}/ntp.conf ntp.conf
 }
