@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/atanks/Attic/atanks-0.9.9d.ebuild,v 1.2 2004/02/05 23:21:16 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-action/atanks/Attic/atanks-1.1.0.ebuild,v 1.1 2004/02/05 23:21:16 mr_bones_ Exp $
 
 inherit games
 
@@ -29,11 +29,12 @@ src_unpack() {
 }
 
 src_install() {
-	dogamesbin atanks
-	dodir /usr/share/games/atanks
-	cp ${S}/*dat ${D}${DATA_DIR}
+	dogamesbin atanks || die "dogamesbin failed"
+	dodir "${DATA_DIR}"
+	cp {credits,gloat,instr,revenge}.txt *dat "${D}${DATA_DIR}" || \
+		die "cp failed"
 
-	dodoc Changelog INSTRUCTIONS README TODO readme.linux tanks.txt
+	dodoc BUGS Changelog Help.txt tanks.txt README TODO || die "dodoc failed"
 	prepgamesdirs
 }
 
