@@ -93,7 +93,7 @@
 ./app-cdr/cdrecord/cdrecord-1.9-r1.ebuild
 ./app-doc/man-pages/man-pages-1.31.ebuild
 ./app-editors/ed/ed-4-r1.ebuild
-./app-editors/gtk-xemacs/gtk-xemacs-21.1-r1.ebuild
+./app-editors/gtk-xemacs/gtk-xemacs-21.1.11.ebuild
 ./app-editors/joe/joe-2.8-r1.ebuild
 ./app-editors/vim-gtk/vim-gtk-5.7-r1.ebuild
 ./app-misc/gfontview/gfontview-0.4.1-r1.ebuild

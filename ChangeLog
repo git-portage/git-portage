@@ -1,6 +1,7 @@
 27.08.2000	
 
-
+	- Update gtk-xemacs 21.1 -> 21.1.11	(achim)
+	  [No CVS-Sources required]
 	- Update sysklogd 1.3.31 r1 -> r2	(achim)
 	  [Logrotate script added]
 	- Modified cocoon 1.7.4			(achim)
