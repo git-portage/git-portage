@@ -6,6 +6,7 @@ MD5 95665f15aceacbc10aabf126564683b2 gentoo-sources-2.4.20-r6.ebuild 4960
 MD5 abc9def4a3706816d4266d238a6140fa gentoo-sources-2.4.20-r10.ebuild 5849
 MD5 d0e88bf43d91974ea00e11e1735e6a20 gentoo-sources-2.4.22-r2.ebuild 2081
 MD5 fd1cc2562183c95cdfe250ebfdce6baa gentoo-sources-2.4.20-r8.ebuild 5562
+MD5 60b8e06293acb099d05ffbd51aa5d38c gentoo-sources-2.4.22-r4.ebuild 1716
 MD5 507076d3bfb081951a2b1e562566ee11 gentoo-sources-2.4.20-r5.ebuild 4807
 MD5 af9b58d2bed47ce662b476c293b05cef gentoo-sources-2.4.22-r1.ebuild 1944
 MD5 d9e246d5cf3dba39b4110b8f3560f877 ChangeLog 13363
@@ -39,6 +40,7 @@ MD5 849223b7d8e6c9c2a22f84b571aa516c files/digest-gentoo-sources-2.4.20-r9 145
 MD5 3d5e2a43da16dfc6f02d249ab4d03eb7 files/digest-gentoo-sources-2.4.22-r1 147
 MD5 e06e41c29580142ad40709e369084b22 files/digest-gentoo-sources-2.4.22-r2 147
 MD5 e06e41c29580142ad40709e369084b22 files/digest-gentoo-sources-2.4.22-r3 147
+MD5 8bc44a4c2cec1ebcfb4a08b4cc28a162 files/digest-gentoo-sources-2.4.22-r4 147
 MD5 6450fd1b19f30aa33866e5e467c0d828 files/gentoo-sources-2.4.20-cs46xx-gcc33.patch 374
 MD5 012e8ba5d18dbb8d508ac4955e143e3a files/gentoo-sources-2.4.20-ipt-route.patch 13307
 MD5 e2e2b545b6fcdcecf49e33798efa5b84 files/gentoo-sources-2.4.22-rtc_fix.patch 7073
