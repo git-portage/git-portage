@@ -154,7 +154,7 @@
 ./media-libs/t1lib/t1lib-1.0.1-r1.ebuild
 ./media-libs/tiff/tiff-3.5.5-r1.ebuild
 ./media-sound/alsa-driver/alsa-driver-0.5.9b.ebuild
-./media-sound/alsa-utils/alsa-utils-0.5.9.ebuild
+./media-sound/alsa-utils/alsa-utils-0.5.9a.ebuild
 ./media-sound/esound/esound-0.2.19.ebuild
 ./media-sound/lame/lame-3.86b.ebuild
 ./media-sound/mpg123/mpg123-0.59r.ebuild

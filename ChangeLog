@@ -1,3 +1,8 @@
+25.08.2000
+
+	- Update alsa-utils 0.5.9 -> 0.5.9a	(achim)
+	- Update current-packages		(achim)
+
 24.08.2000
 	
 	- Removed 00baselayout			(drobbins)
