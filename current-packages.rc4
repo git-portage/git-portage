@@ -70,6 +70,7 @@
 ./app-text/ttf2pt1/ttf2pt1-3.3.3.ebuild
 ./app-text/xmltex/xmltex-1.0.ebuild
 ./app-text/xpdf/xpdf-0.92.ebuild
+./dev-db/mysql/mysql-3.23.36.ebuild
 ./dev-lang/nasm/nasm-0.98-r2.ebuild
 ./dev-libs/expat/expat-1.95.1-r1.ebuild
 ./dev-libs/glib/glib-1.2.8-r2.ebuild
@@ -142,6 +143,7 @@
 ./media-video/xawtv/xawtv-3.43.ebuild
 ./net-libs/libwww/libwww-5.3.2-r1.ebuild
 ./net-misc/openssh/openssh-2.3.0_p1-r5.ebuild
+./net-misc/rsync/rsync-2.4.6-r2
 ./net-misc/wget/wget-1.5.3-r1.ebuild
 ./net-www/links/links-0.95-r1.ebuild
 ./net-www/mozilla/mozilla-0.8-r1.ebuild
