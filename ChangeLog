@@ -1,4 +1,9 @@
 date 15 June 2001
+
+new dev-util/pharmacy-0.3
+gnome front-end to CVS (tkcvs is better:-)
+Ben
+
 new app-doc/tkinfo-2.5
 info browser written in tcl-tk, the simplest ebuild on the planet
 Ben
