@@ -1,4 +1,5 @@
 MD5 a5ffac070668eb553f3e3b1b7266c302 file-roller-2.6.2.ebuild 1224
+MD5 95a73b5053ace8961d9a4d063d57db9d file-roller-2.8.0.ebuild 1207
 MD5 54499cabe95659969086224dc308381c file-roller-2.6.1.ebuild 1206
 MD5 3db60db955c065e4d8fd4560080f661b file-roller-2.4.4-r2.ebuild 1071
 MD5 b068979a95a33018cdda757f010ccea3 file-roller-2.6.0.ebuild 1206
@@ -12,4 +13,5 @@ MD5 7c3bf595636ee254e23445ccf07c4075 files/file-roller-2.4.4-64bit.patch 2808
 MD5 9a6c274d4965d6aa2e83abe0e57133b1 files/digest-file-roller-2.6.0 71
 MD5 a2afcaf32ad39410e36d24188021895e files/digest-file-roller-2.6.1 71
 MD5 a2d30ce698b5120d01da4d3593bbf2c2 files/digest-file-roller-2.6.2 71
+MD5 519fed8816b9e6198b4cd9f6cdf9e525 files/digest-file-roller-2.8.0 71
 MD5 07fa4739c733d5e4453bfb797cf6a279 files/digest-file-roller-2.4.4-r2 70
