@@ -1,3 +1,5 @@
 MD5 e7da67b5013fb9dad902b9325a32df53 ChangeLog 606
 MD5 50249a96d20836552ab420e0f66e6ac6 emul-linux-x86-sdl-1.0.ebuild 607
+MD5 2b164733179a7aed0a366cc1965ed0c3 emul-linux-x86-sdl-1.2.8-r1.ebuild 629
 MD5 6941ee95bd0d4cf8454d1f8310d0ce36 files/digest-emul-linux-x86-sdl-1.0 75
+MD5 58005c33ce26b17f42a5bde5d2377c17 files/digest-emul-linux-x86-sdl-1.2.8-r1 77
