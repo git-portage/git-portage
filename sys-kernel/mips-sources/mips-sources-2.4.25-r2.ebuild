@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.25-r1.ebuild,v 1.2 2004/04/16 06:03:36 kumba Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.25-r2.ebuild,v 1.1 2004/04/21 22:05:38 kumba Exp $
 
 
 # Version Data
@@ -8,7 +8,7 @@ OKV=${PV/_/-}
 CVSDATE="20040222"
 EXTRAVERSION="-mipscvs-${CVSDATE}"
 KV="${OKV}${EXTRAVERSION}"
-COBALTPATCHVER="1.1"
+COBALTPATCHVER="1.4"
 
 # Miscellaneous stuff
 S=${WORKDIR}/linux-${OKV}-${CVSDATE}
@@ -57,7 +57,12 @@ src_unpack() {
 	epatch ${FILESDIR}/mipscvs-${OKV}-no-page-align.patch
 
 	# Security Fixes
-	epatch ${FILESDIR}/CAN-2004-0109-2.4-iso9660.patch
+	echo -e ""
+		ebegin "Applying Security Fixes"
+		epatch ${FILESDIR}/CAN-2004-0109-2.4-iso9660.patch
+		epatch ${FILESDIR}/CAN-2004-0177-ext3_jbd.patch
+		epatch ${FILESDIR}/CAN-2004-0178-sbblaster.patch
+	eend
 
 	# Cobalt Patches
 	if [ "${PROFILE_ARCH}" = "cobalt" ]; then
