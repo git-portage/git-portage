@@ -1,4 +1,14 @@
-MD5 0df9716e0ad4ee49811d4c7ee8a2b4b8 ocfs-1.0.14.ebuild 1068
-MD5 d7227532dd43f0cc27cdd331b46c6003 ChangeLog 193
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 45f2d828a6ea696eafe08f627ec3f462 ocfs-1.0.14.ebuild 1166
+MD5 825a997f16072cf6d871542ea57644b9 ChangeLog 282
 MD5 a64b9a1937a5cfc2fbaf373521f65d47 metadata.xml 223
 MD5 75c09203fea28786944fca4623be459f files/digest-ocfs-1.0.14 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFCMGM3gMUyd/cdjWsRAlgpAJ9IXerExkrp2+qpiIL9Sk61OUcHqwCdFFWv
+MF3mauyVtEk/4jPkSkqndy8=
+=6MUy
+-----END PGP SIGNATURE-----
