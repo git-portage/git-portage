@@ -1,4 +1,6 @@
-MD5 092a4963173e0ca3d62aab1f2b25356a wmxres-1.2.ebuild 786
+MD5 c2a177c3df4f34835aeb8288e1b5a37a wmxres-1.2.ebuild 824
+MD5 6b9fb9113a0579b2c7c8b2dd2b892304 ChangeLog 371
+MD5 62ba71d3b2fa785a4cbd5d47fdbd0eb6 metadata.xml 165
 MD5 7faef3c2696850855d3c04cf2db18b0b files/wmxres-makefile.patch 445
 MD5 be65102309ba38b2fe3e2daab694b3af files/digest-wmxres-1.2 62
 MD5 ecbe1a6bd91322603485bc0ab1198599 files/wmxres.desktop 209
