@@ -66,7 +66,7 @@
 ./sys-devel/m4/m4-1.4o-r1.ebuild
 ./sys-devel/make/make-3.79.1-r1.ebuild
 ./sys-devel/patch/patch-2.5.4-r1.ebuild
-./sys-devel/perl/perl-5.6.0-r1.ebuild
+./sys-devel/perl/perl-5.6.0-r3.ebuild
 ./sys-devel/python-basic/python-basic-1.5.2-r2.ebuild
 ./sys-kernel/linux-UP-2.2.17/linux-UP-2.2.17-r3.ebuild
 #./sys-kernel/linux-UP-2.2.17/linux-UP-nfs3-2.2.17-r1.ebuild
@@ -187,7 +187,7 @@
 ./dev-perl/libnet/libnet-1.0703-r1.ebuild
 ./dev-perl/libwww-perl/libwww-perl-5.48.ebuild
 ./dev-perl/libxml-perl/libxml-perl-0.07.ebuild
-./dev-perl/mod_perl/mod_perl-1.24.ebuild
+./dev-perl/mod_perl/mod_perl-1.24.1.ebuild
 ./dev-perl/perl-tk/perl-tk800-022.ebuild
 ./dev-python/gnome-python/gnome-python-1.0.53-r1.ebuild
 ./dev-util/cvs/cvs-1.11.ebuild
