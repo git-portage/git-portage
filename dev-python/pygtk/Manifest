@@ -1,5 +1,8 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5d2c87676a6ea4abbff3e7d05936c8fd pygtk-2.2.0.ebuild 2171
-MD5 c6e1ea0e91fba18b593aea84c62a2e2a pygtk-2.4.1.ebuild 2425
+MD5 5c5501baaa476033dcfb225b0ce9fc9d pygtk-2.4.1.ebuild 2427
 MD5 7f195666eb8e0f2f56b4c7490c4a91cb pygtk-2.3.94.ebuild 2285
 MD5 460c27804769027fd795a1c38858f567 pygtk-2.3.96.ebuild 2285
 MD5 84fb207ffe10ecd3be8502f0449556a2 pygtk-2.0.0-r1.ebuild 2062
@@ -9,7 +12,7 @@ MD5 0320b3883c761bc3e567cc1f04a30e53 pygtk-0.6.11.ebuild 590
 MD5 7ffd433ac94020e9547ed67c93806054 pygtk-2.0.0.ebuild 925
 MD5 f345af077c2fbc53108760f36eddfc87 pygtk-2.3.93.ebuild 2285
 MD5 a244841efdd7989d4e751e0742ea911d pygtk-0.6.11-r1.ebuild 1948
-MD5 2faf966289518fb1eec5b721c99d2cea ChangeLog 8660
+MD5 a83a95efd5bbd4649ddf0c6d90cf4c5b ChangeLog 8803
 MD5 8f03582f883634bcb2007a13b8350931 metadata.xml 487
 MD5 64c01426f517699f57fdc09f1cf4f729 pygtk-2.3.97.ebuild 2285
 MD5 163407a563d4dd3f04758db4b232e823 pygtk-2.3.92.ebuild 2176
@@ -26,3 +29,10 @@ MD5 928b221404d07fcc1913b00f8498cf3d files/digest-pygtk-2.4.0 64
 MD5 39ecd0ee60f11eff2a596002e0ddf34d files/digest-pygtk-2.4.1 129
 MD5 f7476a916a6add9b10800b1f5bf31e98 files/digest-pygtk-0.6.11-r1 64
 MD5 f0923e335952213318838067c14df0a0 files/digest-pygtk-2.0.0-r1 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.9.10 (GNU/Linux)
+
+iD8DBQFB4QQ4I1lqEGTUzyQRArpbAJ9R/FuZDQK6O8YCjUmouX7CGiNCUQCbBhcu
+awbIfzyJzu7ZXmQTnoCdPuE=
+=5Nsl
+-----END PGP SIGNATURE-----
