@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author First Last <your email>
-# $Header: /var/cvsroot/gentoo-x86/Attic/skel.build,v 1.10 2001/11/03 17:27:49 agriffis Exp $
+# Maintainer: First Last <your email>
+# $Header: /var/cvsroot/gentoo-x86/Attic/skel.build,v 1.11 2001/12/06 22:12:34 drobbins Exp $
 
 # NOTE: The comments in this file are for instruction and
 # documentation.  They're not meant to appear with your final,
