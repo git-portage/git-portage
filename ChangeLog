@@ -4,6 +4,9 @@
 	- Removed 00initscripts			(drobbins)
 	- New baselayout (incl. initscripts)	(drobbins)
 	- Update current.packages		(drobbins)
+	- lots of upgrades to ebuild		(drobbins)
+	  [ebuild package will only make a new package if
+	   the package.ebuild or archives have been updated]
 
 23.08.2000
 	
