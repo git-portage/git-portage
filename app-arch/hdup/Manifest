@@ -1,3 +1,6 @@
+MD5 de35d8f600d3d75d8075a8d848787013 metadata.xml 223
+MD5 60bbc62dea8d8cb986ad384b942208e2 hdup-1.6.29-r1.ebuild 1175
 MD5 193b2d05e07695d47299a5225ce50d8c ChangeLog 702
-MD5 4b13db2967a992a46113986d46d4fafa hdup-1.6.29.ebuild 1097
+MD5 1342d8cd551dd7898702200102518f13 files/hdup-1.6.29-gentoo.patch 480
 MD5 552a98bc9fd9bd68eaae348db392fce5 files/digest-hdup-1.6.29 62
+MD5 552a98bc9fd9bd68eaae348db392fce5 files/digest-hdup-1.6.29-r1 62
