@@ -1,12 +1,12 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/pwlib/Attic/pwlib-1.3.1.ebuild,v 1.3 2002/07/03 21:30:09 drobbins Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/pwlib/Attic/pwlib-1.3.3.ebuild,v 1.1 2002/07/20 16:41:51 raker Exp $
 
 S="${WORKDIR}/${PN}"
 DESCRIPTION="Libs needed for GnomeMeeting"
 SRC_URI="http://www.openh323.org/bin/${PN}_${PV}.tar.gz"
 HOMEPAGE="http://www.openh323.org"
-SLOT="1.3"
+SLOT="0"
 DEPEND="virtual/glibc >=sys-devel/bison-1.28 >=sys-devel/flex-2.5.4a"
 
 src_compile() {
