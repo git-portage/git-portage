@@ -1,44 +1,28 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-games/Attic/gnome-games-2.0.3.ebuild,v 1.8 2003/02/13 12:18:04 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-games/Attic/gnome-games-2.2.1.ebuild,v 1.1 2003/07/12 16:26:41 foser Exp $
 
 inherit gnome2
 
-S=${WORKDIR}/${P}
-DESCRIPTION="Games for the Gnome2 desktop"
-SRC_URI="mirror://gnome/2.0.0/sources/${PN}/${P}.tar.bz2"
+DESCRIPTION="Games for the GNOME desktop"
 HOMEPAGE="http://www.gnome.org/"
 SLOT="0"
-KEYWORDS="x86 ppc sparc alpha"
+KEYWORDS="~x86 ~ppc ~alpha ~sparc ~hppa"
 LICENSE="GPL-2"
 
-RDEPEND=">=dev-libs/glib-2.0.6
-	>=x11-libs/pango-1.0.4
-	>=dev-libs/atk-1.0.3
-	>=x11-libs/gtk+-2.0.6
-	>=x11-libs/libzvt-2.0.0
-	>=media-libs/freetype-2.0.8
-	>=dev-libs/libxml2-2.4.22
-	>=app-text/scrollkeeper-0.3.9
+RDEPEND=">=app-text/scrollkeeper-0.3.11
 	>=sys-libs/ncurses-5.2
-	>=sys-libs/readline-4.1
 	>=sys-devel/gettext-0.10.40
-	>=gnome-base/libglade-2.0.0-r1
-	>=gnome-base/gconf-1.2.1
-	>=gnome-base/gnome-vfs-2.0.2
-	>=gnome-base/ORBit2-2.4.1
-	>=gnome-base/bonobo-activation-1.0.3
-	>=gnome-base/gnome-panel-2.0.5
-	>=gnome-base/libgnome-2.0.2
-	>=gnome-base/libgnomecanvas-2.0.2
-	>=gnome-base/libgnomeui-2.0.3"
+	>=gnome-base/gconf-1.2
+	>=gnome-base/gnome-vfs-2
+	>=gnome-base/libgnome-2
+	>=gnome-base/libgnomeui-2"
 
 DEPEND=">=dev-util/pkgconfig-0.12.0
-	>=dev-util/intltool-0.17
+	>=dev-util/intltool-0.22
 	${RDEPEND}"
 
-
-G2CONF="${G2CONF} --with-ncurses --enable-debug=yes" 
+G2CONF="${G2CONF} --with-ncurses" 
 		
 src_install() {
 	export GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL="1"
@@ -118,4 +102,3 @@ src_install() {
 	cd ..
 	export SCROLLKEEPER_UPDATE="1"
 }
-
