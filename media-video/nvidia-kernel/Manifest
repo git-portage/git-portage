@@ -1,6 +1,6 @@
 MD5 17e5291b91d1eef96d55e54a2cba6d81 nvidia-kernel-1.0.6629-r1.ebuild 4748
-MD5 d2cc33a56813431a612ebb0c6e2a1d8d nvidia-kernel-1.0.6629-r4.ebuild 4483
-MD5 216aeafe1ebb87f2a6b51db21e2bda94 ChangeLog 28401
+MD5 bf8f040d6927016f9da24ab89262d346 nvidia-kernel-1.0.6629-r4.ebuild 4567
+MD5 30b5adc05523d11a2d9297cbf4d8688b ChangeLog 28645
 MD5 3915412914635df4d7329ad27323f4c5 nvidia-kernel-1.0.6629-r2.ebuild 4264
 MD5 631e8deabfb0c7726b9b31259f1673a0 nvidia-kernel-1.0.6629-r3.ebuild 4330
 MD5 c84a79e7d9b69a204003fb8c2dbaad01 metadata.xml 297
@@ -31,7 +31,7 @@ MD5 5a17c3fa427b4d0ff8e38f82e57cd817 files/1.0.6629/NVIDIA_kernel-1.0-6629-11625
 MD5 ada7d22def202e56c01c1e72c8000d45 files/1.0.6629/NVIDIA_kernel-1.0-6629-1165235.patch 581
 MD5 f1a5a01593ef996b38fe70bc93fa7440 files/1.0.6629/NVIDIA_kernel-1.0-6629-1171869.patch 2160
 MD5 59c5fa8340585303cd18362bbeb0086f files/1.0.6629/NVIDIA_kernel-1.0-6629-1175225.patch 1877
-MD5 6aeb1e968e901c208108d18644e5b09c files/1.0.6629/NVIDIA_kernel-1.0-6629-agp_bridge_data.patch 7448
+MD5 bca6ad85efa6071a949bdcb24fce1733 files/1.0.6629/NVIDIA_kernel-1.0-6629-agp_bridge_data.patch 7860
 MD5 d4e8ffdb0cc67c56884e6055d2045e51 files/1.0.6629/NVIDIA_kernel-1.0-6629-1182399.patch 2608
 MD5 e210d99cae87c3f60120ea474b97fca7 files/1.0.6629/NVIDIA_kernel-1.0-6629-1189413.patch 8072
 MD5 da7644fcc801d40c26fb22b570a88835 files/1.0.6629/NVIDIA_kernel-1.0-6629-1201042.diff 9445
