@@ -1,16 +1,7 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 b7860faee4c1bbc99844f48c18586a8f ChangeLog 874
 MD5 4f6b8e3e1674ac1ff65889ccd4cc7f98 airtraf-1.0.ebuild 1046
-MD5 a3379fb1c95360c11abe5ed7d76b26a4 airtraf-1.1.ebuild 1047
+MD5 a3070a6d2677111e52b6c7e0e99c907f airtraf-1.1.ebuild 1015
+MD5 7709ff5e9d567a780263e953728c7c6f metadata.xml 662
+MD5 740088b3171d11034ceca32ba2b02053 files/airtraf.patch 2302
 MD5 92f9aeb2621275bceb1c4707f6530049 files/digest-airtraf-1.0 63
-MD5 7753e78fafa0ea42690623c8e2618b2f files/airtraf-amd64.patch 1485
 MD5 630d7e86dcfce40f96fdf3f3db7a45df files/digest-airtraf-1.1 63
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBgYWSmdTrptrqvGERApa3AJ9n4mNag78CAC+du0cOCkG5VOyUfACeODSM
-CGnxrSUopTH5UCY5uJjmbHA=
-=GuvU
------END PGP SIGNATURE-----
