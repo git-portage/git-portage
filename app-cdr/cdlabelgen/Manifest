@@ -3,7 +3,7 @@ MD5 ba2108c845001eec1ccfc353bb32de25 cdlabelgen-2.6.0.ebuild 712
 MD5 7e285f080272b311b0eb8b0028928e07 metadata.xml 219
 MD5 1e5c102849a05c3cb438f25b01da40db cdlabelgen-2.6.1.ebuild 959
 MD5 10dd79a3e47b80446956698fe0c64206 cdlabelgen-2.4.0.ebuild 714
-MD5 ea6de5dc9da2e7d362daef11cb32c000 cdlabelgen-3.0.0.ebuild 951
+MD5 7319943e1bcfd791677bfea13fcb38c1 cdlabelgen-3.0.0.ebuild 972
 MD5 fbcc36c491d65c7e9c3cc01de2d65a18 ChangeLog 2176
 MD5 bff2b23835a3572047c6661e88129d75 files/makefile.patch 927
 MD5 7ae5079af09947e1f62b692d15814a50 files/digest-cdlabelgen-3.0.0 65
