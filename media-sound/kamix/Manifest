@@ -1,4 +1,6 @@
 MD5 013dce606a0ff845f4d76ce795c86107 ChangeLog 600
 MD5 9f0cf363711737cae1e140210eb0719a kamix-0.5.4.ebuild 505
+MD5 dc53f62500edf22fa52a4c02308b3598 kamix-0.5.5.ebuild 506
 MD5 83c2574543d0501303b57050254e3880 metadata.xml 222
 MD5 f129e2fc0b169d2924ce941e7cfec3b4 files/digest-kamix-0.5.4 64
+MD5 62d7e68ae855c9b050dec026a32befc4 files/digest-kamix-0.5.5 64
