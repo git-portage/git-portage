@@ -5,9 +5,9 @@ MD5 21d8d6a3281be50dceb7a2e8b8a10bee wireless-tools-28_pre1.ebuild 1378
 MD5 7dbaee5b59042ba75d3ca511af35f336 wireless-tools-26.ebuild 1062
 MD5 5f438d1d8deb907e89619d33834486f0 wireless-tools-27_pre27.ebuild 1227
 MD5 db0e7746c702c811bed43e789ba6d02c wireless-tools-25-r1.ebuild 981
-MD5 693cf6fb9536b9d4ee118166b4a2bea5 wireless-tools-28_pre3.ebuild 1890
+MD5 23cdea3d7e093339cfaafd20f5aad651 wireless-tools-28_pre3.ebuild 2007
 MD5 082a9fcbb811917d0497e607b542e32f wireless-tools-27_pre26.ebuild 1227
-MD5 a1231584e8bb6ca0616d63a5c9ffcd23 ChangeLog 9775
+MD5 366613714a3c2c50349834e8f0cdafbc ChangeLog 9907
 MD5 e586a4dae1d1901629743ce954baa719 wireless-tools-27.ebuild 1375
 MD5 94bf9d66b7e4eda59bc656623b8fbec8 metadata.xml 559
 MD5 802e050ebc4a8045fede12c9010d5722 files/digest-wireless-tools-24 68
