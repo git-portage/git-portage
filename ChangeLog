@@ -1,5 +1,8 @@
 date 22 Nov 2000
 
+new net-misc/traceroute-1.4_p7
+jerry
+
 new net-misc/openssh-2.3.0_p1
 jerry
 Added latest and greatest version of OpenSSH.
