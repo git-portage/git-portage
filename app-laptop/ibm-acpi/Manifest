@@ -1,3 +1,4 @@
+MD5 02759ebc3da731212e42cacdbedd495c ibm-acpi-0.8.ebuild 1887
 MD5 679ba888768ac666d30e59e820578041 ibm-acpi-0.3.ebuild 1765
 MD5 0e7ebbaa88994d1a54cf5135234a4fc2 ibm-acpi-0.5.ebuild 1759
 MD5 84c682c05121f755098d156eb62289ab ibm-acpi-0.7.ebuild 1871
@@ -10,3 +11,4 @@ MD5 d1c1de52630fbc3ae75edad2fad6f90b files/digest-ibm-acpi-0.4 63
 MD5 f0037cea110a171b6db552445d7b26a6 files/digest-ibm-acpi-0.5 63
 MD5 8bdcc9667fa7b6b8d621293689703ef1 files/digest-ibm-acpi-0.6 63
 MD5 992884fd6007cecf9a450554881b13ed files/digest-ibm-acpi-0.7 63
+MD5 bed3ae2596959ff1e380bfba86458bc5 files/digest-ibm-acpi-0.8 63
