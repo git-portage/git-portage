@@ -1,4 +1,6 @@
 17.10.2000
+	- Upgraded portage to 1.0-r3		(drobbins)
+	[ new pkgmerge .tbz2 installer ]
 	- More major portage overhaul		(drobbins)
 	[moving merge/unmerge into portage.py
 	 and first steps of pkgmerge .tbz2
