@@ -6,9 +6,9 @@ MD5 201fbe5b651fcd25b6c16543b6de3c43 gtk-engines-xfce-2.0.8.ebuild 373
 MD5 29d4e3bfc3e434910923ef3ecef9025c gtk-engines-xfce-2.1.6.ebuild 558
 MD5 72d2224bbb3f4edc736d5db38eee7e86 gtk-engines-xfce-2.1.1.ebuild 373
 MD5 b0123be2881a2ca7310bf7071b549651 gtk-engines-xfce-2.1.3.ebuild 549
-MD5 95bdc6bbd1235953a30b3918b04cb7a0 ChangeLog 2460
+MD5 6a16ffcf107efba6eceb9d3a6bec0b8c ChangeLog 2594
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
-MD5 48934872cc807157f609dc3b8459735c gtk-engines-xfce-2.2.3.ebuild 636
+MD5 01a97850d7cc18dce9fe5c28c4fd16d0 gtk-engines-xfce-2.2.3.ebuild 636
 MD5 9afeb244da2991330767bef315c17a7d files/digest-gtk-engines-xfce-2.1.1-r1 73
 MD5 da8c0b1fed1b7e62a2d6135f52c99d17 files/digest-gtk-engines-xfce-2.0.8 73
 MD5 9afeb244da2991330767bef315c17a7d files/digest-gtk-engines-xfce-2.1.1 73
