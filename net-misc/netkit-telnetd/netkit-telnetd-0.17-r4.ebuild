@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/netkit-telnetd/Attic/netkit-telnetd-0.17-r4.ebuild,v 1.9 2004/11/02 13:23:18 corsair Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/netkit-telnetd/Attic/netkit-telnetd-0.17-r4.ebuild,v 1.10 2005/03/12 22:36:23 solar Exp $
 
 inherit eutils
 

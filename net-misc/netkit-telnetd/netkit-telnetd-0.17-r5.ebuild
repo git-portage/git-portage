@@ -1,16 +1,18 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/netkit-telnetd/Attic/netkit-telnetd-0.17-r3.ebuild,v 1.26 2005/03/12 22:36:23 solar Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/netkit-telnetd/Attic/netkit-telnetd-0.17-r5.ebuild,v 1.1 2005/03/12 22:36:23 solar Exp $
 
 inherit eutils
 
+PATCHLEVEL=27
 DESCRIPTION="Standard Linux telnet client and server"
 HOMEPAGE="ftp://ftp.uk.linux.org/pub/linux/Networking/netkit/"
-SRC_URI="ftp://ftp.uk.linux.org/pub/linux/Networking/netkit/netkit-telnet-${PV}.tar.gz"
+SRC_URI="ftp://ftp.uk.linux.org/pub/linux/Networking/netkit/netkit-telnet-${PV}.tar.gz
+	http://ftp.debian.org/debian/pool/main/n/netkit-telnet/netkit-telnet_0.17-${PATCHLEVEL}.diff.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86 ppc sparc mips alpha hppa amd64 ppc64"
+KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~hppa ~amd64 ~ppc64"
 IUSE="build"
 
 DEPEND=">=sys-libs/ncurses-5.2
@@ -21,7 +23,21 @@ S=${WORKDIR}/netkit-telnet-${PV}
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/netkit-telnetd-0.17-gentoo.patch
+	# Patch: [0]
+	# Gentoo lacks a maintainer for this package right now. And a 
+	# security problem arose. While reviewing our options for how 
+	# should we proceed with the security bug we decided it would be 
+	# better to just stay in sync with debian's own netkit-telnet 
+	# package. Lots of bug fixes by them over time which were not in 
+	# our telnetd.
+	epatch ${WORKDIR}/netkit-telnet_0.17-${PATCHLEVEL}.diff || die
+
+	# Patch: [1]
+	# after the deb patch we need to add a small patch that defines 
+	# gnu source. This is needed for gcc-3.4.x (needs to be pushed 
+	# back to the deb folk?)
+	epatch ${FILESDIR}/netkit-telnetd-0.17-cflags-gnu_source.patch \
+		|| die
 }
 
 src_compile() {
