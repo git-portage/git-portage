@@ -1,3 +1,7 @@
+[UNASSIGNED] blender-2.04 is linked to libMesaGLU and friends.  But, the nvidia 
+	(and xfree86, I think) packages don't install libMesa compatibility symlinks.
+	We need to either fix this or create a mesa-compat package.
+
 [achim] updating package-dependencies based on sys-build as a minimum
 	set of packages
 
