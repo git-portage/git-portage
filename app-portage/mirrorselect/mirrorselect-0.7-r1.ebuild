@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/mirrorselect/Attic/mirrorselect-0.7-r1.ebuild,v 1.3 2003/08/09 00:12:18 johnm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/mirrorselect/Attic/mirrorselect-0.7-r1.ebuild,v 1.1 2003/08/15 12:53:16 lanius Exp $
 
 DESCRIPTION="Tool to help select distfiles mirrors for Gentoo"
 HOMEPAGE="http://www.gentoo.org/"
