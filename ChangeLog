@@ -27,6 +27,13 @@ new net-dialup/minicom-1.83.1
 Minicom is a serial console program
 ryan
 
+
+date 30 May 2001
+
+date 30 May 2001
+upd app-crypt/gnupg-1.0.6
+New upstream release (with security fix) Still no SUID in ebuild.
+
 upd sys-kernel/linux-2.4.5
 upd sys-kernel/linux-sources-2.4.5
 upd sys-kernel/linux-extras-2.4.5
