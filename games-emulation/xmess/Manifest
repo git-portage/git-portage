@@ -7,6 +7,7 @@ MD5 d8ff64d3a7b9420379c1ee4fd1bf9891 xmess-0.81.1.ebuild 6357
 MD5 ba25f812aeaa66dde8dab76d4b181c21 xmess-0.83.1.ebuild 6576
 MD5 fc129de0a09da60860cee2640049d937 xmess-0.82.1.ebuild 6344
 MD5 6982e4dcba37bf5e67fbdec3a947fd90 xmess-0.88.ebuild 5595
+MD5 31a7783c16d9f23435dd3ba030e363e5 xmess-0.90.ebuild 5532
 MD5 93b9c4a740015eb7262b223c7b8b7bbf files/0.77.1-icc.patch 584
 MD5 13dc5b32bbff98dec74c41dd0c9b33a1 files/0.77.1-glx-fix.patch 597
 MD5 13dc5b32bbff98dec74c41dd0c9b33a1 files/0.78.1-glx-fix.patch 597
@@ -27,3 +28,4 @@ MD5 240bd404f0deb6cd68bf6a98a5fb76db files/0.83.1-glx-fix.patch 386
 MD5 bd94e56aecab93b1d9e02b6fb3d8a0e9 files/digest-xmess-0.83.1 67
 MD5 60b1266244271466b84fb43fc9483ff2 files/digest-xmess-0.88 65
 MD5 240bd404f0deb6cd68bf6a98a5fb76db files/0.88-glx-fix.patch 386
+MD5 7e05f3a6946fa925c047e236acd492c8 files/digest-xmess-0.90 65
