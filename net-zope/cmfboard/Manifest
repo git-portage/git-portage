@@ -1,4 +1,6 @@
-MD5 1dcaefb98c330ddeac63b89a066d7be2 cmfboard-1.4.3.ebuild 550
+MD5 95abf57aa272aecd0825383ea4d7d5d0 cmfboard-2.1.2.ebuild 559
+MD5 638e2c8bef8f50d4fb710af5c2630c90 cmfboard-1.4.3.ebuild 558
 MD5 2e24bb9379337e1731de7194029e94e9 ChangeLog 441
 MD5 7890d88c5c6d189fbe6b187a3ebb6532 metadata.xml 161
 MD5 dc2a6150d4eed9677b2404410974dff9 files/digest-cmfboard-1.4.3 66
+MD5 f0b0aba559295ce7f7c5af5bf245dc74 files/digest-cmfboard-2.1.2 66
