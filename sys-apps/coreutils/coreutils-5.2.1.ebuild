@@ -1,10 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/Attic/coreutils-5.2.0.ebuild,v 1.6 2004/04/22 17:02:05 mholzer Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/Attic/coreutils-5.2.1.ebuild,v 1.1 2004/05/17 00:01:03 seemant Exp $
 
 inherit eutils flag-o-matic
-
-IUSE="nls build acl selinux static"
 
 PATCH_VER=0.1
 I18N_VER=i18n-0.1
@@ -14,26 +12,27 @@ S=${WORKDIR}/${P}
 DESCRIPTION="Standard GNU file utilities (chmod, cp, dd, dir, ls...), text utilities (sort, tr, head, wc..), and shell utilities (whoami, who,...)"
 HOMEPAGE="http://www.gnu.org/software/coreutils/"
 SRC_URI="mirror://gnu/${PN}/${P}.tar.bz2
-	http://www.openi18n.org/subgroups/utildev/patch/${P}-${I18N_VER}.patch.gz
-	mirror://gentoo/${P}-gentoo-${PATCH_VER}.tar.bz2
 	mirror://gentoo/${P}.tar.bz2
+	mirror://gentoo/${P}-gentoo-${PATCH_VER}.tar.bz2
 	mirror://gentoo/${P}-${I18N_VER}.patch.gz
-	mirror://gentoo/${P}-gentoo-${PATCH_VER}.tar.bz2"
+	http://dev.gentoo.org/~seemant/distfiles/${P}-gentoo-${PATCH_VER}.tar.bz2
+	http://dev.gentoo.org/~seemant/distfiles/${P}-${I18N_VER}.patch.gz
+	http://dev.gentoo.org/~seemant/distfiles/${P}-gentoo-${PATCH_VER}.tar.bz2"
 
-SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc sparc ~alpha ~hppa ~mips ~ia64 amd64 ~ppc64 ~s390"
+SLOT="0"
+KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~arm ~hppa ~amd64 ~ia64 ~ppc64 ~s390"
+IUSE="nls build acl selinux static"
 
 RDEPEND="selinux? ( sys-libs/libselinux )
 	acl? ( !hppa? ( sys-apps/acl sys-apps/attr ) )
 	nls? ( sys-devel/gettext )
 	>=sys-libs/ncurses-5.3-r5"
-
 DEPEND="${RDEPEND}
 	virtual/glibc
 	>=sys-apps/portage-2.0.49
-	>=sys-devel/automake-1.8.2
-	>=sys-devel/autoconf-2.57
+	>=sys-devel/automake-1.8.3
+	>=sys-devel/autoconf-2.58
 	>=sys-devel/m4-1.4-r1
 	sys-apps/help2man"
 
@@ -45,15 +44,17 @@ src_unpack() {
 	# Mandrake's lsw patch caused issues on ia64 and amd64 with ls
 	# Reported upstream, but we don't apply it for now
 	# mv ${PATCHDIR}/mandrake/019* ${PATCHDIR}/excluded
-
+	mv ${PATCHDIR}/mandrake/025* ${PATCHDIR}/excluded
 	EPATCH_SUFFIX="patch" epatch ${PATCHDIR}/mandrake
 	epatch ${WORKDIR}/${P}-${I18N_VER}.patch
 
-	# s390 segfaults with this patch -- need to investigate for the next
-	# patch version
+	# Fixed patch for s390 to close bug 47965
+	# 
 	if use s390
 	then
 		mv ${PATCHDIR}/generic/003* ${PATCHDIR}/excluded
+		einfo Applying s390 patches
+		epatch ${FILESDIR}/003_all_coreutils-gentoo-uname-s390.patch || die
 	fi
 
 	# Apply the ACL patches. 
@@ -82,8 +83,6 @@ src_unpack() {
 
 src_compile() {
 
-#	export DEFAULT_POSIX2_VERSION=199209
-
 	if [ -z "`which cvs 2>/dev/null`" ]
 	then
 		# Fix issues with gettext's autopoint if cvs is not installed,
@@ -93,12 +92,13 @@ src_compile() {
 
 
 	export WANT_AUTOMAKE=1.8
+	export WANT_AUTOCONF=2.5
 
 	mv m4/inttypes.m4 m4/inttypes-eggert.m4
 	touch aclocal.m4 configure config.hin \
 		Makefile.in */Makefile.in */*/Makefile.in
 
-	ebegin "Reconfiguring configure scripts"
+	ebegin "Reconfiguring configure scripts (be patient)"
 	aclocal -I m4 &>/dev/null || die
 	autoconf || die
 	automake || die
@@ -126,6 +126,10 @@ src_install() {
 	dodir /usr/bin
 	rm -rf usr/lib
 
+	# add DIRCOLORS
+	insinto /etc
+	doins ${FILESDIR}/DIR_COLORS
+
 	# move non-critical packages into /usr
 	mv bin/{csplit,expand,factor,fmt,fold,join,md5sum,nl,od} usr/bin
 	mv bin/{paste,pathchk,pinky,pr,printf,sha1sum,shred,sum,tac} usr/bin
@@ -133,10 +137,10 @@ src_install() {
 	cd usr/bin
 	ln -s ../../bin/* .
 
-	if [ -z "`use build`" ]
+	if ! use build
 	then
 		cd ${S}
-		dodoc AUTHORS ChangeLog* COPYING NEWS README* THANKS TODO
+		dodoc AUTHORS ChangeLog* NEWS README* THANKS TODO
 	else
 		rm -rf ${D}/usr/share
 	fi
