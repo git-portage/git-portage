@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/pgf/Attic/pgf-0.63.ebuild,v 1.1 2004/10/05 07:03:08 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/pgf/Attic/pgf-0.65.ebuild,v 1.1 2005/02/08 11:46:06 usata Exp $
 
 inherit latex-package
 
