@@ -1,0 +1,5 @@
+MD5 7d1424b6a2c002b9b19ed32061d2480b gwhois-20050115.ebuild 775
+MD5 47337a45894d983bd90d7378029cc898 metadata.xml 461
+MD5 70bbcec54141bf60c00c53fc4de1d6c0 ChangeLog 283
+MD5 9850f759ea3fb3a769ec1165c6a5ca3c files/gwhois.xinetd 305
+MD5 f7291cd41f4ce2bd1e3731680509ce36 files/digest-gwhois-20050115 66
