@@ -1,3 +1,11 @@
+15.09.2000
+	-New net-www/netscape-plugger		(drobbins)
+	-New net-www/netscape/navigator		(drobbins)
+	-Added navigator/netscape postinst	(drobbins)
+	[Adds MOZILLA_HOME to /etc/profile]
+	-Modified ebuild			(drobbins)
+	[supports new "try" syntax]
+
 14.09.2000
 
 	- Modified joe-2.8			(achim)
