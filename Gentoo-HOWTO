@@ -1,4 +1,5 @@
 Gentoo-HOWTO
+
 Written by Peter Gavin <pete@gentoo.org> and other members of the
 Gentoo Team
 
@@ -159,3 +160,61 @@ II. The Portage Tree
 	should not compress these diffs, since 1) they should not be big
 	enough to require compressing, and 2) cvs does not play well
 	with binary files.
+
+	Please add a suffix or prefix such as ${PV}-${PR} to the tail
+	of every file you put into the files directory, so that the
+	files used for each individual version of your ebuild scripts
+	are distinguishable from one another, and so that the changes
+	between different revisions are visible.
+
+III. .ebuild Files
+
+	.ebuild files are the basis for the entire portage
+	system. They contain all the information required to build a
+	package, and every installed package requires one of these
+	files. .ebuild files are essentially just bash scripts that
+	contain a few functions and environment variable settings. The
+	ebuild command takes care of the rest of the details, such as
+	merging the package into the filesystem and recording the
+	package into the package database.
+
+  A. Naming .ebuild Files
+
+	.ebuild file names are in four sections.
+	
+	The first section is the package name, which should only
+	contain lowercase letters, the digits 0-9, and hyphen ('-')
+	characters.
+	
+	The second section is the version of the package, which should
+	normally be the same as the version on the main source
+	tarball. The version is normally made up of 2 or 3 numbers
+	separated by periods, such as 1.2 or 4.5.2, and may have a
+	single letter immidiately following the last digit, e.g., 1.4b
+	or 2.6h. This letter should *not* be used to signify alpha or
+	beta status for the package. There are 3 special suffixes that
+	may be used for these packages: _alpha, _beta, and _pre. Each
+	of these suffixes may be immediately followed my a number,
+	e.g., 'linux-2.4.0_pre10'.
+	
+	The third section of the package name is the revision number,
+	which is specified by -r#, where '#' is a number,
+	e.g. 'package-4.5.3-r3'. This revision number is independent of
+	the version of the source tarball, but if you need to make
+	non-trivial changes to your .ebuild file, you should copy the
+	.ebuild file to a new file with the revision number
+	incremented by 1. Initial releases normally have no revision
+	number, e.g. 'package-4.5.3'.
+
+	The fourth section of the .ebuild file name is always the
+	.ebuild extension.
+
+  B. Contents of an .ebuild File
+
+  C. Rules for Writing an .ebuild File
+
+IV. Filesystem Locations
+
+  A. Introduction to the FHS
+
+  B. How to Fit Your Packages into the Filesystem
