@@ -1,5 +1,8 @@
-MD5 acc4b53dae0f7c6f7c82b4499efd8646 ChangeLog 3989
-MD5 b77ab3c44f00603c739801761e72a876 ntop-3.1.ebuild 2431
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 b85db4d0ddd0f5ab29f9906025173d54 ChangeLog 3995
+MD5 fa14dfb945369a389b4b6595e17f5517 ntop-3.1.ebuild 2436
 MD5 846e7479e3e9df4363f2721b7fb47320 metadata.xml 233
 MD5 b2252d7686d4b31006c573908d459e77 ntop-3.0.ebuild 1607
 MD5 bb970d07a76d2b939ec08c2796519021 files/digest-ntop-3.1 58
@@ -7,3 +10,10 @@ MD5 d1e896708a98eaca02f55c44ae517768 files/globals-core.c.diff 536
 MD5 a9cad5851ac81cbd8589f60287f3e497 files/ntop-confd 131
 MD5 9e6b1e20779d7fb6699c956adf6b8b05 files/ntop-init 294
 MD5 35c576fac5bd8cbf0da850ccc00dd924 files/digest-ntop-3.0 58
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFB6ew/mdTrptrqvGERAieMAJ9iWrDU8jOS5MDNE3wTK/0rHspSlQCfYf+o
+7v9r7Ae9KTwqRNYhqjJQqz8=
+=dQeJ
+-----END PGP SIGNATURE-----
