@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/acpid/Attic/acpid-1.0.2.ebuild,v 1.1 2003/05/14 18:35:04 hanno Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/acpid/Attic/acpid-1.0.2-r1.ebuild,v 1.1 2003/06/07 08:35:47 seemant Exp $
 
 S="${WORKDIR}/${P}"
 DESCRIPTION="Daemon for Advanced Configuration and Power Interface."
@@ -17,8 +17,11 @@ DEPEND="virtual/glibc
 	virtual/linux-sources"
 
 src_compile() {
-	make INSTPREFIX=${D} \
-	CFLAGS="${CFLAGS} -DVERSION=\"\\\"${PV}\\\"\"" || die
+
+	# DO NOT COMPILE WITH OPTIMISATIONS.
+	# That is a note to the devs.  IF you are a user, go ahead and optimise
+	# if you want, but we won't support bugs associated with that"
+	make INSTPREFIX=${D} || die
 }
 
 src_install() {
