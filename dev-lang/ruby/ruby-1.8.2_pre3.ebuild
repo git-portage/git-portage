@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.2_pre3.ebuild,v 1.13 2004/12/03 06:02:36 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.2_pre3.ebuild,v 1.14 2005/01/01 15:47:09 usata Exp $
 
 ONIGURUMA="onigd2_3_2"
 
