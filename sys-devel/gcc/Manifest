@@ -144,6 +144,7 @@ MD5 43c60f04779324d74d3aac52224bed95 files/3.3.3/gcc333_pre20040426-gentoo-brand
 MD5 9ba0bd0b103cf9535927ad7c482fe780 files/3.3.3/gcc333-debian-arm-getoff.patch 3501
 MD5 25eda9981106a55c413d1df3d3a87db5 files/3.3.3/gcc333-debian-arm-ldm.patch 3383
 MD5 ff6d7b5082c5e39fab8a5d8932c1a8b7 files/3.3.3/gcc-3.3.3-uclibc-add-ssp.patch 461
+MD5 308a0e53f03e9cb74b3d12c2633cbee2 files/3.3.3/gcc-uclibc-3.3-loop.patch 433
 MD5 d9ae122db2768f8e504dfef256d4991f files/3.3.2/gcc332-gentoo-branding.patch 874
 MD5 9e7ed6184a1cdcb69db29f1de26c2d18 files/3.3.2/gcc332-altivec-fix.patch 1607
 MD5 c89b605fe512439cf492c1c378226c7c files/3.4.0/gcc-3.4.0-fno-for-scope.patch 1604
