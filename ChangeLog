@@ -1,5 +1,9 @@
 date 29 Jan 2001
 
+upd sys-apps/portage-1.4-r7 to 1.4-r8
+drobbins
+should now use spython exclusively
+
 upd sys-devel/spython-2.0-r1 to 2.0-r2
 drobbins
 added a /usr/bin/python symlink
