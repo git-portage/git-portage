@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/Attic/vlc-0.7.1-r1.ebuild,v 1.8 2004/07/28 20:03:44 kanaka Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/Attic/vlc-0.7.2-r1.ebuild,v 1.1 2004/07/28 20:03:44 kanaka Exp $
 
 inherit libtool gcc eutils
 
@@ -9,17 +9,19 @@ inherit libtool gcc eutils
 #	theora - package not in portage yet - experimental
 #	tremor - package not in portage yet - experimental
 
+IUSE="arts ncurses dvd gtk nls 3dfx svga fbcon esd X alsa ggi speex
+	oggvorbis gnome xv oss sdl aalib slp bidi truetype v4l lirc
+	wxwindows imlib matroska dvb mozilla debug faad
+	xosd altivec png dts"
+
 DESCRIPTION="VLC media player - Video player and streamer"
-SRC_URI="http://download.videolan.org/pub/${PN}/${PV}/${P}.tar.bz2"
+SRC_URI="http://download.videolan.org/pub/videolan/${PN}/${PV}/${P}.tar.bz2"
 
 HOMEPAGE="http://www.videolan.org/vlc"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc amd64"
-IUSE="3dfx X aalib alsa arts bidi debug dvb dvd esd faad fbcon ggi gnome gtk
-	imlib joystick lirc mad matroska mozilla ncurses nls oggvorbis oss png sdl slp
-	speex svga truetype v4l wxwindows xosd xv"
+KEYWORDS="~x86 ~ppc ~amd64"
 
 RDEPEND="X? ( virtual/x11 )
 	aalib? ( >=media-libs/aalib-1.4_rc4-r2
@@ -40,31 +42,33 @@ RDEPEND="X? ( virtual/x11 )
 	lirc? ( app-misc/lirc )
 	mad? ( media-libs/libmad
 		media-libs/libid3tag )
-	matroska? ( >=media-libs/libmatroska-0.6.2 )
-	mozilla? ( >=net-www/mozilla-1.4 )
+	matroska? ( >=media-libs/libmatroska-0.7 )
+	mozilla? ( >=net-www/mozilla-1.5 )
 	ncurses? ( sys-libs/ncurses )
 	nls? ( >=sys-devel/gettext-0.12.1 )
-	oggvorbis? ( >=media-libs/libvorbis-1.0
-		>=media-libs/libogg-1.0 )
+	oggvorbis? ( >=media-libs/libvorbis-1.0.1
+		>=media-libs/libogg-1.1 )
 	sdl? ( >=media-libs/libsdl-1.2.5 )
-	slp? ( >=net-libs/openslp-1.0.10 )
+	slp? ( >=net-libs/openslp-1.0.11 )
 	bidi? ( >=dev-libs/fribidi-0.10.4 )
 	truetype? ( >=media-libs/freetype-2.1.4 )
-	wxwindows? ( >=x11-libs/wxGTK-2.4.1 )
+	wxwindows? ( >=x11-libs/wxGTK-2.4.2 )
 	xosd? ( >=x11-libs/xosd-2.0 )
 	3dfx? ( !amd64? ( media-libs/glide-v3 ) )
 	png? ( >=media-libs/libpng-1.2.5 )
-	speex? ( >=media-libs/speex-1.0.3 )
+	speex? ( >=media-libs/speex-1.1.5 )
+	dts? ( >=media-libs/libdts-0.0.2 )
 	svga? ( media-libs/svgalib )
-	>=media-sound/lame-3.93.1
-	>=media-libs/libdvbpsi-0.1.3
+	>=media-sound/lame-3.96
+	>=media-libs/libdvbpsi-0.1.4
 	>=media-libs/a52dec-0.7.4
 	>=media-libs/libmpeg2-0.4.0
 	>=media-video/ffmpeg-0.4.8.20040222
 	=media-plugins/live-2004.03*
 	>=media-libs/flac-1.1.0"
 
-DEPEND="$RDEPEND >=sys-devel/autoconf-2.5.8"
+DEPEND="$RDEPEND >=sys-devel/autoconf-2.5.8
+	>=sys-devel/automake-1.7.9"
 
 src_unpack() {
 	unpack ${A}
@@ -75,6 +79,9 @@ src_unpack() {
 		-e "s:/usr/include/glide:/usr/include/glide3:" \
 		-e "s:glide2x:glide3:" \
 		configure
+
+	# Fix the default font
+	sed -i -e "s:/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf:/usr/X11R6/lib/X11/fonts/truetype/timesbd.ttf:" modules/misc/freetype.c
 
 	cd ${S}/modules/video_output
 	epatch ${FILESDIR}/glide.patch
@@ -88,10 +95,14 @@ src_compile() {
 	local myconf
 	myconf="--disable-mga --enable-flac --with-gnu-ld \
 			--enable-a52 --enable-dvbpsi --enable-libmpeg2 \
-			--disable-qt --disable-kde --disable-libcdio --disable-libcddb \
-			--disable-vcdx --enable-ffmpeg --with-ffmpeg-mp3lame \
-			--enable-livedotcom --with-livedotcom-tree=/usr/lib/live \
-			--disable-skins2" #keep the new skins disabled for now
+			--disable-qt --disable-kde --disable-gnome --disable-gtk \
+			--disable-libcdio --disable-libcddb --disable-vcdx \
+			--enable-ffmpeg --with-ffmpeg-mp3lame \
+			--enable-livedotcom --with-livedotcom-tree=/usr/lib/live"
+
+	# qt, kde, gnome and gtk interfaces are deprecated and in a bad condition
+	# the same for mga video, libdv and xvid decoders 
+	# cddax and vcdx (which depend on libcdio and libcddb) are not ready yet
 
 	#--enable-pth				GNU Pth support (default disabled)
 	#--enable-st				State Threads (default disabled)
@@ -105,7 +116,7 @@ src_compile() {
 	use debug && myconf="${myconf} --enable-debug" \
 		|| myconf="${myconf} --enable-release"
 
-	(use imlib && use wxwindows) && myconf="${myconf} --enable-skins"
+	(use imlib && use wxwindows) && myconf="${myconf} --enable-skins --enable-skins2"
 
 	use mozilla \
 		&& myconf="${myconf} --enable-mozilla \
@@ -157,7 +168,6 @@ src_compile() {
 		$(use_enable dvb pvr) \
 		$(use_enable joystick) $(use_enable lirc) \
 		$(use_enable arts) \
-		$(use_enable gtk) $(use_enable gnome) \
 		$(use_enable oggvorbis ogg) $(use_enable oggvorbis vorbis) \
 		$(use_enable speex) \
 		$(use_enable matroska mkv) \
@@ -169,6 +179,7 @@ src_compile() {
 		$(use_enable xv xvideo) \
 		$(use_enable X x11) \
 		$(use_enable 3dfx glide) \
+		$(use_enable dts) \
 		${myconf} || die "configure of VLC failed"
 
 	if [[ $(gcc-major-version) == 2 ]]; then
