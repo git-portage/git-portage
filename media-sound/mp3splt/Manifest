@@ -2,5 +2,7 @@ MD5 61b2b19467bd653e911750704ca175cf ChangeLog 1145
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 f755f435e58a6ce93dae23484bf9b0c9 mp3splt-1.9.ebuild 622
 MD5 fba4adeaee07a29531ebbbef5d465598 mp3splt-2.0.ebuild 659
+MD5 cd2e1b40661d85eeccd1e7bd24ab7d0b mp3splt-2.1.ebuild 743
 MD5 ec72cb8362f4c7c6639a753caae578c5 files/digest-mp3splt-1.9 67
 MD5 d36042050af0b92de170e23cd2240e19 files/digest-mp3splt-2.0 67
+MD5 cad024d0f5e134b2da7e63f728f73cdd files/digest-mp3splt-2.1 67
