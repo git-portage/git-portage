@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Achim Gottinger <achim@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/libgda/Attic/libgda-0.2.95.ebuild,v 1.1 2002/01/27 14:02:54 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/libgda/Attic/libgda-0.2.96.ebuild,v 1.1 2002/06/07 20:43:21 azarah Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="gda lib"
@@ -11,6 +11,7 @@ HOMEPAGE="http://www.gnome.org/gnome-db"
 
 RDEPEND="virtual/glibc
 	 >=gnome-base/gconf-1.0.4-r2
+	 <gnome-base/gconf-1.1
 	 >=gnome-base/oaf-0.6.6-r1
 	 >=gnome-base/bonobo-1.0.9-r1
 	 >=dev-libs/libxslt-1.0.1
@@ -24,6 +25,7 @@ RDEPEND="virtual/glibc
 	 ldap? ( >=net-nds/openldap-1.2.11 )"
 
 DEPEND="${RDEPEND}
+	>=app-text/scrollkeeper-0.2-r3
 	sys-apps/which"
 
 
@@ -36,10 +38,13 @@ src_compile() {
 		myconf="--with-mysql=/usr"
 	fi
 
-  	if [ "`use ldap`" ]
-	then
-    		myconf="$myconf --with-ldap=/usr"
-  	fi
+#  	if [ "`use ldap`" ]
+#	then
+#    		myconf="$myconf --with-ldap=/usr"
+#  	fi
+#
+# LDAP support is currently broken
+	myconf="$myconf --without-ldap"
 
   	if [ "`use odbc`" ]
 	then
@@ -60,25 +65,25 @@ src_compile() {
 	grep -v sqlite configure.orig >configure
 	chmod +x configure
 
-	./configure --host=${CHOST} 					\
-		    --prefix=/usr	 				\
-		    --sysconfdir=/etc		 			\
-		    --localstatedir=/var/lib				\
+	./configure --host=${CHOST} \
+		    --prefix=/usr \
+		    --sysconfdir=/etc \
+		    --localstatedir=/var/lib \
 		    $myconf || die
 
 	# Build and use an external version of sqlite since some versions
 	# of libgda have a bug where the buildin do not compile.
 	# Also cant hurt to use the latest version of sqlite :)
-	mv ${S}/providers/gda-default-server/gda-default.h 		\
+	mv ${S}/providers/gda-default-server/gda-default.h \
 		${S}/gda-default.h.orig
-	sed -e 's/\"build_sqlite\/sqlite\.h\"/<sqlite.h>/'		\
-		${S}/gda-default.h.orig >				\
+	sed -e 's/\"build_sqlite\/sqlite\.h\"/<sqlite.h>/' \
+		${S}/gda-default.h.orig > \
 		${S}/providers/gda-default-server/gda-default.h || die
-	ln -s /usr/lib/libsqlite.a					\
+	ln -s /usr/lib/libsqlite.a \
 		${S}/providers/gda-default-server/sqlite/libsqlite.a
-	mv providers/gda-default-server/Makefile			\
+	mv providers/gda-default-server/Makefile \
 		providers/gda-default-server/Makefile.orig
-	grep -v '= sqlite' providers/gda-default-server/Makefile.orig >	\
+	grep -v '= sqlite' providers/gda-default-server/Makefile.orig > \
 		providers/gda-default-server/Makefile
 
 	# Doesn't work with -j 4 (hallski)
@@ -93,14 +98,12 @@ src_install() {
 	rm Makefile.old
 	cd ${S}
 
-	make  prefix=${D}/usr						\
-	      sysconfdir=${D}/etc					\
-	      localstatedir=${D}/var/lib				\
-	      INSTALLMAN3DIR=${D}/usr/share/man/man3 			\
-	      GDA_oafinfodir=${D}/usr/share/oaf				\
+	make  prefix=${D}/usr \
+	      sysconfdir=${D}/etc \
+	      localstatedir=${D}/var/lib \
+	      INSTALLMAN3DIR=${D}/usr/share/man/man3 \
+	      GDA_oafinfodir=${D}/usr/share/oaf \
 	      install || die
-
-	into /usr
 
 	# Not needed as we build sqlite seperately
 #	dobin providers/gda-default-server/build_sqlite/{lemon,sqlite}
@@ -117,3 +120,4 @@ pkg_postrm() {
 	echo ">>> Updating Scrollkeeper database..."
 	scrollkeeper-update >/dev/null 2>&1
 }
+

@@ -1,28 +1,41 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Achim Gottinger <achim@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-db/Attic/gnome-db-0.2.95.ebuild,v 1.1 2002/01/27 14:18:38 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-db/Attic/gnome-db-0.2.96.ebuild,v 1.1 2002/06/07 20:43:26 azarah Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Framework for creating database applications"
 SRC_URI="ftp://ftp.gnome-db.org/pub/gnome-db/sources/latest/${P}.tar.gz
 	ftp://ftp.gnome.org/pub/GNOME/stable/sources/${PN}/${P}.tar.gz"
 HOMEPAGE="http://www.gnome.org/gnome-office/gnomedb.shtml"
+SLOT="0"
 
 RDEPEND=">=gnome-base/bonobo-1.0.9-r1
 	 >=gnome-extra/libgda-${PV}
-	 >=gnome-extra/gal-0.13-r1"
+	 >=gnome-extra/gal-0.13-r1
+	 nls? ( sys-devel/gettext )"
 
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.11"
 
 
 src_compile() {
+	local myopts
+
+	if [ "`use nls`" ]
+	then 
+		myopts="--enable-nls"
+	else
+		myopts="--disable-nls"
+	fi
+
 	./configure --host=${CHOST} \
 		--prefix=/usr \
+		--mandir=/usr/share/man \
 		--sysconfdir=/etc \
 		--localstatedir=/var/lib \
-		--disable-bonobotest || die
+		--disable-bonobotest \
+		${myopts} || die
 	emake || die
 }
 
@@ -35,8 +48,9 @@ src_install() {
 
 	make prefix=${D}/usr \
 		sysconfdir=${D}/etc \
+		mandir=${D}/usr/share/man \
 		localstatedir=${D}/var/lib \
-		localedir=${D}/usr/share/local \
+		localedir=${D}/usr/share/locale \
 		GNOME_sysconfdir=${D}/etc \
 		GNOME_datadir=${D}/usr/share \
 		GNOMEDB_oafinfodir=${D}/usr/share/oaf \
