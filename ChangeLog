@@ -1,5 +1,9 @@
 date 24 Nov 2000
 
+upd app-arch/dump-0.4.20_beta to 0.4.20_beta-r1
+drobbins
+fixed rdump and rrestore symlinks
+
 del sys-apps/mkisofs-1.13-r1
 drobbins
 This program is included in app-cdr/cdrecord and we don't

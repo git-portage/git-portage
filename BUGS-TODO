@@ -1,11 +1,11 @@
 [21 Nov 2000 -drobbins]
 	
-	In the rc3 sys.tbz2 tarball, bzImage should be in /boot/boot (GRUB will look
+	[DONE -- if new linux ebuilds are used ] In the rc3 sys.tbz2 tarball, bzImage should be in /boot/boot (GRUB will look
 	for it at /boot/bzImage)
 
 [18 Nov 2000 -achim]
 	
-	[FIXED?] The dependencies check fails if there are different version from a
+	[FIXED] The dependencies check fails if there are different version from a
 	package installed
 
 [15 Nov 2000 - drobbins]
@@ -21,14 +21,17 @@
 	
 	[IN PROGRESS - by drobbins ] Replace syslogd and klogd with multilog and gluelog and glueklog
 	
-	[IN PROGRESS - by drobbins ] Move daemontools and ucspi-tcp to sys-apps, add supervise support to various packages
+	[DONE] Move daemontools and ucspi-tcp to sys-apps, 
 	
-	[ON HOLD] Upgrade default kernel to 2.4.0-test10 with patches?  What does everyone think?
+	[UNASSIGNED] add supervise support to various packages
 	
-	[UNASSIGNED] We need to add dump/restore to sys-apps -- but the darn thing depends on libtermcap!
+	[IN PROGRESS] Upgrade default kernel to 2.4.0-test10 with patches?  What does everyone think?
+	
+	[DONE] We need to add dump/restore to sys-apps -- but the darn thing depends on libtermcap!
 		(It'll need a patch to link against ncurses instead)
-	
-	[ON HOLD (until next release)] Default kernel location should be moved from /boot/bzImage -> /boot/boot/bzImage
+	(It's been added to app-arch, which is fine)
+
+	[DONE -- if the new linux ebuilds are used] Default kernel location should be moved from /boot/bzImage -> /boot/boot/bzImage
 
 [13 Nov 2000 - drobbins]
 	[UNASSIGNED] Upgrade fetch feature of ebuild to eliminate partial download problem.
