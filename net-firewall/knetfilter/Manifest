@@ -1,3 +1,5 @@
 MD5 83325d411f35ff7b2ae56ac8b35a6b6f knetfilter-3.1.1.ebuild 662
-MD5 eeedda1e88b06e4caf29fcde0d6aa18c ChangeLog 3288
+MD5 71fa46045a2a144bb59f27059d8d0930 knetfilter-3.2.0.ebuild 556
+MD5 788d72f00a2c66a9b1b9fcf43406018f ChangeLog 3412
 MD5 51d22e72cb798fd2bd4b7a0c80fe3ce7 files/digest-knetfilter-3.1.1 69
+MD5 aa641f60878da403cc802fc22ae18220 files/digest-knetfilter-3.2.0 68
