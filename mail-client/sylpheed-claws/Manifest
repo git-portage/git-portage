@@ -1,10 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 5d0a878a0318c6d261424c0f55af1345 metadata.xml 392
 MD5 c403b75cf16546b72fd4ab913e73c6a3 sylpheed-claws-0.9.12a-r1.ebuild 6468
 MD5 608736abc5ce88ce79e42bf278927d1d sylpheed-claws-0.9.12b.ebuild 5137
 MD5 71fea05f27be5ab0cc4cd521b1a3b4b5 ChangeLog 16891
+MD5 1fe95568e4f11f65e1e51f3d94494962 sylpheed-claws-0.9.12b-r1.ebuild 3234
 MD5 f366fed6a9d8af37e2a6958bd172da3f sylpheed-claws-0.9.11.ebuild 3757
 MD5 5509d107e381e5c8ec716dbd6dae6035 sylpheed-claws-0.9.12a.ebuild 4245
 MD5 8ca534b232f6988e9df8e9fd48563e43 files/digest-sylpheed-claws-0.9.11 149
@@ -14,10 +12,4 @@ MD5 db15d20129837459a3b58fc654301b7c files/digest-sylpheed-claws-0.9.12a 279
 MD5 127bc1fa7e9c9f3d46b0df6f05446360 files/digest-sylpheed-claws-0.9.12a-r1 442
 MD5 45bfbd485eaab36a0fb284365ee07ca8 files/digest-sylpheed-claws-0.9.12b 409
 MD5 e4776c1d04bababc02a76a8102e18108 files/vcalendar-0.4-ical.patch 2292
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBcsyD6J2i8a8J4okRAqA1AJ9WPlrQz25FzdU+WCwZlKcxFwM2DACg0LtF
-JxWaPIJpuQu9JG/9Sv9uFgg=
-=VT28
------END PGP SIGNATURE-----
+MD5 60eaf129bf082ddccef4b8fe4776b353 files/digest-sylpheed-claws-0.9.12b-r1 76
