@@ -1,14 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 811d9d24c771790308421f430293817b ChangeLog 785
+MD5 a987cea6e9d76755099ff463ed917208 ChangeLog 954
 MD5 0c131a7201c4670302767f93643876fa metadata.xml 165
-MD5 b84cd607a97e715a129ab10577fd46ae talkfilters-2.1.ebuild 647
+MD5 f9c7f1248f9f9bbb2781f251c1cac2b7 talkfilters-2.1.ebuild 606
+MD5 1aafbaa829b4eb48c413dddbd59930eb talkfilters-2.3.3.ebuild 915
 MD5 e98c05d941b1703fe449023656b827f0 files/digest-talkfilters-2.1 67
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBd9JUEZCkKN40op4RAvLDAJ9VzJ9Y6INLZSyWzow04ssy9nINrgCfSPys
-oeaGf+M5V14XeqnzKQmX25c=
-=oXv8
------END PGP SIGNATURE-----
+MD5 2bf3bf8d8322640c5c4580ccd2f233c9 files/digest-talkfilters-2.3.3 69
