@@ -236,7 +236,7 @@
 ./media-sound/sox/sox-12.17.1.ebuild
 ./media-sound/xmms/xmms-1.2.3.ebuild
 ./media-video/avifile/avifile-0.50.ebuild
-./media-video/bcast-2000/bcast-2000b-r1.ebuild
+./media-video/bcast-2000/bcast-2000b-r2.ebuild
 ./media-video/lamp/lamp-20000903.ebuild
 ./media-video/mjpeg-tools/mjpeg-tools-1a.ebuild
 ./media-video/mpeg-movie/mpeg-movie-1.6.0.ebuild
