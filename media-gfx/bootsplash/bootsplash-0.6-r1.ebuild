@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/bootsplash/Attic/bootsplash-0.5.ebuild,v 1.3 2003/04/21 01:25:48 tad Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/bootsplash/Attic/bootsplash-0.6-r1.ebuild,v 1.1 2003/06/23 13:29:11 tad Exp $
 
 DESCRIPTION="Graphical backgrounds for frame buffer consoles"
 
@@ -77,13 +77,14 @@ src_install() {
 }
 
 pkg_postinst() {
+	# Has to be done here so that the initrd images are created properly
 	for SIZE in 800x600 1024x768 1280x1024
 	do
 		/sbin/splash -s -f /etc/bootsplash/gentoo/config/bootsplash-${SIZE}.cfg > /usr/share/${PN}/initrd-${SIZE}
 	done
 
 	einfo
-	einfo "Execute \"ebuild /var/db/pkg/media-gfx/${PN}/${P}.ebuild config\""
+	einfo "Execute \"ebuild /var/db/pkg/media-gfx/${P}/${P}.ebuild config\""
 	einfo "to have your kernel sources in /usr/src/linux patched with the"
 	einfo "Framebuffer Bootsplash patches"
 	einfo
