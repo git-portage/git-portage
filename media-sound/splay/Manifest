@@ -1,4 +1,5 @@
-MD5 ca5be3e35f5c71027ef9387deeb70c7c ChangeLog 791
+MD5 a4a6a42083b94cbb3bb87ea8c158d92d splay-0.9.5.2.ebuild 955
+MD5 8b43860aa13e5a9935fbdc6b6a8e9d4d ChangeLog 996
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
-MD5 8f73e2555b53183889ea8d4669c676fc splay-0.9.5.2.ebuild 966
 MD5 2dfdb702aadb0c285c3bbeb861a81810 files/digest-splay-0.9.5.2 65
+MD5 79fd2bcd5390d2bf54d6e7fabd2fc367 files/splay-0.9.5.2-external-id3lib.diff 618
