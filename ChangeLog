@@ -1,5 +1,9 @@
 date 21 June 2001
 
+new app-misc/multimon
+Multimon decodes digital transmission modes using OSS
+ryan
+
 new media-gfx/xfig
 The xfig figure editor.
 tadpol
