@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9f2b75a5738fb492bdd6a50db9b1c8a0 gcc-3.2.3-r4.ebuild 19754
 MD5 a48f0b2b1ee2697060cb2cd31a0e963d gcc-3.3.2-r5.ebuild 21248
 MD5 9b8536edd1111148d5a8ac9c3ab02288 gcc-3.3.4-r1.ebuild 24749
@@ -105,3 +108,10 @@ MD5 007c62d92efd70fd44c4d2e6a326036b files/3.4.3/libffi-without-libgcj.patch 165
 MD5 7434140298091f759eba5e9706264130 files/3.4.3/libssp.patch 2029
 MD5 523970c128b929fe7c7cf36508ebd1d5 files/2.95.3/gcc-2.95.3-new-atexit.diff 13604
 MD5 b1a242694f56184cbcdd40ba25800d50 files/2.95.3/gcc-2.95.3-alpha.diff 14345
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.9.10 (GNU/Linux)
+
+iD8DBQFBqccjI1lqEGTUzyQRAgiVAJ0Z/UsXqrLxo75CyZARcVknXVTn0QCg3rO3
+ua9WSOlkOGhZsGrNykzgr6o=
+=lf2b
+-----END PGP SIGNATURE-----
