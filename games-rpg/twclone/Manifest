@@ -1,5 +1,7 @@
 MD5 1f5333eb3ad0d81f05bb5562ca7d4125 ChangeLog 340
 MD5 6980b005434b3a1b20ff7c94d2a2782b metadata.xml 514
 MD5 3f36707631f9d2962f1a9346571d1f92 twclone-0.12.ebuild 798
+MD5 c4719513d0565973cb08d6b97374c0fa twclone-0.14.ebuild 707
 MD5 c3b6734d48a947141b36bf928c84568e files/0.12-glibc-sendmsg.patch 1582
 MD5 cbb92ca565e221232fb5a086a55b7214 files/digest-twclone-0.12 71
+MD5 e85bc3cfade6d13cc43b56c03e3c7416 files/digest-twclone-0.14 71
