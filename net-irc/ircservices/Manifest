@@ -1,7 +1,5 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 7eefb9f4a90f5cd3562a5d33f9acfe02 ircservices-5.0.42.ebuild 2819
+MD5 7eefb9f4a90f5cd3562a5d33f9acfe02 ircservices-5.0.44.ebuild 2819
 MD5 e791baad78892c23ebadbd7c706e1b45 ircservices-5.0.41.ebuild 2772
 MD5 6246835cb69abef4b435417171b9b7c4 ChangeLog 1791
 MD5 44c39c6ad372a8e5a5e7ee3311f703a7 metadata.xml 160
@@ -10,10 +8,4 @@ MD5 d9efecafab50b58223b6a7bb30f6949e files/ircservices.init.d 700
 MD5 0dc39b8e38a74a2fca213bf4e2f63d3e files/5.0.37-fPIC.patch 1172
 MD5 640703097837e991b6105cf0e813e607 files/digest-ircservices-5.0.41 71
 MD5 345cf44e264655b6edab71fbe1959e69 files/digest-ircservices-5.0.42 71
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.9.10 (GNU/Linux)
-
-iD8DBQFBsmDKI1lqEGTUzyQRAlxtAJ9PQqeEEewTlstusFhO++n7lNnP3ACgwQ59
-5I5BxPdABFPwdKscucaaxMs=
-=nkFm
------END PGP SIGNATURE-----
+MD5 87fe1756e2b9d6dfd209960003623c11 files/digest-ircservices-5.0.44 71
