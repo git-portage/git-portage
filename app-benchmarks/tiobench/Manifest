@@ -1,3 +1,6 @@
-MD5 8804b4308915c7d20a112235df55b72d ChangeLog 991
 MD5 c5c0c8171235722e0969e8c83d997706 tiobench-0.3.3-r1.ebuild 940
+MD5 441623d83debd775b2a09753264496ff tiobench-0.3.3-r2.ebuild 997
+MD5 8804b4308915c7d20a112235df55b72d ChangeLog 991
 MD5 b0e08c271d30b5da41b55be795a8773e files/digest-tiobench-0.3.3-r1 65
+MD5 b0e08c271d30b5da41b55be795a8773e files/digest-tiobench-0.3.3-r2 65
+MD5 648c1a6986bda338884f8f77ee48a4a5 files/0.3.3-column-description-fix.patch 1063
