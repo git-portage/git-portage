@@ -1,9 +1,9 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-MD5 64843deea0312441f552f97d6ee26426 ChangeLog 10684
+MD5 701d6fe42896b7f64356f6e40ca2c7d3 ChangeLog 10471
 MD5 365f9493d00d9412d572b6a392bfbc51 jack-audio-connection-kit-0.80.0.ebuild 1775
-MD5 3e9980d6dda366ef24bd1f9ecc7be7c3 jack-audio-connection-kit-0.99.0-r1.ebuild 2441
+MD5 710c7cededde4775b22336b26d53fe0f jack-audio-connection-kit-0.99.0-r1.ebuild 2405
 MD5 66bb10414721c40dd93bebd1d3f7e9b9 jack-audio-connection-kit-0.98.1-r1.ebuild 2120
 MD5 bf663ce8a92c2873735ff360edf99f5a metadata.xml 220
 MD5 9068d5fd09d15355ad0ff859b82f5038 files/digest-jack-audio-connection-kit-0.80.0 84
@@ -15,7 +15,7 @@ MD5 0ad8a4c606e807460bce497d044044ef files/jack-audio-connection-kit-doc-option.
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.2.6 (GNU/Linux)
 
-iD8DBQFBtAtPArHZZzCEUG0RAqLjAJwJmZuyTe2ST+m1hwsj4SFfacj8sgCeN9So
-w/LK5NcQJiOsd+OpNSgc6/A=
-=Dnt+
+iD8DBQFBtAt4ArHZZzCEUG0RAoIkAJ9/4BBu7dbvMyYD9xza0J1DJOWwCQCfbrsN
+1LYWygdMg2ZSX5cSAjV3xWY=
+=UqRy
 -----END PGP SIGNATURE-----
