@@ -1,3 +1,5 @@
 MD5 bfb7a7289e3d7ba0f84542e55c10b4b8 ChangeLog 2525
-MD5 89ab329ee24944112400dfe25ea6018c ExtUtils-MakeMaker-6.05-r4.ebuild 1852
+MD5 d6d620c4da5a7be8c42d2cdbad7c2747 ExtUtils-MakeMaker-6.05-r4.ebuild 3325
+MD5 b020b8a1b75f9680dc0d989e8cd01326 ExtUtils-MakeMaker-6.05-r5.ebuild 3200
 MD5 2cc7445bb2472696df202d4f1eccae98 files/digest-ExtUtils-MakeMaker-6.05-r4 75
+MD5 2cc7445bb2472696df202d4f1eccae98 files/digest-ExtUtils-MakeMaker-6.05-r5 75
