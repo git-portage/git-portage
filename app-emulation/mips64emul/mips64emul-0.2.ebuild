@@ -1,32 +1,19 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/mips64emul/Attic/mips64emul-0.2_pre.ebuild,v 1.1 2004/07/31 08:21:16 kumba Exp $
-
-inherit eutils
-
-STABLEVERSION="0.1.1"
-SNAPSHOT="20040730"
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/mips64emul/Attic/mips64emul-0.2.ebuild,v 1.1 2004/09/11 05:14:53 kumba Exp $
 
 DESCRIPTION="MIPS Machine Emulator, Emulates many machines/CPUs/OSes"
 HOMEPAGE="http://www.mdstud.chalmers.se/~md1gavan/${PN}/index.html"
-SRC_URI="http://www.mdstud.chalmers.se/~md1gavan/${PN}/src/${PN}-${STABLEVERSION}.tar.gz
-	 mirror://gentoo/${PN}-snapshot-${SNAPSHOT}.diff.bz2"
+SRC_URI="http://www.mdstud.chalmers.se/~md1gavan/${PN}/src/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~x86 ~sparc ~mips"
+KEYWORDS="x86 sparc ~mips"
 IUSE="X cacheemu delays mips16"
+#IUSE="X cacheemu delays mips16 userland"
 DEPEND="X? ( virtual/x11 )"
 RDEPEND=""
-S="${WORKDIR}/${PN}-${STABLEVERSION}"
 
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-
-	# Patch the stable version up to the snapshot
-	epatch ${WORKDIR}/${PN}-snapshot-${SNAPSHOT}.diff
-}
 
 src_compile() {
 	cd ${S}
@@ -34,9 +21,10 @@ src_compile() {
 	# See what configure options to pass
 	local myconf
 	use ! X && myconf="${myconf} --nox11"
-	use cacheemu && myconf="${myconf} --caches"	# Not enabled yet, in 0.2
-	use delays && myconf="${myconf} --delays"	# Not enabled yet, in 0.2
+	use cacheemu && myconf="${myconf} --caches"
+	use delays && myconf="${myconf} --delays"
 	use mips16 && myconf="${myconf} --mips16"
+#	use userland && myconf="${myconf} --userland"	# Not implemented yet, in 0.3
 
 	# Run configure
 	einfo "Passing the following flags to configure: ${myconf}"
