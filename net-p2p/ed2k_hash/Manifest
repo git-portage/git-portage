@@ -1,4 +1,6 @@
 MD5 9f63862a4912e68a60b24e26de91cc07 ed2k_hash-0.3.3.ebuild 579
+MD5 b416b02bdfc5acbe75052d2348d2179c ed2k_hash-0.4.0.ebuild 588
 MD5 114d0da3f2a2320047da21d5992a19b5 ChangeLog 402
 MD5 8aefbc0e49db723ca1ad02d0c409cd49 metadata.xml 160
 MD5 f963610719abfcb02fc5b29b776668e0 files/digest-ed2k_hash-0.3.3 67
+MD5 9362f41d0eead52766959dfcfe40dedd files/digest-ed2k_hash-0.4.0 67
