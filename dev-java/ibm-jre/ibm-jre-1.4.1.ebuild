@@ -1,19 +1,19 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/ibm-jre/Attic/ibm-jre-1.4.0-r1.ebuild,v 1.4 2003/07/11 21:41:53 aliz Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/ibm-jre/Attic/ibm-jre-1.4.1.ebuild,v 1.1 2003/11/20 04:21:44 strider Exp $
 
 inherit nsplugins
 
-At="IBMJava2-JRE-14.tgz"
-S="${WORKDIR}/IBMJava2-14"
-DESCRIPTION="IBM JRE 1.4.0"
+At="IBMJava2-JRE-141.tgz"
+S="${WORKDIR}/IBMJava2-141"
+DESCRIPTION="IBM JRE 1.4.1"
 SRC_URI=""
 HOMEPAGE="https://www6.software.ibm.com/dl/lxdk/lxdk-p"
 IUSE=""
 DEPEND="virtual/glibc
 	>=dev-java/java-config-0.2.5"
 RDEPEND="$DEPEND"
-PROVIDE="virtual/jre-1.3.1
+PROVIDE="virtual/jre-1.4.1
 	virtual/java-scheme-2"
 LICENSE="IBM-ILNWP"
 SLOT="1.4"
@@ -45,11 +45,6 @@ src_install () {
 }
 
 src_postinst() {
-	if [ "`use mozilla`" ] ; then
-		einfo "The Mozilla browser plugin has been installed as /usr/lib/mozilla/plugins/javaplugin_oji.so"
-	else
-		einfo "To install the browser plugin manually, do:"
-		einfo "ln -sf /opt/${P}/bin/libjavaplugin_oji.so /usr/lib/mozilla/plugins/"
-	fi
+	inst_plugin /opt/${P}/bin/javaplugin.so
 	true
 }
