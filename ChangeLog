@@ -5,7 +5,7 @@ drobbins
 package.mask support; emerge --pretend now tells you whether each to-be-installed package
 will be a package upgrade, a new cat/pkg on the system (not replacing an earlier version),
 or will replace an identical version of an already installed package.  This feature should
-help sysadmins to more easily spot potential upgrade problems.
+help sysadmins to spot potential upgrade problems more easily.
 
 date 10 Apr 2001
 
