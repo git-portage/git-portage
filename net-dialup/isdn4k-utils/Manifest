@@ -1,10 +1,9 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
+MD5 5eeb7174364e6bddb64a87d746660f78 isdn4k-utils-3.7_pre20050329.ebuild 7145
 MD5 2095b24ef9d659aba0e72f092f5df8ce ChangeLog 10650
 MD5 bab835f739889e139f5acaf397d3d875 metadata.xml 215
 MD5 5eeb7174364e6bddb64a87d746660f78 isdn4k-utils-3.6_pre20041219-r1.ebuild 7145
 MD5 6896aa81dfefd061abda1c5a4e6576a0 files/digest-isdn4k-utils-3.6_pre20041219-r1 81
+MD5 3ffe8175b16f619144c182f11e3df55d files/digest-isdn4k-utils-3.7_pre20050329 81
 MD5 f26cdb4ad4237c11b371a7dcb2d89d17 files/3.6_pre20041219/isdnlog.confd 415
 MD5 3f7c76a6d63f3677b81157bf9a7e84cd files/3.6_pre20041219/isdnlog.initd 1047
 MD5 875318ba2ae375b068d0c7a7c1607e52 files/3.6_pre20041219/ioptions 323
@@ -19,10 +18,3 @@ MD5 0ead941effdcf6061c864112d4a68ccb files/3.6_pre20041219/isdn.confd 500
 MD5 229cfd79f14eb291f6bb46b1275d4e0c files/3.6_pre20041219/isdn.initd 2410
 MD5 673179cfabf5a9839cfbf81bc2eeb34e files/3.6_pre20041219/hisax.conf 1341
 MD5 a077770a61b46a7dbedad0213e5b14c3 files/3.6_pre20041219/auerswald.usermap 752
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFCHBogjiC39V7gKu0RAlwGAJ9YXfp4owN7Wwh0Uc+4AFeBstRlFACgwNk8
-J+K/ubO9SW5TPHP76PSII1Y=
-=QuW7
------END PGP SIGNATURE-----
