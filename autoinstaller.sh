@@ -39,10 +39,10 @@ echo "Swap partition in /dev/$MYSWAPPART"
 sed -e "s/#ROOT#/${MYROOTPART}/" -e "s/#SWAP#/${MYSWAPPART}/" ${ROOT}/etc/fstab.orig > ${ROOT}/etc/fstab
 
 echo "Generating library links and cache..."
-cp ${ROOT}/etc/ld.so.conf ${ROOT}/etc/ld.so.orig
-sed -e "s/i686-pc-linux-gnu/$ARCH/" ${ROOT}/etc/ld.so.orig > ${ROOT}/etc/ld.so.conf
+cp ${ROOT}/etc/env.d/00basic ${ROOT}/etc/env.d/00basic.orig
+sed -e "s/i686-pc-linux-gnu/$ARCH/" ${ROOT}/etc/env.d/00basic.orig > ${ROOT}/etc/env.d/00basic
 
-ldconfig -r ${ROOT}
+${ROOT}/usr/sbin/env-update
 
 case "$GMT" in
   n|N|No|no)
