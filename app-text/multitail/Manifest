@@ -1,8 +1,18 @@
-MD5 2fcccbdcc91a7c9a7e2db96766f1941f multitail-3.0.6.ebuild 704
-MD5 4cd0cf75c452e90bb9fccbe451d7480b multitail-3.4.1.ebuild 844
-MD5 659708ff0c805262b15a782ff4d266e0 ChangeLog 2219
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 0069ae1c2d17418d228630034a38844d multitail-3.0.6.ebuild 701
+MD5 4b19a0ae01c3c38b2e3bf6829c528ee0 multitail-3.4.1.ebuild 841
+MD5 e759ceec140c08f561663c4283e70f62 ChangeLog 2216
 MD5 99ce5509db4b50f28a1f6675f8c09b2b metadata.xml 258
-MD5 832a60cad0a7e9debecfbf5994803433 multitail-3.4.3.ebuild 845
+MD5 eb8a5c8e1a126a8e935588e346134806 multitail-3.4.3.ebuild 842
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-multitail-3.0.6 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-multitail-3.4.1 0
 MD5 59e4338cd023999f19610f9a5d2e50f7 files/digest-multitail-3.4.3 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFB5mTqEZCkKN40op4RAmtBAKCDWLErFeGVV4jfDuHYOevD2hnOcACfcNrD
+ggKVam9nMZi/48DFxbUAL+0=
+=6cf6
+-----END PGP SIGNATURE-----
