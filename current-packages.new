@@ -282,7 +282,7 @@
 ./net-dialup/pppoed/pppoed-0.48_beta1.ebuild
 ./net-dialup/qtwvdialer/qtwvdialer-0.3.1.ebuild
 ./net-dialup/rp-pppoe/rp-pppoe-2.3.ebuild
-./net-dialup/wvdial/wvdial-1.41-r1.ebuild
+./net-dialup/wvdial/wvdial-1.41-r2.ebuild
 ./net-fs/autofs/autofs-3.1.7-r1.ebuild
 ./net-fs/netatalk/netatalk-1.4.99.0.20001108.ebuild
 ./net-fs/nfs-utils/nfs-utils-0.2.1-r1.ebuild
