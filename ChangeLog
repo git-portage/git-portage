@@ -1,5 +1,9 @@
 date 4 June 2001
 
+new net-mail/signify-1.07
+perl script that rotates your .signature file in a semi-random way based on scripts you setup
+aj
+
 new app-crypt/ssh-multiadd-1.3.1
 python app to add multiple ssh keys to your x session (usefull with diverse
 netoworks)
