@@ -1,3 +1,15 @@
+date 13 Jan 2001
+
+new sys-kernel/linux-2.4.0.8
+achim
+Like 2.4.0.8 but with jfs and reiserfs-nfs support. Not tested so
+please use 2.4.0.8 for now!
+
+new sys-kernel/linux-2.4.0.8
+achim
+Based on 2.4.0ac8 with a special reiserfs-3.6.25 from the newsgroup
+that works with ac8. Still without reiserfs-nfs patch.
+
 date 12 Jan 2001
 
 new sys-kernel/linux-2.4.0.7

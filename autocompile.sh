@@ -88,6 +88,14 @@ do
         then
             continue
         fi
+    else
+        if [ "$CHECK" = "package" ]
+        then
+            if [ -f ${PORTDIR}/packages/$myc/$myp.tbz2 ]
+            then
+                continue
+            fi
+        fi
     fi
 
     echo "$C_NORMAL$myp ($myc)"

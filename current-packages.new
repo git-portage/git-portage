@@ -440,8 +440,8 @@
 ./sys-devel/perl/perl-5.6.0-r4.ebuild
 ./sys-devel/python/python-2.0.ebuild
 ./sys-devel/spython/spython-2.0.ebuild
-#./sys-kernel/linux/linux-2.4.0_rc10-r6.ebuild
-#./sys-kernel/linux/linux-2.4.0_rc103.ebuild
+./sys-kernel/linux/linux-2.4.0.8.ebuild
+#./sys-kernel/linux/linux-2.4.0.8-r1.ebuild
 ./sys-libs/cracklib/cracklib-2.7-r1.ebuild
 ./sys-libs/db/db-1.85.ebuild
 ./sys-libs/db/db-3.1.17-r1.ebuild
