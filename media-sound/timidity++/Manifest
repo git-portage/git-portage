@@ -4,6 +4,7 @@ MD5 13899c922214c56eebe745acd729ebd3 timidity++-2.12.0-r3.ebuild 3030
 MD5 fa9b67effb9e65ff0cf86d77a163e329 timidity++-2.13.0.ebuild 3339
 MD5 e82dc7ad47d16884f0f413c024be1106 timidity++-2.13.0_rc2.ebuild 3251
 MD5 f5761d69f3e3386d4f57747aeb46f627 timidity++-2.13.0-r1.ebuild 3614
+MD5 76b0104b719283d6517ba2caaaca4a41 timidity++-2.13.2.ebuild 3762
 MD5 63304f38f62e9ed082fa9decc18ed134 timidity++-2.13.0-r2.ebuild 3787
 MD5 15fce5a2d3dfc834b4de65428105e63b files/timidity-update 2513
 MD5 dbfc5d45b6177ffaf7dd74d4971a520a files/conf.d.timidity 912
@@ -18,3 +19,4 @@ MD5 4e4757646a4d2477f9bfe883d0b5ae88 files/timidity.cfg 2723
 MD5 0dda67bb7cae71bca455ce730c53bfd1 files/digest-timidity++-2.13.0-r1 71
 MD5 0dda67bb7cae71bca455ce730c53bfd1 files/digest-timidity++-2.13.0-r2 71
 MD5 80fb82d4216373cbf4efafd7719628e0 files/timidity.cfg-r1 669
+MD5 2762e58e610bb861189b3d6b424312fc files/digest-timidity++-2.13.2 71
