@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/seq24/Attic/seq24-0.5.0.ebuild,v 1.3 2004/06/25 00:21:33 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/seq24/Attic/seq24-0.5.3.ebuild,v 1.1 2004/09/30 01:44:20 eradicator Exp $
 
 IUSE=""
 
-DESCRIPTION="Small alsa sequencer"
+DESCRIPTION="Seq24 is a loop based MIDI sequencer with focus on live performances."
 HOMEPAGE="http://www.filter24.org/seq24/"
 SRC_URI="http://www.filter24.org/seq24/${P}.tar.gz"
 
@@ -16,6 +16,6 @@ DEPEND=">=media-libs/alsa-lib-0.9.0
 	=dev-cpp/gtkmm-1.2*"
 
 src_install() {
-	make DESTDIR=${D} install || die
+	make DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog README RTC SEQ24
 }
