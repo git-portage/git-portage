@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/distcc/Attic/distcc-1.1-r10.ebuild,v 1.2 2003/02/18 01:38:26 zwelch Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/distcc/Attic/distcc-1.1-r11.ebuild,v 1.1 2003/02/19 03:14:01 zwelch Exp $
 
 inherit eutils
 
@@ -46,7 +46,7 @@ src_install() {
 	einfo "Scanning for compiler front-ends"
 	dodir /usr/lib/distcc/bin
 	diropts -m0755 -o distcc -g daemon
-	touch ${D}/usr/lib/distcc/bin/.keep
+	keepdir /usr/lib/distcc/bin
 	for a in gcc cc c++ g++ ${CHOST}-gcc ${CHOST}-c++ ${CHOST}-g++; do
 		if [ -n "$(type -p ${a})" ]; then
 			dosym /usr/bin/distcc /usr/lib/distcc/bin/${a}
@@ -55,7 +55,7 @@ src_install() {
 
 	dodir /var/run/distccd
 	diropts -m0755 -o distcc -g daemon
-	touch ${D}/var/run/distccd/.keep
+	keepdir /var/run/distccd
 }
 
 pkg_preinst() {
@@ -65,10 +65,10 @@ pkg_preinst() {
 	id distcc 2> /dev/null && USERFIX=usermod || USERFIX=useradd
 	${USERFIX} -g daemon -s /bin/false -d /dev/null -c "distccd" distcc || \
 		die "Failed to \`${USERFIX} distcc\` user"
-	# stop daemon since script is being updated
 
+	# stop daemon since script is being updated
 	einfo "Stopping distccd..."
-	[ -x /etc/init.d/distccd ] && 
+	[ -x /etc/init.d/distccd ] && \
 		/etc/init.d/distccd stop > /dev/null 2>&1
 }
 
@@ -79,6 +79,6 @@ pkg_postinst() {
 	einfo "Portage 2.0.46-r11+ will take advantage of distcc if you put"
 	einfo "distcc into the FEATURES setting in make.conf (and define"
 	einfo "DISTCC_HOSTS as well). Do NOT set CC=distcc or similar."
-	einfo "See http://cvs.gentoo.org/~zwelch/distcc.html for details."
+	einfo "See http://cvs.gentoo.org/~zwelch/distcc.html for information."
 }
 
