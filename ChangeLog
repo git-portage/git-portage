@@ -1,5 +1,7 @@
 14.09.2000
 
+	- Modified joe-2.8			(achim)
+	[Added docs and termcap installation]
 	- New strace 4.2			(achim)
 	- Update gtk-xemacs 21.1.12 -> 21.1.12p2(achim)
 	- Update usbview 0.8.1 -> 0.9.0		(achim)
