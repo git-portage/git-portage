@@ -210,8 +210,8 @@
 ./kde-base/kdebase/kdebase-2.0.ebuild
 ./kde-base/kdelibs/kdelibs-2.0.ebuild
 ./kde-base/kdesupport/kdesupport-2.0.ebuild
-./kde-base/qt/qt-x11-2.2.1.ebuild
-#!./kde-base/qt/qt-x11-2.2.2.ebuild
+./kde-base/qt/qt-2.2.1.ebuild
+#!./kde-base/qt/qt-2.2.2.ebuild
 ./media-gfx/autotrace/autotrace-0.24a.ebuild
 #!./media-gfx/autotrace/autotrace-0.26.ebuild
 ./media-gfx/aview/aview-1.2-r2.ebuild
