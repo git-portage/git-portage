@@ -164,7 +164,7 @@
 ./gnome-base/libglade/libglade-0.15.ebuild
 ./gnome-base/libgtop/libgtop-1.0.10.ebuild
 ./gnome-base/libunicode/libunicode-0.4.ebuild
-./gnome-base/libxml/libxml-1.8.10.ebuild
+./gnome-base/libxml/libxml-1.8.10-r1.ebuild
 ./gnome-base/mc/mc-4.5.51.ebuild
 ./gnome-base/oaf/oaf-0.6.1.ebuild
 #./gnome-libs/ammonite/ammonite-0.8.1.ebuild
@@ -443,6 +443,7 @@
 ./x11-wm/enlightenment/enlightenment-0.16.4-r1.ebuild
 ./x11-wm/openmotif/openmotif-MLI-2.1.30.ebuild
 ./x11-wm/sawfish/sawfish-0.32.ebuild
+
 
 
 
