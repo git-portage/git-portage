@@ -1,11 +1,11 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/alsa-utils/Attic/alsa-utils-1.0.1.ebuild,v 1.3 2004/03/01 08:47:29 mholzer Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/alsa-utils/Attic/alsa-utils-1.0.3.ebuild,v 1.1 2004/03/01 08:47:29 mholzer Exp $
 
 DESCRIPTION="Advanced Linux Sound Architecture Utils (alsactl, alsamixer, etc.)"
 HOMEPAGE="http://www.alsa-project.org/"
 DEPEND=">=sys-libs/ncurses-5.1
-	>=media-libs/alsa-lib-1.0.0_rc2"
+	>=media-libs/alsa-lib-1.0.3"
 
 SLOT="0.9"
 LICENSE="GPL-2"
@@ -18,7 +18,6 @@ RESTRICT="nomirror"
 S=${WORKDIR}/${MY_P}
 
 src_compile() {
-
 	econf || die "./configure failed"
 	emake || die "Parallel Make Failed"
 }
