@@ -1,0 +1,5 @@
+MD5 ebe7446a801e494d3618c0d7c49e5f95 azureus-bin-2.0.7.1_pre20040224.ebuild 3206
+MD5 8aefbc0e49db723ca1ad02d0c409cd49 metadata.xml 160
+MD5 492b5db31f8be8a352cc1eb3adb23ba1 files/digest-azureus-bin-2.0.7.1_pre20040224 299
+MD5 2803ca506a1911efacba79ec04b80a08 files/azureus-bin-2.0.7.1_pre20040224-gentoo.sh 2661
+MD5 17762081fd25f6928b7bd085fa61d9ee files/azureus-bin-Makefile.patch 402
