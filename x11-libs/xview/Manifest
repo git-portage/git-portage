@@ -1,4 +1,6 @@
 MD5 04c02bf97fbaebbfe9b15f508cea880a xview-3.2.ebuild 2283
-MD5 6c88127b27048e16ea83be329d3ebee7 ChangeLog 701
 MD5 dffd46174e78b327c834fc3e4b1cf848 metadata.xml 160
+MD5 a2d44f764640f9aee9211b286bacc06b xview-3.2-r1.ebuild 2505
+MD5 435ae14a6a388cbd6318316e9c85431d ChangeLog 821
+MD5 48636f5ace70cc3f5033a87188e4e7bf files/digest-xview-3.2-r1 138
 MD5 6de3c812dee458777db24502d252984f files/digest-xview-3.2 138
