@@ -1,3 +1,26 @@
+date 01 Jan 2000
+
+upd sys-libs/ncurses-5.2 to 5.2-r1
+drobbins
+xterms are now color-enabled by default
+
+new sys-apps/star-1.3_alpha8
+drobbins
+World's fastest tar now part of Gentoo Linux base.  Enhanced mt and
+rmt tools also included in this package.
+
+upd sys-apps/cpio-2.4.2-r1 to 2.4.2-r2
+drobbins
+mt now depreciated
+
+upd sys-apps/tar-1.13.18 to 1.13.18-r1
+drobbins
+rmt now depreciated
+
+upd sys-apps/portage-1.4 to 1.4-r1
+drobbins
+doins now externalized to /usr/lib/portage/bin, donewins symlink created.
+
 date 22 Dec 2000
 
 new net-misc/djbdns-1.02
