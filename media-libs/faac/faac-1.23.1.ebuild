@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/faac/Attic/faac-1.23.1.ebuild,v 1.8 2004/06/24 22:59:29 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/faac/Attic/faac-1.23.1.ebuild,v 1.9 2004/07/10 18:32:41 eradicator Exp $
 
 inherit libtool
 
@@ -10,7 +10,6 @@ S="${WORKDIR}/${PN}"
 DESCRIPTION="Free MPEG-4 audio codecs by AudioCoding.com"
 HOMEPAGE="http://faac.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
-RESTRICT="nomirror"
 
 SLOT="0"
 LICENSE="LGPL-2"
