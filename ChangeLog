@@ -1,5 +1,10 @@
 03.10.2000
 
+	- Update Digest-MD5 2.09 -> 2.12	(achim)
+	- Update URI 1.08 -> 1.09		(achim)
+	- Update HTML-Parser 3.10 -> 3.13	(achim)
+	- New dev-perl/HTML-tagset 3.02		(achim)
+	- Update ethereal 0.8.11 -> 0.8.12	(achim)
 	- Update librep 0.13 -> 0.13.1		(achim)
 	- Update smpeg 0.4.0 -> 0.4.1		(achim)
 	- Update libsdl 1.1.4 -> 1.1.5		(achim)

@@ -106,7 +106,7 @@
 ./app-shells/tcsh/tcsh-6.09-r1.ebuild 
 ./app-shells/zsh/zsh-3.1.9.ebuild
 ./app-text/a2ps/a2ps-4.13b-r1.ebuild 
-./app-text/dbs/dbs-0.5.9.1.ebuild
+./app-text/dgs/dgs-0.5.9.1.ebuild
 ./app-text/docbook/docbook-3.0-r1.ebuild
 ./app-text/docbook/docbook-4.1-r1.ebuild 
 ./app-text/dsssl/dsssl-db-1.56.ebuild
@@ -139,9 +139,10 @@
 ./dev-libs/rep-gtk/rep-gtk-0.14.ebuild 
 ./dev-libs/slib/slib-2.3.8.ebuild
 ./dev-libs/swig/swig-1.3_alpha4.ebuild
-./dev-perl/Digest-MD5/Digest-MD5-2.09.ebuild
+./dev-perl/Digest-MD5/Digest-MD5-2.12.ebuild
 ./dev-perl/gtk-perl/gtk-perl-0.7000-r1.ebuild
-./dev-perl/HTML-Parser/HTML-Parser-3.10.ebuild
+./dev-perl/HTML-Parser/HTML-Parser-3.13.ebuild
+./dev-perl/HTML-Tagset/HTML-Tagset-3.02.ebuild
 ./dev-perl/libnet/libnet-1.0703-r1.ebuild
 ./dev-perl/libwww-perl/libwww-perl-5.48.ebuild
 ./dev-perl/libxml-perl/libxml-perl-0.07.ebuild
@@ -149,7 +150,7 @@
 ./dev-perl/mod_perl/mod_perl-1.24.ebuild
 ./dev-perl/perl-tk/perl-tk800-022.ebuild 
 ./dev-perl/SOAP/SOAP-0.25.ebuild
-./dev-perl/URI/URI-1.08.ebuild 
+./dev-perl/URI/URI-1.09.ebuild 
 ./dev-perl/XML-Catalog/XML-Catalog-0.01.ebuild
 ./dev-perl/XML-DOM/XML-DOM-1.25.ebuild 
 ./dev-perl/XML-DT/XML-DT-0.14.ebuild
@@ -213,7 +214,7 @@
 ./media-video/xawtv/xawtv-3.20.ebuild 
 ./media-video/xmovie/xmovie-1.5.1.ebuild
 ./media-video/xmps/xmps-0.1.3-r1.ebuild
-./net-analyzer/ethereal/ethereal-0.8.11-r1.ebuild
+./net-analyzer/ethereal/ethereal-0.8.12.ebuild
 ./net-analyzer/nessus/nessus-1.0.5.ebuild
 ./net-analyzer/ngrep/ngrep-1.38-r1.ebuild
 ./net-analyzer/ntop/ntop-1.3.1-r1.ebuild
@@ -222,14 +223,14 @@
 ./net-dialup/isdn4k-utils/isdn4k-utils-3.1_p1-r1.ebuild
 ./net-dialup/ppp/ppp-2.4.0-r1.ebuild 
 ./net-dialup/pppoed/pppoed-0.47-r1.ebuild
-./net-dialuo/rp-pppoe/rp-pppoe-2.3.ebuild
+./net-dialup/rp-pppoe/rp-pppoe-2.3.ebuild
 ./net-dialup/wvdial/wvdial-1.41-r1.ebuild
 ./net-fs/autofs/autofs-3.1.5-r1.ebuild
 ./net-fs/netatalk/netatalk-1.4_beta2-r1.ebuild
 ./net-fs/nfs-utils/nfs-utils-0.1.9.1-r1.ebuild
 ./net-fs/samba/samba-2.0.7-r1.ebuild 
 ./net-ftp/ftp/ftp-0.17-r1.ebuild
-./net-ftp/lftp/lftp-2.3.0.ebuild 
+./net-ftp/lftp/lftp-2.3.3.ebuild 
 ./net-ftp/proftpd/proftpd-1.2.0_rc2-r1.ebuild
 ./net-irc/bitchx/bitchx-1.0.17.ebuild 
 ./net-irc/xchat/xchat-1.4.2.ebuild
