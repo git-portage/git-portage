@@ -1,14 +1,4 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 8fff96d8ff788b2f71c49318658fbdc3 ChangeLog 1141
-MD5 9fea9001592cf2ee12ae402c61c21b70 gentoo-webroot-default-0.1.ebuild 1067
+MD5 ad0cc83ca376ec1dac1028734b91e659 ChangeLog 1338
 MD5 c5683447f4654608f8b9bc6ce7f5f3c8 metadata.xml 264
+MD5 ce017d271a55ca8273c619482c60d1cb gentoo-webroot-default-0.1.ebuild 1106
 MD5 3e5e8a8f635616cff011cc5c69c893c3 files/digest-gentoo-webroot-default-0.1 78
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFCHaPPjUHll2nfF60RAn6QAJ0Y/NmrEUX0s3fSZKr8VyEAqSdeSQCfbW7U
-3IZE3v7eZNgrUnSEM5d7b4A=
-=5h8I
------END PGP SIGNATURE-----
