@@ -268,7 +268,7 @@
 #./media-libs/mesa-glu/mesa-glu-3.4.ebuild
 ./media-libs/mpeg-lib/mpeg-lib-1.3.1.ebuild
 ./media-libs/smjpeg/smjpeg-0.2.1-r1.ebuild
-./media-libs/smpeg/smpeg-0.4.1.ebuild
+./media-libs/smpeg/smpeg-0.4.2.ebuild
 ./media-libs/t1lib/t1lib-1.0.1-r1.ebuild
 ./media-libs/tiff/tiff-3.5.5-r1.ebuild
 ./media-sound/abcde/abcde-1.9.7.ebuild
@@ -292,7 +292,7 @@
 ./media-sound/xmms-nas/xmms-nas-0.2.ebuild
 ./media-sound/xmms-shn/xmms-shn-2.2.3.ebuild
 ./media-video/avi-xmms/avi-xmms-1.2.2.ebuild
-./media-video/avifile/avifile-0.53.1.ebuild
+./media-video/avifile/avifile-0.53.5.ebuild
 ./media-video/bcast-2000/bcast-2000c.ebuild
 ./media-video/mjpeg-tools/mjpeg-tools-1a.ebuild
 ./media-video/mpeg-movie/mpeg-movie-1.6.0.ebuild
