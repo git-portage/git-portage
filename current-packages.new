@@ -206,7 +206,7 @@
 ./media-gfx/blender/blender-2.04.ebuild
 #./media-gfx/blender-static/blender-static-2.04.ebuild
 ./media-gfx/gimp-print/gimp-print-4.1.1.ebuild
-./media-gfx/gimp/gimp-1.1.30.ebuild
+./media-gfx/gimp/gimp-1.2.0.ebuild
 ./media-gfx/imagemagick/imagemagick-5.2.5.ebuild
 ./media-libs/aalib/aalib-1.2.ebuild
 ./media-libs/alsa-lib/alsa-lib-0.5.9-r2.ebuild
