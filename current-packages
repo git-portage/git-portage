@@ -258,11 +258,11 @@
 ./net-misc/netkit-timed/netkit-timed-0.17-r1.ebuild
 ./net-misc/nut/nut-0.44.1.ebuild 
 ./net-misc/openssh/openssh-2.1.1_p4.ebuild
-./net-misc/rsync/rsync-2.4.5.ebuild 
+./net-misc/rsync/rsync-2.4.6.ebuild 
 ./net-misc/snarf/snarf-7.0-r1.ebuild
 ./net-misc/sslwrap/sslwrap-2.0.5-r1.ebuild
 ./net-misc/wget/wget-1.5.3-r1.ebuild 
-./net-misc/whois/whois-4.5.0-r1.ebuild
+./net-misc/whois/whois-4.5.1.ebuild
 ./net-nds/openldap/openldap-1.2.11-r1.ebuild
 ./net-nds/portmap/portmap-5b-r1.ebuild
 ./net-nds/yp-tools/yp-tools-2.4-r1.ebuild
@@ -285,7 +285,7 @@
 ./x11-wm/WindowMaker/WindowMaker-0.62.1-r1.ebuild
 ./x11-wm/enlightenment/enlightenment-0.16.4-r1.ebuild
 ./x11-wm/openmotif/openmotif-MLI-2.1.30.ebuild
-./x11-wm/sawfish/sawfish-0.31.ebuild 
+./x11-wm/sawfish/sawfish-0.31.1.ebuild 
 ./gnome-base/ORBit/ORBit-0.5.3.ebuild
 ./gnome-base/bonobo/bonobo-0.15.ebuild
 ./gnome-base/control-center/control-center-1.2.1.ebuild

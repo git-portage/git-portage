@@ -1,3 +1,9 @@
+05.10.2999
+
+	- Update sawfish 0.30.3 -> 0.31.1	(achim)
+	- Update whois 4.5.0 -> 4.5.1		(achim)
+	- Update rsync 2.4.5 -> 2.4.6		(achim)
+
 03.10.2000
 	- Update portage (doins fix)		(drobbins)
 	- Update dhcp 3.0_beta0202 -> 0206	(achim)
@@ -96,6 +102,7 @@
   	  [ Userspace PPPoE ]
 
 18.09.2000
+
 	- Update abiword 0.7.10 -> 0.7.11	(achim)
 	- Update avifile 0.46.1 -> 0.47.3	(achim)
 	- New gnome-apps/gnucash 1.4.6		(achim)
