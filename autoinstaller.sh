@@ -67,7 +67,7 @@ myzone="${ROOT}/usr/share/zoneinfo/$timezone"
 echo "Timezone: $timezone"
 
 
-cp ${myzone##${ROOT}} ${ROOT}/etc/localtime
+cp ${myzone} ${ROOT}/etc/localtime
 
 echo "Hostname: $hostname"
 
