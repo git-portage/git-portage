@@ -1,5 +1,8 @@
 21 Nov 2000
 
+jerry
+New net-misc ntp-4.0.99k
+
 drobbins
 Portage fix of a fix
 Portage's ROOT directory existence check and non-file check was messed
