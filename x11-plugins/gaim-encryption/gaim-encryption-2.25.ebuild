@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/gaim-encryption/Attic/gaim-encryption-2.25.ebuild,v 1.12 2004/06/24 22:51:34 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/gaim-encryption/Attic/gaim-encryption-2.25.ebuild,v 1.1 2004/07/08 15:32:53 rizzo Exp $
 
 inherit flag-o-matic eutils
 use debug && inherit debug
