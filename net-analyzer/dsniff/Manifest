@@ -3,3 +3,4 @@ MD5 f41ad0aeacc05042ec27551b257845d3 files/2.3-makefile.patch 1531
 MD5 5c5bea8cc4846925ba48ba5c9ea83341 files/digest-dsniff-2.3-r1 123
 MD5 396e4e2bc16fb3fbf8031f6fb3f97fc1 ChangeLog 911
 MD5 3aaa1e33a984b4af9e0e0085d52b395c dsniff-2.3-r1.ebuild 2161
+MD5 bb880c49bdffe94226562c9f6b06e0e7 metadata.xml 719
