@@ -1,3 +1,4 @@
+MD5 17db6e6ec4574fd45c60d8c79e687674 mm-sources-2.6.7-r4.ebuild 1026
 MD5 e8e222c42d47223c3ea25853bb8f930f mm-sources-2.6.6-r2.ebuild 1026
 MD5 338273034a59a960aea124b239967099 mm-sources-2.6.7_rc1-r1.ebuild 1030
 MD5 d199442e1c076bcf37abb0d845df6b3b mm-sources-2.6.7-r1.ebuild 1026
@@ -16,6 +17,7 @@ MD5 f5cc4f94af38bbc2a48a905943443c88 files/digest-mm-sources-2.6.6-r4 125
 MD5 e30d1717c8a096508a6d965d33037639 files/digest-mm-sources-2.6.6-r5 125
 MD5 7350b766dae7994da6a4c02c96bb700f files/digest-mm-sources-2.6.7-r1 125
 MD5 0d457b6941c7422e6a8b67b98c74a73b files/digest-mm-sources-2.6.7-r2 125
+MD5 c93ed5ad2e2cb300dc0d10e749654776 files/digest-mm-sources-2.6.7-r4 125
 MD5 cbffc5bfb3cf3b0012114c75151d2b67 files/digest-mm-sources-2.6.7_rc1-r1 193
 MD5 f6e0e3c4877ca9b1320053b2367265d4 files/digest-mm-sources-2.6.7_rc2-r2 193
 MD5 0b45ba92340a3a338bb5b211840251c9 files/digest-mm-sources-2.6.7_rc3-r1 193
