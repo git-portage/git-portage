@@ -1,18 +1,22 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /var/cvsroot/gentoo-x86/net-www/mozilla/Attic/mozilla-1.0-r4.ebuild,v 1.4 2002/08/16 03:01:02 murphy Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/mozilla/Attic/mozilla-1.1.ebuild,v 1.1 2002/08/30 19:49:25 azarah Exp $
 
 # NOTE: to build without the mail and news component:  export NO_MAIL="YES"
 inherit makeedit
 
 # handle _rc versions
 MY_PV1=${PV/_}
-MY_PV2=${PV/_/\.}
+MY_PV2=${MY_PV1/eta}
 S=${WORKDIR}/mozilla
 DESCRIPTION="The Mozilla Web Browser"
-SRC_URI="ftp://ftp.mozilla.org/pub/mozilla/releases/${PN}${MY_PV1}/src/${PN}-source-${MY_PV1}.tar.bz2"
+SRC_URI="ftp://ftp.mozilla.org/pub/mozilla/releases/${PN}${MY_PV2}/src/${PN}-source-${MY_PV2}.tar.gz
+	crypt? ( http://enigmail.mozdev.org/dload/src/enigmail-0.63.3.tar.gz
+	         http://enigmail.mozdev.org/dload/src/ipc-0.99.63.tar.gz )"
 HOMEPAGE="http://www.mozilla.org"
+
 KEYWORDS="x86 ppc sparc sparc64"
+SLOT="0"
 LICENSE="MPL-1.1 | NPL-1.1"
 
 RDEPEND=">=x11-base/xfree-4.2.0-r11
@@ -30,15 +34,11 @@ RDEPEND=">=x11-base/xfree-4.2.0-r11
 	( gtk2? >=dev-libs/glib-2.0.4 :
 	  =dev-libs/glib-1.2* )
 	java?  ( virtual/jre )"
-#	gtk?   ( x11-libs/gtk+ )
-#	mozqt? ( x11-libs/qt )"
 
-DEPEND="java?  ( >=dev-java/java-config-0.2.0 )
-	${RDEPEND}
+DEPEND="${RDEPEND}
 	virtual/x11
-	sys-devel/perl"
-
-SLOT="0"
+	sys-devel/perl
+	java? ( >=dev-java/java-config-0.2.0 )"
 
 # needed by src_compile() and src_install()
 export MOZILLA_OFFICIAL=1
@@ -47,13 +47,6 @@ export BUILD_OFFICIAL=1
 # enable XFT
 [ "${DISABLE_XFT}" != "1" ] && [ -z "`use gtk2`" ] && \
 	export MOZ_ENABLE_XFT=1
-
-# enable GTK+-2.0 support
-if [ "`use gtk2`" ] ; then
-	export MOZ_ENABLE_GTK2=1
-	export MOZ_WIDGET_GTK2=1
-	export MOZ_WIDGET_TOOLKIT=gtk2
-fi
 
 # make sure the nss module gets build (for NSS support)
 [ -n "`use ssl`" ] && export MOZ_PSM=1
@@ -67,67 +60,52 @@ src_unpack() {
 	
 	unpack ${A}
 
-	# Fix a compile error with freetype-2.0.9 or later
 	cd ${S}
-	patch -p1 < ${FILESDIR}/mozilla-new-freetype2.patch || die
+
+	# Fix a ownership porblem
+	chown -R root.root *
 
 	[ -z "${CC}" ] && CC=gcc
 	if [ "`${CC} -dumpversion | cut -d. -f1,2`" != "2.95" ] ; then
 		# Fix bogus asm (from Mandrake .spec)
-		patch -p1 < ${FILESDIR}/${P}-asmfixes.patch || die
+#		patch -p1 < ${FILESDIR}/mozilla-1.0-asmfixes.patch || die
 
-#		patch -p1 < ${FILESDIR}/${P}-gcc3-java-plugin.patch || die
-
-		# ABI compat patch for gcc-3.x to use gcc-2.95 plugins
-		#
-		# http://bugzilla.mozilla.org/show_bug.cgi?id=154206
-		# http://bugzilla.mozilla.org/show_bug.cgi?id=124006
-		# http://bugzilla.mozilla.org/show_bug.cgi?id=116444
-		#
-		if [ "${ARCH}" = "x86" ] ; then
-			patch -p0 < ${FILESDIR}/${P}-abi-compat-wrappers.patch
+		# ABI Patch for ppc/xpcom for gcc-3.x
+		# http://bugzilla.mozilla.org/show_bug.cgi?id=142594
+		if [ "${ARCH}" = "ppc" ] ; then
+			patch -p0 < ${FILESDIR}/mozilla-1.0-abi-xpcom-ppc.patch || die
 		fi
-
-                # ABI Patch for ppc/xpcom for gcc-3.x
-                # http://bugzilla.mozilla.org/show_bug.cgi?id=142594
-
-                if [ "${ARCH}" = "ppc" ] ; then
-                        patch -p0 < ${FILESDIR}/mozilla-1.0-abi-xpcom-ppc.patch || die
-                fi
 	fi
 
 	# Apply the bytecode patch for freetype2
 	patch -p1 < ${FILESDIR}/mozilla-ft-bytecode.patch || die
 
-	# Use gtk+-2.0 as widget toolkit
-	if [ "`use gtk2`" ] ; then
-		cd ${S}/embedding/browser/gtk/src
-		bzip2 -dc ${FILESDIR}/gtk2_embed.patch.bz2 | patch -p0 || die
-		cd ${S}/widget/src/gtk2
-		bzip2 -dc ${FILESDIR}/gtk2_widget.patch.bz2 | patch -p0 || die
+	# Unpack the enigmail plugin
+	if [ -n "`use crypt`" ] && [ -z "`use moznomail`" ] && \
+	   [ "${NO_MAIL}" != "YES" ] && [ "${NO_MAIL}" != "yes" ]
+	then
+		mv ${WORKDIR}/ipc ${S}/extensions/
+		mv ${WORKDIR}/enigmail ${S}/extensions/
 	fi
 }
 
 src_compile() {
 
-	chown -R root.root *
-	#This should enable parallel builds, I hope
-	export MAKE="emake"
 	local myconf=""
 	# NOTE: QT and XLIB toolkit seems very unstable, leave disabled until
 	#       tested ok -- azarah
 	if [ -n "`use gtk2`" ] ; then
 		myconf="${myconf} --enable-toolkit-gtk2 \
-			--enable-default-toolkit=gtk2 \
-			--disable-toolkit-qt \
-			--disable-toolkit-xlib \
-			--disable-gtk"
+			              --enable-default-toolkit=gtk2 \
+			              --disable-toolkit-qt \
+			              --disable-toolkit-xlib \
+			              --disable-toolkit-gtk"
 	else
 		myconf="${myconf} --enable-toolkit-gtk \
-			--enable-default-toolkit=gtk \
-			--disable-toolkit-qt \
-			--disable-toolkit-xlib \
-			--disable-gtk2"
+			              --enable-default-toolkit=gtk \
+			              --disable-toolkit-qt \
+			              --disable-toolkit-xlib \
+			              --disable-toolkit-gtk2"
 	fi
 
 	if [ -z "`use ldap`" ] ; then
@@ -136,18 +114,15 @@ src_compile() {
 
 	if [ -z "${DEBUG}" ] ; then
 		myconf="${myconf} --enable-strip-libs \
-			--disable-debug \
-			--disable-dtd-debug \
-			--disable-tests"
+			              --disable-debug \
+			              --disable-dtd-debug \
+			              --disable-tests"
 	fi
 
 	if [ -n "${MOZ_ENABLE_XFT}" ] ; then
-		# for this we have to use freetype-2.0.8 included with XFree86
-		myconf="${myconf} --enable-xft \
-			--with-ft-prefix=/usr/X11R6 \
-			--with-ft-exec-prefix=/usr/X11R6/bin"
-			
-		export FT2_CONFIG="/usr/X11R6/bin/freetype-config"
+		# Enable Xft (currently this is done via freetype2 for gtk1,
+		# and libpangoXft for gtk2).
+		myconf="${myconf} --enable-xft"
 	fi
 
 
@@ -188,13 +163,16 @@ src_compile() {
 	export BUILD_OPT=1
 
 	# Currently gcc-3.1.1 dont work well if we specify "-march"
-	# and other optimizations
+	# and other optimizations for pentium4.
 	[ -z "${CC}" ] && CC=gcc
-	if [ "`${CC} -dumpversion`" = "3.1.1" ] ; then
-		export CFLAGS=""
-		export CXXFLAGS=""
+	if [ "`${CC} -dumpversion | cut -d. -f1`" -eq "3" ] ; then
+		export CFLAGS="${CFLAGS/pentium4/pentium3}"
+		export CXXFLAGS="${CXXFLAGS/pentium4/pentium3}"
 	fi
-
+	
+	#This should enable parallel builds, I hope
+	export MAKE="emake"
+		
 	# Crashes on start when compiled with -fomit-frame-pointer
 	CFLAGS="${CFLAGS/-fomit-frame-pointer}"
 	CXXFLAGS="${CXXFLAGS/-fomit-frame-pointer} -Wno-deprecated"
@@ -238,9 +216,27 @@ src_compile() {
 		make || die
 		cd ${S}
 	fi
+
+	# Build the enigmail plugin
+	if [ -n "`use crypt`" ] && [ -z "`use moznomail`" ] && \
+	   [ "${NO_MAIL}" != "YES" ] && [ "${NO_MAIL}" != "yes" ]
+	then
+		cd ${S}/extensions/ipc
+		make || die
+
+		cd ${S}/extensions/enigmail
+		make || die
+	fi
 }
 
 src_install() {
+
+	# Install, don't create tarball
+	dodir /usr/lib
+	cd ${S}/xpinstall/packager
+	einfo "Installing mozilla into build root..."
+	make MOZ_PKG_FORMAT="raw" TAR_CREATE_FLAGS="-chf" > /dev/null || die
+	mv -f ${S}/dist/mozilla ${D}/usr/lib/mozilla
 
 	# Copy the include and idl files
 	dodir /usr/lib/mozilla/include/idl /usr/include
@@ -248,32 +244,6 @@ src_install() {
 	cp -LfR include/* ${D}/usr/lib/mozilla/include
 	cp -LfR idl/* ${D}/usr/lib/mozilla/include/idl
 	dosym /usr/lib/mozilla/include /usr/include/mozilla
-
-	# Build the Release Tarball
-	cd ${S}/xpinstall/packager
-	make || die
-	dodir /usr/lib
-
-    TODO=""
-	case ${ARCH} in 
-		ppc) 
-			TODO="${S}/dist/mozilla-powerpc-unknown-linux-gnu.tar.gz"
-			;;
-		x86)
-			TODO="${S}/dist/mozilla-`uname -m`-pc-linux-gnu.tar.gz"
-			;;
-		sparc)
-			;;
-		sparc64)
-			;;
-		arm)
-			;;
-		*)
-			TODO="${S}/dist/mozilla-`uname -m`-pc-linux-gnu.tar.gz"
-			;;
-	esac
-
-	tar xzf ${TODO} -C ${D}/usr/lib
 
 	# Install the development tools in /usr
 	dodir /usr/bin
@@ -289,6 +259,7 @@ src_install() {
 		cd ${S}/security/nss
 
 		mkdir -p ${WORKDIR}/nss/{bin,lib}
+		export BUILD_OPT=1
 		export SOURCE_BIN_DIR=${WORKDIR}/nss/bin
 		export SOURCE_LIB_DIR=${WORKDIR}/nss/lib
 
@@ -324,11 +295,11 @@ src_install() {
 		cd ${S}/build/package/rpm/SOURCES
 		cp mozilla.desktop mozilla.desktop.orig
 		sed -e 's:Comment=Mozilla:Comment=Mozilla Web Browser:'	\
-			mozilla.desktop.orig >mozilla.desktop
+			mozilla.desktop.orig > mozilla.desktop
 		cd ${S}
 		insinto /usr/share/gnome/apps/Internet
 		doins ${S}/build/package/rpm/SOURCES/mozilla.desktop
-        fi
+	fi
 
 	if [ -n "${MOZ_ENABLE_XFT}" ] ; then
 		cd ${D}/usr/lib/mozilla/defaults/pref
@@ -343,13 +314,16 @@ src_install() {
 
 pkg_preinst() {
 	# Stale components and chrome files break when unmerging old
-	if [ -d ${ROOT}/usr/lib/mozilla/components ]
-	then
+	if [ -d ${ROOT}/usr/lib/mozilla/components ] ; then
 		rm -rf ${ROOT}/usr/lib/mozilla/components
 	fi
-	if [ -d ${ROOT}/usr/lib/mozilla/components ]
-	then 
+	if [ -d ${ROOT}/usr/lib/mozilla/chrome ] ; then
 		rm -rf ${ROOT}/usr/lib/mozilla/chrome
+	fi
+
+	# Remove stale component registry.
+    if [ -e ${ROOT}/usr/lib/component.reg ] ; then
+		rm -f ${ROOT}/usr/lib/component.reg
 	fi
 }
 
@@ -365,6 +339,15 @@ pkg_postinst() {
 		then
 			ln -sf `java-config --full-browser-plugin-path=mozilla` \
 				${MOZILLA_FIVE_HOME}/plugins/`java-config --browser-plugin=mozilla` 
+		fi
+	fi
+
+	# We do not yet want any JAVA plugins with gcc-3.x, as they cause
+	# mozilla to crash in some cases.
+	[ -z "${CC}" ] && CC=gcc
+	if [ "`${CC} -dumpversion | cut -d. -f1,2`" != "2.95" ] && [ "`use java`" ] ; then
+		if [ -L ${MOZILLA_FIVE_HOME}/plugins/`java-config --browser-plugin=mozilla` ] ; then
+			rm -f ${MOZILLA_FIVE_HOME}/plugins/`java-config --browser-plugin=mozilla`
 		fi
 	fi
 
@@ -386,9 +369,12 @@ pkg_postinst() {
 	# (do not remove next line!)
 	env-update
 	# Register components, setup Chrome .rdf files and fix file permissions
+	einfo "Registering Components and Chrome..."
 	umask 022
 	${MOZILLA_FIVE_HOME}/regxpcom
-	chmod g+r,o+r ${MOZILLA_FIVE_HOME}/component.reg
+	if [ -e ${MOZILLA_FIVE_HOME}/component.reg ] ; then
+		chmod g+r,o+r ${MOZILLA_FIVE_HOME}/component.reg
+	fi
 	# Setup the default skin and locale to correctly generate the Chrome .rdf files
 	find ${MOZILLA_FIVE_HOME}/chrome/ -name '*.rdf' -exec rm -f {} \; || :
 	echo "skin,install,select,classic/1.0" >> \
@@ -398,15 +384,22 @@ pkg_postinst() {
 	${MOZILLA_FIVE_HOME}/regchrome
 	find ${MOZILLA_FIVE_HOME}/ -type d -perm 0700 -exec chmod 755 {} \; || :
 
-    
+
+    echo
+	einfo
+	einfo "*****************************************************************"
+	einfo "* NB:  Please unmerge old versions of mozilla, as the header    *"
+	einfo "* layout in /usr/lib/mozilla/include have changed and will      *"
+	einfo "* result in compile errors when compiling programs that need    *"
+	einfo "* mozilla headers and libs (galeon, nautilus, ...)              *"
+	einfo "*****************************************************************"
 	echo
-	echo "*****************************************************************"
-	echo "* NB:  Please unmerge old versions of mozilla, as the header    *"
-	echo "* layout in /usr/lib/mozilla/include have changed and will      *"
-	echo "* result in compile errors when compiling programs that need    *"
-	echo "* mozilla headers and libs (galeon, nautilus, ...)              *"
-	echo "*****************************************************************"
-	echo
+	einfo "*****************************************************************"
+	einfo "* Any Errors seen during Component and Chrome registration is   *"
+	einfo "* caused by pre 1.1 versions of mozilla being installed.        *"
+	einfo "* Please unmerge older versions and everything should be fine.  *"
+	einfo "*****************************************************************"
+	einfo
 }
 
 pkg_postrm() {
@@ -421,7 +414,9 @@ pkg_postrm() {
 		fi
 
 		${MOZILLA_FIVE_HOME}/regxpcom
-		chmod g+r,o+r ${MOZILLA_FIVE_HOME}/component.reg
+		if [ -e ${MOZILLA_FIVE_HOME}/component.reg ] ; then
+			chmod g+r,o+r ${MOZILLA_FIVE_HOME}/component.reg
+		fi
 
 		find ${MOZILLA_FIVE_HOME}/chrome/ -name '*.rdf' -exec rm -f {} \; || :
 		${MOZILLA_FIVE_HOME}/regchrome
