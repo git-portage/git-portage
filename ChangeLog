@@ -1,5 +1,17 @@
 date 5 June 2001
 
+new app-games/lsdldoom-1.4.4.4
+an SDL port of the original doom
+blutgens
+
+new x11-terms/aterm-0.4.0
+Afterstep Terminal emulator (Submitted to me by moath)
+blutgens
+
+new dev-perl/Net-IRC-0.70
+Net::IRC perl modules (Submitted to me by moath)
+blutgens
+
 new app-games/tuxracer-0.61
 race a fat slimy penguin down an icy slope
 blutgens
