@@ -1,7 +1,11 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc. Distributed under the terms
-# of the GNU General Public License, v2 or later 
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.11.ebuild,v 1.3 2002/08/14 04:40:34 murphy Exp $
- 
+# Copyright 1999-2002 Gentoo Technologies, Inc. 
+# Distributed under the terms of the GNU General Public License v2 
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.32.ebuild,v 1.1 2002/08/29 18:52:34 drobbins Exp $
+
+# If the old /lib/sandbox.so is in /etc/ld.so.preload, it can
+# cause everything to segfault !!
+export SANDBOX_DISABLED="1"
+
 S=${WORKDIR}/${P}
 SLOT="0"
 DESCRIPTION="Portage ports system"
@@ -9,14 +13,7 @@ SRC_URI=""
 HOMEPAGE="http://www.gentoo.org"
 KEYWORDS="x86 ppc sparc sparc64"
 LICENSE="GPL-2"
-
-#We need this if/then/else clause for compatibility with stuff that doesn't know !build?
-if [ "`use build`" ]
-then
-	RDEPEND=""
-else
-	RDEPEND=">=sys-apps/fileutils-4.1.8 dev-python/python-fchksum >=dev-lang/python-2.2.1 sys-apps/debianutils >=sys-apps/bash-2.05a"
-fi
+RDEPEND="!build? ( >=sys-apps/fileutils-4.1.8 dev-python/python-fchksum >=dev-lang/python-2.2.1 sys-apps/debianutils >=sys-apps/bash-2.05a )"
 
 src_unpack() {
 	#We are including the Portage bzipped tarball on CVS now, so that if a person's
@@ -26,15 +23,13 @@ src_unpack() {
 
 src_compile() {                           
 	cd ${S}/src; gcc ${CFLAGS} tbz2tool.c -o tbz2tool
-	cd ${S}/src/sandbox
+	cd ${S}/src/sandbox-1.1
 	if [ "${ARCH}" = "x86" ]; then
-		emake CFLAGS="-O2 -march=i486 -pipe" || die
+		make CFLAGS="-march=i386 -O1 -pipe" || die
 	else
-		emake || die
+		make || die
 	fi
-
 }
-
 
 src_install() {
 	#config files
@@ -67,15 +62,9 @@ src_install() {
 	dosym emake /usr/lib/portage/bin/pmake
 	doexe ${S}/src/tbz2tool
 	
-	into /usr/lib/portage
-	dobin ${S}/src/sandbox/sandbox
-	dodir /usr/lib/portage/lib
-	exeinto /lib
-	doexe ${S}/src/sandbox/libsandbox.so
-	insinto //usr/lib/portage/lib
-	doins ${S}/src/sandbox/sandbox.bashrc
-	#reset into
-	into /usr
+	#install sandbox
+	cd ${S}/src/sandbox-1.1
+	make DESTDIR=${D} install || die
 
 	#symlinks
 	dodir /usr/bin /usr/sbin
@@ -137,42 +126,53 @@ pkg_postinst() {
 		rm -rf ${ROOT}/usr/lib/sandbox
 	fi
 
-	#upgrade /var/db/pkg library; conditional required for build image creation
-	if [ -d ${ROOT}var/db/pkg ]
-	then
-		echo ">>> Database upgrade..."
-		cd ${ROOT}var/db/pkg
-		for x in *
-		do
-			[ ! -d "$x" ] && continue
-			#go into each category directory so we don't overload the python2.2 command-line
-			cd $x
-			#fix silly output from this command (hack)
-			python2.2 ${ROOT}usr/lib/portage/bin/db-update.py `find -name VIRTUAL` > /dev/null
-			cd ..
-		done
-		echo ">>> Database upgrade complete."
-		#remove old virtual directory to prevent virtual deps from getting messed-up
-		[ -d ${ROOT}var/db/pkg/virtual ] && rm -rf ${ROOT}var/db/pkg/virtual
-	fi
-
 	#fix cache (could contain staleness)
 	if [ ! -d ${ROOT}var/cache/edb/dep/sys-apps ]
 	then
-		if [ -d ${ROOT}var/cache/edb/dep ]
+		if [ ! -d ${ROOT}var/cache/edb/dep ]
 		then
-			#avoid using "*" below as it can overwhelm rm
-			rm -rf ${ROOT}var/cache/edb/dep
-		fi	
-		#ok, set setgid wheel on the cache directory so that "wheel" users can cache stuff too.
-		install -m2775 -o root -g wheel -d ${ROOT}var/cache/edb/dep
-	
-	else
-		chown -R root.wheel ${ROOT}var/cache/edb/dep/*
-		chmod g+sw ${ROOT}var/cache/edb/dep/*
+			#upgrade /var/db/pkg library; conditional required for build image creation
+			if [ -d ${ROOT}var/db/pkg ]
+			then
+				echo ">>> Database upgrade..."
+				cd ${ROOT}var/db/pkg
+				for x in *
+				do
+					[ ! -d "$x" ] && continue
+					#go into each category directory so we don't overload the python2.2 command-line
+					cd $x
+					#fix silly output from this command (hack)
+					python2.2 ${ROOT}usr/lib/portage/bin/db-update.py `find -name VIRTUAL` > /dev/null
+				cd ..
+				done
+				echo ">>> Database upgrade complete."
+				#remove old virtual directory to prevent virtual deps from getting messed-up
+				[ -d ${ROOT}var/db/pkg/virtual ] && rm -rf ${ROOT}var/db/pkg/virtual
+			fi
+		fi
+		install -d -m0755 ${ROOT}var/cache/edb
+		install -d -m4755 -o root -g wheel ${ROOT}var/cache/edb/dep
 	fi
 	rm -f ${ROOT}usr/lib/python2.2/site-packages/portage.py[co]
+	chmod 4755 ${ROOT}var/cache/edb/dep ${ROOT}var/cache/edb/dep/*
+	chown -R root.wheel ${ROOT}var/cache/edb/dep
+	
 	# we gotta re-compile these modules and deal with systems with clock skew (stale compiled files)
 	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/python2.2/site-packages/portage.py')" || die
 	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/python2.2/site-packages/portage.py')" || die
+	
+	echo
+	echo
+	einfo "WARNING: The default behavior for 'emerge rsync' is to have --clean enabled."
+	einfo "Please back up any modified files in your Portage tree before running emerge"
+	einfo "rsync."
+	echo
+	einfo "You may want to move any custom ebuilds to a new directory, and then set"
+	einfo "PORTDIR_OVERLAY (in /etc/make.conf) to point to this directory.  For example,"
+	einfo "make a /usr/portage.local/sys-apps/foo directory and put your ebuild in there."
+	einfo "Then set PORTDIR_OVERLAY=\"/usr/portage.local\"  Portage should see your"
+	einfo "personal ebuilds.  NOTE: PORTDIR_OVERLAY support is *beta* code; it may not"
+	einfo "work correctly yet."
+	echo
+	echo
 	}
