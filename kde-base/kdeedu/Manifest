@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 11fd6b641ff939668006cd32bfb5e2b9 kdeedu-3.2.1.ebuild 331
 MD5 3c1830326f62eb4fd9949afaae95e473 kdeedu-3.1.5.ebuild 463
 MD5 005041ac2714185f0ab873e6102fa752 kdeedu-3.2.3.ebuild 372
@@ -16,3 +19,10 @@ MD5 c96e5306587a4cbab3c0b49e3f563aa3 files/digest-kdeedu-3.2.2 67
 MD5 ccd5af76582fc3fd522ecdd655355d38 files/digest-kdeedu-3.2.3 67
 MD5 f6329bc956122f20027b1b20fc166a00 files/digest-kdeedu-3.3.0 67
 MD5 221b952d234335b7df86fd12050267c4 files/kdeedu-3.3.0-sparc.patch 2607
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBOe6Z/rLF9B432nYRAr/3AKCv8LmqYVbmXzEaaN+i3Z9COiA7MwCfVERS
+pVgT5UtveDVHB4BbTozrFzM=
+=5jhx
+-----END PGP SIGNATURE-----

@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8aa918a48da86ca5195084e552f09b60 bind-9.2.3.ebuild 5872
 MD5 9a14564251eb0cfc68b3aa9b68a61a07 bind-9.2.2-r3.ebuild 5675
 MD5 1edc176555f25b9667e78ca67c8b1a20 bind-9.2.2.ebuild 4681
@@ -27,3 +30,10 @@ MD5 2bb12cfcd70284e72fbf9e70e5e2974d files/dyndns-samples.tbz2 22866
 MD5 412d666c947769b6015a65a42bb8ea00 files/named.rc6 1434
 MD5 42b5ed5adcee33cf40531d7955412b21 files/10bind.env 27
 MD5 e83e7a76e253debfdd120311fda73fb6 files/named.ca 2518
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBOe8C/rLF9B432nYRAjFJAKCk8m+yAk5dF517I1fg5j3zR5JroACgy9uo
+NIVjJlliGHD4OIM8XNOZiA8=
+=YOSa
+-----END PGP SIGNATURE-----
