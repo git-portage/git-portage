@@ -1,4 +1,6 @@
-MD5 0dbeac03682fba432ca934d5bdfe711b qinx-0.6.ebuild 530
+MD5 2dc0eac28c83fdf112ff722c2733133b qinx-1.0.ebuild 520
+MD5 950a92dd3f1c9c21e95b57eb2eff36a5 qinx-0.6.ebuild 528
 MD5 c4869ccfb27d7fbe8e7d843befdbb235 ChangeLog 1826
 MD5 77a747b5fbf7edf698a0c698141ecf02 metadata.xml 163
 MD5 1e9094346c8a92c7b4500d29ec97ef31 files/digest-qinx-0.6 60
+MD5 b9bd15eef8e7f4670aa7b04888322902 files/digest-qinx-1.0 60
