@@ -1,3 +1,4 @@
+MD5 eeef730bed72fd65264a9120baf45912 scilab-2.7-r3.ebuild 3648
 MD5 dad730249717cbeff055be53d6473d07 scilab-2.6.ebuild 2840
 MD5 e62919913a91a833078640794c92a3fd scilab-2.7-r2.ebuild 3628
 MD5 a7c67baf97c161adf3b92188be1dddf9 ChangeLog 2165
@@ -8,3 +9,4 @@ MD5 1d6cf95b60df9aed59392d68189bb25d files/digest-scilab-2.6 67
 MD5 08e3affe50b12d19408b7e389b08a964 files/digest-scilab-2.7 67
 MD5 f8e77491ef5140fe63fbe21ca1964377 files/digest-scilab-2.7-r1 135
 MD5 f8e77491ef5140fe63fbe21ca1964377 files/digest-scilab-2.7-r2 135
+MD5 f8e77491ef5140fe63fbe21ca1964377 files/digest-scilab-2.7-r3 135
