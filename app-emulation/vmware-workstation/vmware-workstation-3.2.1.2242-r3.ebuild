@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-3.2.1.2242-r2.ebuild,v 1.8 2005/01/11 16:37:45 wolf31o2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-3.2.1.2242-r3.ebuild,v 1.1 2005/02/09 15:20:18 wolf31o2 Exp $
 
 # Unlike many other binary packages the user doesn't need to agree to a licence
 # to download VM Ware.  The agreeing to a licence is part of the configure step
@@ -9,7 +9,7 @@
 inherit gcc eutils
 
 S=${WORKDIR}/vmware-distrib
-ANY_ANY="vmware-any-any-update84"
+ANY_ANY="vmware-any-any-update89"
 NP="VMware-workstation-3.2.1-2242"
 DESCRIPTION="Emulate a complete PC on your PC without the usual performance overhead of most emulators"
 HOMEPAGE="http://www.vmware.com/products/desktop/ws_features.html"
@@ -32,10 +32,14 @@ KEYWORDS="-* x86"
 IUSE=""
 RESTRICT="nostrip"
 
-DEPEND="virtual/libc
+RDEPEND=">=dev-lang/perl-5
+	sys-libs/glibc
 	virtual/x11
 	virtual/os-headers
-	>=dev-lang/perl-5"
+	media-libs/gdk-pixbuf"
+
+dir=/opt/vmware
+Ddir=${D}/${dir}
 
 src_unpack() {
 	check_KV
@@ -64,23 +68,25 @@ src_install() {
 	# lets make gcc happy regardless of what version we're using
 	epatch ${FILESDIR}/${PV}/vmware-config.pl-gcc-generalized.patch
 
-	dodir /opt/vmware/bin
-	cp -a bin/* ${D}/opt/vmware/bin/
-	# vmware and vmware-ping needs to be suid root.
-	chmod u+s ${D}/opt/vmware/bin/vmware
-	chmod u+s ${D}/opt/vmware/bin/vmware-ping
+	dodir ${dir}/bin
+	cp -a bin/* ${Ddir}/bin
 
-	dodir /opt/vmware/lib
-	cp -a lib/* ${D}/opt/vmware/lib/
+	dodir ${Ddir}/lib
+	cp -a lib/* ${Ddir}/lib
 	# Since with Gentoo we compile everthing it doesn't make sense to keep
 	# the precompiled modules arround. Saves about 4 megs of disk space too.
-	rm -rf ${D}/opt/vmware/lib/modules/binary
+	rm -rf ${Ddir}/lib/modules/binary
+	# We also remove libgdk_pixbuf stuff, to resolve bug #81344.
+	rm -rf ${Ddir}/lib/lib/libgdk_pixbuf.so.2
+	# We set vmware-vmx and vmware-ping suid
+	chmod u+s ${Ddir}/bin/vmware-ping
+	chmod u+s ${Ddir}/lib/bin/vmware-vmx
 
-	dodir /opt/vmware/doc
-	cp -a doc/* ${D}/opt/vmware/doc/
+	dodir ${dir}/doc
+	cp -a doc/* ${Ddir}doc
 
-	dodir /opt/vmware/man/
-	cp -a man/* ${D}/opt/vmware/man/
+	dodir ${dir}/man
+	cp -a man/* ${Ddir}/man
 
 	# vmware service loader
 	exeinto /etc/init.d
@@ -109,7 +115,7 @@ src_install() {
 	keepdir /etc/vmware/init.d/rc{0,1,2,3,4,5,6}.d
 
 	# A simple icon I made
-	insinto /opt/vmware/lib/icon
+	insinto ${dir}/lib/icon
 	doins ${DISTDIR}/vmware.png || die
 	doicon ${DISTDIR}/vmware.png || die
 

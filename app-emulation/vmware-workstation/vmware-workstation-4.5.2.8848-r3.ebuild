@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-4.5.2.8848-r2.ebuild,v 1.5 2005/01/11 16:37:45 wolf31o2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-4.5.2.8848-r3.ebuild,v 1.1 2005/02/09 15:20:18 wolf31o2 Exp $
 
 # Unlike many other binary packages the user doesn't need to agree to a licence
 # to download VMWare. The agreeing to a licence is part of the configure step
@@ -9,7 +9,7 @@
 inherit eutils
 
 S=${WORKDIR}/vmware-distrib
-ANY_ANY="vmware-any-any-update88"
+ANY_ANY="vmware-any-any-update89"
 NP="VMware-workstation-4.5.2-8848"
 DESCRIPTION="Emulate a complete PC on your PC without the usual performance overhead of most emulators"
 HOMEPAGE="http://www.vmware.com/products/desktop/ws_features.html"
@@ -34,11 +34,15 @@ SLOT="0"
 KEYWORDS="-* x86 amd64"
 RESTRICT="nostrip"
 
-DEPEND="virtual/libc
+RDEPEND=">=dev-lang/perl-5
+	sys-libs/glibc
 	virtual/x11
 	virtual/os-headers
-	>=dev-lang/perl-5
+	media-libs/gdk-pixbuf
 	sys-apps/pciutils"
+
+dir=/opt/vmware
+Ddir=${D}/${dir}
 
 src_unpack() {
 	unpack ${NP}.tar.gz
@@ -55,23 +59,25 @@ src_unpack() {
 }
 
 src_install() {
-	dodir /opt/vmware/bin
-	cp -a bin/* ${D}/opt/vmware/bin/
+	dodir ${dir}/bin
+	cp -a bin/* ${Ddir}/bin
 
-	dodir /opt/vmware/lib
-	cp -dr lib/* ${D}/opt/vmware/lib/
-
-	chmod u+s ${D}/opt/vmware/lib/bin/vmware-vmx || die
-
+	dodir ${dir}/lib
+	cp -dr lib/* ${Ddir}/lib
 	# Since with Gentoo we compile everthing it doesn't make sense to keep
 	# the precompiled modules arround. Saves about 4 megs of disk space too.
-	rm -rf ${D}/opt/vmware/lib/modules/binary
+	rm -rf ${Ddir}/lib/modules/binary
+	# We also remove libgdk_pixbuf stuff, to resolve bug #81344.
+	rm -rf ${Ddir}/lib/lib/libgdk_pixbuf.so.2
+	# We set vmware-vmx and vmware-ping suid
+	chmod u+s ${Ddir}/bin/vmware-ping
+	chmod u+s ${Ddir}/lib/bin/vmware-vmx
 
-	dodir /opt/vmware/doc
-	cp -a doc/* ${D}/opt/vmware/doc/
+	dodir ${dir}/doc
+	cp -a doc/* ${Ddir}/doc
 
-	dodir /opt/vmware/man/
-	cp -a man/* ${D}/opt/vmware/man/
+	dodir ${dir}/man
+	cp -a man/* ${Ddir}/man
 
 	# vmware service loader
 	exeinto /etc/init.d
@@ -100,14 +106,14 @@ src_install() {
 	keepdir /etc/vmware/init.d/rc{0,1,2,3,4,5,6}.d
 
 	# A simple icon I made
-	insinto /opt/vmware/lib/icon
+	insinto ${dir}/lib/icon
 	doins ${DISTDIR}/vmware.png || die
 	doicon ${DISTDIR}/vmware.png || die
 
 	make_desktop_entry vmware "VMWare Workstation" vmware.png
 
 	dodir /usr/bin
-	dosym /opt/vmware/bin/vmware /usr/bin/vmware
+	dosym ${dir}/bin/vmware /usr/bin/vmware
 
 	# Questions:
 	einfo "Adding answers to /etc/vmware/locations"
@@ -134,7 +140,7 @@ pkg_preinst() {
 
 	einfo "Generating /etc/vmware/locations file."
 	d=`echo ${D} | wc -c`
-	for x in `find ${D}/opt/vmware ${D}/etc/vmware` ; do
+	for x in `find ${Ddir} ${D}/etc/vmware` ; do
 		x="`echo ${x} | cut -c ${d}-`"
 		if [ -d ${D}/${x} ] ; then
 			echo "directory ${x}" >> ${D}/etc/vmware/locations
@@ -158,8 +164,8 @@ pkg_config() {
 	# In case pkg_config() ends up being the defacto standard for
 	# configuring packages (malverian <malverian@gentoo.org>)
 
-	einfo "Running /opt/vmware/bin/vmware-config.pl"
-	/opt/vmware/bin/vmware-config.pl
+	einfo "Running ${dir}/bin/vmware-config.pl"
+	${dir}/bin/vmware-config.pl
 }
 
 pkg_postinst() {
