@@ -1,4 +1,5 @@
 MD5 4d6e594d3261b3e09b9db1fab876f19c squid-2.5.5-r3.ebuild 5383
+MD5 7e80ff6c94e6181dbe77a5c8474442ab squid-2.5.8-r1.ebuild 5893
 MD5 f0556ae57a1b49d2c59645362ea9412e squid-2.5.7-r6.ebuild 5822
 MD5 f2881ab9b7a08ed59e6f62d772193dfb squid-2.5.8.ebuild 5893
 MD5 09369b2d9c6744fe160586802c49a8f7 squid-2.4.7.ebuild 4000
@@ -10,6 +11,7 @@ MD5 a188814c2113dcd28c55672dbe58df8c files/squid-2.5.5-ntml-auth-fix.patch 2354
 MD5 45bf3c4b37515fe4da4ed6d39904132d files/digest-squid-2.5.5-r3 147
 MD5 c3cb57db464a884a63d0c53ceb38331b files/digest-squid-2.5.6-r3 156
 MD5 5c71681960446a71b628cf4c4c6cd195 files/digest-squid-2.5.7-r6 156
+MD5 c2d230465ceefe887175cb8121d0fbc8 files/digest-squid-2.5.8-r1 156
 MD5 e4e44e57aa7d93849649c3ceb67a3a65 files/squid.confd 437
 MD5 77aec5b95dd4600de8621d925d2997e4 files/squid-2.5.7-gentoo.diff 16834
 MD5 0c7867dce4b8bef078a93bf717196b0e files/squid-2.5.3-gentoo.diff 11534
