@@ -1,3 +1,4 @@
+MD5 4797c2c05ed335e126d2cbcc1020c13c goggles-0.7.10.ebuild 1215
 MD5 4797c2c05ed335e126d2cbcc1020c13c goggles-0.7.4-r1.ebuild 1215
 MD5 cd709243cba6718b3cc330874be93d53 ChangeLog 708
 MD5 7300a7b361fa9f48e37722c6952bd432 metadata.xml 158
@@ -5,3 +6,4 @@ MD5 5915541c79f66f14470adffd489009e2 goggles-0.7.4.ebuild 940
 MD5 5f4a7441d17566f5347a2e65d589e863 files/goggles-0.7.4-gentoo.patch 874
 MD5 24eefdf711e3a7ce5e095b5b989741b8 files/digest-goggles-0.7.4 66
 MD5 24eefdf711e3a7ce5e095b5b989741b8 files/digest-goggles-0.7.4-r1 66
+MD5 b831562bf7983a728b4d8f8ef78158c4 files/digest-goggles-0.7.10 67
