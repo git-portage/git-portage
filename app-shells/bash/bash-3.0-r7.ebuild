@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/Attic/bash-3.0-r6.ebuild,v 1.4 2004/10/12 02:31:30 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/Attic/bash-3.0-r7.ebuild,v 1.1 2004/10/14 00:11:18 agriffis Exp $
 
 inherit eutils flag-o-matic gnuconfig gcc
 
@@ -45,6 +45,9 @@ src_unpack() {
 	for ((i=1; i<=PLEVEL; i++)); do
 		epatch ${DISTDIR}/${PN}${PV/\.}-$(printf '%03d' ${i})
 	done
+
+	# This is another "official" patch that hasn't gotten on the ftp site yet
+	epatch ${FILESDIR}/bash30-014
 
 	# Patch readline's bind.c so that /etc/inputrc is read as a last resort
 	# following ~/.inputrc.  This is better than putting INPUTRC in
