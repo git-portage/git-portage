@@ -17,8 +17,8 @@ MD5 dbd76ccbaff3fae4f51181b226dd9298 ppc-sources-2.4.23.ebuild 2732
 MD5 f5a8961f6bee81bb2c8feaef1f0268e0 ppc-sources-2.4.23-r1.ebuild 2993
 MD5 b89003febb60432b1eaa157cb1d532ff ppc-sources-2.4.24.ebuild 1925
 MD5 3d724a97bfd650804c27c697d5c580f8 ppc-sources-2.4.24-r1.ebuild 2018
-MD5 1b048f177283a7930e9e0c9b33736621 ppc-sources-2.4.24-r2.ebuild 2127
-MD5 3dd2e8b38e478a3d4f27dc44c956f18e ChangeLog 6798
+MD5 e87034d469352fb1448de02f1bb3eec0 ppc-sources-2.4.24-r2.ebuild 2129
+MD5 c4b387a2490cfa87611e8196ef79f4b8 ChangeLog 6973
 MD5 88a216bd55a77f58510b9a1c5c3767ce files/digest-ppc-sources-2.4.19 149
 MD5 6b15a062d96482772f860647c0088358 files/digest-ppc-sources-2.4.19-r3 149
 MD5 9cab1e75f8fcaef7441998de95c9b452 files/digest-ppc-sources-2.4.19-r4 149
