@@ -1,0 +1,4 @@
+MD5 585fb9ccb58ffff4ad8adda6c6b87dfa lighttpd-1.1.8.ebuild 1436
+MD5 eb94c0fc2149e2543beb50e93058de99 files/digest-lighttpd-1.1.8 66
+MD5 1c07ea1036c540aa1db5fc0c9aa507c7 files/lighttpd-1.1.8-gentoo.diff 1303
+MD5 69fcc46206e1d5bb30c8a324e0ef536f files/lighttpd.initd 538
