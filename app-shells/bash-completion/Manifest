@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 966a1b97060ac3708d22d088e3cf49d6 bash-completion-20041017-r3.ebuild 2621
 MD5 b8b1307836a8311de6750fff5048b09d bash-completion-20050121-r1.ebuild 2696
 MD5 9a2fbf3133e8372c5201102c2255109b bash-completion-20050121-r5.ebuild 1971
@@ -13,3 +16,10 @@ MD5 3b7f1d6155d6deff5812264ef6bc4c07 files/bash-completion 724
 MD5 d2cefd3e4878b47d485936839bdd39ab files/20050121-muttng.diff 2261
 MD5 64ca0b5063d0874c6104a4b174cb0d40 files/20050121-gentoo.diff 1894
 MD5 61eddfb92948b070333a59498edf5266 files/20041017-gentoo.diff 2032
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCSauFEZCkKN40op4RArU+AKCLBpVuNTEU32c4srYp8L+qQFmqyACfdyWw
+gUrpyEPw7gH77SD3dUxeMJI=
+=gouU
+-----END PGP SIGNATURE-----
