@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/net-snmp/Attic/net-snmp-5.2-r1.ebuild,v 1.1 2005/01/26 10:44:04 ka0ttic Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/net-snmp/Attic/net-snmp-5.2-r2.ebuild,v 1.1 2005/01/28 11:19:25 ka0ttic Exp $
 
 inherit eutils fixheadtails
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~sparc ~alpha ~arm ~hppa ~amd64 ~ia64 ~s390 ~ppc64 ~mips"
-IUSE="perl ipv6 ssl tcpd X lm_sensors minimal smux"
+IUSE="perl ipv6 ssl tcpd X lm_sensors minimal smux selinux"
 
 PROVIDE="virtual/snmp"
 DEPEND="virtual/libc
@@ -29,6 +29,7 @@ DEPEND="virtual/libc
 	)"
 RDEPEND="${DEPEND}
 	perl? ( X? ( dev-perl/perl-tk ) )
+	selinux? ( sec-policy/selinux-snmpd )
 	!virtual/snmp"
 
 DEPEND="${DEPEND} >=sys-apps/sed-4"
@@ -106,10 +107,17 @@ src_install () {
 	dodoc AGENT.txt ChangeLog FAQ INSTALL NEWS PORTING README* TODO
 	newdoc EXAMPLE.conf.def EXAMPLE.conf
 
+	keepdir /etc/snmp /var/lib/net-snmp
+
 	newinitd ${FILESDIR}/snmpd-5.1.rc6 snmpd
 	newconfd ${FILESDIR}/snmpd-5.1.conf snmpd
 
-	keepdir /etc/snmp /var/lib/net-snmp
+	# snmptrapd can use the same rc script just slightly modified
+	sed -e 's/net-snmpd/snmptrapd/g' \
+		-e 's/snmpd/snmptrapd/g' \
+		-e 's/SNMPD/SNMPTRAPD/g' \
+		${D}/etc/init.d/snmpd > ${D}/etc/init.d/snmptrapd || die
+	newconfd ${FILESDIR}/snmptrapd.conf snmptrapd
 
 	# Remove everything, keeping only the snmpd, snmptrapd, MIBs, libs, and includes.
 	if use minimal; then
