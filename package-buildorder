@@ -74,7 +74,7 @@ X ./media-libs/libungif/libungif-4.1.0_beta1-r1.ebuild
 ./dev-lang/nasm/nasm-0.98-r1.ebuild
 ./dev-lang/tcl-tk-8.0/tcl-tk-8.0.5-r1.ebuild
 ./dev-lang/tcl-tk-8.1/tcl-tk-8.1.1-r1.ebuild
-./dev-lang/python/python-1.5.2-r1.ebuild
+./dev-lang/python/python-1.5.2-r2.ebuild
 ./dev-db/mysql/mysql-3.23.22.ebuild
 ./app-admin/modlogan/modlogan-0.5.2.ebuild
 ./dev-lang/jdk/jdk-1.2.2.ebuild

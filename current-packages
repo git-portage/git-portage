@@ -66,7 +66,7 @@
 ./sys-devel/make/make-3.79.1-r1.ebuild
 ./sys-devel/patch/patch-2.5.4-r1.ebuild
 ./sys-devel/perl/perl-5.6.0-r1.ebuild
-./sys-devel/python-basic/python-basic-1.5.2-r1.ebuild
+./sys-devel/python-basic/python-basic-1.5.2-r2.ebuild
 ./sys-kernel/linux-UP-2.2.17/linux-UP-2.2.17-r2.ebuild
 #./sys-kernel/linux-UP-2.2.17/linux-UP-nfs3-2.2.17-r1.ebuild
 #./sys-kernel/linux-UP-2.4.0/linux-UP-2.4.0_rc9-r7.ebuild
@@ -142,7 +142,7 @@
 ./dev-lang/nasm/nasm-0.98-r1.ebuild
 #./dev-lang/php-4/php-4.0.0-r1.ebuild
 ./dev-lang/php-4/php-4.0.3_p1.ebuild
-./dev-lang/python/python-1.5.2-r1.ebuild
+./dev-lang/python/python-1.5.2-r2.ebuild
 ./dev-lang/tcl-tk-8.0/tcl-tk-8.0.5-r1.ebuild
 ./dev-lang/tcl-tk-8.1/tcl-tk-8.1.1-r1.ebuild
 ./dev-libs/g-wrap/g-wrap-0.9.5.ebuild
