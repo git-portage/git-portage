@@ -1,4 +1,6 @@
 MD5 2f70598786a99cae53eb63739f5ccbb5 xfmedia-0.5.0.ebuild 745
+MD5 bd5191fe218be3e07f14a5ac9d540f6f xfmedia-0.6.0.ebuild 746
 MD5 e808e6826f29fd9db3adddd3176901c0 ChangeLog 541
 MD5 c390804e060ffd11a5bbb143434b2b2d metadata.xml 157
 MD5 ee1c59969c95d76106ba56ac3eb29935 files/digest-xfmedia-0.5.0 65
+MD5 d00487379a40693e44d9bc6d7d014eb6 files/digest-xfmedia-0.6.0 66
