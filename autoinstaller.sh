@@ -55,9 +55,12 @@ esac
 
 echo "Keymap: $keymap"
 mv ${ROOT}/etc/rc.d/config/basic ${ROOT}/etc/rc.d/config/basic.bak
-sed -e "s/KEYMAP=.*/KEYMAP=\"$keymap\"/" ${ROOT}/etc/rc.d/config/basic.bak > ${ROOT}/etc/rc.d/config/basic
+sed -e "s/KEYMAP=.*/KEYMAP=\"$keymap\"/" \
+    -e "s/CONSOLEFONT=.*/CONSOLEFONT=\"$consolefont\"/" \
+	${ROOT}/etc/rc.d/config/basic.bak > ${ROOT}/etc/rc.d/config/basic
 mv ${ROOT}/etc/rc.d/config/basic ${ROOT}/etc/rc.d/config/basic.bak
-sed -e "s/TIMED=.*/TIMED=\"$timed\"/" ${ROOT}/etc/rc.d/config/basic.bak > ${ROOT}/etc/rc.d/config/basic
+sed -e "s/TIMED=.*/TIMED=\"$timed\"/" \
+	${ROOT}/etc/rc.d/config/basic.bak > ${ROOT}/etc/rc.d/config/basic
 
 
 myzone="${ROOT}/usr/share/zoneinfo/$timezone"
