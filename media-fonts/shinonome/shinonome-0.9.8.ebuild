@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/shinonome/Attic/shinonome-0.9.8.ebuild,v 1.5 2003/03/11 21:11:49 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-fonts/shinonome/Attic/shinonome-0.9.8.ebuild,v 1.1 2003/06/23 07:14:55 phosphan Exp $
 
 DESCRIPTION="Japanese bitmap fonts for X"
 SRC_URI="http://openlab.jp/efont/dist/shinonome/${P}-src.tar.bz2"
