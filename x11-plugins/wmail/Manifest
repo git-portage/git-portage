@@ -1,4 +1,7 @@
+MD5 9808cf3d68fdefde0068aaad844f20fa wmail-2.0-r1.ebuild 727
 MD5 857bff9ab292775d27103d57190a3fcf wmail-2.0.ebuild 721
 MD5 c7214594ad33381a0fe934aac97b2b22 ChangeLog 507
 MD5 024ccf0aa087fd619a63cf8c8b90b11b metadata.xml 452
+MD5 b6c8bf6a379ca8145d6c8b30885f9ad8 files/wmail-2.0.support-libdockapp-0.5.0.patch 1026
 MD5 04660762fd41fa57a0bac2d55056514b files/digest-wmail-2.0 60
+MD5 04660762fd41fa57a0bac2d55056514b files/digest-wmail-2.0-r1 60
