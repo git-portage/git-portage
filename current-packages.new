@@ -20,6 +20,7 @@
 ./app-arch/unzip/unzip-5.41-r1.ebuild
 ./app-arch/zip/zip-2.3.ebuild
 ./app-cdr/cdrecord/cdrecord-1.9-r1.ebuild
+./app-crypt/gnupg/gnupg-1.0.5.ebuild
 ./app-doc/gimp-user-manual/gimp-user-manual-html-2.0.ebuild
 #./app-editors/emacs-nogui/emacs-nogui-20.7.ebuild
 ./app-editors/emacs-x11/emacs-x11-20.7.ebuild
