@@ -1,4 +1,6 @@
+MD5 874583879d0d4b39e3d80ad560691626 wmtimer-2.4.ebuild 805
+MD5 e5e545d2ac3323848229a3d0e88947e5 wmtimer-2.9.2.ebuild 874
 MD5 1503a43b4072d6043703dcd590312b12 ChangeLog 1577
 MD5 29dad15b2d403e1f5225ef8b26e8baa3 metadata.xml 505
-MD5 874583879d0d4b39e3d80ad560691626 wmtimer-2.4.ebuild 805
 MD5 e9893dea144b35a7eb054a48c737d0cc files/digest-wmtimer-2.4 62
+MD5 49cf497c9616c2dc6e57a24f096e9b07 files/digest-wmtimer-2.9.2 63
