@@ -1,8 +1,11 @@
-MD5 7439fc2c586ae8bf44c065063c020cf1 baselayout-1.11.8-r3.ebuild 16831
-MD5 d3201681f69ec6676328ab0e971fb04b baselayout-1.9.4-r6.ebuild 16865
-MD5 9cc4e95af4c527c03bd56c0537adffa1 baselayout-1.11.9-r1.ebuild 16985
-MD5 33282ad3bdc9294968271645cf1e791f baselayout-1.9.4-r7.ebuild 18148
-MD5 4bd9e8b6a65a5fefa08b49622951b6ea ChangeLog 48091
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 63fe1de96f6485a4e395d1a9132b8b33 baselayout-1.11.8-r3.ebuild 16828
+MD5 7875c929dd71e995da27936c6d859717 baselayout-1.9.4-r6.ebuild 16862
+MD5 e9435605e672ce445890b9b723ff234b baselayout-1.11.9-r1.ebuild 16982
+MD5 a564d6194f6a91d76d572a0f934c4faa baselayout-1.9.4-r7.ebuild 18143
+MD5 0ad349f61218ece43f20aaac7829795f ChangeLog 48088
 MD5 e02bb32cac91dad28d3c05b731b37b04 metadata.xml 385
 MD5 dd7fbce62822fed1595f11078e23aa32 files/baselayout-1.8.6.13-r1-gcc2.patch 443
 MD5 126200ae85bdf0ef43de75411f71aaa8 files/rc-scripts-1.6.9-domainname.patch 380
@@ -17,3 +20,12 @@ MD5 7c0cd50e4ac1dc062f5e6ab578e95659 files/copyright 2099
 MD5 b4092f5ec486d78aa60a04777bb840a8 files/rc-scripts-1.4.16-livecd.patch 1420
 MD5 d69d18485e6cfc948d9f39b2b766a406 files/digest-baselayout-1.9.4-r6 134
 MD5 d69d18485e6cfc948d9f39b2b766a406 files/digest-baselayout-1.9.4-r7 134
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iQCVAwUBQiTmo54WFLgrx1GWAQLUEQP/fAVk9ayuhKSdDEDLi3+369Rgv7w+R3s6
++JxuUh8XMH++2TDgmQw/Aor3Pse3rMjn15PAe9XCqJyE+JDMulhabwc6r2JP/FJ6
+8hF4gGe54sBnhYzkKiVz6ruZGt98mvIuc1rvofc0aobpj2MylVIoRNbV+x2UAn8R
+kBnUylwknHg=
+=cwra
+-----END PGP SIGNATURE-----
