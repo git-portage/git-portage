@@ -1,4 +1,4 @@
-MD5 fd9b755547cac6401cfb652060bb6318 ChangeLog 6080
+MD5 58e656ea724f5925749918d18d07250f ChangeLog 6078
 MD5 1c052e00eb39506aa1b54ec02045995a metadata.xml 504
 MD5 ba565792fff8cf2356c98c15b8bd89d8 ppc-development-sources-2.6.0-r1.ebuild 2972
 MD5 e6fd094f536ae835bbfa08f9bebef3d7 ppc-development-sources-2.6.0-r2.ebuild 2972
@@ -7,7 +7,7 @@ MD5 ffba8c010efcdd424eb46b3e222d7c78 ppc-development-sources-2.6.3-r1.ebuild 305
 MD5 952a04f0a8f7307fde85a48d78dc8fa1 ppc-development-sources-2.6.3-r2.ebuild 3047
 MD5 77351ae26d54f9d94f8af66939c54db6 ppc-development-sources-2.6.3_rc3-r1.ebuild 3051
 MD5 12db7aa41caa5922b0a435ef1fe66adf ppc-development-sources-2.6.5_rc2-r1.ebuild 3235
-MD5 1526a625685c742a42d49f8f18be8ec5 ppc-development-sources-2.6.4.ebuild 3007
+MD5 41ee3a9d3265ca3f362ac3dec911d5ab ppc-development-sources-2.6.4.ebuild 3004
 MD5 98c624d5e20e6a9fbd6c9705458f1737 ppc-development-sources-2.6.1-r1.ebuild 2951
 MD5 eec7c07dbcbb383fd1da396c445ae08e ppc-development-sources-2.6.1_rc1-r1.ebuild 3049
 MD5 2aaa409496e1e3b82b971dd7f0611d13 ppc-development-sources-2.6.2-r1.ebuild 3003
