@@ -1,5 +1,9 @@
 date 23 Apr 2001
 
+upd sys-apps/iptables-1.2-r1 to 1.2.1a
+drobbins
+a new iptables release with some bug fixes
+
 upd x11-base/xfree-4.0.3-r1 to 4.0.3-r2
 drobbins
 a few dependency fixes, now provides virtual/opengl
