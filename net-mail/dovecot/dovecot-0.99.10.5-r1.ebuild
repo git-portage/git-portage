@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/dovecot/Attic/dovecot-0.99.10.5.ebuild,v 1.2 2004/06/04 08:54:36 dholm Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/dovecot/Attic/dovecot-0.99.10.5-r1.ebuild,v 1.1 2004/06/12 14:46:51 g2boojum Exp $
 
 IUSE="debug ipv6 ldap mbox pam postgres sasl ssl gnutls vpopmail nopop3d"
 
@@ -138,6 +138,7 @@ src_install () {
 	keepdir /var/run/dovecot/login
 	fowners root:dovecot /var/run/dovecot/login
 	fperms 0750 /var/run/dovecot/login
+	fperms 0600 /etc/dovecot.conf
 }
 
 pkg_postinst() {
