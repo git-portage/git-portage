@@ -4,6 +4,10 @@ A syslogd/klogd replacement.  Very full featured, including logging
 based on facility, program name and regex.
 jerry
 
+upd app-admin/fcron-1.1.0 to 1.1.1
+Versions prior to this have security issues.
+jerry
+
 date 9 July 2001
 new net-misc/pdnsd-1.1.6
 Proxy DNS server with permanent caching (saves state/cache between stop
