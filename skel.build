@@ -1,7 +1,12 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author First Last <your email>
-# $Header: /var/cvsroot/gentoo-x86/Attic/skel.build,v 1.7 2001/08/25 21:15:08 chadh Exp $
+# $Header: /var/cvsroot/gentoo-x86/Attic/skel.build,v 1.8 2001/10/11 17:50:47 woodchip Exp $
+
+#NOTE: the comments in this file itself, are for instruction and documentation.
+# They're not meant to appear with your final, production ebuild. Please
+# remember to remove them before submitting or committing your ebuild.
+# That doesnt mean you cant add your own comments though.
 
 #Remeber to add the proper Author line, above.  Don't worry about the
 # fourth line; it'll get automatically fixed when the ebuild is checked in
