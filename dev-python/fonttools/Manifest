@@ -1,14 +1,4 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 992c72bca4cc5b4e3ce9efdded2bed53 ChangeLog 699
-MD5 16d9e965915cef496703b11b697d3f10 fonttools-2.0_beta1.ebuild 605
+MD5 614ef705750d0fc4de29b925a2fe10a2 fonttools-2.0_beta1.ebuild 710
 MD5 ce4646c9d4a69033796359bcaf7373a5 metadata.xml 178
 MD5 dd2826a5d1de9b5937fd50d2a0c8ba0e files/digest-fonttools-2.0_beta1 64
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBwRR5VWNWqTUmv+0RAv/XAJ9EXA4XQA8cThtqIN0Xq5Fiz3SuzwCdFy6y
-v7fpIgHDV4aGU/lP/Bi/Vdk=
-=b5/r
------END PGP SIGNATURE-----
