@@ -1,3 +1,15 @@
+date 30 Mar 2001
+
+new net-fs/samba-winbind-20010330
+achim
+CVS snapshot from samba-tng. This package only includes the winbind daemon
+and the nss and pam libs, required to use NT-Domain users on yourlinux box
+
+upd app-editors/joe-2.8-r1 to 2.9.5
+achim
+This version no longer searches for a configuration file in the current directory,
+and thus closes a very large security hole. A problem with resizing was also solved.
+
 date 29 Mar 2001
 
 upd media-libs/netpbm-9.10 to 9.12
