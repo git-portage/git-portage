@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-electronics/geda/Attic/geda-20040111.ebuild,v 1.2 2004/12/27 19:20:35 ribosome Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-electronics/geda/Attic/geda-20040111.ebuild,v 1.4 2004/12/27 19:44:02 ribosome Exp $
 
 S=${WORKDIR}
 
@@ -34,8 +34,8 @@ DEPEND=">=sys-libs/glibc-2.1.3
 
 	>=app-sci/libgeda-${PV}
 	>=sci-electronics/gerbv-0.15
-	>=app-sci/gnucap-0.33
-	>=app-sci/gtkwave-2.0.0_pre20030319
+	>=sci-electronics/gnucap-0.33
+	>=sci-electronics/gtkwave-2.0.0_pre20030319
 	>=app-sci/gwave-20031224
 	>=app-sci/iverilog-0.7
 	>=app-sci/tclspice-0.2.15
