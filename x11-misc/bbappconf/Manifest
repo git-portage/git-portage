@@ -1,4 +1,5 @@
-MD5 f88f168cfbfac915f5e1056e1a5858fa bbappconf-0.0.2.ebuild 651
-MD5 a8c5e20082db032e2042855d73bee3b5 ChangeLog 1134
+MD5 8ba1fd9d21bd3209cc0bd326c21ee53c bbappconf-0.0.2.ebuild 829
+MD5 9f8b39979c0e299497d45993913e8b96 ChangeLog 1324
 MD5 035e70a253189f818aa3f8317376cd35 metadata.xml 291
+MD5 d6d095fbad88fb74892cf39b4db24f48 files/bbappconf-0.0.2-fix-sigsegv.diff 651
 MD5 43cacc45a353c364c3818a8229f42a54 files/digest-bbappconf-0.0.2 66
