@@ -32,7 +32,4 @@ MD5 23c4c7ee1b86cd191e7b17b046289c91 files/1.2.9-files/03_hppa_gentoo.patch.bz2 
 MD5 c4f9d5d795f4ab2c221681e55ebac8dd files/1.2.9-files/02_all_imq.patch.bz2 2936
 MD5 88d477ca9a41c15b1cc2d5253e371ada files/1.2.9-files/06_all_l7.patch.bz2 4455
 MD5 2599393f05041feef25abb4f204e72cb files/1.2.9-files/05_all_install_all_dev_files.patch.bz2 1056
-MD5 88d477ca9a41c15b1cc2d5253e371ada files/extensions/iptables-1.2.9-l7-patch.bz2 4455
-MD5 c4f9d5d795f4ab2c221681e55ebac8dd files/extensions/iptables-1.2.9-imq.patch.bz2 2936
-MD5 d5afce91314f40a8448cd20a8b585ee5 files/extensions/iptables-1.2.9-grsecurity.patch.bz2 1224
 MD5 23c4c7ee1b86cd191e7b17b046289c91 files/1.2.11-files/03_all_gentoo.patch.bz2 278
