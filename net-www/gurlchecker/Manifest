@@ -3,6 +3,8 @@ MD5 590805752f0ba037b1a16ace05c1c901 gurlchecker-0.6.5.ebuild 677
 MD5 8b8670a2fec5af66942876d66a23b809 gurlchecker-0.6.4.ebuild 676
 MD5 f9284107d733a950e1e5c9dc384a58e0 gurlchecker-0.6.2.ebuild 676
 MD5 33bab6349308cbd55e2142f7dfb61b6e ChangeLog 1014
+MD5 8c27f2cb48acb4ae55bd2edf1c0dbd08 gurlchecker-0.6.6.ebuild 678
 MD5 ade0687a8d7ef82d1d8d03cdef87378c files/digest-gurlchecker-0.6.4 69
 MD5 0e74075c0837671e97354bbb0e4951fa files/digest-gurlchecker-0.6.2 69
 MD5 18ab2b703c0e3c0f59fb8893f9e4e0aa files/digest-gurlchecker-0.6.5 69
+MD5 5c7aab96f2fadb81f948d104fb8504e0 files/digest-gurlchecker-0.6.6 69
