@@ -1,13 +1,17 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/smpeg-xmms/Attic/smpeg-xmms-0.3.5-r1.ebuild,v 1.4 2004/04/22 06:26:38 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/xmms-smpeg/Attic/xmms-smpeg-0.3.5-r1.ebuild,v 1.1 2004/04/22 08:27:34 eradicator Exp $
 
 inherit eutils
 
 IUSE="sdl"
 
+MY_PN="smpeg-xmms"
+MY_P="${MY_PN}-${PV}"
+S="${WORKDIR}/${MY_P}"
+
 DESCRIPTION="A MPEG Plugin for XMMS"
-SRC_URI="ftp://ftp.xmms.org/xmms/plugins/smpeg-xmms/${P}.tar.gz"
+SRC_URI="ftp://ftp.xmms.org/xmms/plugins/smpeg-xmms/${MY_P}.tar.gz"
 HOMEPAGE="http://www.xmms.org/plugins_input.html"
 
 DEPEND=">=media-sound/xmms-1.2.4
@@ -26,19 +30,11 @@ src_unpack() {
 }
 
 src_compile() {
-
-	cd ${S}
-	local myconf
-	use sdl || myconf="${myconf} --disable-sdltest"
-
-	econf ${myconf} || die
+	econf `use_enable sdl sdltest` || die
 	emake || die
-
 }
 
 src_install () {
-
-	cd ${S}
 	make DESTDIR=${D} install || die
 	dodoc AUTHORS COPYING README TODO ChangeLog
 }
