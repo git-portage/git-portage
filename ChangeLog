@@ -1,3 +1,11 @@
+date 04 Jan 2000
+
+upd net-www/apache-1.3.14.2.7.1-r1 to 1.3.14.2.7.1-r2
+drobbins
+Removed a broken FLOCK #define which was causing apache to flake out
+as well as affecting the ability of other processes to perform
+exclusive locks.
+
 date 01 Jan 2000
 
 upd net-fs/samba-2.0.7-r1 to 2.0.7-r2
