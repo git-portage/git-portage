@@ -1,5 +1,11 @@
 date 15 Feb 2001
 
+upd dev-db/mysql-3.23.32 to mysql-3.23.32-r1
+pete
+same as mysql-3.23.32, but run aclocal/autoconf/automake, and added
+autoconf/automake to depends; also, had to add a patch:
+mysql-3.23.32-r1-gentoo.diff
+
 upd sys-apps/portage-1.4-r10 to 1.5_pre1
 drobbins
 New *test* version of portage for testers only.  Features second
