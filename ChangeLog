@@ -1,5 +1,10 @@
 date 02 Feb 2001
 
+new media-sound/xxms-shn-2.2.3
+drobbins
+This input plugins allows playback of .shn files, a format popular
+for lossless audio encoding and exchange (see media-sound/shorten)
+
 upd media-sound/xmms-aalsa-0.5.4 to 0.5.4-r1
 drobbins
 merge location fix (original fix didn't work due to weird Makefile)
