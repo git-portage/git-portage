@@ -1,5 +1,6 @@
 MD5 3d9bee3ecb9fb56ee0662360121d9792 mythtv-0.15.1.ebuild 6637
 MD5 bb8f641b460d061161d9982b0464b9dc mythtv-0.13-r1.ebuild 4519
+MD5 ed986a83ce07ad7d884bc14715a48b8b mythtv-0.16.ebuild 7656
 MD5 ed986a83ce07ad7d884bc14715a48b8b mythtv-0.15.1-r1.ebuild 7656
 MD5 069bb2ed03255dd27030c717e89ff508 mythtv-0.14-r1.ebuild 5581
 MD5 1a49449f0b56885a2a851c43fcf01f31 ChangeLog 6524
@@ -12,5 +13,6 @@ MD5 24ab1e90e64fb0be4704e74b633e96b1 files/digest-mythtv-0.14-r1 65
 MD5 edd304638b110182dc687e535104ad17 files/mythbackend.conf 856
 MD5 f34c79d00b235a08f18cf9f2107d6390 files/mythtv-0.15-directfb.patch 1185
 MD5 6ccb01083167ee942d8e0ac84748b276 files/mythbackend.rc6 1654
+MD5 fb4505fe7e8b832e115d777bf836d3bc files/digest-mythtv-0.16 66
 MD5 e7cc68f54ad1c6128aec944e105189e3 files/gcc-3.4-fix.patch 1773
 MD5 b3a4780890d53640604812b8069a8297 files/mythfilldatabase.cron 74
