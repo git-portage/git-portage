@@ -31,8 +31,9 @@
 ./media-libs/smpeg/smpeg-0.4.2-r1.ebuild
 ./media-libs/svgalib/svgalib-1.4.2-r1.ebuild
 ./media-libs/t1lib/t1lib-1.0.1-r2.ebuild
-./media-libs/tiff/tiff-3.5.5-r2.ebuild
+./media-libs/tiff/tiff-3.5.5-r3.ebuild
 ./media-sound/esound/esound-0.2.22.ebuild
+./net-libs/libwww/libwww-5.3.2-r1.ebuild
 ./sys-apps/at/at-3.1.8-r2.ebuild
 ./sys-apps/baselayout/baselayout-1.5-r2.ebuild
 ./sys-apps/bash/bash-2.04-r3.ebuild
@@ -96,7 +97,7 @@
 ./sys-devel/automake/automake-1.4d.ebuild
 ./sys-devel/bc/bc-1.06-r1.ebuild
 ./sys-devel/bin86/bin86-0.15.4-r1.ebuild
-./sys-devel/binutils/binutils-2.10.1.0.7-r1.ebuild
+./sys-devel/binutils/binutils-2.10.91.0.2.ebuild
 ./sys-devel/bison/bison-1.28-r3.ebuild
 ./sys-devel/flex/flex-2.5.4a-r3.ebuild
 ./sys-devel/gcc/gcc-2.95.2.1-r1.ebuild
