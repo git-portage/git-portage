@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.2-r2.ebuild,v 1.7 2003/07/18 22:01:13 tester Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.2-r2.ebuild,v 1.8 2003/07/24 18:17:59 azarah Exp $
 
 IUSE="nls pic build nptl"
 
@@ -113,7 +113,7 @@ get_KV() {
 # than $1.  We basically just try a few default locations.  The
 # version need to be that which KV_to_int() returns ...
 get_KHV() {
-	local headers=""
+	local headers=
 	
 	[ -z "$1" ] && return 1
 	
@@ -342,10 +342,17 @@ src_unpack() {
 		cd ${S}; epatch ${FILESDIR}/2.3.2/${P}-nptl-fix-include.patch
 	fi
 
+	if [ "${ARCH}" = "alpha" ]
+	then
+		# Fix compatability with compaq compilers by ifdef'ing out some 
+		# 2.3.2 additions. 
+		# <taviso@gentoo.org> (14 Jun 2003).
+		cd ${S}; epatch ${FILESDIR}/2.3.2/${P}-decc-compaq.patch
+	fi
+
 	if [ "${ARCH}" = "amd64" ]
 	then
-		cd ${S}
-		epatch ${FILESDIR}/2.3.2/glibc-2.3.2-amd64-nomultilib.patch
+		cd ${S}; epatch ${FILESDIR}/2.3.2/${P}-amd64-nomultilib.patch
 	fi
 }
 
@@ -353,20 +360,35 @@ setup_flags() {
 	# -freorder-blocks for all but ia64 s390 s390x
 	use ppc || append-flags "-freorder-blocks"
 
-	# Sparc support ...
-	replace-flags "-mcpu=ultrasparc" "-mcpu=v8 -mtune=ultrasparc"
-	replace-flags "-mcpu=v9" "-mcpu=v8 -mtune=v9"
+	# Sparc/Sparc64 support
+	if [ -n "`use sparc`" ]
+	then
 
-	# -mvis for sparc64 (should this be always, or only with 64bit userspace ?
-	[ "${PROFILE_ARCH}" = "sparc64" ] && append-flags "-mvis"
+		# Both sparc and sparc64 can use -fcall-used-g6.  -g7 is bad, though.
+		replace-flags "-fcall-used-g7" ""
+		append-flags "-fcall-used-g6"
 
-	# -fcall-used-g7 for sparc and sparc64
-	use sparc && append-flags "-fcall-used-g7"
+		# Sparc64 Only support...
+		if [ "${PROFILE_ARCH}" = "sparc64" ]
+		then
+
+			# Get rid of -mcpu options, the CHOST will fix this up
+			replace-flags "-mcpu=ultrasparc" ""
+			replace-flags "-mcpu=v9" ""
+
+			# Get rid of flags known to fail
+			replace-flags "-mvis" ""
+		
+			# Setup the CHOST properly to insure "sparcv9"
+			# This passes -mcpu=ultrasparc -Wa,-Av9a to the compiler
+			export CHOST=${CHOST/sparc/sparcv9}
+		fi
+	fi
 }
 
 src_compile() {
-	local myconf=""
-	local myconf_nptl=""
+	local myconf=
+	local myconf_nptl=
 
 	setup_flags
 

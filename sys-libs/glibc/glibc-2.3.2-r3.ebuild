@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.2-r1.ebuild,v 1.17 2003/07/24 18:17:59 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.2-r3.ebuild,v 1.1 2003/07/24 18:17:59 azarah Exp $
 
 IUSE="nls pic build nptl"
 
@@ -34,14 +34,16 @@ strip-flags
 export CFLAGS="${CFLAGS//-O?} -O2"
 export CXXFLAGS="${CFLAGS}"
 
-NPTL_VER="0.28"
+NPTL_VER="0.55"
+
+BRANCH_UPDATE="20030723"
 
 # Minimum kernel version for --enable-kernel
 export MIN_KV="2.4.1"
 # Minimum kernel version for enabling TLS and NPTL ...
 # NOTE: do not change this if you do not know what
 #       you are doing !
-export MIN_NPTL_KV="2.5.50"
+export MIN_NPTL_KV="2.5.72"
 
 MY_PV="${PV/_}"
 S="${WORKDIR}/${P%_*}"
@@ -50,23 +52,23 @@ SRC_URI="http://ftp.gnu.org/gnu/glibc/glibc-${MY_PV}.tar.bz2
 	ftp://sources.redhat.com/pub/glibc/snapshots/glibc-${MY_PV}.tar.bz2
 	http://ftp.gnu.org/gnu/glibc/glibc-linuxthreads-${MY_PV}.tar.bz2
 	ftp://sources.redhat.com/pub/glibc/snapshots/glibc-linuxthreads-${MY_PV}.tar.bz2
-	nptl? ( http://people.redhat.com/drepper/nptl/nptl-${NPTL_VER}.tar.bz2 )"
+	nptl? ( http://people.redhat.com/drepper/nptl/nptl-${NPTL_VER}.tar.bz2 )
+	mirror://gentoo/${P}-branch-update-${BRANCH_UPDATE}.patch.bz2"
 HOMEPAGE="http://www.gnu.org/software/libc/libc.html"
 
-KEYWORDS="x86 ppc ~sparc alpha ~hppa ~arm ~mips"
-# Is 99% compadible, just some .a's bork.
+KEYWORDS="-* ~x86"
+# Is 99% compadible, just some .a's bork
 SLOT="2.2"
 LICENSE="LGPL-2"
 
 # Portage-1.8.9 needed for smart library merging feature (avoids segfaults on glibc upgrade)
 # Drobbins, 18 Mar 2002: we now rely on the system profile to select the correct linus-headers
-DEPEND="=sys-devel/gcc-3.2*
-	nptl? ( >=sys-devel/gcc-3.2.2-r1 )
-	mips? >=sys-devel/binutils-2.13.90.0.16 : >=sys-devel/binutils-2.13.90.0.18
+DEPEND=">=sys-devel/gcc-3.2.3-r1
+	nptl? ( >=sys-devel/gcc-3.3-r1 )
+	>=sys-devel/binutils-2.14.90.0.5
 	virtual/os-headers
-	!app-emulation/winex
-	!app-emulation/winex-cvs
 	nls? ( sys-devel/gettext )"
+
 RDEPEND="virtual/os-headers
 	sys-apps/baselayout
 	nls? ( sys-devel/gettext )
@@ -111,7 +113,7 @@ get_KV() {
 # than $1.  We basically just try a few default locations.  The
 # version need to be that which KV_to_int() returns ...
 get_KHV() {
-	local headers=""
+	local headers=
 	
 	[ -z "$1" ] && return 1
 	
@@ -160,16 +162,37 @@ get_KHV() {
 use_nptl() {
 	# Enable NPTL support if:
 	# - We have 'nptl' in USE
-	# - We have 'x86' in USE
-	# - We have linux-2.4 or later kernel (should prob check for 2.4.20 ...)
-	# - We have a CHOST of "i686-pc-linux-gnu"
-	if [ -n "`use nptl`" -a "`use x86`" -a \
-	     "`get_KV`" -ge "`KV_to_int ${MIN_NPTL_KV}`" -a "${CHOST/-*}" = "i686" ]
+	# - We have linux-2.5 or later kernel (should prob check for 2.4.20 ...)
+	if [ -n "`use nptl`" -a "`get_KV`" -ge "`KV_to_int ${MIN_NPTL_KV}`"  ]
 	then
-		return 0
-	else
-		return 1
+		# Enable NPTL support if:
+		# - We have 'x86' in USE and:
+		#   - a CHOST of "i486-pc-linux-gnu"
+		#   - a CHOST of "i586-pc-linux-gnu"
+		#   - a CHOST of "i686-pc-linux-gnu"
+		# - Or we have 'alpha' in USE
+		# - Or we have 'amd64' in USE
+		# - Or we have 'mips' in USE
+		# - Or we have 'ppc' in USE
+		case ${ARCH} in
+			"x86")
+				if [ "${CHOST/-*}" = "i486" -o \
+				     "${CHOST/-*}" = "i586" -o \
+					 "${CHOST/-*}" = "i686" ]
+				then
+					return 0
+				fi
+				;;
+			"alpha"|"amd64"|"mips"|"ppc")
+				return 0
+				;;
+			*)
+				return 1
+				;;
+		esac
 	fi
+
+	return 1
 }
 
 pkg_setup() {
@@ -182,13 +205,13 @@ pkg_setup() {
 		die "GCC too old"
 	fi
 
-        if [ -n "`is-flag "-fstack-protector"`" -a -n "`has "sandbox" $FEATURES`" ]
-        then
-                eerror "You have both -fstack-protector and sandbox enabled"
-                eerror "glibc will not compile correctly with both of these enabled"
-                eerror "Please disable sandbox by calling emerge with FEATURES=\"-sandbox\""
-                die
-        fi
+	if [ -n "`is-flag "-fstack-protector"`" -a -n "`has "sandbox" $FEATURES`" ]
+	then
+		eerror "You have both -fstack-protector and sandbox enabled"
+		eerror "glibc will not compile correctly with both of these enabled"
+		eerror "Please disable sandbox by calling emerge with FEATURES=\"-sandbox\""
+		die "Have -fstack-protector and sandbox enabled"
+	fi
 
 	if use_nptl
 	then
@@ -222,14 +245,7 @@ pkg_setup() {
 			echo "yes"
 		fi
 
-		# Default disclaimer ...
 		echo
-		ewarn "Please note that NPTL support is still very experimental,"
-		ewarn "and could break your system!  Press ^C now if you do not know"
-		ewarn "what you are doing, and remove \"nptl\" from your USE ..."
-		echo
-		ewarn "As a final note ... it does NOT work with NVidia GLX!!"
-		sleep 5
 	
 	elif use nptl &> /dev/null
 	then
@@ -252,8 +268,23 @@ src_unpack() {
 	if use_nptl
 	then
 		unpack nptl-${NPTL_VER}.tar.bz2
-	else
+		
+	elif [ -z "${BRANCH_UPDATE}" ]
+	then
+		# The branch update have this already included ...
 		unpack glibc-linuxthreads-${MY_PV}.tar.bz2
+	fi
+
+	if [ -n "${BRANCH_UPDATE}" ]
+	then
+		epatch ${DISTDIR}/${P}-branch-update-${BRANCH_UPDATE}.patch.bz2
+	fi
+
+	if use_nptl
+	then
+		epatch ${FILESDIR}/2.3.2/${P}-redhat-nptl-fixes.patch
+	else
+		epatch ${FILESDIR}/2.3.2/${P}-redhat-linuxthreads-fixes.patch
 	fi
 
 	# This next patch fixes a test that will timeout due to ReiserFS' slow handling of sparse files
@@ -288,21 +319,6 @@ src_unpack() {
 	# <azarah@gentoo.org> (7 Nov 2002).
 	cd ${S}; epatch ${FILESDIR}/2.3.1/${PN}-2.3.1-stack_end-compat.patch
 
-	# Fix calculation problems in allocate_static_tls that caused a TLS
-	# enabled app that loads libGL.so to segfault.  Thanks to Gareth Hughes
-	# from NVidia for pointing me in the right direction.  This patch is
-	# from glibc CVS.
-	#
-	# <azarah@gentoo.org> (6 Apr 2003).
-	cd ${S}; epatch ${FILESDIR}/${PV}/${P}-dl-reloc-calc-fix.patch
-
-	# Fix compilation with gcc-3.3
-	#
-	#   http://sources.redhat.com/ml/libc-alpha/2003-03/msg00052.html
-	#
-	# <azarah@gentoo.org> (18 May 2003).
-	cd ${S}; epatch ${FILESDIR}/${PV}/${P}-gcc33-sscanf.patch
-
 	# A few patches only for the MIPS platform.  Descriptions of what they
 	# do can be found in the patch headers.
 	# <tuxus@gentoo.org> thx <dragon@gentoo.org> (11 Jan 2003)
@@ -318,11 +334,18 @@ src_unpack() {
 		epatch ${FILESDIR}/2.3.1/${PN}-2.3.1-librt-mips.patch
 	fi
 
-	# Fix compatability with compaq compilers by ifdef'ing out some 
-	# 2.3.2 additions. 
-	# <taviso@gentoo.org> (14 Jun 2003).
-	use alpha && epatch ${FILESDIR}/2.3.2/${P}-decc-compaq.patch
+	if [ "${ARCH}" = "alpha" ]
+	then
+		# Fix compatability with compaq compilers by ifdef'ing out some 
+		# 2.3.2 additions. 
+		# <taviso@gentoo.org> (14 Jun 2003).
+		cd ${S}; epatch ${FILESDIR}/2.3.2/${P}-decc-compaq.patch
+	fi
 
+	if [ "${ARCH}" = "amd64" ]
+	then
+		cd ${S}; epatch ${FILESDIR}/2.3.2/${P}-amd64-nomultilib.patch
+	fi
 }
 
 setup_flags() {
@@ -330,14 +353,16 @@ setup_flags() {
 	use ppc || append-flags "-freorder-blocks"
 
 	# Sparc/Sparc64 support
-	if [ `use sparc` ]; then
+	if [ -n "`use sparc`" ]
+	then
 
 		# Both sparc and sparc64 can use -fcall-used-g6.  -g7 is bad, though.
 		replace-flags "-fcall-used-g7" ""
 		append-flags "-fcall-used-g6"
 
 		# Sparc64 Only support...
-		if [ "${PROFILE_ARCH}" = "sparc64" ]; then
+		if [ "${PROFILE_ARCH}" = "sparc64" ]
+		then
 
 			# Get rid of -mcpu options, the CHOST will fix this up
 			replace-flags "-mcpu=ultrasparc" ""
@@ -348,14 +373,14 @@ setup_flags() {
 		
 			# Setup the CHOST properly to insure "sparcv9"
 			# This passes -mcpu=ultrasparc -Wa,-Av9a to the compiler
-			export CHOST=${CHOST/sparc/sparcv9}
+			export CHOST="${CHOST/sparc/sparcv9}"
 		fi
 	fi
 }
 
 src_compile() {
-	local myconf=""
-	local myconf_nptl=""
+	local myconf=
+	local myconf_nptl=
 
 	setup_flags
 
