@@ -8,6 +8,7 @@ MD5 f09416694117e0a0cee33645c684ff35 postgresql-7.3.7-r2.ebuild 7954
 MD5 867641bb7281f098bc2aacc094ac1c77 postgresql-7.4.3.ebuild 9766
 MD5 99537073b08406950be7655e973b307d postgresql-7.4.5-r1.ebuild 10089
 MD5 7de4b12d2bbae3e1ab01a33a287972fe postgresql-7.4.5.ebuild 10077
+MD5 49babd85155f704400b752025d6e353b postgresql-8.0.0.ebuild 7299
 MD5 88b21576705fabe7e57409233acf4953 ChangeLog 30519
 MD5 301b97e21df04325aacea0b46f3a4546 postgresql-8.0.0_rc5.ebuild 7311
 MD5 f8d3d207746da2a3cd14dcaab8daab76 metadata.xml 163
@@ -33,6 +34,7 @@ MD5 2bf145f0cc937ec4b3146b2ac9fc255c files/digest-postgresql-7.3.8 223
 MD5 a0c1913ae5fcdc67eccdc1ed2e8360f2 files/digest-postgresql-7.4.3 290
 MD5 edd1ce8d03bdce473718f1c3036e68cd files/digest-postgresql-7.4.5 290
 MD5 0fd21b9794e41d1f8b0ac360acf743d8 files/digest-postgresql-7.4.6 290
+MD5 443d8f3814093d85bcc736cf86a2cac0 files/digest-postgresql-8.0.0 223
 MD5 683d803768f3060ffc4bd5a6f5c91918 files/pg_autovacuum.init-7.4.3 1064
 MD5 8fa377b0390f126d8ef3ee0909f7f813 files/pg_autovacuum.init-7.4.5 1414
 MD5 52434d5b7d919db061399aed45ad4c08 files/pg_autovacuum.init-7.4.6 1414
