@@ -1,5 +1,9 @@
 date 08 Dec 2000
 
+new media-gfx/blender-static-2.04
+drobbins
+fixing dir layout
+
 del kde-base/qt-x11-2.2.1
 drobbins
 fixing naming convention

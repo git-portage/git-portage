@@ -216,7 +216,7 @@
 #!./media-gfx/autotrace/autotrace-0.26.ebuild
 ./media-gfx/aview/aview-1.2-r2.ebuild
 ./media-gfx/blender/blender-2.04.ebuild
-#./media-gfx/blender/blender-static-2.04.ebuild
+#./media-gfx/blender-static/blender-static-2.04.ebuild
 ./media-gfx/gimp-print/gimp-print-4.0.1.ebuild
 #!./media-gfx/gimp-print/gimp-print-4.0.2.ebuild
 ./media-gfx/gimp/gimp-1.1.29.ebuild
