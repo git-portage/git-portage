@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
 # Updated by Sebastian Werner <sebastian@werner-productions.de>
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/nautilus/Attic/nautilus-1.0.6-r5.ebuild,v 1.1 2002/03/21 07:13:57 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/nautilus/Attic/nautilus-1.0.6-r8.ebuild,v 1.1 2002/04/27 15:52:35 azarah Exp $
 
 
 S=${WORKDIR}/${P}
@@ -37,6 +37,27 @@ src_unpack() {
 	# see bug #566 for more information
 
 	patch -p0 < ${FILESDIR}/nautilus-1.0.6-hyperbola.diff
+
+	# This patch to fix http://bugs.gentoo.org/show_bug.cgi?id=2082
+	# (taken from
+	# http://lists.eazel.com/pipermail/nautilus-list/2002-April/008473.html)
+	# Credit to Kaoru Fukui <k_fukui@highway.ne.jp>. This is probably
+	# a temporary patch until the next nautilus.
+
+	cd ${S} ; patch -p1 < ${FILESDIR}/nautilus-1.0.6-mozilla-1.0_rc1.diff
+
+	# Add missing files
+	mkdir -p ${S}/intl
+	touch ${S}/intl/po2tbl.sed.in
+
+	# Libtoolize to fix .la files, and reconf automake stuff
+	cd ${S}
+	mkdir macros
+	cp ${FILESDIR}/macros/* macros
+	libtoolize --copy --force
+	aclocal -I macros
+	automake --add-missing
+	autoconf &>${S}/foo
 }
 
 src_compile() {                           
@@ -61,14 +82,11 @@ src_compile() {
 		myconf="${myconf} --disable-mozilla-component"
 	fi
 
-	libtoolize --copy --force
-	aclocal
-	autoconf
-
 	CFLAGS="${CFLAGS} `gnome-config --cflags gdk_pixbuf`"
 
 	./configure --host=${CHOST} \
 		--prefix=/usr \
+		--mandir=/usr/share/man	\
 		--sysconfdir=/etc \
 		--localstatedir=/var/lib \
 		--enable-eazel-services=0 \
@@ -79,6 +97,7 @@ src_compile() {
 
 src_install() {
 	make prefix=${D}/usr \
+		 mandir=${D}/usr/share/man	\
 	     sysconfdir=${D}/etc \
 	     localstatedir=${D}/var/lib \
 	     install || die
