@@ -1,11 +1,13 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/xdirectfb/Attic/xdirectfb-1.0_rc3.ebuild,v 1.3 2002/12/09 04:41:17 manson Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/xdirectfb/Attic/xdirectfb-1.0_rc3-r1.ebuild,v 1.1 2003/02/02 22:08:15 seemant Exp $
+
+inherit eutils
 
 MY_PN="XDirectFB"
 MY_PV=${PV/_/-}
 MY_P=${MY_PN}-${MY_PV}
-MY_V=X4.2.99.3
+MY_V=X4.2.99.4
 S=${WORKDIR}/xc
 X=${WORKDIR}/${MY_P}
 
@@ -20,7 +22,7 @@ HOMEPAGE="http://www.directfb.org"
 
 SLOT="0"
 LICENSE="X11"
-KEYWORDS="~x86 ~sparc "
+KEYWORDS="~x86 ~sparc"
 
 PROVIDE="virtual/x11"
 
@@ -28,7 +30,7 @@ DEPEND=">=sys-libs/ncurses-5.1
 	>=sys-libs/zlib-1.1.3-r2
 	sys-devel/flex
 	sys-devel/perl
-	dev-libs/DirectFB"
+	>=dev-libs/DirectFB-0.9.16"
 	
 src_unpack () {
 	unpack ${A}
@@ -40,7 +42,19 @@ src_unpack () {
 	cp ${FILESDIR}/host.def ${S}/config/cf/
 	
 	cd ${S}
-	patch -p0 < xc-directfb.diff || die
+	epatch ./xc-directfb.diff
+
+	cd ${S}/programs/Xserver/hw/directfb
+	cp directfbScreen.c rootlessDirectFB.c ${T}
+
+
+	# update changes in the newer DirectFB versions
+	sed "s:DSPF_RGB15:DSPF_ARGB1555:g" \
+		${T}/directfbScreen.c > directfbScreen.c
+
+	sed "s:DSPF_RGB15:DSPF_ARGB1555:g" \
+		${T}/rootlessDirectFB.c > rootlessDirectFB.c
+	
 }
 
 src_compile() {
