@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/zphoto/Attic/zphoto-0.9.ebuild,v 1.3 2004/06/24 22:54:32 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/zphoto/Attic/zphoto-1.2.ebuild,v 1.1 2004/10/09 21:47:53 usata Exp $
 
 inherit eutils
 
@@ -11,7 +11,7 @@ SRC_URI="http://namazu.org/~satoru/zphoto/${P}.tar.gz"
 HOMEPAGE="http://namazu.org/~satoru/zphoto/"
 
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 LICENSE="LGPL-2.1"
 
 DEPEND=">=media-libs/ming-0.2a
@@ -20,16 +20,24 @@ DEPEND=">=media-libs/ming-0.2a
 	app-arch/zip
 	>=dev-libs/popt-1.6.3"
 
-src_unpack() {
+#src_unpack() {
+#
+#	unpack ${A}
+#	cd ${S}
+#	epatch ${FILESDIR}/zphoto-0.9-avifile-gentoo.diff
+#}
 
-	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${P}-avifile-gentoo.diff
+src_compile() {
+
+	# GUI version won't build -- please mail me if you find
+	# a way to fix it. <usata@gentoo.org> 7 Jul 2004
+	econf --disable-wx || die
+	emake || die
 }
 
 src_install() {
 
 	einstall || die
 
-	dodoc AUTHORS COPYING ChangeLog INSTALL NEWS README
+	dodoc AUTHORS ChangeLog INSTALL NEWS README
 }
