@@ -1,17 +1,18 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.11.7-r2.ebuild,v 1.4 2005/01/12 16:25:03 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.11.8-r1.ebuild,v 1.1 2005/01/12 16:25:03 agriffis Exp $
 
-inherit flag-o-matic eutils toolchain-funcs
+inherit flag-o-matic eutils toolchain-funcs multilib
 
-SV=1.6.7		# rc-scripts version
+SV=1.6.8		# rc-scripts version
 SVREV=			# rc-scripts rev
 
 S="${WORKDIR}/rc-scripts-${SV}${SVREV}"
 DESCRIPTION="Filesystem baselayout and init scripts"
 HOMEPAGE="http://www.gentoo.org/"
 SRC_URI="mirror://gentoo/rc-scripts-${SV}${SVREV}.tar.bz2
-	http://dev.gentoo.org/~agriffis/rc-scripts/rc-scripts-${SV}${SVREV}.tar.bz2"
+	http://dev.gentoo.org/~vapier/dist/rc-scripts-${SV}${SVREV}.tar.bz2"
+#	http://dev.gentoo.org/~agriffis/rc-scripts/rc-scripts-${SV}${SVREV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -23,23 +24,17 @@ IUSE="bootstrap build livecd static uclibc"
 # or "build" are in USE.
 RDEPEND=">=sys-apps/sysvinit-2.84
 	!build? ( !bootstrap? (
-		>=sys-apps/gawk-3.1.1-r2
-		>=sys-apps/util-linux-2.11z-r6
-		>=sys-apps/coreutils-5.2.1
+		>=sys-libs/readline-5.0-r1
 		>=app-shells/bash-3.0-r7
 	) )"
 DEPEND="virtual/os-headers"
 
 src_unpack() {
 	unpack ${A}
-
 	cd ${S}
-	epatch ${FILESDIR}/rc-scripts-${SV}-fix-runscript.patch
-	epatch ${FILESDIR}/rc-scripts-${SV}-dhclient.patch
-	epatch ${FILESDIR}/rc-scripts-${SV}-udhcpc.patch
 
 	# Fix Sparc specific stuff
-	if [[ ${ARCH} == sparc ]]; then
+	if [[ ${ARCH} == sparc ]] ; then
 		sed -i -e 's:KEYMAP="us":KEYMAP="sunkeymap":' ${S}/etc/rc.conf || die
 	fi
 }
@@ -59,15 +54,17 @@ create_dev_nodes() {
 		# a generic option at this time, and the default 'generic' ends
 		# up erroring out, because MAKEDEV internally doesn't know what
 		# to use
-		amd64)	suffix=-i386 ;;
-		x86)	suffix=-i386 ;;
-		ppc*)	suffix=-powerpc ;;
-		alpha)	suffix=-alpha ;;
-		ia64)	suffix=-ia64 ;;
-		sparc*)	suffix=-sparc ;;
-		mips)	suffix=-mips ;;
 		arm)	suffix=-arm ;;
+		alpha)	suffix=-alpha ;;
+		amd64)	suffix=-i386 ;;
 		hppa)	suffix=-hppa ;;
+		ia64)	suffix=-ia64 ;;
+		m68k)	suffix=-m68k ;;
+		mips)	suffix=-mips ;;
+		ppc*)	suffix=-powerpc ;;
+		s390)	suffix=-s390 ;;
+		sparc*)	suffix=-sparc ;;
+		x86)	suffix=-i386 ;;
 	esac
 
 	einfo "Using generic${suffix} to make ${ARCH} device nodes..."
@@ -113,16 +110,16 @@ unkdir() {
 }
 
 src_install() {
-	local libdir=$(get_libdir) other_libdir
-	[[ ${libdir} = "lib" ]] \
-		&& other_libdir="lib64" \
-		|| other_libdir="lib"
+	local dir libdirs libdirs_env
 
 	# This directory is to stash away things that will be used in
 	# pkg_postinst; it's needed first for kdir to function
 	dodir /usr/share/baselayout
 
 	einfo "Creating directories..."
+	kdir /usr
+	kdir /usr/local
+	kdir /usr/X11R6/
 	kdir /boot
 	kdir /dev
 	kdir /dev/pts
@@ -138,13 +135,12 @@ src_install() {
 	kdir /etc/modules.d
 	kdir /etc/opt
 	kdir /home
-	kdir /${libdir}
-	kdir /${libdir}/dev-state
-	kdir /${libdir}/udev-state
-	kdir /${libdir}/rcscripts/awk
-	kdir /${libdir}/rcscripts/sh
-	dodir /${libdir}/rcscripts/net.modules.d	# .keep file messes up net.lo
-	dodir /${libdir}/rcscripts/net.modules.d/helpers.d
+	kdir /lib/dev-state
+	kdir /lib/udev-state
+	kdir /lib/rcscripts/awk
+	kdir /lib/rcscripts/sh
+	dodir /lib/rcscripts/net.modules.d	# .keep file messes up net.lo
+	dodir /lib/rcscripts/net.modules.d/helpers.d
 	kdir /mnt
 	kdir -m 0700 /mnt/cdrom
 	kdir -m 0700 /mnt/floppy
@@ -154,15 +150,12 @@ src_install() {
 	kdir -m 0700 /root
 	kdir /sbin
 	kdir /sys	# for 2.6 kernels
-	kdir /usr
 	kdir /usr/bin
 	kdir /usr/include
 	kdir /usr/include/asm
 	kdir /usr/include/linux
-	kdir /usr/${libdir}
 	kdir /usr/local/bin
 	kdir /usr/local/games
-	kdir /usr/local/lib
 	kdir /usr/local/sbin
 	kdir /usr/local/share
 	kdir /usr/local/share/doc
@@ -177,7 +170,6 @@ src_install() {
 	kdir /usr/src
 	kdir /usr/X11R6/include/GL
 	kdir /usr/X11R6/include/X11
-	kdir /usr/X11R6/${libdir}
 	kdir /usr/X11R6/man
 	kdir /usr/X11R6/share
 	kdir -m 1777 /tmp
@@ -191,15 +183,26 @@ src_install() {
 	kdir /var/state
 	kdir -m 1777 /var/tmp
 
-	# Symlinks so that LSB compliant apps work
-	# /lib64 is especially required since its the default place for ld.so
-	if [[ ${ARCH} = ppc64 ]] || [[ ${ARCH} = amd64 ]] ; then
-		dosym ${libdir} /${other_libdir}
-		dosym ${libdir} /usr/${other_libdir}
-		dosym ${libdir} /usr/X11R6/${other_libdir}
-		# this will eventually exist, so remember to fix it Travis...
-		#dosym ../X11R6/lib64/X11 /usr/lib64/X11
-	fi
+	# Jeremy Huddleston <eradicator@gentoo.org>
+	# For multilib, we want to make sure that all our multilibdirs exist
+	# and make lib even if it's not listed as one (like on amd64/ppc64
+	# which sometimes has lib32/lib64 instead of lib/lib64).
+	# lib should NOT be a symlink to one of the other libdirs.
+	# Old systems with symlinks won't be affected by this change, as the
+	# symlinks already exist and won't get removed, but new systems will
+	# be setup properly.
+	#
+	# I'll be making a script to convert existing systems from symlink to
+	# nosymlink and putting it in /usr/portage/scripts.
+	libdirs=$(get_all_libdirs)
+	: ${libdirs:=lib}	# it isn't that we don't trust multilib.eclass...
+	for dir in libdirs; do
+		kdir /${dir}
+		kdir /usr/${dir}
+		kdir /usr/local/${dir}
+		kdir /usr/X11R6/${dir}
+		libdirs_env="${libdirs_env:+$libdirs_env:}/${dir}:/usr/${dir}:/usr/local/${dir}"
+	done
 
 	# FHS compatibility symlinks stuff
 	dosym /var/tmp /usr/tmp
@@ -223,7 +226,7 @@ src_install() {
 	# attempting to merge files, (3) accidentally packaging up personal files
 	# with quickpkg
 	fperms 0600 /etc/shadow
-	mv ${D}/etc/{passwd,shadow,group,fstab,hosts} ${D}/usr/share/baselayout
+	mv ${D}/etc/{passwd,shadow,group,fstab,hosts,issue.devfix} ${D}/usr/share/baselayout
 
 	cp -P ${S}/init.d/* ${D}/etc/init.d
 	chmod a+x ${D}/etc/init.d/*
@@ -237,6 +240,9 @@ src_install() {
 	doins ${S}/etc/modules.d/*
 	insinto /etc/skel
 	find ${S}/etc/skel -type f -maxdepth 1 -print0 | xargs --null doins
+
+	# List all the multilib libdirs in /etc/env/04multilib
+	echo "LDPATH=\"${libdirs_env}\"" > ${D}/etc/env.d/04multilib
 
 	# As of baselayout-1.10-1-r1, sysvinit is its own package again, and
 	# provides the inittab itself
