@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/prime/Attic/prime-0.7.6_rc1.ebuild,v 1.1 2004/01/27 10:01:25 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/prime/Attic/prime-0.7.6_rc2.ebuild,v 1.1 2004/01/28 14:40:31 usata Exp $
 
 inherit ruby
 
@@ -22,7 +22,7 @@ S="${WORKDIR}/${MY_P}"
 DEPEND="dev-lang/ruby
 	app-dicts/prime-dict
 	>=dev-ruby/sary-ruby-0.5_pre20030507-r1
-	>=dev-libs/suikyo-1.2.0
+	>=dev-libs/suikyo-1.3.0
 	dev-ruby/ruby-progressbar"
 PDEPEND="emacs? ( app-emacs/prime-el )"
 
