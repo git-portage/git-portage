@@ -134,6 +134,7 @@
 ./dev-libs/librep/librep-0.12.4-r1.ebuild
 ./dev-libs/openssl/openssl-0.9.5a-r1.ebuild
 ./dev-libs/rep-gtk/rep-gtk-0.13a.ebuild
+./dev-libs/swig/swig-1.3_alpha4.ebuild
 ./dev-perl/Digest-MD5/Digest-MD5-2.09.ebuild
 ./dev-perl/gtk-perl/gtk-perl-0.7000-r1.ebuild
 ./dev-perl/HTML-Parser/HTML-Parser-3.10.ebuild
