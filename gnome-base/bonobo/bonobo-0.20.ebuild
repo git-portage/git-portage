@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/bonobo/Attic/bonobo-0.20.ebuild,v 1.1 2000/10/14 11:38:33 achim Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/bonobo/Attic/bonobo-0.20.ebuild,v 1.2 2000/11/25 12:57:01 achim Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
@@ -11,7 +11,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 src_compile() {                           
   cd ${S}
-  try ./configure --host=${CHOST} --prefix=/opt/gnome --with-catgets
+  try ./configure --host=${CHOST} --prefix=/opt/gnome 
   try make
 }
 
@@ -21,6 +21,7 @@ src_install() {
   dodoc AUTHORS COPYING* ChangeLog README
   dodoc NEWS TODO
 }
+
 
 
 

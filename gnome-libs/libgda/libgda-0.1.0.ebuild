@@ -22,7 +22,7 @@ src_unpack() {
 src_compile() {                           
   cd ${S}
   try ./configure --host=${CHOST} --prefix=/opt/gnome \
-	--with-mysql=/usr --with-ldap=/usr --with-odbc --with-catgets
+	--with-mysql=/usr --with-ldap=/usr --with-odbc 
   try make
 }
 
@@ -32,6 +32,7 @@ src_install() {
 
   dodoc AUTHORS COPYING.* ChangeLog NEWS README THANKS TODO
 }
+
 
 
 
