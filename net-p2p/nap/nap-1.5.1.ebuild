@@ -1,8 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/nap/Attic/nap-1.5.1.ebuild,v 1.7 2004/05/04 05:08:21 eradicator Exp $
-
-IUSE=""
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/nap/Attic/nap-1.5.1.ebuild,v 1.8 2004/05/21 23:13:33 squinky86 Exp $
 
 IUSE=""
 
