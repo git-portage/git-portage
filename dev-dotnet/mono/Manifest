@@ -3,11 +3,11 @@ MD5 320ce3e4c19a4e80c41ee9400a39f23c mono-0.30.ebuild 2392
 MD5 0569a7578a0082a433223c7dad460a6e mono-0.91.ebuild 1661
 MD5 6a866ffdedeca043a6aaf267f8e2cab9 mono-0.30.1.ebuild 2394
 MD5 d61de115e7b37b55c71b44b0cb2bee89 mono-0.28.ebuild 2093
-MD5 0fa8354fa11ceb04285aa1eeda6f8fcd mono-1.0.1.ebuild 1476
+MD5 31a0153f11f6e5217ce22aae7d833fe1 mono-1.0.1.ebuild 1478
 MD5 38b11c580052bca1c3ab11d14b281b51 mono-0.95.ebuild 1557
 MD5 198b7500d7079c1159c29aba0b3e3250 mono-0.97.ebuild 1784
 MD5 f694ec86655b731f2d46488f531684f5 mono-0.31.ebuild 2546
-MD5 72cb090deb467c0a0dbcbba5da1d456a ChangeLog 8173
+MD5 be4490523e8abdb6abe06960581fe55c ChangeLog 8322
 MD5 17c5779bfef6d1e1415ec71550d175ea mono-1.0.ebuild 1656
 MD5 76b314cc7b7b79b298dd4889dff8c9cd metadata.xml 159
 MD5 9f4b4eb6a1555ed574dbdd359cae3070 files/dotnet.conf 573
