@@ -1,17 +1,9 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 f61bd3e42607bdff08a9592c71744941 awstats-6.3-r2.ebuild 4074
-MD5 8fd62577d73c02d079795d4a03aa4029 ChangeLog 2650
+MD5 e5cbd97253b66dc498b4d5f71796dbfa awstats-6.3-r2.ebuild 4038
+MD5 30155722d3d2995cc1134f6923d4a2d2 awstats-6.4.ebuild 3871
+MD5 2035a3290349d9a2562695a10cf1dd2f ChangeLog 2931
 MD5 6bc2db5b1e135821863e91fa8658ad48 metadata.xml 255
+MD5 803faa3640a7aadd2fadbbd05968a45e files/digest-awstats-6.4 60
 MD5 70a086a2f452243a500aa67b1df7f26f files/digest-awstats-6.3-r2 135
 MD5 7a52d3f65ff7220a519056716d460ecd files/awstats-6.3-gentoo.diff 1219
-MD5 182b67a3023a0807ce19f8876d48c81d files/postinst-en.txt 657
+MD5 f881494a979cdea82d58e31b589d9a97 files/postinst-en.txt 5049
 MD5 8f8b0ad336b5066db17452db770ed878 files/awstats-6.3-CAN-2005-0363.diff 1243
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFCJQipEZCkKN40op4RAhZtAJ9LqyRB5Y4tXW6t90cg44qhHQOUOQCgjANC
-kaOoKXMO4chYzziFYNvYDIs=
-=O6Q+
------END PGP SIGNATURE-----
