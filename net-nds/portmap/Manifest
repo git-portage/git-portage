@@ -1,4 +1,5 @@
 MD5 d2aef3ebc8f9f6d5aafc78e69b92cb2a portmap-5b-r7.ebuild 1412
+MD5 1b6f77ebf4e2562393c6834d72a12882 portmap-5b-r10.ebuild 2531
 MD5 5b16b274254f88b0715efcab31284f92 portmap-5b-r9.ebuild 2450
 MD5 abc02673b4af123efe0c8f79dda1de6a ChangeLog 3249
 MD5 3596ccbf937de9ee5cab98022ee04752 portmap-5b-r8.ebuild 1826
@@ -8,6 +9,7 @@ MD5 0ec47652f96bfda762a2ffc72a78f002 files/portmap_5beta.dif 8871
 MD5 5017d0469cab57678279e74e5cabd10b files/portmap.rc6 1080
 MD5 d0820fd449ae88e56f2a3e78b96bb9d1 files/portmap-4.0-sigpipe.patch 353
 MD5 7667fe1c5070f9f57c1beb25015bb7be files/portmap-4.0-malloc.patch 9067
+MD5 44dae63001c0ad007604a7ba55403838 files/digest-portmap-5b-r10 64
 MD5 887940376974bf01ecf94fd032f224eb files/portmap-5b-include-errno_h.patch 403
 MD5 44dae63001c0ad007604a7ba55403838 files/digest-portmap-5b-r7 64
 MD5 44dae63001c0ad007604a7ba55403838 files/digest-portmap-5b-r8 64
