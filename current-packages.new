@@ -18,6 +18,7 @@
 ./app-doc/gimp-user-manual/gimp-user-manual-html-2.0.ebuild
 ./app-editors/joe/joe-2.8-r1.ebuild
 ./app-editors/nedit/nedit-5.1.1.ebuild
+./app-editors/vile/vile-9.2.ebuild
 ./app-editors/vim-gtk/vim-gtk-5.7-r2.ebuild
 #./app-emulation/wine/wine-20001002.ebuild
 ./app-misc/gfontview/gfontview-0.4.1-r1.ebuild
