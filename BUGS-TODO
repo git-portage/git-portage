@@ -1,3 +1,17 @@
+[24 Nov 2000 -drobbins]
+
+	[UNASSIGNED] kde-base/qt needs some work:
+		the ebuild should be renamed to qt.ebuild, not qt-x11.ebuild
+		(directory name must match package name)
+		
+		Also, even though Mandrake (and presumably RedHat) store this library
+		in /usr/lib, it should really be stored in /usr/X11R6/lib since it is
+		strictly an X-dependent toolkit.  Hopefully, it's possible to do this 
+		and still get KDE to compile.
+
+		And, it should be moved to the x11-libs category.  It's an X11 toolkit
+		and not tied to kde, although kde uses it.
+
 [21 Nov 2000 -drobbins]
 	
 	[DONE -- if new linux ebuilds are used ] In the rc3 sys.tbz2 tarball, bzImage should be in /boot/boot (GRUB will look
