@@ -1,9 +1,12 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 5ae689acb9f9ed419a3b1542bab72e5b mod_perl-1.99.17-r1.ebuild 4217
-MD5 8d14755a3efca0ac30af6653f9555656 mod_perl-1.27-r4.ebuild 1834
+MD5 481e360562e1b49a7615868597ab92e4 mod_perl-1.27-r4.ebuild 1829
 MD5 bfb9cdc72acb74032ddf255b4d1a5a2e mod_perl-1.27-r1.ebuild 1423
-MD5 3690cfac5404f5f1a445577e92693152 mod_perl-1.27-r2.ebuild 1441
-MD5 8e56fe8bc973a08ff3d5f6cbabf7d347 ChangeLog 6421
+MD5 3ea1f7fc0872f969efd2bc49411da8c8 mod_perl-1.27-r2.ebuild 1436
+MD5 5319f77c349f56f506700b6a098f50ab ChangeLog 6441
 MD5 8d2945f86f75caca1f479d2053b912ac mod_perl-1.99.16.ebuild 3813
 MD5 0525b089ad91f31dffd83c0d1300ffc4 mod_perl-1.99.11.ebuild 3783
 MD5 a366c1cb1f861c8f0041d9ce4e210698 mod_perl-1.99.10.ebuild 3824
@@ -11,7 +14,7 @@ MD5 66a0226a2c0f697be1dabcaecac8adfa mod_perl-1.99.17.ebuild 3825
 MD5 b101308b1017072f3d62def1ed834ab1 mod_perl-1.99.09.ebuild 3673
 MD5 a1141c430c0b7356ce812dd1bfd8854a mod_perl-1.99.08.ebuild 1237
 MD5 c614eea076228afa05a30a7f0dbadf2a mod_perl-1.27.ebuild 1417
-MD5 e48765f4129ef6e27824df62a47fd14a mod_perl-1.29.ebuild 2470
+MD5 36f418a3604c948e46acd31aa91d69a9 mod_perl-1.29.ebuild 2120
 MD5 2415e6be73ba155382b34b5e2fad4951 files/75_mod_perl.conf 247
 MD5 05455750ba5b64e18dbcfd113193e7cd files/digest-mod_perl-1.27-r4 65
 MD5 8c8ec63f03d3ffb51fa26b6df03a5710 files/mod_perl-1.99.16-sneak-tmpdir.patch 395
@@ -29,3 +32,10 @@ MD5 4869c6ea8e02d871a03455d28b6f6cfb files/digest-mod_perl-1.99.08 68
 MD5 13d314750ba5772dc7de4d9023d137ad files/digest-mod_perl-1.99.16 69
 MD5 33270eaaa2c9bc9cef3a4a45afaeca34 files/digest-mod_perl-1.29 65
 MD5 05455750ba5b64e18dbcfd113193e7cd files/digest-mod_perl-1.27-r2 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFCMd3PjUHll2nfF60RAoGaAJ0dClqj9KpCSGJSmOsTDlgi4JuDngCeJJpv
+15SFZfKUiO/XPu7ch/rulPk=
+=QE+I
+-----END PGP SIGNATURE-----
