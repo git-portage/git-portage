@@ -4,6 +4,15 @@ upd app-text/dictd-1.5.5-r1
 man pages where in wrong place.  Also, scan for dictionaries at boot now.
 michael
 
+new app-games/bzflag-1.7e-2
+GPL Multi-Platform Network Multiplayer 3D tank battle game for X
+blutgens
+
+upd app-games/xmame-0.36.1-r1
+added check for xmess in USE
+blutgens
+
+
 date 2 June 2001
 
 new app-games/xmame-0.36.1
