@@ -9,8 +9,8 @@ diff -u -r1.1 -r1.5
   *
   *
   * $Log: pwlib-1.6.6-ieee1394dc-fix.diff,v $
-  * Revision 1.1  2004/08/30 01:38:47  stkn
-  * enables dc video plugin (if ieee1394 use-flag is set) and fixes libdc1394 related bug
+  * Revision 1.2  2004/08/30 22:57:54  stkn
+  * 1/2: fix patch for pwlib (#62192, need to commit with -n...)
   *
 + * Revision 1.5  2004/06/15 23:55:50  csoutheren
 + * Added check for different versions of dc1394 API
