@@ -305,6 +305,7 @@
 ./gnome-apps/gnome-audio/gnome-audio-1.0.0.ebuild
 ./gnome-apps/gnome-media/gnome-media-1.2.0.ebuild
 ./gnome-apps/gnome-utils/gnome-utils-1.2.0.ebuild
+./gnome-apps/gnucash/gnucash-1.4.6.ebuild
 ./gnome-apps/gtop/gtop-1.0.9.ebuild
 ./gnome-apps/gupsc/gupsc-0.3.0.ebuild
 ./gnome-apps/nmap/nmap-2.53.ebuild
