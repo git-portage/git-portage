@@ -1,0 +1,5 @@
+MD5 0d9270b97faefc285a6407774e04dd02 libgtk-java-2.4.6.ebuild 2959
+MD5 1defc6f20e4684f13955e28a28e47e1f files/libgtk-java-2.4.6_install-doc.patch 740
+MD5 d5868ac77f6fa3fcf16ec100095cb0af files/digest-libgtk-java-2.4.6 70
+MD5 1f2599c8fd250432f6e6b43d598e75db files/libgtk-java-2.4.6_gentoo-PN-SLOT.patch 2013
+MD5 40956547f4eb0b797359f67f6c6910bb files/libgtk-java-2.4.6_gcj-autoconf-macro-fix.patch 689
