@@ -1,8 +1,11 @@
-MD5 402b4278de8ab11ef2ff13ab0273e802 ChangeLog 5242
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 dcdb464c5e7fece40b00d8d23fb317de ChangeLog 5444
 MD5 c4319ef2e1cc3ca5d5d6ae2408c5b70f uw-imap-2002e-r3.ebuild 3356
 MD5 5721b86fd871bdfab77231abc6e02f68 metadata.xml 161
 MD5 7f6b3d166deb9a5536e6bb3ed0cdb03c uw-imap-2002e.ebuild 2932
-MD5 277eb298f57309ae16e0cbc9a3e78063 uw-imap-2002e-r4.ebuild 3060
+MD5 a85cc11b94cb13554554caa301be2cf7 uw-imap-2002e-r4.ebuild 3187
 MD5 3c8b9095f4bd5afcd95c93a076635c56 uw-imap-2002e-r1.ebuild 3093
 MD5 979bed91d308223958ffe9c988d744ad uw-imap-2002e-r2.ebuild 3108
 MD5 8dd3c14bf6b644035b66eb851612386e uw-imap-2002d-r1.ebuild 2935
@@ -21,3 +24,10 @@ MD5 f93adbc027c40ed405bbde4bb1330f2d files/uw-imaps.xinetd 486
 MD5 27b9eec6a66d66ef07109f82da8f10ce files/digest-uw-imap-2002e-r1 62
 MD5 27b9eec6a66d66ef07109f82da8f10ce files/digest-uw-imap-2002e 62
 MD5 27b9eec6a66d66ef07109f82da8f10ce files/digest-uw-imap-2002e-r3 62
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBOFAW10xuJSrg3/sRAlHnAJwIlHFDq8yCMi9QHoSBCTiEi+fqMwCeKijV
+MfXo9f3ezySnHpLaD8iwdcs=
+=k8gf
+-----END PGP SIGNATURE-----
