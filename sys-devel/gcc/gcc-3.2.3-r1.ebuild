@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/Attic/gcc-3.2.3-r1.ebuild,v 1.12 2003/07/18 19:31:07 wwoods Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/Attic/gcc-3.2.3-r1.ebuild,v 1.13 2003/07/20 18:42:47 azarah Exp $
 
 IUSE="static nls bootstrap java build"
 
@@ -221,6 +221,13 @@ src_unpack() {
 	if use ppc
 	then
 		epatch ${FILESDIR}/3.2.3/gcc-3.2.3-mergel-fix.patch
+	fi
+	if use hppa
+	then
+		# There exists a bug in the ebuild patched gcc that prevents hppa from
+		# getting build because of default_assemble_visibility is not compiled.
+		# Alexander Gabert <pappy@nikita.ath.cx> (14 Jul 2003).
+		epatch ${FILESDIR}/3.2.3/gcc323-hppa-default_assemble_visibility.patch
 	fi
 	
 	# Install our pre generated manpages if we do not have perl ...

@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/Attic/gcc-3.3.ebuild,v 1.6 2003/07/20 18:42:47 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/Attic/gcc-3.3-r1.ebuild,v 1.1 2003/07/20 18:42:47 azarah Exp $
 
 IUSE="static nls bootstrap java build X"
 
@@ -46,14 +46,12 @@ DATAPATH="${LOC}/share/gcc-data/${CCHOST}/${MY_PV}"
 STDCXX_INCDIR="${LIBPATH}/include/g++-v${MY_PV/\.*/}"
 
 # ProPolice version
-#PP_VER="3_2_2"
-PP_VER=
-#PP_FVER="${PP_VER//_/.}-7"
-PP_FVER=
+PP_VER="3_3"
+PP_FVER="${PP_VER//_/.}-1"
 
 # Patch tarball support ...
 #PATCH_VER="1.0"
-PATCH_VER="1.1"
+PATCH_VER="1.2"
 
 # Snapshot support ...
 #SNAPSHOT="2002-08-12"
@@ -63,7 +61,7 @@ SNAPSHOT=
 MAIN_BRANCH="${PV}"  # Tarball, etc used ...
 
 #BRANCH_UPDATE="20021208"
-BRANCH_UPDATE=
+BRANCH_UPDATE="20030718"
 
 if [ -z "${SNAPSHOT}" ]
 then
@@ -91,14 +89,13 @@ then
 		http://www.trl.ibm.com/projects/security/ssp/gcc${PP_VER}/protector-${PP_FVER}.tar.gz"
 fi
 SRC_URI="${SRC_URI}
-	mirror://gentoo/${P}-athlon-hammer-branch-20030515.patch.bz2
 	mirror://gentoo/${P}-manpages.tar.bz2"
 
 DESCRIPTION="The GNU Compiler Collection.  Includes C/C++ and java compilers"
 HOMEPAGE="http://www.gnu.org/software/gcc/gcc.html"
 
 LICENSE="GPL-2 LGPL-2.1"
-KEYWORDS="-* amd64"
+KEYWORDS="-*"
 
 # Ok, this is a hairy one again, but lets assume that we
 # are not cross compiling, than we want SLOT to only contain
@@ -115,8 +112,9 @@ else
 	SLOT="${CCHOST}-3.2"
 fi
 
+# We need the later binutils for support of the new cleanup attribute
 DEPEND="virtual/glibc
-	mips? >=sys-devel/binutils-2.13.90.0.16 : >=sys-devel/binutils-2.13.90.0.18
+	>=sys-devel/binutils-2.14.90.0.4.1-r1
 	>=sys-devel/gcc-config-1.3.1
 	!build? ( >=sys-libs/ncurses-5.2-r2
 	          nls? ( sys-devel/gettext ) )"
@@ -145,8 +143,9 @@ chk_gcc_version() {
 
 version_patch() {
 	[ ! -f "$1" ] && return 1
+	[ -z "$2" ] && return 1
 
-	sed -e "s:@PV@:${PVR}:g" ${1} > ${T}/${1##*/}
+	sed -e "s:@GENTOO@:$2:g" ${1} > ${T}/${1##*/}
 	epatch ${T}/${1##*/}
 }
 
@@ -180,24 +179,18 @@ src_unpack() {
 		epatch ${DISTDIR}/${PN}-${MAIN_BRANCH}-branch-update-${BRANCH_UPDATE}.patch.bz2
 	fi
 
-	# Merge Athlon/X86_64 Branch
-	# This patch is based upon the differences in gcc cvs between
-	# hammer-3_3-branch and gcc-3_3-branches and contains many
-	# enhancements for regular Athlons as well as support for the
-	# new Opteron chip.  Also included is a backport of the gcc-3.4
-	# DFA schedular, which should provide further enhancements for
-	# all platforms.  See ChangeLog.hammer for more info.
-	# <dragon@gentoo.org> (15 May 2003)
-	epatch ${DISTDIR}/${P}-athlon-hammer-branch-20030515.patch.bz2
-
 	# Do bulk patches included in ${P}-patches-${PATCH_VER}.tar.bz2
 	if [ -n "${PATCH_VER}" ]
 	then
 		epatch ${WORKDIR}/patch
 	fi
 
-	# Make gcc's version info specific to Gentoo
- 	version_patch ${FILESDIR}/3.3/gcc33-gentoo-branding.patch
+	if [ -z "${PP_VER}" ]
+	then
+		# Make gcc's version info specific to Gentoo
+	 	version_patch ${FILESDIR}/3.3/gcc33-gentoo-branding-1.patch \
+			"${BRANCH_UPDATE} (Gentoo Linux ${PVR})" || die "Failed Branding"
+	fi
 
 	if [ -n "${PP_VER}" ]
 	then
@@ -205,18 +198,28 @@ src_unpack() {
 		epatch ${WORKDIR}/protector.dif
 		cp ${WORKDIR}/protector.c ${WORKDIR}/${P}/gcc/ || die "protector.c not found"
 		cp ${WORKDIR}/protector.h ${WORKDIR}/${P}/gcc/ || die "protector.h not found"
-		version_patch ${FILESDIR}/3.3/gcc33-propolice-version.patch
+		version_patch ${FILESDIR}/3.3/gcc33-gentoo-branding-1.patch \
+			"${BRANCH_UPDATE} (Gentoo Linux ${PVR}, propolice)" \
+			|| die "Failed Branding"
 	fi
 
 	# Patches from Mandrake/Suse ...
 	epatch ${FILESDIR}/3.2.3/gcc32-mklibgcc-serialize-crtfiles.patch
+
+	# Fixup for coreutils (head an tail fixes)
+	epatch ${FILESDIR}/3.3/gcc33-coreutils-compat.patch.bz2
+
+	# We do not use multilib on amd64 yet
+	if use amd64
+	then
+		epatch ${FILESDIR}/3.3/gcc33-no-multilib-amd64.patch
+	fi
 	
-	# Get gcc to decreases the number of times the collector has to be run
-	# by increasing its memory workspace, bug #16548.
-	#
-	# Updated for 3.3, change only one const now...
-	# <dragon@gentoo.org> (15 May 2003)
-#	epatch ${FILESDIR}/3.3/gcc33-ggc_page-speedup.patch
+	# PPC mergel miscompilation workaround
+	if use ppc
+	then
+		epatch ${FILESDIR}/3.2.3/gcc-3.2.3-mergel-fix.patch
+	fi
 
 	# Patches from debian-arm
 	if use arm
@@ -230,11 +233,11 @@ src_unpack() {
 	then
 		cd ${S}; unpack ${P}-manpages.tar.bz2
 	fi
+	
+	# Misdesign in libstdc++ (Redhat)
+	cp -a ${S}/libstdc++-v3/config/cpu/i{4,3}86/atomicity.h
 
-	if [ "$ARCH" = "amd64" ]
-	then
-		epatch ${FILESDIR}/3.3/gcc33-no-multilib-amd64.patch
-	fi
+	cd ${S}; ./contrib/gcc_update --touch &> /dev/null
 }
 
 src_compile() {
@@ -523,7 +526,6 @@ src_install() {
 
 	# Fix ncurses b0rking
 	find ${D}/ -name '*curses.h' -exec rm -f {} \;
-
 }
 
 pkg_preinst() {
