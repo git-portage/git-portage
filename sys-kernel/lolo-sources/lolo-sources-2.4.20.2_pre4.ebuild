@@ -1,8 +1,8 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/lolo-sources/Attic/lolo-sources-2.4.20.1_rc1.ebuild,v 1.3 2003/02/13 16:39:24 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/lolo-sources/Attic/lolo-sources-2.4.20.2_pre4.ebuild,v 1.1 2003/03/03 04:50:08 lostlogic Exp $
 
-IUSE="build crypt"
+IUSE="build crypt xfs"
 
 # OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
@@ -25,7 +25,7 @@ OKV="2.4.20"
 DESCRIPTION="Full sources for lostlogic's Gentoo Linux kernel"
 SRC_URI="http://www.kernel.org/pub/linux/kernel/v2.4/linux-${OKV}.tar.bz2
 	 http://gentoo.lostlogicx.com/patches-${KV}.tar.bz2"
-KEYWORDS="~x86 -ppc -sparc"
+KEYWORDS="x86 -ppc -sparc"
 SLOT="${KV}"
 
 src_unpack() {
@@ -36,8 +36,41 @@ src_unpack() {
 	# Kill patches we aren't suppposed to use, don't worry about 
 	# failures, if they aren't there that is a good thing!
 
+	# If the compiler isn't gcc3 drop the gcc3 patches
+	if [[ "${COMPILER}" == "gcc3" ]];then
+		einfo "You are using gcc3, check out the special"
+		einfo "processor types just for you"
+	else
+		einfo "Your compiler is not gcc3, dropping patches..."
+		for file in *gcc3*;do
+			einfo "Dropping ${file}..."
+			rm -f ${file}
+		done
+	fi		
+
 	# This is the ratified crypt USE flag, enables IPSEC and patch-int
-	[ `use crypt` ] || rm 8*
+	if [ -z "`use crypt`" ]; then
+		einfo "No Cryptographic support, dropping patches..."
+		for file in 8[7-9]*;do
+			einfo "Dropping ${file}..."
+			rm -f ${file}
+		done
+	else
+		einfo "Cryptographic support enabled..."
+	fi
+
+	# This is the non-ratified xfs USE flag, enables XFS which is not
+	# patched by default because it can cause problems with JFS's
+	# journals.
+#	if [ -z "`use xfs`" ]; then
+#		einfo "No XFS support, is this on purpose?"
+#		for file in 79*;do
+#			einfo "Dropping ${file}..."
+#			rm -f ${file}
+#		done
+#	else
+#		einfo "Enabling XFS patch, are you sure you want this?"
+#	fi
 
 	kernel_src_unpack
 }
@@ -46,10 +79,12 @@ pkg_postinst() {
 
 	kernel_pkg_postinst
 
-	einfo "Please be warned, you have just installed a very beta"
+	einfo "Please be warned, you have just installed a beta"
 	einfo "patchset of the linux kernel sources."
 	einfo "If there are problems with it, please report them"
 	einfo "by assigning bugs on bugs.gentoo.org to"
 	einfo "lostlogic@gentoo.org"
+#	[ `use xfs` ] && ewarn "XFS patches enabled, this may cause JFS problems" || \
+#		einfo "XFS not enabled, is that on purpose?  JFS users beware of XFS."
 
 }
