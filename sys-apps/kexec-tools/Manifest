@@ -1,0 +1,6 @@
+MD5 0b78d0367d3bbc5f4fb1aa5e8fcf3579 kexec-tools-1.100.ebuild 603
+MD5 5a423a4beaa29bc40e659ee07189b141 ChangeLog 640
+MD5 6e89ba8198764bfd079a0cfa18dca593 metadata.xml 264
+MD5 3346c0b5fcc5f5974c6edb1a43acec3e files/digest-kexec-tools-1.100 69
+MD5 2fb1b484f2ce28a6f360ca237856b532 files/kexec.conf 267
+MD5 f8b9b340a121eaa017fd3e33aff29535 files/kexec.init 1127
