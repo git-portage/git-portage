@@ -1,6 +1,12 @@
-# ChangeLog for net-www/dillo
+# ChangeLog for www-client/dillo
 # Copyright 2002-2004 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/dillo/Attic/ChangeLog,v 1.50 2004/08/30 22:31:37 slarti Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/dillo/ChangeLog,v 1.1 2004/09/08 13:53:32 usata Exp $
+
+*dillo-0.8.0-r5 (08 Sep 2004)
+
+  08 Sep 2004; Mamoru KOMACHI <usata@gentoo.org> +metadata.xml,
+  +dillo-0.7.3-r7.ebuild, +dillo-0.8.0-r5.ebuild, +dillo-0.8.2.ebuild:
+  Moved net-www/dillo to www-client/dillo.
 
   30 Aug 2004; Tom Martin <slarti@gentoo.org> dillo-0.8.0-r5.ebuild:
   Stable on amd64. Thanks to Dirk Salewski <mail@dslinux.net> for the reminder
