@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Erik Van Reeth <erik@vanreeth.org>
-# $Header: /var/cvsroot/gentoo-x86/net-news/pan/Attic/pan-0.11.0.90.ebuild,v 1.1 2001/11/15 17:05:14 hallski Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-news/pan/Attic/pan-0.11.0.92.ebuild,v 1.1 2001/11/29 22:48:02 azarah Exp $
 
 
 S=${WORKDIR}/${P}
