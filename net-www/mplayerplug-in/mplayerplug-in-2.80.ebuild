@@ -1,23 +1,21 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/mplayerplug-in/Attic/mplayerplug-in-2.66.ebuild,v 1.6 2005/02/19 07:06:04 josejx Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/mplayerplug-in/Attic/mplayerplug-in-2.80.ebuild,v 1.1 2005/02/19 07:06:04 josejx Exp $
 
 inherit nsplugins toolchain-funcs
 
-S=${WORKDIR}/${PN}
-GECKO_SDK="gecko-sdk-i686-pc-linux-gnu-1.6.tar.gz"
-
 DESCRIPTION="mplayer plug-in for Mozilla"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz
-	x86? ( ftp://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.6/${GECKO_SDK} ) "
 HOMEPAGE="http://mplayerplug-in.sourceforge.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
-KEYWORDS="x86 ~amd64 ~ia64 ~ppc ~sparc ~alpha ~hppa ~mips"
-SLOT="0"
 LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="gtk2"
 
-DEPEND=">=media-video/mplayer-0.92
+DEPEND="
+	>=media-video/mplayer-0.92
+	net-libs/gecko-sdk
 	gtk2? (
 		>=x11-libs/gtk+-2.2.0
 		dev-libs/atk
@@ -27,9 +25,11 @@ DEPEND=">=media-video/mplayer-0.92
 		=x11-libs/gtk+-1.2*
 		=dev-libs/glib-1.2* )"
 
+S=${WORKDIR}/${PN}
+
 src_compile() {
 	local myconf
-	use x86 && myconf="${myconf} --with-gecko-sdk=${WORKDIR}/gecko-sdk"
+	myconf="${myconf} --with-gecko-sdk=/usr/share/gecko-sdk"
 	if use gtk2; then
 		einfo Configuring to build using gtk2
 		myconf="${myconf} --enable-gtk2"
@@ -43,11 +43,11 @@ src_compile() {
 
 src_install() {
 	exeinto /opt/netscape/plugins
-	doexe mplayerplug-in.so
+	doexe mplayerplug-in.so || die "plugin failed"
 	inst_plugin /opt/netscape/plugins/mplayerplug-in.so
 
 	insinto /etc
 	doins mplayerplug-in.conf
 
-	dodoc ChangeLog INSTALL LICENSE README
+	dodoc ChangeLog INSTALL README
 }
