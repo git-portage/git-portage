@@ -1,6 +1,17 @@
 # ChangeLog for net-misc/gyach
 # Copyright 2002-2003 Gentoo Technologies, Inc.; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/gyach/Attic/ChangeLog,v 1.17 2003/09/29 00:24:25 mkennedy Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/gyach/Attic/ChangeLog,v 1.1 2003/10/08 14:10:01 lanius Exp $
+
+*gyach-0.8.4 (08 Oct 2003)
+
+  08 Oct 2003; Heinrich Wendel <lanius@gentoo.org> gyach-0.7.5-r1.ebuild,
+  gyach-0.7.5.ebuild, gyach-0.7.6.ebuild, gyach-0.8.2.ebuild,
+  gyach-0.8.4.ebuild, gyach-0.8.5.ebuild, gyach-0.9.0.ebuild,
+  gyach-0.9.1-r1.ebuild, gyach-0.9.1.ebuild, gyach-0.9.2.ebuild,
+  gyach-0.9.4-r1.ebuild, gyach-0.9.4.ebuild, gyach-0.9.5.ebuild,
+  gyach-0.9.6.ebuild, files/gyach-0.9.1-gtk2.2-gentoo.patch,
+  files/gyach.desktop, files/protocol-gentoo.patch:
+  moved from net-misc to net-im
 
 *gyach-0.9.6 (28 Sep 2003)
 
