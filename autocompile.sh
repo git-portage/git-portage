@@ -12,9 +12,13 @@ STEPS="check fetch clean unpack compile install qmerge clean"
 
 do_step() {
 
+    local tmpp
+    tmpd=`pwd`
     echo "$C_END $C_HILITE          "
     echo "$C_END $C_HILITE [$1]  "
-    ebuild $myd $1 &> $myl/$1
+    cd `dirname $myd`
+    ebuild $myf $1 &> $myl/$1
+    cd $tmpd
     mye=$?
 
     if [ -f $LOGDIR/$1 ]
