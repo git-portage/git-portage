@@ -1,6 +1,16 @@
-MD5 d0824fa6c94e64143862f2f65a1570ca jitac-0.2.0.ebuild 1137
-MD5 d0824fa6c94e64143862f2f65a1570ca jitac-0.2.0-r1.ebuild 1137
-MD5 4c429211c3882065f2dbd29e3ad64383 ChangeLog 669
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 256f7d8bbdfbb112393999c026fbe9c8 jitac-0.2.0.ebuild 718
+MD5 338a5a60898f5e348dfe44cae5a0e429 jitac-0.2.0-r1.ebuild 1116
+MD5 a3d854941ba17d5c6b86780cabae8ab9 ChangeLog 671
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
 MD5 59824e552045d142e071c4ebb6b7b55e files/digest-jitac-0.2.0-r1 64
-MD5 59824e552045d142e071c4ebb6b7b55e files/digest-jitac-0.2.0 64
+MD5 8dcdfdedcc6a0d4523838724b5cb4191 files/digest-jitac-0.2.0 60
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBUG2H/rLF9B432nYRAgoGAJ0cxi6lrvsKNIR4BwOJ7TwAioBx8ACfZQgj
+0gqjjWK/I8QsLKDz8ALKCKg=
+=3zbp
+-----END PGP SIGNATURE-----
