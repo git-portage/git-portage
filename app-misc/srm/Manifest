@@ -1,3 +1,5 @@
 MD5 5d5247623593d5d372e9362806d01389 ChangeLog 488
-MD5 a714a7751c0f341e2ee1f7ded851b4ce srm-1.2.7.ebuild 820
+MD5 1836fe36d6eacefeb713ad9fbd4f6e10 srm-1.2.7.ebuild 838
+MD5 2dc3c6ffcaafe44a443e437a759beccf srm-1.2.8.ebuild 840
+MD5 e469f23d9b6417562322917123364dcf files/digest-srm-1.2.8 60
 MD5 7dc868eb012c0f54a4e79d8ac08642e4 files/digest-srm-1.2.7 60
