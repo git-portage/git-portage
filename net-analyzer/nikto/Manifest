@@ -1,4 +1,7 @@
 MD5 1f0e7b047e954838151a19fd36c79059 ChangeLog 888
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 c32f08e66ad03895880573d6aa1846cd nikto-1.31.ebuild 1404
+MD5 1ce0276a47b60352cdcd22bcf7c49430 nikto-1.32.ebuild 1320
+MD5 afd87dfa15d7bd818b800c3e728215c2 .nikto-1.32.ebuild.swp 12288
 MD5 4fd028ff30a713c4de5e0e295c8e09c8 files/digest-nikto-1.31 62
+MD5 c7d3ed85e44e02c2c975d8695ff3b0ae files/digest-nikto-1.32 65
