@@ -188,7 +188,7 @@
 ./media-libs/libungif/libungif-4.1.0_beta1-r1.ebuild
 ./media-libs/mpeg2vidcodec/mpeg2vidcodec-12.ebuild
 ./media-libs/smjpeg/smjpeg-0.2.1-r1.ebuild
-./media-libs/smpeg/smpeg-0.4.0-r1.ebuild
+./media-libs/smpeg/smpeg-0.4.1.ebuild
 ./media-libs/t1lib/t1lib-1.0.1-r1.ebuild
 ./media-libs/tiff/tiff-3.5.5-r1.ebuild
 ./media-sound/alsa-driver/alsa-driver-0.5.9c.ebuild
