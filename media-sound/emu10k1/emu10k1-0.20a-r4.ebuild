@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/emu10k1/Attic/emu10k1-0.20a-r1.ebuild,v 1.8 2003/02/13 13:10:23 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/emu10k1/Attic/emu10k1-0.20a-r4.ebuild,v 1.1 2003/03/07 15:35:10 vapier Exp $
 
 MY_P="${P/-/-v}"
 DESCRIPTION="Drivers, utilities, and effects for Sound Blaster cards (SBLive!, SB512, Audigy)"
@@ -23,6 +23,7 @@ pkg_setup() {
 
 src_compile() {
 	echo "SEQUENCER_SUPPORT := y" > config
+	echo "MODVERSIONS := y" >> config
 	echo "DBGEMU := n" >> config
 
 	export KERNEL_SOURCE=/usr/src/linux
@@ -37,13 +38,15 @@ src_install() {
 
 	# first install the main parts
 	make DESTDIR=${D} install || die "could not install"
+	rm -f docs/*patch
+	dodoc docs/*
 
 	# now fix up the script so it'll install into /usr and not /usr/local
 	for f in ${S}/utils/{Makefile.config,scripts/{audigy,emu}-script} ; do
 		cp ${f} ${f}.old
 		sed -e 's:/usr/local:/usr:g' ${f}.old > ${f}
 	done
-	make DESTDIR=${D} install-tools || die "could not install tools"
+	make man_prefix=${D}/usr/share/man DESTDIR=${D} install-tools || die "could not install tools"
 
 	# clean up the /usr/etc directory
 	cd ${D}/usr/etc
@@ -51,6 +54,15 @@ src_install() {
 	mv * ${D}/etc/
 	cd ${D}
 	rm -rf ${D}/usr/etc
+
+	# add wrapper script to handle audigy and emu cards
+	dobin ${FILESDIR}/emu10k1-script
+	cd ${D}/etc
+	cp emu10k1.conf ${T}/
+	{
+		cat ${FILESDIR}/emu10k1.conf-gentoo-header
+		cat ${T}/emu10k1.conf
+	} > emu10k1.conf
 
 	# clean up the scripts
 	dosed 's:$BASE_PATH/etc:/etc:g' /usr/bin/emu-script
@@ -67,6 +79,8 @@ src_install() {
 
 pkg_postinst() {
 	/sbin/depmod -a
+	/sbin/update-modules
+
 	einfo "In order for the module to work correctly you must"
 	einfo "Enable the following options in your kernel:"
 	echo
