@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.1.21-r2.ebuild,v 1.1 2004/10/21 14:02:38 lanius Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.1.22.ebuild,v 1.1 2004/11/01 14:37:18 lanius Exp $
 
 inherit eutils flag-o-matic
 
@@ -35,8 +35,8 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	epatch ${FILESDIR}/disable-strip.patch
-	epatch ${FILESDIR}/str920.patch
-	( cd pdftops; epatch ${FILESDIR}/${P}-xpdf-CESA-2004-007.patch.bz2 )
+	( cd pdftops; epatch ${FILESDIR}/xpdf-goo-sizet.patch )
+	( cd pdftops; epatch ${FILESDIR}/${P}-xpdf2-underflow.patch )
 	WANT_AUTOCONF=2.5 autoconf || die
 }
 
