@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-sci/setiathome/Attic/setiathome-3.08-r2.ebuild,v 1.4 2004/06/24 22:17:17 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-sci/setiathome/Attic/setiathome-3.08-r3.ebuild,v 1.1 2004/10/01 14:22:30 phosphan Exp $
 
 # no version number on this install dir since upgrades will be using same dir
 # (data will be stored here too)
@@ -47,7 +47,7 @@ src_install () {
 	insinto /etc/conf.d ; newins ${FILESDIR}/seti-conf.d-r1 setiathome
 
 	exeinto /var/lib/setiathome
-	newexe ${FILESDIR}/setiathome-wrapper setiwrapper
+	newexe ${FILESDIR}/setiathome-wrapper-r1 setiwrapper
 }
 
 pkg_postinst () {
