@@ -1,0 +1,5 @@
+MD5 0dbf3318d186ef66ae58bce495769953 ptlink-ircd-6.18.1.ebuild 2028
+MD5 8187678ecf0609db4cee0146e1ce4f44 ChangeLog 475
+MD5 a8424a92a1aef170448f005a3d91aa7e files/digest-ptlink-ircd-6.18.1 64
+MD5 113f812e28fe81327a9cef0e4b59e73c files/ptlink-ircd.confd 313
+MD5 e6822b72ea093625708040c81a585985 files/ptlink-ircd.rc 634
