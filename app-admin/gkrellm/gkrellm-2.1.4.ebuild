@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/gkrellm/Attic/gkrellm-2.1.2.ebuild,v 1.2 2002/12/14 07:15:41 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/gkrellm/Attic/gkrellm-2.1.4.ebuild,v 1.1 2002/12/23 19:19:07 seemant Exp $
 
 DESCRIPTION="Single process stack of various system monitors"
 SRC_URI="http://web.wt.net/~billw/${PN}/${P}.tar.bz2"
