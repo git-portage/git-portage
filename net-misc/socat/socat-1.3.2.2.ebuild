@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/socat/Attic/socat-1.3.2.2.ebuild,v 1.4 2004/07/01 21:57:54 squinky86 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/socat/Attic/socat-1.3.2.2.ebuild,v 1.5 2005/03/21 23:10:19 chriswhite Exp $
 
 DESCRIPTION="Multipurpose relay (SOcket CAT)"
 HOMEPAGE="http://www.dest-unreach.org/socat/"
