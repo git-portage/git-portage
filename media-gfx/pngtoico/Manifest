@@ -1,4 +1,4 @@
-MD5 869eb8fb7345b978be4cc7cce4450566 ChangeLog 373
-MD5 6863b9f9ec6ed69c6d5d4e76d15a862e pngtoico-1.0.ebuild 660
+MD5 1bd0ef1eb0469dba51a17382c9304c22 files/pngtoico-1.0-Makefile.patch 469
 MD5 c92aed2d78ad63c530ccec495dbe78f8 files/digest-pngtoico-1.0 63
-MD5 3f6c254f08ad2ad88a61bff9bfea45f5 files/pngtoico-1.0-Makefile.patch 472
+MD5 89ce0e831166635ef89d01088eac6b8a pngtoico-1.0.ebuild 662
+MD5 861cb05ed6094958ec9501fd0b46ab78 ChangeLog 472
