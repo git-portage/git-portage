@@ -1,5 +1,13 @@
+10.09.2000
+
+	- Update MySQL 3.23.22 -> 3.23.24	(achim)
+	- Update sox 12.16 -> 12.17		(achim)
+	- Update lftp 2.2.3 -> 2.2.6		(achim)
+
 08.09.2000
 
+	- New xanim-export-edition		(achim)
+	- New lamp 20000903			(achim)
 	- New avifile 0.46.1			(achim)
 	- New xanim 2.80.1			(achim)
 
