@@ -1,13 +1,13 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.7-r7.ebuild,v 1.1 2004/09/29 09:46:15 kumba Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.7-r8.ebuild,v 1.1 2004/11/14 04:59:41 kumba Exp $
 
 
 # Version Data
 OKV=${PV/_/-}
 CVSDATE="20040621"			# Date of diff between kernel.org and lmo CVS
 COBALTPATCHVER="1.5"			# Tarball version for cobalt patches
-SECPATCHVER="1.2"			# Tarball version for security patches
+SECPATCHVER="1.4"			# Tarball version for security patches
 GENPATCHVER="1.0"                       # Tarball version for generic patches
 IP32DIFFDATE="20040402"			# Date of diff of iluxa's minpatchset
 EXTRAVERSION="-mipscvs-${CVSDATE}"
@@ -97,8 +97,12 @@ src_unpack() {
 		epatch ${WORKDIR}/security/CAN-2004-0497-attr_gid.patch
 		epatch ${WORKDIR}/security/CAN-2004-0596-2.6-eql.patch
 		epatch ${WORKDIR}/security/CAN-2004-0626-death_packet.patch
+		epatch ${WORKDIR}/security/CAN-2004-0814-2.6.7-tty_race_conditions.patch
+		epatch ${WORKDIR}/security/CAN-2004-0816-2.6-iptables_dos.patch
 		epatch ${WORKDIR}/security/security-2.6-attr_check.patch
 		epatch ${WORKDIR}/security/security-2.6-proc_race.patch
+		epatch ${WORKDIR}/security/security-2.6.8.1-binfmt_elf-fixes.patch
+		epatch ${WORKDIR}/security/security-2.6-remote_ddos.patch
 	eend
 
 
