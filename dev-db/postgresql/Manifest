@@ -4,6 +4,7 @@ MD5 c52dff5ec13ba6c008528fa42f226508 postgresql-7.4.5-r2.ebuild 10115
 MD5 1d2540a8383fdae873c569307d3014cd postgresql-7.3.8.ebuild 7977
 MD5 cb8662f9d01e3ff4dd5de9d375ae31f0 postgresql-7.4.6.ebuild 10142
 MD5 43cd40217c38d9cb9b6a2449d50c8095 postgresql-7.3.7-r2.ebuild 7950
+MD5 2db62bb18c2ae29b50c7f04440c59ac2 postgresql-8.0.0_rc1.ebuild 7232
 MD5 f21ab43b9a00dca552cd35c635241df7 postgresql-7.4.3.ebuild 9760
 MD5 2db62bb18c2ae29b50c7f04440c59ac2 postgresql-8.0.0_beta5.ebuild 7232
 MD5 fa39b30de3679dba54a788f4a4632e92 postgresql-7.4.5-r1.ebuild 10083
@@ -41,6 +42,7 @@ MD5 2e87af398df0a957bf2f2dff754ac174 files/postgresql-7.4.3-vacuum-delay.patch 8
 MD5 30c67af1ee9e5ed4f2f73c93346dc901 files/digest-postgresql-8.0.0_beta5 238
 MD5 bd8092be6ccc6918973d9654caacbfab files/postgresql-7.4.5-hppa-testandset.patch 1596
 MD5 bd8092be6ccc6918973d9654caacbfab files/postgresql-7.4.6-hppa-testandset.patch 1596
+MD5 0bd9576d88f45d57b9a4ef10bc7a7dfa files/digest-postgresql-8.0.0_rc1 232
 MD5 3b4cbf59561d655b882ab335b892909d files/digest-postgresql-7.3.6-r1 223
 MD5 b22b4de6c3cc06beed0ed3e1f8df257f files/digest-postgresql-7.3.7-r2 223
 MD5 704a35bc200418a7deb5f59e58d6e207 files/postgresql-8.0.0_beta5-gentoo.patch 730
