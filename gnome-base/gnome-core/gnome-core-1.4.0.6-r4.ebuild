@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-core/Attic/gnome-core-1.4.0.6-r2.ebuild,v 1.1 2002/03/10 10:37:04 blocke Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-core/Attic/gnome-core-1.4.0.6-r4.ebuild,v 1.1 2002/03/24 09:05:20 seemant Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Core components of the GNOME desktop environment"
@@ -11,7 +11,8 @@ HOMEPAGE="http://www.gnome.org/"
 RDEPEND=">=gnome-base/control-center-1.4.0.1-r1
 	 >=gnome-base/libglade-0.17-r1
 	 >=gnome-base/gnome-libs-1.4.1.2-r1
-	 >=media-libs/gdk-pixbuf-0.16.0-r1"
+	 >=media-libs/gdk-pixbuf-0.16.0-r1
+	 cups? ( >=gnome-base/gnome-print-0.35 )"
 
 DEPEND="${RDEPEND}
         >=sys-apps/tcp-wrappers-7.6
@@ -35,6 +36,7 @@ src_compile() {
 
 	./configure --host=${CHOST}					\
 		    --prefix=/usr					\
+		    --mandir=/usr/share/man				\
 		    --sysconfdir=/etc					\
 		    --localstatedir=/var/lib				\
 		    ${myconf} || die
@@ -52,6 +54,7 @@ src_compile() {
 
 src_install() {
 	make prefix=${D}/usr						\
+	     mandir=${D}/usr/share/man					\
 	     sysconfdir=${D}/etc					\
   	     localstatedir=${D}/var/lib					\
 	     install || die
