@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/source-highlight/Attic/source-highlight-1.8.ebuild,v 1.6 2004/07/15 00:08:44 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/source-highlight/Attic/source-highlight-1.8.ebuild,v 1.7 2004/10/09 23:31:57 ka0ttic Exp $
 
 IUSE=""
 
@@ -27,6 +27,9 @@ src_compile() {
 }
 
 src_install () {
+	dodoc AUTHORS ChangeLog COPYING CREDITS INSTALL \
+		NEWS README THANKS TODO.txt
+
 	cd ${S}/src
 	dobin source-highlight cpp2html java2html source-highlight-cgi
 	dodir /usr/share/source-highlight
@@ -36,7 +39,4 @@ src_install () {
 	cd ${S}/doc
 	dohtml *.html *.css *.java
 	doman source-highlight.1
-
-	dodoc AUTHORS ChangeLog COPYING CREDITS INSTALL \
-		NEWS README THANKS TODO.txt
 }

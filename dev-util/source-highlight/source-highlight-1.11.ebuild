@@ -1,18 +1,25 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/source-highlight/Attic/source-highlight-1.7.ebuild,v 1.7 2004/10/09 23:31:57 ka0ttic Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/source-highlight/Attic/source-highlight-1.11.ebuild,v 1.1 2004/10/09 23:31:57 ka0ttic Exp $
 
 IUSE=""
 
 DESCRIPTION="Generate highlighted source code as an (x)html document"
-SRC_URI="ftp://ftp.gnu.org/gnu/source-highlight/${P}.tar.gz"
 HOMEPAGE="http://www.gnu.org/software/src-highlite/source-highlight.html"
+SRC_URI="ftp://ftp.gnu.org/gnu/src-highlite/${P}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="x86 amd64"
+KEYWORDS="x86 ~amd64 ~ppc"
 SLOT="0"
 
-DEPEND="virtual/libc"
+DEPEND="sys-apps/gawk
+	sys-apps/grep
+	sys-devel/bison
+	sys-devel/gcc
+	sys-devel/flex
+	virtual/libc"
+
+RDEPEND="virtual/libc"
 
 src_compile() {
 	econf || die
