@@ -1,17 +1,17 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jess/Attic/jess-bin-6.1.7.ebuild,v 1.1 2004/07/30 20:40:32 axxo Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jess-bin/Attic/jess-bin-6.1.6.ebuild,v 1.1 2004/07/30 20:43:27 axxo Exp $
 
 inherit java-pkg
 
 DESCRIPTION="Jess, the expert system shell for the Java platform"
 HOMEPAGE="http://herzberg.ca.sandia.gov/jess/"
-SRC_URI="Jess61p7.tgz"
-MY_PN="Jess61p7"
+SRC_URI="Jess61p6.tgz"
+MY_PN="Jess61p6"
 
 LICENSE="jess"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~x86"
 RESTRICT="fetch"
 IUSE="doc"
 DEPEND=">=virtual/jre-1.2"

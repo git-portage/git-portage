@@ -1,17 +1,17 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jess/Attic/jess-6.1.6.ebuild,v 1.4 2004/06/24 22:33:52 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jess-bin/Attic/jess-bin-6.1.7.ebuild,v 1.1 2004/07/30 20:43:27 axxo Exp $
 
 inherit java-pkg
 
 DESCRIPTION="Jess, the expert system shell for the Java platform"
 HOMEPAGE="http://herzberg.ca.sandia.gov/jess/"
-SRC_URI="Jess61p6.tgz"
-MY_PN="Jess61p6"
+SRC_URI="Jess61p7.tgz"
+MY_PN="Jess61p7"
 
 LICENSE="jess"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc"
 RESTRICT="fetch"
 IUSE="doc"
 DEPEND=">=virtual/jre-1.2"
@@ -34,12 +34,12 @@ src_install() {
 	if use doc; then
 		einfo "Installing documentation..."
 		dohtml -r docs/*
-		insinto /usr/share/doc/${P}/examples/
+		insinto /usr/share/doc/${P/-bin}/examples/
 		doins examples/*
 		local dirs="pumps simple xfer"
 
 		for i in $dirs; do
-			insinto /usr/share/doc/${P}/examples/$i
+			insinto /usr/share/doc/${P/-bin}/examples/$i
 			doins jess/examples/$i/*
 		done
 	fi
