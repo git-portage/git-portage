@@ -1,5 +1,9 @@
 date 08 Feb 2001
 
+upd dev-db/mysql-3.23.31 to 3.23.32
+achim
+This is the first 3.23 stable release
+
 upd app-text/sablotron-0.44-r2 to 0.50
 drobbins
 
