@@ -1,4 +1,6 @@
 MD5 7c1d9cd46fddfa505e743df99373ac88 ChangeLog 1522
 MD5 fbb6fe345e65c9b7fa51b2ae10f85067 metadata.xml 166
 MD5 2027bde996286d8e7fada8181dd7869d porthole-0.3.1.ebuild 1170
+MD5 6f7209297e2362d42e4dbd20bb84e7fe porthole-0.4.1.ebuild 1237
 MD5 cd8bf5cce3489d53c5c8dab6e6c704e8 files/digest-porthole-0.3.1 66
+MD5 020e00bc7ddedcea314608001c01c1c5 files/digest-porthole-0.4.1 67
