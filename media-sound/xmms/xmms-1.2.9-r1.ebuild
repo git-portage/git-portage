@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/xmms/Attic/xmms-1.2.9-r1.ebuild,v 1.4 2004/02/04 05:11:41 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/xmms/Attic/xmms-1.2.9-r1.ebuild,v 1.5 2004/02/04 07:50:39 eradicator Exp $
 
 inherit flag-o-matic eutils
 
@@ -34,7 +34,7 @@ RDEPEND="${DEPEND}
 #We want these things in DEPEND only
 DEPEND="${DEPEND}
 	nls? ( dev-util/intltool )
-	>=sys-devel/automake-1.7.8
+	>=sys-devel/automake-1.7.9
 	>=sys-devel/autoconf-2.58"
 
 PATCHDIR=${WORKDIR}/patches
