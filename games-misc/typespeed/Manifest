@@ -1,0 +1,5 @@
+MD5 b347dc51e978dd4966d1db4b31452592 typespeed-0.4.4.ebuild 1897
+MD5 6d796b061ed1c1337ef157a5f74dab35 metadata.xml 403
+MD5 c3858179b4a7505339e2dd2b3945c2c8 ChangeLog 372
+MD5 09490e2cc962578e3cf60ee6d9893fe9 files/digest-typespeed-0.4.4 66
+MD5 9818f759fab13af7dcafc9ad329e1af9 files/01_all_statedir-fix.patch 2095
