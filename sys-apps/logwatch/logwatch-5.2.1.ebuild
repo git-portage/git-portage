@@ -1,9 +1,9 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/logwatch/Attic/logwatch-5.0.ebuild,v 1.5 2004/06/23 01:18:05 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/logwatch/Attic/logwatch-5.2.1.ebuild,v 1.1 2004/06/23 01:18:05 swegener Exp $
 
 DESCRIPTION="Analyzes and Reports on system logs"
-HOMEPAGE="http://www.logwatch.org"
+HOMEPAGE="http://www.logwatch.org/"
 SRC_URI="ftp://ftp.kaybee.org/pub/linux/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
