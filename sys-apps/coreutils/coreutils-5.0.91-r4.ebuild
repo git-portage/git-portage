@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/Attic/coreutils-5.0.91-r4.ebuild,v 1.14 2004/03/02 16:37:31 iggy Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/Attic/coreutils-5.0.91-r4.ebuild,v 1.15 2004/03/06 03:46:33 seemant Exp $
 
 inherit eutils flag-o-matic
 
@@ -24,20 +24,18 @@ LICENSE="GPL-2"
 
 KEYWORDS="x86 ~ppc sparc alpha hppa ~mips ia64 ~amd64 ppc64 s390"
 
-DEPEND="virtual/glibc
-	>=sys-libs/ncurses-5.3-r5
+RDEPEND="selinux? ( sys-libs/libselinux )
+	acl? ( !hppa? ( sys-apps/acl sys-apps/attr ) )
+	nls? ( sys-devel/gettext )
+	>=sys-libs/ncurses-5.3-r5"
+
+DEPEND="${RDEPEND}
+	virtual/glibc
 	>=sys-apps/portage-2.0.49
 	>=sys-devel/automake-1.7.6
 	>=sys-devel/autoconf-2.57
 	>=sys-devel/m4-1.4-r1
-	sys-apps/help2man
-	acl? ( !hppa? ( sys-apps/acl ) )
-	selinux? ( sys-libs/libselinux )"
-
-RDEPEND="selinux? ( sys-libs/libselinux )
-	acl? ( !hppa? ( sys-apps/acl ) )
-	nls? ( sys-devel/gettext )
-	>=sys-libs/ncurses-5.3-r5"
+	sys-apps/help2man"
 
 src_unpack() {
 	unpack ${A}
