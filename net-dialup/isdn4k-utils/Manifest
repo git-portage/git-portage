@@ -1,10 +1,13 @@
-MD5 84a31dd12b021658d30b7bdc623d650f ChangeLog 4023
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 bb630266a4c311b2a7018da7577d3afb ChangeLog 4186
 MD5 9f4187355b91c0dabfca1b251589f527 isdn4k-utils-3.2_p1-r2.ebuild 2808
 MD5 5bfcbc27dc20e18327b61f5df2bbec60 isdn4k-utils-3.2_p1-r3.ebuild 3070
 MD5 f18a68edbe338cae044acc49ae9fdd2b isdn4k-utils-3.2_p1-r4.ebuild 3553
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
 MD5 f1cac015a1fd0ca2da5a4712ec6b24fa isdn4k-utils-20041024.ebuild 3525
-MD5 acd5cfd6e76330bddfebe4398820009b isdn4k-utils-20041024-r1.ebuild 3370
+MD5 18e1229fe631fbf89555a54ddf4757be isdn4k-utils-20041024-r1.ebuild 3373
 MD5 e2cc85397eb8ff285f383213ab00cdad files/digest-isdn4k-utils-3.2_p1-r2 73
 MD5 12a790e7cfe579394ff02019abcdf95d files/digest-isdn4k-utils-3.2_p1-r3 136
 MD5 12a790e7cfe579394ff02019abcdf95d files/digest-isdn4k-utils-3.2_p1-r4 136
@@ -35,3 +38,10 @@ MD5 1c9b32ba3c1b3d083d5352af736f36cb files/20041024/net.ippp0 2423
 MD5 48266d44ebe70519d3fc67a6b0e260ff files/20041024/options.ippp0 443
 MD5 56b93c0cc4cc17b12c6add0237283271 files/20041024/pathfix.patch 641
 MD5 15ef676fec91271f9a48dc7a1b7e82a2 files/20041024/vbox-makefile.am.patch 1211
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBj++Ajtv59x0+BrURAqUVAKCDa9QZ5IxK+aqXRhHTclF+91XFewCdHdX0
+IJsKsHqZtHS8PmQdumeycL0=
+=Vg8F
+-----END PGP SIGNATURE-----
