@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/dvdrip/Attic/dvdrip-0.50.1.ebuild,v 1.3 2003/03/05 11:18:30 phoenix Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/dvdrip/Attic/dvdrip-0.50.7.ebuild,v 1.1 2003/03/05 11:18:30 phoenix Exp $
 
 IUSE="cdr gnome"
 
@@ -18,14 +18,15 @@ SRC_URI="http://www.exit1.org/${PN}/${MY_URL}/${MY_P}.tar.gz"
 HOMEPAGE="http://www.exit1.org/dvdrip/"
 SLOT="0"
 LICENSE="Artistic GPL-2"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
 DEPEND=" gnome? ( gnome-extra/gtkhtml )
 	cdr? ( >=media-video/vcdimager-0.7.12
 		>=app-cdr/cdrdao-1.1.7
-		app-cdr/cdrtools )
+		>=app-cdr/cdrtools-2.0 )
 	>=media-video/transcode-0.6.3
-	media-gfx/imagemagick
+	>=media-gfx/imagemagick-5.5.3
+	sys-apps/procps
 	dev-perl/gtk-perl
 	dev-perl/Storable
 	dev-perl/Event"
@@ -36,5 +37,9 @@ RDEPEND=">=net-analyzer/fping-2.3
 
 src_install () {
 	perl-module_src_install
-	cp -a ${S}/contrib ${D}/usr/share/doc/${P}
+}
+
+pkg_postinst () {
+	einfo "If you want to use the cluster-mode, you need to SUID fping"
+	einfo "chmod u+s /usr/sbin/fping"
 }
