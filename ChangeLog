@@ -1,10 +1,39 @@
 25.08.2000
 
+	- Update xawtv 3.18 -> 3.19		(achim)
+	- Update libsdl 1.1.3 -> 1.1.4		(achim)
+	- Update tcpdump 3.5 -> 3.5.2		(achim)
+	- Update sablot 0.42 -> 0.43		(achim)
+	- Update libpcap 0.5 -> 0.5.2		(achim)
+	- Update ghostscript 6.01 -> 6.23	(achim)
+	- Update bin86 0.15.0 -> 0.15.1		(achim)
+	- Update dsssl-db 1.54 -> 1.56		(achim)
+	- Update gimp-print 3.1.9 -> 4.0a2	(achim)
+	- Update slang 1.4.1 -> 1.4.2		(achim)
+	- Update gmp 3.0.1 -> 3.1		(achim)
+	- Update rep-gtk 0.13 -> 0.13a		(achim)
+	- Update groff 1.15 -> 1.16.1		(achim)
+	- Update gawk 3.0.4 -> 3.0.6		(achim)
+	- Update jdk 1.2.2-rc4 -> 1.2.2		(achim)
+	- Update gpm 1.19.2 -> 1.19.3		(achim)
+	- Update isapnptools 1.22 -> 1.23	(achim)
+	- Update zsh 3.0.8 -> 3.1.9		(achim)
+	- Update binutils 2.10.0.18 -> 2.10.0.24(achim)
+	- Update rpm 3.0.4 -> 3.0.5		(achim)
+	  [Works with bzip-1.0.1 :-)]
+	- Update utillinux 2.10m -> 2.10o	(achim)
+	  [Not working yet]
+	- Update eog 0.3 -> 0.4			(achim)
+	- Update LPRng 3.6.19 -> 3.6.24		(achim)
+	- Update textutils 2.0f -> 2.0g		(achim)
+	- Update fileutils 4.0x -> 4.0y		(achim)
 	- Update alsa-utils 0.5.9 -> 0.5.9a	(achim)
 	- Update current-packages		(achim)
 
 24.08.2000
 	
+	- Update xchat 1.2.1 -> 1.4.2		(drobbins)
+	  [uses use-gnome now]
 	- Removed 00baselayout			(drobbins)
 	- Removed 00initscripts			(drobbins)
 	- New baselayout (incl. initscripts)	(drobbins)
