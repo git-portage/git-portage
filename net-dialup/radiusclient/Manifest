@@ -1,0 +1,4 @@
+MD5 299927dfa5261d2fab5022da6fed62c6 metadata.xml 277
+MD5 6018d3fc37f0e54e784854ccec94a63d radiusclient-0.3.2.ebuild 724
+MD5 23e579ca4437008a0ba9250be83364ea files/pkgsysconfdir-install.patch 1612
+MD5 5f9d9dce2806167e9eba3b2fb3262567 files/digest-radiusclient-0.3.2 70
