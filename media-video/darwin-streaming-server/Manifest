@@ -1,0 +1,4 @@
+MD5 fbdb2241d1ec12a8e46f7ca7b92541fb darwin-streaming-server-5.0.1.1.ebuild 2088
+MD5 b3dcdca775c369bc4960c04e52a07a6a files/dss.rc 453
+MD5 2d3d6663528484c8db4e42817f1e7e13 files/digest-darwin-streaming-server-5.0.1.1 76
+MD5 776dce903846a8b38866c304b5bebbc0 files/darwin-streaming-server-5.0.1.1-gentoo.patch 11567
