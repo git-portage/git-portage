@@ -1,4 +1,5 @@
 15.11.2000
+	-Update util-linux > 2.10p				(drobbins)
 	-Current binutils is 2.10.0.26 again	(drobbins)
 	 [ binutils 2.10.0.33 is buggy!]
 	-New media-libs/libsdl-1.1.6			(drobbins)
