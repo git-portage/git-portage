@@ -1,5 +1,5 @@
-MD5 270b4b82f9c34c2e57284a260195c671 ChangeLog 2806
-MD5 f73a3442141fec1a8a38d5a0818d581b duke3d-20040817.ebuild 2951
+MD5 957fa2180aef27ecd3bd575395c302de ChangeLog 2803
+MD5 5d948e845cd3dec902f52090bc5715c4 duke3d-20040817.ebuild 2948
 MD5 3a1f336e4cfd9b74bc9bacb21ea0b300 metadata.xml 2684
 MD5 6ba6bae3aa96076fbb7dc72e06d93d3d files/20040817-credits.patch 1267
 MD5 50643150138fd99d9cfb2ed68df15e7d files/20040817-duke3d-makefile-opts.patch 863
