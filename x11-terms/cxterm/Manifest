@@ -1,3 +1,5 @@
+MD5 af8162b59107b7cd858fd1a852c165b6 cxterm-5.2.3.ebuild 1068
+MD5 14fe861f2457c3af113494183cdddbcf cxterm-5.2.2.ebuild 1067
 MD5 ce5ab3ea6165c1c626928458edc14a64 ChangeLog 400
-MD5 d67c71f11b69d497b6e659cbf72335e6 cxterm-5.2.2.ebuild 1098
 MD5 2c25f54b0f6b9d3dc8b81bf720df0ea9 files/digest-cxterm-5.2.2 62
+MD5 3db1f03c76816e75a5361751ee2a9f77 files/digest-cxterm-5.2.3 62
