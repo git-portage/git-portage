@@ -1,3 +1,11 @@
+date 21 July 2001
+upd net-ftp/pure-ftpd-0.98.8 new bug release recommended for production machines.
+removed earlier versions and updated package.mask to remove the earlier version.
+
+new app-shells/zsh-4.02 modified for the changes reqd.
+removed from package.mask
+
+
 date 11 July 2001
 new app-admin/metalog-0.6
 A syslogd/klogd replacement.  Very full featured, including logging
