@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/sparc-sources/Attic/sparc-sources-2.4.28-r3.ebuild,v 1.2 2005/01/08 00:16:02 joker Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/sparc-sources/Attic/sparc-sources-2.4.28-r4.ebuild,v 1.1 2005/01/08 00:16:02 joker Exp $
 
 IUSE="ultra1"
 
@@ -43,9 +43,10 @@ src_unpack() {
 
 	kernel_src_unpack
 
-	# Security fix for #72452 and #74464
+	# Security fix for #72452, #74464 and #77025
 	epatch ${FILESDIR}/2.4.28-vma-PaX.patch
 	epatch ${FILESDIR}/linux-2.4.28-CAN-2004-1056.patch
+	epatch ${FILESDIR}/2.4-brk-locked-plasmaroo.patch
 
 	# Patch the HME driver only on Ultra1 machines.
 	use ultra1 && epatch ${FILESDIR}/U1-hme-lockup.patch
