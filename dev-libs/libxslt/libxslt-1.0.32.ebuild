@@ -1,34 +1,25 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxslt/Attic/libxslt-1.0.30.ebuild,v 1.4 2003/06/14 03:06:40 gmsoft Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxslt/Attic/libxslt-1.0.32.ebuild,v 1.1 2003/08/10 11:06:29 foser Exp $
 
 inherit libtool gnome.org
 
 IUSE="python"
 DESCRIPTION="XSLT libraries and tools"
-HOMEPAGE="http://www.gnome.org/"
+HOMEPAGE="http://www.xmlsoft.org/"
 SLOT="0"
 LICENSE="MIT"
-KEYWORDS="x86 ~ppc sparc ~alpha hppa"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~amd64"
 
-RDEPEND=">=dev-libs/libxml2-2.5.6
+DEPEND=">=dev-libs/libxml2-2.5.6
 	python? ( dev-lang/python )"
-
-DEPEND="${RDEPEND}
-	dev-lang/perl"
 
 src_compile() {
 	elibtoolize
 
-	local myconf
+	econf `use_with python` || die
 
-	use python && myconf="--with-python" || myconf="--without-python"
-
-	econf ${myconf} || die
-
-	#libxslt-1.0.19 didn't like parallel make; test a good deal before re-enabling
-	#(drobbins, 24 Jul 2002)
-	make || die
+	emake || die
 }
 
 src_install() {                               
