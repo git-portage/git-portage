@@ -26,7 +26,7 @@ MD5 17ecd222df47b5253f35787097440a5a files/0.9.23/uClibc-0.9.23-etdyn.patch 5832
 MD5 298b7b42f80e1f8ae395df81c47eb213 files/0.9.23/uClibc-0.9.23-flipturn.patch 1821
 MD5 f7c264d37687f1a32f1c6e31239f2276 files/0.9.26/uclibc-0.9.26-noexecstack.patch 15273
 MD5 6835449424e7a8a38e9c85ecf1b73577 files/0.9.26/arm-ucontext.patch 303
-MD5 d6c3d1212eaa96de1dc7aa91877ec5ea files/0.9.26/ssp.c 3993
+MD5 25cac2f3d255fb16a6641f87dfc0f1c3 files/0.9.26/ssp.c 3993
 MD5 7ff9f1e05cdfbbe0e156ea81bf8b55ee files/0.9.26/uClibc-20040921-ldso-unsecvars.patch 1024
 MD5 a503ef49001f5f67d61cd40b0809fb76 files/0.9.26/unsecvars.h 682
 MD5 49671ccbdf2c8055efc6cde0003cb6c5 files/0.9.26/arm-fix-missing-syscalls.patch 2264
