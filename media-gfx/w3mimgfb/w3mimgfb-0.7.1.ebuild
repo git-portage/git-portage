@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/w3mimgfb/Attic/w3mimgfb-0.7.1.ebuild,v 1.1 2003/06/16 15:03:14 phosphan Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/w3mimgfb/Attic/w3mimgfb-0.7.1.ebuild,v 1.2 2003/08/13 17:13:00 usata Exp $
 
 IUSE=""
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://homepage3.nifty.com/slokar/fb/w3mimg.html"
 
 SLOT="0"
 LICENSE="w3m BSD"
-KEYWORDS="~x86"
+KEYWORDS="x86"
 
 DEPEND=">=media-libs/stimg-0.1.0
 	virtual/textbrowser"
