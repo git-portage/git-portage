@@ -1,5 +1,7 @@
 20.09.2000
 
+	- Update XML-Sablotron 0.43 -> 0.44	(achim)
+	- Update Sablotron 0.43 -> 0.44		(achim)
 	- New net-irc/bitchx 1.0c17		(achim)
 	- Update lftp 2.2.6 -> 2.3.0		(achim)
 	- Update modutils 2.3.15 -> 2.3.16	(achim)
