@@ -1,5 +1,18 @@
 date 09 Jan 2001
 
+upd net-fs/samba-2.0.7-r2 to 2.0.7-r3
+drobbins
+supervise and initscript update
+
+upd net-misc/openssh-2.3.0_p1-r3 to 2.3.0_p1-r4
+drobbins
+supervise and initscript update
+
+upd sys-apps/baselayout-1.4 to 1.5
+drobbins
+FHS 2.1 updates, supervise updates and sysklogd initscripts
+moved to separate gluelog and sysklogd packages.
+
 upd dev-libs/rep-gtk-0.14 to 0.15
 drobbins
 
