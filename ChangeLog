@@ -1,3 +1,9 @@
+date 22 Nov 2000
+
+upd kde-base/kdebase-2.0 to kdebase-2.0-r2
+achim
+Added openmotif to the dependencies
+
 date 21 Nov 2000
 
 new dev-lang/kaffe-1.0.6
@@ -60,3 +66,4 @@ achim
 Fixed a small installation bug.
 
 date 19 Nov 2000
+

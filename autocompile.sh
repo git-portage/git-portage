@@ -15,7 +15,7 @@ do_step() {
     local tmpp
     tmpd=`pwd`
     echo "$C_END $C_HILITE          "
-    echo "$C_END $C_HILITE [$1]  "
+    echo "$C_END $C_HILITE [$1]$C_NORMAL  "
     cd `dirname $myd`
     ebuild $myf $1 &> $myl/$1
     mye=$?
@@ -31,7 +31,7 @@ do_step() {
     if [ $mye -ne 0 ]
     then	
       echo "$C_END $C_HILITE          "
-      echo "$C_END $C_NO [$1]  "
+      echo "$C_END $C_NO [$1]$C_NORMAL  "
       echo $i >> $LOGDIR/$1
     fi
 }
@@ -95,7 +95,7 @@ do
     done
     if [ $mye -eq 0 ]
     then   
-      echo "$C_END $C_OK [OK]     "
+      echo "$C_END $C_OK [OK]$C_NORMAL     "
     fi
     
   else
