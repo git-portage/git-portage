@@ -9,9 +9,9 @@ MD5 f7e4a6694e3b06296830077b47d766da mod_php-5.0.0.ebuild 3995
 MD5 8dcccea239186458cae823a2b62b80d0 mod_php-5.0.1.ebuild 4244
 MD5 3da695dab52a3e7eeea983bf1c493fa1 mod_php-5.0.2.ebuild 4257
 MD5 af7473ef5d3920861bd3e501e8d26882 mod_php-5.0.3.ebuild 4324
-MD5 343587068f31576c4978a7982cb39284 mod_php-4.3.10-r1.ebuild 6292
-MD5 41ee3d6ee7d1a42ba5d2c25148fbb9c3 mod_php-5.0.2-r1.ebuild 4167
-MD5 60fb0cacf13ad87aa37d47d2b990a3f6 mod_php-5.0.3-r1.ebuild 4229
+MD5 f9779494f84bd75d5ac4b74485406984 mod_php-4.3.10-r1.ebuild 6304
+MD5 8f9dd674b1f02659e92457f2234bd449 mod_php-5.0.2-r1.ebuild 4177
+MD5 eea3dcce91eff8c23f8e8d5db9475776 mod_php-5.0.3-r1.ebuild 4240
 MD5 79ed63479c494aeb2ed0bc7f5c059fb9 files/70_mod_php.conf 1022
 MD5 80c45eef4f54629e893249f869cff5c6 files/70_mod_php5.conf 484
 MD5 0b0247c6314c5f7d6685268262edfd24 files/digest-mod_php-4.3.10 206
@@ -32,3 +32,5 @@ MD5 ad986b02a371b2fea3b4ae5060c9dc81 files/stdint.diff 358
 MD5 0b0247c6314c5f7d6685268262edfd24 files/digest-mod_php-4.3.10-r1 206
 MD5 4792b645fe6b66cd3f1b1ec88d4d20e8 files/digest-mod_php-5.0.2-r1 63
 MD5 89a3a3b437e24b7ccc044376843d8446 files/digest-mod_php-5.0.3-r1 63
+MD5 158cb07377a3e2a0028947b0aeb505cb files/4.3.10-r1/70_mod_php.conf 1017
+MD5 80c45eef4f54629e893249f869cff5c6 files/5.0.2-r1/70_mod_php5.conf 484
