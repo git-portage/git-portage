@@ -1,10 +1,20 @@
-MD5 4ee0f4d7357f6be8fd6c27a8fa7a925a ChangeLog 1048
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 ecbeeaf842a22ccb2b90b0f6e527d47e ChangeLog 1219
 MD5 71c4638c9c88af75b58e5f5cb54fe008 metadata.xml 159
-MD5 5d3e376575a8d301626a9816758a07d0 psyco-1.0.0_beta1.ebuild 548
-MD5 14a186038791ed9c347c2e4b428de951 psyco-1.0.ebuild 590
-MD5 ce348b3131592429db2368e439e2d56e psyco-1.1.1.ebuild 592
-MD5 2b5bc332328f1f76e3094f7fc36e3b60 psyco-1.2.ebuild 592
+MD5 bb5f38c79e63ab08e6f087b667b380ee psyco-1.0.0_beta1.ebuild 600
+MD5 f7fae59e80144606dc99425dfa8b8645 psyco-1.0.ebuild 643
+MD5 5cb804703ade910b5be94e66f37a5d93 psyco-1.1.1.ebuild 645
+MD5 3c32fb447afad3f5f86c1b6b97527ffe psyco-1.2.ebuild 645
 MD5 d01d141cde6e4bbd46258905f4140192 files/digest-psyco-1.0 65
 MD5 4c8829b71b8338e8841cd4db577357fb files/digest-psyco-1.0.0_beta1 69
 MD5 720f9a2a3f7d1b3df3bdefd8b379a0d7 files/digest-psyco-1.1.1 67
 MD5 ee2d6ae386d5817870d5f23b36d90129 files/digest-psyco-1.2 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBrQ6yz2gxt1z4IGYRAo5LAKDg9Y0CcqMhSF/G/ynMHdHr2utVVwCg2U61
+8R/FMs9uZ7Y2doh8eCwgu7E=
+=CfCP
+-----END PGP SIGNATURE-----
