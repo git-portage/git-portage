@@ -64,6 +64,7 @@
 ./dev-java/xt/xt-1.ebuild
 ./dev-lang/entity/entity-pre-0.7.0.ebuild
 ./dev-lang/jdk/jdk-1.2.2.ebuild
+./dev-lang/kaffe/kaffe-1.0.6.ebuild
 ./dev-lang/nasm/nasm-0.98-r1.ebuild
 #./dev-lang/php-4/php-4.0.0-r1.ebuild
 ./dev-lang/php-4/php-4.0.3_p1.ebuild
