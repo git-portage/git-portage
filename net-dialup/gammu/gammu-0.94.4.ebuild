@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/gammu/Attic/gammu-0.94.0.ebuild,v 1.1 2004/03/13 08:03:15 st_lim Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/gammu/Attic/gammu-0.94.4.ebuild,v 1.1 2004/04/12 11:18:49 st_lim Exp $
 
 inherit eutils
 
@@ -8,13 +8,15 @@ DESCRIPTION="a fork of the gnokii project, a tool to handle your cellular phone"
 SRC_URI="http://www.mwiacek.com/zips/gsm/gammu/older/${P}.tar.gz"
 HOMEPAGE="http://www.mwiacek.com/gsm/gammu/gammu.html"
 
-IUSE="nls bluetooth irda"
+IUSE="nls bluetooth irda mysql"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~x86"
 S=$WORKDIR/${P}
 
 RDEPEND="irda? ( sys-kernel/linux-headers )
+	mysql? ( dev-db/mysql )
+	ssl? ( >=dev-libs/openssl-0.9.7d )
 	bluetooth? ( net-wireless/bluez-libs )"
 
 DEPEND="${RDEPEND}
@@ -37,11 +39,13 @@ src_compile() {
 		--enable-6210calendar \
 		${myconf} || die "configure failed"
 
+	sed -e 's:-lz  -pthread:-lz  -lpthread -lssl:g' \
+		-i ${S}/cfg/Makefile.cfg
 	emake || die "make failed"
 }
 
 src_install () {
 	make DESTDIR=${D} installlib || die "install failed"
-	#doman docs/docs/english/gammu.1
+	doman docs/docs/english/gammu.1
 	mv ${D}/usr/share/doc/${PN} ${D}/usr/share/doc/${P}
 }
