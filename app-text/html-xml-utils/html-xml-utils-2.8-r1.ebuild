@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/html-xml-utils/Attic/html-xml-utils-2.8.ebuild,v 1.2 2004/01/22 09:56:43 obz Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/html-xml-utils/Attic/html-xml-utils-2.8-r1.ebuild,v 1.1 2004/01/22 09:56:43 obz Exp $
 
 DESCRIPTION="A number of simple utilities for manipulating HTML and XML files."
 SRC_URI="http://www.w3.org/Tools/HTML-XML-utils/${P}.tar.gz"
@@ -31,4 +31,5 @@ src_install () {
 	mv ${D}/usr/bin/normalize ${D}/usr/bin/normalize-html
 	mv ${D}/usr/share/man/man1/normalize.1 \
 	   ${D}/usr/share/man/man1/normalize-html.1
+
 }
