@@ -1,5 +1,8 @@
 date 20 Dec 2000
 
+new net-mail/postfix-20001217
+jerry
+
 upd net-mail/exim-3.20 to 3.20-r1
 jerry
 Cleaned up mail, mailq and sendmail symlinks
