@@ -2,6 +2,14 @@ DATE
 21 Nov 2000
 
 achim
+Update x11-libs gtk+-1.2.8-r1 to gtk+-1.2.8-r2
+Added ldconfig to pkg_postinst, required for automatet build
+
+achim
+Update media-gfb aview-1.2 to aview-1.2-r2
+Added dependencies
+
+achim
 Update net-mail maildrop-1.2.2 to maildrop-1.2.2-r2
 Added qmail or exim to dependencies because a mailer is
 required for compilation
@@ -71,6 +79,8 @@ primarily of interest for those setting up a Gentoo Linux box, while
 the linux-sources package is more appropriate for geeks who already
 have a running Gentoo Linux system and want to compile a more recent
 kernel by hand.
+
+
 
 
 
