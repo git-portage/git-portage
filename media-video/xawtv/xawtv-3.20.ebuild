@@ -1,10 +1,9 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/media-video/xawtv/Attic/xawtv-3.19.ebuild,v 1.1 2000/08/25 15:10:24 achim Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/xawtv/Attic/xawtv-3.20.ebuild,v 1.1 2000/09/10 17:04:53 achim Exp $
 
-P=xawtv-3.19
-A=xawtv_3.19.tar.gz
+A=xawtv_3.20.tar.gz
 S=${WORKDIR}/${P}
 DESCRIPTION="TV application for the bttv driver"
 SRC_URI="http://www.strusel007.de/linux/xawtv/"${A}
@@ -35,6 +34,7 @@ src_install() {
   rm -rf ${D}/usr/X11R6/lib/X11/fonts/misc/fonts.dir
   rm -rf ${D}/usr/lib
 }
+
 
 
 
