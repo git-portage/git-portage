@@ -1,3 +1,5 @@
-MD5 12306f9eea2c2799577e92777ab14ca7 hal-0.2.97.ebuild 974
-MD5 a786f25b2d3f1a766bda8bad289dbbd0 files/hald 603
+MD5 6e0d2d46af06b2a02cde77b91b4f32db ChangeLog 512
+MD5 731695e9263a5a2e1eeba290b36078d5 metadata.xml 219
+MD5 efa64b18b16ed2fc9a9f906464365798 hal-0.2.97.ebuild 1501
+MD5 64604f44ef01969d79901597c7dd4386 files/hald 588
 MD5 9ba9094143c1d09db466d61bb7d7b3d5 files/digest-hal-0.2.97 63
