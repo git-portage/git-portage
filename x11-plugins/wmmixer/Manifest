@@ -1,4 +1,6 @@
-MD5 6bb9f51ec66dd47ed06043f3aaf85814 wmmixer-2.0_beta4.ebuild 1207
+MD5 2126132cfa48411eb7c1b82e9d87afad wmmixer-2.0_beta4.ebuild 1325
+MD5 6bb9f51ec66dd47ed06043f3aaf85814 wmmixer-2.0_beta4.ebuild.~1.6.~ 1207
 MD5 0573d60290296244f701e2df7a347035 ChangeLog 686
 MD5 e84eaa5e07fc9fe46f005861971b4b68 metadata.xml 310
 MD5 9b925052e5249f001a659e0c353ff29f files/digest-wmmixer-2.0_beta4 65
+MD5 1af6bc6bd8c8e167b0cef3e5bcb94fb2 files/wmmixer-cflags.patch 218
