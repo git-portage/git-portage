@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/nasm/Attic/nasm-0.98.36.ebuild,v 1.9 2004/06/24 22:52:35 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/nasm/Attic/nasm-0.98.38-r1.ebuild,v 1.1 2004/12/16 19:20:47 mr_bones_ Exp $
 
 inherit eutils
 
@@ -10,39 +10,45 @@ SRC_URI="mirror://sourceforge/nasm/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="-* x86"
+KEYWORDS="-* x86 amd64"
 IUSE="doc build"
 
 DEPEND="!build? ( dev-lang/perl )
-	doc? ( virtual/ghostscript sys-apps/texinfo )
+	doc? ( virtual/ghostscript
+		sys-apps/texinfo )
 	sys-devel/gcc"
+RDEPEND="virtual/libc"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	use doc || epatch ${FILESDIR}/${P}-remove-doc-target.diff
+	cd "${S}"
+	epatch "${FILESDIR}/${PV}-overflow.patch"
 }
 
 src_compile() {
 	./configure --prefix=/usr || die
 
-	if use build ; then
-		make nasm || die
+	if use build; then
+		emake nasm || die "emake failed"
 	else
-		make everything || die
+		emake all rdf || die "emake failed"
+		if use doc; then
+			emake doc || die "emake failed"
+		fi
 	fi
 
 }
 
 src_install() {
-	if use build ; then
-		dobin nasm
+	if use build; then
+		dobin nasm || die "dobin failed"
 	else
-		dobin nasm ndisasm rdoff/{ldrdf,rdf2bin,rdf2ihx,rdfdump,rdflib,rdx}
+		dobin nasm ndisasm rdoff/{ldrdf,rdf2bin,rdf2ihx,rdfdump,rdflib,rdx} \
+			|| die "dobin failed"
 		dosym /usr/bin/rdf2bin /usr/bin/rdf2com
 		doman nasm.1 ndisasm.1
 		dodoc AUTHORS CHANGES ChangeLog INSTALL README TODO
-		if use doc ; then
+		if use doc; then
 			doinfo doc/info/*
 			dohtml doc/html/*
 			dodoc doc/nasmdoc.*
