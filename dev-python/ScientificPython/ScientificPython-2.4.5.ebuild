@@ -1,21 +1,20 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/ScientificPython/Attic/ScientificPython-2.2-r1.ebuild,v 1.15 2004/04/17 12:39:28 kloeri Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/ScientificPython/Attic/ScientificPython-2.4.5.ebuild,v 1.1 2004/04/17 12:39:28 kloeri Exp $
 
 inherit distutils
 
 IUSE=""
 DESCRIPTION="Scientific Module for Python"
-SRC_URI="http://starship.python.net/crew/hinsen/${P}.tar.gz"
+SRC_URI="http://starship.python.net/~hinsen/ScientificPython/${P}.tar.gz"
 HOMEPAGE="http://starship.python.net/crew/hinsen/scientific.html"
 SLOT="0"
 LICENSE="as-is"
-KEYWORDS="x86 ~sparc alpha"
+KEYWORDS="~x86 ~sparc ~alpha"
 
 DEPEND="virtual/python
 	>=dev-python/numeric-19.0
 	>=app-sci/netcdf-3.0"
-
 
 src_install() {
 	distutils_src_install
