@@ -36,7 +36,7 @@ cp ${ROOT}/etc/fstab ${ROOT}/etc/fstab.orig
 echo "Root partition in /dev/$MYROOTPART"
 echo "Swap partition in /dev/$MYSWAPPART"
 
-sed -e "s/#ROOT#/${MYROOTPART}/" -e "s/#SWAP#/${MYSWAPPART}/" ${ROOT}/etc/fstab.orig > ${ROOT}/etc/fstab
+sed -e "s:#ROOT#:${MYROOTPART}:" -e "s:#SWAP#:${MYSWAPPART}:" ${ROOT}/etc/fstab.orig > ${ROOT}/etc/fstab
 
 echo "Generating library links and cache..."
 cp ${ROOT}/etc/env.d/00basic ${ROOT}/etc/env.d/00basic.orig
