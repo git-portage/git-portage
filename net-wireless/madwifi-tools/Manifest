@@ -1,16 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 5521c2d8c01b7e863a2892ec80ba6c6a madwifi-tools-0.1_pre20050106.ebuild 1154
-MD5 fbaecd8f4f6f8f6e3628065e7d3e3108 ChangeLog 868
+MD5 4fb9cf0671bdb84422a6961b02c974b5 madwifi-tools-0.1_pre20050107.ebuild 554
+MD5 b03323b926e6090d550f507825a2769b ChangeLog 1061
 MD5 19fd766bac8e110b4620363a1ace26dd metadata.xml 159
 MD5 07d3f62f481b9725f606d77cd023edd5 files/digest-madwifi-tools-0.1_pre20050106 84
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.4 (GNU/Linux)
-
-iQCVAwUBQd2sf54WFLgrx1GWAQLYMgQAjiyPOFnBS1wGeUfLuyvuBMPoRUSznq7b
-hP2yeNkMnv6WyUKPlqo4vFvkLCKlH1jnAA+0FAvTH0XjVOXvq42dsXqDRIse8rVR
-uk5yhMXLSLcS286et95/RrDeyQq7/O6E60JhnfkJ4YY71+8L2Y9gMVtU13H5ppFR
-2Tagk3YLSbs=
-=+h9S
------END PGP SIGNATURE-----
+MD5 283e94543234c3f396d65824fbcccb32 files/digest-madwifi-tools-0.1_pre20050107 85
