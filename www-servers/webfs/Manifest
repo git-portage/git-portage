@@ -1,8 +1,18 @@
-MD5 a2b9525c9f1ebe0c59a2ced674a2c053 webfs-1.21.ebuild 978
-MD5 dabb760f433284aeb6209a1d7817ce4a webfs-1.20.ebuild 780
-MD5 89031aed664e1de1925b1abd4c6311ae ChangeLog 1810
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 6cfeb7c20c6d12d9532b8062affb72ff webfs-1.21.ebuild 980
+MD5 3662a439d7c3458574683fb16d844ed6 webfs-1.20.ebuild 782
+MD5 a14ba947d9c1c25b64d8d7d2a81dd957 ChangeLog 1812
 MD5 4a186842848d9c384e2d12785ba426bc metadata.xml 165
 MD5 94dac2cb13f5eabedc2f0c8b94a0741d files/webfs.confd 606
 MD5 579ace48be13da5a18919374112e42c3 files/digest-webfs-1.20 61
 MD5 67b1bfcd2840ebff1879c074c71f82c7 files/digest-webfs-1.21 61
-MD5 828f64258544d82f9ae788f3e4742f71 files/webfs.initd 1100
+MD5 8fb265a9d956a86a5294567cac50f37b files/webfs.initd 1198
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCE221EZCkKN40op4RAiVEAJ44P/eYH3eiPFZ0JRjztOa96pKr9QCeNwur
+VyyxZTuN5o8KGb9CCaAQe98=
+=pjpy
+-----END PGP SIGNATURE-----
