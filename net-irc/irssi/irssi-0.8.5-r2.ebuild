@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/irssi/Attic/irssi-0.8.5-r2.ebuild,v 1.7 2002/12/09 04:33:12 manson Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/irssi/Attic/irssi-0.8.5-r2.ebuild,v 1.8 2003/02/10 01:21:07 viz Exp $
 
 IUSE="nls ipv6 perl"
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://irssi.org/"
 
 DEPEND="=dev-libs/glib-1.2*
 	sys-libs/ncurses
-	perl? ( sys-devel/perl )" 
+	perl? ( sys-devel/perl )"
 	#socks? ( >=net-misc/dante-1.1.13 )
 RDEPEND="nls? ( sys-devel/gettext )"
 

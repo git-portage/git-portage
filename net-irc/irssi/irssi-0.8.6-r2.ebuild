@@ -1,31 +1,29 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/irssi/Attic/irssi-0.8.5-r1.ebuild,v 1.7 2003/02/10 01:21:07 viz Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/irssi/Attic/irssi-0.8.6-r2.ebuild,v 1.1 2003/02/10 01:21:07 viz Exp $
 
-IUSE="nls ipv6 socks perl"
+IUSE="nls ipv6 perl"
+
+inherit perl-module
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A modular textUI IRC client with IPv6 support."
 SRC_URI="http://irssi.org/files/${P}.tar.bz2"
-HOMEPAGE="http://irssi.org"
+HOMEPAGE="http://irssi.org/"
 
-DEPEND="virtual/glibc
-	=dev-libs/glib-1.2*
+DEPEND="=dev-libs/glib-2.2*
 	sys-libs/ncurses
-	perl? ( sys-devel/perl )"
-	socks? ( >=net-misc/dante-1.1.13 )
-
+	perl? ( sys-devel/perl )" 
+	#socks? ( >=net-misc/dante-1.1.13 )
 RDEPEND="nls? ( sys-devel/gettext )"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ppc"
-
+KEYWORDS="~x86 ~ppc ~sparc"
 
 src_compile() {
-
 	# Note: there is an option to build a GUI for irssi, but according
-	# to the website the gui is no longer developed, so that option is
+	# to the website the GUI is no longer developed, so that option is
 	# not used here.
 	
 	# Edit these if you like
@@ -33,11 +31,17 @@ src_compile() {
 	
 	use nls || myconf="${myconf} --disable-nls"
 
-	use perl || myconf="${myconf} --enable-perl=yes"
+	#perl is auto-detected and must be explicitly disabled
+	use perl || myconf="${myconf} --with-perl=no"
 
-	use ipv6 || myconf="${myconf} --enable-ipv6"
+	#ipv6 needs to be explicitly enabled
+	use ipv6 && myconf="${myconf} --enable-ipv6"
 
-	use socks || myconf="${myconf} --with-socks"
+	#socks needs to be explicitly enabled
+	#use socks && myconf="${myconf} --with-socks"
+
+	#ssl is auto-detected and must be disabled explicitly
+	use ssl || myconf="${myconf} --disable-ssl"
 
 	./configure \
 		--host=${CHOST} \
@@ -50,25 +54,18 @@ src_compile() {
 	emake || die
 }
 
-src_install () {
-
+src_install() {
 	myflags=""
-#	use perl && ( \
-#		R1="s/installsitearch='//"
-#		R2="s/';//"
-#		perl_sitearch="`perl -V:installsitearch | sed -e ${R1} -e ${R2}`"
-#		myflags="${myflags} PREFIX=${D}"
-#		myflags="${myflags} INSTALLPRIVLIB=${D}/usr"
-#		myflags="${myflags} INSTALLARCHLIB=${D}/${perl_sitearch}"
-#		myflags="${myflags} INSTALLSITELIB=${D}/${perl_sitearch}"
-#		myflags="${myflags} INSTALLSITEARCH=${D}/${perl_sitearch}"
-#	)
 
 	use perl && ( \
 		cd ${S}/src/perl/common
-		mv Makefile Makefile.orig
-		sed "s:^PREFIX:PREFIX = ${D}/usr:" \
-			Makefile.orig > Makefile
+		perl-module_src_prep
+		cd ${S}/src/perl/irc
+		perl-module_src_prep
+		cd ${S}/src/perl/textui
+		perl-module_src_prep
+		cd ${S}/src/perl/ui
+		perl-module_src_prep
 		cd ${S}
 	)
 
@@ -79,5 +76,6 @@ src_install () {
 		${myflags} \
 		install || die
 
+	prepalldocs
 	dodoc AUTHORS ChangeLog README TODO NEWS
 }
