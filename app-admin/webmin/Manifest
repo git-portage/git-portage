@@ -1,3 +1,4 @@
+MD5 3ef0b1f756a46f3728ebd498ebabad44 webmin-1.140.ebuild 1989
 MD5 e1448effc29a46897c48b774ec52a127 webmin-1.080.ebuild 1760
 MD5 f5f16f198582b89165595878bb861c64 webmin-1.130-r1.ebuild 1980
 MD5 871a442fb0428ebaeb78601de262b8b5 webmin-1.110.ebuild 1869
@@ -11,5 +12,6 @@ MD5 c2e70e10958f50cd84c377b5963a8ced files/digest-webmin-1.080 65
 MD5 7f0f3de1fc4601b588dc143645df86b7 files/digest-webmin-1.110 65
 MD5 e6cc2ef57317e815592875f7d6d3e386 files/digest-webmin-1.121 65
 MD5 45eacf952391438a2db6170312783f32 files/digest-webmin-1.130 65
+MD5 764bde81bfa9cb97e455324ea0033759 files/digest-webmin-1.140 65
 MD5 cadb87585ab39215aea085411ba590af files/webmin-1.130-webalizer.patch 595
 MD5 45eacf952391438a2db6170312783f32 files/digest-webmin-1.130-r1 65
