@@ -1,13 +1,10 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 9cee1df3c29879c12d59bbab61b44055 bash-completion-20050120.ebuild 2695
-MD5 1db810a5dbbc37ebc40da26bed07ff24 bash-completion-20050112-r1.ebuild 2698
-MD5 5c025c16b6b1214ae6b54beb797a0af1 bash-completion-20041017-r1.ebuild 2265
-MD5 b53e6fc1b9f3916869901aed6886a850 bash-completion-20041017-r3.ebuild 2679
+MD5 bc006805355a4317b999a5a036eb3747 bash-completion-20050120.ebuild 2638
+MD5 6b15efd1a5690fa0b383486cec0cd34b bash-completion-20050112-r1.ebuild 2641
+MD5 143239c1acb97d80de68cfb11a1abafe bash-completion-20041017-r1.ebuild 2208
+MD5 744bf3297b7e7bb5f21326ba0cfa4b30 bash-completion-20041017-r3.ebuild 2622
 MD5 1e7793d7236ad87efdd637cb3901f980 bash-completion-20040711.ebuild 2093
 MD5 b14e733dad85348f883a6214d21cfee7 bash-completion-20040704-r1.ebuild 2091
-MD5 2f9b8a124e7a62a65653994e1e86ed4c ChangeLog 15600
+MD5 5b704f881dfe565e039d523dec95c9b3 ChangeLog 15885
 MD5 00e8cae3d9ece63e4be61f4a2b3afd5e metadata.xml 930
 MD5 236fd9c517ac5642cae8df109dbaf9f6 files/digest-bash-completion-20041017-r1 152
 MD5 9aca91cdcddd5454ebc4f17efe465d71 files/digest-bash-completion-20041017-r3 152
@@ -20,10 +17,3 @@ MD5 957010a4451559ef1486174db65b047c files/digest-bash-completion-20050120 152
 MD5 64ca0b5063d0874c6104a4b174cb0d40 files/20050120-gentoo.diff 1894
 MD5 61eddfb92948b070333a59498edf5266 files/20041017-gentoo.diff 2032
 MD5 49e9f0b0674471ff56169ce7d9265fb2 files/digest-bash-completion-20040704-r1 151
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFB75uYEZCkKN40op4RArx+AKCXCVV3Le2qZ5N7OYISvDZve1C19ACeMr1a
-20rGU5ssMZJxjyu3eIYP5Dc=
-=ZQgb
------END PGP SIGNATURE-----
