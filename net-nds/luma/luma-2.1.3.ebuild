@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-nds/luma/Attic/luma-2.1.2.ebuild,v 1.1 2005/03/15 19:55:52 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-nds/luma/Attic/luma-2.1.3.ebuild,v 1.1 2005/03/16 17:12:50 carlo Exp $
 
 inherit eutils
 
