@@ -176,9 +176,9 @@
 ./gnome-office/dia/dia-0.86.ebuild
 #./gnome-office/dia/dia-0.86-r1.ebuild
 ./gnome-office/eog/eog-0.5.ebuild
-./gnome-office/gnome-db/gnome-db-0.1.0.ebuild
+./gnome-office/gnome-db/gnome-db-0.2.0.ebuild
 ./gnome-office/gnome-pim/gnome-pim-1.2.0-r1.ebuild
-./gnome-office/gnumeric/gnumeric-0.57.ebuild
+./gnome-office/gnumeric/gnumeric-0.59a.ebuild
 ./kde-apps/cervisia/cervisia-0.7.1.ebuild
 ./kde-apps/kdeadmin/kdeadmin-2.0.ebuild
 ./kde-apps/kdegraphics/kdegraphics-2.0.ebuild
