@@ -1,5 +1,9 @@
 date 3 June 2001
 
+new app-games/gtetrinet-0.4.1
+tetrinet clone for X11 in GTK
+blutgens
+
 upd app-text/dictd-1.5.5-r1
 man pages where in wrong place.  Also, scan for dictionaries at boot now.
 michael
