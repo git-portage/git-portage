@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/atk/Attic/atk-1.2.3.ebuild,v 1.2 2003/05/13 18:30:28 foser Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/atk/Attic/atk-1.2.3.ebuild,v 1.3 2003/09/07 22:26:29 foser Exp $
 
 inherit libtool gnome2
 
@@ -9,7 +9,7 @@ S=${WORKDIR}/${P}
 DESCRIPTION="Gnome Accessibility Toolkit"
 HOMEPAGE="http://developer.gnome.org/projects/gap/"
 
-SLOT="1"
+SLOT="0"
 LICENSE="LGPL-2.1"
 KEYWORDS="x86 ~ppc ~alpha ~sparc"
 
