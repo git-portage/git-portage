@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/asc/Attic/asc-1.15.1.0.ebuild,v 1.2 2005/02/15 00:54:50 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/asc/Attic/asc-1.15.3.0.ebuild,v 1.1 2005/02/15 00:54:50 mr_bones_ Exp $
 
 inherit games
 
@@ -18,7 +18,8 @@ IUSE=""
 
 RDEPEND="virtual/libc
 	app-arch/bzip2
-	>=media-libs/libsdl-1.2
+	media-libs/jpeg
+	>=media-libs/libsdl-1.2.2
 	media-libs/sdl-image
 	media-libs/sdl-mixer
 	>=media-libs/sdlmm-0.1.8
