@@ -1,25 +1,23 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/wpa_supplicant/Attic/wpa_supplicant-0.3.7.ebuild,v 1.1 2005/02/13 11:53:44 brix Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/wpa_supplicant/Attic/wpa_supplicant-0.2.7.ebuild,v 1.1 2005/02/14 14:20:15 brix Exp $
 
 inherit toolchain-funcs
 
-MADWIFI_VERSION="2005-01-07"
+MADWIFI_VERSION="0.1_pre20041019"
 
 DESCRIPTION="IEEE 802.1X/WPA supplicant for secure wireless transfers"
 HOMEPAGE="http://hostap.epitest.fi/wpa_supplicant/"
 SRC_URI="http://hostap.epitest.fi/releases/${P}.tar.gz
-		mirror://gentoo/madwifi-cvs-snapshot-${MADWIFI_VERSION}.tar.bz2"
+		mirror://gentoo/madwifi-driver-${MADWIFI_VERSION}.tar.bz2"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64"
-IUSE="gsm readline ssl"
+KEYWORDS="x86 ~ppc ~amd64"
+IUSE="gsm ssl"
 
-DEPEND="gsm? ( sys-apps/pcsc-lite )
-		readline? ( sys-libs/ncurses
-					sys-libs/readline )
-		ssl? ( dev-libs/openssl )"
+DEPEND="ssl? ( dev-libs/openssl )
+		gsm? ( sys-apps/pcsc-lite )"
 
 src_unpack() {
 	local CONFIG=${S}/.config
@@ -29,29 +27,12 @@ src_unpack() {
 	# toolchain setup
 	echo "CC = $(tc-getCC)" > ${CONFIG}
 
-	# basic setup
-	echo "CONFIG_CTRL_IFACE=y"        >> ${CONFIG}
-	echo "CONFIG_XSUPPLICANT_IFACE=y" >> ${CONFIG}
-
 	# basic authentication methods
 	echo "CONFIG_EAP_GTC=y"         >> ${CONFIG}
 	echo "CONFIG_EAP_MD5=y"         >> ${CONFIG}
 	echo "CONFIG_EAP_OTP=y"         >> ${CONFIG}
 	echo "CONFIG_EAP_PSK=y"         >> ${CONFIG}
 	echo "CONFIG_IEEE8021X_EAPOL=y" >> ${CONFIG}
-	echo "CONFIG_PKCS12=y"          >> ${CONFIG}
-
-	if use gsm; then
-		# smart card authentication
-		echo "CONFIG_EAP_SIM=y" >> ${CONFIG}
-		echo "CONFIG_EAP_AKA=y" >> ${CONFIG}
-		echo "CONFIG_PCSC=y"    >> ${CONFIG}
-	fi
-
-	if use readline; then
-		# readline/history support for wpa_cli
-		echo "CONFIG_READLINE=y" >> ${CONFIG}
-	fi
 
 	if use ssl; then
 		# SSL authentication methods
@@ -62,18 +43,25 @@ src_unpack() {
 		echo "CONFIG_EAP_TTLS=y"     >> ${CONFIG}
 	fi
 
+	if use gsm; then
+		# Smart card authentication
+		echo "CONFIG_EAP_SIM=y"              >> ${CONFIG}
+		echo "CONFIG_PCSC=y"                 >> ${CONFIG}
+		echo "CFLAGS += -I/usr/include/PCSC" >> ${CONFIG}
+	fi
+
 	# Linux specific drivers
 	echo "CONFIG_WIRELESS_EXTENSION=y" >> ${CONFIG}
 	echo "CONFIG_DRIVER_ATMEL=y"       >> ${CONFIG}
 	echo "CONFIG_DRIVER_HOSTAP=y"      >> ${CONFIG}
-	echo "CONFIG_DRIVER_IPW=y"         >> ${CONFIG}
+	echo "CONFIG_DRIVER_IPW2100=y"     >> ${CONFIG}
 	echo "CONFIG_DRIVER_NDISWRAPPER=y" >> ${CONFIG}
 	echo "CONFIG_DRIVER_PRISM54=y"     >> ${CONFIG}
 	echo "CONFIG_DRIVER_WEXT=y"        >> ${CONFIG}
 
 	# Add include path for madwifi-driver headers
-	echo "CFLAGS += -I${WORKDIR}/madwifi" >> ${CONFIG}
-	echo "CONFIG_DRIVER_MADWIFI=y"        >> ${CONFIG}
+	echo "CFLAGS += -I${WORKDIR}"  >> ${CONFIG}
+	echo "CONFIG_DRIVER_MADWIFI=y" >> ${CONFIG}
 }
 
 src_compile() {
@@ -101,9 +89,6 @@ pkg_postinst() {
 	einfo
 	einfo "To use ${P} you must create the configuration file"
 	einfo "/etc/wpa_supplicant.conf"
-	einfo
-	einfo "Please notice that the ipw2100 driver has changed name"
-	einfo "to ipw, meaning you will need to specify -Dipw to ${PN}"
 	einfo
 	einfo "An example configuration file has been installed as"
 	einfo "/etc/wpa_supplicant.conf.example"
