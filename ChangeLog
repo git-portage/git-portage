@@ -1,3 +1,12 @@
+date 14 Apr 2001
+
+upd sys-apps/portage-1.5_pre10 to 1.5
+drobbins
+package.mask support; emerge --pretend now tells you whether each to-be-installed package
+will be a package upgrade, a new cat/pkg on the system (not replacing an earlier version),
+or will replace an identical version of an already installed package.  This feature should
+help sysadmins to more easily spot potential upgrade problems.
+
 date 10 Apr 2001
 
 upd sys-apps/portage-1.5_pre9 to 1.5_pre10
