@@ -1,18 +1,18 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/endeavour/Attic/endeavour-2.1.21.ebuild,v 1.4 2003/06/29 23:17:15 aliz Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/endeavour/Attic/endeavour-2.3.3.ebuild,v 1.1 2003/10/01 09:49:53 hanno Exp $
 
 IUSE=""
 
 M=endeavour2-mimetypes
-DESCRIPTION="powerful file and image browser"
+DESCRIPTION="Powerful file and image browser"
 HOMEPAGE="http://wolfpack.twu.net/Endeavour2/"
 SRC_URI="ftp://wolfpack.twu.net/users/wolfpack/${P}.tar.bz2
 	ftp://wolfpack.twu.net/users/wolfpack/${M}.tgz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~ppc"
+KEYWORDS="~x86 ~ppc"
 
 DEPEND="sys-apps/bzip2
 	=x11-libs/gtk+-1.2*
@@ -20,13 +20,8 @@ DEPEND="sys-apps/bzip2
 
 src_unpack() {
 	unpack ${P}.tar.bz2
+	epatch ${FILESDIR}/endeavour_gcc33_fix
 	unpack ${M}.tgz
-
-	if [ "${ARCH}" = "ppc" -o "${ARCH}" = "sparc" -o "${ARCH}" = "sparc64" ]; then
-		# This patch fixes inverted color on big endian machines
-		einfo "Applying big endian patch..."
-		cd ${S}; patch -p0 < ${FILESDIR}/endeavour-2.1.20-bigendian.diff > /dev/null || die
-	fi
 }
 
 src_compile() {
