@@ -1,3 +1,7 @@
+01.10.2000
+	- sys-apps/portage now has
+	  portage-maintain in files dir		(drobbins)
+
 29.09.2000
 	- sys-apps/vim-nogui updated (gzip fix)	(drobbins)
 	[ help now works properly ]
