@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Martin Schlemmer <azarah@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-0.60_pre1.ebuild,v 1.2 2001/12/30 22:28:42 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-0.60.ebuild,v 1.1 2002/01/04 18:33:08 azarah Exp $
 
 # Handle PREversions as well
 MY_PV=${PV/_/}
@@ -11,15 +11,13 @@ SRC_URI="ftp://mplayerhq.hu/MPlayer/releases/MPlayer-${MY_PV}.tar.bz2
 	 ftp://mplayerhq.hu/MPlayer/releases/mp-arial-iso-8859-1.zip
 	 gtk? ( ftp://mplayerhq.hu/MPlayer/Skin/default.tar.bz2 )"
 DESCRIPTION="Media Player for Linux"
-HOMEPAGE="http://www.mplayerhq.hu"
+HOMEPAGE="http://www.mplayerhq.hu/"
 
 # 'encode' in USE for MEncoder
 # Experimental USE flags dvd and decss
-DEPEND="virtual/glibc
-        dev-lang/nasm
-	app-arch/unzip
-        media-libs/win32codecs
-	>=media-libs/divx4linux-20011010
+RDEPEND="virtual/glibc
+        >=media-libs/win32codecs-${PV}
+	>=media-libs/divx4linux-20011025
         dvd? ( media-libs/libdvdread )
         decss? ( media-libs/libdvdcss )
 	opengl? ( virtual/opengl )
@@ -33,21 +31,9 @@ DEPEND="virtual/glibc
 	ogg? ( media-libs/libogg )
 	encode? ( media-sound/lame )"
 
-RDEPEND="virtual/glibc
-        media-libs/win32codecs
-        >=media-libs/divx4linux-20011010
-        dvd? ( media-libs/libdvdread )
-        decss? ( media-libs/libdvdcss )
-	opengl? ( virtual/opengl )
-        sdl? ( media-libs/libsdl )
-        ggi? ( media-libs/libggi )
-        svga? ( media-libs/svgalib )
-        X? ( virtual/x11 )
-        gtk? ( >=x11-libs/gtk+-1.2.10-r4 )
-	esd? ( media-sound/esound )
-        alsa? ( media-libs/alsa-lib )
-	ogg? ( media-libs/libogg )
-	encode? ( media-sound/lame )"
+DEPEND="${RDEPEND}
+	dev-lang/nasm
+	app-arch/unzip"
 
 
 src_unpack() {
@@ -117,6 +103,7 @@ src_install() {
 
 	make prefix=${D}/usr/share					\
 	     BINDIR=${D}/usr/bin					\
+	     CONFDIR=${D}/usr/share/mplayer				\
 	     mandir=${D}/usr/share/man					\
 	     install || die
 	
