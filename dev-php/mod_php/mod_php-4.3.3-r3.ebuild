@@ -1,13 +1,11 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/mod_php/Attic/mod_php-4.3.3.ebuild,v 1.4 2003/10/26 03:33:13 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php/mod_php/Attic/mod_php-4.3.3-r3.ebuild,v 1.1 2003/10/26 03:33:13 robbat2 Exp $
 
 IUSE="${IUSE} apache2"
 
 DESCRIPTION="Apache module for PHP"
-KEYWORDS="~x86 ~sparc ~ppc ~alpha ~hppa ~arm"
-EXCLUDE_DB4_FIX=1
-EXCLUDE_PEAR_FIX=1
+KEYWORDS="x86 ~sparc ~ppc ~alpha ~hppa ~arm ~amd64"
 
 detectapache() {
 	local domsg=
@@ -55,7 +53,18 @@ inherit php eutils
 
 DEPEND="${DEPEND}
 	>=net-www/apache-1.3.26-r2
-	apache2? ( >=net-www/apache-2.0.43-r1 )"
+	apache2? ( >=net-www/apache-2.0.43-r1 )
+	>=sys-apps/findutils-4.1.7-r5
+	"
+
+pkg_setup() {
+	if has_version '=sys-apps/findutils-4.1.20'; then
+		eerror "Sorry, you need to have >=sys-apps/findutils-4.1.20-r1"
+		eerror "installed, due to a shortcoming in Portage we can't"
+		eerror "put it into the DEPEND list yet (to be fixed soon)..."
+		die
+	fi
+}
 
 src_unpack() {
 	multiinstwarn
@@ -70,9 +79,10 @@ src_compile() {
 	# Every Apache2 MPM EXCEPT prefork needs Zend Thread Safety
 	if [ -n "${USE_APACHE2}" ]; then
 		APACHE2_MPM="`apache2 -l |egrep 'worker|perchild|leader|threadpool|prefork'|cut -d. -f1|sed -e 's/^[[:space:]]*//g;s/[[:space:]]+/ /g;'`"
+		einfo "Apache2 MPM: ${APACHE2_MPM}"
 		case "${APACHE2_MPM}" in
 			*prefork*) ;;
-			*) myconf="${myconf} --enable-experimental-zts" ;;
+			*) myconf="${myconf} --enable-experimental-zts" ; ewarn "Enabling ZTS for Apache2 MPM" ;;
 		esac;
 	fi
 
@@ -109,7 +119,7 @@ src_install() {
 }
 
 apache2msg() {
-	einfo "Edit /etc/conf.d/apache2 and add \"-D PHP4\""
+	einfo "Edit /etc/conf.d/apache2 and add \"-D PHP4\" to APACHE2_OPTS"
 	ewarn "This is a CHANGE from previous behavior, which was \"-D PHP\""
 	ewarn "This is for the upcoming PHP5 support. The ebuild will attempt"
 	ewarn "to make this update between PHP and PHP4 automatically"
@@ -145,7 +155,7 @@ pkg_postinst() {
 	else
 		einfo "1. Execute the command:"
 		einfo " \"ebuild /var/db/pkg/dev-php/${PF}/${PF}.ebuild config\""
-		einfo "2. Edit /etc/conf.d/apache and add \"-D PHP4\""
+		einfo "2. Edit /etc/conf.d/apache and add \"-D PHP4\" to APACHE_OPTS"
 		einfo "That will include the php mime types in your configuration"
 		einfo "automagically and setup Apache to load php when it starts."
 	fi
