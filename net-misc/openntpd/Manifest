@@ -1,5 +1,5 @@
 MD5 db46343f17a32e13e418a54d79c9df4f ChangeLog 1175
-MD5 93ae91215830f6e77424ba2240943602 openntpd-3.6_p1.ebuild 992
+MD5 e56bc4d0f76e8312d9dfee4833fa3636 openntpd-3.6_p1.ebuild 998
 MD5 e30195b608a584f4e245e7edfe260680 openntpd-0.20040824p.ebuild 944
 MD5 b1e008f7e477784dded26817d225dd1c files/3.6_p1-ntpd.8.patch 507
 MD5 190d5fd10b61033efb925f9d1fa5dd60 files/openntpd.rc 902
