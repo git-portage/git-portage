@@ -1,4 +1,6 @@
 MD5 514ea20dd6acb0883fb051fcc48ed83b ChangeLog 908
 MD5 a9319c0495f2ea11d02b8014c7a234d9 autoalign-4.ebuild 913
+MD5 d479a0521024c2ef42f4a8fb97211ccd autoalign-5.ebuild 897
 MD5 9771ca4ff90b56dddc4acfadc6f6a01e metadata.xml 250
+MD5 d41c0ff11e949099cc8200a23b68075e files/digest-autoalign-5 62
 MD5 931c96309def683365ce69bb7cba0cf7 files/digest-autoalign-4 62
