@@ -58,7 +58,10 @@ achim
 upd gnome-base/oaf-0.5.1 to 0.6.1
 achim
 
-mov gnome-libs/libunicode-0.4 to gnome-base
+new gnome-base/libunicode-0.4
+achim
+
+del gnome-libs/libunicode-0.4
 achim
 
 new gnome-base/bonobo-0.23
@@ -107,7 +110,10 @@ achim
 del gnome-apps/medusa-0.2
 achim
 
-mov gnome-apps/nmap to net-analyzer
+del gnome-apps/nmap-2.53-r2
+achim
+
+add net-analyzer/nmap-2.53-r2
 achim
 
 upd gnome-apps/evolution-0.5.1 to 0.6-r1
