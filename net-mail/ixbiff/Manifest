@@ -1,0 +1,6 @@
+MD5 20b1e1495fb0c73713b56d8392cd86d5 ChangeLog 116
+MD5 031b4034edd60144a86913259cde6af0 metadata.xml 162
+MD5 068cd5356f0ccc2d3310dc31fdc2eccb ixbiff-0.03b.ebuild 1122
+MD5 c720b5733cbd824a500afee72d8f7ec7 files/ixbiff_0.03b-config-gentoo.patch 877
+MD5 7266aea3c37e52463c266ad8039ea062 files/ixbiff_0.03b-main.c-gentoo.patch 200
+MD5 5cf770445bcadc42261f71d51c4b255a files/digest-ixbiff-0.03b 63
