@@ -13,7 +13,7 @@ echo "Using GETTEXT $myGETTEXT"
 echo "Using GLIBC $myGLIBC"
 
 export USE="build"
-export STEPS="clean unpack compile install qmerge"
+export STEPS="clean unpack compile install qmerge clean" 
 cd /usr/portage
 ebuild $myBINUTILS $STEPS || exit
 ebuild $myGCC $STEPS || exit
