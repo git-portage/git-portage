@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/devfsd/Attic/devfsd-1.3.25-r5.ebuild,v 1.8 2004/03/02 16:59:23 iggy Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/devfsd/Attic/devfsd-1.3.25-r7.ebuild,v 1.1 2004/03/16 21:33:00 seemant Exp $
 
 IUSE=""
 
@@ -8,21 +8,25 @@ inherit eutils
 
 S="${WORKDIR}/${PN}"
 DESCRIPTION="Daemon for the Linux Device Filesystem"
-SRC_URI="ftp://ftp.atnf.csiro.au/pub/people/rgooch/linux/daemons/devfsd/devfsd-v${PV}.tar.gz"
 HOMEPAGE="http://www.atnf.csiro.au/~rgooch/linux/"
+SRC_URI="ftp://ftp.atnf.csiro.au/pub/people/rgooch/linux/daemons/devfsd/devfsd-v${PV}.tar.gz"
 
-KEYWORDS="~x86 ~amd64 ~ppc ~sparc ~alpha ~mips ~hppa ia64 ppc64 s390"
 SLOT="0"
 LICENSE="GPL-2"
+KEYWORDS="~x86 ~amd64 ~ppc ~sparc ~alpha ~mips ~hppa ia64"
 
 DEPEND="virtual/glibc"
+
+PROVIDE="virtual/dev-manager"
 
 src_unpack() {
 	unpack ${A}
 
+	# http://www.gentoo.org/proj/en/hardened/etdyn-ssp.xml or #gentoo-hardened/irc.freenode
+	has_version "sys-devel/hardened-gcc" && append-flags "-yet_exec"
+
 	cd ${S}
-	epatch ${FILESDIR}/${P}-kernel-2.5.patch
-	epatch ${FILESDIR}/${P}-pic.patch
+	epatch ${FILESDIR}/${P}-kernel-2.5.patch.bz2
 
 	sed -e "s:-O2:${CFLAGS}:g" \
 		-e 's:/usr/man:/usr/share/man:' \
@@ -44,4 +48,3 @@ src_install() {
 
 	dodoc devfsd.conf COPYING* INSTALL
 }
-
