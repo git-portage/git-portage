@@ -6,6 +6,18 @@ ryan
 new kde-apps/ktelnet2-0.43
 pnamias
 
+new kde-apps/kgraphspace-0.2.14
+pnamias
+
+new kde-apps/kfilereplace-0.6.0
+pnamias
+
+new kde-apps/kbear-1.2.1
+pnamias
+
+new kde-apps/kfilecoder-0.5.0
+pnamias
+
 date 21 Mar 2001
 
 upd net-misc/djbdns-1.02 to 1.05
