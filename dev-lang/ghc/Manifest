@@ -1,10 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 2852eaf66fdd3a9ae5fcf1082bb014b3 ghc-6.2.1-r1.ebuild 5794
 MD5 ea84406fb33d27987c0f7d51ece23975 ghc-6.2.ebuild 5007
 MD5 6b0575f665b30bd942f60a152f52dca8 ghc-6.0.1.ebuild 4709
 MD5 86839964ffb83a00d5b485ddc61f4f50 ghc-6.2.2.ebuild 5415
+MD5 003538f4d26823e204e35298b067a1cf ghc-6.4.ebuild 5762
 MD5 a826c3d271af6c36ca76d554355cddde ChangeLog 10084
 MD5 a769ecfcd1cdd2d40986627df7dfb249 metadata.xml 224
 MD5 80f9ac24762d1342df58d731a756956d ghc-6.2-r1.ebuild 5190
@@ -21,12 +19,6 @@ MD5 d417c9e24a826959ad6d921247e43328 files/digest-ghc-6.0.1 67
 MD5 9e9c22452b545fd9ec1367155c15d8e2 files/digest-ghc-6.2.2 67
 MD5 2e1bd1157c6d47093864b670d6b51a64 files/digest-ghc-6.2-r1 65
 MD5 2e1bd1157c6d47093864b670d6b51a64 files/digest-ghc-6.2 65
+MD5 75417bc4dea34cd08ea105457ccd3032 files/digest-ghc-6.4 65
 MD5 c2e63b1796b9c089a23a07b0eb6e76a7 files/ghc-6.2.hardened.patch.bz2 362
 MD5 9c15b50bf0b73b7d70a06fd47510a3ef files/ghc-6.0.1.haddock.patch 380
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFCLvbUOKSBj1ObwosRAvqIAJ499gcq3gVea1nVSsMYSvs7EWuwDQCeNyqt
-1SUp8AmSQCtcDWKDl8LeHDQ=
-=m2JP
------END PGP SIGNATURE-----
