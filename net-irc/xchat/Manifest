@@ -1,3 +1,4 @@
+MD5 daeb237a0a47cf43d22fcf235b4c3ca5 xchat-2.4.1.ebuild 2245
 MD5 9a920adedab8f380a8e0fa2344359159 xchat-2.4.0.ebuild 2233
 MD5 e862cd62853b7ae38fc97f1fcedfcab8 xchat-1.8.11-r1.ebuild 2267
 MD5 2482bed10a2e7145bc1814f094dd41a8 xchat-2.0.8-r1.ebuild 2005
@@ -8,6 +9,7 @@ MD5 f27b4078fe482ce7d5a084a83ef73c18 ChangeLog 20490
 MD5 fb5772136a872c08434566d4f0bcdc7f metadata.xml 179
 MD5 2effc9c4c2a5454c5abba3817894e865 files/digest-xchat-2.0.9 126
 MD5 3ddde600db975d5c534197fa4fe2b1b7 files/digest-xchat-2.4.0 134
+MD5 4a066f82a7a8ab6fe970340332d70105 files/digest-xchat-2.4.1 134
 MD5 28706a4c0068f4066e78bc9f93945fc2 files/digest-xchat-2.0.10-r3 135
 MD5 a8f607d224408d4a27777d2ffce8beac files/xc1811fixststint.diff 422
 MD5 3d228dd6bbf6d081f6888dd7b3d2a6af files/2.0.10-preeditstring.patch 820
