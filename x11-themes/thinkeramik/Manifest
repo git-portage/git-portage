@@ -2,10 +2,10 @@ MD5 5c44a1b49f464bf36a8d4dc81448c2d5 thinkeramik-3.0.8.ebuild 576
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
 MD5 acd6f53f93b5563cabc6591da06e6b97 thinkeramik-2.7.2.ebuild 431
 MD5 f12e32cc7b6ff2aefb3fff7df32d7767 thinkeramik-3.0.2.ebuild 434
-MD5 04355488c25e1f34ae2425f2493aa59a ChangeLog 1634
+MD5 4c4372dde39b9a4fb1d97ee69106e9e2 ChangeLog 1838
 MD5 27d01044b8556338d432af6023d96e9b thinkeramik-2.8.1.ebuild 440
 MD5 882eb636b9612cbbe1733dc11fedf489 thinkeramik-3.0.6.ebuild 434
-MD5 d7016f7b8a707c6b4288b4fdbcd5bfa1 thinkeramik-3.0.9.ebuild 463
+MD5 729d01171e7d80dab098353e4a92a54a thinkeramik-3.0.9.ebuild 575
 MD5 1abdd4dfdbb2ce0fcb1fda61f39dbe6a thinkeramik-2.7.3.ebuild 433
 MD5 1abdd4dfdbb2ce0fcb1fda61f39dbe6a thinkeramik-2.8.ebuild 433
 MD5 43675395b0b61530e733ee1a1328b01d files/digest-thinkeramik-2.7.3 75
