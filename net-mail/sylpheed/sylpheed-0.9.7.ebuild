@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/sylpheed/Attic/sylpheed-0.9.5.ebuild,v 1.1 2003/09/08 00:56:47 spider Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/sylpheed/Attic/sylpheed-0.9.7.ebuild,v 1.1 2003/10/15 07:47:46 seemant Exp $
 
 IUSE="ssl xface ipv6 nls gnome ldap crypt pda"
 
