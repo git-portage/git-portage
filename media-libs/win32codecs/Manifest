@@ -1,14 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
+MD5 0bc1e67df1fd23644b06eb7ad12fc5e2 win32codecs-20050216.ebuild 889
+MD5 0bc1e67df1fd23644b06eb7ad12fc5e2 win32codecs-20050115.ebuild 889
 MD5 34b5b9668146e755c724170c3817c79b ChangeLog 4209
 MD5 7300a7b361fa9f48e37722c6952bd432 metadata.xml 158
-MD5 0bc1e67df1fd23644b06eb7ad12fc5e2 win32codecs-20050115.ebuild 889
 MD5 3ef68960534c464efae0627c3b009e61 files/digest-win32codecs-20050115 67
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFCB7rVFdQwWVoAgN4RAkPfAKC/weVCzoVTBp5qpNootWgeFxU/LACeLVIM
-lN4mBPlXf4gaZYB/q2qmu8s=
-=LsQw
------END PGP SIGNATURE-----
+MD5 b8645c5758e3393806b7c6095ba11c6c files/digest-win32codecs-20050216 67
