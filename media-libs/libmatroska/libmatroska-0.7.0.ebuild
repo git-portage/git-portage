@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libmatroska/Attic/libmatroska-0.7.0.ebuild,v 1.9 2004/07/16 23:05:51 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libmatroska/Attic/libmatroska-0.7.0.ebuild,v 1.10 2004/10/08 10:29:50 eradicator Exp $
 
-inherit flag-o-matic gcc
+inherit flag-o-matic gcc eutils
 
 DESCRIPTION="Extensible multimedia container format based on EBML"
 HOMEPAGE="http://www.matroska.org/"
@@ -40,6 +40,6 @@ src_compile() {
 
 src_install() {
 	cd ${S}/make/linux
-	einstall || die "make install failed"
+	einstall libdir="${D}/usr/$(get_libdir)" || die "make install failed"
 	dodoc ${S}/LICENSE.*
 }
