@@ -8,4 +8,4 @@ MD5 877c7bda100ae6f083ce5137aae3e5b1 files/digest-lxdvdrip-1.10_pre2 67
 MD5 cd76c64399dac2e89416dd89ccf32dda files/digest-lxdvdrip-1.10_pre5 67
 MD5 57482d8cce4aacca938b4e43c345e578 files/digest-lxdvdrip-1.20_pre1 67
 MD5 57482d8cce4aacca938b4e43c345e578 files/digest-lxdvdrip-1.20_pre1-r1 67
-MD5 3f39d192e34d787c14a3abd0df7fa426 files/lxdvdrip-1.20_pre1-overflow.patch 673
+MD5 9b28c10d15e06eb087911a837ec3a97c files/lxdvdrip-1.20_pre1-overflow.patch 752
