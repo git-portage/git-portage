@@ -3,7 +3,7 @@ MD5 4eeca6b49f3b4149948b234689ed762a azureus-bin-2.0.8.0a.ebuild 3417
 MD5 1e03040afeb4ce1c2b2a9dbdeb06354e azureus-bin-2.0.8.4.ebuild 3578
 MD5 e10a317df51631fd143213848837e6f6 azureus-bin-2.1.0.0-r1.ebuild 3617
 MD5 98c873369ddc3d8d15281709d439d7cb azureus-bin-2.1.0.2.ebuild 3613
-MD5 2b725b401b1c75a06a46f04b15da8685 azureus-bin-2.1.0.4.ebuild 4150
+MD5 778ba125879ecc4c2dc6f03f59084c62 azureus-bin-2.1.0.4.ebuild 4155
 MD5 8aefbc0e49db723ca1ad02d0c409cd49 metadata.xml 160
 MD5 0b7b4678fdb7cc0211a089ce94dfc87f files/azureus-bin-2.0.8.0a-gentoo.sh 1768
 MD5 17762081fd25f6928b7bd085fa61d9ee files/azureus-bin-Makefile.patch 402
