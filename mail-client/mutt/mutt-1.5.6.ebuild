@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/mutt/Attic/mutt-1.5.6.ebuild,v 1.6 2004/08/17 18:18:18 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/mutt/Attic/mutt-1.5.6.ebuild,v 1.7 2004/11/24 14:55:14 agriffis Exp $
 
 inherit eutils flag-o-matic
 IUSE="cjk ssl nls slang crypt imap mbox nntp vanilla"
@@ -118,13 +118,13 @@ src_compile() {
 		myconf="${myconf} $(use_enable nntp)"
 	fi
 
-	econf ${myconf} || die
+	econf ${myconf}
 	sed -i -e 's/README.UPGRADE//' doc/Makefile || die "sed failed"
 	make || die "make failed (myconf=${myconf})"
 }
 
 src_install() {
-	make DESTDIR=${D} install || die
+	make DESTDIR=${D} install || die "install failed"
 	find ${D}/usr/share/doc -type f | grep -v "html\|manual" | xargs gzip
 	if use mbox; then
 		insinto /etc/mutt
