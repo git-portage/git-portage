@@ -1,4 +1,6 @@
 MD5 0438280d99e7ca0de9ea61818e31e586 metadata.xml 224
 MD5 27965ff54d58c0950d3a655b58744cde ChangeLog 625
 MD5 ef985873e2cf23c0413a4d8673df1a74 cvs2svn-1.1.0.ebuild 579
+MD5 6e340f2571ab47d384232e12eeaf4d5a cvs2svn-1.2.1.ebuild 478
 MD5 ba6b597ae98bdb979914bef4e7e262ba files/digest-cvs2svn-1.1.0 65
+MD5 f8490326e1c47eaa55b6d38523871fd3 files/digest-cvs2svn-1.2.1 65
