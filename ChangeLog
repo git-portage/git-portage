@@ -1,3 +1,9 @@
+date 14 Jan 2001
+
+upd sys-apps/fileutils-4.0.33 to 4.0.36
+drobbins
+lots of semi-important fixes in this release
+
 date 13 Jan 2001
 
 upd app-arch/dump-0.4.20_beta-r1 to 0.4.21
