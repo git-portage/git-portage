@@ -1,3 +1,9 @@
+date 21 June 2001
+new media-sound/realplayer-8
+You'll need to download realplayer8 basic from real.com on your own, place the
+rpm file in /usr/portage/distfiles and emerge it. Should work o.k.
+lamer
+
 date 19 June 2001
 
 new dev-libs/popt-1.5
