@@ -1,5 +1,5 @@
-MD5 355808b90913933d5b65b292f75692fa nginx-0.1.24.ebuild 2393
-MD5 f7d54afb0d6e6a079f602ede147cd63e ChangeLog 730
+MD5 3b9985845df577ce8e9198da5a107040 nginx-0.1.24.ebuild 2390
+MD5 d0aa6dc7857280fa4a8a59ccd95d62d4 ChangeLog 727
 MD5 822f3c821527e6a34f23a6a92a884766 metadata.xml 220
 MD5 4b6dd57dc730704d18f0b41e3ef2e3ec files/digest-nginx-0.1.24 64
 MD5 8c7b8c93f0c4048d83df9cdc31d86e1b files/nginx 922
