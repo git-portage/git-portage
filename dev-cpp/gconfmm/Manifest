@@ -1,4 +1,6 @@
-MD5 8d82326c88819b206540444792abd3c2 ChangeLog 1655
 MD5 6b168caecf4f016061defbfa15399654 gconfmm-2.0.1.ebuild 701
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+MD5 a722db820087ecf879199f74c09a0fa7 gconfmm-2.6.1.ebuild 725
+MD5 8d82326c88819b206540444792abd3c2 ChangeLog 1655
+MD5 650778e47af5167c7095cfc924e6e697 files/digest-gconfmm-2.6.1 66
 MD5 9c23b9877d9c68a6e815a0a4becd09a1 files/digest-gconfmm-2.0.1 65
