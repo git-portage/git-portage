@@ -1,5 +1,10 @@
 date 24 Nov 2000
 
+upd sys-apps/portage-1.1 to 1.2
+drobbins
+Portage now supports the PROVIDES variable and virtual
+packages
+
 upd media-sound/alsa-utils-0.5.9b to 0.5.9b-r1
 drobbins
 Now includes an rc script to store/restore ALSA volume
