@@ -1,2 +1,4 @@
-MD5 f4aa8d565ff76ea21db6bfd9f38ae61f qt-unixODBC-3.3.3.ebuild 1416
+MD5 619c0711be8ba9cca02a56cf83935c04 qt-unixODBC-3.3.3.ebuild 1527
+MD5 4df6b0136152f4f1b7e4eda57805e215 ChangeLog 389
+MD5 512150b47a904b0240101e319856aab1 metadata.xml 156
 MD5 4fc68ca52659787e90f0de57b43e943b files/digest-qt-unixODBC-3.3.3 72
