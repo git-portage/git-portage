@@ -1,22 +1,22 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/tomcat/Attic/tomcat-3.3.2-r1.ebuild,v 1.1 2004/08/03 21:52:36 axxo Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/tomcat/Attic/tomcat-5.0.27-r3.ebuild,v 1.1 2004/08/06 14:35:02 axxo Exp $
 
 inherit eutils
 
-DESCRIPTION="Apache Servlet-2.2/JSP-1.1 Container"
+DESCRIPTION="Apache Servlet-2.4/JSP-2.0 Container"
 
 JT_P="jakarta-${P}.tar.gz"
 S=${WORKDIR}/jakarta-${P}
 SLOT="${PV/.*}"
 SRC_URI="mirror://apache/jakarta/tomcat-${SLOT}/v${PV}/bin/${JT_P}"
 HOMEPAGE="http://jakarta.apache.org/tomcat"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha"
+KEYWORDS="x86 ~ppc ~sparc ~alpha"
 LICENSE="Apache-2.0"
 DEPEND="sys-apps/sed"
 RDEPEND=">=virtual/jdk-1.3
-		sys-apps/sed"
-IUSE=""
+		jikes? ( dev-java/jikes )"
+IUSE="doc jikes"
 
 TOMCAT_HOME="/opt/${PN}${SLOT}"
 TOMCAT_NAME="${PN}${SLOT}"
@@ -25,18 +25,11 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	epatch ${FILESDIR}/${PV}/gentoo.diff
-}
-
-pkg_preinst() {
-	enewgroup tomcat
-	enewuser tomcat -1 -1 /dev/null tomcat
-
-	chown -R tomcat:tomcat ${D}/opt/${TOMCAT_NAME}
-	chown -R tomcat:tomcat ${D}/var/log/${TOMCAT_NAME}
+	use jikes && epatch ${FILESDIR}/${PV}/jikes.diff
 }
 
 src_install() {
-	dodoc LICENSE
+	dodoc RELEASE* RUNNING.txt LICENSE
 
 	# INIT SCRIPTS AND ENV
 	insinto /etc/init.d
@@ -46,10 +39,7 @@ src_install() {
 	insinto /etc/conf.d
 	insopts -m0644
 	newins ${FILESDIR}/${PV}/tomcat.conf ${TOMCAT_NAME}
-
-	insinto /etc/env.d
-	insopts -m0644
-	newins ${FILESDIR}/${PV}/21tomcat 21${TOMCAT_NAME}
+	use jikes && sed -e "\cCATALINA_OPTScaCATALINA_OPTS=\"-Dbuild.compiler.emacs=true\"" -i ${D}/etc/conf.d/${TOMCAT_NAME}
 
 	diropts -m750
 	dodir ${TOMCAT_HOME}
@@ -57,7 +47,11 @@ src_install() {
 	keepdir /var/log/${TOMCAT_NAME}
 
 	mv conf ${D}/etc/${TOMCAT_NAME}
-	mv bin doc lib modules native webapps ${D}${TOMCAT_HOME}
+	mv bin common server shared temp work ${D}${TOMCAT_HOME}
+	if ! use doc; then
+		rm -rf webapps/{tomcat-docs,jsp-examples,servlets-examples}
+	fi
+	mv webapps ${D}${TOMCAT_HOME}
 
 	dosym /etc/${TOMCAT_NAME} ${TOMCAT_HOME}/conf
 	dosym /var/log/${TOMCAT_NAME} ${TOMCAT_HOME}/logs
@@ -65,7 +59,26 @@ src_install() {
 	fperms 640 /etc/${TOMCAT_NAME}/tomcat-users.xml
 }
 
+
+pkg_preinst() {
+	enewgroup tomcat
+	enewuser tomcat -1 -1 /dev/null tomcat
+
+	chown -R tomcat:tomcat ${D}/opt/${TOMCAT_NAME}
+	chown -R tomcat:tomcat ${D}/etc/${TOMCAT_NAME}
+	chown -R tomcat:tomcat ${D}/var/log/${TOMCAT_NAME}
+}
+
 pkg_postinst() {
+	#due to previous ebuild bloopers make sure everything is correct
+	chown -R root:root /usr/share/doc/${TOMCAT_NAME}
+	chown root:root /etc/init.d/${TOMCAT_NAME}
+	chown root:root /etc/conf.d/${TOMCAT_NAME}
+
+	chown -R tomcat:tomcat /opt/${TOMCAT_NAME}
+	chown -R tomcat:tomcat /etc/${TOMCAT_NAME}
+	chown -R tomcat:tomcat /var/log/${TOMCAT_NAME}
+
 	einfo " "
 	einfo " NOTICE!"
 	einfo " FILE LOCATIONS:"
