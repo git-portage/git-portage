@@ -1,4 +1,6 @@
-MD5 e051803dd2451073a7b5744bfd0724c5 ChangeLog 355
 MD5 cc7dbf3d7eb6dc54770da809a93b5d15 freepops-0.0.16.ebuild 978
+MD5 73baff08f958b05d7879ab5ca231df5a freepops-0.0.17.ebuild 1137
+MD5 e051803dd2451073a7b5744bfd0724c5 ChangeLog 355
 MD5 21c9bd65b924f959e9ec675d33b6df27 metadata.xml 222
 MD5 b71405786c9e3c12e18c1b5435dc4b1f files/digest-freepops-0.0.16 68
+MD5 e382ba0b01d9d63ba7d68458d5cbd12d files/digest-freepops-0.0.17 128
