@@ -1,3 +1,6 @@
-MD5 cea8ba86ac00256dbb9fb6bcdc47b397 fmirror-0.8.4.ebuild 861
 MD5 71db04139f6f88ba49e725f46f0a2cff ChangeLog 443
+MD5 cea8ba86ac00256dbb9fb6bcdc47b397 fmirror-0.8.4.ebuild 861
+MD5 99daa6503ee48790c1c35116ecaeb4d0 fmirror-0.8.4-r1.ebuild 872
 MD5 d1cd29bbe2f6e4df53ff7f8cd0e72079 files/digest-fmirror-0.8.4 64
+MD5 8f74af93f4e4622f39fb1c6d8bb1ce90 files/fmirror-crlf.patch 387
+MD5 d1cd29bbe2f6e4df53ff7f8cd0e72079 files/digest-fmirror-0.8.4-r1 64
