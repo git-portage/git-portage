@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/c-client/Attic/c-client-2004a.ebuild,v 1.3 2005/02/01 15:33:05 cryos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/c-client/Attic/c-client-2004a-r1.ebuild,v 1.1 2005/02/01 15:33:05 cryos Exp $
 
 inherit flag-o-matic eutils libtool
 
@@ -33,19 +33,24 @@ src_unpack() {
 	# generally should be built with it anyway.
 	append-flags -fPIC
 
-	# Modifications so we can build it optimially and correctly
+	cd ${S}
+
+	# Modifications so we can build it optimally and correctly
 	sed \
-		-e "s:BASECFLAGS=\".*\":BASECFLAGS=\"${CFLAGS}\":g" \
+		-e "s:BASECFLAGS=\".*\":BASECFLAGS=:g" \
 		-e 's:SSLDIR=/usr/local/ssl:SSLDIR=/usr:g' \
 		-e 's:SSLCERTS=$(SSLDIR)/certs:SSLCERTS=/etc/ssl/certs:g' \
-		-i ${S}/src/osdep/unix/Makefile || die "Makefile sed fixing failed"
+		-i src/osdep/unix/Makefile || die "Makefile sed fixing failed"
 
 	# Apply a patch to only build the stuff we need for c-client
-	EPATCH_OPTS="${EPATCH_OPTS} -d ${S}" \
 	epatch ${FILESDIR}/2002d-Makefile.patch || die "epatch failed"
 
+	# Apply this patch conditionally - it adds the compilation of a .so for PHP
+	# on the amd64 platform.
+	use amd64 && epatch ${FILESDIR}/${P}-amd64-so-fix.patch
+
 	# Remove the pesky checks about SSL stuff
-	sed -e '/read.*exit/d' -i ${S}/Makefile
+	sed -e '/read.*exit/d' -i Makefile
 	elibtoolize
 	uclibctoolize
 }
@@ -55,9 +60,9 @@ src_compile() {
 	use ssl && ssltype="unix" || ssltype="none"
 	# no parallel builds supported!
 	if use pam ; then
-		make lnp SSLTYPE=${ssltype} || die "make failed"
+		make lnp SSLTYPE=${ssltype} EXTRACFLAGS="${CFLAGS}" || die "make failed"
 	else
-		make lnx SSLTYPE=${ssltype} || die "make failed"
+		make lnx SSLTYPE=${ssltype} EXTRACFLAGS="${CFLAGS}" || die "make failed"
 	fi
 }
 
@@ -66,7 +71,17 @@ src_install() {
 
 	# Library binary
 	dolib.a c-client/c-client.a
-	dosym /usr/lib/c-client.a /usr/lib/libc-client.a
+	dosym /usr/$(get_libdir)/c-client.a /usr/$(get_libdir)/libc-client.a
+
+	# Now the shared library created for amd64
+	if use amd64; then
+		dolib.so c-client/libc-client.so*
+		cd ${D}/usr/$(get_libdir)
+		ln -s libc-client.so.1.0.0 libc-client.so.1
+		ln -s libc-client.so.1 libc-client.so
+	fi
+
+	cd ${S}
 
 	# Headers
 	insinto /usr/include/imap
