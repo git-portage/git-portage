@@ -1,5 +1,11 @@
 date 04 Feb 20001
 
+new app-editors/emacs-nogui-20.7
+peter
+
+new app-editors/emacs-x11-20.7
+peter
+
 new media-sound/xmms-nas-0.2
 achim
 An xmms-output plugin for NAS
