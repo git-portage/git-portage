@@ -5,9 +5,9 @@ MD5 611648c5fee65250a61849a75732a35f baghira-0.4d.ebuild 546
 MD5 77a747b5fbf7edf698a0c698141ecf02 metadata.xml 163
 MD5 92a862a42e40c25b0a2698d82825997c baghira-0.5.ebuild 545
 MD5 dc556fcc7bcedee9380d2b447399fa9f baghira-0.5a.ebuild 553
-MD5 8ef7cfd529db8384e76c74725414b894 ChangeLog 2646
 MD5 47b0279295dc970110424e6a2e442e1e baghira-0.5d.ebuild 555
-MD5 47b0279295dc970110424e6a2e442e1e baghira-0.5f.ebuild 555
+MD5 cb6374550fb82dc58ff82ff7a284b802 baghira-0.5f.ebuild 551
+MD5 2d2e198e7902df23be0b2d9533336298 ChangeLog 2780
 MD5 1abb328b1d75150a4f2275db2cd634a6 files/digest-baghira-0.3r 65
 MD5 4e0249b66e7688f90353f3a3fd4f3e19 files/digest-baghira-0.4 64
 MD5 8059cc03ed0b17d80519bc48e39fb0b2 files/digest-baghira-0.4c 65
