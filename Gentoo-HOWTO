@@ -1,0 +1,164 @@
+Gentoo-HOWTO
+Written by Peter Gavin <pete@gentoo.org> and other members of the
+Gentoo Team
+
+------------------------------------------------------------------------
+
+Contents
+
+I. Introduction
+II. The Portage Tree
+  A. What (Not) to Put in the Portage Tree
+  B. Categories
+  C. The files Directory
+III. .ebuild Files
+  A. Naming .ebuild Files
+  B. Contents of an .ebuild File
+  C. Rules for Writing an .ebuild File
+IV. Filesystem Locations
+  A. Introduction to the FHS
+  B. How to Fit Your Packages into the Filesystem
+
+------------------------------------------------------------------------
+
+I. Introduction
+
+	blah, blah, blah... (I'll fill this in later)
+
+II. The Portage Tree
+
+	The portage tree is a heirarchy, in which the first level is
+	the category, and the second is the name of the package.
+
+  A. What (Not) to Put in the Portage Tree
+
+	The portage tree should only include ebuild files, and other
+	files in the 'files' directory for each package. No binary
+	files should be placed in the portage tree. No files that can
+	be downloaded from other sources (such as patches written by
+	other people) should be put here. No patches you write
+	yourself should be compressed.
+
+  B. Categories
+
+	The categories are defined as follows:
+
+	app-admin - non-critical system administration utilities
+
+	app-arch - non-critical archival/compression utilities
+
+	app-cdr - CD recording utilities
+
+	app-doc - application documentation
+
+	app-editors - non-critical text editors
+
+	app-emulation - packages for emulating other systems/OSes
+
+	app-misc - applications that don't fit anywhere else
+
+	app-office - office-type (word processing, spreadsheet, etc.)
+		packages
+
+	app-shells - non-critical shells and command interpreters
+
+	app-text - text processing, spell checkers, and document
+		formatting packages
+
+	dev-db - database libraries
+
+	dev-java - java classes/packages/etc.
+
+	dev-lang - compilers and interpreters for different languages
+
+	dev-libs - miscellaneous developer's libraries
+
+	dev-perl - perl modules
+
+	dev-python - python modules
+
+	dev-ruby - ruby modules
+
+	dev-util - various developers utilities
+
+	gnome-apps - applications for gnome
+
+	gnome-base - base gnome packages
+
+	gnome-libs - non-essential gnome libraries
+
+	gnome-office - office packages for gnome
+
+	kde-apps - applications for kde
+
+	kde-base - base kde packages
+
+	kde-i18n - kde internationalization packages
+
+	media-gfx - graphics related programs
+
+	media-libs - libraries for manipulating different media,
+		including accessing multimedia peripherals of your
+		computer (sound card, video card, etc.)
+
+	media-sound - programs related to sound, including cd-audio
+		and sound encoding
+
+	media-video - programs related to video, including video
+		codecs and players
+
+	net-analyzer - network usage statistics monitors/analyzers
+
+	net-dialup - network dialup clients and servers such as pppd
+
+	net-fs - network filesystems
+
+	net-ftp - ftp servers and clients
+
+	net-irc - irc servers and clients
+
+	net-libs - networking related libraries
+
+	net-mail - mtas and muas
+
+	net-misc - miscellaneous servers, clients, firewalls, etc.
+
+	net-nds - NIS/NIS+ and other name services
+
+	net-print - print servers and clients
+
+	net-www - http/www servers and clients
+
+	sys-apps - system-critical applications and utilities
+
+	sys-build - stuff thats in the build tarball; you don't
+		normally need any of these packages unless you are
+		building your entire system from scratch.
+
+	sys-devel - base development packages, such as gcc and make
+
+	sys-kernel - linux kernels
+
+	sys-libs - system-critical libraries such as glibc
+
+	x11-base - xfree86 and xfree86 drivers for various video cards
+
+	x11-libs - widget sets and other x11 specific libraries
+
+	x11-terms - x11 terminal emulators
+
+	x11-wm - x11 window managers
+
+	Note: the sys-* categories, other than sys-build, will be
+	removed soon.
+
+  C. The files Directory
+
+	Under each package subdirectory is a 'files' directory. You
+	should place any patches, configuration files, and other
+	auxillary files your package might require in this
+	directory. Patches you create yourself just to get your
+	package to build should be called '${PF}-gentoo.diff'. You
+	should not compress these diffs, since 1) they should not be big
+	enough to require compressing, and 2) cvs does not play well
+	with binary files.
