@@ -1,7 +1,7 @@
-# Copyright 1999-2000 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Achim Gottinger <achim@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/app-office/gnumeric/Attic/gnumeric-0.75-r2.ebuild,v 1.2 2001/11/13 18:16:12 hallski Exp $
+# Maintainer: Martin Schlemmer <azarah@gentoo.org>
+# $Header: /var/cvsroot/gentoo-x86/app-office/gnumeric/Attic/gnumeric-1.0.3.ebuild,v 1.1 2002/01/27 15:44:57 azarah Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Gnumeric, the GNOME Spreadsheet"
@@ -12,19 +12,19 @@ HOMEPAGE="http://www.gnome.org/gnome-office/gnumeric.shtml"
 RDEPEND=">=x11-libs/gtk+-1.2.10-r3
 	 >=gnome-base/gnome-libs-1.4.1.2-r1
 	 >=gnome-base/oaf-0.6.7
-	 >=gnome-base/ORBit-0.5.11
+	 >=gnome-base/ORBit-0.5.12-r1
 	 >=gnome-base/libglade-0.17
 	 >=gnome-base/gnome-print-0.31
-         >=gnome-extra/gal-0.14
+         >=gnome-extra/gal-0.18
          >=dev-libs/libxml-1.8.16
 	 >=dev-libs/libole2-0.2.4
+	 >=gnome-base/bonobo-1.0.17
 	 ~media-libs/freetype-1.3.1
          perl?	 ( >=sys-devel/perl-5 )
 	 python? ( >=dev-lang/python-2.0 )
          gb?	 ( >=gnome-extra/gb-0.0.20-r1 )
-	 guile?	 ( >=dev-util/guile-1.4 )
+	 guile?	 ( >=dev-util/guile-1.5 )
          libgda? ( >=gnome-extra/libgda-0.2.91 )
-	 bonobo? ( >=gnome-base/bonobo-1.0.9-r1 )
 	 evo?	 ( >=net-mail/evolution-0.13 )"
 
 DEPEND="${RDEPEND}
@@ -38,16 +38,13 @@ src_compile() {
 	if [ -z "`use nls`" ] ; then
 		myconf="--disable-nls"
 	fi
-	if [ -z "`use bonobo`" ] ; then
-		myconf="${myconf} --without-bonobo"
-  	fi
   	if [ "`use gb`" ]; then
     		#does not work atm
     		myconf="${myconf} --without-gb"
   	else
     		myconf="${myconf} --without-gb"
   	fi
-	if [ "`use guile`"]; then
+	if [ "`use guile`" ]; then
 		myconf="${myconf} --with-guile"
 	else
 		myconf="${myconf} --without-guile"
@@ -76,9 +73,10 @@ src_compile() {
   	./configure --host=${CHOST}					\
 		    --prefix=/usr					\
 		    --sysconfdir=/etc					\
+		    --with-bonobo					\
 		    ${myconf} || die
 
-	make || die
+	emake || make || die
 }
 
 src_install() {
