@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.50_pre12.ebuild,v 1.1 2004/01/09 20:39:16 carpaski Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.50_pre13.ebuild,v 1.1 2004/01/12 08:49:38 carpaski Exp $
 
 IUSE="build"
 
