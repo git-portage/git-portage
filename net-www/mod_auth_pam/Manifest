@@ -1,6 +1,9 @@
-MD5 8ed5c0edc6587f2a2c39880c55d56c86 ChangeLog 1567
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 6cd2a15978f7f98303d56730b279a14d ChangeLog 1568
 MD5 0d18f0fe5d603b41b988373892caf195 metadata.xml 226
-MD5 32a7e393b5ccd568398a46482af9a9e7 mod_auth_pam-1.1.1-r1.ebuild 2097
+MD5 7a9921cfa36eb590715f9e9fa2ddf3a0 mod_auth_pam-1.1.1-r1.ebuild 2097
 MD5 20192e709f597716244231698695bf64 mod_auth_pam-1.1.1.ebuild 1396
 MD5 1c6bc704c0a9ba60cde371d219c6a595 files/10_mod_auth_pam.conf 310
 MD5 d0cb338160e3be8790524af8071cc4df files/apache2.pam 380
@@ -10,3 +13,10 @@ MD5 5283c3d19faf5167133286041b5e3815 files/digest-mod_auth_pam-1.1.1-r1 141
 MD5 6cbbe41e49ddf63a8c680ce625084853 files/digest-mod_auth_pam-1.1.1 73
 MD5 6d39291f46444e6f9b7dbb3627ca5e78 files/1.1.1-r1/10_mod_auth_pam.conf 761
 MD5 27b47f69f0ca69417b22030379e47cd4 files/1.1.1-r1-1/10_mod_auth_pam.conf 642
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCH2ZBmPFBzbX68WERAoUIAKCJTF3xO+MGegiQ1qZA7wENNRWWEwCfQVH2
+KKY26ouR7gW55lRUvA9L4H8=
+=xYst
+-----END PGP SIGNATURE-----
