@@ -3,9 +3,9 @@ MD5 799cc97f7d38d176315cc271673237ef mplayerplug-in-1.0.ebuild 1378
 MD5 004f65cda4442d923bb961d4dfd7a629 mplayerplug-in-1.2.ebuild 1398
 MD5 17dd5486762c55064589a95704ae793f mplayerplug-in-0.95.ebuild 1393
 MD5 93708849884a4a4f017fcee0f7b9bc7e mplayerplug-in-0.91.ebuild 1372
-MD5 671397915bcb07dbf20323812b18427d mplayerplug-in-2.45.ebuild 997
+MD5 32f33ae290d781d9d143e2201db0ab4c mplayerplug-in-2.45.ebuild 1000
 MD5 9ef4af14dad87b03fde8e43f19e08d26 metadata.xml 225
-MD5 18a171deb5a95ebaf5aacd4be4e070ee ChangeLog 2959
+MD5 ac465651b55414312b9a7d8daea8d071 ChangeLog 3095
 MD5 42c328deb59aa65011d8b3a6754c34e4 mplayerplug-in-1.0_pre2.ebuild 1429
 MD5 ca0295eb0c6f79e9d0a544b8c8790d0b mplayerplug-in-2.11.ebuild 1376
 MD5 aeb35c3122769ac73acf6b43b756f36e mplayerplug-in-1.1.ebuild 1398
