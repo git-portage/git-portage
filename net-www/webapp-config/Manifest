@@ -7,6 +7,7 @@ MD5 ff2434ad71f9c37c2eeb40581cf11101 webapp-config-1.9-r1.ebuild 1143
 MD5 5f3c358b405e2f05bfa35fc3944a78e3 webapp-config-1.9-r2.ebuild 1147
 MD5 2114ee49249b4db8b3d9cbe0992920fe webapp-config-1.9-r3.ebuild 1150
 MD5 e0965e5cdb1a499a81100785757cbff7 webapp-config-1.10.ebuild 1400
+MD5 e0965e5cdb1a499a81100785757cbff7 webapp-config-1.10-r1.ebuild 1400
 MD5 08e878cb297aa2a44061c036df6d3b6d files/digest-webapp-config-1.9 69
 MD5 cd13826ef979dfce18e7658dfbbb901f files/digest-webapp-config-1.8 69
 MD5 cd13826ef979dfce18e7658dfbbb901f files/digest-webapp-config-1.8-r1 69
@@ -14,3 +15,4 @@ MD5 94091f1d104796fb82f4f83564aa5780 files/digest-webapp-config-1.9-r1 72
 MD5 0c1ae4fd2fcc6de80a24f04993a63d80 files/digest-webapp-config-1.9-r2 72
 MD5 ed4c41abdfcf17d5955596059b5414f0 files/digest-webapp-config-1.9-r3 72
 MD5 56b8e409e27ac20b4501bd88f61bcf7d files/digest-webapp-config-1.10 70
+MD5 222ee89709309b0fa7f52dc8c35f3efd files/digest-webapp-config-1.10-r1 73
