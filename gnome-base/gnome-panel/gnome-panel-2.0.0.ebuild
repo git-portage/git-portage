@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-panel/Attic/gnome-panel-2.0.0.ebuild,v 1.1 2002/06/10 14:03:10 spider Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-panel/Attic/gnome-panel-2.0.0.ebuild,v 1.2 2002/07/15 13:46:09 stroke Exp $
 
 inherit gnome2
 
@@ -9,6 +9,7 @@ DESCRIPTION="The Panel for Gnome2"
 SRC_URI="ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/${PN}/${P}.tar.bz2"
 HOMEPAGE="http://www.gnome.org/"
 SLOT="0"
+KEYWORDS="x86"
 LICENSE="GPL-2 FDL-1.1 LGPL-2.1"
 
 RDEPEND=">=x11-libs/gtk+-2.0.0
