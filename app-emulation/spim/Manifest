@@ -1,3 +1,4 @@
 MD5 13f0ffd431ec835b0a3bdde8db9d41f2 ChangeLog 1121
-MD5 e149a60f1edb8f2d1c951b7387457ba8 spim-6.5.ebuild 1366
+MD5 d15b293c7ca626543fc095850435b284 spim-6.5.ebuild 1276
+MD5 75e0dfca91ac2ff49fcaa8728ec198cc files/6.5-parser.patch 270
 MD5 3962179c22e4349945b01edbadfac9a5 files/digest-spim-6.5 60
