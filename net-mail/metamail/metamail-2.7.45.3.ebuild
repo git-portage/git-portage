@@ -1,20 +1,21 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/metamail/Attic/metamail-2.7.45-r1.ebuild,v 1.3 2004/05/08 14:56:45 gmsoft Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/metamail/Attic/metamail-2.7.45.3.ebuild,v 1.1 2004/05/11 19:05:56 seemant Exp $
 
 inherit eutils
 
 IUSE=""
 
-S=${WORKDIR}/mm2.7/src
+MY_PV=${PV%.*.*}-${PV#*.*.}
+S=${WORKDIR}/mm${PV%.*.*}/src
 DESCRIPTION="Metamail (with Debian patches) - Generic MIME package"
 HOMEPAGE="ftp://thumper.bellcore.com/pub/nsb/"
-SRC_URI="ftp://thumper.bellcore.com/pub/nsb/mm2.7.tar.Z
-	http://ftp.debian.org/debian/pool/main/m/metamail/${PN}_2.7-45.diff.gz"
+SRC_URI="ftp://thumper.bellcore.com/pub/nsb/mm${PV%.*.*}.tar.Z
+	http://ftp.debian.org/debian/pool/main/m/metamail/metamail_${MY_PV}.diff.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~alpha ~ia64 ~sparc ~s390 ~amd64 ~hppa"
+KEYWORDS="x86 ~ppc ~alpha ~ia64 ~sparc ~s390 ~amd64 ~hppa"
 
 DEPEND="sys-libs/ncurses
 	app-arch/sharutils
@@ -22,8 +23,9 @@ DEPEND="sys-libs/ncurses
 
 src_unpack() {
 	unpack ${A}
+	export WANT_AUTOCONF=2.1
 	cd ${S}
-	epatch ${WORKDIR}/metamail_2.7-45.diff
+	epatch ${WORKDIR}/metamail_${MY_PV}.diff
 	autoreconf
 	chmod +x ${S}/configure
 }
