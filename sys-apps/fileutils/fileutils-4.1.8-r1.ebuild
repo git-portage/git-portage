@@ -1,15 +1,31 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# Maintainer: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/fileutils/Attic/fileutils-4.1.4.ebuild,v 1.2 2001/12/31 23:47:55 azarah Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/fileutils/Attic/fileutils-4.1.8-r1.ebuild,v 1.1 2002/05/03 20:37:22 drobbins Exp $
+
+ACLPV=4.1.8acl-0.8.25
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Standard GNU file utilities (chmod, cp, dd, dir, ls, etc)"
-SRC_URI="ftp://alpha.gnu.org/gnu/fetish/${P}.tar.gz"
+SRC_URI="ftp://alpha.gnu.org/gnu/fetish/${P}.tar.gz http://acl.bestbits.at/current/diff/fileutils-${ACLPV}.xdelta"
 HOMEPAGE="http://www.gnu.org/software/fileutils/fileutils.html"
 
-DEPEND="virtual/glibc nls? ( sys-devel/gettext )"
-RDEPEND="virtual/glibc"
+DEPEND="virtual/glibc
+		nls? ( sys-devel/gettext )
+		acl? ( dev-util/xdelta )"
+RDEPEND="virtual/glibc
+		acl? ( sys-apps/acl )"
+
+src_unpack() {
+	if [ "`use acl`" ]; then
+		cp ${DISTDIR}/${P}.tar.gz ${WORKDIR}/.
+		xdelta patch ${DISTDIR}/fileutils-${ACLPV}.xdelta ${WORKDIR}/${P}.tar.gz || die
+		tar xz --no-same-owner -f ${WORKDIR}/${P}acl.tar.gz || die 
+		mv ${WORKDIR}/${P}acl ${WORKDIR}/${P}
+		cd ${S}
+	else
+		unpack ${P}.tar.gz ; cd ${S}
+	fi
+}
 
 src_compile() {
 	local myconf
