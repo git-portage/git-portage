@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.5.63-r2.ebuild,v 1.1 2003/03/03 03:44:19 lostlogic Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.5.64-r4.ebuild,v 1.1 2003/03/09 18:12:59 lostlogic Exp $
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
 OKV=${PV}
