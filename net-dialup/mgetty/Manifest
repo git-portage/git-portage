@@ -1,12 +1,12 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-MD5 39bbe2a76977fe18d57f84c783afc305 mgetty-1.1.30.ebuild 3350
-MD5 27a1a880551f06abf7e9695d77b1350f mgetty-1.1.30-r3.ebuild 3816
-MD5 3765f176889354f2fc07df839bea32cf mgetty-1.1.30-r2.ebuild 3551
-MD5 2a7decaa0b4f2242f9b65afa9ab95695 mgetty-1.1.31.ebuild 3778
-MD5 0d0abdaee071c323e7dc0c93290459be mgetty-1.1.31-r1.ebuild 4015
-MD5 0ec8b902e681cc36c9bbd3cfaf5ed3b6 ChangeLog 6372
+MD5 bc75a4320bc728bf322a4c13852b24ed mgetty-1.1.30.ebuild 3348
+MD5 257d235065484c5dd1a0f3c700cc06c1 mgetty-1.1.30-r3.ebuild 3814
+MD5 cf1cb8fad1876275c79c6afe33730ed0 mgetty-1.1.30-r2.ebuild 3549
+MD5 d38aaeecbf142081ba96f86e29d25a33 mgetty-1.1.31.ebuild 3776
+MD5 cd3eff8c1ec053a33baa58f4708bd3bc mgetty-1.1.31-r1.ebuild 4016
+MD5 8c77afcaec054b7f86b40b4103a90603 ChangeLog 6370
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
 MD5 bc47f96a12b21b779d57c0c2ad4b6837 files/mgetty-1.1.30-gentoo.diff 2771
 MD5 98aeee2f59082edadd2c9f85e0fe4fde files/mgetty-1.1.31-logfile.c.diff 1581
@@ -22,7 +22,7 @@ MD5 503ed4bbf18bb0b46850cb173873e16a files/Lucent.c.patch 814
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.0 (GNU/Linux)
 
-iD8DBQFCC1y2V3J2n04EauwRAhpyAJwIISelRXCZOTfsaBK/u8N+Sl21RwCcDXQB
-LQ2WXOwPxM7/0tkYBLHd8+o=
-=047s
+iD8DBQFCC158V3J2n04EauwRAh1pAKDWlQw9hv1+6s9FWsUDWT5hoovXQwCfcuJL
+Py+WliBQrUkzzOVUrZmBFXI=
+=vPD2
 -----END PGP SIGNATURE-----
