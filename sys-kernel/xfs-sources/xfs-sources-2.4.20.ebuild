@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/xfs-sources/Attic/xfs-sources-2.4.20_pre5.ebuild,v 1.2 2003/02/13 16:47:32 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/xfs-sources/Attic/xfs-sources-2.4.20.ebuild,v 1.1 2003/03/16 22:39:55 livewire Exp $
 
 IUSE="build crypt"
 
@@ -28,8 +28,8 @@ S=${WORKDIR}/linux-${KV}
 
 DESCRIPTION="Full sources for the XFS Specialized Gentoo Linux kernel"
 SRC_URI="http://www.kernel.org/pub/linux/kernel/v2.4/linux-${OKV}.tar.bz2
-	 http://gentoo.lostlogicx.com/patches-${KV}.tar.bz2"
-KEYWORDS="~x86 -ppc -sparc "
+	 mirror://gentoo/patches-${KV}.tar.bz2"
+KEYWORDS="x86 -ppc -sparc "
 SLOT="${KV}"
 
 src_unpack() {
