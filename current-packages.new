@@ -338,7 +338,7 @@
 ./net-www/w3m/w3m-0.1.10-r1.ebuild
 #./x11-base/nvidia/nvidia-0.9.5-r2.ebuild
 ./x11-base/xfree/xfree-4.0.1-r1.ebuild
-./x11-libs/gtk+/gtk+-1.2.8-r2.ebuild
+./x11-libs/gtk+/gtk+-1.2.8-r3.ebuild
 ./x11-libs/gtk-engines/gtk-engines-0.10.ebuild
 ./x11-libs/gtkDPS/gtkDPS-0.3.3.ebuild
 ./x11-libs/libPropList/libPropList-0.10.1-r1.ebuild
