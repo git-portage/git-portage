@@ -1,5 +1,5 @@
-MD5 61e0a879ea4cfdd272a9e12886db585a ChangeLog 6655
-MD5 0abb6f50de82d89623b728d49bae5d1e grep-2.5.1-r6.ebuild 2211
+MD5 f0e0634b27c16198ae9de14d31a977e3 ChangeLog 6653
+MD5 d2eb86245d43299474f2c8ed03e66f51 grep-2.5.1-r6.ebuild 2209
 MD5 7d89d912a4ff159de9a97d0df6a00ae0 grep-2.5.1-r7.ebuild 2072
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 792f6cb13959979de2b10537067603bb files/2.5.1-manpage-line-buffering.patch 477
