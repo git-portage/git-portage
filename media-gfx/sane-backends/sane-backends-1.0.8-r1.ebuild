@@ -1,15 +1,16 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Maintainer: Desktop Team <desktop@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/sane-backends/Attic/sane-backends-1.0.5-r1.ebuild,v 1.1 2002/01/11 22:21:03 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/sane-backends/Attic/sane-backends-1.0.8-r1.ebuild,v 1.1 2002/06/24 12:05:49 seemant Exp $
 
-S=${WORKDIR}/${P}
 DESCRIPTION="Scanner Access Now Easy - Backends"
-SRC_URI="ftp://ftp.mostang.com/pub/sane/sane-$PV/$P.tar.gz"
 HOMEPAGE="http://www.mostang.com/sane/"
 
-DEPEND="virtual/glibc
-	>=media-libs/jpeg-6b"
+DEPEND=">=media-libs/jpeg-6b"
+
+SRC_URI="ftp://ftp.mostang.com/pub/sane/sane-$PV/$P.tar.gz"
+S=${WORKDIR}/${P}
+SLOT=""
+LICENSE="GPL"
 
 src_unpack() {
 	unpack ${A}
@@ -36,10 +37,12 @@ src_install () {
 		docdir=${D}/usr/share/doc/${PF} \
 		install || die
 
-#	dodoc AUTHORS COPYING ChangeLog LEVEL2 LICENSE NEWS
-#	dodoc PROBLEMS PROJECTS README* TODO
 	docinto backend
 	cd backend
 	dodoc GUIDE *.README *.BUGS *.CHANGES *.FAQ *.TODO
-}
 
+	echo "SANE_CONFIG_DIR=/etc/sane.d" > 30sane
+	insinto /etc/env.d
+	doins 30sane
+
+}
