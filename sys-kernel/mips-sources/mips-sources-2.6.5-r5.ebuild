@@ -1,12 +1,13 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.5-r4.ebuild,v 1.2 2004/08/01 08:11:29 kumba Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.5-r5.ebuild,v 1.1 2004/08/02 06:57:17 kumba Exp $
 
 
 # Version Data
 OKV=${PV/_/-}
 CVSDATE="20040412"
 COBALTPATCHVER="1.4"
+SECPATCHVER="1.0"
 IP32DIFFDATE="20040402"
 EXTRAVERSION="-mipscvs-${CVSDATE}"
 KV="${OKV}${EXTRAVERSION}"
@@ -33,7 +34,8 @@ DESCRIPTION="Linux-Mips CVS sources for MIPS-based machines, dated ${CVSDATE}"
 SRC_URI="mirror://kernel/linux/kernel/v2.6/linux-${OKV}.tar.bz2
 		mirror://gentoo/mipscvs-${OKV}-${CVSDATE}.diff.bz2
 		mirror://gentoo/cobalt-patches-26xx-${COBALTPATCHVER}.tar.bz2
-		mirror://gentoo/ip32-iluxa-minpatchset-${IP32DIFFDATE}.diff.bz2"
+		mirror://gentoo/ip32-iluxa-minpatchset-${IP32DIFFDATE}.diff.bz2
+		mirror://gentoo/${PN}-security_patches-${SECPATCHVER}.tar.bz2"
 
 HOMEPAGE="http://www.linux-mips.org/"
 SLOT="${OKV}"
@@ -65,29 +67,36 @@ src_unpack() {
 	# Update the vanilla sources with linux-mips CVS changes
 	epatch ${WORKDIR}/mipscvs-${OKV}-${CVSDATE}.diff
 
-	# iluxa's minpatchset for SGI O2
-	echo -e ""
-	einfo ">>> Patching kernel with iluxa's minimal IP32 patchset ..."
-	epatch ${WORKDIR}/ip32-iluxa-minpatchset-${IP32DIFFDATE}.diff
-
 	# Bug in 2.6.5 that triggers a kernel oops when swap is activated
+	echo -e ""
+	einfo ">>> Generic Patches"
 	epatch ${FILESDIR}/mipscvs-${OKV}-swapbug-fix.patch
 
 	# Bug in 2.6.5 in which an include was left out of unistd.h (breaks initrd)
 	epatch ${FILESDIR}/mipscvs-${OKV}-unistd-linkage.patch
 
+	# In order to use arcboot on IP32, the kernel entry address needs to be
+	# set to 0x98000000, not 0xa8000000.
+	epatch ${FILESDIR}/mipscvs-2.6.x-ip32-kern_entry-arcboot.patch
+
+	# iluxa's minpatchset for SGI O2
+	echo -e ""
+	einfo ">>> Patching kernel with iluxa's minimal IP32 patchset ..."
+	epatch ${WORKDIR}/ip32-iluxa-minpatchset-${IP32DIFFDATE}.diff
+
 	# Security Fixes
 	echo -e ""
-	ebegin "Applying Security Fixes"
-		epatch ${FILESDIR}/CAN-2004-0075-2.6-vicam_usb.patch
-		epatch ${FILESDIR}/CAN-2004-0109-2.6-iso9660.patch
-		epatch ${FILESDIR}/CAN-2004-0228-cpufreq.patch
-		epatch ${FILESDIR}/CAN-2004-0229-fb_copy_cmap.patch
-		epatch ${FILESDIR}/CAN-2004-0427-2.6-do_fork.patch
-		epatch ${FILESDIR}/CAN-2004-0495_0496-2.6-sparse.patch.bz2
-		epatch ${FILESDIR}/CAN-2004-0497-attr_gid.patch
-		epatch ${FILESDIR}/CAN-2004-0596-2.6-eql.patch
-		epatch ${FILESDIR}/CAN-2004-0626-death_packet.patch
+	ebegin ">>> Applying Security Fixes"
+		epatch ${WORKDIR}/security/CAN-2004-0075-2.6-vicam_usb.patch
+		epatch ${WORKDIR}/security/CAN-2004-0109-2.6-iso9660.patch
+		epatch ${WORKDIR}/security/CAN-2004-0228-cpufreq.patch
+		epatch ${WORKDIR}/security/CAN-2004-0229-fb_copy_cmap.patch
+		epatch ${WORKDIR}/security/CAN-2004-0427-2.6-do_fork.patch
+		epatch ${WORKDIR}/security/CAN-2004-0495_0496-2.6-sparse.patch
+		epatch ${WORKDIR}/security/CAN-2004-0497-attr_gid.patch
+		epatch ${WORKDIR}/security/CAN-2004-0596-2.6-eql.patch
+		epatch ${WORKDIR}/security/CAN-2004-0626-death_packet.patch
+		epatch ${WORKDIR}/security/security-2.6-attr_check.patch
 	eend
 
 
