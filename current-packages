@@ -8,8 +8,8 @@
 ./app-admin/usbview/usbview-0.9.0.ebuild
 ./app-admin/webalizer/webalizer-1.30.04-r1.ebuild
 ./app-admin/yup/yup-0.6.5-r1.ebuild
-#./app-arch/rpm/rpm-3.0.5.ebuild
-./app-arch/rpm/rpm-4.0.ebuild
+./app-arch/rpm/rpm-3.0.5.ebuild
+#./app-arch/rpm/rpm-4.0.ebuild
 ./app-arch/unzip/unzip-5.41-r1.ebuild
 ./app-arch/zip/zip-2.3.ebuild
 ./app-cdr/cdrecord/cdrecord-1.9-r1.ebuild
@@ -43,7 +43,7 @@
 ./app-text/ghostscript/ghostscript-6.23-r2.ebuild
 ./app-text/html-xml-utils/html-xml-utils-1.3.ebuild
 ./app-text/jadetex/jadetex-2.20.ebuild
-./app-text/metamail/metamail-2.7-r1.ebuild
+#./app-text/metamail/metamail-2.7-r1.ebuild
 ./app-text/openjade/openjade-1.3-r1.ebuild
 #./app-text/pspell/pspell-0.11.2.ebuild
 ./app-text/rcs/rcs-5.7.ebuild
@@ -322,7 +322,7 @@
 ./net-www/htdig/htdig-3.1.5.ebuild
 ./net-www/jakarta/jakarta-3.1-r1.ebuild
 ./net-www/lynx/lynx-2.8.3-r1.ebuild
-./net-www/mozilla/mozilla-milestone-18.ebuild
+#./net-www/mozilla/mozilla-milestone-18.ebuild
 #./net-www/netscape-flash/netscape-flash-4.0.12.ebuild
 ./net-www/netscape-plugger/netscape-plugger-3.2.ebuild
 #./net-www/netscape/navigator-4.76.ebuild

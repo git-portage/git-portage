@@ -1,3 +1,9 @@
+19.11.2000
+
+	- New app-arch/dump 0.4b20					(achim)
+	- Update linux-UP-2.2.17 r3 -> r4				(achim)
+	  [ Added lfs-support, experimental ]
+
 18.11.2000
 	- Update portage						(drobbins)
 	  [ dependencies now work if multiple packages
