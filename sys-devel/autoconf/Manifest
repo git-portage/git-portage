@@ -3,8 +3,8 @@ MD5 04e24adcbc105ab2e0bffe76e12508b5 autoconf-2.58-r1.ebuild 3491
 MD5 996d335822c6fbb0fa1cc4e4ea6fe4f5 autoconf-2.58.ebuild 3489
 MD5 5edbafe42e7ce5f0cd6c2552822111f1 autoconf-2.57a-r1.ebuild 3380
 MD5 21258175b382f1909e536bbbf8c3b0c9 autoconf-2.57-r1.ebuild 3225
-MD5 d7a25a3dd679f5f32015854d3f1d3ff5 autoconf-2.59-r4.ebuild 3486
-MD5 411c2bb9303f39fbb4f0b87d3d0d89f6 ChangeLog 7564
+MD5 4f5e3bc022903c796e2383679d7da21b autoconf-2.59-r4.ebuild 3486
+MD5 945704dd6c62b6a91b3e7a5cbee0474a ChangeLog 8046
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 c98042870fa4228b40ce57442d91ca47 files/autoconf-2.57a-infopage-namechange.patch 5119
 MD5 372cd1fdd18a95f5a6af7cb36bfd12de files/autoconf-2.58-infopage-namechange.patch 5117
