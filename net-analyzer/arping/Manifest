@@ -1,19 +1,11 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 e3f2429c28742f1e50748c96b017bec4 ChangeLog 3056
+MD5 6c3cf185abde23feaa4cb34c0805fd67 arping-2.05.ebuild 1136
 MD5 4ea1a0d6f859a70dc9fbd1f6b46067db arping-1.06-r1.ebuild 866
-MD5 735afe0497df0d8c291451f4d1659f06 arping-2.04.ebuild 982
+MD5 e0fda7a131c01563cbc6a36b4d3af25b arping-2.04.ebuild 981
 MD5 7ec50712bee69eea99c2704d0ad00cfd arping-2.01.ebuild 795
+MD5 c3828803951dceda9384e54a846340d9 ChangeLog 3227
 MD5 f34e3c8858756da0001b12d2d3fa1af2 metadata.xml 159
 MD5 2ae67bdfca97cbebbb801c9251aa2594 files/1.06-libnet-1.0.patch 610
-MD5 7019f6611a3660599b95a3f6cbae677a files/digest-arping-2.04 62
-MD5 ef2e255f55dcd347896703a82f7af33f files/digest-arping-1.06-r1 62
 MD5 428265abcc6c5e81baccc4805b192963 files/digest-arping-2.01 62
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFB+xtcmdTrptrqvGERAqYbAKCIvEesOzhkIzXYhnKQZUD+4P0GNACgmuxt
-0eW6g+ak6Ys5MihG0P/h3lo=
-=IVq/
------END PGP SIGNATURE-----
+MD5 7019f6611a3660599b95a3f6cbae677a files/digest-arping-2.04 62
+MD5 421b6e3a7a8e95eb5eee75e8b3b6d924 files/digest-arping-2.05 62
+MD5 ef2e255f55dcd347896703a82f7af33f files/digest-arping-1.06-r1 62
