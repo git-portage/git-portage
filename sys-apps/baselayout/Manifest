@@ -5,8 +5,8 @@ MD5 e732366f1c9633439cfa0ebc303897e0 baselayout-1.10.4.ebuild 15539
 MD5 e8247bd1882a2f981e3c355deb8a57e8 baselayout-1.9.4-r4.ebuild 16536
 MD5 bba5d1a312678f93f33f27da9eeee00c baselayout-1.9.4-r5.ebuild 16761
 MD5 f518f7fdff8ec883cf0362a03be02165 baselayout-1.9.4-r6.ebuild 16812
-MD5 3e2d1812aa48ac5cad31adc671994ce6 ChangeLog 41680
-MD5 c70af3a5d200096db6060e2fab89f191 baselayout-1.11.4.ebuild 16228
+MD5 f9b243b3a411ce492137fbef5705b8bd ChangeLog 41975
+MD5 84c261617013692b0a1ffc8e3bcc53d3 baselayout-1.11.4.ebuild 16228
 MD5 dd7fbce62822fed1595f11078e23aa32 files/baselayout-1.8.6.13-r1-gcc2.patch 443
 MD5 d50ca91cbb58c7528a60ddf5bb172956 files/sysvinit-2.84-selinux.patch 3206
 MD5 ab3b5bbd5ce8a8b1386c834ff4a118b4 files/digest-baselayout-1.10.3 69
