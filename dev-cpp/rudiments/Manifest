@@ -1,3 +1,6 @@
 MD5 2ace4292c5d58cf82a7c572ea1cc4a1a rudiments-0.25.1.ebuild 951
+MD5 65961116ce138101b52ffa2817d7c60c rudiments-0.26.3.ebuild 589
 MD5 1debdf94a204120feb728c77f5cee744 ChangeLog 478
+MD5 e07f556e3e2e20eed6bdcbbbb824d922 metadata.xml 503
 MD5 663754f61bf4123ce32d3843cdd21a49 files/digest-rudiments-0.25.1 68
+MD5 30044559d9ff9d4a74e48d412427966e files/digest-rudiments-0.26.3 68
