@@ -1,4 +1,6 @@
+MD5 e60ca7efb0cead0700da0336c16c1f62 jruby-0.7.0-r1.ebuild 1355
 MD5 a13468a8216e9dcc333d0e9f1a0a2e58 jruby-0.7.0.ebuild 1200
-MD5 97fb2ac036459bf91ed78e29c8047a97 ChangeLog 498
+MD5 cf28efa94d532c4a6f68772019dc2a42 ChangeLog 742
 MD5 0637a933ecb6e8cedfc4ddfcf3491728 metadata.xml 310
 MD5 8730e65374f9b6f9cc4cd0c0b043e36a files/digest-jruby-0.7.0 68
+MD5 8730e65374f9b6f9cc4cd0c0b043e36a files/digest-jruby-0.7.0-r1 68
