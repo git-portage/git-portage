@@ -1,6 +1,9 @@
 27.08.2000	
 
 
+	- Modified cocoon 1.7.4			(achim)
+	- Modified jakarta 3.1			(achim)
+	  [Sytax for cocoon has changed]
 	- Modified gimp 1.1.25 			(achim)
 	- New Parse-Recdescent 1.79 (perl)	(achim)
 	  [Perlmodules gets now build]
