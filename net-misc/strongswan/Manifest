@@ -1,0 +1,6 @@
+MD5 9079e1a6c70579f08145fe58a95d973e strongswan-2.0.2.ebuild 2936
+MD5 386f5dbd6c852fa8523ee6257c7cd761 ChangeLog 369
+MD5 a64b79eda14e03e130f7dde467dfa860 metadata.xml 706
+MD5 d35f8aea878066e110e6ff3d09a4f50e files/ipsec 1538
+MD5 d092d971aee29fa685c6f7c998690f11 files/strongswan-2.0.2-gentoo.patch 17672
+MD5 874140675e403d9a3b5ab609d73fab56 files/digest-strongswan-2.0.2 69
