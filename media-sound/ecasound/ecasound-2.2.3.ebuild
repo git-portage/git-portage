@@ -1,8 +1,8 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ecasound/Attic/ecasound-2.0.4.ebuild,v 1.6 2003/03/25 22:18:29 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ecasound/Attic/ecasound-2.2.3.ebuild,v 1.1 2003/05/18 09:22:02 jje Exp $
 
-IUSE="ncurses arts alsa python oss mikmod audiofile oggvorbis"
+IUSE="ncurses arts alsa python oss mikmod oggvorbis"
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A package for multitrack audio processing"
@@ -11,14 +11,15 @@ HOMEPAGE="http://eca.cx/"
 LICENSE="GPL-2"
 
 SLOT="1"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
 DEPEND="virtual/glibc
+	virtual/jack
 	media-libs/ladspa-sdk
+	media-libs/audiofile
 	alsa?		( media-libs/alsa-lib )
 	oggvorbis?	( media-libs/libvorbis )
 	arts?		( kde-base/arts )
-	audiofile?	( media-libs/audiofile )
 	mikmod?	( media-libs/libmikmod )
 	python?		( dev-lang/python )
 	ncurses?	( sys-libs/ncurses )"
@@ -29,7 +30,6 @@ DEPEND="virtual/glibc
 src_unpack() {
 
 	unpack ${A}
-		
 	cd ${S}
 	cp configure 1
 	sed -e 's:map.h:map:g' 1 > configure
@@ -68,13 +68,9 @@ src_compile () {
 		myconf="$myconf --disable-pyecasound"
 	fi
 
-	echo "configuring with ${myconf}"
-	./configure --host=${CHOST} \
-		--prefix=/usr \
-		--mandir=/usr/share/man \
-		${myconf} || die
-
-	make || die
+	einfo "configuring with ${myconf}"
+	econf ${myconf} || die "configure failed"
+	make || die "build failed"
 }
 
 src_install () {
@@ -90,6 +86,6 @@ src_install () {
 	fi
 		
 	dodoc INSTALL FAQ BUGS COPYING NEWS README TODO
-	dodoc `find Documentation -name "*.html"`
+	dohtml `find Documentation -name "*.html"`
 	dodoc Documentation/edi-list.txt
 }
