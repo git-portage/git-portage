@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.2.4.ebuild,v 1.2 2003/09/08 03:48:38 msterret Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.2.4-r1.ebuild,v 1.1 2003/09/10 21:30:18 foser Exp $
 
 inherit eutils libtool flag-o-matic
 
@@ -11,7 +11,7 @@ SRC_URI="ftp://ftp.gtk.org/pub/gtk/v2.2/${P}.tar.bz2"
 LICENSE="LGPL-2.1"
 SLOT="2"
 KEYWORDS="~x86 ~ppc ~alpha ~sparc ~amd64"
-IUSE="doc tiff jpeg debug"
+IUSE="doc tiff jpeg"
 
 # virtual/x11
 # Need this specific xfree version to get bugfree xinput support (#20407)
@@ -54,7 +54,6 @@ src_compile() {
 		`use_enable doc gtk-doc` \
 		`use_with jpeg libjpeg` \
 		`use_with tiff libtiff` \
-		`use_enable debug` \
 		--with-gdktarget=x11 \
 		--with-xinput=xfree \
 		|| die
