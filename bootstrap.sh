@@ -19,7 +19,9 @@ ebuild $myBINUTILS $STEPS || exit
 ebuild $myGCC $STEPS || exit
 ebuild $myGETTEXT $STEPS || exit
 unset USE
+export USE="`python -c 'import portage; print portage.settings["USE"];'` bootstrap"
 ebuild $myGLIBC $STEPS || exit
 ebuild $myGETTEXT $STEPS || exit
 ebuild $myBINUTILS $STEPS || exit
 ebuild $myGCC $STEPS || exit
+unset USE
