@@ -2,8 +2,8 @@ MD5 faaf821c60bf4b6c663caeace3e21a95 hal-0.4.2-r1.ebuild 2728
 MD5 f6c71019d8f7b2dab5ef13de1abd9244 hal-0.4.1-r1.ebuild 2567
 MD5 8a56df2be3b94b0e0e958c48e6c14df5 hal-0.2.98-r1.ebuild 2102
 MD5 4de36bde0054e10e722225fe4ffd6c6b hal-0.4.4-r1.ebuild 2758
-MD5 703fe733bda4c86f64b29b3be633ce1e hal-0.4.5.ebuild 2509
-MD5 2048e7a0ec1c8df30099a0a831d1079e ChangeLog 3480
+MD5 4cf759c01af0d694ce5dc082bcfd3864 hal-0.4.5.ebuild 2505
+MD5 377a6a4f274fb9a1906e99a0f1772628 ChangeLog 3593
 MD5 731695e9263a5a2e1eeba290b36078d5 metadata.xml 219
 MD5 192112dfb678a9795a93d3cdcc50bb95 files/hald 543
 MD5 2396bfac6dd9b68615328b1b9325ed2c files/hal-0.4.4-iso_label_selection.patch 1541
