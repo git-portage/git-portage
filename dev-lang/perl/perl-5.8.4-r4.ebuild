@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/perl/Attic/perl-5.8.6-r2.ebuild,v 1.5 2005/03/11 15:10:30 mcummings Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/perl/Attic/perl-5.8.4-r4.ebuild,v 1.1 2005/03/11 15:10:30 mcummings Exp $
 
 inherit eutils flag-o-matic gcc
 
@@ -11,26 +11,25 @@ SHORT_PV="${PV%.*}"
 MY_P="perl-${PV/_rc/-RC}"
 DESCRIPTION="Larry Wall's Practical Extraction and Reporting Language"
 S="${WORKDIR}/${MY_P}"
-SRC_URI="ftp://ftp.perl.org/pub/CPAN/src/${MY_P}.tar.bz2"
+SRC_URI="ftp://ftp.perl.org/pub/CPAN/src/${MY_P}.tar.gz"
 HOMEPAGE="http://www.perl.org/"
 LIBPERL="libperl.so.${PERLSLOT}.${SHORT_PV}"
 
 LICENSE="Artistic GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~arm ~hppa ~amd64 ~ia64 ~ppc64 ~s390 ~sh"
+KEYWORDS="x86 ppc sparc mips alpha arm hppa amd64 ia64 ~ppc64 s390 sh"
 IUSE="berkdb debug doc gdbm ithreads perlsuid uclibc"
-PERL_OLDVERSEN="5.8.0 5.8.2 5.8.4 5.8.5"
 
 DEPEND="!uclibc? ( sys-apps/groff )
 	berkdb? ( sys-libs/db )
-	gdbm? ( >=sys-libs/gdbm-1.8.3 )
+	gdbm? ( >=sys-libs/gdbm-1.8.0 )
 	>=sys-devel/libperl-${PV}
 	!<dev-perl/ExtUtils-MakeMaker-6.17
-	!<dev-perl/File-Spec-0.87
+	!<dev-perl/File-Spec-0.84-r1
 	!<dev-perl/Test-Simple-0.47-r1"
 RDEPEND=">=sys-devel/libperl-${PV}
 	berkdb? ( sys-libs/db )
-	gdbm? ( >=sys-libs/gdbm-1.8.3 )"
+	gdbm? ( >=sys-libs/gdbm-1.8.0 )"
 
 pkg_setup() {
 	# I think this should rather be displayed if you *have* 'ithreads'
@@ -100,6 +99,13 @@ src_unpack() {
 	# rac 2004.06.09
 	cd ${S}; epatch ${FILESDIR}/${P}-noksh.patch
 
+	# see bug 52660
+	# i'm not entirely thrilled with this has_version, but can't see
+	# how else to handle it. attempting to link libgdbm_compat is
+	# fatal on systems where it doesn't exist.
+
+	has_version ">=sys-libs/gdbm-1.8.3" && epatch ${FILESDIR}/${P}-NDBM-GDBM-compat.patch
+
 	# uclibc support
 	epatch ${FILESDIR}/perl-5.8.2-uclibc.patch
 
@@ -109,16 +115,7 @@ src_unpack() {
 	# code in IO.xs that checks for this sort of thing dies in LDAP on
 	# sparc64.
 
-	#epatch ${FILESDIR}/${P}-nonblock.patch
-
-	# since we build in non-world-writeable portage directories, none
-	# of the .t sections of the original version of this patch matter
-	# much.  the PPPort section is apparently obsolete, because i see
-	# no /tmp in there now.  ditto on perlbug.SH, which has secure
-	# tempfile handling if resources are present.  originally from bug
-	# 66360.
-
-	epatch ${FILESDIR}/${P}-tempfiles.patch
+	epatch ${FILESDIR}/${P}-nonblock.patch
 
 	# An additional tempfile patch, bug 75696
 	#epatch ${FILESDIR}/file_path_rmtree.patch
@@ -134,7 +131,6 @@ src_unpack() {
 }
 
 src_configure() {
-
 	# some arches and -O do not mix :)
 	use arm && replace-flags -O? -O1
 	use ppc && replace-flags -O? -O1
@@ -157,8 +153,6 @@ src_configure() {
 		myarch="${CHOST%%-*}-linux"
 	fi
 
-	local inclist=$(for v in $PERL_OLDVERSEN; do echo -n "$v $v/$myarch$mythreading "; done)
-
 	# allow either gdbm to provide ndbm (in <gdbm/ndbm.h>) or db1
 
 	myndbm='U'
@@ -170,6 +164,7 @@ src_configure() {
 		mygdbm='D'
 		myndbm='D'
 	fi
+
 	if use berkdb
 	then
 		mydb='D'
@@ -210,7 +205,12 @@ src_configure() {
 		myconf="${myconf} -Ui_db -Ui_ndbm"
 	fi
 
-	[ -n "${ABI}" ] && myconf="${myconf} -Dusrinc=$(get_ml_incdir)"
+	# These are temporary fixes. Need to edit the build so that that libraries created
+	# only get compiled with -fPIC, since they get linked into shared objects, they
+	# must be compiled with -fPIC.  Don't have time to parse through the build system
+	# at this time.
+	[ "${ARCH}" = "hppa" ] && append-flags -fPIC
+#	[ "${ARCH}" = "amd64" ] && append-flags -fPIC
 
 	sh Configure -des \
 		-Darchname="${myarch}" \
@@ -231,7 +231,6 @@ src_configure() {
 		-Dinstallman3dir=${D}/usr/share/man/man3 \
 		-Dman1ext='1' \
 		-Dman3ext='3pm' \
-		-Dinc_version_list="$inclist" \
 		-Dcf_by='Gentoo' \
 		-Ud_csh \
 		${myconf} || die "Unable to configure"
@@ -245,6 +244,17 @@ src_compile() {
 	src_configure
 
 	emake -j1 || die "Unable to make"
+
+
+	# i want people to have to take actions to disable tests, because
+	# they reveal lots of important problems in clear ways.  if that
+	# happens, you can revisit this, but portage .51 will call
+	# src_test if FEATURES=maketest is enabled, and we'll call it here
+	# if it isn't.
+
+	if ! hasq maketest $FEATURES; then
+		src_test
+	fi
 }
 
 src_test() {
@@ -343,6 +353,7 @@ EOF
 }
 
 pkg_postinst() {
+
 	# Make sure we do not have stale/invalid libperl.so 's ...
 	if [ -f "${ROOT}usr/lib/libperl.so" -a ! -L "${ROOT}usr/lib/libperl.so" ]
 	then
@@ -383,15 +394,16 @@ pkg_postinst() {
 		cd /usr/include/linux;
 		h2ph *
 	fi
-
 # This has been moved into a function because rumor has it that a future release
 # of portage will allow us to check what version was just removed - which means
 # we will be able to invoke this only as needed :)
+
 	# Tried doing this via  -z, but $INC is too big...
 	if [ "${INC}x" != "x" ]; then
 		cleaner_msg
 		epause 10
 	fi
+
 }
 
 cleaner_msg() {

@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/perl/Attic/perl-5.8.6-r2.ebuild,v 1.5 2005/03/11 15:10:30 mcummings Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/perl/Attic/perl-5.8.5-r5.ebuild,v 1.1 2005/03/11 15:10:30 mcummings Exp $
 
 inherit eutils flag-o-matic gcc
 
@@ -11,22 +11,22 @@ SHORT_PV="${PV%.*}"
 MY_P="perl-${PV/_rc/-RC}"
 DESCRIPTION="Larry Wall's Practical Extraction and Reporting Language"
 S="${WORKDIR}/${MY_P}"
-SRC_URI="ftp://ftp.perl.org/pub/CPAN/src/${MY_P}.tar.bz2"
+SRC_URI="ftp://ftp.perl.org/pub/CPAN/src/${MY_P}.tar.gz"
 HOMEPAGE="http://www.perl.org/"
 LIBPERL="libperl.so.${PERLSLOT}.${SHORT_PV}"
 
 LICENSE="Artistic GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~arm ~hppa ~amd64 ~ia64 ~ppc64 ~s390 ~sh"
+KEYWORDS="x86 ppc sparc mips alpha arm hppa amd64 ia64 ppc64 s390 sh"
 IUSE="berkdb debug doc gdbm ithreads perlsuid uclibc"
-PERL_OLDVERSEN="5.8.0 5.8.2 5.8.4 5.8.5"
+PERL_OLDVERSEN="5.8.0 5.8.2 5.8.4"
 
 DEPEND="!uclibc? ( sys-apps/groff )
 	berkdb? ( sys-libs/db )
 	gdbm? ( >=sys-libs/gdbm-1.8.3 )
 	>=sys-devel/libperl-${PV}
 	!<dev-perl/ExtUtils-MakeMaker-6.17
-	!<dev-perl/File-Spec-0.87
+	!<dev-perl/File-Spec-0.84-r1
 	!<dev-perl/Test-Simple-0.47-r1"
 RDEPEND=">=sys-devel/libperl-${PV}
 	berkdb? ( sys-libs/db )
@@ -109,7 +109,7 @@ src_unpack() {
 	# code in IO.xs that checks for this sort of thing dies in LDAP on
 	# sparc64.
 
-	#epatch ${FILESDIR}/${P}-nonblock.patch
+	epatch ${FILESDIR}/${P}-nonblock.patch
 
 	# since we build in non-world-writeable portage directories, none
 	# of the .t sections of the original version of this patch matter
@@ -134,7 +134,6 @@ src_unpack() {
 }
 
 src_configure() {
-
 	# some arches and -O do not mix :)
 	use arm && replace-flags -O? -O1
 	use ppc && replace-flags -O? -O1
@@ -387,11 +386,13 @@ pkg_postinst() {
 # This has been moved into a function because rumor has it that a future release
 # of portage will allow us to check what version was just removed - which means
 # we will be able to invoke this only as needed :)
+
 	# Tried doing this via  -z, but $INC is too big...
 	if [ "${INC}x" != "x" ]; then
 		cleaner_msg
 		epause 10
 	fi
+
 }
 
 cleaner_msg() {
