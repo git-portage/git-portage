@@ -1,4 +1,6 @@
+MD5 7298ff42d6a20396e5b1f4435a4b5943 konversation-0.15.1.ebuild 547
+MD5 68b937de8b50a5db621353b9c6f0bae6 konversation-0.16.ebuild 550
 MD5 2dbac2beca470dd6dc2c71f8bca01ef9 ChangeLog 2417
-MD5 9038ac14dea4913ce32e0ac3cbba3dd6 konversation-0.15.1.ebuild 555
 MD5 44c39c6ad372a8e5a5e7ee3311f703a7 metadata.xml 160
 MD5 16524313d45151786b72dee746cc8804 files/digest-konversation-0.15.1 73
+MD5 03553c7a91bfc150ffcb37fd1e4dd5d2 files/digest-konversation-0.16 71
