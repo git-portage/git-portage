@@ -1,3 +1,6 @@
-MD5 fce836b12811f1093f7dc11e46e79dce ChangeLog 301
 MD5 a27e102879d6db0e486a0e097f1f9126 smtm-1.4.0.ebuild 684
+MD5 fce836b12811f1093f7dc11e46e79dce ChangeLog 301
+MD5 33b40c4ec637009d455db20c58853776 smtm-1.6.5.ebuild 659
+MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
+MD5 3aa2ff5aded6e0799bba906dccbe1b1d files/digest-smtm-1.6.5 61
 MD5 5d23e9d4a07799215de9f32d28b587ee files/digest-smtm-1.4.0 61
