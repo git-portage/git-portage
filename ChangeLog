@@ -1,7 +1,10 @@
 13.11.2000
-	-Updated bootdisk.img to use new grub (drobbins)
-	-Update sys-apps/grub-0.5.96.1-r1	(drobbins)
-	- New net-misc/snort-1.6.3			(achim)
+	-Moved skel.ebuild > skel.build			(drobbins)
+		[only real ebuilds (with valid names)
+		can exist in ${PORTDIR}]
+	-Updated bootdisk.img to use new grub 	(drobbins)
+	-Update sys-apps/grub-0.5.96.1-r1		(drobbins)
+	- New net-misc/snort-1.6.3				(achim)
 
 12.11.2000
 	- New sys-apps/watchpid-0.1			(drobbins)
