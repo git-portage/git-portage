@@ -106,6 +106,7 @@
 ./app-shells/tcsh/tcsh-6.09-r1.ebuild
 ./app-shells/zsh/zsh-3.1.9.ebuild
 ./app-text/a2ps/a2ps-4.13b-r1.ebuild
+./app-text/dbs/dbs-0.5.9.1.ebuild
 ./app-text/docbook/docbook-3.0-r1.ebuild
 ./app-text/docbook/docbook-4.1-r1.ebuild
 ./app-text/dsssl/dsssl-db-1.56.ebuild
@@ -166,6 +167,7 @@
 ./dev-utils/sel/sel-0.08.2.ebuild
 ./dev-util/strace/strace-4.2.ebuild
 ./dev-util/yacc/yacc-1.9.1-r1.ebuild
+./media-gfx/autotrace/autotrace-0.24a.ebuild
 ./media-gfx/gimp-print/gimp-print-4.0a-r3.ebuild
 ./media-gfx/gimp/gimp-1.1.25.ebuild
 ./media-gfx/imagemagick/imagemagick-5.2.4.ebuild
@@ -275,6 +277,7 @@
 ./net-www/w3m/w3m-0.1.10-r1.ebuild
 ./x11-libs/gtk+/gtk+-1.2.8-r1.ebuild
 ./x11-libs/gtk-engines/gtk-engines-0.10.ebuild
+./x11-libs/gtkDGS/gtkDGS-0.3.3.ebuild
 ./x11-libs/libPropList/libPropList-0.10.1-r1.ebuild
 ./x11-wm/WindowMaker/WindowMaker-0.62.1-r1.ebuild
 ./x11-wm/enlightenment/enlightenment-0.16.4-r1.ebuild

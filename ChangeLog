@@ -1,5 +1,11 @@
 20.09.2000
 
+	- New media-gfb/autotrace-0.24a		(achim)
+	  [ Converts Bitmap to vector Graphics ]
+	- New x11-libs/gtkDPS-0.3.3		(achim)
+	  [ GTK bindings for dgs ]
+	- New app-text/dgs-0.5.9.1		(achim)
+	  [ Display Ghostscript Server ]
 	- Update XML-Sablotron 0.43 -> 0.44	(achim)
 	- Update Sablotron 0.43 -> 0.44		(achim)
 	- New net-irc/bitchx 1.0c17		(achim)
