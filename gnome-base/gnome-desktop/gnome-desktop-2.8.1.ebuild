@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-desktop/Attic/gnome-desktop-2.6.1.ebuild,v 1.5 2004/11/08 19:40:19 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-desktop/Attic/gnome-desktop-2.8.1.ebuild,v 1.1 2004/11/25 04:41:27 obz Exp $
 
 inherit gnome2 eutils
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2 FDL-1.1 LGPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~alpha ~sparc ~hppa amd64 ~ia64 ~mips ~arm"
+KEYWORDS="~x86 ~ppc ~alpha ~sparc ~hppa ~amd64 ~ia64 ~mips ~ppc64 ~arm"
 IUSE=""
 
 RDEPEND=">=x11-libs/gtk+-2.1.2
@@ -26,15 +26,15 @@ DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.12.0
 	sys-devel/autoconf"
 
-DOCS="AUTHORS ChangeLog README INSTALL NEWS HACKING"
+DOCS="AUTHORS ChangeLog README NEWS HACKING"
 
 src_unpack() {
+
 	unpack ${A}
 	cd ${S}
 
 	# Set vendor info
-	sed -i 's:GNOME.Org:Gentoo Linux:' configure.in \
-	|| die "sed failed (1)"
+	sed -i 's:GNOME.Org:Gentoo Linux:' configure.in || die "sed failed (1)"
 
 	WANT_AUTOCONF=2.5 autoconf || die
 
@@ -44,4 +44,5 @@ src_unpack() {
 		sed -i '/^CFLAGS/s/$/ -mieee/' ${S}/gnome-about/Makefile.in \
 		|| die "sed failed (2)"
 	fi
+
 }
