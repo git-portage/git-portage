@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/mono/Attic/mono-0.25-r1.ebuild,v 1.4 2003/10/01 17:34:57 scandium Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/mono/Attic/mono-0.28.ebuild,v 1.1 2003/10/04 20:07:21 scandium Exp $
 
 inherit mono
 
@@ -24,7 +24,7 @@ DEPEND="virtual/glibc
 
 RDEPEND="${DEPEND}
 	dev-util/pkgconfig
-	<=dev-libs/libxml2-2.5.7
+	dev-libs/libxml2
 	dev-libs/libxslt"
 
 src_unpack() {
@@ -36,11 +36,18 @@ src_unpack() {
 }
 
 src_compile() {
-	econf --with-gc=included || die
+	econf || die
 	MAKEOPTS="${MAKEOPTS} -j1" emake || die "MONO compilation failure"
 
+	ln -s ../runtime ${WORKDIR}/${P}/runtime/lib
 	cd ${MCS_S}
-	PATH=${S}/runtime:${S}/mono/mini:${PATH} MONO_PATH=${S}/runtime:${MONO_PATH} emake -f makefile.gnu || die "MCS compilation failure"
+	echo "prefix=${S}/runtime" > build/config.make
+	echo "MONO_PATH=${S}/runtime" >> build/config.make
+	echo "BOOTSTRAP_MCS=${S}/runtime/mcs" >> build/config.make
+	echo "RUNTIME=${S}/mono/mini/mono \${RUNTIME_FLAGS}" >> build/config.make
+	echo "export MONO_PATH" >> build/config.make
+	make || die "MCS compilation failure"
+	echo "prefix=/usr" >> build/config.make
 }
 
 src_install () {
