@@ -1,13 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 7cec83fd31c920b73fc4f50b66eaab89 ChangeLog 8122
 MD5 3e1f2a62b125bc976d086e9f6c596aa0 isdn4k-utils-3.2_p1-r2.ebuild 2932
 MD5 bab835f739889e139f5acaf397d3d875 metadata.xml 215
 MD5 4c3fa8046ef0b40f78a445858d682c8d isdn4k-utils-3.5_pre20041110-r3.ebuild 6742
+MD5 c4ad2f70e332790b9d5aa3955ac4fa4f isdn4k-utils-3.6_pre20041219.ebuild 6995
 MD5 e2cc85397eb8ff285f383213ab00cdad files/digest-isdn4k-utils-3.2_p1-r2 73
 MD5 2dbc97316fbe5d721b9701347464e22c files/gcc33-multiline.patch 1977
 MD5 8de88f6cf872f012abe1e320b3fb4336 files/digest-isdn4k-utils-3.5_pre20041110-r3 81
+MD5 6896aa81dfefd061abda1c5a4e6576a0 files/digest-isdn4k-utils-3.6_pre20041219 81
 MD5 2f4c186b729606b475e17a0ea54189c9 files/3.2_p1-r2/config 2405
 MD5 7ce4e9c2bb9dee4d231ae8da54a06b9f files/3.2_p1-r2/gentoo.patch 2383
 MD5 92412760dfacc81cfac908d522ac8e39 files/3.2_p1-r2/ioptions 86
@@ -28,10 +27,19 @@ MD5 b49a72df686b7a94d7ac291a91f20fc5 files/3.5_pre20041110/ioptions 323
 MD5 b75b68506a43d3d897d7b32eb280b42e files/3.5_pre20041110/ip-down 956
 MD5 38984b8cf470784c9052f566b4faa5d8 files/3.5_pre20041110/ip-up 1105
 MD5 02118ba89fc41144086224482bff7422 files/3.5_pre20041110/options.ippp0 685
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBsLQ4jtv59x0+BrURAqwJAJ9M3Ri9zecl/LvD3UzBp+fIkrS4UwCgpoBv
-b8IqAhTTNY7ZFDvDOY0/k38=
-=iaZg
------END PGP SIGNATURE-----
+MD5 cd0fb0c848a80ea2f686b351f73b96b0 files/3.6_pre20041219/config 2693
+MD5 b75b68506a43d3d897d7b32eb280b42e files/3.6_pre20041219/ip-down 956
+MD5 38984b8cf470784c9052f566b4faa5d8 files/3.6_pre20041219/ip-up 1105
+MD5 e0b2c68d5aef9cfcf6ffa050053e011a files/3.6_pre20041219/net.ippp0 2293
+MD5 833da2585912c6d7ab49924071bd8a38 files/3.6_pre20041219/options.ippp0 564
+MD5 6139a4c9554e988d961315e46dfd1a9e files/3.6_pre20041219/isdn.confd 382
+MD5 9c63ee81524f51cd1b9f419f00708195 files/3.6_pre20041219/hisax.usermap 188
+MD5 fd891aef532d692c740ca33779d52fe8 files/3.6_pre20041219/isdn.blacklist 398
+MD5 df5156ce65b65878d7ebd8a0ed338203 files/3.6_pre20041219/isdnlog.initd 926
+MD5 57a74fe85e884e206e1f966851b532e7 files/3.6_pre20041219/isdnlog.logrotated 312
+MD5 922f20c76acfdf41bdc135e05e4cdf78 files/3.6_pre20041219/ioptions 207
+MD5 a8b7b8f092ad1aca256e86aff2ca6447 files/3.6_pre20041219/hisax.conf 1223
+MD5 1eb7d4b5770146118a38956425378abf files/3.6_pre20041219/hisax.initd 5698
+MD5 f632f89a89642bda4bfaf68b82645cca files/3.6_pre20041219/isdnlog.confd 294
+MD5 a077770a61b46a7dbedad0213e5b14c3 files/3.6_pre20041219/auerswald.usermap 752
+MD5 6b59440fd235872d2b0a9ed50e17b75e files/3.6_pre20041219/isdn.initd 2292
