@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libiiimp/Attic/libiiimp-11.4.1467.ebuild,v 1.5 2004/07/14 14:43:29 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libiiimp/Attic/libiiimp-12.0.1_pre1891.ebuild,v 1.1 2004/09/13 19:52:09 usata Exp $
 
 inherit iiimf
 

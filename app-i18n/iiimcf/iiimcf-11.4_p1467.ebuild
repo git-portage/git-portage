@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/iiimcf/Attic/iiimcf-11.4.1467.ebuild,v 1.4 2004/06/24 21:45:31 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/iiimcf/Attic/iiimcf-11.4_p1467.ebuild,v 1.1 2004/09/13 20:06:03 usata Exp $
 
 inherit iiimf
 
@@ -9,7 +9,7 @@ IUSE="X gtk emacs"
 
 DESCRIPTION="IIIMCF is a client framework for IIIMF"
 
-KEYWORDS="~x86"
+KEYWORDS="x86"
 RDEPEND="X? ( =app-i18n/iiimxcf-${PV} )
 	gtk? ( =app-i18n/iiimgcf-${PV} )
 	emacs? ( =app-emacs/iiimecf-${PV} )"

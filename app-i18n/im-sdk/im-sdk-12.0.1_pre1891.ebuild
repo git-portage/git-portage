@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/im-sdk/Attic/im-sdk-11.4.1467.ebuild,v 1.4 2004/06/24 21:47:02 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/im-sdk/Attic/im-sdk-12.0.1_pre1891.ebuild,v 1.1 2004/09/13 20:10:16 usata Exp $
 
 inherit iiimf
 
