@@ -22,7 +22,7 @@ MD5 cbaa5a39d9bd67b13f8131b426a4256b files/samba-2.2.5-gp-reloc-fix.patch 431
 MD5 e17a1638ad9f30f2e39db4c8981a2fcd files/vscan-0.3.5-libclamav.patch 523
 MD5 7ee5edc70bf80888c776f5808f865996 files/nsswitch.conf-wins 392
 MD5 341521b710d02d57a70acd49b1d4c06b files/samba-conf 1291
-MD5 f1bd70937bb822e70fcd5a81efba02d2 files/samba-init 1090
+MD5 32a3b8f67ab6ab48e260f9c7ceba363e files/samba-init 1103
 MD5 b836e258befae9d6c66cb3f158769b25 files/samba-3.0.x-libdirsymlink.patch 592
 MD5 fd2382184b6a07e63cb07ff26b578fd2 files/config-svc-smbd+nmbd 784
 MD5 e5dbea6345ee39a97bc8783f5772bf49 files/samba-3.0.6-winbind_getpwnam_v1.patch 2521
