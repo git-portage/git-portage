@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/hotplug/Attic/hotplug-20030805-r2.ebuild,v 1.4 2004/01/06 00:19:49 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/hotplug/Attic/hotplug-20040105.ebuild,v 1.1 2004/01/06 00:19:49 azarah Exp $
 
 inherit eutils
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/linux-hotplug/${MY_P}.tar.gz
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 amd64 ~ppc hppa ~sparc ~alpha ~mips ~arm ppc64"
+KEYWORDS="~x86 ~amd64 ~ppc ~hppa ~sparc ~alpha ~mips ~arm"
 
 # hotplug needs pcimodules utility provided by pcitutils-2.1.9-r1
 DEPEND=">=sys-apps/pciutils-2.1.9 >=sys-apps/usbutils-0.9"
@@ -24,13 +24,9 @@ src_unpack() {
 	cd ${S}
 	EPATCH_SUFFIX="patch" epatch ${WORKDIR}/hotplug-patches
 
-	# The following patch prevents bogus messages of the flavor
-	# "missing kernel or user mode driver prism2_usb".  It has been
-	# mentioned on the linux-hotplug mailing list.
-	epatch ${FILESDIR}/hotplug.functions.patch
-
-	cd ${S}/etc/hotplug/
-	cat ${FILESDIR}/usb.agent.diff | patch usb.agent || die
+	EPATCH_OPTS="${EPATCH_OPTS} ${S}/etc/hotplug/usb.agent" \
+	epatch ${FILESDIR}/usb.agent.diff
+	epatch ${FILESDIR}/kernel-26-fix.patch || die
 }
 
 src_install() {
