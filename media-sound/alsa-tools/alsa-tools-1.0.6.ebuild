@@ -1,21 +1,21 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/alsa-tools/Attic/alsa-tools-1.0.6.ebuild,v 1.5 2004/11/12 11:14:21 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/alsa-tools/Attic/alsa-tools-1.0.6.ebuild,v 1.4 2004/11/12 11:12:15 sejo Exp $
 
 IUSE="X"
 
 inherit gnuconfig eutils
 
-MY_P=${P/_rc/rc}
-S=${WORKDIR}/${MY_P}
-
 DESCRIPTION="Advanced Linux Sound Architecture tools"
 HOMEPAGE="http://www.alsa-project.org"
+
+MY_P=${P/_rc/rc}
 SRC_URI="mirror://alsaproject/tools/${P}.tar.bz2"
 
 SLOT="0.9"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="x86 ppc amd64"
 LICENSE="GPL-2"
+S=${WORKDIR}/${MY_P}
 
 DEPEND=">=media-libs/alsa-lib-1.0.0
 	virtual/alsa
@@ -49,10 +49,11 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	epatch ${FILESDIR}/${P}-gcc34.patch
-	gnuconfig_update
 }
 
 src_compile() {
+	gnuconfig_update
+
 	# hdspmixer requires fltk
 	export LDFLAGS="-L/usr/$(get_libdir)/fltk-1.1"
 	export CPPFLAGS="-I/usr/include/fltk-1.1"
@@ -79,7 +80,7 @@ src_install() {
 
 		# Install the text documentation
 		local doc
-		for doc in README TODO ChangeLog AUTHORS
+		for doc in README TODO ChangeLog COPYING AUTHORS
 		do
 			if [ -f "${doc}" ]
 			then
