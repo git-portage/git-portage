@@ -1,6 +1,6 @@
 MD5 18c4198460f3b5ce0ab2b08f22a3b390 ChangeLog 1577
 MD5 09bf80a18f3b608defbdde2b56642e02 metadata.xml 376
-MD5 7f9387f143e3634a0a98a5c67449bf95 nvu-0.50.ebuild 1358
+MD5 7073f96ca369bb94882f2c8d54d20945 nvu-0.50.ebuild 1360
 MD5 f04489cb980dbc4f22e78024f3e611e0 files/digest-nvu-0.50 71
 MD5 73b0f49343fb2c309bdd2721ab8a4012 files/mozconfig 2130
 MD5 841f7a0a89c5d8be3841444ce2dd0b85 files/nvu-0.50-dir.patch 713
