@@ -4,7 +4,9 @@ MD5 12b248930666709caa74239d6d57032e phpmyadmin-2.5.7_p1.ebuild 2579
 MD5 319be547b5537b1cbcd3bdd509f6e26d phpmyadmin-2.5.6.ebuild 2953
 MD5 b93a3eaeb6e32833f4a3aaf7a767af52 ChangeLog 8668
 MD5 d992d28bec4a3bfd72b441145091a58e metadata.xml 244
+MD5 c668ee10ce1db99d31b56c2161932713 phpmyadmin-2.6.0_p2.ebuild 2566
 MD5 71b5699d1654d0d17ffa926729ae202a phpmyadmin-2.5.6-r1.ebuild 2580
+MD5 a424f37ca165d4c8e3c7c0c4295902d8 files/digest-phpmyadmin-2.6.0_p2 74
 MD5 5367bc809b77e6374f18d126990fba75 files/digest-phpmyadmin-2.5.6 70
 MD5 09deb77d7dc18f657af1dc07afa81072 files/digest-phpmyadmin-2.5.7 70
 MD5 fc0d45fdd44daf421e1c3a70c08706c8 files/digest-phpmyadmin-2.6.0 70
