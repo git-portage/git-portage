@@ -66,7 +66,7 @@
 ./dev-lang/nasm/nasm-0.98-r1.ebuild
 #./dev-lang/php-4/php-4.0.0-r1.ebuild
 ./dev-lang/php-4/php-4.0.3_p1.ebuild
-./dev-lang/python/python-1.5.2-r3.ebuild
+./dev-lang/python/python-1.5.2-r4.ebuild
 ./dev-lang/ruby/ruby-1.6.1.ebuild
 ./dev-lang/swig/swig-1.3_alpha5-r1.ebuild
 #./dev-lang/tcl-tk-8.0/tcl-tk-8.0.5-r1.ebuild
