@@ -29,7 +29,12 @@
 ./app-emulation/wine/wine-20010326.ebuild
 ./app-misc/gfontview/gfontview-0.5.0.ebuild
 ./app-misc/lhinv/lhinv-1.1-r1.ebuild
-
+./app-shells/ccsh/ccsh-0.0.4-r2.ebuild
+./app-shells/esh/esh-0.8-r2.ebuild
+./app-shells/pdksh/pdksh-5.2.14-r3.ebuild
+./app-shells/sash/sash-3.4-r3.ebuild
+./app-shells/tcsh/tcsh-6.10-r1.ebuild
+./app-shells/zsh/zsh-3.1.9-r1.ebuild
 ./app-text/a2ps/a2ps-4.13b-r3.ebuild
 ./app-text/acroread/acroread-4.05.ebuild
 ./app-text/aspell/aspell-0.33.ebuild
