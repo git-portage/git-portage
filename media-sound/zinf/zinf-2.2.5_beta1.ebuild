@@ -1,14 +1,17 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/zinf/Attic/zinf-2.2.3.ebuild,v 1.10 2004/02/08 03:06:27 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/zinf/Attic/zinf-2.2.5_beta1.ebuild,v 1.1 2004/02/08 03:06:27 eradicator Exp $
 
 IUSE="debug esd X gtk oggvorbis gnome arts alsa nls"
 
 inherit kde-functions
 
-S=${WORKDIR}/${P}
+MY_PV="${PV/_beta1/}"
+MY_P="${PN}-${MY_PV}"
+S=${WORKDIR}/${MY_P}
+
 DESCRIPTION="An extremely full-featured mp3/vorbis/cd player with ALSA support, previously called FreeAmp"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 RESTRICT="nomirror"
 HOMEPAGE="http://www.zinf.org/"
 
@@ -30,26 +33,12 @@ DEPEND="${RDEPEND}
 	x86? ( dev-lang/nasm )
 	nls? ( sys-devel/gettext )
 	>=media-libs/id3lib-3.8.0
-	sys-apps/sed
+	dev-db/metakit
 	dev-lang/perl"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~alpha"
-
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/zinf-2.2.3-id3.patch.bz2
-
-	# Remove -Werror so it compiles with gcc3.3
-	for file in Makefile.header.in configure.in configure
-	do
-		mv ${file} ${file}.orig
-		sed 's/-Werror//g' < ${file}.orig > ${file}
-	done
-	chmod 755 configure
-}
+KEYWORDS="~x86"
 
 src_compile() {
 	local myconf="--enable-cmdline"
@@ -71,7 +60,7 @@ src_compile() {
 
 src_install() {
 	into /usr
-	dobin zinf
+	dobin base/zinf
 
 	exeinto /usr/lib/zinf/plugins
 	doexe plugins/*
@@ -79,5 +68,5 @@ src_install() {
 	insinto /usr/share/zinf/themes
 	doins themes/*
 
-	dodoc AUTHORS CHANGES COPYING NEWS README README.linux WISHLIST
+	dodoc AUTHORS ChangeLog NEWS README
 }
