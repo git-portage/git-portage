@@ -1,3 +1,4 @@
-MD5 206c7cff64de59bfe753e27b0b10d398 tiers-1.1.ebuild 1467
+MD5 8d06ed24e7df8615f3dfcd622110dcae tiers-1.1.ebuild 1357
+MD5 54967dcbbd114fbb49cc9a5bcf9f1e2a ChangeLog 388
 MD5 324eee4fe6016c45a7f30f6f214a46ed files/digest-tiers-1.1 174
-MD5 b6f7259dbd1acb8bfcc5d38a20e3889f files/tiers1.1-gccfixes.patch 5326
+MD5 0b8b2907e0f34c042c6faf3f71df9077 files/tiers1.1-gccfixes.patch 5840
