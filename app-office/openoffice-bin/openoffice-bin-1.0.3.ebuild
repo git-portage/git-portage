@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/openoffice-bin/Attic/openoffice-bin-1.1_beta.ebuild,v 1.2 2003/04/10 21:27:11 sethbc Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/openoffice-bin/Attic/openoffice-bin-1.0.3.ebuild,v 1.1 2003/04/10 21:27:10 sethbc Exp $
 
 IUSE="kde gnome"
 
@@ -13,8 +13,8 @@ inherit virtualx
 LOC="/opt"
 
 INSTDIR="${LOC}/OpenOffice.org${PV}"
-#MY_PV="`echo ${PV} | gawk '{ print tolower($1) }'`"
-MY_PV="${PV/_/}"
+MY_PV="`echo ${PV} | gawk '{ print toupper($1) }'`"
+
 if [ `use ppc` ]; then
 	MY_P="OOo_${MY_PV}_LinuxPowerPC_installer"
 	S="${WORKDIR}/${MY_P}"
@@ -24,8 +24,8 @@ else
 fi;
 
 DESCRIPTION="OpenOffice productivity suite"
-SRC_URI="x86? ( http://ny1.mirror.openoffice.org/stable/${MY_PV}/OOo_${MY_PV}_LinuxIntel_install.tar.gz
-		http://sf1.mirror.openoffice.org/stable/${MY_PV}/OOo_${MY_PV}_LinuxIntel_install.tar.gz )
+SRC_URI="x86? ( http://ny1.mirror.openoffice.org/stable/${PV}/OOo_${MY_PV}_LinuxIntel_install.tar.gz
+		http://sf1.mirror.openoffice.org/stable/${PV}/OOo_${MY_PV}_LinuxIntel_install.tar.gz )
  	 ppc? ( ftp://ftp.yellowdoglinux.com/pub/yellowdog/software/openoffice/OOo_${MY_PV}_LinuxPowerPC_installer.tar.gz )"
 HOMEPAGE="http://www.openoffice.org"
 
@@ -39,7 +39,7 @@ DEPEND="virtual/glibc
 
 LICENSE="LGPL-2 | SISSL-1.1"
 SLOT="0"
-KEYWORDS="-x86 -ppc -sparc "
+KEYWORDS="x86 ppc -sparc "
 
 src_install() {
 
@@ -122,7 +122,7 @@ src_install() {
 	# Install wrapper script
 	exeinto /usr/bin
 	sed -e "s|<pv>|${PV}|g" \
-		${FILESDIR}/${PV}/ooffice-wrapper-1.2 > ${T}/ooffice
+		${FILESDIR}/${PV}/ooffice-wrapper-1.3 > ${T}/ooffice
 	doexe ${T}/ooffice
 	# Component symlinks
 	dosym ooffice /usr/bin/oocalc
@@ -201,15 +201,18 @@ pkg_preinst() {
 
 pkg_postinst() {
 	
-	einfo "******************************************************************"
-	einfo " To start OpenOffice.org, run:"
-	einfo
-	einfo "   $ ooffice"
-	einfo
-	einfo " Also, for individual components, you can use any of:"
-	einfo
-	einfo "   oocalc, oodraw, ooimpress, oomath or oowriter"
-	einfo
-	einfo "******************************************************************"
+        einfo "******************************************************************"
+        einfo " To start OpenOffice.org, run:"
+        einfo
+        einfo "   $ ooffice"
+        einfo
+        einfo " Also, for individual components, you can use any of:"
+        einfo
+        einfo "   oocalc, oodraw, ooimpress, oomath or oowriter"
+        einfo
+        einfo " If the fonts appear garbled in the user interface refer to "
+        einfo " Bug 8539, or http://www.openoffice.org/FAQs/fontguide.html#8"
+        einfo
+        einfo "******************************************************************"
 }
 

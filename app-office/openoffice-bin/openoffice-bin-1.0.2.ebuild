@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/openoffice-bin/Attic/openoffice-bin-1.0.2.ebuild,v 1.12 2003/04/03 11:40:38 sethbc Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/openoffice-bin/Attic/openoffice-bin-1.0.2.ebuild,v 1.13 2003/04/10 21:27:10 sethbc Exp $
 
 IUSE="kde gnome"
 
@@ -201,15 +201,18 @@ pkg_preinst() {
 
 pkg_postinst() {
 	
-	einfo "******************************************************************"
-	einfo " To start OpenOffice.org, run:"
-	einfo
-	einfo "   $ ooffice"
-	einfo
-	einfo " Also, for individual components, you can use any of:"
-	einfo
-	einfo "   oocalc, oodraw, ooimpress, oomath or oowriter"
-	einfo
-	einfo "******************************************************************"
+        einfo "******************************************************************"
+        einfo " To start OpenOffice.org, run:"
+        einfo
+        einfo "   $ ooffice"
+        einfo
+        einfo " Also, for individual components, you can use any of:"
+        einfo
+        einfo "   oocalc, oodraw, ooimpress, oomath or oowriter"
+        einfo
+        einfo " If the fonts appear garbled in the user interface refer to "
+        einfo " Bug 8539, or http://www.openoffice.org/FAQs/fontguide.html#8"
+        einfo
+        einfo "******************************************************************"
 }
 
