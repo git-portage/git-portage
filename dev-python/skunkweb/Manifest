@@ -1,17 +1,9 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 5d2ad4204e4ae66c74064ca6501b8efb ChangeLog 1474
+MD5 29262996fffb260fc0e248163cb3a222 ChangeLog 1500
 MD5 ce3f2bc35dd35ff24c757ab6f807ddae metadata.xml 488
 MD5 545fd5a4bbb9939e5c9100b9e8797163 skunkweb-3.4_beta5.ebuild 2232
 MD5 b71c1146c21ffe63a6f7c4cf9a48e338 skunkweb-3.4_beta5-r1.ebuild 2611
+MD5 9155a765ea3b582b160005b6b9a0cb3b skunkweb-3.4.0.ebuild 2403
 MD5 33defac2f69099260dac7f1a043b2643 files/digest-skunkweb-3.4_beta5 67
-MD5 682c6c89005793875f61f753eb584bd7 files/skunkweb-init 642
+MD5 82736eefab60c19eb886f85fd684f416 files/skunkweb-init 615
 MD5 33defac2f69099260dac7f1a043b2643 files/digest-skunkweb-3.4_beta5-r1 67
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.9.10 (GNU/Linux)
-
-iD8DBQFBWLNKI1lqEGTUzyQRArIpAJwNuAtokfMQxKNmf0lV3DPBSgbIOACgprtt
-+O2Py3sCxf0UynU6PkvSFTA=
-=Xmko
------END PGP SIGNATURE-----
+MD5 f649daf3fb435a3f6edc0307de265e57 files/digest-skunkweb-3.4.0 67
