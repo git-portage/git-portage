@@ -192,6 +192,7 @@
 ./media-video/mpeg2-movie/mpeg2-movie-1.2.2.ebuild
 ./media-video/smpeg-xmms/smpeg-xmms-0.3.1.ebuild
 ./media-video/vlc/vlc-0.1.99h.ebuild
+./media-video/xanim/xanim-2.80.1.ebuild
 ./media-video/xawtv/xawtv-3.19.ebuild
 ./media-video/xmovie/xmovie-1.5.1.ebuild
 ./media-video/xmps/xmps-0.1.3-r1.ebuild
