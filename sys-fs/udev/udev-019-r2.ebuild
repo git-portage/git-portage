@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-019.ebuild,v 1.1 2004/02/28 22:33:45 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-019-r2.ebuild,v 1.1 2004/03/16 21:41:17 seemant Exp $
 
 # Note: Cannot use external libsysfs with klibc ..
 USE_KLIBC="no"
@@ -23,6 +23,8 @@ DEPEND="virtual/glibc
 RDEPEND="${DEPEND}
 	>=sys-apps/baselayout-1.8.6.12-r3"
 # We need some changes for devfs type layout
+
+PROVIDE="virtual/dev-manager"
 
 pkg_setup() {
 	[ "${USE_KLIBC}" = "yes" ] && check_KV

@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-017.ebuild,v 1.2 2004/02/19 22:18:21 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-018-r3.ebuild,v 1.1 2004/03/16 21:41:17 seemant Exp $
 
 # Note: Cannot use external libsysfs with klibc ..
 USE_KLIBC="no"
@@ -24,6 +24,8 @@ RDEPEND="${DEPEND}
 	>=sys-apps/baselayout-1.8.6.12-r3"
 # We need some changes for devfs type layout
 
+PROVIDE="virtual/dev-manager"
+
 pkg_setup() {
 	[ "${USE_KLIBC}" = "yes" ] && check_KV
 
@@ -42,7 +44,7 @@ src_unpack() {
 	# Make sure there is no sudden changes to udev.rules.devfs
 	# (more for my own needs than anything else ...)
 	if [ "`md5sum < "${S}/etc/udev/udev.rules.devfs"`" != \
-	     "39311afa517b232c6a860371f009d2df  -" ]
+	     "6cac1f863e51de110aef311301f6d58c  -" ]
 	then
 		echo
 		eerror "udev.rules.devfs has been updated, please validate!"
@@ -62,13 +64,11 @@ src_unpack() {
 	then
 		ln -snf ${ROOT}/usr/src/linux ${S}/klibc/linux
 	fi
-
-	# Do not sleep if UDEV_NO_SLEEP is set
-	epatch ${FILESDIR}/${P}-no-wait-for-sleep.patch
 }
 
 src_compile() {
 	local myconf=
+	local extras="extras/scsi_id"
 
 	# DBUS support?
 	if which pkg-config &>/dev/null && pkg-config dbus-1 &>/dev/null
@@ -76,16 +76,22 @@ src_compile() {
 		myconf="USE_DBUS=true"
 	fi
 
+	# Device-mapper support?
+	if false
+	then
+		extras="${extras} extras/multipath"
+	fi
+
 	# Do not work with emake
 	if [ "${USE_EXT_LIBSYSFS}" = "yes" -a "${USE_KLIBC}" != "yes" ]
 	then
-		make EXTRAS="extras/scsi_id" \
+		make EXTRAS="${extras}" \
 			udevdir="/dev/" \
 			ARCH_LIB_OBJS="-lsysfs" \
 			SYSFS="" \
 			${myconf} || die
 	else
-		make EXTRAS="extras/scsi_id" \
+		make EXTRAS="${extras}" \
 			udevdir="/dev/" \
 			${myconf} || die
 	fi
@@ -98,8 +104,15 @@ src_install() {
 	# *** Note that we do not yet use or install udevd and udevsend, ***
 	# *** as they seem to be still too buggy (udevsend do not even   ***
 	# *** start udevd over here ...                                  ***
-	dosbin udevd udevsend
+	#dosbin udevd udevsend
 	dosbin extras/scsi_id/scsi_id
+	# Device-mapper support?
+	if false
+	then
+		dosbin extras/multipath/{multipath,devmap_name}
+		exeinto /etc/hotplug.d/scsi/
+		doexe  extras/multipath/multipath.hotplug
+	fi
 
 	exeinto /etc/udev/scripts
 	doexe extras/ide-devfs.sh
@@ -122,12 +135,13 @@ src_install() {
 	fi
 
 	dodir /etc/hotplug.d/default
-	dosym ../../../sbin/udevsend /etc/hotplug.d/default/udev.hotplug
+	#dosym ../../../sbin/udevsend /etc/hotplug.d/default/udev.hotplug
+	dosym ../../../sbin/udev /etc/hotplug.d/default/udev.hotplug
 
 	doman *.8
 	doman extras/scsi_id/scsi_id.8
 
-	dodoc COPYING ChangeLog FAQ README TODO
+	dodoc COPYING ChangeLog FAQ HOWTO-udev_for_dev README TODO
 	dodoc docs/{overview,udev-OLS2003.pdf,udev_vs_devfs}
 }
 

@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-019-r1.ebuild,v 1.2 2004/02/29 11:14:50 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-017-r1.ebuild,v 1.1 2004/03/16 21:41:17 seemant Exp $
 
 # Note: Cannot use external libsysfs with klibc ..
 USE_KLIBC="no"
@@ -14,7 +14,7 @@ SRC_URI="mirror://kernel/linux/utils/kernel/hotplug/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~hppa ~amd64 ~sparc"
+KEYWORDS="~x86 ~ppc ~hppa ~amd64"
 
 DEPEND="virtual/glibc
 	>=sys-apps/hotplug-20030805-r1
@@ -23,6 +23,8 @@ DEPEND="virtual/glibc
 RDEPEND="${DEPEND}
 	>=sys-apps/baselayout-1.8.6.12-r3"
 # We need some changes for devfs type layout
+
+PROVIDE="virtual/dev-manager"
 
 pkg_setup() {
 	[ "${USE_KLIBC}" = "yes" ] && check_KV
@@ -42,7 +44,7 @@ src_unpack() {
 	# Make sure there is no sudden changes to udev.rules.devfs
 	# (more for my own needs than anything else ...)
 	if [ "`md5sum < "${S}/etc/udev/udev.rules.devfs"`" != \
-	     "6cac1f863e51de110aef311301f6d58c  -" ]
+	     "39311afa517b232c6a860371f009d2df  -" ]
 	then
 		echo
 		eerror "udev.rules.devfs has been updated, please validate!"
@@ -63,13 +65,12 @@ src_unpack() {
 		ln -snf ${ROOT}/usr/src/linux ${S}/klibc/linux
 	fi
 
-	# Unlink files first before creating nodes/symlinks ...
-	epatch ${FILESDIR}/${P}-unlink-existing.patch
+	# Do not sleep if UDEV_NO_SLEEP is set
+	epatch ${FILESDIR}/${P}-no-wait-for-sleep.patch
 }
 
 src_compile() {
 	local myconf=
-	local extras="extras/scsi_id"
 
 	# DBUS support?
 	if which pkg-config &>/dev/null && pkg-config dbus-1 &>/dev/null
@@ -77,22 +78,16 @@ src_compile() {
 		myconf="USE_DBUS=true"
 	fi
 
-	# Device-mapper support?
-	if false
-	then
-		extras="${extras} extras/multipath"
-	fi
-
 	# Do not work with emake
 	if [ "${USE_EXT_LIBSYSFS}" = "yes" -a "${USE_KLIBC}" != "yes" ]
 	then
-		make EXTRAS="${extras}" \
+		make EXTRAS="extras/scsi_id" \
 			udevdir="/dev/" \
 			ARCH_LIB_OBJS="-lsysfs" \
 			SYSFS="" \
 			${myconf} || die
 	else
-		make EXTRAS="${extras}" \
+		make EXTRAS="extras/scsi_id" \
 			udevdir="/dev/" \
 			${myconf} || die
 	fi
@@ -101,15 +96,12 @@ src_compile() {
 src_install() {
 	dobin udevinfo
 	into /
-	dosbin udev udevd udevsend
+	dosbin udev
+	# *** Note that we do not yet use or install udevd and udevsend, ***
+	# *** as they seem to be still too buggy (udevsend do not even   ***
+	# *** start udevd over here ...                                  ***
+	dosbin udevd udevsend
 	dosbin extras/scsi_id/scsi_id
-	# Device-mapper support?
-	if false
-	then
-		dosbin extras/multipath/{multipath,devmap_name}
-		exeinto /etc/hotplug.d/scsi/
-		doexe extras/multipath/multipath.hotplug
-	fi
 
 	exeinto /etc/udev/scripts
 	doexe extras/ide-devfs.sh
@@ -118,7 +110,7 @@ src_install() {
 	doins ${FILESDIR}/udev.conf
 #	newins etc/udev/udev.rules udev.rules.example
 	# For devfs style layout
-	newins ${FILESDIR}/udev.rules-018 udev.rules
+	newins ${FILESDIR}/udev.rules.post_012 udev.rules
 	# Our own custom udev.permissions
 	doins ${FILESDIR}/udev.permissions
 #	doins etc/udev/udev.permissions
@@ -137,7 +129,7 @@ src_install() {
 	doman *.8
 	doman extras/scsi_id/scsi_id.8
 
-	dodoc COPYING ChangeLog FAQ HOWTO-udev_for_dev README TODO
+	dodoc COPYING ChangeLog FAQ README TODO
 	dodoc docs/{overview,udev-OLS2003.pdf,udev_vs_devfs}
 }
 
@@ -148,13 +140,3 @@ pkg_preinst() {
 		mv -f ${ROOT}/etc/udev/udev.config ${ROOT}/etc/udev/udev.rules
 	fi
 }
-
-pkg_postinst() {
-	if [ "${ROOT}" = "/" -a -n "`pidof udevd`" ]
-	then
-		killall -15 udevd &>/dev/null
-		sleep 1
-		killall -9 udevd &>/dev/null
-	fi
-}
-
