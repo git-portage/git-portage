@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/audacity/Attic/audacity-1.2.0_pre3.ebuild,v 1.2 2004/02/28 19:31:32 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/audacity/Attic/audacity-1.2.0.ebuild,v 1.1 2004/03/03 11:40:31 eradicator Exp $
 
 inherit eutils
 
@@ -9,7 +9,7 @@ MY_P="${PN}-src-${MY_PV}"
 
 DESCRIPTION="A free, crossplatform audio editor."
 HOMEPAGE="http://audacity.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 RESTRICT="nomirror"
 
 LICENSE="GPL-2"
@@ -32,16 +32,6 @@ DEPEND=">=x11-libs/wxGTK-2.2.9
 S="${WORKDIR}/${MY_P}"
 
 DOC="LICENSE.txt README.txt audacity-1.2-help.htb"
-
-pkg_setup() {
-	if wx-config --cppflags | grep gtk2u >& /dev/null; then
-		einfo "Audacity will not build if wxGTK was compiled"
-		einfo "with unicode support.  If you are using a version of"
-		einfo "wxGTK <= 2.4.2, you must set USE=-gtk2.  In newer versions,"
-		einfo "you must set USE=-unicode."
-		die "wxGTK must be re-emerged without unicode suport"
-	fi
-}
 
 src_compile() {
 	local myconf;
@@ -71,8 +61,8 @@ src_compile() {
 
 	econf ${myconf} || die
 
-	# emake b0rks 
-	make || die
+	# parallel borks 
+	emake -j1 || die
 }
 
 src_install() {
