@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/slime-cvs/Attic/slime-cvs-0-r1.ebuild,v 1.4 2004/06/24 21:33:58 mkennedy Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/slime-cvs/Attic/slime-cvs-0-r1.ebuild,v 1.6 2004/06/30 02:48:54 agriffis Exp $
 
 ECVS_SERVER="common-lisp.net:/project/slime/cvsroot"
 if [ -z "${ECVS_BRANCH}" ]; then
@@ -19,6 +19,7 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
+IUSE=""
 
 DEPEND="virtual/emacs
 	dev-lisp/common-lisp-controller
