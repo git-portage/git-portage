@@ -1,3 +1,5 @@
 MD5 5db6ad06547af4bcdd4b3d54a4712eaf ChangeLog 391
-MD5 a2e18268e0145a3cd79b985bc978b52a dav-0.8.4.ebuild 651
+MD5 519d7d50bd804a07c17cb044552950a7 dav-0.8.4.ebuild 650
+MD5 6ba0b28f4f052a667fe2f8ca26b8ca83 dav-0.8.5.ebuild 553
+MD5 7ba309aedd567b2d56f17baa20606879 files/digest-dav-0.8.5 60
 MD5 71a2f4cfa36d38196022faf8e2804634 files/digest-dav-0.8.4 60
