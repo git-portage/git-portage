@@ -1,3 +1,5 @@
+MD5 c6ac6e4b528468808b9b638e13cff00a epiphany-1.4.7.ebuild 1370
+MD5 e7804f86b90f6c4a79c62d730734c90a .epiphany-1.4.7.ebuild.swp 12288
 MD5 71abaf1357baf25a58119f151b6cfd96 epiphany-1.2.10.ebuild 1328
 MD5 9dbacb408083855f29a9d7e2cd564952 epiphany-1.4.4.ebuild 1370
 MD5 402d7e67fc8151b377d0a0927a6597bd epiphany-1.4.6.ebuild 1464
@@ -13,4 +15,5 @@ MD5 124caf61eb374940967a1d4c561270ca files/epiphany-1.4.6-fix_includes.patch 869
 MD5 ebbdfe54389d750d3f1772e17d28a790 files/digest-epiphany-1.4.4 68
 MD5 7b909f5b1fad8adc32b25e92037b010f files/digest-epiphany-1.4.5 68
 MD5 8b89ef168d67e7ae303ae92d4997d401 files/digest-epiphany-1.4.6 68
+MD5 7ba3d886ab73458f0569cd500a39b66f files/digest-epiphany-1.4.7 68
 MD5 56ee35e359c12574247645a59250f5f8 files/digest-epiphany-1.2.10 69
