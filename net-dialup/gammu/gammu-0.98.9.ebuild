@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/gammu/Attic/gammu-0.97.0.ebuild,v 1.1 2004/07/20 16:19:40 st_lim Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/gammu/Attic/gammu-0.98.9.ebuild,v 1.1 2004/10/14 05:50:22 st_lim Exp $
 
 inherit eutils
 
 DESCRIPTION="a fork of the gnokii project, a tool to handle your cellular phone"
-SRC_URI="http://www.mwiacek.com/zips/gsm/gammu/older/${P}.tar.gz"
-HOMEPAGE="http://www.mwiacek.com/gsm/gammu/gammu.html"
+SRC_URI="http://www.mwiacek.com/zips/gsm/gammu/test/${P}.tar.gz"
+HOMEPAGE="http://www.mwiacek.com/"
 
 IUSE="bluetooth irda mysql nls ssl"
 SLOT="0"
@@ -28,8 +28,11 @@ src_unpack() {
 
 src_compile() {
 	local myconf
-	use bluetooth && myconf="${myconf} --with-bluedir=/usr/lib"
+	use bluetooth && myconf="${myconf} --with-bluedir=/usr/lib" \
+		|| myconf="${myconf} --disable-bluefbus --disable-blueobex --disable-bluephonet --disable-blueat --disable-bluerfsearch --disable-fbusblue"
 	use irda || myconf="${myconf} --disable-irdaat --disable-irdaphonet"
+	sed -e 's:-lbluetooth -lsdp:-lbluetooth:g' \
+		-i ${S}/cfg/autoconf/configure.in
 	econf \
 		`use_enable nls` \
 		--prefix=/usr \
