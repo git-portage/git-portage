@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jdom/Attic/jdom-1.0_beta10-r1.ebuild,v 1.3 2004/10/17 07:29:20 absinthe Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jdom/Attic/jdom-1.0_beta10-r3.ebuild,v 1.1 2005/02/03 17:14:26 luckyduck Exp $
 
 inherit java-pkg
 
@@ -14,8 +14,8 @@ DESCRIPTION="Java API to manipulate XML data"
 SRC_URI="http://www.jdom.org/dist/source/${MY_P}.tar.gz"
 HOMEPAGE="http://www.jdom.org"
 LICENSE="JDOM"
-SLOT="0"
-KEYWORDS="~x86 ~sparc ~ppc ~amd64"
+SLOT="${PV}"
+KEYWORDS="x86 ~sparc ~ppc ~amd64"
 RDEPEND=">=virtual/jdk-1.3"
 DEPEND=">=dev-java/ant-1.4.1
 		dev-java/jaxen
