@@ -1,4 +1,6 @@
 MD5 30ad84d5f54fbce8bbbb216b622229d0 ChangeLog 478
 MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
 MD5 6c6276a0f07d9e220984c6d9eb140833 rake-0.4.4.ebuild 805
+MD5 093604d891cbdddc358c113ea2e06105 rake-0.4.11.ebuild 852
 MD5 00c6aeabefa3a5baaabd35b9afb162ac files/digest-rake-0.4.4 58
+MD5 073b59e1c530d30f2b79902d5a73d7ee files/digest-rake-0.4.11 59
