@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/zsnes/Attic/zsnes-1.40.ebuild,v 1.1 2004/12/26 22:22:37 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/zsnes/Attic/zsnes-1.40.ebuild,v 1.2 2005/01/24 04:59:30 mr_bones_ Exp $
 
 inherit eutils flag-o-matic games
 
