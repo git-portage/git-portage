@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/jedit/Attic/jedit-4.2_pre15.ebuild,v 1.1 2004/07/31 18:39:10 axxo Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/jedit/Attic/jedit-4.2.ebuild,v 1.1 2004/08/30 17:08:13 axxo Exp $
 
 inherit java-utils
 
