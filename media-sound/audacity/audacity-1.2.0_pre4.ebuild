@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/audacity/Attic/audacity-1.2.0_pre3.ebuild,v 1.2 2004/02/28 19:31:32 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/audacity/Attic/audacity-1.2.0_pre4.ebuild,v 1.1 2004/02/28 19:31:32 eradicator Exp $
 
 inherit eutils
 
@@ -9,7 +9,7 @@ MY_P="${PN}-src-${MY_PV}"
 
 DESCRIPTION="A free, crossplatform audio editor."
 HOMEPAGE="http://audacity.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 RESTRICT="nomirror"
 
 LICENSE="GPL-2"

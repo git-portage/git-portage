@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/audacity/Attic/audacity-1.1.3.ebuild,v 1.6 2004/02/07 10:26:03 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/audacity/Attic/audacity-1.1.3.ebuild,v 1.7 2004/02/28 19:31:32 eradicator Exp $
 
 inherit eutils
 
@@ -37,7 +37,7 @@ DOC="LICENSE.txt README.txt audacity-1.2-help.htb"
 # Disable UNICODE
 CFLAGS="${CFLAGS} -DwxUSE_UNICODE=0"
 
-src_unpack() {
+pkg_setup() {
 	if wx-config --cppflags | grep gtk2u >& /dev/null; then
 		einfo "Audacity will not build if wxGTK was compiled"
 		einfo "with unicode support.  If you are using a version of"
@@ -45,7 +45,6 @@ src_unpack() {
 		einfo "you must set USE=-unicode."
 		die "wxGTK must be re-emerged without unicode suport"
 	fi
-	unpack ${A}
 }
 
 src_compile() {
