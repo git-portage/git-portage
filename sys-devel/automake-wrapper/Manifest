@@ -1,6 +1,15 @@
-MD5 b2f103286c8fc6e346a9b2f300b1ac5d automake-wrapper-1.ebuild 627
-MD5 2b5aa34b9c688d919f6b06df0c428cc4 files/am-wrapper-1.pl 6165
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 7a3c9c16025c5595e83740e223e8387e automake-wrapper-1.ebuild 748
+MD5 cb9eb7b03089e2dffedc3c7d837ac669 ChangeLog 382
+MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+MD5 b2616b03dfd3516a4cc52c4b769e6b96 files/am-wrapper-1.pl 5721
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-automake-wrapper-1 0
-MD5 98d5ab8800a53d3e713fd5b083be1e9f f/am-wrapper.pl 4654
-MD5 1834b6d845aa175efd08cfb813a361d2 f/attachment.cgi?id=41195 8685
-MD5 555bbf3a7b5cddb99a45e87655e666c7 f/attachment.cgi?id=41207 3231
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.9.10 (GNU/Linux)
+
+iD8DBQFBeZu0HTu7gpaalycRAvi4AKD29WT5sJ4VIwytiNpLi6Hfn1tlswCgjWiW
+XEkfEtp82Ui8xsmOHC7Eewk=
+=J7GK
+-----END PGP SIGNATURE-----
