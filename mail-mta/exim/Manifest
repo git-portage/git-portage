@@ -1,4 +1,4 @@
-MD5 08dd9bc69bab107323240c2bfb9ee216 ChangeLog 12159
+MD5 c5a8c2cb9db1115ad2371e9d201d6bad ChangeLog 12437
 MD5 e498dba7d22feb6bef903da80a2aee43 exim-4.10.ebuild 6180
 MD5 24a6506bc881d3a5caa69e99ef0f55da exim-4.12.ebuild 5442
 MD5 9f7020ef1d7571e5dab7b036d5eaf57d exim-4.14.ebuild 5490
@@ -21,8 +21,7 @@ MD5 7ca071417f6a32f8c3d1900e941037ef exim-4.33.ebuild 7543
 MD5 8807b47f2f299eb16a17bf4904c4ca81 exim-4.34-r1.ebuild 7933
 MD5 4f81a30a363f8dee30864633df6649f4 exim-4.34.ebuild 7562
 MD5 33dd717372c0b5d66b421e65dc0e45e3 metadata.xml 1065
-MD5 20e8b93d6d62e0f4290df3a2fceb7ec1 exim-4.40.ebuild 7743
-MD5 c8b00da412c9f1af566d45300a34e76f exiscan-acl-4.40-23.patch.md5 60
+MD5 765424c8f863b33e5d246d54c3e52ec7 exim-4.40.ebuild 7735
 MD5 22fec326813079b35bb1997f9b323060 files/digest-exim-4.40 133
 MD5 68fc403ba2c98ccba281939085cb9052 files/auth_conf.sub 775
 MD5 0cb2ffe88c81fd7ac8429b5a19d58b35 files/configure 16346
