@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.22-r9.ebuild,v 1.1 2004/02/10 06:44:36 kumba Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.22-r10.ebuild,v 1.1 2004/02/18 21:41:17 kumba Exp $
 
 
 # Version Data
@@ -35,7 +35,7 @@ SRC_URI="mirror://kernel/linux/kernel/v2.4/linux-${OKV}.tar.bz2
 HOMEPAGE="http://www.linux-mips.org/"
 SLOT="${OKV}"
 PROVIDE="virtual/linux-sources"
-KEYWORDS="-* ~mips"
+KEYWORDS="-* mips"
 
 
 src_unpack() {
@@ -58,15 +58,18 @@ src_unpack() {
 	# MIPS RTC Fixes (Fixes memleaks, backport from 2.4.24)
 	epatch ${FILESDIR}/rtc-fixes.patch
 
+	# do_munmap fix (Possibly Exploitable)
+	epatch ${FILESDIR}/do_munmap-fix.patch
+
 	# Cobalt Patches
-	if [ "${PROFILE_ARCH}" = "cobalt" ]; then
+#	if [ "${PROFILE_ARCH}" = "cobalt" ]; then
 		echo -e ""
 		einfo ">>> Patching kernel for Cobalt support ..."
 		for x in ${WORKDIR}/cobalt-patches-24xx-${COBALTPATCHVER}/*.patch; do
 			epatch ${x}
 		done
 		cp ${WORKDIR}/cobalt-patches-24xx-${COBALTPATCHVER}/cobalt-patches.txt ${S}
-	fi
+#	fi
 
 	kernel_universal_unpack
 }
