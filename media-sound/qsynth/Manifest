@@ -1,4 +1,6 @@
-MD5 2e1d8cf77392aed98b39d8d7b710455b ChangeLog 740
+MD5 c02ad9091a819f260a90bfc28097bb30 ChangeLog 3306
 MD5 bed98f5cc72fd626b638bfcae4593ce6 metadata.xml 647
 MD5 5c0cef8f2d1f6367277240e2806c1503 qsynth-0.1.0.ebuild 673
+MD5 1d11a9d4f92ee5a735fa722b2af55bb2 qsynth-0.2.1.ebuild 574
 MD5 fde45970ba4d6681ef829f9fde4b7e72 files/digest-qsynth-0.1.0 63
+MD5 0ad37e882f8d5b9c5e58810f9e646468 files/digest-qsynth-0.2.1 63
