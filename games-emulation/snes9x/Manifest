@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0e520c5b38498ba29fd236c72025cc10 ChangeLog 3302
 MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
 MD5 c30d64cc29b742b593f6e92a69c1a4a7 snes9x-1.42-r1.ebuild 1813
@@ -10,3 +13,10 @@ MD5 95a147283e0b09db8ad3307bb3e5b305 files/snes9x-139-r1-BE-sound-fix.diff 550
 MD5 5b7c3589393da0616b766b78c69aa16e files/snes9x-139-r1-Makefile-ppc.diff 779
 MD5 60e338baf6468da1d0c1fece4884553c files/snes9x-gcc3.diff 979
 MD5 dbd6370fa28b91acc3b14b5534f87866 files/digest-snes9x-1.43 68
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.9.10 (GNU/Linux)
+
+iD8DBQFB2ztAroRuSHgZdywRAo8rAJ4wxD3veGymGavzSJsxQZHELRbb5ACeNR0g
+GeGFj0547n7yNkqaro1jF4M=
+=R1NM
+-----END PGP SIGNATURE-----
