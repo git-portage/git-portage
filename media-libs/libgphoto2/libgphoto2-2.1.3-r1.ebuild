@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libgphoto2/Attic/libgphoto2-2.1.3-r1.ebuild,v 1.10 2004/07/13 01:12:32 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libgphoto2/Attic/libgphoto2-2.1.3-r1.ebuild,v 1.11 2005/01/13 15:37:50 liquidx Exp $
 
 inherit libtool eutils
 

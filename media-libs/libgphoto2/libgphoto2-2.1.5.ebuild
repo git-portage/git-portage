@@ -1,23 +1,23 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libgphoto2/Attic/libgphoto2-2.1.4.ebuild,v 1.17 2005/01/13 15:37:50 liquidx Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libgphoto2/Attic/libgphoto2-2.1.5.ebuild,v 1.1 2005/01/13 15:37:50 liquidx Exp $
 
 inherit libtool eutils
 
 DESCRIPTION="Library that implements support for numerous digital cameras"
 HOMEPAGE="http://www.gphoto.org/"
-SRC_URI="mirror://sourceforge/gphoto/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/gphoto/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~ppc sparc amd64 ~ia64 ppc64"
-IUSE="nls doc jpeg"
+KEYWORDS="~x86 ~ppc ~sparc ~amd64 ~ia64 ~ppc64"
+IUSE="nls doc jpeg nousb"
 
 # needs >usbutils-0.11-r2 to avoid /usr/lib/libusb*
 # conflicts with dev-libs/libusb
-RDEPEND=">=dev-libs/libusb-0.1.6
+RDEPEND="!nousb? (>=dev-libs/libusb-0.1.8
 	>=sys-apps/usbutils-0.11-r2
-	sys-apps/hotplug
+	sys-apps/hotplug)
 	jpeg? ( >=media-libs/libexif-0.5.9 )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
@@ -27,9 +27,9 @@ DEPEND="${RDEPEND}
 # If you want to only compile for specific card(s), set CAMERAS
 # environment to a comma-separated list (no spaces) of drivers that
 # you want to build.
-IUSE_CAMERAS="agfa-cl20 barbie canon casio digita dimera directory fuji gsmart300 jamcam jd11
-kodak konica mustek largan minolta panasonic pccam300 pccam600 polaroid ptp2 ricoh samsung
-smal sierra sipix sonydscf1 sonydscf55 soundvision spca50x sq905 stv0680 sx330z"
+IUSE_CAMERAS="agfa-cl20 aox barbie canon casio digita dimera directory enigma13 fuji gsmart300 iclick jamcam jd11
+kodak konica largan mars minolta mustek panasonic pccam300 pccam600 polaroid ptp2 ricoh samsung
+sierra sipix smal sonydscf1 sonydscf55 soundvision spca50x sq905 stv0674 stv0680 sx330z toshiba"
 
 pkg_setup() {
 	if [ -z "${CAMERAS}" ] ; then
@@ -41,12 +41,8 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${PN}-2.1.2-norpm.patch
-	# add stylcam snap support (#52932)
-	epatch ${FILESDIR}/${PN}-2.1.4-blink2.patch
-	# Fix compilation under gcc-2.
-	epatch ${FILESDIR}/${P}-gcc2_fixes.patch
+        cd ${S}
+        epatch ${FILESDIR}/${PN}-2.1.2-norpm.patch
 }
 
 src_compile() {
@@ -77,11 +73,18 @@ src_compile() {
 }
 
 src_install() {
+	if use !nousb; then 
 	make DESTDIR=${D} \
 		gphotodocdir=/usr/share/doc/${PF} \
 		HTML_DIR=/usr/share/doc/${PF}/sgml \
 		hotplugdocdir=/usr/share/doc/${PF}/linux-hotplug \
 		install || die "install failed"
+	else
+	make DESTDIR=${D} \
+		gphotodocdir=/usr/share/doc/${PF} \
+		HTML_DIR=/usr/share/doc/${PF}/sgml \
+		install || die "install failed"
+	fi
 
 	# manually move apidocs
 	if use doc; then
@@ -95,12 +98,15 @@ src_install() {
 	dodoc ChangeLog NEWS* README AUTHORS TESTERS MAINTAINERS HACKING CHANGES
 
 	# install hotplug support
-	insinto /etc/hotplug/usb
-	newins ${S}/packaging/linux-hotplug/usbcam.console usbcam
-	chmod +x ${D}/etc/hotplug/usb/usbcam
+	if use !nousb; then 
+		insinto /etc/hotplug/usb
+		newins ${S}/packaging/linux-hotplug/usbcam.console usbcam
+		chmod +x ${D}/etc/hotplug/usb/usbcam
+        fi
 }
 
 pkg_postinst() {
+	if use !nousb; then
 	einfo "Generating usbcam-gphoto2.usermap .."
 	HOTPLUG_USERMAP="/etc/hotplug/usb/usbcam-gphoto2.usermap"
 	if [ -x ${ROOT}/usr/$(get_libdir)/libgphoto2/print-usb-usermap ]; then
@@ -112,5 +118,6 @@ pkg_postinst() {
 		eerror "and therefore unable to generate hotplug usermap."
 		eerror "You will have to manually generate it by running:"
 		eerror " /usr/$(get_libdir)/libgphoto2/print-usb-usermap > ${HOTPLUG_USERMAP}"
+	fi
 	fi
 }
