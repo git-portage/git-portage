@@ -1,5 +1,9 @@
 date 5 June 2001
 
+new dev-util/xxdiff-1.9
+Nice gui diff viewer much like that found on SGIs.  Supports 3way diffs too.
+michael
+
 new dev-util/mergetrees-0.9.3
 Uses diff3 to do a three-way directory merge
 aj
