@@ -1,5 +1,9 @@
 date 2 June 2001
 
+new app-misc/gkrellweather-0.2.7
+added another gkrellm plugin, this one will display weather information
+blutgens
+
 new app-games/qstat-24c
 added app-games section, and the qstat ebuild
 blutgens
