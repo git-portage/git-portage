@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.5.70-r3.ebuild,v 1.1 2003/05/31 12:43:26 latexer Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.5.71-r1.ebuild,v 1.1 2003/06/16 02:11:49 latexer Exp $
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
 inherit eutils 
@@ -27,7 +27,8 @@ KEYWORDS="x86 ppc"
 if [ $ETYPE = "sources" ] && [ -z "`use build`" ]
 then
 	#console-tools is needed to solve the loadkeys fiasco; binutils version needed to avoid Athlon/PIII/SSE assembler bugs.
-	DEPEND=">=sys-devel/binutils-2.11.90.0.31"
+	DEPEND=">=sys-devel/binutils-2.11.90.0.31
+			>=sys-apps/sed-4"
 	RDEPEND=">=sys-libs/ncurses-5.2 dev-lang/perl
 		 sys-devel/make"
 fi
@@ -44,6 +45,8 @@ src_unpack() {
 	sed -i -e "s:^EXTRAVERSION.*$:EXTRAVERSION = -${PR/r/mm}:" Makefile
 
 	#sometimes we have icky kernel symbols; this seems to get rid of them
+	# ARCH is used differently in the makefiles now, and this seems to fix things
+	unset ARCH
 	make mrproper || die
 
 	#fix silly permissions in tarball
