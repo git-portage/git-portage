@@ -1,8 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libtomcrypt/Attic/libtomcrypt-0.86.ebuild,v 1.3 2003/09/08 07:19:26 msterret Exp $
-
-inherit eutils
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libtomcrypt/Attic/libtomcrypt-0.90.ebuild,v 1.1 2003/09/09 13:24:16 vapier Exp $
 
 DESCRIPTION="modular and portable cryptographic toolkit"
 HOMEPAGE="http://libtomcrypt.org/"
