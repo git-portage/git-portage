@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/oer/Attic/oer-1.0.65.ebuild,v 1.1 2004/11/13 00:05:28 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/oer/Attic/oer-1.0.65.ebuild,v 1.2 2004/12/16 02:55:39 swegener Exp $
 
-inherit fixheadtails eutils
+inherit fixheadtails eutils versionator
 
 DESCRIPTION="Free to use GPL'd IRC bot"
 HOMEPAGE="http://oer.equnet.org/"
-SRC_URI="http://oer.equnet.org/${PN}-1.0-65.tar.gz"
+SRC_URI="http://oer.equnet.org/${PN}-$(replace_version_separator 2 -).tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~ppc"
