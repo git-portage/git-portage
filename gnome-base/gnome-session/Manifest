@@ -1,10 +1,13 @@
-MD5 e22add8a510f8e2f8d69e9892f1e07ec ChangeLog 11566
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 226dd61252caf3ed17ed88759301a532 ChangeLog 11697
 MD5 83f24762bbd25b6828aa7ca32cc4e800 gnome-session-2.4.2.ebuild 1312
 MD5 99a7fb3933117e9549c9c7dd90c0ceb1 gnome-session-2.6.2.ebuild 1363
 MD5 a296d97782aadce09cdecb58dc7bcbb2 gnome-session-2.8.0.ebuild 1539
 MD5 b9f2668d0c3a7cc4f9d8433c9dc5baf5 gnome-session-2.8.1.ebuild 1516
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
-MD5 6b3e0a6d6d286d3d9eda24d70020202e gnome-session-2.10.0.ebuild 1417
+MD5 aff175f5a75a41baf94508844f8a07eb gnome-session-2.10.0.ebuild 1529
 MD5 b10dbd1b6388f5fdf9feee0e56525ea5 files/Gnome 2464
 MD5 c7dd76860a26aa54145fafa215e0aa42 files/digest-gnome-session-2.4.2 72
 MD5 d71ad6bbed92ba29fddd9c12be898740 files/digest-gnome-session-2.6.2 72
@@ -18,3 +21,10 @@ MD5 9c41a7c69837eba927f8d546d3c13b8d files/gnome-session-2.6-schema_defaults.pat
 MD5 b6e2c49cdafa0d5d8fe9ab4e28f5fc3d files/gnome-session-2.8.1-hide_splash.patch 1469
 MD5 f02a80d3f1435547a479312c15cc1030 files/gnome-splash.png 78064
 MD5 cb41214e255018ea0c78074aeafd0177 files/digest-gnome-session-2.10.0 73
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCLo6iXjcVihsel0ERAtpkAKC6ICXVXhEijcF/MmxkHRrcMkTTdwCffIgz
+0uyK2w+XVMX1BAGA4HMQ8XA=
+=fWCa
+-----END PGP SIGNATURE-----
