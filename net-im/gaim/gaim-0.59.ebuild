@@ -1,14 +1,15 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /var/cvsroot/gentoo-x86/net-im/gaim/Attic/gaim-0.58.ebuild,v 1.2 2002/05/23 06:50:15 seemant Exp $
+# /space/gentoo/cvsroot/gentoo-x86/net-im/gaim/gaim-0.58-r2.ebuild,v 1.1 2002/06/14 09:25:20 jayskwak Exp
 
 S=${WORKDIR}/${P}
-DESCRIPTION="Gtk AOL Instant Messenger client"
+DESCRIPTION="Gtk Instant Messenger client"
 
 SRC_URI1="http://unc.dl.sourceforge.net/sourceforge/gaim/${P}.tar.bz2"
 SRC_URI2="http://telia.dl.sourceforge.net/sourceforge/gaim/${P}.tar.bz2"
 SRC_URI3="http://belnet.dl.sourceforge.net/sourceforge/gaim/${P}.tar.bz2"
-SRC_URI="${SRC_URI1} ${SRC_URI2} ${SRC_URI3}"
+SRC_URI="${SRC_URI1} ${SRC_URI2} ${SRC_URI3}
+	ftp://ftp.nnongae.com/pub/gentoo/gaim-0.58-korean.patch"
 
 HOMEPAGE="http://gaim.sourceforge.net"
 LICENSE="GPL-2"
@@ -18,12 +19,23 @@ DEPEND="=x11-libs/gtk+-1.2*
 	esd? ( >=media-sound/esound-0.2.22-r2 )
 	nls? ( sys-devel/gettext )
 	nas? ( >=media-libs/nas-1.4.1-r1 )
-	arts? ( kde-base/arts )
+	arts? ( >=kde-base/arts-0.9.5 )
 	perl? ( >=sys-devel/perl-5.6.1 )
 	gnome? ( >=gnome-base/gnome-core-1.4
 		>=media-libs/gdk-pixbuf-0.16.0 )"
 
 RDEPEND="${DEPEND}"
+
+src_unpack() {
+
+	unpack ${P}.tar.bz2
+	
+	# patch for korean encoding
+	# It should be ok with other languages
+	# the patch only works with nls 
+	use nls && patch -p0 < ${DISTDIR}/${P}-korean.patch
+
+}
 
 src_compile() {
 	
@@ -33,7 +45,7 @@ src_compile() {
 	use nas  || myopts="${myopts} --disable-nas"
 	use perl || myopts="${myopts} --disable-perl"
 
-	use arts || myopts="${myopts} --disable-arts"
+	use arts || myopts="${myopts} --disable-artsc"
 	use arts && KDEDIR="${KDE3DIR}"
 
 	use nls  || myopts="${myopts} --disable-nls"
@@ -41,13 +53,11 @@ src_compile() {
 	gnomeopts="${myopts}"
 	myopts="${myopts} --disable-gnome"
 
-	./configure \
-		--host=${CHOST} \
-		--enable-distrib \
-		--prefix=/usr \
-		--infodir=/usr/share/info \
-		--mandir=/usr/share/man || die "./configure failed"
-
+	# always build standalone gaim program
+	
+	# transparency
+	# patch -p1 < ${FILESDIR}/transparency.diff || die
+	econf ${myopts} || die
 	emake || die
 
 	# if gnome support is enabled, then build gaim_applet
@@ -55,7 +65,7 @@ src_compile() {
 		gnomeopts="${gnomeopts} --with-gnome=${GNOME_PATH} --enable-panel"
 
 		# save appletless version and clean up
-		cp src/gaim ${S}/gaim
+		cp src/gaim ${S}/gaim || die "standalone version failed to build"
 		make distclean || die
 
 		econf ${gnomeopts} || die
@@ -66,12 +76,7 @@ src_compile() {
 
 src_install () {
 
-	make \
-		DESTDIR=${D} \
-		prefix=/usr \
-		sysconfdir=/etc \
-		install || die
-		#datadir=${D}/usr/share \
+	make DESTDIR=${D} install || die
 
 	# if gnome enabled, make sure to install standalone version also
 	use gnome && dobin ${S}/gaim
