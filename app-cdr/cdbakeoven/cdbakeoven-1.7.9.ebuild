@@ -8,10 +8,10 @@ inherit kde-base || die
 need-kde 2.2
 
 DESCRIPTION="CDBakeOven, KDE CD Writing Software"
-SRC_URI="http://prdownloads.sourceforge.net/cdbakeoven/cdbakeoven_generic-${PV}.tar.bz2"
+SRC_URI="http://prdownloads.sourceforge.net/cdbakeoven/${P}.tar.bz2"
 HOMEPAGE="http://cdbakeoven.sourceforge.net"
 
-S=${WORKDIR}/cdbakeoven_generic-${PV}
+S=${WORKDIR}/${P}
 
 newdepend ">=kde-base/kdebase-2.2
 	>=media-libs/libogg-1.0_rc2
@@ -23,7 +23,6 @@ src_unpack() {
 
     base_src_unpack
     cd ${S}
-    patch -p1 < ${FILESDIR}/cdbakeoven_generic-1.7.1.patch || die
     ln -s Makefile.dist Makefile.cvs
 
 }
