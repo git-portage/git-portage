@@ -1,10 +1,13 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0413eca1cec9d3896cfe3634fd3e6806 php-5.0.1.ebuild 540
-MD5 25fc48ba74e5c5b3ece525f5782cf161 php-5.0.2-r1.ebuild 586
+MD5 f45524b93880c1045053e46664323ef1 php-5.0.2-r1.ebuild 590
 MD5 48aa6f4b37fb2c3cc4fa6ad0527f4378 php-5.0.0.ebuild 521
 MD5 a24d7f5618824d6919f6b8459beee38b php-4.3.9.ebuild 1072
 MD5 159ad5dc930e19ed38c8377ef7a8eb06 php-4.3.9_rc1.ebuild 1137
 MD5 66457079ee99ec81625f60af44bcda9c php-5.0.2.ebuild 558
-MD5 c0d9169216e73d2309e20f77a210a85f ChangeLog 17828
+MD5 cf20a158064674152829a022a02b4b6c ChangeLog 17828
 MD5 38fe937e954ab7109395cefa86fcd2d4 metadata.xml 384
 MD5 abf5f97a49422c509b77b8077d714153 php-5.0.0-r1.ebuild 540
 MD5 43e57e69f231376d10554cf9874e8d5d php-4.3.8.ebuild 1071
@@ -19,3 +22,11 @@ MD5 b4787473c5b65d10113edd1635711e08 files/digest-php-4.3.9 131
 MD5 11f305b98b753ee023da8503a360762a files/digest-php-5.0.0 63
 MD5 14d868f33e29b3c9a70b118e9da58dd0 files/digest-php-5.0.1 63
 MD5 4792b645fe6b66cd3f1b1ec88d4d20e8 files/digest-php-5.0.2 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.5 (GNU/Linux)
+Comment: Robbat2 @ Orbis-Terrarum Networks
+
+iD8DBQFBXX6nPpIsIjIzwiwRAjX/AJwOR1Y5PBj3hJP7JbFwq265Au2CtgCdHTuk
+CJdk/ac4j0FzcZ+PJN/Dsiw=
+=hTID
+-----END PGP SIGNATURE-----
