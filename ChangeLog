@@ -1,3 +1,9 @@
+date 9 July 2001
+net net-misc/pdnsd-1.1.6
+Proxy DNS server with permanent caching (saves state/cache between stop
+and start).
+jerry
+
 date 6 July 2001
 upd sys-apps/iproute2-2.2.4-r2 to 2.2.4-r3
 Remove reference to ETH_P_ECHO, which is no longer in the kernel.
