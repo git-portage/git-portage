@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/openmosix-sources/Attic/openmosix-sources-2.4.20-r7.ebuild,v 1.2 2004/01/24 04:26:19 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/openmosix-sources/Attic/openmosix-sources-2.4.20-r8.ebuild,v 1.1 2004/02/18 23:09:16 plasmaroo Exp $
 
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
@@ -45,6 +45,7 @@ src_unpack() {
 
 	epatch ${FILESDIR}/do_brk_fix.patch || die "Failed to patch do_brk() vulnerability!"
 	epatch ${FILESDIR}/${PN}.CAN-2003-0985.patch || die "Failed to patch mremap() vulnerability!"
+	epatch ${FILESDIR}/${P}.munmap.patch || die "Failed to apply munmap patch!"
 	epatch ${FILESDIR}/${P}.rtc_fix.patch || die "Failed to patch RTC vulnerabilities!"
 
 	# Gentoo Linux uses /boot, so fix 'make install' to work properly
@@ -68,41 +69,13 @@ src_unpack() {
 	chmod -R a+r-w+X,u+w *
 }
 
-src_compile() {
-	if [ "$ETYPE" = "headers" ]
-	then
-		yes "" | make oldconfig
-		echo "Ignore any errors from the yes command above."
-	fi
-}
-
 src_install() {
-	if [ "$ETYPE" = "sources" ]
-	then
-		dodir /usr/src
-		echo ">>> Copying sources..."
-		mv ${WORKDIR}/* ${D}/usr/src
-	else
-		#linux-headers
-		dodir /usr/include/linux
-		cp -ax ${S}/include/linux/* ${D}/usr/include/linux
-		rm -rf ${D}/usr/include/linux/modules
-		dodir /usr/include/asm
-		cp -ax ${S}/include/asm-i386/* ${D}/usr/include/asm
-	fi
-}
-
-pkg_preinst() {
-	if [ "$ETYPE" = "headers" ]
-	then
-		[ -L ${ROOT}usr/include/linux ] && rm ${ROOT}usr/include/linux
-		[ -L ${ROOT}usr/include/asm ] && rm ${ROOT}usr/include/asm
-		true
-	fi
+	dodir /usr/src
+	echo ">>> Copying sources..."
+	mv ${WORKDIR}/* ${D}/usr/src
 }
 
 pkg_postinst() {
-	[ "$ETYPE" = "headers" ] && return
 	if [ ! -e ${ROOT}usr/src/linux ]
 	then
 		rm -f ${ROOT}usr/src/linux
