@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author: Donny Davies <woodchip@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/cyrus-sasl/Attic/cyrus-sasl-1.5.27.ebuild,v 1.2 2002/02/20 04:16:40 woodchip Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/cyrus-sasl/Attic/cyrus-sasl-1.5.27-r2.ebuild,v 1.1 2002/05/04 02:05:19 woodchip Exp $
 
 DESCRIPTION="The Cyrus SASL (Simple Authentication and Security Layer)"
 HOMEPAGE="http://asg.web.cmu.edu/cyrus/"
@@ -9,6 +8,8 @@ HOMEPAGE="http://asg.web.cmu.edu/cyrus/"
 S=${WORKDIR}/${P}
 SRC_URI="ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/${P}.tar.gz"
 DEPEND="virtual/glibc >=sys-libs/db-3.2 >=sys-libs/pam-0.75"
+LICENSE="as-is"
+SLOT="1"
 
 src_unpack() {
 	unpack ${A} ; cd ${S}
@@ -18,7 +19,9 @@ src_unpack() {
 	patch -p1 < ${FILESDIR}/${PN}-saslauthd.patch || die
 	patch -p1 < ${FILESDIR}/${PN}-1.5.24-rpath.patch || die
 	patch -p0 < ${FILESDIR}/${PN}-1.5.27-scram.patch || die
-	automake || die
+	libtoolize --copy --force
+	aclocal -I cmulocal || die
+	automake --add-missing || die
 	autoconf || die
 }
 
