@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/webapp-config/Attic/webapp-config-1.1.ebuild,v 1.2 2004/04/24 14:38:09 mholzer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/webapp-config/Attic/webapp-config-1.5.ebuild,v 1.1 2004/04/28 22:14:49 stuart Exp $
 
 DESCRIPTION="Gentoo's installer for web-based applications"
 HOMEPAGE="http://www.gentoo.org/"
@@ -20,7 +20,8 @@ RDEPEND="sys-apps/grep
 S=${WORKDIR}/${P}
 
 src_compile () {
-	cd doc && make man
+	# do nothing
+	echo > /dev/null
 }
 
 src_install () {
