@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/mtoolsfm/Attic/mtoolsfm-1.9.3.ebuild,v 1.1 2003/09/17 03:54:28 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/mtoolsfm/Attic/mtoolsfm-1.9.3.ebuild,v 1.6 2003/09/17 14:03:50 lanius Exp $
 
 inherit eutils
 
