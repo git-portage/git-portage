@@ -1,5 +1,10 @@
 date 18 Feb 2001
 
+upd sys.apps/net-tools-1.57-r2 to 1.59
+achim
+This release fixes some buffer overflow security issues
+You should update
+
 upd sys-devel/automake-1.4-r2 to 1.4d
 achim
 
