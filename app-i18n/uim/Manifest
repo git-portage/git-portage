@@ -5,6 +5,7 @@ MD5 18acee6c4d7c6c7f8ef204bc9fc30f57 uim-0.4.1.ebuild 1785
 MD5 352ee3ea245c04721d96a79c5e5bc3a6 uim-0.4.5-r1.ebuild 2639
 MD5 13b00719e566723c9d684cac75c7439e uim-0.4.5.ebuild 2267
 MD5 6d242be81b4f8e51e63c5997d12f4523 uim-0.4.2.1.ebuild 1795
+MD5 4244e86ed4748845f3424ba855ab2ccf uim-0.4.5.1.ebuild 2263
 MD5 2fe33c163792c93e1024bc5f17ee381b uim-0.4.6_alpha1.ebuild 2672
 MD5 43709db248e2be1d40952ce99d3cae00 files/uim-gtk-query-immodules-gentoo.diff 552
 MD5 bb951055d72fd152ee21f5f8cfc9140f files/digest-uim-0.4.1 61
@@ -14,3 +15,4 @@ MD5 00537e2c63ca679a4889917d52b74a60 files/digest-uim-0.4.2.1 63
 MD5 fc4ac83ce1c4a273be674bbcdb3dea5b files/digest-uim-0.4.5 62
 MD5 9a217f32ead72ea9956d7c5eb90ca610 files/digest-uim-0.4.5-r1 128
 MD5 9c0341999a72cda7ff17ef9e87383660 files/digest-uim-0.4.6_alpha1 68
+MD5 a7a77bd306695255ca9d2a378b599816 files/digest-uim-0.4.5.1 64
