@@ -5,9 +5,9 @@ MD5 de858e99fa93001e17493107a1376237 libfwbuilder-2.0.0.ebuild 823
 MD5 f68c3458614347e77b47ee4fe9c25101 libfwbuilder-2.0.2.ebuild 768
 MD5 7e1bf89f3194dd95ff3c575d0725d935 libfwbuilder-2.0.4.ebuild 768
 MD5 f60ab3583d0ba938926acb6d0b04e916 libfwbuilder-1.0.2-r2.ebuild 954
-MD5 5b3d2cde720dfaf2882fbb9e72dad676 ChangeLog 6468
+MD5 7a5f0fa5e590e8ffb70979f0bf65f06b ChangeLog 6462
 MD5 37236013e0d26d43c6bff35a8a48e8ec metadata.xml 220
-MD5 88909765e6882784c0f4ca31534f7f00 libfwbuilder-2.0.6.ebuild 768
+MD5 4409c1d17db34ac9b702f7b721368a0a libfwbuilder-2.0.6.ebuild 762
 MD5 20fe4291e581b225cb055f6751cefa40 libfwbuilder-2.0.1.ebuild 768
 MD5 2cdda8f867cfe8664c4630fe62aa1099 files/digest-libfwbuilder-1.0.2-r1 72
 MD5 18d017187b228dd614d7ae00283f788a files/digest-libfwbuilder-1.0.2-r2 72
