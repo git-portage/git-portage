@@ -1,5 +1,8 @@
-11 Nov 2000 (drobbins)
-Upgrade fetch feature of ebuild to eliminate partial download problem.
-Perl-5.6.0-r3's tcp and udp tests fail when my iptables-based stateful firewall is up.
-	Is there a safe way to skip these tests?
+[13 Nov 2000 - drobbins]
+	Upgrade fetch feature of ebuild to eliminate partial download problem.
+	Perl-5.6.0-r3's tcp and udp tests fail when my iptables-based stateful firewall is up.
+		Is there a safe way to skip these tests?
+	Fix build-depends feature in ebuild... it uses ${ROOT} to check for build dependencies
+	when it should really ignore ${ROOT}.  ${ROOT} should only be used for runtime deps.
+
 
