@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/tmda/Attic/tmda-1.0.3-r1.ebuild,v 1.3 2004/09/25 19:25:26 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/tmda/Attic/tmda-1.0-r1.ebuild,v 1.1 2004/09/25 19:25:26 ticho Exp $
 
 inherit eutils
 
@@ -20,7 +20,7 @@ src_compile () {
 	# Fix multipart mail handling. (See bug #60367)		-ticho
 	epatch ${FILESDIR}/tmda-1.0-multipart-handling.patch
 
-	./compileall || die "tmda compilation failed"
+	./compileall || die
 }
 
 src_install () {
