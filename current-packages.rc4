@@ -16,8 +16,20 @@
 ./app-arch/rpm/rpm-3.0.6-r1.ebuild
 ./app-arch/unzip/unzip-5.41-r2.ebuild
 ./app-arch/zip/zip-2.3-r1.ebuild
-
+./app-cdr/cdrecord/cdrecord-1.9-r3.ebuild
+./app-doc/gimp-user-manual/gimp-user-manual-2.0.ebuild
+./app-editors/emacs-motif/emacs-motif-20.7-r2.ebuild
+./app-editors/emacs-nogui/emacs-nogui-20.7-r1.ebuild
+./app-editors/emacs-x11/emacs-x11-20.7-r2.ebuild
+#./app-editors/gtk-xemacs/gtk-xemacs-21.1.12_p3.ebuild
 ./app-editors/joe/joe-2.9.5.ebuild
+./app-editors/nedit/nedit-5.1.1-r1.ebuild
+./app-editors/vile/vile-9.2-r1.ebuild
+./app-editors/vim-gtk/vim-gtk-5.7-r3
+./app-emulation/wine/wine-20010326.ebuild
+./app-misc/gfontview/gfontview-0.5.0.ebuild
+./app-misc/lhinv/lhinv-1.1-r1.ebuild
+
 ./app-text/a2ps/a2ps-4.13b-r3.ebuild
 ./app-text/acroread/acroread-4.05.ebuild
 ./app-text/aspell/aspell-0.33.ebuild
@@ -122,6 +134,7 @@
 ./media-libs/t1lib/t1lib-1.0.1-r2.ebuild
 ./media-libs/tiff/tiff-3.5.5-r3.ebuild
 ./media-sound/esound/esound-0.2.22.ebuild
+./media-video/xawtv/xawtv-3.43.ebuild
 ./net-libs/libwww/libwww-5.3.2-r1.ebuild
 ./net-misc/openssh/openssh-2.3.0_p1-r5.ebuild
 ./net-misc/wget/wget-1.5.3-r1.ebuild
@@ -130,7 +143,7 @@
 ./net-www/netscape/netscape-4.76-r2.ebuild
 ./sys-apps/at/at-3.1.8-r2.ebuild
 ./sys-apps/baselayout/baselayout-1.5-r2.ebuild
-./sys-apps/bash/bash-2.04-r3.ebuild
+./sys-apps/bash/bash-2.05.ebuild
 #./sys-apps/busybox/busybox-0.50.ebuild
 ./sys-apps/bzip2/bzip2-1.0.1-r2.ebuild
 ./sys-apps/console-data/console-data-1999.08.29-r2.ebuild
@@ -217,7 +230,7 @@
 ./sys-libs/nss-db/nss-db-2.2-r1.ebuild
 ./sys-libs/pam/pam-0.73-r1.ebuild
 ./sys-libs/pwdb/pwdb-0.61-r3.ebuild
-./sys-libs/readline/readline-4.1-r2.ebuild
+./sys-libs/readline/readline-4.2.ebuild
 ./sys-libs/slang/slang-1.4.4.ebuild
 ./sys-libs/zlib/zlib-1.1.3-r2.ebuild
 ./x11-base/xfree/xfree-4.0.3.ebuild
