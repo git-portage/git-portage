@@ -1,8 +1,11 @@
-MD5 6671104aae7d2de6b671ace86b3f0f15 ChangeLog 2413
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 7b12e96b9454c6ca2fec0d7394727353 ChangeLog 2413
 MD5 947886de3129e5cdef1c72ab2b2e2e8e log4c-1.0.6-r1.ebuild 1018
 MD5 ef3ee7cb4b111c01065c297b1a00dc5a log4c-1.0.6.ebuild 1027
-MD5 37f731a698e6d886e981f545d7b1fd9b log4c-1.0.11.ebuild 1478
-MD5 fe96be7d4751225e22c45a7ef5bed361 log4c-1.0.12.ebuild 1170
+MD5 5a47e3be5da904bb56d545d7b4a203de log4c-1.0.11.ebuild 1478
+MD5 097e727fbace3c201e4fb2101e14075b log4c-1.0.12.ebuild 1140
 MD5 4eafc1e08f52712fd036e73730b0a172 metadata.xml 435
 MD5 fcc031971422d4234f3de52e34fcf256 files/digest-log4c-1.0.6 63
 MD5 fcc031971422d4234f3de52e34fcf256 files/digest-log4c-1.0.6-r1 63
@@ -12,3 +15,10 @@ MD5 028648da7dc4850b5dbc3ec0469eba94 files/makefile.doc.in.patch 352
 MD5 81e6117c525d7118531b1868a13738fc files/log4c_1.0.11_test.patch 464
 MD5 1902a2badd2a965f9e4072f4b6e7adfe files/makefile.doc.am.patch 350
 MD5 fef7d3e32cce5efd15a56a6dcff9c4d1 files/digest-log4c-1.0.12 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD8DBQFBPS04mdTrptrqvGERArSGAJ4kLbVaSsbFiYeiMmTgI+jv1mrdpgCcD6QG
+C9pVx/ziW64t3iLsqrEGcew=
+=+LD6
+-----END PGP SIGNATURE-----
