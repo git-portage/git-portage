@@ -1,0 +1,4 @@
+MD5 2f1840d37b52c9b7e6954e2efb7fc406 hardlink++-0.02.ebuild 600
+MD5 84a1c00d3dcb95d9c619a4e68a945f76 files/hardlink++-0.02-gcc34-optimize-help.patch 1877
+MD5 967cd8f8801983fa8efb0b3a9b8a445d files/digest-hardlink++-0.02 63
+MD5 2b45a799b2462929aedb9d5de1125c6a files/hardlink++-0.02-sane-makefile.patch 413
