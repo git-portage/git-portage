@@ -1,5 +1,13 @@
 date 05 Feb 2001
 
+new app-text/acroread-4.05
+achim
+Adobe's PDF reader
+
+new kde-apps/kdevelop-1.4_beta2
+achim
+Requires kde-2.1_beta2
+
 upd media-sound/nas-1.4.1 to 1.4.1-r1
 achim
 fixed a config bug
