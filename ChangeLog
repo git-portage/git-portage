@@ -1,3 +1,10 @@
+date 24 Nov 2000
+
+del sys-apps/mkisofs-1.13-r1
+drobbins
+This program is included in app-cdr/cdrecord and we don't
+especially need it in sys-apps
+
 date 23 Nov 2000
 
 new sys-apps/ucspi-tcp-0.88

@@ -363,7 +363,6 @@
 ./sys-apps/less/less-358-r1.ebuild
 ./sys-apps/lilo/lilo-21.6.ebuild
 ./sys-apps/man/man-1.5.1h-r1.ebuild
-./sys-apps/mkisofs/mkisofs-1.13-r1.ebuild
 ./sys-apps/modutils/modutils-2.3.17.ebuild
 ./sys-apps/most/most-4.9.0-r1.ebuild
 ./sys-apps/net-tools/net-tools-1.57-r1.ebuild
