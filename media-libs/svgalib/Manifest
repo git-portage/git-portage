@@ -1,6 +1,9 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5521852e3ebf7c90a8670fa0560b4140 svgalib-1.9.19-r1.ebuild 4919
-MD5 a07070121adaa101ebc06198b7505c82 svgalib-1.9.19-r3.ebuild 5253
-MD5 0ccf96403268720667d7bf32b84ace6f ChangeLog 9743
+MD5 45ec63055b2ba83575acbf22caa82d7d svgalib-1.9.19-r3.ebuild 5355
+MD5 6f7e73a7ae29815ecbb13f4aeb6a3d27 ChangeLog 9961
 MD5 1652522405f5936eb29776ef8d5ffa5b metadata.xml 310
 MD5 71fa9630e100dc3a6ce8672b4b4b2cff files/digest-svgalib-1.9.19-r1 66
 MD5 71fa9630e100dc3a6ce8672b4b4b2cff files/digest-svgalib-1.9.19-r3 66
@@ -13,3 +16,10 @@ MD5 91fa4baff3dfb211bcb57a068ed7495f files/svgalib-1.9.19-pic.patch 422
 MD5 c136e25a99e0681344511eef09d410e6 files/svgalib-1.9.19-dont-touch-ld.conf.patch 350
 MD5 4a5014126880edffad4f4f209e3e7e68 files/svgalib-1.9.19-linux2.6.patch 7776
 MD5 627fcf9d82cd93cddcdef96a00248260 files/svgalib-1.9.18-utils-include.patch 413
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFB8+c3iJcSIUGNthERAkgkAKCPCi+NvZy1AP1XmZMBdYRlC0YPswCfcKiW
+CfHhS9R7yBM1nAIM2Qx+b7M=
+=aavt
+-----END PGP SIGNATURE-----
