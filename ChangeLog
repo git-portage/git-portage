@@ -1,3 +1,7 @@
+18.09.2000
+	- Fixed qt path in /etc/profile		(drobbins)
+	- ebuild now sources /etc/profile	(drobbins)
+
 16.09.2000
 
 	- Fixed net-www/netscape wrappers	(drobbins)
