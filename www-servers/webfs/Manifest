@@ -1,14 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 d712684e6675b889ea234e7376e970af webfs-1.20.ebuild 745
-MD5 9fc576f45c704e542670b3546d241824 ChangeLog 1525
+MD5 a2b9525c9f1ebe0c59a2ced674a2c053 webfs-1.21.ebuild 978
+MD5 dabb760f433284aeb6209a1d7817ce4a webfs-1.20.ebuild 780
+MD5 89031aed664e1de1925b1abd4c6311ae ChangeLog 1810
 MD5 4a186842848d9c384e2d12785ba426bc metadata.xml 165
+MD5 94dac2cb13f5eabedc2f0c8b94a0741d files/webfs.confd 606
 MD5 579ace48be13da5a18919374112e42c3 files/digest-webfs-1.20 61
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFCE1fJEZCkKN40op4RArugAJ44V5vsTgLiuVgXiSwUJSWOV7N8rACgo1YR
-PyzAL/epaNDNjxb/I6v/Ufw=
-=OvoA
------END PGP SIGNATURE-----
+MD5 67b1bfcd2840ebff1879c074c71f82c7 files/digest-webfs-1.21 61
+MD5 828f64258544d82f9ae788f3e4742f71 files/webfs.initd 1100
