@@ -1,8 +1,18 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ade421c953a96c4ed89764eb6cfc15db efence-2.4.11.ebuild 972
-MD5 bddcdb4c70281d4d4582aba564dc1ec3 efence-2.4.13.ebuild 972
-MD5 4627f693f8270a4c06da36a91e9f91a3 ChangeLog 1920
+MD5 6efd141ff4bfac54cc51c02c284ebd5c efence-2.4.13.ebuild 971
+MD5 58aee3b84ff333630393534180235c4e ChangeLog 1919
 MD5 f8d10f350e91f30316ea4e1bd1e76470 metadata.xml 254
 MD5 d35a3070c0dd4f13b768a8cf553240c7 files/digest-efence-2.4.11 62
 MD5 a8910bdef00c2a02596e36a53ffbf2d1 files/digest-efence-2.4.13 64
 MD5 e635e4f9c61c0ef39429b3da3647b3e2 files/efence-2.4.11-gentoo.diff 1733
 MD5 dc371b321f0dda8c1f90f2441e7512a9 files/efence-2.4.13-gentoo.diff 1623
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCD1D2EZCkKN40op4RAqFAAKCg22LynecGN3mZWZlrNpx/8+Y6TACfVw8q
+WNZNA4Bwz1DgphevY3GtYOo=
+=j8e+
+-----END PGP SIGNATURE-----
