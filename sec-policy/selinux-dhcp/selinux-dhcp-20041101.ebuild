@@ -1,14 +1,14 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-squid/Attic/selinux-squid-20040925.ebuild,v 1.1 2004/10/23 13:38:50 kaiowas Exp $
+# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-dhcp/Attic/selinux-dhcp-20041101.ebuild,v 1.1 2004/11/13 18:53:52 kaiowas Exp $
 
 inherit selinux-policy
 
-TEFILES="squid.te"
-FCFILES="squid.fc"
+TEFILES="dhcpd.te"
+FCFILES="dhcpd.fc"
 IUSE=""
 
-DESCRIPTION="SELinux policy for squid"
+DESCRIPTION="SELinux policy for dhcp server"
 
 KEYWORDS="~x86 ~ppc ~sparc ~amd64"
 
