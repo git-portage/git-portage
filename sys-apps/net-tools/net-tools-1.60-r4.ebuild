@@ -1,15 +1,16 @@
-# Copyright 1999-2001 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: System Team <system@gentoo.org>
 # Author: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/net-tools/Attic/net-tools-1.60-r1.ebuild,v 1.3 2002/02/27 22:23:56 drobbins Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/net-tools/Attic/net-tools-1.60-r4.ebuild,v 1.1 2002/06/21 23:38:05 azarah Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="standard Linux network tools"
 SRC_URI="http://www.tazenda.demon.co.uk/phil/net-tools/${P}.tar.bz2"
 HOMEPAGE="http://sites.inka.de/lina/linux/NetTools/"
 
-DEPEND="virtual/glibc"
+DEPEND="virtual/glibc
+		nls? ( sys-devel/gettext )"
 
 src_unpack() {
 	unpack ${A}
@@ -21,14 +22,30 @@ src_unpack() {
 	cd man
 	cp Makefile Makefile.orig
 	sed -e "s:/usr/man:/usr/share/man:" Makefile.orig > Makefile
+
+	if [ -z "`use nls`" ]
+	then
+		cd ${S}
+		mv config.h config.h.orig
+		sed 's:\(#define I18N\) 1:\1 0:' config.h.orig > config.h
+
+		mv config.make config.make.orig
+		sed 's:I18N=1:I18N=0:' config.make.orig > config.make
+	fi
+	
 }
 
 src_compile() {
 	# Changing "emake" to "make" closes half of bug #820; configure is run from *inside*
 	# the Makefile, sometimes breaking parallel makes (if ./configure doesn't finish first) 
+	
 	make || die	
-	cd po
-	make || die
+
+	if [ "`use nls`" ]
+	then
+		cd po
+		make || die
+	fi
 }
 
 src_install() {
@@ -38,11 +55,17 @@ src_install() {
 	do
 		mv ${D}/sbin/${i} ${D}/bin
 	done
+	dodir /usr/bin
 	dosym /bin/hostname /usr/bin/hostname
 	if [ -z "`use bootcd`" ] && [ -z "`use build`" ]
 	then
 		dodoc COPYING README README.ipv6 TODO
 	else
-		rm -rf ${D}/usr/share
+		#only install /bin/hostname
+		rm -rf ${D}/usr
+		rm -rf ${D}/sbin
+		rm -f ${D}/bin/{domainname,netstat,dnsdomainname}
+		rm -f ${D}/bin/{ypdomainname,nisdomainname}
 	fi
 }
+
