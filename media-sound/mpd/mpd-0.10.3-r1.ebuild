@@ -1,27 +1,30 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/Attic/mpd-0.9.4.ebuild,v 1.5 2004/05/04 02:06:59 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/Attic/mpd-0.10.3-r1.ebuild,v 1.1 2004/05/24 22:04:03 ferringb Exp $
 
-IUSE="oggvorbis mad"
+IUSE="oggvorbis mad aac audiofile ipv6 flac"
 
 DESCRIPTION="Music Player Daemon (mpd)"
 SRC_URI="mirror://sourceforge/musicpd/${P}.tar.gz"
 RESTRICT="nomirror"
 HOMEPAGE="http://www.musicpd.org"
 
-KEYWORDS="x86 ~amd64"
+KEYWORDS="x86 ~amd64 ~sparc"
 SLOT="0"
 LICENSE="GPL-2"
 
 DEPEND="oggvorbis? ( media-libs/libvorbis )
 	mad? ( media-sound/madplay )
-	>=media-libs/flac-1.1.0
+	aac? ( >=media-libs/faad2-2.0_rc2 )
+	audiofile? ( media-libs/audiofile )
+	flac? ( >=media-libs/flac-1.1.0 )
+	media-libs/libid3tag
 	>=media-libs/libao-0.8.4
 	sys-libs/zlib"
 
 src_compile() {
 	local myconf
-	myconf=""
+	myconf="`use_enable aac` `use_enable audiofile` `use_enable ipv6` `use_enable flac`"
 
 	use oggvorbis \
 		|| myconf="${myconf} --disable-ogg  --disable-oggtest \
@@ -53,6 +56,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "libao has issues with the ALSA drivers, please refer to the FAQ"
-	einfo "http://musicpd.sourceforge.net/faq.php"
+	einfo "libao prior to 0.8.4 has issues with the ALSA drivers, please refer to the FAQ"
+	einfo "http://musicpd.sourceforge.net/faq.php if you are having problems."
 }
