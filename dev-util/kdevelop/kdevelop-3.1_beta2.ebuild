@@ -1,15 +1,15 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/kdevelop/Attic/kdevelop-3.1_beta1.ebuild,v 1.3 2004/07/19 22:04:46 aliz Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/kdevelop/Attic/kdevelop-3.1_beta2.ebuild,v 1.1 2004/07/22 20:49:17 carlo Exp $
 
 inherit python kde eutils
 
-MY_P=${PN}-3.0.91
+MY_P=${PN}-3.0.92
 S=${WORKDIR}/${MY_P}
 
 IUSE="doc java python ruby"
 DESCRIPTION="KDevelop is an easy to use C/C++ IDE for Unix. It supports KDE/Qt, GNOME, plain C and C++ projects."
-SRC_URI="mirror://kde/unstable/3.2.91/src/${MY_P}.tar.bz2"
+SRC_URI="mirror://kde/unstable/3.2.92/src/${MY_P}.tar.bz2"
 HOMEPAGE="http://www.kdevelop.org"
 LICENSE="GPL-2"
 KEYWORDS="~x86 ~sparc ~ppc ~amd64"
@@ -30,8 +30,7 @@ src_unpack() {
 	kde_src_unpack
 
 	if use amd64; then
-		epatch ${FILESDIR}/${P}-amd64.patch
-		epatch ${FILESDIR}/${P}-bdb-fPIC.patch
+		epatch ${FILESDIR}/${P/beta?/beta1}-bdb-fPIC.patch
 	fi
 }
 
