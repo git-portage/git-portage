@@ -1,0 +1,6 @@
+MD5 12a6ac7dcfc7f68bda3cc94a3032a4ae nam-1.9.ebuild 1840
+MD5 12be363e42e9d4ebe433fb568a8f7446 nam-1.10.ebuild 1845
+MD5 343bf4790e73307088d986e95861bb34 files/digest-nam-1.10 65
+MD5 5756ecdae1a470c0ff4fefe3c2674a7c files/nam-1.9-fixcasts.patch 2651
+MD5 b0681b775f16e7e859c5492458f4abff files/digest-nam-1.9 64
+MD5 cb78dcf6a801f3bb282167c1ef73ed79 files/nam-1.9-correct_ettk.patch 304
