@@ -53,7 +53,7 @@ fi
 mypackages="`grep -v "\#.*" $mylist`"
 
 
-mkdir -p $ROOT/tmp/portage-log
+install -m1777 -d $ROOT/tmp/portage-log
 
 echo "$C_HILITE>>>$C_NORMAL Building from ${mylist}..."
 for i in $mypackages
