@@ -1,0 +1,9 @@
+#
+# $Id: make.defaults.sparc,v 1.2 2002/04/18 21:06:28 murphy Exp $
+#
+# $Log: make.defaults.sparc,v $
+# Revision 1.2  2002/04/18 21:06:28  murphy
+# More changes
+#
+#
+ARCH="sparc64"
