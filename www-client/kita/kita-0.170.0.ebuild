@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/kita/Attic/kita-0.170.0.ebuild,v 1.2 2004/09/03 23:24:08 pvdabeel Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/kita/Attic/kita-0.170.0.ebuild,v 1.1 2004/09/08 13:40:12 usata Exp $
 
 IUSE=""
 

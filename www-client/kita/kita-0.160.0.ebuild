@@ -1,16 +1,16 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/kita/Attic/kita-0.150.0.ebuild,v 1.4 2004/07/17 09:46:48 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/kita/Attic/kita-0.160.0.ebuild,v 1.1 2004/09/08 13:40:12 usata Exp $
 
 IUSE=""
 
 DESCRIPTION="Kita - 2ch client for KDE"
 HOMEPAGE="http://kita.sourceforge.jp/"
-SRC_URI="mirror://sourceforge.jp/kita/9881/${P}.tar.gz"
+SRC_URI="mirror://sourceforge.jp/kita/10406/${P}.tar.gz"
 
 LICENSE="GPL-2 BSD"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="x86 ppc64 ppc"
 
 RDEPEND="virtual/libc
 	>=x11-libs/qt-3.1
@@ -34,7 +34,7 @@ DEPEND="${RDEPEND}
 # see http://dev.gentoo.org/~liquidx/ebuildmistakes.html
 
 src_compile() {
-	addwrite ${QTDIR}/etc
+	addpredict ${QTDIR}/etc
 
 	econf || die
 	emake -j1 || die
