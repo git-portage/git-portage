@@ -1,3 +1,5 @@
-MD5 3e72ac56b421a144bb779c4dbcaff2f6 ChangeLog 1688
-MD5 d5b436c4faf05c19be3d44626a05d58d ucl-1.01-r1.ebuild 757
+MD5 d7b67bc573d739e2be2796ecf9507937 ChangeLog 1794
+MD5 db124a6e9e00c3d059fde34654540343 ucl-1.01-r1.ebuild 756
+MD5 79e76f99ea4d701b8138f4bd9a757a3b ucl-1.02.ebuild 759
+MD5 bfaf4c0eb6ba1220fbc9d67e749ea39c files/digest-ucl-1.02 60
 MD5 b6bd20c267625c3e0f31d141bdcc466a files/digest-ucl-1.01-r1 60
