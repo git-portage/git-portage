@@ -1,13 +1,12 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/abiword/Attic/abiword-1.99.5.ebuild,v 1.4 2003/09/08 07:23:08 msterret Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/abiword/Attic/abiword-2.0.0.ebuild,v 1.1 2003/09/13 14:04:04 foser Exp $
 
-inherit eutils debug
+inherit eutils
 
 IUSE="spell jpeg xml2 gnome"
 
 S=${WORKDIR}/${P}/abi
-# REMIND : usually -${PV} needs to be added
 S_P=${WORKDIR}/${PN}-plugins
 
 DESCRIPTION="Fully featured yet light and fast cross platform word processor"
@@ -31,9 +30,9 @@ RDEPEND="virtual/x11
 	>=dev-libs/fribidi-0.10.4
 	jpeg?  ( >=media-libs/jpeg-6b-r2 )
 	( xml2? >=dev-libs/libxml2-2.4.10 : dev-libs/expat )
-	spell? ( >=app-text/enchant-0.1 )
-	gnome? ( >=gnome-base/libgnomeui-2.2
-		>=gnome-base/libgnomeprintui-2.2.1
+	spell? ( >=app-text/enchant-1 )
+	gnome? ( >=gnome-base/libgnomeui-2.2 
+		>=gnome-base/libgnomeprintui-2.2.1 
 		>=gnome-extra/gal-1.99 )"
 
 DEPEND="${RDEPEND}
@@ -44,22 +43,15 @@ DEPEND="${RDEPEND}
 #	perl?  ( >=dev-lang/perl-5.6 )
 # perl seems broken
 
-src_unpack() {
-
-	unpack ${A}
-
-	epatch ${FILESDIR}/${P}-cast_fix.patch
-
-}
-
 src_compile() {
+
 	./autogen.sh
 
 	# this is a hack since I don't want to go hack in the gnome-vfs headerfiles.
 	# The issue is about gnome-vfs containing "long long" which makes gcc 3.3.1 balk
 	cp configure configure.old
-	cat configure.old |sed s:-pedantic::g >configure
-	rm -f configure.old
+	cat configure.old |sed s:-pedantic::g >configure	
+	rm -f configure.old 
 
 	econf \
 		`use_enable gnome` \
@@ -68,7 +60,7 @@ src_compile() {
 		--enable-bidi \
 		--without-ImageMagick \
 		--disable-scripting \
-		--with-sys-wv || die
+		--with-sys-wv || die  
 
 	emake all-recursive || die
 
@@ -77,18 +69,22 @@ src_compile() {
 	cd ${S_P}
 
 	./nextgen.sh
-	econf --enable-all --with-abiword=${S} || die
+	econf \
+		--enable-all \
+		--with-abiword=${S} \
+		--without-ImageMagick || die
 	emake || die
 
 }
 
-src_install() {
+src_install() {  
+
 	dodir /usr/{bin,lib}
-
+	
 	einstall PERLDEST=${D} || die
-
-	dosed "s:${D}::g" /usr/bin/AbiWord-2.0
-
+	
+	dosed "s:Exec=abiword:Exec=abiword-2.0:" /usr/share/applications/abiword.desktop
+	
 	rm -f ${D}/usr/bin/abiword-2.0
 	rm -f ${D}/usr/bin/abiword
 	dosym AbiWord-2.0 /usr/bin/abiword-2.0
@@ -100,11 +96,5 @@ src_install() {
 	cd ${S_P}
 
 	make DESTDIR=${D} install || die
-
-	# Install icon and .desktop for menu entry
-	insinto /usr/share/pixmaps
-	newins ${WORKDIR}/${P}/abidistfiles/icons/abiword_48.png AbiWord.png
-	insinto /usr/share/applications/
-	doins ${FILESDIR}/AbiWord2.desktop
 
 }
