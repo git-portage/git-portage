@@ -1,4 +1,6 @@
 MD5 2d6d7007bf7c05410e091a9456167ad1 ChangeLog 864
 MD5 dffd46174e78b327c834fc3e4b1cf848 metadata.xml 160
 MD5 1ea0923f2ec37bd72043c08b675f554b pspresent-1.1.ebuild 804
+MD5 c25eb1c98dd9ffae4212779cd47a65bb pspresent-1.2.ebuild 805
 MD5 e8d36b988969f7d4ff8e3a45e05ca0f3 files/digest-pspresent-1.1 64
+MD5 1ddede6fd39817c8ff4af2ff97721eb8 files/digest-pspresent-1.2 64
