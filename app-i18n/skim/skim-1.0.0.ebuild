@@ -1,10 +1,11 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/skim/Attic/skim-0.9.5.ebuild,v 1.1 2004/08/14 00:53:20 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/skim/Attic/skim-1.0.0.ebuild,v 1.1 2004/09/10 17:48:06 usata Exp $
 
 DESCRIPTION="Smart Common Input Method (SCIM) optimized for KDE"
 HOMEPAGE="http://scim.freedesktop.org/Software/ScimKDE"
-SRC_URI="mirror://sourceforge/scim/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/scim/${P}.tar.bz2
+	http://freedesktop.org/~cougar/skim/downloads/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
