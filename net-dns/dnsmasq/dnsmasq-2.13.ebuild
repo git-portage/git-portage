@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/dnsmasq/Attic/dnsmasq-2.12.ebuild,v 1.1 2004/08/12 23:35:38 avenj Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/dnsmasq/Attic/dnsmasq-2.13.ebuild,v 1.1 2004/08/14 18:36:59 avenj Exp $
 
 MY_P="${P/_/}"
 MY_PV="${PV/_rc*/}"
