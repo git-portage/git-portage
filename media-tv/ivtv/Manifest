@@ -1,18 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 9ae322027f63420b0508cae24306924c ivtv-0.1.9-r4.ebuild 3493
-MD5 62f20d68f54f2a8ec4bef2dd90876c0e ivtv-0.2.0_rc1.ebuild 3355
-MD5 b71d72ee2f292d2bd1f4a19abec442fe ChangeLog 1667
+MD5 348d46612b74f343dfc8fda8fdc20957 ivtv-0.2.0_rc1.ebuild 3521
+MD5 896ddc50ae9fd27e6358ca64f32759f0 ChangeLog 1792
 MD5 1992ed55b53c47d18457afada6ec3445 ivtv-0.1.9-r3.ebuild 3297
 MD5 212f198236ed9fef7b10b46f8cb80c63 metadata.xml 446
 MD5 706947f1027708969a61f7b5dcfb3727 files/digest-ivtv-0.2.0_rc1 127
 MD5 0b541d724c1b04481ef21b872a7631c9 files/digest-ivtv-0.1.9-r3 191
 MD5 c30318ac79a607f6ad308208a5987c3b files/digest-ivtv-0.1.9-r4 129
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBcFS3MSkoRwEucGERAvNYAJwLRgpBWlQ5oWsiydDxPPHSF3mjTACg2cng
-FFJQnzUgcas8IMhrOoO96RM=
-=2Gel
------END PGP SIGNATURE-----
