@@ -4,8 +4,8 @@ MD5 2bd08076067fdbc1cda3cddffb65faee kdepim-3.2.3.ebuild 753
 MD5 d2c30ca6c81a82a987adf7269b936505 kdepim-3.3.0_rc2.ebuild 555
 MD5 9b804c502e4f3943f9321f8e1455675d kdepim-3.2.2.ebuild 763
 MD5 12e7aff5d2d743340e14fb119eec3d19 kdepim-3.3.0.ebuild 571
-MD5 cd9d59e6241a7c9aeba4f5d052cae407 kdepim-3.3.0-r1.ebuild 461
-MD5 b15ea12f96b97119252208bc149f0eb0 ChangeLog 13355
+MD5 8db7a0fc825b84db4ff586a3128f9f5d kdepim-3.3.0-r1.ebuild 560
+MD5 fd55685002fb2830ca8aa540d2127bed ChangeLog 13352
 MD5 14889ab75f97d76e58b0c1154e7683a9 metadata.xml 161
 MD5 f0398e0b633090bd83c16d3fb71c4378 kdepim-3.2.1.ebuild 843
 MD5 4eeb577118c8fce3af1c295c0b2ec0c3 files/kdepim-3.3.0-spam-assistant.patch 23551
