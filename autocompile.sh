@@ -8,7 +8,7 @@ C_OK=$'\e[32m'
 C_NO=$'\e[31m'
 PORTDIR=/usr/portage
 LOGDIR=$ROOT/tmp/portage-log
-STEPS="check fetch clean unpack compile install qmerge clean"
+STEPS="check fetch clean compile install qmerge clean"
 #STEPS="check unmerge"
 
 do_step() {
