@@ -9,16 +9,3 @@ MD5 b380d6440fe49096f7705d6f1adf01ee files/festival-1.4.3-asterisk.patch 3028
 MD5 70fe1c867e8782c7ff288056677fda0c files/festival-gcc3.3.diff 5257
 MD5 f38f904b9dfc77c788a63f51ccd2abb7 files/digest-festival-1.4.3-r1 863
 MD5 10ecd75c3f74d10a67f5c491aa2b073b files/festival.rc 632
-MD5 705d8ba12b587573c2fb08f6b2559821 festival/lib/dicts/cmu/Makefile 4967
-MD5 d476dddffb8d5f1b6d43074b105fd1cf festival/lib/dicts/cmu/cmudict_extensions.scm 19469
-MD5 6187816df9a602de3b6f4897ea7631e5 festival/lib/dicts/cmu/cmulex.scm 8347
-MD5 04ec91ed969ac3b8ea3a6001625162e6 festival/lib/dicts/cmu/cmudict-0.4.out 5096352
-MD5 d966db8295b489d3f7eb1a32010eb05d festival/lib/dicts/cmu/cmudict-0.4.scm 3745805
-MD5 cffb191f8127dad0faca79ba2522ed78 festival/lib/dicts/cmu/cmu2ft 536
-MD5 4aa50b9b13e258286e0e92dee91574d5 festival/lib/dicts/cmu/cmudict-0.4.diff 120798
-MD5 4b054d078511cc58525f6a2f0d1fa823 festival/lib/dicts/cmu/COPYING 2258
-MD5 0a5525032e0b27f1ea0284913aff1e77 festival/lib/dicts/cmu/cmu_lts_rules.scm 996671
-MD5 7e4d4bcd6d97a848608f36796ad8aa1a festival/lib/voices/english/don_diphone/lpcdiphs.bin 728320
-MD5 6b5dd73367c34c1f55bd952d43dac6d4 festival/lib/voices/english/don_diphone/diphlocs.txt 55338
-MD5 8bda84342a401d263feed866b3e436a8 festival/lib/voices/english/don_diphone/COPYING 2445
-MD5 d4e5cda569a86725abb193bbf094e830 festival/lib/voices/english/don_diphone/festvox/don_diphone.scm 5901
