@@ -11,7 +11,7 @@ upd sys-kernel/linux-sources-2.4.1.19 to 2.4.1.19-r1
 drobbins
 Now with LVM 0.9.1-beta5
 
-upd sys-apps/portage-1.5_pre3 1.5_pre4
+upd sys-apps/portage-1.5_pre3 to 1.5_pre4
 drobbins
 another unmerge fix, portage-maintain now works, tiny API changes
 
