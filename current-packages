@@ -128,6 +128,7 @@
 ./dev-java/jndi/jndi-1.2.1-r1.ebuild
 ./dev-java/mysql-jdbc/mysql-jdbc-1.2.3-r1.ebuild
 ./dev-java/xt/xt-1.ebuild
+-/dev-libs/g-wrap/g-wrap-0.9.5.ebuild
 ./dev-libs/glib/glib-1.2.8-r1.ebuild
 ./dev-libs/gmp/gmp-3.1.ebuild
 ./dev-libs/libpcre/libpcre-3.2-r1.ebuild

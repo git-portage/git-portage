@@ -1,5 +1,6 @@
 18.09.2000
 
+	- New dev-libs/g-wrap 0.9.5		(achim)
 	- New dev-libs/swig 1.3a4		(achim)
 	- New gnome-apps/gnapster-1.3.12	(achim)
 	  [ A napster client for GNOME ]
