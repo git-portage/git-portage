@@ -7,6 +7,7 @@ MD5 d6c127c9979a911ba536d6fd78455441 hardened-dev-sources-2.6.11.ebuild 899
 MD5 a2be8a9836af42c9226f89173d8500ac hardened-dev-sources-2.6.7-r17.ebuild 846
 MD5 8125ec801acf264e6ea064e47e73c305 hardened-dev-sources-2.6.7-r18.ebuild 857
 MD5 73174f8e07b82c5df563b7196f87611c metadata.xml 299
+MD5 c876d04264859d699ec761c4a03cd7ad hardened-dev-sources-2.6.11-r1.ebuild 899
 MD5 2b67045104aea2284aec6ed346af7895 files/digest-hardened-dev-sources-2.6.10 145
 MD5 68f01535106afe7239afd44753eda283 files/digest-hardened-dev-sources-2.6.10-r1 145
 MD5 d5805e215fc5275fa9dfdf06242b68d2 files/digest-hardened-dev-sources-2.6.10-r2 145
@@ -21,3 +22,4 @@ MD5 7872d0af6e27fb6007833b113097bb34 files/hardened-dev-sources-2.6.7-CAN-2004-0
 MD5 3966432dc4fe85d30f801c37737f0e6c files/hardened-dev-sources-2.6.7-ptmx.patch 570
 MD5 8204afea1d572b49a4a80d8da4eef0c9 files/hardened-dev-sources-2.6.7.CAN-2004-0596.patch 1033
 MD5 bc48c226344f94535c3ba2e0ce55bf24 files/hardened-dev-sources-2.6.7.CAN-2004-0816.patch 1694
+MD5 240ef418b4a76a5758c5196f18bb7caf files/digest-hardened-dev-sources-2.6.11-r1 145
