@@ -1,22 +1,31 @@
 [15 Nov 2000 - drobbins]
 	A configfile management system is needed
-	gimp-1.1.29 seems to have problems with perl-5.6.0-r3, some complaint about
-	@INC keeps popping up on the screen.
+
+	[DONE] gimp-1.1.29 seems to have problems with perl-5.6.0-r3, some complaint about
+	@INC keeps popping up on the screen.  Unmerging and remerging gimp after the
+	perl upgrade seemed to solve this problem; so it's probably no biggie.
 
 [14 Nov 2000 - drobbins]
 	[DONE]	Upgrade Gentoo Linux bootdisk to use latest version of grub
-	Replace syslogd and klogd with multilog and gluelog and glueklog
-	Move daemontools and ucspi-tcp to sys-apps, add supervise support to various packages
-	Upgrade default kernel to 2.4.0-test10 with patches?  What does everyone think?
-	We need to add dump/restore to sys-apps -- but the darn thing depends on libtermcap!
+	
+	[IN PROGRESS - by drobbins ] Replace syslogd and klogd with multilog and gluelog and glueklog
+	
+	[IN PROGRESS - by drobbins ] Move daemontools and ucspi-tcp to sys-apps, add supervise support to various packages
+	
+	[ON HOLD] Upgrade default kernel to 2.4.0-test10 with patches?  What does everyone think?
+	
+	[UNASSIGNED] We need to add dump/restore to sys-apps -- but the darn thing depends on libtermcap!
 		(It'll need a patch to link against ncurses instead)
-	Default kernel location should be moved from /boot/bzImage -> /boot/boot/bzImage
+	
+	[ON HOLD (until next release)] Default kernel location should be moved from /boot/bzImage -> /boot/boot/bzImage
 
 [13 Nov 2000 - drobbins]
-	Upgrade fetch feature of ebuild to eliminate partial download problem.
-	Perl-5.6.0-r3's tcp and udp tests fail when my iptables-based stateful firewall is up.
+	[UNASSIGNED] Upgrade fetch feature of ebuild to eliminate partial download problem.
+	
+	[UNASSIGNED] Perl-5.6.0-r3's tcp and udp tests fail when my iptables-based stateful firewall is up.
 		Is there a safe way to skip these tests?
-	Fix build-depends feature in ebuild... it uses ${ROOT} to check for build dependencies
+	
+	[UNASSIGNED] Fix build-depends feature in ebuild... it uses ${ROOT} to check for build dependencies
 	when it should really ignore ${ROOT}.  ${ROOT} should only be used for runtime deps.
 
 
