@@ -1,3 +1,9 @@
+date 5 June 2001
+
+new dev-util/mergetrees-0.9.3
+Uses diff3 to do a three-way directory merge
+aj
+
 date 4 June 2001
 
 new app-games/sdlroids-1.3.4
