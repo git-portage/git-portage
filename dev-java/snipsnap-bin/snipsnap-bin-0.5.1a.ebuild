@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/snipsnap/Attic/snipsnap-0.5.1a.ebuild,v 1.3 2004/06/24 22:42:49 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/snipsnap-bin/Attic/snipsnap-bin-0.5.1a.ebuild,v 1.1 2004/07/30 21:52:34 axxo Exp $
 
 DESCRIPTION="A blog/wiki personal content management system"
 HOMEPAGE="http://snipsnap.org"
-SRC_URI="ftp://snipsnap.org/${PN}/${P}-20040123.tgz"
+SRC_URI="ftp://snipsnap.org/${PN/-bin}/${P/-bin}-20040123.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="x86 ~ppc"
@@ -12,10 +12,10 @@ IUSE=""
 DEPEND=">=virtual/jre-1.3"
 
 src_install() {
-	dodir /opt/${PN}
-	cp -pR * ${D}/opt/${PN}
+	dodir /opt/${PN/-bin}
+	cp -pR * ${D}/opt/${PN/-bin}
 
-	exeinto /opt/${PN}
+	exeinto /opt/${PN/-bin}
 	newexe ${FILESDIR}/${PV}-run.sh run.sh
 	exeinto /etc/init.d
 	newexe ${FILESDIR}/${PV}-snipsnap snipsnap
