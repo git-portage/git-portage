@@ -1,0 +1,7 @@
+MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
+MD5 4764f309f161fc28832ab9229bd4ab69 jetty-4.2.17.ebuild 2921
+MD5 cdee67aa053ec26b723917bb2ba022cf files/digest-jetty-4.2.17 70
+MD5 c06bb0261951f980b4c2609682d49972 files/4.2.17/21jetty 52
+MD5 a381ae9ba82a2b10ea75e22acfafeedc files/4.2.17/jetty 948
+MD5 0ab3a07453141d8fab987dcd1f0cfd9e files/4.2.17/jetty.conf 41
+MD5 fc311f1151537917ef01a8f12b973858 files/4.2.17/jetty.init 1004
