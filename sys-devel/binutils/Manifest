@@ -42,10 +42,6 @@ MD5 c013cc4711373f43cb426e8b08d69ae1 files/2.13/binutils-2.13.90.0.18-testsuite-
 MD5 feebd067c397d519e1ca9340606968a8 files/2.13/binutils-2.13.90.0.20-array-sects-compat.patch 1054
 MD5 c98edbd5a87f00832a367a40a6e576d1 files/2.14/binutils-2.14.90.0.1-eh-frame-ro.patch 17942
 MD5 e941bf2e41367989d389e2988672f87a files/2.14/binutils-2.14.90.0.1-sparc-nonpic.patch 3147
-MD5 d232bcf016de028994efd262aa2ff401 files/2.14/binutils-2.14.90.0.4-cfi.patch 74784
-MD5 e7283a4967ce5101a016b31e747e8442 files/2.14/binutils-2.14.90.0.4-cfi2.patch 18449
-MD5 42ecd945c2269a792b9b7aea542b9a16 files/2.14/binutils-2.14.90.0.4-cfi3.patch 13929
-MD5 613770b55db9f6e3c11f040a94c9c4ea files/2.14/binutils-2.14.90.0.4-cfi4.patch 11909
 MD5 04ed3642c4bebee3fe6de9e9e6e2f23b files/2.14/binutils-2.14.90.0.4-eh-frame-ro.patch 16503
 MD5 60ff948d89725566178e8149375c3f31 files/2.14/binutils-2.14.90.0.4-gas-execstack.patch 3379
 MD5 69161dd93a78ddede56256e0de28d282 files/2.14/binutils-2.14.90.0.4-gas-pred.patch 1104
@@ -95,7 +91,7 @@ MD5 8f619fc0c409a5ba768f126f172ee6bc files/2.15/05_all_binutils-2.15-elf32-arm-t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.9.10 (GNU/Linux)
 
-iD8DBQFBdoi/HTu7gpaalycRAg/dAJ9vp/mciS136g5GK/MmNxEwSAzfigCfXUy6
-ysfuVEg3yMW3R3JtGpJJmEg=
-=tf8M
+iD8DBQFBdokoHTu7gpaalycRAmREAJ9n128l8hUDr/HiOmUUZ/XG/iP9AQCfS9H1
+zbCOKfCIckeI62G5TFM97eA=
+=I/D6
 -----END PGP SIGNATURE-----
