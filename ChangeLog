@@ -1,4 +1,8 @@
-date 21 Dec 2000
+date 20 Dec 2000
+
+upd net-www/cvsweb-1.93 to 1.93-r1
+drobbins
+Fixed cvsweb.conf and a ${P} was set wrong.
 
 upd net-misc/openssh-2.3.0_p1-r1 to 2.3.0_p1-r2
 drobbins
@@ -12,8 +16,6 @@ drobbins
 Now properly looks in /etc/rsync rather than just /etc.  The
 --sysconfdir option didn't work as expected, but a little sed
 did the trick.
-
-date 20 Dec 2000
 
 new net-mail/postfix-20001217
 jerry
