@@ -1,4 +1,6 @@
-MD5 1ec53727db955bf3cf678bf7fbf48987 ChangeLog 654
+MD5 5c416c20b00d1db3cc65eb98e7a5e878 ChangeLog 1558
 MD5 28d0c3bb6c80425620241cff231da8d3 metadata.xml 224
+MD5 393bbe62a8ad8d338d7f66c00d9bd923 xlog-0.9.7.ebuild 732
 MD5 d8b2f26f31a931bb88e33404e4fe61ed xlog-0.9.6.ebuild 831
+MD5 d0afee6be83642f398db70c755d275c8 files/digest-xlog-0.9.7 63
 MD5 4a19ffcb3c1423a645b3c135e94fca43 files/digest-xlog-0.9.6 63
