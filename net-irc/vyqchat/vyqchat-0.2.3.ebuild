@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/vyqchat/Attic/vyqchat-0.2.3.ebuild,v 1.6 2004/06/24 23:09:50 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/vyqchat/Attic/vyqchat-0.2.3.ebuild,v 1.7 2004/07/24 01:14:16 swegener Exp $
 
 inherit eutils
 
@@ -14,22 +14,25 @@ KEYWORDS="~x86 ~ppc"
 IUSE="arts"
 
 DEPEND=">=x11-libs/qt-3.0
-		arts? ( kde-base/arts )"
+	arts? ( kde-base/arts )"
 
-src_compile() {
-	local myconf
+src_unpack() {
+	unpack ${A}
+	cd ${S}
 
 	epatch ${FILESDIR}/vyqchat_packet_id.patch
+}
 
-	use arts && myconf="--with-arts"
-	./configure  --host=${CHOST} \
-		--prefix=/usr --infodir=/usr/share/info \
-		--mandir=/usr/share/man --with-x \
-		--with-Qt-dir=/usr/qt/3 ${myconf} || die "./configure failed"
-	make || die
+src_compile() {
+	econf \
+		--with-x \
+		--with-Qt-dir=/usr/qt/3 \
+		$(use_with arts) \
+		|| die "econf failed"
+	make || die "make failed"
 }
 
 src_install() {
-	einstall || die
-	dodoc README THANKS NEWS
+	make DESTDIR=${D} install || die "make install failed"
+	dodoc README THANKS NEWS || die "dodoc failed"
 }
