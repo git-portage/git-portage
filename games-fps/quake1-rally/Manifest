@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 01c6dd903f21ba160046564b6dda9635 quake1-rally-1.2.ebuild 994
 MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
-MD5 c6b49b840c90e4a336c21bff0287ed4a ChangeLog 249
-MD5 fd1f05bc3adf2639fda99abe2e27f6d5 quake-rally-1.2.ebuild 897
-MD5 e053b7b67887b99e7f3e70754c9b4450 files/digest-quake-rally-1.2 109
+MD5 93d147ac6cfeeb5c2f864aca867a18c1 ChangeLog 345
+MD5 e053b7b67887b99e7f3e70754c9b4450 files/digest-quake1-rally-1.2 109
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.9.14 (GNU/Linux)
+
+iD8DBQFB6u+LroRuSHgZdywRAptGAKCBYKKGxUqFw3c4thfhbp5P8pGQCwCbByeQ
+CiquG3lK5TH1U3IMjRMU8sI=
+=paGv
+-----END PGP SIGNATURE-----
