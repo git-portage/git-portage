@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/alpha-sources/Attic/alpha-sources-2.4.21-r4.ebuild,v 1.3 2004/04/12 16:36:22 aliz Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/alpha-sources/Attic/alpha-sources-2.4.21-r7.ebuild,v 1.1 2004/05/28 21:26:07 plasmaroo Exp $
 
-#OKV=original kernel version, KV=patched kernel version.  They can be the same.
+# OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
 IUSE="build crypt usagi"
 ETYPE="sources"
@@ -16,14 +16,14 @@ S=${WORKDIR}/linux-${KV}
 
 DESCRIPTION="Full sources for the Gentoo Linux Alpha kernel"
 SRC_URI="mirror://kernel/linux/kernel/v2.4/linux-${OKV}.tar.bz2
-	mirror://gentoo/patches-${KV/r4/r3}.tar.bz2"
+	mirror://gentoo/patches-${KV/7/3}.tar.bz2"
 SLOT="${KV}"
-KEYWORDS="alpha -sparc -x86 -ppc -hppa -mips "
+KEYWORDS="~alpha -sparc -x86 -ppc -hppa -mips"
 
 src_unpack() {
 	unpack ${A}
 	mv linux-${OKV} linux-${KV} || die
-	cd ${WORKDIR}/${KV/r4/r1}
+	cd ${WORKDIR}/${KV/7/1}
 
 	# This is the crypt USE flag, keeps {USAGI/superfreeswan/patch-int/loop-jari}
 	if [ -z "`use crypt`" ]; then
@@ -59,6 +59,15 @@ src_unpack() {
 	cd ${S}
 	epatch ${FILESDIR}/do_brk_fix.patch || die "Failed to patch the do_brk() vulnerability!"
 	epatch ${FILESDIR}/${PN}.CAN-2003-0985.patch || die "Failed to patch mremap() vulnerability!"
+	epatch ${FILESDIR}/${PN}.CAN-2004-0010.patch || die "Failed to add the CAN-2004-0010 patch!"
+	epatch ${FILESDIR}/${PN}.CAN-2004-0075.patch || die "Failed to add the CAN-2004-0075 patch!"
+	epatch ${FILESDIR}/${PN}.CAN-2004-0109.patch || die "Failed to patch CAN-2004-0109 vulnerability!"
+	epatch ${FILESDIR}/${PN}.CAN-2004-0133.patch || die "Failed to add the CAN-2004-0133 patch!"
+	epatch ${FILESDIR}/${PN}.CAN-2004-0177.patch || die "Failed to add the CAN-2004-0177 patch!"
+	epatch ${FILESDIR}/${PN}.CAN-2004-0178.patch || die "Failed to add the CAN-2004-0178 patch!"
+	epatch ${FILESDIR}/${PN}.CAN-2004-0181.patch || die "Failed to add the CAN-2004-0181 patch!"
+	epatch ${FILESDIR}/${PN}.CAN-2004-0394.patch || die "Failed to add the CAN-2004-0394 patch!"
+	epatch ${FILESDIR}/${PN}.CAN-2004-0427.patch || die "Failed to add the CAN-2004-0427 patch!"
 	epatch ${FILESDIR}/${PN}.rtc_fix.patch || die "Failed to patch RTC vulnerabilities!"
 	epatch ${FILESDIR}/${PN}.munmap.patch || die "Failed to apply munmap patch!"
 
