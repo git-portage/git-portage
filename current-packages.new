@@ -390,6 +390,7 @@
 ./sys-apps/shadow/shadow-20000902-r1.ebuild
 ./sys-apps/sharutils/sharutils-4.2.1-r1.ebuild
 ./sys-apps/sysvinit/sysvinit-2.78-r1.ebuild
+./sys-apps/sysklogd/sysklogd-1.4.ebuild
 ./sys-apps/tar/tar-1.13.18.ebuild
 ./sys-apps/tcp-wrappers/tcp-wrappers-7.6-r1.ebuild
 ./sys-apps/texinfo/texinfo-4.0-r1.ebuild
