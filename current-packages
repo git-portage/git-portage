@@ -304,7 +304,7 @@
 ./gnome-apps/nmap/nmap-2.53.ebuild
 ./gnome-apps/powershell/powershell-0.80.ebuild
 ./gnome-apps/users-guide/users-guide-1.2.ebuild
-./gnome-office/abiword/abiword-0.7.10.ebuild
+./gnome-office/abiword/abiword-0.7.11.ebuild
 ./gnome-office/dia/dia-0.86.ebuild
 ./gnome-office/eog/eog-0.5.ebuild
 ./gnome-office/gnome-db/gnome-db-0.0.95.ebuild
@@ -315,6 +315,7 @@
 ./kde-base/kdelibs/kdelibs-1.94.ebuild
 ./kde-base/kdesupport/kdesupport-1.94.ebuild
 ./kde-base/qt/qt-x11-2.2.0.ebuild
+./kde-apps/cervisia/cervisia/cervisia-0.7.1.ebuild
 ./kde-apps/kdeadmin/kdeadmin-1.94.ebuild
 ./kde-apps/kdegraphics/kdegraphics-1.94.ebuild
 ./kde-apps/kdemultimedia/kdemultimedia-1.94.ebuild
