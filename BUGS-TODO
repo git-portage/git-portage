@@ -1,9 +1,9 @@
-[UNASSIGNED]
+[drobbins]
 	The baselayout /etc/fstab shm line should be changed to:
-	swapfs      /dev/shm        swapfs      defaults                0 0                   
-	I'm putting this in here so that Achim knows about this change :)
-	This also means that swapfs support is required in the kernel, and should be mentioned
-	in the install guide.
+	shm      /dev/shm        shm      defaults                0 0
+	This is for >=2.4.2 kernels.  So far, the filesystem name has
+	changed from swapfs->tmpfs->shm in less than three kernel releases,
+	and I hope it stays the same for now.
 
 [UNASSIGNED] blender-2.04 is linked to libMesaGLU and friends.  But, the nvidia 
 	(and xfree86, I think) packages don't install libMesa compatibility symlinks.
