@@ -400,7 +400,7 @@
 ./sys-apps/textutils/textutils-2.0.10.ebuild
 ./sys-apps/ucspi-tcp/ucspi-tcp-0.88.ebuild
 ./sys-apps/util-linux/util-linux-2.10q.ebuild
-./sys-apps/vcron/vcron-3.0_p1-r1.ebuild
+./sys-apps/vcron/vcron-3.0_p1-r2.ebuild
 ./sys-apps/vim-nogui/vim-nogui-5.7-r2.ebuild
 ./sys-apps/watchpid/watchpid-0.1.ebuild
 ./sys-apps/which/which-2.12.ebuild
