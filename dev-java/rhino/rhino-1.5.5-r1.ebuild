@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/rhino/Attic/rhino-1.5.5.ebuild,v 1.4 2005/01/26 21:28:21 corsair Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/rhino/Attic/rhino-1.5.5-r1.ebuild,v 1.1 2005/01/29 21:16:24 luckyduck Exp $
 
 inherit eutils java-pkg
 
@@ -9,8 +9,8 @@ DESCRIPTION="Rhino is an open-source implementation of JavaScript written entire
 SRC_URI="ftp://ftp.mozilla.org/pub/mozilla.org/js/${MY_P}.zip http://dev.gentoo.org/~karltk/projects/java/distfiles/rhino-swing-ex-1.0.zip"
 HOMEPAGE="http://www.mozilla.org/rhino/"
 LICENSE="NPL-1.1"
-SLOT="0"
-KEYWORDS="x86 ppc amd64 sparc ppc64"
+SLOT="1.5"
+KEYWORDS="x86 ppc amd64 sparc ~ppc64"
 IUSE="jikes doc"
 S="${WORKDIR}/${MY_P}"
 DEPEND="dev-java/ant-core
