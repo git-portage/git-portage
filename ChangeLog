@@ -1,5 +1,10 @@
 date 28 June 2001
 
+new gnome-apps/gnome-pilot-0.1.54
+gpilotd and conduits. Can't make it work with my visor, but it's designed
+for serial interfaces. Someone with a serial  based palm please test.
+lamer
+
 new app-admin/whowatch-1.5.2
 an interactive who-like program
 roadrunner
