@@ -1,5 +1,13 @@
 date 07 Mar 2001
 
+upd sys-kernel/linux-sources-2.4.2-r1 to 2.4.2-r2
+drobbins
+Kernel 2.4.2 -- contains the latest (05 Mar 2001) Reiserfs patches
+
+upd sys-kernel/linux-2.4.2-r1 to 2.4.2-r2
+drobbins
+Kernel 2.4.2 -- contains the latest (05 Mar 2001) Reiserfs patches
+
 upd sys-apps/reiserfs-utils-3.6.25-r3 to r4
 achim
 Includes the latest reiserfsck version (3.x.0f)
