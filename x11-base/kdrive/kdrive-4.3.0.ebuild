@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/kdrive/Attic/kdrive-4.3.0.ebuild,v 1.2 2003/07/18 22:57:06 spyderous Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/kdrive/Attic/kdrive-4.3.0.ebuild,v 1.2.2.1 2003/07/28 05:32:04 avenj Exp $
 
 # If you don't want to build the Xvesa server, do this.
 # VESA="no" emerge kdrive
