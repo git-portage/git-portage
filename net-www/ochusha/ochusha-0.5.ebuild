@@ -1,17 +1,17 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/ochusha/Attic/ochusha-0.4.9.6.ebuild,v 1.2 2004/02/21 21:17:16 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/ochusha/Attic/ochusha-0.5.ebuild,v 1.1 2004/02/29 16:39:53 usata Exp $
 
 IUSE=""
 
 DESCRIPTION="Ochusha - 2ch viewer for GTK+"
 HOMEPAGE="http://ochusha.sourceforge.jp/"
-SRC_URI="mirror://sourceforge.jp/${PN}/7689/${P}.tar.bz2
+SRC_URI="mirror://sourceforge.jp/${PN}/8439/${P}.tar.bz2
 	http://ochusha.sourceforge.jp/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
 DEPEND="virtual/xft
 	>=x11-libs/gtk+-2.2.4
