@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/rox/Attic/rox-2.1.1.ebuild,v 1.7 2004/09/25 15:27:10 weeve Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/rox/Attic/rox-2.1.4.ebuild,v 1.1 2004/10/23 21:48:29 lanius Exp $
 
 DESCRIPTION="ROX is a desktop environment, like GNOME, KDE and XFCE.  It is an attempt to bring some of the good features from RISC OS to Unix and Linux."
 HOMEPAGE="http://rox.sourceforge.net/"
@@ -8,13 +8,15 @@ SRC_URI="mirror://sourceforge/rox/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc alpha sparc"
-IUSE=""
+KEYWORDS="~x86 ~ppc ~alpha ~sparc ~amd64"
 
-DEPEND=">=x11-libs/gtk+-2.0.5
-	>=dev-libs/glib-2.0.4
+DEPEND=">=x11-libs/gtk+-2.2
+	>=dev-libs/glib-2.2
 	>=dev-libs/libxml2-2.4.23
-	>=x11-misc/shared-mime-info-0.9"
+	>=x11-misc/shared-mime-info-0.9
+	svg? ( gnome-base/librsvg )"
+
+IUSE="svg"
 
 src_compile() {
 #	rm ROX-Filer/src/configure # see bug #26162
