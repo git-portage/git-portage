@@ -1,4 +1,6 @@
-MD5 2aec3255e60cdc65d2ca1fad94f85ffe ipw2200-1.0.1.ebuild 2279
+MD5 9fce90855fbb9acf651deb88e12d055b ipw2200-1.0.1.ebuild 2283
 MD5 c92f165a15c3050b7f71b2e99cc30ee5 ChangeLog 4780
+MD5 cd32566a99b4fb3109484b3a9134511e ipw2200-1.0.2.ebuild 2063
 MD5 b280eebc74d70d85e664debf1adce2c3 metadata.xml 255
 MD5 d2a1aca212498ad4de9f4a79ac12026b files/digest-ipw2200-1.0.1 62
+MD5 336dd10c8bdf4e1c806e851f7bc7fdc6 files/digest-ipw2200-1.0.2 62
