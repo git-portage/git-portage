@@ -1,15 +1,16 @@
-MD5 eb1eff05ccdf44acb38517cf39c5ba69 ppp-2.4.2-r6.ebuild 5303
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 5a971d8d59f8c462d8651882eba46297 ppp-2.4.2-r6.ebuild 5404
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
 MD5 3190fd8db6e5622f1106f3b332d068e5 ppp-2.4.1-r14.ebuild 4714
-MD5 eb1eff05ccdf44acb38517cf39c5ba69 ppp-2.4.2-r5.ebuild 5303
-MD5 340bb315b1d52b0a256fc3213ff38c27 ChangeLog 13064
+MD5 3f0c928a5721f56d967603b1878f648a ChangeLog 13326
 MD5 20502c85d128ae0dd4545dc3ae3eec6b ppp-2.4.2-r1.ebuild 4276
 MD5 24f264eef320520caee8597fb071405b ppp-2.4.2.ebuild 3957
 MD5 210b3f9616a92005171f3f25c33c1638 ppp-2.4.2-r2.ebuild 4462
 MD5 140bc2a08334d3546f43259934da603e files/chat-default 347
 MD5 1a60baf88a301c6eed8472a01b3691eb files/confd.ppp0 3312
 MD5 4fda43c2f3f8b5b58a58e5d238991c0b files/digest-ppp-2.4.1-r14 65
-MD5 c07c26f0d600a1fde9752fa06fc4b0c3 files/digest-ppp-2.4.2-r5 194
 MD5 8368eb79ad4618c3c6753801b5c4c689 files/gcc3.3-multiline.patch 1673
 MD5 47bae70427ec4cb3ea1cc87ae799d0e3 files/gcc33-amd64.patch 1207
 MD5 0713ffc9ae6e3ee4ef0f5c3cb752b3ea files/ip-down 285
@@ -45,3 +46,10 @@ MD5 971013ca1ccc5a25acffdb3ff9edff4e files/2.4.2/pppoatm.diff.gz 3567
 MD5 f0ad3e0c62aec1771536caf00e28b9c6 files/2.4.2/pppoe.html 7605
 MD5 9d798912edc0a47727afcd7aac100957 files/2.4.2/stdopt-mppe-mppc-0.82.patch.gz 10108
 MD5 bd6bee3df13537a8550d2f39131eab0d files/2.4.2/pppoatm-2.diff.gz 3489
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBbjP8mdTrptrqvGERAnpOAJ9UVulqERGLPKWJV/gkrPDT1moPeQCZAWor
+4BZg5PaAVstnCuct7ZAgOn8=
+=gNJP
+-----END PGP SIGNATURE-----
