@@ -80,6 +80,7 @@
 ./dev-libs/openssl/openssl-0.9.6.ebuild
 ./dev-libs/rep-gtk/rep-gtk-0.14.ebuild
 ./dev-libs/slib/slib-2.3.9.ebuild
+./dev-perl/Convert-BER/Convert-BER-1.31.ebuild
 ./dev-perl/DB_File/DB_File-1.73.ebuild
 ./dev-perl/Digest-MD5/Digest-MD5-2.12.ebuild
 ./dev-perl/ExtUtils-F77/ExtUtils-F77-1.13.ebuild
@@ -91,6 +92,7 @@
 ./dev-perl/Net-SNMP/Net-SNMP-3.60.ebuild
 ./dev-perl/PDL/PDL-2.1.1.ebuild
 ./dev-perl/Parse-RecDescent/Parse-RecDescent-1.79.ebuild
+./dev-perl/Period/Period-1.20.ebuild
 ./dev-perl/SGMLSpm/SGMLSpm-1.03.ebuild
 ./dev-perl/SNMP_Session/SNMP_Session-0.80.ebuild
 ./dev-perl/SOAP/SOAP-0.25.ebuild
@@ -294,7 +296,8 @@
 #./net-misc/bind/bind-8.2.2.5-r1.ebuild
 #./net-misc/bind/bind-8.2.2.7-r1.ebuild
 ./net-misc/bind/bind-9.0.1.ebuild
-./net-misc/dhcp/dhcp-3.0_beta0207.ebuild
+./net-misc/dhcp/dhcp-3.0_beta0211.ebuild
+./net-misc/fping/fping-2.2_beta1.ebuild
 ./net-misc/hylafax/hylafax-cvs-000614-r1.ebuild
 ./net-misc/ipchains-firewall/ipchains-firewall-1.7.0-r1.ebuild
 ./net-misc/netkit-bootpd/netkit-bootpd-0.17-r1.ebuild
