@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmmail/Attic/wmmail-0.64-r2.ebuild,v 1.1 2003/05/21 20:30:28 joker Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmmail/Attic/wmmail-0.64-r3.ebuild,v 1.1 2003/06/05 00:35:55 robh Exp $
 
 MY_PN=WMMail.app
 MY_P=${MY_PN}-${PV}
@@ -17,7 +17,7 @@ DEPEND="virtual/x11
 	x11-libs/libPropList"
 
 src_compile() {
-	econf --with-appspath=/usr/share/GNUstep || die
+	econf --with-appspath=/usr/lib/GNUstep || die
 	emake || die
 }
 
@@ -25,7 +25,7 @@ src_install () {
 	# einstall fails with a sandbox violation
 	make DESTDIR=${D} install
 	dodir /usr/bin
-	dosym /usr/share/GNUstep/${MY_PN}/WMMail /usr/bin/wmmail
+	dosym /usr/lib/GNUstep/${MY_PN}/WMMail /usr/bin/wmmail
 	dodoc AUTHORS COPYING NEWS README doc/Help.txt
 	newman/wmmail.man wmmail.1
 }
