@@ -1,7 +1,15 @@
-MD5 d2546db7a5ddd169b420f778b461f4ac ChangeLog 1826
-MD5 ffcadcd3c0c676e611160a40e9844484 jadetex-3.12.ebuild 1002
-MD5 6ca3d52b74125749bafdb497675d6d0d jadetex-3.13.ebuild 1011
-MD5 3ea4b715393f72d88359618befb71f8b jadetex-3.13_p20030427.ebuild 1036
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 9cbe47bdc0741d0bba2cc2d38104d6dc ChangeLog 2026
+MD5 2378fc0aee75b0f333fc320358744ba7 jadetex-3.12.ebuild 1317
+MD5 a4775028609bb712a04c5cb74e13d7f4 jadetex-3.13.ebuild 1326
 MD5 7f0d22d26d92eaab7fdf9912e1a4c323 files/digest-jadetex-3.12 64
 MD5 b56f5e66f8ca0a50bd3c1af5153d60fe files/digest-jadetex-3.13 64
-MD5 ee8344481298e256ec762a9ca7a393db files/digest-jadetex-3.13_p20030427 73
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBjcKLVWNWqTUmv+0RAlyIAJ0R9tPmPKzN3YE9cOIfYMVugydUVACfbKdk
+tjJUGjOoE9nSlCN3UKBH+nw=
+=K9/y
+-----END PGP SIGNATURE-----
