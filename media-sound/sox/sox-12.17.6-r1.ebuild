@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/sox/Attic/sox-12.17.6-r1.ebuild,v 1.2 2004/12/31 23:11:54 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/sox/Attic/sox-12.17.6-r1.ebuild,v 1.3 2005/02/18 16:51:57 luckyduck Exp $
 
 IUSE="oggvorbis mad encode alsa"
 

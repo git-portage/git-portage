@@ -1,28 +1,37 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/sox/Attic/sox-12.17.6.ebuild,v 1.3 2005/02/18 16:51:57 luckyduck Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/sox/Attic/sox-12.17.7.ebuild,v 1.1 2005/02/18 16:51:57 luckyduck Exp $
 
-inherit gnuconfig flag-o-matic
+IUSE="oggvorbis mad encode alsa"
+
+inherit gnuconfig flag-o-matic eutils
 
 DESCRIPTION="The swiss army knife of sound processing programs"
 HOMEPAGE="http://sox.sourceforge.net"
 SRC_URI="mirror://sourceforge/sox/${P}.tar.gz"
 
-IUSE="oggvorbis mad encode" # alsa oss
 SLOT="0"
-KEYWORDS="~x86 ppc ~sparc ~amd64 ~mips ~alpha"
+KEYWORDS="~alpha ~amd64 ~mips ~ppc ~sparc ~x86"
 LICENSE="LGPL-2.1"
 
 DEPEND="virtual/libc
 	encode? ( media-sound/lame )
 	oggvorbis? ( media-libs/libvorbis )
-	mad? ( media-sound/madplay )"
-#	alsa? ( media-libs/alsa-lib )
+	mad? ( media-sound/madplay )
+	alsa? ( media-libs/alsa-lib )"
 
-src_compile () {
+src_unpack() {
+	unpack ${A}
+
+	cd ${S}
+
 	# Needed on mips and probablly others
 	gnuconfig_update
 
+	epatch ${FILESDIR}/${P}-destdir.patch
+}
+
+src_compile () {
 	# from version 12.17.4 sox has mp3 encoding/decoding if you have madlibs 
 	# and lame using alsa by default
 	local myconf
@@ -33,17 +42,9 @@ src_compile () {
 	myconf="${myconf} `use_enable oggvorbis ogg-vorbis`"
 	myconf="${myconf} `use_enable mad`"
 	myconf="${myconf} `use_enable encode lame`"
-	myconf="${myconf} --enable-oss-dsp"
 #	myconf="${myconf} `use_enable oss oss-dsp`"
-#	myconf="${myconf} `use_enable alsa alsa-dsp`"
-
-#	SoX currently targets the ALSA kernel API and not alsa-lib. This is a problem because the interface changes.
-#	see bug #63531 for more details
-# 	The build will automatically disable ALSA support even if it's in USE
-	myconf="${myconf} --disable-alsa-dsp"
-	einfo "Notice.. ALSA support is currently broken in sox. ALSA support has been disabled."
-	einfo "sox will automatically use OSS, if you have ALSA then it'll work through the"
-	einfo "compatiblity layer."
+	myconf="${myconf} --enable-oss-dsp"
+	myconf="${myconf} `use_enable alsa alsa-dsp`"
 
 	econf ${myconf} \
 		--enable-fast-ulaw \
@@ -52,7 +53,7 @@ src_compile () {
 }
 
 src_install() {
-	einstall || die "make install failed"
+	make DESTDIR="${D}" install || die
 	prepallman
 
 	dodoc Changelog README TODO *.txt
