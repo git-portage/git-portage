@@ -1,14 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 d2c5cdf5d98749fb45b846c0d7d393c0 mckoi-1.0.2.ebuild 1576
-MD5 a68cafcb8fc8d3ef5ebd4d2283c4bb9e ChangeLog 789
+MD5 251f207d91ec519e669b29d085dfb829 mckoi-1.0.3.ebuild 1149
+MD5 28d56e03d9394d70bc1df3a25687aa48 ChangeLog 1068
 MD5 88a45e55f45705b8699507175d106c8e metadata.xml 842
 MD5 1e8a7ec3bae7dc7328124e22a150efef files/digest-mckoi-1.0.2 60
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFByAxL/rLF9B432nYRAsigAJ4sWfalXMr/MSnLaDK8c4ATpD86dQCdHMgN
-P3H/yGKYoSpX3gXAbwCrD/M=
-=cLJQ
------END PGP SIGNATURE-----
+MD5 082cf5d0acc9ed44d2c2770bb73f14f1 files/digest-mckoi-1.0.3 60
+MD5 8035781e30ce3ccaf159a59d17be2e4c files/build.xml 1453
+MD5 7ed5c070543963c72c14ea6acc8819f6 files/mckoi-1.0.3-jikes.patch 1728
