@@ -1,5 +1,13 @@
 date 05 Apr 2001
 
+upd sys-kernel/linux-sources-2.4.2-r3 to 2.4.2-r4
+drobbins
+With the latest 27 Mar 2001 ReiserFS patches
+
+upd sys-kernel/linux-2.4.2-r3 to 2.4.2-r4
+drobbins
+With the latest 27 Mar 2001 ReiserFS patches
+
 upd sys-apps/portage-1.5_pre8 to 1.5_pre9
 drobbins
 Various important bug fixes
