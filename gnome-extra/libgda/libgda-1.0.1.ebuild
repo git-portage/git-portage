@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/libgda/Attic/libgda-1.0.1.ebuild,v 1.7 2004/01/17 02:25:17 darkspecter Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/libgda/Attic/libgda-1.0.1.ebuild,v 1.8 2004/01/25 13:13:57 obz Exp $
 
 IUSE="odbc postgres mysql ldap firebird freetds sqlite mdb oci8 doc"
 
@@ -25,7 +25,7 @@ RDEPEND=">=dev-libs/glib-2.0
 	!ppc? ( firebird? ( >=dev-db/firebird-1.0 ) )
 	freetds? ( >=dev-db/freetds-0.5 )
 	sqlite? ( >=dev-db/sqlite-2.4.2 )
-	mdb? ( >=app-office/mdbtools-0.5 )"
+	!alpha? ( mdb? ( >=app-office/mdbtools-0.5 ) )"
 
 DEPEND=">=dev-util/pkgconfig-0.8
 	>=dev-util/intltool-0.22
