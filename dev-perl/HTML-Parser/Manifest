@@ -1,7 +1,7 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-MD5 d3d7418b038b7ee774b4bbe8ef84d338 ChangeLog 4577
+MD5 c6cde396a3b0afb5bfaa4ae758366aa7 ChangeLog 4507
 MD5 2150a246b3cd28e0b79eea61eed027b3 HTML-Parser-3.34-r1.ebuild 826
 MD5 133b93622bf01f5e04dddf0eb680ec8e HTML-Parser-3.28.ebuild 662
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
@@ -14,7 +14,7 @@ MD5 af0ff1f0a3657e83a07e968fc2a52fb0 files/digest-HTML-Parser-3.36 67
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.2.6 (GNU/Linux)
 
-iD4DBQFB2pQwtG5z4I8BtQoRAkrRAJd0f2UaYdlUKeX9nmRWIoocHFKcAKCQU33x
-CHTRcVaS2hR+qVy8gC0WBg==
-=7ip2
+iD8DBQFB2pOLtG5z4I8BtQoRAmiWAJ0QzehHehjqaGQ6hLe7DhRDhQKtogCeKr4G
+peuSugI1p+AzVypyNd9/8vM=
+=kSIo
 -----END PGP SIGNATURE-----
