@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/abs-guide/Attic/abs-guide-2.6.ebuild,v 1.2 2004/06/07 00:42:15 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-doc/abs-guide/Attic/abs-guide-2.7.ebuild,v 1.1 2004/06/07 00:42:15 dragonheart Exp $
 
 DESCRIPTION="An advanced reference and a tutorial on bash shell scripting"
 SRC_URI="http://personal.riverusers.com/~thegrendel/${P}.tar.bz2"
@@ -13,6 +13,6 @@ LICENSE="FDL-1.1"
 SLOT="0"
 
 src_install() {
-	dodir "/usr/share/doc/${P}"       || die "dodir failed"
-	cp -R * "${D}/usr/share/doc/${P}" || die "cp failed"
+	dodir /usr/share/doc/${P}       || die "dodir failed"
+	cp -R * ${D}/usr/share/doc/${P} || die "cp failed"
 }
