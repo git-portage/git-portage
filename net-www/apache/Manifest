@@ -7,14 +7,13 @@ MD5 c9b77db193d034968ab8287d4b625a80 apache-1.3.29.ebuild 7382
 MD5 bab1a33028c74eb9d3f71294e8816126 apache-1.3.29-r1.ebuild 7413
 MD5 483eea3ec70ffb7c4a68c3e26ba4314e apache-2.0.48-r1.ebuild 11783
 MD5 3c4fe9c2702e37b9397769d6b7d4fb56 apache-2.0.48-r3.ebuild 12181
-MD5 c7c96e73b07a891af20c11373fd61385 ChangeLog 22442
+MD5 b2f4b597ace10f7b4a63dfa6508f0846 ChangeLog 22581
 MD5 ec841d27e5613d0aae57ddf2083a7597 apache-1.3.28-r1.ebuild 7671
 MD5 5b6dd438f81019e56fa641841c0c13fe metadata.xml 501
 MD5 b4580094775cde0d53605e4c036ec191 apache-2.0.47-r1.ebuild 10759
 MD5 fcc5fef301f573c52854462740975b0b apache-1.3.27-r4.ebuild 8679
 MD5 f73405c24e4fe9e86c870dca88cc7284 apache-2.0.46.ebuild 11060
 MD5 52063286236598300600f9324e40fb56 apache-1.3.28.ebuild 8904
-MD5 60ca13946448e1c7e6dd8deb9755131d output.log 586705
 MD5 316637e1a71f080e0f027db9ddf1683f apache-2.0.49.ebuild 12677
 MD5 161245c7aa1eb785db53b34d6a10be43 files/suexec_pam_gentoo.patch 2149
 MD5 399e3c15e2afa45a732faed0df6b1a30 files/apache-1.3.28-zombie-cgi.patch 940
@@ -83,7 +82,7 @@ MD5 b69bf7c3126e471a2abff013e716367f files/2.0.40/virtual-homepages.conf 780
 MD5 23416b00cbdc46b67e672f272e49ba40 files/2.0.40/dynamic-vhosts.conf 840
 MD5 77785d5ff6e5a7a21425dc69a6162779 files/2.0.49/apache2.conf 7652
 MD5 bf4f5fef094c57eeef892940ea689da9 files/2.0.49/apache2.confd 1951
-MD5 e8492f28f2c3bce13b2d9ec89290bf0e files/2.0.49/apache2.initd 2418
+MD5 1f7353fc77165ffd4dacc32e0b0ce7c2 files/2.0.49/apache2.initd 2417
 MD5 dc5c8ebe712dc08bdb83fa8563924c96 files/2.0.49/commonapache2.conf 31775
 MD5 1d10cc98714a34ddc38525743c2989f9 files/2.0.49/41_mod_ssl.default-vhost.conf 8053
 MD5 23416b00cbdc46b67e672f272e49ba40 files/2.0.49/dynamic-vhosts.conf 840
