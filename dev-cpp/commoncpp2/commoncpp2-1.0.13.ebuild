@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/commoncpp2/Attic/commoncpp2-1.0.9.ebuild,v 1.3 2003/09/06 22:29:24 msterret Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/commoncpp2/Attic/commoncpp2-1.0.13.ebuild,v 1.1 2003/12/07 23:30:22 lanius Exp $
 
 IUSE="doc xml2"
 
@@ -15,7 +15,7 @@ DEPEND="xml2? ( dev-libs/libxml2 )
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
 src_compile() {
 	local myconf=""
@@ -24,7 +24,7 @@ src_compile() {
 		&& myconf="${myconf} --with-xml" \
 		|| myconf="${myconf} --without-xml"
 
-	econf ${myconf} || die "./configure failed"
+	econf ${myconf} --with-ftp || die "./configure failed"
 
 	emake || die
 
