@@ -1,8 +1,9 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-sci/singular/Attic/singular-2.0.5-r1.ebuild,v 1.1 2004/03/23 07:58:03 phosphan Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-sci/singular/Attic/singular-2.0.5-r3.ebuild,v 1.1 2004/03/24 07:29:31 phosphan Exp $
 
-S=${WORKDIR}/${P}
+inherit eutils
+
 MINPV=${PV//./-}
 BPN=${PN/s/S}
 NTLVERSION="5.3.1"
@@ -41,7 +42,8 @@ S=${WORKDIR}
 
 src_unpack () {
 	unpack ${A}
-	epatch  $FILESDIR/${P}-r1-gentoo.diff
+	epatch  $FILESDIR/${P}-r2-gentoo.diff
+	sed -e "s/PFSUBST/${PF}/" -i ${S}/Singular/feResource.cc || die "sed failed on feResource.cc"
 }
 
 
@@ -85,16 +87,13 @@ src_install () {
 	doins *
 	dodir /usr/bin
 	dodir /usr/lib/singular
-	insinto /usr/lib/singular
-	cd ${D}/usr/${myarchprefix}-Linux
-	rm Singular
-	dobin *Singular*
-	doins *.so
+
 	use doc && 	( 	cd ${WORKDIR}/doc
 					# fake ssh during doc creation
 					cp ${FILESDIR}/fake_ssh ${T}/ssh
 					chmod +x ${T}/ssh
 					export PATH="${T}:${PATH}"
+					export LC_ALL="C"
 					make dvi
 					dodoc *.dvi
 					make ps
@@ -112,11 +111,26 @@ src_install () {
 					doinfo singular.info
 					make html
 					dohtml -r html/.
+					strange_error="Bad file descriptor"
+					echo ${strange_error} > makeresult
+					while grep -q "${strange_error}" makeresult
+					do make 2>&1 singular.idx | tee makeresult
+					done
+					insinto /usr/share/${PN}
+					doins singular.idx singular.hlp
 					cd ${D}/usr
+					dodir /usr/share/doc/${PF}
 					mv doc/NTL share/doc/${PF}/
-				)
+	)
 	cd ${D}
 	dosym /usr/bin/Singular-${MINPV} /usr/bin/Singular
+
+	insinto /usr/lib/singular
+	cd ${D}/usr/${myarchprefix}-Linux
+	# don't do this before the docs are installed
+	rm Singular
+	dobin *Singular*
+	doins *.so
 	cd ${D}/usr
 	rm -r ${myarchprefix}-Linux
 }
