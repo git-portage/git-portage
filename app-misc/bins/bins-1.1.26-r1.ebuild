@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/bins/Attic/bins-1.1.23-r2.ebuild,v 1.3 2004/06/15 10:26:21 mcummings Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/bins/Attic/bins-1.1.26-r1.ebuild,v 1.1 2004/06/15 10:26:21 mcummings Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://jsautret.free.fr/BINS/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~sparc alpha ~ppc amd64"
+KEYWORDS="~x86 ~sparc ~alpha ~ppc ~amd64"
 IUSE=""
 
 DEPEND=">=dev-lang/perl-5.6.1-r6
@@ -40,9 +40,12 @@ src_unpack() {
 }
 
 src_install() {
-	env DESTDIR=${D} PREFIX="/usr" ./install.sh || die
-	# Bug 49661 noticed this
+	echo "" |env DESTDIR=${D} PREFIX="/usr" ./install.sh || die
+	# Fix for pathing
 	for i in `grep -l portage ${D}/usr/bin/*`; do
 		sed -i -e  "s:${D}:/:" ${i}
 	done
+
+	mkdir ${D}/usr/local
+	mv ${D}/usr/share ${D}/usr/local/
 }
