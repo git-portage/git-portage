@@ -2,8 +2,8 @@ MD5 26f617dc1d0fe0d93ca6c5454807b01a devtodo-0.1.17-r1.ebuild 1413
 MD5 6d18583cddc104e533e6d07ecbe4a22f devtodo-0.1.18.ebuild 1615
 MD5 708bc8d1cf20e92b71d189b71d12b641 devtodo-0.1.17.ebuild 939
 MD5 10e76a0a2e98f64789afc937a04ff015 devtodo-0.1.17-r2.ebuild 1531
-MD5 8401ce326616f5d2289f1c245249d95d ChangeLog 3435
-MD5 f8d10f350e91f30316ea4e1bd1e76470 metadata.xml 254
+MD5 9fa3618418445d55b1c4d56e10232724 ChangeLog 3551
+MD5 99ce5509db4b50f28a1f6675f8c09b2b metadata.xml 258
 MD5 cb4cff0cd869696d1207553de89551c1 files/digest-devtodo-0.1.17 66
 MD5 e254b7fe4623f6fb5dfb4c9169e75ef7 files/digest-devtodo-0.1.18 66
 MD5 cb4cff0cd869696d1207553de89551c1 files/digest-devtodo-0.1.17-r1 66
