@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxslt/Attic/libxslt-1.0.23.ebuild,v 1.2 2003/01/30 13:47:14 foser Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxslt/Attic/libxslt-1.0.24.ebuild,v 1.1 2003/01/30 14:21:40 foser Exp $
 
 inherit libtool gnome.org
 
@@ -12,7 +12,7 @@ SLOT="0"
 LICENSE="MIT"
 KEYWORDS="~x86 ~sparc ~ppc ~alpha"
 
-RDEPEND=">=dev-libs/libxml2-2.4.30
+RDEPEND=">=dev-libs/libxml2-2.4.25
 	python? ( dev-lang/python )"
 
 DEPEND="${RDEPEND}
