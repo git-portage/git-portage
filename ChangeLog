@@ -1,5 +1,12 @@
 date 18 Feb 2001
 
+upd dev-perl/AxKit-1.2 to 1.3
+achim
+This release includes improvements to the XSP engine to allow taglibs to be
+written more easily, better dependencies checking, and an
+ import_template() function in XPathScript. 
+
+
 upd sys.apps/net-tools-1.57-r2 to 1.59
 achim
 This release fixes some buffer overflow security issues
