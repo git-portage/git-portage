@@ -1,3 +1,11 @@
+date 4 June 2001
+
+upd app-games/bzflag-1.7e2
+removed
+
+new app-games/bzflag-1.7
+fixed borked up package
+
 date 3 June 2001
 
 new app-games/gtetrinet-0.4.1
