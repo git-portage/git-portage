@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/epiphany/Attic/epiphany-0.8.4.ebuild,v 1.2 2003/08/24 15:53:06 weeve Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/epiphany/Attic/epiphany-0.9.3.ebuild,v 1.1 2003/09/01 18:21:33 foser Exp $
 
 inherit gnome2 debug
 
