@@ -1,8 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 ec3b1156c3f6fd50ec8d16cea3dfa180 mldonkey-2.5.16-r7.ebuild 2651
 MD5 3cd71ac859e5028dcf0a66fd1430f868 mldonkey-2.5.28-r1.ebuild 2714
+MD5 e0412a0ec383f4dda256bb0f05abc524 mldonkey-2.5.28-r3.ebuild 2801
 MD5 8d3ae8cd5f6b471de19912845a21beea mldonkey-2.5.27-r1.ebuild 2756
 MD5 56e7da52446479881edfc5eecde9b926 mldonkey-2.5.21-r2.ebuild 2692
 MD5 2b98f66763bd8905a795eea801eb9027 mldonkey-2.5.16-r8.ebuild 2657
@@ -19,14 +17,8 @@ MD5 f145ba120c09f53b0032ea8b3f930128 files/digest-mldonkey-2.5.21-r2 126
 MD5 6df804eab9a1d919e43d09f42c700b40 files/digest-mldonkey-2.5.27-r1 129
 MD5 1ff4e8172e5321c416adb30053659173 files/digest-mldonkey-2.5.28-r1 129
 MD5 9dc0a1ea21a75e69af387298195df5f6 files/digest-mldonkey-2.5.28-r2 129
+MD5 40c94b8c0e62bf72f3967cabd710d852 files/digest-mldonkey-2.5.28-r3 129
 MD5 a929dcdb98bcc52d06066afb45960ea9 files/2.5.28-config.patch 586
 MD5 be0c71929c461b50601e8715706a4a16 files/mldonkey-2.5.21-configure.patch 540
 MD5 ac93ed074d62909b2a496045f0740127 files/mldonkey 336
 MD5 be0c71929c461b50601e8715706a4a16 files/mldonkey-2.5.16-configure.patch 540
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBYtSccAgAdbxYsnERAucnAJ9ydAhdq4aY1w7HGbrJ7yeY3nw2DQCfYnXU
-wus+0C26nxXfBRQKylqh0OE=
-=HKVW
------END PGP SIGNATURE-----
