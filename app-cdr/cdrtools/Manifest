@@ -5,7 +5,6 @@ MD5 f9fcbc79ca94669d29f5937fbabae7f6 metadata.xml 444
 MD5 9ddd5fdbf8092e8321095f0af99a3124 cdrtools-2.01_alpha23.ebuild 2203
 MD5 d2fd1d2ad46ea4d2c87f3573dca613de cdrtools-2.01_alpha25.ebuild 2168
 MD5 9e791351d9c94d16bcddf267c1f97148 ChangeLog 9454
-MD5 4dc0a1f8df2b42d358365eeb526e867d files/cdrecord-scsiopen-format.patch 352
 MD5 3e09d97c263f22dbda9a67df209b533c files/cdrtools-2.01-kernel25-support.patch 602
 MD5 a5d2f2339b75bf4919653d91b83ec07d files/digest-cdrtools-2.01_alpha16 69
 MD5 bada1ee8ca01fbf2ae79c91e3615ee95 files/digest-cdrtools-2.01_alpha19 143
