@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/ptex/Attic/ptex-3.1.4.20041109.ebuild,v 1.2 2005/01/01 16:32:00 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/ptex/Attic/ptex-3.1.8.20050111.ebuild,v 1.1 2005/01/21 11:40:29 usata Exp $
 
-TETEX_PV=2.99.3.20041109
+TETEX_PV=2.99.9.20050111
 TEXMF_PATH=/var/lib/texmf
 
 inherit tetex eutils
@@ -12,10 +12,10 @@ HOMEPAGE="http://www.ascii.co.jp/pb/ptex/
 	http://www.misojiro.t.u-tokyo.ac.jp/~tutimura/ptetex3/0README
 	http://www.fsci.fuk.kindai.ac.jp/aftp/pub/ptex/utils/"
 
-PTEX_TEXMF_PV=2.2
-PTEX_SRC="ptex-src-${PV%.*}b.tar.gz"
+PTEX_TEXMF_PV=2.3
+PTEX_SRC="ptex-src-${PV%.*}.tar.gz"
 PTEX_TEXMF="ptex-texmf-${PTEX_TEXMF_PV}.tar.gz"
-PTETEX=ptetex3-20041118
+PTETEX=ptetex3-20050119
 
 S=${WORKDIR}/tetex-src-${TETEX_PV}-beta
 
@@ -32,13 +32,14 @@ SRC_URI="${SRC_PATH_TETEX}/${TETEX_SRC}
 LICENSE="GPL-2 BSD"
 SLOT="0"
 KEYWORDS="~x86 ~alpha ~amd64 ~ppc ~sparc ~ppc64 ~ppc-macos"
-IUSE="X motif lesstif Xaw3d"
+IUSE="X motif lesstif Xaw3d neXt"
 
 DEPEND="X? ( >=media-libs/freetype-2
 		>=media-fonts/kochi-substitute-20030809-r3
 		motif? ( lesstif? ( x11-libs/lesstif )
 			!lesstif? ( x11-libs/openmotif ) )
-		!motif? ( Xaw3d? ( x11-libs/Xaw3d ) )
+		!motif? ( neXt? ( x11-libs/neXtaw )
+			!neXt? ( Xaw3d? ( x11-libs/Xaw3d ) ) )
 		!app-text/xdvik
 	)
 	!dev-tex/memoir
@@ -101,6 +102,8 @@ src_compile() {
 				export CPPFLAGS="${CPPFLAGS} -I/usr/X11R6/include/lesstif"
 			fi
 			toolkit="motif"
+		elif use neXt ; then
+			toolkit="neXtaw"
 		elif use Xaw3d ; then
 			toolkit="xaw3d"
 		else
@@ -111,19 +114,6 @@ src_compile() {
 	fi
 
 	tetex_src_compile
-
-	cat >>${S}/texk/web2c/fmtutil.cnf<<-EOF
-
-	# Japanese pLaTeX:
-	ptex		ptex	-		ptex.ini
-	platex		ptex	language.dat	platex.ini
-	platex209	ptex	language.dat	plplain.ini
-	EOF
-
-	cat >>${S}/texk/web2c/texmf.cnf<<-EOF
-
-	CMAPINPUTS = .;/opt/Acrobat5/Resource/Font//;/usr/share/xpdf//
-	EOF
 
 	# make ptex.tex visible to ptex
 	TEXMF="${S}/texmf" ${S}/texk/kpathsea/mktexlsr || die
@@ -139,21 +129,21 @@ src_install() {
 	tetex_src_install base doc fixup
 
 	einfo "Installing pTeX ..."
-	dodir ${D}${TEXMF_PATH}/web2c
+	dodir ${TEXMF_PATH}/web2c
 	cd ${S}/texk/web2c/${PTEX_SRC%.tar.gz} || die
 	einstall bindir=${D}/usr/bin texmf=${D}${TEXMF_PATH} || die
 
-	insinto /usr/share/texmf/fonts/map/dvips/tetex
-	doins ${FILESDIR}/psfonts-ja.map || die
-
-	cat >>${D}/${TEXMF_PATH}/web2c/updmap.cfg<<-EOF
-
-	# Japanese fonts
-	MixedMap psfonts-ja.map
-	EOF
-
 	# ptex reinstalls ${TEXMF_PATH}/web2c
 	tetex_src_install link
+
+	insinto /usr/share/texmf/fonts/map/dvips/tetex
+	doins ${FILESDIR}/psfonts-ja.map || die
+	insinto /etc/texmf/updmap.d
+	doins ${FILESDIR}/20updmap-ja.cfg
+	insinto /etc/texmf/fmtutil.d
+	doins ${FILESDIR}/20fmtutil-platex.cnf
+	insinto /etc/texmf/texmf.d
+	doins ${FILESDIR}/20texmf-cmap.cnf
 
 	docinto dvipsk
 	cd ${S}/texk/dvipsk
