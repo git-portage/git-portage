@@ -1,4 +1,6 @@
-MD5 fc24f2a89ffedcb062c3751929f6c35c files/digest-swftools-0.4.4 67
+MD5 5b3d2f278628ee6a43b3abc19d8f8e98 swftools-0.5.0.ebuild 780
 MD5 1f3ecbd8a3aef370bc78e1b3ff285eb9 swftools-0.4.4.ebuild 780
 MD5 3b310d5fec4f76a3a3adf88dfde68510 ChangeLog 497
 MD5 01d038dbe50da64871fdf52807eef70a metadata.xml 438
+MD5 fc24f2a89ffedcb062c3751929f6c35c files/digest-swftools-0.4.4 67
+MD5 a664e81c619ee2895cf446892385d153 files/digest-swftools-0.5.0 67
