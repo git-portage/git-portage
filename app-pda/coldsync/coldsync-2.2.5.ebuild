@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/coldsync/Attic/coldsync-2.2.5-r1.ebuild,v 1.4 2003/02/13 10:35:05 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-pda/coldsync/Attic/coldsync-2.2.5.ebuild,v 1.1 2003/08/30 09:04:05 liquidx Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A command-line tool to synchronize PalmOS PDAs with Unix workstations"
@@ -12,12 +12,9 @@ LICENSE="Artistic"
 KEYWORDS="x86 sparc "
 
 src_compile() {
-	cd ${S}
 	local myconf
 	use nls || myconf="${myconf} --without-i18n"
 	use perl || myconf="${myconf} --without-perl"
-
-	patch -p1 < ${FILESDIR}/coldsync-2.2.5-gcc3.diff
 
 	econf ${myconf} || die "configuring coldsync failed"
 	make || die "couldn't make coldsync"
@@ -30,9 +27,6 @@ src_install() {
 		SYSCONFDIR=${D}/etc \
 		DATADIR=${D}/usr/share \
 		INFODIR=${D}/usr/share/info \
-		INSTALLMAN3DIR=${D}/usr/share/man/man3 \
-		INSTALLSITEMAN3DIR=${D}/usr/share/man/man3 \
-		INSTALLVENDORMAN3DIR=${D}/usr/share/man/man3 \
 		install || die "couldn't install coldsync"
 
 	dodoc AUTHORS Artistic ChangeLog HACKING INSTALL NEWS README TODO
