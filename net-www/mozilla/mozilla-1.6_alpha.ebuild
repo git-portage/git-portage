@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/mozilla/Attic/mozilla-1.6b.ebuild,v 1.1 2003/12/14 20:27:09 brad Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/mozilla/Attic/mozilla-1.6_alpha.ebuild,v 1.1 2003/12/20 18:37:49 brad Exp $
 
 IUSE="java crypt ipv6 gtk2 ssl ldap gnome debug"
 # Internal USE flags that I do not really want to advertise ...
@@ -51,14 +51,14 @@ case "${ARCH}" in
 		;;
 esac
 
-EMVER="0.82.4"
+EMVER="0.82.2"
 IPCVER="1.0.5"
 
 PATCH_VER="1.0"
 
 # handle _rc versions
 MY_PV1="${PV/_}"
-MY_PV2="${MY_PV1/eta}"
+MY_PV2="${MY_PV1/lpha}"
 S="${WORKDIR}/mozilla"
 DESCRIPTION="The Mozilla Web Browser"
 SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/${PN}${MY_PV2}/src/${PN}-source-${MY_PV2}.tar.bz2
@@ -140,6 +140,7 @@ src_unpack() {
 
 	epatch ${FILESDIR}/1.2/${PN}-1.2b-default-plugin-less-annoying.patch.bz2
 	epatch ${FILESDIR}/1.2/${PN}-1.2b-over-the-spot.patch.bz2
+	epatch ${FILESDIR}/1.2/${PN}-1.2b-wallet.patch.bz2
 
 	# Fix logic error when using RAW target
 	# <azarah@gentoo.org> (23 Feb 2003)

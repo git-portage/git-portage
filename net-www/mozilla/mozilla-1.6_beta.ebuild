@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/mozilla/Attic/mozilla-1.6a.ebuild,v 1.2 2003/11/21 20:20:43 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/mozilla/Attic/mozilla-1.6_beta.ebuild,v 1.1 2003/12/20 18:37:49 brad Exp $
 
 IUSE="java crypt ipv6 gtk2 ssl ldap gnome debug"
 # Internal USE flags that I do not really want to advertise ...
@@ -51,7 +51,7 @@ case "${ARCH}" in
 		;;
 esac
 
-EMVER="0.82.2"
+EMVER="0.82.4"
 IPCVER="1.0.5"
 
 PATCH_VER="1.0"
@@ -140,7 +140,6 @@ src_unpack() {
 
 	epatch ${FILESDIR}/1.2/${PN}-1.2b-default-plugin-less-annoying.patch.bz2
 	epatch ${FILESDIR}/1.2/${PN}-1.2b-over-the-spot.patch.bz2
-	epatch ${FILESDIR}/1.2/${PN}-1.2b-wallet.patch.bz2
 
 	# Fix logic error when using RAW target
 	# <azarah@gentoo.org> (23 Feb 2003)
