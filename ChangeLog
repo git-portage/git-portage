@@ -1,5 +1,13 @@
 date 09 Dec 2000
 
+del sys-apps/shtool-1.5.1-r1
+drobbins
+location fix
+
+new dev-util/shtool-1.5.1-r1
+drobbins
+location fix
+
 upd net-misc/openssh-2.3.0_p1 to 2.3.0_p1-r1
 drobbins
 script fix and supervise support added

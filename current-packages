@@ -422,7 +422,7 @@
 ./sys-apps/sh-utils/sh-utils-2.0j-r1.ebuild
 ./sys-apps/shadow/shadow-19990827-r2.ebuild
 ./sys-apps/sharutils/sharutils-4.2.1-r1.ebuild
-./sys-apps/shtool/shtool-1.5.1-r1.ebuild
+./dev-util/shtool/shtool-1.5.1-r1.ebuild
 ./sys-apps/sysklogd/sysklogd-1.4.ebuild
 ./sys-apps/sysvinit/sysvinit-2.78-r1.ebuild
 ./sys-apps/tar/tar-1.13.17-r1.ebuild
