@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/jboss/Attic/jboss-3.0.1_rc1.ebuild,v 1.1 2002/07/15 03:08:43 mkennedy Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/jboss/Attic/jboss-3.0.1_rc1.ebuild,v 1.4 2003/02/13 15:35:52 vapier Exp $
 
 MY_P="jboss-3.0.1RC1-src"
 S=${WORKDIR}/${MY_P}
@@ -16,13 +16,9 @@ DEPEND="${RDEPEND}
 	dev-java/ant"
 
 SLOT="0"
-KEYWORDS="*"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~mips ~hppa"
 
 INSTALL_DIR=/usr/lib/${P}
-
-src_unpack() {
-	unpack $MY_P.tgz
-}
 
 src_compile() {
 	export JAVA_HOME=${JDK_HOME}
