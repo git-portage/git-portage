@@ -1,5 +1,13 @@
 date 01 Dec 2000
 
+upd sys-kernel/linux-2.4.0_rc10-r3 to 2.4.0_rc10-r4
+drobbins
+Updated ReiserFS patch, and a little compile fix
+
+upd sys-kernel/linux-sources-2.4.0_rc10-r3 to 2.4.0_rc10-r4
+drobbins
+Updated ReiserFS patch, and a little compile fix
+
 upd gnome-office/gnumeric-0.59a to 0.59a-r1
 drobbins
 now depends on virtual/python-1.5.2
