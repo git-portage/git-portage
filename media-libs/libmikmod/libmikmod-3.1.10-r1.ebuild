@@ -1,13 +1,12 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libmikmod/Attic/libmikmod-3.1.10-r1.ebuild,v 1.12 2004/03/07 12:26:53 gustavoz Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libmikmod/Attic/libmikmod-3.1.10-r1.ebuild,v 1.13 2004/03/26 17:13:11 eradicator Exp $
 
 inherit gnuconfig
 inherit flag-o-matic
 
 IUSE="oss esd alsa"
 
-S=${WORKDIR}/${P}
 DESCRIPTION="A library to play a wide range of module formats"
 HOMEPAGE="http://mikmod.raphnet.net/"
 SRC_URI="${HOMEPAGE}/files/${P/-/_}.tar.gz"
