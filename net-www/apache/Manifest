@@ -1,22 +1,25 @@
-MD5 aa4372e629fe82b4abb91d8d5472bc4a apache-1.3.31-r2.ebuild 6895
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 f7c1d7b06e45c35cd6608a8e10812277 apache-1.3.31-r2.ebuild 6892
 MD5 a419841198cd6a94b9dcf2e07f3c15b7 metadata.xml 617
-MD5 e7a1a93239d9b28842974d14056cf2a8 apache-2.0.52-r1.ebuild 13132
-MD5 216477cf08403d7fab6292852147df1b apache-2.0.51-r1.ebuild 12822
+MD5 3e3c0c750760bbd42b957989345f4d57 apache-2.0.52-r1.ebuild 13132
+MD5 d42fc69e80706e40559d17dda84c8419 apache-2.0.51-r1.ebuild 12817
 MD5 aa97e52247ade47afe6744b06960f728 apache-2.0.52-r3.ebuild 12045
-MD5 4f86f814bae4d6c7636d4f7d74779910 apache-1.3.31-r3.ebuild 6903
-MD5 0090aac423308aefef3933fa767864fe apache-1.3.33.ebuild 6882
-MD5 ddb5eed64393b6776310d60ab66c0ea2 apache-1.3.29-r2.ebuild 7161
-MD5 e21be768e132f623485e611ac60fae87 apache-1.3.31.ebuild 6724
-MD5 d524fc581eb36035f082c20667f9d9aa ChangeLog 56088
+MD5 6f736bb02fa0e38438e74782d223293d apache-1.3.31-r3.ebuild 6900
+MD5 db0afdd5255ad831638131ef69ff2267 apache-1.3.33.ebuild 6879
+MD5 90e70419bec385aee16b10303e9235d3 apache-1.3.29-r2.ebuild 7158
+MD5 30eae150ac83b20287102122c37b580a apache-1.3.31.ebuild 6721
+MD5 4c92b0a1f759a214b1da474354d900a9 ChangeLog 56597
 MD5 e265b8c0426359efe22f6c29d7e9be82 apache-2.0.53.ebuild 11915
-MD5 6db240f079f5edd217a15f2cc2e8d907 apache-1.3.33-r1.ebuild 8619
-MD5 fad4e5ffdbc87ef38b864b73fc3b5b02 apache-1.3.32.ebuild 6647
-MD5 1bfcc73270043705bfc52370f6d5e448 apache-2.0.51.ebuild 12813
-MD5 7b91c93bd0762b48375a198ded53f7b2 apache-2.0.52.ebuild 12816
-MD5 91022d7534dff059298e0208afd65373 apache-2.0.50.ebuild 12887
-MD5 8b72f3eb92572e043b98bc480be75a03 apache-1.3.32-r1.ebuild 6638
-MD5 51f69e52862fdb1f13eee8859b040ab4 apache-1.3.31-r1.ebuild 6770
-MD5 75c0df87ed9244a428fb0acacf27e93a apache-2.0.52-r2.ebuild 12274
+MD5 acbb37b285cf5f0b577e0270c5df2ae3 apache-1.3.33-r1.ebuild 8615
+MD5 15170badcb6a28012cc4d1e3bfddc126 apache-1.3.32.ebuild 6644
+MD5 f96d59b9c21e284c185a151612dd25c6 apache-2.0.51.ebuild 12808
+MD5 fd46570e4125dd33e0f4853f6755b878 apache-2.0.52.ebuild 12811
+MD5 60e48a390ee6534b28916a31803b3fa7 apache-2.0.50.ebuild 12882
+MD5 38f354f2c6d004534fc7a506209c1b3d apache-1.3.32-r1.ebuild 6636
+MD5 3a3c425126f2c807be687471ee586e99 apache-1.3.31-r1.ebuild 6767
+MD5 e93c99f4e26015b708542c727566a7d0 apache-2.0.52-r2.ebuild 12271
 MD5 8cb4313e58d7bd5dc369eb92f75daa2b files/httpd-2.0.49-ipv6.patch 788
 MD5 79fe350dca5b488a1b0f396caeb43248 files/digest-apache-1.3.33-r1 286
 MD5 b7c4fabdcb3845c4218b770acb792f73 files/apache-2.0.49-gentoo.diff 6316
@@ -94,3 +97,10 @@ MD5 161245c7aa1eb785db53b34d6a10be43 files/patches/1.3.31-r1/00_gentoo_suexec_pa
 MD5 61df284cb67dfde3085aec5543eeb03c files/patches/1.3.31-r1/00_gentoo_apachectl.patch 32836
 MD5 3c0dfc9f2dc93ae46eb6382cf9533f18 files/patches/1.3.31-r1/00_gentoo_base.patch 27799
 MD5 a63b9472904d3500cf72b370a9ee3200 files/patches/1.3.31-r1/00_gentoo_db4_detect.patch 1304
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCPaeLjUHll2nfF60RAqiIAKCNSb6rgTFgGlVsJ0YTPb/ubsYzzACfcbxl
+EmNqucMheT7tpp4YiFdmR1U=
+=3gne
+-----END PGP SIGNATURE-----
