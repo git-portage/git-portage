@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/ucspi-tcp/Attic/ucspi-tcp-0.88-r6.ebuild,v 1.1 2003/08/13 03:17:11 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/ucspi-tcp/Attic/ucspi-tcp-0.88-r6.ebuild,v 1.2 2003/09/03 14:51:21 vapier Exp $
 
 inherit eutils
 
@@ -29,6 +29,7 @@ src_unpack() {
 	fi
 	epatch ${FILESDIR}/${PV}-errno.patch
 	epatch ${DISTDIR}/ucspi-rss.diff
+	epatch ${FILESDIR}/${PV}-head-1.patch
 
 	echo "${CC} ${CFLAGS}" > conf-cc
 	echo "${CC} ${LDFLAGS}" > conf-ld
