@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3ad38d18de5274faca9bef484355706e ChangeLog 3322
 MD5 3690ea4cea1afad1f161456f0ed8b206 fvwm-crystal-1.0.1.ebuild 2001
 MD5 2111a6fc5f0ce6e03bcdd1550916cf18 fvwm-crystal-1.0.3_pre1.ebuild 1118
@@ -16,3 +19,10 @@ MD5 acbef73f565db20ec2daccc52564315e files/digest-fvwm-crystal-2.20040723-r1 73
 MD5 4168b1b88ed4ce9f1e9c71b75d153235 files/digest-fvwm-crystal-2.20040903 72
 MD5 c0d5410eb95b09d2b26a581ddc9e14d6 files/digest-fvwm-crystal-2.20041128 73
 MD5 009926fc5e4f6ce064a6daa097bfaa3a files/digest-fvwm-crystal-2.20040929 73
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBsO5p2jLqHNfbg2URAmEpAJ9FMyv/5RI1xBAkKiplE7Sk5VJoXgCdEOZa
+PnXf7DT3N+lzo3GdVI31VAY=
+=FncX
+-----END PGP SIGNATURE-----
