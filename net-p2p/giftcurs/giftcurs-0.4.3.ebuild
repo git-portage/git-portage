@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Bart Verwilst <verwilst@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/giftcurs/Attic/giftcurs-0.4.2.ebuild,v 1.1 2002/06/26 03:33:40 spider Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/giftcurs/Attic/giftcurs-0.4.3.ebuild,v 1.1 2002/07/08 02:02:55 spider Exp $
 
 S="${WORKDIR}/giFTcurs-${PV}"
 DESCRIPTION="a cursed frontend to the giFT (OpenFT) daemon"
@@ -9,10 +9,11 @@ SRC_URI="mirror://sourceforge/giftcurs/giFTcurs-${PV}.tar.gz"
 HOMEPAGE="http://giftcurs.sourceforge.net"
 SLOT="0"
 LICENSE="GPL-2"
+KEYWORDS="x86"
 
 DEPEND="virtual/glibc
 	>=sys-libs/ncurses-5.2
-	>=net-p2p/gift-0.10.0_pre020527"
+	>=net-p2p/gift-0.10.0_pre020705"
 RDEPEND="${DEPEND}"
 
 src_compile() {
