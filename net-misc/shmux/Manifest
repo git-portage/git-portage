@@ -1,4 +1,6 @@
 MD5 5b881cd7a0923ef03f1fabf184a74bda ChangeLog 684
 MD5 809fdbb24c1177ba34d056255c235003 metadata.xml 385
 MD5 25d1ebeeb05bd08fd6dd205bc0720051 shmux-1.0_beta3.ebuild 793
+MD5 25d1ebeeb05bd08fd6dd205bc0720051 shmux-1.0_beta4.ebuild 793
 MD5 144fba546d28c924431ecb975ee22cd9 files/digest-shmux-1.0_beta3 59
+MD5 f9e1c0d6aef23a3ce7d47dc082311b46 files/digest-shmux-1.0_beta4 59
