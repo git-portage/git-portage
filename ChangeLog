@@ -1,5 +1,10 @@
 date 25 Mar 2001
 
+new app-text/gentoo-guide-xsl-stylesheets-1.0
+achim
+The XSL Stylesheets for html output separated from 
+daniels gentoo-web package
+
 new app-text/gentoo-guide-xml-dtd-1.0
 achim
 A DTD for Gentoo-Guide style XML files
