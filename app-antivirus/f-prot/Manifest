@@ -1,4 +1,6 @@
 MD5 4f9e789d2a803b2bcff48ec04db91c94 ChangeLog 6952
-MD5 28d68acfec950ea0253a30d6d6bc3d83 f-prot-4.5.2.ebuild 1111
 MD5 3bf44a2cd492aedb8f27a23f2fe357ff metadata.xml 261
+MD5 f1d42f01ffde29d3889ddc6c00eb184d f-prot-4.5.3.ebuild 1005
+MD5 28d68acfec950ea0253a30d6d6bc3d83 f-prot-4.5.2.ebuild 1111
 MD5 e038bcaa6015ac62b3b1856871d65582 files/digest-f-prot-4.5.2 70
+MD5 3c0a4234dafefdc4fc05e7507aba0799 files/digest-f-prot-4.5.3 70
