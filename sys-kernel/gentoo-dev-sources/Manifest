@@ -1,4 +1,4 @@
-MD5 cfa50c7592dfd479c581d5df8413a19a ChangeLog 17489
+MD5 586d9b94ff51302ce3aba2a5b2cd5d4a ChangeLog 17775
 MD5 de01a0fea9dc2f379a9e1aac1c7fae40 gentoo-dev-sources-2.6.1-r2.ebuild 2246
 MD5 6cf842e7822308fda517ae2aeccb8321 gentoo-dev-sources-2.6.3-r1.ebuild 1308
 MD5 12dbf9c4e43a3782219105306549d7bb gentoo-dev-sources-2.6.3-r2.ebuild 1309
@@ -12,7 +12,7 @@ MD5 f74d5a342844d9358722ccb68568bcec gentoo-dev-sources-2.6.7-r10.ebuild 1005
 MD5 d476249f58f0ffe5d3409290514187f9 gentoo-dev-sources-2.6.7-r11.ebuild 1406
 MD5 22b7b10829b3c093e0954379c13344de gentoo-dev-sources-2.6.7-r12.ebuild 1397
 MD5 f5434deb20ae4780af70b3c4fb352902 gentoo-dev-sources-2.6.7-r13.ebuild 1397
-MD5 15aa0ffde39ee4f8a9b7167cffd2fa61 gentoo-dev-sources-2.6.7-r14.ebuild 1397
+MD5 7f9d67acdc1d107e10512e331ebee60b gentoo-dev-sources-2.6.7-r14.ebuild 1404
 MD5 04dbe2cb78a9a3c1279839f7040d6c1e gentoo-dev-sources-2.6.7-r7.ebuild 991
 MD5 482afc462be6ca05954da35085acd42d gentoo-dev-sources-2.6.7-r8.ebuild 997
 MD5 980949de52189c7d9c1d791b7f5cc27e files/2.6-do_munmap.patch 743
