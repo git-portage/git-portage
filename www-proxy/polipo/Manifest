@@ -1,0 +1,5 @@
+MD5 c7b793afa76825bb25389b38d3e9e165 polipo-0.9.8.ebuild 907
+MD5 7472fce315655df82cb9ab7aa64ae9d0 metadata.xml 294
+MD5 15a13f10a2c408c2e448d0db6fe8d382 files/digest-polipo-0.9.8 64
+MD5 a8af617b893bb87d30e63f98f643be40 files/polipo.crond 82
+MD5 a27df294b898bef3fb022655355efb27 files/polipo.initd 620
