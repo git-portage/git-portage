@@ -1,5 +1,9 @@
 date 25 May 2001
 
+new app-emulation/fceultra-054
+ryan
+FCEUltra is a portable NES/Famicom emulator
+
 upd app-doc/gentoo-web
 updated install guide and faq with some additions for boot floppy install.
 

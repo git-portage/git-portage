@@ -31,6 +31,7 @@
 ./app-editors/vile/vile-9.2.ebuild
 ./app-editors/vim-gtk/vim-gtk-5.7-r2.ebuild
 ./app-editors/elvis/elvis-2.4.1.ebuild
+./app-emulation/fceultra/fceu-054.ebuild
 #./app-emulation/wine/wine-20001002.ebuild
 ./app-misc/gfontview/gfontview-0.4.1-r1.ebuild
 ./app-misc/lhinv/lhinv-1.1-r1.ebuild
