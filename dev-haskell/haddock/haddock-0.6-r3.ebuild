@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haddock/Attic/haddock-0.5.ebuild,v 1.8 2004/10/18 16:45:58 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haddock/Attic/haddock-0.6-r3.ebuild,v 1.1 2004/10/21 14:09:36 kosmikus Exp $
 #
 # USE variable summary:
 #   doc    - Build extra documenation from DocBook sources,
@@ -8,7 +8,7 @@
 #   tetex  - Build the above docs as PostScript as well.
 
 
-inherit base
+inherit base eutils
 IUSE="doc tetex"
 
 DESCRIPTION="A documentation tool for Haskell"
@@ -16,7 +16,7 @@ SRC_URI="http://www.haskell.org/haddock/${P}-src.tar.gz"
 HOMEPAGE="http://www.haskell.org/haddock"
 
 SLOT="0"
-KEYWORDS="~x86 ~sparc"
+KEYWORDS="x86 ~sparc ~ppc"
 LICENSE="as-is"
 
 DEPEND="virtual/ghc
@@ -32,19 +32,28 @@ RDEPEND=""
 # extend path to /opt/ghc/bin to guarantee that ghc-bin is found
 GHCPATH="${PATH}:/opt/ghc/bin"
 
+src_unpack() {
+	base_src_unpack
+	epatch ${FILESDIR}/${P}-gcc3.4.patch
+}
+
 src_compile() {
 	# unset SGML_CATALOG_FILES because documentation installation
 	# breaks otherwise ...
 	PATH="${GHCPATH}" SGML_CATALOG_FILES="" econf || die "econf failed"
 	# using make because emake behaved strangely on my machine
-	make || die
+	make || die "make failed"
 
 	# if documentation has been requested, build documentation ...
 	if use doc; then
 		cd ${S}/haddock/doc
-		emake html || die
+		emake html \
+			datadir="/usr/share/doc/${PF}" \
+			|| die "emake html failed"
 		if use tetex; then
-			emake ps || die
+			emake ps \
+				datadir="/usr/share/doc/${PF}" \
+				|| die "emake ps failed"
 		fi
 	fi
 }
@@ -52,15 +61,11 @@ src_compile() {
 src_install() {
 	local mydoc
 
-	use doc && mydoc="html" || mydoc=""
-	use doc && use tetex && mydoc="${mydoc} ps"
-
-	echo SGMLDocWays="${mydoc}" >> mk/build.mk
-	make install install-docs \
+	make install \
 		prefix="${D}/usr" \
-		datadir="${D}/usr/share/doc/${PF}" \
+		datadir="${D}/usr/share/${P}" \
 		infodir="${D}/usr/share/info" \
-		mandir="${D}/usr/share/man" || die
+		mandir="${D}/usr/share/man" || die "make install failed"
 
 	cd ${S}/haddock
 	dodoc CHANGES LICENSE README TODO
