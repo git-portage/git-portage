@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/Attic/genkernel-3.0.1_beta9.ebuild,v 1.1 2004/01/30 03:20:41 brad_mssw Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/Attic/genkernel-3.0.1_beta12.ebuild,v 1.1 2004/02/14 20:01:25 brad_mssw Exp $
 
 DESCRIPTION="Gentoo autokernel script"
 HOMEPAGE="http://www.gentoo.org"
