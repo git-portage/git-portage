@@ -1,5 +1,5 @@
-MD5 33db26ccd96157019999f259f63dd4e4 wmbutton-0.5.ebuild 975
-MD5 fd618fa423461f1cd9ef3322991d5775 ChangeLog 285
+MD5 70dce710ae5f483bebe5b502e5d9fb8c wmbutton-0.5.ebuild 929
+MD5 b18124593f6a2cc050e6c2ef4bba1021 ChangeLog 376
 MD5 62ba71d3b2fa785a4cbd5d47fdbd0eb6 metadata.xml 165
 MD5 6255e9c88017586a8a3c19713f2b5129 files/digest-wmbutton-0.5 63
 MD5 76263f6d447775d0a50f3a42e9e8299e files/wmbutton-cflags.patch 483
