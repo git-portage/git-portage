@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/krename/Attic/krename-3.0.0.ebuild,v 1.1 2004/06/30 13:31:25 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/krename/Attic/krename-3.0.2.ebuild,v 1.1 2004/08/08 16:10:14 carlo Exp $
 
 inherit kde
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/krename/${MY_P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="x86"
 IUSE=""
 
 need-kde 3.1
