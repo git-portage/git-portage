@@ -1,13 +1,13 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/hpoj/Attic/hpoj-0.90-r1.ebuild,v 1.8 2003/12/12 21:47:03 blauwers Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/hpoj/Attic/hpoj-0.91-r2.ebuild,v 1.1 2003/12/22 15:46:36 lanius Exp $
 
 DESCRIPTION="HP OfficeJet Linux driver"
 HOMEPAGE="http://hpoj.sourceforge.net/"
 SRC_URI="mirror://sourceforge/hpoj/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 IUSE="ssl scanner qt X snmp cups usb"
 
 DEPEND="qt?      ( >=x11-libs/qt-3.1.0-r1 )
@@ -18,10 +18,9 @@ DEPEND="qt?      ( >=x11-libs/qt-3.1.0-r1 )
 	cups?    ( >=net-print/cups-1.1.18-r2 )
 	usb?     ( dev-libs/libusb )"
 
-S=${WORKDIR}/${P}
-
 src_compile() {
-	local myconf
+	epatch ${FILESDIR}/udev.patch
+
 	use snmp \
 	&& myconf="${myconf} --with-snmp=/usr" \
 	|| myconf="${myconf} --without-snmp"
@@ -40,11 +39,9 @@ src_compile() {
 	|| myconf="${myconf} --without-sane"
 
 	econf ${myconf}
-#   patch -p0 ${S}/mlcd/Makefile < ${FILESDIR}/mlcd_make.patch
-#   patch -p0 ${S}/mlcd/ExMgr.cpp < ${FILESDIR}/ExMgr.cpp_patch
-	make || die "compilation failed"
+	emake || die "compilation failed"
 }
-## after cups
+
 src_install() {
 	cd apps/cmdline
 	dobin ptal-print hpojip-test ptal-connect ptal-device ptal-devid ptal-hp ptal-pml
@@ -93,5 +90,9 @@ pkg_postinst() {
 	einfo "You might want to emerge net-print/hpijs for better printing quality."
 	echo
 	einfo "Before starting hpoj you have to set it up with 'ptal-init setup'"
+	echo
+	einfo "If you are upgrading from a previous version, re-run ptal-init setup"
+	einfo "as the format of	the connection has changed again and your previously"
+	einfo "installed hpoj-device will not be recognized."
 	echo
 }
