@@ -1,15 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 36f2b17019a3bafdcad6e46ace21997f ChangeLog 835
-MD5 17d08746d9813625b7b9076f13a5618d ucarp-0.7.ebuild 719
-MD5 d97e0009737f60cc92a7b8e7a99c9e91 ucarp-1.1.ebuild 1155
+MD5 27effa336cad1536c3037d004f1414cf ucarp-0.7.ebuild 719
+MD5 a3f56ed08995240b94e990a8ecbaa642 ucarp-1.1.ebuild 1118
+MD5 6d22ca1bf86239368867de8262901861 ChangeLog 978
+MD5 c6a4990c7e7c1c7c9c532bef426fc902 metadata.xml 222
 MD5 705d7cc5a9540cf4265ba8890308ef58 files/digest-ucarp-0.7 61
 MD5 3f0a78b9bbdbe61fd16e25ceb4ff1627 files/digest-ucarp-1.1 61
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFB+/+GmdTrptrqvGERAsQcAKCB5AcqSGeLTbb8LyzepCIff25GEACeMJhl
-L6jr/+7bpHRFAE2qxrNQqlA=
-=jxEY
------END PGP SIGNATURE-----
