@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mkvtoolnix/Attic/mkvtoolnix-1.0.ebuild,v 1.2 2005/01/29 13:44:05 luckyduck Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mkvtoolnix/Attic/mkvtoolnix-1.0.1.ebuild,v 1.1 2005/01/29 13:44:05 luckyduck Exp $
 
 inherit eutils wxwidgets
 
@@ -23,11 +23,6 @@ DEPEND=">=dev-libs/libebml-0.7.2
 	sys-libs/zlib
 	dev-libs/lzo"
 
-src_unpack() {
-	unpack ${A} || die "Failed to unpack ${A}"
-	cd ${S} || die "Failed to cd ${S}"
-}
-
 src_compile() {
 	if use X ; then
 		if ! use gtk2 ; then
@@ -36,12 +31,12 @@ src_compile() {
 			need-wxwidgets gtk2
 		fi
 	fi
-	./configure || die "configure died"
+	econf || die "./configure died"
 	emake || die "make failed"
 }
 
 src_install() {
-	einstall || die "install failed"
-	dodoc AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
+	einstall || die "make install failed"
+	dodoc AUTHORS COPYING ChangeLog INSTALL README TODO
 	dohtml doc/mkvmerge-gui.html doc/images/*
 }
