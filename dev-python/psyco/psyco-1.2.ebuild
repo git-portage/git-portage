@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/psyco/Attic/psyco-1.2.ebuild,v 1.4 2004/12/01 00:22:26 pythonhead Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/psyco/Attic/psyco-1.2.ebuild,v 1.5 2005/01/12 16:33:30 pythonhead Exp $
 
 inherit distutils
 
@@ -12,11 +12,11 @@ IUSE=""
 SLOT="0"
 LICENSE="MIT"
 KEYWORDS="x86"
-DEPEND="<dev-lang/python-2.4
-	!dev-python/psyco-cvs"
+DEPEND="<dev-lang/python-2.4"
 
 src_install() {
 	distutils_src_install
 	insinto /usr/share/doc/${PF}/examples
 	doins ${S}/test/*
 }
+
