@@ -1,4 +1,6 @@
-MD5 b70f1116e174728df176f6d54af23e27 gsweb-1.1.1_pre20041119.ebuild 2109
+MD5 8f78510f6eef22ad57ca248882daa0b8 gsweb-1.1.1_pre20041119.ebuild 2218
+MD5 bd941b0f0c4107ee4572db68685e309a ChangeLog 576
+MD5 793863b2ae98803d7c254bed889178b3 metadata.xml 429
 MD5 078dd66c0d30dc9af62ed1cad6519a0e files/apache1-make.patch 333
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gsweb-1.1.1_pre20041119 0
 MD5 41b18945839f51f5ab48c20ab9a60b2c files/apache2-make.patch 334
