@@ -1,30 +1,26 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lisp/cl-arnesi/Attic/cl-arnesi-1.1.1.ebuild,v 1.4 2004/06/24 23:40:33 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lisp/cl-arnesi/Attic/cl-arnesi-1.2.3.ebuild,v 1.1 2004/12/28 20:54:42 mkennedy Exp $
 
-inherit common-lisp eutils
+inherit common-lisp
 
 DESCRIPTION="arnesi is a collection of small bits and pieces of common lisp code."
-HOMEPAGE="http://www.common-lisp.net/project/bese/#arnesi"
-SRC_URI="ftp://ftp.common-lisp.net/pub/project/bese/arnesi/arnesi_${PV}.tar.gz"
-
+HOMEPAGE="http://common-lisp.net/project/bese/arnesi.html"
+SRC_URI="ftp://ftp.common-lisp.net/pub/project/bese/arnesi_${PV}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="x86 ~ppc"
 IUSE=""
-
 DEPEND="dev-lisp/common-lisp-controller
 	virtual/commonlisp"
 
-S=${WORKDIR}/arnesi_${PV}
-
 CLPACKAGE=arnesi
+
+S=${WORKDIR}/arnesi_${PV}
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${PV}-clisp-gentoo.patch
-	find ${S}/ -type d -name .arch-ids -exec rm -rf '{}' \;
+	find ${S}/ -type d -name .arch-ids -exec rm -rf '{}' \; &>/dev/null
 }
 
 src_install() {
