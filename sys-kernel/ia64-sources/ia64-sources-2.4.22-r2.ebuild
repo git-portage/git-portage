@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/ia64-sources/Attic/ia64-sources-2.4.22.ebuild,v 1.6 2004/01/06 20:30:35 plasmaroo Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/ia64-sources/Attic/ia64-sources-2.4.22-r2.ebuild,v 1.1 2004/01/06 20:30:35 plasmaroo Exp $
 
 IUSE=""
 
@@ -40,6 +40,7 @@ KEYWORDS="-* ia64"
 SLOT="${KV}"
 
 src_unpack() {
+
 	unpack linux-${OKV}.tar.bz2
 	cd ${WORKDIR}
 	mv linux-${OKV} linux-${KV} || die "Error moving kernel source tree to linux-${KV}"
