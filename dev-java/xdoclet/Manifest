@@ -1,16 +1,10 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 42b386d8d843326065256fb97d838e73 xdoclet-1.2.0_beta1.ebuild 965
-MD5 86621dc6f85f7881a1e0d39918a4cd58 xdoclet-1.2.1.ebuild 1596
-MD5 1471b2fdb3ddf69c6463a0e6bf7bdb8c ChangeLog 1274
+MD5 3eb6ea0f5659e1978f9bfe85ec5149b8 xdoclet-1.2.2.ebuild 1396
+MD5 dddc99165b891534690815bccc55e908 xdoclet-1.2.0_beta1.ebuild 965
+MD5 b3fe1d9498696d3c1c9da261b83d7004 xdoclet-1.2.1.ebuild 1596
+MD5 445222f180a0ac2c350ecd1344a55b6e ChangeLog 1731
 MD5 2f0b8cbc0e0adf36b678725712a3e3b7 metadata.xml 511
+MD5 36b04e593588b126ef0e905e4ead4fcf files/xdoclet-1.2.2-buildfile.patch 2518
+MD5 ba866caf35dbc476ac2cf334e9b4e5f8 files/xdoclet-1.2.2-interface.patch 10839
 MD5 cf001749ad1559c92f75e64bf7939974 files/digest-xdoclet-1.2.0_beta1 73
 MD5 6d6f9189f4ecffc98c1b539a0b647cc3 files/digest-xdoclet-1.2.1 139
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBcapX/rLF9B432nYRAgyfAKC+TReSlJNMs66YccK/9HOSxDjKZQCgtMMy
-uEhAshsnzWI803BdvpDsaGA=
-=Vc9B
------END PGP SIGNATURE-----
+MD5 5a7e75c3d62a58edfa3c2416acfbb69a files/digest-xdoclet-1.2.2 67
