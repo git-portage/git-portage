@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/sablevm/Attic/sablevm-1.1.5.ebuild,v 1.6 2005/01/05 00:49:36 karltk Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/sablevm/Attic/sablevm-1.1.8.ebuild,v 1.1 2005/01/05 00:49:36 karltk Exp $
 
 DESCRIPTION="A robust, clean, extremely portable, efficient, and specification-compliant Java virtual machine."
 HOMEPAGE="http://sablevm.org/"
@@ -9,12 +9,12 @@ HOMEPAGE="http://sablevm.org/"
 # into one in the future. For now, they consistently make concurrent releases,
 # so I merged them into one ebuild.
 
-SRC_URI="http://devel.sablevm.org/download/${PV}/sablevm-${PV}.tar.gz
-	http://devel.sablevm.org/download/${PV}/sablevm-classpath-${PV}.tar.gz"
+SRC_URI="http://sablevm.org/download/release/${PV}/sablevm-${PV}.tar.gz
+	http://sablevm.org/download/release/${PV}/sablevm-classpath-${PV}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
-IUSE="gtk"
+KEYWORDS="~x86 ~ppc ~amd64"
+IUSE="gtk debug"
 DEPEND=">=dev-libs/libffi-1.20
 	>=dev-libs/popt-1.7
 	>=dev-java/jikes-1.19
@@ -25,41 +25,29 @@ DEPEND=">=dev-libs/libffi-1.20
 	)"
 #RDEPEND=""
 
-src_unpack() {
-	mkdir ${S}
-	cd ${S}
-	unpack ${A}
-}
+S=${WORKDIR}
 
 src_compile() {
+	export LDFLAGS="$LDFLAGS -L/usr/lib/libffi" CPPFLAGS="$CPPFLAGS	-I/usr/include/libffi"
 
 	# Compile the Classpath
-
 	cd ${S}/sablevm-classpath-${PV}
 	local myc="--with-jikes"
-	use gtk && myc="${myc} --enable-gtk-peer" || myc="${myc} --disable-gtk-peer"
-	econf ${myc} || die
+	econf ${myc} $(use_enable gtk gtk-peer) || die
 	emake || die "emake failed"
 
 	# Compile the VM
-
 	cd ${S}/sablevm-${PV}
-	econf || die
+	econf $(use_enable debug debugging-features) || die
 	emake || die "emake failed"
 }
 
 src_install() {
-
 	# Install the Classpath
-
 	cd ${S}/sablevm-classpath-${PV}
 	einstall || die
 
 	# Install the VM
-
 	cd ${S}/sablevm-${PV}
 	einstall || die
-
-	mv ${D}/usr/share/sablevm-classpath ${D}/usr/share/sablevm/ || \
-		die "Path fixup failed!"
 }
