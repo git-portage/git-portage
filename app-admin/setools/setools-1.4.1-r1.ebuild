@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/setools/Attic/setools-1.3.1.ebuild,v 1.5 2004/06/25 03:02:44 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/setools/Attic/setools-1.4.1-r1.ebuild,v 1.1 2004/09/16 01:26:59 pebenito Exp $
 
 DESCRIPTION="SELinux policy tools"
 HOMEPAGE="http://www.tresys.com/selinux_policy_tools.html"
@@ -8,15 +8,18 @@ SRC_URI="http://www.tresys.com/Downloads/selinux-tools/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="x86 ppc"
 IUSE="X gtk selinux"
 
 DEPEND="sys-devel/bison
 	sys-devel/flex
 	dev-libs/libxml2
 	dev-util/pkgconfig
+	selinux? ( sys-libs/libselinux )
 	X? ( dev-lang/tk gtk? ( >=gnome-base/libglade-2.0 ) )"
+
 RDEPEND="dev-libs/libxml2
+	selinux? ( sys-libs/libselinux )
 	X? (
 		dev-lang/tk
 		>=dev-tcltk/bwidget-1.4.1
@@ -30,38 +33,37 @@ src_unpack() {
 	# fix the Makefile to listen to portage CFLAGS
 	sed -i -e "s:-O2:-O2 ${CFLAGS}:" ${S}/Makefile
 
-	# fix for tcl/tk version
-	has_version '=dev-lang/tk-8.4*' && \
-		sed -i -e 's:8.3:8.4:' ${S}/Makefile
-
 	# fix up the scripts we're going to install
 	sed -i -e 's:local/selinux/::g' ${S}/seuser/seuseradd
 	sed -i -e 's:local/selinux/::g' ${S}/seuser/seuserdel
 	sed -i -e 's:local/selinux/::g' ${S}/seuser/seusermod
 
 	# we will manually install policy
-	sed -i -e "s: policy-install::g" ${S}/seuser/Makefile
+#	sed -i -e "s: policy-install::g" ${S}/seuser/Makefile
 
-	# fix up the file contexts
-	sed -i -e 's:/usr/apol:/usr/share/setools:' ${S}/policy/seuser.fc
+	# generate the file contexts from the template
+	sed -e 's:SEUSER_BINDIR:/usr/bin:' \
+		-e 's:SEUSER_INSTALL_LIBDIR:/usr/share/setools:' \
+		< ${S}/policy/seuser_template.fc > ${S}/policy/seuser.fc
 
 	# dont chcon or install -Z
 	sed -i -e '/chcon/d' ${S}/secmds/Makefile
+	sed -i -e '/chcon/d' ${S}/seuser/Makefile
 	sed -i -e 's,-Z system_u:object_r:seuser_exec_t,,g' ${S}/seuser/Makefile
 	sed -i -e 's,-Z system_u:object_r:seuser_conf_t,,g' ${S}/seuser/Makefile
 	sed -i -e 's,-Z system_u:object_r:policy_src_t,,g' ${S}/seuser/Makefile
 
 	# dont do findcon or replcon if USE=-selinux
 	if ! use selinux; then
-		einfo "Disabling replcon and findcon"
 		sed -i -e '/^SE_CMDS/s/replcon//' ${S}/secmds/Makefile
 		sed -i -e '/^SE_CMDS/s/findcon//' ${S}/secmds/Makefile
 	fi
 
-	# set policy dir in seuser.conf
-	sed -i -e '/^policy_dir/d' -e '/^user_file/d' ${S}/seuser/seuser.conf
-	echo "policy_dir ${POLICYDIR}" >> ${S}/seuser/seuser.conf
-	echo "user_file ${POLICYDIR}/users" >> ${S}/seuser/seuser.conf
+	# adjust policy settings in seuser.conf
+	echo "policy_dir         ${POLICYDIR}" > ${S}/seuser/seuser.conf
+	echo "policy.conf        ${POLICYDIR}/policy.conf" >> ${S}/seuser/seuser.conf
+	echo "file_contexts_file ${POLICYDIR}/file_contexts/file_contexts" >> ${S}/seuser/seuser.conf
+	echo "user_file          ${POLICYDIR}/users" >> ${S}/seuser/seuser.conf
 }
 
 src_compile() {
@@ -84,7 +86,7 @@ src_compile() {
 src_install() {
 	cd ${S}
 
-	dodoc ChangeLog-setools README
+	dodoc COPYING ChangeLog-setools README
 
 	# some of the Makefiles are broken, and will fail
 	# if ${D}/usr/bin is nonexistant
@@ -125,8 +127,6 @@ src_install() {
 pkg_postinst() {
 	einfo "Installed tools:"
 	echo
-	einfo "findcon"
-	einfo "replcon"
 	einfo "seinfo"
 	einfo "sesearch"
 	if use X; then
@@ -135,6 +135,8 @@ pkg_postinst() {
 		use gtk && einfo "seaudit"
 	fi
 	if use selinux; then
+		einfo "findcon"
+		einfo "replcon"
 		einfo "seuser"
 		use X && einfo "seuserx"
 		einfo "seuseradd"
