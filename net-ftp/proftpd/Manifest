@@ -1,9 +1,12 @@
-MD5 a0b440fbc9bae59967cedab16f183275 ChangeLog 11242
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 b9470bcb2b1e2fe694e218d6c5633405 ChangeLog 11521
 MD5 b47207aedd0149443faa2152950714ed metadata.xml 401
 MD5 4cc98eb1b4b8be1479ba8965bb49bc70 proftpd-1.2.7.ebuild 3662
 MD5 e918b040fef86b28ba4c131b7d3f45a3 proftpd-1.2.8.ebuild 2730
 MD5 a28b579450718c5bc4b60c168e015459 proftpd-1.2.9-r2.ebuild 3438
-MD5 bc365b722759d9ee24387db67d2a2e62 proftpd-1.2.10.ebuild 4022
+MD5 9f4fb4297de6fc98f81268e6aa3ee42a proftpd-1.2.10.ebuild 4016
 MD5 e558f099037d359da5f855285542246e files/1.2.9_rc3-reversedns.diff 1974
 MD5 b283ca3fd6afecc931e8b269580604bc files/digest-proftpd-1.2.10 142
 MD5 c1dc1d9278d5b77f53ea44ee848dafc6 files/digest-proftpd-1.2.7 211
@@ -15,3 +18,10 @@ MD5 50955f0d375360841d50a82b9589e435 files/proftpd-1.2.9-privescal-fix.patch 588
 MD5 b338504ed873219e368abab7df6c276d files/proftpd.conf 1704
 MD5 55ca24c9ee61b9ed94968c664baaeace files/proftpd.rc6 731
 MD5 4d676b70c97bc6daabd8c2ba8d52d27a files/proftpd.xinetd 295
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD8DBQFBPfomKSoOBZY9iUIRArpfAJ4imLIg7ALgLkoCHxlD4LbUqZSNwgCfVl5e
+R4IQE2D8Mm5sXTD3yHwpnQA=
+=uUFO
+-----END PGP SIGNATURE-----
