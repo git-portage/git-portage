@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: First Last <your email>
-# $Header: /var/cvsroot/gentoo-x86/Attic/skel.build,v 1.12 2002/01/30 00:31:37 aeoo Exp $
+# <dollar_sign>Header<dollar_sign>
 
 # NOTE: The comments in this file are for instruction and
 # documentation.  They're not meant to appear with your final,
@@ -9,9 +9,11 @@
 # or committing your ebuild.  That doesn't mean you can't add your own
 # comments though.
 
-# Remember to add the proper Author line, above.  Don't worry about
-# the fourth line; it'll get automatically fixed when the ebuild is
-# checked in
+# Remember to add the proper Author line, above.  On the fourth line, please
+# replace each occurence of <dollar_sign> (including <>) with the actual
+# dollar sign!  Then, what will happen is, after you commit your ebuild,
+# it will get replaced with the correct, automatically generated, header
+# line.
 
 # Source directory; the dir where the sources can be found
 # (automatically unpacked) inside ${WORKDIR}.  Usually you can just
