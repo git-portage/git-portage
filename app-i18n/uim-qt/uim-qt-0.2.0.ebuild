@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim-qt/Attic/uim-qt-0.1.7.ebuild,v 1.5 2004/10/19 14:46:09 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim-qt/Attic/uim-qt-0.2.0.ebuild,v 1.1 2004/10/19 14:46:09 usata Exp $
 
 inherit eutils
 
@@ -10,35 +10,21 @@ SRC_URI="http://freedesktop.org/~kzk/${PN}/${P}.tar.gz"
 
 LICENSE="|| ( GPL-2 BSD )"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=">=app-i18n/uim-0.4.3
-	|| ( =x11-libs/qt-3.3.3 =x11-libs/qt-3.3.2 )"
-
-S="${WORKDIR}/${PN}"
-
-pkg_setup() {
-	if [ ! -e /usr/qt/3/plugins/inputmethods/libqimsw-none.so ] ; then
-		die "You need to rebuild qt-3.3.3 or qt-3.3.2 with immqt-bc(recommended) or immqt USE flag enabled."
-	fi
-}
-
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${P}-thread.diff
-}
+DEPEND=">=app-i18n/uim-0.4.4
+	>=x11-libs/qt-3.3.3-r1"
 
 src_compile() {
-	sed -e 's,${QTDIR},${D}${QTDIR},g' install > ${T}/install
+	addwrite /usr/qt/3/etc/settings
 
-	qmake || die "qmake failed"
+	econf || die "You need to rebuild >=x11-libs/qt-3.3.3-r1 with immqt-bc(recommended) or immqt USE flag enabled."
 	emake -j1 || die "make failed."
 }
 
 src_install() {
-	sh ${T}/install || die "install failed"
+	make DESTDIR=${D} install || die
 
 	dodoc COPYING ChangeLog README* TODO THANKS
 }
