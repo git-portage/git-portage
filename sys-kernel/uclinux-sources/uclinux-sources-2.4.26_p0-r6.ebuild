@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/uclinux-sources/Attic/uclinux-sources-2.4.26_p0-r5.ebuild,v 1.1 2004/08/08 20:27:34 plasmaroo Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/uclinux-sources/Attic/uclinux-sources-2.4.26_p0-r6.ebuild,v 1.1 2004/08/10 00:21:58 plasmaroo Exp $
 
 IUSE=""
 
@@ -53,6 +53,7 @@ src_unpack() {
 	epatch ${FILESDIR}/${P}.CAN-2004-0535.patch || die "Failed to add the CAN-2004-0535 patch!"
 	epatch ${FILESDIR}/${P}.CAN-2004-0685.patch || die "Failed to add the CAN-2004-0685 patch!"
 	epatch ${FILESDIR}/${P}.FPULockup-53804.patch || die "Failed to apply FPU-lockup patch!"
+	epatch ${FILESDIR}/${P}.cmdlineLeak.patch || die "Failed to apply the /proc/cmdline patch!"
 
 	kernel_universal_unpack
 	set ARCH=${MY_ARCH}

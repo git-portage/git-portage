@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/uclinux-sources/Attic/uclinux-sources-2.6.7_p0-r4.ebuild,v 1.1 2004/08/05 11:15:48 plasmaroo Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/uclinux-sources/Attic/uclinux-sources-2.6.7_p0-r5.ebuild,v 1.1 2004/08/10 00:21:58 plasmaroo Exp $
 
 IUSE=""
 
@@ -45,6 +45,7 @@ src_unpack() {
 	epatch ${FILESDIR}/${PN}-2.6.CAN-2004-0596.patch || die "Failed to apply the CAN-2004-0596 security patch!"
 	epatch ${FILESDIR}/${PN}-2.6.IPTables-RDoS.patch || die "Failed to apply the IPTables RDoS security patch!"
 	epatch ${FILESDIR}/${PN}-2.6.ProcPerms.patch || die "Failed to apply the /proc permissions security patch!"
+	epatch ${FILESDIR}/${PN}-2.6.cmdlineLeak.patch || die "Failed to apply the /proc/cmdline patch!"
 
 	set MY_ARCH=${ARCH}
 	unset ARCH
