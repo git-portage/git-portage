@@ -1,3 +1,10 @@
+date 12 Jan 2001
+
+new sys-kernel/linux-2.4.0.7
+achim
+Based on 2.4.0ac7 with a special reiserfs-3.6.25 from the newsgroup
+that works with ac7. Still without reiserfs-nfs patch.
+
 date 11 Jan 2001
 
 del dev-lang/python-1.5.2-r3
