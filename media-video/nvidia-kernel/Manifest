@@ -1,7 +1,7 @@
 MD5 8ce6e8510b5396c685ad67f806351d36 nvidia-kernel-1.0.6106-r1.ebuild 3622
 MD5 b4a7988f8e10107742f255ea291478c0 nvidia-kernel-1.0.4499.ebuild 4028
 MD5 c65724336acbdb77c80842d7a9174301 nvidia-kernel-1.0.5332-r1.ebuild 4256
-MD5 8a9c407431706202e44f4f6f94f37952 nvidia-kernel-1.0.6111.ebuild 3622
+MD5 df851c985ade3eb3e255aaba89173a97 nvidia-kernel-1.0.6111.ebuild 3614
 MD5 f189c720f21a41c73a6c292ffec6cdfd nvidia-kernel-1.0.5328-r1.ebuild 4461
 MD5 20f6ae4f9076cd8f5dd1d2383d0eaca7 nvidia-kernel-1.0.4496-r3.ebuild 4286
 MD5 d5bc3ba053815cd1b559cba6bbd36452 nvidia-kernel-1.0.4363-r3.ebuild 4071
@@ -33,3 +33,4 @@ MD5 442f1483c003d291a90dfcc87903b045 files/1.0.5336/NVIDIA_kernel-1.0-5336-2.6-2
 MD5 5dc4b9a2463cb459721ae3e642f6239f files/1.0.5336/NVIDIA_kernel-1.0-5336-fix-makefile-for-2.6.patch 886
 MD5 7bf40e44b8f2181a1047ddfd13acd6b3 files/1.0.5336/NVIDIA_kernel-1.0-5336-basic-sysfs-support.patch 5439
 MD5 bc61be48f85d84f91d2035fa3cc92a47 files/1.0.6106/NVIDIA_kernel-1.0-6106-koutput-support.patch 6659
+MD5 335be8e5143f2227bcf74718de074343 files/1.0.6111/power-suspend-2.6.9-changes.patch 606
