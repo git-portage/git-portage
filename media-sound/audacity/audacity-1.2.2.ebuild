@@ -1,21 +1,22 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/audacity/Attic/audacity-1.1.3.ebuild,v 1.9 2004/06/24 23:51:13 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/audacity/Attic/audacity-1.2.2.ebuild,v 1.1 2004/10/31 10:37:32 eradicator Exp $
 
-inherit eutils
+IUSE="encode flac mad oggvorbis"
 
 MY_PV="${PV/_/-}"
 MY_P="${PN}-src-${MY_PV}"
+S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="A free, crossplatform audio editor."
 HOMEPAGE="http://audacity.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tgz"
-RESTRICT="nomirror"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
-IUSE="encode flac mad oggvorbis"
 SLOT="0"
-KEYWORDS="x86"
+
+# Do not unmask on amd64 without talking to eradicator
+KEYWORDS="~x86 ~ppc ~sparc ~amd64"
 
 DEPEND=">=x11-libs/wxGTK-2.2.9
 	>=app-arch/zip-2.3
@@ -23,19 +24,13 @@ DEPEND=">=x11-libs/wxGTK-2.2.9
 	media-libs/libid3tag
 	>=media-libs/libsndfile-1.0.0
 	>=media-libs/libsamplerate-0.0.14
-	=dev-libs/fftw-2*
 	>=media-libs/ladspa-sdk-1.12
 	flac? ( media-libs/flac )
 	oggvorbis? ( >=media-libs/libvorbis-1.0 )
 	mad? ( >=media-sound/madplay-0.14 )
 	encode? ( >=media-sound/lame-3.92 )"
 
-S="${WORKDIR}/${MY_P}"
-
 DOC="LICENSE.txt README.txt audacity-1.2-help.htb"
-
-# Disable UNICODE
-CFLAGS="${CFLAGS} -DwxUSE_UNICODE=0"
 
 pkg_setup() {
 	if wx-config --cppflags | grep gtk2u >& /dev/null; then
@@ -50,7 +45,7 @@ pkg_setup() {
 src_compile() {
 	local myconf;
 
-	myconf="--with-libsndfile=system --with-id3tag=system --with-help"
+	myconf="--with-libsndfile=system --with-id3tag=system"
 
 	# MAD support
 	if use mad; then
@@ -75,16 +70,22 @@ src_compile() {
 
 	econf ${myconf} || die
 
-	# emake b0rks 
-	make || die
+	# parallel borks 
+	emake -j1 || die
 }
 
 src_install() {
-	make DESTDIR=${D} install || die
+	make DESTDIR="${D}" install || die
 
 	# Install our docs
 	dodoc ${DOC}
 
 	# Remove bad doc install
 	rm -rf ${D}/share/doc
+
+	insinto /usr/share/pixmaps
+	newins AudacityLogo48x48.xpm audacity.xpm
+
+	insinto /usr/share/applications
+	doins ${FILESDIR}/audacity.desktop
 }
