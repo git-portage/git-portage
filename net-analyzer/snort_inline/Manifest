@@ -1,0 +1,5 @@
+MD5 0943064f5fa23ed146ebe2de081a24af snort_inline-2.1.0a.ebuild 2161
+MD5 fe6a25fdd3c6d4b527d89c51d78b8f36 files/2.1.0-libnet-1.0.patch 2753
+MD5 b5858725dbd2df4356875f78b9d855da files/digest-snort_inline-2.1.0a 69
+MD5 513637a4fadce14177bf85e97e5931f8 files/snort_inline-2.1.0-gcc3.patch 350
+MD5 5379f2b178725088a8757ef25c77775c files/snort_inline-2.1.0-pgsql.patch 645
