@@ -1,5 +1,8 @@
 date 20 Feb 2001
 
+new x11-wm/AfterStep-1.8.8
+pete
+
 upd sys-kernel/linux-2.4.1.19 to 2.4.1.19-r1
 drobbins
 Now with LVM 0.9.1-beta5
