@@ -1,5 +1,13 @@
 date 28 Apr 2001
 
+upd sys-kernel/linux-sources-2.4.4-r1 to 2.4.4-r2
+drobbins
+build fixes; linux-sources fix
+
+upd sys-kernel/linux-2.4.4-r1 to 2.4.4-r2
+drobbins
+build fixes; linux-sources fix
+
 upd sys-libs/db-3.2.3h-r1 to 3.2.3h-r2
 drobbins
 added a libdb.so.3 symlink to satisfy blender
