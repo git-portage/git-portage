@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/gaim-encryption/Attic/gaim-encryption-2.24-r1.ebuild,v 1.4 2004/04/23 14:18:02 rizzo Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/gaim-encryption/Attic/gaim-encryption-2.25.ebuild,v 1.1 2004/04/24 03:38:35 rizzo Exp $
 
 inherit flag-o-matic
 
@@ -15,13 +15,6 @@ KEYWORDS="~x86 ~sparc ~amd64 ~ppc ~alpha ~ia64 ~hppa ~mips"
 
 DEPEND=">=net-im/gaim-0.77
 	|| ( dev-libs/nss net-www/mozilla )"
-
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/encrypt_api.diff
-	epatch ${FILESDIR}/gaim-encryption-2.24-gcc2_fix.patch
-}
 
 src_compile() {
 	local myconf
