@@ -1,13 +1,16 @@
-MD5 bca5441f9058b410b6b3030e641e8de0 ChangeLog 6012
-MD5 22fa6d361fad76ac06de6b1abb91b02e libfwbuilder-1.0.2-r1.ebuild 1029
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 0c98991ee4db10595fd70cac4116d3b4 ChangeLog 6340
+MD5 9f4832acea13ed0646628fabe45db1cf libfwbuilder-1.0.2-r1.ebuild 1036
 MD5 37236013e0d26d43c6bff35a8a48e8ec metadata.xml 220
-MD5 8d1d4d2394b8dbf6b5e254e438abfca0 libfwbuilder-1.0.2-r2.ebuild 948
-MD5 e7098b204fe6bf6329b1320af5096e1b libfwbuilder-2.0.0.ebuild 793
-MD5 96098f4ce2e43da4f8d4d63d5df5c5cf libfwbuilder-2.0.1.ebuild 841
-MD5 487266e246f67aafbb4c6573d044d577 libfwbuilder-2.0.2.ebuild 841
-MD5 917e1d3f1ae671e6a0dc93921b57fbc2 libfwbuilder-2.0.3.ebuild 841
-MD5 dc99f98e0dcc1c7ba3510356a8436f34 libfwbuilder-2.0.4.ebuild 841
-MD5 0d30fa524ca192b02190ffc9cfe4c4a1 libfwbuilder-2.0.5.ebuild 762
+MD5 f60ab3583d0ba938926acb6d0b04e916 libfwbuilder-1.0.2-r2.ebuild 954
+MD5 de858e99fa93001e17493107a1376237 libfwbuilder-2.0.0.ebuild 823
+MD5 20fe4291e581b225cb055f6751cefa40 libfwbuilder-2.0.1.ebuild 768
+MD5 f68c3458614347e77b47ee4fe9c25101 libfwbuilder-2.0.2.ebuild 768
+MD5 cb1e9519ece528465dc08ed61949c7fe libfwbuilder-2.0.3.ebuild 768
+MD5 7e1bf89f3194dd95ff3c575d0725d935 libfwbuilder-2.0.4.ebuild 768
+MD5 88909765e6882784c0f4ca31534f7f00 libfwbuilder-2.0.5.ebuild 768
 MD5 8b6d58e88deb3ce4ebb8d89a8a87f71e files/digest-libfwbuilder-2.0.0 70
 MD5 2cdda8f867cfe8664c4630fe62aa1099 files/digest-libfwbuilder-1.0.2-r1 72
 MD5 8c6e33308e525276f9495da9785c4d70 files/digest-libfwbuilder-2.0.1 70
@@ -17,3 +20,10 @@ MD5 2b388fb3cdd3e977f419da2a7e114dfc files/digest-libfwbuilder-2.0.2 70
 MD5 efb9e2fed4147429a66984f38988e428 files/digest-libfwbuilder-2.0.3 70
 MD5 de96f81e32bb5833012f588f3b1c544a files/digest-libfwbuilder-2.0.4 70
 MD5 905ed5985178226c9c9b2d7fe56debd2 files/digest-libfwbuilder-2.0.5 70
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCGUV8mdTrptrqvGERAk92AJ9of4cs7vEJCfOX/T2/Giodv98XhwCfSWEq
+6rM7/h+lpaKU3tVY4bx9Y/I=
+=cusV
+-----END PGP SIGNATURE-----
