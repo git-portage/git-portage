@@ -1,0 +1,5 @@
+MD5 137d2d751d0e98c97ec685cf46495b1d wefts-0.99c.ebuild 764
+MD5 f5f1522837a3398846f77d381fda47ec metadata.xml 226
+MD5 fdebae79ee5f049fc601ce542dd22868 ChangeLog 351
+MD5 7c5372f040edc68ac55c917fe359dc95 files/digest-wefts-0.99c 66
+MD5 86220ba170f6600578c478f1d5ebd9fc files/wefts-errno.patch 347
