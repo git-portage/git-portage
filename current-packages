@@ -139,7 +139,7 @@
 ./gnome-apps/gnorpm/gnorpm-0.95.1-r1.ebuild
 ./gnome-apps/gnucash/gnucash-1.4.7-r2.ebuild
 ./gnome-apps/gtop/gtop-1.0.10.ebuild
-./gnome-apps/gupsc/gupsc-0.3.0.ebuild
+./gnome-apps/gupsc/gupsc-0.3.0-r1.ebuild
 #./gnome-apps/nautilus/nautilus-0.5.0.ebuild
 ./gnome-apps/powershell/powershell-0.80.ebuild
 ./gnome-apps/users-guide/users-guide-1.2.ebuild
