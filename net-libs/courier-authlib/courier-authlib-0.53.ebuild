@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/courier-authlib/Attic/courier-authlib-0.52.ebuild,v 1.3 2005/01/07 07:18:29 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/courier-authlib/Attic/courier-authlib-0.53.ebuild,v 1.1 2005/01/30 19:51:07 swtaylor Exp $
 
 inherit eutils gnuconfig
 
@@ -82,10 +82,11 @@ src_compile() {
 	econf \
 		--sysconfdir=/etc/courier \
 		--datadir=/usr/share/courier \
-		--libexecdir=/usr/lib/courier \
+		--libexecdir=/usr/$(get_libdir)/courier \
 		--localstatedir=/var/lib/courier \
 		--sharedstatedir=/var/lib/courier/com \
 		--with-authdaemonvar=/var/lib/courier/authdaemon \
+		--with-authshadow \
 		--without-redhat \
 		--with-mailuser=mail \
 		--with-mailgroup=mail \
