@@ -1,4 +1,5 @@
-MD5 7e82a6093e431337062ee59e1cd14314 openjms-bin-0.7.5-r3.ebuild 784
+MD5 8c742c91e1a43e79c572f95648937d50 openjms-bin-0.7.6.ebuild 727
+MD5 70af09ed9dca1e32e9b26ea4f3c2a206 openjms-bin-0.7.5-r3.ebuild 787
 MD5 9373bc9701f6dfdd28a0d89bf0797db5 ChangeLog 1206
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
 MD5 42fa91f02427c73b570e4907058ea05e files/rc 535
@@ -6,3 +7,4 @@ MD5 463cee3ced345a76c84d5a3acfcc2d81 files/rc2 777
 MD5 b7476bad5b940d9e264bf03b1392cf5f files/conf 27
 MD5 1461aa95027a29b9282a711045a06058 files/digest-openjms-bin-0.7.5-r3 63
 MD5 1c1f7f56172148c05424af03c5a42148 files/10openjms-0.7.5 43
+MD5 9c74a5db584b416d78128a5762185258 files/digest-openjms-bin-0.7.6 66
