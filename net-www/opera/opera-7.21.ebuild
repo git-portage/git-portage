@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/opera/Attic/opera-7.21_pre1.ebuild,v 1.1 2003/10/04 17:08:25 lanius Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/opera/Attic/opera-7.21.ebuild,v 1.1 2003/10/17 10:16:51 lanius Exp $
 
 # Here, like in the other .ebuilds, the static version is
 # forced for simplicity's sake
@@ -16,17 +16,17 @@ DEPEND=">=sys-apps/sed-4"
 RDEPEND="virtual/x11
 	>=media-libs/fontconfig-2.1.94-r1
 	media-libs/libexif
-	>=x11-libs/lesstif-0.93.40" #lesstif resolves Bug 25767
+	|| ( x11-libs/lesstif x11-libs/openmotif )"
 
 KEYWORDS="~x86 ~ppc ~sparc"
 SLOT="0"
 
-OPERAVER="7.21-20031002"
+OPERAVER="7.21-20031013"
 OPERATYPE="1-static-qt"
 
-SRC_URI="x86? ( http://snapshot.opera.com/unix/7.21-Preview-1/intel-linux/${PN}-${OPERAVER}.${OPERATYPE}.i386.tar.bz2 )
-	ppc? ( http://snapshot.opera.com/unix/7.21-Preview-1/ppc-linux/${PN}-${OPERAVER}.${OPERATYPE}.ppc.tar.bz2 )
-	sparc? ( http://snapshot.opera.com/unix/7.21-Preview-1/sparc-linux/${PN}-${OPERAVER}.${OPERATYPE}.sparc.tar.bz2 )"
+SRC_URI="x86? ( ftp://ftp.opera.com/pub/opera/linux/721/final/en/i386/static/${PN}-${OPERAVER}.${OPERATYPE}.i386.tar.bz2 )
+	ppc? ( ftp://ftp.opera.com/pub/opera/linux/721/final/en/ppc/static/${PN}-${OPERAVER}.${OPERATYPE}.ppc.tar.bz2 )
+	sparc? ( ftp://ftp.opera.com/pub/opera/linux/721/final/en/sparc/static/${PN}-${OPERAVER}.${OPERATYPE}.sparc.tar.bz2 )"
 
 S=${WORKDIR}/${A/.tar.bz2/}
 
@@ -49,6 +49,7 @@ src_unpack() {
 		   -e 's:chop "${DESTDIR}" "str_localdirexec"::' \
 		   -e 's:chop "${DESTDIR}" "str_localdirshare"::' \
 		   -e 's:chop "${DESTDIR}" "str_localdirplugin"::' \
+		   -e 's:read str_answer:return 0:' \
 	       install.sh || die
 }
 
@@ -92,4 +93,15 @@ src_install() {
 	# Install a symlink /usr/bin/opera
 	dodir /usr/bin
 	dosym /opt/opera/bin/opera /usr/bin/opera
+
+	# install correct motifwrapper
+	if [ "`has_version 'x11-libs/openmotif-2.2*'`" ]; then
+		rm ${D}/opt/opera/lib/opera/plugins/operamotifwrapper
+		cp ${S}/plugins/operamotifwrapper-3 ${D}/opt/opera/lib/opera/plugins
+	fi
+}
+
+pkg_postinst() {
+	einfo "For localized language files take a look at:"
+	einfo "http://www.opera.com/download/languagefiles/index.dml?platform=linux"
 }
