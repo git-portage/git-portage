@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/hppa-sources/Attic/hppa-sources-2.4.26_p6.ebuild,v 1.1 2004/07/03 22:15:39 gmsoft Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/hppa-sources/Attic/hppa-sources-2.4.26_p6-r1.ebuild,v 1.1 2004/07/09 19:06:58 gmsoft Exp $
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
 ETYPE="sources"
@@ -54,6 +54,7 @@ src_unpack() {
 	epatch ${FILESDIR}/CAN-2004-0394.patch || die "Failed to patch CAN-2004-0394 security fix!"
 	epatch ${FILESDIR}/CAN-2004-0495-2.4-sparse.patch || die "Failed to patch CAN-2004-0495 security fix!"
 	epatch ${FILESDIR}/CAN-2004-0535-2.4-e1000.patch || die "Failed to patch CAN-2004-0535 security fix!"
+	epatch ${FILESDIR}/CAN-2004-0497.patch || die "Failed to patch CAN-2004-0497 security fix!"
 
 	kernel_universal_unpack
 }
