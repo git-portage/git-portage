@@ -1,8 +1,18 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5f55a86c01170d96fee3f104d0095abf projectx-0.81.7.ebuild 1226
-MD5 46fe03587319e88b164d34a969acb5ff ChangeLog 1735
+MD5 d3454384c6d1895a663f8f79738b96fd ChangeLog 1736
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
-MD5 35347da7a38a58109607b3515d96b8d2 projectx-0.82.0.00.ebuild 1384
+MD5 d562b426a6ea326a112210c9b9ed2052 projectx-0.82.0.00.ebuild 1384
 MD5 b4ae51238511bfc67e1a8cdec24ab3eb files/0.82.0.00-build.xml 2213
 MD5 af303240d6ff60c3c83a323ea2f4ab73 files/digest-projectx-0.81.7 71
 MD5 66747c7e41172eca650581213ea161d5 files/build.xml 1069
 MD5 6a180b8fda8939d8800a994fa0b2ca2e files/digest-projectx-0.82.0.00 74
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCTxVJ06ebR+OMO78RAi3DAJsGlq2Gt9uRb2BE8Vq+a86kRCX6IgCfa2Pp
+QHkv5V7hsyYBB/JKF50MiNs=
+=elmW
+-----END PGP SIGNATURE-----
