@@ -1,14 +1,13 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/omniORB/Attic/omniORB-305.ebuild,v 1.11 2003/03/25 21:02:42 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/omniORB/Attic/omniORB-305.ebuild,v 1.13 2003/09/04 04:38:22 msterret Exp $
 
 S=${WORKDIR}/omni
 DESCRIPTION="a robust, high-performance CORBA 2 ORB"
 SRC_URI="mirror://sourceforge/omniorb/${PN}_${PV}.tar.gz
 	mirror://sourceforge/omniorb/${PN}py_1_5.tar.gz"
-HOMEPAGE="http://sourceforge.net/projects/omniorb/"
-#the following one contains some more info, though it looks soemwhat deserted
-#HOMEPAGE="http://www.uk.research.att.com/omniORB/"
+HOMEPAGE="http://sourceforge.net/projects/omniorb/
+	http://www.uk.research.att.com/omniORB/"
 
 LICENSE="LGPL-2 GPL-2"
 SLOT="0"
@@ -80,7 +79,7 @@ src_install () {
 	doexe lib/${PLT}/omnicpp
 	cp -af lib/python/* ${D}/usr/lib/python2.2/
 	doman man/man[15]/*.[15]
-	
+
 	exeinto /etc/init.d
 	newexe ${FILESDIR}/omniORB.305 omniORB
 	dodir /etc/omniorb
