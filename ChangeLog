@@ -1,5 +1,18 @@
 date 16 Jan 2001
 
+del sys-devel/python-2.0
+drobbins
+yes, it's moving back to dev-lang
+
+new dev-lang/python-2.0
+drobbins
+python's back at dev-lang
+
+upd sys-devel/spython-2.0 to 2.0-r1
+drobbins
+now a full implementation instead of just a static binary.
+No longer depends on the full python package.
+
 upd sys-apps/portage-1.4-r3 to 1.4-r4
 drobbins
 Portage no longer trashes your existing make.conf
