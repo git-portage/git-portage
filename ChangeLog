@@ -1,4 +1,7 @@
 17.09.2000
+	- "dodeps" appears to be working	(drobbins)
+	  [ Portage dependencies -- will
+	    merge into portage in a day or so]
 	- modularized ebuild			(drobbins)
 	- Fixed qt path in /etc/profile		(drobbins)
 	- ebuild now sources /etc/profile	(drobbins)
