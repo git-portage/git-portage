@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Tools Team <tools@gentoo.org>
 # Author: Achim Gottinger <achim@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/php/Attic/php-4.1.1-r2.ebuild,v 1.1 2002/02/12 17:44:44 karltk Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/php/Attic/php-4.1.1-r3.ebuild,v 1.1 2002/02/18 21:01:05 karltk Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="HTML embedded scripting language"
@@ -61,6 +61,23 @@ RDEPEND="virtual/glibc
 	imap? ( virtual/imap )
 	java? ( virtual/jdk )
 	"
+
+src_unpack() {
+	unpack ${P}.tar.gz
+	cd ${S}
+	if [ "`use java`" ] ; then
+
+		cp configure configure.orig
+		cat configure.orig | \
+			sed -e 's/LIBS="-lttf $LIBS"/LIBS="-lttf -lhpi $LIBS"/' \
+			> configure
+
+		cp ext/gd/gd.c ext/gd/gd.c.orig
+		cat ext/gd/gd.c.orig | \
+			sed -e "s/typedef FILE gdIOCtx;//" \
+			> ext/gd/gd.c
+	fi
+}
 
 src_compile() {
 
