@@ -346,7 +346,7 @@
 ./net-misc/sslwrap/sslwrap-2.0.5-r1.ebuild
 ./net-misc/traceroute/traceroute-1.4_p12.ebuild
 ./net-misc/wget/wget-1.5.3-r1.ebuild
-./net-misc/whois/whois-4.5.1.ebuild
+./net-misc/whois/whois-4.5.2.ebuild
 ./net-nds/openldap/openldap-1.2.11-r1.ebuild
 #./net-nds/openldap/openldap-2.0.7.ebuild
 ./net-nds/portmap/portmap-5b-r1.ebuild
