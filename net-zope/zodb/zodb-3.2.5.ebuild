@@ -1,21 +1,20 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zodb/Attic/zodb-3.3.ebuild,v 1.2 2005/01/14 22:16:59 radek Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zodb/Attic/zodb-3.2.5.ebuild,v 1.1 2005/01/14 22:16:59 radek Exp $
 
 inherit distutils
 
 MY_P=ZODB
 
 DESCRIPTION="Zope Object DataBase."
-HOMEPAGE="http://zope.org/Products/${MY_P}${PV}"
-SRC_URI="http://zope.org/Products/${MY_P}${PV}/${PV}/${MY_P}3-${PV}.tgz"
-
-LICENSE="ZPL"
-SLOT="3.3"
-KEYWORDS="~x86"
+HOMEPAGE="http://zope.org/Products/ZODB3.2"
+SRC_URI="${HOMEPAGE}/${MY_P}%203.2.5/${MY_P}3-3.2.5.tgz"
 IUSE=""
+LICENSE="ZPL"
+SLOT="3.2"
+KEYWORDS="~x86"
 
-DEPEND=">=dev-lang/python-2.3.4"
+DEPEND=">=dev-lang/python-2.3.3"
 
 S=${WORKDIR}/${MY_P}3-${PV}
 
