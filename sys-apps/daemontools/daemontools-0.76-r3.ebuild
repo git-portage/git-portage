@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/daemontools/Attic/daemontools-0.76-r3.ebuild,v 1.1 2003/02/27 06:25:28 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/daemontools/Attic/daemontools-0.76-r3.ebuild,v 1.3 2003/03/16 23:12:40 wwoods Exp $
 
 inherit eutils
 
@@ -8,7 +8,7 @@ DESCRIPTION="Collection of tools for managing UNIX services"
 SRC_URI="http://cr.yp.to/daemontools/${P}.tar.gz"
 HOMEPAGE="http://cr.yp.to/daemontools.html"
 
-KEYWORDS="x86 ppc sparc"
+KEYWORDS="x86 ppc sparc alpha"
 SLOT="0"
 LICENSE="freedist"
 
@@ -49,5 +49,5 @@ src_install() {
 	dodoc CHANGES ../package/README TODO
 
 	exeinto /etc/init.d
-	doexe ${FILESDIR}/svscan svscan
+	doexe ${FILESDIR}/svscan
 }
