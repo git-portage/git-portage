@@ -1,4 +1,6 @@
 17.11.2000
+	- Update portage					(drobbins)
+		[ dev-ruby category added to portage.py ]
 	- New sys-libs/db-3.1.17-r1			(drobbins)
 	- New sys-libs/db-1.85				(drobbins)
 	- Removed dev-db/db and sys-libs/db3 and db1
