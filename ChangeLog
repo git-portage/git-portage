@@ -2,6 +2,9 @@ DATE
 20 Nov 2000
 
 jerry
+Update gkrellm-1.0.1 to gkrellm-1.0.2
+
+jerry
 Move from /etc/pam.conf to /etc/pam.d
 This change will make it easier to update PAM information by having
 applications drop appropriate configuration files into /etc/pam.d
