@@ -1,0 +1,5 @@
+MD5 5bffeec5fea8bb21bd9819bb4fd6d0e6 xjavadoc-1.1.ebuild 973
+MD5 36810f567a64484a65ca5573b895276c ChangeLog 379
+MD5 123cf9440c1d4ac78f2caba1624765f9 metadata.xml 158
+MD5 ab072e0465aa3f0ab9c007d189415e06 files/xjavadoc-1.1-buildfile.patch 1094
+MD5 7abfbf5b533b28576460b9214237b58e files/digest-xjavadoc-1.1 140
