@@ -1,4 +1,6 @@
-MD5 0614ba8552a06efb0dd5eed09b977f16 convmv-1.05.ebuild 652
+MD5 c7ef17a16eec4bfb213ecd68fecc0ab2 convmv-1.05.ebuild 663
 MD5 27a9af3eeff3877147a42b732669424b ChangeLog 549
 MD5 0ee85af0a54e30719e02f45b0720e9fa metadata.xml 228
+MD5 a26698d88aae6a0bfad05e09334d9448 convmv-1.08.ebuild 665
 MD5 bd4b326af450c5197ad6fabffda85ddf files/digest-convmv-1.05 62
+MD5 95e339ae41691713383980adeb87b41f files/digest-convmv-1.08 62
