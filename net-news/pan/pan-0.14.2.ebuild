@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-news/pan/Attic/pan-0.13.4.ebuild,v 1.6 2003/09/04 23:52:15 spider Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-news/pan/Attic/pan-0.14.2.ebuild,v 1.1 2003/09/04 23:52:15 spider Exp $
 
 IUSE="spell"
 
@@ -9,13 +9,13 @@ SRC_URI="http://pan.rebelbase.com/download/releases/${PV}/SOURCE/${P}.tar.bz2"
 HOMEPAGE="http://pan.rebelbase.com"
 
 LICENSE="GPL-2"
-KEYWORDS="x86 ~ppc sparc"
+KEYWORDS="~x86 ~hppa ~ppc"
 SLOT="0"
 
 RDEPEND=">=dev-libs/glib-2.0.4
 	>=x11-libs/gtk+-2.0.5
 	>=dev-libs/libxml2-2.4.22
-	>=net-libs/gnet-1.1.5
+	<net-libs/gnet-2
 	spell? ( >=app-text/gtkspell-2.0.2 )"
 
 DEPEND="${RDEPEND}
@@ -44,6 +44,5 @@ src_compile() {
 
 src_install() {
 	einstall || die "Installation failed"
-
 	dodoc ANNOUNCE AUTHORS ChangeLog COPYING CREDITS INSTALL NEWS README TODO
 }
