@@ -1,16 +1,18 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/lesstif/Attic/lesstif-0.93.94-r2.ebuild,v 1.4 2005/03/14 13:57:36 lanius Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/lesstif/Attic/lesstif-0.94.0-r6.ebuild,v 1.1 2005/03/23 18:43:43 lanius Exp $
+
+# disable sandbox, needed for motif-config
+SANDBOX_DISABLED="1"
 
 inherit libtool flag-o-matic multilib
 
 DESCRIPTION="An OSF/Motif(R) clone"
 HOMEPAGE="http://www.lesstif.org/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2
-	mirror://debian/pool/main/l/lesstif1-1/lesstif1-1_0.93.94-11.diff.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="LGPL-2"
-SLOT="1.2"
+SLOT="2.1"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~ppc-macos ~sparc ~x86 ~ia64"
 IUSE="static"
 
@@ -23,11 +25,11 @@ PROVIDE="virtual/motif"
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${DISTDIR}/lesstif1-1_0.93.94-11.diff.gz
+	epatch ${FILESDIR}/CAN-2005-0605.patch
 }
 
 src_compile() {
-	use ppc-macos || elibtoolize
+	use ppc-macos || libtoolize --force --copy
 
 	if use ppc-macos; then
 		append-ldflags -L/usr/X11R6/lib -lX11 -lXt
@@ -37,9 +39,6 @@ src_compile() {
 	  $(use_enable static) \
 	  --enable-production \
 	  --enable-verbose=no \
-	  --enable-build-12 \
-	  --disable-build-20 \
-	  --disable-build-21 \
 	  --with-x || die "./configure failed"
 
 	emake CFLAGS="${CFLAGS}" || die
@@ -50,18 +49,18 @@ src_install() {
 
 
 	einfo "Fixing binaries"
-	dodir /usr/$(get_libdir)/lesstif-1.2
+	dodir /usr/$(get_libdir)/lesstif-2.1
 	for file in `ls ${D}/usr/bin`
 	do
-		mv ${D}/usr/bin/${file} ${D}/usr/$(get_libdir)/lesstif-1.2/${file}
+		mv ${D}/usr/bin/${file} ${D}/usr/$(get_libdir)/lesstif-2.1/${file}
 	done
 
 	einfo "Fixing libraries"
-	mv ${D}/usr/lib/* ${D}/usr/$(get_libdir)/lesstif-1.2/
+	mv ${D}/usr/lib/* ${D}/usr/$(get_libdir)/lesstif-2.1/
 
 	einfo "Fixing includes"
-	dodir /usr/include/lesstif-1.2/
-	mv ${D}/usr/include/* ${D}/usr/include/lesstif-1.2
+	dodir /usr/include/lesstif-2.1/
+	mv ${D}/usr/include/* ${D}/usr/include/lesstif-2.1
 
 	einfo "Fixing man pages"
 	mans="1 3 5"
@@ -70,7 +69,7 @@ src_install() {
 		for file in `ls ${D}/usr/share/man/man${man}`
 		do
 			file=${file/.${man}/}
-			mv ${D}/usr/share/man/man$man/${file}.${man} ${D}/usr/share/man/man${man}/${file}-lesstif-1.2.${man}
+			mv ${D}/usr/share/man/man$man/${file}.${man} ${D}/usr/share/man/man${man}/${file}-lesstif-2.1.${man}
 		done
 	done
 
@@ -81,33 +80,26 @@ src_install() {
 	rm -fR ${D}/usr/$(get_libdir)/LessTif
 
 	# cleanup
-	rm -f ${D}/usr/$(get_libdir)/lesstif-1.2/mxmkmf
+	rm -f ${D}/usr/$(get_libdir)/lesstif-2.1/mxmkmf
 	rm -fR ${D}/usr/share/aclocal/
-	rm -fR ${D}/usr/$(get_libdir)/lesstif-1.2/LessTif/
-	rm -fR ${D}/usr/$(get_libdir)/lesstif-1.2/X11/
+	rm -fR ${D}/usr/$(get_libdir)/lesstif-2.1/LessTif/
+	rm -fR ${D}/usr/$(get_libdir)/lesstif-2.1/X11/
 	rm -fR ${D}/usr/$(get_libdir)/X11/
 
+	# profile stuff
+	motif-config --finish-install
 }
 
 # Profile stuff
 pkg_setup() {
 	motif-config --start-install
+	if has_version ">=x11-libs/lesstif-0.94.0"; then touch $T/upgrade; fi
 }
 
 pkg_postinst() {
-	motif-config --finish-install
-	motif-config --install lesstif-1.2
-}
-
-is_upgrade() {
-	vdb_path=`portageq vdb_path`
-	if [ "`grep -r SLOT $vdb_path/${CATEGORY}/${PN}* | grep $SLOT`" ]; then
-		return 0
-	else
-		return 1
-	fi
+	motif-config --install lesstif-2.1
 }
 
 pkg_postrm() {
-	is_upgrade || motif-config --uninstall lesstif-1.2
+	[ -f $T/upgrade ] || motif-config --uninstall lesstif-2.1
 }
