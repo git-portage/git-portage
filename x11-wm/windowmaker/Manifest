@@ -2,9 +2,9 @@ MD5 58b92f8943bac08e53aeeb01f640537a windowmaker-0.80.2-r2.ebuild 3437
 MD5 3c3d6a630b21bdf50c422943b2cc79fe windowmaker-0.80.2-r4.ebuild 4034
 MD5 248585ccd01b24785a7ce882b96d9d7f windowmaker-0.90.0.ebuild 4469
 MD5 ecb31937eebc5b0afa6785ec0afefe4d windowmaker-0.80.2-r1.ebuild 3408
-MD5 50a3234d99e47f1929efd733badb3ec4 windowmaker-0.91.0.ebuild 4462
+MD5 b82c386be6ffede35fedcff826398b43 windowmaker-0.91.0.ebuild 4461
 MD5 20ba3ee0e4036e307342671f74921913 windowmaker-0.80.2-r3.ebuild 3749
-MD5 e1e4b8342cc95d397aa8a6a9593a1805 ChangeLog 7774
+MD5 1d5c2eae5429565f11d66decc874cc27 ChangeLog 7773
 MD5 091028d21186597cb01d1440ed387951 metadata.xml 221
 MD5 a42a33a349ca84fb6e2cc5fdbd627b99 files/trance.patch.WM-0.80.2.diff 9738
 MD5 c8eb68627dc7b53b10143626018ff597 files/gtk2flickerfix.patch 1969
