@@ -4,6 +4,7 @@ MD5 77eb50bf3e6553a05a20d268f18b3647 postfix-2.0.19-r2.ebuild 6183
 MD5 027297ac3ac33bb8d1264de5a8d63b18 postfix-1.1.11.20020917-r1.ebuild 4559
 MD5 17e728ea0c2bc977a8ee7c96a9650da4 postfix-2.0.16-r1.ebuild 6663
 MD5 5234b870293b81f57c41d8934ff58278 postfix-2.0.19-r4.ebuild 6670
+MD5 c7c4e0b2204d854202df60b3a8fdc741 postfix-2.1.4.ebuild 7257
 MD5 a37e17b30106fd73993b70a6ec3db9af postfix-2.0.19.ebuild 6715
 MD5 30e7081167c25d6676a36269ef267f9b postfix-2.0.19-r1.ebuild 5974
 MD5 573452360acf22e6d1fb55b6ec579d49 ChangeLog 26159
@@ -28,6 +29,7 @@ MD5 e91728e4c6af081ddfd1b656375612e8 files/master.cf 4423
 MD5 6775371821db3139dd2470c794a1e01f files/digest-postfix-1.1.11.20020917 166
 MD5 bbaf5265ce09b79fded4d429f420ea23 files/digest-postfix-2.1.1 422
 MD5 7923292c13473118323ceff84e770a1d files/digest-postfix-2.1.3 357
+MD5 67cca01f2695ef43df3c5f99db45f12f files/digest-postfix-2.1.4 363
 MD5 78c16ededccb206774194bfe05475a99 files/mailer.conf 1547
 MD5 502e444ec6b9d6fb9bbef3bb0f5e284a files/smtp.pam 254
 MD5 8b504ee0538fd73b921421395d56c293 files/digest-postfix-2.0.16-r1 447
