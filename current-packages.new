@@ -72,6 +72,7 @@
 ./dev-lang/nasm/nasm-0.98-r1.ebuild
 #./dev-lang/php-4/php-4.0.0-r1.ebuild
 ./dev-lang/php-4/php-4.0.4.ebuild
+./dev-lang/python/python-2.0.ebuild
 ./dev-lang/ruby/ruby-1.6.2.ebuild
 ./dev-lang/swig/swig-1.3_alpha5-r1.ebuild
 #./dev-lang/tcl-tk/tcl-tk-8.0.5-r1.ebuild
@@ -442,8 +443,7 @@
 ./sys-devel/make/make-3.79.1-r1.ebuild
 ./sys-devel/patch/patch-2.5.4-r1.ebuild
 ./sys-devel/perl/perl-5.6.0-r5.ebuild
-./sys-devel/python/python-2.0.ebuild
-./sys-devel/spython/spython-2.0.ebuild
+./sys-devel/spython/spython-2.0-r1.ebuild
 ./sys-kernel/linux/linux-2.4.0.8.ebuild
 #./sys-kernel/linux/linux-2.4.0.8-r1.ebuild
 ./sys-libs/cracklib/cracklib-2.7-r1.ebuild
