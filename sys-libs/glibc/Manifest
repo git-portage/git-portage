@@ -1,4 +1,4 @@
-MD5 e3f7714bc146fa7c27b8c7eecd8a1f18 ChangeLog 35427
+MD5 93b9f71e34ff72ef7f3accba2f9e3280 ChangeLog 35963
 MD5 3cabdcac98a09022f6fd32d93899af00 glibc-2.3.4.20040602.ebuild 16096
 MD5 8b7e7808eb2770c0232fa297a5896460 glibc-2.3.3_pre20040529.ebuild 21693
 MD5 32383b07afc0abdbb3a8da5fe539a696 glibc-2.3.2-r9.ebuild 18657
@@ -14,7 +14,7 @@ MD5 6ac96ce0f33c3d794730111609c45576 glibc-2.3.2-r3.ebuild 17308
 MD5 c09629c691d99b48b52e8ee8083cd1da glibc-2.3.3_pre20031210.ebuild 19015
 MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
 MD5 081030d4ac6e9b8879727089b52b28fd glibc-2.3.2-r10.ebuild 19418
-MD5 267c8cde8ef17b02d3eed572d007dc37 glibc-2.3.2-r11.ebuild 19703
+MD5 ad377698cf9e77788f92c623cf12b8c7 glibc-2.3.2-r11.ebuild 19801
 MD5 de6744f3ba45c52573febfa91a3d1d1d files/digest-glibc-2.3.2-r2 296
 MD5 d8830438ea871dbfd1acf7a3d0299159 files/test-__thread.c 53
 MD5 49374df695743477ccba680199a0ff87 files/digest-glibc-2.3.3_pre20040117 312
@@ -108,7 +108,7 @@ MD5 b07a316cbba4ddc1e1bb094a3056f12f files/2.2.5/glibc-2.2.5-ppc-semctl.diff 133
 MD5 b12e1a7de85cd82bcb341863643c9ffd files/2.2.5/glibc-2.2.5-dns-network-overflow.diff 365
 MD5 96914104dbdc2807c84549c3d20cb47c files/2.2.5/glibc-2.2.5-sparc32-semctl.patch 6311
 MD5 993732f56fdecf36f672198112fc5d5c files/2.2.5/glibc-2.2.5-threadsig.diff 636
-MD5 9e2c8ac6d3fa8494ecb962b675f412b5 files/2.3.2/ssp.c 3936
+MD5 0e3ced9c3c484f502dcade7ffffa15f4 files/2.3.2/ssp.c 3935
 MD5 0e27dbd2a3b85a0e14625294296fad9a files/2.3.2/glibc-2.3.2-propolice-guard-functions-v3.patch 1986
 MD5 0bfc56be86acec8ec52fe29249e267a4 files/2.3.2/glibc-2.3.2-owl-malloc-unlink-sanity-check.diff 1425
 MD5 45b1fda5b64866e837a825d0add0b31c files/2.3.2/glibc-2.3.2-ipv6-bytestring-fix.patch 4088
