@@ -1,5 +1,9 @@
 date 24 Apr 2001
 
+upd sys-apps/portage-1.5-r3 to 1.5-r4
+drobbins
+several build-related bugs fixes of medium importance
+
 new app-text/dictd-devils
 michael
 
