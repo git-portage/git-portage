@@ -1,14 +1,14 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/abiword/Attic/abiword-1.1.4.ebuild,v 1.4 2003/04/08 12:57:48 foser Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/abiword/Attic/abiword-1.9.1.ebuild,v 1.1 2003/05/16 16:25:00 foser Exp $
 
-inherit eutils
+inherit eutils debug
 
-IUSE="perl build spell jpeg xml2 gnome"
+IUSE="spell jpeg xml2 gnome"
 
 S=${WORKDIR}/${P}/abi
 DESCRIPTION="Fully featured yet light and fast cross platform word processor."
-SRC_URI="mirror://sourceforge/${PN}/${P}-withconfigure.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 HOMEPAGE="http://www.abisource.com"
 KEYWORDS="~x86 ~sparc ~alpha ~ppc"
 LICENSE="GPL-2"
@@ -24,13 +24,17 @@ DEPEND="virtual/x11
 	>=app-text/wv-0.7.5
 	>=dev-libs/fribidi-0.10.4
 	jpeg?  ( >=media-libs/jpeg-6b-r2 )
-	perl?  ( >=dev-lang/perl-5.6 )
 	( xml2? >=dev-libs/libxml2-2.4.10 : dev-libs/expat )
 	spell? ( >=app-text/aspell-0.50.3 )
 	gnome? ( >=gnome-base/libgnomeui-2.2 
 		>=gnome-base/libgnomeprintui-2.2.1 
-		>=gnome-extra/gal-1.99 )
-	!app-shells/bash-completion"
+		>=gnome-extra/gal-1.99 )"
+
+#	perl?  ( >=dev-lang/perl-5.6 )
+# perl seems broken
+
+# FIXME : do 'real' use switching, add gucharmap support
+# switches do not work by the looks of it
 
 src_unpack() {
 	unpack ${A}
@@ -44,16 +48,12 @@ src_unpack() {
 	#
 	# April 1st 2003 <foser@gentoo.org>
 	cd ${S}
-	epatch ${FILESDIR}/${P}-wv_configure_fooling.patch
+	epatch ${FILESDIR}/${PN}-1.1.4-wv_configure_fooling.patch
 }
 
 src_compile() {
-
 	local myconf
 
-#	use perl \
-#		&& myconf="${myconf} --enable-scripting"  # A fix is in the works upstream, demand doesn't warrant a patch from here.
-	
 	use gnome \
 		&& myconf="${myconf} --enable-gnome" \
 		|| myconf="${myconf} --disable-gnome" 
