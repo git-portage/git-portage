@@ -1,4 +1,4 @@
-MD5 f19bdeb7d582ba2525c4f73e678b3290 ChangeLog 32403
+MD5 d7892a95449cd2a05a47c5f9a4070e7d ChangeLog 32402
 MD5 f8d3d207746da2a3cd14dcaab8daab76 metadata.xml 163
 MD5 69acfa17c1b50b08165f065d7a885daf postgresql-7.3.6-r1.ebuild 7509
 MD5 f09416694117e0a0cee33645c684ff35 postgresql-7.3.7-r2.ebuild 7954
@@ -10,7 +10,7 @@ MD5 99537073b08406950be7655e973b307d postgresql-7.4.5-r1.ebuild 10089
 MD5 40ef4023dbb91ffc0e820a9eca603b84 postgresql-7.4.5-r2.ebuild 10119
 MD5 7de4b12d2bbae3e1ab01a33a287972fe postgresql-7.4.5.ebuild 10077
 MD5 d66dc6886b8e179055e96e9a86132806 postgresql-7.4.6.ebuild 10529
-MD5 a67a2a99428608d038d9abf542763fb4 postgresql-7.4.7.ebuild 10518
+MD5 feab3fc5f3fc43217f20f55e74184bdf postgresql-7.4.7.ebuild 10517
 MD5 fffe2195c9a1b97825980529d9711a06 postgresql-8.0.0.ebuild 7318
 MD5 e269410d538345a72f70f610c07dfe0f postgresql-8.0.1.ebuild 7314
 MD5 3b4cbf59561d655b882ab335b892909d files/digest-postgresql-7.3.6-r1 223
