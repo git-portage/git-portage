@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-dev-sources/Attic/gentoo-dev-sources-2.6.10.ebuild,v 1.3 2005/01/02 00:22:00 dsd Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-dev-sources/Attic/gentoo-dev-sources-2.6.10-r2.ebuild,v 1.1 2005/01/02 00:22:00 dsd Exp $
 
 ETYPE="sources"
 inherit kernel-2
@@ -8,7 +8,7 @@ detect_version
 detect_arch
 
 #version of gentoo patchset
-GPV="10.00"
+GPV="10.02"
 GPV_SRC="mirror://gentoo/genpatches-${KV_MAJOR}.${KV_MINOR}-${GPV}-base.tar.bz2
 	mirror://gentoo/genpatches-${KV_MAJOR}.${KV_MINOR}-${GPV}-extras.tar.bz2"
 
@@ -26,8 +26,19 @@ SRC_URI="${KERNEL_URI} ${GPV_SRC} ${ARCH_URI}"
 DEPEND="${DEPEND} >=dev-libs/ucl-1"
 
 IUSE="ultra1"
-use ultra1 || UNIPATCH_EXCLUDE="${UNIPATCH_EXCLUDE} 1399_sparc-U1-hme-lockup.patch"
-UNIPATCH_EXCLUDE="${UNIPATCH_EXCLUDE} 4905_speakup-20041020.patch"
+
+pkg_setup() {
+	if use sparc; then
+		# hme lockup hack on ultra1
+		use ultra1 || UNIPATCH_EXCLUDE="${UNIPATCH_EXCLUDE} 1399_sparc-U1-hme-lockup.patch"
+
+		# sparc32's Kconfig is broken by this patch... It'll be fixed soon, but use vanilla for now.
+		[ "${PROFILE_ARCH}" = "sparc" ] && UNIPATCH_EXCLUDE="${UNIPATCH_EXCLUDE} 1362_sparc-kconfig-rework.patch 1363_sparc-kconfig-driver-rework.patch"
+
+		# Don't include features that don't work on sparc
+		UNIPATCH_EXCLUDE="${UNIPATCH_EXCLUDE} 4300_evms-dm-bbr.patch 4305_dm-multipath.patch 4306_dm-mp-version.patch 4500_fbsplash-0.9.1.patch 4905_speakup-20041020.patch"
+	fi
+}
 
 pkg_postinst() {
 	postinst_sources
