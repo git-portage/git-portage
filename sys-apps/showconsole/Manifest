@@ -1,0 +1,5 @@
+MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+MD5 1d83f4eb8f7ed9bbabcd5dc7d7cc7f27 ChangeLog 249
+MD5 8f332a3d47c4010a49eb85ca8b600376 showconsole-1.07.ebuild 618
+MD5 a081c5c8650672deda68728c8437c846 files/digest-showconsole-1.07 149
+MD5 34f6358be961e4385337135c2de859ef files/showconsole-1.07-no-TIOCGDEV.patch 819
