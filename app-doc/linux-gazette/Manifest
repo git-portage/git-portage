@@ -1,4 +1,7 @@
-MD5 6cbcd37fc2062f606d4295dba769392b ChangeLog 3357
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 dcf776dbb55cf4583ce65e69850605d8 ChangeLog 3537
 MD5 a25e9363ca9296de364f373cc316bb05 linux-gazette-01.ebuild 603
 MD5 ec4a71f65ba36048b6ae0bd57d5ae628 linux-gazette-02.ebuild 456
 MD5 aa83d076314a6c1225fda1f550fae01f linux-gazette-03.ebuild 456
@@ -197,3 +200,10 @@ MD5 2fb14e772924e9acc18615c96d92d40b files/digest-linux-gazette-96 62
 MD5 bc498ecf2aacc96bc02da418fc152bf9 files/digest-linux-gazette-97 62
 MD5 c4f595227bd2082a7f38c3d37c6a500f files/digest-linux-gazette-98 62
 MD5 6c38bf1085e0fb232f3c7ba30e34beca files/digest-linux-gazette-99 62
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD8DBQFBTOPrmdTrptrqvGERAhPuAJ0UoywQd6+xXFdX87po4nAaZKUflQCgmnjR
+ovdyq7acAxYJnsHBmaRnces=
+=svM6
+-----END PGP SIGNATURE-----
