@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/pipes/Attic/pipes-1.15.ebuild,v 1.2 2003/09/22 19:11:26 msterret Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/pipes/Attic/pipes-1.15.ebuild,v 1.1 2003/09/24 12:55:42 vapier Exp $
 
 DESCRIPTION="Very versatile TCP pipes"
 HOMEPAGE="http://bisqwit.iki.fi/source/pipes.html"
