@@ -1,0 +1,7 @@
+MD5 2324b79db8136cd9619fcffa805d3909 lapack-atlas-3.6.0.ebuild 4126
+MD5 13d26350d75e6993f1b3ec48ca97f14e files/war 545
+MD5 4192870be88e09ba8c6a805eb31fcfb4 files/lapack-gentoo.patch 1272
+MD5 0a2d37412e48cc9961d9628308ac9ccd files/digest-lapack-atlas-3.6.0 120
+MD5 1b77dbffbf246309e6e97c77b64735fd files/f77-ATLAS 408
+MD5 04754a65f6aae20df09432cd1d3c3d6f files/atlas3.6.0-shared-libs.patch.bz2 5027
+MD5 c35802e688f28f8f65632fb93aad69d8 files/lapack-20020531-20021004.patch.bz2 59736
