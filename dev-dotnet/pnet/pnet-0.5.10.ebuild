@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/pnet/Attic/pnet-0.5.10.ebuild,v 1.5 2003/08/26 17:03:44 scandium Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/pnet/Attic/pnet-0.5.10.ebuild,v 1.6 2003/09/06 12:14:44 scandium Exp $
 
 inherit eutils
 
@@ -20,9 +20,9 @@ DEPEND=">=dev-util/treecc-0.2.6
 src_unpack() {
 # Fix a pnetc compile problem
 
-        unpack ${A}
-        cd ${S}
-        epatch ${FILESDIR}/md5hash.patch
+	unpack ${A}
+	cd ${S}
+	epatch ${FILESDIR}/md5hash.patch
 	./auto_gen.sh || die
 }
 
@@ -34,7 +34,7 @@ src_compile() {
 src_install() {
 	einstall || die
 
-	dodoc AUTHORS COPYING ChangeLog HACKING INSTALL NEWS README 
+	dodoc AUTHORS COPYING ChangeLog HACKING INSTALL NEWS README
 	dodoc doc/gtk-sharp.HOWTO
 	dohtml doc/*.html
 
