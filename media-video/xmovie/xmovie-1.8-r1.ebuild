@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/media-video/xmovie/Attic/xmovie-1.7.ebuild,v 1.3 2001/06/03 09:54:22 achim Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/xmovie/Attic/xmovie-1.8-r1.ebuild,v 1.1 2001/10/08 15:49:43 danarmak Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
@@ -19,15 +19,18 @@ RDEPEND="virtual/glibc virtual/x11 >=sys-devel/gcc-2.95.2
 	>=media-libs/libpng-1.0.7"
 
 src_compile() {
-
-    try ./configure
+    if [ "`use mmx`" ] ; then
+      try ./configure
+    else
+      try ./configure --no-mmx
+    fi
     try make
 
 }
 
 src_install () {
 
-    into /usr/X11R6
+    into /usr
     dobin xmovie/`uname -m`/xmovie
     dodoc README
     docinto html
