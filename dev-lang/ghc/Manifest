@@ -4,11 +4,14 @@ MD5 802669d9b27965494cb6b7e4d8cece09 ghc-6.2.ebuild 5065
 MD5 eb902d291c43516728dc3b4e00834029 ghc-6.0.1.ebuild 4878
 MD5 67d53cfa8dfbe716719a583732a73987 ChangeLog 6244
 MD5 a769ecfcd1cdd2d40986627df7dfb249 metadata.xml 224
+MD5 84f09f9587ccce767f78507a053b0ac4 ghc-6.2-r1.ebuild 5266
 MD5 9da9270be8ac4d92d6a5c23fd519cc3c files/lndir.c 8050
 MD5 9c184505ec441675c94d47a3110fa754 files/ghc-6.2.documentation.patch 721
 MD5 d4a4184d5dcf525047332f9c68e522f7 files/ghc-5.04.3-r1.patch 2717
 MD5 a20f2d9eabadd7ed4890784b905f857c files/digest-ghc-5.04.3-r1 68
 MD5 d417c9e24a826959ad6d921247e43328 files/digest-ghc-6.0.1 67
+MD5 2e1bd1157c6d47093864b670d6b51a64 files/digest-ghc-6.2-r1 65
 MD5 1b6997afc8940a5df3f780897d78ee0a files/digest-ghc-6.0 65
 MD5 2e1bd1157c6d47093864b670d6b51a64 files/digest-ghc-6.2 65
 MD5 9c15b50bf0b73b7d70a06fd47510a3ef files/ghc-6.0.1.haddock.patch 380
+MD5 18922ab5f2ede2af4eef5e3fde92aa68 files/ghc-6.2-hardened-gcc.patch 547
