@@ -1,3 +1,16 @@
+date 23 Jan 2001
+
+new dev-perl/Chart-0.99b
+new dev-perl/DataShowTable-3.3
+new dev-perl/DBI-1.14
+new dev-perl/GD-1.19
+new dev-perl/Msql-Mysql-modules-1.2215
+new dev-perl/Net-Daemon-0.34
+new dev-perl/PlRPC-0.2012
+new dev-perl/Storable-1.0.7
+achim
+These modules are required for bugzilla
+
 date 22 Jan 2001
 
 upd sys-apps/portage-1.4-r5 to 1.4-r6
