@@ -1,14 +1,14 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/prime/Attic/prime-0.8.2-r1.ebuild,v 1.2 2004/05/22 18:53:07 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/prime/Attic/prime-0.8.3.1.ebuild,v 1.1 2004/06/24 09:19:02 usata Exp $
 
-inherit ruby eutils
+inherit ruby
 
 IUSE="emacs"
 
 DESCRIPTION="PRIME -- Japanese PRedictive Input Method Editor"
 HOMEPAGE="http://taiyaki.org/prime/"
-SRC_URI="http://prime.sourceforge.jp/src/${P}.tar.gz"
+SRC_URI="http://prime.sourceforge.jp/src/${P/_/-}.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="x86 alpha ppc"
@@ -16,7 +16,6 @@ SLOT="0"
 
 DEPEND="virtual/ruby
 	app-dicts/prime-dict
-	>=dev-ruby/sary-ruby-0.5_pre20030507-r1
 	>=dev-libs/suikyo-1.3.0
 	dev-ruby/ruby-progressbar"
 PDEPEND="emacs? ( app-emacs/prime-el )"
@@ -24,11 +23,7 @@ PDEPEND="emacs? ( app-emacs/prime-el )"
 EXTRA_ECONF="--with-prime-docdir=/usr/share/doc/${PF}/html
 	--with-rubydir=/usr/lib/ruby/site_ruby"
 
-src_unpack() {
-	unpack ${A}
-	cd ${S}/lib
-	epatch ${FILESDIR}/${P}-uim.diff
-}
+S="${WORKDIR}/${P/_/-}"
 
 src_install() {
 
