@@ -1,6 +1,11 @@
 date 22 Nov 2000
 
+new sys-apps/baselayout-1.3-r2
+drobbins
+Fixed a small bug in /etc/rc.d/config/functions that affected rc-update
+
 new dev-perl/DB_File-1.73
+anonymous?
 
 new net-misc/traceroute-1.4_p7
 jerry
@@ -19,7 +24,7 @@ jerry
 Removed old versions of OpenSSH.  Better to be rid of them and not have
 any conflict.  Especially since 2.3.0 corrects some security holes.
 
-upd kde-base/kdebase-2.0 to kdebase-2.0-r2
+upd kde-base/kdebase-2.0 to 2.0-r2
 achim
 Added openmotif to the dependencies
 
@@ -39,7 +44,7 @@ upd media-gfb/aview-1.2 to 1.2-r2
 achim
 Added dependencies
 
-upd net-mail/maildrop-1.2.2 1.2.2-r2
+upd net-mail/maildrop-1.2.2 to 1.2.2-r2
 achim
 Added qmail or exim to dependencies because a mailer is
 required for compilation
