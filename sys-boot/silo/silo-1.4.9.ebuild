@@ -1,17 +1,17 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/silo/Attic/silo-1.3.1-r1.ebuild,v 1.6 2005/03/28 13:35:56 gustavoz Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/silo/Attic/silo-1.4.9.ebuild,v 1.1 2005/03/28 13:35:56 gustavoz Exp $
 
-inherit mount-boot
+inherit mount-boot flag-o-matic toolchain-funcs
 
 DESCRIPTION="SPARC/UltraSPARC Improved Loader, a boot loader for sparc"
-SRC_URI="http://www.sparc-boot.org/pub/silo/old/${P}.tar.gz"
+SRC_URI="http://www.sparc-boot.org/pub/silo/${P}.tar.gz"
 HOMEPAGE="http://www.sparc-boot.org"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="-* sparc"
-IUSE=""
+KEYWORDS="-* ~sparc"
+IUSE="hardened"
 
 PROVIDE="virtual/bootloader"
 
@@ -19,7 +19,14 @@ DEPEND="sys-fs/e2fsprogs
 	sys-apps/sparc-utils"
 
 src_compile() {
-	make ${MAKEOPTS} || die
+	filter-flags "-fstack-protector"
+
+	if use hardened
+	then
+		make ${MAKEOPTS} CC="$(tc-getCC) -fno-stack-protector -fno-pic"
+	else
+		make ${MAKEOPTS} || die
+	fi
 }
 
 src_install() {
