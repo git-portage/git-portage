@@ -1,4 +1,6 @@
+MD5 91a33f5044a23535ffa4bd2ebc465345 javahelp-bin-2.0.02.ebuild 1260
+MD5 91a33f5044a23535ffa4bd2ebc465345 javahelp-bin-2.0.01.ebuild 1260
 MD5 1f5d377ee24c23f9308e9120ed8ea446 ChangeLog 952
-MD5 8c3f4079bf061089f67f1665002532a8 javahelp-bin-2.0.01.ebuild 1072
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
 MD5 126c9ed6a7f735ccd789704e148f0e47 files/digest-javahelp-bin-2.0.01 65
+MD5 e8d12736da16d20b8179d6405f35c1eb files/digest-javahelp-bin-2.0.02 65
