@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.6.4-r1.ebuild,v 1.1 2004/03/11 20:13:37 latexer Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.6.5_rc2-r2.ebuild,v 1.1 2004/03/24 16:18:32 lostlogic Exp $
 
-UNIPATCH_LIST="${DISTDIR}/${KV}.bz2 ${FILESDIR}/${PVR}-debug-spinlock-fix.diff ${FILESDIR}/${PVR}-tty-fix.diff"
+UNIPATCH_LIST="${DISTDIR}/${KV}.bz2"
 K_PREPATCHED="yes"
 UNIPATCH_STRICTORDER="yes"
 

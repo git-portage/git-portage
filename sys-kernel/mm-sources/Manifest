@@ -1,5 +1,6 @@
 MD5 ee7bea18592b7f7218863b2dc83ceed3 mm-sources-2.6.4-r1.ebuild 1103
 MD5 b777a4e61360ab2b552597cfa4a98eab mm-sources-2.6.3-r4.ebuild 1064
+MD5 e8975009a099b493ca78eb7ba33843e0 mm-sources-2.6.5_rc2-r2.ebuild 1032
 MD5 6a0ecc0a0adab8c227111f00de4158e6 mm-sources-2.6.4_rc1-r2.ebuild 1032
 MD5 778d31ba9f08bc060df066524414c885 mm-sources-2.6.4_rc2-r1.ebuild 1032
 MD5 5c08787d7292c888d7d7da8ce5bf2cf0 mm-sources-2.6.4-r2.ebuild 1063
@@ -13,6 +14,7 @@ MD5 1c6c36ce96912f9916665f209e4f5ed6 files/digest-mm-sources-2.6.3-r4 125
 MD5 8b128c333d4166be610d05c3699d5e76 files/digest-mm-sources-2.6.4-r1 124
 MD5 f59c5066adf14025791e49d04944e1ed files/digest-mm-sources-2.6.4-r2 125
 MD5 5983a33847ac909774db51eac30dcfeb files/digest-mm-sources-2.6.5_rc1-r1 192
+MD5 b2b79501357921787373b0364e186401 files/digest-mm-sources-2.6.5_rc2-r2 194
 MD5 a613978c67d87fc251c04d2a52dddcc2 files/2.6.4-r1-tty-fix.diff 575
 MD5 8f578df14b624397068e82c4f6c51232 files/2.6.4-r1-debug-spinlock-fix.diff 325
 MD5 c50d8c537acf8fa8202902729e01a4c8 files/digest-mm-sources-2.6.4_rc1-r1 193
