@@ -6,10 +6,12 @@ MD5 35157b948518cfb0e244c15ddd80e371 gnome-desktop-2.2.1-r1.ebuild 1134
 MD5 d45618aedc917dc001f17bed41fe9545 gnome-desktop-2.4.1.1.ebuild 1385
 MD5 46ad000b2616ab9c3f7495909893bb55 ChangeLog 6548
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+MD5 b83e4f759a4fe7594d7e1ee4ab6a3441 gnome-desktop-2.5.92.ebuild 1597
 MD5 8b7121ebb7caf3066102fd8b540b6061 files/digest-gnome-desktop-2.2.0.1 75
 MD5 66cf0386beeacad0617909c364c6ab37 files/digest-gnome-desktop-2.4.1.1 75
 MD5 0e3f27f5cb2219850df23740df5bb6a8 files/digest-gnome-desktop-2.0.8 73
 MD5 24dc4a82d3420540d67bd85cc4e15c74 files/digest-gnome-desktop-2.2.2 73
 MD5 563fc396af7466178c556e249112ec6b files/digest-gnome-desktop-2.4.0 73
+MD5 2cf8a1feb6c02e713be381435bbe2990 files/digest-gnome-desktop-2.5.92 74
 MD5 ae9938d0ae2bab5488efbec5b205eb22 files/00_all_gentoo-vendor.patch 272
 MD5 d450dd900c54fe8d17c0804f5e7d400e files/digest-gnome-desktop-2.2.1-r1 73
