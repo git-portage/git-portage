@@ -1,0 +1,5 @@
+MD5 af05ed7c5419e689026a83530378d3e8 jtds-0.9.1.ebuild 1291
+MD5 ee4249cd64f07224c491d62c234cc05a ChangeLog 263
+MD5 0637a933ecb6e8cedfc4ddfcf3491728 metadata.xml 310
+MD5 f3a1bea2ce8720ca91b3e2d813631ca9 files/buildxml-gentoo.patch 2919
+MD5 e398f91c59395f8848eca6db5330728a files/digest-jtds-0.9.1 64
