@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Daniel Robbins <drobbins@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/sawfish/Attic/sawfish-1.0.ebuild,v 1.4 2001/09/29 17:29:10 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/sawfish/Attic/sawfish-1.0-r1.ebuild,v 1.1 2001/10/05 23:42:41 azarah Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
@@ -11,20 +11,20 @@ HOMEPAGE="http://sawmill.sourceforge.net/"
 
 DEPEND=">=dev-libs/rep-gtk-0.15-r1
         >=dev-libs/librep-0.14
-	>=media-libs/imlib-1.9.10
+	>=media-libs/imlib-1.9.10-r1
 	esd? ( >=media-sound/esound-0.2.22 )
         readline? ( >=sys-libs/readline-4.1 )
         nls? ( sys-devel/gettext )
-	gnome? ( >=media-libs/gdk-pixbuf-0.11
-                 >=gnome-base/gnome-core-1.4.0 )"
+	gnome? ( >=media-libs/gdk-pixbuf-0.11.0-r1
+                 >=gnome-base/gnome-core-1.4.0.4-r1 )"
 
 RDEPEND=">=dev-libs/rep-gtk-0.15-r1
         >=dev-libs/librep-0.14
-        >=x11-libs/gtk+-1.2.10
-	>=media-libs/imlib-1.9.10
+        >=x11-libs/gtk+-1.2.10-r4
+	>=media-libs/imlib-1.9.10-r1
 	esd? ( >=media-sound/esound-0.2.22 )
-	gnome? ( >=media-libs/gdk-pixbuf-0.11
-                 >=gnome-base/gnome-core-1.4.0 )"
+	gnome? ( >=media-libs/gdk-pixbuf-0.11.0-r1
+                 >=gnome-base/gnome-core-1.4.0.4-r1 )"
 
 src_unpack() {
         unpack ${A}
@@ -45,7 +45,7 @@ src_compile() {
         fi
         if [ "`use gnome`" ]
         then
-          myconf="${myconf} --with-gnome-prefix=/opt/gnome --enable-gnome-widgets --enable-capplet"
+          myconf="${myconf} --with-gnome-prefix=/usr --enable-gnome-widgets --enable-capplet"
         else
           myconf="${myconf} --disable-gnome-widgets --disable-capplet --without-gdk-pixbuf"
         fi
@@ -60,7 +60,7 @@ src_compile() {
           myconf="${myconf} --disable-linguas"
         fi
 
- 	try ./configure --host=${CHOST} --prefix=/usr/X11R6 --infodir=/usr/X11R6/info --libexecdir=/usr/X11R6/lib --with-audiofile ${myconf}
+ 	try ./configure --host=${CHOST} --prefix=/usr --infodir=/usr/share/info --libexecdir=/usr/lib --with-audiofile ${myconf}
 
 	#pmake doesn't work, stick with make
 	try make
@@ -72,7 +72,7 @@ src_install() {
   dodoc AUTHORS BUGS COPYING ChangeLog DOC FAQ NEWS README THANKS TODO
 
   # Add to Gnome CC's Window Manager list
-  insinto ${GNOME_PATH}/share/gnome/wm-properties
+  insinto /usr/share/gnome/wm-properties
   doins ${FILESDIR}/Sawfish.desktop
 
 }
