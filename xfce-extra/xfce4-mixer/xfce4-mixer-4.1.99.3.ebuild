@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-mixer/Attic/xfce4-mixer-4.1.99.2.ebuild,v 1.3 2005/01/02 16:41:49 bcowan Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-mixer/Attic/xfce4-mixer-4.1.99.3.ebuild,v 1.1 2005/01/02 16:41:49 bcowan Exp $
 
 DESCRIPTION="Xfce 4 mixer panel plugin"
 HOMEPAGE="http://www.xfce.org/"
