@@ -1,9 +1,9 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.7.1.ebuild,v 1.1 2002/02/06 01:47:35 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.7.2.ebuild,v 1.1 2002/03/03 22:13:51 azarah Exp $
 
-SV=1.2.6
+SV=1.2.7
 #sysvinit version
 SVIV=2.83
 S=${WORKDIR}/rc-scripts-${SV}
@@ -63,10 +63,8 @@ keepdir() {
 	done
 }
 
-src_install()
-{
-	local foo
-	local altmerge
+defaltmerge() {
+	#define the "altmerge" variable.
 	altmerge=0
 	#special ${T}/ROOT hack because ROOT gets automatically unset during src_install()
 	#(because it conflicts with some makefiles)
@@ -82,6 +80,13 @@ src_install()
 			altmerge=1
 		fi
 	fi
+}
+
+
+src_install()
+{
+	local foo
+	defaltmerge
 	keepdir /sbin
 	exeinto /sbin
 	doexe ${T}/runscript
@@ -183,32 +188,13 @@ src_install()
 		dosym /usr/sbin/MAKEDEV /lib/dev-state/MAKEDEV
 		#this is not needed anymore...
 		#keepdir /lib/dev-state/pts /lib/dev-state/shm
-		cd ${D}/lib/dev-state
 	else
 		#normal
 		keepdir /dev
 		keepdir /lib/dev-state
 		keepdir /dev/pts /dev/shm
 		dosym /usr/sbin/MAKEDEV /dev/MAKEDEV
-		cd ${D}/dev
 	fi	
-
-	# we dont want to create devices if this is not a bootstrap and devfs
-	# is used, as this was the cause for all the devfs problems we had
-	if [ ! $altmerge -eq 1 ]
-	then
-		#These devices are also needed by many people and should be included
-		echo "Making device nodes... (this could take a minute or so...)"
-		${S}/sbin/MAKEDEV generic-i386
-		${S}/sbin/MAKEDEV sg
-		${S}/sbin/MAKEDEV scd
-		${S}/sbin/MAKEDEV rtc 
-		${S}/sbin/MAKEDEV audio
-		${S}/sbin/MAKEDEV hde
-		${S}/sbin/MAKEDEV hdf
-		${S}/sbin/MAKEDEV hdg
-		${S}/sbin/MAKEDEV hdh
-	fi
 
 	cd ${S}/sbin
 	into /
@@ -289,6 +275,26 @@ src_install()
 }
 
 pkg_postinst() {
+	#doing device node creation in pkg_postinst() now so they aren't recorded in CONTENTS.
+	#latest CVS-only version of Portage doesn't record device nodes in CONTENTS at all.
+	defaltmerge
+	# we dont want to create devices if this is not a bootstrap and devfs
+	# is used, as this was the cause for all the devfs problems we had
+	if [ ! $altmerge -eq 1 ]
+	then
+		cd ${D}/dev
+		#These devices are also needed by many people and should be included
+		echo "Making device nodes... (this could take a minute or so...)"
+		${S}/sbin/MAKEDEV generic-i386
+		${S}/sbin/MAKEDEV sg
+		${S}/sbin/MAKEDEV scd
+		${S}/sbin/MAKEDEV rtc 
+		${S}/sbin/MAKEDEV audio
+		${S}/sbin/MAKEDEV hde
+		${S}/sbin/MAKEDEV hdf
+		${S}/sbin/MAKEDEV hdg
+		${S}/sbin/MAKEDEV hdh
+	fi
 	#we create the /boot directory here so that /boot doesn't get deleted when a previous
 	#baselayout is unmerged with /boot unmounted.
 	install -d ${ROOT}/boot
@@ -300,22 +306,43 @@ pkg_postinst() {
 127.0.0.1	localhost
 EOF
 	fi
-	if [ -L ${ROOT}etc/mtab ]
+	if [ -L ${ROOT}/etc/mtab ]
 	then
 		rm -f ${ROOT}/etc/mtab
 		if [ "$ROOT" = "/" ]
 		then
-			cp /proc/mounts ${ROOT}etc/mtab
+			cp /proc/mounts ${ROOT}/etc/mtab
 		else
-			touch ${ROOT}etc/mtab
+			touch ${ROOT}/etc/mtab
 		fi
 	fi
 	#we should only install empty files if these files don't already exist.
 	local x
 	for x in log/lastlog run/utmp log/wtmp
 	do
-		[ -e ${ROOT}var/${x} ] || touch ${ROOT}var/${x}
+		[ -e ${ROOT}/var/${x} ] || touch ${ROOT}/var/${x}
 	done
+
+	#rather force the install of critical files to insure that there is no
+	#problems.
+	## add net.lo for now as well, as it is a problem case in this release.
+	for x in depscan.sh functions.sh runscript.sh checkroot net.lo
+	do
+		rm -f ${ROOT}/etc/init.d/._cfg*_${x}
+		cp -f ${S}/init.d/${x} ${ROOT}/etc/init.d/
+	done
+
+	#handle the ${svcdir} that changed in location
+	source ${ROOT}/etc/init.d/functions.sh
+	if [ ! -d ${ROOT}/${svcdir} ]
+	then
+		mkdir -p ${ROOT}/${svcdir}
+		mount -t tmpfs tmpfs ${ROOT}/${svcdir}
+		if [ -d ${ROOT}/dev/shm/.init.d ]
+		then
+			cp -ax ${ROOT}/dev/shm/.init.d/. ${ROOT}/${svcdir}
+		fi
+	fi
 
 	#kill the old /dev-state directory if it exists
 	if [ -e /dev-state ]
@@ -339,27 +366,6 @@ EOF
 			rm -rf /dev-state
 		fi
 	fi
-	
-#it should be ok now, and gets irritating to revert my changes all the time ;/
-#	#force update of /etc/devfsd.conf
-#	#just until everybody upgrade that is ...
-#	if [ -e /etc/devfsd.conf ]
-#	then
-#		mv /etc/devfsd.conf /etc/devfsd.conf.old
-#		install -m0644 ${S}/etc/devfsd.conf /etc/devfsd.conf
-#
-#		echo
-#		echo "*********************************************************"
-#		echo "* This release use a new form of /dev management, so    *"
-#		echo "* /etc/devfsd.conf have moved from the devfsd package   *"
-#		echo "* to this one.  Any old versions will be renamed to     *"
-#		echo "* /etc/devfsd.conf.old.  Please verify that it actually *"
-#		echo "* do not save your settings before adding entries, and  *"
-#		echo "* if you really need to, just add missing entries and   *"
-#		echo "* try not to delete lines from the new devfsd.conf.     *"
-#		echo "*********************************************************"
-#		echo
-#	fi
 	
 	#restart devfsd
 	#we dont want to restart devfsd when bootstrapping, because it will
