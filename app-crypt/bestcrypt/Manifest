@@ -1,8 +1,11 @@
-MD5 fd8e879b08adeba74119f7ee623fec5f ChangeLog 3528
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 f7ef42e7b684a85379bd2095f0eb9a3f ChangeLog 4161
 MD5 566cf4f89e44670d0aba4a745913d748 metadata.xml 224
 MD5 8b338478bb062e2860e7a50fb3e1f4b9 bestcrypt-1.5_p7.ebuild 1509
 MD5 3d114602bf62a96e9360d74a3453759c bestcrypt-1.5_p7-r1.ebuild 1774
-MD5 d2f1841bdaff2086276fbe399ce62a2c bestcrypt-1.5_p9.ebuild 2641
+MD5 e12d49e96196a13433608a84d135c0df bestcrypt-1.5_p9.ebuild 2639
 MD5 c5fbab81816aa1d6f319f8434d2db2b2 files/bcrypt 3113
 MD5 5b4b4d2cf3a069dcc49e6803af149665 files/bcrypt2 3097
 MD5 0627a90c642911ade3f933e5b6ecd6c0 files/bcrypt3 3159
@@ -11,3 +14,10 @@ MD5 362ade933d7aab0a81b18a9e08d1e24f files/digest-bestcrypt-1.5_p7 67
 MD5 4b5ee352a3df35a5803d9013b763afec files/digest-bestcrypt-1.5_p7-r1 136
 MD5 ca9e4e3d8a5d0f6e54e5b83d2fe21c58 files/digest-bestcrypt-1.5_p9 136
 MD5 e9585e8f08138f46bdda7b88ddd81cd8 files/bestcrypt-1.5_p9-makefile_fix.patch 1136
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFB2MjAmdTrptrqvGERAkEvAKCK6R+fVZ7WTmgJrKMPwqXS2CLgIgCfbRqk
+gizMGTNPduFtF/ULE/8XPB0=
+=qrDa
+-----END PGP SIGNATURE-----
