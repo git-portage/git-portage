@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/procps/Attic/procps-3.1.13.ebuild,v 1.4 2003/10/29 03:14:07 pebenito Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/procps/Attic/procps-3.1.9-r1.ebuild,v 1.1 2003/12/08 11:50:27 seemant Exp $
 
 IUSE=""
 
@@ -15,7 +15,7 @@ replace-flags "-O3" "-O2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 amd64 ~ppc ~sparc ~alpha ~hppa ~arm ~mips ia64"
+KEYWORDS="x86 amd64 ppc sparc alpha hppa ~arm mips"
 
 RDEPEND=">=sys-libs/ncurses-5.2-r2"
 DEPEND="${RDEPEND}
@@ -27,7 +27,8 @@ src_unpack() {
 
 	# Use the CFLAGS from /etc/make.conf.
 	for file in `find . -iname "Makefile"`;do
-		sed -i "s:-O2:${CFLAGS}:" ${file}
+		mv ${file} ${file}.orig
+		sed -e "s:-O2:${CFLAGS}:" ${file}.orig > ${file}
 	done
 }
 
