@@ -1,5 +1,8 @@
-MD5 e8f90b5126b4d417c84c51206292695a ChangeLog 6842
-MD5 79e10dfdc98aa043b4c978e51646c3d1 emacs-21.3-r5.ebuild 3853
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 95fb33a6bab32c18fc6ca02f2b3e7c58 ChangeLog 7302
+MD5 03f9686e1867e1e9ae9198347c0cff22 emacs-21.3-r5.ebuild 3851
 MD5 fcd33d07e4ee719b01157946734f4fe8 metadata.xml 158
 MD5 7c1bb3b83cc8d65547925c15dd605a71 emacs-21.3-r2.ebuild 2190
 MD5 4ff8a8c4e69f80929f2c1f7aac9a7dd3 emacs-18.59.ebuild 2002
@@ -21,3 +24,10 @@ MD5 277b238c9263aabcc2ef92de1d6d68bb files/emacs-nofink-gentoo.diff 1520
 MD5 ef8adf470d7d95802802b3860ef8d9a9 files/emacs-21.3-xorg.patch 394
 MD5 4163870348c1c0d4dc485dff749fe5cb files/digest-emacs-21.3-r4 126
 MD5 2aaf4fc4c9513f13c4edb24327247f83 files/emacs-21.3-ppc64.patch 1622
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBoykcVWNWqTUmv+0RAr2lAJ9sfnLg5KQfvdbtV3IYrZn0uIaSqQCgjtX3
+94nJt9jIDwPLO3jkTM7DX2M=
+=GmfX
+-----END PGP SIGNATURE-----
