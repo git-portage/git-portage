@@ -1,9 +1,21 @@
 date 24 Jan 2001
 
 new dev-perl/LockFile-Simple-0.2.5
+jerry
+modules for handling various mail operations
+
 new dev-perl/Mail-Audit-1.6
+jerry
+modules for handling various mail operations
+
 new dev-perl/Mail-Procmail-1.00
+jerry
+modules for handling various mail operations
+
 new dev-perl/MailTools-1.15
+jerry
+modules for handling various mail operations
+
 new dev-perl/POP3Client-2.7
 jerry
 modules for handling various mail operations
@@ -22,12 +34,33 @@ achim
 Fixed buggy .source files and added documentation
 
 new dev-perl/Chart-0.99b
+achim
+These modules are required for bugzilla
+
 new dev-perl/DataShowTable-3.3
+achim
+These modules are required for bugzilla
+
 new dev-perl/DBI-1.14
+achim
+These modules are required for bugzilla
+
 new dev-perl/GD-1.19
+achim
+These modules are required for bugzilla
+
 new dev-perl/Msql-Mysql-modules-1.2215
+achim
+These modules are required for bugzilla
+
 new dev-perl/Net-Daemon-0.34
+achim
+These modules are required for bugzilla
+
 new dev-perl/PlRPC-0.2012
+achim
+These modules are required for bugzilla
+
 new dev-perl/Storable-1.0.7
 achim
 These modules are required for bugzilla
