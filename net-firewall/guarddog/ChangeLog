@@ -1,7 +1,14 @@
 # ChangeLog for net-misc/guarddog
 # Copyright 2002-2003 Gentoo Technologies, Inc.; Distributed under the GPL v2
 # Author Bart Verwilst <verwilst@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/net-misc/guarddog/Attic/ChangeLog,v 1.9 2003/03/11 22:19:09 mholzer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/guarddog/Attic/ChangeLog,v 1.1 2003/05/01 11:11:50 mholzer Exp $
+
+*guarddog-2.0.0 (01 May 2003)
+
+  01 May 2003; Martin Holzer <mholzer@gentoo.org> guarddog-1.9.16.ebuild,
+  guarddog-2.0.0.ebuild:
+  Moved net-misc/guarddog to net-firewall/guarddog. Closes #18428.
+
   06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
  
 
