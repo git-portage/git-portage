@@ -1,5 +1,13 @@
 date 15 Jan 2001
 
+upd sys-devel/perl-5.6.0-r4 to r5
+achim
+Fixed arch specific issues
+
+new dev-perl/Mon-0.9
+achim
+Required for net-misc/mon
+
 new dev-perl/Error-0.13
 achim
 Required from the CORBA-ORBit module
