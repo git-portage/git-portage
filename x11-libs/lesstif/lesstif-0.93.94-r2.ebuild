@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/lesstif/Attic/lesstif-0.93.94-r1.ebuild,v 1.3 2005/03/07 10:43:35 lanius Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/lesstif/Attic/lesstif-0.93.94-r2.ebuild,v 1.1 2005/03/07 13:38:57 lanius Exp $
 
 inherit libtool flag-o-matic multilib
 
@@ -11,12 +11,12 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2
 
 LICENSE="LGPL-2"
 SLOT="1.2"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~ia64"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 -ppc-macos ~sparc ~x86 ~ia64"
 IUSE="static"
 
 DEPEND="virtual/libc
 	virtual/x11
-	>=x11-libs/motif-config-0.3"
+	>=x11-libs/motif-config-0.4"
 
 PROVIDE="virtual/motif"
 
@@ -50,14 +50,13 @@ src_install() {
 
 
 	einfo "Fixing binaries"
-	dodir /usr/share/lesstif-1.2
+	dodir /usr/$(get_libdir)/lesstif-1.2
 	for file in `ls ${D}/usr/bin`
 	do
-		mv ${D}/usr/bin/${file} ${D}/usr/share/lesstif-1.2/${file}
+		mv ${D}/usr/bin/${file} ${D}/usr/$(get_libdir)/lesstif-1.2/${file}
 	done
 
 	einfo "Fixing libraries"
-	dodir /usr/$(get_libdir)/lesstif-1.2
 	mv ${D}/usr/lib/* ${D}/usr/$(get_libdir)/lesstif-1.2/
 
 	einfo "Fixing includes"
@@ -82,7 +81,7 @@ src_install() {
 	rm -fR ${D}/usr/$(get_libdir)/LessTif
 
 	# cleanup
-	rm -f ${D}/usr/share/lesstif-1.2/mxmkmf
+	rm -f ${D}/usr/$(get_libdir)/lesstif-1.2/mxmkmf
 	rm -fR ${D}/usr/share/aclocal/
 	rm -fR ${D}/usr/$(get_libdir)/lesstif-1.2/LessTif/
 	rm -fR ${D}/usr/$(get_libdir)/lesstif-1.2/X11/
