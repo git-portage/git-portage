@@ -1,0 +1,4 @@
+MD5 2b8e4408b445bc3e62988037bc0c809f kisdnwatch-01.00.08.ebuild 641
+MD5 bf66245be83728192ade75947a7c2da4 files/kisdnwatch-01.00.08-Makefiles.patch 4609
+MD5 ed67b76fe789f96d44b658ee581ceb6e files/kisdnwatch-01.00.08-configure.patch 3679
+MD5 397f792877643704a4efda1166625fb1 files/digest-kisdnwatch-01.00.08 71
