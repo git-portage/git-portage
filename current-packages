@@ -141,6 +141,7 @@
 ./dev-perl/MIME-Base64/MIME-Base64-2.11.ebuild
 ./dev-perl/mod_perl/mod_perl-1.24-ebuild
 ./dev-perl/perl-tk/perl-tk800-022.ebuild
+./dev-perl/SOAP/SOAP-0.25.ebuild
 ./dev-perl/URI/URI-1.0.8.ebuild
 ./dev-perl/XML-Catalog/XML-Catalog-0.01.ebuild
 ./dev-perl/XML-DOM/XML-DOM-1.2.5.ebuild

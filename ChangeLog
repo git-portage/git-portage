@@ -1,6 +1,7 @@
 27.08.2000	
 
-	- Bew XML-XSLT 0.24 (perl)		(achim)
+	- New SOAP 0.25 (perl)			(achim)
+	- New XML-XSLT 0.24 (perl)		(achim)
 	- New XML-DOM 1.2.5 (perl)		(achim)
 	  [One error in tests]
 	- New XML-DT 0.14 (perl)		(achim)
