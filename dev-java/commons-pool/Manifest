@@ -1,4 +1,6 @@
 MD5 b046a6b683ad6d82b8f6872c0b48bc6e commons-pool-1.1.ebuild 1469
-MD5 4966796af8f05b7452123a2808074048 ChangeLog 2368
+MD5 4520e87a281786db40b53dfe9bdbbb6c commons-pool-1.0.1-r3.ebuild 1058
+MD5 3739ed6dd069c5bfdcab4618f3ff0317 ChangeLog 2535
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
+MD5 0fad8d4a756515d5209a3fbd84717a2a files/digest-commons-pool-1.0.1-r3 73
 MD5 b8d9ac4e67767842878c535474df7961 files/digest-commons-pool-1.1 71
