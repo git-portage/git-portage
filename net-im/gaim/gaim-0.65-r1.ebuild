@@ -1,14 +1,13 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/gaim/Attic/gaim-0.64-r2.ebuild,v 1.1 2003/07/11 17:48:36 lostlogic Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/gaim/Attic/gaim-0.65-r1.ebuild,v 1.1 2003/07/17 15:33:21 lostlogic Exp $
 
-IUSE="nls perl spell ssl nas"
+IUSE="nls perl spell nas ssl cjk"
 
 DESCRIPTION="GTK Instant Messenger client"
 HOMEPAGE="http://gaim.sourceforge.net/"
-EV=2.00beta1
+EV=2.00
 SRC_URI="mirror://sourceforge/gaim/${P}.tar.bz2
-	http://www.chipx86.com/gaim-0.64-msncrashes-20030705-0044.diff
         ssl? ( mirror://sourceforge/gaim-encryption/encrypt-${EV}.tar.gz )"
 
 SLOT="0"
@@ -29,13 +28,22 @@ DEPEND="=sys-libs/db-1*
 src_unpack() {
 	unpack ${P}.tar.bz2
 	cd ${P}
-	epatch ${DISTDIR}/gaim-0.64-msncrashes-20030705-0044.diff
-
 	use ssl && {
 		cd ${S}/plugins
 		unpack encrypt-${EV}.tar.gz
 		cd encrypt
-		epatch patchfile.0.64
+		patch -p0 < patchfile.${PV} || die "Encryption patch failed"
+		touch aclocal.m4 \
+		      config.h.in \
+		      Makefile.in \
+		      */Makefile.in \
+		      */*/Makefile.in \
+		      */*/*/Makefile.in \
+		      configure
+	}
+	use cjk && {
+		cd ${S}/src
+		epatch ${FILESDIR}/gaim_gtkimcontext_patch.diff
 	}
 }
 
