@@ -1,4 +1,5 @@
 MD5 08d7b6eaa5800e26d7c5f13a0cb9f9d4 libffi-3.4.1-r1.ebuild 5686
+MD5 79efdd11217a4db8a8b1c6a43b8529c3 libffi-3.3.4.ebuild 6681
 MD5 3113b98f43bda47db0f39bd6f6e3aad1 libffi-1.20.ebuild 605
 MD5 210eb5394a3edcd012ab3eb5c7dd0451 libffi-3.3.3-r1.ebuild 6683
 MD5 e21dd80ca7b21c735c8e7808a6c3c82e libffi-3.3.3.ebuild 6895
@@ -11,4 +12,5 @@ MD5 78c9b1a1b40fcc12f8cf34d57a970f00 files/libffi-soversion.dpatch 1943
 MD5 14f4d6619c938dbb907e2420c0eeefd9 files/digest-libffi-3.3.3-r1 64
 MD5 03a0e46a8ce1aff598b68a731112c13a files/digest-libffi-3.4.1-r1 64
 MD5 14f4d6619c938dbb907e2420c0eeefd9 files/digest-libffi-3.3.3 64
+MD5 4068b84d9ce9d440b063718549cfc354 files/digest-libffi-3.3.4 64
 MD5 03a0e46a8ce1aff598b68a731112c13a files/digest-libffi-3.4.1 64
