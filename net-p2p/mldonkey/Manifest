@@ -2,10 +2,12 @@ MD5 ec3b1156c3f6fd50ec8d16cea3dfa180 mldonkey-2.5.16-r7.ebuild 2651
 MD5 8d3ae8cd5f6b471de19912845a21beea mldonkey-2.5.27-r1.ebuild 2756
 MD5 56e7da52446479881edfc5eecde9b926 mldonkey-2.5.21-r2.ebuild 2692
 MD5 2b98f66763bd8905a795eea801eb9027 mldonkey-2.5.16-r8.ebuild 2657
+MD5 9edeb038ddccf16c49d44c11d3f0a4b9 mldonkey-2.5.28.ebuild 2740
 MD5 3aac52f1483d4db1708fb3e1d24c8954 ChangeLog 11465
 MD5 74e4ceef69a9fc3a7a76299e5f4d2ed8 metadata.xml 307
 MD5 476ec69e79e7c93a7bdaa6cb049c0857 files/mldonkey.confd 836
 MD5 dd6c047ee9ad00cddbc438e8ea30641a files/mldonkey.initd 2858
+MD5 0deb6ecb02f1c0e9f66e7aab60c57040 files/digest-mldonkey-2.5.28 69
 MD5 920f9e5989329dba967bff5a111911a7 files/digest-mldonkey-2.5.16-r7 126
 MD5 8a6a83aef1530834a8fa4e64a1b0191b files/digest-mldonkey-2.5.16-r8 129
 MD5 f145ba120c09f53b0032ea8b3f930128 files/digest-mldonkey-2.5.21-r2 126
