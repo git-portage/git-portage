@@ -1,5 +1,4 @@
-MD5 f17f7530f8a169e57aaee73263511420 ChangeLog 2441
+MD5 28a149d3fa7475c5a8308cbe346fe0e2 ChangeLog 2441
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
-MD5 4780c120df33e8406df84134169e23e5 commons-dbcp-1.2.1.ebuild 1286
-MD5 fcfc7af351e73dba5025a57f4566db3e files/digest-commons-dbcp-1.1 71
+MD5 3beb121b0d5dc2d3f5b76a49311c2835 commons-dbcp-1.2.1.ebuild 1288
 MD5 51ec667c831b7a9628a4a9b5054597ae files/digest-commons-dbcp-1.2.1 74
