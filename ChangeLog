@@ -1,3 +1,10 @@
+date 25 Jan 2001
+
+upd sys-apps/portage-1.4-r6 to 1.4-r7
+drobbins
+new sys-build category added.  sys-build contains packages
+needed for creating a self-building environment.
+
 date 24 Jan 2001
 
 new dev-perl/LockFile-Simple-0.2.5
