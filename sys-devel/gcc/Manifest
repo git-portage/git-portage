@@ -1,4 +1,3 @@
-MD5 d0c58758f304c0fcdc27c5e30bc252ac ChangeLog 71441
 MD5 4bcf46d8a3f5509cf09f23017408095d gcc-2.95.3-r8.ebuild 8407
 MD5 9d2f881e949534e2585b5b1e32b8edf9 gcc-3.1.1-r2.ebuild 9274
 MD5 9f2b75a5738fb492bdd6a50db9b1c8a0 gcc-3.2.3-r4.ebuild 19754
@@ -24,8 +23,8 @@ MD5 05e006b46ff6b0140dee83108aacbd43 gcc-3.4.1-r3.ebuild 31283
 MD5 08f2d93b55c2fc285c0e572c68ea3a9f gcc-3.4.1.ebuild 30311
 MD5 1f7c0873e4a3eae957aace162049e82f gcc-3.4.2-r2.ebuild 13478
 MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
-MD5 7e9f89a76b23f5017f257e031f038d3b gcc-3.4.2-r3.ebuild 13283
-MD5 faeb409ff716bde8e8d95e37c608f3ac gcc-3.4.3.ebuild 13019
+MD5 d0f27931efb60483d13fb5a5e5d7a492 gcc-3.4.3.ebuild 13033
+MD5 f34f1e15630a88ebcc7e5b21097d8c66 ChangeLog 71920
 MD5 f7e7042c2ddf66e344b30cbc66ebaf73 files/cc 24
 MD5 80d122265d3062847a4a1b161abe1d26 files/cpp 24
 MD5 3213bd50acdbbd71ce7dd3e40710e30e files/digest-gcc-2.95.3-r8 64
@@ -52,7 +51,6 @@ MD5 fc48a7567c14adcfeed10b5e03b4ebf6 files/digest-gcc-3.4.1 355
 MD5 c6ea8a92bac6d2638c54c011f98bc5b8 files/digest-gcc-3.4.1-r2 442
 MD5 c6ea8a92bac6d2638c54c011f98bc5b8 files/digest-gcc-3.4.1-r3 442
 MD5 69687aac826654ad375b7eae45a01e0b files/digest-gcc-3.4.2-r2 443
-MD5 8dd363ef6c3a83115114f9f8d215c750 files/digest-gcc-3.4.2-r3 529
 MD5 9bb4a999eb75c9e3eadab9aa71e91879 files/fix_libtool_files.sh 1731
 MD5 edced3dd7f4035b638bbee500bc89e7b files/gcc-spec-env.patch 791
 MD5 8baffb486c75efe253bd2daa88daa7d6 files/gcc331_use_multilib.amd64.patch 352
