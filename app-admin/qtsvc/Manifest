@@ -1,4 +1,6 @@
 MD5 b21bb375d9631364210848e5c3112871 ChangeLog 861
 MD5 82dbe30b68609b0c519fd17b30c9d8a1 qtsvc-0.1-r1.ebuild 838
+MD5 bf1688b82f0d36902efd5a4922739795 qtsvc-0.2.ebuild 624
+MD5 d1acb26dfe92d93227788c71c8da9a55 files/digest-qtsvc-0.2 61
 MD5 dddef6718c96525ca39fcd489495d240 files/digest-qtsvc-0.1-r1 61
 MD5 51950d81d264f778df8ec9ab2145f853 files/qtsvc-0.1.diff 2914
