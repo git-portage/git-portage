@@ -1,5 +1,5 @@
-MD5 cb5a821620e30432ed96b986decec38e ChangeLog 1066
-MD5 242a09e5b9459264adb2db93d20be289 util-vserver-0.30.ebuild 1341
+MD5 297325fa584871fa7984cb8da4ea33cf ChangeLog 1210
+MD5 71d963ee6718e6ef0d32b98ed714b0be util-vserver-0.30.ebuild 1338
 MD5 7f147ec6ddc340f546070e3045f75edc util-vserver-0.29.5.ebuild 1345
 MD5 db37aff1e6c2f62af0035ea8615d7a33 util-vserver-0.29_p196-r1.ebuild 1389
 MD5 de373141d8d3eeffd74dccdd3b7e7196 files/digest-util-vserver-0.30 70
