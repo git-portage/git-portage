@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-LibXML/Attic/XML-LibXML-1.56.ebuild,v 1.2 2004/01/31 01:06:10 rac Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-LibXML/Attic/XML-LibXML-1.56-r1.ebuild,v 1.1 2004/01/31 01:06:10 rac Exp $
 
 inherit perl-module
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://cpan.org/modules/by-module/XML/${P}.readme"
 IUSE=""
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="~x86 ~amd64 ~alpha ~ppc ~sparc "
+KEYWORDS="x86 ~amd64 alpha ~ppc sparc "
 
 newdepend ">=dev-perl/XML-SAX-0.12
 	dev-perl/XML-LibXML-Common
@@ -19,6 +19,12 @@ newdepend ">=dev-perl/XML-SAX-0.12
 
 export PERL5LIB=`perl -e 'print map { ":$ENV{D}/$_" } @INC'`
 mytargets="pure_install doc_install"
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	patch -p1 < ${FILESDIR}/${P}-dupextern.patch || die "dupextern patch failed"
+}
 
 pkg_postinst() {
 
