@@ -53,7 +53,7 @@ X ./media-libs/libungif/libungif-4.1.0_beta1-r1.ebuild
 ./app-doc/gimp-user-manual/gime-user-manual-html-2.0-ebuild
 ./app-doc/man-pages/man-pages-1.31.ebuild
 ./net-nds/openldap/openldap-1.2.11-r1.ebuild
-./x11-wm/openmotif/openmotif-2.1.30-r1.ebuild
+./x11-libs/openmotif/openmotif-2.1.30-r1.ebuild
 ./app-editors/gtk-xemacs/gtk-xemacs-21.1.12_p3.ebuild
 ./app-editors/joe/joe-2.8-r1.ebuild
 ./app-editors/vim-gtk/vim-gtk-5.7-r1.ebuild
