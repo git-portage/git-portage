@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/ekg/Attic/ekg-1.4.ebuild,v 1.2 2004/01/16 10:24:10 spock Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/ekg/Attic/ekg-1.4-r1.ebuild,v 1.1 2004/01/16 10:24:10 spock Exp $
 
 IUSE="ssl ncurses zlib python"
 
@@ -24,7 +24,7 @@ src_compile() {
 	use ssl     || myconf="$myconf --disable-openssl"
 	use ncurses || myconf="$myconf --disable-ui-ncurses --enable-ui-readline"
 	use zlib    || myconf="$myconf --disable-zlib"
-	use python  && myconf="$myconf --enable-python"
+	use python  && myconf="$myconf --with-python"
 
 	econf ${myconf} || die
 	emake || die
