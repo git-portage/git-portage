@@ -1,9 +1,12 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d960cc3ac5eba8e6dbf6635ebbde673e aterm-1.00_beta2.ebuild 1652
-MD5 cfdac67e637f4ef919ea59a599de13df aterm-0.4.2-r11.ebuild 2879
-MD5 59ea7920f8bed448ead90626580d91ef aterm-0.4.2-r7.ebuild 2049
-MD5 19c5bd7e5d2061a5aee184457fc42714 aterm-0.4.2-r12.ebuild 2957
-MD5 1802c3b912181d2530ce146ccb3953a8 ChangeLog 10855
-MD5 41328649bf184e80ecc1043bc7b44ec0 aterm-0.4.2-r9.ebuild 2369
+MD5 908312ea40cc2122b9bdc0e382f95271 aterm-0.4.2-r11.ebuild 2883
+MD5 de33408adce84b501c44af6b0991843f aterm-0.4.2-r7.ebuild 2054
+MD5 cae159f8111e9c780c9c12ac6f7ce353 aterm-0.4.2-r12.ebuild 2960
+MD5 19cde0dec8690aa3850f086c23579f18 ChangeLog 11037
+MD5 cdac4f979eddf1a7407c63f6407edf05 aterm-0.4.2-r9.ebuild 2374
 MD5 d94d306da3804e41296e1bf04c7c9cae metadata.xml 255
 MD5 f35d671ae7390589e50cb67736e90fc3 files/digest-aterm-1.00_beta2 69
 MD5 c2aedeeb3e7cc1dcc9361a021a570973 files/aterm-0.4.2-paste.patch 2160
@@ -22,3 +25,10 @@ MD5 001fefd640df8a6318e8597f86c6e08c files/aterm-0.4.2-ja-savelines.patch 4459
 MD5 64a8e39eb81e3b76ec3a28e0c36b2c30 files/aterm-0.4.2-scroll-double-free.patch 1826
 MD5 56383dccdb085d09e33858081b774724 files/aterm-0.4.2-borderless.patch 4692
 MD5 8faf173b6f8032958f1bc48d7877353c files/aterm-0.4.2-savelines.patch 4081
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCBvexI1lqEGTUzyQRAs/MAKDWliOAZZZEOAd+tBHe1obWqxz9uACfajSF
+Wmvl70+z+gFhmFqZRY0QYGI=
+=Xj1Q
+-----END PGP SIGNATURE-----
