@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/bastille/Attic/bastille-2.1.1-r1.ebuild,v 1.9 2005/01/01 10:56:15 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/bastille/Attic/bastille-2.1.1-r1.ebuild,v 1.10 2005/04/05 18:02:56 battousai Exp $
 
 inherit perl-module eutils
 
@@ -28,6 +28,7 @@ src_unpack() {
 	unpack ${A}
 	epatch ${WORKDIR}/${P}-gentoo-${PATCHVER}.patch
 	epatch ${FILESDIR}/bastille-firewall-imap.patch
+	epatch ${FILESDIR}/${P}-hlist-fix.patch
 }
 
 src_compile() {
