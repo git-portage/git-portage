@@ -8,6 +8,7 @@
 ./sys-apps/debianutils/debianutils-1.13.3-r1.ebuild
 ./sys-apps/diffutils/diffutils-2.7-r1.ebuild
 ./sys-apps/e2fsprogs/e2fsprogs-1.19.ebuild
+./sys-apps/ed/ed-0.2.ebuild
 ./sys-apps/file/file-3.32.ebuild
 ./sys-apps/fileutils/fileutils-4.0y.ebuild
 ./sys-apps/findutils/findutils-4.1-r1.ebuild

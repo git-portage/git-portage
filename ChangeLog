@@ -1,4 +1,6 @@
 23.09.2000
+	- Added sys-apps/ed (GNU ed 0.2)	(drobbins)
+	- Removed app-editors/ed		(drobbins)
 	- New sys-apps/bootdisk			(drobbins)
 
 21.09.2000
