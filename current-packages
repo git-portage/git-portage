@@ -70,7 +70,7 @@
 ./dev-lang/php-4/php-4.0.3_p1.ebuild
 ./dev-lang/python/python-1.5.2-r2.ebuild
 ./dev-lang/ruby/ruby-1.6.1.ebuild
-./dev-lang/tcl-tk-8.0/tcl-tk-8.0.5-r1.ebuild
+#./dev-lang/tcl-tk-8.0/tcl-tk-8.0.5-r1.ebuild
 ./dev-lang/tcl-tk-8.1/tcl-tk-8.1.1-r1.ebuild
 ./dev-libs/g-wrap/g-wrap-0.9.5.ebuild
 ./dev-libs/glib/glib-1.2.8-r1.ebuild
