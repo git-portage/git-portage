@@ -1,13 +1,12 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/wpa-supplicant/Attic/wpa-supplicant-0.2.4.ebuild,v 1.1 2004/09/16 18:19:40 brix Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/wpa_supplicant/Attic/wpa_supplicant-0.2.4.ebuild,v 1.1 2004/12/10 15:45:32 brix Exp $
 
 inherit eutils
 
-MY_P="${P/wpa-/wpa_}"
 DESCRIPTION="WPA Supplicant for secure wireless transfers"
 HOMEPAGE="http://hostap.epitest.fi/wpa_supplicant/"
-SRC_URI="http://hostap.epitest.fi/releases/${MY_P}.tar.gz
+SRC_URI="http://hostap.epitest.fi/releases/${P}.tar.gz
 		mirror://gentoo/madwifi-driver-0.1_pre20040906.tar.bz2"
 LICENSE="GPL-2"
 
@@ -19,8 +18,6 @@ DEPEND="gsm? ( sys-apps/pcsc-lite )
 		pcap? ( net-libs/libpcap
 				dev-libs/libdnet )
 		ssl? ( dev-libs/openssl )"
-
-S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}

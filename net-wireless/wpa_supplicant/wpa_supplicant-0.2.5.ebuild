@@ -1,19 +1,16 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/wpa-supplicant/Attic/wpa-supplicant-0.2.5.ebuild,v 1.4 2004/12/04 00:24:17 slarti Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/wpa_supplicant/Attic/wpa_supplicant-0.2.5.ebuild,v 1.1 2004/12/10 15:45:32 brix Exp $
 
 inherit toolchain-funcs eutils
 
 MADWIFI_VERSION="0.1_pre20040906"
 
-MY_P="${P/wpa-/wpa_}"
-S=${WORKDIR}/${MY_P}
-
 DESCRIPTION="WPA Supplicant for secure wireless transfers"
 HOMEPAGE="http://hostap.epitest.fi/wpa_supplicant/"
-SRC_URI="http://hostap.epitest.fi/releases/${MY_P}.tar.gz
+SRC_URI="http://hostap.epitest.fi/releases/${P}.tar.gz
 		mirror://gentoo/madwifi-driver-${MADWIFI_VERSION}.tar.bz2
-		mirror://gentoo/${MY_P}-ipw2100.diff.gz"
+		mirror://gentoo/${P}-ipw2100.diff.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
@@ -31,8 +28,8 @@ src_unpack() {
 	unpack ${A}
 
 	cd ${S}
-	epatch ${WORKDIR}/${MY_P}-ipw2100.diff
-	epatch ${FILESDIR}/${MY_P}-pkg-config.patch
+	epatch ${WORKDIR}/${P}-ipw2100.diff
+	epatch ${FILESDIR}/${P}-pkg-config.patch
 
 	sed -i "s:madwifi/wpa::" ${S}/Makefile
 
@@ -71,8 +68,8 @@ src_install() {
 	newins wpa_supplicant.conf wpa_supplicant.conf.example
 
 	exeinto /etc/init.d
-	newexe ${FILESDIR}/${MY_P}-init.d wpa_supplicant
+	newexe ${FILESDIR}/${P}-init.d wpa_supplicant
 
 	insinto /etc/conf.d
-	newins ${FILESDIR}/${MY_P}-conf.d wpa_supplicant
+	newins ${FILESDIR}/${P}-conf.d wpa_supplicant
 }
