@@ -1,13 +1,16 @@
-MD5 7872395ddf266fb2291e0225191c7c61 busybox-1.00.ebuild 6821
-SHA1 19e4d6b6b1e478d9251333fa25df60984a14eefc busybox-1.00.ebuild 6821
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 fa747ecef8eb57f7a134f269ed2d524a busybox-1.00.ebuild 6816
+SHA1 a9ceb5854f8c357f00c904a717ebc5c4741c27c7 busybox-1.00.ebuild 6816
 MD5 bb58878c35f17f5bad4aa060f1dcc25e busybox-0.60.3-r2.ebuild 1183
 SHA1 bd5fd6cacd87c2e2e1b2931160f036169f0cbf19 busybox-0.60.3-r2.ebuild 1183
 MD5 f98f75be102af5709caff4cf84eaeb90 busybox-0.60.3-r1.ebuild 1091
 SHA1 9d234d3566150ca85f825b884f88091bb2e49ab0 busybox-0.60.3-r1.ebuild 1091
-MD5 ce93ae7b92e8fba0d5ca2230190fff8a busybox-1.00_rc3.ebuild 6868
-SHA1 22f748b57c258aee505f38c396f3b81dab00a720 busybox-1.00_rc3.ebuild 6868
-MD5 18906b342dfe5dc186f1b143dd8eadbc ChangeLog 9374
-SHA1 1e652bf80fa36763ddda3d350e35de21268babcc ChangeLog 9374
+MD5 f8da3423413ed2769f010629349cceb9 busybox-1.00_rc3.ebuild 6868
+SHA1 fc53ccddeab8619f43f5814ffc65ecc203171f4e busybox-1.00_rc3.ebuild 6868
+MD5 374b5cdf3bb2a0d877a76828996efdd5 ChangeLog 9373
+SHA1 e9ff5db8bbc6a65679cca29ce9fd1ba4110f13bc ChangeLog 9373
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 SHA1 9c213f5803676c56439df3716be07d6692588856 metadata.xml 164
 MD5 d9841a0171170d16bb121c696591e7ef files/config-netboot 9853
@@ -40,3 +43,10 @@ MD5 82715fed5d7bb015819ce9d9849e7524 files/digest-busybox-1.00_rc3 149
 SHA1 54083e1f5f0be5e286dbbfbdfb9c028cb2156efc files/digest-busybox-1.00_rc3 149
 MD5 3a4b93f7ec6f3aaade20029a81562b88 files/msh.diff 433
 SHA1 e66b9533ba4ff0849f89836dfba65c6ae2a60b56 files/msh.diff 433
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD8DBQFBbR9Q94CCfB4KcwwRAkaBAJwJHSFgIN+yyjlPbtzHXvbaJZ9p6ACghbsL
+5Ypu7mYN5sri0uZEL+4YBmY=
+=tDRv
+-----END PGP SIGNATURE-----
