@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/ia64-sources/Attic/ia64-sources-2.4.24-r1.ebuild,v 1.2 2004/04/12 16:36:22 aliz Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/ia64-sources/Attic/ia64-sources-2.4.24-r3.ebuild,v 1.1 2004/04/17 11:44:12 plasmaroo Exp $
 
 IUSE=""
 
@@ -54,6 +54,10 @@ src_unpack() {
 	# patches aren't needed (29 Jan 2004 agriffis)
 
 	epatch ${FILESDIR}/${P}.munmap.patch || die "Failed to apply munmap patch!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0010.patch || die "Failed to add the CAN-2004-0010 patch!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0109.patch || die "Failed to patch CAN-2004-0109 vulnerability!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0177.patch || die "Failed to add the CAN-2004-0177 patch!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0178.patch || die "Failed to add the CAN-2004-0178 patch!"
 	kernel_universal_unpack
 }
 
