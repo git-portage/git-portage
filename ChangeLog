@@ -1,5 +1,8 @@
 date 04 Feb 20001
 
+new app-editors/emacs-motif-20.7
+achim
+
 upd sys-apps/baselayout-1.5-r1 to 1.5-r2
 achim
 Changed docdir to /usr/share/doc. Added /var/tmp
