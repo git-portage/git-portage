@@ -1,8 +1,8 @@
-MD5 d7645db9e6022a237703b248d7cde44f ChangeLog 4541
+MD5 95fe031797088b53626d034724108628 ChangeLog 4722
 MD5 d8353e0876f1e13ebbd6384e33906894 dante-1.1.13.ebuild 1617
 MD5 420470a75aee90019433b2b8a957e68b dante-1.1.14-r1.ebuild 1614
 MD5 ba5406607f4bbbbd635559cdb0c53f6e dante-1.1.14-r2.ebuild 2029
-MD5 41b4ed499591126256d056b58ef6de67 dante-1.1.15_pre1.ebuild 2056
+MD5 62bb87d73264e521aa4bb1a8dff0e1a0 dante-1.1.15_pre1.ebuild 2103
 MD5 72d9add89e45e3cb921c99d79bdf31a7 files/dante-1.1.14-bindresvport.patch 485
 MD5 18a1fa3293fe5b6272427ca60293f867 files/dante-1.1.14-socksify.patch 801
 MD5 184812cd77df081c52d4a0c540d0ba74 files/dante-sockd-conf-1.1.14-r2 474
@@ -12,3 +12,4 @@ MD5 a5e8f0769876952c68e2a06a1508fbfd files/digest-dante-1.1.13 64
 MD5 7d257618e686db991bad06011612d805 files/digest-dante-1.1.14-r1 64
 MD5 7d257618e686db991bad06011612d805 files/digest-dante-1.1.14-r2 64
 MD5 50224590fe8129aed7c9cb47a4e123ec files/digest-dante-1.1.15_pre1 69
+MD5 e1b94493b162bbdb56acba97cec7349a files/dante-1.1.15_pre1-socksify.patch 811
