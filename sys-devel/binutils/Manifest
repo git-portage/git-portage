@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 5c37c7ad75a4087ba04975e8584ba0e2 binutils-2.14.90.0.8-r2.ebuild 449
 MD5 eb899b15446a702bb2cbbd0ba9bb2461 ChangeLog 39000
 MD5 45494d255ce82fd574cfa85cba4c67a7 binutils-2.14.90.0.6-r7.ebuild 6736
@@ -8,7 +5,7 @@ MD5 25ade8a6c71ab237778cf1534ca50b77 binutils-2.14.90.0.6-r8.ebuild 436
 MD5 566806dcf81b67546b0c751541145b7d binutils-2.15.91.0.2-r1.ebuild 462
 MD5 a7ceb9e535f7677481bd8e044733be67 binutils-2.14.90.0.8-r1.ebuild 5051
 MD5 6904f1690676a2c9b3ffd28b6d8a8e47 binutils-2.15.90.0.1.1-r3.ebuild 4797
-MD5 bc413f88f0489307dbf6693db8781d71 binutils-2.15.90.0.1.1-r4.ebuild 489
+MD5 a6844f75f8c9e7a60124e3de784c0079 binutils-2.15.90.0.1.1-r4.ebuild 522
 MD5 53f0fc4e26d728f52378403883a2aa2e binutils-2.15.90.0.3-r3.ebuild 4973
 MD5 398d09db4e9bd0ebd561921e8834011d binutils-2.15.91.0.1.ebuild 4705
 MD5 0808c1aab4a9e79f43f9485b9fb7c07e binutils-2.15.91.0.2.ebuild 5159
@@ -88,10 +85,3 @@ MD5 03d6c934577cf40ec75b41bfc38b48a0 files/2.14/binutils-mips-openssl-got-fix.pa
 MD5 8f619fc0c409a5ba768f126f172ee6bc files/2.15/05_all_binutils-2.15-elf32-arm-textrel.patch 2009
 MD5 907ce8c972e2a984590d4bfc04181c1d files/2.15/40_all_binutils-uclibc-linker.patch 530
 MD5 bad6ba9f63eb3a86d7006191848a47b8 files/2.15/52_all_binutils-20040527-uclibc-100-conf.patch 21576
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.9.10 (GNU/Linux)
-
-iD8DBQFB24tvroRuSHgZdywRAkPCAJ9V5qOXyshxpM+95z/rFudR/caVhwCfceZW
-vzRF4BY0wfUzd2vkkoP7Gos=
-=Ub8n
------END PGP SIGNATURE-----
