@@ -1,7 +1,10 @@
-MD5 657700870c391ea65a3fcde7b65f3ce9 ChangeLog 27070
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 3d87625f1baf6a459a894ebe0b899402 ChangeLog 27209
 MD5 41299f246433a1a55c8fccc77ccd709e metadata.xml 491
 MD5 4ec9fc723b0d9801152c2ddfd4442de9 samba-3.0.10.ebuild 16380
-MD5 d439f98f915e01491fe276bf025df368 samba-3.0.11.ebuild 16528
+MD5 04e7264e5dfee95a35bc59578942b380 samba-3.0.11.ebuild 16532
 MD5 636cefb79b33da2114659a179850f094 samba-3.0.6-r3.ebuild 14258
 MD5 a099bbaec41e1bf990ab5b7986ce4cf1 samba-3.0.6-r4.ebuild 14235
 MD5 752029d2b65f2faafedafcbc8f74c0cb samba-3.0.7-r1.ebuild 15430
@@ -57,3 +60,10 @@ MD5 e89b19f1e62e257cbaa23a44a0362a58 files/swat.xinetd 527
 MD5 09195dd8ab25ce77ac51c0c05b4ab93c files/system-auth-winbind 869
 MD5 e17a1638ad9f30f2e39db4c8981a2fcd files/vscan-0.3.5-libclamav.patch 523
 MD5 def157a63ec14450df82373617c7dc4b files/samba-3.0.11-gcc4.patch 485
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCNUq/CRZPokWLroQRAoidAJ9hGq2OqY569OhZ4EPnIwkMynLWfgCeMBsi
+A1BE6hwLCSF40YrqOhOZklg=
+=JWwc
+-----END PGP SIGNATURE-----
