@@ -127,7 +127,7 @@
 ./gnome-apps/bug-buddy/bug-buddy-1.2.ebuild
 ./gnome-apps/ee/ee-0.3.12-r1.ebuild
 #./gnome-apps/evolution/evolution-0.6-r1.ebuild
-./gnome-apps/gdm/gdm-2.0_beta4.ebuild
+./gnome-apps/gdm/gdm-2.0_beta4-r1.ebuild
 ./gnome-apps/gedit/gedit-0.9.4.ebuild
 ./gnome-apps/ggv/ggv-0.95-r1.ebuild
 ./gnome-apps/glade/glade-0.5.11.ebuild
@@ -155,7 +155,6 @@
 ./gnome-base/gdk-pixbuf/gdk-pixbuf-0.9.0.ebuild
 ./gnome-base/glibwww/glibwww-0.2.ebuild
 ./gnome-base/gnome-applets/gnome-applets-1.2.4.ebuild
-./gnome-base/gnome-core/gnome-core-1.2.2.1.ebuild
 ./gnome-base/gnome-core/gnome-core-1.2.4.ebuild
 ./gnome-base/gnome-libs/gnome-libs-1.2.8.ebuild
 ./gnome-base/gnome-print/gnome-print-0.25.ebuild
