@@ -1,3 +1,9 @@
+date 09 Jan 2000
+
+upd sys-apps/modutils-3.2.24 to 2.4.0
+achim
+Just added not jet tested so commented out in current-packages.new
+
 date 08 Jan 2000
 
 new sys-kernel/linux-2.4.0.3-r1

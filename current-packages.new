@@ -204,7 +204,7 @@
 ./kde-apps/krusader/krusader-0.65.1.ebuild
 ./kde-base/kde/kde-2.0.1-r1.ebuild
 ./kde-base/kde-i18n/kde-i18n-2.0.1.ebuild
-./kde-base/kdebase/kdebase-2.0.1.ebuild
+#./kde-base/kdebase/kdebase-2.0.1.ebuild
 ./kde-base/kdelibs/kdelibs-2.0.1.ebuild
 ./kde-base/kdesupport/kdesupport-2.0.1.ebuild
 ./media-gfx/autotrace/autotrace-0.26.ebuild
@@ -248,7 +248,7 @@
 ./media-sound/nas/nas-1.4.1.ebuild
 ./media-sound/sox/sox-12.17.1.ebuild
 ./media-sound/xmms/xmms-1.2.3.ebuild
-./media-video/avifile/avifile-0.53.ebuild
+./media-video/avifile/avifile-0.53.1.ebuild
 ./media-video/bcast-2000/bcast-2000c.ebuild
 ./media-video/mjpeg-tools/mjpeg-tools-1a.ebuild
 ./media-video/mpeg-movie/mpeg-movie-1.6.0.ebuild
@@ -365,7 +365,7 @@
 ./sys-apps/bzip2/bzip2-1.0.1.ebuild
 ./sys-apps/console-data/console-data-1999.08.29-r1.ebuild
 ./sys-apps/console-tools/console-tools-0.2.3-r2.ebuild
-./sys-apps/cpio/cpio-2.4.2-r1.ebuild
+./sys-apps/cpio/cpio-2.4.2-r2.ebuild
 ./sys-apps/daemontools/daemontools-0.70.ebuild
 ./sys-apps/dcron/dcron-2.7.ebuild
 ./sys-apps/debianutils/debianutils-1.13.3-r1.ebuild
@@ -392,10 +392,11 @@
 ./sys-apps/man-pages/man-pages-1.31.ebuild
 ./sys-apps/man/man-1.5.1h-r1.ebuild
 ./sys-apps/modutils/modutils-2.3.24.ebuild
+#./sys-apps/modutils/modutils-2.4.0.ebuild
 ./sys-apps/most/most-4.9.0-r1.ebuild
 ./sys-apps/net-tools/net-tools-1.57-r1.ebuild
 ./sys-apps/netkit-base/netkit-base-0.17-r1.ebuild
-./sys-apps/portage/portage-1.4.ebuild
+./sys-apps/portage/portage-1.4-r1.ebuild
 ./sys-apps/procps/procps-2.0.7-r1.ebuild
 ./sys-apps/psmisc/psmisc-19-r1.ebuild
 ./sys-apps/raidtools/raidtools-0.90-r1.ebuild
@@ -404,7 +405,7 @@
 ./sys-apps/sh-utils/sh-utils-2.0j-r1.ebuild
 ./sys-apps/shadow/shadow-20000902-r1.ebuild
 ./sys-apps/sharutils/sharutils-4.2.1-r1.ebuild
-./sys-apps/star/star-1.3_alpha8.ebuildOB
+./sys-apps/star/star-1.3_alpha8.ebuild
 ./sys-apps/sysvinit/sysvinit-2.78-r1.ebuild
 ./sys-apps/sysklogd/sysklogd-1.4.ebuild
 ./sys-apps/tar/tar-1.13.18-r1.ebuild
