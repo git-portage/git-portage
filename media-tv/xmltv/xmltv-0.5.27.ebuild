@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/xmltv/Attic/xmltv-0.5.24.ebuild,v 1.2 2004/01/16 17:19:38 max Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/xmltv/Attic/xmltv-0.5.27.ebuild,v 1.1 2004/01/16 17:19:38 max Exp $
 
 inherit perl-module
 
@@ -19,12 +19,12 @@ KEYWORDS="~x86"
 #       empty value, everything will be *enabled*.
 #
 #  none:            Don't enable any of the features below
-#  tv_grab_de:      Germany and Austria listing grabbers
+#  tv_grab_de:      Germany and Austria listing grabbers (disabled)
 #  tv_grab_uk:      Britain listings grabber
 #  tv_grab_uk_rt:   Alternate Britain listings grabber
 #  tv_grab_it:      Italy listings grabber
 #  tv_grab_na:      North America listings grabber
-#  tv_grab_sn:      Sweden and Norway listings grabber
+#  tv_grab_sn:      Sweden and Norway listings grabber (disabled)
 #  tv_grab_nz:      New Zealand listings grabber
 #  tv_grab_fi:      Finland listings grabber
 #  tv_grab_es:      Spain listings grabber
@@ -46,7 +46,7 @@ DEPEND=">=sys-apps/sed-4
 	>=dev-perl/libwww-perl-5.65
 	>=dev-perl/XML-Parser-2.34
 	>=dev-perl/XML-Twig-3.09
-	dev-perl/XML-Writer
+	>=dev-perl/XML-Writer-0.4.1
 	>=dev-perl/DateManip-5.42
 	dev-perl/Memoize
 	>=dev-perl/Term-ProgressBar-2.03
@@ -59,9 +59,9 @@ DEPEND=">=sys-apps/sed-4
 # for tv_check
 DEPEND="${DEPEND} dev-perl/perl-tk dev-perl/Tk-TableMatrix dev-perl/XML-Simple"
 # for tv_grab_na
-DEPEND="${DEPEND} dev-perl/HTML-Parser"
-# for tv_grab_sn
-DEPEND="${DEPEND} >=dev-perl/HTML-TableExtract-1.08"
+DEPEND="${DEPEND} >=dev-perl/HTML-Parser-3.34"
+# for tv_grab_sn (disabled)
+#DEPEND="${DEPEND} >=dev-perl/HTML-TableExtract-1.08"
 # for tv_grab_nz
 DEPEND="${DEPEND} >=dev-lang/python-1.5.2"
 # for tv_grab_fi tv_grab_es tv_grab_nl tv_grab_nl_wolf tv_grab_hu tv_grab_dk
@@ -101,7 +101,7 @@ make_config() {
 		echo "no"
 	fi
 
-	# Enable Germany and Austria (disabled currently)
+	# Enable Germany and Austria (disabled)
 	#[ "`has tv_grab_de ${XMLTV_OPTS}`" ] && echo "yes" || echo "no"
 	# Enable Brittain
 	[ "`has tv_grab_uk ${XMLTV_OPTS}`" ] && echo "yes" || echo "no"
@@ -111,8 +111,8 @@ make_config() {
 	[ "`has tv_grab_it ${XMLTV_OPTS}`" ] && echo "yes" || echo "no"
 	# Enable North America
 	[ "`has tv_grab_na ${XMLTV_OPTS}`" ] && echo "yes" || echo "no"
-	# Enable Sweden and Norway
-	[ "`has tv_grab_sn ${XMLTV_OPTS}`" ] && echo "yes" || echo "no"
+	# Enable Sweden and Norway (disabled)
+	#[ "`has tv_grab_sn ${XMLTV_OPTS}`" ] && echo "yes" || echo "no"
 	# Enable New Zealand
 	[ "`has tv_grab_nz ${XMLTV_OPTS}`" ] && echo "yes" || echo "no"
 	# Enable Finland
@@ -151,13 +151,4 @@ src_install() {
 		einfo "to where the ScriptAlias directive is configured."
 		einfo
 	fi
-}
-
-pkg_postinst() {
-	ewarn "If you are upgrading from < 0.5.10 and you need to use the"
-	ewarn "DE (Germany/Austria), UK or UK_RT (Britain), or IT (Italy)"
-	ewarn "grabbers, please make sure you have the appropriate value"
-	ewarn "specified in your XMLTV_OPTS setting because these grabbers"
-	ewarn "no longer build by default."
-	echo
 }

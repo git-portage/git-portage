@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/xmltv/Attic/xmltv-0.5.25.ebuild,v 1.2 2003/12/12 07:10:42 max Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/xmltv/Attic/xmltv-0.5.25.ebuild,v 1.3 2004/01/16 17:19:38 max Exp $
 
 inherit perl-module
 
