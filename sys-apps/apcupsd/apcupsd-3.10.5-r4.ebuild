@@ -1,21 +1,22 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/apcupsd/Attic/apcupsd-3.10.5-r2.ebuild,v 1.4 2003/09/03 19:38:08 mholzer Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/apcupsd/Attic/apcupsd-3.10.5-r4.ebuild,v 1.1 2003/09/03 19:38:08 mholzer Exp $
 
-IUSE="doc"
+IUSE="doc snmp"
 
 S=${WORKDIR}/${P}
 DESCRIPTION="APC UPS daemon with integrated tcp/ip remote shutdown"
 SRC_URI="mirror://sourceforge/apcupsd/${P}.tar.gz
 	ftp://ftp.apcupsd.com/pub/apcupsd/contrib/gd1.2.tar.gz"
 HOMEPAGE="http://www.sibbald.com/apcupsd/"
-KEYWORDS="x86 amd64 ~ppc arm"
+KEYWORDS="~x86 ~amd64 ~ppc ~arm"
 SLOT="0"
 LICENSE="GPL-2"
 
 DEPEND=">=sys-apps/baselayout-1.8.4
 	virtual/glibc
 	virtual/mta
+	snmp? ( net-analyzer/ucd-snmp )
 	sys-libs/ncurses"
 
 XPIDDIR=/var/run
@@ -30,6 +31,8 @@ src_unpack() {
 }
 
 src_compile() {
+	local myconf
+	use snmp && myconf="--enable-snmp"
 	APCUPSD_MAIL=/usr/sbin/sendmail ./configure \
 		--prefix=/usr \
 		--sbindir=/usr/sbin \
@@ -46,20 +49,24 @@ src_compile() {
 		--enable-usb \
 		--enable-net \
 		--enable-oldnet \
+		--enable-master-slave \
 		--enable-powerflute \
 		--enable-pthreads \
 		--with-css-dir=/home/httpd/apcupsd \
 		--with-cgi-bin=/home/httpd/apcupsd \
 		--enable-cgi \
+		${myconf} \
 		|| die
 	make || die
 }
 
 src_install () {
-	make DESTDIR=${D} install
+	make DESTDIR=${D} install || die "installed failed"
 
 	insinto /etc/apache/conf/addon-modules
 	newins ${FILESDIR}/${PV}/apache.conf apcupsd.conf
+	insinto /etc/apcupsd
+	newins examples/safe.apccontrol safe.apccontrol
 
 	if [ "`use doc`x" != "x" ]
 	then
