@@ -1,6 +1,9 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 07d302d5021bc0635909da0cf1bb90dc ck-sources-2.4.28-r3.ebuild 1272
-MD5 671bc77987654f64ef39c07ba7af47e5 ck-sources-2.6.11-r1.ebuild 765
-MD5 bc2d2f2d355e05501ae0e80ef5db1b4f ChangeLog 19326
+MD5 1cc1bf32065a77853dcd94b5b822cd9a ck-sources-2.6.11-r1.ebuild 765
+MD5 031aa1e95e1b18610b920452acae51fc ChangeLog 19671
 MD5 7187b8c28501f454a2412c9e4a7fcf53 metadata.xml 421
 MD5 1d78b90e495e432432e095ee47bbc2fc files/ck-sources-2.4.28.77094.patch 452
 MD5 792fa9165e5ae65d46ee206c7f7a4fc9 files/ck-sources-2.4.28.78363.patch 788
@@ -16,6 +19,12 @@ MD5 b9a94233e1457787352e5f85e3e3582d files/ck-sources-2.4.28.binfmt_a.out.patch 
 MD5 0f93b46ae17cbd0fc9b4d1cf5d704296 files/ck-sources-2.4.28.81106.patch 2243
 MD5 757ee1239c3f14645ccea3640d551e11 files/ck-sources-2.4.28.CAN-2004-1056.patch 11249
 MD5 b6cd2468a246169a6e2f969c44e3f341 files/ck-sources-2.4.28.78362.patch 10372
-MD5 3b421fc7396318617bece4ec7a2b6e99 files/digest-ck-sources-2.6.10-r6 131
 MD5 4045e98ed6d3fcc11ee1a7fcd523c258 files/digest-ck-sources-2.6.11-r1 131
 MD5 1efe4024e443e60db5fd9b21b22fabd2 files/ck-sources-2.4.28.77666.patch 1724
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFCJs8NnVkA0cTr1F4RAtOpAJ44/u3jvmb+Sm52GiODcnXt/sFwdgCfXMlf
+V0NFDbuKQOmAI+dEtae71z8=
+=gsqk
+-----END PGP SIGNATURE-----
