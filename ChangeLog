@@ -1,5 +1,5 @@
 03.10.2000
-
+	- Update portage (doins fix)		(drobbins)
 	- Update dhcp 3.0_beta0202 -> 0206	(achim)
 	- Update amavis 0.2.1_p2 -> p3		(achim)
 	- Update tnef 0.12 -> 0.13		(achim)
