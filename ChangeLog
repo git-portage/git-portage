@@ -1,5 +1,9 @@
 date 30 Mar 2001
 
+new media-gfx/fbi-1.7
+ryan
+fbi is a framebuffer console image viewer
+
 new net-fs/samba-winbind-20010330
 achim
 CVS snapshot from samba-tng. This package only includes the winbind daemon
