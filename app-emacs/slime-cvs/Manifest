@@ -4,6 +4,7 @@ MD5 1e57cc5d17eb2e048d20b7d711b69efe slime-cvs-0-r1.ebuild 1952
 MD5 bd775715b698c7d39382726188b6b1cc slime-cvs-0-r2.ebuild 2054
 MD5 7526a92601bb94fb343e8ac53d545ff2 slime-cvs-0-r3.ebuild 2223
 MD5 89e7de3275fb35ed0dc6428ffa8b669c slime-cvs-0.ebuild 1682
+MD5 7526a92601bb94fb343e8ac53d545ff2 slime-cvs-0-r4.ebuild 2223
 MD5 3469f2bfb76fc05b746ea35d0001d996 files/70slime-gentoo.el 571
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-slime-cvs-0 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-slime-cvs-0-r1 0
@@ -11,3 +12,4 @@ MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-slime-cvs-0-r2 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-slime-cvs-0-r3 0
 MD5 cd3eddef773c2bdc1eac336383f13ec6 files/swank-loader.lisp 68
 MD5 b3ba0a2b8052abb14c37d64c9c8c0e31 files/swank.asd 1637
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-slime-cvs-0-r4 0
