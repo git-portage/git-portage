@@ -1,5 +1,23 @@
 date 19 Feb 2001
 
+upd sys-apps/portage-1.5_pre2 to 1.5_pre3
+drobbins
+New test version of Portage 1.5.  Important dyn_install mtime fix that makes
+unmerge work reliably.  All testers should upgrade.
+
+new sys-kernel/linux-2.4.1.19
+drobbins
+Linux 2.4.1-ac19 with ALSA 0.5.10b, lm-sensors 2.5.5, JFS 0.1.5, LVM 0.9.1_beta4
+Did we beat freshmeat? :)  Pending work: the config and autoconf.h files need to
+be set up appropriately if we want to use this kernel for an actual release. Also,
+I commented out the ReiserFS patches; Achim, please comment them in if we need
+them.  This is a test kernel.
+
+new sys-kernel/linux-sources-2.4.1.19
+drobbins
+Linux 2.4.1-ac19 with ALSA 0.5.10b, lm-sensors 2.5.5, JFS 0.1.5, LVM 0.9.1_beta4
+Possibly needs new ReiserFS patches?  This is a test kernel.
+
 upd net-mail/exim-3.22 to 3.22-r1
 jerry
 Add RDEPEND="!virtual/mta" to prevent virtual/mta packages from stepping
