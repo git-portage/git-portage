@@ -2,8 +2,8 @@ MD5 b2e21f94ae0049508fbdae9df3e2810e kmldonkey-0.10_pre3.ebuild 820
 MD5 6843bf243f860b0334810d090e030259 kmldonkey-0.8.ebuild 725
 MD5 ff3b4ac20820b793ab6b9b067fbd3cca kmldonkey-0.9.1.ebuild 858
 MD5 515109d82a10de358478d836911b028c kmldonkey-0.10_pre4.ebuild 946
-MD5 8ffd0310dd0a19c1ea1b85a87e183ae7 ChangeLog 2340
-MD5 6a61db5bd0cae2868251addd199da1ba kmldonkey-0.10.ebuild 858
+MD5 c1a0c2c9b939af6b703cbf8fba2f9e51 ChangeLog 2341
+MD5 b2d7ea52da161c583b37d8a0972cf2c2 kmldonkey-0.10.ebuild 855
 MD5 1b6808bbd78c9161f8b7efb090d966f8 metadata.xml 162
 MD5 41b52d0752217540ff7a76b26cf53442 files/digest-kmldonkey-0.8 65
 MD5 a11fc3237f7fffb879f9e32428abc707 files/digest-kmldonkey-0.9.1 67
