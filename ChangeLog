@@ -1,5 +1,9 @@
 date 2 June 2001
 
+new app-games/xgalaga-2.0.34
+open source galaga clone for X
+blutgens
+
 new app-misc/gkrellweather-0.2.7
 added another gkrellm plugin, this one will display weather information
 blutgens
