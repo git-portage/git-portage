@@ -1,3 +1,13 @@
+date 28 Feb 2001
+
+del sys-kernel/linux-2.4.1.19-r1
+drobbins
+2.4.1-ac19 has file system corruption problems
+
+del sys-kernel/linux-sources-2.4.1.19-r1
+drobbins
+2.4.1-ac19 has file system corruption problems
+
 date 27 Feb 2001
 
 new x11-wm/sawfish-0.37.3
