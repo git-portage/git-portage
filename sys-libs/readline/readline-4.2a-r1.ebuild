@@ -1,8 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/readline/Attic/readline-4.2a.ebuild,v 1.12 2002/10/25 17:16:58 wwoods Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/readline/Attic/readline-4.2a-r1.ebuild,v 1.1 2002/10/26 09:57:54 azarah Exp $
 
-inherit gnuconfig
+inherit eutils gnuconfig
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Another cute console display library"
@@ -20,6 +20,7 @@ DEPEND="virtual/glibc
 
 src_unpack() {
 	unpack ${A}
+	
 	# config.sub doesn't recognize alphaev67+, update it
 	use alpha && gnuconfig_update
 }
@@ -48,6 +49,10 @@ src_install() {
 
 	dodir /lib
 	mv ${D}/usr/lib/*.so* ${D}/lib
+	# bug #4411
+	gen_usr_ldscript libreadline.so
+	gen_usr_ldscript libhistory.so
+	# end bug #4411
 	dosym libhistory.so.${PV/a/} /lib/libhistory.so
 	dosym libreadline.so.${PV/a/} /lib/libreadline.so
 	# Needed because make install uses ${D} for the link
