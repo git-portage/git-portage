@@ -9,4 +9,5 @@ MD5 4cd3e2742fa943129dca5d63d0109a42 files/digest-imagemagick-5.5.6-r1 71
 MD5 4909cde902edd90dd3725ba4369e782b files/digest-imagemagick-5.5.7.15 74
 MD5 69be221b82f76ec46d241c5e4bff0f12 files/digest-imagemagick-5.5.4.4 72
 MD5 95b9bca1e2ef2b6fed9919fcc59b1462 files/digest-imagemagick-6.0.8.1 73
+MD5 95b9bca1e2ef2b6fed9919fcc59b1462 files/digest-imagemagick-6.0.8.1 73
 MD5 edbc2be86318f2676c55ce64e47ea2f6 files/perlpatch.diff 1598
