@@ -1,0 +1,5 @@
+MD5 9f100727fd4d8b8ed1dc90539d1062d0 libtrash-2.2.ebuild 1154
+MD5 fba61a0991c764c1dcee2644e52ea06a ChangeLog 243
+MD5 8600c86ec08b5db06b59aa2a2e0ec2a3 files/digest-libtrash-2.2 60
+MD5 a165552d7dee01c2d7bbf914ae701cba files/cleanTrash.cron 200
+MD5 02701c7978b919cf96660c80a3ff1a82 files/libtrash-2.2-gentoo.patch 2708
