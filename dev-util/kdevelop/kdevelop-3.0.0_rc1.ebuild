@@ -1,46 +1,41 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/kdevelop/Attic/kdevelop-3.0.0_beta1.ebuild,v 1.4 2003/11/17 19:05:16 caleb Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/kdevelop/Attic/kdevelop-3.0.0_rc1.ebuild,v 1.1 2004/01/19 14:17:06 caleb Exp $
 
-inherit kde-base
-need-kde 3
+inherit distutils kde
 
-IUSE="doc java python"
-MY_P="kdevelop-3.0.0b1"
+IUSE="doc java python ruby"
+MY_P="kdevelop-3.0.0r1"
 S="${WORKDIR}/${MY_P}"
 DESCRIPTION="KDevelop is an easy to use C/C++ IDE for Unix. It supports KDE/Qt, GNOME, plain C and C++ projects."
-SRC_URI="mirror://kde/unstable/3.1.93/src/${MY_P}.tar.bz2"
+SRC_URI="mirror://kde/unstable/3.1.95/src/${MY_P}.tar.bz2"
 HOMEPAGE="http://www.kdevelop.org"
 LICENSE="GPL-2"
 KEYWORDS="~x86 ~sparc"
 SLOT=3
 # -j2 and greater fails - see bug #6199
-export MAKEOPTS="$MAKEOPTS -j1"
+# export MAKEOPTS="$MAKEOPTS -j1"
 
-newdepend "dev-lang/perl
+DEPEND=">=kde-base/kdebase-3.1.0
+	dev-lang/perl
 	sys-devel/flex
-	app-text/sgmltools-lite
 	sys-devel/gdb
 	java? ( virtual/jdk dev-java/ant )
 	python? ( dev-lang/python )
 	doc? ( app-doc/doxygen )"
 
 myconf="$myconf --with-kdelibsdoxy-dir=${KDEDIR}/share/doc/HTML/en/kdelibs-apidocs"
-if [ "`use java`" ]; then
-	myconf="$myconf --enable-javasupport --with-java=`java-config --jdk-home`"
-else
-	myconf="$myconf --disable-javasupport"
-fi
-if [ "`use python`" ]; then
-	myconf="$myconf --enable-scripting --with-pythondir=/usr/lib/python2.2"
-else
-	myconf="$myconf --disable-scripting"
-fi
+
+distutils_python_version
+
+use java && myconf="$myconf --enable-javasupport --with-java=`java-config --jdk-home`" || myconf="$myconf --disable-javasupport"
+use python && myconf="$myconf --enable-scripting --with-pythondir=/usr/lib/python${PYVER}" || myconf="$myconf --disable-scripting"
+use ruby || myconf="$myconf --disable-ruby"
 
 src_unpack()
 {
 	kde_src_unpack
-	epatch ${FILESDIR}/${P}-compat.patch
+	epatch ${FILESDIR}/${P}-mainwindow.patch
 }
 
 pkg_postinst() {
@@ -57,10 +52,8 @@ einfo "perforce			ditto for perforce system. No ebuild exists atm"
 einfo ">=dev-util/ctags-5		faster and more powerful code browsing logic"
 einfo "dev-util/kdoc		tools to generate KDE-style documentation for your project"
 einfo "app-misc/glimpse		index and search your project's documentation"
-einfo "app-doc/doxygen		ditto. doxygen has a more free license than glimpse iirc"
 einfo "net-www/htdig		ditto. yet another supoprted indexing/searching backend"
 einfo "dev-util/kdbg		kde frontend to gdb"
-einfo "dev-java/ant			supports projects for this java development environment"
 einfo "app-arch/rpm			supports creating RPMs of your project"
 einfo "kde-base/kdebase		embed konsole kpart in kdevelop ide"
 einfo "kde-base/kdesdk		use kompare widget for showing the output of diff"
