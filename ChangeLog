@@ -1,5 +1,17 @@
 date 16 Jan 2001
 
+upd gnome-libs/libgda-0.2.1 to r1
+achim
+Now depends on CORBA-ORBit
+
+upd gnome-base/gnome-1.2.4-r1 to r2
+achim
+Added /usr/X11R6/bin/wm/gnome wrapper
+
+upd kde-base/kde-2.0.1-r1 to r2
+achim
+Added /usr/X11R6/bin/wm/kde wrapper
+
 upd gnome-office/gnumeric-0.61 to 0.61-r1
 achim
 fixed gb-detection bug in configure
