@@ -1,14 +1,14 @@
-# ChangeLog for x11-wm/asclock
+# ChangeLog for x11-wm/asapm
 # Copyright 2002 Gentoo Technologies, Inc.; Distributed under the GPL
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/asclock/Attic/ChangeLog,v 1.3 2002/04/14 08:43:10 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/asapm/Attic/ChangeLog,v 1.1 2002/06/19 14:36:12 karltk Exp $
 
-*asclock-2.0.12 (14 Apr 2002)
+*asapm-2.11 (12 Apr 2002)
 
-  14 Apr 2002; Seemant Kulleen <seemant@gentoo.org> asclock-2.0.12-r1.ebuild :
+  12 Apr 2002; Seemant Kulleen <seemant@gentoo.org> asapm-2.11.ebuild :
 
-  Cleaned up ebuild a little bit
+  Version bump with USE dependent jpeg support
 
-*asclock-2.0.12 (1 Feb 2002)
+*asapm-2.10 (1 Feb 2002)
 
   1 Feb 2002; G.Bevin <gbevin@gentoo.org> ChangeLog :
   
