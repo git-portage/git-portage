@@ -1,27 +1,28 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/tcng/Attic/tcng-9i.ebuild,v 1.9 2005/02/13 04:56:13 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/tcng/Attic/tcng-9m.ebuild,v 1.1 2005/02/13 04:56:13 robbat2 Exp $
 
 inherit eutils
 
-DESCRIPTION="Traffic Control Next Generation"
+DESCRIPTION="tcng - Traffic Control Next Generation"
 HOMEPAGE="http://tcng.sourceforge.net/"
-
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc"
 IUSE="debug doc tcsim"
 
 # perl because stuff is written in it
 # iproute,linux-atm as the output needs that
 # os-headers as it compiles stuff with them
 # gcc/binutils as it compiles stuff
+# tcsim does NOT compile with 2.6 headers
 DEPEND_COMMON="dev-lang/perl
-	sys-apps/iproute2
-	net-dialup/linux-atm
-	virtual/os-headers
-	sys-devel/gcc
-	sys-devel/binutils"
+				sys-apps/iproute2
+				net-dialup/linux-atm
+				tcsim? ( !=sys-kernel/linux-headers-2.6* !sys-kernel/linux26-headers )
+				virtual/os-headers
+				sys-devel/gcc
+				sys-devel/binutils"
 
 DEPEND="doc? ( virtual/ghostscript virtual/tetex media-gfx/transfig )
 	sys-devel/make
@@ -45,7 +46,7 @@ IPROUTE_SRCFILE="iproute2-2.4.7-now-ss${IPROUTE_PV/20}.tar.gz"
 
 # we also need a vanilla kernel source to use with this
 KERNEL_PN=linux
-KERNEL_PV=2.4.23
+KERNEL_PV=2.4.26
 KERNEL_P=${KERNEL_PN}-${KERNEL_PV}
 
 # note this project does NOT use the SF mirroring system
@@ -61,8 +62,15 @@ KERNEL_S=${WORKDIR}/${KERNEL_P}
 src_unpack() {
 	# unpack tcng
 	unpack ${P}.tar.gz || die "failed to unpack tcng"
-	epatch ${FILESDIR}/${P}-fixes.patch
-	epatch ${FILESDIR}/${P}-gentoo.patch
+	epatch ${FILESDIR}/${PN}-9l-fixes.patch
+	epatch ${FILESDIR}/${PN}-9i-gentoo.patch
+
+	for i in ${S}/tcsim/setup.*lib; do
+		sed -i 's/^mkdir /mkdir -p /g' ${i}
+	done
+
+	# add in the 2.4.26 kernel
+	sed -i '14iKVERSIONS=$KVERSIONS,2.4.26' ${S}/configure
 
 	if use tcsim; then
 		# unpack kernel
@@ -105,6 +113,8 @@ src_compile() {
 	# upstream package uses CFLAGS var for it's own uses
 	sed -i Common.make -e "s/^\(CC_OPTS=\)\(.*\)/\1${CFLAGS} #\2/"
 	unset CFLAGS
+	# tcsim fails to build in parallel make!
+	use tcsim && export MAKEOPTS="${MAKEOPTS} -j1"
 	emake || die
 	cd ${S}/doc
 	make tcng.txt
