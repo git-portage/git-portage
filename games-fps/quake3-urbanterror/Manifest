@@ -6,3 +6,5 @@ MD5 9117487e7c277e23acd5a2068fcf1adc metadata.xml 347
 MD5 fd7b7ceba5d8931a5097dcf423b70486 files/digest-quake3-urbanterror-2.6_beta1 129
 MD5 b32658487cf3a7e3cc7670bdffa72beb files/digest-quake3-urbanterror-3.2 192
 MD5 befcdf59ab1b48c7dab1922e824c19d1 files/digest-quake3-urbanterror-3.1-r1 128
+MD5 4cd5e2e6ac1d28ff15eb5d381a9f1f92 quake3-urbanterror-3.4.ebuild 795
+MD5 34508db148a8effd7ab036a68c0c2916 files/digest-quake3-urbanterror-3.4 320
