@@ -310,19 +310,20 @@
 ./gnome-office/gnome-db/gnome-db-0.0.95.ebuild
 ./gnome-office/gnome-pim/gnome-pim-1.2.0.ebuild
 ./gnome-office/gnumeric/gnumeric-0.56.ebuild
-./kde-base/kde-i18n/kde-i18n-1.92-r1.ebuild
-./kde-base/kde-qt-addon/kde-qt-addon-1.92-r1.ebuild
-./kde-base/kdebase/kdebase-1.92-r1.ebuild
-./kde-base/kdelibs/kdelibs-1.92-r1.ebuild
-./kde-base/kdesupport/kdesupport-1.92-r1.ebuild
-./kde-base/qt/qt-copy-1.92-r1.ebuild
-./kde-apps/kdeadmin/kdeadmin-1.92-r1.ebuild
-./kde-apps/kdegraphics/kdegraphics-1.92-r1.ebuild
-./kde-apps/kdemultimedia/kdemultimedia-1.92-r1.ebuild
-./kde-apps/kdenetwork/kdenetwork-1.92-r1.ebuild
-./kde-apps/kdepim/kdepim-1.92-r1.ebuild
-./kde-apps/kdeutils/kdeutils-1.92-r1.ebuild
-./kde-apps/kdoc/kdoc-1.92-r1.ebuild
-./kde-apps/koffice/koffice-1.92-r1.ebuild
+./kde-base/kde-i18n/kde-i18n-1.94.ebuild
+./kde-base/kdebase/kdebase-1.94.ebuild
+./kde-base/kdelibs/kdelibs-1.94.ebuild
+./kde-base/kdesupport/kdesupport-1.94.ebuild
+./kde-base/qt/qt-x11-2.2.0.ebuild
+./kde-apps/kdeadmin/kdeadmin-1.94.ebuild
+./kde-apps/kdegraphics/kdegraphics-1.94.ebuild
+./kde-apps/kdemultimedia/kdemultimedia-1.94.ebuild
+./kde-apps/kdenetwork/kdenetwork-1.94.ebuild
+./kde-apps/kdepim/kdepim-1.94.ebuild
+./kde-apps/kdeutils/kdeutils-1.94.ebuild
+./kde-apps/kdoc/kdoc-1.94.ebuild
+./kde-apps/koffice/koffice-1.94.ebuild
+./kde-apps/krusader/kruasader-0.65.1.ebuild
+
 
 

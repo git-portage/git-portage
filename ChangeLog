@@ -1,3 +1,11 @@
+18.09.2000
+
+	- New kde-apps/kruasder 0.65.1		(achim)
+	  [ A Filemanager for kde ]
+	- Update KDE Beta3 -> Beta5		(achim)
+	  qt copy-1.92 -> qt-x11-2.2.0
+	  kdepackages 1.92 -> 1.94
+
 17.09.2000
 	- "dodeps" appears to be working	(drobbins)
 	  [ Portage dependencies -- will
