@@ -1,4 +1,5 @@
 MD5 802eb0ddb572a1a63b192f9820d5d9d6 gecko-sharp-0.5-r2.ebuild 747
+MD5 83c06e1fc75355628b278cae10813ce7 gecko-sharp-0.6.ebuild 749
 MD5 0676e70685314fd2ff585e70dbc49590 gecko-sharp-0.3.ebuild 750
 MD5 0f64464e7dd25e9afe43fcc1872cad2c gecko-sharp-0.5-r1.ebuild 897
 MD5 bd57ec8bbcbcd74089f1ad6c35314595 gecko-sharp-0.5.ebuild 748
@@ -12,3 +13,4 @@ MD5 2e929dd8565a551a8f813432d5d3b0d8 files/digest-gecko-sharp-0.2 67
 MD5 85e74ec524077fa2bc7d08d7f3b0d728 files/digest-gecko-sharp-0.3 67
 MD5 c0fdfecdaaee084ee571c4aad8c04524 files/digest-gecko-sharp-0.4 67
 MD5 41db66016dd18480802fc0e658a04746 files/digest-gecko-sharp-0.5 67
+MD5 9aa313387703e02ad1bcddcde0729a66 files/digest-gecko-sharp-0.6 67
