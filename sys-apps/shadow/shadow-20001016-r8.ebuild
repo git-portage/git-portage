@@ -1,23 +1,29 @@
-# Copyright 1999-2000 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/shadow/Attic/shadow-4.0.1-r1.ebuild,v 1.1 2002/01/15 23:53:47 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/shadow/Attic/shadow-20001016-r8.ebuild,v 1.1 2002/02/24 17:35:27 azarah Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Utilities to deal with user accounts"
-SRC_URI="ftp://ftp.pld.org.pl/software/shadow/${P}.tar.gz"
+SRC_URI="ftp://ftp.pld.org.pl/software/shadow/old/${P}.tar.gz"
+
 DEPEND=">=sys-libs/pam-0.73 sys-devel/gettext"
 RDEPEND=">=sys-libs/pam-0.73"
 
+src_unpack() {
+	unpack ${A}
+	cd ${S}/src
+	cp ${FILESDIR}/useradd.c ${S}/src
+}
+
 src_compile() {
 	./configure \
-	--disable-desrpc \
-	--with-libcrypt \
-	--with-libcrack \
-	--with-libpam \
-	--enable-shared=no \
-	--enable-static=yes \
-	--host=${CHOST} || die "bad configure"
+		--disable-desrpc \
+		--with-libcrypt \
+		--with-libcrack \
+		--with-libpam \
+		--host=${CHOST} || die "bad configure"
+		
 	# Parallel make fails sometimes
 	make LDFLAGS="" || die "compile problem"
 }
@@ -25,11 +31,10 @@ src_compile() {
 src_install() {
 	dodir /etc/default /etc/skel
 
-	make \
-	prefix=${D}/usr \
-	exec_prefix=${D} \
-	mandir=${D}/usr/share/man \
-	install || die "install problem"
+	make prefix=${D}/usr \
+		exec_prefix=${D} \
+		mandir=${D}/usr/share/man \
+		install || die "install problem"
 
 	mv ${D}/lib ${D}/usr
 	dosed -e "s:/lib:/usr/lib:" -e "s: libshadow.so':':" /usr/lib/libshadow.la
@@ -50,12 +55,26 @@ src_install() {
 	doins ${FILESDIR}/shadow
 	newins ${FILESDIR}/shadow groupadd
 	newins ${FILESDIR}/shadow useradd
-	doins ${FILESDIR}/chage chage
-	cd ${S}/doc
-	dodoc ANNOUNCE INSTALL LICENSE README WISHLIST
-	docinto txt
-	dodoc HOWTO LSM README.* *.txt
+	doins ${FILESDIR}/chage
 
-	# install missing manpages
-	doman ${S}/man/{shadow.3,shadowconfig.8}
+	if [ -z "`use bootcd`" ]
+	then
+		# the manpage install is beyond my comprehension, and also broken.
+		# just do it over.
+		rm -rf ${D}/usr/share/man/*
+		for q in man/*.[0-9]
+		do
+			local dir="${D}/usr/share/man/man${q##*.}"
+			mkdir -p $dir
+			cp $q $dir
+		done
+		
+		cd ${S}/doc
+		dodoc ANNOUNCE INSTALL LICENSE README WISHLIST
+		docinto txt
+		dodoc HOWTO LSM README.* *.txt
+	else
+		rm -rf ${D}/usr/share ${D}/usr/lib/lib*.{a,la}
+	fi
 }
+
