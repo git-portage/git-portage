@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libip_vs_user_sync/Attic/libip_vs_user_sync-1.0.0.ebuild,v 1.1 2004/08/31 15:34:14 tantive Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libip_vs_user_sync/Attic/libip_vs_user_sync-1.0.0.ebuild,v 1.1 2004/08/31 15:39:41 tantive Exp $
 
 inherit eutils
 
