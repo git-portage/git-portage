@@ -1,19 +1,26 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Maintainer: Karl Trygve Kalleberg
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.1.6.ebuild,v 1.1 2002/01/13 09:30:47 azarah Exp $
+# Maintainer: Karl Trygve Kalleberg <karltk@gentoo.org>
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.1.7-r2.ebuild,v 1.1 2002/03/09 02:39:37 karltk Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Window manager based on BlackBox"
-SRC_URI="http://download.sourceforge.net/fluxbox/fluxbox-${PV}.tar.gz"
+SRC_URI="http://download.sourceforge.net/fluxbox/fluxbox-${PV}.tar.gz http://fluxbox.sourceforge.net/download/patches/${P}-bugfix1.patch"
 HOMEPAGE="http://fluxbox.sf.net"
 
 DEPEND="virtual/x11
 	virtual/glibc
 	kde? ( >=kde-base/kdebase-2.1 )
+	gnome? ( >=gnome-base/gnome-1.4-r3 )
 	nls? ( >=sys-devel/gettext-0.10.38 ) "
 	
 RDEPEND="$DEPEND"
+
+src_unpack() {
+	unpack ${P}.tar.gz
+	cd ${S}
+	patch -p1 < ${DISTDIR}/${P}-bugfix1.patch
+}
 
 src_compile() {
 	local myconf
@@ -22,6 +29,8 @@ src_compile() {
 	use kde && myconf="$myconf --enable-kde" \
 		&& export KDEDIR=/usr/kde/2 \
 		|| myconf="$myconf --disable-kde"
+	use gnome && myconf="$myconf --enable-gnome" \
+		|| myconf="$myconf --disable-gnome"
 	 
 	./configure \
 		--host=${CHOST} \
