@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/zenity/Attic/zenity-2.6.0.ebuild,v 1.9 2004/07/04 19:33:11 kloeri Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/zenity/Attic/zenity-2.8.1.ebuild,v 1.1 2004/11/24 17:30:57 obz Exp $
 
 inherit gnome2 eutils
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 LICENSE="LGPL-2"
 
 SLOT="0"
-KEYWORDS="x86 ppc alpha ~sparc hppa amd64 ~ia64 mips"
+KEYWORDS="~x86 ~ppc ~alpha ~sparc ~hppa ~amd64 ~ia64 ~mips"
 IUSE=""
 
 RDEPEND=">=x11-libs/gtk+-2.3.1
@@ -22,7 +22,7 @@ DEPEND="${RDEPEND}
 	app-text/scrollkeeper
 	dev-util/pkgconfig"
 
-DOCS="AUTHORS COPYING ChangeLog HACKING INSTALL NEWS README THANKS TODO"
+DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
 
 src_unpack() {
 
@@ -30,7 +30,6 @@ src_unpack() {
 	cd ${S}
 	# Don't set the UTF-8 codeset before parsing command line arguments.
 	# Closes bug #45204.
-	epatch ${FILESDIR}/${PN}-1.8-utf8_fix.patch
+	epatch ${FILESDIR}/${PN}-2.6.3-utf8_fix.patch
 
 }
-
