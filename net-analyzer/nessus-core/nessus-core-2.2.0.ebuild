@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nessus-core/Attic/nessus-core-2.2.0.ebuild,v 1.2 2004/10/29 10:56:40 eldad Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nessus-core/Attic/nessus-core-2.2.0.ebuild,v 1.3 2005/01/12 08:33:24 dragonheart Exp $
 
 inherit eutils
 

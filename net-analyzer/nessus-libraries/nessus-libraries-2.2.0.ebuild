@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nessus-libraries/Attic/nessus-libraries-2.2.0.ebuild,v 1.1 2004/10/28 15:31:46 eldad Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nessus-libraries/Attic/nessus-libraries-2.2.0.ebuild,v 1.2 2005/01/12 08:30:30 dragonheart Exp $
 
 DESCRIPTION="A remote security scanner for Linux (nessus-libraries)"
 HOMEPAGE="http://www.nessus.org/"
