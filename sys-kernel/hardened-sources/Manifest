@@ -1,5 +1,5 @@
-MD5 d5cd71d35acde108b2e07f445acf26a6 hardened-sources-2.4.26-r4.ebuild 902
-MD5 36ce08da5054e901eae0339c4423a2cc ChangeLog 8606
+MD5 0aee70b7eff244d7c21f0ddc8f832ae0 hardened-sources-2.4.26-r4.ebuild 1023
+MD5 3ffd2a34da1604d9fc7307d696bfe2a7 ChangeLog 8704
 MD5 0a473e60c059cb41c96a6bbcbff84769 metadata.xml 459
 MD5 0f66013f643c79c97fda489618a4e2fd files/2.4.26-CAN-2004-0535.patch 476
 MD5 dc18e982f8149588a291956481885a8c files/2.4.26-CAN-2004-0495.patch 17549
