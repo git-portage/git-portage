@@ -356,7 +356,6 @@
 ./sys-apps/isapnptools/isapnptools-1.23.ebuild
 ./sys-apps/less/less-358-r1.ebuild
 ./sys-apps/lilo/lilo-21.6.ebuild
-./sys-apps/logrotate/logrotate-3.3-r1.ebuild
 ./sys-apps/man/man-1.5.1h-r1.ebuild
 ./sys-apps/mkisofs/mkisofs-1.13-r1.ebuild
 ./sys-apps/modutils/modutils-2.3.17.ebuild

@@ -1,4 +1,12 @@
 DATE
+20 Nov 2000
+
+Update snort-1.6.3 to snort-1.6.3-r2
+
+achim
+Fixed a small installation bug.
+
+DATE
 19 Nov 2000
 
 drobbins
@@ -11,4 +19,5 @@ kernel sources; no kernel or modules are included.  The linux package is primari
 interest for those setting up a Gentoo Linux box, while the linux-sources package is
 more appropriate for geeks who already have a running Gentoo Linux system and want to
 compile a more recent kernel by hand.
+
 
