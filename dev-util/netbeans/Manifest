@@ -3,9 +3,9 @@ MD5 52e4c67e48f74c1128d905c1a6e1414d netbeans-3.6.ebuild 3154
 MD5 e70243e3617effa4dcb9b0ae9a7125ca netbeans-3.4.1.ebuild 3236
 MD5 20677126509c89cf19b19a9086844848 netbeans-3.5.ebuild 3190
 MD5 82261238490700340c673adb0e5e1013 netbeans-3.5.1.ebuild 3202
-MD5 5c5e7e8ddff1407fc7400169437a64ab netbeans-3.6-r1.ebuild 3190
+MD5 1a592fd0a1b29734099fcfe4015f08a4 netbeans-3.6-r1.ebuild 3195
 MD5 0bd5ed7678435369f349be79c0db6064 netbeans-3.3.2.ebuild 2355
-MD5 77528505f326728d0de5017abbb4ff86 ChangeLog 3365
+MD5 88ab2ab90e3be09ff8529d5c6a909267 ChangeLog 3367
 MD5 9c6f59bb154bdcd7242f4544b8feae6b files/netbeans-KDE.desktop 139
 MD5 21a78956bac04c98135ba5707b98da66 files/netbeans.png 2163
 MD5 a31cf39b9b70944a298e8fa97275d122 files/digest-netbeans-3.6-r1 67
