@@ -1,4 +1,14 @@
-MD5 f6183603282120433567ea2ab5f126d9 ChangeLog 1079
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 a2a47a7389967e573de632d73b4eefcd ChangeLog 1361
 MD5 30a28252370778ff2a80b84a8ccab685 metadata.xml 508
-MD5 5bab44ef3aa2a0516acf9efd26f5325f selinux-qmail-20041128.ebuild 268
+MD5 83158360ee2e14b9c94c321c850f6e2d selinux-qmail-20041128.ebuild 381
 MD5 c830e25ec7da7afbd54c92e4a529c94c files/digest-selinux-qmail-20041128 73
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBvDEoGSBEIeh4AEYRAuglAJ9FFhs/84irDDzdilSuWwB4NbyhmgCfT5RG
+uIZxOpRq2KeU1A/rfmbx+g8=
+=NDyf
+-----END PGP SIGNATURE-----
