@@ -1,8 +1,11 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6ed9baa618ef3b0e280efbcc566b2c07 cyrus-imapd-2.2.10.ebuild 8725
-MD5 f387a2bd8eea1edb6dd8b21a61c311d6 cyrus-imapd-2.2.12-r1.ebuild 9325
+MD5 f20192c002476b7ccc5db19a1d4246b2 cyrus-imapd-2.2.12-r1.ebuild 9324
 MD5 cb3e6d2ad7e7c3a56e174140ff4fb2d0 cyrus-imapd-2.2.12.ebuild 9118
 MD5 f75ac452fb76a7c243de65854824a59d cyrus-imapd-2.2.10-r1.ebuild 9124
-MD5 0faee4f40f5268be62aba670f6b8b20d ChangeLog 14172
+MD5 4094a70f25e53e76554fc7505b75c973 ChangeLog 14170
 MD5 5721b86fd871bdfab77231abc6e02f68 metadata.xml 161
 MD5 756c504a8b0b90aaa0630c089ae42f50 files/cyrus.rc6 573
 MD5 945aad1ac6ce2e72b6dede038c37c934 files/cyrus-imapd-2.2.12-drac.patch 926
@@ -18,3 +21,10 @@ MD5 28d9bdef56c61af75a28f8ae2ea2b5c7 files/digest-cyrus-imapd-2.2.12 71
 MD5 88f50354abbcae1950a2d11c74db5fe5 files/cyrus-imapd-2.2.12-libwrap.patch 390
 MD5 945aad1ac6ce2e72b6dede038c37c934 files/cyrus-imapd-2.2.10-drac.patch 926
 MD5 d91b5eaa87ced6cb7efc8c716fc7476a files/cyrus.conf 1354
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCJN3/ViELBEf1JB0RApqcAJ9SpDZjEtQ+mCZvRlMJjcugMM7cmQCfYSj4
+ES4Cp5fQaIa61YVpQ1C7hvY=
+=EBVO
+-----END PGP SIGNATURE-----
