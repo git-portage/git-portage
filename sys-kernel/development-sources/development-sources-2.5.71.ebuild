@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/development-sources/Attic/development-sources-2.5.67.ebuild,v 1.2 2003/04/12 14:46:14 lostlogic Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/development-sources/Attic/development-sources-2.5.71.ebuild,v 1.1 2003/06/16 20:44:13 lostlogic Exp $
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
 OKV=${PV}
@@ -37,6 +37,7 @@ src_unpack() {
 
 	cd ${S}
 
+	unset ARCH
 	#sometimes we have icky kernel symbols; this seems to get rid of them
 	make mrproper || die
 
