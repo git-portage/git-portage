@@ -1,7 +1,9 @@
 MD5 545295de78f20cfb984c2279a0aa8ab1 ndiswrapper-0.5.ebuild 3308
+MD5 39c63ace1f2ed5201309594efc813162 .#Manifest.1.9 1058
 MD5 abde66f0d58f0b0a6e8a69845fa9e365 ndiswrapper-0.4.ebuild 3174
 MD5 0776fae4d5ba0084ad8d6b5691862b49 ndiswrapper-0.6-r1.ebuild 1907
 MD5 658e6dca313b5223a07b455bae00fc55 ndiswrapper-0.6.ebuild 3308
+MD5 8aafe9fba66d825ddd4d3f39ab5c8735 ndiswrapper-0.8.ebuild 1949
 MD5 76149e92d51d4d9f3e7b889137ead1bc ndiswrapper-0.3.ebuild 2848
 MD5 61e1098b0c829e0713f91a06415cb4a5 ChangeLog 1278
 MD5 0dfb45e6e16bf37b171169afca958121 metadata.xml 429
@@ -11,4 +13,5 @@ MD5 d5bd4c071015eef1d33281dd95f668e7 files/digest-ndiswrapper-0.3 66
 MD5 922f4572dd8899c80920a0aea4485be9 files/digest-ndiswrapper-0.4 66
 MD5 5a45570913b15b02817cfdfebbd02536 files/digest-ndiswrapper-0.5 66
 MD5 fec18da2febe1a066f79d692b5e5eada files/digest-ndiswrapper-0.6 66
+MD5 dd6a51033bdc39b26c28ff48c5f7434d files/digest-ndiswrapper-0.8 66
 MD5 f27b456e9b1d79f449548aa305378312 files/ndiswrapper.modules.d 379
