@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.4.20040808.ebuild,v 1.26 2004/10/07 13:42:56 lv Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.4.20040619-r2.ebuild,v 1.1 2004/10/07 22:24:28 lv Exp $
 
 inherit eutils flag-o-matic gcc
 
 # Branch update support.  Following will disable:
 #  BRANCH_UPDATE=
-BRANCH_UPDATE="20040808"
+BRANCH_UPDATE="20040619"
 
 
 # Minimum kernel version we support
@@ -18,7 +18,7 @@ if [ -z "${BRANCH_UPDATE}" ]; then
 	BASE_PV="${NEW_PV}"
 	NEW_PV="${NEW_PV}"
 else
-	BASE_PV="2.3.3"
+	BASE_PV="2.3.2"
 	NEW_PV="${PV%.*}"
 fi
 
@@ -27,20 +27,25 @@ S="${WORKDIR}/${PN}-${BASE_PV}"
 DESCRIPTION="GNU libc6 (also called glibc2) C library"
 HOMEPAGE="http://sources.redhat.com/glibc/"
 
-HPPA_PATCHES=2004-08-24
+HPPA_PATCHES=2004-06-04
 
-SRC_URI="http://dev.gentoo.org/~lv/${PN}-${BASE_PV}.tar.bz2
-	http://dev.gentoo.org/~lv/${PN}-manpages-${NEW_PV}.tar.bz2
-	http://dev.gentoo.org/~lv/glibc-infopages-${NEW_PV}.tar.bz2
+SRC_URI="http://ftp.gnu.org/gnu/${PN}/${PN}-${BASE_PV}.tar.bz2
+	ftp://sources.redhat.com/pub/${PN}/snapshots/${PN}-${BASE_PV}.tar.bz2
+	mirror://gentoo/${PN}-manpages-${NEW_PV}.tar.bz2
 	hppa? ( http://parisc-linux.org/~carlos/glibc-work/glibc-hppa-patches-${HPPA_PATCHES}.tar.gz )"
-
-[ ! -z "${BRANCH_UPDATE}" ] && SRC_URI="${SRC_URI}
-	http://dev.gentoo.org/~lv/${PN}-${NEW_PV}-branch-update-${BRANCH_UPDATE}.patch.bz2"
+if [ -z "${BRANCH_UPDATE}" ]; then
+	SRC_URI="${SRC_URI}
+		http://ftp.gnu.org/gnu/${PN}/${PN}-linuxthreads-${BASE_PV}.tar.bz2
+		ftp://sources.redhat.com/pub/${PN}/snapshots/${PN}-linuxthreads-${BASE_PV}.tar.bz2"
+else
+	SRC_URI="${SRC_URI}
+		mirror://gentoo/${PN}-${NEW_PV}-branch-update-${BRANCH_UPDATE}.patch.bz2"
+fi
 
 LICENSE="LGPL-2"
 SLOT="2.2"
-KEYWORDS="-* ~x86 amd64 ~hppa ppc64 ~ppc ~mips"
-IUSE="nls pic build nptl erandom hardened makecheck multilib debug userlocales"
+KEYWORDS="-* ~x86 mips amd64 ~hppa ~ppc ~ia64"
+IUSE="userlocales pic build nptl erandom hardened makecheck multilib debug n32 n64"
 RESTRICT="nostrip" # we'll handle stripping ourself #46186
 
 # We need new cleanup attribute support from gcc for NPTL among things ...
@@ -51,18 +56,16 @@ DEPEND=">=sys-devel/gcc-3.2.3-r1
 	nptl? ( >=sys-devel/gcc-3.3.1-r1 )
 	>=sys-devel/binutils-2.14.90.0.6-r1
 	virtual/os-headers
-	nptl? ( >=sys-kernel/linux26-headers-2.6.5 )
+	nptl? ( =sys-kernel/linux26-headers-2.6* )
 	nls? ( sys-devel/gettext )"
 RDEPEND="virtual/os-headers
 	sys-apps/baselayout
 	nls? ( sys-devel/gettext )"
-# until we compile the 32bit glibc here
-PDEPEND="amd64? ( multilib? ( app-emulation/emul-linux-x86-glibc ) )"
 
 PROVIDE="virtual/glibc virtual/libc"
 
 
-# (very) Theoretical cross-compiler support
+# Theoretical cross-compiler support
 [ -z "${CCHOST}" ] && CCHOST="${CHOST}"
 
 # We need to be able to set alternative headers for
@@ -105,7 +108,6 @@ setup_flags() {
 	if [ "`gcc-major-version`" -ge "3" -a "`gcc-minor-version`" -ge "4" ]; then
 		# broken in 3.4.x
 		replace-flags -march=pentium-m -mtune=pentium3
-		ewarn "-march=pentium-m seems to be broken in gcc 3.4, changing to -mtune=pentium3"
 	fi
 
 	# We don't want these flags for glibc
@@ -271,7 +273,30 @@ setup_locales() {
 }
 
 
-pkg_setup() {
+glibc_setup() {
+	# genone this block of code breaks things. 
+	# Check if we are going to downgrade, we don't like that
+	#local old_version
+
+	#old_version="`best_version glibc`"
+	#old_version="${old_version/sys-libs\/glibc-/}"
+	# 
+	#if [ "$old_version" ]; then
+	#	if [ `python -c "import portage; print int(portage.vercmp(\"${PV}\",\"$old_version\"))"` -lt 0 ]; then
+	#		if [ "${FORCE_DOWNGRADE}" ]; then
+	#			ewarn "downgrading glibc, still not recommended, but we'll do as you wish"
+	#		else
+	#			eerror "Downgrading glibc is not supported and we strongly recommend that"
+	#			eerror "you don't do it as it WILL break all applications compiled against"
+	#			eerror "the new version (most likely including python and portage)."
+	#			eerror "If you are REALLY sure that you want to do it set "
+	#			eerror "     FORCE_DOWNGRADE=1"
+	#			eerror "when you try it again."
+	#			die "glibc downgrade"
+	#		fi
+	#	fi
+	#fi
+
 	# We need gcc 3.2 or later ...
 	if [ "`gcc-major-version`" -ne "3" -o "`gcc-minor-version`" -lt "2" ]; then
 		echo
@@ -287,9 +312,7 @@ pkg_setup() {
 
 do_arch_amd64_patches() {
 	cd ${S};
-	# CONF_LIBDIR support
-	epatch ${FILESDIR}/2.3.4/glibc-gentoo-libdir.patch
-	sed -i -e "s:@GENTOO_LIBDIR@:$(get_libdir):g" ${S}/sysdeps/unix/sysv/linux/configure
+	epatch ${FILESDIR}/2.3.2/${PN}-2.3.2-amd64-nomultilib.patch
 }
 
 
@@ -351,31 +374,33 @@ do_arch_mips_patches() {
 	# <tuxus@gentoo.org> thx <dragon@gentoo.org> (11 Jan 2003)
 	# <kumba@gentoo.org> remove tst-rndseek-mips & ulps-mips patches
 	# <iluxa@gentoo.org> add n32/n64 patches, remove pread patch
+	epatch ${FILESDIR}/2.3.1/${PN}-2.3.1-fpu-cw-mips.patch
+	epatch ${FILESDIR}/2.3.1/${PN}-2.3.1-librt-mips.patch
+	epatch ${FILESDIR}/2.3.3/${PN}-2.3.3_pre20040420-mips-dl-machine-calls.diff
+	epatch ${FILESDIR}/2.3.3/${PN}-2.3.3_pre20040420-mips-incl-sgidefs.diff
 	epatch ${FILESDIR}/2.3.3/mips-addabi.diff
 	epatch ${FILESDIR}/2.3.3/mips-syscall.h.diff
+	epatch ${FILESDIR}/2.3.3/semtimedop.diff
 	epatch ${FILESDIR}/2.3.3/mips-sysify.diff
+
+	if use n32 || use n64; then
+		epatch ${FILESDIR}/2.3.4/mips-sysdep-cancel.diff
+	fi
 
 	# Need to install into /lib for n32-only userland for now.
 	# Propper solution is to make all userland /lib{32|64}-aware.
 	use multilib || epatch ${FILESDIR}/2.3.3/mips-nolib3264.diff
-
-	# Found this on Google (yay google!) and it fixes glibc not building
-	# a correct bits/syscall.h from 2.6.x headers.  It possibly breaks older
-	# headers (2.4.x?), so for now, only use it on n32.
-	use n32 && epatch ${FILESDIR}/2.3.4/glibc-2.3.4-mips-generate-syscall_h.patch
 }
 
 
 do_arch_ppc_patches() {
 	cd ${S};
-	epatch ${FILESDIR}/2.3.4/glibc-2.3.4-getcontext.patch
 	# Any needed patches for ppc go here
 }
 
 
 do_arch_ppc64_patches() {
 	cd ${S};
-	epatch ${FILESDIR}/2.3.4/glibc-2.3.4-getcontext.patch
 	# Any needed patches for ppc64 go here
 }
 
@@ -396,9 +421,8 @@ do_arch_sparc_patches() {
 
 do_arch_x86_patches() {
 	cd ${S};
-	# CONF_LIBDIR support
-	epatch ${FILESDIR}/2.3.4/glibc-gentoo-libdir.patch
-	sed -i -e "s:@GENTOO_LIBDIR@:$(get_libdir):g" ${S}/sysdeps/unix/sysv/linux/configure
+
+	# Any needed patches for x86 go here
 }
 
 
@@ -425,7 +449,7 @@ do_pax_patches() {
 
 	# Suppress unresolvable relocation against symbol `main' in Scrt1.o
 	# can be reproduced with compiling net-dns/bind-9.2.2-r3 using -pie
-	epatch ${FILESDIR}/2.3.4/glibc-2.3.4.20040808-i386-got-fix.diff
+	epatch ${FILESDIR}/2.3.3/${PN}-2.3.3_pre20040117-got-fix.diff
 }
 
 
@@ -453,6 +477,10 @@ do_ssp_patches() {
 
 
 src_unpack() {
+
+	# we only need to check this one time. Bug #61856
+	glibc_setup
+
 	# Check NPTL support _before_ we unpack things to save some time
 	want_nptl && check_nptl_support
 
@@ -464,6 +492,16 @@ src_unpack() {
 	cd ${S}/man
 	unpack ${PN}-manpages-${NEW_PV}.tar.bz2
 	cd ${S}
+	# Remove all info files, as newer versions have about 10 libc info pages,
+	# but older release tarballs have about 50, giving us a lot of unneeded
+	# crap laying around ...
+	rm -f ${S}/manual/*.info*
+
+	if (! want_nptl) && [ -z "${BRANCH_UPDATE}" ]; then
+		unpack ${PN}-linuxthreads-${BASE_PV}.tar.bz2
+	else
+		rm -rf ${S}/linuxthreads
+	fi
 
 	if [ -n "${BRANCH_UPDATE}" ]; then
 		epatch ${DISTDIR}/${PN}-${NEW_PV}-branch-update-${BRANCH_UPDATE}.patch.bz2
@@ -475,9 +513,6 @@ src_unpack() {
 	# Version patch
 	sed -i -e "s:\(#define VERSION\).*:\1 \"${NEW_PV}\":" version.h
 
-	# pre-generated info pages
-	unpack glibc-infopages-2.3.4.tar.bz2
-
 	epatch ${FILESDIR}/glibc-sec-hotfix-20040804.patch
 
 	# SSP support in glibc (where it belongs)
@@ -487,7 +522,7 @@ src_unpack() {
 	# PaX-related Patches
 	do_pax_patches
 
-	# disable binutils -as-needed
+	# disable binutils -as-needed. <-- this has nothing todo with hardened.
 	sed -e 's/^have-as-needed.*/have-as-needed = no/' -i ${S}/config.make.in
 
 	# hardened toolchain/relro/nptl/security/etc fixes
@@ -507,15 +542,14 @@ src_unpack() {
 	use sparc	&& do_arch_sparc_patches
 	use x86		&& do_arch_x86_patches
 
+	# RH bug #227
+	epatch ${FILESDIR}/2.3.4/glibc-2.3.4-ld.so-brk-fix.patch
 
 	# Remaining patches
 	cd ${S}
 
-	# fix for http://sources.redhat.com/bugzilla/show_bug.cgi?id=227
-	epatch ${FILESDIR}/2.3.4/glibc-2.3.4-ld.so-brk-fix.patch
-
-	# fix for using nptl's pthread.h with g++
-	epatch ${FILESDIR}/2.3.4/glibc-2.3.4-nptl-pthread.h-g++-fix.patch
+	# Improved handled temporary files. bug #66358
+	epatch ${FILESDIR}/2.3.3/${PN}-2.3.3-tempfile.patch
 
 	# Fix permissions on some of the scripts
 	chmod u+x ${S}/scripts/*.sh
@@ -530,6 +564,7 @@ src_compile() {
 
 	use nls || myconf="${myconf} --disable-nls"
 	use erandom || myconf="${myconf} --disable-dev-erandom"
+	use hardened && myconf="${myconf} --enable-bind-now"
 
 	if want_nptl && want_tls; then
 		myconf="${myconf} \
@@ -565,7 +600,6 @@ src_compile() {
 		--mandir=/usr/share/man \
 		--infodir=/usr/share/info \
 		--libexecdir=/usr/lib/misc \
-		--enable-bind-now \
 		${myconf} || die
 
 	einfo "Building GLIBC..."
@@ -629,11 +663,11 @@ EOF
 		doman ${S}/man/*.3thr
 
 		# Install nscd config file
-		insinto /etc
-		doins ${FILESDIR}/nscd.conf
+		insinto /etc ; doins ${FILESDIR}/nscd.conf
+		exeinto /etc/init.d ; doexe ${FILESDIR}/nscd
 
 		cd ${S}
-		dodoc BUGS ChangeLog* CONFORMANCE COPYING* FAQ INTERFACE \
+		dodoc BUGS ChangeLog* CONFORMANCE FAQ INTERFACE \
 			NEWS NOTES PROJECTS README*
 	else
 		rm -rf ${D}/usr/share ${D}/usr/lib/gconv
@@ -677,8 +711,6 @@ EOF
 	insinto /etc
 	doins ${FILESDIR}/locales.build
 
-	# this whole section is useless, it fails if sandbox is LOADED, not if it's
-	# enabled. but forcing sandbox not to load isnt an option...
 	if use makecheck; then
 		local OLD_SANDBOX_ON="${SANDBOX_ON}"
 		# make check will fail if sandbox is enabled.  Do not do it
@@ -687,51 +719,6 @@ EOF
 		do_makecheck
 		SANDBOX_ON="${OLD_SANDBOX_ON}"
 	fi
-}
-
-fix_lib64_symlinks() {
-	# the original Gentoo/AMD64 devs decided that since 64bit is the native
-	# bitdepth for AMD64, lib should be used for 64bit libraries. however,
-	# this ignores the FHS and breaks multilib horribly... especially
-	# since it wont even work without a lib64 symlink anyways. *rolls eyes*
-	# see bug 59710 for more information.
-	# Travis Tilley <lv@gentoo.org> (08 Aug 2004)
-	if [ -L ${ROOT}/lib64 ] ; then
-		ewarn "removing /lib64 symlink and moving lib to lib64..."
-		ewarn "dont hit ctrl-c until this is done"
-		addwrite ${ROOT}/
-		rm ${ROOT}/lib64
-		# now that lib64 is gone, nothing will run without calling ld.so
-		# directly. luckily the window of brokenness is almost non-existant
-		/lib/ld-linux-x86-64.so.2 /bin/mv ${ROOT}/lib ${ROOT}/lib64
-		# all better :)
-		ldconfig
-		ln -s lib64 ${ROOT}/lib
-		einfo "done! :-)"
-		einfo "fixed broken lib64/lib symlink in ${ROOT}"
-	fi
-	if [ -L ${ROOT}/usr/lib64 ] ; then
-		addwrite ${ROOT}/usr
-		rm ${ROOT}/usr/lib64
-		mv ${ROOT}/usr/lib ${ROOT}/usr/lib64
-		ln -s lib64 ${ROOT}/usr/lib
-		einfo "fixed broken lib64/lib symlink in ${ROOT}/usr"
-	fi
-	if [ -L ${ROOT}/usr/X11R6/lib64 ] ; then
-		addwrite ${ROOT}/usr/X11R6
-		rm ${ROOT}/usr/X11R6/lib64
-		mv ${ROOT}/usr/X11R6/lib ${ROOT}/usr/X11R6/lib64
-		ln -s lib64 ${ROOT}/usr/X11R6/lib
-		einfo "fixed broken lib64/lib symlink in ${ROOT}/usr/X11R6"
-	fi
-}
-
-pkg_preinst() {
-	# PPC64+others may want to eventually be added to this logic if they
-	# decide to be multilib compatible and FHS compliant. note that this 
-	# chunk of FHS compliance only applies to 64bit archs where 32bit
-	# compatibility is a major concern (not IA64, for example).
-	use amd64 && [ "$(get_libdir)" == "lib64" ] && fix_lib64_symlinks
 }
 
 pkg_postinst() {
