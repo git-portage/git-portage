@@ -1,51 +1,49 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/bitchx/Attic/bitchx-1.0.19-r5.ebuild,v 1.18 2004/06/24 23:01:51 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/bitchx/Attic/bitchx-1.1-r1.ebuild,v 1.1 2004/07/04 23:19:52 swegener Exp $
 
 inherit flag-o-matic eutils
 
-IUSE="ssl esd gnome xmms ipv6 gtk cjk"
-
-MY_P=ircii-pana-${PV/.0./.0c}
+MY_P=ircii-pana-${PV}-final
 S=${WORKDIR}/BitchX
 DESCRIPTION="An IRC Client"
-SRC_URI="http://www.bitchx.org/files/source/old/${MY_P}.tar.gz"
 HOMEPAGE="http://www.bitchx.org/"
+SRC_URI="http://www.bitchx.org/source/${MY_P}.tar.gz"
 
-SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ppc sparc"
-
-replace-flags -O[3-9] -O2
-
-# BitchX needs to be merged with -fPIC on alpha boxes
-# This fixes bug 10932
-[ "${ARCH}" = "alpha" ] && append-flags "-fPIC"
-
-# hppa need -fPIC too
-[ "${ARCH}" = "hppa" ] && append-flags "-fPIC"
+SLOT="0"
+KEYWORDS="x86 ppc sparc alpha arm hppa amd64"
+IUSE="ssl esd gnome xmms ipv6 gtk cjk cdrom"
 
 DEPEND=">=sys-libs/ncurses-5.1
 	ssl? ( >=dev-libs/openssl-0.9.6 )
+	ncurses? ( sys-libs/ncurses )
+	!arm? (
 	xmms? ( media-sound/xmms )
 	esd? ( >=media-sound/esound-0.2.5
 		>=media-libs/audiofile-0.1.5 )
 	gtk? ( =x11-libs/gtk+-1.2*
 		>=media-libs/imlib-1.9.10-r1 )
-	gnome? ( >=gnome-base/gnome-libs-1.4.1.2-r1 )"
+	gnome? ( >=gnome-base/gnome-libs-1.4.1.2-r1 ) )"
 
 src_unpack() {
 	unpack ${MY_P}.tar.gz
 	cd ${S}
 
-	use cjk && epatch ${FILESDIR}/${P}-cjk.patch
-	epatch ${FILESDIR}/${P}-gcc-3.3.patch
-	epatch ${FILESDIR}/${P}-security.patch || die
-	epatch ${FILESDIR}/${P}-security2.patch || die
-	epatch ${FILESDIR}/${P}-hebrew.patch || die
+	use cjk && epatch ${FILESDIR}/${PV}/${P}-cjk.patch
+	epatch ${FILESDIR}/${PV}/${P}-hebrew.patch
+	epatch ${FILESDIR}/${PV}/${P}-freenode.patch
+	epatch ${FILESDIR}/${PV}/${P}-gcc34.patch
+	use amd64 && epatch ${FILESDIR}/BitchX-64bit.patch
 }
 
 src_compile() {
+	# BitchX needs to be merged with -fPIC on alpha/hppa boxes #10932
+	[ "${ARCH}" == "alpha" ] && append-flags "-fPIC"
+	[ "${ARCH}" == "hppa" ] && append-flags "-fPIC"
+	[ "${ARCH}" == "amd64" ] && append-flags "-fPIC"
+	replace-flags -O[3-9] -O2
+
 	local myconf
 
 	if [ "${DEBUG}" ]
@@ -54,10 +52,6 @@ src_compile() {
 		myconf="${myconf} --enable-debug"
 	fi
 
-	use ssl \
-		&& myconf="${myconf} --with-ssl" \
-		|| myconf="${myconf} --without-ssl"
-
 	use esd && use gtk \
 		&& myconf="${myconf} --enable-sound" \
 		|| myconf="${myconf} --disable-sound"
@@ -65,10 +59,6 @@ src_compile() {
 	use gtk && use gnome\
 	    && myconf="${myconf} --with-gtk" \
 		|| myconf="${myconf} --without-gtk"
-
-	use ipv6 \
-		&& myconf="${myconf} --enable-ipv6" \
-		|| myconf="${myconf} --disable-ipv6"
 
 
 	# lamer@gentoo.org BROKEN, will not work with our socks
@@ -87,34 +77,36 @@ src_compile() {
 		einfo "gtkBitchX will be built, if you want BitchX please issue"
 		einfo "USE="-gtk" emerge bitchx"
 		sleep 10
-		) && CFLAGS="${CFLAGS} -I/usr/include/gnome-1.0"
+		) && append-flags -I/usr/include/gnome-1.0
 
-	econf CFLAGS="${CFLAGS}" \
-		--enable-cdrom \
+	econf \
+		CFLAGS="${CFLAGS}" \
 		--with-plugins \
+		`use_enable cdrom` \
+		`use_with ssl` \
+		`use_enable ipv6` \
 		${myconf} || die
 	emake || die
-
+	cd contrib && make vh1
 }
 
 src_install () {
-
 	einstall || die
-
+	[ -f contrib/vh1 ] && cp contrib/vh1 ${D}/usr/bin/
 	rm ${D}/usr/share/man/man1/BitchX*
 	doman doc/BitchX.1
 
 	use gnome && use gtk && ( \
 		exeinto /usr/bin
-	#	newexe ${S}/source/BitchX BitchX-1.0c19
-		dosym gtkBitchX-1.0c19 /usr/bin/gtkBitchX
+		#newexe ${S}/source/BitchX BitchX-1.0c19
+		dosym gtkBitchX-1.1-final /usr/bin/gtkBitchX
 		einfo "Installed gtkBitchX"
-	) || dosym BitchX-1.0c19 /usr/bin/BitchX
+	) || dosym BitchX-1.1-final /usr/bin/BitchX
 
-	chmod -x ${D}/usr/lib/bx/plugins/BitchX.hints
+	fperms a-x /usr/lib/bx/plugins/BitchX.hints
 
 	cd ${S}
-	dodoc Changelog README* IPv6-support COPYING
+	dodoc Changelog README* IPv6-support
 	cd doc
 	insinto /usr/X11R6/include/bitmaps
 	doins BitchX.xpm
@@ -129,13 +121,9 @@ src_install () {
 	cd ../dll
 	insinto /usr/lib/bx/wav
 	doins wavplay/*.wav
-	cp acro/README acro/README.acro
-	dodoc acro/README.acro
-	cp arcfour/README arcfour/README.arcfour
-	dodoc arcfour/README.arcfour
-	cp blowfish/README blowfish/README.blowfish
-	dodoc blowfish/README.blowfish
 	dodoc nap/README.nap
-	cp qbx/README qbx/README.qbx
-	dodoc qbx/README.qbx
+	newdoc acro/README README.acro
+	newdoc arcfour/README README.arcfour
+	newdoc blowfish/README README.blowfish
+	newdoc qbx/README README.qbx
 }
