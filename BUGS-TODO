@@ -1,59 +1,19 @@
-[24 Nov 2000 -drobbins]
+[drobbins] add csh support to env-update
 
-	[UNASSIGNED] kde-base/qt needs some work:
-		the ebuild should be renamed to qt.ebuild, not qt-x11.ebuild
-		(directory name must match package name)
-		
-		Also, even though Mandrake (and presumably RedHat) store this library
-		in /usr/lib, it should really be stored in /usr/X11R6/lib since it is
-		strictly an X-dependent toolkit.  Hopefully, it's possible to do this 
-		and still get KDE to compile.
+[drobbins] enhanced useradd script for 1.0_rc4
+ (is there still a problem with the minimal useradd in shadow-20001016?)
 
-		And, it should be moved to the x11-libs category.  It's an X11 toolkit
-		and not tied to kde, although kde uses it.
+[drobbins] recursive pkgmerge for 1.0_rc4
 
-[21 Nov 2000 -drobbins]
+[drobbins] A configfile management system is needed (1.0_rc5+)
+
+[UNASSIGNED] add supervise support to various packages (ongoing...)
 	
-	[DONE -- if new linux ebuilds are used ] In the rc3 sys.tbz2 tarball, bzImage should be in /boot/boot (GRUB will look
-	for it at /boot/bzImage)
+[UNASSIGNED] Upgrade fetch feature of ebuild to eliminate partial download problem.
+	(download is aborted, partial file sits in /usr/portage/distfiles and possibly get your
+	md5sums corrupted)
 
-[18 Nov 2000 -achim]
-	
-	[FIXED] The dependencies check fails if there are different version from a
-	package installed
-
-[15 Nov 2000 - drobbins]
-
-	A configfile management system is needed
-
-	[DONE] gimp-1.1.29 seems to have problems with perl-5.6.0-r3, some complaint about
-	@INC keeps popping up on the screen.  Unmerging and remerging gimp after the
-	perl upgrade seemed to solve this problem; so it's probably no biggie.
-
-[14 Nov 2000 - drobbins]
-	[DONE]	Upgrade Gentoo Linux bootdisk to use latest version of grub
-	
-	[IN PROGRESS - by drobbins ] Replace syslogd and klogd with multilog and gluelog and glueklog
-	
-	[DONE] Move daemontools and ucspi-tcp to sys-apps, 
-	
-	[UNASSIGNED] add supervise support to various packages
-	
-	[IN PROGRESS] Upgrade default kernel to 2.4.0-test10 with patches?  What does everyone think?
-	
-	[DONE] We need to add dump/restore to sys-apps -- but the darn thing depends on libtermcap!
-		(It'll need a patch to link against ncurses instead)
-	(It's been added to app-arch, which is fine)
-
-	[DONE -- if the new linux ebuilds are used] Default kernel location should be moved from /boot/bzImage -> /boot/boot/bzImage
-
-[13 Nov 2000 - drobbins]
-	[UNASSIGNED] Upgrade fetch feature of ebuild to eliminate partial download problem.
-	
-	[UNASSIGNED] Perl-5.6.0-r3's tcp and udp tests fail when my iptables-based stateful firewall is up.
-		Is there a safe way to skip these tests?
-	
-	[FIXED] Fix build-depends feature in ebuild... it uses ${ROOT} to check for build dependencies
-	when it should really ignore ${ROOT}.  ${ROOT} should only be used for runtime deps.
+[UNASSIGNED] Perl-5.6.0-r3's tcp and udp tests fail when my iptables-based stateful firewall is up.
+Is there a safe way to skip these tests?
 
 
