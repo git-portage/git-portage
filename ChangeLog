@@ -1,3 +1,13 @@
+14.09.2000
+
+	- Update gtk-xemacs 21.1.12 -> 21.1.12p2(achim)
+	- Update usbview 0.8.1 -> 0.9.0		(achim)
+	- Modified rpm-3.0.5			(achim)
+	  [Added Database creation after installation]
+	- Modified ebuild			(achim)
+	  [Updated rpm-support, added support 
+	   for zip compressed archives]
+
 10.09.2000
 	- Modifie isdn4k-utils 			(achim)
 	  [Now uses linux-2.2.17-r1 sources]
