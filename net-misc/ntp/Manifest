@@ -1,8 +1,10 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c2510bc448df1a770471e774421d7308 ChangeLog 6752
 MD5 aa73d5edf312beeab44fa9d58a603ad4 metadata.xml 636
 MD5 d2f2234454f219b2259391132cc2d552 ntp-4.1.2.ebuild 3190
-MD5 8430aa91be118520b85f99358f205036 ntp-4.2.0-r2.ebuild 3712
-MD5 905acb4450e6b29e26f117384a5c2e6f files/.cvsignore 16
+MD5 4874d51d99193944885d49a3bd9cd51c ntp-4.2.0-r2.ebuild 3712
 MD5 047fe77e01bc9335b07bcc5d963d8683 files/4.1.2-droproot.patch 12672
 MD5 4e13c1a5fa0fa54e3b65ec311dd7270a files/broadcastclient.patch 451
 MD5 af48491e8d6820a3d8eba16a771e5c26 files/digest-ntp-4.1.2 129
@@ -20,15 +22,10 @@ MD5 89ae6e60929e73db3a14bc90e87b8ad3 files/ntpd.rc 808
 MD5 2637ffad7ddb03b1d0da4a4fa0729b52 files/ntpd-4.1.2.confd 401
 MD5 bd0986fe3cdb7fcec6553ba8c6e4c8d1 files/ntp-client-4.1.2.rc 847
 MD5 ed4bd2ca8fb07ecb5c5e73d26fd0df0a files/digest-ntp-4.2.0-r2 62
-MD5 0333bcec9a94b17621c785ccae674285 files/mans/ntp-4.2.0-r2-manpages.tar.bz2 25355
-MD5 6d24b35220607df03dbcaaf9f9c02b55 files/mans/genmans.sh 882
-MD5 9aeae0b668e0d0ecc9a4d56d352e6c9c files/mans/ntp.xsl 5700
-MD5 051eceddc440132984e70e31759fffcd files/mans/man/ntpdate.1 6535
-MD5 3ac94bd0a068567cbd6586daae05e5a7 files/mans/man/ntpdc.1 18315
-MD5 228f893b70cd233e9080f56437de429c files/mans/man/ntpd.1 20118
-MD5 38cb8eb3bcb83c5e205da45778425327 files/mans/man/ntpq.1 23349
-MD5 0912afa808470b4d565a13efdbe72df0 files/mans/man/ntptime.1 1192
-MD5 b1f2994a786f05d2ed77aa1f3bf5a67d files/mans/man/ntptrace.1 1866
-MD5 e3ee2996a419d5fe229fae6064d7f8bf files/mans/man/ntpdsim.1 3042
-MD5 3ff5b8ed5808a5cf73910d95d6a452dc files/mans/man/keygen.1 21611
-MD5 d530d1ff79b95bba70a29052929bd04f files/mans/man/tickadj.1 2948
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.9.8 (GNU/Linux)
+
+iD8DBQFA9Iy8HTu7gpaalycRAsGYAJ9fKQNPAdCDcMk8WZY3uQ34D103TgCg9TBQ
+W/K/0xeBoXNFM08old4Alu8=
+=7E3i
+-----END PGP SIGNATURE-----
