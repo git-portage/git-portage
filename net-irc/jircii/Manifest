@@ -1,6 +1,4 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
+MD5 193b8eb6f005745a6131982d68fa0117 jircii-27.ebuild 775
 MD5 cc9bf4be8f6dcbc682234fb0960ab45a jircii-18.ebuild 774
 MD5 a711167db026badb199d85c2c0ae5564 jircii-24.ebuild 775
 MD5 49b179965827130194327581059ca7df jircii-23.ebuild 775
@@ -9,10 +7,4 @@ MD5 44c39c6ad372a8e5a5e7ee3311f703a7 metadata.xml 160
 MD5 759ed8285cb5620bf127e23a39314892 files/digest-jircii-18 57
 MD5 9f26bebf065f030b8cc992cb457334a2 files/digest-jircii-23 57
 MD5 eb993c5effb169dcd45bb06aba6dea74 files/digest-jircii-24 57
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.9.10 (GNU/Linux)
-
-iD8DBQFBxNMQI1lqEGTUzyQRAscNAKDaeKjPyknDB+afAn9bz/OFpnLvzwCfQw2O
-SO3UQlhyNxKFCQxTz9ZDEMM=
-=pLbR
------END PGP SIGNATURE-----
+MD5 881e2355d191703e21173138eaca113c files/digest-jircii-27 57
