@@ -2,5 +2,7 @@ MD5 cff5da7b9845250938ec652972ecb53c pygoogle-0.5.2.ebuild 505
 MD5 f79d05c98a5a951cafd320b350bad300 pygoogle-0.5.3.ebuild 470
 MD5 d16efa43c568ec82bbc21790bdda30a9 ChangeLog 785
 MD5 71c4638c9c88af75b58e5f5cb54fe008 metadata.xml 159
+MD5 f79d05c98a5a951cafd320b350bad300 pygoogle-0.6.ebuild 470
 MD5 c50d99d20d45209e9c845ee0e27375d0 files/digest-pygoogle-0.5.2 62
 MD5 aa353cf606bfde1768c1a901945db39a files/digest-pygoogle-0.5.3 65
+MD5 71ede93ad8ae366e1dbf32e8158f7589 files/digest-pygoogle-0.6 63
