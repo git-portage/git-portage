@@ -1,5 +1,32 @@
 date 24 Apr 2001
 
+new app-text/dictd-devils
+michael
+
+new app-text/dictd-elements-2000.22.07
+michael
+
+new app-text/dictd-foldoc-2001.03.13
+michael
+
+new app-text/dictd-gazetteer-1.2
+michael
+
+new app-text/dictd-jargon-4.2.3
+michael
+
+new app-text/dictd-misc-1.5b
+michael
+
+new app-text/dictd-vera-1.7
+michael
+
+new app-text/dictd-web1913-1.4
+michael
+
+new app-text/dictd-wn-1.5
+michael
+
 upd dev-util/tkcvs-6.4 to 6.4-r1
 aj
 Added documentation
