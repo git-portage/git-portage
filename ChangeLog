@@ -1,5 +1,9 @@
 date 28 June 2001
 
+upd media-libs/svgalib-1.4.3
+Newer version that supports fbdev
+ryan
+
 new gnome-apps/gnome-pilot-0.1.54
 gpilotd and conduits. Can't make it work with my visor, but it's designed
 for serial interfaces. Someone with a serial  based palm please test.

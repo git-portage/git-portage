@@ -287,7 +287,8 @@
 ./media-libs/ofbis/ofbis-0.1.1.ebuild
 ./media-libs/smjpeg/smjpeg-0.2.1-r1.ebuild
 ./media-libs/smpeg/smpeg-0.4.2.ebuild
-./media-libs/svgalib/svgalib-1.4.2-r1.ebuild
+#./media-libs/svgalib/svgalib-1.4.2-r1.ebuild
+./media-libs/svgalib/svgalib-1.4.3.ebuild
 ./media-libs/t1lib/t1lib-1.0.1-r1.ebuild
 ./media-libs/tiff/tiff-3.5.5-r3.ebuild
 ./media-sound/abcde/abcde-1.9.7.ebuild
