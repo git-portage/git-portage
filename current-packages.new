@@ -412,7 +412,7 @@
 ./sys-apps/tar/tar-1.13.18.ebuild
 ./sys-apps/tcp-wrappers/tcp-wrappers-7.6-r1.ebuild
 ./sys-apps/texinfo/texinfo-4.0-r1.ebuild
-./sys-apps/textutils/textutils-2.0.9.ebuild
+./sys-apps/textutils/textutils-2.0.10.ebuild
 ./sys-apps/ucspi-tcp/ucspi-tcp-0.88.ebuild
 ./sys-apps/util-linux/util-linux-2.10q.ebuild
 ./sys-apps/vcron/vcron-3.0_p1-r1.ebuild

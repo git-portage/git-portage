@@ -1,3 +1,9 @@
+date 11 Dec 2000
+
+upd sys-apps/textutils-2.0.9 to 2.0.10
+drobbins
+includes some minor fixes
+
 date 10 Dec 2000
 
 new gnome-base/gnome-1.2.4
