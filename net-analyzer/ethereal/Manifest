@@ -3,8 +3,8 @@ MD5 d8bc6ed1ed809a9a44fa191d252e2fee ethereal-0.10.5.ebuild 2538
 MD5 eeaeb7291d5067481b7f1ecdb23df491 ethereal-0.10.2.ebuild 2215
 MD5 72fd830848213464e249e90a76460433 ethereal-0.10.4.ebuild 2301
 MD5 260c2f391077ed03191ceb0deca8fc67 ethereal-0.9.14.ebuild 2095
-MD5 f86dcc8ea066eb9d3c837f671c5c3612 ChangeLog 10376
-MD5 ca75d51e94a15b41568372e32b380902 ethereal-0.10.5-r1.ebuild 2544
+MD5 ae1a1094ef38cd086c0651b7975e1766 ChangeLog 10376
+MD5 9023d524f30afea7aecc9d0e58fc1f86 ethereal-0.10.5-r1.ebuild 2547
 MD5 17a9be2cf8cb9f24e7e5b398392483b4 metadata.xml 224
 MD5 2ab5b6f3390280518b4458929486ac29 ethereal-0.9.16.ebuild 2237
 MD5 02b14ac5cd9a9a1f8781632c19b85ae9 ethereal-0.9.16-r1.ebuild 2313
