@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/Attic/gentoo-sources-2.4.20-r7.ebuild,v 1.13 2004/04/27 21:58:33 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/Attic/gentoo-sources-2.4.20-r17.ebuild,v 1.1 2004/06/01 16:45:42 plasmaroo Exp $
 
 IUSE="build crypt evms2 aavm usagi"
 
@@ -30,18 +30,17 @@ S=${WORKDIR}/linux-${KV}
 
 DESCRIPTION="Full sources for the Gentoo Kernel."
 SRC_URI="mirror://kernel/linux/kernel/v2.4/linux-${OKV}.tar.bz2
-	mirror://gentoo/patches-${KV/7/5}.tar.bz2"
+	 http://dev.gentoo.org/~plasmaroo/patches/kernel/gentoo-sources/patches-${KV/17/14}.tar.bz2"
 HOMEPAGE="http://www.gentoo.org/ http://www.kernel.org/"
 LICENSE="GPL-2"
-KEYWORDS="x86 -ppc -sparc -alpha -hppa -mips -amd64 -ia64"
+KEYWORDS="x86 -ppc -sparc -alpha -hppa -mips"
 SLOT="${KV}"
-
 
 src_unpack() {
 	unpack ${A}
 	mv linux-${OKV} linux-${KV} || die "Error moving kernel source tree to linux-${KV}"
 
-	cd ${WORKDIR}/${KV/7/5}
+	cd ${WORKDIR}/${KV/17/14}
 
 	# This is the *ratified* aavm USE flag, enables aavm support in this kernel
 	if [ -z "`use aavm`" ]; then
@@ -115,28 +114,32 @@ src_unpack() {
 		done
 	fi
 
-	kernel_src_unpack
+	kernel_exclude
+	./addpatches . ${WORKDIR}/linux-${KV} || die "Could not add patches!"
+	kernel_universal_unpack || die "Could not unpack!"
 
 	epatch ${FILESDIR}/security.patch1
 	epatch ${FILESDIR}/security.patch2
 	epatch ${FILESDIR}/security.patch3
 	epatch ${FILESDIR}/security.patch4
-	epatch ${FILESDIR}/gentoo-sources-2.4.20-gcc33.patch
-	epatch ${FILESDIR}/gentoo-sources-2.4.20-cs46xx-gcc33.patch
-	epatch ${FILESDIR}/gentoo-sources-2.4.20-grsec-disabled.patch
-	epatch ${FILESDIR}/gentoo-sources-2.4.20-sched-interrupt.patch
-	epatch ${FILESDIR}/gentoo-sources-2.4.20-mdcount.patch
-	epatch ${FILESDIR}/gentoo-sources-2.4.20-devfs-snd-fix.patch
-	epatch ${FILESDIR}/gentoo-sources-2.4.20-ipt-realm.patch
-	epatch ${FILESDIR}/do_brk_fix.patch
 
+	epatch ${FILESDIR}/do_brk_fix.patch || die "Failed to apply do_brk() fix!"
+	epatch ${FILESDIR}/${P}-munmap.patch || die "Failed to apply munmap patch!"
+	epatch ${FILESDIR}/${P}-rtc_fix.patch || die "Failed to apply RTC fix!"
+	epatch ${FILESDIR}/${PN}-2.4.CAN-2003-0985.patch || die "Failed to apply mremap() fix!"
+	epatch ${FILESDIR}/${PN}-2.4.CAN-2004-0001.patch || die "Failed to apply AMD64 ptrace patch!"
+	epatch ${FILESDIR}/${PN}-2.4.CAN-2004-0010.patch || die "Failed to add the CAN-2004-0010 patch!"
+	epatch ${FILESDIR}/${PN}-2.4.CAN-2004-0109.patch || die "Failed to add the CAN-2004-0109 patch!"
+	epatch ${FILESDIR}/${PN}-2.4.CAN-2004-0177.patch || die "Failed to add the CAN-2004-0177 patch!"
+	epatch ${FILESDIR}/${PN}-2.4.CAN-2004-0178.patch || die "Failed to add the CAN-2004-0178 patch!"
+	epatch ${FILESDIR}/${PN}-2.4.CAN-2004-0181.patch || die "Failed to add the CAN-2004-0181 patch!"
+	epatch ${FILESDIR}/${PN}-2.4.CAN-2004-0394.patch || die "Failed to add the CAN-2004-0394 patch!"
+	epatch ${FILESDIR}/${PN}-2.4.CAN-2004-0427.patch || die "Failed to add the CAN-2004-0427 patch!"
 }
 
 pkg_postinst() {
-
 	kernel_pkg_postinst
 
-	echo
 	ewarn "There is no xfs support in this kernel."
 	ewarn "If you need xfs support, emerge xfs-sources."
 	echo
