@@ -1,0 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 b2a918bca3e7bab6c7d4d22198d2c443 python-musicbrainz-20050108.ebuild 573
+MD5 9ac4199ebe7cd3e7e311274994767f82 metadata.xml 160
+MD5 1f50126bbab7b72c860307d9824e3365 ChangeLog 311
+MD5 965a70e773083e4c3a10f8e5e45af454 files/digest-python-musicbrainz-20050108 76
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFB6gnEz2gxt1z4IGYRAl3IAKCwDhC2XgRViD6vNhhd40XPdnyIuQCgrh+U
+YiESVjsQjOw7x00Y4lwR5iY=
+=G/Kf
+-----END PGP SIGNATURE-----
