@@ -3,8 +3,8 @@ MD5 928a61c2fa33107d2479f66e87075c6f kmplayer-0.8.3a.ebuild 587
 MD5 1a18b6faeeb6f9939f352349b8efd1e9 kmplayer-0.8.4_rc5.ebuild 911
 MD5 babb47212bb5c9c7d023d4c461d8b128 kmplayer-0.8.2.ebuild 781
 MD5 085216334bd83f06b8bc71103a7b93de kmplayer-0.8.4_rc2.ebuild 592
-MD5 57f21b708fb1f2cd2f07eebf5a8bafd8 kmplayer-0.8.4.ebuild 722
-MD5 15da11fdeb4cac4ec8361357ddbe0a6c ChangeLog 4201
+MD5 0e48b7074b67e169444712abc6eb3eca kmplayer-0.8.4.ebuild 825
+MD5 63399ec726ec68ab5c93353ac9c0cd6e ChangeLog 4201
 MD5 1b6808bbd78c9161f8b7efb090d966f8 metadata.xml 162
 MD5 fd1beafd4f708360fcb75cf1397e8844 files/digest-kmplayer-0.8.3a 68
 MD5 53e63d9cb0db59bedb5386345b274598 files/kmplayer-0.6.3-gentoo.diff 1352
