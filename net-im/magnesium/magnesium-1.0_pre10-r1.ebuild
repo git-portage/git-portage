@@ -1,11 +1,11 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/magnesium/Attic/magnesium-1.0_pre11.ebuild,v 1.1 2003/09/16 23:10:44 mkennedy Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/magnesium/Attic/magnesium-1.0_pre10-r1.ebuild,v 1.1 2003/10/08 13:51:57 lanius Exp $
 
 MY_P=${PN}-${PV/1.0_/}
 DESCRIPTION="Curphoo X (Magnesium) is a Yahoo chat client."
 HOMEPAGE="http://magnesium.curphoo.org/"
-SRC_URI="http://www.geocities.com/master_script_kiddie/Mg/${MY_P}.tar.gz"
+SRC_URI="http://www.waduck.com/~curphoo/mg/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
