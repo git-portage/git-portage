@@ -1,7 +1,10 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 24764b94c52b15c33321df855d74ef1a grsec-sources-2.4.28.2.0.2-r3.ebuild 1353
-MD5 79685930b19db6f9b5d580b4d82c1548 grsec-sources-2.4.28.2.1.0-r1.ebuild 1779
+MD5 a2d412151354ae3f174e237add371949 grsec-sources-2.4.28.2.1.0-r1.ebuild 1782
 MD5 de2ab50796577ef947a9cbe845a22dae grsec-sources-2.4.28.2.1.0.ebuild 1737
-MD5 f08c4ceffee4a66f31a0513b742370e0 ChangeLog 10198
+MD5 419c1e1d4b1961883a823158be346e1b ChangeLog 10198
 MD5 0b2ea9b53b5d526e39afbdc5040ff07a metadata.xml 487
 MD5 0adbefda5e0d752b23dd2f930e6f6bbf files/linux-2.4.28-random-poolsize.patch 452
 MD5 8c35751caf824a9dacb02e80d6189b2e files/gentoo-sources-2.4.CAN-2004-1137.patch 1764
@@ -17,3 +20,12 @@ MD5 c829ff92477a5a9e4fcbc370303217f8 files/digest-grsec-sources-2.4.28.2.0.2-r3 
 MD5 8c7a1adf3e5ca3b4cfd6a75f5704d2fc files/digest-grsec-sources-2.4.28.2.1.0-r1 231
 MD5 6aa8f7a7c2d55734389b53d3bcf78570 files/CAN-2004-1016.patch 2835
 MD5 d1ccc2047be533c992f67270a150a210 files/2.4.27-cmdline-race.patch 388
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iQCVAwUBQe1IkZ4WFLgrx1GWAQJhEAQAuUkYzwwIHCmUrG3tx20SbCuUeYzf9ZAp
+wJruGpXFeOlah1X3mWnOgQk8KG4S1Z9eiJTJcCqaep86WdI0bs2/WH7oLyyDlKwt
+L25pco3WTVEMIJPrD2qTTsFqENvWLcs0wpQ67W1rtb8ocvTVQQhBe67knepQcoU5
+I8ahCkNoUME=
+=Ta7y
+-----END PGP SIGNATURE-----
