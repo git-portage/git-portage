@@ -1,5 +1,11 @@
+date 11 July 2001
+new app-admin/metalog-0.6
+A syslogd/klogd replacement.  Very full featured, including logging
+based on facility, program name and regex.
+jerry
+
 date 9 July 2001
-net net-misc/pdnsd-1.1.6
+new net-misc/pdnsd-1.1.6
 Proxy DNS server with permanent caching (saves state/cache between stop
 and start).
 jerry
