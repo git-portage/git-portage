@@ -1,4 +1,6 @@
-MD5 7c235067664460ea5bfd091657a10ef6 vigra-1.2.0.ebuild 786
 MD5 1022a66d0221f7fa93030efc451f4720 ChangeLog 338
 MD5 dffd46174e78b327c834fc3e4b1cf848 metadata.xml 160
+MD5 7c235067664460ea5bfd091657a10ef6 vigra-1.2.0.ebuild 786
+MD5 6a2f9c1cafc11dae83b22b1c0c100512 vigra-1.3.0.ebuild 683
 MD5 0ad8df046bb984eb6d50875c476f35af files/digest-vigra-1.2.0 63
+MD5 caefe4d3bc8973b891206435c4652fc4 files/digest-vigra-1.3.0 63
