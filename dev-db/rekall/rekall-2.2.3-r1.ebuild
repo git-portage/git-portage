@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/rekall/Attic/rekall-2.2.3.ebuild,v 1.1 2004/12/12 15:29:34 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/rekall/Attic/rekall-2.2.3-r1.ebuild,v 1.1 2004/12/17 22:41:09 carlo Exp $
 
 inherit kde
 
 DESCRIPTION="Rekall - a database frontend for MySQL, PostgreSQL and XBase"
 HOMEPAGE="http://www.rekallrevealed.org/"
-SRC_URI="http://www.rekallrevealed.org/packages/${P}.tar.gz"
+SRC_URI="http://www.rekallrevealed.org/packages/${P}-2.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
