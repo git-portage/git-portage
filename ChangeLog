@@ -1,5 +1,7 @@
 16.09.2000
 
+	- Fixed net-www/netscape wrappers	(drobbins)
+	- New x11-terms/rxvt 2.6.3		(drobbins) 
 	- New media-sound/xmnap 0.1.2		(achim)
 	  [ A Motfi based napster client ]
 	- Update openmotif 2.1.30 2.1.30-MLI	(achim)
