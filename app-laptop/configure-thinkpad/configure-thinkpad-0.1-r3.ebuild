@@ -7,7 +7,7 @@ SRC_URI="mirror://sourceforge/tpctl/${P}.tar.gz"
 HOMEPAGE="http://tpctl.sourceforge.net/configure-thinkpad.html"
 KEYWORDS="~x86 -amd64 -ppc -mips -sparc"
 
-RDEPEND=">=sys-apps/tpctl-4.8
+RDEPEND=">=app-laptop/tpctl-4.8
 	>=x11-libs/gtk+-2.2
 	>=gnome-base/libgnomeui-2.4
 	>=sys-devel/gettext-0.11"
