@@ -46,7 +46,7 @@
 ./app-text/jadetex/jadetex-2.20.ebuild
 #./app-text/metamail/metamail-2.7-r1.ebuild
 ./app-text/openjade/openjade-1.3-r1.ebuild
-#./app-text/pspell/pspell-0.11.2.ebuild
+./app-text/pspell/pspell-0.11.2.ebuild
 ./app-text/rcs/rcs-5.7.ebuild
 ./app-text/sablotron/sablotron-0.44-r2.ebuild
 ./app-text/sgml-common/sgml-common-0.3.ebuild
