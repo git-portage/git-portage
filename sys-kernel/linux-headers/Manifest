@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 681c761c0afe60e1022ac44d37d3370a linux-headers-2.0.40.ebuild 1820
 MD5 b3099588e509bea5bf8c12f2b3882f58 linux-headers-2.2.26.ebuild 2509
 MD5 93d61e502d62b73d3340cb8837b6d6b2 linux-headers-2.4.21-r1.ebuild 3945
@@ -6,11 +9,11 @@ MD5 213c9243211da20b5a7611507539e99b linux-headers-2.4.22.ebuild 4029
 MD5 c2c4eec01b604c30d0826e73ac02cac4 linux-headers-2.4.23.ebuild 3482
 MD5 ac78a2e51f08f5e6a70691b7684eb3da linux-headers-2.4.25.ebuild 3422
 MD5 c28313e23ce24b05e25738a685a00cd4 linux-headers-2.4.26.ebuild 3351
-MD5 a14381f850baf1b032c465a0194b1c14 ChangeLog 22132
+MD5 b3a4fab31513d9232381c03f2121a9ea ChangeLog 22290
 MD5 06eb1588f23861450f2d8b2e8379352b linux-headers-2.4.23_p3.ebuild 1267
-MD5 22c041c13429357cfbb5aadf2dd87d27 linux-headers-2.6.8.1-r2.ebuild 1230
+MD5 ef92269be437efc821d4923d9fadafc3 linux-headers-2.6.8.1-r2.ebuild 1230
 MD5 608fe99985244b0445f76cee44c9ae14 metadata.xml 290
-MD5 9753550018bd78e93bc54a9886f70736 linux-headers-2.6.8.1-r4.ebuild 1236
+MD5 65069a9ddeb641ed596f5e2bdf22618c linux-headers-2.6.8.1-r4.ebuild 1236
 MD5 e300a3e148a7dcc38a0e099494fb6cb3 files/bigendian-byteorder-fix.patch 1557
 MD5 33d51532d0f696fefa15593b2cf2f6de files/digest-linux-headers-2.0.40 66
 MD5 556c7008fbfdf81750bbd4ab2beb111e files/digest-linux-headers-2.2.26 67
@@ -33,3 +36,10 @@ MD5 9101139b0720280f338a1823c281ee84 files/linux-headers-2.6.8.1-parisc-syscall.
 MD5 fb33a0ba21375f190137b9f478ad9799 files/digest-linux-headers-2.6.8.1-r4 146
 MD5 57e8b81485f8a1ba10d41dd7949d40a8 files/linux-headers-2.6.8.1-strict-ansi-fix.patch 4132
 MD5 459bc20c4015796630e3a9f3dc9125e6 files/linux-headers-strict-ansi-fix.patch 1486
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFB5xW2ArHZZzCEUG0RArnxAJ99/4129QuKi96k4peks8cmpOQj7gCfU8nl
++cMthuYDKdfkxaPgbbfk2eM=
+=4m8W
+-----END PGP SIGNATURE-----
