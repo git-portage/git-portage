@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/epic4/Attic/epic4-1.1.11.ebuild,v 1.6 2004/01/03 17:40:05 zul Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/epic4/Attic/epic4-1.1.16-r1.ebuild,v 1.1 2004/01/03 17:40:05 zul Exp $
 
 IUSE="ipv6 perl ssl tcltk"
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://epicsol.org"
 
 SLOT="0"
 LICENSE="as-is"
-KEYWORDS="x86 ~ppc"
+KEYWORDS="~x86 ~ppc ia64 ~alpha ~hppa amd64"
 
 DEPEND=">=sys-libs/ncurses-5.2
 	perl? ( >=dev-lang/perl-5.6.1 )
@@ -24,21 +24,12 @@ replace-flags "-O?" "-O"
 src_compile() {
 	myconf=""
 
-	use ipv6 \
-		&& myconf="${myconf} --with-ipv6" \
-		|| myconf="${myconf} --without-ipv6"
+	epatch ${FILESDIR}/epic-defaultserver.patch
 
-	use perl \
-		&& myconf="${myconf} --with-perl" \
-		|| myconf="${myconf} --without-perl"
-
-	use ssl \
-		&& myconf="${myconf} --with-ssl" \
-		|| myconf="${myconf} --without-ssl"
-
-	use tcltk \
-		&& myconf="${myconf} --with-tcl" \
-		|| myconf="${myconf} --without-tcl"
+	myconf="${myconf} `use_with ipv6`"
+	myconf="${myconf} `use_with perl`"
+	myconf="${myconf} `use_with ssl`"
+	myconf="${myconf} `use_with tcltk`"
 
 	econf \
 		--libexecdir=/usr/lib/misc \
@@ -63,6 +54,11 @@ src_install () {
 
 	dodir /usr/share/epic
 	tar zxvf ${DISTDIR}/epic4-help-20030114.tar.gz -C ${D}/usr/share/epic
+
+	rm -f ${D}/usr/share/epic/help/Makefile
+	rm -rf ${D}/usr/share/epic/help/CVS
+
+	chown -R root:root ${D}/usr/share/epic/help
 }
 
 pkg_postinst() {
