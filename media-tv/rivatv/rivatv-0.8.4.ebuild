@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/rivatv/Attic/rivatv-0.8.2.ebuild,v 1.3 2004/03/26 16:51:50 blauwers Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/rivatv/Attic/rivatv-0.8.4.ebuild,v 1.1 2004/03/26 16:51:50 blauwers Exp $
 
 S=${WORKDIR}/${P/_/-}
 DESCRIPTION="kernel driver for nVidia based cards with video-in"
@@ -11,10 +11,18 @@ DEPEND="virtual/x11
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86"
+KEYWORDS="~x86"
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	epatch ${FILESDIR}/${P/_/-}-configure.patch
+}
+
 
 src_compile() {
 	#cd rivatv/linux/drivers/media/video
+	sed -i -e 's/^install: devices.*/install:/' Makefile.in
 	econf || die
 	emake || die
 }
