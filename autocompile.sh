@@ -6,7 +6,8 @@ C_HILITE=$'\e[36;01m'
 C_END=$'\e[A\e[68G'
 C_OK=$'\e[32m'
 C_NO=$'\e[31m'
-PORTDIR=/usr/portage
+eval `/usr/lib/portage/bin/import-settings PORTDIR PKGDIR`
+#PORTDIR=/usr/portage
 LOGDIR=$ROOT/tmp/portage-log
 if [ -z "$CHECK" ]
 then
@@ -77,6 +78,8 @@ do
 
   # package name
   myp=${myf%*.ebuild}
+ 
+  echo $myp
 
   if [ -f "$myd" ]
   then
@@ -91,7 +94,7 @@ do
     else
         if [ "$CHECK" = "package" ]
         then
-            if [ -f ${PORTDIR}/packages/i486/All/$myp.tbz2 ]
+            if [ -f ${PKGDIR}/All/$myp.tbz2 ]
             then
                 continue
             fi
