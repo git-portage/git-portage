@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-radio/cwdaemon/Attic/cwdaemon-0.9.ebuild,v 1.2 2005/01/12 05:45:55 killsoft Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-radio/cwdaemon/Attic/cwdaemon-0.9.1.ebuild,v 1.1 2005/01/12 05:45:55 killsoft Exp $
 
 DESCRIPTION="A morse daemon for the parallel or serial port"
 HOMEPAGE="http://www.qsl.net/pg4i/linux/cwdaemon.html"
