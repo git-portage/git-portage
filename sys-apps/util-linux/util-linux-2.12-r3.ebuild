@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/util-linux/Attic/util-linux-2.12.ebuild,v 1.5 2003/10/29 03:14:07 pebenito Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/util-linux/Attic/util-linux-2.12-r3.ebuild,v 1.1 2003/12/08 11:52:46 seemant Exp $
 
 IUSE="crypt nls static pam selinux"
 
@@ -16,7 +16,7 @@ case ${ARCH} in
 esac
 
 S="${WORKDIR}/${P}"
-CRYPT_PATCH_P="${PN}-2.11z-crypt-gentoo"
+CRYPT_PATCH_P="${P}-cryptoapi-losetup"
 SELINUX_PATCH="util-linux-2.12-selinux.diff.bz2"
 DESCRIPTION="Various useful Linux utilities"
 SRC_URI="mirror://kernel/linux/utils/${PN}/${P}.tar.gz
@@ -24,7 +24,7 @@ SRC_URI="mirror://kernel/linux/utils/${PN}/${P}.tar.gz
 	crypt? ( mirror://gentoo/${CRYPT_PATCH_P}.patch.bz2 )"
 HOMEPAGE="http://www.kernel.org/pub/linux/utils/util-linux/"
 
-KEYWORDS="~x86 ~amd64 ~ppc ~sparc ~alpha ~arm ~mips ~hppa ia64"
+KEYWORDS="~x86 ~amd64 ~ppc ~sparc ~alpha ~arm ~mips ~hppa ~ia64"
 SLOT="0"
 LICENSE="GPL-2"
 
@@ -32,7 +32,8 @@ DEPEND="virtual/glibc
 	>=sys-apps/sed-4.0.5
 	>=sys-libs/ncurses-5.2-r2
 	selinux? ( sys-libs/libselinux )
-	pam? ( sys-apps/pam-login )"
+	pam? ( sys-apps/pam-login )
+	crypt? ( app-crypt/hashalot )"
 
 RDEPEND="${DEPEND} dev-lang/perl
 	nls? ( sys-devel/gettext )"
@@ -42,9 +43,14 @@ src_unpack() {
 
 	cd ${S}
 
-#	if [ ! -z "`use crypt`" ] ; then
-#		epatch ${DISTDIR}/${CRYPT_PATCH_P}.patch.bz2
-#	fi
+	# CryptoAPI losetup patch for the cryptoapi sepecific
+	# to the 2.6 linux kernel. Needs hashalot.
+	# Original patch location:
+	# http://www.stwing.org/~sluskyb/util-linux/losetup-combined.patch
+	# Mailing list post with info:
+	# http://www.kerneli.org/pipermail/cryptoapi-devel/2003-September/000634.html
+	# Follow thread for usage.
+	use crypt && epatch ${DISTDIR}/${CRYPT_PATCH_P}.patch.bz2
 
 	# Fix rare failures with -j4 or higher
 	epatch ${FILESDIR}/${PN}-2.11z-parallel-make.patch
@@ -93,6 +99,9 @@ src_unpack() {
 		sed -i -e 's/DISABLE_NLS=no/DISABLE_NLS=yes/' MCONFIG ||
 			die "MCONFIG nls sed"
 	fi
+
+	# /bin/kill is provided by procps ONLY
+	epatch ${FILESDIR}/${PN}-no-kill.patch
 }
 
 src_compile() {

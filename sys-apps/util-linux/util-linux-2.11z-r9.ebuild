@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/util-linux/Attic/util-linux-2.11z-r7.ebuild,v 1.5 2003/09/20 05:14:23 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/util-linux/Attic/util-linux-2.11z-r9.ebuild,v 1.1 2003/12/08 11:52:46 seemant Exp $
 
 IUSE="crypt nls static pam"
 
@@ -100,6 +100,9 @@ src_unpack() {
 		sed -i -e 's/DISABLE_NLS=no/DISABLE_NLS=yes/' MCONFIG ||
 			die "MCONFIG nls sed"
 	fi
+
+	# /bin/kill is provided by procps only
+	epatch ${FILESDIR}/${PN}-no-kill.patch
 }
 
 src_compile() {
