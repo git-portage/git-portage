@@ -1,5 +1,13 @@
 date 15 Jan 2001
 
+new dev-perl/Error-0.13
+achim
+Required from the CORBA-ORBit module
+
+new dev-perl/CORBA-ORBit-0.4.3
+achim
+A perl Interface to ORBit
+
 upd net-www/netscape-4.76 to 4.76-r1
 achim
 Added PROVIDE and RDEPEND vars
