@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-rpg/daimonin-client/Attic/daimonin-client-0.96.5_beta3-r1.ebuild,v 1.1 2004/11/30 07:49:55 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-rpg/daimonin-client/Attic/daimonin-client-0.96.6_beta3.ebuild,v 1.1 2004/12/30 00:30:58 mr_bones_ Exp $
 
 inherit eutils flag-o-matic games
 
@@ -8,7 +8,7 @@ MY_PV=${PV/_beta*}
 MY_PV=${MY_PV//.}
 DESCRIPTION="MMORPG with 2D isometric tiles grafik, true color and alpha blending effects"
 HOMEPAGE="http://daimonin.sourceforge.net/"
-SRC_URI="mirror://sourceforge/daimonin/daimonin_client_src-BETA3-${MY_PV}b.tgz"
+SRC_URI="mirror://sourceforge/daimonin/daimonin_client-BETA3-${MY_PV}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
