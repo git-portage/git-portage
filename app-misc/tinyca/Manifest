@@ -1,5 +1,7 @@
 MD5 e45094a874697c8d1df5157abc889690 ChangeLog 896
 MD5 aca4f15a763ce3be243f9886e0b5dc38 tinyca-0.5.4-r1.ebuild 1114
 MD5 e722595bc20216838441d7ddc34b5049 tinyca-0.5.4.ebuild 1083
+MD5 aca4f15a763ce3be243f9886e0b5dc38 tinyca-0.6.6.ebuild 1114
 MD5 ce4138146004f379403a5187796ce262 files/digest-tinyca-0.5.4 64
 MD5 ce4138146004f379403a5187796ce262 files/digest-tinyca-0.5.4-r1 64
+MD5 2bcc4d940205e70dd881c538b45d1173 files/digest-tinyca-0.6.6 64
