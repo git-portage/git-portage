@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/zsh/Attic/zsh-4.2.0_pre2.ebuild,v 1.1 2004/03/03 18:41:45 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/zsh/Attic/zsh-4.2.0_pre3.ebuild,v 1.1 2004/03/05 23:59:40 pyrania Exp $
 
 IUSE="maildir ncurses static doc pcre"
 
