@@ -1,6 +1,6 @@
 MD5 5fcd1726ff807d1f90005c753efe0bed ChangeLog 3687
 MD5 887271fc00711d11fb72536de7b1f7ec metadata.xml 1073
 MD5 d590f30824faa32ba65691531d2d1e7a seahorse-0.6.3-r1.ebuild 807
-MD5 f2f8bf16cdee9004fc83d625b780b70f seahorse-0.7.5.ebuild 928
+MD5 d352b6d2aa192e51b583011aa78696cd seahorse-0.7.5.ebuild 1177
 MD5 052f1fee75fc120426817f6e7c0726f6 files/digest-seahorse-0.6.3-r1 66
 MD5 ddd1af247311013096cded4265d69eaf files/digest-seahorse-0.7.5 67
