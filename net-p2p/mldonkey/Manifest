@@ -1,3 +1,4 @@
+MD5 1988a9892d3115a886dc9b0e05de95a8 mldonkey-2.5.16-r7.ebuild 2627
 MD5 6aa26af5afd43b94a372a3a8ac8e8323 mldonkey-2.5.16-r4.ebuild 2598
 MD5 5f3ac2528577fe5662d7e8f3c80da21c mldonkey-2.5.16-r6.ebuild 2627
 MD5 6de0958f42d8a8c43b6074854be3d8e7 mldonkey-2.5.21-r2.ebuild 2667
@@ -11,6 +12,7 @@ MD5 9d462b1fffabccafe674b6138f151ed6 files/mldonkey-2.5.16-oldbt.patch 5713
 MD5 a5e46e41c4a0b1a00f6da0e70561427a files/digest-mldonkey-2.5.16-r4 126
 MD5 413e60164538b85e9ba290d64e24e63f files/digest-mldonkey-2.5.16-r5 126
 MD5 8cb26fa21496d16cfdf0abf0a88fecf2 files/digest-mldonkey-2.5.16-r6 126
+MD5 920f9e5989329dba967bff5a111911a7 files/digest-mldonkey-2.5.16-r7 126
 MD5 97c421f85a3a6aaaeb849d97400f89ca files/digest-mldonkey-2.5.21-r1 125
 MD5 f145ba120c09f53b0032ea8b3f930128 files/digest-mldonkey-2.5.21-r2 126
 MD5 d68e3759e1f0f2f9a295bbf0a1c30f6b files/mldonkey-2.5.16-16g.patch 92755
