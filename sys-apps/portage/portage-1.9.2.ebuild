@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc. Distributed under the terms
 # of the GNU General Public License, v2 or later 
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-1.8.18.ebuild,v 1.2 2002/04/08 23:20:22 drobbins Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-1.9.2.ebuild,v 1.1 2002/04/22 05:51:52 drobbins Exp $
  
 S=${WORKDIR}/${P}
 SLOT="0"
@@ -39,9 +39,6 @@ pkg_preinst() {
 }
 
 src_install() {
-	#dep cache
-	dodir /var/cache/edb/dep
-
 	#config files
 	cd ${S}/cnf
 	insinto /etc
@@ -70,7 +67,7 @@ src_install() {
 	into /usr/lib/portage
 	dobin ${S}/src/sandbox/sandbox
 	dodir /usr/lib/portage/lib
-	exeinto /usr/lib/portage/lib
+	exeinto /lib
 	doexe ${S}/src/sandbox/libsandbox.so
 	insinto //usr/lib/portage/lib
 	doins ${S}/src/sandbox/sandbox.bashrc
@@ -133,5 +130,7 @@ pkg_postinst() {
 	if [ -d ${ROOT}var/cache/edb/dep ]
 	then
 		rm -rf ${ROOT}var/cache/edb/dep/*
-	fi
+	else
+		install -d ${ROOT}var/cache/edb/dep
+	fi	
 }
