@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/dspam/Attic/dspam-3.2_rc3.ebuild,v 1.1 2004/10/16 17:27:29 st_lim Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/dspam/Attic/dspam-3.2_rc3.ebuild,v 1.2 2004/10/24 15:08:56 st_lim Exp $
 
 inherit eutils
 
@@ -143,7 +143,7 @@ src_install () {
 	keepdir ${HOMEDIR}
 
 	# keeps dspam data in /var
-	diropts -m0770 -o dspam -g dspam
+	diropts -m0775 -o dspam -g dspam
 	dodir ${DATADIR}
 	keepdir ${DATADIR}
 
@@ -394,10 +394,10 @@ pkg_config () {
 	einfo "  wget http://www.nuclearelephant.com/projects/dspam/SA-Corpus.tar.gz"
 	einfo "  tar zxvf SA-Corpus.tar.gz"
 	einfo "  cd ./SA-Corpus"
-	einfo "  ./train.pl user@example.com"
+	einfo "  perl train.pl user@example.com"
 	einfo
 	einfo "The current ebuild has installed a group called \"globaluser\". If you want"
 	einfo "you could train the \"globaluser\" instead of a valid email address:"
-	einfo "  ./train.pl globaluser"
+	einfo "  perl train.pl globaluser"
 	einfo
 }
