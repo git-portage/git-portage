@@ -1,14 +1,14 @@
-# ChangeLog for net-print/hp-web-jetadmin
+# ChangeLog for net-print/lprng
 # Copyright 2002 Gentoo Technologies, Inc.; Distributed under the GPL
-# $Header: /var/cvsroot/gentoo-x86/net-print/hp-web-jetadmin/Attic/ChangeLog,v 1.2 2002/05/04 22:45:53 woodchip Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/lprng/ChangeLog,v 1.1 2002/05/04 22:45:53 woodchip Exp $
 
-*hp-web-jetadmin-6.5-r2 (4 May 2002)
+*lprng-3.8.10 (4 May 2002)
 
   4 May 2002; Donny Davies <woodchip@gentoo.org> :
 
-  Add LICENSE, SLOT.
+  Update to latest, Added LICENSE, SLOT, $Headers, remove CAPS for lower case.
 
-*hp-web-jetadmin-6.5-r1 (1 Feb 2002)
+*LPRng-3.8.4 (1 Feb 2002)
 
   1 Feb 2002; G.Bevin <gbevin@gentoo.org> ChangeLog :
   

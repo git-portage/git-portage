@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Maintainer: Donny Davies <woodchip@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.1.14-r3.ebuild,v 1.3 2002/05/02 04:14:36 jnelson Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.1.14-r4.ebuild,v 1.1 2002/05/04 22:45:53 woodchip Exp $
 
 DESCRIPTION="The Common Unix Printing System"
 HOMEPAGE="http://www.cups.org"
@@ -18,6 +17,8 @@ DEPEND="virtual/glibc
 	>=media-libs/tiff-3.5.5
 	>=media-libs/jpeg-6b"
 RDEPEND="${DEPEND} !virtual/lpr"
+LICENSE="GPL-2"
+SLOT="0"
 
 src_unpack() {
 	unpack ${A} ; cd ${S}
