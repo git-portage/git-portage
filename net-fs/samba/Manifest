@@ -1,4 +1,4 @@
-MD5 a81b69d1553b37e1a03b03fee68fd109 ChangeLog 15490
+MD5 0f49c0d1d1a5416eb96aafbd2315f2bc ChangeLog 15493
 MD5 eeb3ec0ae25e9d4f7ce62c32b52d5996 metadata.xml 466
 MD5 a14d55690d52d6770c50855d7fd48efd samba-2.2.8a.ebuild 10853
 MD5 e49613d30093a41ce2883cf670cbe11f samba-3.0.0-r1.ebuild 10860
@@ -6,7 +6,7 @@ MD5 70172eea79bd0ccb6f357d1dba8803a2 samba-3.0.1-r1.ebuild 11339
 MD5 d5164790d64a6f7b353475b65104f1ea samba-3.0.1.ebuild 11320
 MD5 e50c2f16097fa936b05f1c8775b8cdc2 samba-3.0.2a.ebuild 11465
 MD5 387ee977d885cbccc2dd79cb07ada060 samba-3.0.2a-r1.ebuild 12243
-MD5 337a226b9d7bbd878e082a48ddfbe1ca samba-3.0.2a-r2.ebuild 12140
+MD5 b5794388c53def24a3d0277c98136f24 samba-3.0.2a-r2.ebuild 12143
 MD5 fd2382184b6a07e63cb07ff26b578fd2 files/config-svc-smbd+nmbd 784
 MD5 9780745de080ee53a34c1b2f9fb1f228 files/digest-samba-2.2.8a 135
 MD5 9ad118eb4f2d3eff69927ab1ab1913be files/digest-samba-3.0.0-r1 202
