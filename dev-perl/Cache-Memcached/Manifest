@@ -1,5 +1,3 @@
-MD5 498cb8a78a2e0941282a6a360e2bd705 ChangeLog 2678
-MD5 850c48be3b252740f375b4d6188d9480 Cache-Memcached-1.14.ebuild 665
-MD5 ae0b78731df370c9398ca137a727908e Cache-Memcached-1.0.12.ebuild 607
+MD5 7f3544eb4ab29b1e4407b8ecce0e63ce ChangeLog 2820
+MD5 70f6a3a14447d5cdae88e92182b0880b Cache-Memcached-1.14.ebuild 635
 MD5 0c33c2e7cf9de107d9a9d59d5ab77850 files/digest-Cache-Memcached-1.14 71
-MD5 6fe439819cf186ae9d62070a9344962f files/digest-Cache-Memcached-1.0.12 73
