@@ -391,6 +391,6 @@
 ./kde-apps/kdepim/kdepim-2.0.ebuild
 ./kde-apps/kdeutils/kdeutils-2.0.ebuild
 ./kde-apps/kdoc/kdoc-2.0.ebuild
-./kde-apps/kmago/kmago-0.2.ebuild
+./kde-apps/kmago/kmago-0.3.1.ebuild
 ./kde-apps/koffice/koffice-2.0.ebuild
 ./kde-apps/krusader/krusader-0.65.1.ebuild
