@@ -1,5 +1,9 @@
 date 01 Jan 2000
 
+upd net-fs/samba-2.0.7-r1 to 2.0.7-r2
+drobbins
+Samba now has supervise and multilog support
+
 upd sys-libs/ncurses-5.2 to 5.2-r1
 drobbins
 xterms are now color-enabled by default
