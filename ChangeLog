@@ -1,5 +1,18 @@
 date 09 Jan 2001
 
+upd dev-libs/rep-gtk-0.14 to 0.15
+drobbins
+
+upd dev-libs/librep-0.13.2 to 0.13.4
+drobbins
+
+upd dev-libs/gmp-3.1 to 3.1.1
+drobbins
+
+upd x11-wm/sawfish-0.34 to 0.35
+drobbins
+new version of sawfish
+
 upd sys-apps/iptables-1.1.2 to 1.2
 drobbins
 iptables has been moved from /usr/bin to /usr/sbin as well
