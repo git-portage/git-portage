@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/sparc-dev-sources/Attic/sparc-dev-sources-2.6.1_rc2.ebuild,v 1.1 2004/01/08 04:53:09 wesolows Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/sparc-dev-sources/Attic/sparc-dev-sources-2.6.2.ebuild,v 1.1 2004/02/06 06:36:55 wesolows Exp $
 
 IUSE="ultra1"
 
@@ -42,7 +42,7 @@ S=${WORKDIR}/linux-${KV}
 KEYWORDS="~x86 -ppc ~sparc"
 SLOT="${KV}"
 
-DEPEND="${DEPEND} sys-apps/module-init-tools"
+DEPEND="${DEPEND} sys-apps/module-init-tools !<sys-apps/pciutils-2.1.11-r1"
 [ `uname -m` = "sparc64" ] && DEPEND="${DEPEND} >=sys-devel/gcc-sparc64-3.2.3"
 
 src_unpack() {
