@@ -169,6 +169,7 @@
 ./dev-utils/sel/sel-0.08.2.ebuild
 ./dev-util/strace/strace-4.2.ebuild 
 ./dev-util/yacc/yacc-1.9.1-r1.ebuild
+./media-gfb/blender/blender-2.04.ebuild
 ./media-gfx/autotrace/autotrace-0.24a.ebuild
 ./media-gfx/gimp-print/gimp-print-4.0_beta2.ebuild
 ./media-gfx/gimp/gimp-1.1.26.ebuild
