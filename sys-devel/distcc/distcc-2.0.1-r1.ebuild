@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/distcc/Attic/distcc-1.2.1.ebuild,v 1.1 2003/02/27 19:29:58 zwelch Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/distcc/Attic/distcc-2.0.1-r1.ebuild,v 1.1 2003/04/28 20:27:33 zwelch Exp $
 
 inherit eutils
 
@@ -12,18 +12,21 @@ DESCRIPTION="a program to distribute compilation of C code across several machin
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa arm"
+KEYWORDS="x86 ppc sparc alpha hppa mips arm"
 
 OPV="1.2"
+LPV="1.2.3"
 
 DEPEND=">=sys-apps/portage-2.0.46-r11
 	>=sys-devel/gcc-config-1.3.1
+	sys-apps/shadow
 	dev-libs/popt"
 
 src_unpack() {
 	unpack distcc-${PV}.tar.bz2
 #	cp -a distcc-${PV} distcc-${PV}.orig
-	epatch "${FILESDIR}/${PV}/wrapper.patch" || die
+#	epatch "${FILESDIR}/${LPV}/wrapper.patch" || die
+#	patch -p1 < "${FILESDIR}/${LPV}/info.patch" || die
 }
 
 src_compile() {
@@ -32,15 +35,13 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install
+	make DESTDIR="${D%/}" install
 
-	cd "${D}/usr/share/info" && rm -f distcc.info.gz
-
-	docinto "../${PN}"
-	dodoc "${S}/survey.txt"
+	insinto /usr/share/doc/${PN}
+	doins "${S}/survey.txt"
 
 	exeinto /usr/bin
-	doexe "${FILESDIR}/${PV}/distcc-config"
+	doexe "${FILESDIR}/${LPV}/distcc-config"
 
 	insinto /etc/conf.d
 	newins "${FILESDIR}/${OPV}/conf" distccd
