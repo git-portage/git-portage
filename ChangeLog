@@ -1,5 +1,9 @@
 date 1 Jul 2001
 
+upd dev-libs/pilot-link-0.9.5
+new upstream release, this one compiles nicely
+lamer
+
 new app-admin/aide-0.7
 advanced intrusion detection (Contributed by polaris)
 lamer
