@@ -15,4 +15,4 @@ MD5 41c050cd5c7ccdcf1676a6852c7a35ed files/xpdf-3.00-PathScanner.patch.bz2 1003
 MD5 9a40ac2946ebb4599602f43e10f88786 files/xpdf-3.00-scroll-opts.patch.bz2 1869
 MD5 2fce5bedd61300fad1566a41f991a782 files/xpdf-goo-sizet.patch 1424
 MD5 36b521d0408d11075c1e6536e91265f2 files/digest-xpdf-3.00-r5 767
-MD5 fd6eaa6f4bb5d94506718515cf20ac26 files/digest-xpdf-3.00-r6 61
+MD5 36b521d0408d11075c1e6536e91265f2 files/digest-xpdf-3.00-r6 767
