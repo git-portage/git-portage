@@ -31,7 +31,7 @@ upd net-mail/qmail-1.03-r1 to 1.03-r2
 jerry
 portage now sets PROVIDE="virtual/mta"
 
-upd net-mail/qmail-ldap-1.03.20000701-r1 1.03.20000701-r2
+upd net-mail/qmail-ldap-1.03.20000701-r1 to 1.03.20000701-r2
 jerry
 portage now sets PROVIDE="virtual/mta"
 
