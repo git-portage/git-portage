@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/crossdev/Attic/crossdev-0.3.ebuild,v 1.1 2003/12/24 04:59:17 kumba Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/crossdev/Attic/crossdev-0.3.ebuild,v 1.2 2004/01/30 09:07:56 kumba Exp $
 
 DESCRIPTION="Cross-toolchain generator"
 HOMEPAGE="http://www.gentoo.org"

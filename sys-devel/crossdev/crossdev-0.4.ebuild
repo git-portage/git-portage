@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/crossdev/Attic/crossdev-0.2.ebuild,v 1.2 2004/01/30 09:07:56 kumba Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/crossdev/Attic/crossdev-0.4.ebuild,v 1.1 2004/01/30 09:07:56 kumba Exp $
 
-DESCRIPTION="Cross-toolchain generator"
+DESCRIPTION="Gentoo Cross-toolchain generator"
 HOMEPAGE="http://www.gentoo.org"
 SRC_URI="mirror://gentoo/${P}.tar.bz2"
 LICENSE="GPL-2"
@@ -11,7 +11,8 @@ KEYWORDS="~x86 ~sparc ~mips"
 IUSE=""
 
 DEPEND="sys-apps/portage
-	app-shells/bash"
+	app-shells/bash
+	sys-apps/coreutils"
 
 S=${WORKDIR}/${P}
 
@@ -23,6 +24,10 @@ src_install() {
 
 	dodir /etc/crossdev
 	cp crossdev.conf.example ${D}/etc/crossdev
+
+	dosym ${D}/usr/bin/crossdev.sh /usr/bin/crossdev
+	dosym ${D}/usr/bin/crossdev-status.sh /usr/bin/crossdev-status
+
 }
 
 pkg_postinst() {
