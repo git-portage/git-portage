@@ -1,16 +1,21 @@
+10.13.2000
+	- Update to portage (config files)	(drobbins)
+
 10.10.2000
 	- New app-doc/gimp-user-manual-html 2.0 (achim)
 	- New media-gfx/blender-static 2.04	(achim)
 	- New app-editors/nedit 5.1.1		(achim)
+
 09.10.2000
 
 	- New app-text/ttf2pt1 3.3.0		(achim)
 	- New media-gfx/blender 2.04		(achim)
 	- New media-libs/mesa-glu 3.2.1		(achim)
-	- new media-libs/glut 3.7		(achim)
+	- new media-libs/glut 3.7			(achim)
+
 06.10.2000
 
-	- Update lincvs 0.3a2 0.3b1		(achim)
+	- Update lincvs 0.3a2 0.3b1			(achim)
 
 05.10.2000
 
@@ -24,7 +29,7 @@
 	- Update portage (doins fix)		(drobbins)
 	- Update dhcp 3.0_beta0202 -> 0206	(achim)
 	- Update amavis 0.2.1_p2 -> p3		(achim)
-	- Update tnef 0.12 -> 0.13		(achim)
+	- Update tnef 0.12 -> 0.13			(achim)
 	- Update lftp 2.3.0 -> 2.3.3		(achim)
 	- Update Digest-MD5 2.09 -> 2.12	(achim)
 	- Update URI 1.08 -> 1.09		(achim)
