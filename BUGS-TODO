@@ -1,4 +1,7 @@
 [14 Nov 2000 - drobbins]
+	Upgrade Gentoo Linux bootdisk to use latest version of grub
+	Replace syslogd and klogd with multilog and gluelog and glueklog
+	Move daemontools and ucspi-tcp to sys-apps, add supervise support to various packages
 	Upgrade default kernel to 2.4.0-test10 with patches?  What does everyone think?
 	We need to add dump/restore to sys-apps -- but the darn thing depends on libtermcap!
 		(It'll need a patch to link against ncurses instead)
