@@ -1,33 +1,34 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/dillo/Attic/dillo-0.8.0-r1.ebuild,v 1.1 2004/03/31 20:37:06 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/dillo/Attic/dillo-0.7.3-r6.ebuild,v 1.1 2004/05/08 08:52:54 usata Exp $
 
 inherit flag-o-matic eutils
 
 S2=${WORKDIR}/dillo-gentoo-extras-patch3
-DILLO_I18N_P="${P}-i18n-misc-20040329"
+DILLO_I18N_MISC=${P}-i18n-misc-20040507
 
 DESCRIPTION="Lean GTK+-based web browser"
 HOMEPAGE="http://www.dillo.org/"
 SRC_URI="http://www.dillo.org/download/${P}.tar.bz2
 	mirror://gentoo/dillo-gentoo-extras-patch3.tar.bz2
-	http://teki.jpn.ph/pc/software/${DILLO_I18N_P}.diff.bz2"
+	http://teki.jpn.ph/pc/software/${DILLO_I18N_MISC}.diff.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~amd64"
-IUSE="ipv6 kde gnome mozilla nls ssl truetype"
+IUSE="ipv6 kde gnome mozilla truetype ssl nls"
 
 DEPEND="=x11-libs/gtk+-1.2*
 	>=media-libs/jpeg-6b
 	>=sys-libs/zlib-1.1.3
 	>=media-libs/libpng-1.2.1
-	ssl? ( dev-libs/openssl )"
+	ssl? ( dev-libs/openssl )
+	truetype? ( virtual/xft )"
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ../${DILLO_I18N_P}.diff
+	epatch ../${DILLO_I18N_MISC}.diff
 
 	if [ "${DILLO_ICONSET}" = "kde" ]
 	then
@@ -57,22 +58,25 @@ src_unpack() {
 src_compile() {
 	replace-flags "-O2 -mcpu=k6" "-O2 -mcpu=pentium"
 
+	if [ -n "`use truetype`" ] ; then
+		CPPFLAGS="${CPPFLAGS} -I/usr/include/freetype2"
+		append-ldflags -L/usr/X11R6/lib -lXft
+		export CPPFLAGS
+	fi
+
 	econf `use_enable ipv6` \
 		`use_enable nls` \
 		`use_enable ssl` \
 		`use_enable truetype anti-alias` \
-		--enable-tabs \
 		--enable-meta-refresh \
-		--enable-user-agent \
+		--enable-web-search \
 		|| die
-	emake || make || die
+	emake -j1 || emake -j1 || die
 }
 
 src_install() {
 	dodir /etc  /usr/share/icons/${PN}
 	einstall || die
-
-	dosed /etc/dpidrc
 
 	dodoc AUTHORS COPYING ChangeLog* INSTALL README NEWS
 	docinto doc
