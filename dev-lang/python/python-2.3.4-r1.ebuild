@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/python/Attic/python-2.3.3-r1.ebuild,v 1.24 2005/01/05 00:38:48 pythonhead Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/python/Attic/python-2.3.4-r1.ebuild,v 1.1 2005/02/07 04:28:20 pythonhead Exp $
 
 # NOTE about python-portage interactions :
 # - Do not add a pkg_setup() check for a certain version of portage 
@@ -9,32 +9,29 @@
 
 inherit eutils flag-o-matic python
 
-MY_PV=${PV/_rc/c}
 PYVER_MAJOR="`echo ${PV%_*} | cut -d '.' -f 1`"
 PYVER_MINOR="`echo ${PV%_*} | cut -d '.' -f 2`"
 PYVER="${PYVER_MAJOR}.${PYVER_MINOR}"
 
-S="${WORKDIR}/Python-${MY_PV}"
+S="${WORKDIR}/Python-${PV}"
 DESCRIPTION="A really great language"
-SRC_URI="http://www.python.org/ftp/python/${PV%_*}/Python-${MY_PV}.tar.bz2"
-HOMEPAGE="http://www.python.org"
+HOMEPAGE="http://www.python.org/"
+SRC_URI="http://www.python.org/ftp/python/${PV%_*}/Python-${PV}.tar.bz2"
 
-IUSE="ncurses gdbm ssl readline tcltk berkdb bootstrap ipv6 build ucs2 doc X uclibc"
 LICENSE="PSF-2.2"
 SLOT="2.3"
-
-KEYWORDS="x86 ~ppc sparc arm hppa amd64 s390 alpha ~ia64 mips ppc64"
-# ~mips ~arm"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ~ppc s390 sh sparc x86"
+IUSE="ncurses gdbm ssl readline tcltk berkdb bootstrap ipv6 build ucs2 doc X"
 
 DEPEND="virtual/libc
 	>=sys-libs/zlib-1.1.3
 	!build? (
 		X? ( tcltk? ( >=dev-lang/tk-8.0 ) )
-		doc? ( =dev-python/python-docs-${PV}* )
 		ncurses? ( >=sys-libs/ncurses-5.2 readline? ( >=sys-libs/readline-4.1 ) )
 		berkdb? ( >=sys-libs/db-3.1 )
 		gdbm? ( sys-libs/gdbm )
 		ssl? ( dev-libs/openssl )
+		doc? ( =dev-python/python-docs-${PV}* )
 		dev-libs/expat
 	)"
 
@@ -48,6 +45,10 @@ PROVIDE="virtual/python"
 src_unpack() {
 	unpack ${A}
 	cd ${S}
+	sed -ie 's/OpenBSD\/3.\[01234/OpenBSD\/3.\[012345/' configure || die "OpenBSD sed failed"
+	#Fixes security vulnerability in XML-RPC server - pythonhead (06 Feb 05)
+	#http://www.python.org/security/PSF-2005-001/
+	epatch ${FILESDIR}/${PN}-2.3-xmlrpc.patch
 	# adds /usr/lib/portage/pym to sys.path - liquidx (08 Oct 03)
 	# prepends /usr/lib/portage/pym to sys.path - liquidx (12 Apr 04)
 	epatch ${FILESDIR}/${PN}-2.3-add_portage_search_path_take_2.patch
@@ -75,8 +76,8 @@ src_configure() {
 			|| PYTHON_DISABLE_MODULES="${PYTHON_DISABLE_MODULES} dbm bsddb"
 		use readline \
 			|| PYTHON_DISABLE_MODULES="${PYTHON_DISABLE_MODULES} readline"
-		( use X && use tcltk ) \
-			|| PYTHON_DISABLE_MODULES="${PYTHON_DISABLE_MODULES} _tkinter"
+		( use !X || use !tcltk ) \
+			&& PYTHON_DISABLE_MODULES="${PYTHON_DISABLE_MODULES} _tkinter"
 		use ncurses \
 			|| PYTHON_DISABLE_MODULES="${PYTHON_DISABLE_MODULES} _curses _curses_panel"
 		use ssl \
@@ -89,7 +90,6 @@ src_configure() {
 src_compile() {
 	filter-flags -malign-double
 
-	[ "${ARCH}" = "hppa" ] && append-flags -fPIC
 	[ "${ARCH}" = "alpha" ] && append-flags -fPIC
 	[ "${ARCH}" = "amd64" ] && append-flags -fPIC
 
@@ -144,7 +144,7 @@ src_install() {
 	if [ "${CONF_LIBDIR}" == "lib64" ] ;then
 		insinto /usr/lib64/python${PYVER}/config
 	else
-	insinto /usr/lib/python${PYVER}/config
+		insinto /usr/lib/python${PYVER}/config
 	fi
 	doins ${S}/Makefile.pre.in
 
@@ -165,7 +165,7 @@ src_install() {
 	else
 		use uclibc && rm -rf ${D}/usr/lib/python2.3/{test,bsddb/test}
 		use berkdb || rm -rf ${D}/usr/lib/python2.3/bsddb
-		( use X && use tcltk ) || rm -rf ${D}/usr/lib/python2.3/lib-tk
+		( use !X || use !tcltk ) && rm -rf ${D}/usr/lib/python2.3/lib-tk
 	fi
 }
 
