@@ -1,4 +1,7 @@
-MD5 253ea4dd8ba15df2d3bf757226fb7484 ChangeLog 8641
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 0c44bdfd804084755908119b7afd33a9 ChangeLog 8783
 MD5 0d58bd87770b2439b49b23860007297b gnome-media-1.2.3-r2.ebuild 1130
 MD5 4f6dae636e070dc55cc2d6a3c5198b3a gnome-media-2.6.0.ebuild 1147
 MD5 4eec57bf726c497339088245aaf972a0 gnome-media-2.6.1.ebuild 1151
@@ -12,3 +15,10 @@ MD5 9e40ac8b88c1b01b89c70fb048496ec7 files/digest-gnome-media-2.6.1 71
 MD5 28d862b5dbc7c8b0dc52ccfa0a89171b files/digest-gnome-media-2.6.2 71
 MD5 cf54400021ff023a01bdafab7ee15c30 files/digest-gnome-media-2.8.0 71
 MD5 8112026b401f71b5ca2633cdeda8b35d files/digest-gnome-media-2.10.0 72
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCTm25XjcVihsel0ERAh+jAJ9fR6i12HycQSvp9dvspFuHYjnMXQCgjOMU
+1vuWMWlrPR3SbC2bDJyO2fY=
+=lvjq
+-----END PGP SIGNATURE-----
