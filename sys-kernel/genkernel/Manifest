@@ -5,11 +5,11 @@ MD5 3f04c99d5e3622bdbfe20d9c60da1a35 genkernel-3.0.1_beta12.ebuild 910
 MD5 e9516a3779d8c02fd87054a6ab8532ff genkernel-1.8.ebuild 682
 MD5 39044d79dc12ffa2896e4ec3eb856965 genkernel-2.1.ebuild 1011
 MD5 95e0a0c9942a7eb66416d4a140854aba genkernel-3.0.1_beta11.ebuild 906
-MD5 292286d8c73d57f547c2a0e6192a9d43 genkernel-3.0.1.ebuild 913
+MD5 cc5c684e6e27a94f19aed27145bd903e genkernel-3.0.1.ebuild 908
 MD5 53840b7a409ed4ad348e89ecb00b7d11 genkernel-2.0.ebuild 998
 MD5 09cf7ec21098c5f35e1d91556d27b07a genkernel-3.0.1_rc2.ebuild 908
 MD5 265f17820097b41e21f54d4f4f10a758 genkernel-1.9.ebuild 699
-MD5 c30e11172ca94710b198aaa5f8216274 ChangeLog 5690
+MD5 6f6648320990facca32d7f0d63b793bb ChangeLog 5689
 MD5 fff4a68d8acc9ee3bd709aae02489c10 metadata.xml 228
 MD5 2dd579e29950df100f4e95ca5f7d9c98 genkernel-3.0.ebuild 750
 MD5 4e611a633363995ddc515d0f5c26fb46 files/README 288
