@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/sendmail/Attic/sendmail-8.12.11-r2.ebuild,v 1.2 2004/05/30 21:13:45 g2boojum Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/sendmail/Attic/sendmail-8.12.11-r3.ebuild,v 1.1 2004/05/30 21:13:45 g2boojum Exp $
 
 DESCRIPTION="Widely-used Mail Transport Agent (MTA)"
 HOMEPAGE="http://www.sendmail.org/"
@@ -9,7 +9,7 @@ SRC_URI="ftp://ftp.sendmail.org/pub/${PN}/${PN}.${PV}.tar.gz"
 LICENSE="Sendmail"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~sparc ~hppa ~alpha ~ia64 s390"
-IUSE="ssl ldap sasl tcpd mbox milter"
+IUSE="ssl ldap sasl tcpd mbox milter mailwrapper"
 
 DEPEND="net-mail/mailbase
 	sys-devel/m4
@@ -21,7 +21,7 @@ DEPEND="net-mail/mailbase
 	"
 RDEPEND="${DEPEND}
 		>=net-mail/mailbase-0.00
-		=net-mail/mailwrapper-0.1"
+		mailwrapper? ( >=net-mail/mailwrapper-0.2 )"
 PDEPEND="!mbox? ( net-mail/procmail )"
 PROVIDE="virtual/mta"
 
@@ -56,12 +56,12 @@ src_unpack() {
 }
 
 src_compile() {
-	sh Build
+	sh Build || die "compilation failed in main Build script"
 
-	if [ -n "` use milter `" ]
+	if use milter
 	then
 	    pushd libmilter
-		sh Build
+		sh Build || die "libmilter compilation failed"
 		popd
 	fi
 }
@@ -93,7 +93,7 @@ src_install () {
 			|| die "install failed"
 	done
 
-	if [ -n "` use milter `" ]
+	if use milter
 	then
 	    dodir /usr/include/libmilter
 		make DESTDIR=${D} MANROOT=/usr/share/man/man \
@@ -105,10 +105,9 @@ src_install () {
 			|| die "install failed"
 	fi
 
-	mv ${D}/usr/sbin/sendmail ${D}/usr/sbin/sendmail.sendmail
-	fowners root:smmsp /usr/sbin/sendmail.sendmail
+	fowners root:smmsp /usr/sbin/sendmail
+	fperms 2555 /usr/sbin/sendmail
 	fowners smmsp:smmsp /var/spool/clientmqueue
-	fperms 2555 /usr/sbin/sendmail.sendmail
 	fperms 770 /var/spool/clientmqueue
 	fperms 700 /var/spool/mqueue
 	dosym /usr/sbin/sendmail /usr/lib/sendmail
@@ -119,7 +118,7 @@ src_install () {
 	newdoc sendmail/TUNING TUNING
 	newdoc smrsh/README README.smrsh
 
-	if [ -n "` use milter `" ]
+	if use milter
 	then
 		newdoc libmilter/README README.libmilter
 	fi
@@ -127,10 +126,8 @@ src_install () {
 	newdoc cf/README README.cf
 	newdoc cf/cf/README README.install-cf
 	cp -a cf/* ${D}/usr/share/sendmail-cf
-	insinto /etc
-	doins ${FILESDIR}/mailer.conf
 	insinto /etc/mail
-	if [ -n "` use mbox `" ]
+	if use mbox
 	then
 		doins ${FILESDIR}/{sendmail.cf,sendmail.mc}
 	else
@@ -161,6 +158,24 @@ KILL_OPTS="" # add -9/-15/your favorite evil SIG level here
 EOF
 	exeinto /etc/init.d
 	doexe ${FILESDIR}/sendmail
-	dosed 's/} sendmail/} sendmail.sendmail/' /etc/init.d/sendmail
 	keepdir /usr/adm/sm.bin
+
+	if use mailwrapper
+	then
+		mv ${D}/usr/sbin/sendmail ${D}/usr/sbin/sendmail.sendmail
+		insinto /etc/mail
+		doins ${FILESDIR}/mailer.conf
+		dosed 's/} sendmail/} sendmail.sendmail/' /etc/init.d/sendmail
+	fi
+
+}
+
+pkg_postinst() {
+	if ! use mailwrapper && [[ -e /etc/mailer.conf ]]
+	then
+		einfo
+		einfo "Since you emerged sendmail without mailwrapper in USE,"
+		einfo "you probably want to 'emerge -C mailwrapper' now."
+		einfo
+	fi
 }
