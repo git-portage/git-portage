@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-postgresql/Attic/selinux-postgresql-20041002.ebuild,v 1.1 2004/10/23 13:58:12 kaiowas Exp $
+# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-postgresql/Attic/selinux-postgresql-20041211.ebuild,v 1.1 2004/12/12 17:36:17 kaiowas Exp $
 
 inherit selinux-policy
 
