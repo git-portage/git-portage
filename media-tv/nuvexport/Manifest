@@ -1,4 +1,6 @@
 MD5 d0ed9dfbfdf39ac1d60ea327c6a93118 nuvexport-20040411.ebuild 628
-MD5 e6bf26eaaac688cf9037f1b6b1bb517e ChangeLog 340
 MD5 e5b9088f82256848d8322af89cde7e74 metadata.xml 223
+MD5 3c3667eac9ffdcacd0c4ae74aeec4314 ChangeLog 466
+MD5 7318902afdef1b397e2c43a7c2c3f32b nuvexport-20040822.ebuild 621
 MD5 c3011b03204aad8a89a770252c3b64d5 files/digest-nuvexport-20040411 72
+MD5 50b0a8aa39dd2a581b7103a86e0ca733 files/digest-nuvexport-20040822 72
