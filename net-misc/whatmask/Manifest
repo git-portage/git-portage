@@ -1,3 +1,5 @@
-MD5 ca93d72a304a226dc0d5de8124d77223 whatmask-1.1.ebuild 657
+MD5 335e3552d301b9057ab553fe38720986 whatmask-1.1.ebuild 657
+MD5 6f37277422f1cec1280b8fc02c449b28 whatmask-1.2.ebuild 659
+MD5 6b946cc5e1257680c2da3ed00d156171 ChangeLog 858
 MD5 208207aad1e3590eae78ec12697af28d files/digest-whatmask-1.1 64
-MD5 eee6d6014007dd8724f3d697ebcbafdb ChangeLog 857
+MD5 015cb5edc15790f8428a0773c640a850 files/digest-whatmask-1.2 64
