@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/ochusha/Attic/ochusha-0.5.5.ebuild,v 1.3 2004/08/28 15:00:23 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/ochusha/Attic/ochusha-0.5.5.ebuild,v 1.1 2004/09/08 13:36:10 usata Exp $
 
 inherit flag-o-matic
 
