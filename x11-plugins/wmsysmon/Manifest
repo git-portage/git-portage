@@ -1,5 +1,5 @@
-MD5 0c7c5dc9231f2d6b05275a39f1a515db wmsysmon-0.7.6-r3.ebuild 1028
-MD5 387f3e567c97c052250c9283bfd31dca ChangeLog 3088
+MD5 f5cab72933c9c845eae3bc52fbb3c30e wmsysmon-0.7.6-r3.ebuild 1027
+MD5 f1682ac8f928bd988c13487e939428a2 ChangeLog 3111
 MD5 62ba71d3b2fa785a4cbd5d47fdbd0eb6 metadata.xml 165
 MD5 5450d44337955ab76a071ee4927d693d files/digest-wmsysmon-0.7.6-r3 138
 MD5 f92c36a3e2cda76a531745835a0bb145 files/wmsysmon-0.7.6-high-ints.patch 489
