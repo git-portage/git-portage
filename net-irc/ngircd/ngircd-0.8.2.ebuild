@@ -1,13 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/ngircd/Attic/ngircd-0.8.0.ebuild,v 1.4 2005/01/27 15:22:40 swegener Exp $
-
-inherit eutils
+# $Header: /var/cvsroot/gentoo-x86/net-irc/ngircd/Attic/ngircd-0.8.2.ebuild,v 1.1 2005/01/27 15:22:40 swegener Exp $
 
 DESCRIPTION="A IRC server written from scratch."
 HOMEPAGE="http://arthur.ath.cx/~alex/ngircd/"
-SRC_URI="ftp://download.berlios.de/pub/ngircd/${P}.tar.gz
-	ftp://arthur.ath.cx/pub/Users/alex/ngircd/${P}.tar.gz"
+SRC_URI="ftp://download.berlios.de/pub/${PN}/${P}.tar.gz
+	ftp://ftp.berlios.de/pub/${PN}/${P}.tar.gz
+	ftp://arthur.ath.cx/pub/Users/alex/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -43,8 +42,7 @@ src_install() {
 		docdir=/usr/share/doc/${PF} \
 		install || die "make install failed"
 
-	exeinto /etc/init.d
-	newexe ${FILESDIR}/ngircd.init.d ngircd
+	newinitd ${FILESDIR}/ngircd.init.d ngircd
 }
 
 pkg_postinst() {
