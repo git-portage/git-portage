@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gettext/Attic/gettext-0.12.1-r2.ebuild,v 1.9 2004/10/17 05:15:49 hardave Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gettext/Attic/gettext-0.12.1-r2.ebuild,v 1.11 2004/10/28 15:57:16 vapier Exp $
 
-inherit eutils gnuconfig
+inherit eutils gnuconfig toolchain-funcs
 
 DESCRIPTION="GNU locale utilities"
 HOMEPAGE="http://www.gnu.org/software/gettext/gettext.html"
@@ -10,7 +10,7 @@ SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 ~ppc-macos s390 sparc x86"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 ppc-macos s390 sparc x86"
 IUSE="bootstrap emacs nls"
 
 DEPEND="virtual/libc"
@@ -45,7 +45,8 @@ src_compile() {
 	# need preloadable_libintl.so for new help2man, bug #40162.
 	# Also note that it only gets build with USE=nls ...
 	# Lastly, we need to build without --disable-shared ...
-	CXX=${CC} econf \
+	CXX=$(tc-getCC) \
+		econf \
 		--without-included-gettext \
 		${myconf} || die
 
