@@ -1,22 +1,22 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/ion2/Attic/ion2-20040211-r2.ebuild,v 1.8 2004/06/28 23:51:47 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/ion2/Attic/ion2-20040729.ebuild,v 1.1 2004/07/31 12:21:10 twp Exp $
 
 inherit eutils
 
 DESCRIPTION="A tiling tabbed window manager designed with keyboard users in mind"
 HOMEPAGE="http://www.iki.fi/tuomov/ion/"
-SRC_URI="http://modeemi.fi/~tuomov/dl/ion-2-20040207.tar.gz"
+SRC_URI="http://modeemi.fi/~tuomov/ion/dl/ion-2-${PV}.tar.gz"
 LICENSE="LGPL-2.1"
-SLOT="0"
-KEYWORDS="~alpha ~mips ppc ~sparc x86"
-IUSE="truetype xinerama"
+SLOT="2"
+KEYWORDS="~alpha ~mips ~ppc ~sparc ~x86"
+IUSE="xinerama"
 DEPEND="virtual/x11
 	app-misc/run-mailcap
-	>=dev-lang/lua-5.0.1_beta20031003
+	>=dev-lang/lua-5.0.2
 	>=sys-devel/libtool-1.4.3
-	>=sys-apps/sed-4"
-S=${WORKDIR}/ion-2-20040207
+	!<=x11-wm/ion2-20040211-r2"
+S=${WORKDIR}/ion-2-${PV}
 
 src_unpack() {
 
@@ -24,15 +24,7 @@ src_unpack() {
 
 	cd ${S}
 
-	epatch ${FILESDIR}/ion2-20040207-20040211.patch
-
-	if use truetype; then
-		mkdir xftde
-		cp de/{*.c,*.h,Makefile} xftde
-		( cd xftde && epatch ${FILESDIR}/xftde-20040207.patch )
-		sed -i modulelist.mk \
-			-e 's/^\(MODULE_LIST =\)/\1 xftde/g'
-	fi
+	epatch ${FILESDIR}/ion2-20040601-rename.patch
 
 }
 
@@ -43,6 +35,8 @@ src_compile() {
 	if has_version '>=x11-base/xfree-4.3.0'; then
 		myconf="${myconf} --disable-xfree86-textprop-bug-workaround"
 	fi
+
+	autoreconf
 
 	econf \
 		--sysconfdir=/etc/X11 \
@@ -58,29 +52,34 @@ src_install() {
 
 	make \
 		prefix=${D}/usr \
-		ETCDIR=${D}/etc/X11/ion \
-		SHAREDIR=${D}/usr/share/ion \
+		ETCDIR=${D}/etc/X11/ion2 \
+		SHAREDIR=${D}/usr/share/ion2 \
 		MANDIR=${D}/usr/share/man \
 		DOCDIR=${D}/usr/share/doc/${PF} \
 		install || die
 
+	mv ${D}/usr/bin/ion ${D}/usr/bin/ion2
+	mv ${D}/usr/bin/pwm ${D}/usr/bin/pwm2
+	mv ${D}/usr/share/man/man1/ion.1 ${D}/usr/share/man/man1/ion2.1
+	mv ${D}/usr/share/man/man1/pwm.1 ${D}/usr/share/man/man1/pwm2.1
+
 	prepalldocs
 
-	insinto /usr/include/ion
+	insinto /usr/include/ion2
 	doins *.h *.mk mkexports.lua
 	for i in de floatws ioncore ionws luaextl menu query; do
-		insinto /usr/include/ion/${i}
+		insinto /usr/include/ion2/${i}
 		doins ${i}/*.h
 	done
-	insinto /usr/include/ion/libtu
-	doins libtu/include/libtu/*
+	insinto /usr/include/ion2/libtu
+	doins libtu/*.h
 
-	echo -e "#!/bin/sh\n/usr/bin/ion" > ${T}/ion
-	echo -e "#!/bin/sh\n/usr/bin/pwm" > ${T}/pwm
+	echo -e "#!/bin/sh\n/usr/bin/ion2" > ${T}/ion2
+	echo -e "#!/bin/sh\n/usr/bin/pwm2" > ${T}/pwm2
 	exeinto /etc/X11/Sessions
-	doexe ${T}/ion ${T}/pwm
+	doexe ${T}/ion2 ${T}/pwm2
 
 	insinto /usr/share/xsessions
-	doins ${FILESDIR}/ion2.desktop
+	doins ${FILESDIR}/ion2.desktop ${FILESDIR}/pwm2.desktop
 
 }
