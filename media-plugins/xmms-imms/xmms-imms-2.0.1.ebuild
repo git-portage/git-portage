@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/xmms-imms/Attic/xmms-imms-1.2a.ebuild,v 1.7 2005/01/24 17:20:28 luckyduck Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/xmms-imms/Attic/xmms-imms-2.0.1.ebuild,v 1.1 2005/01/24 17:20:28 luckyduck Exp $
 
 IUSE=""
 
@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 
 RDEPEND="=dev-db/sqlite-3*
-	media-sound/xmms
+	>=media-sound/xmms-1.2.7
 	>=media-libs/taglib-1.1
 	>=dev-libs/libpcre-4.3
 	=sci-libs/fftw-3*
@@ -31,19 +31,16 @@ S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
-
 	cd ${S}
 
-	export WANT_AUTOCONF=2.5
-	autoheader || die
-	autoconf || die
+	epatch ${FILESDIR}/${PV}-gentoo.patch
 }
 
 src_install () {
-	dobin build/immsremote || die
+	dobin build/immsd || die
 	dobin build/immstool || die
 	dobin build/analyzer || die
 	exeinto "`xmms-config --general-plugin-dir`"
-	doexe build/libimms.so || die
+	doexe build/libxmmsimms.so || die
 	dodoc INSTALL LICENSE README
 }
