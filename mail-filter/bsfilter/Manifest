@@ -1,4 +1,6 @@
+MD5 e669d825d092f070df6f0ac956101bfe bsfilter-1.0.6.ebuild 726
 MD5 508adacb2e6532eaefa0f5d5f4a88923 bsfilter-1.0.5.ebuild 726
 MD5 7772631f7f614163f0d71230de40031b ChangeLog 950
 MD5 38f7e7e07cecf943cd078f4aef09fef1 metadata.xml 250
 MD5 49b61e234e0631408de7713528da9876 files/digest-bsfilter-1.0.5 63
+MD5 187f0dd05ffc7f3a8b91b53b7a8e4179 files/digest-bsfilter-1.0.6 63
