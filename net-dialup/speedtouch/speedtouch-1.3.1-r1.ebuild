@@ -1,10 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/speedtouch/Attic/speedtouch-1.2_beta2.ebuild,v 1.5 2004/06/24 22:32:55 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/speedtouch/Attic/speedtouch-1.3.1-r1.ebuild,v 1.1 2004/12/18 15:11:56 mrness Exp $
 
 inherit flag-o-matic
-filter-flags -mpowerpc-gfxopt -mpowerpc-gpopt
-
 
 MY_P=${P/_/-}
 S=${WORKDIR}/${MY_P}
@@ -12,48 +10,60 @@ DESCRIPTION="GPL Driver for the Alcatel Speedtouch USB under *nix"
 HOMEPAGE="http://speedtouch.sf.net/"
 SRC_URI="mirror://sourceforge/speedtouch/${MY_P}.tar.bz2"
 
-IUSE="static debug"
-
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~ppc alpha hppa amd64"
+KEYWORDS="alpha amd64 hppa ~ppc x86"
+IUSE="static debug"
 
 DEPEND=""
 RDEPEND=">=net-dialup/ppp-2.4.1"
 
-src_unpack() {
+pkg_unpack() {
 	unpack ${A}
-	cd ${S}
-	sed 's/^C$/#&/' < configure > configure.new
-	mv -f configure.new configure && chmod u+x configure
 
-
+	#Increase minlevel of reports in atm.c
+	#At least one of the reports could affect performance due to call frequency
+	sed -i -e 's/report(0/report(1/' src/atm.c
 }
 
 src_compile() {
-	local myconf
-
+	local myconf=
 	use debug && myconf="--enable-debug"
 	use static && myconf="${myconf} --enable-static"
 
-	econf 	--enable-syslog  \
+	filter-flags -mpowerpc-gfxopt -mpowerpc-gpopt
+	econf \
+		--enable-syslog \
 		${myconf} || die "./configure failed"
 
-	#sed '90,104d' < Makefile > Makefile.new
-	#mv --force Makefile.new Makefile
 	emake || die "make failed"
 }
 
-src_install () {
+src_install() {
 	einstall || die
 
+	# twp 2003-12-25 install *.html correctly
+	find ${D}/usr/share/doc/speedtouch/ -type f -name '*.html' | xargs dohtml
+	find ${D}/usr/share/doc/speedtouch/ -type f -name '*.html' | xargs rm
 	echo $(find ${D}/usr/share/doc/speedtouch/ -type f) | xargs dodoc
 	rm -rf ${D}/usr/share/doc/speedtouch/
 	dodoc AUTHORS COPYING ChangeLog INSTALL TODO VERSION
-	#	rm -r ${D}/etc/init.d/speedtouch
-	exeinto /etc/init.d ; newexe ${FILESDIR}/speedtouch.rc6 speedtouch
+
+	rm -rf ${D}/usr/bin
+	rm -rf ${D}/usr/share/man/man1
+
+	exeinto /etc/init.d ; newexe ${FILESDIR}/speedtouch.rc7 speedtouch
+
 	insinto /etc/conf.d ; newins ${FILESDIR}/speedtouch.confd speedtouch
+
 	insopts -m 600 ; insinto /etc/ppp/peers ; doins ${FILESDIR}/adsl.sample
+
+	dosbin doc-linux/adsl-conf-pppd
+
+	#allows hotplug to modprobe the speedtch module automatically
+	mv ${D}/etc/hotplug/usb/speedtouch.usermap ${D}/etc/hotplug/usb/speedtch.usermap
+	exeinto /etc/hotplug/usb ; newexe ${FILESDIR}/speedtch-hotplug speedtch
+	rm ${D}/etc/hotplug/usb/speedtouch
 }
 
 pkg_postinst() {
@@ -70,6 +80,10 @@ pkg_postinst() {
 	ewarn "edit and rename 'adsl.sample' to 'adsl' in /etc/ppp/peers/adsl and"
 	ewarn "bring up your adsl line using the /etc/init.d/speedtouch script"
 	echo ""
-	einfo "More info in the documentation in /usr/share/doc/${P}"
+	einfo "More info in the documentation in /usr/share/doc/${PF}"
+	echo ""
+	einfo "You need to pass -a /usr/share/speedtouch/boot.v123.bin to"
+	einfo "modem_run with this version. The URL for firmware is:"
+	einfo "http://www.speedtouchdsl.com/driver_upgrade_lx_3.0.1.2.htm"
 	echo ""
 }
