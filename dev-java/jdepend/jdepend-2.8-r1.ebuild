@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jdepend/Attic/jdepend-2.8.ebuild,v 1.1 2004/08/31 03:54:12 zx Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jdepend/Attic/jdepend-2.8-r1.ebuild,v 1.1 2004/09/10 19:48:25 axxo Exp $
 
 inherit java-pkg
 
@@ -13,7 +13,7 @@ KEYWORDS="~x86"
 IUSE="doc jikes"
 DEPEND=">=virtual/jdk-1.3
 	>=app-arch/unzip-5.50-r1
-	>=dev-java/ant-1.4
+	>=dev-java/ant-core-1.4
 	jikes? ( >=dev-java/jikes-1.17 )"
 RDEPEND=">=virtual/jdk-1.3"
 RESTRICT="nomirror"
@@ -39,8 +39,8 @@ src_install() {
 	java-pkg_dojar lib/jdepend.jar || die "Failed Installing"
 	dodoc LICENSE README
 
-	dodir /usr/share/ant/lib
-	dosym /usr/share/jdepend/lib/jdepend.jar /usr/share/ant/lib
+	dodir /usr/share/ant-core/lib
+	dosym /usr/share/jdepend/lib/jdepend.jar /usr/share/ant-core/lib
 
 	if use doc; then
 		dohtml docs/JDepend.html
