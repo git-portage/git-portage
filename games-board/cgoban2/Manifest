@@ -4,8 +4,10 @@ MD5 8ca068563edcc225d3d8829ff678e911 cgoban2-2.6.4.ebuild 788
 MD5 3f11aaf297b2fe67404a96cda13e9bfe metadata.xml 251
 MD5 705167f89662026415c1284b222f5895 cgoban2-2.6.1.ebuild 782
 MD5 440be0713092e632b6759ee8de45b312 cgoban2-2.6.3.ebuild 784
+MD5 8ca068563edcc225d3d8829ff678e911 cgoban2-2.6.5.ebuild 788
 MD5 00f7293cf49b7639625c74a3b6f0375a files/cgoban2 430
 MD5 e7df4260f4a67e33c27a38649627f548 files/digest-cgoban2-2.5.8 70
 MD5 33b017a72bc9fc48f533ab6002489a9f files/digest-cgoban2-2.6.1 70
 MD5 87bef4371032daa56454208008668f56 files/digest-cgoban2-2.6.3 71
 MD5 156e7d21c335233f08c214bdda716ce4 files/digest-cgoban2-2.6.4 71
+MD5 b14bfc627d748baaa037f0c1d330989c files/digest-cgoban2-2.6.5 71
