@@ -8,6 +8,7 @@
 ./app-admin/usbview/usbview-0.9.0.ebuild
 ./app-admin/webalizer/webalizer-1.30.04-r1.ebuild
 ./app-admin/yup/yup-0.6.5-r1.ebuild
+./app-arch/dump/dump-0.4.20_beta.ebuild
 ./app-arch/rpm/rpm-3.0.5.ebuild
 #./app-arch/rpm/rpm-4.0.ebuild
 ./app-arch/unzip/unzip-5.41-r1.ebuild
@@ -404,6 +405,7 @@
 ./sys-devel/perl/perl-5.6.0-r3.ebuild
 ./sys-devel/python-basic/python-basic-1.5.2-r2.ebuild
 ./sys-kernel/linux-UP-2.2.17/linux-UP-2.2.17-r3.ebuild
+#./sys-kernel/linux-UP-2.2.17/linux-UP-2.2.17-r4.ebuild
 #./sys-kernel/linux-UP-2.2.17/linux-UP-nfs3-2.2.17-r1.ebuild
 #./sys-kernel/linux-UP-2.4.0/linux-UP-2.4.0_rc9-r8.ebuild
 #./sys-kernel/linux-UP-2.4.0/linux-sources-2.4.0_rc10.ebuild

@@ -10,6 +10,10 @@
 	    are installed, and some speedups ]
 	- Update portage						(drobbins)
 	  [ pkgmerge now does pre/postinst ]
+	- New dev-lang/entity-pre-0.7.0.ebuild		(achim)
+	- Portage updates				(achim)
+	  [ New dependencies check funtion
+	    Added GENTOO_MIRRORS to make.default ]
 	- Update bind 8.2.2.5 -> 9.0.1			(achim)
 	  [ This version works with glibc-2.2 ]
 
