@@ -1,13 +1,13 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/qt-dcgui/Attic/qt-dcgui-0.2_beta1.ebuild,v 1.2 2002/11/18 12:49:16 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/qt-dcgui/Attic/qt-dcgui-0.2_beta4.ebuild,v 1.1 2002/12/01 05:27:00 vapier Exp $
 
 MY_P="${P/qt-/}"
 MY_P="${MY_P/_/}"
 S="${WORKDIR}/${MY_P}"
 DESCRIPTION="Qt based client for DirectConnect"
 HOMEPAGE="http://dc.ketelhot.de/"
-SRC_URI="http://dcgui.berlios.de/files/dcgui/unstable/src/0.2/${MY_P}.tar.bz2"
+SRC_URI="http://download.berlios.de/dcgui/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -19,7 +19,6 @@ DEPEND="=x11-libs/qt-3*
 
 src_compile() {
 	export CPPFLAGS="${CXXFLAGS} -I/usr/include/libxml2/libxml"
-
 	econf --with-libdc=/usr
 	make || die
 }
