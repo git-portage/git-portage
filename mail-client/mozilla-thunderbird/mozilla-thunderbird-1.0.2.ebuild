@@ -1,22 +1,22 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/mozilla-thunderbird/Attic/mozilla-thunderbird-0.8.ebuild,v 1.3 2005/03/23 15:40:55 brad Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/mozilla-thunderbird/Attic/mozilla-thunderbird-1.0.2.ebuild,v 1.1 2005/03/23 15:40:55 brad Exp $
 
-IUSE="crypt gtk2"
+IUSE="crypt"
 
 unset ALLOWED_FLAGS  # stupid extra-functions.sh ... bug 49179
-inherit flag-o-matic gcc eutils nsplugins mozilla mozilla-launcher makeedit
+inherit flag-o-matic gcc eutils nsplugins mozconfig mozilla-launcher makeedit
 
-EMVER="0.86.0"
-IPCVER="1.0.8"
+EMVER="0.90.2"
+IPCVER="1.1.2"
 
 DESCRIPTION="Thunderbird Mail Client"
 HOMEPAGE="http://www.mozilla.org/projects/thunderbird/"
-SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${PV}/thunderbird-source-${PV}.tar.bz2
+SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${PV}/source/thunderbird-${PV}-source.tar.bz2
 	 crypt? ( http://downloads.mozdev.org/enigmail/src/enigmail-${EMVER}.tar.gz
 	   		  http://downloads.mozdev.org/enigmail/src/ipc-${IPCVER}.tar.gz )"
 
-KEYWORDS="x86 ppc sparc alpha amd64 ia64"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~amd64 ~ia64"
 SLOT="0"
 LICENSE="MPL-1.1 NPL-1.1"
 
@@ -31,7 +31,7 @@ export MOZ_THUNDERBIRD=1
 
 src_unpack() {
 	unpack ${A} || die "unpack failed"
-	cd ${S} || die
+	cd ${S} || die "cd failed"
 
 	if [[ $(gcc-major-version) -eq 3 ]]; then
 		# ABI Patch for alpha/xpcom for gcc-3.x
@@ -40,34 +40,42 @@ src_unpack() {
 		fi
 	fi
 
+	# patch out ft caching code since the API changed between releases of
+	# freetype; this enables freetype-2.1.8+ compat.
+	# https://bugzilla.mozilla.org/show_bug.cgi?id=234035#c65
+	epatch ${FILESDIR}/mozilla-thunderbird-0.9-4ft2.patch
+
 	# Unpack the enigmail plugin
 	if use crypt; then
 		for x in ipc enigmail; do
-			mv ${WORKDIR}/${x} ${S}/extensions || die
-			cd ${S}/extensions/${x} || die
+			mv ${WORKDIR}/${x} ${S}/extensions || die "mv failed"
+			cd ${S}/extensions/${x} || die "cd failed"
 			makemake	# from mozilla.eclass
 		done
 	fi
 }
 
 src_compile() {
-	local myconf
-
 	####################################
 	#
-	# myconf, CFLAGS and CXXFLAGS setup
+	# mozconfig, CFLAGS and CXXFLAGS setup
 	#
 	####################################
 
-	# mozilla_conf comes from mozilla.eclass
-	# It sets up CFLAGS, CXXFLAGS and myconf
-	mozilla_conf
+	mozconfig_init
 
-	# --enable-single-profile is necessary for thunderbird-0.8
-	# http://bugzilla.mozilla.org/show_bug.cgi?id=258831
-	myconf="${myconf} \
-		--with-default-mozilla-five-home=/usr/lib/MozillaThunderbird \
-		--enable-single-profile"
+	# tb-specific settings
+	mozconfig_use_enable ldap
+	mozconfig_use_enable ldap ldap-experimental
+	mozconfig_annotate '' --with-default-mozilla-five-home=/usr/lib/MozillaThunderbird
+
+	# Finalize and report settings
+	mozconfig_final
+
+	# hardened GCC uses -fstack-protector-all by default, and this breaks
+	# firefox.
+	has_hardened && append-flags -fno-stack-protector-all
+	replace-flags -fstack-protector-all -fstack-protector
 
 	####################################
 	#
@@ -75,13 +83,13 @@ src_compile() {
 	#
 	####################################
 
-	econf ${myconf} || die
+	econf || die "econf failed"
 
 	# This removes extraneous CFLAGS from the Makefiles to reduce RAM
 	# requirements while compiling
 	edit_makefiles
 
-	emake MOZ_THUNDERBIRD=1 || die
+	emake MOZ_THUNDERBIRD=1 || die "emake failed"
 
 	# Build the enigmail plugin
 	if use crypt; then
@@ -140,9 +148,14 @@ pkg_postinst() {
 	env-update
 
 	# Register Components and Chrome
+	#
+	# Bug 67031: Set HOME=~root in case this is being emerged via sudo.
+	# Otherwise the following commands will create ~/.mozilla owned by root
+	# and 700 perms, which makes subsequent execution of firefox by user
+	# impossible.
 	einfo "Registering Components and Chrome..."
-	LD_LIBRARY_PATH=${ROOT}/usr/lib/MozillaThunderbird ${MOZILLA_FIVE_HOME}/regxpcom
-	LD_LIBRARY_PATH=${ROOT}/usr/lib/MozillaThunderbird ${MOZILLA_FIVE_HOME}/regchrome
+	HOME=~root LD_LIBRARY_PATH=/usr/lib/MozillaThunderbird ${MOZILLA_FIVE_HOME}/regxpcom
+	HOME=~root LD_LIBRARY_PATH=/usr/lib/MozillaThunderbird ${MOZILLA_FIVE_HOME}/regchrome
 
 	# Fix permissions of component registry
 	chmod 0644 ${MOZILLA_FIVE_HOME}/components/compreg.dat
