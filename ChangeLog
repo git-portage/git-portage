@@ -1,3 +1,18 @@
+date 21 Dec 2000
+
+upd net-misc/openssh-2.3.0_p1-r1 to 2.3.0_p1-r2
+drobbins
+/etc/pam.d/sshd was messed up and referred to a non-existent
+pam_chroot.so.  That line was removed for now.  I also added
+the --disable-lastlog option, and all is now OK with this 
+package.
+
+upd net-misc/rsync-2.4.6 to 2.4.6-r1
+drobbins
+Now properly looks in /etc/rsync rather than just /etc.  The
+--sysconfdir option didn't work as expected, but a little sed
+did the trick.
+
 date 20 Dec 2000
 
 new net-mail/postfix-20001217
