@@ -1,0 +1,6 @@
+MD5 dd3c6a395724d9c86160d72535f36e6b ChangeLog 5022
+MD5 d1aa6dfe8d08649f3916cd8c87f216c3 ncurses-5.3-r2.ebuild 2435
+MD5 f96d1b4b0bf94f1d38ce950df0efb37e files/ncurses-5.3-xterm.patch 1002
+MD5 cd8a694247cfd64ce864e99246a8d87f files/digest-ncurses-5.3-r1 64
+MD5 cd8a694247cfd64ce864e99246a8d87f files/digest-ncurses-5.3-r2 64
+MD5 fdef42c6fdd01e99c3e36b443e8a25c2 files/ncurses-5.2.20020511-gcc31.patch 703
