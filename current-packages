@@ -175,6 +175,7 @@
 ./media-libs/jpeg/jpeg-6b-r1.ebuild
 ./media-libs/libgd/libgd-1.8.3-r1.ebuild
 ./media-libs/libmikmod/libmikmod-3.1.9-r1.ebuild
+./media-libs/libmng/libmng-0.9.2.ebuild
 ./media-libs/libpng/libpng-1.0.8-r1.ebuild
 ./media-libs/libsdl/libsdl-1.1.4.ebuild
 ./media-libs/libungif/libungif-4.1.0_beta1-r1.ebuild
