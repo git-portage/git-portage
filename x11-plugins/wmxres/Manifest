@@ -1,0 +1,5 @@
+MD5 092a4963173e0ca3d62aab1f2b25356a wmxres-1.2.ebuild 786
+MD5 7faef3c2696850855d3c04cf2db18b0b files/wmxres-makefile.patch 445
+MD5 be65102309ba38b2fe3e2daab694b3af files/digest-wmxres-1.2 62
+MD5 ecbe1a6bd91322603485bc0ab1198599 files/wmxres.desktop 209
+MD5 19ac74b1720f8fc5c6678e4830b0b016 files/wmxres-debian-1.1-1.2.patch 1699
