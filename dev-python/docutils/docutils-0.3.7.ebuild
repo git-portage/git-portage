@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/docutils/Attic/docutils-0.3.5.ebuild,v 1.6 2005/03/14 19:38:08 pythonhead Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/docutils/Attic/docutils-0.3.7.ebuild,v 1.1 2005/03/14 19:38:08 pythonhead Exp $
 
 inherit distutils eutils
 
@@ -11,10 +11,9 @@ SRC_URI="mirror://sourceforge/docutils/${P}.tar.gz
 
 LICENSE="public-domain PYTHON BSD"
 SLOT="0"
-KEYWORDS="x86 ~ppc ~alpha ~sparc ppc-macos"
+KEYWORDS="~x86 ~ppc ~alpha ~sparc ~ppc-macos"
 IUSE="glep"
-
-DEPEND="<dev-lang/python-2.4"
+DEPEND=">=dev-lang/python-2.2"
 
 GLEP_SRC=${WORKDIR}/glep-${PV}
 
@@ -40,7 +39,13 @@ install_txt_doc() {
 	dodoc ${doc}
 }
 
+src_test() {
+	cd ${S}/test
+	./alltests.py || die "alltests.py failed"
+}
+
 src_install() {
+	cd ${S}
 	mydoc="MANIFEST.in *.txt"
 	distutils_src_install
 	# Tools
