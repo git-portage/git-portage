@@ -1,4 +1,6 @@
-MD5 318b13365f0ea276fd27abdb4122929f koma-script-20040111-r1.ebuild 952
 MD5 7a0b3d5de34166401071003725a285a5 ChangeLog 1223
+MD5 318b13365f0ea276fd27abdb4122929f koma-script-20040111-r1.ebuild 952
+MD5 cc750b4e0dce9f03fc62401af3aa526e koma-script-20040616.ebuild 880
 MD5 c472f5fd1646eb8bca71d8df5cb2bdcc metadata.xml 164
+MD5 92abb8e8494550a5097447f7e8b80da5 files/digest-koma-script-20040616 73
 MD5 8121160d3acbf984c28923bb5c8243c5 files/digest-koma-script-20040111-r1 73
