@@ -1,3 +1,10 @@
+date 27 Feb 2001
+
+new sys-kernel/linux-sources-2.4.2
+drobbins
+Kernel 2.4.2 with ReiserFS patches; 2.4.1-ac19 proved ugly
+for ReiserFS so hopefully this one will be better.
+
 date 22 Feb 2001
 
 upd sys-apps/portage-1.5-r5 to 1.5-r6
