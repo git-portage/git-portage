@@ -1,5 +1,4 @@
-./sys-apps/00baselayout/00baselayout-1.1-r1.ebuild
-./sys-apps/00initscripts/00initscripts-1.0-r1.ebuild
+./sys-apps/baselayout/baselayout-1.2.ebuild
 ./sys-apps/at/at-3.1.8-r1.ebuild
 ./sys-apps/bash/bash-2.03-r1.ebuild
 ./sys-apps/bzip2/bzip2-1.0.0-r1.ebuild
