@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/gimp/Attic/gimp-2.0_pre1.ebuild,v 1.3 2004/01/30 05:52:20 drobbins Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/gimp/Attic/gimp-2.0_pre3-r1.ebuild,v 1.1 2004/02/15 19:07:09 foser Exp $
 
 inherit debug flag-o-matic libtool
 
@@ -15,14 +15,9 @@ HOMEPAGE="http://www.gimp.org/"
 SLOT="2"
 LICENSE="GPL-2"
 KEYWORDS="~x86 ~ppc ~hppa ~sparc"
-IUSE="doc python aalib png jpeg tiff gtkhtml mmx sse X altivec"
-
-# protect against over optimisation (related to #21787)
-#replace-flags -Os -O2
-#MAKEOPTS="${MAKEOPTS} -j1"
+IUSE="doc python aalib png jpeg tiff wmf gimpprint gtkhtml mmx sse X altivec"
 
 # FIXME : some more things can be (local) USE flagged
-# FIXME : printing needs to be re-enabled
 
 RDEPEND=">=dev-libs/glib-2.2
 	>=x11-libs/gtk+-2.2.2
@@ -31,6 +26,8 @@ RDEPEND=">=dev-libs/glib-2.2
 	>=media-libs/libart_lgpl-2.3.8-r1
 	sys-libs/zlib
 
+	gimpprint? ( =media-gfx/gimp-print-4.2* )
+
 	gtkhtml? ( =gnome-extra/libgtkhtml-2* )
 
 	png? ( >=media-libs/libpng-1.2.1 )
@@ -38,9 +35,11 @@ RDEPEND=">=dev-libs/glib-2.2
 		media-libs/libexif )
 	tiff? ( >=media-libs/tiff-3.5.7 )
 
+	wmf? ( >=media-libs/libwmf-0.2.8 )
+
 	aalib?	( media-libs/aalib )
 	python?	( >=dev-lang/python-2.2
-		>=dev-python/pygtk-1.99.13 )
+		>=dev-python/pygtk-2 )
 
 	X? ( virtual/x11 )"
 
@@ -48,30 +47,20 @@ RDEPEND=">=dev-libs/glib-2.2
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.12.0
 	dev-util/intltool
-	>=sys-devel/autoconf-2.58
 	doc? ( >=dev-util/gtk-doc-1 )"
 #	sys-devel/gettext
 
-# Attention : libtool hack not needed anymore it seems (testing)
 src_unpack() {
 
 	unpack ${A}
+
 	cd ${S}
 	# Fix linking to older version of gimp if installed - this should
 	# void liquidx's hack, so it is removed.
-#	epatch ${FILESDIR}/ltmain_sh-1.5.0-fix-relink.patch
-	# note: this make elibtoolize do some weird things, so disabling - liquidx
-	# replace ltmain.sh from libtool 1.5a with libtool 1.4.x
-	#cd ${S}; aclocal; automake; libtoolize --force; autoconf
+	epatch ${FILESDIR}/ltmain_sh-1.5.0-fix-relink.patch
 
-	# fix problems with libtool-0.28 generated stuff
-	intltoolize --force
-
-	export WANT_AUTOMAKE=1.7
-	export WANT_AUTOCONF=2.5
-	aclocal || die
-	autoconf || die
-	automake -a || die
+	# gcc2 fixes (#41487)
+	epatch ${FILESDIR}/${P}-gcc_2.95.patch
 
 }
 
@@ -94,14 +83,14 @@ src_compile() {
 		`use_enable altivec` \
 		`use_enable doc gtk-doc` \
 		`use_enable python` \
+		`use_enable gimpprint print` \
 		`use_with X x` \
 		`use_with png libpng` \
 		`use_with jpeg libjpeg` \
 		`use_with jpeg libexif` \
 		`use_with tiff libtiff` \
 		`use_with aalib aa` \
-		--enable-debug \
-		--disable-print || die
+		--enable-debug || die
 
 	emake || die
 
@@ -128,7 +117,7 @@ pkg_postinst() {
 	ewarn "The development Gimp series have been reslotted to SLOT 2"
 	ewarn "To clean up old 1.3 versions use 'emerge -C =gimp-1.3* -vp'"
 	echo ""
-	ewarn "If you are upgrading from an earlier 1.3 release, please note that"
+	ewarn "If you are upgrading from an earlier 1.3/2.0_pre release, please note that"
 	ewarn "the gimprc and sessionrc file formats changed. We suggest you remove"
 	ewarn "your personal ~/.gimp-1.3 directory and do a fresh user installation."
 
