@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/development-sources/Attic/development-sources-2.6.8_rc1.ebuild,v 1.2 2004/07/15 03:47:05 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/development-sources/Attic/development-sources-2.6.8.ebuild,v 1.1 2004/08/14 13:53:49 spock Exp $
 
 K_NOUSENAME="yes"
 ETYPE="sources"
