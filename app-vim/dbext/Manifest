@@ -1,4 +1,6 @@
 MD5 0c3fae83e89d0cac499657edb7e2f47d ChangeLog 517
+MD5 b567ad75eee2d45e81e53a93d81a30fe dbext-2.11.ebuild 575
 MD5 74a2db9bddd1b2c40465d7b7446eb6a6 dbext-2.10.ebuild 572
 MD5 9771ca4ff90b56dddc4acfadc6f6a01e metadata.xml 250
 MD5 bf160f2be3aac67bb3b50bd7907e4c6c files/digest-dbext-2.10 62
+MD5 130c39285d9d2190f22a2862ed1dfcf3 files/digest-dbext-2.11 62
