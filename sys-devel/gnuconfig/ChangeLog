@@ -1,6 +1,6 @@
 # ChangeLog for sys-devel/gnuconfig
 # Copyright 2000-2003 Gentoo Technologies, Inc.; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gnuconfig/ChangeLog,v 1.2 2003/07/18 07:45:05 lu_zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gnuconfig/ChangeLog,v 1.2.2.1 2003/07/26 08:34:34 avenj Exp $
 
 
   18 Jul 2003; Luca Barbato <lu_zero@gentoo.org> gnuconfig-20030708.ebuild:
