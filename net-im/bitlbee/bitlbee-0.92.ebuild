@@ -1,20 +1,22 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/bitlbee/Attic/bitlbee-0.84.ebuild,v 1.8 2005/02/27 16:13:11 weeve Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/bitlbee/Attic/bitlbee-0.92.ebuild,v 1.1 2005/02/27 16:13:11 weeve Exp $
 
 inherit eutils gcc
 
 DESCRIPTION="irc to IM gateway that support multiple IM protocols"
-HOMEPAGE="http://www.bitlbee.org"
+HOMEPAGE="http://www.bitlbee.org/"
 SRC_URI="http://get.bitlbee.org/src/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 sparc alpha ia64"
-IUSE="debug jabber msn oscar yahoo"
+KEYWORDS="x86 ~ppc sparc ~alpha ~ia64 ~amd64"
+IUSE="debug jabber msn oscar yahoo flood ssl"
 
 DEPEND="virtual/libc
-	msn? ( net-libs/gnutls )"
+	>=dev-libs/glib-2.0
+	msn? ( net-libs/gnutls )
+	jabber? ( ssl? ( net-libs/gnutls ) )"
 
 no_flags_die() {
 	eerror ""
@@ -38,20 +40,29 @@ src_unpack() {
 	unpack ${P}.tar.gz
 
 	# Patch the default xinetd file to add/adjust values to Gentoo defaults
-	cd ${S}/doc
-	epatch ${FILESDIR}/${PN}-0.80-xinetd.patch
+	cd ${S}/doc && epatch ${FILESDIR}/${PN}-0.80-xinetd.patch
+	cd ${S} && epatch ${FILESDIR}/${PN}-gentoohack.patch
 }
 
 src_compile() {
 	# setup useflags
 	local myconf
 	use debug && myconf="${myconf} --debug=1"
-	use msn || myconf="${myconf} --msn=0"
+	use msn || myconf="${myconf} --msn=0 "
 	use jabber || myconf="${myconf} --jabber=0"
 	use oscar || myconf="${myconf} --oscar=0"
 	use yahoo || myconf="${myconf} --yahoo=0"
+	use flood && myconf="${myconf} --flood=1"
 
-	econf --datadir=/usr/share/bitlbee --etcdir=/etc/bitlbee ${myconf} || die "econf failed"
+	if ( ( use jabber && use ssl ) || use msn ); then
+		myconf="${myconf} --ssl=gnutls"
+	else
+		myconf="${myconf} --ssl=bogus"
+	fi
+
+	econf --datadir=/usr/share/bitlbee --etcdir=/etc/bitlbee ${myconf} \
+		|| die "econf failed"
+
 	emake || die "make failed"
 
 	# make bitlbeed forking server
@@ -63,13 +74,18 @@ src_install() {
 	dodir /var/lib/bitlbee
 	make install DESTDIR=${D} || die "install failed"
 	make install-etc DESTDIR=${D} || die "install failed"
+	make install-doc DESTDIR=${D} || die "install failed"
 	keepdir /var/lib/bitlbee
 
-	dodoc doc/{AUTHORS,CHANGES,CREDITS,FAQ,README,TODO}
+	dodoc doc/{AUTHORS,CHANGES,CREDITS,FAQ,README,TODO,user-guide.txt}
 	dohtml -A sgml doc/*.sgml
-	doman doc/bitlbee.8
+	dohtml -A xml doc/*.xml
+	dohtml -A xsl doc/*.xsl
+	dohtml doc/*.html
 
-	dobin utils/bitlbeed utils/create_nicksfile.pl
+	doman doc/bitlbee.8 doc/bitlbee.conf.5
+
+	dobin utils/bitlbeed
 
 	insinto /etc/xinetd.d
 	newins doc/bitlbee.xinetd bitlbee
@@ -83,9 +99,17 @@ src_install() {
 	dodir /var/run/bitlbeed
 	keepdir /var/run/bitlbeed
 
+	dodir /usr/share/bitlbee
+	cp ${S}/utils/* ${D}/usr/share/bitlbee
+	rm ${D}/usr/share/bitlbee/bitlbeed*
+
 }
 
 pkg_postinst() {
 	chown nobody:nobody ${ROOT}/var/lib/bitlbee
 	chmod 700 ${ROOT}/var/lib/bitlbee
+	einfo "The utils included in bitlbee (other than bitlbeed) are now"
+	einfo "located in /usr/share/bitlbee"
+	einfo
+	einfo "NOTE: The irssi script is no longer provided by bitlbee."
 }
