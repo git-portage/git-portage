@@ -3,9 +3,9 @@ MD5 15220afae13bf7204a58dc66d2585bad qingy-0.2.2.ebuild 1056
 MD5 ad3c5bc952e2e73a5a743fef2bc858c1 qingy-0.3.0.ebuild 1296
 MD5 440526305a15f00147a1f9790bd54bf8 qingy-0.4.0.ebuild 1926
 MD5 4e93288abbe186fcd024d7fa3f5ce32c qingy-0.2.1.ebuild 1055
-MD5 232f6028cd2fd66ac02758ed103000f9 qingy-0.5.0.ebuild 2022
+MD5 5105c870a917d5bc28786d17ce64925a qingy-0.5.0.ebuild 2116
 MD5 506bd9f0af3afe8b8dcbee66ac6c58b2 qingy-0.2.3.ebuild 1085
-MD5 3798831c0a22b78a3d2c1d35373541d1 ChangeLog 2018
+MD5 1f3c41cdc932d5efba71416e166b1576 ChangeLog 2018
 MD5 40051d4be23df0dc23c2dadbaa168415 metadata.xml 258
 MD5 d2c2a387643e5c0930982bbc58adb529 files/digest-qingy-0.2.1 64
 MD5 eea835254d6473eb82299eca77e9f219 files/digest-qingy-0.2.2 64
