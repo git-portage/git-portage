@@ -262,7 +262,7 @@
 ./net-misc/sslwrap/sslwrap-2.0.5-r1.ebuild
 ./net-misc/wget/wget-1.5.3-r1.ebuild
 ./net-misc/whois/whois-4.5.0-r1.ebuild
-./net-nds/openldap/openldap-2.0.1.ebuild
+./net-nds/openldap/openldap-1.2.11-r1.ebuild
 ./net-nds/portmap/portmap-5b-r1.ebuild
 ./net-nds/yp-tools/yp-tools-2.4-r1.ebuild
 ./net-nds/ypbind/ypbind-1.6-r1.ebuild
