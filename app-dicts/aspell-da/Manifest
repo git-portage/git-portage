@@ -6,8 +6,8 @@ MD5 1c16ea7803fd3cac2c4122d86ff556c8 aspell-da-1.4.39.ebuild 399
 MD5 623012e383f36a2b67777fbb72736e71 aspell-da-1.4.41.ebuild 399
 MD5 d0f2a3adf7551da666e9ed4e3e449c64 aspell-da-1.4.45.ebuild 399
 MD5 0b0c0bfe7895573fd0347d33cbbea7a5 aspell-da-1.4.43.ebuild 399
-MD5 4717e1b54063640cc9d96d41a710cfb8 ChangeLog 2732
-MD5 d0f2a3adf7551da666e9ed4e3e449c64 aspell-da-1.4.46.ebuild 399
+MD5 d17b1987c1bd1d97afb320faf413adcd ChangeLog 2725
+MD5 c6c2b983fa53b35cbcf3e4b9384c0592 aspell-da-1.4.46.ebuild 392
 MD5 b7eaa6ce0597216371ce88c3f4e46500 aspell-da-0.50.2.ebuild 288
 MD5 7668cd8a2bebd975170a0b8100566742 files/digest-aspell-da-0.50.2 69
 MD5 e346543c6832cda49bd5197d56311d9b files/digest-aspell-da-1.4.42 72
