@@ -1,5 +1,5 @@
 # Distributed under the terms of the GNU General Public License v2 
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.49_pre14.ebuild,v 1.1 2003/07/24 09:11:09 carpaski Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.49_pre14.ebuild,v 1.1.2.1 2003/07/25 20:41:04 avenj Exp $
 
 IUSE="build"
 
