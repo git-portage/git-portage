@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/guarddog/Attic/guarddog-2.3.2.ebuild,v 1.1 2004/10/11 16:16:04 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/guarddog/Attic/guarddog-2.4.0.ebuild,v 1.1 2004/12/17 22:36:32 carlo Exp $
 
 inherit kde
 
