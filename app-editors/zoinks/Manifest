@@ -1,0 +1,5 @@
+MD5 622720c5c5e309d4457ff037f8a4175f metadata.xml 222
+MD5 b36526257f8436e9aa5763ccad473e6f ChangeLog 1308
+MD5 b7146b095beaa6dd5224940438a6774a zoinks-0.3.8-r1.ebuild 828
+MD5 cb151c338962b02771f14ab6cd7cfda6 files/xorg-library-configure.patch 296
+MD5 1af095ae3adb70486d47e435646e985a files/digest-zoinks-0.3.8-r1 64
