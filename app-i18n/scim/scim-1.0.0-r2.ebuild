@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/scim/Attic/scim-1.0.0-r1.ebuild,v 1.1 2004/09/08 15:25:24 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/scim/Attic/scim-1.0.0-r2.ebuild,v 1.1 2004/09/09 03:50:34 usata Exp $
 
 inherit gnome2 eutils
 
@@ -39,7 +39,7 @@ SCROLLKEEPER_UPDATE="0"
 USE_DESTDIR="1"
 
 has_gtk() {
-	if has_version '>=x11-libs/gtk-2' ; then
+	if has_version '>=x11-libs/gtk+-2' ; then
 		true
 	else
 		false
