@@ -1,4 +1,4 @@
-MD5 cdf8678d5a96edd234ed3be61e550c49 ChangeLog 8053
+MD5 8daabc7d93cabe57c571894bce5b1af2 ChangeLog 8053
 MD5 a0fb02c0fae4db3b42655b4ef3107409 automake-1.6.1-r6.ebuild 7888
 MD5 f312e2d0bb13bdd8fa94895bf1983a24 automake-1.6.3.ebuild 8622
 MD5 601b7353b670e74b71861fece6858537 automake-1.7.2.ebuild 10522
@@ -7,7 +7,7 @@ MD5 7f1beee0d0dc42c63be04f4d3e9b1e8e automake-1.7.7.ebuild 10551
 MD5 d5968b682665a6c988cfe2ba210dad61 automake-1.7.8.ebuild 10557
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 1ef60e39199a988af88594a0ace79dcc automake-1.8.2.ebuild 12393
-MD5 13a3c431bbc7972fe4f4f3dfb4a2f68c automake-1.8.3.ebuild 12402
+MD5 3ba66da7d39aca8dc80cadb8fe0165c0 automake-1.8.3.ebuild 12402
 MD5 0aceb83a953ea5fb93e7dfbca4055e07 files/am-wrapper.pl-1.5 1599
 MD5 50b9b3413db5942659f7ec0bf5fc1cb5 files/am-wrapper.pl-1.6 2735
 MD5 d17e61bff6e2fcbcc019892df9504afd files/am-wrapper.pl-1.7 5233
