@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtkglext/Attic/gtkglext-0.7.1.ebuild,v 1.3 2003/05/05 11:57:49 liquidx Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtkglext/Attic/gtkglext-1.0.1.ebuild,v 1.1 2003/07/28 11:16:32 foser Exp $
 
 inherit gnome2
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://gtkglext.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
-KEYWORDS="x86 ~sparc"
+KEYWORDS="~x86 ~sparc"
 
 RDEPEND=">=dev-libs/glib-2
 	>=x11-libs/gtk+-2
@@ -24,7 +24,6 @@ DEPEND="${DEPEND}
 	doc? ( >=dev-util/gtk-doc-0.10 )"
 
 DOCS="AUTHORS COPYING* ChangeLog* INSTALL NEWS* README* TODO"
-
 
 # gtkglext doesn't build with some (faulty) nvidia drivers headers
 # this makes it always switch to xfree during install
