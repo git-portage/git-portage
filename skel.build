@@ -1,19 +1,20 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author First Last <your email>
-# $Header: /var/cvsroot/gentoo-x86/Attic/skel.build,v 1.6 2001/08/19 00:26:21 pete Exp $
+# $Header: /var/cvsroot/gentoo-x86/Attic/skel.build,v 1.7 2001/08/25 21:15:08 chadh Exp $
 
-#Remeber to add the proper Author line, above.  Don't worry about the fourth line;
-#it'll get automatically fixed when the ebuild is checked in
+#Remeber to add the proper Author line, above.  Don't worry about the
+# fourth line; it'll get automatically fixed when the ebuild is checked in
 
-#Source directory; the dir where the sources can be found (automatically unpacked)
-#inside ${WORKDIR}
+#Source directory; the dir where the sources can be found (automatically
+# unpacked) inside ${WORKDIR}
 S=${WORKDIR}/${P}
 
 #Short one-line description
 DESCRIPTION="This is a sample skeleton ebuild file"
 
-#Point to any required sources; these will be automatically downloaded by Portage
+#Point to any required sources; these will be automatically downloaded
+# by Portage
 SRC_URI="ftp://foo.bar.com/${P}.tar.gz"
 
 #Homepage, not used by Portage directly but handy for developer reference
@@ -26,17 +27,20 @@ DEPEND=""
 #RDEPEND=""
 
 src_compile() {
-    #the "try" command will stop the build process if the specified command fails.  Prefix critical
+    #the "try" command will stop the build process if the specified
+    #command fails.  Prefix critical
 	#commands with "try"
 	./configure --infodir=/usr/share/info --mandir=/usr/share/man --prefix=/usr --host=${CHOST} || die
-    #Note the use of --infodir and --mandir, above.  This is to make this package FHS 2.2-compliant
+    #Note the use of --infodir and --mandir, above.  This is to make
+    # this package FHS 2.2-compliant
 	#(/usr/share is used for info and man now).
 	
 	emake || die
-	#emake (previously known as pmake) is a script that calls the standard GNU make with parallel
-	#building options for speedier builds on SMP systems.  Use emake first; it might not work.  If
-	#not, then replace the line above with:
-	
+	#emake (previously known as pmake) is a script that calls the standard
+	# GNU make with parallel
+	#building options for speedier builds on SMP systems.  Use emake first;
+	# it might not work.  If not, then replace the line above with:
+
 	#make || die
 }
 
