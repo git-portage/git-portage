@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/gpdf/Attic/gpdf-2.8.0.ebuild,v 1.2 2004/10/25 07:32:56 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/gpdf/Attic/gpdf-2.8.0-r1.ebuild,v 1.1 2004/10/25 15:25:08 foser Exp $
 
 inherit gnome2 flag-o-matic
 
@@ -30,3 +30,13 @@ DEPEND="${RDEPEND}
 PROVIDE="virtual/pdfviewer"
 
 DOCS="AUTHORS CHANGES ChangeLog COPYING INSTALL NEWS README*"
+
+src_unpack() {
+
+	unpack ${A}
+
+	cd ${S}
+	# fix security vulnerability (#68571)
+	epatch ${FILESDIR}/${PN}-xpdf_3_CAN-2004-0889.patch
+
+}
