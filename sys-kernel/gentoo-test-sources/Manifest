@@ -1,3 +1,6 @@
+MD5 ab74042b68aea62e964c4768bcb76127 gentoo-test-sources-2.6.2-r1.ebuild 1047
+MD5 23de82afd3793e6fecc2b6a9405d2cbc gentoo-test-sources-2.4.22-r3.ebuild 1008
 MD5 e584de75b8b093c61965ab021178981d ChangeLog 1563
 MD5 1b80ca9e6de4c327e48871e1c446e54a metadata.xml 402
-MD5 e637c6fa41097ea2c4693d0766f2e1c5 files/do_brk_fix.patch 242
+MD5 b8788137935f835870be48801f01225b files/digest-gentoo-test-sources-2.4.22-r3 152
+MD5 f6e9c2031ae54360cabb5d8670ce2eaf files/digest-gentoo-test-sources-2.6.2-r1 129
