@@ -3,8 +3,8 @@ MD5 f867f2455113575b579617bb9c5be9d5 p7zip-4.13.ebuild 914
 MD5 538260f25dfddfb5989685effc6a926c p7zip-4.10.ebuild 675
 MD5 b24ad5bd1bc43cfc963731afcdbb72de p7zip-0.91.ebuild 733
 MD5 6d9e51eb456f2b2fa1e3993e5bbb9ffa p7zip-4.12.ebuild 913
-MD5 de84a59750de7c51abb6fecc26622081 p7zip-4.14.ebuild 914
-MD5 ceaf2a466da21e23750faee6accccc2c ChangeLog 1196
+MD5 33dcf46bd3e52ebce6ae102bf8dd73be p7zip-4.14.ebuild 915
+MD5 94bac1ffc3c8b837031498e4530d8429 ChangeLog 1334
 MD5 66daf69a44c4ec8add00f66d8ee0661d metadata.xml 221
 MD5 b536ab563901360bd65cae18d088ee5e files/7z 42
 MD5 51ff32f9dd6e8763d9376801995bdc8c files/p7zip-4.10_x86_dynamic.patch 276
