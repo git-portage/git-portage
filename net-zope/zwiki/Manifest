@@ -1,3 +1,4 @@
+MD5 d4e8b50791862e8b6e7a0ff37ef8ff27 zwiki-0.37.ebuild 488
 MD5 dbb7db1661836dc8358db475bf1fa601 zwiki-0.36.2.ebuild 486
 MD5 e2a502e499d28a3e6588daa6f08be5fe zwiki-0.22.0.ebuild 538
 MD5 e4c9c570ba442142c2ee19c4a5e6e0d6 zwiki-0.36.2-r1.ebuild 584
@@ -5,6 +6,7 @@ MD5 e85a7aea5b84f37d7df707165be1a191 zwiki-0.34.0.ebuild 483
 MD5 dbcd5e6ec8ea9a348c6b1185af747d6e ChangeLog 2135
 MD5 7890d88c5c6d189fbe6b187a3ebb6532 metadata.xml 161
 MD5 5d791e4f82204b1751573082d6a9e948 files/zwiki-0.36.2-r1_xss.patch 411
+MD5 c5e330ddedbbbd8b06f8d6176cd3f786 files/digest-zwiki-0.37 61
 MD5 d7ce8db3eeb8d6d5a8726ca5ac0b4e71 files/digest-zwiki-0.22.0 61
 MD5 f398443ae6d299e3b39e5b02f184f5cf files/digest-zwiki-0.34.0 61
 MD5 3077f48eea50c5e8420c3a72377845e2 files/digest-zwiki-0.36.2 61
