@@ -11,7 +11,7 @@
 ./app-admin/usbview/usbview-0.9.0.ebuild
 ./app-admin/webalizer/webalizer-1.30.04-r1.ebuild
 ./app-admin/yup/yup-0.6.5-r2.ebuild
-./app-arch/dump/dump-0.4.20_beta-r1.ebuild
+./app-arch/dump/dump-0.4.21.ebuild
 ./app-arch/rpm/rpm-3.0.5.ebuild
 #./app-arch/rpm/rpm-4.0.ebuild
 ./app-arch/unzip/unzip-5.41-r1.ebuild
