@@ -1,0 +1,6 @@
+MD5 695f87af33f5e94f4bcd443603171a3e spawn-fcgi-1.1.0.ebuild 958
+MD5 013a7ffad6c74d6060ef160b4b6fdd89 ChangeLog 119
+MD5 3d182d43f7f0341a9a42f96694f04e72 metadata.xml 224
+MD5 177bc4801d074bf86a89089bf4447fc0 files/digest-spawn-fcgi-1.1.0 67
+MD5 d5149937be1268e981e3dad0b49b9531 files/spawn-fcgi-1.1.0.conf 978
+MD5 5f9f2fcc201094eade1670f8c620be06 files/spawn-fcgi-1.1.0.initd 968
