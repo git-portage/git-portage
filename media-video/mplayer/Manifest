@@ -1,4 +1,4 @@
-MD5 c225dfd6e7f9970287df73512ef9ec43 ChangeLog 29007
+MD5 a61fae0840c188f678be5d9db8afbbdf ChangeLog 29007
 MD5 9ef4af14dad87b03fde8e43f19e08d26 metadata.xml 225
 MD5 b813a65769af5d2a2ca1ceba1347974d mplayer-0.92-r1.ebuild 11511
 MD5 7eeb1235c1263ecb110925e53de1eb06 mplayer-1.0_pre2-r1.ebuild 11375
@@ -8,7 +8,7 @@ MD5 5d11f22039a718f19a725f676e614670 mplayer-1.0_pre3-r5.ebuild 11473
 MD5 1c2c6d32766ce3bf0974895533252491 mplayer-1.0_pre4-r1.ebuild 11659
 MD5 fbdd96b2a3f0f78bdc8cbded3bb3927b mplayer-1.0_pre4-r2.ebuild 11948
 MD5 6b9e16c4f08ac48748812909ed431f31 mplayer-1.0_pre4-r3.ebuild 13034
-MD5 2a73b983d20e123c25198bc24c82d9e5 mplayer-1.0_pre4-r5.ebuild 13399
+MD5 8ed989ffc5161e49095f6f977fec6a7b mplayer-1.0_pre4-r5.ebuild 13407
 MD5 071a354aa3c0e9290b6dcfc8c3621d87 mplayer-1.0_pre4.ebuild 11319
 MD5 7a9a4dc1f6172ff55b3ed5bd975b0286 mplayer-1.0_pre5.ebuild 13255
 MD5 d13f33f9022f7abccfe9b14f96531057 mplayer-1.0_pre4-r4.ebuild 13157
