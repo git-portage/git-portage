@@ -2,7 +2,9 @@ MD5 1d9264ba245dfa11a1d32a0fc1a820a3 ChangeLog 1501
 MD5 e92a48548554c80cf90e18df17ff6a82 metadata.xml 156
 MD5 193ef7ddcc30bceda5d901f5f353e212 skim-0.9.6.ebuild 1265
 MD5 3708766ade4d61e9eadeb22ec8a4deb0 skim-1.0.0.ebuild 1328
+MD5 3708766ade4d61e9eadeb22ec8a4deb0 skim-1.0.1.ebuild 1328
 MD5 5575ba4576a2b3351a9fe1161dbdeb1c skim-0.9.7.ebuild 1267
 MD5 91b177159a56c3572608b4b7eacd1ce6 files/digest-skim-0.9.6 62
 MD5 be6da613ad5f0e59b2f32bfb7728ae12 files/digest-skim-0.9.7 62
 MD5 230e4770077b6347bc5339a701cee289 files/digest-skim-1.0.0 64
+MD5 5a8896aea52f82362187060edb3507b8 files/digest-skim-1.0.1 64
