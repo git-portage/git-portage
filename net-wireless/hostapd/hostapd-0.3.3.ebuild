@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/hostapd/Attic/hostapd-0.3.1.ebuild,v 1.2 2005/01/03 11:06:53 brix Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/hostapd/Attic/hostapd-0.3.3.ebuild,v 1.1 2005/01/03 11:06:53 brix Exp $
 
 inherit toolchain-funcs
 
@@ -15,10 +15,10 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~ppc"
 
-IUSE=""
+IUSE="ssl"
 
-RDEPEND=">=net-wireless/hostap-driver-0.3.0"
-DEPEND="virtual/libc"
+DEPEND=">=net-wireless/hostap-driver-0.3.0
+		ssl? ( dev-libs/openssl )"
 
 src_unpack() {
 	local CONFIG=${S}/.config
@@ -29,11 +29,22 @@ src_unpack() {
 	echo "CC = $(tc-getCC)" > ${CONFIG}
 
 	# authentication methods
-	echo "CONFIG_IAPP=y"        >> ${CONFIG}
-	echo "CONFIG_RSN_PREAUTH=y" >> ${CONFIG}
-	echo "CONFIG_EAP=y"         >> ${CONFIG}
-	echo "CONFIG_EAP_MD5=y"     >> ${CONFIG}
-	echo "CONFIG_PKCS12=y"      >> ${CONFIG}
+	echo "CONFIG_EAP=y"           >> ${CONFIG}
+	echo "CONFIG_EAP_MD5=y"       >> ${CONFIG}
+	echo "CONFIG_EAP_GTC=y"       >> ${CONFIG}
+	echo "CONFIG_IAPP=y"          >> ${CONFIG}
+	echo "CONFIG_PKCS12=y"        >> ${CONFIG}
+	echo "CONFIG_RADIUS_SERVER=y" >> ${CONFIG}
+	echo "CONFIG_RSN_PREAUTH=y"   >> ${CONFIG}
+	echo "CONFIG_EAP_SIM=y"       >> ${CONFIG}
+
+	if use ssl; then
+		# SSL authentication methods
+		echo "CONFIG_EAP_MSCHAPV2=y" >> ${CONFIG}
+		echo "CONFIG_EAP_PEAP=y"     >> ${CONFIG}
+		echo "CONFIG_EAP_TLS=y"      >> ${CONFIG}
+		echo "CONFIG_EAP_TTLS=y"     >> ${CONFIG}
+	fi
 
 	# Linux specific drivers
 	echo "CONFIG_DRIVER_HOSTAP=y"  >> ${CONFIG}
