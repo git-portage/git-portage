@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: System Team <system@gentoo.org>
 # Author: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/gpm/Attic/gpm-1.19.3-r4.ebuild,v 1.1 2001/08/24 04:35:16 chadh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/gpm/Attic/gpm-1.19.3-r4.ebuild,v 1.2 2001/09/08 09:19:39 woodchip Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Console-based mouse driver"
@@ -51,5 +51,5 @@ src_install() {
 	doins gpm-root.conf
 
 	exeinto /etc/init.d
-	newexe ${FILESDIR}/${PN}-${PVR} ${PN}
+	newexe ${FILESDIR}/gpm.rc6 gpm
 }
