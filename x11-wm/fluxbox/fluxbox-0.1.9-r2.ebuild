@@ -1,13 +1,13 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# Maintainer: Karl Trygve Kalleberg <karltk@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.1.8-r2.ebuild,v 1.1 2002/05/14 20:34:10 g2boojum Exp $
+# Distributed under the terms of the GNU General Public License, v2
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.1.9-r2.ebuild,v 1.1 2002/07/01 10:07:34 seemant Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Window manager based on BlackBox"
 SRC_URI="http://download.sourceforge.net/${PN}/${P}.tar.gz
-		 http://fluxbox.sourceforge.net/download/patches/${P}-bugfix1.patch
-		 http://fluxbox.sourceforge.net/download/patches/${P}-bugfix2.patch"
+	http://fluxbox.sourceforge.net/download/patches/${P}-bugfix2.patch
+	truetype? ( http://www.oberdorf.org/oly/Computers/OlyWare/FluxBoxAA/${P}-oly-allinone.patch.bz2 )"
+
 HOMEPAGE="http://fluxbox.sf.net"
 
 DEPEND="virtual/x11"
@@ -15,14 +15,18 @@ DEPEND="virtual/x11"
 RDEPEND="${DEPEND}
 	nls? ( sys-devel/gettext )"
 
+PROVIDE="virtual/blackbox"
+LICENSE="GPL-2"
+SLOT=""
+
 src_unpack() {
 	unpack ${P}.tar.gz
 	cd ${S}
-	patch -p1 < ${DISTDIR}/${P}-bugfix1.patch || die
 	patch -p1 < ${DISTDIR}/${P}-bugfix2.patch || die
-}
 
-PROVIDE="virtual/blackbox"
+	use truetype && \
+		bzcat ${DISTDIR}/${P}-oly-allinone.patch.bz2 | patch -p1
+}
 
 src_compile() {
 	local myconf
@@ -38,7 +42,11 @@ src_compile() {
 	use gnome \
 		&& myconf="${myconf} --enable-gnome" \
 		|| myconf="${myconf} --disable-gnome"
-	 
+
+	use truetype \
+		&& myconf="${myconf} --enable-antialiasing" \
+		|| myconf="${myconf} --disable-antialiasing"
+
 	econf ${myconf} || die
 
 	emake || die
@@ -59,5 +67,14 @@ src_install () {
 
 	dodir /etc/X11/Sessions
 	echo "/usr/bin/fluxbox" > ${D}/etc/X11/Sessions/fluxbox
-	chmod +x ${D}/etc/X11/Sessions/fluxbox
+	fperm +x /etc/X11/Sessions/fluxbox
+}
+
+
+pkg_postinst() {
+
+	use truetype && ( \
+		einfo "To actually enable anti-aliasing in fluxbox, you must call"
+		einfo "it using: fluxbox -antialias"
+	)
 }
