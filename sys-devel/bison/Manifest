@@ -1,5 +1,5 @@
-MD5 8a80beaac760e397aed8da0bafb6ff80 ChangeLog 4850
-MD5 7f886165ad12a4ce5fae849f75e1e728 bison-1.875d.ebuild 1825
+MD5 729ba6b13dded31d0556eb2baeb8680e ChangeLog 5010
+MD5 01269b6b83b16b7e7f275b4bfe57abec bison-1.875d.ebuild 1780
 MD5 12f293970f7479a6607502571bd21904 bison-1.875.ebuild 1799
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 61b224a9eaf1ae7f77c2d1456d8fda87 files/bison-1.32-extfix.patch 1170
