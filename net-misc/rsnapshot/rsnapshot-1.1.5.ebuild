@@ -1,9 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/rsnapshot/Attic/rsnapshot-1.1.2.ebuild,v 1.3 2004/06/25 00:09:16 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/rsnapshot/Attic/rsnapshot-1.1.5.ebuild,v 1.1 2004/06/28 09:12:58 kloeri Exp $
 
 inherit eutils
-
 
 DESCRIPTION="rsnapshot is a filesystem backup utility based on rsync."
 HOMEPAGE="http://www.rsnapshot.org"
