@@ -1,14 +1,4 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 6afb4086fa595a6054fd611736697a4a dbunit-bin-2.0.ebuild 708
-MD5 9a88130e61a37d98c2f704d42e474ea1 ChangeLog 757
+MD5 ca96211bfe3f743b7bce07eeb44bdd0d dbunit-bin-2.0.ebuild 741
+MD5 c76a41bc23c59f49e9a7e4cedc0a9930 ChangeLog 843
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
 MD5 349aca3da8cb283fb455f576a44369b0 files/digest-dbunit-bin-2.0 60
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.4 (GNU/Linux)
-
-iD8DBQFBCqSi/rLF9B432nYRAtpdAKChld8eMjbiH+LzuHjmaFjKVyfFZwCglLeY
-sug5Pm2T1XEM0M4fsMpenng=
-=bQLq
------END PGP SIGNATURE-----
