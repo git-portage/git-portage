@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/openmosix-sources/Attic/openmosix-sources-2.4.24-r8.ebuild,v 1.1 2004/11/25 14:59:37 voxus Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/openmosix-sources/Attic/openmosix-sources-2.4.24-r9.ebuild,v 1.1 2004/11/27 16:33:57 voxus Exp $
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
 ETYPE="sources"
@@ -29,7 +29,7 @@ PROVIDE="virtual/linux-sources"
 HOMEPAGE="http://www.kernel.org/ http://www.gentoo.org/ http://www.openmosix.org/"
 LICENSE="GPL-2"
 SLOT="${KV}"
-KEYWORDS="-* ~x86"
+KEYWORDS="-* x86"
 IUSE=""
 
 src_unpack() {
