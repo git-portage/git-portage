@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/gawk/Attic/gawk-3.1.2-r1.ebuild,v 1.1 2003/03/25 15:27:34 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/gawk/Attic/gawk-3.1.2-r2.ebuild,v 1.1 2003/03/25 18:06:59 azarah Exp $
 
 IUSE="nls build"
 
@@ -19,6 +19,7 @@ DEPEND="virtual/glibc
 src_unpack() {
 	unpack ${A}
 
+	# Copy filefuncs module's source over ...
 	cp -a ${FILESDIR}/filefuncs ${WORKDIR}/ || die
 }
 
@@ -26,6 +27,7 @@ src_compile() {
 	local myconf=""
 	use nls || myconf="${myconf} --disable-nls"
 
+	einfo "Building gawk ..."
 	./configure --prefix=/usr \
 		--libexecdir=/usr/lib/awk \
 		--mandir=/usr/share/man \
@@ -35,12 +37,13 @@ src_compile() {
 
 	emake || die
 
-	einfo "Building filefuncs module..."
+	einfo "Building filefuncs module ..."
 	cd ${WORKDIR}/filefuncs
-	make || die
+	make AWKINCDIR=${S} || die
 }
 
 src_install() {
+	einfo "Installing gawk ..."
 	make prefix=${D}/usr \
 		bindir=${D}/bin \
 		mandir=${D}/usr/share/man \
@@ -48,11 +51,12 @@ src_install() {
 		libexecdir=${D}/usr/lib/awk \
 		install || die
 
-	einfo "Installing filefuncs module..."
+	einfo "Installing filefuncs module ..."
 	cd ${WORKDIR}/filefuncs
 	make DESTDIR=${D} \
+		AWKINCDIR=${S} \
 		install || die
-	
+
 	# In some rare cases, gawk gets installed as gawk- and not gawk-${PV} ..
 	if [ -f ${D}/bin/gawk -a ! -f ${D}/bin/gawk-${PV} ]
 	then
@@ -72,10 +76,18 @@ src_install() {
 
 	# Install headers
 	insinto /usr/include/awk
-	doins ${S}/*.h
+	for x in ${S}/*.h
+	do
+		# We do not want 'acconfig.h' in there ...
+		if [ -f "${x}" -a "${x}" != "acconfig.h" ]
+		then
+			doins ${x}
+		fi
+	done
 	
 	if [ -z "`use build`" ] 
 	then
+		cd ${S}
 		dosym gawk.1.gz /usr/share/man/man1/awk.1.gz
 		dodoc AUTHORS ChangeLog COPYING FUTURES
 		dodoc LIMITATIONS NEWS PROBLEMS POSIX.STD README
