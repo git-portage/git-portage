@@ -1,3 +1,21 @@
+date 03 Mar 2001
+
+upd tar-1.13.18-r3 to 1.13.18-r4
+drobbins
+rmt is installed as rmt.gnu with an rmt symlink
+
+new app-arch/mt-st-0.6
+drobbins
+includes new mt command that has support for Linux 2.4 ioctls
+
+upd sys-apps/star-1.3_alpha8-r1 to 1.3_alpha8-r2
+drobbins
+removed mt and smt, rmt is installed as rmt.star with an rmt symlink
+
+upd sys-apps/cpio-2.4.2-r3 to 2.4.2-r4
+drobbins
+removed mt
+
 date 02 Mar 2001
 
 upd sys-apps/iproute2-2.2.4-r1 to 2.2.4-r2
