@@ -4,7 +4,7 @@ MD5 3e20599bbb9b9138ca9db236b75c2b2a kth-krb-1.2.2-r1.ebuild 1411
 MD5 1eb03ded1a14c0d284c09af27b698612 kth-krb-1.2.2.ebuild 1246
 MD5 9f2a1a92792508433f529d4409f3c42f kth-krb-1.2.ebuild 1241
 MD5 059733ad92a101895ce18a1120b6eb55 metadata.xml 225
-MD5 cb931e15e93a855e7140800142d83b6d kth-krb-1.2.2-r2.ebuild 1478
+MD5 f0a0c55e27a0da8999ce1f755fc3759b kth-krb-1.2.2-r2.ebuild 1484
 MD5 be7f2f326e6022797dca6608b6248b7e files/02kth-krb 118
 MD5 2884941e77f936011c4c56d9af159ae6 files/digest-kth-krb-1.2 61
 MD5 38a19d9c77f2f822ae597ae120f34fc9 files/digest-kth-krb-1.2.1 63
