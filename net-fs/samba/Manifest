@@ -1,4 +1,5 @@
 MD5 7d7c900829bc2bdf39895d5890a0d20d samba-3.0.4-r1.ebuild 11146
+MD5 ee0aad95bcd2e852130a3128e108b5c3 samba-3.0.6-r1.ebuild 13798
 MD5 79238861b532353a197dcb8f138cf85a samba-3.0.6.ebuild 13727
 MD5 f8cdd50fba1d35fc277375713f83e05d samba-3.0.5-r1.ebuild 13679
 MD5 633511d04d7a7d7702c17089c85ba697 samba-3.0.1-r1.ebuild 11333
@@ -30,6 +31,7 @@ MD5 8ea7b443dd580aaaaf7e9e896eba54f2 files/samba-3.0.x-smbumount-uid32.patch 425
 MD5 f3a4b3b0a8162ae87779846d7e6adbbf files/digest-samba-3.0.1-r1 202
 MD5 a86336201c2eced7a6e5a5138514e2f7 files/digest-samba-3.0.4-r1 203
 MD5 4356a18128f7107bb7a2270bea78b3aa files/digest-samba-3.0.5-r1 203
+MD5 d83497b5a50e8d6bd9c93b1c661634bb files/digest-samba-3.0.6-r1 203
 MD5 8c1f1e3655e12b85102ce257f3efad62 files/smb.conf.example-samba3 20762
 MD5 9560b7e29d3a65db029fc1800e84abcc files/samba-pdb_ldap-exop.patch 3921
 MD5 3685eadb817d185b06476eca6c0c15c4 files/smbusers 204
