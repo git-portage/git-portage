@@ -1,11 +1,11 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.25-r1.ebuild,v 1.2 2004/04/16 06:03:36 kumba Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.26.ebuild,v 1.1 2004/04/16 06:03:36 kumba Exp $
 
 
 # Version Data
 OKV=${PV/_/-}
-CVSDATE="20040222"
+CVSDATE="20040415"
 EXTRAVERSION="-mipscvs-${CVSDATE}"
 KV="${OKV}${EXTRAVERSION}"
 COBALTPATCHVER="1.1"
@@ -48,16 +48,6 @@ src_unpack() {
 
 	# Patch arch/mips/Makefile for gcc (Pass -mips3/-mips4 for r4k/r5k cpus)
 	epatch ${FILESDIR}/mipscvs-${OKV}-makefile-fix.patch
-
-	# Patch to fix mips64 Makefile so that -finline-limit=10000 gets added to CFLAGS
-	epatch ${FILESDIR}/mipscvs-${OKV}-makefile-inlinelimit.patch
-
-	# Binutils-2.14.90.0.8 and does some magic with page alignment
-	# that prevents the kernel from booting.  This patch fixes it.
-	epatch ${FILESDIR}/mipscvs-${OKV}-no-page-align.patch
-
-	# Security Fixes
-	epatch ${FILESDIR}/CAN-2004-0109-2.4-iso9660.patch
 
 	# Cobalt Patches
 	if [ "${PROFILE_ARCH}" = "cobalt" ]; then
