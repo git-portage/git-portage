@@ -1,4 +1,14 @@
-MD5 de95e2fe4fe168b7129be9d33099757b pears-1.7.ebuild 880
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 b6215fc151800d2272606d1741c5b105 pears-1.7.ebuild 885
 MD5 4fca175f747a090fd2b7b8ce22fbc06d metadata.xml 162
-MD5 80ef6192ec0a977297c7179afb38ed1e ChangeLog 551
+MD5 8f7fdb7a5d982004c604adb35ec773a4 ChangeLog 556
 MD5 fe5ca01a24124054a23aa06a518ec5e7 files/digest-pears-1.7 58
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBv1Wwz2gxt1z4IGYRAn7xAKCpad9I6vm71Odfy5KYw0mZnHu+6wCdHwnw
+4oxlXpd4ABl99QyqH1XUddE=
+=722t
+-----END PGP SIGNATURE-----
