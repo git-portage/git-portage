@@ -8,7 +8,7 @@ MD5 5952e7ef277cd7abc1f40ec000e654f9 windowmaker-0.90.0.ebuild 4492
 MD5 9ea82ec741526eb6ba38b58628e54702 windowmaker-0.91.0-r1.ebuild 6201
 MD5 aa2f4df566b5fbdd64bdd37815a55777 windowmaker-0.91.0-r2.ebuild 6278
 MD5 c720fae3c7c7372972529f3b2d7f5071 windowmaker-0.91.0.ebuild 4478
-MD5 3c2554f288bc1e271239f4931e139ea0 windowmaker-0.91.0-r3.ebuild 6698
+MD5 c82c7b638a9bb9e2bbe1f52a57ad186b windowmaker-0.91.0-r3.ebuild 6807
 MD5 f0ba434033b1f1e0956a037076da0b9c files/20_endian+64bit.diff 2740
 MD5 c8eb68627dc7b53b10143626018ff597 files/gtk2flickerfix.patch 1969
 MD5 c41215f830e33a636a440ce389db01eb files/menufocus.patch 1554
