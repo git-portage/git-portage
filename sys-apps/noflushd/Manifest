@@ -4,4 +4,5 @@ MD5 33de662f99e07dc463388fb52e12b714 noflushd-2.6.3.ebuild 1171
 MD5 9b47b101b4b9a87a7e2fe13ae8700e01 files/digest-noflushd-2.6.3 66
 MD5 27662aecff22f74ae029a76f5dfffa3f files/noflushd.conf 400
 MD5 cffb2a2c67b26d0d3e4b86836f607267 files/noflushd.confd 133
+MD5 faf1ae95aba5c2b34b269e5e63bf4cf2 files/noflushd.rc5 894
 MD5 5fa6a20ac64c122fefc933cf0bd3f421 files/noflushd.rc6 794
