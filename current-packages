@@ -36,7 +36,7 @@
 ./sys-apps/sed/sed-3.02.80.ebuild
 ./sys-apps/setserial/setserial-2.17-r1.ebuild
 ./sys-apps/sh-utils/sh-utils-2.0j-r1.ebuild
-./sys-apps/shadow/shadow-19990827-r1.ebuild
+./sys-apps/shadow/shadow-19990827-r2.ebuild
 ./sys-apps/sharutils/sharutils-4.2.1-r1.ebuild
 ./sys-apps/shtool/shtool-1.5.1-r1.ebuild
 ./sys-apps/sysklogd/sysklogd-1.4.ebuild
