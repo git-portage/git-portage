@@ -200,7 +200,7 @@
 ./media-sound/mpg123/mpg123-0.59r.ebuild
 ./media-sound/sox/sox-12.17.ebuild
 ./media-sound/xmms/xmms-1.2.3.ebuild
-./media-sound/xmnap-0.1.2.ebuild
+./media-sound/xmnap/xmnap-0.1.2.ebuild
 ./media-video/bcast-2000/bcast-2000a-r1.ebuild
 ./media-video/lamp/lamp-20000903.ebuild
 ./media-video/mjpeg-tools/mjpeg-tools-1a.ebuild
@@ -342,6 +342,3 @@
 ./kde-apps/kmago/kmago-0.1.ebuild
 ./kde-apps/koffice/koffice-1.94.ebuild
 ./kde-apps/krusader/kruasader-0.65.1.ebuild
-
-
-
