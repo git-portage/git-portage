@@ -1,4 +1,5 @@
 MD5 eeb36471f4f4f1c0c9bb11f82d13286a lostirc-0.2.3.ebuild 612
+MD5 e19e2e6fc75b9449a7fec5bf008ad98e lostirc-0.3.1.ebuild 904
 MD5 aae7821b5e93a4ce7012907548991d07 lostirc-0.2.5.ebuild 611
 MD5 d3939917b88ac8d648017371c52cca9b lostirc-0.2.7.ebuild 925
 MD5 e19e2e6fc75b9449a7fec5bf008ad98e lostirc-0.3.0.ebuild 904
@@ -12,3 +13,4 @@ MD5 8ca8907fb49c76d33cac1b2db9d16186 files/digest-lostirc-0.2.5 65
 MD5 38d9f1a98b543fb36fab00863d20dd37 files/digest-lostirc-0.2.6 65
 MD5 c211c14fbca7e1added10fcfdfd2d2fb files/digest-lostirc-0.2.7 65
 MD5 f73f5dba79eac8a825820a06076165d1 files/digest-lostirc-0.3.0 65
+MD5 a297f67220540b89e68474a5742a6483 files/digest-lostirc-0.3.1 65
