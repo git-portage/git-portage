@@ -1,5 +1,5 @@
-MD5 82e19c59a23cc918560ee6eb7c1a5f34 jmax-4.1.0.ebuild 1641
-MD5 5ab110d943bf8c6e5c6712c3d600106b ChangeLog 1104
+MD5 dfd896f0ea06214f8f4feb32bc40e9b5 jmax-4.1.0.ebuild 1637
+MD5 1917a62ff1c2e77ef1840d89cdb46410 ChangeLog 1098
 MD5 3be4f6e757e3057184136a002b0165f9 metadata.xml 221
 MD5 14eb868795e30de75f2f6bcd7a962de3 files/jmax-4.1.0-gcc34.patch 968
 MD5 ce7938192f9fef7f13fa7fe709c6f3ad files/jmax-4.0.2-work_with_recent_alsa-lib.patch 991
