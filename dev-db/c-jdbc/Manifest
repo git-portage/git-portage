@@ -1,0 +1,7 @@
+MD5 13cd804814398cb064a8c66dedacf3ec c-jdbc-1.0.4.ebuild 3787
+MD5 62ac24f25532a4183e3ed1e1480878e7 files/console.sh 606
+MD5 a8d6fd20a9ab0d2f3d6b8c626cf6cf8b files/controller.sh 1118
+MD5 6f7e7b9ace7df13d6bab70f487a31189 files/c-jdbc-1.0.4-gentoo.patch 5047
+MD5 599e87927c86dfe53eaf0415b5bae480 files/digest-c-jdbc-1.0.4 70
+MD5 68ab5b03c75a8fb3512080cc775e2af7 files/cjdbc-conf 218
+MD5 95ac220f9cc6c65bf71f2298b124bd2d files/cjdbc-init 815
