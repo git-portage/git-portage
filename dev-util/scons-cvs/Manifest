@@ -1,4 +1,4 @@
-MD5 7617debd484591eaeed125fcd856aa85 ChangeLog 327
+MD5 44fd5446fad727ca79e39e63cf680c1d scons-cvs-0.96-r1.ebuild 1018
+MD5 e0dc68863cf96f54bdd0ddd08e01aead ChangeLog 436
 MD5 d992d28bec4a3bfd72b441145091a58e metadata.xml 244
-MD5 8d4bb729ed1351729c3242548d7b8e5c scons-cvs-0.96.ebuild 993
-MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-scons-cvs-0.96 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-scons-cvs-0.96-r1 0
