@@ -1,4 +1,6 @@
+MD5 fa1f3c1523456b591cfdb0a6d05b1b66 locateopen-1.1.ebuild 905
 MD5 cc73d25ca4d96112face8e7cfa72ea66 ChangeLog 1298
-MD5 15a9c6b73d64428d5a27c6bd5ad2fc68 locateopen-0.8.0.ebuild 869
 MD5 9771ca4ff90b56dddc4acfadc6f6a01e metadata.xml 250
+MD5 15a9c6b73d64428d5a27c6bd5ad2fc68 locateopen-0.8.0.ebuild 869
+MD5 556202cdd756a664a6944bdeeff67695 files/digest-locateopen-1.1 65
 MD5 0dc1da8270e79992ef31a37a8fe27e97 files/digest-locateopen-0.8.0 67
