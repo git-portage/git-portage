@@ -1,14 +1,7 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 82e1ead1a48055c3be1c37be0d0256b3 kconvert-1.1.ebuild 708
-MD5 d353e299e478ab964309adf618f323cf ChangeLog 973
+MD5 a6c5eb5dd7fc0c439d9df2ec91472cf2 kconvert-1.1-r1.ebuild 607
+MD5 a0796c8d70ad643bb72450e42b84c6d3 kconvert-1.1.ebuild 708
+MD5 1cfa3d4edbdc9866ddf565e8ceb2aa58 ChangeLog 1265
 MD5 8c623e53daafa025137077c6b65815bd metadata.xml 156
 MD5 31a95bb775a9baed77444a65967ef24f files/digest-kconvert-1.1 64
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.9.10 (GNU/Linux)
-
-iD8DBQFBzHZ6I1lqEGTUzyQRAj2hAJsHFr8EGZx//PwYEGsGm7O0oMmUywCghJ60
-3y5DZd7aUz2nNu/D5P9TW7A=
-=OiuP
------END PGP SIGNATURE-----
+MD5 31a95bb775a9baed77444a65967ef24f files/digest-kconvert-1.1-r1 64
+MD5 07a28b2a2552da0e9079a5ac342e8f7c files/kconvert-1.1-arts-configure.patch 3533
