@@ -1,5 +1,15 @@
 date 10 Dec 2000
 
+new gnome-base/gnome-1.2.4
+drobbins
+This is a "virtual" (dummy) package that depends on all the required
+GNOME packages.  Makes it easy to get everything installed.
+
+new kde-base/kde-2.0.1
+drobbins
+This is a "virtual" (dummy) package that depends on all the required
+KDE packages.  Makes it easy to get everything installed.
+
 upd sys-apps/shadow-20000902 to 20000902-r1
 drobbins
 shadow now includes securetty and login is happy
