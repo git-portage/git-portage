@@ -1,13 +1,13 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /var/cvsroot/gentoo-x86/app-editors/quanta/Attic/quanta-3.0_pre2.ebuild,v 1.2 2002/09/28 09:16:33 doctomoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/quanta/Attic/quanta-3.0.ebuild,v 1.1 2002/09/28 10:15:28 verwilst Exp $
 inherit kde-base
 
 need-kde 3
 
 DESCRIPTION="A superb web development tool for KDE 3.x"
 
-SRC_URI="mirror://sourceforge/quanta/quanta-3.0pr2a.tar.bz2
+SRC_URI="mirror://sourceforge/quanta/quanta-3.0.tar.bz2
 	 mirror://sourceforge/quanta/css.tar.bz2
 	 mirror://sourceforge/quanta/html.tar.bz2
 	 mirror://sourceforge/quanta/javascript.tar.bz2
@@ -18,7 +18,7 @@ HOMEPAGE="http://quanta.sourceforge.net"
 LICENSE="GPL-2"
 KEYWORDS="x86 ppc"
 
-S="${WORKDIR}/quanta-3.0pr2a"
+S="${WORKDIR}/${P}"
 
 src_install() {
 	
