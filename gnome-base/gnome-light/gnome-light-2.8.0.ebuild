@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-light/Attic/gnome-light-2.6.ebuild,v 1.5 2004/08/21 15:26:42 obz Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-light/Attic/gnome-light-2.8.0.ebuild,v 1.1 2004/11/11 12:31:10 foser Exp $
 
 S=${WORKDIR}
 DESCRIPTION="Meta package for the GNOME desktop, merge this package to install"
@@ -11,7 +11,7 @@ IUSE=""
 
 # when unmasking for an arch
 # double check none of the deps are still masked !
-KEYWORDS="x86 ~ppc amd64"
+KEYWORDS="x86 ~ppc ~amd64"
 
 #  Note to developers:
 #  This is a wrapper for the 'light' Gnome2 desktop,
@@ -27,37 +27,37 @@ KEYWORDS="x86 ~ppc amd64"
 RDEPEND="!gnome-base/gnome-core
 	!gnome-base/gnome
 
-	>=x11-wm/metacity-2.8
-	>=gnome-base/gnome-session-2.6
-	>=gnome-base/eel-2.6
-	>=gnome-base/nautilus-2.6
-	>=x11-terms/gnome-terminal-2.6
-	>=gnome-base/control-center-2.6.0.3
-	>=gnome-extra/yelp-2.6
+	>=x11-wm/metacity-2.8.5
+	>=gnome-base/gnome-session-2.8
+	>=gnome-base/eel-2.8
+	>=gnome-base/nautilus-2.8
+	>=x11-terms/gnome-terminal-2.7.3
+	>=gnome-base/control-center-2.8
+	>=gnome-extra/yelp-2.6.4
 
 	>=gnome-base/gnome-mime-data-2.4.1
 	>=x11-misc/shared-mime-info-0.14
-	>=gnome-base/gnome-vfs-2.6
+	>=gnome-base/gnome-vfs-2.8.1-r2
 
-	>=x11-libs/gtk+-2.4.0-r1
-	>=x11-libs/pango-1.4
-	>=dev-libs/atk-1.6
-	>=dev-libs/glib-2.4
-	>=gnome-base/gconf-2.6
-	>=gnome-base/gnome-panel-2.6
-	>=gnome-base/gnome-desktop-2.6.0.1
-	>=gnome-base/libbonobo-2.6
-	>=gnome-base/libbonoboui-2.6
-	>=gnome-base/libgnome-2.6
-	>=gnome-base/libgnomecanvas-2.6
-	>=gnome-base/libgnomeui-2.6
-	>=gnome-base/librsvg-2.6.4
-	>=gnome-base/libglade-2.3.6
-	>=x11-libs/libwnck-2.4.0.1-r1
-	>=gnome-base/orbit-2.10
+	>=x11-libs/gtk+-2.4.9
+	>=x11-libs/pango-1.6
+	>=dev-libs/atk-1.8
+	>=dev-libs/glib-2.4.6
+	>=gnome-base/gconf-2.8.0.1
+	>=gnome-base/gnome-panel-2.8.0.1
+	>=gnome-base/gnome-desktop-2.8
+	>=gnome-base/libbonobo-2.8
+	>=gnome-base/libbonoboui-2.8
+	>=gnome-base/libgnome-2.8
+	>=gnome-base/libgnomecanvas-2.8
+	>=gnome-base/libgnomeui-2.8
+	>=gnome-base/librsvg-2.8.1
+	>=gnome-base/libglade-2.4
+	>=x11-libs/libwnck-2.8.0.1
+	>=gnome-base/orbit-2.12
 
-	>=x11-themes/gnome-icon-theme-1.2
-	>=x11-themes/gnome-themes-2.6"
+	>=x11-themes/gnome-icon-theme-2.8
+	>=x11-themes/gnome-themes-2.8"
 
 pkg_postinst () {
 
