@@ -1,4 +1,5 @@
 MD5 163deab176abdf7535bcc82324eb4558 mm-sources-2.6.5_rc2-r5.ebuild 1031
+MD5 744204584d314ff518d410cda27a8661 mm-sources-2.6.6_rc1-r1.ebuild 1030
 MD5 5103b6ec58fee6d47f190e70eebc6411 mm-sources-2.6.5_rc3-r4.ebuild 1031
 MD5 e8b9122a36f12c292a33e79b1d1fdb80 mm-sources-2.6.5_rc2-r2.ebuild 1031
 MD5 62b0d4f0eca1dec3338b1a46eff9a0a6 mm-sources-2.6.5_rc3-r1.ebuild 1031
@@ -21,3 +22,4 @@ MD5 71c5c843c0908cb6178fd11cc357cd22 files/digest-mm-sources-2.6.5_rc3-r4 194
 MD5 a613978c67d87fc251c04d2a52dddcc2 files/2.6.4-r1-tty-fix.diff 575
 MD5 8f578df14b624397068e82c4f6c51232 files/2.6.4-r1-debug-spinlock-fix.diff 325
 MD5 d3e6aaa68beb4ad5f78b43e7c7b98e44 files/devfs-boot-hang-fix.patch 2399
+MD5 3bb3e71859d42927e886b9830232e802 files/digest-mm-sources-2.6.6_rc1-r1 193
