@@ -1,18 +1,16 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/ipw2100/Attic/ipw2100-1.0.1.ebuild,v 1.3 2005/01/02 15:17:24 brix Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/ipw2100/Attic/ipw2100-1.0.0-r1.ebuild,v 1.1 2005/01/02 15:17:24 brix Exp $
 
 inherit kernel-mod eutils
 
 FW_VERSION="1.3"
-PATCH_2_4_VERSION="1"
 
 DESCRIPTION="Driver for the Intel PRO/Wireless 2100 3B miniPCI adapter"
 
 HOMEPAGE="http://ipw2100.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tgz
-		mirror://gentoo/${PN}-fw-${FW_VERSION}.tgz
-		mirror://gentoo/${P}-2.4-v${PATCH_2_4_VERSION}.patch.gz"
+		mirror://gentoo/${PN}-fw-${FW_VERSION}.tgz"
 
 LICENSE="GPL-2 ipw2100-fw"
 SLOT="0"
@@ -27,6 +25,11 @@ RDEPEND=">=sys-apps/hotplug-20030805-r2
 
 pkg_setup() {
 	local DIE=0
+
+	if kernel-mod_is_2_4_kernel
+	then
+		die "${P} does not support building against kernel 2.4.x"
+	fi
 
 	if ! kernel-mod_configoption_present NET_RADIO
 	then
@@ -90,11 +93,8 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 
-	if kernel-mod_is_2_4_kernel
-	then
-		cd ${S}
-		epatch ${WORKDIR}/${P}-2.4-v${PATCH_2_4_VERSION}.patch
-	fi
+	cd ${S}
+	epatch ${FILESDIR}/${P}-2.6.10-susp.patch
 
 	einfo "Patching Makefile to enable WPA"
 	sed -i "s:^# CONFIG_IEEE80211_WPA=:CONFIG_IEEE80211_WPA=:" \

@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/ipw2100/Attic/ipw2100-1.0.1.ebuild,v 1.3 2005/01/02 15:17:24 brix Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/ipw2100/Attic/ipw2100-1.0.2-r1.ebuild,v 1.1 2005/01/02 15:17:24 brix Exp $
 
 inherit kernel-mod eutils
 
@@ -22,7 +22,7 @@ IUSE=""
 DEPEND="virtual/linux-sources
 		!net-wireless/ipw2200
 		sys-apps/sed"
-RDEPEND=">=sys-apps/hotplug-20030805-r2
+RDEPEND=">=sys-apps/hotplug-20040923
 		>=net-wireless/wireless-tools-27_pre23"
 
 pkg_setup() {
@@ -90,11 +90,17 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 
+	cd ${S}
+	epatch ${FILESDIR}/${P}-2.6.10-susp.patch
+
 	if kernel-mod_is_2_4_kernel
 	then
 		cd ${S}
 		epatch ${WORKDIR}/${P}-2.4-v${PATCH_2_4_VERSION}.patch
 	fi
+
+	cd ${S}
+	epatch ${FILESDIR}/${P}-set_security.patch
 
 	einfo "Patching Makefile to enable WPA"
 	sed -i "s:^# CONFIG_IEEE80211_WPA=:CONFIG_IEEE80211_WPA=:" \
@@ -131,14 +137,6 @@ src_install() {
 	doins ${WORKDIR}/${PN}-${FW_VERSION}-p.fw
 	doins ${WORKDIR}/${PN}-${FW_VERSION}-i.fw
 	newins ${WORKDIR}/LICENSE ${PN}-${FW_VERSION}-LICENSE
-
-	# Create symbolic links for old (<=hotplug-20040920) firmware location
-	# See bug #65059
-	dodir /usr/lib/hotplug/firmware
-	dosym /lib/firmware/${PN}-${FW_VERSION}.fw      /usr/lib/hotplug/firmware/${PN}-${FW_VERSION}.fw
-	dosym /lib/firmware/${PN}-${FW_VERSION}-p.fw    /usr/lib/hotplug/firmware/${PN}-${FW_VERSION}-p.fw
-	dosym /lib/firmware/${PN}-${FW_VERSION}-i.fw    /usr/lib/hotplug/firmware/${PN}-${FW_VERSION}-i.fw
-	dosym /lib/firmware/${PN}-${FW_VERSION}-LICENSE /usr/lib/hotplug/firmware/${PN}-${FW_VERSION}-LICENSE
 }
 
 pkg_postinst() {
