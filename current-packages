@@ -139,7 +139,7 @@
 ./app-text/sgml2x/sgml2x-0.11-r1.ebuild
 ./app-text/tetex/tetex-1.0.7-r1.ebuild
 ./app-text/ttf2pt1/ttf2pt1-3.3.0.ebuild
-#./dev-db/berkley-db/berkley-db-3.1.17.ebuild
+./dev-db/db/db-3.1.17.ebuild
 ./dev-db/mysql/mysql-3.23.26.ebuild
 ./dev-java/fesi/fesi-1.ebuild
 ./dev-java/jndi/jndi-1.2.1-r1.ebuild
