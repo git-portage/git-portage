@@ -2,9 +2,9 @@ MD5 03ec542fdd146f944e1cb042b2737b2b madwifi-driver-0.1_pre20040514.ebuild 1285
 MD5 e8cc8b03dd0e6004dcaa2ae40a865352 madwifi-driver-0.1_pre20040212.ebuild 1544
 MD5 bc0f5d0eb065e14e1c707944dd81ce38 madwifi-driver-0.1_pre20031213-r1.ebuild 1547
 MD5 82869dab698ac726864aa4b614be0e12 madwifi-driver-0.1_pre20040726.ebuild 1442
-MD5 23dec5ce9b8a040b87297be886126a36 madwifi-driver-0.1_pre20040906.ebuild 1907
+MD5 c9419e007c0201b3a17424bbb7448373 madwifi-driver-0.1_pre20040906.ebuild 1904
 MD5 21d600ab4701f18262587bdd50415aa5 madwifi-driver-0.1_pre20040108.ebuild 1544
-MD5 21bcf1783101584be574e11a9ec88557 ChangeLog 2990
+MD5 ed2e2f1f5f3ee291bc1f9e41d50044de ChangeLog 2990
 MD5 19fd766bac8e110b4620363a1ace26dd metadata.xml 159
 MD5 f232721a5c111d2fec3a8697f67bd886 madwifi-driver-0.1_pre20040824-r1.ebuild 2015
 MD5 e00b943f3c94116d21cae2f156eddb3f files/digest-madwifi-driver-0.1_pre20031213-r1 83
