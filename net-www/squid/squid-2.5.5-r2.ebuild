@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/squid/Attic/squid-2.5.5-r2.ebuild,v 1.9 2004/06/25 01:12:32 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/squid/Attic/squid-2.5.5-r2.ebuild,v 1.8 2004/06/24 23:13:31 eradicator Exp $
 
 inherit eutils
 
