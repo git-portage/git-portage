@@ -1,3 +1,4 @@
+MD5 a27ded4abb38980cfde80a4b755e17f8 mmpython-0.4.4.ebuild 562
 MD5 cd2e0ee4bdefeec31a393618098972d4 mmpython-0.4.3-r1.ebuild 563
 MD5 a4efe62f3be4e0f06c28ecc76d0c7014 mmpython-0.4.3.ebuild 540
 MD5 ec501b8535c0b729e27f0763294b283d mmpython-0.3.ebuild 519
@@ -7,6 +8,7 @@ MD5 ae750297e34c9a0c4929184c72684260 metadata.xml 181
 MD5 90ead1dccaca5a955d26859e158c45ac mmpython-0.2.ebuild 542
 MD5 c5c8068c107ae19893478c4f80f8ed89 files/digest-mmpython-0.4.2 66
 MD5 03674fcb5b9728a2344a1bba4a802960 files/digest-mmpython-0.4.3 66
+MD5 396ef086229967b9da6de52fe6af3b68 files/digest-mmpython-0.4.4 66
 MD5 03674fcb5b9728a2344a1bba4a802960 files/digest-mmpython-0.4.3-r1 66
 MD5 fb1a9b91aee5ee755545fbf3f518c5a1 files/digest-mmpython-0.2 64
 MD5 992e145f19f04c2332ab14391341473d files/digest-mmpython-0.3 64
