@@ -1,10 +1,13 @@
-MD5 63f64347c3bf7f6bb41ffbfabfde9f3e ChangeLog 1718
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 62bc9a6165298afc5144b5631f074563 ChangeLog 1717
 MD5 0d18f0fe5d603b41b988373892caf195 metadata.xml 226
-MD5 95330b813580b37ca90080833b94aa8e mod_loopback-1.04.ebuild 780
-MD5 235f7bc30605555ff3a80fa3dfd0df20 mod_loopback-2.0.ebuild 784
-MD5 7a6fcf77d0b5eee22c12b5ab7a644947 mod_loopback-2.01.ebuild 802
-MD5 ab6f65722e50727dceb0ee7a3b434a17 mod_loopback-1.04-r1.ebuild 663
-MD5 1f8af12481a150d07559ea511c6c540b mod_loopback-2.01-r1.ebuild 659
+MD5 d7476d589c7d2f1fdc4e6848fbd1ac05 mod_loopback-1.04.ebuild 778
+MD5 09df23196a94ed8f86b16045fe150e78 mod_loopback-2.0.ebuild 782
+MD5 8ec1f965c46fc0d37f0b6d2f5d589aaf mod_loopback-2.01.ebuild 801
+MD5 e19f13d55bd0fbc26fe261a09a27ffd5 mod_loopback-1.04-r1.ebuild 664
+MD5 8f0f0a60924ce81e0f5b5d1de19f6362 mod_loopback-2.01-r1.ebuild 660
 MD5 a9240cf6f4cfeb677f4b2a2e04dc32d6 files/28_mod_loopback.conf 543
 MD5 a27d6facdfc6067598afe50484f4a7f2 files/digest-mod_loopback-1.04 63
 MD5 f1c19206af4cd3a4ca06bd566755f538 files/digest-mod_loopback-2.0 63
@@ -13,3 +16,10 @@ MD5 a27d6facdfc6067598afe50484f4a7f2 files/digest-mod_loopback-1.04-r1 63
 MD5 012e0b3a81a96ca283bf5b3d1333ce87 files/digest-mod_loopback-2.01-r1 63
 MD5 b30fae4024f82f8f4fa50e9b0427a75f files/1.04-r1/28_mod_loopback.conf 538
 MD5 b30fae4024f82f8f4fa50e9b0427a75f files/2.01-r1/28_mod_loopback.conf 538
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFB4QatmPFBzbX68WERAno6AJ9KSaZg+B9ae5FrKEOyoiclWAqI0QCfTjwW
+uVF5Kfhqq3Nm0T/FkbtouM4=
+=vCCw
+-----END PGP SIGNATURE-----
