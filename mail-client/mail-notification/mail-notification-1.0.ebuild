@@ -1,34 +1,42 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/mail-notification/Attic/mail-notification-0.6.2.ebuild,v 1.2 2004/09/09 19:58:00 slarti Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/mail-notification/Attic/mail-notification-1.0.ebuild,v 1.1 2004/11/26 21:50:06 slarti Exp $
 
 inherit gnome2
 
 DESCRIPTION="A GNOME trayicon which checks for mail supporting mbox, MH,
-Maildir, IMAP, Sylpheed, POP3. Authenticates via apop, ssl, sasl."
+Maildir, IMAP, Sylpheed, POP3, Gmail. Authenticates via apop, ssl, sasl."
 HOMEPAGE="http://www.nongnu.org/mailnotify/"
 SRC_URI="http://savannah.nongnu.org/download/mailnotify/${P}.tar.gz"
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~ppc"
 SLOT="0"
 LICENSE="GPL-2"
 
-IUSE="imap ipv6 ssl sasl"
+IUSE="imap ipv6 mime ssl sasl gmail"
 
 DEPEND=">=x11-libs/gtk+-2.4
 	>=dev-util/gob-2
 	>=gnome-base/gnome-panel-2
 	>=gnome-base/eel-2
+	>=gnome-base/gconf-2.4
+	>=gnome-base/libgnomeui-2.4
+	>=gnome-base/libglade-2.0
+	>=gnome-base/eel-2.0
+	>=gnome-base/orbit-2.0
 	ssl? ( >=dev-libs/openssl-0.9.6 )
-	sasl? ( >=dev-libs/cyrus-sasl-2 )"
+	sasl? ( >=dev-libs/cyrus-sasl-2 )
+	mime? ( >=dev-libs/gmime-2 )
+	gmail? ( >=net-libs/libsoup-2.2 )"
 
 G2CONF="${G2CONF} $(use_enable ssl)"
 G2CONF="${G2CONF} $(use_enable sasl)"
 G2CONF="${G2CONF} $(use_enable ipv6)"
 G2CONF="${G2CONF} $(use_enable imap)"
+G2CONF="${G2CONF} $(use_enable mime)"
 
-# Gmail support will be disabled until we're sure it's ok, license-wise	-ticho
-G2CONF="${G2CONF} --disable-gmail"
+# Gmail good to go now. --slarti
+G2CONF="${G2CONF} $(use_enable gmail)"
 
 pkg_postinst() {
 	echo
