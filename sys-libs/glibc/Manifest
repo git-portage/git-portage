@@ -1,9 +1,12 @@
-MD5 244c19de68c5780472c01d3a6e939c71 ChangeLog 37094
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 277d97e1032213963e3868bcdf2c7b09 ChangeLog 37094
 MD5 c1f9466ec8250dd47beb7a71f7c536fe glibc-2.3.1-r5.ebuild 10719
 MD5 081030d4ac6e9b8879727089b52b28fd glibc-2.3.2-r10.ebuild 19418
 MD5 6ae51bfd7e5cc6af9b1ea678354a8760 glibc-2.3.2-r2.ebuild 17968
 MD5 37180d536733ae205d0db321571cd5ca glibc-2.3.3_pre20040117-r1.ebuild 19232
-MD5 65b9ea5d4daec2ab9f21f2901a7abbc3 glibc-2.3.3.20040420.ebuild 20354
+MD5 5601c345534c3a6303e67bd3e6253e1c glibc-2.3.3.20040420.ebuild 20354
 MD5 b141dc6e9c4183e869f6d95f0f015b99 glibc-2.2.5-r9.ebuild 10002
 MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
 MD5 03c72a7da4b62b7c73dbb67b70252a20 glibc-2.3.3_pre20040117.ebuild 18526
@@ -140,3 +143,12 @@ MD5 578d3e5ff83cca218279a7a094fd0dad files/2.3.2/glibc-2.3.2-propolice-guard-fun
 MD5 b27417338a4cd9906e2917701f0be575 files/2.3.2/glibc-2.3.2-propolice-guard-functions.patch 5069
 MD5 b96f8f3abce7f0b0cb76652a8b9a55e4 files/2.3.4/glibc-execstack-disable.patch 2333
 MD5 1185022e9a50560d1bf9116a0461e011 files/2.3.4/mips-sysdep-cancel.diff 2402
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iQCVAwUBQMMAf54WFLgrx1GWAQI0lQP/b3k4Vk7YtKFA1VtFNS5JnkZ2LBsUYuYE
+/AHcRo+Z9HwGdUWVUjzU+zNCYiWMrPTVtJTrctDU6iYmtGwgcb/JrqVbk2dv/0Vg
+w/vC2yTCbojKFb3rFtZjZHWFClbla4vkgx3pQiq62/mukWL6tSWVAjO87RIzLqZ0
+KO7EhzE+v5o=
+=LHhj
+-----END PGP SIGNATURE-----
