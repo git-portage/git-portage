@@ -12,7 +12,7 @@ MD5 b5cb0c8bb899ab098fe94ae274856c1c files/reslisa 556
 MD5 93d1b5a88409a2adfec615de70dcaf70 files/linuxwirelesswidget.cpp.diff 796
 MD5 3939e85ee43aba114cc3ece4194145b6 files/reslisa.conf 340
 MD5 d97100af0cb95f733660b7a61492d71f files/lisa.conf 452
-MD5 5438b3a7b03a90a34a0e097f4f84a393 files/digest-kdenetwork-3.2.3-r1 69
+MD5 72eca9b8637e868d730399e0becc045d files/digest-kdenetwork-3.2.3-r1 70
 MD5 0e0801b8d184b3f261ffdec424adc482 files/digest-kdenetwork-3.3.0_alpha1 71
 MD5 5db705e5e97fc3263d695a8fa5898a33 files/yahoo-fix-connect-062404.patch 1546
 MD5 419e4285f4c61e2c2f5cb24cfc3c6145 files/digest-kdenetwork-3.1.5 70
