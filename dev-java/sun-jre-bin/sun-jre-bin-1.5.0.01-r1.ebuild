@@ -1,11 +1,14 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/sun-jre-bin/Attic/sun-jre-bin-1.5.0.ebuild,v 1.4 2005/01/28 00:52:49 compnerd Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/sun-jre-bin/Attic/sun-jre-bin-1.5.0.01-r1.ebuild,v 1.1 2005/03/25 22:38:15 luckyduck Exp $
 
 inherit java eutils
 
-amd64file="jre-${PV//./_}-linux-amd64.bin"
-x86file="jre-${PV//./_}-linux-i586.bin"
+MY_PVL=${PV%.*}_${PV##*.}
+MY_PVA=${PV//./_}
+
+amd64file="jre-${MY_PVA}-linux-amd64.bin"
+x86file="jre-${MY_PVA}-linux-i586.bin"
 
 if use x86; then
 	At=${x86file}
@@ -13,7 +16,7 @@ elif use amd64; then
 	At=${amd64file}
 fi
 
-S="${WORKDIR}/jre${PV}"
+S="${WORKDIR}/jre${MY_PVL}"
 DESCRIPTION="Sun's J2SE Platform"
 HOMEPAGE="http://java.sun.com/j2se/"
 SRC_URI="x86? ( $x86file ) amd64? ( $amd64file )"
@@ -37,7 +40,7 @@ PACKED_JARS="lib/rt.jar lib/jsse.jar lib/charsets.jar lib/ext/localedata.jar lib
 # this is needed for proper operating under a PaX kernel without activated grsecurity acl
 CHPAX_CONSERVATIVE_FLAGS="pemsv"
 
-FETCH_SDK="http://javashoplm.sun.com:80/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=jre-1.5.0-oth-JPR&SiteId=JSC&TransactionId=noreg"
+FETCH_SDK="http://javashoplm.sun.com:80/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=jre-${MY_PVL}-oth-JPR&SiteId=JSC&TransactionId=noreg"
 
 
 pkg_nofetch() {
@@ -63,6 +66,7 @@ src_unpack() {
 	if [ -f ${S}/bin/unpack200 ]; then
 		UNPACK_CMD=${S}/bin/unpack200
 		chmod +x $UNPACK_CMD
+		sed -i 's#/tmp/unpack.log#/dev/null\x00\x00\x00\x00\x00\x00#g' $UNPACK_CMD
 		for i in $PACKED_JARS; do
 			PACK_FILE=${S}/`dirname $i`/`basename $i .jar`.pack
 			if [ -f ${PACK_FILE} ]; then

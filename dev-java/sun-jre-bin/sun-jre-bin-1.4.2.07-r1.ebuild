@@ -1,69 +1,49 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/sun-jdk/Attic/sun-jdk-1.4.2.07.ebuild,v 1.3 2005/03/25 00:31:18 luckyduck Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/sun-jre-bin/Attic/sun-jre-bin-1.4.2.07-r1.ebuild,v 1.1 2005/03/25 22:38:15 luckyduck Exp $
 
 inherit java eutils
 
 MY_PV=${PV%.*}_${PV##*.}
-MY_P=j2sdk${MY_PV}
-MY_PVB=${PV%.*}
-
-At="j2sdk-${PV//./_}-linux-i586.bin"
-jce_policy="jce_policy-${MY_PVB//./_}.zip"
-
-S="${WORKDIR}/${MY_P}"
-DESCRIPTION="Sun's J2SE Development Kit"
+MY_PV2=${PV//./_}
+At="j2re-${MY_PV2}-linux-i586.bin"
+S="${WORKDIR}/j2re${MY_PV}"
+DESCRIPTION="Sun's J2SE Platform"
 HOMEPAGE="http://java.sun.com/j2se/1.4.2/"
-SRC_URI="${At}
-		jce? ( ${jce_policy} )"
+SRC_URI=${At}
 SLOT="1.4"
-LICENSE="sun-bcla-java-vm"
+LICENSE="sun-bcla-java-vm-1.4.2"
 KEYWORDS="x86 -*"
 RESTRICT="fetch"
-IUSE="doc gnome kde mozilla jce"
+IUSE="gnome kde mozilla"
 
 DEPEND=">=dev-java/java-config-1.1.5
-	sys-apps/sed
-	app-arch/unzip
-	doc? ( =dev-java/java-sdk-docs-1.4.2* )"
+	sys-apps/sed"
 
 RDEPEND="sys-libs/lib-compat"
 
 PROVIDE="virtual/jre-1.4.2
-	virtual/jdk-1.4.2
 	virtual/java-scheme-2"
 
-PACKED_JARS="lib/tools.jar jre/lib/rt.jar jre/lib/jsse.jar jre/lib/charsets.jar
-jre/lib/ext/localedata.jar jre/lib/plugin.jar jre/javaws/javaws.jar"
+PACKED_JARS="lib/rt.jar lib/jsse.jar lib/charsets.jar
+lib/ext/localedata.jar lib/plugin.jar javaws/javaws.jar"
 
 # this is needed for proper operating under a PaX kernel without activated grsecurity acl
-CHPAX_CONSERVATIVE_FLAGS="pemrsv"
+CHPAX_CONSERVATIVE_FLAGS="pemsv"
 
-DOWNLOAD_URL="http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=j2sdk-${MY_PV}-oth-JPR&SiteId=JSC&TransactionId=noreg"
-DOWNLOAD_URL_JCE="http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=7503-jce-${MY_PVB}-oth-JPR&SiteId=JSC&TransactionId=noreg"
+DOWNLOAD_URL="http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=j2re-${MY_PV}-oth-JPR&SiteId=JSC&TransactionId=noreg"
 
 pkg_nofetch() {
 	einfo "Please download ${At} from:"
 	einfo ${DOWNLOAD_URL}
-	einfo "(SDK 32-bit/64-bit for Windows/Linux/Solaris SPARC 32-bit for Solaris x86, then select download Linux Self-extracting."
+	einfo "(select the \"Linux self-extracting file\" package format of the JRE"
 	einfo "and move it to ${DISTDIR}"
-	if use jce; then
-		echo
-		einfo "Also download ${jce_policy} from:"
-		einfo ${DOWNLOAD_URL_JCE}
-		einfo "Java(TM) Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files"
-		einfo "and move it to ${DISTDIR}"
-	fi
 }
 
 src_unpack() {
 	if [ ! -r ${DISTDIR}/${At} ]; then
-		die "cannot read ${MY_PV}.bin. Please check the permission and try again."
-	fi
-	if use jce; then
-		if [ ! -r ${DISTDIR}/${jce_policy} ]; then
-			die "cannot read ${jce_policy}. Please check the permission and try again."
-		fi
+		eerror "cannot read ${At}. Please check the permission and try again."
+		die
 	fi
 	#Search for the ELF Header
 	testExp=`echo -e "\177\105\114\106\001\001\001"`
@@ -76,7 +56,7 @@ src_unpack() {
 	if [ -f ${S}/lib/unpack ]; then
 		UNPACK_CMD=${S}/lib/unpack
 		chmod +x $UNPACK_CMD
-		perl -pi -e 's#/tmp/unpack.log#/dev/null\x00\x00\x00\x00\x00\x00#sg' $UNPACK_CMD
+		sed -i 's#/tmp/unpack.log#/dev/null\x00\x00\x00\x00\x00\x00#g' $UNPACK_CMD
 		for i in $PACKED_JARS; do
 			PACK_FILE=${S}/`dirname $i`/`basename $i .jar`.pack
 			if [ -f ${PACK_FILE} ]; then
@@ -88,55 +68,38 @@ src_unpack() {
 	fi
 }
 
-src_install() {
-	local dirs="bin include jre lib man"
+src_install () {
+	local dirs="bin lib man javaws plugin"
 	dodir /opt/${P}
 
 	for i in $dirs ; do
-		cp -dPR $i ${D}/opt/${P}/
+		cp -a $i ${D}/opt/${P}/
 	done
 
-	dodoc COPYRIGHT README LICENSE THIRDPARTYLICENSEREADME.txt
-	dohtml README.html
-	dodir /opt/${P}/share/
-	cp -a demo src.zip ${D}/opt/${P}/share/
+	dodoc CHANGES COPYRIGHT README LICENSE THIRDPARTYLICENSEREADME.txt
+	dohtml Welcome.html ControlPanel.html
 
-	if use jce ; then
-		# Using unlimited jce while still retaining the strong jce
-		# May have repercussions when you find you cannot symlink libraries
-		# in classpaths.
-		cd ${D}/opt/${P}/jre/lib/security
-		unzip ${DISTDIR}/${jce_policy}
-		mv jce unlimited-jce
-		dodir /opt/${P}/jre/lib/security/strong-jce
-		mv ${D}/opt/${P}/jre/lib/security/US_export_policy.jar ${D}/opt/${P}/jre/lib/security/strong-jce
-		mv ${D}/opt/${P}/jre/lib/security/local_policy.jar ${D}/opt/${P}/jre/lib/security/strong-jce
-		dosym /opt/${P}/jre/lib/security/unlimited-jce/US_export_policy.jar /opt/${P}/jre/lib/security/
-		dosym /opt/${P}/jre/lib/security/unlimited-jce/local_policy.jar /opt/${P}/jre/lib/security/
-	fi
-
-	if use mozilla; then
+	if use mozilla ; then
 		local plugin_dir="ns610"
 		if has_version '>=gcc-3.2*' ; then
 			plugin_dir="ns610-gcc32"
 		fi
-
-		install_mozilla_plugin /opt/${P}/jre/plugin/i386/${plugin_dir}/libjavaplugin_oji.so
+		install_mozilla_plugin /opt/${P}/plugin/i386/$plugin_dir/libjavaplugin_oji.so
 	fi
 
 	# create dir for system preferences
 	dodir /opt/${P}/.systemPrefs
 
 	# install control panel for Gnome/KDE
-	sed -e "s/INSTALL_DIR\/JRE_NAME_VERSION/\/opt\/${P}\/jre/" \
+	sed -e "s/INSTALL_DIR\/JRE_NAME_VERSION/\/opt\/${P}/" \
 		-e "s/\(Name=Java\)/\1 Control Panel/" \
-		${D}/opt/${P}/jre/plugin/desktop/sun_java.desktop > \
+		${D}/opt/${P}/plugin/desktop/sun_java.desktop > \
 		${T}/sun_java.desktop
 
 	if use gnome ; then
 		#TODO check this on Gnome
-		dodir /usr/share/applications
-		insinto /usr/share/applications
+		dodir /usr/share/gnome/apps/Internet
+		insinto /usr/share/gnome/apps/Internet
 		doins ${T}/sun_java.desktop
 	fi
 	if use kde ; then
@@ -152,14 +115,13 @@ src_install() {
 	#      is a directory and will not be gzipped ;)
 }
 
-pkg_postinst() {
+pkg_postinst () {
 	# Create files used as storage for system preferences.
 	touch /opt/${P}/.systemPrefs/.system.lock
 	chmod 644 /opt/${P}/.systemPrefs/.system.lock
 	touch /opt/${P}/.systemPrefs/.systemRootModFile
 	chmod 644 /opt/${P}/.systemPrefs/.systemRootModFile
 
-	# Set as default VM if none exists
 	java_pkg_postinst
 
 	#Show info about netscape
@@ -179,13 +141,13 @@ pkg_postinst() {
 		echo
 		einfo "setting up conservative PaX flags for jar, javac and java"
 
-		for paxkills in "jar" "javac" "java"
+		for paxkills in "java"
 		do
 			chpax -${CHPAX_CONSERVATIVE_FLAGS} /opt/${PN}-${PV}/bin/$paxkills
 		done
 
-		# /opt/sun-jdk-1.4.2.03/jre/bin/java_vm
-		chpax -${CHPAX_CONSERVATIVE_FLAGS} /opt/${PN}-${PV}/jre/bin/java_vm
+		# /opt/sun-jdk-1.4.2.03/bin/java_vm
+		chpax -${CHPAX_CONSERVATIVE_FLAGS} /opt/${PN}-${PV}/bin/java_vm
 
 		einfo "you should have seen lots of chpax output above now"
 		ewarn "make sure the grsec ACL contains those entries also"
