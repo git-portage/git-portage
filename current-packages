@@ -92,9 +92,11 @@
 ./app-arch/rpm/rpm-3.0.5.ebuild
 ./app-arch/unzip/unzip-5.41-r1.ebuild
 ./app-cdr/cdrecord/cdrecord-1.9-r1.ebuild
+./app-doc/gimp-user-manual/gimp-user-manual-html-2.0-ebuild
 ./app-doc/man-pages/man-pages-1.31.ebuild
 ./app-editors/gtk-xemacs/gtk-xemacs-21.1.12_p3.ebuild
 ./app-editors/joe/joe-2.8-r1.ebuild
+./app-editors/nedit/nedit-5.1.1.ebuild
 ./app-editors/vim-gtk/vim-gtk-5.7-r1.ebuild
 ./app-misc/gfontview/gfontview-0.4.1-r1.ebuild
 ./app-misc/lhinv/lhinv-1.1-r1.ebuild 
