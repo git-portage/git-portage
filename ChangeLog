@@ -1,4 +1,6 @@
 13.11.2000
+	-Current binutils is 2.10.0.26 again	(drobbins)
+	 [ binutils 2.10.0.33 is buggy!]
 	-New media-libs/libsdl-1.1.6			(drobbins)
 	-Moved skel.ebuild > skel.build			(drobbins)
 		[only real ebuilds (with valid names)
