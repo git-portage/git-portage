@@ -1,3 +1,5 @@
 MD5 2b290295523d58470ab879798264e874 spidermonkey-1.5_rc5.ebuild 797
 MD5 2f7d7cb94e40cb161f84e47389d03a31 ChangeLog 374
+MD5 cf21b88b56a5ebab119b2c4e3073ada1 spidermonkey-1.5_rc6.ebuild 850
 MD5 e7bfb72073e1ade3470d60ba93042804 files/digest-spidermonkey-1.5_rc5 63
+MD5 8e216cdd6972fcc5206162ef5f0a9702 files/digest-spidermonkey-1.5_rc6 64
