@@ -323,7 +323,7 @@
 ./net-libs/pam_ldap/pam_ldap-70.ebuild
 #!./net-libs/pam_ldap/pam_ldap-82.ebuild
 ./net-mail/amavis/amavis-0.2.1-r2.ebuild
-#./net-mail/exim/exim-3.22.ebuild
+#./net-mail/exim/exim-3.22-r1.ebuild
 ./net-mail/fetchmail/fetchmail-5.5.1.ebuild
 #!./net-mail/fetchmail/fetchmail-5.6.0.ebuild
 ./net-mail/mailbase/mailbase-0.00.ebuild
@@ -331,7 +331,7 @@
 ./net-mail/mutt/mutt-1.2.5-r1.ebuild
 ./net-mail/pine-maildir/pine-maildir-4.21-r2.ebuild
 #./net-mail/pine/pine-4.21-r2.ebuild
-#./net-mail/postfix/postfix-20010130.ebuild
+#./net-mail/postfix/postfix-20010204.ebuild
 ./net-mail/promcail/procmail-3.15.ebuild
 #./net-mail/qmail-ldap/qmail-ldap-1.03.20000701-r2.ebuild
 #./net-mail/qmail-mysql/qmail-mysql-1.03-r2.ebuild
