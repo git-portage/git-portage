@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d6c2599eaed2afe42388429628b57001 djbdns-1.05-r14.ebuild 4804
 MD5 34ec8f83d249b70516532d9061ca5c1a ChangeLog 9598
 MD5 1d2065fbc2f1da45047580c3c92a7751 djbdns-1.05-r12.ebuild 4864
@@ -26,3 +29,10 @@ MD5 444830203a792b4a295ca8fee554b8d3 files/djbdns-1.05-ipv6arpa+BSDok-gentoo.dif
 MD5 625d040d68fa3f87d67688c0e15eb2f4 files/headtail.patch 1781
 MD5 ba558b4a61ed71c23083aa1ec32c7cc9 files/digest-djbdns-1.05-r8 270
 MD5 9127cff20924bbf9dfd84d3896a2510e files/digest-djbdns-1.05-r13 624
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFCJ1UVLLFUmVNQ7rkRAqW4AJ0dn4jVeJkS7p2Y3Clhalc/zzXZxACeKliA
+80nQOAknj+oGyZGKLjHjYxo=
+=xMHS
+-----END PGP SIGNATURE-----
