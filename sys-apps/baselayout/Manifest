@@ -1,5 +1,6 @@
 MD5 cafda01c8dc5776fc5f4d1866781f8f5 baselayout-1.9.1.ebuild 16081
 MD5 1d71e198bf7b5b2da5a1f95f2948b65d baselayout-1.8.12.ebuild 15949
+MD5 d0f2684a7fe6a73f8566eef4787f5aa2 baselayout-1.10.1.ebuild 16324
 MD5 5fea61bf9668d0b1ff19ae563b6b5c18 baselayout-1.9.4-r1.ebuild 16200
 MD5 e53b2e4e728e889e696a0e049d7602c0 baselayout-1.10.ebuild 16247
 MD5 65a8c80632db039aa8a2568b1b03ea0c baselayout-1.8.6.13.ebuild 20492
@@ -13,6 +14,7 @@ MD5 f009d33103504c1e9efa2afca08bfbff files/digest-baselayout-1.9.1 134
 MD5 9555eb10db9b34b7221ad0a9193d43f1 files/digest-baselayout-1.9.4 134
 MD5 dd7fbce62822fed1595f11078e23aa32 files/baselayout-1.8.6.13-r1-gcc2.patch 443
 MD5 d50ca91cbb58c7528a60ddf5bb172956 files/sysvinit-2.84-selinux.patch 3206
+MD5 f2b3e80ec04ecff5c5e7f517d624a790 files/digest-baselayout-1.10.1 133
 MD5 b552d9eff99e33451f2378fa95534fa9 files/digest-baselayout-1.8.11 133
 MD5 e0f1fbdd3b7c7deeba40df28dafffc58 files/digest-baselayout-1.8.12 134
 MD5 adc667ea815b256d6f39259f4134f6df files/sysvinit-2.84-selinux1.patch 3556
