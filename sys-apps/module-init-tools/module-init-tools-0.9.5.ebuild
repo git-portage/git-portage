@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Maintainer: Tony Murray <murrant@bvu.edu>
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/module-init-tools/Attic/module-init-tools-0.9.1.ebuild,v 1.2 2002/12/11 08:11:35 lostlogic Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/module-init-tools/Attic/module-init-tools-0.9.5.ebuild,v 1.1 2002/12/19 19:33:28 lostlogic Exp $
 
 # This includes backwards compatability for stable kernels
 
@@ -11,17 +10,18 @@ DESCRIPTION="Kernel module tools for the development kernel >=2.5.48"
 SRC_URI="http://www.kernel.org/pub/linux/kernel/people/rusty/modules/${P}.tar.bz2
 		http://www.kernel.org/pub/linux/utils/kernel/modutils/v2.4/modutils-${MODUTILS_PV}.tar.bz2"
 HOMEPAGE="http://www.kernel.org/pub/linux/kernel/people/rusty/modules"
-KEYWORDS="~x86 ~ppc ~sparc ~sparc64 ~alpha"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha"
 LICENSE="GPL-2"
 SLOT="0"
 
+IUSE=""
 DEPEND="virtual/glibc"
-RDEPEND=">=development-sources-2.5.48"
+RDEPEND=">=sys-kernel/development-sources-2.5.48"
 
 src_compile() {
 	einfo "Building modutils..."
 	cd ${WORKDIR}/modutils-${MODUTILS_PV}
-	
+
 	econf \
 		--disable-strip \
 		--prefix=/ \
@@ -34,10 +34,9 @@ src_compile() {
 	cd ${S}
 
 	econf \
-		--host=${CHOST} \
 		--prefix=/ \
-		--infodir=/usr/share/info \
-		--mandir=/usr/share/man
+		${myconf}
+
 	emake || die "emake module-init-tools failed"
 }
 
@@ -46,8 +45,8 @@ src_install () {
 	cd ${WORKDIR}/modutils-${MODUTILS_PV}
 	einstall prefix="${D}"
 	dodoc COPYING CREDITS ChangeLog NEWS README TODO
-	cd ${S}
 
+	cd ${S}
 	#this copies the old version of modutils to *.old so it still works
 	#with kernels <= 2.4
 	#This code was borrowed from the module-init-tools Makefile
@@ -60,38 +59,33 @@ src_install () {
 	done
 #	make prefix=${D} move-old-targets || die "Renaming old bins to *.old failed"
 
-	einstall \
-		prefix=${D} \
-		mandir=${D}/usr/share/man
+	einstall prefix=${D}
+
 	#create the new modprobe.conf
 	dodir /etc
 	${S}/modules.conf2modprobe.conf /etc/modules.conf ${D}/etc/modprobe.conf || die "Could not create modprobe.conf"
 	dodoc AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 
-	#Notify user of crap, hope for a better way ;-)
-	einfo "This overwrites the modutils files, so if you remove this,"
-	einfo "remember to remerge modutils.  However, this package has"
-	einfo "installed a copy of the modutils files with suffix .old"
-	einfo "in your /sbin directory."
+	#install the modules.conf2modprobe.conf tool, so we can update modprobe.conf.
+	into /usr
+	dobin ${S}/modules.conf2modprobe.conf
+
 }
 
-#pkg_prerm() {
-#	for f in lsmod modprobe rmmod depmod insmod; do
-#		if [ -L /sbin/${f}.old ]; then
-#			ln -sf `ls -l /sbin/${f}.old | \
-#				sed 's/.* -> \(.*\)\.old/\1/'` /sbin/${f};
-#		fi;
-#		mv /sbin/${f}.old /sbin/${f};
-#	done
-#}
+pkg_postinst() {
+        #Notify user of evilness, hope for a better way ;-)
+	echo ""
+ 	einfo "This overwrites the modutils files, so if you remove this,"
+ 	einfo "remember to remerge modutils.  However, this package has"
+ 	einfo "installed a copy of the modutils files with suffix .old"
+ 	einfo "in your /sbin directory, which will automatically be used"
+	einfo "when needed."
+	echo ""
+}
+
+
 
 pkg_postrm() {
-#	ewarn "Uninstalling this package has switched you to"
-#	ewarn "a modutils installtion which is not managed"
-#	ewarn "by the portage system.  Your system should"
-#	ewarn "function acceptably on the 2.4 or lower kernels"
-#	ewarn "just as it is, but we do recommend remerging"
-#	ewarn "modutils."
 	if [ "$(best_version ${PN})" == "${CATEGORY}/${PF}" -a ! -f /sbin/insmod ]; then
 		ewarn "Uninstalling module-init-tools has left you"
 		ewarn "without a modutils installtion. we recommend"
