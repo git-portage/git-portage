@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/libgtk-java/Attic/libgtk-java-2.4.6-r1.ebuild,v 1.3 2004/12/28 12:57:07 axxo Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/libglade-java/Attic/libglade-java-2.8.2-r1.ebuild,v 1.1 2004/12/28 12:56:02 axxo Exp $
 
 #
 # WARNING: Because java-gnome is a set of bindings to native GNOME libraries,
@@ -9,15 +9,17 @@
 # As a result, this ebuild is VERY sensitive to the internal layout of the
 # upstream project. Because these issues are currently evolving upstream,
 # simply version bumping this ebuild is not likely to work but FAILURES WILL
-# BE VERY SUBTLE IF IT DOESN NOT WORK.
+# BE VERY SUBTLE IF IT DOES NOT WORK.
 #
 
 inherit eutils gnome.org
 
-DESCRIPTION="Java bindings for GTK libraries (allow GTK applications to be written in Java)"
+DESCRIPTION="Java bindings for [Lib]Glade (allows GNOME/GTK applications writen in Java to be generate their user interface based on Glade description files)"
 HOMEPAGE="http://java-gnome.sourceforge.net/"
-RDEPEND=">=x11-libs/gtk+-2.4
-		>=virtual/jre-1.2"
+RDEPEND=">=gnome-base/libglade-2.3.6
+	>=dev-java/libgtk-java-2.4.6-r2
+	>=dev-java/libgnome-java-2.8.2-r1
+	>=virtual/jre-1.2"
 
 #
 # Unfortunately we need to run autogen to do the variable substitutions, so
@@ -32,7 +34,7 @@ DEPEND="${RDEPEND}
 #
 # Critical that this match gtkapiversion
 #
-SLOT="2.4"
+SLOT="2.8"
 LICENSE="LGPL-2.1"
 KEYWORDS="~x86 ~ppc"
 IUSE="gcj"
@@ -40,11 +42,8 @@ IUSE="gcj"
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/${P}_gcj-autoconf-macro-fix.patch
-	epatch ${FILESDIR}/${P}_gentoo-PN-SLOT.patch
-	epatch ${FILESDIR}/${P}_install-doc.patch
-	epatch ${FILESDIR}/${P}_no-docbook-autoconf-macro.patch
-	use gcj || epatch ${FILESDIR}/${P}_find_jni.patch
+	epatch ${FILESDIR}/libglade-java-2.8.2_gentoo-PN-SLOT.patch
+	epatch ${FILESDIR}/libglade-java-2.8.2_signal-connection-fix.patch
 }
 
 src_compile() {
@@ -52,12 +51,12 @@ src_compile() {
 
 	use gcj	|| conf="${conf} --without-gcj-compile"
 
+	cd ${S}
+
 	#
 	# Ordinarily, moving things around post `make install` would do
 	# the trick, but there are paths hard coded in .pc files and in the
 	# `make install` step itself that need to be influenced.
-	#
-	# NOTE: THIS RELIES ON PORTAGE PASSING $PN AND $SLOT IN THE ENVIRONMENT
 	#
 
 	./autogen.sh \
@@ -68,9 +67,16 @@ src_compile() {
 }
 
 src_install() {
-	make prefix=${D}/usr install || die "make install failed"
+	# workaround Makefile bug not creating necessary parent directories
+	mkdir -p ${D}/usr/lib
+	mkdir -p ${D}/usr/share/java
+	mkdir -p ${D}/usr/lib/pkgconfig
+	mkdir -p ${D}/usr/share/doc/libglade${SLOT}-java
 
-	mv ${D}/usr/share/doc/libgtk${SLOT}-java ${D}/usr/share/doc/${PF}
+	make prefix=${D}/usr install || die
+
+	# actually, at time of writing, there were no DOCUMENTS, but leave it here...
+	mv ${D}/usr/share/doc/libglade${SLOT}-java ${D}/usr/share/doc/${PF}
 
 	# the upstream install scatters things around a bit. The following cleans
 	# that up to make it policy compliant.
@@ -84,14 +90,14 @@ src_install() {
 
 	mkdir ${D}/usr/share/${PN}-${SLOT}/src
 	cd ${S}/src/java
-	zip -r ${D}/usr/share/${PN}-${SLOT}/src/libgtk-java-${PV}.src.zip *
+	zip -r ${D}/usr/share/${PN}-${SLOT}/src/libglade-java-${PV}.src.zip *
 
 	# again, with dojar misbehaving, better do to this manually for the
-	# time being.
+	# time being. Yes, this is bad hard coding, but what in this ebuild isn't?
 
 	echo "DESCRIPTION=${DESCRIPTION}" \
 		>  ${D}/usr/share/${PN}-${SLOT}/package.env
 
-	echo "CLASSPATH=/usr/share/${PN}-${SLOT}/lib/gtk${SLOT}.jar" \
+	echo "CLASSPATH=/usr/share/${PN}-${SLOT}/lib/glade${SLOT}.jar" \
 		>> ${D}/usr/share/${PN}-${SLOT}/package.env
 }

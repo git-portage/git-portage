@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/libgtk-java/Attic/libgtk-java-2.4.6-r1.ebuild,v 1.3 2004/12/28 12:57:07 axxo Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/libgtk-java/Attic/libgtk-java-2.4.7.2.ebuild,v 1.1 2004/12/28 12:57:07 axxo Exp $
 
 #
 # WARNING: Because java-gnome is a set of bindings to native GNOME libraries,
@@ -9,7 +9,7 @@
 # As a result, this ebuild is VERY sensitive to the internal layout of the
 # upstream project. Because these issues are currently evolving upstream,
 # simply version bumping this ebuild is not likely to work but FAILURES WILL
-# BE VERY SUBTLE IF IT DOESN NOT WORK.
+# BE VERY SUBTLE IF IT DOES NOT WORK.
 #
 
 inherit eutils gnome.org
@@ -17,7 +17,7 @@ inherit eutils gnome.org
 DESCRIPTION="Java bindings for GTK libraries (allow GTK applications to be written in Java)"
 HOMEPAGE="http://java-gnome.sourceforge.net/"
 RDEPEND=">=x11-libs/gtk+-2.4
-		>=virtual/jre-1.2"
+	>=virtual/jre-1.2"
 
 #
 # Unfortunately we need to run autogen to do the variable substitutions, so
@@ -26,8 +26,8 @@ RDEPEND=">=x11-libs/gtk+-2.4
 #
 
 DEPEND="${RDEPEND}
-		>=virtual/jdk-1.2
-		app-arch/zip"
+	>=virtual/jdk-1.2
+	app-arch/zip"
 
 #
 # Critical that this match gtkapiversion
@@ -40,17 +40,29 @@ IUSE="gcj"
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/${P}_gcj-autoconf-macro-fix.patch
-	epatch ${FILESDIR}/${P}_gentoo-PN-SLOT.patch
-	epatch ${FILESDIR}/${P}_install-doc.patch
-	epatch ${FILESDIR}/${P}_no-docbook-autoconf-macro.patch
-	use gcj || epatch ${FILESDIR}/${P}_find_jni.patch
+
+	# I know it's better to use ${P}, but I don't feel like duplicating
+	# the patch files for every bloody point release. I'll copy them at
+	# major version releases.
+
+#	Fixed upstream, will remove next release
+#	epatch ${FILESDIR}/libgtk-java-2.4.6_gcj-autoconf-macro-fix.patch
+
+	epatch ${FILESDIR}/libgtk-java-2.4.6_gentoo-PN-SLOT.patch
+	epatch ${FILESDIR}/libgtk-java-2.4.6_install-doc.patch
+	epatch ${FILESDIR}/libgtk-java-2.4.6_no-docbook-autoconf-macro.patch
+	use gcj || epatch ${FILESDIR}/libgtk-java-2.4.6_find_jni.patch
+
+	# Rediculous glitch from upstream's packaging.
+	rm -f ${S}/config.cache
 }
 
 src_compile() {
 	local conf
 
 	use gcj	|| conf="${conf} --without-gcj-compile"
+
+	cd ${S}
 
 	#
 	# Ordinarily, moving things around post `make install` would do
@@ -64,11 +76,11 @@ src_compile() {
 		--host=${CHOST} \
 		--prefix=/usr \
 			${conf} || die "./configure failed"
-	make || die "compile failed"
+			make || die "compile failed"
 }
 
 src_install() {
-	make prefix=${D}/usr install || die "make install failed"
+	make prefix=${D}/usr install || die
 
 	mv ${D}/usr/share/doc/libgtk${SLOT}-java ${D}/usr/share/doc/${PF}
 
