@@ -1,3 +1,5 @@
-MD5 739a11f46675db9af41bcc55c93ac78d ispell-lt-0.5.ebuild 643
 MD5 7ba29dbb800c993ea885cf440a913464 ChangeLog 744
+MD5 739a11f46675db9af41bcc55c93ac78d ispell-lt-0.5.ebuild 643
+MD5 34aaf34938f9cc6eee40d85e38313e1d ispell-lt-1.0.ebuild 522
 MD5 1258d5241cb2bd368c10666453e56d0e files/digest-ispell-lt-0.5 64
+MD5 84cbab29ed822cad1ddea85f2d328322 files/digest-ispell-lt-1.0 65
