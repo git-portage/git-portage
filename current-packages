@@ -215,6 +215,7 @@
 ./media-sound/lame/lame-3.86b.ebuild
 ./media-sound/lopster/lopster-0.9.4.ebuild
 ./media-sound/mpg123/mpg123-0.59r.ebuild
+./media-sound/nas/nas-1.4.1.ebuild
 ./media-sound/sox/sox-12.17.ebuild
 ./media-sound/xmms/xmms-1.2.3.ebuild
 ./media-video/bcast-2000/bcast-2000a-r1.ebuild
