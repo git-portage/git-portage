@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/mac-fdisk/Attic/mac-fdisk-0.1-r3.ebuild,v 1.2 2004/12/16 10:37:51 corsair Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/mac-fdisk/Attic/mac-fdisk-0.1-r3.ebuild,v 1.3 2005/02/05 21:41:08 hansmi Exp $
 
 inherit eutils
 
