@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/aspell/Attic/aspell-0.50.5-r1.ebuild,v 1.7 2004/06/10 16:13:22 kloeri Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/aspell/Attic/aspell-0.50.5-r2.ebuild,v 1.1 2004/06/16 17:33:41 seemant Exp $
 
 inherit libtool eutils
 
@@ -66,4 +66,13 @@ pkg_postinst() {
 	einfo "After installing an aspell dictionary for your language(s),"
 	einfo "You may use the aspell-import utility to import your personal"
 	einfo "dictionaries from ispell, pspell and the older aspell"
+
+	ewarn ""
+	ewarn "Please re-emerge ALL your aspell-LANG dictionaries"
+	ewarn ""
+	for TICKER in 1 2 3 4 5; do
+		# Double beep here.
+		echo -ne "\a" ; sleep 0.1 &>/dev/null ; sleep 0,1 &>/dev/null
+		echo -ne "\a" ; sleep 1
+	done
 }
