@@ -1,5 +1,8 @@
 date 09 Jan 2001
 
+upd dev-db/unixODBC-1.8.13 to 2.0.2
+achim
+
 new net-misc/sitecopy-0.10.12
 achim
 Without the gnome-frontend for now

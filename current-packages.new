@@ -61,6 +61,7 @@
 ./dev-db/mysql/mysql-3.23.28.ebuild
 ./dev-db/postgresql/postgresql-7.0.3.ebuild
 ./dev-db/unixODBC/unixODBC-1.8.13.ebuild
+#./dev-db/unixODBC/unixODBC-2.0.2.ebuild
 ./dev-java/fesi/fesi-1.ebuild
 ./dev-java/jndi/jndi-1.2.1-r1.ebuild
 ./dev-java/mysql-jdbc/mysql-jdbc-1.2.3-r1.ebuild
