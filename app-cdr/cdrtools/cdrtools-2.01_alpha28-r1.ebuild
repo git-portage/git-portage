@@ -1,19 +1,17 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/cdrtools/Attic/cdrtools-2.01_alpha26.ebuild,v 1.2 2004/04/19 07:56:44 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/cdrtools/Attic/cdrtools-2.01_alpha28-r1.ebuild,v 1.1 2004/05/26 17:17:35 pylon Exp $
 
 inherit eutils gcc
 
-DVDR_PATCH_P="cdrtools-2.01a26-dvd.patch"
-DESCRIPTION="A set of tools for CDR drives, including cdrecord."
+DESCRIPTION="A set of tools for CD recording, including cdrecord."
 HOMEPAGE="http://www.fokus.gmd.de/research/cc/glone/employees/joerg.schilling/private/cdrecord.html"
-SRC_URI="ftp://ftp.berlios.de/pub/cdrecord/alpha/${P/_alpha/a}.tar.bz2
-	dvdr? ( http://people.mandrakesoft.com/~warly/files/cdrtools/archives/${DVDR_PATCH_P}.bz2 )"
+SRC_URI="ftp://ftp.berlios.de/pub/cdrecord/alpha/${P/_alpha/a}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~hppa ~sparc ~alpha ~amd64 ~ia64"
-IUSE="dvdr"
+KEYWORDS="x86 ppc ~hppa ~sparc ~alpha ~amd64 ~ia64"
+IUSE=""
 
 DEPEND="virtual/glibc"
 PROVIDE="virtual/cdrtools"
@@ -22,14 +20,11 @@ S=${WORKDIR}/${PN}-2.01
 
 src_unpack() {
 	unpack ${A}
-	use dvdr && unpack ${DVDR_PATCH_P}.bz2
 
 	cd ${S}
 	# Add support for 2.5 kernels
 	# <azarah@gentoo.org> (05 Feb 2003)
 	epatch ${FILESDIR}/${PN}-2.01-kernel25-support.patch
-
-	use dvdr && epatch ${WORKDIR}/${DVDR_PATCH_P}
 
 	cd ${S}/DEFAULTS
 	sed -i -e "s:/opt/schily:/usr:g" Defaults.linux
@@ -44,7 +39,7 @@ src_unpack() {
 }
 
 src_compile() {
-	emake CC="$(gcc-getCC) -D__attribute_const__=const" || die
+	emake CC="$(gcc-getCC) -D__attribute_const__=const" COPTX="${CFLAGS}" CPPOPTX="${CPPFLAGS}" LDOPTX="${LDFLAGS}" || die
 }
 
 src_install() {
@@ -63,6 +58,7 @@ src_install() {
 	cd ${S}
 	insinto /etc/default
 	doins rscsi/rscsi.dfl
+	doins cdrecord/cdrecord.dfl
 
 	cd ${S}/libs/*-linux-cc
 	dolib.a *.a
@@ -74,15 +70,17 @@ src_install() {
 	doins include/scg/*.h
 
 	cd ${S}
-	dodoc Changelog COPYING PORTING README* START
+	dodoc ABOUT Changelog COPYING README README.{ATAPI,audio,cdplus,cdrw,cdtext,cdclone,copy,DiskT@2,linux,linux-shm,multi,parallel,raw,rscsi,sony,verify} START
+	doman */*.1
+	doman */*.8
 
 	cd ${S}/doc
 	dodoc cdrecord-1.8.1_de-doc_0.1.tar
 	docinto print
 	dodoc *.ps
-	newman cdda2wav.man cdda2wav.1
-	newman cdrecord.man cdrecord.1
-	newman readcd.man readcd.1
-	newman isoinfo.man isoinfo.8
-	newman mkisofs.man mkisofs.8
 }
+
+pkg_postinst() {
+	einfo "The command line option 'dev=ATAPI:' should be added for IDE CD writers."
+}
+
