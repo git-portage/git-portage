@@ -1,5 +1,5 @@
-MD5 a4e62e4e752d249a8413ace0a176850f atanks-1.1.0.ebuild 1364
-MD5 e9452da3c448dbf7f647fa191bf569f3 ChangeLog 2099
+MD5 6ace6072c1bc7423116962d9aefbadcf atanks-1.1.0.ebuild 1365
+MD5 22b342ea30e8e3c91a930f9925ab3f4c ChangeLog 2255
 MD5 08031c6325250ddda0a99870f53c032d metadata.xml 220
 MD5 ea52207aee01685ed0e4b52b4cd66958 files/digest-atanks-1.1.0 65
 MD5 f1a4b436c0ef59132f761306104d2904 files/atanks-gcc34.patch 1229
