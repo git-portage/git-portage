@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.49-r18.ebuild,v 1.7 2003/12/24 07:07:42 carpaski Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.49-r19.ebuild,v 1.1 2003/12/30 12:11:10 carpaski Exp $
 
 IUSE="build"
 
@@ -15,8 +15,8 @@ SRC_URI="http://gentoo.twobit.net/portage/${PF}.tar.bz2 mirror://gentoo/${PF}.ta
 HOMEPAGE="http://www.gentoo.org"
 
 # Contact carpaski with a reason before you modify any of these.
-#KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sparc x86"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ppc64 ~sparc ~x86"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sparc x86"
+#KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 
 LICENSE="GPL-2"
 RDEPEND="!build? ( >=sys-apps/sed-4.0.5 dev-python/python-fchksum >=dev-lang/python-2.2.1 sys-apps/debianutils >=app-shells/bash-2.05a ) selinux? ( dev-python/python-selinux )"
@@ -83,7 +83,7 @@ src_install() {
 
 	#This special handling of make.conf is required for catalyst
 	#to function properly.
-	mv ${D}/etc/make.conf ${D}/etc/make.conf.orig
+	mv ${D}/etc/make.conf ${D}/etc/make.conf.example
 
 	doins etc-update.conf dispatch-conf.conf
 
@@ -153,12 +153,7 @@ src_install() {
 pkg_postinst() {
 	local x
 
-	#Only move make.conf into place if one doesn't exist already.
-	#Special handling required for catalyst.
-	if [ ! -f ${ROOT}etc/make.conf ]
-	then
-		cp -a ${ROOT}etc/make.conf.orig ${ROOT}etc/make.conf
-	fi
+	[ -f "${ROOT}etc/make.conf" ] || touch ${ROOT}etc/make.conf
 
 	#disable global sandbox if it's active (it's been deprecated)
 	if [ -f /etc/ld.so.preload ] ; then
