@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/liferea/Attic/liferea-0.5.3c.ebuild,v 1.3 2004/09/07 06:25:14 khai Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/liferea/Attic/liferea-0.6.1.ebuild,v 1.1 2004/11/06 09:31:36 obz Exp $
 
 inherit gnome2
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ppc"
+KEYWORDS="~x86 ~amd64 ~ppc"
 IUSE="mozilla gtkhtml"
 
 RDEPEND=">=x11-libs/gtk+-2
@@ -24,6 +24,8 @@ RDEPEND=">=x11-libs/gtk+-2
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
+DOCS="README AUTHORS ChangeLog COPYING"
+
 pkg_setup(){
 	ewarn "If you run this version of liferea without backing up your feedlist"
 	ewarn "you might lose it, please export to opml before upgrading to avoid"
@@ -32,9 +34,3 @@ pkg_setup(){
 	sleep 8
 }
 
-src_unpack(){
-	unpack ${A}
-	cd ${S}
-	autoreconf --force
-}
-DOCS="README AUTHORS ChangeLog COPYING"
