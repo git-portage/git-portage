@@ -1,4 +1,4 @@
-date 22 Nov 2000
+date 23 Nov 2000
 
 new sys-apps/ucspi-tcp-0.88
 drobbins
@@ -8,6 +8,8 @@ new sys-apps/daemontools-0.70
 drobbins
 This package contains supervise and multilog, the heart of
 our new daemon management system
+
+date 22 Nov 2000
 
 del app-admin/daemontools-0.70-r1
 drobbins
