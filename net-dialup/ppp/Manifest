@@ -1,8 +1,11 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5a971d8d59f8c462d8651882eba46297 ppp-2.4.2-r6.ebuild 5404
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
 MD5 b109af0767940076444e51dbf3275f16 ppp-2.4.1-r14.ebuild 4698
-MD5 6dfffcc29c21949afcc0907052d30944 ppp-2.4.2-r7.ebuild 5448
-MD5 3f0c928a5721f56d967603b1878f648a ChangeLog 13326
+MD5 cb626799337b0cd20ed72013fcf6f3ae ppp-2.4.2-r7.ebuild 5602
+MD5 5841d7fe8b28db41319af944970132e7 ChangeLog 13583
 MD5 20502c85d128ae0dd4545dc3ae3eec6b ppp-2.4.2-r1.ebuild 4276
 MD5 24f264eef320520caee8597fb071405b ppp-2.4.2.ebuild 3957
 MD5 210b3f9616a92005171f3f25c33c1638 ppp-2.4.2-r2.ebuild 4462
@@ -45,4 +48,11 @@ MD5 971013ca1ccc5a25acffdb3ff9edff4e files/2.4.2/pppoatm.diff.gz 3567
 MD5 f0ad3e0c62aec1771536caf00e28b9c6 files/2.4.2/pppoe.html 7605
 MD5 9d798912edc0a47727afcd7aac100957 files/2.4.2/stdopt-mppe-mppc-0.82.patch.gz 10108
 MD5 bd6bee3df13537a8550d2f39131eab0d files/2.4.2/pppoatm-2.diff.gz 3489
-MD5 9cb72b4650f93e2ae6256c30a29e6962 files/2.4.2/cbcp-dosfix.patch 3387
+MD5 d278ed14e1cd65a9d44a91ec23a108d7 files/2.4.2/cbcp-dosfix.patch 3416
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBg4tjmdTrptrqvGERApCRAJ9K2hlFbM/m7REVqgioPGbpQLR26wCgiqnn
+TzEi55XOqpr1mmQw9e8BPa8=
+=OhxZ
+-----END PGP SIGNATURE-----
