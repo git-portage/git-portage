@@ -1,7 +1,10 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b75e7517ea7205944b487f54df407287 motif-config-0.4.ebuild 1239
-MD5 11fc204ee998ca57cc764f68274462c8 motif-config-0.6.ebuild 1239
+MD5 33bcba9885d6419bbb4e22eed35676ab motif-config-0.6.ebuild 1239
 MD5 11fc204ee998ca57cc764f68274462c8 motif-config-0.5.ebuild 1239
-MD5 21115a2b4198b7f4f9c4603851ac5691 ChangeLog 2081
+MD5 52102b1481601078adbafef682589ca6 ChangeLog 2082
 MD5 503ccb1138f9c49f0855884d830988a6 metadata.xml 253
 MD5 76af3b1b80127315546ef5ea7f5875e1 files/bindings.tbz2 5342
 MD5 cedbeed369bab9555dd6fda29c8bc4c3 files/motif-config-0.1 6466
@@ -16,3 +19,10 @@ MD5 b4cca983e552045606f845e17a00e1d6 files/bitmaps.tbz2 3165
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-motif-config-0.4 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-motif-config-0.5 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-motif-config-0.6 0
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCQEX7evY57Fted3ERAjFvAKDdZ95E1MFtVJX5VgV25yYtopuEiACffdpM
+E/7QjPNGa/VdUD3pKlwFTMg=
+=Xu40
+-----END PGP SIGNATURE-----
