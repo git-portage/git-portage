@@ -65,7 +65,7 @@ install -m1777 -d $ROOT/tmp/portage-log
 echo "$C_HILITE>>>$C_NORMAL Building from ${mylist}..."
 for i in $mypackages
 do
-
+  source /etc/profile
   # full path
   myd=${i/.\//$PORTDIR\/gentoo-x86\/}
 
@@ -121,4 +121,5 @@ do
     echo "!!! $myd does not exists !"
   fi
   env-update &>/dev/null
+
 done
