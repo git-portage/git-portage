@@ -102,5 +102,6 @@ do
   else
     echo "!!! $myd does not exists !"
   fi
-  ldconfig -r $ROOT &> /dev/null
+  env-update
+  env-update
 done
