@@ -1,4 +1,7 @@
 MD5 be67e159a467d9ae615e4f769aad2593 ChangeLog 644
 MD5 44c39c6ad372a8e5a5e7ee3311f703a7 metadata.xml 160
 MD5 cc4f05db0de7388e163e196fe7dee193 ngircd-0.7.7.ebuild 621
+MD5 9fc3a6691cc343a45e2661fafae50bf7 ngircd-0.8.0.ebuild 1287
 MD5 a3a523dfbf1853555c797713c5c45866 files/digest-ngircd-0.7.7 64
+MD5 c3a876cce91e393df2aff937add2b823 files/ngircd.init.d 423
+MD5 ebc2472c14cff12e0907bbdfafab981a files/digest-ngircd-0.8.0 64
