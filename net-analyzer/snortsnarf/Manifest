@@ -1,4 +1,7 @@
 MD5 fd46f392827b716432a1bbd613805d2e snortsnarf-021111.1.ebuild 1186
+MD5 0dfe979a645aeee2a9c0d0041dfbf5d4 snortsnarf-021111.1-r1.ebuild 1283
 MD5 93069066ca622694ffbf804f9eb8a117 ChangeLog 734
 MD5 57c6cc2efb81ce99a5ed7ddadc6e042d metadata.xml 391
 MD5 a25e9ca70d5bf65e193bdbbe153ae7e2 files/digest-snortsnarf-021111.1 71
+MD5 a25e9ca70d5bf65e193bdbbe153ae7e2 files/digest-snortsnarf-021111.1-r1 71
+MD5 0baba968e1d29acbe42e58249bf71cbb files/snort-log-gentoo.patch 567
