@@ -1,3 +1,5 @@
-MD5 31c1b06680bc1b1ceb6de5e3662b09e9 dlint-1.4.0.ebuild 868
 MD5 b3e7063fa2b4990bbd6a57208e632d28 ChangeLog 741
+MD5 31c1b06680bc1b1ceb6de5e3662b09e9 dlint-1.4.0.ebuild 868
+MD5 299ea86f0eab2b2498b84b1c19c0420e dlint-1.4.0-r1.ebuild 927
 MD5 4885c47ebf525bab4ff5af0f22fc14c7 files/digest-dlint-1.4.0 61
+MD5 4885c47ebf525bab4ff5af0f22fc14c7 files/digest-dlint-1.4.0-r1 61
