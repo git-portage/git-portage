@@ -1,4 +1,5 @@
 MD5 22ee8712a64dbd3146c3d9df0ba30e56 rsbac-sources-2.6.10-r2.ebuild 1297
+MD5 0a93f5d4821cfa94eb40bf5ee46f8e1e rsbac-sources-2.6.11-r1.ebuild 1403
 MD5 c257d5e56db22c58fcaadbf6cc1dd33d rsbac-sources-2.6.10-r4.ebuild 1424
 MD5 b6c09200650a7e8b43089a9a975b5466 rsbac-sources-2.4.29.ebuild 1552
 MD5 5ca945aa5b91186c7ff427cdc92633f4 rsbac-sources-2.6.10-r1.ebuild 1620
@@ -14,3 +15,4 @@ MD5 bde788e15d428885ef8021a7af885f8c files/digest-rsbac-sources-2.6.10-r1 207
 MD5 f4c94e3957740662ca6de6bc1b2927d2 files/digest-rsbac-sources-2.6.10-r2 142
 MD5 76916c16d5ac792f37dde197bc698ae9 files/digest-rsbac-sources-2.6.10-r3 142
 MD5 56bf8976ff3d41e4a09f7f2553525e26 files/digest-rsbac-sources-2.6.10-r4 143
+MD5 b76e8b846b9eb99f78cb79555407114a files/digest-rsbac-sources-2.6.11-r1 143
