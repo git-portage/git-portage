@@ -1,5 +1,18 @@
 date 22 Nov 2000
 
+new sys-apps/ucspi-tcp-0.88
+drobbins
+This is the famed tcpserver package
+
+new sys-apps/daemontools-0.70
+drobbins
+This package contains supervise and multilog, the heart of
+our new daemon management system
+
+del app-admin/daemontools-0.70-r1
+drobbins
+moved to sys-apps
+
 upd sys-kernel/linux-sources-2.4.0_rc10-r1 to 2.4.0_rc10-r2
 drobbins
 Added LVM 0.9 support, fixed some packaging problems
