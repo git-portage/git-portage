@@ -303,7 +303,7 @@
 ./net-misc/netkit-talk/netkit-talk-0.17-r1.ebuild
 ./net-misc/netkit-telnetd/netkit-telnetd-0.17-r1.ebuild
 ./net-misc/netkit-timed/netkit-timed-0.17-r2.ebuild
-./net-misc/ntp/net-4.0.99k.ebuild
+./net-misc/ntp/ntp-4.0.99k.ebuild
 ./net-misc/nut/nut-0.44.1.ebuild
 ./net-misc/openssh/openssh-2.3.0_p1.ebuild
 ./net-misc/rsync/rsync-2.4.6.ebuild
