@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/ivman/Attic/ivman-0.3.ebuild,v 1.4 2004/11/28 23:09:27 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/ivman/Attic/ivman-0.3.ebuild,v 1.5 2004/12/17 14:12:11 genstef Exp $
 
 IUSE="debug"
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/ivman/ivman-0.3.tar.gz"
 
 SLOT="0"
 LICENSE="QPL"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 x86"
 
 RDEPEND=">=dev-libs/glib-2.2
 	 dev-libs/libxml2
