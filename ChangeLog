@@ -1,4 +1,19 @@
+26.10.2000
+
+	- Update lopster 0.9.4 -> 0.9.5		(achim)
+	- New app-emulators/wine 20001002	(achim)
+	- Update kde 2.0_rc2 -> 2.0		(achim)
+	
+24.10.2000
+	- Update portage-system to use python   (achim)
+	  from /usr/lib/portage/bin
+	- Update kde 1.94 -> 2.0_rc2		(achim)
+	- Update qt-x11 2.2.0 -> 2.2.1		(achim)
+	- New app-text/sharefonts 0.10		(achim)
+	- New app-text/freefonts  0.10		(achim)
+
 21.10.2000
+
 	-Update ghostscript 6.23 r1 -> r2	(achim)
 	 [Added stp-driver from gimp-print]
 
