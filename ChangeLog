@@ -1,3 +1,13 @@
+date 28 Apr 2001
+
+upd sys-apps/linux-2.4.4_pre8 to 2.4.4
+drobbins
+new 2.4.4 kernel ebuild
+
+upd sys-apps/linux-sources-2.4.4_pre8 to 2.4.4
+drobbins
+new 2.4.4 kernel ebuild
+
 date 27 Apr 2001
 
 upd dev-util/strace-4.2-r2 to 4.3
