@@ -1,6 +1,18 @@
 # ChangeLog for sys-apps/iptables
 # Copyright 2002-2003 Gentoo Technologies, Inc.; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/iptables/Attic/ChangeLog,v 1.28 2003/03/11 11:30:08 zwelch Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/iptables/ChangeLog,v 1.1 2003/03/11 21:50:24 mholzer Exp $
+
+*iptables-1.2.7a-r3 (11 Mar 2003)
+
+  11 Mar 2003; Martin Holzer <mholzer@gentoo.org> iptables-1.2.7a-r3.ebuild,
+  files/grsecurity-1.2.7a-iptables.patch, files/iptables-1.2.6a-imq.diff-3,
+  files/iptables-1.2.7a-gentoo.diff, files/iptables-1.2.7a-hppa.diff,
+  files/iptables-1.2.7a-imq.diff-3, files/iptables.confd, files/iptables.init,
+  files/1.2.7a-files/01_all_grsecurity.patch.bz2,
+  files/1.2.7a-files/02_all_imq.patch.bz2,
+  files/1.2.7a-files/03_all_mac_fix.patch.bz2,
+  files/1.2.7a-files/04_all_no_optimize_fix.patch.bz2:
+  moved from sys-apps/iptables to net-firewall/iptables
 
   21 Feb 2003; Zach Welch <zwelch@gentoo.org> iptables-1.2.7a-r3.ebuild :
   Added arm keyword 
