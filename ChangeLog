@@ -1,5 +1,13 @@
 date 08 Feb 2001
 
+new app-text/ispell-de-20001109.ebuild
+achim
+A german dictionary for ispell
+
+new app-text/aspell-de-20001109.ebuild
+achim
+A german dictionary for aspell
+
 new kde-apps/kdbg-1.2.0
 achim
 A Graphical Debugger Interface to gdb
