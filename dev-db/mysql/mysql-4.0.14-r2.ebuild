@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/Attic/mysql-4.0.14-r2.ebuild,v 1.2 2003/09/11 16:50:05 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/Attic/mysql-4.0.14-r2.ebuild,v 1.3 2003/09/17 07:10:37 robbat2 Exp $
 
 inherit eutils
 #to accomodate -laadeedah releases
@@ -176,7 +176,8 @@ src_install() {
 	dohtml -r Docs/*
 
 	insinto /etc/mysql
-	doins ${FILESDIR}/my.cnf-4.0.14-r1 scripts/mysqlaccess.conf
+	newins ${FILESDIR}/my.cnf-4.0.14-r1 my.cnf
+	doins scripts/mysqlaccess.conf
 	exeinto /etc/init.d
 	newexe ${FILESDIR}/mysql-4.0.rc6 mysql
 }
@@ -187,6 +188,16 @@ pkg_config() {
 		einfo "permissions on it, or Control-C to abort now..."
 		read
 		${ROOT}/usr/bin/mysql_install_db #>>/var/log/mysql/mysql.err 2>&1
+		# changing ownership of newly created databases to mysql.mysql
+		local DATADIR=""
+		if [ -f '/etc/mysql/my.cnf' ] ; then
+			#DATADIR=`grep ^datadir /etc/mysql/my.cnf | sed -e 's/.*= //'`
+			DATADIR=`/usr/sbin/mysqld  --help |grep '^datadir' | awk '{print $2}'`
+		fi
+		if [ -z "${DATADIR}" ]; then
+			DATADIR="/var/lib/mysql/"
+		fi
+		chown -R mysql.mysql ${DATADIR}
 	else
 		einfo "Hmm, it appears as though you already have the mysql"
 		einfo "database in place.  If you are having problems trying"

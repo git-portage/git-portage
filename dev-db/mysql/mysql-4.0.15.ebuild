@@ -1,7 +1,8 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/Attic/mysql-4.0.14-r1.ebuild,v 1.7 2003/09/17 07:10:37 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/Attic/mysql-4.0.15.ebuild,v 1.1 2003/09/17 07:10:37 robbat2 Exp $
 
+inherit eutils
 #to accomodate -laadeedah releases
 NEWP=${P}
 
@@ -72,6 +73,9 @@ src_unpack() {
 	if use tcpd; then
 		patch -p1 -d ${S} < ${FILESDIR}/mysql-4.0.14-r1-tcpd-vars-fix.diff || die
 	fi
+	# fix buffer overflow in mysql4 prior to 4.0.15 bug #28394
+	[ "$PV" == "4.0.14" ] &&
+		 epatch ${FILESDIR}/mysql-${PV}-security-28394.patch
 }
 
 src_compile() {
@@ -175,7 +179,7 @@ src_install() {
 	newins ${FILESDIR}/my.cnf-4.0.14-r1 my.cnf
 	doins scripts/mysqlaccess.conf
 	exeinto /etc/init.d
-	newexe ${FILESDIR}/mysql-4.0.rc6 mysql
+	newexe ${FILESDIR}/mysql-4.0.15.rc6 mysql
 }
 
 pkg_config() {
