@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8745381afa71feefa57c01cc21771fc9 gambas-0.91.ebuild 1860
 MD5 622720c5c5e309d4457ff037f8a4175f metadata.xml 222
 MD5 da0dd90ceea7e78ff0180ec1d54bfd49 gambas-0.93b.ebuild 2058
@@ -17,3 +20,10 @@ MD5 da3cd57f803b4dc0717bdedde046da20 files/non-symlink-0.94.patch 2658
 MD5 39016f3bbaf4069a963b10796d8f48f1 files/WebHome.html 692
 MD5 ecaa2d7dc30481f5ac7ff194a37d5555 files/digest-gambas-0.95 65
 MD5 8f6c4de24a80ef81fd184b62358b8c89 files/non-symlink-0.95.patch 2384
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD8DBQFA/xPR6J2i8a8J4okRAodlAJ0XHE7xYeu0wShzfJc1tABY1GTjQQCfaNjW
+aqRbCA1H0SoxGTyNCeRVR7Q=
+=9dgr
+-----END PGP SIGNATURE-----
