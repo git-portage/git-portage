@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/fxruby/Attic/fxruby-1.0.28.ebuild,v 1.1 2004/03/13 19:48:58 twp Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/fxruby/Attic/fxruby-1.0.28.ebuild,v 1.2 2004/04/10 10:31:27 usata Exp $
 
 MY_P=FXRuby-${PV}
 DESCRIPTION="Ruby language binding to the FOX GUI toolkit"
@@ -10,7 +10,7 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="-alpha -hppa ~sparc ~x86"
 IUSE=""
-DEPEND=">=dev-lang/ruby-1.6
+DEPEND="virtual/ruby
 	>=x11-libs/fox-1.0
 	x11-libs/fxscintilla"
 S=${WORKDIR}/${MY_P}
