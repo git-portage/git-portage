@@ -1,16 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 d5aecf5b90d46a9bbf381b0d87445b25 freshmeat-submit-1.4.ebuild 803
-MD5 ffdd9f3b34c94178ce301f78f68a11f5 freshmeat-submit-1.6.ebuild 826
-MD5 9d865707b08e739a4cfdb59af4a249db ChangeLog 737
+MD5 e55e0a56901712e02e096706042b9aff freshmeat-submit-1.6.ebuild 825
+MD5 269aa39d011ad4855cf3795b9f9f2b2a ChangeLog 842
 MD5 111313e50bb963cdb190ace876123b5b metadata.xml 586
 MD5 dfefba15167fe4e789dd8a7e1e56591c files/digest-freshmeat-submit-1.4 71
 MD5 58422007ed74676a3190a9dab7b083d0 files/digest-freshmeat-submit-1.6 71
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBua4zEZCkKN40op4RAksuAKDADNJNqzah61/Fr6M3SORmLN9+0ACcCRCI
-C2shhjBBWQE5j0r7lkWt1Oo=
-=l7S0
------END PGP SIGNATURE-----
