@@ -18,8 +18,9 @@ do_step() {
     echo "$C_END $C_HILITE [$1]  "
     cd `dirname $myd`
     ebuild $myf $1 &> $myl/$1
-    cd $tmpd
     mye=$?
+    cd $tmpd
+
 
     if [ -f $LOGDIR/$1 ]
     then
