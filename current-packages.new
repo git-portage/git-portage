@@ -394,7 +394,7 @@
 ./net-www/netscape-plugger/netscape-plugger-3.2.ebuild
 #./net-www/netscape/navigator-4.76-r1.ebuild
 ./net-www/netscape/netscape-4.76-r1.ebuild
-./net-www/squid/squid-2.3.4s-r1.ebuild
+./net-www/squid/squid-2.3.4s-r2.ebuild
 ./net-www/w3m/w3m-0.1.10-r1.ebuild
 ./sys-apps/at/at-3.1.8-r1.ebuild
 ./sys-apps/baselayout/baselayout-1.5-r2.ebuild
