@@ -1,14 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 d710536be35ac789b98a69046962e005 fcdsl-2.6.20.7.ebuild 7212
-MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
 MD5 f82844e6e5c237454687f26dc54d2752 ChangeLog 554
+MD5 6d9e21992a28ab7e38a1d5073daaa7ba fcdsl-2.6.20.7.ebuild 7208
+MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
+MD5 829c7d16116f5aac3acbeb708de5f10d fcdsl-2.6.20.7-r1.ebuild 7015
 MD5 364100988c059984dab986c49888df6f files/digest-fcdsl-2.6.20.7 72
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBjjGdmdTrptrqvGERAkx2AJ9FuyGIhZ9DAEawnBnQuqnubRf+xQCfZ2mo
-1ONPzanXxqdMGTJzy6hiFXQ=
-=dck7
------END PGP SIGNATURE-----
+MD5 364100988c059984dab986c49888df6f files/digest-fcdsl-2.6.20.7-r1 72
