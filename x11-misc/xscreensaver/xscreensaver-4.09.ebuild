@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xscreensaver/Attic/xscreensaver-4.07.ebuild,v 1.2 2003/02/13 17:21:29 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xscreensaver/Attic/xscreensaver-4.09.ebuild,v 1.1 2003/03/18 06:44:15 seemant Exp $
 
 IUSE="pam kerberos gtk motif gnome opengl jpeg xml"
 
@@ -9,7 +9,7 @@ SRC_URI="http://www.jwz.org/xscreensaver/${P}.tar.gz"
 HOMEPAGE="http://www.jwz.org/xscreensaver/"
 
 LICENSE="BSD"
-KEYWORDS="~x86 ~ppc ~sparc"
+KEYWORDS="~x86 ~ppc ~sparc alpha"
 SLOT="0"
 
 # Enable gtk+ by default if 'motif' not in USE, or if
