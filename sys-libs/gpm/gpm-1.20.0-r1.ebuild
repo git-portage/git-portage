@@ -1,11 +1,11 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/gpm/Attic/gpm-1.19.6-r2.ebuild,v 1.2 2002/01/04 22:30:39 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/gpm/Attic/gpm-1.20.0-r1.ebuild,v 1.1 2002/03/05 03:53:22 woodchip Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Console-based mouse driver"
-SRC_URI="ftp://metalab.unc.edu/pub/Linux/system/mouse/${P}.tar.gz"
+SRC_URI="ftp://arcana.linux.it/pub/gpm/gpm-1.20.0.tar.bz2"
 
 DEPEND="virtual/glibc
 	>=sys-libs/ncurses-5.2
@@ -37,21 +37,22 @@ src_install() {
 	then
 		#create missing script
 		echo 'mkdir -p "$@"' > ${S}/mkinstalldirs
+		chmod u+x ${S}/mkinstalldirs
 	fi
 	make prefix=${D}/usr \
 		mandir=${D}/usr/share/man \
 		infodir=${D}/usr/share/info \
 		sysconfdir=${D}/etc/gpm \
 		install || die
-	chmod 755 ${D}/usr/lib/libgpm.so.1.18.0
+	chmod 755 ${D}/usr/lib/libgpm.so.*
 	dodoc BUGS COPYING ChangeLog Changes MANIFEST README TODO
 	dodoc doc/Announce doc/FAQ doc/README*
 #	doman doc/gpm.8 doc/mev.1 doc/gpm-root.1 doc/gpm-types.7 doc/mouse-test.1
 	doinfo doc/gpm.info
-	docinto txt
-	dodoc doc/gpmdoc.txt
-	docinto ps
-	dodoc doc/gpmdoc.ps
+#	docinto txt
+#	dodoc doc/gpmdoc.txt
+#	docinto ps
+#	dodoc doc/gpmdoc.ps
 
 	insinto /etc/gpm
 	doins conf/gpm-*.conf
