@@ -11,17 +11,18 @@ MD5 05e7bb2b00b720f2f80c9289b049a2fc gcc-3.3.2-r2.ebuild 17937
 MD5 e586ae3d1dfd608365379f735502944b gcc-3.3.3.ebuild 22203
 MD5 f3ebca152f27914897021eb0ddba2c35 gcc-3.3.1-r5.ebuild 17689
 MD5 7b9e1f5167f95ef12201d256c1540273 gcc-3.4.1.ebuild 30210
-MD5 0e70d777f5b638857ad4c19b507e3de4 gcc-3.4.1-r3.ebuild 31213
+MD5 d8600df093ce0565bb8500a30465e2f6 gcc-3.4.1-r3.ebuild 31211
 MD5 5dc2c1245f12b0870a32c2ac4d9f58d7 gcc-3.3.3-r6.ebuild 24863
 MD5 3f83a8d4f48a08c93928a74922eabaf0 gcc-3.3.2-r4.ebuild 20562
 MD5 2f2650284e244eafc0795b02a1bdadd2 gcc-2.95.3-r8.ebuild 8306
 MD5 192382b893da342324669e153371fd56 gcc-3.3.3-r3.ebuild 23575
 MD5 8dc61d014521e2c7e35e11b147a5be30 gcc-3.3.2-r1.ebuild 17783
-MD5 31a4625ece1a2c117a3475540ae39c60 ChangeLog 67609
+MD5 b9d2bf3ee6f2242f777a750295dbf079 ChangeLog 452
 MD5 c874c9694587097d692fa64cd46be416 gcc-3.3.2.ebuild 17730
 MD5 c45538377c4cf95b5e05fe3f3eaecc97 gcc-3.3.3_pre20040426.ebuild 22454
-MD5 f0f868e57af0d5504fe71ed9f126e0ea gcc-3.3.4-r2.ebuild 24805
+MD5 29101392d0713e27c3186bab17fa17c2 gcc-3.3.4-r2.ebuild 24802
 MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
+MD5 dce0d569acbf0ba02b504d6d24ed1e8b gcc-3.4.1-r2.ebuild 31161
 MD5 fbdd9445945cd92c9f1791320f6f5f31 gcc-3.3.3-r5.ebuild 24223
 MD5 f7e7042c2ddf66e344b30cbc66ebaf73 files/cc 24
 MD5 80d122265d3062847a4a1b161abe1d26 files/cpp 24
@@ -41,7 +42,6 @@ MD5 3a68d40d170427ffbfcf181b5099d693 files/digest-gcc-3.3.3-r5 528
 MD5 3fd5a29d44b89f4fb220fccaa968fc05 files/digest-gcc-3.3.3-r6 442
 MD5 6df16eb92245a931ecfc4cbcc73c84cf files/digest-gcc-3.3.4-r1 442
 MD5 6df16eb92245a931ecfc4cbcc73c84cf files/digest-gcc-3.3.4-r2 442
-MD5 c6ea8a92bac6d2638c54c011f98bc5b8 files/digest-gcc-3.4.1-r2 442
 MD5 c6ea8a92bac6d2638c54c011f98bc5b8 files/digest-gcc-3.4.1-r3 442
 MD5 3e2ed05a6d6829b70d282af8aa1fce82 files/digest-gcc-3.4.2-r1 358
 MD5 8f56750ce25ca30ffebcbdb65de95a1f files/digest-gcc-3.3.3_pre20040426 138
@@ -53,6 +53,7 @@ MD5 fc48a7567c14adcfeed10b5e03b4ebf6 files/digest-gcc-3.4.1 355
 MD5 3213bd50acdbbd71ce7dd3e40710e30e files/digest-gcc-2.95.3-r8 64
 MD5 f57a9900e4d0edcae7b1e327e263d2f7 files/digest-gcc-3.3 294
 MD5 e3193bdffb435b77a21bfb504ff6f591 files/mkinfodir 7324
+MD5 edced3dd7f4035b638bbee500bc89e7b files/gcc-spec-env.patch 791
 MD5 07b57d62aa1a8cd4d1cd37984ebe2053 files/scan_libgcc_linked_ssp.sh 861
 MD5 f6b6f7c3577eccb694066bb54dd8075a files/3.3/gcc33-gentoo-branding-1.patch 870
 MD5 d047c78a9141b16915d8ec3f54d1e246 files/3.3/gcc33-coreutils-compat.patch.bz2 3462
