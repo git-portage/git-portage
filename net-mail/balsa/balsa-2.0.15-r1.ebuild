@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/balsa/Attic/balsa-2.0.15.ebuild,v 1.1 2003/11/10 15:52:30 foser Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/balsa/Attic/balsa-2.0.15-r1.ebuild,v 1.1 2003/11/25 15:33:42 foser Exp $
 
 inherit gnome2 eutils
 
@@ -37,16 +37,16 @@ src_compile() {
 	local myconf
 
 	libmutt/configure \
-		`use_with ssl` \
-		`use_enable gtkhtml` \
-		`use_enable perl pcre` \
-		`use_enable ldap` \
 		--prefix=/usr \
 		--host=${CHOST} \
 		--with-mailpath=/var/mail || die "configure libmutt failed"
 
 	# threads diabled because of 17079
-	econf ${myconf} \
+	econf \
+		`use_with ssl` \
+		`use_enable gtkhtml` \
+		`use_enable perl pcre` \
+		`use_enable ldap` \
 		`use_with crypt gpgme` \
 		--disable-threads || die "configure balsa failed"
 
