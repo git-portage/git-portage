@@ -1,10 +1,10 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/gotmail/Attic/gotmail-0.7.4.ebuild,v 1.2 2003/02/13 14:32:10 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/gotmail/Attic/gotmail-0.7.9.ebuild,v 1.1 2003/03/14 01:28:32 g2boojum Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Utility to download mail from a HotMail account"
-SRC_URI="http://ssl.usu.edu/paul/gotmail/${PN}_${PV}.tar.gz"
+SRC_URI="http://savannah.nongnu.org/download/${PN}/stable.pkg/${PV}/${PN}_${PV}.tar.gz"
 HOMEPAGE="http://ssl.usu.edu/paul/gotmail/"
 
 RDEPEND="virtual/glibc net-ftp/curl dev-perl/URI dev-perl/libnet"
