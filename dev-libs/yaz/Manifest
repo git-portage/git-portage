@@ -1,3 +1,5 @@
-MD5 4274cd56fadd52bbd4e10eefc9c0e7c4 ChangeLog 1047
-MD5 4f04571f2e3e2512fe5f69eb3b088c6b yaz-2.0.8.ebuild 973
+MD5 db1298d2df466a8bd0504281c71f66f8 yaz-2.0.8.ebuild 972
+MD5 db1298d2df466a8bd0504281c71f66f8 yaz-2.0.19.ebuild 972
+MD5 3b121ce85b6e47633c0b25f53a2439b8 ChangeLog 1046
+MD5 9cabcd5a2b9e4c9f0c8d8ccb5277cb41 files/digest-yaz-2.0.19 63
 MD5 2c601b2958127cb7cfb70ec3fb718177 files/digest-yaz-2.0.8 62
