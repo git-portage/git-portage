@@ -1,6 +1,6 @@
-MD5 615f309285ec65549f12b757940b423d rhythmbox-0.8.8.ebuild 2582
 MD5 c542437c49d29e44d4bc978ac5504ffd rhythmbox-0.8.3.ebuild 2570
 MD5 62143cb4d66c9b5a6d6bf3b54286d06b rhythmbox-0.8.5.ebuild 2459
+MD5 ffab46fe0486ac2f2ec202a4fc28fa11 rhythmbox-0.8.8-r1.ebuild 2638
 MD5 b8cd19ccf9f490f2bfa854aaf917f9f5 rhythmbox-0.8.7.ebuild 2465
 MD5 439dd617dc149cb42ee1853d84b4d8d9 rhythmbox-0.8.0-r1.ebuild 2053
 MD5 eddbc790a41f613d3e27ad2fbc0373fa rhythmbox-0.6.8.ebuild 2430
@@ -20,4 +20,6 @@ MD5 7eba43d939d371b937ef3bf3428338e8 files/rhythmbox-0.6-fix_flac_test.patch 139
 MD5 5680d5f2fa4f98cf505fe60818d91e66 files/digest-rhythmbox-0.6.1-r1 69
 MD5 6c5001723b759bda9528d5ebc03b470e files/rhythmbox-0.6.5-gcc2_fix.patch 637
 MD5 3605cdb3536723e6994ffcaee8288b51 files/digest-rhythmbox-0.8.0-r1 69
+MD5 44a42f72ca8c0f3136fded12f1aa7172 files/digest-rhythmbox-0.8.8-r1 69
 MD5 7c49ce1b3d4a78dc9adba805fd3b82fb files/rhythmbox-0.8.7-gst_shn_support.patch 665
+MD5 9f5bc9bf255b78cc67342f9fc9423ef6 files/rhythmbox-0.8.8-ipod.patch 809
