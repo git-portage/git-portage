@@ -298,6 +298,7 @@
 ./gnome-apps/gedit/gedit-0.9.0.ebuild
 ./gnome-apps/ggv/ggv-0.95.ebuild
 ./gnome-apps/glade/glade-0.5.9.ebuild
+./gnome-apps/gnapster/gnapster-1.3.12.ebuild
 ./gnome-apps/gnofin/gnofin-0.8.0.ebuild
 ./gnome-apps/gnome-audio/gnome-audio-1.0.0.ebuild
 ./gnome-apps/gnome-media/gnome-media-1.2.0.ebuild

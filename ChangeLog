@@ -1,5 +1,7 @@
 18.09.2000
 
+	- New gnome-apps/gnapster-1.3.12	(achim)
+	  [ A napster client for GNOME ]
 	- New media-sound/lopster-0.9.4		(achim)
 	  [ A napster client using GTK ]
 	- New media-libs/mpeg2vidcodec-12	(achim)
