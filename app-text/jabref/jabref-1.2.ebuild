@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/jabref/Attic/jabref-1.19.ebuild,v 1.1 2004/02/20 01:09:52 zx Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/jabref/Attic/jabref-1.2.ebuild,v 1.1 2004/03/22 00:35:40 zx Exp $
 
 inherit java-pkg
 
@@ -14,6 +14,8 @@ IUSE="jikes"
 DEPEND=">=virtual/jdk-1.4
 		>=dev-java/ant-1.4.1
 		jikes? ( dev-java/jikes )"
+
+S=${WORKDIR}/jabref
 
 src_compile() {
 	local antflags="jars"
