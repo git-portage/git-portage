@@ -2,6 +2,7 @@ MD5 792e9b596d840233436101caf6c106f5 qmail-scanner-1.16.ebuild 2563
 MD5 23967139533782f9e5938f7d24847b70 qmail-scanner-1.23-r1.ebuild 4931
 MD5 92c45eef552c016e9bb044d8f8accd25 qmail-scanner-1.16-r1.ebuild 2565
 MD5 3e4b9e27ccfa364f98f34ce75a5c281f qmail-scanner-1.22-r1.ebuild 4892
+MD5 a3057d9a6b439eabfadcfe4ae429a517 qmail-scanner-1.23-r2.ebuild 4921
 MD5 7321b01e7d7a3fb311f6f892ed290f50 qmail-scanner-1.16-r2.ebuild 2314
 MD5 daeada31932e229dcc51ebf4b5b193df qmail-scanner-1.23.ebuild 4932
 MD5 adfb96c7936594bfff7a8c56ce5e0042 ChangeLog 4018
@@ -17,3 +18,4 @@ MD5 21cbccfc2015bf74d509a5b329ef4b30 files/digest-qmail-scanner-1.16-r1 67
 MD5 21cbccfc2015bf74d509a5b329ef4b30 files/digest-qmail-scanner-1.16-r2 67
 MD5 27df0427325d13d6974b9d0b4faf112e files/digest-qmail-scanner-1.22-r1 139
 MD5 148b78c4a68db8d47c44cef535b3685f files/digest-qmail-scanner-1.23-r1 139
+MD5 c6351759d589862bf81247f857fb2038 files/digest-qmail-scanner-1.23-r2 139

@@ -1,13 +1,14 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/qmail-scanner/Attic/qmail-scanner-1.23-r1.ebuild,v 1.2 2004/08/17 13:33:02 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/qmail-scanner/Attic/qmail-scanner-1.23-r2.ebuild,v 1.1 2004/08/18 14:34:21 st_lim Exp $
 
 inherit fixheadtails gcc eutils
 
+Q_S_DATE=20040817
 DESCRIPTION="E-Mail virus scanner for qmail."
 HOMEPAGE="http://qmail-scanner.sourceforge.net/"
 SRC_URI="mirror://sourceforge/qmail-scanner/${P}.tgz
-		spamassassin? (http://xoomer.virgilio.it/j.toribio/qmail-scanner/download/q-s-1.23st-20040815.patch.gz)"
+		http://xoomer.virgilio.it/j.toribio/qmail-scanner/download/q-s-${PV}st-${Q_S_DATE}.patch.gz"
 
 IUSE="spamassassin"
 
@@ -47,7 +48,7 @@ pkg_preinst() {
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	use spamassassin && epatch ${DISTDIR}/q-s-1.23st-20040815.patch.gz
+	epatch ${DISTDIR}/q-s-${PV}st-${Q_S_DATE}.patch.gz
 	ht_fix_file autoupdaters/* configure
 
 	EXTRA_VIRII="bagle,beagle,mydoom,sco,maldal,mimail,novarg,shimg,bugler,cissi,cissy,dloade,netsky,qizy"
