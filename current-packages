@@ -168,7 +168,6 @@
 ./gnome-base/mc/mc-4.5.51.ebuild
 ./gnome-base/oaf/oaf-0.6.1.ebuild
 #./gnome-libs/ammonite/ammonite-0.8.1.ebuild
-./gnome-libs/gal/gal-0.1.ebuild
 ./gnome-libs/gb/gb-0.0.15.ebuild
 ./gnome-libs/libgda/libgda-0.2.0.ebuild
 ./gnome-libs/libole2/libole2-0.1.7.ebuild
@@ -443,6 +442,7 @@
 ./x11-wm/enlightenment/enlightenment-0.16.4-r1.ebuild
 ./x11-wm/openmotif/openmotif-MLI-2.1.30.ebuild
 ./x11-wm/sawfish/sawfish-0.32.ebuild
+
 
 
 
