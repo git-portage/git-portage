@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/gimp-print/Attic/gimp-print-4.2.5-r2.ebuild,v 1.10 2004/06/24 22:38:59 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/gimp-print/Attic/gimp-print-4.2.5-r2.ebuild,v 1.11 2005/02/20 19:22:14 lanius Exp $
 
 inherit libtool
 
