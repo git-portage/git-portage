@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils/Attic/binutils-2.13.90.0.20-r1.ebuild,v 1.4 2003/06/25 22:35:44 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils/Attic/binutils-2.14.90.0.4.1.ebuild,v 1.1 2003/06/25 22:35:44 azarah Exp $
 
 IUSE="nls bootstrap build"
 
@@ -15,13 +15,12 @@ filter-flags "-fomit-frame-pointer -fssa"
 S="${WORKDIR}/${P}"
 DESCRIPTION="Tools necessary to build programs"
 SRC_URI="mirror://kernel/linux/devel/binutils/${P}.tar.bz2
-	mirror://kernel/linux/devel/binutils/test/${P}.tar.bz2
-	mirror://gentoo/${P}-20030409-cvs-update.patch.bz2"
+	mirror://kernel/linux/devel/binutils/test/${P}.tar.bz2"
 HOMEPAGE="http://sources.redhat.com/binutils/"
 
 SLOT="0"
 LICENSE="GPL-2 | LGPL-2"
-KEYWORDS="~x86 -ppc -alpha -sparc ~mips -hppa -arm"
+KEYWORDS="~amd64 -x86 -ppc -alpha -sparc -mips -hppa -arm"
 
 DEPEND="virtual/glibc
 	>=sys-apps/portage-2.0.21
@@ -45,28 +44,23 @@ src_unpack() {
 
 	cd ${S}
 
-	# CVS Branch Updates
-	# This is necessary to get ppc & x86 working again.  It also
-	# provides futher updates and necessary fixes for mips.
-	# <dragon@gentoo.org> (09 Apr 2003)
-	epatch ${WORKDIR}/${P}-20030409-cvs-update.patch
-
 	# Various patches from Redhat/Mandrake...
 	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.10-glibc21.patch
 	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.10-x86_64-testsuite.patch
 	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.10-x86_64-gotpcrel.patch
-	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.18-sparc-nonpic.patch
-	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.18-eh-frame-ro.patch
 	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.18-ltconfig-multilib.patch
-	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.18-testsuite-Wall-fixes.patch
-	use x86 &> /dev/null \
-		&& epatch ${FILESDIR}/2.13/${P}-array-sects-compat.patch
 	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.18-s390-file-loc.patch
+	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.18-testsuite-Wall-fixes.patch
+	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.1-sparc-nonpic.patch
+	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.1-eh-frame-ro.patch
 
-	# Add patches for mips
-	if [ "${ARCH}" = "mips" ]
-	then
-		epatch ${FILESDIR}/2.13/${P}-gas-mips-gprel.patch
+	use x86 &> /dev/null \
+		&& epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.20-array-sects-compat.patch
+
+	# Fixes a MIPS issue in which the dynamic relocation table in OpenSSL libs
+	# gets broken because the GOT entry count is too low
+	if [ "${ARCH}" = "mips" ]; then
+		epatch ${FILESDIR}/2.14/${PN}-mips-openssl-got-fix.patch
 	fi
 
 }
