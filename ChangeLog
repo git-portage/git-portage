@@ -1,3 +1,13 @@
+date 08 Feb 2001
+
+new kde-apps/kdbg-1.2.0
+achim
+A Graphical Debugger Interface to gdb
+
+new app-text/ispell-3.1.20.ebuild
+achim
+Ispell is a fast screen-oriented spelling checker
+
 date 07 Feb 2001
 
 upd net-misc/bind-9.0.1-r1 to 9.1.0
