@@ -2,5 +2,7 @@ MD5 89370a566fe5e3aca2df7270e6e4b303 ChangeLog 735
 MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
 MD5 c0070e103a5a5902eb83987b192c017d ruby-bdb-0.4.8.ebuild 614
 MD5 ac3e1974b7d1938cc3ecff4f6518ff66 ruby-bdb-0.5.0.ebuild 624
+MD5 00f8675db6e3ee9c0e483031675a7bc1 ruby-bdb-0.5.3.ebuild 613
 MD5 935d460409aeeec4ad6fd8a701b2d474 files/digest-ruby-bdb-0.4.8 61
 MD5 cd23d63b34f8fbc8713f3397864aa14b files/digest-ruby-bdb-0.5.0 61
+MD5 2f2fdb9119efb71ea044ed8535d013cc files/digest-ruby-bdb-0.5.3 61
