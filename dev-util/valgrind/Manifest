@@ -8,8 +8,8 @@ MD5 a0b171b6dab7cb44a9eab9bf70738b7c valgrind-2.1.1.ebuild 926
 MD5 74af16c4f9ed08248153f39e9181c7be valgrind-2.1.2.ebuild 1099
 MD5 799f0b61a3a686b4074bd61acc572c5c metadata.xml 1003
 MD5 f89777a4817a47cc876c1a51cf1b2298 valgrind-2.2.0.ebuild 1384
-MD5 83bc3efcd9c1f050fa83d55a76227026 valgrind-2.2.0-r1.ebuild 1432
-MD5 82f1cfb649730b57b32eb10cc4708d2f ChangeLog 2238
+MD5 2675ae96f7b60ab128962ad107f8234b valgrind-2.2.0-r1.ebuild 1439
+MD5 dc34cde41d17fbdb81e1a79453934e69 ChangeLog 2238
 MD5 286d10f4514e8a85360ce6ba5654ae93 files/digest-valgrind-2.0.0 67
 MD5 a69fe5652a8ca5fb1d04521fe0c56850 files/digest-valgrind-2.1.0 138
 MD5 f50184c09d0376e66b1b79d0b45e94c2 files/digest-valgrind-2.1.1 67
@@ -24,7 +24,7 @@ MD5 fc1dda2b6f2603a4244ad25f555f2034 files/valgrind-2.2.0-no-exec-stack.patch 17
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.2.6 (GNU/Linux)
 
-iD8DBQFBxcnqMGnpIbeahxwRAjkjAJ40kIBGpMxiLDlZJWkKLxXv8hYXTwCgl9Ke
-dw1QFQOjjRYzTNBDcmjxAFo=
-=19ra
+iD8DBQFBxco5MGnpIbeahxwRAjFFAJ9I610V23KsOfRj5MeKK/PvLysIjgCaAxOS
+AdnwVRx1Y4jbDnAJ+wFLvYs=
+=ZF5p
 -----END PGP SIGNATURE-----
