@@ -1,4 +1,4 @@
-MD5 7e499ca46023302fb706ea2f6e074c8f ChangeLog 13798
+MD5 eead18736c5101d3dc1f35172f0ca816 ChangeLog 13798
 MD5 a22acc3272a4f93288731dc9b1dabcab metadata.xml 388
 MD5 d1b69673543f1e3e0699c3f13e7fb5a9 openldap-2.0.25-r1.ebuild 2515
 MD5 4c937f63671eabf2fb234cf3022621e3 openldap-2.0.25-r2.ebuild 2607
@@ -11,7 +11,7 @@ MD5 ac7c5e88a70d2f80c77c354599e07236 openldap-2.1.22-r1.ebuild 6035
 MD5 2b76bb06cc9adc38f140d0d6ed3dba33 openldap-2.1.22.ebuild 5265
 MD5 9ad66af0a0c153b8901f6ece168c31aa openldap-2.1.23.ebuild 6077
 MD5 60e7ef6ce070918de62fda6327285279 openldap-2.1.26.ebuild 7115
-MD5 806e4416560ac77ade66072cacfe4bc1 openldap-2.1.27.ebuild 7078
+MD5 1d2a833e30f7f0f89fab7896924c361e openldap-2.1.27.ebuild 7076
 MD5 32822e9d47a48af3b1da7e5a3c5c6229 files/digest-openldap-2.0.25-r1 65
 MD5 32822e9d47a48af3b1da7e5a3c5c6229 files/digest-openldap-2.0.25-r2 65
 MD5 32822e9d47a48af3b1da7e5a3c5c6229 files/digest-openldap-2.0.25-r3 65
