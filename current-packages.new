@@ -231,7 +231,7 @@
 ./media-libs/libmng/libmng-0.9.3.ebuild
 ./media-libs/libpng/libpng-1.0.7.ebuild
 #./media-libs/libpng/libpng-1.0.8-r1.ebuild
-./media-libs/libsdl/libsdl-1.1.6.ebuild
+./media-libs/libsdl/libsdl-1.1.7.ebuild
 #./media-libs/libungif/libungif-4.1.0_beta1-r1.ebuild
 ./media-libs/mesa/mesa-3.4.ebuild
 #./media-libs/mesa-glu/mesa-glu-3.4.ebuild
@@ -296,7 +296,7 @@
 ./net-libs/libpcap/libpcap-0.5.2.ebuild
 ./net-libs/libwww/libwww-5.3.1-r1.ebuild
 ./net-libs/nss_ldap/nss_ldap-123.ebuild
-./net-libs/pam_ldap/pam_ldap-82.ebuild
+./net-libs/pam_ldap/pam_ldap-82-r1.ebuild
 ./net-mail/amavis/amavis-0.2.1-r2.ebuild
 #./net-mail/courier-imap/courier-imap-1.30.ebuild
 #./net-mail/exim/exim-3.20-r1.ebuild
@@ -409,7 +409,7 @@
 ./sys-apps/sed/sed-3.02.80.ebuild
 ./sys-apps/setserial/setserial-2.17-r1.ebuild
 ./sys-apps/sh-utils/sh-utils-2.0j-r1.ebuild
-./sys-apps/shadow/shadow-20000902-r1.ebuild
+./sys-apps/shadow/shadow-20001016.ebuild
 ./sys-apps/sharutils/sharutils-4.2.1-r1.ebuild
 ./sys-apps/star/star-1.3_alpha8.ebuild
 ./sys-apps/sysvinit/sysvinit-2.78-r1.ebuild
@@ -446,6 +446,8 @@
 ./sys-devel/spython/spython-2.0-r1.ebuild
 ./sys-kernel/linux/linux-2.4.0.8.ebuild
 #./sys-kernel/linux/linux-2.4.0.8-r1.ebuild
+#./sys-kernel/linux/linux-2.4.1_pre7.ebuild
+#./sys-kernel/linux/linux-2.4.1_pre8.ebuild
 ./sys-libs/cracklib/cracklib-2.7-r1.ebuild
 ./sys-libs/db/db-1.85.ebuild
 ./sys-libs/db/db-3.1.17-r1.ebuild
@@ -456,7 +458,7 @@
 ./sys-libs/lib-compat/lib-compat-1.0-r1.ebuild
 ./sys-libs/ncurses/ncurses-5.2-r1.ebuild
 ./sys-libs/nss-db/nss-db-2.2.ebuild
-./sys-libs/pam/pam-0.72-r1.ebuild
+./sys-libs/pam/pam-0.73.ebuild
 ./sys-libs/pwdb/pwdb-0.61-r2.ebuild
 ./sys-libs/readline/readline-4.1-r1.ebuild
 ./sys-libs/slang/slang-1.4.2.ebuild

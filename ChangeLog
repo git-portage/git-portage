@@ -1,3 +1,17 @@
+date 18 Jan 2001
+
+upd sys-apps/shadow-20000902-r1 to 20001016
+achim
+copy /etc/pam.d/passwd to /etc/pam.d/useradd to get adduser/useradd working.
+This fix is in the current baselayout package.
+
+upd sys-libs/pam-0.72-r1 to 0.72
+achim
+
+new sys-kernel/linux-2.4.1_pre8
+achim
+This kernel has the new lm-sensors 2.5.5 patch included
+
 date 17 Jan 2001
 
 upd media-libs/libsdl-1.1.6 to 1.1.7
