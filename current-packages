@@ -10,7 +10,7 @@
 ./sys-apps/e2fsprogs/e2fsprogs-1.19.ebuild
 ./sys-apps/ed/ed-0.2.ebuild
 ./sys-apps/file/file-3.32.ebuild
-./sys-apps/fileutils/fileutils-4.0.31.ebuild
+./sys-apps/fileutils/fileutils-4.0.32.ebuild
 ./sys-apps/findutils/findutils-4.1-r1.ebuild
 ./sys-apps/gawk/gawk-3.0.6.ebuild
 ./sys-apps/grep/grep-2.4.2-r1.ebuild
