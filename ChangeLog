@@ -3,6 +3,12 @@
 	- New sys-libs/db-1.85				(drobbins)
 	- Removed dev-db/db and sys-libs/db3 and db1
 	- New dev_db/unixODBC-1.8.13		(achim)
+	- New dev-lang/ruby-1.6.1			(jerry)
+	- New dev-ruby/amstd-1.9.5			(jerry)
+	- New dev-ruby/optparse-0.7.5		(jerry)
+	- New dev-ruby/racc-1.2.4			(jerry)
+	- New dev-ruby/rdtool-0.6.6			(jerry)
+	- New dev-ruby/strscan-0.5.8		(jerry)
 
 16.11.2000
 	- New sys-libs/nss-db-2.2			(drobbins)

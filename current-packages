@@ -194,6 +194,11 @@
 ./dev-perl/mod_perl/mod_perl-1.24.1.ebuild
 ./dev-perl/perl-tk/perl-tk800-022.ebuild
 ./dev-python/gnome-python/gnome-python-1.0.53-r1.ebuild
+./dev-ruby/amstd-1.9.5.ebuild
+./dev-ruby/optparse-0.7.5.ebuild
+./dev-ruby/racc-1.2.4.ebuild
+./dev-ruby/rdtool-0.6.6.ebuild
+./dev-ruby/strscan-0.5.8.ebuild
 ./dev-util/cvs/cvs-1.11.ebuild
 ./dev-util/guile/guile-1.4-r2.ebuild
 ./dev-util/lincvs/lincvs-0.3_beta1.ebuild
