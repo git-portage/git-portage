@@ -1,4 +1,6 @@
 MD5 063450eab13adad62494bd9211ccc545 gnu-jaxp-1.0_beta1.ebuild 751
 MD5 badb83c81103ef4b8b808c2d3c9e29cd ChangeLog 792
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
+MD5 9e479df8c3dcaeacb26f1a108eb11abf gnu-jaxp-1.0_beta1-r1.ebuild 924
 MD5 ccfb07c99005781e9b7c4c232604b056 files/digest-gnu-jaxp-1.0_beta1 134
+MD5 3d1c4ac4f9e43835b6eef1ddb4f5dcd3 files/digest-gnu-jaxp-1.0_beta1-r1 66
