@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 08c3bf145cb5142ef315926eb321176f uclibc-0.9.26-r2.ebuild 6198
 SHA1 577b994eef9eb4f0230228e36498cf3020701ff3 uclibc-0.9.26-r2.ebuild 6198
 MD5 d19c535314aba3c7ad5956c68571886a uclibc-0.9.26-r4.ebuild 7223
@@ -10,8 +13,8 @@ MD5 b6e51a393cae9daddfda7e1eabadb679 uclibc-0.9.26-r3.ebuild 6348
 SHA1 e0dea22da01c6ae3ce3714914d495985dcf3763b uclibc-0.9.26-r3.ebuild 6348
 MD5 ed4d6b2b5413c7372255c768f51e7446 uclibc-0.9.26-r5.ebuild 7659
 SHA1 7c186d52132277548362e9f83a46416b157d4050 uclibc-0.9.26-r5.ebuild 7659
-MD5 169cc527c182c4aa0641d690a1ad5a2a ChangeLog 7379
-SHA1 09d069ace64ffe95c07eb47fae6fce2d119b142f ChangeLog 7379
+MD5 b1baab1a99312968755f445488d43463 ChangeLog 7379
+SHA1 cf52d3bb07cc0f3c884f948fd1aed893ee095e4a ChangeLog 7379
 MD5 7fde305dfd21aeac12e0eb721e0f6a17 uclibc-0.9.21.ebuild 1096
 SHA1 79e8364b3121e5330db6ef8a7f56a4e836765ad5 uclibc-0.9.21.ebuild 1096
 MD5 e96b4dfc373a1cdf7735aeae52c4cf7e metadata.xml 999
@@ -54,8 +57,8 @@ MD5 f7c264d37687f1a32f1c6e31239f2276 files/0.9.26/uclibc-0.9.26-noexecstack.patc
 SHA1 312eafbf80f65b48d6b0b2c91e87525b2b2942e8 files/0.9.26/uclibc-0.9.26-noexecstack.patch 15273
 MD5 6835449424e7a8a38e9c85ecf1b73577 files/0.9.26/arm-ucontext.patch 303
 SHA1 d55b17abe035d41536e188d694a84ebd1f974460 files/0.9.26/arm-ucontext.patch 303
-MD5 d956cd230d95d601108d8a8aba9b016c files/0.9.26/ssp.c 4150
-SHA1 7f16aca5f5f3b4be31511d0f9ff61cc7cf7a4897 files/0.9.26/ssp.c 4150
+MD5 69311d6a5b7e294a3b77b74eb824c2e3 files/0.9.26/ssp.c 4150
+SHA1 34af2b4cff979164ab503fa2482484af25800cca files/0.9.26/ssp.c 4150
 MD5 7ff9f1e05cdfbbe0e156ea81bf8b55ee files/0.9.26/uClibc-20040921-ldso-unsecvars.patch 1024
 SHA1 e979dcc6d00a0a1bdfbd86a55ada46b7b09ccd80 files/0.9.26/uClibc-20040921-ldso-unsecvars.patch 1024
 MD5 a503ef49001f5f67d61cd40b0809fb76 files/0.9.26/unsecvars.h 682
@@ -76,3 +79,10 @@ MD5 2416f5e954ccb8b39b1c0d6a3cf5e827 files/0.9.26/uClibc-0.9.26-Makefile.patch 1
 SHA1 27e093bccd5b98f9ce7b9cd4e6b83bcd72241b36 files/0.9.26/uClibc-0.9.26-Makefile.patch 1478
 MD5 b9df87c681aa3a1ef3033cb195e516df files/0.9.26/uclibc-0.9.26-arm-dl-sysdep.patch 795
 SHA1 7f1280a65ad54932ab4bf0857158e0aec488530f files/0.9.26/uclibc-0.9.26-arm-dl-sysdep.patch 795
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD4DBQFBbCax94CCfB4KcwwRAi/TAKCzfuSxtGXcKv3T04EnRG2Gobh/9QCVF7gc
+i5SGv+KYo4vQhMFScB5jpg==
+=oz1N
+-----END PGP SIGNATURE-----
