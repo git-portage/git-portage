@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/hostap/Attic/hostap-20021012.ebuild,v 1.1 2003/02/07 02:04:21 latexer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/hostap/Attic/hostap-20021012.ebuild,v 1.1 2003/02/08 03:22:49 latexer Exp $
 
 inherit eutils
 
