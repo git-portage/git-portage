@@ -1,12 +1,11 @@
-# Copyright 1999-2000 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Achim Gottinger <achim@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/net-misc/rsync/Attic/rsync-2.4.6-r3.ebuild,v 1.3 2001/08/11 04:53:17 drobbins Exp $
+# Maintainer: Daniel Robbins <drobbins@gentoo.org> 
+# $Header: /var/cvsroot/gentoo-x86/net-misc/rsync/Attic/rsync-2.5.2.ebuild,v 1.1 2002/01/26 15:23:37 verwilst Exp $
 
-A=${P}.tar.gz
 S=${WORKDIR}/${P}
 DESCRIPTION="File transfer program to keep remote files into sync"
-SRC_URI="http://rsync.samba.org/ftp/rsync/${A}"
+SRC_URI="http://rsync.samba.org/ftp/rsync/${P}.tar.gz"
 HOMEPAGE="http://rsync.samba.org"
 
 DEPEND="virtual/glibc"
@@ -23,26 +22,30 @@ src_unpack() {
 } 
 
 src_compile() {
-
-    try ./configure --prefix=/usr --host=${CHOST} 
-    if [ "`use static`" ] ; then
-	try make LDFLAGS="-static"
-    else
-        try make
-    fi
-
+	./configure --prefix=/usr --host=${CHOST} || die
+	if [ "`use static`" ] ; then
+		emake LDFLAGS="-static" || die
+	else
+		emake || die
+	fi
 }
 
 src_install () {
-
-    if [ -z "`use build`" ] ; then
-        try make prefix=${D}/usr mandir=${D}/usr/share/man install
-        dodir /etc/rsync
-        dodoc COPYING README
-    else
-        dobin rsync
-    fi
-
+	make prefix=${D}/usr \
+		mandir=${D}/usr/share/man \
+		install  || die
+	if [ -z "`use build`" ]
+	then
+		dodir /etc/rsync
+		dodoc COPYING NEWS OLDNEWS README TODO tech_report.tex
+	else
+		rm -rf ${D}/usr/share
+	fi
 }
 
-
+pkg_postinst() {
+	if [ ! -d /etc/rsync ]
+	then
+		mkdir /etc/rsync
+	fi
+}
