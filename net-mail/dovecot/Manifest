@@ -1,0 +1,4 @@
+MD5 a50c38676b505d67d99d6e2ff6571db0 dovecot-0.99.10.4.ebuild 3502
+MD5 1a8aa87fe80627f30665c2c4cc40e84c dovecot.init 426
+MD5 1c0a9ca75cadf12377e70c2ef725ba0e dovecot.pam 220
+MD5 02900826bf90ce0fcbf43a3ebbfa31cf files/digest-dovecot-0.99.10.4 69
