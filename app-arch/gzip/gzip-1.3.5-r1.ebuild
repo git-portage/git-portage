@@ -1,16 +1,19 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/gzip/Attic/gzip-1.3.3-r3.ebuild,v 1.1 2004/06/23 14:48:59 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/gzip/Attic/gzip-1.3.5-r1.ebuild,v 1.1 2004/06/23 23:32:37 agriffis Exp $
 
 inherit eutils flag-o-matic
 
 DESCRIPTION="Standard GNU compressor"
 HOMEPAGE="http://www.gnu.org/software/gzip/gzip.html"
-SRC_URI="http://www.gzip.org/${P}.tar.gz"
+# This is also available from alpha.gnu.org, but that site has very limited
+# bandwidth and often isn't accessible
+SRC_URI="mirror://debian/pool/main/g/gzip/gzip_${PV}.orig.tar.gz
+	mirror://debian/pool/main/g/gzip/gzip_1.3.5-8.diff.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc sparc mips -alpha arm hppa amd64 ia64 ppc64 s390"
+KEYWORDS="~x86 ~ppc ~sparc ~mips alpha ~arm ~hppa ~amd64 ~ia64 ~ppc64 ~s390"
 IUSE="nls build static"
 
 RDEPEND="virtual/glibc"
@@ -19,18 +22,15 @@ DEPEND="${RDEPEND}
 PROVIDE="virtual/gzip"
 
 src_unpack() {
-	unpack ${A}
+	unpack gzip_${PV}.orig.tar.gz
 	cd ${S}
-	epatch ${FILESDIR}/${P}-security.patch
+	epatch ${DISTDIR}/gzip_1.3.5-8.diff.gz
+	epatch ${FILESDIR}/gzip-1.3.5-security.patch
 }
 
 src_compile() {
 	use static && append-flags -static
-
-	econf \
-		--exec-prefix=/ \
-		`use_enable nls` \
-		|| die
+	econf --exec-prefix=/ $(use_enable nls) || die
 	emake || die
 }
 
@@ -43,9 +43,13 @@ src_install() {
 		install || die
 
 	cd ${D}/bin
+
+	# XXX temporary
+	head -n 1 gzexe zforce zgrep zmore znew zcmp
+
 	for i in gzexe zforce zgrep zmore znew zcmp
 	do
-		dosed -e "1d" -e "s:${D}::" ${i}
+		sed -i -e "1d" -e "s:${D}::" ${i} || die
 		chmod 755 ${i}
 	done
 
