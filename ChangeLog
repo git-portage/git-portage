@@ -1,5 +1,5 @@
 12.11.2000
-
+	-New sys-apps/grub-0.5.96.1			(drobbins)
 	- Update binutils 2.10.0.26 -> 2.10.0.33	(achim)
 	- Update glibc-2.1.94 -> glibc-2.2		(achim)
  	  [experimental]
@@ -20,7 +20,6 @@
 	  [ Added basic perl modul support to
 	    httpd.conf ]
 
->>>>>>> 1.128
 08.11.2000
 	-New net-analyzer/rrdtool-1.0.28	(jerry)
 
