@@ -1,5 +1,14 @@
 date 20 Jan 2001
 
+upd sys-kernel/linux-2.4.1_pre8 to 2.4.1_pre8-r1
+drobbins
+Merged Achim's and Daniel's ebuild; integrated latest LVM tools and lots
+of little ebuild cleanups
+
+upd sys-kernel/linux-sources-2.4.1_pre8 to 2.4.1_pre8-r1
+drobbins
+see above
+
 new media-libs/gle-3.0.1
 drobbins
 The GL extrusion library
