@@ -4,6 +4,7 @@
 	- Update amavis 0.2.1_p3 -> 0.2.1	(achim)
 
 30.10.2000
+	-Update sys-apps/portage-1.0-r4		(drobbins)
 	-New gnome-base/gnome-core-1.2.3	(drobbins)
 	-New gnome-base/gnome-libs-1.2.8	(drobbins)
 	-New gnome-base/gnome-applets-1.2.3	(drobbins)
