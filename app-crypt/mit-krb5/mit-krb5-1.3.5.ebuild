@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/mit-krb5/Attic/mit-krb5-1.3.3.ebuild,v 1.7 2004/09/14 10:26:48 aliz Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/mit-krb5/Attic/mit-krb5-1.3.5.ebuild,v 1.1 2004/09/14 10:26:48 aliz Exp $
 
 inherit eutils
 
@@ -12,7 +12,7 @@ SRC_URI="http://web.mit.edu/kerberos/dist/krb5/1.3/${MY_P}.tar"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha arm ~hppa ~amd64 ~ia64 s390 ppc64"
+KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~arm ~hppa ~amd64 ~ia64 ~ppc64 ~s390"
 IUSE="krb4 static"
 RESTRICT="nomirror"
 
@@ -27,7 +27,10 @@ src_unpack() {
 	unpack ${A}
 	tar -zxf ${MY_P}.tar.gz
 	cd ${S}
+
 	epatch ${FILESDIR}/${P}-res_search.patch.bz2
+	epatch ${FILESDIR}/${P}-autoheader.patch.bz2
+	epatch ${FILESDIR}/${P}-suid_fix.patch.bz2
 }
 
 src_compile() {
