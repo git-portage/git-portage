@@ -1,3 +1,15 @@
+date 6 July 2001
+upd sys-apps/iproute2-2.2.4-r2 to 2.2.4-r3
+Remove reference to ETH_P_ECHO, which is no longer in the kernel.
+Programs now compile and work.
+jerry
+
+date 5 July 2001
+new x11-terms/root-tail-0.0.10
+Terminal program that displays multiple log files with multiple colors
+on an X sessions root window.
+jerry
+
 date 4 July 2001
 upd net-ftp/pure-ftpd-0.98.7-r2
 Modified to make pure-ftpd start properly with xinetd
