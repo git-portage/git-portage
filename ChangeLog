@@ -1,5 +1,29 @@
 date 04 Feb 20001
 
+new media-libs/libao-0.5.0
+peter
+
+new media-libs/libogg-1.0_beta3
+peter
+
+new media-libs/libvorbis-1.0_beta3
+peter
+
+new media-sound/abcde-1.9.7
+peter
+
+new media-sound/cd-discid-0.4
+peter
+
+new media-sound/cdparanoia-3.9.7
+peter
+
+new media-sound/id3-0.12
+peter
+
+new media-sound/vorbis-tools-1.0_beta3
+peter
+
 new app-editors/emacs-motif-20.7
 achim
 
