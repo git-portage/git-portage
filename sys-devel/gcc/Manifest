@@ -1,8 +1,11 @@
-MD5 503de0cf356ff550a125b17645741036 ChangeLog 55603
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 564c022385b47e736f7b2dd31cb75811 ChangeLog 55716
 MD5 ff1e34206f0acd8bf35fdfe97d7416d4 gcc-2.95.3-r8.ebuild 9108
 MD5 f6c84e13f0ffb79fa7856b2f7a3a1e63 gcc-3.0.4-r6.ebuild 8460
 MD5 5c06c7b9c6fd156d3bd1383323c3e2e2 gcc-3.1.1-r2.ebuild 9167
-MD5 cdecff20e5eac3e5ec7fc22b90a7a4cb gcc-3.3.3-r6.ebuild 25346
+MD5 14a7afa42bd69d86e9f5415be17ee2af gcc-3.3.3-r6.ebuild 25346
 MD5 bac135652b4019aeda5885e83fad1185 gcc-3.4.0-r6.ebuild 29742
 MD5 266937f2b252a7eb23365c4ab57b8784 gcc-3.2.3-r4.ebuild 19686
 MD5 3a2e4f5d5f2d94e5ee2a399ab3b0f32e gcc-3.3-r1.ebuild 16506
@@ -110,3 +113,12 @@ MD5 17b3190d64e34ed7709d022b326d08ae files/3.4.0/gcc-3.4.0-cc1-no-stack-protecto
 MD5 4edccdf0b4f6dbbc9f7bc9370c255e0c files/3.4.0/reiser4-why-do-you-hate-me.patch 587
 MD5 5f465144ef81f1b7c7f6d6abe6e4c59f files/awk/fixlafiles.awk 6285
 MD5 71ad2adafb2cc70631244faca2a85c63 files/awk/scanforssp.awk 5837
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iQCVAwUBQMaDcJ4WFLgrx1GWAQIcoAP/eDZqEi+Ha+gZJ7uCk2KvEXhIQGv+rnQ+
+qD4H8dX6I/YUpdcX+XNQlbG1k1Y+fz4evzIEgxMyJBiGM4H7/6EALMkqxHrwRwR3
+kgfl5YJVL5slwX4r2MvBNNKTdoVLjvRCeifV8LpkbsRc8JlXbF65k7xwUKLErTrn
+1KUqJ9I8iOM=
+=cHvy
+-----END PGP SIGNATURE-----
