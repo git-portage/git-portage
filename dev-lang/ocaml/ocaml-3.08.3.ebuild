@@ -1,23 +1,21 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ocaml/Attic/ocaml-3.08.ebuild,v 1.10 2005/01/03 00:58:51 j4rg0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ocaml/Attic/ocaml-3.08.3.ebuild,v 1.1 2005/03/18 17:36:55 mattam Exp $
 
 inherit flag-o-matic eutils
 
 DESCRIPTION="fast modern type-inferring functional programming language descended from the ML (Meta Language) family"
 HOMEPAGE="http://www.ocaml.org/"
 
-SRC_URI="http://caml.inria.fr/distrib/ocaml-3.08/${P}.0.tar.gz"
+SRC_URI="http://caml.inria.fr/distrib/ocaml-3.08/${P}.tar.bz2"
 
 LICENSE="QPL-1.0 LGPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~sparc ~ppc ~alpha ~ia64 amd64 hppa ~ppc-macos"
+KEYWORDS="~x86 ~sparc ~ppc ~alpha ~ia64 ~amd64 ~hppa ~ppc-macos"
 IUSE="tcltk latex"
 
 DEPEND="virtual/libc
 	tcltk? ( >=dev-lang/tk-3.3.3 )"
-
-S="${WORKDIR}/${P}.0"
 
 pkg_setup() {
 	ewarn
@@ -69,8 +67,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	ranlib /usr/lib/ocaml/*.a
-
 	if use latex; then
 		echo "TEXINPUTS=/usr/lib/ocaml/ocamldoc:" > /etc/env.d/99ocamldoc
 	fi
