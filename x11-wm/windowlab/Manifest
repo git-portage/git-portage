@@ -1,6 +1,7 @@
-MD5 29e8c3cd2eb3924fc78c59e4cdcd7e56 windowlab-1.17.ebuild 852
+MD5 68f14a6eb008d2681a9e7a0e9b10b868 windowlab-1.17.ebuild 851
 MD5 95e433bbd046df4685aa21d2deeb6af4 windowlab-1.12.ebuild 851
-MD5 c8545a2bb890b78264b21e6daa6d067d windowlab-1.20.ebuild 852
+MD5 c8545a2bb890b78264b21e6daa6d067d windowlab-1.23.ebuild 852
+MD5 eb9f32187f14787048782988cca536e7 windowlab-1.20.ebuild 851
 MD5 c68356abb65f31262afa0378f811cc24 windowlab-1.07.ebuild 866
 MD5 c06f2bbaf70084df96027d911e05d0a4 ChangeLog 1024
 MD5 8ac189d76905f967aa67107205023c2c metadata.xml 423
@@ -8,3 +9,4 @@ MD5 245138776c56287bd5fc7bd29adfdbc2 files/digest-windowlab-1.07 63
 MD5 4be996ba47d52132bb5942e4d86a29e3 files/digest-windowlab-1.12 63
 MD5 0150370c066fee9acc52a9d5ec3584a7 files/digest-windowlab-1.17 63
 MD5 d83998d1d0400f9e11b4857d6c633356 files/digest-windowlab-1.20 63
+MD5 a080a47d54f0bd1d58d26e3a290d4b35 files/digest-windowlab-1.23 63
