@@ -1,5 +1,7 @@
 20.09.2000
 
+	- Fixed kde-i18n-1.94			(achim)
+	  [ Installation works now ]
 	- Update xmms 1.2.2 -> 1.2.3		(achim)
 	- New dev-libs/libunicode-0.7		(achim)
 	- New media-gfb/autotrace-0.24a		(achim)
