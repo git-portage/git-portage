@@ -1,4 +1,17 @@
 30.10.2000
+	-New gnome-base/gnome-core-1.2.3	(drobbins)
+	-New gnome-base/gnome-libs-1.2.8	(drobbins)
+	-New gnome-base/gnome-applets-1.2.3	(drobbins)
+	-New gnome-base/control-center-1.3.1	(drobbins)
+	-New gnome-base/bonobo-0.26		(drobbins)
+	-New gnome-libs/gconf-0.9		(drobbins)
+	-New gnome-libs/libole2-0.1.7	(drobbins)
+	-New gnome-libs/gal-0.2.1		(drobbins)
+	-New gnome-base/gtkhtml-0.7		(drobbins)
+	-fixed gnome-base/gtkhtml-0.6.1		(drobbins)
+		removed bonobo support
+	-fixed portage bugs				(drobbins)
+		"use" command fixed
 	-Update kmage 0.2 -> 0.3.1		(achim)
 	
 27.10.2000
