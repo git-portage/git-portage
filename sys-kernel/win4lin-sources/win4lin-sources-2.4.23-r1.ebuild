@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/win4lin-sources/Attic/win4lin-sources-2.4.23.ebuild,v 1.1 2003/12/04 22:48:47 plasmaroo Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/win4lin-sources/Attic/win4lin-sources-2.4.23-r1.ebuild,v 1.1 2004/01/06 21:48:33 plasmaroo Exp $
 
 # OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
@@ -32,6 +32,9 @@ src_unpack() {
 
 	cd linux-${KV}
 	patch -Np1 -i ${DISTDIR}/mki-adapter.patch >/dev/null 2>&1 || die "Error: mki-adapter patch failed!"
+
+	epatch ${FILESDIR}/${PN}-2.4.CAN-2003-0985.patch || die "Failed to patch mremap() vulnerability!"
+	epatch ${FILESDIR}/${PN}-2.4.rtc_fix.patch || die "Failed to patch RTC vulnerabilities!"
 
 	kernel_universal_unpack
 
