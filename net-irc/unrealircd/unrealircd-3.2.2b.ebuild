@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/unrealircd/Attic/unrealircd-3.2.1-r1.ebuild,v 1.7 2005/01/18 17:48:54 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/unrealircd/Attic/unrealircd-3.2.2b.ebuild,v 1.1 2005/01/18 17:48:54 swegener Exp $
 
 inherit eutils ssl-cert
 
@@ -121,8 +121,5 @@ pkg_postinst() {
 	einfo "   /usr/share/doc/${PF}/ircdchk.gz"
 	einfo
 	einfo "You can also use /etc/init.d/unrealircd to start at boot"
-	einfo
-	einfo "With this revision the hub support in UnrealIRCd is optional."
-	einfo "Set USE=\"hub\" if you need it."
 	einfo
 }
