@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/gkrellm-giFT/Attic/gkrellm-giFT-0.2.2.ebuild,v 1.5 2004/07/09 22:40:26 slarti Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/gkrellm-giFT/Attic/gkrellm-giFT-0.2.2.ebuild,v 1.6 2004/08/23 03:02:35 squinky86 Exp $
 
 inherit eutils
 
@@ -8,7 +8,7 @@ MY_PN=${PN/FT/ft}
 MY_P=${MY_PN}-${PV}
 DESCRIPTION="GKrellM2 plugin to monitor giFT transfers"
 SRC_URI="ftp://ftp.code-monkey.de/pub/${MY_PN}/${P}.tar.gz"
-HOMEPAGE="http://www.code-monkey.de/gkrellm-gift.html"
+HOMEPAGE="http://code-monkey.de/?gkrellm-gift"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="x86 ~amd64"
