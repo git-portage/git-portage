@@ -1,4 +1,4 @@
-MD5 12c34072b788701b9b73e281777133ba ChangeLog 22321
+MD5 bd5309cf3dbd647148a63fc64b2a1ea1 ChangeLog 22315
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 37bb16df46abe0a5ebe3b0ec8839b8f5 perl-5.6.1-r10.ebuild 6661
 MD5 e395df81ce257d90b1161a988874d6e6 perl-5.6.1-r11.ebuild 6136
@@ -7,7 +7,7 @@ MD5 e568fd47eae76cbf7708b1f0d3a5d7b9 perl-5.8.0-r10.ebuild 14004
 MD5 f7806057cd940b8786984d9c6e77328e perl-5.8.0-r11.ebuild 9886
 MD5 bee3e214f30820da67a89b141b847524 perl-5.8.0-r12.ebuild 10319
 MD5 c474a0043d20d64af5f92a56744bfb3a perl-5.8.0-r9.ebuild 13530
-MD5 a73f948a4295cac563f207cded1be5fd perl-5.8.2-r1.ebuild 9950
+MD5 1dee09daecd0d392fbe1580916f5e8d1 perl-5.8.2-r1.ebuild 9944
 MD5 ccca19147b7158fe262440eed7edbabe perl-5.8.2.ebuild 9446
 MD5 85d984b443bc60a1c3687c95a7461741 perl-5.8.3.ebuild 9946
 MD5 ea9bf02b28e73e19dc85eb07f2347460 files/5.6.1-builtin-fixup.diff 777
