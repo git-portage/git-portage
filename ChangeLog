@@ -1,5 +1,12 @@
 date 16 Feb 2001
 
+upd sys-devel/binutils-2.1.10 to 2.1.10.0.7
+achim
+required for glibc-2.2.2
+
+upd sys-libs/glibc-2.2.1-r1 to 2.2.2
+achim
+
 upd net-www/mozilla-0.7 to 0.8
 achim 
 
