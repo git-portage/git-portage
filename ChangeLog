@@ -10,6 +10,9 @@ New Version release ebuild
 
 upd net-mail/vlnx-414e
 New Version release ebuild
+
+upd net-misc/bind-9.1.3
+New Maintenance release for bind-9.1.2
 --pm
 
 date 3 July 2001
