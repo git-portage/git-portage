@@ -1,3 +1,9 @@
+17.10.2000
+	- More major portage overhaul		(drobbins)
+	[moving merge/unmerge into portage.py
+	 and first steps of pkgmerge .tbz2
+	 installer]
+
 14.10.200
 
 	- New app-arch/zip 2.3			(achim)
