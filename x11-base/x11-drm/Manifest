@@ -1,0 +1,5 @@
+MD5 b22f33c1d80979a5dccf7e3d344d077a x11-drm-20040827.ebuild 5344
+MD5 b67cc82ec3e8786dbc0f8f5e7e37bcfc metadata.xml 360
+MD5 0da633cdf84a7960139bb6bb5847e2ac ChangeLog 546
+MD5 f7de985da1c53156a63bc43dea3b71ea files/digest-x11-drm-20040827 252
+MD5 88b8c90e440b3db246a7d06cf53640ae files/modules.d-x11-drm 40
