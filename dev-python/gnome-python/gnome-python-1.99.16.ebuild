@@ -1,20 +1,19 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/gnome-python/Attic/gnome-python-1.99.15.ebuild,v 1.4 2003/03/18 03:27:15 spider Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/gnome-python/Attic/gnome-python-1.99.16.ebuild,v 1.1 2003/03/31 21:04:55 foser Exp $
 
 # devel version - debug
 inherit gnome2 debug
 
 IUSE="gtkhtml"
 
-S=${WORKDIR}/${P}
 DESCRIPTION="GNOME 2 bindings for Python"
 HOMEPAGE="http://www.daa.com.au/~james/pygtk/"
 LICENSE="LGPL-2"
 
 DEPEND=">=dev-lang/python-2.2
 	>=dev-python/pygtk-${PV}*
-	>=dev-python/pyorbit-1.99.3
+	>=dev-python/pyorbit-1.99.4
 	>=dev-libs/glib-2
 	>=x11-libs/gtk+-2
 	>=gnome-base/libgnome-2
@@ -32,7 +31,8 @@ DEPEND=">=dev-lang/python-2.2
 	>=gnome-base/libgnomeprintui-2.2
 	gtkhtml? ( >=gnome-extra/libgtkhtml-2 )"
 
-RDEPEND="${DEPEND} >=dev-util/pkgconfig-0.12.0"
+RDEPEND="${DEPEND} 
+	>=dev-util/pkgconfig-0.12.0"
 
 SLOT="2"
 KEYWORDS="~x86 ~ppc"
