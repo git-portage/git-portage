@@ -2,8 +2,8 @@ MD5 ebf20118b3d6ced339721338685d97b0 uclibc-0.9.26-r2.ebuild 6191
 MD5 5db33bb13590ce0b1ac242639e60154e uclibc-0.9.26-r4.ebuild 7212
 MD5 648448f5b143b6002812f0fb0a78c683 uclibc-0.9.26-r1.ebuild 2555
 MD5 03b8de2ae5acc3aa78d72abe3f8edd7b uclibc-0.9.26-r3.ebuild 6337
-MD5 89bfec5df5a191bed0a92a9371d0ea4e uclibc-0.9.26-r5.ebuild 7230
-MD5 e8e984b62cd7fb03bda81354e5c8bee7 ChangeLog 5935
+MD5 61dda2b667c8363f229a34a845d010b5 uclibc-0.9.26-r5.ebuild 7229
+MD5 62a09c6cb43d2e747ab450a197efc6d2 ChangeLog 6062
 MD5 7fde305dfd21aeac12e0eb721e0f6a17 uclibc-0.9.21.ebuild 1096
 MD5 f694d40cf09e6c5511ae52f755a5ffe5 metadata.xml 998
 MD5 d16f404e56abc9f0ab5c372b88a6905d files/Makefile-cp-order-fix.patch 897
