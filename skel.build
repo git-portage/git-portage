@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author First Last <your email>
-# $Header: /var/cvsroot/gentoo-x86/Attic/skel.build,v 1.4 2001/07/16 19:33:05 danarmak Exp $
+# $Header: /var/cvsroot/gentoo-x86/Attic/skel.build,v 1.5 2001/07/24 22:30:35 lordjoe Exp $
 
 #Remeber to add the proper Author line, above.  Don't worry about the fourth line;
 #it'll get automatically fixed when the ebuild is checked in
@@ -34,7 +34,7 @@ src_compile() {
 	
 	try emake
 	#emake (previously known as pmake) is a script that calls the standard GNU make with parallel
-	#building options for speedier builds on SMP systems.  Use emake first; it make not work.  If
+	#building options for speedier builds on SMP systems.  Use emake first; it might not work.  If
 	#not, then replace the line above with:
 	
 	#try make
