@@ -1,16 +1,16 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/glob2/Attic/glob2-0.8.9.ebuild,v 1.4 2005/01/30 03:08:13 jnc Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/glob2/Attic/glob2-0.8.11.ebuild,v 1.1 2005/01/30 03:08:13 jnc Exp $
 
-inherit flag-o-matic games
+inherit games
 
-DESCRIPTION="state of the art Real Time Strategy (RTS) game"
+DESCRIPTION="Real Time Strategy (RTS) game involving a brave army of globs"
 HOMEPAGE="http://www.ysagoon.com/glob2/"
-SRC_URI="http://www.ysagoon.com/glob2/data/${P}.tar.gz"
+SRC_URI="http://epfl.ysagoon.com/~glob2/data/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc ~amd64"
+KEYWORDS="~x86 ~ppc ~amd64"
 IUSE=""
 
 DEPEND="virtual/libc
@@ -20,27 +20,30 @@ DEPEND="virtual/libc
 	media-libs/sdl-net
 	media-libs/sdl-image
 	media-libs/libvorbis
+	>=media-libs/speex-1.1
 	=media-libs/freetype-2*
 	sys-libs/zlib"
+RDEPEND="${DEPEND}
+	>=sys-devel/automake-1.7
+	>=sys-devel/autoconf-2.5"
 
 src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	sed -i \
-		-e "s/defaultLanguage = 1/defaultLanguage = 0/" src/Settings.cpp \
-		|| die "sed failed"
-	# bug #67718
-	sed -i \
-		-e "s/nsamples == SAMPLE_COUNT_PER_SLICE/nsamples/" src/SoundMixer.cpp \
-		|| die "sed failed"
+	unpack ${P}.tar.gz || die
+	epatch ${FILESDIR}/${P}-*.patch
 }
 
 src_compile() {
-	# comment from bug #64150 to fix compile issue.
-	filter-flags -O?
+	export WANT_AUTOCONF=2.5
+	export WANT_AUTOMAKE=1.7
+	aclocal
+	automake
+	autoconf
+
 	#./configure assumes that vorbis will be installed under PREFIX bug #46352
 	egamesconf \
 		--with-vorbis=/usr \
+		--with-speex=/usr \
+		--with-speex-includes=/usr/include/speex \
 		|| die
 	emake || die "emake failed"
 }
