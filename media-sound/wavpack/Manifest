@@ -1,4 +1,6 @@
-MD5 f8073417526f8bbec7f03b691a82f0c1 ChangeLog 470
+MD5 89b4884899cf5df8c1c110fb95e820b3 ChangeLog 559
 MD5 83c2574543d0501303b57050254e3880 metadata.xml 222
 MD5 cb647525fd55554f12e3eb29b0fd9ecb wavpack-4.0.ebuild 571
+MD5 cb647525fd55554f12e3eb29b0fd9ecb wavpack-4.1.ebuild 571
 MD5 647f67953fe2e93a709b8e8c8e1e45ea files/digest-wavpack-4.0 63
+MD5 17333ced2ae7a4e6e6e8b0aa6f395558 files/digest-wavpack-4.1 63
