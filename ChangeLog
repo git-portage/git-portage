@@ -1,5 +1,9 @@
 date 5 June 2001
 
+new app-games/tuxracer-0.61
+race a fat slimy penguin down an icy slope
+blutgens
+
 new dev-util/xxdiff-1.9
 Nice gui diff viewer much like that found on SGIs.  Supports 3way diffs too.
 michael
