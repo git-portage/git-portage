@@ -1,6 +1,11 @@
+[21 Nov 2000 -drobbins]
+	
+	In the rc3 sys.tbz2 tarball, bzImage should be in /boot/boot (GRUB will look
+	for it at /boot/bzImage)
+
 [18 Nov 2000 -achim]
 	
-	The dependencies check fails if there are different version from a
+	[FIXED?] The dependencies check fails if there are different version from a
 	package installed
 
 [15 Nov 2000 - drobbins]

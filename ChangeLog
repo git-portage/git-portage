@@ -1,99 +1,62 @@
 21 Nov 2000
 
+new dev-lang/kaffe-1.0.6
 jerry
-New dev-lang kaffe-1.0.6
 
+new net-misc/ntp-4.0.99k
 jerry
-New net-misc ntp-4.0.99k
 
-drobbins
-Portage fix of a fix
-Portage's ROOT directory existence check and non-file check was messed
-up and only worked for non-"/" ROOTs.  This has been fixed.
-
+upd x11-libs/gtk+-1.2.8-r1 to 1.2.8-r2
 achim
-Update x11-libs gtk+-1.2.8-r1 to gtk+-1.2.8-r2
 Added ldconfig to pkg_postinst, required for automated build
 
+upd media-gfb/aview-1.2 to 1.2-r2
 achim
-Update media-gfb aview-1.2 to aview-1.2-r2
 Added dependencies
 
+upd net-mail/maildrop-1.2.2 1.2.2-r2
 achim
-Update net-mail maildrop-1.2.2 to maildrop-1.2.2-r2
 Added qmail or exim to dependencies because a mailer is
 required for compilation
 
+upd media-sound/gtk-gnutella-0.12 to 0.12-r2
 achim
-Update media-sound gtk-gnutella-0.12 to gtk-gnutella-0.12-r2
 Added dependencies
 
+upd media-libs/alsa-lib-0.5.9 to 0.5.9-r2
 achim
-Update media-libs alsa-lib-0.5.9 to alsa-libx-0.5.9-r2
 Modified dependencies
 
+upd dev-libs/slib-2.3.8 to 2.3.8-r2
 achim
-Update dev-libs slib-2.3.8 to slib-2.3.8-r2
 Modified dependencies
 
+upd gnome-apps/gnucash-1.4.7 to 1.4.7-r2
 achim
-Update gnome-apps gnucash-1.4.7 to gnucash-1.4.7-r2
 Added dependencies
 
+new app-admin/sudo-1.6.3_p5
 jerry
-New app-admin sudo-1.6.3_p5
 
-DATE
-20 Nov 2000
+date 20 Nov 2000
 
+upd app-admin/gkrellm-1.0.1 to 1.0.2
 jerry
-Update app-admin gkrellm-1.0.1 to gkrellm-1.0.2
 
+upd sys-apps/baselayout-1.3 to 1.3-r1
 jerry
-Move from /etc/pam.conf to /etc/pam.d
-This change will make it easier to update PAM information by having
-applications drop appropriate configuration files into /etc/pam.d
-instead of editing the pam.conf in /sys-apps/baselayout.  This change
-modifies/updates the following portages:
-    /sys-apps/baselayout-1.3 to baselayout-1.3-r1
-    /sys-libs/pwdb-0.61-r1 to pwdb-0.61-r2
-    /net-misc/openssh-2.2.0_p1 to openssh-2.2.0_p1-r1
+/etc/pam.d fix
 
-drobbins
-More portage fixes
-Fixed pkgmerge problem; it can now merge to non-local filesystems
-and calls the pre and postinst scripts correctly.  Also, the DBDIR
-variable in /etc/make.defaults has been depreciated.  From now on, the
-database directory is assumed to be ${ROOT}/var/db/pkg.  Also tweaked
-port_insttree() in portage.py so that the dbdir directory skeleton
-is created if it doesn't already exist, and made portage.py check to
-make sure that ROOT is an existing directory; otherwise it exits with
-an error condition.
+upd sys-libs/pwdb-0.61-r1 to 0.61-r2
+jerry
+/etc/pam.d fix
 
+upd net-misc/openssh-2.2.0_p1 to 2.2.0_p1-r1
+jerry
+/etc/pam.d fix
+
+upd net-misc/snort-1.6.3 to 1.6.3-r2
 achim
-Update net-misc snort-1.6.3 to snort-1.6.3-r2
 Fixed a small installation bug.
 
-DATE
-19 Nov 2000
-
-drobbins
-Changing linux kernel structure
-I'm in the process of changing the directory structure under sys-kernel
-so that it follows our guidelines.  There will be two directories:
-sys-kernel/linux and sys-kernel/linux-sources.  The linux package
-contains a kernel, modules and headers so that users can compile
-other sources.  The linux-sources package contains only the kernel
-sources; no kernel or modules are included.  The linux package is
-primarily of interest for those setting up a Gentoo Linux box, while
-the linux-sources package is more appropriate for geeks who already
-have a running Gentoo Linux system and want to compile a more recent
-kernel by hand.
-
-
-
-
-
-
-
-
+date 19 Nov 2000
