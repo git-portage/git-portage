@@ -1,13 +1,13 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-MD5 48929e3a561ac685a9802c8650a4dfa8 ChangeLog 21641
+MD5 d394c3e599719294e4085cccc5c96f5d ChangeLog 21645
 MD5 8145ce0144332d6caca98fa5fb648741 metadata.xml 221
 MD5 b0dabb5b661c34b2054f5ae852c2fd45 python-2.1.3-r1.ebuild 2329
-MD5 2e0abbd8a13492ba7e30ea04d67e0569 python-2.2.3-r6.ebuild 4499
-MD5 dc2a8483375d9b68fc5514f0aab278d4 python-2.3.3-r2.ebuild 7183
-MD5 4692bc63cd508209334831b8b8990daa python-2.3.4-r1.ebuild 7181
-MD5 f0b614dd807dec18a550ad7fbd8b5b5e python-2.4-r1.ebuild 6823
+MD5 1e424541a26b4d5785a6e830e6a14fe8 python-2.2.3-r6.ebuild 4498
+MD5 d6caef1d9e32c8f6a3c0f04de5152fb1 python-2.3.3-r2.ebuild 7182
+MD5 5a86dd1a431b7adc66b634bde23e14ef python-2.3.4-r1.ebuild 7183
+MD5 99f8bbd61c29e69242730071f964faf4 python-2.4-r1.ebuild 6826
 MD5 1c5cd53cb89c821a549968bac31df0f1 files/depreorder.py 2235
 MD5 f3f370c8d1382c1a7571cfc1cbb196d9 files/digest-python-2.1.3-r1 62
 MD5 55af7ba61954f03e09bcafbce1227c61 files/python-2.2.3-xmlrpc.patch 3659
@@ -45,7 +45,7 @@ MD5 f11f5d528c570ef739ea10806cebfa9f files/digest-python-2.2.3-r6 62
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.0 (GNU/Linux)
 
-iD8DBQFCBu4+z2gxt1z4IGYRAnBqAKCg3qjq0v1tz8xyIwAjKLf2fBdetQCglWU6
-gvso50b6o/Ry2ya8mBRIl9A=
-=nyyx
+iD8DBQFCBu6ez2gxt1z4IGYRAkqBAKCGvjGOpxSsVPQ4Em70MwuCsfYSoACfRID4
+yavVaNbrBw9oI4BX2LYzjxE=
+=+PaS
 -----END PGP SIGNATURE-----
