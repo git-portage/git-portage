@@ -3,6 +3,8 @@ MD5 1dbcd7e312f0d9ff957a93ca66f04557 pyx-0.6.1.ebuild 675
 MD5 6e8b67bf966b7d105ab24d117c99db8f pyx-0.3.1.ebuild 676
 MD5 6db6878cc98b9e46aa59d3e2c479c209 ChangeLog 926
 MD5 71c4638c9c88af75b58e5f5cb54fe008 metadata.xml 159
+MD5 1dbcd7e312f0d9ff957a93ca66f04557 pyx-0.6.3.ebuild 675
 MD5 46a94096ae827068a9488dbb0a2e4197 files/digest-pyx-0.3.1 61
 MD5 046929f755c91e49463c8d511e6ed84b files/digest-pyx-0.5.1 61
 MD5 709e65698a4cd367d0a7260414515a6a files/digest-pyx-0.6.1 61
+MD5 38b4424ad0a10c8e987231286f2edcaa files/digest-pyx-0.6.3 62
