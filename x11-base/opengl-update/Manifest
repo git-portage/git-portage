@@ -1,3 +1,4 @@
+MD5 4039c342746a28624f62eaf7ca536dc9 opengl-update-1.8-r1.ebuild 1460
 MD5 fe9d5a762b674e506e1f518d2ab5a777 opengl-update-1.7.2.ebuild 543
 MD5 de8b9a1c44a6df2c85bb94621c424240 opengl-update-1.8.ebuild 1162
 MD5 536a92bce64cc5d0a58d862ac613749e ChangeLog 5633
@@ -13,3 +14,4 @@ MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-opengl-update-1.8 0
 MD5 8318429d1d44e5439b53280cac4ff461 files/glext.h-20040714 304594
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-opengl-update-1.7.1 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-opengl-update-1.7.2 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-opengl-update-1.8-r1 0
