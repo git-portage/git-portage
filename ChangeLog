@@ -1,5 +1,21 @@
 date 15 Dec 2000
 
+upd net-mail/maildrop-1.2.2-r2 to 1.2.2-r3
+jerry
+changed DEPEND to use "virtual/mta"
+
+upd net-mail/qmail-1.03-r1 to 1.03-r2
+jerry
+portage now sets PROVIDE="virtual/mta"
+
+upd net-mail/qmail-ldap-1.03.20000701-r1 1.03.20000701-r2
+jerry
+portage now sets PROVIDE="virtual/mta"
+
+upd net-mail/qmail-mysql-1.03-r1 to 1.03-r2
+jerry
+portage now sets PROVIDE="virtual/mta"
+
 new net-mail/procmail-3.15
 jerry
 
