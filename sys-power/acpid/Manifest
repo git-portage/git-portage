@@ -1,6 +1,9 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
+- -----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 654e4d9f11e2426ef5c34104b48e18f0 acpid-1.0.1.ebuild 1192
 MD5 3984fafc073437d3c2734ea348388aca ChangeLog 2954
 MD5 3578a40c7c46ffaf7ab9449dff570641 acpid-1.0.4.ebuild 1524
@@ -15,10 +18,17 @@ MD5 4bf4b207e7f3c9f7a966c62236dd73be files/digest-acpid-1.0.2-r2 62
 MD5 4bf4b207e7f3c9f7a966c62236dd73be files/digest-acpid-1.0.2-r1 62
 MD5 e193d813bbbabf9aceb89ba3c612e58e files/digest-acpid-1.0.4 62
 MD5 747fc9ab0e7a041ea461b8f0ecab9132 files/acpid-1.0.4-default.sh 560
------BEGIN PGP SIGNATURE-----
+- -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.2.6 (GNU/Linux)
 
 iD8DBQFCNzRrLLFUmVNQ7rkRAqbfAJwMcyljTwO6wahdzLjmUyES7K8mrACfcBpG
 Q/+9Le3QpQldUMu4BOOK/xc=
 =+Do/
+- -----END PGP SIGNATURE-----
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFCNzS/LLFUmVNQ7rkRAplHAJ90sTSjEKyf4CBY4UOJVmYGGDevewCfXUFu
+V1o+i8fNyExPLGgUyAdZsNY=
+=qC32
 -----END PGP SIGNATURE-----
