@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/tripwire/Attic/tripwire-2.3.1.2-r1.ebuild,v 1.4 2004/10/20 22:40:22 taviso Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/tripwire/Attic/tripwire-2.3.1.2-r1.ebuild,v 1.5 2004/12/13 18:36:20 taviso Exp $
 
 inherit eutils flag-o-matic
 
@@ -38,6 +38,7 @@ src_unpack() {
 	epatch ${FILESDIR}/tripwire-2.3.1-gcc3.patch.bz2
 	epatch ${FILESDIR}/tripwire-jbj.patch.bz2
 	epatch ${FILESDIR}/tripwire-mkstemp.patch.bz2
+	epatch ${FILESDIR}/tripwire-2.3.1.2-force_gcc334.patch.bz2
 
 	# pull out the interesting debian patches
 	filterdiff  -i '*/man/man8/twadmin.8' -z  --strip=1	\
@@ -60,7 +61,7 @@ src_compile() {
 	# 	-taviso@gentoo.org
 	strip-flags
 
-	emake release RPM_OPT_FLAGS="${CXXFLAGS}" || die
+	emake -j1 release RPM_OPT_FLAGS="${CXXFLAGS}" || die
 }
 
 src_install() {
@@ -85,8 +86,9 @@ src_install() {
 	dodoc README Release_Notes ChangeLog policy/policyguide.txt TRADEMARK \
 		${FILESDIR}/tripwire.gif ${FILESDIR}/tripwire.txt
 
+	zcat ${FILESDIR}/twcfg.txt > ${T}/twcfg.txt || ewarn "twcfg.txt zcat error"
 	insinto /etc/tripwire
-	doins ${FILESDIR}/twcfg.txt ${FILESDIR}/twpol.txt
+	doins ${T}/twcfg.txt ${FILESDIR}/twpol.txt
 
 	exeinto /etc/tripwire
 	doexe ${FILESDIR}/twinstall.sh
