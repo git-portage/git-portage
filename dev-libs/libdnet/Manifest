@@ -1,7 +1,5 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 8406dc9d04dc647b6f69646ce120d82a libdnet-1.7.ebuild 663
+MD5 c347b26eaacbf3dd9633eb289eddf0ad libdnet-1.10.ebuild 864
 MD5 fabc7367b0a89ac85a2e1763ce87948e libdnet-1.4.ebuild 616
 MD5 19d477954b211709b6c12afc3825e96a libdnet-1.8-r1.ebuild 865
 MD5 f43f70b38eeecd023bd0c1474d55bff8 libdnet-1.8.ebuild 665
@@ -11,10 +9,4 @@ MD5 26aaa2ed808be5b28e4cf1cdc6641e93 files/digest-libdnet-1.4 63
 MD5 5cbbb4d347762ee426542a70e157e11d files/digest-libdnet-1.7 63
 MD5 3f5452375afed7791045f619f526970d files/digest-libdnet-1.8 63
 MD5 3f5452375afed7791045f619f526970d files/digest-libdnet-1.8-r1 63
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFCIVyxEZCkKN40op4RAhkUAJ4mdJ4V0KiZwD7X/Ng4Mr3gPbJMXwCcD5Pj
-doYiuoZHkOkYhLxQfYI2eUY=
-=JZsA
------END PGP SIGNATURE-----
+MD5 00a6d1072f68515b8c3ab3c822185c34 files/digest-libdnet-1.10 64
