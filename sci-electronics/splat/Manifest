@@ -1,4 +1,14 @@
-MD5 d0ed04722d760d25921ac216dabcef3c splat-1.1.0.ebuild 1207
-MD5 2fcd57671271237d8af4ae253017ff49 ChangeLog 337
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 b260092fd79bf7157583be01350a7bc9 splat-1.1.0.ebuild 1212
+MD5 c9ede7fd00292fd5bcd76ee714d86ff0 ChangeLog 497
 MD5 4beb690f894fcf57f38bbcc324646edf metadata.xml 307
 MD5 8589ffe78e66df22ead52cbc9b6e5820 files/digest-splat-1.1.0 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFCIn+PgMUyd/cdjWsRAutsAJ9tBXts7MXs8S8TKKP3aHF8Mgo5KgCbBSvb
+YUiorZnTkXI6IXywAjy2pcY=
+=O2wA
+-----END PGP SIGNATURE-----
