@@ -1,5 +1,33 @@
 date 01 Dec 2000
 
+upd gnome-office/gnumeric-0.59a to 0.59a-r1
+drobbins
+now depends on virtual/python-1.5.2
+
+upd dev-python/gnome-python-1.0.53-r1 to 1.0.53-r2
+drobbins
+now depends on virtual/python-1.5.2
+
+upd dev-lang/swig-1.3_alpha5 to 1.3_alpha5-r1
+drobbins
+now depends on virtual/python-1.5.2
+
+upd app-editors/vim-gtk-5.7-r1 to 5.7-r2
+drobbins
+now depends on virtual/python-1.5.2
+
+upd dev-lang/python-1.5.2-r2 to 1.5.2-r3
+drobbins
+now provides virtual/python-1.5.2
+
+upd sys-devel/python-basic-1.5.2-r2 to 1.5.2-r3
+drobbins
+now provides virtual/python-1.5.2
+
+upd app-admin/yup-0.6.5-r1 to 0.6.5-r2
+drobbins
+yup now depends on virtual/python-1.5.2
+
 upd sys-apps/portage-1.3-r1 to 1.3-r2
 drobbins
 Updated make.conf so that portage is production-ready
