@@ -1,7 +1,10 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 873300be2c00a4a9a80c51456c0e1bc0 zsh-4.2.0-r1.ebuild 3721
 MD5 26886d0a410d5883eced6bda50cf2f1c zsh-4.2.3.ebuild 4196
-MD5 2bf50d400e90becee76c3a818ed47fb2 ChangeLog 12634
-MD5 6823a800f6e5d38f69e55f7e01d74a4e zsh-4.2.4.ebuild 4312
+MD5 d32791350d0502e01df9697270964213 ChangeLog 12726
+MD5 5542b4b9fa6ba7f7bf72a7a63b7f03df zsh-4.2.4.ebuild 4313
 MD5 28ed8ea6cdccb353e2e8ad783eb51f5b metadata.xml 506
 MD5 28ae3771eb1a6ebb64171197c8d390e7 zsh-4.0.9-r4.ebuild 2893
 MD5 ce3c37b881d639cfe4b58bba59bad159 zsh-4.2.1-r1.ebuild 4194
@@ -18,3 +21,10 @@ MD5 9001ff5324448d902a296276500ac3fb files/digest-zsh-4.2.4 199
 MD5 de58f149f41740c394800ba8d2cdf361 files/digest-zsh-4.0.9-r4 199
 MD5 557ebe931aae8efc7e1221e1a6985f2f files/digest-zsh-4.2.1-r1 199
 MD5 eaa2f7dff9e7ca62087f9786cea84897 files/zsh-init.d-gentoo.diff 1389
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFCRuXwVWNWqTUmv+0RAskEAJ4vl0rAN+PXTZ9X+liVtsjPwj5CAwCfT24B
+++104mKXQxfpLh5kC0AVgmw=
+=OGu/
+-----END PGP SIGNATURE-----
