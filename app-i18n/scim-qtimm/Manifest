@@ -1,4 +1,6 @@
 MD5 e1d92943a43953ec0b4b4a98fe99b406 ChangeLog 1306
 MD5 e92a48548554c80cf90e18df17ff6a82 metadata.xml 156
-MD5 09694fd63115a86d7b9a003311e90629 scim-qtimm-0.7.ebuild 1242
+MD5 798249cccb2dcda17c30f497a86993f1 scim-qtimm-0.7.ebuild 1254
+MD5 15267a4e5b2d54ca940ecb10035648bd scim-qtimm-0.7-r1.ebuild 1365
 MD5 a6dc4a6c7fbfdc9004372662fe9cd37e files/digest-scim-qtimm-0.7 67
+MD5 a6dc4a6c7fbfdc9004372662fe9cd37e files/digest-scim-qtimm-0.7-r1 67
