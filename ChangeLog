@@ -1,5 +1,9 @@
 date 28 Apr 2001
 
+upd sys-libs/db-3.2.3h-r1 to 3.2.3h-r2
+drobbins
+added a libdb.so.3 symlink to satisfy blender
+
 upd sys-devel/flex-2.5.4a-r3 to 2.5.4-r4
 drobbins
 added a "lex" symlink and fixed several ebuild quirks
