@@ -1,0 +1,5 @@
+MD5 1412f18fa9dca3618fba3700859a0421 castor-0.9.5.3.ebuild 1492
+MD5 54234aa4214bb5e5b3cbbc56ec2e8478 ChangeLog 273
+MD5 0637a933ecb6e8cedfc4ddfcf3491728 metadata.xml 310
+MD5 925da383ab0658b27587273d0f315f06 files/build-xml.patch 2859
+MD5 943c414729ed76f67dc46a6373bd6094 files/digest-castor-0.9.5.3 68
