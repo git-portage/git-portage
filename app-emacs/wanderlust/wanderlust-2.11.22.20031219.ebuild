@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/wanderlust/Attic/wanderlust-2.11.4.20030728.ebuild,v 1.1 2003/10/10 20:12:39 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/wanderlust/Attic/wanderlust-2.11.22.20031219.ebuild,v 1.1 2003/12/24 05:08:06 usata Exp $
 
 inherit elisp
 
@@ -24,7 +24,7 @@ DEPEND="virtual/emacs
 	virtual/semi
 	!app-emacs/wanderlust-cvs"
 
-S="${WORKDIR}/wanderlust"
+S="${WORKDIR}/${PN}"
 
 src_unpack() {
 	unpack ${A}
