@@ -1,3 +1,13 @@
+date 22 July 2000
+new app-doc/howtos  added directory for LDP Howtos
+new app-doc/howtos/Linux-mini-html-HOWTOs-1.0.ebuild
+new app-doc/howtos/Linux-HOWTOs-1.0.ebuild
+new app-doc/howtos/Linux-mini-html-single-HOWTOs-1.0.ebuild
+new app-doc/howtos/Linux-mini-HOWTOs-1.0.ebuild
+new app-doc/howtos/Linux-html-HOWTOs-1.0.ebuild
+new app-doc/howtos/Linux-html-single-HOWTOs-1.0.ebuild
+added Howtos in 3 formats initially. will add more formats like postscript, pdf etc. very soon.
+
 date 21 July 2001
 upd net-ftp/pure-ftpd-0.98.8 new bug release recommended for production machines.
 removed earlier versions and updated package.mask to remove the earlier version.
