@@ -1,14 +1,14 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.0_pre2-r3.ebuild,v 1.2 2003/08/01 03:23:26 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.0_pre6.ebuild,v 1.1 2003/08/01 03:23:26 agriffis Exp $
 
 IUSE="socks5 tcltk"
 
-inherit flag-o-matic eutils
+inherit flag-o-matic eutils gnuconfig
 
 S=${WORKDIR}/${P%_pre*}
 DESCRIPTION="An object-oriented scripting language"
-SRC_URI="mirror://ruby/${P/_pre/-preview}.tar.gz"
+SRC_URI="mirror://ruby/${PV%.*}/${P/_pre/-preview}.tar.gz"
 HOMEPAGE="http://www.ruby-lang.org/"
 LICENSE="Ruby"
 KEYWORDS="~x86 ~alpha"
@@ -26,8 +26,10 @@ src_unpack() {
 	unpack ${A}
 	cd ${WORKDIR}
 
-	# Allow Ruby to build correctly with Dante/SOCKS support.
-	epatch ${FILESDIR}/ruby-1.8.0_pre2-socks.patch
+	# Enable build on alpha EV67
+	if use alpha; then
+		gnuconfig_update || die "gnuconfig_update failed"
+	fi
 }
 
 src_compile() {
@@ -55,4 +57,12 @@ src_install () {
 	dodoc COPYING* ChangeLog MANIFEST README* ToDo
 	# Fix perms on directories (bug # 22446)
 	find ${D} -type d -print0 | xargs -0 chmod 755
+}
+
+pkg_postinst() {
+	ewarn
+	ewarn "Warning: You might need to remerge vim if it doesn't work"
+	ewarn "with this version of ruby.  If vim starts up okay, then"
+	ewarn "there is no need to remerge it."
+	ewarn
 }
