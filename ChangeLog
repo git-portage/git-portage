@@ -1,5 +1,7 @@
 16.09.2000
 
+	- New media-sound/xmnap 0.1.2		(achim)
+	  [ A Motfi based napster client ]
 	- Update openmotif 2.1.30 2.1.30-MLI	(achim)
 	  [ Metrolink Version with many patches ]
 	- New media-libs/libmng 0.9.2		(achim)

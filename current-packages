@@ -190,6 +190,7 @@
 ./media-sound/mpg123/mpg123-0.59r.ebuild
 ./media-sound/sox/sox-12.17.ebuild
 ./media-sound/xmms/xmms-1.2.2-r1.ebuild
+./media-sound/xmnap-0.1.2.ebuild
 ./media-video/bcast-2000/bcast-2000a-r1.ebuild
 ./media-video/lamp/lamp-20000903.ebuild
 ./media-video/mjpeg-tools/mjpeg-tools-1a.ebuild
