@@ -1,13 +1,13 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/distcc/Attic/distcc-2.14.ebuild,v 1.9 2004/09/06 19:50:54 ciaranm Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/distcc/Attic/distcc-2.14-r1.ebuild,v 1.1 2004/09/16 21:57:03 lisa Exp $
 
 # If you change this in any way please email lisa@gentoo.org and make an
 # entry in the ChangeLog (this means you spanky :P). (2004-04-11) Lisa Seelye
 
 inherit eutils gcc flag-o-matic
 
-PATCHLEVEL="2.11.1p"
+PATCHLEVEL="2.17"
 
 DESCRIPTION="a program to distribute compilation of C code across several machines on a network"
 HOMEPAGE="http://distcc.samba.org/"
@@ -145,5 +145,10 @@ pkg_postinst() {
 	einfo "To use the distccmon programs with Gentoo you should use this command:"
 	einfo "      DISTCC_DIR=/var/tmp/portage/.distcc distccmon-text N"
 	use gnome || use gtk && einfo "Or:   DISTCC_DIR=/var/tmp/portage/.distcc distccmon-gnome"
-	epause 5
+
+	ewarn "***SECURITY NOTICE***"
+	ewarn "If you are upgrading distcc please make sure to run etc-update to"
+	ewarn "update your /etc/conf.d/distccd and /etc/init.d/distccd files with"
+	ewarn "added security precautions (the --listen and --allow directives)"
+	ebeep 5
 }
