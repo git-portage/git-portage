@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-snmpd/Attic/selinux-snmpd-20041120.ebuild,v 1.1 2004/11/22 21:08:10 kaiowas Exp $
+# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-snmpd/Attic/selinux-snmpd-20041128.ebuild,v 1.1 2004/12/12 17:29:24 kaiowas Exp $
 
 inherit selinux-policy
 
