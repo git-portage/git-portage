@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pd/Attic/pd-0.37.0.ebuild,v 1.2 2004/02/07 21:51:31 ferringb Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/pd/Attic/pd-0.37.0.ebuild,v 1.3 2004/03/25 02:56:28 eradicator Exp $
+
+inherit eutils
 
 # Miller Puckette uses nonstandard versioning scheme that we have to crunch
 MY_P=`echo ${P} | sed 's/\.\([0-9]\+\)$/-\1/'`
