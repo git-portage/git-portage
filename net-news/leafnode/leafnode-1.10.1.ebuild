@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-news/leafnode/Attic/leafnode-1.9.50.ebuild,v 1.6 2004/06/28 22:45:31 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-news/leafnode/Attic/leafnode-1.10.1.ebuild,v 1.1 2004/06/28 22:45:31 swegener Exp $
 
 MY_P=${P}.rel
 
@@ -20,15 +20,12 @@ RDEPEND="${DEPEND}
 S=${WORKDIR}/${MY_P}
 
 src_compile() {
-	use ipv6 && myconf="--with-ipv6"
-
-	./configure \
-		--prefix=/usr \
-		--mandir=/usr/share/man \
+	econf \
 		--sysconfdir=/etc/leafnode \
 		--localstatedir=/var \
-		${myconf} || die "./configure failed"
-
+		--with-spooldir=/var/spool/news \
+		$(use_with ipv6) \
+		|| die "econf failed"
 	emake || die "emake failed"
 }
 
@@ -53,7 +50,7 @@ src_install() {
 	dodoc \
 		COPYING* CREDITS ChangeLog FAQ.txt FAQ.pdf INSTALL NEWS \
 		TODO README.FIRST README-daemontools UNINSTALL-daemontools \
-		README README-MAINTAINER README-FQDN PCRE_README
+		README README-MAINTAINER README-FQDN
 	dohtml FAQ.html FAQ.xml README-FQDN.html
 }
 
