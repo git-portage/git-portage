@@ -1,5 +1,5 @@
-MD5 513ea6a2d5c7bc79fc6cf3d4b5b0c225 ChangeLog 847
-MD5 c8b38db11bde65e48b008d8732fbd78d sg3_utils-1.07.ebuild 904
+MD5 c6c04f2f09c1a54728749c6610277a4f ChangeLog 847
+MD5 92c3ffa6376cbb844f03b4f6349399d5 sg3_utils-1.07.ebuild 904
 MD5 056ba9d88997262bc82bbcba5e3c5f25 sg3_utils-1.06.ebuild 725
 MD5 37443e54165d5bcdaa8550d52edafa98 metadata.xml 228
 MD5 415ccd09bf2a67e4ccc39d50059b8c14 files/sg3_utils-llseek.patch 1948
