@@ -4,8 +4,8 @@ MD5 0b4acdf6a79f5de1c7466f601abdd5b4 hdparm-5.7.ebuild 1232
 MD5 afd1922e4ffc669c00d8126b9f4dc7e1 hdparm-5.5-r4.ebuild 1284
 MD5 27612805eeeff9fa51cb602fde9e2be2 hdparm-5.4.ebuild 1158
 MD5 aa5e51a0e3d7add5cc6da0da4d74922d hdparm-5.6.ebuild 1228
-MD5 283ee78d475208a99ee10cd956f26f15 hdparm-5.8.ebuild 1152
-MD5 000ff58843c7c3816cf2ee8f5b712cb7 ChangeLog 7496
+MD5 206bfc967c50adbd9a2dacbc79daad95 hdparm-5.8.ebuild 1249
+MD5 c659326f5865901148fca2153cd91a29 ChangeLog 7499
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 300982c72dc0f865d5ad6c542e3b6c4c files/digest-hdparm-5.4 61
 MD5 f5fc13fdfccb0f5600d45488c6a5d534 files/digest-hdparm-5.5 61
