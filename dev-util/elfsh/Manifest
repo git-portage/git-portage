@@ -1,5 +1,15 @@
-MD5 965dfe72399d5ea980c7146a352a7ddf elfsh-0.51_beta3.ebuild 1154
-MD5 fa549b98ba4bd2c231c390cbb1784587 ChangeLog 928
-MD5 fc9aa1192d130594886c29a3b77591cf metadata.xml 648
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 ee9c4b8be12f827a966354dbf6bea95c elfsh-0.51_beta3.ebuild 944
+MD5 44c3e58fcd94f7ccce8232af5311429d ChangeLog 903
+MD5 1b15d9b8549cda1aa82a9be3fb149245 metadata.xml 596
 MD5 ae73a6afc401d346946d887b527b6249 files/digest-elfsh-0.51_beta3 70
-MD5 85424e37c19daf7449ec694672ce5214 files/elfsh-0.51b2.diff 1314
+MD5 f130345b5343f3e9253dfde8eb549427 files/0.51_beta3-gentoo.patch 2027
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.9.10 (GNU/Linux)
+
+iD8DBQFBT5EUHTu7gpaalycRAsbsAKDzr1QELhnYKLdo/BWE0n27HPjddgCg3WIu
+WGfYe2EA1Sal/mZCSiKKH3M=
+=47io
+-----END PGP SIGNATURE-----
