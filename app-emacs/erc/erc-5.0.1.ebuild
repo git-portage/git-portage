@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/erc/Attic/erc-2.93.ebuild,v 1.9 2005/01/01 13:44:55 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/erc/Attic/erc-5.0.1.ebuild,v 1.1 2005/02/05 21:08:45 mkennedy Exp $
 
 inherit elisp
 
@@ -15,16 +15,14 @@ IUSE=""
 
 DEPEND="virtual/emacs"
 
+S=${WORKDIR}/${P/_*/}
+
+src_compile() {
+	make || die
+}
+
 src_install() {
-	elisp-install ${PN} *.el
-	elisp-site-file-install ${FILESDIR}/50erc-gentoo.el
-	dodoc CREDITS HISTORY ChangeLog servers.pl TODO
-}
-
-pkg_postinst() {
-	elisp-site-regen
-}
-
-pkg_postrm() {
-	elisp-site-regen
+	elisp-install ${PN} *.el *.elc
+	elisp-site-file-install ${FILESDIR}/${PV}/50erc-gentoo.el
+	dodoc AUTHORS CREDITS HISTORY ChangeLog servers.pl README
 }
