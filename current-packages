@@ -180,6 +180,7 @@
 ./media-libs/libpng/libpng-1.0.8-r1.ebuild
 ./media-libs/libsdl/libsdl-1.1.4.ebuild
 ./media-libs/libungif/libungif-4.1.0_beta1-r1.ebuild
+./media-libs/mpeg2vidcodec/mpeg2vidcodec-12.ebuild
 ./media-libs/smjpeg/smjpeg-0.2.1-r1.ebuild
 ./media-libs/smpeg/smpeg-0.4.0-r1.ebuild
 ./media-libs/t1lib/t1lib-1.0.1-r1.ebuild
