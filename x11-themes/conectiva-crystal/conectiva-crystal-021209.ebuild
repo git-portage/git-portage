@@ -1,15 +1,15 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/noia/Attic/noia-120902.ebuild,v 1.1 2002/12/09 08:42:57 satai Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/conectiva-crystal/Attic/conectiva-crystal-021209.ebuild,v 1.1 2002/12/11 05:39:15 satai Exp $
 inherit kde # not kde-base since we don't need c++ deps
 
 need-kde 3
 
-S="${WORKDIR}/noia"
-DESCRIPTION="Noia Icon Set for KDE"
+S="${WORKDIR}/crystal"
+DESCRIPTION="Conectiva Crystal - Icon theme. WARNING: already included in >=kde-3.1."
 SRC_URI="http://www.ibiblio.org/gentoo/distfiles/${P}.tar.gz"
-HOMEPAGE="http://www.carlitus.net"
-KEYWORDS="~x86"
+HOMEPAGE="http://www.conectiva.com.br"
+KEYWORDS="x86 alpha"
 SLOT="0"
 LICENSE="as-is"
 
@@ -17,8 +17,9 @@ LICENSE="as-is"
 RESTRICT="$RESTRICT nostrip"
 
 src_compile() {
+
 	cd ${S}
-	sed "s/Name=Noia KDE.*/Name=Noia Icon Snapshot ${PV}/" index.desktop > index.temp
+	sed "s/Name=Conectiva Crystal .*/Name=Conectiva Crystal Snapshot ${PV}/" index.desktop > index.temp
 	mv index.temp index.desktop
 	return 1
 }
@@ -27,6 +28,6 @@ src_install(){
 
 	cd ${S}
 	dodir $PREFIX/share/icons/
-	cp -rf ${S} ${D}/${PREFIX}/share/icons/Noia-${PV}
+	cp -rf ${S} ${D}/${PREFIX}/share/icons/Crystal-${PV}
 
 }
