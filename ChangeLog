@@ -1,3 +1,13 @@
+date 24 Jan 2001
+
+new dev-perl/LockFile-Simple-0.2.5
+new dev-perl/Mail-Audit-1.6
+new dev-perl/Mail-Procmail-1.00
+new dev-perl/MailTools-1.15
+new dev-perl/POP3Client-2.7
+jerry
+modules for handling various mail operations
+
 date 23 Jan 2001
 
 upd app-admin/gkrellm-1.0.2 to 1.0.5
