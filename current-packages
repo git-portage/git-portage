@@ -178,6 +178,7 @@
 ./dev-util/sel/sel-0.08.2.ebuild
 ./dev-util/strace/strace-4.2.ebuild
 ./dev-util/yacc/yacc-1.9.1-r1.ebuild
+./media-gfx/aview/aview-1.2.ebuild
 ./media-gfx/autotrace/autotrace-0.24a.ebuild
 ./media-gfx/blender/blender-2.04.ebuild
 #./media-gfx/blender/blender-static-2.04.ebuild
