@@ -1,4 +1,5 @@
 MD5 aa9e5812ce663a715579f721e5d078a0 libgnome-2.4.0.ebuild 826
+MD5 cde546c5b7acb639b4c6018b0da49744 libgnome-2.5.92.1.ebuild 833
 MD5 339b7a1ad6a76c87fda384f9017d5ab4 libgnome-2.2.1.ebuild 818
 MD5 022373cccd73d40a2418d37175dbadb1 libgnome-2.2.3.ebuild 919
 MD5 5853b3f2543a741b9d2cf4350d68a9e8 libgnome-2.2.0.1.ebuild 807
@@ -9,4 +10,5 @@ MD5 ee2b8bc99dca89ca8a0a171b15bb12b0 files/digest-libgnome-2.2.1 67
 MD5 87508d1bba09bb6e9dc7edc548a5e5fd files/digest-libgnome-2.2.2 67
 MD5 e902b7d4cc7d8c879f1fe81d744ab88c files/digest-libgnome-2.2.3 67
 MD5 855dcd3c74ed050bee4e7f8d50a3b870 files/digest-libgnome-2.4.0 67
+MD5 4826e4ecd65ada55dd6204aa26cf6b2f files/digest-libgnome-2.5.92.1 71
 MD5 3e2d5cbcf4f452372b8a77ca2a10a186 files/digest-libgnome-2.2.0.1 69
