@@ -1,7 +1,10 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3bee2cfce861c7afd1bcb198cf8530c4 rxvt-unicode-3.0.ebuild 1767
 MD5 3728acadc75237843061bd6ea81bcfa9 rxvt-unicode-4.0.ebuild 1590
-MD5 4c2c4323b88830b95166d450ea6da1a2 rxvt-unicode-5.3.ebuild 1919
-MD5 e75bb396f929f79bb5245495e3a93844 ChangeLog 7729
+MD5 ee38d456cd952b49671cdb81b43a18e7 rxvt-unicode-5.3.ebuild 1919
+MD5 fec626c03e5d275681fef21fc436d71b ChangeLog 7869
 MD5 4c2c4323b88830b95166d450ea6da1a2 rxvt-unicode-5.2.ebuild 1919
 MD5 dd67427a4be36cfd70a57c8419aef99b rxvt-unicode-5.1.ebuild 1587
 MD5 b5865f551fa6dd21658e0f8349638c9f metadata.xml 223
@@ -15,3 +18,10 @@ MD5 27f475fce3946d48a23f36e0279a978c files/rxvt-unicode-2.3-font-fix.diff 431
 MD5 b7923e2725d925a7ae5210a144a3eeaa files/digest-rxvt-unicode-5.3 69
 MD5 63548e76ee03f6dc4fee9e2239453ca1 files/rxvt-unicode-4.0-64bit.patch 728
 MD5 a056d636701ff16ba5502abe6255a023 files/digest-rxvt-unicode-5.2 69
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFCNa/LLLFUmVNQ7rkRAtQcAKCSM1tRAdL02GZmWcrAnhaow5XvNACfZZEG
+j0BcqofCZ2+WWoNarIr4IgU=
+=QqN5
+-----END PGP SIGNATURE-----
