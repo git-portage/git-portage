@@ -1,12 +1,14 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/eclipse-sdk/Attic/eclipse-sdk-2.1.3-r2.ebuild,v 1.3 2004/05/14 01:55:58 karltk Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/eclipse-sdk/Attic/eclipse-sdk-3.0.0_pre8-r2.ebuild,v 1.1 2004/05/18 00:15:17 karltk Exp $
+
+inherit eutils
 
 DESCRIPTION="Eclipse Tools Platform"
 HOMEPAGE="http://www.eclipse.org/"
-SRC_URI="http://download.eclipse.org/downloads/drops/R-2.1.3-200403101828/eclipse-sourceBuild-srcIncluded-2.1.3.zip"
-IUSE="gtk motif gnome kde jikes"
-SLOT="2"
+SRC_URI="http://download.eclipse.org/downloads/drops/S-3.0M8-200403261517/eclipse-sourceBuild-srcIncluded-3.0M8.zip"
+IUSE="gtk motif gnome kde mozilla jikes"
+SLOT="3"
 LICENSE="CPL-1.0"
 KEYWORDS="~x86"
 
@@ -24,7 +26,7 @@ DEPEND="${RDEPEND}
 	>=dev-java/ant-1.5.3
 	>=sys-apps/findutils-4.1.7
 	>=app-shells/tcsh-6.11
-	net-www/mozilla
+	mozilla? ( >=net-www/mozilla-1.5 )
 	app-arch/unzip"
 
 pkg_setup() {
@@ -65,15 +67,18 @@ src_unpack() {
 	cd ${S}
 	unpack ${A}
 
-	# Patch build script
-	epatch ${FILESDIR}/${PN}-${PV}-build.patch
+	epatch ${FILESDIR}/01-distribute_ant_target-3.0.patch
 
-	# This one required for the IBM JDK
+	if use kde ; then
+		epatch ${FILESDIR}/02-konqueror_help_browser-3.0.patch
+	fi
+
+	# Needed for the IBM JDK
 	addwrite "/proc/self/maps"
 
 	# Clean up all pre-built code
-	ant -q -Dws=gtk -Dos=linux clean
-	ant -q -Dws=motif -Dos=linux clean
+	ant -q -DinstallWs=gtk -DinstallOs=linux clean
+	ant -q -DinstallWs=motif -DinstallOs=linux clean
 	find ${S} -name '*.so' -exec rm -f {} \;
 	find ${S} -name '*.so.*' -exec rm -f {} \;
 	find ${S} -type f -name 'eclipse' -exec rm {} \;
@@ -85,21 +90,31 @@ src_unpack() {
 	# Move around some source code that should have been handled by the build system
 	cd ${S}/"${gtk_swt_src_dir}" || die "Directory ${gtk_swt_src_dir} not found"
 	cp ${S}/plugins/org.eclipse.swt/Eclipse\ SWT/common/library/* .
+	cp ${S}/plugins/org.eclipse.swt/Eclipse\ SWT\ Mozilla/common/library/* .
+	cp ${S}/plugins/org.eclipse.swt/Eclipse\ SWT\ Program/gnome/library/* .
+	cp ${S}/plugins/org.eclipse.swt/Eclipse\ SWT\ AWT/gtk/library/* .
 
-	# Configure libraries for GNOME and GTK+
 	if use gnome ; then
 	    gnome_lib=`pkg-config --libs gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0 | sed -e "s:-pthread:-lpthread:" -e "s:-Wl,--export:--export:"`
 	fi
 
 	if use gtk ; then
-		gthread_lib=`pkg-config --libs gtk+-2.0 gthread-2.0 | sed -e "s:-pthread:-lpthread:" -e "s:-Wl,--export:--export:"`
+		gtk_lib=`pkg-config --libs gtk+-2.0 gthread-2.0 | sed -e "s:-pthread:-lpthread:" -e "s:-Wl,--export:--export:"`
+		atk_lib=`pkg-config --libs atk gtk+-2.0 | sed -e "s:-Wl,--export:--export:"`
 	fi
 
-	sed -e "s:/bluebird/teamswt/swt-builddir/ive:$JAVA_HOME:" \
-		-e "s:JAVA_JNI=\$(IVE_HOME)/bin/include:JAVA_JNI=\$(IVE_HOME)/include:" \
-		-e "s:\`pkg-config --libs gthread-2.0\`:${gthread_lib}:" \
-		-e "s:\`pkg-config --libs gnome-vfs-2.0\`:${gnome_lib}:" \
-		-e "s:-I\$(JAVA_JNI):-I\$(JAVA_JNI) -I\$(JAVA_JNI)/linux:" \
+	sed -e "s:/bluebird/teamswt/swt-builddir/IBMJava2-141:$JAVA_HOME:" \
+		-e "s:/bluebird/teamswt/swt-builddir/jdk1.5.0:$JAVA_HOME:" \
+		-e "s:/mozilla/mozilla/1.6/linux_gtk2/mozilla/dist:$MOZILLA_FIVE_HOME:" \
+		-e "s:/usr/lib/mozilla-1.6:$MOZILLA_FIVE_HOME:" \
+		-e "s:\`pkg-config --libs gtk+-2.0 gthread-2.0\`:${gtk_lib}:" \
+		-e "s:\`pkg-config --libs atk gtk+-2.0\`:${atk_lib}:" \
+		-e "s:\`pkg-config --libs gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0\`:${gnome_lib}:" \
+		-e "s:-I\$(JAVA_HOME)/include:-I\$(JAVA_HOME)/include -I\$(JAVA_HOME)/include/linux:" \
+		-e "s:-I\$(JAVA_HOME)\t:-I\$(JAVA_HOME)/include -I\$(JAVA_HOME)/include/linux:" \
+		-e "s:-L\$(MOZILLA_HOME)/lib -lembed_base_s:-L\$(MOZILLA_HOME):" \
+		-e "s:MOZILLACFLAGS = -O:MOZILLACFLAGS = -O -fPIC:" \
+		-e "s:\$(JAVA_HOME)/jre/bin:\$(JAVA_HOME)/jre/lib/i386:" \
 		-i make_gtk.mak
 
 	# Extra patching if the gtk+ installed is 2.4 or newer
@@ -109,27 +124,25 @@ src_unpack() {
 		einfo "Applying gtk+-2.4 patches"
 		sed -r \
 			-e "s:#define GTK_DISABLE_DEPRECATED::g" \
-			-i swt.c
+			-e "s:(^void gtk_progress_bar_set_bar_style.*):/* \1 */:" \
+			-i os.h
 	fi
 
-	# Some fixups for the motif compilation
 	cd ${S}/"${motif_swt_src_dir}"
 	cp ${S}/plugins/org.eclipse.swt/Eclipse\ SWT/common/library/* .
-
-	sed -e "s:/bluebird/teamswt/swt-builddir/ive/bin:$JAVA_HOME:" \
-		-e "s:-I\$(JAVA_HOME)/include:-I\$(JAVA_HOME)/include -I\$(JAVA_HOME)/include/linux:" \
+	sed -e "s:/bluebird/teamswt/swt-builddir/IBMJava2-141:$JAVA_HOME:" \
 		-e "s:/bluebird/teamswt/swt-builddir/motif21:/usr/X11R6:" \
-	   	-e "s:\`pkg-config --libs gthread-2.0\`:${gthread_lib}:" \
-	    -e "s:\`pkg-config --libs gnome-vfs-2.0\`:${gnome_lib}:" \
-		-e "s:/usr/lib/qt3:/usr/qt/3:" \
+		-e "s:/usr/lib/qt-3.1:/usr/qt/3:" \
 		-e "s:-lkdecore:-L\`kde-config --prefix\`/lib -lkdecore:" \
 		-e "s:-I/usr/include/kde:-I\`kde-config --prefix\`/include:" \
-	-i make_linux.mak
+		-e "s:-I\$(JAVA_HOME)/include:-I\$(JAVA_HOME)/include -I\$(JAVA_HOME)/include/linux:" \
+		-e "s:-I\$(JAVA_HOME)\t:-I\$(JAVA_HOME)/include -I\$(JAVA_HOME)/include/linux:" \
+		-e "s:-L\$(MOZILLA_HOME)/lib -lembed_base_s:-L\$(MOZILLA_HOME):" \
+		-e "s:-L\$(JAVA_HOME)/jre/bin:-L\$(JAVA_HOME)/jre/lib/i386:" \
+		-i make_linux.mak
 
-	# Patch in package version into the build info
 	cd ${S}
 	find -type f -name about.mappings -exec sed -e "s/@build@/Gentoo Linux ${PF}/" -i \{\} \;
-
 }
 
 build_gtk_frontend() {
@@ -142,6 +155,17 @@ build_gtk_frontend() {
 
 	cd ${S}/"${gtk_swt_src_dir}"
 	make -f make_gtk.mak make_swt || die "Failed to build platform-independent SWT support"
+	make -f make_gtk.mak make_atk || die "Failed to build atk support"
+
+	if use gnome ; then
+		einfo "Building GNOME VFS support"
+		make -f make_gtk.mak make_gnome || die "Failed to build GNOME VFS support"
+	fi
+
+	if use mozilla ; then
+		einfo "Building Mozilla component"
+		make -f make_gtk.mak make_mozilla || die "Failed to build Mozilla support"
+	fi
 
 	# move the *.so files to the right path so eclipse can find them
 	mkdir -p ${S}/"${gtk_swt_dest_dir}"
@@ -157,9 +181,6 @@ build_motif_frontend() {
 	cd ${S}/"${motif_swt_src_dir}"
 
 	make -f make_linux.mak make_swt || die "Failed to build Motif support"
-	if use gnome ; then
-		make -f make_linux.mak make_gnome || die "Failed to build GNOME VFS support"
-	fi
 	if use kde ; then
 		make -f make_linux.mak make_kde || die "Failed to build KDE support"
 	fi
@@ -176,7 +197,6 @@ src_compile() {
 	# Figure out correct boot classpath
 	if [ ! -z "`java-config --java-version | grep IBM`" ] ; then
 		# IBM JRE
-		einfo "Using the IBM JDK"
 		ant_extra_opts="-Dbootclasspath=$(java-config --jdk-home)/jre/lib/core.jar"
 	else
 		# Sun derived JREs (Blackdown, Sun)
@@ -191,42 +211,45 @@ src_compile() {
 
 	set_dirs
 
-	# Build resources
+	# Build selected frontends
+	use gtk && build_gtk_frontend
+	use motif && build_motif_frontend
+
 	einfo "Building resources.core plugin"
-	cd ${core_src_dir}
+	cd ${S}/${core_src_dir}
 	make JDK_INCLUDE="`java-config -O`/include -I`java-config -O`/include/linux" || die "Failed to build resource.core plugin"
 	mkdir -p ${S}/"${core_dest_dir}"
 	mv *.so ${S}/"${core_dest_dir}"
 
-
-	# Build selected frontends
 	cd ${S}
-	use gtk && build_gtk_frontend
-	use motif && build_motif_frontend
 
-	# Build java code
-	# karltk: Do we really need to rebuild all of this if both motif and
-	# gtk are specified?
-	cd ${S}
+	# Build all java code -- default to gtk if neither of gtk, motif, 
+	# kde are set
 	if ( use gtk || ! ( use gtk || use motif || use kde ) ); then
-		einfo "Building platform suited for the GTK+ frontend"
-		ant -q \
+		einfo "Building GTK+ frontend -- see compilelog.txt for details"
+		ant -q -q \
 			-buildfile build.xml \
-			-Dos=linux \
-			-Dws=gtk \
+			-DinstallOs=linux \
+			-DinstallWs=gtk \
 			-DinstallArch=$ARCH \
-			${ant_extra_opts} compile distribute || die "Failed to compile java code (gtk+)"
+			${ant_extra_opts} compile install \
+			|| die "Failed to compile java code (gtk+)"
 	fi
 	if use motif ; then
-		einfo "Building platform suited for the Motif frontend"
-		ant -q \
+		einfo "Building Motif frontend -- see compilelog.txt for details"
+		ant -q -q \
 			-buildfile build.xml \
-			-Dos=linux \
-			-Dws=motif \
+			-DcollPlace="eclipse-${SLOT}" \
+			-DinstallOs=linux \
+			-DinstallWs=motif \
 			-DinstallArch=$ARCH \
-			${ant_extra_opts} compile distribute || die "Failed to compile java code (Motif)"
+			${ant_extra_opts} compile install \
+			|| die "Failed to compile java code (Motif)"
 	fi
 
+	cat ${FILESDIR}/eclipse-${SLOT}.desktop | \
+		sed -e "s/@PV@/${PV}/" \
+		> eclipse-${SLOT}.desktop
 }
 
 src_install() {
@@ -234,28 +257,25 @@ src_install() {
 
 	# Create basic directories
 	dodir ${eclipse_dir}
+	insinto ${eclipse_dir}
 
 	einfo "Installing features and plugins"
-	find features \
-		-name "*.bin.dist.zip" \
-		-exec unzip -q \{\} -d ${D}/${eclipse_dir} \;
+	unzip -q result/linux-*-x86-sdk.zip -d ${D}/usr/lib
 
 	# Install launchers and native code
 	exeinto ${eclipse_dir}
 	if use gtk ; then
 		einfo "Installing eclipse-gtk binary"
-		doexe plugins/platform-launcher/library/gtk/eclipse-gtk || die "Failed to install eclipse-gtk"
+		doexe plugins/platform-launcher/library/gtk/eclipse-gtk \
+			|| die "Failed to install eclipse-gtk"
 	fi
 	if use motif ; then
 		einfo "Installing eclipse-motif binary"
-		doexe plugins/platform-launcher/library/motif/eclipse-motif || die "Failed to install eclipse-gtk"
+		doexe plugins/platform-launcher/library/motif/eclipse-motif \
+			|| die "Failed to install eclipse-motif"
 	fi
 
-	# Installing misc files
-	insinto ${eclipse_dir}
-	doins plugins/org.eclipse.platform/.eclipseproduct
 	doins plugins/org.eclipse.platform/{startup.jar,splash.bmp}
-	doins plugins/platform-launcher/bin/linux/gtk/icon.xpm
 
 	# Install startup script
 	exeinto /usr/bin
@@ -264,7 +284,14 @@ src_install() {
 	# Install GNOME .desktop file
 	if use gnome ; then
 		insinto /usr/share/gnome/apps/Development
-		doins ${FILESDIR}/eclipse-${SLOT}.desktop
-		sed -e "s/@PV@/${PV}/" -i ${D}/usr/share/gnome/apps/Development
+		doins eclipse-${SLOT}.desktop
 	fi
+
+	# Install KDE .desktop file
+	if use kde ; then
+		# karltk: should check for available kde version(s)
+		insinto /usr/kde/3.2/share/applnk/Applications/
+		doins eclipse-${SLOT}.desktop
+	fi
+
 }
