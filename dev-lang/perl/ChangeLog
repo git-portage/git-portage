@@ -1,6 +1,18 @@
 # ChangeLog for sys-devel/perl
 # Copyright 2002-2003 Gentoo Technologies, Inc.; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/perl/Attic/ChangeLog,v 1.61 2003/03/01 22:08:16 lostlogic Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/perl/ChangeLog,v 1.1 2003/03/11 21:11:45 seemant Exp $
+
+*perl-5.8.0-r10 (11 Mar 2003)
+
+  11 Mar 2003; Seemant Kulleen <seemant@gentoo.org> perl-5.6.1-r10.ebuild,
+  perl-5.6.1-r11.ebuild, perl-5.8.0-r10.ebuild, perl-5.8.0-r9.ebuild,
+  files/5.6.1-builtin-fixup.diff, files/5.6.1-op-test-fix.diff,
+  files/libperl-5.8.0-create-libperl-soname.patch, files/libperl_rebuilder,
+  files/perl-5.8.0-RC2-special-h2ph-not-failing-on-machine_ansi_header.patch,
+  files/perl-5.8.0-perldoc-emptydirs.patch,
+  files/perl-5.8.0-prelink-lpthread.patch,
+  files/perl-5.8.0-sockatmark-should-__THROW.patch, files/stat.t:
+  moved to dev-lang from sys-devel
 
 *perl-5.8.0-r10 (28 Feb 2003)
 

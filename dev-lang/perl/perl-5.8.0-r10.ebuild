@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/perl/Attic/perl-5.8.0-r9.ebuild,v 1.11 2003/03/01 22:08:16 lostlogic Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/perl/Attic/perl-5.8.0-r10.ebuild,v 1.1 2003/03/11 21:11:45 seemant Exp $
 
 # The basic theory based on comments from Daniel Robbins <drobbins@gentoo.org>.
 #
@@ -83,7 +83,7 @@ fi
 LIBPERL="libperl.so.${PERLSLOT}.${SHORT_PV}"
 
 LICENSE="Artistic GPL-2"
-KEYWORDS="x86 sparc ~ppc alpha ~mips hppa arm"
+KEYWORDS="~x86 ~sparc ~ppc ~alpha ~mips ~hppa"
 
 DEPEND="sys-apps/groff
 	berkdb? ( >=sys-libs/db-3.2.3h-r3 =sys-libs/db-1.85-r1 )
@@ -102,7 +102,7 @@ if [ "${PN}" = "libperl" ]
 then
 	# If we are installing a new version of libperl, we *have* to update perl as
 	# well, else all things linking to libperl.so will break at *build* time ..
-	PDEPEND=">=sys-devel/perl-${PV}"
+	PDEPEND=">=dev-lang/perl-${PV}"
 else
 	PDEPEND=">=dev-perl/Safe-2.09"
 fi
@@ -162,6 +162,18 @@ src_unpack() {
 		# This fixes bug #12605.
 		# <azarah@gentoo.org> (28 Dec 2002).
 		cd ${S}; epatch ${FILESDIR}/${P}-sockatmark-should-__THROW.patch
+
+		# Get -lpthread linked before -lc.  This is needed
+		# when using glibc >= 2.3, or else runtime signal
+		# handling breaks.  Fixes bug #14380.
+		# <rac@gentoo.org> (14 Feb 2003)
+		cd ${S}; epatch ${FILESDIR}/${P}-prelink-lpthread.patch
+
+		# Patch perldoc to not abort when it attempts to search
+		# nonexistent directories; fixes bug #16589.
+		# <rac@gentoo.org> (28 Feb 2003)
+		cd ${S}; epatch ${FILESDIR}/${P}-perldoc-emptydirs.patch
+
 	fi
 }
 
@@ -198,8 +210,6 @@ src_compile() {
 	then
 		myconf="${myconf} -Ud_longdbl"
 	fi
-
-	[ "${ARCH}" = "hppa" ] && append-flags -fPIC
 	
 	if [ "${PN}" = "libperl" ]
 	then
