@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nessus-plugins/Attic/nessus-plugins-2.3.0.ebuild,v 1.2 2005/01/28 02:04:39 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nessus-plugins/Attic/nessus-plugins-2.2.2a.ebuild,v 1.1 2005/01/28 02:04:39 dragonheart Exp $
 
 inherit toolchain-funcs
 
@@ -24,5 +24,5 @@ src_install() {
 	emake \
 		DESTDIR=${D} \
 		install || die "make install failed"
-	dodoc docs/*.txt
+	dodoc docs/*.txt plugins/accounts/accounts.txt
 }
