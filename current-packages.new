@@ -274,7 +274,7 @@
 ./media-sound/lame/lame-3.86b.ebuild
 ./media-sound/lopster/lopster-0.9.6.ebuild
 ./media-sound/mpg123/mpg123-0.59r.ebuild
-./media-sound/nas/nas-1.4.1.ebuild
+./media-sound/nas/nas-1.4.1-r1.ebuild
 ./media-sound/sox/sox-12.17.1.ebuild
 ./media-sound/shorten/shorten-3.2.ebuild
 ./media-sound/vorbis-tools/vorbis-tools-1.0_beta3.ebuild
