@@ -2,4 +2,4 @@ MD5 31f75500a52890133a3fac4bd50e47f2 shoutcast-trans-bin-0.4.0.ebuild 2016
 MD5 dbafe0153b3ee5f599d5dbeac4aa3210 metadata.xml 224
 MD5 9201cfe5bf8aa249049e4c7459e1cf5d ChangeLog 681
 MD5 9ccef27495f4b1f47acfefdb67ccffab files/digest-shoutcast-trans-bin-0.4.0 67
-MD5 cb5c9645d2b90950ca253dc8ba27c23b files/shoutcast_trans 783
+MD5 712005fe18cb1eb7c10adb324ebb7065 files/shoutcast_trans 825
