@@ -227,7 +227,7 @@
 ./media-libs/t1lib/t1lib-1.0.1-r1.ebuild
 ./media-libs/tiff/tiff-3.5.5-r1.ebuild
 #./media-sound/alsa-driver/alsa-driver-0.5.9c.ebuild
-./media-sound/alsa-utils/alsa-utils-0.5.9b.ebuild
+./media-sound/alsa-utils/alsa-utils-0.5.9b-r1.ebuild
 ./media-sound/esound/esound-0.2.19.ebuild
 #./media-sound/esound/esound-0.2.20.ebuild
 ./media-sound/gtk-gnutella/gtk-gnutella-0.12-r2.ebuild
@@ -441,6 +441,7 @@
 ./x11-wm/enlightenment/enlightenment-0.16.4-r1.ebuild
 ./x11-wm/openmotif/openmotif-MLI-2.1.30.ebuild
 ./x11-wm/sawfish/sawfish-0.32.ebuild
+
 
 
 
