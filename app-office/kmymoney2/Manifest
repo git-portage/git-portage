@@ -3,6 +3,8 @@ MD5 e1cd2f335421a254a74fee8215e7da76 kmymoney2-0.5.1.ebuild 531
 MD5 1b6808bbd78c9161f8b7efb090d966f8 metadata.xml 162
 MD5 de07bb2addca29d59dfea17b2fde9041 kmymoney2-0.6_rc3.ebuild 559
 MD5 fd1b676915eb60e1e103446eb468a020 kmymoney2-0.6_rc4.ebuild 563
+MD5 f5175cf3e744dd583856408e646f7a18 kmymoney2-0.6.ebuild 541
 MD5 1e021f274fd4522ebc21d1efaa886126 files/digest-kmymoney2-0.5.1 69
 MD5 8d006b203314134a45fc473dd98b50b6 files/digest-kmymoney2-0.6_rc3 70
 MD5 0f466f5214bd0c557e4f84af40b9e10c files/digest-kmymoney2-0.6_rc4 70
+MD5 e391b736d19e1bcd73809df2505d4f7c files/digest-kmymoney2-0.6 67
