@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/arts/Attic/arts-1.2.0_beta1.ebuild,v 1.3 2003/11/03 20:02:54 caleb Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/arts/Attic/arts-1.2.0_beta2.ebuild,v 1.1 2003/12/02 02:00:32 caleb Exp $
 inherit kde-base flag-o-matic
 
 IUSE="alsa oggvorbis artswrappersuid mad"
@@ -8,10 +8,10 @@ IUSE="alsa oggvorbis artswrappersuid mad"
 set-kdedir 3.2
 need-qt 3.2
 
-MY_PV=1.1.92
+MY_PV=1.1.94
 S=${WORKDIR}/${PN}-${MY_PV}
 
-SRC_URI="mirror://kde/unstable/3.1.93/src/${PN}-${MY_PV}.tar.bz2"
+SRC_URI="mirror://kde/unstable/3.1.94/src/${PN}-${MY_PV}.tar.bz2"
 HOMEPAGE="http://multimedia.kde.org"
 DESCRIPTION="aRts, the KDE sound (and all-around multimedia) server/output manager"
 
@@ -62,7 +62,7 @@ src_install() {
 echo "PATH=${PREFIX}/bin
 ROOTPATH=${PREFIX}/sbin:${PREFIX}/bin
 LDPATH=${PREFIX}/lib
-CONFIG_PROTECT=${PREFIX}/share/config" > ${D}/etc/env.d/48depaths-3.2.0 # number goes down with version upgrade
+CONFIG_PROTECT=${PREFIX}/share/config" > ${D}/etc/env.d/48kdepaths-3.2.0 # number goes down with version upgrade
 
 	echo "KDEDIR=$PREFIX" > ${D}/etc/env.d/57kdedir-3.2.0 # number goes up with version upgrade
 
