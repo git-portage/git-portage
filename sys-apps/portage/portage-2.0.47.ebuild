@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc. 
 # Distributed under the terms of the GNU General Public License v2 
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.47_pre1.ebuild,v 1.2 2002/12/21 12:57:55 carpaski Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.47.ebuild,v 1.1 2003/01/07 13:44:51 carpaski Exp $
 
 IUSE="build"
 
@@ -11,9 +11,9 @@ export SANDBOX_DISABLED="1"
 S=${WORKDIR}/${PF}
 SLOT="0"
 DESCRIPTION="Portage ports system"
-SRC_URI="http://gentoo.twobit.net/portage/${PF}.tar.bz2"
+SRC_URI="mirror://gentoo/${PF}.tar.bz2 http://gentoo.twobit.net/portage/${PF}.tar.bz2"
 HOMEPAGE="http://www.gentoo.org"
-KEYWORDS="x86 ppc sparc alpha"
+KEYWORDS="x86 ppc sparc alpha mips"
 LICENSE="GPL-2"
 RDEPEND="!build? ( >=sys-apps/fileutils-4.1.8 dev-python/python-fchksum >=dev-lang/python-2.2.1 sys-apps/debianutils >=sys-apps/bash-2.05a )"
 
@@ -21,7 +21,7 @@ src_unpack() {
 	cd ${WORKDIR}
 	echo tar xjf ${DISTDIR}/${PF}.tar.bz2
 	tar xjf ${DISTDIR}/${PF}.tar.bz2 || die "No portage tarball in distfiles."
-	echo $(python -c "import portage,string; print string.join(portage.pkgsplit(portage.best(portage.db[\"${ROOT}\"][\"vartree\"].dbapi.match(\"sys-apps/portage\"))))") > ${WORKDIR}/previous-version
+	#echo $(python -c "import portage,string; print string.join(portage.pkgsplit(portage.best(portage.db[\"${ROOT}\"][\"vartree\"].dbapi.match(\"sys-apps/portage\"))))") > ${WORKDIR}/previous-version
 }
 
 src_compile() {
@@ -46,6 +46,14 @@ src_install() {
 		sparc )
 		newins make.globals.sparc make.globals
 		newins make.conf.sparc make.conf
+		;;
+		alpha )
+		newins make.globals.alpha make.globals
+		newins make.conf.alpha make.conf
+		;;
+		mips )
+		newins make.globals.mips make.globals
+		newins make.conf.mips make.conf
 		;;
 		* )
 		doins make.globals make.conf
@@ -233,18 +241,18 @@ pkg_postinst() {
 	echo
 	echo
 
-	OLDPV=$(< ${WORKDIR}/previous-version)
-	if ! use build; then
-		if python -c "import portage,string,sys; sys.exit(portage.pkgcmp(string.split(\"${OLDPV}\"),[\"sys-apps/portage\",\"2.0.45\",\"r5\"])>=0)"; then
-			# Previous version is older than the current db breaking one.
-			eerror "ATTENTION: Portage has merged successfully. You must restart your merge"
-			eerror "ATTENTION: manually if this was not the last package. A change in the db"
-			eerror "ATTENTION: cache prevents portage from continuing with this version. The"
-			eerror "ATTENTION: changes only require that portage be restarted after the change."
-			eerror "ATTENTION: This issue is handled automatically from this new version on."
-			eerror "ATTENTION: Sorry for any inconvenience. Exiting..."
-
-			ps wax | egrep 'python.*emerge' | sed 's:^[ ]*\([0-9]\+\).*:\1:' | xargs kill -INT
-		fi
-	fi
+	#OLDPV=$(< ${WORKDIR}/previous-version)
+	#if ! use build; then
+	#	if python -c "import portage,string,sys; sys.exit(portage.pkgcmp(string.split(\"${OLDPV}\"),[\"sys-apps/portage\",\"2.0.45\",\"r5\"])>=0)"; then
+	#		# Previous version is older than the current db breaking one.
+	#		eerror "ATTENTION: Portage has merged successfully. You must restart your merge"
+	#		eerror "ATTENTION: manually if this was not the last package. A change in the db"
+	#		eerror "ATTENTION: cache prevents portage from continuing with this version. The"
+	#		eerror "ATTENTION: changes only require that portage be restarted after the change."
+	#		eerror "ATTENTION: This issue is handled automatically from this new version on."
+	#		eerror "ATTENTION: Sorry for any inconvenience. Exiting..."
+	#
+	#		ps wax | egrep 'python.*emerge' | sed 's:^[ ]*\([0-9]\+\).*:\1:' | xargs kill -INT
+	#	fi
+	#fi
 }
