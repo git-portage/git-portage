@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/isdn4k-utils/Attic/isdn4k-utils-3.6_pre20041219.ebuild,v 1.4 2005/02/17 22:27:58 kloeri Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/isdn4k-utils/Attic/isdn4k-utils-3.6_pre20041219-r1.ebuild,v 1.1 2005/02/23 05:52:20 mrness Exp $
 
-inherit eutils
+inherit eutils linux-info
 
 MY_PV="${PV/*_pre/}"
 MY_P="${PN}-CVS-${MY_PV:0:4}-${MY_PV:4:2}-${MY_PV:6:2}"
@@ -29,6 +29,9 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}/${MY_P}"
 
 pkg_setup() {
+	CONFIG_CHECK="PPP"
+	linux-info_pkg_setup
+
 	# Get country code from I4L_CC variable
 	# default country: DE (Germany)
 	I4L_CC=$(echo -n "${I4L_CC}" | tr "[:lower:]" "[:upper:]")
