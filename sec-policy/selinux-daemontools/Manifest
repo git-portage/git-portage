@@ -1,14 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 5ca3f8d4f9ea99c1ac0be5b88577aef2 ChangeLog 621
-MD5 1e0b9d63af7278c1a118c4b36154fd26 metadata.xml 396
+MD5 50d358bc93af4fe500ff0ccc71ca72fe ChangeLog 880
+MD5 db86a3732cf9576527558b9050c51f33 metadata.xml 533
 MD5 cf0816558d0edfe3ee0aa7751514b4d2 selinux-daemontools-20040203.ebuild 443
+MD5 caa1015cbc7f459441cfdce1ba663f12 selinux-daemontools-20041022.ebuild 321
 MD5 8f50a0e3d839ace3510ad7317350c3b5 files/digest-selinux-daemontools-20040203 79
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.5 (GNU/Linux)
-
-iD8DBQFBTjkIGFJQsIJWJy4RApWrAJ4vFbbtbzHVQNwYlWRHt8pjLwsTygCfYnH7
-v8dy+LBwREXsZmpi+htp2lI=
-=XQ8I
------END PGP SIGNATURE-----
+MD5 9083cdde946b6bfa375b7575ef19edee files/digest-selinux-daemontools-20041022 79
