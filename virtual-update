@@ -5,3 +5,4 @@ virtual/flex			sys-build/flex sys-devel/flex
 virtual/bison			sys-build/bison	sys-devel/bison
 virtual/bash			sys-build/bash sys-devel/bash
 virtual/kernel			sys-kernel/linux sys-kernel/linux-sources
+virtual/python			sys-devel/spython dev-lang/python
