@@ -1,3 +1,9 @@
+date 01 May 2001
+
+upd sys-apps/portage-1.5-r4 to 1.5-r5
+drobbins
+new revision of the dblink class; virtual-related bug fixes
+
 date 30 Apr 2001
 
 upd app-misc/twin-0.3.8 to 0.3.8-r1
