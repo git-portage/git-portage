@@ -1,10 +1,12 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Mikael Hallendal <hallski@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/Attic/gdm-2.2.5.4-r5.ebuild,v 1.4 2002/06/19 23:53:47 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/Attic/gdm-2.2.5.4-r5.ebuild,v 1.5 2002/07/10 01:41:49 spider Exp $
 
 DESCRIPTION="GNOME Display Manager"
 HOMEPAGE="http://www.gnome.org/"
+KEYWORDS="x86 ppc"
+LICENSE="GPL-2"
 
 MY_V="`echo ${PV} |cut -b -5`"
 S=${WORKDIR}/${P}
