@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/aterm/Attic/aterm-0.4.2-r5.ebuild,v 1.3 2004/01/17 18:09:33 spock Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/aterm/Attic/aterm-0.4.2-r7.ebuild,v 1.1 2004/01/17 18:09:33 spock Exp $
 
 IUSE="cjk"
 S=${WORKDIR}/${P}
@@ -25,7 +25,14 @@ src_unpack() {
 
 	cd ${S}
 	epatch ${FILESDIR}/aterm-0.4.2-borderless.patch
-	use cjk && epatch ${DISTDIR}/aterm-0.4.2-ja.patch
+	epatch ${FILESDIR}/aterm-0.4.2-paste.patch
+	epatch ${FILESDIR}/aterm-0.4.2-paste_mouse_outside.patch
+
+	if [ `use cjk` ] ; then
+		epatch ${DISTDIR}/aterm-0.4.2-ja.patch
+	else
+		epatch ${FILESDIR}/aterm-0.4.2-copynpaste.patch
+	fi
 }
 
 src_compile() {
