@@ -5,10 +5,10 @@ MD5 07f9802daceb1d3593dbc9c92d74a93f subversion-1.0.1.ebuild 8707
 MD5 6be599117174a63a1810de08ab2a068d subversion-1.0.2.ebuild 9223
 MD5 50b381d130b73e50c2cddbf95cf8ad42 subversion-1.0.3.ebuild 9229
 MD5 6d782eebdb1eb7b3296fd8f7b9c3f98e subversion-1.0.4-r1.ebuild 9541
-MD5 e3c06c4211a917c92d55d9d005c2e07c ChangeLog 17533
+MD5 d4b236ae8c9d65aef45aaea08d5d0230 ChangeLog 17651
 MD5 11edc2e84a30096642ba71e234b20108 subversion-1.0.4.ebuild 9381
 MD5 477868a5a577d64402abbbe07dc32bcc subversion-1.0.6.ebuild 9724
-MD5 3cc31a5148b65ec61f0233d14f7a5b9f subversion-1.1.0.ebuild 8811
+MD5 949ac57fd20973cb10d0fe938492b109 subversion-1.1.0.ebuild 8807
 MD5 4c7351dd78c5ddf1c3f49cb621d6efe9 subversion-1.0.8.ebuild 9721
 MD5 3cc31a5148b65ec61f0233d14f7a5b9f subversion-1.1.0_rc4.ebuild 8811
 MD5 4fd39b311d09602c93a9ff0aceaf8596 files/70svn-gentoo.el 136
