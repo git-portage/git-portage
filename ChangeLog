@@ -1,3 +1,10 @@
+date 4 July 2001
+upd net-ftp/pure-ftpd-0.98.7-r2
+Modified to make pure-ftpd start properly with xinetd
+upd net-misc/bind-9.1.2-r1
+Modified to have the default installed named up and running. added root.cache/localhost & 127.0.0 files as well modified default named.conf with more parametersin it & modified named to start with user named.
+--pm
+
 date 3 July 2001
 
 new app-games/tf-40
