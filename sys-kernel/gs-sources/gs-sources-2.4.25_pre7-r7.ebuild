@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gs-sources/Attic/gs-sources-2.4.25_pre7-r7.ebuild,v 1.2 2004/06/24 22:57:13 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gs-sources/Attic/gs-sources-2.4.25_pre7-r7.ebuild,v 1.1 2004/06/24 21:32:48 plasmaroo Exp $
 
 IUSE="build crypt"
 
