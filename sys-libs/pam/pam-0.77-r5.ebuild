@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/pam/Attic/pam-0.77-r1.ebuild,v 1.14 2005/02/02 20:46:14 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/pam/Attic/pam-0.77-r5.ebuild,v 1.1 2005/02/02 20:46:14 azarah Exp $
 
-PATCH_LEVEL="1.2"
+PATCH_LEVEL="1.6"
 BDB_VER="4.1.25"
 PAM_REDHAT_VER="0.77-4"
 
@@ -13,7 +13,7 @@ RDEPEND=">=sys-libs/cracklib-2.7-r8
 DEPEND="$RDEPEND
 	dev-lang/perl
 	=dev-libs/glib-1.2*
-	>=sys-devel/autoconf-2.58
+	>=sys-devel/autoconf-2.59
 	>=sys-devel/automake-1.6
 	>=sys-devel/flex-2.5.4a-r5
 	pwdb? ( >=sys-libs/pwdb-0.62 )"
@@ -70,9 +70,9 @@ pkg_setup() {
 
 	if use pwdb; then
 		for x in libpwdb.a libcrack.a; do
-			if [ ! -f "${ROOT}/usr/lib/${x}" ]; then
-				eerror "Could not find /usr/lib/${x} needed to build Linux-PAM!"
-				die "Could not find /usr/lib/${x} needed to build Linux-PAM!"
+			if [ ! -f "${ROOT}/usr/$(get_libdir)/${x}" ]; then
+				eerror "Could not find /usr/$(get_libdir)/${x} needed to build Linux-PAM!"
+				die "Could not find /usr/$(get_libdir)/${x} needed to build Linux-PAM!"
 			fi
 		done
 	fi
@@ -86,10 +86,6 @@ src_unpack() {
 	cd ${S} || die
 	tar -zxf ${S2}/pam-redhat-${PAM_REDHAT_VER}.tar.gz \
 		|| die "Couldn't unpack pam-redhat-${PAM_REDHAT_VER}.tar.gz"
-
-	# Fix pam_console_apply -r segfaulting if a group used in
-	# /etc/security/console.perms are missing, bug #50315
-	cp -f ${FILESDIR}/pam-0.77-console-reset.patch ${S2}/gentoo-patches/
 
 	apply_pam_patches
 
@@ -170,10 +166,10 @@ src_compile() {
 	einfo "Building Linux-PAM ${PV}..."
 	cd ${S}
 	./configure \
-		--libdir=/lib \
+		--libdir=/$(get_libdir) \
 		--enable-static-libpam \
 		--enable-fakeroot=${D} \
-		--enable-isadir=/lib/security \
+		--enable-isadir=/$(get_libdir)/security \
 		--host=${CHOST} || die
 
 	# Python stuff in docs gives sandbox problems
@@ -192,11 +188,22 @@ src_compile() {
 			-e "s:^HAVE_LIBNDBM=yes:HAVE_LIBNDBM=no:" \
 			-e "s:^HAVE_LIBDB=yes:HAVE_LIBDB=no:" \
 			Make.Rules
+
+		# Also edit the configuration file else the wrong include files
+		# get used
+		sed -i -e "s:^#define HAVE_NDBM_H.*$:/* #undef HAVE_NDBM_H */:" \
+		       -e "s:^#define HAVE_DB_H.*$:/* #undef HAVE_DB_H */:" \
+		       _pam_aconf.h
+
 	else
 		# Do not link pam_userdb.so to db-1.85 ...
 		sed -i -e "s:^HAVE_NDBM_H=yes:HAVE_NDBM_H=no:" \
 			-e "s:^HAVE_LIBNDBM=yes:HAVE_LIBNDBM=no:" \
 			Make.Rules
+
+		# Also edit the configuration file else the wrong include files
+		# get used
+		sed -i -e "s:^#define HAVE_NDBM_H.*$:/* #undef HAVE_NDBM_H */:" _pam_aconf.h
 	fi
 
 	make || die "PAM build failed"
@@ -219,7 +226,7 @@ src_install() {
 		if [ -d ${x} ]
 		then
 			# Its OK if the module failed when we didnt ask for it anyway
-			if ! ls -1 ${D}/lib/security/$(basename ${x})*.so &> /dev/null
+			if ! ls -1 ${D}/$(get_libdir)/security/$(basename ${x})*.so &> /dev/null
 			then
 				if ! use berkdb && [ "$(basename ${x})" = "pam_userdb" ]
 				then
@@ -239,34 +246,34 @@ src_install() {
 			# Remove the ones we didnt want if it ended up building ok anyways
 				if ! use berkdb && [ "$(basename ${x})" = "pam_userdb" ]
 				then
-					rm -f ${D}/lib/security/pam_userdb*
+					rm -f ${D}/$(get_libdir)/security/pam_userdb*
 				fi
 				if ! use pwdb && [ "$(basename ${x})" = "pam_pwdb" ]
 				then
-					rm -f ${D}/lib/security/pam_pwdb*
+					rm -f ${D}/$(get_libdir)/security/pam_pwdb*
 				fi
 				if ! use pwdb && [ "$(basename ${x})" = "pam_radius" ]
 				then
-					rm -f ${D}/lib/security/pam_radius*
+					rm -f ${D}/$(get_libdir)/security/pam_radius*
 				fi
 			fi
 		fi
 	done
 
-	dodir /usr/lib
-	cd ${D}/lib
+	dodir /usr/$(get_libdir)
+	cd ${D}/$(get_libdir)
 	for x in pam pamc pam_misc
 	do
 		rm lib${x}.so
 		ln -s lib${x}.so.${PV} lib${x}.so
 		ln -s lib${x}.so.${PV} lib${x}.so.0
-		mv lib${x}.a ${D}/usr/lib
+		mv lib${x}.a ${D}/usr/$(get_libdir)
 		# See bug #4411
 		gen_usr_ldscript lib${x}.so
 	done
 
 	cd ${S}
-	doman doc/man/*.[58]
+	doman doc/man/*.[0-9]
 
 	dodoc CHANGELOG Copyright README
 	docinto modules ; dodoc modules/README ; dodoc doc/txts/README.*
