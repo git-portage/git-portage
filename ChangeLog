@@ -1,3 +1,10 @@
+date 25 Mar 2001
+
+new app-doc/gentoo-doc-1.0_rc4
+achim
+I merged the install doc with petes Gentoo-HOWTO and my manpages.
+It generates the following output types: html,ps,pdf,dvi,man
+
 date 22 Mar 2001
 
 upd sys-apps/portage-1.5_pre7 to 1.5_pre8
