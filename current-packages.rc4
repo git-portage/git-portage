@@ -4,7 +4,7 @@
 ./app-admin/modlogan/modlogan-0.5.7-r1.ebuild
 ./app-admin/mon/mon-0.38.20-r1.ebuild
 ./app-admin/pciutils/pciutils-2.1.8-r1.ebuild
-
+./app-admin/qtsvc/qtsvc-0.1-r1.ebuild
 ./app-arch/rpm/rpm-3.0.6-r1.ebuild
 ./app-arch/unzip/unzip-5.41-r2.ebuild
 ./app-editors/joe/joe-2.9.5.ebuild
