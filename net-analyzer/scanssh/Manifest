@@ -1,16 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 8f8f43496bda529cff099432ca4b499c ChangeLog 1008
-MD5 a163cabfb0a686754085c235298ae5d6 scanssh-1.6b.ebuild 618
+MD5 6009d1a10a899b3cfb96335fab844a55 scanssh-2.0.ebuild 604
+MD5 dbf6900f9d57545d0f8d56644656654f ChangeLog 1102
 MD5 5ef1334dd837ff015a4d3765d65d2f15 metadata.xml 319
-MD5 f3f42a05e57a23556c8e4375ad32f358 scanssh-2.0.ebuild 605
-MD5 41c4a3014bd820529d63f6b16a7b83d6 files/digest-scanssh-1.6b 63
+MD5 a163cabfb0a686754085c235298ae5d6 scanssh-1.6b.ebuild 618
 MD5 2541416a54e7fe091fb12c0e95754166 files/digest-scanssh-2.0 62
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFB+xtcmdTrptrqvGERApe8AJ0b0HfURnTmilh3CBjqHKc4d71QBgCeLvng
-KcLeFRlFg1kXIMGl4Y+ZGjU=
-=ZBJh
------END PGP SIGNATURE-----
+MD5 41c4a3014bd820529d63f6b16a7b83d6 files/digest-scanssh-1.6b 63
