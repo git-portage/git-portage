@@ -1,14 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 59104a499f1c043835dfaf3c907faf72 libssh-0.1.ebuild 826
-MD5 d523d40dd87d09667de6e04799f89ec0 ChangeLog 741
+MD5 4b4ea4ec40737ac858963fa1ca743a82 libssh-0.11.ebuild 599
+MD5 9b88a8bd552ad972b74aa6e66e7592d8 ChangeLog 870
 MD5 67176a673d5f792bc9cf28e4c632e49b metadata.xml 252
 MD5 f3008419ae3b4a4b4f9e0781459a4510 files/digest-libssh-0.1 59
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.9.10 (GNU/Linux)
-
-iD8DBQFBVPJ7HTu7gpaalycRAg8PAKDyjy2QogCHASBcRVydoDvwH984PgCbBRis
-YLouHG5rvZvtkQx7nt1Lz30=
-=ECeG
------END PGP SIGNATURE-----
+MD5 9c7a7f99638231c3b559910de8c1b897 files/digest-libssh-0.11 60
