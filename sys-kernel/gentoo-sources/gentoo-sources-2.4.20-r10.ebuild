@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/Attic/gentoo-sources-2.4.20-r8.ebuild,v 1.5 2004/01/06 15:17:52 plasmaroo Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/Attic/gentoo-sources-2.4.20-r10.ebuild,v 1.1 2004/01/06 15:17:52 plasmaroo Exp $
 
 IUSE="build crypt evms2 aavm usagi"
 
@@ -30,10 +30,10 @@ S=${WORKDIR}/linux-${KV}
 
 DESCRIPTION="Full sources for the Gentoo Kernel."
 SRC_URI="mirror://kernel/linux/kernel/v2.4/linux-${OKV}.tar.bz2
-	mirror://gentoo/patches-${KV/8/5}.tar.bz2"
+	mirror://gentoo/patches-${KV/10/5}.tar.bz2"
 HOMEPAGE="http://www.gentoo.org/ http://www.kernel.org/"
 LICENSE="GPL-2"
-KEYWORDS="x86 -ppc -sparc -alpha -hppa -mips -arm"
+KEYWORDS="~x86 -ppc -sparc -alpha -hppa -mips -arm"
 SLOT="${KV}"
 
 
@@ -41,7 +41,7 @@ src_unpack() {
 	unpack ${A}
 	mv linux-${OKV} linux-${KV} || die "Error moving kernel source tree to linux-${KV}"
 
-	cd ${WORKDIR}/${KV/8/5}
+	cd ${WORKDIR}/${KV/10/5}
 
 	# Move over new iptables-ROUTE patch
 	cp ${FILESDIR}/gentoo-sources-2.4.20-ipt-route.patch 727_iptables-ROUTE
@@ -132,7 +132,11 @@ src_unpack() {
 	epatch ${FILESDIR}/gentoo-sources-2.4.20-mdcount.patch
 	epatch ${FILESDIR}/gentoo-sources-2.4.20-devfs-snd-fix.patch
 	epatch ${FILESDIR}/gentoo-sources-2.4.20-ipt-realm.patch
-	epatch ${FILESDIR}/do_brk_fix.patch
+	epatch ${FILESDIR}/gentoo-sources-2.4.20-hpt372.patch
+
+	epatch ${FILESDIR}/do_brk_fix.patch || die "Failed to apply do_brk() fix!"
+	epatch ${FILESDIR}/gentoo-sources-2.4.CAN-2003-0985.patch || die "Failed to apply mremap() fix!"
+	epatch ${FILESDIR}/gentoo-sources-2.4.20-rtc_fix.patch || die "Failed to apply RTC fix!"
 
 }
 
