@@ -149,9 +149,6 @@ II. The Portage Tree
 
 	x11-wm - x11 window managers
 
-	Note: the sys-* categories, other than sys-build, will be
-	removed soon.
-
   C. The files Directory
 
 	Under each package subdirectory is a 'files' directory. You
