@@ -121,6 +121,7 @@
 ./sys-apps/at/at-3.1.8-r2.ebuild
 ./sys-apps/baselayout/baselayout-1.5-r2.ebuild
 ./sys-apps/bash/bash-2.04-r3.ebuild
+#./sys-apps/busybox/busybox-0.50.ebuild
 ./sys-apps/bzip2/bzip2-1.0.1-r2.ebuild
 ./sys-apps/console-data/console-data-1999.08.29-r2.ebuild
 ./sys-apps/console-tools/console-tools-0.2.3-r3.ebuild
@@ -177,6 +178,7 @@
 ./sys-apps/watchpid/watchpid-0.1-r1.ebuild
 ./sys-apps/which/which-2.12-r1.ebuild
 ./sys-apps/xinetd/xinetd-2.1.8.8_p3-r5.ebuild
+#./sys-apps/yard/yard-2.0.ebuild
 ./sys-devel/autoconf/autoconf-2.13-r2.ebuild
 ./sys-devel/automake/automake-1.4d.ebuild
 ./sys-devel/bc/bc-1.06-r1.ebuild

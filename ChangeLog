@@ -1,4 +1,13 @@
 date 08 Apr 2001
+new sys-apps/yard-2.0
+achim
+system for creating custom bootdisks
+
+new sys-apps/busybox-0.50
+achim
+BusyBox combines tiny versions of many common UNIX utilities into a single
+small executable
+
 new gnome-base/gnome-libs-1.2.13
 new version
 
