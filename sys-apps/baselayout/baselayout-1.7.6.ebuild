@@ -1,9 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# Maintainer: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.7.4-r1.ebuild,v 1.1 2002/03/11 06:37:32 azarah Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.7.6.ebuild,v 1.1 2002/03/24 19:12:57 azarah Exp $
 
-SV="1.3.0"
+SV="1.3.2"
 SVREV=""
 #sysvinit version
 SVIV="2.83"
@@ -14,9 +13,11 @@ SRC_URI="ftp://metalab.unc.edu/pub/Linux/system/daemons/init/sysvinit-${SVIV}.ta
 #	http://www.ibiblio.org/gentoo/distfiles/rc-scripts-${SV}.tar.bz2"
 HOMEPAGE="http://www.gentoo.org"
 
+DEPEND="sys-kernel/linux-headers"
+RDEPEND=""
 if [ -z "`use build`" ]
 then
-	DEPEND="sys-apps/kbd"
+	RDEPEND="sys-apps/kbd"
 fi
 
 #This ebuild needs to be merged "live".  You can't simply make a package of it and merge it later.
@@ -47,9 +48,6 @@ src_unpack() {
 	echo ">>> Unpacking rc-scripts-${SV}${SVREV}.tar.bz2"
 	tar -jxf ${FILESDIR}/rc-scripts-${SV}${SVREV}.tar.bz2 || die
 
-	#fix depscan bug
-	cp -f ${FILESDIR}/depscan.sh ${S}/init.d/
-	
 	#fix CFLAGS for sysvinit stuff
 	cd ${S2}
 	cp Makefile Makefile.orig
@@ -99,15 +97,11 @@ defaltmerge() {
 	#(because it conflicts with some makefiles)
 	local ROOT
 	ROOT="`cat ${T}/ROOT`"
-	#if we are bootstrapping, we want to merge to /dev.
-	if [ -z "`use build`" ]
+	if [ -z "`use bootstrap`" ] && [ -z "`use build`" ] &&  [ -e ${ROOT}/dev/.devfsd ]
 	then
-		if [ "$ROOT" = "/" ] && [ "`cat /proc/mounts | grep '/dev devfs'`" ]
-		then
-			#we're installing to our current system and have devfs enabled.  We'll need to
-			#make adjustments
-			altmerge=1
-		fi
+		# we're installing to a system that has devfs enabled; don't create device
+		# nodes.
+		altmerge=1
 	fi
 }
 
@@ -206,21 +200,20 @@ src_install()
 	keepdir /lib /mnt/floppy /mnt/cdrom
 	chmod go-rwx ${D}/mnt/floppy ${D}/mnt/cdrom
 
-#	dosbin rc-update 
-#	insinto /usr/bin
-#	insopts -m0755
-#	doins colors
+#	dodir /etc/X11
+#	exeinto /etc/X11
+#	doexe ${S}/sbin/startDM.sh
+
+	keepdir /lib/dev-state
 	if [ $altmerge -eq 1 ]
 	then
 		#rootfs and devfs
-		keepdir /lib/dev-state
 		dosym /usr/sbin/MAKEDEV /lib/dev-state/MAKEDEV
 		#this is not needed anymore...
 		#keepdir /lib/dev-state/pts /lib/dev-state/shm
 	else
 		#normal
 		keepdir /dev
-		keepdir /lib/dev-state
 		keepdir /dev/pts /dev/shm
 		dosym /usr/sbin/MAKEDEV /dev/MAKEDEV
 	fi	
@@ -313,25 +306,28 @@ pkg_postinst() {
 	defaltmerge
 	# we dont want to create devices if this is not a bootstrap and devfs
 	# is used, as this was the cause for all the devfs problems we had
-	if [ ! $altmerge -eq 1 ]
+	if [ $altmerge -eq 0 ]
 	then
-		cd ${D}/dev
+		cd ${ROOT}/dev
 		#These devices are also needed by many people and should be included
-		echo "Making device nodes... (this could take a minute or so...)"
-		${S}/sbin/MAKEDEV generic-i386
-		${S}/sbin/MAKEDEV sg
-		${S}/sbin/MAKEDEV scd
-		${S}/sbin/MAKEDEV rtc 
-		${S}/sbin/MAKEDEV audio
-		${S}/sbin/MAKEDEV hde
-		${S}/sbin/MAKEDEV hdf
-		${S}/sbin/MAKEDEV hdg
-		${S}/sbin/MAKEDEV hdh
+		echo "Making device nodes (this could take a minute or so...)"
+		${ROOT}/usr/sbin/MAKEDEV generic-i386
+		${ROOT}/usr/sbin/MAKEDEV sg
+		${ROOT}/usr/sbin/MAKEDEV scd
+		${ROOT}/usr/sbin/MAKEDEV rtc 
+		${ROOT}/usr/sbin/MAKEDEV audio
+		${ROOT}/usr/sbin/MAKEDEV hde
+		${ROOT}/usr/sbin/MAKEDEV hdf
+		${ROOT}/usr/sbin/MAKEDEV hdg
+		${ROOT}/usr/sbin/MAKEDEV hdh
 	fi
 	#we create the /boot directory here so that /boot doesn't get deleted when a previous
 	#baselayout is unmerged with /boot unmounted.
 	install -d ${ROOT}/boot
-	ln -sf . ${ROOT}/boot/boot >/dev/null 2>/dev/null
+	if [ ! -L ${ROOT}/boot/boot ]
+	then
+		ln -sf . ${ROOT}/boot/boot
+	fi
 	#we create this here so we don't overwrite an existing /etc/hosts during bootstrap
 	if [ ! -e ${ROOT}/etc/hosts ]
 	then
@@ -356,27 +352,10 @@ EOF
 		[ -e ${ROOT}/var/${x} ] || touch ${ROOT}/var/${x}
 	done
 
-	#rather force the install of critical files to insure that there is no
-	#problems.
-	## add net.lo for now as well, as it is a problem case in this release.
-	for x in depscan.sh functions.sh runscript.sh checkroot net.eth0 net.lo consolefont keymaps xdm
-	do
-		rm -f ${ROOT}/etc/init.d/._cfg*_${x}
-		cp -f ${S}/init.d/${x} ${ROOT}/etc/init.d/
-	done
-	rm -f ${ROOT}/etc/._cfg*_inittab
-	cp -f ${S}/etc/inittab ${ROOT}/etc/
-	if [ "$ROOT" = "/" ] && [ -z "`use build`" ]
-	then
-		/sbin/init Q
-	fi
-	mkdir -p ${ROOT}/etc/X11/
-	cp -f ${S}/sbin/startDM.sh ${ROOT}/etc/X11/
-	
-
 	#handle the ${svcdir} that changed in location
 	source ${ROOT}/etc/init.d/functions.sh
-	if [ ! -d ${ROOT}/${svcdir}/started/ ]
+	if [ ! -d ${ROOT}/${svcdir}/started/ ] && [ -z "`use bootstrap`" ] && \
+	   [ -z "`use build`" ]
 	then
 		mkdir -p ${ROOT}/${svcdir}
 		mount -t tmpfs tmpfs ${ROOT}/${svcdir}
@@ -387,66 +366,10 @@ EOF
 	fi
 
 	#reload init to fix unmounting problems of / on next reboot
-	if [ "$ROOT" = "/" ] && [ -z "`use build`" ]
+	# this is really needed, as without the new version of init cause init
+	# not to quit properly on reboot, and causes a fsck of / on next reboot.
+	if [ "$ROOT" = "/" ] && [ -z "`use bootstrap`" ] && [ -z "`use build`" ]
 	then
-		/sbin/init U
-	fi
-
-	#kill the old /dev-state directory if it exists
-	if [ -e /dev-state ]
-	then
-		if [ "`cat /proc/mounts |grep '/dev-state'`" ]
-		then
-			umount /dev-state >/dev/null 2>&1
-
-			if [ $? -eq 0 ]
-			then
-				rm -rf /dev-state
-			else
-				echo
-				echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-				echo "! Please remove /dev-state after reboot. !"
-				echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-				echo
-			fi
-			
-		else
-			rm -rf /dev-state
-		fi
-	fi
-	
-	#restart devfsd
-	#we dont want to restart devfsd when bootstrapping, because it will
-	#create unneeded entries in /lib/dev-state, which will override the
-	#symlinks (to /dev/sound/*, etc) and cause problems.
-	if [ -z "`use build`" ]
-	then
-		#force clean start of devfsd (we want it to fail on start
-		#when the version is < 1.3.20 to display notice ...)
-		if [ "`ps -A |grep devfsd`" ]
-		then
-			killall devfsd >/dev/null 2>&1
-			sleep 1
-		fi
-		
-		if [ -x /sbin/devfsd ]
-		then
-			/sbin/devfsd /dev >/dev/null 2>&1
-		fi
-		
-		if [ $? -eq 1 ]
-		then
-			echo
-			echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-			echo "!                                               !"
-			echo "! Please install devfsd-1.3.20 or later!!       !"
-			echo "! The following should install the latest       !"
-			echo "! version:                                      !"
-			echo "!                                               !"
-			echo "!    emerge sys-apps/devfsd                     !"
-			echo "!                                               !"
-			echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-			echo
-		fi
+		/sbin/init U &>/dev/null
 	fi
 }
