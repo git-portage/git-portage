@@ -1,3 +1,93 @@
+date 16 Feb 2001
+
+new dev-perl/AxKit-1.2
+achim
+
+upd dev-perl/Chart-0.99b to 9.99c-pre3
+achim
+
+new dev-perl/Compress-Zlib-1.10
+achim
+
+upd dev-perl/DB-File-1.73 to 1.76
+achim
+Now linked agains db-3.2.3
+
+upd dev-perl/GD-1.19 to 1.32
+achim
+
+upd dev-perl/HTML-Mason-0.89 to 1.0
+achim
+
+upd dev-perl/HTML-Parser-3.13 to 3.15
+achim
+
+new dev-perl/HTTP-GHTTP-1.06
+achim
+
+upd dev-perl/MailAudit-1.6 to 1.8
+achim
+
+upd dev-perl/Mail-Procmail-1.00 to 1.01
+achim
+
+upd dev-perl/Mon-0.9 to 0.11
+achim
+
+upd dev-perl/PDL-2.1.1 to 2.2
+achim
+
+upd dev-perl/Parse-RecDescent-1.79 to 1.80
+achim
+
+upd dev-perl/RlRPC-0.2012 to 0.2014
+achim
+
+upd dev-perl/SNMP-Session-0.80 to 0.83
+achim
+
+upd dev-perl/SOAP-0.25 to 0.28
+achim
+
+upd dev-perl/URI-1.09 to 1.10
+achim
+
+new dev-perl/Unicode-Map8-0.10
+achim
+
+new dev-perl/Unicode-String-2.06
+achim
+
+upd dev-perl/XML-Catalog-0.01 to 0.02
+achim
+
+upd dev-perl/XML-DT-0.14 to 0.19
+achim
+
+upd dev-perl/XML-Parser-2.29 to 2.30
+achim
+
+upd dev-perl/XML-Sablot-0.44 to 0.50
+achim
+
+new dev-perl/XML-XPath-1.04
+achim
+
+upd dev-perl/XMS-XSLT-0.24 to 0.31
+achim
+
+upd dev-perl/gtk-perl-0.7000 to 0.7004
+achim
+
+new dev-perl/libapreq-0.31
+achim
+
+upd dev-perl/libwww-perl-5.48 to 5.50
+achim
+
+upd dev-perl/mod_perl-1.24.1 to 1.25
+achim
+
 date 15 Feb 2001
 
 upd dev-db/mysql-3.23.32 to mysql-3.23.32-r1
