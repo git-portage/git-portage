@@ -1,6 +1,16 @@
-MD5 70079a905ca174cf01eea7f99ce97584 ChangeLog 1664
-MD5 b75eaac72030e0585db388a899649453 libshout-1.0.9.ebuild 687
-MD5 ff24b4d752671f860a91c1e295121c16 libshout-2.0.ebuild 745
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 9c4fd7cb91fbf8248961daf53cc6d3ab ChangeLog 1662
+MD5 653d23c498dea890005f93a1e405e65c libshout-1.0.9.ebuild 680
+MD5 22b26df67d9c0b98c585cf94e5262c4c libshout-2.0.ebuild 743
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 ce971a7025858bd966169a50ea414da8 files/digest-libshout-1.0.9 66
 MD5 56a5376f348440e030d9b55b81e3cde2 files/digest-libshout-2.0 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFCIO/t+uC/ViVka/0RAljRAKCP/zsE9uafhhJdVT/G9gD0CiekFQCbBypX
+aoXaNlIqcE/aO5qScSUr5Ws=
+=scZ+
+-----END PGP SIGNATURE-----
