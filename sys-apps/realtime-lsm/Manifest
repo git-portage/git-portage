@@ -1,0 +1,6 @@
+MD5 430e802509431a9b1aae68296057856f metadata.xml 1440
+MD5 a3e726d3e63b815dca4eb581ba0512f4 realtime-lsm-0.1.1.ebuild 1920
+MD5 a8c8b1248ccd73e0889408d4fa711466 realtime-lsm-0.8.2_pre20041022.ebuild 1905
+MD5 fd36ad6dc09a39a100583ec1af3b4698 files/digest-realtime-lsm-0.1.1 69
+MD5 85ed7b4c01ed723a59be23a24df3d4c6 files/kmisc.patch 560
+MD5 c2a4f8c235326082b353136c6393b4f0 files/digest-realtime-lsm-0.8.2_pre20041022 81
