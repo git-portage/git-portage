@@ -1,5 +1,13 @@
 date 09 Dec 2000
 
+upd net-misc/openssh-2.3.0_p1 to 2.3.0_p1-r1
+drobbins
+script fix and supervise support added
+
+new sys-apps/gluelog-1.0
+drobbins
+for new logging system
+
 del x11-wm/openmotif-2.1.30
 drobbins
 location change

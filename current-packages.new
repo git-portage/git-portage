@@ -305,7 +305,7 @@
 ./net-misc/netkit-timed/netkit-timed-0.17-r2.ebuild
 ./net-misc/ntp/ntp-4.0.99k.ebuild
 ./net-misc/nut/nut-0.44.1.ebuild
-./net-misc/openssh/openssh-2.3.0_p1.ebuild
+./net-misc/openssh/openssh-2.3.0_p1-r1.ebuild
 ./net-misc/rsync/rsync-2.4.6.ebuild
 ./net-misc/snarf/snarf-7.0-r1.ebuild
 ./net-misc/snort/snort-1.6.3-r2.ebuild
@@ -378,6 +378,7 @@
 ./sys-apps/fileutils/fileutils-4.0.33.ebuild
 ./sys-apps/findutils/findutils-4.1-r2.ebuild
 ./sys-apps/gawk/gawk-3.0.6.ebuild
+./sys-apps/gluelog/gluelog-1.0.ebuild
 ./sys-apps/grep/grep-2.4.2-r1.ebuild
 ./sys-apps/groff/groff-1.16.1.ebuild
 ./sys-apps/grub/grub-0.5.96.1-r1.ebuild
