@@ -345,6 +345,7 @@
 ./net-ftp/lftp/lftp-2.3.7.ebuild
 ./net-ftp/ncftp/ncftp-3.0.2.ebuild
 ./net-ftp/proftpd/proftpd-1.2.0_rc2-r1.ebuild
+./net-im/caim/caim-0.03.ebuild
 #./net-irc/bitchx/bitchx-1.0.17.ebuild
 #./net-irc/bitchx/bitchx-1.0.18.ebuild
 ./net-irc/bitchx/bitchx-1.0.18-r1.ebuild
