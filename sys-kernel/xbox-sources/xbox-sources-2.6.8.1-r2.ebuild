@@ -1,18 +1,21 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/xbox-sources/Attic/xbox-sources-2.6.8.1.ebuild,v 1.2 2004/10/18 09:46:55 chrb Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/xbox-sources/Attic/xbox-sources-2.6.8.1-r2.ebuild,v 1.1 2004/11/06 23:12:37 plasmaroo Exp $
 
 ETYPE='sources'
 inherit kernel-2
 detect_version
 
 # version of gentoo patchset
-XBOX_PATCHES=xboxpatches-2.6.8.1-20041016.tar.bz2
+XBOX_PATCHES=xboxpatches-2.6.8.1-20041104.tar.bz2
 
 K_NOSETEXTRAVERSION="don't_set_it"
 KEYWORDS="~x86 -*"
 UNIPATCH_LIST="
-	${DISTDIR}/${XBOX_PATCHES}"
+	${DISTDIR}/${XBOX_PATCHES}
+	${DISTDIR}/linux-${OKV}-CAN-2004-0814.patch
+	${FILESDIR}/${PN}-2.6.7.cmdlineLeak.patch
+	${FILESDIR}/${P}.devPtmx.patch"
 DESCRIPTION='Full sources for the Xbox Linux kernel'
 SRC_URI="${KERNEL_URI}
 	mirror://gentoo/${XBOX_PATCHES}"
