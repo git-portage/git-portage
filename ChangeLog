@@ -1,3 +1,7 @@
+date 26 July 2001
+new net-ftp/pure-ftpd-0.99 new bug release recommended for production machines.removed earlier version
+pm
+
 date 25 July 2001
 mod app-doc/howtos modified the directory structure and organised them as per the ebuild names.
 add app-doc/howto-text
@@ -6,6 +10,7 @@ add app-doc/howto-html-single
 add app-doc/mini-howto-text
 add app-doc/mini-howto-html
 add app-doc/mini-howto-html-single
+pm
 
 date 22 July 2001
 new app-doc/howtos  added directory for LDP Howtos
@@ -16,14 +21,16 @@ new app-doc/howtos/Linux-mini-HOWTOs-1.0.ebuild
 new app-doc/howtos/Linux-html-HOWTOs-1.0.ebuild
 new app-doc/howtos/Linux-html-single-HOWTOs-1.0.ebuild
 added Howtos in 3 formats initially. will add more formats like postscript, pdf etc. very soon.
+pm
 
 date 21 July 2001
 upd net-ftp/pure-ftpd-0.98.8 new bug release recommended for production machines.
 removed earlier versions and updated package.mask to remove the earlier version.
+pm
 
 new app-shells/zsh-4.02 modified for the changes reqd.
 removed from package.mask
-
+pm
 
 date 11 July 2001
 new app-admin/metalog-0.6
