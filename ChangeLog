@@ -1,5 +1,9 @@
 03.10.2000
 
+	- Update dhcp 3.0_beta0202 -> 0206	(achim)
+	- Update amavis 0.2.1_p2 -> p3		(achim)
+	- Update tnef 0.12 -> 0.13		(achim)
+	- Update lftp 2.3.0 -> 2.3.3		(achim)
 	- Update Digest-MD5 2.09 -> 2.12	(achim)
 	- Update URI 1.08 -> 1.09		(achim)
 	- Update HTML-Parser 3.10 -> 3.13	(achim)
