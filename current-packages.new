@@ -59,7 +59,7 @@
 ./app-text/tetex/tetex-1.0.7-r1.ebuild
 ./app-text/ttf2pt1/ttf2pt1-3.3.2.ebuild
 ./dev-db/MyODBC/MyODBC-2.50.36.ebuild
-./dev-db/mysql/mysql-3.23.28.ebuild
+./dev-db/mysql/mysql-3.23.31.ebuild
 ./dev-db/postgresql/postgresql-7.0.3.ebuild
 ./dev-db/unixODBC/unixODBC-1.8.13.ebuild
 #./dev-db/unixODBC/unixODBC-2.0.2.ebuild
@@ -73,7 +73,7 @@
 ./dev-lang/nasm/nasm-0.98-r1.ebuild
 #./dev-lang/php-4/php-4.0.0-r1.ebuild
 ./dev-lang/php-4/php-4.0.4.ebuild
-./dev-lang/python/python-2.0.ebuild
+./dev-lang/python/python-2.0-r1.ebuild
 ./dev-lang/ruby/ruby-1.6.2.ebuild
 ./dev-lang/swig/swig-1.3_alpha5-r1.ebuild
 #./dev-lang/tcl-tk/tcl-tk-8.0.5-r1.ebuild
@@ -286,7 +286,7 @@
 ./net-dialup/wvdial/wvdial-1.41-r2.ebuild
 ./net-fs/autofs/autofs-3.1.7-r1.ebuild
 ./net-fs/netatalk/netatalk-1.4.99.0.20001108.ebuild
-./net-fs/nfs-utils/nfs-utils-0.2.1-r1.ebuild
+./net-fs/nfs-utils/nfs-utils-0.2.1-r2.ebuild
 ./net-fs/samba/samba-2.0.7-r4.ebuild
 ./net-ftp/ftp/ftp-0.17-r1.ebuild
 ./net-ftp/lftp/lftp-2.3.7.ebuild
@@ -407,6 +407,7 @@
 ./sys-apps/procps/procps-2.0.7-r1.ebuild
 ./sys-apps/psmisc/psmisc-19-r1.ebuild
 ./sys-apps/raidtools/raidtools-0.90-r1.ebuild
+./sys-apps/reiserfs-utils/reiserfs-utils-3.6.25.ebuild
 ./sys-apps/sed/sed-3.02.80.ebuild
 ./sys-apps/setserial/setserial-2.17-r1.ebuild
 ./sys-apps/sh-utils/sh-utils-2.0j-r1.ebuild
