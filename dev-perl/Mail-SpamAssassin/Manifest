@@ -10,6 +10,8 @@ MD5 b1212c7fec3a367ae7cd7efd37095a51 Mail-SpamAssassin-2.53.ebuild 1376
 MD5 e818a5adc9bf2ef77bec963262be4953 Mail-SpamAssassin-2.54.ebuild 1378
 MD5 252be2377bb3823d47711fafa550e721 Mail-SpamAssassin-2.55.ebuild 1377
 MD5 a4cc3b431e36dee8b02cf418d71e10be Mail-SpamAssassin-2.55-r1.ebuild 1440
+MD5 d41d8cd98f00b204e9800998ecf8427e  0
+MD5 ac6941ac22da5dc3b0b8195feac51821 Mail-SpamAssassin-2.55-r2.ebuild 1157
 MD5 071b210fa381f461253a65352c5c2199 files/digest-Mail-SpamAssassin-2.31-r3 74
 MD5 02f72d0558f22519d07902b508cbdff2 files/digest-Mail-SpamAssassin-2.43-r1 74
 MD5 02f72d0558f22519d07902b508cbdff2 files/digest-Mail-SpamAssassin-2.43-r2 74
@@ -23,3 +25,4 @@ MD5 c698f2d5a26c38caf3c9e5593004a484 files/digest-Mail-SpamAssassin-2.55 74
 MD5 d90bc34d0df583654e35976bbdfe135f files/spamd.conf 222
 MD5 75f63bbe5826a1dc1d9edf101282d9d0 files/spamd.init 521
 MD5 c698f2d5a26c38caf3c9e5593004a484 files/digest-Mail-SpamAssassin-2.55-r1 74
+MD5 c698f2d5a26c38caf3c9e5593004a484 files/digest-Mail-SpamAssassin-2.55-r2 74
