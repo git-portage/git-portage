@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Mikael Hallendal <hallski@gentoo.org>, Martin Schlemmer <azarah@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/net-mail/evolution/Attic/evolution-1.0.3-r4.ebuild,v 1.1 2002/04/13 10:53:01 spider Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/evolution/Attic/evolution-1.0.3-r6.ebuild,v 1.1 2002/04/23 13:53:06 g2boojum Exp $
 
 #provide Xmake and Xemake
 . /usr/portage/eclass/inherit.eclass
@@ -62,11 +62,22 @@ src_unpack() {
 	# Patch from Preston A. Elder to resolve bug #1355
 	# fix a problem with literal strings and sertain IMAP servers
 	patch -d ${S} -p1 < ${FILESDIR}/evolution-1.0.2-imapfix.diff || die
+
+	# lobtoolize to fix not all libs installing, and buggy .la files.
+	# also add the gnome-pilot.m4 to the macros directory to fix
+	# problems with the pilot conduct
+	cd ${S}
+	if [ ! -f ${S}/macros/gnome-pilot.m4 ]
+	then
+		cp -f ${FILESDIR}/gnome-pilot.m4 ${S}/macros || die
+	fi
+	[ -z "`use pda`" ] && libtoolize --copy --force
+	aclocal -I macros
+	autoconf
+	automake --add-missing
 }
 
 src_compile() {
-
-	libtoolize --copy --force
 
 	cd ${WORKDIR}/${DB3}/build_unix
 	../dist/configure --prefix=${WORKDIR}/db3 || die
