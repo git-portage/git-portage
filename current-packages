@@ -165,7 +165,7 @@
 ./media-video/mpeg-movie/mpeg-movie-1.6.0.ebuild
 ./media-video/mpeg-tools/mpeg-tools-1.5b.ebuild
 ./media-video/mpeg2-movie/mpeg2-movie-1.2.1.ebuild
-./media-video/smpeg-xmms/smpeg-xmms-0.2.5.ebuild
+./media-video/smpeg-xmms/smpeg-xmms-0.3.1.ebuild
 ./media-video/vlc/vlc-0.1.99h.ebuild
 ./media-video/xawtv/xawtv-3.19.ebuild
 ./media-video/xmovie/xmovie-1.4.ebuild

@@ -1,5 +1,6 @@
 26.08.2000
 
+	- Update smpeg-xmms 0.2.5 -> 0.3.1	(achim)
 	- New    autoinstaller.sh		(achim)
 	- Modified baselayout			(achim)
 	- Added some missing files		(achim)
