@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Maintainer: Donny Davies <woodchip@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/net-mail/postfix/Attic/postfix-1.1.7-r3.ebuild,v 1.1 2002/04/19 07:16:40 rphillips Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/postfix/Attic/postfix-1.1.7-r4.ebuild,v 1.1 2002/05/04 03:55:29 woodchip Exp $
 
 DESCRIPTION="A fast and secure drop-in replacement for sendmail"
 HOMEPAGE="http://www.postfix.org/"
@@ -23,6 +22,8 @@ DEPEND=">=sys-libs/db-3.2
 RDEPEND="${DEPEND} 
 	>=net-mail/mailbase-0.00
 	!virtual/mta"
+LICENSE="IPL-1"
+SLOT="0"
 
 pkg_setup() {
 	if ! grep -q ^postdrop: /etc/group ; then
