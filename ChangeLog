@@ -1,3 +1,12 @@
+date 07 Apr 2001
+new media-libs/imlib-1.9.10
+pete
+new version
+
+new gnome-base/ORBit-0.5.7-r1
+pete
+updated dependencies
+	
 date 06 Apr 2001
 
 new net-im/caim/caim-0.03
@@ -20,6 +29,24 @@ Various important bug fixes
 
 upd app-admin/gkrellm-1.0.6 to 1.0.7
 achim
+
+date 4 Apr 2001
+
+new dev-libs/glib-1.2.10
+pete
+
+new x11-libs/gtk+-1.2.10
+pete
+
+date 3 Apr 2001
+
+new sys-kernel/linux-sources-2.4.2.13-r1
+pete
+cleaned up a bunch of stuff
+
+new sys-kernel/linux-sources-2.4.2.27-r1
+pete
+ditto
 
 date 31 Mar 2001
 
