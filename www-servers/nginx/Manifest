@@ -1,5 +1,5 @@
-MD5 76805f4bf8aafdbd232825aede3086fc nginx-0.1.24-r2.ebuild 2516
-MD5 cab90ef2152e99b5026fde1ce3621532 ChangeLog 1155
+MD5 9e2c09a3e7cce1849c7a96c703bb9c5f nginx-0.1.24-r2.ebuild 2516
+MD5 074c3b00cf6b063b7d669e1f474fe047 ChangeLog 1155
 MD5 946eec3493a889541333d7697aeb359a nginx-0.1.24-r1.ebuild 2420
 MD5 822f3c821527e6a34f23a6a92a884766 metadata.xml 220
 MD5 f74a821fb78c52685c73508de91ccc07 files/nginx-0.1.24-upstream_status.patch 566
