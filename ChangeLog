@@ -1,5 +1,8 @@
 date 18 Jan 2001
 
+upd media-sound/xmms-1.2.3 to 1.2.4
+drobbins
+
 new sys-apps/reiserfs-utils-3.6.25
 achim
 This is required because it is not in the kernel
