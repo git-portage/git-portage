@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc. Distributed under the terms
 # of the GNU General Public License, v2 or later 
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-1.9.10.ebuild,v 1.1 2002/05/08 05:32:42 jnelson Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-1.9.12.ebuild,v 1.1 2002/05/16 06:19:21 drobbins Exp $
  
 S=${WORKDIR}/${P}
 SLOT="0"
