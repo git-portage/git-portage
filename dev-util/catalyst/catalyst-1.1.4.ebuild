@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/catalyst/Attic/catalyst-1.1.2.ebuild,v 1.2 2005/01/15 21:13:03 wolf31o2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/catalyst/Attic/catalyst-1.1.4.ebuild,v 1.1 2005/01/29 05:32:47 wolf31o2 Exp $
 
 inherit eutils
 
@@ -20,8 +20,6 @@ RDEPEND="dev-lang/python
 	ccache? ( dev-util/ccache )
 	cdr? ( app-cdr/cdrtools app-misc/zisofs-tools >=sys-fs/squashfs-tools-2.1 )
 	>=sys-kernel/genkernel-3.1.0a"
-
-S=${WORKDIR}/${P}
 
 pkg_setup() {
 	if use ccache; then
