@@ -47,7 +47,7 @@
 ./sys-apps/updated/updated-2.11-r1.ebuild
 ./sys-apps/util-linux/util-linux-2.10m-r1.ebuild
 ./sys-apps/vcron/vcron-3.0_p1-r1.ebuild
-./sys-apps/vim-nogui/vim-nogui-5.7-r1.ebuild
+./sys-apps/vim-nogui/vim-nogui-5.7-r2.ebuild
 ./sys-apps/which/which-2.11-r1.ebuild
 ./sys-apps/xinetd/xinetd-2.1.8.8_p3-r1.ebuild
 ./sys-devel/autoconf/autoconf-2.13-r1.ebuild

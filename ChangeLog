@@ -1,6 +1,8 @@
-<<<<<<< ChangeLog
-28.09.2000
+29.09.2000
+	- sys-apps/vim-nogui updated (gzip fix)	(drobbins)
+	[ help now works properly ]
 
+28.09.2000
 	- New kde-apps/kmago 0.1		(achim)
 	  [ Download App ]
 	- New gcc-2.96-snapshot			(achim)
@@ -12,14 +14,15 @@
 	  [ New reiserfs version ]
 	- Update linux 2.4.0-test9-pre7		(achim)
 	  [ Not default ]
-26.09.2000
 
+26.09.2000
 	- Update openssl 0.9.5a -> 0.9.6	(achim)
 	- Update modutils 2.3.16 -> 2.3.17	(achim)
 	- Update gimp 1.1.25 -> 1.1.26		(achim)
-21.09.2000
-=======
+
 25.09.2000
+	- sys-apps/portage automation scripts	(drobbins)
+	updated (megatouch, megadigest)
 	- Updated megatouch (sys-apps/portage) 	(drobbins)
 	- Minor syntax fix for qmail-mysql	(drobbins)
 
@@ -27,22 +30,17 @@
 	- Added sys-apps/ed (GNU ed 0.2)	(drobbins)
 	- Removed app-editors/ed		(drobbins)
 	- New sys-apps/bootdisk			(drobbins)
->>>>>>> 1.70
-
-<<<<<<< ChangeLog
 	- Update sawfish 0.30.3 -> 0.31		(achim)
 	- Update rep-gtk 0.13a -> 0.14		(achim)
 	- Update librep 0.12.4 -> 0.13		(achim)
 	- Update cvs 1.10.8 -> 1.11		(achim)
-=======
+
 21.09.2000
 	- sys-apps/bash now compiles statically	(drobbins)
 	- Fixes for portage			(drobbins)
->>>>>>> 1.70
 	- Update gimp-print 4.0a3 -> 4.0b1	(achim)
 
 20.09.2000
-
 	- Using openldap 1.2.11 as default since(achim)
 	  nothing depending on openldap compiles 
 	  with the new version
@@ -74,7 +72,6 @@
   	  [ Userspace PPPoE ]
 
 18.09.2000
-
 	- Update abiword 0.7.10 -> 0.7.11	(achim)
 	- Update avifile 0.46.1 -> 0.47.3	(achim)
 	- New gnome-apps/gnucash 1.4.6		(achim)
