@@ -1,13 +1,13 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-MD5 1bb75841c00a96ff62b668a48e5fc699 ChangeLog 3694
-MD5 01b1656db189b9bfca9413655ddbe9a6 docutils-0.3-r1.ebuild 1764
-MD5 f9eb00a08b12381f3af73aab7363cc21 docutils-0.3_pre20030530-r3.ebuild 1536
+MD5 f91099a4d29d517452fe482bf64cb788 ChangeLog 4044
+MD5 32c18f62ef442534b43d411bfd8c40a6 docutils-0.3-r1.ebuild 1770
+MD5 74a7b1584824888016191380b65cea31 docutils-0.3_pre20030530-r3.ebuild 1541
 MD5 71c4638c9c88af75b58e5f5cb54fe008 metadata.xml 159
-MD5 51cb3b530b64636ee27620cc46485f5c docutils-0.3.5.ebuild 1965
-MD5 efd11dad15be4db36af57f6c64853739 docutils-0.3.3-r1.ebuild 1904
-MD5 87d28960dded2328292dcf628621742e docutils-0.3.7.ebuild 1945
+MD5 3dbcc17452d29aa59295610784d9f5cb docutils-0.3.5.ebuild 1968
+MD5 7030ad93bd62000f05a013693de737ae docutils-0.3.3-r1.ebuild 1909
+MD5 f8a5e47723a778ab594515920027dae2 docutils-0.3.7.ebuild 2052
 MD5 694b883b9a8f714dc375a547cdf62b1d files/digest-docutils-0.3-r1 64
 MD5 8c6d9ea3ddd2e36b369112ee20b660fb files/digest-docutils-0.3_pre20030530-r3 73
 MD5 7c025532adb8b09116980747be7ccc61 files/docutils-0.3-extramodules.patch 1155
@@ -32,7 +32,7 @@ MD5 bba4f5a38311f907d4ddb4a5514099ea files/glep-0.3.3/glepstrans.py 10898
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.0 (GNU/Linux)
 
-iD8DBQFCNefNz2gxt1z4IGYRAkhJAJ9e1PtNm2eOYCCMq/m77uQuIrajiACeMJ0R
-m9RaRQO/4/6op6oI6GjDySc=
-=Hlfz
+iD8DBQFCNegsz2gxt1z4IGYRAl+NAJ4s4L0u+HeUztSFQs8DIqVkfCUbzgCgzTfQ
+UQRG+kyZgcMZxEuN5ceOnhA=
+=bd3S
 -----END PGP SIGNATURE-----
