@@ -1,4 +1,6 @@
-MD5 1ae03bffef147ba68c8d1e1810523df1 ChangeLog 486
 MD5 df669e8d5ba2fb72891b5b1bb1eae9ff cl-s-xml-20040709.ebuild 858
+MD5 1ae03bffef147ba68c8d1e1810523df1 ChangeLog 486
+MD5 d9dd62d77b79dfde130b3c1ffe88671a cl-s-xml-20050202.ebuild 880
 MD5 9b65b0341efc8f4b29498aad23315229 metadata.xml 164
 MD5 ad79e102c048e03e989f4cf4b554e2fe files/digest-cl-s-xml-20040709 65
+MD5 ad79e102c048e03e989f4cf4b554e2fe files/digest-cl-s-xml-20050202 65
