@@ -2,9 +2,9 @@
 Hash: SHA1
 
 MD5 b44aeca1f68f90e025f65dcc7eed02b5 db-4.0.14-r2.ebuild 2230
-MD5 d9fd7783b51a73bd8eb2bebf2a1b9461 ChangeLog 18303
+MD5 edd94e9c5cdd3727dc7cc572950284ce ChangeLog 18395
 MD5 e1753ef0eb3e9614fadff321ecd1b082 metadata.xml 1460
-MD5 c52c79c6cc9c3af88715fd82c2c35271 db-1.85-r2.ebuild 1466
+MD5 3d914ddfa4c2949f7da3f0086e6829f9 db-1.85-r2.ebuild 1466
 MD5 93ff8f8055e81613c4b2d0c2a65fe310 db-4.0.14-r3.ebuild 2479
 MD5 b2617c873d45a8b607ccc26e16881836 db-4.1.25_p1-r4.ebuild 2697
 MD5 c7d2cb46737828d602a76a07c422b204 db-3.2.9-r7.ebuild 4436
@@ -38,7 +38,7 @@ MD5 194200b3295b95b46b4564980af27f1f files/db-3.2.9-fix-dep-link.patch 1005
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.1 (GNU/Linux)
 
-iD8DBQFCPLsKugEuf3OQ0akRAgTmAJ9PJlXjcwMS++MnOPHZ1BqDYZPdnACgofeO
-VFSkGl6bYMWj2fyQuqsERfw=
-=T8K2
+iD8DBQFCPLvJugEuf3OQ0akRAoxeAJ9Z2MzRIuwEyaJYFuHVjg1YTDCqUgCff43n
+SakOWeuyWFqFU7KUc5Prxf4=
+=L0dU
 -----END PGP SIGNATURE-----
