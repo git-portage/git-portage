@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Martin Schlemmer <azarah@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/net-www/mozilla/Attic/mozilla-0.9.7-r1.ebuild,v 1.1 2002/01/25 23:01:08 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/mozilla/Attic/mozilla-0.9.8-r1.ebuild,v 1.1 2002/02/06 14:08:40 azarah Exp $
 
 S=${WORKDIR}/mozilla
 DESCRIPTION="The Mozilla Web Browser"
@@ -36,6 +36,18 @@ export BUILD_OFFICIAL=1
 # do we build java support for the NSS stuff ?
 # NOTE: this is broken for the moment
 #[ "`use java`" ] && export NS_USE_JDK=1
+
+src_unpack() {
+
+	unpack ${A}
+
+	cd ${S}/widget
+	tar -jxf ${FILESDIR}/timer-0.9.7.tar.bz2 || die
+	cp Makefile.in Makefile.in.orig
+	sed -e 's:= public src:= public src timer:' Makefile.in.orig \
+		> Makefile.in
+	cd ${S}
+}
 
 src_compile() {
 
