@@ -1,4 +1,6 @@
 MD5 c3b848be1e7af39fed26c2e955a3c5d6 ChangeLog 638
-MD5 2e6208c5af33153f5c1e105f0171893e gtkterm-0.99.3.ebuild 625
+MD5 82857f7e1e5a3f0fefd04d3f91c7c492 gtkterm-0.99.3.ebuild 624
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
+MD5 2e6208c5af33153f5c1e105f0171893e gtkterm-0.99.4.ebuild 625
 MD5 bbc54e5d94abd22c3d8f4ebbd336e6ae files/digest-gtkterm-0.99.3 66
+MD5 c8d58fdaa9be726aaf30d6c81001a041 files/digest-gtkterm-0.99.4 66
