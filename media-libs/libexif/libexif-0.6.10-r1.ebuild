@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libexif/Attic/libexif-0.6.10.ebuild,v 1.6 2005/02/24 16:10:48 j4rg0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libexif/Attic/libexif-0.6.10-r1.ebuild,v 1.1 2005/03/10 23:30:09 eradicator Exp $
 
 inherit eutils
 
@@ -15,6 +15,12 @@ IUSE="nls"
 
 DEPEND="dev-util/pkgconfig"
 RDEPEND="virtual/libc"
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	epatch ${FILESDIR}/libexif-0.6-CAN-2005-0664.patch
+}
 
 src_compile() {
 	econf $(use_enable nls) || die
