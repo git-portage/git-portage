@@ -1,18 +1,26 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/zsh/Attic/zsh-4.0.6-r1.ebuild,v 1.3 2002/11/15 16:05:16 phoenix Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/zsh/Attic/zsh-4.0.6-r3.ebuild,v 1.1 2002/11/15 16:05:16 phoenix Exp $
 
 IUSE=""
 
 DESCRIPTION="UNIX Shell similar to the Korn shell"
-SRC_URI="ftp://ftp.zsh.org/pub/${P}.tar.gz"
+MYPATCH="zsh_4.0.6-15.diff"
+SRC_URI="ftp://ftp.zsh.org/pub/${P}.tar.gz
+	 http://ftp.debian.org/debian/pool/main/z/${PN}/${MYPATCH}.gz"
 HOMEPAGE="www.zsh.org/"
 SLOT="0"
 LICENSE="ZSH"
 
 DEPEND=">=sys-libs/ncurses-5.1"
 
-KEYWORDS="x86 ppc sparc sparc64"
+KEYWORDS="x86 alpha ~ppc ~sparc ~sparc64"
+
+src_unpack() {
+	unpack ${A}
+	patch -p0 < ${MYPATCH}
+}
+	
 
 src_compile() {
 	econf \
@@ -43,6 +51,7 @@ src_install() {
 	dodoc ChangeLog META-FAQ README INSTALL LICENCE config.modules
 	docinto StartupFiles
  	dodoc StartupFiles/z*
-	dodir /etc/zsh
-	cp ${S}/StartupFiles/z* ${D}/etc/zsh
+
+	insinto /etc/zsh
+	doins ${FILESDIR}/zshenv
 }

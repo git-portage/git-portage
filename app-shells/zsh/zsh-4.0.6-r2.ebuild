@@ -1,6 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/zsh/Attic/zsh-4.0.6-r2.ebuild,v 1.2 2002/11/08 15:33:21 phoenix Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/zsh/Attic/zsh-4.0.6-r2.ebuild,v 1.3 2002/11/15 16:05:16 phoenix Exp $
+
+IUSE=""
 
 DESCRIPTION="UNIX Shell similar to the Korn shell"
 MYPATCH="zsh_4.0.6-15.diff"
