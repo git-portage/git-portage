@@ -1,24 +1,25 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Maintainer:  Martin Schlemmer <azarah@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/app-arch/file-roller/Attic/file-roller-1.0.ebuild,v 1.2 2002/05/23 06:50:08 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/file-roller/Attic/file-roller-1.107.ebuild,v 1.1 2002/06/09 18:10:16 stroke Exp $
 
 S=${WORKDIR}/${P}
 SLOT="0"
 DESCRIPTION="File Roller is an archive manager for the GNOME environment."
 SRC_URI="ftp://download.sourceforge.net/pub/sourceforge/${PN/-/}/${P}.tar.gz"
 HOMEPAGE="http://fileroller.sourceforge.net/"
+LICENSE="GPL-2"
 
-DEPEND="virtual/glibc
-	=x11-libs/gtk+-1.2*
-	>=gnome-base/gnome-libs-1.4.1.4
-	>=gnome-base/gnome-vfs-1.0.5
-	>=gnome-base/libglade-0.17
-	>=gnome-base/oaf-0.6.8
-	>=gnome-base/bonobo-1.0.19
-	>=media-libs/gdk-pixbuf-0.16.0
+
+RDEPEND="virtual/glibc
+	>=x11-libs/gtk+-2.0.3
+        >=gnome-base/gnome-vfs-1.9.15	
+	>=gnome-base/libglade-2.0.0	
+	>=gnome-base/bonobo-activation-0.9.9
+	>=gnome-base/libbonobo-1.112.0
+	>=gnome-base/nautilus-1.1.19"
+
+DEPEND="${RDEPEND}
 	nls? ( dev-util/intltool )"
-	
 
 src_compile() {
         
