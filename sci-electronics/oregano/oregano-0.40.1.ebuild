@@ -1,11 +1,11 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-electronics/oregano/Attic/oregano-0.40.0.ebuild,v 1.2 2005/01/10 14:05:16 gustavoz Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-electronics/oregano/Attic/oregano-0.40.1.ebuild,v 1.1 2005/01/10 14:05:16 gustavoz Exp $
 
 inherit eutils
 
 DESCRIPTION="Oregano is an application for schematic capture and simulation of electrical circuits."
-SRC_URI="http://gforge.lug.fi.uba.ar/frs/download.php/47/${P}.tar.bz2"
+SRC_URI="http://gforge.lug.fi.uba.ar/frs/download.php/50/${P}.tar.bz2"
 HOMEPAGE="http://oregano.gforge.lug.fi.uba.ar/"
 SLOT="0"
 KEYWORDS="~x86 ~sparc"
