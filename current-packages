@@ -44,8 +44,8 @@
 ./sys-apps/texinfo/texinfo-4.0-r1.ebuild
 ./sys-apps/textutils/textutils-2.0g.ebuild
 ./sys-apps/updated/updated-2.11-r1.ebuild
-./sys-apps/util-linux/util-linux-2.10m-r1.ebuild
-#./sys-apps/util-linux/util-linux-2.10o.ebuild
+#./sys-apps/util-linux/util-linux-2.10m-r1.ebuild
+./sys-apps/util-linux/util-linux-2.10o.ebuild
 ./sys-apps/vcron/vcron-3.0_p1-r1.ebuild
 ./sys-apps/vim-nogui/vim-nogui-5.7-r2.ebuild
 ./sys-apps/which/which-2.11-r1.ebuild
@@ -66,7 +66,7 @@
 ./sys-devel/patch/patch-2.5.4-r1.ebuild
 ./sys-devel/perl/perl-5.6.0-r1.ebuild
 ./sys-devel/python-basic/python-basic-1.5.2-r2.ebuild
-./sys-kernel/linux-UP-2.2.17/linux-UP-2.2.17-r2.ebuild
+./sys-kernel/linux-UP-2.2.17/linux-UP-2.2.17-r3.ebuild
 #./sys-kernel/linux-UP-2.2.17/linux-UP-nfs3-2.2.17-r1.ebuild
 #./sys-kernel/linux-UP-2.4.0/linux-UP-2.4.0_rc9-r7.ebuild
 ./sys-libs/cracklib/cracklib-2.7-r1.ebuild
@@ -101,7 +101,7 @@
 ./app-editors/joe/joe-2.8-r1.ebuild
 ./app-editors/nedit/nedit-5.1.1.ebuild
 ./app-editors/vim-gtk/vim-gtk-5.7-r1.ebuild
-./app-emulators/wine/wine-20001002.ebuild
+./app-emulation/wine/wine-20001002.ebuild
 ./app-misc/gfontview/gfontview-0.4.1-r1.ebuild
 ./app-misc/lhinv/lhinv-1.1-r1.ebuild
 ./app-office/openoffice/openoffice-605.ebuild
@@ -192,7 +192,7 @@
 ./media-gfx/autotrace/autotrace-0.24a.ebuild
 ./media-gfx/blender/blender-2.04.ebuild
 #./media-gfx/blender/blender-static-2.04.ebuild
-./media-gfx/gimp-print/gimp-print-4.0_beta2.ebuild
+./media-gfx/gimp-print/gimp-print-4.0.0_rc1.ebuild
 ./media-gfx/gimp/gimp-1.1.28.ebuild
 ./media-gfx/imagemagick/imagemagick-5.2.4.ebuild
 ./media-libs/aalib-1.2.ebuild
@@ -223,7 +223,7 @@
 ./media-sound/esound/esound-0.2.19.ebuild
 ./media-sound/gtk-gnutella/gtk-gnutella-0.12.ebuild
 ./media-sound/lame/lame-3.86b.ebuild
-./media-sound/lopster/lopster-0.9.4.ebuild
+./media-sound/lopster/lopster-0.9.5.ebuild
 ./media-sound/mpg123/mpg123-0.59r.ebuild
 ./media-sound/nas/nas-1.4.1.ebuild
 ./media-sound/sox/sox-12.17.ebuild
@@ -328,17 +328,18 @@
 ./x11-wm/openmotif/openmotif-MLI-2.1.30.ebuild
 ./x11-wm/sawfish/sawfish-0.32.ebuild
 ./gnome-base/ORBit/ORBit-0.5.3.ebuild
-#./gnome-base/bonobo/bonobo-0.15.ebuild
 ./gnome-base/bonobo/bonobo-0.18.ebuild
 #./gnome-base/bonobo/bonobo-0.20.ebuild
 ./gnome-base/control-center/control-center-1.2.2.ebuild
 ./gnome-base/gconf/gconf-0.8.ebuild
 ./gnome-base/gdk-pixbuf/gdk-pixbuf-0.9.0.ebuild
 ./gnome-base/gnome-applets/gnome-applets-1.2.2.ebuild
+./gnome-base/gnome-core/gnome-core-1.2.2.1.ebuild
 ./gnome-base/gnome-libs/gnome-libs-1.2.4.ebuild
 ./gnome-base/gnome-print/gnome-print-0.24.ebuild
 ./gnome-base/gnome-vfs/gnome-vfs-0.3.1.ebuild
 ./gnome-base/gtkhtml/gtkhtml-0.6.1.ebuild
+./gnome-base/libghttp/libghttp-1.0.7.ebuild
 ./gnome-base/libglade/libglade-0.14.ebuild
 ./gnome-base/libgtop/libgtop-1.0.9.ebuild
 ./gnome-base/libxml/libxml-1.8.10.ebuild
@@ -353,7 +354,6 @@
 ./gnome-apps/ee/ee-0.3.12.ebuild
 ./gnome-apps/evolution/evolution-0.5.1.ebuild
 ./gnome-apps/gb/gb-0.0.12.ebuild
-./gnome-apps/gconf/gconf-0.10.ebuild
 ./gnome-apps/gdm/gdm-2.0_beta4.ebuild
 ./gnome-apps/gedit/gedit-0.9.1.ebuild
 ./gnome-apps/ggv/ggv-0.95.ebuild
