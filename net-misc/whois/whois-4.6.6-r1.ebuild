@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/whois/Attic/whois-4.6.6.ebuild,v 1.4 2003/07/08 10:28:01 weeve Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/whois/Attic/whois-4.6.6-r1.ebuild,v 1.1 2003/08/11 06:38:51 solar Exp $
 
 IUSE="nls"
 MY_P=${P/-/_}
@@ -26,6 +26,8 @@ src_unpack() {
 	) || ( \
 		sed -i "s:cd po.*::" Makefile 
 	)
+
+	epatch ${FILESDIR}/${P}-gentoo-security.patch
 }
 
 src_compile() {
