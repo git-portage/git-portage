@@ -1,17 +1,17 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/PDL/Attic/PDL-2.4.0-r1.ebuild,v 1.10 2004/09/04 16:10:13 mcummings Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/PDL/Attic/PDL-2.4.0-r2.ebuild,v 1.1 2004/09/04 16:10:13 mcummings Exp $
 
 IUSE="opengl"
 
-inherit perl-module
+inherit perl-module eutils
 
 DESCRIPTION="PDL Perl Module"
 SRC_URI="http://cpan.valueclick.com/modules/by-module/PDL/${P}.tar.gz"
 HOMEPAGE="http://cpan.valueclick.com/modules/by-module/PDL/${P}.readme"
 SLOT="0"
 LICENSE="Artistic as-is"
-KEYWORDS="x86 ~ppc sparc alpha hppa mips"
+KEYWORDS="x86 ~ppc ~sparc ~alpha ~hppa ~mips"
 
 DEPEND=">=sys-libs/ncurses-5.2
 	dev-perl/Filter
@@ -25,6 +25,13 @@ DEPEND=">=sys-libs/ncurses-5.2
 mydoc="DEPENDENCIES DEVELOPMENT MANIFEST* COPYING Release_Notes TODO"
 
 
+pkg_setup() {
+	echo ""
+	einfo "If you want GSL library support in PDL,"
+	einfo "you need to emerge dev-libs/gsl first."
+	echo ""
+	sleep 5
+}
 src_unpack() {
 
 	unpack ${A}
@@ -43,6 +50,12 @@ src_unpack() {
 		cd ${S}/Lib/Slatec
 		sed -i -e "s/mycompiler -c -o/mycompiler -fPIC -c -o/" Makefile.PL
 	fi
+	# The below patch was supplied by Karl Steddom <k-steddom@tamu.edu>
+	# in bug 33936 to correct PDL's inability to detect GSL libraries
+	# correctly. 
+	# -mcummings
+	cd ${S}
+	epatch ${FILESDIR}/gsl.patch || die
 }
 
 src_install () {
