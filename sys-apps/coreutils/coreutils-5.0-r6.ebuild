@@ -1,18 +1,19 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/Attic/coreutils-5.0-r4.ebuild,v 1.14 2003/11/03 15:34:34 drobbins Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/Attic/coreutils-5.0-r6.ebuild,v 1.1 2003/12/08 11:55:12 seemant Exp $
 
 inherit eutils
 
 IUSE="nls build acl static"
 
-PATCH_VER=1.7
+PATCH_VER=1.9
 
 S="${WORKDIR}/${P}"
 DESCRIPTION="Standard GNU file utilities (chmod, cp, dd, dir, ls...), text utilities (sort, tr, head, wc..), and shell utilities (whoami, who,...)"
 HOMEPAGE="http://www.gnu.org/software/coreutils/"
 SRC_URI="http://ftp.gnu.org/pub/gnu/coreutils/${P}.tar.bz2
-	mirror://gentoo/${PN}-gentoo-${PATCH_VER}.tar.bz2"
+	mirror://gentoo/${PN}-gentoo-${PATCH_VER}.tar.bz2
+	http://dev.gentoo.org/~seemant/extras/${PN}-gentoo-${PATCH_VER}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
@@ -46,7 +47,7 @@ src_unpack() {
 		if [ -z "`use nls`" ] ; then
 			mv ${PATCHDIR}/acl/004* ${PATCHDIR}/excluded
 		fi
-		mv ${PATCHDIR}/001* ${PATCHDIR}/excluded
+		mv ${PATCHDIR}/{001*,002*} ${PATCHDIR}/excluded
 		EPATCH_SUFFIX="patch" epatch ${PATCHDIR}/acl
 	fi
 
@@ -60,9 +61,6 @@ src_unpack() {
 }
 
 src_compile() {
-	local myconf=
-	use nls || myconf="--disable-nls"
-
 	if use acl
 	then
 		if [ -z "`which cvs 2>/dev/null`" ]
@@ -72,12 +70,15 @@ src_compile() {
 			export AUTOPOINT="/bin/true"
 		fi
 		mv m4/inttypes.m4 m4/inttypes-eggert.m4
-		autoreconf --force --install || die
 	fi
+
+	aclocal -I ${S}/m4 || die
+	autoconf || die
+	automake || die
 
 	econf \
 		--bindir=/bin \
-		${myconf} || die
+		`use_enable nls` || die
 
 	if use static
 	then
@@ -90,17 +91,6 @@ src_compile() {
 src_install() {
 	einstall \
 		bindir=${D}/bin || die
-
-	# hostname comes from net-base
-	# hostname does not work with the -f switch, which breaks gnome2
-	#   amongst other things
-	rm -f ${D}/{bin,usr/bin}/hostname ${D}/usr/share/man/man1/hostname.*
-
-	# /bin/su comes from sys-apps/shadow
-	rm -f ${D}/{bin,usr/bin}/su ${D}/usr/share/man/man1/su.*
-
-	# /usr/bin/uptime comes from the sys-apps/procps packaga
-	rm -f ${D}/{bin,usr/bin}/uptime ${D}/usr/share/man/man1/uptime*
 
 	cd ${D}
 	dodir /usr/bin

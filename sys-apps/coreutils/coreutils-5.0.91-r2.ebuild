@@ -1,29 +1,30 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/Attic/coreutils-5.0.91.ebuild,v 1.8 2003/11/19 19:19:03 mholzer Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/Attic/coreutils-5.0.91-r2.ebuild,v 1.1 2003/12/08 11:55:12 seemant Exp $
 
 inherit eutils flag-o-matic
 
 IUSE="nls build acl selinux static"
 
-PATCH_VER="1.1"
-PATCHDIR="${WORKDIR}/patch"
+PATCH_VER="1.4"
+PATCHDIR=${WORKDIR}/patch
 
-S="${WORKDIR}/${P}"
+S=${WORKDIR}/${P}
 DESCRIPTION="Standard GNU file utilities (chmod, cp, dd, dir, ls...), text utilities (sort, tr, head, wc..), and shell utilities (whoami, who,...)"
 HOMEPAGE="http://www.gnu.org/software/coreutils/"
 SRC_URI="mirror://gnu/coreutils/${P}.tar.bz2
-	mirror://gnu/coreutils/${P}.tar.bz2
 	mirror://coreutils/${P}.tar.bz2
-	mirror://gentoo/${P}-gentoo-${PATCH_VER}.tar.bz2"
+	mirror://gentoo/${P}-gentoo-${PATCH_VER}.tar.bz2
+	http://dev.gentoo.org/~seemant/extras/${P}-gentoo-${PATCH_VER}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 amd64 ppc ~sparc alpha hppa ~arm ~mips ia64"
+KEYWORDS="~x86 ppc ~sparc alpha hppa ~arm ~mips ia64 amd64"
 
 DEPEND="virtual/glibc
 	>=sys-apps/portage-2.0.49
 	>=sys-devel/automake-1.7.6
+	>=sys-devel/m4-1.4-r1
 	sys-devel/autoconf
 	sys-apps/help2man
 	nls? ( sys-devel/gettext )
@@ -43,9 +44,9 @@ src_unpack() {
 		ewarn "Will Select SELINUX instead"
 	fi
 
-	# HPPA and ARM platforms do not work well with the uname patch
+	# ARM platform does not work well with the uname patch
 	# (see below about it)
-	if use hppa || use arm
+	if use arm
 	then
 		mv ${PATCHDIR}/003* ${PATCHDIR}/excluded
 	fi
@@ -66,7 +67,7 @@ src_unpack() {
 		# can just verify please ...
 		mv ${PATCHDIR}/acl/006* ${PATCHDIR}/excluded
 
-		use selinux || mv ${PATCHDIR}/001* ${PATCHDIR}/excluded
+		use selinux || mv ${PATCHDIR}/{001*,002*} ${PATCHDIR}/excluded
 		use selinux || EPATCH_SUFFIX="patch" epatch ${PATCHDIR}/acl
 	fi
 
@@ -96,9 +97,12 @@ src_compile() {
 				export AUTOPOINT="/bin/true"
 			fi
 			mv m4/inttypes.m4 m4/inttypes-eggert.m4
-			autoreconf --force --install || die
 		fi
 	fi
+
+	aclocal -I ${S}/m4 || die
+	autoconf || die
+	automake || die
 
 	append-flags "-fPIC"
 

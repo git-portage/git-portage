@@ -1,16 +1,19 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/Attic/coreutils-5.0-r3.ebuild,v 1.12 2003/12/07 04:35:35 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/Attic/coreutils-5.0-r5.ebuild,v 1.1 2003/12/08 11:55:12 seemant Exp $
 
 inherit eutils
 
 IUSE="nls build static"
 
+PATCH_VER=1.8
+
 S="${WORKDIR}/${P}"
 DESCRIPTION="Standard GNU file utilities (chmod, cp, dd, dir, ls...), text utilities (sort, tr, head, wc..), and shell utilities (whoami, who,...)"
 HOMEPAGE="http://www.gnu.org/software/coreutils/"
 SRC_URI="http://ftp.gnu.org/pub/gnu/coreutils/${P}.tar.bz2
-	mirror://gentoo/${PN}-gentoo-1.4.tar.bz2"
+	mirror://gentoo/${PN}-gentoo-${PATCH_VER}.tar.bz2
+	http://dev.gentoo.org/~seemant/extras/${PN}-gentoo-${PATCH_VER}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
@@ -34,13 +37,11 @@ src_unpack() {
 
 	epatch ${PATCHDIR}/${PN}-progress-bar.patch
 
-	# patch to remove Stallman's su/wheel group rant (which doesn't apply,
-	# since Gentoo's su is not GNU/su, but that from shadow.
-	epatch ${PATCHDIR}/${PN}-gentoo-rms.patch
-
-	# do not include su infopage, as it is not valid for the su
-	# from sys-apps/shadow that we are using.
-	epatch ${PATCHDIR}/${PN}-remove-su-info.patch
+	# su, kill, hostname, groups, and uptime are provided by procps and/or
+	# util-linux.  Thus, these are prevented from building, and also
+	# Stallman's rant is removed from su info since we use su from shadow
+	# package
+	epatch ${PATCHDIR}/${P}-gentoo-remove-su-hostname-groups-kill-uptime.patch
 
 	# Patch to add processor specific info to the uname output
 	if [ -z "`use hppa`" ] && [ -z "`use arm`" ]
@@ -50,35 +51,25 @@ src_unpack() {
 }
 
 src_compile() {
-	local myconf=""
-	use nls || myconf="--disable-nls"
+	aclocal -I ${S}/m4 || die
+	autoconf || die
+	automake || die
 
 	econf \
 		--bindir=/bin \
-		${myconf} || die
+		`use_enable nls` || die
 
 	if [ "`use static`" ]
 	then
-		emake LDFLAGS=-static || die
+		emake LDFLAGS=-static all || die
 	else
-		emake || die
+		emake all || die
 	fi
 }
 
 src_install() {
 	einstall \
 		bindir=${D}/bin || die
-
-	# hostname comes from net-base
-	# hostname does not work with the -f switch, which breaks gnome2
-	#   amongst other things
-	rm -f ${D}/{bin,usr/bin}/hostname ${D}/usr/share/man/man1/hostname.*
-
-	# /bin/su comes from sys-apps/shadow
-	rm -f ${D}/{bin,usr/bin}/su ${D}/usr/share/man/man1/su.*
-
-	# /usr/bin/uptime comes from the sys-apps/procps packaga
-	rm -f ${D}/{bin,usr/bin}/uptime ${D}/usr/share/man/man1/uptime*
 
 	cd ${D}
 	dodir /usr/bin
