@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/selinux-base-policy/Attic/selinux-base-policy-20030720.ebuild,v 1.1 2003/07/20 17:29:20 pebenito Exp $
+# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-base-policy/Attic/selinux-base-policy-20030720.ebuild,v 1.1 2003/07/28 19:38:14 pebenito Exp $
 
 IUSE="selinux"
 
