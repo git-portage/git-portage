@@ -1,3 +1,5 @@
-MD5 5ab4e50922fd6c7b1d374ced272a7d12 ChangeLog 500
-MD5 d87f63de6c904488a1dde5d1f48c4c17 tls-1.4.1.ebuild 665
+MD5 5fff3b483f90ca1643b2765b09552ca3 tls-1.5.0.ebuild 665
+MD5 5fff3b483f90ca1643b2765b09552ca3 tls-1.4.1.ebuild 665
+MD5 7c658348bae095c61925e2bee6efacc2 ChangeLog 499
 MD5 15e02650704160bb58ef6ab9d6a557fb files/digest-tls-1.4.1 63
+MD5 1c07643ab842dea6ce9602daedf21e31 files/digest-tls-1.5.0 64
