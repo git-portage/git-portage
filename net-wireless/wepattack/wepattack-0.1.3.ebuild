@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wepattack/Attic/wepattack-0.1.3.ebuild,v 1.1 2002/12/21 07:54:34 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/wepattack/Attic/wepattack-0.1.3.ebuild,v 1.1 2002/12/29 01:52:50 vapier Exp $
 
 MY_P="WepAttack-${PV}"
 DESCRIPTION="WLAN tool for breaking 802.11 WEP keys"
