@@ -1,4 +1,9 @@
 15.09.2000
+
+	-New dev-utils/sel			(achim)
+	 [ Filemanager for scripts ]
+	-New dev-utils/lincvs 0.2.5		(achim)
+	 [ Graphical CVS frontend ]
 	-Updated all packages to use "try"	(drobbins)
 	-New net-www/netscape-plugger		(drobbins)
 	-New net-www/netscape/navigator		(drobbins)
