@@ -1,3 +1,10 @@
+date 20 Feb 2001
+
+upd sys-apps/reiserfs-utils-3.6.25-r1 to r3
+achim
+This includes the lates version fo reiserfsck (3.x.0d)
+Update recommended
+
 date 19 Feb 2001
 
 upd sys-apps/portage-1.5_pre2 to 1.5_pre3

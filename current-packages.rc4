@@ -1,4 +1,5 @@
 ./app-editors/joe/joe-2.8-r1.ebuild
+./app-text/tetex/tetex-1.0.7-r2.ebuild
 ./dev-libs/expat/expat-1.95.1-r1.ebuild
 ./dev-libs/glib/glib-1.2.8-r2.ebuild
 ./dev-libs/gmp/gmp-3.1.1-r1.ebuild
@@ -72,7 +73,7 @@
 ./sys-apps/procps/procps-2.0.7-r3.ebuild
 ./sys-apps/psmisc/psmisc-19-r2.ebuild
 ./sys-apps/raidtools/raidtools-0.90-r2.ebuild
-./sys-apps/reiserfs-utils/reiserfs-utils-3.6.25-r2.ebuild
+./sys-apps/reiserfs-utils/reiserfs-utils-3.6.25-r3.ebuild
 ./sys-apps/sed/sed-3.02.80-r2.ebuild
 ./sys-apps/setserial/setserial-2.17-r2.ebuild
 ./sys-apps/sh-utils/sh-utils-2.0j-r3.ebuild
