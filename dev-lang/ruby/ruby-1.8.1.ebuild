@@ -1,19 +1,22 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.1_pre4.ebuild,v 1.1 2003/12/22 10:44:20 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.1.ebuild,v 1.1 2003/12/25 01:29:25 usata Exp $
+
+IUSE="socks5 tcltk ruby16 cjk"
+
+ONIGURUMA="onigd20031224"
 
 inherit flag-o-matic alternatives eutils gnuconfig
 filter-flags -fomit-frame-pointer
 
-S=${WORKDIR}/${P%_pre*}
 DESCRIPTION="An object-oriented scripting language"
 HOMEPAGE="http://www.ruby-lang.org/"
-SRC_URI="mirror://ruby/${PV%.*}/${P/_pre/-preview}.tar.gz"
+SRC_URI="mirror://ruby/${PV%.*}/${P/_pre/-preview}.tar.gz
+	cjk? ( ftp://ftp.ruby-lang.org/pub/ruby/contrib/${ONIGURUMA}.tar.gz )"
 
 LICENSE="Ruby"
 SLOT="1.8"
-KEYWORDS="~alpha ~arm ~hppa ~mips ~sparc ~x86"
-IUSE="socks5 tcltk ruby16"
+KEYWORDS="~alpha ~arm ~hppa ~ia64 ~mips ~ppc ~sparc ~x86"
 
 DEPEND=">=sys-libs/glibc-2.1.3
 	>=sys-libs/gdbm-1.8.0
@@ -22,6 +25,8 @@ DEPEND=">=sys-libs/glibc-2.1.3
 	socks5? ( >=net-misc/dante-1.1.13 )
 	tcltk?  ( dev-lang/tk )
 	sys-apps/findutils"
+
+S=${WORKDIR}/${P%_pre*}
 
 pkg_setup() {
 
@@ -34,7 +39,12 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
-	cd ${WORKDIR}
+	if [ -n "`use cjk`" ] ; then
+		pushd oniguruma
+		econf --with-rubydir=${S}
+		make 18
+		popd
+	fi
 
 	# Enable build on alpha EV67
 	if use alpha; then
