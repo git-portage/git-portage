@@ -3,8 +3,9 @@ MD5 aebe8c4f7a9976e86923c346287b0f60 emul-linux-x86-xlibs-1.0.ebuild 794
 MD5 d886d465972f57a9aebe34be2ae4a597 emul-linux-x86-xlibs-1.1.ebuild 1554
 MD5 3d107142a3ec13f947ea538fdfe0f517 metadata.xml 290
 MD5 84793ce2a2c8e0d1fca353f31a5e9679 emul-linux-x86-xlibs-1.1-r1.ebuild 1585
-MD5 4fbfc5f46798844e186e586f6c9e1c65 emul-linux-x86-xlibs-1.2-r1.ebuild 1516
 MD5 157995239867d0e41b12c8137ed1dd4f emul-linux-x86-xlibs-1.2.ebuild 708
+MD5 3ce3935a01506668e1a04e6990e09dc0 emul-linux-x86-xlibs-1.2-r2.ebuild 1530
+MD5 4fbfc5f46798844e186e586f6c9e1c65 emul-linux-x86-xlibs-1.2-r1.ebuild 1516
 MD5 42f42e0727df82ff01db88d5a027f010 files/75emul-linux-x86-x 81
 MD5 97c2c7b018d1e1d526ab438517a9ad07 files/digest-emul-linux-x86-xlibs-1.0 79
 MD5 2a633bccab7f80e5dc62b16adf011b6d files/digest-emul-linux-x86-xlibs-1.1 79
@@ -13,3 +14,4 @@ MD5 5a7b89b29d4fbc9bc81caf9da1a9ba1d files/XI18N_OBJS 333
 MD5 7299ce6b3a61885dfca9c22ee8e4798d files/XLC_LOCALE 772
 MD5 67e4eda745af1451f8adbc4824048d3a files/digest-emul-linux-x86-xlibs-1.2 78
 MD5 67e4eda745af1451f8adbc4824048d3a files/digest-emul-linux-x86-xlibs-1.2-r1 78
+MD5 67e4eda745af1451f8adbc4824048d3a files/digest-emul-linux-x86-xlibs-1.2-r2 78
