@@ -1,4 +1,6 @@
-MD5 5ad1916582e8bf7b7d89f933e9605821 ChangeLog 1150
+MD5 c04c534ad2ac319361fe22df42579f64 monotone-0.17.ebuild 1740
 MD5 6d796b061ed1c1337ef157a5f74dab35 metadata.xml 403
+MD5 5ad1916582e8bf7b7d89f933e9605821 ChangeLog 1150
 MD5 dde934a3d504967d4678c4302ddd971e monotone-0.16.ebuild 1233
 MD5 f7dab86750bae0e4ff09e2139b790084 files/digest-monotone-0.16 66
+MD5 c8834d71dc37833961a7eb7b4a455e84 files/digest-monotone-0.17 66
