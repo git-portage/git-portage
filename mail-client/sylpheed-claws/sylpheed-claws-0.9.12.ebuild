@@ -1,25 +1,24 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/sylpheed-claws/Attic/sylpheed-claws-0.9.8.ebuild,v 1.2 2004/06/24 22:18:53 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/sylpheed-claws/Attic/sylpheed-claws-0.9.12.ebuild,v 1.1 2004/06/30 07:21:45 genone Exp $
 
 IUSE="nls gnome xface dillo crypt spell imlib ssl ldap ipv6 pda clamav pdflib"
 
-inherit eutils flag-o-matic
+inherit eutils
 
 GS_PN=ghostscript-viewer
 GS_PV=0.6
 MY_GS=${GS_PN}-${GS_PV}
 MY_P="sylpheed-${PV}claws"
-S=${WORKDIR}/${MY_P}
 S2=${S}/src/plugins/${MY_GS}
 DESCRIPTION="Bleeding edge version of Sylpheed"
 HOMEPAGE="http://sylpheed-claws.sf.net"
-SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2
 	pdflib? ( mirror://sourceforge/${PN}/${MY_GS}.tar.bz2 )"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~ppc ~sparc ~alpha"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha"
 
 DEPEND=">=sys-apps/sed-4
 	=x11-libs/gtk+-1.2*
@@ -47,12 +46,8 @@ src_unpack() {
 
 	mv ${WORKDIR}/${MY_GS} ${S}/src/plugins
 
-	einfo ${S}
-	einfo ${S2}
-
 	# Change package name to sylpheed-claws ...
-	for i in `find ${S}/ -name 'configure*'`
-	do
+	for i in `find ${S}/ -name 'configure*'`; do
 		sed -i "s/PACKAGE\=sylpheed/PACKAGE\=sylpheed-claws/" ${i}
 	done
 
@@ -71,49 +66,17 @@ src_unpack() {
 src_compile() {
 	local myconf
 
-	#use gnome \
-	#    && myconf="${myconf} --enable-gdk-pixbuf" \
-	#    || myconf="${myconf} --disable-gdk-pixbuf"
 	myconf="${myconf} `use_enable gnome gdk-pixbuf`"
-
-	#use imlib \
-	#    && myconf="${myconf} --enable-imlib" \
-	#    || myconf="${myconf} --disable-imlib"
 	myconf="${myconf} `use_enable imlib`"
-
-	#use spell \
-	#    && myconf="${myconf} --enable-aspell" \
-	#    || myconf="${myconf} --disable-aspell"
 	myconf="${myconf} `use_enable spell aspell`"
-
-	#use ldap && myconf="${myconf} --enable-ldap"
 	myconf="${myconf} `use_enable ldap`"
-
-	#use ssl && myconf="${myconf} --enable-openssl"
 	myconf="${myconf} `use_enable ssl openssl`"
-
-	#use crypt && myconf="${myconf} --enable-gpgme"
 	myconf="${myconf} `use_enable crypt gpgme`"
-
-	#use ipv6 && myconf="${myconf} --enable-ipv6"
 	myconf="${myconf} `use_enable ipv6`"
-
-	#use pda && myconf="${myconf} --enable-jpilot"
 	myconf="${myconf} `use_enable pda jpilot`"
-
-	#use nls || myconf="${myconf} --disable-nls"
 	myconf="${myconf} `use_enable nls`"
-
-	#use dillo \
-	#	&& myconf="${myconf} --enable-dillo-viewer-plugin" \
-	#	|| myconf="${myconf} --disable-dillo-viewer-plugin"
 	myconf="${myconf} `use_enable dillo dillo-viewer-plugin`"
-
-	#use clamav \
-	#	&& myconf="${myconf} --enable-clamav-plugin" \
-	#	|| myconf="${myconf} --disable-clamav-plugin"
 	myconf="${myconf} `use_enable clamav clamav-plugin`"
-
 	myconf="${myconf} `use_enable xface compface`"
 
 	echo ${myconf}
@@ -130,15 +93,13 @@ src_compile() {
 	emake || die
 
 	# build the ghostscript-viewer plugin
-	if use pdflib
-	then
+	if use pdflib; then
 		cd ${S2}
 		einfo "Compiling ghostscript-viewer plugin"
 		PKG_CONFIG_PATH=${S} \
 		CFLAGS="-I${S} -I${S}/src -I${S}/src/common -I${S}/src/gtk ${CFLAGS}" \
 		CXXFLAGS="${CFLAGS}" \
-			econf \
-				--with-sylpheed-dir=../.. || die
+			econf --with-sylpheed-dir=../.. || die
 
 		emake || die
 	fi
@@ -150,16 +111,16 @@ src_install() {
 	make DESTDIR=${D} install || die
 
 	local menuentry="/usr/share/gnome/apps/Internet/sylpheed.desktop"
-	use gnome \
-		&& {
-			dosed "s/Sylpheed/Sylpheed Claws/" ${menuentry}
-			dosed "s/sylpheed/sylpheed-claws/" ${menuentry}
-			mv ${D}${menuentry} ${D}${menuentry/sylpheed/sylpheed-claws}
-		} \
-		|| rm -rf ${D}/usr/share/gnome
+	if use gnome; then
+		dosed "s/Sylpheed/Sylpheed Claws/" ${menuentry}
+		dosed "s/sylpheed/sylpheed-claws/" ${menuentry}
+		mv ${D}${menuentry} ${D}${menuentry/sylpheed/sylpheed-claws}
+	else
+		rm -rf ${D}/usr/share/gnome
+	fi
 
 	dodir /usr/share/pixmaps
-	mv sylpheed.png ${D}/usr/share/pixmaps/sylpheed-claws.png
+	mv ${D}/usr/share/pixmaps/sylpheed{,-claws}.png
 
 	dodoc AUTHORS ChangeLog* INSTALL* NEWS README* TODO*
 	docinto tools
@@ -172,11 +133,14 @@ src_install() {
 	doexe launch_firebird tb2sylpheed update-po uudec
 
 	# install the ghostscipt-viewer plugin
-	if use pdflib
-	then
+	if use pdflib; then
 		cd ${S2}
 		make plugindir=${D}/usr/lib/${PN}/plugins install || die
 		docinto ${MY_GS}
 		dodoc AUTHORS ChangeLog INSTALL NEWS README
 	fi
+}
+
+pkg_postinst() {
+	einfo "NOTE: Some plugins have to be re-loaded."
 }
