@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/xmltv/Attic/xmltv-0.5.21.ebuild,v 1.1 2003/11/08 18:51:26 max Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/xmltv/Attic/xmltv-0.5.24.ebuild,v 1.1 2003/12/03 07:53:58 max Exp $
 
 inherit perl-module
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
 # NOTE: you can customize the xmltv installation by
 #       defining a XMLTV_OPTS variable which contains
@@ -44,6 +44,7 @@ KEYWORDS="x86"
 
 DEPEND=">=sys-apps/sed-4
 	>=dev-perl/libwww-perl-5.65
+	>=dev-perl/XML-Parser-2.34
 	>=dev-perl/XML-Twig-3.09
 	dev-perl/XML-Writer
 	>=dev-perl/DateManip-5.42
