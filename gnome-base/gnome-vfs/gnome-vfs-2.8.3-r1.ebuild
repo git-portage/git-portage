@@ -1,35 +1,43 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-vfs/Attic/gnome-vfs-2.6.2.ebuild,v 1.2 2004/11/08 15:06:47 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-vfs/Attic/gnome-vfs-2.8.3-r1.ebuild,v 1.1 2004/11/21 17:53:21 foser Exp $
 
 inherit gnome2 eutils
 
 DESCRIPTION="Gnome Virtual Filesystem"
 HOMEPAGE="http://www.gnome.org/"
-
 LICENSE="GPL-2 LGPL-2"
+
 SLOT="2"
 KEYWORDS="~x86 ~ppc ~alpha ~sparc ~hppa ~amd64 ~mips ~ia64 ~ppc64 ~arm"
-IUSE="doc ssl gnutls  samba ipv6"
+IUSE="doc ssl gnutls samba ipv6 hal howl"
+
+SRC_URI="${SRC_URI}
+	mirror://gentoo/${P}-updated_hal_support.patch"
 
 RDEPEND=">=dev-libs/glib-2
 	>=gnome-base/gconf-1.2
 	>=gnome-base/orbit-2.9
 	>=gnome-base/libbonobo-2
-	>=dev-libs/libxml2-2.2.8
+	>=dev-libs/libxml2-2.6
+	app-arch/bzip2
+	dev-libs/popt
+
+	virtual/fam
 
 	gnome-base/gnome-mime-data
 	>=x11-misc/shared-mime-info-0.14
-
-	app-admin/fam
 
 	ssl? ( >=dev-libs/openssl-0.9.5
 		!gnome-extra/gnome-vfs-sftp )
 	gnutls? ( !ssl? ( net-libs/gnutls
 			!gnome-extra/gnome-vfs-sftp ) )
-
 	samba? ( >=net-fs/samba-3
-		!gnome-extra/gnome-vfs-extras )"
+		!gnome-extra/gnome-vfs-extras )
+	hal? ( >=sys-apps/hal-0.4
+		>=sys-apps/dbus-0.22 )
+	howl? ( >=net-misc/howl-0.9.6-r1 )"
+
 # ssl/gnutls USE deps : if both are enabled choose openssl
 # foser <foser@gentoo.org> 19 Apr 2004
 
@@ -43,6 +51,8 @@ G2CONF="${G2CONF} \
 	$(use_enable gnutls) \
 	$(use_enable samba) \
 	$(use_enable ipv6) \
+	$(use_enable hal) \
+	$(use_enable howl) \
 	--disable-schemas-install
 	--without-gtk"
 
@@ -52,6 +62,20 @@ G2CONF="${G2CONF} \
 use gnutls && use ssl && G2CONF="${G2CONF} --disable-gnutls"
 
 DOCS="AUTHORS ChangeLog HACKING INSTALL NEWS README TODO"
+
+src_unpack() {
+
+	unpack ${A}
+	cd ${S}
+
+	# updated hal support (#65378)
+	epatch ${DISTDIR}/${P}-updated_hal_support.patch
+	# reiser4 patch, c'mon (#57756)
+	epatch ${FILESDIR}/${P}-reiser4_support.patch
+
+	autoconf
+
+}
 
 src_install() {
 
