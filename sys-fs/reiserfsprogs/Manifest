@@ -1,3 +1,4 @@
+MD5 509ce694c840867a481edf8759901b51 reiserfsprogs-3.6.17.ebuild 788
 MD5 509ce694c840867a481edf8759901b51 reiserfsprogs-3.6.16.ebuild 788
 MD5 4bef3863abd4e25f922f95b91d48f8a5 reiserfsprogs-3.6.11.ebuild 835
 MD5 181aa987f6c90780d9db0a1a1d863c7c reiserfsprogs-3.6.8.ebuild 791
@@ -12,3 +13,4 @@ MD5 c29a2b313930bcc6a2c0fba4354c0520 files/digest-reiserfsprogs-3.6.11-r1 72
 MD5 c29a2b313930bcc6a2c0fba4354c0520 files/digest-reiserfsprogs-3.6.11 72
 MD5 e551421a01540edae18f223f5dca87ff files/digest-reiserfsprogs-3.6.13 72
 MD5 020e4bce2bc538b18e62b24983e69c8a files/digest-reiserfsprogs-3.6.16 72
+MD5 a7ae129ac18f8e2c935d65298f0f88c4 files/digest-reiserfsprogs-3.6.17 72
