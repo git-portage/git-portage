@@ -1,14 +1,14 @@
 ./sys-apps/baselayout/baselayout-1.2.ebuild
 ./sys-apps/at/at-3.1.8-r1.ebuild
-./sys-apps/bash/bash-2.03-r1.ebuild
-./sys-apps/bzip2/bzip2-1.0.0-r1.ebuild
+./sys-apps/bash/bash-2.04.ebuild
+./sys-apps/bzip2/bzip2-1.0.1.ebuild
 ./sys-apps/console-data/console-data-1999.08.29-r1.ebuild
 ./sys-apps/console-tools/console-tools-0.2.3-r1.ebuild
 ./sys-apps/cpio/cpio-2.4.2-r1.ebuild
 ./sys-apps/debianutils/debianutils-1.13.3-r1.ebuild
 ./sys-apps/diffutils/diffutils-2.7-r1.ebuild
 ./sys-apps/e2fsprogs/e2fsprogs-1.19.ebuild
-./sys-apps/file/file-3.32-r1.ebuild
+./sys-apps/file/file-3.32.ebuild
 ./sys-apps/fileutils/fileutils-4.0x-r1.ebuild
 ./sys-apps/findutils/findutils-4.1-r1.ebuild
 ./sys-apps/gawk/gawk-3.0.4-r1.ebuild
