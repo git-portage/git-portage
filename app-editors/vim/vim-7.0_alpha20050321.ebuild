@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/vim/Attic/vim-7.0_alpha20050308.ebuild,v 1.1 2005/03/08 21:45:07 ciaranm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/vim/Attic/vim-7.0_alpha20050321.ebuild,v 1.1 2005/03/21 18:35:02 ciaranm Exp $
 
 inherit vim
 
