@@ -1,48 +1,65 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/ncurses/Attic/ncurses-5.2-r5.ebuild,v 1.7 2002/10/04 06:37:16 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/ncurses/Attic/ncurses-5.2-r7.ebuild,v 1.1 2002/10/26 09:45:02 azarah Exp $
 
-inherit flag-o-matic
+inherit eutils flag-o-matic
+
+filter-flags "-fno-exceptions"
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Linux console display libarary"
 SRC_URI="ftp://ftp.gnu.org/pub/gnu/${PN}/${P}.tar.gz"
 HOMEPAGE="http://www.gnu.org/software/ncurses/ncurses.html"
-DEPEND="virtual/glibc"
+
 KEYWORDS="x86 sparc sparc64"
 LICENSE="MIT"
 SLOT="5"
 
-filter-flags -fno-exceptions
+DEPEND="virtual/glibc"
+
+
+src_unpack() {
+	unpack ${A}
+
+	cd ${S}
+	# Do not compile tests
+	rm -rf test/*
+	echo "all:" > test/Makefile.in
+	echo "install:" >> test/Makefile.in
+}
 
 src_compile() {
-	if [ -z "$DEBUG" ]
-	then
-		myconf="${myconf} --without-debug"
-	fi
-	rm -rf test
-	./configure --prefix=/usr --libdir=/lib --mandir=/usr/share/man --enable-symlinks --enable-termcap --with-shared --with-rcs-ids --host=${CHOST}  ${myconf} || die
-	echo "all:" > test/Makefile
+
+	[ -z "${DEBUG}" ] && myconf="${myconf} --without-debug"
+	
+	econf --libdir=/lib \
+		--enable-symlinks \
+		--disable-termcap \
+		--with-shared \
+		--with-rcs-ids \
+		${myconf} || die
+	
 	#emake still doesn't work circa 25 Mar 2002
 	make || die
 }
 
 src_install() {
+
 	dodir /usr/lib
-	echo "install:" >> ${S}/test/Makefile
 	make DESTDIR=${D} install || die
 
 	cd ${D}/lib
-	ln -s libncurses.a libcurses.a
+	dosym libncurses.a /lib/libcurses.a
 	chmod 755 ${D}/lib/*.${PV}
-	dodir /usr/lib
 	mv libform* libmenu* libpanel* ../usr/lib
 	mv *.a ../usr/lib
+	# bug #4411
+	gen_usr_ldscript libncurses.so
 
 	#with this fix, the default xterm has color as it should
 	cd ${D}/usr/share/terminfo/x
 	mv xterm xterm.orig
-	ln -s xterm-color xterm
+	dosym xterm-color /usr/share/terminfo/x/xterm
 
 	if [ "`use build`" ]
 	then
@@ -75,6 +92,4 @@ src_install() {
 #		dodoc doc/html/man/*.html
 	fi
 }
-
-
 
