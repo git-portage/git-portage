@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/libgnomeui/Attic/libgnomeui-2.0.6.ebuild,v 1.1 2002/11/28 01:42:43 foser Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/libgnomeui/Attic/libgnomeui-2.0.6-r1.ebuild,v 1.1 2002/11/29 07:49:43 azarah Exp $
 
 IUSE="doc"
 
@@ -31,3 +31,13 @@ DEPEND="${RDEPEND}
 	doc? ( >=dev-util/gtk-doc-0.9-r2 )"
 
 DOCS="AUTHORS  COPYING.LIB INSTALL NEWS README"
+
+
+src_unpack() {
+	unpack ${A}
+
+	# Fix a crash when using gtk+-2.1.
+	# <azarah@gentoo.org> (21 Nov 2002)
+	cd ${S}; epatch ${FILESDIR}/${PN}-2.0.5-GTK_TYPE_INVISIBLE.patch
+}
+
