@@ -1,4 +1,6 @@
-MD5 16820bd49f64c06f120ddf9860ca4cb7 cooledit-3.17.7.ebuild 672
 MD5 e12054c7f4d86e6248172d240c098ebc ChangeLog 747
 MD5 50117cfdeb267d9181cf9cacac87d8a6 metadata.xml 256
+MD5 59e9a98328cfe40415055b6bfeec51e2 cooledit-3.17.12.ebuild 758
+MD5 7b21570e9d87197677b5c820c0edb342 cooledit-3.17.7.ebuild 718
 MD5 cd0766c29eb3b2519e2104cbdfb99772 files/digest-cooledit-3.17.7 68
+MD5 f1bdf7075843ece5a84088b337e30c9b files/digest-cooledit-3.17.12 69
