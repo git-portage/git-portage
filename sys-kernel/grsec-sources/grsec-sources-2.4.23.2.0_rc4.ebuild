@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/grsec-sources/Attic/grsec-sources-2.4.21.1.9.11.ebuild,v 1.4 2004/01/05 22:10:53 solar Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/grsec-sources/Attic/grsec-sources-2.4.23.2.0_rc4.ebuild,v 1.1 2004/01/05 22:10:53 solar Exp $
 
 # Documentation on the patch contained in this kernel will be installed someday
 
@@ -10,7 +10,7 @@ IUSE=""
 inherit eutils
 inherit kernel
 
-[ "$OKV" == "" ] && OKV="2.4.21"
+[ "$OKV" == "" ] && OKV="2.4.23"
 
 PATCH_BASE="${PV/${OKV}./}"
 PATCH_BASE=${PATCH_BASE/_/-}
@@ -40,10 +40,10 @@ src_unpack() {
 		die "Unable to the kernel patch"
 	fi
 
+	epatch ${FILESDIR}/do_brk_fix.patch || die "failed to patch for do_brk vuln"
+
 	mkdir -p docs
 	touch docs/patches.txt
-
-	epatch ${FILESDIR}/do_brk_fix.patch || die "failed to patch for do_brk vuln"
 
 	kernel_universal_unpack
 	# kernel_src_unpack
