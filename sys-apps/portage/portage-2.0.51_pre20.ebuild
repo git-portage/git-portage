@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.51_pre16.ebuild,v 1.1 2004/08/05 05:37:43 carpaski Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.51_pre20.ebuild,v 1.1 2004/08/17 01:20:34 carpaski Exp $
 
 IUSE="build multilib selinux"
 
@@ -342,45 +342,10 @@ pkg_postinst() {
 	chown -R root:portage ${ROOT}var/cache/edb/dep
 
 	# we gotta re-compile these modules and deal with systems with clock skew (stale compiled files)
-	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/emergehelp.py')"
-	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/emergehelp.py')"
-
-	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/cvstree.py')"
-	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/cvstree.py')"
-
-	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/dcdialog.py')"
-	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/dcdialog.py')"
-
-	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/dispatch_conf.py')"
-	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/dispatch_conf.py')"
-
-	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/getbinpkg.py')"
-	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/getbinpkg.py')"
-
-	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/output.py')"
-	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/output.py')"
-
-	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/portage.py')"
-	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/portage.py')"
-
-	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/portage_db_anydbm.py')"
-	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/portage_db_anydbm.py')"
-
-	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/portage_db_cpickle.py')"
-	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/portage_db_cpickle.py')"
-
-	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/portage_db_flat.py')"
-	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/portage_db_flat.py')"
-
-	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/portage_db_template.py')"
-	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/portage_db_template.py')"
-
-	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/portage_dep.py')"
-	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/portage_dep.py')"
-
-	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/xpak.py')"
-	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/pym/xpak.py')"
-
+	for X in "${ROOT}"usr/lib/portage/pym/*.py; do
+		python -c "import py_compile; py_compile.compile('${X}')"
+		python -O -c "import py_compile; py_compile.compile('${X}')"
+	done
 
 	if has ccache $FEATURES && has userpriv $FEATURES; then
 		chown -R portage:portage /var/tmp/ccache &> /dev/null
@@ -421,3 +386,4 @@ if newlist and (len(newlist) == len(world)):
 		[ -e "${X}" ] && mv -f "${X}" "${ROOT}etc/make.globals"
 	done
 }
+
