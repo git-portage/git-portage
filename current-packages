@@ -165,6 +165,7 @@
 ./dev-util/yacc/yacc-1.9.1-r1.ebuild
 ./media-gfx/gimp-print/gimp-print-4.0a-r3.ebuild
 ./media-gfx/gimp/gimp-1.1.25.ebuild
+./media-gfx/imagemagick/imagemagick-5.2.4.ebuild
 ./media-libs/alsa-lib/alsa-lib-0.5.9.ebuild
 ./media-libs/audiofile/audiofile-0.1.9.ebuild
 ./media-libs/avifile/avifile-0.46.1.ebuild
