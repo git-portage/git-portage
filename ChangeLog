@@ -1,7 +1,16 @@
+05.11.2000
+
+	- Update gimp-print 4.0.0_rc1 -> 4.0.1	(achim)
+
+04.11.2000
+
+	- Update gimp 1.1.28 -> 1.1.29		(achim)
+	- Update lopster 0.9.5 -> 0.9.6		(achim)
+
 03.11.2000
 	-Update sys-apps/shadow-19990827
 	 r1 -> r2 [login.defs typo fix]		(drobbins)
-	-fixed portage-maintain bug			(drobbins)
+	-fixed portage-maintain bug		(drobbins)
 	-New sys-apps/iproute2-2.2.4		(drobbins)
 	-New sys-apps/iptables-1.1.2		(drobbins)
 	-Update HTML-Tagset 3.02 -> 3.03	(jerry)

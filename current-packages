@@ -195,8 +195,8 @@
 ./media-gfx/autotrace/autotrace-0.24a.ebuild
 ./media-gfx/blender/blender-2.04.ebuild
 #./media-gfx/blender/blender-static-2.04.ebuild
-./media-gfx/gimp-print/gimp-print-4.0.0_rc1.ebuild
-./media-gfx/gimp/gimp-1.1.28.ebuild
+./media-gfx/gimp-print/gimp-print-4.0.1.ebuild
+./media-gfx/gimp/gimp-1.1.29.ebuild
 ./media-gfx/imagemagick/imagemagick-5.2.4.ebuild
 ./media-libs/aalib-1.2.ebuild
 ./media-libs/alsa-lib/alsa-lib-0.5.9.ebuild
@@ -226,7 +226,7 @@
 ./media-sound/esound/esound-0.2.19.ebuild
 ./media-sound/gtk-gnutella/gtk-gnutella-0.12.ebuild
 ./media-sound/lame/lame-3.86b.ebuild
-./media-sound/lopster/lopster-0.9.5.ebuild
+./media-sound/lopster/lopster-0.9.6.ebuild
 ./media-sound/mpg123/mpg123-0.59r.ebuild
 ./media-sound/nas/nas-1.4.1.ebuild
 ./media-sound/sox/sox-12.17.ebuild
