@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.51_pre3.ebuild,v 1.3 2004/04/24 07:58:02 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.51_pre7.ebuild,v 1.1 2004/04/26 17:24:41 carpaski Exp $
 
 IUSE="build"
 
@@ -16,8 +16,8 @@ HOMEPAGE="http://www.gentoo.org"
 
 
 # Contact carpaski with a reason before you modify any of these.
-KEYWORDS="x86 ppc ppc64 sparc mips alpha arm hppa amd64 ia64 s390"
-#KEYWORDS="~x86 ~ppc ~ppc64 ~sparc ~mips ~alpha ~arm ~hppa ~amd64 ~ia64 ~s390"
+KEYWORDS="  alpha  amd64  arm  hppa  ia64  mips  ppc  ppc64  s390  sparc  x86"
+#KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
 
 LICENSE="GPL-2"
 RDEPEND="!build? ( >=sys-apps/sed-4.0.5 dev-python/python-fchksum >=dev-lang/python-2.2.1 sys-apps/debianutils >=app-shells/bash-2.05a ) selinux? ( dev-python/python-selinux )"
@@ -191,7 +191,43 @@ pkg_postinst() {
 		rm -f /var/cache/edb/mtimes
 	fi
 
-	mkdir "${ROOT}/etc/portage" &> /dev/null
+	install -o root -g portage -m 0755 -d "${ROOT}/etc/portage"
+	install -o root -g portage -m 2775 -d "${ROOT}/etc/portage/sets"
+	# u+rwx,g+srwx --- This is a secure directory for temp files.
+
+	install -o root -g portage -m 2770 -d "${ROOT}/var/lib/portage"
+	einfo "Checking ${ROOT}/var/lib/portage for bad/illegal files:"
+	find "${ROOT}/var/lib/portage" ! -gid $(id -g portage) -o -perm -002 -print0 | xargs -0n 500 rm -Rvf
+
+	OLDWORLD="${ROOT}/var/cache/edb/world"
+	NEWWORLD="${ROOT}/var/lib/portage/world"
+
+	if [ ! -L "${OLDWORLD}" ]; then
+		# edb/world is not a symlink
+		if [ -s "${NEWWORLD}" ]; then
+			# portage/world exists
+			if cmp "${OLDWORLD}" "${NEWWORLD}"; then
+				# They are identical. Delete the real file and symlink it.
+				rm "${OLDWORLD}"
+				ln -s "../../../var/lib/portage/world" "${OLDWORLD}"
+				rm /etc/portage/sets/world
+				ln -s "../../../var/lib/portage/world" "/etc/portage/sets/world"
+			else
+				# They don't match. Complain and do nothing.
+				ewarn "A world file exists in both ${NEWWORLD} and"
+				ewarn "in ${OLDWORLD} --- you will need to merge these"
+				ewarn "files by hand to ensure that your world is proper. For compatibility"
+				ewarn "the file in /var should be a symlink to the one in /etc."
+			fi
+		else
+			# portage/world does not yet exist.
+			ewarn "Moving world file into ${NEWWORLD}"
+			mv "${OLDWORLD}" "${NEWWORLD}"
+			chown root:portage "${NEWWORLD}"
+			chmod 0660 "${NEWWORLD}"
+			ln -s "../../lib/portage/world" "${OLDWORLD}"
+		fi
+	fi
 
 	if [ ! -f "/etc/portage/package.mask" ]; then
 	  if [ -f "/etc/portage/profiles/package.mask" ]; then
@@ -206,21 +242,29 @@ pkg_postinst() {
 
 	einfo "Feature additions are noted in help and make.conf descriptions."
 	echo
-	einfo "GENTOOLKIT will need to be updated to at least 0.2.0 for some tools"
-	einfo "to work properly."
-	echo
 	einfo "Update configs using 'etc-update' please. Maintaining current configs"
 	einfo "for portage and other system packages is fairly important for the"
 	einfo "continued health of your system."
 	echo
+	ewarn "NOTICE: There have been changes in the location of some internal files"
+	ewarn "        to better match the FHS. The changes do not directly affect users"
+	ewarn "        but please be advised that changing between versions of portage"
+	ewarn "        with and without these changes may introduce some inconsistencies"
+	ewarn "        in package data regarding 'world' and 'virtuals' (provides)."
+	echo
+	einfo "        /var/cache/edb/world has moved to /var/lib/portage/world"
+	einfo "        with a convenience symlink at /etc/portage/sets/world"
+	echo
+	einfo "        /var/cache/edb/virtuals has been deprecated and is now calculated"
+	einfo "        on demand. Strictly _USER_ modifications to virtuals may go into"
+	einfo "        /etc/portage/virtuals and will never be modified by portage."
+	echo
 
 	if [ -z "$PORTAGE_TEST" ]; then
-		for TICKER in 1 2 3 4 5; do
-			# Double beep here.
-			echo -ne "\a" ; sleep 0.1 &>/dev/null ; sleep 0,1 &>/dev/null
-			echo -ne "\a" ; sleep 1
+		for TICKER in 1 2 3 4 5 6 7 8 9 10; do
+			echo -ne "\a" ; sleep 0.$(( $RANDOM % 9 + 1)) &>/dev/null ; sleep 0,$(( $RANDOM % 9 + 1)) &>/dev/null
 		done
-		sleep 8
+		sleep 5
 
 		# Kill the existing counter and generate a new one.
 		echo -n "Recalculating the counter... "
@@ -231,14 +275,15 @@ pkg_postinst() {
 			rm -f /var/cache/edb/counter.old
 		else
 			echo "FAILED to update counter."
+			ls -l /var/cache/edb/counter.old
 			echo "!!! This is a problem."
 			mv /var/cache/edb/counter.old /var/cache/edb/counter
 		fi
 	fi # PORTAGE_TESTING
 
-	if [ ! -d ${ROOT}var/cache/edb/dep ]
+	if [ ! -d "${ROOT}var/cache/edb/dep" ]
 	then
-		install -d -m0755 ${ROOT}var/cache/edb
+		install -d -m2755 ${ROOT}var/cache/edb
 		install -d -m2775 -o root -g portage ${ROOT}var/cache/edb/dep
 	fi
 
