@@ -251,7 +251,7 @@
 ./media-sound/nas/nas-1.4.1.ebuild
 ./media-sound/sox/sox-12.17.1.ebuild
 ./media-sound/shorten/shorten-3.2.ebuild
-./media-sound/xmms/xmms-1.2.3.ebuild
+./media-sound/xmms/xmms-1.2.4.ebuild
 ./media-sound/xmms-aalsa/xmms-aalsa-0.5.4.ebuild
 ./media-sound/xmms-arts/xmms-arts-0.4.ebuild
 ./media-video/avifile/avifile-0.53.1.ebuild
@@ -403,7 +403,7 @@
 ./sys-apps/most/most-4.9.0-r1.ebuild
 ./sys-apps/net-tools/net-tools-1.57-r1.ebuild
 ./sys-apps/netkit-base/netkit-base-0.17-r1.ebuild
-./sys-apps/portage/portage-1.4-r4.ebuild
+./sys-apps/portage/portage-1.4-r5.ebuild
 ./sys-apps/procps/procps-2.0.7-r1.ebuild
 ./sys-apps/psmisc/psmisc-19-r1.ebuild
 ./sys-apps/raidtools/raidtools-0.90-r1.ebuild
