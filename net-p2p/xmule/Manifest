@@ -5,6 +5,7 @@ MD5 d54696d147697d8c11ac24d42199e643 xmule-1.6.1.ebuild 1133
 MD5 0b47d5322be2905553a3784f82a4fdca xmule-1.6.0a-r1.ebuild 1126
 MD5 294edad58bd0dff12749c3f5e5fffe7b xmule-1.8.2.ebuild 1368
 MD5 56b69f6ec92a3777c0fe5c966e2a68c9 xmule-1.7.4c.ebuild 1368
+MD5 294edad58bd0dff12749c3f5e5fffe7b xmule-1.8.2b.ebuild 1368
 MD5 e7d40d2a4b269d19398c028f986e88a0 ChangeLog 3613
 MD5 8aefbc0e49db723ca1ad02d0c409cd49 metadata.xml 160
 MD5 1135d70abe10f56fe3b0590aa3cae9c9 files/ini2.patch 273
