@@ -1,5 +1,10 @@
 date 15 Feb 2001
 
+new net-www/konqueror-embedded-20010207
+achim
+This is a snapshot release of konqueror that does not other
+parts from kde. It can be linked agains qt-x11 or qt-embedded.
+
 new net-mail/mailbase-0.00
 jerry
 base /etc/mail support for Gentoo and virtual/mta
