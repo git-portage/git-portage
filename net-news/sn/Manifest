@@ -1,3 +1,5 @@
-MD5 d3eb8458eda4c6a430f7c184c51d6ee1 ChangeLog 461
-MD5 ef27c85d8ab931d3f3c75814842f4e58 sn-0.3.6.ebuild 988
+MD5 76ef37b126f67a68b26a50f0f717799f ChangeLog 460
+MD5 f46ef82939103faae3d05d7dfec41622 sn-0.3.6.ebuild 1030
+MD5 dee4bc4826278cc5a794c133b33b86ee sn-0.3.7.ebuild 1105
 MD5 a871cbf3a897152ee3004bd984ae1900 files/digest-sn-0.3.6 60
+MD5 7be99132c84da2231d9c6bd660137d53 files/digest-sn-0.3.7 60
