@@ -1,0 +1,4 @@
+MD5 e96fd5d6b2501d73f6063ed13243049a wmsystray-0.1.1.ebuild 667
+MD5 91c60c856956631ac35d934b07350aaa files/wmsystray.desktop 208
+MD5 34195165ec752a9c8fcfda9a233d49cc files/wmsystray-cflags.patch 1149
+MD5 5ae5e34c8af6dd925d3e5c6778e2c6ff files/digest-wmsystray-0.1.1 67
