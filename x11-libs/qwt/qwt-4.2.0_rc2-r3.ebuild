@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qwt/Attic/qwt-4.2.0_rc2-r1.ebuild,v 1.1 2004/10/20 06:21:18 phosphan Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qwt/Attic/qwt-4.2.0_rc2-r3.ebuild,v 1.1 2004/10/25 08:29:24 phosphan Exp $
 
 inherit eutils
 
@@ -30,6 +30,9 @@ src_unpack () {
 		echo >> ${file} "QMAKE_CFLAGS_RELEASE += ${CFLAGS}"
 		echo >> ${file} "QMAKE_CXXFLAGS_RELEASE += ${CXXFLAGS}"
 	done
+	find examples -type f -name "*.pro" | while read file; do
+		echo >> ${file} "INCLUDEPATH += /usr/include/qwt"
+	done
 }
 
 src_compile () {
@@ -47,9 +50,11 @@ src_install () {
 	dosym libqwt.so.${QWTVER} /usr/lib/libqwt.so.${QWTVER/.\*/}
 	use doc && (dodir /usr/share/doc/${PF}
 				cp -a examples ${D}/usr/share/doc/${PF}/
-				find ${D}/usr/share/doc/ -type f -exec gzip {} \;
 				dohtml doc/html/*)
 	mkdir -p ${D}/usr/include/qwt/
+	find include -type f -name "*.h" | while read file; do
+		sed -e 's:include "qwt:include "qwt/qwt:' -i ${file}
+	done
 	install include/* ${D}/usr/include/qwt/
 	insinto ${QTDIR}/plugins/designer
 	doins designer/plugins/designer/libqwtplugin.so
