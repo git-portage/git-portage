@@ -78,7 +78,7 @@
 ./sys-libs/readline/readline-4.1-r1.ebuild
 ./sys-libs/slang/slang-1.4.2.ebuild
 ./sys-libs/zlib/zlib-1.1.3-r1.ebuild
-./x11-base/nvidia/nvidia-0.9.4-r1.ebuild
+./x11-base/nvidia/nvidia-0.9.5.ebuild
 ./x11-base/xfree/xfree-4.0.1-r1.ebuild
 ./app-admin/daemontools/daemontools-0.70-r1.ebuild
 ./app-admin/killproc/killproc-1.12-r1.ebuild
@@ -93,7 +93,7 @@
 ./app-cdr/cdrecord/cdrecord-1.9-r1.ebuild
 ./app-doc/man-pages/man-pages-1.31.ebuild
 ./app-editors/ed/ed-4-r1.ebuild
-./app-editors/gtk-xemacs/gtk-xemacs-21.1.11.ebuild
+./app-editors/gtk-xemacs/gtk-xemacs-21.1.12.ebuild
 ./app-editors/joe/joe-2.8-r1.ebuild
 ./app-editors/vim-gtk/vim-gtk-5.7-r1.ebuild
 ./app-misc/gfontview/gfontview-0.4.1-r1.ebuild
@@ -160,7 +160,7 @@
 ./dev-util/cvs/cvs-1.10.8-r1.ebuild
 ./dev-util/guile/guile-1.4-r1.ebuild
 ./dev-util/yacc/yacc-1.9.1-r1.ebuild
-./media-gfx/gimp-print/gimp-print-4.0a-r2.ebuild
+./media-gfx/gimp-print/gimp-print-4.0a-r3.ebuild
 ./media-gfx/gimp/gimp-1.1.25.ebuild
 ./media-libs/alsa-lib/alsa-lib-0.5.9.ebuild
 ./media-libs/audiofile/audiofile-0.1.9.ebuild
@@ -179,7 +179,7 @@
 ./media-libs/smpeg/smpeg-0.4.0-r1.ebuild
 ./media-libs/t1lib/t1lib-1.0.1-r1.ebuild
 ./media-libs/tiff/tiff-3.5.5-r1.ebuild
-./media-sound/alsa-driver/alsa-driver-0.5.9b.ebuild
+./media-sound/alsa-driver/alsa-driver-0.5.9c.ebuild
 ./media-sound/alsa-utils/alsa-utils-0.5.9a.ebuild
 ./media-sound/esound/esound-0.2.19.ebuild
 ./media-sound/lame/lame-3.86b.ebuild
@@ -196,7 +196,7 @@
 ./media-video/vlc/vlc-0.1.99h.ebuild
 ./media-video/xanim/xanim-2.80.1.ebuild
 ./media-video/xanim-export/xanim-export-2.80.1.ebuild
-./media-video/xawtv/xawtv-3.19.ebuild
+./media-video/xawtv/xawtv-3.20.ebuild
 ./media-video/xmovie/xmovie-1.5.1.ebuild
 ./media-video/xmps/xmps-0.1.3-r1.ebuild
 ./net-analyzer/ethereal/ethereal-0.8.11-r1.ebuild
@@ -229,7 +229,7 @@
 ./net-mail/tnef/tnef-0.12-r1.ebuild
 ./net-mail/vlnx/vlnx-407e-r1.ebuild
 ./net-misc/bind/bind-8.2.2.5-r1.ebuild
-./net-misc/dhcp/dhcp-3.0_beta0117.ebuild
+./net-misc/dhcp/dhcp-3.0_beta0202.ebuild
 ./net-misc/hylafax/hylafax-cvs-000614-r1.ebuild
 ./net-misc/ipchains-firewall/ipchains-firewall-1.7.0-r1.ebuild
 ./net-misc/netkit-bootpd/netkit-bootpd-0.17-r1.ebuild
@@ -246,7 +246,7 @@
 ./net-misc/sslwrap/sslwrap-2.0.5-r1.ebuild
 ./net-misc/wget/wget-1.5.3-r1.ebuild
 ./net-misc/whois/whois-4.5.0-r1.ebuild
-./net-nds/openldap/openldap-1.2.11-r1.ebuild
+./net-nds/openldap/openldap-2.0.1.ebuild
 ./net-nds/portmap/portmap-5b-r1.ebuild
 ./net-nds/yp-tools/yp-tools-2.4-r1.ebuild
 ./net-nds/ypbind/ypbind-1.6-r1.ebuild
@@ -270,7 +270,7 @@
 ./gnome-base/ORBit/ORBit-0.5.3.ebuild
 ./gnome-base/bonobo/bonobo-0.15.ebuild
 ./gnome-base/control-center/control-center-1.2.1.ebuild
-./gnome-base/gdk-pixbuf/gdk-pixbuf-0.8.0.ebuild
+./gnome-base/gdk-pixbuf/gdk-pixbuf-0.9.0.ebuild
 ./gnome-base/gnome-applets/gnome-applets-1.2.1.ebuild
 ./gnome-base/gnome-core/gnome-core-1.2.1.ebuild
 ./gnome-base/gnome-libs/gnome-libs-1.2.4.ebuild
@@ -301,7 +301,7 @@
 ./gnome-apps/users-guide/users-guide-1.2.ebuild
 ./gnome-office/abiword/abiword-0.7.10.ebuild
 ./gnome-office/dia/dia-0.86.ebuild
-./gnome-office/eog/eog-0.4.ebuild
+./gnome-office/eog/eog-0.5.ebuild
 ./gnome-office/gnome-db/gnome-db-0.0.95.ebuild
 ./gnome-office/gnome-pim/gnome-pim-1.2.0.ebuild
 ./gnome-office/gnumeric/gnumeric-0.56.ebuild
