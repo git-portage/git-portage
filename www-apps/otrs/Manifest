@@ -1,0 +1,6 @@
+MD5 a278fee45630624550b33cf22b1e1ff8 otrs-1.2.4.ebuild 2779
+MD5 2d92f650d8c6cde260908ac3d4e470a7 ChangeLog 306
+MD5 224c312cc23d02aa06c26a4da3cc1f90 metadata.xml 221
+MD5 0802fdb74ba58ad4bf68831073f5e437 files/postinstall-en.txt 755
+MD5 c85b5ad5614552631d0e4ac09131e6ff files/digest-otrs-1.2.4 67
+MD5 5be5bf8e60743fe9cef39d6c521fbb82 files/reconfig 171
