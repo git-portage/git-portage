@@ -1,0 +1,6 @@
+MD5 f7794634bb4542d966e768f928bb21b4 resmgr-1.0.ebuild 1492
+MD5 7070484a957c6df9a2596c47b2e1e57e files/resmgrd.confd 16
+MD5 394244f9bd1bc2471fb7c9e02fe597e6 files/resmgrd.rc 492
+MD5 b7e1e7081f910cac837bc24c429cfac5 files/digest-resmgr-1.0 62
+MD5 e42318eac112c1bd4d4e2645a6f094fe files/README.gentoo 1294
+MD5 ee1fd044e65e19dba48dcf15ae0b21c1 files/desktopdev 364
