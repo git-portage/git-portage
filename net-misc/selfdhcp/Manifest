@@ -1,3 +1,5 @@
 MD5 9e79daadca454f6b114df3afa20d22a1 selfdhcp-0.2.ebuild 627
 MD5 11d6abd3d0647d3dd8e331f109f89d12 ChangeLog 343
+MD5 d60a1e187918e432997b0e7287e7dd6d selfdhcp-0.2a.ebuild 669
+MD5 8dababb85d4f9451707cd1408b1e745c files/digest-selfdhcp-0.2a 66
 MD5 7b587bc8dd98655bf66a338fbd02c547 files/digest-selfdhcp-0.2 65
