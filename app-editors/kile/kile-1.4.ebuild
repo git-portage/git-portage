@@ -1,19 +1,17 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/kile/Attic/kile-1.0_beta1.ebuild,v 1.11 2003/02/13 06:46:06 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/kile/Attic/kile-1.4.ebuild,v 1.1 2003/03/07 02:09:16 hannes Exp $
 inherit kde-base
 
 need-kde 3
 
+IUSE=""
 DESCRIPTION="A Latex Editor and TeX shell for kde"
-SRC_URI="http://xm1.net.free.fr/kile/kile-beta1.0.tar.gz"
-HOMEPAGE="http://xm1.net.free.fr/kile/index.html"
-S=${WORKDIR}/kile-beta1.0
+SRC_URI="http://perso.club-internet.fr/pascal.brachet/kile/${P}.tar.gz"
+HOMEPAGE="http://perso.club-internet.fr/pascal.brachet/kile/"
 
 DEPEND="$DEPEND sys-devel/perl"
 RDEPEND="${RDEPEND} app-text/tetex"
 
-
-KEYWORDS="x86 sparc "
+KEYWORDS="~x86"
 LICENSE="GPL-2"
-
