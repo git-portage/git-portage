@@ -1,12 +1,12 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pythong/Attic/pythong-2.1.ebuild,v 1.2 2003/10/12 11:29:39 liquidx Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pythong/Attic/pythong-2.1.4.ebuild,v 1.1 2003/11/23 12:25:37 liquidx Exp $
 
-inherit distutils
+inherit python distutils
 
 MY_PN="pythonG"
 MY_PV=${PV/_/-}
-MY_PV=${MY_PV/./_}
+MY_PV=$(echo $MY_PV | sed -e 's:\.:_:g')
 
 DESCRIPTION="Nice and powerful spanish development enviroment for Python"
 SRC_URI="http://www3.uji.es/~dllorens/downloads/pythong/linux/${MY_PN}-${MY_PV}.tgz
