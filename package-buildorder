@@ -68,6 +68,7 @@ X ./media-libs/libungif/libungif-4.1.0_beta1-r1.ebuild
 ./app-text/openjade/openjade-1.3-r1.ebuild
 ./app-text/sgml2x/sgml2x-0.11-r1.ebuild
 ./app-text/tetex/tetex-1.0.7-r1.ebuild
+./app-text/ttf2pt1/ttf2pt1-3.3.0.ebuild
 ./app-text/rcs/rcs-5.7.ebuild
 ./app-text/ghostscript/ghostscript-6.23.ebuild
 ./dev-lang/nasm/nasm-0.98-r1.ebuild
@@ -104,6 +105,7 @@ X ./media-libs/libungif/libungif-4.1.0_beta1-r1.ebuild
 ./dev-java/jndi/jndi-1.2.1-r1.ebuild
 ./dev-java/mysql-jdbc/mysql-jdbc-1.2.3-r1.ebuild
 ./dev-java/xt/xt-1.ebuild
+./media-gfb/blender/blender-2.04.ebuild
 ./media-gfx/gimp/gimp-1.1.26.ebuild
 ./media-gfx/gimp-print/gimp-print-4.0_beta2.ebuild
 ./media-gfx/imagemagic/imagemagic-5.2.4.ebuild
