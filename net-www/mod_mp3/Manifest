@@ -4,8 +4,10 @@ MD5 0d045bcbc1fee7551e950e590d82184e mod_mp3-0.35-r1.ebuild 1373
 MD5 2820bd43230cefaf221a72f8ce2812b5 mod_mp3-0.35-r2.ebuild 1480
 MD5 7d91b582ee143471f7ff487f8fc6e895 mod_mp3-0.39.ebuild 1568
 MD5 85d7132951975e35dfac78dce4ca0e6c mod_mp3-0.40.ebuild 1570
+MD5 be5fcfed4945de781be74b7061235f03 mod_mp3-0.40-r1.ebuild 925
 MD5 8a7822e7dc0ef7f482a9eea2f2dc7f99 files/digest-mod_mp3-0.35-r1 63
 MD5 8a7822e7dc0ef7f482a9eea2f2dc7f99 files/digest-mod_mp3-0.35-r2 63
 MD5 eed7a5bfc98ac86ce87a0e8acc8cc63d files/digest-mod_mp3-0.39 63
 MD5 a87aa3881f9296ed5334e2bccf010ab1 files/digest-mod_mp3-0.40 63
 MD5 b5e3152aec6736c0cb2be7346b0423dd files/mod_mp3.conf 316
+MD5 a87aa3881f9296ed5334e2bccf010ab1 files/digest-mod_mp3-0.40-r1 63
