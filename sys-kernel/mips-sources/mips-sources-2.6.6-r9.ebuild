@@ -1,14 +1,15 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.7-r6.ebuild,v 1.1 2004/08/15 03:59:03 kumba Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.6-r9.ebuild,v 1.1 2004/09/29 09:46:15 kumba Exp $
 
 
 # Version Data
 OKV=${PV/_/-}
-CVSDATE="20040621"
-COBALTPATCHVER="1.5"
-SECPATCHVER="1.2"
-IP32DIFFDATE="20040402"
+CVSDATE="20040604"			# Date of diff between kernel.org and lmo CVS
+COBALTPATCHVER="1.4"			# Tarball version for cobalt patches
+SECPATCHVER="1.2"			# Tarball version for security patches
+GENPATCHVER="1.0"			# Tarball version for generic patches
+IP32DIFFDATE="20040402"			# Date of diff of iluxa's minpatchset
 EXTRAVERSION="-mipscvs-${CVSDATE}"
 KV="${OKV}${EXTRAVERSION}"
 
@@ -22,31 +23,31 @@ inherit kernel eutils
 
 # INCLUDED:
 # 1) linux sources from kernel.org
-# 2) linux-mips.org CVS snapshot diff from 21 Jun 2004
-# 3) Patch to fix an O2 compile-time error
+# 2) linux-mips.org CVS snapshot diff from 04 Jun 2004
+# 3) Patch to fix the Swap issue in 2.6.5+ (Credit: Peter Horton <cobalt@colonel-panic.org>
 # 4) Iluxa's minimal O2 Patchset
-# 5) Security fixes
-# 6) patch to fix iptables build failures
-# 7) Patches for Cobalt support
+# 5) Security Fixes
+# 6) Patches for Cobalt support
 
 
 DESCRIPTION="Linux-Mips CVS sources for MIPS-based machines, dated ${CVSDATE}"
 SRC_URI="mirror://kernel/linux/kernel/v2.6/linux-${OKV}.tar.bz2
 		mirror://gentoo/mipscvs-${OKV}-${CVSDATE}.diff.bz2
-		mirror://gentoo/cobalt-patches-26xx-${COBALTPATCHVER}.tar.bz2
 		mirror://gentoo/ip32-iluxa-minpatchset-${IP32DIFFDATE}.diff.bz2
-		mirror://gentoo/${PN}-security_patches-${SECPATCHVER}.tar.bz2"
+		mirror://gentoo/${PN}-security_patches-${SECPATCHVER}.tar.bz2
+		mirror://gentoo/${PN}-generic_patches-${GENPATCHVER}.tar.bz2
+		cobalt? ( mirror://gentoo/cobalt-patches-26xx-${COBALTPATCHVER}.tar.bz2 )"
 
 HOMEPAGE="http://www.linux-mips.org/"
 SLOT="${OKV}"
 PROVIDE="virtual/linux-sources"
 KEYWORDS="-*"
-IUSE=""
+IUSE="cobalt"
 
 
 pkg_setup() {
 	# See if we're on a cobalt system (must use the cobalt-mips profile)
-	if [ "${PROFILE_ARCH}" = "cobalt" ]; then
+	if use cobalt; then
 		echo -e ""
 		einfo "Please keep in mind that the 2.6 kernel will NOT boot on Cobalt"
 		einfo "systems that are still using the old Cobalt bootloader.  In"
@@ -67,35 +68,24 @@ src_unpack() {
 	# Update the vanilla sources with linux-mips CVS changes
 	epatch ${WORKDIR}/mipscvs-${OKV}-${CVSDATE}.diff
 
-	# Fix a compile glitch for SGI O2/IP32
+	# Bug in 2.6.6 that triggers a kernel oops when swap is activated
 	echo -e ""
 	einfo ">>> Generic Patches"
-	epatch ${FILESDIR}/mipscvs-2.6.7-maceisa_rtc_irq-fix.patch
-
-	# In order to use arcboot on IP32, the kernel entry address needs to be
-	# set to 0x98000000, not 0xa8000000.
-	epatch ${FILESDIR}/mipscvs-2.6.x-ip32-kern_entry-arcboot.patch
-
-	# Misc Fixes
-	epatch ${FILESDIR}/misc-2.6-iptables_headers.patch
+	epatch ${WORKDIR}/mips-patches/mipscvs-2.6.5-swapbug-fix.patch
 
 	# Force detection of PS/2 mice on SGI Systems
-	epatch ${FILESDIR}/misc-2.6-force_mouse_detection.patch
-
-	# Something happened to compat_alloc_user_space between 2.6.6 and 2.6.7 that
-	# Breaks ifconfig.
-	epatch ${FILESDIR}/misc-2.6-compat_alloc_user_space.patch
+	epatch ${WORKDIR}/mips-patches/misc-2.6-force_mouse_detection.patch
 
 	# iluxa's minpatchset for SGI O2
 	echo -e ""
 	einfo ">>> Patching kernel with iluxa's minimal IP32 patchset ..."
 	epatch ${WORKDIR}/ip32-iluxa-minpatchset-${IP32DIFFDATE}.diff
 
-
 	# Security Fixes
 	echo -e ""
 	ebegin ">>> Applying Security Fixes"
-		epatch ${WORKDIR}/security/CAN-2004-0415-2.6.7-file_offset_pointers.patch
+		epatch ${WORKDIR}/security/CAN-2004-0415-2.6.6-file_offset_pointers.patch
+		epatch ${WORKDIR}/security/CAN-2004-0495_0496-2.6-sparse.patch
 		epatch ${WORKDIR}/security/CAN-2004-0497-attr_gid.patch
 		epatch ${WORKDIR}/security/CAN-2004-0596-2.6-eql.patch
 		epatch ${WORKDIR}/security/CAN-2004-0626-death_packet.patch
@@ -105,7 +95,7 @@ src_unpack() {
 
 
 	# Cobalt Patches
-	if [ "${PROFILE_ARCH}" = "cobalt" ]; then
+	if use cobalt; then
 		echo -e ""
 		einfo ">>> Patching kernel for Cobalt support ..."
 		for x in ${WORKDIR}/cobalt-patches-26xx-${COBALTPATCHVER}/*.patch; do
