@@ -1,5 +1,13 @@
 20.09.2000
 
+	- Update glibc 2.1.3-r1 -> r2		(achim)
+	  [ Added a security patch from debian ]
+	- New net-print/cups-1.1.3		(achim)
+	  [ New Printing System for linux ]
+	- Changed all kde 1.94 packages		(achim)
+	  [ Now using DESTDIR for installation ]
+	- Fixed kde-multimedia 1.94		(achim)
+	  [ Now kmidi is build too ]
 	- Fixed kde-i18n-1.94			(achim)
 	  [ Installation works now ]
 	- Update xmms 1.2.2 -> 1.2.3		(achim)

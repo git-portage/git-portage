@@ -69,7 +69,7 @@
 ./sys-libs/cracklib/cracklib-2.7-r1.ebuild
 ./sys-libs/gdbm/gdbm-1.8.0-r1.ebuild
 ./sys-libs/gettext/gettext-0.10.35-r1.ebuild
-./sys-libs/glibc/glibc-2.1.3-r1.ebuild
+./sys-libs/glibc/glibc-2.1.3-r2.ebuild
 ./sys-libs/gpm/gpm-1.19.3.ebuild
 ./sys-libs/lib-compat/lib-compat-1.0-r1.ebuild
 ./sys-libs/ncurses/ncurses-5.1-r1.ebuild
@@ -267,6 +267,7 @@
 ./net-nds/yp-tools/yp-tools-2.4-r1.ebuild
 ./net-nds/ypbind/ypbind-1.6-r1.ebuild
 ./net-nds/ypserv/ypserv-1.3.9-r1.ebuild
+./net-print/cups/cups-1.1.3.ebuild
 ./net-print/LPRng/LPRng-3.6.24.ebuild
 ./net-www/apache-ssl/apache-ssl-1.3.12.2.6.6.ebuild
 ./net-www/cocoon/cocoon-1.7.4.ebuild
