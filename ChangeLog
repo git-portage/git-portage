@@ -1,12 +1,17 @@
 date 21 Apr 2001
 
+upd sys-apps/portage-1.5-r2 to 1.5-r3
+drobbins
+Portage will now work without a /etc/make.profile directory if necessary.
+
 new media-lib/compface-1.4
+tadpol
 
 new app-misc/screen-3.9.8
-ben
+blutgens
 
 new app-crypt/gnupg-1.0.4
-ben
+blutgens
 
 date 20 Apr 2001
 
