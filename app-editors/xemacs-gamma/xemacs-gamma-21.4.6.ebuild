@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Matthew Kennedy <mkennedy@gentoo.org>
 # Author: Geert Bevin <gbevin@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/app-editors/xemacs-gamma/Attic/xemacs-gamma-21.4.7.ebuild,v 1.1 2002/05/07 07:52:46 mkennedy Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/xemacs-gamma/Attic/xemacs-gamma-21.4.6.ebuild,v 1.1 2002/05/10 23:42:19 mkennedy Exp $
 
 # this is just TEMPORARY until we can get to the core of the problem
 SANDBOX_DISABLED="1"
@@ -24,6 +24,7 @@ HOMEPAGE="http://www.xemacs.org"
 DEPEND=">=sys-libs/gdbm-1.8.0
 	>=sys-libs/zlib-1.1.4
 	>=dev-libs/openssl-0.9.6
+	>=media-libs/audiofile-0.2.3
 
 	xface? ( media-libs/compface )
 	gpm? ( >=sys-libs/gpm-1.20.0 )
@@ -33,36 +34,34 @@ DEPEND=">=sys-libs/gdbm-1.8.0
 	esd? ( media-sound/esound )
 
 	motif? ( >=x11-libs/openmotif-2.1.30 )
-	gtk? ( =x11-libs/gtk+-1.2* )
+	gtk? ( =x11/libs/gtk+-1.2* )
 	gnome? ( =gnome-base/gnome-core-1.4* )
-	lucid? ( )
-		
+	lucid? ()
+
 	tiff? ( media-libs/tiff )
-	png? ( media-libs/libpng )
-	jpeg? (media-libs/jpeg )
+	png? ( =media-libs/libpng-1.2* )
+	jpeg? ( media-libs/jpeg )
 
-	mule? ( )
-	
+	mule? ()
+
 	X? ( virtual/x11 )"
-
-#RDEPEND="!virtual/xemacs"
-
-#PROVIDE="virtual/emacs
-#	virtual/xemacs"
 
 src_unpack() {
 	cd ${WORKDIR}
 	unpack ${REAL_P}.tar.gz
-#	patch -p0 <${FILESDIR}/emodules.info-gentoo.patch
+	patch -p0 <${FILESDIR}/emodules.info-gentoo.patch
 }
 
 src_compile() {
-	local soundconf="native"
 	local myconf=""
 
 	if use X;
 	then
-		myconf="${myconf} --with-x"
+		myconf="${myconf} 
+			--with-x 
+			--with-xpm 
+			--without-dragndrop 
+			--with-gif=no"
 
 		use tiff && myconf="${myconf} --with-tiff" || 
 			myconf="${myconf} --without-tiff"
@@ -99,7 +98,11 @@ src_compile() {
 			;;
 		esac
 	else
-		myconf="${myconf} --without-x"
+		myconf="${myconf} 
+			--without-x 
+			--without-xpm 
+			--without-dragndrop 
+			--with-gif=no"
 	fi
 
 	use gpm	&& myconf="${myconf} --with-gpm" ||
@@ -109,20 +112,18 @@ src_compile() {
 	use mule && myconf="${myconf} --with-mule" ||
 		myconf="${myconf} --without-mule"
         
+	local soundconf="native"
+
 	use nas	&& soundconf="${soundconf},nas"
 	use esd	&& soundconf="${soundconf},esd"
 
-	
 	myconf="${myconf} --with-sound=${soundconf}"
 
 	./configure ${myconf} \
 		--prefix=/usr \
 		--with-database=gnudbm \
 		--with-pop \
-		--with-dragndrop \
 		--with-ncurses \
-		--with-xpm \
-		--with-gif=no \
 		--with-site-lisp=yes \
 		--package-path=/usr/lib/xemacs/xemacs-packages/ \
 		--with-msw=no \
