@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-embedded/pikdev/Attic/pikdev-0.6.5c-r1.ebuild,v 1.1 2004/04/25 01:29:11 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-embedded/pikdev/Attic/pikdev-0.6.5c-r1.ebuild,v 1.2 2004/05/30 22:18:22 robbat2 Exp $
 
 
 inherit kde
@@ -17,7 +17,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
-RDEPEND="	x11-libs/qt
+RDEPEND="kde-base/kdelibs
+		x11-libs/qt
 		virtual/x11
 		sys-libs/zlib
 		dev-libs/expat
@@ -46,6 +47,11 @@ src_compile() {
 	kde_src_compile myconf configure
 	sed -i -e "s#\(kde_.* = \)\${prefix}\(.*\)#\1${KDEDIR}\2#g" Makefile */Makefile
 	kde_src_compile make
+}
+
+src_install() {
+	kde_src_install all
+	dobin pkp
 }
 
 pkg_postinst() {
