@@ -1,4 +1,6 @@
+MD5 76e9eb3024fe1717a183f08ec122288a rootstrap-0.3.18.ebuild 945
+MD5 d9db34feedba84c6057fada885ea1179 rootstrap-0.3.13.ebuild 944
 MD5 be51f0de758d03a39db7b685042d603d ChangeLog 453
 MD5 503ccb1138f9c49f0855884d830988a6 metadata.xml 253
-MD5 97a3ef1387da27515e37b676dbf3743f rootstrap-0.3.13.ebuild 968
 MD5 e83b9fb4793e8e1124f7657191dbffbc files/digest-rootstrap-0.3.13 140
+MD5 5a5ff29f05ffe3929a1380282da9e47c files/digest-rootstrap-0.3.18 141
