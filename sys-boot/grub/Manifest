@@ -1,10 +1,13 @@
-MD5 3d3a5e073a94f8459ec729a192d60e77 ChangeLog 12402
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 e0c147ccf4a0efe2479dfde0b0d260ba ChangeLog 12399
 MD5 3b7a994ffe338fd8de16df033684e924 grub-0.92-r1.ebuild 2519
 MD5 adcde4d1dce3d1e2ef2c466f860c6875 grub-0.93.20030118.ebuild 2539
 MD5 138bf4b71e6daf1c47dd24c453f5faeb grub-0.94-r1.ebuild 3595
 MD5 6f64ad4c1842218eafe2ebdd908fcc85 grub-0.94-r2.ebuild 3711
 MD5 a0f235ac986f99960ed542e2982c3640 grub-0.95.20040823.ebuild 4185
-MD5 975a9342d73054b96beb61de423dae6b grub-0.96.ebuild 4176
+MD5 b992ca57dedad689b4e2514062cd58c8 grub-0.96.ebuild 4173
 MD5 b0eacbb6edb031d87f33ed0b08f5916d metadata.xml 226
 MD5 2eadb6c1bd87b8f207d226c00f9e3458 grub-0.96-r1.ebuild 5035
 MD5 16039704cf1e6b6f46b4413532af082c files/digest-grub-0.92-r1 133
@@ -24,3 +27,10 @@ MD5 3f3995353a0995c56d996d2218570160 files/grub-0.96-i2o-raid.patch 1597
 MD5 8082c035a4ba98d0935b6b045827fb2c files/grub-0.96-nxstack.patch 18920
 MD5 e5978f58eb732289c47b1e0093db4e73 files/grub-0.96-bounced-checks.patch 505
 MD5 7c2804e6a538b2dbcbb851b9614424fd files/grub-0.96-gcc4.patch 6871
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCUwYQCRZPokWLroQRAhp6AJ47ai0c2iw2TWA8gW+FxKw/tD2NTACgpOyd
+Ks/r9uqZY4BW5m94HUst4LI=
+=dHx7
+-----END PGP SIGNATURE-----
