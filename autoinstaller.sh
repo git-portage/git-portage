@@ -13,8 +13,8 @@ fi
   cp $1 ${ROOT}/var/db/pkg/install.config
 
 if [ -z "$NODEV" ] ; then
-  einfo "Now setting up $OSNAME..."
-  einfo "Creating device nodes (this takes a minute or so)..."
+  echo "Now setting up $OSNAME..."
+  echo "Creating device nodes (this takes a minute or so)..."
   cd ${ROOT}/dev
   ${ROOT}/usr/sbin/MAKEDEV generic-i386
   ${ROOT}/usr/sbin/MAKEDEV sg
@@ -22,14 +22,14 @@ if [ -z "$NODEV" ] ; then
   ${ROOT}/usr/sbin/MAKEDEV rtc
 fi
 echo
-einfo "Setting osname and architecture"
+echo "Setting osname and architecture"
 cp ${ROOT}/etc/rc.d/config/runlevels ${ROOT}/etc/rc.d/config/runlevels.orig
 sed -e "s:##OSNAME##:$OSNAME:" -e "s:##ARCH##:$ARCH:" \
 	${ROOT}/etc/rc.d/config/runlevels.orig > ${ROOT}/etc/rc.d/config/runlevels
 echo "OSNAME: $OSNAME"
 echo "ARCH: $ARCH"
 echo
-einfo "Now, we are getting ${ROOT}/etc/fstab set up for your root and swap partitions..."
+echo "Now, we are getting ${ROOT}/etc/fstab set up for your root and swap partitions..."
 cp ${ROOT}/etc/fstab ${ROOT}/etc/fstab.orig
 
 
@@ -38,7 +38,7 @@ echo "Swap partition in /dev/$MYSWAPPART"
 
 sed -e "s/#ROOT#/${MYROOTPART}/" -e "s/#SWAP#/${MYSWAPPART}/" ${ROOT}/etc/fstab.orig > ${ROOT}/etc/fstab
 
-einfo "Generating library links and cache..."
+echo "Generating library links and cache..."
 ldconfig -r ${ROOT}
 
 case "$GMT" in
