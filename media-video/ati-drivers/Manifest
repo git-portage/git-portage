@@ -7,13 +7,14 @@ MD5 d73ae47566be08fd04b3c11deba4261c ati-drivers-3.9.0-r1.ebuild 4511
 MD5 90d3a58f4880b303e3f6e51f52e1e192 ChangeLog 12313
 MD5 a6f870cc41fb1a75a94e93539a8b8ff4 ati-drivers-3.14.1.ebuild 4346
 MD5 7d92c5a2ea96597e36804d1de46c831d ati-drivers-3.14.6.ebuild 4523
-MD5 f46aabcac9cfb2536c6c7c1a3896d86b ati-drivers-8.8.25-r3.ebuild 5659
+MD5 16aa2684ee5acac4449b3642d7a5b5fe ati-drivers-8.8.25-r3.ebuild 5701
 MD5 9d38539efafca58aa483587b4a1636d4 files/fglrx-2.6.10-pci_get_class.patch 468
 MD5 ba76cdca0527cd8a7480f4bc1e12f2fe files/fglrx-2.6-vmalloc-vmaddr.patch 466
 MD5 119541f0c7966bb5474cb42167103ded files/digest-ati-drivers-3.14.1 73
 MD5 f62d7815852919948deb06c864841953 files/digest-ati-drivers-8.8.25-r3 154
 MD5 54de36d07576ae34efa953192b450dd9 files/digest-ati-drivers-3.11.1 73
 MD5 bdd76c908aa2a7bb1918b9a6955a0744 files/fglrx-3.2.8-fix-amd-adv-spec.patch 561
+MD5 f1b11573ad27da023fce7d7a67a37861 files/8.8.25-via-amd64.patch 1198
 MD5 3aa542eecb0d477f099932d4340b7493 files/digest-ati-drivers-3.14.6 73
 MD5 918b182a2d40bf073127838d769e1fa5 files/digest-ati-drivers-3.9.0-r1 72
 MD5 2f9201d062ecb4b2a980f5be12cf0b34 files/fglrx-3.9.0-regparm.patch 58125
