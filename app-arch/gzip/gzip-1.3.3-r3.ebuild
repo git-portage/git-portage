@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/gzip/Attic/gzip-1.3.3-r2.ebuild,v 1.8 2004/05/31 19:41:37 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/gzip/Attic/gzip-1.3.3-r3.ebuild,v 1.1 2004/06/23 14:48:59 agriffis Exp $
 
 inherit eutils flag-o-matic
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.gzip.org/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc sparc mips alpha arm hppa amd64 ia64 ppc64 s390"
+KEYWORDS="x86 ppc sparc mips -alpha arm hppa amd64 ia64 ppc64 s390"
 IUSE="nls build static"
 
 RDEPEND="virtual/glibc"
@@ -25,10 +25,6 @@ src_unpack() {
 }
 
 src_compile() {
-	# Compiling with gcc3 and higher level of optimization seems to
-	# cause a segmentation fault in some very rare cases on alpha.
-	[ ${ARCH} = "alpha" ] && CFLAGS="-O -pipe"
-
 	use static && append-flags -static
 
 	econf \
