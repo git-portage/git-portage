@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/docbook-sgml-utils/Attic/docbook-sgml-utils-0.6.12-r1.ebuild,v 1.2 2003/09/13 07:05:15 obz Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/docbook-sgml-utils/Attic/docbook-sgml-utils-0.6.12-r1.ebuild,v 1.3 2003/11/20 07:55:06 obz Exp $
 
 MY_PN=${PN/-sgml/}
 MY_P=${MY_PN}-${PV}
@@ -34,6 +34,7 @@ DEPEND=">=dev-lang/perl-5
 
 src_compile() {
 	patch -p1 < ${FILESDIR}/docbook-sgml-utils-frontend.patch || die
+	epatch ${FILESDIR}/${PN}-head-jw.patch
 	econf
 	make || die
 }
