@@ -269,7 +269,7 @@
 ./x11-libs/libPropList/libPropList-0.10.1-r1.ebuild
 ./x11-wm/WindowMaker/WindowMaker-0.62.1-r1.ebuild
 ./x11-wm/enlightenment/enlightenment-0.16.4-r1.ebuild
-./x11-wm/openmotif/openmotif-2.1.30-r1.ebuild
+./x11-wm/openmotif/openmotif-MLI-2.1.30.ebuild
 ./x11-wm/sawfish/sawfish-0.30.3-r1.ebuild
 ./gnome-base/ORBit/ORBit-0.5.3.ebuild
 ./gnome-base/bonobo/bonobo-0.15.ebuild
