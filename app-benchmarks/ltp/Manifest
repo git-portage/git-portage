@@ -1,0 +1,4 @@
+MD5 cfb875812745227387e6cf110aa67f21 ltp-20041104.ebuild 986
+MD5 e2a7ff766a942e7a6a8e299cb74edacb files/runltp-path.patch 387
+MD5 e4bb569a7ad39bd83b66430469168d6b files/IDcheck-noninteractive.patch 729
+MD5 d1ba3a9b21ea0697d2b92b74e9147231 files/digest-ltp-20041104 67
