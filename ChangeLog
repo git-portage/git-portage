@@ -1,4 +1,9 @@
+17.11.2000
+
+	- New dev_db/unixODBC-1.8.13			(achim)
+
 16.11.2000
+
 	- New app-arch/rpm-4.0				(drobbins)	
 	- Removed dev-db/berkley-db-3.1.17	(drobbins)
 	- New dev-db/db-3.1.17				(drobbins)
@@ -9,6 +14,7 @@
 	    glibc-2.1.3 or glibc-2.2 ]
 	- Update kmage 0.4 -> 0.5			(achim)
 	- Update bcast-2000 a -> b			(achim)
+	- New sys-libs/db1-1.84.4			(achim)
 
 	======== glibc-2.2 Updates =======================	(achim)
 	- Update guille-1.4 r1 -> r2
