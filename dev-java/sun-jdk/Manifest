@@ -6,9 +6,9 @@ MD5 c5af6a62cd72933e29393e71785c0265 sun-jdk-1.3.1.10.ebuild 4498
 MD5 1a713b65cd35161e5c54bd3a4f877283 sun-jdk-1.5.0_beta1-r1.ebuild 6676
 MD5 04dd51ce8dfe00cd681076b0e0e9000c sun-jdk-1.4.2.03.ebuild 5992
 MD5 65c2bc21da2262ddeb940d657dcc9ff0 sun-jdk-1.4.1.06.ebuild 3316
-MD5 e848c6064091f7d64c063ad98cc41f3b sun-jdk-1.4.2.04-r2.ebuild 7491
-MD5 17fcf45fc86404faae84ecbf8ebf23f7 sun-jdk-1.4.2.05.ebuild 7492
-MD5 6bb3aced6b38363a4f7f774aa8f96cf0 ChangeLog 16863
+MD5 234d28ba53964b7c9d717ee01d6f1a7b sun-jdk-1.4.2.04-r2.ebuild 7487
+MD5 bd34082377e7296929904c1f9490df14 sun-jdk-1.4.2.05.ebuild 7485
+MD5 56d38ac0dcebe50eb23eee2032748aab ChangeLog 16857
 MD5 10a5a03b93dabf7b6229ce803b27a0ba sun-jdk-1.5.0_beta2.ebuild 8100
 MD5 16c9e337522b7e477aece60ff98dde54 metadata.xml 239
 MD5 23dc72c0593598205f5a04485fa26c43 files/sun-jdk-1.5.0_beta1 510
@@ -18,7 +18,7 @@ MD5 511ddb04ecb42c5574987c882c7f34a2 files/sun-jdk-1.3.1.10 452
 MD5 cb0de5062b15a7a2932f93d3fc06a75c files/sun-jdk-1.4.1.06 453
 MD5 1e16ba898d1d2c316071a9cedbc8cb86 files/sun-jdk-1.4.2.03 507
 MD5 95de036c7345d0fd444408a855b47925 files/sun-jdk-1.4.2.04 501
-MD5 95de036c7345d0fd444408a855b47925 files/sun-jdk-1.4.2.05 501
+MD5 23b60f3127f8ba04b0945493a0c3eba4 files/sun-jdk-1.4.2.05 503
 MD5 e089ba4610fef6873f7babe744e4e2d6 files/digest-sun-jdk-1.5.0_beta1-r1 157
 MD5 3fa9afb39fe6c07d974d1e22061000df files/digest-sun-jdk-1.5.0_beta2-r1 224
 MD5 094dd610ffa5d7f03b8174b76a5db6ae files/digest-sun-jdk-1.5.0_beta2 155
