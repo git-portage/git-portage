@@ -1,14 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 8b801bce46acfd10cd742a26b8072fc2 ChangeLog 481
 MD5 fb218f45790b91233fae3bf77a791b91 metadata.xml 528
 MD5 1821514d08bd4ab8321383b38bd97307 selinux-djbdns-20041016.ebuild 490
+MD5 74ac816e6e36e22380dd898961b23a93 selinux-djbdns-20041113.ebuild 344
 MD5 efadde1a108663d4589e76bc9b1f3c87 files/digest-selinux-djbdns-20041016 73
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBgK6vGSBEIeh4AEYRAqdLAJ9GCMLqpbkfL2zaAcIZtGziMpnr5ACgjNzu
-t5a5S1mYNPEXGoc5dmr6Fdw=
-=YBBM
------END PGP SIGNATURE-----
+MD5 1a9c11ca60443fc318407cf84a069116 files/digest-selinux-djbdns-20041113 73
