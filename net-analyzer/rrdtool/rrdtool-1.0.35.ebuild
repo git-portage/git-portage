@@ -1,7 +1,7 @@
-# Copyright 1999-2000 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Jerry Alexandratos <jerry@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/rrdtool/Attic/rrdtool-1.0.28.ebuild,v 1.3 2001/06/04 00:16:12 achim Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/rrdtool/Attic/rrdtool-1.0.35.ebuild,v 1.1 2002/03/21 10:57:18 m0rpheus Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
@@ -10,13 +10,17 @@ SRC_URI="http://ee-staff.ethz.ch/~oetiker/webtools/rrdtool/pub/${A}"
 HOMEPAGE="http://ee-staff.ethz.ca/~oetiker/webtools/rrdtool/"
 
 DEPEND="virtual/glibc sys-devel/perl
-        >=media-libs/libgd-1.8.3"
+        >=media-libs/libgd-1.8.3
+	tcl? ( dev-lang/tcl )"
 
-RDEPEND="virtual/glibc sys-devel/perl"
+RDEPEND="virtual/glibc sys-devel/perl tcl? ( dev-lang/tcl )"
 
 src_compile() {
-    cd ${S}
-    try ./configure --prefix=/opt/rrdtool --host=${CHOST}
+
+    local myconf
+    use tcl && myconf="--with-tcllib=/usr/lib"
+
+    try ./configure --prefix=/opt/rrdtool ${myconf} --host=${CHOST} --with-perl-options='INSTALLMAN1DIR=${D}/usr/share/man/man1 INSTALLMAN3DIR=${D}/usr/share/man/man3'
     try make
 }
 
