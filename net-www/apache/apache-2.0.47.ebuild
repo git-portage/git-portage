@@ -1,8 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/apache/Attic/apache-2.0.45.ebuild,v 1.1 2003/04/05 06:34:01 woodchip Exp $
-
-inherit eutils
+# $Header: /var/cvsroot/gentoo-x86/net-www/apache/Attic/apache-2.0.47.ebuild,v 1.1 2003/07/09 16:49:36 woodchip Exp $
 
 DESCRIPTION="Apache Web Server, Version 2.0.x"
 HOMEPAGE="http://www.apache.org/"
@@ -13,8 +11,8 @@ KEYWORDS="~x86 ~ppc ~alpha ~hppa ~mips ~sparc"
 LICENSE="Apache-1.1"
 SLOT="2"
 
-DEPEND="dev-util/yacc
-	dev-lang/perl
+#dev-util/yacc <- i dont need this.  problems? -- file a bug.
+DEPEND="dev-lang/perl
 	sys-libs/zlib
 	dev-libs/expat
 	dev-libs/openssl
@@ -26,7 +24,13 @@ IUSE="berkdb gdbm ldap"
 src_unpack() {
 	unpack ${A} || die
 	cd ${S} || die
-	epatch ${FILESDIR}/${P}-gentoo.diff
+	patch -p1 <${FILESDIR}/apache-2.0.46-gentoo.diff || die
+
+	#avoid utf-8 charset problems
+	export LC_CTYPE=C
+
+	#The GNU people deprecated the -1 shortcut!
+	perl -pi -e 's|head -1|head -n 1|;' srclib/apr/build/buildcheck.sh
 
 	#give it the stamp
 	perl -pi -e 's|" PLATFORM "|Gentoo/Linux|;' server/core.c
@@ -41,7 +45,7 @@ src_unpack() {
 
 	#allow users to customize their data directory by setting the
 	#home directory of the 'apache' user elsewhere.
-	local datadir=`grep ^apache: /etc/passwd | cut -d: -f6`
+	local datadir=`getent passwd apache | cut -d: -f6`
 	if [ -z "$datadir" ]
 	then
 		datadir="/home/httpd"
@@ -175,7 +179,7 @@ src_install () {
 	perl -pi -e "s/(APU_BUILD_DIR=).*/\1\"\"/" ${D}/usr/bin/apu-config
 
 	#protect the suexec binary
-	local gid=`grep ^apache: /etc/group |cut -d: -f3`
+	local gid=`getent group apache |cut -d: -f3`
 	[ -z "${gid}" ] && gid=81
 	fowners root.${gid} /usr/sbin/suexec
 	fperms 4710 /usr/sbin/suexec
@@ -225,7 +229,7 @@ src_install () {
 	use ldap && doins ${FILESDIR}/2.0.40/46_mod_ldap.conf
 
 	#drop in a convenient link to the manual
-	local datadir=`grep ^apache: /etc/passwd | cut -d: -f6`
+	local datadir=`getent passwd apache | cut -d: -f6`
 	[ -z "$datadir" ] && datadir="/home/httpd"
 	dosym /usr/share/doc/${PF}/manual ${datadir}/htdocs/manual
 
@@ -315,8 +319,9 @@ pkg_postinst() {
 	install -d -m0755 -o root -g root ${ROOT}/etc/apache2/conf/ssl
 
 	cd ${ROOT}/etc/apache2/conf/ssl
+	einfo
 	einfo "Generating self-signed test certificate in /etc/apache2/conf/ssl..."
-	einfo "(Ignore any message from the yes command below)"
-	yes "" | ${ROOT}/usr/lib/ssl/apache2-mod_ssl/gentestcrt.sh >/dev/null 2>&1
+#	einfo "(Ignore any message from the yes command below)"
+	yes "" 2>/dev/null | ${ROOT}/usr/lib/ssl/apache2-mod_ssl/gentestcrt.sh >/dev/null 2>&1
 	einfo
 }
