@@ -1,6 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/xzgv/Attic/xzgv-0.8.ebuild,v 1.7 2005/01/05 16:32:01 chriswhite Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/xzgv/Attic/xzgv-0.8-r1.ebuild,v 1.1 2005/01/05 16:32:01 chriswhite Exp $
+
+inherit eutils
 
 DESCRIPTION="An X image viewer."
 SRC_URI="http://xzgv.browser.org/${P}.tar.gz"
@@ -8,7 +10,7 @@ HOMEPAGE="http://xzgv.browser.org/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~sparc"
+KEYWORDS="~x86 ~sparc ~ppc"
 IUSE=""
 
 DEPEND="virtual/x11
@@ -34,6 +36,9 @@ src_unpack() {
 			sed -i -e "s/CFLAGS+=-DINTERP_MMX/#&/" config.mk
 			;;
 	esac
+
+	# Fix for bug #74069
+	epatch ${FILESDIR}/${P}-integer-overflow-fix.diff
 }
 
 src_compile() {
