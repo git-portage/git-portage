@@ -1,5 +1,13 @@
 date 20 Feb 2001
 
+new media-gfx/netpbm-9.10
+pete
+
+new media-libs/tiff-3.5.5-r3
+pete
+tiff-3.5.5-r2 didn't work for me, installed a bunch of stuff to /usr/local
+without using ${D}, for some reason, so I fixed it up
+
 new x11-wm/AfterStep-1.8.8
 pete
 

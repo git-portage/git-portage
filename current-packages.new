@@ -278,7 +278,7 @@
 ./media-libs/smpeg/smpeg-0.4.2.ebuild
 ./media-libs/svgalib/svgalib-1.4.2-r1.ebuild
 ./media-libs/t1lib/t1lib-1.0.1-r1.ebuild
-./media-libs/tiff/tiff-3.5.5-r1.ebuild
+./media-libs/tiff/tiff-3.5.5-r3.ebuild
 ./media-sound/abcde/abcde-1.9.7.ebuild
 #./media-sound/alsa-driver/alsa-driver-0.5.10.ebuild
 ./media-sound/alsa-utils/alsa-utils-0.5.10.ebuild
