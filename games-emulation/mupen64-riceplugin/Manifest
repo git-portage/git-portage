@@ -1,0 +1,5 @@
+MD5 7ee7480ed1f17ed85a969ff9c58b0c17 mupen64-riceplugin-5.1.0.ebuild 1198
+MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
+MD5 e2b006764c1bac03ac2667ad60a66101 files/mupen64-riceplugin-gcc3.patch 3662
+MD5 5b0d70ba016fdc0e4eaa098f99ee65f5 files/mupen64-riceplugin-makefile.patch 734
+MD5 b3400316b9d64a4bda1c9d80e9e87717 files/digest-mupen64-riceplugin-5.1.0 63
