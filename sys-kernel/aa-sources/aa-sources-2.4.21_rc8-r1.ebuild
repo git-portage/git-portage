@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/aa-sources/Attic/aa-sources-2.4.21_pre5-r1.ebuild,v 1.1 2003/03/14 14:46:58 lostlogic Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/aa-sources/Attic/aa-sources-2.4.21_rc8-r1.ebuild,v 1.1 2003/06/12 20:07:15 lostlogic Exp $
 
 IUSE="build"
 
