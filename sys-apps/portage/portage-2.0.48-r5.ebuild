@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.48-r5.ebuild,v 1.4 2003/09/17 22:35:46 avenj Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.48-r5.ebuild,v 1.5 2003/10/12 22:52:33 carpaski Exp $
 
 IUSE="build"
 
@@ -197,7 +197,7 @@ pkg_postinst() {
 		fi
 
 		# Changes in the size of auxdbkeys can cause aux_get() problems.
-		echo -n ">>> Clearing invalid entries in dependancy cache..."
+		echo -n ">>> Clearing invalid entries in dependency cache..."
 		cd ${ROOT}var/cache/edb/dep
 		# 2>&1 >/dev/null <---- Kills stdout, replaces it with stderr
 		AUXDBKEYLEN="$(python -c 'import portage,sys; sys.stderr.write(str(len(portage.auxdbkeys)))' 2>&1 >/dev/null)"
