@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/ssmtp/Attic/ssmtp-2.60.7.ebuild,v 1.2 2004/05/30 22:15:10 g2boojum Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/ssmtp/Attic/ssmtp-2.60.7-r1.ebuild,v 1.1 2004/05/30 22:15:10 g2boojum Exp $
 
 inherit eutils
 
@@ -11,11 +11,11 @@ SRC_URI="ftp://ftp.debian.org/debian/pool/main/s/ssmtp/${P/-/_}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="x86 ppc sparc mips alpha arm hppa amd64 ia64 ppc64 s390"
-IUSE="ssl ipv6 md5sum"
+IUSE="ssl ipv6 md5sum mailwrapper"
 
 DEPEND="virtual/glibc
 	ssl? ( dev-libs/openssl )"
-RDEPEND="=net-mail/mailwrapper-0.1
+RDEPEND="mailwrapper? ( =net-mail/mailwrapper-0.1 )
 	net-mail/mailbase
 	ssl? ( dev-libs/openssl )"
 PROVIDE="virtual/mta"
@@ -50,18 +50,20 @@ src_install() {
 	# Removed symlink due to conflict with mailx
 	# See bug #7448
 	#dosym /usr/sbin/ssmtp /usr/bin/mail
-	#The sendmail symlink is now handled by mailwrapper
-	#dosym /usr/sbin/ssmtp /usr/sbin/sendmail
+	#The sendmail symlink is now handled by mailwrapper if used
+	! use mailwrapper && \
+		dosym /usr/sbin/ssmtp /usr/sbin/sendmail
 	dosym /usr/sbin/sendmail /usr/lib/sendmail
 	doman ssmtp.8
 	#removing the sendmail.8 symlink to support multiple installed mtas.
 	#dosym /usr/share/man/man8/ssmtp.8 /usr/share/man/man8/sendmail.8
-	dodoc INSTALL README TLS
-	newdoc ssmtp-2.60.lsm
+	dodoc COPYING INSTALL README TLS CHANGELOG_OLD
+	dodoc debian/{README.debian,changelog}
+	newdoc ssmtp.lsm DESC
 	insinto /etc/ssmtp
 	doins ssmtp.conf revaliases
 	insinto /etc
-	doins ${FILESDIR}/mailer.conf
+	use mailwrapper && doins ${FILESDIR}/mailer.conf
 
 	# Set up config file
 	# See bug #22658
