@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-base-policy/Attic/selinux-base-policy-20031010-r1.ebuild,v 1.2 2003/11/27 17:51:43 pebenito Exp $
+# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-base-policy/Attic/selinux-base-policy-20040209.ebuild,v 1.1 2004/02/10 03:50:04 pebenito Exp $
 
 IUSE="build"
 
@@ -12,17 +12,18 @@ SLOT="0"
 KEYWORDS="x86 ppc sparc"
 DEPEND="build? ( sys-devel/make )"
 RDEPEND="sys-devel/m4
-	 sys-devel/make"
+	 sys-devel/make
+	 !build? ( >=sys-libs/pam-0.77 )"
 
 S=${WORKDIR}/base-policy
 
 [ -z ${POLICYDIR} ] && POLICYDIR="/etc/security/selinux/src/policy"
 
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${P}-cvs.diff
-}
+#src_unpack() {
+#	unpack ${A}
+#	cd ${S}
+#	epatch ${FILESDIR}/${P}-cvs.diff
+#}
 
 src_install() {
 	if use build; then
