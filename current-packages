@@ -326,6 +326,7 @@
 #./net-mail/exim/exim-3.22.ebuild
 ./net-mail/fetchmail/fetchmail-5.5.1.ebuild
 #!./net-mail/fetchmail/fetchmail-5.6.0.ebuild
+./net-mail/mailbase/mailbase-0.00.ebuild
 ./net-mail/maildrop/maildrop-1.2.2-r3.ebuild
 ./net-mail/mutt/mutt-1.2.5-r1.ebuild
 ./net-mail/pine-maildir/pine-maildir-4.21-r2.ebuild
