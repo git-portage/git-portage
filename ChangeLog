@@ -1,3 +1,18 @@
+date 07 Dec 2000
+
+new sys-kernel/linux-2.4.0_rc10-r5
+achim
+new updated kernel for bootdisk; drobbins added some ebuild fixed from rc11
+
+new sys-kernel/linux-2.4.0_rc10-r6
+achim
+new modular kernel for normal systems; drobbins added fixes in rc11 ebuild
+
+new sys-kernel/linux-sources-2.4.0_rc10-r5
+drobbins
+new kernel sources, new ReiserFS patches.  Work done by achim, little ebuild
+fixes from rc11 added by drobbins.
+
 date 05 Dec 2000
 
 upd sys-apps/findutils-4.1-r1 to findutils-4.1-r2
