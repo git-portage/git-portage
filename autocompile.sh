@@ -9,6 +9,7 @@ C_NO=$'\e[31m'
 PORTDIR=/usr/portage
 LOGDIR=$ROOT/tmp/portage-log
 STEPS="check fetch clean unpack compile install qmerge clean"
+#STEPS="check unmerge"
 
 do_step() {
 
@@ -74,7 +75,7 @@ do
   then
 
     # Check if installed
-    if [ -d ${ROOT}var/db/pkg/$myc/$myp ]
+    if [ -d ${ROOT}/var/db/pkg/$myc/$myp ]
     then
       continue
     fi
@@ -101,4 +102,5 @@ do
   else
     echo "!!! $myd does not exists !"
   fi
+  ldconfig -r $ROOT &> /dev/null
 done
