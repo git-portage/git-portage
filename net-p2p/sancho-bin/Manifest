@@ -1,9 +1,7 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 24554fe658e1b5aa6a011fb72828cb35 sancho-bin-0.9.4.16.ebuild 1484
 MD5 ab1f5207e9b467a706472c84e293cc18 sancho-bin-0.9.4.11.ebuild 1483
 MD5 953baabafd82b69637b87408d3767e9e sancho-bin-0.9.4.14-r1.ebuild 1486
+MD5 198b8b29a0861dd42367a38abc7ee894 sancho-bin-0.9.4.21.ebuild 1413
 MD5 91017b0f9d2f47622c28701f4e8b0426 sancho-bin-0.9.4.17.ebuild 1484
 MD5 51f5bfde9ac0218b14b996cc20b14ef6 sancho-bin-0.9.4.19.ebuild 1484
 MD5 0bd1f016e834d02e58e635b41cc65878 ChangeLog 3744
@@ -16,10 +14,4 @@ MD5 9cae9904f5eefe9dd46134d0ce76a100 files/digest-sancho-bin-0.9.4.16 158
 MD5 a077337a8c850bbf7c06d006d6a8645e files/digest-sancho-bin-0.9.4.17 158
 MD5 3dd202e1928f1ea54a6fa52c7a608ffa files/digest-sancho-bin-0.9.4.19 158
 MD5 032a1efc1bc8796809ca4aaf61760a78 files/digest-sancho-bin-0.9.4.20 158
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBeGV3cAgAdbxYsnERAn4DAJ9glCHseGDW3IMD3bE/p48L7T5Q0QCgjMXs
-f4l+MbxYTMHKugGd27MIf3s=
-=jbXS
------END PGP SIGNATURE-----
+MD5 3ecc52cc9c339f58d3c4c38a16a0fa18 files/digest-sancho-bin-0.9.4.21 158
