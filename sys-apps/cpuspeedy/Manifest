@@ -2,5 +2,7 @@ MD5 8a1fc3986b0958b24832e18bf327c1bc ChangeLog 1364
 MD5 9e2a054a1c88817613efae9564a60cf4 metadata.xml 530
 MD5 fa95fc75540a48bf76c3ce84edda32b1 cpuspeedy-0.2.1.ebuild 697
 MD5 90a5e7cdc7db519bd0094d951253f2e9 cpuspeedy-0.3.0.ebuild 937
+MD5 90a5e7cdc7db519bd0094d951253f2e9 cpuspeedy-0.4.0.ebuild 937
 MD5 5825da5c5085e5811502fc45fdae0c5c files/digest-cpuspeedy-0.2.1 66
 MD5 5534ac90adaed8c4f9c7bcb022148145 files/digest-cpuspeedy-0.3.0 66
+MD5 ff3c31e2076476affd26718df8fbb460 files/digest-cpuspeedy-0.4.0 66
