@@ -1,5 +1,5 @@
-MD5 2856feda99817c9a1bcb1ad5a5329c19 ChangeLog 534
-MD5 2ef78185f822a3b4206f24940d164cde borg-1.4.ebuild 872
+MD5 abf5582e575bbfd8b99837823d728fad ChangeLog 532
+MD5 f027afc6cdd0ada17e59bf9422f4f229 borg-1.4.ebuild 868
 MD5 123cf9440c1d4ac78f2caba1624765f9 metadata.xml 158
 MD5 a4a2af9d161c2da6e2f86a6e2fb44c15 borg-1.3.2.ebuild 848
 MD5 b9b26f87940f58677145382f1828b66e files/digest-borg-1.4 62
