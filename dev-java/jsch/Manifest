@@ -1,20 +1,10 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 e906a8406bf88c46db5e03d257409197 jsch-0.1.16.ebuild 992
-MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
-MD5 1804aa439a265308cebb07499446585f ChangeLog 3183
-MD5 fa7b6d8fa4c0c6c2ff89200fecc589bf jsch-0.1.18.ebuild 996
+MD5 a067dbe01b1653b4fbe636b15956ce61 jsch-0.1.17.ebuild 1126
+MD5 2a853215d2b21e4fa8bd7bb3134b78b1 jsch-0.1.16.ebuild 1126
+MD5 375d56e93c196eb00b32dae275cb445c jsch-0.1.18.ebuild 1141
+MD5 84b172e4c67cbb4e133fa734e8c66617 ChangeLog 3386
 MD5 ae7721b7793c0b48ec5baebfd7186fa5 jsch-0.1.15.ebuild 988
-MD5 32e0032b986f05250d78cf9560b10c62 jsch-0.1.17.ebuild 992
+MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
 MD5 d5f449a0c2ef9fa25fce49d1258916d1 files/digest-jsch-0.1.15 60
 MD5 d08475096e782d87daa3748aa6ed4ebe files/digest-jsch-0.1.16 60
-MD5 3ea4f3d468b864097aa05187c1c750ba files/digest-jsch-0.1.18 60
 MD5 53d260d9dbe97b01d9c72f8d71748f1b files/digest-jsch-0.1.17 60
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCSBRAKRy60XGEcJIRAiMwAJ4yOTXngcF/ta6xrvypFyooLP/wLQCeJ0jB
-6H0GZpGvzQ7ORSS/ZK6dFjo=
-=t0iO
------END PGP SIGNATURE-----
+MD5 3ea4f3d468b864097aa05187c1c750ba files/digest-jsch-0.1.18 60
