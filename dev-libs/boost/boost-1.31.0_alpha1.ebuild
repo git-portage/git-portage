@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/boost/Attic/boost-1.31.0_alpha1.ebuild,v 1.2 2004/01/06 16:36:23 aliz Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/boost/Attic/boost-1.31.0_alpha1.ebuild,v 1.3 2004/02/03 07:55:10 george Exp $
 
 MyPV="2003d18"
 
