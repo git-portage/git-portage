@@ -231,6 +231,8 @@
 ./media-gfx/gimp-print/gimp-print-4.1.1.ebuild
 ./media-gfx/gimp/gimp-1.2.0.ebuild
 ./media-gfx/imagemagick/imagemagick-5.2.7.ebuild
+#./media-gfx/sane-frontends/sane-frontends-1.0.4.ebuild
+#./media-gfx/sand-backends/sane-backends-1.0.4.ebuild
 ./media-libs/aalib/aalib-1.2.ebuild
 ./media-libs/alsa-lib/alsa-lib-0.5.10.ebuild
 ./media-libs/audiofile/audiofile-0.1.9.ebuild
