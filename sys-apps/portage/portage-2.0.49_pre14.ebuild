@@ -1,5 +1,5 @@
 # Distributed under the terms of the GNU General Public License v2 
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.49_pre12.ebuild,v 1.2 2003/07/22 07:27:41 carpaski Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.49_pre14.ebuild,v 1.1 2003/07/24 09:11:09 carpaski Exp $
 
 IUSE="build"
 
@@ -153,9 +153,12 @@ pkg_postinst() {
 	if [ ! -f "/etc/portage/package.mask" ]; then
 	  if [ -f "/etc/portage/profiles/package.mask" ]; then
 			ln /etc/portage/profiles/package.mask /etc/portage/package.mask
+			einfo "/etc/portage/profiles/package.mask is now /etc/portage/package.mask"
+			einfo "a hardlink has been created to the new location if it exists in profiles"
+			einfo "already."
+			echo
 		fi
 	fi
-
 	echo
 	eerror "NOTICE: PLEASE *REPLACE* your make.globals. All user changes to variables"
 	eerror "in make.globals should be placed in make.conf. DO NOT MODIFY make.globals."
@@ -164,10 +167,6 @@ pkg_postinst() {
 	einfo "them using 'etc-update' please. Maintaining current configs for portage"
 	einfo "and other system packages is fairly important for the continued health"
 	einfo "of your system."
-	echo
-	einfo "/etc/portage/profiles/package.mask has been moved to /etc/portage/package.mask"
-	einfo "a hardlink has been created to the new location if the file exists in profiles"
-	einfo "already."
 	echo
 	if [ -z "$PORTAGE_TEST" ]; then
 		echo -ne "\a" ; sleep 0.1 &>/dev/null ; sleep 0,1 &>/dev/null
