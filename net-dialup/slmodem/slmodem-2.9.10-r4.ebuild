@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/slmodem/Attic/slmodem-2.9.10-r3.ebuild,v 1.3 2004/12/30 08:39:09 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/slmodem/Attic/slmodem-2.9.10-r4.ebuild,v 1.1 2005/01/06 23:12:23 mrness Exp $
 
 inherit eutils linux-mod
 
@@ -21,13 +21,7 @@ RDEPEND="virtual/libc
 	alsa? ( media-libs/alsa-lib )"
 
 pkg_setup() {
-	MODULE_NAMES=""
-	if kernel_is ge 2 6 10; then
-		ewarn "slamr isn't compatible with kernel versions >= 2.6.10!"
-		ewarn "It will not be installed"
-	else
-		MODULE_NAMES="slamr(extra:${S}/drivers)"
-	fi
+	MODULE_NAMES="slamr(extra:${S}/drivers)"
 	useq usb && MODULE_NAMES="${MODULE_NAMES} slusb(extra:${S}/drivers)"
 	BUILD_TARGETS="all"
 
@@ -45,7 +39,8 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/${P}-usb_endpoint_halted-gentoo.patch || die "failed to apply fix for usb_endpoint"
+	epatch ${FILESDIR}/${P}-usb_endpoint_halted-gentoo.patch || die "failed to apply usb_endpoint patch"
+	epatch ${FILESDIR}/${P}-pci-workaround.patch || die "failed to apply pci workaround patch"
 
 	convert_to_m drivers/Makefile
 
