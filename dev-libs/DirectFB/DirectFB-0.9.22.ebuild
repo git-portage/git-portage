@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/DirectFB/Attic/DirectFB-0.9.21.ebuild,v 1.3 2005/03/02 01:07:00 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/DirectFB/Attic/DirectFB-0.9.22.ebuild,v 1.1 2005/03/02 01:07:00 vapier Exp $
 
 inherit eutils 64-bit flag-o-matic gcc
 
@@ -12,11 +12,10 @@ SRC_URI="http://www.directfb.org/download/DirectFB/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 -mips ppc -sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 -mips ~ppc -sparc ~x86"
 IUSE="sdl jpeg gif png truetype mpeg mmx sse fusion debug fbcon static"
 
-DEPEND="dev-lang/perl
-	sdl? ( media-libs/libsdl )
+DEPEND="sdl? ( media-libs/libsdl )
 	gif? ( media-libs/giflib )
 	png? ( media-libs/libpng )
 	jpeg? ( media-libs/jpeg )
@@ -45,7 +44,7 @@ src_unpack() {
 	# masked USE flags on amd64 due to their enabling x86 specific asm more
 	# often than not, we'll just enable them by default. All x86_64 cpus
 	# should support mmx and see. Travis Tilley <lv@gentoo.org>
-	use amd64 && epatch "${FILESDIR}"/${PV}-simd-amd64.patch
+	use amd64 && epatch "${FILESDIR}"/0.9.21-simd-amd64.patch
 }
 
 src_compile() {
