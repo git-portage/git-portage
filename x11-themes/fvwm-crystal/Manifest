@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2eeb4e68f01b8be62de4756f052c8757 ChangeLog 2831
 MD5 3690ea4cea1afad1f161456f0ed8b206 fvwm-crystal-1.0.1.ebuild 2001
 MD5 2111a6fc5f0ce6e03bcdd1550916cf18 fvwm-crystal-1.0.3_pre1.ebuild 1118
@@ -12,114 +15,10 @@ MD5 8146e2077293da51342d5f6d09cec37a files/fvwm-crystal-fvwm-version-check.diff 
 MD5 acbef73f565db20ec2daccc52564315e files/digest-fvwm-crystal-2.20040723 73
 MD5 acbef73f565db20ec2daccc52564315e files/digest-fvwm-crystal-2.20040723-r1 73
 MD5 4168b1b88ed4ce9f1e9c71b75d153235 files/digest-fvwm-crystal-2.20040903 72
-MD5 93de055165d04d878fd8849262fbf507 fvwm-crystal-20040903/AUTHORS 398
-MD5 c5d175b5fff35b26289cf4623cbdf839 fvwm-crystal-20040903/COPYING 729
-MD5 e8d570f6ae2d9ef689818d5df250b064 fvwm-crystal-20040903/INSTALL 7249
-MD5 cc9e0b70063c6e008d26219d70afad04 fvwm-crystal-20040903/NEWS 18603
-MD5 f8cd5c63b5f7f8c7ca6374b138b6ea93 fvwm-crystal-20040903/README 536
-MD5 e511cbdeaa1a34fe097ec9b5771299d1 fvwm-crystal-20040903/addons/FvwmIconMan.patch 3689
-MD5 cb9177c1e3168bbe2896af8aee3d0fd6 fvwm-crystal-20040903/addons/rox-wallpaper.sh 441
-MD5 5e522895958ec2459bef32385bfebc29 fvwm-crystal-20040903/addons/Xresources 1843
-MD5 7bb04a1c48f9322b667c390405298497 fvwm-crystal-20040903/addons/Xsession 57
-MD5 5819a5cf8739a5fdc7a1b79d12124ef3 fvwm-crystal-20040903/addons/aterm 363
-MD5 b96a8c90aaa151967b085d3f9f0be405 fvwm-crystal-20040903/bin/wal.py 8853
-MD5 81bcece21748c91ba9992349a91ec11d fvwm-crystal-20040903/doc/LICENSE 17977
-MD5 748ff5c16cb820171960a06c7ed75cad fvwm-crystal-20040903/doc/TODO 421
-MD5 f4c794347995549ffcda605635f96b09 fvwm-crystal-20040903/doc/FAQ 32
-MD5 978f08f05abcf562b537f4544b18ade6 fvwm-crystal-20040903/doc/Bindings.txt 4620
-MD5 d75f91aab93fc3e76e4703ad81a2cdf6 fvwm-crystal-20040903/doc/Crystal ROX! HOWTO.txt 4703
-MD5 5d155b396522fd649f1676eb45ecc01c fvwm-crystal-20040903/fvwm/Menu 1848
-MD5 d842769c5ba8f440edacf4649f8c5e1a fvwm-crystal-20040903/fvwm/Startup 1151
-MD5 ddbbe7765544fe184da930d19accc409 fvwm-crystal-20040903/fvwm/Variables 3244
-MD5 44c47f141230ea8e0d32e8a78387ca36 fvwm-crystal-20040903/fvwm/config 1987
-MD5 8a196263678522ae47393f8788b7f2dc fvwm-crystal-20040903/fvwm/.fvwm2rc 13
-MD5 6c58b610d4122be20f8365f03b092977 fvwm-crystal-20040903/addons/gdm/fvwm-crystal 137
-MD5 8068f5505cfb3c3a75281b0faeb0f3bc fvwm-crystal-20040903/addons/gdm/fvwm-crystal.desktop 243
-MD5 04a83b76a4036618b0404766c820e17d fvwm-crystal-20040903/fvwm/colorsets/colorsets 755
-MD5 8842ad45d99c6a8ba881a5f1c43ca95d fvwm-crystal-20040903/fvwm/colorsets/Midnight.cs 1640
-MD5 45f7283138f30bb1bae26a8b8024cda3 fvwm-crystal-20040903/fvwm/colorsets/HUD - Green.cs 1621
-MD5 6e8231cb0d3fddc257202203bb5842dd fvwm-crystal-20040903/fvwm/colorsets/Kill Bill.cs 1580
-MD5 a03970a2a9b0eff66de92327fb51d029 fvwm-crystal-20040903/fvwm/functions/Clear-Default-Bindings 475
-MD5 017227e618d89db49d67c632d097ce4d fvwm-crystal-20040903/fvwm/functions/Desktop-Functions 4578
-MD5 2b77abf89152fcc0f8e789d0fcddf528 fvwm-crystal-20040903/fvwm/functions/EWMH-BaseStruts 2975
-MD5 7a525aa8ac044c42186ee4f39273a72c fvwm-crystal-20040903/fvwm/functions/Exec-Accelerator 2735
-MD5 90fe74956ef5523604bfaebb0a2d8965 fvwm-crystal-20040903/fvwm/functions/Exit 927
-MD5 d5a82efe6dc1daee07e1aa253a1a0f78 fvwm-crystal-20040903/fvwm/functions/XMMS 3423
-MD5 21f7e47ab6ce705626fd60b5476842d5 fvwm-crystal-20040903/fvwm/functions/Window-Functions 3846
-MD5 93b090d2007d9c9b02116b5a5e146b13 fvwm-crystal-20040903/fvwm/functions/Screenshot 723
-MD5 5afddd3dd1b8bd2169758454997b12fa fvwm-crystal-20040903/fvwm/functions/Mouse-Pointer-Indicator 417
-MD5 c2f294dad4a7f16bfacd880352f08a76 fvwm-crystal-20040903/fvwm/functions/Menu-Position-Variables 1070
-MD5 551fb08d501f15b89a6704b54040a3d8 fvwm-crystal-20040903/fvwm/functions/QuakeConsole 2102
-MD5 7202930eb8c052ea7c273fc17fdef7f4 fvwm-crystal-20040903/fvwm/functions/Colorset-Functions 1605
-MD5 7cd0e78821377e05e84387b8d147dc49 fvwm-crystal-20040903/fvwm/functions/InformationBox 2303
-MD5 123beb612bbbc3ab73f036545bf52525 fvwm-crystal-20040903/fvwm/functions/Decoration-Functions 1977
-MD5 ee7d80f8f706bd543f4c16457a5ef134 fvwm-crystal-20040903/fvwm/functions/CursorStyle 719
-MD5 8069d5db4ddcbeebd6446216693a42bd fvwm-crystal-20040903/fvwm/functions/Thumbnails 2667
-MD5 bda1fb7aad14d8590c618b0edbbd8008 fvwm-crystal-20040903/fvwm/functions/Deiconify-Functions 273
-MD5 2dd589aca77ecc015e8726e059915baf fvwm-crystal-20040903/fvwm/functions/Fullscreen 2143
-MD5 4fa530be3e0dcf2b59bd386b845f3023 fvwm-crystal-20040903/fvwm/functions/FvwmMiniConsole 1646
-MD5 b97bbab969b437748b87215baa1df363 fvwm-crystal-20040903/fvwm/functions/Keyboard-Modifiers 767
-MD5 25c2bafd9866d574ec460e032397ade1 fvwm-crystal-20040903/fvwm/functions/About-Dialog 1368
-MD5 1138afcb4ff3095eca89aff98518bd98 fvwm-crystal-20040903/fvwm/functions/Window-List 381
-MD5 bf2d978a1a6ccad3e9c4afdeee0fbbb7 fvwm-crystal-20040903/fvwm/functions/XScreenSaver 410
-MD5 f524c9d4718877dfeca018af041338b4 fvwm-crystal-20040903/fvwm/functions/Wallpaper 846
-MD5 d8283487b52d89180ae2992041b50bd6 fvwm-crystal-20040903/fvwm/images/windows.png 262
-MD5 9454af91cb4776771be27890375cae32 fvwm-crystal-20040903/fvwm/images/wallpaper.png 255
-MD5 f93bf36d178d5c26eef14e9859c92be5 fvwm-crystal-20040903/fvwm/images/aumix.png 238
-MD5 32ee874dfbff477ba9fc3d171c26102d fvwm-crystal-20040903/fvwm/images/xmms-controls.png 226
-MD5 ee71c79bcfc12ab6e8e000d5561d5427 fvwm-crystal-20040903/fvwm/images/xmms.png 226
-MD5 e81e7dc40f6849227ff4dcabcbe55083 fvwm-crystal-20040903/fvwm/images/desktop.png 254
-MD5 02713a7a059b745d77fab6e084b4ac4d fvwm-crystal-20040903/fvwm/modules/FvwmPager 825
-MD5 9d4f05537e2aadda0a4efadd689fb5ff fvwm-crystal-20040903/fvwm/modules/FvwmEvent 569
-MD5 f8306be4fc81ee2f89e9954ebfaa0e72 fvwm-crystal-20040903/fvwm/modules/Bindings 5061
-MD5 d6eb2e7ba8de08bf46969b64ba6d9d22 fvwm-crystal-20040903/fvwm/modules/Styles 4094
-MD5 fe2ad4d9476784a9547fa700fda6fcff fvwm-crystal-20040903/fvwm/modules/MenuStyle 644
-MD5 640717cbfdb7fdce562c2dfd26aea72d fvwm-crystal-20040903/fvwm/modules/Fvwm-Panel 2698
-MD5 e613079c591ff022b908c8a37d27ca50 fvwm-crystal-20040903/fvwm/modules/FvwmForm 394
-MD5 c535a9bddd38275ca2ab18f3d7cf21ea fvwm-crystal-20040903/fvwm/modules/FvwmIdent 100
-MD5 bbcac388d8b1676d60a87804fa8b6432 fvwm-crystal-20040903/fvwm/modules/FvwmIconMan 1100
-MD5 f258a3c13d1dd570bd0dc4231506ab2b fvwm-crystal-20040903/fvwm/scripts/Clock 801
-MD5 53d976152ff8e0c4be594b159f9fe3c8 fvwm-crystal-20040903/fvwm/decorations/Crystal/window-options.png 252
-MD5 ca3d363ecc5e59673dafcc9b1e817a1a fvwm-crystal-20040903/fvwm/decorations/Crystal/window-maximize.png 266
-MD5 8412272137d014840627146b74e7bde3 fvwm-crystal-20040903/fvwm/decorations/Crystal/window-close.png 286
-MD5 a9c3c48b2d07bd11cadc04894509eea2 fvwm-crystal-20040903/fvwm/decorations/Crystal/window-arrows.png 260
-MD5 9771ec5f93a129e5fadd154a885ade89 fvwm-crystal-20040903/fvwm/decorations/Crystal/DarkDesktop.theme 794
-MD5 d7a5806c889ee774d72cb849e573a942 fvwm-crystal-20040903/fvwm/decorations/Crystal/CIOS.theme 845
-MD5 c9a1d955952e4657327182c747f4d874 fvwm-crystal-20040903/fvwm/decorations/Crystal/Cyan.theme 796
-MD5 76ee267c4ff76dbe1e3fa91270bf1433 fvwm-crystal-20040903/fvwm/decorations/Crystal/WhiteDesktop.theme 807
-MD5 6fc105a03c7b39f9e0aad7646c0e67c3 fvwm-crystal-20040903/fvwm/decorations/Crystal/CrystalZono.theme 830
-MD5 97c4614090d8c0b0602e81b7788eb872 fvwm-crystal-20040903/fvwm/decorations/Crystal/DarkGreen.theme 865
-MD5 9324234fa96e46977df758c37703522b fvwm-crystal-20040903/fvwm/decorations/Crystal/IrishDesktop.theme 845
-MD5 a31898f50e61f16b4ed4291d10530039 fvwm-crystal-20040903/fvwm/decorations/Crystal/decoration 2006
-MD5 8b4c573534b2d39269a426c1a52ff582 fvwm-crystal-20040903/fvwm/decorations/Crystal/colorsets 166
-MD5 a46588d12b3b59397066ec4e6f7648d7 fvwm-crystal-20040903/fvwm/decorations/Fear/button.png 605
-MD5 93f51a52a4c7486f38e47926e00228e2 fvwm-crystal-20040903/fvwm/decorations/Fear/close.png 566
-MD5 6e1f794558aab01d4dc4646d0c9d02f5 fvwm-crystal-20040903/fvwm/decorations/Fear/max.png 534
-MD5 72cb98f5f44a36c8c6e9c413f2efc7da fvwm-crystal-20040903/fvwm/decorations/Fear/min.png 525
-MD5 a6b42ea46805174d2d7215174dc3c0e7 fvwm-crystal-20040903/fvwm/decorations/Fear/button.xcf 6000
-MD5 2eea2b1c16e5c27f6f426c55c8d3725d fvwm-crystal-20040903/fvwm/decorations/Fear/close2.png 669
-MD5 b5c8834e95ef1cf2b731fee1a6bc06c6 fvwm-crystal-20040903/fvwm/decorations/Fear/max2.png 647
-MD5 0113553bc5a0e5048db597d450ea8275 fvwm-crystal-20040903/fvwm/decorations/Fear/min2.png 656
-MD5 adaed126ce0b82b2bb266ba3b1f42f43 fvwm-crystal-20040903/fvwm/decorations/Fear/Original.theme 610
-MD5 647325d1eb26fdb4d0d048e9cbbc5c38 fvwm-crystal-20040903/fvwm/decorations/Fear/options2.png 719
-MD5 6fc50a7126f127bfbc1a4b6aafd41ce7 fvwm-crystal-20040903/fvwm/decorations/Fear/options.png 592
-MD5 ba645df61bc37bcc79382cb1babc92b3 fvwm-crystal-20040903/fvwm/decorations/Fear/arrows.png 609
-MD5 60b744742a7892ee546c241e67cc679d fvwm-crystal-20040903/fvwm/decorations/Fear/arrows2.png 738
-MD5 48ca957b1f995f3a9ddcfe26ca1094df fvwm-crystal-20040903/fvwm/decorations/Fear/colorsets 215
-MD5 9aa4a711eab8611c6f4125863488cbf3 fvwm-crystal-20040903/fvwm/decorations/Fear/decoration-original 1322
-MD5 46ccbae583f1d4ed4ee94b96eb8d759f fvwm-crystal-20040903/fvwm/decorations/Fear/Original (crystalized).theme 701
-MD5 5d71886c9e9604f83302be168b4071f3 fvwm-crystal-20040903/fvwm/decorations/Fear/decoration-crystalized 2169
-MD5 ccb069f6f9a8686f7acb5726591a2557 fvwm-crystal-20040903/fvwm/decorations/Dawn of a Terminal/window-arrows+.png 265
-MD5 e3bff148bd825847d192b33b79e729fa fvwm-crystal-20040903/fvwm/decorations/Dawn of a Terminal/window-arrows-.png 266
-MD5 bfd420198a269dcb061e2da607237131 fvwm-crystal-20040903/fvwm/decorations/Dawn of a Terminal/Blue.theme 831
-MD5 84a1112b1019d67fd1a989d3ba3eb541 fvwm-crystal-20040903/fvwm/decorations/Dawn of a Terminal/window-close+.png 234
-MD5 957ceb8b08d7e0d27f21f2ccbe3a6ea4 fvwm-crystal-20040903/fvwm/decorations/Dawn of a Terminal/window-close-.png 234
-MD5 a7686d43bb4ce7e01c773a9028a83c54 fvwm-crystal-20040903/fvwm/decorations/Dawn of a Terminal/Red.theme 821
-MD5 8ff64e6f62943e6f3be17412947ea65d fvwm-crystal-20040903/fvwm/decorations/Dawn of a Terminal/window-maximize+.png 246
-MD5 df13279ceeab4ecdde9a2f27faf8b51a fvwm-crystal-20040903/fvwm/decorations/Dawn of a Terminal/window-maximize-.png 250
-MD5 490b2ac9eb8f05a8b09a5a98f3d5331c fvwm-crystal-20040903/fvwm/decorations/Dawn of a Terminal/Green.theme 827
-MD5 eac7bafd9586c19c28ca2599440586b6 fvwm-crystal-20040903/fvwm/decorations/Dawn of a Terminal/window-options+.png 242
-MD5 0e1d41757776eacaa9ff303ed05e71ba fvwm-crystal-20040903/fvwm/decorations/Dawn of a Terminal/window-options-.png 242
-MD5 d8db0d4728cfb19bf7adf218113a2941 fvwm-crystal-20040903/fvwm/decorations/Dawn of a Terminal/Purple.theme 827
-MD5 29cfbc0db1d8163035464f249cbd6097 fvwm-crystal-20040903/fvwm/decorations/Dawn of a Terminal/decoration 2278
-MD5 4cb418abd8e56e6524b191ca693939d9 fvwm-crystal-20040903/fvwm/decorations/Dawn of a Terminal/colorsets 168
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBQfx32jLqHNfbg2URAuBgAKCSMssgnNHp23HaFg3HzwcKNnQfPwCfUxrM
+I5djq7lLJXVxRqg+xWD4cmQ=
+=JG48
+-----END PGP SIGNATURE-----
