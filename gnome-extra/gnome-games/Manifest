@@ -3,10 +3,9 @@ MD5 f1a7f6e7010166876bf1181099cb15fd gnome-games-1.4.0.3-r3.ebuild 1274
 MD5 915e5e78fa86946af8cc657b732f401e gnome-games-2.6.1.ebuild 1492
 MD5 9db4e0ddea684696bb43e5029ecc9bb5 gnome-games-2.4.2.ebuild 1310
 MD5 979b1d3d04d2275f4395da2ac35036fe gnome-games-2.6.0.1.ebuild 1478
-MD5 7de78e7e04275ef7d70466e638ee74fb ChangeLog 9149
+MD5 1c42f21a67e1eefa0a9f23d61b414b3e ChangeLog 9371
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
-MD5 252938279db7eaa86477987a49ab4890 gnome-games-2.8.1.ebuild 1797
-MD5 323cb1faf27ac82c634dbfdda53e6155 files/gnome-games-2-bind_now_relro.patch 371
+MD5 16c5ef17a6a61cd533234d4a18aba19f gnome-games-2.8.1.ebuild 1982
 MD5 e6684984af39cf3cea7ca09fd08a6552 files/gnome-games-2.6.0.1-aisleriot.patch 491
 MD5 3a5e1fbf83efc9cbd7ce679387b8b2f2 files/digest-gnome-games-2.6.0.1 73
 MD5 2301a09a3e02fd7e40f6ee5a7e79e95c files/digest-gnome-games-1.4.0.3-r3 72
