@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 674a7d2b750f6ad0658d25a01b97de8d ChangeLog 12114
 MD5 c93943ad91a4f4d68ccbed3cba86d848 metadata.xml 261
 MD5 423953afdbd3580e3a59dbfa8144d339 vlc-0.6.0-r1.ebuild 5636
@@ -9,9 +6,11 @@ MD5 b50a2c6834c39b5396b7e5fb21a17434 vlc-0.6.2-r1.ebuild 6503
 MD5 7a86fa654bd4f47aa3a1c224085ac526 vlc-0.6.2.ebuild 5552
 MD5 e980700404b204d8b1c22eb5bf12b4d4 vlc-0.7.1-r1.ebuild 5976
 MD5 15a9991d3957db9ed11aabf926679b4a vlc-0.7.1.ebuild 6766
-MD5 ea7ad0a99254b8a0330e7df1b8744d9e vlc-0.7.2.ebuild 6006
 MD5 6754a10c910e15b68d5b37f0c92f3938 vlc-0.7.2-r1.ebuild 6478
+MD5 ea7ad0a99254b8a0330e7df1b8744d9e vlc-0.7.2.ebuild 6006
 MD5 6d4c23d78a415f5c3a961dc97c898878 vlc-0.8.0.ebuild 6424
+MD5 db49111f817d669856b9dd86d61f0439 vlc-0.8.1.ebuild 5013
+MD5 77f4e9cceacd8059c3e1c8322a14c30a files/digest-vlc-0.8.1 63
 MD5 09c124e45049f615519ded3278a97376 files/0.6.2-mozilla-fix.patch 1261
 MD5 80aeaf3595979e8e16dd382c50dfd275 files/buildorder.patch 590
 MD5 5f5a12e2d124384eb5d129e60879202d files/digest-vlc-0.6.0-r1 63
@@ -21,17 +20,11 @@ MD5 cc5d4fb953ad7bd0ee3e14076811a1d4 files/digest-vlc-0.6.2-r1 202
 MD5 d0a16a05f6983059df4b1b07c0a47bdd files/digest-vlc-0.7.1 130
 MD5 f031efc738d255e8b7b893aaeb5ca30c files/digest-vlc-0.7.1-r1 63
 MD5 ed198b2a917f7be36174f7b05dcad8a3 files/digest-vlc-0.7.2 63
+MD5 ed198b2a917f7be36174f7b05dcad8a3 files/digest-vlc-0.7.2-r1 63
+MD5 c3619276ab1c8a5790066e59ca82347d files/digest-vlc-0.8.0 63
 MD5 c5c0f3cdd6b2afd05a3090dfc55074e0 files/glide.patch 744
 MD5 20de936c17c2ab1c4767bcbce0d2e972 files/live-gcc3-3.patch 828
 MD5 5cf5ab60ab2619db091501d7acc50284 files/mozplugin.patch 5995
 MD5 0ee383795d543048e4d47eb58f6d36bb files/mpeg2dec-20030612-configure.in-fpic.patch 1065
-MD5 ed198b2a917f7be36174f7b05dcad8a3 files/digest-vlc-0.7.2-r1 63
 MD5 310366968813598e8b0cae64b5dbd19a files/vlc-0.7.2-live.patch 1287
-MD5 c3619276ab1c8a5790066e59ca82347d files/digest-vlc-0.8.0 63
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBvtxKArHZZzCEUG0RAqunAJ0T/I/2vTAWh6ohfTqGD/ufB0LAdgCfQPQs
-FK2AEn07s8Y1bhQI2U5TRiw=
-=0we3
------END PGP SIGNATURE-----
+MD5 77f4e9cceacd8059c3e1c8322a14c30a files/digest-vlc-0.8.1-r2 63
