@@ -1,3 +1,14 @@
+date 22 Jan 2001
+
+upd sys-apps/portage-1.4-r5 to 1.4-r6
+drobbins
+integrated env-update into our python library.  Portage contains
+env-update now.
+
+upd sys-apps/baselayout-1.5 to 1.5-r1
+drobbins
+removed env-update from baselayout
+
 date 21 Jan 2001
 
 upd sys-apps/reiserfs-utils-3.6.25 to 3.6.25-r1

@@ -367,7 +367,7 @@
 ./net-www/squid/squid-2.3.4s-r1.ebuild
 ./net-www/w3m/w3m-0.1.10-r1.ebuild
 ./sys-apps/at/at-3.1.8-r1.ebuild
-./sys-apps/baselayout/baselayout-1.5.ebuild
+./sys-apps/baselayout/baselayout-1.5-r1.ebuild
 ./sys-apps/bash/bash-2.04-r1.ebuild
 ./sys-apps/bzip2/bzip2-1.0.1.ebuild
 ./sys-apps/console-data/console-data-1999.08.29-r1.ebuild
@@ -403,7 +403,7 @@
 ./sys-apps/most/most-4.9.0-r1.ebuild
 ./sys-apps/net-tools/net-tools-1.57-r1.ebuild
 ./sys-apps/netkit-base/netkit-base-0.17-r1.ebuild
-./sys-apps/portage/portage-1.4-r5.ebuild
+./sys-apps/portage/portage-1.4-r6.ebuild
 ./sys-apps/procps/procps-2.0.7-r1.ebuild
 ./sys-apps/psmisc/psmisc-19-r1.ebuild
 ./sys-apps/raidtools/raidtools-0.90-r1.ebuild
