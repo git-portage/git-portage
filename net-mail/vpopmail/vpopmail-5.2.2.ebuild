@@ -1,16 +1,16 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/vpopmail/Attic/vpopmail-5.2.1-r6.ebuild,v 1.11 2004/01/05 06:07:29 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/vpopmail/Attic/vpopmail-5.2.2.ebuild,v 1.1 2004/01/05 06:07:29 robbat2 Exp $
 
 IUSE="mysql ipalias clearpasswd"
 
-inherit eutils
+inherit eutils gnuconfig
 
 # TODO: all ldap, sybase support
 HOMEPAGE="http://www.inter7.com/vpopmail"
 DESCRIPTION="A collection of programs to manage virtual email domains and accounts on your Qmail or Postfix mail servers."
 SRC_URI="http://www.inter7.com/${PN}/${P}.tar.gz
-	mysql? ( http://gentoo.twobit.net/misc/${P}-mysql.diff )"
+	mysql? ( http://gentoo.twobit.net/misc/${PN}-5.2.1-mysql.diff )"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="x86 sparc"
@@ -50,6 +50,7 @@ pkg_setup() {
 		useradd -g vpopmail -u `getent group vpopmail | awk -F":" '{ print $3 }'` -d ${VPOP_DEFAULT_HOME} -c "vpopmail_directory" \
 		-s /bin/false -m vpopmail || die "problem adding vpopmail user"
 	fi
+	upgradewarning
 }
 
 src_unpack() {
@@ -59,15 +60,22 @@ src_unpack() {
 
 	epatch ${FILESDIR}/vpopmail-5.2.1-showall.patch
 
-	if [ "`use mysql`" ]; then
+	if use mysql; then
 		einfo "Applying MySQL patch..."
 		# Thanks to Nicholas Jones (carpaski@gentoo.org)
 		epatch ${DISTDIR}/vpopmail-5.2.1-mysql.diff
 	fi
 
-	# Thanks to Vadim Berezniker (vadim@berezniker.com)
-	# This patch backports a bug fix from the devel version re: logons
-	epatch ${FILESDIR}/vpopmail.diff
+	for i in vchkpw.c vconvert.c vdelivermail.c vpopbull.c vpopmail.c vqmaillocal.c vuserinfo.c; do
+		sed -e 's|Maildir|.maildir|g' -i $i || die "Failed to change s/Maildir/.maildir/g in $i"
+	done
+
+	gnuconfig_update
+
+	# the configure script tries to force root and make directories not using ${D}
+	cp configure configure.orig
+	#sed -e '1282,1289d' -e '1560,1567d' -e '2349d' -e '2107d' -e '2342d' configure > configure.new
+	sed -e '1304,1311d' -e '1582,1589d' -e '2129d' -e '2364d' -e '2371d' -i configure
 }
 
 src_compile() {
@@ -85,15 +93,13 @@ src_compile() {
 			--enable-mysql-replication=n" \
 		|| myopts="${myopts} --enable-mysql=n"
 
-	# the configure script tries to force root and make directories not using ${D}
-	sed -e '1282,1289d' -e '1560,1567d' -e '2349d' -e '2107d' -e '2342d' configure > configure.new
-	mv --force configure.new configure
-	chmod u+x configure
-
 	# Bug 20127
 	use clearpasswd &&
 		myopts="${myopts} --enable-clear-passwd=y" ||
 		myopts="${myopts} --enable-clear-passwd=n"
+
+	addpredict /var/vpopmail/etc/lib_deps
+	addpredict /var/vpopmail/etc/inc_deps
 
 	econf ${myopts} --sbindir=/usr/sbin \
 		--bindir=/usr/bin \
@@ -112,9 +118,10 @@ src_compile() {
 		--enable-roaming-users=y --enable-relay-clear-minutes=60 \
 		--enable-tcprules-prog=/usr/bin/tcprules --enable-tcpserver-file=/etc/tcp.smtp \
 		--enable-logging=y \
-		--enable-log-name=vpopmail
+		--enable-log-name=vpopmail \
+		--enable-qmail-ext
 
-	use mysql && echo '#define MYSQL_PASSWORD_FILE "/etc/vpopmail.conf"' >> config.h
+	use mysql && echo '#define MYSQL_PASSWORD_FILE "/etc/vpopmail.conf"' >> ${S}/config.h
 
 	emake || die "Make failed."
 }
@@ -123,6 +130,10 @@ src_install () {
 	vpopmail_set_homedir
 
 	make DESTDIR=${D} install-strip || die
+
+	into /var/vpopmail
+	dobin ${FILESDIR}/vpopmail-Maildir-dotmaildir-fix.sh
+	into /usr
 
 	# Install documentation.
 	dodoc AUTHORS ChangeLog COPYING FAQ INSTALL NEWS TODO
@@ -137,6 +148,7 @@ src_install () {
 		dodir /etc
 		insinto /etc
 		doins ${FILESDIR}/vpopmail.conf
+		fowners vpopmail:vpopmail /etc/vpopmail.conf
 		fperms 600 /etc/vpopmail.conf
 	fi
 
@@ -161,6 +173,7 @@ src_install () {
 	einfo "Locking down vpopmail permissions"
 	# secure things more, i don't want the vpopmail user being able to write this stuff!
 	chown -R root:root ${D}${VPOP_HOME}/{bin,etc,include}
+
 }
 
 pkg_preinst() {
@@ -171,12 +184,14 @@ pkg_preinst() {
 
 	# This is a workaround until portage handles binary packages+users better.
 	pkg_setup
+
+	upgradewarning
 }
 
 pkg_postinst() {
 	einfo "Performing post-installation routines for ${P}."
 
-	if [ "`use mysql`" ]; then
+	if use mysql; then
 		echo
 		einfo "You have 'mysql' turned on in your USE"
 		einfo "Vpopmail needs a VALID MySQL USER. Let's call it 'vpopmail'"
@@ -189,9 +204,17 @@ pkg_postinst() {
 		einfo "  vpopmail@localhost identified by 'your password';"
 		einfo "> flush privileges;"
 		echo
+		einfo "If you have problems with vpopmail not accepting mail properly,"
+		einfo "please ensure that /etc/vpopmail.conf is chmod 600 and"
+		einfo "owned by vpopmail:vpopmail"
 	fi
 	# do this for good measure
-	[ -e /etc/vpopmail.conf ] && chmod 600 /etc/vpopmail.conf
+	if [ -e /etc/vpopmail.conf ]; then
+		chmod 600 /etc/vpopmail.conf
+		chown vpopmail:vpopmail /etc/vpopmail.conf
+	fi
+
+	upgradewarning
 }
 
 pkg_postrm() {
@@ -199,4 +222,13 @@ pkg_postrm() {
 
 	einfo "The vpopmail DATA will NOT be removed automatically."
 	einfo "You can delete them manually by removing the ${VPOP_HOME} directory."
+}
+
+upgradewarning() {
+	ewarn "Massive important warning if you are upgrading to 5.2.1-r8 or older"
+	ewarn "The internal structure of the mail storage has changed for"
+	ewarn "consistancy with the rest of Gentoo! Please review and utilize the "
+	ewarn "script at /var/vpopmail/bin/vpopmail-Maildir-dotmaildir-fix.sh"
+	ewarn "to upgrade your system! (It can do conversions both ways)."
+	ewarn "You should be able to run it right away without any changes."
 }
