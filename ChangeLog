@@ -1,3 +1,11 @@
+date 02 Mar 2001
+
+upd sys-apps/iproute2-2.2.4-r1 to 2.2.4-r2
+drobbins
+DIFFSERV (differential services) now enabled; should allow support for
+ingress policing, gred, dsmark queueing disciplines and the tcindex 
+filter
+
 date 01 Mar 2001
 
 new x11-wm/fvwm-2.3.28
