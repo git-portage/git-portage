@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Bruce A. Locke <blocke@shivan.org>
-# $Header: /var/cvsroot/gentoo-x86/media-sound/grip/Attic/grip-2.95.ebuild,v 1.3 2001/08/31 03:23:39 pm Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/grip/Attic/grip-2.96-r2.ebuild,v 1.1 2001/10/07 17:29:35 danarmak Exp $
 
 
 A=${P}.tgz
@@ -12,12 +12,21 @@ HOMEPAGE="http://www.nostatic.org/grip"
 
 DEPEND="media-sound/cdparanoia"
 
+# Seems to be fixed...
+#src_unpack() {
+#
+#   # author forgot to gzip his tgz file... sigh
+#   cd ${WORKDIR}
+#   tar xvf ${DISTDIR}/${P}.tgz
+#
+#}
+
 src_compile() {
 
    # grip doesn't have a nice configure script and requires some
    # symlink love to build
 
-   cd $S
+   cd ${S}
 
    mkdir cdparanoia
    mkdir cdparanoia/interface
@@ -39,20 +48,20 @@ src_compile() {
 src_install () {
     cd ${S}
 
-    dodir /usr/X11R6/bin
+    dodir /usr/bin
 
-    cp ${S}/grip ${D}/usr/X11R6/bin
-    cp ${S}/gcd ${D}/usr/X11R6/bin
+    cp ${S}/grip ${D}/usr/bin
+    cp ${S}/gcd ${D}/usr/bin
 
-    dodir /usr/X11R6/man/man1
+    dodir /usr/man/man1
 
-    cp ${S}/grip.1 ${D}/usr/X11R6/man/man1
-    # make install copies it over....
-    cp ${S}/grip.1 ${D}/usr/X11R6/man/man1/gcd.1
+    gzip ${S}/grip.1
+    cp ${S}/grip.1.gz ${D}/usr/man/man1
+    cp ${S}/grip.1.gz ${D}/usr/man/man1/gcd.1.gz
 
     dodoc README LICENSE TODO CREDITS CHANGES
 
-    insinto /usr/X11R6/include/X11/pixmaps
+    insinto /usr/include/X11/pixmaps
     doins pixmaps/*.xpm
 
 }
