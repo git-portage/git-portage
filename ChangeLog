@@ -1,5 +1,9 @@
 date 16 Jan 2001
 
+new sys-kernel/linux-2.4.1_pre7
+achim
+This kernel has reiserfs included, so no more extra patching.
+
 upd gnome-libs/libgda-0.2.1 to r1
 achim
 Now depends on CORBA-ORBit
