@@ -3,7 +3,7 @@ Hash: SHA1
 
 MD5 6127ca034042e19ade0594f638860e27 ChangeLog 1921
 MD5 6d4a3f029b939591dfdcad782a025308 zisofs-tools-1.0.3.ebuild 637
-MD5 68495a8b55d84cd91785b7a909d31681 zisofs-tools-1.0.4-r1.ebuild 723
+MD5 f92e48b5da20136f69d265ce55867fee zisofs-tools-1.0.4-r1.ebuild 718
 MD5 29d29f184f31a89eacc7a90270ec7513 zisofs-tools-1.0.4.ebuild 633
 MD5 ea481c547072fedc8d9e4bef6e3dd2aa files/digest-zisofs-tools-1.0.3 70
 MD5 b62467b86e7d52b16211e0170b39e94d files/digest-zisofs-tools-1.0.4 70
@@ -11,7 +11,7 @@ MD5 b62467b86e7d52b16211e0170b39e94d files/digest-zisofs-tools-1.0.4-r1 70
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.9.10 (GNU/Linux)
 
-iD8DBQFBJX4cHTu7gpaalycRAiqRAJ4okUXvlsZELMqfolaV7tM8kpvfLwCgsZG8
-z92YeNC6jrWW3OkoiZp7guM=
-=wREb
+iD8DBQFBJX4AHTu7gpaalycRAl7lAJ40hOmhEyA2AOnYk7Ilpcx/S8pc0wCg9kht
+TGzRAXE7l1J+RHnVUtQrZGI=
+=O575
 -----END PGP SIGNATURE-----
