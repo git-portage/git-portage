@@ -19,4 +19,4 @@ MD5 ad803523008747726c87b9c505517f4c files/digest-alsa-utils-1.0.0_rc2 72
 MD5 f20045fc395596290d5a6d807ba311fc files/alsa-utils-0.5.10-aplay-destdir.diff 626
 MD5 dcc66ee6a9db24006a4158e2be0da3f2 files/alsa-0.5.10 392
 MD5 a82c4c173c1d617bae9967438c659bac files/digest-alsa-utils-0.5.10-r8 70
-MD5 8ce2200b3c14dc7b70e5a082cf784ffb files/alsasound 5127
+MD5 e852e49ce4ed9f28f545fe29fcd57c96 files/alsasound 5261
