@@ -1,9 +1,9 @@
 date 07 May 2001
 
-new net-misc/wireless_tools-21
+new net-misc/wireless-tools-21
 aj
 
-upd media-libs/giflib-4.1.0-r2 4.1.0-r3
+upd media-libs/giflib-4.1.0-r2 to 4.1.0-r3
 aj
 Added check for 'ungif' USE variable
 
