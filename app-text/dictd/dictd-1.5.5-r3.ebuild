@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Michael Conrad Tilstra <michael@gentoo.org> <tadpol@tadpol.org>
-# $Header: /var/cvsroot/gentoo-x86/app-text/dictd/Attic/dictd-1.5.5-r1.ebuild,v 1.1 2001/06/04 00:39:52 michael Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/dictd/Attic/dictd-1.5.5-r3.ebuild,v 1.1 2001/08/16 18:47:11 tadpol Exp $
 
 #P=
 A=${P}.tar.gz
@@ -45,12 +45,10 @@ src_install () {
 
     #startups for dictd
     exeinto /etc/rc.d/init.d
-    newexe ${FILESDIR}/${PVR}/svc-dictd svc-dictd
-    exeinto /var/lib/supervise/services/dictd
-    newexe ${FILESDIR}/${PVR}/dictd-run run
+    newexe ${FILESDIR}/${PVR}/rc.dictd dictd
 }
 
-pkg_postinst() {
+pkg_config() {
     # gotta start it at boot.
     . ${ROOT}/etc/rc.d/config/functions
     einfo ">>>  Generating symlinks"
