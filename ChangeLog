@@ -1,5 +1,6 @@
 18.11.2000
-
+	- Update portage						(drobbins)
+	  [ pkgmerge now does pre/postinst ]
 	- Update bind 8.2.2.5 -> 9.0.1			(achim)
 	  [ This version works with glibc-2.2 ]
 
