@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/gtk-engines-xfce/Attic/gtk-engines-xfce-2.2.0.ebuild,v 1.3 2005/01/02 16:45:50 bcowan Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/gtk-engines-xfce/Attic/gtk-engines-xfce-2.2.4.ebuild,v 1.1 2005/01/02 16:45:50 bcowan Exp $
 
 inherit gtk-engines2
 
@@ -9,12 +9,12 @@ MY_P=${P/gtk-engines-xfce/gtk-xfce-engine}
 S=${WORKDIR}/${MY_P}
 DESCRIPTION="GTK+2 Xfce Theme Engine"
 HOMEPAGE="http://xfce.sourceforge.net/"
-SRC_URI="http://www.xfce.org/archive/xfce-4.1.90/src/${MY_P}.tar.gz
+SRC_URI="http://www.xfce.org/archive/xfce-4.1.99.3/src/${MY_P}.tar.gz
 	mirror://gentoo/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=x11-libs/gtk+-2"
