@@ -1,0 +1,4 @@
+MD5 09e31bc163700d25be14ba2ddb5a2332 tob-0.26.ebuild 850
+MD5 b9628c13e56af8c26358d24eefefec6b files/digest-tob-0.25 57
+MD5 16e9d7787c776a93e8aecfe45acf4e49 files/digest-tob-0.26 57
+MD5 093a36053cf0fe7130b2b0cea3da165e files/tob-0.26-no-maketemp-warn.diff 386
