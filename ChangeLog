@@ -1,4 +1,5 @@
-18.09.2000
+17.09.2000
+	- modularized ebuild			(drobbins)
 	- Fixed qt path in /etc/profile		(drobbins)
 	- ebuild now sources /etc/profile	(drobbins)
 
