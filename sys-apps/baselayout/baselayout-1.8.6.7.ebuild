@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.8.6.7.ebuild,v 1.1 2003/05/11 23:59:05 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.8.6.7.ebuild,v 1.2 2003/05/20 20:49:31 azarah Exp $
 
 # This ebuild needs to be merged "live".  You can't simply make a package
 # of it and merge it later.
@@ -109,21 +109,24 @@ src_compile() {
 		emake CC="${CC:-gcc}" LD="${CC:-gcc}" \
 			LDFLAGS="" || die "problem compiling sysvinit"
 
-		# We let gawk now install filefuncs.so, and that is as a symlink to a 
-		# versioned .so ...
-		if [ -f /usr/include/awk/awk.h -a ! -L ${ROOT}/lib/rcscripts/filefuncs.so ]
+		if [ -z "`use bootstrap`" ]
 		then
-			# Build gawk module
-#			cd ${S}/src/filefuncs
-#			einfo "Building awk module..."
-#			make CC="${CC:-gcc}" LD="${CC:-gcc}" || {
-#				eerror "Failed to build gawk module.  Make sure you have"
-#				eerror "sys-apps/gawk-3.1.1-r1 or later installed"
-#				die "problem compiling gawk module"
-#			}
+			# We let gawk now install filefuncs.so, and that is as a symlink to a 
+			# versioned .so ...
+			if [ -f /usr/include/awk/awk.h -a ! -L ${ROOT}/lib/rcscripts/filefuncs.so ]
+			then
+				# Build gawk module
+#				cd ${S}/src/filefuncs
+#				einfo "Building awk module..."
+#				make CC="${CC:-gcc}" LD="${CC:-gcc}" || {
+#					eerror "Failed to build gawk module.  Make sure you have"
+#					eerror "sys-apps/gawk-3.1.1-r1 or later installed"
+#					die "problem compiling gawk module"
+#				}
 			
-			eerror "Please install sys-apps/gawk-3.1.1-r2 or later!"
-			die "gawk too old"
+				eerror "Please install sys-apps/gawk-3.1.1-r2 or later!"
+				die "gawk too old"
+			fi
 		fi
 	fi
 }
@@ -300,7 +303,7 @@ src_install() {
 	# if 'build' or 'bootstrap' is not in USE.  This will
 	# change if we have sys-apps/gawk-3.1.1-r1 or later in
 	# the build image ...
-	if [ -z "`use build`" -a -z "`use bootstrap`" ]
+	if [ -z "`use build`" ]
 	then
 		# This is for new depscan and rc-envupdate.sh
 		# written in awk
