@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/pango/Attic/pango-1.1.3.ebuild,v 1.10 2002/12/15 02:14:03 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/pango/Attic/pango-1.1.3.ebuild,v 1.11 2003/02/04 06:01:02 spider Exp $
 
 IUSE="doc"
 
@@ -39,7 +39,7 @@ src_compile() {
 	elibtoolize
 	local myconf=""
 	use doc && myconf="--enable-gtk-doc" || myconf="--disable-gtk-doc"
-	if [ -n "$DEBUG" ]; then
+	if [ -n "$DEBUGBUILD" ]; then
 		myconf="${myconf}  --enable-debug"
 	fi
 	
