@@ -1,4 +1,6 @@
 MD5 961b15b8351736b11aa583909633f6b0 ChangeLog 1103
-MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
 MD5 11e5283da219b370e93c6181a8cfe51e zinc-0.9.ebuild 670
+MD5 6d133343acba3ddf88d17d6145737883 zinc-1.1.ebuild 723
+MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
+MD5 225467cee39c1e7e6d1cff22cd09b734 files/digest-zinc-1.1 63
 MD5 c89cac63ef79a7d5f293b1bc9626a97c files/digest-zinc-0.9 67
