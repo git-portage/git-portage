@@ -1,5 +1,9 @@
 date 10 Feb 2001
 
+new media-sound/dcd-0.90
+ryan
+A simple command-line based CD player
+
 upd media-libs/smpeg-0.4.1 to 0.4.2
 achim
 
