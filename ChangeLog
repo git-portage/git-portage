@@ -1,5 +1,11 @@
 date 18 Jan 2001
 
+upd net-fs/samba-2.0.7-r3 to 2.0.7-r4
+drobbins
+Configured so that mounting smb filesystems will work perfectly without
+any tweaking.  People who just want client access to SMB filesystems can install
+this package, enable kernel SMB filesystem support, and mount -t smbfs.
+
 new app-admin/pciutils-2.1.8
 achim
 This includes lspci and setpci
