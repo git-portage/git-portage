@@ -1,4 +1,14 @@
-date 20 Jan 2001
+date 21 Jan 2001
+
+upd sys-apps/reiserfs-utils-3.6.25 to 3.6.25-r1
+achim
+Added reiserfsck from reiserfsprogs
+
+upd sys-lib/gpm-1.19.3 to 1.19.3-r1
+achim
+Added a patch for better devfs support
+
+date 20 Jan 20001
 
 upd sys-kernel/linux-2.4.1_pre8 to 2.4.1_pre8-r1
 drobbins

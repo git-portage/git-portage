@@ -91,7 +91,7 @@ do
     else
         if [ "$CHECK" = "package" ]
         then
-            if [ -f ${PORTDIR}/packages/i486-pc-linux-gnu/$myc/$myp.tbz2 ]
+            if [ -f ${PORTDIR}/packages/i486/All/$myp.tbz2 ]
             then
                 continue
             fi
