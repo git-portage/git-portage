@@ -1,6 +1,9 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f244dad33f260b0794bec1f09288b2c2 lighttpd-1.3.10-r1.ebuild 2155
-MD5 0f70e2031977b34e83486e8d7ecb169a lighttpd-1.3.11.ebuild 2164
-MD5 4f9a1fd8164eb4dbe5407126ee6dc34b ChangeLog 4645
+MD5 1012bda0e37285755f02211ea2ebff71 lighttpd-1.3.11.ebuild 2161
+MD5 36d036c084926c6e8f4ad92d399a7ef7 ChangeLog 4645
 MD5 4a186842848d9c384e2d12785ba426bc metadata.xml 165
 MD5 1d925aed297ec4541fb230dd19e11bc1 files/spawn-fcgi.confd 1076
 MD5 e605a4ead0ce7b1e0788c0b0b1161871 files/spawn-fcgi.initd 1383
@@ -13,3 +16,10 @@ MD5 4bb3bdffa967a53d266668b1040f2678 files/lighttpd-1.3.10-php.diff 971
 MD5 353d4b620cc5f277554ac570d5e45b3c files/lighttpd-1.3.11-upstream.diff 786
 MD5 da762512b4ae8682e353873c4f9d31bd files/lighttpd-1.3.11-php.diff 1332
 MD5 faeefb6d35a7cd7b4a2b4b78d63622f7 files/lighttpd-1.3.10-gentoo.diff 1777
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCHGuAEZCkKN40op4RAswpAJsEPf3ZWzvXmwEh6+Je7YwzX0+rewCgq5oO
+cX7RZoAbrTPo6bQ61TdiUwE=
+=SO+i
+-----END PGP SIGNATURE-----
