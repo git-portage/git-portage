@@ -1,3 +1,10 @@
+./app-admin/gkrellm/gkrellm-1.0.7.ebuild
+./app-admin/killproc/killproc-1.12-r2.ebuild
+./app-admin/logrotate/logrotate-3.3-r2.ebuild
+./app-admin/modlogan/modlogan-0.5.7-r1.ebuild
+./app-admin/mon/mon-0.38.20-r1.ebuild
+./app-admin/pciutils/pciutils-2.1.8-r1.ebuild
+
 ./app-arch/rpm/rpm-3.0.6-r1.ebuild
 ./app-arch/unzip/unzip-5.41-r2.ebuild
 ./app-editors/joe/joe-2.9.5.ebuild
@@ -44,6 +51,9 @@
 ./dev-libs/librep/librep-0.13.4-r1.ebuild
 ./dev-libs/openssl/openssl-0.9.6-r1.ebuild
 ./dev-libs/rep-gtk/rep-gtk-0.15-r1.ebuild
+./dev-perl/Convert-BER/Convert-BER-1.31-r1.ebuild
+./dev-perl/Net-Telnet/Net-Telnet-3.02-r1.ebuild
+./dev-perl/Mon/Mon-0.11-r1.ebuild
 ./dev-util/cvs/cvs-1.11-r1.ebuild
 ./dev-utils/guile/guile-1.4-r3.ebuild
 ./gnome-apps/nautilus/nautilus-0.8.2.ebuild     pam?
