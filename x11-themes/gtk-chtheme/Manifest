@@ -1,4 +1,14 @@
-MD5 c7ac0b04ec209ae4239d276547d52287 gtk-chtheme-0.3.1.ebuild 591
-MD5 4b5ab2a11428db293cae093cc21b4bb2 ChangeLog 916
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 13dbdf57111b30ca6e5e7cc7ac63c002 gtk-chtheme-0.3.1.ebuild 593
+MD5 695381e70513bc3cd3b608dd7133299c ChangeLog 918
 MD5 09d3293038c3ef6ba2ff98ef6609680a metadata.xml 252
 MD5 085c6483b4a82f9f3a21b86ff8a77216 files/digest-gtk-chtheme-0.3.1 69
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFB793sEZCkKN40op4RAokuAJwO3LHfmFeVfD19CbnuUFo/nW8SLQCeIH/x
+ds8c6SzLlHMJJTnSdTyNKEo=
+=54g1
+-----END PGP SIGNATURE-----
