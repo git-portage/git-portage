@@ -1,4 +1,5 @@
 MD5 390005dbb08f77ebbacd2371466609db openssh-3.7.1_p2-r1.ebuild 4108
+MD5 14a1d898442c82de87c6740bb396a4d0 openssh-3.8.1_p1.ebuild 4218
 MD5 2ad4dcf698a176e6ff1f94c9e5816882 openssh-3.7.1_p2-r2.ebuild 4618
 MD5 1acfc14089fb63782fb38965af6ee2c0 ChangeLog 12043
 MD5 0feff9b09e482567359625301bddce1c metadata.xml 1329
@@ -9,6 +10,7 @@ MD5 2cb187d8f60994c5e1b5fef2bcb6e85d files/openssh-3.5_p1-gentoo-sshd-gcc3.patch
 MD5 e62c6cfae268e95fb406080c91713c1a files/digest-openssh-3.8_p1 138
 MD5 9e179b1c0e3a139a5a9067c6e5bd6595 files/openssh-3.7.1_p1-selinux.diff 3389
 MD5 8f72054fc8c55107b5bf7ce13a8ad083 files/openssh-3.8_p1-chroot.patch 2884
+MD5 ee5b02cd561b09529e452aaf55ddbad7 files/digest-openssh-3.8.1_p1 140
 MD5 8f72054fc8c55107b5bf7ce13a8ad083 files/openssh-3.7.1_p2-chroot.patch 2884
 MD5 b31110303673214476c57e1bed28e1ce files/openssh-skeychallenge-args.diff 925
 MD5 9b53f18685eeb54c381c9bd11b9b80cc files/openssh-3.7.1_p2-skey.patch 326
