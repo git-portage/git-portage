@@ -1,4 +1,5 @@
 MD5 6ea46a8f53247afcc0e5566e20a97270 lirc-0.7.0_pre6.ebuild 4619
+MD5 bb5f9e50535bf95bb26caaaf9ac6d766 lirc-0.7.0_pre7-r1.ebuild 3534
 MD5 9dec01b704006290727d5bf8d5c7fb3b lirc-0.7.0_pre3.ebuild 4430
 MD5 b681fdf9726816c0bbaa305961090cfd lirc-0.7.0_pre7.ebuild 3478
 MD5 39e8c8029290c82b23eb12334f1a2800 lirc-0.6.6-r1.ebuild 3853
@@ -14,5 +15,7 @@ MD5 03a0569271c2917b330754938b62cae7 files/digest-lirc-0.7.0_pre4 67
 MD5 9d17cef262495b7318c8929900877365 files/digest-lirc-0.7.0_pre6 67
 MD5 556773de652aa24339c9807015e154a9 files/digest-lirc-0.7.0_pre7 154
 MD5 be33063742c7eabaad1d246784472aae files/lircmd 381
+MD5 556773de652aa24339c9807015e154a9 files/digest-lirc-0.7.0_pre7-r1 154
 MD5 6031968a1ddb51ff5265d1f22bd2d237 files/lirc-0.6.6-gentoo.diff.bz2 2215
+MD5 98649a4b1e9e7aee752a75d3967549de files/lirc-0.7.0_pre7-streamzap.patch.bz2 10683
 MD5 ee2b49c33fb3b2a65122cfc698d9e100 files/xbox-lircd.conf 784
