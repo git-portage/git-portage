@@ -1,6 +1,6 @@
 # Copyright 2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/Attic/vlc-0.4.2.ebuild,v 1.4 2002/10/05 05:39:16 drobbins Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/Attic/vlc-0.4.5.ebuild,v 1.1 2002/11/09 19:01:50 seemant Exp $
 
 IUSE="arts qt ncurses dvd gtk nls 3dfx esd directfb kde X alsa ggi oggvorbis gnome"
 
@@ -8,6 +8,10 @@ S=${WORKDIR}/${P}
 DESCRIPTION="VideoLAN Client - DVD/video player"
 SRC_URI="http://www.videolan.org/pub/videolan/${PN}/${PV}/${P}.tar.gz"
 HOMEPAGE="http://www.videolan.org"
+
+SLOT="0"
+LICENSE="GPL-2"
+KEYWORDS="~x86 ~ppc"
 
 DEPEND="X? ( virtual/x11 )
 	qt? ( x11-libs/qt )
@@ -23,13 +27,18 @@ DEPEND="X? ( virtual/x11 )
 	ncurses? ( sys-libs/ncurses )
 	oggvorbis? ( media-libs/libvorbis )
 	alsa? ( >=media-libs/alsa-lib-0.9_rc2 )
-	>=media-sound/mad-0.14.2b"
+	>=media-sound/mad-0.14.2b
+	>=media-libs/a52dec-0.7.4
+	>=media-libs/libdvbpsi-0.1.1"
 
 RDEPEND="nls? ( sys-devel/gettext )"
 
-SLOT="0"
-LICENSE="GPL-2"
-KEYWORDS="x86 ppc"
+# get kde and arts paths
+if [ -n "`use kde`" -o -n "`use arts`" ]; then
+    inherit kde-functions
+    set-kdedir 3
+    # $KDEDIR is now set to arts/kdelibs location
+fi
 
 src_unpack() {
 
@@ -126,28 +135,23 @@ src_compile(){
 	
 	autoconf || die
 	
-	./configure \
-		--prefix=/usr \
-		--mandir=/usr/share/man \
-		--infodir=/usr/share/info \
-		--sysconfdir=/etc \
-		--host=${CHOST} \
-		--build=${CHOST} \
-		--target=${CHOST} \
-		--localstatedir=/var/state/vlc \
+	econf \
 		--with-sdl \
 		--disable-a52 \
 		--enable-release \
 		--enable-mad \
-		${myconf} || die
+		--enable-a52 \
+		--enable-dvbpsi \
+		${myconf} || die "configure failed"
 
-	emake || die
+	emake || die "parallel make failed"
 }
 
 src_install() {
 
 	dodir /usr/{bin,lib}
-	make DESTDIR=${D} install || die
+
+	einstall || die "make install failed"
 
 	dodoc AUTHORS COPYING ChangeLog FAQ INSTALL* README* MODULES TODO
 
