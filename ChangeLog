@@ -1,5 +1,9 @@
 date 20 Apr 2001
 
+upd net-fs/samba-2.2.0_alpha3 to 2.2.0
+drobbins
+New official Samba release; we now have 2.0.8 and 2.2.0 available
+
 upd net-irc/epic4-1.0.1 to 1.0.1-r1
 ben
 
