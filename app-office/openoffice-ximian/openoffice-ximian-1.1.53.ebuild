@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/openoffice-ximian/Attic/openoffice-ximian-1.1.53.ebuild,v 1.5 2004/05/07 06:29:31 suka Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/openoffice-ximian/Attic/openoffice-ximian-1.1.53.ebuild,v 1.6 2004/05/07 15:30:49 suka Exp $
 
 # IMPORTANT:  This is extremely alpha!!!
 
@@ -27,6 +27,7 @@
 #   need to be able to install more than one language pack.
 
 inherit flag-o-matic eutils gcc
+IUSE="gnome kde"
 
 # We want gcc3 if possible!!!!
 export WANT_GCC_3="yes"
@@ -54,7 +55,6 @@ HOMEPAGE="http://ooo.ximian.com"
 LICENSE="LGPL-2 | SISSL-1.1"
 SLOT="0"
 KEYWORDS="~x86 ~ppc"
-IUSE="gnome kde"
 
 RDEPEND=">=sys-libs/glibc-2.1
 	!=sys-libs/glibc-2.3.1*
@@ -221,7 +221,7 @@ src_unpack() {
 	oo_setup
 
 	cd ${WORKDIR}
-	unpack OOo_${OO_VER}p1_source.tar.bz2 ooo-build-${PV}.tar.gz ooo-icons-${ICON_VER}.tar.gz
+	unpack ${A}
 
 	#Still needed: The STLport patch
 	cd ${S}
@@ -252,11 +252,6 @@ src_unpack() {
 	${PATCHDIR}/bin/font-munge ${S}/officecfg/registry/data/org/openoffice/VCL.xcu
 	echo "done munging fonts."
 
-	if [ "$(gcc-version)" == "3.2" ]; then
-		einfo "You use a buggy gcc, so replacing -march=pentium4 with -march=pentium3"
-		replace-flags "-march=pentium4" "-march=pentium3 -mcpu=pentium4"
-	fi
-
 	# Compile problems with these ...
 	filter-flags "-funroll-loops"
 	filter-flags "-fomit-frame-pointer"
@@ -265,6 +260,11 @@ src_unpack() {
 	append-flags "-fno-strict-aliasing"
 	replace-flags "-O3" "-O2"
 	replace-flags "-Os" "-O2"
+
+	if [ "$(gcc-version)" == "3.2" ]; then
+		einfo "You use a buggy gcc, so replacing -march=pentium4 with -march=pentium3"
+		replace-flags "-march=pentium4" "-march=pentium3 -mcpu=pentium4"
+	fi
 
 	# Now for our optimization flags ...
 	export CXXFLAGS="${CXXFLAGS} -fno-for-scope -fpermissive -fno-rtti"
