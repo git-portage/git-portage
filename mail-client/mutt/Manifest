@@ -1,6 +1,9 @@
-MD5 8a7fbbf5ae05d74c5d388fb67139c1c3 ChangeLog 11916
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 58c3e5d8eeff99c61f1d1008eba1027a ChangeLog 12122
 MD5 d2d2257af2c9c8888b00c08c4b02d51b mutt-1.5.6-r2.ebuild 4625
-MD5 6003c59b280691b238dce125ebdd64c8 mutt-1.5.6-r4.ebuild 4488
+MD5 24571ff3298b918d6b78faa032b27edb mutt-1.5.6-r4.ebuild 4586
 MD5 f46d05fe0172cb035a01f40d25242d30 metadata.xml 253
 MD5 c719facdc640f1e4583f5e52f00b6eed mutt-1.5.6.ebuild 4223
 MD5 0b4fa83b55e7e0a35d7267915ff0a32a mutt-1.5.6-r3.ebuild 4583
@@ -14,3 +17,10 @@ MD5 6cba9546cde7ee8a8e67b44d27b62366 files/digest-mutt-1.5.6 367
 MD5 ea50c00af0676472a71638d84950b220 files/digest-mutt-1.5.6-r2 517
 MD5 74ddaf505ea8bd19fbeb1330a23506ea files/8patch-1.5.6.dyc.source_stat 1531
 MD5 25e242fd402f42d5bd5230dbe9ea68a6 files/slang.patch 493
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBVa4E10xuJSrg3/sRAv8tAJ4hOHLw4+2YmddeXc4EMq2a76G6+QCfRMYH
+2zKlBmwwhXqgJeygv0tfQqw=
+=x9UV
+-----END PGP SIGNATURE-----
