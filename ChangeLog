@@ -1,5 +1,9 @@
 25.08.2000
 
+	- New	 libole2 0.1.6			(achim)
+	  [Needed for gnumeric]  
+	- New    gconf 0.80			(achim)
+	  [A configuration database for gnome]
 	- Update pam_ldap 61 -> 70		(achim)
 	- Update nss_ldap 110 -> 113		(achim)
 	- Update cocoon 1.7 -> 1.7.4		(achim)

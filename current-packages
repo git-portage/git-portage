@@ -254,8 +254,10 @@
 ./gnome-base/mc/mc-4.5.51.ebuild
 ./gnome-base/oaf/oaf-0.3.0.ebuild
 ./gnome-libs/gtkhtml/gtkhtml-0.6.1.ebuild
+./gnome-libs/libole2/libole2-0.1.6.ebuild
 ./gnome-apps/bug-buddy/bug-buddy-1.0.ebuild
 ./gnome-apps/ee/ee-0.3.12.ebuild
+./gnome-apps/gconf/gconf-0.8.ebuild
 ./gnome-apps/gdm/gdm-2.0_beta4.ebuild
 ./gnome-apps/gedit/gedit-0.9.0.ebuild
 ./gnome-apps/ggv/ggv-0.95.ebuild
