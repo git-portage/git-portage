@@ -1,7 +1,13 @@
 # ChangeLog for app-admin/ufed
 # Copyright 2002-2003 Gentoo Technologies, Inc.; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/ufed/Attic/ChangeLog,v 1.19 2003/08/13 05:00:04 fava Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/ufed/ChangeLog,v 1.1 2003/08/15 13:17:08 lanius Exp $
 
+*ufed-0.2 (15 Aug 2003)
+
+  15 Aug 2003; Heinrich Wendel <lanius@gentoo.org> ufed-0.2.ebuild,
+  ufed-0.3.ebuild, ufed-0.31.ebuild, ufed-0.32.ebuild, ufed-0.33.ebuild,
+  ufed-0.34.ebuild:
+  moved from app-admin to app-portage
 
 *ufed-0.34 (12 Aug 2003)
 

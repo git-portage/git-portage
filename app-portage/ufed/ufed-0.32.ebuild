@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/ufed/Attic/ufed-0.32.ebuild,v 1.1 2003/05/05 03:38:03 fava Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/ufed/Attic/ufed-0.32.ebuild,v 1.1 2003/08/15 13:17:08 lanius Exp $
 
 DESCRIPTION="Gentoo Linux USE flags editor"
 HOMEPAGE="http://www.gentoo.org"
