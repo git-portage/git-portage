@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.6.0_beta9-r1.ebuild,v 1.2 2003/11/20 07:43:38 lostlogic Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.6.0_beta11-r1.ebuild,v 1.1 2003/12/17 15:30:19 tseng Exp $
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
 ETYPE="sources"
@@ -39,6 +39,9 @@ src_unpack() {
 	cd ${S}
 	bzcat ${DISTDIR}/${KV}.bz2 | patch -p1 || die "mm patch failed"
 	find . -iname "*~" | xargs rm 2> /dev/null
+
+	#Fix broken APIC includes in test11-mm1 (tseng)
+	epatch ${FILESDIR}/apic.patch || die "APIC fix failed"
 
 	# Gentoo Linux uses /boot, so fix 'make install' to work properly
 	# also fix the EXTRAVERSION
