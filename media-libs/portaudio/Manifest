@@ -1,5 +1,7 @@
+MD5 ad7eed3c8b8448ace3f96afdd6c67d16 portaudio-18.1.ebuild 894
 MD5 07c2962f2fd5139da390e1593fe2a2f4 portaudio-18.ebuild 881
 MD5 5c809ae79cabfb5d2afa96b229e602af ChangeLog 776
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
+MD5 24037d452fff400001cf4a3a4dec3585 files/digest-portaudio-18.1 64
 MD5 18d9bba97a0da6eb457678c0ea20aa4b files/portaudio-use-fpic.patch 323
 MD5 216bea28964aee7308b174121350d20d files/digest-portaudio-18 62
