@@ -1,35 +1,29 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/strace/Attic/strace-4.5.1.ebuild,v 1.16 2004/11/22 02:21:52 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/strace/Attic/strace-4.5.8.ebuild,v 1.1 2004/11/22 02:21:52 vapier Exp $
 
-inherit flag-o-matic eutils
+inherit flag-o-matic
 
 DESCRIPTION="A useful diagnostic, instructional, and debugging tool"
-HOMEPAGE="http://www.wi.leidenuniv.nl/~wichert/strace/"
+HOMEPAGE="http://sourceforge.net/projects/strace/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="x86 ppc sparc mips alpha arm hppa amd64 ia64 ppc64"
-IUSE=""
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
+IUSE="static"
 
-DEPEND="virtual/libc
-	>=sys-devel/autoconf-2.54"
+DEPEND="virtual/libc"
 
-src_compile() {
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+
 	# Compile fails with -O3 on sparc but works on x86
-	if [ "${ARCH}" == "sparc" -o "${ARCH}" == "" ]; then
-		replace-flags -O[3-9] -O2
-	fi
+	[ "${ARCH}" == "sparc" ] && replace-flags -O[3-9] -O2
 	filter-lfs-flags
 
-	epatch ${FILESDIR}/${P}-2.6.patch
-
-	# configure is broken by default for sparc and possibly others, regen
-	# from configure.in
-	autoconf
-	./configure --prefix=/usr || die "configure died"
-	emake || die "make failed"
+	use static && append-ldflags -static
 }
 
 src_install() {
