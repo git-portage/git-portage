@@ -52,7 +52,7 @@
 ./sys-devel/autoconf/autoconf-2.13-r1.ebuild
 ./sys-devel/automake/automake-1.4-r1.ebuild
 ./sys-devel/bc/bc-1.05a-r1.ebuild
-./sys-devel/bin86/bin86-0.15.1-r1.ebuild
+./sys-devel/bin86/bin86-0.15.1.ebuild
 ./sys-devel/binutils/binutils-2.10.0.24.ebuild
 ./sys-devel/bison/bison-1.28-r1.ebuild
 ./sys-devel/flex/flex-2.5.4a-r1.ebuild
