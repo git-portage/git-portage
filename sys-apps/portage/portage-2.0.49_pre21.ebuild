@@ -1,5 +1,5 @@
 # Distributed under the terms of the GNU General Public License v2 
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.49_pre18.ebuild,v 1.2 2003/08/18 18:54:05 carpaski Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.49_pre21.ebuild,v 1.1 2003/08/21 02:05:25 carpaski Exp $
 
 IUSE="build"
 
@@ -12,8 +12,8 @@ SLOT="0"
 DESCRIPTION="Portage ports system"
 SRC_URI="http://gentoo.twobit.net/portage/${PF}.tar.bz2 mirror://gentoo/${PF}.tar.bz2"
 HOMEPAGE="http://www.gentoo.org"
-#KEYWORDS="alpha amd64 arm hppa mips ppc sparc x86"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ~sparc ~x86"
+KEYWORDS="alpha amd64 arm hppa mips ppc sparc x86"
+#KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ~sparc ~x86"
 LICENSE="GPL-2"
 RDEPEND="!build? ( >=sys-apps/sed-4.0.5 dev-python/python-fchksum >=dev-lang/python-2.2.1 sys-apps/debianutils >=app-shells/bash-2.05a )"
 
@@ -75,7 +75,7 @@ src_install() {
 	./setup.py install --root ${D} || die
 	cd ${S}/pym
 	insinto /usr/lib/python2.2/site-packages
-	doins xpak.py portage.py output.py cvstree.py getbinpkg.py
+	doins xpak.py portage.py output.py cvstree.py getbinpkg.py dispatch_conf.py
 
 
 	#binaries, libraries and scripts
@@ -98,6 +98,8 @@ src_install() {
 	dosym ../lib/portage/bin/ebuild.sh /usr/sbin/ebuild.sh
 
 	dosym ../lib/portage/bin/etc-update /usr/sbin/etc-update
+	dosym ../lib/portage/bin/dispatch-conf /usr/sbin/dispatch-conf
+	dosym ../lib/portage/bin/archive-conf /usr/sbin/archive-conf
 	dosym ../lib/portage/bin/fixpackages /usr/sbin/fixpackages
 	
 	dosym ../lib/portage/bin/env-update /usr/sbin/env-update
@@ -110,7 +112,6 @@ src_install() {
 	dosym ../lib/portage/bin/quickpkg /usr/bin/quickpkg
 	dosym ../lib/portage/bin/regenworld /usr/sbin/regenworld
 	dosym ../lib/portage/bin/emerge-webrsync /usr/sbin/emerge-webrsync
-	dosym ../lib/portage/bin/dispatch-conf /usr/sbin/dispatch-conf
 
 	dosym newins /usr/lib/portage/bin/donewins
 	
@@ -233,6 +234,7 @@ pkg_postinst() {
 	rm -f ${ROOT}usr/lib/python2.2/site-packages/cvstree.py[co]
 	rm -f ${ROOT}usr/lib/python2.2/site-packages/getbinpkg.py[co]
 	rm -f ${ROOT}usr/lib/python2.2/site-packages/emergehelp.py[co]
+	rm -f ${ROOT}usr/lib/python2.2/site-packages/dispatch_conf.py[co]
 	chmod 2775 ${ROOT}var/cache/edb/dep ${ROOT}var/cache/edb/dep/*
 	chown -R root.wheel ${ROOT}var/cache/edb/dep
 	
@@ -243,8 +245,10 @@ pkg_postinst() {
 	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/python2.2/site-packages/output.py')" || die
 	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/python2.2/site-packages/cvstree.py')" || die
 	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/python2.2/site-packages/cvstree.py')" || die
-	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/python2.2/site-packages/getbinpkg.py')" || die
 	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/python2.2/site-packages/getbinpkg.py')" || die
+	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/python2.2/site-packages/getbinpkg.py')" || die
+	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/python2.2/site-packages/dispatch_conf.py')" || die
+	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/python2.2/site-packages/dispatch_conf.py')" || die
 	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/bin/emergehelp.py')" || die
 	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/bin/emergehelp.py')" || die
 
