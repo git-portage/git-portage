@@ -56,10 +56,10 @@
 ./sys-devel/automake/automake-1.4-r1.ebuild
 ./sys-devel/bc/bc-1.05a-r1.ebuild
 ./sys-devel/bin86/bin86-0.15.1.ebuild
-./sys-devel/binutils/binutils-2.10.0.26.ebuild
+./sys-devel/binutils/binutils-2.10.0.33.ebuild
 ./sys-devel/bison/bison-1.28-r1.ebuild
 ./sys-devel/flex/flex-2.5.4a-r1.ebuild
-./sys-devel/gcc/gcc-2.95.2-r1.ebuild
+./sys-devel/gcc/gcc-2.95.2-r4.ebuild
 ./sys-devel/gdb/gdb-5.0-r1.ebuild
 ./sys-devel/ld.so/ld.so-1.9.11-r1.ebuild
 ./sys-devel/libtool/libtool-1.3.5-r1.ebuild
@@ -75,7 +75,7 @@
 ./sys-libs/gdbm/gdbm-1.8.0-r1.ebuild
 ./sys-libs/gettext/gettext-0.10.35-r1.ebuild
 ./sys-libs/glibc/glibc-2.1.3-r2.ebuild
-#./sys-libs/glibc/glibc-2.1.94.ebuild
+#./sys-libs/glibc/glibc-2.2.ebuild
 ./sys-libs/gpm/gpm-1.19.3.ebuild
 ./sys-libs/lib-compat/lib-compat-1.0-r1.ebuild
 ./sys-libs/ncurses/ncurses-5.1-r1.ebuild
