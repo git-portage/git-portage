@@ -8,7 +8,14 @@ C_OK=$'\e[32m'
 C_NO=$'\e[31m'
 PORTDIR=/usr/portage
 LOGDIR=$ROOT/tmp/portage-log
-STEPS="check fetch clean compile install qmerge clean"
+if [ -z "$CHECK" ]
+then
+  CHECK="yes"
+fi
+if [ -z "$STEPS" ]
+then
+  STEPS="check fetch clean compile install qmerge clean"
+fi
 #STEPS="check unmerge"
 
 do_step() {
@@ -75,9 +82,12 @@ do
   then
 
     # Check if installed
-    if [ -d ${ROOT}/var/db/pkg/$myc/$myp ]
+    if [ "$CHECK" = "yes" ]
     then
-      continue
+        if [ -d ${ROOT}/var/db/pkg/$myc/$myp ]
+        then
+            continue
+        fi
     fi
 
     echo "$C_NORMAL$myp ($myc)"
@@ -102,6 +112,5 @@ do
   else
     echo "!!! $myd does not exists !"
   fi
-  env-update
-  env-update
+  env-update &>/dev/null
 done
