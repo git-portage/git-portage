@@ -1,7 +1,7 @@
 MD5 39793fbef16989ec7c19fa8ba04370ee udev-013.ebuild 3343
-MD5 204e09f1b9ee17de6d9d8d665e40df15 udev-017.ebuild 3695
+MD5 4c57d80c8c2dd5476d5262dc2a5e8bdf udev-017.ebuild 3602
 MD5 813397f1f9255c1b8c5e05e67b182938 udev-013-r1.ebuild 3352
-MD5 38c6c935931841bba9ea1a48f9ce5067 ChangeLog 6224
+MD5 122e3cea952a01a8717e24934328563f ChangeLog 6379
 MD5 a19af1e2e874cadb09ab486d2fd343bb udev-012.ebuild 3400
 MD5 1001a80c31740e12beee81fe73e95f37 udev-015.ebuild 3761
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
@@ -13,6 +13,7 @@ MD5 8ee2274e54f304cb9dbbe9094982fe94 files/digest-udev-013-r1 62
 MD5 a6c3a71920f59dc127d418d7ba3c6a77 files/digest-udev-016 62
 MD5 a6c3a71920f59dc127d418d7ba3c6a77 files/digest-udev-016-r1 62
 MD5 4e0d7e033730bbe5544745788e7a13a8 files/udev-012-udev_c-gcc295-compat.patch 277
+MD5 d0a7b64f76b612bef576c02a48e83caf files/udev-017-no-wait-for-sleep.patch 1673
 MD5 194ac8ffc6c63327f8802eec5aeb7811 files/udev-015-sysbus-missing-include.patch 305
 MD5 35fcac8040808dde93580ddfe5ff5a18 files/digest-udev-012 62
 MD5 ea8dcace65aa8d8071236e48ec1684af files/udev-015-logging-config-option.patch 4332
