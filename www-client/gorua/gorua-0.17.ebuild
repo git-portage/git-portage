@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/gorua/Attic/gorua-0.17.ebuild,v 1.4 2004/06/25 00:53:01 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/gorua/Attic/gorua-0.17.ebuild,v 1.1 2004/09/08 13:46:39 usata Exp $
 
 inherit eutils
 

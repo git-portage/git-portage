@@ -1,6 +1,13 @@
-# ChangeLog for net-www/gorua
+# ChangeLog for www-client/gorua
 # Copyright 2000-2004 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/gorua/Attic/ChangeLog,v 1.9 2004/06/25 00:53:01 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/gorua/Attic/ChangeLog,v 1.1 2004/09/08 13:46:39 usata Exp $
+
+*gorua-0.17 (08 Sep 2004)
+
+  08 Sep 2004; Mamoru KOMACHI <usata@gentoo.org> +metadata.xml,
+  +files/bookmarks_sample, +files/goRua.sh,
+  +files/gorua-bbsmenu-update-gentoo.diff, +gorua-0.17.ebuild:
+  Moved net-www/gorua to www-client/gorua.
 
   16 May 2004; Mamoru KOMACHI <usata@gentoo.org> gorua-0.16-r2.ebuild,
   gorua-0.17.ebuild, files/bookmarks_sample,
