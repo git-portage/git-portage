@@ -8,7 +8,7 @@ MD5 d48f0b8a5f0dba60c301aea3379a0bba php-4.3.6.ebuild 1084
 MD5 2d40e0aea5427f4d01213a0c48310950 php-4.3.6_rc2.ebuild 1131
 MD5 a6bc1c9e6cab6af3f4d91aacf83d8131 php-4.3.7-r1.ebuild 1085
 MD5 336d45e9c2e5954c1425e9811bde48ec php-4.3.7.ebuild 1086
-MD5 5e25d8556461f8068f5dfe9ffd04d401 php-5.0.0.ebuild 531
+MD5 d46b0252c8b1ffd4ef5630203f0715c6 php-5.0.0.ebuild 529
 MD5 b36ae99d4627d5ba31258473c88ca785 php-4.3.8.ebuild 1087
 MD5 bb70a1c76063845cc7a7aa8b1be746da files/digest-php-4.3.4-r4 131
 MD5 f2214a80da2f53f5a17caeddfc34876f files/digest-php-4.3.5 131
