@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/epm/Attic/epm-0.7.ebuild,v 1.2 2004/02/22 19:50:12 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/epm/Attic/epm-0.7.ebuild,v 1.3 2004/03/08 23:27:47 agriffis Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="rpm workalike for Gentoo Linux"
