@@ -1,3 +1,16 @@
+date 07 May 2001
+upd media-libs/giflib-4.1.0-r2 4.1.0-r3
+aj
+Added check for 'ungif' USE variable
+
+upd media-libs/libungif-4.1.0b1-r1 to 4.1.0
+aj
+Yeah!  not a beta!  (also added check for 'gif' USE variable)
+
+new app-misc/magicpoint-1.07a
+aj
+Magicpoint is a cool X11-based presentation tool
+
 date 06 May 2001
 
 new gnome-apps/gphoto-0.4.3
