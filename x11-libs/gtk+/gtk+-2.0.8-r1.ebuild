@@ -1,19 +1,20 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.0.7.ebuild,v 1.1 2002/11/05 03:49:39 spider Exp $
-
-IUSE="tiff doc jpeg"
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.0.8-r1.ebuild,v 1.1 2002/11/15 22:16:33 seemant Exp $
 
 inherit libtool flag-o-matic
 
-SLOT="2"
-KEYWORDS="~x86 ~ppc ~sparc ~sparc64 ~alpha"
+IUSE="tiff doc jpeg directfb"
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Gimp ToolKit + "
-SRC_URI="ftp://ftp.gtk.org/pub/gtk/v2.0/${P}.tar.bz2"
+SRC_URI="ftp://ftp.gtk.org/pub/gtk/v2.0/${P}.tar.bz2
+	directfb? mirror://gentoo/${PN}-directfb-${PV}-gentoo.bz2"
 HOMEPAGE="http://www.gtk.org/"
+
+SLOT="2"
 LICENSE="LGPL-2.1"
+KEYWORDS="~x86 ~ppc ~sparc ~sparc64 ~alpha"
 
 RDEPEND="virtual/x11
 	>=dev-libs/glib-2.0.7
@@ -21,12 +22,17 @@ RDEPEND="virtual/x11
 	>=x11-libs/pango-1.0.4-r1
 	>=media-libs/libpng-1.2.1
 	jpeg? ( >=media-libs/jpeg-6b-r2 )
-	tiff? ( >=media-libs/tiff-3.5.7 )
-	directfb? ( >=dev-libs/DirectFB-0.9.13 )"
+	tiff? ( >=media-libs/tiff-3.5.7 )"
 
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.12.0
-	 doc? ( >=dev-util/gtk-doc-0.9 )"
+	 doc? ( >=dev-util/gtk-doc-0.9 
+		app-text/sgmltools-lite )"
+
+src_unpack() {
+	unpack ${A}
+	patch -p0 < ${PN}-directfb-${PV}-gentoo || die
+}
 
 src_compile() {
 	# see bug 8762
