@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Mikael Hallendal <hallski@gentoo.org>, Martin Schlemmer <azarah@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/net-mail/evolution/Attic/evolution-0.15.ebuild,v 1.1 2001/10/04 20:37:09 hallski Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/evolution/Attic/evolution-0.15-r2.ebuild,v 1.1 2001/10/07 00:09:25 hallski Exp $
 
 DB3=db-3.1.17
 A="${P}.tar.gz ${DB3}.tar.gz"
@@ -12,25 +12,24 @@ SRC_URI="ftp://ftp.ximian.com/pub/source/${PN}/${A}
 	 http://www.sleepycat.com/update/3.1.17/${DB3}.tar.gz"
 HOMEPAGE="http://www.ximian.com"
 
-# Fixed bonobo-conf, gal, gtkhtml order as specified in Evolution README 
-# (really needed?)
-DEPEND=">=gnome-libs/bonobo-conf-0.11
-        >=gnome-base/bonobo-1.0.8
-	>=gnome-base/gal-0.13
-        >=gnome-base/gconf-1.0.4
-	>=gnome-base/gtkhtml-0.14
-	>=gnome-base/oaf-0.6.6
-	>=gnome-base/ORBit-0.5.8
-	>=gnome-base/libglade-0.14
-	>=media-libs/gdk-pixbuf-0.9.0
-	>=gnome-base/libxml-1.8.15
-	>=gnome-base/gnome-vfs-1.0
-	>=gnome-base/gnome-print-0.25
-	>=gnome-base/scrollkeeper-0.2
+DEPEND=">=gnome-extra/bonobo-conf-0.12
+        >=gnome-base/bonobo-1.0.9-r1
+	>=gnome-extra/gal-0.13-r1
+        >=gnome-base/gconf-1.0.4-r1
+	>=gnome-extra/gtkhtml-0.14.0-r1
+	>=gnome-base/oaf-0.6.6-r1
+	>=gnome-base/ORBit-0.5.10-r1
+	>=gnome-base/libglade-0.17-r1
+	>=media-libs/gdk-pixbuf-0.11.0-r1
+	>=dev-libs/libxml-1.8.15
+	>=gnome-base/gnome-vfs-1.0.2-r1
+	>=gnome-base/gnome-print-0.20
+	>=app-text/scrollkeeper-0.2
         >=dev-util/xml-i18n-tools-0.8.4
 	ssl? ( dev-libs/openssl )
 	ldap? ( net-nds/openldap )
-	mozilla? ( net-www/mozilla )" 
+	mozilla? ( >=net-www/mozilla-0.9.4-r2 )
+	pda? ( >=gnome-extra/gnome-pilot-0.1.61-r1 )" 
 
 src_compile() {
 	cd ${WORKDIR}/${DB3}/build_unix
@@ -50,18 +49,26 @@ src_compile() {
 		myconf="$myconf --disable-ssl"
 	fi
 
+	if [ "`use pda`" ] ; then
+		myconf="$myconf --with-pisock=/usr --enable-pilot-conduits=yes"
+	fi
+
 	if [ "`use mozilla`" ] ; then
 		myconf="$myconf --with-nspr-includes=${MOZILLA}/include/nspr \
 				--with-nss-includes=${MOZILLA}/include       \
 				--with-nspr-libs=${MOZILLA}"
 	fi
 
-	./configure --prefix=/opt/gnome --host=${CHOST} 		     \
-		    --sysconfdir=/etc/opt/gnome 			     \
-		    --enable-file-locking=no 				     \
-		    --with-db3=${WORKDIR}/db3 				     \
-	            --without-movemail 					     \
-		    --enable-nntp $myconf || die
+	CFLAGS="-I${WORKDIR}/db3/include ${CFLAGS} 			\
+		`gnome-config --cflags bonobo`"
+
+	./configure --host=${CHOST} 		     			\
+		    --prefix=/usr					\
+		    --sysconfdir=/etc		 			\
+		    --enable-file-locking=no 				\
+		    --with-db3=${WORKDIR}/db3 				\
+	            --without-movemail 					\
+		    $myconf || die
 
 	make || die # emake didn't work.
 }
