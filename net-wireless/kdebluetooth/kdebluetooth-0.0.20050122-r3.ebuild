@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/kdebluetooth/Attic/kdebluetooth-0.0.20050122-r1.ebuild,v 1.1 2005/01/22 19:51:14 motaboy Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/kdebluetooth/Attic/kdebluetooth-0.0.20050122-r3.ebuild,v 1.1 2005/01/30 17:50:50 motaboy Exp $
 
 inherit kde
 
@@ -13,11 +13,13 @@ LICENSE="GPL-2"
 KEYWORDS="~x86 ~ppc"
 IUSE="xmms irmc"
 
-RDEPEND=">=dev-libs/openobex-1
+DEPEND=">=dev-libs/openobex-1
 	>=net-wireless/bluez-libs-2.7
 	>=media-libs/libvorbis-1.0
 	xmms? ( >=media-sound/xmms-1.2.10 )
 	irmc? ( || ( >=kde-base/kitchensync-3.4_beta1 >=kde-base/kdepim-3.4_beta1 ) )"
+
+RDEPEND="|| ( kde-base/kdialog kde-base/kdebase )"
 
 need-kde 3
 
