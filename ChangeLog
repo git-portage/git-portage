@@ -1,5 +1,19 @@
 date 22 Nov 2000
 
+new net-misc/openssh-2.3.0_p1
+jerry
+Added latest and greatest version of OpenSSH.
+
+del net-misc/openssh-2.2.0_p1
+jerry
+Removed old versions of OpenSSH.  Better to be rid of them and not have
+any conflict.  Especially since 2.3.0 corrects some security holes.
+
+del net-misc/openssh-2.2.0_p1-r1
+jerry
+Removed old versions of OpenSSH.  Better to be rid of them and not have
+any conflict.  Especially since 2.3.0 corrects some security holes.
+
 upd kde-base/kdebase-2.0 to kdebase-2.0-r2
 achim
 Added openmotif to the dependencies
