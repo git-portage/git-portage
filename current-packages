@@ -5,6 +5,7 @@
 ./app-admin/powertweak/powertweak-0.1.16-r1.ebuild
 ./app-admin/runset/runset-1.3-r1.ebuild
 ./app-admin/sudo/sudo-1.6.3_p5.ebuild
+#!./app-admin/sysstat-3.2.4.ebuild
 ./app-admin/usbview/usbview-0.9.0.ebuild
 ./app-admin/webalizer/webalizer-1.30.04-r1.ebuild
 ./app-admin/yup/yup-0.6.5-r1.ebuild
@@ -54,8 +55,11 @@
 ./app-text/sharefonts/sharefonts-0.10.ebuild
 ./app-text/tetex/tetex-1.0.7-r1.ebuild
 ./app-text/ttf2pt1/ttf2pt1-3.3.0.ebuild
+#!./app-text/ttf2pt1/ttf2pt1-3.3.2.ebuild
 ./dev-db/MyODBC/MyODBC-2.50.36.ebuild
 ./dev-db/mysql/mysql-3.23.27.ebuild
+#!./dev-db/mysql/mysql-3.23.28.ebuild
+#!./dev-db/postgresql/postgresql-7.0.3.ebuild
 ./dev-db/unixODBC/unixODBC-1.8.13.ebuild
 ./dev-java/fesi/fesi-1.ebuild
 ./dev-java/jndi/jndi-1.2.1-r1.ebuild
@@ -123,6 +127,7 @@
 ./dev-util/lincvs/lincvs-0.3_beta1.ebuild
 ./dev-util/sel/sel-0.08.2.ebuild
 ./dev-util/strace/strace-4.2-r2.ebuild
+#!./dev-utils/tmake/tmake-1.6.ebuild
 ./dev-util/yacc/yacc-1.9.1-r1.ebuild
 ./gnome-apps/bug-buddy/bug-buddy-1.2.ebuild
 ./gnome-apps/ee/ee-0.3.12-r1.ebuild
@@ -138,6 +143,7 @@
 ./gnome-apps/gnome-utils/gnome-utils-1.2.1-r1.ebuild
 ./gnome-apps/gnorpm/gnorpm-0.95.1-r1.ebuild
 ./gnome-apps/gnucash/gnucash-1.4.7-r2.ebuild
+#!./gnome-apps/gtkdiff/gtkdiff-1.7.0.ebuild
 ./gnome-apps/gtop/gtop-1.0.10.ebuild
 ./gnome-apps/gupsc/gupsc-0.3.0-r1.ebuild
 #./gnome-apps/nautilus/nautilus-0.5.0.ebuild
@@ -194,6 +200,7 @@
 ./kde-base/kdelibs/kdelibs-2.0.ebuild
 ./kde-base/kdesupport/kdesupport-2.0.ebuild
 ./kde-base/qt/qt-x11-2.2.1.ebuild
+#!./kde-base/qt/qt-x11-2.2.1.ebuild
 ./media-gfx/autotrace/autotrace-0.24a.ebuild
 ./media-gfx/aview/aview-1.2-r2.ebuild
 ./media-gfx/blender/blender-2.04.ebuild
@@ -228,14 +235,14 @@
 ./media-libs/tiff/tiff-3.5.5-r1.ebuild
 #./media-sound/alsa-driver/alsa-driver-0.5.9c.ebuild
 ./media-sound/alsa-utils/alsa-utils-0.5.9b-r1.ebuild
-./media-sound/esound/esound-0.2.19.ebuild
-#./media-sound/esound/esound-0.2.20.ebuild
+./media-sound/esound/esound-0.2.20.ebuild
 ./media-sound/gtk-gnutella/gtk-gnutella-0.12-r2.ebuild
 ./media-sound/lame/lame-3.86b.ebuild
 ./media-sound/lopster/lopster-0.9.6.ebuild
 ./media-sound/mpg123/mpg123-0.59r.ebuild
 ./media-sound/nas/nas-1.4.1.ebuild
 ./media-sound/sox/sox-12.17.ebuild
+#!./media-sound/sox/sox-12.17.1.ebuild
 ./media-sound/xmms/xmms-1.2.3.ebuild
 ./media-video/bcast-2000/bcast-2000b-r1.ebuild
 ./media-video/lamp/lamp-20000903.ebuild
@@ -251,6 +258,7 @@
 ./media-video/xmovie/xmovie-1.5.2.ebuild
 ./media-video/xmps/xmps-0.1.3-r1.ebuild
 ./net-analyzer/ethereal/ethereal-0.8.12.ebuild
+#!./net-analyzer/ethereal/ethereal-0.8.14.ebuild
 ./net-analyzer/nessus/nessus-1.0.5.ebuild
 ./net-analyzer/ngrep/ngrep-1.38-r1.ebuild
 ./net-analyzer/nmap/nmap-2.53-r2.ebuild
@@ -262,6 +270,7 @@
 ./net-dialup/isdn4k-utils/isdn4k-utils-3.1_p1-r1.ebuild
 ./net-dialup/ppp/ppp-2.4.0-r1.ebuild
 ./net-dialup/pppoed/pppoed-0.47-r1.ebuild
+#!./net-dialup/qtwvdialer(qtwvdialer-0.3.1.ebuild
 ./net-dialup/rp-pppoe/rp-pppoe-2.3.ebuild
 ./net-dialup/wvdial/wvdial-1.41-r1.ebuild
 ./net-fs/autofs/autofs-3.1.5-r1.ebuild
@@ -317,8 +326,10 @@
 ./net-nds/yp-tools/yp-tools-2.4-r1.ebuild
 ./net-nds/ypbind/ypbind-1.6-r1.ebuild
 ./net-nds/ypserv/ypserv-1.3.9-r1.ebuild
+#!./net-print/gtklp/gtklp-0.6d.ebuidl
 ./net-print/LPRng/LPRng-3.6.24.ebuild
 ./net-print/cups/cups-1.1.4.ebuild
+#!./net-www/amaya/amaya-4.1.ebuild
 ./net-www/apache-ssl/apache-ssl-1.3.14.2.7.1.ebuild
 ./net-www/cocoon/cocoon-1.7.4.ebuild
 ./net-www/cvsweb/cvsweb-1.93.ebuild
@@ -346,6 +357,7 @@
 ./sys-apps/e2fsprogs/e2fsprogs-1.19.ebuild
 ./sys-apps/ed/ed-0.2.ebuild
 ./sys-apps/file/file-3.32.ebuild
+#!./sys-apps/file/file-3.33.ebuild
 ./sys-apps/fileutils/fileutils-4.0.32.ebuild
 ./sys-apps/findutils/findutils-4.1-r1.ebuild
 ./sys-apps/gawk/gawk-3.0.6.ebuild
@@ -362,6 +374,7 @@
 ./sys-apps/lilo/lilo-21.6.ebuild
 ./sys-apps/man/man-1.5.1h-r1.ebuild
 ./sys-apps/modutils/modutils-2.3.17.ebuild
+#!./sys-apps/modutils/modutils-2.3.21.ebuild
 ./sys-apps/most/most-4.9.0-r1.ebuild
 ./sys-apps/net-tools/net-tools-1.57-r1.ebuild
 ./sys-apps/netkit-base/netkit-base-0.17-r1.ebuild
@@ -384,6 +397,7 @@
 ./sys-apps/ucspi-tcp/ucspi-tcp-0.88.ebuild
 ./sys-apps/updated/updated-2.11-r1.ebuild
 ./sys-apps/util-linux/util-linux-2.10o.ebuild
+#!./sys-apps/util-linux/util-linux-2.10q.ebuild
 ./sys-apps/vcron/vcron-3.0_p1-r1.ebuild
 ./sys-apps/vim-nogui/vim-nogui-5.7-r2.ebuild
 ./sys-apps/watchpid/watchpid-0.1.ebuild
