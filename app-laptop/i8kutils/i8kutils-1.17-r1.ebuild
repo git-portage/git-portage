@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/i8kutils/Attic/i8kutils-1.17.ebuild,v 1.6 2003/06/21 21:19:40 drobbins Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-laptop/i8kutils/Attic/i8kutils-1.17-r1.ebuild,v 1.1 2004/03/08 05:28:47 latexer Exp $
 
 S=${WORKDIR}/${P}/
 DESCRIPTION="Dell Inspiron and Latitude utilities"
@@ -12,7 +12,7 @@ DEPEND="virtual/glibc
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="tcltk"
-KEYWORDS="x86 amd64 -mips"
+KEYWORDS="~x86 ~amd64 -mips"
 
 
 src_compile() {
@@ -32,4 +32,10 @@ src_install() {
 	dodoc Configure.help.i8k
 	docinto examples/
 	dodoc examples/*
+
+	insinto /etc/init.d
+	newins ${FILESDIR}/i8k.init i8k
+	fperms 755 /etc/init.d/i8k
+	insinto /etc/conf.d
+	newins ${FILESDIR}/i8k.conf i8k
 }
