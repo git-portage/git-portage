@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/mozilla/Attic/mozilla-1.2.1-r2.ebuild,v 1.4 2002/12/15 15:38:07 mholzer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/mozilla/Attic/mozilla-1.2.1-r5.ebuild,v 1.1 2003/01/19 14:28:54 azarah Exp $
 
 IUSE="java crypt ipv6 gtk2 ssl ldap gnome"
 # Internal USE flags that I do not really want to advertise ...
@@ -11,6 +11,10 @@ inherit flag-o-matic gcc makeedit eutils nsplugins
 
 # Crashes on start when compiled with -fomit-frame-pointer
 filter-flags "-fomit-frame-pointer"
+
+# Sparc support ...
+replace-flags "-mcpu=ultrasparc" "-mcpu=v8 -mtune=v9"
+replace-flags "-mcpu=v9" "-mcpu=v8 -mtune=v9"
 
 # Recently there has been a lot of stability problem in Gentoo-land.  Many
 # things can be the cause to this, but I believe that it is due to gcc3
@@ -32,7 +36,12 @@ filter-flags "-fomit-frame-pointer"
 # problems.
 #
 # <azarah@gentoo.org> (13 Oct 2002)
-#strip-flags
+strip-flags
+
+# We set -O in ./configure to -O1, as -O2 cause crashes on startup ...
+# (bug #13287)
+export CFLAGS="${CFLAGS//-O?}"
+export CXXFLAGS="${CFLAGS//-O?}"
 
 EMVER="0.71.0"
 IPCVER="1.0.1"
@@ -54,7 +63,7 @@ SRC_URI="ftp://ftp.mozilla.org/pub/mozilla/releases/${PN}${MY_PV2}/src/${PN}-sou
 #	mirror://gentoo/${P}-patches-${PATCH_VER}.tar.bz2"
 HOMEPAGE="http://www.mozilla.org"
 
-KEYWORDS="~x86 ~ppc ~sparc ~alpha"
+KEYWORDS="x86 ~ppc ~sparc ~alpha"
 SLOT="0"
 LICENSE="MPL-1.1 NPL-1.1"
 
@@ -82,6 +91,25 @@ DEPEND="${RDEPEND}
 	sys-devel/perl
 	java? ( >=dev-java/java-config-0.2.0 )"
 
+
+pkg_setup() {
+
+	if [ "`use gtk2`" -a "${WANT_GTK2}" != "yes" ]
+	then
+		echo
+		eerror "Due to the many bugs related with gtk+-2.x support"
+		eerror "in mozilla, this ebuild will not build with gtk2 support,"
+		eerror "if you do not do:"
+		eerror
+		eerror "  # WANT_GTK2=\"yes\" emerge mozilla"
+		eerror
+		eerror "The alternative is to merge without gtk2 support, which"
+		eerror "is recommended:"
+		eerror
+		eerror "  # USE=\"-gtk2\" emerge mozilla"
+		die "Wont build gtk2 support without being forced!"
+	fi
+}
 
 moz_setup() {
 
@@ -160,6 +188,14 @@ src_unpack() {
 # Seem to cause lockups/segfaults - <azarah@gentoo.org> (8 Dec 2002)
 #	epatch ${FILESDIR}/${PV%\.*}/${P%\.*}-cutnpaste-limit-fix.patch.bz2
 
+	# Fix a memory leak when reloading images:
+	#
+	#   http://bugs.gentoo.org/show_bug.cgi?id=13667
+	#   http://bugzilla.mozilla.org/show_bug.cgi?id=179498
+	#
+	# <azarah@gentoo.org> (19 Jan 2003)
+	epatch ${FILESDIR}/${PV%\.*}/${P%\.*}-image-reload-memleak.patch
+
 	if [ -z "`use gtk2`" ]
 	then
 		if [ -z "`use moznoxft`" ]
@@ -167,6 +203,12 @@ src_unpack() {
 			# Get mozilla to link to Xft2.0 that we install in tmp directory
 			# <azarah@gentoo.org> (18 Nov 2002)
 			epatch ${FILESDIR}/${PV%\.*}/${P%\.*}b-Xft-includes.patch.bz2
+			
+			# Fix include problem in Xrender if the updated one is not installed
+			# system wide ... bug #12223.
+			cd ${FC_S}/../Xrender
+			epatch ${FILESDIR}/${PV%\.*}/${P}-Xrender-includes.patch.bz2
+			cd ${S}
 		fi
 	else
 		# Update Gtk+2 bits from CVS
@@ -226,8 +268,14 @@ src_compile() {
 						  --disable-dtd-debug \
 						  --enable-reorder \
 						  --enable-strip \
-						  --enable-elf-dynstr-gc \
 						  --enable-cpp-rtti"
+
+		# Currently --enable-elf-dynstr-gc only works for x86 and ppc,
+		# thanks to Jason Wever <weeve@gentoo.org> for the fix.
+		if [ -n "`use x86`" -o -n "`use ppc`" ]
+		then
+			myconf="${myconf} --enable-elf-dynstr-gc"
+		fi
 
 		if [ -z "`use gtk2`" ]
 		then
@@ -354,7 +402,7 @@ src_compile() {
 
 	if [ -z "`use gtk2`" -a -z "`use moznoxft`" ]
 	then
-		mkdir -p ${WORKDIR}/Xft/{include,lib}
+		mkdir -p ${WORKDIR}/Xft/{include/X11/extensions,lib}
 
 		# We need to update Xrender ..
 		cd ${FC_S}/../Xrender
@@ -364,7 +412,7 @@ src_compile() {
 		# system wide libs ...
 		make LIBNAME="Xrender_moz"
 		cp -df Xrender.h extutil.h region.h render.h renderproto.h \
-			${WORKDIR}/Xft/include
+			${WORKDIR}/Xft/include/X11/extensions
 		cp -df libXrender_moz.so* ${WORKDIR}/Xft/lib
 		cd ${WORKDIR}/Xft/lib
 		# Create the libXrender.so to our _moz version so that Xft will
@@ -426,7 +474,7 @@ src_compile() {
 		--with-java-supplement \
 		--with-pthreads \
 		--enable-extensions="${myext}" \
-		--enable-optimize="-O2" \
+		--enable-optimize="-O1" \
 		--with-default-mozilla-five-home=/usr/lib/mozilla \
 		${myconf} || die
 
@@ -568,6 +616,10 @@ src_install() {
 	# Move plugins dir
 	src_mv_plugins usr/lib/mozilla/plugins
 
+	# Update Google search plugin to use UTF8 charset ...
+	insinto /usr/lib/mozilla/searchplugins
+	doins ${FILESDIR}/google.src
+
 	# Fix icons to look the same everywhere
 	insinto /usr/lib/mozilla/icons
 	doins ${S}/build/package/rpm/SOURCES/mozicon16.xpm
@@ -624,13 +676,15 @@ pkg_postinst() {
 
 	# Make symlink for Java plugin (do not do in src_install(), else it only
 	# gets installed every second time)
-	if [ "`use java`" -a "`gcc-major-version`" -ne "3" \
-	     -a ! -L ${MOZILLA_FIVE_HOME}/plugins/`java-config --browser-plugin=mozilla` ]
+	if [ "`use java`" -a "`gcc-major-version`" -ne "3" ]
 	then
-		if [ -e `java-config --full-browser-plugin-path=mozilla` ]
+		if [ ! -L "${MOZILLA_FIVE_HOME}/plugins/`java-config --browser-plugin=mozilla`" ]
 		then
-			ln -snf `java-config --full-browser-plugin-path=mozilla` \
-				${MOZILLA_FIVE_HOME}/plugins/`java-config --browser-plugin=mozilla` 
+			if [ -e "`java-config --full-browser-plugin-path=mozilla`" ]
+			then
+				ln -snf `java-config --full-browser-plugin-path=mozilla` \
+					${MOZILLA_FIVE_HOME}/plugins/`java-config --browser-plugin=mozilla` 
+			fi
 		fi
 	fi
 
@@ -697,3 +751,6 @@ pkg_postrm() {
 	fi
 }
 
+# Sparc support ...
+replace-flags "-mcpu=ultrasparc" "-mcpu=v8"
+replace-flags "-mcpu=v9" "-mcpu=v8"
