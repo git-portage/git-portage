@@ -208,7 +208,7 @@
 ./gnome-office/gnome-db/gnome-db-0.2.1.ebuild
 ./gnome-office/gnome-pim/gnome-pim-1.2.0-r1.ebuild
 ./gnome-office/gnumeric/gnumeric-0.61-r1.ebuild
-./kde-apps/cervisia/cervisia-0.7.1.ebuild
+./kde-apps/cervisia/cervisia-1.0_beta3.ebuild
 ./kde-apps/kdeadmin/kdeadmin-2.0.1.ebuild
 ./kde-apps/kdegraphics/kdegraphics-2.0.1.ebuild
 ./kde-apps/kdemultimedia/kdemultimedia-2.0.1.ebuild

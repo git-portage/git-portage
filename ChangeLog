@@ -1,5 +1,8 @@
 date 30 Jan 2001
 
+upd kde-apps/cervisia-0.7.1 to 1.0_beta3
+achim
+
 upd dev-db/postgresql-7.0.3-r1 to r2
 achim
 Changed install dirs from postgres to the more widely used pgsql
