@@ -1,4 +1,4 @@
-MD5 1cee402de7babbe2c28bd1500b11f4bc ChangeLog 9859
+MD5 2d8acc38f38ce725730dbb9b60090704 ChangeLog 9856
 MD5 5aad4907c20fa590956de7b1a2d7940b linux-headers-2.2.20.ebuild 3919
 MD5 cfdef44dfa55b9d8f7fef25db8f02cec linux-headers-2.2.21_pre3.ebuild 4090
 MD5 c4d84a23943d7b0cecd3baf6c7b06680 linux-headers-2.4.16-r1.ebuild 5047
@@ -13,8 +13,8 @@ MD5 c527ccb0c6e15e75a352146bf0c16000 linux-headers-2.4.18.ebuild 3171
 MD5 700a7f741d57affd86d8834659e200a3 linux-headers-2.4.19-r1.ebuild 4795
 MD5 6f7564daf75852f1c3b50a7b586294bc linux-headers-2.4.19.ebuild 4620
 MD5 c610eda6cbac9e07ec029f54793ebf86 linux-headers-2.4.21-r1.ebuild 3883
-MD5 f8d3eab2b514bff131911b16fda27e7a linux-headers-2.4.21.ebuild 3594
-MD5 d0afdccf79101538b85e81e1658342a2 linux-headers-2.4.22.ebuild 3877
+MD5 434a527a81552b011ec5ad591db3fa84 linux-headers-2.4.21.ebuild 3591
+MD5 9b7c309ef15984d4800571e317980a20 linux-headers-2.4.22.ebuild 3871
 MD5 c3d510bb531ff548ff5c2e3e1ad56fff linux-headers-2.4.23.ebuild 3395
 MD5 525092795829890ae6ca72c485942095 linux-headers-2.6.0.ebuild 3913
 MD5 9eaf2835f8242a58af89b897f1ee9438 metadata.xml 350
