@@ -90,7 +90,7 @@
 ./app-arch/rpm/rpm-3.0.4-r1.ebuild
 ./app-arch/unzip/unzip-5.41-r1.ebuild
 ./app-cdr/cdrecord/cdrecord-1.9-r1.ebuild
-./app-doc/man-pages/man-pages-1.30-r1.ebuild
+./app-doc/man-pages/man-pages-1.31.ebuild
 ./app-editors/ed/ed-4-r1.ebuild
 ./app-editors/gtk-xemacs/gtk-xemacs-21.1-r1.ebuild
 ./app-editors/joe/joe-2.8-r1.ebuild
