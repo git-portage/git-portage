@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/nano/Attic/nano-1.3.3.ebuild,v 1.1 2004/06/29 01:35:38 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/nano/Attic/nano-1.3.2-r1.ebuild,v 1.1 2004/07/07 01:46:55 vapier Exp $
 
 inherit eutils
 
@@ -11,8 +11,8 @@ SRC_URI="http://www.nano-editor.org/dist/v1.3/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~arm ~hppa ~amd64 ~ia64 ~ppc64 ~s390"
-IUSE="nls build spell justify debug slang ncurses nomac"
+KEYWORDS="x86 ppc sparc mips alpha arm hppa amd64 ia64 ppc64 s390"
+IUSE="nls build spell justify debug slang ncurses nomac wsconvert"
 
 DEPEND=">=sys-libs/ncurses-5.2
 	nls? ( sys-devel/gettext )
@@ -24,9 +24,9 @@ S=${WORKDIR}/${MY_P}
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/${PV}-ws-default-off.patch
-	epatch ${FILESDIR}/${PV}-ifdeffix.patch
+	epatch ${FILESDIR}/1.3-nanopermsfix.patch
 	use nomac && epatch ${FILESDIR}/${PV}-nomac.patch
+	use wsconvert && epatch ${FILESDIR}/${PV}-wsconvert.patch
 }
 
 src_compile() {
@@ -39,8 +39,8 @@ src_compile() {
 		--enable-color \
 		--enable-multibuffer \
 		--enable-nanorc \
-		`use_enable spell` \
 		`use_enable justify` \
+		`use_enable spell` \
 		`use_enable debug` \
 		`use_enable nls` \
 		${myconf} \
