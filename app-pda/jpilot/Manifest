@@ -1,3 +1,4 @@
+MD5 d86bbbaabec94cd4b83645ea8a9da040 jpilot-0.99.7-r1.ebuild 1235
 MD5 85d9d6fe43174cbbb6beb52c65642adb jpilot-0.99.5.ebuild 1925
 MD5 7b86fd2c9a30eb48daf702f0b6404f12 jpilot-0.99.6-r1.ebuild 2271
 MD5 c1dba0bafa6ab7cf5dbe77c1257ed6a7 jpilot-0.99.2-r1.ebuild 1821
@@ -8,3 +9,4 @@ MD5 fec9283977e434f78771d9dc3b05569f files/digest-jpilot-0.99.5 208
 MD5 25502d8cc007a47634cfb80b10b6d0fd files/digest-jpilot-0.99.7 208
 MD5 772a9edf8c450460098e6af60fee716d files/digest-jpilot-0.99.2-r1 205
 MD5 3191fb2564846c9ad2faa29463b178a6 files/digest-jpilot-0.99.6-r1 208
+MD5 ac0b77783e7cf50e9f7f63397d19e774 files/digest-jpilot-0.99.7-r1 66
