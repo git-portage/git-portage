@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Daniel Robbins <drobbins@gentoo.org> 
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux/Attic/linux-2.4.0_rc10-r7.ebuild,v 1.2 2000/12/18 20:25:19 achim Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux/Attic/linux-2.4.0_rc10-r7.ebuild,v 1.3 2001/01/02 16:30:22 achim Exp $
 
 S=${WORKDIR}/linux
 KV=2.4.0-test10
@@ -114,8 +114,8 @@ src_compile() {
 	then
 		readlink /usr/src/linux > ${T}/linuxlink
 	fi
-	rm /usr/src/linux
-	( cd /usr/src; ln -s ${S} linux )
+#	rm /usr/src/linux
+#	( cd /usr/src; ln -s ${S} linux )
 	#symlink tweak in place
 	cd ${S}/fs/reiserfs/utils
     try make
