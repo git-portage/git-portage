@@ -1,20 +1,27 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcp/Attic/dhcp-3.0.ebuild,v 1.8 2002/12/09 04:33:15 manson Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcp/Attic/dhcp-3.0_p1.ebuild,v 1.1 2002/12/29 23:55:38 drobbins Exp $
 
-S=${WORKDIR}/${P}
+#This is only needed for a release with pl1 at the end.
+MYP="dhcp-3.0pl1"
+
+S=${WORKDIR}/${MYP}
 DESCRIPTION="ISC Dynamic Host Configuration Protocol"
-SRC_URI="ftp://ftp.isc.org/isc/dhcp/${P}.tar.gz"
+SRC_URI="ftp://ftp.isc.org/isc/dhcp/${MYP}.tar.gz"
 HOMEPAGE="http://www.isc.org/products/DHCP"
 LICENSE="isc-dhcp"
-KEYWORDS="x86 ppc sparc "
-SLOT="0"
+KEYWORDS="x86 ppc sparc"
 
+SLOT="0"
 DEPEND="virtual/glibc sys-apps/groff"
 RDEPEND="virtual/glibc"
 
 src_unpack() {
 	unpack ${A}
+
+	cd ${S}
+	patch -p0 < ${FILESDIR}/dhclient.c-3.0-dw-cli-fix.patch || die
+
 	cd ${S}/includes
 	cat <<- END >> site.h
 #define _PATH_DHCPD_CONF "/etc/dhcp/dhcpd.conf"
@@ -38,6 +45,8 @@ END
 
 src_install() {
 	dodir /var/lib/dhcp
+	touch ${D}/var/lib/dhcp/dhclient.leases
+	touch ${D}/var/lib/dhcp/dhcpd.leases
 
 	cd ${S}/work.linux-2.2/client
 	into / ; dosbin dhclient
@@ -74,6 +83,9 @@ src_install() {
 	newdoc server/dhcpd.conf dhcpd.conf.sample
 	docinto doc ; dodoc doc/*
 
+	insinto /etc/conf.d
+	newins ${FILESDIR}/conf.dhcpd dhcp
+
 	exeinto /etc/init.d
-	newexe ${FILESDIR}/dhcp.rc6 dhcp
+	newexe ${FILESDIR}/dhcp.rc7 dhcp
 }
