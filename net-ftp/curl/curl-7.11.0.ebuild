@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-ftp/curl/Attic/curl-7.10.8.ebuild,v 1.2 2003/12/09 23:38:57 liquidx Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-ftp/curl/Attic/curl-7.11.0.ebuild,v 1.1 2004/02/04 18:07:02 liquidx Exp $
 
 DESCRIPTION="A Client that groks URLs"
 SRC_URI="http://curl.haxx.se/download/${P}.tar.bz2"
