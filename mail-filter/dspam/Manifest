@@ -4,6 +4,7 @@ MD5 8c2a3c84e374995428805968828b728c dspam-3.1.0.ebuild 9416
 MD5 577b7e5d5e364bf5dc41ba07c0fe84a2 dspam-3.1.1.ebuild 14858
 MD5 b08fbc1616907518bbe03909a57b8b6e dspam-3.1.2.ebuild 14858
 MD5 0e818c5d9f1ac14190d4a34d8668ed45 dspam-3.2.0.ebuild 15152
+MD5 0e818c5d9f1ac14190d4a34d8668ed45 dspam-3.2.1.ebuild 15152
 MD5 44669aeaf2d1b407343943e61246f4fd dspam-3.2_beta1.ebuild 14861
 MD5 6d6d96f159e956b743db407108fd3492 dspam-3.2_rc3.ebuild 15167
 MD5 dbfbe5a3bbe3347938107f5f5bd2197e metadata.xml 308
@@ -27,4 +28,5 @@ MD5 05dce5dc8cf516655657aa2a4cc5f1da files/digest-dspam-3.0.0 63
 MD5 7f1185a1a89bc7c74aafba93afc2b0cf files/digest-dspam-3.1.0 63
 MD5 4b7bb6bbede742676e3e7017210104c5 files/digest-dspam-3.2.0 63
 MD5 1abffcec9dd1aad2db3d68918b4aec05 files/digest-dspam-3.1.1 63
+MD5 4d666bbdf8092d4bd49428ea31eadbfb files/digest-dspam-3.2.1 63
 MD5 a8c089a75fb1ee3c2b4f32ffc04c638e files/digest-dspam-3.1.2 63
