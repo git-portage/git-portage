@@ -1,5 +1,10 @@
 date 05 Feb 2001
 
+upd x11-libs/qt-2.2.3 to 2.2.4
+achim
+A new mainainance release which does not include
+the antialias patch use 2.2.3a instead
+
 new app-text/acroread-4.05
 achim
 Adobe's PDF reader
