@@ -3,6 +3,7 @@
 <pkgmetadata>
 <herd>base-system</herd>
 <longdescription>
-This is a library for reiser4 filesystem access and manipulation.
+This is a library, that provides application abstraction mechanism.
+It includes device abstraction, libc independence code, etc.
 </longdescription>
 </pkgmetadata>
