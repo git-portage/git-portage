@@ -1,14 +1,16 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-vim/vimspell/Attic/vimspell-1.84.ebuild,v 1.5 2004/10/22 19:42:20 ciaranm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-vim/vimspell/Attic/vimspell-1.84-r2.ebuild,v 1.1 2004/10/22 19:42:20 ciaranm Exp $
 
-inherit vim-plugin
+inherit eutils vim-plugin
 
 DESCRIPTION="vim plugin: on-the-fly spell checking with aspell"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=465"
 LICENSE="|| ( GPL-1 GPL-2 )"
-KEYWORDS="~x86 sparc ~alpha ~ia64 ~ppc ~amd64 ~mips"
+KEYWORDS="~x86 ~sparc ~alpha ~ia64 ~ppc ~amd64 ~mips"
 IUSE=""
+
+VIM_PLUGIN_HELPFILES="vimspell"
 
 # In theory, this plugin supports either aspell or ispell. However,
 # virtual/spell has been removed by seemant in favour of just using
@@ -23,6 +25,12 @@ RDEPEND="$RDEPEND app-text/aspell"
 function src_unpack() {
 	unpack ${A}
 	cd ${S}/plugin
+
+	# Apply patch to fix directory syntax highlighting (bug #52363)
+	epatch ${FILESDIR}/${PN}-${PV}-explorersyntax.patch
+
+	# Apply patch to work with new aspell (bug #66341)
+	epatch ${FILESDIR}/${PN}-${PV}-aspell-0.6.patch
 
 	# This plugin needs to be told which spell program to use. The default
 	# is hard-coded as 'ispell' in the plugin file. We can fix that with a
