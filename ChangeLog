@@ -1,5 +1,13 @@
 date 25 Jan 2001
 
+upd sys-kernel/linux-sources-2.4.0.11 to 2.4.0.11-r1
+drobbins
+a few minor fixes for linux-sources (BTW, this kernel rocks!)
+
+upd sys-kernel/linux-2.4.0.11 to 2.4.0.11-r1
+drobbins
+see above
+
 upd sys-apps/portage-1.4-r6 to 1.4-r7
 drobbins
 new sys-build category added.  sys-build contains packages
