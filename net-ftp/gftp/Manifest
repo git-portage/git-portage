@@ -4,9 +4,11 @@ MD5 375e1beaf2875a75172a844ed1b1d68f gftp-2.0.15.ebuild 1451
 MD5 b9ea2bf0037292332f379b4c252a2f20 gftp-2.0.16-r1.ebuild 1442
 MD5 f2a762cf72f525ebfbabcb7280d1ad8d gftp-2.0.17.ebuild 1306
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+MD5 f2a762cf72f525ebfbabcb7280d1ad8d gftp-2.0.18.ebuild 1306
 MD5 4a567cc97f7b5318979193135b98eafd files/digest-gftp-2.0.14 64
 MD5 f016b30f08a26f30a03721cff7a19ac9 files/digest-gftp-2.0.15 65
 MD5 77ce85d4218034ac35a17bf59af5b790 files/digest-gftp-2.0.16-r1 65
 MD5 f65f1e254dd63668b5f0db33b4158383 files/digest-gftp-2.0.17 65
 MD5 ce3187f3e4f80bfb35cf8bef798eb40d files/gftp-2.0.15-64bit_fixes.patch 16360
 MD5 23e7696a3f6f2c368d11ca9aaadb7797 files/gftp-2.0.16-ipv6_fix.patch 3279
+MD5 429ea419b557eb768b0be6daa3c8b7e7 files/digest-gftp-2.0.18 65
