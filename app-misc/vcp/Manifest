@@ -1,14 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 3c91f090a4209b886b0d056c163aac03 vcp-1.7.2.ebuild 688
-MD5 00b51ad40954e61976035aac34bdc8ff ChangeLog 779
+MD5 187e98dda633983035adbba9d33b8d63 vcp-2.2.ebuild 804
+MD5 a2426da8ae809d414e3d8751def5086c vcp-1.7.2.ebuild 749
+MD5 c163f6772a0cbb8893235d5094a0786f ChangeLog 1079
 MD5 0c131a7201c4670302767f93643876fa metadata.xml 165
 MD5 a3303d0fa9b3bdbe6a68d08be57bdbb7 files/digest-vcp-1.7.2 60
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBd83pEZCkKN40op4RAp28AKCIdKktsHlxp275cLKBVmvd/sIiuQCglGwT
-6cxT+bqAsWGsEeju08V2SmE=
-=6Z44
------END PGP SIGNATURE-----
+MD5 5f2c424b8efb0175aaa9880aadd2d69a files/digest-vcp-2.2 58
