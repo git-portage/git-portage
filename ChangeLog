@@ -1,3 +1,9 @@
+date 30 Jan 2001
+
+upd dev-db/postgresql-7.0.3-r1 to r2
+achim
+Changed install dirs from postgres to the more widely used pgsql
+
 date 29 Jan 2001
 
 upd sys-apps/portage-1.4-r7 to 1.4-r8
