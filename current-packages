@@ -315,7 +315,7 @@
 ./net-libs/pam_ldap/pam_ldap-70.ebuild
 #!./net-libs/pam_ldap/pam_ldap-82.ebuild
 ./net-mail/amavis/amavis-0.2.1-r2.ebuild
-#./net-mail/exim/exim-3.16.ebuild
+#./net-mail/exim/exim-3.20.ebuild
 ./net-mail/fetchmail/fetchmail-5.5.1.ebuild
 #!./net-mail/fetchmail/fetchmail-5.6.0.ebuild
 ./net-mail/maildrop/maildrop-1.2.2-r2.ebuild
