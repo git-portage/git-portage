@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.51-r10.ebuild,v 1.10 2005/02/22 12:06:18 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.51.18.ebuild,v 1.1 2005/03/01 01:32:15 carpaski Exp $
 
 inherit flag-o-matic eutils toolchain-funcs multilib
 
@@ -12,9 +12,9 @@ S=${WORKDIR}/${PF}
 DESCRIPTION="The Portage Package Management System (Similar to BSD's ports). The primary package management and distribution system for Gentoo."
 HOMEPAGE="http://www.gentoo.org/"
 SRC_URI="http://zarquon.twobit.net/gentoo/portage/${PF}.tar.bz2 http://gentoo.twobit.net/portage/${PF}.tar.bz2 mirror://gentoo/${PF}.tar.bz2"
-RESTRICT="nosandbox sandbox multilib-pkg-force"
+RESTRICT="nosandbox sandbox primaryuri multilib-pkg-force"
 
-# Contact carpaski with a reason before you modify any of these.
+# Contact carpaski with a reason before you modify any of these please.
 #KEYWORDS="  alpha  amd64  arm  hppa  ia64  mips  ppc  ppc-macos  ppc64  s390  sh  sparc  x86"
 KEYWORDS="  ~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~s390 ~sh ~sparc ~x86"
 
@@ -114,6 +114,12 @@ src_install() {
 		else
 			./setup.py install --root ${D} || die "Failed to install missingos module"
 		fi
+	fi
+
+	if [[ $ARCH == "x86-fbsd" ]]; then
+		cd ${S}/src/bsd-flags
+		chmod +x setup.py
+		./setup.py install --root ${D} || eerror "Failed to install bsd-chflags modules"
 	fi
 
 
@@ -253,9 +259,8 @@ pkg_postinst() {
 	NEWWORLD="${ROOT}/var/lib/portage/world"
 
 	if [ ! -f "${NEWWORLD}" ]; then
-		cp "${OLDWORLD}" "${NEWWORLD}" && \
-		rm -f "${OLDWORLD}" && \
-		ln ../../lib/portage/world "${NEWWORLD}"
+		ln ../../cache/edb/world "${NEWWORLD}" || \
+		cp "${OLDWORLD}" "${NEWWORLD}"
 	fi
 
 	if [ ! -f "/etc/portage/package.mask" ]; then
@@ -383,3 +388,4 @@ pkg_postinst() {
 	einfo "speedup. Alternatively, you may 'emerge sync' if it has been more"
 	einfo "than 30 minutes since your last sync."
 }
+
