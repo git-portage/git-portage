@@ -1,4 +1,6 @@
-MD5 a3205ff4d893734cb064c60d471a4fa5 ChangeLog 669
 MD5 016208560d33fc4be062bcdd783340b3 cecutil-3.ebuild 557
+MD5 a3205ff4d893734cb064c60d471a4fa5 ChangeLog 669
+MD5 2296d613581bc25c7746585d7dcfc391 cecutil-4.ebuild 963
 MD5 9771ca4ff90b56dddc4acfadc6f6a01e metadata.xml 250
 MD5 8840159f3e78e32a0a4715e6546ca0b7 files/digest-cecutil-3 60
+MD5 4e2527502d264bfb0e8aa278c10c9687 files/digest-cecutil-4 60
