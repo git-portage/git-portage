@@ -1,9 +1,18 @@
 DATE
 20 Nov 2000
 
-Update snort-1.6.3 to snort-1.6.3-r2
+drobbins
+More portage fixes
+Fixed pkgmerge problem; it can now merge to non-local filesystems and calls the
+pre and postinst scripts correctly.  Also, the DBDIR variable in /etc/make.defaults
+has been depreciated.  From now on, the database directory is assumed to be
+${ROOT}/var/db/pkg.  Also tweaked port_insttree() in portage.py so that the dbdir
+directory skeleton is created if it doesn't already exist, and made portage.py
+check to make sure that ROOT is an existing directory; otherwise it exits with
+an error condition.
 
 achim
+Update snort-1.6.3 to snort-1.6.3-r2
 Fixed a small installation bug.
 
 DATE
