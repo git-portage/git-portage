@@ -1,32 +1,39 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /var/cvsroot/gentoo-x86/net-irc/xchat/Attic/xchat-1.9.1.ebuild,v 1.1 2002/06/11 21:43:52 stroke Exp $
-
-# Python is DISABLED 
+# $Header: /var/cvsroot/gentoo-x86/net-irc/xchat/Attic/xchat-1.9.2.ebuild,v 1.1 2002/07/09 15:32:23 stroke Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="X-Chat is a graphical IRC client for UNIX operating systems."
 SRC_URI="http://www.xchat.org/files/source/1.9/${P}.tar.bz2"
 HOMEPAGE="http://www.xchat.org/"
+
 LICENSE="GPL-2"
-SLOT=0
+SLOT="0"
+KEYWORDS="*"
 
-RDEPEND=">=dev-libs/glib-2.0.3
-	>=x11-libs/gtk+-2.0.3
+RDEPEND=">=dev-libs/glib-2.0.4
+	>=x11-libs/gtk+-2.0.5
 	perl?   ( >=sys-devel/perl-5.6.1 )
-	gnome? ( >=x11-libs/libzvt-1.115.2
-			>=gnome-base/libgnome-2.0.1
-			>=gnome-base/gnome-applets-2.0.0
-			>=gnome-base/gnome-panel-2.0.0 )" 
+	gnome? ( >=x11-libs/libzvt-2.0.1
+		 >=gnome-base/libgnome-2.0.1
+		 >=gnome-base/gnome-applets-2.0.0
+		 >=gnome-base/gnome-panel-2.0.1 )
+	ssl?	( >=dev-libs/openssl-0.9.6d )" 
                
-
 DEPEND="${RDEPEND}
 	nls? ( >=sys-devel/gettext-0.10.38 )"
+
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
 }
+
+
+# From the xchat 1.9.2 README_FIRST file:
+# (one of the) REMAINING PROBLEMS:
+# * can't compile with gnome, panel and zvt support *
+# stroke 
 
 src_compile() {
 
@@ -34,7 +41,7 @@ src_compile() {
 
 	use gnome \
 		&& myopts="${myopts} --enable-gnome --enable-panel" \
-		|| myopts="${myopts} --enable-gtkfe --disable-gnome --disable-zvt --disable-gdk-pixbuf"
+		|| myopts="${myopts} --enable-gtkfe --disable-gnome --disable-zvt"
 	
 	use gnome \
 		&& CFLAGS="${CFLAGS} -I/usr/include/orbit-2.0" \
@@ -48,6 +55,9 @@ src_compile() {
 
 	use perl \
 		|| myopts="${myopts} --disable-perl"
+
+	use python \
+                || myopts="${myopts} --disable-python"
 
 	use nls \
 		&& myopts="${myopts} --enable-hebrew --enable-japanese-conv" \
