@@ -2,6 +2,15 @@ DATE
 21 Nov 2000
 
 achim
+Update net-mail maildrop-1.2.2 to maildrop-1.2.2-r2
+Added qmail or exim to dependencies because a mailer is
+required for compilation
+
+achim
+Update media-sound gtk-gnutella-0.12 to gtk-gnutella-0.12-r2
+Added dependencies
+
+achim
 Update media-libs alsa-lib-0.5.9 to alsa-libx-0.5.9-r2
 Modified dependencies
 
@@ -62,6 +71,8 @@ primarily of interest for those setting up a Gentoo Linux box, while
 the linux-sources package is more appropriate for geeks who already
 have a running Gentoo Linux system and want to compile a more recent
 kernel by hand.
+
+
 
 
 
