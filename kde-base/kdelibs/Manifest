@@ -1,4 +1,4 @@
-MD5 30278c2f4ce835f1cfddb5d2038c5606 ChangeLog 24579
+MD5 2941de90e167059d40cc98a79e22a72f ChangeLog 24580
 MD5 0259c3f239449f381dde6ee6a4619312 kdelibs-3.1.5-r1.ebuild 2056
 MD5 2f58e1c51efb89082af89b80505983be kdelibs-3.2.0.ebuild 2404
 MD5 bdbfa9147fb7f9dcb231ab624515d0c9 kdelibs-3.2.1.ebuild 2418
@@ -6,7 +6,7 @@ MD5 b707cac51f1876562c5dc8552788d09f kdelibs-3.2.2-r1.ebuild 2611
 MD5 8ae427fb79ac0bded83e551819b42719 kdelibs-3.2.2.ebuild 2495
 MD5 5c5fe292777553bca0ff10e72dd79494 kdelibs-3.2.3-r1.ebuild 2735
 MD5 0f0199c8ac44e5e9bf7acca24ce18578 kdelibs-3.2.3.ebuild 2452
-MD5 944c5a42b63093f23a80a9592612212d kdelibs-3.3.0.ebuild 2822
+MD5 6f1d6f1f9c7e382388c596a509565430 kdelibs-3.3.0.ebuild 2823
 MD5 14889ab75f97d76e58b0c1154e7683a9 metadata.xml 161
 MD5 81cb0ee22321ec1415dd4141742bbec1 kdelibs-3.3.0_rc2.ebuild 2891
 MD5 3f21fc4e8ddbf79459bfa8f2df1a5e15 files/animated-gif-fix.patch 317
