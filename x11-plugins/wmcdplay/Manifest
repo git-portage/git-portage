@@ -1,4 +1,6 @@
-MD5 74e6b544056fa08f2165871ebacee82d wmcdplay-1.0_beta1.ebuild 1171
+MD5 9f107b7a5bafeeb26c65b2dee116c3ae ChangeLog 388
+MD5 62ba71d3b2fa785a4cbd5d47fdbd0eb6 metadata.xml 165
+MD5 332ca7b9de767dacd19f12308e9b2851 wmcdplay-1.0_beta1.ebuild 1083
 MD5 2f2d993a02097075b5b2333355b73b64 files/wmcdplay.desktop 190
 MD5 ba46f3fbf16e0de2a9bdb11a98425ad2 files/wmcdplay-ComplexProgramTargetNoMan.patch 212
 MD5 8d00afd6e6d07d13fbdc339b31ffb972 files/wmcdplay-xpmdir.patch 271
