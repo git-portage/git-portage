@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/libgeotiff/Attic/libgeotiff-1.2.1.ebuild,v 1.3 2005/02/21 00:00:01 nerdboy Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/libgeotiff/Attic/libgeotiff-1.2.1-r1.ebuild,v 1.1 2005/02/21 00:00:01 nerdboy Exp $
 
-inherit eutils
+inherit eutils flag-o-matic
 
 DESCRIPTION="Library for reading TIFF files with embedded tags for geographic (cartographic) information"
 HOMEPAGE="http://remotesensing.org/geotiff/geotiff.html"
@@ -10,7 +10,7 @@ SRC_URI="ftp://ftp.remotesensing.org/pub/geotiff/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~sparc ~hppa ~mips ~alpha ~amd64 ~ppc ~ppc64"
+KEYWORDS="~x86 ~sparc ~hppa ~mips ~alpha ~amd64 ~ppc ~ppc64"
 IUSE=""
 
 DEPEND="virtual/libc
@@ -18,6 +18,7 @@ DEPEND="virtual/libc
 	sci-libs/proj"
 
 src_compile() {
+	append-flags -fPIC
 	econf || die
 	emake -j1 || die
 }
