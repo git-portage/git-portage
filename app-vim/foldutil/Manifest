@@ -1,4 +1,6 @@
 MD5 0d9941f2ec3cd8f652f37d5683b5f20a ChangeLog 629
 MD5 43141c0be2a3726045bc352e89e40868 foldutil-1.6.ebuild 694
+MD5 97307ef21db066ad394fff01d5c19f7d foldutil-1.7.ebuild 697
 MD5 9771ca4ff90b56dddc4acfadc6f6a01e metadata.xml 250
+MD5 bce2ad40cd4273b3a7facff51ce26562 files/digest-foldutil-1.7 63
 MD5 7e945f99ef486b2c6984a0399ba1004b files/digest-foldutil-1.6 63
