@@ -139,7 +139,7 @@
 ./media-libs/svgalib/svgalib-1.4.2-r1.ebuild
 ./media-libs/t1lib/t1lib-1.0.1-r2.ebuild
 ./media-libs/tiff/tiff-3.5.5-r3.ebuild
-./media-sound/esound/esound-0.2.22.ebuild
+./media-sound/esound/esound-0.2.22-r1.ebuild
 ./media-video/xawtv/xawtv-3.43.ebuild
 ./net-libs/libwww/libwww-5.3.2-r1.ebuild
 ./net-misc/dhcp/dhcp-3.0_beta0224.ebuild
