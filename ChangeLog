@@ -1,5 +1,12 @@
 date 20 Apr 2001
 
+upd sys-apps/portage-1.5-r1 to 1.5-r2
+drobbins
+you can now type "emerge rsync" to update your Portage tree via
+rsync, and type "emerge rsync clean" to remove stale ebuilds and
+patches during the sync process.  the distfiles and packages directories
+will be excluded from deletion, as you would expect.
+
 upd net-fs/samba-2.2.0_alpha3 to 2.2.0
 drobbins
 New official Samba release; we now have 2.0.8 and 2.2.0 available
