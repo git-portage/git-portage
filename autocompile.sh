@@ -6,7 +6,7 @@ C_HILITE=$'\e[36;01m'
 C_END=$'\e[A\e[73G'
 C_OK=$'\e[32m'
 C_NO=$'\e[31m'
-PORTDIR=/portage
+PORTDIR=/usr/portage
 
 if [ -z "${ROOT}" ]
 then
