@@ -12,6 +12,7 @@ drobbins
 Now with LVM 0.9.1-beta5
 
 upd sys-apps/portage-1.5_pre3 1.5_pre4
+drobbins
 another unmerge fix, portage-maintain now works, tiny API changes
 
 upd sys-apps/reiserfs-utils-3.6.25-r1 to r3
