@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc. 
 # Distributed under the terms of the GNU General Public License v2 
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.47_pre4.ebuild,v 1.1 2003/01/05 05:54:04 carpaski Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.46-r10.ebuild,v 1.1 2003/02/03 14:24:33 carpaski Exp $
 
 IUSE="build"
 
@@ -17,11 +17,22 @@ KEYWORDS="x86 ppc sparc alpha mips"
 LICENSE="GPL-2"
 RDEPEND="!build? ( >=sys-apps/fileutils-4.1.8 dev-python/python-fchksum >=dev-lang/python-2.2.1 sys-apps/debianutils >=sys-apps/bash-2.05a )"
 
+get_portver() {
+	python -c "import portage,string; print string.join(portage.pkgsplit(portage.best(portage.db[\"${ROOT}\"][\"vartree\"].dbapi.match(\"sys-apps/portage\"))))"
+}
+
+compare_pver() {
+	if python -c "import portage,string,sys; sys.exit(portage.pkgcmp(string.split(\"$1\"),string.split(\"$2\"))>=0)"; then
+		return 0
+	fi
+	return 1
+}
+
 src_unpack() {
 	cd ${WORKDIR}
 	echo tar xjf ${DISTDIR}/${PF}.tar.bz2
 	tar xjf ${DISTDIR}/${PF}.tar.bz2 || die "No portage tarball in distfiles."
-	#echo $(python -c "import portage,string; print string.join(portage.pkgsplit(portage.best(portage.db[\"${ROOT}\"][\"vartree\"].dbapi.match(\"sys-apps/portage\"))))") > ${WORKDIR}/previous-version
+	get_portver > ${WORKDIR}/previous-version
 }
 
 src_compile() {
@@ -39,6 +50,18 @@ src_install() {
 	cd ${S}/cnf
 	insinto /etc
 	case "$ARCH" in
+		alpha )
+		newins make.globals.alpha make.globals
+		newins make.conf.alpha make.conf
+		;;
+		hppa )
+		newins make.globals.hppa make.globals
+		newins make.conf.hppa make.conf
+		;;
+		mips )
+		newins make.globals.mips make.globals
+		newins make.conf.mips make.conf
+		;;
 		ppc )
 		newins make.globals.ppc make.globals
 		newins make.conf.ppc make.conf
@@ -46,14 +69,6 @@ src_install() {
 		sparc )
 		newins make.globals.sparc make.globals
 		newins make.conf.sparc make.conf
-		;;
-		alpha )
-		newins make.globals.alpha make.globals
-		newins make.conf.alpha make.conf
-		;;
-		mips )
-		newins make.globals.mips make.globals
-		newins make.conf.mips make.conf
 		;;
 		* )
 		doins make.globals make.conf
@@ -94,6 +109,10 @@ src_install() {
 	dosym ../lib/portage/bin/xpak /usr/bin/xpak
 	dosym ../lib/portage/bin/repoman /usr/bin/repoman
 	dosym ../lib/portage/bin/tbz2tool /usr/bin/tbz2tool
+
+	dosym ../lib/portage/bin/g-cpan.pl /usr/bin/g-cpan.pl
+	dosym ../lib/portage/bin/quickpkg /usr/bin/quickpkg
+
 	dosym newins /usr/lib/portage/bin/donewins
 	
 	# man pages
@@ -160,6 +179,7 @@ pkg_postinst() {
 		rm -f /var/cache/edb/counter.old
 	else
 		echo "FAILED to update counter."
+		echo "!!! This is a problem."
 		mv /var/cache/edb/counter.old /var/cache/edb/counter
 	fi
 
@@ -197,6 +217,8 @@ pkg_postinst() {
 	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/python2.2/site-packages/portage.py')" || die
 	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/python2.2/site-packages/output.py')" || die
 	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/python2.2/site-packages/output.py')" || die
+	python -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/bin/emergehelp.py')" || die
+	python -O -c "import py_compile; py_compile.compile('${ROOT}usr/lib/portage/bin/emergehelp.py')" || die
 
 	# Changes in the size of auxdbkeys can cause aux_get() problems.
 	echo -n ">>> Clearing invalid entries in dependancy cache..."
@@ -206,29 +228,6 @@ pkg_postinst() {
 	find ${ROOT}var/cache/edb/dep -type f -exec wc -l {} \; | egrep -v "^ *${AUXDBKEYLEN}" | sed 's:^ \+[0-9]\+ \+\([^ ]\+\)$:\1:' 2>/dev/null | xargs -n 50 -r rm -f
 	echo " ...done!"
 
-	# Fix the long(time.time()) problems users might have.
-	echo -n "Looking for problems in CONTENTS files... "
-	for FILE in $(find ${ROOT}/var/db/pkg -name CONTENTS); do
-		if egrep -q '^obj.*L$' ${FILE}; then
-			echo ${FILE}
-			mv ${FILE} ${FILE}.orig
-			sed '/^obj.*L$/s/L$//' ${FILE}.orig > ${FILE}
-			rm ${FILE}.orig
-		fi
-	done
-	echo "...done!"
-	
-	echo
-	echo
-	einfo "WARNING: The default behavior for 'emerge rsync' is to have --clean enabled."
-	einfo "Please back up any modified files in your Portage tree before emerge rsync."
-	echo
-	einfo "You may want to move any custom ebuilds to a new directory, and then set"
-	einfo "PORTDIR_OVERLAY (in /etc/make.conf) to point to this directory.  For example,"
-	einfo "make a /usr/portage.local/sys-apps/foo directory and put your ebuild in there."
-	einfo "Then set PORTDIR_OVERLAY=\"/usr/portage.local\"  Portage should see your"
-	einfo "personal ebuilds.  NOTE: PORTDIR_OVERLAY support is *beta* code; it may not"
-	einfo "work correctly yet."
 	echo
 	einfo "NOTICE: PLEASE update your make.globals. All user changes to variables"
 	einfo "in make.globals should be placed in make.conf. DO NOT MODIFY make.globals."
@@ -239,20 +238,18 @@ pkg_postinst() {
 	einfo "but you may need to boot from a gentoo cd and execute the following:"
 	einfo "chroot /mnt/gentoo /sbin/ldconfig"
 	echo
+	einfo "Feature additions are noted in help and make.conf descriptions. Update"
+	einfo "them using 'etc-update' please. Maintaining current configs for portage"
+	einfo "and other system packages is fairly important for the continued health"
+	einfo "of your system."
 	echo
 
+	sleep 5
+
 	#OLDPV=$(< ${WORKDIR}/previous-version)
-	#if ! use build; then
-	#	if python -c "import portage,string,sys; sys.exit(portage.pkgcmp(string.split(\"${OLDPV}\"),[\"sys-apps/portage\",\"2.0.45\",\"r5\"])>=0)"; then
-	#		# Previous version is older than the current db breaking one.
-	#		eerror "ATTENTION: Portage has merged successfully. You must restart your merge"
-	#		eerror "ATTENTION: manually if this was not the last package. A change in the db"
-	#		eerror "ATTENTION: cache prevents portage from continuing with this version. The"
-	#		eerror "ATTENTION: changes only require that portage be restarted after the change."
-	#		eerror "ATTENTION: This issue is handled automatically from this new version on."
-	#		eerror "ATTENTION: Sorry for any inconvenience. Exiting..."
-	#
-	#		ps wax | egrep 'python.*emerge' | sed 's:^[ ]*\([0-9]\+\).*:\1:' | xargs kill -INT
-	#	fi
-	#fi
+	#if compare_pver "$OLDPV" "$(get_portver)"; then
+	#	echo -ne "\a"; sleep 1; echo -ne "\a"; sleep 1; echo -ne "\a"; sleep 1
+	#	echo -ne "\a"; sleep 1; echo -ne "\a"; sleep 1; echo -ne "\a"; sleep 1
+	#	echo -ne "\a"; sleep 1; echo -ne "\a"; sleep 1; echo -ne "\a"; sleep 1
+	#fi	
 }
