@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_pre3-r1.ebuild,v 1.3 2004/03/30 04:42:22 spyderous Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_pre3-r3.ebuild,v 1.1 2004/03/31 09:24:02 phosphan Exp $
 
 IUSE="dga oss xmms jpeg 3dfx sse matrox sdl X svga ggi oggvorbis 3dnow aalib gnome xv opengl truetype dvd gtk gif esd fbcon encode alsa directfb arts dvb gtk2 samba lirc matroska debug joystick"
 
@@ -70,7 +70,7 @@ DEPEND="${RDEPEND}
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~alpha ~amd64 ~ia64 ~hppa ~sparc"
+KEYWORDS="~x86 ppc ~alpha ~amd64 ~ia64 ~hppa ~sparc ~mips"
 
 
 pkg_setup() {
@@ -95,6 +95,9 @@ src_unpack() {
 
 	use gtk && unpack Blue-1.0.tar.bz2
 
+	# security problem, bug #46246
+	cd ${S}/libmpdemux; epatch ${FILESDIR}/vuln02-fix.diff
+
 	# Use gtk-2.x
 	cd ${S}; epatch ${FILESDIR}/${PN}-1.0-gtk2.patch
 
@@ -103,13 +106,6 @@ src_unpack() {
 
 	# Fix mencoder segfaulting with bad arguments
 	cd ${S}; epatch ${FILESDIR}/mencoder-segfault.patch
-
-	#Fix libmatroska 
-	if has_version '>=libmatroska-0.6.3'
-	then
-		cd ${S}; epatch ${FILESDIR}/${P}-libmatroska063.diff
-	fi
-
 
 	# Fix hppa detection
 	[ "${ARCH}" = "hppa" ] && sed -i -e "s/9000*/parisc*/" "${S}/configure"
@@ -339,12 +335,12 @@ src_install() {
 	     install || die "Failed to install MPlayer!"
 	einfo "Make install completed"
 
-	# libpostproc is now installed by >=ffmpeg-0.4.8.20040222
-#	cd ${S}/libavcodec/libpostproc
-#	make prefix=${D}/usr \
-#	     SHARED_PP="yes" \
-#	     install || die "Failed to install libpostproc.so!"
-#	cd ${S}
+	# Install our libpostproc.so ...
+	cd ${S}/libavcodec/libpostproc
+	make prefix=${D}/usr \
+	     SHARED_PP="yes" \
+	     install || die "Failed to install libpostproc.so!"
+	cd ${S}
 
 	dodoc AUTHORS ChangeLog README
 	# Install the documentation; DOCS is all mixed up not just html
@@ -425,9 +421,6 @@ pkg_postinst() {
 		echo
 		einfo "If everything functions fine with watching DivX and"
 		einfo "altivec enabled, please drop a comment on the mentioned bug!"
-		echo
-		einfo "libpostproc is no longer installed by mplayer. If you have an"
-		einfo "application that depends on it, install >=ffmpeg-0.4.8.20040222"
 	fi
 
 	depmod -a &>/dev/null || :

@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_pre3.ebuild,v 1.14 2004/03/30 04:42:22 spyderous Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_pre2-r1.ebuild,v 1.1 2004/03/31 09:24:02 phosphan Exp $
 
 IUSE="dga oss xmms jpeg 3dfx sse matrox sdl X svga ggi oggvorbis 3dnow aalib gnome xv opengl truetype dvd gtk gif esd fbcon encode alsa directfb arts dvb gtk2 samba lirc matroska debug joystick"
 
@@ -51,7 +51,7 @@ RDEPEND="ppc? ( >=media-libs/xvid-0.9.0 )
 	encode? ( media-sound/lame
 	          >=media-libs/libdv-0.9.5 )
 	xmms? ( media-sound/xmms )
-	matroska? ( >=media-libs/libmatroska-0.6.0 )
+	matroska? ( >=media-libs/libmatroska-0.5.0 )
 	opengl? ( virtual/opengl )
 	directfb? ( dev-libs/DirectFB )
 	oggvorbis? ( media-libs/libvorbis )
@@ -70,7 +70,7 @@ DEPEND="${RDEPEND}
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ppc ~alpha ~amd64 ~ia64 ~hppa ~sparc ~mips"
+KEYWORDS="~x86 ~ppc amd64"
 
 
 pkg_setup() {
@@ -95,8 +95,11 @@ src_unpack() {
 
 	use gtk && unpack Blue-1.0.tar.bz2
 
+	# security problem, bug #46246
+	cd ${S}/libmpdemux; epatch ${FILESDIR}/vuln02-fix.diff
+
 	# Use gtk-2.x
-	cd ${S}; epatch ${FILESDIR}/${PN}-1.0-gtk2.patch
+	cd ${S}; epatch ${FILESDIR}/${PN}-0.90_rc4-gtk2.patch
 
 	# Fix head/tail call for new coreutils
 	cd ${S}; epatch ${FILESDIR}/${PN}-0.90-coreutils-fixup.patch
@@ -104,8 +107,6 @@ src_unpack() {
 	# Fix mencoder segfaulting with bad arguments
 	cd ${S}; epatch ${FILESDIR}/mencoder-segfault.patch
 
-	# Fix hppa detection
-	[ "${ARCH}" = "hppa" ] && sed -i -e "s/9000*/parisc*/" "${S}/configure"
 
 	if [ "`use svga`" ]
 	then
@@ -140,7 +141,7 @@ src_compile() {
 	# Only disable X if gtk is not in USE
 	use X || use gtk \
 		|| myconf="${myconf} --disable-gui --disable-x11 --disable-xv \
-				--disable-xmga --disable-png"
+		                     --disable-xmga --disable-png"
 
 	use jpeg \
 		|| myconf="${myconf} --disable-jpeg"
@@ -207,7 +208,8 @@ src_compile() {
 
 	use dvd \
 		&& myconf="${myconf} --enable-mpdvdkit" \
-		|| myconf="${myconf} --disable-mpdvdkit --disable-dvdread"
+		|| myconf="${myconf} --disable-mpdvdkit --disable-dvdread \
+		                     --disable-css"
 	# Disable dvdnav support as its not considered to be
 	# functional anyhow, and will be removed.
 
@@ -215,8 +217,8 @@ src_compile() {
 		&& myconf="${myconf} --enable-xmms"
 
 	use mpeg \
-		&& myconf="${myconf} --enable-external-faad" \
-		|| myconf="${myconf} --disable-external-faad"
+		&& myconf="${myconf} --enable-faad" \
+		|| myconf="${myconf} --disable-faad"
 
 	use matrox \
 		&& myconf="${myconf} --enable-mga" \
@@ -295,7 +297,6 @@ src_compile() {
 		--enable-real \
 		--with-reallibdir=${REALLIBDIR} \
 		--with-x11incdir=/usr/X11R6/include \
-		`use_enable xinerama` \
 		${myconf} || die
 	# Breaks with gcc-2.95.3, bug #14479:
 	#  --enable-shared-pp \
@@ -414,7 +415,7 @@ pkg_postinst() {
 		echo
 		einfo "When you see only GREEN salad on your G4 while playing"
 		einfo "a DivX, you should recompile _without_ altivec enabled."
-		einfo "Further information: http://bugs.gentoo.org/show_bug.cgi?id=18511"
+		einfo "Furher information: http://bugs.gentoo.org/show_bug.cgi?id=18511"
 		echo
 		einfo "If everything functions fine with watching DivX and"
 		einfo "altivec enabled, please drop a comment on the mentioned bug!"
