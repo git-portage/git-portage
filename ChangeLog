@@ -1,5 +1,9 @@
 date 16 Jan 2001
 
+upd sys-apps/portage-1.4-r3 to 1.4-r4
+drobbins
+Portage no longer trashes your existing make.conf
+
 new media-sound/shorten-3.2
 drobbins
 shorten is back, now at 3.2 and much improved.  shorten is a 
