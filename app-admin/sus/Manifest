@@ -1,5 +1,5 @@
-MD5 092e797aa873dcfada15ebba9e927098 ChangeLog 952
-MD5 080b12f499f9f5e6cb2a9869767f9879 sus-2.0.2-r1.ebuild 1392
+MD5 92c3a7a90fc2818c7fbde61385daab76 ChangeLog 949
+MD5 2db23955801c9d77a22de1ffe82d3131 sus-2.0.2-r1.ebuild 1394
 MD5 37ab627480600ea8a18055974761eb3c files/digest-sus-2.0.2-r1 60
 MD5 e551ecc3164caa7ab831c58f5f7244a5 files/susers.cpp 988
 MD5 01f6c4974f79047b74718f27c22b2ae5 files/sus-2.0.2-syslog-vuln-fix.patch 406
