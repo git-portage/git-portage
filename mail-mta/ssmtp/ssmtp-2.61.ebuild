@@ -1,16 +1,16 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/ssmtp/Attic/ssmtp-2.60.7-r1.ebuild,v 1.9 2005/01/24 21:32:35 ferdy Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/ssmtp/Attic/ssmtp-2.61.ebuild,v 1.1 2005/01/24 21:32:35 ferdy Exp $
 
 inherit eutils
 
 DESCRIPTION="Extremely simple MTA to get mail off the system to a Mailhub"
 HOMEPAGE="ftp://ftp.debian.org/debian/pool/main/s/ssmtp/"
-SRC_URI="ftp://ftp.debian.org/debian/pool/main/s/ssmtp/${P/-/_}.tar.gz"
+SRC_URI="ftp://ftp.debian.org/debian/pool/main/s/ssmtp/${P/-/_}.orig.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc sparc mips alpha arm hppa amd64 ia64 ppc64 s390"
+KEYWORDS="~alpha ~arm ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
 IUSE="ssl ipv6 md5sum mailwrapper"
 
 DEPEND="virtual/libc
@@ -21,22 +21,14 @@ RDEPEND="mailwrapper? ( >=net-mail/mailwrapper-0.2 )
 	ssl? ( dev-libs/openssl )"
 PROVIDE="virtual/mta"
 
-S=${WORKDIR}/ssmtp-2.60
-
-src_unpack() {
-	unpack ${A} ; cd ${S}
-
-	epatch ${FILESDIR}/ssmtp-2.60.7-logfile.patch
-	use ssl && epatch ${FILESDIR}/starttls.diff
-	use md5sum && epatch ${FILESDIR}/ssmtp-2.60.4-md5.patch
-}
+S=${WORKDIR}/ssmtp-2.61
 
 src_compile() {
 	econf \
 		--sysconfdir=/etc/ssmtp \
-		`use_enable ssl` \
-		`use_enable ipv6 inet6` \
-		`use_enable md5sum md5suth` \
+		$(use_enable ssl) \
+		$(use_enable ipv6 inet6) \
+		$(use_enable md5sum md5suth) \
 		|| die
 	make clean || die
 	make etcdir=/etc || die
@@ -87,6 +79,18 @@ src_install() {
 	#else
 	#        mv ${conffile}.pre ${conffile}
 	#fi
+
+	# set up config file, v2. Bug 47562
+	local conffile="${D}/etc/ssmtp/ssmtp.conf"
+	mv "${conffile}" "${conffile}.orig"
+	# Sorry about the weird indentation, I couldn't figure out a cleverer way
+	# to do this without having horribly >80 char lines.
+	sed -e "s:^hostname=:\n# Gentoo bug #47562\\
+# Commenting the following line will force ssmtp to figure\\
+# out the hostname itself.\n\\
+# hostname=:" \
+		"${conffile}.orig" > "${conffile}" \
+		|| die "sed failed"
 }
 
 pkg_postinst() {
