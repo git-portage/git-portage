@@ -1,31 +1,28 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
 # Maintainer: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-sources/Attic/linux-sources-2.4.19-r1.ebuild,v 1.1 2002/04/05 22:51:56 drobbins Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/Attic/gentoo-sources-2.4.19.ebuild,v 1.1 2002/04/23 05:19:56 drobbins Exp $
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
 #we use this next variable to avoid duplicating stuff on cvs
 GFILESDIR=${PORTDIR}/sys-kernel/linux-sources/files
 OKV=2.4.18
-KV=2.4.19-r1
+KV=2.4.19-gentoo
 S=${WORKDIR}/linux-${KV}
+ETYPE="sources"
 
 # What's in this kernel?
 
 # INCLUDED:
-#   2.4.19-pre2 stock kernel, plus:
-#   2.4.19-pre2-ac4 patch, plus:
-#   SGI XFS (28 Mar 2002 CVS)
-
-# Changes from 2.4.19 ebuild:
-# including linux/malloc.h is back to a warning to fix vmware compatibility
+#   2.4.16, plus:
+#   2.4.17-pre4 (aka "2.4.16-pre4") openmosix
 
 DESCRIPTION="Full sources for the Gentoo Linux kernel"
 SRC_URI="http://www.kernel.org/pub/linux/kernel/v2.4/linux-${OKV}.tar.bz2  http://www.ibiblio.org/gentoo/distfiles/linux-gentoo-${KV}.patch.bz2"
 PROVIDE="virtual/kernel"
 HOMEPAGE="http://www.kernel.org/ http://www.gentoo.org/" 
 
-if [ $PN = "linux-sources" ] && [ -z "`use build`" ]
+if [ $ETYPE = "sources" ] && [ -z "`use build`" ]
 then
 	#console-tools is needed to solve the loadkeys fiasco; binutils version needed to avoid Athlon/PIII/SSE assembler bugs.
 	DEPEND=">=sys-devel/binutils-2.11.90.0.31"
@@ -61,7 +58,7 @@ src_unpack() {
 }
 
 src_compile() {
-	if [ "$PN" = "linux-headers" ]
+	if [ "$ETYPE" = "headers" ]
 	then
 		yes "" | make oldconfig		
 		echo "Ignore any errors from the yes command above."
@@ -69,7 +66,7 @@ src_compile() {
 }
 
 src_install() {
-	if [ "$PN" = "linux-sources" ]
+	if [ "$ETYPE" = "sources" ]
 	then
 		dodir /usr/src
 		echo ">>> Copying sources..."
@@ -85,7 +82,7 @@ src_install() {
 }
 
 pkg_preinst() {
-	if [ "$PN" = "linux-headers" ] 
+	if [ "$ETYPE" = "headers" ] 
 	then
 		[ -L ${ROOT}usr/include/linux ] && rm ${ROOT}usr/include/linux
 		[ -L ${ROOT}usr/include/asm ] && rm ${ROOT}usr/include/asm
@@ -94,7 +91,7 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	[ "$PN" = "linux-headers" ] && return
+	[ "$ETYPE" = "headers" ] && return
 	cd ${ROOT}usr/src/linux-${KV}
 	make mrproper
 	if [ -e "${ROOT}usr/src/linux/.config" ]
