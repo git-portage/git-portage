@@ -1,4 +1,4 @@
-MD5 279b7d8e10cf27cedfdf5410bc0214c1 ChangeLog 1687
+MD5 bdef8cb377009b7355fed875f82d80ac ChangeLog 1814
 MD5 3d3f9ec5182e3b6fa9445620d23118ab blobwars-0.4.ebuild 1506
 MD5 9719205b4acd30ebf16791c06955c586 blobwars-0.5.ebuild 1513
 MD5 0ffd27e0a2871f531d04afe38f595709 blobwars-0.52.ebuild 1522
@@ -7,7 +7,7 @@ MD5 db003e97cc46bf9a977251d964e8dacc blobwars-0.91-r1.ebuild 1902
 MD5 cede98c0ecd59e7c95c3b2d98d7f09c6 blobwars-0.91-r2.ebuild 1902
 MD5 ac5f0c030e0e0265b5590d37102d12ca blobwars-0.94.ebuild 1899
 MD5 1b9626940cf26953e1ba60742f54fc92 blobwars-0.96.ebuild 1895
-MD5 1b9626940cf26953e1ba60742f54fc92 blobwars-0.97.ebuild 1895
+MD5 19620e9cb97b414fb95de165ee1ce331 blobwars-0.97.ebuild 1898
 MD5 c0f84e4ce336c17b77cbfb437bd31cc7 files/digest-blobwars-0.4 67
 MD5 b2de9e6c549296c08ffe1b2754603332 files/digest-blobwars-0.5 67
 MD5 9b0abb219c4a92174d807e60e71e6709 files/digest-blobwars-0.52 68
