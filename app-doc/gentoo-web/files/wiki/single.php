@@ -12,18 +12,9 @@
 			elseif ( $priority == "hi" )  $priority = 3;
 			else                          $priority = 0;
 
-			if     ( $branch == "none" )     $branch = 0;
-			elseif ( $branch == "all" )      $branch = 1;
-			elseif ( $branch == "stable" )   $branch = 2;
-			elseif ( $branch == "unstable" ) $branch = 3;
+			$branch = branch_name_num( $branch );
 
-			if     ( $team == 'None' )           $team = 0;
-			elseif ( $team == 'All' )            $team = 1;
-			elseif ( $team == 'System' )         $team = 2;
-			elseif ( $team == 'Desktop' )        $team = 3;
-			elseif ( $team == 'Server' )         $team = 4;
-			elseif ( $team == 'Tools' )          $team = 5;
-			elseif ( $team == 'Infrastructure' ) $team = 6;
+			$team = team_name_num( $team );
 			
 			if   ( $sharing == 'public' ) $sharing = 1;
 			else                          $sharing = 0;
@@ -101,7 +92,7 @@
 		list( $team ) = mysql_fetch_row( $team );
 	}
 
-	$team = team_num_name( $team );
+	$team = team_num_name( $todo['team'] );
 
 	if ( $action != 'new_todo' ) {
 		$developer = mysql_query( 'select username from users where uid='.$todo['owner'] );
