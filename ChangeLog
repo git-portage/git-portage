@@ -1,3 +1,26 @@
+date 1 Jul 2001
+
+new app-admin/aide-0.7
+advanced intrusion detection (Contributed by polaris)
+lamer
+
+new app-misc/jpilot-0.99
+palm desktop clone for x (Contributed by polaris)
+lamer
+
+new media-sound/grip-2.95
+ripper / encoder front end in gtk (Contributed by polaris)
+lamer
+
+new net-analyzer/iplog-2.2.3
+iplog trafic watcher / packet sniffer (Contributed by polaris)
+lamer
+
+new net-analyzer/nbaudit-1.0
+NetBIOS file sharing services scanner (nat10) (Contributed by polaris)
+lamer
+
+
 date 28 June 2001
 
 upd media-libs/svgalib-1.4.3
