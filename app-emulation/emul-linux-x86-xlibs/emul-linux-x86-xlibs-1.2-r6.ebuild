@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/emul-linux-x86-xlibs/Attic/emul-linux-x86-xlibs-1.2-r4.ebuild,v 1.1 2005/02/05 09:09:43 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/emul-linux-x86-xlibs/Attic/emul-linux-x86-xlibs-1.2-r6.ebuild,v 1.1 2005/02/08 03:27:36 cryos Exp $
 
 inherit multilib
 
@@ -34,12 +34,12 @@ src_install() {
 	cp ${FILESDIR}/XI18N_OBJS ${D}/emul/linux/x86/usr/lib/X11/locale/C/
 	cp ${FILESDIR}/XLC_LOCALE ${D}/emul/linux/x86/usr/lib/X11/locale/C/
 
+	rm -f ${D}/emul/linux/x86/usr/lib/X11
 	mv ${D}/emul/linux/x86/usr/X11R6/lib/* ${D}/emul/linux/x86/usr/lib/
 
 	# We don't use this any more
 	rm -rf ${D}/usr/X11R6
 	rm -rf ${D}/emul/linux/x86/usr/X11R6
-	rm -f ${D}/emul/linux/x86/usr/lib/X11
 
 	dosed "s:^libdir=.*$:libdir=\'/emul/linux/x86/usr/lib\':" /emul/linux/x86/usr/lib/libGLU.la
 
@@ -47,5 +47,14 @@ src_install() {
 }
 
 pkg_postinst() {
-	ln -s /emul/linux/x86/usr/lib/X11/locale/lib /usr/$(get_libdir)/X11/locale/lib
+	if [ -h /usr/$(get_libdir)/X11/locale/lib ]; then
+		rm -f /usr/$(get_libdir)/X11/locale/lib
+	else
+		ewarn "Error /usr/$(get_libdir)/X11/locale/lib is not a symlink."
+		ewarn "This may cause some 32 bit applications to fail."
+	fi
+	if [ ! -e /usr/$(get_libdir)/X11/locale/lib ]; then
+		ln -s /emul/linux/x86/usr/lib/X11/locale/lib \
+			/usr/$(get_libdir)/X11/locale/lib
+	fi
 }
