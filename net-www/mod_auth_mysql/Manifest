@@ -5,6 +5,7 @@ MD5 41643b3eca1261d3fb283424e76ec683 mod_auth_mysql-20030510-r1.ebuild 1416
 MD5 ea0532e90f5517acabf683bbd587aff9 mod_auth_mysql-20030510-r2.ebuild 1500
 MD5 8c6e8b4088162cb6d9053daede7850e6 mod_auth_mysql-20030510.ebuild 1150
 MD5 4076be0aa9f53b1d5027d16662f21309 mod_auth_mysql-2.8.1.ebuild 955
+MD5 ea0532e90f5517acabf683bbd587aff9 mod_auth_mysql-2.0.0_pre20030510.ebuild 1500
 MD5 01cc878ba30a6e2ad327de787e21a999 files/12_mod_auth_mysql.conf 3571
 MD5 3513e598048c0060eb3758c19c4e4c60 files/digest-mod_auth_mysql-1.11 77
 MD5 a9f56734948e06d5ed5f4b7eea9f6cd5 files/digest-mod_auth_mysql-20030510 61
@@ -12,4 +13,5 @@ MD5 a9f56734948e06d5ed5f4b7eea9f6cd5 files/digest-mod_auth_mysql-20030510-r1 61
 MD5 a9f56734948e06d5ed5f4b7eea9f6cd5 files/digest-mod_auth_mysql-20030510-r2 61
 MD5 dd4f31c36839f4faadcf855915e348c3 files/mod_auth_mysql.patch 357
 MD5 a6cfd8f7d972e23afa55e33bb478e1bc files/digest-mod_auth_mysql-2.8.1 71
+MD5 a9f56734948e06d5ed5f4b7eea9f6cd5 files/digest-mod_auth_mysql-2.0.0_pre20030510 61
 MD5 d6baa28feeb088701ed677185d61b93d files/2.8.1/12_mod_auth_mysql.conf 3566
