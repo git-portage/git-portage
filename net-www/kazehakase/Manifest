@@ -1,3 +1,4 @@
+MD5 3475c2f716f6610da67dca94c912e5ee kazehakase-0.2.4.ebuild 1897
 MD5 16b911c96b2c115d3ba5919aca246039 kazehakase-0.2.1.ebuild 1771
 MD5 4e88053961c57254dddbf3e5b90fd305 kazehakase-0.2.3.ebuild 1897
 MD5 550e5426b67705e53b9b6913735bac84 ChangeLog 5098
@@ -6,3 +7,4 @@ MD5 745ac876d85ef4d4b60a71d3e9beb05b kazehakase-0.2.2.ebuild 1777
 MD5 9fe7d92984d89a7e830ddd0af8a23473 files/digest-kazehakase-0.2.1 69
 MD5 b026b5cb6160fd770e75dfb0b7204832 files/digest-kazehakase-0.2.2 69
 MD5 b4eaed9d874d893ea4dcd35651f9cd6c files/digest-kazehakase-0.2.3 69
+MD5 f2b408b822d149fa5c9016afda6b9d9d files/digest-kazehakase-0.2.4 69
