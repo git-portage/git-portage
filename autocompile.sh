@@ -6,8 +6,8 @@ C_HILITE=$'\e[36;01m'
 C_END=$'\e[A\e[68G'
 C_OK=$'\e[32m'
 C_NO=$'\e[31m'
-eval `/usr/lib/portage/bin/import-settings PORTDIR PKGDIR`
-#PORTDIR=/usr/portage
+#eval `/usr/lib/portage/bin/import-settings PORTDIR PKGDIR`
+PORTDIR=/usr/portage
 LOGDIR=$ROOT/tmp/portage-log
 if [ -z "$CHECK" ]
 then
@@ -51,7 +51,7 @@ then
 	exit 1
 fi
 
-mylist=${PORTDIR}/gentoo-x86/current-packages
+mylist=${PORTDIR}/current-packages
 
 if [ -f "${1}" ]
 then
@@ -68,7 +68,7 @@ for i in $mypackages
 do
   source /etc/profile
   # full path
-  myd=${i/.\//$PORTDIR\/gentoo-x86\/}
+  myd=${i/.\//$PORTDIR\/}
 
   # file name
   myf="`basename $myd`"
