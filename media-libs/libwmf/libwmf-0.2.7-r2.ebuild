@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libwmf/Attic/libwmf-0.2.7-r1.ebuild,v 1.2 2003/03/05 01:04:24 liquidx Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libwmf/Attic/libwmf-0.2.7-r2.ebuild,v 1.1 2003/03/19 20:02:44 liquidx Exp $
 
 inherit libtool
 
@@ -9,7 +9,6 @@ IUSE="jpeg X"
 #The configure script finds the 5.50 ghostscript Fontmap file while run.
 #This will probably work, especially since the real one (6.50) in this case
 #is empty. However beware in case there is any trouble
-
 
 S=${WORKDIR}/${P}
 DESCRIPTION="library for converting WMF files"
@@ -31,7 +30,9 @@ DEPEND=">=app-text/ghostscript-6.50
 # plotutils are not really supported yet, so looks like that's it
 
 src_compile() {
-	elibtoolize
+	# Have to use the reverse-deps patch to prevent libwmf from
+    # linking an older installed version of libwmflite
+	elibtoolize --reverse-deps
 	
 	use jpeg || myconf="${myconf} --with-jpeg=no"
 	use X || myconf="${myconf} --with-x=no"
@@ -46,6 +47,13 @@ src_compile() {
 }
 
 src_install () {
-    make DESTDIR=${D} install || die
-	dodoc README AUTHORS COPYING CREDITS ChangeLog NEWS TODO
+	    
+	# Must use einstall because of stubborn libtool
+    einstall \
+		fontdir=${D}/usr/share/libwmf/fonts \
+		wmfonedocdir=${D}/usr/share/doc/${PF}/caolan \
+		wmfdocdir=${D}/usr/share/doc/${PF} \
+		libdir=${D}/usr/lib \
+		|| die
+    dodoc README AUTHORS COPYING CREDITS ChangeLog NEWS TODO
 }
