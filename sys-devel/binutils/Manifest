@@ -1,6 +1,9 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6c9e007f1435b83e0c5d7c6e912014f6 binutils-2.15.92.0.2-r1.ebuild 4877
 MD5 67aaf3806274ea7797aac4df8b06e43f binutils-2.15.91.0.1-r1.ebuild 371
-MD5 6ed86dd856c6e0e4c056b095637c6f3e binutils-2.15.92.0.2-r3.ebuild 577
+MD5 e314ab426c6a1ebf33fa92bd0e66e1c5 binutils-2.15.92.0.2-r3.ebuild 572
 MD5 dd1c86b950f9eff25ebd11dda143df83 binutils-2.15.90.0.3-r4.ebuild 402
 MD5 5c37c7ad75a4087ba04975e8584ba0e2 binutils-2.14.90.0.8-r2.ebuild 449
 MD5 25ade8a6c71ab237778cf1534ca50b77 binutils-2.14.90.0.6-r8.ebuild 436
@@ -13,7 +16,7 @@ MD5 c130d155df1401a4f3a4d5f2abb9c0c5 binutils-2.15.ebuild 369
 MD5 a7ceb9e535f7677481bd8e044733be67 binutils-2.14.90.0.8-r1.ebuild 5051
 MD5 e8bd8ce400cde2701fba18ef5ef9e228 binutils-2.15.94.0.2.ebuild 434
 MD5 45494d255ce82fd574cfa85cba4c67a7 binutils-2.14.90.0.6-r7.ebuild 6736
-MD5 f0417569bda1b454b23f70f35478ad14 ChangeLog 39605
+MD5 e0b6c17573f5220e6451d4427d84a7b0 ChangeLog 39790
 MD5 6904f1690676a2c9b3ffd28b6d8a8e47 binutils-2.15.90.0.1.1-r3.ebuild 4797
 MD5 566806dcf81b67546b0c751541145b7d binutils-2.15.91.0.2-r1.ebuild 462
 MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
@@ -89,3 +92,12 @@ MD5 8dfe15fc6599a60b3330ab9fdabaf60f files/2.14/binutils-2.14.90.0.6-debian.patc
 MD5 907ce8c972e2a984590d4bfc04181c1d files/2.15/40_all_binutils-uclibc-linker.patch 530
 MD5 bad6ba9f63eb3a86d7006191848a47b8 files/2.15/52_all_binutils-20040527-uclibc-100-conf.patch 21576
 MD5 8f619fc0c409a5ba768f126f172ee6bc files/2.15/05_all_binutils-2.15-elf32-arm-textrel.patch 2009
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iQCVAwUBQhiso54WFLgrx1GWAQJqrQP/YDDiE3ILicXpHBlU0QajBJHEbqYQZ9IY
+0kc64uVjrIaZ4zxU/tvQfzPRkcMjeQ4JC+y4C712u2OoMyRVYNx8XqqNGrp82yCZ
+Q6I2Of/2Gc8VJKGuS5B4WNM1yOdB4eZd3rNm3PuiiZPkl7VY8wvALMl8KoVQQDxi
+TWv39ERqBxk=
+=UWgK
+-----END PGP SIGNATURE-----
