@@ -1,5 +1,15 @@
-MD5 fd0c5808a19f6d783607b4bd84567f56 fesi-1.1.8.ebuild 1551
-MD5 69c950bdd53a3281afd1d6ba52829833 ChangeLog 723
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 6ac66ef3d53fcdd90dded1303ba752cd fesi-1.1.8.ebuild 1551
+MD5 7933ad4b72e2b3c9e2e54b9c4f683610 ChangeLog 723
 MD5 55ce07b0d699111c23be8e78db226526 metadata.xml 528
 MD5 6298e6801fb87ff37447cca4d20feba8 files/digest-fesi-1.1.8 70
 MD5 6606050081debeafe38715c2cbe219ea files/fesibuild.patch 3292
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCT/U106ebR+OMO78RAlcIAJ9XTuohQOl0AC7gEFR6Si0glpK1DwCgjaNH
+mz2Uc9qO/S/u71qPJ6gsZxc=
+=P3kT
+-----END PGP SIGNATURE-----
