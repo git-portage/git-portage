@@ -74,7 +74,7 @@ do
   myf="`basename $myd`"
 
   # category
-  myc="`echo $i | sed -e "s:^\./\(.*\).*/.*/.*$:\1:"`"
+  myc="`echo $i | sed -e "s:^\(.*\).*/.*/.*$:\1:"`"
 
   # package name
   myp=${myf%*.ebuild}
