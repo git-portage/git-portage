@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 678e0f7ecbc3647119766fc8acd218b6 ChangeLog 81494
 MD5 32233b4175cc076b602394c34d4b4ee1 gcc-2.95.3-r8.ebuild 7485
 MD5 f95107278e3a6306068d0f9ef63fc5de gcc-3.2.3-r4.ebuild 19890
@@ -117,3 +120,10 @@ MD5 007c62d92efd70fd44c4d2e6a326036b files/3.4.3/libffi-without-libgcj.patch 165
 MD5 7434140298091f759eba5e9706264130 files/3.4.3/libssp.patch 2029
 MD5 c8fd3851ccee57651e43cac458dba7c1 files/awk/fixlafiles.awk 7837
 MD5 c672adb59a1f452475ab0a864b9d1bd1 files/awk/scanforssp.awk 5830
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCO4WYArHZZzCEUG0RArq5AJ9F55oYh6gxyES8FtFws6x2pXZguACdG+yb
+DSFX8FBZ1LzXxkElSTzE86U=
+=t6kA
+-----END PGP SIGNATURE-----
