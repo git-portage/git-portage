@@ -1,5 +1,6 @@
 20.09.2000
 
+	- New dev-libs/libunicode-0.7		(achim)
 	- New media-gfb/autotrace-0.24a		(achim)
 	  [ Converts Bitmap to vector Graphics ]
 	- New x11-libs/gtkDPS-0.3.3		(achim)

@@ -134,6 +134,7 @@
 ./dev-libs/gmp/gmp-3.1.ebuild
 ./dev-libs/libpcre/libpcre-3.2-r1.ebuild
 ./dev-libs/librep/librep-0.12.4-r1.ebuild
+./dev-libs/libunicode/libunicode-0.7.ebuild
 ./dev-libs/openssl/openssl-0.9.5a-r1.ebuild
 ./dev-libs/rep-gtk/rep-gtk-0.13a.ebuild
 ./dev-libs/slib/slib-2.3.8.ebuild
