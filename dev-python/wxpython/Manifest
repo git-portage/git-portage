@@ -1,11 +1,20 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3b06f1e87549af51d78bb7bfa33728b5 metadata.xml 182
 MD5 03005fb45223144f46f174425229dd97 wxpython-2.4.2.4.ebuild 2426
-MD5 25265dcc875d1d9624fadcc71bfdb652 wxpython-2.5.3.1.ebuild 3395
-MD5 7b2ab55f3b30b2840d4218e6ea7c451f ChangeLog 8643
+MD5 e8eb335a45de49fe4e6a017dffdb148d wxpython-2.5.3.1.ebuild 3395
+MD5 02407e6bda0563c4b986c6a1d108c11b ChangeLog 8643
 MD5 f959ab3869a044126ad9b66353cc68b1 wxpython-2.4.2.4-r1.ebuild 3565
-MD5 2867bba4424918d6b319f13ba12f3844 .wxpython-2.5.3.1.ebuild.swp 12288
 MD5 d1efabd4c6bcd5edd9e61ca070e20ff0 files/digest-wxpython-2.4.2.4-r1 73
 MD5 83d82d05e77457e559cf175012f538e7 files/digest-wxpython-2.5.3.1 74
 MD5 49c68d8febf658844a392bd0108fdf10 files/wxversion.py 14404
 MD5 d1efabd4c6bcd5edd9e61ca070e20ff0 files/digest-wxpython-2.4.2.4 73
 MD5 960f9cf74312ac4829b96c63739fcfe9 files/wxpy-config.py 3275
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBu1fJz2gxt1z4IGYRAtdQAKDN1cXccXx+aN6+uGzE25JwmZyZCQCffYPd
+1S4omYXA2NUBHMJtGIf+99s=
+=klKr
+-----END PGP SIGNATURE-----
