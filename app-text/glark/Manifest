@@ -1,16 +1,9 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 d70bc598aee8379fcca56856e6e9e7fc glark-1.7.0.ebuild 667
 MD5 9213cc2ac5886970925fb85d54f62b2f ChangeLog 2509
 MD5 8a93f0a469a8e0a79f4191d941d9594a glark-1.7.1.ebuild 672
+MD5 87679e3a38560da91e9dd4dc31a12cb8 glark-1.7.2.ebuild 757
 MD5 cc91d79e8dc6f0d1b9727eb83de5f98a metadata.xml 258
 MD5 45ca54fe2662478c83bf160831b2aea9 files/digest-glark-1.7.1 62
+MD5 67bdc0662f2ad93234cf0299b10fb028 files/digest-glark-1.7.2 62
 MD5 16965b8cb4e088ce14ac964bf473d124 files/digest-glark-1.7.0 62
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBxvLHLLFUmVNQ7rkRAuZlAKDV4xTA5LZ0PcKBeK5+VXuzUhctLgCdHJ/D
-OSPqSMrZCcZoJexcPn+CQII=
-=QWpD
------END PGP SIGNATURE-----
+MD5 9b0139902e8fa81c7922c08cc4cff23f files/1.7.2/glark-completion 994
