@@ -1,4 +1,6 @@
+MD5 c98f000faa74a44c2379c07dec5fa626 xerces-2.6.1.ebuild 1944
 MD5 3bc406140cc9bc63578b62471de1c578 ChangeLog 2727
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
 MD5 c98f000faa74a44c2379c07dec5fa626 xerces-2.6.0.ebuild 1944
 MD5 1fcb1a39009fabe31915e46883eb55b9 files/digest-xerces-2.6.0 144
+MD5 875f2b76895fcfaf8fdba951c858ce3d files/digest-xerces-2.6.1 144
