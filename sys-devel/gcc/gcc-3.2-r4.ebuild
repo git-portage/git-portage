@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/Attic/gcc-3.2.ebuild,v 1.8 2002/10/05 05:39:26 drobbins Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/Attic/gcc-3.2-r4.ebuild,v 1.1 2002/11/10 15:19:55 azarah Exp $
 
 IUSE="static nls bootstrap java build"
 
@@ -9,11 +9,30 @@ IUSE="static nls bootstrap java build"
 
 inherit flag-o-matic libtool
 
-# Compile problems with these ...
-filter-flags "-fno-exceptions"
+# Compile problems with these (bug #6641 among others)...
+filter-flags "-fno-exceptions -fomit-frame-pointer"
 
-# cf bug #6641
-filter-flags "-fomit-frame-pointer"
+# Recently there has been a lot of stability problem in Gentoo-land.  Many
+# things can be the cause to this, but I believe that it is due to gcc3
+# still having issues with optimizations, or with it not filtering bad
+# combinations (protecting the user maybe from himeself) yet.
+#
+# This can clearly be seen in large builds like glibc, where too aggressive
+# CFLAGS cause the tests to fail miserbly.
+#
+# Quote from Nick Jones <carpaski@gentoo.org>, who in my opinion
+# knows what he is talking about:
+#
+#   People really shouldn't force code-specific options on... It's a
+#   bad idea. The -march options aren't just to look pretty. They enable
+#   options that are sensible (and include sse,mmx,3dnow when apropriate).
+#
+# The next command strips CFLAGS and CXXFLAGS from nearly all flags.  If
+# you do not like it, comment it, but do not bugreport if you run into
+# problems.
+#
+# <azarah@gentoo.org> (13 Oct 2002)
+strip-flags
 
 LOC="/usr"
 MY_PV="`echo ${PV/_pre} | cut -d. -f1,2`"
@@ -27,10 +46,11 @@ SNAPSHOT=""
 if [ -z "${SNAPSHOT}" ]
 then
 	S="${WORKDIR}/${P}"
-	SRC_URI="ftp://gcc.gnu.org/pub/gcc/releases/${P}/${P}.tar.bz2"
+	SRC_URI="ftp://gcc.gnu.org/pub/gcc/releases/${P}/${P}.tar.bz2
+		mirror://gentoo/distfiles/${P}-patches-1.0.tar.bz2"
 else
 	S="${WORKDIR}/gcc-${SNAPSHOT//-}"
-	SRC_URI="ftp://ftp.mirror.ac.uk/sites/sources.redhat.com/pub/gcc/snapshots/${SNAPSHOT}/gcc-${SNAPSHOT//-}.tar.bz2"
+	SRC_URI="ftp://sources.redhat.com/pub/gcc/snapshots/${SNAPSHOT}/gcc-${SNAPSHOT//-}.tar.bz2"
 fi
 
 DESCRIPTION="Modern GCC C/C++ compiler"
@@ -38,7 +58,7 @@ HOMEPAGE="http://www.gnu.org/software/gcc/gcc.html"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="${MY_PV}"
-KEYWORDS="x86 ppc sparc sparc64 alpha"
+KEYWORDS="~x86 ~ppc ~sparc ~sparc64 ~alpha"
 
 DEPEND="virtual/glibc
 	!build? ( >=sys-libs/ncurses-5.2-r2
@@ -76,7 +96,7 @@ FAKE_ROOT=""
 src_unpack() {
 	if [ -z "${SNAPSHOT}" ]
 	then
-		unpack ${P}.tar.bz2
+		unpack ${P}.tar.bz2 ${P}-patches-1.0.tar.bz2
 	else
 		unpack gcc-${SNAPSHOT//-}.tar.bz2
 	fi
@@ -85,6 +105,38 @@ src_unpack() {
 	# Fixup libtool to correctly generate .la files with portage
 	elibtoolize --portage --shallow
 	
+	# Various patches from all over
+	cd ${S}; einfo "Applying various patches (bugfixes/updates)..."
+	for x in ${WORKDIR}/patch/*.patch.bz2
+	do
+		# New ARCH dependant patch naming scheme...
+		#
+		#   ???_arch_foo.patch
+		#
+		if [ -f ${x} ] && \
+		   [ "${x/_all_}" != "${x}" -o "`eval echo \$\{x/_${ARCH}_\}`" != "${x}" ]
+		then
+			local count=0
+			local popts="-l"
+
+			einfo "  ${x##*/}..."
+                
+			# Most -p differ for these patches ... im lazy, so shoot me :/
+			while [ "${count}" -lt 5 ]
+			do
+				if bzip2 -dc ${x} | patch ${popts} --dry-run -f -p${count} > /dev/null
+				then
+					bzip2 -dc ${x} | patch ${popts} -p${count} > /dev/null
+					break
+				fi
+                                
+				count=$((count + 1))
+			done
+
+			[ "${count}" -eq 5 ] && die "Failed Patch: ${x##*/}!"
+		fi
+	done
+
 	# Fixes a bug in gcc-3.1 and above ... -maccumulate-outgoing-args flag (added
 	# in gcc-3.1) causes gcc to misconstruct the function call frame in many cases.
 	# Thanks to Ronald Hummelink <ronald@hummelink.xs4all.nl> for bringing it to
@@ -96,7 +148,20 @@ src_unpack() {
 	#   http://archive.linuxfromscratch.org/mail-archives/lfs-dev/2002/08/0410.html
 	#   http://gcc.gnu.org/ml/gcc/2002-08/msg00731.html
 	#
-	cd ${S}; patch -p0 < ${FILESDIR}/gcc-3-deopt.patch || die
+	# Also for the updated patches, see:
+	#
+	#   http://archive.linuxfromscratch.org/mail-archives/lfs-dev/2002/08/0588.html
+	#
+	einfo "Applying fix-copy and fix-var patches..."
+	patch -p1 < ${FILESDIR}/${PV}/${P}.fix-copy.patch > /dev/null || die
+	patch -p1 < ${FILESDIR}/${PV}/${P}.fix-var.patch > /dev/null || die
+
+	# Fixes to get gcc to compile under glibc-2.3*
+	einfo "Applying glibc-2.3-compat patch..."
+	patch -p1 < ${FILESDIR}/${PV}/${P}-glibc-2.3-compat.diff > /dev/null || die
+	# This one is thanks to cretin@gentoo.org
+	einfo "Applying gcc-3.2-ctype patch..."
+	patch -p1 < ${FILESDIR}/${PV}/${P}.ctype.patch > /dev/null || die
 
 	# Currently if any path is changed via the configure script, it breaks
 	# installing into ${D}.  We should not patch it in src_install() with
@@ -185,17 +250,28 @@ src_compile() {
 	then
 		# Fix for our libtool-portage.patch
 		S="${WORKDIR}/build" \
-		emake bootstrap-lean || die
+		emake bootstrap-lean \
+			BOOT_CFLAGS="${CFLAGS}" STAGE1_CFLAGS="-O" || die
+		# Above FLAGS optimize and speedup build, thanks
+		# to Jeff Garzik <jgarzik@mandrakesoft.com>
 	else
 		S="${WORKDIR}/build" \
-		emake LDFLAGS=-static bootstrap || die
+		emake LDFLAGS=-static bootstrap \
+			BOOT_CFLAGS="${CFLAGS}" STAGE1_CFLAGS="-O" || die
 	fi
-
-	# Fixes the manpage for the "-maccumulate-outgoing-args bug"
-	cd ${S}; patch -p0 < ${FILESDIR}/gcc-3-deopt-doc.patch || die
 }
 
 src_install() {
+	# Do allow symlinks in ${LOC}/lib/gcc-lib/${CHOST}/${PV}/include as
+	# this can break the build.
+	for x in cd ${WORKDIR}/build/gcc/include/*
+	do
+		if [ -L ${x} ]
+		then
+			rm -f ${x}
+		fi
+	done
+
 	# Do the 'make install' from the build directory
 	cd ${WORKDIR}/build
 	S="${WORKDIR}/build" \

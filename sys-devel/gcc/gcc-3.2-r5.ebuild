@@ -1,11 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/Attic/gcc-3.2-r3.ebuild,v 1.1 2002/10/27 22:55:40 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/Attic/gcc-3.2-r5.ebuild,v 1.1 2002/11/10 15:19:55 azarah Exp $
 
 IUSE="static nls bootstrap java build"
-
-# NOTE TO MAINTAINER:  Info pages get nuked for multiple version installs.
-#                      Ill fix it later if i get a chance.
 
 inherit flag-o-matic libtool
 
@@ -55,7 +52,8 @@ SNAPSHOT=""
 if [ -z "${SNAPSHOT}" ]
 then
 	S="${WORKDIR}/${P}"
-	SRC_URI="ftp://gcc.gnu.org/pub/gcc/releases/${P}/${P}.tar.bz2"
+	SRC_URI="ftp://gcc.gnu.org/pub/gcc/releases/${P}/${P}.tar.bz2
+		mirror://gentoo/distfiles/${P}-patches-1.0.tar.bz2"
 else
 	S="${WORKDIR}/gcc-${SNAPSHOT//-}"
 	SRC_URI="ftp://sources.redhat.com/pub/gcc/snapshots/${SNAPSHOT}/gcc-${SNAPSHOT//-}.tar.bz2"
@@ -65,16 +63,26 @@ DESCRIPTION="Modern C/C++ compiler written by the GNU people"
 HOMEPAGE="http://www.gnu.org/software/gcc/gcc.html"
 
 LICENSE="GPL-2 LGPL-2.1"
-SLOT="${CCHOST}-${MY_PV}"
 KEYWORDS="~x86 ~ppc ~sparc ~sparc64 ~alpha"
 
+# Ok, this is a hairy one again, but lets assume that we
+# are not cross compiling, than we want SLOT to only contain
+# $PV, as people upgrading to new gcc layout will not have
+# their old gcc unmerged ...
+if [ "${CHOST}" = "${CCHOST}" ]
+then
+	SLOT="${MY_PV}"
+else
+	SLOT="${CCHOST}-${MY_PV}"
+fi
+
 DEPEND="virtual/glibc
-	sys-devel/gcc-config
+	>=sys-devel/gcc-config-1.2
 	!build? ( >=sys-libs/ncurses-5.2-r2
 	          nls? ( sys-devel/gettext ) )"
 			  
 RDEPEND="virtual/glibc
-	sys-devel/gcc-config
+	>=sys-devel/gcc-config-1.2
 	>=sys-libs/zlib-1.1.4
 	>=sys-apps/texinfo-4.2-r4
 	!build? ( >=sys-libs/ncurses-5.2-r2 )"
@@ -94,7 +102,7 @@ pkg_setup() {
 src_unpack() {
 	if [ -z "${SNAPSHOT}" ]
 	then
-		unpack ${P}.tar.bz2
+		unpack ${P}.tar.bz2 ${P}-patches-1.0.tar.bz2
 	else
 		unpack gcc-${SNAPSHOT//-}.tar.bz2
 	fi
@@ -103,6 +111,37 @@ src_unpack() {
 	# Fixup libtool to correctly generate .la files with portage
 	elibtoolize --portage --shallow
 	
+	cd ${S}; einfo "Applying various patches (bugfixes/updates)..."
+	for x in ${WORKDIR}/patch/*.patch.bz2
+	do
+		# New ARCH dependant patch naming scheme...
+		#
+		#   ???_arch_foo.patch
+		#
+		if [ -f ${x} ] && \
+		   [ "${x/_all_}" != "${x}" -o "`eval echo \$\{x/_${ARCH}_\}`" != "${x}" ]
+		then
+			local count=0
+			local popts="-l"
+
+			einfo "  ${x##*/}..."
+                
+			# Most -p differ for these patches ... im lazy, so shoot me :/
+			while [ "${count}" -lt 5 ]
+			do
+				if bzip2 -dc ${x} | patch ${popts} --dry-run -f -p${count} > /dev/null
+				then
+					bzip2 -dc ${x} | patch ${popts} -p${count} > /dev/null
+					break
+				fi
+                                
+				count=$((count + 1))
+			done
+    
+			[ "${count}" -eq 5 ] && die "Failed Patch: ${x##*/}!"
+		fi
+	done 
+
 	# Fixes a bug in gcc-3.1 and above ... -maccumulate-outgoing-args flag (added
 	# in gcc-3.1) causes gcc to misconstruct the function call frame in many cases.
 	# Thanks to Ronald Hummelink <ronald@hummelink.xs4all.nl> for bringing it to
@@ -118,13 +157,16 @@ src_unpack() {
 	#
 	#   http://archive.linuxfromscratch.org/mail-archives/lfs-dev/2002/08/0588.html
 	#
-	patch -p1 < ${FILESDIR}/${PV}/${P}.fix-copy.patch || die
-	patch -p1 < ${FILESDIR}/${PV}/${P}.fix-var.patch || die
+	einfo "Applying fix-copy and fix-var patches..."
+	patch -p1 < ${FILESDIR}/${PV}/${P}.fix-copy.patch > /dev/null || die
+	patch -p1 < ${FILESDIR}/${PV}/${P}.fix-var.patch > /dev/null || die
 
 	# Fixes to get gcc to compile under glibc-2.3*
-	patch -p1 < ${FILESDIR}/${PV}/${P}-glibc-2.3-compat.diff || die
+	einfo "Applying glibc-2.3-compat patch..."
+	patch -p1 < ${FILESDIR}/${PV}/${P}-glibc-2.3-compat.diff > /dev/null || die
 	# This one is thanks to cretin@gentoo.org
-	patch -p1 < ${FILESDIR}/${PV}/${P}.ctype.patch || die
+	einfo "Applying gcc-3.2-ctype patch..."
+	patch -p1 < ${FILESDIR}/${PV}/${P}.ctype.patch > /dev/null || die
 
 	# Currently if any path is changed via the configure script, it breaks
 	# installing into ${D}.  We should not patch it in src_install() with
@@ -188,6 +230,7 @@ src_compile() {
 	mkdir -p ${WORKDIR}/build
 	cd ${WORKDIR}/build
 
+	einfo "Configuring GCC..."
 	addwrite "/dev/zero"
 	${S}/configure --prefix=${LOC} \
 		--bindir=${BINPATH} \
@@ -212,6 +255,7 @@ src_compile() {
 
 	touch ${S}/gcc/c-gperf.h
 
+	einfo "Building GCC..."
 	if [ -z "`use static`" ]
 	then
 		# Fix for our libtool-portage.patch
@@ -240,6 +284,7 @@ src_install() {
 		fi
 	done
 
+	einfo "Installing GCC..."
 	# Do the 'make install' from the build directory
 	cd ${WORKDIR}/build
 	S="${WORKDIR}/build" \
@@ -405,9 +450,9 @@ src_install() {
 
 pkg_postinst() {
 
-	if [ "${ROOT}" = "/" ]
+	if [ "${ROOT}" = "/" -a "${COMPILER}" = "gcc3" ]
 	then
-		gcc-config ${CCHOST}-${MY_PV_FULL}
+		gcc-config --use-portage-chost ${CCHOST}-${MY_PV_FULL}
 	fi
 	
 	# Fix ncurses b0rking (if r5 isn't unmerged)
