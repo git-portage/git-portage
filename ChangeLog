@@ -1,3 +1,369 @@
+date 07 Feb 2001
+
+upd sys-libs/cracklib-2.7-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-libs/db-1.85 to 1.85-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd
+sys-libs/db-3.2.3 to 3.2.3-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd
+sys-libs/gdbm-1.8.0-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd
+sys-libs/glibc-2.2.1 to 2.2.1-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd
+sys-libs/gpm-1.19.3-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd
+sys-libs/libcompat-1.0-r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-libs/ncurses-5.2-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-libs/nss-db-2.2 to 2.2-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-libs/pam-0.73 to 0.73-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-libs/pwdb-0.61-r2 to r3
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-libs/readline-4.1-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-libs/slang-1.4.2 to 1.4.3
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-libs/zlib-1.1.3-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/autoconf-2.13-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/automake-1.4-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/bc-1.06 to 1.06-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/bin86-0.15.4 to 0.15.4-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/binutils-2.10.1 to 2.10.1-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/bison-1.28-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/flex-2.5.4a-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd upd sys-devel/gcc-2.95.2-r4 to r5
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/gdb-5.0-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/gettext-0.10.35-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/ld.so-1.9.11-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/libtool-1.3.5-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/m4-1.4o-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/make-3.79.1-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/patch-2.5.4-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/perl-5.6.0-r5 to r6
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-devel/spython-2.0-r2 to r3
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/at-3.1.8-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/bash-2.04-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/bzip2-1.0.1 to 1.0.1-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/console-data-1999.08.29-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/console-tools-0.2.3-r2 to r3
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/cpip-2.4.2-r2 to r3
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/daemontools-0.70 to 0.70-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/dcron-2.7-r2 to r3
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/debianutils-1.13.2-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/devfsd-1.3.10 to 1.3.11
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/diffutils-2.7-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/e2fsprogs-1.19 to 1.19-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/ed-0.2 to 0.2-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/file-3.33 to 3.33-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/fileutils-4.0.36-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/findutils-4.1-r3 to r4
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/gawk-3.0.6-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/gluelog-1.0-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/grep-2.4.2-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/groff-1.16.1 to 1.16.1-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/grub-0.5.96.1-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/gzip-1.2.4a-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/hdparm-3.9-r2 to r3
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/ipchains-1.3.10 to 1.3.10-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/iproute2-2.2.4 to 2.2.4-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/iptables-1.2 to 1.2-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/isapnptools-1.23 to 1.23-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/less-358-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/lilo-21.6 to 21.6-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/man-1.5.1h-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/man-pages-1.31 to 1.34
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/modutils-2.4.0 to 2.4.2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/most-4.9.0-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/net-tools-1.57-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/netkit-base-0.17-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/portage-1.4-r15
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/procps-2.0.7-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/psmisc-19-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/raidtools-0.90-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/reiserfs-utils-3.6.25-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/sed-3.02.80 to 3.02.80-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/setserial-2.17-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/sh-utils-2.0j-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/shadow-20001016-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/sharutils-4.2.1-r2 to r3
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/star-1.3_alpha8 to 1.3_alpha8-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/sysklogd-1.4-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/sysvinit-2.78-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/tar-1.13.18-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/tcp-wrappers-7.6-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/texinfo-4.0-r1 to r2
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/textutils-2.0.10 to 2.0.10-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/ucspi-tcp-0.88 to 0.88-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/util-linux-2.10q to 2.10q-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/vim-nogui-5.7-r2 to r3
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/watchpid-0.1 to 0.1-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/which-2.12 to 2.12-r1
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
+upd sys-apps/xinetd-2.1.8.8p3-r4 to r5
+achim
+Maintainence and FHS 2.1 fixes for RC4
+
 date 05 Feb 2001
 
 upd x11-libs/qt-2.2.3 to 2.2.4
