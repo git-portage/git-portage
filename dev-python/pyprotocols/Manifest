@@ -1,4 +1,6 @@
 MD5 9931b4e1a41a7bdae34e5e44e2aebe1a ChangeLog 508
+MD5 a15e07bef1eb35d1dda5eb5e20b37b46 pyprotocols-0.9.3.ebuild 686
 MD5 71c4638c9c88af75b58e5f5cb54fe008 metadata.xml 159
 MD5 d029bbbc57d94977c99b24b0dc8d25a4 pyprotocols-0.9.2.ebuild 771
 MD5 db9e24356b5b4e2ff2efdc4851d95843 files/digest-pyprotocols-0.9.2 69
+MD5 234e732efa26c81b4229527220c39636 files/digest-pyprotocols-0.9.3 69
