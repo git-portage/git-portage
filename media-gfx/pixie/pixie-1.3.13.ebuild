@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/pixie/Attic/pixie-1.3.11.ebuild,v 1.3 2004/07/19 19:10:39 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/pixie/Attic/pixie-1.3.13.ebuild,v 1.1 2004/07/19 19:10:39 eradicator Exp $
 
 inherit eutils
 
@@ -31,13 +31,10 @@ src_unpack() {
 
 	cd ${S}
 	# These have been sent upstream
-	epatch ${FILESDIR}/${P}-Makefile.patch
-	epatch ${FILESDIR}/${P}-gcc3.4.patch
-	epatch ${FILESDIR}/${P}-math.patch
-	epatch ${FILESDIR}/${P}-pic.patch
+	epatch ${FILESDIR}/${PN}-1.3.11-math.patch
 
 	# Gentoo-specific stuff
-	epatch ${FILESDIR}/${P}-gentoo.patch
+	epatch ${FILESDIR}/${PN}-1.3.11-gentoo.patch
 
 	# redirecting aclocal to /dev/null because there are alot of warnings
 	# output for deprecated stuff in 1.8.5
