@@ -1,5 +1,9 @@
 date 20 Jan 2001
 
+new media-libs/gle-3.0.1
+drobbins
+The GL extrusion library
+
 upd media-libs/glut-3.7 to 3.7-r1
 drobbins
 Replace all that Imakefile garbage with a simple bash script that compiles
