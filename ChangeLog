@@ -1,3 +1,18 @@
+19.10.2000
+
+	- Removed app-text/docbook		(achim)
+	- Removed app-text/dsssl		(achim)
+	- New dev-perl/SGMLSpm 1.03ii		(achim)
+	- New app-text/sgml-common 0.3		(achim)
+	- New app-text/jadetex 2.20		(achim)
+	- New app-text/docbook-utils 0.5.5	(achim)
+	- New app-text/docbook-style-dsssl 1.57 (achim)
+	- New app-text/docbook-dtd30-sgml 1.0   (achim)
+	- New app-text/docbook-dtd31-sgml 1.0   (achim)
+	- New app-text/docbook-dtd40-sgml 1.0   (achim)
+	- New app-text/docbook-dtd41-sgml 1.0   (achim)
+	- Update mysql 3.23.24 -> 3.23.26	(achim)
+
 18.10.2000
 
 	- New x11-terms/eterm 0.8.10		(achim)
