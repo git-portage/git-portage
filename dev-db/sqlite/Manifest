@@ -3,9 +3,9 @@ MD5 cab8e8e0ca9deb3af02594db21a81787 sqlite-2.8.15.ebuild 974
 MD5 fdbecebdb331496cd81f02ea4487e430 sqlite-2.8.13.ebuild 843
 MD5 53101d0aba85e7f9f18c84aada8466cf sqlite-3.0.8.ebuild 1020
 MD5 529fd03eceab183a8c3dea72741c7266 sqlite-3.0.6.ebuild 1046
-MD5 e1dbc1d8f8823a970a88de14a8f824b6 sqlite-2.8.16.ebuild 962
-MD5 98c0a1402c2069d3d741322f62a05432 ChangeLog 8691
-MD5 006d5e8c0eb41234ac90294b6fd93f2d sqlite-3.1.2.ebuild 1817
+MD5 655a22f890f01e3ddaf4d389f9b74131 sqlite-2.8.16.ebuild 954
+MD5 54ffde14ab5d50f518a151ae2648302d ChangeLog 8684
+MD5 5ba89111a3a194dbe7ae12e9a6b17910 sqlite-3.1.2.ebuild 1873
 MD5 99bf2a671c91f7499255003439d5eac0 sqlite-2.8.14.ebuild 862
 MD5 f29cd1d06dca071985256cb325d2b380 sqlite-3.0.7.ebuild 995
 MD5 006d5e8c0eb41234ac90294b6fd93f2d sqlite-3.0.8-r1.ebuild 1817
