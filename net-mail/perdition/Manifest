@@ -1,5 +1,16 @@
-MD5 99529b7bf1ff21206649e010cffbf033 perdition-1.15.ebuild 1415
-MD5 9ed0c9ad64fba2a20d52cd7038a56663 ChangeLog 317
-MD5 088e28cdbab3c51798d958d790bf2826 files/perdition.confd 1631
-MD5 05f755d1dc654672a0b12bf1dda6247c files/perdition.initd 2335
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 eef635d94bd2b70f60ae700dc051e561 perdition-1.15.ebuild 1518
+MD5 430e0310379308537e256035485dfba0 ChangeLog 406
+MD5 d2ad787f28f30ff5958b88a76ef96560 metadata.xml 644
+MD5 e0c3899301e1eddbef44acd4e5e18c7c files/perdition.confd 1734
+MD5 f6a22f3221ec5499cab3065e47af2248 files/perdition.initd 2438
 MD5 21c456c0fa0d465a1858b62399ebe404 files/digest-perdition-1.15 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFB9or+ViELBEf1JB0RArYGAJsE8SbQ03vd3KNyT1OJw8YGegj6+QCdFn57
+5TfaHrFDqN9ls93nFhhJsBU=
+=Uu7d
+-----END PGP SIGNATURE-----
