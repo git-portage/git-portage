@@ -1,0 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 ba62c8d123d2fd4eb2499ce8d645ab19 ChangeLog 249
+MD5 9d7120f9b92852e129ad7428da4971ba metadata.xml 251
+MD5 72745a12021fd673fb87f659d4c32b4d t-prot-1.47.ebuild 689
+MD5 cbdb80feacde060bdb517793c43c44fe files/digest-t-prot-1.47 62
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBts//V3J2n04EauwRAiKDAJ0SEdRisbTNRjhuB8yqjXaAa+2nYwCfZzqZ
+m8PK/dBz4tw1Sb7wKA33rKE=
+=ZWH6
+-----END PGP SIGNATURE-----
