@@ -17,6 +17,7 @@
 ./app-text/docbook-xml-simple-dtd/docbook-xml-simple-dtd-4.1.2.4.ebuild
 ./app-text/docbook-xsl-stylesheets/docbook-xsl-stylesheets-1.29.ebuild
 ./app-text/ghostscript/ghostscript-6.50-r2.ebuild
+./app-text/gocr/gocr-0.3.1.ebuild
 ./app-text/freefonts/freefonts-0.10.ebuild
 ./app-text/html-xml-utils/html-xml-utils-1.3-r1.ebuild
 ./app-text/ispell/ispell-3.1.20-r1.ebuild
@@ -27,10 +28,14 @@
 ./app-text/pspell/pspell-0.12.ebuild
 #./app-text/pspell-ispell/pspell-ispell-0.10.2.ebuild
 ./app-text/psutils/psutils-1.17.ebuild
+./app-text/rcs/rcs-5.7-r1.ebuild
 ./app-text/sablotron/sablotron-0.51.ebuild
 ./app-text/sgml-common/sgml-common-0.6.1.ebuild
+./app-text/sharefonts/sharefonts-0.10.ebuild
 ./app-text/tetex/tetex-1.0.7-r2.ebuild
+./app-text/ttf2pt1/ttf2pt1-3.3.3.ebuild
 ./app-text/xmltex/xmltex-1.0.ebuild
+./app-text/xpdf/xpdf-0.92.ebuild
 ./dev-lang/nasm/nasm-0.98-r2.ebuild
 ./dev-libs/expat/expat-1.95.1-r1.ebuild
 ./dev-libs/glib/glib-1.2.8-r2.ebuild
@@ -66,7 +71,7 @@
 ./gnome-libs/meduse/medusa-0.3.2.ebuild
 ./kde-apps/cervisia/cervisia-1.3.ebuild
 ./kde-base/kdesupport/kdesupport-2.1-r1.ebuild
-./kde-base/kdelibs/kdelibs-2.1-r1.ebuild
+./kde-base/kdelibs/kdelibs-2.1-r2.ebuild
 ./kde-base/kdebase/kdebase-2.1-r1.ebuild
 ./media-libs/aalib/aalib-1.2-r1.ebuild
 ./media-libs/alsa-lib/alsa-lib-0.5.10-r1.ebuild
