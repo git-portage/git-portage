@@ -5,12 +5,12 @@ MD5 a834fdec25fb7843a2235104fbb4b7b9 development-sources-2.6.3.ebuild 1366
 MD5 51fca768693c1363779f49338985bdfa development-sources-2.6.8.1.ebuild 556
 MD5 efd8a63bc12e5977c77f5ad3d52aa4e7 development-sources-2.6.9_rc2.ebuild 559
 MD5 eeceb31d16d4879c28142757eaf36379 development-sources-2.6.5.ebuild 1395
-MD5 89c4446872e41de193049b4a82b187eb development-sources-2.6.9_rc4.ebuild 428
+MD5 d7550e9bdc1fa94b7044c2f5e173d7a4 development-sources-2.6.9_rc4.ebuild 554
 MD5 bd78750f3868d90dde38a9657b1ef195 development-sources-2.6.7.ebuild 996
 MD5 a773ac7b340d580134af4ba7100516a9 development-sources-2.6.2.ebuild 878
 MD5 b837b01e90398ba7cb7325ca6dbe29d0 development-sources-2.6.9_rc1.ebuild 559
 MD5 13aade01932652aa84942ee046e28893 development-sources-2.6.4.ebuild 993
-MD5 525723bf04132844fb35a3174467533b ChangeLog 25353
+MD5 1d723995a849735c960048823f2eacc8 ChangeLog 25348
 MD5 5caccd9193acfe5a3a07ea88861cb11b metadata.xml 660
 MD5 235deccb186618722598f11113178687 development-sources-2.6.9_rc3.ebuild 559
 MD5 b8767c08beae47efda8f72f9d2410a7d development-sources-2.6.6_rc2.ebuild 547
