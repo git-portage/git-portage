@@ -1,5 +1,8 @@
 date 4 June 2001
 
+new app-games/sdlroids-1.3.4
+sdl asteroids clone for X
+
 new app-games/lbreakout-010315
 breakout clone for X using SDL (will run full screen)
 blutgens
