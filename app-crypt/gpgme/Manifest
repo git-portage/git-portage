@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 76c4ddfeb594e7d64d787eb35ecb95f4 ChangeLog 9063
 MD5 c91f227a64cd1f967b123962e0f32134 gpgme-0.3.14.ebuild 1045
 MD5 b4b67d388151a1919ab97bf9f77c5186 gpgme-0.3.16.ebuild 862
@@ -24,3 +27,10 @@ MD5 8607f302e5645b608abfb7b1d84e5fe5 files/digest-gpgme-1.0.0-r1 63
 MD5 8607f302e5645b608abfb7b1d84e5fe5 files/digest-gpgme-1.0.0-r2 63
 MD5 91a9a75ed83bb440a634d78c1fe07eb6 files/gpgme-1.0.0-assuan_fix.patch 426
 MD5 8607f302e5645b608abfb7b1d84e5fe5 files/digest-gpgme-1.0.0-r3 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBbi8fmdTrptrqvGERAj+NAJ9d6B8WOgE4/3dD24MYhclmT4z5dwCgkYX7
+s+37U74cWlPLDsfM1+vBHPY=
+=nAZL
+-----END PGP SIGNATURE-----
