@@ -1,22 +1,22 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/putty/Attic/putty-20030902-r1.ebuild,v 1.4 2004/05/07 15:47:48 jhuebel Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/putty/Attic/putty-0.54_pre1.ebuild,v 1.1 2004/06/01 21:33:54 taviso Exp $
+
+inherit eutils
 
 DESCRIPTION="UNIX port of the famous Telnet and SSH client"
 
 HOMEPAGE="http://www.chiark.greenend.org.uk/~sgtatham/putty/"
-SRC_URI="mirror://gentoo/putty-cvs-${PV}.tar.gz"
+SRC_URI="mirror://gentoo/putty-cvs-20040313.tar.bz2"
 LICENSE="MIT"
 
 SLOT="0"
-KEYWORDS="x86 alpha"
+KEYWORDS="x86 alpha ~ppc ~sparc ~amd64"
 IUSE="doc"
 
 RDEPEND="=x11-libs/gtk+-1.2* virtual/x11"
 
-DEPEND="${RDEPEND}
-	>=dev-lang/perl-5.8.0
-	>=sys-apps/sed-4"
+DEPEND="${RDEPEND} dev-lang/perl sys-apps/sed"
 
 S=${WORKDIR}/${PN}
 
@@ -33,12 +33,15 @@ src_unpack() {
 	ebegin "Setting CFLAGS"
 	sed -i "s!-O2!${CFLAGS}!g" ${S}/unix/Makefile.gtk
 	eend $?
+
+	# apply ut_time patch for amd64
+	use amd64 && epatch ${FILESDIR}/putty-ut_time.patch
 }
 
 src_compile() {
 	# build putty.
 	einfo "Building putty..."
-	cd ${S}/unix; emake -f Makefile.gtk
+	cd ${S}/unix; emake -f Makefile.gtk || die
 }
 
 src_install() {
@@ -58,6 +61,11 @@ src_install() {
 	use doc && dodoc doc/*
 
 	prepallman
+
+	# install desktop file provided by Gustav Schaffter in #49577
+	dodir /usr/share/applications
+	insinto /usr/share/applications
+	doins ${FILESDIR}/putty.desktop
 
 	if test ! -c /dev/ptmx; then
 		ewarn
