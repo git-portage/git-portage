@@ -1,20 +1,19 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/shadow/Attic/shadow-4.0.4.1-r2.ebuild,v 1.8 2004/09/03 21:03:24 pvdabeel Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/shadow/Attic/shadow-4.0.4.1-r4.ebuild,v 1.1 2004/10/08 00:01:35 vapier Exp $
 
 inherit eutils libtool gnuconfig flag-o-matic
 
 FORCE_SYSTEMAUTH_UPDATE="no"
-
 SELINUX_PATCH="shadow-4.0.4.1-selinux.diff"
 
-HOMEPAGE="http://shadow.pld.org.pl/"
 DESCRIPTION="Utilities to deal with user accounts"
+HOMEPAGE="http://shadow.pld.org.pl/"
 SRC_URI="ftp://ftp.pld.org.pl/software/shadow/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86 ppc ~sparc mips alpha ~arm ~mips hppa amd64 ia64 ~ppc64 ~s390"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
 IUSE="pam selinux nls uclibc"
 
 DEPEND=">=sys-libs/cracklib-2.7-r3
@@ -31,9 +30,9 @@ pkg_preinst() {
 
 src_unpack() {
 	unpack ${A}
-
 	cd ${S}
 
+	# selinux loving
 	use selinux && epatch ${FILESDIR}/${SELINUX_PATCH}
 
 	# uclibc support, corrects NIS usage
@@ -60,38 +59,37 @@ src_unpack() {
 	# Patch to correct the definition if malloc, so that shadow can compile
 	# using gcc 3.4. see bug #47455 for more information
 	epatch ${FILESDIR}/${P}-gcc34-xmalloc.patch
+
+	# userdel has a bug when PAM is enabled that causes it to always exit 
+	# with an exit status of 1 #66687
+	epatch ${FILESDIR}/${P}-userdel-missing-brackets.patch
+
+	# Allows shadow configure detect newer systems properly
+	gnuconfig_update
+	elibtoolize
 }
 
 src_compile() {
-	# Allows shadow configure detect mips systems properly
-	gnuconfig_update
-	elibtoolize
+	append-ldflags -Wl,-z,now
 
-	local myconf
-	use pam \
-		&& myconf="${myconf} --with-libpam --with-libcrack" \
-		|| myconf="${myconf} --without-libpam"
-
-	./configure --disable-desrpc \
+	econf \
+		--disable-desrpc \
 		--with-libcrypt \
 		--with-libcrack \
 		--enable-shared=no \
 		--enable-static=yes \
-		--host=${CHOST} \
+		$(use_with pam libpam) \
 		$(use_enable nls) \
-		${myconf} || die "bad configure"
+		|| die "bad configure"
 
 	# Parallel make fails sometimes
 	emake -j1 || die "compile problem"
 }
 
 src_install() {
-	dodir /etc/default /etc/skel
+	make DESTDIR=${D} install || die "install problem"
 
-	make prefix=${D}/usr \
-		exec_prefix=${D} \
-		mandir=${D}/usr/share/man \
-		install || die "install problem"
+#	dodir /etc/default /etc/skel
 
 	# Remove libshadow and libmisc; see bug 37725 and the following
 	# comment from shadow's README.linux:
@@ -161,7 +159,7 @@ src_install() {
 	fi
 
 	cd ${S}/doc
-	dodoc ANNOUNCE INSTALL LICENSE README WISHLIST
+	dodoc ANNOUNCE INSTALL README WISHLIST
 	docinto txt
 	dodoc HOWTO LSM README.* *.txt
 
