@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/gallery/Attic/gallery-1.3.3.ebuild,v 1.5 2003/06/29 23:17:15 aliz Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/gallery/Attic/gallery-1.3.3.ebuild,v 1.6 2003/07/21 19:58:26 mholzer Exp $
 
 DESCRIPTION="Web based (PHP Script) photo album viewer/creator."
 HOMEPAGE="http://gallery.sourceforge.net/"
@@ -82,7 +82,8 @@ pkg_postinst() {
 	einfo "For new installations  point your browser to http://www.yourhost.com/gallery/setup/"
 	einfo "and follow the instructions."
         einfo "-----------------------------------------------------------------------------------"
-        einfo "For upgrades, just run  # ${DST_PATH}/secure.sh" 
+        einfo "For upgrades, just run  	# cd ${DST_PATH}"
+		einfo "							# sh ./secure.sh" 
 	einfo
 }
 
