@@ -1,4 +1,51 @@
-10.13.2000
+14.10.200
+
+	- New app-arch/zip 2.3			(achim)
+	- New app-office/openoffice 605		(achim)
+  	  [Not working yet]
+	- New app-text/aspell 0.32.5		(achim)
+	- New app-text/pspell 0.11.2		(achim)
+	- Removed dev-libs/libunicode		(achim)
+	  [Not required]
+	- Update gimp 1.1.26 -> 1.1.27		(achim)
+	- New media-sound/gtk-gnutella 0.12	(achim)
+	- Removed media-sound/xmnap		(achim)
+	  [The project is no longer avalable]
+	- New net-libs/libwww 5.3.1		(achim)
+	- Update apache-ssl -> 1.3.14.2.7.0	(achim)
+	- New net-www/htdig 3.1.5		(achim)
+	- New net-www/mozilla M18		(achim)
+
+	- Update bonobo 0.18 -> 0.20		(achim)
+	- Update oaf 0.5.0 -> 0.5.1		(achim)
+	- Update gnome-applets 1.2.1 -> 1.2.2	(achim)
+	- Update gnome-print 0.20 -> 0.24	(achim)
+	- Update libxml 1.8.9 -> 1.8.10		(achim)
+	- Update bug-buddy 1.0 -> 1.1		(achim)
+	- Update gedit 0.9.0 -> 0.9.1		(achim)
+	- Update gnofin 0.8.0 -> 0.8.2		(achim)
+	- Update gnome-utils 1.2.0 -> 1.2.1	(achim)
+	- Update gnucash 1.4.6 -> 1.4.7		(achim)
+	- Update gnome-db 0.0.95 -> 0.1.0	(achim)
+	- Update gnumeric 0.56 -> 0.57		(achim)
+
+	- Moved gconf from gnome-apps to base	(achim)
+	- Moved gtkhtml from gnome-libs to base (achim)
+
+	- New gnome-base/gnome-vfs 0.3.1	(achim)
+	- New gnome-libs/gal 0.1		(achim)
+	- New gnome-libs/libgda 0.1.0		(achim)
+	- New gnome-libs/libunicode 0.4		(achim)
+	- New gnome-apps/medusa 0.2		(achim)
+	- New gnome-apps/nautilus 0.1.0		(achim)
+	- New gnome-apps/evolution 0.5.1	(achim)
+	- New gnome-apps/gb 0.0.12		(achim)
+	- New gnome-apps/gnorpm 0.95.1		(achim)
+
+	- Update kmago 0.1 -> 0.2		(achim)
+	
+13.10.2000
+
 	- Update to portage (config files)	(drobbins)
 
 10.10.2000
