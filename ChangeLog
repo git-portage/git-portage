@@ -1,5 +1,13 @@
-DATE
 21 Nov 2000
+
+drobbins
+Portage fix of a fix
+Portage's ROOT directory existence check and non-file check was messed
+up and only worked for non-"/" ROOTs.  This has been fixed.
+
+achim
+Update x11-libs gtk+-1.2.8-r1 to gtk+-1.2.8-r2
+Added ldconfig to pkg_postinst, required for automated build
 
 achim
 Update media-gfb aview-1.2 to aview-1.2-r2
@@ -30,6 +38,7 @@ jerry
 New app-admin sudo-1.6.3_p5
 
 DATE
+>>>>>>> 1.166
 20 Nov 2000
 
 jerry
@@ -75,6 +84,7 @@ primarily of interest for those setting up a Gentoo Linux box, while
 the linux-sources package is more appropriate for geeks who already
 have a running Gentoo Linux system and want to compile a more recent
 kernel by hand.
+
 
 
 
