@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5bf9b0c82ec93e2e1041a23157ebe8d1 evolution-1.5.92.1.ebuild 3600
 MD5 dd3e30cf2ae2af39f7fce74a047317ee evolution-1.4.5.ebuild 5740
 MD5 0a7bc4c4ab030921228d8d8317eebd29 ChangeLog 18073
@@ -18,3 +21,10 @@ MD5 4df81c3442025403034c53975ba663b1 files/evolution-gcc34.patch 3044
 MD5 6174a41481c88eb948a8e119cf93ea94 files/evolution-1.4.5-nztimezone.patch 1852
 MD5 49463c08f32ee1df0970196b6c4cef2b files/digest-evolution-1.4.5 132
 MD5 f44bc5e363c1f976a7a72676886b9d13 files/evolution-1.1.90-subversion.patch 470
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD8DBQFBL+DIwDHaUUJ0mYMRAnJeAJ4z8V/5Xh7ydDFbt7K9wmYwaJN+YACeIAVQ
+C2gx7qL/121m1MOitPTSB/Y=
+=EFDN
+-----END PGP SIGNATURE-----
