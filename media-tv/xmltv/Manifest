@@ -1,4 +1,5 @@
 MD5 0d904363d7e001eb9b7c82bfd3c6b039 xmltv-0.5.31.ebuild 6299
+MD5 a5d5ee74fbf2b55d05d7413ca9e8884b xmltv-0.5.33.ebuild 6407
 MD5 5138514860e0835913c815981fdf30ae xmltv-0.5.29.ebuild 5280
 MD5 7f66fa781ee80ee953025dc947d95b49 xmltv-0.5.30.ebuild 6137
 MD5 c78bfee3e78093e57cfb46576442c0f7 ChangeLog 6336
@@ -10,3 +11,4 @@ MD5 1cc28b5f6a8895da6a4d2ffba8c9cf8c files/digest-xmltv-0.5.29 65
 MD5 e037f58683c2fe79ce55312b5d69cdcf files/digest-xmltv-0.5.30 65
 MD5 540f82973470d2c56d9fd1a7582e7c48 files/digest-xmltv-0.5.31 65
 MD5 598d36feaa369b0fa89d6246ffe68869 files/digest-xmltv-0.5.32 65
+MD5 9b8fa89ca06d071544dada74ed5b15d3 files/digest-xmltv-0.5.33 65
