@@ -6,10 +6,10 @@ MD5 17e728ea0c2bc977a8ee7c96a9650da4 postfix-2.0.16-r1.ebuild 6663
 MD5 95cc748542f2bdec136801aed1515f08 postfix-2.0.19-r4.ebuild 6671
 MD5 a37e17b30106fd73993b70a6ec3db9af postfix-2.0.19.ebuild 6715
 MD5 30e7081167c25d6676a36269ef267f9b postfix-2.0.19-r1.ebuild 5974
-MD5 8b08040604c34b9d84bf5d410d6ffef3 ChangeLog 25502
+MD5 d20b57a0191bbee844eeded76e4a7be2 ChangeLog 25651
 MD5 2386a353b9c43ced5e3ff8b0fd494feb postfix-2.1.1.ebuild 6598
 MD5 86c229fe394877d2c6a26aa5367bc697 metadata.xml 253
-MD5 a6375162bdc165ebc7e5ac34f7b13dfb postfix-2.0.20.ebuild 7657
+MD5 4577956f452db4899d32fe1a0798761e postfix-2.0.20.ebuild 7760
 MD5 22e4554dad37b9beb643ada3d2519973 postfix-2.0.11.ebuild 5883
 MD5 4d990dab16b401d2089652fd65ba5fe1 postfix-2.0.19-r3.ebuild 6435
 MD5 447574cc6b931bf04baf228b2cff3b59 postfix-1.1.11.20020917.ebuild 4534
