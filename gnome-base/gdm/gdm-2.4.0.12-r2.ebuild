@@ -1,14 +1,14 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/Attic/gdm-2.4.0.12-r1.ebuild,v 1.3 2002/12/15 10:44:19 bjb Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/Attic/gdm-2.4.0.12-r2.ebuild,v 1.1 2002/12/25 18:59:46 azarah Exp $
 
-inherit gnome.org
+inherit eutils gnome.org
 
 DESCRIPTION="GNOME2 Display Manager"
 HOMEPAGE="http://www.gnome.org/"
 
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha"
+KEYWORDS="x86 ppc sparc alpha"
 LICENSE="GPL-2"
 IUSE="nls"
 SRC_URI="${SRC_URI}
@@ -29,17 +29,6 @@ RDEPEND=">=sys-libs/pam-0.72
 DEPEND="${RDEPEND}
 	>=x11-base/xfree-4.2.0-r3"
 
-pkg_setup() {
-	# This is not a very good way to do this, but
-	# it saves users the effort of remerging xfree..
-	# See bug #10190
-	cd /etc/X11
-	if patch -p0 --dry-run < ${FILESDIR}/${PN}-startDM.sh.patch &> /dev/null
-	then
-		einfo "Fixing startDM.sh..."
-		patch -p0 < ${FILESDIR}/${PN}-startDM.sh.patch > /dev/null || die
-	fi
-}
 
 src_unpack() {
 	unpack ${A}
@@ -142,11 +131,15 @@ src_install() {
 
 	cd ${S}
 
-	#support for new session stuff
+	# Support for new session stuff
 	rm -rf ${D}/etc/X11/gdm/Sessions
 	dosym ../Sessions /etc/X11/gdm/Sessions
 
-	# move Gentoo theme in
+	# Make sure the users environment are set properly
+	# (bash users only though :( )
+	dosed "s:#!/bin/sh:#!/bin/bash --login:g" /etc/X11/gdm/PreSession/Default
+
+	# Move Gentoo theme in
 	mv ${WORKDIR}/gentoo-emergence  ${D}/usr/share/gdm/themes
 	
 	dodoc ABOUT-NLS AUTHORS COPYING ChangeLog INSTALL NEWS README* TODO
@@ -190,7 +183,7 @@ pkg_postinst() {
 		fi
 	fi
 
-	# unmerge nukes sometimes
+	# Unmerge nukes sometimes
 	if [ ! -d ${ROOT}/var/lib/gdm ]
 	then
 		mkdir -p ${ROOT}/var/lib/gdm
@@ -214,3 +207,4 @@ pkg_postrm() {
 	einfo "To remove GDM from startup please execute"
 	einfo "'rc-update del xdm default'"
 }
+
