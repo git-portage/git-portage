@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-sci/gwave/Attic/gwave-20030804.ebuild,v 1.2 2004/02/01 17:52:59 plasmaroo Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-sci/gwave/Attic/gwave-20031224.ebuild,v 1.1 2004/02/01 17:52:59 plasmaroo Exp $
 
 DESCRIPTION="A waveform viewer analog data, such as SPICE simulations."
 HOMEPAGE="http://www.geda.seul.org/tools/gwave/"
@@ -10,13 +10,11 @@ LICENSE="GPL-2"
 KEYWORDS="~x86"
 SLOT="0"
 
-DEPEND=">=x11-libs/gtk+-1.2
-	>=dev-util/guile-1.6
+DEPEND=">=x11-libs/gtk+-1.2.10
+	>=dev-util/guile-1.6.3
 	>=x11-libs/guile-gtk-1.2.0.31"
 
 src_compile() {
-
-	epatch ${FILESDIR}/gwave-${PV}.gcc33.patch.bz2 || die
 
 	econf || die
 	make || die
