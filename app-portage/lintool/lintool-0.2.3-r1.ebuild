@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/lintool/Attic/lintool-0.2.3-r1.ebuild,v 1.3 2003/07/17 07:52:26 tuxus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/lintool/Attic/lintool-0.2.3-r1.ebuild,v 1.1 2003/08/15 13:22:00 lanius Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Gentoo Linux \"lint\" utility"

@@ -1,6 +1,12 @@
 # ChangeLog for dev-util/lintool
 # Copyright 2002-2003 Gentoo Technologies, Inc.; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/lintool/Attic/ChangeLog,v 1.13 2003/07/17 07:52:26 tuxus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/lintool/Attic/ChangeLog,v 1.1 2003/08/15 13:22:00 lanius Exp $
+
+*lintool-0.2.4 (15 Aug 2003)
+
+  15 Aug 2003; Heinrich Wendel <lanius@gentoo.org> lintool-0.2.3-r1.ebuild,
+  lintool-0.2.4.ebuild, metadata.xml:
+  moved from dev-util to app-portage
 
   11 Feb 2003; Guy Martin <gmsoft@gentoo.org> :
   Added hppa to keywords.
