@@ -332,7 +332,7 @@
 ./net-mail/pine-maildir/pine-maildir-4.21-r2.ebuild
 #./net-mail/pine/pine-4.21-r2.ebuild
 #./net-mail/postfix/postfix-20010204.ebuild
-./net-mail/promcail/procmail-3.15.ebuild
+./net-mail/promcail/procmail-3.15.1.ebuild
 #./net-mail/qmail-ldap/qmail-ldap-1.03.20000701-r2.ebuild
 #./net-mail/qmail-mysql/qmail-mysql-1.03-r2.ebuild
 ./net-mail/qmail/qmail-1.03-r2.ebuild
