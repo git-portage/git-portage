@@ -173,8 +173,7 @@
 ./gnome-libs/libole2/libole2-0.1.7.ebuild
 #./gnome-libs/medusa/medusa-0.2.2.ebuild
 ./gnome-office/abiword/abiword-0.7.11.ebuild
-./gnome-office/dia/dia-0.86.ebuild
-#./gnome-office/dia/dia-0.86-r1.ebuild
+./gnome-office/dia/dia-0.86-r1.ebuild
 ./gnome-office/eog/eog-0.5.ebuild
 ./gnome-office/gnome-db/gnome-db-0.2.0.ebuild
 ./gnome-office/gnome-pim/gnome-pim-1.2.0-r1.ebuild
