@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/jde/Attic/jde-2.3.4_beta5.ebuild,v 1.3 2005/01/01 13:51:21 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/jde/Attic/jde-2.3.5.ebuild,v 1.1 2005/01/12 18:09:48 mkennedy Exp $
 
 inherit elisp
 
@@ -18,7 +18,7 @@ DEPEND="virtual/emacs
 	app-emacs/elib
 	>=app-emacs/cedet-1.0_beta3"
 
-S=${WORKDIR}/${P/_beta/beta}
+S=${WORKDIR}/${P}
 
 src_compile() {
 	cd ${S}/lisp
@@ -32,15 +32,13 @@ EOF
 src_install() {
 	dodir ${SITELISP}/${PN}
 	cp -r java ${D}/${SITELISP}/${PN}/
-
 	dodir /usr/share/doc/${P}
 	cp -r doc/* ${D}/usr/share/doc/${P}/
-
 	cd ${S}/lisp
 	elisp-install ${PN}/lisp *.el *.elc *.bnf
-
 	elisp-site-file-install ${FILESDIR}/70jde-gentoo.el
+	dodoc ChangeLog ReleaseNotes.txt
+	find ${D} -type f -print0 |xargs -0 chmod 644
 	exeinto /usr/bin
 	doexe jtags*
-	dodoc ChangeLog ReleaseNotes.txt
 }

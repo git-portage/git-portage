@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/jde/Attic/jde-2.2.8.ebuild,v 1.6 2005/01/01 13:51:21 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/jde/Attic/jde-2.3.3-r1.ebuild,v 1.1 2005/01/12 18:09:48 mkennedy Exp $
 
-inherit elisp
+inherit elisp eutils
 
 IUSE=""
 
@@ -11,19 +11,24 @@ HOMEPAGE="http://jdee.sunsite.dk/"
 SRC_URI="mirror://gentoo/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="x86 amd64 ~ppc"
 
 DEPEND="virtual/emacs
-	virtual/jdk
-	app-emacs/speedbar
+	>=virtual/jdk-1.2.2
 	app-emacs/eieio
 	app-emacs/semantic
 	app-emacs/elib"
 
+src_unpack() {
+	unpack ${A}
+	# Fix for CVS versions of Emacs http://www.mail-archive.com/jde@sunsite.dk/msg07917.html
+	epatch ${FILESDIR}/${PV}-jde-new-buffer-menu-gentoo.patch || die
+}
+
 src_compile() {
 	cd ${S}/lisp
 	rm -f jde-compile-script-init
-	for i in ${SITELISP}/speedbar ${SITELISP}/eieio ${SITELISP}/semantic ${PWD}
+	for i in ${SITELISP}/eieio ${SITELISP}/semantic ${PWD}
 	do
 		echo "(add-to-list 'load-path \"$i\")" >>jde-compile-script-init
 	done
@@ -44,16 +49,4 @@ src_install() {
 	exeinto /usr/bin
 	doexe jtags*
 	dodoc ChangeLog ReleaseNotes.txt
-}
-
-pkg_postinst() {
-	elisp-site-regen
-	einfo ""
-	einfo "To use JDE, add the following for your ~/.emacs:"
-	einfo "	(require 'jde)"
-	einfo ""
-}
-
-pkg_postrm() {
-	elisp-site-regen
 }
