@@ -1,8 +1,8 @@
 MD5 b83bf23f1c96084b79765739613430ac fvwm-2.5.7-r5.ebuild 8757
 MD5 09e8019bdca099708433ceed768ce83c fvwm-2.5.8-r6.ebuild 10698
-MD5 4e6bbe67b1c05f2f60bf7d96fcb320c0 fvwm-2.5.10-r2.ebuild 9079
+MD5 6841791e5373b2a071e44fb77c15fdf0 fvwm-2.5.10-r2.ebuild 9079
 MD5 eab7687e1b4ebb2b542f00c7aebceffe fvwm-2.5.10-r1.ebuild 9117
-MD5 fc717e2e26cad64162308bca3a507375 ChangeLog 13063
+MD5 a0e30b3bb70440fe8f51cbbb8e14e4dd ChangeLog 13063
 MD5 4833e4d0685ef48988c0c5c4f9c6b377 metadata.xml 527
 MD5 2ba208645b273487941ef1de52759ae8 fvwm-2.4.18.ebuild 3171
 MD5 e2ceb5d855c5406a09d82442196efad8 files/README.transluceny.gz 5788
@@ -27,6 +27,5 @@ MD5 efd2297324dd0241c2a879beadfabdb7 files/fvwm-2.5.10-mips-compat.diff 2306
 MD5 e52e1c9212c856d5de29c603678dc52e files/digest-fvwm-2.5.7-r5 127
 MD5 c3ea3b9a8c5d7700913a795096e0b51a files/digest-fvwm-2.5.8-r6 127
 MD5 97373a30210df0b93c59e2aac76d17e0 files/fvwm-2.5.8-undermouse.diff 2534
-MD5 1275e65357e9a2d5e290db8b0f5e3dca files/fvwm-sync.diff 835
 MD5 933ebc841a6eafebaf9d57b7a99c3b10 files/fvwm-2.5.8-flickeringmoveworkaround.diff 726
 MD5 b20e3c8c23286531b549852ecbed4b74 files/fvwm-2.5.10-post-release.diff 2923
