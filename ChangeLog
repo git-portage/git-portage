@@ -1,5 +1,9 @@
 date 10 Dec 2000
 
+upd sys-apps/shadow-20000902 to 20000902-r1
+drobbins
+shadow now includes securetty and login is happy
+
 del app-doc/man-pages-1.31
 drobbins
 new location
