@@ -1,6 +1,16 @@
-MD5 2c504e8e6df401989aaf527a513c3859 xmule-1.8.4-r1.ebuild 975
-MD5 2254079ba8368de60f68bf4a57233274 xmule-1.9.0.ebuild 976
-MD5 9dd48d7d17e04d975adf24045a169202 ChangeLog 6444
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 fb6f5accf0234f8527b007effc385ecd xmule-1.8.4-r1.ebuild 1001
+MD5 38163780cf5f147923c2f6040d1c7799 xmule-1.9.0.ebuild 999
+MD5 3e90de8c7e2b58d816ca56ce7b97c13a ChangeLog 6525
 MD5 8aefbc0e49db723ca1ad02d0c409cd49 metadata.xml 160
 MD5 83413c32a94e2597771601d45b4ac116 files/digest-xmule-1.9.0 65
 MD5 7af93e9c27cecc95812aaf13b2579dc9 files/digest-xmule-1.8.4-r1 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.9.10 (GNU/Linux)
+
+iD8DBQFBKT6qcAgAdbxYsnERAsOyAJ9r01khhet86kl/FdRRhtMwzy4vSQCfbCN0
+/0oybfmM+xS/WiPv9h3P8oA=
+=QzAR
+-----END PGP SIGNATURE-----
