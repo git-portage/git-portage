@@ -305,7 +305,7 @@
 ./net-misc/openssh/openssh-2.2.0_p1.ebuild
 ./net-misc/rsync/rsync-2.4.6.ebuild
 ./net-misc/snarf/snarf-7.0-r1.ebuild
-./net-misc/snort/snort-1.6.3.ebuild
+./net-misc/snort/snort-1.6.3-r2.ebuild
 ./net-misc/sslwrap/sslwrap-2.0.5-r1.ebuild
 ./net-misc/wget/wget-1.5.3-r1.ebuild
 ./net-misc/whois/whois-4.5.1.ebuild
@@ -437,3 +437,4 @@
 ./x11-wm/enlightenment/enlightenment-0.16.4-r1.ebuild
 ./x11-wm/openmotif/openmotif-MLI-2.1.30.ebuild
 ./x11-wm/sawfish/sawfish-0.32.ebuild
+
