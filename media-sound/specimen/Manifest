@@ -1,4 +1,7 @@
 MD5 b3d2d5ff4ddfc4ed52550675f617a582 ChangeLog 705
 MD5 e4bfa7919e4d72c069943c43e6ada241 metadata.xml 426
 MD5 ecdb72ee4f10b2ac06674cc9827fc530 specimen-0.4.1.ebuild 971
+MD5 748cf1736bf6b70776d454f6169d64b1 .specimen-0.4.5.ebuild.swp 12288
+MD5 73a8d68b73d1d24468fcdf741a6d9833 specimen-0.4.5.ebuild 776
 MD5 c08efe833eb7bd80b58691720442ebf7 files/digest-specimen-0.4.1 66
+MD5 650cc21cc880262309b70e83d2c61c97 files/digest-specimen-0.4.5 66
