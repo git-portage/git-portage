@@ -3,6 +3,8 @@ MD5 fa24429bcdcf9f6d34ce70f1b6f2cbd2 toppler-1.0.5.ebuild 825
 MD5 db093013000a0f43953f2492005f83f5 toppler-1.0.3.ebuild 640
 MD5 a30c9d4ce8f9629d6d7323eaab258343 metadata.xml 241
 MD5 e418f3fc407f380f2438a50c50a4f565 toppler-1.0.4.ebuild 825
+MD5 010a8585fcfe0900ec8fe2d6b0474004 toppler-1.0.6.ebuild 845
 MD5 6785ed7833801021699e74d8eb8fc924 files/digest-toppler-1.0.5 66
 MD5 7daf53857a031238e7154b8743c3f6e0 files/digest-toppler-1.0.3 66
 MD5 abdeeb64187208c69c0ce7c1054bc62c files/digest-toppler-1.0.4 66
+MD5 00d09175b8f314775e198c195968b152 files/digest-toppler-1.0.6 66
