@@ -1,0 +1,4 @@
+MD5 7decedae0dc98b603c99aa034e31f969 xsp-0.13.ebuild 960
+MD5 b9ad1f9879e49c0e9dd64197c018cd0e files/digest-xsp-0.13 60
+MD5 2e90169830cdb771c77b1fbd5b3607d2 files/xsp.confd 205
+MD5 57972edb2081b5f0d219a940bdd54b0d files/xsp.initd 584
