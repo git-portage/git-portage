@@ -1,7 +1,7 @@
-# Copyright 1999-2001 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Jerry A! <jerry@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/app-admin/metalog/Attic/metalog-0.6-r8.ebuild,v 1.2 2002/01/26 22:43:51 woodchip Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/metalog/Attic/metalog-0.6-r9.ebuild,v 1.1 2002/03/11 22:30:15 azarah Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A highly configurable replacement for syslogd/klogd"
@@ -21,7 +21,8 @@ src_unpack() {
 }
 
 src_compile() {
-	./configure --prefix=/usr --mandir=/usr/share/man || die
+	./configure --prefix=/usr \
+		--mandir=/usr/share/man || die
 
 	emake || die
 }
@@ -36,3 +37,4 @@ src_install () {
 	exeinto /etc/init.d ; newexe ${FILESDIR}/metalog.rc6 metalog
 	insinto /etc/conf.d ; newins ${FILESDIR}/metalog.confd metalog
 }
+
