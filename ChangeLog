@@ -1,5 +1,13 @@
 date 15 Jan 2001
 
+upd net-www/netscape-4.76 to 4.76-r1
+achim
+Added PROVIDE and RDEPEND vars
+
+upd net-www/navigator-4.76 to 4.76-r1
+achim
+Added RDEPEND var
+
 upd sys-apps/dcron-2.7-r1 to 2.7-r2
 jerry
 Fixed perm problem.  Users can now edit their crontabs.
