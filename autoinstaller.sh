@@ -77,7 +77,8 @@ echo "Hostname: $hostname"
 echo "$hostname" > ${ROOT}/etc/hostname
 echo -n "domain " > ${ROOT}/etc/resolv.conf
 echo "$hostname" | cut -f2- -d. >> ${ROOT}/etc/resolv.conf
-echo "127.0.0.1 localhost ${hostname%%.*} ${hostname}" >> ${ROOT}/etc/hosts
+echo "127.0.0.1 localhost" >> ${ROOT}/etc/hosts
+echo "$eth0_ip ${hostname%%.*} ${hostname}" >> ${ROOT}/etc/hosts
 
 echo "nameserver $nameserver" >> ${ROOT}/etc/resolv.conf
 
