@@ -1,4 +1,4 @@
-./app-admin/gkrellm/gkrellm-1.0.2.ebuild
+#./app-admin/gkrellm/gkrellm-1.0.2.ebuild
 ./app-admin/killproc/killproc-1.12-r1.ebuild
 ./app-admin/logrotate/logrotate-3.3-r1.ebuild
 ./app-admin/modlogan/modlogan-0.5.7.ebuild
@@ -65,7 +65,7 @@
 ./dev-lang/kaffe/kaffe-1.0.6.ebuild
 ./dev-lang/nasm/nasm-0.98-r1.ebuild
 #./dev-lang/php-4/php-4.0.0-r1.ebuild
-./dev-lang/php-4/php-4.0.3_p1.ebuild
+./dev-lang/php-4/php-4.0.3_p1-r1.ebuild
 ./dev-lang/python/python-1.5.2-r4.ebuild
 ./dev-lang/ruby/ruby-1.6.1.ebuild
 ./dev-lang/swig/swig-1.3_alpha5-r1.ebuild
@@ -434,4 +434,4 @@
 ./sys-devel/patch/patch-2.5.4-r1.ebuild
 ./sys-devel/perl/perl-5.6.0-r3.ebuild
 ./sys-devel/python-basic/python-basic-1.5.2-r4.ebuild
-./sys-kernel/linux/linux-2.4.0_rc10-r4.ebuild
+./sys-kernel/linux/linux-2.4.0_rc11.ebuild
