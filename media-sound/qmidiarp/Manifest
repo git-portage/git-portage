@@ -1,0 +1,3 @@
+MD5 c48d065c92d7fe181527fbf6473b10a8 qmidiarp-0.0.2.ebuild 648
+MD5 19bf8edcb576fd4989a3dd037226cd72 files/digest-qmidiarp-0.0.2 66
+MD5 c12d23f0f4c6059ce7c29fc4c8ff2414 files/qmidiarp-0.0.2-fix_qtdir_in_makefile.patch 426
