@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_pre5-r3.ebuild,v 1.14 2004/11/29 09:07:34 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_pre5-r3.ebuild,v 1.15 2004/12/18 19:49:56 chriswhite Exp $
 
 inherit eutils flag-o-matic kmod
 
@@ -12,7 +12,7 @@ SVGV=1.9.17
 # Handle PREversions as well
 MY_PV="${PV/_/}"
 S="${WORKDIR}/MPlayer-${MY_PV}"
-SRC_URI="mirror://mplayer/MPlayer/releases/MPlayer-${MY_PV}.tar.bz2
+SRC_URI="mirror://mplayer/releases/MPlayer-${MY_PV}.tar.bz2
 	mirror://mplayer/releases/fonts/font-arial-iso-8859-1.tar.bz2
 	mirror://mplayer/releases/fonts/font-arial-iso-8859-2.tar.bz2
 	mirror://gentoo/${P}-alsa-gui.patch.tar.bz2
