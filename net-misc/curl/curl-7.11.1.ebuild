@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/Attic/curl-7.11.1.ebuild,v 1.6 2004/10/19 12:31:59 absinthe Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/Attic/curl-7.11.1.ebuild,v 1.7 2005/01/13 16:52:53 liquidx Exp $
 
 DESCRIPTION="A Client that groks URLs"
 HOMEPAGE="http://curl.haxx.se/"
