@@ -1,7 +1,10 @@
 27.08.2000	
 
-	- New perl-tk800 022
-	- Update lilo 21.5 -> 21.5.1
+	- Modified gettext-0.10.35		(achim)
+	  [Lisp File get's installed inside the
+	   install-dir now]
+	- New perl-tk800 022			(achim)
+	- Update lilo 21.5 -> 21.5.1		(achim)
 
 26.08.2000
 
