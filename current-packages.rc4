@@ -174,3 +174,9 @@
 ./dev-libs/rep-gtk/rep-gtk-0.15-r1.ebuild
 ./x11-wm/sawfish/sawfish-0.37.3-r1.ebuild
 ./gnome-base/gnome/gnome-1.4_beta2.ebuild
+./net-misc/openssh/openssh-2.3.0_p1-r5.ebuild
+./net-www/mozilla/mozilla-0.8-r1.ebuild
+./net-www/links/links-0.95-r1.ebuild
+./net-www/netscape/netscape-4.76-r2.ebuild
+./dev-libs/librep/librep-0.13.4-r1.ebuild
+./dev-lang/nasm/nasm-0.98-r2.ebuild
