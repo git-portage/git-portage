@@ -1,12 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/horde-kronolith/Attic/horde-kronolith-2.0.1.ebuild,v 1.1 2005/01/16 11:07:42 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/horde-turba/Attic/horde-turba-2.0.2.ebuild,v 1.1 2005/02/23 23:02:43 vapier Exp $
 
 HORDE_PHP_FEATURES="-o mysql odbc postgres ldap"
 HORDE_MAJ="-h3"
 inherit horde
 
-DESCRIPTION="Kronolith is the Horde calendar application"
+DESCRIPTION="Turba is the Horde address book / contact management program"
 
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~sparc ~x86"
 
