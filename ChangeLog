@@ -1,5 +1,6 @@
 21.09.2000
-
+	- sys-apps/bash now compiles statically	(drobbins)
+	- Fixes for portage			(drobbins)
 	- Update gimp-print 4.0a3 -> 4.0b1	(achim)
 
 20.09.2000
