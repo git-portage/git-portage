@@ -362,7 +362,7 @@
 ./net-print/cups/cups-1.1.4.ebuild
 ./net-print/gtklp/gtklp-0.6d.ebuild
 ./net-print/kups/kups-0.8.0.ebuild
-./net-print/qtcups/qtcups-1.1.ebuild
+./net-print/qtcups/qtcups-2.0.ebuild
 ./net-print/gimp-print-cups/gimp-print-cups-4.1.1.ebuild
 ./net-print/xpp/xpp-0.7.ebuild
 ./net-www/amaya/amaya-4.1.ebuild
