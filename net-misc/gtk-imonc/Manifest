@@ -1,4 +1,6 @@
+MD5 d20f2f9b2685a85d1e0d6d2c6af1e32c gtk-imonc-0.6.3.ebuild 685
 MD5 4d59e46ae1d65f21e660c59c19ef90f0 gtk-imonc-0.6.2.ebuild 683
 MD5 fc07be6b02d2a0d491bb936bf1ae73a4 metadata.xml 256
 MD5 b1173534fd08f14a2830588329a68181 ChangeLog 582
 MD5 e15865ac571878d6e490e8d4f10b4612 files/digest-gtk-imonc-0.6.2 67
+MD5 44964e52980adbf8ae240975e0efdc35 files/digest-gtk-imonc-0.6.3 67
