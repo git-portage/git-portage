@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/sylpheed/Attic/sylpheed-0.9.12-r1.ebuild,v 1.3 2004/08/27 13:22:19 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/sylpheed/Attic/sylpheed-0.9.12-r3.ebuild,v 1.1 2004/08/27 13:22:19 dragonheart Exp $
 
 inherit eutils
 
 IUSE="ssl xface ipv6 imlib nls gnome ldap crypt pda gtk2"
 
-GTK2_PATCHVER="20040617"
+GTK2_PATCHVER="20040622"
 
 DESCRIPTION="A lightweight email client and newsreader"
 HOMEPAGE="http://sylpheed.good-day.net/
@@ -29,8 +29,7 @@ DEPEND="gtk2? ( >=x11-libs/gtk+-2.2 )
 	ssl? ( dev-libs/openssl )
 	pda? ( app-pda/jpilot )
 	ldap? ( >=net-nds/openldap-2.0.11 )
-	crypt? ( <app-crypt/gpgme-0.4
-		!=app-crypt/gpgme-0.3.14-r1 )
+	crypt? ( =app-crypt/gpgme-0.3.14-r1 )
 	xface? ( >=media-libs/compface-1.4 )"
 RDEPEND="${DEPEND}
 	app-misc/mime-types
@@ -43,18 +42,43 @@ src_unpack() {
 	cd ${S}
 	epatch ${FILESDIR}/${PN}-namespace.diff
 	epatch ${FILESDIR}/${PN}-procmime.diff
+	epatch ${FILESDIR}/${P}-64bit.patch
 
 	if use gtk2; then
 		epatch ${WORKDIR}/${P}-gtk2-${GTK2_PATCHVER}.diff
-		! use crypt && cp ac/missing/gpgme.m4 ac
-		./autogen.sh
 	fi
+	! use crypt && cp ac/missing/gpgme.m4 ac
+	! use gnome && cp ac/missing/gdk-pixbuf.m4 ac
+	! use imlib && cp ac/missing/imlib.m4 ac
 
+	aclocal -I ac || die "aclocal failed"
+	libtoolize --force --copy || die "libtoolize died"
+	autoheader || die "autoheader died"
+
+	# had to do this to prevent failure.
+	if use gtk2;
+	then
+		aclocal -I ac || die "2nd aclocal failed"
+	fi
+	automake --add-missing --foreign --copy || die "automake failed"
+	autoconf || die "failed to autoconf"
 }
 
 src_compile() {
 
 	local myconf
+
+	# for gpgme support
+	export GPGME_CONFIG=${ROOT}/usr/bin/gpgme3-config
+
+	# For gnupg-1.9
+	if [ -x ${ROOT}/usr/bin/gpg ];
+	then
+		export GPG_PATH=${ROOT}/usr/bin/gpg
+	elif [ -x ${ROOT}/usr/bin/gpg2 ];
+	then
+		export GPG_PATH=${ROOT}/usr/bin/gpg2
+	fi
 
 	if use gtk2; then
 		myconf="--enable-gdk-pixbuf"
