@@ -3,9 +3,9 @@ MD5 ecb31937eebc5b0afa6785ec0afefe4d windowmaker-0.80.2-r1.ebuild 3408
 MD5 58b92f8943bac08e53aeeb01f640537a windowmaker-0.80.2-r2.ebuild 3437
 MD5 20ba3ee0e4036e307342671f74921913 windowmaker-0.80.2-r3.ebuild 3749
 MD5 3c3d6a630b21bdf50c422943b2cc79fe windowmaker-0.80.2-r4.ebuild 4034
-MD5 764c73ccec932024778eb5b9c148ff0a ChangeLog 7670
-MD5 b0a53619db4e5741695ce5c1bb1ee44a windowmaker-0.90.0.ebuild 4469
-MD5 0de7538e0b8ebd1def8a6df062c39bf3 windowmaker-0.91.0.ebuild 4457
+MD5 50d5ba4cd21cebfd55405d4a0fed8cd8 ChangeLog 7670
+MD5 248585ccd01b24785a7ce882b96d9d7f windowmaker-0.90.0.ebuild 4469
+MD5 8f3ef40b281864d1a0f778de5a5d92dd windowmaker-0.91.0.ebuild 4457
 MD5 b5304655d4ff5441989ab94a1bdc9506 files/digest-windowmaker-0.80.2-r1 144
 MD5 b5304655d4ff5441989ab94a1bdc9506 files/digest-windowmaker-0.80.2-r2 144
 MD5 b5304655d4ff5441989ab94a1bdc9506 files/digest-windowmaker-0.80.2-r3 144
