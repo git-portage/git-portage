@@ -5,6 +5,11 @@ Gentoo Team
 
 ------------------------------------------------------------------------
 
+This document is a work in progress, and is constantly being updated
+and changed. It is by no means complete.
+
+------------------------------------------------------------------------
+
 Contents
 
 I. Introduction
@@ -19,6 +24,65 @@ III. .ebuild Files
 IV. Filesystem Locations
   A. Introduction to the FHS
   B. How to Fit Your Packages into the Filesystem
+V. The Portage Scripts and Utilities
+  A. Public Scripts
+    1. ebuild
+    2. portage-merge
+    3. portage-unmerge
+    4. portage-maintain
+    5. pkgmerge
+    6. pkgname
+  B. Private Scripts
+    1. dobin
+    2. dodeps
+    3. dodir
+    4. dodoc
+    5. doexe
+    6. dohard
+    7. doinfo
+    8. doins
+    9. dolib
+    10. dolib.a
+    11. dolib.so
+    12. doman
+    13. domo
+    14. donewins
+    15. dopython
+    16. dosbin
+    17. dosed
+    18. dosym
+    19. find-packages
+    20. find-requires
+    21. fowners
+    22. fperms
+    23. import-configsettings
+    24. import-settings
+    25. megadigest
+    26. megadownload
+    27. megatouch
+    28. newbin
+    29. newdoc
+    30. newexe
+    31. newins
+    32. newlib.a
+    33. newlib.so
+    34. newman
+    36. newsbin
+    37. pkgmerge
+    38. pmake
+    39. portage-maintain
+    40. prepall
+    41. prepalldocs
+    42. prepallinfo
+    43. prepallman
+    44. prepallstrip
+    45. prepinfo
+    46. preplib
+    47. preplib.so
+    48. prepman
+    49. prepstrip
+    50. unpack
+    51. use
 
 ------------------------------------------------------------------------
 
@@ -132,10 +196,6 @@ II. The Portage Tree
 
 	sys-apps - system-critical applications and utilities
 
-	sys-build - stuff thats in the build tarball; you don't
-		normally need any of these packages unless you are
-		building your entire system from scratch.
-
 	sys-devel - base development packages, such as gcc and make
 
 	sys-kernel - linux kernels
@@ -161,11 +221,19 @@ II. The Portage Tree
 	enough to require compressing, and 2) cvs does not play well
 	with binary files.
 
-	Please add a suffix or prefix such as ${PV}-${PR} to the tail
-	of every file you put into the files directory, so that the
-	files used for each individual version of your ebuild scripts
-	are distinguishable from one another, and so that the changes
-	between different revisions are visible.
+	Please add a suffix or prefix such as ${PV}-r${PR} (or just
+	${PV} if ${PR} is 0) to the tail of every file you put into
+	the files directory, so that the files used for each
+	individual version of your ebuild scripts are distinguishable
+	from one another, and so that the changes between different
+	revisions are visible.
+
+	If you have many files that should go into the files
+	directory, you should create a subdirectory files/${PV}-${PR}
+	(or just files/${PV} if ${PR} is 0), and put all these files
+	in there. If you use this method, you do not need to suffix
+	the names of the files in this directory with the ebuild
+	version.
 
 III. .ebuild Files
 
@@ -211,6 +279,11 @@ III. .ebuild Files
 
   B. Contents of an .ebuild File
 
+    1. Variable Settings
+
+	The first part of every ebuild file is made up of a number of
+	variable settings. The variables you can set are 
+
   C. Rules for Writing an .ebuild File
 
 IV. Filesystem Locations
@@ -218,3 +291,121 @@ IV. Filesystem Locations
   A. Introduction to the FHS
 
   B. How to Fit Your Packages into the Filesystem
+
+V. The Portage Scripts and Utilities
+
+  A. Public Scripts
+
+    1. ebuild
+
+    2. portage-merge
+
+    3. portage-unmerge
+
+    4. portage-maintain
+
+    5. pkgmerge
+
+    6. pkgname
+
+  B. Private Scripts
+
+    1. dobin
+
+    2. dodeps
+
+    3. dodir
+
+    4. dodoc
+
+    5. doexe
+
+    6. dohard
+
+    7. doinfo
+
+    8. doins
+
+    9. dolib
+
+    10. dolib.a
+
+    11. dolib.so
+
+    12. doman
+
+    13. domo
+
+    14. donewins
+
+    15. dopython
+
+    16. dosbin
+
+    17. dosed
+
+    18. dosym
+
+    19. find-packages
+
+    20. find-requires
+
+    21. fowners
+
+    22. fperms
+
+    23. import-configsettings
+
+    24. import-settings
+
+    25. megadigest
+
+    26. megadownload
+
+    27. megatouch
+
+    28. newbin
+
+    29. newdoc
+
+    30. newexe
+
+    31. newins
+
+    32. newlib.a
+
+    33. newlib.so
+
+    34. newman
+
+    36. newsbin
+
+    37. pkgmerge
+
+    38. pmake
+
+    39. portage-maintain
+
+    40. prepall
+
+    41. prepalldocs
+
+    42. prepallinfo
+
+    43. prepallman
+
+    44. prepallstrip
+
+    45. prepinfo
+
+    46. preplib
+
+    47. preplib.so
+
+    48. prepman
+
+    49. prepstrip
+
+    50. unpack
+
+    51. use
