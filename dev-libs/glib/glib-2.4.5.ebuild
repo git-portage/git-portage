@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/Attic/glib-2.4.5.ebuild,v 1.6 2004/09/16 01:48:51 pvdabeel Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/Attic/glib-2.4.5.ebuild,v 1.8 2004/09/17 01:56:05 mr_bones_ Exp $
 
 inherit libtool
 
@@ -20,8 +20,9 @@ DEPEND=">=dev-util/pkgconfig-0.14
 RDEPEND="virtual/libc"
 
 src_compile() {
-
 	if use macos; then
+		glibtoolize
+	elif use ppc-macos; then
 		glibtoolize
 	else
 		elibtoolize
@@ -33,11 +34,9 @@ src_compile() {
 		|| die
 
 	emake || die
-
 }
 
 src_install() {
-
 	# einstall || die
 	make DESTDIR=${D} install || die
 
@@ -47,5 +46,4 @@ src_install() {
 	echo "G_BROKEN_FILENAMES=1" > ${D}/etc/env.d/50glib2
 
 	dodoc AUTHORS ChangeLog* README* INSTALL NEWS*
-
 }
