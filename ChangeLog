@@ -1,5 +1,16 @@
 date 18 Jan 2001
 
+upd sys-libs/db-3.1.17-r1 to 3.2.3h
+achim
+required for transaction support in mysql
+
+upd dev-db/mysql-3.23.28 to 3.23.31
+achim
+with transaction support
+
+upd net-ftp/lftp-2.3.5 to 2.3.7
+achim
+
 upd sys-apps/shadow-20000902-r1 to 20001016
 achim
 copy /etc/pam.d/passwd to /etc/pam.d/useradd to get adduser/useradd working.

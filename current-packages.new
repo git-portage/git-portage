@@ -288,7 +288,7 @@
 ./net-fs/nfs-utils/nfs-utils-0.2.1-r1.ebuild
 ./net-fs/samba/samba-2.0.7-r3.ebuild
 ./net-ftp/ftp/ftp-0.17-r1.ebuild
-./net-ftp/lftp/lftp-2.3.5.ebuild
+./net-ftp/lftp/lftp-2.3.7.ebuild
 ./net-ftp/ncftp/ncftp-3.0.2.ebuild
 ./net-ftp/proftpd/proftpd-1.2.0_rc2-r1.ebuild
 ./net-irc/bitchx/bitchx-1.0.17.ebuild
@@ -450,7 +450,7 @@
 #./sys-kernel/linux/linux-2.4.1_pre8.ebuild
 ./sys-libs/cracklib/cracklib-2.7-r1.ebuild
 ./sys-libs/db/db-1.85.ebuild
-./sys-libs/db/db-3.1.17-r1.ebuild
+./sys-libs/db/db-3.2.3h.ebuild
 ./sys-libs/gdbm/gdbm-1.8.0-r1.ebuild
 #./sys-libs/glibc/glibc-2.2.1.ebuild
 ./sys-libs/glibc/glibc-2.2-r2.ebuild
