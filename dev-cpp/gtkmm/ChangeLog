@@ -1,6 +1,6 @@
 # ChangeLog for dev-cpp/gtkmm
 # Copyright 2002-2003 Gentoo Technologies, Inc.; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/gtkmm/ChangeLog,v 1.2 2003/07/23 21:09:39 gmsoft Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/gtkmm/ChangeLog,v 1.2.2.1 2003/07/27 09:48:56 avenj Exp $
 
 *gtkmm-2.2.3 (23 May 2003)
 

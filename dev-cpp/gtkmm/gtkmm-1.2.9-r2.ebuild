@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/gtkmm/Attic/gtkmm-1.2.9-r2.ebuild,v 1.2 2003/07/22 22:10:15 gmsoft Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/gtkmm/Attic/gtkmm-1.2.9-r2.ebuild,v 1.2.2.1 2003/07/27 09:48:56 avenj Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="C++ interface for GTK+"
