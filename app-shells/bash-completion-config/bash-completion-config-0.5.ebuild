@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/bash-completion-config/Attic/bash-completion-config-0.4.ebuild,v 1.6 2004/11/04 17:29:54 corsair Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/bash-completion-config/Attic/bash-completion-config-0.5.ebuild,v 1.1 2004/11/10 12:58:33 ka0ttic Exp $
 
 MY_PN="bashcomp-config"
 MY_P="${MY_PN}-${PV}"
