@@ -1,0 +1,6 @@
+MD5 f74c800ebb67c80c7b6d1502f7b976b3 multipath-tools-0.4.2.ebuild 843
+MD5 798e469b98b2194e2d890ffa7976e28b ChangeLog 126
+MD5 cf274d10abad475cbb2a5ac340dda64c metadata.xml 231
+MD5 34429981777235fbc91c4e4ffc71c791 .multipath-tools-0.4.2.ebuild.swp 12288
+MD5 b9beef98f3e1550e08975a7708b77892 files/rc-multipathd 397
+MD5 68c0760f1e402683c1b76f5cb2ceca9c files/digest-multipath-tools-0.4.2 74
