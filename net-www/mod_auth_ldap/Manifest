@@ -1,4 +1,7 @@
-MD5 9f84ea7f22578139a2a25ee7353d5ab9 ChangeLog 2794
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 c86403e4666b13bb6abd442742b9aa0e ChangeLog 2794
 MD5 0d18f0fe5d603b41b988373892caf195 metadata.xml 226
 MD5 8b9d3b00fc7a33be7c5b5d7ce3a4a336 mod_auth_ldap-2.4.2-r1.ebuild 876
 MD5 a9ccf04e78090f7bc86a551831c46cee mod_auth_ldap-2.4.2.ebuild 1659
@@ -9,3 +12,10 @@ MD5 7c887a1226ef0c99f4068014a05b2135 files/mod_auth_ldap.conf 667
 MD5 70f2900c0af4686603926e27feb6b46d files/digest-mod_auth_ldap-2.4.2-r1 71
 MD5 70f2900c0af4686603926e27feb6b46d files/digest-mod_auth_ldap-2.4.2 71
 MD5 76206b76e9f83bdce9089a9382477b48 files/digest-mod_auth_ldap-3.3 68
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCHxJzmPFBzbX68WERAoenAJwIOOJEHDt8jkuluI59zMyvEjvNaQCfTEcY
+Iv11wttfYkisnJ5reWzcFwY=
+=1FJa
+-----END PGP SIGNATURE-----
