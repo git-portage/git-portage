@@ -1,5 +1,9 @@
 date 07 Feb 2001
 
+upd net-misc/bind-9.0.1-r1 to 9.1.0
+jerry
+Update (fixes security exploits in 9.0.1)
+
 upd sys-libs/cracklib-2.7-r1 to r2
 achim
 Maintainence and FHS 2.1 fixes for RC4

@@ -346,7 +346,7 @@
 ./net-mail/vlnx/vlnx-407e-r1.ebuild
 #./net-misc/bind/bind-8.2.2.5-r1.ebuild
 #./net-misc/bind/bind-8.2.2.7-r1.ebuild
-./net-misc/bind/bind-9.0.1-r1.ebuild
+./net-misc/bind/bind-9.1.0.ebuild
 ./net-misc/dhcp/dhcp-3.0_beta0211.ebuild
 #./net-misc/djbdns/djbdns-1.02-r1.ebuild
 ./net-misc/fping/fping-2.2_beta1.ebuild
