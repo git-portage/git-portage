@@ -1,4 +1,6 @@
+MD5 b9c54a6388778eef283d6e6846231f04 greputils-2.4.ebuild 540
 MD5 e0b8b6bb8f0f752a163856b8fbae8617 ChangeLog 537
 MD5 148ec677e7b992ed76769b71781cbae3 greputils-2.3.ebuild 537
 MD5 9771ca4ff90b56dddc4acfadc6f6a01e metadata.xml 250
+MD5 4ef4d667e347667390b259c8ebebddc8 files/digest-greputils-2.4 65
 MD5 b17b72a42886c6e1865c4eb679a01292 files/digest-greputils-2.3 64
