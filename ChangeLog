@@ -1,5 +1,9 @@
 date 16 Jan 2001
 
+upd gnome-libs/gb-0.0.16 to 0.0.17
+achim
+required for gnumeric-0.61
+
 upd sys-libs/glibc-2.2-r2 to 2.2.1
 achim
 builds without problems, but not tested for

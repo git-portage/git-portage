@@ -183,7 +183,7 @@
 ./gnome-base/mc/mc-4.5.51.ebuild
 ./gnome-base/oaf/oaf-0.6.1.ebuild
 #./gnome-libs/ammonite/ammonite-0.8.1.euild
-./gnome-libs/gb/gb-0.0.16.ebuild
+./gnome-libs/gb/gb-0.0.17.ebuild
 ./gnome-libs/libgda/libgda-0.2.1.ebuild
 ./gnome-libs/libole2/libole2-0.1.7.ebuild
 #./gnome-libs/medusa/medusa-0.2.2.ebuild
@@ -251,8 +251,8 @@
 ./media-sound/sox/sox-12.17.1.ebuild
 ./media-sound/shorten/shorten-3.2.ebuild
 ./media-sound/xmms/xmms-1.2.3.ebuild
-./media-sound/xmms-aalsa-0.5.4.ebuild
-./media-sound/xmms-arts-0.4.ebuild
+./media-sound/xmms-aalsa/xmms-aalsa-0.5.4.ebuild
+./media-sound/xmms-arts/xmms-arts-0.4.ebuild
 ./media-video/avifile/avifile-0.53.1.ebuild
 ./media-video/bcast-2000/bcast-2000c.ebuild
 ./media-video/mjpeg-tools/mjpeg-tools-1a.ebuild
