@@ -1,5 +1,10 @@
 date 23 Apr 2001
 
+upd sys-apps/dcron-2.7-r3 to 2.7-r4
+drobbins
+crond was in the wrong location, causing a crond to continually
+restart.  Now fixed.
+
 new dev-util/cscopre-15.1
 blutgens
 
