@@ -1,5 +1,5 @@
-MD5 08dd549bbe472b4cd1fa633531bedc9b ChangeLog 2500
-MD5 983f25ef00416ade80c7fa6ce5355849 PyOpenGL-2.0.0.44.ebuild 1330
+MD5 a25a71f7b1687b98c17d5cfc16591bbc ChangeLog 2502
+MD5 be0a2eae976405b8b6aff56259ee3372 PyOpenGL-2.0.0.44.ebuild 1332
 MD5 71c4638c9c88af75b58e5f5cb54fe008 metadata.xml 159
 MD5 67d2ad027cfd6d411a585b0e346606a8 files/config.diff 1175
 MD5 9feca450998c720327067463fea8cdc0 files/digest-PyOpenGL-2.0.0.44 70
