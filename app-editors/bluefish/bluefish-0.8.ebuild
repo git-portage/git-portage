@@ -1,15 +1,15 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/bluefish/Attic/bluefish-2002.11.17.ebuild,v 1.4 2002/12/09 09:30:15 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/bluefish/Attic/bluefish-0.8.ebuild,v 1.1 2002/12/14 21:14:04 hanno Exp $
 
-MY_PV=`echo ${PV} | sed -e 's/\./-/g'`
-S=${WORKDIR}/${PN}-gtk2
+MY_P=${PN}-gtk2-${PV}
+S=${WORKDIR}/${MY_P}
 DESCRIPTION="Bluefish is a GTK HTML editor for the experienced web designer or programmer."
-SRC_URI="http://pkedu.fbt.eitn.wau.nl/~olivier/snapshots/${PN}-gtk2port-${MY_PV}.tgz"
+SRC_URI="http://pkedu.fbt.eitn.wau.nl/~olivier/downloads/${MY_P}.tar.bz2"
 HOMEPAGE="http://bluefish.openoffice.nl/"
 
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~sparc "
+KEYWORDS="~x86 ~ppc ~sparc"
 SLOT="0"
 IUSE="nls perl"
 
