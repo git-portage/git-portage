@@ -1,0 +1,7 @@
+virtual/glibc 			sys-build/glibc sys-libs/glibc
+virtual/kde-i18n-2.0.1 		kde-base/kde-i18n
+virtual/lpr			net-print/cups net-print/LPR
+virtual/flex			sys-build/flex sys-devel/flex
+virtual/bison			sys-build/bison	sys-devel/bison
+virtual/bash			sys-build/bash sys-devel/bash
+virtual/kernel			sys-kernel/linux sys-kernel/linux-sources
