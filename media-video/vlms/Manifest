@@ -1,4 +1,5 @@
-MD5 c9808d73233cf80020d0f08b4b5a60b3 vlms-0.2.2.ebuild 698
 MD5 d752b05bd2fb8e3f80c4fd8a494b719e ChangeLog 575
 MD5 31018765c8c65a239dba78a98c405543 metadata.xml 224
+MD5 d522d3b98cb96108d60e5f86ceb1b01f vlms-0.2.2.ebuild 811
 MD5 4b2e25eb6b6aad18af4d68e4cad32d1a files/digest-vlms-0.2.2 62
+MD5 d721233a6b3031aec0aae03ee169a349 files/0.2.2-vlf-cr-fix.patch 523
