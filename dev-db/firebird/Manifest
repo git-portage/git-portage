@@ -1,3 +1,4 @@
+MD5 c545b46a5e6a695d8674be70ec75be64 firebird-1.5.0.ebuild 631
 MD5 2b6f422a6d1afe8fd18443a66ff0aa87 firebird-1.0-r1.ebuild 1385
 MD5 4168e6b51b229b38871333c40ad09a07 ChangeLog 1660
 MD5 b6d46d544ce131eb681e0d7e68a465cc metadata.xml 623
@@ -8,3 +9,4 @@ MD5 d76a09a887248deb2d4d466f06515730 files/firebird-1.0-gentoo.patch 2549
 MD5 00a05e4f04f632436d491144b0bd8853 files/digest-firebird-1.0-r1 150
 MD5 a71afe7683db444d9647fc136eaeb1c1 files/70firebird 77
 MD5 10d808d19eb3949349b591c3d525b74a files/digest-firebird-1.0.3 150
+MD5 977b78810d680e76baafbefde76323cf files/digest-firebird-1.5.0 73
