@@ -1,5 +1,5 @@
-MD5 fcf307b60ef9e0c0fb55ff80a696eed2 lilo-22.6.ebuild 4665
-MD5 0f7d25653bc9ae71a019beb54ded28b6 ChangeLog 1922
+MD5 604d21f27d3d62c0687b8c9229d0e489 lilo-22.6.ebuild 4759
+MD5 26875dbb7fab6998f65939be7dca0d2a ChangeLog 2010
 MD5 eeee4743c4e463eeed3a7a4c15380e0d metadata.xml 254
 MD5 42faa8a84fae547fe181da0ad7b67b04 files/lilo-22.6-devmapper_gentoo.patch 11826
 MD5 a12e27d3f9076bb13d357533303f77ff files/digest-lilo-22.6 122
