@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/hashcash/Attic/hashcash-0.27.ebuild,v 1.4 2004/07/01 21:06:36 squinky86 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/hashcash/Attic/hashcash-0.27.ebuild,v 1.5 2005/02/04 23:13:45 kloeri Exp $
 
 IUSE=""
 DESCRIPTION="Utility to generate hashcash tokens"
