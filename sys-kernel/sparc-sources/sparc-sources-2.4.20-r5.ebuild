@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/sparc-sources/Attic/sparc-sources-2.4.20-r4.ebuild,v 1.4 2003/03/02 19:29:51 joker Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/sparc-sources/Attic/sparc-sources-2.4.20-r5.ebuild,v 1.1 2003/03/18 11:03:54 joker Exp $
 
 IUSE="build"
 
@@ -43,9 +43,4 @@ src_unpack() {
 	# failures, if they aren't there that is a good thing!
 
 	kernel_src_unpack
-
-	# Automaticaly use kgcc in the main Makefile on sparc32+gcc3 machines.
-	mv Makefile Makefile.orig
-	sed 's/^CC.*= $(CROSS_COMPILE)gcc/CC		:= $(CROSS_COMPILE)$(shell [ "$(ARCH)" = "sparc" -a "`gcc -dumpversion`" != "2.95.3" ] \&\& echo kgcc || echo gcc)/' <Makefile.orig >Makefile
-	rm Makefile.orig
 }
