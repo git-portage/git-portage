@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/jack-rack/Attic/jack-rack-1.4.2.ebuild,v 1.3 2004/03/13 21:17:32 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/jack-rack/Attic/jack-rack-1.4.3.ebuild,v 1.1 2004/03/13 21:17:32 eradicator Exp $
 
 DESCRIPTION="JACK Rack is an effects rack for the JACK low latency audio API."
 HOMEPAGE="http://arb.bash.sh/~rah/software/jack-rack/"
@@ -22,15 +22,7 @@ DEPEND="media-libs/ladcca \
 S=${WORKDIR}/${P}
 
 src_compile() {
-	local myconf
-
-	use gnome || myconf="${myconf} --disable-gnome"
-
-	./configure ${myconf} \
-		--host=${CHOST} \
-		--prefix=/usr \
-		--infodir=/usr/share/info \
-		--mandir=/usr/share/man || die "./configure failed"
+	econf `use_enable gnome`
 	make || die
 }
 
