@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/xmlwrapp/Attic/xmlwrapp-0.4.4.ebuild,v 1.4 2004/07/02 04:57:51 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/xmlwrapp/Attic/xmlwrapp-0.4.4.ebuild,v 1.5 2004/09/20 16:44:48 usata Exp $
 
 inherit eutils
 
@@ -10,13 +10,15 @@ SRC_URI="http://pmade.org/software/xmlwrapp/download/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="x86 ppc"
 IUSE=""
 
-DEPEND="virtual/libc
+RDEPEND="virtual/libc
 	dev-lang/perl
 	dev-libs/libxml2
 	dev-libs/libxslt"
+DEPEND="${RDEPEND}
+	>=sys-apps/sed-4"
 
 src_unpack() {
 	unpack ${A}
