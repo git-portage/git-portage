@@ -1,5 +1,10 @@
 date 02 Feb 2001
 
+upd sys-apps/portage-1.4-r9 to 1.4-r10
+drobbins
+ebuild.1, ebuild.5 and make.defaults.5 man pages now available.
+(The ebuild.1 man page is good, but the rest still need more work.)
+
 new media-sound/xxms-shn-2.2.3
 drobbins
 This input plugins allows playback of .shn files, a format popular
