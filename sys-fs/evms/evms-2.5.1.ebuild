@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/evms/Attic/evms-2.3.2-r1.ebuild,v 1.8 2004/09/03 19:16:58 pvdabeel Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/evms/Attic/evms-2.5.1.ebuild,v 1.1 2005/02/05 10:00:28 eradicator Exp $
 
 inherit eutils flag-o-matic
 
@@ -10,25 +10,29 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 amd64 ppc"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="ncurses gtk"
 
 #EVMS uses libuuid from e2fsprogs
 DEPEND="virtual/libc
 	sys-fs/e2fsprogs
+	sys-libs/device-mapper
+	>=sys-apps/baselayout-1.9.4-r6
 	gtk? ( =x11-libs/gtk+-1* )
 	ncurses? ( sys-libs/ncurses )"
 
 src_compile() {
 	# Bug #54856
-	filter-flags "-fstack-protector"
+	# filter-flags "-fstack-protector"
+	replace-flags -O3 -O2
+	replace-flags -Os -O2
 
 	local excluded_interfaces=""
 	use ncurses || excluded_interfaces="--disable-text-mode"
 	use gtk || excluded_interfaces="${excluded_interfaces} --disable-gui"
 
 	econf \
-		--libdir=/lib \
+		--libdir=/$(get_libdir) \
 		--sbindir=/sbin \
 		--includedir=/usr/include \
 		${excluded_interfaces} || die "Failed configure"
@@ -36,8 +40,8 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR=${D} install || die "Make install died"
-	dodoc ChangeLog COPYING INSTALL* PLUGIN.IDS README TERMINOLOGY doc/linuxrc
+	make DESTDIR="${D}" install || die "Make install died"
+	dodoc ChangeLog INSTALL* PLUGIN.IDS README TERMINOLOGY doc/linuxrc
 
 	# install the sample configuration into the doc dir
 	dodoc ${D}/etc/evms.conf.sample
@@ -50,12 +54,12 @@ src_install() {
 	dodoc kernel/2.6/*
 
 	# move static libraries to /usr/lib
-	dodir /usr/lib
-	mv -f ${D}/lib/*.a ${D}/usr/lib
+	dodir /usr/$(get_libdir)
+	mv -f ${D}/$(get_libdir)/*.a ${D}/usr/$(get_libdir)
 
 	# Create linker scripts for dynamic libs in /lib, else gcc
 	# links to the static ones in /usr/lib first.  Bug #4411.
-	for x in ${D}/usr/lib/*.a
+	for x in ${D}/usr/$(get_libdir)/*.a
 	do
 		if [ -f ${x} ]
 		then
@@ -71,14 +75,6 @@ src_install() {
 		mv -f ${D}/sbin/evmsgui ${D}/usr/sbin
 	fi
 
-	exeinto /etc/init.d
-	newexe ${FILESDIR}/evms2-init evms
-}
-
-pkg_postinst() {
-	ewarn "Presently gentoo-sources-2.4.22 has basic support for evms2,"
-	ewarn "but does NOT support some of the more advanced features."
-
 	# Needed for bug #51252
-	ldconfig
+	dosym libevms-2.5.so.0.0 /$(get_libdir)/libevms-2.5.so.0
 }
