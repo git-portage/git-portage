@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-3.2.0_beta2.ebuild,v 1.14 2004/01/18 16:07:48 caleb Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-3.2.0_rc1.ebuild,v 1.1 2004/01/19 03:59:51 caleb Exp $
 inherit kde
 
 need-autoconf 2.5
 set-kdedir ${PV}
 
-MY_PV=3.1.94
+MY_PV=3.1.95
 S=${WORKDIR}/${PN}-${MY_PV}
 
 IUSE="alsa cups ipv6 ssl doc ldap"
@@ -33,7 +33,7 @@ DEPEND=">=sys-devel/autoconf-2.58
 	virtual/ghostscript
 	media-libs/libart_lgpl
 	sys-devel/gettext
-	~kde-base/arts-1.2.0_beta2
+	~kde-base/arts-1.2.0_rc1
 	>=x11-libs/qt-3.2.0"
 
 RDEPEND="$DEPEND

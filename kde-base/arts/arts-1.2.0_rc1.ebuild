@@ -1,28 +1,29 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/arts/Attic/arts-1.2.0_beta1-r1.ebuild,v 1.2 2003/11/04 19:24:00 caleb Exp $
-inherit kde-base flag-o-matic
+# $Header: /var/cvsroot/gentoo-x86/kde-base/arts/Attic/arts-1.2.0_rc1.ebuild,v 1.1 2004/01/19 03:57:59 caleb Exp $
+inherit kde flag-o-matic
 
-IUSE="alsa oggvorbis artswrappersuid mad"
+IUSE="alsa oggvorbis esd artswrappersuid mad"
 
 set-kdedir 3.2
-need-qt 3.2
 
-MY_PV=1.1.93
+MY_PV=1.1.95
 S=${WORKDIR}/${PN}-${MY_PV}
 
-SRC_URI="mirror://kde/unstable/3.1.93/src/${PN}-${MY_PV}.tar.bz2"
+SRC_URI="mirror://kde/unstable/3.1.95/src/${PN}-${MY_PV}.tar.bz2"
 HOMEPAGE="http://multimedia.kde.org"
 DESCRIPTION="aRts, the KDE sound (and all-around multimedia) server/output manager"
 
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~sparc ~amd64"
 
-newdepend "alsa? ( media-libs/alsa-lib )
+DEPEND="alsa? ( media-libs/alsa-lib virtual/alsa )
 	oggvorbis? ( media-libs/libvorbis media-libs/libogg )
+	esd? ( media-sound/esound )
 	mad? ( media-libs/libmad media-libs/libid3tag )
 	media-libs/audiofile
 	>=dev-libs/glib-2
-	dev-util/pkgconfig"
+	>=x11-libs/qt-3.2
+	>=sys-apps/portage-2.0.49-r8"
 
 if [ "${COMPILER}" == "gcc3" ]; then
 	# GCC 3.1 kinda makes arts buggy and prone to crashes when compiled with
@@ -36,20 +37,20 @@ filter-flags "-foptimize-sibling-calls"
 SLOT="3.2"
 LICENSE="GPL-2 LGPL-2"
 
-use alsa && myconf="$myconf --enable-alsa" || myconf="$myconf --disable-alsa"
-use oggvorbis || myconf="$myconf --disable-vorbis"
-use mad || myconf="$myconf --disable-libmad"
+myconf="$myconf `use_enable alsa`"
+myconf="$myconf `use_enable oggvorbis vorbis`"
+myconf="$myconf `use_enable mad libmad`"
 
 # patch to configure.in.in that makes the vorbis, libmad deps optional
 # has no version number in its filename because it's the same for all
 # arts versions - the patched file hasn't changed in a year's time
-PATCHES="$FILESDIR/optional-deps.diff"
+# PATCHES="$FILESDIR/optional-deps.diff"
 
 src_unpack() {
 	kde_src_unpack
 	kde_sandbox_patch ${S}/soundserver
 	# for the configure.in.in patch, for some reason it's not automatically picked up
-	rm -f $S/configure
+	# rm -f $S/configure
 }
 
 src_install() {
