@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-squid/Attic/selinux-squid-20041120.ebuild,v 1.2 2004/11/23 17:19:57 kaiowas Exp $
+# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-squid/Attic/selinux-squid-20041120.ebuild,v 1.3 2005/02/25 08:33:29 kaiowas Exp $
 
 inherit selinux-policy
 
