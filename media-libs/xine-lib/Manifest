@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6fb7610863b59f442956c19dfba2aeb0 ChangeLog 28259
 MD5 af08cabbae4b191018ca153392a86bea metadata.xml 304
 MD5 b25152bddc933afdf390149b07f2ff43 xine-lib-1_rc5-r3.ebuild 5473
@@ -38,3 +41,10 @@ MD5 aa54582a91933533008c1211dcbcfb35 files/xine-lib-disable-directfb.patch 4169
 MD5 3cbdef8aa211184b96474addb4f7c5d6 files/xine-lib-gcc34.patch 423
 MD5 5d2c3c00bf3ae9a89dfcaa8b5c5b17a2 files/xine-lib-x11.patch 703
 MD5 dcb0c79c0bb106397aad42f6d936627d files/xineconfig.patch-0.9.13 601
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBzi3lFdQwWVoAgN4RAq6xAJwL614/reY8n40TmRBWlSAPR9q0TQCffyZy
+K5hG8wef5JnGQEurqRZQebs=
+=vsGS
+-----END PGP SIGNATURE-----
