@@ -3,13 +3,13 @@ MD5 bf485edb7743e05d9da488cb79fda598 mozilla-firefox-0.8-r1.ebuild 7573
 MD5 c34f0afeb7aa8bc5bcb24ab079f95c37 mozilla-firefox-0.8-r2.ebuild 7666
 MD5 685aaef2ee7d53f1d524597b564c6952 mozilla-firefox-0.8-r3.ebuild 8504
 MD5 c1d874eee9769e073b715ffc0a4bb312 mozilla-firefox-0.8.ebuild 7599
-MD5 5279f3e0a0e974c5e30ef47b1b04f47f ChangeLog 10848
+MD5 1788ca68d47688ab34ff0cb97f5ed40b ChangeLog 11180
 MD5 036f220a45ed58418f2c168cf00ad4b1 mozilla-firefox-0.9-r1.ebuild 8318
 MD5 5d91117e033e7e415a5ff88a95a73995 mozilla-firefox-0.9.1.ebuild 8428
 MD5 8c750111072f43bceea00348916cba92 mozilla-firefox-0.9.3.ebuild 8427
 MD5 ebc5c2f952fe4b6b66b5fbd3cccb3c38 mozilla-firefox-0.9.3-r1.ebuild 5132
 MD5 9dcae9fc6b19da1094e2a86791697546 mozilla-firefox-1.0_pre.ebuild 4856
-MD5 ab4e95d80e7b7d2c058cbf92c9cf5d21 mozilla-firefox-1.0_pre-r1.ebuild 4861
+MD5 11abccdcd7f425a2461e69bc5a5817d0 mozilla-firefox-1.0_pre-r1.ebuild 4864
 MD5 606e82226379fd5ae6cd1d0d1faff7ff files/10MozillaFirefox 31
 MD5 507a3d1338e85acc8828cec7c91d22df files/digest-mozilla-firefox-0.8 73
 MD5 507a3d1338e85acc8828cec7c91d22df files/digest-mozilla-firefox-0.8-r1 73
