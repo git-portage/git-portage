@@ -1,4 +1,6 @@
-MD5 d804116335385d4a83e081db2ce7aa78 ChangeLog 1239
+MD5 c5589c3c46515b1b77056c6647c87518 ChangeLog 1360
 MD5 489b7c94c6d4d4da4d16e842452c0b63 abeni-0.0.14.ebuild 750
 MD5 af7a805a8483e0e8cc450e3fc75aecd1 metadata.xml 385
+MD5 6515a8ad827dac0d142aa340933b96fa abeni-0.0.15.ebuild 647
 MD5 e058f92fb6f75a380fdb589e7e4b8db7 files/digest-abeni-0.0.14 64
+MD5 cbb540d1fbb1d039614e9570e4d8172c files/digest-abeni-0.0.15 64
