@@ -1,5 +1,12 @@
 date 15 Jan 2001
 
+upd x11-base/nvidia-0.9.5-r2 to 0.9.5-r3
+drobbins
+Finally regained my senses and moved NVdriver back into its own package.
+This massively enhanced version includes an interactive install script and a
+diagnosis tool, and is patched for devfs and 2.4.0+ kernel support.  I need
+brave people to test this.
+
 upd net-www/jakarta/jakarta-3.1-r1 to r2
 achim
 Fixed buggy installation. Other issues have been changed in jdk/apache
