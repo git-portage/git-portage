@@ -1,5 +1,12 @@
 date 24 Nov 2000
 
+upd sys-apps/portage-1.0-r4 to 1.1
+drobbins
+There have been changes on almost a daily basis, and it's
+time to bump up the rev on this one.  Most recent change was
+to make the DEPEND string true build dependencies.  This means
+they are checked against /var/db/pkg and *not* ${ROOT}var/db/pkg.
+
 upd app-arch/dump-0.4.20_beta to 0.4.20_beta-r1
 drobbins
 fixed rdump and rrestore symlinks
