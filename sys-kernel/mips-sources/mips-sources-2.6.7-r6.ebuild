@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.7-r5.ebuild,v 1.1 2004/08/11 09:48:22 kumba Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.7-r6.ebuild,v 1.1 2004/08/15 03:59:03 kumba Exp $
 
 
 # Version Data
@@ -81,6 +81,10 @@ src_unpack() {
 
 	# Force detection of PS/2 mice on SGI Systems
 	epatch ${FILESDIR}/misc-2.6-force_mouse_detection.patch
+
+	# Something happened to compat_alloc_user_space between 2.6.6 and 2.6.7 that
+	# Breaks ifconfig.
+	epatch ${FILESDIR}/misc-2.6-compat_alloc_user_space.patch
 
 	# iluxa's minpatchset for SGI O2
 	echo -e ""
