@@ -1,0 +1,6 @@
+MD5 bcfa4ff27dd2f9484b1d547965e36bc7 capifwd-0.6.3.ebuild 960
+MD5 d2acf377c86761937a704f2455f1e353 metadata.xml 255
+MD5 c285576667acfe2e958402cd0d600ad7 files/digest-capifwd-0.6.3 65
+MD5 3e3512b77612880bfe174bee8870e609 files/capifwd-0.6.3.patch 1057
+MD5 bd90d5252b3e56edc2fa3ceb53df2681 files/capifwd.init 453
+MD5 8e748fa89eddf23a9531daca1fac7bdd files/capifwd.conf 156
