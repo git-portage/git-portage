@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/perl/Attic/perl-5.8.0-r11.ebuild,v 1.7 2003/08/22 12:25:34 mcummings Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/perl/Attic/perl-5.8.1_rc4.ebuild,v 1.1 2003/08/22 12:25:34 mcummings Exp $
 
 inherit eutils flag-o-matic 
 
@@ -13,26 +13,29 @@ filter-flags -malign-double
 PERLSLOT="1"
 
 SHORT_PV="`echo ${PV} | cut -d. -f1,2`"
-MY_P="${P/lib}"
-S="${WORKDIR}/${MY_P}"
 DESCRIPTION="Larry Wall's Practical Extraction and Reporting Language"
-DB_FILE_VERSION="1.806"
 SAFE_VERSION="2.09"
-SRC_URI="ftp://ftp.perl.org/pub/CPAN/src/${MY_P}.tar.gz
-	ftp://ftp.perl.org/pub/CPAN/modules/by-module/DB_File/DB_File-${DB_FILE_VERSION}.tar.gz
-	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Safe/Safe-${SAFE_VERSION}.tar.gz"
+MY_P="perl-`echo $PV | sed 's/_rc/-RC/'`"
+S="${WORKDIR}/${MY_P}"
+SRC_URI="http://www.cpan.org/authors/id/J/JH/JHI/${MY_P}.tar.gz"
+#ftp://ftp.perl.org/pub/CPAN/src/${MY_P}.tar.gz
+#ftp://ftp.perl.org/pub/CPAN/modules/by-module/DB_File/DB_File-${DB_FILE_VERSION}.tar.gz
+#ftp://ftp.perl.org/pub/CPAN/modules/by-module/Safe/Safe-${SAFE_VERSION}.tar.gz"
 HOMEPAGE="http://www.perl.org/"
 SLOT="0"
 LIBPERL="libperl.so.${PERLSLOT}.${SHORT_PV}"
 LICENSE="Artistic GPL-2"
-KEYWORDS="~x86 sparc ~ppc ~alpha ~mips ~hppa amd64"
+KEYWORDS="~x86 ~amd64 ~sparc ~ppc ~alpha ~mips ~hppa"
 IUSE="berkdb doc gdbm threads"
 
 DEPEND="sys-apps/groff
 	berkdb? ( sys-libs/db )
 	gdbm? ( >=sys-libs/gdbm-1.8.0 )
-	>=sys-apps/portage-2.0.45-r5
-	=sys-devel/libperl-${PV}*"
+	>=sys-apps/portage-2.0.48-r4
+	=sys-devel/libperl-${SHORT_PV}*
+	!<dev-perl/ExtUtils-MakeMaker-6.05-r6
+	!<dev-perl/File-Spec-0.84-r1
+	!<dev-perl/Test-Simple-0.47-r1"
 RDEPEND="berkdb? ( sys-libs/db )
 	gdbm? ( >=sys-libs/gdbm-1.8.0 )"
 
@@ -82,24 +85,30 @@ src_unpack() {
 	# when using glibc >= 2.3, or else runtime signal
 	# handling breaks.  Fixes bug #14380.
 	# <rac@gentoo.org> (14 Feb 2003)
-	cd ${S}; epatch ${FILESDIR}/${P}-prelink-lpthread.patch
+
+	# Disabled because 5.8.1_rc1 does not segfault with the test in
+	# bug #14380, even though /usr/bin/perl is not linked with
+	# -lpthread.  May need further investigation.
+	# <rac@gentoo.org> (10 Jul 2003)
+
+	#cd ${S}; epatch ${FILESDIR}/${P}-prelink-lpthread.patch
 
 	# Patch perldoc to not abort when it attempts to search
 	# nonexistent directories; fixes bug #16589.
 	# <rac@gentoo.org> (28 Feb 2003)
-	cd ${S}; epatch ${FILESDIR}/${P}-perldoc-emptydirs.patch
 
-	# to allow building with db4, must replace the DB_File in the core
-	# with a newer one from CPAN.
+	# we are using the vendor directory now, so it should not be
+	# empty.  this patch doesn't come close to applying, so leaving
+	# off for now.
+	# <rac@gentoo.org> (10 Jul 2003)
 
-	einfo "Replacing core DB_File with newer version ${DB_FILE_VERSION}"
-	rm -rf ${S}/ext/DB_File
-	cp -R ${WORKDIR}/DB_File-${DB_FILE_VERSION} ${S}/ext/DB_File
+	#cd ${S}; epatch ${FILESDIR}/${P}-perldoc-emptydirs.patch
 
-	# there is a security problem in the Safe.pm version in the core.
-	einfo "Replacing core Safe.pm with newer version ${SAFE_VERSION}"
-	chmod +w ${S}/ext/Opcode/Safe.pm
-	cp ${WORKDIR}/Safe-${SAFE_VERSION}/Safe.pm ${S}/ext/Opcode/
+	# this lays the groundwork for solving the issue of what happens
+	# when people (or ebuilds) install different versiosn of modules
+	# that are in the core, by rearranging the @INC directory to look
+	# site -> vendor -> core.
+	cd ${S}; epatch ${FILESDIR}/${P}-reorder-INC.patch
 }
 
 src_compile() {
@@ -142,6 +151,15 @@ src_compile() {
 	then
 		myconf="${myconf} -Ud_longdbl"
 	fi
+
+	if [ "`use alpha`" -a "${CC}" == "ccc" ]
+	then
+		ewarn "Perl will not be built with berkdb support, use gcc if you needed it..."
+		myconf="${myconf} -Ui_db -Ui_ndbm"
+	fi
+
+	[ "${ARCH}" = "hppa" ] && append-flags -fPIC
+	
 	
 cat > config.over <<EOF
 installprefix=${D}/usr
