@@ -1,7 +1,7 @@
 # Copyright 2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Nathaniel Hirsch <nh2@njit.edu> Achim Gottinge <achim@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/Attic/vlc-0.4.0.ebuild,v 1.1 2002/05/24 09:43:37 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/Attic/vlc-0.4.0.ebuild,v 1.2 2002/07/10 00:14:24 raker Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="VideoLAN Client - DVD/video player"
@@ -24,6 +24,9 @@ DEPEND="X? ( virtual/x11 )
 	alsa? ( >=media-libs/alsa-lib-0.9_rc1 )"
 
 RDEPEND="nls? ( sys-devel/gettext )"
+KEYWORDS="x86"
+LICENSE="GPL-2"
+SLOT="0"
 
 src_compile(){
 

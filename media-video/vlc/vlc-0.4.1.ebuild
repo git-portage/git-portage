@@ -1,6 +1,6 @@
 # Copyright 2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/Attic/vlc-0.4.0-r1.ebuild,v 1.4 2002/07/10 00:14:24 raker Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/Attic/vlc-0.4.1.ebuild,v 1.1 2002/07/10 00:14:24 raker Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="VideoLAN Client - DVD/video player"
@@ -20,7 +20,8 @@ DEPEND="X? ( virtual/x11 )
 	gnome? ( >=gnome-base/gnome-libs-1.4.1.2-r1 )
 	ncurses? ( sys-libs/ncurses )
 	oggvorbis? ( media-libs/libvorbis )
-	alsa? ( >=media-libs/alsa-lib-0.9_rc1 )"
+	alsa? ( >=media-libs/alsa-lib-0.9_rc2 )
+	>=media-sound/mad-0.14.2b"
 
 RDEPEND="nls? ( sys-devel/gettext )"
 
@@ -56,7 +57,7 @@ src_compile(){
 
 	use X \
 		&& myconf="${myconf} --enable-x11 --enable-xvideo" \
-		|| myconf="${myconf} --disable-x11 --disable-x11"
+		|| myconf="${myconf} --disable-x11 --disable-xvideo"
 
 	use qt \
 		&& myconf="${myconf} --enable-qt" \
@@ -125,13 +126,20 @@ src_compile(){
 	
 	./configure \
 		--prefix=/usr \
+		--mandir=/usr/share/man \
+		--infodir=/usr/share/info \
+		--sysconfdir=/etc \
+		--host=${CHOST} \
+		--build=${CHOST} \
+		--target=${CHOST} \
+		--localstatedir=/var/state/vlc \
 		--with-sdl \
-		--disable-alsa \
 		--disable-a52 \
 		--enable-release \
+		--enable-mad \
 		${myconf} || die
 
-	make || die
+	emake || die
 }
 
 src_install() {
