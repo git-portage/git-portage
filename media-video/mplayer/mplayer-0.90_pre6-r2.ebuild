@@ -1,6 +1,10 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-0.90_pre6.ebuild,v 1.1 2002/08/06 21:54:15 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-0.90_pre6-r2.ebuild,v 1.1 2002/08/07 20:34:32 azarah Exp $
+
+# NOTE to myself:  Test this thing with and without dvd/gtk+ support,
+#                  as it seems the mplayer guys dont really care to
+#                  make it work without dvd support.
 
 # Handle PREversions as well
 MY_PV=${PV/_/}
@@ -18,7 +22,7 @@ HOMEPAGE="http://www.mplayerhq.hu/"
 RDEPEND=">=media-libs/divx4linux-20020418
 	>=media-libs/win32codecs-0.60
 	dvd? ( media-libs/libdvdread
-	       media-libs/libdvdcss )
+		   !=media-libs/libdvdnav-0.1.3 )
 	gtk? ( =x11-libs/gtk+-1.2*
 	       media-libs/libpng )
 	esd? ( media-sound/esound )
@@ -57,7 +61,8 @@ src_unpack() {
 	# Fixes some compile problems, thanks to Gwenn Gueguen
 	patch -p0 < ${FILESDIR}/mplayer-0.90_pre5-widget.patch || die
 	# Fixes include problem - Azarah (10 Jun 2002)
-	patch -p1 < ${FILESDIR}/mplayer-0.90_pre5-stream-include.patch || die
+	# Update for pre6 - Azarah (07 Aug 2002)
+	patch -p1 < ${FILESDIR}/${P}-stream-include.patch || die
 	# Fixes install location for vidix drivers, thanks to Mezei Zoltan.
 	patch -p1 < ${FILESDIR}/mplayer-0.90_pre5-vidix-destpath.patch || die
 	# Fix missing subtitles for some regions (4), bug #3679, thanks
@@ -66,6 +71,9 @@ src_unpack() {
 	# Fixes intermittant problems where vidix drivers do not get build,
 	# and causes the install to fail - Azarah (06 Aug 2002)
 	patch -p1 < ${FILESDIR}/${P}-vidix-fail-install.patch || die
+	# Fixes compile problems if dvd support not enabled.
+	# Azarah (07 Aug 2002)
+	patch -p1 < ${FILESDIR}/${P}-no-dvd.patch || die
 }
 
 src_compile() {
@@ -88,7 +96,8 @@ src_compile() {
 
 	# Only disable X if gtk is not in USE
 	use X || use gtk \
-		|| myconf="${myconf} --disable-x11 --disable-xv --disable-xmga --disable-png"
+		|| myconf="${myconf} --disable-gui --disable-x11 --disable-xv \
+		                     --disable-xmga --disable-png"
 
 	use matrox && use X \
 		&& myconf="${myconf} --enable-xmga"
@@ -127,9 +136,15 @@ src_compile() {
 		&& myconf="${myconf} --enable-mencoder --enable-tv" \
 		|| myconf="${myconf} --disable-mencoder"
 
+# Currently libdvdnav do not compile on gcc-3.1.1
+#	use dvd \
+#		&& myconf="${myconf} --enable-dvdread --enable-dvdnav" \
+#		|| myconf="${myconf} --disable-mpdvdkit --disable-dvdread \
+#       		             --disable-css --disable-dvdnav"
 	use dvd \
-		&& myconf="${myconf} --enable-dvdread --enable-css" \
-		|| myconf="${myconf} --disable-mpdvdkit --disable-dvdread --disable-css"
+		&& myconf="${myconf} --enable-dvdread" \
+		|| myconf="${myconf} --disable-mpdvdkit --disable-dvdread \
+		                     --disable-css --disable-dvdnav"
 
 	use matrox \
 		&& myconf="${myconf} --enable-mga" \
@@ -146,16 +161,16 @@ src_compile() {
 	unset CXXFLAGS
 	./configure --prefix=/usr \
 		--disable-runtime-cpudetection \
-		--disable-mp1e \
 		--enable-largefiles \
 		--enable-linux-devfs \
 		${myconf} || die
 
-	emake all || die
+	# emake borks on fast boxes - Azarah (07 Aug 2002)
+	make all || die
 	
 	use matrox && ( \
 		cd drivers 
-		emake all || die
+		make all || die
 	)
 }
 
@@ -264,5 +279,6 @@ pkg_postinst() {
 		|| echo '# NB: the GUI needs "gtk" as USE flag to build.                      #'
 	echo '######################################################################'
 	echo
-	depmod -a
+	depmod -a &>/dev/null || :
 }
+
