@@ -1,3 +1,4 @@
+MD5 28477f1e1260c7044a76f8b9b007982a grip-3.1.7.ebuild 1233
 MD5 c84bec0473778edf0ff987ebee356e98 grip-3.1.4.ebuild 1054
 MD5 23e5a8bec23e7fb3889c61862f488768 grip-3.0.3.ebuild 1393
 MD5 d21b449c9a7ca65afbf532a4d575b5cc grip-3.1.3.ebuild 968
@@ -12,3 +13,4 @@ MD5 815db67c2d74e6a43bf909ea9ec870cb files/digest-grip-3.0.7 62
 MD5 1048b6048763fc76208c8868ab5f5cc2 files/digest-grip-3.1.3 62
 MD5 71e17106545f331eb40b30cfb5a41e01 files/digest-grip-3.1.4 62
 MD5 6e75f4afbd63f2bf93d126d8791b983f files/digest-grip-3.1.5 62
+MD5 07a5796b2dbd49b0a89410c153642102 files/digest-grip-3.1.7 62
