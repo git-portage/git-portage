@@ -1,4 +1,4 @@
-MD5 efba7d2528795831fab41849e4207eca cscope-15.5-r3.ebuild 1554
+MD5 01b5126eaecb67c1a2ca0ca2a5bbfae8 cscope-15.5-r3.ebuild 1643
 MD5 336bda89fb52186ad57731559ccbd939 cscope-15.5-r1.ebuild 1604
 MD5 a60866659e265720c5cb7eea1f4ea05d ChangeLog 5961
 MD5 3c56dcf0da026c9a6ef0e7c204419785 cscope-15.5.ebuild 1417
@@ -11,4 +11,5 @@ MD5 25ad9fe446a7cabf4c482bbe150c7eaa files/digest-cscope-15.5-r3 63
 MD5 c8aeadd309e54712241dec1b77072cbb files/cscope-15.5-can-2004-0996.patch 1125
 MD5 25ad9fe446a7cabf4c482bbe150c7eaa files/digest-cscope-15.5 63
 MD5 25ad9fe446a7cabf4c482bbe150c7eaa files/digest-cscope-15.5-r2 63
+MD5 38db4f8e35aac0bbea3287c6deb5f644 files/cscope-15.5-gcc295.patch 685
 MD5 6b8c74fb664bfaada3d95003f6c1134a files/cscope-15.5-tempfile.patch 2817
