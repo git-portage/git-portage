@@ -1,7 +1,4 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 24120b746aa072315308539da84fda9a devtodo-0.1.18-r2.ebuild 1346
+MD5 a486bf051039cfd7dffd009afb229e10 devtodo-0.1.18-r2.ebuild 1344
 MD5 e4146bc4aebf03940014b45116b09b09 devtodo-0.1.17-r2.ebuild 1663
 MD5 fc65f157fc019b5fabe88b3a2cde8773 devtodo-0.1.18-r1.ebuild 1342
 MD5 82f50885056fa1b5234ca886ae6943f0 ChangeLog 5697
@@ -14,10 +11,3 @@ MD5 d2457f597a941172dfdc9e12d13ce605 files/devtodo-0.1.18-gentoo.diff 4853
 MD5 68c51e9b769e87f037a34aa64bbc911f files/devtodo-fix-cd-builtin.patch 303
 MD5 d32e7456f09dcc45419319fcf1df8ae0 files/devtodo.bash-completion 3319
 MD5 48d3c0943acaae812475061a16fe6eb9 files/devtodo.patch 2359
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBwv8dEZCkKN40op4RAl62AJ9L/04ziTkf5EWUadOfGNHEVh+LdgCgjPPQ
-crmWA6L0PQnt8NVxb8zAcbc=
-=lKa2
------END PGP SIGNATURE-----
