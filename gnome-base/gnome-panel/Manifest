@@ -1,3 +1,4 @@
+MD5 3b175510874bec18d6c0a7fe9d80baa1 gnome-panel-2.5.93.ebuild 1707
 MD5 812ccfad6763843f4c37efc6d8354614 gnome-panel-2.4.0-r2.ebuild 1872
 MD5 e11304bcd9e75b68da81a2394330bb42 gnome-panel-2.4.2.ebuild 1749
 MD5 f47c4c717069b1543c5c8207724849e1 gnome-panel-1.4.2-r2.ebuild 2021
@@ -10,6 +11,7 @@ MD5 1bb4e04fb5577b5f7ffee6c5ef2855b2 files/gnome-panel-2.4.0-drawers_fix.patch 6
 MD5 08d08fb07508d922ef40625fd41d53d6 files/gnome-panel-2.4.0-drawers_expanding_fix.patch 639
 MD5 e32de20a66c2dddfb1a4178bbce00e28 files/gnome-panel-2.4.0-autohide_fix.patch 2873
 MD5 1fda29dc30f730bf7f916139db8e8844 files/menu-2.4.0.patch 1663
+MD5 0da97a8d3431fb320df239061385648b files/digest-gnome-panel-2.5.93 72
 MD5 cdb194bbe6f7f4e39ebd4cbd80a6bdd0 files/digest-gnome-panel-2.4.0-r1 71
 MD5 cdb194bbe6f7f4e39ebd4cbd80a6bdd0 files/digest-gnome-panel-2.4.0-r2 71
 MD5 fd45982a0009ea6751868529516f641a files/gnome-panel-calendar-l10n.patch 1239
