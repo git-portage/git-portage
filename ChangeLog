@@ -1,4 +1,13 @@
-date 22 July 2000
+date 25 July 2001
+mod app-doc/howtos modified the directory structure and organised them as per the ebuild names.
+add app-doc/howto-text
+add app-doc/howto-html
+add app-doc/howto-html-single
+add app-doc/mini-howto-text
+add app-doc/mini-howto-html
+add app-doc/mini-howto-html-single
+
+date 22 July 2001
 new app-doc/howtos  added directory for LDP Howtos
 new app-doc/howtos/Linux-mini-html-HOWTOs-1.0.ebuild
 new app-doc/howtos/Linux-HOWTOs-1.0.ebuild
