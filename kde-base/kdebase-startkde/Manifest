@@ -1,0 +1,6 @@
+MD5 e42bc89923d0905574bc3245db68be00 kdebase-startkde-3.4.0_rc1-r1.ebuild 2032
+MD5 4cc0a0a900fd937091878318bf1c438d ChangeLog 1827
+MD5 bf55cbe0244386a3b46be4ca7fe7bc8a files/digest-kdebase-startkde-3.4.0_rc1-r1 378
+MD5 010340a437b3c0d1605af4ddf95368eb files/agent-shutdown.sh 260
+MD5 c1250a1da4ea1fd131b44ebc27f32f3f files/agent-startup.sh 551
+MD5 0aa159291daa24450f0ecf1962a0a179 files/startkde-3.4.0_rc1-gentoo.diff 1210
