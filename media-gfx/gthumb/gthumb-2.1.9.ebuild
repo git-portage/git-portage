@@ -1,16 +1,16 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/gthumb/Attic/gthumb-2.1.5.ebuild,v 1.4 2003/09/12 09:27:59 spider Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/gthumb/Attic/gthumb-2.1.9.ebuild,v 1.1 2003/11/23 13:58:04 foser Exp $
 
 inherit gnome2
 
-IUSE="jpeg tiff"
+IUSE="jpeg tiff png"
 DESCRIPTION="Image viewer and browser for Gnome"
 HOMEPAGE="http://gthumb.sourceforge.net/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~ppc"
+KEYWORDS="~x86 ~ppc"
 
 RDEPEND=">=dev-libs/glib-2.2
 	>=x11-libs/gtk+-2.2
@@ -22,14 +22,16 @@ RDEPEND=">=dev-libs/glib-2.2
 	>=gnome-base/libglade-2
 	>=gnome-base/libgnomeprint-2.2
 	>=gnome-base/libgnomeprintui-2.2
-	>=gnome-base/libbonobo-2
-	>=gnome-base/libbonoboui-2
-	tiff ( media-libs/tiff )
-	jpeg ( media-libs/jpeg
-		>=media-libs/libexif-0.5.10 )"
+	>=gnome-base/libbonobo-2.3.3
+	>=gnome-base/libbonoboui-2.3.3
+	png? ( media-libs/libpng )
+	tiff? ( media-libs/tiff )
+	jpeg? ( media-libs/jpeg
+		>=media-libs/libexif-0.5.12 )"
 
 DEPEND=">=dev-util/pkgconfig-0.9.0
 	app-text/scrollkeeper
+	>=dev-util/intltool-0.21
 	${RDEPEND}"
 
-DOCS="AUTHORS COPYING ChangeLog NEWS README TODO"
+DOCS="AUTHORS COPYING ChangeLog INSTALL NEWS README"
