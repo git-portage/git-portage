@@ -1,13 +1,13 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/development-sources/Attic/development-sources-2.5.59-r10.ebuild,v 1.1 2003/02/10 20:41:41 lostlogic Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/development-sources/Attic/development-sources-2.5.60-r1.ebuild,v 1.1 2003/02/11 18:48:02 lostlogic Exp $
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
 #we use this next variable to avoid duplicating stuff on cvs
 GFILESDIR=${PORTDIR}/sys-kernel/linux-sources/files
 OKV=${PV}
 if [ "${PR}" != "r0" ]; then 
-	PATCH_URI="http://www.kernel.org/pub/linux/kernel/people/akpm/patches/2.5/${OKV}/${PVR/r/mm}/${PVR/r/mm}.bz2"
+	PATCH_URI="http://www.zipworld.com.au/~akpm/linux/patches/2.5/${PV}/${PVR/r/mm}/${PVR/r/mm}.gz"
 fi
 KV=${PVR/r/mm}
 S=${WORKDIR}/linux-${KV}
