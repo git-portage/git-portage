@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Dan Armak <danarmak@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt/Attic/qt-3.0.1-r3.ebuild,v 1.5 2002/02/17 19:16:44 danarmak Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt/Attic/qt-3.0.2-r1.ebuild,v 1.1 2002/03/24 22:48:37 danarmak Exp $
 
 P=qt-x11-${PV}
 S=${WORKDIR}/qt-x11-free-${PV}
@@ -25,6 +25,8 @@ export QTDIR=${S}
 
 src_unpack() {
 
+    export QTDIR=${S}
+
     unpack ${A}
 
     cd ${S}
@@ -35,23 +37,33 @@ src_unpack() {
 
 src_compile() {
 
-	export LDFLAGS="-ldl"
+    export QTDIR=${S}
+    
+    export LDFLAGS="-ldl"
 
-	use nas		&& myconf="${myconf} -system-nas-sound"
-	use gif		&& myconf="${myconf} -qt-gif"
-	use mysql	&& myconf="${myconf} -plugin-sql-mysql -I/usr/include/mysql -L/usr/lib/mysql"
-	use postgres	&& myconf="${myconf} -plugin-sql-psql -I/usr/include/postgresql -I/usr/include/postgresql/libpq -L/usr/lib"
-	use odbc	&& myconf="${myconf} -plugin-sql-odbc"
-	[ -n "$DEBUG" ]	&& myconf="${myconf} -debug" 		|| myconf="${myconf} -release -no-g++-exceptions"
+    use nas		&& myconf="${myconf} -system-nas-sound"
+    use gif		&& myconf="${myconf} -qt-gif"
+    use mysql	&& myconf="${myconf} -plugin-sql-mysql -I/usr/include/mysql -L/usr/lib/mysql"
+    use postgres	&& myconf="${myconf} -plugin-sql-psql -I/usr/include/postgresql -I/usr/include/postgresql/libpq -L/usr/lib"
+    use odbc	&& myconf="${myconf} -plugin-sql-odbc"
+    [ -n "$DEBUG" ]	&& myconf="${myconf} -debug" 		|| myconf="${myconf} -release -no-g++-exceptions"
+    
+    # avoid wasting time building things we won't install
+    rm -rf tutorial examples
+	
+    ./configure -sm -thread -stl -system-zlib -system-libjpeg ${myconf} \
+    	-system-libmng -system-libpng -ldl -lpthread -xft || die
 
-	./configure -sm -thread -stl -system-zlib -system-libjpeg ${myconf} \
-		-system-libmng -system-libpng -ldl -lpthread -xft || die
+    export QTDIR=${S}
 
-	emake src-qmake src-moc sub-src sub-tools || die
+    emake src-qmake src-moc sub-src sub-tools || die
 
 }
 
 src_install() {
+
+
+    export QTDIR=${S}
 
     cd ${S}
 
@@ -68,7 +80,7 @@ src_install() {
 	ln -s $x.1.0 $x.1
 	ln -s $x.1 $x
     done
-    ln -s libqt-mt.so.3.0.1 libqt-mt.so.3.0
+    ln -s libqt-mt.so.${PV} libqt-mt.so.3.0
     ln -s libqt-mt.so.3.0 libqt-mt.so.3
     ln -s libqt-mt.so.3 libqt-mt.so
 
@@ -80,7 +92,7 @@ src_install() {
 
     # misc
     insinto /etc/env.d
-    doins ${FILESDIR}/45qt3
+    doins ${FILESDIR}/{45qt3,50qtdir3}
 
     # misc build reqs
     dodir ${QTBASE}/mkspecs
