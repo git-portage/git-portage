@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/grsec-sources/Attic/grsec-sources-2.4.27.2.0.1-r3.ebuild,v 1.1 2004/11/11 19:27:12 solar Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/grsec-sources/Attic/grsec-sources-2.4.27.2.0.1-r4.ebuild,v 1.1 2004/11/17 17:51:37 solar Exp $
 
 # We control what versions of what we download based on the KEYWORDS we
 # are using for the various arches. Thus if we want grsec1 stable we run
@@ -14,7 +14,7 @@
 ETYPE="sources"
 IUSE=""
 
-inherit eutils kernel
+inherit kernel
 
 [ "$OKV" == "" ] && OKV="2.4.27"
 
@@ -28,12 +28,14 @@ DESCRIPTION="Vanilla sources of the linux kernel with the grsecurity ${PATCH_BAS
 CAN_PATCHES=" \
 	mirror://gentoo/linux-2.4.27-nfs3-xdr.patch.bz2 \
 	mirror://gentoo/grsec-sources-2.4.27-CAN-2004-0814.patch.bz2 \
-	mirror://gentoo/gentoo-sources-2.4.27-binfmt_elf.patch.bz2"
+	mirror://gentoo/grsec-sources-2.4.27-binfmt_elf.patch.bz2
+	mirror://gentoo/linux-2.4.27-binfmt_aout.patch.bz2"
 SRC_URI="http://grsecurity.net/grsecurity-${PATCH_BASE}-${OKV}.patch \
 	http://www.kernel.org/pub/linux/kernel/v2.4/linux-${OKV}.tar.bz2 ${CAN_PATCHES}"
 
 HOMEPAGE="http://www.kernel.org/ http://www.grsecurity.net"
 KEYWORDS="x86 sparc ppc alpha amd64 -hppa"
+RESTRICT="buildpkg"
 
 SLOT="${KV}"
 S="${WORKDIR}/linux-${KV}"
@@ -73,8 +75,9 @@ patch_grsec_kernel() {
 	# tty io fixes.
 	epatch ${DISTDIR}/grsec-sources-2.4.27-CAN-2004-0814.patch.bz2
 
-	# binfmt_elf
-	epatch ${DISTDIR}/gentoo-sources-2.4.27-binfmt_elf.patch.bz2
-	return 0
-}
+	# binfmt_elf - round #2
+	epatch ${DISTDIR}/grsec-sources-2.4.27-binfmt_elf.patch.bz2
 
+	# binfmt_aout
+	epatch ${DISTDIR}/linux-2.4.27-binfmt_aout.patch.bz2
+}
