@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/uclinux-sources/Attic/uclinux-sources-2.4.26_p0-r3.ebuild,v 1.1 2004/07/09 16:25:39 plasmaroo Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/uclinux-sources/Attic/uclinux-sources-2.6.7_p0-r4.ebuild,v 1.1 2004/08/05 11:15:48 plasmaroo Exp $
 
 IUSE=""
 
@@ -9,7 +9,7 @@ inherit kernel eutils
 OKV="`echo ${PV}|sed -e 's:^\([0-9]\+\.[0-9]\+\.[0-9]\+\).*:\1:'`"
 
 EXTRAVERSION="uc${PV/*_p/}"
-[ ! "${PR}" == "r0" ] && EXTRAVERSION="${EXTRAVERSION}-${PR}"
+[ "${PR}" != "r0" ] && EXTRAVERSION="${EXTRAVERSION}-${PR}"
 KV="${OKV}-${EXTRAVERSION}"
 
 # Get the major & minor kernel version
@@ -27,7 +27,8 @@ MY_P=linux-${PV/_p/-uc}
 S=${WORKDIR}/linux-${KV}
 DESCRIPTION="uCLinux kernel patches for CPUs without MMUs"
 SRC_URI="mirror://kernel/v${MMV}/linux-${OKV}.tar.bz2
-	http://www.uclinux.org/pub/uClinux/uClinux-${MMV}.x/${MY_P/linux/${base}}.${patch}.gz"
+	http://www.uclinux.org/pub/uClinux/uClinux-${MMV}.x/${MY_P/linux/${base}}.${patch}.gz
+	http://dev.gentoo.org/~plasmaroo/patches/kernel/misc/security/linux-${OKV}-CAN-2004-0415.patch"
 
 HOMEPAGE="http://www.uclinux.org/"
 KEYWORDS="~x86 -ppc"
@@ -39,16 +40,15 @@ src_unpack() {
 
 	cd linux-${KV}
 	epatch ../${MY_P/linux/${base}}.${patch} || die "Failed to apply uClinux patch!"
+	epatch ${DISTDIR}/linux-${OKV}-CAN-2004-0415.patch || die "Failed to add the CAN-2004-0415 patch!"
+	epatch ${FILESDIR}/${PN}.CAN-2004-0497.patch || die "Failed to add the CAN-2004-0497 patch!"
+	epatch ${FILESDIR}/${PN}-2.6.CAN-2004-0596.patch || die "Failed to apply the CAN-2004-0596 security patch!"
+	epatch ${FILESDIR}/${PN}-2.6.IPTables-RDoS.patch || die "Failed to apply the IPTables RDoS security patch!"
+	epatch ${FILESDIR}/${PN}-2.6.ProcPerms.patch || die "Failed to apply the /proc permissions security patch!"
 
 	set MY_ARCH=${ARCH}
 	unset ARCH
 	rm ../${MY_P/linux/${base}}.${patch}
-
-	epatch ${FILESDIR}/${P}.CAN-2004-0394.patch || die "Failed to add the CAN-2004-0394 patch!"
-	epatch ${FILESDIR}/${P}.CAN-2004-0495.patch || die "Failed to add the CAN-2004-0495 patch!"
-	epatch ${FILESDIR}/${PN}.CAN-2004-0497.patch || die "Failed to add the CAN-2004-0497 patch!"
-	epatch ${FILESDIR}/${P}.CAN-2004-0535.patch || die "Failed to add the CAN-2004-0535 patch!"
-	epatch ${FILESDIR}/${P}.FPULockup-53804.patch || die "Failed to apply FPU-lockup patch!"
 
 	kernel_universal_unpack
 	set ARCH=${MY_ARCH}
