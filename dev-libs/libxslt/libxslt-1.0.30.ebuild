@@ -1,25 +1,23 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxslt/Attic/libxslt-1.0.24.ebuild,v 1.4 2003/03/11 21:11:45 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxslt/Attic/libxslt-1.0.30.ebuild,v 1.1 2003/05/05 11:31:55 foser Exp $
 
 inherit libtool gnome.org
 
 IUSE="python"
-S=${WORKDIR}/${P}
 DESCRIPTION="XSLT libraries and tools"
 HOMEPAGE="http://www.gnome.org/"
 SLOT="0"
 LICENSE="MIT"
-KEYWORDS="~x86 ~sparc ~ppc alpha"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa"
 
-RDEPEND=">=dev-libs/libxml2-2.4.25
+RDEPEND=">=dev-libs/libxml2-2.5.6
 	python? ( dev-lang/python )"
 
 DEPEND="${RDEPEND}
 	dev-lang/perl"
 
 src_compile() {
-	# Fix .la files of python site packages
 	elibtoolize
 
 	local myconf
