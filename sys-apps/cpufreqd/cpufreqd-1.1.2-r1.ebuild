@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/cpufreqd/Attic/cpufreqd-1.1.1.ebuild,v 1.5 2004/07/23 12:51:27 pappy Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/cpufreqd/Attic/cpufreqd-1.1.2-r1.ebuild,v 1.1 2004/07/28 00:11:12 vapier Exp $
 
-inherit eutils flag-o-matic
+inherit eutils flag-o-matic eutils
 
 DESCRIPTION="Daemon to adjust CPU speed for power saving"
 HOMEPAGE="http://sourceforge.net/projects/cpufreqd/"
@@ -11,16 +11,22 @@ DEPEND=">=sys-apps/sed-4"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="x86 ppc amd64"
 IUSE=""
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	sed -i '/^DAEMON=/s:/sbin/:/usr/sbin/:' scripts/gentoo/cpufreqd
+	epatch ${FILESDIR}/${PV}-prefer-sysfs.patch
+}
+
+src_compile() {
+	cd ${S}
 
 	# cpufreqd segfaults when built as PIE
 	filter-flags "-fpie" "-fPIE" "-Wl,-pie"
+
+	econf || die "econf failed for ${P}"
 }
 
 src_install() {
