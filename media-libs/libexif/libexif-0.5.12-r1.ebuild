@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libexif/Attic/libexif-0.5.9.ebuild,v 1.5 2003/09/09 17:25:19 mholzer Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libexif/Attic/libexif-0.5.12-r1.ebuild,v 1.1 2004/02/06 02:38:40 spider Exp $
 
 inherit flag-o-matic
 
@@ -13,14 +13,13 @@ HOMEPAGE="http://libexif.sf.net/"
 
 SLOT="0"
 LICENSE="LGPL-2.1"
-KEYWORDS="x86 ppc sparc alpha"
+KEYWORDS="x86 ppc sparc alpha hppa amd64 ia64"
 
 DEPEND="dev-util/pkgconfig"
+RDEPEND="virtual/glibc"
 
 src_compile() {
-	local myconf
-	use nls || myconf="${myconf} --disable-nls"
-	econf ${myconf}
+	econf `use_enable nls` || die
 	emake || die
 }
 
@@ -32,6 +31,9 @@ src_install() {
 	einstall || die
 
 	dodoc ChangeLog README
+
+	# installs a blank directory for whatever broken reason
+	use nls || rmdir ${D}/usr/share/locale
 }
 
 pkg_postinst() {
