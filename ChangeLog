@@ -1,3 +1,12 @@
+date 01 Mar 2001
+
+upd sys-apps/portage-1.5_pre6-r1 to 1.5_pre7
+drobbins
+A new test version of Portage with a lot of new features, including a
+recursive ebuild merge program called "emerge" ("emerge foo-1.0.ebuild" or
+"emerge --pretend foo-1.0.ebuild").  There are still some not-yet-fixed
+bugs in pkgmerge.  There are lots of bug fixes in this new version.
+
 date 28 Feb 2001
 
 del sys-kernel/linux-2.4.1.19-r1
