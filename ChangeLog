@@ -1,3 +1,9 @@
+date 21 Feb 2001
+
+upd sys-devel/binutils-2.1.10.0.7 to 2.1.10.91.0.2
+achim
+This version fixes segfaults in ld that occured with 2.1.10.0.7
+
 date 20 Feb 2001
 
 new media-gfx/netpbm-9.10
