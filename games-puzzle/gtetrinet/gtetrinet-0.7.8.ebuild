@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/gtetrinet/Attic/gtetrinet-0.7.4.ebuild,v 1.6 2005/02/23 01:42:34 wolf31o2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/gtetrinet/Attic/gtetrinet-0.7.8.ebuild,v 1.1 2005/02/23 01:42:34 wolf31o2 Exp $
 
 # games after gnome2 so games' functions will override gnome2's
 inherit gnome2 games
@@ -12,7 +12,7 @@ SRC_URI="${SRC_URI}
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86 ~amd64 ~sparc ~ppc"
 IUSE="nls ipv6"
 
 RDEPEND="dev-libs/libxml2
@@ -25,11 +25,18 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	nls? ( sys-devel/gettext )"
 
-src_compile() {
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	return 0
 	sed -i \
 		-e "s:\$(datadir)/pixmaps:/usr/share/pixmaps:" \
-			{.,icons,src}/Makefile.in || \
-				die "sed Makefile.in failed"
+		-e "/DISABLE_DEPRECATED/d" \
+		{.,icons,src}/Makefile.in \
+		|| die "sed Makefile.in failed"
+}
+
+src_compile() {
 	egamesconf \
 		$(use_enable ipv6) \
 		--sysconfdir=/etc \
@@ -48,7 +55,6 @@ src_install() {
 	rm -rf games && cd ${D}/${GAMES_DATADIR} && mv applications locale ../
 	use nls || rm -rf ../locale
 	mv ${WORKDIR}/gentoo ${D}/${GAMES_DATADIR}/${PN}/themes/
-
 	prepgamesdirs
 }
 
