@@ -1,17 +1,7 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 b3d39a5f0859ed8aa5baec3254b8c3a4 qca-tls-1.0.ebuild 1031
-MD5 e3c512daea2dcba10948bdb7a345a4e7 ChangeLog 2379
+MD5 498dab60a59a223e26a90edadeff03bb ChangeLog 2519
 MD5 b5393a27b5b3d74649028c3befaf49fe metadata.xml 226
-MD5 8edc1d2b6fce9b37fce56221837e4ea1 qca-tls-1.0-r1.ebuild 1070
-MD5 f87721e55c7f47d133faa99241219ae5 files/qca-pathfix.patch 301
+MD5 441a6f2739b22fe078807ff82f52e71f qca-tls-1.0-r2.ebuild 1029
+MD5 b3d39a5f0859ed8aa5baec3254b8c3a4 qca-tls-1.0.ebuild 1031
 MD5 5398cdc5d090333de8881b20f3d10f8e files/digest-qca-tls-1.0 63
-MD5 5398cdc5d090333de8881b20f3d10f8e files/digest-qca-tls-1.0-r1 63
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFB8j0eugEuf3OQ0akRAiL+AJ9mDai+pQI+4jMec7fgdhcMGw9WNACaAgxN
-Ka6hw8mFknwF2V14pXDJrI0=
-=0BjD
------END PGP SIGNATURE-----
+MD5 5398cdc5d090333de8881b20f3d10f8e files/digest-qca-tls-1.0-r2 63
+MD5 f87721e55c7f47d133faa99241219ae5 files/qca-pathfix.patch 301
