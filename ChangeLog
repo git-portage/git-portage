@@ -1,5 +1,13 @@
 date 15 Feb 2001
 
+upd sys-apps/portage-1.4-r10 to 1.5_pre1
+drobbins
+New *test* version of portage for testers only.  Features second
+generation .tbz2 package format, recursive pkgmerge (using digraphs),
+will automatically unmerge old instance of a package after a merge,
+speed improvements, Achim's FHS 2.1 fixes merged, ebuild bash code
+cleanup, python code rewrite/major cleanup.
+
 new net-www/konqueror-embedded-20010207
 achim
 This is a snapshot release of konqueror that does not other
