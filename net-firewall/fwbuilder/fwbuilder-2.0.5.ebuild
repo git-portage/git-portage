@@ -1,6 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/fwbuilder/Attic/fwbuilder-2.0.2.ebuild,v 1.3 2005/02/07 17:22:46 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/fwbuilder/Attic/fwbuilder-2.0.5.ebuild,v 1.1 2005/02/07 17:22:46 carlo Exp $
+
+inherit eutils
 
 DESCRIPTION="A firewall GUI"
 HOMEPAGE="http://www.fwbuilder.org/"
