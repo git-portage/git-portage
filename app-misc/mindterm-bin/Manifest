@@ -1,4 +1,6 @@
-MD5 51c53074f3285404699451c3fd6219b0 mindterm-bin-2.4.1.ebuild 769
 MD5 2021b9cd4630b17568d90c2e8f76c816 ChangeLog 409
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
+MD5 c6156448c3a6c223596801d74e1ad547 mindterm-bin-2.4.1.ebuild 768
+MD5 a750987e5c547768c261ba6821efd34f mindterm-bin-2.4.2.ebuild 781
 MD5 461ed02dfa081995eeb705b6709db446 files/digest-mindterm-bin-2.4.1 67
+MD5 41863a9fa43532aeec0372df907d335b files/digest-mindterm-bin-2.4.2 68
