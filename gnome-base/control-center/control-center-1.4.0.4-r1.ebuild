@@ -1,7 +1,7 @@
-# Copyright 1999-2000 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/control-center/Attic/control-center-1.4.0.1-r3.ebuild,v 1.1 2001/10/29 18:34:41 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/control-center/Attic/control-center-1.4.0.4-r1.ebuild,v 1.1 2002/03/27 13:42:13 seemant Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="The GNOME control-center"
@@ -28,6 +28,7 @@ src_compile() {
 		
 	./configure --host=${CHOST} 					\
 		    --prefix=/usr					\
+		    --mandir=/usr/share/man				\
 		    --sysconfdir=/etc					\
 		    --localstatedir=/var/lib				\
 		    ${myconf} || die
@@ -37,6 +38,7 @@ src_compile() {
 
 src_install() {                               
 	make prefix=${D}/usr						\
+	     mandir=${D}/usr/share/man					\
 	     sysconfdir=${D}/etc					\
 	     localstatedir=${D}/var/lib					\
 	     install || die
