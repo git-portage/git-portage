@@ -490,16 +490,4 @@
 ./x11-wm/enlightenment/enlightenment-0.16.4-r1.ebuild
 #!./x11-wm/enlightenment/enlightenment-0.16.5.ebuild
 ./x11-libs/openmotif/openmotif-2.1.30.ebuild
-./x11-wm/sawfish/sawfish-0.32.ebuild
-#!./x11-wm/sawfish/sawfish-0.33.1.ebuild
-
-
-
-
-
-
-
-
-
-
-
+./x11-wm/sawfish/sawfish-0.34.ebuild
