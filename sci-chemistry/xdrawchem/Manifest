@@ -2,9 +2,9 @@ MD5 323556051a553b814d7fb5f2176b3b02 xdrawchem-1.8.4.ebuild 929
 MD5 9015a50a2d992601cbd997e7a6bf47a9 xdrawchem-1.9.2.ebuild 934
 MD5 adc5266a44dff37e37eaa7f9c8d3723f xdrawchem-1.7.8.ebuild 984
 MD5 9035e5a6638f5a695d7f399764bbbc70 xdrawchem-1.8.5.ebuild 936
-MD5 fc074ed48b28ee4b0f72c43dfd883c50 xdrawchem-1.9.3.ebuild 938
+MD5 1727c6c489e82d5fb9442af9d4723042 xdrawchem-1.9.3.ebuild 938
 MD5 ae3be1268408bb236f170c2ed04be245 xdrawchem-1.9.ebuild 930
-MD5 327f17426f84ff571a97591058d313d8 ChangeLog 6071
+MD5 77dd68b6dc728e7e322f421305ece8f0 ChangeLog 6274
 MD5 8c623e53daafa025137077c6b65815bd metadata.xml 156
 MD5 c1a95992761f80fca89f9e195e07af6c files/digest-xdrawchem-1.7.8 64
 MD5 70263425e975820b388176a7be117d91 files/digest-xdrawchem-1.8.4 68
