@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/epbb/Attic/epbb-0.0.5.20040201.ebuild,v 1.5 2004/08/12 23:14:44 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-laptop/epbb/Attic/epbb-0.0.5.20040201.ebuild,v 1.1 2004/10/18 13:23:48 brix Exp $
 
 inherit enlightenment
 
