@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Params-Validate/Attic/Params-Validate-0.24-r2.ebuild,v 1.9 2004/04/10 04:24:22 esammer Exp $
+# $Header $
 
 inherit perl-module
 
@@ -9,9 +9,10 @@ DESCRIPTION="A module to provide a flexible system for validation method/functio
 SRC_URI="http://www.perl.com/CPAN/modules/by-authors/id/D/DR/DROLSKY/${P}.tar.gz"
 HOMEPAGE="http://www.perl.com/CPAN/modules/by-authors/id/D/DR/DROLSKY/"
 
+SRC_TEST="do"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 amd64 ppc ~alpha sparc"
+KEYWORDS="~x86 ~amd64 ~ppc ~alpha ~sparc"
 
 DEPEND="${DEPEND}
 	dev-perl/Attribute-Handlers"
