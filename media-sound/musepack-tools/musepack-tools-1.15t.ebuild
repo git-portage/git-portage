@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/musepack-tools/Attic/musepack-tools-1.15t.ebuild,v 1.4 2005/02/11 21:57:08 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/musepack-tools/Attic/musepack-tools-1.15t.ebuild,v 1.5 2005/03/19 14:06:14 chainsaw Exp $
 
 IUSE="static 16bit"
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://www.musepack.net"
 SRC_URI="http://files.musepack.net/source/mpcsv7-src-${PV}.tar.bz2"
 
 SLOT="0"
-LICENSE="GPL-2 LGPL-2.1"
+LICENSE="LGPL-2.1"
 KEYWORDS="amd64 x86"
 
 RDEPEND="media-sound/esound

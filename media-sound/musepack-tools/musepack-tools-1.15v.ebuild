@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/musepack-tools/Attic/musepack-tools-1.15u.ebuild,v 1.2 2005/03/19 14:06:14 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/musepack-tools/Attic/musepack-tools-1.15v.ebuild,v 1.1 2005/03/19 14:06:14 chainsaw Exp $
 
-IUSE="static 16bit"
+IUSE="static 16bit esd"
 
 inherit eutils flag-o-matic
 
@@ -14,7 +14,7 @@ SRC_URI="http://files.musepack.net/source/mpcsv7-src-${PV}.tar.bz2"
 
 SLOT="0"
 LICENSE="LGPL-2.1"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND="media-sound/esound
 	 media-libs/id3lib"
@@ -29,9 +29,6 @@ src_unpack() {
 
 	epatch ${FILESDIR}/${P}-Makefile.patch
 	epatch ${FILESDIR}/${P}-gcc4.patch
-
-	# Replace 1.15t with 1.15u
-	sed -i 's/\(MPP..._VERSION=1.15\)t/\1u/' version
 
 	sed -i 's/#define USE_IRIX_AUDIO/#undef USE_IRIX_AUDIO/' mpp.h
 
