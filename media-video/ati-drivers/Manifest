@@ -1,6 +1,6 @@
 MD5 55084b4637f59dbc056f3c3ea6ac9ef7 ati-drivers-3.2.0.ebuild 4494
 MD5 c097444035f82c48673393e171163f90 ati-drivers-3.7.0.ebuild 5424
-MD5 53d71947334f835af68ee16338335f56 ChangeLog 8427
+MD5 4eecccf83e6c8cae81cb68f7e4442e8e ChangeLog 8425
 MD5 616152ceacf4338e4dfc14b378413e47 ati-drivers-3.2.5.ebuild 4555
 MD5 bca4dd1758b390509e46f966d475006d metadata.xml 221
 MD5 d404832f9f2ff434a19c278fdec0bb2e ati-drivers-3.2.8-r2.ebuild 4134
@@ -10,7 +10,7 @@ MD5 9dd2c8e40a7f834a2df7d7d4d9963e7f ati-drivers-3.7.6.ebuild 3662
 MD5 f99248507f1c16729893906827ccc545 ati-drivers-3.7.6-r1.ebuild 4128
 MD5 1ec180441a38b1d56f59394a1cb4842a ati-drivers-3.9.0.ebuild 4125
 MD5 a2e898dd45c93552faf9522eb9ee6f85 ati-drivers-3.2.8.ebuild 4561
-MD5 5ddcc9af7e80657f34b0219e49e343a1 ati-drivers-3.11.1.ebuild 4473
+MD5 6df291a0d9daee8a701f7bfc96cff6b0 ati-drivers-3.11.1.ebuild 4470
 MD5 9d6164f9cb443fb2fceadee69ec62d0e ati-drivers-3.2.5-r1.ebuild 4580
 MD5 6b5ab1abb7122e2335aeef6de0db7aca ati-drivers-3.2.4.ebuild 4685
 MD5 22470cac4821c26539336042f88281f3 ati-drivers-3.9.0-r1.ebuild 4513
@@ -33,6 +33,7 @@ MD5 0283465e3554a1316b63c1483abefdd6 files/fglrx-2.6-amd-adv-spec-fix.patch 1096
 MD5 caabe690b8e6e629f73b5a60e8f1051f files/digest-ati-drivers-3.2.8 78
 MD5 caef37ecaa1695f1ffaaff60afb69b42 files/digest-ati-drivers-2.9.12 82
 MD5 ba76cdca0527cd8a7480f4bc1e12f2fe files/fglrx-2.6-vmalloc-vmaddr.patch 466
+MD5 2f9201d062ecb4b2a980f5be12cf0b34 files/fglrx-3.9.0-regparm.patch 58125
 MD5 bdd76c908aa2a7bb1918b9a6955a0744 files/fglrx-3.2.8-fix-amd-adv-spec.patch 561
 MD5 d46e2e3860ee3b4f750f21bfacf9020c files/digest-ati-drivers-3.2.5 78
 MD5 caabe690b8e6e629f73b5a60e8f1051f files/digest-ati-drivers-3.2.8-r1 78
