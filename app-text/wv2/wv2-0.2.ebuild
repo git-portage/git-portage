@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/wv2/Attic/wv2-0.1.8.ebuild,v 1.4 2003/09/05 22:43:30 msterret Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/wv2/Attic/wv2-0.2.ebuild,v 1.1 2003/11/05 18:27:21 caleb Exp $
 
 S=${WORKDIR}/${P}
 
