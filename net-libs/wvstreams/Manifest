@@ -1,18 +1,11 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 afece6e4b419bc3cc53f67596c73f7da ChangeLog 6101
-MD5 40fcfb488d0563fd02dcefb1e0a8d4a2 wvstreams-4.0.1.ebuild 1872
-MD5 7c8d69f73480b56621770449d11a2e17 metadata.xml 235
+MD5 ee1eddb5f37db70d25c4f46cbcbfc97b wvstreams-4.0.1-r1.ebuild 1977
 MD5 88beb02e20267e4fc08543358e899909 wvstreams-4.0-r1.ebuild 1872
+MD5 afece6e4b419bc3cc53f67596c73f7da ChangeLog 6101
+MD5 9601d4186658405cd2f90140082e2f52 wvstreams-4.0.1.ebuild 1901
+MD5 7c8d69f73480b56621770449d11a2e17 metadata.xml 235
+MD5 8bf34c693506e1b79f39c74a6f820fe7 files/wvstreams-4.0.1-linux-serial.patch 7588
+MD5 f4e61e52cab6cac5470b77a7bd3358a9 files/digest-wvstreams-4.0.1-r1 68
 MD5 f606f86f5ef7d07937128fc8dc043c83 files/wvstreams-4.0-tcl_8_4.patch 822
 MD5 7c5ceff9d19db13318a9c8c6de08e7ef files/digest-wvstreams-4.0-r1 66
 MD5 f4e61e52cab6cac5470b77a7bd3358a9 files/digest-wvstreams-4.0.1 68
 MD5 03b73077a83c635ab211f235c7a429bf files/wvstreams-4.0.1-tcl_8_4.patch 822
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFCEOUoKRy60XGEcJIRAu8yAJ9CxiwTFyL8+12sQK23emIJxeNxJwCgkWLS
-XgdbmoAcEqTJS2CNHcuHVY0=
-=e8JN
------END PGP SIGNATURE-----
