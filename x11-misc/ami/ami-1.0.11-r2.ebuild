@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/ami/Attic/ami-1.0.11-r1.ebuild,v 1.9 2002/10/20 18:54:50 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/ami/Attic/ami-1.0.11-r2.ebuild,v 1.1 2002/11/09 05:20:42 seemant Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Korean IMS Ami"
@@ -8,9 +8,10 @@ SRC_URI="http://www.kr.freebsd.org/~hwang/ami/${P}.tar.gz
 	http://www.kr.freebsd.org/~hwang/ami/hanja.dic.gz
 	ftp://ftp.nnongae.com/pub/gentoo/${P}.patch"
 HOMEPAGE="http://www.kr.freebsd.org/~hwang/ami/index.html"
-KEYWORDS="x86"
+
 SLOT="0"
 LICENSE="GPL-2"
+KEYWORDS="x86 ppc sparc sparc64"
 
 DEPEND=">=media-libs/gdk-pixbuf-0.7.0"
 
@@ -22,16 +23,10 @@ src_unpack() {
 src_compile() {
 	local config
 
-	use gnome && config="--enable-gnome-applet"
+	# remove gnome-applet for GNOME2
+	#use gnome && config="--enable-gnome-applet"
 
-	./configure \
-		--host=${CHOST} \
-		--prefix=/usr \
-		--infodir=/usr/share/info \
-		--with-hangul-keyboard=2 \
-		--sysconfdir=/etc \
-		${config} \
-		--mandir=/usr/share/man || die "./configure failed"
+	econf --with-hangul-keyboard=2
 
 	emake || die
 
@@ -40,12 +35,7 @@ src_compile() {
 }
 
 src_install() {
-	make \
-		prefix=${D}/usr \
-		mandir=${D}/usr/share/man \
-		infodir=${D}/usr/share/info \
-		sysconfdir=${D}/etc \
-		install || die
+	einstall || die
 
 	gzip -d -c ${DISTDIR}/hanja.dic.gz > ${D}/usr/share/ami/hanja.dic
 
