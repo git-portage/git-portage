@@ -1,36 +1,38 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/exim/Attic/exim-4.24.ebuild,v 1.3 2004/07/14 16:50:36 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/exim/Attic/exim-4.42.ebuild,v 1.1 2004/08/30 12:30:50 peitolm Exp $
 
 inherit eutils
 
-IUSE="exiscan exiscan-acl ipv6 ldap lmtp maildir mysql pam postgres sasl ssl tcpd"
+IUSE="tcpd ssl postgres mysql ldap pam exiscan-acl mailwrapper lmtp ipv6 sasl wildlsearch dnsdb perl mbox X exiscan"
 
-EXISCANACL_VER=${PV}-13
+EXISCANACL_VER=${PV}-27
 
 DESCRIPTION="A highly configurable, drop-in replacement for sendmail"
-SRC_URI="ftp://ftp.exim.org/pub/exim/exim4/${P}.tar.gz
+SRC_URI="ftp://ftp.exim.org/pub/exim/exim4/${P}.tar.bz2
 	exiscan-acl? ( http://duncanthrax.net/exiscan-acl/exiscan-acl-${EXISCANACL_VER}.patch )"
 HOMEPAGE="http://www.exim.org/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~sparc ~hppa ~ppc ~amd64"
+KEYWORDS="~x86 ~sparc"
 
 PROVIDE="virtual/mta"
 DEPEND=">=sys-apps/sed-4.0.5
 	dev-lang/perl
 	>=sys-libs/db-3.2
-	>=dev-libs/libpcre-3.4
 	pam? ( >=sys-libs/pam-0.75 )
 	tcpd? ( sys-apps/tcp-wrappers )
 	ssl? ( >=dev-libs/openssl-0.9.6 )
 	ldap? ( >=net-nds/openldap-2.0.7 )
 	mysql? ( >=dev-db/mysql-3.23.28 )
 	postgres? ( >=dev-db/postgresql-7 )
-	sasl? ( >=dev-libs/cyrus-sasl-2.1.14 )"
+	sasl? ( >=dev-libs/cyrus-sasl-2.1.14 )
+	X? ( virtual/x11 )"
+	# added X check for #57206
 RDEPEND="${DEPEND}
-	!virtual/mta
+	mailwrapper? ( >=net-mail/mailwrapper-0.2 )
+	!mailwrapper? ( !virtual/mta )
 	>=net-mail/mailbase-0.00-r5"
 
 src_unpack() {
@@ -41,19 +43,20 @@ src_unpack() {
 
 	epatch ${FILESDIR}/exim-4.14-tail.patch
 
-	if use maildir; then
+	if ! use mbox; then
 		einfo "Patching maildir support into exim.conf"
 		epatch ${FILESDIR}/exim-4.20-maildir.patch
 	fi
 
 	sed -i "/SYSTEM_ALIASES_FILE/ s'SYSTEM_ALIASES_FILE'/etc/mail/aliases'" ${S}/src/configure.default
 	cp ${S}/src/configure.default ${S}/src/configure.default.orig
+		epatch ${FILESDIR}/exim-4.30-conf.patch
 
 	if use exiscan-acl; then
 		einfo "Patching exican-acl support into exim ${PV}.."
 		epatch ${DISTDIR}/exiscan-acl-${EXISCANACL_VER}.patch
 	fi
-
+	# Includes Typo fix for bug 47106
 	sed -e "48i\CFLAGS=${CFLAGS}" \
 		-e "s:# AUTH_CRAM_MD5=yes:AUTH_CRAM_MD5=yes:" \
 		-e "s:# AUTH_PLAINTEXT=yes:AUTH_PLAINTEXT=yes:" \
@@ -62,19 +65,30 @@ src_unpack() {
 		-e "s:ZCAT_COMMAND=/opt/gnu/bin/zcat:ZCAT_COMMAND=/usr/bin/zcat:" \
 		-e "s:CONFIGURE_FILE=/usr/exim/configure:CONFIGURE_FILE=/etc/exim/exim.conf:" \
 		-e "s:EXIM_MONITOR=eximon.bin:# EXIM_MONITOR=eximon.bin:" \
-		-e "s:# EXIM_PERL=perl.o:EXIM_PERL=perl.o:" \
 		-e "s:# INFO_DIRECTORY=/usr/local/info:INFO_DIRECTORY=/usr/share/info:" \
 		-e "s:# LOG_FILE_PATH=/var/log/exim_%slog:LOG_FILE_PATH=/var/log/exim/exim_%s.log:" \
 		-e "s:# PID_FILE_PATH=/var/lock/exim.pid:PID_FILE_PATH=/var/run/exim.pid:" \
 		-e "s:# SPOOL_DIRECTORY=/var/spool/exim:SPOOL_DIRECTORY=/var/spool/exim:" \
 		-e "s:# SUPPORT_MAILDIR=yes:SUPPORT_MAILDIR=yes:" \
-		-e "s:# SUPPORT_MAILSTOR=yes:SUPPORT_MAILSTORE=yes:" \
-		-e "s:# SUPPORT_MBX=yes:SUPPORT_MBX=yes:" \
+		-e "s:# SUPPORT_MAILSTORE=yes:SUPPORT_MAILSTORE=yes:" \
 		-e "s:EXIM_USER=:EXIM_USER=mail:" \
 		-e "s:# AUTH_SPA=yes:AUTH_SPA=yes:" \
 		src/EDITME > Local/Makefile
 
 	cd Local
+	# enable optional exim_monitor support via X use flag bug #46778
+	if use X; then
+		einfo "Configuring eximon"
+		cp ../exim_monitor/EDITME eximon.conf
+		sed -i "s:# EXIM_MONITOR=eximon.bin:EXIM_MONITOR=eximon.bin:" Makefile
+	fi
+	#These next two should resolve 37964
+	if use perl; then
+		sed -i "s:# EXIM_PERL=perl.o:EXIM_PERL=perl.o:" Makefile
+	fi
+	if use mbox; then
+		sed -i "s:# SUPPORT_MBX=yes:SUPPORT_MBX=yes:" Makefile
+	fi
 	if use pam; then
 		sed -i "s:# \(SUPPORT_PAM=yes\):\1:" Makefile
 		myconf="${myconf} -lpam"
@@ -93,10 +107,12 @@ src_unpack() {
 	fi
 	if use ipv6; then
 		echo "HAVE_IPV6=YES" >> Makefile
+		#To fix bug 41196
+		echo "IPV6_USE_INET_PTON=yes" >> Makefile
 	fi
 
 	if [ -n "$myconf" ] ; then
-		echo "EXTRALIBS=${myconf}" >> Makefile
+		echo "EXTRALIBS=${myconf} ${LDFLAGS}" >> Makefile
 	fi
 
 	cd ${S}
@@ -135,7 +151,7 @@ src_unpack() {
 	fi
 
 	if [ -n "$LOOKUP_LIBS" ]; then
-		sed -i "s:# LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq:LOOKUP_LIBS=$LOOKUP_LIBS:" \
+		sed -i "s:# LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq -lgds:LOOKUP_LIBS=$LOOKUP_LIBS:" \
 			Local/Makefile
 	fi
 
@@ -143,7 +159,15 @@ src_unpack() {
 	cat Makefile | sed -e 's/^buildname=.*/buildname=exim-gentoo/g' > Makefile.gentoo && mv -f Makefile.gentoo Makefile
 
 	sed -i "s:# LOOKUP_DSEARCH=yes:LOOKUP_DSEARCH=yes:" Local/Makefile
+	if use wildlsearch; then
+		sed -i \
+			-e "s:# LOOKUP_WILDLSEARCH=yes:LOOKUP_WILDLSEARCH=yes:" \
+			-e "s:# LOOKUP_NWILDLSEARCH=yes:LOOKUP_NWILDLSEARCH=yes:" Local/Makefile
+	fi
 
+	if use dnsdb; then
+		sed -i "s:# LOOKUP_DNSDB=yes:LOOKUP_DNSDB=yes:" Local/Makefile
+	fi
 	sed -i "s:# LOOKUP_CDB=yes:LOOKUP_CDB=yes:" Local/Makefile
 
 	# Use the "native" interface to the DBM library
@@ -159,16 +183,30 @@ src_install () {
 	cd ${S}/build-exim-gentoo
 	exeinto /usr/sbin
 	doexe exim
+	if use X;then
+			doexe eximon.bin
+			doexe eximon
+	fi
 	fperms 4755 /usr/sbin/exim
 
 	dodir /usr/bin /usr/sbin /usr/lib
 	dosym ../sbin/exim /usr/bin/mailq
 	dosym ../sbin/exim /usr/bin/newaliases
-	dosym ../sbin/exim /usr/bin/mail
+	einfo "The Exim ebuild will no longer touch /usr/bin/mail, so as not to interfere with mailx/nail."
 	dosym exim /usr/sbin/rsmtp
 	dosym exim /usr/sbin/rmail
-	dosym exim /usr/sbin/sendmail
-	dosym ../sbin/exim /usr/lib/sendmail
+	if \[ ! -e /usr/lib/sendmail \];
+	then
+		dosym /usr/sbin/sendmail /usr/lib/sendmail
+	fi
+
+	if use mailwrapper
+	then
+		insinto /etc/mail
+		doins ${FILESDIR}/mailer.conf
+	else
+		dosym exim /usr/sbin/sendmail
+	fi
 
 	exeinto /usr/sbin
 	for i in exicyclog exim_dbmbuild exim_dumpdb exim_fixdb exim_lock \
@@ -213,4 +251,12 @@ pkg_postinst() {
 	einfo "/etc/exim/system_filter.exim is a sample system_filter."
 	einfo "/etc/exim/auth_conf.sub contains the configuration sub for using smtp auth."
 	einfo "Please create /etc/exim/exim.conf from /etc/exim/exim.conf.dist."
+
+	if ! use mailwrapper && [[ -e /etc/mailer.conf ]]
+	then
+		einfo
+		einfo "Since you emerged $PN without mailwrapper in USE,"
+		einfo "you probably want to 'emerge -C mailwrapper' now."
+		einfo
+	fi
 }
