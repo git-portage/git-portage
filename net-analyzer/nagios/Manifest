@@ -1,3 +1,5 @@
+MD5 93ead73bb3facdab9be1e20de28ec47f ChangeLog 2289
 MD5 66a9a075b2daf3a34b8afdc297c6b0b6 nagios-1.1.ebuild 598
-MD5 af761e9c661ac89de399cafa37b32f34 ChangeLog 2195
+MD5 de25c742b466d0e15525ca5a42200c1a nagios-1.2.ebuild 599
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-nagios-1.1 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-nagios-1.2 0
