@@ -1,5 +1,13 @@
 date 01 Dec 2000
 
+upd sys-kernel/linux-2.4.0-rc10-r4 to 2.4.0_rc11
+drobbins
+not in current-packages yet
+
+upd sys-kernel/linux-sources-2.4.0-rc10-r4 to 2.4.0_rc11
+drobbins
+not in current-packages yet
+
 upd sys-kernel/linux-2.4.0_rc10-r3 to 2.4.0_rc10-r4
 drobbins
 Updated ReiserFS patch, and a little compile fix
