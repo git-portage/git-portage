@@ -1,3 +1,6 @@
-MD5 3452a1a98a98c5f2f67037a081f48120 junkie-0.3.1.ebuild 572
 MD5 cd565ac9109d46022fa31af3c9b6d0d8 ChangeLog 341
+MD5 3452a1a98a98c5f2f67037a081f48120 junkie-0.3.1.ebuild 572
+MD5 1e65a23c4350a59693f7052c43b38455 junkie-0.3.1-r1.ebuild 1372
+MD5 ecfa379d2d434b9eedee9d717b327c8b files/junkie.desktop 310
 MD5 510aa8f96446aca6b65790ced937c217 files/digest-junkie-0.3.1 64
+MD5 510aa8f96446aca6b65790ced937c217 files/digest-junkie-0.3.1-r1 64
