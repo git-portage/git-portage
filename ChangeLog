@@ -7,6 +7,9 @@ Modified to have the default installed named up and running. added root.cache/lo
 
 upd dev-util/csope-15.3
 New Version release ebuild
+
+upd net-mail/vlnx-414e
+New Version release ebuild
 --pm
 
 date 3 July 2001
