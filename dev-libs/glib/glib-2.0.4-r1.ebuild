@@ -2,7 +2,11 @@
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author: Spider <spider@gentoo.org>
 # Maintainer: Spider <spider@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/Attic/glib-2.0.1-r4.ebuild,v 1.4 2002/05/06 20:40:24 spider Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/Attic/glib-2.0.4-r1.ebuild,v 1.1 2002/06/30 00:40:57 azarah Exp $
+
+inherit debug
+inherit libtool
+
 
 S=${WORKDIR}/${P}
 DESCRIPTION="The GLib library of C routines"
@@ -12,8 +16,8 @@ LICENSE="LGPL-2.1"
 SLOT="2"
 
 DEPEND="virtual/glibc
-		>=dev-util/pkgconfig-0.12.0
-		doc? ( >=dev-util/gtk-doc-0.9-r2 )"
+	>=dev-util/pkgconfig-0.12.0
+	doc? ( >=dev-util/gtk-doc-0.9-r2 )"
 
 
 # libiconv breaks other stuff
@@ -21,21 +25,21 @@ DEPEND="virtual/glibc
 RDEPEND="virtual/glibc"
 
 src_compile() {
-	libtoolize --copy --force
-	local myconf
-	use doc && myconf="${myconf} --enable-gtk-doc" || myconf="${myconf} --disable-gtk-doc"
+	# Seems libtool have another wierd bug, try to fix it
+	# with a fix for nautilus, bug #4190
+	elibtoolize --reverse-deps
+	
+	local myconf=""
+	use doc && myconf="${myconf} --enable-gtk-doc"
+	use doc || myconf="${myconf} --disable-gtk-doc"
 	./configure --host=${CHOST} \
-		    --prefix=/usr \
-		    --infodir=/usr/share/info \
-		    --mandir=/usr/share/man \
-		    --with-threads=posix \
-			${myconf} \
-		    --enable-debug=yes || die
+		--prefix=/usr \
+		--infodir=/usr/share/info \
+		--mandir=/usr/share/man \
+		--with-threads=posix \
+		${myconf} \
+		--enable-debug=yes || die
 
-# This had to be removed since it broke other stuff. darn. 2002-05-03
-#	--with-libiconv=gnu \
-
- 
 # you cannot disable debug or this will fail building.
 # odd but true :/
 
