@@ -1,4 +1,5 @@
 MD5 131a2fc3235192b2307cdf1bf5629d2e nagios-core-1.1-r6.ebuild 6336
+MD5 6ce2ff32665c9af7f662dcbf0faa62f0 nagios-core-1.2-r2.ebuild 6749
 MD5 09ff12c12b827ef6708addf9159374fb ChangeLog 5601
 MD5 67125e899e40330692585273a7839c41 metadata.xml 980
 MD5 6eb7cf1ed0a2e05fc402aeecfa0d6641 nagios-core-1.2-r1.ebuild 6618
@@ -12,3 +13,4 @@ MD5 f4f0b07e1a52477f83cbb9158db70391 files/tac.cgi.diff.bz2 204
 MD5 de44d331b40a2395b74c5ebf887b7675 files/digest-nagios-core-1.1-r4 63
 MD5 de44d331b40a2395b74c5ebf887b7675 files/digest-nagios-core-1.1-r6 63
 MD5 cd183719838dc2a8b9cafa8a639f4ad2 files/digest-nagios-core-1.2-r1 63
+MD5 cd183719838dc2a8b9cafa8a639f4ad2 files/digest-nagios-core-1.2-r2 63
