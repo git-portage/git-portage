@@ -270,6 +270,7 @@
 ./media-sound/xmms/xmms-1.2.4.ebuild
 ./media-sound/xmms-aalsa/xmms-aalsa-0.5.4-r1.ebuild
 ./media-sound/xmms-arts/xmms-arts-0.4.ebuild
+./media-sound/xmms-nas/xmms-nas-0.2.ebuild
 ./media-sound/xmms-shn/xmms-shn-2.2.3.ebuild
 ./media-video/avi-xmms/avi-xmms-1.2.2.ebuild
 ./media-video/avifile/avifile-0.53.1.ebuild
