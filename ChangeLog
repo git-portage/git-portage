@@ -1,5 +1,13 @@
 date 20 Jan 2001
 
+upd media-libs/glut-3.7 to 3.7-r1
+drobbins
+Replace all that Imakefile garbage with a simple bash script that compiles
+everything correctly and links everything perfectly.  libglut now is dynamically
+linked with the X libraries.  This is what other applications expect, and
+rather than patch every application that uses GLUT, we've fixed the root
+of the problem.
+
 upd sys-apps/portage-1.4-r4 to 1.4-r5
 drobbins
 shared libraries are now installed with 0755 perms
