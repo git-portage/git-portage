@@ -1,13 +1,13 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.8.6.6.ebuild,v 1.3 2003/04/28 20:56:17 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.8.6.8-r1.ebuild,v 1.1 2003/05/21 09:01:18 azarah Exp $
 
 # This ebuild needs to be merged "live".  You can't simply make a package
 # of it and merge it later.
 
 IUSE="bootstrap build"
 
-SV="1.4.3.6"
+SV="1.4.3.8p1"
 SVREV=""
 # SysvInit version
 SVIV="2.84"
@@ -109,18 +109,24 @@ src_compile() {
 		emake CC="${CC:-gcc}" LD="${CC:-gcc}" \
 			LDFLAGS="" || die "problem compiling sysvinit"
 
-		# We let gawk now install filefuncs.so, and that is as a symlink to a 
-		# versioned .so ...
-		if [ -f /usr/include/awk/awk.h -a ! -L ${ROOT}/lib/rcscripts/filefuncs.so ]
+		if [ -z "`use bootstrap`" ]
 		then
-			# Build gawk module
-			cd ${S}/src/filefuncs
-			einfo "Building awk module..."
-			make CC="${CC:-gcc}" LD="${CC:-gcc}" || {
-				eerror "Failed to build gawk module.  Make sure you have"
-				eerror "sys-apps/gawk-3.1.1-r1 or later installed"
-				die "problem compiling gawk module"
-			}
+			# We let gawk now install filefuncs.so, and that is as a symlink to a 
+			# versioned .so ...
+			if [ -f /usr/include/awk/awk.h -a ! -L ${ROOT}/lib/rcscripts/filefuncs.so ]
+			then
+				# Build gawk module
+#				cd ${S}/src/filefuncs
+#				einfo "Building awk module..."
+#				make CC="${CC:-gcc}" LD="${CC:-gcc}" || {
+#					eerror "Failed to build gawk module.  Make sure you have"
+#					eerror "sys-apps/gawk-3.1.1-r1 or later installed"
+#					die "problem compiling gawk module"
+#				}
+			
+				eerror "Please install sys-apps/gawk-3.1.1-r2 or later!"
+				die "gawk too old"
+			fi
 		fi
 	fi
 }
@@ -141,6 +147,33 @@ defaltmerge() {
 	fi
 }
 
+# Only do a keepdir on mounts if they are not mounted ...
+keepdir_mount() {
+	local x=
+	local y=
+	local doit=0
+
+	[ -z "$1" ] && return 1
+
+	[ ! -e /proc/mounts ] && return 1
+
+	for y in $*
+	do
+		doit=0
+		
+		for x in $(gawk '{print $2}' /proc/mounts)
+		do
+			[ "${x}" = "${y}" ] && doit=1
+		done
+
+		if [ "${doit}" -eq 0 ]
+		then
+			keepdir "${y}"
+		fi
+	done
+
+	return 0
+}
 
 src_install() {
 
@@ -150,9 +183,9 @@ src_install() {
 	defaltmerge
 	keepdir /sbin /usr/sbin
 
-	keepdir /usr
+	keepdir_mount /usr
 	keepdir /usr/bin
-	keepdir /usr/lib
+	keepdir /lib /usr/lib
 	keepdir /var /var/run /var/lock/subsys /var/state
 	keepdir /var/spool /var/tmp /var/lib/misc
 	keepdir /var/log/news
@@ -165,10 +198,7 @@ src_install() {
 	
 	# If it already exist, do not recreate, else we get
 	# problems when /usr/portage mounted as ro NFS, etc.
-	if [ ! -d "${ROOT}/usr/portage" ]
-	then
-		keepdir /usr/portage
-	fi
+	keepdir_mount /usr/portage
 	
 	#dosym ../src/linux/include/linux /usr/include/linux
 	#dosym ../src/linux/include/asm-i386 /usr/include/asm
@@ -228,7 +258,7 @@ src_install() {
 		[ -f ${foo} ] && doins ${foo}
 	done
 	chmod go-rwx ${D}/etc/shadow
-	keepdir /lib /mnt/floppy /mnt/cdrom
+	keepdir_mount /mnt/floppy /mnt/cdrom
 	chmod go-rwx ${D}/mnt/floppy ${D}/mnt/cdrom
 
 	into /
@@ -259,7 +289,9 @@ src_install() {
 	dosym ../../sbin/modules-update /usr/sbin/update-modules
 	# These moved from /etc/init.d/ to /sbin to help newb systems
 	# from breaking
-	dosbin runscript.sh functions.sh rc-daemon.sh rc-help.sh
+	dosbin runscript.sh functions.sh
+	exeinto /lib/rcscripts/sh
+	doexe rc-services.sh rc-daemon.sh rc-help.sh
 
 	dodir /etc/init.d
 	exeinto /etc/init.d
@@ -273,29 +305,24 @@ src_install() {
 	# if 'build' or 'bootstrap' is not in USE.  This will
 	# change if we have sys-apps/gawk-3.1.1-r1 or later in
 	# the build image ...
-	if [ -z "`use build`" -a -z "`use bootstrap`" ]
+	if [ -z "`use build`" ]
 	then
-		# This is for new depscan and rc-envupdate.sh
+		# This is for new depscan.sh and env-update.sh
 		# written in awk
 		into /
 		dosbin depscan.sh
-		dosbin rc-envupdate.sh
+		dosbin env-update.sh
 		insinto /lib/rcscripts/awk
 		for foo in ${S}/src/awk/*.awk
 		do
 			[ -f ${foo} ] && doins ${foo}
 		done
 
-		if [ ! -L ${ROOT}/lib/rcscripts/filefuncs.so ]
-		then
-			exeinto /lib/rcscripts
-			doexe ${S}/src/filefuncs/filefuncs.so
-		fi
-	else
-		# This is the old bash ones
-		into /
-		newsbin depscan.sh.bash depscan.sh
-		newsbin rc-envupdate.sh.bash rc-envupdate.sh
+#		if [ ! -L ${ROOT}/lib/rcscripts/filefuncs.so ]
+#		then
+#			exeinto /lib/rcscripts
+#			doexe ${S}/src/filefuncs/filefuncs.so
+#		fi
 	fi
 
 	# Compat symlinks (some stuff have hardcoded paths)
@@ -618,6 +645,8 @@ EOF
 	then
 		# Do not return an error if this fails
 		/sbin/init U &>/dev/null || :
+
+		/sbin/depscan.sh &>/dev/null
 
 		# We need to regenerate /etc/modules.conf, else it will fail at next
 		# boot.
