@@ -8,9 +8,9 @@ MD5 9f85c4efd4f7184fe238eff95a1c0877 baselayout-1.12.0_alpha1-r2.ebuild 17338
 MD5 090789f9ee35e61ba4c68e048a474e4a baselayout-1.11.10-r2.ebuild 17000
 MD5 30d111c4ff4ffa5712a71ab4ac7e2c02 baselayout-1.11.9-r1.ebuild 17015
 MD5 a564d6194f6a91d76d572a0f934c4faa baselayout-1.9.4-r7.ebuild 18143
-MD5 9a116cd406cd94d21e3f613ce13912ee baselayout-1.12.0_alpha1-r4.ebuild 17579
-MD5 a80a01d141a81638665e02c46f8011ad baselayout-1.11.10-r4.ebuild 17251
-MD5 33fb899c545fbfa39a489f17ff5b587b ChangeLog 51017
+MD5 b8f5620b4495be623769d3590924c5f2 baselayout-1.12.0_alpha1-r4.ebuild 17579
+MD5 7d1f13b6d52150660ef848a5ed09d833 baselayout-1.11.10-r4.ebuild 17251
+MD5 b9343f0ce938e63d1387cb38b23b4e6a ChangeLog 51149
 MD5 e02bb32cac91dad28d3c05b731b37b04 metadata.xml 385
 MD5 333c983dc00cb352f4725cacc0378fea files/baselayout-1.11.10-bridge.patch 3547
 MD5 dd7fbce62822fed1595f11078e23aa32 files/baselayout-1.8.6.13-r1-gcc2.patch 443
