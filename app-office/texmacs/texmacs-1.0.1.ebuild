@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/texmacs/Attic/texmacs-1.0.1.ebuild,v 1.7 2003/09/06 22:21:02 msterret Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/texmacs/Attic/texmacs-1.0.1.ebuild,v 1.8 2003/10/28 10:41:43 usata Exp $
 
 inherit flag-o-matic
 
@@ -15,7 +15,7 @@ SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="x86 ~ppc"
 
-DEPEND=">=app-text/tetex-1.0.7-r7
+DEPEND="virtual/tetex
 	>=dev-util/guile-1.3.4
 	=sys-apps/sed-4*
 	virtual/x11"
