@@ -1,5 +1,17 @@
 date 24 Nov 2000
 
+upd media-sound/alsa-utils-0.5.9b to 0.5.9b-r1
+drobbins
+Now includes an rc script to store/restore ALSA volume
+
+upd sys-kernel/linux-2.4.0_rc10-r2 to 2.4.0_rc10-r3
+drobbins
+ALSA now appears in the package/merge automatically
+
+upd sys-kernel/linux-sources-2.4.0_rc10-r2 to 2.4.0_rc10-r3
+drobbins
+Updated to match sys-kernel/linux
+
 upd sys-apps/portage-1.0-r4 to 1.1
 drobbins
 There have been changes on almost a daily basis, and it's
