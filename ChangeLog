@@ -1,5 +1,13 @@
 date 17 Mar 2001
 
+upd sys-kernel/linux-2.4.2-r2 to r3
+drobbins
+minor build fixes
+
+upd sys-kernel/linux-sources-2.4.2-r2 to r3
+drobbins
+minor build fixes
+
 new net-im/gtk+licq-0.50.1
 jgagnon
 
