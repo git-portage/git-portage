@@ -1,5 +1,5 @@
-MD5 1332fc364223097066d6a36d12cf3152 mysqlcc-0.9.4-r1.ebuild 1930
-MD5 abf4f4aa0a29d92483bc0d96f53b8f7b ChangeLog 4335
+MD5 ee3b8179423bb4e5812159c18d365cbd mysqlcc-0.9.4-r1.ebuild 2029
+MD5 9c0b193d9573be663376e41b16c45dc8 ChangeLog 4332
 MD5 1b6808bbd78c9161f8b7efb090d966f8 metadata.xml 162
 MD5 9a87cc1a1583e9c362223e05accc456a files/digest-mysqlcc-0.9.4-r1 69
 MD5 397bed4d44baa6b402b5d58c33bde803 files/mysqlcc-0.9.4-libmysqlclientac.patch 1556
