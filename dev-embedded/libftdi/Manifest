@@ -1,4 +1,14 @@
-MD5 d059b03892442bab8a2eb159e193dea0 libftdi-0.5.ebuild 498
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 e42d8f7ff684532b837d344c8705e603 libftdi-0.5.ebuild 604
 MD5 d800ef4fc34a6b31455ffdc225d9188d metadata.xml 374
-MD5 7e58fe5359ea39a928a4b5fd1e6d1082 ChangeLog 301
+MD5 ec1de6c7b4164a947274a375db7ed59d ChangeLog 398
 MD5 bb7f6f51bafd1a1d2b9d555760107520 files/digest-libftdi-0.5 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBsnzPmdTrptrqvGERAqlbAJ45j4SiVeW6fCImdv9NkPfs5KojiQCeJvac
+xRU3xZFiJVuFwhjVpqQtWqQ=
+=5sK5
+-----END PGP SIGNATURE-----
