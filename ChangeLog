@@ -1,3 +1,24 @@
+<<<<<<< ChangeLog
+28.09.2000
+
+	- New kde-apps/kmago 0.1		(achim)
+	  [ Download App ]
+	- New gcc-2.96-snapshot			(achim)
+	  [ Not default ]
+	- New glibc-2.1.94			(achim)
+	  [ Not default ]
+	- Update binutils 2.10.0.24 -> 2.10.0.26(achim)
+	- Update linux 2.2.17-r1 -> r2		(achim)
+	  [ New reiserfs version ]
+	- Update linux 2.4.0-test9-pre7		(achim)
+	  [ Not default ]
+26.09.2000
+
+	- Update openssl 0.9.5a -> 0.9.6	(achim)
+	- Update modutils 2.3.16 -> 2.3.17	(achim)
+	- Update gimp 1.1.25 -> 1.1.26		(achim)
+21.09.2000
+=======
 25.09.2000
 	- Updated megatouch (sys-apps/portage) 	(drobbins)
 	- Minor syntax fix for qmail-mysql	(drobbins)
@@ -6,10 +27,18 @@
 	- Added sys-apps/ed (GNU ed 0.2)	(drobbins)
 	- Removed app-editors/ed		(drobbins)
 	- New sys-apps/bootdisk			(drobbins)
+>>>>>>> 1.70
 
+<<<<<<< ChangeLog
+	- Update sawfish 0.30.3 -> 0.31		(achim)
+	- Update rep-gtk 0.13a -> 0.14		(achim)
+	- Update librep 0.12.4 -> 0.13		(achim)
+	- Update cvs 1.10.8 -> 1.11		(achim)
+=======
 21.09.2000
 	- sys-apps/bash now compiles statically	(drobbins)
 	- Fixes for portage			(drobbins)
+>>>>>>> 1.70
 	- Update gimp-print 4.0a3 -> 4.0b1	(achim)
 
 20.09.2000

@@ -24,7 +24,7 @@
 ./sys-apps/logrotate/logrotate-3.3-r1.ebuild
 ./sys-apps/man/man-1.5.1h-r1.ebuild
 ./sys-apps/mkisofs/mkisofs-1.13-r1.ebuild
-./sys-apps/modutils/modutils-2.3.16.ebuild
+./sys-apps/modutils/modutils-2.3.17.ebuild
 ./sys-apps/most/most-4.9.0-r1.ebuild
 ./sys-apps/net-tools/net-tools-1.57-r1.ebuild
 ./sys-apps/netkit-base/netkit-base-0.17-r1.ebuild
@@ -54,7 +54,7 @@
 ./sys-devel/automake/automake-1.4-r1.ebuild
 ./sys-devel/bc/bc-1.05a-r1.ebuild
 ./sys-devel/bin86/bin86-0.15.1.ebuild
-./sys-devel/binutils/binutils-2.10.0.24.ebuild
+./sys-devel/binutils/binutils-2.10.0.26.ebuild
 ./sys-devel/bison/bison-1.28-r1.ebuild
 ./sys-devel/flex/flex-2.5.4a-r1.ebuild
 ./sys-devel/gcc/gcc-2.95.2-r1.ebuild
@@ -66,7 +66,7 @@
 ./sys-devel/patch/patch-2.5.4-r1.ebuild
 ./sys-devel/perl/perl-5.6.0-r1.ebuild
 ./sys-devel/python-basic/python-basic-1.5.2-r1.ebuild
-./sys-kernel/linux-UP-2.2.17/linux-UP-2.2.17-r1.ebuild
+./sys-kernel/linux-UP-2.2.17/linux-UP-2.2.17-r2.ebuild
 ./sys-libs/cracklib/cracklib-2.7-r1.ebuild
 ./sys-libs/gdbm/gdbm-1.8.0-r1.ebuild
 ./sys-libs/gettext/gettext-0.10.35-r1.ebuild
@@ -134,10 +134,10 @@
 ./dev-libs/glib/glib-1.2.8-r1.ebuild
 ./dev-libs/gmp/gmp-3.1.ebuild
 ./dev-libs/libpcre/libpcre-3.2-r1.ebuild
-./dev-libs/librep/librep-0.12.4-r1.ebuild
+./dev-libs/librep/librep-0.13.ebuild
 ./dev-libs/libunicode/libunicode-0.7.ebuild
-./dev-libs/openssl/openssl-0.9.5a-r1.ebuild
-./dev-libs/rep-gtk/rep-gtk-0.13a.ebuild
+./dev-libs/openssl/openssl-0.9.6-r1.ebuild
+./dev-libs/rep-gtk/rep-gtk-0.14.ebuild
 ./dev-libs/slib/slib-2.3.8.ebuild
 ./dev-libs/swig/swig-1.3_alpha4.ebuild
 ./dev-perl/Digest-MD5/Digest-MD5-2.09.ebuild
@@ -163,7 +163,7 @@
 ./dev-perl/PDL/PDL-2.1.1.ebuild
 ./dev-perl/Parse-RecDescent/Parse-RecDescent-1.79.ebuild
 ./dev-python/gnome-python/gnome-python-1.0.53-r1.ebuild
-./dev-util/cvs/cvs-1.10.8-r1.ebuild
+./dev-util/cvs/cvs-1.11.ebuild
 ./dev-util/guile/guile-1.4-r1.ebuild
 ./dev-util/lincvs/lincvs-0.2.5.ebuild
 ./dev-utils/sel/sel-0.08.2.ebuild
@@ -171,7 +171,7 @@
 ./dev-util/yacc/yacc-1.9.1-r1.ebuild
 ./media-gfx/autotrace/autotrace-0.24a.ebuild
 ./media-gfx/gimp-print/gimp-print-4.0_beta1.ebuild
-./media-gfx/gimp/gimp-1.1.25.ebuild
+./media-gfx/gimp/gimp-1.1.26.ebuild
 ./media-gfx/imagemagick/imagemagick-5.2.4.ebuild
 ./media-libs/alsa-lib/alsa-lib-0.5.9.ebuild
 ./media-libs/audiofile/audiofile-0.1.9.ebuild
@@ -285,7 +285,7 @@
 ./x11-wm/WindowMaker/WindowMaker-0.62.1-r1.ebuild
 ./x11-wm/enlightenment/enlightenment-0.16.4-r1.ebuild
 ./x11-wm/openmotif/openmotif-MLI-2.1.30.ebuild
-./x11-wm/sawfish/sawfish-0.30.3-r1.ebuild
+./x11-wm/sawfish/sawfish-0.31.ebuild
 ./gnome-base/ORBit/ORBit-0.5.3.ebuild
 ./gnome-base/bonobo/bonobo-0.15.ebuild
 ./gnome-base/control-center/control-center-1.2.1.ebuild
@@ -339,6 +339,7 @@
 ./kde-apps/kdepim/kdepim-1.94.ebuild
 ./kde-apps/kdeutils/kdeutils-1.94.ebuild
 ./kde-apps/kdoc/kdoc-1.94.ebuild
+./kde-apps/kmago/kmago-0.1.ebuild
 ./kde-apps/koffice/koffice-1.94.ebuild
 ./kde-apps/krusader/kruasader-0.65.1.ebuild
 
