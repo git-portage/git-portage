@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/foldingathome/Attic/foldingathome-5.0.2.ebuild,v 1.2 2005/02/03 17:14:46 lostlogic Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/foldingathome/Attic/foldingathome-5.0.2-r1.ebuild,v 1.1 2005/02/03 17:14:46 lostlogic Exp $
 
 # no version number on this install dir since upgrades will be using same dir
 # (data will be stored here too)
@@ -31,7 +31,7 @@ src_unpack() {
 src_install() {
 	exeinto ${I}
 	newexe ${FILESDIR}/initfolding-r2 initfolding
-	newexe ${FILESDIR}/copy_client_config copy_client_config
+	newexe ${FILESDIR}/copy_client_config-${PVR} copy_client_config
 
 	# Clients
 	exeinto ${I}/client1
@@ -51,7 +51,7 @@ src_install() {
 	exeinto ${I}/client8
 	doexe foldingathome
 	exeinto /etc/init.d
-	newexe ${FILESDIR}/folding-init.d-r4 foldingathome
+	newexe ${FILESDIR}/init-${PVR} foldingathome
 
 	insinto /etc/conf.d
 	newins ${FILESDIR}/folding-conf.d-r1 foldingathome
