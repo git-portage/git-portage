@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt/Attic/qt-3.3.3.ebuild,v 1.18 2004/11/08 21:46:29 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt/Attic/qt-3.3.3.ebuild,v 1.19 2005/01/08 10:36:27 eradicator Exp $
 
 inherit eutils flag-o-matic
 
