@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/neverball/Attic/neverball-1.2.0.ebuild,v 1.2 2004/04/09 13:42:58 dholm Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/neverball/Attic/neverball-1.2.0-r1.ebuild,v 1.1 2004/04/10 17:55:28 vapier Exp $
 
 inherit games eutils
 
@@ -37,7 +37,7 @@ src_unpack() {
 }
 
 src_install() {
-	dogamesbin neverball || die
+	dogamesbin neverball neverputt || die
 
 	rm -f data/Makefile*
 	dodir ${GAMES_DATADIR}/${PN}
