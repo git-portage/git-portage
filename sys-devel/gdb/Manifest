@@ -2,12 +2,12 @@ MD5 bb41f18262dff7bbce5d4bcc10f7ac7b gdb-5.3.90.ebuild 2956
 MD5 8546a259acb0dc3fbf60737718f2d446 gdb-5.3-r1.ebuild 2501
 MD5 a4e52f911791fb4fca2aad989eaace25 gdb-6.0-r1.ebuild 1946
 MD5 32dce33c377926632f3c0b656b5df3d1 gdb-6.0.ebuild 1759
-MD5 762360dda290ae1145c7b5600bcb2e92 gdb-6.2.ebuild 1571
+MD5 7eb7d44af6b7b59e6c2856c78e6c2331 gdb-6.2.ebuild 1568
 MD5 84eb0bd1475566fa3460ad9f526f7d74 gdb-6.1.1.ebuild 1648
 MD5 288d0dcab72dd3b4dbe5804c50a77505 gdb-5.1.1-r2.ebuild 1876
 MD5 e6fe8a5f0e0edea4a7c31d5f51751ca0 gdb-5.2.1.ebuild 1611
 MD5 d86b4df4506df5b5f357101f3d3007df gdb-5.3.ebuild 2316
-MD5 8334120016643f50d7949c63ae44251a ChangeLog 7081
+MD5 e31a58f136534f7cfb7f3e792d5f6de2 ChangeLog 7080
 MD5 0d1c3f3bbd4f831e1b822c1f2fe30c35 gdb-6.1.ebuild 1654
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 c6dfff1373e52fef5872c1bdca4cb706 files/gdb-6.0-info.patch 1108
