@@ -1,6 +1,9 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9dcab1f0d57db45c8f624fb66ff026dc transcode-0.6.12-r2.ebuild 4358
-MD5 400b844666a6af92ef86abb4d1d11891 ChangeLog 14013
-MD5 46eeeb2d867fd7674475e5d26c753f26 transcode-0.6.13.ebuild 2620
+MD5 d66d9277a99b7299beb8f3e4409e1f5f ChangeLog 14009
+MD5 213a7d74bf4883d38b944059e8172635 transcode-0.6.13.ebuild 2594
 MD5 7300a7b361fa9f48e37722c6952bd432 metadata.xml 158
 MD5 d1c7003902b194931e4fcf7994105fb5 transcode-0.6.10.ebuild 3758
 MD5 f9eec7a52a7ed77258780fe2864a6a68 transcode-0.6.11.ebuild 3824
@@ -17,3 +20,10 @@ MD5 8fde4803c96e026f6caa94fa0e42687f files/digest-transcode-0.6.12-r1 69
 MD5 085f514d559cd32a401241bbbf639d39 files/transcode-0.6.12-r2-dvdmenu.patch 4840
 MD5 8fde4803c96e026f6caa94fa0e42687f files/digest-transcode-0.6.12 69
 MD5 b2561dbf66455c878a08afd19868dc5d files/transcode-0.6.12-gcc-3.4.patch 2503
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBf7kRRPjscZbntocRAsHxAJ9MzlzRvXo/F/Vw4DkLXQkNFFE1IwCdEtnV
+0cOuVfQQf58rB3aZx2vD/04=
+=ZGeI
+-----END PGP SIGNATURE-----
