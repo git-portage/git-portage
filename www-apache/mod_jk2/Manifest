@@ -1,0 +1,4 @@
+MD5 4ec4ed287c0fad484b80c7a786f839f2 mod_jk2-2.0.4.ebuild 1181
+MD5 248472015ef8fb286a8091498ec14f1a files/digest-mod_jk2-2.0.4 91
+MD5 bc2adcea4c36c1955a114a0a22d3d0c9 files/workers2.properties 171
+MD5 69014ffda90076b5374aba091f2a2851 files/89_mod_jk2.conf 488
