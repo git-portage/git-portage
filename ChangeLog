@@ -1,5 +1,12 @@
 date 08 Feb 2001
 
+upd app-text/sablotron-0.44-r2 to 0.50
+drobbins
+
+new dev-libs/expat-1.95.1
+drobbins
+an XML parsing library required by sablotron
+
 new app-text/ispell-de-20001109.ebuild
 achim
 A german dictionary for ispell
