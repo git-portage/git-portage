@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/cone/Attic/cone-0.57.ebuild,v 1.8 2004/11/29 22:57:13 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/cone/Attic/cone-0.63.ebuild,v 1.1 2004/12/26 18:35:45 iggy Exp $
 
-DESCRIPTION="COnsole News reader and Emailer"
+DESCRIPTION="CONE: COnsole News reader and Emailer"
 HOMEPAGE="http://www.courier-mta.org/cone/"
 SRC_URI="mirror://sourceforge/courier/${P}.tar.bz2"
 
@@ -20,14 +20,10 @@ RDEPEND="virtual/libc
 DEPEND="${RDEPEND}
 	dev-lang/perl"
 
-src_compile() {
-	econf --with-devel || die
-	emake || die
-}
-
 src_install() {
-	make DESTDIR=${D} \
-		check install install-configure || die
+	make check DESTDIR=${D} || die
+	make install DESTDIR=${D} || die
+	DESTDIR=${D} make install-configure || die
 
 	dosed "3i export LANG=en_US" /usr/bin/cone
 }
