@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/evms/Attic/evms-2.2.0.ebuild,v 1.1 2003/11/12 19:45:34 iggy Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/evms/Attic/evms-2.2.1.ebuild,v 1.1 2003/12/13 16:59:00 iggy Exp $
 
 IUSE="ncurses gtk"
 
@@ -75,9 +75,7 @@ src_install() {
 
 pkg_postinst() {
 
-	ewarn "You just installed evms 2.1.0 - See the ChangeLog for current kernel support"
-	ewarn "At this time, only pfeifer-sources-2.4.21_pre3 supports this."
-	ewarn "Ensure you add evms2 to your use flags when emerging pfeifer-sources..."
-	ewarn "If you do not, you will only have evms 1.2.1 support in the kernel."
+	ewarn "Presently gentoo-sources-2.4.22 has basic support for evms2, but doesn't"
+	ewarn "support some of the more advanced features."
 
 }
