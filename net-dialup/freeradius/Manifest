@@ -1,5 +1,5 @@
-MD5 0a1b74f2d348e9bfb4dc3c50d4ea9688 freeradius-0.9.3.ebuild 2850
-MD5 a2234b628395c08b76ec36479a438e84 ChangeLog 1566
+MD5 cd8f10470a146b086d29d5752007ceb0 freeradius-0.9.3.ebuild 2850
+MD5 bb45ca962f84f15034a33a7c08752031 ChangeLog 1566
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
 MD5 ee618f223ec67a53ad3a6cfd399ea8eb files/digest-freeradius-0.9.3 69
 MD5 fc6693f3df5a0694610110287a28568a files/0.9/radius.conf 129
