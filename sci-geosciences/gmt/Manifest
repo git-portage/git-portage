@@ -1,4 +1,6 @@
+MD5 57d5c1b48f7dad78cdef5c7941756ff4 gmt-4.0.ebuild 3236
 MD5 c0505f45636cfb70135febbef230171a gmt-3.4.4-r1.ebuild 3184
 MD5 99ca631cef4e6d3736d8d604022ea392 ChangeLog 1937
 MD5 8c623e53daafa025137077c6b65815bd metadata.xml 156
 MD5 eb664b10894e3ad4684892cff8b36494 files/digest-gmt-3.4.4-r1 647
+MD5 79607acabc6963de96f4dbdf435e36bd files/digest-gmt-4.0 637
