@@ -1,13 +1,11 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/imagemagick/Attic/imagemagick-5.4.9.1-r1.ebuild,v 1.7 2003/02/09 21:23:59 mholzer Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/imagemagick/Attic/imagemagick-5.4.7.4-r1.ebuild,v 1.1 2003/02/09 21:33:06 mholzer Exp $
+
+IUSE="perl X cups xml2 lcms"
 
 inherit libtool
 inherit perl-module
-inherit flag-o-matic
-replace-flags k6-3 i586
-replace-flags k6-2 i586
-replace-flags k6 i586
 
 MY_PN=ImageMagick
 MY_P=${MY_PN}-${PV%.*}-${PV#*.*.*.}
@@ -18,11 +16,9 @@ HOMEPAGE="http://www.imagemagick.org/"
 
 SLOT="0"
 LICENSE="as-is"
-KEYWORDS="x86 ~ppc ~sparc"
-IUSE="perl X cups xml2 lcms"
+KEYWORDS="x86 ppc sparc"
 
 DEPEND="media-libs/libpng
-	media-libs/jbigkit
 	>=sys-apps/bzip2-1
 	>=sys-libs/zlib-1.1.3
 	>=media-libs/freetype-2.0
@@ -69,6 +65,7 @@ src_compile() {
 	cd PerlMagick
 	make clean
 	perl-module_src_prep
+	cd ..
 }
 
 src_install() {
@@ -82,7 +79,4 @@ src_install() {
 	perl-module_src_install
 	
 	rm -f ${D}/usr/share/ImageMagick/*.txt
-
-	dosed "s:-I/usr/include ::" /usr/bin/Magick-config
-	dosed "s:-I/usr/include ::" /usr/bin/Magick++-config
 }
