@@ -9,6 +9,7 @@ MD5 9ef4af14dad87b03fde8e43f19e08d26 metadata.xml 225
 MD5 ca0295eb0c6f79e9d0a544b8c8790d0b mplayerplug-in-2.11.ebuild 1376
 MD5 ee181cbe267a480b12c50b125ecf55f9 mplayerplug-in-2.40.ebuild 1045
 MD5 6ab5acd6a126b9c6e195cafade755dd8 mplayerplug-in-2.45.ebuild 1045
+MD5 6ab5acd6a126b9c6e195cafade755dd8 mplayerplug-in-2.50.ebuild 1045
 MD5 b754add73c488595bc984c5af2ef035a files/digest-mplayerplug-in-0.91 125
 MD5 efaa2a17874e95270fe36e6ed5177084 files/digest-mplayerplug-in-0.95 125
 MD5 073ca6e88c57b32f4408ac6b7e5e3ab3 files/digest-mplayerplug-in-1.0 124
@@ -18,3 +19,4 @@ MD5 1a57a8e25644bf2d90f34fe961d4d559 files/digest-mplayerplug-in-1.2 125
 MD5 cef735360e53abdbf7c1da5ce1f8f861 files/digest-mplayerplug-in-2.11 126
 MD5 98e03620675b0cb860122d5587df5f67 files/digest-mplayerplug-in-2.40 155
 MD5 5e39ac10a0f05164f837338d3cfc754b files/digest-mplayerplug-in-2.45 155
+MD5 363380a64673411616b53e66c28db9bf files/digest-mplayerplug-in-2.50 155
