@@ -1,4 +1,5 @@
 13.11.2000
+	-Updated bootdisk.img to use new grub (drobbins)
 	-Update sys-apps/grub-0.5.96.1-r1	(drobbins)
 	- New net-misc/snort-1.6.3			(achim)
 
