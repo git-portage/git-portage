@@ -1,5 +1,13 @@
 date 17 Dec 2000
 
+upd sys-apps/baselayout-1.3-r2 to 1.4
+drobbins
+Contains new env-management support
+
+upd sys-apps/portage-1.3-r3 to 1.4
+drobbins
+Contains new env-management code
+
 upd kde-base/kde-2.0.1 to 2.0.1-r1
 drobbins
 Getting ready for new env-var management system
