@@ -1,15 +1,15 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/gradm2/Attic/gradm2-0.0_pre4-r1.ebuild,v 1.3 2003/07/07 05:24:48 solar Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/gradm2/Attic/gradm2-0.0_rc3.ebuild,v 1.1 2003/09/26 09:49:56 solar Exp $
 
-MY_PV=2.0-pre4
+MY_PV=2.0-${PV/*_/}
 
 MAINTAINER="solar@gentoo.org"
 DESCRIPTION="Administrative interface for grsecuritys2 access control lists"
 SRC_URI="http://www.grsecurity.net/gradm-${MY_PV}.tar.gz"
 HOMEPAGE="http://www.grsecurity.net/"
 LICENSE="GPL-2"
-KEYWORDS="x86 amd64 ~sparc"
+KEYWORDS="x86 amd64 ~sparc ~ppc ~alpha"
 SLOT="0"
 
 IUSE=""
