@@ -1,17 +1,22 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/groff/Attic/groff-1.17.2-r2.ebuild,v 1.7 2002/12/15 10:44:21 bjb Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/groff/Attic/groff-1.18-r2.ebuild,v 1.1 2002/12/26 04:38:19 azarah Exp $
 
-S=${WORKDIR}/${P}
+IUSE=""
+
+inherit eutils
+
+S="${WORKDIR}/${P}"
 DESCRIPTION="Text formatter used for man pages"
 SRC_URI="ftp://gatekeeper.dec.com/pub/GNU/groff/${P}.tar.gz"
 HOMEPAGE="http://www.gnu.org/software/groff/groff.html"
 
-KEYWORDS="x86 sparc alpha"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~mips"
 SLOT="0"
 LICENSE="GPL-2"
 
-DEPEND="virtual/glibc"
+DEPEND="virtual/glibc
+	media-libs/netpbm"
 
 src_unpack() {
 	unpack ${A}
@@ -19,7 +24,7 @@ src_unpack() {
 	# Fix the info pages to have .info extensions,
 	# else they do not get gzipped.
 	cd ${S}
-	patch -p1 < ${FILESDIR}/${P}-infoext.patch || die
+	epatch ${FILESDIR}/${P}-infoext.patch
 }
 
 src_compile() {
@@ -29,15 +34,11 @@ src_compile() {
 	
 	./configure --host=${CHOST} \
 		--prefix=/usr \
-		--mandir=/usr/share/man || die
+		--mandir=/usr/share/man \
+		--infodir=\${inforoot} || die
 		
 	# emake doesn't work
 	make || die
-	
-	# do the info pages.  this is only needed for 1.17*,
-	# as 1.18 do install its info pages
-	cd ${S}/doc
-	make groff.info || die
 
 	# Only build X stuff if we have X installed, but do
 	# not depend on it, else we get circular deps.
@@ -53,6 +54,7 @@ src_install() {
 	dodir /usr /usr/share/doc/${PF}/{examples,html}
 	make prefix=${D}/usr \
 		manroot=${D}/usr/share/man \
+		inforoot=${D}/usr/share/info \
 		docdir=${D}/usr/share/doc/${PF} \
 		install || die
 
@@ -66,17 +68,13 @@ src_install() {
 			install.man || die
 	fi
 	
-	# the following links are required for xman
+	#the following links are required for xman
 	dosym eqn /usr/bin/geqn
 	dosym tbl /usr/bin/gtbl
 	dosym soelim /usr/bin/zsoelim
-
-	# this is only needed for 1.17*, as 1.18
-	# do install its info pages
-	cd ${S}/doc
-	doinfo groff.info*
 
 	cd ${S}
 	dodoc BUG-REPORT COPYING ChangeLog FDL MORE.STUFF NEWS \
 		PROBLEMS PROJECTS README REVISION TODO VERSION
 }
+
