@@ -1,5 +1,9 @@
 date 05 Dec 2000
 
+upd sys-apps/findutils-4.1-r1 to findutils-4.1-r2
+drobbins
+/var/state/locatedb fix 
+
 upd sys-apps/bash-2.04 to 2.04-r1
 drobbins
 man page fixes, bashbug location fix
