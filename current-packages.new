@@ -262,7 +262,7 @@
 ./media-libs/libogg/libogg-1.0_beta3.ebuild
 ./media-libs/libpng/libpng-1.0.7.ebuild
 #./media-libs/libpng/libpng-1.0.8-r1.ebuild
-./media-libs/libsdl/libsdl-1.1.7.ebuild
+./media-libs/libsdl/libsdl-1.1.8.ebuild
 #./media-libs/libungif/libungif-4.1.0_beta1-r1.ebuild
 ./media-libs/libvorbis/libvorbis-1.0_beta3.ebuild
 ./media-libs/mesa/mesa-3.4.ebuild

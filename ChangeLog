@@ -1,3 +1,10 @@
+date 13 Feb 2001
+
+upd media-libs/libsdl-1.1.7 to 1.1.8
+drobbins
+Now has nas support; add "nas" to your USE line in make.conf
+to enable it.
+
 date 11 Feb 2001
 
 new app-misc/splitvt-1.6.5
