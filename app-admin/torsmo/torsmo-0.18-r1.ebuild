@@ -1,17 +1,17 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/torsmo/Attic/torsmo-0.17.ebuild,v 1.11 2004/12/31 22:38:46 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/torsmo/Attic/torsmo-0.18-r1.ebuild,v 1.1 2004/12/31 22:38:46 dragonheart Exp $
 
 inherit eutils
 
-DESCRIPTION="system monitor that sits in the corner of your desktop"
+DESCRIPTION="minimalist system monitor for X"
 HOMEPAGE="http://torsmo.sourceforge.net/"
 SRC_URI="mirror://sourceforge/torsmo/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86 ppc amd64 sparc"
-IUSE="mozilla"
+KEYWORDS="~x86 ~ppc ~amd64 ~sparc"
+IUSE=""
 
 RDEPEND="virtual/libc
 	virtual/x11"
@@ -25,12 +25,17 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	use mozilla && epatch ${FILESDIR}/${P}-mozilla.patch
+	epatch ${FILESDIR}/${P}.xwin.patch || die "patch failed"
+}
+
+src_compile() {
+	econf --x-libraries=/usr/X11R6/lib/ || die "econf failed"
+	emake || die "compile failed"
 }
 
 src_install() {
 	emake DESTDIR=${D} install || die "make install failed"
-	dodoc ChangeLog AUTHORS README NEWS torsmorc.sample
+	dodoc ChangeLog AUTHORS README torsmorc.sample
 }
 
 pkg_postinst() {
@@ -43,6 +48,7 @@ pkg_postinst() {
 	einfo
 	ewarn "Torsmo doesn't work with window managers that"
 	ewarn "take control over root window such as Gnome's nautilus."
-	ewarn "May not work on KDE until you exit (and then only breifly)"
-	ewarn "for the above reason."
+	einfo
+	ewarn "Please note that >=0.18 contains mozilla support without"
+	ewarn "patching, thus the mozilla USE flag has been dropped"
 }
