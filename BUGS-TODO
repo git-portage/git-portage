@@ -24,8 +24,6 @@
 [drobbins] enhanced useradd script for 1.0_rc4
  (is there still a problem with the minimal useradd in shadow-20001016?)
 
-[drobbins] recursive pkgmerge for 1.0_rc4
-
 [drobbins] A configfile management system is needed (1.0_rc5+)
 
 [UNASSIGNED] add supervise support to various packages (ongoing...)
