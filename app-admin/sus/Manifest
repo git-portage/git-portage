@@ -1,14 +1,5 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 a022dfc64e37f286ba94f96ce6e58bdd ChangeLog 735
-MD5 c344b044f5b66d586304b4c00eb53762 sus-2.0.2.ebuild 1256
-MD5 37ab627480600ea8a18055974761eb3c files/digest-sus-2.0.2 60
+MD5 092e797aa873dcfada15ebba9e927098 ChangeLog 952
+MD5 080b12f499f9f5e6cb2a9869767f9879 sus-2.0.2-r1.ebuild 1392
+MD5 37ab627480600ea8a18055974761eb3c files/digest-sus-2.0.2-r1 60
 MD5 e551ecc3164caa7ab831c58f5f7244a5 files/susers.cpp 988
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.9.8 (GNU/Linux)
-
-iD8DBQFA3K6mHTu7gpaalycRAqsfAKC8AQj4GCAncmlJpLrgYgky8GSeNgCgxm3V
-X8ggh2Umc4qvry5K74WV45g=
-=4K6c
------END PGP SIGNATURE-----
+MD5 01f6c4974f79047b74718f27c22b2ae5 files/sus-2.0.2-syslog-vuln-fix.patch 406
