@@ -1,11 +1,11 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/noia/Attic/noia-030203.ebuild,v 1.2 2003/02/09 08:30:28 satai Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/noia-warm/Attic/noia-warm-030209.ebuild,v 1.1 2003/02/09 08:30:28 satai Exp $
 inherit kde # not kde-base since we don't need c++ deps
 
 need-kde 3
 
-S="${WORKDIR}/noia"
+S="${WORKDIR}/noia-warm"
 DESCRIPTION="Noia Icon Set for KDE"
 SRC_URI="http://www.ibiblio.org/gentoo/distfiles/${P}.tar.gz"
 HOMEPAGE="http://www.carlitus.net"
@@ -22,9 +22,9 @@ src_unpack() {
 
 src_compile() {
 	cd ${WORKDIR}
-	mv "Noia KDE 0.95" "noia"
+	mv "Noia Warm KDE 0.95" "noia-warm"
 	cd ${S}
-	sed "s/Name=Noia KDE.*/Name=Noia Icon Snapshot ${PV}/" index.desktop > index.temp
+	sed "s/Name=Noia Warm KDE.*/Name=Noia Warm Icon Snapshot ${PV}/" index.desktop > index.temp
 	mv index.temp index.desktop
 	return 1
 }
@@ -32,5 +32,5 @@ src_compile() {
 src_install(){
 	cd ${S}
 	dodir $PREFIX/share/icons/
-	cp -rf ${S} ${D}/${PREFIX}/share/icons/Noia-${PV}
+	cp -rf ${S} ${D}/${PREFIX}/share/icons/Noia-Warm-${PV}
 }
