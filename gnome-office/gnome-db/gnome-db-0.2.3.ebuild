@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /var/cvsroot/gentoo-x86/gnome-office/gnome-db/Attic/gnome-db-0.2.1.ebuild,v 1.2 2000/12/27 10:51:31 achim Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-office/gnome-db/Attic/gnome-db-0.2.3.ebuild,v 1.1 2001/04/29 16:17:43 achim Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
@@ -11,18 +11,15 @@ HOMEPAGE="http://www.gnome.org/gnome-office/gnomedb.shtml"
 
 DEPEND=">=gnome-base/gtkhtml-0.8
 	>=gnome-base/bonobo-0.30
-	>=gnome-libs/libgda-0.2.1"
+	>=gnome-libs/libgda-0.2.3"
 
 src_compile() {                           
-  cd ${S}
 
-  try ./configure --host=${CHOST} --prefix=/opt/gnome \
-	--with-mysql=/usr --with-ldap=/usr
+  try ./configure --host=${CHOST} --prefix=/opt/gnome --disable-bonobotest
   try make
 }
 
 src_install() {                               
-  cd ${S}
   try make prefix=${D}/opt/gnome \
 	GNOME_sysconfdir=${D}/opt/gnome/etc \
 	GNOME_datadir=${D}/opt/gnome/share \
