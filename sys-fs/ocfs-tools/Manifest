@@ -1,0 +1,3 @@
+MD5 02afa242d38f602865e4e0016276ee6f ocfs-tools-1.1.2.ebuild 1120
+MD5 cb3f250aaa7bfaabf304acbb1d20dc5b files/ocfs-tools-glib.patch 539
+MD5 78dcbf7f4b00b78a1aabc0926269cf88 files/digest-ocfs-tools-1.1.2 68
