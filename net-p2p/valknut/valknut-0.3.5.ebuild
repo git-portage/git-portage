@@ -1,17 +1,16 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/valknut/Attic/valknut-0.3.0.ebuild,v 1.3 2005/01/30 04:47:19 squinky86 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/valknut/Attic/valknut-0.3.5.ebuild,v 1.1 2005/01/30 04:47:19 squinky86 Exp $
 
-MY_P=dcgui-qt-${PV}
-S=${WORKDIR}/${MY_P}
+inherit kde
 
 DESCRIPTION="Qt based client for DirectConnect"
 HOMEPAGE="http://dcgui.berlios.de/"
-SRC_URI="http://download.berlios.de/dcgui/${MY_P}.tar.bz2"
+SRC_URI="http://download.berlios.de/dcgui/valknut-${PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc ~alpha hppa amd64 ~ia64"
+KEYWORDS="~x86 ~ppc ~alpha ~hppa ~amd64 ~ia64"
 IUSE="ssl"
 
 DEPEND=">=dev-libs/libxml2-2.4.22
@@ -28,7 +27,7 @@ src_compile() {
 		--with-libdc=/usr \
 		--with-qt-dir=/usr/qt/3 \
 		|| die
-	make || die
+	emake || die
 }
 
 src_install() {
