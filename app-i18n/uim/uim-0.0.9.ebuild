@@ -1,12 +1,12 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim/Attic/uim-0.0.8.ebuild,v 1.2 2003/10/04 20:28:13 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim/Attic/uim-0.0.9.ebuild,v 1.1 2003/10/04 20:28:13 usata Exp $
 
 IUSE="gtk nls debug"
 
 DESCRIPTION="UIM is a simple, secure and flexible input method library"
 HOMEPAGE="http://anthy.sourceforge.jp/"
-SRC_URI="mirror://sourceforge.jp/anthy/6149/${P}.tar.gz"
+SRC_URI="mirror://sourceforge.jp/anthy/6232/${P}.tar.gz"
 
 LICENSE="GPL-2 | BSD"
 SLOT="0"
@@ -17,6 +17,8 @@ S="${WORKDIR}/${P}"
 DEPEND="${RDEPEND}
 	>=sys-apps/sed-4"
 RDEPEND="gtk? ( >=x11-libs/gtk+-2 )"
+
+# for debugging use
 use debug && RESTRICT="nostrip"
 
 GTK_IMMODULES=/etc/gtk-2.0/gtk.immodules
