@@ -1,5 +1,9 @@
 date 02 Feb 2001
 
+upd media-sound/xmms-aalsa-0.5.4 to 0.5.4-r1
+drobbins
+merge location fix (original fix didn't work due to weird Makefile)
+
 upd app-admin/gkrellm-1.0.5 to 1.0.6
 drobbins
 
