@@ -1,3 +1,13 @@
+date 10 Dec 2000
+
+del app-doc/man-pages-1.31
+drobbins
+new location
+
+new sys-apps/man-pages-1.31
+drobbins
+new location
+
 date 09 Dec 2000
 
 del sys-apps/sysklogd-1.4
