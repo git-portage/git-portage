@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/nvidia-glx/Attic/nvidia-glx-1.0.6106.ebuild,v 1.3 2004/07/14 22:09:53 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/nvidia-glx/Attic/nvidia-glx-1.0.6106-r3.ebuild,v 1.1 2004/07/18 02:51:18 cyfred Exp $
 
 inherit eutils
 
@@ -27,16 +27,16 @@ S="${WORKDIR}/${NV_PACKAGE}-${PKG_V}"
 
 LICENSE="NVIDIA"
 SLOT="0"
-KEYWORDS="-* ~x86 amd64"
+KEYWORDS="-* ~x86 ~amd64"
 RESTRICT="nostrip"
 IUSE="multilib"
 
 DEPEND="virtual/libc
 	virtual/x11
-	>=x11-base/opengl-update-1.3
+	>=x11-base/opengl-update-1.8.1
 	~media-video/nvidia-kernel-${PV}"
 
-PDEPEND="amd64? ( multilib? ( app-emulation/emul-linux-x86-nvidia ) )"
+PDEPEND="amd64? ( multilib? ( >=app-emulation/emul-linux-x86-nvidia-${PV}-r1 ) )"
 
 PROVIDE="virtual/opengl"
 export _POSIX2_VERSION="199209"
@@ -74,6 +74,8 @@ src_unpack() {
 	epatch ${FILESDIR}/${PV}/NVIDIA_glx-${PV}-makefile.patch
 	# Use the correct defines to make gtkglext build work
 	epatch ${FILESDIR}/${PV}/NVIDIA_glx-${PV}-defines.patch
+	# Use some more sensible gl headers and make way for new glext.h
+	epatch ${FILESDIR}/${PV}/NVIDIA_glx-${PV}-glheader.patch
 }
 
 src_install() {
@@ -96,13 +98,21 @@ src_install() {
 	dosym libGL.so.${PV} ${NV_ROOT}/lib/libGL.so.1
 	dosym libGLcore.so.${PV} ${NV_ROOT}/lib/libGLcore.so
 	dosym libGLcore.so.${PV} ${NV_ROOT}/lib/libGLcore.so.1
+	dosym libnvidia-tls.so.${PV} ${NV_ROOT}/lib/libnvidia-tls.so
+	dosym libnvidia-tls.so.${PV} ${NV_ROOT}/lib/libnvidia-tls.so.1
 
-	local TLS_ROOT="/usr/lib/tls"
+	local TLS_ROOT="/usr/lib/opengl/nvidia/tls"
 	dodir ${TLS_ROOT}
 	exeinto ${TLS_ROOT}
 	doexe usr/lib/tls/libnvidia-tls.so.${PV}
-	dosym ${TLS_ROOT}/libnvidia-tls.so.${PV} ${TLS_ROOT}/libnvidia-tls.so
-	dosym ${TLS_ROOT}/libnvidia-tls.so.${PV} ${TLS_ROOT}/libnvidia-tls.so.1
+	dosym libnvidia-tls.so.${PV} ${TLS_ROOT}/libnvidia-tls.so
+	dosym libnvidia-tls.so.${PV} ${TLS_ROOT}/libnvidia-tls.so.1
+
+	# Install tls_test
+	dodir /usr/lib/misc
+	exeinto /usr/lib/misc
+	doexe usr/bin/tls_test
+	doexe usr/bin/tls_test_dso.so
 
 	insinto /usr/X11R6/lib
 	doins usr/X11R6/lib/libXvMCNVIDIA.a
@@ -110,6 +120,8 @@ src_install() {
 	doexe usr/X11R6/lib/libXvMCNVIDIA.so.${PV}
 
 	# Closing bug #37517 by letting virtual/x11 provide system wide glext.h
+	# 16 July 2004, opengl-update is now supplying glext.h for system wide
+	# compatibility, so we still need to remove this.
 	rm -f usr/include/GL/glext.h
 
 	# Includes
@@ -139,13 +151,13 @@ src_install() {
 }
 
 pkg_preinst() {
-	#clean the dinamic libGL stuff's home to ensure
-	#we dont have stale libs floating around
+	# Clean the dinamic libGL stuff's home to ensure
+	# we dont have stale libs floating around
 	if [ -d ${ROOT}/usr/lib/opengl/nvidia ]
 	then
 		rm -rf ${ROOT}/usr/lib/opengl/nvidia/*
 	fi
-	#make sure we nuke the old nvidia-glx's env.d file
+	# Make sure we nuke the old nvidia-glx's env.d file
 	if [ -e ${ROOT}/etc/env.d/09nvidia ]
 	then
 		rm -f ${ROOT}/etc/env.d/09nvidia
