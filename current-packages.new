@@ -476,7 +476,7 @@
 ./sys-apps/which/which-2.12.ebuild
 ./sys-apps/xinetd/xinetd-2.1.8.8_p3-r4.ebuild
 ./sys-devel/autoconf/autoconf-2.13-r1.ebuild
-./sys-devel/automake/automake-1.4-r1.ebuild
+./sys-devel/automake/automake-1.4d.ebuild
 ./sys-devel/bc/bc-1.06.ebuild
 ./sys-devel/bin86/bin86-0.15.4.ebuild
 #./sys-devel/binutils/binutils-2.10.0.26.ebuild
