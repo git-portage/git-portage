@@ -1,4 +1,6 @@
 [14 Nov 2000 - drobbins]
+	We need to add dump/restore to sys-apps -- but the darn thing depends on libtermcap!
+		(It'll need a patch to link against ncurses instead)
 	Default kernel location should be moved from /boot/bzImage -> /boot/boot/bzImage
 
 [13 Nov 2000 - drobbins]
