@@ -1,3 +1,5 @@
+MD5 b5929514295ce8669935299715450789 selflinux-0.8.1.ebuild 591
 MD5 a24376be65700396cb591b2dee2ba3fa ChangeLog 1277
-MD5 606ea53f1ca45a77c30c78ffffae0acb selflinux-0.8.1.ebuild 595
+MD5 b5929514295ce8669935299715450789 selflinux-0.10.0.ebuild 591
 MD5 6507e4cfd14625025ba87db50f97ba2b files/digest-selflinux-0.8.1 73
+MD5 0eb2161e23d196a29fc03d5e63711f8f files/digest-selflinux-0.10.0 74
