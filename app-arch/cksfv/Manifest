@@ -1,4 +1,5 @@
 MD5 d6dc8a68621ee91e2f006c0f1ac1e4e7 ChangeLog 1235
-MD5 47478c01a69ab9ee5cf282a5836ac25e cksfv-1.3.ebuild 696
-MD5 f72b0ebd2532d65ef4b3008017731802 files/cksfv-1.3-64bit-fix.patch 3705
+MD5 6c5d75cf30a43f8c0e3a569c7f67c8ec cksfv-1.3.3.ebuild 723
 MD5 428cbd9a2a41c250d23662113bee5828 files/digest-cksfv-1.3 60
+MD5 f72b0ebd2532d65ef4b3008017731802 files/cksfv-1.3-64bit-fix.patch 3705
+MD5 143c9b1bab6c4bbe7851810ba2d05ddb files/digest-cksfv-1.3.3 63
