@@ -1,3 +1,5 @@
-MD5 977981b8806970adfa28f0bee0a58507 ChangeLog 532
-MD5 4037bf57b1463791e1ba02348ea48d76 otcl-1.8.ebuild 980
+MD5 730399359a47a3287513d04633021250 ChangeLog 531
+MD5 65e0f2dcb9940d382e4ba6e00a8055ea otcl-1.8-r1.ebuild 1056
+MD5 64a71b4bb60017c2d8802e771d31cedc files/digest-otcl-1.8-r1 60
+MD5 090aa64d1486dc3d916b9b5176179d30 files/otcl-1.8-badfreefix.patch 7469
 MD5 64a71b4bb60017c2d8802e771d31cedc files/digest-otcl-1.8 60
