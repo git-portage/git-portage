@@ -2,6 +2,10 @@ DATE
 21 Nov 2000
 
 achim
+Update media-libs alsa-lib-0.5.9 to alsa-libx-0.5.9-r2
+Modified dependencies
+
+achim
 Update dev-libs slib-2.3.8 to slib-2.3.8-r2
 Modified dependencies
 
@@ -58,6 +62,7 @@ primarily of interest for those setting up a Gentoo Linux box, while
 the linux-sources package is more appropriate for geeks who already
 have a running Gentoo Linux system and want to compile a more recent
 kernel by hand.
+
 
 
 
