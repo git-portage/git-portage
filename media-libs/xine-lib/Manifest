@@ -1,4 +1,4 @@
-MD5 d582b9bbe015dd398f57b1b52b9c6b00 ChangeLog 23213
+MD5 a2f9bfca47bbca9fbbb44173b373131d ChangeLog 23221
 MD5 0118256c86331c5cbf93ea4fbb2adcdf metadata.xml 310
 MD5 3d849500b17b5ad075102cf70d75b7c4 xine-lib-0.9.13-r3.ebuild 3354
 MD5 c639cbd78aac77ed3cff247df68d2608 xine-lib-1_rc2.ebuild 3934
@@ -6,7 +6,7 @@ MD5 21f16ff9e27523f78078b77e1bd41c54 xine-lib-1_rc3-r1.ebuild 4042
 MD5 342f5acc8a2e99672e90f384dc6abf8e xine-lib-1_rc4.ebuild 4462
 MD5 e2791de1d507eca21bd557c673474f9c xine-lib-1_rc5-r2.ebuild 5113
 MD5 3b8bfa094edbffef04fb581860f88606 xine-lib-1_rc4-r1.ebuild 4989
-MD5 09efc41011214cd3e9e09087314e6803 xine-lib-1_rc5-r3.ebuild 5200
+MD5 d50fd37b85849efe6a84dfd2f5c327c9 xine-lib-1_rc5-r3.ebuild 5207
 MD5 bcd5f2b8999f92c2f7215009f5ae1490 files/configure-64bit-define.patch 221
 MD5 f1570a69c99207f65b5cdf1d154bbcd4 files/digest-xine-lib-0.9.13-r3 68
 MD5 f90bfe4a0ee80eecb38fc34022ccab7e files/digest-xine-lib-1_rc2 67
