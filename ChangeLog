@@ -1,5 +1,10 @@
 date 16 Jan 2001
 
+upd sys-libs/glibc-2.2-r2 to 2.2.1
+achim
+builds without problems, but not tested for
+all packages
+
 upd net-dialup/wvdial-1.41-r1 to r2
 achim
 /etc/ppp/peers/ppp.providers is /etc/ppp/peers/wvdial now.

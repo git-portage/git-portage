@@ -450,6 +450,7 @@
 ./sys-libs/db/db-1.85.ebuild
 ./sys-libs/db/db-3.1.17-r1.ebuild
 ./sys-libs/gdbm/gdbm-1.8.0-r1.ebuild
+#./sys-libs/glibc/glibc-2.2.1.ebuild
 ./sys-libs/glibc/glibc-2.2-r2.ebuild
 ./sys-libs/gpm/gpm-1.19.3.ebuild
 ./sys-libs/lib-compat/lib-compat-1.0-r1.ebuild
