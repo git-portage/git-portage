@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e34ea6646a79a131e226f316f77e4043 linux-headers-2.6.8.1-r4.ebuild 1266
 MD5 93d61e502d62b73d3340cb8837b6d6b2 linux-headers-2.4.21-r1.ebuild 3945
 MD5 c28313e23ce24b05e25738a685a00cd4 linux-headers-2.4.26.ebuild 3351
@@ -8,8 +11,8 @@ MD5 ef6a148ad839a5e5037eca5e188471d5 linux-headers-2.6.10.ebuild 1211
 MD5 ac78a2e51f08f5e6a70691b7684eb3da linux-headers-2.4.25.ebuild 3422
 MD5 b3099588e509bea5bf8c12f2b3882f58 linux-headers-2.2.26.ebuild 2509
 MD5 921f9a68d38778297cb92cb3aa61e428 linux-headers-2.6.8.1-r2.ebuild 1260
-MD5 da93fb121d3ce299ebd91aeddc06c667 ChangeLog 23167
-MD5 d85f9d2f4f07e61d070942bfdc5294b7 linux-headers-2.4.22-r1.ebuild 4077
+MD5 4a708068e3f70755e9a9eb83a853a0e8 ChangeLog 23164
+MD5 0fe1ec8656b6d2c1c4980a1a05ad0032 linux-headers-2.4.22-r1.ebuild 4078
 MD5 608fe99985244b0445f76cee44c9ae14 metadata.xml 290
 MD5 681c761c0afe60e1022ac44d37d3370a linux-headers-2.0.40.ebuild 1820
 MD5 213c9243211da20b5a7611507539e99b linux-headers-2.4.22.ebuild 4029
@@ -40,3 +43,12 @@ MD5 459bc20c4015796630e3a9f3dc9125e6 files/linux-headers-strict-ansi-fix.patch 1
 MD5 e300a3e148a7dcc38a0e099494fb6cb3 files/bigendian-byteorder-fix.patch 1557
 MD5 14c583e9ea29b2a3fc88349685cce2f4 files/linux-headers-soundcard-ppc64.patch 722
 MD5 6dd79a655f006aebb7206203f3654976 files/linux-headers-2.6.7-generic-arm-prepare.patch 978
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iQCVAwUBQg56154WFLgrx1GWAQLoXgP/bvrLuhXkIdS8NuleWcKETNNsgLeen/PY
+rbVS47akaJG+TetjnnIWo3AOhyrgbqJXRki5LptExBWEEuANaRSMQX97CbSHwCXN
+wXkZth8ca9ArLOWoyBO9++zkcWgUhvx6k/zIFt14oyLMNlpJZMkWXoed6TpCJW2e
+xHbFrv2Im5o=
+=sXO3
+-----END PGP SIGNATURE-----
