@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_pre5-r1.ebuild,v 1.8 2004/07/24 05:25:28 chriswhite Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_pre4-r7.ebuild,v 1.1 2004/07/24 08:28:13 ferringb Exp $
 
 inherit eutils flag-o-matic kmod
 
-IUSE="3dfx 3dnow aalib alsa altivec arts bidi debug divx4linux dvb cdparanoia directfb dvd edl encode esd fbdev gif ggi gtk ipv6 joystick jpeg libcaca lirc live lzo mad matroska matrox mpeg mmx mythtv nas network nls oggvorbis opengl oss rtc samba sdl sse svga tga theora truetype v4l v4l2 X xinerama xmms xvid"
+IUSE="3dfx 3dnow aalib alsa altivec arts bidi debug divx4linux dvb cdparanoia directfb dvd dvdread edl encode esd fbdev gif ggi gtk ipv6 joystick jpeg libcaca lirc live lzo mad  matroska matrox mmx mpeg mythtv nas network nls oggvorbis opengl oss png rtc samba sdl sse svga tga theora truetype v4l v4l2 xinerama X xmms xv xvid gnome"
 
 BLUV=1.4
 SVGV=1.9.17
@@ -22,7 +22,11 @@ DESCRIPTION="Media Player for Linux"
 HOMEPAGE="http://www.mplayerhq.hu/"
 
 # 'encode' in USE for MEncoder.
-RDEPEND="xvid? ( >=media-libs/xvid-0.9.0 )
+RDEPEND="xvid? (
+		ppc? ( >=media-libs/xvid-0.9.0 )
+		amd64? ( >=media-libs/xvid-0.9.0 )
+		x86? ( >=media-libs/xvid-0.9.0 )
+		)
 	x86? ( divx4linux? (  >=media-libs/divx4linux-20030428 )
 		 >=media-libs/win32codecs-0.60 )
 	aalib? ( media-libs/aalib )
@@ -31,14 +35,15 @@ RDEPEND="xvid? ( >=media-libs/xvid-0.9.0 )
 	bidi? ( dev-libs/fribidi )
 	cdparanoia? ( media-sound/cdparanoia )
 	directfb? ( dev-libs/DirectFB )
-	dvd? ( dvdread? ( media-libs/libdvdread ) )
+	dvdread? ( media-libs/libdvdread )
 	encode? ( media-sound/lame
 			>=media-libs/libdv-0.9.5 )
 	esd? ( media-sound/esound )
 	gif? ( media-libs/giflib
 		media-libs/libungif )
 	ggi? ( media-libs/libggi )
-	gtk? ( media-libs/libpng
+	gtk? (
+		media-libs/libpng
 		virtual/x11
 		=x11-libs/gtk+-1.2*
 		=dev-libs/glib-1.2* )
@@ -99,11 +104,24 @@ src_unpack() {
 
 	cd ${S}
 
+	# fixes bug #55456 for amd64 and fullscreen Bug #43010
+	epatch ${FILESDIR}/gui_vuln_code.patch
+
+	# fixes missing str* linking bugs
+	cp ${FILESDIR}/strl.c ${S}/osdep
+	epatch ${FILESDIR}/str_undefined.patch
+
 	# Fix head/tail call for new coreutils
 	epatch ${FILESDIR}/${PN}-0.90-coreutils-fixup.patch
 
 	#bug #49669, horrid syntax errors in help/help_mp-ro.h	
 	epatch ${FILESDIR}/mplayer-1.0_pre4-help_mp-ro.h.patch
+
+	#fixes bug #53634
+	epatch ${FILESDIR}/real_demux.patch
+
+	#Fixes an upstream bug with odml code
+	epatch ${FILESDIR}/mplayer-odml.patch
 
 	#adds mythtv support to mplayer
 	use mythtv && epatch ${FILESDIR}/mplayer-mythtv.patch
@@ -111,10 +129,7 @@ src_unpack() {
 	# GCC 3.4 fixes
 	epatch ${FILESDIR}/mplayer-1.0_pre4-alsa-gcc34.patch
 
-	#Workaround for the altivec softscaler issues
-	epatch ${FILESDIR}/mplayer-1.0_pre5-yuv2rbg_kludge.patch
-
-	#bug #55936, eradicator's cachefill patch.
+	# bug #55936, patch from eradicator- fix caching problems.
 	epatch ${FILESDIR}/cachefill.patch
 
 	#bug #58082.  Fixes LANGUAGE variable issues
@@ -123,7 +138,7 @@ src_unpack() {
 	#Setup the matrox makefile
 	if use matrox; then
 		get_kernel_info
-		epatch ${FILESDIR}/mplayer-1.0_pre5-mga-kernel-2.6.patch
+		epatch ${FILESDIR}/mplayer-1.0_pre4-mga-kernel2.6.patch
 		sed -i -e \
 		"s:^#KERNEL_OUTPUT_PATH=: \
 		KERNEL_OUTPUT_PATH =${KV_OUTPUT}:" \
@@ -143,35 +158,52 @@ src_unpack() {
 
 		mv ${WORKDIR}/svgalib_helper ${S}/libdha
 	fi
-
-	# Remove kernel-2.6 workaround as the problem it works around is
-	# fixed, and the workaround breaks sparc
+	#Remove kernel-2.6 workaround as the problem it works around is
+	#fixed, and the workaround breaks sparc
 	use sparc && sed -i 's:#define __KERNEL__::' osdep/kerneltwosix.h
 }
 
 src_compile() {
 
 	filter-flags -fPIE
-
 	local myconf=
 	################
 	#Optional features#
 	###############
 	myconf="${myconf} $(use_enable bidi fribidi)"
 	myconf="${myconf} $(use_enable cdparanoia)"
-	myconf="${myconf} $(use_enable dvd mpdvdkit)"
+
+	if use dvd; then
+		myconf="${myconf} $(use_enable dvdread) $(use_enable !dvdread mpdvdkit)"
+	else
+		myconf="${myconf} --disable-dvdread --disable-mpdvdkit"
+	fi
 	myconf="${myconf} $(use_enable edl)"
 	myconf="${myconf} $(use_enable encode mencoder)"
-	myconf="${myconf} $(use_enable gtk gui)"
-	myconf="${myconf} $(use_enable X x11) $(use_enable X xv) $(use_enable X vm)"
+
+	if use !gtk && use !X && use !xv && use !xinerama; then
+		myconf="${myconf} --disable-gui --disable-x11 --disable-xv --disable-xmga --disable-xinerama --disable-vm --disable-xvmc"
+	else
+		#note we ain't touching --enable-vm.  That should be locked down in the future.
+		myconf="${myconf} --enable-x11 $(use_enable xinerama) $(use_enable xv) $(use_enable gtk gui)"
+	fi
+
+	#disable png *only* if the flag is off, and gtk gui isn't on.
+	if use !png && use !gtk; then
+		myconf="${myconf} --disable-png"
+	else
+		myconf="${myconf} $(use_enable png)"
+	fi
 	myconf="${myconf} $(use_enable ipv6 inet6)"
 	myconf="${myconf} $(use_enable joystick)"
 	myconf="${myconf} $(use_enable lirc)"
+
 	if use ia64; then
 		myconf="${myconf} --disable-live"
 	else
 		myconf="${myconf} $(use_enable live)"
 	fi
+
 	myconf="${myconf} $(use_enable network) $(use_enable network ftp)"
 	myconf="${myconf} $(use_enable rtc)"
 	myconf="${myconf} $(use_enable samba smb)"
@@ -183,16 +215,11 @@ src_compile() {
 	# Codecs #
 	########
 	myconf="${myconf} $(use_enable divx4linux)"
-	# gif support needs X11 libs, don't build it if there is no X support
-	if use X && use gif ; then
-		myconf="${myconf} --enable-gif"
-	else
-		myconf="${myconf} --disable-gif"
-	fi
+	myconf="${myconf} $(use_enable gif)"
 	myconf="${myconf} $(use_enable jpeg)"
 	myconf="${myconf} $(use_enable lzo liblzo)"
 	myconf="${myconf} $(use_enable matroska external-matroska) $(use_enable !matroska internal-matroska)"
-	myconf="${myconf} $(use_enable mpeg external-faad) $(use_enable !mpeg internal-faad)"
+	myconf="${myconf} $(use_enable mpeg external-faad)         $(use_enable !mpeg internal-faad)"
 	myconf="${myconf} $(use_enable oggvorbis vorbis)"
 	if use ia64; then
 		myconf="${myconf} --disable-theora"
@@ -224,7 +251,6 @@ src_compile() {
 	myconf="${myconf} $(use_enable sdl)"
 	myconf="${myconf} $(use_enable svga)"
 	myconf="${myconf} $(use_enable tga)"
-	myconf="${myconf} $(use_enable xinerama)"
 
 	#############
 	# Audio Output #
@@ -239,12 +265,18 @@ src_compile() {
 	#################
 	# Advanced Options #
 	#################
-	myconf="${myconf} $(use_enable 3dnow) $(use_enable 3dnow 3dnowex)"
+	if ! use 3dnow; then
+		myconf="${myconf} --disable-3dnow --disable-3dnowex";
+	fi
+	if ! use sse; then
+		myconf="${myconf} --disable-sse --disable-sse2";
+	fi
+	if use !mmx && use !3dnow && use !sse; then
+		myconf="${myconf} --disable-mmx --disable-mmx2";
+	fi
 	myconf="${myconf} $(use_enable altivec)"
 	myconf="${myconf} $(use_enable debug)"
-	myconf="${myconf} $(use_enable mmx) --disable-mmx2"
 	myconf="${myconf} $(use_enable nls i18n)"
-	myconf="${myconf} $(use_enable sse) --disable-sse2"
 
 	if [ -d /opt/RealPlayer9/Real/Codecs ]
 	then
@@ -279,6 +311,11 @@ src_compile() {
 			einfo "Not building matrox driver.  It doesn't seem to like other archs.  Please let me know at chriswhite@gentoo.org if you find out otherwise."
 		fi
 	fi
+
+	# leave this in place till the configure/compilation borkage is completely corrected back to pre4-r4 levels.
+	# it's intended for debugging so we can get the options we configure mplayer w/, rather then hunt about.
+	# it *will* be removed asap; in the meantime, doesn't hurt anything.
+	echo "${myconf}" > ${T}/configure-options
 	unset CFLAGS CXXFLAGS
 	./configure --prefix=/usr \
 		--confdir=/usr/share/mplayer \
@@ -291,14 +328,10 @@ src_compile() {
 		--with-x11incdir=/usr/X11R6/include \
 		${myconf} || die
 
-		# config.mak doesn't set GIF_LIB so gif related source files fail
-		if use gif && use X
-		then
-			if use gif; then
-				sed -e "s:GIF_LIB =:GIF_LIB = -lgif:" -i config.mak
-			else
-				sed -e "s:GIF_LIB =:GIF_LIB = -lungif:" -i config.mak
-			fi
+		# when gif is autodetected, GIF_LIB is set correctly.  We're explicitly controlling it, and it doesn't behave correctly.
+		# so... we have to help it along.
+		if use gif; then
+			sed -e "s:GIF_LIB =:GIF_LIB = -lungif:" -i config.mak
 		fi
 
 	einfo "Make"
@@ -331,16 +364,22 @@ src_install() {
 	fi
 
 	dodoc AUTHORS ChangeLog README
+
 	# Install the documentation; DOCS is all mixed up not just html
-	docinto /usr/share/doc/${PF} ; dodoc -r ${S}/DOCS
+	find "${S}/DOCS" -type d | xargs -- chmod 0755
+	find "${S}/DOCS" -type f | xargs -- chmod 0644
+	cp -r "${S}/DOCS" "${D}/usr/share/doc/${PF}/" || die
 
 	# Copy misc tools to documentation path, as they're not installed
 	# directly
-	docinto /usr/share/doc/${PF} ; dodoc -r ${S}/TOOLS
+	# and yes, we are nuking the +x bit.
+	find "${S}/TOOLS" -type d | xargs -- chmod 0755
+	find "${S}/TOOLS" -type f | xargs -- chmod 0644
+	cp -r "${S}/TOOLS" "${D}/usr/share/doc/${PF}/" || die
+
 
 	# Install the default Skin and Gnome menu entry
-	if use gtk
-	then
+	if use gtk; then
 		dodir /usr/share/mplayer/Skin
 		cp -r ${WORKDIR}/Blue ${D}/usr/share/mplayer/Skin/default || die
 
@@ -349,8 +388,7 @@ src_install() {
 		dosym mplayer /usr/bin/gmplayer
 	fi
 
-	if use gnome
-	then
+	if use gnome; then
 		insinto /usr/share/pixmaps
 		newins ${S}/Gui/mplayer/pixmaps/logo.xpm mplayer.xpm
 		insinto /usr/share/gnome/apps/Multimedia
