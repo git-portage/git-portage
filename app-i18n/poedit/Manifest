@@ -5,7 +5,7 @@ MD5 c6daf720a3cefbb19aaa05b00c731dd0 poedit-1.2.3.ebuild 1278
 MD5 b647ccad233dedb3ba663f3161614e7e poedit-1.2.4.ebuild 1310
 MD5 8fc29e9b801b7ab6bb6b9a6684cc1b0b poedit-1.2.5.ebuild 1470
 MD5 c4586cce6fe0dba3cd10f69fbd0515ca metadata.xml 221
-MD5 d611967264b6647dae7266803e3b9649 ChangeLog 3953
+MD5 1ba7901ec25e97270690e83d2df2d4e5 ChangeLog 3959
 MD5 05ae656877db5408a31e8ae4632a55db poedit-1.3.1.ebuild 1413
 MD5 b1208af72fcd87f1aa7ea5f4fd5f3f73 poedit-1.3.0.ebuild 1414
 MD5 b3d482db4c3c5e91531023382d99bd3c files/digest-poedit-1.2.3 65
@@ -16,7 +16,7 @@ MD5 d2cb56c317c63cb5d3a69370e25a138c files/digest-poedit-1.2.5 143
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.2.6 (GNU/Linux)
 
-iD8DBQFBrqjGz2gxt1z4IGYRAgPqAKCkkmmOaigNQgwROIOZntRi2jmy6ACgoPNS
-6Z8HU9w8tb0csAMqI8Yz4ww=
-=UTIj
+iD8DBQFBrqj9z2gxt1z4IGYRArvvAJ9IWDjSR0jvQBI6iEB6FA45W8OeqQCfXXkW
++tQU7bJJYIEE+4IElSU3mjo=
+=flzK
 -----END PGP SIGNATURE-----
