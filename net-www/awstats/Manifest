@@ -1,7 +1,17 @@
-MD5 eac4e32d1799f8c381773c4d831caf88 awstats-6.3-r2.ebuild 4054
-MD5 3683d8e793f801b3a1425e955c2bfd8e ChangeLog 2525
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 6dd3a240cedeb1841d65091cadb8db44 awstats-6.3-r2.ebuild 4054
+MD5 42b6b3f9312852f9418995790b82ff0f ChangeLog 2525
 MD5 6bc2db5b1e135821863e91fa8658ad48 metadata.xml 255
 MD5 49d813ee8f340107d35ef3f62df2387a files/digest-awstats-6.3-r2 135
 MD5 7a52d3f65ff7220a519056716d460ecd files/awstats-6.3-gentoo.diff 1219
 MD5 182b67a3023a0807ce19f8876d48c81d files/postinst-en.txt 657
 MD5 8f8b0ad336b5066db17452db770ed878 files/awstats-6.3-CAN-2005-0363.diff 1243
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCD6trEZCkKN40op4RAvTqAKC2VDHFDNMpp0Xo92LZcYLWGePbfACcCxEB
+nAPw6k2aUi7BxD7QwaKOgIQ=
+=Jqfm
+-----END PGP SIGNATURE-----
