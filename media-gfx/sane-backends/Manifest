@@ -1,6 +1,7 @@
 MD5 e1409b30dc77729b44369c728a056abe sane-backends-1.0.14-r1.ebuild 1994
 MD5 776d5d6991d3116fe6aebaf58f7ec373 sane-backends-1.0.13.ebuild 1334
 MD5 ef7977957f713021006c126cea468bcb sane-backends-1.0.12-r2.ebuild 1949
+MD5 586d49128af4fa591f711bd385b7795c sane-backends-1.0.14-r3.ebuild 2190
 MD5 6a619352d6713a066391a2f72a4eaa2e sane-backends-1.0.13-r1.ebuild 1528
 MD5 d7ba0173d2aadb285b022cbb18de9fee sane-backends-1.0.13-r3.ebuild 1726
 MD5 d45fc67882b41fb4216736e05e68a067 sane-backends-1.0.14-r2.ebuild 2160
@@ -17,5 +18,6 @@ MD5 aaa487bfd9548bb623e44db14bce3d0e files/digest-sane-backends-1.0.13-r2 157
 MD5 01607471a4380f74f7b9da650e5ca5ad files/digest-sane-backends-1.0.13-r3 160
 MD5 38efb4d762b212d339caa112194dbf56 files/digest-sane-backends-1.0.14-r1 160
 MD5 38efb4d762b212d339caa112194dbf56 files/digest-sane-backends-1.0.14-r2 160
+MD5 38efb4d762b212d339caa112194dbf56 files/digest-sane-backends-1.0.14-r3 160
 MD5 45cd2fdeb9fb53db4b301d508ee8e8b5 files/digest-sane-backends-1.0.13 73
 MD5 38efb4d762b212d339caa112194dbf56 files/digest-sane-backends-1.0.14 160
