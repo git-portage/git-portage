@@ -1,8 +1,10 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/mecab/Attic/mecab-0.77.ebuild,v 1.4 2004/07/22 15:09:56 nakano Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/mecab/Attic/mecab-0.79.ebuild,v 1.1 2004/09/07 09:00:03 usata Exp $
 
+# need one of ipadic-2.4.4/2.5.0/2.5.1 
 MY_IPADIC="ipadic-2.5.1"
+
 DESCRIPTION="Yet Another Part-of-Speech and Morphological Analyzer"
 HOMEPAGE="http://chasen.org/~taku/software/mecab/"
 SRC_URI="http://chasen.org/~taku/software/mecab/src/${P}.tar.gz
@@ -15,6 +17,7 @@ IUSE=""
 
 DEPEND="virtual/libc
 	dev-lang/perl"
+RDEPEND="virtual/libc"
 
 src_unpack() {
 	unpack ${P}.tar.gz
