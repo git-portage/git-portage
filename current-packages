@@ -305,6 +305,7 @@
 ./net-ftp/ftp/ftp-0.17-r1.ebuild
 ./net-ftp/lftp/lftp-2.3.4.ebuild
 #!./net-ftp/lftp/lftp-2.3.5.ebuild
+./net-ftp/ncftp/ncftp-3.0.2.ebuild
 ./net-ftp/proftpd/proftpd-1.2.0_rc2-r1.ebuild
 ./net-irc/bitchx/bitchx-1.0.17.ebuild
 ./net-irc/xchat/xchat-1.4.2.ebuild
