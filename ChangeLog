@@ -3,10 +3,6 @@ date 22 Mar 2001
 upd net-mail/fetchmail-5.6.6 to 5.7.5
 ryan
 
-upd profiles/default/make.default
-pnamias
-Added FETCHCOMMAND with prozilla
-
 new kde-apps/ktelnet2-0.43
 pnamias
 
