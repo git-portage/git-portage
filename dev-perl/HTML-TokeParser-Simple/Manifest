@@ -1,4 +1,6 @@
 MD5 d0b930330e096b97fc80ed6b4f099c8b ChangeLog 583
-MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 1c5f91b19723694c129a84161fae9e48 HTML-TokeParser-Simple-2.2.ebuild 604
+MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
+MD5 76ad16ff4606356bf017de1d86acd928 HTML-TokeParser-Simple-3.13.ebuild 481
 MD5 dc2779276afaa049d68c25ee1ee61b0f files/digest-HTML-TokeParser-Simple-2.2 76
+MD5 38a4e1797efe36039c5ebb5ed8a2f051 files/digest-HTML-TokeParser-Simple-3.13 78
