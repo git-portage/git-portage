@@ -1,3 +1,4 @@
+MD5 bdfad395e5db0239947540c7c97da8c1 ac-sources-2.6.9-r12.ebuild 1047
 MD5 c0c053ed0824614431987101ab4bf24d ac-sources-2.6.9-r6.ebuild 1046
 MD5 2d0ac3655d40b781c84031301a780024 ac-sources-2.6.9-r1.ebuild 1091
 MD5 7b1073a9db1f527fe9a3395daedbc635 ac-sources-2.6.9-r8.ebuild 1046
@@ -18,3 +19,4 @@ MD5 57db481c11c638064759462051c41af6 files/digest-ac-sources-2.6.9-r9 129
 MD5 d9127fc038c80114d40b69d761803ed2 files/ac-sources-2.6.9.binfmt_elf.patch 1929
 MD5 2c667e2fa7172f460e6e9c2699acded2 files/2.6.9-ac1-fix-extraversion.patch 1288
 MD5 88135e20957a282cf6212fd5b09f0593 files/digest-ac-sources-2.6.9-r10 131
+MD5 0262502f5f3933de605488011f3b8211 files/digest-ac-sources-2.6.9-r12 131
