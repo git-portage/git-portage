@@ -1,4 +1,6 @@
+MD5 01685c02a2ca432bb143f929cf5815dc wmupmon-0.1.2.ebuild 926
 MD5 00e1949607ed7de7753113789c6153c2 ChangeLog 665
 MD5 95e861c19d822659f3a0a7a8ea92c5c2 metadata.xml 321
-MD5 b11884bf299b5992047c0bec66d99b70 wmupmon-0.1.1a.ebuild 929
+MD5 5135f1ce418b561d85fdb104e4eb5c3b wmupmon-0.1.1a.ebuild 938
 MD5 b610db91de3c6cdf44fa50701b321445 files/digest-wmupmon-0.1.1a 67
+MD5 59b42bc2638f2283a42a84ea40ae76e7 files/digest-wmupmon-0.1.2 66
