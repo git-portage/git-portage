@@ -3,7 +3,9 @@ MD5 5a8290e44006ccff0dff3094555d6366 metadata.xml 257
 MD5 33b564ef94a980547348ae5478c6fd24 xmms-1.2.10-r5.ebuild 5545
 MD5 bd2c29d7bc96c9f8c558e0fdcccd941a xmms-1.2.10-r9.ebuild 3402
 MD5 1f4aab1f3653bb6e5fb441d038160e52 xmms-1.2.8-r4.ebuild 5246
+MD5 35d0148d42b3631d5b1d2911b55cc2d2 xmms-1.2.10-r10.ebuild 3402
 MD5 aa46b23a1cf0655c7f09adbdd623d49f files/digest-xmms-1.2.10-r5 219
 MD5 07a3ee1ff0ac863b041b89319a01bf32 files/digest-xmms-1.2.10-r9 277
 MD5 f52f09b25da87c876de70b6177292f2e files/digest-xmms-1.2.8-r4 216
 MD5 7d2f3807ebbff435b909ecf0539cbf4f files/xmms.desktop 722
+MD5 964b9054ef6250cdbff148b3f56ea9bc files/digest-xmms-1.2.10-r10 277
