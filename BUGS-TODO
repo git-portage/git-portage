@@ -1,3 +1,13 @@
+[achim] updating package-dependencies based on sys-build as a minimum
+	set of packages
+
+[æchim] module-config management
+
+[achim] better devfs support and updating packages that do not
+	support devfs
+
+[æchim] fixing problems with alsa-drivers 
+
 [drobbins] add csh support to env-update
 
 [drobbins] enhanced useradd script for 1.0_rc4
