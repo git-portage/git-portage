@@ -2,10 +2,9 @@ MD5 df856cab880416be7f3ec5cbf1490161 gdm-2.6.0.3.ebuild 3381
 MD5 bf4c39edd0c28adfccb8247fe0b068d7 gdm-2.4.4.7-r1.ebuild 3427
 MD5 35366f1ca77e222f08da145690671bc7 gdm-2.2.5.4-r5.ebuild 4427
 MD5 6dcf2c48a2846433f8abf94aa493f074 gdm-2.4.1.7-r1.ebuild 5284
-MD5 b9551371600615c12f8cfe642c14c41f gdm-2.6.0.4.ebuild 3288
-MD5 8a3a892802e8fc56c67ae4d1e416e8cf ChangeLog 9800
+MD5 5dc560921b86c635d710d4a9c26db27e gdm-2.6.0.4.ebuild 3380
+MD5 4dca9678c149afc20daf9e73c09b191f ChangeLog 9917
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
-MD5 994e263158e6f4fd96746c596dbce1b4 .gdm-2.6.0.4.ebuild.swp 12288
 MD5 80ecdc9dea675084c39d7d30876acf5b files/digest-gdm-2.2.5.4-r5 65
 MD5 6392095707ae98912a626cb035796255 files/digest-gdm-2.4.1.7-r1 134
 MD5 25720fd12f8eee788fc5169824a0fe7e files/digest-gdm-2.4.4.7-r1 205
