@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/ck-sources/Attic/ck-sources-2.4.24-r1.ebuild,v 1.5 2004/04/17 19:03:26 aliz Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/ck-sources/Attic/ck-sources-2.4.26-r1.ebuild,v 1.1 2004/05/28 22:20:39 plasmaroo Exp $
 
 IUSE=""
 
@@ -11,7 +11,7 @@ ETYPE="sources"
 inherit kernel eutils
 
 # CKV=con kolivas release version
-CKV=ck${PR/r/}
+CKV=lck${PR/r/}
 # KV=patched kernel version
 KV="${PV/_/-}-${CKV}"
 # OKV=original kernel version as provided by ebuild
@@ -57,10 +57,7 @@ src_unpack() {
 		bzcat ${DISTDIR}/patch-${PV/_/-}.bz2|patch -p1 || die "-marcelo patch failed"
 	fi
 
-	bzcat ${DISTDIR}/patch-${KV}.bz2|patch -p1 || die "-ck patch failed"
-	epatch ${FILESDIR}/${P}.CAN-2004-0001.patch || die "Failed to apply AMD64 ptrace patch!"
-	epatch ${FILESDIR}/${P}.munmap.patch || die "Failed to apply munmap patch!"
-
+	bzcat ${DISTDIR}/patch-${KV}.bz2|patch -p1 || die "-lck patch failed!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0394.patch || die "Failed to add the CAN-2004-0394 patch!"
 	kernel_universal_unpack
 }
-
