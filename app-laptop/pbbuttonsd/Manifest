@@ -3,7 +3,7 @@ MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 01f5e8033e946275a5c81ec9675a593d pbbuttonsd-0.5.11.ebuild 1620
 MD5 49762f48c7947b0a1b275488167071e0 pbbuttonsd-0.6.1.ebuild 1184
 MD5 92aab852b0baca6dc852f7f56e185673 pbbuttonsd-0.6.5.ebuild 1224
-MD5 13531dd46d171f106005bd0ae16bd8ac pbbuttonsd-0.6.6.ebuild 1226
+MD5 ba03d8ea4acf124740208dd088c65c17 pbbuttonsd-0.6.6.ebuild 1144
 MD5 e3ce7dc625651b0249b338997267d288 files/digest-pbbuttonsd-0.5.11 69
 MD5 a1afb13bbd6ccca4f348829ea9825df6 files/digest-pbbuttonsd-0.6.1 68
 MD5 1f7eb1378520b49ca348255b4c449224 files/pbbuttonsd-0.5.11-compat.patch 1123
