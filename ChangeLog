@@ -1,5 +1,9 @@
 date 09 Dec 2000
 
+upd sys-apps/xinetd-2.1.8.8_p3-r1 to 2.1.8.8_p3-r2
+drobbins
+now supervised
+
 del sys-apps/shtool-1.5.1-r1
 drobbins
 location fix
