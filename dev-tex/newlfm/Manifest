@@ -1,49 +1,14 @@
-MD5 db06c973cb3abed1bf53fc751e871326 newlfm-8.3.ebuild 810
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 c472f5fd1646eb8bca71d8df5cb2bdcc metadata.xml 164
+MD5 5a2c76d30ab64a234edd9e4b364f2d5c newlfm-8.3.ebuild 867
+MD5 b549ebeb497edf3f62a94043db6f3f57 ChangeLog 406
 MD5 6913771fbddb2c04fbc4e42ea7ab19a4 files/digest-newlfm-8.3 62
-MD5 ed9b7c2604304ace1d048a4b077190b4 newlfm/newlfm.pdf 319871
-MD5 29071236b8ca782aa9e9cc42cc816bf8 newlfm/newlfm.dtx 230531
-MD5 7eff1db05e6a2741f74f7589817e47c2 newlfm/newlfm.ins 1632
-MD5 6abad876dc5389063f0201be3debca64 newlfm/make_clean 420
-MD5 2b4f22df9f6ac4cb78bdaf3f967bc4c2 newlfm/README 8936
-MD5 34e61b511a1d87785d38313b7cc6344b newlfm/draft.pdf 18563
-MD5 429ed96d8492216e27937997f2a714ce newlfm/test1.tex 2605
-MD5 66744351b7126306d94757f338e019df newlfm/manual.pdf 185193
-MD5 870570aa1de9c7c60407b55803bdf51b newlfm/make_unix 3131
-MD5 60965233392a60f5e8bc0afd204c0f27 newlfm/test3.tex 578
-MD5 f86475518e5f363d09c804adba9f10ad newlfm/lvb.pdf 6121
-MD5 43e7ff8ab4e7567d821578f8bd78837f newlfm/letrinfo.tex 7416
-MD5 0b601e56b93187d24fe326f5ea10e874 newlfm/makeclean_win.bat 517
-MD5 4993f2d0f368e6ec4f151bae10489d1d newlfm/make_win.bat 3192
-MD5 d41a0fd3cf29064e6eacc26369ecf100 newlfm/test10.tex 309
-MD5 b8247562a21b7655ef6d675e39a54795 newlfm/test2.tex 786
-MD5 6efb2fe061548f180e59970ec21b55dc newlfm/test4.tex 688
-MD5 2455f32bbcc64e382da293f6cc0ea397 newlfm/wine.eps 123653
-MD5 02e29697c9c4969d134a12e74abc35e1 newlfm/palm.pdf 13644
-MD5 13dd74da7f34adbd6ccae69560ec1087 newlfm/manual.ps 362338
-MD5 8dc50b82bc014cff6fb814cd215de57c newlfm/wine.pdf 29464
-MD5 cf0d7ce3398f1fe8497f0fb26af51e04 newlfm/test6.tex 1068
-MD5 ad3f95cfc57591d065d4c4ec0652dd94 newlfm/test9.tex 608
-MD5 8e92728da00430e8e26977fe2a88b596 newlfm/test7.tex 5107
-MD5 2224a0fedae59f572048c916ea30b7eb newlfm/test8.tex 1024
-MD5 6cc03d8b474939b3a3d3938e7c2b6116 newlfm/setup.bat 172
-MD5 75e1e1f63729b840ecc7231eeba801db newlfm/test5.tex 817
-MD5 15e465a314e5354744e7497642b5e0af newlfm/test8alt.tex 709
-MD5 2a5367dbfb75de0d7565580cdb27aa8c newlfm/test7alt.tex 890
-MD5 8b676eaa99e33d011bc16a037355593d newlfm/test6alt.tex 915
-MD5 cd19396c73e1aeca4598b1a64a27ef00 newlfm/test5alt.tex 809
-MD5 67def6bd5c82587c62859b3f432f328b newlfm/lvb.eps 103748
-MD5 e71ede4e126859c9c6a60c3df80b66b4 newlfm/test4alt.tex 543
-MD5 43d0d9fa467f39444624f177235f23c8 newlfm/test3alt.tex 533
-MD5 4749cc22d2f9d123f4ad14ae0c4ca7c3 newlfm/test2alt.tex 773
-MD5 5d0459521d83ef06a68f12861a073028 newlfm/palm.eps 158090
-MD5 2a7160b018f39c414750f363a679ee4c newlfm/test12.tex 766
-MD5 8061f31e89712015ae97f0d09c51b58c newlfm/sprsrls.tex 1325
-MD5 9d946d6519654b60eb1e7a4405530acb newlfm/test11.tex 2591
-MD5 1acab9717b202900ebcd074e17b7fbe3 newlfm/mintrx.bat 135
-MD5 26ab0d96fce2ccdafe35a270e2bfdc21 newlfm/test1alt.tex 8710
-MD5 accdb212ca64397e81bcf862dc3fa64e newlfm/newlfm.txt 2060
-MD5 f32b08fdb087a3f4d7caa95d03ff3858 newlfm/draft.eps 144701
-MD5 ab9e6ce5a148e846c069594e7f03ddc3 newlfm/test2a.tex 734
-MD5 17307d9211ea6246023383d98eb38e56 newlfm/extracd.tex 858
-MD5 bfed413751775dae310e3c444b9298ee newlfm/sfaxpage.tex 2812
-MD5 68d08b2ecc807863d74d889f1ab803c9 newlfm/smemosec.tex 3162
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBkP2oVWNWqTUmv+0RAhxjAJ9labGldtyMe+VXTcEMQGZA5rN8VwCghtIi
+9x3h5WMr6OJoRmM2kns2Ba0=
+=0LXG
+-----END PGP SIGNATURE-----
