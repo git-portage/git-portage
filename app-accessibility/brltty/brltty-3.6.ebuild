@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/brltty/Attic/brltty-3.6_pre1.ebuild,v 1.1 2004/08/17 04:24:19 squinky86 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/brltty/Attic/brltty-3.6.ebuild,v 1.1 2004/10/14 02:08:02 squinky86 Exp $
 
 MY_P=${P/_/}
 S=${WORKDIR}/${MY_P}
@@ -12,13 +12,16 @@ SRC_URI="http://mielke.cc/brltty/releases/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~hppa ~amd64 ~ia64 ~ppc64"
-IUSE="gpm"
+IUSE="gpm X usb"
 
 DEPEND="virtual/libc
-	gpm? ( >=sys-libs/gpm-1.20 )"
+	gpm? ( >=sys-libs/gpm-1.20 )
+	X? ( virtual/x11 )"
 
 src_compile() {
-	econf `use_enable gpm` || die
+	econf `use_enable gpm` \
+		`use_with X x` \
+		`use_enable usb usb-support` || die
 	make || die
 }
 
