@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/rdesktop/Attic/rdesktop-1.2.0-r1.ebuild,v 1.6 2003/09/25 13:25:15 lu_zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/rdesktop/Attic/rdesktop-1.3.1.ebuild,v 1.1 2004/01/24 20:36:07 wolf31o2 Exp $
 
 DESCRIPTION="A Remote Desktop Protocol Client"
 HOMEPAGE="http://rdesktop.sourceforge.net/"
@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~ppc ~alpha ~sparc"
+KEYWORDS="~x86"
 IUSE="ssl debug"
 
 DEPEND="x11-base/xfree
@@ -16,18 +16,6 @@ DEPEND="x11-base/xfree
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-
-	# Apply patch from Steve Fosdick to do rudimentary X->TS
-	# cut'n'paste.  This isn't really supported by the RDP4 protocol,
-	# but official support for clipboard interaction will be in RDP5.
-	# http://sf.net/mailarchive/forum.php?thread_id=1920955&forum_id=8865
-	epatch ${FILESDIR}/rdesktop-paste.patch
-
-	# Note there is an additional patch further down that conversation
-	# to send a middle click to TS if the clipboard is empty.  I
-	# don't think I'll need that.  If somebody wants to add it here,
-	# that's fine for a later rev...
 }
 
 src_compile() {
