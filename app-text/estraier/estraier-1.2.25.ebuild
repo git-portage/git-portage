@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/estraier/Attic/estraier-1.2.21.ebuild,v 1.3 2005/01/01 16:13:38 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/estraier/Attic/estraier-1.2.25.ebuild,v 1.1 2005/01/03 05:45:23 matsuu Exp $
 
 IUSE="debug chasen kakasi mecab zlib"
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 RESTRICT="nomirror"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~ppc ~sparc"
 SLOT="0"
 
 DEPEND=">=dev-db/qdbm-1.8.16
@@ -33,6 +33,9 @@ src_compile() {
 
 	elif use kakasi; then
 		myconf="`use_enable kakasi`"
+
+	else
+		myconf="--enable-cjkuni"
 
 	fi
 
