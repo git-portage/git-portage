@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/Attic/curl-7.12.0-r1.ebuild,v 1.1 2004/07/27 14:57:54 liquidx Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/Attic/curl-7.12.0-r2.ebuild,v 1.1 2004/07/28 18:52:38 liquidx Exp $
 
 # NOTE: If you bump this ebuild, make sure you bump dev-python/pycurl!
 
@@ -36,5 +36,5 @@ src_install() {
 	dodoc docs/MANUAL docs/FAQ docs/BUGS docs/CONTRIBUTE
 
 	# backwards compat link
-	dosym libcurl.so.2 /usr/lib/libcurl.so.3
+	dosym libcurl.so.3 /usr/lib/libcurl.so.2
 }
