@@ -1,33 +1,39 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/enlightenment-cvs/Attic/enlightenment-cvs-0.17.20030111.ebuild,v 1.1 2003/01/12 00:08:53 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/enlightenment-cvs/Attic/enlightenment-cvs-0.17.20030205.ebuild,v 1.1 2003/02/06 07:27:04 vapier Exp $
 
 ECVS_SERVER="cvs.enlightenment.sourceforge.net:/cvsroot/enlightenment"
 ECVS_MODULE="e17"
 ECVS_CVS_OPTIONS="-dP"
 ECVS_BRANCH="SPLIT"
 
-inherit cvs
+inherit cvs eutils
 
 DESCRIPTION="Enlightenment Window Manager"
 SRC_URI="mirror://gentoo/${P}.tar.bz2
-	http://wh0rd.tk/gentoo/distfiles/${P}.tar.bz2"
+	http://wh0rd.tk/gentoo/distfiles/${P}.tar.bz2
+	mirror://gentoo/gentoo-themes-e17-${PV}.tbz2
+	http://wh0rd.tk/gentoo/distfiles/gentoo-themes-e17-${PV}.tbz2"
 HOMEPAGE="http://www.enlightenment.org/"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~sparc ~alpha"
-IUSE="pic X mmx truetype opengl directfb fbcon png jpeg"
+IUSE="pic X mmx truetype opengl directfb fbcon png jpeg oggvorbis"
 
 RDEPEND="sys-libs/pam"
-DEPEND="app-admin/fam-oss
+DEPEND="!x11-libs/evas
+	app-admin/fam-oss
 	dev-libs/libxml2
 	dev-libs/libpcre
 	dev-lang/ferite
 	media-libs/imlib2
 	=x11-libs/gtk+-1.2*
 	=dev-libs/glib-1.2*
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	>=media-libs/freetype-2.1.3
+	directfb? ( >=dev-libs/DirectFB-0.9.16 )
+	oggvorbis? ( media-libs/libvorbis )"
 
 S=${WORKDIR}/${ECVS_MODULE}
 E_PREFIX=/usr/e17
@@ -98,7 +104,6 @@ src_install() {
 #	use mmx		&& addconf="${addconf} --enable-mmx"
 	use truetype	&& addconf="${addconf} --with-ttf=/usr"
 	env USER=BS eautogen ${baseconf} ${addconf} || die "could not autogen imlib2"
-	cp ${FILESDIR}/dummy.Makefile test/Makefile
 	make || die "could not make imlib2"
 	make install DESTDIR=${D} || die "could not install imlib2"
 
@@ -107,17 +112,12 @@ src_install() {
 	cd ${S}/libs/edb
 	addconf="--enable-cxx"
 	eautogen ${baseconf} ${addconf} || die "could not autogen edb"
-	cp ${FILESDIR}/dummy.Makefile test/Makefile
 	make || die "could not make edb"
 	make install DESTDIR=${D} || die "could not install edb"
 
 	### eet ###
 	einfo "making libs/eet"
 	cd ${S}/libs/eet
-	cp configure.ac{,.old}
-	sed -e "s:src/bin/Makefile:src/bin/Makefile eet-config],\n[\nchmod +x eet-config\n:" \
-		configure.ac.old > configure.ac
-	echo 'bin_SCRIPTS = eet-config' >> Makefile.am
 	eautogen ${baseconf} || die "could not autogen eet"
 	make || die "could not make eet"
 	make install DESTDIR=${D} || die "could not install eet"
@@ -127,7 +127,7 @@ src_install() {
 	cd ${S}/libs/imlib2_loaders
 	use X		&& addconf="${addconf} --with-x"
 	env -u CFLAGS eautogen ${baseconf} ${addconf} || die "could not autogen imlib2_loaders"
-	make CFLAGS="${CFLAGS}" || die "could not make imlib2_loaders"
+	make || die "could not make imlib2_loaders"
 	make install DESTDIR=${D} || die "could not install imlib_loaders"
 
 	### evas ###
@@ -156,14 +156,13 @@ src_install() {
 		--enable-convert-32-bgrx-8888 \
 		--enable-convert-32-rgb-rot-0"
 	use X		&& addconf="${addconf} --enable-software-x11"
-	use opengl	&& addconf="${addconf} --enable-gl-x11"
+#	use opengl	&& addconf="${addconf} --enable-gl-x11"
 #	use directfb	&& addconf="${addconf} --enable-directfb"
-	use fbcon	&& addconf="${addconf} --enable-fb"
+#	use fbcon	&& addconf="${addconf} --enable-fb"
 	use png		&& addconf="${addconf} --enable-image-loader-png"
 	use jpeg	&& addconf="${addconf} --enable-image-loader-jpeg"
 #	use mmx		&& addconf="${addconf} --enable-cpu-mmx"
 	eautogen ${baseconf} ${addconf} || die "could not autogen evas"
-	cp ${FILESDIR}/dummy.Makefile test/Makefile
 	make || die "could not make evas"
 	make install DESTDIR=${D} || die "could not install evas"
 
@@ -171,7 +170,6 @@ src_install() {
 	einfo "making libs/ewd"
 	cd ${S}/libs/ewd
 	eautogen ${baseconf} || die "could not autogen ewd"
-	cp ${FILESDIR}/dummy.Makefile test/Makefile
 	make || die "could not make ewd"
 	make install DESTDIR=${D} || die "could not install ewd"
 
@@ -195,7 +193,6 @@ src_install() {
 	einfo "making libs/estyle"
 	cd ${S}/libs/estyle
 	eautogen ${baseconf} || die "could not autogen estyle"
-	cp ${FILESDIR}/dummy.Makefile test/Makefile
 	make || die "could not make estyle"
 	make install DESTDIR=${D} || die "could not install estyle"
 
@@ -203,7 +200,6 @@ src_install() {
 	einfo "making libs/etox"
 	cd ${S}/libs/etox
 	eautogen ${baseconf} || die "could not autogen etox"
-	cp ${FILESDIR}/dummy.Makefile test/Makefile
 	make || die "could not make etox"
 	make install DESTDIR=${D} || die "could not install etox"
 
@@ -211,7 +207,6 @@ src_install() {
 	einfo "making libs/ebg"
 	cd ${S}/libs/ebg
 	eautogen ${baseconf} || die "could not autogen ebg"
-	cp ${FILESDIR}/dummy.Makefile test/Makefile
 	make || die "could not make ebg"
 	make install DESTDIR=${D} || die "could not install ebg"
 
@@ -219,19 +214,15 @@ src_install() {
 	einfo "making libs/ewl"
 	cd ${S}/libs/ewl
 	env USER=BS eautogen ${baseconf} || die "could not autogen ewl"
-	cp ${FILESDIR}/dummy.Makefile test/Makefile
 	make || die "could not make ewl"
 	make install DESTDIR=${D} || die "could not install ewl"
 
 	### eprog ###
 	einfo "making libs/eprog"
 	cd ${S}/libs/eprog
-	cp configure{,.old}
-	sed -e "s:^PREFIX.*:PREFIX=${E_PREFIX}:" \
-		configure.old > configure
-	./configure || die "could not make eprog"
-	echo "PREFIX=${D}${E_PREFIX}" > .config
-	./configure install || die "could not install eprog"
+	eautogen ${baseconf} || die "could not autogen eprog"
+	make || die "could not make eprog"
+	make install DESTDIR=${D} || die "could not install eprog"
 
 	############
 	### apps ###
@@ -241,10 +232,6 @@ src_install() {
 	einfo "making apps/entice"
 	cd ${S}/apps/entice
 	addconf="--disable-nls --with-included-gettext"
-	cp Makefile.am Makefile.am.old
-	sed -e "s:intl po::" Makefile.am.old > Makefile.am
-	cp configure.in configure.in.old
-	sed -e "s:intl/Makefile po/Makefile.in::" configure.in.old > configure.in
 	eautogen ${baseconf} ${addconf} || die "could not autogen entice"
 	make || die "could not make entice"
 	make install DESTDIR=${D} || die "could not install entice"
@@ -253,6 +240,12 @@ src_install() {
 	einfo "making apps/esmall"
 	cd ${S}/apps/esmall
 	eautogen ${baseconf} || die "could not autogen esmall"
+	if [ "${ARCH}" == "ppc" ] ; then
+		for f in `grep sys/io src/* -l` ; do
+			cp ${f}{,.old}
+			sed -e 's:sys/io:asm/io:' ${f}.old > ${f}
+		done
+	fi
 	make || die "could not make esmall"
 	make install DESTDIR=${D} || die "could not install esmall"
 
@@ -313,11 +306,18 @@ src_install() {
 	einfo "making apps/etcher"
 	cd ${S}/apps/etcher
 	addconf="--disable-nls --with-included-gettext --disable-gtktest"
-	cp configure.in{,.old}
-	sed -e "s:intl/Makefile::" configure.in.old > configure.in
+	cp Makefile.am Makefile.am.old
+	sed -e 's:intl::' \
+		-e 's:po::' \
+		 Makefile.am.old > Makefile.am
+	cp configure.in configure.in.old
+	sed -e 's:intl/Makefile::' \
+		-e 's:po/Makefile.in::' \
+		-e 's:m4/Makefile::' \
+		configure.in.old > configure.in
 	eautogen ${baseconf} ${addconf} || die "could not autogen etcher"
-	make CFLAGS="${CFLAGS} -levas" top_builddir=`pwd` || die "could not make etcher"
-	make install DESTDIR="${D}" top_builddir=`pwd` || die "could not install etcher"
+	make || die "could not make etcher"
+	make install DESTDIR="${D}" || die "could not install etcher"
 
 	### ebony ###
 	einfo "making apps/ebony"
@@ -350,6 +350,15 @@ src_install() {
 	make || die "could not build ebindings"
 	make install DESTDIR="${D}" || die "could not install ebindings"
 
+	### entrance ###
+	einfo "making apps/entrance"
+	cd ${S}/apps/entrance
+	eautogen ${baseconf} || die "could not autogen entrance"
+	make || die "could not build entrance"
+	make install DESTDIR="${D}" || die "could not install entrance"
+	insinto /etc/pam.d
+	doins data/pam.d/entrance
+
 	### e ###
 	einfo "making apps/e"
 	cd ${S}/apps/e
@@ -357,8 +366,8 @@ src_install() {
 	# hack it a little ;D
 	cp configure.ac configure.ac.old
 	sed -e 's:AC_MSG_ERROR(Cannot detect:#:' \
-	 -e 's:intl/Makefile::' \
-	 -e 's:po/Makefile.in::' \
+		-e 's:intl/Makefile::' \
+		-e 's:po/Makefile.in::' \
 		configure.ac.old > configure.ac
 	cp Makefile.am Makefile.am.old
 	sed -e 's:po::' Makefile.am.old > Makefile.am
@@ -377,14 +386,55 @@ src_install() {
 	einfo "making misc/elogin"
 	cd ${S}/misc/elogin
 	eautogen ${baseconf} || die "could not autogen elogin"
+	# now lets hax it to make it Gentoo style
+	cd ${S}/misc/elogin/src/daemon && cp spawner.h{,.old}
+	sed -e "s:.*ELOGIN.*:#define ELOGIN \"${E_PREFIX}/bin/elogin\":" \
+		spawner.h.old > spawner.h
+	cd ${S}/misc/elogin/src/client && cp callbacks.c{,.old}
+	sed -e 's:/etc/X11/Xsession %s:%s:' \
+		callbacks.c.old > callbacks.c
+	cd ${S}/misc/elogin/data/config && cp build_config.sh{,.old}
+	sed -e "s:/usr/local/e17:${E_PREFIX}:" \
+	 -e 's:failsafe:/etc/X11/Sessions/Xsession:' \
+	 -e 's:/usr/bin/kde:/usr/kde/3/bin/startkde:' \
+		build_config.sh.old > build_config.sh
+	rm build_config.sh.old
+	./build_config.sh
+	cd ${S}/misc/elogin
 	make || die "could not build elogin"
 	make install DESTDIR="${D}" || die "could not install elogin"
 	insinto /etc/pam.d
 	doins config/elogin
 
+	### enotes ###
+	einfo "making misc/enotes"
+	cd ${S}/misc/enotes
+	make || die "could not build enotes"
+	insinto ${E_PREFIX}/share/enotes
+	doins data/*
+	exeinto ${E_PREFIX}/bin
+	newexe ${FILESDIR}/enotes_wrapper enotes
+	newexe enotes enotes_exe || die "could not install enotes"
+
+	### evidence ###
+	einfo "making misc/evidence"
+	cd ${S}/misc/evidence
+	addconf="--enable-canvas-evas2 --enable-extra-themes"
+	use oggvorbis && addconf="${addconf} --enable-plugin-vorbis"
+	epatch ${FILESDIR}/evidence-destdir.patch
+	eautogen ${baseconf} || die "could not autogen evidence"
+	make || die "could not build evidence"
+	make install DESTDIR="${D}" || die "could not install evidence"
+
 	############
 	### fine ###
 	############
+
+	# add some Gentoo theme stuff
+	dodir ${E_PREFIX}/share/enlightenment/data/backgrounds
+	cd ${D}/${E_PREFIX}/share/enlightenment/data/backgrounds
+	mv default.bg.db default-e17.bg.db
+	mv ${WORKDIR}/gentoo-themes/background.db default.bg.db
 
 	# remove improper stuff
 	cd ${D}
@@ -393,7 +443,8 @@ src_install() {
 
 	# make an env.d entry
 	insinto /etc/env.d
-	echo "PATH=${E_PREFIX}/bin" > e.env.d
+	echo "PATH=${E_PREFIX}/bin:${E_PREFIX}/sbin" > e.env.d
+	echo "ROOTPATH=${E_PREFIX}/sbin" >> e.env.d
 	echo "LDPATH=${E_PREFIX}/lib" >> e.env.d
 	newins e.env.d 50enlightenment
 	rm -f e.env.d
@@ -404,6 +455,9 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	ewarn "Remember, your old e17 is at ${E_PREFIX}.old"
-	ewarn "be sure to do something with it !"
+	if [ -e ${E_PREFIX}.old ] ; then
+		ewarn "Remember, your old e17 is at ${E_PREFIX}.old"
+		ewarn "be sure to do something with it !"
+		echo
+	fi
 }
