@@ -1,14 +1,17 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9a5242011f95057c3afabf1cc3973f11 apache-1.3.31-r2.ebuild 6864
 MD5 a419841198cd6a94b9dcf2e07f3c15b7 metadata.xml 617
 MD5 c38ac1102b1c9e8c2d535c736c8bd3d4 apache-2.0.52-r1.ebuild 13150
 MD5 6f88208cb336bbe5da0a50b08b1e6390 apache-2.0.51-r1.ebuild 12840
-MD5 33d6bac036fc8b0b092b71935354a931 apache-2.0.52-r3.ebuild 12051
+MD5 aa97e52247ade47afe6744b06960f728 apache-2.0.52-r3.ebuild 12045
 MD5 85c356965e12f6c785c887ddf6844714 apache-1.3.31-r3.ebuild 6872
 MD5 a6568a1f276ed27458ab61fb5897bca2 apache-1.3.33.ebuild 6851
 MD5 784b3e3150529826ac47e99ec3514f90 apache-1.3.29-r2.ebuild 7178
 MD5 d039a8316ffde50c2331f0d446623147 apache-1.3.31.ebuild 6693
-MD5 31cde0baffd0d0088b37361642bcbb10 ChangeLog 55888
-MD5 d00f650eaa99870a31f7840a27269435 apache-2.0.53.ebuild 11920
+MD5 d524fc581eb36035f082c20667f9d9aa ChangeLog 56088
+MD5 e265b8c0426359efe22f6c29d7e9be82 apache-2.0.53.ebuild 11915
 MD5 4deee7453993e04e335f83a2ff87a798 apache-1.3.33-r1.ebuild 8638
 MD5 cd6aff6c1515610209f5e62e56ea47f8 apache-1.3.32.ebuild 6616
 MD5 451d45c9613e9ed7ee770085a8e28ef8 apache-2.0.51.ebuild 12831
@@ -94,3 +97,10 @@ MD5 161245c7aa1eb785db53b34d6a10be43 files/patches/1.3.31-r1/00_gentoo_suexec_pa
 MD5 61df284cb67dfde3085aec5543eeb03c files/patches/1.3.31-r1/00_gentoo_apachectl.patch 32836
 MD5 3c0dfc9f2dc93ae46eb6382cf9533f18 files/patches/1.3.31-r1/00_gentoo_base.patch 27799
 MD5 a63b9472904d3500cf72b370a9ee3200 files/patches/1.3.31-r1/00_gentoo_db4_detect.patch 1304
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCPXr2jUHll2nfF60RAi+0AKChDkxAjRNK8KVuiYb3WW0r9SStjwCaA4uU
+7Hg6yA1+auxG87ALLkaRWmo=
+=ZOAb
+-----END PGP SIGNATURE-----
