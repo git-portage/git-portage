@@ -192,7 +192,7 @@
 #./gnome-office/eog/eog-0.5.ebuild
 ./gnome-office/gnome-db/gnome-db-0.2.1.ebuild
 ./gnome-office/gnome-pim/gnome-pim-1.2.0-r1.ebuild
-./gnome-office/gnumeric/gnumeric-0.61.ebuild
+./gnome-office/gnumeric/gnumeric-0.61-r1.ebuild
 ./kde-apps/cervisia/cervisia-0.7.1.ebuild
 ./kde-apps/kdeadmin/kdeadmin-2.0.1.ebuild
 ./kde-apps/kdegraphics/kdegraphics-2.0.1.ebuild
@@ -209,7 +209,7 @@
 ./kde-base/kdebase/kdebase-2.0.1.ebuild
 ./kde-base/kdelibs/kdelibs-2.0.1.ebuild
 ./kde-base/kdesupport/kdesupport-2.0.1.ebuild
-./media-gfx/autotrace/autotrace-0.26.ebuild
+#./media-gfx/autotrace/autotrace-0.26.ebuild
 ./media-gfx/aview/aview-1.2-r2.ebuild
 ./media-gfx/blender/blender-2.04.ebuild
 #./media-gfx/blender-static/blender-static-2.04.ebuild
@@ -251,8 +251,8 @@
 ./media-sound/sox/sox-12.17.1.ebuild
 ./media-sound/shorten/shorten-3.2.ebuild
 ./media-sound/xmms/xmms-1.2.3.ebuild
-./media-sound/xmms-aalsa-0.5.4.ebuild
-./media-sound/xmms-arts-0.4.ebuild
+./media-sound/xmms-aalsa/xmms-aalsa-0.5.4.ebuild
+./media-sound/xmms-arts/xmms-arts-0.4.ebuild
 ./media-video/avifile/avifile-0.53.1.ebuild
 ./media-video/bcast-2000/bcast-2000c.ebuild
 ./media-video/mjpeg-tools/mjpeg-tools-1a.ebuild
