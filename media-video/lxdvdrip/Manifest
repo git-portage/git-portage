@@ -1,3 +1,4 @@
+MD5 26f77e70d5b4b0e095b59abc04ce2825 lxdvdrip-1.42.ebuild 832
 MD5 34f1ee9687b0ac4675557ddc5b229a44 lxdvdrip-1.20_pre1.ebuild 836
 MD5 1f2085867aca8430be678e0ba64a8f53 lxdvdrip-1.20_pre1-r1.ebuild 908
 MD5 ba363ccde4c8eae9ee357e83e3d19d62 lxdvdrip-1.42_pre3.ebuild 840
@@ -12,6 +13,7 @@ MD5 c79bf474d5d152eba84500037e5b4085 files/digest-lxdvdrip-1.41_p3 64
 MD5 57482d8cce4aacca938b4e43c345e578 files/digest-lxdvdrip-1.20_pre1-r1 67
 MD5 7acdd334a9016bfaddcad1b1ede3963d files/digest-lxdvdrip-1.42_pre3 67
 MD5 9b28c10d15e06eb087911a837ec3a97c files/lxdvdrip-1.20_pre1-overflow.patch 752
+MD5 0e271bb785f8bc65ef7d1be75c332f6a files/digest-lxdvdrip-1.42 62
 MD5 877c7bda100ae6f083ce5137aae3e5b1 files/digest-lxdvdrip-1.10_pre2 67
 MD5 cd76c64399dac2e89416dd89ccf32dda files/digest-lxdvdrip-1.10_pre5 67
 MD5 57482d8cce4aacca938b4e43c345e578 files/digest-lxdvdrip-1.20_pre1 67
