@@ -1,4 +1,6 @@
 MD5 6422b81bab92d08922a3b6d7ecb0e8d6 ChangeLog 974
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
-MD5 0ca49896ba30f6b72e752de9460e2c8a vsound-0.5.ebuild 1016
+MD5 e83bd4caf07c653f8e0b66b80a11b508 vsound-0.5.ebuild 976
+MD5 a59e86a44e2c3d0530a95fa8f4207f87 vsound-0.6.ebuild 911
 MD5 5ab76944bbc4f62d30389f422f4f1e86 files/digest-vsound-0.5 132
+MD5 cb48ac89663bbbbf521d96dce30a832f files/digest-vsound-0.6 62
