@@ -1,29 +1,41 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/autoconf/Attic/autoconf-2.53a.ebuild,v 1.14 2003/03/15 14:48:28 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/autoconf/Attic/autoconf-2.54-r1.ebuild,v 1.1 2003/03/15 14:48:28 azarah Exp $
 
-OLD_PV=2.13
-OLD_P=${PN}-${OLD_PV}
-S=${WORKDIR}/${P}
-OLD_S=${WORKDIR}/${OLD_P}
+IUSE=""
+
+inherit eutils
+
+OLD_PV="2.13"
+OLD_P="${PN}-${OLD_PV}"
+S="${WORKDIR}/${P}"
+OLD_S="${WORKDIR}/${OLD_P}"
 DESCRIPTION="Used to create autoconfiguration files"
-SRC_URI="ftp://alpha.gnu.org/gnu/${PN}/${P}.tar.bz2
+SRC_URI="ftp://ftp.gnu.org/gnu/${PN}/${P}.tar.bz2
 	ftp://ftp.gnu.org/gnu/${PN}/${OLD_P}.tar.gz"
 HOMEPAGE="http://www.gnu.org/software/autoconf/autoconf.html"
-LICENSE="GPL-2"
-KEYWORDS="x86 ppc sparc alpha mips arm"
 
-DEPEND="~sys-devel/m4-1.4
+LICENSE="GPL-2"
+SLOT="2.5"
+KEYWORDS="x86 ppc sparc alpha hppa mips arm"
+
+DEPEND=">=sys-apps/texinfo-4.3
+	~sys-devel/m4-1.4
 	dev-lang/perl"
 
-SLOT="2.5"
 
 src_unpack() {
 
 	unpack ${A}
+	
 	cd ${OLD_S}
-	patch -p0 < ${FILESDIR}/${OLD_P}-configure-gentoo.diff || die
-	patch -p0 < ${FILESDIR}/${OLD_P}-configure.in-gentoo.diff || die
+	epatch ${FILESDIR}/${OLD_P}-configure-gentoo.diff
+	epatch ${FILESDIR}/${OLD_P}-configure.in-gentoo.diff
+	
+	cd ${S}
+	# Enable both autoconf-2.1 and autoconf-2.5 info pages
+	epatch ${FILESDIR}/${PN}-2.5-infopage-namechange.patch
+	ln -snf ${S}/doc/autoconf.texi ${S}/doc/autoconf25.texi
 }
 
 src_compile() {
@@ -43,6 +55,12 @@ src_compile() {
 	# ************ autoconf-2.13 ************
 	#
 	cd ${OLD_S}
+
+	perl -pi -e 's|\* Autoconf:|\* Autoconf v2.1:|' autoconf.texi
+	cp autoconf.texi autoconf.texi.orig
+	sed -e '/START-INFO-DIR-ENTRY/ i INFO-DIR-SECTION GNU programming tools' \
+		autoconf.texi.orig > autoconf.texi
+	
 	./configure --prefix=/usr \
 		--infodir=/usr/share/info \
 		--mandir=/usr/share/man \
@@ -75,7 +93,7 @@ src_install() {
 	# new in 2.5x
 	dosym ../lib/${PN}/ac-wrapper.pl /usr/bin/autom4te
 
-	mv ${D}/usr/share/info/autoconf.info ${D}/usr/share/info/autoconf-2.5.info
+#	mv ${D}/usr/share/info/autoconf.info ${D}/usr/share/info/autoconf-2.5.info
 
 	docinto ${PV}
 	dodoc COPYING AUTHORS BUGS NEWS README TODO THANKS
