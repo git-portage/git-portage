@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/clanlib/Attic/clanlib-0.7.4.ebuild,v 1.3 2003/10/20 14:38:02 port001 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-games/clanlib/Attic/clanlib-0.7.6.ebuild,v 1.1 2003/11/12 04:45:39 vapier Exp $
 
 inherit flag-o-matic
 replace-flags -O? -O2
@@ -24,6 +24,12 @@ DEPEND=">=media-libs/hermes-1.3.2
 	oggvorbis? ( media-libs/libvorbis )"
 
 S=${WORKDIR}/ClanLib-${PV}
+
+fsrc_unpack() {
+	unpack ${A}
+	cd ${S}
+	epatch ${FILESDIR}/${PV}-gcc3.patch
+}
 
 src_compile() {
 	#clanSound only controls mikmod/vorbis so theres
