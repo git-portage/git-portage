@@ -1,5 +1,7 @@
 MD5 5d4bdd04b472e7db142fc0321038667e ChangeLog 4085
 MD5 ecbb5a02001856289bc050635b8d8394 metadata.xml 522
+MD5 32ef368c48c6a12ef25bee90064402ea phpwebsite-0.9.3_p4-r2.ebuild 1776
 MD5 ca75e49de177c3027396292eccf0328b phpwebsite-0.9.3_p4-r1.ebuild 1636
+MD5 6ddbbfb4f4e1e5c4d8bf717835d3c2d8 files/digest-phpwebsite-0.9.3_p4-r2 239
 MD5 864765a9fc872565105ca1afdb9de3f0 files/postinstall-en.txt 446
 MD5 823ff723bde0deb5142a1753183467fd files/digest-phpwebsite-0.9.3_p4-r1 157
