@@ -1,4 +1,5 @@
 15.09.2000
+	-Updated all packages to use "try"	(drobbins)
 	-New net-www/netscape-plugger		(drobbins)
 	-New net-www/netscape/navigator		(drobbins)
 	-Added navigator/netscape postinst	(drobbins)
