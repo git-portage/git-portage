@@ -1,5 +1,8 @@
 date 20 Feb 2001
 
+upd sys-apps/portage-1.5_pre3 1.5_pre4
+another unmerge fix, portage-maintain now works, tiny API changes
+
 upd sys-apps/reiserfs-utils-3.6.25-r1 to r3
 achim
 This includes the lates version fo reiserfsck (3.x.0d)
