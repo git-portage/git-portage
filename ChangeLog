@@ -1,5 +1,13 @@
 date 01 Mar 2001
 
+upd sys-kernel/linux-sources-2.4.2 to 2.4.2-r1
+drobbins
+Latest (01 March 2001) ReiserFS patches included
+
+upd sys-kernel/linux-2.4.2 to 2.4.2-r1
+drobbins
+Latest (01 March 2001) ReiserFS patches included
+
 upd sys-apps/portage-1.5_pre6-r1 to 1.5_pre7
 drobbins
 A new test version of Portage with a lot of new features, including a
