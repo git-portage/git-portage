@@ -31,6 +31,7 @@
 #./app-emulation/wine/wine-20001002.ebuild
 ./app-misc/gfontview/gfontview-0.4.1-r1.ebuild
 ./app-misc/lhinv/lhinv-1.1-r1.ebuild
+./app-misc/splitvt/splitvt-1.6.5.ebuild
 #./app-office/siag/siag-3.4.5.ebuild
 ./app-shells/ccsh/ccsh-0.0.4-r1.ebuild
 ./app-shells/esh/esh-0.8-r1.ebuild
