@@ -11,7 +11,7 @@ This version fixes segfaults in ld that occured with 2.1.10.0.7
 
 date 20 Feb 2001
 
-new media-gfx/netpbm-9.10
+new media-libs/netpbm-9.10-r2
 pete
 
 new media-libs/tiff-3.5.5-r3
