@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/xblockout/Attic/xblockout-1.1.1.ebuild,v 1.1 2003/09/10 06:36:00 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/xblockout/Attic/xblockout-1.1.2.ebuild,v 1.1 2003/10/06 16:18:52 vapier Exp $
 
 inherit games
 
@@ -9,8 +9,8 @@ HOMEPAGE="http://www710.univ-lyon1.fr/ftp/xbl/xbl.html"
 SRC_URI="ftp://ftp710.univ-lyon1.fr/pub/xbl/xbl-${PV}.tar.gz"
 
 LICENSE="GPL-1"
-KEYWORDS="x86"
 SLOT="0"
+KEYWORDS="x86"
 
 DEPEND="virtual/x11
 	>=sys-apps/sed-4"
