@@ -1,11 +1,15 @@
 25.08.2000
 
+	- Update pam_ldap 61 -> 70		(achim)
+	- Update nss_ldap 110 -> 113		(achim)
+	- Update cocoon 1.7 -> 1.7.4		(achim)
 	- Update xawtv 3.18 -> 3.19		(achim)
 	- Update libsdl 1.1.3 -> 1.1.4		(achim)
 	- Update tcpdump 3.5 -> 3.5.2		(achim)
 	- Update sablot 0.42 -> 0.43		(achim)
 	- Update libpcap 0.5 -> 0.5.2		(achim)
 	- Update ghostscript 6.01 -> 6.23	(achim)
+	  [Needs some more work]
 	- Update bin86 0.15.0 -> 0.15.1		(achim)
 	- Update dsssl-db 1.54 -> 1.56		(achim)
 	- Update gimp-print 3.1.9 -> 4.0a2	(achim)
