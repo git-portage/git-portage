@@ -1,5 +1,9 @@
 date 25 Mar 2001
 
+new app-text/gentoo-guide-xml-dtd-1.0
+achim
+A DTD for Gentoo-Guide style XML files
+
 new app-doc/gentoo-doc-1.0_rc4
 achim
 I merged the install doc with petes Gentoo-HOWTO and my manpages.
