@@ -3,8 +3,8 @@ MD5 dd1515113a08d73a5d4e80b5e921ce38 poedit-1.2.2.ebuild 737
 MD5 77b0f9be8c97ce974cca7558266121c7 poedit-1.1.8.ebuild 861
 MD5 77b472122442a710bc7ddf3b0341169d poedit-1.2.1.ebuild 873
 MD5 c4586cce6fe0dba3cd10f69fbd0515ca metadata.xml 221
-MD5 ea245776bd10a1680e5ba00e07961ef6 ChangeLog 2465
-MD5 0b03ab62e27f5427575b8a9a8047b607 poedit-1.2.5.ebuild 795
+MD5 a4d1c6ab9b814af430a22dda6d0b6d22 ChangeLog 2465
+MD5 41ccf31c5a0a9e33c97c707ed45f73e2 poedit-1.2.5.ebuild 896
 MD5 b3d482db4c3c5e91531023382d99bd3c files/digest-poedit-1.2.3 65
 MD5 730a6ba49d925ec4f3d7d22e9ef472cb files/poedit-1.2.1-gentoo_make_paths.patch 3312
 MD5 81873b36bb8d3779c1a18b8d1873101e files/digest-poedit-1.1.8 65
