@@ -1,4 +1,6 @@
 MD5 ccfb2b9a3133266cf97bd3c477f1ae89 commons-beanutils-1.6.1.ebuild 1229
+MD5 067dd0b51917125fd319d9275976fd85 commons-beanutils-1.6.1-r1.ebuild 1710
 MD5 5f7d9b65c637d8780fe748565216d7d5 ChangeLog 1653
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
+MD5 a65fcfbd83466bf025820b316482b38a files/digest-commons-beanutils-1.6.1-r1 79
 MD5 bb6e28cac73d3d0b198cc813fcc57742 files/digest-commons-beanutils-1.6.1 153
