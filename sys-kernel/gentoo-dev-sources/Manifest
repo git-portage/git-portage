@@ -39,4 +39,3 @@ MD5 66e72150c11296bb20bb4e02d1270232 files/digest-gentoo-dev-sources-2.6.7-r12 2
 MD5 399fb0ed7c2b6ff9203eaaf209048cd8 files/digest-gentoo-dev-sources-2.6.7-r13 221
 MD5 91a2a65a9e5b571fa1b0ef88dbe5cfbe files/digest-gentoo-dev-sources-2.6.7-r14 221
 MD5 980949de52189c7d9c1d791b7f5cc27e files/2.6-do_munmap.patch 743
-MD5 31ec7b4310dd7be3e34aab0204f9b1e8 files/gentoo-dev-sources-2.6.5.CAN-2004-0109.patch 2072
