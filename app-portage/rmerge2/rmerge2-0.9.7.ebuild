@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/rmerge2/Attic/rmerge2-0.9.7.ebuild,v 1.8 2003/06/29 15:24:07 aliz Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/rmerge2/Attic/rmerge2-0.9.7.ebuild,v 1.1 2003/08/15 13:10:41 lanius Exp $
 
 DESCRIPTION="robust version of 'emerge --emptytree' which supports resumption/forcing of builds"
 HOMEPAGE="http://www.gentoo.org/"
