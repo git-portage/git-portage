@@ -1,0 +1,4 @@
+MD5 7736e83c68b551c9d41b3e074b06061d srvx-1.3_p81.ebuild 1607
+MD5 0d582b44bab205a00d62c782262f4ae9 files/srvx.conf.d 258
+MD5 de211fe696c2a2dbecfb4da5a78d1868 files/srvx.init.d 463
+MD5 5f7549515b6dc034cf12895a20d7214f files/digest-srvx-1.3_p81 65
