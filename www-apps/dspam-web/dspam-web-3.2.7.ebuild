@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/dspam-web/Attic/dspam-web-3.3.11.ebuild,v 1.2 2005/01/18 02:58:25 st_lim Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/dspam-web/Attic/dspam-web-3.2.7.ebuild,v 1.1 2005/03/11 04:26:41 st_lim Exp $
 
 inherit webapp eutils
 
@@ -20,7 +20,7 @@ DEPEND=">=mail-filter/dspam-3.2_rc3
 	dev-perl/GD-Graph3d
 	dev-perl/GDGraph
 	dev-perl/GDTextUtil"
-KEYWORDS="-*"
+KEYWORDS="~x86 ~ppc"
 S=${WORKDIR}/${MY_P}
 HOMEDIR=/etc/mail/dspam
 
@@ -28,22 +28,26 @@ src_compile() {
 	local myconf
 
 	# these are the default settings
-	myconf="${myconf} --enable-daemon"
-	#myconf="${myconf} --enable-nodalcore"
-	myconf="${myconf} --enable-homedir"
+	myconf="${myconf} --with-signature-life=14"
+	myconf="${myconf} --enable-broken-return-codes"
+	myconf="${myconf} --enable-experimental"
 	myconf="${myconf} --enable-long-username"
 	myconf="${myconf} --enable-robinson"
 	#myconf="${myconf} --enable-chi-square"
-	#myconf="${myconf} --enable-robinson-pvalues"
-	use large-domain && myconf="${myconf} --enable-large-scale" ||\
-		myconf="${myconf} --enable-domain-scale"
+	myconf="${myconf} --enable-robinson-pvalues"
+	#myconf="${myconf} --enable-broken-mta"
+	myconf="${myconf} --enable-large-scale"
+	#myconf="${myconf} --enable-domain-scale"
 
+	# ${HOMEDIR}/data is a symlink to ${DATADIR}
 	myconf="${myconf} --with-dspam-mode=4755"
 	myconf="${myconf} --with-dspam-owner=dspam"
 	myconf="${myconf} --with-dspam-group=dspam"
-	myconf="${myconf} --with-dspam-home=${HOMEDIR} --sysconfdir=${HOMEDIR}"
-	myconf="${myconf} --with-logdir=${LOGDIR}"
+	myconf="${myconf} --enable-homedir --with-dspam-home=${HOMEDIR} --sysconfdir=${HOMEDIR}"
+	myconf="${myconf} --with-logdir=/var/log/dspam"
 
+	# enables support for debugging (touch /etc/dspam/.debug to turn on)
+	# optional: even MORE debugging output, use with extreme caution!
 	use debug && myconf="${myconf} --enable-debug --enable-verbose-debug"
 
 	# select storage driver
