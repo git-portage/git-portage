@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/qmail/Attic/qmail-1.03-r14.ebuild,v 1.4 2004/01/20 09:35:05 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/qmail/Attic/qmail-1.03-r15.ebuild,v 1.1 2004/01/20 09:35:05 robbat2 Exp $
 
 inherit eutils fixheadtails
 
@@ -9,7 +9,7 @@ DESCRIPTION="A modern replacement for sendmail which uses maildirs and includes 
 HOMEPAGE="http://www.qmail.org/
 	http://members.elysium.pl/brush/qmail-smtpd-auth/
 	http://www.jedi.claranet.fr/qmail-tuning.html"
-SRC_URI="mirror://qmail/qmail-1.03.tar.gz
+SRC_URI="mirror://qmail/${P}.tar.gz
 	mirror://qmail/qmailqueue-patch
 	http://qmail.null.dk/big-todo.103.patch
 	http://www.jedi.claranet.fr/qmail-link-sync.patch
@@ -35,7 +35,6 @@ SRC_URI="mirror://qmail/qmail-1.03.tar.gz
 	"
 # broken stuffs
 #http://www.qcc.ca/~charlesc/software/misc/nullenvsender-recipcount.patch
-#http://www.dataloss.nl/software/patches/qmail-pop3d-stat.patch 
 
 SLOT="0"
 LICENSE="as-is"
@@ -59,6 +58,11 @@ PROVIDE="virtual/mta
 
 S=${WORKDIR}/${P}
 
+#MY_PVR=${PVR}
+MY_PVR=${PV}-r14
+
+TCPRULES_DIR=/etc/tcprules.d
+
 src_unpack() {
 	# unpack the initial stuff
 	unpack ${P}.tar.gz
@@ -71,17 +75,17 @@ src_unpack() {
 	epatch ${DISTDIR}/qregex-starttls-2way-auth.patch
 	# bug #30570
 	EPATCH_SINGLE_MSG="Fixing a memory leak in Qregex support" \
-	epatch ${FILESDIR}/${PVR}/qmail-1.03-qregex-memleak-fix.patch
+	epatch ${FILESDIR}/${MY_PVR}/qmail-1.03-qregex-memleak-fix.patch
 
 	# Fixes a problem when utilizing "morercpthosts"
-	epatch ${FILESDIR}/${PVR}/smtp-auth-close3.patch
+	epatch ${FILESDIR}/${MY_PVR}/smtp-auth-close3.patch
 
 	# patch so an alternate queue processor can be used
 	# i.e. - qmail-scanner
 	EPATCH_SINGLE_MSG="Adding QMAILQUEUE support" \
 	epatch ${DISTDIR}/qmailqueue-patch
 	EPATCH_SINGLE_MSG="Adding QMAILQUEUE info to documentation" \
-	epatch ${FILESDIR}/${PVR}/qmail-qmailqueue-docs.patch
+	epatch ${FILESDIR}/${MY_PVR}/qmail-qmailqueue-docs.patch
 
 	# a patch for faster queue processing
 	EPATCH_SINGLE_MSG="Patching for large queues" \
@@ -125,7 +129,7 @@ src_unpack() {
 	epatch ${DISTDIR}/qmail-maildir++.patch
 	# fix a typo in the patch
 	# upstream has changed the patch and this isn't needed anymore
-	#epatch ${FILESDIR}/${PVR}/maildir-quota-fix.patch
+	#epatch ${FILESDIR}/${MY_PVR}/maildir-quota-fix.patch
 
 	# Apply patch for local timestamps.
 	# This will make the emails headers be written in localtime rather than GMT
@@ -140,12 +144,12 @@ src_unpack() {
 	# This helps your server to be able to reject excessively large messages
 	# "up front", rather than waiting the whole message to arrive and then
 	# bouncing it because it exceeded your databytes setting
-	epatch ${FILESDIR}/${PVR}/qmail-smtpd-esmtp-size-gentoo.patch
+	epatch ${FILESDIR}/${MY_PVR}/qmail-smtpd-esmtp-size-gentoo.patch
 
 	#TODO TEST
 	# Reject some bad relaying attempts
 	# gentoo bug #18064
-	epatch ${FILESDIR}/${PVR}/qmail-smtpd-relay-reject.gentoo.patch
+	epatch ${FILESDIR}/${MY_PVR}/qmail-smtpd-relay-reject.gentoo.patch
 
 	#TODO TEST HEAVILY AS THIS PATCH WAS CUSTOM FIXED
 	# provide badrcptto support
@@ -156,7 +160,7 @@ src_unpack() {
 	# bug #31426
 	# original submission by shadow@ines.ro, cleaned up by robbat2@gentoo.org
 	# only allows AUTH after STARTTLS, if compiled TLS && TLS_BEFORE_AUTH defines
-	epatch ${FILESDIR}/${PVR}/auth-after-tls-only.patch
+	epatch ${FILESDIR}/${MY_PVR}/auth-after-tls-only.patch
 
 	EPATCH_SINGLE_MSG="Enable stderr logging from checkpassword programs" \
 	epatch ${DISTDIR}/qmail-popupnofd2close.patch
@@ -165,7 +169,7 @@ src_unpack() {
 	EPATCH_SINGLE_MSG="Add support for CAPA in POP3d" \
 	epatch ${DISTDIR}/08-capa.diff
 	EPATCH_SINGLE_MSG="Fixing output bug in CAPA-enabled POP3d" \
-	epatch ${FILESDIR}/${PVR}/qmail-pop3d-capa-outputfix.patch
+	epatch ${FILESDIR}/${MY_PVR}/qmail-pop3d-capa-outputfix.patch
 	EPATCH_SINGLE_MSG="Fixing netscape progress bar bug with POP3d" \
 	epatch ${DISTDIR}/netscape-progress.patch
 
@@ -173,21 +177,24 @@ src_unpack() {
 	epatch ${DISTDIR}/sendmail-ignore-N.patch
 
 	# rediff of original at http://www.qmail.org/accept-5xx.patch
-	epatch ${FILESDIR}/${PVR}/qmail-1.03-accept-5xx.tls.patch
+	epatch ${FILESDIR}/${MY_PVR}/qmail-1.03-accept-5xx.tls.patch
 
 	# rediffed from original at http://www.qcc.ca/~charlesc/software/misc/nullenvsender-recipcount.patch
 	# because of TLS
 	EPATCH_SINGLE_MSG="Refuse messages from the null envelope sender if they have more than one envelope recipient" \
-	epatch ${FILESDIR}/${PVR}/nullenvsender-recipcount.tls.patch
+	epatch ${FILESDIR}/${MY_PVR}/nullenvsender-recipcount.tls.patch
 
 	# rediffed from original at http://www.dataloss.nl/software/patches/qmail-pop3d-stat.patch
 	# because of TLS
 	EPATCH_SINGLE_MSG="qmail-pop3d reports erroneous figures on STAT after a DELE" \
-	epatch ${FILESDIR}/${PVR}/qmail-pop3d-stat.tls.patch
+	epatch ${FILESDIR}/${MY_PVR}/qmail-pop3d-stat.tls.patch
 
 	EPATCH_SINGLE_MSG="Branding qmail with Gentoo identifier 'Gentoo Linux ${PF}'" \
-	epatch ${FILESDIR}/${PVR}/qmail-gentoo-branding.patch
+	epatch ${FILESDIR}/${MY_PVR}/qmail-gentoo-branding.patch
 	sed -e "s/__PF__/${PF}/" -i ${S}/qmail-smtpd.c
+
+	EPATCH_SINGLE_MSG="qmail-pop3d fix for top output so Evolution doesn't barf" \
+	epatch ${FILESDIR}/${PVR}/qmail-pop3d-top-outputfix.patch
 
 	echo -n "${CC} ${CFLAGS}" >${S}/conf-cc
 	if use ssl; then
@@ -333,9 +340,10 @@ src_install() {
 		newins ${FILESDIR}/run-qmail${i}log run
 	done
 
-	insinto /etc
+	dodir ${TCPRULES_DIR}
+	insinto ${TCPRULES_DIR}
 	for i in smtp qmtp qmqp pop3; do
-		newins ${FILESDIR}/tcp.${i}.sample tcp.${i}
+		newins ${FILESDIR}/tcp.${i}.sample tcp.qmail-${i}
 	done
 
 	einfo "Installing the qmail startup file ..."
@@ -387,7 +395,11 @@ buildtcprules() {
 	for i in smtp qmtp qmqp pop3; do
 		# please note that we don't check if it exists
 		# as we want it to make the cdb files anyway!
-		cat ${ROOT}etc/tcp.${i} 2>/dev/null | tcprules ${ROOT}etc/tcp.${i}.cdb ${ROOT}etc/.tcp.${i}.tmp
+		f=tcp.qmail-${i}
+		src=${ROOT}${TCPRULES_DIR}/${f}
+		cdb=${ROOT}${TCPRULES_DIR}/${f}.cdb
+		tmp=${ROOT}${TCPRULES_DIR}/.${f}.tmp
+		cat ${src} 2>/dev/null | tcprules ${cdb} ${tmp}
 	done
 }
 
@@ -424,6 +436,28 @@ pkg_postinst() {
 	einfo "source /etc/profile"
 }
 
+pkg_preinst() {
+	mkdir -p ${TCPRULES_DIR}
+	for proto in smtp qmtp qmqp pop3; do
+		for ext in '' .cdb; do
+			old="/etc/tcp.${proto}${ext}"
+			new="${TCPRULES_DIR}/tcp.qmail-${proto}${ext}"
+			fail=0
+			if [ -f "$old" -a ! -f "$new"]; then
+				einfo "Moving $old to $new"
+				cp $old $new || fail=1
+			else
+				fail=1
+			fi
+			if [ "${fail}" = "1" ]; then
+				eerror "Error moving $old to $new, be sure to check the"
+				eerror "configuration! You may have already moved the files,"
+				eerror "in which case you can delete $old"
+			fi
+		done
+	done
+}
+
 pkg_config() {
 
 	# avoid some weird locale problems
@@ -444,7 +478,7 @@ pkg_config() {
 	for ip in $LOCALIPS; do
 		myline="${ip}${TCPSTRING}"
 		for proto in smtp qmtp qmqp; do
-			f="${ROOT}etc/tcp.${proto}"
+			f="${ROOT}${TCPRULES_DIR}/tcp.qmail-${proto}"
 			egrep -q "${myline}" ${f} || echo "${myline}" >>${f}
 		done
 	done

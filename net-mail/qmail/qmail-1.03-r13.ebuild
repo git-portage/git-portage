@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/qmail/Attic/qmail-1.03-r13.ebuild,v 1.4 2003/11/29 07:14:28 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/qmail/Attic/qmail-1.03-r13.ebuild,v 1.5 2004/01/20 09:35:05 robbat2 Exp $
 
 inherit eutils fixheadtails
 
@@ -113,7 +113,8 @@ src_unpack() {
 	# maildir++ quota system that is used by vpopmail and courier-imap
 	epatch ${DISTDIR}/qmail-maildir++.patch
 	# fix a typo in the patch
-	epatch ${FILESDIR}/${PV}-${PR}/maildir-quota-fix.patch
+	# upstream has changed the patch and this isn't needed anymore
+	#epatch ${FILESDIR}/${PV}-${PR}/maildir-quota-fix.patch
 
 	# Apply patch for local timestamps.
 	# This will make the emails headers be written in localtime rather than GMT
@@ -282,15 +283,16 @@ src_install() {
 		insinto /var/qmail/supervise/qmail-${i}/log
 		newins ${FILESDIR}/${PV}-${PR}/run-qmail${i}log run
 		insinto /etc
+	done
+
+	for i in smtp qmtp qmqp pop3; do
 		if [ -f ${FILESDIR}/tcp.${i}.sample ]; then
 			newins ${FILESDIR}/tcp.${i}.sample /etc/tcp.${i}
 		fi
-		for i in smtp qmtp qmqp pop3; do
-			if [ -f ${D}/etc/tcp.${i} ]; then
-				tcprules ${D}/etc/tcp.${i}.cdb ${D}/etc/.tcp.${i}.tmp \
-					< ${D}/etc/tcp.${i}
-			fi
-		done
+		if [ -f ${D}/etc/tcp.${i} ]; then
+			tcprules ${D}/etc/tcp.${i}.cdb ${D}/etc/.tcp.${i}.tmp \
+			< ${D}/etc/tcp.${i}
+		fi
 	done
 
 	einfo "Installing the qmail startup file ..."
