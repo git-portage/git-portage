@@ -2,9 +2,8 @@ MD5 97e54657db71949d29dc2f80f6ce2f37 chkrootkit-0.42b.ebuild 902
 MD5 16d965874a6b20f2b2319d277a6b60c1 chkrootkit-0.41-r1.ebuild 842
 MD5 c3f37acaf865b07bbc5f1914bb323adb chkrootkit-0.39a.ebuild 751
 MD5 b11737ecead57313edc4fcd89b9b67f9 chkrootkit-0.37.ebuild 732
-MD5 e86f4ef1dec2eb60287f36e0ad974077 chkrootkit-0.43.ebuild 905
-MD5 a07a313c44bdab9063bf6bfcd09a8c35 ChangeLog 2724
-MD5 97e54657db71949d29dc2f80f6ce2f37 chkrootkit-0.42.ebuild 902
+MD5 f8cb219dec8f208b248642bb63514fd8 chkrootkit-0.43.ebuild 904
+MD5 3983160131c353a80bcf2b5c2dfdba0f ChangeLog 2863
 MD5 eb3187ff68ea9e3a781396eef5c19861 files/digest-chkrootkit-0.39a 67
 MD5 be7c7597652c846de193642182e3d69e files/digest-chkrootkit-0.42b 67
 MD5 08a62e6267f83410bc08ecb9cb262b02 files/digest-chkrootkit-0.41-r1 66
