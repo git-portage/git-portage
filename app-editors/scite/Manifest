@@ -1,17 +1,9 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 4eb1abff335478b86f5c65997e0148f2 metadata.xml 222
 MD5 9f1d42a87c768bd7df461c3ff1ce68cf ChangeLog 5942
+MD5 4eb1abff335478b86f5c65997e0148f2 metadata.xml 222
 MD5 52fd7b75b63648a39662fb442b86837d scite-1.6.2.ebuild 1900
+MD5 4830981292e8ebbf3f7b55977f674662 scite-1.6.3.ebuild 1916
 MD5 46e756e5ecd7701d47299d6e6bb37018 scite-1.6.1.ebuild 1895
-MD5 2561568c62ec3edc2b46be6638c80427 files/scite.desktop 169
-MD5 c022b3ac9b612f257e304f7f90eb7f98 files/digest-scite-1.6.1 58
 MD5 42ceb479aebfc9cd9818f0d6a0e39020 files/digest-scite-1.6.2 58
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFCNZUmKRy60XGEcJIRArZHAJ4+Nfhixdse8MgKfaCeU74JgCX81gCdETIt
-EZeFCHmuU3225sGSRhyOm5I=
-=EAO3
------END PGP SIGNATURE-----
+MD5 e7e5f87db815dce89e538345b0894d08 files/digest-scite-1.6.3 58
+MD5 c022b3ac9b612f257e304f7f90eb7f98 files/digest-scite-1.6.1 58
+MD5 2561568c62ec3edc2b46be6638c80427 files/scite.desktop 169
