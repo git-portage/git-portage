@@ -1,15 +1,17 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/postfix/Attic/postfix-2.0.2.ebuild,v 1.5 2003/02/13 14:36:40 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/postfix/Attic/postfix-2.0.8.ebuild,v 1.1 2003/04/16 15:52:14 lostlogic Exp $
 
-TLS_P="pfixtls-0.8.13-2.0.1-0.9.7"
-IPV6_P="tls+ipv6-1.12-pf-2.0.2"
-IUSE="ssl mysql sasl ldap ipv6"
+inherit eutils
+
+TLS_P="pfixtls-0.8.13-2.0.6-0.9.7a"
+IPV6_P="tls+ipv6-1.13-pf-2.0.7"
+IUSE="ssl mysql sasl ldap ipv6 maildir mbox"
 DESCRIPTION="A fast and secure drop-in replacement for sendmail"
 HOMEPAGE="http://www.postfix.org"
 SRC_URI="ftp://ftp.pca.dfn.de/pub/tools/net/postfix/official/${P}.tar.gz
 	ssl? ( ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/${TLS_P}.tar.gz )
-	ipv6? ( ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.12/${IPV6_P}.patch.gz )"
+	ipv6? ( ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.13/${IPV6_P}.patch.gz )"
 LICENSE="IPL-1"
 SLOT="0"
 KEYWORDS="~x86 ~sparc ~ppc"
@@ -25,8 +27,6 @@ RDEPEND="${DEPEND}
 	>=net-mail/mailbase-0.00
 	!virtual/mta"
 
-inherit eutils
-
 is_postfix_installed() {
 	if [ -d /etc/postfix ] ; then
 		return 1
@@ -39,12 +39,17 @@ pkg_setup() {
 	if ! grep -q ^postdrop: /etc/group ; then
 		groupadd postdrop || die "problem adding group postdrop"
 	fi
+
+	if ! grep -q ^mail:.*postfix /etc/group ; then
+		usermod -G mail postfix || die "problem adding user postfix to group mail"
+	fi
 }
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
 	if [ "`use ssl`" ] && [ "`use ipv6`" ]; then
+		patch ${WORKDIR}/${IPV6_P}.patch < ${FILESDIR}/${P}_patch.patch || die
 		epatch ${WORKDIR}/${IPV6_P}.patch || die
 		CCARGS="${CCARGS} -DHAS_SSL"
 		AUXLIBS="${AUXLIBS} -lssl -lcrypto"
@@ -54,7 +59,7 @@ src_unpack() {
 		AUXLIBS="${AUXLIBS} -lssl -lcrypto"
 	fi
 	cd ${S}/conf
-	mv main.cf main.cf.orig
+	cp main.cf main.cf.orig
 	sed -e "s:/usr/libexec/postfix:/usr/lib/postfix:" \
 		< main.cf.orig > main.cf
 
@@ -77,7 +82,7 @@ src_unpack() {
 
 	if [ "`use mysql`" ] ; then
 		CCARGS="${CCARGS} -DHAS_MYSQL -I/usr/include/mysql"
-		AUXLIBS="${AUXLIBS} -lmysqlclient -lm"
+		AUXLIBS="${AUXLIBS} -lmysqlclient -lm -lz"
 	fi
 
 	if [ "`use ldap`" ] ; then
@@ -95,7 +100,7 @@ src_unpack() {
 	DEBUG=""
 
 	cd ${S}
-	make makefiles CC="cc" OPT="${CFLAGS}" DEBUG="${DEBUG}" \
+	make makefiles CC="${CC}" OPT="${CFLAGS}" DEBUG="${DEBUG}" \
 		CCARGS="${CCARGS}" AUXLIBS="${AUXLIBS}" \
 		|| die "creating makefiles failed"
 }
@@ -150,6 +155,7 @@ src_install () {
 	sed <main.cf.orig >main.cf \
 		-e "s|/usr/share/doc/POSTFIX|/usr/share/doc/${PF}|"
 	chmod 644 main.cf
+	rm main.cf.orig
 	fperms 600 /etc/postfix/saslpass
 
 	exeinto /etc/init.d ; newexe ${FILESDIR}/postfix.rc6 postfix
@@ -177,7 +183,7 @@ src_install () {
 			< main.cf.prembox > main.cf
 		rm main.cf.prembox
 	fi
-	cd ${S}
+	rm main.cf~
 }
 
 pkg_postinst() {
