@@ -1,16 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 6ec118f9267b97c65e83655506041778 log4j-1.2.8-r1.ebuild 662
 MD5 68e66c3590abec59219479bd2fddd44d log4j-1.2.8.ebuild 660
-MD5 c3a3b52c96ad40a7a5f3a41eb8aff59b ChangeLog 1948
+MD5 c8eed6c5abe78ea5d1a601bd99e7d759 log4j-1.2.8-r2.ebuild 1404
+MD5 9eb12991fadbc0e884b1771f6b76f1cd ChangeLog 2126
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
 MD5 276671ae9ccf96d2b40482786f50071d files/digest-log4j-1.2.8-r1 72
+MD5 276671ae9ccf96d2b40482786f50071d files/digest-log4j-1.2.8-r2 72
 MD5 276671ae9ccf96d2b40482786f50071d files/digest-log4j-1.2.8 72
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBSq5y/rLF9B432nYRAsblAKCBK3Vy+37LQ9u+p8Ecp56XBlCisgCfePsH
-lvqSrIJxQiNIP5+XvogwYDI=
-=S/aR
------END PGP SIGNATURE-----
