@@ -1,4 +1,6 @@
 03.11.2000
+	-New sys-apps/iproute2-2.2.4		(drobbins)
+	-New sys-apps/iptables-1.1.2		(drobbins)
 	-Update HTML-Tagset 3.02 -> 3.03	(jerry)
 	-Update navigator 4.75 -> 4.76		(jerry)
 	-Update netscape 4.75 -> 4.76		(jerry)
