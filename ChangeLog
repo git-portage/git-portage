@@ -1,5 +1,13 @@
 date 22 Nov 2000
 
+upd sys-kernel/linux-sources-2.4.0_rc10-r1 to 2.4.0_rc10-r2
+drobbins
+Added LVM 0.9 support, fixed some packaging problems
+
+upd sys-kernel/linux-sources-2.4.0_rc10-r1 to 2.4.0_rc10-r2
+drobbins
+Added LVM 0.9 support, fixed some packaging problems
+
 upd sys-kernel/linux-sources-2.4.0_rc10 to 2.4.0_rc10-r1
 drobbins
 Added a little patch for the nvidia drivers that are now included with
