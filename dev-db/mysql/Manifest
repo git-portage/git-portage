@@ -1,4 +1,4 @@
-MD5 8a3779de09aa028ec8e304a26f9cef6f ChangeLog 26465
+MD5 b53a8caa0ece4c3499abe1f543c43af6 ChangeLog 26463
 MD5 a5dda17df0286cd82cae42d117784903 metadata.xml 163
 MD5 0647f8dfca3acb81c9e72b96a6e51b8d mysql-3.23.52-r1.ebuild 5997
 MD5 74cd3a8b999012824860f252b56d854b mysql-3.23.56.ebuild 6682
@@ -7,7 +7,7 @@ MD5 8c5a67b5a29d25a05c3d980e22efcb9e mysql-3.23.57.ebuild 6685
 MD5 669bb1e03acc651e30716ad7b36f34d2 mysql-3.23.58-r1.ebuild 6756
 MD5 33a777e1c66e64edf193c3a695e0afa8 mysql-3.23.58.ebuild 6637
 MD5 63f29c10c87174368c82f43242a17a88 mysql-4.0.22-r1.ebuild 8996
-MD5 e9f0f050309e54b266dd4cac4f80f0cd mysql-4.0.22-r2.ebuild 9334
+MD5 1f9ed30d37c44ccbb4d96ecd083d02b7 mysql-4.0.22-r2.ebuild 9332
 MD5 4b0f4b83c25272f6a56022e50fc08ae6 mysql-4.0.22.ebuild 8485
 MD5 48ec4f29be41f74555ef483e67425a47 mysql-4.0.23-r1.ebuild 8887
 MD5 ced4983a7f44cc8695388409ef076eaf mysql-4.0.23-r2.ebuild 9135
