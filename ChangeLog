@@ -1,5 +1,10 @@
 date 21 June 2001
 
+new x11-wm/flwm-1.00
+flwm is a wm based on the fast light toolkit.  Its got neat title bars that are
+on the left side instead of the top.
+tadpol
+
 new media-gfx/transfig-3.2.3d
 transfig package. Contains fig2dev which gets used by lots of old school latex
 users.
