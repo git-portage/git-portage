@@ -1,5 +1,9 @@
 date 27 Apr 2001
 
+upd dev-util/strace-4.2-r2 to 4.3
+drobbins
+A new strace that even works :)
+
 upd sys-apps/reiserfs-utils-3.6.25-r4 to 3.6.25-r5
 drobbins
 a new version of reiserfsprogs (3.x.0j) with a nicer, newer reiserfsck
