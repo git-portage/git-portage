@@ -4,9 +4,9 @@ MD5 daf5c4924c0a0ccc6e55f7588b1b4d52 glibc-2.3.3.20040420-r2.ebuild 21765
 MD5 af6f1491a70a6ee80e8d867d8ee0f98f glibc-2.3.4.20040619-r2.ebuild 20997
 MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
 MD5 ac8cbd194b0e622f368f12f876f732a7 glibc-2.3.4.20040808-r1.ebuild 23089
-MD5 315287a8b43c0bdce7b51bf92ef33d08 ChangeLog 59174
+MD5 3419b759a4f1870619e56c44ce1b3509 ChangeLog 59754
 MD5 a5f6f51d7ac26314a1b29e3231b88abe glibc-2.3.4.20041021.ebuild 26793
-MD5 55885312611ffbc2c9632137e5c0607f glibc-2.3.4.20041102.ebuild 26793
+MD5 a960e55a7f79cfc7a14d7aafecab7388 glibc-2.3.4.20041102.ebuild 26533
 MD5 9cc1e6b6f749dba7c8759bd07266f7d9 files/digest-glibc-2.2.5-r9 143
 MD5 e4393f4721a207750581d6265d5f7f40 files/fix-sysctl_h.patch 376
 MD5 52cfc7627fc62dfb26d8d163aac361f6 files/glibc-2.2.2-test-lfs-timeout.patch 320
@@ -127,3 +127,6 @@ MD5 973e31ce24c9622234c4293b367de6b3 files/2.3.4/glibc-2.3.4-fedora-branch-no-li
 MD5 ad71dc5c3f84f026c6e28865b2e90fbb files/2.3.4/glibc-2.3.4-fedora-branch-no-force-nontls.patch 2337
 MD5 9db90105eb74d75834d25a599cba97ea files/2.3.4/glibc-2.3.3-mdns-resolver2.diff 12272
 MD5 edcaf42f72d84a2cbbd911bfbcd4161a files/2.3.4/host.conf 1300
+MD5 076484ade8a834efb73190b687196392 files/2.3.4/glibc-2.3.4-mdns-resolver-20041102.diff 12809
+MD5 d902a9d990ee2970dd55dd805f352fa7 files/2.3.4/glibc-2.3.4-features-header-fix.patch 449
+MD5 1974267b1382fb38be7495b12c847f70 files/2.3.4/glibc-2.3.4-fedora-branch-nomalloccheck.patch 372
