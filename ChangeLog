@@ -1,3 +1,8 @@
+date 06 August 2001
+add app-misc/joy2key-1.6
+joy2key is used to translate joystick events to keyboard events
+ryan
+
 date 05 August 2001
 add app-cdr/cdrtools-1.10
 A new release of cdrecord and tools, now called cdrtools
