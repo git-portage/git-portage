@@ -40,10 +40,10 @@ MD5 f5434deb20ae4780af70b3c4fb352902 gentoo-dev-sources-2.6.7-r13.ebuild 1397
 SHA1 660d4acf93de1ee9e3ff0cbff49f524977c6974a gentoo-dev-sources-2.6.7-r13.ebuild 1397
 MD5 8ca3376d406c3d4d4aa05fcea2ded360 gentoo-dev-sources-2.6.5.ebuild 973
 SHA1 8d0079a9de1cee2df0d005c8daf237a823fa305b gentoo-dev-sources-2.6.5.ebuild 973
-MD5 0c18804c41e7e5f240090acd9a3abb62 ChangeLog 21368
-SHA1 48cd56d079e4ca128f05663501ff357933b04083 ChangeLog 21368
-MD5 2d069ee8adbfc07e98295f135692680e gentoo-dev-sources-2.6.8-r8.ebuild 1468
-SHA1 8594dfea97b7e1f9b626db95a3e78ca5da6da94a gentoo-dev-sources-2.6.8-r8.ebuild 1468
+MD5 c5d3e6e0488c0e5647aaadedfb024c42 ChangeLog 21571
+SHA1 7ff382b193c082979b17872c6fb796581e77f988 ChangeLog 21571
+MD5 e400087202b84cfc7c6462dc9e22217c gentoo-dev-sources-2.6.8-r8.ebuild 1593
+SHA1 eba6501b44de7541a77365c4d0371e5005d58e18 gentoo-dev-sources-2.6.8-r8.ebuild 1593
 MD5 104e8f0f54744dcd97f211d99cffd686 gentoo-dev-sources-2.6.8-r3.ebuild 1405
 SHA1 fcb006d281adc91f321027aa27979ba00cc6fa70 gentoo-dev-sources-2.6.8-r3.ebuild 1405
 MD5 1b8c89170c8fd1603b5f09adfa0ed5e9 metadata.xml 549
