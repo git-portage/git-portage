@@ -1,0 +1,7 @@
+MD5 f1249c317507f4edb7f155f18a63d215 hsqldb-1.7.2.4.ebuild 2461
+MD5 55539b6c1dcce862a0e4bb01947fe173 ChangeLog 395
+MD5 123cf9440c1d4ac78f2caba1624765f9 metadata.xml 158
+MD5 2298ddc531a6368d3a5c0f13148f9fe2 files/server.properties 153
+MD5 eb7b48e9b818783d80ec3b27816f52d4 files/digest-hsqldb-1.7.2.4 64
+MD5 62f03cb4cc0ac93b7e5eb66164e777cf files/hsqldb 477
+MD5 392821346cd206b7b3060d45d2c6dd0f files/sqltool.rc 339
