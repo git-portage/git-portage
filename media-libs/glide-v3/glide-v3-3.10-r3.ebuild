@@ -1,7 +1,10 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author: Travis Tilley <lordviram@nesit.org>
-# $Header: /var/cvsroot/gentoo-x86/media-libs/glide-v3/Attic/glide-v3-3.10-r2.ebuild,v 1.2 2002/04/15 10:23:58 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/glide-v3/Attic/glide-v3-3.10-r3.ebuild,v 1.1 2002/04/25 18:58:43 azarah Exp $
+
+# NOTE:  Do NOT build this with optimizations, as it will make this package
+#        unstable!!!!
 
 S=${WORKDIR}/${PN/-v3/3x}
 DESCRIPTION="Hardware support for the voodoo3, voodoo4 and voodoo5"
@@ -33,11 +36,6 @@ src_unpack() {
 	cd ${S}/h3/glide3/src ; ln -fs gglide.c.dri gglide.c
 	ln -fs gsst.c.dri gsst.c ; ln -fs glfb.c.dri glfb.c
 	
-	cd ${WORKDIR}/swlibs/include/make
-	cp makefile.autoconf.bottom makefile.autoconf.bottom.orig
-	sed -e "s:-O6 -m486:${CFLAGS}:" makefile.autoconf.bottom.orig \
-		> makefile.autoconf.bottom
-	
 	cd ${S}
 	libtoolize -f && aclocal && automake && autoconf
 }
@@ -59,3 +57,4 @@ src_install() {
 	dodir /usr/X11R6/lib
 	dosym /usr/lib/libglide3.so.${PV}.0 /usr/X11R6/lib/libglide3.so
 }
+
