@@ -18,6 +18,7 @@
 ./app-arch/zip/zip-2.3.ebuild
 ./app-cdr/cdrecord/cdrecord-1.9-r1.ebuild
 ./app-doc/gimp-user-manual/gimp-user-manual-html-2.0.ebuild
+./sys-apps/dcron/dcron-2.7-r2.ebuild
 ./sys-apps/man-pages/man-pages-1.31.ebuild
 #./app-editors/gtk-xemacs/gtk-xemacs-21.1.12_p3.ebuild
 ./app-editors/joe/joe-2.8-r1.ebuild
