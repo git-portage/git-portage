@@ -1,6 +1,13 @@
 # ChangeLog for sys-apps/deltup
 # Copyright 2000-2003 Gentoo Technologies, Inc.; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/deltup/Attic/ChangeLog,v 1.5 2003/07/23 16:08:40 mholzer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/deltup/ChangeLog,v 1.1 2003/08/15 13:25:55 lanius Exp $
+
+*deltup-0.4.0 (15 Aug 2003)
+
+  15 Aug 2003; Heinrich Wendel <lanius@gentoo.org> deltup-0.3.4.ebuild,
+  deltup-0.3.5.ebuild, deltup-0.3.6.1.ebuild, deltup-0.3.7.ebuild,
+  deltup-0.4.0.ebuild:
+  moved from sys-apps to app-portage
 
 *deltup-0.4.0 (24 Jul 2003)
 

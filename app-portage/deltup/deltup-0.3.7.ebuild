@@ -1,6 +1,6 @@
 # Copyright 2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/deltup/Attic/deltup-0.3.4.ebuild,v 1.3 2003/06/22 23:54:19 liquidx Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/deltup/Attic/deltup-0.3.7.ebuild,v 1.1 2003/08/15 13:25:55 lanius Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Patch system for Gentoo sources.  Retains MD5 codes"
@@ -16,6 +16,6 @@ DEPEND=">=dev-util/xdelta-1.1.3
 
 src_install () {
 	make DESTDIR=${D} install || die
-	dodoc README ChangeLog
+	dodoc README ChangeLog GENTOO
 	doman deltup.1
 }

@@ -1,6 +1,6 @@
 # Copyright 2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/deltup/Attic/deltup-0.4.0.ebuild,v 1.1 2003/07/23 16:08:40 mholzer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/deltup/Attic/deltup-0.4.0.ebuild,v 1.1 2003/08/15 13:25:55 lanius Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Patch system for Gentoo sources.  Retains MD5 codes"
