@@ -1,4 +1,3 @@
-MD5 f61c6d86382fec991901e252d9ce1610 ChangeLog 7426
 MD5 e4c90be0b8769f3616567470e3c89ade lm-sensors-2.6.5.ebuild 2030
 MD5 846852ccef6091ef1bc98bf955e69cee lm-sensors-2.7.0-r1.ebuild 2668
 MD5 2ecab444f734d95a7828c3a68576b52f lm-sensors-2.8.1.ebuild 3852
@@ -7,7 +6,8 @@ MD5 4b12fb7335665fcdd2df7067da32f82f lm-sensors-2.8.3.ebuild 4726
 MD5 05513b77c44891f917ead3e3a08b9908 lm-sensors-2.8.4.ebuild 4673
 MD5 2da144fbd943fa2de066b6d8ada80c2d lm-sensors-2.8.5.ebuild 4674
 MD5 37443e54165d5bcdaa8550d52edafa98 metadata.xml 228
-MD5 2da144fbd943fa2de066b6d8ada80c2d lm-sensors-2.8.6.ebuild 4674
+MD5 d60ffdd75b7650b5b10209224e3c750d lm-sensors-2.8.6.ebuild 4667
+MD5 5a0bc1c323c0119d67c555cd2b5dc679 ChangeLog 7400
 MD5 4e8f1427a529eb217c00370357991f73 files/digest-lm-sensors-2.6.5 68
 MD5 f07f401256b40cdec1c0518d28ee1aca files/digest-lm-sensors-2.7.0-r1 158
 MD5 e7d4c59852cf30645216f50ef7a3377b files/digest-lm-sensors-2.8.1 68
