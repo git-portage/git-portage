@@ -1,4 +1,7 @@
-MD5 512dc1785b104b560d41c0e57ea26df3 ChangeLog 31549
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 2bb4b537f9400f9e1972df49e56d161b ChangeLog 31651
 MD5 512150b47a904b0240101e319856aab1 metadata.xml 156
 MD5 f48889277f11c39d5f2160b262e7c314 qt-2.3.2-r1.ebuild 2289
 MD5 7daec76f47482903184ed2b6d6d5640f qt-3.3.3-r1.ebuild 8039
@@ -11,7 +14,7 @@ MD5 0c35ff70fb6ff95611499d6fb69d8afc qt-3.3.1-r2.ebuild 5745
 MD5 9f69253aeb04d45bc83c008fc4a46a31 qt-4.0.0_beta1-r2.ebuild 5736
 MD5 13c659d1e84ee9edb8e9c64d08fb06a9 qt-4.0.0_beta1.ebuild 4777
 MD5 7e97379b94036d9db24b3ca93c21b6e7 qt-3.3.3-r3.ebuild 8737
-MD5 4c04fe1628e8744dcbea163e83c78e2e qt-3.3.4.ebuild 8434
+MD5 1f95b05c8230a39edeaa207a4fb5e796 qt-3.3.4.ebuild 8434
 MD5 3f30d4e96664ba2574dfb069b708f4a1 qt-3.3.3.ebuild 6897
 MD5 24486c56d654be71e66b7c01b143c9a9 files/digest-qt-3.2.3-r1 72
 MD5 494ea57bec4dcfe3a4ca65e413d81791 files/digest-qt-3.3.3 165
@@ -50,3 +53,10 @@ MD5 e0a483959b1d3dad0fc58adc242624c1 files/qt-3.3.3-amd64-fullscreen.patch 1220
 MD5 b9689fa9461944ba25ebf0acde5fb70b files/qt-3.3.3-flickerfree_qiconview_buffered.patch 3347
 MD5 0221c85bc6f785b68812fc7f42110742 files/qt-3.3.3-flickerfree_qscrollview_fixwindowactivate.patch 1540
 MD5 3e5e045d0c1448839a8dc1c82aeef21b files/qt-3.3.3-qclipboard-hack.patch 1662
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFB/T7LVWNWqTUmv+0RAkaPAJ4uEiDTPmQPaYE1FVuHQ4A2WdDs1wCfdSqi
+tOQ6i4dQGsA/hoNAEnIqYCg=
+=zluZ
+-----END PGP SIGNATURE-----
