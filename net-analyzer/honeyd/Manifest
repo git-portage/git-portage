@@ -1,14 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 e9384027ae6b2aed4a61a34a6d32eb9f honeyd-0.8.ebuild 1893
-MD5 6021f525b1a49600a2f2476d3be45c4c ChangeLog 2181
+MD5 04fe8aa284c9e3de6ac5b9abb6994e0a honeyd-0.8.ebuild 1957
+MD5 15b93d47711df4677767f80b94e7bac3 ChangeLog 2447
 MD5 fef2fd2afe9a195bdc62e5628a5fd501 metadata.xml 259
+MD5 3b17149d9970e2b3249b01b1dba562eb honeyd-1.0.ebuild 1787
+MD5 05aa030ef5d390514cee9da3fa910690 files/honeyd.confd 429
+MD5 350fd8c3f8f14fa05642f9eab59c4a18 files/honeyd.initd 1358
 MD5 96be4ce17e233507825dbc39127ee9f3 files/digest-honeyd-0.8 129
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBjM/CT+MN7JbqCpMRAuExAJ9casnvQ4vft3wOhGvQUC1pZX8N5gCeOf7k
-GczVp2cPuRSuZk7KktSBZsk=
-=VEEd
------END PGP SIGNATURE-----
+MD5 857b8d8953a80aae5035664b1bc984a7 files/digest-honeyd-1.0 129
