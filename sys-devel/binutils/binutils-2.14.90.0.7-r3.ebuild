@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils/Attic/binutils-2.14.90.0.6-r7.ebuild,v 1.4 2003/11/09 15:43:16 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils/Attic/binutils-2.14.90.0.7-r3.ebuild,v 1.1 2003/11/09 15:43:16 azarah Exp $
 
 IUSE="nls bootstrap build"
 
@@ -20,20 +20,12 @@ HOMEPAGE="http://sources.redhat.com/binutils/"
 
 SLOT="0"
 LICENSE="GPL-2 | LGPL-2"
-KEYWORDS="amd64 ~x86 ~ppc ~alpha ~sparc ~mips ~hppa ~arm ~ia64"
+KEYWORDS="~amd64 ~x86 ~ppc ~alpha ~sparc ~mips ~hppa ~arm ~ia64"
 
 DEPEND="virtual/glibc
-	>=sys-apps/portage-2.0.21
 	nls? ( sys-devel/gettext )
 	!build? ( !bootstrap? ( dev-lang/perl ) )"
-# This is a hairy one.  Basically depend on dev-lang/perl
-# if "build" or "bootstrap" not in USE.
 
-
-# filter CFLAGS=".. -O2 .." on arm
-if [ "${ARCH}" = "arm" ]; then
-	CFLAGS="$(echo "${CFLAGS}" | sed -e 's,-O[2-9] ,-O1 ,')"
-fi
 
 src_unpack() {
 
@@ -42,48 +34,42 @@ src_unpack() {
 	cd ${S}
 	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.10-glibc21.patch
 	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-sparc-nonpic.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.6-sparc-cfi.patch
 	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.6-eh-frame-ro-2.patch
 	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-ltconfig-multilib.patch
 # Might think of adding the Prescott stuff later on
 #	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-pni.patch
-# This one cause failures in sash and util-linux-2.12 (bug #27330)
-#	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.5-place-orphan.patch
 	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.5-s390-pie.patch
 	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.5-ppc64-pie.patch
 	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.10-x86_64-testsuite.patch
 	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.10-x86_64-gotpcrel.patch
 	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.18-testsuite-Wall-fixes.patch
 
-	# There is a bug in binutils 2.14.* which causes a segfault in certain
-	# circumstances when linking. This bug does not exist in binutils 2.11.*.
-	#
-	# More details on the bug can be found here:
-	#  http://sources.redhat.com/ml/bug-binutils/2003-q3/msg00559.html
-	#  http://sources.redhat.com/ml/bug-binutils/2003-q3/msg00735.html
-	#
-	# Bug #27492, thanks to Adam Chodorowski <adam@chodorowski.com> for
-	# reporting.
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.6-dont-crash-on-null-owner.patch
+# This one seems to be partly merged, will need to check later on why
+# some bits to bfd/elf-strtab.c was not merged ...
 	# This increase c++ linking 2 to 3 times, bug #27540.
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.6-merge-speedup.patch
+#	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.6-merge-speedup.patch
 
 	# Some IA64 patches
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.6-ia64-howto.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.6-ia64-sdata.patch
 	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.6-ia64-speedup.patch
 
-	# Fix problems compiling kernels on PPC, bug #28011.
-	EPATCH_OPTS="-l" \
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.6-ppc-bfd.patch
+	# This fixes a problem with the wrong upcode being used for ppc's
+	# long branch stubs:
+	#
+	#   http://sources.redhat.com/ml/binutils/2003-11/msg00077.html
+	#   http://sources.redhat.com/ml/binutils/2003-11/msg00082.html
+	#
+	# and also fixes dynamic reloc for ppc and a number of other
+	# archs.
+	#
+	#  http://sources.redhat.com/ml/binutils/2003-11/msg00069.html
+	#
+	[ -z "`use sparc`" ] && \
+		epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.7-ppc-reloc.patch
 
-	# Set proper attributes for .interp section
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.6-bfd-elf-interp-4.patch
+	# Teach ld how to ensure that the TLS segment p_vaddr is aligned
+	# for a number of archs.
+	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.7-tls-section-alignment.patch
 
-	if [ "${ARCH}" = "hppa" ] || [ "${ARCH}" = "hppa64" ]
-	then
-		epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.6-hppa-static.diff
-	fi
 	if [ "${ARCH}" = "amd64" ]
 	then
 		epatch ${FILESDIR}/${PN}-2.14.amd64-32bit-path-fix.patch
@@ -91,6 +77,7 @@ src_unpack() {
 
 	use x86 &> /dev/null \
 		&& epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.20-array-sects-compat.patch
+
 
 	# Libtool is broken (Redhat).
 	for x in ${S}/opcodes/Makefile.{am,in}
@@ -113,6 +100,12 @@ src_compile() {
 	use nls && \
 		myconf="${myconf} --without-included-gettext" || \
 		myconf="${myconf} --disable-nls"
+
+	# Filter CFLAGS=".. -O2 .." on arm
+	if [ "${ARCH}" = "arm" ]
+	then
+		CFLAGS="$(echo "${CFLAGS}" | sed -e 's,-O[2-9] ,-O1 ,')"
+	fi
 
 	# Fix /usr/lib/libbfd.la
 	elibtoolize --portage
