@@ -1,8 +1,18 @@
-MD5 e2c81b2aea34a0f4f3eb050957a21a1e gift-gnutella-0.0.10.ebuild 1182
-MD5 19bd0b096babb32e5fc093fcdf2cd1bf gift-gnutella-0.0.9.2-r1.ebuild 1454
-MD5 21a79aabb6c16f8e1ee48ca7f33f9cb2 ChangeLog 2809
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 fb846651148f3b565d36cfcfbe065700 gift-gnutella-0.0.10.ebuild 1221
+MD5 773dd704c57740fc43c6d5bb8c7979ae gift-gnutella-0.0.9.2-r1.ebuild 1456
+MD5 7ed929454fe8c840df0b5316bac3f5aa ChangeLog 3005
 MD5 875f23093b78af2d864a7a7ba464f126 metadata.xml 223
 MD5 7dbcf3e3110924a2891054f9fd7f349a files/digest-gift-gnutella-0.0.10 73
 MD5 3a2b71fe09957a425acb0f40be079266 files/gift-gnutella-gcc35.patch 457
 MD5 c464f118c813212dd2f6e7ddbfd0bef4 files/digest-gift-gnutella-0.0.9.2-r1 74
 MD5 87a8f04b6651ae553a4b3943d537392d files/cacheupdate.sh 837
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFB6DCocAgAdbxYsnERAvVCAJ9TbEmG7Noc5rk2XXk4mFUZ7x6fqgCgjK4Z
+gFFnZ/JyEveCQsXrX2+4mjc=
+=eD8L
+-----END PGP SIGNATURE-----
