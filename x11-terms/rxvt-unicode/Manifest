@@ -1,3 +1,4 @@
+MD5 1848ebe81ce15bd037b5fd87c57566f7 rxvt-unicode-4.5.ebuild 1554
 MD5 1848ebe81ce15bd037b5fd87c57566f7 rxvt-unicode-4.0.ebuild 1554
 MD5 157eda5a4d7542e07ce4421474bc1a02 rxvt-unicode-3.9.ebuild 1553
 MD5 811a7082a255ee060ecf141ce5093239 rxvt-unicode-3.6.ebuild 1769
@@ -12,6 +13,7 @@ MD5 fc0075daf912b2b1eb57d346f2586b0b files/digest-rxvt-unicode-3.5 69
 MD5 3e1fa0c7b57da107c46b141485c8f5bf files/digest-rxvt-unicode-3.6 69
 MD5 5a26c4b51ccba9e485dcdc057c1576ff files/digest-rxvt-unicode-3.9 69
 MD5 0454b0e411ee7798e273a94fcabdc823 files/digest-rxvt-unicode-4.0 69
+MD5 3137ec7240e5cb9283db289478c4ab87 files/digest-rxvt-unicode-4.5 69
 MD5 63548e76ee03f6dc4fee9e2239453ca1 files/rxvt-unicode-4.0-64bit.patch 728
 MD5 8d13934dc747f15f11334bd642c342cd files/rxvt-unicode-3.9-64bit.patch 632
 MD5 27f475fce3946d48a23f36e0279a978c files/rxvt-unicode-2.3-font-fix.diff 431
