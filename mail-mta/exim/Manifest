@@ -1,6 +1,9 @@
-MD5 7c96e64e816b246884c78fcf367cff1a ChangeLog 14181
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 127011be26bd2219947d1235b796f9b1 ChangeLog 14382
 MD5 3faecfffa69ae8404a41a8d39201b3e1 exim-4.33-r1.ebuild 7626
-MD5 38c9ce36b4ea124ff60b8b494dd319cd exim-4.43-r1.ebuild 7677
+MD5 3ef831e83bfbf590fea0ad01f33f1ea7 exim-4.43-r1.ebuild 7771
 MD5 3230f68c6fc65134613e31a7e7dd5009 exim-4.40.ebuild 7741
 MD5 41aedc6d7a7ac73f5ea5705a772009d7 exim-4.43.ebuild 7719
 MD5 4f81a30a363f8dee30864633df6649f4 exim-4.34.ebuild 7562
@@ -29,3 +32,10 @@ MD5 5127f4b2ace5cf148e2ac21e101ac967 files/exim-4.33-r1-header-syntax.patch 1017
 MD5 fc1d2de3c279dab8107d973ae63301d6 files/digest-exim-4.41 133
 MD5 5d5aabea7d56a91803df1312c04d32c0 files/exim-4.14-tail.patch 446
 MD5 f05ff505c7b77a17696736e2730ae8d1 files/digest-exim-4.43 133
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFB0diuQlM6RnzZP+IRAhuOAJ9MREZyAwNjR+K2E2c8VXii2RW2zACdHsoj
+neg7tfrt3MDro7o0QLL22zI=
+=XGRm
+-----END PGP SIGNATURE-----
