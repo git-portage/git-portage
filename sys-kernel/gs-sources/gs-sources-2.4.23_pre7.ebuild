@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gs-sources/Attic/gs-sources-2.4.21_rc6.ebuild,v 1.7 2003/09/10 04:29:07 msterret Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gs-sources/Attic/gs-sources-2.4.23_pre7.ebuild,v 1.1 2003/10/14 22:35:33 livewire Exp $
 
 IUSE="build crypt"
 
@@ -19,9 +19,9 @@ ETYPE="sources"
 
 inherit kernel
 PROVIDE="virtual/linux-sources virtual/winkernel"
-OKV=2.4.20
-EXTRAVERSION=_rc6-gss
-KV=2.4.21_rc6-gss
+OKV=2.4.22
+EXTRAVERSION=_pre7-gss
+KV=2.4.23_pre7-gss
 S=${WORKDIR}/linux-${KV}
 
 # Documentation on the patches contained in this kernel will be installed
@@ -31,7 +31,7 @@ DESCRIPTION="This kernel stays up to date with current kernel -pres,
 	with recent acpi,evms,win3lin ,futexes,aic79xx,
 	superfreeswan,preempt/ll, and various hw fixes."
 SRC_URI="mirror://kernel/linux/kernel/v2.4/linux-${OKV}.tar.bz2
-	 http://gentoo.lostlogicx.com/patches-${KV}.tar.bz2"
+	 mirror://gentoo/patches-${KV}.tar.bz2"
 KEYWORDS="x86 -ppc -sparc "
 SLOT="${KV}"
 
@@ -53,6 +53,4 @@ src_unpack() {
 	fi
 
 	kernel_src_unpack
-	cd ${WORKDIR}/linux-${KV} || die
-	patch -p1 <${FILESDIR}/00_3.5-useraddress.patch || die
 }
