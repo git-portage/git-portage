@@ -1,4 +1,4 @@
-MD5 1d650a3570bbb20c1ded56a1bca2b5ea ChangeLog 29321
+MD5 0e6ec15a0471d22ac6b641e7d1608d8a ChangeLog 29329
 MD5 9ef4af14dad87b03fde8e43f19e08d26 metadata.xml 225
 MD5 b813a65769af5d2a2ca1ceba1347974d mplayer-0.92-r1.ebuild 11511
 MD5 7eeb1235c1263ecb110925e53de1eb06 mplayer-1.0_pre2-r1.ebuild 11375
@@ -8,9 +8,9 @@ MD5 5d11f22039a718f19a725f676e614670 mplayer-1.0_pre3-r5.ebuild 11473
 MD5 1c2c6d32766ce3bf0974895533252491 mplayer-1.0_pre4-r1.ebuild 11659
 MD5 fbdd96b2a3f0f78bdc8cbded3bb3927b mplayer-1.0_pre4-r2.ebuild 11948
 MD5 6b9e16c4f08ac48748812909ed431f31 mplayer-1.0_pre4-r3.ebuild 13034
-MD5 8490fbd23b04e4e6745e0987d1b6325e mplayer-1.0_pre4-r5.ebuild 12435
+MD5 d0f0a1566744e464b67e7b96d509ccaa mplayer-1.0_pre4-r5.ebuild 12442
 MD5 071a354aa3c0e9290b6dcfc8c3621d87 mplayer-1.0_pre4.ebuild 11319
-MD5 858446ff3ed36bc9b84212b7065d048c mplayer-1.0_pre5.ebuild 12490
+MD5 9faf33751f9ba1b4542984427fb50037 mplayer-1.0_pre5.ebuild 12495
 MD5 d13f33f9022f7abccfe9b14f96531057 mplayer-1.0_pre4-r4.ebuild 13157
 MD5 1f9260386b063367f192b6d5d65d6aea files/real_demux.patch 3107
 MD5 6c2dab3392aab51766253b416ad2a10c files/default-skin.diff 396
@@ -47,7 +47,6 @@ MD5 e2fc2cbbc8ebf183dcb599b66c999331 files/ppc750FX-fix.patch 515
 MD5 fef9f0571da54ae3df2e804100bd2632 files/vuln01-fix.diff 1231
 MD5 34f948b8f242a2aadb53a1e2b00e3155 files/vuln02-fix.diff 467
 MD5 e4581f6934f66ccecc8c1682664623d0 files/digest-mplayer-1.0_pre4-r5 358
-MD5 2edbea78b589be8c47b0d4aad393f50a files/config.mak.patch 341
 MD5 c39b2e0baa9cc24d22b62765776426ad files/str_undefined.patch 1845
 MD5 e614f6546020b77ced4ba12c36e5b51e files/strl.c 950
 MD5 7d81475ff0d1ba01de3b714d6dcc4891 files/gui_vuln_code.patch 17981
