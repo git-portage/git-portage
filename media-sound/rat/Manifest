@@ -1,4 +1,6 @@
-MD5 2013e1b8719e75a5ef29e369a874ff0f rat-4.2.23.ebuild 1100
 MD5 6a26ad5bd9d82aa0f1081720c5711e8d ChangeLog 402
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
+MD5 2013e1b8719e75a5ef29e369a874ff0f rat-4.2.23.ebuild 1100
+MD5 f943d55392a1b7e09467fa95580b4ffb rat-4.2.25.ebuild 1104
 MD5 e4b7fa79338ba90af15ad97fb3fe07b3 files/digest-rat-4.2.23 63
+MD5 003664d231513f28367b0b56c1a1e1eb files/digest-rat-4.2.25 62
