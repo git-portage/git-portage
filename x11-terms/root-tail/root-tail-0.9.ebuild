@@ -1,23 +1,22 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/root-tail/Attic/root-tail-0.0.10.ebuild,v 1.13 2004/03/06 12:27:34 zul Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/root-tail/Attic/root-tail-0.9.ebuild,v 1.1 2004/03/06 12:27:34 zul Exp $
 
-
-S=${WORKDIR}/${P}
 DESCRIPTION="Terminal to display (multiple) log files on the root window"
+HOMEPAGE="http://www.goof.com/pcg/marc/root-tail.html"
 SRC_URI="http://www.goof.com/pcg/marc/data/${P}.tar.gz"
-HOMEPAGE="http://www.var.cx/root-tail/"
-SLOT="0"
-KEYWORDS="x86 ppc"
 LICENSE="GPL-2"
-
+SLOT="0"
+KEYWORDS="~x86 ~sparc"
+IUSE=""
 DEPEND="virtual/x11"
+S="${WORKDIR}/${P}"
 
 src_compile() {
-	xmkmf -a || die
-	make || die
+	make -f Makefile.simple || die
 }
 
 src_install() {
-	make DESTDIR=${D} install install.man || die
+	dobin root-tail
+	newman root-tail.man root-tail.1
 }
