@@ -1,44 +1,39 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxml2/Attic/libxml2-2.4.28.ebuild,v 1.6 2003/02/13 10:46:35 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxml2/Attic/libxml2-2.5.7.ebuild,v 1.1 2003/04/26 20:41:10 liquidx Exp $
 
-inherit libtool gnome2
+inherit eutils libtool gnome.org
 
-IUSE="zlib python readline"
-S=${WORKDIR}/${P}
+IUSE="python readline"
+
+S="${WORKDIR}/${P}"
 DESCRIPTION="Version 2 of the library to manipulate XML files"
 HOMEPAGE="http://www.gnome.org/"
 
-DEPEND="zlib? ( sys-libs/zlib )
+DEPEND="sys-libs/zlib
 	python? ( dev-lang/python )
 	readline? ( sys-libs/readline )"
  
 SLOT="2"
 LICENSE="MIT"
-KEYWORDS="~x86 ~sparc ~ppc ~alpha ~hppa"
-
-src_unpack() {
-
-	unpack $A
-	cd $S
-	# fix from the libxml2 cvs. will be included in version .29
-	patch -p0 < $FILESDIR/parser.c.diff || die
-
-}
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa"
 
 src_compile() {
 	# Fix .la files of python site packages
 	elibtoolize
 
-	local myconf
+	local myconf=""
 
-	use zlib && myconf="--with-zlib" || myconf="--without-zlib"
+	# This breaks gnome2 (libgnomeprint for instance fails to compile with
+	# fresh install, and existing) - <azarah@gentoo.org> (22 Dec 2002).
+	#use zlib && myconf="--with-zlib" || myconf="--without-zlib"
+
 	use python && myconf="${myconf} --with-python" \
 		|| myconf="${myconf} --without-python" 
 	use readline && myconf="${myconf} --with-readline" \
 		|| myconf="${myconf} --without-readline"
 
-	econf ${myconf}  || die
+	econf --with-zlib ${myconf} || die
 	emake || die
 }
 
