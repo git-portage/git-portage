@@ -1,4 +1,5 @@
 01.10.2000
+	- New app-editors/gtk-xemacs 21.1.12_p3	(drobbins)
 	- sys-apps/portage now has
 	  portage-maintain in files dir		(drobbins)
 
