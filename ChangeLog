@@ -1,14 +1,25 @@
 DATE
 20 Nov 2000
 
+jerry
+Move from /etc/pam.conf to /etc/pam.d
+This change will make it easier to update PAM information by having
+applications drop appropriate configuration files into /etc/pam.d
+instead of editing the pam.conf in /sys-apps/baselayout.  This change
+modifies/updates the following portages:
+    /sys-apps/baselayout-1.3 to baselayout-1.3-r1
+    /sys-libs/pwdb-0.61-r1 to pwdb-0.61-r2
+    /net-misc/openssh-2.2.0_p1 to openssh-2.2.0_p1-r1
+
 drobbins
 More portage fixes
-Fixed pkgmerge problem; it can now merge to non-local filesystems and calls the
-pre and postinst scripts correctly.  Also, the DBDIR variable in /etc/make.defaults
-has been depreciated.  From now on, the database directory is assumed to be
-${ROOT}/var/db/pkg.  Also tweaked port_insttree() in portage.py so that the dbdir
-directory skeleton is created if it doesn't already exist, and made portage.py
-check to make sure that ROOT is an existing directory; otherwise it exits with
+Fixed pkgmerge problem; it can now merge to non-local filesystems
+and calls the pre and postinst scripts correctly.  Also, the DBDIR
+variable in /etc/make.defaults has been depreciated.  From now on, the
+database directory is assumed to be ${ROOT}/var/db/pkg.  Also tweaked
+port_insttree() in portage.py so that the dbdir directory skeleton
+is created if it doesn't already exist, and made portage.py check to
+make sure that ROOT is an existing directory; otherwise it exits with
 an error condition.
 
 achim
@@ -20,13 +31,15 @@ DATE
 
 drobbins
 Changing linux kernel structure
-I'm in the process of changing the directory structure under sys-kernel so that it
-follows our guidelines.  There will be two directories: sys-kernel/linux and 
-sys-kernel/linux-sources.  The linux package contains a kernel, modules and headers so
-that users can compile other sources.  The linux-sources package contains only the 
-kernel sources; no kernel or modules are included.  The linux package is primarily of
-interest for those setting up a Gentoo Linux box, while the linux-sources package is
-more appropriate for geeks who already have a running Gentoo Linux system and want to
-compile a more recent kernel by hand.
+I'm in the process of changing the directory structure under sys-kernel
+so that it follows our guidelines.  There will be two directories:
+sys-kernel/linux and sys-kernel/linux-sources.  The linux package
+contains a kernel, modules and headers so that users can compile
+other sources.  The linux-sources package contains only the kernel
+sources; no kernel or modules are included.  The linux package is
+primarily of interest for those setting up a Gentoo Linux box, while
+the linux-sources package is more appropriate for geeks who already
+have a running Gentoo Linux system and want to compile a more recent
+kernel by hand.
 
 
