@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/tkabber/Attic/tkabber-0.9.4b.ebuild,v 1.5 2003/09/29 21:28:05 mholzer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/tkabber/Attic/tkabber-0.9.4b.ebuild,v 1.6 2004/02/06 20:07:56 rizzo Exp $
 
 DESCRIPTION="Featurefull Jabber client for tcl/tk."
 HOMEPAGE="http://www.jabber.ru/projects/tkabber/index_en.html"
