@@ -1,3 +1,5 @@
 MD5 ef77a1fe5f3cd99a5d2a046569def835 ChangeLog 626
-MD5 615acbbc70cfd6f9423fb519266431ee fbv-0.99.ebuild 999
+MD5 775a37bcacd3b214df5e079275595c25 fbv-0.99.ebuild 1010
+MD5 775a37bcacd3b214df5e079275595c25 fbv-1.0b.ebuild 1010
+MD5 d0fa687199799a3f1c51f0bbbb3a0be3 files/digest-fbv-1.0b 59
 MD5 fddf15ff0ff3ee14782881f4425e8b36 files/digest-fbv-0.99 59
