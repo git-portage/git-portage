@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5a8290e44006ccff0dff3094555d6366 metadata.xml 257
 MD5 ac2bb853682c589f2d8d9be47e10d507 ChangeLog 26469
 MD5 33180edc5b30f54debff69322fae465a xmms-1.2.8-r4.ebuild 5271
@@ -9,3 +12,10 @@ MD5 1cb7f59a4210ff270e427e51e75d6efc files/digest-xmms-1.2.10-r8 219
 MD5 f52f09b25da87c876de70b6177292f2e files/digest-xmms-1.2.8-r4 216
 MD5 7d2f3807ebbff435b909ecf0539cbf4f files/xmms.desktop 722
 MD5 aa46b23a1cf0655c7f09adbdd623d49f files/digest-xmms-1.2.10-r5 219
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBbPrsArHZZzCEUG0RAliPAJ9QWDpAJ8XRI9E2MxmQM4hxuwsTawCcCsy7
+3ycAJNXj+TOuViN0CRV2tlo=
+=r8+T
+-----END PGP SIGNATURE-----
