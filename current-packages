@@ -5,6 +5,7 @@
 ./app-admin/modlogan/modlogan-0.5.2.ebuild
 ./app-admin/powertweak/powertweak-0.1.16-r1.ebuild
 ./app-admin/runset/runset-1.3-r1.ebuild
+./app-admin/sudo/sudo-1.6.3_p5.ebuild
 ./app-admin/usbview/usbview-0.9.0.ebuild
 ./app-admin/webalizer/webalizer-1.30.04-r1.ebuild
 ./app-admin/yup/yup-0.6.5-r1.ebuild
