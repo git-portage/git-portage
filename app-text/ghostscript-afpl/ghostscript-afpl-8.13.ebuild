@@ -1,18 +1,22 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/ghostscript-afpl/Attic/ghostscript-afpl-8.11.ebuild,v 1.4 2004/01/08 15:00:53 lanius Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/ghostscript-afpl/Attic/ghostscript-afpl-8.13.ebuild,v 1.1 2004/01/08 15:00:53 lanius Exp $
 
 inherit eutils
 
 DESCRIPTION="AFPL Ghostscript"
 HOMEPAGE="http://www.cs.wisc.edu/~ghost/"
+
 MY_PN="ghostscript"
 MY_P=${MY_PN}-${PV}
+CUPS_PV=1.1.20
+FONTS_PV=8.11
+
 SRC_URI="mirror://sourceforge/ghostscript/${MY_P}.tar.gz
-	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/fonts/${MY_PN}-fonts-std-${PV}.tar.gz
+	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/fonts/${MY_PN}-fonts-std-${FONTS_PV}.tar.gz
 	cjk? ( http://www.matsusaka-u.ac.jp/mirror/gs-cjk/adobe-cmaps-200204.tar.gz
 		http://www.matsusaka-u.ac.jp/mirror/gs-cjk/acro5-cmaps-2001.tar.gz)
-	cups? ( ftp://ftp.tu-clausthal.de/pub/linux/gentoo/distfiles/cups-1.1.20-source.tar.bz2 )"
+	cups? ( ftp://ftp.tu-clausthal.de/pub/linux/gentoo/distfiles/cups-${CUPS_PV}-source.tar.bz2 )"
 
 LICENSE="Aladdin"
 SLOT="0"
@@ -23,7 +27,7 @@ PROVIDE="virtual/ghostscript"
 
 DEPEND="virtual/glibc
 	>=media-libs/jpeg-6b
-	>=media-libs/libpng-1.2.1
+	>=media-libs/libpng-1.2.5
 	>=sys-libs/zlib-1.1.4
 	X? ( virtual/x11 )
 	cjk? ( media-fonts/arphicfonts
@@ -36,26 +40,26 @@ DEPEND="virtual/glibc
 S=${WORKDIR}/${MY_P}
 
 src_unpack() {
-	cd ${WORKDIR}
-
 	unpack ghostscript-${PV}.tar.gz
-	unpack ghostscript-fonts-std-${PV}.tar.gz
+	unpack ghostscript-fonts-std-${FONTS_PV}.tar.gz
 
+	# cups support
 	if [ `use cups` ]; then
-		unpack cups-1.1.20-source.tar.bz2
-		cp -r cups-1.1.20/pstoraster ${S}
+		einfo "hallo"
+		unpack cups-${CUPS_PV}-source.tar.bz2
+		cp -r cups-${CUPS_PV}/pstoraster ${S}
 		cd ${S}/pstoraster
 		sed -e 's:@prefix@:/usr:' -e 's:@exec_prefix@:${prefix}:' -e 's:@bindir@:${exec_prefix}/bin:' -e 's:@GS@:gs:' pstopxl.in > pstopxl
 		sed -i -e 's:/usr/local:/usr:' pstoraster
 		sed -i -e "s:pstopcl6:pstopxl:" cups.mak
+		cd ..
+		epatch pstoraster/gs811-lib.patch
 	fi
 
 	cd ${S}
 
-	use cups && epatch pstoraster/gs811-lib.patch
-
-	# ijs patch
-	epatch ${FILESDIR}/gs-${PV}-ijs.patch
+	# ijs .so patch
+	epatch ${FILESDIR}/gs-8.11-ijs.patch
 }
 
 src_compile() {
@@ -64,24 +68,28 @@ src_compile() {
 	use X && myconf="${myconf} --with-x" \
 		|| myconf="${myconf} --without-x"
 
+	# don't build gtk frontend if not in use
 	use gtk || sed -i -e 's:$(INSTALL_PROGRAM) $(GSSOX):#:' src/unix-dll.mak \
 		-e 's:$(GSSOX)::' src/unix-dll.mak
 
 	econf ${myconf}
 
-	use cups && echo 'include pstoraster/cups.mak' >> Makefile; sed -i -e 's:DEVICE_DEVS17=:DEVICE_DEVS17=$(DD)cups.dev:' Makefile
+	# build cups driver with cups
+	if [ `use cups` ]; then
+		echo 'include pstoraster/cups.mak' >> Makefile
+		sed -i -e 's:DEVICE_DEVS17=:DEVICE_DEVS17=$(DD)cups.dev:' Makefile
+		sed -i -e 's:LDFLAGS= $(XLDFLAGS):LDFLAGS=-L/usr/include -lcups -lcupsimage $(XLDFLAGS):' Makefile
+	fi
 
 	# search path fix
-	sed -i -e 's:$(gsdatadir)/lib:/usr/share/ghostscript/8.11/lib:' Makefile
+	sed -i -e 's:$(gsdatadir)/lib:/usr/share/ghostscript/8.12/lib:' Makefile
 	sed -i -e 's:$(gsdir)/fonts:/usr/share/ghostscript/fonts:' Makefile
-	sed -i -e 's:$(gsdatadir)/Resource:/usr/share/ghostscript/8.11/Resource:' Makefile
-
-	# includes fix
-	use cups && sed -i -e 's:LDFLAGS=$(XLDFLAGS):LDFLAGS=-L/usr/include -lcups -lcupsimage $(XLDFLAGS):' Makefile
+	sed -i -e 's:$(gsdatadir)/Resource:/usr/share/ghostscript/8.12/Resource:' Makefile
 
 	make || die "make failed"
 	make so || die "make so failed"
 
+	# build ijs
 	cd ijs
 	econf --prefix=${D}/usr
 	make || die "make failed"
@@ -110,7 +118,7 @@ src_install() {
 		unpack acro5-cmaps-2001.tar.gz
 	fi
 
-	# Install ijs
+	# install ijs
 	cd ${S}/ijs
 	dodir /usr/bin /usr/include /usr/lib
 	einstall install_prefix=${D}
