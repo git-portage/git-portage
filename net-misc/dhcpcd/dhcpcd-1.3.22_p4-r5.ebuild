@@ -1,9 +1,10 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcpcd/Attic/dhcpcd-1.3.22_p4-r2.ebuild,v 1.2 2004/02/22 23:28:19 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcpcd/Attic/dhcpcd-1.3.22_p4-r5.ebuild,v 1.1 2004/03/08 23:49:00 seemant Exp $
 
 inherit gnuconfig flag-o-matic eutils
 
+S=${WORKDIR}/${P/_p/-pl}
 DESCRIPTION="A dhcp client only"
 HOMEPAGE="http://www.phystech.com/download/"
 SRC_URI="ftp://ftp.phystech.com/pub/${P/_p/-pl}.tar.gz
@@ -12,12 +13,12 @@ SRC_URI="ftp://ftp.phystech.com/pub/${P/_p/-pl}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc sparc alpha hppa mips amd64 ia64"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~mips ~amd64 ~ia64 ppc64 s390"
 IUSE="build static"
 
 DEPEND="virtual/glibc"
 
-S=${WORKDIR}/${P/_p/-pl}
+PROVIDE="virtual/dhcpc"
 
 src_unpack() {
 	unpack ${A} || die "unpack failed"
@@ -25,6 +26,7 @@ src_unpack() {
 	use amd64 && gnuconfig_update
 	use hppa && gnuconfig_update
 	use ia64 && gnuconfig_update
+	use ppc64 && gnuconfig_update
 
 	cd ${S}
 	#Started working on this patch from an older version I found; then
@@ -36,6 +38,9 @@ src_unpack() {
 	#it adds a -z (shutdown, keep cache) and various other little tweaks.
 	#See http://bugs.gentoo.org/show_bug.cgi?id=23428 for more info.
 	epatch ${DISTDIR}/${P}-keepCacheAndResolv.diff.bz2
+	#This patch remove the iface down instruction from dhcpcd allowing us
+	#to have physical iface scripts (gmsoft, 11 Nov 2003)
+	epatch ${FILESDIR}/${P}-no-iface-down.diff
 	#remove hard-coded arch stuff (drobbins, 06 Sep 2003)
 	sed -i "s/ -march=i.86//g" configure
 	sed -i 's:/etc/ntp\.drift:/var/lib/ntp/ntp.drift:' dhcpconfig.c
@@ -44,12 +49,17 @@ src_unpack() {
 src_compile() {
 	use static && append-flags -static
 
-	./configure --prefix="" --sysconfdir=/var/lib --mandir=/usr/share/man || die
+	./configure \
+		--prefix="" \
+		--sysconfdir=/var/lib \
+		--mandir=/usr/share/man || die
+
 	emake || die
 }
 
 src_install() {
 	einstall sbindir=${D}/sbin || die "Install failed"
+	rmdir ${D}/etc/dhcpc
 	if [ -z "`use build`" ]
 	then
 		dodoc AUTHORS COPYING ChangeLog NEWS README
