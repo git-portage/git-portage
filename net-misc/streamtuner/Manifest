@@ -1,5 +1,7 @@
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
+MD5 e0382c43876dc3b4e8482b8a5b4a21b3 streamtuner-0.99.ebuild 783
 MD5 e0efa63dda44d897065795d36080b54b ChangeLog 2558
 MD5 cb345950d3a39c6efef50c55d2bfa964 streamtuner-0.12.4.ebuild 829
+MD5 a205326a0f0276838f0354f0cffd8dcc files/digest-streamtuner-0.99 68
 MD5 58f85470334ffd6799ca3330c1f87f5c files/streamtuner-0.12.3-gcc34.patch 413
 MD5 e79a63b27d38fa0f7b5574641a61738a files/digest-streamtuner-0.12.4 70
