@@ -1,5 +1,7 @@
+MD5 70f9df94c314deea2c0597ca2206286b jrockit-jdk-bin-5.0.ebuild 1593
 MD5 f93aa910da1cf24233b1856384be5841 jrockit-jdk-bin-1.4.2.04.ebuild 1594
 MD5 9b024933a6ad508e166ecf139e883f3a ChangeLog 1557
 MD5 44f00b9f278d0941a4820ce56f0fefe1 metadata.xml 554
+MD5 52cb7761fb976be22f43d9a2dc4a5a13 files/digest-jrockit-jdk-bin-5.0 155
 MD5 661125518f28b337bdc961c8352695af files/digest-jrockit-jdk-bin-1.4.2.04 165
 MD5 d65eb1cd5fac1963ac29f72ec296ae96 files/jrockit-jdk-bin-1.4.2.04 292
