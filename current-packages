@@ -168,18 +168,18 @@
 ./gnome-base/libxml/libxml-1.8.10.ebuild
 ./gnome-base/mc/mc-4.5.51.ebuild
 ./gnome-base/oaf/oaf-0.6.1.ebuild
-./gnome-libs/ammonite/ammonite-0.8.1
+#./gnome-libs/ammonite/ammonite-0.8.1.ebuild
 ./gnome-libs/gal/gal-0.1.ebuild
 ./gnome-libs/gb/gb-0.0.15.ebuild
 ./gnome-libs/libgda/libgda-0.2.0.ebuild
 ./gnome-libs/libole2/libole2-0.1.7.ebuild
-./gnome-libs/medusa/medusa-0.2.2.ebuild
+#./gnome-libs/medusa/medusa-0.2.2.ebuild
 ./gnome-office/abiword/abiword-0.7.11.ebuild
 ./gnome-office/dia/dia-0.86.ebuild
 #./gnome-office/dia/dia-0.86-r1.ebuild
 ./gnome-office/eog/eog-0.5.ebuild
 ./gnome-office/gnome-db/gnome-db-0.1.0.ebuild
-./gnome-office/gnome-pim/gnome-pim-1.2.0.ebuild
+./gnome-office/gnome-pim/gnome-pim-1.2.0-r1.ebuild
 ./gnome-office/gnumeric/gnumeric-0.57.ebuild
 ./kde-apps/cervisia/cervisia-0.7.1.ebuild
 ./kde-apps/kdeadmin/kdeadmin-2.0.ebuild
@@ -444,6 +444,7 @@
 ./x11-wm/enlightenment/enlightenment-0.16.4-r1.ebuild
 ./x11-wm/openmotif/openmotif-MLI-2.1.30.ebuild
 ./x11-wm/sawfish/sawfish-0.32.ebuild
+
 
 
 
