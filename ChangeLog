@@ -1,3 +1,7 @@
+02.10.2000
+	- Update sysklogd 1.3.31 -> 1.4		(achim)
+
+
 01.10.2000
 	- New app-editors/gtk-xemacs 21.1.12_p3	(drobbins)
 	- sys-apps/portage now has
