@@ -1,11 +1,11 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.25-r2.ebuild,v 1.2 2004/05/03 07:41:37 kumba Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.26-r2.ebuild,v 1.1 2004/06/04 09:32:17 kumba Exp $
 
 
 # Version Data
 OKV=${PV/_/-}
-CVSDATE="20040222"
+CVSDATE="20040415"
 EXTRAVERSION="-mipscvs-${CVSDATE}"
 KV="${OKV}${EXTRAVERSION}"
 COBALTPATCHVER="1.4"
@@ -49,19 +49,10 @@ src_unpack() {
 	# Patch arch/mips/Makefile for gcc (Pass -mips3/-mips4 for r4k/r5k cpus)
 	epatch ${FILESDIR}/mipscvs-${OKV}-makefile-fix.patch
 
-	# Patch to fix mips64 Makefile so that -finline-limit=10000 gets added to CFLAGS
-	epatch ${FILESDIR}/mipscvs-${OKV}-makefile-inlinelimit.patch
-
-	# Binutils-2.14.90.0.8 and does some magic with page alignment
-	# that prevents the kernel from booting.  This patch fixes it.
-	epatch ${FILESDIR}/mipscvs-${OKV}-no-page-align.patch
-
 	# Security Fixes
 	echo -e ""
-		ebegin "Applying Security Fixes"
-		epatch ${FILESDIR}/CAN-2004-0109-2.4-iso9660.patch
-		epatch ${FILESDIR}/CAN-2004-0177-ext3_jbd.patch
-		epatch ${FILESDIR}/CAN-2004-0178-sbblaster.patch
+	ebegin "Applying Security Fixes"
+		epatch ${FILESDIR}/CAN-2004-0394-panic.patch
 	eend
 
 	# Cobalt Patches
