@@ -1,4 +1,9 @@
 date 19 June 2001
+
+new dev-libs/popt-1.5
+libpopt needed by lots of stuff, we can replace rpm depends now.
+lamer
+
 upd media-sound/xmms-1.2.5
 Lots of updates to xmms, vorbis plugin is faster
 lamer
