@@ -2,10 +2,10 @@ MD5 f3789fe0aec47dff68ad09c16afc1371 util-linux-2.12-r3.ebuild 3699
 MD5 a7d560c1fbec607e50ddc90151460142 util-linux-2.12-r5.ebuild 4215
 MD5 e012bcb53938d7147bd4eb55a2f21d41 util-linux-2.11z-r9.ebuild 3354
 MD5 608d202bf0e75fcd128fab85401471cd util-linux-2.12-r2.ebuild 3198
-MD5 37c3f528d1a3731ce3e4e2bda460a6c3 util-linux-2.12-r4.ebuild 4125
-MD5 d9ea92339ec03ce886bcbacc97e0c6d6 util-linux-2.12b.ebuild 4761
+MD5 b85a88cc0a5e6a7d2d10835b4a625511 util-linux-2.12-r4.ebuild 4120
+MD5 587c237e09e15320ecdf42720dedbacc util-linux-2.12b.ebuild 4757
 MD5 e92a492381d2073f6f42d2f2e1e63a10 util-linux-2.11z-r8.ebuild 3161
-MD5 191927de5bff78b8a6d13ff76e53c8a8 ChangeLog 13994
+MD5 195b78b32891305f03d2de1c2ce6140e ChangeLog 14288
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 0be8df03dae23c81a0e929e58a4114e0 files/util-linux-2.11z-01-nfsv4.dif 13442
 MD5 a0217db1b99dfa1f137c22c36343a623 files/util-linux-2.12b-gcloop.patch 3844
