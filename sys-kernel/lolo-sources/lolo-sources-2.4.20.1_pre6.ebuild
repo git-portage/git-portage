@@ -1,8 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/lolo-sources/Attic/lolo-sources-2.4.20.1_pre4.ebuild,v 1.4 2002/12/18 00:12:48 lostlogic Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/lolo-sources/Attic/lolo-sources-2.4.20.1_pre6.ebuild,v 1.1 2002/12/20 08:49:15 lostlogic Exp $
 
-IUSE="build"
+IUSE="build crypt"
 
 # OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
@@ -25,7 +25,7 @@ OKV="2.4.20"
 DESCRIPTION="Full sources for lostlogic's Gentoo Linux kernel"
 SRC_URI="http://www.kernel.org/pub/linux/kernel/v2.4/linux-${OKV}.tar.bz2
 	 http://lostlogicx.com/gentoo/patches-${KV}.tar.bz2"
-KEYWORDS="x86 -ppc -sparc "
+KEYWORDS="~x86 -ppc -sparc"
 SLOT="${KV}"
 
 src_unpack() {
@@ -51,8 +51,5 @@ pkg_postinst() {
 	einfo "If there are problems with it, please report them"
 	einfo "by assigning bugs on bugs.gentoo.org to"
 	einfo "lostlogic@gentoo.org"
-	einfo "Known issues: ext3 data=journalled mode doesn't work"
-	einfo "I've had reports of massive ext2 corruption on this"
-	einfo "kernel.  Be warned."
 
 }
