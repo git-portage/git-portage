@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: First Last <your email>
-# $Header: /var/cvsroot/gentoo-x86/Attic/skel.build,v 1.14 2002/02/01 19:50:13 gbevin Exp $
+# $Header: /home/cvsroot/gentoo-x86/skel.build,v 1.14 2002/02/01 19:50:13 gbevin Exp $
 
 # NOTE: The comments in this file are for instruction and
 # documentation.  They're not meant to appear with your final,
