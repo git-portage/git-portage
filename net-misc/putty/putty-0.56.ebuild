@@ -1,13 +1,13 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/putty/Attic/putty-0.54_pre1.ebuild,v 1.2 2004/06/25 00:06:35 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/putty/Attic/putty-0.56.ebuild,v 1.1 2004/10/27 13:37:40 taviso Exp $
 
 inherit eutils
 
 DESCRIPTION="UNIX port of the famous Telnet and SSH client"
 
 HOMEPAGE="http://www.chiark.greenend.org.uk/~sgtatham/putty/"
-SRC_URI="mirror://gentoo/putty-cvs-20040313.tar.bz2"
+SRC_URI="http://the.earth.li/~sgtatham/putty/latest/${P}.tar.gz"
 LICENSE="MIT"
 
 SLOT="0"
@@ -16,20 +16,15 @@ IUSE="doc"
 
 RDEPEND="=x11-libs/gtk+-1.2* virtual/x11"
 
-DEPEND="${RDEPEND} dev-lang/perl sys-apps/sed"
-
-S=${WORKDIR}/${PN}
+DEPEND="${RDEPEND} dev-lang/perl"
 
 src_unpack() {
-	# unpack the tarball...
 	unpack ${A}
 
-	# generate the makefiles
 	ebegin "Generating Makefiles"
-	cd ${S}; ${S}/mkfiles.pl
+	cd ${S}; perl ${S}/mkfiles.pl || die
 	eend $?
 
-	# change the CFLAGS to those requested by user.
 	ebegin "Setting CFLAGS"
 	sed -i "s!-O2!${CFLAGS}!g" ${S}/unix/Makefile.gtk
 	eend $?
@@ -39,24 +34,20 @@ src_unpack() {
 }
 
 src_compile() {
-	# build putty.
-	einfo "Building putty..."
-	cd ${S}/unix; emake -f Makefile.gtk || die
+	cd ${S}/unix; emake -f Makefile.gtk || die "make failed"
 }
 
 src_install() {
+	cd ${S}/doc
+
+	doman plink.1 pterm.1 putty.1 puttytel.1 puttygen.1
 
 	cd ${S}/unix
 
-	# man pages...
-	doman plink.1 pterm.1 putty.1 puttytel.1
-
-	# binaries...
-	dobin plink pterm putty puttytel psftp pscp
+	dobin plink pterm putty puttytel psftp pscp puttygen
 
 	cd ${S}
 
-	# docs...
 	dodoc README README.txt LICENCE CHECKLST.txt LATEST.VER website.url MODULE
 	use doc && dodoc doc/*
 
