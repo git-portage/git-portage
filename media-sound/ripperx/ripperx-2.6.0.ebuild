@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ripperx/Attic/ripperx-2.6.0.ebuild,v 1.1 2003/10/08 16:13:24 gregf Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ripperx/Attic/ripperx-2.6.0.ebuild,v 1.2 2004/01/21 07:49:33 raker Exp $
 
 MY_P=${P/x/X}
 S=${WORKDIR}/${MY_P}
