@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/xmail/Attic/xmail-1.20.ebuild,v 1.6 2005/01/27 17:25:35 superlag Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/xmail/Attic/xmail-1.21.ebuild,v 1.1 2005/01/27 17:25:35 superlag Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.xmailserver.org/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~sparc"
+KEYWORDS="~x86 ~ppc ~sparc"
 IUSE=""
 
 DEPEND="virtual/libc
