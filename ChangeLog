@@ -1,14 +1,22 @@
 DATE
 21 Nov 2000
 
+achim
+Update dev-libs slib-2.3.8 to slib-2.3.8-r2
+Modified dependencies
+
+achim
+Update gnome-apps gnucash-1.4.7 to gnucash-1.4.7-r2
+Added dependencies
+
 jerry
-New portage: /app-admin/sudo-1.6.3_p5
+New app-admin sudo-1.6.3_p5
 
 DATE
 20 Nov 2000
 
 jerry
-Update gkrellm-1.0.1 to gkrellm-1.0.2
+Update app-admin gkrellm-1.0.1 to gkrellm-1.0.2
 
 jerry
 Move from /etc/pam.conf to /etc/pam.d
@@ -32,7 +40,7 @@ make sure that ROOT is an existing directory; otherwise it exits with
 an error condition.
 
 achim
-Update snort-1.6.3 to snort-1.6.3-r2
+Update net-misc snort-1.6.3 to snort-1.6.3-r2
 Fixed a small installation bug.
 
 DATE
@@ -50,5 +58,6 @@ primarily of interest for those setting up a Gentoo Linux box, while
 the linux-sources package is more appropriate for geeks who already
 have a running Gentoo Linux system and want to compile a more recent
 kernel by hand.
+
 
 
