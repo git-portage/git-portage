@@ -153,6 +153,7 @@
 ./dev-ruby/rdtool/rdtool-0.6.6.ebuild
 ./dev-ruby/strscan/strscan-0.5.8.ebuild
 ./dev-util/cvs/cvs-1.11.ebuild
+./dev-utils/fbset/fbset-2.1
 ./dev-util/guile/guile-1.4-r2.ebuild
 #./dev-util/lincvs/lincvs-0.3_beta1.ebuild
 ./dev-util/sel/sel-0.08.2.ebuild
