@@ -1,12 +1,12 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/sed/Attic/sed-4.0.1.ebuild,v 1.8 2003/02/13 16:13:41 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/sed/Attic/sed-4.0.5-r1.ebuild,v 1.1 2003/03/04 21:34:05 lostlogic Exp $
 
 DESCRIPTION="Super-useful stream editor"
 SRC_URI="ftp://ftp.gnu.org/pub/gnu/sed/${P}.tar.gz"
 HOMEPAGE="http://www.gnu.org/software/sed/sed.html"
 
-KEYWORDS="x86 -ppc sparc alpha mips"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~arm ~mips"
 SLOT="0"
 LICENSE="GPL-2"
 IUSE="nls static build"
@@ -27,15 +27,14 @@ src_compile() {
 src_install() {
 	into /
 	dobin sed/sed
-	dodir /usr/bin
-	dosym ../../bin/sed /usr/bin/sed
 	if [ -z "`use build`" ]
 	then
-		into /usr
-		doinfo doc/sed.info*
-		doman doc/sed.1
+		einstall || die "install failed"
 		dodoc COPYING NEWS README* THANKS TODO AUTHORS BUGS ANNOUNCE ChangeLog
 	else
-		rm -rf ${D}/usr/share
+		dodir /usr/bin
 	fi
+	
+	rm -f ${D}/usr/bin/sed
+	dosym ../../bin/sed /usr/bin/sed
 }
