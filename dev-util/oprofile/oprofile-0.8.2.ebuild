@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/oprofile/Attic/oprofile-0.7.ebuild,v 1.7 2005/01/12 00:08:59 spock Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/oprofile/Attic/oprofile-0.8.2.ebuild,v 1.1 2005/03/25 17:20:17 spock Exp $
 
 DESCRIPTION="A transparent low-overhead system-wide profiler"
 HOMEPAGE="http://oprofile.sourceforge.net"
@@ -8,11 +8,10 @@ SRC_URI="mirror://sourceforge/oprofile/${P}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86 ~ppc"
 # IUSE: it also needs kernel sources but all gentoo users have them
 IUSE="qt"
-DEPEND="
-	>=dev-libs/popt-1.7-r1
+DEPEND=">=dev-libs/popt-1.7-r1
 	>=sys-devel/binutils-2.14.90.0.6-r3
 	>=sys-libs/glibc-2.3.2-r1
 	qt? ( >=x11-libs/qt-3.2.1-r2 )"
@@ -22,10 +21,22 @@ src_compile() {
 
 	local myconf=""
 
-	use qt ||  myconf="${myconf} --with-qt-dir=/void"
+	if use qt
+	then
+		REALHOME="$HOME"
+		mkdir -p $T/fakehome/.kde
+		mkdir -p $T/fakehome/.qt
+		export HOME="$T/fakehome"
+		addwrite "${QTDIR}/etc/settings"
+
+		# things that should access the real homedir
+		[ -d "$REALHOME/.ccache" ] && ln -sf "$REALHOME/.ccache" "$HOME/"
+	else
+		myconf="${myconf} --with-qt-dir=/void"
+	fi
 
 	myconf="${myconf} --with-x"
-	# note: compilation has only been tested with a 2.4 kernel
+
 	case $KV in
 	2.2.*|2.4.*) myconf="${myconf} --with-linux=/usr/src/linux";;
 	2.5.*|2.6.*) myconf="${myconf} --with-kernel-support";;
