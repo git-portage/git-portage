@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/mrxvt/Attic/mrxvt-0.3.5.ebuild,v 1.2 2004/10/17 16:10:57 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/mrxvt/Attic/mrxvt-0.3.7.ebuild,v 1.1 2004/11/04 16:52:32 usata Exp $
 
 IUSE="debug truetype xgetdefault"
 #IUSE="${IUSE} utempter"
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/materm/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc-macos"
+KEYWORDS="~x86 ~ppc-macos ~amd64 ~ppc"
 
 RDEPEND="virtual/libc
 	virtual/x11
