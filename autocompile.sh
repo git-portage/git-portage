@@ -78,8 +78,9 @@ do
 
   # package name
   myp=${myf%*.ebuild}
- 
-  echo $myp
+
+  # debugging
+#  echo $myp
 
   if [ -f "$myd" ]
   then
@@ -104,9 +105,9 @@ do
     echo "$C_NORMAL$myp ($myc)"
 
     myl="$LOGDIR/$myc/$myp/"
-    mkdir -p $myl 
+    mkdir -p $myl
 
-    for j in ${STEPS} 
+    for j in ${STEPS}
     do
       mye=0
       do_step $j
@@ -116,10 +117,11 @@ do
       fi
     done
     if [ $mye -eq 0 ]
-    then   
+    then
       echo "$C_END $C_OK [OK]$C_NORMAL     "
+      echo $i >> ${LOGDIR}/ok
     fi
-    
+
   else
     echo "!!! $myd does not exists !"
   fi
