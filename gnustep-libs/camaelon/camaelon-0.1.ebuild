@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnustep-libs/camaelon/Attic/camaelon-0.1.ebuild,v 1.5 2004/11/05 22:11:24 blubb Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnustep-libs/camaelon/Attic/camaelon-0.1.ebuild,v 1.6 2004/11/12 03:57:54 fafhrd Exp $
 
 inherit gnustep
 
@@ -17,4 +17,6 @@ LICENSE="LGPL-2.1"
 IUSE="${IUSE}"
 DEPEND="${GS_DEPEND}"
 RDEPEND="${GS_RDEPEND}"
+
+egnustep_install_domain "System"
 
