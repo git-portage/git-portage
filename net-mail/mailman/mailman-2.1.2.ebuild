@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/mailman/Attic/mailman-2.1.1-r2.ebuild,v 1.2 2003/05/20 01:58:24 tberman Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/mailman/Attic/mailman-2.1.2.ebuild,v 1.1 2003/05/20 01:58:24 tberman Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="GNU Mailman, the mailing list server with webinterface"
@@ -15,7 +15,7 @@ DEPEND=">=dev-lang/python-1.5.2
 	virtual/mta
 	net-www/apache"
 
-INSTALLDIR="/var/mailman"
+INSTALLDIR="/usr/local/mailman"
 APACHEGID="81"
 MAILGID="daemon"
 
@@ -49,7 +49,7 @@ src_install () {
         chmod 2775 ${ID}
         make prefix=${ID} var_prefix=${ID} doinstall || die
 	insinto /etc/apache/conf/addon-modules
-	newins ${FILESDIR}/mailman.2.1.1-r2.conf mailman.conf
+	doins ${FILESDIR}/mailman.conf
 	
 	dodoc ${FILESDIR}/README.gentoo
 	dodoc ACK* BUGS FAQ NEWS README* TODO UPGRADING
@@ -57,15 +57,20 @@ src_install () {
 	dodoc contrib/virtusertable contrib/mailman.mc
 
 	cp contrib/*.py contrib/majordomo2mailman.pl contrib/auto \
-		contrib/mm-handler* ${D}/var/mailman/bin
+		contrib/mm-handler* ${D}/home/mailman/bin
 
 	# Save the old config into the new package as CONFIG_PROTECT
 	# doesn't work for this package.
 	if [ -f ${ROOT}/var/mailman/Mailman/mm_cfg.py ]; then
-		rm ${D}/var/mailman/Mailman/mm_cfg.py
 		cp ${ROOT}/var/mailman/Mailman/mm_cfg.py \
-			${D}/var/mailman/Mailman/mm_cfg.py
-		einfo "Your old config has been saved."
+			${D}/usr/local/mailman/Mailman/mm_cfg.py
+		einfo "Your old config has been saved as mm_cfg.py"
+		einfo "A new config has been installed as mm_cfg.dist"
+	fi
+	if [ -f ${ROOT}/home/mailman/Mailman/mm_cfg.py ]; then
+		cp ${ROOT}/home/mailman/Mailman/mm_cfg.py \
+			${D}/usr/local/mailman/Mailman/mm_cfg.py
+		einfo "Your old config has been saved as mm_cfg.py"
 		einfo "A new config has been installed as mm_cfg.py.dist"
 	fi
 
@@ -81,7 +86,12 @@ pkg_postinst() {
 	einfo "Please read /usr/share/doc/${PF}/README.gentoo.gz for additional"
 	einfo "Setup information, mailman will NOT run unless you follow"
 	einfo "those instructions!"
-}
+	ewarn "The home directory for mailman has been moved from /var/mailman"
+	ewarn "(pre 2.1.1-r2) or /home/mailman (2.1.1-r3) to /usr/local/mailman"
+	ewarn "This should hopefully solve any problems, and this is what the mailman"
+	ewarn "default is. (Any existing config has been saved in the"
+	ewarn "new home directory.)"
+}	
 
 pkg_config() {
 	einfo "Updating apache config"

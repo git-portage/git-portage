@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/mailman/Attic/mailman-2.1.1-r3.ebuild,v 1.2 2003/05/14 02:34:29 tberman Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/mailman/Attic/mailman-2.1.1-r3.ebuild,v 1.3 2003/05/20 01:58:24 tberman Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="GNU Mailman, the mailing list server with webinterface"
@@ -49,7 +49,7 @@ src_install () {
         chmod 2775 ${ID}
         make prefix=${ID} var_prefix=${ID} doinstall || die
 	insinto /etc/apache/conf/addon-modules
-	doins ${FILESDIR}/mailman.conf
+	newins ${FILESDIR}/mailman.2.1.1-r3.conf mailman.conf
 	
 	dodoc ${FILESDIR}/README.gentoo
 	dodoc ACK* BUGS FAQ NEWS README* TODO UPGRADING
@@ -63,9 +63,9 @@ src_install () {
 	# doesn't work for this package.
 	if [ -f ${ROOT}/var/mailman/Mailman/mm_cfg.py ]; then
 		cp ${ROOT}/home/mailman/Mailman/mm_cfg.py \
-			${D}/home/mailman/Mailman/mm_cfg.py.old
-		einfo "Your old config has been saved as mm_cfg.py.old."
-		einfo "A new config has been installed as mm_cfg.py"
+			${D}/home/mailman/Mailman/mm_cfg.py
+		einfo "Your old config has been saved as mm_cfg.py"
+		einfo "A new config has been installed as mm_cfg.py.dist"
 	fi
 
 	exeinto /etc/init.d
