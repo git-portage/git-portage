@@ -1,3 +1,18 @@
+DATE
+19 Nov 2000
+
+drobbins
+Changing linux kernel structure
+I'm in the process of changing the directory structure under sys-kernel so that it
+follows our guidelines.  There will be two directories: sys-kernel/linux and 
+sys-kernel/linux-sources.  The linux package contains a kernel, modules and headers so
+that users can compile other sources.  The linux-sources package contains only the 
+kernel sources; no kernel or modules are included.  The linux package is primarily of
+interest for those setting up a Gentoo Linux box, while the linux-sources package is
+more appropriate for geeks who already have a running Gentoo Linux system and want to
+compile a more recent kernel by hand.
+
+
 19.11.2000
 
 	- New app-arch/dump 0.4b20					(achim)
