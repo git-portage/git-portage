@@ -2,11 +2,10 @@ MD5 6476a322906a3ba7edb984bd61bdd373 mozilla-thunderbird-0.8.ebuild 5012
 MD5 89028fb80f4bcad69d98c0feeae4f85b mozilla-thunderbird-0.7.3-r1.ebuild 4876
 MD5 26e94f691d2be6e1309f260e1f7ecf3b mozilla-thunderbird-0.9-r2.ebuild 5415
 MD5 127276e24d3fd3a1fb757158cc940f18 mozilla-thunderbird-1.0.2.ebuild 5984
-MD5 52af00da8499e1af0d55d389865601f8 mozilla-thunderbird-1.0.ebuild 5632
+MD5 1e44970b22c6ee50f37fe32e16aca2e4 mozilla-thunderbird-1.0.ebuild 5636
 MD5 e5171036acf1de25c3363d34ed56b19e mozilla-thunderbird-0.9.ebuild 5018
-MD5 4479b0e0273f2918e04c0adeebe18056 ChangeLog 4656
+MD5 111d2f6be67e641ceedc72ba3f74e4ed ChangeLog 4844
 MD5 ce23390351fe8020387d93ee29e09a3d metadata.xml 160
-MD5 abbe1ae46b92941f40d9a3a1f7c509ca enigmail-0.89.5.tar.gz 358828
 MD5 f516c95f08febf6aff670f3b1ba416b9 mozilla-thunderbird-0.9-r3.ebuild 5651
 MD5 63e247da983ffc7766b795be757e00e6 files/digest-mozilla-thunderbird-0.7.3-r1 207
 MD5 d454e31be912afe393cec7e6eddeaa72 files/digest-mozilla-thunderbird-0.9-r2 205
