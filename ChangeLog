@@ -1,3 +1,12 @@
+date 17 Jan 2001
+
+upd media-libs/libsdl-1.1.6 to 1.1.7
+achim
+
+upd net-libs/pam_ldap-82 to 82-r1
+achim
+changed pam-module path to /lib/security
+
 date 16 Jan 2001
 
 new sys-kernel/linux-2.4.1_pre7
