@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/nrg2iso/Attic/nrg2iso-0.4.ebuild,v 1.2 2004/10/26 13:16:43 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/nrg2iso/Attic/nrg2iso-0.1.ebuild,v 1.6 2004/12/25 15:56:54 ticho Exp $
 
 inherit eutils toolchain-funcs
 
