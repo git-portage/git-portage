@@ -1,5 +1,12 @@
 date 22 Dec 2000
 
+new net-misc/djbdns-1.02
+drobbins
+This is an excellent DNS package.  Developers, be sure
+to check out /etc/rc.d/init.d/dnscache and the interactive
+setup functionality (requires /etc/rc.d/config/functions
+from CVS)
+
 upd sys-apps/vcron-3.0_p1-r1 to 3.0_p1-r2
 drobbins
 /usr/sbin/crontab is now properly in /usr/bin/crontab
