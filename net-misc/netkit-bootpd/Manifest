@@ -1,3 +1,6 @@
-MD5 0d1e04d4f16edae8ed199f5c24e49dc8 netkit-bootpd-0.17-r1.ebuild 888
 MD5 6e2c72674ffad78bebad526a0759c22c ChangeLog 1112
+MD5 0d1e04d4f16edae8ed199f5c24e49dc8 netkit-bootpd-0.17-r1.ebuild 888
+MD5 7d3d2d1e9d52d76b2bf48279c2f3d9fa netkit-bootpd-0.17-r2.ebuild 955
 MD5 0fff8ed5c4395d99043f3f50422826bb files/digest-netkit-bootpd-0.17-r1 78
+MD5 6d9cf6a3cff3c0b1c71ce938a7a5fc6a files/0.17-jumpstart.patch 1163
+MD5 0fff8ed5c4395d99043f3f50422826bb files/digest-netkit-bootpd-0.17-r2 78
