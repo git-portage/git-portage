@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/gimp/Attic/gimp-2.0.6.ebuild,v 1.2 2004/12/22 16:43:11 obz Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/gimp/Attic/gimp-2.0.6.ebuild,v 1.3 2005/02/03 04:18:25 joem Exp $
 
 inherit flag-o-matic libtool eutils
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://gimp/v2.0/${P}.tar.bz2
 SLOT="2"
 KEYWORDS="~x86 ~ppc ~hppa ~sparc ~amd64 ~mips ~ppc64 ~alpha"
 #IUSE="X aalib altivec debug doc gimpprint jpeg mmx mng png python sse svg tiff wmf"
-IUSE="aalib altivec debug doc gimpprint jpeg mmx mng png python sse svg tiff wmf"
+IUSE="aalib altivec debug doc gimpprint gtkhtml jpeg mmx mng png python sse svg tiff wmf"
 
 # FIXME : some more things can be (local) USE flagged
 # a few options are detection only, fix them to switch
