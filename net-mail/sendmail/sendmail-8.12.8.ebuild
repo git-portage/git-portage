@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/sendmail/Attic/sendmail-8.12.7-r2.ebuild,v 1.2 2003/02/13 14:39:44 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/sendmail/Attic/sendmail-8.12.8.ebuild,v 1.1 2003/03/04 03:02:53 g2boojum Exp $
 
 IUSE="ssl ldap sasl berkdb tcpd gdbm"
 
@@ -16,7 +16,7 @@ DEPEND="net-dns/hesiod
 	net-mail/mailbase
 	sys-libs/gdbm
 	sys-devel/m4
-	sasl? ( dev-libs/cyrus-sasl )
+	sasl? ( >=dev-libs/cyrus-sasl-2.1.10 )
 	tcpd? ( sys-apps/tcp-wrappers )
 	ssl? ( dev-libs/openssl )
 	ldap? ( net-nds/openldap )"
@@ -54,9 +54,9 @@ src_unpack() {
 	conf_sendmail_ENVDEF="-DFALSE=0 -DTRUE=1"
 	conf_sendmail_LIBS=""
 	use sasl && confLIBS="${confLIBS} -lsasl2"  \
-		&& confENVDEF="${confENVDEF} -DSASL" \
+		&& confENVDEF="${confENVDEF} -DSASL=2" \
 		&& confCCOPTS="${confCCOPTS} -I/usr/include/sasl" \
-		&& conf_sendmail_ENVDEF="${conf_sendmail_ENVDEF} -DSASL"  \
+		&& conf_sendmail_ENVDEF="${conf_sendmail_ENVDEF} -DSASL=2"  \
 		&& conf_sendmail_LIBS="${conf_sendmail_LIBS} -lsasl2"
 	use tcpd && confENVDEF="${confENVDEF} -DTCPWRAPPERS" \
 		&& confLIBS="${confLIBS} -lwrap"
@@ -146,16 +146,14 @@ localhost			RELAY
 127.0.0.1			RELAY
 
 EOF
-	cat << EOF > ${D}/etc/conf.d/sendmail
+cat << EOF > ${D}/etc/conf.d/sendmail
 # Config file for /etc/init.d/sendmail
-PIDFILE=/var/run/sendmail.pid
-CM_PIDFILE=/var/spool/clientmqueue/sm-client.pid
-
 # add start-up options here
 SENDMAIL_OPTS="-bd -q30m -L sm-mta" # default daemon mode
 CLIENTMQUEUE_OPTS="-Ac -q30m -L sm-cm" # clientmqueue
+KILL_OPTS="" # add -9/-15/your favorite evil SIG level here
 
 EOF
 	exeinto /etc/init.d
-	newexe ${FILESDIR}/sendmail-r2 sendmail
+	newexe ${FILESDIR}/sendmail-r5 sendmail
 }
