@@ -1,5 +1,9 @@
 date 09 Jan 2001
 
+upd sys-apps/iptables-1.1.2 to 1.2
+drobbins
+iptables has been moved from /usr/bin to /usr/sbin as well
+
 upd dev-db/unixODBC-1.8.13 to 2.0.2
 achim
 
