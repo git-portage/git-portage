@@ -1,6 +1,10 @@
+13.11.2000
+
+	- New net-misc/snort-1.6.3			(achim)
+
 12.11.2000
-	-New sys-apss/watchpid-0.1			(drobbins)
-	-New sys-apps/grub-0.5.96.1			(drobbins)
+	- New sys-apps/watchpid-0.1			(drobbins)
+	- New sys-apps/grub-0.5.96.1			(drobbins)
 	- Update binutils 2.10.0.26 -> 2.10.0.33	(achim)
 	- Update glibc-2.1.94 -> glibc-2.2		(achim)
  	  [experimental]
