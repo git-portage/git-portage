@@ -1,10 +1,10 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/mozilla/Attic/mozilla-1.3-r1.ebuild,v 1.7 2003/07/17 15:37:41 pvdabeel Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/mozilla/Attic/mozilla-1.4-r2.ebuild,v 1.1 2003/07/24 17:44:04 brad Exp $
 
 IUSE="java crypt ipv6 gtk2 ssl ldap gnome"
 # Internal USE flags that I do not really want to advertise ...
-IUSE="${IUSE} mozsvg mozcalendar mozaccess mozinterfaceinfo mozp3p mozxmlterm"
+IUSE="${IUSE} mozsvg mozcalendar mozaccess mozp3p mozxmlterm"
 IUSE="${IUSE} moznoirc moznomail moznocompose moznoxft"
 
 inherit flag-o-matic gcc eutils nsplugins
@@ -13,8 +13,7 @@ inherit flag-o-matic gcc eutils nsplugins
 filter-flags "-fomit-frame-pointer"
 
 # Sparc support ...
-replace-flags "-mcpu=ultrasparc" "-mcpu=v8 -mtune=ultrasparc"
-replace-flags "-mcpu=v9" "-mcpu=v8 -mtune=v9"
+replace-sparc64-flags
 
 # Recently there has been a lot of stability problem in Gentoo-land.  Many
 # things can be the cause to this, but I believe that it is due to gcc3
@@ -43,8 +42,8 @@ strip-flags
 export CFLAGS="${CFLAGS//-O?}"
 export CXXFLAGS="${CFLAGS//-O?}"
 
-EMVER="0.74.3"
-IPCVER="1.0.2"
+EMVER="0.76.3"
+IPCVER="1.0.3"
 
 PATCH_VER="1.0"
 
@@ -54,17 +53,16 @@ MY_PV2="${MY_PV1/eta}"
 S="${WORKDIR}/mozilla"
 DESCRIPTION="The Mozilla Web Browser"
 SRC_URI="ftp://ftp.mozilla.org/pub/mozilla/releases/${PN}${MY_PV2}/src/${PN}-source-${MY_PV2}.tar.bz2
-	crypt? ( http://enigmail.mozdev.org/dload/src/enigmail-${EMVER}.tar.gz
-	         http://downloads.mozdev.org/enigmail/ipc-${IPCVER}.tar.gz )"
+	crypt? ( http://downloads.mozdev.org/enigmail/src/enigmail-${EMVER}.tar.gz
+	         http://enigmail.mozdev.org/dload/src/ipc-${IPCVER}.tar.gz )"
 #	mirror://gentoo/${P}-patches-${PATCH_VER}.tar.bz2"
 HOMEPAGE="http://www.mozilla.org"
 
-KEYWORDS="x86 ppc ~sparc ~alpha"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha"
 SLOT="0"
 LICENSE="MPL-1.1 NPL-1.1"
 
 RDEPEND=">=x11-base/xfree-4.2.0-r11
-	>=gnome-base/ORBit-0.5.10-r1
 	>=dev-libs/libIDL-0.8.0
 	>=sys-libs/zlib-1.1.4
 	>=media-libs/fontconfig-2.1
@@ -80,6 +78,7 @@ RDEPEND=">=x11-base/xfree-4.2.0-r11
 	( gtk2? >=dev-libs/glib-2.2.0 :
 	        =dev-libs/glib-1.2* )
 	gtk2?  ( >=x11-libs/pango-1.2.1 )
+	!gtk2? ( >=gnome-base/ORBit-0.5.10-r1 )
 	java?  ( virtual/jre )
 	crypt? ( >=app-crypt/gnupg-1.2.1 )"
 
@@ -92,23 +91,10 @@ DEPEND="${RDEPEND}
 
 moz_setup() {
 
-	# Setup CC and CXX
-	if [ -z "${CC}" ]
-	then
-		export CC="gcc"
-	fi
-	if [ -z "${CXX}" ]
-	then
-		export CXX="g++"
-	fi
-
-	#This should enable parallel builds, I hope
-	if [ -f /proc/cpuinfo ]
-	then
-		# Set MAKEOPTS to have proper -j? option ..
-		get_number_of_jobs
-		export MAKE="emake"
-	fi
+	# Set MAKEOPTS to have proper -j? option ..
+#	get_number_of_jobs
+	# This should enable parallel builds, I hope
+	export MAKE="emake"
 
 	# needed by src_compile() and src_install()
 	export MOZILLA_OFFICIAL=1
@@ -153,13 +139,6 @@ src_unpack() {
 	# <azarah@gentoo.org> (23 Feb 2003)
 	epatch ${FILESDIR}/1.3/${PN}-1.3-fix-RAW-target.patch
 
-	if [ -n "`use gtk2`" ]
-	then
-		epatch ${FILESDIR}/1.3/${PN}-1.3-gtk2.patch
-	else
-		epatch ${FILESDIR}/1.3/${PN}-1.3-fix-gtkim.patch
-	fi
-
 	export WANT_AUTOCONF_2_1=1
 	autoconf &> /dev/null
 	unset WANT_AUTOCONF_2_1
@@ -170,13 +149,17 @@ src_unpack() {
 		mv -f ${WORKDIR}/ipc ${S}/extensions/
 		mv -f ${WORKDIR}/enigmail ${S}/extensions/
 	fi
+
+	# Fix build with Linux 2.6
+	cp ${S}/security/coreconf/Linux2.5.mk ${S}/security/coreconf/Linux2.6.mk
+
 }
 
 src_compile() {
 
 	moz_setup
 
-	local myconf=""
+	local myconf=
 	# NOTE: QT and XLIB toolkit seems very unstable, leave disabled until
 	#       tested ok -- azarah
 	if [ -n "`use gtk2`" ]
@@ -268,7 +251,7 @@ src_compile() {
 	#     cookie, wallet, content-packs, xml-rpc, xmlextras, help, pref, transformiix,
 	#     venkman, inspector, irc, universalchardet, typeaheadfind
 	# Non-defaults are:
-	#     xmlterm access-builtin p3p interfaceinfo datetime finger cview
+	#     xmlterm access-builtin p3p datetime finger cview
 	local myext="default"
 	if [ -n "`use mozxmlterm`" ]
 	then
@@ -282,10 +265,6 @@ src_compile() {
 	then
 		myext="${myext},p3p"
 	fi
-	if [ -n "`use mozinterfaceinfo`" ]
-	then
-		myext="${myext},interfaceinfo"
-	fi
 	if [ -n "`use moznoirc`" ]
 	then
 		myext="${myext},-irc"
@@ -298,12 +277,11 @@ src_compile() {
 	else
 		myconf="${myconf} --disable-svg"
 	fi
-# This puppy needs libical, which is not in portage yet.  Also make mozilla
-# depend on swig, so not sure if its the best idea around to enable ...
-#	if [ -n "`use mozcalendar`" ]
-#	then
-#		myconf="${myconf} --enable-calendar"
-#	fi
+	# re-enable calendar for 1.4, builds autonomously (no dependencies anymore)
+	if [ -n "`use mozcalendar`" ]
+	then
+		myconf="${myconf} --enable-calendar"
+	fi
 	
 	if [ -n "`use moznomail`" ]
 	then
@@ -318,14 +296,23 @@ src_compile() {
 	then
 		# Currently gcc-3.2 or older do not work well if we specify "-march"
 		# and other optimizations for pentium4.
-		export CFLAGS="${CFLAGS/-march=pentium4/-march=pentium3}"
-		export CXXFLAGS="${CXXFLAGS/-march=pentium4/-march=pentium3}"
-
+		if [ "$(gcc-minor-version)" -lt "3" ]; then
+			replace-flags -march=pentium4 -march=pentium3
+			filter-flags -msse2
+		fi
+								
 		# Enable us to use flash, etc plugins compiled with gcc-2.95.3
 		if [ "${ARCH}" = "x86" ]
 		then
 			myconf="${myconf} --enable-old-abi-compat-wrappers"
 		fi
+	fi
+
+	if [ -n "`use alpha`" ]
+	then
+		# mozilla wont link with X11 on alpha, for some crazy reason.
+		# set it to link explicitly here.
+		sed -i 's/\(EXTRA_DSO_LDOPTS += $(MOZ_GTK_LDFLAGS).*$\)/\1 -lX11/' ${S}/gfx/src/gtk/Makefile.in
 	fi
 
 	# *********************************************************************
