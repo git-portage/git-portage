@@ -5,6 +5,7 @@
 	changed from swapfs->tmpfs->shm in less than three kernel releases,
 	and I hope it stays the same for now.
 
+
 [UNASSIGNED] blender-2.04 is linked to libMesaGLU and friends.  But, the nvidia 
 	(and xfree86, I think) packages don't install libMesa compatibility symlinks.
 	We need to either fix this or create a mesa-compat package.
