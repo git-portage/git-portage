@@ -388,6 +388,7 @@
 ./net-www/cvsweb/cvsweb-1.93-r1.ebuild
 ./net-www/htdig/htdig-3.1.5.ebuild
 ./net-www/jakarta/jakarta-3.1-r2.ebuild
+./net-www/links/links-0.95.ebuild
 ./net-www/lynx/lynx-2.8.3-r1.ebuild
 #./net-www/mozilla/mozilla-milestone-18.ebuild
 #./net-www/netscape-flash/netscape-flash-4.0.12.ebuild
