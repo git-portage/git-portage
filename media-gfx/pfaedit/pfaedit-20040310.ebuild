@@ -1,16 +1,16 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/pfaedit/Attic/pfaedit-031123.ebuild,v 1.8 2004/06/24 22:46:17 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/pfaedit/Attic/pfaedit-20040310.ebuild,v 1.1 2004/10/09 20:56:31 usata Exp $
 
 inherit flag-o-matic
 
 DESCRIPTION="postscript font editor and converter"
-HOMEPAGE="http://pfaedit.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/pfaedit_full-${PV}.tgz"
+HOMEPAGE="http://pfaedit.sourceforge.net/oldindex.html"
+SRC_URI="mirror://sourceforge/${PN}/${PN}_full-${PV:2:6}.tgz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86 alpha ~ppc ~amd64"
+KEYWORDS="x86 alpha ppc ~amd64"
 IUSE="png gif jpeg tiff truetype X"
 
 DEPEND="png? ( >=media-libs/libpng-1.2.4 )
@@ -19,6 +19,8 @@ DEPEND="png? ( >=media-libs/libpng-1.2.4 )
 	tiff? ( >=media-libs/tiff-3.5.7-r1 )
 	truetype? ( >=media-libs/freetype-2.1.2 )
 	!media-gfx/fontforge"
+
+S=${WORKDIR}/${PN}-${PV:2:6}
 
 src_compile() {
 	local myconf=""
@@ -31,8 +33,6 @@ src_compile() {
 }
 
 src_install() {
-	# make install fails if this directory doesn't exist
-	dodir /usr/lib
-	einstall
+	einstall || die
 	dodoc AUTHORS COPYING LICENSE README
 }
