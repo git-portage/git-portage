@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/linux-wlan-ng/Attic/linux-wlan-ng-0.2.0-r1.ebuild,v 1.2 2003/04/07 00:08:32 latexer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/linux-wlan-ng/Attic/linux-wlan-ng-0.2.0-r1.ebuild,v 1.3 2003/04/09 21:02:36 latexer Exp $
 
 
 inherit eutils
@@ -46,6 +46,7 @@ src_unpack() {
 
 	unpack ${P}.tar.gz
 	if [ -n "`use pcmcia`" ]; then
+		check_KV
 		unpack ${PCMCIA_CS}.tar.gz
 		cd ${PCMCIA_DIR}
 		if [ -z "`has_version =sys-apps/pcmcia-cs-3.2.4*`" ]; then
