@@ -1,4 +1,5 @@
 MD5 c7c8581bc10ed31dc6eb6ca3ddf8480d ardour-0.9_beta8.ebuild 1341
+MD5 3ffdd30a6c45abe8fdac9e27b74a0baf ardour-0.9_beta11.ebuild 1178
 MD5 1a8691f5025a12fce40db2e06864ac15 ardour-0.9_beta3.ebuild 1877
 MD5 5be813bf9885f6732eca8b20c7d32903 ardour-0.9_beta5.ebuild 1772
 MD5 de40e27c50c3190f7bae34fd3f8b0fc6 ardour-0.9_beta7.ebuild 1370
@@ -15,3 +16,4 @@ MD5 579b5ea73c3e59a8b3c5be8b403c8510 files/digest-ardour-0.9_beta9 69
 MD5 ead6b9abae92593e6cff8bce7ada44a0 files/digest-ardour-0.9_beta2-r1 69
 MD5 6c25c8309912ca76f90812abd9f823c0 files/ardour-pthread.patch 422
 MD5 56deeea4ee1560c33fe0cc9a283b03c2 files/digest-ardour-0.9_beta10 70
+MD5 f28ae91d7e6043f56c23e32d32901ff9 files/digest-ardour-0.9_beta11 70
