@@ -1,3 +1,9 @@
+date 15 Jan 2001
+
+upd net-fs/autofs-3.1.7 to 3.1.7-r1
+achim
+Works now
+
 date 14 Jan 2001
 
 upd sys-apps/fileutils-4.0.33 to 4.0.36
