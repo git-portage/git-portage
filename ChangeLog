@@ -1,3 +1,24 @@
+date 16 Jan 2001
+
+new media-sound/shorten-3.2
+drobbins
+shorten is back, now at 3.2 and much improved.  shorten is a 
+lossless audio compressor.
+
+new media-sound/xmms-aalsa-0.5.4
+drobbins
+"another ALSA plugin" now available
+
+new media-sound/xmms-arts-0.4
+drobbins
+xmms plugin for the arts sound server (part of KDE2)
+
+upd media-sound/alsa-utils-0.5.9b-r1 to 0.5.10
+drobbins
+
+upd media-libs/alsa-lib-0.5.9-r2 to 0.5.10
+drobbins
+
 date 15 Jan 2001
 
 upd x11-base/nvidia-0.9.5-r2 to 0.9.5-r3

@@ -240,7 +240,7 @@
 ./media-libs/t1lib/t1lib-1.0.1-r1.ebuild
 ./media-libs/tiff/tiff-3.5.5-r1.ebuild
 #./media-sound/alsa-driver/alsa-driver-0.5.10.ebuild
-./media-sound/alsa-utils/alsa-utils-0.5.9b-r1.ebuild
+./media-sound/alsa-utils/alsa-utils-0.5.10.ebuild
 ./media-sound/esound/esound-0.2.20.ebuild
 ./media-sound/gtk-gnutella/gtk-gnutella-0.12-r2.ebuild
 ./media-sound/lame/lame-3.86b.ebuild
@@ -248,7 +248,10 @@
 ./media-sound/mpg123/mpg123-0.59r.ebuild
 ./media-sound/nas/nas-1.4.1.ebuild
 ./media-sound/sox/sox-12.17.1.ebuild
+./media-sound/shorten/shorten-3.2.ebuild
 ./media-sound/xmms/xmms-1.2.3.ebuild
+./media-sound/xmms-aalsa-0.5.4.ebuild
+./media-sound/xmms-arts-0.4.ebuild
 ./media-video/avifile/avifile-0.53.1.ebuild
 ./media-video/bcast-2000/bcast-2000c.ebuild
 ./media-video/mjpeg-tools/mjpeg-tools-1a.ebuild
