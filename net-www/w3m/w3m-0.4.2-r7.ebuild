@@ -1,9 +1,9 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/w3m/Attic/w3m-0.4.2-r6.ebuild,v 1.1 2004/01/11 18:32:54 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/w3m/Attic/w3m-0.4.2-r7.ebuild,v 1.1 2004/01/21 15:26:39 usata Exp $
 
-IUSE="X nopixbuf imlib imlib2 xface ssl migemo gpm cjk unicode nls async"
-#IUSE="canna"
+IUSE="X nopixbuf imlib imlib2 xface ssl migemo gpm cjk nls async"
+#IUSE="canna unicode"
 
 W3M_CVS_PV="1.890"
 W3M_CVS_P="${PN}-cvs-${W3M_CVS_PV}"
@@ -110,24 +110,18 @@ src_compile() {
 		migemo_command="no"
 	fi
 
+	# emacs-w3m doesn't like "--enable-m17n --disable-unicode,"
+	# so we better enable or disable both
 	if [ -n "`use cjk`" ] ; then
 		myconf="${myconf}
 			--enable-m17n
+			--enable-unicode
 			--enable-japanese=E
 			--with-charset=EUC-JP"
 	else
 		myconf="${myconf}
 			--disable-m17n
 			--with-charset=US-ASCII"
-	fi
-
-	if [ -n "`use unicode`" ] ; then
-		myconf="${myconf}
-			--enable-m17n
-			--enable-unicode"
-	else
-		myconf="${myconf}
-			--disable-unicode"
 	fi
 
 	econf --enable-keymap=w3m \
