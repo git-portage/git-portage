@@ -5,7 +5,7 @@
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
-DESCRIPTION="libole2"
+DESCRIPTION="The Gnome Application Libraries"
 SRC_URI="ftp://ftp.gnome.org/pub/GNOME/unstable/sources/${PN}/${A}"
 HOMEPAGE="http://www.gnome.org/"
 
@@ -15,15 +15,16 @@ src_unpack() {
 
 src_compile() {                           
   cd ${S}
-  try ./configure --host=${CHOST} --prefix=/opt/gnome
+  try ./configure --host=${CHOST} --prefix=/opt/gnome --with-catgets
   try make
 }
 
 src_install() {                               
   cd ${S}
   try make prefix=${D}/opt/gnome install
+  prepman /opt/gnome
 
-  dodoc AUTHORS COPYING ChangeLog NEWS README* TODO
+  dodoc AUTHORS COPYING ChangeLog NEWS README
 }
 
 

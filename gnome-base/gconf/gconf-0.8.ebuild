@@ -3,10 +3,11 @@
 # Author Achim Gottinger <achim@gentoo.org>
 # $Header
 
+P=GConf-0.8
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
-DESCRIPTION="libole2"
-SRC_URI="ftp://ftp.gnome.org/pub/GNOME/unstable/sources/${PN}/${A}"
+DESCRIPTION="Gconf"
+SRC_URI="ftp://ftp.gnome.org/pub/GNOME/unstable/sources/GConf/${A}"
 HOMEPAGE="http://www.gnome.org/"
 
 src_unpack() {
@@ -15,15 +16,16 @@ src_unpack() {
 
 src_compile() {                           
   cd ${S}
-  try ./configure --host=${CHOST} --prefix=/opt/gnome
+  try ./configure --host=${CHOST} --prefix=/opt/gnome --with-catgets
   try make
 }
 
 src_install() {                               
   cd ${S}
   try make prefix=${D}/opt/gnome install
+  prepman /opt/gnome
 
-  dodoc AUTHORS COPYING ChangeLog NEWS README* TODO
+  dodoc AUTHORS BUGS COPYING ChangeLog FAQ NEWS README* THANKS TODO
 }
 
 
