@@ -1,12 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jswat/Attic/jswat-2.25-r1.ebuild,v 1.5 2005/01/20 17:23:09 luckyduck Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jswat/Attic/jswat-2.34.ebuild,v 1.1 2005/04/02 11:07:11 axxo Exp $
 
 inherit java-pkg eutils
 
 DESCRIPTION="Extensible graphical Java debugger"
 HOMEPAGE="http://www.bluemarsh.com/java/jswat"
-SRC_URI="mirror://sourceforge/jswat/${PN}-src-${PV}.tar.gz"
+SRC_URI="mirror://sourceforge/jswat/${PN}-src-${PV}.zip"
 
 LICENSE="GPL-2"
 SLOT="2"
@@ -21,7 +21,7 @@ DEPEND=">=virtual/jdk-1.4
 	jikes? ( dev-java/jikes )"
 	#junit? ( dev-java/junit )"
 RDEPEND=">=virtual/jdk-1.4
-		dev-java/jclasslib"
+	dev-java/jclasslib"
 
 src_unpack() {
 	unpack ${A}
@@ -53,7 +53,7 @@ src_compile() {
 
 src_install() {
 	# install jswat classes
-	java-pkg_dojar build/dist/${P}/jswat.jar
+	java-pkg_dojar build/dist/jswat.jar
 
 	# prepare and install jswat script
 	dobin ${FILESDIR}/jswat2
