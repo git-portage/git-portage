@@ -1,4 +1,6 @@
+MD5 0963d59bc89997b87ce5de2e776c99dd zh-kcfonts-1.05.ebuild 951
 MD5 b7ee74c6cbd26500d039417acb2bdb64 ChangeLog 790
 MD5 9088d4a413fe0b465560c753492acf1f metadata.xml 175
-MD5 9f20e83bf51ba33d61d5c6a2ec2812b8 zh-kcfonts-1.05.ebuild 955
+MD5 55d5498ff9136fd4e109dca6ad3cbc52 zh-kcfonts-1.05-r1.ebuild 805
 MD5 fcd29c965b2324922c1717732227a787 files/digest-zh-kcfonts-1.05 65
+MD5 fcd29c965b2324922c1717732227a787 files/digest-zh-kcfonts-1.05-r1 65
