@@ -1,0 +1,5 @@
+MD5 99529b7bf1ff21206649e010cffbf033 perdition-1.15.ebuild 1415
+MD5 9ed0c9ad64fba2a20d52cd7038a56663 ChangeLog 317
+MD5 088e28cdbab3c51798d958d790bf2826 files/perdition.confd 1631
+MD5 05f755d1dc654672a0b12bf1dda6247c files/perdition.initd 2335
+MD5 21c456c0fa0d465a1858b62399ebe404 files/digest-perdition-1.15 66
