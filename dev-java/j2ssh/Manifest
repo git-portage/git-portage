@@ -1,4 +1,6 @@
-MD5 0e6adbc52946a740b4a4542f31bfd281 ChangeLog 505
 MD5 1bf2e2f441ecbfaebc0958021098b1e7 j2ssh-0.2.7.ebuild 887
+MD5 cc5f587b0d0ac361ba25f4b1732ec68e j2ssh-0.2.7-r1.ebuild 1182
+MD5 0e6adbc52946a740b4a4542f31bfd281 ChangeLog 505
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
+MD5 c0c163f1e4dcccc73192bfc69ba092a3 files/digest-j2ssh-0.2.7-r1 68
 MD5 c0c163f1e4dcccc73192bfc69ba092a3 files/digest-j2ssh-0.2.7 68
