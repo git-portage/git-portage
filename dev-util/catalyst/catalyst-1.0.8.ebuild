@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/catalyst/Attic/catalyst-1.0.5.ebuild,v 1.1 2004/04/01 20:38:16 zhen Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/catalyst/Attic/catalyst-1.0.8.ebuild,v 1.1 2004/05/22 07:22:02 zhen Exp $
 
 DESCRIPTION="Gentoo Linux official release metatool"
 HOMEPAGE="http://www.gentoo.org/proj/en/releng/catalyst"
@@ -8,13 +8,15 @@ SRC_URI="http://dev.gentoo.org/~zhen/catalyst/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~sparc ~ppc ~alpha ~mips"
-IUSE="doc"
+KEYWORDS="~x86"
+IUSE="doc cdr"
 
 DEPEND=""
 RDEPEND="dev-lang/python
 	sys-apps/portage
-	dev-util/ccache"
+	dev-util/ccache
+	amd64? ( sys-apps/linux32 )
+	cdr? ( app-cdr/cdrtools app-misc/zisofs-tools sys-apps/squashfs-tools )"
 
 S=${WORKDIR}/${PN}
 
@@ -31,6 +33,8 @@ src_install() {
 	doexe livecd/isogen/*
 	exeinto /usr/lib/${PN}/livecd/runscript
 	doexe livecd/runscript/*
+	exeinto /usr/lib/${PN}/livecd/runscript-support
+	doexe livecd/runscript-support/*
 	insinto /usr/lib/${PN}/livecd/files
 	doins livecd/files/*
 	for x in targets/*
