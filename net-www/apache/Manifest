@@ -1,4 +1,4 @@
-MD5 7b5cb2f233cf07a01fecee6a5b35d6e9 ChangeLog 53238
+MD5 e673f4e72d92df9c0f53c918d79934a3 ChangeLog 53240
 MD5 784b3e3150529826ac47e99ec3514f90 apache-1.3.29-r2.ebuild 7178
 MD5 f35b6a00cbfa7ddd39face3420cd4fc6 apache-1.3.31-r1.ebuild 6739
 MD5 9a5242011f95057c3afabf1cc3973f11 apache-1.3.31-r2.ebuild 6864
@@ -15,7 +15,7 @@ MD5 90cc07a86abe58c1b0f4b6bfa7439706 apache-2.0.52.ebuild 12830
 MD5 a419841198cd6a94b9dcf2e07f3c15b7 metadata.xml 617
 MD5 246a3cf82cbc55d427afebc98507ecac apache-2.0.52-r2.ebuild 12294
 MD5 18073cc171bd2a0e3b91076c14f9fb1e apache-1.3.33-r1.ebuild 8258
-MD5 e16b7db7847fe3500f17acca67b0dc72 apache-2.0.52-r3.ebuild 11412
+MD5 b4f103cc89378e1da05ee010cef4a24c apache-2.0.52-r3.ebuild 11414
 MD5 8b12871dd74fcd3f4fdf451c9d8c259e files/00_apache_manual.conf 781
 MD5 998b4b7df08eb15641e0b9132443b365 files/apache-1.3.27-apachectl.patch 1328
 MD5 37d2c4ea8e1a6725deaca42b6aa22c69 files/apache-1.3.27_db4_gentoo.patch 1006
