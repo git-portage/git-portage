@@ -4,6 +4,5 @@ MD5 63f31866ef2abf8adfb3ad7411852e58 dvipdfmx-20031009.ebuild 1376
 MD5 cdd44376f167de2798f3a8ad0ee6adc8 metadata.xml 849
 MD5 dc6eda84292a5c463fc81e16bd56dcf8 files/digest-dvipdfmx-20030813 69
 MD5 d50ea1fb67f829e9c75b1366ecdd479e files/digest-dvipdfmx-20031009 69
-MD5 57a3e1944e8c3975a7f9d7387dcd7f96 files/dvipdfmx-20030728-gentoo.diff 502
 MD5 52233a4d918101ea5b1cf3e9790fe40a files/dvipdfmx-20030813-gentoo.diff 502
 MD5 e3a978c6844605fa75e78f42a40b6948 files/dvipdfmx-20031009-gentoo.diff 414
