@@ -1,5 +1,7 @@
 18.09.2000
 
+	- New media-sound/lopster-0.9.4		(achim)
+	  [ A napster client using GTK ]
 	- New media-libs/mpeg2vidcodec-12	(achim)
 	- New media-gfx/imagemagick-5.2.4
 	- New kde-apps/cervisia-0.7.1		(achim)

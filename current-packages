@@ -189,6 +189,7 @@
 ./media-sound/alsa-utils/alsa-utils-0.5.9a.ebuild
 ./media-sound/esound/esound-0.2.19.ebuild
 ./media-sound/lame/lame-3.86b.ebuild
+./media-sound/lopster/lopster-0.9.4.ebuild
 ./media-sound/mpg123/mpg123-0.59r.ebuild
 ./media-sound/sox/sox-12.17.ebuild
 ./media-sound/xmms/xmms-1.2.2-r1.ebuild
