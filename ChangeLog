@@ -1,3 +1,13 @@
+date 17 Dec 2000
+
+upd kde-base/kde-2.0.1 to 2.0.1-r1
+drobbins
+Getting ready for new env-var management system
+
+upd gnome-base/gnome-1.2.4 to 1.2.4-r1
+drobbins
+Getting ready for new env-var management system
+
 date 15 Dec 2000
 
 upd net-mail/maildrop-1.2.2-r2 to 1.2.2-r3

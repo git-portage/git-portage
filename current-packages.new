@@ -158,6 +158,7 @@
 ./gnome-base/gconf/gconf-0.11.ebuild
 ./gnome-base/gdk-pixbuf/gdk-pixbuf-0.9.0.ebuild
 ./gnome-base/glibwww/glibwww-0.2.ebuild
+./gnome-base/gnome/gnome-1.2.4-r1.ebuild
 ./gnome-base/gnome-applets/gnome-applets-1.2.4.ebuild
 ./gnome-base/gnome-core/gnome-core-1.2.4.ebuild
 ./gnome-base/gnome-libs/gnome-libs-1.2.8.ebuild
@@ -193,6 +194,7 @@
 ./kde-apps/kmago/kmago-0.5.ebuild
 ./kde-apps/koffice/koffice-2.0.1.ebuild
 ./kde-apps/krusader/krusader-0.65.1.ebuild
+./kde-base/kde/kde-2.0.1-r1.ebuild
 ./kde-base/kde-i18n/kde-i18n-2.0.1.ebuild
 ./kde-base/kdebase/kdebase-2.0.1.ebuild
 ./kde-base/kdelibs/kdelibs-2.0.1.ebuild
