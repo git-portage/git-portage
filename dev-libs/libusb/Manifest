@@ -2,6 +2,8 @@ MD5 d0f3b25a0abf1217c39113f4500aee9c ChangeLog 3347
 MD5 67bd4c482479738a34057710a43b70de libusb-0.1.7-r1.ebuild 917
 MD5 ac3a2fcfac1f3d8b6adca5f4346b7a62 libusb-0.1.8.ebuild 1347
 MD5 8f906ffe0aa837e5e26fe03af3043461 metadata.xml 219
+MD5 aa0d47a4e2f0fa6b60bcbb77069c483f libusb-0.1.10a.ebuild 1359
 MD5 9cb49945879f78000d198c898d197e54 files/digest-libusb-0.1.7-r1 64
 MD5 edf695ba0c7ee442c501401384faaa94 files/digest-libusb-0.1.8 64
 MD5 13b0f271f94755b89f904270daa0659d files/libusb-0.1.8-amd64-fPIC.patch 268
+MD5 9b71253641038ba3d13b833a85cdcf76 files/digest-libusb-0.1.10a 66
