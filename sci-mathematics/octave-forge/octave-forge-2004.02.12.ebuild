@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/octave-forge/Attic/octave-forge-2004.02.12.ebuild,v 1.1 2004/12/28 14:54:43 ribosome Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/octave-forge/Attic/octave-forge-2004.02.12.ebuild,v 1.2 2005/01/17 11:36:23 phosphan Exp $
 
 inherit eutils
 
