@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ecasound/Attic/ecasound-2.3.3.ebuild,v 1.10 2004/09/22 21:55:16 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ecasound/Attic/ecasound-2.3.3.ebuild,v 1.11 2005/03/29 09:16:16 luckyduck Exp $
 
 IUSE="ncurses arts alsa python oss mikmod oggvorbis jack audiofile"
 

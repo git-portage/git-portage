@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ecasound/Attic/ecasound-2.3.2.ebuild,v 1.7 2005/03/29 09:16:16 luckyduck Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ecasound/Attic/ecasound-2.4.0.ebuild,v 1.1 2005/03/29 09:16:16 luckyduck Exp $
 
 IUSE="ncurses arts alsa python oss mikmod oggvorbis jack audiofile"
 
@@ -10,18 +10,17 @@ HOMEPAGE="http://eca.cx/"
 LICENSE="GPL-2"
 
 SLOT="1"
-KEYWORDS="x86"
+KEYWORDS="~x86 ~sparc ~ppc ~amd64"
 
-DEPEND="virtual/libc
-	jack?	( media-sound/jack-audio-connection-kit )
+DEPEND="jack? ( media-sound/jack-audio-connection-kit )
 	media-libs/ladspa-sdk
 	audiofile? ( media-libs/audiofile )
-	alsa?	( media-libs/alsa-lib )
-	oggvorbis?	( media-libs/libvorbis )
-	arts?	( kde-base/arts )
-	mikmod?	( media-libs/libmikmod )
-	python?		( dev-lang/python )
-	ncurses?	( sys-libs/ncurses )"
+	alsa? ( media-libs/alsa-lib )
+	oggvorbis? ( media-libs/libvorbis )
+	arts? ( kde-base/arts )
+	mikmod? ( media-libs/libmikmod )
+	python? ( dev-lang/python )
+	ncurses? ( sys-libs/ncurses )"
 
 # We don't make RDEPEND for vorbis-tools, mpg123/mpg321, timidity++ or lame -- no
 # use flags for them.
@@ -29,6 +28,7 @@ DEPEND="virtual/libc
 src_unpack() {
 	unpack ${A}
 	cd ${S}
+
 	sed -i 's:map.h:map:g' configure
 }
 
@@ -41,6 +41,8 @@ src_compile () {
 	use ncurses || myconf="$myconf --disable-ncurses"
 	use audiofile || myconf="$myconf --disable-audiofile"
 	use oss || myconf="$myconf --disable-oss"
+
+	use amd64 && myconf="${myconf} --with-pic"
 
 	if use python; then
 		#
