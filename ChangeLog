@@ -1,4 +1,5 @@
 13.11.2000
+	-New media-libs/libsdl-1.1.6			(drobbins)
 	-Moved skel.ebuild > skel.build			(drobbins)
 		[only real ebuilds (with valid names)
 		can exist in ${PORTDIR}]
