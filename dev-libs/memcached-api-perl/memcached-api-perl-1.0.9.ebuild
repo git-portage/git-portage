@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/memcached-api-perl/Attic/memcached-api-perl-1.0.7.ebuild,v 1.2 2003/10/05 06:50:27 lisa Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/memcached-api-perl/Attic/memcached-api-perl-1.0.9.ebuild,v 1.1 2003/10/06 20:39:06 lisa Exp $
 
 inherit perl-module
 
@@ -10,14 +10,14 @@ HOMEPAGE="http://www.danga.com/memcached/"
 SRC_URI="http://www.danga.com/memcached/dist/MemCachedClient-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"	#The API is mostly harmless so there should be no objection
-		#To marking it arch right now.
+KEYWORDS="x86 ppc sparc mips alpha arm hppa amd64 ia64"
 IUSE=""
 DEPEND="dev-lang/perl"
 
 #RDEPEND=""
 
 S=${WORKDIR}/MemCachedClient-${PV}
+
 src_unpack() {
 	unpack ${A}
 }
