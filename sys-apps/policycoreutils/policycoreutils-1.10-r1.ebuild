@@ -1,10 +1,12 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/policycoreutils/Attic/policycoreutils-1.8.ebuild,v 1.6 2004/04/09 03:31:48 pebenito Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/policycoreutils/Attic/policycoreutils-1.10-r1.ebuild,v 1.1 2004/04/28 21:28:40 pebenito Exp $
 
 IUSE="build"
 
-EXTRAS_VER="1.2"
+inherit eutils
+
+EXTRAS_VER="1.3"
 
 DESCRIPTION="SELinux core utilites"
 HOMEPAGE="http://www.nsa.gov/selinux"
@@ -24,6 +26,9 @@ S2=${WORKDIR}/policycoreutils-extra
 
 src_unpack() {
 	unpack ${A}
+
+	cd ${S}
+	epatch ${FILESDIR}/policycoreutils-1.10-genhomedircon-reverse.diff
 
 	# Change script paths POLICYDIR
 	sed -i -e "s:/etc/security/selinux/src/policy/:${POLICYDIR}:g" ${S}/scripts/genhomedircon
