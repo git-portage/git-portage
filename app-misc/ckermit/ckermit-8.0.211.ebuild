@@ -1,33 +1,33 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/ckermit/Attic/ckermit-8.0.ebuild,v 1.10 2004/06/07 05:40:42 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/ckermit/Attic/ckermit-8.0.211.ebuild,v 1.1 2004/06/07 05:40:42 dragonheart Exp $
 
-inherit eutils
-
-MY_P=cku201
-DESCRIPTION="combined serial and network communication software package offering a consistent, medium-independent, cross-platform approach to connection establishment, terminal sessions, file transfer, character-set translation, numeric and alphanumeric paging, and automation of communication tasks."
-HOMEPAGE="http://www.kermit-project.org/"
+MY_P=cku209
+S=${WORKDIR}
+DESCRIPTION="C-Kermit is a combined serial and network communication software package offering a consistent, medium-independent, cross-platform approach to connection establishment, terminal sessions, file transfer, character-set translation, numeric and alphanumeric paging, and automation of communication tasks."
 SRC_URI="ftp://kermit.columbia.edu/kermit/archives/${MY_P}.tar.gz"
+HOMEPAGE="http://www.kermit-project.org/"
 
-LICENSE="Kermit"
 SLOT="0"
+LICENSE="Kermit"
 IUSE=""
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
-DEPEND=">=sys-libs/ncurses-5.2
+DEPEND=">=sys-libs/ncurses-5.2"
+
+RDEPEND="${DEPEND}
 	net-dialup/xc"
 
-S=${WORKDIR}
-
 src_unpack() {
+
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/${PF}-gentoo.diff
-	sed -i -e "s:-O:$CFLAGS:" makefile
+	sed -i -e "s:-O:${CFLAGS}:" makefile
 }
 
 src_compile() {
-	make KFLAGS="-DCK_SHADOW" linux || die
+
+	emake KFLAGS="-DCK_SHADOW" linux || die
 }
 
 src_install() {
@@ -35,7 +35,7 @@ src_install() {
 	dodir /usr/share/man/man1
 	dodir /usr/share/doc/${P}
 
-	make \
+	emake \
 		DESTDIR=${D} \
 		BINDIR=/usr/bin \
 		MANDIR=${D}/usr/share/man/man1 \

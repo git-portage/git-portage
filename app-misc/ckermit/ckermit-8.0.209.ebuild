@@ -1,7 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# Michael Conrad Tilstra <tadpol@gentoo.org> <tadpol@tadpol.org>
-# $Header: /var/cvsroot/gentoo-x86/app-misc/ckermit/Attic/ckermit-8.0.209.ebuild,v 1.2 2003/09/12 09:05:09 phosphan Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/ckermit/Attic/ckermit-8.0.209.ebuild,v 1.3 2004/06/07 05:40:42 dragonheart Exp $
 
 MY_P=cku209
 S=${WORKDIR}
@@ -11,6 +10,7 @@ HOMEPAGE="http://www.kermit-project.org/"
 
 SLOT="0"
 LICENSE="Kermit"
+IUSE=""
 KEYWORDS="x86"
 
 DEPEND=">=sys-libs/ncurses-5.2
@@ -20,7 +20,7 @@ src_unpack() {
 
 	unpack ${A}
 	cd ${S}
-	patch -p0 < ${FILESDIR}/${PF}-gentoo.diff
+	epatch ${FILESDIR}/${PF}-gentoo.diff
 	cp makefile makefile.orig
 	sed -e "s:-O:$CFLAGS:" makefile.orig > makefile
 }
