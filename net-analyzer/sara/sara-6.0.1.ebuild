@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/sara/Attic/sara-5.1.1a.ebuild,v 1.5 2005/03/22 22:47:33 vanquirius Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/sara/Attic/sara-6.0.1.ebuild,v 1.1 2005/03/22 22:47:33 vanquirius Exp $
 
 DESCRIPTION="SARA Security Auditor's Research Assistant is a derived work of Security Administrator Tool for Analyzing Networks SATAN"
 SRC_URI="http://www-arc.com/sara/downloads/${P}.tgz"
@@ -9,7 +9,7 @@ HOMEPAGE="http://www-arc.com/sara/"
 
 SLOT="0"
 LICENSE="satan"
-KEYWORDS="x86 ~ppc"
+KEYWORDS="~x86 ~ppc"
 IUSE="X"
 
 DEPEND=">=dev-lang/perl-5.8 \
@@ -85,13 +85,13 @@ src_install() {
 	doins html/tutorials/vulnerability/cert/*
 	insinto ${SARA_HOME}/html/tutorials/vulnerability/no_cve
 	doins html/tutorials/vulnerability/no_cve/*
+
 	dodir /usr/sbin
-	dosym ${D}${SARA_HOME}/sara /usr/sbin/sara
-	doman sara.8
+	exeinto /usr/sbin; doexe ${FILESDIR}/sara
+	doman docs/sara.8
 }
 
 pkg_postinst() {
-	einfo "Read the documentation in ${SARA_HOME}/html directory before run this program."
-	einfo "You must have installed a WWW browser."
-	einfo "To run, type from ${SARA_HOME} directory ./sara"
+	einfo "Read the documentation in ${SARA_HOME}/html before running this program."
+	einfo "You must have installed a web browser."
 }
