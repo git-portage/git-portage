@@ -1,7 +1,10 @@
-MD5 40143eb6f693e0b5b79d762952da27b1 ChangeLog 10875
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
-MD5 c34376edf994f56c6eecc243a36b24d1 ppp-2.4.1-r14.ebuild 4622
-MD5 2cd2a0019db9c0cdd2184863b174dab4 ppp-2.4.2-r3.ebuild 4448
+MD5 ace98f79a0a8de27f24e060ac9911eed ppp-2.4.1-r14.ebuild 4622
+MD5 ad97f35e904013462fc1cd8786b6ab84 ppp-2.4.2-r3.ebuild 4492
+MD5 4dd73d480e16526a252336fbca21d952 ChangeLog 11311
 MD5 4c1b00dc50a972cc3b309cb3ed3f861e ppp-2.4.2-r1.ebuild 4220
 MD5 9a0e85dac54424069aa89dc058e7d06d ppp-2.4.2.ebuild 3902
 MD5 5a42c26147c27627ddb5b432ecaf38fa ppp-2.4.2-r2.ebuild 4403
@@ -20,9 +23,7 @@ MD5 05b7394b35a2342033b52134568bf6b8 files/poff 2723
 MD5 4e62cdeb360ca0a22becbd2deb6f2dac files/pon 957
 MD5 44cc662ba9aa61dd9add3ddd4c5ded57 files/pon.1 3607
 MD5 eb5dfeb9b6a2c8b4b2f23df4980952e0 files/ppp-2.4.1-MSCHAPv2-fix.patch 507
-MD5 824964465508977f9d0836f029d6b02f files/ppp-2.4.1-openssl-0.9.6-mppe-patch.gz 36112
 MD5 f82a3ae0dba4ce6031bbf1405071e827 files/ppp-2.4.1-r10.patch 311
-MD5 feb6723fa9b971cb443cff79693db0cd files/ppp-crypto-fix.patch.bz2 35770
 MD5 f0ad3e0c62aec1771536caf00e28b9c6 files/pppoe.html 7605
 MD5 8d2dfaf7418945cb19864167542b14c0 files/digest-ppp-2.4.2 61
 MD5 8d2dfaf7418945cb19864167542b14c0 files/digest-ppp-2.4.2-r1 61
@@ -45,3 +46,10 @@ MD5 971013ca1ccc5a25acffdb3ff9edff4e files/2.4.2/pppoatm.diff.gz 3567
 MD5 f0ad3e0c62aec1771536caf00e28b9c6 files/2.4.2/pppoe.html 7605
 MD5 9d798912edc0a47727afcd7aac100957 files/2.4.2/stdopt-mppe-mppc-0.82.patch.gz 10108
 MD5 bd6bee3df13537a8550d2f39131eab0d files/2.4.2/pppoatm-2.diff.gz 3489
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD8DBQFBU2lWmdTrptrqvGERAmtNAJ4rvObC2N4ISymwrY2ScOKJ7GATMQCeOtnT
+ayYTTCNIQ2VhfOSYdYKZ7xM=
+=cslT
+-----END PGP SIGNATURE-----
