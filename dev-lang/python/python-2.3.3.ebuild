@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/python/Attic/python-2.3.3.ebuild,v 1.30 2004/09/24 10:47:44 liquidx Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/python/Attic/python-2.3.3.ebuild,v 1.31 2005/01/05 00:38:48 pythonhead Exp $
 
 # NOTE about python-portage interactions :
 # - Do not add a pkg_setup() check for a certain version of portage 
