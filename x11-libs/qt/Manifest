@@ -1,3 +1,4 @@
+MD5 d02cba7b4480580edb8a7559ee73e8ac qt-4.0.0_beta1-r1.ebuild 4837
 MD5 6e61efd43e5e4d7d3a18031b108a331b qt-3.3.3-r1.ebuild 8034
 MD5 a5c51d879fff01b6f6b8128088bbe3c4 qt-3.3.2.ebuild 6893
 MD5 f769105ec9340901a442a9e9880f504d qt-2.3.2-r1.ebuild 2287
@@ -13,6 +14,7 @@ MD5 7a287bc7609ad2420f70af6d4c58302f files/50qt2 63
 MD5 698d5ff434cbace76297754f49699b7e files/digest-qt-3.3.2 165
 MD5 494ea57bec4dcfe3a4ca65e413d81791 files/digest-qt-3.3.3 165
 MD5 9bd231bda8dcf1508a797c80002bfaa3 files/qt-3.3.1-qclipboard-fix.patch 2878
+MD5 5754b897216dcf52901cfb4de6770d6e files/digest-qt-4.0.0_beta1-r1 99
 MD5 24486c56d654be71e66b7c01b143c9a9 files/digest-qt-3.2.3-r1 72
 MD5 87c645dbad7233316ff3340847a59f22 files/digest-qt-3.3.1-r2 72
 MD5 77ee6484af384828441336443499ec0e files/digest-qt-3.3.3-r1 238
