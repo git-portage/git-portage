@@ -1,9 +1,8 @@
 17.11.2000
-
 	- New dev_db/unixODBC-1.8.13			(achim)
 
 16.11.2000
-
+	- New sys-libs/nss-db-2.2			(drobbins)
 	- New app-arch/rpm-4.0				(drobbins)	
 	- Removed dev-db/berkley-db-3.1.17	(drobbins)
 	- New dev-db/db-3.1.17				(drobbins)
