@@ -1,13 +1,13 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/ppracer/Attic/ppracer-0.2.1.ebuild,v 1.2 2005/01/20 03:10:09 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/ppracer/Attic/ppracer-0.2.3.ebuild,v 1.1 2005/01/20 03:10:09 mr_bones_ Exp $
 
 inherit flag-o-matic gnuconfig games
 
 DESCRIPTION="take on the role of Tux, the Linux Penguin, as he races down steep, snow-covered mountains"
 HOMEPAGE="http://developer.berlios.de/projects/ppracer/"
 SRC_URI="http://download.berlios.de/ppracer/${PN}-data-${PV}.tar.bz2
-		http://download.berlios.de/ppracer/${P}-2.tar.bz2"
+		http://download.berlios.de/ppracer/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -24,7 +24,7 @@ DEPEND="virtual/opengl
 	sys-libs/zlib"
 
 src_unpack() {
-	unpack ${P}-2.tar.bz2
+	unpack ${P}.tar.bz2
 	cd "${S}"
 	unpack ${PN}-data-${PV}.tar.bz2
 
