@@ -1,0 +1,5 @@
+MD5 790d0bacfc13bada10afc416b044ee88 timemachine-0.2.4.ebuild 797
+MD5 2ea3a55dc8476a027082a9ae209a0d0d metadata.xml 361
+MD5 3b13999b3e9d58cdc138fceb450f07b0 ChangeLog 548
+MD5 d36266bdc7ee0e2f641a99ea0c9747dd files/timemachine-0.2.4-ladcca-compile.patch 478
+MD5 6411861e6d8dc62ff415049f9020aa72 files/digest-timemachine-0.2.4 69
