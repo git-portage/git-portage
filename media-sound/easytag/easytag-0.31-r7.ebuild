@@ -1,15 +1,16 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/easytag/Attic/easytag-0.31-r4.ebuild,v 1.1 2004/09/12 12:34:25 dsd Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/easytag/Attic/easytag-0.31-r7.ebuild,v 1.1 2004/10/16 16:35:43 dsd Exp $
 
 inherit eutils gnuconfig
 
 IUSE="nls oggvorbis flac"
 
-MY_P="${P}_gtk2.4_pre2"
+MY_P="${P}_gtk2.4_pre3"
 DESCRIPTION="EasyTAG mp3/ogg ID3 tag editor"
 HOMEPAGE="http://easytag.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2
+	http://www.reactivated.net/patches/easytag/0.31/extras/easytag-rollup-24_to_33.patch.bz2"
 
 RDEPEND=">=media-libs/id3lib-3.8.2
 	>=x11-libs/gtk+-2.4.1
@@ -25,6 +26,7 @@ S=${WORKDIR}/${MY_P}
 src_unpack() {
 	unpack ${MY_P}.tar.bz2
 	cd ${S}
+	epatch ${DISTDIR}/easytag-rollup-24_to_33.patch.bz2
 	use ppc64 && gnuconfig_update
 }
 
