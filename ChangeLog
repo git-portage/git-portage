@@ -1,12 +1,19 @@
 date 11 Jan 2001
 
+del dev-lang/python-1.5.2-r3
+drobbins
+
 upd sys-apps/portage-1.4-r2 to 1.4-r3
 drobbins
 now depends on virtual/python-2.0
 
-upd dev-lang/python-1.5.2-r3 to 2.0
+new sys-devel/python-2.0
 drobbins
-it seems harmless, so why not? ;)
+now in the base system
+
+new sys-devel/spython-2.0
+drobbins
+a static python binary
 
 upd net-misc/traceroute-1.4_p5 to 1.4_p12
 jerry
