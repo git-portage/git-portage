@@ -1,3 +1,5 @@
-MD5 2172ae164f492fe0967e80b58927c768 gnomba-0.6.2.ebuild 897
 MD5 06e630958efbcfda0e3d27f641bf8641 ChangeLog 1295
+MD5 c4d4fa173f07c56f372d8be9aff654ac gnomba-0.6.2-r1.ebuild 1074
+MD5 2172ae164f492fe0967e80b58927c768 gnomba-0.6.2.ebuild 897
 MD5 900ccd7d2abcc3d34cc0858830561440 files/digest-gnomba-0.6.2 64
+MD5 900ccd7d2abcc3d34cc0858830561440 files/digest-gnomba-0.6.2-r1 64
