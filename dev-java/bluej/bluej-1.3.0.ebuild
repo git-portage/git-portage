@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/bluej/Attic/bluej-1.3.0.ebuild,v 1.2 2003/10/10 16:20:42 lanius Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/bluej/Attic/bluej-1.3.0.ebuild,v 1.1 2003/10/10 22:48:46 lanius Exp $
 
 inherit java-pkg
 
