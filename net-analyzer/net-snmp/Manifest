@@ -1,11 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 cf98050307e99312360c4f255b220b5a net-snmp-5.1.1.ebuild 2462
-MD5 6c4afe653b8b5bbfaf3b962e441c23e3 net-snmp-5.2-r3.ebuild 4190
-MD5 56aa4865d199dbefee49d35668bde53a net-snmp-5.1.1-r1.ebuild 3633
-MD5 de38e1d5f8d6841fc9f8dac6fa4011de ChangeLog 12197
-MD5 a8880d00fcb63692f13db0c6f1a312ec net-snmp-5.2.ebuild 3733
+MD5 06d3d81457c9cf32406902051207315b net-snmp-5.1.1.ebuild 2484
+MD5 de4c18cc7af9af8af6f9d2c36697d76a net-snmp-5.2-r3.ebuild 4212
+MD5 1965a0bab3d29e36c172015338ca68f9 net-snmp-5.1.1-r1.ebuild 3655
+MD5 da4bcc6dde8e8a7ef87e20e9297f5f50 ChangeLog 12396
+MD5 0bec9c903a9ceaa2c5c6394895d94c53 net-snmp-5.2.ebuild 3755
 MD5 feec9ceb3ba9f6a8b860a4a130998500 metadata.xml 214
 MD5 b492aa2a6ad459eb41a26932d4c0740b files/digest-net-snmp-5.1.1-r1 67
 MD5 b492aa2a6ad459eb41a26932d4c0740b files/digest-net-snmp-5.1.1 67
@@ -18,10 +15,3 @@ MD5 ed2e953a9a923caec45eeca95bec2efc files/snmpd-5.1.conf 606
 MD5 662833e61042a47d4bd8aaae404f4245 files/snmpd.rc6 710
 MD5 25d92c9a7adcbb80240a914a8f6bbfe5 files/net-snmp-lm_sensors.patch 13686
 MD5 0dbde7b1bdd9c9dc988039e676800337 files/snmpd-5.1.rc6 714
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFCALPLEZCkKN40op4RAl90AJoD/cHF5+rT3hElMoE/PGIOFdbPRwCgjcrY
-hzc/fzkNqmQO2Ml/LmNJKoc=
-=ePkG
------END PGP SIGNATURE-----
