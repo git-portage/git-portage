@@ -1,5 +1,10 @@
 date 15 Jan 2001
 
+upd net-www/jakarta/jakarta-3.1-r1 to r2
+achim
+Fixed buggy installation. Other issues have been changed in jdk/apache
+without changing the revision
+
 upd app-text/a2ps-4.13b-r1 to r2
 achim
 Fixed lispdir for install

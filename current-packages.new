@@ -86,7 +86,7 @@
 ./dev-libs/rep-gtk/rep-gtk-0.15.ebuild
 ./dev-libs/slib/slib-2.3.9.ebuild
 ./dev-perl/Convert-BER/Convert-BER-1.31.ebuild
-./dev-perl/CORBA-ORBIT/CORBA-ORBIT-0.4.3.ebuild
+./dev-perl/CORBA-ORBit/CORBA-ORBit-0.4.3.ebuild
 ./dev-perl/DB_File/DB_File-1.73.ebuild
 ./dev-perl/Digest-MD5/Digest-MD5-2.12.ebuild
 ./dev-perl/Error/Error-0.13.ebuild
