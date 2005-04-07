@@ -1,5 +1,15 @@
-MD5 4c79401864496ef94414172dbc69fb6c ChangeLog 1827
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 3e6752ab0cf1bd250c25afee422f628c ChangeLog 1829
 MD5 a5b6e338682ae5b8d1b1804d4eb3e9cd metadata.xml 322
-MD5 c5fa8e9b6c876754487fa2e91956d33e tclgpgme-1.0-r1.ebuild 842
+MD5 2206a1180679f53af2fabe25c57508e0 tclgpgme-1.0-r1.ebuild 846
 MD5 4e3e9586fdec9cf9cb7630c99969095b files/1.0-Makefile.in.diff 796
 MD5 6999cca5e670e9e7ea1f6483633b38a3 files/digest-tclgpgme-1.0-r1 61
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCVTtT06ebR+OMO78RAuFTAJ9FaqbTvxeRjiCiEfQqQR8CeWeHbgCfbw61
+PmPzRNngWAiGHNRkqLWXvjI=
+=XiIK
+-----END PGP SIGNATURE-----
