@@ -4,7 +4,9 @@ MD5 b6c09200650a7e8b43089a9a975b5466 rsbac-sources-2.4.29.ebuild 1552
 MD5 a7f3e5576e492166eb9ea3ecc0a23861 ChangeLog 7244
 MD5 34d3565353bba30eb2aaf3571f99453a rsbac-sources-2.4.29-r1.ebuild 1489
 MD5 fee9abc7797fef753c42454679bae9a7 metadata.xml 456
+MD5 7b26014189700838dd6fee26b32aa433 rsbac-sources-2.6.11-r2.ebuild 1406
 MD5 0b8974dd5aacad2f076de5fe6b46e694 files/digest-rsbac-sources-2.4.29-r1 143
 MD5 c6521a9d14d70ebc1ed7ccd65ed3b7c9 files/digest-rsbac-sources-2.4.29-r2 143
 MD5 be49f4146513891a250629f605aa957d files/digest-rsbac-sources-2.4.29 208
 MD5 25759272ccf2b77c8c1b97c6fec1956b files/digest-rsbac-sources-2.6.11-r1 143
+MD5 356911440f4a8fc9bac5a56678caa599 files/digest-rsbac-sources-2.6.11-r2 142
