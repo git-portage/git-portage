@@ -1,0 +1,7 @@
+MD5 d8a13fcc6d3896c561a86d3ec58b439e ejabberd-0.7.5.ebuild 2465
+MD5 ca45e90d16657bc09537ea6653f30678 files/digest-ejabberd-0.7.5 66
+MD5 1cecdb28cdc7fdae6bf9aa53f9309d5c files/ejabberd 355
+MD5 03cdfdbfb294de6eccffda248d349040 files/ejabberd-0.7.5.confd 671
+MD5 b3ee28ee457b3705d7d4e013c4cd6f29 files/ejabberd-0.7.5.initd 1270
+MD5 8379adf159d3d5749af973fe74d23367 files/ejabberdctl 199
+MD5 e088cd52d4316efddc54195dc939cd24 files/inetrc 36
