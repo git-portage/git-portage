@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/ck-sources/Attic/ck-sources-2.6.11-r3.ebuild,v 1.1 2005/03/27 23:04:16 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/ck-sources/Attic/ck-sources-2.6.11-r4.ebuild,v 1.1 2005/04/09 05:42:15 marineam Exp $
 
 K_PREPATCHED="yes"
 UNIPATCH_STRICTORDER="yes"
