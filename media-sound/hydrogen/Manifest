@@ -1,6 +1,16 @@
-MD5 13f01a3eb79968c40815b84b7a210ab7 hydrogen-0.9.1.ebuild 1063
-MD5 7b4f2371e5557ac9eb10cb8e728c8bdf hydrogen-0.9.0.ebuild 1037
-MD5 4eb89df59197066f4f7f99b278336f6f ChangeLog 4831
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 b567be9545da83b5952305a8a2ea2e3f hydrogen-0.9.1.ebuild 1069
+MD5 cb6e4b0debc89954687b54ca9d39b83f hydrogen-0.9.0.ebuild 1043
+MD5 de72d602e5bf334f409925a29449f431 ChangeLog 4837
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 1755f7143c139eddaed591c6ea39e695 files/digest-hydrogen-0.9.0 67
 MD5 c2de54ec169afbb90c9eaa6440bafed5 files/digest-hydrogen-0.9.1 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCWoHk06ebR+OMO78RAtzXAJ0S5Ca7ZwSJPh9Ej7vZYXjdGBxGKACfQvLK
+a78KQ5BHOtTX0z0t+rp7UDI=
+=6Vj5
+-----END PGP SIGNATURE-----
