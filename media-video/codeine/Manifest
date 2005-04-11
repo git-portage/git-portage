@@ -1,7 +1,17 @@
-MD5 17115c6cdd9425bf1335e7b8824293dc codeine-1.0_beta1.ebuild 858
-MD5 2e1a73e753f19b969a7fae226bef95a0 codeine-1.0_beta2.ebuild 895
-MD5 be5e39a41ca7081db836310942ec82b1 ChangeLog 1211
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 fb6823bcf11eeb188f9c5b0876e113ce codeine-1.0_beta1.ebuild 858
+MD5 949dc11d040c52b9508a253b70b0508c codeine-1.0_beta2.ebuild 895
+MD5 eedc2b4e99a6582e380724961266f9c7 ChangeLog 1211
 MD5 7300a7b361fa9f48e37722c6952bd432 metadata.xml 158
 MD5 9d838d8987e1f759ec0f4eb891d73b52 files/codeine-xine-lib-1.0.patch 455
 MD5 4b415d0e0a2bd3e13d00a5890479afae files/digest-codeine-1.0_beta1 69
 MD5 d0a0a5400e52df4745220ab7def2cecf files/digest-codeine-1.0_beta2 69
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCWm2D06ebR+OMO78RArG8AJwOpZHXRG1JXGRwBqQWoLurAEWxBwCeMDc/
+5tVQ24wpYCrv4qD7wYrCMgs=
+=KbOF
+-----END PGP SIGNATURE-----
