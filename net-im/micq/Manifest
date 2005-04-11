@@ -5,8 +5,10 @@ MD5 a574ec2607edf5e80117d65415e01d3c metadata.xml 159
 MD5 2665ff020200cc8b0ce309074f136568 micq-0.4.11.ebuild 776
 MD5 c73f63aa1c1a88be4206ff7d275eaaf1 micq-0.5.ebuild 776
 MD5 e9407078862f96e400b3be6a09faa66a micq-0.4.12.ebuild 779
+MD5 c73f63aa1c1a88be4206ff7d275eaaf1 micq-0.5.0.1.ebuild 776
 MD5 82dbf8f6ec723eff4d37d7f0c19bc6c0 files/digest-micq-0.4.9.4 61
 MD5 946228a0d08f1fbdb1c6706069e5c653 files/digest-micq-0.4.10.5 62
 MD5 8c379657f8fc6e6260fb558761b7c5ba files/digest-micq-0.4.11 60
 MD5 852d738491b515fdc4b36a03800d7f31 files/digest-micq-0.5 58
 MD5 4451c974cd0cd94314c2affc8e8f7764 files/digest-micq-0.4.12 60
+MD5 15500c185e4e7dadadf11e79990d3b54 files/digest-micq-0.5.0.1 62
