@@ -1,7 +1,10 @@
-MD5 7727809bbc51f683c7b0230c76a46530 xine-lib-1.0.ebuild 8498
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 fd257220f66a183e8896c0cd61cfe78c xine-lib-1.0.ebuild 8497
 MD5 60f92c0bf2f960ee5fe72cfd8b60e60b xine-lib-1_rc8-r1.ebuild 5688
 MD5 b6ad8f25595f1c8e8495579462e42764 xine-lib-1_rc6-r1.ebuild 5656
-MD5 2c2e61754501bd19a62d05fb757eb22c ChangeLog 2610
+MD5 68cdb9dc762077a7911512f9203b03ec ChangeLog 2609
 MD5 5529b17488d439ea93b380bacdb0a7a7 metadata.xml 239
 MD5 bcd5f2b8999f92c2f7215009f5ae1490 files/configure-64bit-define.patch 221
 MD5 c666fb35b00138d90890fef3d56548f2 files/xine-lib-1_rc5-configure-sparc.patch 587
@@ -37,3 +40,10 @@ MD5 d8f3138ae2260f7c98bf46ae7159be11 files/xine-lib-configure.ac.patch 926
 MD5 3cbdef8aa211184b96474addb4f7c5d6 files/xine-lib-gcc34.patch 423
 MD5 b3b75486422c6ccab706f2ff4cf7c4eb files/xine-lib-1_rc7-mmx.patch 391
 MD5 1780c88522c9a26856effa70a0e27b50 files/digest-xine-lib-1.0 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCWopB06ebR+OMO78RAugDAJsHyAt15/xnC2pEyxwh1mWFQ/niiQCeMCm2
+/KAxN/M2z5ASSlxnaUwbtFw=
+=EF5D
+-----END PGP SIGNATURE-----
