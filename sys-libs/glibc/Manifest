@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 3c26cfdf2a8e9c2808e9462079906247 ChangeLog 71707
 MD5 5529417ce5503c488b1ccaaa2e781799 glibc-2.2.5-r9.ebuild 10915
 MD5 19b845756fd8e974c113e904396b9627 glibc-2.3.2-r12.ebuild 22153
@@ -12,6 +9,7 @@ MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
 MD5 b85c16a0e65a32784335e40fb0edac0e glibc-2.2.5-r10.ebuild 4418
 MD5 bbaa27a858966f07a584101f1be106a8 glibc-2.3.4.20050125.ebuild 35424
 MD5 dce0cb7033d70484fac6d772bb4b096b glibc-2.3.4.20050125-r1.ebuild 38166
+MD5 43384386f0df861a53662d5de8ab9674 glibc-2.3.5.ebuild 38140
 MD5 1ccc533e526eaa771e262db1dbe27ff7 glibc-2.3.4.20041102-r1.ebuild 33599
 MD5 9cc1e6b6f749dba7c8759bd07266f7d9 files/digest-glibc-2.2.5-r9 143
 MD5 2d5306ef875573750af642a9f93b634a files/digest-glibc-2.3.2-r12 312
@@ -36,6 +34,7 @@ MD5 5f2690b0a60b336ec8f26fa3a8898361 files/digest-glibc-2.3.4.20050125 371
 MD5 bed7cbcac1e8582deda43664e5b3f19c files/digest-glibc-2.2.5-r10 290
 MD5 71c18ba0155b5cf1e7e4bf990225d566 files/digest-glibc-2.3.4.20050125-r1 521
 MD5 75b85b24e4ded1b0e8a0a762d5805818 files/digest-glibc-2.3.4.20041102-r1 383
+MD5 07cfaa15b8863c39585dcbf7c859e278 files/digest-glibc-2.3.5 518
 MD5 f75ebd335c4b882013cc12229d39c9f7 files/2.2.5/glibc-2.2.5-alpha-gcc3-fix.diff 475
 MD5 843eaa26ae2c49e894aa365b6f463546 files/2.2.5/glibc-2.2.5-alpha-pcdyn-fix.diff 471
 MD5 5182f441608833569cb9e78536baf8af files/2.2.5/glibc-2.2.5-arm-errlist-fix.diff 2210
@@ -145,10 +144,3 @@ MD5 e109c03013bd08a2b96e2c2ca9017a4b files/2.3.4/glibc-gentoo-libdir.patch 1347
 MD5 bbe355d94c5a36e11f543d12b70b5702 files/2.3.4/glibc-sec-hotfix-20040916.patch 3080
 MD5 b72e5aca6d834026a6f5fb87623e6fd3 files/2.3.4/host.conf 1302
 MD5 b80890f83185acef8aeff622a1574e0b files/2.3.4/glibc-2.3.4-fix-_dl_next_tls_modid-assert.patch 9140
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCVa2+ArHZZzCEUG0RAjUJAJ9GiF9V2Y4ykXWQ+543v5L6ok0aygCeOxgU
-lvMjRr6R6Rv4yUUJgWM7N8s=
-=bGn/
------END PGP SIGNATURE-----
