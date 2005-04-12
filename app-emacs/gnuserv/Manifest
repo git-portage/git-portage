@@ -2,6 +2,8 @@ MD5 04c74c1f5e3411e081c2d7757bf5df00 ChangeLog 743
 MD5 9012cc75114fbf9d637ed6ab66f218d7 gnuserv-3.12.4.ebuild 1031
 MD5 59bc474b1052c146b527975a1a5c7b53 gnuserv-3.12.5.ebuild 1033
 MD5 fcd33d07e4ee719b01157946734f4fe8 metadata.xml 158
+MD5 13f177ee0ba84eb9ceae06cba02cc5bb gnuserv-3.12.7.ebuild 1017
 MD5 374a2ba319308cf76a0601098bf12ed3 files/50gnuserv-gentoo.el 241
 MD5 8a4e2838b960391e0f9adab4847042df files/digest-gnuserv-3.12.4 65
 MD5 4cea46596a8648eeaaa085ddc1e906d8 files/digest-gnuserv-3.12.5 65
+MD5 b3a071a52de64c9a575806ad23fdf7cf files/digest-gnuserv-3.12.7 65
