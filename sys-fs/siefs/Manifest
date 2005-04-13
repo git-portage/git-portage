@@ -1,4 +1,4 @@
-MD5 a825a2224f5c46413a2da4112d7ffeea ChangeLog 593
+MD5 3c7098692cbb2cc4f1c8d8db3a7f1b50 siefs-0.5.ebuild 775
+MD5 d3c725a409026db6ee28a038f4701309 ChangeLog 844
 MD5 f5e6d1e12de48b3ebea1dd2558a8a840 metadata.xml 383
-MD5 273cfd1d784fa36dd6836b942f841232 siefs-0.4.ebuild 970
-MD5 53f4ab2b11cce5ee20ca9680d490bb60 files/digest-siefs-0.4 61
+MD5 44e51931d6b3d43444ed2feb1488e010 files/digest-siefs-0.5 61
