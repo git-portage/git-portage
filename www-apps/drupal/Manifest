@@ -1,5 +1,5 @@
-MD5 b8c09cc3796310b8e23ef1bddebb3f5e ChangeLog 1344
-MD5 63aecb6e6cbf2a2fb15b5d6feea690e9 drupal-4.5.2.ebuild 31561
+MD5 330b64a2f58949db453867ee569da860 ChangeLog 1442
+MD5 444eff715ee32f554819062ea48b5411 drupal-4.5.2.ebuild 31561
 MD5 88b2c84c1b3552228d711637cb7d9269 metadata.xml 274
 MD5 0f20a567ce1310d62af69bd56921cea3 files/postinstall-en.txt 2595
 MD5 32c7ee9039df02be13ec0e29d2f0beb5 files/digest-drupal-4.5.2 13537
