@@ -1,4 +1,6 @@
 MD5 65274f45994af10db3f066eae630b3cf rlcompleter2-0.95.ebuild 616
 MD5 788b45d85aefe573ac3b20a940b7f57b ChangeLog 667
 MD5 71c4638c9c88af75b58e5f5cb54fe008 metadata.xml 159
+MD5 0b0133d4a70a1b3644aea31a4d27a565 rlcompleter2-0.96.ebuild 617
+MD5 ec23d6d199038354c3192ec18cef4359 files/digest-rlcompleter2-0.96 68
 MD5 396be63d62788796fe338ee140acdbdf files/digest-rlcompleter2-0.95 68
