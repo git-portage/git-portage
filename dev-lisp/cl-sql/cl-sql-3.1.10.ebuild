@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lisp/cl-sql/Attic/cl-sql-3.1.6.ebuild,v 1.1 2005/02/09 07:48:05 mkennedy Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lisp/cl-sql/Attic/cl-sql-3.1.10.ebuild,v 1.1 2005/04/14 07:35:16 mkennedy Exp $
 
 inherit common-lisp eutils
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://clsql.b9.com/
 SRC_URI="http://files.b9.com/clsql/clsql-${PV}.tar.gz"
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~x86 ~ppc ~amd64"
 IUSE="postgres mysql sqlite sqlite3 odbc"
 DEPEND="dev-lisp/common-lisp-controller
 	virtual/commonlisp
