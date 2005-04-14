@@ -1,4 +1,6 @@
 MD5 576ab2ebc2545359b47a7ffed4206cd3 ChangeLog 3384
+MD5 4d158a4706202ebf6c55bee4361565ce cl-sql-3.1.10-r1.ebuild 3377
 MD5 25a7993f47b4e9b1261a9956a8d61d90 metadata.xml 431
-MD5 46d05b816dca35b8bf7aa0da3af0a66c cl-sql-3.1.10.ebuild 3350
+MD5 6023c027aee051e77cb9cccffe5c75e6 cl-sql-3.1.10.ebuild 3059
+MD5 6f0cca850627210bc6677fc498ec5235 files/digest-cl-sql-3.1.10-r1 64
 MD5 6f0cca850627210bc6677fc498ec5235 files/digest-cl-sql-3.1.10 64
