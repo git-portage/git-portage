@@ -1,12 +1,15 @@
-MD5 cdb5b037015342341c7a99fc85c79d80 avidemux-2.0.34_rc1.ebuild 2417
-MD5 ace085675869646aee14f3647b5df19f avidemux-2.0.38_rc2.ebuild 2637
-MD5 cadd7579d10bd822533cede935886a25 avidemux-2.0.24.ebuild 2482
-MD5 38b44569936de2e0c3681150852910e8 avidemux-2.0.38_rc1.ebuild 2663
-MD5 828d4b882943ea92bc355f4ed760fca4 avidemux-2.0.34_rc1-r1.ebuild 3058
-MD5 6cd115c2647e6f648b6e0326d6bcbf0b avidemux-2.0.34_rc2.ebuild 2568
-MD5 f97ee723bf4779b9e5d991c1fd0f09b6 ChangeLog 12388
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 b60a31026d6ccc354aa3d4a46fb7060b avidemux-2.0.34_rc1.ebuild 2420
+MD5 f18fa403fee71aa513005f27bbcc4fd7 avidemux-2.0.38_rc2.ebuild 2639
+MD5 ee5806b95c2dcfc5b397bcf7b64fc053 avidemux-2.0.24.ebuild 2486
+MD5 162de3edb58b8605348d0c594368017c avidemux-2.0.38_rc1.ebuild 2666
+MD5 50470b95a03dd765d8fe70deb1389eb4 avidemux-2.0.34_rc1-r1.ebuild 3057
+MD5 6692bb928c62d0906e5bc9c32c613bf0 avidemux-2.0.34_rc2.ebuild 2567
+MD5 f900ff8236d4fa518c43a184c580b0c2 ChangeLog 12390
 MD5 955f56e990f8c32d705708b4cc4db089 metadata.xml 251
-MD5 ca5e3946dac4bf35a87c5930e23ab250 avidemux-2.0.36.ebuild 2536
+MD5 0aed1a48ceb9c6c76092b0799433077a avidemux-2.0.36.ebuild 2539
 MD5 09aa754d6dec1bcd2694695ed63b45a4 files/avidemux-0.9-libxml2.5.7.patch 717
 MD5 7b49ecad9a48d74f4e99127f434ce29b files/avidemux-2.0.34-test1_faac.patch 631
 MD5 4b0dc1a0f1e81197582e817410f8d180 files/2.0.38_rc2-fix-faad.patch 759
@@ -26,3 +29,10 @@ MD5 fa51202c1d7fc830fcd290028cb4a203 files/digest-avidemux-2.0.38_rc2 72
 MD5 c235b3c2a9d464d8729ec6698895866e files/alsa.patch 607
 MD5 634a8594c2fead1220505d3071037788 files/avidemux-2.0.32_mpeg_ps_fix.patch 519
 MD5 71caa2da3a9489e6d3e10b3816c753c6 files/2.0.38_rc1_mpegidentify.patch 1077
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCX9Oq06ebR+OMO78RAqcnAJ40coX6ZUw3/WN4/AFP2/p9sg1CpgCfW7bh
+rROeQtfDJR2dOoe1JrJk6co=
+=EjNu
+-----END PGP SIGNATURE-----
