@@ -1,8 +1,11 @@
-MD5 3fff265e38f0205ffd51e053c5afdf81 xv-3.10a-r11.ebuild 2052
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 371cc5a347a1f979b8d1f2b862b6f7f3 xv-3.10a-r11.ebuild 2055
 MD5 d3caaf1691b52006d2295f1443fe691b xv-3.10a-r9.ebuild 2529
 MD5 46d0c5a9c8dc6b5df90784815999b70d xv-3.10a-r10.ebuild 2635
 MD5 fbe8dc0be0ab018633f1e153b56c1662 xv-3.10a-r8.ebuild 2347
-MD5 e1909e4f70f90d7edb9e7a84d47c79ff ChangeLog 8600
+MD5 b5d2f2c7daa9a18d43dc85f88ae1485e ChangeLog 8603
 MD5 8fc22f08ecb2e292e60ce7553c58d0c2 metadata.xml 222
 MD5 3b193d08268519822ea55ef0534c805a files/digest-xv-3.10a-r8 127
 MD5 3b193d08268519822ea55ef0534c805a files/digest-xv-3.10a-r9 127
@@ -20,3 +23,10 @@ MD5 8edd408b62a85896b2b76411f7839c60 files/xv-smoothing-algorithm.diff 6418
 MD5 63deb1e35f05b4f406f141d1e48ff17b files/xv-filename-format-string.diff 319
 MD5 a5b5fd8ad9fbef9a63f360d83f55e546 files/xv-optimize-jpeg.diff 553
 MD5 f555e07727c8b51042dae772ae474f42 files/xv-postscript-double-free.diff 864
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCX8EU06ebR+OMO78RAp9sAJ9I2q3OA7sSBcvmG43O2rqIzMAwCgCfTsLX
+a+A0/tcdHw95KTkKqdGcXKw=
+=Rsof
+-----END PGP SIGNATURE-----
