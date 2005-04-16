@@ -6,8 +6,8 @@ MD5 cc82c88ecc09a6160980805e484421ac gtk+-2.4.14.ebuild 2916
 MD5 d0160ef5c7f542df383228f3a040580e gtk+-2.4.9-r1.ebuild 3139
 MD5 afb0e5aa8f6410c088c2e177a17efe5d gtk+-1.2.10-r10.ebuild 1719
 MD5 55a0240fe45beae9e83402b8bd3f8cbf gtk+-2.6.1-r2.ebuild 3279
-MD5 dc82803ce5362bd8a8d8217a293c3056 gtk+-2.6.7.ebuild 2904
-MD5 5bd241e13dad9aad7b4c0541e1cb5d7e ChangeLog 23016
+MD5 670f6b56f57f6c4b54df3e6aa3178f0b gtk+-2.6.7.ebuild 2901
+MD5 f6518ee7f2fb8c7f18a8cbc8590cbfa9 ChangeLog 23134
 MD5 ef2a0dc4245e964cf21ba8b20a3ad067 gtk+-2.6.2.ebuild 3036
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 b63cd20330898c8115bb7f119e4c60b6 gtk+-2.4.9-r2.ebuild 3178
@@ -24,7 +24,6 @@ MD5 28fa6c231f22418b560385c58a179543 files/digest-gtk+-2.4.9-r1 133
 MD5 28fa6c231f22418b560385c58a179543 files/digest-gtk+-2.4.9-r2 133
 MD5 cb2a11a7cb2252993185a44ddaa52d4e files/digest-gtk+-2.6.1-r2 208
 MD5 480ef570b5082ad4677f50eb110ef1e0 files/digest-gtk+-2.6.4-r1 208
-MD5 480ef570b5082ad4677f50eb110ef1e0 files/digest-gtk+-2.6.4-r2 208
 MD5 84c943ddbc93a756c745f969e9d542e2 files/gtk+-2.6.4-bmp_reject_corrupt.patch 1256
 MD5 a81714da3cedcf01f370878a82f4ba8d files/gtk+-2.6.1-gtk_dialog.patch 627
 MD5 549c22c55ac1f423f716d7bc28564c17 files/digest-gtk+-2.4.14 208
