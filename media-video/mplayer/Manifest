@@ -1,8 +1,11 @@
-MD5 b0818932d562246575216787e58f79a5 mplayer-1.0_pre6-r2.ebuild 18459
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 660be924a3fa32a4719a8756be030ac5 mplayer-1.0_pre6-r2.ebuild 18461
 MD5 6f0ce28848bdde9794f1f713957b8e63 mplayer-1.0_pre5-r5.ebuild 18497
-MD5 6ba839bf241d932f7369ea92a38d0cd3 mplayer-1.0_pre6-r1.ebuild 18385
-MD5 d25674da1bdaec95f4b22afd4b102c13 mplayer-1.0_pre6-r3.ebuild 18414
-MD5 552a0c3b270541a3152791ee0939a193 ChangeLog 54601
+MD5 5dc7bef01e88c859df6b132df58617c4 mplayer-1.0_pre6-r1.ebuild 18387
+MD5 1e308403b430c0c4ab646b4bab3a80da mplayer-1.0_pre6-r3.ebuild 18416
+MD5 7e1774c6cb20d72b0fc2aa3421587987 ChangeLog 54603
 MD5 7300a7b361fa9f48e37722c6952bd432 metadata.xml 158
 MD5 9ca8563e7f6df3496b972f87feabd6c0 files/mplayer-1.0_pre6-configure.patch 534
 MD5 c2e82dbe0e7b780adcbe9bfb902b8654 files/mplayer-1.0_pre6-pic.patch 18233
@@ -41,3 +44,10 @@ MD5 1dc7b4b16903461c2ea8663d5dfc5795 files/rtsp_fix_20050415.diff 634
 MD5 484c45fb52a157c6b056b4298f787f3d files/cachefill.patch 6053
 MD5 4be5ce1a1c93b8d40bc961468fcc1aa7 files/mplayer-1.0_pre5-live.patch 378
 MD5 68f89231bdbc972ac6abf45a135c8282 files/mplayer-jack.patch 272
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCYRbh06ebR+OMO78RAv//AKCILM9uU07yyzADeWZcTT4tHFGgFQCdE/UH
+Lh5ggy4gd/M3tY0Nr/nMwkY=
+=EOCE
+-----END PGP SIGNATURE-----
