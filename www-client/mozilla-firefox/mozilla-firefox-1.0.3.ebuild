@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-firefox/Attic/mozilla-firefox-1.0.1.ebuild,v 1.1 2005/03/18 19:47:25 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-firefox/Attic/mozilla-firefox-1.0.3.ebuild,v 1.1 2005/04/16 17:50:42 brad Exp $
 
 inherit makeedit flag-o-matic gcc nsplugins eutils mozconfig mozilla-launcher multilib
 
@@ -13,7 +13,7 @@ SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${MY_PV}/source
 
 LICENSE="MPL-1.1 NPL-1.1"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~sparc x86"
 IUSE="java mozsvg"
 
 # xrender.pc appeared for the first time in xorg-x11-6.7.0-r2
@@ -23,7 +23,8 @@ RDEPEND="java? ( virtual/jre )
 	mozsvg? (
 		>=x11-base/xorg-x11-6.7.0-r2
 		x11-libs/cairo
-	)"
+	)
+	>=www-client/mozilla-launcher-1.28"
 
 DEPEND="${RDEPEND}
 	java? ( >=dev-java/java-config-0.2.0 )"
@@ -80,6 +81,7 @@ src_compile() {
 	mozconfig_use_enable mozsvg svg
 	mozconfig_use_enable mozsvg svg-renderer-cairo
 	mozconfig_annotate '' --with-default-mozilla-five-home=/usr/$(get_libdir)/MozillaFirefox
+	mozconfig_annotate '' --prefix=/usr/$(get_libdir)/MozillaFirefox
 
 	# Finalize and report settings
 	mozconfig_final
@@ -116,6 +118,36 @@ src_install() {
 	dodir /usr/$(get_libdir)/MozillaFirefox
 	cp -RL --no-preserve=links ${S}/dist/bin/* ${D}/usr/$(get_libdir)/MozillaFirefox
 
+	einfo "Installing includes and idl files..."
+	# Copy the include and idl files
+	dodir /usr/$(get_libdir)/MozillaFirefox/include/idl /usr/include
+	cd ${S}/dist
+	cp -LfR include/* ${D}/usr/$(get_libdir)/MozillaFirefox/include
+	cp -LfR idl/* ${D}/usr/$(get_libdir)/MozillaFirefox/include/idl
+	dosym /usr/$(get_libdir)/MozillaFirefox/include /usr/include/MozillaFirefox
+
+	# Dirty hack to get some applications using this header running
+	dosym /usr/$(get_libdir)/MozillaFirefox/include/necko/nsIURI.h /usr/lib/MozillaFirefox/include/nsIURI.h
+
+	cd ${S}/build/unix
+	# Fix firefox-config and install it
+	sed -i -e "s:/lib/firefox-${MY_PV}:/$(get_libdir)/MozillaFirefox:g" firefox-config
+	sed -i -e "s:/firefox-${MY_PV}:/MozillaFirefox:g" firefox-config
+	exeinto /usr/$(get_libdir)/MozillaFirefox
+	doexe firefox-config
+	# Fix pkgconfig files and install them
+	insinto /usr/$(get_libdir)/pkgconfig
+	for x in *.pc; do
+			if [[ -f ${x} ]]; then
+					sed -i -e
+					"s:/lib/firefox-${MY_PV}:/$(get_libdir)/MozillaFirefox:g" ${x}
+					sed -i -e "s:/firefox-${MY_PV}:/MozillaFirefox:g" ${x}
+					doins ${x}
+			fi
+	done
+	cd ${S}
+
+
 	#fix permissions
 	chown -R root:root ${D}/usr/$(get_libdir)/MozillaFirefox
 
@@ -123,7 +155,17 @@ src_install() {
 	src_mv_plugins /usr/$(get_libdir)/MozillaFirefox/plugins
 
 	dodir /usr/bin
-	dosym /usr/libexec/mozilla-launcher /usr/bin/firefox
+	cat <<EOF >${D}/usr/bin/firefox
+#!/bin/sh
+# 
+# Stub script to run mozilla-launcher.  We used to use a symlink here but
+# OOo brokenness makes it necessary to use a stub instead:
+# http://bugs.gentoo.org/show_bug.cgi?id=78890
+
+export MOZILLA_LAUNCHER=firefox
+exec /usr/libexec/mozilla-launcher "\$@"
+EOF
+chmod 0755 ${D}/usr/bin/firefox
 	insinto /etc/env.d
 	doins ${FILESDIR}/10MozillaFirefox
 
