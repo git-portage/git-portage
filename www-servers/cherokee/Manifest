@@ -1,8 +1,11 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 693100f7d7a22ddb1762918c931a3885 cherokee-0.4.17.ebuild 1315
-MD5 0326d7b9884529b8692bc79b932809b3 cherokee-0.4.17.1.ebuild 1541
-MD5 2b5e4de160e9519fa08438ef3365e6a4 cherokee-0.4.19.ebuild 1409
+MD5 987e734e6bc2d0d2845efb991e7ccd3d cherokee-0.4.17.1.ebuild 1542
+MD5 88b9c23bdc487618d33c0656883f8bfe cherokee-0.4.19.ebuild 1408
 MD5 2a338274e3b176bc1b83221670a84b46 cherokee-0.4.5.ebuild 1723
-MD5 7aa17024a34cc45c0bca7d0450c73eb5 ChangeLog 5838
+MD5 c26edac3613ba523c015896f3b1bb724 ChangeLog 5839
 MD5 4a186842848d9c384e2d12785ba426bc metadata.xml 165
 MD5 289de164081060280437629085fce186 files/digest-cherokee-0.4.17.1 69
 MD5 8278b4acda7637c68885863ddd58f712 files/cherokee-0.4.5-cherokee.conf 2769
@@ -13,3 +16,10 @@ MD5 c8394a4871a8edbc12c1bddfbaea22fd files/digest-cherokee-0.4.19 68
 MD5 298dfdd3c83893b3123d85278d1c1e7e files/digest-cherokee-0.4.5 66
 MD5 a9f08f404f9b738a52e2c82c7ed88e04 files/cherokee-0.4.5-init.d 787
 MD5 6da94000869b804248b03d61703b69bb files/cherokee-0.4.5-Makefile.am.patch 956
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCYmD6EZCkKN40op4RAlMlAJ9iv1g6MEltEEA8YxTgW7uir76WvQCfWToE
+0cxkmR5OcEJ8uTxTOEyjK4M=
+=CXXl
+-----END PGP SIGNATURE-----
