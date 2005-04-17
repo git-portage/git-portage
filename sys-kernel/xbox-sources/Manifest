@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1df4e1be57111fb6bb58e32a4417ca82 xbox-sources-2.6.10-r2.ebuild 1034
 MD5 d2b9540dd03dbf408ca07c92041160c6 xbox-sources-2.6.11.7.ebuild 743
 MD5 c7a57661a75ca4d5137b4ecb4b05c147 ChangeLog 9902
@@ -28,3 +31,10 @@ MD5 6cf860a301930c8cac126ab0c4d859d4 files/xbox-sources-2.4.28.brk-locked.patch 
 MD5 b6cd2468a246169a6e2f969c44e3f341 files/xbox-sources-2.4.28.78362.patch 10372
 MD5 1efe4024e443e60db5fd9b21b22fabd2 files/xbox-sources-2.4.28.77666.patch 1724
 MD5 703b136a244ccde7a8f419b7753cd55e files/digest-xbox-sources-2.4.29 226
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCYqRVI1lqEGTUzyQRAmeQAJ97Is8D85+2sCwg9d2575XviZATewCg2pkn
+ClsTStmrbTP4fUwc19mZ8tg=
+=PuLe
+-----END PGP SIGNATURE-----
