@@ -13,7 +13,7 @@ MD5 cc16dcb159f84c912365504002444a08 files/virtual-server-2.31-namevirtual.patch
 MD5 cad6a5577a4c4b3773702ab1bd8d6461 files/virtual-server-2.31-nocgibin.patch 1073
 MD5 4f5dc10c2c1d19218cecfc2a678a0ce4 files/virtual-server-2.31-pgsql.patch 579
 MD5 bb2acab90ada721c723d91a5a97c193c files/webmin-1.130-webalizer.patch 615
-MD5 a01d77a867d5469c7211685bfd04f6f6 files/webmin-1.140-apache2.patch 1227
+MD5 395e49092aa7b9e808d3e9d723508884 files/webmin-1.140-apache2.patch 1250
 MD5 0ebd73f1cd5948ec1c3532a2f59f2c53 files/webmin-1.170-postfix.patch 868
 MD5 512204473654b6eb41308d3319ba6144 files/webmin-1.170-setup-nocheck.patch 943
 MD5 e7e3780c0bf03968b380535064c54213 files/webmin-gentoo-init 859
