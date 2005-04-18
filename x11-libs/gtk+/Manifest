@@ -6,8 +6,8 @@ MD5 cc82c88ecc09a6160980805e484421ac gtk+-2.4.14.ebuild 2916
 MD5 d0160ef5c7f542df383228f3a040580e gtk+-2.4.9-r1.ebuild 3139
 MD5 afb0e5aa8f6410c088c2e177a17efe5d gtk+-1.2.10-r10.ebuild 1719
 MD5 55a0240fe45beae9e83402b8bd3f8cbf gtk+-2.6.1-r2.ebuild 3279
-MD5 670f6b56f57f6c4b54df3e6aa3178f0b gtk+-2.6.7.ebuild 2901
-MD5 f6518ee7f2fb8c7f18a8cbc8590cbfa9 ChangeLog 23134
+MD5 a5061c0afbf7c654c30a08fec05fbfbd gtk+-2.6.7.ebuild 2868
+MD5 d2a22d9381ec84dbb8638ab752ab4761 ChangeLog 23229
 MD5 ef2a0dc4245e964cf21ba8b20a3ad067 gtk+-2.6.2.ebuild 3036
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 b63cd20330898c8115bb7f119e4c60b6 gtk+-2.4.9-r2.ebuild 3178
