@@ -1,16 +1,17 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/streamripper/Attic/streamripper-1.60.8.ebuild,v 1.5 2005/03/26 00:28:12 hansmi Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/streamripper/Attic/streamripper-1.61.7.ebuild,v 1.1 2005/04/18 16:45:48 luckyduck Exp $
+
 
 inherit eutils
 
 DESCRIPTION="Extracts and records individual MP3 file tracks from shoutcast streams"
 HOMEPAGE="http://streamripper.sourceforge.net/"
-SRC_URI="http://streamripper.sourceforge.net/files/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~ppc sparc amd64"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND="media-libs/libmad"
@@ -19,23 +20,14 @@ DEPEND="${RDEPEND}
 
 src_unpack() {
 	unpack ${A}
-
 	cd ${S}
-	epatch ${FILESDIR}/${P}-syslibmad.patch
 
 	# Force package to use system libmad
-	rm -rf libmad-0.15.1b
-
-	export WANT_AUTOMAKE=1.8
-	export WANT_AUTOCONF=2.5
-
-	libtoolize --copy --force
-	aclocal
-	automake -a -f -c
-	autoconf
+	rm -rf libmad*
+	sed -i -e 's/libmad//' Makefile.in || die
 }
 
 src_install() {
-	make install DESTDIR=${D} || die
+	make DESTDIR="${D}" install || die "make install failed"
 	dodoc TODO README THANKS readme_xfade.txt
 }
