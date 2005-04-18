@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0cbd9cf163ede4c97a9e510db4785448 ChangeLog 1426
 MD5 b02327c198b29f06b50d8eb6d8ef4055 fcitx-1.8.5.ebuild 745
 MD5 bdafce110f784ddd343d4fbeccc372b7 fcitx-2.0.1.ebuild 1114
@@ -10,3 +13,10 @@ MD5 61e196222f31b91faeaf1fc68de9ea32 files/digest-fcitx-2.0.1 65
 MD5 16b5b0d9f527b7d6f04528eba7567870 files/digest-fcitx-2.1.0_rc 67
 MD5 7739025f20db165f8adfd6fad4cf85ca files/digest-fcitx-3.0.4 65
 MD5 c8c66289fb09275d75e70e7e03673510 files/digest-fcitx-3.1.1 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCY5PyTM53OX+9xmMRAowgAKCMbrTgNlWtkXIXwuR7LspTHtG4TwCfY8XW
+i6XuTQVwacTm8L1EOhb3l0M=
+=qp+X
+-----END PGP SIGNATURE-----
