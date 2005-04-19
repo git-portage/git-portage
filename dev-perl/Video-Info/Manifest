@@ -1,4 +1,14 @@
-MD5 9ca9d03d2c5724147cf7598722ecdeec Video-Info-0.999.ebuild 491
-MD5 40d335b4c4b18d64c771dcb69c25c8f8 ChangeLog 482
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 206c3662c05290148ab7e2068ac26e2e Video-Info-0.999.ebuild 491
+MD5 3cba6710e385c29ff0fbc3be31666c1d ChangeLog 482
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 b61196ae6759f9f91a2023e10d4ca475 files/digest-Video-Info-0.999 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCZScW06ebR+OMO78RAltxAJ94doL13sBN3/lbcbLhdyzs98JvlQCghSju
+vBWE5cOXpPTqDmTRTxZjEw4=
+=enIg
+-----END PGP SIGNATURE-----
