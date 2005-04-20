@@ -1,0 +1,6 @@
+MD5 8753bffb027eb3d5a2282298a892551d slirp-1.0.16.ebuild 707
+MD5 ba52930a76f04f45c59e3183181f9e07 slirp-1.0.13.ebuild 687
+MD5 43695601ae0f2e692ac6c0f63f7d4c5a ChangeLog 1312
+MD5 3401eb32e240dc3bb678cea0ef5d3529 metadata.xml 248
+MD5 2b908b6c9c04be278468f88aa74f48c7 files/digest-slirp-1.0.13 64
+MD5 445e6d8262c2e3c7dd842ff8a4c31a46 files/digest-slirp-1.0.16 64
