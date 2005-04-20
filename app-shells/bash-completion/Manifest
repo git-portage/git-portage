@@ -1,5 +1,8 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6eeb1d7aba8dbb67d3909a7f2f35da08 bash-completion-20050121-r1.ebuild 2695
-MD5 4b88bb166b28eff89a369ff5dcf973fe ChangeLog 19991
+MD5 fdecfd1c6e03f73b6e407d9edb3f42ea ChangeLog 19991
 MD5 08ab540760a142dbc2af127d5f71be07 metadata.xml 1019
 MD5 1ef56d1b4ea7fbb95686a7cf933d3c6d bash-completion-20050121-r7.ebuild 1879
 MD5 4406981db9a6c4f413d3f9f4b14eae91 files/gentoo-bashcomp-20050117-equery.diff 3329
@@ -15,3 +18,10 @@ MD5 5a5965b5055a1d6ee5d7ae884bc0cc18 files/20050121/07_all_find.diff 947
 MD5 ffcc2a25851c78eed228d5bf9a34a471 files/20050121/03_all_timidity.diff 844
 MD5 49c5f3ad15cbf56b194b4fa56bbe8342 files/20050121/06_all_tar.diff 347
 MD5 a68ebcc5af6af06535fcc9895b6066b3 files/20050121/04_all_mplayer.diff 974
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCZpmTEZCkKN40op4RAkEOAKCduCU1HK2B5q3Ap4gbukkXcdz+4gCff1Lk
+9f/T5fFBUBxyOoGMVZ7LNzs=
+=5XyP
+-----END PGP SIGNATURE-----
