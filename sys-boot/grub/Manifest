@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9332cd2b07d5404dc6211d2ea0434c23 ChangeLog 12669
 MD5 3b7a994ffe338fd8de16df033684e924 grub-0.92-r1.ebuild 2519
 MD5 adcde4d1dce3d1e2ef2c466f860c6875 grub-0.93.20030118.ebuild 2539
@@ -25,3 +28,10 @@ MD5 8082c035a4ba98d0935b6b045827fb2c files/grub-0.96-nxstack.patch 18920
 MD5 e5978f58eb732289c47b1e0093db4e73 files/grub-0.96-bounced-checks.patch 505
 MD5 7c2804e6a538b2dbcbb851b9614424fd files/grub-0.96-gcc4.patch 6871
 MD5 3f141147f2ded9c02b300eaf8361f3d5 files/grub-0.96-r1-gcc4.patch 5568
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCZyn+CRZPokWLroQRAvSkAKCs13rk7tEKKhWdwp1WZ/NwpXo+4QCgz3pW
+NR3vFtjpnjLIyJgcKzlZILE=
+=ziBD
+-----END PGP SIGNATURE-----
