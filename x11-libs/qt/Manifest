@@ -7,7 +7,7 @@ MD5 dc7eab137481c73dca4e2ea75795fa9f qt-4.0.0_beta1-r5.ebuild 5880
 MD5 449d72818fdc63e80998a3749de56df7 ChangeLog 35202
 MD5 512150b47a904b0240101e319856aab1 metadata.xml 156
 MD5 3f30d4e96664ba2574dfb069b708f4a1 qt-3.3.3.ebuild 6897
-MD5 7b4b4ab813deacafcb0cf354ca4a650e qt-4.0.0_beta2-r1.ebuild 5985
+MD5 08029b610ff355dafc7618ea1abaec61 qt-4.0.0_beta2-r1.ebuild 5985
 MD5 2a5d402b9d5ceff465069a1651f3b329 qt-2.3.2-r2.ebuild 2765
 MD5 74acd4c098f2c4bd70bdea585f0cb096 files/qt-no-rpath.patch 352
 MD5 ad4921b9f10a62c1e211d064f5c7fd9a files/44qt4 121
