@@ -1,9 +1,19 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 92eed292bdb88bbd8f8838cd8a385b6a emul-linux-x86-baselibs-1.2.3.ebuild 917
 MD5 c921257abd0782a1d349b298fa04a905 emul-linux-x86-baselibs-1.2.2-r2.ebuild 1108
-MD5 4ee558c38f14e5fb3a93a749d486fe73 emul-linux-x86-baselibs-2.1.ebuild 689
-MD5 488b810b20673e79d38dafba8ca00cd5 ChangeLog 4321
+MD5 6cb980a717e004d158d33ddb06df0422 emul-linux-x86-baselibs-2.1.ebuild 689
+MD5 74aa40ba2775f4ec843fc3ad06b030ee ChangeLog 4321
 MD5 3d107142a3ec13f947ea538fdfe0f517 metadata.xml 290
 MD5 31f67d1cdf921a2f2b2f9c382b0aa8a6 files/digest-emul-linux-x86-baselibs-1.2.3 83
 MD5 da0bdfe31fa4eb39ad7e1a660f4844cf files/digest-emul-linux-x86-baselibs-1.2.2-r2 83
 MD5 3ac141b3a5850345c246b5c4ce924ccc files/75emul-linux-x86-base 51
 MD5 e2d7a44fb61bff476666cd877b51ccdf files/digest-emul-linux-x86-baselibs-2.1 81
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCZ3Z72G5bA0cA/ScRAtXfAKC9DUh/8cI7VViF03B68NqvcM98mwCggABI
+0AlByLrvP7wwhm5mcyYg+7g=
+=kYnp
+-----END PGP SIGNATURE-----
