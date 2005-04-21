@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 06b7374a870ba4e628682056281e02c1 kadu-0.4.0_rc3.ebuild 7763
 MD5 6b57537cbf49758ceae23a4510f6598a kadu-0.3.7.ebuild 820
 MD5 f2d4005d3812c5e2519bde58934b9bac kadu-0.4.0.ebuild 7600
@@ -21,3 +24,10 @@ MD5 7259b6aef0a2d10501b79c455fe4b763 files/digest-kadu-0.3.8 63
 MD5 9c405497d2804fa81d6b2d48c00e227f files/digest-kadu-0.3.9 63
 MD5 27947a323558dd9aaa82c5b164f398b8 files/digest-kadu-0.4.0 1699
 MD5 878470dcf216da170b3878d17b0f59a2 files/kadu-0.3.9-nas-gentoo.diff 986
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCZ8vqZ/iYVBmujdURAhgkAJ9t8EYrCasSBkndLygfiw78YJDxVACfZoN9
+hVVugE2MGi5Ga12gL4De4Ns=
+=UlR8
+-----END PGP SIGNATURE-----
