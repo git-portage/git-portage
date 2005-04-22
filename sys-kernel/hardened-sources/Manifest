@@ -1,9 +1,12 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c5d57ca3fe025ec6371cdcf2e475ede5 hardened-sources-2.6.11-r1.ebuild 895
-MD5 f76534f6f9c9c15a1e660b2c83e1f7d4 hardened-sources-2.4.30-r1.ebuild 778
+MD5 fc8ff145fa686cb2f852b167a6ccc822 hardened-sources-2.4.30-r1.ebuild 781
 MD5 524273305082cd982f2aecb77d95080f hardened-sources-2.4.29.ebuild 802
 MD5 793dcc5589a9a5204e1a684c7cad7fa9 hardened-sources-2.4.28-r5.ebuild 1091
 MD5 e0b3e3e860384c3306daee7521a8e50b hardened-sources-2.4.30.ebuild 778
-MD5 664e4e0d4aced53cf062188ebef9e162 ChangeLog 13537
+MD5 e3761d5f04f3980f5b99c2627ce2b502 ChangeLog 13537
 MD5 3f27e55312920e3241f47b70f2ef6242 hardened-sources-2.6.10-r3.ebuild 908
 MD5 33a62ed13518b2975dae58d9297b6760 metadata.xml 829
 MD5 4a0215139f9aebfe2cc2747743763f08 files/2.4.28-grsec-binfmt_a.out.patch 1887
@@ -19,3 +22,12 @@ MD5 d1ccc2047be533c992f67270a150a210 files/2.4.27-cmdline-race.patch 388
 MD5 98e84c850a16b9cb458be21ae4fb82df files/2.4.28-selinux-cmdline-race.patch 352
 MD5 73d345a26186ac7508ba680069f892d7 files/digest-hardened-sources-2.6.10-r3 145
 MD5 240ef418b4a76a5758c5196f18bb7caf files/digest-hardened-sources-2.6.11-r1 145
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iQCVAwUBQmhUR54WFLgrx1GWAQJMwwQAmUgRID1GTsqF5l8M24yitdph369oRdni
+MHMpo1I7ahhLZWRerzUvqKLj+xlh1AXHmUhltLwpFItm392iUDAhVejTigxX+try
+0l+p0wVefWKEzwEimBV1jjvokiJrXCL26tyUW1cHO8zsFWGGImmeFp5S9qIeGv4L
+DBKLA6FQMO8=
+=Y8vH
+-----END PGP SIGNATURE-----
