@@ -1,3 +1,13 @@
-MD5 9940bd9be6cd48cce3cc68ee0f9ce676 ossh-1.5.12.ebuild 1087
-MD5 19d89b8de4fb2d033821186e45b3d8ab ChangeLog 524
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 90728c99aa840f478cb5c88a5e8b6b20 ossh-1.5.12.ebuild 1086
+MD5 624106fbad3164076fdd1f9d7b5d642c ChangeLog 523
 MD5 89b931a34cff9bdc18765743289fc1a2 files/digest-ossh-1.5.12 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCaWUqjiC39V7gKu0RAmW4AJ0SEQFLsr/7HJcnIiXObu+U9PcvmgCgsnRV
+tREUDtQBxRM4ldaGM6b32+s=
+=1Rp2
+-----END PGP SIGNATURE-----
