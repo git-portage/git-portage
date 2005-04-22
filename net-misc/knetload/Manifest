@@ -1,4 +1,6 @@
-MD5 1652522405f5936eb29776ef8d5ffa5b metadata.xml 310
 MD5 f84e6a237559415311deb5b653a95a61 ChangeLog 2652
 MD5 0c67935544ecf1dbf77e561e342af77c knetload-2.3.ebuild 504
+MD5 fabb24af112b3169fbfb4120a0ec36ed metadata.xml 254
+MD5 b5e6ea2768c770351030aa1eba48e7a6 knetload-3.0_alpha2.ebuild 704
 MD5 fcd58fb6225a7442b0149f0fbb921970 files/digest-knetload-2.3 65
+MD5 bd89b61f8ce47d33f95143bdfbce4738 files/digest-knetload-3.0_alpha2 68
