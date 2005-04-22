@@ -1,7 +1,4 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 6c6ddfdfb67975b7beed2fee77fc8cf9 grsec-sources-2.4.30.2.1.5.ebuild 1588
+MD5 6c4fe0cfee89d3afbc6a74d97567c112 grsec-sources-2.4.30.2.1.5.ebuild 1587
 MD5 2a4a5d00823f2d2950ca3b89f8a7e06a grsec-sources-2.4.29.2.1.3.ebuild 1858
 MD5 e2779dd7cc0660d2061904fe3dcb687a ChangeLog 11535
 MD5 0b2ea9b53b5d526e39afbdc5040ff07a metadata.xml 487
@@ -22,10 +19,3 @@ MD5 a0c6a4f388d0481b6e25bb12f71da868 files/digest-grsec-sources-2.4.29.2.1.3 231
 MD5 153b1ba98912172f66892de96a7d0bb4 files/digest-grsec-sources-2.4.29.2.1.4 235
 MD5 6aa8f7a7c2d55734389b53d3bcf78570 files/CAN-2004-1016.patch 2835
 MD5 d1ccc2047be533c992f67270a150a210 files/2.4.27-cmdline-race.patch 388
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCXAdFI1lqEGTUzyQRAoprAJoCRKMSIZ450YGazQ++ffUlOXjWggCfU2R6
-yysUWLc26yUwfIMcmTZ4yOI=
-=/w8C
------END PGP SIGNATURE-----
