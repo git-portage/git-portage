@@ -4,8 +4,8 @@ MD5 004539729623ea8adb4eb886e0bdafa4 airsnort-0.2.2.ebuild 952
 MD5 9ac041fe764a2ec1f431f9d29ddb5894 airsnort-0.2.1b.ebuild 993
 MD5 5eee30ae3c606b6717eff2e7db007734 airsnort-0.2.7c.ebuild 824
 MD5 02af2a8e8286e6bbf9019477d1b8c8b0 airsnort-0.2.4a.ebuild 989
-MD5 e69a19d3b4af92e8f16d868541d3364e airsnort-0.2.7e.ebuild 846
-MD5 83a4e433cc4d0a12d3dbf279d4527ccd ChangeLog 3116
+MD5 c91d5cf7c469364023ef3405e18a9935 airsnort-0.2.7e.ebuild 842
+MD5 242788f17961e6bdd10589f58b33bacc ChangeLog 3112
 MD5 32831d719499c83f7942f6432ef58278 metadata.xml 252
 MD5 1bc238a549427889b4471862e4629d15 files/digest-airsnort-0.2.1a 66
 MD5 caab97abe689c1e181a4479b120ecf6a files/digest-airsnort-0.2.1b 66
