@@ -1,10 +1,20 @@
-MD5 51445a7a47a032870315f7446ad5578f tor-0.0.9.6.ebuild 1288
-MD5 6d9b25829db7e7e72bd8ca0e3fc35bf9 tor-0.0.9.5.ebuild 1281
-MD5 845abc533b1f93c53ad060ac62d97e7d ChangeLog 5712
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 f766db6a0ba3fa9811683c8236252005 tor-0.0.9.6.ebuild 1287
+MD5 3af6df5cc1fdab52196e532e017bd6f2 tor-0.0.9.5.ebuild 1279
+MD5 143a9bdb3b8b9fc76f35e4f570fb50ea ChangeLog 5858
 MD5 b79b08e0f979feb256c93295714b4fc9 metadata.xml 224
-MD5 0fd154cd015c5aac7eafc2bc49238d0e tor-0.0.9.7.ebuild 1286
+MD5 ced217ea6e68e653d47c1a0a1eb45a1d tor-0.0.9.7.ebuild 1284
 MD5 485b6c84e589898a922507f1f6df2c78 files/torrc.sample.patch-00 1349
 MD5 6a492ad8ff012bce8c2fbd6fe7dd8832 files/digest-tor-0.0.9.5 63
 MD5 166a8c44e71dfca9f79d12e70e9bd51c files/digest-tor-0.0.9.6 63
 MD5 9b7d420cf09672e3c13de481bc6c590e files/digest-tor-0.0.9.7 63
 MD5 7587786181f235b77608c5db7fc1a033 files/tor.initd 867
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCaX2cjiC39V7gKu0RApjOAJ9SQVfVFVwU16fF7TRYQ9z48X1+aQCfdLc/
+eI3iVPBmpCa1+aZv58eSE+I=
+=lKZR
+-----END PGP SIGNATURE-----
