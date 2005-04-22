@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 40bdc4b7af8439c508190a5515e439b9 dante-1.1.15-r1.ebuild 2266
 MD5 529cad46280ba4ad9d4f4c0481e5b691 ChangeLog 7203
 MD5 19688263fcbda666eeb085869012f86a metadata.xml 246
@@ -8,3 +11,10 @@ MD5 72d9add89e45e3cb921c99d79bdf31a7 files/dante-1.1.15-bindresvport.patch 485
 MD5 30064015b5702cf8059a1639167e8a3f files/dante-1.1.15-getipnodebyname.patch 789
 MD5 b2dd85bbe5ff89e36cfd592cfa41612f files/dante-sockd-conf 462
 MD5 47653d863c6523851ffd754671965b1a files/dante-sockd-init 1318
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCaV5ZjiC39V7gKu0RAvUgAJ9gyP/YsMQ+zpEkv7nQh330fjVEEACfXvEM
+rmTNYoB26CHGgXIVoDJ3jd4=
+=038B
+-----END PGP SIGNATURE-----
