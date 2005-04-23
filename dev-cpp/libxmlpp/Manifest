@@ -1,11 +1,14 @@
-MD5 80eb9caa9b019384bc70deeb9258c230 libxmlpp-1.0.4-r1.ebuild 917
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 c49bb733760bca508cb930fd1ef9774d libxmlpp-1.0.4-r1.ebuild 921
 MD5 9efdd4c9885894848e8dad5b9faf3f3e libxmlpp-0.27.0.ebuild 891
-MD5 8d794d8d712da19494459c905c584997 libxmlpp-2.10.0.ebuild 1332
-MD5 c4567440a37aaa8573d4d0f3c80cb6e5 libxmlpp-2.8.0.ebuild 1064
-MD5 d6c97d8acd3a60f4ebbac72fe8d378e5 libxmlpp-1.0.2.ebuild 895
-MD5 d377a7d1d31a179ff2090fad47ead668 libxmlpp-1.0.4.ebuild 932
-MD5 576cfe2684c11b07bf3697c22043817f libxmlpp-1.0.4-r2.ebuild 894
-MD5 96ae89861e136615aa8a2810206ebdb1 ChangeLog 3813
+MD5 f5389c510e10078a182a63a7819ffba5 libxmlpp-2.10.0.ebuild 1336
+MD5 e66e0c2acc4d6b51574e21d54f0990a0 libxmlpp-2.8.0.ebuild 1067
+MD5 0c85d8dbc1a8247d95f1a5cf8c1a03ae libxmlpp-1.0.2.ebuild 892
+MD5 0eac3e3a4bc15071dc0bfa30b34ee3d4 libxmlpp-1.0.4.ebuild 931
+MD5 97b0f837657bfdc8a8418843eea9fb3e libxmlpp-1.0.4-r2.ebuild 896
+MD5 b919e8bf23a1153b6fa53ecf82c73891 ChangeLog 3815
 MD5 09d3293038c3ef6ba2ff98ef6609680a metadata.xml 252
 MD5 d8908feca35d34dbd88eab2dc2eaa621 files/digest-libxmlpp-1.0.2 67
 MD5 ddefcfb1e4627340a979fe347b62745e files/digest-libxmlpp-1.0.4 67
@@ -15,3 +18,10 @@ MD5 ababb33432c4d45282fa2fe2c0a2b0d5 files/digest-libxmlpp-0.27.0 67
 MD5 335a2cd8fe569196d631a0a54d8cac32 files/digest-libxmlpp-2.10.0 68
 MD5 ddefcfb1e4627340a979fe347b62745e files/digest-libxmlpp-1.0.4-r1 67
 MD5 ddefcfb1e4627340a979fe347b62745e files/digest-libxmlpp-1.0.4-r2 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCapooEZCkKN40op4RAo9hAJ4ka/bktwdsD5DA9jBXtvuAnatvqgCgwUYD
+QV4pPazr0bRaHNu9ybWcfbU=
+=yjIF
+-----END PGP SIGNATURE-----
