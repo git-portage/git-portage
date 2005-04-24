@@ -1,0 +1,5 @@
+MD5 b01f7f2f8d56a00e36b0258835c181e5 misdn-20050409.ebuild 3215
+MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
+MD5 a9bd882e62365663dacda2f61efa606b files/misdn.modulesd 2304
+MD5 591b7a0690f210221ae79ac9f1ae5633 files/change-pci_find_subsys-to-pci_get_subsys.patch 919
+MD5 9b0b0d0760eb4e9f26bd420c16a1dc5d files/digest-misdn-20050409 73
