@@ -1,4 +1,6 @@
-MD5 49a8ff986faf50f13fdde6b7a3897179 DBIx-ContextualFetch-1.01.ebuild 602
 MD5 efb10d6245a757792624d7e1a4635267 ChangeLog 837
+MD5 99fa19793c67730237e208e8a707407b DBIx-ContextualFetch-1.01.ebuild 588
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
+MD5 4b3643b35b80d8d3d7ec43d8ac6883f2 DBIx-ContextualFetch-1.02.ebuild 616
 MD5 817ab6248809ca35535dde64f30d9b00 files/digest-DBIx-ContextualFetch-1.01 75
+MD5 05c315d46d0a4fda79aa771689124de1 files/digest-DBIx-ContextualFetch-1.02 75
