@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/readahead-list/Attic/readahead-list-0.20050328.0142.ebuild,v 1.3 2005/04/25 22:26:08 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/readahead-list/Attic/readahead-list-0.20050425.1452.ebuild,v 1.1 2005/04/25 22:26:08 robbat2 Exp $
 
 DESCRIPTION="Preloads files into the page cache to accelerate program loading."
 
@@ -17,8 +17,7 @@ RDEPEND="virtual/libc"
 # the blocked headers are broken
 # they don't compile properly!
 DEPEND="${RDEPEND}
-		virtual/os-headers
-		!=sys-kernel/linux-headers-2.6.8.1*"
+		virtual/os-headers"
 
 src_compile() {
 	econf --sbindir=/sbin || die "econf failed"
@@ -31,6 +30,7 @@ src_install() {
 	# init scripts
 	cd ${S}/contrib/init/gentoo/
 	newinitd init.d-readahead-list readahead-list
+	newinitd init.d-readahead-list-early readahead-list-early
 	newconfd conf.d-readahead-list readahead-list
 
 	# default config
@@ -49,4 +49,12 @@ src_install() {
 	fi
 	# clean up a bit
 	find ${D}/usr/share/doc/${PF}/ -type f -name 'Makefile*' -exec rm -f \{} \;
+}
+
+pkg_postinst() {
+	einfo "You should add readahead-list to your runlevels:"
+	einfo "  rc-update add readahead-list-early boot"
+	einfo "  rc-update add readahead-list boot"
+	einfo "Also consider customizing the lists in /etc/readahead-list"
+	einfo "for maximum performance gain."
 }
