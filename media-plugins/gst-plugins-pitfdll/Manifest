@@ -1,0 +1,3 @@
+MD5 0bd4a714314d445f10ced9a7c353659c gst-plugins-pitfdll-0.8.1.ebuild 1042
+MD5 3b8072e2fbbb243bd725b463bf15b558 files/gst-plugins-pitfdll.0.8.1-mutex.patch 1230
+MD5 496cd856ca2d5ecbcffef0e5853816fa files/digest-gst-plugins-pitfdll-0.8.1 66
