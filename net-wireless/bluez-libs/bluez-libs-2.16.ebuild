@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez-libs/Attic/bluez-libs-2.12.ebuild,v 1.2 2005/01/25 00:26:40 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez-libs/Attic/bluez-libs-2.16.ebuild,v 1.1 2005/04/26 13:13:26 liquidx Exp $
 
 inherit eutils
 
@@ -14,12 +14,6 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND="!net-wireless/bluez-sdp"
-
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${P}-handsfree.patch
-}
 
 src_install() {
 	make DESTDIR="${D}" install || die
