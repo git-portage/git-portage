@@ -1,35 +1,32 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/lesstif/Attic/lesstif-0.93.94-r3.ebuild,v 1.5 2005/04/19 11:23:48 lanius Exp $
-
-# disable sandbox, needed for motif-config
-SANDBOX_DISABLED="1"
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/lesstif/Attic/lesstif-0.93.94-r4.ebuild,v 1.2 2005/04/26 13:58:54 lanius Exp $
 
 inherit libtool flag-o-matic multilib
 
 DESCRIPTION="An OSF/Motif(R) clone"
 HOMEPAGE="http://www.lesstif.org/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2
-	mirror://debian/pool/main/l/lesstif1-1/lesstif1-1_0.93.94-11.1.diff.gz"
+	mirror://debian/pool/main/l/lesstif1-1/lesstif1-1_0.93.94-11.2.diff.gz"
 
 LICENSE="LGPL-2"
 SLOT="1.2"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~ppc-macos ~sparc ~x86 ~ia64"
 IUSE="static"
 
-DEPEND="virtual/libc
+RDEPEND="virtual/libc
 	virtual/x11
-	>=x11-libs/motif-config-0.6"
+	>=x11-libs/motif-config-0.9"
+
+DEPEND="dev-lang/perl
+	${RDEPEND}"
 
 PROVIDE="virtual/motif"
 
 src_unpack() {
-	# profile stuff
-	motif-config --start-install
-
 	unpack ${A}
 	cd ${S}
-	epatch ${DISTDIR}/lesstif1-1_0.93.94-11.1.diff.gz
+	epatch ${DISTDIR}/lesstif1-1_0.93.94-11.2.diff.gz
 }
 
 src_compile() {
@@ -48,10 +45,18 @@ src_compile() {
 	  --disable-build-21 \
 	  --with-x || die "./configure failed"
 
+	# fix linkage against already installed version
+	perl -pi -e 's/^(hardcode_into_libs)=.*/$1=no/' libtool
+
 	emake CFLAGS="${CFLAGS}" || die
 }
 
 src_install() {
+	# fix linkage against already installed version
+	for f in `find . -name \*.la -type f` ; do
+		perl -pi -e 's/^(relink_command=.*)/# $1/' $f
+	done
+
 	make DESTDIR=${D} install || die "make install"
 
 
@@ -94,18 +99,16 @@ src_install() {
 	rm -fR ${D}/usr/$(get_libdir)/X11/
 
 	# profile stuff
-	motif-config --finish-install
+	dodir /etc/env.d
+	echo "LDPATH=/usr/lib/lesstif-1.2" > ${D}/etc/env.d/15lesstif-1.2
+	dodir /usr/$(get_libdir)/motif
+	echo "PROFILE=lesstif-1.2" > ${D}/usr/$(get_libdir)/motif/lesstif-1.2
 }
-
-# Profile stuff
-#pkg_setup() {
-#	if has_version =x11-libs/lesstif-0.93.94*; then touch /tmp/lesstif-1.2; fi
-#}
 
 pkg_postinst() {
-	motif-config --install lesstif-1.2
+	motif-config -s
 }
 
-#pkg_prerm() {
-#	[ -f /tmp/lesstif-1.2 ] && rm -f /tmp/lesstif-1.2 || motif-config --uninstall lesstif-1.2
-#}
+pkg_postrm() {
+	motif-config -s
+}

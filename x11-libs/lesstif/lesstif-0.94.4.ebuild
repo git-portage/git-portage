@@ -1,9 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/lesstif/Attic/lesstif-0.94.0-r6.ebuild,v 1.5 2005/04/19 11:22:46 lanius Exp $
-
-# disable sandbox, needed for motif-config
-SANDBOX_DISABLED="1"
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/lesstif/Attic/lesstif-0.94.4.ebuild,v 1.2 2005/04/26 13:58:54 lanius Exp $
 
 inherit libtool flag-o-matic multilib
 
@@ -16,16 +13,16 @@ SLOT="2.1"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~ppc-macos ~sparc ~x86 ~ia64"
 IUSE="static"
 
-DEPEND="virtual/libc
+RDEPEND="virtual/libc
 	virtual/x11
-	>=x11-libs/motif-config-0.5"
+	>=x11-libs/motif-config-0.9"
+
+DEPEND="dev-lang/perl
+	${RDEPEND}"
 
 PROVIDE="virtual/motif"
 
 src_unpack() {
-	# profile stuff
-	motif-config --start-install
-
 	unpack ${A}
 	cd ${S}
 	epatch ${FILESDIR}/CAN-2005-0605.patch
@@ -90,18 +87,16 @@ src_install() {
 	rm -fR ${D}/usr/$(get_libdir)/X11/
 
 	# profile stuff
-	motif-config --finish-install
+	dodir /etc/env.d
+	echo "LDPATH=/usr/lib/lesstif-2.1" > ${D}/etc/env.d/15lesstif-2.1
+	dodir /usr/$(get_libdir)/motif
+	echo "PROFILE=lesstif-2.1" > ${D}/usr/$(get_libdir)/motif/lesstif-2.1
 }
-
-# Profile stuff
-#pkg_setup() {
-#	if has_version ">=x11-libs/lesstif-0.94.0"; then touch /tmp/lesstif-2.1; fi
-#}
 
 pkg_postinst() {
-	motif-config --install lesstif-2.1
+	motif-config -s
 }
 
-#pkg_prerm() {
-#	[ -f /tmp/lesstif-2.1 ] && rm -f /tmp/lesstif-2.1 || motif-config --uninstall lesstif-2.1
-#}
+pkg_postrm() {
+	motif-config -s
+}
