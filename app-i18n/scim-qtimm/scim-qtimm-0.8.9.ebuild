@@ -1,6 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/scim-qtimm/Attic/scim-qtimm-0.8.0.ebuild,v 1.2 2005/03/05 13:24:58 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/scim-qtimm/Attic/scim-qtimm-0.8.9.ebuild,v 1.1 2005/04/28 19:01:13 usata Exp $
+
+inherit kde-functions
+
+need-qt 3.3.4
 
 DESCRIPTION="Qt immodules input method framework plugin for SCIM"
 HOMEPAGE="http://scim.freedesktop.org/"
@@ -9,12 +13,12 @@ SRC_URI="mirror://sourceforge/scim/${P}.tar.bz2
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
-IUSE="nls"
+KEYWORDS="~x86 ~ppc"
+IUSE="nls arts"
 
-DEPEND=">=app-i18n/scim-1.1
-	>=x11-libs/qt-3.3.3-r1
-	nls? ( sys-devel/gettext )"
+DEPEND=">=app-i18n/scim-1.2.2
+	nls? ( sys-devel/gettext )
+	arts? ( kde-base/arts )"
 
 pkg_setup() {
 	if [ ! -e /usr/qt/3/plugins/inputmethods/libqimsw-none.so ] ; then
@@ -23,9 +27,17 @@ pkg_setup() {
 }
 
 src_compile() {
-	addpredict /usr/qt/3/etc/settings
 
-	econf $(use_enable nls) || die
+	# bug #84369
+	if which kde-config >/dev/null 2>&1 ; then
+		export KDEDIR=$(kde-config --prefix)
+		export kde_kcfgdir=/usr/share/config.kcfg
+		export kde_servicesdir=/usr/share/services
+	fi
+
+	econf --enable-mt \
+		$(use_enable nls) \
+		$(use_with arts) || die
 	emake -j1 || die "make failed."
 }
 
@@ -41,7 +53,4 @@ pkg_postinst() {
 	einfo "If you would like to use ${PN} as default instead of XIM, set"
 	einfo "	% export QT_IM_MODULE=scim"
 	einfo
-	ewarn
-	ewarn "qtconfig is no longer used for selecting input methods."
-	ewarn
 }
