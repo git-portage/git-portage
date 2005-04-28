@@ -1,4 +1,6 @@
-MD5 b16ec4504c26732a09b22b6642c12ce7 SVN-Simple-0.26.ebuild 794
 MD5 f7a0f2a7b605a48f21735db3329d2a1c ChangeLog 430
+MD5 573efe87d73cc557a35106537cde7ffd SVN-Simple-0.26.ebuild 788
 MD5 1e7dded402e236d45bd25a38c70c995c metadata.xml 223
+MD5 0ccf6d9ec934813e4863d37bee2d1cc3 SVN-Simple-0.27.ebuild 682
 MD5 ce306e01ec4f1705c0e02aa8eed27f0b files/digest-SVN-Simple-0.26 65
+MD5 a5fab07846309ef2402b4025fa31e64f files/digest-SVN-Simple-0.27 65
