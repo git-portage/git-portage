@@ -2,9 +2,9 @@ MD5 b723cfc86639346e7d9964c64a0f254b file-roller-2.8.3.ebuild 1199
 MD5 1a1a406af1ceaa03a4f6637160424087 file-roller-2.8.0.ebuild 1200
 MD5 45f34e07323606deac952fb8275d00cd file-roller-2.6.1.ebuild 1209
 MD5 18da0c3e62a81b7e1d0e8c73c96728ac file-roller-2.8.4.ebuild 1202
-MD5 253db15a97eef4fbbf47ed17fd890a9a file-roller-2.10.2.ebuild 1318
-MD5 27b95bef5a708c7a1a81bf8621412a6a file-roller-2.10.0-r1.ebuild 1414
-MD5 35290718295f39b15e98188a36e4cf1f ChangeLog 12601
+MD5 90d0366ac86dde7850c855de6426c600 file-roller-2.10.2.ebuild 1319
+MD5 e4b3de26688d0c90f566b4e7bdd82d09 file-roller-2.10.0-r1.ebuild 1414
+MD5 5ad6279e52cffc06713af24b29c920cd ChangeLog 12704
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 762daf169c908a33e04b670097c4a4fc files/file-roller-2.6-use_fr_rpm2cpio.patch 949
 MD5 d12176c3351e047a90fc4740f4b09237 files/file-roller-2.10.0-fix_whitespace.patch 1713
