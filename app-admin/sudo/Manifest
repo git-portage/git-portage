@@ -1,4 +1,4 @@
-MD5 f2d5312d6cebcc8011678767de522c02 ChangeLog 4407
+MD5 b712889b8c73592d6d6b816674afc543 ChangeLog 4667
 MD5 be6b5a1d716ff9c5e94f8caa0c41a819 sudo-1.6.6.ebuild 804
 MD5 2ce290a2f2bf9da410049f01fe21b5d0 sudo-1.6.7_p5-r1.ebuild 1319
 MD5 378d08cc79465313cd2d19fb8ff6be4b sudo-1.6.7_p5-r2.ebuild 1431
@@ -7,7 +7,7 @@ MD5 d1eaf2b6933a411ea5ad61eae6e37f17 sudo-1.6.8_p1-r1.ebuild 1385
 MD5 8b2247b8a7b39d8ab3a92192d7ada212 sudo-1.6.8_p1-r2.ebuild 1505
 MD5 c34116a0ad0ff20144cceeed08df7819 sudo-1.6.8_p1.ebuild 1008
 MD5 23b2b46384863419d6a5bcd80d82e5ff sudo-1.6.8_p2.ebuild 1461
-MD5 74ad376915593ecd59c8f7f1393d5f39 sudo-1.6.7_p5-r3.ebuild 1446
+MD5 76ca27b8810155a0c1fb4b263af812f0 sudo-1.6.7_p5-r3.ebuild 1448
 MD5 d3a1edd41e6a44e7dae35d250aea266e files/digest-sudo-1.6.6 62
 MD5 ea5d9d51e647a2dbd410d952019ff19b files/digest-sudo-1.6.7_p5 64
 MD5 ea5d9d51e647a2dbd410d952019ff19b files/digest-sudo-1.6.7_p5-r1 64
