@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/criticalmass/Attic/criticalmass-0.99.ebuild,v 1.6 2004/11/02 20:49:33 josejx Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/criticalmass/Attic/criticalmass-0.9.11.ebuild,v 1.1 2005/04/28 23:17:43 mr_bones_ Exp $
 
 inherit eutils games
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/criticalmass/CriticalMass-${PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~amd64"
+KEYWORDS="~amd64 x86"
 IUSE=""
 
 DEPEND="media-libs/sdl-mixer
@@ -18,21 +18,6 @@ DEPEND="media-libs/sdl-mixer
 	virtual/opengl"
 
 S=${WORKDIR}/CriticalMass-${PV}
-
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${P}-gcc-3.4.patch
-}
-
-src_compile() {
-	egamesconf || die
-	sed -i \
-		-e "/^CXXFLAGS =.*$/s:$: ${CXXFLAGS}:" \
-		{game,tinyxml,tools,utils}/Makefile \
-		|| die
-	emake || die "emake failed"
-}
 
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
