@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.11.11-r1.ebuild,v 1.1 2005/04/21 09:39:03 uberlord Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.11.11-r1.ebuild,v 1.2 2005/04/29 03:37:11 vapier Exp $
 
 inherit flag-o-matic eutils toolchain-funcs multilib
 
@@ -33,9 +33,6 @@ PROVIDE="virtual/baselayout"
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-
-	# Move bashrc to /etc/bashrc
-	epatch ${FILESDIR}/${PN}-1.11.10-bashrc.patch
 
 	# Fix Sparc specific stuff
 	if [[ $(tc-arch) == "sparc" ]] ; then
