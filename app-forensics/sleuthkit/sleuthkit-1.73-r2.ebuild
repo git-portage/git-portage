@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-forensics/sleuthkit/Attic/sleuthkit-1.73-r1.ebuild,v 1.6 2005/04/21 18:48:32 blubb Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-forensics/sleuthkit/Attic/sleuthkit-1.73-r2.ebuild,v 1.1 2005/04/29 23:50:31 dragonheart Exp $
 
 inherit toolchain-funcs eutils
 
@@ -26,7 +26,6 @@ src_unpack() {
 	unpack ${A}
 	epatch ${P}_dbtool.patch || die "patch failed"
 	cd ${S}
-	sed -i '63,69d' src/timeline/config-perl || die "sed config-perl failed"
 	sed -i 's:`cd ../..; pwd`:/usr:' src/sorter/install \
 		|| die "sed install failed"
 }
