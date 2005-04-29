@@ -2,8 +2,8 @@ MD5 6f1e34801a7ab85b6284cfeb3f889c29 amap-4.6.ebuild 1393
 MD5 b839623bdffcf9474859bbca266230bd amap-4.8.ebuild 1438
 MD5 701ffa0a03c07892f770bf5419333da4 amap-4.7.ebuild 1393
 MD5 462f671e891cbf251fc2dd267c60b785 amap-4.8-r1.ebuild 1477
-MD5 5c035a8ef03c34e8872291284968ed8f amap-5.0.ebuild 1526
-MD5 326b5be1f99d1c0eeea7d9844bdaf746 ChangeLog 3533
+MD5 4dc526e6201fc798b600d0c84221c097 amap-5.0.ebuild 1529
+MD5 7b5a062aa75411435d4dc78cf30972e6 ChangeLog 3768
 MD5 f34e3c8858756da0001b12d2d3fa1af2 metadata.xml 159
 MD5 a5f16a887d88f7d685dbaed470ee6ec8 files/digest-amap-4.6 60
 MD5 0650e1a8429fc7f1febbffe8435ed1c4 files/digest-amap-4.7 60
