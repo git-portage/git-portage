@@ -1,6 +1,9 @@
-MD5 a204884046187e66482fee6abe957504 usermode-sources-2.6.11.ebuild 1230
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 e6f5b01ba47e58ebd72a3d4c74405a35 usermode-sources-2.6.11.ebuild 1224
 MD5 aa34b8764539acfc458342524f7ac787 usermode-sources-2.4.27.ebuild 1647
-MD5 cf27968a5365dec8a4d7af3645ec506d ChangeLog 17983
+MD5 973976f26530c952574c4d81d4336492 ChangeLog 18472
 MD5 a76f13cb946fc2720c04b189616da2de metadata.xml 159
 MD5 7289c956f9e3681208cce875ef17137a usermode-sources-2.6.8.1-r9.ebuild 1862
 MD5 f751a3e304cbed92529ab6783b91e7ba files/digest-usermode-sources-2.4.27 134
@@ -56,3 +59,10 @@ MD5 d1ccc2047be533c992f67270a150a210 files/usermode-sources-2.4.cmdlineLeak.patc
 MD5 a3f4cfc55b03f9a6104da43da9c38928 files/usermode-sources-2.6.77923.patch 1094
 MD5 95708646470a95668e8789cd415844ed files/usermode-sources.CAN-2004-0497.patch 846
 MD5 c27699e9d62f7d46213bd51f87636163 files/usermode-sources-2.4.vma.patch 8143
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCctQyiJcSIUGNthERAiAHAJ9l+dZ71/B/emmMvRBA+2t1phdk7ACgsVGJ
+xdkggvfrf6lGo3XBg5gIOzo=
+=biBo
+-----END PGP SIGNATURE-----
