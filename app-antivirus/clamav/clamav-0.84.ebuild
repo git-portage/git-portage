@@ -1,15 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-antivirus/clamav/Attic/clamav-0.84_rc1.ebuild,v 1.2 2005/04/22 10:20:14 kloeri Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-antivirus/clamav/Attic/clamav-0.84.ebuild,v 1.1 2005/05/01 18:09:54 ticho Exp $
 
 inherit eutils flag-o-matic
 
-MY_PV="${PV/_/}"
-MY_P="${PN}-${MY_PV}"
-
 DESCRIPTION="Clam Anti-Virus Scanner"
 HOMEPAGE="http://www.clamav.net/"
-SRC_URI="mirror://sourceforge/clamav/${MY_P}.tar.gz"
+SRC_URI="mirror://sourceforge/clamav/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -24,8 +21,6 @@ DEPEND="virtual/libc
 	net-dns/libidn"
 RDEPEND="selinux? ( sec-policy/selinux-clamav )"
 PROVIDE="virtual/antivirus"
-
-S="${WORKDIR}/${MY_P}"
 
 pkg_setup() {
 	if use milter; then
@@ -57,9 +52,9 @@ src_compile() {
 
 src_install() {
 	make DESTDIR=${D} install || die
-	dodoc AUTHORS BUGS NEWS README ChangeLog TODO FAQ INSTALL
-	exeinto /etc/init.d ; newexe ${FILESDIR}/clamd.rc clamd
-	insinto /etc/conf.d ; newins ${FILESDIR}/clamd.conf clamd
+	dodoc AUTHORS BUGS NEWS README ChangeLog FAQ INSTALL
+	newinitd ${FILESDIR}/clamd.rc clamd
+	newconfd ${FILESDIR}/clamd.conf clamd
 	dodoc ${FILESDIR}/clamav-milter.README.gentoo
 }
 
