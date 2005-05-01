@@ -1,3 +1,6 @@
 MD5 11c774f13e831b09173b4108ebef4e54 ChangeLog 1216
 MD5 fd29a2ea594430a7274c8d61f1182bb1 swish-e-2.2.2-r1.ebuild 898
+MD5 f78655aeb30ae9c42240c17cc7f28ba0 swish-e-2.4.3.ebuild 1664
 MD5 fc5a8d65b3761bfbd7f7744fda4c324e files/digest-swish-e-2.2.2-r1 65
+MD5 0af7d0e3bdf537f307d8f2e7df0bd924 files/digest-swish-e-2.4.3 66
+MD5 face08b2f796d92a6dfa6c1f3bfd2335 files/swish-e-2.4.3-Makefile.PL.patch 417
