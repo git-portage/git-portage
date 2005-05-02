@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/wxGTK/Attic/wxGTK-2.4.2-r3.ebuild,v 1.7 2005/05/02 17:57:03 pythonhead Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/wxGTK/Attic/wxGTK-2.4.2-r4.ebuild,v 1.1 2005/05/02 17:57:03 pythonhead Exp $
 
 inherit flag-o-matic eutils gnuconfig multilib toolchain-funcs
 
@@ -10,8 +10,8 @@ SRC_URI="mirror://sourceforge/wxwindows/${P}.tar.bz2"
 
 LICENSE="wxWinLL-3"
 SLOT="2.4"
-KEYWORDS="x86 ~ppc ~sparc ~alpha ~arm ~amd64 ~ia64 ~hppa ~ppc64"
-IUSE="debug wxgtk1 gtk gtk2 odbc opengl unicode"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~arm ~amd64 ~ia64 ~hppa ~ppc64"
+IUSE="debug wxgtk1 gtk2 odbc opengl unicode"
 
 RDEPEND="virtual/x11
 	sys-libs/zlib
@@ -32,13 +32,13 @@ DEPEND="${RDEPEND}
 
 src_unpack() {
 	unpack ${A}
-	epatch ${FILESDIR}/${PN}-2.4.2-menu.cpp.patch || \
-		die "Failed to patch menu.cpp"
+	epatch ${FILESDIR}/${PN}-2.4.2-menu.cpp.patch
 	# fix xml contrib makefile problems
 	EPATCH_OPTS="-d ${S}" epatch ${FILESDIR}/${PN}-2.4.1-contrib.patch
 	# disable contrib/src/animate
 	EPATCH_OPTS="-d ${S}/contrib/src" epatch ${FILESDIR}/${PN}-2.4.2-contrib_animate.patch
 	use amd64 && EPATCH_OPTS="-d ${S}" epatch ${FILESDIR}/${PN}-2.4.2-cleanup.patch
+	epatch ${FILESDIR}/${PN}-2.4.2-gcc4.patch
 	gnuconfig_update
 }
 
@@ -46,9 +46,9 @@ pkg_setup() {
 	einfo "New in >=wxGTK-2.4.2-r2:"
 	einfo "------------------------"
 	einfo "You can now have gtk, gtk2 and unicode versions installed"
-	einfo "simultaneously. Use wxgtk1 if you would like a gtk1 lib."
+	einfo "simultaneously. Use wxgtk1 if you want a gtk1 version."
 	einfo "Put gtk2 and unicode in your USE flags to get those"
-	einfo "additional versions."
+	einfo "two additional versions."
 	einfo "NOTE:"
 	einfo "You can also get debug versions of any of those, but not debug"
 	einfo "and normal installed at the same time."
@@ -63,7 +63,7 @@ pkg_setup() {
 src_compile() {
 	local myconf
 	export LANG='C'
-	filter-flags -fvisibility-inlines-hidden
+
 	myconf="${myconf} `use_with opengl`"
 	myconf="${myconf} --with-gtk"
 	myconf="${myconf} `use_enable debug`"
@@ -142,6 +142,7 @@ src_install() {
 	fi
 
 	# twp 20040830 wxGTK-2.4.2 forgets to install htmlproc.h; copy it manually
+	# Needed for wxruby:
 	insinto /usr/include/wx/html
 	doins ${S}/include/wx/html/htmlproc.h
 

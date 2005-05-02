@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/wxGTK/Attic/wxGTK-2.4.2-r2.ebuild,v 1.7 2005/03/03 21:35:03 pythonhead Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/wxGTK/Attic/wxGTK-2.4.2-r2.ebuild,v 1.8 2005/05/02 17:57:03 pythonhead Exp $
 
 inherit flag-o-matic eutils gnuconfig
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/wxwindows/${P}.tar.bz2"
 LICENSE="wxWinLL-3"
 SLOT="2.4"
 KEYWORDS="x86 ppc sparc alpha arm amd64 ia64 hppa ppc64"
-IUSE="debug no_wxgtk1 gtk2 odbc opengl unicode"
+IUSE="debug wxgtk1 gtk2 odbc opengl unicode"
 
 RDEPEND="virtual/x11
 	sys-libs/zlib
@@ -21,7 +21,7 @@ RDEPEND="virtual/x11
 	!unicode? ( odbc? ( dev-db/unixODBC ) )
 	opengl? ( virtual/opengl )
 	gtk2? ( >=x11-libs/gtk+-2.0 >=dev-libs/glib-2.0 )
-	!no_wxgtk1? ( =x11-libs/gtk+-1.2* =dev-libs/glib-1.2* )"
+	wxgtk1? ( =x11-libs/gtk+-1.2* =dev-libs/glib-1.2* )"
 DEPEND="${RDEPEND}
 	gtk2? ( dev-util/pkgconfig )"
 
@@ -46,8 +46,7 @@ pkg_setup() {
 	einfo "New in >=wxGTK-2.4.2-r2:"
 	einfo "------------------------"
 	einfo "You can now have gtk, gtk2 and unicode versions installed"
-	einfo "simultaneously. gtk is installed by default because it is"
-	einfo "more stable than gtk2. Use no_wxgtk1 if you don't want it."
+	einfo "simultaneously. Use wxgtk1 if you want a gtk1 lib."
 	einfo "Put gtk2 and unicode in your USE flags to get those"
 	einfo "additional versions."
 	einfo "NOTE:"
@@ -56,8 +55,8 @@ pkg_setup() {
 	if  use unicode; then
 		! use gtk2 && die "You must put gtk2 in your USE if you need unicode support"
 	fi
-	if use no_wxgtk1 && ! use gtk2; then
-		die "You must have at least gtk2 or -no_wxgtk1 in your USE"
+	if ! use wxgtk1 && ! use gtk2; then
+		die "You must have at least gtk2 or wxgtk1 in your USE"
 	fi
 }
 
@@ -69,7 +68,7 @@ src_compile() {
 	myconf="${myconf} --with-gtk"
 	myconf="${myconf} `use_enable debug`"
 
-	if ! use no_wxgtk1 ; then
+	if use wxgtk1 ; then
 		mkdir build_gtk
 		einfo "Building gtk version"
 		cd build_gtk
