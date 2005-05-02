@@ -1,0 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 46b0a992734eb33baba333c2d7fc4aff wxbase-2.6.0.ebuild 370
+MD5 85da56e895b8fc1462f76e9ce4d04502 metadata.xml 163
+MD5 8a554933598401a37625b2039d61c50c ChangeLog 303
+MD5 c8ab55f4ce498e00d800d420ba86ea08 files/digest-wxbase-2.6.0 143
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCdmxez2gxt1z4IGYRAltGAJ9rdoRDQrbcaT1KpXS0/U9VWe0v+ACeMb+n
+cqmz7ZF9pZ00UkI7ZDBmzaU=
+=uuZD
+-----END PGP SIGNATURE-----
