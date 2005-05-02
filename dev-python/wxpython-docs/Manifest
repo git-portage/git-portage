@@ -1,16 +1,16 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-MD5 e7f87fde3cf744e886d75f5a9db23285 ChangeLog 2210
+MD5 284dff0eab5d76821e02a51da1e11405 ChangeLog 2215
 MD5 3b06f1e87549af51d78bb7bfa33728b5 metadata.xml 182
-MD5 e8f0a1e8a34859e6664d59127ceb8942 wxpython-docs-2.4.2.4-r1.ebuild 1034
-MD5 09922b63ddb3126885c03482bac38ffd wxpython-docs-2.6.0.0.ebuild 1470
+MD5 036257b95ad62e8247c6dc14f04e8273 wxpython-docs-2.4.2.4-r1.ebuild 1042
+MD5 9c758eca8750f9a1f84940bc78369428 wxpython-docs-2.6.0.0.ebuild 1475
 MD5 2911f08ca57d7ce8297146ffd74e5fca files/digest-wxpython-docs-2.4.2.4-r1 146
 MD5 2e16d6b640e3678d8d85abe15dfbc3b0 files/digest-wxpython-docs-2.6.0.0 225
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.1 (GNU/Linux)
 
-iD8DBQFCdnk+z2gxt1z4IGYRAvX+AKDi9Ch2/uZl7z+sEDKaYCl8/y1vFgCguWwI
-x26Bxab/ZyMWhy8OMoONwgU=
-=PPcV
+iD8DBQFCdnlPz2gxt1z4IGYRAswQAKCz63OmL+suq2T6Ly1AN4XE1d5HiACggXcj
+b3nr91uRTTWdr7pUI30J1c4=
+=YI+b
 -----END PGP SIGNATURE-----
