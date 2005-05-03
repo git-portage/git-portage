@@ -1,4 +1,7 @@
-MD5 082efcd317a97155a741e7ea1b9150df ChangeLog 37996
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 636d7e00ee2073505f53279aa7a26cdf ChangeLog 38142
 MD5 1ec0f7ec45dce6f53d70a7df0fabe7a5 gentoo-sources-2.6.1-r2.ebuild 2235
 MD5 386b6b1084b1c4cabfad87fc8b603114 gentoo-sources-2.6.10-r6.ebuild 1607
 MD5 fcb0ef38b15b443621d231a6b0280b30 gentoo-sources-2.6.11-r6.ebuild 1619
@@ -8,7 +11,7 @@ MD5 45bb97671264e772e7c5711ffd5e39be gentoo-sources-2.6.10-r7.ebuild 1620
 MD5 fdbf1f1944b017fafc0bb0a9e44faf8c gentoo-sources-2.4.25-r17.ebuild 2002
 MD5 3229d029559913e76e4a92d8bacb5941 gentoo-sources-2.4.28-r8.ebuild 1307
 MD5 cd14a3055fad29bf0256428a774ea70d gentoo-sources-2.6.7-r19.ebuild 1455
-MD5 de03fc7ae5864a59b65e55dce13201e1 gentoo-sources-2.6.11-r7.ebuild 1623
+MD5 b3b83e4b186b452b6c2d23f9e86970c9 gentoo-sources-2.6.11-r7.ebuild 1630
 MD5 fb66bd5497f574c00a8ba4d5f798dc00 files/Changelog-2.4.bz2 6590
 MD5 b09e0ad41a8658a3e1309e5ab3ad652b files/gentoo-sources-2.4.28.77181.patch 295
 MD5 0694ed26023de7664f6d3658f04c4bbe files/digest-gentoo-sources-2.6.7-r19 221
@@ -51,3 +54,10 @@ MD5 0f93b46ae17cbd0fc9b4d1cf5d704296 files/gentoo-sources-2.4.81106.patch 2243
 MD5 b63da6e1cbd38d159d722aa5debf0e73 files/digest-gentoo-sources-2.6.11-r7 224
 MD5 179bd3656f72932f69b0f860d23483cd files/digest-gentoo-sources-2.4.28-r8 226
 MD5 b1f723b1661a3fcbe79e921ddfe40584 files/gentoo-sources-2.4.PaX-84167.patch 1202
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCdyu4ArHZZzCEUG0RAmH9AJ98y8E3eRXuh1qL5Q2ZqgUAbUlmCgCfXp1/
++HWJLZ8m0yU68VYwseb6xZA=
+=8z36
+-----END PGP SIGNATURE-----
