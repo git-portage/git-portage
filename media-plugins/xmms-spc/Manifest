@@ -1,5 +1,6 @@
 MD5 7cb1ba248fcaf0b95ab85fd3dfc2805a ChangeLog 1588
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
-MD5 f96699ccfad762e91d7f24129a33c145 xmms-spc-0.2.1-r1.ebuild 1002
+MD5 0f44dbdd63ed6ca4e84688cead0aa64a xmms-spc-0.2.1-r1.ebuild 996
 MD5 2398436193eb0bbad90b6062d8d09980 files/digest-xmms-spc-0.2.1-r1 66
 MD5 73f665e685e8e66c587a7ec694f1b05f files/xmms-spc-0.2.1-r1.patch 2905
+MD5 2244fa5e3f55c79a7b9d51e42ce24e8e files/xmms-spc-0.2.1-amd64.patch 408
