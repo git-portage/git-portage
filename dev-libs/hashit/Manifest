@@ -1,14 +1,4 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 e4877d6811081fac6491aa0b3329d8d7 ChangeLog 830
-MD5 61f3873edbe39fbf29837471f67175a9 hashit-0.9.3.ebuild 888
+MD5 1394a92f29c26378376001cfa902eef5 hashit-0.9.3.ebuild 895
+MD5 a8942dd37ec49448c1d7757eab5bc01e ChangeLog 945
 MD5 b723de6800a17e425056e1639441e435 metadata.xml 223
 MD5 ff24134d7bd76b9a29fb5019f1931f58 files/digest-hashit-0.9.3 64
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBjfm1I7fK2cqeyXkRAgBpAKDq3cNAP8qhpRhvZrS0wRhKz+cMowCfaQ1g
-MF74et1cmwx7gXfr7zTsn3U=
-=SEmN
------END PGP SIGNATURE-----
