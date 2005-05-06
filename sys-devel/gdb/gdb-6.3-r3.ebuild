@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gdb/Attic/gdb-6.3-r1.ebuild,v 1.1 2005/04/23 04:50:33 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gdb/Attic/gdb-6.3-r3.ebuild,v 1.1 2005/05/06 00:09:46 solar Exp $
 
 inherit flag-o-matic eutils
 
@@ -45,6 +45,9 @@ src_unpack() {
 	#epatch "${FILESDIR}"/gdb-6.x-crash.patch
 	epatch "${FILESDIR}"/gdb-6.2.1-pass-libdir.patch
 	epatch "${FILESDIR}"/gdb-6.3-scanmem.patch
+	epatch "${FILESDIR}"/gdb-6.3-gdbinit-stat.patch
+	# sec bug 91398
+	epatch "${FILESDIR}"/bfd-malloc-wrap.patch
 
 	strip-linguas -u bfd/po opcodes/po
 }
@@ -53,6 +56,10 @@ src_compile() {
 	replace-flags -O? -O2
 	econf $(use_enable nls) || die
 	emake -j1 || die
+}
+
+src_test() {
+	make check || ewarn "tests failed"
 }
 
 src_install() {
