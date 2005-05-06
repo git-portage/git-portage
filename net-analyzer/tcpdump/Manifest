@@ -1,17 +1,7 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 f91af3671149ebff0574649a525cbc61 ChangeLog 4941
-MD5 1465cdeb961745379a8ae1402b3e51ab metadata.xml 268
 MD5 8c5b3bdacca3d85a1d84a55f3db230c5 tcpdump-3.8.3-r1.ebuild 1092
-MD5 4d90173252b7632aee987ddd1ce90b2c tcpdump-3.8.3-r2.ebuild 1175
+MD5 db880a38172c2ffa68f84301fde061aa ChangeLog 5046
+MD5 1465cdeb961745379a8ae1402b3e51ab metadata.xml 268
+MD5 8ee26a306156bd6721dc3763cc94af74 tcpdump-3.8.3-r2.ebuild 1174
 MD5 d285bb203f9e48fc23492e4c72d61a94 files/digest-tcpdump-3.8.3-r1 65
 MD5 d285bb203f9e48fc23492e4c72d61a94 files/digest-tcpdump-3.8.3-r2 65
 MD5 4d0df7aa1535098ccef25ba7e86e5e95 files/tcpdump-3.8.3-gentoo.patch 4002
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCe/I0mdTrptrqvGERAryBAJ9yDGc2CzGjurdG6vyky/jbD2oFLQCfSrQL
-xTB4tSz0C8vJ1QN/o4GIMGU=
-=YL/w
------END PGP SIGNATURE-----
