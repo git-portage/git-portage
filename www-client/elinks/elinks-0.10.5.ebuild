@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/elinks/Attic/elinks-0.10.3.ebuild,v 1.3 2005/05/07 17:53:44 spock Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/elinks/Attic/elinks-0.10.5.ebuild,v 1.1 2005/05/07 17:53:44 spock Exp $
 
 IUSE="gpm zlib ssl ipv6 X lua guile"
 
@@ -9,11 +9,11 @@ S=${WORKDIR}/${MY_P}
 DESCRIPTION="Advanced and well-established text-mode web browser"
 HOMEPAGE="http://elinks.or.cz"
 SRC_URI="http://elinks.or.cz/download/${MY_P}.tar.bz2
-	http://dev.gentoo.org/~spock/portage/distfiles/elinks-0.9.1.conf.bz2"
+	http://dev.gentoo.org/~spock/portage/distfiles/elinks-0.10.4.conf.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~ppc ~sparc ~amd64 ~alpha"
+KEYWORDS="~x86 ~ppc ~sparc ~amd64 ~alpha ~ppc64"
 
 DEPEND="virtual/libc
 	>=app-arch/bzip2-1.0.2
@@ -31,7 +31,7 @@ src_unpack() {
 	unpack ${A}
 	cd ${WORKDIR}
 
-	mv "${PN}-0.9.1.conf" "${PN}.conf"
+	mv "${PN}-0.10.4.conf" "${PN}.conf"
 	sed -i \
 		-e 's:CONFIG_256_COLORS=.*:CONFIG_256_COLORS=yes:' \
 		-e 's:CONFIG_LEDS=.*:CONFIG_LEDS=yes:' \
