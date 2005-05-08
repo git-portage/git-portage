@@ -1,7 +1,4 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 380a6cd5cb0da24d6ef4d48640940ed7 control-center-2.10.1.ebuild 1885
+MD5 0b7b3176dc1efd989c07aa25cbca7801 control-center-2.10.1.ebuild 1891
 MD5 f9a1a02659086003d74a108906fcbaf4 control-center-2.8.0.ebuild 1845
 MD5 b2c407155208edb0f7dea917ac69a7e4 control-center-2.10.0.ebuild 1885
 MD5 b42cd14dfbb24d8ca75778be583a459f control-center-2.8.1-r1.ebuild 1845
@@ -24,10 +21,3 @@ MD5 adbe3cf7b6918f7681569128f76a4b71 files/control-center-2.2-icons_install.patc
 MD5 dbc915ad73576e8f0ae8a948e52fb621 files/control-center-1.4.0.5-cflags.patch 744
 MD5 3c50bab26a7b8dd1ccb40514655a0a79 files/digest-control-center-2.8.1-r1 74
 MD5 38949ed5d795344f78a96af44764f896 files/digest-control-center-1.4.0.5-r1 76
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCfhk/2G5bA0cA/ScRAgZiAKCGuty9AB1jndNxaXZOjEGXyFFI/QCeLM4r
-aF2e4U3lZcSKVjGpxy51Uj0=
-=R3eH
------END PGP SIGNATURE-----
