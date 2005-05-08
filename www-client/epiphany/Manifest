@@ -8,8 +8,8 @@ MD5 8aed3342a6f92a5aef502cd9cf13b561 epiphany-1.6.0.ebuild 1434
 MD5 4e94eac2f85ebe735922ae85ff8f5a68 epiphany-1.4.6.ebuild 1475
 MD5 3bd417e2964a7df37b72259889c5d224 epiphany-1.6.0-r2.ebuild 1617
 MD5 67e7eacaf6ef55d800de3f5a881e3412 epiphany-1.2.9-r1.ebuild 1468
-MD5 f78ae55b1406b239aab387a78253fdf6 epiphany-1.4.8.ebuild 1459
-MD5 2fa4003848ca0e1d4dd76a07e5d45cef ChangeLog 14706
+MD5 e4db14a21c730e404c78b1b460e85da3 epiphany-1.4.8.ebuild 1462
+MD5 f33105fffb4ea7e5da61e8d4a6a38781 ChangeLog 14800
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 0873a2aa499ea61b33cdaefdf9b46b10 epiphany-1.4.5.ebuild 1375
 MD5 30122eb94b387560a22559fecccf1d84 files/epiphany-1.5.5-fix_includes.patch 497
