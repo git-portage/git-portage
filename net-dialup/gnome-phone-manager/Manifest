@@ -1,0 +1,5 @@
+MD5 7532ed5d89dd59df5d50fb34575917fb gnome-phone-manager-0.4.ebuild 963
+MD5 1f8b2b0790be51c20ed5a2431bf2c2d1 ChangeLog 348
+MD5 8822b31c916bbf08b35d5e21ae3a99cc metadata.xml 314
+MD5 2f647a87b3c98a511f73c6e0408a2b9e files/gnome-phone-manager-0.4-gcc3.patch 1652
+MD5 50541bea837f45b13e29485e70bb06a3 files/digest-gnome-phone-manager-0.4 75
