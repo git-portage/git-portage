@@ -12,4 +12,4 @@ MD5 981523171b835c239b68613e6080246d files/digest-ghc-bin-6.0 162
 MD5 7131d05db80999f47946fedb5083ad01 files/digest-ghc-bin-6.2 81
 MD5 42a1da9d86ec405ba28644ee8036a40c files/digest-ghc-bin-6.2.1 69
 MD5 f64b7d061f8c67720e33afb647de7486 files/digest-ghc-bin-6.2.2 83
-MD5 ebbb91beeccb8efff2453370ea983768 files/digest-ghc-bin-6.4 67
+MD5 f64499ed763439c3d4eb3b404c86a6c7 files/digest-ghc-bin-6.4 136
