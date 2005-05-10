@@ -1,0 +1,6 @@
+MD5 1c942ef3edef4303f35095fd0fb8af8b pglogd-2.3.ebuild 1352
+MD5 62bf8a150425d7435a2e1a5ff4d4d8c4 ChangeLog 352
+MD5 f8d3d207746da2a3cd14dcaab8daab76 metadata.xml 163
+MD5 e67442dd9e4759ae981da63dce507e25 files/digest-pglogd-2.3 61
+MD5 12e3988f7380e90f2e3a6a6fd9e87598 files/Makefile.patch 516
+MD5 98e7b73929b32e028ba60d9905573114 files/pglogd.init 461
