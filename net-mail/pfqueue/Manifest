@@ -1,6 +1,4 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
+MD5 d2662f363047da0260959335a944eb66 pfqueue-0.3.7.ebuild 510
 MD5 5aa187f8d0ffe3b634a97000aa6f87b1 pfqueue-0.3.2.ebuild 591
 MD5 b6d2075633f82c3278a968bde8951672 pfqueue-0.3.4.ebuild 600
 MD5 002a07ab7c29561989ef2177d8449338 pfqueue-0.3.6.ebuild 608
@@ -17,10 +15,4 @@ MD5 379199624604ff626d24ac8def4f9086 files/digest-pfqueue-0.3.3 65
 MD5 a678d213079de9b12d33b9d6baf3778f files/digest-pfqueue-0.3.4 65
 MD5 c87acfba06eba3afe576ee9d8ec04e39 files/digest-pfqueue-0.3.5 65
 MD5 2a60f7b81ea4460a337990c9b7877da0 files/digest-pfqueue-0.3.6 65
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCcXEOQlM6RnzZP+IRAglOAJ9jRRZoWZEnITPsb8cB9wBp7A8/gQCeJ/2o
-WsVCg4uWAhE2zLzVrFwOz/8=
-=GLou
------END PGP SIGNATURE-----
+MD5 c0d8917a594e08296658c134e3a5cb53 files/digest-pfqueue-0.3.7 65
