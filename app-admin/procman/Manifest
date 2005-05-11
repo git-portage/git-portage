@@ -1,3 +1,4 @@
-MD5 2909adb77ff1c89b1ea6c4bb77e099fd ChangeLog 1337
-MD5 331fdb8221377f521c5bda0c2b50e0f0 procman-1.0.ebuild 812
+MD5 8404ce8ceef2d7208d5a135a5a093ee1 ChangeLog 1479
+MD5 838944bad5fed887da3c108bdd2763a3 procman-1.0.ebuild 888
 MD5 4e43867867179e603fbf302b06e33d0d files/digest-procman-1.0 63
+MD5 06e3ae75aca760ec40a82ec1ba6f7c48 files/procman-1.0-gcc34.patch 1275
