@@ -1,8 +1,11 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4fca175f747a090fd2b7b8ce22fbc06d metadata.xml 162
 MD5 62be82618a657fca19a51e0825e5e4e9 wxGTK-2.4.2-r2.ebuild 4249
 MD5 0f0136b6647734bd5243d443803602fc wxGTK-2.4.2-r3.ebuild 4742
-MD5 e7553dbc4ef935824e0c8ec5d24e8021 wxGTK-2.6.0-r1.ebuild 2370
-MD5 2f108ad74c35267a0caa95dc63fc0250 ChangeLog 13190
+MD5 c518ea5ef9bcdba99eaba7c4d4285608 wxGTK-2.6.0-r1.ebuild 2373
+MD5 7fd603dde064091c276c60c30932b202 ChangeLog 13195
 MD5 b8d2d1196e6c7f31335748286b926533 wxGTK-2.5.3.ebuild 4812
 MD5 5087298be841a84071ea67830f5d6a2b files/digest-wxGTK-2.4.2-r2 65
 MD5 5087298be841a84071ea67830f5d6a2b files/digest-wxGTK-2.4.2-r3 65
@@ -14,3 +17,10 @@ MD5 798d3d05c7adb28f00834aa4ea1f304b files/wxGTK-2.4.2-contrib_animate.patch 442
 MD5 f3bc3ab73cb31c91683e3ed58f8ffabb files/wxGTK-2.4.2-menu.cpp.patch 2253
 MD5 c8ab55f4ce498e00d800d420ba86ea08 files/digest-wxGTK-2.6.0-r1 143
 MD5 d3163f84f4f7dbabab06613667542f9b files/digest-wxGTK-2.5.3 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCgl6rHOCQyz1WCXYRAtdjAKDQD5u8AoAELOvf7mQXlQQ2sTVzBgCfehfV
+38sb+nLNxCCygTCWEpzahnA=
+=Aexj
+-----END PGP SIGNATURE-----
