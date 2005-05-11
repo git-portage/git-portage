@@ -1,19 +1,9 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 0b56bf509337f3f5697eaa6924d40fb0 awstats-6.3-r2.ebuild 4038
-MD5 ef6d37e607f5a4ea476b6b254ef8f0bb awstats-6.4.ebuild 3867
-MD5 97693dd640c89e3971ee30307eaf22f2 ChangeLog 3025
+MD5 0bfaeb3132253243b1596b5cd58a6642 awstats-6.3-r2.ebuild 4039
+MD5 6c651ddcd9c72f810b951974fe4dd72e awstats-6.4.ebuild 3897
+MD5 e4f7c1021e9710252a2cc62286be7cea ChangeLog 3197
 MD5 6bc2db5b1e135821863e91fa8658ad48 metadata.xml 255
 MD5 803faa3640a7aadd2fadbbd05968a45e files/digest-awstats-6.4 60
 MD5 70a086a2f452243a500aa67b1df7f26f files/digest-awstats-6.3-r2 135
 MD5 7a52d3f65ff7220a519056716d460ecd files/awstats-6.3-gentoo.diff 1219
 MD5 f881494a979cdea82d58e31b589d9a97 files/postinst-en.txt 5049
 MD5 8f8b0ad336b5066db17452db770ed878 files/awstats-6.3-CAN-2005-0363.diff 1243
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCajO9EZCkKN40op4RAqPxAJ9vjQNRlb5hyyXSuuOuaOia91dJgwCggMe6
-hA9BUBCwlX1xUnlFjNU2Khs=
-=8zLE
------END PGP SIGNATURE-----
