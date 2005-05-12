@@ -1,3 +1,4 @@
+MD5 6ec1535ea6d32a39cb2f441f02816147 mozilla-1.7.8.ebuild 11685
 MD5 8adafba88ad7121d8c24b45212b3d818 mozilla-1.7.5.ebuild 10571
 MD5 d12e70c419df7a908affe2d26980c359 mozilla-1.7.6-r1.ebuild 11614
 MD5 ce8c1522b5c8f461803f65da7617a908 mozilla-1.7.7.ebuild 11608
@@ -7,6 +8,7 @@ MD5 6815b53c00b9966ed424d10c49485d43 ChangeLog 43297
 MD5 ce23390351fe8020387d93ee29e09a3d metadata.xml 160
 MD5 b19c38da8865b9ee5555aeb826d1d360 files/digest-mozilla-1.7.5 203
 MD5 dda9d34fd8970334058d801c524a027c files/digest-mozilla-1.7.7 203
+MD5 5d946445ba7bba30fb129f941bc7e84b files/digest-mozilla-1.7.8 203
 MD5 e79634ee1e611182b6c227daa362b20d files/mozilla-1.7.3-4ft2.patch 22360
 MD5 d0e52abf109fe61c4195f0cbf002ae18 files/google.src 706
 MD5 b7c78ba7ca0c519d0f3d2b80ab4cdd74 files/mozilla-1.7.6-ppc64.patch 3651
