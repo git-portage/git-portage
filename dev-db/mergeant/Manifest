@@ -1,4 +1,7 @@
 MD5 b07be5f870bd0b3f73382b93f90d1be9 ChangeLog 968
+MD5 93530084303b45231969efe0dafd1742 mergeant-0.52.ebuild 1230
+MD5 56f6f773a5b370c21aa1bc2f4f3b25c1 .mergeant-0.52.ebuild.swp 12288
 MD5 68010de90524a3c0c89f125bf317ab0b mergeant-0.12.1.ebuild 1225
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+MD5 b437e811d4baf6bbb7a25bc2ad380da4 files/digest-mergeant-0.52 67
 MD5 40c851ac355e64c4e94e52bbeabf5a2d files/digest-mergeant-0.12.1 69
