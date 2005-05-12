@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-bin/Attic/mozilla-bin-1.7.2.ebuild,v 1.3 2005/03/30 20:05:36 kugelfang Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-bin/Attic/mozilla-bin-1.7.8.ebuild,v 1.1 2005/05/12 13:25:11 agriffis Exp $
 
 inherit nsplugins eutils mozilla-launcher
 
@@ -15,12 +15,10 @@ MY_PN=${PN/-bin/}
 S=${WORKDIR}/mozilla
 DESCRIPTION="Mozilla Application Suite - web browser, email, HTML editor, IRC"
 HOMEPAGE="http://www.mozilla.org"
-# Mirrors have it in one of the following places, depending on what
-# mirror you check and when you check it... :-(
 SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla${PV}/mozilla-i686-pc-linux-gnu-${PV}.tar.gz"
 RESTRICT="nostrip"
 
-KEYWORDS="-* ~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 SLOT="0"
 LICENSE="MPL-1.1 NPL-1.1"
 
@@ -35,7 +33,7 @@ RDEPEND="virtual/x11
 		>=app-emulation/emul-linux-x86-gtklibs-1.0
 	)
 	virtual/x11
-	>=www-client/mozilla-launcher-1.13"
+	>=www-client/mozilla-launcher-1.28"
 
 # This is a binary x86 package => ABI=x86
 # Please keep this in future versions
@@ -55,7 +53,17 @@ src_install() {
 
 	# mozilla-launcher-1.8 supports -bin versions
 	dodir /usr/bin
-	dosym /usr/libexec/mozilla-launcher /usr/bin/mozilla-bin
+	cat <<EOF >${D}/usr/bin/mozilla-bin
+#!/bin/sh
+# 
+# Stub script to run mozilla-launcher.  We used to use a symlink here but
+# OOo brokenness makes it necessary to use a stub instead:
+# http://bugs.gentoo.org/show_bug.cgi?id=78890
+
+export MOZILLA_LAUNCHER=mozilla-bin
+exec /usr/libexec/mozilla-launcher "\$@"
+EOF
+	chmod 0755 ${D}/usr/bin/mozilla-bin
 
 	# Install icon and .desktop for menu entry
 	insinto /usr/share/pixmaps
