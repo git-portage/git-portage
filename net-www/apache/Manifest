@@ -1,12 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0c9c973aea3a51fb819b54156c4d03d9 apache-2.0.53-r1.ebuild 12289
 MD5 ede664799f982639467a3e577f2a396c apache-2.0.54-r1.ebuild 12377
 MD5 d2794a4d623366ae015307911b5f5a1f apache-1.3.31-r1.ebuild 6806
-MD5 ccd41dc1bd6e53a0c2cc88a5eb24fe5c apache-2.0.54-r2.ebuild 12283
+MD5 0115ad97177880053943c28c5f78dc25 apache-2.0.54-r2.ebuild 12279
 MD5 26aeecc4289a4d8982052af3d229704a apache-1.3.31-r2.ebuild 6931
 MD5 87370fee7054a7c4cfa0efb3a320c34b apache-2.0.50.ebuild 12902
 MD5 37f5ed6f2423381241b029e6685bcdd2 metadata.xml 493
 MD5 a04435ee78d579ba5aa3856b4b32d57c apache-1.3.33-r4.ebuild 8649
-MD5 bdafefbad03d648d518cbcd78943793f ChangeLog 60675
+MD5 e3a3cfe24bdb184e199542b770f64030 ChangeLog 60995
 MD5 9ef3cdc19c9f3d025461cb26a226f82e apache-1.3.33-r1.ebuild 6942
 MD5 b34b4d92bab51e4eab58fd5021beb7c2 apache-2.0.54.ebuild 12084
 MD5 57a7be187470abfa52773b81151a38a6 apache-2.0.52.ebuild 12877
@@ -20,7 +23,7 @@ MD5 e35fab2418ca9c57c8344e69345c161c apache-1.3.33-r2.ebuild 8649
 MD5 36b862baf4b3928e4da389714afb1155 apache-1.3.29-r2.ebuild 7227
 MD5 bb680257cf230b7619d9ec6e65a07c51 apache-2.0.51.ebuild 12842
 MD5 4972651d68219ad15fc821feda90d440 apache-1.3.31.ebuild 6760
-MD5 c0bc5cc424ce618a4b9a72400bfa23d5 apache-2.0.54-r3.ebuild 12377
+MD5 5a8c76df38a1569a641933ce49383e6f apache-2.0.54-r3.ebuild 12377
 MD5 39155e41c5083bd0206e54c44445141f apache-2.0.52-r4.ebuild 12415
 MD5 927a5fe94ee166c4c9b7317fbac27f4d apache-2.0.52-r1.ebuild 13198
 MD5 534bbe01d74bdb592e4570db0cd45807 apache-1.3.32-r1.ebuild 6675
@@ -112,3 +115,10 @@ MD5 a63b9472904d3500cf72b370a9ee3200 files/patches/1.3.31-r1/00_gentoo_db4_detec
 MD5 61df284cb67dfde3085aec5543eeb03c files/patches/1.3.31-r1/00_gentoo_apachectl.patch 32836
 MD5 161245c7aa1eb785db53b34d6a10be43 files/patches/1.3.31-r1/00_gentoo_suexec_pam.patch 2149
 MD5 3c0dfc9f2dc93ae46eb6382cf9533f18 files/patches/1.3.31-r1/00_gentoo_base.patch 27799
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCgq8BjUHll2nfF60RAhwLAJ9bV+HT2TWEPTVaZbtdeH7h0ayaSgCfbUyN
+sRIy/mIHuOk4D3/WDM+NByQ=
+=5VOc
+-----END PGP SIGNATURE-----
