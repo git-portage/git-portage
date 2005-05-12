@@ -1,18 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 25c2aa7fc46362d4b884182057a31050 ChangeLog 1352
 MD5 4f0d352583fda381ded5c7d015df2302 HTML-LinkExtractor-0.11.ebuild 611
-MD5 342fa2458bd340654af683b0681e3204 HTML-LinkExtractor-0.12.1.ebuild 675
-MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
+MD5 3200b093243ae57de728f2e99b8ef1be HTML-LinkExtractor-0.12.1.ebuild 674
 MD5 26159fb58493725ba8a016677564154e HTML-LinkExtractor-0.13.ebuild 609
+MD5 7955c18a6152bc4bab2813220cd76d3d ChangeLog 1459
+MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 17eb4b5bac059ec5e18c0616181e3b62 files/digest-HTML-LinkExtractor-0.11 74
-MD5 c0c9bdd78fc7f92677ad22436d242068 files/digest-HTML-LinkExtractor-0.12.1 75
 MD5 39eb23042780f9ce44004e82250635ca files/digest-HTML-LinkExtractor-0.13 74
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFCbSg2tG5z4I8BtQoRAlWnAJ9nTmbL41HRz8M5bkBYGLYYqh4OUQCgiETN
-Qyk4cRQ6yprx3E/yf4YOveY=
-=2W7U
------END PGP SIGNATURE-----
+MD5 c0c9bdd78fc7f92677ad22436d242068 files/digest-HTML-LinkExtractor-0.12.1 75
