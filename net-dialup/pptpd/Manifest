@@ -1,18 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 e29a9d70032635554622f4012486fa4a pptpd-1.2.1.ebuild 980
-MD5 71bad9f17335646622317c4ea706dcdc pptpd-1.2.3-r1.ebuild 1395
-MD5 b7a27cd6690c7a645a4a4641686dc1d5 ChangeLog 2471
+MD5 6fb75037f6320150dcdb3f3128529dce pptpd-1.2.3-r1.ebuild 1394
+MD5 4973c26da8cdcadb1858e85cccfc127a ChangeLog 2558
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
 MD5 1fa197073ee270e0a198941524453ce3 files/digest-pptpd-1.2.3-r1 63
 MD5 25ef2baf82e8e7af70a8139693c49f69 files/digest-pptpd-1.2.1 63
 MD5 96fed26a1a72e947d12edda983f74d16 files/pptpd-init 386
 MD5 bff575819b8997e7bbe743b95cb134cb files/pptpd-confd 131
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCZ/XvjiC39V7gKu0RAnHyAJ0So55jOftC38U5zmn9XlpdP9GIJgCdFjbu
-leZHjZDK9AG801VoLjhfKOw=
-=BAEX
------END PGP SIGNATURE-----
