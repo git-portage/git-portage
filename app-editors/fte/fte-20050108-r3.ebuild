@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/fte/Attic/fte-20050108.ebuild,v 1.1 2005/01/12 16:05:16 hanno Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/fte/Attic/fte-20050108-r3.ebuild,v 1.1 2005/05/14 14:22:40 voxus Exp $
 
 inherit eutils
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/fte/${P}-src.zip
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc"
+KEYWORDS="~x86 ~ppc ~sparc ~amd64"
 IUSE="gpm slang X"
 S=${WORKDIR}/${PN}
 
@@ -26,7 +26,8 @@ set_targets() {
 	export TARGETS=""
 	use slang && TARGETS="$TARGETS sfte"
 	use X && TARGETS="$TARGETS xfte"
-	use gpm && TARGETS="$TARGETS vfte"
+
+	TARGETS="$TARGETS vfte"
 }
 
 src_unpack() {
@@ -36,12 +37,30 @@ src_unpack() {
 	cd ${S}
 
 	epatch ${FILESDIR}/fte-gcc34
+	epatch ${FILESDIR}/${PN}-new_keyword.patch
 
 	set_targets
 	sed \
 		-e "s:@targets@:${TARGETS}:" \
 		-e "s:@cflags@:${CFLAGS}:" \
 		-i src/fte-unix.mak
+
+	if ! use gpm; then
+		sed \
+			-e "s:#define USE_GPM://#define USE_GPM:" \
+			-i src/con_linux.cpp
+		sed \
+			-e "s:-lgpm::" \
+			-i src/fte-unix.mak
+	fi
+
+	cat /usr/include/linux/keyboard.h \
+		| grep -v "wait.h" \
+		> src/hacked_keyboard.h
+
+	sed \
+		-e "s:<linux/keyboard.h>:\"hacked_keyboard.h\":" \
+		-i src/con_linux.cpp
 }
 
 src_compile() {
@@ -78,7 +97,8 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Compiling configuration..."
+	ebegin "Compiling configuration"
 	cd /usr/share/fte
 	/usr/bin/cfte main.fte /etc/fte/system.fterc
+	eend $?
 }
