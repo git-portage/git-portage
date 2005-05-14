@@ -1,16 +1,18 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/Attic/vlc-0.8.1-r2.ebuild,v 1.4 2005/05/09 08:48:41 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/Attic/vlc-0.8.1-r2.ebuild,v 1.5 2005/05/14 23:36:51 flameeyes Exp $
 
 # Missing support for...
 #	tarkin - package not in portage yet - experimental
 #	tremor - package not in portage yet - experimental
 
-inherit libtool gcc eutils wxwidgets
+inherit libtool toolchain-funcs eutils wxwidgets
 
+PATCHLEVEL="1"
 DESCRIPTION="VLC media player - Video player and streamer"
 HOMEPAGE="http://www.videolan.org/vlc/"
-SRC_URI="http://download.videolan.org/pub/videolan/${PN}/${PV}/${P}.tar.bz2"
+SRC_URI="http://download.videolan.org/pub/videolan/${PN}/${PV}/${P}.tar.bz2
+	http://digilander.libero.it/dgp85/gentoo/${PN}-patches-${PATCHLEVEL}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -93,7 +95,8 @@ src_unpack() {
 	# We only have glide v3 in portage
 	cd ${S}
 
-	epatch ${FILESDIR}/${P}-matroska-shared.patch
+	EPATCH_EXCLUDE="01_all_nohal.patch"
+	EPATCH_SUFFIX="patch" epatch "${WORKDIR}/${PV}"
 
 	./bootstrap
 
@@ -104,11 +107,6 @@ src_unpack() {
 	# Fix the default font
 	sed -i -e "s:/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf:/usr/share/fonts/ttf-bitstream-vera/VeraBd.ttf:" modules/misc/freetype.c
 
-	cd ${S}
-	epatch ${FILESDIR}/${P}-time.patch
-	epatch ${FILESDIR}/${P}-bool.patch
-	cd ${S}/modules/video_output
-	epatch ${FILESDIR}/glide.patch
 }
 
 src_compile () {
