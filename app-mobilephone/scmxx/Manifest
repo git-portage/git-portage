@@ -1,7 +1,16 @@
-MD5 1657523f9b3871f118fe1eb55a296e5d ChangeLog 1029
-MD5 c5eae764bdf92d58ccaa6f094634ac20 scmxx-0.6.3.7.ebuild 757
-MD5 3c07cb84528358d78b85e66ae3b16a58 scmxx-0.6.4.ebuild 632
-MD5 965914eea645c7a199c3ff8d3bfb5cd3 scmxx-0.7.4.ebuild 640
-MD5 36ff51d2fd0a94a032d4cd4590815b90 files/digest-scmxx-0.6.3.7 65
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 818889c4322b699026deb597c2fd4147 scmxx-0.6.4.ebuild 635
+MD5 845ddeb2b7e38f4e6f680cdb64e06490 scmxx-0.7.4.ebuild 643
+MD5 8441ab7873b2e965137274170f0974b7 ChangeLog 1180
+MD5 8e1fd49c29f85eea8da87d6e7de450c6 metadata.xml 165
 MD5 1eef12ab94ebfa087a3c6a72bafb781c files/digest-scmxx-0.6.4 63
 MD5 c2d3d5089aa744093a0db55255a1f689 files/digest-scmxx-0.7.4 137
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFChf4ejiC39V7gKu0RAk2IAJ9LDqLFn976k20/Xy3FpS39uYCVbwCaApXR
+Y6GgOgLgFlil/lpJKHJiE7c=
+=Pom+
+-----END PGP SIGNATURE-----
