@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/struts/Attic/struts-1.2.4.ebuild,v 1.6 2005/03/29 16:36:54 luckyduck Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/struts/Attic/struts-1.2.4-r1.ebuild,v 1.1 2005/05/14 16:14:02 luckyduck Exp $
 
 inherit java-pkg
 
@@ -13,7 +13,7 @@ DEPEND=">=virtual/jdk-1.4
 	>=dev-java/ant-1.6.0
 	jikes? ( dev-java/jikes )"
 RDEPEND=">=virtual/jre-1.4
-	>=dev-java/commons-beanutils-1.6.1
+	=dev-java/commons-beanutils-1.6*
 	>=dev-java/commons-collections-2.1
 	dev-java/struts-legacy
 	>=dev-java/commons-digester-1.5
@@ -33,7 +33,7 @@ src_compile() {
 	use doc && antflags="${antflags} compile.javadoc"
 	use jikes && antflags="${antflags} -Dbuild.compiler=jikes"
 
-	antflags="${antflags} -Dcommons-beanutils.jar=`java-config -p commons-beanutils | sed s/:.*// `"
+	antflags="${antflags} -Dcommons-beanutils.jar=`java-config -p commons-beanutils-1.6 | sed s/:.*// `"
 	antflags="${antflags} -Dcommons-collections.jar=`java-config -p commons-collections`"
 	antflags="${antflags} -Dstruts-legacy.jar=`java-config -p struts-legacy`"
 	antflags="${antflags} -Dcommons-digester.jar=`java-config -p commons-digester`"
