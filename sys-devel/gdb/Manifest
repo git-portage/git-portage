@@ -1,6 +1,9 @@
-MD5 38c636a3452ffaba1af7a3310e73af24 gdb-6.3-r3.ebuild 3001
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 93827ee04453324bacd51781cf0c9246 gdb-6.3-r3.ebuild 2997
 MD5 fb4ab4aaccb90b523c650a5f30d02281 gdb-6.2.1.ebuild 1784
-MD5 61061a2139b6c89c6de07766b2468594 ChangeLog 11267
+MD5 29d655fc1180322331d1ea21f429d4b4 ChangeLog 11263
 MD5 2a52c4cd9bf5e2667c6bc7312e179fa0 gdb-6.1.ebuild 1807
 MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
 MD5 c6dfff1373e52fef5872c1bdca4cb706 files/gdb-6.0-info.patch 1108
@@ -24,3 +27,12 @@ MD5 1da0dcdbff7ba48a06350a28ecdd238e files/gdb-6.1-ppc64-01.patch 359
 MD5 6516e95e4ed8409e4173d7f1f66f03b8 files/digest-gdb-6.3-r3 183
 MD5 31dd65bca08d42b0b7cdb61c53fd647f files/gdb-6.2.1-libiberty-pic.patch 370
 MD5 8b7f5c46b8dabbc9239c37f52278b971 files/gdb-6.3-uclibc.patch 8221
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iQCVAwUBQofE4Z4WFLgrx1GWAQJrWgP+JJ+y07tKWAlj9IL3Ou8Zeu1VONeC9o5l
+yyCmcCb5L2tuCxs77U8EMVE7+H7peC1lqjlAi/WzOp7/phZT0qGnWjNXj/SOLvB7
+fijWJyKReQr30qicAvOTjjn+X7yxF2a4tHNn0uwIU0vHeyLK2GkaNA/y+6nQPvAm
+OgxP4YVMtNk=
+=7ea9
+-----END PGP SIGNATURE-----
