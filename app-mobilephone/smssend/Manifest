@@ -1,0 +1,7 @@
+MD5 0294583adf3651438bf7d09cd7802a7b smssend-3.4.ebuild 940
+MD5 67d89adc31e096e6e2d567eaded664bf smssend-3.3.ebuild 777
+MD5 f42974bbb742530ea8088057b4534110 ChangeLog 1685
+MD5 d40efbd929fb44aee56a7e39f32cdd76 metadata.xml 222
+MD5 0aca853e97a2597cfc64a9cb6d546cae files/smssend-3.4-verizon.diff 14249
+MD5 2ddd6d84e81318fb024189b2533b7800 files/digest-smssend-3.3 63
+MD5 85e9b56fffa5b05a7a3a6acf4d89a920 files/digest-smssend-3.4 63
