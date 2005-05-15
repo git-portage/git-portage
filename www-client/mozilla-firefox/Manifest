@@ -1,8 +1,11 @@
-MD5 db82faf72720fb4d0c4435880c0468c5 ChangeLog 22077
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 c6bb9899212c680bcac1b3ea8f9812e0 ChangeLog 22232
 MD5 ce23390351fe8020387d93ee29e09a3d metadata.xml 160
 MD5 ea0684d260d743b5a5bc986b0d1cf6fe mozilla-firefox-1.0.3.ebuild 7800
 MD5 9f62e22932e05223936ef2e80e716800 mozilla-firefox-1.0.3-r1.ebuild 8132
-MD5 bafe13f5628ce73e93e773928b261d37 mozilla-firefox-1.0.4.ebuild 8232
+MD5 d3892fff1a5f0c72fdbbf6bf26529819 mozilla-firefox-1.0.4.ebuild 8234
 MD5 ebdb84ca864e6a0fc32f3e130bf524e7 mozilla-firefox-1.0.2.ebuild 6614
 MD5 a5d2651cec78aa8dd7883ff06d730187 mozilla-firefox-1.0.2-r1.ebuild 7805
 MD5 606e82226379fd5ae6cd1d0d1faff7ff files/10MozillaFirefox 31
@@ -22,3 +25,10 @@ MD5 f48be110754a5106f06cd313c22c4337 files/svg-cairo-0.3.0-fix.patch 1063
 MD5 7870df97e6382caede680d440af594c1 files/digest-mozilla-firefox-1.0.2-r1 75
 MD5 bff260036c5dcca45da3218517fb33d8 files/icon/firefox-icon.png 3979
 MD5 2cdd03eb2752bc01ba07ad837e926f39 files/icon/mozillafirefox.desktop 168
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFChquyCRZPokWLroQRAtDaAJ9grKyS5AnPxBSKSsIPQRGp9X9uOwCgwx4M
+Wp4jVUbB/fKUXG3fLnLOEX4=
+=P0xj
+-----END PGP SIGNATURE-----
