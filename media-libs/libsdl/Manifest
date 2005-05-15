@@ -1,7 +1,10 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3b4836a77e8f6df045028f84e89dd9b8 ChangeLog 12012
 MD5 cbbab78f5125f834ffb0f83be4957736 libsdl-1.2.6-r3.ebuild 3013
 MD5 7f079469132865bdd25780277639f098 libsdl-1.2.7-r3.ebuild 3960
-MD5 86c3ecaf158cb38c9487cc242c2d716c libsdl-1.2.8-r1.ebuild 4645
+MD5 0d0cfc8859df5d9ff742e6041ff141c1 libsdl-1.2.8-r1.ebuild 4660
 MD5 baaaa69f33ef9027dac84ee4ff02773b metadata.xml 974
 MD5 0c2020ec3ce37ea0612064c52d1014b1 files/1.2.6-alsa-1.0.0.patch 557
 MD5 4f1ce33c931d461bed06277f60341085 files/1.2.6-nobuggy-X.patch 568
@@ -24,3 +27,10 @@ MD5 2e9d99f7ab858b5a64d124abea4565b9 files/digest-libsdl-1.2.7-r3 62
 MD5 4ce5ec18eafcf0b1c6caf31c9f67cb1d files/digest-libsdl-1.2.8-r1 62
 MD5 419d8c241f85b4deba895c615faa5612 files/libsdl-1.2.6-fullscreen.patch 1094
 MD5 358c3d6380bf0b6ba3e78ce47c5ec578 files/libsdl-1.2.8-gcc2.patch.bz2 2639
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFChpejCRZPokWLroQRAlytAJ9mj32JmHVPAalyu2sJUz44ueM7PQCZAV1h
+PaUYHOjYAmf+3mxd4hP5CrY=
+=5CZJ
+-----END PGP SIGNATURE-----
