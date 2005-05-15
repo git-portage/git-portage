@@ -1,5 +1,5 @@
-MD5 144deffcac93b890a809007b9661a6b0 oftpd-0.3.7-r1.ebuild 884
-MD5 f73f511549c9955baa6341262e41d6e2 ChangeLog 2118
+MD5 21d14dc44c96e264f19e326831c0ee28 oftpd-0.3.7-r1.ebuild 879
+MD5 aa7ae4176d791906c638a4b01cc6c649 ChangeLog 2113
 MD5 0f7a846dd3f2197538502db078109b71 metadata.xml 351
 MD5 e172cb3380495952dbccdc43d5168a16 files/init.d.oftpd 671
 MD5 b0ba4d96ae0eb98abce711409607eda4 files/conf.d.oftpd 469
