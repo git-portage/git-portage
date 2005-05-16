@@ -1,4 +1,7 @@
-MD5 382c0a5eb2b8f53c2307233503335595 ChangeLog 11393
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 45055b7d84baced2c36a1c3986ba3f68 ChangeLog 11457
 MD5 4defd726d2b03decc5b7ff21b0aac1a3 metadata.xml 225
 MD5 396fd3dfd7a18fa33e569a53ae89fc8e webapp-config-1.10-r10.ebuild 1414
 MD5 2c2641fbea8ae821af716c5ad547ab2b webapp-config-1.10-r11.ebuild 1438
@@ -16,3 +19,10 @@ MD5 72b2e4879ffabdc297ea4fd9ae4c3184 files/digest-webapp-config-1.10-r14 74
 MD5 8d23277dadbe90af17c2690ee64eec38 files/digest-webapp-config-1.10-r15 74
 MD5 e605a4d1868a4a3e17cd2ecd474f7076 files/webapp-config_fixperms.patch 2786
 MD5 b9efc67836c3d94009bea1f83cc92027 files/webapp-config_improved-tmpfile-handling.patch 973
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCiJv1MXMsRNMHhmARAn0UAJ4nm8VqdBf0BCFtzOYE16OmDItfMQCfRFfi
+BNeIrSBBtg5/ZSKzRrjTLFc=
+=bC15
+-----END PGP SIGNATURE-----
