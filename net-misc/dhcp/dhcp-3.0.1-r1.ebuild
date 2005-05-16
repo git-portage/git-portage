@@ -1,30 +1,36 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcp/Attic/dhcp-3.0.1-r1.ebuild,v 1.1 2004/12/20 18:54:23 max Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcp/Attic/dhcp-3.0.1-r1.ebuild,v 1.2 2005/05/16 14:23:14 seemant Exp $
 
 inherit eutils flag-o-matic toolchain-funcs
 
+PATCHVER=1	
+
 DESCRIPTION="ISC Dynamic Host Configuration Protocol"
 HOMEPAGE="http://www.isc.org/products/DHCP"
-SRC_URI="ftp://ftp.isc.org/isc/dhcp/${P}.tar.gz"
+SRC_URI="ftp://ftp.isc.org/isc/dhcp/${P}.tar.gz
+	mirror://gentoo/${PN}-3-gentoo-${PATCHVER}.tar.bz2
+	http://dev.gentoo.org/~seemant/distfiles/${PN}-3-gentoo-${PATCHVER}.tar.bz2"
 
 LICENSE="isc-dhcp"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~sparc x86"
 IUSE="static selinux"
 
 RDEPEND="virtual/libc
 	selinux? ( sec-policy/selinux-dhcp )"
+
 DEPEND="${RDEPEND}
 	>=sys-apps/sed-4"
+
 PROVIDE="virtual/dhcpc"
+
+PATCHDIR=${WORKDIR}/patch
 
 src_unpack() {
 	unpack ${A} && cd "${S}"
-
-	epatch "${FILESDIR}/dhcp-3.0+paranoia.patch"
-	epatch "${FILESDIR}/dhcp-3.0pl2-fix-perms.patch"
-	epatch "${FILESDIR}/dhcp-3.0.1-fix-invalid-attribute.patch"
+	
+	EPATCH_SUFFIX="patch" epatch ${PATCHDIR}
 	has noman ${FEATURES} && sed -i 's:nroff:echo:' */Makefile.dist
 }
 

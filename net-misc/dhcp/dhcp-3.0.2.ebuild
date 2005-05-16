@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcp/Attic/dhcp-3.0.1.ebuild,v 1.11 2005/05/16 14:23:14 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcp/Attic/dhcp-3.0.2.ebuild,v 1.1 2005/05/16 14:23:14 seemant Exp $
 
 inherit eutils flag-o-matic toolchain-funcs
 
@@ -14,7 +14,7 @@ SRC_URI="ftp://ftp.isc.org/isc/dhcp/${P}.tar.gz
 
 LICENSE="isc-dhcp"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm hppa ~mips ppc ~ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE="static selinux"
 
 RDEPEND="virtual/libc
@@ -28,8 +28,11 @@ PROVIDE="virtual/dhcpc"
 PATCHDIR=${WORKDIR}/patch
 
 src_unpack() {
-	unpack ${A} ; cd ${S}
-	EPATCH_SUFFIX="patch" epatch ${PATCHDIR}
+	unpack ${A} && cd "${S}"
+
+	export EPATCH_SUFFIX="patch"
+	epatch ${PATCHDIR}
+
 	has noman ${FEATURES} && sed -i 's:nroff:echo:' */Makefile.dist
 }
 
@@ -118,13 +121,14 @@ pkg_config() {
 	if [ ! -d "${CHROOT:=/chroot/dhcp}" ] ; then
 		ebegin "Setting up the chroot directory"
 		mkdir -m 0755 -p "${CHROOT}/"{dev,etc,var/lib,var/run/dhcp}
-		cp -R /etc/dhcp "${CHROOT}/etc/"
+		cp -R /etc/{localtime,dhcp} "${CHROOT}/etc/"
 		cp -R /var/lib/dhcp "${CHROOT}/var/lib"
 		chown -R dhcp:dhcp "${CHROOT}/var/lib" "${CHROOT}/var/run/dhcp"
 		eend
 
 		if [ "`grep '^#[[:blank:]]\?CHROOT' /etc/conf.d/dhcp`" ] ; then
-			sed -e '/^#[[:blank:]]\?CHROOT/s/^#[[:blank:]]\?//' -i /etc/conf.d/dhcp
+			sed -e '/^#[[:blank:]]\?CHROOT/s/^#[[:blank:]]\?//' \
+				-i /etc/conf.d/dhcp
 		fi
 
 		einfo "To enable logging from the DHCP server, configure your"
