@@ -8,7 +8,7 @@ MD5 16b31595b302b6eba105f3786457192d gentoo-sources-2.6.11-r8.ebuild 1620
 MD5 1ec0f7ec45dce6f53d70a7df0fabe7a5 gentoo-sources-2.6.1-r2.ebuild 2235
 MD5 386b6b1084b1c4cabfad87fc8b603114 gentoo-sources-2.6.10-r6.ebuild 1607
 MD5 2d2150ca2b1b3db3d469a5a2356161fb gentoo-sources-2.6.9-r9.ebuild 1625
-MD5 a597bb8b562fc4d3c1b8c2151485cc65 ChangeLog 38995
+MD5 77ee5c44670c3d7c87726b1c9498c245 ChangeLog 38902
 MD5 410c3afeb274354a7ce68257edc18012 metadata.xml 283
 MD5 29e531cdd3f2effce5e31a1f2afb5b5d files/gentoo-sources-2.4.28.brk-locked.patch 8912
 MD5 b0a1f80aff51d6601e8924329023b241 files/gentoo-sources-2.4.AF_UNIX.patch 515
