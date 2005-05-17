@@ -1,4 +1,4 @@
-MD5 bf1cc2b569b708fc8b84c58cb1338a2c ChangeLog 7082
+MD5 7ebae5d39973832d7dbcd949624e81f3 ChangeLog 7208
 MD5 44f4d9269d0d413a5705c63763d13b89 autofs-3.1.7-r3.ebuild 1285
 MD5 517e323f25fec842b06d2fe2dd3fbe4a autofs-3.1.7-r4.ebuild 1735
 MD5 273b8d80da0015d4784c4e944dab4098 autofs-3.1.7-r5.ebuild 1750
@@ -9,7 +9,7 @@ MD5 755272708a0c1bf9d7500355cae8a259 autofs-4.1.3-r2.ebuild 2923
 MD5 d088786415a46eef0b0dbf5074e9f4b2 autofs-4.1.3-r3.ebuild 2953
 MD5 25496cb18a229b633f0b0a207e8a3acc autofs-4.1.3.ebuild 1933
 MD5 3281a009cd789c5c937c9e6a3124e792 metadata.xml 287
-MD5 d7546432fc03cafc3041526b5d08d736 autofs-4.1.3-r4.ebuild 2977
+MD5 d51493db49fe79358b899c45b9a6ab02 autofs-4.1.3-r4.ebuild 2974
 MD5 256e713e8b47896dd2049326ec26fc78 files/auto.home 239
 MD5 759f43aeed6787d6b6d7556d03afe782 files/auto.master 267
 MD5 aa40e8bef91418943312910e73d05eed files/auto.misc 319
