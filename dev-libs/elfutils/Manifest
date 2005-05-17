@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 17eff246a734b8a44781417a12ec4ea9 elfutils-0.94-r1.ebuild 1842
 MD5 7b94d8a842a02bed78d77c0315f95068 elfutils-0.101-r1.ebuild 1588
 MD5 8556ce83ed38bc6be54b78d52a13b49b elfutils-0.97-r1.ebuild 1477
@@ -18,3 +21,12 @@ MD5 68f794575cd890d5131853a4ca7ee9f3 files/digest-elfutils-0.101-r1 66
 MD5 68f794575cd890d5131853a4ca7ee9f3 files/digest-elfutils-0.101 66
 MD5 12294cbe7395c8366308d2a424d1d7ae files/digest-elfutils-0.108 143
 MD5 51c01230a938c5b39a545e0611170b0f files/elfutils-sections-heap-overflow.diff 574
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iQCVAwUBQooH5Z4WFLgrx1GWAQIQMQQAtce4l9Zf/IoL5LFKOoooO4nmHMTfX0/6
+ajwLK1SOr808+vmrfjyg32OC/Pjo3KcMBnQRwGPa6U8LisXROo2IvaQEKDLEJDrA
+Vf9Xntu9fGgx/clr4qJ5siFZxz0RCd0Bae5r6+odF50rEpSfAMesKJkKQuAZYFi2
+gHTjyUKYAYE=
+=mqTn
+-----END PGP SIGNATURE-----
