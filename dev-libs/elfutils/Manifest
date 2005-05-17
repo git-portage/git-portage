@@ -3,9 +3,9 @@ MD5 7b94d8a842a02bed78d77c0315f95068 elfutils-0.101-r1.ebuild 1588
 MD5 8556ce83ed38bc6be54b78d52a13b49b elfutils-0.97-r1.ebuild 1477
 MD5 1c5255251ca86c894b299c606c3bad3c elfutils-0.101.ebuild 1531
 MD5 822a1e6582def7c62c7ae773ca491143 elfutils-0.97.ebuild 1420
-MD5 8b161b3984768e10c025f2696ed5976e elfutils-0.108.ebuild 1690
+MD5 e1c8c5e2412dfc891aa5cb13d87c7f96 elfutils-0.108.ebuild 1686
 MD5 79ca1a79ab3d97d51267f2b9e579c99d elfutils-0.94-r2.ebuild 1906
-MD5 8d4faf3c57ed2f296651b18ebdee0865 ChangeLog 6730
+MD5 bb41caaa282e60b4872835e9753965eb ChangeLog 6729
 MD5 25da57fec6a38ed0c69ec6682b595398 files/elfutils-0.94-alpha-mips-atime.diff 699
 MD5 1e6460efdb609828aa57b5874813972a files/elfutils-0.101-bswap.patch 849
 MD5 40321e776b95020f2e51e5f481b3486e files/elfutils-0.101-portability.patch 6052
