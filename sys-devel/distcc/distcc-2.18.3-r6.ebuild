@@ -1,11 +1,11 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/distcc/Attic/distcc-2.18.3-r2.ebuild,v 1.2 2005/05/09 03:19:15 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/distcc/Attic/distcc-2.18.3-r6.ebuild,v 1.1 2005/05/18 10:44:10 lisa Exp $
 
 # If you change this in any way please email lisa@gentoo.org and make an
 # entry in the ChangeLog (this means you spanky :P). (2004-04-11) Lisa Seelye
 
-inherit eutils gcc flag-o-matic gnuconfig
+inherit eutils flag-o-matic gnuconfig toolchain-funcs
 
 PATCHLEVEL="2.18"
 
@@ -15,7 +15,7 @@ SRC_URI="http://distcc.samba.org/ftp/distcc/distcc-${PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~arm ~hppa ia64 ~mips ~ppc ~s390 ~sparc ~x86"
+KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~arm ~hppa ia64 amd64 ~s390"
 
 IUSE="gnome gtk selinux ipv6"
 
@@ -47,10 +47,8 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 
-	# lisa's note: included for testing. if you wish to use this
-	# please put distcc in your package.unmask file.
 	# See bug #75420 for more multilib stuff
-	epatch ${FILESDIR}/distcc-gentoo-multilib.patch
+	epatch ${FILESDIR}/distcc-gentoo-multilib-r1.patch
 	einfo "Please report to bug #75420 success or failure of this patch."
 	gnuconfig_update
 }
@@ -66,6 +64,7 @@ src_compile() {
 	use gtk && ! use gnome && myconf="${myconf} --with-gtk"
 	use gtk && use gnome && myconf="${myconf} --with-gnome"
 
+	#More legacy stuff?
 	[ `gcc-major-version` -eq 2 ] && filter-lfs-flags
 
 	if use ipv6; then
@@ -113,22 +112,17 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	enewuser distcc 240
-	# handle DISTCC_HOSTS upgrade better
-	local ENVFILE
-	ENVFILE="${ROOT}etc/env.d/02distcc"
-	[ ! -f "${ENVFILE}" ] && \
-		ENVFILE="${ROOT}etc/env.d/04distcc"
-	if [ -f "${ENVFILE}" ]
-	then
-		# save hosts to new file
-		ROOT="${ROOT}"
-		HOSTS=$(egrep '^DISTCC_HOSTS' "${ENVFILE}" | sed 's,[^=]*=,,')
-		[ ${HOSTS} ] && ${ROOT}usr/bin/distcc-config --set-hosts ${HOSTS}
-		# now remove from the file
-		grep -v 'DISTCC_HOSTS' "${ENVFILE}" > "${ENVFILE}.new"
-		mv "${ENVFILE}.new" "${ENVFILE}"
+	#are we doing bootstrap with has no useradd?
+	if [ -x /usr/sbin/useradd ]; then
+	  enewuser distcc 240
+	else
+	  ewarn "You do not have useradd (bootstrap) from shadow so I didn't"
+	  ewarn "install the distcc user.  Note that attempting to start the daemon"
+	  ewarn "will fail. Please install shadow and re-emerge distcc."
+	  ebeep 2
 	fi
+
+	# By now everyone should be using the right envfile
 
 	if [ "${ROOT}" = "/" ]; then
 		einfo "Installing links to native compilers..."
