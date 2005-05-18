@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 437558c61fe6b02611719beff44e9f12 rrdtool-1.0.49.ebuild 2729
 MD5 46b130577f6d69480e4285e7e5239a50 rrdtool-1.2.8.ebuild 2721
 MD5 177f6939c1ba72adbbd42b99ea93121f rrdtool-1.0.50.ebuild 2753
@@ -12,3 +15,10 @@ MD5 0f97ed6174056bc1f72fbd7eb964f3f6 files/digest-rrdtool-1.0.50 67
 MD5 dd9238326165d64f1c400c9e38cfda28 files/digest-rrdtool-1.0.45-r2 67
 MD5 7ee6d2e6d1bc0c21aaea586600840694 files/digest-rrdtool-1.2.6 65
 MD5 be92791b72aabdf5de586c1810548431 files/digest-rrdtool-1.2.8 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCiz8zEZCkKN40op4RAmCSAKCf/9X48DzmBruZU4k+dZO3/px5HQCgpL91
+cDi1lowAWgnLOr8kNGVSGkI=
+=Mhof
+-----END PGP SIGNATURE-----
