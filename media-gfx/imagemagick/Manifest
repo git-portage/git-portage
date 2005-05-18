@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d65af8f8af22e0c92c983995f354cfe5 ChangeLog 22341
 MD5 3dce9cbb137138524f39515905101a35 imagemagick-6.2.2.0.ebuild 2584
 MD5 6ddba8488efcce8504bb7c7143f55345 imagemagick-6.2.2.3.ebuild 2582
@@ -20,3 +23,10 @@ MD5 ab68adfb9efb0f004017b018e622b96a files/digest-imagemagick-6.2.1.5 73
 MD5 ab68adfb9efb0f004017b018e622b96a files/digest-imagemagick-6.2.1.5-r1 73
 MD5 0cd85649e1efbcb3e9631a8cde085b60 files/digest-imagemagick-6.2.2.0-r1 73
 MD5 83dfdae9306c5c8a11423558fe92f6fe files/digest-imagemagick-6.2.2.3-r1 73
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCi4h3tG5z4I8BtQoRApMjAJ4yXHjXBizd9uMSqc5+LxFr0QM/AACcDylQ
+tH5Q/FZvqYElgU110Zk490o=
+=MPvL
+-----END PGP SIGNATURE-----
