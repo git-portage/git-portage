@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1bbac29486c297db44c0f4ac97134345 cinelerra-cvs-20050102.ebuild 1896
 MD5 4b56d5817874cf893e0f74f58c17e512 cinelerra-cvs-20050315.ebuild 1771
 MD5 35de604122897ebb2d39241de0229308 cinelerra-cvs-20050127.ebuild 1721
@@ -11,3 +14,10 @@ MD5 c1cbd9da3d0a404c1106af9bf1c31073 files/digest-cinelerra-cvs-20050127 77
 MD5 7405c9ce7abe2c26ad273a6da17789d2 files/digest-cinelerra-cvs-20050102 77
 MD5 a56da7b2ea792c89025790c53a2ed2c0 files/digest-cinelerra-cvs-20040917 77
 MD5 3c7352138ef1f1d1af89814652cf6649 files/digest-cinelerra-cvs-20050315 77
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCiyA1pNOQ4DjaQW0RAgNfAKCaDrEPPb+NQEuIGYbhfpi8pB2tTQCdHEpH
+gA1YVFRQoYrXGg/Hz3LEXE0=
+=0Nvp
+-----END PGP SIGNATURE-----
