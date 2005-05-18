@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b9ca0bba3fcc859f71bc3060fbc9b495 afterstep-2.00.05.ebuild 3359
 MD5 61ac082c6563be2e5790a287988a4674 afterstep-1.8.11-r2.ebuild 1543
 MD5 ee92461f26ba5338a6a1333c1e5f14a1 afterstep-2.00.02.ebuild 3692
@@ -17,3 +20,10 @@ MD5 3b881a3589ee178d1ae956067a4ff6d0 files/digest-afterstep-2.00.04 71
 MD5 aa6dd1f671415f2083b1161571752859 files/digest-afterstep-2.00.05 71
 MD5 9dfd9962d8a60e264920c6d4e742d74c files/as2-gnome.diff 1524
 MD5 6fd5efab342e44e4d18dc1d98b940093 files/digest-afterstep-2.1.0 69
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCizgkEZCkKN40op4RArDGAKCjqixfhIYVPlyJEAtECahAnna/QACdFbz/
+Az1xzhpFPs9aUY0jSKtM7ZA=
+=5biH
+-----END PGP SIGNATURE-----
