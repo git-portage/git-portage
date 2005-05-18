@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 509f4ad475e3327a7977fe02afae735a busybox-1.00-r2.ebuild 6194
 MD5 f730d6f2dfada187edb0040c7954d920 busybox-1.00-r4.ebuild 6492
 MD5 e5ba0d140d82794a58fef4c0e61c0c97 busybox-1.00-r1.ebuild 6089
@@ -19,3 +22,12 @@ MD5 6209b38225ac1d7cc77f84799acbe3ca files/1.00/nice.patch 4571
 MD5 1587853e73bcbda7157048299fc659fe files/1.00/busybox-read-timeout.patch 1964
 MD5 0e50cd0ad938a8c15f1af8b59028c959 files/1.00/printenv.patch 3365
 MD5 f16657b6a3bf9602a65dbb5f431afbda files/1.00/readlink-follow.patch 2795
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iQCVAwUBQouXOJ4WFLgrx1GWAQJHIwQAxECdz90u39MouQaUoqKwIfrWp38o8t5T
+UgU8LMEf2vcO4xLOk+D6NkDO9o0koqbNO9PeO6w3ro3nNVsWicq2cQxdhzoC/Khb
+wA73OHN3I9rYeeob34Ym2fByBgg3JYD2voqTx2fXt5ffjrpb5dmfL7hvvFvtGH2e
+Yc8vc8FJxwQ=
+=gTEd
+-----END PGP SIGNATURE-----
