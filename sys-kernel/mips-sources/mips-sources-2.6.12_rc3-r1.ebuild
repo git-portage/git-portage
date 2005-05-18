@@ -1,11 +1,11 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.12_rc2-r1.ebuild,v 1.1 2005/04/25 05:07:36 kumba Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.12_rc3-r1.ebuild,v 1.1 2005/05/18 05:15:09 kumba Exp $
 
 
 # INCLUDED:
 # 1) linux sources from kernel.org
-# 2) linux-mips.org CVS snapshot diff from 23 Apr 2005
+# 2) linux-mips.org CVS snapshot diff from 30 Apr 2005
 # 3) Generic Fixes
 # 4) Security fixes
 # 5) Patch for IP30 Octane Support		(http://helios.et.put.poznan.pl/~sskowron/ip30/)
@@ -19,9 +19,9 @@
 
 # Version Data
 OKV=${PV/_/-}
-CVSDATE="20050423"			# Date of diff between kernel.org and lmo CVS
-SECPATCHVER="1.12"			# Tarball version for security patches
-GENPATCHVER="1.9"			# Tarball version for generic patches
+CVSDATE="20050517"			# Date of diff between kernel.org and lmo CVS
+SECPATCHVER="1.13"			# Tarball version for security patches
+GENPATCHVER="1.11"			# Tarball version for generic patches
 EXTRAVERSION="-mipscvs-${CVSDATE}"
 KV="${OKV}${EXTRAVERSION}"
 USERC="yes"				# If set to "yes", then attempt to use an RC kernel
@@ -193,17 +193,19 @@ do_generic_patches() {
 		epatch ${MIPS_PATCHES}/misc-2.6.12-ip32-onion2-gbefb-fixes.patch
 		epatch ${MIPS_PATCHES}/misc-2.6.10-ip32-tweak-makefile.patch
 		epatch ${MIPS_PATCHES}/misc-2.6.11-ip32-mace-is-always-eth0.patch
+		epatch ${MIPS_PATCHES}/misc-2.6.12-ip32-stupid-gbefb-typo.patch
 
 		# Cobalt Patches (Safe for non-Cobalt use)
 		epatch ${MIPS_PATCHES}/misc-2.6.12-cobalt-bits.patch
 
 		# Generic
-		epatch ${MIPS_PATCHES}/misc-2.6.11-ths-mips-tweaks.patch
+		epatch ${MIPS_PATCHES}/misc-2.6.12-ths-mips-tweaks.patch
 		epatch ${MIPS_PATCHES}/misc-2.6.12-pdh-mips-tweaks.patch
 		epatch ${MIPS_PATCHES}/misc-2.6.12-add-ramdisk-back.patch
-		epatch ${MIPS_PATCHES}/misc-2.6-mips-iomap-functions.patch
+		epatch ${MIPS_PATCHES}/misc-2.6.12-mips-iomap-functions.patch
 		epatch ${MIPS_PATCHES}/misc-2.6.12-seccomp-no-default.patch
 		epatch ${MIPS_PATCHES}/misc-2.6.11-add-byteorder-to-proc.patch
+		epatch ${MIPS_PATCHES}/misc-2.6.12-rem-qlogicisp-scsi_to_pci_dma_dir.patch
 
 		# Ugly Hacks (Long Story, ask about it on IRC if you really want to know)
 		if ! use ip30 && ! use ip28; then
@@ -228,6 +230,8 @@ do_sekret_patches() {
 do_security_patches() {
 	echo -e ""
 	ebegin ">>> Applying Security Fixes"
+		epatch ${MIPS_SECURITY}/CAN-2005-1263-2.6-elf-core-dump.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-1264-2.6-raw-pktcdvd-local-priv.patch
 		epatch ${MIPS_SECURITY}/security-2.6-nfsacl-remote-nfs.patch
 	eend
 }
