@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4defd726d2b03decc5b7ff21b0aac1a3 metadata.xml 225
 MD5 d5beabb4dd32b8ec790a0eab811e7c51 ChangeLog 11552
 MD5 801b740d19b4a680780bc6c016a0eceb webapp-config-1.9-r2.ebuild 1145
@@ -14,3 +17,10 @@ MD5 675f730140fb4b7303082b203e27ba0b files/digest-webapp-config-1.10-r6 73
 MD5 72b2e4879ffabdc297ea4fd9ae4c3184 files/digest-webapp-config-1.10-r12 74
 MD5 72b2e4879ffabdc297ea4fd9ae4c3184 files/digest-webapp-config-1.10-r14 74
 MD5 b9efc67836c3d94009bea1f83cc92027 files/webapp-config_improved-tmpfile-handling.patch 973
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCi1pBjUHll2nfF60RAh1nAKDBycEHLtIJxCnmH+uC6InWmLC6IwCgytoE
+XHyF8PthX5JZMHbGjorY7BQ=
+=/vLr
+-----END PGP SIGNATURE-----
