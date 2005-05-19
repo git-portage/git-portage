@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4728e1c9c9c2ee7158e0b6a5c2eb3c1b sbd-1.36.ebuild 706
 MD5 eee61fc635b578adf2c01ca189c1d618 ChangeLog 1008
 MD5 33b2710f9c33614f214b4eb5cfd5fdf6 metadata.xml 600
 MD5 61a25c14e6cee2d76427ae525f40d806 files/digest-sbd-1.36 59
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCjPZYI1lqEGTUzyQRAgLFAJ0bOKSG9QMU2MVgsN9drcip/OdA9gCfUK/j
+kvVeGWebl2wB1uNnVBzxabw=
+=DYBG
+-----END PGP SIGNATURE-----
