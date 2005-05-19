@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e28e2a1752706b131cb67adc7d32076b prelink-20050314.ebuild 1853
 MD5 66f35dae58b6c51ae720c89a7c402c90 prelink-20040707.ebuild 1225
 MD5 0de36a470fa490337cb9512d676af08f prelink-20040317.ebuild 1033
@@ -12,3 +15,10 @@ MD5 53592bceae80993862c5dac04667c450 files/digest-prelink-20050207 69
 MD5 e7b084a6fd6b4ef980a0d67d79ee8733 files/prelink-20050314-amd64-gcc4.patch 6816
 MD5 2c0d5d2697801972b5ecfa7e99e09791 files/digest-prelink-20040317 69
 MD5 e80448ef4bc50ee68f295191804da61c files/digest-prelink-20041123 69
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCjRhR1ZcsMnZjRyIRApYWAJ9EU+3ez3YbuvYBXSz3TF3eEDgF3gCgtLbl
+9JU0p/yHkZ4czbJXgkFcac8=
+=kCbM
+-----END PGP SIGNATURE-----
