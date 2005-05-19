@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b46f3362dcf17eebc979bc87c2581b49 eclipse-sdk-3.1_pre3.ebuild 16524
 MD5 5f47b5e1d82a19fafb466d830a509d01 eclipse-sdk-3.0.1.ebuild 11886
 MD5 a2d7d204d16c0363da6429bad390431a eclipse-sdk-3.0.0-r3.ebuild 12081
@@ -43,3 +46,10 @@ MD5 de999f62aa03505bfd16a01f7e1a28a3 files/eclipse-2 956
 MD5 a158c2a70562122805ec2ffa055a8271 files/eclipse-3 950
 MD5 32be5292ce0af7ff9c1866c1f59e1859 files/eclipse.1 2607
 MD5 e4ee97056b94052240fb360db6ffaef9 files/eclipse-3.1 1438
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCjLe8I1lqEGTUzyQRAhZwAKCSWjURzCSvgK30Mq8cGSmf1fAexgCg3a6l
+L6Es0EBzv4q11RLwaicQidQ=
+=jkxV
+-----END PGP SIGNATURE-----
