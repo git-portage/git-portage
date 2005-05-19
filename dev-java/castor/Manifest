@@ -1,5 +1,5 @@
-MD5 37426f0f6518b8f9a9382512ca4bacaa castor-0.9.5.3-r1.ebuild 1879
-MD5 ef4ed9ec35e8c13fd13dcc07ed60dd18 ChangeLog 1600
+MD5 b45083b32d0303f2037a545c60d7ee67 castor-0.9.5.3-r1.ebuild 1882
+MD5 0c21d1a79e92f7732c0c9816460133f1 ChangeLog 1601
 MD5 774373e19c9c08854e8d705a1756afbb metadata.xml 416
 MD5 a07a47cbd64524563caccf7a0f649553 files/0.9.5.3-jikes.patch 1316
 MD5 925da383ab0658b27587273d0f315f06 files/build-xml.patch 2859
