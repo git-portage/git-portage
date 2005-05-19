@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/freeradius/Attic/freeradius-1.0.2-r2.ebuild,v 1.5 2005/05/17 19:00:34 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/freeradius/Attic/freeradius-1.0.2-r5.ebuild,v 1.1 2005/05/19 05:58:48 mrness Exp $
 
 inherit eutils
 
@@ -8,10 +8,10 @@ DESCRIPTION="highly configurable free RADIUS server"
 SRC_URI="ftp://ftp.freeradius.org/pub/radius/${P}.tar.gz"
 HOMEPAGE="http://www.freeradius.org/"
 
-KEYWORDS="~x86 ~amd64 ~ppc ~sparc"
+KEYWORDS="x86 ~amd64 ~ppc ~sparc"
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="frascend frnothreads frxp kerberos ldap mysql pam postgres snmp ssl"
+IUSE="edirectory frascend frnothreads frxp kerberos ldap mysql pam postgres snmp ssl udpfromto"
 
 DEPEND="!net-dialup/cistronradius
 	!net-dialup/gnuradius
@@ -29,6 +29,11 @@ DEPEND="!net-dialup/cistronradius
 		dev-lang/perl )"
 
 pkg_setup() {
+	if use edirectory && ! use ldap ; then
+		eerror "Cannot add integration with Novell's eDirectory without having LDAP support!"
+		eerror "Either you select ldap USE flag or remove edirectory"
+		die
+	fi
 	enewgroup radiusd
 	enewuser radiusd -1 /bin/false /var/log/radius radiusd
 }
@@ -38,25 +43,22 @@ src_unpack() {
 	cd ${S}
 
 	epatch ${FILESDIR}/${P}-whole-archive-gentoo.patch
+	epatch ${FILESDIR}/${P}-sql-escape.patch
 
 	export WANT_AUTOCONF=2.1
 	autoconf
 }
 
 src_compile() {
-	local myconf=""
+	local myconf=" \
+		`use_with snmp` \
+		`use_with frascent ascend-binary` \
+		`use_with frxp experimental-modules` \
+		`use_with udpfromto` \
+		`use_with edirectory edir` "
 
-	if ! useq snmp; then
-		myconf="--without-snmp"
-	fi
-	if useq frascend; then
-		myconf="${myconf} --with-ascend-binary"
-	fi
 	if useq frnothreads; then
 		myconf="${myconf} --without-threads"
-	fi
-	if useq frxp; then
-		myconf="${myconf} --with-experimental-modules"
 	fi
 	#fix bug #77613
 	if has_version app-crypt/heimdal; then
@@ -64,19 +66,19 @@ src_compile() {
 	fi
 
 	# kill modules we don't use
-	if ! useq ssl; then
+	if ! use ssl; then
 		einfo "removing rlm_eap_tls and rlm_x99_token (no use ssl)"
 		rm -rf src/modules/rlm_eap/types/rlm_eap_tls src/modules/rlm_x99_token
 	fi
-	if ! useq ldap; then
+	if ! use ldap; then
 		einfo "removing rlm_ldap (no use ldap)"
 		rm -rf src/modules/rlm_ldap
 	fi
-	if ! useq kerberos; then
+	if ! use kerberos; then
 		einfo "removing rlm_krb5 (no use kerberos)"
 		rm -rf src/modules/rlm_krb5
 	fi
-	if ! useq pam; then
+	if ! use pam; then
 		einfo "removing rlm_pam (no use pam)"
 		rm -rf src/modules/rlm_pam
 	fi
