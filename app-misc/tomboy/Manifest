@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c8b7cc95acd54a09776377ea92fd28bb ChangeLog 1982
 MD5 e8e30857de270cc63400977e1afb1185 tomboy-0.3.1.ebuild 1115
 MD5 a60fdfbce7c7cfc52187ff86a7f8bbf8 metadata.xml 222
@@ -9,3 +12,10 @@ MD5 a55d790d6f5b13436c5244a0e9465a27 files/digest-tomboy-0.3.1 64
 MD5 a29ae36c54ef8ad24aad99ede4f6c01a files/tomboy-0.3.1-mono-1.1.4-compat.diff 6562
 MD5 b1bd635f28782f712b9b36b5aa2a3804 files/tomboy-0.3.2-1.1.x-compat.diff 567
 MD5 63af496a835d4816dc76a26ef1a847ff files/digest-tomboy-0.2.2-r1 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCjLeJCHk4+ZoBpvsRAqVxAJ9/OcYMM8nxA7o8Y9G0AxnPb7nBpQCeJdLi
+hW9ghAHrCTYEbxvz31/UZ/E=
+=EadH
+-----END PGP SIGNATURE-----
