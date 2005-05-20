@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 94d6f5306cfe3f5894b93240d6bd4767 kino-0.7.5-r1.ebuild 1310
 MD5 5b402c7aa84b16c287c8fb84b8ece1a0 ChangeLog 4152
 MD5 9ef4af14dad87b03fde8e43f19e08d26 metadata.xml 225
@@ -5,3 +8,10 @@ MD5 82f4520bdd62a2d9847a926ff8ef95f2 kino-0.7.6.ebuild 1190
 MD5 30181ed68c1351c7b6eea135e5ee7ad3 files/digest-kino-0.7.5-r1 63
 MD5 2c7645b5cf0d9f0f221fb87ca44b46fe files/digest-kino-0.7.6 63
 MD5 3de7378299c687b8b3b8dec40d4f553c files/kino-0.7.5-ppc.diff 8058
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCjfos06ebR+OMO78RAs1TAJ9uG1TirDB/umn+qApVmwEXZby4xQCfUR/C
+LIxj1y6c4VHTd3G6uFGs/AM=
+=U/N6
+-----END PGP SIGNATURE-----
