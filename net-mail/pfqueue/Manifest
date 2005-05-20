@@ -1,11 +1,9 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 e2d19d21a68517a4c8be440789950f67 pfqueue-0.3.7.ebuild 608
 MD5 5aa187f8d0ffe3b634a97000aa6f87b1 pfqueue-0.3.2.ebuild 591
 MD5 b6d2075633f82c3278a968bde8951672 pfqueue-0.3.4.ebuild 600
 MD5 002a07ab7c29561989ef2177d8449338 pfqueue-0.3.6.ebuild 608
 MD5 5b1cc11089f13329caaf9011cc33a117 pfqueue-0.3.1.ebuild 591
+MD5 d2662f363047da0260959335a944eb66 pfqueue-0.3.8.ebuild 510
 MD5 20ca99310da7c0e35b7bf21c7942c12f pfqueue-0.3.3.ebuild 600
 MD5 2358c67e94ad6a8bb9621fcf15e07886 pfqueue-0.3.5.ebuild 606
 MD5 dfd4a14d519a29f5bd6e145473780423 ChangeLog 2538
@@ -19,10 +17,4 @@ MD5 a678d213079de9b12d33b9d6baf3778f files/digest-pfqueue-0.3.4 65
 MD5 c87acfba06eba3afe576ee9d8ec04e39 files/digest-pfqueue-0.3.5 65
 MD5 2a60f7b81ea4460a337990c9b7877da0 files/digest-pfqueue-0.3.6 65
 MD5 c0d8917a594e08296658c134e3a5cb53 files/digest-pfqueue-0.3.7 65
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCgeiMQlM6RnzZP+IRAkZrAKDDOd2vITc8og509viXkfnF3TgrPQCgs/Gg
-RM4kkBJzMVbQBHZGJYmjgpI=
-=vp3H
------END PGP SIGNATURE-----
+MD5 284d17b1a3de8dc90b1687b0173f3c00 files/digest-pfqueue-0.3.8 65
