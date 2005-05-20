@@ -1,10 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 d3210060048b2a6df3bbb18110bec61e pine-4.61-r2.ebuild 4688
 MD5 df36c8865a5c3109974fb630251fe32d pine-4.62-r1.ebuild 5252
 MD5 80055259213721a085dd8a1987e39bb7 pine-4.62.ebuild 5790
 MD5 aea7c27e48e4596559d988cf9e1db87f pine-4.61-r4.ebuild 4810
+MD5 e9df6faf59342851ea2f326c262c0b5a pine-4.63-r2.ebuild 5311
 MD5 c516777e49f054e9c720e48d340d804e pine-4.61-r3.ebuild 4691
 MD5 cf1187ddd78dc5f02054c93585efef96 pine-4.62-r2.ebuild 5404
 MD5 f1759a695182611038a02645cdfc3826 pine-4.63.ebuild 5396
@@ -20,6 +18,7 @@ MD5 8f1d4661a745dab7f2113e7068c6e04e files/digest-pine-4.61-r5 139
 MD5 1d3052dda4b361277ca31ce465a29626 files/digest-pine-4.62-r1 139
 MD5 b3fd3bd534ef04e16efb8755b8e845be files/digest-pine-4.62-r2 139
 MD5 c7651a3cca5bd40222c73914af4d78e6 files/digest-pine-4.63-r1 139
+MD5 9895c58228a8cf15d6e8134bcc205a7c files/digest-pine-4.63-r2 139
 MD5 921f1e2837b3d3aaaff0ff9b78432e92 files/pine-4.30-ldap.patch 420
 MD5 3803bda87f35ee20456ab2b363460db9 files/pine-4.31-segfix.patch 460
 MD5 17031d0e1279dabd445a3deb5d19287c files/pine-4.61-largeterminal.patch 526
@@ -33,10 +32,3 @@ MD5 dadc9e153e023ad3b24d8cefd4bf5a2b files/pine-4.56-passfile.patch 504
 MD5 fa3a8604150ceb9b876b6c5f1f2309ab files/digest-pine-4.62 206
 MD5 be569e295d14d9e251fb8bccc270cd35 files/digest-pine-4.63 136
 MD5 3eb735b51e3192ee78b7b556e83256b3 files/transparency.patch 447
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCfP+4QlM6RnzZP+IRAiiCAJ9CZm3mJwJ+GXvSVmrvam55jXPl2gCdH6Yp
-mFT/n6pSA0f7tNC/k67kKlU=
-=qlpS
------END PGP SIGNATURE-----
