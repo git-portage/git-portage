@@ -1,4 +1,6 @@
 MD5 9013d6232196ce109dcdf8df4a952597 ChangeLog 512
 MD5 420df847a3db1c4969aff20243f656dd metadata.xml 165
 MD5 bbd101d13508a26de27f2409fbb8bd20 picasm-1.12b.ebuild 755
+MD5 e059f7f5e5dd2c8fbbc2f1d084d9659c picasm-1.12c.ebuild 828
 MD5 bd464a395ef450ffa7f38667b4759d62 files/digest-picasm-1.12b 61
+MD5 0487a156bb5d4f9c6ea4485752b95d7b files/digest-picasm-1.12c 62
