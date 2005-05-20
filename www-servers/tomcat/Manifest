@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 918871e43d382090d5e2ee937cad8271 tomcat-5.0.27-r6.ebuild 3931
 MD5 871f531f9402821061f7f35c574f9c18 tomcat-5.0.28-r4.ebuild 9628
 MD5 bc4c34721635e030981d16a09d79f010 ChangeLog 16823
@@ -17,3 +20,10 @@ MD5 d538c7caef4b5cecd6cc95ee1988bace files/5.0.28/tomcat.conf 2652
 MD5 c0d89ffb4276e8a6d0cf08fcad6517f9 files/5.0.28/tomcat.init 701
 MD5 744a9ce174144fc5689c1fabee527e55 files/5.0.28/build.xml-02.patch 3177
 MD5 98a29b32de00d97f156dc31dfe3cf472 files/5.0.28/jikes.diff 584
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCjfli06ebR+OMO78RAiu4AKCLtJ98f0VVBXeb9xRYoCfX+Q4bDQCghzup
+gqz1Mc5ZwULOea03SkrVnuo=
+=R8qr
+-----END PGP SIGNATURE-----
