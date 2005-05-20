@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4d6f2f3c290717149016c8a27383cbf9 netkit-rsh-0.17-r6.ebuild 1684
 MD5 0d35953e8d20a584860aec805fb3176f netkit-rsh-0.17-r5.ebuild 1956
 MD5 966beffa3015c23b12e79242a28924c8 ChangeLog 3769
@@ -34,3 +37,10 @@ MD5 7581ec0ca6e11e19ea3957a842329253 files/netkit-rsh-0.17-rexec-netrc.patch 685
 MD5 49b955e20153259f348033f607b9cac8 files/netkit-rsh-0.10-stdarg.patch 952
 MD5 7b9d8d0930734500608538c166d0179a files/rsh.pamd 445
 MD5 d5a4e566c929a48240e3d7dffbb0660c files/netkit-rsh-0.17-nohost.patch 1647
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCjf2E06ebR+OMO78RArxqAJ9RB4rDSm5hlVoDP0DzmOaWX5hgSACgjlYB
+0KNS1qcCP97CwGNVJgKM6nw=
+=9a/O
+-----END PGP SIGNATURE-----
