@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d3210060048b2a6df3bbb18110bec61e pine-4.61-r2.ebuild 4688
 MD5 df36c8865a5c3109974fb630251fe32d pine-4.62-r1.ebuild 5252
 MD5 80055259213721a085dd8a1987e39bb7 pine-4.62.ebuild 5790
@@ -32,3 +35,10 @@ MD5 dadc9e153e023ad3b24d8cefd4bf5a2b files/pine-4.56-passfile.patch 504
 MD5 fa3a8604150ceb9b876b6c5f1f2309ab files/digest-pine-4.62 206
 MD5 be569e295d14d9e251fb8bccc270cd35 files/digest-pine-4.63 136
 MD5 3eb735b51e3192ee78b7b556e83256b3 files/transparency.patch 447
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCjcKJQlM6RnzZP+IRAsV5AJ0SqjrOHo1Q+TzwMF8oxhJ4x1JDnACfQY6D
+gJyhatsUKb8zCrukOeKt5M8=
+=q9oD
+-----END PGP SIGNATURE-----
