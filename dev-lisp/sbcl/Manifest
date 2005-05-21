@@ -1,4 +1,4 @@
-MD5 edbb52dd52d71af1a7112bc0573c13d2 ChangeLog 16870
+MD5 bc1f4dc7affca468bfd0e6cadb4dacf6 ChangeLog 16986
 MD5 0c9bf11185a2a2f1916fc3dc72c0e89e metadata.xml 1037
 MD5 171a2860c8099c791c1a5d09a6de79d9 sbcl-0.8.14.ebuild 3882
 MD5 99471881a4600b3754568cf9a57da836 sbcl-0.8.15.ebuild 3941
@@ -8,7 +8,7 @@ MD5 e1e082cd279eba46322bafddfe664760 sbcl-0.8.19.ebuild 4179
 MD5 c87e565c76b22aaf0c10a9002c94a459 sbcl-0.8.20.ebuild 5606
 MD5 569ed21ee77602b510794e0a9005b83f sbcl-0.8.21-r1.ebuild 5853
 MD5 4442b0e3a70d72ceb4576232673570ad sbcl-0.8.21.ebuild 5416
-MD5 36e0a9cc93af0b632ba8bcf9146cff12 sbcl-0.9.0.ebuild 5872
+MD5 09d12f257320e31812419d7cac2e3b6f sbcl-0.9.0.ebuild 5872
 MD5 c79912580313a9a43b0b9fd2aa794ba2 files/digest-sbcl-0.8.14 468
 MD5 74f94f11c31e6e9395b26994ebc70aa7 files/digest-sbcl-0.8.15 469
 MD5 a3c050d853b5f0484425c9e35fce226f files/digest-sbcl-0.8.16 469
