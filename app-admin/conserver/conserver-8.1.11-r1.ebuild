@@ -1,6 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/conserver/Attic/conserver-8.1.1.ebuild,v 1.6 2005/01/01 10:57:12 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/conserver/Attic/conserver-8.1.11-r1.ebuild,v 1.1 2005/05/21 23:27:38 weeve Exp $
+
+inherit ssl-cert eutils
 
 DESCRIPTION="Serial Console Manager"
 HOMEPAGE="http://www.conserver.com/"
@@ -8,18 +10,20 @@ SRC_URI="ftp://ftp.conserver.com/conserver/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86 sparc alpha ia64"
-IUSE="pam ssl tcpd"
+KEYWORDS="~alpha -ia64 ~ppc ~sparc ~x86"
+IUSE="pam ssl tcpd debug"
 
 DEPEND="ssl? ( >=dev-libs/openssl-0.9.6g )
-	pam? ( sys-libs/pam )
-	tcpd? ( sys-apps/tcp-wrappers )"
+	pam? ( virtual/pam )
+	tcpd? ( sys-apps/tcp-wrappers )
+	debug? ( dev-libs/dmalloc )"
 
 src_compile() {
 	econf \
-		`use_with ssl openssl` \
-		`use_with pam` \
-		`use_with tcpd libwrap` \
+		$(use_with ssl openssl) \
+		$(use_with pam) \
+		$(use_with tcpd libwrap) \
+		$(use_with debug dmalloc) \
 		--with-logfile=/var/log/conserver.log \
 		--with-pidfile=/var/run/conserver.pid \
 		--with-cffile=conserver/conserver.cf \
@@ -31,7 +35,8 @@ src_compile() {
 }
 
 src_install() {
-	einstall exampledir=${D}/usr/share/doc/${PF}/examples || die "problem with install"
+	einstall exampledir=${D}/usr/share/doc/${PF}/examples \
+		|| die "problem with install"
 
 	## create data directory
 	dodir /var/consoles
@@ -39,10 +44,8 @@ src_install() {
 	fperms 700 /var/consoles
 
 	## add startup and sample config
-	exeinto /etc/init.d
-	newexe ${FILESDIR}/conserver.initd conserver
-	insinto /etc/conf.d
-	newins ${FILESDIR}/conserver.confd conserver
+	newinitd ${FILESDIR}/conserver.initd conserver
+	newconfd ${FILESDIR}/conserver.confd conserver
 
 	dodir /etc/conserver
 	fperms 700 /etc/conserver
@@ -58,12 +61,16 @@ src_install() {
 	newdoc conserver.cf/conserver.cf conserver.cf.sample
 
 	# Add pam config
-	insinto /etc/pam.d ; newins ${FILESDIR}/conserver.pam conserver
+	newpamd ${FILESDIR}/conserver.pam-include conserver
+
+	# Add certs if SSL use flag is enabled
+	if use ssl && [ ! -f /etc/ssl/conserver/conserver.key ]; then
+		dodir /etc/ssl/conserver
+		insinto /etc/ssl/conserver
+		docert conserver
+	fi
 }
 
 pkg_postinst() {
 	einfo "Config-file formats _changed_ with version 8.0 !"
-	if use ssl; then
-		einfo "You will need to create certificates to use the ssl-feature."
-	fi
 }
