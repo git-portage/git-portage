@@ -1,6 +1,6 @@
-MD5 bb011dec8656ef1e7cf288c8aafa7884 ChangeLog 8327
+MD5 0ac6ff8292f3f8cefe210e5b3e1ae9f3 ChangeLog 8518
 MD5 1de04ab5d7e18332a5d73790aadf336f jabberd-1.4.3-r4.ebuild 5813
-MD5 42131ffb047d9b5549f06adf56c0361b jabberd-1.4.3-r5.ebuild 5815
+MD5 8ab9240f7781d818bda2f7724040981f jabberd-1.4.3-r5.ebuild 5818
 MD5 f81b4c2b73367e5bed25722aa45e2533 jabberd-2.0-r2.ebuild 4965
 MD5 d63e76997504582699be99d08abd1fa8 jabberd-2.0.8.ebuild 3551
 MD5 786349de4f04c6c1a5a16f2cae544e3b jabberd-2.0_p20050119.ebuild 3525
@@ -17,7 +17,7 @@ MD5 1813a30dabb60fa0a15ee3ed3aaad28d files/jabber.init.gentoo 2118
 MD5 8d4ca5fb6338d837674ab33c8f969273 files/jabber.rc6-r5 874
 MD5 6912454f1d1d480cbb711f715292e3cc files/jabber.rc6-r6 953
 MD5 4ea516e4527dd2de19281709704238ee files/jabber.rc6-r7 1842
-MD5 df2769a5827567130bac352fe53f8df4 files/jabber.rc6-r8 806
+MD5 078528dc08a082b7a0534d4f6c5c5f5e files/jabber.rc6-r8 800
 MD5 5aeafd17644a405b363de0ea1eb22d8b files/multiple-xml-patch-00 5934
 MD5 0067018951674e703063f0f4337c5a2c files/multiple-xml-patch-01 303
 MD5 73c38af347fdcf7d7cb6dd3490344bfa files/multiple.xml 15387
