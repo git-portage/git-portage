@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3afed5e80028bf6edf72d4a7f8d20410 ChangeLog 4650
 MD5 35ec6be05559723418fdc08bcb07197c monodevelop-0.5.1-r4.ebuild 1559
 MD5 76b314cc7b7b79b298dd4889dff8c9cd metadata.xml 159
@@ -10,3 +13,10 @@ MD5 8c9f33855ebcc0bd8100baec6a00fb50 files/digest-monodevelop-0.5.1-r4 157
 MD5 48b44fa7ba76c3b567d260ecff9e7aea files/digest-monodevelop-0.7 68
 MD5 9e3ea3908c299c9240a5f7689f83909a files/monodevelop-0.5.1-nemerle-gtk-sharp.diff 1874
 MD5 8c9f33855ebcc0bd8100baec6a00fb50 files/digest-monodevelop-0.5.1-r3 157
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCjwBrCHk4+ZoBpvsRAueUAKC3GrLfwIItADXyvYk+u0/7s51B5ACZAZKf
+m5PmwPcIytwjXM647aUOZ/k=
+=Erso
+-----END PGP SIGNATURE-----
