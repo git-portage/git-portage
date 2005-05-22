@@ -1,0 +1,5 @@
+MD5 ca4d578dc820811db88cb96685f3fb80 radiusclient-ng-0.5.0.ebuild 779
+MD5 86252ae012b72459569cde5fbb6ef929 ChangeLog 333
+MD5 6a0062980e8159b66b14b7580b26ea62 metadata.xml 403
+MD5 4eeaa6ecdf25d4179dc2d195a778faf6 files/digest-radiusclient-ng-0.5.0 73
+MD5 23e579ca4437008a0ba9250be83364ea files/pkgsysconfdir-install.patch 1612
