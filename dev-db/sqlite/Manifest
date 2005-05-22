@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 090ad486dc062527ae9ddd74ee650e15 sqlite-2.8.16-r1.ebuild 1771
 MD5 99bf2a671c91f7499255003439d5eac0 sqlite-2.8.14.ebuild 862
 MD5 76aef8e782bcbab0759260cd5159cdf4 sqlite-3.2.1-r1.ebuild 1688
@@ -21,3 +24,10 @@ MD5 c35f34620d18893001720951f8ea0c73 files/digest-sqlite-2.8.13 65
 MD5 c9c200833c7c14eb4d750bb00455199e files/digest-sqlite-2.8.14 65
 MD5 b4031f19b8a32fa2b9dd4dfaf4b57ad0 files/digest-sqlite-2.8.15 65
 MD5 3f0417272ef2e01ef38d27021a93aeaf files/digest-sqlite-2.8.16 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCkKOWI1lqEGTUzyQRAqvIAKCBcaL2PUnapauXGriwNkaWGe7b7wCghVIa
+rVXCuqZFOI5sSVAf45tulrw=
+=uHW1
+-----END PGP SIGNATURE-----

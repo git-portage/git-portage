@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 36bc02d42393a45911b8ec972036fe1a booh-0.3.0.ebuild 904
 MD5 038859d490a0abe571e11f7ae9abeeb8 booh-0.5.0.ebuild 911
 MD5 985f088d8d5c3c85b38cf24df15e84d6 booh-0.1.0.ebuild 806
@@ -8,3 +11,10 @@ MD5 30c9a476ea8e72c7cb5ee9e046c20fd5 files/digest-booh-0.1.0 62
 MD5 d9c3882ab06e096bc720d0f9e7ad44ea files/digest-booh-0.2.0 62
 MD5 5d5ab68b64025ba67a81c71a0e43d44f files/digest-booh-0.3.0 62
 MD5 0d50be41420bbb1ceb6deabbfa0d097d files/digest-booh-0.5.0 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCkKMpI1lqEGTUzyQRAsZ3AJ9Dz/fx+1Uhq9q54EVJtDfnhQlVGACfcI1+
+CvQXVynEYbNT+Wh7dUGNDk0=
+=jbbO
+-----END PGP SIGNATURE-----
