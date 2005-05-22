@@ -1,7 +1,7 @@
-MD5 97e5150fbfacfe9b937246d81ff5a92c ChangeLog 4201
+MD5 558c608150135355eacf368fd5ada024 ChangeLog 4537
 MD5 0d35953e8d20a584860aec805fb3176f netkit-rsh-0.17-r5.ebuild 1956
-MD5 5bd51be3a5517a9ba508a59dcd46277f netkit-rsh-0.17-r6.ebuild 1682
-MD5 4c10c52025f71155c80acce712b34e09 netkit-rsh-0.17-r7.ebuild 1633
+MD5 bd981932e66446785b2435f5622d68e2 netkit-rsh-0.17-r6.ebuild 1684
+MD5 ba1cb47f0c5a85e0e037270f3994918f netkit-rsh-0.17-r7.ebuild 1694
 MD5 00dc5439d1237d8da5351107131d6e28 files/digest-netkit-rsh-0.17-r5 71
 MD5 849aa086002eda305d4d6d59a94fadd8 files/rexec.pamd 457
 MD5 501cf426db7510decc4dee17b07c5ea2 files/rexec.xinetd 280
@@ -36,3 +36,6 @@ MD5 f1f297025fb545f4cf2dc02e6c63867f files/netkit-rsh-0.17-strip.patch 2459
 MD5 6bb199dffcf2c9f158ca571310bb5569 files/netkit-rsh-0.17-userandhost.patch 2188
 MD5 645b699bd649a22d2d0ef57b0efd9e93 files/redhat.spec 805
 MD5 5b6497e87f4d7de5851f57d8ba73d75b files/digest-netkit-rsh-0.17-r7 126
+MD5 8115f8e19b1c44ef73362ab422bc001e files/rexec.pamd-include 303
+MD5 de71a64316c629deb1587a183526cd37 files/rlogin.pamd-include 386
+MD5 d369da65b87f3866ddb93e5aca52f712 files/rsh.pamd-include 412
