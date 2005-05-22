@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 437df7598487b85a8678e49317d897b1 ffmpeg-0.4.9_pre1-r1.ebuild 4065
 MD5 039ad9294d8a8d59c8e9343ad3f28c56 ffmpeg-0.4.9_p20050226-r3.ebuild 4389
 MD5 c57ec7ef531e1088a91de5d6d9ba1dfa ffmpeg-0.4.8.ebuild 2430
@@ -15,3 +18,10 @@ MD5 0a76b7a4442aea90d56ac85508b2eff5 files/digest-ffmpeg-0.4.8 65
 MD5 b4ecc62e882107f766cf621bfc6c7e20 files/ffmpeg-osx.patch 5940
 MD5 1a8c0be3a5a5ba1d929b7773265943b7 files/ffmpeg-missing_links.patch 1199
 MD5 b1cd277309faaaa03e3dafb3b89b2a09 files/ffmpeg-libdir-pic.patch 6027
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCkKuPI1lqEGTUzyQRAn/QAKCuSAIK4cZQ7HiiW0Qci0ylPhXUvwCeOLVP
+xuHIAE2dLn4IHF3Fvb0Fsrw=
+=AxQs
+-----END PGP SIGNATURE-----

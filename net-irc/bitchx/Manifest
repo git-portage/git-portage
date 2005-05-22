@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 93aa0cdd3be380b0ae38dbbbf6ec99ac bitchx-1.1-r2.ebuild 3625
 MD5 b4f02b199b81e2c523fe135ba0fe149d ChangeLog 8475
 MD5 44c39c6ad372a8e5a5e7ee3311f703a7 metadata.xml 160
@@ -10,3 +13,10 @@ MD5 95973485a5a745af87c7bdc9fb6ca0c6 files/1.1/bitchx-1.1-gcc34.patch 394
 MD5 9230369276af6c8a1cdd7a584927cd47 files/1.1/bitchx-1.1-hebrew.patch 477
 MD5 0028e0211e23f927b0c03e6dba3ee8fd files/1.1/bitchx-1.1-freenode.patch 976
 MD5 10a57b14bb58910e1f373fbc1b8b2197 files/1.1/bitchx-1.1-cjk.patch 7050
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCkKxII1lqEGTUzyQRAvysAJ9MZpXG1WJXWQG8v7YfercdFQpJGgCgg3pg
+aRSs10eXWsy1NqN0iJWsjCY=
+=ReON
+-----END PGP SIGNATURE-----
