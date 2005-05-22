@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 456b8cb28883b6bb42391a74da131716 genkernel-1.6.ebuild 566
 MD5 697bdc27694bc88ad6d20ed2b7041008 genkernel-1.8.ebuild 663
 MD5 92456af73fe98b8f5149cabd7bc34ef6 genkernel-3.0.2.ebuild 812
@@ -19,3 +22,10 @@ MD5 4dda22f8c6f55619f9a595b4f68615a9 files/digest-genkernel-3.1.6 269
 MD5 2c3259f869e04ff498e4ba16fd7aad6c files/digest-genkernel-3.1.0c 70
 MD5 5ec6b85eeb6dbc66e07879f057210e23 files/digest-genkernel-3.1.1b 270
 MD5 dd2611bb1ae0689fbbb0ecdbca6e0cec files/bin-keymaps.tar.gz 17054
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCkKhTI1lqEGTUzyQRAryhAKCFBIiBZWHcMAyO0sRF4eg7K/HlBACgwX/Z
+F7TzjZDS6fn0wocARab2mJc=
+=ms54
+-----END PGP SIGNATURE-----
