@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bf8d77a7d64cc34b11da70edbc35e068 gnupg-1.9.15.ebuild 3231
 MD5 527be2270ba749a917433938c9ea96e8 ChangeLog 18463
 MD5 aaaeeeff8a9b06ba7f0eb28f6bbf336d gnupg-1.9.14.ebuild 3077
@@ -21,3 +24,10 @@ MD5 c6114a5a40f10aeca63d07b59fed650f files/gnupg-1.2.4-hppa_unaligned_constant.p
 MD5 cdb57d67164c7a63a167c33426c0a7a3 files/gnupg-1.2.4.ppc64.patch 471
 MD5 4b92f911e900cfd1a37439bd19412f5d files/digest-gnupg-1.4.1 190
 MD5 e62b7134c5c0c1b3aad6a08bfdf99b48 files/digest-gnupg-1.9.15-r1 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.9.16 (GNU/Linux)
+
+iD8DBQFCkeLAmdTrptrqvGERAt/+AJ9qY8Rz0QIma35sUuqL3tgYKDnVGgCgiQvN
+rjxLHXme/SRruMVuzqcpYw4=
+=BX6J
+-----END PGP SIGNATURE-----
