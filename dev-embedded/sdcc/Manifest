@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f70d9fad7ea483f683405d907f7191b3 sdcc-2.5.0.ebuild 1038
 MD5 7d36efc2d3cf66fe798832feb7034d92 metadata.xml 254
 MD5 8b427eb4a2a3cd111f51573095c0a8fa ChangeLog 3963
@@ -8,3 +11,10 @@ MD5 b28000eb9afb40c92c48b7bc322ac7c1 files/digest-sdcc-2.4.0_p20041215 70
 MD5 bfc177a29ceb52dfa8883108634d1e7e files/digest-sdcc-2.4.0 63
 MD5 d24d389e60331ef6cdb454ee3d8b440c files/digest-sdcc-2.5.0 63
 MD5 60d5377743a1546f7bc725f5e79d7d02 files/digest-sdcc-2.5.0_p20050522 70
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCkbocmdTrptrqvGERAoEKAKCCdIVjqYVlFh7xtBy2UzpdNC2bQQCfcLN8
+He07N9+gckNXwqc7nTyoETM=
+=g/nD
+-----END PGP SIGNATURE-----
