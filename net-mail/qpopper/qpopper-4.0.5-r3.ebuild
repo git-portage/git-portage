@@ -1,48 +1,57 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/qpopper/Attic/qpopper-4.0.5.ebuild,v 1.12 2005/02/07 19:08:51 blubb Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/qpopper/Attic/qpopper-4.0.5-r3.ebuild,v 1.1 2005/05/23 19:23:38 ferdy Exp $
 
-IUSE="ssl pam"
+inherit eutils
+
+IUSE="debug gdbm mailbox pam ssl xinetd"
 
 S=${WORKDIR}/${PN}${PV}
 DESCRIPTION="A POP3 Server"
 SRC_URI="ftp://ftp.qualcomm.com/eudora/servers/unix/popper/${PN}${PV}.tar.gz
 		http://www.ibiblio.org/gentoo/distfiles/qpopper-files.tar.bz2"
-HOMEPAGE="http://www.qpopper.org/qpopper/"
+HOMEPAGE="http://www.eudora.com/products/unsupported/qpopper/index.html"
 
 DEPEND="virtual/mta
-	virtual/inetd
-	sys-libs/gdbm
-	pam? ( >=sys-libs/pam-0.72 )
+	xinetd? ( virtual/inetd )
+	gdbm? ( sys-libs/gdbm )
+	!gdbm? ( sys-libs/db )
+	pam? (
+		>=sys-libs/pam-0.72
+		>=net-mail/mailbase-0.00-r8
+	)
 	ssl? ( dev-libs/openssl )"
 
 SLOT="0"
 LICENSE="qpopper"
-KEYWORDS="x86 sparc"
+KEYWORDS="~amd64 sparc x86"
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	epatch "${FILESDIR}/${PN}-CAN-2005-1151.patch" || die "first patch failed"
+	epatch "${FILESDIR}/${PN}-CAN-2005-1152.patch" || die "second patch failed"
+}
 
 src_compile() {
-
 	local myconf
 
 	use pam && myconf="${myconf} --with-pam=pop3"
-	use ssl && myconf="${myconf} --with-openssl"
-
+	use mailbox && myconf="${myconf} --enable-home-dir-mail=Mailbox"
+	use xinetd && myconf="${myconf} --disable-standalone" || \
+		myconf="${myconf} --enable-standalone"
+	myconf="${myconf} $(use_enable debug debugging)"
+	myconf="${myconf} $(use_with ssl openssl)"
+	myconf="${myconf} $(use_with gdbm)"
 	econf --enable-apop=/etc/pop.auth \
 		--enable-popuid=pop \
 		--enable-log-login \
 		--enable-specialauth \
 		--enable-log-facility=LOG_MAIL \
-		--enable-debugging \
 		--enable-uw-kludge-flag \
-		--with-gdbm \
 		${myconf} || die "econf failed"
 
 	if use ssl; then
-		if use pam; then
-			./configure ${CO} --with-openssl --with-pam=pop3
-		else
-			./configure ${CO} --with-openssl
-		fi
 		umask 077
 	 	PEM1=`/bin/mktemp ${T}/openssl.XXXXXX`
 		PEM2=`/bin/mktemp ${T}/openssl.XXXXXX`
@@ -89,10 +98,11 @@ src_install() {
 	docinto rfc
 	dodoc doc/rfc*.txt
 
-	if use pam; then
-		insinto /etc/pam.d
-		newins ${WORKDIR}/pop3.pam-system-auth pop3
-	fi
+	# pam.d stuff is provided by >=mailbase-0.00-r8. Bug #79240
+	# if use pam; then
+	# 	insinto /etc/pam.d
+	# 	newins ${WORKDIR}/pop3.pam-system-auth pop3
+	# fi
 
 	insinto /etc/xinetd.d
 	newins ${WORKDIR}/pop3.xinetd  pop-3
