@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/pop-before-smtp/Attic/pop-before-smtp-1.36.ebuild,v 1.2 2004/12/13 23:16:02 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/pop-before-smtp/Attic/pop-before-smtp-1.36.ebuild,v 1.4 2005/05/25 15:33:01 mcummings Exp $
 
 DESCRIPTION="a simple daemon to allow email relay control based on successful POP or IMAP logins"
 HOMEPAGE="http://popbsmtp.sourceforge.net"
@@ -12,7 +12,7 @@ KEYWORDS="x86 ~amd64"
 IUSE=""
 
 RDEPEND="dev-perl/File-Tail
-	dev-perl/Time-HiRes
+	perl-core/Time-HiRes
 	dev-perl/Net-Netmask
 	dev-perl/TimeDate
 	dev-perl/Unix-Syslog"
