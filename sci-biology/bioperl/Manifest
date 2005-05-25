@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f2faee36ed4d128d4b8a4273692828e9 ChangeLog 3832
 MD5 c44b6ccac0ada674a2f60a1548501c97 bioperl-1.0.2.ebuild 1498
 MD5 d7add320cb4f5b6a66670e93c3a05a9b bioperl-1.2.2.ebuild 2191
@@ -14,3 +17,10 @@ MD5 d8df3477f72bba80de83cfdb5416ecbf files/digest-bioperl-1.2.2 66
 MD5 a67f149bd10684a4b584bcd23282d5bf files/digest-bioperl-1.2.3 67
 MD5 d5d0bc711fb345c9b91086c5d47e1442 files/digest-bioperl-1.4 65
 MD5 08539f1d1fed6d673140cdc221ae13e6 files/domanpages-1.2.2.patch 412
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD4DBQFClI/atG5z4I8BtQoRAmBkAJUQ57a/W0PCs0c8oAhb0hXRgvypAJ9AkSw1
+nOnrDPGcHobM0aaIhhXvrQ==
+=783W
+-----END PGP SIGNATURE-----

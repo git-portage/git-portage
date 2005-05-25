@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e1092f5e15947ad646132e9c2c10c334 ChangeLog 7630
 MD5 8d7349ddfb474c5dc43046a871c4891a dvdrip-0.52.5.ebuild 1889
 MD5 38659c86a56cd6e82a99a66a51bd17da dvdrip-0.52.0.ebuild 1517
@@ -8,3 +11,10 @@ MD5 14587c2ff6ca6a5d6b84323f64de11d0 files/digest-dvdrip-0.52.5 71
 MD5 748c8776c847405991432e3a345432fd files/digest-dvdrip-0.52.0 71
 MD5 2754107db18d3dea07e9d0a57e8bab32 files/digest-dvdrip-0.52.3 71
 MD5 2754107db18d3dea07e9d0a57e8bab32 files/digest-dvdrip-0.52.3-r1 71
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFClI+AtG5z4I8BtQoRApB7AJ4vK3LvHz7QtMWVGF7Eog7Y8LguugCeMJIK
+kz3JP2RqwSjRHwBquV3sahU=
+=PQ6f
+-----END PGP SIGNATURE-----
