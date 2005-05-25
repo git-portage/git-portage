@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 7c07ad652c1aa66fc95eb4d07ad6c490 ChangeLog 5582
 MD5 170c293979e22f30ae1fd668725173e5 bugzilla-2.18.0_rc1.ebuild 1723
 MD5 c2f8989b40e7b39f16828b13b25d1649 bugzilla-2.18.0_rc2.ebuild 1886
@@ -28,10 +25,3 @@ MD5 32cb42777a779ac279c5384643970729 files/2.18.0_rc3/apache.htaccess 70
 MD5 23beb9ca60294343070078f9649dbc03 files/2.18.0_rc3/reconfig 3208
 MD5 32cb42777a779ac279c5384643970729 files/2.18.0_rc4/apache.htaccess 70
 MD5 23beb9ca60294343070078f9649dbc03 files/2.18.0_rc4/reconfig 3208
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFClIHutG5z4I8BtQoRAqzdAJ0SbAMWKYBeb21TTEkrou31F0exXgCggxwX
-00rfcjYsl7gVIKtLOZfDEC0=
-=C41H
------END PGP SIGNATURE-----

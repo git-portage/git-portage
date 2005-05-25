@@ -1,11 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 86c1ea766496f156418fc71b2eba1fa8 ChangeLog 5121
+MD5 46c4018edcf6bc0ca5d5329c3e388227 ChangeLog 5255
 MD5 ae0e9d609b2eb36d3aa72cdcd85911e6 HTML-Mason-1.20.ebuild 1748
 MD5 5b6e32080ab622b665b04c814491c0e5 HTML-Mason-1.22.ebuild 1749
 MD5 7dc238ab55536fc6f5f6d3d3108749d0 HTML-Mason-1.25.ebuild 1749
-MD5 8317a3cbdffe96c12477f5110d19c32a HTML-Mason-1.26.ebuild 1748
+MD5 b54ff85c24be1f71a8faa3c5b408d6a3 HTML-Mason-1.26.ebuild 1749
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 653e331638236723e99bb1896ac34fa7 HTML-Mason-1.28.ebuild 2014
 MD5 ab2c0618efa7e72fc2bf1f5c32002058 files/digest-HTML-Mason-1.20 67
@@ -13,10 +10,3 @@ MD5 1fc7a530b801966564b7dc476e5146da files/digest-HTML-Mason-1.22 67
 MD5 07de1ec3aa725a31db3b84f7a98cabda files/digest-HTML-Mason-1.25 67
 MD5 3ab48da347fd0409815b3952c646baa6 files/digest-HTML-Mason-1.26 67
 MD5 3666de3807611da57648d2ee49ddeca2 files/digest-HTML-Mason-1.28 67
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFClICttG5z4I8BtQoRAslaAJ9B10/JdDI4W78Dmyf5QI//DpJP8wCbB6Lv
-vk1n9wjf+r2oBXspCyMt0oE=
-=offM
------END PGP SIGNATURE-----
