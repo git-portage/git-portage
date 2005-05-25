@@ -1,3 +1,13 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0792ae8169d51e2f75d4ea579979856d ChangeLog 1165
 MD5 1a25d18564e274cd922b786ac7f7c44d reportmagic-2.21.ebuild 1029
 MD5 5479801685116430bf1ba2dc7548e347 files/digest-reportmagic-2.21 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFClIJHtG5z4I8BtQoRAmi2AJ96HlIeOixHwwO/D89BKESgyPf9tQCfaBw9
+I9xj9dOjeBOoKepHNTBwfiE=
+=S7k3
+-----END PGP SIGNATURE-----
