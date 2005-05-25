@@ -1,11 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 1780fb9fc1d5bcac4b7da3a757f66f72 ChangeLog 37384
+MD5 6118d32feda6069be6d96161101ac8a6 ChangeLog 37534
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 1f2ccde22696c822464da59fc67f195b perl-5.8.2-r4.ebuild 11086
 MD5 4cd44d385ea45cdacee84f1a41090404 perl-5.8.4-r4.ebuild 13224
-MD5 081d5cdcb51a871b5b39e0ea2afba02e perl-5.8.5-r5.ebuild 12864
+MD5 3b57d8a37967744c0f0e95c3000748f5 perl-5.8.5-r5.ebuild 12865
 MD5 857db17a157d940eefad54551c36ba9b perl-5.8.6-r4.ebuild 13114
 MD5 bd75f0242e3b7791803d089c38a3f920 files/CAN-2005-0156-suid.patch 703
 MD5 2bd41aec5e22962224dc9376e27bdde3 files/CAN-2005-0448-rmtree.patch 7629
@@ -43,10 +40,3 @@ MD5 d9412dab085f22309997c8f08ea1ac85 files/perl-5.8.6-reorder-INC.patch 2211
 MD5 c5cc36940b2488a37c3dc2287f6e672c files/perl-5.8.6-tempfiles.patch 2115
 MD5 2e12f5128439c83b3c5a3615253f4d8f files/perl-cleaner 8606
 MD5 803b7c028f59008ea1e6d577e5c0bab0 files/stat.t 8884
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFClKzctG5z4I8BtQoRApzoAKCQhNzS46OO3aLk2MKPC6Ua//FOiQCfaSqm
-unbpMkPgfMwBx1+NP/Kfxjg=
-=Mofh
------END PGP SIGNATURE-----
