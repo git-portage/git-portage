@@ -1,20 +1,10 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 180bdd46ccc657d612dd60503de47420 ChangeLog 1901
+MD5 a6b7616d52d777dd5cef47eb3d91dd3f ChangeLog 2036
 MD5 566cf4f89e44670d0aba4a745913d748 metadata.xml 224
 MD5 a04ae7b96f75622f71abaa2c8e37ffb4 tinyca-0.5.4-r1.ebuild 1118
 MD5 605f0bcc1e4c17d06a1dac9e2d76a3f1 tinyca-0.5.4.ebuild 1086
-MD5 98ae4a0ddbc10c7114dd812dc8d40748 tinyca-0.6.6.ebuild 1203
+MD5 009043d3ca5ddeafdccb46aaa37457a8 tinyca-0.6.6.ebuild 1202
 MD5 bbea0bcb9faf9c5ba37f2ff9b94f262d tinyca-0.6.7.ebuild 1479
 MD5 ce4138146004f379403a5187796ce262 files/digest-tinyca-0.5.4 64
 MD5 ce4138146004f379403a5187796ce262 files/digest-tinyca-0.5.4-r1 64
 MD5 2bcc4d940205e70dd881c538b45d1173 files/digest-tinyca-0.6.6 64
 MD5 f43987f1a14d5d3bde3916f480d303b7 files/digest-tinyca-0.6.7 65
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFClIattG5z4I8BtQoRAjNDAJ4sLLe0+Yg8IVZ8AWx4vlOYSAid+ACeNE4g
-2a0bRAWo19rXtwsLFypfsR8=
-=f8tv
------END PGP SIGNATURE-----
