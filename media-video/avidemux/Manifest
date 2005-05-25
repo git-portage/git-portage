@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 065e3817de842bbdce5f39b2043cc96b ChangeLog 15534
 MD5 ee5806b95c2dcfc5b397bcf7b64fc053 avidemux-2.0.24.ebuild 2486
 MD5 955f56e990f8c32d705708b4cc4db089 metadata.xml 251
@@ -9,3 +12,10 @@ MD5 03b785183df3226642178240a15f5a25 files/digest-avidemux-2.0.24 68
 MD5 cc1b60c4a9838d713cf334342af96a78 files/digest-avidemux-2.0.38 138
 MD5 2e4c3410be3348fc36b780e6bd9f8683 files/digest-avidemux-2.0.38-r1 138
 MD5 0e47e20e917b79428c097e2920683db3 files/digest-avidemux-2.0.40 138
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFClFufj5H05b2HAEkRArfOAKCCyS3ILayUgXnBehOaj5mP+o0/TgCfe8k/
++N15/ABCnADJIaC/vN1y8CM=
+=gqoZ
+-----END PGP SIGNATURE-----
