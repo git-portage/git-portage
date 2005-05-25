@@ -1,12 +1,9 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 5c70d89395b0ffd89e1a502e7f37874a ChangeLog 17106
+MD5 cadd20642f567338a44b2ecb08771050 ChangeLog 16966
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 fbff077ebda01a105dec1b5637c5d309 spamassassin-2.63-r1.ebuild 2417
 MD5 f33075e837e6c3eec3944252c0b9dabb spamassassin-2.63.ebuild 2307
 MD5 fe70d6946367be187b4c2c97f5b5ab69 spamassassin-2.64-r1.ebuild 2523
-MD5 c7102c23d4b459acfe43936d38ef320a spamassassin-2.64.ebuild 2522
+MD5 01a271b270ac48192c8fa92c335f9c04 spamassassin-2.64.ebuild 2521
 MD5 1aa696c74e1c8cb448a5cd7af7071199 spamassassin-3.0.0-r1.ebuild 5777
 MD5 d22de8249b4cf960a25f02b663fe452b spamassassin-3.0.0.ebuild 5974
 MD5 020ebe77ab67a92f8ab6c28413d6a9ad spamassassin-3.0.1.ebuild 5782
@@ -27,10 +24,3 @@ MD5 faa89d7205b3bde710ddc585969a3992 files/digest-spamassassin-3.0.2-r1 76
 MD5 66f6531ea3b0a382b4d97bd1234c43a1 files/spamd.conf 604
 MD5 9ab5a9bd40752148b4cb0982dd1a5581 files/spamd.init 617
 MD5 8bae43ab6b7e9fc82d663ebe76535484 files/digest-spamassassin-3.0.3 76
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFClJu9tG5z4I8BtQoRAioKAJ9diXCT2qUAzsJCFQdVtM+dZ3P0GwCeO/+Z
-JXKlz9+9diBmqbcKqTc504U=
-=5Rrt
------END PGP SIGNATURE-----
