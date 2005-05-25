@@ -2,9 +2,9 @@ MD5 9f62e22932e05223936ef2e80e716800 mozilla-firefox-1.0.3-r1.ebuild 8132
 MD5 ea0684d260d743b5a5bc986b0d1cf6fe mozilla-firefox-1.0.3.ebuild 7800
 MD5 a5d2651cec78aa8dd7883ff06d730187 mozilla-firefox-1.0.2-r1.ebuild 7805
 MD5 ebdb84ca864e6a0fc32f3e130bf524e7 mozilla-firefox-1.0.2.ebuild 6614
-MD5 a2532bcada1181adbae03aa6836a3a8e ChangeLog 22502
+MD5 fe685ad26b4c328d318f74de1137443f ChangeLog 22499
 MD5 ce23390351fe8020387d93ee29e09a3d metadata.xml 160
-MD5 2999f190053479bb696a7731f3c7567a mozilla-firefox-1.0.4.ebuild 8335
+MD5 33ab626cb3c29c1b257d4b2d37f2ca58 mozilla-firefox-1.0.4.ebuild 8332
 MD5 3961b39c763ff8f98b56098ac0cdbecc files/mozilla-firefox-1.0-kp_separator.patch 444
 MD5 b16efe0e4066720b718d67348aeee757 files/mozilla-firefox-1.0-4ft2.patch 22294
 MD5 7870df97e6382caede680d440af594c1 files/digest-mozilla-firefox-1.0.2 75
