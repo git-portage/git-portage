@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/razor/Attic/razor-2.61.ebuild,v 1.7 2005/05/25 15:30:22 mcummings Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/razor/Attic/razor-2.61.ebuild,v 1.9 2005/05/25 15:41:13 mcummings Exp $
 
 inherit perl-module eutils
 IUSE=""
@@ -14,8 +14,8 @@ S=${WORKDIR}/razor-agents-${PV}
 
 RDEPEND="dev-lang/perl
 	dev-perl/Net-DNS
-	dev-perl/net-ping
-	dev-perl/Time-HiRes
+	perl-core/net-ping
+	perl-core/Time-HiRes
 	dev-perl/Digest-SHA1
 	dev-perl/URI
 	dev-perl/Digest-Nilsimsa"
