@@ -1,18 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 b5d7111dbabf6ec2677976469a9abca5 ChangeLog 8979
+MD5 7d01d9759e8f146e6cfb7e09c884e56b ChangeLog 9111
 MD5 20e2255501865de5b568424821abf69d metadata.xml 161
 MD5 2fee00d79274b7bfd6598b693907fa2d xmltv-0.5.34.ebuild 6719
 MD5 3457b0b0351ff69927a8e59e630034e5 xmltv-0.5.39.ebuild 7509
-MD5 14bfdf7da208c21c9c54c4e4768506a9 xmltv-0.5.37-r1.ebuild 7510
+MD5 9275bd337ae8fa128ef9b0202ed26bc3 xmltv-0.5.37-r1.ebuild 7511
 MD5 7e68f2515597e3cd1b0a2b1d49fda10e files/digest-xmltv-0.5.34 65
 MD5 a07cdda6552e4a0870baea3d2be062a4 files/digest-xmltv-0.5.39 65
 MD5 1b972dd0ced1a3531dcccd0e0c845310 files/digest-xmltv-0.5.37-r1 65
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFClI9RtG5z4I8BtQoRAuSHAKCJzTpUokxOf3ObL1tdv/9CSyWb2gCeI243
-XxNW5rg5+hzPgvvArg6sf9s=
-=R09O
------END PGP SIGNATURE-----
