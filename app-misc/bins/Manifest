@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 11662dbb45cf6ee1356375de08665914 ChangeLog 5289
 MD5 79d5bf87572c0d8cad61f491938c14c6 bins-1.1.23-r1.ebuild 1102
 MD5 37a14d514873b2369842bf3145763cd7 bins-1.1.23-r2.ebuild 1266
@@ -13,3 +16,10 @@ MD5 e691d4766973f8fa705055f6d6664ce8 files/digest-bins-1.1.23-r2 63
 MD5 9bf07881d8a8267c11b383bb0ed22d31 files/digest-bins-1.1.26-r1 63
 MD5 9bf07881d8a8267c11b383bb0ed22d31 files/digest-bins-1.1.26-r2 63
 MD5 d81e2220c9111d78f8698232f7a622c8 files/digest-bins-1.1.27 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFClI0ztG5z4I8BtQoRAl3RAJ9GfY/4Ygl9Icmc986p8KB2Rz5PRgCfXkEQ
+FQof4qi4pl6bOnQR5abyCE8=
+=O7ha
+-----END PGP SIGNATURE-----
