@@ -1,5 +1,5 @@
-MD5 b044f63e2280f18f6bc24ef2396be72a ChangeLog 2728
+MD5 525d9c72b152c8dea22ea33a49dcf9ec ChangeLog 3065
 MD5 52f9d8e98c8931645c57a3de1c36727d metadata.xml 156
-MD5 ed0ff7cb9842b168d47be363cfe69352 quik-2.1.6.ebuild 902
+MD5 4b505512b5f12d63aad864b3862a04a5 quik-2.1.6.ebuild 1035
 MD5 f22b33927a0b8b237a90feef820f3a33 files/digest-quik-2.1.6 67
 MD5 caf3f0cb5b2e65531f3e22aeeb6c7ffe files/md-fix.diff 392
