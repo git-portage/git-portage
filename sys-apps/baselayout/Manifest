@@ -1,4 +1,4 @@
-MD5 43957de0bb65d2c9df337e494f71fa5f ChangeLog 55916
+MD5 b92d4967e5377d2422a94cbbf308aa66 ChangeLog 55916
 MD5 e02bb32cac91dad28d3c05b731b37b04 metadata.xml 385
 MD5 dca2cf7245292428f62f1ef4f20dd3d9 baselayout-1.11.11.ebuild 18466
 MD5 b43b02e2955a9d3be867e08e5b180d2d baselayout-1.11.9-r1.ebuild 16921
@@ -8,7 +8,7 @@ MD5 b2f81239029e8bdbe76fe4deb2694f9a baselayout-1.11.11-r2.ebuild 18588
 MD5 23c7218ace814473c88d1fe3416e8b3c baselayout-1.11.11-r3.ebuild 18761
 MD5 d1efa571f732beeecced555fcea80f4c baselayout-1.11.12-r1.ebuild 18555
 MD5 8cedd162fde1c3be0b1adc5ed3070390 baselayout-1.11.12-r2.ebuild 18656
-MD5 1a7d65085e49bc32c7ae0acb40501987 baselayout-1.11.12-r3.ebuild 18795
+MD5 a625569a71bae566e1e92d469dc42a35 baselayout-1.11.12-r3.ebuild 18795
 MD5 3e593bad04336cf49c1e7978ce5c103f baselayout-1.12.0_alpha2.ebuild 18459
 MD5 e0f1e8c15b2f320808de66cbfa2e7c67 baselayout-1.12.0_alpha2-r1.ebuild 18815
 MD5 c1996677fc298d37f0b92281ab134d90 baselayout-1.9.4-r6.ebuild 16997
