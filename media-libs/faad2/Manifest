@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b3ff8340371b3405d00dd20ddddbc8cf ChangeLog 6621
 MD5 0fe7937cc235e121a0f49ad7f096bcf3 faad2-1.1.ebuild 1080
 MD5 28448949b05e4107de323e7468679e65 faad2-2.0-r2.ebuild 1722
@@ -19,3 +22,10 @@ MD5 1ceab8b26925d147b1e0a359ce23d56e files/faad2-2.0-noext.patch 856
 MD5 6264dccf9a4c49712b65b406825c5113 files/mp4atom-sliver.patch 659
 MD5 edab653b8b9960b0ea4a04a745786c5f files/faad2-2.0-amd64.patch 9564
 MD5 362594a8b2abbbae6e05c2ea1ab32c3f files/digest-faad2-2.0-r7 61
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFClaNhj5H05b2HAEkRAqj5AKCdNK0R2QgLqF1U33td83uK+EikdgCdGIxw
+8LqII6Ky54m15tun/JHJBNY=
+=qj46
+-----END PGP SIGNATURE-----
