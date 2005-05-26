@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c47627c38f1db6ae47f166fd239b627f realplayer-10.0.3.ebuild 1730
 MD5 676bceecae99d42c5e133b0bc673e211 realplayer-8-r7.ebuild 2927
 MD5 e8e6c079c29f7f7bc4f275f87c2a4988 realplayer-10.0.3-r1.ebuild 1733
@@ -15,3 +18,10 @@ MD5 8291d652d9b4c505375c4e6e977c939a files/digest-realplayer-10.0.2 85
 MD5 3fb0dc52c07cedbd4b0825051155645f files/digest-realplayer-10.0.3 85
 MD5 a53fa71f4e97a1e9d684a1c377a086f3 files/digest-realplayer-10.0.4 85
 MD5 cc3251234e6be88a6554a5f08c0f98d9 files/realplayer.desktop 359
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFClirzI1lqEGTUzyQRAnwNAJ9p3h0ZJt4U7Ux0xxzmVSOb6Zz3ewCfba3m
+IBasvzwJKPVJJ11awKWDQjo=
+=+5xs
+-----END PGP SIGNATURE-----
