@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 04c0b54fe6928e86aef07b627b88765f cyrus-sasl-2.1.18-r2.ebuild 5430
 MD5 54f2bd76be47e4beec9b53b237d0e44f cyrus-sasl-2.1.19-r1.ebuild 7161
 MD5 267cd40a5fb6cc0d346ff563ff1d9aca cyrus-sasl-2.1.20-r2.ebuild 9524
@@ -47,3 +50,10 @@ MD5 397ec1b24d4efe6efafa4782ba0f3493 files/cyrus-sasl-2.1.17-configdir.patch 809
 MD5 e8b9357dba2bde4dac0b1cf38d5942eb files/cyrus-sasl-2.1.18-cvs-1.172.patch 5056
 MD5 c355c365d74408c00cdaa25beea6d4f7 files/digest-cyrus-sasl-2.1.20 70
 MD5 6e3a4b0f3a097e9aadfe5ac4efe8a7bf files/digest-cyrus-sasl-2.1.21 156
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFClmlQ5FrxP71izLARAibmAKDX2Sd0Youh1Cs8nsMcU2x3A++1QgCgnekA
+jD76keqQ5x+prKefWMtD/Vo=
+=Ak2K
+-----END PGP SIGNATURE-----
