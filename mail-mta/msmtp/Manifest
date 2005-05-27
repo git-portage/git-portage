@@ -1,17 +1,11 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 ed2c112f0667d581529ce31fb59fc184 ChangeLog 6235
+MD5 8b4d8e18b052068c68e333f4d0e364f5 ChangeLog 6347
+MD5 b0a435866d0a8bef0d759e5e8fb732cc msmtp-1.4.1.ebuild 1582
+MD5 76f50a1c193917903564978a2bfc016a msmtp-1.4.1-r1.ebuild 1452
 MD5 570c3b91cefa46a71ea570343906ccc3 metadata.xml 247
 MD5 5c397704ff67b621ff79fc18fd846e0b msmtp-1.4.0.ebuild 1577
 MD5 76f50a1c193917903564978a2bfc016a msmtp-1.4.0-r1.ebuild 1452
 MD5 5c7a9806b21c53c30d4c0181956371c9 files/digest-msmtp-1.4.0-r1 64
 MD5 5c7a9806b21c53c30d4c0181956371c9 files/digest-msmtp-1.4.0 64
+MD5 d48ce2f5a0c821e44160dcaa26e0dff8 files/digest-msmtp-1.4.1-r1 64
+MD5 d48ce2f5a0c821e44160dcaa26e0dff8 files/digest-msmtp-1.4.1 64
 MD5 25a1f06b39d5ecd451afeccad46678c6 files/mailer.conf 279
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD4DBQFCihzUCHk4+ZoBpvsRAs56AJ9cyfCQ/32AJ84+tbjJb/UOWQU/1gCYtChi
-pKyiRhhe+mszDPVQfpnciw==
-=FhUh
------END PGP SIGNATURE-----
