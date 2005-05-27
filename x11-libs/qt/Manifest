@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7f6857e1b203fd8c7db8f9644d01e96e ChangeLog 36740
 MD5 512150b47a904b0240101e319856aab1 metadata.xml 156
 MD5 7daec76f47482903184ed2b6d6d5640f qt-3.3.3-r1.ebuild 8039
@@ -49,3 +52,10 @@ MD5 8b3da5dae8babfcbdee3be465579d6c2 files/0002-dnd_active_window_fix.patch 7289
 MD5 0cc401186f490faf55906cd458280db8 files/0037-dnd-timestamp-fix.patch 2138
 MD5 eb6eb6b68c8f747b12a3a53efc4b6480 files/0038-dragobject-dont-prefer-unknown.patch 2551
 MD5 c115b4205c2a2eab0a547375e2f62460 files/digest-qt-3.3.4-r4 166
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCl0AAj5H05b2HAEkRAhoBAJ9Owx2E5ly+YgQgpHcGHJ9eobmojwCeKY3/
+a4crg+Ttk34ltL9njtTFsdk=
+=IL6e
+-----END PGP SIGNATURE-----
