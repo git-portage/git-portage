@@ -1,6 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/xmingw-runtime/Attic/xmingw-runtime-3.2.ebuild,v 1.5 2005/02/09 17:13:34 blubb Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/xmingw-runtime/Attic/xmingw-runtime-3.7.ebuild,v 1.1 2005/05/27 17:34:59 cretin Exp $
+
+inherit eutils
 
 MY_P=${P/xming/ming}
 S=${WORKDIR}/${MY_P}
@@ -11,11 +13,17 @@ SRC_URI="mirror://sourceforge/mingw/${MY_P}-src.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 DEPEND="dev-util/xmingw-binutils
 		dev-util/xmingw-gcc
 		dev-util/xmingw-w32api"
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	epatch ${FILESDIR}/${PN}-3.5-inc.patch
+}
 
 src_compile() {
 	export PATH=$PATH:/opt/xmingw/bin:/opt/xmingw/i386-mingw32msvc/bin
