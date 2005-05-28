@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 198ad29b9e8f52fab210297158dbe009 ChangeLog 3768
 MD5 82306868b6a6fb63db8c971fc0b52a9d drip-0.8.1-r5.ebuild 3091
 MD5 2cbaf3c877b0616661d8c1b63cd4c4a9 drip-0.9.0.ebuild 2736
@@ -12,3 +15,10 @@ MD5 6a8907bd9031fcf440cba36e784faff6 files/drip-0.9.0-gcc34.patch 2795
 MD5 062194efdad2b8a1e02ded8b66d86fc3 files/drip.desktop 154
 MD5 a7d5edb693cf81b8e5fbc833cf221516 files/dripgetdvd.sh 1330
 MD5 27ca218152ac3b83a6f59a84c7a7f539 files/libmpeg2.patch 3677
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCl8Tmj5H05b2HAEkRAvOWAKCKLYImKrUY60XWaVRZrfmU6DnjUACfQ1j4
+TshP5/Q872jRwlXXqlB435Y=
+=bi6X
+-----END PGP SIGNATURE-----
