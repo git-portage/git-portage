@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f9f2dcd065b79e020c30575c6c9e7e0b xmms-musepack-1.1.2.ebuild 712
 MD5 594f2638ad9133ddbfddd446b6116a0e xmms-musepack-1.00.ebuild 1593
 MD5 3c20ceb186c8880603226db0c5a79376 xmms-musepack-1.1-r1.ebuild 765
@@ -10,3 +13,10 @@ MD5 15869ff792a8fcc6f89e2968d7049ab3 files/digest-xmms-musepack-1.1 70
 MD5 15869ff792a8fcc6f89e2968d7049ab3 files/digest-xmms-musepack-1.1-r1 70
 MD5 b1b6b0f98a41c785c87182d4565122d7 files/digest-xmms-musepack-1.1.2 72
 MD5 9fd390603c336d139e7a8a2ec1ffb183 files/xmms-musepack-1.00-bad-makefile.patch 1796
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCmMxY06ebR+OMO78RAlhGAJ90Hfe+Sebq91+CvZ5OzU9xl3ZE/QCfXImZ
+AZlPy3PFQ3FIPDGQniioa3g=
+=HU6m
+-----END PGP SIGNATURE-----
