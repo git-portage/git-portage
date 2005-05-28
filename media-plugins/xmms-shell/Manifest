@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5e5c00d888637b3cdf146aa22eed13a9 xmms-shell-0.99.3-r3.ebuild 1357
 MD5 33edd908e099f9edadfcaf8958af050c xmms-shell-0.99.0-r1.ebuild 792
 MD5 32265b7ccbfe6fa47201862f76153d7a ChangeLog 3223
@@ -8,3 +11,10 @@ MD5 1e103ba06674a17c1fe67ff49a02059d files/xmms-shell-playlist.patch 2544
 MD5 253375baf62ccb75c71216b4ee5a5414 files/xmms-shell-null-skin.patch 477
 MD5 30d875b5125e84fce576af17cc7ad83c files/xmms-shell-readline.patch 280
 MD5 636c67df262fad8468681da1f715ee6b files/xmms-shell-gcc3.patch 2465
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCl7wJ06ebR+OMO78RAvNoAJ9RVUjEBn6Y+iYJRxDspra7RPF6/wCeJQdb
+oBnGCEH0CQTf0L0CChr4xXE=
+=L28H
+-----END PGP SIGNATURE-----
