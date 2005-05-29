@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 deb1658ad3983aa8e538a5c18852e0d6 libextractor-0.4.2.ebuild 807
 MD5 17baf280c99c7539683550b3edfd05ba libextractor-0.5.0.ebuild 895
 MD5 be0486f274872d885cac5eddfd6129a0 libextractor-0.3.3.ebuild 897
@@ -14,3 +17,10 @@ MD5 3ba510126b95cfdc0c77bfd3a03a9243 files/digest-libextractor-0.4.2 72
 MD5 9dcd1291fbfdc404ff1bb00b71258aa2 files/digest-libextractor-0.5.0 72
 MD5 32663ad54db490287bc8276e29dea25b files/libextractor-0.2.2-vorbisfile.patch 499
 MD5 e7ad7ab2c99a37bbb25fba980ae64dfa files/libextractor-0.5.0-autotools.patch 1527
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCmloIZ/iYVBmujdURAnxTAKDXeRjycEpKBdilrmDOYqx3j8EzVwCgnLPz
+mof93+PhGUhlVhP5/nCK+Qc=
+=p2bg
+-----END PGP SIGNATURE-----
