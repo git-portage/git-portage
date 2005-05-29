@@ -1,6 +1,9 @@
-MD5 981063aa3f5dd30b5608b06bdc0e4bb5 wvstreams-4.0.1-r2.ebuild 2223
-MD5 6685d3675fc91bafdb49880001257ad4 wvstreams-4.0.2.ebuild 2231
-MD5 9092d7fa7d4cbca11c7d69b5d5896a30 ChangeLog 8842
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 7bb7a8afe87393668a5338f46f9c1362 wvstreams-4.0.1-r2.ebuild 2190
+MD5 189122aa14c1688b58b6fa5db0ed64cd wvstreams-4.0.2.ebuild 2202
+MD5 b33258cbd3269689c41f048879d0b7f3 ChangeLog 8975
 MD5 7c8d69f73480b56621770449d11a2e17 metadata.xml 235
 MD5 16733d2b49133ec4fd75fa7dbca890ea files/wvstreams-4.0.2-MOC-fix.patch 479
 MD5 9c69b24927d041fa398d060e4e5f1bb1 files/wvstreams-4.0.1-linux-serial.patch 7563
@@ -14,3 +17,10 @@ MD5 03b73077a83c635ab211f235c7a429bf files/wvstreams-4.0.1-tcl_8_4.patch 822
 MD5 b65b1449a0bc6ff06e8c843b37717f05 files/wvstreams-4.0.2-speex-const.patch 951
 MD5 0b5b1b03e323747aa3ce30492fe18cc1 files/wvstreams-4.0.2-tcl_8_4.patch 1022
 MD5 16733d2b49133ec4fd75fa7dbca890ea files/wvstreams-4.0.1-MOC-fix.patch 479
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCmZ9DjiC39V7gKu0RAgq1AJ9yl6oH2aYyOF9WOdUVbU57dIGTpACg34sQ
+qOYl6U89TkkzSwI1/TZrLLQ=
+=BKqh
+-----END PGP SIGNATURE-----
