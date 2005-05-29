@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3d78de0ed5d6b9f64a9f638fe2b94e66 gnunet-0.6.2b.ebuild 1611
 MD5 4f9226f4408ff37f868a8367513e9c56 gnunet-0.5.4-r1.ebuild 1260
 MD5 dd86759e7dfad2158d9ba2b965e25a58 gnunet-0.6.6b.ebuild 2431
@@ -10,3 +13,10 @@ MD5 6113da0c1798ff38d8d4c1fd4c9dfbb6 files/gnunet 805
 MD5 12b0bdd38d4a838fcc6d4e8b970870f5 files/digest-gnunet-0.5.4-r1 65
 MD5 a38f2ed0178c5ebc09e4f5fc2c3baddd files/gnunet-0.6.6b-autotools.patch 2065
 MD5 7e0bb86547b0ad5e7744374d32c124f8 files/gnunet-download-manager.scm 13338
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCmk5fZ/iYVBmujdURAjT4AKD8KQoRoXqjQis3Fv+06+vaxk/9hQCgs5xD
+hIrvas7fkNOrglfkISfIcWM=
+=cgAA
+-----END PGP SIGNATURE-----
