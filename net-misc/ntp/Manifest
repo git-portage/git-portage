@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 fd508993ba497efbbe023f0b257528f5 ntp-4.2.0-r2.ebuild 3734
 MD5 327730a18e3fe170ac28659497ab097b ntp-4.2.0.20040617-r2.ebuild 4311
 MD5 9ceb922f98c6b88a28c7942e0eacfd75 ntp-4.2.0.20040617.ebuild 3989
@@ -29,3 +32,10 @@ MD5 c51a9f2f2c85ab3bcdc54a1a9e3bedb6 files/4.2.0.20040617-ipv6-fixes.patch 2541
 MD5 4e13c1a5fa0fa54e3b65ec311dd7270a files/broadcastclient.patch 451
 MD5 ab2d8e5ff97df5fdd02bfd1b7e4be633 files/ntp-client.confd 949
 MD5 dded11ceec4b8f2c1b140341a357f507 files/linux-config-phone.patch 747
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCmbfnI1lqEGTUzyQRAg/qAJ9eit95UQMwkoipTgdR85i6ukjjoQCghb+M
+eBRkgb++oAz1Bao9vYO63lI=
+=l7DS
+-----END PGP SIGNATURE-----
