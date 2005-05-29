@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 166dbc6993e7a103788bc60fdea41b4a supybot-0.80.1.ebuild 924
 MD5 2ffa619d18509f703649b13e0875b020 supybot-0.80.0_pre2.ebuild 980
 MD5 a018e19fe4705050febf66a6576b56e0 supybot-0.77.0.ebuild 924
@@ -9,3 +12,10 @@ MD5 67a13f83c4ad67ef8e6e25c06b67cf3e files/digest-supybot-0.77.0 67
 MD5 e3869089e6a6a46323a95659f1fbcd02 files/digest-supybot-0.77.2 158
 MD5 42b11d8290fbd3908d3a434cf0987f3b files/digest-supybot-0.80.1 67
 MD5 1aa681f3f8b9a3b9392c7adc5213fd74 files/digest-supybot-0.80.0_pre2 71
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCmeNAI1lqEGTUzyQRAr0MAKDIn1UCU1aPV5H1s5e05ZjOVQMmuQCfa6Tm
+bWPTMUEbnRManmELzA+c6sc=
+=2cu8
+-----END PGP SIGNATURE-----
