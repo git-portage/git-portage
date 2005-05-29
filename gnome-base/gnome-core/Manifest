@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f44733014efe13b73f4bdfd14bee6db8 ChangeLog 2802
 MD5 c8af051f1efeea015f3f5660fb510b59 gnome-core-1.4.0.8.ebuild 2456
 MD5 add7f10e3182dbe6c679c508d79d0a67 gnome-core-1.4.1.ebuild 2362
@@ -14,3 +17,10 @@ MD5 66322a190c2812cd7e7ed0ee7bc672b1 files/gnome-core-1.4.0.8-configure.in.patch
 MD5 66322a190c2812cd7e7ed0ee7bc672b1 files/gnome-core-1.4.1-configure.in.patch 282
 MD5 7bb900a10ddfc5318418e7ee976d3dd4 files/gnome-core-es-doc.patch 1201
 MD5 130d1b13c61a5028d8c58a7dedee210d files/gnome-core-1.4.2-gcc34.patch 16680
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCmkJZCRZPokWLroQRAqw9AJ9Nfk/ifoRJuvdp56VRFdajBHDPNwCglo1p
+tDJrUtFe5esUhMxzGjK3Wd8=
+=IMdG
+-----END PGP SIGNATURE-----
