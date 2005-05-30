@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9dd901e4c2a68f204f1b2dce5cff066b newt-0.50.35-r3.ebuild 898
 MD5 85adf51bae0096b4d4b9f13c146a7d5c newt-0.50.35-r2.ebuild 859
 MD5 05a3d2b2cf5f4c237d48322136b3e7bf newt-0.50.35-r4.ebuild 1568
@@ -10,3 +13,12 @@ MD5 6d5a67f6fae3839c22aa176ffbd96790 files/digest-newt-0.50.35-r3 64
 MD5 6d5a67f6fae3839c22aa176ffbd96790 files/digest-newt-0.50.35-r4 64
 MD5 27e2ae6e4d99b4a772f4520a89ce73f9 files/newt-0.51.4-fix-wstrlen-for-non-utf8-strings.patch 266
 MD5 9910bf0c9ea69bf046e7801c2c6958ea files/newt-gpm-fix.diff 177
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iQCVAwUBQpqCfJ4WFLgrx1GWAQJBoQP/diN/rFBIEfDltbOFZl9LTL9i6T/WMK8p
+ALcZswL6aClXPVOoyuSBKgZ/RxxnaK1ZRMDkSkhZ1XhPxJleR99n/CKtyakfwx3U
+4m2w6ec9WPAjMu6gP+Lc8VDphUq9coy6CwxXkvRjGiT/VwOMTBQQh2ka4nPpzd1g
+Y3BWR0Y2+mk=
+=6Gt7
+-----END PGP SIGNATURE-----
