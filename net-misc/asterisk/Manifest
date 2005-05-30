@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4b0ab975fef56dad3891b692915c1df9 asterisk-1.0.7.ebuild 9695
 MD5 48aa0235a18b7329e3a9cb78259bf907 asterisk-1.0.2.ebuild 5556
 MD5 352b08882243bb0c915c6e3bdd203272 asterisk-1.0.5-r1.ebuild 7140
@@ -37,3 +40,12 @@ MD5 920f8ae54f895cfa46a8a037c865e59a files/1.0.0/asterisk.rc6 517
 MD5 6a50db2ee46d4139128d0c4225ac071f files/1.0.0/asterisk-uclibc-dns.diff 433
 MD5 0c31aac944f4fdff2b26b446d0d0eef4 files/1.0.0/asterisk-1.0.7-initgroups.diff 1826
 MD5 08d718c04e911f465f867577d649d204 files/1.0.0/asterisk-1.0.5-uclibc-dns.diff 304
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iQCVAwUBQpqGCJ4WFLgrx1GWAQKWDwP+OJOwyip02I+yTcQstfaMQ2MLh+m37HQv
+sgOUWGMvNKhPBaSedpcNn61WUH+590lFuwepVKJh6HkKX5+WbTlgx/m8zTCoiJmx
+e+nDwXENTFrg1wJMfqfJxsq+3A5ii6NZMtU4LbrVZvPaGzCWw144cwLX2AuA2nq/
+hwVZPL20554=
+=6/9g
+-----END PGP SIGNATURE-----
