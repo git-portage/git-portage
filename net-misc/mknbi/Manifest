@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2f753ebd29690d305edf094cf62024a4 ChangeLog 1784
 MD5 0cefd24cbde09be9558582aa580b5e92 mknbi-1.2.11.ebuild 870
 MD5 a3a1403ba800b2b1ff9cee7d56af7347 mknbi-1.2.12.ebuild 871
@@ -10,3 +13,10 @@ MD5 5907f8ed1ed6b036f9ce50c8e0d09636 files/digest-mknbi-1.4.0 63
 MD5 aa0982b30b1c97a47e4ac96ef0031ad1 files/digest-mknbi-1.4.1 63
 MD5 1835145d0916ad9628e9341502071873 files/digest-mknbi-1.4.3 63
 MD5 dc84e8754114dacfcab0eb3615b5caad files/mknbi-1.4.3-nossp.patch 511
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCm1ye5mJXAu5GbtIRAvyhAJwP3l/R57eGrqmlEzEENWjTEmxHtgCfUs2+
+mxZnCA3cl17+NpZkqvyB+gA=
+=AHJG
+-----END PGP SIGNATURE-----
