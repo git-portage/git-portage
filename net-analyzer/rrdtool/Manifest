@@ -3,7 +3,7 @@ MD5 4113d9e7a5b0bd4bc235a3eb3939eb59 rrdtool-1.2.8.ebuild 2735
 MD5 177f6939c1ba72adbbd42b99ea93121f rrdtool-1.0.50.ebuild 2753
 MD5 58a02fcd2b0cdf655d52d18fb34beab2 rrdtool-1.2.9.ebuild 2626
 MD5 a899bdbfc828fd8d3b6eccb20639b84b rrdtool-1.0.47.ebuild 2822
-MD5 693f265b669c75ee0c35880925d2a412 ChangeLog 10138
+MD5 6597e148e3d6de00f413c477a5f209f9 ChangeLog 10137
 MD5 9a548ab51046767f94f38082a1f6ef6e rrdtool-1.2.6.ebuild 2700
 MD5 1a739170238a1fae241a8a0df21462e9 metadata.xml 241
 MD5 fd937eb5e7f8eab72f05e74d1533ddab rrdtool-1.0.45-r2.ebuild 2624
