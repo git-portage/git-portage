@@ -1,5 +1,5 @@
-MD5 7cfac6410a9209dbb54a5583755c202d xfsprogs-2.6.25.ebuild 1808
-MD5 cde216e09ea08598367c2d6a3db87193 ChangeLog 8398
+MD5 983416180a61c32b538fb4124a14bbd7 xfsprogs-2.6.25.ebuild 1806
+MD5 2e7d98f6232e2c4e4033a1e627c968bb ChangeLog 8396
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 8eba105c0398707194a64a5be0075310 files/2.6.25-uclibc-fadvise.patch 849
 MD5 0ccba5779bd5c7edc42cac54ed360fa5 files/digest-xfsprogs-2.6.25 71
