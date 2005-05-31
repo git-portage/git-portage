@@ -3,10 +3,9 @@ MD5 4699605e930914b11ab0b894d5b8c545 fetchmail-6.2.4.ebuild 2143
 MD5 0e3513a92097cbf36de0d981f0c6489e fetchmail-5.9.14.ebuild 1897
 MD5 93696635908b3e9f12e791de449a82c8 fetchmail-6.2.2-r2.ebuild 2043
 MD5 8a5a81b6cd89c3cf5fe341accd3ed708 fetchmail-6.2.3.ebuild 1962
-MD5 de49259a425b9ad47033069099001678 fetchmail-6.2.5-r2.ebuild 2556
-MD5 1be1f3f53a5d4d71c770b37e78ab0168 x.diff 829
+MD5 f43b4b5b36e564d8d7af772dc9b2cac7 fetchmail-6.2.5-r2.ebuild 2555
 MD5 47387ea53567967ca0058104cba62288 fetchmail-6.2.5.ebuild 2443
-MD5 921c1bb66d21cd81829403294f7ae01b ChangeLog 9053
+MD5 1e9d30d413939c86a67d1e2808ac3944 ChangeLog 9230
 MD5 5721b86fd871bdfab77231abc6e02f68 metadata.xml 161
 MD5 15c2c7669d67b58e452bf2e5879fecde fetchmail-6.2.5-r1.ebuild 2567
 MD5 5b0a50b0a0193afbcb7eff9ac3d5fcb7 files/digest-fetchmail-6.2.1-r1 68
