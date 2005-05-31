@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5a8290e44006ccff0dff3094555d6366 metadata.xml 257
 MD5 c004692694fe8e03aa18c23b13b1411c xmms-1.2.10-r15.ebuild 4969
 MD5 26c8a5e7b0f74097b63d7ff7d230a93e xmms-1.2.8-r4.ebuild 5194
@@ -10,3 +13,10 @@ MD5 7d2f3807ebbff435b909ecf0539cbf4f files/xmms.desktop 722
 MD5 4190322696afc5e46dac14804b8aef70 files/po-update.pl 10510
 MD5 b9dc01a8f53d43e1a63281b71376fcff files/digest-xmms-1.2.10-r14 354
 MD5 4414d53b65874ac2c610a3f2396654cd files/digest-xmms-1.2.10-r13 354
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCnNkbArHZZzCEUG0RAuQRAKCLIUghNdb4H8VwB9bRbO1xNHmzCwCeNE/v
+/OSNXKKzqEAaJ7mNXnMeE+A=
+=9UDK
+-----END PGP SIGNATURE-----
