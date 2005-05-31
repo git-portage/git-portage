@@ -1,12 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/gimp-print/Attic/gimp-print-5.0.0_beta3.ebuild,v 1.2 2005/04/09 15:49:06 corsair Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/gimp-print/Attic/gimp-print-5.0.0_beta4.ebuild,v 1.1 2005/05/31 22:40:53 lanius Exp $
 
 inherit flag-o-matic libtool
 
 IUSE="cups foomaticdb gtk nls readline"
 
-MY_P=gutenprint-5.0.0-beta3
+MY_P=gutenprint-5.0.0-beta4
 
 DESCRIPTION="Gimp Print Drivers"
 HOMEPAGE="http://gimp-print.sourceforge.net"
@@ -17,7 +17,7 @@ DEPEND="cups? ( >=net-print/cups-1.1.14 )
 	media-gfx/imagemagick
 	virtual/ghostscript
 	sys-libs/readline
-	gtk? ( =x11-libs/gtk+-1.2* )
+	gtk? ( x11-libs/gtk+ )
 	dev-lang/perl
 	foomaticdb? ( net-print/foomatic-db-engine )"
 
