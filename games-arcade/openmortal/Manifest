@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 36912e0ff00e551b555a26047213fd88 openmortal-0.7.ebuild 766
 MD5 d51fe7e6f1b778974ba1f0fea0e37e9f ChangeLog 1498
 MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
 MD5 1bf29891d934d4c0c23042adec613afd files/digest-openmortal-0.7 69
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCnOf6ntT9W3vfTuoRAvYIAJ442kFLLTopxMsGPH41ThUDAqaovACfdDJp
+YvjOF9DR2sgjVKFUx6sN9kU=
+=xNnm
+-----END PGP SIGNATURE-----
