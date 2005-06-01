@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e29347046fee019dcd29ce4f3d2759a6 ripmime-1.4.0.3.ebuild 608
 MD5 59dfe372554b5a092fb6a12c2a828685 ripmime-1.4.0.5.ebuild 607
 MD5 ae22972624f83cffb964f736ffaeac8e ripmime-1.4.0.0.ebuild 601
@@ -8,3 +11,10 @@ MD5 32049cc5b4944af4e758213797d23072 files/digest-ripmime-1.3.2.3 67
 MD5 7b19e7a488be3dae5b78763a62adda53 files/digest-ripmime-1.4.0.0 67
 MD5 7311ff5392ada604748c0c6433028bb2 files/digest-ripmime-1.4.0.3 67
 MD5 00d684da74cd7e31b78c9d86ada1bf19 files/digest-ripmime-1.4.0.5 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCna3wQlM6RnzZP+IRArmCAKC9W1koxIfGW3/Sk55x2zl3Q6dU5ACgiKNx
+krsd0K988cENg5KfYXxNPmk=
+=w3as
+-----END PGP SIGNATURE-----
