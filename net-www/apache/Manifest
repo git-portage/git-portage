@@ -26,7 +26,7 @@ MD5 76fcf04846de38c8e17e4eb91a3564f8 apache-2.0.54-r2.ebuild 12281
 MD5 5a8c76df38a1569a641933ce49383e6f apache-2.0.54-r3.ebuild 12377
 MD5 fa6fc4e42369397f5f4d210d6fc2ee47 apache-2.0.54-r4.ebuild 12385
 MD5 327548e6f3ae9f9edceec26421703db6 apache-2.0.54-r5.ebuild 12485
-MD5 6735f0386ddf8c5d6af7622980353e21 apache-2.0.54-r6.ebuild 12702
+MD5 cbb72dea39974618fc8a856b0e051221 apache-2.0.54-r6.ebuild 12701
 MD5 b34b4d92bab51e4eab58fd5021beb7c2 apache-2.0.54.ebuild 12084
 MD5 37f5ed6f2423381241b029e6685bcdd2 metadata.xml 493
 MD5 8b12871dd74fcd3f4fdf451c9d8c259e files/00_apache_manual.conf 781
