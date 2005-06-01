@@ -1,4 +1,6 @@
-MD5 44c39c6ad372a8e5a5e7ee3311f703a7 metadata.xml 160
 MD5 0df232bce91c36939aa85ff802d6eed3 bobotpp-2.1.6.ebuild 1190
 MD5 94855f513f0e39f694b6b6d21a75164f ChangeLog 1173
+MD5 44c39c6ad372a8e5a5e7ee3311f703a7 metadata.xml 160
+MD5 0df232bce91c36939aa85ff802d6eed3 bobotpp-2.1.7.ebuild 1190
 MD5 50c917808fc70d1bdf66c88c169ef853 files/digest-bobotpp-2.1.6 65
+MD5 470cb884861677a99c3b453a331b8c30 files/digest-bobotpp-2.1.7 65
