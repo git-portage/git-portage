@@ -17,6 +17,7 @@ MD5 653faa345279f68a0912dd967b66e253 profuse-0.20.2-r1.ebuild 668
 MD5 865a19f75c7490d349d3042e2efe30d1 profuse-0.20.3.ebuild 665
 MD5 f859fa10ebca131244fabc77e8056f4f profuse-0.21.0.ebuild 787
 MD5 03c16f53628c7694419f100d9166d77a profuse-0.22.0.ebuild 802
+MD5 03c16f53628c7694419f100d9166d77a profuse-0.22.0-r1.ebuild 802
 MD5 6ea98f01c28703bf36ccf141519518d2 files/digest-profuse-0.1 62
 MD5 6382a08f07553fe4ffe9297e2ab85632 files/digest-profuse-0.11 64
 MD5 56089f6fb4c0ff287512cbf3f56031e2 files/digest-profuse-0.12 64
@@ -34,3 +35,4 @@ MD5 377772cd5ffa501245d239a85606ca78 files/digest-profuse-0.20.2-r1 66
 MD5 576e26d21f8e36a1cc918734e72ec395 files/digest-profuse-0.20.3 66
 MD5 2b8d1ba0ecb5e3976ea7c8aef4e672c8 files/digest-profuse-0.21.0 66
 MD5 c5ac74f5d15582c4449be498824e9d8c files/digest-profuse-0.22.0 66
+MD5 c5ac74f5d15582c4449be498824e9d8c files/digest-profuse-0.22.0-r1 66
