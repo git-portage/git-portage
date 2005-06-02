@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 63cb34216499b197d4db4ca881e90a36 qmail-1.03-r16.ebuild 21193
 MD5 01792682d66cb4b8376f0ed90ae831af qmail-1.03-r15.ebuild 18027
 MD5 3e93e40f32b6d5298aee06b4c37760b1 ChangeLog 28683
@@ -62,3 +65,10 @@ MD5 8d015331a1c3f0ad22f40bb6837569ca files/1.03-r16/qmail-logmail.patch 269
 MD5 c0d3c5bd70a49284eb8cc8a5f952202e files/1.03-r16/Makefile-relaymxlookup.patch 1988
 MD5 a8af4cf9b59e294737987624bc917e80 files/1.03-r16/smtpplugins 614
 MD5 b968f9de39ff3cac7e6abbd8705af5f2 files/1.03-r16/qmail-smtpd-relay-reject.gentoo.patch 1206
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCnzDUI1lqEGTUzyQRAhw+AJ0RfwOqeMFoaMcGuqmhaiqU1JtyyACdEF9a
+JQMEx+0/42biACbIu+QQLx0=
+=yeLW
+-----END PGP SIGNATURE-----
