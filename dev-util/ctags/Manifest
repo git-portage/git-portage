@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 775025794e38c6c0c89e34d51ca07cae ChangeLog 4812
 MD5 7bf5444b93e02846519665bc70e2557c ctags-5.2.3.ebuild 1128
 MD5 746f157bc17c254b1760e42817cac122 ctags-5.5-r1.ebuild 1176
@@ -14,3 +17,10 @@ MD5 ac053acfd4f28f9c48e9d3c139f85e90 files/digest-ctags-5.5.4 63
 MD5 ac053acfd4f28f9c48e9d3c139f85e90 files/digest-ctags-5.5.4-r1 63
 MD5 e6d9c978c79b19927ef1cb860cd0998a files/ctags-5.5.4-ruby-classes.patch 601
 MD5 ac053acfd4f28f9c48e9d3c139f85e90 files/digest-ctags-5.5.4-r2 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCnw6tLLFUmVNQ7rkRAoXMAKCUMz/jHb946cWQ5ROW71aXE09ZmQCfeIu2
+1/z6ikEq6/2fz9H468l3AeU=
+=k5cd
+-----END PGP SIGNATURE-----
