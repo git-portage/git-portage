@@ -1,3 +1,4 @@
+MD5 af7f25de947d5d357a4a2db3a0664d92 qt-4.0.0_beta2-r3.ebuild 5886
 MD5 4f8e5fad7ce7529afc9f924f618ae0f0 qt-3.3.4-r3.ebuild 8950
 MD5 88875c77c2482de25169850cfc19faf5 qt-3.3.3-r1.ebuild 7987
 MD5 f95213fd78b54c46551f61351142beb7 qt-4.0.0_beta2.ebuild 5982
@@ -17,6 +18,7 @@ MD5 b9689fa9461944ba25ebf0acde5fb70b files/qt-3.3.4-flickerfree_qiconview_buffer
 MD5 9207a8f92e32bd42c37464f13abc7b3c files/digest-qt-4.0.0_beta1-r5 99
 MD5 480ed8db4d3b3421ef01741ab58f6673 files/digest-qt-4.0.0_beta2-r1 100
 MD5 e10e4c495261d830343269e9486d0d52 files/digest-qt-4.0.0_beta2-r2 100
+MD5 99d57476c4605ca076db91f8f086a326 files/digest-qt-4.0.0_beta2-r3 100
 MD5 4122542a37b787efb9476b0fb1fdafc0 files/qt-3.3.4-0047-fix-kmenu-widget.diff 992
 MD5 77ee6484af384828441336443499ec0e files/digest-qt-3.3.3-r1 238
 MD5 c115b4205c2a2eab0a547375e2f62460 files/digest-qt-3.3.4-r2 166
@@ -42,3 +44,4 @@ MD5 8f75ba0e151481962fcb239dc216cf39 files/qt-3.3.4-0051-qtoolbar_77047.patch 12
 MD5 471c09f2792eec732d715a983b7f7244 files/qt-3.3.3-immodule-20040819-event-inversion-20040908.diff 4150
 MD5 eb6eb6b68c8f747b12a3a53efc4b6480 files/0038-dragobject-dont-prefer-unknown.patch 2551
 MD5 e0a483959b1d3dad0fc58adc242624c1 files/qt-3.3.3-amd64-fullscreen.patch 1220
+MD5 fff1c03b4a3ad38904a30d1b2de88a07 files/qt4b2r3_nomkdir.patch 866
