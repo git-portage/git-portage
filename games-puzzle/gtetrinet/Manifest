@@ -1,3 +1,4 @@
+MD5 df93930c42a88aa1678a14ebbe0b300f gtetrinet-0.7.9.ebuild 1531
 MD5 2991c859700ebb3aed2fa6125716df4c gtetrinet-0.7.4.ebuild 1434
 MD5 df93930c42a88aa1678a14ebbe0b300f gtetrinet-0.7.8.ebuild 1531
 MD5 8908482225f399bef07d8d970b92b32c gtetrinet-0.7.5.ebuild 1519
@@ -8,3 +9,4 @@ MD5 068602da69e46138504760c11850a4f7 files/digest-gtetrinet-0.7.4 143
 MD5 cd9f875bc7b09e6f41dea9e0f9004919 files/digest-gtetrinet-0.7.5 143
 MD5 28baac0d4fdcd05afefc657e27785734 files/digest-gtetrinet-0.7.7 143
 MD5 b8ffa6af6ed9e325f9fbe7b327086186 files/digest-gtetrinet-0.7.8 143
+MD5 cc4bb567009396c6013ba18cb4d79307 files/digest-gtetrinet-0.7.9 143
