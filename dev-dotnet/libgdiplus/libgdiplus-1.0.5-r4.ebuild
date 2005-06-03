@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/libgdiplus/Attic/libgdiplus-1.0.6-r1.ebuild,v 1.4 2005/05/12 02:29:45 latexer Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/libgdiplus/Attic/libgdiplus-1.0.5-r4.ebuild,v 1.1 2005/06/03 22:00:37 latexer Exp $
 
 inherit libtool eutils
 
@@ -30,8 +30,8 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 
-	epatch ${FILESDIR}/${PN}-1.0.5-cairo-0.3.0-compat.diff \
-		|| die "epatch failed"
+	epatch ${FILESDIR}/${P}-cairo-0.3.0-compat.diff || die "epatch failed"
+	epatch ${FILESDIR}/${PN}-1.0.6-giflib.diff || die "epatch failed"
 
 	# See bug #55916
 	einfo "Fixing a libtool problem"
@@ -41,9 +41,9 @@ src_unpack() {
 }
 
 src_compile() {
-	local myconf=""
+	local myconf="--with-cairo=installed --disable-glitz"
 	use tiff ||  myconf="--without-libtiff ${myconf}"
-	use gif ||  myconf="--without-libungif ${myconf}"
+	use gif ||  myconf="--without-libgif ${myconf}"
 	use jpeg ||  myconf="--without-libjpeg ${myconf}"
 	use png ||  myconf="--without-libpng ${myconf}"
 
