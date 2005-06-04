@@ -1,20 +1,23 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/servletapi/Attic/servletapi-2.4-r1.ebuild,v 1.6 2005/04/03 01:04:53 weeve Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/servletapi/Attic/servletapi-2.4-r2.ebuild,v 1.1 2005/06/04 16:02:01 luckyduck Exp $
 
 inherit eutils java-pkg
 
 DESCRIPTION="Servlet API 5 from jakarta.apache.org"
 HOMEPAGE="http://jakarta.apache.org/"
 SRC_URI="mirror://apache/jakarta/tomcat-5/v5.0.19/src/jakarta-tomcat-5.0.19-src.tar.gz"
-DEPEND=">=virtual/jdk-1.4
-			  >=dev-java/ant-core-1.5
-		jikes? ( dev-java/jikes )"
-RDEPEND=">=virtual/jdk-1.4"
+
 LICENSE="Apache-1.1"
 SLOT="2.4"
 KEYWORDS="x86 sparc ppc amd64 ppc64"
-IUSE="jikes doc"
+IUSE="doc jikes source"
+
+DEPEND=">=virtual/jdk-1.4
+	>=dev-java/ant-core-1.5
+	jikes? ( dev-java/jikes )
+	source? ( app-arch/zip )"
+RDEPEND=">=virtual/jdk-1.4"
 
 S=${WORKDIR}/jakarta-tomcat-5.0.19-src/jakarta-servletapi-5
 
@@ -25,9 +28,9 @@ src_unpack() {
 }
 
 src_compile() {
-	antflags="jar"
-	use jikes && antflags="${antflags} -Dbuild.compiler=jikes"
+	local antflags="jar"
 	use doc && antflags="${antflags} javadoc examples"
+	use jikes && antflags="${antflags} -Dbuild.compiler=jikes"
 	ant ${antflags} -f jsr154/build.xml || die "compilation problem"
 	ant ${antflags} -f jsr152/build.xml || die "compilation problem"
 }
@@ -46,8 +49,7 @@ src_install () {
 		mv examples ${S}/docs/jsp/examples
 	fi
 
-	cd ${S}
-	java-pkg_dojar *.jar || die "Unable to install"
+	java-pkg_dojar *.jar
 	use doc && java-pkg_dohtml -r docs/*
+	use source && java-pkg_dosrc jsr{152,154}/src/share/javax
 }
-
