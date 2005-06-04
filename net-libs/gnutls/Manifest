@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9dceb2d951d9aef7356cbe35f525c916 gnutls-1.2.4.ebuild 2317
 MD5 9a10b871d3dcc296623bbebed8da64b9 gnutls-1.2.3-r1.ebuild 2422
 MD5 08081d2e15793082b967a6f59be65f4f gnutls-1.0.17.ebuild 2420
@@ -12,3 +15,10 @@ MD5 ee48c699bf5727fa6284864dc62d1c14 files/digest-gnutls-1.0.25 66
 MD5 29d8c263065fa5908f9b6d9e5ea265b7 files/gnutls-1.2.3-gcc4.patch 417
 MD5 5deb0ddb33596df840a663273ddf9c2b files/digest-gnutls-1.2.3 66
 MD5 0a6c7f63908a38a6e28d34a68accee2a files/digest-gnutls-1.2.4 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCoZvO06ebR+OMO78RAqEUAJ99eaho5Ezf3tZWgYWsCoWsrqgL7ACfdKd5
+4yn1HrPQK6z7sZn1Ez+grHk=
+=Dvka
+-----END PGP SIGNATURE-----
