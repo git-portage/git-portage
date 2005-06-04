@@ -3,12 +3,12 @@ MD5 f1eccb6d2c06d2ecaf19e44477012f4d gentoo-sources-2.6.11-r7.ebuild 1624
 MD5 c1ee17378c95e5a55411ba392601942d gentoo-sources-2.6.11-r9.ebuild 1610
 MD5 45bb97671264e772e7c5711ffd5e39be gentoo-sources-2.6.10-r7.ebuild 1620
 MD5 cd14a3055fad29bf0256428a774ea70d gentoo-sources-2.6.7-r19.ebuild 1455
-MD5 b4ecffa8e01f3ad14a0e108e712ce3fc gentoo-sources-2.6.11-r10.ebuild 1611
+MD5 adefa06b4196e4e4cd80862ec9ed1f55 gentoo-sources-2.6.11-r10.ebuild 1612
 MD5 16b31595b302b6eba105f3786457192d gentoo-sources-2.6.11-r8.ebuild 1620
 MD5 1ec0f7ec45dce6f53d70a7df0fabe7a5 gentoo-sources-2.6.1-r2.ebuild 2235
 MD5 386b6b1084b1c4cabfad87fc8b603114 gentoo-sources-2.6.10-r6.ebuild 1607
 MD5 2d2150ca2b1b3db3d469a5a2356161fb gentoo-sources-2.6.9-r9.ebuild 1625
-MD5 f518e14acd9c5813a82ea2b96c991ad5 ChangeLog 40146
+MD5 036b81dac8030e66ee905c88be954d3d ChangeLog 40476
 MD5 410c3afeb274354a7ce68257edc18012 metadata.xml 283
 MD5 29e531cdd3f2effce5e31a1f2afb5b5d files/gentoo-sources-2.4.28.brk-locked.patch 8912
 MD5 8c35751caf824a9dacb02e80d6189b2e files/gentoo-sources-2.4.CAN-2004-1137.patch 1764
