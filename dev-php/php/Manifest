@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c8beaf639730248506dd2db00cb87061 ChangeLog 21304
 MD5 38fe937e954ab7109395cefa86fcd2d4 metadata.xml 384
 MD5 fbba8d77e8712b6026b0815967281540 php-4.3.10.ebuild 1137
@@ -33,3 +36,10 @@ MD5 e1385dbdad960ad1d13116d33814dacd files/digest-php-4.3.11 210
 MD5 cdec3284251432935f950c2d15a405b7 files/php-4.3.11-flash.patch 694
 MD5 b2aa5952d5c805b3e57a5a6bf0f0b8d0 files/php-4.3.11-gmp.patch 925
 MD5 6fb14885b5124b2bb92eb7a02ac24b01 files/php-5.0.3-gcc4.patch 432
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCoRfLCRZPokWLroQRAuWuAJ4+gy0UntoJN8QD5NXvwKjMZnMk6ACfWA/j
+Mxm0FBk52cQjy3+Dndznv30=
+=Gm0v
+-----END PGP SIGNATURE-----
