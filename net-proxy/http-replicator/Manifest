@@ -1,5 +1,5 @@
-MD5 7d08f45cb7eed133619e8a0ff782140b http-replicator-3.0.ebuild 1901
-MD5 3c672fd261641a7175a208a0743aca82 ChangeLog 1014
+MD5 4c9b380d7a648e978207c3102a11b42f http-replicator-3.0.ebuild 1903
+MD5 efcf708cc7a73657b587a3320f1cce75 ChangeLog 1137
 MD5 7f864f339d692405288113afa5f26752 metadata.xml 225
 MD5 ba1bdb64c5a2a89f25600f0d02104876 files/http-replicator-3.0.conf 1703
 MD5 b33593510641bdee7731d17d5788d521 files/http-replicator-3.0.init 778
