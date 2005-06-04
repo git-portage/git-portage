@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a5f4f741b18ea9b78ba7c176c5a923ad trac-0.7.ebuild 1300
 MD5 e574ce3d03988bd963e4282466d0f143 trac-0.8.1.ebuild 1629
 MD5 a3820e64fdb8c4b74bcbc090ce7fc5a9 trac-0.6.1.ebuild 1289
@@ -17,3 +20,10 @@ MD5 ab4ca7142e33b94cdd025ce1c67f0e01 files/digest-trac-0.8.1 62
 MD5 ba2d3ff29f0357234fd123f84c210ec3 files/digest-trac-0.8.2 62
 MD5 d9fb4f2a1d8f5d4653af732dd6504f7f files/0.8.1-postinst-en.txt 1242
 MD5 76a6e6911b2d58e07f08566da7298f3f files/postinst-en.txt 631
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCoiHQI1lqEGTUzyQRAkPzAKCsT9emDA8w/UWul8CI5K8hilfR8ACg1ouG
+gpql5v7KgDX2fcTePiXlsis=
+=AzTp
+-----END PGP SIGNATURE-----
