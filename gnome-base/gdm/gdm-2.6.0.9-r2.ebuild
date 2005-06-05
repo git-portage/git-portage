@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/Attic/gdm-2.6.0.9-r1.ebuild,v 1.1 2005/06/03 22:14:47 foser Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/Attic/gdm-2.6.0.9-r2.ebuild,v 1.1 2005/06/05 15:05:46 foser Exp $
 
-inherit gnome2 eutils pam
+inherit gnome2 eutils
 
 DESCRIPTION="GNOME2 Display Manager"
 HOMEPAGE="http://www.jirka.org/gdm.html"
@@ -14,9 +14,9 @@ IUSE="tcpd xinerama selinux ipv6 pam"
 
 SRC_URI="${SRC_URI}
 	mirror://gentoo/gentoo-gdm-theme-r2.tar.bz2"
-MY_V="${PV%.*}-openpam"
+MY_V="${PV%.*}"
 
-RDEPEND="pam? ( virtual/pam )
+RDEPEND="pam? ( >=sys-libs/pam-0.72 )
 	!pam? ( sys-apps/shadow )
 	>=x11-libs/pango-1.4.1
 	>=x11-libs/gtk+-2.4
@@ -55,6 +55,10 @@ src_unpack() {
 	cd ${S}
 	# remove unneeded linker directive for selinux (#41022)
 	epatch ${FILESDIR}/${PN}-2.4.4-selinux_remove_attr.patch
+	# fix ipv6 flag (#90991)
+	epatch ${FILESDIR}/${P}-ipv6_config.patch
+
+	autoconf || die
 
 }
 
@@ -89,11 +93,22 @@ src_install() {
 	exeinto /etc/X11/dm/Sessions
 	doexe ${FILESDIR}/${MY_V}/custom.desktop
 
-	# We replace the pam stuff by our own
-	rm -f ${D}/etc/pam.d/gdm
+	if use pam ; then
+		# We replace the pam stuff by our own
+		rm -f ${D}/etc/pam.d/gdm
 
-	dopamd ${FILESDIR}/${MY_V}/pam.d/*
-	dopamsecurity console.apps ${FILESDIR}/${MY_V}/security/console.apps/gdmconfig
+		# pam startup
+		dodir /etc/pam.d
+		insinto /etc/pam.d
+		doins ${FILESDIR}/${MY_V}/pam.d/gdm
+		doins ${FILESDIR}/${MY_V}/pam.d/gdmconfig
+		doins ${FILESDIR}/${MY_V}/pam.d/gdm-autologin
+
+		# pam security
+		dodir /etc/security/console.apps
+		insinto /etc/security/console.apps
+		doins ${FILESDIR}/${MY_V}/security/console.apps/gdmconfig
+	fi
 
 	# use graphical greeter local
 	dosed "s:#Greeter=/usr/bin/gdmlogin:Greeter=/usr/bin/gdmgreeter:" /etc/X11/gdm/gdm.conf
