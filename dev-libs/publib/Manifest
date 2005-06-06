@@ -1,3 +1,5 @@
-MD5 5697e0977abfa463066ef3835193c341 publib-0.31.ebuild 1295
 MD5 c1378c282f13317751ecc20b0c080ea1 ChangeLog 1366
+MD5 5697e0977abfa463066ef3835193c341 publib-0.31.ebuild 1295
+MD5 3ca9ecdd636c83a774fa6427be2b3dcf publib-0.38.2.ebuild 1492
 MD5 520a52a67a4ded579319584f1fcf9046 files/digest-publib-0.31 63
+MD5 047c8cf89ab3ca02545fc8fc7d651e1b files/digest-publib-0.38.2 132
