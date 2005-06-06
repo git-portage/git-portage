@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a60be05fc4276f94e67e4bab69fc9adc ChangeLog 14724
 MD5 b47207aedd0149443faa2152950714ed metadata.xml 401
 MD5 0da1408981233bd78976ee644a3a5e84 proftpd-1.2.10-r1.ebuild 4395
@@ -21,3 +24,10 @@ MD5 50955f0d375360841d50a82b9589e435 files/proftpd-1.2.9-privescal-fix.patch 588
 MD5 b338504ed873219e368abab7df6c276d files/proftpd.conf 1704
 MD5 55ca24c9ee61b9ed94968c664baaeace files/proftpd.rc6 731
 MD5 4d676b70c97bc6daabd8c2ba8d52d27a files/proftpd.xinetd 295
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFCpC4f8zY1VwezZiERAjxaAJsEw1XyKLSRP+mdMG8fXILbIqxi+wCgjNeT
+0/zHr8kjca8M6Th/SWit3lY=
+=2Z8O
+-----END PGP SIGNATURE-----
