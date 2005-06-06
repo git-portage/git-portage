@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 23a5c32533900128dac2ca45b5889521 audit-0.8.1.ebuild 1568
 MD5 7b7ff6f6407bc96c457a91f20a6f0c28 audit-0.7.3.ebuild 1564
 MD5 b7ae6b273342ab1c9a026a88c13cafa1 audit-0.7.2-r1.ebuild 1571
@@ -16,3 +19,10 @@ MD5 4d90073ff2ad766b0878e6b160e318bd files/digest-audit-0.8.1 62
 MD5 d0c04da868c3fe0dff941187f054ecf6 files/auditd.confd 474
 MD5 362246ef4478da970cb07885a1218e39 files/digest-audit-0.7.3 62
 MD5 218045283f07df1580cadf6ef3473da0 files/digest-audit-0.9.1 62
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCo7eJjUHll2nfF60RAoABAJ9CVf03JdIHVEUJqvNv7uVVb+sPQgCgroLE
+t1Freqsqt46GjlrmQHOp2/k=
+=WJWV
+-----END PGP SIGNATURE-----
