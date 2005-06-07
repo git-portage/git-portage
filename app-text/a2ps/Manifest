@@ -1,5 +1,5 @@
 MD5 bcf79b34d9acde4ba5f4c6cc40d9bd5a a2ps-4.13c-r2.ebuild 1986
-MD5 11fd1053faff66872b3c10e654ab7db5 ChangeLog 5859
+MD5 4700e28f4bad925ffc38ec2156aa6a84 ChangeLog 5966
 MD5 26dba0307103de2d599fe832e219de72 metadata.xml 178
 MD5 5a02e00e2362711886e28f0d28b299dd files/a2ps-4.13-stdout.diff 462
 MD5 df6bc895cc6fb0fd47f22fd1c36d1ed3 files/a2ps-4.13c-fixps.patch 549
