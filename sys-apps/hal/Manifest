@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 731695e9263a5a2e1eeba290b36078d5 metadata.xml 219
 MD5 0aeed63ad6c07df71c2aa6b0d7a4adfc ChangeLog 5644
 MD5 2cf5b3c9219c87b1d9aee01f4f5f19bb hal-0.4.5-r2.ebuild 3118
@@ -16,3 +19,10 @@ MD5 58ed07e2de5e898a1e4eeedf595ddb06 files/hal-0.4.7-sys_floppy_detection.patch 
 MD5 b0e12a62ce698e1eb2a32139498330cd files/hal-0.4.5-gentoo_gphoto2_usermap.patch 817
 MD5 a0ce1c268e0b7d0967ec7b8e0d0d26d2 files/hal-0.4.1-old_storage_policy.patch 1216
 MD5 64253ef1f2dcf68b2d82429026280085 files/hal-0.4.7-dont_add_device_twice-r1.patch 691
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCpgTNjUHll2nfF60RAqZVAKCejjXnCdMefJIONg88uNNHQphxtQCfUA0x
+nedQWmqFdu4+PvKto4fIGoY=
+=XuXF
+-----END PGP SIGNATURE-----
