@@ -1,15 +1,5 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 0c0cb37105161f5db7eed14539f958e1 ebtables-2.0.6.ebuild 1032
-MD5 8da9891e9c262e3130e5f700383ed991 ChangeLog 1190
+MD5 d4fb482fc2261d31a2c1fb45f9245adb ebtables-2.0.6.ebuild 978
+MD5 d5eccdc99f7a98810eb01159a4098fa2 ChangeLog 1350
 MD5 3eaf375e87551d0b332db3a82109c9d7 metadata.xml 221
 MD5 0488ef6b4eb8aa41352527597cb5d2ad files/ebtables-2.0.6-gcc34.patch 272
 MD5 72232fd4c734d316f9f588216d3228f2 files/digest-ebtables-2.0.6 66
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.9.10 (GNU/Linux)
-
-iD8DBQFB1Iu4I1lqEGTUzyQRAlgXAJ0X36tnMyeccTH3TnauFJTDtQGQFQCg0iOp
-ahr8ycrdJWPd2bqoUoDIKFA=
-=UpT+
------END PGP SIGNATURE-----
