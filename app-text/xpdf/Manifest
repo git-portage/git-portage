@@ -1,6 +1,6 @@
 MD5 5cedb5398c6a33163b3702342f65cd80 xpdf-3.00-r8.ebuild 3624
-MD5 50275b878d4c7d387ff2e84d0fe413c7 xpdf-3.00-r9.ebuild 3860
-MD5 f3e993bddd63c3ee69191ce569cdd492 ChangeLog 9720
+MD5 4dfde9229c0dfade67d4d1669cf11210 xpdf-3.00-r9.ebuild 3860
+MD5 f72fb89e1a389ca4f6effe4ba695eb1c ChangeLog 9856
 MD5 26b4b081d538c195dc39bcb2ec8e6f3a metadata.xml 161
 MD5 8221707abac9c48b486b8c2b9bc7a7a0 files/xpdf-3.00-empty-bookmark.patch 373
 MD5 a21a0caeb7356fb3e68e5db195a505e9 files/xpdfrc.1 1587
@@ -17,4 +17,4 @@ MD5 9a40ac2946ebb4599602f43e10f88786 files/xpdf-3.00-scroll-opts.patch.bz2 1869
 MD5 2fce5bedd61300fad1566a41f991a782 files/xpdf-goo-sizet.patch 1424
 MD5 e07939dc8546a450c5d8aca6263ad8ee files/xpdf-3.00-gcc41.patch 890
 MD5 ec978d9450f061ea49ee697b39d545bf files/digest-xpdf-3.00-r8 767
-MD5 fd6eaa6f4bb5d94506718515cf20ac26 files/digest-xpdf-3.00-r9 61
+MD5 ec978d9450f061ea49ee697b39d545bf files/digest-xpdf-3.00-r9 767
