@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/hteditor/Attic/hteditor-0.8.0.ebuild,v 1.2 2005/04/21 14:04:39 herbs Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/hteditor/Attic/hteditor-0.9.0.ebuild,v 1.1 2005/06/08 11:52:23 dragonheart Exp $
 
 DESCRIPTION="editor for executable files"
 HOMEPAGE="http://hte.sourceforge.net/"
@@ -20,7 +20,7 @@ DEPEND="${RDEPEND}
 	sys-devel/bison
 	sys-devel/flex"
 
-S="${WORKDIR}/ht-${PV/_/}"
+S="${WORKDIR}/ht-${PV}"
 
 src_compile() {
 	econf || die
