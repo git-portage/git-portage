@@ -3,5 +3,5 @@ MD5 0af3274a20a9a13f2fbafd9625130799 ChangeLog 1247
 MD5 9ef2d055b96ff0553a8c704802fb62f1 baselayout-vserver-1.11.12-r4.ebuild 12331
 MD5 7c0cd50e4ac1dc062f5e6ab578e95659 files/copyright 2099
 MD5 76a9437d29bd77c416f76fbcf0cf2af2 files/vserver-changes 1642
-MD5 aed20ab2ead0486e9184b525acb60cfd files/fakelog.initd 340
+MD5 51a97031d54d767b45fb247d60727e9d files/fakelog.initd 449
 MD5 b0e4c08a36c9591bc8b87376afcd6d2d files/digest-baselayout-vserver-1.11.12-r4 78
