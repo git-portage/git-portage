@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 093c6498a344252964268bae7f88487e ati-drivers-8.12.10.ebuild 6746
 MD5 47d0a60400a6785be278b336b21b5209 ati-drivers-8.13.3.ebuild 6800
 MD5 6df7c7080b1b4532bb48ee5743dcba5e ati-drivers-8.14.13.ebuild 7037
@@ -25,3 +28,10 @@ MD5 6ef03b4b2627a76f3893ce9a94d1ce56 files/fglrx-2.6-get-page.patch 1172
 MD5 b607b2eec7ace92eb7ca93240fe81a53 files/fglrx-2.6-fix-deprecated.patch 4370
 MD5 82c5244e2e3822f5e73ff38138dc23c1 files/digest-ati-drivers-8.14.13-r1 157
 MD5 0283465e3554a1316b63c1483abefdd6 files/fglrx-2.6-amd-adv-spec-fix.patch 1096
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCqIYNI1lqEGTUzyQRAnlwAJ9v6K/E+2cV/stsNtoVjebxDTvt0gCglhRP
+UHHh+Z9zHW48bR3qIXSICHc=
+=NhBe
+-----END PGP SIGNATURE-----
