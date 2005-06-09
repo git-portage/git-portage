@@ -3,7 +3,7 @@ MD5 da21751a527096452e591d8defac6026 vixie-cron-3.0.1-r4.ebuild 2024
 MD5 3ad0e537e0dc1682763aa552f9383a80 vixie-cron-4.1-r7.ebuild 2669
 MD5 09e2d4607c603eb1bedaceaa87bf92c6 vixie-cron-4.1-r4.ebuild 3300
 MD5 af45391149f90c6a9a7fca422e349727 vixie-cron-3.0.1-r5.ebuild 2208
-MD5 ddf3225e57b3d205dfd016b2b601b207 ChangeLog 14879
+MD5 30209f316d57e7c9bedad8370c54672b ChangeLog 14879
 MD5 26515a8b05dbc7d8d693281b804ee81c vixie-cron-4.1-r6.ebuild 2679
 MD5 0fcc78652b11c683f3fe76d614934379 metadata.xml 288
 MD5 2d67e6c187ebd062179a892d79466462 files/vixie-cron-4.1-cron.deny 220
@@ -13,7 +13,7 @@ MD5 de84c3326555349db053b4aa13c0805f files/crontab.5.diff 772
 MD5 5eab102dfecfc35810ab8cf50f95d0d3 files/cron.pam.d 123
 MD5 620b10c2982aed3071acd92d52e76d8e files/vixie-cron-4.1-pam.patch 1714
 MD5 4c35adb745265e3008fe1999d6a18952 files/vixie-cron-4.1-selinux.diff 3557
-MD5 192ceaf2031b99c8be115cb4f0622378 files/vixie-cron.rc6 530
+MD5 30251a1787c7ca9235041da74ac68dfe files/vixie-cron.rc6 530
 MD5 2e993fc2910f6f8d1453b3eb2dbe838c files/vixie-cron-4.1-basename.diff 479
 MD5 83144cbbd67c226a855da47c8a37f083 files/pamd.compatible 123
 MD5 9d66b761d15afae9471d33509b712fe9 files/vixie-cron-3.0.1-close_stdin.diff 810
