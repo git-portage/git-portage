@@ -24,3 +24,4 @@ MD5 bdf9a4a620ff5bcd7828251c144ec02b files/shfs.mount 1346
 MD5 29b3f063e5feb8c259abc86d07f92f85 files/0.35/df.patch 1652
 MD5 e5f37f793e95acdfd8e89affe9949160 files/0.35/space_chars.patch 1276
 MD5 29e5b080a1744f8283b8f55d5b904a60 files/0.35/uidgid32.patch 940
+MD5 aa8bade7210ab4840af4a009378a96c3 files/0.35/shfs-0.35-gcc4.patch 1008
