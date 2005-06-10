@@ -1,4 +1,4 @@
-MD5 d1b75409569c40e789d2089b762b3cda ChangeLog 22005
+MD5 efd02c4161c7a6223b6bd33509f557bc ChangeLog 22176
 MD5 38fe937e954ab7109395cefa86fcd2d4 metadata.xml 384
 MD5 8a5dced6630e496f509c8c89ce64a66e php-5.0.0-r1.ebuild 538
 MD5 8ae4ced093c22d77265dc452f24ee631 php-4.3.9_rc1.ebuild 1135
@@ -12,8 +12,8 @@ MD5 1d25a66511eb4e2ed454554525f21139 php-5.0.0.ebuild 520
 MD5 228f5304b8b0dedb94087ad6f555bad9 php-4.3.11.ebuild 1217
 MD5 db2a030a2f6d34869c4e46d0b3d79761 php-4.3.8.ebuild 1071
 MD5 3344ef8d8bb858f7c19f58be2147e397 php-5.0.3-r1.ebuild 867
-MD5 3d08585f4eb5b8c4af9728750a881bcd php-5.0.4-r1.ebuild 940
-MD5 31708f113837cfa71a1be2265e1d851d files/digest-php-5.0.4 63
+MD5 3f0317e4cbbde5ee488efd0054f39c0e php-5.0.4-r1.ebuild 939
+MD5 c4592407e73937fcd6b86993439a2c02 php-5.0.4.ebuild 912
 MD5 11f305b98b753ee023da8503a360762a files/digest-php-5.0.0-r1 63
 MD5 cd07c33356df77acd61cd300f2869d19 files/php-5.0.0-httpauthfix.patch 518
 MD5 3d9b5ebf0a273b87c7a9355fa0d0676d files/digest-php-4.3.9_rc1 134
