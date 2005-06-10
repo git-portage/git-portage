@@ -1,5 +1,5 @@
-MD5 3c635656fff7fb845d147e99044d792d ChangeLog 5904
-MD5 d097a937ab7916bb8ddce943163730de gtkhtml-1.1.10-r1.ebuild 4214
+MD5 ac905a99885cc4a1a6ed27eac5b7162d ChangeLog 6043
+MD5 56443f4e4e101b848dfa5f7b71dbfdcb gtkhtml-1.1.10-r1.ebuild 4212
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 beee6dc1f9b01326aec9a28c8959c395 files/digest-gtkhtml-1.1.10-r1 68
 MD5 bc6bf91c4d69c7c6933885588f46eab3 files/gtkhtml-gcc34.patch 484
