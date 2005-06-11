@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 83a9c1aa5dd9d790895987ad62d11bd1 ChangeLog 5345
 MD5 a2bebac7fa68e1da0fb0c66c05c2ecfc ati-drivers-extra-8.12.10.ebuild 2629
 MD5 4659b6d779562eb7f1920c4d89eaca1b ati-drivers-extra-8.13.3.ebuild 2629
@@ -16,3 +19,10 @@ MD5 f2aad1d22d8cdb74d99b5efec9d02c2d files/digest-ati-drivers-extra-8.10.19 156
 MD5 41782adae08060611f324e8c8ddf3de9 files/fireglcontrol.desktop 149
 MD5 6d101e30f74b2208e76b3e8cb329d15d files/ati-drivers-extra-8.8.25-improvements.patch.bz2 10581
 MD5 96e9a8be78db2a99bf6bfb9e166948f3 files/ati-drivers-extra-8.10.19-improvements.patch.bz2 12027
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCqkkq0K3RJaeXx6cRAr62AKCFFQXT4qcl2g3uUD4yTXPcn7Z8xwCfU5+Z
+eVG5+FyJ+cmbj1w9ji6n0P0=
+=AJz7
+-----END PGP SIGNATURE-----
