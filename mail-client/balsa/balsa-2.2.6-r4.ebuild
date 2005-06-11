@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/balsa/Attic/balsa-2.2.6.ebuild,v 1.12 2005/05/17 18:08:03 ferdy Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/balsa/Attic/balsa-2.2.6-r4.ebuild,v 1.1 2005/06/11 12:20:59 allanonjl Exp $
 
 inherit gnome2 eutils
 
@@ -52,7 +52,19 @@ USE_DESTDIR="1"
 src_unpack(){
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/balsa-2.2.6-deprecation.fix.patch
+	epatch ${FILESDIR}/${P}-deprecation.fix.patch
+	epatch ${FILESDIR}/${PN}-ssl.patch
+	epatch ${FILESDIR}/${PN}-sqlite3-fix.patch
+
+	#aclocal
+	#libtoolize --copy --force
+	autoheader
+	autoconf
+	#automake
+}
+
+src_install() {
+	gnome2_src_install scrollkeeper_localstate_dir=${D}/var/lib/scrollkeeper/
 }
 
 use crypt \
