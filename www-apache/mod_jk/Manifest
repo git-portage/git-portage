@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d7dfa727ef4797f52715c23850f12111 mod_jk-1.2.13.ebuild 1639
 MD5 8fa68fc721815398cb231f5245eb1dfd mod_jk-1.2.10.ebuild 1639
 MD5 a631a558cdaa4e1c7975eee393d5b4ea ChangeLog 1101
@@ -6,3 +9,10 @@ MD5 83e37c0f3e893815403a6f9e4efde4f1 files/jk-workers.properties 1034
 MD5 4816b7fbdd754d6ad17f967ec252ea39 files/digest-mod_jk-1.2.10 88
 MD5 0a5d4f7b9130e9a14216fc10df29468a files/digest-mod_jk-1.2.13 88
 MD5 1e8094206c6318f27770a5d0062d59d6 files/88_mod_jk.conf 5392
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCqq2906ebR+OMO78RAkHlAJ9F8zfNUTJQCzot3IqqVC9kyIFTKgCglhEp
+GT7nIzW/8QXR3IKacBAOo+8=
+=jkym
+-----END PGP SIGNATURE-----
