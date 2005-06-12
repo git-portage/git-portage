@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b6b673921b1bb170980d8260cfea6ccf ChangeLog 11419
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 a295c928a220592d619a7917eecd8b74 gnome-terminal-2.6.1.ebuild 1225
@@ -17,3 +20,10 @@ MD5 235667e1b2901cfe549fc106471ecc38 files/gnome-terminal-2.6.1-gcc34_eggcell.pa
 MD5 566ca1ffc1b71593c39529fb9af82cb1 files/digest-gnome-terminal-2.8.2 74
 MD5 307641ad0c36aecafbe97053c944098f files/gnome-terminal-2.4.2-shortcuts_fix.patch 1037
 MD5 0992c11acfb7df9271bd526a65b6f1bb files/digest-gnome-terminal-2.4.2 74
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCrEwUKf2g/qXtneoRAuekAKDFZUoMFvJ56MrZfZXu1fbBZfNgXQCeITHO
+Jor1SJXq8vXcSbd+TDETetM=
+=g2en
+-----END PGP SIGNATURE-----
