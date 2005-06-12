@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e5f523ab3c3864df6bc9a056270cdf26 epiphany-1.2.10.ebuild 1338
 MD5 3bd417e2964a7df37b72259889c5d224 epiphany-1.6.0-r2.ebuild 1617
 MD5 390ec561f69c17addf5ee9cbb2f8fe73 ChangeLog 15177
@@ -34,3 +37,10 @@ MD5 6d49238d1100396b965c157b89c7038f files/digest-epiphany-1.6.0-r1 68
 MD5 86259cda058c165aeb287a2b885b1b7a files/digest-epiphany-1.2.9-r1 68
 MD5 eb83ab75c0e81a4aff0d93a8d8a4e338 files/digest-epiphany-1.6.3 68
 MD5 56ee35e359c12574247645a59250f5f8 files/digest-epiphany-1.2.10 69
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCrDaSKf2g/qXtneoRApVhAJ9na/ga32xQLDwWp70FFdT3j+S8CwCgo74K
+F0v0viORXBFoDzJCi/2CmEk=
+=0OU/
+-----END PGP SIGNATURE-----
