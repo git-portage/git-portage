@@ -1,6 +1,6 @@
 MD5 1c784be45b571bfad5f6d6a78b9ed335 rt-3.2.1.ebuild 4204
 MD5 dd6a33bba8dd5f5259eda8bc59204109 rt-3.4.2.ebuild 3705
-MD5 de18b9a1d39522b81b1bd22353677cc9 ChangeLog 1726
+MD5 ac1e8b630530a3b2f3d6c3dbf169dc91 ChangeLog 1726
 MD5 224c312cc23d02aa06c26a4da3cc1f90 metadata.xml 221
 MD5 4dcfdbf63b882b398473d975b34fa23e files/config.layout-gentoo 616
 MD5 15fc088b37155656e008679f3c07eea7 files/postinstall-en.txt 1648
