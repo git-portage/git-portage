@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c49d5e1449c0ae8eade0e5ec6e3224a1 xemacs-21.4.15-r1.ebuild 5046
 MD5 426f39c900c70c31593ec1cd16e29a46 xemacs-21.4.15-r3.ebuild 5203
 MD5 a4f298f675fc5c0ed0ceaa6bfecce583 xemacs-21.4.15.ebuild 3835
@@ -22,3 +25,12 @@ MD5 6a3d383a050855607a702a56c850ff1a files/digest-xemacs-21.4.15-r1 130
 MD5 6a3d383a050855607a702a56c850ff1a files/digest-xemacs-21.4.15-r2 130
 MD5 6a3d383a050855607a702a56c850ff1a files/digest-xemacs-21.4.15-r3 130
 MD5 94beef92edcaf12edef657556fbb7a7e files/xemacs-21.4.8-ppc.diff 1032
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iQCVAwUBQqy8KZ4WFLgrx1GWAQIdNwQAnrlkxvbvgCoqwTO0XcmxLhP8m2/+envT
+vgnjs7y6ushlzU60gt22yxRz76FcYBF0aqvsZgTCTPcewewSbFznba+K8PZMMGBF
+dDLN93HUyuzMW6E0qGlpJnHerOF/PUSCWJps0rQXSj3M0DQXQRPCB4Lc+9l8kygM
+ApqvS8jCYw0=
+=sJub
+-----END PGP SIGNATURE-----
