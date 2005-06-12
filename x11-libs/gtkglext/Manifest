@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1b7a84ba1c88626e116d18450fef2bdb gtkglext-1.0.5.ebuild 1475
 MD5 676ed516611d5d5d5c5d34a38a75f181 gtkglext-1.0.6.ebuild 1485
 MD5 92570d1f010cbc4468f2ed11907188f5 gtkglext-1.0.6-r2.ebuild 1243
@@ -10,3 +13,10 @@ MD5 526fbcdd193a45e6d4bd2af6bfca4952 files/digest-gtkglext-1.0.6 67
 MD5 a7c68f59946312c5054bd66ddeaa8cd1 files/digest-gtkglext-1.0.5 67
 MD5 526fbcdd193a45e6d4bd2af6bfca4952 files/digest-gtkglext-1.0.6-r2 67
 MD5 70192bf7a64990c43b9c1b3f6c95c2a5 files/digest-gtkglext-1.0.4 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCrDPLKf2g/qXtneoRAuoQAJ4xecCOToGAPllSjvfusA0aKLuxgQCdEz58
+DDiMWmgPjRlSkGl6KniqVRM=
+=QOjI
+-----END PGP SIGNATURE-----
