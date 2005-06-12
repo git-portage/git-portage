@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 afca516ffd226fc6a140f767dbad6632 ChangeLog 13362
 MD5 7300a7b361fa9f48e37722c6952bd432 metadata.xml 158
 MD5 8802d3c5592ff83e317301ca3109358e ffmpeg-0.4.9_p20050226-r5.ebuild 4542
@@ -15,3 +18,10 @@ MD5 f0c54c934c78216a2bd0b157028a6f84 files/gentoo-ffmpeg001.patch 752
 MD5 b1cd277309faaaa03e3dafb3b89b2a09 files/ffmpeg-libdir-pic.patch 6027
 MD5 1a8c0be3a5a5ba1d929b7773265943b7 files/ffmpeg-missing_links.patch 1199
 MD5 20274823abfde904ae73478349585dd0 files/ffmpeg-0.4.9_p20050226-gcc4.patch 2319
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCrLOSKf2g/qXtneoRAjQfAKChJRljSUMiCqtCrqTB8XjDIK6I6gCdE9m2
+mll1c2g/sqUzKjbWJpWceA0=
+=Bemp
+-----END PGP SIGNATURE-----
