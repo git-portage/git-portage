@@ -4,7 +4,7 @@ MD5 3d6eec0e3d10c7a6e4a95e448c03a06e util-vserver-0.30.196.ebuild 1268
 MD5 5eb10d9678fd96a1f56d1eb157b3994a util-vserver-0.30.204.ebuild 1285
 MD5 48ce588c1f3255fa31e1a4cee82c1d27 util-vserver-0.30.205-r1.ebuild 1763
 MD5 5460093cd5050c0938518baa9a56cb55 util-vserver-0.30.205.ebuild 1284
-MD5 9532fe26d72aa27a67ba87cdf9277307 util-vserver-0.30.207.ebuild 2287
+MD5 85072d17078116476bbf1d4a642c1231 util-vserver-0.30.207.ebuild 2287
 MD5 7bae473a0bf1ad73103118220c3fa924 files/vservers.confd 1739
 MD5 8de53dd957127f3ba125f733c1b7389b files/vservers.initd 1792
 MD5 0f34731a7d8119fc5e3f9322bf727521 files/digest-util-vserver-0.30.196 74
