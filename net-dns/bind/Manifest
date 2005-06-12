@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3f404d8ff8ea38d805e388c6cdb29db5 ChangeLog 12385
 MD5 2bf2f6ce206ebeb1d8d2f1e8bca56ae4 bind-9.2.5.ebuild 7433
 MD5 c8dd10af87ccd33fb2e5e39090ebc227 bind-9.2.5-r4.ebuild 8191
@@ -26,3 +29,10 @@ MD5 9a06b553558342585f8ba88bd5e4c569 files/bind-9.2.5-mysql.patch 11315
 MD5 4346332cc9681502a3aedfd0a7a1ac41 files/bind-9.2.5-berkdb_fix.patch 537
 MD5 e9bb1e01cf0b7597e739e889499ddd7a files/named.conf-r2 768
 MD5 ccfca63035b534556c3910270d40a4b9 files/localhost 412
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCrFy/Kf2g/qXtneoRApEaAJ4mXStsh4Q56JBJ1ZUvvzYdn740PACfTix2
+D0Q7JV4ZZRDyI2Inl+8P9AE=
+=WfY/
+-----END PGP SIGNATURE-----
