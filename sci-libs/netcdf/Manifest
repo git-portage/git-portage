@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1f72f8559d809be206400914bc074863 ChangeLog 4899
 MD5 eb1d1b8dc349d23839c008ff9985a523 netcdf-3.5.1.ebuild 1077
 MD5 a90354cea7ea5a1ccb093598a750c7c6 metadata.xml 354
@@ -10,3 +13,10 @@ MD5 ebc90576ff42aa00991bea90fd1ed4c9 files/digest-netcdf-3.6.0-r1 67
 MD5 fc4457bab8a911f12f9048c4a2c32322 files/digest-netcdf-3.5.0-r3 64
 MD5 fc4457bab8a911f12f9048c4a2c32322 files/digest-netcdf-3.5.0-r4 64
 MD5 253c25302faf05dae06feda0e45a85e2 files/digest-netcdf-3.5.1 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCrFXHKf2g/qXtneoRArdjAKClVVWhR2WNJXi1tM4Ts61MkcTQnACeLeB+
+tt0mAtos84Y+hU53AjNdJmE=
+=/Kt3
+-----END PGP SIGNATURE-----
