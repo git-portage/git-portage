@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 979369a7667e5e6aa46aeb838c38eedc biew-5.6.2.ebuild 1558
 MD5 44f5450bb4cbdfab87490fbae57ab267 biew-5.6.1.ebuild 1432
 MD5 0ea80459fb064a1dc01f69439fda2c71 ChangeLog 1743
@@ -6,3 +9,10 @@ MD5 4dffb4ed6f85c556e2d8a5a009708619 biew-5.5.0.ebuild 1421
 MD5 46d0b7c47f51672d499caa48f725a199 files/digest-biew-5.5.0 61
 MD5 1ed5cdfac4193cde312279f62b63caba files/digest-biew-5.6.1 60
 MD5 8f7418ab0b2feb6abef49d6780ac0a07 files/digest-biew-5.6.2 60
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCrCyVchej4aZK9/cRAj8RAJ9w4JoBs8LJQ7RKlU3bVc/4mACnqwCfeFuf
+me/w7EXOk65BIzT6J9CcT8k=
+=g22F
+-----END PGP SIGNATURE-----
