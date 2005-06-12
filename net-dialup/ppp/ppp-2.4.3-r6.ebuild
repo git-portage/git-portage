@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/ppp/Attic/ppp-2.4.3-r3.ebuild,v 1.5 2005/05/23 18:16:42 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/ppp/Attic/ppp-2.4.3-r6.ebuild,v 1.1 2005/06/12 07:39:49 mrness Exp $
 
 inherit eutils flag-o-matic toolchain-funcs
 
@@ -13,7 +13,7 @@ SRC_URI="ftp://ftp.samba.org/pub/ppp/${P}.tar.gz
 LICENSE="BSD GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~sparc ~x86 ~ppc64"
-IUSE="activefilter atm dhcp gtk ipv6 mppe-mppc pam"
+IUSE="activefilter atm dhcp gtk ipv6 mppe-mppc pam radius"
 
 RDEPEND="virtual/libc
 	activefilter? ( virtual/libpcap )
@@ -22,6 +22,15 @@ RDEPEND="virtual/libc
 	gtk? ( =x11-libs/gtk+-1* )"
 DEPEND="${RDEPEND}
 	>=sys-apps/sed-4"
+
+pkg_setup() {
+	if ! use radius; then
+		echo
+		ewarn "RADIUS plugins installation is now controled by radius useflag!"
+		ewarn "If you need them, hit Ctrl-C now!"
+		ebeep
+	fi
+}
 
 src_unpack() {
 	unpack ${A}
@@ -77,6 +86,16 @@ src_unpack() {
 
 	find ${S} -type f -name Makefile.linux \
 		-exec sed -i -e '/^CC[[:space:]]*=/d' {} \;
+
+	use radius && {
+		#set the right paths in radiusclient.conf
+		sed -i -e "s:/usr/local/etc:/etc:" \
+			-e "s:/usr/local/sbin:/usr/sbin:" ${S}/pppd/plugins/radius/etc/radiusclient.conf
+		#set config dir to /etc/ppp/radius
+		sed -i -e "s:/etc/radiusclient:/etc/ppp/radius:g" \
+			${S}/pppd/plugins/radius/{*.8,*.c,*.h} \
+			${S}/pppd/plugins/radius/etc/*
+	}
 }
 
 src_compile() {
@@ -95,6 +114,14 @@ src_compile() {
 	fi
 }
 
+pkg_preinst() {
+	if use radius && [ -d ${ROOT}/etc/radiusclient ] && has_version "<${CATEGORY}/${PN}-2.4.3-r5"; then
+		ebegin "Copy /etc/radiusclient to /etc/ppp/radius"
+		cp -ar ${ROOT}/etc/radiusclient ${ROOT}/etc/ppp/radius
+		eend $?
+	fi
+}
+
 src_install() {
 	local y
 	for y in chat pppd pppdump pppstats
@@ -106,6 +133,7 @@ src_install() {
 
 	dosbin pppd/plugins/rp-pppoe/pppoe-discovery
 
+	dodir /etc/ppp/peers
 	insinto /etc/ppp
 	insopts -m0600
 	newins etc.ppp/pap-secrets pap-secrets.example
@@ -144,14 +172,24 @@ src_install() {
 	doins pppd/plugins/passwordfd.so || die "passwordfd.so not build"
 	doins pppd/plugins/winbind.so || die "winbind.so not build"
 	doins pppd/plugins/rp-pppoe/rp-pppoe.so || die "rp-pppoe.so not build"
-	doins pppd/plugins/radius/radius.so || die "radius.so not build"
-	doins pppd/plugins/radius/radattr.so || die "radattr.so not build"
-	doins pppd/plugins/radius/radrealms.so || die "radrealms.so not build"
 	if use atm; then
 		doins pppd/plugins/pppoatm/pppoatm.so || die "pppoatm.so not build"
 	fi
 	if use dhcp; then
 		doins pppd/plugins/dhcp/dhcpc.so || die "dhcpc.so not build"
+	fi
+	if use radius; then
+		doins pppd/plugins/radius/radius.so || die "radius.so not build"
+		doins pppd/plugins/radius/radattr.so || die "radattr.so not build"
+		doins pppd/plugins/radius/radrealms.so || die "radrealms.so not build"
+
+		#Copy radiusclient configuration files (#92878)
+		insinto /etc/ppp/radius
+		insopts -m0644
+		doins pppd/plugins/radius/etc/{dictionary*,issue,port-id-map,radiusclient.conf,realms,servers}
+
+		doman pppd/plugins/radius/pppd-radius.8
+		doman pppd/plugins/radius/pppd-radattr.8
 	fi
 
 	insinto /etc/modules.d
@@ -164,9 +202,6 @@ src_install() {
 	dodoc PLUGINS README* SETUP Changes-2.3 FAQ
 	dodoc ${FILESDIR}/README.mpls
 	dohtml ${FILESDIR}/pppoe.html
-
-	doman pppd/plugins/radius/pppd-radius.8
-	doman pppd/plugins/radius/pppd-radattr.8
 
 	dosbin scripts/pon
 	dosbin scripts/poff
@@ -190,16 +225,18 @@ src_install() {
 }
 
 pkg_postinst() {
-	if [ ! -e ${ROOT}dev/.devfsd ] && [ ! -e ${ROOT}dev/.udev ]
-	then
-		if [ ! -e ${ROOT}dev/ppp ]; then
-			mknod ${ROOT}dev/ppp c 108 0
-		fi
+	if [ ! -e ${ROOT}/dev/.devfsd ] && [ ! -e ${ROOT}/dev/.udev ] && [ ! -e ${ROOT}/dev/ppp ]; then
+		mknod ${ROOT}/dev/ppp c 108 0
 	fi
-	if [ "$ROOT" = "/" ]
-	then
+	if [ "$ROOT" = "/" ]; then
 		/sbin/update-modules
 	fi
+	#create *-secrets files if not exists
+	[ -f "${ROOT}/etc/ppp/pap-secrets" ] || \
+		cp -a "${ROOT}/etc/ppp/pap-secrets.example" "${ROOT}/etc/ppp/pap-secrets"
+	[ -f "${ROOT}/etc/ppp/chap-secrets" ] || \
+		cp -a "${ROOT}/etc/ppp/chap-secrets.example" "${ROOT}/etc/ppp/chap-secrets"
+
 	ewarn "To enable kernel-pppoe read html/pppoe.html in the doc-directory."
 	ewarn "Note: the library name has changed from pppoe.so to rp-pppoe.so."
 	ewarn "Pon, poff and plog scripts have been supplied for experienced users."
@@ -210,4 +247,11 @@ pkg_postinst() {
 
 	# lib name has changed
 	sed -i -e "s:^pppoe.so:rp-pppoe.so:" ${ROOT}etc/ppp/options
+
+	if use radius && has_version "<${CATEGORY}/${PN}-2.4.3-r5"; then
+		echo
+		ewarn "As of ${PN}-2.4.3-r5, the RADIUS configuration files have moved from"
+		ewarn "   /etc/radiusclient to /etc/ppp/radius."
+		einfo "For your convenience, radiusclient directory was copied to the new location."
+	fi
 }
