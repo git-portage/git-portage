@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1913b2bce1e68c1a8f11e2dab171cbb4 mp-3.2.11.ebuild 1044
 MD5 e001dc78cf8d27dbf5a8d33cf53c2ed2 mp-3.3.9.ebuild 1446
 MD5 439f8a059984066d02f40de20c6a7b7b mp-3.3.10.ebuild 1529
@@ -19,3 +22,10 @@ MD5 d171d2e1f75d9053cebb0a8cfd28c9c9 files/digest-mp-3.3.11 61
 MD5 0bc70f6cef8183401387b78185cb0682 files/digest-mp-3.3.12 61
 MD5 f58c1b9239be39f8724f3a172f67c465 files/mp-3.3.9-fix-builtin-regex-warnings.diff 1353
 MD5 82dd8f227fdd5b56584b2adf5242a53b files/gentoo-synh-mp.patch-3.2.11 2027
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCrCZII1lqEGTUzyQRAitQAKDF37r+OMB5PpMTKJwiiuesF26g0QCeL9Ac
+J7Dt08VVJek4uzfMH0PXFec=
+=Y6vH
+-----END PGP SIGNATURE-----

@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f85484f4c2a59ccdd83eb034e2db18bf xmule-1.9.4.ebuild 1075
 MD5 a110bede2c7ff748820f7d5f90f4d01f xmule-1.9.3.ebuild 1038
 MD5 b9a11eca73cdaaec68c8fee13cc3ce42 xmule-1.9.4b.ebuild 1052
@@ -17,3 +20,10 @@ MD5 196bcbbfbdaaaaf0a59fefae64628be6 files/digest-xmule-1.10.0 66
 MD5 61e084b494702755988fa609d01c11d1 files/digest-xmule-1.9.1b 66
 MD5 2fe31de94e8e9c24ce6b0506274a42b2 files/digest-xmule-1.9.4b 66
 MD5 7af93e9c27cecc95812aaf13b2579dc9 files/digest-xmule-1.8.4-r1 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCrCdqI1lqEGTUzyQRAkiTAJwJRDpf1eYoFLRHRBPGt4trQAhlswCfTb/n
+i7kP+GmX8Xz8KnTCIyGT8NU=
+=2QUN
+-----END PGP SIGNATURE-----
