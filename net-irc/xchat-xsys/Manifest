@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 42cef2da59c81f792584c3f9048a1930 metadata.xml 250
 MD5 c86ad9ee5763973a091881dccc2987b7 xchat-xsys-2.0.0-r1.ebuild 1009
 MD5 f10753781ec694d91b4d35d00859f393 ChangeLog 3331
@@ -12,3 +15,10 @@ MD5 c0f1338214a6804b08666fa5c5a05bce files/1.9.3-sysfs-instead-of-lspci-2.patch 
 MD5 e12f6271ad83cfb1691a0b8fc619b593 files/digest-xchat-xsys-2.0.2 62
 MD5 b99e516eb8f8f5630e6cc9adbeb7f3f0 files/digest-xchat-xsys-2.0.4 62
 MD5 c4b3f86959972270bb4a3c32ce850dd9 files/digest-xchat-xsys-2.0.5 62
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCrd26p5vW4rUFj5oRAqpvAJ9zLSzvHu9wLN2zg4DFT8D4pZcJFwCaA4pQ
+VGLrBQIUeCKGixSexcDuQvw=
+=HyiQ
+-----END PGP SIGNATURE-----
