@@ -6,8 +6,8 @@ MD5 f513aa6347262d9c2219a1889e3959b1 gtkmm-2.4.11.ebuild 639
 MD5 b67ef7a83e720dc14b9135c387d91444 gtkmm-2.2.12.ebuild 766
 MD5 286b665f00ff46b5b7309d4754a063e9 gtkmm-1.2.9-r2.ebuild 1288
 MD5 a0fac3c5daca5845f06dcf898b72d016 gtkmm-2.2.8.ebuild 699
-MD5 15dce54c645dfb25774b946e53309cf4 gtkmm-2.6.3.ebuild 636
-MD5 a4e330c058f9ebec41b95fbfbff1bf51 ChangeLog 10872
+MD5 5357059382652e937ead779be33a09dc gtkmm-2.6.3.ebuild 636
+MD5 62ab7a1e88679d02d08375100fdbc98a ChangeLog 10986
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 f824eb6aaffd23a260a89d01e9c0a4e6 files/digest-gtkmm-2.2.10 66
 MD5 70de761424783ad1859efffddb40b848 files/digest-gtkmm-2.2.11 66
