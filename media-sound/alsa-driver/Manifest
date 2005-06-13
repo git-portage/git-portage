@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3fcdb74829d98066d83e51a231cb2841 alsa-driver-1.0.9b.ebuild 4381
 MD5 13eab1abd6e32da978f5cb85fee1d382 alsa-driver-1.0.9_rc3.ebuild 4402
 MD5 097e9a7455f7e83cdf60bb778c34f6a0 alsa-driver-1.0.9a.ebuild 4381
@@ -14,3 +17,10 @@ MD5 938a2ee36c54416322d1acd47b249c99 files/digest-alsa-driver-1.0.3 71
 MD5 14b6c8d954e36bb9d40c97cf051220f0 files/digest-alsa-driver-1.0.8 71
 MD5 8c120f7730b91118d0a8148d2deb3a43 files/alsa-driver-0.9.8-au-fix.patch 1267
 MD5 5445a523e0e8aa31b9f293b1ac380b37 files/1.0.8-msi_audigyls.patch 1771
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFCrdRs06ebR+OMO78RAsDNAKCLEZ2k88goFP2GDvaUSLPdF0sr6wCcDK84
+ZcRtKXKbLsx83vlE6ZEiTFU=
+=fsjy
+-----END PGP SIGNATURE-----
