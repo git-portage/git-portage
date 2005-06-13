@@ -1,18 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 b565780dbec8c8ab663a444034769690 ChangeLog 1524
+MD5 7f518e0e22eaa659b1446300b006c66d net-server-0.87.ebuild 593
+MD5 58421caa08881e95a21f5c202e84433e net-server-0.87-r1.ebuild 596
+MD5 e1193d1c2a80be605476a80cc2b44e2c ChangeLog 1667
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 8ebfa90fd7ffc63ff01a1ff25bd56f63 net-server-0.85.ebuild 605
-MD5 7f518e0e22eaa659b1446300b006c66d net-server-0.87.ebuild 593
-MD5 8c578d4ba9d278c2d384def79c8b4731 net-server-0.87-r1.ebuild 598
+MD5 8fc233c7ca183bb3aedc37e423b3fc8b files/digest-net-server-0.87-r1 66
 MD5 792d1ec217d44781e9d154e69f665156 files/digest-net-server-0.85 66
 MD5 8fc233c7ca183bb3aedc37e423b3fc8b files/digest-net-server-0.87 66
-MD5 8fc233c7ca183bb3aedc37e423b3fc8b files/digest-net-server-0.87-r1 66
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
-
-iD8DBQFCfCb9KRy60XGEcJIRAkpqAKCFvWixyRx9j3mb/t03LkP2Vv6HFACaA9k4
-6YMuwOVwPd4nAn3UAv0ZGvU=
-=APrL
------END PGP SIGNATURE-----
