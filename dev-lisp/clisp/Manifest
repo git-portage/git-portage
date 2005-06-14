@@ -1,5 +1,5 @@
-MD5 d8fc71bae9c0eabfb4660495c19215e5 ChangeLog 8209
-MD5 59f8111a9daea6b0988b957e87c50163 clisp-2.33.2-r2.ebuild 4085
+MD5 d7e1161d963cbe326ceb21e9ca7576aa ChangeLog 8209
+MD5 9ef8f7ca6b56e2dbed076879d3219cc1 clisp-2.33.2-r2.ebuild 4085
 MD5 485cde76397408cf913fc6d4c7a45a67 metadata.xml 882
 MD5 c112ebf612bf8e262c4285fd4c7e9553 files/clisp-2.30-gentoo.patch 1301
 MD5 ec015c64b7aca6f6721123c27d7d921c files/clisp-2.30-linux.lisp-upstream.patch 4712
