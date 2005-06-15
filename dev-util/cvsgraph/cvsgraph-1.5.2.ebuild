@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/cvsgraph/Attic/cvsgraph-1.4.1.ebuild,v 1.1 2004/09/10 08:55:07 tigger Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/cvsgraph/Attic/cvsgraph-1.5.2.ebuild,v 1.1 2005/06/15 11:56:09 ka0ttic Exp $
 
 DESCRIPTION="CVS/RCS repository grapher"
 HOMEPAGE="http://www.akhphd.au.dk/~bertho/cvsgraph"
@@ -19,19 +19,21 @@ DEPEND="media-libs/gd
 	truetype? ( media-libs/freetype )"
 
 src_compile() {
-	local myopts
+	econf \
+		$(use_enable nls) \
+		$(use_enable gif) \
+		$(use_enable png) \
+		$(use_enable jpeg) \
+		$(use_enable truetype) \
+		|| die "econf failed"
 
-	myopts="`use_enable nls` `use_enable gif` `use_enable png` `use_enable jpeg` `use_enable truetype`"
-
-	econf ${myopts} || die "econf failed"
-	emake || die
+	emake || die "emake failed"
 }
 
 src_install () {
-	dobin ${S}/cvsgraph
+	dobin cvsgraph
 	insinto /etc
-	doins ${S}/cvsgraph.conf
-	doman ${S}/cvsgraph.1 ${S}/cvsgraph.conf.5
-	dodoc ${S}/mkimage.php3
-	dodoc ${S}/cvsgraphwrapper.php3
+	doins cvsgraph.conf
+	doman cvsgraph.1 cvsgraph.conf.5
+	dodoc ChangeLog README contrib/*.php3
 }
