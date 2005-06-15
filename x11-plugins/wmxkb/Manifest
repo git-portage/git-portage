@@ -1,4 +1,6 @@
 MD5 7404938a1499a3d7bfa1487154368def wmxkb-1.2.0.ebuild 677
 MD5 6b4040edc28d9a2d66d41493b50db966 ChangeLog 418
+MD5 933a2bcba418f629c6d0940339bb1bbf wmxkb-1.2.2.ebuild 678
 MD5 fe402b096905cae8dcb4a503d3a838ac metadata.xml 173
 MD5 6a130f569c76b42786942f4b50b73082 files/digest-wmxkb-1.2.0 63
+MD5 a533fe57cfea3d25bb400d5f91ae1f60 files/digest-wmxkb-1.2.2 63
