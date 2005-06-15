@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 620c5fb5361421f10ac0b6874652ab94 gqview-2.1.0.ebuild 726
 MD5 56e234cae42916a524c43a812028bec7 metadata.xml 338
 MD5 2bbf87d3e32c22a4142a76220c185a83 ChangeLog 9036
@@ -14,3 +17,10 @@ MD5 0744ce64d1da1679ac4096f5833730b7 files/digest-gqview-2.0.0 65
 MD5 ac496846e83cd6bedf0b7142f4268f92 files/digest-gqview-2.1.0 65
 MD5 c11642efa01244db76fbaffb5b0aa3c4 files/digest-gqview-1.4.5 65
 MD5 a8f2921f80df401bbff60c096bfb3de3 files/digest-gqview-1.5.4 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCsGPEBXaUFmZvwyMRAh5LAKDD3062LgpRpl1DTCj/mRy7jwuFhQCfUwgx
+3eYvRV7wOb9BVED+k4qVr3Q=
+=ifwm
+-----END PGP SIGNATURE-----
