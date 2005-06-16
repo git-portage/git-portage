@@ -1,21 +1,20 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/abiword/Attic/abiword-2.0.10.ebuild,v 1.9 2005/01/01 15:31:00 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/abiword/Attic/abiword-2.2.8.ebuild,v 1.1 2005/06/16 21:08:29 foser Exp $
 
-inherit eutils
+inherit eutils fdo-mime alternatives
 
-IUSE="gnome jpeg spell xml2"
+IUSE="gnome jpeg spell xml2 debug"
 
 S_P=${S}/${PN}-plugins
-S_D=${S}/${PN}-docs
 S=${WORKDIR}/${P}/abi
 
 DESCRIPTION="Fully featured yet light and fast cross platform word processor"
 HOMEPAGE="http://www.abisource.com"
 
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+SRC_URI="http://www.abisource.com/downloads/${PN}/${PV}/source/${P}.tar.bz2"
 
-KEYWORDS="x86 sparc alpha ppc amd64 hppa"
+KEYWORDS="~x86 ~sparc ~alpha ~ppc ~amd64 ~hppa ~ppc64 ~ia64"
 LICENSE="GPL-2"
 SLOT="2"
 
@@ -23,21 +22,21 @@ RDEPEND="virtual/x11
 	virtual/xft
 	>=media-libs/fontconfig-2.1
 	media-libs/libpng
-	>=x11-libs/gtk+-2.2
+	>=x11-libs/gtk+-2.4
 	>=gnome-base/libglade-2
 	>=app-text/wv-1
 	>=dev-libs/fribidi-0.10.4
 	jpeg?  ( >=media-libs/jpeg-6b-r2 )
 	xml2? ( >=dev-libs/libxml2-2.4.10 )
 	!xml2? ( dev-libs/expat )
-	spell? ( >=app-text/enchant-1 )
+	spell? ( >=app-text/enchant-1.1 )
 	gnome? ( >=gnome-base/libgnomeui-2.2
 		>=gnome-base/libgnomeprint-2.2.1
 		>=gnome-base/libgnomeprintui-2.2.1
-		>=gnome-base/libbonobo-2 )"
+		>=gnome-base/libbonobo-2
+		>=gnome-extra/gucharmap-1.4 )"
 
 DEPEND="${RDEPEND}
-	sys-devel/automake
 	dev-util/pkgconfig"
 
 src_compile() {
@@ -50,14 +49,14 @@ src_compile() {
 
 	econf \
 		`use_enable gnome` \
+		`use_enable gnome gucharmap` \
 		`use_with xml2 libxml2` \
 		`use_enable spell enchant` \
-		--disable-debug \
+		`use_enable debug` \
 		--enable-bidi \
 		--enable-threads \
 		--without-ImageMagick \
 		--disable-scripting \
-		--disable-gucharmap \
 		--with-sys-wv || die
 
 	emake all-recursive || die
@@ -67,10 +66,9 @@ src_compile() {
 	cd ${S_P}
 
 	econf \
-		--disable-debug \
+		`use_enable debug` \
 		--enable-all \
 		--with-abiword=${S} \
-		--without-wmf --disable-wmf \
 		--without-ImageMagick || die
 
 	emake || die
@@ -81,14 +79,13 @@ src_install() {
 
 	dodir /usr/{bin,lib}
 
-	# einstall PERLDEST=${D} || die
 	make DESTDIR=${D} install || die
 
-	dosed "s:Exec=abiword:Exec=abiword-2.0:" /usr/share/applications/abiword.desktop
+	dosed "s:Exec=abiword:Exec=abiword-2.2:" /usr/share/applications/abiword.desktop
 
-	rm -f ${D}/usr/bin/abiword-2.0
+	rm -f ${D}/usr/bin/abiword-2.2
 	rm -f ${D}/usr/bin/abiword
-	dosym AbiWord-2.0 /usr/bin/abiword-2.0
+	dosym AbiWord-2.2 /usr/bin/abiword-2.2
 
 	dodoc COPYING *.TXT docs/build/BUILD.TXT user/wp/readme.txt
 
@@ -98,13 +95,12 @@ src_install() {
 
 	make DESTDIR=${D} install || die
 
-	# install documentation
-
-	cd ${WORKDIR}/${P}/abiword-docs
-	sed -e 's:prefix = /usr/local:prefix = /usr:g' Makefile > Makefile.new
-	mv Makefile.new Makefile
-	make DESTDIR=${D} || die
-
 }
 
-USE_DESTDIR="1"
+pkg_postinst() {
+
+	fdo-mime_desktop_database_update
+
+	alternatives_auto_makesym "/usr/bin/abiword" "/usr/bin/abiword-[0-9].[0-9]"
+
+}
