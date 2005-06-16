@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5856baf38a9530242f57a9bc07a305a0 python-docs-2.3.5.ebuild 728
 MD5 d0c7dadcfc4671c1d1587cf2cd9e07c6 python-docs-2.2.3.ebuild 738
 MD5 6c70f7744f89efe8c8fdae59de2514f6 python-docs-2.3.4_rc1.ebuild 758
@@ -18,3 +21,10 @@ MD5 d7a3f8363864425c84dcd47a1524035d files/digest-python-docs-2.3.3 64
 MD5 66c81236c330ecb9b8508fba0c9bb09f files/digest-python-docs-2.3.4 64
 MD5 bafc5cef1c486da8c6dc28cd7e62b36b files/digest-python-docs-2.4 62
 MD5 0b6f89623676279b95ea4b2b8f80f3b8 files/digest-python-docs-2.3.5 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCseuiKf2g/qXtneoRAuIWAJ9JJq85NtcXMsCypnjty+OcmQT7nwCgq25N
+VTiC80Je+11MjwnCenhHv24=
+=yGrB
+-----END PGP SIGNATURE-----
