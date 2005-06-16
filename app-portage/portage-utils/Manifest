@@ -1,4 +1,4 @@
-MD5 a0538d8beb26fe74cfd30e7b12e630a4 ChangeLog 1092
-MD5 01cd2009d0c8237db444e250643f9438 metadata.xml 248
-MD5 a374b5360bbb860cd12b4f49e4b93c3c portage-utils-0.1.0.ebuild 640
+MD5 746d634e3cbf80b0362995ec555f188d ChangeLog 1231
+MD5 5a808b54f37942c1de1ff75edc43f69d metadata.xml 281
+MD5 5fde41c5cb0a6444493dc3e32c11cb22 portage-utils-0.1.0.ebuild 657
 MD5 20a7bcce59aa15fc1ae4aa94b848a671 files/digest-portage-utils-0.1.0 71
