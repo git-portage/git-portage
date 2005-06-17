@@ -1,0 +1,5 @@
+MD5 3c9e4da2fac43f3b33a19bd00c2c2add evince-0.3.1.ebuild 1823
+MD5 b15cb36fe84782bc8abbbd5bb2fc8bfc ChangeLog 363
+MD5 80e3213c196ad3e4d107694f8064aad3 metadata.xml 220
+MD5 cb282319216c1397d7e84b39d6cc0e6f files/evince-0.3.1-t1lib_is_t1.patch 1175
+MD5 5657db834dcf44bba4220ca2eff0373d files/digest-evince-0.3.1 65
