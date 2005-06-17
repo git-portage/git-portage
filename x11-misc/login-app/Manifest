@@ -1,3 +1,6 @@
-MD5 88f2b98fbe0bdc359d83cc5320e381be login-app-2.0.0_alpha7.ebuild 859
 MD5 9aac8db2e57ac48d4a713259c217d3d1 ChangeLog 519
+MD5 88f2b98fbe0bdc359d83cc5320e381be login-app-2.0.0_alpha7.ebuild 859
+MD5 a610b9ec49afab1489b8cb6dd607de91 login-app-2.0.0_alpha7-r1.ebuild 1031
 MD5 242ad5512ec9aa8ae4a655379ae0baa2 files/digest-login-app-2.0.0_alpha7 75
+MD5 acba8cb6c040d505ef53f616b5d1f2d9 files/login-app-windowmaker.patch 737
+MD5 242ad5512ec9aa8ae4a655379ae0baa2 files/digest-login-app-2.0.0_alpha7-r1 75
