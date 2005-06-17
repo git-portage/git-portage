@@ -1,4 +1,4 @@
-MD5 760b3a49aea5588e26b4cad1c3b671b4 ChangeLog 531
-MD5 e24b5aed9daa58f74b5bf75e254fdae3 bsdtar-1.02.027.ebuild 786
 MD5 afec809b169074e5d5b0803e4f8f5ec8 metadata.xml 428
-MD5 7cf5fd7cad3a8974a71ce2e1622824c5 files/digest-bsdtar-1.02.027 67
+MD5 760b3a49aea5588e26b4cad1c3b671b4 ChangeLog 531
+MD5 fd26257a6b18a56b095394552ba1f490 bsdtar-1.02.027-r1.ebuild 963
+MD5 7cf5fd7cad3a8974a71ce2e1622824c5 files/digest-bsdtar-1.02.027-r1 67
