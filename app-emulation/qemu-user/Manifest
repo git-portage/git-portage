@@ -1,0 +1,5 @@
+MD5 898131aae735c3477ff2f9c6882f1178 metadata.xml 223
+MD5 a66d8055c7bfef97136ed829236684a8 ChangeLog 326
+MD5 8ad57358d00282b1fe000746cf868010 qemu-user-0.7.0-r1.ebuild 2237
+MD5 4fac7d5e68ef58489e7734f5dccb2918 files/digest-qemu-user-0.7.0-r1 63
+MD5 3202f7445799cce82ccaac9749e1443d files/qemu-user-0.7.0-errno.patch 487
