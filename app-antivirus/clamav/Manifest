@@ -3,8 +3,8 @@ MD5 bf2cf15ce5fddd93fffa28e8b0a3f50f clamav-0.84.ebuild 2314
 MD5 73c5f5661cf66137aa14ba91d833f32a clamav-0.85.1-r1.ebuild 3567
 MD5 921a56174bc3634808df37537d77ea1d clamav-0.85.1.ebuild 3326
 MD5 689c7676f16b3126b2c3f9271f7c2a1e clamav-0.85-r1.ebuild 3290
-MD5 ec3d8509f4aec97e68adf6a79dbcb26f clamav-0.86_rc1.ebuild 3748
-MD5 6680cadad7c812a73b6321a7140f9c8e ChangeLog 16741
+MD5 3304ead313386e3bf10577005daf6209 clamav-0.86_rc1.ebuild 3748
+MD5 bfe6ed64b0123624511b7a82c80db793 ChangeLog 16799
 MD5 7e32edfd72887a57b16ecd73f0f7a1a0 metadata.xml 184
 MD5 6ea55388f51845c2f815589dfed047a4 clamav-0.83.ebuild 2332
 MD5 0bd0d31062475433335752e126830799 files/digest-clamav-0.85-r1 64
