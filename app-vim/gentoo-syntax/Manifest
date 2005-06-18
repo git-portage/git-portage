@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 10c03f2a576906ca02f4ecf4d623edcf gentoo-syntax-20050211-r1.ebuild 1934
 MD5 eda76e8279b1627896fa1a2278a1b11c gentoo-syntax-20050515.ebuild 1718
 MD5 f22c91b745d786ace337a0b0b853c2eb gentoo-syntax-20050618.ebuild 1722
@@ -12,3 +15,10 @@ MD5 c8e3ac5d8a31716f27516db1f6d138c9 files/digest-gentoo-syntax-20041227 74
 MD5 2dc9234dc95eba7cfcf252e4bef5a538 files/digest-gentoo-syntax-20050325 74
 MD5 1ba3532364668721658b08c429f67268 files/digest-gentoo-syntax-20050515 74
 MD5 e6970a1a669fc8424e2e5706fdfb169b files/digest-gentoo-syntax-20050618 74
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCtEdZEZCkKN40op4RArqkAKCmzs0PDALFfrd8qNiIhCWE8DgbzwCgi4qY
+Whr82HWyX5eLamcq42SZEro=
+=Jf30
+-----END PGP SIGNATURE-----
