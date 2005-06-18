@@ -1,4 +1,7 @@
 MD5 7d3abbb618591bff323616f44d75a81d ChangeLog 702
 MD5 3ff31b5479b2a0244f5711fff3155aed metadata.xml 221
 MD5 25e4a50aacd5471529aae921a510d9dd netscape-7.2.ebuild 2634
+MD5 8ffe2fc7ba8fd3cf62f22933f3d59167 netscape-7.2-r1.ebuild 2691
 MD5 1356e62f21a99bbf8c79bedc63e14299 files/digest-netscape-7.2 84
+MD5 26594120d23bf87126010c11a162fb93 files/netscape-7.2-gentoo.diff 722
+MD5 1356e62f21a99bbf8c79bedc63e14299 files/digest-netscape-7.2-r1 84
