@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2516abdfae0af5ad44c670fac08d912f ChangeLog 8277
 MD5 682dc1426cfd3869d86ba74169674ff0 sudo-1.6.8_p8-r3.ebuild 5760
 MD5 eec74c7e7844116754be94ca7ed74d49 sudo-1.6.8_p8-r2.ebuild 4708
@@ -19,3 +22,10 @@ MD5 b1fc3dd8440dc02690820c01190106a3 files/sudo-strip-shellopts.diff 316
 MD5 0c8a06b3d3d86e988a826c8d9e86dbbf files/digest-sudo-1.6.8_p8-r3 64
 MD5 0b50aabedf9bb326893b5f1c333e46b2 files/sudo-skeychallengeargs.diff 567
 MD5 774b75e759fe13c7334c523b1db8ab2e files/sudo_include 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCtLdmKf2g/qXtneoRApOwAJ9TS+m2TYYYZxzigOn7BHPOacA4hQCfat0P
+23m5PTIFgblhRUQnB/YSNGI=
+=ZgNk
+-----END PGP SIGNATURE-----
