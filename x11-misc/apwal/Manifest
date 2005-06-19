@@ -1,3 +1,6 @@
-MD5 509bf3692d39ab577136f53c240854c1 apwal-0.4.4.ebuild 1079
 MD5 2d5d3e6e4cdafbf8cb81aedc96d53074 ChangeLog 470
+MD5 509bf3692d39ab577136f53c240854c1 apwal-0.4.4.ebuild 1079
+MD5 8dad4c602e8fc48cf21cf32d762b9af0 metadata.xml 231
+MD5 509bf3692d39ab577136f53c240854c1 apwal-0.4.5.ebuild 1079
 MD5 ae65ed7cc16b9e9a9d9b4ac49c6a7a32 files/digest-apwal-0.4.4 63
+MD5 b9b76b5a3ce229da2d34474e18dd957a files/digest-apwal-0.4.5 62
