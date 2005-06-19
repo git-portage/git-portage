@@ -1,2 +1,4 @@
-MD5 d3aa41e9cde182191e5c7ff6c4e13724 tpm-tools-1.0.0.ebuild 1148
+MD5 681db268fdac01e14893b5cf43fdca66 tpm-tools-1.0.0.ebuild 1257
+MD5 2603eeeb20b24caddac3e9ce6996f357 metadata.xml 251
+MD5 d32b11c653fdd20cb62a7cc87a10a310 ChangeLog 389
 MD5 5026ce216838dfc282373d4c323210ec files/digest-tpm-tools-1.0.0 66
