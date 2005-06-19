@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 924f966aa69e8a7f2730f17fad03cdaf ChangeLog 57426
 MD5 63063133efc82df82db512614030ba19 baselayout-1.9.4-r6.ebuild 16993
 MD5 451f8ce496238c2fd0fa9fa2852ad16c baselayout-1.9.4-r7.ebuild 17999
@@ -32,3 +35,10 @@ MD5 87842ac605d85289eba63ac1c2e16142 files/baselayout-1.11.10-wireless.patch 321
 MD5 f971d810119eb7f33deba5e540cab2e1 files/baselayout-1.11.12-is-net-fs.patch 903
 MD5 2d89f41d8e2a27bb9c413ce38c5c95fb files/baselayout-1.11.12-profile.patch 1847
 MD5 e76b5eb42575a2c72397f4691f8e7826 files/baselayout-1.11.12-volume-order-etc-update.patch 628
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCtbeBArHZZzCEUG0RApjAAJ9bgcM/kDoyvMoI4stXxJut54+LEQCeJnR/
+Fd1TaSN6tZUx66o9z6tTHo0=
+=s/jo
+-----END PGP SIGNATURE-----
