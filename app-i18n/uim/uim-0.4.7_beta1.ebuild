@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim/Attic/uim-0.4.6-r1.ebuild,v 1.4 2005/05/30 19:31:29 gustavoz Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim/Attic/uim-0.4.7_beta1.ebuild,v 1.1 2005/06/20 04:36:27 usata Exp $
 
 inherit eutils kde-functions
 
@@ -10,13 +10,13 @@ S="${WORKDIR}/${MY_P}"
 DESCRIPTION="a simple, secure and flexible input method library"
 HOMEPAGE="http://uim.freedesktop.org/"
 SRC_URI="http://uim.freedesktop.org/releases/${MY_P}.tar.gz
-	http://lists.sourceforge.jp/mailman/archives/anthy-dev/attachments/20050313/47aab99c/skk-dic-serv.diff2.bin
 	http://prime.sourceforge.jp/src/prime-1.0.0.1.tar.gz"
 
 LICENSE="GPL-2 BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE="gtk qt immqt immqt-bc nls X m17n-lib canna"
+#IUSE="${IUSE} scim"
 
 RDEPEND="X? ( virtual/x11 )
 	gtk? ( >=x11-libs/gtk+-2 )
@@ -33,6 +33,9 @@ DEPEND="${RDEPEND}
 	dev-lang/perl
 	dev-perl/XML-Parser
 	>=sys-apps/sed-4
+	sys-devel/autoconf
+	sys-devel/automake
+	sys-devel/libtool
 	nls? ( sys-devel/gettext )"
 
 # An arch specific config directory is used on multilib systems
@@ -41,7 +44,6 @@ GTK2_CONFDIR=${GTK2_CONFDIR:=/etc/gtk-2.0/}
 
 src_unpack() {
 	unpack ${A}
-	cp "${DISTDIR}"/skk-dic-serv.diff2.bin "${WORKDIR}"/skk-dic-serv.diff2.gz
 
 	cd "${S}"
 	# we execute gtk-query-immodules-2.0 in pkg_postinst()
@@ -49,25 +51,29 @@ src_unpack() {
 	sed -i -e "/gtk-query-immodules-2.0/s/.*/	:\\\\/g" \
 		Makefile.am || die
 	use X || sed -i -e '/^SUBDIRS/s/xim//' Makefile.in || die
-	cd uim; epatch "${WORKDIR}"/skk-dic-serv.diff2.gz
 }
 
 src_compile() {
 	local myconf
 	if use immqt || use immqt-bc ; then
-		myconf="${myconf} --enable-qt-immodule"
+		myconf="${myconf} --with-qt-immodule"
 		export CPPFLAGS="${CPPFLAGS} -I${S}/qt"
 	fi
 	use qt && set-qtdir 3
 
-	econf \
-		$(use_enable nls) \
-		$(use_with X x) \
-		$(use_with gtk gtk2) \
-		$(use_with m17n-lib m17nlib) \
-		$(use_with canna) \
-		$(use_with qt) \
-		${myconf} || die "econf failed"
+	myconf="${myconf}
+		$(use_enable nls)
+		$(use_with X x)
+		$(use_with gtk gtk2)
+		$(use_with m17n-lib m17nlib)
+		$(use_with canna)
+		$(use_with qt)"
+
+	autoreconf
+	libtoolize --copy --force
+
+	# --with-scim is not stable enough
+	econf ${myconf} --without-scim || die "econf failed"
 	emake -j1 || die "emake failed"
 
 	cd ${WORKDIR}/prime-1.0.0.1
