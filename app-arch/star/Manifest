@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 271934d8544213dd22e036a830aad7a9 ChangeLog 5225
 MD5 6a86d4a42c83f6ae5dbbfc1c25570084 star-1.5_alpha50.ebuild 1697
 MD5 68a1afaae4d1ef216d3a5313b572a19c metadata.xml 229
@@ -12,3 +15,10 @@ MD5 51c5a572668976f36d47a998460f6c25 files/digest-star-1.4.3 63
 MD5 afa8850f0412c5a1fc1be0747513e375 files/digest-star-1.5_alpha14 64
 MD5 33476b51813faa52e458f45fd14a7f47 files/digest-star-1.5_alpha50-r1 64
 MD5 55da8c5d43b7ab89c146ccedcd4657ed files/digest-star-1.5_alpha46 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCtzlPCHk4+ZoBpvsRAsdGAJ9M2XzYoNGET6w+axsg6J66MxBxTQCgindS
+O4IZrAyJ+bPcYgD9Lk9F48Q=
+=bwZ8
+-----END PGP SIGNATURE-----
