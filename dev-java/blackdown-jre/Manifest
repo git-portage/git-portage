@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b2f6f67c1cb35a15a936cc02f5ddee98 blackdown-jre-1.3.1-r9.ebuild 1709
 MD5 64e93b41a048c29f296bf9f62f63df42 blackdown-jre-1.4.2.02.ebuild 3316
 MD5 7838cf8d47d18cc605a6b09e1a1bc5fb blackdown-jre-1.4.2.01-r1.ebuild 3324
@@ -12,3 +15,10 @@ MD5 57462605c4cce61fe2ac166306c5b491 files/blackdown-jre-1.4.2.01 428
 MD5 d807d4748f853aab768ead08cffd5454 files/blackdown-jre-1.4.2.02 428
 MD5 3facc5cbb2965471e9b1986926221552 files/blackdown-jre-1.3.1 429
 MD5 271b1f89b9f0f70dd5154090978263b1 files/blackdown-jre-1.4.1 425
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCtrz9/rLF9B432nYRAgd7AKDCRqDlVvxBx2LFI3tU4RGnPNUNRgCfXh/t
+fahwsXW+oJ4REMR37hf6XUQ=
+=kIFu
+-----END PGP SIGNATURE-----
