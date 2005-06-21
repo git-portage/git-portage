@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e651808a816b9a385256b105b53cd60b ChangeLog 12759
 MD5 1d05f0436f1c273d7862099f309afe4d metadata.xml 156
 MD5 2fb7b5e7eae12c620daac22b93a73b7f pam-0.77-r1.ebuild 7495
@@ -27,3 +30,10 @@ MD5 21390b7acb42d4c22215492782e98f5e files/digest-pam-0.78-r1 200
 MD5 60bb8c0caa8b7926facda9fc2c9e860a files/digest-pam-0.78-r2 264
 MD5 33d9efd092b6999143ea42c99a59bfb1 files/pam.d/system-auth 365
 MD5 2d840b9afde7319bc8a8f7676582af11 files/pam.d/other 139
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCuGM95mJXAu5GbtIRAgGyAJ9xHlj2l9A9yH45Xsh9kG3eR/gQxwCfdyC3
+8KiMgVq+JHPntWqDm8mZBoc=
+=l6r+
+-----END PGP SIGNATURE-----
