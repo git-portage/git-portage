@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 34a649543043b4506c5ecdca94ddad41 clamav-0.85.ebuild 2314
 MD5 a680e10fbd5a60b1efa6f4fe2b57f3ab clamav-0.85.1-r1.ebuild 3663
 MD5 921a56174bc3634808df37537d77ea1d clamav-0.85.1.ebuild 3326
@@ -14,3 +17,10 @@ MD5 f6bf5b894e60e8686cb5a36ba240e1ef files/clamd.rc.new 2032
 MD5 102cc388dbea3446ba249cfc2e80cff3 files/digest-clamav-0.85.1-r1 66
 MD5 e29ee77ca9bfe28ed18dbf67a9c90e75 files/clamd.conf 193
 MD5 1b3268d3723e003ad99bf706e6bf4312 files/clamd.rc 1444
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCt2qOQlM6RnzZP+IRAueBAKCBTAluvrPsy316nKQBbk2xWOze3wCePalA
+LiNwQb2h08HUp5rZDQE+OeM=
+=QDKo
+-----END PGP SIGNATURE-----
