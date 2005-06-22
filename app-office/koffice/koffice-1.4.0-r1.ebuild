@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/koffice/Attic/koffice-1.4.0.ebuild,v 1.2 2005/06/22 13:19:08 greg_g Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/koffice/Attic/koffice-1.4.0-r1.ebuild,v 1.1 2005/06/22 13:19:08 greg_g Exp $
 
 inherit kde eutils
 
@@ -43,6 +43,13 @@ need-kde 3.3
 # TODO: kword sql plugin needs Qt compiled with sql support
 # the dependency on python is needed for scripting support in kexi
 # and for kivio/kiviopart/kiviosdk.
+
+src_unpack() {
+	kde_src_unpack
+
+	# Fix problem when saving from koshell. Applied for 1.4.1.
+	epatch "${FILESDIR}/${P}-save.patch"
+}
 
 src_compile() {
 	local myconf="$(use_enable mysql) $(use_enable postgres pgsql)"
