@@ -1,5 +1,5 @@
-MD5 15fd3f1bc65cdd531256da6fcff9c64f anacron-2.3-r1.ebuild 1542
-MD5 f29cd741d49a12d3da763c9952f00f47 ChangeLog 2007
+MD5 c267a9f7e9467e302fe72445edd82982 anacron-2.3-r1.ebuild 1545
+MD5 8b7a803571a5498b9a5bc6e80a7a19f2 ChangeLog 2006
 MD5 9c8fdf815ce980c230d763b496d4d088 metadata.xml 158
 MD5 7a8afe0d6dfb2e8963b670fde2b5eafa files/anacron.rc6 381
 MD5 e2d11dda6625bfe8aa46a5b86d9a0379 files/anacrontab 343
