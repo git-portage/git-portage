@@ -2,9 +2,9 @@ MD5 ec95671cff076c604701692776467ff6 windowmaker-0.91.0-r6.ebuild 6680
 MD5 d34d8f12ade4ec45a61930d8327c1c6d windowmaker-0.91.0-r1.ebuild 5903
 MD5 f85c62f96342786ef1452bd97504d6ef windowmaker-0.80.2-r2.ebuild 3445
 MD5 1c6bba221de348c79f9e7037d96eaa7d windowmaker-0.80.2-r4.ebuild 4046
-MD5 d36e3778c225845f034813296a9d6645 windowmaker-0.91.0-r7.ebuild 6657
+MD5 f9b537f490464e93f0c67d491fa7cdf0 windowmaker-0.91.0-r7.ebuild 6766
 MD5 e2d622829340e8a59e534d24747be769 windowmaker-0.80.2-r3.ebuild 3762
-MD5 077ac88f450b4573c4763daca56352a3 ChangeLog 11896
+MD5 b418e5e8d4d28c2fbe9f1b63a5be73eb ChangeLog 12114
 MD5 641b83c6027dc91a4ac14e1749a58b41 metadata.xml 222
 MD5 a42a33a349ca84fb6e2cc5fdbd627b99 files/trance.patch.WM-0.80.2.diff 9738
 MD5 3a5eaebd5ccf7d3384c042e13f52bef1 files/wlist-0.9x.patch 2980
