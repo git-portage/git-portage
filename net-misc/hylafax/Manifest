@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ac117598575e8a882550d12e3eb4d1bb ChangeLog 9981
 MD5 d83f32c1c30e2a8804a0f5524ed411d2 hylafax-4.1.8-r4.ebuild 3189
 MD5 5f241443de8ec4140795d14470026faa hylafax-4.2.0-r1.ebuild 3355
@@ -22,3 +25,10 @@ MD5 cfcafeadd916b8a9103b9b9110887916 files/hylafax-4.2.0-faxcron_uid.patch 527
 MD5 6fd09a3cd0a1657591fc6c5c076cd462 files/hylafax-4.2.0-tiff_version.patch 1011
 MD5 363ea0f56887928eb876bbe25223de85 files/hylafax-hostvuln.patch 2098
 MD5 0bf655709c9fc6c62ffc7d2a63340c90 files/hylafax-4.2.1-openpam.patch 1571
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCuhcij5H05b2HAEkRArEPAJ96u1DD9ZS/R72FjdbkTmfo+Y064wCfcRdM
+eRIclQjy9b3A6FyotkVpsuY=
+=M0QG
+-----END PGP SIGNATURE-----
