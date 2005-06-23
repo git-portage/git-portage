@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a2c315d9f656dfeadba55ab2c41bc6f3 metadata.xml 470
 MD5 392461f4f4b787fcb47b02793e40605b xsp-1.0.8.ebuild 1343
 MD5 8f8b7a96ffd9871fed30fe827328ee4f xsp-1.0.5.ebuild 1050
@@ -18,3 +21,10 @@ MD5 28084ab7d015a807ed0ee703c147ae6f files/digest-xsp-1.0.9 61
 MD5 478f71b966dfdb287739600f67a43200 files/digest-xsp-1.0.2 61
 MD5 1d50c87af657764f57be8292fbf95061 files/digest-xsp-1.0.4 61
 MD5 381f7e295bbcb9c85dab4f34f046174f files/digest-xsp-1.0.5 61
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCunmxQcyUawK/P5kRAmo2AJ4mT6+KqE3Mgq6RKLTlFtmRKpUJ9wCeOkdB
+y93a7KlIZV4LQAi2ddojIzA=
+=lblh
+-----END PGP SIGNATURE-----
