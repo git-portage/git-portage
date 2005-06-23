@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e1795e6dbfa57a593ac37cd76c3c8577 ChangeLog 11456
 MD5 641b83c6027dc91a4ac14e1749a58b41 metadata.xml 222
 MD5 e2d622829340e8a59e534d24747be769 windowmaker-0.80.2-r3.ebuild 3762
@@ -28,3 +31,10 @@ MD5 f70c1e1b121cfc32dbd802678f3b111f files/wmaker.desktop 221
 MD5 37aefa1e6f793583e8fa7890231d1721 files/wmfpo.patch 7696
 MD5 e451189d91551534b18988709274b73b files/xinerama.patch.bz2 5908
 MD5 4c748a4dd9d3e57dfe5c1d01ccac4b54 files/digest-windowmaker-0.91.0-r5 227
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCusBFl5AvwDPiUowRAp2EAKCq9UEQSPVTu69vG9qIyUokndmNlgCg0Ajj
+3TNj6te6Z3cfGhGHBVEHBDg=
+=uDEC
+-----END PGP SIGNATURE-----
