@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 76fc42e16e46c4f7fef400e69c845d49 memtest86+-1.55.ebuild 2047
 MD5 9aa393aebe3e66f43cd0e48e332b2b1a memtest86+-1.50.ebuild 2040
 MD5 5a6916d340270219993addcf6984cf32 memtest86+-1.40.ebuild 1933
@@ -9,3 +12,10 @@ MD5 dc79d231081f2951707b9336d2321dba files/digest-memtest86+-1.40 67
 MD5 89e3591b3e73135c40f76eaf33d3e340 files/digest-memtest86+-1.50 67
 MD5 114b43ff7481ea736edde3e009304dad files/digest-memtest86+-1.51 67
 MD5 b77e0941bf142a172b378ff9dc5170aa files/digest-memtest86+-1.55 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCuhMNBXaUFmZvwyMRAtJqAJ9eanY+RyPvUKJVEhWZAfX7eijO7wCfQyMM
+TDcozwRUc5pVBrdPJlOBU2s=
+=JoE6
+-----END PGP SIGNATURE-----
