@@ -1,4 +1,5 @@
-MD5 526b248868decf9a84098c514508aa7e htpdate-0.8.2.ebuild 767
+MD5 ee1b9d6911dfc62029334b7b39934b48 htpdate-0.8.2.ebuild 824
 MD5 ff2b63df63e17d0b2714390e4c9ff1e1 metadata.xml 256
-MD5 2312910cf90c5dacf7bc1ee53f3d9965 ChangeLog 393
+MD5 60ea285b6e9b83e00ef8b7938692b4db ChangeLog 583
 MD5 86ea7c47156ba3ab7bd460ad939b1d57 files/digest-htpdate-0.8.2 64
+MD5 050c2abdf7666e1f540a45434265a9e8 files/main_getopt.patch 504
