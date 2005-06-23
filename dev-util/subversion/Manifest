@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 89114926c28b169d38e4c43adb086588 ChangeLog 28284
 MD5 4fd39b311d09602c93a9ff0aceaf8596 files/70svn-gentoo.el 136
 MD5 b355b623d5259b4b1ff75eead17fac0b files/digest-subversion-1.0.9 70
@@ -22,3 +25,10 @@ MD5 8e0f0f898f02dd4eb28d69e0771a1bdc subversion-1.1.3.ebuild 11123
 MD5 dc21f7cf5911e8838bada6ea19c934f1 subversion-1.1.4-r1.ebuild 10380
 MD5 76bbb2ff27f3d246e88e5bb81d35c82b subversion-1.1.4.ebuild 10287
 MD5 4884915b3f085149db98b98242155e36 subversion-1.2.0.ebuild 10478
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCuwnQI1lqEGTUzyQRAkwOAJ0VNwCfQ+BXliQc7AxXIU6quZXlOgCePfhE
+rgDVdzLOlYPscN65wmutoow=
+=DKEJ
+-----END PGP SIGNATURE-----
