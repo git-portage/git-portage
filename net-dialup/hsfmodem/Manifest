@@ -1,15 +1,7 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 6667c3b22c529af6c6cea3c606ce6127 hsfmodem-7.18.00.03-r2.ebuild 1351
+MD5 8bbb068c78abd1caf89a8fdd24d69559 hsfmodem-7.18.00.05.ebuild 1422
 MD5 38039ea13956dd4b72f130a8ef606e19 ChangeLog 3802
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
 MD5 430361a98f210c5a4b0eadcc4d45266c files/hsfmodem-7.18.00.03-nvminstall.patch 521
 MD5 4523eaa6fcb480127dcf1881e1d2bbad files/digest-hsfmodem-7.18.00.03-r2 158
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCp9skjiC39V7gKu0RAiEBAKC7SFrC+ZuxU7q2ky/gtG/+fCJ+nQCfa+/Q
-I2PHuaw4/s+BhXTun7wQYlU=
-=JQ3+
------END PGP SIGNATURE-----
+MD5 68e22b294c2c7b7c8dec938af2bc588f files/digest-hsfmodem-7.18.00.05 230
