@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 68e95624087a362717ff48946d1eb90a ChangeLog 6994
 MD5 9bdc55dbb224488ada58de4d1d8fd2aa libgphoto2-2.1.4.ebuild 3872
 MD5 80850151bae2bd61c4ac796f83656ef6 metadata.xml 217
@@ -14,3 +17,10 @@ MD5 3b33f744c18b1251ef1d6ce48978dd6b files/libgphoto2-2.1.4-gcc2_fixes.patch 168
 MD5 f7704d68a87116356901f49376fa1778 files/libgphoto2-2.1.4-canon.patch 3594
 MD5 c1ead5696ef5db4a488f3457529e0a6c files/digest-libgphoto2-2.1.5 69
 MD5 b99fd4203cf4ad0c3b53222749d3b06f files/digest-libgphoto2-2.1.6 69
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCvCCQTM53OX+9xmMRAhvzAJ9h/1sCDPG61bhBtq4Mt/v0LiUtlwCfaN87
+SzjxkHzzsUQE1Ez9nLb5qu4=
+=3ImG
+-----END PGP SIGNATURE-----
