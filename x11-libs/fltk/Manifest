@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3175fc9f8d354958424a9313dc08d914 ChangeLog 7042
 MD5 206c5f0fd3e7cd9cf72aed0ee593ed4b fltk-1.1.4.ebuild 2167
 MD5 aeb16984ffc07732d37c5974c14f28de metadata.xml 314
@@ -7,3 +10,10 @@ MD5 d8bcde3e8eb3edad07403bd5cdc633e3 files/libs.diff 830
 MD5 29c93504c8cba00eee5622ecbf61f134 files/libs-1.6.diff 960
 MD5 d46e89cec4e12c094443c21f8a8c0d94 files/digest-fltk-1.1.6 71
 MD5 7f2d4df6d519e58f7265fcdb0e178bc3 files/Fl_Help_View.cxx.patch 259
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCvIJvl5AvwDPiUowRAiICAJ0Rip4tq/2gRaR9qPsI6jYi0xniVACgw81/
+VCfhc3ZputjBhgYgSj6TtNE=
+=owiT
+-----END PGP SIGNATURE-----
