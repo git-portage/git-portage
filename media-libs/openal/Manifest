@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f73a9147aae7e02c841da873d9862170 ChangeLog 5302
 MD5 ec6dcddda50a0138e1f50eb0d1299798 metadata.xml 254
 MD5 3bf1037b4a549bb486b65602e073e0db openal-20040817.ebuild 1942
@@ -9,3 +12,10 @@ MD5 7d1289ab83aa79eaa7e09d5e4ccacc45 files/openal-20040817-destdir.patch 498
 MD5 8072d11c3e5e44c43407bed8c67b4031 files/openalrc 221
 MD5 fb8620e95bf8f669b19915d079769a6c files/openal-20050504-destdir.patch 539
 MD5 cb37c0311b2a968a888b843afb2d6b94 files/digest-openal-20050504-r1 69
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCu68CArHZZzCEUG0RAmZyAJ45pqWxgCvl0sweF5L7vQccvaJAgwCghL00
+F5KatRpdq+HTtTakJgyRYS0=
+=ig+I
+-----END PGP SIGNATURE-----
