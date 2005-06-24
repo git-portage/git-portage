@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3301062e0eb044b7ee2002b463809cb9 gcc-3.3.5.20050130.ebuild 3649
 MD5 926048c09b54755ca4d0bc3a2eb7bdda gcc-4.0.0.ebuild 1748
 MD5 22583bfbc351f0715fefcf199efa7c79 gcc-3.4.1-r3.ebuild 31176
@@ -129,3 +132,10 @@ MD5 d047c78a9141b16915d8ec3f54d1e246 files/3.3/gcc33-coreutils-compat.patch.bz2 
 MD5 453122edf63d75cca3a6c56a6dac45b0 files/3.3/gcc33-propolice-version.patch 570
 MD5 088e0807e677010cafe4e590e8711be1 files/3.3/gcc33-no-multilib-amd64.patch 343
 MD5 d6ee829d1712436361f5f1daf7b14e83 files/3.3/gcc33-gentoo-branding.patch 890
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCu1zxgIKl8Uu19MoRAnqoAKCBrO4As7+Fm1eXb+xnF4MThv6U5wCfcOQ5
+koqNyWXRae6L7lTi1ZMSIXI=
+=8Eh6
+-----END PGP SIGNATURE-----
