@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 26552cbc48069125610265673997dad5 ChangeLog 6774
 MD5 fe402b096905cae8dcb4a503d3a838ac metadata.xml 173
 MD5 86689f8d562ebfd5bca7dee1fa917d1e xlockmore-5.12.ebuild 1949
@@ -7,3 +10,10 @@ MD5 65f2645fbf61038ec856ee0a3897c587 files/XLock.ad.patch 773
 MD5 be40cedb5d46e442958e0a182a87380c files/digest-xlockmore-5.12 68
 MD5 9f4d2fc6b5d4094cf494e606b957e8a4 files/digest-xlockmore-5.17-r1 68
 MD5 69d208099f30b11e0bffa0fcfd210cac files/digest-xlockmore-5.18-r2 68
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCvd4Jl5AvwDPiUowRAmy1AJ0YOVIKEs6xfp7BuStYb7GIJi7XWgCgou/A
+n3zo1b5Hv9uhtdk55oiwVpY=
+=ji11
+-----END PGP SIGNATURE-----
