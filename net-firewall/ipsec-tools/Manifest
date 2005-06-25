@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0deb39da59abc2e9b7f309b98083bcd5 ChangeLog 4923
 MD5 6ed9fbfd1bce8915be1e87a159802c46 files/digest-ipsec-tools-0.2.5 69
 MD5 25ac1660a8d1d054bb9c848a21ad907a files/digest-ipsec-tools-0.3.1 69
@@ -24,3 +27,10 @@ MD5 47cb6792bf1c84666919e3f22600b7ca ipsec-tools-0.5-r2.ebuild 1683
 MD5 228ff7a8380ec6efeedd68194846e678 ipsec-tools-0.5.2.ebuild 1552
 MD5 3dc8c88c5bdd1d41e9ed803f1f549f87 ipsec-tools-0.5.ebuild 1474
 MD5 32ef126c26f7354eee96eb430068db74 metadata.xml 222
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCvV3MI1lqEGTUzyQRAilcAJ901qkyuBNJEBu/CYZWXOeWSEF0QwCeMv+L
+AAl5W3oOPtQ+9vjOO2oPqpk=
+=RXoi
+-----END PGP SIGNATURE-----
