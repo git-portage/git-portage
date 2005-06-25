@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a78f8b45e3e2c7b27f3026e85a6634c3 syslinux-3.09.ebuild 1087
 MD5 87356b71e2805dafa9e2b0ff5bb21059 syslinux-2.13.ebuild 942
 MD5 9fb1cccab0010c8e5d2167c0a92b093d syslinux-3.08.ebuild 1087
@@ -13,3 +16,12 @@ MD5 d44d8f9a65b91ec75463ccc8dd60cee3 files/digest-syslinux-2.13 66
 MD5 55cac8782710921227939964ce2fc373 files/digest-syslinux-3.07 67
 MD5 cc878dcb078a17ba92b06e6dffb1b56f files/digest-syslinux-3.08 67
 MD5 490e31f6c68e021aa2cd0e5f6e2a366d files/digest-syslinux-3.09 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iQCVAwUBQr1rr54WFLgrx1GWAQJ3nwQAj5SM9BFU2e0pzmg6bBOFpW33m2uFC4JG
+f1ETfFS9j6qV7EIYqC0hERADFnNq18fTTO4k1BCbCUCDVWuWH4fHDExNazFK5r1H
+z/1pIGlZzyaDnWP6cYlN7uuEOF4S2/DycifOyiW6SmDKhdDScu15bFDrN6AP+0e/
+Z+iV4OBk93E=
+=qmfy
+-----END PGP SIGNATURE-----
