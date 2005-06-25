@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5df973d405e13b29aaaa4a7d4f10aea5 net-snmp-5.1.1.ebuild 2449
 MD5 5347376cc2b2b4139224d86e62c17152 net-snmp-5.1.3_pre1.ebuild 4862
 MD5 22d3d9ac88083c760a07ed3d9c1c32bf net-snmp-5.2.1.ebuild 4876
@@ -25,3 +28,10 @@ MD5 662833e61042a47d4bd8aaae404f4245 files/snmpd.rc6 710
 MD5 25d92c9a7adcbb80240a914a8f6bbfe5 files/net-snmp-lm_sensors.patch 13686
 MD5 0dbde7b1bdd9c9dc988039e676800337 files/snmpd-5.1.rc6 714
 MD5 cf7d3f5d505c262b2477f1759b908bad files/digest-net-snmp-5.3.20050624 74
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCvVICEZCkKN40op4RAne1AJ48Ymfbh/ilc9Cj4Z/L+4LFTOTfegCgn6E9
+MzTexHo5vzlf2G7tbfKnuuU=
+=iOD+
+-----END PGP SIGNATURE-----
