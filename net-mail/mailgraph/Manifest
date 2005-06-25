@@ -1,0 +1,6 @@
+MD5 12cc0b3f6dae806d246c36bd9ea010e9 metadata.xml 259
+MD5 18f5dbc9e4a304d8125421aa3a27c007 mailgraph-1.11.ebuild 1317
+MD5 4be02fe753c0f2634a256269b397b003 ChangeLog 410
+MD5 eeffafebefcc1f509bb3d0fc17c6415d files/mailgraph.initd 582
+MD5 15ca9b482df1941f14c3004c7c836bb5 files/mailgraph.confd 303
+MD5 ca32a39fff4fa2c070d832feb539f47d files/digest-mailgraph-1.11 65
