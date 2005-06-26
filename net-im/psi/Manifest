@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9990168ac7d4759e8404e6d43fa5f2f8 ChangeLog 8269
 MD5 9b91ead14acbf0da98d3b33e75c67e79 metadata.xml 306
 MD5 27eca0b6299f5b4772be31cdef6cd3d3 psi-0.9.2-r1.ebuild 1141
@@ -19,3 +22,10 @@ MD5 0d5cafd17325fc912c4855252d73378f files/psi-indicator.png 300
 MD5 76f5cc28b75698adddaa068e5f4593f5 files/psi-pathfix.patch 462
 MD5 893421922de588e6a40fbe8357976279 files/psi-reverse_trayicon.patch 937
 MD5 c43f1bfd60e72f69346f0a67288c62e8 files/psi_gpg_fix 1193
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFCvsJU8zY1VwezZiERAoDhAJsETjARu8RNCtiXmkqygTIW2SRpHQCfS1r3
+sGu1Klt9rzA/E+Cwo3WQtXM=
+=hp9J
+-----END PGP SIGNATURE-----
