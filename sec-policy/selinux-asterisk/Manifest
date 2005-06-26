@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 54b5c7fbaf4615df3d49e15ace2e8832 ChangeLog 545
 MD5 cf770d71587c51d11992c592aa9980b6 metadata.xml 544
 MD5 93e3683bb964235cae82cfb26872089a selinux-asterisk-20050219.ebuild 441
 MD5 15af1d520147ec8624363e877e06a109 files/digest-selinux-asterisk-20050219 75
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFCvr3HGSBEIeh4AEYRAt3PAJ4zunTkfyXMgyJAXl7jyGn3mmGVSgCeNnLF
+/tUzMqAF27gwrh/+QeuBRv8=
+=mF5e
+-----END PGP SIGNATURE-----
