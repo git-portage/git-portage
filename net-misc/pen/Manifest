@@ -1,13 +1,5 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 d5ac51513f2681e083d14856ecc7784b ChangeLog 453
 MD5 e9c7f48bb542f0d1f9a319a67d65ce46 pen-0.12.1.ebuild 422
+MD5 89658da21067d5594c055a47cad2a21a pen-0.15.0.ebuild 496
 MD5 0d7bf5bbb6fc0f9665bc7bbba5ed469e files/digest-pen-0.12.1 61
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBjPcHI7fK2cqeyXkRAhwJAKDIHZn0IZR7GZ1aVcXeiBClvTJEzgCghceT
-KSZZTXiZaZztBJFKTCpZsTc=
-=k4kV
------END PGP SIGNATURE-----
+MD5 9426cb45a8cec2715688d1545781a36d files/digest-pen-0.15.0 62
