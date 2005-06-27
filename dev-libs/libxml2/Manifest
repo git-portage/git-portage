@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 47e51f2596c69d2b8ee7c34a39f2a647 libxml2-2.6.17.ebuild 1704
 MD5 0c0771bdb413efb18548442c949dcaaa libxml2-2.6.19.ebuild 2046
 MD5 2c997a3eeb8cebea6c43aeeb58d08e2c libxml2-2.6.16.ebuild 1775
@@ -9,3 +12,10 @@ MD5 ff7efcdcc2a364b0eeca271ef52566f8 files/digest-libxml2-2.6.16 68
 MD5 8409491d7d4c895c3a509a3c1c121e02 files/digest-libxml2-2.6.17 68
 MD5 bf6bcb2188d6caf2b35ba1a6aaa7d94f files/digest-libxml2-2.6.18 68
 MD5 761d617849c91c951713a1411f3c1cff files/digest-libxml2-2.6.19 68
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCv/nDBXaUFmZvwyMRAm7lAKDVSI9LKFvZrA8N6EJ27zD4Kk+hDACgzRq4
+DgLFxXNmQh2fXZ+KJgCNLuw=
+=z96t
+-----END PGP SIGNATURE-----
