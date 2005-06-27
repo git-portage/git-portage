@@ -1,12 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-laptop/pbbuttonsd/Attic/pbbuttonsd-0.6.9.ebuild,v 1.1 2005/04/08 07:12:46 josejx Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-laptop/pbbuttonsd/Attic/pbbuttonsd-0.7_pre1.ebuild,v 1.1 2005/06/27 04:31:37 josejx Exp $
 
 inherit eutils
 
 DESCRIPTION="program to map special Powerbook/iBook keys"
 HOMEPAGE="http://pbbuttons.sf.net"
-SRC_URI="mirror://sourceforge/pbbuttons/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/pbbuttons/${PN}-0.7.0beta1.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -17,9 +17,11 @@ DEPEND="virtual/libc
 	>=sys-apps/baselayout-1.8.6.12-r1"
 RDEPEND=""
 
+S="${WORKDIR}/${PN}-0.7.0beta1"
+
 src_compile() {
-	econf || die "sorry, failed to configure pbbuttonsd"
-	emake || die "sorry, failed to compile pbbuttonsd"
+	econf || die "Sorry, failed to configure pbbuttonsd"
+	emake || die "Sorry, failed to compile pbbuttonsd"
 }
 
 src_install() {
