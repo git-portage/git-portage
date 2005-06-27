@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 99edcd1146a80e07289b6c5d1b975063 ChangeLog 11368
 MD5 d40ff6a488da2fdffb038f21cea2aedf aspell-0.50.5-r4.ebuild 1888
 MD5 eb03775ece62e57725480e782cd84ee8 metadata.xml 162
@@ -9,3 +12,10 @@ MD5 02560c627d075d243720f1067bf45bcf files/aspell-buffer-fix.patch 1556
 MD5 ec7c300a1661ae94b55736f74a045bab files/aspell-quotechar-fix.patch 473
 MD5 1b5d84b6b88a3dfe388ad2e4b1f48155 files/digest-aspell-0.50.5-r4 66
 MD5 ea58a3b4827dbc2d3a5606ab927de6a6 files/digest-aspell-0.60.2 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCv81CTM53OX+9xmMRAnzzAJ0dMRA++vFmozgjcfIGEtXQZ9xtKQCgySOa
+0rx7kRy+OHfgxzPKPYVhOsw=
+=8NXq
+-----END PGP SIGNATURE-----
