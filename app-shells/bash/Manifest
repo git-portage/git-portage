@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a4df32e089db48d7c99fd6be36368475 bash-2.05b-r9.ebuild 3516
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 da9f095641a223a8bcbaa27aae9d0f1c ChangeLog 14001
@@ -35,3 +38,10 @@ MD5 4383b25cd54b24b9f459e338f06d096c files/bash-2.05b-parallel-build.patch 459
 MD5 90ba92c981c1d26e45d88ecd23a1fbf5 files/bash-2.05b-multibyte-locale.patch 1897
 MD5 da9995bff4b3377fe028f3ef95427cd1 files/dot-bash_profile 308
 MD5 eea55a33e84dc42b1683592dc8113400 files/bash-3.0-afs.patch 428
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCwGufBXaUFmZvwyMRApcgAKCM/YuwXLxi0e7JGlfQq4Ykdluu1wCgrvc6
+929HRPy1WM+w2FgZN1QflNM=
+=vfjU
+-----END PGP SIGNATURE-----
