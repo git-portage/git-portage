@@ -1,0 +1,6 @@
+MD5 43a528db1a05d9c7851bced09e09733d ftpbase-0.00.ebuild 2459
+MD5 f545d2bcdb5641a7863b64be435382e2 metadata.xml 285
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-ftpbase-0.00 0
+MD5 8c22475496892f4825aa5cc70c53d5d9 files/ftp-pamd 713
+MD5 586c6fcf7c8876dfec3d51209be7382c files/ftp-pamd-include 645
+MD5 4a06897598c9343a62a4af84d75c049f files/ftpusers 313
