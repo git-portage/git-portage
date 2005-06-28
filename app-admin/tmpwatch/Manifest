@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 07586a7b439200f444fa9ff69cc48248 tmpwatch-2.9.4.1.ebuild 1433
 MD5 7d34ccd9bfe45b0510662b13aca93b79 tmpwatch-2.9.2.2.ebuild 1427
 MD5 36c4a5946871944f476e3a2e23f85e7c tmpwatch-2.9.0.ebuild 1227
@@ -13,3 +16,10 @@ MD5 67e8740c6efad67a6444412b58d2208f files/digest-tmpwatch-2.9.3.1 68
 MD5 ed9c3f3744c20d2c5946a551ac3bd2ce files/digest-tmpwatch-2.9.4.1 68
 MD5 c2b96ff8dc2c589482deaa38b4a03016 files/tmpwatch.cron 1365
 MD5 185828eaf60e27de261fa50a676a47b6 files/digest-tmpwatch-2.9.0 68
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCwWA/EZCkKN40op4RAg+PAJ4gzT22c34oTsoqmo1iGIsC9nvOrACfYstC
+sXNNZMttck3S9f5ld2CHFmQ=
+=PKfb
+-----END PGP SIGNATURE-----
