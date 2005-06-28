@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a94207295494707fd769d835ded66759 glibmm-2.6.1.ebuild 1167
 MD5 292fb63c2554a6bcd705b32301999775 glibmm-2.4.7-r1.ebuild 1050
 MD5 a4235eb3377f56860bd3d7f6347b9592 glibmm-2.7.1.ebuild 1168
@@ -8,3 +11,10 @@ MD5 d645a289371e18df9c33719baa37d25d files/digest-glibmm-2.4.7-r1 65
 MD5 6228c75d9e841f3fc6883a344a98e7c3 files/digest-glibmm-2.4.4 65
 MD5 df31c402a8203f95b628cad41a9bafa0 files/digest-glibmm-2.6.1 66
 MD5 905294b11834927aaa6da37bd3edf0b7 files/digest-glibmm-2.7.1 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCwVN3EZCkKN40op4RAn4wAKCk5tqGOP1G9pMvzvHK7a90fv79EQCgnVma
+DOAO8h1pwDSxm1Q1UyKwoQU=
+=wpPp
+-----END PGP SIGNATURE-----
