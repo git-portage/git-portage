@@ -1,4 +1,6 @@
 MD5 8e104384d4510b5a7c76a7940d006089 ChangeLog 614
-MD5 62a323970e1f5cc1587497507fe44703 urlgrabber-2.9.0.ebuild 481
 MD5 3e58423ad3290f53b2d963fa4081d127 metadata.xml 1318
+MD5 62a323970e1f5cc1587497507fe44703 urlgrabber-2.9.0.ebuild 481
+MD5 0088f807ba7f4d521e8ed16391b2dec1 urlgrabber-2.9.6.ebuild 482
 MD5 f93cceb8379e0d6edc42cb435bbcf24b files/digest-urlgrabber-2.9.0 67
+MD5 127f1ae8488170f8db82e7620a5b3504 files/digest-urlgrabber-2.9.6 67
