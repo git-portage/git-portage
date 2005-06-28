@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e439cc8a050947e1c9013470079fbdba rkhunter-1.2.7.ebuild 1760
 MD5 016a29a699d06f85d01b964287fafe93 ChangeLog 8833
 MD5 f1608c19ea0727ee36b2a692b1f3470b metadata.xml 264
@@ -9,3 +12,10 @@ MD5 ecbc10aed5cbe2c9d0dfcb0df424556e files/digest-rkhunter-1.2.7 66
 MD5 ee665b743b036686877333dd0af7fda7 files/digest-rkhunter-1.2.3-r1 66
 MD5 d07a47cbe2364dc010d37ead80ff8f4b files/rkhunter-1.2.1-create-tmpdir.diff 551
 MD5 20350356b04e1a9a2a4ec768692c925b files/rkhunter-1.2.3-fix-insecure-tmp-creation.diff 3114
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCwVYCEZCkKN40op4RAq7yAJ91OlzgSsaXTOUI1esjZkWwSQNKHwCfQlJm
+wZ8+pBVRilQwOcUZ5QyMm1k=
+=R3Rj
+-----END PGP SIGNATURE-----
