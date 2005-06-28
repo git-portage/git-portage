@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a5e6fc5b53b896faeab070b389a14532 sysstat-5.0.4.ebuild 961
 MD5 780588a0027af9f06a2f5a040b3cdb31 sysstat-5.0.5-r1.ebuild 1123
 MD5 570d49e9fecfa3736c4eee8ecc8507b7 sysstat-6.0.1.ebuild 1262
@@ -11,3 +14,10 @@ MD5 73ba0e07b9338cd0d56ee3ebabd1ec79 files/digest-sysstat-6.0.1 65
 MD5 4eac2aae2f83cb52393c58896d9a5151 files/sysstat-6.0.1-gcc4.diff 5918
 MD5 ddf73fe10757e3b706c377f8fad79245 files/sysstat-6.0.0-gcc4.diff 6647
 MD5 d63e5ccba8489c1875bb404a477ed9f0 files/digest-sysstat-5.0.5-r1 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCwYIKEZCkKN40op4RAgWpAJ9ty7iRswANsOExL2+1I8RNPVcz5ACdGcfc
+546SBY//KxLAuzT4HJpqut4=
+=PkeS
+-----END PGP SIGNATURE-----
