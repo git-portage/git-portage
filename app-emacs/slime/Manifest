@@ -1,4 +1,4 @@
-MD5 d5862e7d9d2ed4dc35b3b0f73f33fd26 ChangeLog 3735
+MD5 bde7c2b6eff8c2e6b9b2f0fd1ac8c5dd ChangeLog 3735
 MD5 185b50ff504c7da6807fffb4e73fc017 metadata.xml 1267
 MD5 c0a5f7317eb724d2e79c8a94b4352a7c slime-1.0.20041010.ebuild 1966
 MD5 b1b578e7c57b253d1fd49eeb57e5a5a1 slime-1.0.20050106.ebuild 2032
@@ -7,7 +7,7 @@ MD5 c25320cc54771e316c36cc77f4985d8a slime-1.0.ebuild 1556
 MD5 51dab10f85afab8d266061dcfb71b8f7 slime-1.0.20050303.ebuild 2030
 MD5 151e9c741269c1437af5183b67172bd2 slime-1.2.1.ebuild 2121
 MD5 8d8a5877737761e130c4da55a2f38a94 slime-1.2.1-r1.ebuild 2080
-MD5 36044a72acd4ad2435b120a7873ec9e6 slime-1.2.1.20050610.ebuild 2072
+MD5 9f57f1f58ffa6f67ad056eef020863b6 slime-1.2.1.20050610.ebuild 2078
 MD5 910993d2e23f61b956f2df6fad49b657 files/70slime-gentoo.el 577
 MD5 7eb1b2947936cd494ee8dd07fc2fbc0f files/README.Gentoo 284
 MD5 0b5e3278ab8c3b8f5cfd7c96f947d302 files/digest-slime-1.0 61
