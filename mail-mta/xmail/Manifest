@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 41502efe6204fe5ebe2b88a5755b2557 xmail-1.21.ebuild 4424
 MD5 9501b6d84b021f0d772bb9641752affc xmail-1.20.ebuild 3505
 MD5 16c208409d4fe62a11522e0a0bb08e9a xmail-1.16-r1.ebuild 3587
@@ -10,3 +13,10 @@ MD5 6f4ea67473a8953af58100fb58d22b8f files/digest-xmail-1.21 62
 MD5 722274fd9ffd32da5477fb703d3f657c files/xmailwizard 2299
 MD5 8f93bde743cf3f7a77f27bcf602aa4dc files/xmail.confd 409
 MD5 e3d8c8b19f80d10a348f2d10f33e1cc6 files/xmail.initd 2802
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCww4Z5FrxP71izLARAhT+AJ94qOy2awEdPg1zeMuQC4ijkBPzQACbBXIl
+sazRkQwYOFkX+FDm29AZpzI=
+=50l6
+-----END PGP SIGNATURE-----
