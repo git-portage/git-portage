@@ -4,10 +4,10 @@ MD5 17007a983ae776242105a163124927e4 postfix-2.2.3.ebuild 9712
 MD5 ac642c2fcdc34d3e9b70b2357ce57ee8 postfix-2.2.2-r1.ebuild 9957
 MD5 2372d5dbf4de3ed67393879f2338b052 postfix-2.2.1-r1.ebuild 9944
 MD5 eb7d97dd738129a9917cf2f56860c134 postfix-2.2.2.ebuild 9941
-MD5 d9bcbd6625e636023174d24cd8823a1e ChangeLog 33846
+MD5 e7903e53dc51331d2ed152c8125d7b27 ChangeLog 34233
 MD5 86c229fe394877d2c6a26aa5367bc697 metadata.xml 253
 MD5 2aa3c8bc49f3d08ab5f2ce9fc6a490a4 postfix-2.1.5-r2.ebuild 7517
-MD5 9d123c80057b6e50941648c4b4efe3b5 postfix-2.2.4.ebuild 8814
+MD5 8041570a9a7f31bb704af754b0d0b3e6 postfix-2.2.4.ebuild 8815
 MD5 19504e91dd051f1af469b3a2fcbaaacd postfix-2.2.2-r2.ebuild 9709
 MD5 98872da0bd186c6e0d2b884b0fa28b78 files/postfix.rc6 610
 MD5 889559c8b5d02597e9e7eec89e328360 files/smtp.pass 141
