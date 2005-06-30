@@ -1,14 +1,7 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 65996270bdef7ee284a4dd2d2970d933 ChangeLog 5453
+MD5 d005bd7bafd953967826fbaec83a6346 ChangeLog 5572
 MD5 82add84ad0d2f8b69058e245396e3e89 metadata.xml 507
+MD5 812b2f9dde36aac5d0d791a87a88e920 ndiswrapper-1.2.ebuild 2731
 MD5 955ecb6fb78486d5851d47425e7bae11 ndiswrapper-1.1-r1.ebuild 2660
+MD5 fd2f66ff609bafcd303be1db969e9185 files/digest-ndiswrapper-1.2 67
+MD5 afbf30b80f1d07b7da53a5de063a8913 files/ndiswrapper-1.2-swsusp2.patch 494
 MD5 5902d7ca6595f766e3134e2a7cbec8ea files/digest-ndiswrapper-1.1-r1 67
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCgQWpBtvusYtCZMsRArGvAKCKsCYKcGjroyPIlsVPmGu+XmzEfwCeNQRj
-QXhlrG/TwAGV+xcVyyGg+50=
-=DmDV
------END PGP SIGNATURE-----
