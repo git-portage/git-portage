@@ -1,0 +1,4 @@
+MD5 a8896d3b51d8312121768731fe3c585f saxon-8.4b.ebuild 1256
+MD5 7bc2c04efaafba15df5fa9c221a00a29 files/saxon-8.4b-jikes.patch 795
+MD5 afbe9c7e01f5c21423b6a0f067fb9d29 files/build-8.4b.xml 3942
+MD5 10dc7b59a9361c2d721acb87e6882516 files/digest-saxon-8.4b 59
