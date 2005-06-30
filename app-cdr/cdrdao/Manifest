@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0e2c75605541ad393623a870c92f0253 cdrdao-1.2.0.ebuild 1721
 MD5 eabea7c61116301e189d721177fe8a48 cdrdao-1.1.7-r3.ebuild 3011
 MD5 71328287f8bdbbfefbab9cc9334dd1f3 cdrdao-1.1.9.ebuild 1946
@@ -16,3 +19,10 @@ MD5 1fd823e821f7407e5a49d410b1cf238a files/cdrdao-1.1.9-cast.patch 347
 MD5 2c45c0fc635b97b04317d564cb810c41 files/digest-cdrdao-1.1.9 65
 MD5 a7dc4823c3a7d7582f9b87afdddb51e0 files/cdrdao-1.1.7-r2-mp32dao-gentoo.diff 779
 MD5 91898eebd71b9a81fa6e7d61652f6152 files/cdrdao-1.1.9-ppc64.patch 5217
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCxH221ZcsMnZjRyIRAguYAKCoGMZheC4anGgYy39nMMWAmbwPJACeO4d4
+iwlecugzZsRd+b0mTNt0bAM=
+=dExl
+-----END PGP SIGNATURE-----
