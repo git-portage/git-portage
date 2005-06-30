@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 7b671ce7d61247268219763704e3bbc5 eject-2.0.13-r1.ebuild 1095
 MD5 f478cb84812897f1eab491fd5c59d79d eject-2.0.13.ebuild 1208
@@ -19,3 +22,10 @@ MD5 79bfd06f7b36f98ebfe676e8e37e4955 files/eject-2.0.13-use-mountpoints.patch 11
 MD5 a8f6893c482c2b74b0e799b6cd81e867 files/digest-eject-2.0.13 63
 MD5 31688554edc80b2d6cf1ae427a6533f7 files/eject-2.0.13-fstab-error.patch 956
 MD5 ba37ff5a9223af8de446a18e62dbe19d files/eject-2.0.13-no-umount.patch 2496
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCxHFJgIKl8Uu19MoRAsM0AJsFVVdqTwCiLEkLpeN8OmyJ2gRZDQCeI9Q4
+unRgr5WBlGFKqLz6ezpd/6c=
+=AZga
+-----END PGP SIGNATURE-----
