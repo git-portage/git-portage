@@ -3,11 +3,11 @@ MD5 4699605e930914b11ab0b894d5b8c545 fetchmail-6.2.4.ebuild 2143
 MD5 0e3513a92097cbf36de0d981f0c6489e fetchmail-5.9.14.ebuild 1897
 MD5 93696635908b3e9f12e791de449a82c8 fetchmail-6.2.2-r2.ebuild 2043
 MD5 8a5a81b6cd89c3cf5fe341accd3ed708 fetchmail-6.2.3.ebuild 1962
-MD5 75ed9fa89e40a69f9d9c80b9bb157f56 fetchmail-6.2.5-r2.ebuild 2722
-MD5 08627ff62eecc9738c8b7c38a10d0a2d fetchmail-6.2.5.ebuild 2610
-MD5 83bb3a0f1c7a5fdc34c744ad4b631e12 ChangeLog 9579
+MD5 44c94474b2d648ebc94ab91cae192e7f fetchmail-6.2.5-r2.ebuild 2722
+MD5 900f6ef3ff4d10ef0668f4d197558e9c fetchmail-6.2.5.ebuild 2609
+MD5 878fc9ef47abbdf621ab25f198ff7c4c ChangeLog 9579
 MD5 5721b86fd871bdfab77231abc6e02f68 metadata.xml 161
-MD5 b415149de455fe51fb82c4879a58183f fetchmail-6.2.5-r1.ebuild 2734
+MD5 e2e0aea60ed02e6393a387a2288ecb6b fetchmail-6.2.5-r1.ebuild 2734
 MD5 5b0a50b0a0193afbcb7eff9ac3d5fcb7 files/digest-fetchmail-6.2.1-r1 68
 MD5 72af1b79f1e6aab29edbdefdcce8c1c7 files/digest-fetchmail-6.2.2-r2 68
 MD5 256e473e140583f41c7da6ecd9d815be files/digest-fetchmail-6.2.5-r1 68
