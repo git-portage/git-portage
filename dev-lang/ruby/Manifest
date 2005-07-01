@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6ced44b10ec50254794c86d9ca774c7f ChangeLog 21190
 MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
 MD5 5c6eba6633365e3d738ba6e3a3b6b5b1 ruby-1.8.3_pre1.ebuild 3653
@@ -15,3 +18,10 @@ MD5 e7fc14a584186eb629eddc20bc853a24 files/ruby-rdoc-gentoo.diff 455
 MD5 844ffd93bddeeb9decf86b49669423e8 files/digest-ruby-1.6.8-r12 136
 MD5 be89d4c412387337e14a1d141b90b125 files/oniguruma-2.3.1-gentoo.patch 593
 MD5 a061fe32b8e0538c203bccebcd2ad8ac files/ruby-1.6.8-20040728-20041024.diff 3094
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCxUu25mJXAu5GbtIRApSOAJ0aQaWNns2LE7acq3STKIXq5JKVpgCfeG0z
+QaSt3GgaBg39aFSZCJ2AI7k=
+=ezmX
+-----END PGP SIGNATURE-----
