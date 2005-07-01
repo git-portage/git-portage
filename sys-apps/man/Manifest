@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 9c896566b39c57595f9b9c807aa05a00 man-1.5p.ebuild 2574
 MD5 f8110e4f866320bf931b4d71f43b2642 man-1.6.ebuild 2546
@@ -10,3 +13,10 @@ MD5 148b7ee661e1e9384930fbd508dd5027 files/man-1.5p-parallel-make.patch 437
 MD5 a1fe892ffb27e5e044ed342b611d2db1 files/makewhatis.cron 126
 MD5 bc796c3f2d1f9becb3d0bedc1b6dc051 files/man-1.6-parallel-make.patch 1033
 MD5 7b2b00aace5bcdb963286e235eaf22b2 files/man-1.5p-search-order.patch 519
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCxIisgIKl8Uu19MoRAiHnAJ0XlnMFWJQkvSf6K5uGeWWTfEJmVACfX6oG
+bNLNBlmqq1HnUKKbm0QKjNM=
+=Hm+H
+-----END PGP SIGNATURE-----
