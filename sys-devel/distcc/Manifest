@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 26c141f1c72f0006f889cf37e7741c10 distcc-2.16-r3.ebuild 5178
 MD5 a1d64493e191cd2338fa2c86f08f770d ChangeLog 27058
 MD5 c04441917ccb5e5f9790642545c1f469 metadata.xml 375
@@ -18,3 +21,10 @@ MD5 601b451b5d2555281660ee7f96562dbd files/2.18/distcc-config.patch 1200
 MD5 bb53a18e009ef62f4402a23f83bfda20 files/2.18/conf 1384
 MD5 1161999a5d25185f95a8c284bd7307d1 files/2.17/init 733
 MD5 69a089566bd18a1bfba2da639964c19e files/2.17/conf 1317
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCxtwwKf2g/qXtneoRAisEAJ9m4+kt567WFuVTFS5+dm+Maj3lcwCff1Cd
+MrAXWobiSwy01pPaRgOnnRI=
+=XV+v
+-----END PGP SIGNATURE-----
