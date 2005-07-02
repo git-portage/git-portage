@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d5413300ff03f1d0cf572448962d23b7 pygame-1.5.3.ebuild 830
 MD5 8f4e9911b905fe3162f610934bb8eb95 ChangeLog 3600
 MD5 a152a2383391e2e5a4621bc4ed4a3e98 pygame-1.5.5.ebuild 882
@@ -12,3 +15,10 @@ MD5 a0a1443e65c63b895d64a478953de7c7 files/digest-pygame-1.5.5 64
 MD5 d46bdbdd81463a498d29a4a22bb14f81 files/music.c-pause.patch 800
 MD5 9f93b8b80ed5e7919c6e718c08c74b2b files/digest-pygame-1.6.2 66
 MD5 bcc21545f0d3a09c4bf9beb344d39535 files/digest-pygame-1.5.3 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCxyKsKf2g/qXtneoRAuvmAJ4nVo/pK/SGQWxOhEaVimDN1ZlgEwCfYWuw
+oIGkE9PcL6cWArVxZqlljAM=
+=ZCNg
+-----END PGP SIGNATURE-----
