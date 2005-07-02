@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 cc75d0b03e5a387ab9a6ade80d7b580b ChangeLog 16882
 MD5 b736c67bb1a5d294ee2df24413cf9100 exim-4.43-r2.ebuild 8033
 MD5 3dcc3562423bb66d0c2ea93caf41a36a metadata.xml 994
@@ -21,3 +24,10 @@ MD5 f03fc637e154f9ca79d991e71eb063bf files/exim-4.30-conf.patch 887
 MD5 eb249c90af3ab11e5a4d307e184a75ac files/exiscan.conf 22113
 MD5 f05ff505c7b77a17696736e2730ae8d1 files/digest-exim-4.43-r2 133
 MD5 d230e0fa45f2b65d5bc50c0879c40148 files/pam.d-exim 101
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCxuXDKf2g/qXtneoRAsjTAJ4nFovvkq1vibpvZAStduR1OVvdUwCfSJSD
+TXnprRLyzhenjS/qDL4nTbk=
+=VHIv
+-----END PGP SIGNATURE-----
