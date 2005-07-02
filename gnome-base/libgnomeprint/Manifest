@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 eec52c4a6edaad9ac6b4a016e1759f13 libgnomeprint-2.8.0.ebuild 955
 MD5 9d629c56ee024031ebdfa52fdd21c7b4 libgnomeprint-2.6.2.ebuild 924
 MD5 982c3c890d44df4a476a6378e01d93cc ChangeLog 10739
@@ -17,3 +20,10 @@ MD5 ce728de81a4c2cd722688a92ad4c9b65 files/digest-libgnomeprint-2.8.2 72
 MD5 cb1c47c1aca0b88a857425ab4b16ff48 files/libgnomeprint-2.4.2-gtkdoc_fixes.patch 1830
 MD5 a4298187c695d7c2e27ff13ff758fde3 files/digest-libgnomeprint-2.8.1 72
 MD5 53ecaee2659e6985044799935baf09a9 files/digest-libgnomeprint-2.10.0 73
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCxqPWKf2g/qXtneoRAnZwAJ9Lk+h9J4dref73liAgjF7rCb2O+QCfcdYA
+wMnRMlrO4dBFjz7zoFF4KiQ=
+=cAT9
+-----END PGP SIGNATURE-----
