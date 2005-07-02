@@ -1,3 +1,4 @@
-MD5 5e244ac168938ed42b594de12dd152bb PECL-memcache-1.4.ebuild 432
+MD5 9a5decb43c5177fbb78b451fa1b08011 PECL-memcache-1.4.ebuild 442
+MD5 326f7b647ae16a86273b9060f40384e5 ChangeLog 390
 MD5 34b376f52ca199fffb4e52b83169574a metadata.xml 156
 MD5 430df133b11a86ff398481433e6f19eb files/digest-PECL-memcache-1.4 60
