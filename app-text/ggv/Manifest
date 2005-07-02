@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b83f75e774b09c91c94bfc8b886cb296 ggv-2.4.1.ebuild 836
 MD5 60f6442292c0fca45e7a74b64563894d ggv-1.1.94.ebuild 1635
 MD5 f2ee66d7e641347eb5bc0789c1455c7c ChangeLog 10270
@@ -15,3 +18,10 @@ MD5 0af782d2299128f802179dfd6b10cded files/digest-ggv-2.8.0 63
 MD5 16288c8ba59fe266eb9423753ec2c7f2 files/digest-ggv-2.8.3 63
 MD5 9839595041edeb9a62751cae70d30ea1 files/digest-ggv-1.1.94 62
 MD5 ebf8fa7fb4c1673eff3df32a5c46869e files/digest-ggv-2.8.1 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCxqhoKf2g/qXtneoRAhcBAKClmn52Ro9iPrXkaFLk/c7vY0qslACfVPYh
+34eDM7WglPRQuhbioqa/Caw=
+=mY/z
+-----END PGP SIGNATURE-----
