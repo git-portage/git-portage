@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6d7527be76988b09dcf469014fa57b1a libgda-1.2.1.ebuild 1991
 MD5 4e05bf65dae6c8c21ed9c3931680b44d ChangeLog 10600
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
@@ -23,3 +26,10 @@ MD5 e92331f7677fcfc3e82541f08676bb32 files/digest-libgda-0.2.96-r2 66
 MD5 b87a0e5fdf7e23d29ee4452e694140c4 files/libgda-1.0.4-firebird-provider.patch 1055
 MD5 996f4ee4528ea21ad22a1a160ea90b90 files/libgda-1.0.2-gcc3.4_fix.patch 2911
 MD5 46b8c0b40219635d47ca4583d42dc814 files/digest-libgda-1.0.2 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCxsORKf2g/qXtneoRApIbAJ9Y0Vs6OUYHbLKuO0ebpFFNBfzA+QCeJsPo
+KP79ipc3C8bYmNtgsmNon8I=
+=QTv5
+-----END PGP SIGNATURE-----
