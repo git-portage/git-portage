@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ba9ceaf68d906ce0e2a4dbe551c17d12 logrotate-3.7.1-r1.ebuild 1771
 MD5 ce6cc3c8473d2b7a00b4078d1cf02e91 logrotate-3.7.1.ebuild 1726
 MD5 331456c4605d00e9219479ab0c02e09d ChangeLog 6580
@@ -17,3 +20,10 @@ MD5 721a9af5171ca27c48c51ba338db3036 files/logrotate-3.7.1-no-tmpdir.patch 1266
 MD5 8d4271dd12289c4da96b3e4f1fbd0868 files/logrotate-3.7.1-datehack.patch 516
 MD5 8259bf9cd3b5bc37dd4cdda62cc9c2de files/logrotate-3.7.1-dateext-maxage.patch 14282
 MD5 cf1ca2cfa810abaefc504a76ca38b52a files/logrotate.cron 52
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCxtIGKf2g/qXtneoRAoqPAKC3kNjbt8Hxzrp52Vw6+aaA+DbAWACfeITy
+Ffm6aOcoF1Uf07jUcZ01IrQ=
+=QyvY
+-----END PGP SIGNATURE-----
