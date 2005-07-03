@@ -1,0 +1,6 @@
+MD5 591d9aadb5fbb4b54787bbbf0314fde4 dvb-apps-1.1.0_p20050702.ebuild 1231
+MD5 4b8f4c1c1f6c16cb6894efb6028d33fd ChangeLog 408
+MD5 6b08b975c10fe7776f98b97aa64c7c91 metadata.xml 354
+MD5 a0c56467a9d78244f622282fafa774bf files/dvb-apps-1.1.0_p20050702-gentoo-datafiles.patch 813
+MD5 f0abd17dd61428298069f80983583b6f files/digest-dvb-apps-1.1.0_p20050702 79
+MD5 a6d5954df07a40b6caaa2175bf51a3db files/dvb-apps-1.1.0_p20050702-gentoo-makefile-corrections.patch 10434
