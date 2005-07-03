@@ -54,7 +54,7 @@ MD5 999379432735e7e6a71ec6ccd5a784e1 files/pg_autovacuum.conf-8.0.3 302
 MD5 94081f9cc2dbcb9e1bd47cfa45d9eb6d files/postgresql-8.0.2-gentoo.patch 808
 MD5 dbe0601754b798a4d08f080137a57c43 files/postgresql-7.3.9-securityfix.patch 1443
 MD5 4501816025cc701e272b5e57937d0de0 files/postgresql-7.3.9-gentoo.patch 529
-MD5 73070a96fbb39842e26f24a76e8d4e1e files/postgresql-7.4.8-gentoo.patch 2360
+MD5 1b27a8ad9d652b6d292ff34ad385b208 files/postgresql-7.4.8-gentoo.patch 1729
 MD5 3665230043dd69d562482d92f2d08286 files/postgresql-8.0.1-gentoo.patch 808
 MD5 3b4cbf59561d655b882ab335b892909d files/digest-postgresql-7.3.6-r2 223
 MD5 f96713c7df9eb83197d57a6e22cdeedf files/digest-postgresql-7.3.9-r1 223
