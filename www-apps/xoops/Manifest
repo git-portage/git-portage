@@ -1,5 +1,5 @@
-MD5 8508f178bc537faf128821cb8a0dc67a xoops-2.0.13.ebuild 1073
-MD5 2bce97794cc04dc01537a29731a4acd1 ChangeLog 1354
+MD5 dfcb8d12632714100b8232d3497620e6 xoops-2.0.13.ebuild 1069
+MD5 ce16ae006311fcdf66a397babfc58051 ChangeLog 1351
 MD5 f61bfa064e3acdfcd826e4a38b121196 metadata.xml 161
 MD5 9d3f6311f54b87c63103b72dcef932a3 files/postinstall-en.txt 311
 MD5 324536cbf2f1b6fd03aeea0705783734 files/digest-xoops-2.0.13 65
