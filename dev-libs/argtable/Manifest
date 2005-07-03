@@ -1,5 +1,5 @@
-MD5 84dfdfdd773e40d6249a5ca325d9c69c argtable-2.4.ebuild 975
-MD5 4093a4534e2245e97a25d9cbf884cfbb ChangeLog 771
+MD5 40f336793a506b23dcfc7a868e3ce269 argtable-2.4.ebuild 976
+MD5 be3146d3f64d53edbda8ea9cb7d9ef92 ChangeLog 772
 MD5 f8d10f350e91f30316ea4e1bd1e76470 metadata.xml 254
 MD5 bf46c97bce21ea2091f29bba304d9271 files/argtable-2.4-fix-makefile.diff 1999
 MD5 c743145bef7a99baaa82470de4c30d53 files/digest-argtable-2.4 64
