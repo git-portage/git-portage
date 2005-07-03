@@ -1,4 +1,6 @@
-MD5 161abe8de5d0bf596544177e10407a48 ChangeLog 463
+MD5 cb7eacdf9259d63a603b498848d96b79 tiblit-2.0_beta.ebuild 502
+MD5 1220df2ca5934e72d6bd3ddff5a9c0a8 ChangeLog 559
 MD5 cb28be74814f0f6cbf78047995f51226 metadata.xml 233
 MD5 5cfa0472c904dc1c55e810d4dfeee7e3 tiblit-1.2.ebuild 488
 MD5 a0616853764094310c10ce30ac89a1f1 files/digest-tiblit-1.2 69
+MD5 d0f8634241aad42a5d28761dbb36480e files/digest-tiblit-2.0_beta 68
