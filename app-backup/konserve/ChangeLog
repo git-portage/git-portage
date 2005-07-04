@@ -1,6 +1,6 @@
-# ChangeLog for app-arch/konserve
+# ChangeLog for app-backup/konserve
 # Copyright 2002-2005 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/konserve/Attic/ChangeLog,v 1.1 2005/07/04 05:18:57 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/konserve/Attic/ChangeLog,v 1.2 2005/07/04 07:21:44 robbat2 Exp $
 
   04 Jul 2005; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +konserve-0.10.3.ebuild:

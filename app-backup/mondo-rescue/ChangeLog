@@ -1,6 +1,6 @@
-# ChangeLog for sys-apps/mondo-rescue
+# ChangeLog for app-backup/mondo-rescue
 # Copyright 2002-2005 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mondo-rescue/Attic/ChangeLog,v 1.1 2005/07/04 06:35:58 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mondo-rescue/Attic/ChangeLog,v 1.2 2005/07/04 07:21:53 robbat2 Exp $
 
   04 Jul 2005; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +mondo-rescue-1.47.ebuild, +mondo-rescue-1.61.ebuild,
