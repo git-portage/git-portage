@@ -3,7 +3,7 @@ MD5 2b9b19a5f9a2cb93670be5c798c403bd amanda-2.4.4_p2-r2.ebuild 11640
 MD5 976316eeae5f7388cfa5cf7734cd4db3 amanda-2.4.4_p2.ebuild 11338
 MD5 d746c76696c44ab62c473802eef9bd86 amanda-2.4.4-r3.ebuild 11287
 MD5 553dcb8a25bcf9992dffabf0c3be3ad3 amanda-2.4.4_p2-r1.ebuild 11506
-MD5 1ad6b5872578a8184b242cf5f90cf681 ChangeLog 6855
+MD5 398cf19bf759b229d48326b0d90b1bd4 ChangeLog 6856
 MD5 b0d485ea1a51fb83c70daedef2599272 metadata.xml 279
 MD5 599f9142173a0824bb840edc685eb5b1 amanda-2.4.5.ebuild 12189
 MD5 89f98efbd6fee9891cd6c39d52e5d7a8 files/amanda-devfs 349
