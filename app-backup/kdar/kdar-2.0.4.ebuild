@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/kdar-2.0.4.ebuild,v 1.1 2005/07/04 07:06:11 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/kdar-2.0.4.ebuild,v 1.2 2005/07/04 07:10:53 robbat2 Exp $
 
 inherit kde
 
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86 ~sparc ~amd64 ~ppc"
 IUSE="dar32 dar64"
 
-DEPEND=">=app-arch/dar-2.2.0
+DEPEND=">=app-backup/dar-2.2.0
 	>=app-arch/bzip2-1.0.2
 	>=sys-libs/zlib-1.1.4"
 
