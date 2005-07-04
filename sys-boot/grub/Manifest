@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 929aa2e40adbfedc5f84d493af53bdeb ChangeLog 13839
 MD5 16039704cf1e6b6f46b4413532af082c files/digest-grub-0.92-r1 133
 MD5 5d1c8e582496db9d7a9b77e76f09f7d8 files/digest-grub-0.93.20030118 139
@@ -29,3 +32,10 @@ MD5 265cdebdd7e789aa0f65ece937b6f3d9 grub-0.96-r1.ebuild 5102
 MD5 7d47e58514f036f557dd4e37f60c9f95 grub-0.96-r2.ebuild 5177
 MD5 57b1ac06a99f01be2f0529ddae744349 grub-0.96.ebuild 4184
 MD5 b0eacbb6edb031d87f33ed0b08f5916d metadata.xml 226
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCyR8rI1lqEGTUzyQRAuwqAJ49G+/vwuxvKLjeblJ8+ZYpJgkP3wCgk+MO
+DdwOCI/TH0m8G5v/fqPW/R8=
+=+nLB
+-----END PGP SIGNATURE-----
