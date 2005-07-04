@@ -1,0 +1,5 @@
+MD5 df62380a6c05aa90b39a98efa3e6e733 hwinfo-8.38.ebuild 976
+MD5 9bf18c38512621782e2f300bdf133d38 files/hwinfo-8.38-makefile-fixes.patch 2119
+MD5 d2128a1dac4f1bc44f7184145687bd22 files/digest-hwinfo-8.38 63
+MD5 af6da2fef46c9c9a1d0d6b1922b3d534 files/digest-hwinfo-8.51 64
+MD5 42a7b01b1ec6e9d265716552e95d2702 files/digest-hwinfo-10.16 67
