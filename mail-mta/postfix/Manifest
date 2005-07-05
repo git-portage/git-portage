@@ -1,7 +1,4 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 8529168be77f27c39de88158d39b0ce0 postfix-2.2.3-r1.ebuild 10036
+MD5 7bd4690be3878a79934139719e49d0f1 postfix-2.2.3-r1.ebuild 10091
 MD5 d2f97ac7ba19997b4e588b28009d684d postfix-2.2.1.ebuild 9296
 MD5 17007a983ae776242105a163124927e4 postfix-2.2.3.ebuild 9712
 MD5 ac642c2fcdc34d3e9b70b2357ce57ee8 postfix-2.2.2-r1.ebuild 9957
@@ -25,14 +22,7 @@ MD5 ecc87f9acb3c2395d2d7fe1a673755aa files/digest-postfix-2.2.1 135
 MD5 9419f5dcc490b61ca76278d744bd878f files/digest-postfix-2.2.2 135
 MD5 0726f3fb8ba3f25ea5bfc251d2d96cfb files/digest-postfix-2.2.3 135
 MD5 ff949f18a6d77e67fba4ed20907d0592 files/digest-postfix-2.2.4 135
-MD5 fd01735093dde1691a849d9bf002bf5c files/mailer.conf 408
+MD5 bf2608615919b77d33a688214d622c39 files/mailer.conf 438
 MD5 a41e637c45f2bbc39a37d8f704722164 files/postfix.rc6.2.2.3 633
 MD5 8d7d372a5e867ebc0b1644ee19105e4e files/postfix.rc6.2.2.4 637
 MD5 502e444ec6b9d6fb9bbef3bb0f5e284a files/smtp.pam 254
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCyUn9QlM6RnzZP+IRAt/rAJ4487Yi3F/I04TtvueCNP82omKn6QCgpoQF
-nUDyO6hw3AylGDZ2TXaobJc=
-=TBYP
------END PGP SIGNATURE-----
