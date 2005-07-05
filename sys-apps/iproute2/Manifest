@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 75f1b51ec03bf050ecc2284cc6da1f86 ChangeLog 9548
 MD5 f655e89f2904cde2d5477888e4093223 iproute2-2.6.7.20040608-r1.ebuild 2370
 MD5 d0dad7daa0e6d356fc35f778fed36006 metadata.xml 225
@@ -17,3 +20,10 @@ MD5 9b7de448bf17e80895da676709f9e93e files/digest-iproute2-2.6.11.20050310-r1 74
 MD5 6076b8af87231defd7a1c2db9473c299 files/iproute2-2.6.11.20050310-dsmark-qdisc.patch 1354
 MD5 2469b9a3673ce5a18fa92cfb7c98a71f files/2.6.12-rc1-esfq.patch 5677
 MD5 9b7de448bf17e80895da676709f9e93e files/digest-iproute2-2.6.11.20050310-r2 74
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCyt5wArHZZzCEUG0RAmuPAJ9FFQS7SJ/2biyn90rn4rOx360JUgCdHZ5c
+Uh5KKpNXjPpXRfQSvqOBLwE=
+=58rE
+-----END PGP SIGNATURE-----
