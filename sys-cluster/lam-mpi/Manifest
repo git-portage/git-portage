@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 187c8edb459070bbbc2428cd7d877008 ChangeLog 6653
 MD5 ae841b28d60b0120213eb738f4a05c73 lam-mpi-7.1.ebuild 1619
 MD5 3153a7853eaf73aa32f5fc141111ba3a lam-mpi-7.1.1.ebuild 1455
@@ -13,3 +16,10 @@ MD5 1d7b0bf28395a80f386bf8ea489c69b8 files/digest-lam-mpi-7.0.4 63
 MD5 1d7b0bf28395a80f386bf8ea489c69b8 files/digest-lam-mpi-7.0.4-r1 63
 MD5 38b6624ba4098ca823b9d317705ca44c files/digest-lam-mpi-7.0.6 63
 MD5 3af34eb73976278d39527a330bb6c7b2 files/digest-lam-mpi-7.1.1-r1 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCywjp5mJXAu5GbtIRAt3KAJ9bWHGhkai480UeDH9NWORdIUGozwCeMT5+
+Fq+3IBZYYWsUIterfRJflyc=
+=GPOE
+-----END PGP SIGNATURE-----
