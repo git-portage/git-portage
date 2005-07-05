@@ -5,9 +5,9 @@ MD5 43f345619b8fb7c94ce9a6839d5b1ce4 inkscape-0.37.ebuild 1018
 MD5 5be04a05a47091a211b362eea872f498 inkscape-0.40-r1.ebuild 1256
 MD5 45828204906035f66f3428b9f2f53eca metadata.xml 223
 MD5 240974d91790d179edb2b847e002b2d6 inkscape-0.41.ebuild 2120
-MD5 cf6b26454c5755584ca35267ccd6a1c2 ChangeLog 2962
+MD5 9b7af3a7247fb3bda1105916769ed267 ChangeLog 2960
 MD5 1b9cd1b4f6b5955dbfd427741488fee2 inkscape-0.39.ebuild 1129
-MD5 60cdb46dad36ea577f2be5c92bdaa801 inkscape-0.41-r1.ebuild 2296
+MD5 4c583041c079432faa856dc42cf0c117 inkscape-0.41-r1.ebuild 2294
 MD5 2a6db3de949e36fe3ec3ecbca9c26f3e files/inkscape-0.41_gnome-print.patch 404
 MD5 96ffe3671e95f776e9e90718e5e3132a files/string.patch 489
 MD5 2351ba855aa9cbb514d6b9d61c29158b files/digest-inkscape-0.38 66
