@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e32d40a1d28847972ae9aa468eeba083 ChangeLog 22779
 MD5 1a7084c17a74e59db33578c0833e4099 files/2.0/slapd 584
 MD5 50257f7d6b63c8e9778b6407c7d2dddb files/2.0/slapd.conf 277
@@ -51,3 +54,10 @@ MD5 8ca33d2e9e42040d47ae4119384c34fe openldap-2.2.26-r2.ebuild 11641
 MD5 47247dbac20cbf48c08404fca5b51b7f openldap-2.2.26.ebuild 9741
 MD5 fcb3fc99b1b1938a685fb7919200ed40 openldap-2.2.27-r1.ebuild 12598
 MD5 eccf7065578fd1850586d204d1037294 openldap-2.2.27.ebuild 12433
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCyxKnI1lqEGTUzyQRAhWPAKClC9RZWmgyho75DOuWShY1liIoLwCdHv3x
+duO0Et+zy54SQ0Y/y8x/Fq4=
+=Hjsr
+-----END PGP SIGNATURE-----
