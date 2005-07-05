@@ -2,8 +2,8 @@ MD5 0d2217720540cbf67914a930abf66364 openssl-0.9.7g.ebuild 5177
 MD5 685c33f8a3f1980105944ab3c23a346c openssl-0.9.6m.ebuild 3074
 MD5 5b33d1f91cb7d90e4d0d125905b8dfbb openssl-0.9.7d-r2.ebuild 8970
 MD5 b006190dcd671619b4028aa5ad2e994c openssl-0.9.7e.ebuild 7842
-MD5 57e40fb58ce828cd25ebce7a24424162 ChangeLog 19736
-MD5 0d2217720540cbf67914a930abf66364 openssl-0.9.8.ebuild 5177
+MD5 864f19b0fe7f583a6291a9459e48e637 ChangeLog 20121
+MD5 3e549d804c0ecb011212165069b2f73e openssl-0.9.8.ebuild 5181
 MD5 e59c3cc3221269d3ae08609d821b6b21 openssl-0.9.7c-r1.ebuild 7019
 MD5 83962870a9f649f0cc27b6d5120406d5 openssl-0.9.7e-r1.ebuild 8515
 MD5 37236013e0d26d43c6bff35a8a48e8ec metadata.xml 220
@@ -17,8 +17,10 @@ MD5 91854bcd6c83f040927d490b104bb5a0 files/openssl-0.9.7d-smime.patch 641
 MD5 be045f45d974ec215ec4986c6c7b6ffb files/openssl-0.9.7g-ppc64.patch 856
 MD5 7483d6f0412e857e9063dce4aecf2991 files/openssl-0.9.7d-gentoo.diff 936
 MD5 90fac5947e771433132723442dc90ab0 files/openssl-0.9.7g-no-fips.patch 333
+MD5 e476b45b7b15df41a0e3f06c187201ee files/openssl-0.9.8-parallel-build.patch 649
 MD5 1a7aabb860415c7be612863579d67b4d files/digest-openssl-0.9.7g 67
 MD5 6fe82157d1370046682f9c3d39a55a18 files/gentoo.config-0.9.7g 3171
+MD5 8c5ab963e60bc0744408eebf48596981 files/openssl-0.9.8-make-engines-dir.patch 461
 MD5 4e6c2cbbc1ff9e36ff6d83b6c5356b7c files/openssl-0.9.7-hppa-fix-detection.patch 1718
 MD5 f886f4a6a62eb4ec7bc718952d76900d files/openssl-0.9.7e-gentoo.patch 460
 MD5 f804ea4df3b388d22451cde6e9458f2b files/openssl-0.9.7c-tempfile.patch 2178
@@ -33,4 +35,5 @@ MD5 acab4ad88a6c249a7cde0511a0961a2c files/digest-openssl-0.9.7e 134
 MD5 f8ff492f66404c732e4661cc4443a2e8 files/openssl-0.9.7-alpha-default-gcc.patch 533
 MD5 acab4ad88a6c249a7cde0511a0961a2c files/digest-openssl-0.9.7e-r1 134
 MD5 257fcbed4f939cd3e0113af18df66a92 files/openssl-0.9.7g-ABI-compat.patch 1880
+MD5 4a170a962292bdd019fe303ba981e3ab files/openssl-0.9.8-ppc64.patch 1463
 MD5 cebd09d1819c07b0fab14ad90b0da884 files/openssl-0.9.6m-gentoo.diff 1591
