@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez-utils/Attic/bluez-utils-2.17.ebuild,v 1.3 2005/06/26 08:14:32 brix Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez-utils/Attic/bluez-utils-2.18.ebuild,v 1.1 2005/07/06 10:34:15 liquidx Exp $
 
 IUSE="gtk alsa cups pcmcia dbus"
 
@@ -14,13 +14,13 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 
-RDEPEND=">=net-wireless/bluez-libs-2.17
+RDEPEND=">=net-wireless/bluez-libs-2.18
 	!net-wireless/bluez-pan
 	dev-libs/libusb
 	gtk? ( >=dev-python/pygtk-2.2 )
 	alsa? ( media-libs/alsa-lib )
 	cups? ( net-print/cups )
-	dbus? ( =sys-apps/dbus-0.23* )
+	dbus? ( >=sys-apps/dbus-0.23 )
 	pcmcia? ( sys-apps/pcmcia-cs sys-apps/setserial )"
 
 DEPEND="sys-devel/bison
@@ -53,6 +53,8 @@ src_compile() {
 		--enable-obex \
 		--enable-hid2hci \
 		--enable-bcm203x \
+		--enable-avctrl \
+		--enable-dfutool \
 		--localstatedir=/var \
 		|| die "econf failed"
 	emake || die "make failed"
@@ -60,7 +62,11 @@ src_compile() {
 
 src_install() {
 	make DESTDIR=${D} install || die
-	dodoc README
+	dodoc README ChangeLog
+	# optional bluetooth utils
+	cd ${S}/tools
+	dosbin hcisecfilter ppporc pskey bccmd
+	cd ${S}
 
 	sed -e "s:security auto;:security user;:" \
 		-i ${D}/etc/bluetooth/hcid.conf
