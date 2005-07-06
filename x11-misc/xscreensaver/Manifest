@@ -2,7 +2,7 @@ MD5 d4d67c63edc11cff3dc90a71183554d2 ChangeLog 16618
 MD5 cdb11033a3fa6525334cecf938961c07 metadata.xml 166
 MD5 9b75f02ad6d2e359cab3b1d17412dacd xscreensaver-4.20-r1.ebuild 4462
 MD5 2005bbcde16751631e16bd5d76b4da2b xscreensaver-4.20.ebuild 4836
-MD5 4e23f996988a4e85a7a3fc8cb577453c xscreensaver-4.22-r2.ebuild 5522
+MD5 425c5a33e5ac4d1106c01a2691e735c1 xscreensaver-4.22-r2.ebuild 5522
 MD5 64d504c9ea04705ce78f9ffb87c96321 files/digest-xscreensaver-4.20 70
 MD5 64d504c9ea04705ce78f9ffb87c96321 files/digest-xscreensaver-4.20-r1 70
 MD5 8bd9730fb1f84b69efac29fab28d0db2 files/xscreensaver-4.14-analogtv_tmp.patch 419
