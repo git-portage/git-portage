@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.4_p3.ebuild,v 1.1 2005/07/04 01:48:56 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.4_p3.ebuild,v 1.2 2005/07/06 21:40:10 agriffis Exp $
 
 inherit eutils
 
@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 	sys-devel/autoconf
 	sys-devel/automake"
 
-IUSE="pic debug gdbm berkdb samba xfs"
+IUSE="berkdb debug gdbm samba xfs"
 
 S=${WORKDIR}/${P/_/}
 MYFILESDIR=${WORKDIR}/files
