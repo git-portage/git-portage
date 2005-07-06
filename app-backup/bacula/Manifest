@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 807f0a16ac191b02e7647c096abfb371 bacula-1.36.0.ebuild 9242
 MD5 18f9996c9629c9a5a8676ba61140bf3b bacula-1.34.6.ebuild 4434
 MD5 116d0950d857298fbda9f27717efec21 bacula-1.34.5.ebuild 4434
@@ -22,3 +25,10 @@ MD5 8e55a5f04a3cd9e096e9a5dfb46f1de7 files/digest-bacula-1.34.5 66
 MD5 551003183e612a958cc974532d004224 files/digest-bacula-1.34.6 66
 MD5 aad89729d5313c52d3b3b0b9246f8f47 files/digest-bacula-1.36.0 66
 MD5 100b7479b58ce6c2f62473914b12c02d files/digest-bacula-1.36.3 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzGtdBXaUFmZvwyMRAv4SAJ9Bhg6qjb2s9nXZeGFs8eVQ5TLGDwCffpIw
++2GTuo1Q1BTH8Z7xu2+7T4c=
+=vRQW
+-----END PGP SIGNATURE-----
