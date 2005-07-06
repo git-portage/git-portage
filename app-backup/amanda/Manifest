@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 eb61b22ebea4a97fdbdaa35b763c7efe amanda-2.4.4_p3.ebuild 11800
 MD5 2b9b19a5f9a2cb93670be5c798c403bd amanda-2.4.4_p2-r2.ebuild 11640
 MD5 976316eeae5f7388cfa5cf7734cd4db3 amanda-2.4.4_p2.ebuild 11338
@@ -25,3 +28,10 @@ MD5 0c1121f81cee9a50018b96c615b4554b files/digest-amanda-2.4.4_p2-r2 67
 MD5 95a109a0edbf12da91dbabf7977a97f7 files/example_global.conf 1377
 MD5 ef2e4c8797076d9733b31a860fda8582 files/amanda-inetd.amanda.sample 194
 MD5 6020426a696d9bbec9244067debbba4d files/amanda-2.4.5-samba-printf.patch 498
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzE/CBXaUFmZvwyMRAqWJAJ9acjjjZ6P8jVwIUkxtNCfb0qwg2gCgig4g
+Vc9pDKT57hBCp70Qo2GmEqM=
+=Zpr4
+-----END PGP SIGNATURE-----
