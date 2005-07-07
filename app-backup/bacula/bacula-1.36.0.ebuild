@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.0.ebuild,v 1.2 2005/07/06 23:37:56 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.0.ebuild,v 1.3 2005/07/07 01:32:26 swegener Exp $
 
 inherit eutils
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/bacula/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~hppa ~ppc ~sparc ~x86"
-IUSE="X gnome mysql postgres postgresql readline sqlite static tcpd wxwindows"
+IUSE="X gnome mysql postgres readline sqlite static tcpd wxwindows"
 
 #theres a local sqlite use flag. use it -OR- mysql, not both.
 #mysql is the reccomended choice ...
@@ -241,7 +241,7 @@ pkg_postinst() {
 		fi
 	fi
 
-	if use postgresql
+	if use postgres
 	then
 	# test for an existing database
 	# note: this ASSUMES no password has been set for bacula database
