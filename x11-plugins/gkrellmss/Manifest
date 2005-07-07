@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 073c7a0c3bc2582353827224033418d1 gkrellmss-2.3.ebuild 877
 MD5 a61d177bac9178beb7028f6f57031797 gkrellmss-2.4.ebuild 896
 MD5 05ed01ebd981c2aca52c610387786ab7 gkrellmss-2.6.ebuild 873
@@ -6,3 +9,10 @@ MD5 cb282a2d5fa1b98ccf24d938b8e6f5b5 files/gkrellmss-patch-2.3.diff 638
 MD5 09497dcbb9e774c8877917883664d32f files/digest-gkrellmss-2.3 64
 MD5 b8c81246004604e8025ec4ffc720a6e3 files/digest-gkrellmss-2.4 64
 MD5 82792daa85820a9eb97f6277f31111cb files/digest-gkrellmss-2.6 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzRW4BXaUFmZvwyMRAsqcAJ9+jwwmFr7l2EowOC3AzZOD4w1J5ACgsq32
+fff1zgGNC5cRqVassUCIvIg=
+=4saF
+-----END PGP SIGNATURE-----
