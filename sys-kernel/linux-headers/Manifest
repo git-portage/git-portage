@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 795577bd3aa9ec75d64f69d71d3ee535 linux-headers-2.4.22-r1.ebuild 4080
 MD5 31e90cfffdf977c955d107db8553d1db linux-headers-2.4.26.ebuild 3354
 MD5 772d16ab14120bf4ed224c143f267b3e linux-headers-2.4.22.ebuild 4031
@@ -31,3 +34,10 @@ MD5 459bc20c4015796630e3a9f3dc9125e6 files/linux-headers-strict-ansi-fix.patch 1
 MD5 df6b4c19f4a4cb2b3d3a2a0107d7853d files/digest-linux-headers-2.4.25 67
 MD5 14c583e9ea29b2a3fc88349685cce2f4 files/linux-headers-soundcard-ppc64.patch 722
 MD5 577175545fa471b61b33278053022564 files/digest-linux-headers-2.6.8.1-r4 222
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzHZMgIKl8Uu19MoRAsyzAJ9d5LKzeR8LZ1FOtARO1zLGfwA9kgCfUE3T
+f5CzlLXWWrcXq1HwyV2mIRQ=
+=tnEV
+-----END PGP SIGNATURE-----
