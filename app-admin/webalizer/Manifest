@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e07be0b4516c1e9044aa0c668866b570 webalizer-2.01.10-r8.ebuild 2486
 MD5 d74bed80f6183e16dcbd161ccde1ef3d webalizer-2.01.10-r5.ebuild 2553
 MD5 14458eba5bb33627ef3c18834ff20c8e webalizer-2.01.10-r9.ebuild 2826
@@ -13,3 +16,10 @@ MD5 e1a2a43e4148a750fc8ef91e0af3ba99 files/digest-webalizer-2.01.10-r9 157
 MD5 72cc13055db3923e3b42824671712ed1 files/2.01.10/apache.webalizer 274
 MD5 d121e2b8e931e69a97c720cf30251959 files/2.01.10/webalizer.conf 23895
 MD5 7f29ecf09808176c22585f5205c6eceb files/2.01.10/reconfig 410
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzawEEzitwsaoONoRAlv8AKCanWThuDREfpIdA5ApO7zltqMMqgCggdcP
+xZYEvqw/JSgBO4gP5B6E9WI=
+=MK5K
+-----END PGP SIGNATURE-----
