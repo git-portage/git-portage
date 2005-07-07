@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5383225b33d258d3bdb808d7f9b401c5 cracklib-2.8.3-r1.ebuild 1535
 MD5 2d8a6358b688b2332add86131e1f93da ChangeLog 9594
 MD5 f396f31efaeff34334e13c893b633c5b cracklib-2.7-r11.ebuild 2865
@@ -15,3 +18,10 @@ MD5 954e8e0d53c6f878366e472a90917356 files/cracklib-2.7-redhat.patch 1224
 MD5 e00f36f63e3879e2da10580921e484b6 files/digest-cracklib-2.8.3-r1 66
 MD5 ee8b4f377188b6bb5001fc6e8b81e614 files/cracklib-2.7-libdir.patch 1211
 MD5 336ab4f8ce8e3a3955ec8722d32076b4 files/cracklib-2.7-gzip.patch 521
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzSR51ZcsMnZjRyIRAgwNAJ961Iq+Zk+Gtndb//XE566LzP+cSgCcDMUe
+q7Vz6yOsYAOYij4yZ4Rajys=
+=4FJr
+-----END PGP SIGNATURE-----
