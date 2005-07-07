@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4bb4654f81871b8e07e00156b574abf8 totem-1.0.2-r1.ebuild 2790
 MD5 74b9bd3cc5015b286abc33eb51408252 metadata.xml 521
 MD5 466c2d7107ddbdf375f9c51ced8f065b totem-1.0.3.ebuild 2713
@@ -14,3 +17,10 @@ MD5 572a285ceed98dcaa61cf9520e7e59f7 files/totem-0.99.22-x_includes.patch 1330
 MD5 35a6d2e3ca24f11ad967a671a008b488 files/totem-1.0.2-xine_no_xxmc.patch 360
 MD5 50a343412446e05871e042a7b5958c93 files/totem-0.100-fix_desktop_item.patch 558
 MD5 8dd0c2a14c9603045fb2eebd0ee50534 files/digest-totem-0.100-r3 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzLvbgIKl8Uu19MoRAnIlAJ0RzKKiiOXJmcuZVSnaMBmpVW24XACeID+6
+0fIyKGEByiYiiKzaoW1VjFU=
+=ZK/c
+-----END PGP SIGNATURE-----
