@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b85e689ae1865138ae9ff41428dfc77b libsoup-2.2.1.ebuild 815
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 23577dc58d59c96f256868f716ce157c libsoup-2.2.3-r1.ebuild 758
@@ -16,3 +19,10 @@ MD5 36682c374a676561d186db8ed97390b5 files/digest-libsoup-2.2.2 66
 MD5 ef781f10152707123d5acdcca14603f5 files/digest-libsoup-2.2.3 66
 MD5 6c44713499ec52c81ca81ed58a6286bf files/digest-libsoup-1.99.28-r1 68
 MD5 6128cc7bbf088e07b4040e8296a7c57b files/libsoup-1.99.26-msn.patch 627
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzHnbgIKl8Uu19MoRAhy1AJ9V2xOGZva5ycR2iNU7qPltmw2wTwCdEr1O
+OTR5J/6VIhjMBwhJUJLpMgg=
+=jkFD
+-----END PGP SIGNATURE-----
