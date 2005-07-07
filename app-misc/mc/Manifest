@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 555d357fd8ed626786ac81e143c5fc00 mc-4.6.0-r13.ebuild 3297
 MD5 cbab313c52ad5cde562cf360d4e7582b mc-4.6.0-r12.ebuild 3147
 MD5 881603a2fe2d8b9cf2e6d69a1932aeda ChangeLog 12249
@@ -22,3 +25,10 @@ MD5 d157d2a6836514f758dc3ae9149ae178 files/mc-4.6.0-7zip.patch 631
 MD5 2a6c3ed30597eadaa19a6dbdd3ce168d files/mc-4.6.0-cpan-2003-1023.patch 475
 MD5 33aafc4a9c8134eb13d62fed6b81888e files/ebuild.syntax 2588
 MD5 99fd5760d0ddfc08292de6a62b573e73 files/mc-4.6.0-ftp.patch 285
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzRU3BXaUFmZvwyMRAp5GAJ9tRZTOxeZlrXhy6QlPwWmbx8wGkwCgy77T
+LkBx+CmuMqehQw34ER4jyM4=
+=RVLC
+-----END PGP SIGNATURE-----
