@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3a828afa2895b5be594478a9ce9da60e metacity-2.8.0.ebuild 1111
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 8196ca95c398816e2e155c8fc97113ed metacity-2.8.8.ebuild 1208
@@ -23,3 +26,10 @@ MD5 ed9dff958297725508b84313a48e803e files/digest-metacity-2.10.1 69
 MD5 138ac865c20f1f4f6ff2fde4fa487c00 files/digest-metacity-2.10.0 69
 MD5 6785913225bcd05588b8b2adf011f3c9 files/digest-metacity-2.8.5 68
 MD5 88fc04bedaed2a4d475aaf7928ef9cb1 files/digest-metacity-2.8.8 68
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzKMegIKl8Uu19MoRAqSzAJ9WdZZ9EmmxHxuvrbIjrFaGyZ7WYQCeMZKD
+xdgpu3bVv2axAFegn+gQ5zQ=
+=rahe
+-----END PGP SIGNATURE-----
