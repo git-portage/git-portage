@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 5a267a38ce83469d40f7eb2e28de500d libxklavier-1.02.ebuild 941
 MD5 531264533bd2d6c731472f580c51cd46 libxklavier-2.0.ebuild 1072
@@ -15,3 +18,10 @@ MD5 2ee4cc635af9abc1de963e4d38525430 files/digest-libxklavier-1.02 68
 MD5 31529efcf0188518d362d24a148c74b5 files/libxklavier-1.04-fix_free.patch 301
 MD5 dd5b95ef05fbd2d67d79ce2053a1f4a2 files/libxklavier-1.14-werror.patch 1189
 MD5 10d8c674e282f71c1dd0e11903e86e7d files/sun.xml 4572
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzLpZgIKl8Uu19MoRAgZ1AJwKaUs+R2N3M0aCYdn0yn1/8l1ABwCfVogn
+EQZ3Ff8bgkzjfqBv1Ew+3TQ=
+=HbJ+
+-----END PGP SIGNATURE-----
