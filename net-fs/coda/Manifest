@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f905a614fde3a85e0adefb203ece18fc metadata.xml 321
 MD5 e7e6046cd8636379b027013e5611ceaf coda-6.0.11.ebuild 7693
 MD5 8a8d38f5264d5208b8505db44551a40f coda-6.0.10.ebuild 7770
@@ -13,3 +16,10 @@ MD5 90ab5e322be7ffed9b181e74c6c35072 files/digest-coda-6.0.11 64
 MD5 0e33cefc07af92d1e9351c60412f9628 files/6.0.8/venus 702
 MD5 b4e38a53462318a1c6db3a3b1d7e3db3 files/6.0.10/venus 703
 MD5 818953dac5d5dd5981ea6b6125cc7d91 files/6.0.11/venus 703
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzVe1MGnpIbeahxwRApOgAJ9YorYQnXfxqI3kl81bGdWFsl1OwgCbBvvC
+8um+0ZKFOp6sHDW9Ca3JkLA=
+=kqlf
+-----END PGP SIGNATURE-----
