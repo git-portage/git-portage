@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/catalyst/Attic/catalyst-1.1.9.ebuild,v 1.3 2005/06/01 20:17:09 wolf31o2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/catalyst/Attic/catalyst-1.1.10.ebuild,v 1.1 2005/07/08 13:12:17 wolf31o2 Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://dev.gentoo.org/~wolf31o2/sources/catalyst/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 s390 sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
 IUSE="doc ccache cdr examples"
 
 DEPEND=""
@@ -18,11 +18,7 @@ RDEPEND="dev-lang/python
 	sys-apps/portage
 	amd64? ( sys-apps/linux32 )
 	ccache? ( dev-util/ccache )
-	cdr? (
-		virtual/cdrtools
-		app-misc/zisofs-tools
-		!mips? (
-			>=sys-fs/squashfs-tools-2.1 ) )
+	cdr? ( virtual/cdrtools app-misc/zisofs-tools >=sys-fs/squashfs-tools-2.1 )
 	examples? ( dev-util/livecd-kconfigs dev-util/livecd-specs )"
 
 pkg_setup() {
@@ -41,8 +37,6 @@ src_install() {
 	doins modules/* || die "copying modules/*"
 	insinto /usr/lib/${PN}/livecd/cdtar
 	doins livecd/cdtar/* || die "copying cdtar/*"
-	exeinto /usr/lib/${PN}/livecd/isogen
-	doexe livecd/isogen/* || die "copying isogen/*"
 	exeinto /usr/lib/${PN}/livecd/runscript
 	doexe livecd/runscript/* || die "copying runscript/*"
 	exeinto /usr/lib/${PN}/livecd/runscript-support
@@ -62,15 +56,14 @@ src_install() {
 	if use doc;	then
 		DOCDESTTREE="." dohtml -A spec,msg,example -r examples files
 	fi
-	dodoc TODO README ChangeLog ChangeLog.old AUTHORS COPYING REMARKS
+	dodoc README ChangeLog ChangeLog.old AUTHORS COPYING
 	doman files/catalyst.1
 }
 
 pkg_postinst() {
 	echo
-	einfo "You can find more information about catalyst by checking out the
-catalyst"
-	einfo "project page at:"
+	einfo "You can find more information about catalyst by checking out the"
+	einfo "catalyst project page at:"
 	einfo "http://www.gentoo.org/proj/en/releng/catalyst/index.xml"
 	echo
 }
