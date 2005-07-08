@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a3f3d269963b8887b8f6e1c9d0dccae6 proftpd-1.2.10-r6.ebuild 4462
 MD5 47c7909cf9d623eaa77933d997bdb7c1 proftpd-1.2.10-r1.ebuild 4422
 MD5 ccd3b0639bb673d4f542f42b1a9824b2 proftpd-1.2.10-r3.ebuild 4356
@@ -23,3 +26,10 @@ MD5 81e05e840c023b1f6bfb46dc24cb165f files/digest-proftpd-1.2.10-r6 142
 MD5 6c1a92fc601780a49fdfc01aaf483b69 files/digest-proftpd-1.2.9-r2 66
 MD5 e558f099037d359da5f855285542246e files/1.2.9_rc3-reversedns.diff 1974
 MD5 cfe47c0d5f8fece1d36ca8d56d0f2b99 files/ftp.pamd 701
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzqOs8zY1VwezZiERAr+rAKCgBfqi5mvAuzECcdCyLDKED0GP3QCffaoJ
+C3zcuiby/GP9qslANQ3L7f0=
+=fg44
+-----END PGP SIGNATURE-----
