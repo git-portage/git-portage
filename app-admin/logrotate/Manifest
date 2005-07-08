@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c7533062993ae53a9a32d0a58416cd84 metadata.xml 216
 MD5 af9e66d8014737b2344afe21501fae5f logrotate-3.6.5-r1.ebuild 1730
 MD5 ce6cc3c8473d2b7a00b4078d1cf02e91 logrotate-3.7.1.ebuild 1726
@@ -17,3 +20,10 @@ MD5 4942e4ea3f05b91d9d24504c4ddbc776 files/digest-logrotate-3.7 69
 MD5 bdf48119e016d4ee8b829da9e83959bf files/digest-logrotate-3.6.5-r1 71
 MD5 8d4271dd12289c4da96b3e4f1fbd0868 files/logrotate-3.7.1-datehack.patch 516
 MD5 81c68aeb06c91c02ebbea3c42123fb38 files/logrotate-3.7.1-manpage-fixes.patch 15470
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzeyFgIKl8Uu19MoRAmlXAKCEXm+UOrh9E7oE/AJsqqSKEfwEogCeKn4c
+Swt9ebvAC3HS9JurcPi1UoY=
+=JEXI
+-----END PGP SIGNATURE-----
