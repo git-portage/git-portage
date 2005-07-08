@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 fe86805aef41c396e18da3c162f2f1aa ChangeLog 15516
 MD5 e558f099037d359da5f855285542246e files/1.2.9_rc3-reversedns.diff 1974
 MD5 fa041c7b343099eef454338152a04ea7 files/digest-proftpd-1.2.10 67
@@ -23,3 +26,10 @@ MD5 9cd5b3f274033c4ed06ac8c36b143353 proftpd-1.2.10-r5.ebuild 4393
 MD5 7eb102efc36d413917722fe7801140f1 proftpd-1.2.10-r6.ebuild 4463
 MD5 0215c43fd279ba334fe05f9761ec8293 proftpd-1.2.10.ebuild 4166
 MD5 032f9750ce490f668ca047a660bd099b proftpd-1.2.9-r2.ebuild 3466
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzrROI1lqEGTUzyQRAvm5AJ91hkdXBI4mGAmGI0JYxrmwLmng6gCaA3Z+
+n5NG3zzHdHlnUrCw4u7L8cc=
+=Es/7
+-----END PGP SIGNATURE-----
