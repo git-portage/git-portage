@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 538aeb227c95cc9bc93570d42137ee9c pine-4.63-r2.ebuild 5408
 MD5 df36c8865a5c3109974fb630251fe32d pine-4.62-r1.ebuild 5252
 MD5 918f11739d9028dd2425ad4381504d9a pine-4.61-r5.ebuild 4999
@@ -25,3 +28,10 @@ MD5 c0d53400c157de12da7e429dd0f21185 files/imap-2000-time.patch 1646
 MD5 3803bda87f35ee20456ab2b363460db9 files/pine-4.31-segfix.patch 460
 MD5 1057540bd7b50f92e88b3af6f8d69c99 files/pine-4.61-subjectlength.patch 2363
 MD5 17031d0e1279dabd445a3deb5d19287c files/pine-4.61-largeterminal.patch 526
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzdntKRy60XGEcJIRAgmFAJ9CVlu3F5Nnzu19jasNF44vaN66DACeIAxr
+57llLMnhhym0un0nmqYeq1M=
+=Rn5X
+-----END PGP SIGNATURE-----
