@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a256d4b0c2ea4055801f91dc9af9729f w3m-0.4.2-r10.ebuild 2952
 MD5 ef673798787980429901d8a8c9e8933a w3m-0.5.1-r1.ebuild 3500
 MD5 6dbb19793ae901d3aa90c1ef1dabdabb w3m-0.4.2.ebuild 1887
@@ -10,3 +13,10 @@ MD5 c6c17e9ab9b7b1e694542f4fb51fa8f2 files/digest-w3m-0.5.1-r2 205
 MD5 f818841f47776f4cdfe686de95223019 files/digest-w3m-0.4.2-r10 210
 MD5 0fd075401455ce9205836b4267202e22 files/w3m-w3mman-gentoo.diff 1059
 MD5 ccf8db4eb493664368e4e4c77cea99d4 files/digest-w3m-0.4.2 61
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCz+dLBXaUFmZvwyMRArzYAJ9lmgS40G5rCENRHHh6VaLAcrt9WQCgv6v9
+Lxy+tm5pV/I7EdT0rhPsArA=
+=MDoI
+-----END PGP SIGNATURE-----
