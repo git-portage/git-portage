@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 db7f255ebe6d6cdc73e1f9c65029975a ChangeLog 10784
 MD5 ba82ba9c82d1fc2a39e107b672c55c69 dspam-3.2.7.ebuild 15561
 MD5 05eff187807fdda7f5a7a9d344333769 dspam-3.4.0-r1.ebuild 19671
@@ -27,3 +30,10 @@ MD5 34841f2d2c9d6e057b9839bbe354e34a files/dspam.cron 3478
 MD5 e2850ede85e459ab5479b7d2e79eeb5a files/dspam.rc 1025
 MD5 2163ca41de383f09f4d754e2d35cb158 files/logrotate.dspam 156
 MD5 dbfbe5a3bbe3347938107f5f5bd2197e metadata.xml 308
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCz0GiI1lqEGTUzyQRAhjpAKCn5CNm2nFQ+CR1Ku0IKejM4732igCg3JQ2
+9u8gjsOUyaQbLfgL2rsT51c=
+=Q2dO
+-----END PGP SIGNATURE-----
