@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 926295dfa3fac1694aec8bca4905c222 ChangeLog 2847
 MD5 180a513f34e3f00abc609672a190072c files/1.03-r13/99qmail 137
 MD5 ded22a970fac26b407027ee8ab2883bb files/1.03-r13/conf-common 1104
@@ -46,3 +49,10 @@ MD5 946a715ffdd5e6d2d29c6fdfb29376dd files/tcp.smtp.sample 3726
 MD5 7df733d43f5875dfc63bae636203b8cb metadata.xml 158
 MD5 dcf97efd79e0993a1eb8acf43111f0b0 qmail-mysql-1.03-r13.ebuild 14028
 MD5 d1194002676b3d195cff697e1f6a7039 qmail-mysql-1.03.ebuild 8412
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCzz93I1lqEGTUzyQRAgw4AJ46ruCsQSFajgtjXW9CDO5glCssugCfUD0+
+/rUfcbC7G+IBd32iozEojvU=
+=mjV1
+-----END PGP SIGNATURE-----
