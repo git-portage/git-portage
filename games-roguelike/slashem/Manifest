@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
 MD5 b20ea020e376e49bf054d718db45fe34 slashem-0.0.760.ebuild 4579
 MD5 4c1c791d8d418a25805cd92917235e54 ChangeLog 1818
@@ -24,3 +27,10 @@ MD5 a390d1fc8a476b52da0e6e45e01001b1 files/0.0.7E6/gnome.configure 380
 MD5 c0702cf01cb9b34fb41418616181e7e8 files/0.0.7E6/gentoo-paths.patch 818
 MD5 b9c67a0a6c43921a62aeab60b9b635c4 files/0.0.7E6/prepare-gui.configure 1466
 MD5 4f096566a3684ce493ef00b49d0c08cd files/0.0.7E6/makefile.patch 1258
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0Fg9gIKl8Uu19MoRAtWeAJoCSTCG9p204rnO9UkvEjCWccGr8wCfQNjO
+3ELVywGruC63wQUWJuxHcfU=
+=XSWW
+-----END PGP SIGNATURE-----
