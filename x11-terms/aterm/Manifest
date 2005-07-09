@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 abbfa40d94e5ae9747a24d234bc16016 ChangeLog 12491
 MD5 a83c48f520e82fde8531de8b5bebfdbf aterm-0.4.2-r11.ebuild 2852
 MD5 1994510a79d7990aa041dc0e1d18ec50 aterm-0.4.2-r12.ebuild 2934
@@ -25,3 +28,10 @@ MD5 4f1a0f3cc352be6439ac5810085e1be0 files/digest-aterm-0.4.2-r7 128
 MD5 4f1a0f3cc352be6439ac5810085e1be0 files/digest-aterm-0.4.2-r9 128
 MD5 f35d671ae7390589e50cb67736e90fc3 files/digest-aterm-1.00_beta2 69
 MD5 477586a3ede65c312df804aea35d1a30 metadata.xml 163
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0CVFI1lqEGTUzyQRApwOAKCKtITgV3Mm6JvQOfwINz3bRdhwLACfWZWi
+297INMy9m6MIGyt72B141Ms=
+=Ixkd
+-----END PGP SIGNATURE-----
