@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f690947844b08661ac2d0302b58fe10a ChangeLog 18096
 MD5 5a2a9ad0ab6a40d5ee27662bf265bc41 cdrtools-2.01-r1.ebuild 2830
 MD5 7851326782af5e5357d8e24d8decee25 cdrtools-2.01-r3.ebuild 3608
@@ -8,3 +11,10 @@ MD5 8165b59a7b14939c58a88ca1f272cad4 files/digest-cdrtools-2.01-r3 147
 MD5 0e8283f78b14f3ead0e78d197e1d5ed1 files/digest-cdrtools-2.01.01_alpha01-r2 153
 MD5 1a596f5cae257e97c559716336b30e5b files/mkisofs-iconv-10.patch 16986
 MD5 fb7c98c4ada508b4870303b6cf6f327c metadata.xml 450
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0Bz3I1lqEGTUzyQRAhoPAJ0TVX+nZ94MkndQhWcKth6c+5IH6wCeIcxV
+5URJR2zwBMqQK/jRl+jXH2A=
+=PQBK
+-----END PGP SIGNATURE-----
