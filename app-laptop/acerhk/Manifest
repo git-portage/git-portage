@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5d3325f0fdbcb9cd7cb9fd7f46dca5b3 ChangeLog 2069
 MD5 4a93fd5a77ec4b9b954050a95867760c acerhk-0.5.18-r1.ebuild 1118
 MD5 6b0b1fbb598529ab7fa8294177e02272 acerhk-0.5.18.ebuild 1299
@@ -13,3 +16,10 @@ MD5 94afe625bcea834fda561d015a594608 files/digest-acerhk-0.5.20 65
 MD5 49d5e0a19fe283be3fe74ed93ff33df3 files/digest-acerhk-0.5.22 65
 MD5 49d5e0a19fe283be3fe74ed93ff33df3 files/digest-acerhk-0.5.22-r1 65
 MD5 5cb0503040fe79660f0fbbc6773fd9d7 metadata.xml 259
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCz/aMI1lqEGTUzyQRAkVrAJ47kJC6EdF2ENWPB46aetxxvC/8ygCfaqjB
+GawSuF92VHBObnT6L1WWD34=
+=3580
+-----END PGP SIGNATURE-----
