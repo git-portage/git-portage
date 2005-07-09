@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6fd5cadc234ff85477d8cf7ec3df877b ChangeLog 14684
 MD5 4452461d5fcfd96e2d95e62712554c71 files/GConf-2.6.1-gcc2_fix.patch 420
 MD5 e36bf98a90603eebfcc4d3dacd5fa785 files/digest-gconf-1.0.8-r3 64
@@ -26,3 +29,10 @@ MD5 289effe74344dfc2ed55009d040aee6d gconf-2.8.0.1.ebuild 1986
 MD5 b88c5b82250054f5a9be8ea02903924d gconf-2.8.1-r1.ebuild 2107
 MD5 b467af7a27e0fafbccfa9050426da5af gconf-2.9.91.ebuild 1958
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFCz/RHI1lqEGTUzyQRAge0AJ0cYtGJ0yhtcT7zfdz8riLk0bRg1wCeOm0x
+NL5t2/2c2rTkD+qNhQZewIk=
+=lgLR
+-----END PGP SIGNATURE-----
