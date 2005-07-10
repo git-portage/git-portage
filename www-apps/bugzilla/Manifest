@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 80ce7aeb494bf824439dd9b58eb16e5c bugzilla-2.20_rc1.ebuild 1836
 MD5 bd4baac1be5d5efd4fe4dbc1e4dddc51 bugzilla-2.18.1.ebuild 1856
 MD5 e83882209c32f6592197405c0d7c9a06 bugzilla-2.18.1-r1.ebuild 1795
@@ -22,3 +25,10 @@ MD5 b38d67b03726b84833bd8c5f632e4020 files/2.20_rc1/bugzilla.cron.tab 54
 MD5 0be5a588dc7fdfc9e4898a855bd32361 files/2.20_rc1/bugzilla.cron.daily 115
 MD5 42151252d49e42c9839f80c80dff9138 files/2.20_rc1/apache.htaccess 94
 MD5 7d9b3c0019bbcfd85f9398ecdc2eaa39 files/2.20_rc1/reconfig 5084
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0HTOEzitwsaoONoRAkiRAJ9f/rKJ0mX20L66LU3yW4YW/06nOgCeNcfT
+9+Z7Rc99eL16bKby8ueP/Vs=
+=uXwm
+-----END PGP SIGNATURE-----
