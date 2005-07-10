@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7f7f7ec0b38f854144081c34d3cd7135 ChangeLog 4082
 MD5 37d8d5f4cc1cf6074bcd576c3c294b99 files/configure.in.patch 854
 MD5 a9fba68dfd5dea143cfe49ccb0662fc1 files/digest-log4c-1.0.10-r1 64
@@ -15,3 +18,10 @@ MD5 5a8170fab84628b043e5fb94bb663f24 log4c-1.0.11.ebuild 1531
 MD5 18cd38ca1baee2e12e1ea8d8deec7d1d log4c-1.0.12.ebuild 1174
 MD5 47bcb101a6d5b94977305f73c8dbdbb0 log4c-1.0.6-r1.ebuild 1011
 MD5 4eafc1e08f52712fd036e73730b0a172 metadata.xml 435
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0YT6I1lqEGTUzyQRApNMAKDdpMkj15hLd+CqKP+8p52m9RRGYgCg2OY+
+b7Zb58L2xjlrTE9h4JgoFYc=
+=2DXQ
+-----END PGP SIGNATURE-----
