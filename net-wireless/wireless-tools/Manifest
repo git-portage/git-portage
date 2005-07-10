@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 90c3e06d66391d1df0f094db2135a3a7 wireless-tools-26-r1.ebuild 1090
 MD5 2342bc6865c8667adf44946384058b07 wireless-tools-28_pre8.ebuild 2320
 MD5 08d0fe2ed6caa19bc3d4110d0f91347e ChangeLog 12393
@@ -10,3 +13,10 @@ MD5 4c55d80eb5c0a27d8e13fd33c5364b15 files/digest-wireless-tools-26-r1 69
 MD5 7c44525122efc01a49db2723c5f0d5c6 files/digest-wireless-tools-27 69
 MD5 cb933019a030518be5e16a58d45f6145 files/digest-wireless-tools-28_pre8 74
 MD5 7fff9cc8445ac11352c7ca684f63e80b files/digest-wireless-tools-25-r1 69
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0UCoKf2g/qXtneoRAogvAKCZxKNNz8lUTc6Bu59X+04nMwsunwCgjk2B
+WL7RvSjOjO6hQzv8WCTGuUQ=
+=kElR
+-----END PGP SIGNATURE-----
