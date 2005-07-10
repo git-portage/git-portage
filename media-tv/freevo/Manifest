@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6a7865952cccddf09a31c2ee7b4cc6da ChangeLog 4274
 MD5 20137be2595c8c7411bc0082bab68834 files/digest-freevo-1.5.1 65
 MD5 84e85cacf67d54ca5f607eaed7b728fc files/digest-freevo-1.5.2 65
@@ -9,3 +12,10 @@ MD5 1ef09a4ee788bec2daf1f196e1cc469e freevo-1.5.1.ebuild 2942
 MD5 e4d0be4338043bdd8bf8b14931568eb5 freevo-1.5.2.ebuild 2942
 MD5 415882f992c0aad6e03d18cf3e79f7a7 freevo-1.5.3.ebuild 2948
 MD5 20e2255501865de5b568424821abf69d metadata.xml 161
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0HiAI1lqEGTUzyQRAncMAKCNeBnAF5zKGl26dmgabPbcs4JyRQCgpQ7R
+3cXouT5+Hc8IMgBhBIKyKhc=
+=9WWF
+-----END PGP SIGNATURE-----
