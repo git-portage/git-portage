@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 b88f5065c577774f288b53382fbb2520 sysvinit-2.86.ebuild 2309
 MD5 4bb35af95759582d45324cdf3bc237b7 sysvinit-2.85-r1.ebuild 2545
@@ -10,3 +13,10 @@ MD5 b956965acd5408afa0a3937001b2d55e files/sysvinit-2.86-docs.patch 1899
 MD5 38c0059ecfaa1b09e59a75cc2780aa94 files/digest-sysvinit-2.85-r1 64
 MD5 180a4654bbd070b1264a440c753e6cc0 files/sysvinit-2.86-shutdown-usage.patch 235
 MD5 3c171d9c843284ce606663e4e6da26e9 files/sysvinit-2.85-selinux.patch 6448
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0WNOgIKl8Uu19MoRAoABAJ98RoV7U2o3YleGSbmXr6gHeRljtwCfdvfB
+q9rJsV4m8yT6rKmXACk5zJw=
+=LQsu
+-----END PGP SIGNATURE-----
