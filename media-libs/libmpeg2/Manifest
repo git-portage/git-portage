@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0114eded307571422e5d9f6d1976c46d ChangeLog 5030
 MD5 6ed53be491fa83ebc59d0d7b285c5e4f files/altivec-fix-0.4.0b.diff 890
 MD5 2a17e6b990abf2db666678d21accc928 files/digest-libmpeg2-0.2.1 66
@@ -11,3 +14,10 @@ MD5 65d7e8bb3f78a9769e14f2caaac74f0b libmpeg2-0.3.1.ebuild 1376
 MD5 14ebec3d335a0587e5c442a71ea6279f libmpeg2-0.3.2_pre20030625.ebuild 1361
 MD5 2db00ec450967b0efe33aec112826867 libmpeg2-0.4.0.ebuild 1140
 MD5 88fcb0799ab88f2736fcd94724bf7ff7 libmpeg2-0.4.0b.ebuild 1614
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0YuLI1lqEGTUzyQRAo8RAJ9slVQ99RbirVy1vqDJ98ACdCsXJACghU4a
+Ix+3rLiRKK+QjoAW0Vu/TD8=
+=zPyR
+-----END PGP SIGNATURE-----

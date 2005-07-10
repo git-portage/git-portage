@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 22c0b31f585689d7c214696964077982 ChangeLog 12394
 MD5 e23614bce2d1d77e7df6952b8f3244ca dillo-0.7.3-r7.ebuild 3061
 MD5 30eeb7fe4579a8864d7a1591810820ff dillo-0.8.4-r1.ebuild 3594
@@ -13,3 +16,10 @@ MD5 deb91ab61005bccf824ad864ea0ea66a files/digest-dillo-0.8.5 142
 MD5 8114dfcae2f9f3437c043ed6953f219d files/digest-dillo-0.8.5-r1 226
 MD5 7750091e1346c986eeb58aef81297fd0 files/dillo-format-string-vulnerability.diff 787
 MD5 3ff31b5479b2a0244f5711fff3155aed metadata.xml 221
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0YosI1lqEGTUzyQRAs+OAJ4uJuKonc/KYLVlWOxmLUhlOQErxgCePrjm
+tuSQzPQHWgRP4aeU+vpHqVg=
+=NU84
+-----END PGP SIGNATURE-----
