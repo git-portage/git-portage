@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a62321790ac8a2e5cdf9e60e104358b7 ChangeLog 2926
 MD5 aaf04376f7011a2f68b7961100f611fb files/Mwm.defaults 536
 MD5 76af3b1b80127315546ef5ea7f5875e1 files/bindings.tbz2 5342
@@ -16,3 +19,10 @@ MD5 33bcba9885d6419bbb4e22eed35676ab motif-config-0.6.ebuild 1239
 MD5 b57f5a2346d07273acd7e675d3f5d8cc motif-config-0.7.ebuild 1239
 MD5 f18c8f14b63a3439113068b5a89e193b motif-config-0.8.ebuild 1239
 MD5 993283a96f9aec57996d1591a9e0f682 motif-config-0.9.ebuild 2596
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0WxlI1lqEGTUzyQRAsl4AJ9kZqOGhkCcLqHlzzZtj39nRkPs2wCg1A4X
+/P66ua2Vby9T/hQt5PuVzvc=
+=D0t9
+-----END PGP SIGNATURE-----
