@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 22583bfbc351f0715fefcf199efa7c79 gcc-3.4.1-r3.ebuild 31176
 MD5 9cc2e121134d8b572275d91d60839eac gcc-4.0.1.ebuild 1661
 MD5 37f3db1694d592dc3a3db07507390b76 gcc-3.1.1-r2.ebuild 9270
@@ -91,3 +94,10 @@ MD5 465eeaf6008c25dc69ff502dc2a9d8e0 files/3.2.2/gcc322-ggc_page-speedup.patch 8
 MD5 17f15202b98a8dd84d0f4b67eff2d868 files/3.2.2/gcc32-pr7768.patch 1789
 MD5 184cb0a87ee2fa0197dec6f4902ef4c8 files/3.3.5/gcc-3.3.5-no-COPYING-cross-compile.patch 1192
 MD5 7c29f54dd8d50385ac42fae65459c744 files/3.3.5/gcc-3.3.5-ffecom_gfrt_basictype-prototype.patch 538
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0Ka/gIKl8Uu19MoRApBNAJ4zRlOXJAKhWfwy8PEz5KK08C2iFgCeKwA7
+wQUt8VHW0HoF9qYm3JYbsqc=
+=vmBo
+-----END PGP SIGNATURE-----
