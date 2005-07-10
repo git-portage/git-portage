@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 715c478eab61ccbd7e46acd97f96e6a9 ChangeLog 5397
 MD5 76b8229f7c86ee4d0ca02ba811423309 htdig-3.1.6-r4.ebuild 1768
 MD5 8cb339dee96857223e1b7bbb8cd08963 htdig-3.1.6-r7.ebuild 1893
@@ -10,3 +13,10 @@ MD5 d44854e0008c7b69a927940fe3f373d9 files/htdig-3.1.6-unescaped-output.diff 640
 MD5 8c097ca125d2c633f4a320d10a1cab61 files/htdig-3.2.0-fpic.patch 668
 MD5 6a2501fb2eb3dab0941d282339e42151 files/digest-htdig-3.2.0_beta6 66
 MD5 255a55537e852e6110bfa5924185c6c0 files/reconfig 186
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0G+D5mJXAu5GbtIRAo4GAJ4m3ItPKmYyiVVtF31I2jtHg/bm2QCfTz1j
+lsRPgDGZH3s4G3zowvWM0zg=
+=GfNP
+-----END PGP SIGNATURE-----
