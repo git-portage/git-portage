@@ -3,6 +3,8 @@ MD5 38190c27135abef961e53690f7e140b6 colordiff-1.0.5.ebuild 824
 MD5 6debd60f9e133e2063d5b00e454453f6 colordiff-1.0.4.ebuild 784
 MD5 2ea2799d3f3fee0d5fef7092e6a2afb9 ChangeLog 3805
 MD5 8114f79f8735648770d8f37c32861c88 metadata.xml 252
+MD5 59b5eb14facec22e4d71f0d1d0b6eafc colordiff-1.0.5-r1.ebuild 741
 MD5 c2d6494ef389461d2fdfdce78184e4da files/digest-colordiff-1.0.3 66
 MD5 aacbfa4b314f437baac1ee478ff3996a files/digest-colordiff-1.0.4 66
 MD5 bfff6fd1ace0929c4d81692c93b0eaee files/digest-colordiff-1.0.5 66
+MD5 bfff6fd1ace0929c4d81692c93b0eaee files/digest-colordiff-1.0.5-r1 66
