@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7eeb991ca0439c614b8d1885b1568a47 xorg-x11-6.8.99.14.ebuild 55334
 MD5 9e148b42e3916170d0302cb6ab5d3979 xorg-x11-6.8.2-r1.ebuild 59450
 MD5 46a169074b4e47bc27b500fb5a3e7e83 xorg-x11-6.8.2-r2.ebuild 54931
@@ -12,3 +15,10 @@ MD5 72332f87c0620ede7d4a45a4e2bf237b files/digest-xorg-x11-6.8.99.5 514
 MD5 78b57db57d8445e7202dc1496ac38992 files/digest-xorg-x11-6.8.2-r2 503
 MD5 4e76e2ac295e1502d65a4a70cc5c4d1f files/digest-xorg-x11-6.8.99.14 516
 MD5 9b3889eccb97bb10592e80476c34d60a files/digest-xorg-x11-6.8.99.8 514
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0pU0BXaUFmZvwyMRAhVBAKC8rSzfyXSq+ZCiO/RKhI2sXzC54ACgyniV
+AsmHvSp7RHxh96py/Qk92v8=
+=9wU7
+-----END PGP SIGNATURE-----
