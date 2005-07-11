@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 37d22a10375d8abedc444690ad6ffe43 ChangeLog 6343
 MD5 2d8310a1fc1d9a3c7c35aa06b6f363fc xfce4-4.2.1.1.ebuild 1189
 MD5 a77531f8fec431aa2e50bde28604cde3 xfce4-4.2.2.ebuild 1177
@@ -10,3 +13,10 @@ MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-xfce4-4.2.2 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-xfce4-4.2.1.1 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-xfce4-4.0.6 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-xfce4-4.2.1 0
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0tUnKf2g/qXtneoRAtLLAJ0aVGIj7Sy9T5mCVtv45tcTeTOX1gCgvAlL
+OylRHsYghRLB8jATVGklI9E=
+=FQwx
+-----END PGP SIGNATURE-----
