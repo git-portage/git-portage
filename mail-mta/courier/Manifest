@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5d832fe124f547679c9fbe29cfd18b34 ChangeLog 21273
 MD5 b287829e2f9edbcf1ff7bb349055e77e metadata.xml 392
 MD5 52b9e1c79d37a4168e98834570a20839 courier-0.49.0.20050405.ebuild 10507
@@ -24,3 +27,10 @@ MD5 9d570961b398a1a8e3724947c7205943 files/courier-init 5182
 MD5 35a514d415bc8ddd679970634a95d435 files/digest-courier-0.50.0 68
 MD5 4eb96413bfbc91629bdf43526716cd1e files/dot_courier 26
 MD5 a546a21f960e4f921e71f614f719a2ce files/bofh 23
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0vdzKf2g/qXtneoRAvQ2AKC4Pz0tVbpUhoGhn6Vz0HRwlyLdQACgpl+p
+Z+Lva1GhJBp5ypaoVF4yAos=
+=mg79
+-----END PGP SIGNATURE-----
