@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 65029928eadbfb1db3c05a43ca2ab3cc qsynth-0.1.0.ebuild 664
 MD5 d8faa08aabc500bf9913abc792a0452b qsynth-0.2.3.ebuild 677
 MD5 fe5066e8b2570325676babbec1f0a116 qsynth-0.2.2.ebuild 677
@@ -8,3 +11,10 @@ MD5 fde45970ba4d6681ef829f9fde4b7e72 files/digest-qsynth-0.1.0 63
 MD5 0ad37e882f8d5b9c5e58810f9e646468 files/digest-qsynth-0.2.1 63
 MD5 c8736c07a5030eb5fe6ffac7629d16de files/digest-qsynth-0.2.2 64
 MD5 e5168eb8696836b38d31c1bf6cf3d640 files/digest-qsynth-0.2.3 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0r4Tvpz1081QvMkRAh74AJ0Z9EPMEhFOD4yi3wZfAzBffPzKugCePKPf
+mwOWVrnzGIFS5T9uyG260Ng=
+=58iV
+-----END PGP SIGNATURE-----
