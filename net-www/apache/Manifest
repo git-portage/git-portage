@@ -1,4 +1,4 @@
-MD5 36e24c6d930211fdb9cda10e8e73b8f9 ChangeLog 65524
+MD5 6675377345cde123008d7190c5a4207e ChangeLog 65525
 MD5 b56779cb8460b101ad6912c8f45ff583 apache-1.3.29-r2.ebuild 7237
 MD5 3e32afd7bbab740bdce0fc0cf45d5be3 apache-1.3.31-r1.ebuild 6816
 MD5 a448a0e7566f85098cf55c54e4c6621f apache-1.3.31-r2.ebuild 6941
@@ -22,8 +22,8 @@ MD5 ae2dd998c7e6ad0550793ae3266e3f59 apache-2.0.54-r8.ebuild 12524
 MD5 ffd5d49ee6bef0486d4585d30c87776f apache-2.0.54-r12.ebuild 12840
 MD5 87a8485d6da12611957ee2b4748ac201 apache-2.0.54-r10.ebuild 12840
 MD5 4003f8561ac1d6abec33916647691263 apache-2.0.54-r7.ebuild 12518
-MD5 37ddd05acace2c33dc5591df77459542 apache-1.3.33-r10.ebuild 8695
-MD5 1b8e233a938a9f6b77c79f11be73bf9f apache-1.3.33-r5.ebuild 7104
+MD5 fd8e4c90c15ed51d4690c66d94a78e11 apache-1.3.33-r10.ebuild 8696
+MD5 d2c3037122bf1ba1e40758794ddc4fbb apache-1.3.33-r5.ebuild 7103
 MD5 37f5ed6f2423381241b029e6685bcdd2 metadata.xml 493
 MD5 8b12871dd74fcd3f4fdf451c9d8c259e files/00_apache_manual.conf 781
 MD5 998b4b7df08eb15641e0b9132443b365 files/apache-1.3.27-apachectl.patch 1328
