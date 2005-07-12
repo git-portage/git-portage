@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6816bab392894929a2ebdb14511bc95a libowfat-0.14.ebuild 941
 MD5 f05f71b57bd709a36769ea54f740dea3 libowfat-0.16.ebuild 954
 MD5 4eb9a0525784aebc465b19be43ce3a17 libowfat-0.22.ebuild 958
@@ -11,3 +14,10 @@ MD5 6e194d32917af481cc544938039dc75d files/digest-libowfat-0.14 65
 MD5 7371e320359e7e54f806b70090d61012 files/digest-libowfat-0.15 65
 MD5 3949199f3f38c6c9e92332e28ea47f9c files/digest-libowfat-0.16 65
 MD5 a630ba842b562f97f5708ae1094e9de7 files/digest-libowfat-0.22 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC044/QlM6RnzZP+IRAjlrAKCzPmFOuttcSHD656S6gBFpGXJOywCfe4v9
+MtuANq4KkI3ELgh7Hxp1bGc=
+=Cgic
+-----END PGP SIGNATURE-----
