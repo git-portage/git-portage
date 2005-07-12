@@ -1,4 +1,6 @@
 MD5 9572e0a5effef866076a7ef304edd43a ChangeLog 1751
 MD5 ae0ae422e1ab784652b5a6f96a3d3ad5 metadata.xml 216
+MD5 222ef8c80007f1a4412f6ac75b453bb9 noia-1.0-r1.ebuild 606
 MD5 1d4054c78c862f64b9d86e4063532696 noia-1.0.ebuild 700
 MD5 884dfb32fad4d7b33c07b1f1326bcdfc files/digest-noia-1.0 70
+MD5 884dfb32fad4d7b33c07b1f1326bcdfc files/digest-noia-1.0-r1 70
