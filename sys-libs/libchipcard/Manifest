@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ab8725270b1c6911a7fd43c1772aacda ChangeLog 3368
 MD5 67421dc98d1b41fc9f4ea296c2714e49 libchipcard-0.9.1-r1.ebuild 1022
 MD5 9dbe28c9f5da4eaf84f3c7e9b580e8f5 libchipcard-1.9.9_beta.ebuild 1430
@@ -12,3 +15,10 @@ MD5 5e3a81887c254e4d043d9a0779957f1f files/libchipcard_compile_fix.gz 293
 MD5 f3877fe95678bbd376273f5ab506170f files/digest-libchipcard-1.9.11_beta 75
 MD5 96d258198239a54da121b0fb3cfc9d3d files/digest-libchipcard-1.9.12_beta 75
 MD5 cb7710ce500feb06e33ebe6fd6dd6745 files/opensc.patch 673
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC1DqDr2QksT29OyARAvQCAKCHHmjFw8lHP1fdsRi3YV4ywyk7UwCeKv3/
+nifvQ44dL3HLJFSkhrdMcfA=
+=zPL3
+-----END PGP SIGNATURE-----
