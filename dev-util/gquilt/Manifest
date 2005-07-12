@@ -1,14 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 40ce7c089fc39abc46cde6c938ad8213 ChangeLog 851
+MD5 86b8ff1561b261d0b6cbef15a4516f39 gquilt-0.10.ebuild 682
+MD5 8ff59d2b42bf9a40684c2a38b477e1eb ChangeLog 966
 MD5 fa9f0ec1a9f013df4ca78764a473a250 metadata.xml 256
 MD5 86b8ff1561b261d0b6cbef15a4516f39 gquilt-0.08.ebuild 682
 MD5 99e80d80e03b4066256b6a200c46f5d3 files/digest-gquilt-0.08 62
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCy5/kEZCkKN40op4RAqdeAJ98ixRuKZhuMBojwn9PaMhlL+90RQCeJtur
-Tlgkwv4+6LtF63qohtVQdAM=
-=+Ox+
------END PGP SIGNATURE-----
+MD5 d22233cab02db5bf87c5f879c5762121 files/digest-gquilt-0.10 62
