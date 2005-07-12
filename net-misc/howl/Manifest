@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6cf4503ffb8edec47ed50b8d8fc73474 ChangeLog 4704
 MD5 8fa74872f711abe82c1a9ed544b00ba2 howl-0.9.6-r2.ebuild 1933
 MD5 d690f3ed668cf434a60065123a60022c howl-0.9.8.ebuild 2526
@@ -12,3 +15,10 @@ MD5 9bbb473921bfd5f0f1baacbcf1fb1832 files/mDNSResponder.init.d 747
 MD5 61175700477c9d36a01c9d61e1c73e7e files/nifd.conf.d 578
 MD5 556b0de09b5f9106dc398344978b971f files/nifd.init.d 623
 MD5 035f3180e343287e4afbd1c9a0cd9cd9 files/digest-howl-1.0.0 62
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC1BPYl5AvwDPiUowRAqyiAJ9HuFxk7g5LfNDUaoYLFag1odHTzwCfXxFW
+O46RYvRIB7zX7hnp73vulrw=
+=hT1s
+-----END PGP SIGNATURE-----
