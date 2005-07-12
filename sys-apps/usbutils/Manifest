@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2f96f4804743b4736dc41cd054df0d12 usbutils-0.71.ebuild 1215
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 3bf5ce706718e4c6b91aa5399624c849 usbutils-0.11-r6.ebuild 1486
@@ -9,3 +12,10 @@ MD5 85ab89963a7fd11f8611547fb202cd72 files/digest-usbutils-0.71 65
 MD5 d20a32b2ea8220b81490216ee51cba82 files/usbutils-0.11-fix-usb-ids-man-page-ref.patch 384
 MD5 02a749d768d2c60df972e04643b4a071 files/0.11/lsusb-endian.patch 1834
 MD5 79f1705c48b215f002d9f6541cdca376 files/0.11/ppc64-usbutils-kheaderfix.patch 621
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0z0qgIKl8Uu19MoRAo7vAJ0frpmBhOlMNJODp0NAeUXSDL22NQCfSxxh
+QD68C52RjVe/u/HxymVKWn0=
+=D3xJ
+-----END PGP SIGNATURE-----
