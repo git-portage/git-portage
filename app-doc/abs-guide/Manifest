@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 addaaa5672a5a8cae6a8a86b99aeb36b abs-guide-3.5.ebuild 626
 MD5 172994f07cce5af27201646467958201 ChangeLog 3520
 MD5 f8d10f350e91f30316ea4e1bd1e76470 metadata.xml 254
 MD5 fa1a4b5615beb26dc8098228f49f5bb1 files/digest-abs-guide-3.5 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC0+g1EZCkKN40op4RAl9NAKCqOQuZj/CXJlRqgXLwPKjv6toI/QCfV6vw
+Yix4DNMPzO9LrHZPtEd72ZE=
+=ucRv
+-----END PGP SIGNATURE-----
