@@ -1,5 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 772ee75aa159f3a58452a89f12fdb914 ChangeLog 1169
 MD5 6fb27bdccb1134d8c941a57f72aa0b59 metadata.xml 239
 MD5 53379e5e1d7b46586b37054ac17110c8 ldapsdk-4.1.7-r1.ebuild 1275
 MD5 82c8d76c3b282427a86a22b74777081a files/digest-ldapsdk-4.1.7-r1 74
 MD5 fe737a838d4214efd4bc3e2b05730df6 files/ldapsdk-gentoo.patch 5569
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC1FAp/rLF9B432nYRAgSRAJ9Q3i06GctP2jefnsthPbqNC0QwZgCgn904
+KNmjgwpB8iZSUDQBvclXSQE=
+=kCdq
+-----END PGP SIGNATURE-----
