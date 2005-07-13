@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 cfdb24d00814fd3b281e4f2ee43460a1 ChangeLog 2089
 MD5 6b074ac7234f04005d756b656851a22b files/digest-gimps-23.5 61
 MD5 c3bae23e497746877bbd06134c1edd8e files/digest-gimps-23.9-r1 61
@@ -10,3 +13,10 @@ MD5 f997b542cb2a8335f91cd85075341240 gimps-23.9-r1.ebuild 1431
 MD5 93d999899e2cee10e582dceefdbd331e gimps-24.13.ebuild 1572
 MD5 8af8f43675adbc6957506dac8c4a9709 gimps-24.6.ebuild 1439
 MD5 d94d306da3804e41296e1bf04c7c9cae metadata.xml 255
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC1ZCwI1lqEGTUzyQRAuFAAKCyTlckA0Lzr0hOw7R/sD05zNrTsgCdFIhg
+nWxHrrnzy7lBilnR2tEsUX8=
+=WEWA
+-----END PGP SIGNATURE-----
