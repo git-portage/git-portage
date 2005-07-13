@@ -1,0 +1,6 @@
+MD5 17b4952fd69968e1475aa558d252950a astmanproxy-1.1.ebuild 783
+MD5 fa85b0a43a5888b385f789182fd1dc9f ChangeLog 121
+MD5 44cf247f04cc83413fcb40ed59d0847a metadata.xml 248
+MD5 5bbca9db1db666ffad0f311a8e144f3a files/digest-astmanproxy-1.1 77
+MD5 4670d4323365e584a57d8bfb44139d9b files/astmanproxy-1.1-gentoo.diff 1051
+MD5 a7b39422c5a73cc33f4ba24a5c9ce130 files/astmanproxy.rc6 378
