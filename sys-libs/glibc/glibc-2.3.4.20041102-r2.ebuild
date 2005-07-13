@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.5.20050421.ebuild,v 1.22 2005/07/13 15:16:04 nigoro Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.4.20041102-r2.ebuild,v 1.1 2005/07/13 15:16:04 nigoro Exp $
 
 # Here's how the cross-compile logic breaks down ...
 #  CTARGET - machine that will target the binaries
@@ -16,19 +16,20 @@
 #  CHOST = CTARGET  - install into /
 #  CHOST != CTARGET - install into /usr/CTARGET/
 
+# This version supports only PPC64!
+# Other architecture needs addition of patches.
 KEYWORDS="-* ~ppc64"
 
-# Versionator crap do not work here - not in the mood for hassle.
-BRANCH_UPDATE="20050421"
+BRANCH_UPDATE="20041102"
 
 # From linuxthreads/man
-GLIBC_MANPAGE_VERSION="2.3.5"
+GLIBC_MANPAGE_VERSION="2.3.4"
 
 # From manual
-GLIBC_INFOPAGE_VERSION="2.3.5"
+GLIBC_INFOPAGE_VERSION="2.3.4"
 
 # Gentoo patchset
-PATCH_VER="2.2"
+PATCH_VER="1.0"
 
 # C Stubbs addon (contained in fedora, so ignoring)
 #CSTUBS_VER="2.1.2"
@@ -36,11 +37,11 @@ PATCH_VER="2.2"
 #CSTUBS_URI="http://dev.gentoo.org/~eradicator/glibc/${CSTUBS_TARBALL}"
 
 # Fedora addons (from RHEL's glibc-2.3.4-2.src.rpm)
-FEDORA_VER="20041219T2331"
-FEDORA_TARBALL="glibc-fedora-${FEDORA_VER}.tar.bz2"
-FEDORA_URI="http://dev.gentoo.org/~eradicator/glibc/${FEDORA_TARBALL}"
+#FEDORA_VER="20041219T2331"
+#FEDORA_TARBALL="glibc-fedora-${FEDORA_VER}.tar.bz2"
+#FEDORA_URI="http://dev.gentoo.org/~eradicator/glibc/${FEDORA_TARBALL}"
 
-GENTOO_TOOLCHAIN_BASE_URI="http://dev.gentoo.org/~azarah/glibc"
+GENTOO_TOOLCHAIN_BASE_URI="http://dev.gentoo.org/~eradicator/glibc"
 
 ### PUNT OUT TO ECLASS?? ###
 inherit eutils versionator libtool toolchain-funcs flag-o-matic gnuconfig multilib
@@ -66,10 +67,17 @@ is_crosscompile() {
 	[[ ${CHOST} != ${CTARGET} ]]
 }
 
-GLIBC_RELEASE_VER=$(get_version_component_range 1-3)
-
 # Don't set this to :-, - allows BRANCH_UPDATE=""
 BRANCH_UPDATE=${BRANCH_UPDATE-$(get_version_component_range 4)}
+
+if [ -z "${BRANCH_UPDATE}" ]; then
+	GLIBC_RELEASE_VER="$(get_version_component_range 1-3)"
+	NEW_PV="${GLIBC_RELEASE_VER}"
+else
+	GLIBC_RELEASE_VER="2.3.3"
+	NEW_PV="$(get_version_component_range 1-3)"
+	PATCH_GLIBC_VER="$(get_version_component_range 1-4)"
+fi
 
 # (Recent snapshots fails with 2.6.5 and earlier with NPTL)
 NPTL_KERNEL_VERSION=${NPTL_KERNEL_VERSION:-"2.6.6"}
@@ -125,13 +133,14 @@ get_glibc_src_uri() {
 #	GLIBC_SRC_URI="http://ftp.gnu.org/gnu/glibc/${PN}-${GLIBC_RELEASE_VER}.tar.bz2
 #	               http://ftp.gnu.org/gnu/glibc/${PN}-linuxthreads-${GLIBC_RELEASE_VER}.tar.bz2
 #	               http://ftp.gnu.org/gnu/glibc/${PN}-libidn-${GLIBC_RELEASE_VER}.tar.bz2
-	GLIBC_SRC_URI="mirror://gnu/glibc/${PN}-${GLIBC_RELEASE_VER}.tar.bz2
-	               mirror://gnu/glibc/${PN}-linuxthreads-${GLIBC_RELEASE_VER}.tar.bz2
-	               mirror://gnu/glibc/${PN}-libidn-${GLIBC_RELEASE_VER}.tar.bz2"
+#	GLIBC_SRC_URI="mirror://gnu/glibc/${PN}-${GLIBC_RELEASE_VER}.tar.bz2
+#	               mirror://gnu/glibc/${PN}-linuxthreads-${GLIBC_RELEASE_VER}.tar.bz2
+#	               mirror://gnu/glibc/${PN}-libidn-${GLIBC_RELEASE_VER}.tar.bz2"
+	GLIBC_SRC_URI="http://dev.gentoo.org/~lv/${PN}-${GLIBC_RELEASE_VER}.tar.bz2"
 
 	if [[ -n ${BRANCH_UPDATE} ]] ; then
 		GLIBC_SRC_URI="${GLIBC_SRC_URI}
-			${GENTOO_TOOLCHAIN_BASE_URI}/${PN}-${GLIBC_RELEASE_VER}-branch-update-${BRANCH_UPDATE}.patch.bz2"
+			${GENTOO_TOOLCHAIN_BASE_URI}/${PN}-${NEW_PV}-branch-update-${BRANCH_UPDATE}.patch.bz2"
 	fi
 
 	if [[ -n ${PATCH_VER} ]] ; then
@@ -171,8 +180,8 @@ toolchain-glibc_src_unpack() {
 	unpack ${PN}-${GLIBC_RELEASE_VER}.tar.bz2
 
 	cd "${S}"
-	unpack ${PN}-linuxthreads-${GLIBC_RELEASE_VER}.tar.bz2
-	unpack ${PN}-libidn-${GLIBC_RELEASE_VER}.tar.bz2
+	#unpack ${PN}-linuxthreads-${GLIBC_RELEASE_VER}.tar.bz2
+	#unpack ${PN}-libidn-${GLIBC_RELEASE_VER}.tar.bz2
 
 	[[ -n ${CSTUBS_TARBALL} ]] && unpack ${CSTUBS_TARBALL}
 	[[ -n ${FEDORA_TARBALL} ]] && unpack ${FEDORA_TARBALL}
@@ -187,19 +196,24 @@ toolchain-glibc_src_unpack() {
 	# to them with branchupdate)
 	if [[ -n ${BRANCH_UPDATE} ]] ; then
 		cd "${WORKDIR}"
-		unpack ${PN}-${GLIBC_RELEASE_VER}-branch-update-${BRANCH_UPDATE}.patch.bz2
+		unpack ${PN}-${NEW_PV}-branch-update-${BRANCH_UPDATE}.patch.bz2
 
 		cd "${S}"
-		epatch "${WORKDIR}"/${PN}-${GLIBC_RELEASE_VER}-branch-update-${BRANCH_UPDATE}.patch
+		epatch "${WORKDIR}"/${PN}-${NEW_PV}-branch-update-${BRANCH_UPDATE}.patch
 
 		# Snapshot date patch
 		einfo "Patching version to display snapshot date ..."
 		sed -i -e "s:\(#define RELEASE\).*:\1 \"${BRANCH_UPDATE}\":" version.h
 	fi
 
+	# Version patch
+	sed -i -e "s:\(#define VERSION\).*:\1 \"${NEW_PV}\":" version.h
+
 	if [[ ${GLIBC_MANPAGE_VERSION} != "none" ]] ; then
-		cd "${WORKDIR}"
+		mkdir -p ${S}/man
+		cd "${S}/man"
 		unpack ${PN}-manpages-${GLIBC_MANPAGE_VERSION:-${GLIBC_RELEASE_VER}}.tar.bz2
+		cd ${S}
 	fi
 
 	if [[ ${GLIBC_INFOPAGE_VERSION} != "none" ]] ; then
@@ -207,12 +221,17 @@ toolchain-glibc_src_unpack() {
 		unpack ${PN}-infopages-${GLIBC_INFOPAGE_VERSION:-${GLIBC_RELEASE_VER}}.tar.bz2
 	fi
 
+	# taken from 2.3.4.20041102-r1.ebuild do_fedora_patches
+	rm -rf ${S}/glibc-compat
+
 	# XXX: do not package ssp up into tarballs, leave it in FILESDIR
 	cd "${S}"
-	cp "${FILESDIR}"/2.3.5/ssp.c sysdeps/unix/sysv/linux/ || die "could not find ssp.c"
-	rm -f "${WORKDIR}"/patches/2*
-	epatch "${FILESDIR}"/2.3.3/glibc-2.3.2-propolice-guard-functions-v3.patch
-	epatch "${FILESDIR}"/2.3.3/glibc-2.3.3-frandom-detect.patch
+	cp "${FILESDIR}"/2.3.3/ssp.c sysdeps/unix/sysv/linux/ || die "could not find ssp.c"
+	#rm -f "${WORKDIR}"/patches/2*
+	#epatch "${FILESDIR}"/2.3.5/glibc-2.3.5-propolice-guard-functions.patch
+	#epatch "${FILESDIR}"/2.3.5/glibc-2.3.5-frandom-detect.patch
+
+	want_nptl && epatch ${S}/fedora/glibc-nptl-check.patch
 
 	if [[ -n ${PATCH_VER} ]] ; then
 		cd "${S}"
@@ -389,19 +408,12 @@ toolchain-glibc_src_install() {
 		rm -rf ${D}/nptl
 	fi
 
-	# Now, strip everything but the thread libs #46186, as well as the dynamic
-	# linker, else we cannot set breakpoints in shared libraries.
-	# Fix for ld-* by Lonnie Princehouse.
+	# now, strip everything but the thread libs #46186
 	mkdir -p ${T}/thread-backup
-	for x in ${D}$(alt_libdir)/lib{pthread,thread_db}* \
-	         ${D}$(alt_libdir)/ld-* ; do
-		[[ -f ${x} ]] && mv -f ${x} ${T}/thread-backup/
-	done
+	mv -f ${D}$(alt_libdir)/lib{pthread,thread_db}* ${T}/thread-backup/
 	if want_linuxthreads && want_nptl ; then
 		mkdir -p ${T}/thread-backup/tls
-		for x in ${D}$(alt_libdir)/tls/lib{pthread,thread_db}* ; do
-			[[ -f ${x} ]] && mv -f ${T}/thread-backup/tls
-		done
+		mv -f ${D}$(alt_libdir)/tls/lib{pthread,thread_db}* ${T}/thread-backup/tls
 	fi
 	env -uRESTRICT CHOST=${CTARGET} prepallstrip
 	cp -a -- ${T}/thread-backup/* ${D}$(alt_libdir)/ || die
@@ -882,7 +894,8 @@ glibc_do_configure() {
 
 	# set addons
 	pushd ${S} > /dev/null
-	ADDONS=$(echo */configure | sed -e 's!/configure!!g;s!\(linuxthreads\|nptl\|rtkaio\|glibc-compat\)\( \|$\)!!g;s! \+$!!;s! !,!g;s!^!,!;/^,\*$/d')
+	#ADDONS=$(echo */configure | sed -e 's!/configure!!g;s!\(linuxthreads\|nptl\|rtkaio\|glibc-compat\)\( \|$\)!!g;s! \+$!!;s! !,!g;s!^!,!;/^,\*$/d')
+	ADDONS=$(echo */configure | sed -e 's!/configure!!g;s!\(linuxthreads\|nptl\|rtkaio\)\( \|$\)!!g;s! \+$!!;s! !,!g;s!^!,!;/^,\*$/d')
 	popd > /dev/null
 
 	use nls || myconf="${myconf} --disable-nls"
@@ -1106,9 +1119,9 @@ RESTRICT="nostrip multilib-pkg-force"
 # should work with userspace apps, at least on amd64 and ppc64.
 #
 # The gcc-config dep is for the cross-compile multilib stuff
-DEPEND=">=sys-devel/gcc-3.4
-	nptl? ( >=sys-kernel/linux-headers-2.6.5 )
-	>=sys-devel/binutils-2.15.90
+DEPEND=">=sys-devel/gcc-3.2.3-r1
+	nptl? ( >=sys-devel/gcc-3.3.1-r1 >=sys-kernel/linux-headers-2.6.5 )
+	>=sys-devel/binutils-2.14.90.0.6-r1
 	>=sys-devel/gcc-config-1.3.9
 	virtual/os-headers
 	nls? ( sys-devel/gettext )
@@ -1120,7 +1133,7 @@ RDEPEND="virtual/os-headers
 
 if [[ ${CATEGORY/cross-} != ${CATEGORY} ]] ; then
 	DEPEND="${DEPEND}
-	        >=${CATEGORY}/gcc-3.4"
+	        >=${CATEGORY}/gcc-3.3.5-r1"
 
 	if [[ ${CATEGORY/mips} != ${CATEGORY} ]] ; then
 		DEPEND="${DEPEND}
@@ -1146,14 +1159,24 @@ if [[ ${CATEGORY/cross-} != ${CATEGORY} ]] ; then
 	esac
 fi
 
+# until amd64's 2004.3 is purged out of existence
+PDEPEND="amd64? ( multilib? ( ~app-emulation/emul-linux-x86-glibc-${PV} ) )"
+
 pkg_setup() {
 	if use nptlonly && ! use nptl ; then
 		eerror "If you want nptlonly, add nptl to your USE too ;p"
 		die "nptlonly without nptl"
 	fi
 
+
 	# give some sort of warning about the nptl logic changes...
 	if want_nptl && want_linuxthreads ; then
+
+		if use ppc ; then
+			eerror "glibc doesn't currently work with nptl and linuxthreads"
+			eerror "please select either nptlonly or -nptl"
+			die "nptlonly not set on ppc"
+		fi
 		ewarn "Warning! Gentoo's GLIBC with NPTL enabled now behaves like the"
 		ewarn "glibc from almost every other distribution out there. This means"
 		ewarn "that glibc is compiled -twice-, once with linuxthreads and once"
@@ -1165,24 +1188,6 @@ pkg_setup() {
 		ebeep
 		epause 5
 	fi
-
-	echo
-	ewarn "WARNING: This is a very alpha ebuild, and are mostly provided for"
-	ewarn "those brave souls that want to test gcc-4.0.0.  Please note that"
-	ewarn "these are the packages I used to get it working on x86:"
-	ewarn
-	ewarn "  sys-devel/binutils-2.15.97"
-	ewarn "  sys-devel/gcc-4.0.0"
-	ewarn "  sys-libs/glibc-2.3.5.20050421"
-	ewarn
-	ewarn "Over here at least gcc-4.0.0 can build glibc-2.3.5.20050421, and"
-	ewarn "do a 'emerge system'."
-	ewarn "One more thing to note, is that you SHOULD NOT use binutils"
-	ewarn "version 2.16.90.0.1!!!"
-	echo
-
-	ebeep
-	epause 10
 }
 
 src_unpack() {
@@ -1199,6 +1204,8 @@ src_unpack() {
 			use_multilib && GLIBC_PATCH_EXCLUDE="${GLIBC_PATCH_EXCLUDE} 6680_mips_nolib3264.patch"
 		;;
 	esac
+
+	GLIBC_PATCH_EXCLUDE="${GLIBC_PATCH_EXCLUDE} 5020_all_nomalloccheck.patch"
 
 	toolchain-glibc_src_unpack
 
@@ -1219,8 +1226,6 @@ src_unpack() {
 			has_multilib_profile || get_libdir_override lib64
 		;;
 	esac
-
-	GLIBC_PATCH_EXCLUDE="${GLIBC_PATCH_EXCLUDE} 5020_all_nomalloccheck.patch"
 
 	# disable binutils -as-needed
 	sed -e 's/^have-as-needed.*/have-as-needed = no/' -i ${S}/config.make.in
