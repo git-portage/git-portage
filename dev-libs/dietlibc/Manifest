@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b94d8f853d48325206b9a0191ce09156 dietlibc-0.28.ebuild 1477
 MD5 980bbcf54d614e6da13205de20ea7e78 dietlibc-0.25.ebuild 1579
 MD5 5d0a9f95d5fdcfaacf56c046a76c41f2 dietlibc-0.27.ebuild 2631
@@ -15,3 +18,12 @@ MD5 483744830092f64a7f5fefc773ced02a files/digest-dietlibc-0.28 66
 MD5 02d59156de2a7a0f914dc5769e26cdcf files/0.25-gcc34.patch 3454
 MD5 e326170b86e838c08e64d75b8d6d0f67 files/dietlibc-0.28-Makefile.patch 529
 MD5 ea791631782529db92c7b23198391a7a files/gcc-33-r2.patch 1077
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iQCVAwUBQtR7gp4WFLgrx1GWAQKY5QQAlQAhYWjECwMVfF6fk+ykNURaYNRVhcrw
+JBtmGJwtR4ziOLiHp1AQ829jij/IV+LOkN4U7PGgb1d5TIrrfC3Lu0zoqA0/BlbH
+uzj0nMMeTtPzIq2XImee8BzD1azlXiuF6P/a4SpB6ntBundXICD8V4bjGB2Z8/Vo
+g9KcLmHfUd0=
+=eIPC
+-----END PGP SIGNATURE-----
