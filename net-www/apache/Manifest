@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 87a8485d6da12611957ee2b4748ac201 apache-2.0.54-r10.ebuild 12840
 MD5 2fd63d87bf209b47757a0267f98e914a apache-2.0.52-r1.ebuild 13208
 MD5 06b56c2bcea3ec9a7dae0db63deb6edb ChangeLog 66304
@@ -110,3 +113,10 @@ MD5 161245c7aa1eb785db53b34d6a10be43 files/patches/1.3.31/00_gentoo_suexec_pam.p
 MD5 61df284cb67dfde3085aec5543eeb03c files/patches/1.3.31/00_gentoo_apachectl.patch 32836
 MD5 28272b16a4f701f29eb73d932fd81101 files/patches/1.3.31/Readme.PATCHES 747
 MD5 5d45e2b46965e7c6866b259df4efe4b2 files/patches/2.0.50-r1/Readme.PATCHES 357
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC1V2GKf2g/qXtneoRAnEkAJ9fNu/f+6ciWDOmZLaigoykQaH8pACgpCp7
+3Nedil+n/4S8HxdCaMYZnTM=
+=lctv
+-----END PGP SIGNATURE-----
