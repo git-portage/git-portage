@@ -1,9 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 50d47f99bf2bb864365907452e36ff51 bash-completion-20050712.ebuild 1903
-MD5 ebcfc3ffedea1fed2a323797c62bb5f5 bash-completion-20050121-r9.ebuild 1868
-MD5 375e20254a1612a19bd9574a00f01e60 ChangeLog 21795
+MD5 9fcad2b7e20e1b56c1a81e07609a8c49 bash-completion-20050712.ebuild 2009
+MD5 373112d5ff23777b46f284a8a9bb9fed bash-completion-20050121-r9.ebuild 2001
+MD5 2003a3e926344136a618c70caacc5bc8 ChangeLog 22237
 MD5 08ab540760a142dbc2af127d5f71be07 metadata.xml 1019
 MD5 8872557b2357f405c7c702497b2fdf68 files/digest-bash-completion-20050121-r9 76
 MD5 3b7f1d6155d6deff5812264ef6bc4c07 files/bash-completion 724
@@ -21,10 +18,3 @@ MD5 bc7bb8b50049a7c6d412b60b273b55d4 files/20050712/01_all_gkrellm.diff 246
 MD5 a5a7bf3f82466146a212f2e54a5bb1d9 files/20050712/02_all_cvs.diff 772
 MD5 5a5965b5055a1d6ee5d7ae884bc0cc18 files/20050712/03_all_find.diff 947
 MD5 bb517a3e3dea3755291f4629330481f2 files/20050712/04_all_command.diff 492
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFC1RTcEZCkKN40op4RAr5sAJ0eAx4biPjpQ4Ymj68ZtVoBHxDAPgCeIc3N
-NjQbrZaxt+48Ex635J0uvvE=
-=Egkc
------END PGP SIGNATURE-----
