@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 804a21d0d4c90f8a108ffee365ac8fc4 jswat-2.25.ebuild 1270
 MD5 445ef244667532f1a9ca8dc095a5224e jswat-1.7.1-r1.ebuild 712
 MD5 8a3baafe2884e32f9d6599443165ab5c jswat-2.21-r1.ebuild 1258
@@ -15,3 +18,10 @@ MD5 56036ddb69a86ea3ef40cb26fd444257 files/jswat2 1225
 MD5 52d53eb4cc81c586df4ba5b11dc5a682 files/digest-jswat-2.21-r1 67
 MD5 dfdb6d1b85d8fbb055bd57e6bc30aab2 files/2.21/jswat2 1220
 MD5 070f409edc50e7b85e80227e51af7a5f files/2.21/build.xml.diff 730
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC2DRI/rLF9B432nYRAv+AAJ98xqQd4QXK/yZwlEube+V7ZhDDgwCfYF9U
+IcIFSD48BXW2kNynr+W0hu4=
+=6sVO
+-----END PGP SIGNATURE-----
