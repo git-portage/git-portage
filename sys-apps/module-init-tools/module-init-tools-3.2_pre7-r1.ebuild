@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/module-init-tools/Attic/module-init-tools-3.1-r1.ebuild,v 1.3 2005/07/15 09:42:17 azarah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/module-init-tools/Attic/module-init-tools-3.2_pre7-r1.ebuild,v 1.1 2005/07/15 09:42:17 azarah Exp $
 
 inherit flag-o-matic eutils gnuconfig toolchain-funcs
 
@@ -52,16 +52,13 @@ src_unpack() {
 	cd ${S}; epatch ${FILESDIR}/${PN}-3.1_generate-modprobe-assume-kernel.patch
 
 	# Abort if we fail to run modprobe, bug #68689
-	cd ${S}; epatch ${FILESDIR}/${PN}-3.2_pre7-abort-on-modprobe-failure.patch
+	cd ${S}; epatch ${FILESDIR}/${P}-abort-on-modprobe-failure.patch
 
 	cd ${S}
 	# make sure we don't try to regen the manpages
-	cp ${FILESDIR}/${PV}-modprobe.d.5.bz2 modprobe.d.5.bz2
-	bunzip2 modprobe.d.5.bz2
 	touch *.5
 
 	rm -f missing
-	export WANT_AUTOMAKE=1.6
 	automake --add-missing
 
 	cd ${S}
