@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 70d2ef91eeea9a29da03b88d6716e316 jsx-1.0.7.5.ebuild 941
 MD5 ec1f645fdbcccdbae74ca73d68e01d2c ChangeLog 953
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
 MD5 fb0f0c99d7b8a13edf30175e04262a87 files/digest-jsx-1.0.7.5 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC2CvX/rLF9B432nYRAnB6AKCwE45sm6nzPPAZXFGqX1ehgJKy/ACeIUxp
+LaelopAXiqJlk2U5GO5nKjU=
+=67P0
+-----END PGP SIGNATURE-----
