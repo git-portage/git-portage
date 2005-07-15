@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 02ebe26af973eeb1e85eb519ca47e019 javolution-2.2.4.ebuild 1099
 MD5 1d040144bf9e9feab3ea589371cb3999 javolution-3.2.4.ebuild 1081
 MD5 499cb7b59fd8d1d81c19583d1ee3fcfa ChangeLog 1193
@@ -6,3 +9,10 @@ MD5 123cf9440c1d4ac78f2caba1624765f9 metadata.xml 158
 MD5 006daea0c5cc5edcc45fcccc17f6101b files/digest-javolution-2.2.0 69
 MD5 7e1ab0fb2d84befdc65d1d04a503893a files/digest-javolution-2.2.4 69
 MD5 d9715c64410d14ad1cc01802dff9c108 files/digest-javolution-3.2.4 69
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC2Dc1/rLF9B432nYRApyQAKDEDfAlp9lvLtiWk/OU2O72XQi7bQCeLwQs
+AKbDJUBWLwVDB++os35GtOw=
+=LNgn
+-----END PGP SIGNATURE-----
