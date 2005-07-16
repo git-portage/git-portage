@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a0b37f0f189f504b863229620a2a09bd ChangeLog 5732
 MD5 059733ad92a101895ce18a1120b6eb55 metadata.xml 225
 MD5 eea61e477011ec918b75ba766aaad67a unixODBC-2.0.8.ebuild 969
@@ -15,3 +18,10 @@ MD5 89baf6f14a595b00635ca0b91ee525de files/unixODBC-2.2.6-configure.in.patch 239
 MD5 a60388d8cb9cb0dca3df5429fb364051 files/digest-unixODBC-2.2.8 67
 MD5 89baf6f14a595b00635ca0b91ee525de files/unixODBC-2.2.11-configure.in.patch 239
 MD5 4baf7bca71abaad73ebb6a576517f435 files/digest-unixODBC-2.2.11 68
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC2FCXmdTrptrqvGERAmy+AJ9mSEJmtVymZawZ5NhD7fco+vbv7gCeKa/t
+rAh3ljTwkY58uX7KYHhyHyQ=
+=kWv1
+-----END PGP SIGNATURE-----
