@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 53719c1581da93658fec00eabf8b0427 ChangeLog 3412
 MD5 787949efbc227966fa6a5609799cbf97 files/digest-netperf-2.2.4 66
 MD5 201084fb8da044398f8a0459f1e7c4b5 files/digest-netperf-2.3 63
@@ -13,3 +16,10 @@ MD5 6d14aac9d803bf952c9a70094e39495c netperf-2.3.ebuild 1351
 MD5 906e80bd9cf0afb06622cd91dd59d9f8 netperf-2.4.0.ebuild 1246
 MD5 ab7b8d7bbb3c51fce8949fe3cfb2d6a4 netperf-2.4.0_rc2.ebuild 1273
 MD5 4ef631e53d11899c995f7a35094d956f netperf-2.4.0_rc3.ebuild 1273
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC2WNAI1lqEGTUzyQRAjT2AJ0cmggXHqQt8aUZZC53i4uK9h7Z+wCgmKcC
+s7Mh5gnb00p97XC6jE2fwkM=
+=vXaC
+-----END PGP SIGNATURE-----
