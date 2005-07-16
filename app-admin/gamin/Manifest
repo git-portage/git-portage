@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 59d28e6a7eced2cd85355b76c6ae02b4 gamin-0.0.26.ebuild 1186
 MD5 2695c38fbf4b4e11fe5d9c4d6f080ffc gamin-0.0.18.ebuild 889
 MD5 ec1d03fa33afb40ea89868ed4812c9e6 gamin-0.1.2.ebuild 1717
@@ -21,3 +24,10 @@ MD5 35d7d4d3208d674f62e4f2d7ef7d383f files/digest-gamin-0.0.19 64
 MD5 2ab0167c306465e140ebfe2d8151fced files/digest-gamin-0.1.2 63
 MD5 67e42fe9ea88f0a3a0bc59377d43aab5 files/gamin-0.1.2-inotify-legacy-backend.patch 27593
 MD5 315c32e4751bc7d3bcfd88e03841a168 files/gamin-0.0.26-inotify_use_fd.patch 2759
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC2MFB1ZcsMnZjRyIRAgl6AKC0DW3mKmbORkVxionyfakdTgxK8QCfYywj
+K9C5kcSW1Z4EmmXtEM5ieDQ=
+=J0/Q
+-----END PGP SIGNATURE-----
