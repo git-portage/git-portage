@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 716be15e99f89578f84479fdbd7b9797 ChangeLog 2152
 MD5 857f9ce87c6030f3d8eb7d3105f30c8e jde-2.3.3-r1.ebuild 1297
 MD5 b6c7ee3b6ef85ad220fab5240fb1a05e metadata.xml 737
@@ -8,3 +11,10 @@ MD5 978bb89eb6293ac482b193ade2a80b94 files/2.3.3-jde-new-buffer-menu-gentoo.patc
 MD5 9f280cc7e0e050bd10d6585bf23ef45a files/digest-jde-2.3.3-r1 62
 MD5 7158a0f444921d301f3048ce0c65435c files/70jde-gentoo.el 223
 MD5 54c2c6fef8729628f62a445430024f44 files/digest-jde-2.3.5 62
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC2WiwcsIHjyDViGQRAicHAJ0dTDjI9GqcuI+BZcFoJoY2/bPe2gCffrDw
+7cmhJrU14YjZ/K6PoYsj6ZA=
+=2fBW
+-----END PGP SIGNATURE-----
