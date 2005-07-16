@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f376ed249287cfaeab30f1c16602b889 aspectj-1.1.1.ebuild 2256
 MD5 7f5bd38c2ae560637a56f349976b6c9f aspectj-1.2.ebuild 2381
 MD5 b6310194a4ffced57b4ae7533c94d161 ChangeLog 1364
@@ -10,3 +13,10 @@ MD5 4038bffac6102552f95eac41c4239b94 files/digest-aspectj-1.1.1 73
 MD5 6f9b4aef0d744f489b6f506b3b83a542 files/aspectj-1.1.1-version-gentoo.patch 1263
 MD5 15d8886f1eb56232e7d76c4e71c34763 files/aspectj-1.2-fix-examples-build.xml.patch 649
 MD5 941140894bda896b874057612f14b88c files/digest-aspectj-1.2 73
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC2YAm/rLF9B432nYRAu7uAJwJjH6P9/f2udYMZMcmNTzfTOqzfACdFk4Q
+1Uv2LDp6fioS+Lp+l7ghzyE=
+=6w1G
+-----END PGP SIGNATURE-----
