@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 422c50453a879d7c68a74a6d87079d6e autoconf-wrapper-3-r1.ebuild 814
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 bf98ad6fc272da50d05501e9a0813bfd autoconf-wrapper-3.1.ebuild 823
@@ -11,3 +14,10 @@ MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-autoconf-wrapper-2-r1 0
 MD5 d4c9467b972dd2b40aa7a1b89d2226b6 files/ac-wrapper-2.sh 2717
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-autoconf-wrapper-3.1 0
 MD5 3e9722a6e019517139cea80014189736 files/ac-wrapper-3.1.sh 4688
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC2fwNgIKl8Uu19MoRAvrhAJ90+Jv9X6FM2x2P52jZbspyePtCQACdFEYn
+JeN8fUgd8VX0MUNnNYJJ6Ek=
+=5O5P
+-----END PGP SIGNATURE-----
