@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bf33a45d7149d7b9d4e719ff3174a65c lighttpd-1.3.15.ebuild 2480
 MD5 b726a3c1f9efa04f543d8ad576e5287d lighttpd-1.3.14-r1.ebuild 2483
 MD5 4f68ff1ad2dd0b01e11474dede6e62f0 lighttpd-1.3.10-r1.ebuild 2181
@@ -23,3 +26,10 @@ MD5 5eb378dcd8905a09175df3e48953100c files/lighttpd-1.3.13-zope-deserves-lovins-
 MD5 0c57eeef1963af5add8b9608e0bc0d0f files/lighttpd-1.3.13-no-mysql-means-no-mysql.diff 1456
 MD5 faeefb6d35a7cd7b4a2b4b78d63622f7 files/lighttpd-1.3.10-gentoo.diff 1777
 MD5 44374d14af9b69b8f60f8d73f14c848d files/lighttpd-1.3.13-pam-name.diff 564
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC2kgKEZCkKN40op4RAhFbAJ9v9l9eaXsJMm0nDOU26b241KsQlwCeMNJH
+76mA2p6pCE1lclptvh2ePp4=
+=yZi6
+-----END PGP SIGNATURE-----
