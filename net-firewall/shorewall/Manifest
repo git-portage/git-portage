@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7d014479ca60023f4fa5e2a002c9edb5 ChangeLog 10610
 MD5 aa5ff79a52066d13f664c2fc7e0c7f11 shorewall-2.2.0.ebuild 2250
 MD5 d57bb8a874ee79be685ec821b258f203 shorewall-2.4.1.ebuild 2254
@@ -19,3 +22,10 @@ MD5 e5bea352c75a6b0c56f36a29dec327a8 files/digest-shorewall-2.2.0_rc5 147
 MD5 cd869b336ad98b18bcbe4548ea1ce0c5 files/digest-shorewall-2.2.3 139
 MD5 3404020fab5d120975e1294e3554b470 files/digest-shorewall-2.2.4 139
 MD5 8b0f23d1beb0db77f2b2c29e9de1abd0 files/digest-shorewall-2.4.0 139
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC26bNmdTrptrqvGERAt1bAJ97xiQCUdmk5AjPwlwZyu9M2+oHxgCbBEE5
+q81u5pxGuYX1rlWJNJO0KZ0=
+=oYu3
+-----END PGP SIGNATURE-----
