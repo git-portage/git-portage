@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f4ee17cab3eeaa73ead5470486323fda pygtk-2.4.1.ebuild 2570
 MD5 631eb3861c893f6e316971584131cffb pygtk-2.6.0.ebuild 2548
 MD5 8f03582f883634bcb2007a13b8350931 metadata.xml 487
@@ -18,3 +21,10 @@ MD5 19690d7b7578eaf46c0ce7d12936dac3 files/digest-pygtk-2.6.0 129
 MD5 f0923e335952213318838067c14df0a0 files/digest-pygtk-2.0.0-r1 64
 MD5 a6372d851a8b936f2df258b93a5bc719 files/digest-pygtk-2.2.0 64
 MD5 f7476a916a6add9b10800b1f5bf31e98 files/digest-pygtk-0.6.11-r1 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFC27W/KRy60XGEcJIRAr1/AJ9AOQsqI1IRoWHz395q7x+TEOtRwgCfeVgn
+7xVgjURap4kpC9PYAf05ziA=
+=I87Y
+-----END PGP SIGNATURE-----
