@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ebc8234a7bc9fc34fffbba6ecc5c3487 e2fsprogs-1.37-r1.ebuild 3446
 MD5 15b95741c29ec9fab83d1471e36f5969 ChangeLog 11949
 MD5 92cb7d0ad3274ae7ecae662e1cd428c3 e2fsprogs-1.37.ebuild 3087
@@ -17,3 +20,10 @@ MD5 f079047f6885f762f6fa838b55236cb2 files/e2fsprogs-sed-locale.patch 5989
 MD5 1a896f2697b055d4b8b4139c3482ac9e files/e2fsprogs-1.32-mk_cmds-cosmetic.patch 316
 MD5 a47cce15da0a4e01bb3cec306d9d7dbe files/e2fsprogs-1.36-makefile.patch 2910
 MD5 3d9735f2397680a4978124f6805219ae files/digest-e2fsprogs-1.35-r1 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC20QJcsIHjyDViGQRAovpAKCOInREuBgzhaJPlMayNh6/S1ViZACeOSys
+F1nVCzJ5oENq5m0R/Gv1mpY=
+=MTIU
+-----END PGP SIGNATURE-----
