@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-firefox-bin/Attic/mozilla-firefox-bin-1.0.5.ebuild,v 1.3 2005/07/14 21:58:25 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-firefox-bin/Attic/mozilla-firefox-bin-1.0.5-r1.ebuild,v 1.1 2005/07/18 14:59:13 agriffis Exp $
 
 inherit nsplugins eutils mozilla-launcher
 
@@ -45,19 +45,8 @@ src_install() {
 	# Fixing permissions
 	chown -R root:root ${D}/opt/firefox
 
-	# mozilla-launcher-1.8 supports -bin versions
-	dodir /usr/bin
-	cat <<EOF >${D}/usr/bin/firefox-bin
-#!/bin/sh
-# 
-# Stub script to run mozilla-launcher.  We used to use a symlink here but
-# OOo brokenness makes it necessary to use a stub instead:
-# http://bugs.gentoo.org/show_bug.cgi?id=78890
-
-export MOZILLA_LAUNCHER=firefox-bin
-exec /usr/libexec/mozilla-launcher "\$@"
-EOF
-	chmod 0755 ${D}/usr/bin/firefox-bin
+	# Create /usr/bin/firefox
+	install_mozilla_launcher_stub firefox-bin /opt/firefox
 
 	# Install icon and .desktop for menu entry
 	if use gnome; then
