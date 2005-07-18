@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/util-vserver/Attic/util-vserver-0.30.207.ebuild,v 1.5 2005/07/18 15:27:15 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/util-vserver/Attic/util-vserver-0.30.208.ebuild,v 1.1 2005/07/18 15:27:15 hollow Exp $
 
 inherit eutils
 
