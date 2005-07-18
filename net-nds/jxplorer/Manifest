@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a5a295f030b955f9f89313c263855d81 jxplorer-3.1_rc4.ebuild 1504
 MD5 7a6c6c87e866803cfbf69262c3818be5 jxplorer-3.1.ebuild 1516
 MD5 da8a921f138d67ab1719efe675bef081 ChangeLog 1155
@@ -8,3 +11,10 @@ MD5 c2de8cca5efcd98939e5baf3728a3692 files/jxplorer-gentoo.patch 2578
 MD5 b04073e642024032d31552ae958c3149 files/digest-jxplorer-3.1_rc4 134
 MD5 19c309ed0cfd34dc531818b1607a2a47 files/build.xml 1871
 MD5 c71a48763e3bab86565e7c87fd7034b1 files/jxplorer.sh 888
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC3Cv1/rLF9B432nYRAp4hAJ4qEXC8FkFHV9Nyzxr1VHzdZdbwSgCgyDmm
+hAAX6RPda1+3EXwi2PkMglU=
+=9Os+
+-----END PGP SIGNATURE-----
