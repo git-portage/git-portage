@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8fd16a29d1f197f4d3d42fbd2c792b4e jboss-3.2.3.ebuild 3196
 MD5 a2537d7c14cc22dee1d6e49aedc5185c jboss-3.2.5.ebuild 3283
 MD5 6e69a95d636b3600c93c3ab53511291d ChangeLog 6810
@@ -18,3 +21,10 @@ MD5 3976395a8cc328e5b893e2eee7acdea3 files/3.2.3/init.d/jboss 860
 MD5 8be6a5609fb1d490b808a3124052e0ba files/3.2.5/env.d/50jboss 27
 MD5 2b3022832d616f96d949affaf606758a files/3.2.5/conf.d/jboss 3018
 MD5 2771066c3158d641cca2f8880195e6d9 files/3.2.5/init.d/jboss 860
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC3C45/rLF9B432nYRAp4QAJ4l9Pqj2zLBoU67EdEU5Kx7vkbA4gCdHSGb
+Oy7Vh1E4zAIsA2ajEKg7JUU=
+=9fwK
+-----END PGP SIGNATURE-----
