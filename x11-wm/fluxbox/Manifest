@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b3279a10479493eceaa5d87b1ba0091a ChangeLog 30075
 MD5 66b6f17a72007858528df08e2f9ae678 fluxbox-0.9.11.ebuild 4783
 MD5 dd94d6b0f9297b6fd140373fd7652cd5 fluxbox-0.9.13.ebuild 4022
@@ -40,3 +43,10 @@ MD5 ee36523cd5cf3281d0261244260840c9 files/0.9.10/fluxbox-0.9.10-amd64-font-fix.
 MD5 6c400d01c4fe9bea1d751ea6cbc718b5 files/0.9.10/fluxbox-0.9.10-eat-this-setlocale.patch 1295
 MD5 9ae40c5c7aebae1c5919adbd888710b4 files/0.9.10/styles-menu-user 93
 MD5 05e049a3f92497ddb1cf615abfdc5f35 files/0.9.10/fluxbox-0.9.10-fancy-gentoo-styledirs.patch 946
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC3WcFKf2g/qXtneoRAmX3AKCfSMZwXIESvZAUCMX9y+Jpn2qlmwCgklXw
+xX6iFD5OqnRjbmvuFjXOo+c=
+=IpPN
+-----END PGP SIGNATURE-----
