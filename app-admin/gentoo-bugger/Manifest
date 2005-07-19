@@ -1,4 +1,4 @@
 MD5 ff3008d4e197e061e99f7189c65f2dac ChangeLog 497
-MD5 26c214e5e507bfb464cffc920cf85906 gentoo-bugger-0.09.2.ebuild 598
 MD5 c8ea960a74b7d45fe928837fbd074756 metadata.xml 313
-MD5 63995274b01b80a823d0119087202acd files/digest-gentoo-bugger-0.09.2 71
+MD5 97c2735f1eaef68d8900476a0c10f317 gentoo-bugger-0.09.3.ebuild 486
+MD5 16d0e41f50c50d285f2c2f3dcffcc943 files/digest-gentoo-bugger-0.09.3 71
