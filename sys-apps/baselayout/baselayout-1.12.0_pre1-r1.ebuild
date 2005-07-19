@@ -1,21 +1,19 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.12.0_alpha2-r1.ebuild,v 1.7 2005/06/19 18:50:02 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.12.0_pre1-r1.ebuild,v 1.1 2005/07/19 20:58:58 uberlord Exp $
 
 inherit flag-o-matic eutils toolchain-funcs multilib
 
-SV=1.7.1		# rc-scripts version
-SVREV=			# rc-scripts rev
-
-S="${WORKDIR}/rc-scripts-${SV}${SVREV}"
 DESCRIPTION="Filesystem baselayout and init scripts"
 HOMEPAGE="http://www.gentoo.org/"
-SRC_URI="mirror://gentoo/rc-scripts-${SV}${SVREV}.tar.bz2
-	http://dev.gentoo.org/~vapier/dist/rc-scripts-${SV}${SVREV}.tar.bz2"
+SRC_URI="mirror://gentoo/${P}.tar.bz2
+	http://dev.gentoo.org/~azarah/baselayout/${P}.tar.bz2
+	http://dev.gentoo.org/~vapier/dist/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh
+~sparc ~x86"
 IUSE="bootstrap build static unicode"
 
 # This version of baselayout needs gawk in /bin, but as we do not have
@@ -34,30 +32,22 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	# Moved to sys-apps/util-linux
-	rm -f etc/conf.d/crypto-loop init.d/crypto-loop
-	# Moved to app-shells/bash
-	rm -f etc/skel/.bash*
-	# Moved to appropriate packages
-	rm -r etc/pam.d
+	# Bring us up to SVN r1317 which fixes a fair few buglets
+	epatch "${FILESDIR}/${PN}-${PV}-r1.patch"
 
-	# Bring net-scripts upto CVS 2005-04-26
-	# This fixes a few things, but mainly adds support for wpa_supplicant-0.4.0
-	epatch ${FILESDIR}/baselayout-1.12.0-alpha2-netscripts-1.patch
-
-	# setup unicode defaults for silly unicode users
+	# Setup unicode defaults for silly unicode users
 	if use unicode ; then
 		sed -i -e '/^UNICODE=/s:no:yes:' etc/rc.conf
 	fi
 
-	# Fix Sparc specific stuff
-	if [[ $(tc-arch) == "sparc" ]] ; then
-		sed -i -e 's:KEYMAP="us":KEYMAP="sunkeymap":' ${S}/etc/rc.conf || die
-	fi
+	# Tweak arch-specific details
+	cd "${S}"
 
-	# Use correct path to filefuncs.so on multilib systems
-	sed -i -e "s:/lib/rcscripts:/$(get_libdir)/rcscripts:" \
-		${S}/src/awk/{cachedepends,genenviron}.awk || die
+	case $(tc-arch) in
+	sparc)
+		sed -i -e '/^KEYMAP=/s:us:sunkeymap:' etc/conf.d/keymaps || die
+		;;
+	esac
 }
 
 src_compile() {
@@ -290,7 +280,7 @@ src_install() {
 	cp -r "${S}"/rc-lists "${D}"/usr/share/baselayout
 
 	# rc-scripts version for testing of features that *should* be present
-	echo "Gentoo Base System version ${SV}" > ${D}/etc/gentoo-release
+	echo "Gentoo Base System version ${PV}" > ${D}/etc/gentoo-release
 
 	#
 	# Setup files related to /dev
