@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bb955be50099441e31cf75af92d044f7 netbeans-4.0-r2.ebuild 12090
 MD5 3995327ee30375ca261228f816a9f9a2 netbeans-3.4.1.ebuild 3191
 MD5 a2ecc45e7604ad37b1d92d16d18ba3c0 netbeans-3.5.1.ebuild 3155
@@ -17,3 +20,10 @@ MD5 eba3a44af2a04cab3a7bf00ce982130e files/digest-netbeans-3.4.1 77
 MD5 9db67cc7c38cdd884ec192a4c642e144 files/digest-netbeans-3.5.1 77
 MD5 a80b4daebbce9c3aa54890ab458f8ecd files/emptyunscramble.xsl 405
 MD5 0c98dd3e09a6ddfc91bf8eac2ef22871 files/4.0/startscript.sh 409
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC3Ujv/rLF9B432nYRAiqqAJ9lX1P1+CqvqY1+/NKA+6fuPfF+4gCfWTMx
+iWY3xfLLlMkzehVmkWcDwJw=
+=IWRo
+-----END PGP SIGNATURE-----
