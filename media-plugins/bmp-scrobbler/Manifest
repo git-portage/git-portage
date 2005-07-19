@@ -1,16 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 633751534486724bfde338356fe97f79 bmp-scrobbler-0.3.6.ebuild 776
+MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 39a06a4618870945ee495c8d2063501a bmp-scrobbler-0.3.6-r1.ebuild 961
 MD5 98b4da4cf0826a123b85d00ba938fc4c ChangeLog 870
-MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
-MD5 f3f9865258d1a7ab26719dc5e241b524 files/digest-bmp-scrobbler-0.3.6-r1 73
+MD5 39a06a4618870945ee495c8d2063501a bmp-scrobbler-0.3.7.ebuild 961
 MD5 f3f9865258d1a7ab26719dc5e241b524 files/digest-bmp-scrobbler-0.3.6 73
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFCTcSn06ebR+OMO78RAudTAJ9k2Nozgbbyp7uV9SjhlE8kUnHTswCfcMoe
-RclwqloY2K7TnBi62xOhGP8=
-=8IbX
------END PGP SIGNATURE-----
+MD5 f3f9865258d1a7ab26719dc5e241b524 files/digest-bmp-scrobbler-0.3.6-r1 73
+MD5 c790015adb5c08af62d5e99d64a34da4 files/digest-bmp-scrobbler-0.3.7 73
