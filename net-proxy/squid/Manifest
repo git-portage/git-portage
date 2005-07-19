@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 024b7ca2d222e98fd3cd8057c23c9197 ChangeLog 19537
 MD5 c2a21a50fca07975a99242ebc54c2f88 metadata.xml 330
 MD5 6428721efe1991125a48aa71ab32a3d3 squid-2.5.10.ebuild 6136
@@ -10,3 +13,10 @@ MD5 5286e7e73ca5687381fa09ff41dccbd1 files/squid-logrotate 101
 MD5 6f30a7f5c48ec35a7044acb189c858c5 files/squid.cron 133
 MD5 40a3fdee0d8db88cb690a6eceb59e45a files/squid.pam 505
 MD5 5cbc9bcecee98115731f5fc4b0f10907 files/squid.initd 1982
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC3Yt+Kf2g/qXtneoRAj7SAJ4tM5hQQHWFm8I+G/5bXDhpxzNKvQCfUsxW
+F1Il6jDalcMSqvwfneIX90c=
+=GH/u
+-----END PGP SIGNATURE-----
