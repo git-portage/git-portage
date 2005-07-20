@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/gtk-perl/Attic/gtk-perl-0.7009-r1.ebuild,v 1.5 2005/05/22 15:29:21 mcummings Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/gtk-perl/Attic/gtk-perl-0.7009-r2.ebuild,v 1.1 2005/07/20 09:10:30 mcummings Exp $
 
 inherit perl-module eutils
 
@@ -42,6 +42,8 @@ src_unpack() {
 
 	epatch ${FILESDIR}/gendef.patch
 	perl -pi -e '/CCMD/ && s|/m;|/mg;|' */Makefile.PL
+	sed -i 's/MesaGL/GL/g' GtkGLArea/Makefile.PL
+	sed -i 's/MesaGL/GL/g' GtkGLArea/pkg.pl
 }
 
 src_compile() {
