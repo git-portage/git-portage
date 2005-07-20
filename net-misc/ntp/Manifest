@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2b43c6098f33419619ca9900ca0c9373 ChangeLog 9693
 MD5 aa73d5edf312beeab44fa9d58a603ad4 metadata.xml 636
 MD5 4874c08acda470ce7373d36b64c39c09 ntp-4.1.2.ebuild 3162
@@ -31,3 +34,10 @@ MD5 83dde3b948b28c278d496252494c935f files/ntpd.confd 393
 MD5 0ce27073d67a016693a77314b6bfd4f5 files/ntpd.rc 741
 MD5 2bc77f5ebab9804cdc2dff52ab4c267a files/4.2.0.20040617-freebsd.patch 803
 MD5 df7cdf79440109a1535f013c796aabce files/digest-ntp-4.2.0.20050303 166
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC3tKej5H05b2HAEkRAsBZAJoCkQ5pWqZJXH5tCxyKQ3fmbvo8pgCdEvDO
+RCmhASzSDp/+Aj6aP5lLEno=
+=s3x+
+-----END PGP SIGNATURE-----
