@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 35642afad936bc4714ea938c1152c7ee kdelibs-3.4.0-r2.ebuild 3471
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
 MD5 32fa38e337bdc93fc7fef176e76c18d6 kdelibs-3.2.3-r7.ebuild 3565
@@ -29,3 +32,10 @@ MD5 138c3252883171d55ec24ed0318950fd files/post-3.3.2-kdelibs-kate.diff 2212
 MD5 998641088387e630d4ab9e9013caa539 files/kdelibs-3.4.0-imagemap.patch 546
 MD5 02c4482bb15fc1a504621c2627a4deee files/digest-kdelibs-3.2.3-r7 529
 MD5 40783b984dcb127c8852246f7eb0a1e8 files/kdelibs-3.3.2-ppc64.patch 957
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFC3lk8KRy60XGEcJIRAo0XAKCDu+mFbcL9lUWW2s6in3IDphJULwCdHKi1
+fwoNzPTCqg0wtqsQhAASUYE=
+=Piaq
+-----END PGP SIGNATURE-----
