@@ -1,5 +1,6 @@
 MD5 7dd1a27cf57520610867640d86e91ba3 torque-1.2.0_p1-r1.ebuild 1874
 MD5 c6f3121536e6adce335641c7a3c961ae torque-1.2.0_p1.ebuild 2312
+MD5 2f8d4075ab808b7b799aaa38188ce592 torque-1.2.0_p1-r3.ebuild 3479
 MD5 38ff4b249a54a78f0a2d720fbf20b534 torque-1.0.1_p6.ebuild 1910
 MD5 d18ea01c292ee1127343a7143f8af6f7 torque-1.2.0_p1-r2.ebuild 2405
 MD5 3451ee8fe1ea06e1bf4224144114fb03 ChangeLog 2974
@@ -11,3 +12,4 @@ MD5 640bc8217559fa4bc7086a9eb9045b1e files/digest-torque-1.2.0_p1 67
 MD5 e26e30bb1e82820df08330a7a9755aae files/1.2.0_p1-respect-ldflags.patch 2709
 MD5 640bc8217559fa4bc7086a9eb9045b1e files/digest-torque-1.2.0_p1-r1 67
 MD5 640bc8217559fa4bc7086a9eb9045b1e files/digest-torque-1.2.0_p1-r2 67
+MD5 92770be41a9332a0c3326cae44d55e93 files/digest-torque-1.2.0_p1-r3 232
