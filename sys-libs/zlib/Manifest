@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a2eff492ee020789bb28758c5a37583e zlib-1.2.3.ebuild 1792
 MD5 8064f3ee210d73a2f545ca908f6e6863 zlib-1.2.2.ebuild 1779
 MD5 efe93e20bc888ec8bf234c75314379c2 zlib-1.2.2-r1.ebuild 1861
@@ -12,3 +15,10 @@ MD5 8040cf924143b9328aa2d584222e0f51 files/digest-zlib-1.2.3 63
 MD5 571442813f5f960edd0e7498786dff1f files/zlib-1.2.2-inftrees.patch 474
 MD5 3ccc7437df1921bba1a37d42a70e711f files/digest-zlib-1.2.2-r1 63
 MD5 9d3fdd73e1997aa5c823fc210f29919d files/zlib-1.2.1-configure.patch 3149
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC38SWBXaUFmZvwyMRAvTMAJsHKYE3NPk5nLAgYRu0ielP0T1LZgCeMV+C
+22UnUv6Z9QAppN3YbnraIFQ=
+=1PvI
+-----END PGP SIGNATURE-----
