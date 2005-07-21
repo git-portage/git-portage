@@ -1,17 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 6667c3b22c529af6c6cea3c606ce6127 hsfmodem-7.18.00.03-r2.ebuild 1351
 MD5 3526d44dd8e3bc8eabd61447ac93bc6d hsfmodem-7.18.00.05.ebuild 1497
 MD5 7a35538e86c7834e9d75552d0e8ecba9 ChangeLog 4007
+MD5 fcfb1ba931bfd4945cd857f9e6179ba5 hsfmodem-7.18.00.05-r1.ebuild 1684
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
 MD5 430361a98f210c5a4b0eadcc4d45266c files/hsfmodem-7.18.00.03-nvminstall.patch 521
 MD5 4523eaa6fcb480127dcf1881e1d2bbad files/digest-hsfmodem-7.18.00.03-r2 158
+MD5 68e22b294c2c7b7c8dec938af2bc588f files/digest-hsfmodem-7.18.00.05-r1 230
 MD5 68e22b294c2c7b7c8dec938af2bc588f files/digest-hsfmodem-7.18.00.05 230
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCu5mXjiC39V7gKu0RAmxZAKCOyQ6+V67cgUQdzIZ6DamC8liXxACfRHnv
-VtQoY3xStERUsFQIs9HOonA=
-=x2dO
------END PGP SIGNATURE-----
+MD5 5a383798aeada1598dbc3361e8dea454 files/hsf-7.18.00.05-errno.patch 4847
+MD5 956770b4af8c34b21660d33f5466b0f1 files/hsf-7.18.00.05-simple_class.patch 6349
+MD5 0fc2b3af69192d8b18e3e8a38c01e6e7 files/hsf-7.18.00.05-kernconfig.patch 1317
