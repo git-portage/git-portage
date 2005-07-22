@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 36ab9f34213602fc7c379db812f662bf ChangeLog 3123
 MD5 56567ddcaf248499457a1ce74277c910 metadata.xml 573
 MD5 172c916f2af3e12be9af6f65bc4ab881 pdns-2.9.17.ebuild 1313
@@ -10,3 +13,10 @@ MD5 60d7355f48410a77e8df555a089025cb files/pdns 889
 MD5 e59bb419d93a7d7bdcb13764c57b3f6d files/digest-pdns-2.9.18 63
 MD5 558969af8e34a040723147fe14a53a44 files/precursor 488
 MD5 bbb2b0b25869b840d8fa2d242a8b20c2 files/recursor.conf 392
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC4RZY5mJXAu5GbtIRAtvUAJ9hPy1DZ3sdotSXhSAXSiyWbFotmwCcDQiq
+qd3XyJWGyIPi+OL3bGlRWvA=
+=pPoG
+-----END PGP SIGNATURE-----
