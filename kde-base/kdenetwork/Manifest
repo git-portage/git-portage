@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b815a3a160d8e8d5f132e2ec6256e87c ChangeLog 20696
 MD5 d22479e68fa6bc29a21f12cc64d6ae53 kdenetwork-3.3.2-r1.ebuild 1451
 MD5 55a0e3505463c3505deee74cc8907398 kdenetwork-3.4.0-r1.ebuild 1534
@@ -30,3 +33,10 @@ MD5 e07566eb35cec7afdfa2e38edf7cdcd1 files/kdenetwork-3.3.2-kwifimanager-configl
 MD5 7e1dab8dea5082d73c25c6ae6b4251b1 files/digest-kdenetwork-3.4.1-r1 149
 MD5 2db2170b384350ce6c05cd23c0bb21c7 files/disable-meanwhile.diff 351
 MD5 426360bf289efe11a499f1fa89bb2f4b files/wireless-extensions-api.diff 528
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC4TIU5mJXAu5GbtIRAjdeAJ9wW6DC5FLVPYCGUA1sRpd4Ja0SvACeLdcS
+ofKuf0ASm/XRSEeJkLGG7F4=
+=bXAh
+-----END PGP SIGNATURE-----
