@@ -1,4 +1,6 @@
+MD5 cc802ee246c4ac86991f79c2b2538cc1 wmpower-0.4.2.ebuild 810
 MD5 8a01942e93f4a3161976fc19b0db4052 wmpower-0.4.1.ebuild 909
-MD5 073222c804fbb4b77a42a12362d9f3b4 ChangeLog 2419
+MD5 a6f8bca24230f21284a5f3ee65ec8d4d ChangeLog 2540
 MD5 e4a837b9af84bef3c70c3974bc982d71 metadata.xml 519
 MD5 e6933ed68fd606be080603e0f3e1de48 files/digest-wmpower-0.4.1 65
+MD5 0525731ff965b91047c3fd899aedd798 files/digest-wmpower-0.4.2 65
