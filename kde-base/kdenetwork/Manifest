@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1ae89f056e9102a74808fca1956d8319 kdenetwork-3.4.1-r1.ebuild 1712
 MD5 71fccce18dbad84d8054b36d08c0ba2c kdenetwork-3.2.3.ebuild 1226
 MD5 31dac3fbdeb3364fcce65b88012ce236 kdenetwork-3.4.0-r2.ebuild 1608
@@ -30,3 +33,10 @@ MD5 732cc856c1e48585781d79173f5d271b files/lisa 538
 MD5 622d3497792334fa87e483e249da693d files/digest-kdenetwork-3.4.0-r2 70
 MD5 f8624841efe576b99f71c604af307bbf files/kdenetwork-3.4.0-kopete-spaces.patch 8084
 MD5 e07566eb35cec7afdfa2e38edf7cdcd1 files/kdenetwork-3.3.2-kwifimanager-configlocation.patch 720
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFC4PUlKRy60XGEcJIRAkkXAJ91rHXNKCtkwx8pJKsQdjTsrsSlTgCfb08I
+2bSA6IRWCtsQeHMdefc/wL4=
+=44/V
+-----END PGP SIGNATURE-----
