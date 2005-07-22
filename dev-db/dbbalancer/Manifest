@@ -1,5 +1,5 @@
-MD5 8446bde8ea899d36704a1e196d75e702 dbbalancer-0.4.4.ebuild 1567
-MD5 0bc1d24f226cba5460ea752b6a21b806 ChangeLog 1069
+MD5 be7dc027f8200e0b1452c3c4afa36212 dbbalancer-0.4.4.ebuild 1564
+MD5 23d3ef77117cb0fa49405c4c4af1141e ChangeLog 1066
 MD5 f8d3d207746da2a3cd14dcaab8daab76 metadata.xml 163
 MD5 c2699fc064b7cc2aae36b2f0ea329768 files/dbbalancer-0.4.4-chapter6.sgml-gentoo.diff 16
 MD5 918713297d47c70154cd0ec46e6c2dbd files/dbbalancer-0.4.4-gentoo.patch 1373
