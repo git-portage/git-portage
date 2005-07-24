@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0002d9f0b3eaa82498484ac80e06d092 DBD-Pg-1.22.ebuild 710
 MD5 0b33e52935d280709683fd64336b23e2 ChangeLog 4361
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
@@ -15,3 +18,10 @@ MD5 55438f3f0a3ba704b84e737194edba59 files/digest-DBD-Pg-1.32 62
 MD5 c735a93c01a265f502083593256d7e49 files/digest-DBD-Pg-1.41 63
 MD5 a9b55e1a3d8e4e3e0413f72ac38bb5de files/digest-DBD-Pg-1.42 63
 MD5 eac2de61dd6e7a4bd3f800077022400f files/digest-DBD-Pg-1.43 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC45fttG5z4I8BtQoRAoYHAJwLRPm/m4BwONFanplwrvNzBFoq/QCfV/Ma
++59dytQ+GWVdpePenV1xclE=
+=f2oj
+-----END PGP SIGNATURE-----
