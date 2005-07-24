@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ffc7d940854b3789738f79ada45c9a94 grub-0.94-r2.ebuild 3721
 MD5 adcde4d1dce3d1e2ef2c466f860c6875 grub-0.93.20030118.ebuild 2539
 MD5 57b1ac06a99f01be2f0529ddae744349 grub-0.96.ebuild 4184
@@ -30,3 +33,10 @@ MD5 3f3995353a0995c56d996d2218570160 files/grub-0.96-i2o-raid.patch 1597
 MD5 7c2804e6a538b2dbcbb851b9614424fd files/grub-0.96-gcc4.patch 6871
 MD5 fb0f1b7cf2bf8055ee45f1e44c793cb7 files/grub-0.96-xfs-writable-string.patch 519
 MD5 e5978f58eb732289c47b1e0093db4e73 files/grub-0.96-bounced-checks.patch 505
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC45uh1ZcsMnZjRyIRAleNAJ9PZ1WLl20MruC3lrzGbG1LbdxooACePACk
+QJl2TdmqvwbX0KVbhFPMAus=
+=kfgB
+-----END PGP SIGNATURE-----
