@@ -1,0 +1,10 @@
+# ChangeLog for app-backup/sarab
+# Copyright 1999-2005 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/sarab/ChangeLog,v 1.1 2005/07/25 22:23:31 mkennedy Exp $
+
+*sarab-0.2.2 (25 Jul 2005)
+
+  25 Jul 2005; Matthew Kennedy <mkennedy@gentoo.org> +metadata.xml,
+  +sarab-0.2.2.ebuild:
+  Initial port.  Ebuild contributed by Matthew Kennedy <mkennedy@gentoo.org>.
+
