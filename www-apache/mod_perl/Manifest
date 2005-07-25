@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b2cf5f585e7ed8f8c936dd294a31b977 ChangeLog 9253
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 03b7e719ebc03b0bbdb703ce809b510b mod_perl-1.27-r1.ebuild 1419
@@ -28,3 +31,10 @@ MD5 f8a5f42c2b66da81ae9ae3c3317e0f19 files/digest-mod_perl-2.0.0 67
 MD5 8971805d7e08351fee8312e9f621398b files/digest-mod_perl-2.0.1 67
 MD5 0729531d2489b4ef91e247076f46ed1e files/mod_perl-2.0.1-sneak-tmpdir.patch 337
 MD5 d0bf51267a8909a46a542841c2555527 files/mod_perl-2.0.1-makefile.patch 402
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFC5SyetG5z4I8BtQoRAriTAJ4+lI/XlFOQK5B0dgK7Y1Z/bCB4uACeLQPq
+qWNIbpSpcDoflq8aeaGWTGg=
+=qwBf
+-----END PGP SIGNATURE-----
