@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0434bae7a14860ba6163e21f59136654 ChangeLog 5323
 MD5 35241bc9ea850572d8d7275f822b8162 eject-2.0.13-r1.ebuild 1109
 MD5 fe747f6040f39ac4c0e9f0bdeee5f4e3 eject-2.0.13.ebuild 1224
@@ -20,3 +23,10 @@ MD5 0109237261a5ce6357ddcd041259e61e files/eject-2.0.13-toggle.patch 2838
 MD5 4c62f46d6d72dd079fd677db6ae57059 files/eject-2.0.13-xmalloc.patch 654
 MD5 6511dfbfe2029a7e582f958af0d41ca7 files/eject-2.0.13-xregcomp.patch 649
 MD5 b92a6e4f192ffefdc4ad665fba3ed4a7 files/eject-2.0.13-i18n-uclibc.patch 645
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC5UZTj5H05b2HAEkRAnjUAKCfOrofho7RoHOETziPQVSYYfutkQCdF6He
+9n2/LrwX9EkWKnhHWAZMX5w=
+=M6ff
+-----END PGP SIGNATURE-----
