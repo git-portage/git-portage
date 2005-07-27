@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1477d28ff8124af3f83e0258d9d4c7eb epiphany-1.6.4.ebuild 1543
 MD5 1da0f5ad737f285d06932c241801134c epiphany-1.6.3.ebuild 1391
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
@@ -15,3 +18,10 @@ MD5 24ec843041b5b9fd528431dd8e291297 files/digest-epiphany-1.4.8 68
 MD5 5dd8a008a5612c492c8d0b648f5b0954 files/epiphany-1.4.6-moz-nsiurip.patch 1071
 MD5 40c2cd3b20e5f2847e868edbc4f58915 files/epiphany-1.6.0-wallet_fix.patch 598
 MD5 a9590e1794335ecb9fb376a3b128570b files/epiphany-1.6.0-view_source.patch 11178
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFC58hlKRy60XGEcJIRAiHcAKCfBZc5hvBo0aMHaExRyzu5Sil/qACfZ5yk
+CzR9krt8bzE7q5FqoUMrjpU=
+=79q8
+-----END PGP SIGNATURE-----
