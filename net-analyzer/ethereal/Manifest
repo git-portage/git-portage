@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c39cc94a8cf53dd5ee1154198149a4f1 ethereal-0.10.12.ebuild 3477
 MD5 c197a642ecd8faf1ac997c497a965b3b ethereal-0.10.11.ebuild 3478
 MD5 d60b75d9ad73c4b7bcec713db5c8e5c9 ChangeLog 10254
@@ -7,3 +10,10 @@ MD5 5f6da5f1fabdf39da22bbb5ea224fab1 files/digest-ethereal-0.10.11 70
 MD5 34bd8a0285aea402be479f40304aa947 files/digest-ethereal-0.10.12 70
 MD5 a4d5fb3621ed4e86f311718f1447a870 files/fifo.patch 1138
 MD5 5f6da5f1fabdf39da22bbb5ea224fab1 files/digest-ethereal-0.10.11-r1 70
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC6BvsKf2g/qXtneoRAl+hAJ9gU9++Vob5tp3rEn3ni8Eeo4gILgCgmBVn
+u2EAMxy2E3QsiY10IjrjgAY=
+=x9he
+-----END PGP SIGNATURE-----
