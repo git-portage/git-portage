@@ -1,5 +1,5 @@
 MD5 a12b6e689b6076323218d610c287c7c9 ChangeLog 1061
-MD5 83419622ba3cbf40faee486957bfe16f gmyclient-0.3.ebuild 867
+MD5 2ed29ee0feac75536dc2a585bf2cf6a1 gmyclient-0.3.ebuild 866
 MD5 5697c24b43814e3061d47356c4040ee4 metadata.xml 408
-MD5 9ce548600f5d9e1ffeb2347725a40bd9 files/digest-gmyclient-0.3 66
 MD5 e36d3c30335045d03c2c521a4ed0d4b5 files/0.3-fix.patch 1531
+MD5 9ce548600f5d9e1ffeb2347725a40bd9 files/digest-gmyclient-0.3 66
