@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4ad7ce8dc4d2e318f217cb7fff710ab3 ChangeLog 10324
 MD5 5529b17488d439ea93b380bacdb0a7a7 metadata.xml 239
 MD5 eeae60c214ca25ce0c9e4dbd37044004 xine-lib-1.0-r2.ebuild 7087
@@ -20,3 +23,10 @@ MD5 5f84d7a1d762461967b5a9d45da70e9b files/digest-xine-lib-1.0.1-r2 137
 MD5 9678227c043f04d5e8561cb6ba80d3e6 files/digest-xine-lib-1.0.1-r3 137
 MD5 b5cff6ac57a1f66ac90f95608a138717 files/digest-xine-lib-1.0.2 137
 MD5 94201cfae7936994b6c61f0d78b43520 files/digest-xine-lib-1.1.0 136
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC5zhYj5H05b2HAEkRApD3AJ43dQmq8S4YA/lZQ1aLRl1uAKfNwACfUueG
+RmTVQKfCs+ISvTp7wCB8GiA=
+=fpDa
+-----END PGP SIGNATURE-----
