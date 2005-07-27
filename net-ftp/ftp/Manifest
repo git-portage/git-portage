@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4b8a55a5183e6ee99783b524dee2f2ee ChangeLog 2955
 MD5 80ca646c7ebf7d86e937294242836ea6 ftp-0.17-r3.ebuild 1034
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
@@ -13,3 +16,10 @@ MD5 613519a7494f336a0e2a73d8c0d016bb files/netkit-ftp-0.17-locale.patch 539
 MD5 21b1d9279bb3b48cba7a72be936890d4 files/netkit-ftp-0.17-runique_mget.patch 488
 MD5 a2ce6225bb6a68ca98d6ddec516237b9 files/netkit-ftp-0.17-security.patch 509
 MD5 505aff1a4fe0a9c5702cb3b477b34f5b files/netkit-ftp-0.17-ssl-0.2.patch 29552
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC50urArHZZzCEUG0RAtdWAJ0QW8L2rsstvJkSEn3Pgdta5pnCmQCbBc0V
+kDCiPQ3VZZiEuv415f8yJ04=
+=dG+B
+-----END PGP SIGNATURE-----
