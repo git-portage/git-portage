@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9e7133598fee50497fe0d9779ea1eee9 fcron-2.9.5.1-r3.ebuild 2977
 MD5 2bc006c5b79f2e2eed4ab34bf454d584 fcron-2.9.6.ebuild 2981
 MD5 c1d0a2ed938718f4afbebd7581e4dbf4 fcron-2.0.2.ebuild 3132
@@ -14,3 +17,10 @@ MD5 bebebfe6bc1ce39b1703b624f2be567e files/fcron-2.0.0-configure.diff 390
 MD5 42d8a93754df65def4a3746bbc68e494 files/digest-fcron-2.9.5.1 69
 MD5 e87691832e6f48a5aed1c6cf3b681bce files/fcron-2.9.5.1-fix-mail-output.diff 415
 MD5 42d8a93754df65def4a3746bbc68e494 files/digest-fcron-2.9.5.1-r3 69
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC6RX5EZCkKN40op4RAjVNAKC6eXqpFjtcI6UObwyinYEDd5sGPwCdEtK1
+yT4C+XzVDnTHnAq566F6kvQ=
+=kOx0
+-----END PGP SIGNATURE-----
