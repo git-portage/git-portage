@@ -3,9 +3,9 @@ MD5 9235c25be9ec3be9cb46b023abbecff0 webapp-config-1.10-r11.ebuild 1433
 MD5 37634a3ca01b7193ed09fe55c808eadf webapp-config-1.9-r2.ebuild 1138
 MD5 000c48f58fb4ef2dd3fdb11bea4c75f7 webapp-config-1.11.ebuild 1408
 MD5 3c6fa77f49196b57de0b9a7cc6155980 webapp-config-1.10-r10.ebuild 1409
-MD5 2661d60d8b91926f35122733235bf2b6 webapp-config-1.11-r1.ebuild 1440
+MD5 ba2ff89510e321c13f7e7d424f7dba44 webapp-config-1.11-r1.ebuild 1438
 MD5 b83c57dfc4bb030edda59db1cbb85fd2 webapp-config-1.10-r12.ebuild 1645
-MD5 a83e795ea131a5ece9d03569b3d1d635 ChangeLog 13563
+MD5 ade9b7d4fd3cb027d192c7573c69ea10 ChangeLog 13659
 MD5 4defd726d2b03decc5b7ff21b0aac1a3 metadata.xml 225
 MD5 59f4a04174af27821d4696249b5c8cae webapp-config-1.10-r6.ebuild 1401
 MD5 ad4be087a0a4be0991e124d97fe377ac files/digest-webapp-config-1.10-r10 74
