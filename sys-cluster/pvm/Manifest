@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 45c59368de332d2cdaefe39d70741b4f pvm-3.4.5.ebuild 1895
 MD5 41664043c4624dedcfeeb07950f08d13 metadata.xml 312
 MD5 6670265f824ab06a23db5549f167f298 pvm-3.4.4-r1.ebuild 1143
@@ -19,3 +22,10 @@ MD5 280129471c091d368fb315350d763d44 files/pvm-3.4.5-extra-arches.patch 547
 MD5 726a6a69ba5fb9e140e8f7e1a85c9c9d files/pvm-3.4.4-gentoo.diff 608
 MD5 2b358bb1f53a8649c966f6099b8e67cc files/pvm-3.4.5-x86_64-segfault.patch 1233
 MD5 c6d622987f4e06f522dcbc72cff9127d files/digest-pvm-3.4.4-r3 57
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC6VfxKtJO8LeSoosRAowdAJ4lQqrSv4HWXBZ7k5xCVea5DqQYmQCeJ00x
+2DGlHsG8Sz9rL2DxnmJ7vjs=
+=mqZG
+-----END PGP SIGNATURE-----
