@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c44307d19c5c80bc828048ac1d343c8e Apache-Test-1.03.ebuild 765
 MD5 7181e228e50923f791bd6725c87b932f Apache-Test-1.15.ebuild 774
 MD5 1cf3c341f2edbd11f526328826ed4811 ChangeLog 3075
@@ -8,3 +11,10 @@ MD5 6a84fba1190e8a3bbf4bcf1f5d143121 files/digest-Apache-Test-1.03 67
 MD5 6ea272a71ab8ac04028b394d8c026fee files/digest-Apache-Test-1.23 68
 MD5 f63ddebaf06de3d9772484b7636bc8a7 files/digest-Apache-Test-1.15 68
 MD5 d0fa04c04f6faa72c31e9616b6e8770c files/digest-Apache-Test-1.26 68
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.0 (GNU/Linux)
+
+iD8DBQFC6LKZtG5z4I8BtQoRAsUpAJ954hhVvuJCUdEnb4zzh8amub7FGgCaAlOW
+TJeySydCjyXexwCy3wf8ZFs=
+=bofs
+-----END PGP SIGNATURE-----
