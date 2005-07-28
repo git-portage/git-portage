@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8aefbc0e49db723ca1ad02d0c409cd49 metadata.xml 160
 MD5 bc0a4e14d0a8dfdd276202b671196321 phex-2.0.0.76.ebuild 776
 MD5 e0520487918252d3ed91ca81b0d0ab4d phex-2.1.2.79.ebuild 777
@@ -9,3 +12,10 @@ MD5 4e9747411db2765d9660dc05e11fe21c files/digest-phex-2.1.2.79 63
 MD5 718cef0fab95fd9427d66e44e09669cd files/digest-phex-2.1.4.80 63
 MD5 3089ad1db7b9aaf83ddad49afa8165bc files/phex.sh 256
 MD5 2d174615ea003ec7cfee1eda8f0cb650 files/digest-phex-2.6.0.87 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC6T5oZ/iYVBmujdURAmDTAJ9Q1H2oe7JXfoZ6fbTRMzeUmY4bZwCgzrPz
+9z/mQhYfcGKP5b2vnykpi+o=
+=kI0j
+-----END PGP SIGNATURE-----
