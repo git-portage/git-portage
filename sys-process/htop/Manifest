@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 553cd70f334c2f66314ff97ec874a90b htop-0.3.2.ebuild 771
 MD5 e19ebd0f86c9fcd215248a4d9001b6af htop-0.5.ebuild 780
 MD5 22117b11fa1d7061ccff1888aeb9f8dd htop-0.3.1.ebuild 771
@@ -16,3 +19,10 @@ MD5 334fab92d3a6331a9de56b3f52f47c88 files/digest-htop-0.3.2 61
 MD5 162b1b379ac437b9a5e4002ea69f4cb3 files/digest-htop-0.3.3 61
 MD5 1ca8054769d898d6dd367ede6e5003b8 files/digest-htop-0.4.1 62
 MD5 8554a62ab326b2764855f3a4f435c8ad files/digest-htop-0.5.2 62
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC6VyAomPajV0RnrERAjjdAJ98eVFelBNmNmTfKklowQGxqpqjOACeORzr
+879j3NLiqlcTVFx3yox+Ryk=
+=u34R
+-----END PGP SIGNATURE-----
