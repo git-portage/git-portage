@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9485c1088e78f7c8203364cdb15edff1 neon-0.24.4.ebuild 928
 MD5 1bc59fb5a419d01111a34f620a1ab9fc neon-0.23.8.ebuild 759
 MD5 dcf38560f4c806d8beee775ee1866d49 neon-0.24.6.ebuild 884
@@ -18,3 +21,10 @@ MD5 84942fd6f6fe937bf09d9649e6e14436 files/digest-neon-0.24.4 63
 MD5 97d9fa5100efbc5b63dbea48f7d36cf6 files/digest-neon-0.24.5 63
 MD5 1ff50f00a4a8371de1c523076d9fe45e files/digest-neon-0.24.6 63
 MD5 839f25b6c4eb84ed2157cd2904daf5b0 files/digest-neon-0.24.7 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC6r6hEZCkKN40op4RArF1AKCl+sXBQeZOO/9BALKQaY5mwvZWtACfYdYc
+G62QSa+JsEv4eE4YY7/dsgM=
+=+J7Y
+-----END PGP SIGNATURE-----
