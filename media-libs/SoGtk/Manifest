@@ -1,3 +1,5 @@
-MD5 3bd17eadce9047a1f4764ba7cda84c09 SoGtk-20010601-r1.ebuild 1090
+MD5 a0ad33595ee1fcf1e8b579cccacce8a8 SoGtk-20010601-r1.ebuild 1163
 MD5 103d585cb060f97d6308634ca04d6cfd ChangeLog 1165
+MD5 035a2156b3aec707f70a2c518efdce93 metadata.xml 211
 MD5 1a04198c0ca288dd8f7829503ebf5b67 files/digest-SoGtk-20010601-r1 66
+MD5 cdacdfe6d6b646bc864dd74fceea8ac7 files/SoGtk-20010601-string.patch 1560
