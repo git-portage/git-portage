@@ -2,10 +2,10 @@ MD5 4e7b0fb1a5daa54e4f8de4637b447fcd baselayout-1.11.12-r4.ebuild 19260
 MD5 ff608e6800fc96bfde6ae7fa09c37b56 baselayout-1.11.13.ebuild 18604
 MD5 7d6f28f70034d87817939d447d40d39e baselayout-1.11.11-r3.ebuild 18759
 MD5 63063133efc82df82db512614030ba19 baselayout-1.9.4-r6.ebuild 16993
-MD5 d9ad55f811f6821be34e5cb26f5e676d ChangeLog 59196
+MD5 af1c6f8e2eee64f8a2815059f68bff72 ChangeLog 59509
 MD5 451f8ce496238c2fd0fa9fa2852ad16c baselayout-1.9.4-r7.ebuild 17999
 MD5 e02bb32cac91dad28d3c05b731b37b04 metadata.xml 385
-MD5 39f2ec5e4ec39a2129af404f703c4e8b baselayout-1.12.0_pre3.ebuild 18709
+MD5 6f810c38eb6f522cf0cb299027035955 baselayout-1.12.0_pre3.ebuild 18711
 MD5 d69d18485e6cfc948d9f39b2b766a406 files/digest-baselayout-1.9.4-r7 134
 MD5 50816019be7cc03120fa58d075eb07f7 files/sysvinit-2.84-selinux1.patch 3612
 MD5 c530e98487e43a7bbbb779450f8dd94e files/baselayout-1.11.12-quote-EDITOR.patch 374
