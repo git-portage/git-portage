@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 af1c6f8e2eee64f8a2815059f68bff72 ChangeLog 59509
 MD5 7d6f28f70034d87817939d447d40d39e baselayout-1.11.11-r3.ebuild 18759
 MD5 4e7b0fb1a5daa54e4f8de4637b447fcd baselayout-1.11.12-r4.ebuild 19260
@@ -34,3 +37,10 @@ MD5 6ec416bfd1097d350c09e78949a736b8 files/rc-scripts-1.6.9-ifconfig.patch 266
 MD5 d50ca91cbb58c7528a60ddf5bb172956 files/sysvinit-2.84-selinux.patch 3206
 MD5 50816019be7cc03120fa58d075eb07f7 files/sysvinit-2.84-selinux1.patch 3612
 MD5 e02bb32cac91dad28d3c05b731b37b04 metadata.xml 385
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC6iEhI1lqEGTUzyQRAt6oAKCWbb2Q+vt6a+0/3u3zgi3104VTMACgmypz
+HlpyaLLEHgOaqxdMMsDXchg=
+=SENc
+-----END PGP SIGNATURE-----
