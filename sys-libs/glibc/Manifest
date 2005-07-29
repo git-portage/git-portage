@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e948ac6811c32cd5859f0af4b94b5b41 glibc-2.3.3.20040420-r2.ebuild 21732
 MD5 e10ca9e3e74db3538eeae6ebd5f59498 glibc-2.3.4.20041102-r1.ebuild 34307
 MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
@@ -129,3 +132,10 @@ MD5 ec83f3d86f23243a1fb334b8872d454f files/2.3.3/glibc-2.3.3-localedef-fix-tramp
 MD5 0bfc56be86acec8ec52fe29249e267a4 files/2.3.3/glibc-2.3.3-owl-malloc-unlink-sanity-check.diff 1425
 MD5 175bde9b0017d4deb63cf55f38173e11 files/2.3.3/glibc-2.3.3_pre20040117-got-fix.diff 752
 MD5 ae9425cd4199cccd69c6d22633583dc1 files/2.3.3/ssp.c 4041
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC6XuegIKl8Uu19MoRAkwXAJ9wWK+fEsIYU9rsKWrpdlTLmAoVKACeNF3j
+Z1s6HilIIU6Gz4tZRdNOxhQ=
+=iBkX
+-----END PGP SIGNATURE-----
