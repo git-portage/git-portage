@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0186b7fdb054107bc4646596bdaaba08 ifd-gempc-0.9.1.ebuild 927
 MD5 0b0fe070e56e47de1e3459d41c396421 metadata.xml 572
 MD5 a2dd620b9928f3715ed2b3eaabaf245c ChangeLog 1533
@@ -9,3 +12,10 @@ MD5 8d641eb25e0b75e86268a3e0f43b4bb4 files/digest-ifd-gempc-0.9.3 67
 MD5 5f2907558e6a4097d8715d901249a0b2 files/ifd-gempc-0.9.1.gcc-3.4.patch 770
 MD5 1f4d6ecc857bf8ea1ebc8511a2f65d7c files/digest-ifd-gempc-1.0.0 67
 MD5 d4f8179d5ef434e0a17dc7cfbfaf2762 files/ifd-gempc-1.0.0-pcsc-lite-include.patch 1394
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC6eQ4mdTrptrqvGERAtPtAKCCOE1LE+GfFzl0VUrfKv1BVrBwfACgk/Ao
+aqhJaWJDWfFt+6Fnboqf/wI=
+=d4p1
+-----END PGP SIGNATURE-----
