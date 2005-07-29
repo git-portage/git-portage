@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 dab0d04f5a47e2c247f1f5039004b738 ChangeLog 3315
 MD5 2bd48a5ae413433cbb36110b219ce97c metadata.xml 156
 MD5 4cd1d984bba137c30bc8f99818124ddd pmake-1.45-r4.ebuild 1706
@@ -9,3 +12,10 @@ MD5 090bfd2a45a464588a47793b37bc75d3 files/digest-pmake-1.98 131
 MD5 32a9d3f1baee80b6b3dfa6afd27e3b75 files/pmake-1.98-skipdots.patch 513
 MD5 456fc1935fead6cfc1235eddf6259847 files/skipdots.patch 677
 MD5 1078bf3b75a5e56a467359e69f73ed6b files/digest-pmake-1.111.1 133
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC6ivTj5H05b2HAEkRAlBjAJ0Unv7+3KlQ4xOyUzdmZU9Q+HEdkwCdHfXQ
+2/CZetMlRpBbq5zPpyZP3W0=
+=KhAI
+-----END PGP SIGNATURE-----
