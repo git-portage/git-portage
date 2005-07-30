@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8fc607739852c1d3002ea8a1610d91f3 ChangeLog 3083
 MD5 43f345619b8fb7c94ce9a6839d5b1ce4 inkscape-0.37.ebuild 1018
 MD5 c1fc5c1332bb5b9d342a077d86f7ed15 inkscape-0.38.1.ebuild 1100
@@ -22,3 +25,10 @@ MD5 6d1db27dd1b71567662b3e58b3bfed8b files/inkscape-0.41-configure.ac.patch 514
 MD5 2a6db3de949e36fe3ec3ecbca9c26f3e files/inkscape-0.41_gnome-print.patch 404
 MD5 96ffe3671e95f776e9e90718e5e3132a files/string.patch 489
 MD5 89c95424c23f934760231c805597a979 files/digest-inkscape-0.42 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC623RZ/iYVBmujdURAsREAJ4tc2MfYBhCxnwqjYOS5IPpVYBXXgCdFjXD
+eufBY5HJTEk06wjhinVnXHw=
+=b8xL
+-----END PGP SIGNATURE-----
