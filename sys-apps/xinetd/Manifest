@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0ab919c245efca6ef554559091b2ae33 xinetd-2.3.13.ebuild 1999
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 738c06931d427117e14dccd4f911700f ChangeLog 5367
@@ -16,3 +19,10 @@ MD5 7d04f6175ae493c8aa988e3728e959b3 files/etc.xinetd.d/chargen-tcp 246
 MD5 79665fc4e88391cc1d5f8f0f4fd391d8 files/etc.xinetd.d/daytime-udp 272
 MD5 02bc3d5745432ee4b5b11b9c2e03c731 files/etc.xinetd.d/time-tcp 270
 MD5 f9591814c08ab763ace5c8969ce6d457 files/etc.xinetd.d/README.services 643
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC6y2UgIKl8Uu19MoRAp9KAJwKluFWhzsVOKV+etdZi1jq1MVoYQCfad4S
+jbDc72h6r5aNcDVgjLyjChQ=
+=CHrS
+-----END PGP SIGNATURE-----
