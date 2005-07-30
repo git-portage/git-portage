@@ -1,4 +1,6 @@
 MD5 7ffd5989f2e39ed554b641c73f478eb3 ChangeLog 866
 MD5 dffd46174e78b327c834fc3e4b1cf848 metadata.xml 160
 MD5 335046c20d5d5feb8a5621c8dc5a3740 nettle-1.10.ebuild 794
+MD5 042ec8480b073d649dcb101f842421e6 nettle-1.12.ebuild 835
 MD5 23b2a1190eb15492bd60934979e29068 files/digest-nettle-1.10 63
+MD5 5c1ac7a65b61d5f2a91ddd7c4e472c38 files/digest-nettle-1.12 63
