@@ -1,28 +1,28 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/adzapper/Attic/adzapper-20040408.ebuild,v 1.1 2005/04/22 19:15:11 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/adzapper/Attic/adzapper-20050712.ebuild,v 1.1 2005/07/30 07:28:22 mrness Exp $
+
+MY_P=${P/zapper/zap}
 
 DESCRIPTION="Redirector for squid that intercepts advertising, page counters and some web bugs"
 HOMEPAGE="http://adzapper.sourceforge.net/"
-
-MY_P=${P/zapper/zap}
-S="${WORKDIR}/adzap"
-
 SRC_URI="http://adzapper.sourceforge.net/${MY_P}.tar.gz"
+
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86 ppc sparc alpha"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
-DEPEND=""
 RDEPEND="net-proxy/squid"
+
+S="${WORKDIR}/adzap"
 
 src_unpack() {
 	unpack ${A}
 
 	SCRPATH="/etc/adzapper/squid_redirect"
 
-	cd ${S}/scripts || die
+	cd ${S}/scripts || die "Error no scripts dir."
 
 	# update the zapper path in various scripts
 	for src in wrapzap update-zapper*; do
@@ -32,7 +32,7 @@ src_unpack() {
 			-e "s|^pidfile=.*|pidfile=/var/run/squid.pid|" \
 			-e "s|^PIDFILE=.*|PIDFILE=\"/var/run/squid.pid\"|" \
 			-e "s|^RESTARTCMD=.*|RESTARTCMD=\"/etc/init.d/squid restart\"|" \
-			$src.orig > $src || die
+			$src.orig > $src || die "sed updating failed."
 			rm $src.orig
 	done
 }
