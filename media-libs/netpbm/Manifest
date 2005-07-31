@@ -1,4 +1,4 @@
-MD5 e27e11576d86e1972225811cc4e1a3aa ChangeLog 8494
+MD5 131c7e9ac5287fa61d1ab3c12260adbc ChangeLog 8599
 MD5 e1f6c302199a36c1be4ecf1654be9bac metadata.xml 224
 MD5 e356185ae787b984b1502205834c74f4 netpbm-10.11.14.ebuild 2010
 MD5 bc37890e535cf2fcbe66043b92491072 netpbm-10.11.15.ebuild 2009
@@ -8,7 +8,7 @@ MD5 fc5b2c41ccdc4c486d3f7b65771753b5 netpbm-10.19.ebuild 1739
 MD5 a936cf1a2061cebff85f7a54e12d6422 netpbm-10.20.ebuild 2273
 MD5 f17a1fb0d30a71452e534e435c7295b2 netpbm-9.12-r4.ebuild 1343
 MD5 e1d7f1307e675fbbfc3a07f2539c0708 netpbm-10.20-r1.ebuild 2442
-MD5 4503a9fc7bc9b921e7c73479fe133e2a netpbm-10.28.ebuild 2433
+MD5 12672be17df41448fe97272c5d5a6295 netpbm-10.28.ebuild 2438
 MD5 6735fc271948c349d02f59361b4c373e files/digest-netpbm-10.11.14 65
 MD5 15efd1a3748d1c9b0a9d9e88374bcbbc files/digest-netpbm-10.11.15 65
 MD5 19ce2b4d396523dcbcb1e415d4bdb8c9 files/digest-netpbm-10.11.5-r3 64
