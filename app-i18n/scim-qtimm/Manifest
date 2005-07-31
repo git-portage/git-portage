@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c19a2904caf2d22e46f4a02d2514058a ChangeLog 4219
 MD5 e92a48548554c80cf90e18df17ff6a82 metadata.xml 156
 MD5 e1612d44a75fa0ec21b5a758a1b480ca scim-qtimm-0.8.95.ebuild 1550
@@ -8,3 +11,10 @@ MD5 ca25d0f0af2f019b21e0153c1f1b50aa files/digest-scim-qtimm-0.8.95 70
 MD5 b436588150ad1499ad64007ddfa75679 files/digest-scim-qtimm-0.9.2 69
 MD5 3811b7ea72abdefe6b02dce2c8318fe5 files/digest-scim-qtimm-0.9.1 69
 MD5 49e66ba94592a548a5812cf2eb90e05e files/digest-scim-qtimm-0.9.3 69
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC7I1DVWNWqTUmv+0RAum7AJ92KtXoyt+yVv9M5J3Jm9sA/GbPGgCfV6Wc
+pBjyJEu1na9T+b5SyBaVhL8=
+=l2K+
+-----END PGP SIGNATURE-----
