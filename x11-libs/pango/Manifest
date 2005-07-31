@@ -1,5 +1,6 @@
 MD5 724ba9499e8fd9e01e37131a0622919e pango-1.8.1.ebuild 1908
 MD5 9d84c7745d93323e331db32ca36fa99e pango-1.4.1.ebuild 1136
+MD5 0d2e5a3bc5f7e1b2781f1bb665db6f1c pango-1.9.1.ebuild 2064
 MD5 35a6f51a28246b54223da53281849513 pango-1.8.0.ebuild 1899
 MD5 f3f4ec791968d9675d0c5b2b4c103387 pango-1.8.1-r1.ebuild 1988
 MD5 a4d0ffeb51ccd5e32c1bdecbe004ab3e pango-1.4.1-r1.ebuild 1881
@@ -15,5 +16,6 @@ MD5 941770096c4a3927b2acb1b81f90b915 files/digest-pango-1.4.1 64
 MD5 e63307fbf2f7bf46a9b9e363d82e115c files/digest-pango-1.6.0 64
 MD5 d2ae8f868bf8083914d10c79782f8a44 files/digest-pango-1.8.0 64
 MD5 54474022d422b0d0cf4b473cfcf5fffb files/digest-pango-1.8.1 64
+MD5 f4bdf9776f30cba53c77463c3226440d files/digest-pango-1.9.1 65
 MD5 8de5114d2f4367487b3d70b712115ec4 files/pango-1.8.1-fontfix.patch 1320
 MD5 2c7eef6720e5a5aecb7406200c6ede31 files/pango-1.2.5-lib64.patch 1107
