@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e1d7f1307e675fbbfc3a07f2539c0708 netpbm-10.20-r1.ebuild 2442
 MD5 a936cf1a2061cebff85f7a54e12d6422 netpbm-10.20.ebuild 2273
 MD5 e1f6c302199a36c1be4ecf1654be9bac metadata.xml 224
@@ -24,3 +27,10 @@ MD5 d3afaf9141525a706f8c077f66918670 files/10.11.14/Makefile.config 17308
 MD5 be5dafab017b8247e09f643e9798441e files/10.11.14/Makefile.svga 17374
 MD5 d3afaf9141525a706f8c077f66918670 files/10.11.5/Makefile.config 17308
 MD5 be5dafab017b8247e09f643e9798441e files/10.11.5/Makefile.svga 17374
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFC7jW0KRy60XGEcJIRAs4mAKCjOjb/0/ho3opVegTG+f0evaIt0wCdGX83
+qtYhsgObh69Mkc2i6G3P0ZQ=
+=AD/A
+-----END PGP SIGNATURE-----
