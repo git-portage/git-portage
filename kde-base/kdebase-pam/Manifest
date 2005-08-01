@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 65f5c22237dddcedd13079aa6b87eb70 kdebase-pam-6.ebuild 555
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
 MD5 a0f671ff0e0e4a888e87fc8d4263120a kdebase-pam-4.ebuild 551
@@ -12,3 +15,10 @@ MD5 722767981ebf7e09dda75264e5d6f155 files/kde-np.pam-5 236
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-kdebase-pam-4 0
 MD5 b048371a651391ef2bb4166e40e6adff files/kde.pam 405
 MD5 43ce12fb996a669b5b6a0fbba878bab7 files/kde.pam-5 237
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFC7j+OKRy60XGEcJIRAiODAJ0QemMYfTYLgCyHM/Zw7Fgafk2wKQCgiq+8
+9WB0JQ2OUriGkXpOmTDiPA8=
+=ZAZa
+-----END PGP SIGNATURE-----
