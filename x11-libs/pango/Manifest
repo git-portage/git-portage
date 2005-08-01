@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 47612e4ba2b80cb47840de1e417a2d80 pango-1.9.1.ebuild 1974
 MD5 ffb70bddb20ae1a999f2a13c836efe3c pango-1.8.1-r1.ebuild 1986
 MD5 8d043b3f2faa24b8dd62c812b4f268ef pango-1.8.2.ebuild 1849
@@ -14,3 +17,10 @@ MD5 941770096c4a3927b2acb1b81f90b915 files/digest-pango-1.4.1-r1 64
 MD5 54a56a572951b08340d08e10e4d93414 files/pango-1.0.99.020606-xfonts.patch 4560
 MD5 8de5114d2f4367487b3d70b712115ec4 files/pango-1.8.1-fontfix.patch 1320
 MD5 54474022d422b0d0cf4b473cfcf5fffb files/digest-pango-1.8.1 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFC7h4vKRy60XGEcJIRAr30AKCC88C3dQld+CBuChWYykQncXycggCeP8yB
+W5mc317x5JN4r2bGPNab4Rk=
+=A6/q
+-----END PGP SIGNATURE-----
