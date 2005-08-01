@@ -1,5 +1,5 @@
-MD5 0537633c3244ef63314b19c492c7c1b8 ChangeLog 483
+MD5 bbc6cc38e06882c29ec5ff474875fa89 ChangeLog 483
 MD5 d9885b371cf444e9a26ef0f8a0418d9b metadata.xml 219
-MD5 9f0d8f17dd96fb2bdcdbc25fde08a998 thoggen-0.3.ebuild 1330
+MD5 998aed65249773db94a03b82aa7877e0 thoggen-0.3.ebuild 1330
 MD5 214c2419992cfee26543fedc1e4711ea files/thoggen-0.3-new-dbus-hal.patch 13464
 MD5 db202d22d4b7d54cd9a6789312803f07 files/digest-thoggen-0.3 63
