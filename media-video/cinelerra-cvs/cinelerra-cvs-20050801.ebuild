@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/cinelerra-cvs/Attic/cinelerra-cvs-20050102.ebuild,v 1.5 2005/05/15 14:42:17 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/cinelerra-cvs/Attic/cinelerra-cvs-20050801.ebuild,v 1.1 2005/08/01 13:35:19 zypher Exp $
 
 inherit toolchain-funcs eutils flag-o-matic
 
@@ -14,27 +14,25 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64"
-IUSE="3dnow alsa ffmpeg mmx oss static"
+KEYWORDS="~x86 ~amd64 ~ppc"
+IUSE="alsa ffmpeg oss static"
 
-DEPEND="!media-video/cinelerra
+RDEPEND="!media-video/cinelerra
 	virtual/x11
-	virtual/libc
-	=sys-devel/gcc-3*
 	media-libs/libpng
+	media-libs/libdv
+	media-libs/faad2
+	media-video/mjpegtools
 	>=sys-libs/libavc1394-0.4.1
 	>=sys-libs/libraw1394-0.9.0
 	>=media-sound/esound-0.2.34
 	>=media-libs/openexr-1.2.1
-	!media-video/cinelerra
-	x86? ( dev-lang/nasm )"
+	>=media-libs/libvorbis-1.0.1-r2
+	>=media-libs/libogg-1.0
+	!media-video/cinelerra"
 
-src_unpack() {
-	unpack ${A}
-	cd ${S}/libmpeg3
-	[ "`gcc-version`" == "3.4" ] && \
-		epatch ${FILESDIR}/libmpeg3-${PV}-gcc3.4.patch
-}
+DEPEND="${RDEPEND}
+	x86? ( dev-lang/nasm )"
 
 pkg_setup() {
 	if [[ "$(gcc-major-version)" -lt "3" ]]; then
@@ -50,14 +48,11 @@ src_compile() {
 	cd ${S}
 	./autogen.sh
 	econf \
-	`use_enable mmx` \
-	`use_enable 3dnow` \
 	`use_enable static` \
 	`use_enable alsa` \
 	`use_enable oss` \
 	`use_with ffmpeg` \
 	|| die "configure failed"
-# ./configure --prefix=/usr --enable-debug || die "configure failed"
 	make || die "make failed"
 }
 
