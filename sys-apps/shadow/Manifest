@@ -3,10 +3,10 @@ MD5 db870979ea0f600d0bd8137520e2251a shadow-4.0.4.1-r4.ebuild 5961
 MD5 a51d02eb155feb33913816239bb3cf57 shadow-4.0.7.ebuild 5602
 MD5 c2ab407aa2ff8ce76a2600f2d4c6a3b2 shadow-4.0.7-r3.ebuild 7074
 MD5 0faad34d69a5e1bba61af947618ae795 shadow-4.0.7-r4.ebuild 7206
-MD5 b762ed0528d8c43fac1716da4d37a404 ChangeLog 21311
-MD5 39d90993ea395dd900df7286fa3864fd shadow-4.0.10.ebuild 6747
+MD5 5c67a171ae58363c905c519129df38c4 ChangeLog 21557
+MD5 ad25974e54da8203a96dddffef6a46ce shadow-4.0.10.ebuild 6753
 MD5 ac3c5c29460f248d06d4ef83c96ca912 shadow-4.0.7-r1.ebuild 6602
-MD5 39d90993ea395dd900df7286fa3864fd shadow-4.0.11.1.ebuild 6747
+MD5 66ea3678fcf46de2cdcce36e542e7ff0 shadow-4.0.11.1.ebuild 6670
 MD5 fad39eceb7fd04f2805c6acc16c59d57 shadow-4.0.5-r2.ebuild 5440
 MD5 06049e2959c62c88aee32422a37bf07f shadow-4.0.6-r1.ebuild 5641
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
@@ -21,6 +21,7 @@ MD5 6355d65b618395c4adf46f733269546c files/shadow-4.0.10-dots-in-usernames.patch
 MD5 d8b8542a7bc013011a293732ca504a50 files/digest-shadow-4.0.5-r2 66
 MD5 c5e9081ed43837797e2f1617b7ce1c24 files/shadow-4.0.5-fix-adding-of-pam_env-set-env-vars.patch 285
 MD5 391991f50203bd8b7738474051befdee files/shadow-4.0.5-remove-else.patch 531
+MD5 ae5d078bc6b651b5f081dcfc64b5df69 files/shadow-4.0.11.1-perms.patch 1659
 MD5 e32464f2df5a85f4f6c67bc78e9a23d1 files/shadow-4.0.7-nscd-socket-path.patch 1081
 MD5 aaf16ddabef285df169e37254b13561c files/shadow-4.0.4.1-selinux.diff 4296
 MD5 fda41657b856ffaeec5a2734b312409b files/shadow-4.0.5-fix-mail-configure.patch 5452
