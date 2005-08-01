@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 09e8b5e664611736921e0ca1ae1ed87e ChangeLog 4693
 MD5 f9abf5c84d49fde36d1413b2fe7fbe35 firestarter-0.9.3.ebuild 772
 MD5 ae57b81012cefa3ccd74c065176674e5 firestarter-0.9.2-r1.ebuild 1197
@@ -8,3 +11,10 @@ MD5 cdd7cbdc9afc884306e695332068abd2 files/digest-firestarter-0.9.3 70
 MD5 3101a926225f487680916daeba635d0e files/digest-firestarter-0.9.2-r1 69
 MD5 2e24074660b59430a450e1d701d6e9e0 files/digest-firestarter-1.0.3 70
 MD5 922be035ddca4574178cc2525738831d files/firestarter-1.0.3 1002
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC7lO7csIHjyDViGQRAmrZAJ4kgbrgoaFbARjygXI3gmZ+yvcAgwCfdeNA
+9gjB7UKJoLKsUiEMRdzE8uo=
+=Ry+X
+-----END PGP SIGNATURE-----
