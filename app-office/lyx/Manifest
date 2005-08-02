@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 cbf7e117745080595fa57af4f76c112b lyx-1.3.5-r1.ebuild 4219
 MD5 895daf39c7f268ca69242ab4d5e6b185 lyx-1.3.4.ebuild 3103
 MD5 9257cf14df16f1d22e3cd6d65f2dbccf lyx-1.3.6.ebuild 4273
@@ -14,3 +17,10 @@ MD5 388b0f4710d31754bd238c8bf53ae0fd files/digest-lyx-1.3.5-r2 381
 MD5 b86918456f67f911e357a76308cd0fdb files/lyx-1.3.4-gcc34.patch 6589
 MD5 7fd22c8db1af17ba2d9abcb3548320ef files/lyx-1.3.6-gentoo.diff 1108
 MD5 388b0f4710d31754bd238c8bf53ae0fd files/digest-lyx-1.3.5-r1 381
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFC73i8KRy60XGEcJIRAmkpAJ900/05D39jXm8Wf1Kb6b1myjLsWgCfRqbq
+dsgw3ky8IXdc4pzmGTWp+r0=
+=T75c
+-----END PGP SIGNATURE-----
