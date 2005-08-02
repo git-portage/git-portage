@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8fa969c16a08dfd18ffb3f0d419c1388 phrack-16.ebuild 660
 MD5 f9d5f2db59c143b385703173ec68bb4e phrack-15.ebuild 660
 MD5 a4ce919448bb4998d9209aea7c0e2470 phrack-23.ebuild 660
@@ -126,3 +129,10 @@ MD5 cf78f19fe8fdeba3bda18b0c828946da files/digest-phrack-52 60
 MD5 933e74e2268b0807d2ae06bd83b60c2d files/digest-phrack-07 59
 MD5 beea1ed9e659198c95813347a3cb157b files/digest-phrack-28 59
 MD5 50dba4906ee44eec1ceb455e5f2fb6f5 files/digest-phrack-53 60
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC7tPggIKl8Uu19MoRAlZJAJ0VXNi/IsF3gjMk0VjtxyhEJmmqtgCZAVjm
+QFg6b+o+lvu3PdqAQiKggyI=
+=IQsK
+-----END PGP SIGNATURE-----
