@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 27ae5add10fc42e77804f1ecd768df87 metadata.xml 226
 MD5 90addc3e3ec4f77230cd7f491e1da84a apcupsd-3.10.15-r1.ebuild 2421
 MD5 8f9437d619ba1d684f6bb16a334a2560 ChangeLog 11825
@@ -20,3 +23,10 @@ MD5 2a93b5c4f2574caa199b3d93cf838e8c files/3.10.16/apcupsd.in.patch 315
 MD5 8f1a2aa4fd0307c2cfe3733e8454d3c2 files/3.10.15/smtp.patch 2663
 MD5 69cfaea0e3937c778c710b8120cbd379 files/3.10.15/apache.conf 157
 MD5 2a93b5c4f2574caa199b3d93cf838e8c files/3.10.15/apcupsd.in.patch 315
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC76TTKtJO8LeSoosRApytAJ4p3dlEXzOE/elHtO6dcSunb4vssgCgguGQ
+i3xmFaLNTPKP/h4Z7AH0RD4=
+=zwXz
+-----END PGP SIGNATURE-----
