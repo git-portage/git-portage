@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 09c34c6a09012b67ecbf82db069d773e libpri-1.0.9.ebuild 1007
 MD5 29dd88fb26830766c4dbdb1fa5bb9df7 libpri-1.0.6.ebuild 1011
 MD5 44cf247f04cc83413fcb40ed59d0847a metadata.xml 248
@@ -12,3 +15,10 @@ MD5 4077c9b011632414cb2cdb36e1b24c27 files/digest-libpri-1.0.6 134
 MD5 460b3c5461f842545b60d6c3f716631b files/digest-libpri-1.0.7 134
 MD5 d000e51d01723b5cf6acd521740cad5b files/digest-libpri-1.0.9 134
 MD5 854a97c4aecaf1536521b247dcdbd3a1 files/digest-libpri-1.0.4 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFC78CTKRy60XGEcJIRAodPAJsFOFpNEq2+Z0idUA/wsL4Gc8XfYQCgmQXj
+gXNMn+yEJMPt9LS674WjHH4=
+=0UT+
+-----END PGP SIGNATURE-----
