@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6447cb0e79e83a0be998774a022db44a ChangeLog 8553
 MD5 b390c9a4e24bbfe4837ed24d2787688d dclib-0.2.20.ebuild 731
 MD5 12ec04ee5bbd4621828404befa747084 dclib-0.2.21.ebuild 732
@@ -21,3 +24,10 @@ MD5 c973c56c5bf413e3d4421444ae796b01 files/digest-dclib-0.3.3-r1 64
 MD5 0528caf4ae1a9e3a4621da6b7bf73fcc files/digest-dclib-0.3.5 64
 MD5 dd92353d174ee829629b6e1d6830883c files/digest-dclib-0.3.7 64
 MD5 675b5acc6767bbfd17fd947bf33ca78c files/dclib-0.3.7-hashfix.patch 552
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC8SwpZ/iYVBmujdURAmhhAKCbGK8hbC3NEfrLP7B3k2AxXY+1MACg3C57
+mNjTvvAb9H/TtBXIPIApUuY=
+=+lwS
+-----END PGP SIGNATURE-----
