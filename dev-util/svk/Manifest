@@ -1,18 +1,10 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 9140c78a468c84d87a24a08a4257fa9d ChangeLog 1826
-MD5 48ed3c4c1def64c233b0be77651e3eb3 svk-1.00.ebuild 1465
-MD5 485d18e156f1c6e59aab585f2c9c2c4d metadata.xml 226
 MD5 13bdb6ccad8a55463cc66134a27d356c svk-1.01.ebuild 1502
-MD5 84769a42d8df0a121f9cf266c397afb9 files/svk-0.29-nognupgtest.patch 318
-MD5 fe1920402a42152e3f3646acbfb00612 files/digest-svk-1.01 60
-MD5 cc0dd7817cfd7332d4df793ce97c28ff files/svk-1.00-nognupgtest.patch 283
+MD5 48ed3c4c1def64c233b0be77651e3eb3 svk-1.00.ebuild 1465
+MD5 225c30ff6e2ad9bae15c04ea4827307a ChangeLog 1921
+MD5 485d18e156f1c6e59aab585f2c9c2c4d metadata.xml 226
+MD5 12a90d3c9ba90a368b8afaa92be8c250 svk-1.02.ebuild 1497
 MD5 b64e484116f5963bfeccf06dde781d96 files/digest-svk-1.00 60
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFC7lcCcsIHjyDViGQRApghAJ9uuEGD3+MJWznivRWx35685qy06ACg6HRY
-m+RQUWfizBm7wxgrjQD50jM=
-=ogM+
------END PGP SIGNATURE-----
+MD5 fe1920402a42152e3f3646acbfb00612 files/digest-svk-1.01 60
+MD5 a440bcfe7ba94be5b83b0eb0f46ad0c6 files/digest-svk-1.02 60
+MD5 cc0dd7817cfd7332d4df793ce97c28ff files/svk-1.00-nognupgtest.patch 283
+MD5 84769a42d8df0a121f9cf266c397afb9 files/svk-0.29-nognupgtest.patch 318
