@@ -1,6 +1,6 @@
-MD5 6e7b8905ba21bf4b2546a4f9d95fb017 bind-9.2.5-r5.ebuild 8234
-MD5 283e559bc90dd2e7432d935a85714679 bind-9.3.1-r3.ebuild 8040
-MD5 62e8b3753de0529f06026a3f1c8bcd9f ChangeLog 13294
+MD5 ed08a22732a166611e03c2f81415b6bc bind-9.2.5-r5.ebuild 8233
+MD5 b250b2a910a91278117c4b48196b402d bind-9.3.1-r3.ebuild 8040
+MD5 814d82ff1b79df5670c3ed8ba516dfac ChangeLog 13294
 MD5 bf7284c3e31bd3292a01fa046b3220bb metadata.xml 352
 MD5 59dbb3246bd5abb0459f7b1c1bbc553b bind-9.2.5-r4.ebuild 8189
 MD5 51197afe8da37b1b453456de90ca4f25 files/127 227
@@ -24,4 +24,4 @@ MD5 2bb12cfcd70284e72fbf9e70e5e2974d files/dyndns-samples.tbz2 22866
 MD5 412d666c947769b6015a65a42bb8ea00 files/named.rc6 1434
 MD5 42b5ed5adcee33cf40531d7955412b21 files/10bind.env 27
 MD5 e83e7a76e253debfdd120311fda73fb6 files/named.ca 2518
-MD5 50c7054c70fe6d79c2cb3c531811f5d3 files/named.rc 1646
+MD5 33e3834bbd0adf80e570fc73aa5a7147 files/named.rc 1644
