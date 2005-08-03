@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e2f7179d6bfc67f238e81ab035677b7b run-mailcap-3.28_p1.ebuild 1041
 MD5 b04edb69c8b6f8d69ad0bfff2c21d879 run-mailcap-3.34_p1.ebuild 1089
 MD5 d1daa7badb28af30e026129166852add run-mailcap-3.26_p1.ebuild 1040
@@ -9,3 +12,10 @@ MD5 319537083b6740e7f97520fa740a4154 files/digest-run-mailcap-3.28_p1-r1 70
 MD5 0c15db34fcdaa0b84d2df607d75542fa files/digest-run-mailcap-3.26_p1 70
 MD5 319537083b6740e7f97520fa740a4154 files/digest-run-mailcap-3.28_p1 70
 MD5 68bdc7fe3ebfb096e4e5a102636cc400 files/digest-run-mailcap-3.34_p1 70
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC8R40BXaUFmZvwyMRArcKAJ9dVpfQWtNcu0E9GCr0QTNYpp2OVwCfQzXg
+ipQSLioDKI6Bq9GNSo+K2EY=
+=Fj+D
+-----END PGP SIGNATURE-----
