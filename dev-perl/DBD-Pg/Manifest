@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1bfc5088d1124eaaa3021b99c721a603 ChangeLog 4451
 MD5 de42859af0384670e677deaa85e67990 DBD-Pg-1.31.ebuild 791
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
@@ -15,3 +18,10 @@ MD5 37764ad0d89a1a98e0e870bab599c928 files/DBD-Pg-1.31-versparse.patch 937
 MD5 55438f3f0a3ba704b84e737194edba59 files/digest-DBD-Pg-1.32 62
 MD5 0674ec6314e48e843cf18ca4ecf5eff1 files/digest-DBD-Pg-1.31 62
 MD5 29136c7e55049af2f4162a3b8c2d6afa files/digest-DBD-Pg-1.22 62
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC8UQrKf2g/qXtneoRAo5mAJ94qkkGdmemL8aD9+jVyzWlk+xeqgCfdDEL
+821PpBJcBZNRpBJGP3zF62Q=
+=swM9
+-----END PGP SIGNATURE-----
