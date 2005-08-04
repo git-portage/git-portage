@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 98fd3a4e78d2c75a2de9d2f7595a649c valgrind-2.4.0.ebuild 1407
 MD5 16efe20081a8edc14768a1ea1e4664be valgrind-3.0.0.ebuild 1799
 MD5 9c6171e63f2c500b26cd6c2dd98d42e8 valgrind-2.2.0-r2.ebuild 1716
@@ -14,3 +17,10 @@ MD5 af6b49666df28ad2a40f2f644fefce83 files/digest-valgrind-3.0.0 68
 MD5 d10a593e8cb1c5074c438adc226d1c81 files/valgrind-2.2.0-current-macro-clash.patch 1871
 MD5 e878f97b4c6308515baf5abaee045ce7 files/valgrind-2.4.0-pie-fix.patch 2335
 MD5 26192577445b467e528408118f7ee6ec files/digest-valgrind-2.2.0-r2 139
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFC8pdM2G5bA0cA/ScRAiVaAJwIIuVFk/wb8p1liiZXTLH3dd8zKACguUPj
+BCKdA7Akc0Uk4DZgQa75N0A=
+=DkfR
+-----END PGP SIGNATURE-----
