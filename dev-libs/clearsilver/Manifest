@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ea47b883c6d7ab3027bfce43e6daa863 clearsilver-0.9.14.ebuild 1832
 MD5 ad68da3ab962d3aafb89a660ecc33284 clearsilver-0.9.7.ebuild 2249
 MD5 aab6da2a83eb6c53287bfe96840095c4 ChangeLog 2045
@@ -10,3 +13,10 @@ MD5 98ca2a60a7171f98d9a37f1e8cc56ba2 files/clearsilver-0.9.7-python24.patch 888
 MD5 50cea20dc6a84df4ce015e7d821e97d2 files/clearsilver-0.9.14-python24.patch 867
 MD5 b549fb2f91db6d0719294ae1ef45345b files/digest-clearsilver-0.9.14-r1 70
 MD5 d648fb3213edc267b7f415eb9be4d781 files/clearsilver-0.9.14-fPIC.patch 2942
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFC8oRM2G5bA0cA/ScRApk/AJ42yCeKeb8ITqexMu6XTxNXjS0i+QCgo4I+
+z6T2xyqsZGHfs44g7r1k7uY=
+=RkAF
+-----END PGP SIGNATURE-----
