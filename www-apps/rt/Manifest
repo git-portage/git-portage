@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9361d98286bf89c6c5387f4bca5c4e35 ChangeLog 3007
 MD5 15fc088b37155656e008679f3c07eea7 files/3.2.1/postinstall-en.txt 1648
 MD5 0706d6edcd1c4e23f526d611c9c6b531 files/3.2.1/reconfig 1170
@@ -14,3 +17,10 @@ MD5 af335c7cab7bfc09dbd08feba51d2879 files/digest-rt-3.4.2-r1 61
 MD5 224c312cc23d02aa06c26a4da3cc1f90 metadata.xml 221
 MD5 e28b5c19f33196d18983e2db57aad44f rt-3.2.1.ebuild 4217
 MD5 304bde5ecfb02cde688f36a7f970db14 rt-3.4.2-r1.ebuild 5440
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFC8kYWI1lqEGTUzyQRAjofAJ4oz298p3d4mk+9A7kaWD6gtpWQgQCfWAuR
+NKxlLR4eYDRelIaiQwvRWjo=
+=xraL
+-----END PGP SIGNATURE-----
