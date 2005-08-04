@@ -7,6 +7,7 @@ MD5 a0dd21a7e04af4ad48721bd1d75f73b4 mono-1.1.6.ebuild 2299
 MD5 6363e10008d0710369a421a483dc00db ChangeLog 17761
 MD5 76b314cc7b7b79b298dd4889dff8c9cd metadata.xml 159
 MD5 2c5d8c2386af6fa7552457f2080322e3 mono-1.1.7.ebuild 2191
+MD5 42a4c2601dc98de14022dd7229092aa2 mono-1.1.8.3.ebuild 2439
 MD5 37e534333d18587029873b843d639840 mono-1.1.7-r1.ebuild 2546
 MD5 e8acd8bc997d82f676be5cf2057d3d25 files/dotnet.conf 570
 MD5 6e11372f48bd32e76012be8aae54e594 files/dotnet.init 1031
@@ -25,3 +26,6 @@ MD5 b891d116e888db40b523dfa97fad8018 files/mono-1.1.6-r42300.diff 1572
 MD5 f8eec8ed3193207430c3a59266b5e56c files/digest-mono-1.1.7 64
 MD5 f8eec8ed3193207430c3a59266b5e56c files/digest-mono-1.1.7-r1 64
 MD5 85422af6a9f91917a9c9c3b8cceb5c33 files/mono-1.1.7-ppc-tls.diff 412
+MD5 2acaae80bdfac5c08af32cfd24b36c43 files/mono-1.1.8.3-array-getvalue.diff 1327
+MD5 f82809daef4d783797094233672feb3f files/mono-1.1.8.3-icall.diff 433
+MD5 e57f70fb8569f040ed1b4669c3e07652 files/digest-mono-1.1.8.3 66
