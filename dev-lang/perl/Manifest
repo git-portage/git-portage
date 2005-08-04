@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5a084694275da6ae27c224687febb0ad perl-5.8.7.ebuild 17712
 MD5 5d7c3da969ca30862b27913e23af8734 perl-5.8.6-r5.ebuild 17619
 MD5 833076961417fc2b1dcd57f93277de87 ChangeLog 41185
@@ -23,3 +26,12 @@ MD5 060e9f10466fdc1268c75a7cf4dcbc7c files/perl-h2ph-ansi-header.patch 446
 MD5 ec653227d62631d790aed48ee7ccf3dd files/perl-5.8.7-regexp-nossp.patch 458
 MD5 44e1f1420947cc552c66fb434ba4c855 files/perl-5.8.4-NDBM-GDBM-compat.patch 428
 MD5 154013a841cbb251d7b63fb006b4006f files/file_path_rmtree.patch 1068
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iQCVAwUBQvGB/54WFLgrx1GWAQKHfAP+OFzI02k8c+v+uGRyp0koFcoZ7JUPDOty
+LDoRlxWoOFHCAyW+D72aWetLBPXtOgzx8wmO/owJkZQhEj07d1bnphnP8xZOZ/rY
+o3hyPO9cdwN8DIV0Rx24x7ih8s8/U0K5RG+RKWUR29qQ+gra7g4I9RvCFfN+viyP
+tj4jfdmq7T8=
+=nS43
+-----END PGP SIGNATURE-----
