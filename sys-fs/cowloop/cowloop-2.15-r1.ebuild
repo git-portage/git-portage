@@ -1,17 +1,15 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/cowloop/Attic/cowloop-2.11.ebuild,v 1.2 2005/01/01 21:51:36 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/cowloop/Attic/cowloop-2.15-r1.ebuild,v 1.1 2005/08/04 08:56:41 dragonheart Exp $
 
-inherit linux-mod
+inherit linux-mod toolchain-funcs
 
 DESCRIPTION="A copy-on-write loop driver (block device) to be used on top of any other block driver"
 HOMEPAGE="http://www.atconsultancy.nl/cowloop/"
 SRC_URI="http://www.atconsultancy.nl/cowloop/packages/${P}.tar.gz"
 
 LICENSE="GPL-2"
-# get-version
-# SLOT="${KV_MAJOR}.${MINOR}"
-KEYWORDS="x86"
+KEYWORDS="~ppc ~x86"
 IUSE=""
 DEPEND="virtual/libc
 	virtual/linux-sources"
@@ -34,11 +32,11 @@ pkg_setup() {
 
 src_compile() {
 	linux-mod_src_compile
-	emake cowcopy cowrepair cowsync cowlist
+	CC="$(tc-getCC) ${CFLAGS}" emake cowdev cowrepair cowsync cowlist cowmerge || die "make failed"
 }
 
 src_install() {
 	linux-mod_src_install
-	dosbin cowcopy cowrepair cowsync cowlist
+	dosbin cowdev cowrepair cowsync cowlist cowmerge
 	doman man/*
 }
