@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 42654caf9e8783b88919fd8a7160476e sandbox-1.2.9.ebuild 2782
 MD5 451bfdc4c098f0213e5218ef31d06cfe sandbox-1.2.12.ebuild 2805
 MD5 82ada8ab6ebbfb9b1355c23e81bea019 ChangeLog 5380
@@ -10,3 +13,10 @@ MD5 9fe5eef00b6290f1c9fb750c3bfc1fad files/digest-sandbox-1.2.10 67
 MD5 76e3fe575f6739c3a9de06eb2dcdd1ac files/sandbox-1.2.9-uclibc-getcwd.patch 508
 MD5 97d135bb57b8e72a00cb615055d919cc files/digest-sandbox-1.2.12 67
 MD5 0b9d8a3302f89af8fcb328f02eb16824 files/digest-sandbox-1.2.9 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFC84I31ZcsMnZjRyIRArpZAKCsr1OKOHMdu2aTFkrqc5Jb2sOTyQCeMZJv
+myGFMiLD85D58+2VOmGT3j0=
+=14QC
+-----END PGP SIGNATURE-----
