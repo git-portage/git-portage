@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/xterm/Attic/xterm-200-r1.ebuild,v 1.8 2005/06/10 14:44:52 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/xterm/Attic/xterm-204.ebuild,v 1.1 2005/08/05 12:03:24 seemant Exp $
 
 inherit eutils flag-o-matic
 
@@ -10,12 +10,16 @@ SRC_URI="ftp://invisible-island.net/${PN}/${P}.tgz"
 
 LICENSE="X11"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE="truetype Xaw3d unicode toolbar"
 
 DEPEND="virtual/x11
 	virtual/utempter
 	Xaw3d? ( x11-libs/Xaw3d )"
+
+src_unpack() {
+	unpack ${A}; cd ${S}
+}
 
 src_compile() {
 
@@ -41,10 +45,11 @@ src_compile() {
 		--enable-tcap-query \
 		--enable-logging \
 		--enable-dabbrev \
+		`use_enable toolbar` \
 		`use_enable truetype freetype` \
 		`use_enable unicode luit` `use_enable unicode mini-luit` \
 		`use_with Xaw3d` \
-		`use_enable toolbar` || die
+		|| die
 
 	emake || die
 }
@@ -61,6 +66,11 @@ src_install() {
 
 	# restore the navy blue
 	sed -i "s:blue2$:blue:" ${D}/etc/X11/app-defaults/XTerm-color
+
+	# Fix for bug #91453 at Thomas Dickey's suggestion:
+	echo "*allowWindowOps: 	false" >> ${D}/etc/X11/app-defaults/XTerm
+	echo "*allowWindowOps: 	false" >> ${D}/etc/X11/app-defaults/UXTerm
+
 }
 
 pkg_preinst() {
@@ -68,4 +78,14 @@ pkg_preinst() {
 	# provided terminfo files.  So, now no more package collisions, yay!
 	touch ${ROOT}/usr/share/terminfo/v/vs100
 	touch ${ROOT}/usr/share/terminfo/x/x*
+}
+
+
+pkg_postinst() {
+	echo
+	ewarn "Please make SURE to run etc-update, as that is where the latest"
+	ewarn "security fix is made"
+	echo
+	epause 5
+	ebeep
 }
