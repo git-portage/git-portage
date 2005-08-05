@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a5e6fc5b53b896faeab070b389a14532 sysstat-5.0.4.ebuild 961
 MD5 5412f863b00047a13c6e0853febb7ea9 sysstat-5.0.5-r1.ebuild 1137
 MD5 ae68a8a2ba614b0a0f3e5e3909cbb9c6 sysstat-6.0.1.ebuild 1290
@@ -11,3 +14,10 @@ MD5 73ba0e07b9338cd0d56ee3ebabd1ec79 files/digest-sysstat-6.0.1 65
 MD5 4eac2aae2f83cb52393c58896d9a5151 files/sysstat-6.0.1-gcc4.diff 5918
 MD5 ddf73fe10757e3b706c377f8fad79245 files/sysstat-6.0.0-gcc4.diff 6647
 MD5 d63e5ccba8489c1875bb404a477ed9f0 files/digest-sysstat-5.0.5-r1 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC82LkViELBEf1JB0RAujOAJ9QXZUrId44IoY9P0qudllGXdJmiwCeJ/0u
+gFuzk9mtVHVj9L0fHMN5eJY=
+=JUVI
+-----END PGP SIGNATURE-----
