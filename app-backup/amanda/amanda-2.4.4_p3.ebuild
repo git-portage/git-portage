@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.4_p3.ebuild,v 1.2 2005/07/06 21:40:10 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.4_p3.ebuild,v 1.3 2005/08/05 18:50:40 agriffis Exp $
 
 inherit eutils
 
@@ -174,7 +174,7 @@ src_compile() {
 	myconf="${myconf} --with-gnutar=/bin/tar"
 
 	econf ${myconf} || die "econf failed!"
-	emake || die "emake failed!"
+	emake -j1 || die "emake failed!"
 
 	# Compile the tapetype program too
 	# This is deprecated, use amtapetype instead!
