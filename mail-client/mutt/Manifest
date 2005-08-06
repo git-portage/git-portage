@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bccae43e77bde6930edcc433b32c972a ChangeLog 16115
 MD5 f46d05fe0172cb035a01f40d25242d30 metadata.xml 253
 MD5 47c429a9de6aa7dc6d211b511897de59 mutt-1.4.2.1.ebuild 3355
@@ -20,3 +23,10 @@ MD5 bbcce3c6f8bd265e1449c0631ea896b6 files/digest-mutt-1.5.6-r5 585
 MD5 17ca1e2a5696251d01b9b488bcb0fc79 files/digest-mutt-1.5.8-r1 581
 MD5 2f50af3ba9259b1ac0dcf7faa2e9545e files/digest-mutt-1.5.8-r2 662
 MD5 25e242fd402f42d5bd5230dbe9ea68a6 files/slang.patch 493
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC9UjeEZCkKN40op4RAnsOAKCOIf+vUmIZzvLo1jtV11TQu9RqmQCfW7Ba
+pcn5VfumEy/gHdyYYl7XFqA=
+=Xc2n
+-----END PGP SIGNATURE-----
