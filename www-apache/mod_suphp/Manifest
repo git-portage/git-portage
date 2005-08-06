@@ -1,0 +1,6 @@
+MD5 6595e99bd28f854e034021862dc5174f mod_suphp-0.6.0.ebuild 2394
+MD5 0d18f0fe5d603b41b988373892caf195 metadata.xml 226
+MD5 e66286b7431c296621259476e9027fcf ChangeLog 320
+MD5 cc7f45f9730b3d1b90fc2056e6b80a28 files/70_mod_suphp.conf 923
+MD5 140d0ff2066123c76f80fca983f4a561 files/suphp.conf 945
+MD5 350380d3dd8b4a29db78e1f336344688 files/digest-mod_suphp-0.6.0 63
