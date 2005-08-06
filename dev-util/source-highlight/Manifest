@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4d357167d687bacbe1baa2825fbc6d34 ChangeLog 3211
 MD5 f8d10f350e91f30316ea4e1bd1e76470 metadata.xml 254
 MD5 a14c15abad083ecd2d10a02282b53e71 source-highlight-1.11-r2.ebuild 1015
@@ -7,3 +10,10 @@ MD5 ec136e3bf2efb4bdb6934e287a23cd6a files/digest-source-highlight-1.11-r2 73
 MD5 8983d7886a00affa478eb51c53f99f97 files/digest-source-highlight-2.0 72
 MD5 8010d26caf8fbdd5b9c6ab34da1e492b files/source-highlight.bash-completion 1383
 MD5 cc08e1b9735c8388eae6fddf9904efd7 files/digest-source-highlight-2.1.1 74
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC9GXJEZCkKN40op4RAq5NAJsE3VEiyjjQeZ1APmJrZDqOAIA0dgCgtAWV
++P4I5qtC/9XnswYONao/wdo=
+=SVf4
+-----END PGP SIGNATURE-----
