@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c49b0da97598de05d784522606cba053 ChangeLog 10925
 MD5 5ae9f140fcd4525c88ee9239bd8772a6 metadata.xml 267
 MD5 0fe7f7f9988fabaa2763e35d351fd409 openh323-1.12.0-r1.ebuild 2820
@@ -33,3 +36,10 @@ MD5 2c75f68b5db8444726ae9342b8a02319 files/openh323-1.13.2-ixjuser.diff 285
 MD5 76afb2b1c9c9e4aa4414531ffdd812e9 files/openh323-1.13.5-ffmpeg.diff 1899
 MD5 d63db2246a246adf622afeefabbb1e9d files/openh323-1.13.5-include-order.diff 1027
 MD5 73a8df25ace2235307956d67acecb32d files/openh323-1.15.2-notrace.diff 801
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFC9Qj/Kf2g/qXtneoRAooIAJ9wf9feNL32uvCRk5WHWkCDki21CgCfd13W
+ybU6VpTnXriRREEjX4KIrUI=
+=PHQv
+-----END PGP SIGNATURE-----
