@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8ad98291fc91ba6351f053a78134bc30 linc-1.0.3.ebuild 818
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 e94f930f36b710f272bba421e6b20c62 linc-1.0.1.ebuild 954
@@ -13,3 +16,10 @@ MD5 8faa9984d1b8e8142772156db89c528f files/digest-linc-1.0.3 63
 MD5 805618d4a68f26f5a476961608ac98d7 files/linc-1.0.3-gtkdoc_fix.patch 384
 MD5 c1565e5184f320c1ff18be5523156022 files/digest-linc-0.5.3 63
 MD5 6f25f55d3514da55b93dc89f12f57924 files/linc-1.0.3-gcc4.patch 446
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFC9VuhgIKl8Uu19MoRAkOZAJoDwlBGD6b+BMLzyjpiMyqHpHPlPgCdEsP9
+Lb4Brctanhhmu9cZ2a2rj8E=
+=cd5T
+-----END PGP SIGNATURE-----
