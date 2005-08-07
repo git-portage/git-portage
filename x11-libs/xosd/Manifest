@@ -1,5 +1,5 @@
-MD5 b308f73e887113f8a7a3667c8f19bc57 ChangeLog 6384
-MD5 d7c4541f10cd237262cfadcf115bf0e4 xosd-2.2.14.ebuild 1530
+MD5 f9a2d26042fe82bd8ec61f6afc5049b7 ChangeLog 6586
+MD5 556c8fc6e7bca931c6883bb62128d8fb xosd-2.2.14.ebuild 1554
 MD5 10956efe64cdc5b4c856238685592839 xosd-2.2.8-r1.ebuild 1033
 MD5 503ccb1138f9c49f0855884d830988a6 metadata.xml 253
 MD5 3f2b043bcd5292c5f5834acdbb62d0a4 xosd-2.2.10.ebuild 1038
@@ -10,4 +10,3 @@ MD5 06e494585c2baa22f89b8916515a7741 files/digest-xosd-2.2.8-r1 63
 MD5 1132764268b2645df6a9a3ba6bf06e4d files/bmp-dlg_config.patch 403
 MD5 5b6bffe8689739aff9d0eb219cc443d8 files/2.2.8-xmms-trackpos.patch 5167
 MD5 9ee14940cb0d412247cc9a15d989cd93 files/digest-xosd-2.2.14 199
-MD5 f081f8eb69df2ec6f097cfece3f356b8 files/m4/gdk-pixbuf.m4 6732
