@@ -1,5 +1,5 @@
-MD5 750fb8243ef2b8e842df256859661f65 monetdb-4.8.2.ebuild 6236
-MD5 ec0d944119322b8dd0dfb75b233912ee ChangeLog 556
+MD5 05841054d5996b2f58ff1160cb39f9d7 monetdb-4.8.2.ebuild 6334
+MD5 24272f95d7629d85f9268b0275643cba ChangeLog 643
 MD5 ca9ff61fbe7d29f666c1ffdc61bb168d metadata.xml 801
 MD5 a9a2dbac1941306b506077c635415e7e files/monetdb_config.sh 653
 MD5 739a372d2ff096d674002e3253eb4dad files/monetdb-4.8.2-startup.mil 929
