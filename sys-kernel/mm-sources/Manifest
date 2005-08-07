@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 02d092b12cf3e544bc527ac7efec1da3 mm-sources-2.6.13_rc2-r2.ebuild 1012
 MD5 3e333268a29724fd07f7ad0e0ce1c528 mm-sources-2.6.13_rc1-r1.ebuild 1012
 MD5 5e95fced23ea7c26d39274bc200dabd5 metadata.xml 351
@@ -14,3 +17,10 @@ MD5 3f3e794c8d737e7e4c81610e9edcafbb files/digest-mm-sources-2.6.13_rc1-r1 197
 MD5 66f9429a3f507ed795c185d05581a614 files/digest-mm-sources-2.6.13_rc3-r1 197
 MD5 fc11ad8d49809a32456e0ad385054739 files/digest-mm-sources-2.6.13_rc4-r1 197
 MD5 577afa6b9756ac464c781ff23727e92a files/2.6.12-rc3-mm1-uniprocessor-fixes.patch 2781
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFC9hTQp5vW4rUFj5oRAlTpAJwOuPHoIr40q8pjrJHRcEiFRZ/2TQCfUj0x
+xIswln49QlOxgcTqwFd5m3I=
+=+P7F
+-----END PGP SIGNATURE-----
