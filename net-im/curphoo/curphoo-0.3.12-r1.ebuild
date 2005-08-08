@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/curphoo/Attic/curphoo-0.3.12.ebuild,v 1.5 2004/09/25 20:45:41 mkennedy Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/curphoo/Attic/curphoo-0.3.12-r1.ebuild,v 1.1 2005/08/08 16:13:56 mkennedy Exp $
 
 inherit eutils
 
@@ -19,6 +19,7 @@ DEPEND=">=dev-lang/python-2.1
 src_unpack() {
 	unpack ${A}
 	epatch ${P}-amd64.patch || die
+	epatch ${FILESDIR}/${PV}-session-server-gentoo.patch || die
 	cd ${S}
 	cp ${FILESDIR}/curphoo.sh curphoo.sh.templ
 	sed -e "s#@PHOOPATH@#${P}#" curphoo.sh.templ >curphoo.sh
