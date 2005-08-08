@@ -1,0 +1,4 @@
+MD5 7cd2d621211b8aa2aef44e43a9d0a25e Embperl-2.0_rc4.ebuild 1914
+MD5 82d8871b5c822fe921775f3ea65c8686 files/digest-Embperl-2.0_rc4 66
+MD5 4c7ce26a3b5030b2f1386e5cc57c2562 files/78_mod_embperl.conf 685
+MD5 22136f2c88c432c9e2a284531451d2b7 files/Embperl-2.0_rc4-Makefile.PL.patch 1012
