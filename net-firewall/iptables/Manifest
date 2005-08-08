@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 307318c1e6a5cc2f70a4bbe579f447f3 ChangeLog 18506
 MD5 9895e3a55df2ef6533205b1ed5c2ce7c iptables-1.2.11-r3.ebuild 5500
 MD5 099c4bec61b25509119be3611e139c11 iptables-1.2.7a-r3.ebuild 1981
@@ -50,3 +53,10 @@ MD5 bcbdd7e40a2fd78796c9a00a5ae463cb files/1.3.1-files/grsecurity-1.2.8-iptables
 MD5 76a42dd64d1a4f419a5f07de5a6cb0c2 files/1.3.1-files/install_all_dev_files.patch-1.3.1.bz2 1098
 MD5 0eacca16bacc2e2d7cc125d3aa65b30d files/1.3.1-files/install_ipv6_apps.patch.bz2 334
 MD5 628b6569018552e77bd5543d98baa664 files/1.3.1-files/iptables-1.3.1-compilefix.patch 539
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC9rrdEZCkKN40op4RAk5rAJ9pUlSeMluX9hjjUhuruRcG2ySaSgCeMV0V
+E5dj1IzCODzieomE19XcEO8=
+=BsNV
+-----END PGP SIGNATURE-----
