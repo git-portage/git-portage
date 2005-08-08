@@ -6,5 +6,10 @@
 		including both full and incremental backups, as well as backups to other
 		media (CD-R, Tape, etc.).
 	</longdescription>
+	<longdescription lang="vi">
+		Nhóm app-backup chứa các công cụ để sao lưu dữ liệu, bao gồm
+		sao lưu toàn bộ và sao lưu tăng tiến, cũng như sao lưu ra các phương
+		tiện khác (CD-R, băng từ ...).
+	</longdescription>
 </catmetadata>
 
