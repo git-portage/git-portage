@@ -1,27 +1,17 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 ddd9af353404e152f72725fde56cdce9 libperl-5.8.7.ebuild 10511
+MD5 b3aa2d65a0224a00b2c6dbde1c08522a libperl-5.8.6.ebuild 10472
+MD5 cb94b44e2ad6a1fe3b4ad9b6fcba0161 libperl-5.8.5.ebuild 9921
+MD5 d628db2392fa615953617d7e373d60a2 libperl-5.8.6-r1.ebuild 10464
+MD5 07b08cc4df524f887c2ae1c3c24a3a7a libperl-5.8.7.ebuild 10509
+MD5 b5ad9a359d5cfcf1035dfc7db05862c7 ChangeLog 11662
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
-MD5 0c4e374212081e6b4ae8f6de28da8732 libperl-5.8.6.ebuild 10474
-MD5 7378f7ed5b20c8d895f14ab9cc130d74 libperl-5.8.6-r1.ebuild 10466
-MD5 f11c46f097b3aac9747c13cd7efb05a4 libperl-5.8.5.ebuild 9923
-MD5 06779bc2a7157616c641b91c9995252c libperl-5.8.5-r1.ebuild 10032
-MD5 cae303346bf6f34ae6e278ce4e9e65d0 ChangeLog 11446
-MD5 0bdca74363c218d91a0db4ad1ea55485 files/libperl-create-libperl-soname.patch 417
-MD5 c354e2fbf8141a769c20032e94f45fd3 files/digest-libperl-5.8.5-r1 64
-MD5 0a07934d74ccb1133cf0f3650cb94efc files/digest-libperl-5.8.6-r1 64
-MD5 0a07934d74ccb1133cf0f3650cb94efc files/digest-libperl-5.8.6 64
-MD5 f7324a62f22aabde3387b7e8a8b2106e files/libperl-reorder-INC.patch 1141
-MD5 ce442db939c59218a16be167f793b817 files/libperl-5.8.2-uclibc.patch 573
+MD5 6175431078ad0e497b628438a522a1fc libperl-5.8.5-r1.ebuild 10030
 MD5 076dcbef37263d6dd7af719b55cfc2de files/libperl-noksh.patch 611
 MD5 ce442db939c59218a16be167f793b817 files/libperl-uclibc.patch 573
+MD5 f7324a62f22aabde3387b7e8a8b2106e files/libperl-reorder-INC.patch 1141
+MD5 0bdca74363c218d91a0db4ad1ea55485 files/libperl-create-libperl-soname.patch 417
 MD5 c354e2fbf8141a769c20032e94f45fd3 files/digest-libperl-5.8.5 64
+MD5 0a07934d74ccb1133cf0f3650cb94efc files/digest-libperl-5.8.6 64
 MD5 c10e44e47d7f702efe7d4009064a97ca files/digest-libperl-5.8.7 64
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFC7oTEgIKl8Uu19MoRAkvwAJ9NDzjNnOXj/rhVxQeCniywODX0KQCeNDlc
-/E0vz/C/twoEcaUJHm/e1/Q=
-=mZa2
------END PGP SIGNATURE-----
+MD5 c354e2fbf8141a769c20032e94f45fd3 files/digest-libperl-5.8.5-r1 64
+MD5 0a07934d74ccb1133cf0f3650cb94efc files/digest-libperl-5.8.6-r1 64
+MD5 ce442db939c59218a16be167f793b817 files/libperl-5.8.2-uclibc.patch 573
