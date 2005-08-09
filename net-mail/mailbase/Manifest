@@ -2,10 +2,10 @@ MD5 49503f6e00aba90637484ef6fd9af542 mailbase-0.00-r9.ebuild 2428
 MD5 78fc96c16b9dc1d4902c62927e664ce9 mailbase-0.00-r4.ebuild 773
 MD5 d70889cf9ee474b30325789a31c253a9 mailbase-0.00-r6.ebuild 902
 MD5 9199352cf76278406a943618dd4a54ef mailbase-0.00-r8.ebuild 2262
-MD5 b4aad8bfb9c3af4f09ebad58fed3cd7d mailbase-1.ebuild 1535
+MD5 18148496497e91ffb297fc0147ce387a mailbase-1.ebuild 1534
 MD5 f224d58950c57b4f07888966ad00cd9a mailbase-0.00-r5.ebuild 877
 MD5 a5d2b893cb09235e3c253d9d0c50f3fa mailbase-0.00-r7.ebuild 1922
-MD5 09700da8d7284308da22a4b5fa2e86be ChangeLog 7445
+MD5 1581c9f09232a146c42205da3df1f950 ChangeLog 7443
 MD5 5721b86fd871bdfab77231abc6e02f68 metadata.xml 161
 MD5 e75c39fbdac8eec750d84a7183ac6721 files/common-pamd 417
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-mailbase-0.00-r4 0
