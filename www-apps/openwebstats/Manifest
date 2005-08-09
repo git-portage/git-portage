@@ -1,0 +1,6 @@
+MD5 740b5ba083a02502668ad0d9a30380d3 openwebstats-1.1.ebuild 921
+MD5 97b4b139f8a2fcb05863b89b1304de95 ChangeLog 343
+MD5 f61bfa064e3acdfcd826e4a38b121196 metadata.xml 161
+MD5 5b6e5f719c8ac89d80563e3a2fdbf90b files/postinstall-en.txt 1244
+MD5 9cd494690c72b7e0eadedda10bc3e148 files/config.php 2106
+MD5 d550fb469b3eeb7f034cd04d8134465d files/digest-openwebstats-1.1 68
