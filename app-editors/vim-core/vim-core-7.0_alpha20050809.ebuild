@@ -1,15 +1,15 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/vim-core/Attic/vim-core-7.0_alpha20050721.ebuild,v 1.1 2005/07/21 19:01:00 rphillips Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/vim-core/Attic/vim-core-7.0_alpha20050809.ebuild,v 1.1 2005/08/09 22:58:32 ciaranm Exp $
 
 inherit vim
 
 VIM_DATESTAMP="${PV##*alpha}"
 
 VIM_VERSION="7.0aa"
-VIM_SNAPSHOT="vim-${VIM_VERSION}-${VIM_DATESTAMP}.tar.bz2"
-VIM_GENTOO_PATCHES="vim-${VIM_VERSION}-${VIM_PATCHES_DATESTAMP:-${VIM_DATESTAMP}}-gentoo-patches.tar.bz2"
-VIMRC_FILE_SUFFIX="-r1"
+VIM_SNAPSHOT="vim-${PV}.tar.bz2"
+VIM_GENTOO_PATCHES="vim-${PV}-gentoo-patches.tar.bz2"
+VIMRC_FILE_SUFFIX="-r2"
 
 SRC_URI="${SRC_URI}
 	mirror://gentoo/${VIM_SNAPSHOT}
