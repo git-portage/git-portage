@@ -11,5 +11,9 @@
 		sao lưu toàn bộ và sao lưu tăng tiến, cũng như sao lưu ra các phương
 		tiện khác (CD-R, băng từ ...).
 	</longdescription>
+	<longdescription lang="de">
+		Die Kategorie app-backup enthält Programme zur Erstellung inkrementeller und
+		vollständiger Backups, sowie zur Sicherung auf andere Medien (CD-R, Band, etc.).
+	</longdescription>
 </catmetadata>
 
