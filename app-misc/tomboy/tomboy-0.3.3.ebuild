@@ -1,19 +1,19 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/tomboy/Attic/tomboy-0.3.2.ebuild,v 1.3 2005/07/07 11:53:09 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/tomboy/Attic/tomboy-0.3.3.ebuild,v 1.1 2005/08/10 23:08:57 latexer Exp $
 
 inherit gnome2 mono eutils
 
 DESCRIPTION="Desktop note-taking application"
 
 HOMEPAGE="http://www.beatniksoftware.com/tomboy/"
-SRC_URI="http://www.beatniksoftware.com/tomboy/releases/${P}/${P}.tar.gz"
+SRC_URI="http://www.beatniksoftware.com/tomboy/releases/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 
 KEYWORDS="~x86 ~ppc ~amd64"
-IUSE=""
+IUSE="doc"
 
 DEPEND=">=dev-lang/mono-1.0
 		>=dev-dotnet/gtk-sharp-1.0.4-r1
@@ -30,12 +30,12 @@ DEPEND=">=dev-lang/mono-1.0
 # Disable dbus for now, as it's causing some crashes
 
 DOCS="AUTHORS Changelog INSTALL NEWS README"
-#G2CONF="${G2CONF} --disable-dbus"
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/${P}-1.1.x-compat.diff || die
-	epatch ${FILESDIR}/${P}-mono-1.1.7-compat.diff || die
+	#epatch ${FILESDIR}/${P}-1.1.x-compat.diff || die
+	#epatch ${FILESDIR}/${P}-mono-1.1.7-compat.diff || die
+	#epatch ${FILESDIR}/${P}-mono-1.1.8-compat.diff || die
 }
 
