@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7229d914013c28757af63388b1813dc3 ChangeLog 7338
 MD5 4f68ff1ad2dd0b01e11474dede6e62f0 lighttpd-1.3.10-r1.ebuild 2181
 MD5 b8935dbb5e02292fdf75347124e29c38 lighttpd-1.3.13-r3.ebuild 2481
@@ -22,3 +25,10 @@ MD5 5eb378dcd8905a09175df3e48953100c files/lighttpd-1.3.13-zope-deserves-lovins-
 MD5 1d925aed297ec4541fb230dd19e11bc1 files/spawn-fcgi.confd 1076
 MD5 e605a4ead0ce7b1e0788c0b0b1161871 files/spawn-fcgi.initd 1383
 MD5 dd1691d04eda1cb0ff916c08f8907db8 files/lighttpd-1.3.16-zope-deserves-lovins-too.diff 4669
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC+ru5EZCkKN40op4RAlfLAKC3l44e8uhEIu4hqztgha9WoSi3LgCfTYtI
+90JyRd4A52JEH0pcJHM7anM=
+=H2NB
+-----END PGP SIGNATURE-----
