@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9a11b06196a65e27572e42c310fb192d ChangeLog 4568
 MD5 ab59365f7f92becce9ea574af606ca09 metadata.xml 270
 MD5 f3097d238760317174f7813f089f06d2 ypserv-2.13-r1.ebuild 1900
@@ -10,3 +13,10 @@ MD5 7dc8e37a39eb21d796894f89ffd53262 files/rpc.ypxfrd.confd 122
 MD5 3f3f1488115fa4837c7963811e876db7 files/ypserv 577
 MD5 e5bb4de1f10631c93c5920f87059229a files/ypserv.confd 95
 MD5 d92cf218d3682ced6bbb86dd3d364406 files/digest-ypserv-2.18 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFC+5XhArHZZzCEUG0RAjYSAJoD2CJ7dA55y/XkhTdyq67F0aHB+gCfcCyW
+vDz1kjsP2Z8dT+1HASd7I2g=
+=bki1
+-----END PGP SIGNATURE-----
