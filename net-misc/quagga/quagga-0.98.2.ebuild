@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/quagga/Attic/quagga-0.98.2.ebuild,v 1.5 2005/05/01 17:22:58 hansmi Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/quagga/Attic/quagga-0.98.2.ebuild,v 1.6 2005/08/11 09:01:32 mrness Exp $
 
 inherit eutils
 
@@ -125,7 +125,7 @@ pkg_postinst() {
 	install -d -m0770 -o root -g ${QUAGGA_GROUP_NAME} ${ROOT}/etc/quagga
 	install -d -m0755 -o ${QUAGGA_USER_NAME} -g ${QUAGGA_GROUP_NAME} ${ROOT}/var/run/quagga
 
-	einfo "Sample configuration files can be found in /etc/quagga/sample."
+	einfo "Sample configuration files can be found in /etc/quagga/samples."
 	einfo "You have to create config files in /etc/quagga before"
 	einfo "starting one of the daemons."
 }
