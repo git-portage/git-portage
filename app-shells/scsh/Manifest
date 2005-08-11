@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a0b29ca97593400b675065411c55aead scsh-0.6.6.ebuild 984
 MD5 6a2adcb8fc0b070b52ecdb5e6043604f scsh-0.6.3.ebuild 983
 MD5 39e38bf8f13788c6ae47edf076e3a8f4 scsh-0.6.1-r1.ebuild 1223
@@ -11,3 +14,10 @@ MD5 3e98983c5c98b782b38dd6a79c0b223d files/digest-scsh-0.6.3 63
 MD5 13ee0eae9052df37dccd3543b4f6afb5 files/digest-scsh-0.6.1-r1 63
 MD5 2823df171f50e7e83413f750852c68ff files/digest-scsh-0.6.6 63
 MD5 07af78c1074e544bc9b894bbb10436be files/digest-scsh-0.6.5 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFC+2YyKRy60XGEcJIRAj3pAJ9QJoJVCOLp2mOMXJbdbrkol4L3NACdFxL2
+WtJMr1SEi1b+v53SLpFYZ54=
+=4id2
+-----END PGP SIGNATURE-----
