@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 02964d973366e5df069d16194836589a ChangeLog 2894
 MD5 daffe0e3c6b618205c1bd9c99018fe00 maya-5.0.1-r1.ebuild 9459
 MD5 a9b86ffa98b6ba36882b2dc6849d3649 maya-6.5.ebuild 8563
@@ -9,3 +12,10 @@ MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-maya-6.5 0
 MD5 d47d06f98fae1230e4a0e5db03745c90 files/maya-5.0.1.md5sum 62023
 MD5 9bd53be7de27bdf7b1964a15ed99b93d files/50maya 106
 MD5 aa3d8c97154f1ce2d263a2a071811c28 files/maya-docs 314
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFC+xKBArHZZzCEUG0RAvLDAJ0Zn91DejZVmPBfTWGb2fkMmhv+kwCfeZop
+7p1PGwXBora6fRRsr2AD0D0=
+=ae1A
+-----END PGP SIGNATURE-----
