@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b820b10228b1b7f27fd9d716905e9144 ChangeLog 12886
 MD5 6d7255cf075f705e7706d7f7c2fc4a53 metadata.xml 218
 MD5 c77f180f8a2e154ffd41becf19407a59 sendmail-8.13.1-r1.ebuild 5962
@@ -20,3 +23,10 @@ MD5 40db5be0dc4aad98df023d3af8e8c132 files/sendmail-procmail.mc 357
 MD5 9cf5b1a30908c5f96f258b835f430865 files/sendmail.cf 39312
 MD5 1a9fedeb2f17b9a7de4f0f8da6c06d63 files/sendmail.mc 299
 MD5 9f4b4fca4930038c7a6dab0d0e80e5b6 files/site.config.m4 453
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC+78mDAg8Nbq0d9kRAiNkAJ0V1ShLU3zPH1kZfStdxxvcSdCkIQCgijX3
+5FsR9ScHBjYf+K7C4Oj8AUE=
+=FLy8
+-----END PGP SIGNATURE-----
