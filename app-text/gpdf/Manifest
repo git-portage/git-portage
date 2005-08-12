@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e9fd42e09f11fce1bbe5e5504faf7771 ChangeLog 11061
 MD5 d094dcab1afd170dae62b054d98e3acb gpdf-0.132-r1.ebuild 1025
 MD5 a805385ef63f46517fcdf018fb0e08d9 gpdf-0.132-r2.ebuild 1169
@@ -21,3 +24,10 @@ MD5 5e63c86e19a1c1387cab38b7e2902c9e files/gpdf-xpdf_3_CAN-2004-0889.patch 8115
 MD5 2fce5bedd61300fad1566a41f991a782 files/gpdf-xpdf_goo_sizet.patch 1424
 MD5 388d05f1aabd1c48c3536ac69d0d8505 files/digest-gpdf-2.10.0-r1 65
 MD5 610ea361ff30d6f30e4075d5bdb44806 files/gpdf-2.8.2-CAN-2005-2097.patch 1973
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFC/R3HKf2g/qXtneoRAidaAJ9hp4ZP+zWLRhlnptTNpXtP8RgLcgCgpCSO
+5bPO8+Ld3nOV7ipOBLxwVJE=
+=lMUB
+-----END PGP SIGNATURE-----
