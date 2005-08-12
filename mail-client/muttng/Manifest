@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c44b8bf6113f22a496a9bae47ae5289f muttng-20050317.ebuild 2741
 MD5 d4aa39cf3d3348af890827d75956c9cd muttng-20050325.ebuild 2931
 MD5 a1323cc708cdb6b4b512c3539f941451 muttng-20050809-r1.ebuild 4495
@@ -9,3 +12,10 @@ MD5 f4f235522662bdfeee247efdb8082cb1 files/digest-muttng-20050325 68
 MD5 04627fce26bec87a8f2ff9a601b92a3a files/digest-muttng-20050809 68
 MD5 04627fce26bec87a8f2ff9a601b92a3a files/digest-muttng-20050809-r1 68
 MD5 7f8dd20237497b4bba89df29f400bd6d files/muttng-20050809-nodoc.patch 566
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC/AoBBXaUFmZvwyMRAo3dAJ9sjCCS5vMZybWDWK1muZLGTJ1EEQCgmXKD
+JAZ969LlvRfXWSUmy52ofV4=
+=T+ek
+-----END PGP SIGNATURE-----
