@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9938c182bc0130035f5ef150565a39df ChangeLog 23743
 MD5 0eb5c2c89ea48e6dc483009b9aa7306b courier-imap-3.0.7.ebuild 9233
 MD5 9302f1ff5a80b25421b0252b2c2123eb courier-imap-3.0.8.ebuild 9388
@@ -52,3 +55,10 @@ MD5 b0e75f65ec1b467287a8b13395eac13a files/courier-imap-4.0.1-r1-gentoo-imapd-ss
 MD5 a7541301dc4597f7eb5193b047f00b4b files/courier-imap-4.0.1-r1-courier-pop3d.indirect 85
 MD5 2399f4a660fd7149e3fe19f0bfc230e1 files/gentoo-imapd-1.7.3-r1.rc 1074
 MD5 5d57e73c7593d5bb37135d3964d6d4c2 files/digest-courier-imap-3.0.7 72
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFC/Fe7j5H05b2HAEkRAkRTAJ9sDJgKyHt8u+86hO/Dff4bn3GvIwCdG5rv
+AVb3d0l0/v7+kgIkPBxr/QE=
+=Hizd
+-----END PGP SIGNATURE-----
