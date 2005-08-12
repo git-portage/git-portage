@@ -1,14 +1,11 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 d5449c6a34863c1074614adf2c90a471 amanda-2.4.4_p3.ebuild 11804
 MD5 2b9b19a5f9a2cb93670be5c798c403bd amanda-2.4.4_p2-r2.ebuild 11640
 MD5 976316eeae5f7388cfa5cf7734cd4db3 amanda-2.4.4_p2.ebuild 11338
 MD5 d746c76696c44ab62c473802eef9bd86 amanda-2.4.4-r3.ebuild 11287
 MD5 553dcb8a25bcf9992dffabf0c3be3ad3 amanda-2.4.4_p2-r1.ebuild 11506
-MD5 ecec29e25e2ffe68ae5fbde79d8b2053 ChangeLog 7047
+MD5 d5fa19df68576b0c0962758500f72a7c ChangeLog 7144
 MD5 b0d485ea1a51fb83c70daedef2599272 metadata.xml 279
-MD5 5f386b78825508d76f7f9a2e700a9d5d amanda-2.4.5.ebuild 12190
+MD5 3596f769af87b06dce6cbfbe3ac3bfd4 amanda-2.4.5.ebuild 12188
 MD5 89f98efbd6fee9891cd6c39d52e5d7a8 files/amanda-devfs 349
 MD5 fe28f64731a2dbf85f76b6f38942e032 files/example_disklist 55
 MD5 a98390eb2ab16398b7332c42560c190f files/amanda-cron 419
@@ -28,10 +25,3 @@ MD5 0c1121f81cee9a50018b96c615b4554b files/digest-amanda-2.4.4_p2-r2 67
 MD5 95a109a0edbf12da91dbabf7977a97f7 files/example_global.conf 1377
 MD5 ef2e4c8797076d9733b31a860fda8582 files/amanda-inetd.amanda.sample 194
 MD5 6020426a696d9bbec9244067debbba4d files/amanda-2.4.5-samba-printf.patch 498
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFC87UXBXaUFmZvwyMRAt+6AKC8pqWnwfJdaNWP/e2SCFKCTpT7ngCePAE1
-qKt8ewEQJj7SyZiOvJx06ls=
-=oTi1
------END PGP SIGNATURE-----
