@@ -1,5 +1,7 @@
+MD5 d63d9337056034ca3df9755d3fe35fea popa3d-1.0.ebuild 5466
 MD5 0328bbe5c989b571523cfad64e76d23e popa3d-0.6.4.1-r2.ebuild 4481
 MD5 aee5e57379d06aa42a768a601b7bb633 ChangeLog 3077
 MD5 dbb40cd6b37794fccc9251f434aa99ce metadata.xml 425
 MD5 d5e922ceb0a1fbe958b60cefb5029e1b files/digest-popa3d-0.6.4.1-r2 208
 MD5 d7e80b35c6a318d497f9fc4e538e0429 files/popa3d-initrc 479
+MD5 dee8b084da796b89e89fe964cb3103b8 files/digest-popa3d-1.0 204
