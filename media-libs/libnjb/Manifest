@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8b1346477a12e418214f060eec94b6a1 libnjb-2.2.ebuild 1051
 MD5 08a6b13091c718edd325a42cb2e7a997 libnjb-1.2.ebuild 1207
 MD5 2bddfa8cb851e2c3abebbdb4802400cb ChangeLog 2911
@@ -10,3 +13,10 @@ MD5 abf7c2c90f2fa0bda8417050514e1e2d files/libnjb-1.2-gentoo-multilib.patch 640
 MD5 1ad18266b17b36578ea26405aae99b91 files/digest-libnjb-2.1.2 64
 MD5 b8b03bca7250e43640fce00915a54f69 files/nomadjukebox 1048
 MD5 eccde352d9d2ac120ddcaa4183003577 files/libnjb-errno.patch 278
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFC/ei2/rLF9B432nYRAvIAAJ9D0m21RlLIkXW4azKzLUn03pwMsACgsPXk
+FPS5c2FZMaQb3ojTvs78pAM=
+=5Dh6
+-----END PGP SIGNATURE-----
