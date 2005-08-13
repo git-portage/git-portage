@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 09ebb722e71d2044e612675e364dc281 ChangeLog 5341
 MD5 0626f895b20c5da1096b952a129cf277 nas-1.7.ebuild 1827
@@ -16,3 +19,10 @@ MD5 520a4d59a7e5ce53b6130d9e920c064c files/digest-nas-1.7 64
 MD5 7967799b246c81b4ee91254561192584 files/nas-1.7-gcc4.patch 442
 MD5 520a4d59a7e5ce53b6130d9e920c064c files/digest-nas-1.7-r1 64
 MD5 ac506d33fb676e68c2a77d95d3f6027e files/digest-nas-1.5-r1 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFC/fM9p5vW4rUFj5oRArzlAJ4iV63Qicn79/Rl8odGO1E8wrnCDwCgtOGa
+DKJpVvUM2uCrgHBBAhjPcZM=
+=PexY
+-----END PGP SIGNATURE-----
