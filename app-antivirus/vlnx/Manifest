@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 13e46410fd40100a4d5d3652d42bd9a5 vlnx-414e-r2.ebuild 1022
 MD5 997495e9565a19e5f3748f429ec6368a vlnx-432e-r2.ebuild 1661
 MD5 4442c39304aa42cabda2579cb4690309 vlnx-416e.ebuild 954
@@ -12,3 +15,10 @@ MD5 17ffe8062ec618d01bfd603693ed4479 files/vlnx-432e-envd 17
 MD5 5a856af918b22adc1ae21917d9910052 files/vlnx-414e-envd 41
 MD5 15edffaa6916d8c80256fe7fb6c6317c files/digest-vlnx-414e-r2 119
 MD5 8cb7bbfe89a94249a0dd12b14c0dfcda files/digest-vlnx-432e-r2 121
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFC/kp5QlM6RnzZP+IRApnEAKCY1SYUeYy3FD8gGSaYmpPSC8kS/gCgs7p/
+yZaRYon2+hfYpMEDVmHocsg=
+=2GPw
+-----END PGP SIGNATURE-----
