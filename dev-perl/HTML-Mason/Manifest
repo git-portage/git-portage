@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1417ae8a60629256875199edc3d75bd5 ChangeLog 5728
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 ae0e9d609b2eb36d3aa72cdcd85911e6 HTML-Mason-1.20.ebuild 1748
@@ -14,3 +17,10 @@ MD5 07de1ec3aa725a31db3b84f7a98cabda files/digest-HTML-Mason-1.25 67
 MD5 3ab48da347fd0409815b3952c646baa6 files/digest-HTML-Mason-1.26 67
 MD5 3666de3807611da57648d2ee49ddeca2 files/digest-HTML-Mason-1.28 67
 MD5 a2bb428fba57ac3e4e9c8789b7fc58ac files/digest-HTML-Mason-1.29_beta02 70
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC/2N9tG5z4I8BtQoRAplPAJ41btbsYod577QSQ68zaHo9UntHpwCeIzKH
+3lIP0rCHQir8AY/rImc4deI=
+=749e
+-----END PGP SIGNATURE-----
