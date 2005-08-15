@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/dar
 # Copyright 2000-2005 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/ChangeLog,v 1.6 2005/08/01 15:14:45 gustavoz Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/ChangeLog,v 1.7 2005/08/15 03:26:55 matsuu Exp $
+
+  15 Aug 2005; MATSUU Takuto <matsuu@gentoo.org> dar-2.2.2.ebuild:
+  Fixed acl USE flag problem, Bug 102438.
 
   01 Aug 2005; Gustavo Zacarias <gustavoz@gentoo.org> dar-2.2.2.ebuild:
   Stable on sparc wrt #100683

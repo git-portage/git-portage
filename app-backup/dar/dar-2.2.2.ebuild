@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/Attic/dar-2.2.2.ebuild,v 1.5 2005/08/01 15:14:45 gustavoz Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/Attic/dar-2.2.2.ebuild,v 1.6 2005/08/15 03:26:55 matsuu Exp $
 
 DESCRIPTION="A full featured backup tool, aimed for disks (floppy,CDR(W),DVDR(W),zip,jazz etc.)"
 HOMEPAGE="http://dar.linux.free.fr/"
@@ -19,7 +19,7 @@ DEPEND=">=sys-libs/zlib-1.2.3
 src_compile() {
 	local myconf="--disable-upx"
 
-	use acl && myconf="${myconf} --enable-ea-support"
+	use acl || myconf="${myconf} --disable-ea-support"
 	use dar32 && myconf="${myconf} --enable-mode=32"
 	use dar64 && myconf="${myconf} --enable-mode=64"
 	use nls || myconf="${myconf} --disable-nls"
