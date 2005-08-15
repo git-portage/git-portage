@@ -1,19 +1,13 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 087cc21885de744c3ecc51a6ae1c32b0 parrot-0.1.2.ebuild 1487
-MD5 0127bae315429503b0149322fd09f640 parrot-0.1.1.ebuild 1097
 MD5 2a07721ae678695fcda05cd1bcda4a43 ChangeLog 1198
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
+MD5 0127bae315429503b0149322fd09f640 parrot-0.1.1.ebuild 1097
+MD5 087cc21885de744c3ecc51a6ae1c32b0 parrot-0.1.2.ebuild 1487
 MD5 e4275488c1eb9769b76c30173337e742 parrot-0.2.1.ebuild 1751
-MD5 bb2ee3162424592150ab37c417374ceb files/mod_parrot.patch 226
+MD5 afde73e47e6ecbfbd40b779af7c1d301 parrot-0.2.3.ebuild 2156
+MD5 1ac50a47aab4a14fbd9f47f929ee33c8 files/mod_parrot.patch 293
 MD5 75fbd20b4daec7e1b315a172ad60c64f files/digest-parrot-0.1.1 65
 MD5 33b986910cc59316976efc38da8ab47c files/digest-parrot-0.1.2 65
 MD5 e973d8e474a6da7a82f7d20c2d496a1c files/digest-parrot-0.2.1 65
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFC1tQgBXaUFmZvwyMRAjmqAKCoBWF+9YUYLkr0C7hqHXBTMTKPUwCbBgrp
-OnKXh7eRMC153hGXJgi6RSA=
-=bJDT
------END PGP SIGNATURE-----
+MD5 173cae8d616eb7a79b78c15e34920888 files/parrot-config.patch 569
+MD5 3749a364b06115bfe0df40a6a88bb434 files/root.in.patch 1264
+MD5 6fefa983d0557ec5599f54babc66d7df files/digest-parrot-0.2.3 65
