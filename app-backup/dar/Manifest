@@ -1,16 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 26d34c219873dbdfb17aa9e34f1dd059 dar-2.1.6.ebuild 1201
+MD5 e61efdc286d9103ae1f5d39fda19d058 dar-2.2.2.ebuild 1069
+MD5 086e1573f9fd2380f90657a538fcda59 ChangeLog 4670
 MD5 ae8f2b13b9e79b5760aa8c08f84bebe8 metadata.xml 468
-MD5 d6c7b6619b2a2030cd08b6b01d0be315 dar-2.2.2.ebuild 1070
-MD5 e4c6081337e948bf1dcd2b465a9d932f ChangeLog 4562
-MD5 a08cb65f15e68f63e8ad0d30f060d3d2 files/digest-dar-2.2.2 62
 MD5 386d1068d568e85b87309a279da188c4 files/digest-dar-2.1.6 61
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
-
-iD8DBQFC7jyAKRy60XGEcJIRAgA/AJ9IxNRmfcwEJgGsAOx1pi4JU47YVQCdGSiz
-mg7OKuqwE6S1VhpaWnqOa+o=
-=NgLF
------END PGP SIGNATURE-----
+MD5 a08cb65f15e68f63e8ad0d30f060d3d2 files/digest-dar-2.2.2 62
