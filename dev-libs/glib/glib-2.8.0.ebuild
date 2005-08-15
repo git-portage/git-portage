@@ -1,33 +1,41 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/Attic/glib-2.6.2-r1.ebuild,v 1.10 2005/04/07 03:55:26 dostrow Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/Attic/glib-2.8.0.ebuild,v 1.1 2005/08/15 13:56:41 leonardop Exp $
 
-inherit libtool eutils flag-o-matic
+inherit gnome.org libtool eutils flag-o-matic debug
 
 DESCRIPTION="The GLib library of C routines"
 HOMEPAGE="http://www.gtk.org/"
-SRC_URI="ftp://ftp.gtk.org/pub/gtk/v2.6/${P}.tar.bz2"
 
 LICENSE="LGPL-2"
 SLOT="2"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ~ppc ppc64 ~ppc-macos s390 ~sparc x86"
-IUSE="doc hardened"
+KEYWORDS="~x86 ~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sparc"
+IUSE="doc hardened static"
+
 DEPEND=">=dev-util/pkgconfig-0.14
 	>=sys-devel/gettext-0.11
-	doc? ( >=dev-util/gtk-doc-1 )"
+	doc? (
+		>=dev-util/gtk-doc-1.4
+		~app-text/docbook-xml-dtd-4.1.2 )"
+
 RDEPEND="virtual/libc"
 
 src_unpack() {
+
 	unpack ${A}
 	cd ${S}
 	use ppc-macos && epatch ${FILESDIR}/${PN}-2-macos.patch
+
 	if use ppc64 && use hardened; then
 		replace-flags -O[2-3] -O1
 		epatch ${FILESDIR}/glib-2.6.3-testglib-ssp.patch
 	fi
+
 }
 
 src_compile() {
+	local myconf="--with-threads=posix $(use_enable static) \
+		$(use_enable doc gtk-doc)"
 
 	epunt_cxx
 
@@ -36,15 +44,8 @@ src_compile() {
 		append-ldflags "-L/usr/lib -lpthread"
 	fi
 
-	# enable static for PAM
-	econf \
-		--with-threads=posix \
-		--enable-static \
-		`use_enable doc gtk-doc` \
-		|| die
-
-	emake || die
-
+	econf $myconf || die "./configure failed"
+	emake || die "Compilation failed"
 }
 
 src_install() {
@@ -62,6 +63,6 @@ src_install() {
 	dodir /etc/env.d
 	echo "G_BROKEN_FILENAMES=1" > ${D}/etc/env.d/50glib2
 
-	dodoc AUTHORS ChangeLog* README* INSTALL NEWS*
+	dodoc AUTHORS ChangeLog* NEWS* README
 
 }
