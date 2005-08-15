@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7f0a62b636986a7f0c00bc3b2b15423b mesa-6.3.1.1.ebuild 4836
 MD5 2bddb4082f270ed7e70da09ac76d475e mesa-6.3.1.1-r1.ebuild 5102
 MD5 83e57c2a9ce9ca4b95028165cb750b45 mesa-6.3.1.1-r2.ebuild 5704
@@ -14,3 +17,10 @@ MD5 2685b3ea6cabdd4da8929cfca0a03573 files/digest-mesa-6.3.1.1-r2 223
 MD5 0883c9996cac1056781bdcd2aab60e66 files/lib/libOSMesa.la 765
 MD5 9abdd26694e6f1d7bd93193f900acc6c files/lib/libGLU.la 752
 MD5 f0ebdc72043e76ad7eddc4ad91349927 files/lib/libGL.la 763
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDAP4n2G5bA0cA/ScRApjUAJ9o9PzUDXv+9EkAtt+7ArDjoEA3BQCfbD2k
+AZH/h826eTRib0i/S84RnTo=
+=B3QP
+-----END PGP SIGNATURE-----
