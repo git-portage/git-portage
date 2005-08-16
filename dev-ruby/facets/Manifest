@@ -1,4 +1,6 @@
-MD5 6dbbcc08c8403cd167382cc04604c273 ChangeLog 419
+MD5 72fa0b6b4c01f5412655898d4b11b697 facets-0.7.2.ebuild 653
 MD5 4edbc33cbebfa6f434cb7dd2db5281f0 facets-0.6.3.ebuild 651
+MD5 6dbbcc08c8403cd167382cc04604c273 ChangeLog 419
 MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
 MD5 40fb0b9f093ec0e46fa02ab0fb0de1c7 files/digest-facets-0.6.3 61
+MD5 8ab4cf53fb7b00799a0abf2d1de8737a files/digest-facets-0.7.2 61
