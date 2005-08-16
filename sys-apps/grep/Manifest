@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 97b1eaf5feac1593d7085913ce9b5deb grep-2.5.1-r6.ebuild 2240
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 5c1510e20a43c023fa1329fb8ef59efc grep-2.5.1-r7.ebuild 1990
@@ -17,3 +20,10 @@ MD5 16d6cd54c93041d4f4bef59a9e327d04 files/2.5.1-tests.patch 1786
 MD5 b43c763953a7b7d3345fc0dd625f299c files/grep-2.5.1-fgrep.patch.bz2 1678
 MD5 af3a45582aa7c857f0500c63c823bd52 files/grep-2.5.1-libintl.patch 2662
 MD5 e39e9fd198a2c0a5984f2c7d188b3c49 files/2.5.1-utf8-case.patch 933
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDAearKRy60XGEcJIRAvmAAJ9yImmkf3TtZdJWeObWR630yLIOjwCcCg4t
+rj6qGALJfsCOpNt1bQy5W+8=
+=pqat
+-----END PGP SIGNATURE-----
