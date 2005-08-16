@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/skype/Attic/skype-1.2.0.11.ebuild,v 1.2 2005/08/13 00:43:36 humpback Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/skype/Attic/skype-1.2.0.11-r1.ebuild,v 1.1 2005/08/16 14:15:19 humpback Exp $
 
 inherit eutils qt3
 
