@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 5fc18674b29d14855af3388a6b1e708a psmisc-21.4.ebuild 1365
 MD5 31fbbc5452deb8b9ef6bd607e9a96265 psmisc-21.5.ebuild 1189
@@ -12,3 +15,10 @@ MD5 f8a6de9ef42d405c6ac24373df5c5f74 files/psmisc-21.4-selinux.diff.bz2 7720
 MD5 c02f21e37725ecf3815688b08fb8606a files/psmisc-21.6-scanf.patch 1860
 MD5 b82b550c4133bb8a25ab43316ca04fc4 files/psmisc-21.6-selinux.diff.bz2 7709
 MD5 6f859fa9957d5cbc362d55aa098dfd0b files/digest-psmisc-21.6 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDAegPKRy60XGEcJIRAoLaAKChtSXjJSgI7KiyZ/n7Rtv+Tuj9mQCffTv2
+4tqerurBwnAVUk++Pdps0eY=
+=YFOu
+-----END PGP SIGNATURE-----
