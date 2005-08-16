@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b736e323ff54f68148a7391f2556fdba pgpool-2.6.2.ebuild 869
 MD5 9a5706e7be6b95c80da0394bb4c9a64f pgpool-2.5.2.ebuild 898
 MD5 f8d3d207746da2a3cd14dcaab8daab76 metadata.xml 163
@@ -11,3 +14,10 @@ MD5 ff7259ac67f0e172df7e51f0242c9db3 files/digest-pgpool-2.5.2-r1 64
 MD5 ff7259ac67f0e172df7e51f0242c9db3 files/digest-pgpool-2.5.2 64
 MD5 584d108782ab4bfa6c5d8b5a56cd1088 files/digest-pgpool-2.6.2 64
 MD5 2bb57037e517f94326861c668942e789 files/digest-pgpool-2.6 62
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDAez7KRy60XGEcJIRAhsxAKCrst2iAWzDOu94NZke8/oi+pLwqgCgleBy
+sBfd6gZSuNFDlHlDXe5mUkA=
+=adOY
+-----END PGP SIGNATURE-----
