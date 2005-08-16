@@ -1,0 +1,5 @@
+MD5 0d18f0fe5d603b41b988373892caf195 metadata.xml 226
+MD5 c2e8e5c79bc4bd70407bf15c95313af6 ChangeLog 324
+MD5 cc6bebe63ab8b41a221ff40ea15b6840 mod_depends-0.7.0_p200508161.ebuild 857
+MD5 19003c749948f3ff748cd995954550d4 files/47_mod_depends.conf 260
+MD5 92e89de778bf603e20b8e53258d14b1f files/digest-mod_depends-0.7.0_p200508161 80
