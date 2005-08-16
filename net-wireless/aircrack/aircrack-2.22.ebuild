@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/aircrack/Attic/aircrack-2.2.ebuild,v 1.1 2005/08/04 08:47:16 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/aircrack/Attic/aircrack-2.22.ebuild,v 1.1 2005/08/16 21:42:17 dragonheart Exp $
 
 inherit toolchain-funcs
 
