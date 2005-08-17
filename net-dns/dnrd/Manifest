@@ -1,16 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 cf032ad013c47f578bfbdd363ab2a423 ChangeLog 1227
 MD5 6efe55b5bdb519265c5f988e988be965 metadata.xml 373
-MD5 a14580cf7095380143a8cd158c04767d dnrd-2.19.1.ebuild 832
+MD5 a9301e326d33f458812f183d6adc68a7 dnrd-2.19.1.ebuild 832
 MD5 eb8a7236afb2e7c90d7bc1500cfd2783 files/digest-dnrd-2.19.1 63
 MD5 1a7c6063be69d8859ed77fedb8b78d5f files/dnrd 476
 MD5 7d30e0bd4d61ae20ed63339d3cc5739d files/dnrd.conf 250
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFC4DMoFdQwWVoAgN4RApAaAKDBYWGU0I2I4Sy3tTSoboaKBO+kjACfTaLR
-ZYs6GuDnlxt1FUDpLxGwvLk=
-=Q3Qf
------END PGP SIGNATURE-----
