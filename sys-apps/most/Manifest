@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b8ea1b5132bf96ecbfd8d07501718599 most-4.9.5.ebuild 1526
 MD5 8e44bf156727af67aeeaa8344dc8f278 most-4.9.2.ebuild 935
 MD5 ae8125909ecf4c64320044ee4c64ab3c most-4.10.2-r1.ebuild 1509
@@ -9,3 +12,10 @@ MD5 fca955f15889eb7ffb4639dd1484ccfa files/digest-most-4.9.4 62
 MD5 f50722839e33523b309eda86c46e465d files/digest-most-4.9.5 62
 MD5 472794b01f4d3b05bb43788c16776853 files/most-4.10.2-fix-goto-line.diff 529
 MD5 92687eb187b1e9a13f22c1d593123f14 files/digest-most-4.10.2-r1 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDA4DmEZCkKN40op4RArReAJkBMed8s5oQgZaC2bwX4wC/n+PjZwCePWYJ
+1LALI90or6apHEGJao3MFUs=
+=oj8I
+-----END PGP SIGNATURE-----
