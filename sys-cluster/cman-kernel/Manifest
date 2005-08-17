@@ -1,4 +1,4 @@
-MD5 e53eb50d371ef4a75c68b19ca760ad79 ChangeLog 840
 MD5 a64b9a1937a5cfc2fbaf373521f65d47 metadata.xml 223
-MD5 7e0c98a50c6a80dcf5af50a47bf11b02 cman-kernel-1.00.00.ebuild 1057
+MD5 e53eb50d371ef4a75c68b19ca760ad79 ChangeLog 840
+MD5 1f864c6703c2d3d05c57f2124f74ac79 cman-kernel-1.00.00.ebuild 1014
 MD5 4f2d164091c3df995eb6cd31f2347a68 files/digest-cman-kernel-1.00.00 68
