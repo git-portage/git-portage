@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 be7bff0cad4168ed03f93cd88046aed1 quota-3.06.ebuild 1049
 MD5 581be997b7957c9625051bb0f2395b7c quota-3.12.ebuild 1527
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
@@ -21,3 +24,10 @@ MD5 a579acd7ad0608bc16126d5d86da7804 files/digest-quota-3.10 62
 MD5 8f3e0af699eecc5818d01529d5348387 files/digest-quota-3.13 62
 MD5 fe63ca32e32411f6aa067fdc6d451ae9 files/digest-quota-3.06-r2 62
 MD5 0d3ff3aaef898c9bb1d7243e20e93913 files/quota-no-quotactl-manpage.patch 958
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDAoS7gIKl8Uu19MoRAv0aAJ4iJ0xElYmeD066sJRkjenfhy2t2ACfZJ+g
+79NZie/PyCdev3ioXqbW4GY=
+=xuG2
+-----END PGP SIGNATURE-----
