@@ -3,9 +3,9 @@ MD5 c6c3805d8435d72c357e32e4277cb948 gtk+-2.8.0.ebuild 2935
 MD5 4719d1845d3618d0e464d397289e8577 gtk+-2.6.4-r1.ebuild 2960
 MD5 afb0e5aa8f6410c088c2e177a17efe5d gtk+-1.2.10-r10.ebuild 1719
 MD5 c23a87ba8c10d2a6b0733b3bcb088d73 gtk+-2.6.8.ebuild 2848
-MD5 7ea229f007470a605cc6042b9207bd81 gtk+-2.8.0-r1.ebuild 2811
+MD5 18edfdeaf21ee671c0abb5b7aad40549 gtk+-2.8.0-r1.ebuild 2810
 MD5 4be3562f71af8184c46d141fba5e6a8b gtk+-2.6.7.ebuild 2838
-MD5 bdcd147c80ebdfed76fd560f774e438b ChangeLog 24777
+MD5 4d047fc2efdc83c714f736eb6c9f07e7 ChangeLog 24773
 MD5 58b5c1a403ab43f5160c44c32761cbe0 metadata.xml 424
 MD5 9140d07ec4cf965b2041cf5b7f128743 files/digest-gtk+-2.6.7 208
 MD5 611d813de53655fa348ad470ee9c7179 files/digest-gtk+-2.6.8 208
