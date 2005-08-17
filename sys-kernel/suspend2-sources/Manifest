@@ -3,8 +3,8 @@ MD5 2b429ae0891c541752a19e0fd7424c9b suspend2-sources-2.6.12-r4.ebuild 2109
 MD5 8bded6a42fa287daafcd56e7321d1a16 suspend2-sources-2.6.12-r1.ebuild 2108
 MD5 83edc0c7b4c66c7474a126bf93908df8 suspend2-sources-2.6.12-r3.ebuild 2109
 MD5 af3a2dc84edfa599714c447ccd2b58a2 suspend2-sources-2.6.12.ebuild 1965
-MD5 f0af3edb5db26ae6260add80799eae39 ChangeLog 1142
-MD5 812d2316dbab7f9dfe9b8d5dbcc3cfc5 suspend2-sources-2.6.12-r5.ebuild 1988
+MD5 d10401e6d9d972e8b3ea19466c027e6a ChangeLog 1336
+MD5 6de3f53a09fc1b16a6965fef6cfdc70f suspend2-sources-2.6.12-r5.ebuild 2109
 MD5 e40cb3df546efa5003fe3778c5a50854 metadata.xml 275
 MD5 320c41493bbe3f054a0a90d92c98e67f files/linux-2.6.12-try_to_freeze.patch 3190
 MD5 2c8a57cd0e140e095595b6ba9e57cead files/digest-suspend2-sources-2.6.12-r1 310
