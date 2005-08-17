@@ -1,0 +1,5 @@
+MD5 18ead5d66bf5b9604a8b636ddbea61a7 httperf-0.8.ebuild 879
+MD5 895c658c1644917118d147978f7d1147 metadata.xml 945
+MD5 81630570d60ade0eaf6caad7ee4a1c4a files/httperf-0.8-optional-ssl.diff 694
+MD5 a719ff22f9a66c55067ea922e45d13a0 files/httperf-0.8-respect-DESTDIR.diff 712
+MD5 44858ef0273b02f6bb71ec6aca26c0a7 files/digest-httperf-0.8 63
