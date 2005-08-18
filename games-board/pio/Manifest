@@ -1,4 +1,6 @@
 MD5 5312c9ec860c6420ed9f953b46a2ec52 pio-0.9.19.ebuild 1106
 MD5 7035b4db1ed5ed0e55ee3dd6524e5b2b metadata.xml 321
+MD5 ed822d4261be124672ae8a104985cdbb pio-0.9.23.ebuild 1123
 MD5 9ad1cb611c70fa8f9eaefa6c5d606b2b ChangeLog 381
 MD5 a270a5b020f0b2c049fe47b0396bafd9 files/digest-pio-0.9.19 68
+MD5 bd0fefda62535dc61a6c2791b5b194f8 files/digest-pio-0.9.23 68
