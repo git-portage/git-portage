@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4d7e9321374c1b16b872eaadaeb1fed7 mysql-4.0.22-r2.ebuild 9621
 MD5 55dfc93b08b3ccdc42599173dc7a691f mysql-5.0.9_beta-r2.ebuild 16660
 MD5 82eebc79341497bc468d529ecac22ab1 mysql-3.23.58-r1.ebuild 7064
@@ -48,3 +51,10 @@ MD5 8d51cbf3afa8349839380aa0986704c0 files/mysql-3.23-safe-mysqld-sh.diff 1557
 MD5 9946a8f7163970ec4f6a713c97eadbe0 files/my.cnf-4.0.24-r1 4271
 MD5 8af497943e1a29aa0a0c6b17af54b116 files/mysql-4.0.21-thrssl.patch 318
 MD5 08f1246e8107e4140378d429ff9773af files/mysql-4.0.24-r2.rc6 2123
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDBM47KRy60XGEcJIRAjMHAJ93eV9td2P3wo4nCLYXEMkHUlvPXACdFSr0
+zqrb6hZ9jCj8KssTundMnjs=
+=/AmY
+-----END PGP SIGNATURE-----
