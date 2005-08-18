@@ -1,16 +1,16 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.0.7-r1.ebuild,v 1.16 2005/08/18 18:01:48 stkn Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.0.9-r1.ebuild,v 1.1 2005/08/18 18:01:48 stkn Exp $
 
 inherit eutils perl-module
 
-ADDONS_VERSION="1.0.7"
-BRI_VERSION="0.2.0-RC8g"
+ADDONS_VERSION="1.0.9"
+BRI_VERSION="0.2.0-RC8n"
 
 DESCRIPTION="Asterisk: A Modular Open Source PBX System"
 HOMEPAGE="http://www.asterisk.org/"
-SRC_URI="ftp://ftp.asterisk.org/pub/telephony/${PN}/old-releases/${P}.tar.gz
-	 ftp://ftp.asterisk.org/pub/telephony/${PN}/old-releases/${PN}-addons-${ADDONS_VERSION}.tar.gz
+SRC_URI="ftp://ftp.asterisk.org/pub/telephony/${PN}/${P}.tar.gz
+	 ftp://ftp.asterisk.org/pub/telephony/${PN}/${PN}-addons-${ADDONS_VERSION}.tar.gz
 	 bri? ( http://www.junghanns.net/downloads/bristuff-${BRI_VERSION}.tar.gz )"
 
 S_ADDONS=${WORKDIR}/${PN}-addons-${ADDONS_VERSION}
@@ -18,7 +18,7 @@ S_ADDONS=${WORKDIR}/${PN}-addons-${ADDONS_VERSION}
 IUSE="alsa doc gtk mmx mysql pri zaptel debug postgres vmdbmysql vmdbpostgres bri hardened speex resperl"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~hppa ~ppc ~sparc x86"
+KEYWORDS="~x86 ~sparc ~hppa ~amd64 ~ppc"
 
 DEPEND="dev-libs/newt
 	dev-libs/openssl
@@ -26,18 +26,18 @@ DEPEND="dev-libs/newt
 	media-sound/sox
 	doc? ( app-doc/doxygen )
 	gtk? ( =x11-libs/gtk+-1.2* )
-	pri? ( >=net-libs/libpri-1.0.7-r1 )
-	bri? ( >=net-libs/libpri-1.0.7-r1
-		>=net-misc/zaptel-1.0.7-r1 )
+	pri? ( >=net-libs/libpri-1.0.9 )
+	bri? ( >=net-libs/libpri-1.0.9
+		>=net-misc/zaptel-1.0.9 )
 	alsa? ( media-libs/alsa-lib )
 	mysql? ( dev-db/mysql )
 	speex? ( media-libs/speex )
-	zaptel? ( >=net-misc/zaptel-1.0.7-r1 )
+	zaptel? ( >=net-misc/zaptel-1.0.9 )
 	postgres? ( dev-db/postgresql )
 	vmdbmysql? ( dev-db/mysql )
 	vmdbpostgres? ( dev-db/postgresql )
 	resperl? ( dev-lang/perl
-		   >=net-misc/zaptel-1.0.7-r1 )"
+		   >=net-misc/zaptel-1.0.9 )"
 
 pkg_setup() {
 	local n
@@ -119,14 +119,18 @@ src_unpack() {
 		-e "s:^\(CFLAGS+=\$(shell if \$(CC)\):#\1:" \
 		Makefile
 
+	# hppa patch for gsm codec
+	epatch ${FILESDIR}/1.0.0/${PN}-1.0.8-hppa.patch
+
+	# mark adsi functions as weak references, things will blow
+	# on hardened otherwise (bug #100697 and #85655)
+	epatch ${FILESDIR}/1.0.0/${PN}-1.0.9-weak-references.diff
+
 	# gsm codec still uses -fomit-frame-pointer, and other codecs have their
 	# own flags. We only change the arch.
 	sed -i  -e "s:^OPTIMIZE+=.*:OPTIMIZE=${CFLAGS}:" \
 		-e "s:^CFLAGS[\t ]\++=:CFLAGS =:" \
 		codecs/gsm/Makefile
-
-	# hppa patch for gsm codec
-	epatch ${FILESDIR}/1.0.0/${PN}-1.0.5-hppa.patch
 
 	if use mmx; then
 		if ! use hardened; then
@@ -259,15 +263,12 @@ src_unpack() {
 		Makefile
 
 	# fix contrib scripts for non-root
-	epatch ${FILESDIR}/1.0.0/${P}-scripts.diff
+	epatch ${FILESDIR}/1.0.0/${PN}-1.0.7-scripts.diff
 
 	# add initgroups support to asterisk, this is needed
 	# to support supplementary groups for the asterisk
 	# user (start-stop-daemons --chguid breaks realtime priority support)
-	epatch ${FILESDIR}/1.0.0/${P}-initgroups.diff
-
-	# security fix (www.portcullis-security.com/advisory/advisory-05-013.txt)
-	epatch ${FILESDIR}/1.0.0/${P}-manager-cli-segv.patch
+	epatch ${FILESDIR}/1.0.0/${PN}-1.0.8-initgroups.diff
 }
 
 src_compile() {
@@ -397,7 +398,7 @@ pkg_postinst() {
 	chmod -R u=rwX,g=rX,o= ${ROOT}etc/asterisk
 
 	#
-	# Fix locations of old installations (pre-non-root versions)
+	# Fix locations for old installations (pre-non-root versions)
 	#
 	if [[ -z "$(grep "/var/run/asterisk" ${ROOT}etc/asterisk/asterisk.conf)" ]]
 	then
