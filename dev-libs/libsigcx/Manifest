@@ -1,0 +1,4 @@
+MD5 ee11af3f05fdb66547e2a9ced662e1a7 libsigcx-0.6.5.ebuild 1352
+MD5 e1f2511030c19628dbfd68a7b1cd5c82 metadata.xml 162
+MD5 9a8b62bc12468929fb4631fd016279bb files/libsigcx-0.6.5-missing-friend.diff 453
+MD5 7c82f6403b6dc802ce898587b285f6b4 files/digest-libsigcx-0.6.5 66
