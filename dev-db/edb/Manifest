@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bab81c9c47e60449685700d1ffbd53fa edb-9999.ebuild 634
 MD5 eb2707d80970d395c93d1c6c5c29b43e edb-1.0.5.003.ebuild 628
 MD5 2d0647a67387b6483b9e24bafb1d794d metadata.xml 602
@@ -8,3 +11,10 @@ MD5 6a7f71b99bcaced007cddf65735034e0 files/digest-edb-1.0.5.004 65
 MD5 c0389bb566ce69a9f267601e2033e2d4 files/digest-edb-1.0.5.003 65
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-edb-9999 0
 MD5 51d95c6f5c812a7a345fdfc4312012c4 files/digest-edb-1.0.5 61
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDBrwzgIKl8Uu19MoRAjmaAJ95WcVLGoyuIfECOEVsZu1jO/FQ9ACfYQbx
+/5rPFGJCdmrUyOLeP3OhheY=
+=3exG
+-----END PGP SIGNATURE-----
