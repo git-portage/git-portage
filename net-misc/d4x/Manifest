@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3d5b63818e4a1e8d703c78eaaa8b555f ChangeLog 5260
 MD5 b9f339e71a8ba17f3be1a9a37bdffaa8 d4x-2.5.1.ebuild 1787
 MD5 c1d99567166886bdb3e9f215fca712c0 d4x-2.4.1-r1.ebuild 1982
@@ -11,3 +14,10 @@ MD5 7025e0ce352893c55b23ffeea8f87d1c files/d4x-2.5.0_rc4-fix-cast.patch 317
 MD5 a9d346bf4f3d64d906935b663747e434 files/d4x-sndserv-bigendian.patch 502
 MD5 3e8783cc051415a9ee4f756fcc45c925 files/digest-d4x-2.4.1-r1 62
 MD5 4f038da47df5648c8799469e62ec03b6 files/digest-d4x-2.5.0-r1 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDB3nUl5AvwDPiUowRAh4IAJ4/xqVrx1Zmk/XNVHpuckKDszxcygCdEpEo
+z8VbhV2KakBvUUcBYyUsSmI=
+=uX7W
+-----END PGP SIGNATURE-----
