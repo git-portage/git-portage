@@ -21,7 +21,7 @@ MD5 e89db5b90b1db0adeb25fc77840d4e4d apache-2.0.51-r1.ebuild 12864
 MD5 eb173dd548089cf594c543d29b48948c apache-1.3.33-r5.ebuild 7105
 MD5 7855d3e919a6d58bd326839a750e8e45 apache-2.0.54-r14.ebuild 12657
 MD5 3e32afd7bbab740bdce0fc0cf45d5be3 apache-1.3.31-r1.ebuild 6816
-MD5 54a128f14749dc2eed212b01fc7a6b0e ChangeLog 67585
+MD5 4b48cc335d3ab559842ebe949a2ee170 ChangeLog 67664
 MD5 37f5ed6f2423381241b029e6685bcdd2 metadata.xml 493
 MD5 b50f73c471c77fbfff0c1c777c720a33 apache-1.3.33-r2.ebuild 8645
 MD5 996748170bc5ec8a2c230f8df8cff2f9 apache-2.0.52-r2.ebuild 12318
