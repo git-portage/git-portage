@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 17c46215512d95e9a2a65179154210db pciutils-2.1.11-r5.ebuild 2122
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 7b93384d2dbd916f4d30ad7156b4cb30 pciutils-2.1.11-r3.ebuild 2108
@@ -13,3 +16,10 @@ MD5 6a0ae94d528195517f54f66653f8322e files/pciutils-2.1.11-gentoo-paths.patch 52
 MD5 a6be9cf60dc5043160d757c9772b1e57 files/digest-pciutils-2.1.11-r4 131
 MD5 70f9f6cb767230245ac30ec658b3fd0a files/pciutils-2.1.11-fix-pci-ids-location-refs.patch 925
 MD5 a6be9cf60dc5043160d757c9772b1e57 files/digest-pciutils-2.1.11-r3 131
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDCMe3gIKl8Uu19MoRAqDPAJ9Va1YrVNNFOo7Hq2LNbovl/4ZC8QCfQzH6
+EA37zlgg+byYKd2qkVVxTIA=
+=M4f+
+-----END PGP SIGNATURE-----
