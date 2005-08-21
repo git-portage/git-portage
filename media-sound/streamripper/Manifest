@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 79ee16d155953314a3c63f7107e1229a streamripper-1.61.11.ebuild 899
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 662a285cd27eb85bd437b5b9a49ac07f ChangeLog 4164
@@ -11,3 +14,10 @@ MD5 e7f48c69571878c1462918c755772c49 files/streamripper-1.60.5-interface.patch 1
 MD5 541244ccd6075be3d6b8faea14a3171d files/streamripper-1.60.5-syslibmad.patch 2290
 MD5 ce7341258fb36c53c8df88b01e10c696 files/digest-streamripper-1.61.8 72
 MD5 f14a8f3e07e34e02752ffc14533b357d files/streamripper-1.60.8-syslibmad.patch 2661
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDCK/ep5vW4rUFj5oRAoWgAJ9sMpoCxsFHrOzy+Bs2XoL6Iu9biwCeIULZ
+NH15Z1/MqiP609T+7xTZwWs=
+=N2Cg
+-----END PGP SIGNATURE-----
