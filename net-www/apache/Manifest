@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8678a4fa3ac4bf3f189a8c450db2c5b4 apache-2.0.54-r8.ebuild 12619
 MD5 2fefe24b99225f887ed80a01e623818c apache-2.0.54-r11.ebuild 12822
 MD5 b82cd53e9230d7bdeb59771d333d1f4c apache-1.3.31-r3.ebuild 6949
@@ -116,3 +119,10 @@ MD5 a63b9472904d3500cf72b370a9ee3200 files/patches/1.3.31-r2/00_gentoo_db4_detec
 MD5 161245c7aa1eb785db53b34d6a10be43 files/patches/1.3.31-r2/00_gentoo_suexec_pam.patch 2149
 MD5 c42fc79a9d08f38a8d8938883451f6b6 files/patches/1.3.31-r2/00_apache_proxy_security_fix.patch 790
 MD5 61df284cb67dfde3085aec5543eeb03c files/patches/1.3.31-r2/00_gentoo_apachectl.patch 32836
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDCG1vViELBEf1JB0RAkXRAJsH5wSYT/O4gdD4Py+/IlAZq/5EvwCdFV2U
+0gXrsrO9cNaSugS+DIEvFrI=
+=yyM3
+-----END PGP SIGNATURE-----
