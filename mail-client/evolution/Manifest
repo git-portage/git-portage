@@ -5,6 +5,7 @@ MD5 707a74400152e4c3027a043f420ceb1f evolution-2.3.7.ebuild 5722
 MD5 b2bf22eca079cbb39f39c374cb306715 evolution-2.0.3-r2.ebuild 4206
 MD5 6ec9b6a7896b799d17a21c4edffd33c9 metadata.xml 272
 MD5 249e276509b42a3954b5935626218dab evolution-2.0.4.ebuild 4093
+MD5 953c9c332c9497c0b7b3116bb98df73b evolution-2.3.7-r1.ebuild 5716
 MD5 2a8ad9a4f1ef4a19c4188cfd749805b1 evolution-2.2.1.1.ebuild 4485
 MD5 5d430637760a0c93974ed91b72a16438 files/digest-evolution-1.2.4 131
 MD5 b01eb668892c7f791e63131a0c2c5e9f files/digest-evolution-2.3.7 70
@@ -19,6 +20,7 @@ MD5 a71bb4ab71d2e4cc5e02649d87f36e12 files/evolution-2.2.3-configure_plugins.pat
 MD5 5a8c8a5e4d082901feeb677b0e68cb2c files/digest-evolution-2.2.3-r2 70
 MD5 015ecd719e11c1170e7f41b3490f52f7 files/evolution-2-CAN-2005-0102.patch 467
 MD5 b5eaa2e30f75b8ec2df29cfd90a1e1f0 files/evolution-2.3.7-configure_plugins.patch 3010
+MD5 b01eb668892c7f791e63131a0c2c5e9f files/digest-evolution-2.3.7-r1 70
 MD5 7b8c1cc2fd2428815184d471af4bb3bf files/evolution-2.0.3-gentoo_etc_services.patch 1662
 MD5 2381d584d4a3104a6c491b21ecc0bc47 files/evolution_mail-account-gui_authtype.diff 737
 MD5 75a9be02c12e91b5ddedbdfd11c07e03 files/digest-evolution-2.0.4 70
