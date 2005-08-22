@@ -1,5 +1,5 @@
 MD5 a330d108aba1ec4937addc23fa5aac89 phprojekt-4.2.3.ebuild 1176
-MD5 44eb5fa421847006074f59edd9248739 ChangeLog 3294
+MD5 da4dce9c9d300f39da45931cd0fb9c43 ChangeLog 3515
 MD5 c339473e0ff43da76eb2f2607c441921 metadata.xml 280
 MD5 b22d3aff81f01ade762c248b632b59af files/postinstall-en.txt 566
 MD5 6eaeb910f5378708b62665ecdaaf8be2 files/phprojekt-4.2.3-fix-chat-vuln.diff 773
