@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6c4843e465bc701edfd2848bc61b9816 lvm-user-1.0.7-r3.ebuild 1923
 MD5 585de65dca6a06cf98f085d24937a915 lvm-user-1.0.8-r1.ebuild 2146
 MD5 af522a2bf30dd73356656143e3068b2f lvm-user-1.0.7-r4.ebuild 2063
@@ -15,3 +18,10 @@ MD5 a8fa868a4e24685af74bec39b76e33a9 files/digest-lvm-user-1.0.8 61
 MD5 79c525e785e11238d90c6a4f2d0283d5 files/lvm-user-stop.sh 440
 MD5 89c60d1ba90b7e04abb957c0fee57449 files/lvm-user-gcc-3.4.patch 1736
 MD5 7484cb0ecb2a997be4910a8612e951cf files/lvm-user-1.0.7-statics.patch 1040
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDCiA4KRy60XGEcJIRAqG0AJ40FaYdLfs2wkoWTBXBlFAaxailMACfax+B
+EyIDexLEPmSay7HRJ0Wntc8=
+=6Vfu
+-----END PGP SIGNATURE-----
