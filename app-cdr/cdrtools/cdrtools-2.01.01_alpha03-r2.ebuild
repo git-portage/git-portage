@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/cdrtools/Attic/cdrtools-2.01.01_alpha03-r1.ebuild,v 1.1 2005/08/21 02:36:34 metalgod Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/cdrtools/Attic/cdrtools-2.01.01_alpha03-r2.ebuild,v 1.1 2005/08/22 04:27:59 metalgod Exp $
 
 inherit eutils gnuconfig toolchain-funcs flag-o-matic
 
@@ -30,9 +30,9 @@ src_unpack() {
 	# CAN-2004-0806 - Bug 63187
 	epatch ${FILESDIR}/${PN}-2.01-scsi-remote.patch
 
-	epatch ${FILESDIR}/${PN}-2.01a32-scan.patch
 	epatch ${FILESDIR}/${PN}-2.01a27-writemode.patch
 	epatch ${FILESDIR}/${PN}-2.01.01a03-warnings.patch
+	epatch ${FILESDIR}/${PN}-2.01.01a01-scanbus.patch
 	epatch ${FILESDIR}/${PN}-2.01.01a03-rezero.patch
 
 	# Add support for On-The-Fly AES encryption
@@ -61,7 +61,10 @@ src_compile() {
 	gnuconfig_update
 
 	use unicode && append-flags "-finput-charset=ISO-8859-1 -fexec-charset=UTF-8"
-
+	if use x86;
+		then
+		strip-flags
+	fi
 	emake CC="$(tc-getCC) -D__attribute_const__=const" COPTX="${CFLAGS}" CPPOPTX="${CPPFLAGS}" LDOPTX="${LDFLAGS}" || die
 }
 
@@ -95,7 +98,7 @@ src_install() {
 	doins include/scg/*.h
 
 	cd ${S}
-	dodoc ABOUT Changelog README README.{ATAPI,audio,cdplus,cdrw,cdtext,clone,copy,DiskT@2,linux,linux-shm,multi,parallel,raw,rscsi,sony,verify} START
+	dodoc ABOUT Changelog README README.{ATAPI,audio,cdplus,cdrw,cdtext,clone,copy,DiskT@2,linux-shm,multi,parallel,raw,rscsi,sony,verify} START READMEs/README.linux
 	doman */*.1
 	doman */*.8
 
