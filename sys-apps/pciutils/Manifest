@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3cc5492771e2af5f8f4536ed60b6b6bf ChangeLog 7390
 MD5 7b93384d2dbd916f4d30ad7156b4cb30 pciutils-2.1.11-r3.ebuild 2108
 MD5 5d4062ef41c41818433a19737e1f9f02 pciutils-2.1.11-r5.ebuild 2174
@@ -14,3 +17,10 @@ MD5 f8bc3cef20829127ecab494b6b9c886c files/pciutils-2.1.11-bsd.patch 1105
 MD5 a6be9cf60dc5043160d757c9772b1e57 files/digest-pciutils-2.1.11-r5 131
 MD5 c6135ce795940ebf3777592d4e6f8049 files/pcimodules-pciutils-2.1.11.diff 11026
 MD5 a6be9cf60dc5043160d757c9772b1e57 files/digest-pciutils-2.1.11-r3 131
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDCk+tj5H05b2HAEkRAvhBAJ9QjaQiXUfu5FrGy7hx9lvqc7qmlQCeIL0O
+iDY75CIfjZgJ10Lpwnoyzuw=
+=WPXW
+-----END PGP SIGNATURE-----
