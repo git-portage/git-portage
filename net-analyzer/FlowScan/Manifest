@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6bdbb2693f5c3ca520d14119a37833c0 ChangeLog 887
 MD5 6201381399707d99de023d25e06cb795 FlowScan-1.006-r1.ebuild 1839
 MD5 15b915872b252237630beb8441175eb3 FlowScan-1.006.ebuild 1798
@@ -8,3 +11,10 @@ MD5 962655f4603e49185eef6293d27a8314 files/digest-FlowScan-1.006 66
 MD5 962655f4603e49185eef6293d27a8314 files/digest-FlowScan-1.006-r1 66
 MD5 aae73bd9ba06b4ce266f50b27f8e82e2 files/flowscan.init 458
 MD5 962655f4603e49185eef6293d27a8314 files/digest-FlowScan-1.006-r2 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDC5simdTrptrqvGERAjLxAJ4qLM83pBYEjcHgdPXOq6kGFtSjHgCfYo5q
+gFfuV1gSKG61tNVriavtXas=
+=S1Mt
+-----END PGP SIGNATURE-----

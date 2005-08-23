@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b63cb5ce756b41980648237f3dd868a0 ChangeLog 3845
 MD5 7c0eab9aa1738bc6cc77ab7d1199b152 ddclient-3.6.3.ebuild 780
 MD5 8a294636aa63272177527a8786f6e458 metadata.xml 335
@@ -9,3 +12,10 @@ MD5 938d0005b167a69deca19f3b6de7738f files/ddclient.rc6 718
 MD5 488f3a86b6234899dc87b1d1475b9f8c files/digest-ddclient-3.6.6 65
 MD5 bfa4dd80f9d6255946772e0adb981bf7 files/digest-ddclient-3.6.3 65
 MD5 edb34c213f0018c0a0a8e6e09f83e45e files/ddclient.init 732
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDC5wOmdTrptrqvGERAqt+AKCLjaCxvKi5/KrR8mf9wkrkT22xiQCfaBFZ
+cYypkREG5t72czomzusjgio=
+=9qcl
+-----END PGP SIGNATURE-----
