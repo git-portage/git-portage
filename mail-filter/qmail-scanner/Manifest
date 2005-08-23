@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e006e289d10b3c7fce92af8a88abadca qmail-scanner-1.23-r3.ebuild 4926
 MD5 dc661487c83e84ee96b2a0a58d5adcab qmail-scanner-1.24.ebuild 4923
 MD5 cbe8226432164d97611c827769eff304 qmail-scanner-1.25-r1.ebuild 5029
@@ -15,3 +18,10 @@ MD5 21cbccfc2015bf74d509a5b329ef4b30 files/digest-qmail-scanner-1.16-r2 67
 MD5 c6351759d589862bf81247f857fb2038 files/digest-qmail-scanner-1.23-r2 139
 MD5 109da745344755ce96b85ccb255ff736 files/digest-qmail-scanner-1.23-r3 139
 MD5 ff83ea44513fae0bbfc5bcacbc34e394 files/digest-qmail-scanner-1.25-r1 140
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDCyPsQlM6RnzZP+IRArBIAKCKzFVnvQvSGZi83Ggg0kAdqTUuKACfWC4A
+iVWgPieYkLhWbQQwEr7ajlE=
+=m3Uu
+-----END PGP SIGNATURE-----
