@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 24272f95d7629d85f9268b0275643cba ChangeLog 643
 MD5 d952989ef380ae6c092f7ad1da16e77d files/digest-monetdb-4.8.2 299
 MD5 324a083e56c76f02a3ba9ac34c188066 files/monetdb-4.8.2-gentoo-MapiClient.patch 311
@@ -10,3 +13,10 @@ MD5 cae0e46fdfa11ea1f0be120005076b83 files/monetdb.init-4.8.2 328
 MD5 a9a2dbac1941306b506077c635415e7e files/monetdb_config.sh 653
 MD5 ca9ff61fbe7d29f666c1ffdc61bb168d metadata.xml 801
 MD5 3f21099a03d068975439d3ce1b58aa32 monetdb-4.8.2.ebuild 6333
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDCzPVI1lqEGTUzyQRAoj0AKC0rB/yUqMaDCm8yvZvTIo2MGsL/gCeLeRe
+acc8X15SsQN93o19LcaXm04=
+=v0fd
+-----END PGP SIGNATURE-----
