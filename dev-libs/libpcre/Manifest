@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 59046451dd9a28a2a59c373b6b7f12c3 libpcre-4.2-r1.ebuild 852
 MD5 e11933575b142a8990bda3881545b63e libpcre-4.5.ebuild 1106
 MD5 e6a7a5e86e3dbcfed3918bf935a3ae9c libpcre-6.1.ebuild 1298
@@ -19,3 +22,10 @@ MD5 4e0522aaf9e2d5a196830b897f2341d2 files/digest-libpcre-4.5 61
 MD5 6f60a57bf3e47726ed16127d65ae834c files/digest-libpcre-5.0 61
 MD5 0e8194a0bf3adfbe3e1c95ec64a1ebf1 files/digest-libpcre-6.1 61
 MD5 7aefa27b2326ddccbebd14a6c845b726 files/digest-libpcre-6.3 61
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDC3vQViELBEf1JB0RAvBwAJ4w11fDpX5JL7b0IOalBlMAntgqrQCfZbjF
++myyCcEtU8LZcaP4T0AUSSY=
+=GQ4l
+-----END PGP SIGNATURE-----
