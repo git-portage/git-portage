@@ -1,7 +1,17 @@
-MD5 a4616553733440a47bc9d642d79ccfac cvsd-1.0.7.ebuild 1080
-MD5 d26bc418ba02138b58a608d04c7853bd cvsd-1.0.8.ebuild 1082
-MD5 a3bb53b43613b40d77fe766c8e24eed4 ChangeLog 2755
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 c26e69eac630925463dcf20665c82baf cvsd-1.0.7.ebuild 1080
+MD5 3a8c01c0537d2135318b40459d9e6b58 cvsd-1.0.8.ebuild 1082
+MD5 63501f01137051a0a44c13a028e7642a ChangeLog 2755
 MD5 e894c7bf94ee57217db76f5aebaca7b5 metadata.xml 256
 MD5 22391acc549ef1ba673204c6c7fe839d files/digest-cvsd-1.0.7 62
 MD5 e4b77e8006286ae7b7e93c7aee322b8f files/digest-cvsd-1.0.8 62
 MD5 99100bc796c1afe0cc7887b61038020b files/cvsd.rc6 477
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDCycuEZCkKN40op4RAlQtAJ94uI7DXw6n4JnHzqPP2RV3wxEGzwCfYESh
+/g8VX0zz+0oWdpz1O0b40LQ=
+=X+gM
+-----END PGP SIGNATURE-----
