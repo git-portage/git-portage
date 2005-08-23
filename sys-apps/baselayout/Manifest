@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 376f33d9dea19dd7d77f81f35abb53aa baselayout-1.12.0_pre6-r2.ebuild 18814
 MD5 ff608e6800fc96bfde6ae7fa09c37b56 baselayout-1.11.13.ebuild 18604
 MD5 e02bb32cac91dad28d3c05b731b37b04 metadata.xml 385
@@ -41,3 +44,10 @@ MD5 7c0cd50e4ac1dc062f5e6ab578e95659 files/copyright 2099
 MD5 08ade596f939beaf9f7b3657c5811593 files/rc-scripts-1.6.9-checkfs-lvm.patch 579
 MD5 ba767b33145b4614cf9b760516c51895 files/digest-baselayout-1.11.12-r4 70
 MD5 f96ffe6b44684809b8ec0e4450093f59 files/baselayout-1.11.10-iwconfig-2.patch 925
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDC7ctgIKl8Uu19MoRAi6cAJ9kx+o82HwaxPz1z84EY9gxFxCn9wCfYVAC
+P6llLBo9O9KZCWjiV/2dyks=
+=KJNH
+-----END PGP SIGNATURE-----
