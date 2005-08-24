@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f947170e5f0fef952a0efc7dcc947f37 erlang-8b.ebuild 1178
 MD5 aea374917adc11a2d42b0b9d1bba3598 metadata.xml 402
 MD5 92087ace1ec7f4f5fafb31419db5fafa erlang-9c-r3.ebuild 1822
@@ -21,3 +24,10 @@ MD5 e88b4d733b41026e691a981320ac7806 files/erlang-9c.patch.gz 1503
 MD5 ae2205c16664d70f5ea47d249b2e566f files/digest-erlang-9c-r3 66
 MD5 ae2205c16664d70f5ea47d249b2e566f files/digest-erlang-9c-r2 66
 MD5 28397dc6ef4a633a8084ce44fbb1c6f3 files/50erlang-gentoo.el 140
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDC8QFgIKl8Uu19MoRAlL8AJ9MqziFD69cD3PUZNPfWuxv6BDhtgCfbzPp
+6+hHp72Xjv0RyD4P4qE6TQs=
+=UYDH
+-----END PGP SIGNATURE-----
