@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ce54d0007584484f97f65f7801764cd4 ChangeLog 5440
 MD5 b8146b42d6df26229f2cdffcf4d549d7 nas-1.6c-r2.ebuild 1820
 MD5 3b67c96b73c8cb790b25e8b1bf14df3c nas-1.5-r1.ebuild 1109
@@ -16,3 +19,10 @@ MD5 53c1b622336ab2a0dabb9da8e69f7f56 files/nas-1.7-header.patch 774
 MD5 520a4d59a7e5ce53b6130d9e920c064c files/digest-nas-1.7 64
 MD5 83023e52672dc59996f4f620563b072a files/nas.conf.d 235
 MD5 e533db5e64a7cf585a37091b49735c64 files/nas.init.d 569
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDDKZXj5H05b2HAEkRAuOpAJ0b6n1EXyQWORaZkKAUMHAkoEjYqACfVz8Z
+37sOhFBKV+7B7oQays4rGq0=
+=HhGU
+-----END PGP SIGNATURE-----
