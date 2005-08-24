@@ -1,43 +1,28 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/tikiwiki/Attic/tikiwiki-1.9.0-r1.ebuild,v 1.3 2005/08/23 19:32:54 rl03 Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/tikiwiki/Attic/tikiwiki-1.8.6.ebuild,v 1.1 2005/08/24 22:40:37 rl03 Exp $
 
-inherit webapp eutils
+inherit webapp
 
 DESCRIPTION="Full featured Web Content Management System using Php and Smarty Templates"
 HOMEPAGE="http://tikiwiki.org/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
-IUSE="mysql postgres graphviz"
-KEYWORDS="~x86 ~ppc ~sparc ~amd64"
+IUSE=""
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 
 RDEPEND="virtual/php
-	mysql? ( >=dev-db/mysql-4 )
-	postgres? ( dev-db/postgresql )
-	graphviz? ( media-gfx/graphviz )
-"
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/xmlrpc2-${PV}.patch
-}
-
-pkg_setup () {
-	webapp_pkg_setup
-	einfo "Make sure your PHP is compiled with mysql or postgres support"
-	einfo "If you need PDF generation, make sure your PHP is emerged with xml2"
-}
+	media-gfx/graphviz"
 
 src_install() {
 	webapp_src_preinst
 
 	local DIR
 	local DIRENTRY
-	local DIRS="backups db dump files img/wiki
+	local DIRS="backups db dump img/wiki
 		img/wiki_up modules/cache temp temp/cache
-		templates_c templates styles maps whelp mods
-		lib/Galaxia/processes"
+		templates_c templates styles lib/Galaxia/processes"
 
 
 	# Ensure that directories exist, some don't.
@@ -59,7 +44,7 @@ src_install() {
 
 	# The bulk goes into htdocs
 	# but don't copy INSTALL and README
-	cp -pPR [[:lower:]]* ${D}/${MY_HTDOCSDIR}
+	cp -a [[:lower:]]* ${D}/${MY_HTDOCSDIR}
 
 	# Recursively set server ownership to allow server to write
 	# This is the rough equivalent of the setup.sh script
@@ -73,7 +58,6 @@ src_install() {
 			webapp_serverowned ${MY_HTDOCSDIR}/${DIRENTRY}
 		done
 	done
-	webapp_serverowned  ${MY_HTDOCSDIR}/tiki-install.php
 
 	# Setup some post-install notes for webapp-config
 	#
@@ -85,11 +69,9 @@ src_install() {
 pkg_config() {
 	einfo "Type in your MySQL root password to create an empty tiki database:"
 	mysqladmin -u root -p create tikiwiki
-}
-
-pkg_postinst() {
-	einfo "To setup a MySQL database, run:"
-	einfo "\"ebuild /var/db/pkg/www-apps/${PF}/${PF}.ebuild config\""
-	einfo "If you are using PostgreSQL, consult your documentation"
-	webapp_pkg_postinst
+	einfo
+	einfo
+	einfo "Now, point your browser to the location of tiki-install.php"
+	einfo "    ==> e.g. http://localhost/tikiwiki/tiki-install.php"
+	einfo
 }
