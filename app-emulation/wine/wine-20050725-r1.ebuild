@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/Attic/wine-20050725.ebuild,v 1.3 2005/08/23 01:13:01 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/Attic/wine-20050725-r1.ebuild,v 1.1 2005/08/24 00:19:33 vapier Exp $
 
 inherit eutils flag-o-matic multilib
 
