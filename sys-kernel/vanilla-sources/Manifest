@@ -8,7 +8,7 @@ MD5 f7adf0db13b9dd929b39b28ebde85e7d vanilla-sources-2.6.12.ebuild 493
 MD5 1e484778430c5f28cb2b5b494e684840 vanilla-sources-2.0.40-r1.ebuild 2748
 MD5 f1059a23070bb245b2279966e3cdc8f1 vanilla-sources-2.4.31.ebuild 420
 MD5 2b03b5303004069d236540fff82d3077 vanilla-sources-2.6.7.ebuild 456
-MD5 b1be19b5ecc2d694ea8eb6c1bd46e934 vanilla-sources-2.6.13_rc7.ebuild 373
+MD5 b23f382524bf88418358d7920e760a35 vanilla-sources-2.6.13_rc7.ebuild 493
 MD5 c55a0893df41401ad75e7152e9b28898 vanilla-sources-2.6.13_rc2.ebuild 496
 MD5 2518c62313ad8c01b4c904187b1791e6 vanilla-sources-2.6.11.8.ebuild 545
 MD5 0256d7df948e7ae7bea76d72793f3b07 vanilla-sources-2.6.12.1.ebuild 491
@@ -19,7 +19,7 @@ MD5 ced48fc820e569156a85ff2f8068ea1d vanilla-sources-2.6.12.3.ebuild 490
 MD5 298e120caba751b37f2282fafa550974 vanilla-sources-2.4.21.ebuild 452
 MD5 16d44f574e4f3004c8b5cb88f85bebf6 vanilla-sources-2.6.13_rc6.ebuild 497
 MD5 bd0a274b4b5fd503c4f42e57920dea4f vanilla-sources-2.6.13_rc1.ebuild 493
-MD5 96a08578e9281386267c7dc6c24eabde ChangeLog 19462
+MD5 f6c980fb5699ca032559a12e9962aea9 ChangeLog 19458
 MD5 2898ef0375f57a5dba22a8fb6827de57 metadata.xml 452
 MD5 c1e10bdb940ea241cc7a8aacbf047e93 vanilla-sources-2.6.12.5.ebuild 491
 MD5 97ebbee3ab02255ccaa15c4280e8ace2 vanilla-sources-2.4.28.ebuild 472
