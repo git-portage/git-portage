@@ -3,8 +3,8 @@ MD5 dd33182f75e512eacdf6652e505359eb shadow-4.0.4.1-r4.ebuild 5963
 MD5 314bf4f7ce691287c74208fe9719f146 shadow-4.0.7.ebuild 5582
 MD5 711f9b8bb5dde9d72417d26fa8f1f8b6 shadow-4.0.7-r3.ebuild 7054
 MD5 5946e4282004a450086ec4f043530cfb shadow-4.0.7-r4.ebuild 7187
-MD5 14251ed7e3cf0063e3d5cb3dd6c4a83e ChangeLog 22490
-MD5 2fd1c6e370dce9fdb6b99f428e5406b1 shadow-4.0.12.ebuild 7110
+MD5 7845499ca5337b409e9888dad2bbb4f8 ChangeLog 22632
+MD5 0528fcbf64cb6383f23308d400e3d58a shadow-4.0.12.ebuild 7110
 MD5 30c0eb4f3ffb1e531659cf9b69cffa14 shadow-4.0.11.1-r1.ebuild 7084
 MD5 41c23ed0904ed9071c85d13aa76d0a42 shadow-4.0.7-r1.ebuild 6582
 MD5 bbedc15fb467b91796456cd032199535 shadow-4.0.5-r2.ebuild 5443
