@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 def1db2c16736e18c4386dd32bd80aaa libnjb-2.2.1.ebuild 1068
 MD5 8b1346477a12e418214f060eec94b6a1 libnjb-2.2.ebuild 1051
 MD5 319fe8f45b51a2d31f8d4e9a4071ca10 metadata.xml 248
@@ -12,3 +15,10 @@ MD5 ee354651ff3fa41baa3e00119f65563b files/digest-libnjb-1.2 62
 MD5 786a98942a3fda4f8367f518f413731d files/libnjb-2.0_pre20050208-gentoo-multilib.patch 640
 MD5 7c3b243f6eefe2001b8ed9286411d69c files/digest-libnjb-2.2 62
 MD5 abf7c2c90f2fa0bda8417050514e1e2d files/libnjb-1.2-gentoo-multilib.patch 640
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDDPVyp5vW4rUFj5oRAk+VAKCuqzygvuQuQeHlkJe2WtT8z23rdQCgm8u+
+e5znb1dakyoVhg5nKevV028=
+=4AEg
+-----END PGP SIGNATURE-----
