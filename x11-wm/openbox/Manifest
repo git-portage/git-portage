@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 55f73f3d58297cc27969d4dcad6a3731 ChangeLog 17523
 MD5 8fc6220800cdabdff66278338255b2d2 openbox-3.3_rc1-r1.ebuild 1732
 MD5 79cff5950461065f7c400f64e3ff2c92 openbox-3.2-r1.ebuild 1504
@@ -13,3 +16,10 @@ MD5 90beb2a0e34f8958dd4c1f3312856d09 files/digest-openbox-3.2-r2 134
 MD5 90beb2a0e34f8958dd4c1f3312856d09 files/digest-openbox-3.2-r1 134
 MD5 056f24d600f8f7ad2c02642ecd41ebfa files/openbox-gcc.patch 276
 MD5 df0043ec05d0e257c30a0c1b7b28a78e files/openbox-2.3.1-epist.patch 318
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDDIVBj5H05b2HAEkRAkkZAJoC0owgWFDbe3kyf4Uk2fS4dw9GIgCgh2sr
+xhJbfyBB5ip6SK+aT925HZk=
+=LIld
+-----END PGP SIGNATURE-----
