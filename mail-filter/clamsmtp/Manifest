@@ -1,5 +1,5 @@
-MD5 b7e70bf4e8f5db6931586921fe89a120 clamsmtp-1.4.1.ebuild 1357
-MD5 d1e372f83e745a0bbaf3ef1ccdc47a04 ChangeLog 620
+MD5 0b8bd782ed880f3feef6a4828f4a11f1 clamsmtp-1.4.1.ebuild 1357
+MD5 286e2e764775693437ca8885bbcf2803 ChangeLog 620
 MD5 e4238fef843c6ceb78bd9013a90a918f metadata.xml 465
 MD5 baf953395c3097dca31171f7ebade75a files/clamsmtpd.init 462
 MD5 dfac95f01e87493f9f73b59692c19489 files/digest-clamsmtp-1.4.1 66
