@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b14a60034b1653ab8897c834b7b2d26d pam-login-4.0.11.1-r2.ebuild 3988
 MD5 cfef0ebe1a60cb042450d1e2df0ffea2 ChangeLog 8568
 MD5 a0b715d76af6c225aa029c1ca789037e pam-login-4.0.12.ebuild 3970
@@ -24,3 +27,10 @@ MD5 636f233fa173a998195016c3808173d4 files/pam-login-4.0.5-skey.patch 395
 MD5 9375147f78a25196b654616c969af9a5 files/digest-pam-login-4.0.11.1-r2 69
 MD5 7761083b62bdcb822f1b9533aab2e06c files/pam-login-3.11-lastlog-fix.patch 362
 MD5 e7f9dde204926c73a570b344556e4b1e files/digest-pam-login-3.17 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDDEHe1ZcsMnZjRyIRAnwVAJ96GFe8gP4mk5r4CrQAdsRAJOrvYwCggYnx
+1+j0CEu8Y6UVTedSPiST7eM=
+=HG90
+-----END PGP SIGNATURE-----
