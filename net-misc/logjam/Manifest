@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d393d11e7c5a3b5d219a64ebc4bda39c logjam-4.5.0.ebuild 1185
 MD5 3e5cb2e381b02c3f6e4ddeb35c3df735 logjam-4.2.2.ebuild 880
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
@@ -14,3 +17,10 @@ MD5 68dac613ab0e68a698fcac1864aeae45 files/logjam-4.4.0-gcc3.4.patch 241
 MD5 30945ddb58c8f3eb3780fcf9e48dbda3 files/digest-logjam-4.4.0 65
 MD5 30945ddb58c8f3eb3780fcf9e48dbda3 files/digest-logjam-4.4.0-r1 65
 MD5 2903f2d3b78e59f9ed8b9f012c5e2210 files/digest-logjam-4.2.2 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDDOY8KRy60XGEcJIRAjdAAJ9H++k4qmG6SpIDH2kkVKUxs0e/bQCdHfcO
+tcOCnH4hdUsJ2gLjQmtx5ho=
+=VtbK
+-----END PGP SIGNATURE-----
