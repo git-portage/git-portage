@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bab0fb0bf11fa10e9e88d4a09fb5b24d eog-2.10.0.ebuild 1176
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 9f666ab55cf3a49721c52e65e9f03f7b eog-0.6-r4.ebuild 1199
@@ -13,3 +16,10 @@ MD5 56a52e0bf2f415e3ae03f5caaaee1301 files/eog-2.11.90-pkgconfig_macro.patch 655
 MD5 479fdcdf774451d6e1cd04e63903a71f files/digest-eog-2.8.2 62
 MD5 5f786f0751774fc1e127d27e4f0c31e9 files/digest-eog-0.6-r4 59
 MD5 b328657b15163e06e96f9ff70d6c87e4 files/digest-eog-2.10.0 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDC8qAgIKl8Uu19MoRAtp8AJ0cFSANHlk84nzv3dF45eRBxvpQhQCeJSrp
+AXXO4LK2AVZjF1QJ5SjFOu0=
+=xm6i
+-----END PGP SIGNATURE-----
