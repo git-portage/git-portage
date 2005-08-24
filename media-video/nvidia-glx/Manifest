@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 932751069932b3a7396a6a463daf5405 ChangeLog 21751
 MD5 c3afc69f917a783ebd53cf2de38065dc files/09nvidia 61
 MD5 3d8b3ecb3827e2e3a9a45ac6c3210a0a files/1.0.6111/NVIDIA_glx-1.0.6111-defines.patch 437
@@ -26,3 +29,10 @@ MD5 9eb44d1c1829b1473bca4e0c73065b74 nvidia-glx-1.0.7167-r3.ebuild 7841
 MD5 1df1478b2600131ef156b45a55a576f6 nvidia-glx-1.0.7174-r5.ebuild 8239
 MD5 84e7a222a334f8b082cec9b8cd314060 nvidia-glx-1.0.7667-r1.ebuild 8189
 MD5 631767fd9620be51a62fcd6d5442c392 nvidia-glx-1.0.7676-r1.ebuild 8189
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDC8C+I1lqEGTUzyQRAu1jAJ9sMeqav8oweK5vUfiyq4a3/YLqrgCffmL6
+PuTrxQMWdssVl/X2jU81RRk=
+=2jnO
+-----END PGP SIGNATURE-----
