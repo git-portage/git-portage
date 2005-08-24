@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f1130b9e4aa1a279e80ccdaea71c8a1d gtkradiant-1.5.0_pre20041205.ebuild 1010
 MD5 9c392282a19df0c12b6a15150c130f81 metadata.xml 538
 MD5 ed6aeb4e5884d8cb72305a557de98d23 gtkradiant-1.5.0_pre20050626.ebuild 1016
@@ -14,3 +17,10 @@ MD5 031d93d17697b6512404b8a7e3a5006e files/digest-gtkradiant-1.3.12 71
 MD5 2a27da1131c5916209d6c9381c06d182 files/wolf.game 318
 MD5 e87d17f38772a874e6484462e0ce092e files/q3map2 136
 MD5 00d19c37fed45188e1c911e2b5b4a588 files/digest-gtkradiant-1.5.0_pre20050626 82
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDC730gIKl8Uu19MoRAvvGAKCAEGMRc1uKabXsVDzaSGhr2E5j3gCcCU9z
+4yxzA0TwdkJ/AP0Omoxg0F4=
+=cCn9
+-----END PGP SIGNATURE-----
