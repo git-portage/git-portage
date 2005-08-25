@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a3e041898daf24fb40cce19270eed884 cvs-1.11.17.ebuild 1533
 MD5 50f1e42f28ed65dba7d2f7d1f37c1b65 cvs-1.12.12.ebuild 1813
 MD5 5013179b1f3eab5b3127de8372c57a1a metadata.xml 162
@@ -30,3 +33,10 @@ MD5 9112219b7250bf9ab2f36fcc4bd7d030 files/cvs.pam-include 74
 MD5 29a53f7939c0d2ea2b7457d59daee7c0 files/cvs-1.12.11-klocwork.patch 2824
 MD5 a3b61b72d72962b0f4149a53c5d44671 files/digest-cvs-1.11.19 276
 MD5 f508ce9e581877cbd33e11fbac72fc59 files/digest-cvs-1.11.18 276
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDDdCSKRy60XGEcJIRAj7WAJ92y5njrojiXftexxHf0qqj/pO1HQCdGnJU
+SsmXagSP3Gx19x132x6Maig=
+=9bRG
+-----END PGP SIGNATURE-----
