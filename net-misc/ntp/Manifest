@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 aa73d5edf312beeab44fa9d58a603ad4 metadata.xml 636
 MD5 7e567989a1392464a324fd0cd64e54a3 ntp-4.2.0-r2.ebuild 3815
 MD5 4874c08acda470ce7373d36b64c39c09 ntp-4.1.2.ebuild 3162
@@ -35,3 +38,10 @@ MD5 621c8a8e9589eb73a7f51095d8fca090 files/ntp-4.2.0-ntpd-using-wrong-group.patc
 MD5 e327d521e4dfb0c967941eeb84ad9207 files/ntp-4.1.1b-syscall-libc.patch 424
 MD5 24574e6ad1b468152839c10361b51a0f files/4.2.0-linux-config-phone.patch 711
 MD5 759c1adb57e9c61f519fe938902f1df7 files/4.2.0.20040617-errno-fix.patch 493
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDDkIbgIKl8Uu19MoRAkGbAJ93L0sGaFVial745bEjSP530JXc1gCfQovv
+E4zXWfGAegRASsEtJKopa6g=
+=Pzu9
+-----END PGP SIGNATURE-----
