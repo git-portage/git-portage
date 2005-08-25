@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d6e80ad850f77e4f218af79425317293 ChangeLog 9744
 MD5 b0fcd63748ba854af413d3e8bd5ac333 flac-1.1.2-r2.ebuild 1908
 MD5 fd8fc772cc7691fbf3a5e71c33e1d825 flac-1.1.2-r3.ebuild 1805
@@ -9,3 +12,10 @@ MD5 7070b10e66383782b73856e6dc37ba70 files/digest-flac-1.1.2-r3 128
 MD5 d251cedb35cba423848e2e708f0f0773 files/flac-1.1.1-altivec.patch.gz 5705
 MD5 97d7acba1f1548757a56330dd8ba7aa0 files/flac-1.1.1-m4.patch 1175
 MD5 bf28df385b4747a614fb93e31411b5de files/flac-1.1.1-libtool.patch 4041
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDDagbj5H05b2HAEkRAmUJAJsEjD2w1IyeMzxJipDw/yMhV1s8RwCcD7QP
+0eGomssvW+EsWeqJ/NfV2GQ=
+=6D7t
+-----END PGP SIGNATURE-----
