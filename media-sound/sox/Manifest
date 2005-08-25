@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ad6a51f2745792e7b01e0dde802888e7 ChangeLog 6508
 MD5 33bdd939d4c9c9e11357c14f48ab72fb sox-12.17.6-r1.ebuild 1501
 MD5 087985da4cb716eba326833a8902b5d2 sox-12.17.7-r1.ebuild 1277
@@ -17,3 +20,10 @@ MD5 078b05843747731261bbb166597697f0 files/digest-sox-12.17.7-r2 63
 MD5 42f6be2a6de49e8fe6324d947c34a347 files/sox-12.17.7-largefile.patch 297
 MD5 484937b1ac7761dfb4d5bfb011e8cae7 files/sox-install.patch 2917
 MD5 923124d7fbe0a70712b4991ae52a968b files/sox-wav-segfault.patch 255
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDDcLZj5H05b2HAEkRAm8nAJ0dUolcWORwlN9pkAh57apgFKVHOQCgkqdj
+xjJBfwf6GOGwIFi61WXT2G0=
+=si7o
+-----END PGP SIGNATURE-----
