@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 52a821ddc6df9002e54f63de7ca3e73b libao-0.8.3-r1.ebuild 844
 MD5 b9c077f26586aadc00e9e212a01ad496 libao-0.8.5.ebuild 1229
 MD5 c3f0408a07f0c5d2af3ebcffcd836154 metadata.xml 257
@@ -17,3 +20,10 @@ MD5 1c57b32742f5d9c82ff22b45b1f5865e files/digest-libao-0.8.4 63
 MD5 e2d17570d5e260a709cfe3715107d94d files/digest-libao-0.8.5 63
 MD5 483a5fe5056608b9c0d47a944670fc87 files/digest-libao-0.8.6-r1 129
 MD5 1fe9b2eddcd0bcc2bc223d29725f4b1b files/digest-libao-0.8.6 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDDkNlgIKl8Uu19MoRAuMaAJwNvFk8l9m6+0FhHPrmXgCFu9ANCACbBboM
+zv/fAvPk6dJsXjAYibKWh6I=
+=EZHN
+-----END PGP SIGNATURE-----
