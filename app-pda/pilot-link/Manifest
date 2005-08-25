@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 075fea99b82d61028585dc3e42f00466 metadata.xml 156
 MD5 963c9d14f1ededb062f4d5b76acdcfd9 pilot-link-0.11.8.ebuild 1893
 MD5 afe7ff0fc77e5555913d8d3de59238bc pilot-link-0.11.8-r1.ebuild 2252
@@ -11,3 +14,10 @@ MD5 a90104dea453f1eed8b69ed821118caa files/pilot-link-0.11.8-java_fPIC_fix.patch
 MD5 93ddce2c38bb25e99877e9f08414d740 files/pilot-link-0.11.8-m4.patch 123
 MD5 bf74434daf1ebd09156aad1d90c93675 files/pilot-link-0.11.8-java_compile_amd64.patch 579
 MD5 73901859bb01a4c7aa0dbddf1d6e898a files/pilot-link-0.11.8-java_install_ppc.patch 560
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDDk/GgIKl8Uu19MoRAqbsAJ4q1gqjjVMFn7YMp//4OcxhcLUSLACdEIjc
+gMZqCrCRR5f9PFPtNIek+bQ=
+=g/uH
+-----END PGP SIGNATURE-----
