@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/cdk/Attic/cdk-4.9.11.20031210-r1.ebuild,v 1.4 2005/08/25 03:06:51 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/cdk/Attic/cdk-4.9.11.20031210-r2.ebuild,v 1.1 2005/08/25 03:06:51 agriffis Exp $
 
 MY_P=${P/.2003/-2003}
 DESCRIPTION="A library of curses widgets"
@@ -18,7 +18,8 @@ DEPEND=">=sys-libs/ncurses-5.2
 S="${WORKDIR}/${MY_P}"
 
 src_compile() {
-	use ia64 && append-flags -fPIC
+	# libcdk.a is linked into a shared object in licq
+	append-flags -fPIC
 
 	econf \
 		--with-ncurses --with-libtool \
