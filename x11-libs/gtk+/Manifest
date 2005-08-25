@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a04fdf8dd766fa78cf673f7388d65931 ChangeLog 25809
 MD5 afb0e5aa8f6410c088c2e177a17efe5d gtk+-1.2.10-r10.ebuild 1719
 MD5 88d6d5cc6a5a4f0e0426646667134046 gtk+-1.2.10-r11.ebuild 1831
@@ -22,3 +25,10 @@ MD5 0ec83a4bf20f79d85eb2976b58c39465 files/gtk+-1.2.10-m4.patch 220
 MD5 d94ff41d82a8f0c56dd68a2fa71ef2fc files/gtk+-2.2.1-disable_icons_smooth_alpha.patch 1383
 MD5 0df92cf64a9324ef85fc72885a4285b1 files/gtk+-2.4.9-ppc64.patch 1732
 MD5 36d00cf3b4035e6cb9873ade9ed1a9ce files/gtkrc 627
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDDg9nBtvusYtCZMsRAt2DAJ91BJZ2UULo9egGRelnXkpAgE5nnQCcDtKG
+uJJEErsIkf4eiNz0kR3LFew=
+=qjhZ
+-----END PGP SIGNATURE-----
