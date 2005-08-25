@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7a20e26b7cddf8179591f77334b5641c linux-headers-2.4.25.ebuild 3410
 MD5 6a3b45eded92aace1a5df1a478fa977b linux-headers-2.4.26.ebuild 3340
 MD5 83dfc41af41e560a10c1f0ed5c2a8c11 linux-headers-2.4.21-r1.ebuild 3933
@@ -32,3 +35,10 @@ MD5 33d51532d0f696fefa15593b2cf2f6de files/digest-linux-headers-2.0.40 66
 MD5 76c239f03201f79b357eafb37e213bb6 files/linux-headers-2.4-armeb-stat.patch 1406
 MD5 79ee1ad9f4629595cd8d0cd20ca56dc1 files/digest-linux-headers-2.4.23 67
 MD5 9854e47afccae85e887bcb970fc68890 files/digest-linux-headers-2.4.21-r1 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDDccYKRy60XGEcJIRAs1wAJ94kESbiLb+TdXv/KEgyrfW6HVJeACeObDy
+lEoLHv5ZmqC8gLoaAPnMH2w=
+=RA6r
+-----END PGP SIGNATURE-----
