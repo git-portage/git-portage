@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0eb263f37a1d27990436054b98ed0f99 mldonkey-2.6.0.ebuild 3563
 MD5 29c93beb8a325548b6d81f1c5b311385 mldonkey-2.5.16-r10.ebuild 2691
 MD5 a92ec1a9e1c381c49b544c81221a8bd0 mldonkey-2.5.16-r9.ebuild 2660
@@ -25,3 +28,10 @@ MD5 05622542c4f7a93553ab90d66f871b2d files/mldonkey-2.6.0-gtk2-gentoo.patch 497
 MD5 93e16748ad44af182177978057266aa7 files/mldonkey-gui.desktop 263
 MD5 ac93ed074d62909b2a496045f0740127 files/mldonkey 336
 MD5 be0c71929c461b50601e8715706a4a16 files/mldonkey-2.5.16-configure.patch 540
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDDx6uZ/iYVBmujdURAul7AKDws7naynXg84NnfbGzUWCVvCshqQCbB16F
+v260d8KVxgptbIHWV/BqUHs=
+=rdwP
+-----END PGP SIGNATURE-----
