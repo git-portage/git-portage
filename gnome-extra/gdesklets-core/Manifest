@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f8a0b9310dac5018eb5ba6cb1d3c628c gdesklets-core-0.35.1.ebuild 2077
 MD5 9a88e3777b00b5f3324d99e7b9afadb1 gdesklets-core-0.34.3-r1.ebuild 2389
 MD5 4705e343fef6901429f4e28aaa891f27 gdesklets-core-0.35.2-r1.ebuild 2426
@@ -28,3 +31,10 @@ MD5 ac3a171744ef9b36bed102088be244a9 files/digest-gdesklets-core-0.35_rc1 132
 MD5 01751d3aa9192793a33c02d2126192c1 files/gdesklets-displays.desktop 230
 MD5 66ab1d1c9445bb382edafdb15eee161d files/digest-gdesklets-core-0.35-r1 129
 MD5 312fdc938b56dedf0fab04efe6266cb1 files/digest-gdesklets-core-0.33.1 131
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDD5l5BXaUFmZvwyMRAsfuAKC5p0P1JdjcncSu6MuyPeryOhZh4QCeLJCb
+MksAoMGn8ONs7EjYpRh0tC8=
+=gfWO
+-----END PGP SIGNATURE-----
