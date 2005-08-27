@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c30d64cc29b742b593f6e92a69c1a4a7 snes9x-1.42-r1.ebuild 1813
 MD5 72cc36a1a49aa65e6dacde3e88227ce7 snes9x-1.43.ebuild 2401
 MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
@@ -14,3 +17,10 @@ MD5 dbd6370fa28b91acc3b14b5534f87866 files/digest-snes9x-1.43-r1 68
 MD5 12216340a66b7cfccf1891ca058d9335 files/nojoy.patch 507
 MD5 7785101201919ebc94bcd95e2cab6017 files/snes9x-1.43-key-bindings-fix.patch 2526
 MD5 29f4c8bf43e00e929c25d85ec4a06b70 files/digest-snes9x-1.42-r1 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDD/FrgIKl8Uu19MoRAnKFAJ93bnp+QljF97WFz7FybnFnpVtgcwCfd1OV
+19t38n2L96LAldckNjcSDzA=
+=q4W4
+-----END PGP SIGNATURE-----
