@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 34517f758ccc3330594d30649755508b bittorrent-4.0.4.ebuild 2039
 MD5 18680c0183f054d689713ffeea4353aa bittorrent-4.0.2.ebuild 1966
 MD5 8aefbc0e49db723ca1ad02d0c409cd49 metadata.xml 160
@@ -15,3 +18,10 @@ MD5 8254615ee527cd608123c83de2616ede files/bttrack.rc 631
 MD5 7779a7eaf51eb9f84da8a588050f53fa files/favicon.ico 1406
 MD5 139c4a4367e37fcf7dc6bd18515456c2 files/btdownloadgui.desktop 166
 MD5 13f6b888eed806a8d4ce9cea22a7bacc files/digest-bittorrent-3.4.2-r2 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDEMd2gIKl8Uu19MoRAglTAJ4oVObpCYKAnK1PnwugUclfQSXY1ACfXkEI
+Eby2+/Cd+v3iDFsNuJx6NMk=
+=4cSQ
+-----END PGP SIGNATURE-----
