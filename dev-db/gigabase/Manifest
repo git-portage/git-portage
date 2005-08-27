@@ -3,8 +3,8 @@ MD5 95c2a0adc16e9ed39fda577f98adca00 gigabase-2.75.ebuild 982
 MD5 6c0a1533f053ae1b320f4921c6f2ec35 gigabase-3.31.ebuild 974
 MD5 8b96338c3344f5f6b642a31f32580c05 gigabase-2.79.ebuild 971
 MD5 de1d8ce40a86c2872198b4db2a1caf31 gigabase-2.76.ebuild 971
-MD5 8c599d0c644980f739322d5383790215 gigabase-3.41.ebuild 975
-MD5 74f95a04bdd75a447665cb933004b4b0 ChangeLog 1237
+MD5 7960421eed530d524596ecd54b19d2c4 gigabase-3.41.ebuild 976
+MD5 214a5c7fd397ddda0b068757f58033f4 ChangeLog 1237
 MD5 dffd46174e78b327c834fc3e4b1cf848 metadata.xml 160
 MD5 dc833cb1d5add73f0240ee5468db86d9 files/digest-gigabase-2.75 66
 MD5 89004ef344369717d00af826ef49d8e0 files/digest-gigabase-2.76 66
