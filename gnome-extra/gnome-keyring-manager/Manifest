@@ -1,4 +1,4 @@
-MD5 ea53054782176fad25d097776257cd27 ChangeLog 536
+MD5 1e808659400dfec73a58cc22a2493ae4 gnome-keyring-manager-2.11.92.ebuild 887
+MD5 c39ab2265cbb77ce1c22f06ce2ced623 ChangeLog 764
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
-MD5 b20f3061cb6730ef80cd396fe2511133 gnome-keyring-manager-2.11.1.ebuild 861
-MD5 beffb0d2458ea2e2917871a31c5620da files/digest-gnome-keyring-manager-2.11.1 81
+MD5 85d7bb7404b25432a5e3aeda80695d5f files/digest-gnome-keyring-manager-2.11.92 82
