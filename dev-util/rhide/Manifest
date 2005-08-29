@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 82621f05d22c15020fffaf146ac43ea1 rhide-1.5.20050823.ebuild 7146
 MD5 5784a2af44e325cdde5b45fc6038cc36 ChangeLog 2777
 MD5 77beedd15d778a0153d122b14854718e rhide-1.5-r1.ebuild 7004
@@ -13,3 +16,10 @@ MD5 8c387a4a4dba33ca685bd5adeb06cd86 files/rhide-1.5.20050823-amd64-support.patc
 MD5 85d4b0e04b34c3c230795c9588ef044b files/rhide-1.5-rhtvision2.patch 3528
 MD5 5fc15112eb4dc31a46ef3e687d90279a files/digest-rhide-1.5 261
 MD5 5a96d86d3e84dac00c7042aaa9107ee7 files/tvrc 123
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDEnjW1ZcsMnZjRyIRAsTxAJ9MYUXfKHiWHSCJ+0OOQzklQx7g8ACgsyyK
+UunhkqfUz5k/+AgEiBUjLrk=
+=2/0W
+-----END PGP SIGNATURE-----
