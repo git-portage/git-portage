@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/Attic/vanilla-sources-2.6.13_rc6.ebuild,v 1.1 2005/08/07 22:25:27 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/Attic/vanilla-sources-2.6.13.ebuild,v 1.1 2005/08/29 10:21:42 brix Exp $
 
 K_NOUSENAME="yes"
 K_NOSETEXTRAVERSION="yes"
