@@ -1,16 +1,16 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/Attic/gentoo-sources-2.6.12-r6.ebuild,v 1.6 2005/07/24 15:56:43 plasmaroo Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/Attic/gentoo-sources-2.6.13.ebuild,v 1.1 2005/08/29 15:48:42 dsd Exp $
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="10"
+K_GENPATCHES_VER="1"
 IUSE="ultra1"
 inherit kernel-2
 detect_version
 detect_arch
 
-KEYWORDS="amd64 ia64 ppc ppc64 ~sparc x86"
+KEYWORDS="~x86"
 
 HOMEPAGE="http://dev.gentoo.org/~dsd/genpatches"
 
