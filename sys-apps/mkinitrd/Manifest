@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 a0e11176b73cb67f8e565b125ef9a09e mkinitrd-3.5.7-r3.ebuild 1327
 MD5 e1f6d4bd96a8f8b27044e085e77d81d7 mkinitrd-4.2.0.3.ebuild 1104
@@ -9,3 +12,10 @@ MD5 1a8259233cb009f44a8fe20a8aa828b5 files/digest-mkinitrd-3.5.7-r3 66
 MD5 9a5d79902ad7c395cb10b251d0c1e4f2 files/digest-mkinitrd-4.2.0.3 68
 MD5 4e09d06fedbff01e9e17219e50873694 files/mkinitrd-lvm_statics.diff 591
 MD5 1a8259233cb009f44a8fe20a8aa828b5 files/digest-mkinitrd-3.5.7-r2 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDEmt3gIKl8Uu19MoRAtPXAJ9m9w6nnW7wI3m5P0eCQXJIydRHPgCePTYX
+m3Z7d1Exo/xA4AZlAHO6gak=
+=47fE
+-----END PGP SIGNATURE-----
