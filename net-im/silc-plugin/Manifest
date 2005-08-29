@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 519516107c584f989f4808400037cab0 silc-plugin-1.0.1-r2.ebuild 3209
 MD5 8c092a87d1b0466e36ba574c2a81b17f silc-plugin-1.0.1-r4.ebuild 3431
 MD5 ee20a764d4ace9b102fc2ce743b88a0f silc-plugin-1.0.1-r1.ebuild 3164
@@ -12,3 +15,10 @@ MD5 ce1069db2e4cfc5c0b0d4b988c6c053c files/digest-silc-plugin-1.0.1-r1 202
 MD5 ce1069db2e4cfc5c0b0d4b988c6c053c files/digest-silc-plugin-1.0.1-r2 202
 MD5 ce1069db2e4cfc5c0b0d4b988c6c053c files/digest-silc-plugin-1.0.1-r3 202
 MD5 ce1069db2e4cfc5c0b0d4b988c6c053c files/digest-silc-plugin-1.0.1-r4 202
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDEyOjQlM6RnzZP+IRAnz8AKCaq6jrwYPrQ6/a76LnpEodbsHXMgCgwUhN
+0coFsWPo8TJXULlNqXP6/Ig=
+=Egjx
+-----END PGP SIGNATURE-----
