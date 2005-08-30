@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 799f0b61a3a686b4074bd61acc572c5c metadata.xml 1003
 MD5 fc311d6ac7b19d831f6e18e9588c2053 valgrind-3.0.1.ebuild 1690
 MD5 c0a200046e327d2c145fc55f2611607f ChangeLog 5691
@@ -16,3 +19,10 @@ MD5 c67ef295757f9c8b4e9be146f6c4f873 files/valgrind-2.4.1-dont-trample-cflags.pa
 MD5 d177de2c2f79d24d4ad74644ee49f667 files/valgrind-2.4.1-static-const.patch 4397
 MD5 24971d28d91da6c61168fa217d10b47b files/valgrind-3.0.0-pie-fix.patch 864
 MD5 bcce75140a2ec484339b6d1844e20a0a files/digest-valgrind-3.0.1 68
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDFLsnMGnpIbeahxwRAnblAKCujbxLNGuaMTeTVV4Y7/pkD6PILACgp5tb
+0InkqH9bkQAJ//1vfeNGao0=
+=cN6Y
+-----END PGP SIGNATURE-----
