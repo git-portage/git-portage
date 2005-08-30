@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/util-vserver/Attic/util-vserver-0.30.208-r1.ebuild,v 1.4 2005/08/30 06:05:36 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/util-vserver/Attic/util-vserver-0.30.208-r2.ebuild,v 1.1 2005/08/30 06:05:36 hollow Exp $
 
 inherit eutils
 
@@ -51,13 +51,8 @@ src_install() {
 	rm -f ${D}/etc/init.d/*
 
 	# and install gentoo'ized ones:
-	exeinto /etc/init.d/
-	newexe ${FILESDIR}/0.30.208-r1/vservers.initd vservers
-	newexe ${FILESDIR}/vprocunhide vprocunhide
-
-	# install conf.d files
-	insinto /etc/conf.d
-	newins ${FILESDIR}/0.30.208-r1/vservers.confd vservers
+	doinitd ${WORKDIR}/init.d/{vservers,vprocunhide}
+	doconfd ${WORKDIR}/conf.d/vservers
 
 	# install vserver build script for gentoo guests
 	dosbin ${WORKDIR}/tools/vserver-new
