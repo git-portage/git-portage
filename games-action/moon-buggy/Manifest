@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3374717737559204c314e85f1b985e98 ChangeLog 2190
 MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
 MD5 883d685feb239ba0fbf0cede4b9fe5f8 moon-buggy-0.5.53-r1.ebuild 1211
@@ -6,3 +9,10 @@ MD5 86de3436eb964e989841b64b3414c55d moon-buggy-1.0.ebuild 1201
 MD5 dded8579a8efa755dbce484a8d43e490 files/digest-moon-buggy-0.5.53 69
 MD5 d8dd90649a12dad65b4887cbf5b5a748 files/digest-moon-buggy-0.5.53-r1 143
 MD5 98bd89cdb6b59e28efa4e3f8435cde60 files/digest-moon-buggy-1.0 137
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDFHyvwUpWvClEHQoRApG2AJ9bDuc/2Z/yE7SLwvbfND5erGMoswCfQY65
+UUII9z3Po1uws6YwNl5/yBw=
+=/0GP
+-----END PGP SIGNATURE-----
