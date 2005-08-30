@@ -1,5 +1,5 @@
-MD5 b14311afb284acf56180f93f3b7372bf xorg-server-0.99.1-r5.ebuild 3704
-MD5 6d273b28844a44a1057bdd2aa1eb98ba ChangeLog 6873
+MD5 790669b658cbafeb12022147568f5d61 xorg-server-0.99.1-r5.ebuild 3700
+MD5 520d1e65c678874d2aee81d915d4e6c7 ChangeLog 6869
 MD5 1fa8d5da48c29537eeca2a0b63fd31a2 files/fix-xnest.patch 682
 MD5 bef863b379ee69c1339b0e01e4d51284 files/0.99.1-r5-check-for-glproto.patch 859
 MD5 09038114af03ae42879f9729972ce96e files/digest-xorg-server-0.99.1-r5 241
