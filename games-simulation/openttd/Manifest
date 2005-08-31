@@ -1,6 +1,16 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7efefbbe81a05cbc5d4e96203f047fda metadata.xml 245
 MD5 44e37a7863de4415a5b4506e41cac6cc openttd-0.4.0.1-r1.ebuild 4349
 MD5 f30148c9a866518fbe2a3ff864bf52eb ChangeLog 2926
 MD5 58b6f8b5a58925f558524fcb4c2711fc files/digest-openttd-0.4.0.1-r1 75
 MD5 43ec527a9d656d58d852c2a828458840 files/openttd-0.4.0.1-buffer-checks.patch 6632
 MD5 a169eb5c8572ee01be52c4accf2608a2 files/openttd.initd 529
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDFi5GgIKl8Uu19MoRAoucAJ4iMs3Pvt6AbH3Skp5gnb8NQBnXbQCfWpef
+zmYPIP4odss96btzEoFe67U=
+=O99E
+-----END PGP SIGNATURE-----
