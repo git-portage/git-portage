@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6bdc3fd336e28ca197169b5f14a2535c pure-ftpd-1.0.20-r2.ebuild 2747
 MD5 28e68e920aa5281e4896b38b38a1bb7c pure-ftpd-1.0.20-r1.ebuild 2704
 MD5 5b40cd20999fb93b00da3eab3fe722e5 ChangeLog 7897
@@ -9,3 +12,10 @@ MD5 db2ba34b2491a9fb5042f78c029f6386 files/pure-ftpd.rc6-r1 741
 MD5 86b7638f0ed01530fff30204ba6b5ce7 files/pure-ftpd.xinetd 238
 MD5 0c2b784d8fe62db6dae7e77e6ac5a602 files/digest-pure-ftpd-1.0.20-r1 69
 MD5 0c2b784d8fe62db6dae7e77e6ac5a602 files/digest-pure-ftpd-1.0.20-r2 69
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDFanI8zY1VwezZiERAkHQAJ9MA+vhonG59vuNzI4PTKpiUbgMDwCeJllF
+7gGhzWG9qGaeMtM4UE+Qhtc=
+=S6Sr
+-----END PGP SIGNATURE-----
