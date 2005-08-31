@@ -2,8 +2,8 @@ MD5 5ef08e685400da84661b9f037d81a668 epiphany-1.6.0-r3.ebuild 1539
 MD5 d89a18b9e1f3c752a5ea444c4ccfc52f epiphany-1.6.3.ebuild 1387
 MD5 79354a721dacc0b0c07027a8d6c6a636 epiphany-1.7.5.ebuild 1823
 MD5 367a39d041ceb2efe66ccac8426e610d epiphany-1.4.8.ebuild 1458
-MD5 39e28e1402fb37184a7541512be26dc0 ChangeLog 17220
-MD5 5e9cb659684ea9dfe088b45c284db9d6 epiphany-1.6.4.ebuild 1541
+MD5 7b99ae4699130a520c37ebb8185d581d ChangeLog 17219
+MD5 982f8c580fc0754ef3ba6388c211e46f epiphany-1.6.4.ebuild 1540
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 2a6d9343d321b67fb737cb87301facfc files/epiphany-1.6.0-wallet_password.patch 1307
 MD5 3e5d6d82d44078ec1c95566207f9bad1 files/epiphany-1.6.3-fix_includes.patch 369
