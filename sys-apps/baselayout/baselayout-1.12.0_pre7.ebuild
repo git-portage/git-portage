@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.12.0_pre6-r1.ebuild,v 1.1 2005/08/23 10:42:40 uberlord Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.12.0_pre7.ebuild,v 1.1 2005/08/31 17:16:56 uberlord Exp $
 
 inherit flag-o-matic eutils toolchain-funcs multilib
 
@@ -32,9 +32,6 @@ PROVIDE="virtual/baselayout"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-
-	# Fix wireless checking and dhcpcd required version
-	epatch "${FILESDIR}/${PN}-${PV}-1420.patch"
 
 	# Setup unicode defaults for silly unicode users
 	if use unicode ; then
@@ -456,21 +453,21 @@ pkg_postinst() {
 	# src_install, then merge will fail.  AFAIK there is no point to
 	# this symlink except for misconfigured grubs.  See bug 50108
 	# (05 May 2004 agriffis)
-	ln -sn . ${ROOT}/boot/boot 2>/dev/null
+	ln -sn . "${ROOT}"/boot/boot 2>/dev/null
 
 	# Set up default runlevel symlinks
 	# This used to be done in src_install but required knowledge of ${ROOT},
 	# which meant that it was effectively broken for binary installs.
-	if [[ -z $(/bin/ls ${ROOT}/etc/runlevels 2>/dev/null) ]]; then
+	if [[ -z $(/bin/ls "${ROOT}"/etc/runlevels 2>/dev/null) ]]; then
 		for x in boot default nonetwork single; do
 			einfo "Creating default runlevel symlinks for ${x}"
-			mkdir -p ${ROOT}/etc/runlevels/${x}
-			for y in $(<${ROOT}/usr/share/baselayout/rc-lists/${x}); do
+			mkdir -p "${ROOT}"/etc/runlevels/${x}
+			for y in $(<"${ROOT}"/usr/share/baselayout/rc-lists/${x}); do
 				if [[ ! -e ${ROOT}/etc/init.d/${y} ]]; then
 					ewarn "init.d/${y} not found -- ignoring"
 				else
-					ln -sfn ${ROOT}/etc/init.d/${y} \
-						${ROOT}/etc/runlevels/${x}/${y}
+					ln -sfn /etc/init.d/${y} \
+						"${ROOT}"/etc/runlevels/${x}/${y}
 				fi
 			done
 		done
