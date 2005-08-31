@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6fbbdb8a3dfb1d323229fdd21cbbcb23 dhcpcd-1.3.22_p4-r5.ebuild 1944
 MD5 b1103dd25a7cfdc577b6722ddcd0e7da dhcpcd-1.3.22_p4-r11.ebuild 2031
 MD5 fdd16eb07a7e7971f0340ac3c9a81269 dhcpcd-1.3.22_p4-r12.ebuild 2908
@@ -16,3 +19,10 @@ MD5 daaf0c8fa44a481c8943f585ff870714 files/digest-dhcpcd-1.3.22_p4-r11 224
 MD5 daaf0c8fa44a481c8943f585ff870714 files/digest-dhcpcd-1.3.22_p4-r12 224
 MD5 e0bb9c921a368634a1e4f77c975c4726 files/dhcpcd-1.3.22_p4-security.patch 340
 MD5 be85439617940623ae04f72797bbf3e4 files/dhcpcd-1.3.22_p4-gentoo-config.patch 11908
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDFazfKRy60XGEcJIRAiOHAJ9aL+zU4W3aSpVMi5qrl24Q15Dc/ACeIJMk
+QdXkQl7OE2329RWgaPvBKY0=
+=/Zve
+-----END PGP SIGNATURE-----
