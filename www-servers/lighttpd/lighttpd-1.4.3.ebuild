@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.4.2.ebuild,v 1.3 2005/08/31 14:34:46 lu_zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.4.3.ebuild,v 1.1 2005/09/01 14:22:35 ka0ttic Exp $
 
 inherit eutils
 
@@ -85,7 +85,7 @@ pkg_setup() {
 		ewarn "Otherwise you lose support for some core options such"
 		ewarn "as conditionals and modules such as mod_re{write,direct}"
 		ewarn "and mod_ssi."
-		epause 5
+		ebeep 5
 	fi
 }
 
@@ -105,10 +105,6 @@ src_unpack() {
 	# dev-python/docutils installs rst2html.py not rst2html
 	sed -i -e 's|\(rst2html\)|\1.py|g' doc/Makefile.in || \
 		die "sed doc/Makefile.in failed"
-
-	# fix a missed /tmp path so that all the tests pass
-	sed -i -e 's|"\(/tmp\)|"@SRCDIR@\1|' tests/lighttpd.conf || \
-		die "sed tests/lighttpd.conf"
 }
 
 src_compile() {
@@ -192,7 +188,7 @@ pkg_postinst () {
 		ewarn "As of lighttpd-1.4.1, Gentoo has a customized configuration,"
 		ewarn "which is now located in /etc/lighttpd.  Please migrate your"
 		ewarn "existing configuration."
-		ebeep 3
+		ebeep 5
 	fi
 	echo
 }
