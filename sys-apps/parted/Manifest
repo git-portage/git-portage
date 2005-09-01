@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 df73a0d935171eeafb86287f2fafba71 parted-1.6.23.ebuild 1219
 MD5 2f22c6b01677f3ed96b8bfac3efe007a parted-1.6.6.ebuild 1271
 MD5 48a1f3c931b8ffc893588624278f457b parted-1.6.20.ebuild 1477
@@ -15,3 +18,10 @@ MD5 5e556d20415f027814924e2a17b18ccb files/digest-parted-1.6.20 138
 MD5 d766d64a911c4a7efc8b87e16bf84aa6 files/digest-parted-1.6.22 66
 MD5 0a7083e4e182e3bf230f20d1b0c54ff2 files/digest-parted-1.6.23 66
 MD5 b2b5bb6b91f1db8dd5b437e74c2153bc files/005_all_parted-1.6.3-pyparted.patch 433
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDFxJbKRy60XGEcJIRAl0/AJ9lNqC/4zjZxza6bfqyDk5GonD9LACePidg
+FD/fpOWvWnBZN8o92kamxZM=
+=oqyN
+-----END PGP SIGNATURE-----
