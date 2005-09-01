@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 26b934b072905fec164de75cdbaeb719 ChangeLog 42046
 MD5 0229dd30ac3bb254b8f117c209bb89b3 perl-5.8.7.ebuild 19135
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
@@ -23,3 +26,10 @@ MD5 f7324a62f22aabde3387b7e8a8b2106e files/perl-reorder-INC.patch 1141
 MD5 bd75f0242e3b7791803d089c38a3f920 files/CAN-2005-0156-suid.patch 703
 MD5 01af75daf3d222a668059e90d78a1f9d files/perl-nonblock.patch 400
 MD5 c2612d59f380ad6e0c2de4d941e83dfd files/perl-cleaner 8879
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDFzULcsIHjyDViGQRAjkkAKDISs0Z8A1Wja8dqL+UU91bpxxFHgCgyQrv
+bXkrhEB3TebPAzwBNtY1/OQ=
+=aU6i
+-----END PGP SIGNATURE-----
