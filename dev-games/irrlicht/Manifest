@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b0fc6ca5b139ee250e55224ef04f4e64 irrlicht-0.11.0.ebuild 1698
 MD5 ad41838cd74c70f9c72295bda4662786 metadata.xml 790
 MD5 283af2669b7fb7a7b672f112fc509734 irrlicht-0.7.1.ebuild 1441
@@ -14,3 +17,10 @@ MD5 0ad2514a81760732b181856cf7eab90e files/digest-irrlicht-0.12.0 66
 MD5 33d681a58fa24489d6bdf9f48346ed08 files/0.7.1-jpeg.patch 536
 MD5 9e43009bf90ea86626836ef35b62aec5 files/irrlicht-0.10.0-opengl.patch 648
 MD5 1088412668e0f0efbb237c7bc74a4ebc files/digest-irrlicht-0.11.0 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDFo3YgIKl8Uu19MoRApr4AJ4jVmwmJp5tK+1cdUVm/6IzObNbbwCfXkYE
+tzFx7s3CK47g7juCdtG3CzM=
+=BpjZ
+-----END PGP SIGNATURE-----
