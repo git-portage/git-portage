@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 c74bbdb62b8f3e4b8669fa8133d070c2 gettext-0.14.5.ebuild 3595
 MD5 f46f927893861e2d082d7b836f597ef7 gettext-0.14.2.ebuild 3509
@@ -19,3 +22,10 @@ MD5 38756cea2e4f8e36c2e45b890f1a7463 files/50po-mode-gentoo.el 183
 MD5 ba2eaf73c69d33eeb6f259f2c2da4ded files/digest-gettext-0.14.5 67
 MD5 0e4a00cc30a91523c838cd17b5841399 files/digest-gettext-0.14.1-r1 67
 MD5 44ad3082200305087e6244f5a2665892 files/digest-gettext-0.14.2 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDFqTTgIKl8Uu19MoRAnQtAJ95wC1RS0d/jNmqADurIKtKeRLIUACfWiXP
+OqMgwMoJ2b4uTUCJHGOiJ6A=
+=2XgG
+-----END PGP SIGNATURE-----
