@@ -1,10 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/gnokii/Attic/gnokii-0.6.4.ebuild,v 1.2 2005/05/19 10:49:28 gmsoft Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/gnokii/Attic/gnokii-0.6.4.ebuild,v 1.3 2005/09/01 17:01:52 mrness Exp $
 
 inherit eutils flag-o-matic
 
-DESCRIPTION="a client that plugs into your handphone"
+DESCRIPTION="user space driver and tools for use with mobile phones"
 HOMEPAGE="http://www.gnokii.org/"
 SRC_URI="http://www.gnokii.org/download/${P}.tar.bz2"
 
