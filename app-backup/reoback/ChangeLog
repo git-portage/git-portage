@@ -1,6 +1,15 @@
 # ChangeLog for app-backup/reoback
 # Copyright 2000-2005 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/reoback/ChangeLog,v 1.4 2005/09/02 12:32:47 lostlogic Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/reoback/ChangeLog,v 1.5 2005/09/02 12:42:33 lostlogic Exp $
+
+*reoback-1.0_p3-r1 (02 Sep 2005)
+
+  02 Sep 2005; Brandon Low <lostlogic@gentoo.org> reoback-1.0_p3.ebuild,
+  +reoback-1.0_p3-r1.ebuild:
+  Put the run_reoback.sh file in /etc/cron.daily as reoback, this is the
+  correct place for a script which is designed to be run daily. Now to
+  activate reobak all a user must do is configure it in
+  /etc/reoback/settings.conf and then chmod +x /etc/cron.daily/reoback.
 
 *reoback-1.0_p3 (02 Sep 2005)
 

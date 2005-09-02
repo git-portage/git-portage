@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/reoback/reoback-1.0_p3.ebuild,v 1.2 2005/09/02 12:42:33 lostlogic Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/reoback/reoback-1.0_p3-r1.ebuild,v 1.1 2005/09/02 12:42:33 lostlogic Exp $
 
 DESCRIPTION="Reoback Backup Solution"
 HOMEPAGE="http://reoback.sourceforge.net/"
@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/reoback/reoback-${PV/_p/_r}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/perl-5.6.1"
@@ -32,7 +32,12 @@ src_install() {
 	doins conf/* || die "doins conf"
 	fperms 750 /usr/sbin/reoback.pl
 	insinto /etc/cron.daily
-	doins run_reoback.sh 
+	newins run_reoback.sh reoback
 	cd docs
 	dodoc BUGS CHANGES INSTALL MANUALS README TODO
+}
+
+pkg_postinst() {
+	einfo "Reoback can now be activated by simply configuring the files in"
+	einfo "/etc/reoback and then doing: chmod +x /etc/cron.daily/reoback"
 }
