@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b8ceb2808cc44be5b0aabed5bd33e94f ctwm-3.7.ebuild 1145
 MD5 9eb6b4113435f6163acecde9097ff65a ctwm-3.7_alpha5.ebuild 1105
 MD5 a5862e814db26ea9ff512243932b291b ctwm-3.6-r1.ebuild 1048
@@ -8,3 +11,10 @@ MD5 ac24a199346d0958f4fb50d81e213cb3 files/digest-ctwm-3.7 61
 MD5 11e5c7ab948805ff25230a38e9bb828f files/ctwm-3.7_alpha5-gentoo.diff 827
 MD5 6752682809aa0c15d7e76cd6013da292 files/ctwm-3.6-r1-gentoo.diff 1329
 MD5 b2328b3b7f7a512f0631c753fb185170 files/digest-ctwm-3.7_alpha5 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDF5ccomPajV0RnrERAg/5AJ47l6/rDIuAk1SDxlHq23VDa5HNTgCfU/f5
+w0nksALQghaCNVWtz/pB9Xk=
+=7t9/
+-----END PGP SIGNATURE-----
