@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 8e5a72c55161ad43ffb79744aa82293b x86info-1.14.ebuild 1174
 MD5 8d44b44ef122e1c4f86b4b672e6790e8 x86info-1.15.ebuild 1174
@@ -10,3 +13,10 @@ MD5 2314117f5dd2e812f0e8276bd04b0364 files/digest-x86info-1.13 60
 MD5 3190b800901b8f28e375fd20b89100f6 files/1.12b-pic.patch 517
 MD5 af728070175dcb308ae6d5aa7db7f102 files/digest-x86info-1.15 60
 MD5 d802a4048f32812d16b2fb081991db26 files/digest-x86info-1.14 60
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDGNGUgIKl8Uu19MoRAjnDAJ0UdKKDUaYjSoVfxqW0MmBqxMvaDwCbBkYj
+FbfNOc64VTvpELOZ4KX3KSM=
+=Pwox
+-----END PGP SIGNATURE-----
