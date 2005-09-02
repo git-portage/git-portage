@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 087a7f52355538ccc5654be4a35db18d wine-20050111-r2.ebuild 3219
 MD5 f674dd506cdfb07f71651729afc45401 wine-20050211.ebuild 3725
 MD5 6525c48ba09d08599432ea6c299e52f4 metadata.xml 354
@@ -29,3 +32,10 @@ MD5 c8ec4d9cf45eb34d587a17129ab09fb9 files/digest-wine-20050830 67
 MD5 8eeac00eaf290def7bac0e2c3b479ea6 files/wine-20050830-no-ldap.patch 3994
 MD5 1668a758aa2007cb99a773b3c5c844c9 files/winearts-kdecvs-fix.patch 325
 MD5 45243901331840c35f12426a17b31bd2 files/wine-20050310-upstream-colortable.patch 1546
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDF6HUgIKl8Uu19MoRAnUhAJ9izaX8Xo1Yh49ulJCWKxWhrdmUlgCeO+Mu
+l/A6cY78aTlh4D5E91EBwug=
+=VXCY
+-----END PGP SIGNATURE-----
