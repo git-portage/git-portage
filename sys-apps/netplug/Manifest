@@ -1,0 +1,5 @@
+MD5 e3697dcef5a16afbda7b03a69e96d9de netplug-1.2.9.ebuild 1035
+MD5 019c37ba80d6e01ea4d01f93e0565bd3 metadata.xml 333
+MD5 bbf36ab8c5d2299554b436930e93722f files/netplug 1118
+MD5 a310e86707b8f304165f61160b3ce215 files/netplug-1.2.9-gcc4.patch 362
+MD5 e5ca23da76196da2b350d78793138426 files/digest-netplug-1.2.9 65
