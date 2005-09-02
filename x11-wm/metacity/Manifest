@@ -3,7 +3,7 @@ MD5 f7e2885584859b299cb0bbe3383f2360 metacity-2.10.3.ebuild 1261
 MD5 f209f136db09aa39ba91214fd415a697 metacity-2.10.0.ebuild 1210
 MD5 caca7bfb922660a55077c874906f75d9 metacity-2.11.3.ebuild 1306
 MD5 542495e9a270cdf860dbef96dfef9d7e metacity-2.10.2.ebuild 1255
-MD5 dc1fb1b1a0053b17864b8bcaa2371ce7 ChangeLog 13735
+MD5 f120087f5a3b3e7a4e0dc9f850a1fdc9 ChangeLog 13734
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 98f6fd8a6545a37a2ddf9b0e11ce54f7 files/metacity-2-logout.patch 7363
 MD5 138ac865c20f1f4f6ff2fde4fa487c00 files/digest-metacity-2.10.0 69
