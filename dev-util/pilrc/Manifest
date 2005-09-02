@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ae5d4c8e3531bf52f7387eca568d5092 pilrc-3.2.ebuild 971
 MD5 747a53a20da10d38a530d8887ca5a3c0 metadata.xml 392
 MD5 b09fa8226c5b9e5a610e33bcacac67bc pilrc-2.9_p10.ebuild 1408
@@ -7,3 +10,10 @@ MD5 4b4b88371990883e807b2b9d3592fd0a files/digest-pilrc-3.2 61
 MD5 5ac794f0876673039e0e95dc18229a74 files/pilrc-2.9_p10-Makefile.patch 238
 MD5 3517914d02e194b18e11f1065c0a5e6a files/digest-pilrc-2.9 58
 MD5 7d35f6095414cf27317061ed4942f497 files/digest-pilrc-2.9_p10 120
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD4DBQFDGIveKRy60XGEcJIRArqTAJirIsDRlVQsLGOOVYS6513G67fZAKCYNoQm
+fajDsUXyIUq64sj23poJZA==
+=HtwF
+-----END PGP SIGNATURE-----
