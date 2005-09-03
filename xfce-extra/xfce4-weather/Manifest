@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 eec8686cdbcf3be1cdea56230f42d457 ChangeLog 1383
 MD5 c390804e060ffd11a5bbb143434b2b2d metadata.xml 157
 MD5 155c1ba67e68d225489b501e7e5ba790 xfce4-weather-0.3.9.1-r1.ebuild 375
@@ -10,3 +13,10 @@ MD5 477c070ad32ba8e67596199d197486f8 files/digest-xfce4-weather-0.3.9.1-r1 81
 MD5 be989a36ac26d1548a8f34f645093c49 files/digest-xfce4-weather-0.4.0 78
 MD5 2e191f696fc728d12674219a4aeed10c files/digest-xfce4-weather-0.4.1 78
 MD5 28a8646a05ce69fdda6cdcc567d218f0 files/digest-xfce4-weather-0.4.9 78
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDGbmIwUpWvClEHQoRAnj+AKCIKH9EIrBW5ryzOIACZp9WvYD3AwCcD3eD
+PSX2AdO+bvPEtJRParV8NLo=
+=RxCx
+-----END PGP SIGNATURE-----
