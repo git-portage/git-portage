@@ -1,10 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 c4b6df2d9376a4dd23b0b238718355ea gallery-2.0_rc1.ebuild 983
 MD5 7ce5a80546a565a228721fe5474e30fd gallery-1.5.1_rc3.ebuild 990
 MD5 1e9614219c46b57870e34fb62b8f3d35 gallery-1.5.ebuild 968
 MD5 b626cbd77364788a21d780de41d9120c gallery-1.4.4_p6.ebuild 1230
+MD5 27cb5bbbd2d9035b897e0cb6ca1d308b gallery-1.5_p1.ebuild 989
 MD5 d0961ca68d6acf240f22b149c98fbc20 gallery-2.0_rc2.ebuild 983
 MD5 ba8ef199d1aeaffe5fda5c0ed5b8c484 ChangeLog 7620
 MD5 c339473e0ff43da76eb2f2607c441921 metadata.xml 280
@@ -15,10 +13,4 @@ MD5 411fcddae2e05639e626051d31f019c7 files/digest-gallery-2.0_rc1 74
 MD5 86e13454ea6b25fc8bb1fb70dd296e01 files/digest-gallery-2.0_rc2 74
 MD5 d8aa1a55fbfe46c99088bb0c360794f2 files/postinstall-en2.txt 770
 MD5 3485f6f6f43d72b5c119d09d0db3f7ca files/digest-gallery-1.5 64
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDGbmTEzitwsaoONoRAr9zAJ9TgEcCriK0SBsCbjpDi1U0ZngFmACeLvLV
-wNzuMnJWccWJJCWyqmsVnTI=
-=+G9T
------END PGP SIGNATURE-----
+MD5 60f82816cecf216b054f0e889324bcde files/digest-gallery-1.5_p1 68
