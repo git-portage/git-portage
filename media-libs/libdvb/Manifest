@@ -2,9 +2,9 @@ MD5 ae32484b2b184a42bbe021b3f2ae4399 libdvb-0.5.5.1.ebuild 1271
 MD5 8fc29efed3fb7814a090d009b4370bce libdvb-0.5.5.1-r1.ebuild 1329
 MD5 ea65129ec98a5fa97e7ed60dd668379b libdvb-0.5.0-r1.ebuild 1099
 MD5 e06a3239a390f45bbe6a5f0af42b00e4 libdvb-0.5.5.ebuild 1325
-MD5 c50104dec58466664cd0ca9f6fe0d8d9 libdvb-0.5.0-r2.ebuild 1157
-MD5 7c41440c6cf808146465c879c757a73f libdvb-0.5.5-r1.ebuild 1383
-MD5 1a25e52e2e5efeaf23dcaac5fb9fc5b9 ChangeLog 3071
+MD5 09bb7132a1ed7128d491f461a5e3a1b7 libdvb-0.5.0-r2.ebuild 1157
+MD5 37d747a7b341e2b33b169c7f8afc542a libdvb-0.5.5-r1.ebuild 1382
+MD5 4583a60d284aae22105a6b00af01ccd8 ChangeLog 3284
 MD5 46b3654b1563aad69c575e55e8d67b61 metadata.xml 220
 MD5 2be0eba6ba9919ca334c327d3310a254 files/libdvb-0.5.5-gentoo.patch 1065
 MD5 780b4f37ff13c0c42c9966bf4ddf0640 files/digest-libdvb-0.5.5.1-r1 66
