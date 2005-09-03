@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7d8c0c915c55000cf20bf41dde2d57da ChangeLog 5104
 MD5 32c18f62ef442534b43d411bfd8c40a6 docutils-0.3-r1.ebuild 1770
 MD5 dddf09e76c6f943ebc4931e2ff794320 docutils-0.3.3-r1.ebuild 1903
@@ -29,3 +32,10 @@ MD5 f3c575d69568fafe2159283355e7efc0 files/glep-0.3.3/glepread.py 1833
 MD5 8a92d518608c84c83ce14ac840f96834 files/glep-0.3.3/glep.py 699
 MD5 bacb84b99614ef28729cb5adf4763242 files/glep-0.3.3/glep_htmlwrite.py 3246
 MD5 bba4f5a38311f907d4ddb4a5514099ea files/glep-0.3.3/glepstrans.py 10898
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDGdp/DAg8Nbq0d9kRArMyAJ0SEEe7uIWFj6hl3RKIlxI7MobSlACgnvcq
+UMusbuDBcfu+Lx2LtNjHw1Q=
+=qcmX
+-----END PGP SIGNATURE-----
