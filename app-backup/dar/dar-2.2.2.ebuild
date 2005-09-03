@@ -1,6 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/Attic/dar-2.2.2.ebuild,v 1.6 2005/08/15 03:26:55 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/Attic/dar-2.2.2.ebuild,v 1.7 2005/09/03 13:11:31 matsuu Exp $
+
+inherit flag-o-matic
 
 DESCRIPTION="A full featured backup tool, aimed for disks (floppy,CDR(W),DVDR(W),zip,jazz etc.)"
 HOMEPAGE="http://dar.linux.free.fr/"
@@ -18,6 +20,9 @@ DEPEND=">=sys-libs/zlib-1.2.3
 
 src_compile() {
 	local myconf="--disable-upx"
+
+	# Bug 103741
+	filter-flags -fomit-frame-pointer
 
 	use acl || myconf="${myconf} --disable-ea-support"
 	use dar32 && myconf="${myconf} --enable-mode=32"
