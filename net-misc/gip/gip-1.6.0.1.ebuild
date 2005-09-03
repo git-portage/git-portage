@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/gip/Attic/gip-1.2.0.1.ebuild,v 1.2 2005/09/03 20:55:24 vanquirius Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/gip/Attic/gip-1.6.0.1.ebuild,v 1.1 2005/09/03 20:55:24 vanquirius Exp $
 
 inherit versionator
 
@@ -14,9 +14,9 @@ SLOT="0"
 KEYWORDS="~x86"
 
 IUSE=""
-DEPEND="=dev-cpp/gtkmm-2.2*
+DEPEND=">=dev-cpp/gtkmm-2.4
 	>=dev-libs/glib-2.2.3
-	=dev-libs/libsigc++-1.2*"
+	>=dev-libs/libsigc++-2.0"
 
 S="${WORKDIR}/${MY_P}"
 
