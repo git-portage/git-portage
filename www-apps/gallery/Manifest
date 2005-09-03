@@ -2,8 +2,8 @@ MD5 c4b6df2d9376a4dd23b0b238718355ea gallery-2.0_rc1.ebuild 983
 MD5 7ce5a80546a565a228721fe5474e30fd gallery-1.5.1_rc3.ebuild 990
 MD5 b626cbd77364788a21d780de41d9120c gallery-1.4.4_p6.ebuild 1230
 MD5 971a5043eea1b38d6664c0003a7b80bb gallery-1.5_p1.ebuild 986
-MD5 73b72a440aa9dc2f36440e6685829090 gallery-2.0_rc2.ebuild 1022
-MD5 d6f08c044edf752df1edf8ffd140ad5c ChangeLog 7786
+MD5 e424ffa8ed9dd98325fbb1f89572dd79 gallery-2.0_rc2.ebuild 1022
+MD5 a79a9c8162bb706f725eac35a0cec04c ChangeLog 7892
 MD5 c339473e0ff43da76eb2f2607c441921 metadata.xml 280
 MD5 b5b25ae1ec1197b04501dba4bcb91536 files/digest-gallery-1.5.1_rc3 70
 MD5 a8729b1e72b2703178d00a546bc8a925 files/digest-gallery-1.4.4_p6 70
