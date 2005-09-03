@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 abc885f1a2ce09197fd689cd5e1979b0 c-jdbc-1.0.4-r1.ebuild 3731
 MD5 93efc67352da22a498552ed3036acf56 ChangeLog 1140
 MD5 123cf9440c1d4ac78f2caba1624765f9 metadata.xml 158
@@ -7,3 +10,10 @@ MD5 6f7e7b9ace7df13d6bab70f487a31189 files/c-jdbc-1.0.4-gentoo.patch 5047
 MD5 599e87927c86dfe53eaf0415b5bae480 files/digest-c-jdbc-1.0.4-r1 70
 MD5 c366d1203f27f5438c29bc3a5724ab73 files/cjdbc-conf 313
 MD5 9c7589e63d5760dde9a3d56fdc58e6a7 files/cjdbc-init 926
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDGhpOQiJ/wx066S4RAi3PAJ92CnKGlLx0JKvHclHn6lpCDOSypwCgpgtt
+VTOu773zF7ZX/k/XhwZ+JoM=
+=JtoA
+-----END PGP SIGNATURE-----
