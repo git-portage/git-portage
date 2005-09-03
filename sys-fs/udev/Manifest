@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 43820d124485c872fbebc855051bbe4a udev-030.ebuild 3525
 MD5 601369394beab8a50bd959614a33b261 udev-059.ebuild 5779
 MD5 da0a0ee4bd88b17551b9055c347a6b32 udev-068.ebuild 6575
@@ -41,3 +44,10 @@ MD5 32729a00b41bf72823f2c1fded68c97e files/digest-udev-064-r1 61
 MD5 32729a00b41bf72823f2c1fded68c97e files/digest-udev-064 61
 MD5 77692161d3e1d624773ff10aec89b318 files/udev.hotplug.empty 106
 MD5 511c376c4c6346bcbf51531ef811f00c files/digest-udev-030 61
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDGfRagIKl8Uu19MoRAkqNAJ4jCqQKYGxZQRVzOfb0MZP1Vl4O6gCffYlz
+fXtuKjD6tiH4UWqq7OZ0wro=
+=i1Wr
+-----END PGP SIGNATURE-----
