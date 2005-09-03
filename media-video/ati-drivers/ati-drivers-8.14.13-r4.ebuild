@@ -1,24 +1,21 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/ati-drivers/Attic/ati-drivers-8.14.13.ebuild,v 1.8 2005/06/25 08:53:34 lu_zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/ati-drivers/Attic/ati-drivers-8.14.13-r4.ebuild,v 1.1 2005/09/03 22:29:45 eradicator Exp $
 
-IUSE="opengl"
+IUSE="opengl dlloader"
 
-inherit eutils multilib linux-info linux-mod toolchain-funcs
+inherit eutils rpm multilib linux-info linux-mod toolchain-funcs
 
 DESCRIPTION="Ati precompiled drivers for r350, r300, r250 and r200 chipsets"
 HOMEPAGE="http://www.ati.com"
-SRC_URI="x86? (
-http://www2.ati.com/drivers/linux/ati-driver-installer-${PV}.run )
-	 amd64? (
-	 http://www2.ati.com/drivers/linux/64bit/ati-driver-installer-${PV}.run
-	 )"
+SRC_URI="x86? ( http://www2.ati.com/drivers/linux/fglrx_6_8_0-${PV}-1.i386.rpm )
+	 amd64? ( http://www2.ati.com/drivers/linux/64bit/fglrx64_6_8_0-${PV}-1.x86_64.rpm )"
 
 LICENSE="ATI"
 KEYWORDS="-* ~amd64 ~x86"
 
 RDEPEND=">=x11-base/xorg-x11-6.8.0
-	 >=x11-base/opengl-update-2.1_pre1"
+	 app-admin/eselect-opengl"
 
 DEPEND=">=virtual/linux-sources-2.4
 	${RDEPEND}"
@@ -27,8 +24,6 @@ PROVIDE="virtual/opengl"
 
 ATIBIN="${D}/opt/ati/bin"
 RESTRICT="nostrip multilib-pkg-force"
-
-## MODULE_NAMES="fglrx(video:${WORKDIR}/common/lib/modules/fglrx/build_mod)"
 
 pkg_setup(){
 	#check kernel and sets up KV_OBJ
@@ -67,30 +62,24 @@ pkg_setup(){
 src_unpack() {
 	local OLDBIN="/usr/X11R6/bin"
 
-	sh ${DISTDIR}/${A} --extract ${WORKDIR}/fglrx &>/dev/null \
-		|| die "Unpack failed"
-	cp -af ${WORKDIR}/fglrx/common/* ${WORKDIR}
-
-	if use amd64 ;
-	then
-	cp -af ${WORKDIR}/fglrx/x680_64a/* ${WORKDIR}
-	fi
-
-	if use x86 ;
-	then
-	cp -af ${WORKDIR}/fglrx/x680/* ${WORKDIR}
-	fi
+	cd ${WORKDIR}
+	rpm_src_unpack
 
 	cd ${WORKDIR}/lib/modules/fglrx/build_mod
+
+	#epatch ${FILESDIR}/fglrx-3.9.0-allocation.patch
 
 	if kernel_is 2 6
 	then
 		epatch ${FILESDIR}/fglrx-2.6.12-pci_name.patch
 		epatch ${FILESDIR}/fglrx-2.6.12-inter_module_get.patch
+		epatch ${FILESDIR}/fglrx-8.14.13-alt-2.6.12-agp.patch
 	fi
 	epatch ${FILESDIR}/8.8.25-via-amd64.patch
 	epatch ${FILESDIR}/8.8.25-smp.patch
-	epatch ${FILESDIR}/8.14.13-amd64.patch
+	epatch ${FILESDIR}/ioctl32.patch
+	epatch ${FILESDIR}/p1.patch
+
 	rm -rf ${WORKDIR}/usr/X11R6/bin/fgl_glxgears
 }
 
@@ -220,34 +209,49 @@ src_install-libs() {
 	local X11_LIB_DIR="${X11_DIR}${inslibdir}"
 
 	exeinto ${X11_LIB_DIR}/modules/drivers
-	doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/drivers/fglrx_drv.o
+	if use !dlloader ; then
+		doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/drivers/fglrx_drv.o
+	else
+		einfo "Adapting fglrx_drv to dlloader..."
+		gcc -shared -o ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/drivers/fglrx_drv.so \
+					   ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/drivers/fglrx_drv.o \
+					   -Xlinker -L/usr/lib/modules -Xlinker -R/usr/lib/modules \
+					   -Xlinker -L/usr/lib/modules/linux -Xlinker -R/usr/lib/modules/linux \
+					   -Xlinker -L/usr/lib/modules/extensions -Xlinker -R/usr/lib/modules/extensions \
+					   -lfbdevhw -lglx -lfglrxdrm -ldrm -lxaa -lramdac -ldri -lfb -lint10 -lvgahw -li2c -lddc -lvbe
+		doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/drivers/fglrx_drv.so
+	fi
 
 	exeinto ${X11_LIB_DIR}/modules/dri
 	doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/dri/fglrx_dri.so
 	doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/dri/atiogl_a_dri.so
 
 	exeinto ${X11_LIB_DIR}/modules/linux
-	doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/linux/libfglrxdrm.a
+	if use !dlloader ; then
+		doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/linux/libfglrxdrm.a
+	else
+		einfo "Adapting libfglrxdrm to dlloader..."
+		ar x ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/linux/libfglrxdrm.a
+		gcc -shared -o ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/linux/libfglrxdrm.so \
+			module.o FireGLdrm.o
+		rm module.o FireGLdrm.o
+		doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/linux/libfglrxdrm.so
+	fi
 	cp -a ${WORKDIR}/usr/X11R6/${pkglibdir}/libfglrx_gamma.* \
 			${D}/${X11_LIB_DIR}
 	#Not the best place
 	insinto ${X11_DIR}/include/X11/extensions
 	doins ${WORKDIR}/usr/X11R6/include/X11/extensions/fglrx_gamma.h
+
 }
 
 
 pkg_postinst() {
-# Ebuild shouldn't do this automatically, just tell the user to do it,
-# otherwise it messes up livecd/gamecd stuff ...  (drobbins, 1 May 2003)
-#	if [ "${ROOT}" = "/" ]
-#	then
-#		/usr/sbin/opengl-update ati
-#	fi
+	/usr/bin/eselect opengl set --use-old ati
 
 	echo
 	einfo "To switch to ATI OpenGL, run \"opengl-update ati\""
 	einfo "To change your XF86Config you can use the bundled \"fglrxconfig\""
-	echo
 	if use !opengl ; then
 	ewarn "You don't have the opengl useflag enabled, you won't be able to build"
 	ewarn "opengl applications nor use opengl driver features, if that isn't"
@@ -259,6 +263,6 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	opengl-update --use-old xorg-x11
+	/usr/bin/eselect opengl set --use-old xorg-x11
 }
 
