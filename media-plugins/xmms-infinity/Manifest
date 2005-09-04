@@ -1,6 +1,16 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9850ccc656191818161098a0958d5985 ChangeLog 1544
 MD5 0c96eeafb11704181fc49281ce14cee2 xmms-infinity-0.2.ebuild 819
 MD5 6d267e5c0f6930c52d67c256061974b3 xmms-infinity-0.5.8.ebuild 742
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 1686a447a6ea8ebf5d764aa3ed053b78 files/digest-xmms-infinity-0.2 64
 MD5 d31671953abd672c6d7f6aa03e4567fb files/digest-xmms-infinity-0.5.8 74
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDGslQj5H05b2HAEkRAp3lAKCdHiZJv7v3kq4WnEoJVRHKIjbZ1QCffrY5
+O9hdv6T/BREFLwXWCuSDJ18=
+=zsyK
+-----END PGP SIGNATURE-----
