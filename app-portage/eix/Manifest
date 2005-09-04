@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 49642086df408e27d9c50e8759b6f8e3 eix-0.2.2.ebuild 1152
 MD5 39e8d718b4e1c785eeafdb242a99ed29 eix-0.3.0.ebuild 1179
 MD5 c81bee19843d9b2bfc0716ffb15a3e2e eix-0.2.6.ebuild 1301
@@ -15,3 +18,10 @@ MD5 9033adc2410fa5477618aa28ae6d8582 files/0.2.2-unistd.h.patch 716
 MD5 f0687628fdeca80bbcebef82a7a82e6f files/digest-eix-0.3.0-r1 62
 MD5 1df3eabe7a20b27cf2d3c1c0b2b5a090 files/0.2.6-cdb-cast.patch 516
 MD5 3a36ef63cff165b67afeb774a7edf9d1 files/0.2.6-package.cc.patch 461
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDGuLuEZCkKN40op4RAuRbAJ9FTjf4NiwWotQeAX523RIb9qOj+gCfeFBW
+9RuQvjBu4URYpa0fxzAMkn0=
+=5k7J
+-----END PGP SIGNATURE-----
