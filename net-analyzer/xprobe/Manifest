@@ -1,6 +1,16 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0006a5b26424dce7285040092ecc33e3 ChangeLog 2710
 MD5 b3e3e6e4f94dae37fe5d8bd33d7c9de0 xprobe-0.3.ebuild 644
 MD5 38db7df6633dc3f15d81ba139207693b metadata.xml 478
 MD5 512e3af97af14a1e252b106356a22612 xprobe-0.2.2.ebuild 922
 MD5 333d965a82d82d7505e765d8a4418ee9 files/digest-xprobe-0.3 63
 MD5 deeacb60b94a028e0f05b2c33f504488 files/digest-xprobe-0.2.2 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDGwhXmdTrptrqvGERAmkFAKCRfMEXCHNT94y7JUxBdJqAIOarcQCfebTg
+Cg6xciFpYo7zYlm6q4BTSss=
+=s75e
+-----END PGP SIGNATURE-----
