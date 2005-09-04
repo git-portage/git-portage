@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6728800d72fb8515cd29c2532a339ec2 tse3-0.2.7.ebuild 1095
 MD5 6ee05386c34f19166c589c8b6bd56f7e ChangeLog 1987
 MD5 f1e66f1d2c29e77ea122bfc19f03171a tse3-0.2.5.ebuild 913
@@ -7,3 +10,10 @@ MD5 e5b12a211e5880ca3f3a11bd9ec606f4 files/digest-tse3-0.2.7 62
 MD5 43db7a6f8ef547d1b28951bb81a17542 files/digest-tse3-0.2.5 62
 MD5 7a3c4c8d46dfe16a96514a204d2ebead files/tse3-0.2.7-gcc4.patch 290
 MD5 71287d128bdfd588b7c22645025e4b31 files/tse3-0.2.7-size_t-64bit.patch 1089
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDGuYgj5H05b2HAEkRAkRMAKCT4VlPPLqrSnupUnqAmpxdsTty9QCgnKT1
+baziGNO4wsiO5d5SkQdXRtg=
+=lF0r
+-----END PGP SIGNATURE-----
