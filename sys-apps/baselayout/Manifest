@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 fa4cb2988ff12c235c4bfb0b185376b3 baselayout-1.12.0_pre8.ebuild 18745
 MD5 63063133efc82df82db512614030ba19 baselayout-1.9.4-r6.ebuild 16993
 MD5 3d736b28ab78424e033c1ca3a4956cbf baselayout-1.11.13-r1.ebuild 18610
@@ -45,3 +48,10 @@ MD5 7b2f5e48c4d9056df539620299c20641 files/rc-scripts-1.4.16-splash.patch 11251
 MD5 8ab5b01cfcad4c79d822ff31296000be files/baselayout-1.11.12-ifconfig-cidr.patch 1740
 MD5 87842ac605d85289eba63ac1c2e16142 files/baselayout-1.11.10-wireless.patch 3215
 MD5 6d5643e0857fc0f32f026e33d453c0c8 files/digest-baselayout-1.12.0_pre7-r1 75
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDGyz21ZcsMnZjRyIRAqWiAJ0d2IRYuKUk9HfS/iS/QpRsMrWawgCfVPD5
+REdPIByh398l93G2zOQn10w=
+=YSR5
+-----END PGP SIGNATURE-----
