@@ -1,0 +1,6 @@
+MD5 4c1fea5a65a108b583fcfada2a528d36 atheme-0.2.2.ebuild 1342
+MD5 768955ffa40609049cdfead22879443d metadata.xml 261
+MD5 58c136b33f252609db9de33f23fc499d ChangeLog 336
+MD5 d9426639feac91a74b80c4f246c53f31 files/digest-atheme-0.2.2 61
+MD5 1f482d7cb73e4f059c00fbb18a9eed9e files/makefile-DESTDIR-support.patch 4529
+MD5 fe5c707d98c7536cfde95e9fcbe5117e files/make-postgresql-support-optional.patch 3008
