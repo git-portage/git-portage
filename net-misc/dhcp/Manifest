@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d8087c6a781a978ccc4c5bc0e9b2fde0 dhcp-3.0.1-r1.ebuild 3992
 MD5 fd2864f5391129944f46c46c99fd1560 dhcp-3.0.2.ebuild 4135
 MD5 37786c0783706bbb8e94e9202b425d63 ChangeLog 9427
@@ -9,3 +12,10 @@ MD5 6c69efa2b41915ec59e53bb065ac3d0c files/dhcrelay.conf 502
 MD5 5cde0a8fdf363490c4212726dfd06a38 files/dhcp.conf 769
 MD5 81b9256728a5daab31f0513ab55e8354 files/dhcp.rc6 1092
 MD5 b060506f226297b90435f270b7345496 files/digest-dhcp-3.0.2 128
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDGwdYj5H05b2HAEkRAnJjAJ9xf3x5o3NrYfs2DV5W+zuEC+6YXgCeINSG
+LzNetumuyPQPYu7gnzPMSJ0=
+=Vijj
+-----END PGP SIGNATURE-----
