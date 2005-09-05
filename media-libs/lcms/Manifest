@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 883c9f2b497345fa9c7db0be4f4e78f9 lcms-1.11.ebuild 1113
 MD5 c3af94167dca87a3792df4163f76c48d lcms-1.13.ebuild 1428
 MD5 d94bc05fd3de2ffca39a37cd364f2b3b ChangeLog 5493
@@ -14,3 +17,10 @@ MD5 dfa4e4db5d24a8b527601a744a683197 files/digest-lcms-1.14 61
 MD5 ec46b226970ad1597b5be73ec187ef6e files/digest-lcms-1.11 61
 MD5 dfa4e4db5d24a8b527601a744a683197 files/digest-lcms-1.14-r1 61
 MD5 58a0f36993082241e2b970733b79087b files/digest-lcms-1.13-r2 61
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDHC+Dj5H05b2HAEkRAviDAJ0fmiXwdHl2sxJX+30+sjdScmr5AgCbBKJW
+JifmjSfz6m5z/0Ji16yEuqw=
+=W0YN
+-----END PGP SIGNATURE-----
