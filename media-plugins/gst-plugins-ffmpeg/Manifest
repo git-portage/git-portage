@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 87d01259f2a52a9363fd64c89b924a5b ChangeLog 5104
 MD5 b850e943e0aae6df3e751236cb339e0a files/digest-gst-plugins-ffmpeg-0.8.3 70
 MD5 bca5ec805820433590977e10928cc8a3 files/digest-gst-plugins-ffmpeg-0.8.4 70
@@ -13,3 +16,10 @@ MD5 8881dd3828677daa2926c754f5970b38 gst-plugins-ffmpeg-0.8.4.ebuild 1487
 MD5 948f86b5ede1c8389e2bdb0bf066bb5c gst-plugins-ffmpeg-0.8.5.ebuild 1622
 MD5 f7fe87cc968fc4aa9547136788b0fa9c gst-plugins-ffmpeg-0.8.6.ebuild 1629
 MD5 6cf6f97e79b43eaf70fa938c431342a3 metadata.xml 181
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDHIcKI1lqEGTUzyQRAgCzAKCPjCCdHvMRb1TYuwVlaFVLPVl0vgCg3hHE
+Z9cfTrVQ0N+J1gVuqqYgcy4=
+=m0nd
+-----END PGP SIGNATURE-----
