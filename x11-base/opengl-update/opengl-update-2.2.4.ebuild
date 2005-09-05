@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/opengl-update/Attic/opengl-update-2.2.3-r1.ebuild,v 1.2 2005/08/27 04:36:11 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/opengl-update/Attic/opengl-update-2.2.4.ebuild,v 1.1 2005/09/05 19:43:04 eradicator Exp $
 
 inherit multilib
 
