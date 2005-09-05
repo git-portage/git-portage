@@ -1,5 +1,15 @@
-MD5 8ece4d5c0216e368c049de172b2bb1e6 ChangeLog 755
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 2f586e38f9c9a0da7b8027f32834b130 ChangeLog 775
 MD5 a64b9a1937a5cfc2fbaf373521f65d47 metadata.xml 223
-MD5 b88215171aabfd52d2acfa30aaffaa54 gulm-1.00.00.ebuild 869
-MD5 3c7c9af7d7180c7befa962b52298e35a files/gulm.rc 878
+MD5 c2599bf0a510598f40549ed4cb9a5faa gulm-1.00.00.ebuild 867
+MD5 5bf640cf0936cea825bdad38632a917d files/gulm.rc 971
 MD5 4f2d164091c3df995eb6cd31f2347a68 files/digest-gulm-1.00.00 68
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDHMGngMUyd/cdjWsRAneDAJ9Oh9h02HcRsoec4Pw1j/OoQfMA5QCcCgRN
+SQNIKuhaATj0lUX4LcMfmNo=
+=2JMD
+-----END PGP SIGNATURE-----
