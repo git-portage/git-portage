@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e9ca8aed0bb41053228f5523a63161fb ChangeLog 12368
 MD5 62292c35e7929905ad1e54d64faf457f gnome-utils-1.4.1.2.ebuild 1770
 MD5 8c33499309a1ece4481fb6d161058609 gnome-utils-2.10.0.ebuild 1193
@@ -12,3 +15,10 @@ MD5 f72b26ca184501563846835353e2750e files/gnome-utils-2.10.1-gdict_pref.patch 6
 MD5 41af2c6a875d5a02609b98998a2cf614 files/digest-gnome-utils-2.8.1 71
 MD5 7f6c4dde21c087f0af77c8374ca6da31 files/gnome-utils-2.6.2-gfloppymajor.patch 933
 MD5 c6b2716ce83feb3db2dded90d4ba4418 files/digest-gnome-utils-2.11.92 73
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDHLcgBtvusYtCZMsRAiT2AJ9PHJmVlvJr1d6uW4grvTrI4hU3ygCgiL1F
+SU9Dcl51uYsvLQMl/frxIro=
+=eQk/
+-----END PGP SIGNATURE-----
