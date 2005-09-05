@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5a70309e742f7459479a60cb974a8463 ChangeLog 6763
 MD5 c152c92d999551dc07eb64d9aabfc9f7 hal-0.4.8.ebuild 3385
 MD5 2ce20a59c6e5f914b941013f26a41df3 hal-0.5.4.ebuild 3366
@@ -21,3 +24,10 @@ MD5 64253ef1f2dcf68b2d82429026280085 files/hal-0.4.7-dont_add_device_twice-r1.pa
 MD5 58ed07e2de5e898a1e4eeedf595ddb06 files/hal-0.4.7-sys_floppy_detection.patch 568
 MD5 a4d2c4884a3dedf2450cf37508d3c122 files/hal-0.4.7-vfat_mount_utf8.patch 670
 MD5 192112dfb678a9795a93d3cdcc50bb95 files/hald 543
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDHKSdBtvusYtCZMsRAl2MAJwMIc78P9ra5b04+qgO27Gp75NgywCeJzRb
+e/dndPMp8vknsmGE1NKnrr8=
+=+0Of
+-----END PGP SIGNATURE-----
