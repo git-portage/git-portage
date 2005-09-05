@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/mpich/Attic/mpich-1.2.6.ebuild,v 1.2 2005/05/03 18:40:07 omkhar Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/mpich/Attic/mpich-1.2.6-r3.ebuild,v 1.1 2005/09/05 13:48:40 tantive Exp $
 
 inherit eutils
 
@@ -18,6 +18,7 @@ SLOT="0"
 KEYWORDS="~x86 ~ppc ~amd64 ~ppc64"
 IUSE="doc crypt"
 
+PROVIDE="virtual/mpi"
 DEPEND="virtual/libc
 	sys-devel/autoconf
 	sys-devel/automake
@@ -25,7 +26,7 @@ DEPEND="virtual/libc
 RDEPEND="${DEPEND}
 	crypt? ( net-misc/openssh )
 	!crypt? ( net-misc/netkit-rsh )
-	!sys-cluster/lam-mpi"
+	!virtual/mpi"
 
 pkg_setup() {
 	if [ -n "${MPICH_CONFIGURE_OPTS}" ]; then
@@ -61,7 +62,8 @@ src_compile() {
 	./configure \
 		${myconf} \
 		--mandir=/usr/share/man \
-		--prefix=/usr || die
+		--prefix=/usr \
+		--datadir=/usr/share/mpich || die
 	make || die
 }
 
@@ -105,9 +107,15 @@ src_install() {
 	# We dont have a real DESTDIR, so we have to fix all the files
 	dosed /usr/bin/mpirun /usr/bin/mpiman /usr/sbin/tstmachines
 	dosed /usr/sbin/chkserv /usr/sbin/chp4_servs
+	dosed /usr/bin/clog2TOslog2 /usr/bin/clog2print
+	dosed /usr/bin/clogTOslog2 /usr/bin/clogprint
+	dosed /usr/bin/jumpshot /usr/bin/logconvertor
 	dosed /usr/bin/mpicc /usr/bin/mpiCC /usr/bin/logviewer
+	dosed /usr/bin/mpicxx
 	dosed /usr/bin/mpireconfig /usr/bin/mpireconfig.dat
 	dosed /usr/bin/mpereconfig /usr/bin/mpereconfig.dat
+	dosed /usr/bin/rlogTOslog2 /usr/bin/rlogprint
+	dosed /usr/bin/slog2navigator /usr/bin/slog2print
 
 	dosed /usr/share/mpich/examples1/Makefile
 	dosed /usr/share/mpich/examples2/Makefile
@@ -126,4 +134,10 @@ src_install() {
 
 	#FIXME: Here, we should either clean the empty directories
 	# or use keepdir to make sure they stick around.
+}
+
+pkg_postinst() {
+	einfo "The data directory has moved from /usr/share"
+	einfo "to /usr/share/mpich."
+	einfo "Remeber to move your machines.* files."
 }
