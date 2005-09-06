@@ -1,5 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3f90bc70247a9027e135c61a4ca62885 libungif-4.1.3.ebuild 1970
 MD5 2df56bb8b295c8ed8d7b0aba49543903 ChangeLog 4427
 MD5 0c7690201f09ad2d2af2383b4e197891 libungif-4.1.3-r1.ebuild 1462
 MD5 c8f7239f2db03a50ebcc2bd24a0cf8d0 files/digest-libungif-4.1.3-r1 67
 MD5 c8f7239f2db03a50ebcc2bd24a0cf8d0 files/digest-libungif-4.1.3 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDHhxrgIKl8Uu19MoRAlhPAJ9cRpqC8E3jC+K78pPhCItfdVSmQwCcCNjk
+87F/WQfI4IPLQ6wcPq/myQc=
+=3/B3
+-----END PGP SIGNATURE-----
