@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/nginx/Attic/nginx-0.1.43.ebuild,v 1.1 2005/08/30 13:27:38 voxus Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/nginx/Attic/nginx-0.1.44.ebuild,v 1.1 2005/09/06 16:14:27 voxus Exp $
 
 inherit eutils
 
@@ -31,7 +31,9 @@ src_compile() {
 
 	use fastcgi	|| myconf="${myconf} --without-http_fastcgi_module"
 	use zlib	|| myconf="${myconf} --without-http_gzip_module"
-	use pcre	|| myconf="${myconf} --without-pcre"
+	use pcre	|| {
+		myconf="${myconf} --without-pcre --without-http_rewrite_module"
+	}
 	use debug	&& myconf="${myconf} --with-debug"
 	use ssl		&& myconf="${myconf} --with-http_ssl_module"
 	use imap	&& myconf="${myconf} --with-imap" # pop3/imap4 proxy support
