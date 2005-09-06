@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gpsd/Attic/gpsd-2.26.ebuild,v 1.3 2005/09/06 06:18:25 nerdboy Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gpsd/Attic/gpsd-2.25-r1.ebuild,v 1.1 2005/09/06 06:18:25 nerdboy Exp $
 
 inherit eutils libtool distutils
 
@@ -15,7 +15,8 @@ KEYWORDS="~x86 ~ppc ~amd64 ~ppc64 ~sparc ~arm"
 IUSE="X usb dbus"
 
 DEPEND="X? ( virtual/motif
-		virtual/x11 )
+		virtual/x11
+	)
 	usb? ( sys-apps/hotplug )
 	dbus? ( =sys-apps/dbus-0.23.4* )
 	dev-lang/python
@@ -26,9 +27,9 @@ DEPEND="X? ( virtual/motif
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	# remove patches for >=2.27
-	epatch ${FILESDIR}/${P}-python.patch
-	epatch ${FILESDIR}/${P}-dbus.patch
+	# remove patch for >=2.27
+	epatch ${FILESDIR}/${P}-y-format.patch
+	epatch ${FILESDIR}/${P}-SiRF.patch
 	elibtoolize
 }
 
