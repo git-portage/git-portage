@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9a4a8e4a567559739b808eeb54ba1dbb ChangeLog 29222
 MD5 716932740170ef6fda36c412ae06879a linux-headers-2.0.40.ebuild 1808
 MD5 1c43697b46cd87859708b7601424a258 linux-headers-2.2.26.ebuild 2502
@@ -33,3 +36,10 @@ MD5 6ef3887ee4018c06c18e8726767189c7 files/digest-linux-headers-2.4.22-r1 67
 MD5 f265b3be3f242bd5c0d97d4f70a12194 files/unistd.h-i386-pic.patch 4393
 MD5 2574d3f1b776f2df365737f456bfe435 files/digest-linux-headers-2.4.26-r1 67
 MD5 4a449fb131784834bd2882270028fe5e files/digest-linux-headers-2.6.11-r2 221
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDHOhCArHZZzCEUG0RAr33AJ44UlSVkSF9UFItfuIWyDAujyKXqACeM6EG
+1KEZnyX/1ilUCJw7Ip/U39U=
+=ueGG
+-----END PGP SIGNATURE-----
