@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 dec627b47037855f96900fe9c20f28ae sparc-sources-2.4.29.ebuild 1268
 MD5 47d259829b113b4c5210820eb981b569 sparc-sources-2.4.30.ebuild 1195
 MD5 cb76d3ab39194c3099f7eee451b39f51 sparc-sources-2.4.31-r1.ebuild 1202
@@ -11,3 +14,10 @@ MD5 0cae39dcfb06422e094da7e364e67c33 files/2.4-sparc64-ramdisk64.patch 2558
 MD5 387e70ce7c98618810dea0f521df76eb files/generate-asm-sparc 1661
 MD5 145be730c54866ee64961dd0c6316b4b files/digest-sparc-sources-2.4.31-r1 143
 MD5 ac8d8bb55e33fd4113aaecc98591f533 files/blade1500.patch 1480
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDHhRGKRy60XGEcJIRAlwyAJ0QJwkG03XQNshvrbq8bTracLeIOACfaFwX
+qYquvHPkRvYX+4n1Z5lR+rs=
+=s6J6
+-----END PGP SIGNATURE-----
