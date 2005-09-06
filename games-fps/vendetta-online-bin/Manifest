@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a789fd7ad5edd0dc7117df3a013017f6 vendetta-online-bin-1.ebuild 1214
 MD5 5e144c556889a27fda162cf8be68caa1 ChangeLog 548
 MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
 MD5 b3144657c0fb9cb7a584260cd6538df6 files/digest-vendetta-online-bin-1 75
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDHgR52G5bA0cA/ScRAmS9AJ0fbjspMoL2hGA0NlRCVcIgvFe+RgCcDFLp
+32K7yhzEVyq4JJuTJ3+sHl0=
+=GAH6
+-----END PGP SIGNATURE-----
