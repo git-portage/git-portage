@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 fb6823bcf11eeb188f9c5b0876e113ce codeine-1.0_beta1.ebuild 858
 MD5 ed45e813b137b1d55fbc58b6e6191c21 codeine-1.0.ebuild 888
 MD5 b9103b75f9bb5b2fb6522d05dc52e388 codeine-1.0_beta3.ebuild 812
@@ -11,3 +14,10 @@ MD5 4b415d0e0a2bd3e13d00a5890479afae files/digest-codeine-1.0_beta1 69
 MD5 d0a0a5400e52df4745220ab7def2cecf files/digest-codeine-1.0_beta2 69
 MD5 0906ddfaadfffa484469a5bba7729451 files/digest-codeine-1.0_beta3 69
 MD5 0eadb2f9120e3e34ad09a31ef726d6b1 files/digest-codeine-1.0_rc1 68
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDHP0hntT9W3vfTuoRAns6AJ9+IK169gaLF+ZiIN6mx0urHxDCTwCeJ319
+5zQK2lX0PWdiNhOeY+FAYJU=
+=I/Ac
+-----END PGP SIGNATURE-----
