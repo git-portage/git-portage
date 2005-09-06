@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 257b8e14be3a10e9ff5f3db8fabfe986 lopster-1.2.2-r1.ebuild 1094
 MD5 674965a9e04841b1a1c43e3435645540 lopster-1.2.0.ebuild 1044
 MD5 bdb66aba878532a01d0200334024ab73 lopster-1.2.2-r2.ebuild 1139
@@ -9,3 +12,10 @@ MD5 710119c258f29e63189d1011a8a81178 files/digest-lopster-1.2.2-r2 144
 MD5 058879106049ba1df31773523ef13568 files/1.2.2-bugfixes-1.patch 5661
 MD5 76fd2f6d6e63506f8d4a7c1c4b7b24ef files/digest-lopster-1.2.0 131
 MD5 2ec569a9b7f4db5c8ac15bbfcbd053d2 files/digest-lopster-1.2.2 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDHi+tZ/iYVBmujdURAtqSAKCQqRp9wfvCMj+nGd5hXUBac3CDlACfc8Mu
+bwjV5loliNdKnlQEJiXAAlw=
+=/6Gt
+-----END PGP SIGNATURE-----
