@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 acd235fd6c5f012c97f0bacecd1264cf tnef-1.3.2.ebuild 648
 MD5 312b17851410dfca402fd4acf8a9d760 tnef-1.2.1.ebuild 646
 MD5 b2f77eb46666f750b62c67f70002520d tnef-1.3.3.ebuild 649
@@ -8,3 +11,10 @@ MD5 e35c50eaad08ac295871f3112bbd0183 files/digest-tnef-1.2.3.1 65
 MD5 6d72ccda9c473db15ba7428d4055dc17 files/digest-tnef-1.2.1 63
 MD5 b6cc937df573e672e77dfcdc1db97acd files/digest-tnef-1.3.2 63
 MD5 54f9a7b9f7d8e876d9d7ad5a544eba7c files/digest-tnef-1.3.3 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDHvZbKRy60XGEcJIRAmjFAKCw1p7Zw+gHlro/MDHQoIVjfGU/HwCeMpqL
+nD41QdQdoCx77O7+mFLB2CA=
+=H1S8
+-----END PGP SIGNATURE-----
