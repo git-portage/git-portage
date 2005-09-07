@@ -1,8 +1,5 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 4795c0cb40349fb84538fe52668f893c imlib2-1.2.0-r2.ebuild 1149
-MD5 af00a1d98fecac5d7e58d817c90ffe27 imlib2-9999.ebuild 966
+MD5 d435738585d7bf314614846b9415f313 imlib2-9999.ebuild 1196
 MD5 0c36280f1141c2ab86d0bd09ceec038a metadata.xml 2284
 MD5 e68c73c340a2db933bdaa907fc074c49 imlib2-1.2.1.004.ebuild 1065
 MD5 79da67e250cc153a8a523e4bc2209843 imlib2-1.2.0.007-r2.ebuild 1203
@@ -15,10 +12,3 @@ MD5 a865da182f052747ee963334d77f8142 files/digest-imlib2-1.2.1.004 68
 MD5 e493696ea98688132769496642a1044c files/imlib2-1.2.0-loaders.patch 2613
 MD5 540efed058c6dccad80586ddd3af9604 files/imlib-1.2.0-bounds-check.patch 1076
 MD5 1d4f605193247283ce4fac45d2a10c58 files/digest-imlib2-1.2.0.007-r2 68
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDHmPzgIKl8Uu19MoRAmonAJ93Z4RBeNgJCitB1Ij/2dZuxbrCXgCeLBkW
-roWXA8Hn/ergpm3IzeVqCKk=
-=3XA0
------END PGP SIGNATURE-----
