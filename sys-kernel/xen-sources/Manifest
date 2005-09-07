@@ -1,0 +1,6 @@
+MD5 9265f18f3744f33c6f6a9dd23001390d ChangeLog 458
+MD5 23ec60d5040f966fda250a47d8903428 metadata.xml 252
+MD5 48ee8e82010b2277b08f6e5742f1eb64 xen-sources-2.6.12.5.ebuild 1125
+MD5 d08a62dad6f178fc301eb16ee2c477d0 xen-sources-2.6.11.10.ebuild 1131
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-xen-sources-2.6.11.10 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-xen-sources-2.6.12.5 0
