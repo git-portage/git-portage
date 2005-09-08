@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ff0dccf17d2b2b58a8a52554860be9a6 metadata.xml 1430
 MD5 8caa012de8cb7680420d8e7509bc85e1 openssh-3.9_p1-r3.ebuild 4901
 MD5 69906a04c4b848278370fab50cbd2ef3 openssh-4.1_p1-r1.ebuild 5208
@@ -42,3 +45,10 @@ MD5 465aab818202ddb010f0bfca738e902a files/openssh-3.8.1_p1-skey.patch.bz2 270
 MD5 ba87dbfc3be0ab9d70fe24278d9deb02 files/openssh-3.9_p1-infoleak.patch 2496
 MD5 d235f6e0c273e8a968b6759b12a8fd11 files/openssh-4.0_p1-sftplogging-1.2-gentoo.patch.bz2 5770
 MD5 21a3d3ba5d33cb010404c562ef1078b1 files/openssh-4.2_p1-kerberos-detection.patch 359
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDIM9RgIKl8Uu19MoRAsoeAJ0YQm/2Vr6MVPM9ObTQsbnD+YF7BACeOW0u
+1DtoOXTLQuO5VwWuqqmAqno=
+=cUht
+-----END PGP SIGNATURE-----
