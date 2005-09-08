@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e57748276505fab96a2ab4e64de45366 metadata.xml 220
 MD5 8acf56587de4c66daf1cfed2cc8be000 portage-2.0.51.19.ebuild 13221
 MD5 a4921b091c6057013549c33f933bfd40 portage-2.0.51.22-r2.ebuild 5708
@@ -12,3 +15,10 @@ MD5 159e3519c10187285ab4b0a536b2a1d3 files/digest-portage-2.0.51.22-r2 70
 MD5 87eff9b432487777e55298413c33ab4a files/digest-portage-2.1.0_alpha20050718 80
 MD5 7e8e000ab445e5860a8dae291ea2dfe7 files/2.0.52-fixes.patch 1420
 MD5 635a143e3d0587687c2f43209de5c53e files/digest-portage-2.0.52-r1 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDINAPxvWNPsk/ZP4RAs1jAJ0VgkrUNI45hm9mTpYsKPtODA2/cQCgjh/F
+5AeM8aOXvScHqy2FxH0phHo=
+=MAKm
+-----END PGP SIGNATURE-----
