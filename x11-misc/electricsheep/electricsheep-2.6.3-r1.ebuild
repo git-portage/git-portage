@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/electricsheep/Attic/electricsheep-2.6.2.ebuild,v 1.4 2005/08/20 08:06:06 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/electricsheep/Attic/electricsheep-2.6.3-r1.ebuild,v 1.1 2005/09/08 23:58:12 dragonheart Exp $
 
 inherit eutils flag-o-matic kde-functions
 
@@ -25,16 +25,7 @@ DEPEND="virtual/x11
 	media-libs/libpng
 	media-libs/libsdl
 	virtual/libc
-	sys-libs/zlib
-	!sparc? ( media-libs/alsa-lib )"
-
-#
-# I did a ldd /usr/bin/anim-flame /usr/bin/hqi-flame /usr/bin/pick-flame /usr/bin/convert-flame \
-#   /usr/bin/mpeg2dec_onroot /usr/bin/electricsheep | cut -f3 -d ' ' | xargs -n 1 qpkg -f -v | sort | uniq
-#
-# on an x86 platform and it listed media-libs/svgalib as a dependancy (hard masked on sparc).
-# I'm removing the dependancy on sparc as hopefully it will work without it.
-
+	sys-libs/zlib"
 
 RDEPEND="virtual/x11
 	dev-libs/expat
@@ -43,42 +34,30 @@ RDEPEND="virtual/x11
 	media-libs/jpeg
 	media-libs/libpng
 	media-libs/libsdl
-	!sparc? ( media-libs/alsa-lib )
 	virtual/libc
 	sys-libs/zlib"
 
 # Also detects and ties in sys-libs/slang, media-libs/aalib media-libs/svgalib and nas
 # if they exist on the user machine although these aren't deps.
 
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	sed -i "s:/usr/local/share:/usr/share/${PN}:" \
-		electricsheep.c \
-		|| die "sed electricsheep.c failed"
-	sed -i '/OPT_CFLAGS=/s:=".*":="$CFLAGS":' \
-		mpeg2dec/configure \
-		|| die "sed mpeg2dec failed"
-#	epatch ${FILESDIR}/nice.patch
-	filter-flags -fPIC
-}
-
 src_install() {
 
-	${D}/usr/bin/uniqueid > ${D}/usr/share/electricsheep/electricsheep-uniqueid
 
 	# prevent writing for xscreensaver
 	sed -i "s/^install-data-local:$/install-data-local:\nmy-install-data-local:/" \
 		Makefile || die "sed Makefile failed"
 
 	# install the xscreensaver config file
-	insinto /usr/share/control-center/screensavers
+	insinto /usr/share/xscreensaver/config
 	doins electricsheep.xml
 
-	# install the main stuff ... flame doesn't create /usr/bin so we have to.
-	dodir /usr/bin
 	make install DESTDIR=${D} || die "make install failed"
+
 	dodir /usr/share/electricsheep
+	if [ ! -f ${ROOT}/usr/share/electricsheep/electricsheep-uniqueid ]
+	then
+		${D}/usr/bin/uniqueid > ${D}/usr/share/electricsheep/electricsheep-uniqueid
+	fi
 
 	if use kde;
 	then
