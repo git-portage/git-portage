@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 23b49adc5315a6f56ed71fcfaf313c10 ChangeLog 11803
 MD5 401ae54213b2c95ea9b542a21592aef6 djbdns-1.05-r14.ebuild 4699
 MD5 83c6d79e4b650aa3b178405482957f86 djbdns-1.05-r16.ebuild 4708
@@ -13,3 +16,10 @@ MD5 d1844f9853a9bb56738a6a0eb6e04de4 files/tinydns-setup 3206
 MD5 2804eedf8bf07dacf67d094c5122c723 files/dnscache-setup 6007
 MD5 8a42d55ba5a2b3e8b0c65d11ec73663c files/digest-djbdns-1.05-r16 624
 MD5 dfd675b2775efcbb604413a84db8bf1a files/dnsroots.patch 349
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDIVtRj5H05b2HAEkRAq8AAJ4r1Lxvc4oxgiMHUrPtT/4dJZK19ACfS5Bw
+Krv6DTTArJ2VcxYNPxguBO0=
+=HN1K
+-----END PGP SIGNATURE-----
