@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/b2evolution/Attic/b2evolution-0.9.0.12-r1.ebuild,v 1.2 2005/09/05 18:51:24 iluxa Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/b2evolution/Attic/b2evolution-0.9.0.12-r2.ebuild,v 1.1 2005/09/09 22:03:46 halcy0n Exp $
 
 inherit webapp eutils
 
@@ -8,7 +8,8 @@ MY_EXT="-2005-05-06"
 
 DESCRIPTION="Multilingual multiuser multi-blog engine"
 HOMEPAGE="http://www.b2evolution.net"
-SRC_URI="mirror://sourceforge/evocms/${P}${MY_EXT}.zip http://dev.gentoo.org/~stuart/patches/b2evo-xmlrpc.tar.gz"
+SRC_URI="mirror://sourceforge/evocms/${P}${MY_EXT}.zip
+mirror://sourceforge/evocms/xmlrpc_fix_112.zip"
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~ppc ~x86"
 IUSE=""
@@ -25,12 +26,9 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 
-	#bug 97650
-	epatch ${FILESDIR}/${P}-xmlrpc.patch
-
 	#bug 102375
 	einfo "Patching for XMLRPC injection vulnerability"
-	cp -f ${WORKDIR}/b2evo-xmlrpc/* blogs/b2evocore
+	cp -f ${WORKDIR}/xmlrpc_fix_112/b2evocore/* blogs/b2evocore/
 }
 
 src_install() {
