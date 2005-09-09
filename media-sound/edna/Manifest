@@ -1,17 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 c2166fdb6841e60920cc18b266beb1c2 edna-0.5-r3.ebuild 1447
-MD5 c3e3ef564b50a5c8bcaea55ebe4abb89 edna-0.5-r4.ebuild 1547
-MD5 5a99a024541e4ffb4e5aa6b7c225c206 ChangeLog 2454
+MD5 b2037136dc88a4a9c42067fb2b003ead ChangeLog 2735
+MD5 1c2a210ab4f3242c090bffdc9dc70b09 edna-0.5-r5.ebuild 1707
 MD5 8221e3990883569e1f24440fbd48e25b metadata.xml 330
-MD5 0afeb0ec9a434506f2b38f2e66dbb0e3 files/digest-edna-0.5-r3 59
-MD5 3ebeae755eeebd30c84867f96b8fb8ce files/edna.gentoo 606
+MD5 b241b7a5dd4d7ffc6677dc1ac74d876f edna-0.5-r4.ebuild 1546
+MD5 6f8bb1ccb9018d0196cea623e4e01998 files/edna-0.5-pep-0263.patch 317
+MD5 163e5e1aca301e2faeac5ffc69cd6323 files/edna.gentoo 710
 MD5 0afeb0ec9a434506f2b38f2e66dbb0e3 files/digest-edna-0.5-r4 59
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDDKE+j5H05b2HAEkRAs+xAJ9gmCkmgdmkE30I90nhwfVsWqvIQgCfYzMG
-szE2MM1JyfJSyErmSywIBZM=
-=bgeK
------END PGP SIGNATURE-----
+MD5 0afeb0ec9a434506f2b38f2e66dbb0e3 files/digest-edna-0.5-r5 59
