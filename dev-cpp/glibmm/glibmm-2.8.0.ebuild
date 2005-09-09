@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/glibmm/Attic/glibmm-2.7.2.ebuild,v 1.1 2005/08/01 14:28:43 ka0ttic Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/glibmm/Attic/glibmm-2.8.0.ebuild,v 1.1 2005/09/09 11:30:37 ka0ttic Exp $
 
 inherit gnome2
 
