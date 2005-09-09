@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/dstat/Attic/dstat-0.6.0.ebuild,v 1.3 2005/09/03 16:06:54 dang Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/dstat/Attic/dstat-0.6.1.ebuild,v 1.1 2005/09/09 11:48:17 swegener Exp $
 
 inherit python
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://dag.wieers.com/home-made/dstat/"
 SRC_URI="http://dag.wieers.com/home-made/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 RDEPEND="virtual/python"
@@ -23,7 +23,7 @@ src_install() {
 	dobin dstat || die "dobin failed"
 
 	insinto /usr/share/dstat
-	doins -r plugins || die "doins failed"
+	doins plugins/*.py || die "doins failed"
 
 	doman dstat.1 || die "doman failed"
 	dodoc \
