@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 775fb3a5936c490c2976a2bc4438ca57 ams-1.8.7.ebuild 931
 MD5 6fa2edb43f952a129ada848bf6acf197 ams-1.8.4.ebuild 903
 MD5 f2d90b78fcfdc8a240ac0a5a44b9f372 ChangeLog 2183
@@ -8,3 +11,10 @@ MD5 c19ec89f0bf4237ed67c3479875b09e0 files/digest-ams-1.8.2 62
 MD5 285e9f3b72f69416d97b9ecd61434974 files/digest-ams-1.7.2 62
 MD5 82fd7a5edb679f417fe2e20571a23b79 files/digest-ams-1.8.7 62
 MD5 a10be76630a8184335a83449a12a5de0 files/digest-ams-1.8.4 62
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDIYrHj5H05b2HAEkRAiZ6AJ4qZduzZuOgvKImu6WAkXGrPT5NZgCbBPAj
+3mtVPGKp+3Naee5zYuimfWM=
+=KqHt
+-----END PGP SIGNATURE-----
