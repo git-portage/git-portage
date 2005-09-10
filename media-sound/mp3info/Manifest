@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b7d6c465ac5d1d7bb1338b4d36355bae ChangeLog 2116
 MD5 4fbf04b95be8684b7d17839c70708fba mp3info-0.8.4-r2.ebuild 947
 MD5 05a119f1f1c4675a5c3073ef525347af mp3info-0.8.4-r1.ebuild 858
@@ -7,3 +10,10 @@ MD5 8051859c5524c1f7dc847f4a2557a474 files/sanity-checks.patch 487
 MD5 ad2d1f86b64479bc8dd0b27b192d606f files/digest-mp3info-0.8.4-r1 61
 MD5 2be66b044256d5db41bb23da1d53b133 files/gcc.patch 825
 MD5 7e73f6eeb2bb3e8971c487c5a9b6a0f8 files/cast.patch 449
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDIwGLj5H05b2HAEkRAvEPAJ0eTmcRviJ4byvs1PU/VDMs/CCSvwCcCkWZ
++965f/dbmrnLwKaFhOfQ7RE=
+=jBoE
+-----END PGP SIGNATURE-----
