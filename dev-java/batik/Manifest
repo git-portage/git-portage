@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 30482403be516f2a003baac302de5418 batik-1.6.ebuild 1780
 MD5 b6eed76ca2877152a6e3af99578a4ae2 ChangeLog 3393
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
@@ -7,3 +10,10 @@ MD5 479ed0922a69b318b40b485614a6af16 files/digest-batik-1.5 63
 MD5 a929b00b059832c13cf91cc68c2cecf1 files/digest-batik-1.6 64
 MD5 88405976cca078c6468469f91d2ff161 files/batik-1.6-jikes.patch 1738
 MD5 2773f6aa10bcb901bd07ea509571ccef files/digest-batik-1.5.1-r4 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDIwTS/rLF9B432nYRAjltAKCJxRecf7oy7ENo6qjHJNkzFKRqvgCffYix
+9ls2TYAKoMQALMk/GBUN8c4=
+=+gYH
+-----END PGP SIGNATURE-----
