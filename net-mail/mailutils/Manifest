@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 057feffe63a8e1cd4bf1037c253b01be mailutils-0.6-r2.ebuild 2917
 MD5 280bb83bd46729cb0a705a36339c4292 ChangeLog 3097
 MD5 5721b86fd871bdfab77231abc6e02f68 metadata.xml 161
@@ -10,3 +13,10 @@ MD5 c78624e9d37cb3a280aea7281b6bae45 files/mailutils-IDEF0956.patch 524
 MD5 d3019ee356eb19b3ef156ba338b92873 files/mailutils-getline.diff 667
 MD5 47773bdea3fdc18d485aadf3e41ca9c9 files/mailutils-IDEF0957.patch 590
 MD5 ac9d32bbb54e8d1d2ea52039bea81c29 files/digest-mailutils-0.6-r2 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDI2QeViELBEf1JB0RAkCuAJ9MzA35bkZ2ra2WUeWfcwRspwGbLwCePNz6
+9QvwPVQ4kPSP1m+uU83orY4=
+=WQYD
+-----END PGP SIGNATURE-----
