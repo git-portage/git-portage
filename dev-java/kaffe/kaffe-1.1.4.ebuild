@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/kaffe/Attic/kaffe-1.1.4.ebuild,v 1.16 2005/07/19 18:36:27 axxo Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/kaffe/Attic/kaffe-1.1.4.ebuild,v 1.17 2005/09/10 16:48:52 betelgeuse Exp $
 
 inherit java flag-o-matic
 
@@ -12,7 +12,11 @@ DEPEND=">=dev-libs/gmp-3.1
 		>=media-libs/libpng-1.2.1
 		virtual/libc
 		virtual/x11
-		>=dev-java/java-config-0.2.4"
+		app-arch/zip
+		>=dev-java/java-config-0.2.4
+		alsa? ( >=media-libs/alsa-lib-1.0.1 )
+		esd?  ( >=media-sound/esound-0.2.1 )"
+RDEPEND=${DEPEND}
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="x86 sparc ~ppc hppa amd64"
@@ -41,7 +45,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	ewarn "By all means, do not use Kaffe as your default JDK/JRE!"
+	ewarn "Please, do not use Kaffe as your default JDK/JRE!"
 	ewarn "Kaffe is currently meant for testing... it should be"
 	ewarn "only be used by developers or bug-hunters willing to deal"
 	ewarn "with oddities that are bound to come up while using Kaffe!"

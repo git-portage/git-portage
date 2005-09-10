@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/kaffe/Attic/kaffe-1.1.5.ebuild,v 1.8 2005/09/10 16:48:52 betelgeuse Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/kaffe/Attic/kaffe-1.1.4-r1.ebuild,v 1.1 2005/09/10 16:48:52 betelgeuse Exp $
 
 inherit java flag-o-matic
 
@@ -8,20 +8,22 @@ DESCRIPTION="A cleanroom, open source Java VM and class libraries"
 SRC_URI="http://www.kaffe.org/ftp/pub/kaffe/v1.1.x-development/${P/_/-}.tar.gz"
 HOMEPAGE="http://www.kaffe.org/"
 DEPEND=">=dev-libs/gmp-3.1
-	>=media-libs/jpeg-6b
-	>=media-libs/libpng-1.2.1
-	virtual/libc
-	virtual/x11
-	>=dev-java/java-config-0.2.4
-	dev-java/jikes"
+		>=media-libs/jpeg-6b
+		>=media-libs/libpng-1.2.1
+		virtual/libc
+		virtual/x11
+		app-arch/zip
+		>=dev-java/java-config-0.2.4
+		alsa? ( >=media-libs/alsa-lib-1.0.1 )
+		esd?  ( >=media-sound/esound-0.2.1 )"
+RDEPEND=${DEPEND}
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~sparc ~amd64 -ppc"
+KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
 IUSE="alsa esd"
 
 PROVIDE="virtual/jdk
-	virtual/jre"
-#S=${WORKDIR}/kaffe-${date}
+		virtual/jre"
 
 src_compile() {
 	# see #88330
@@ -31,16 +33,16 @@ src_compile() {
 		--prefix=/opt/${P} \
 		--host=${CHOST} \
 		`use_enable alsa`\
-		`use_enable esd` \
-		--with-jikes || die "Failed to configure"
+		`use_enable esd`
 	# --with-bcel
 	# --with-profiling
-	make || die "Failed to compile"
+	make || die
 }
 
 src_install() {
-	make DESTDIR=${D} install || die "Failed to install"
-	set_java_env ${FILESDIR}/${VMHANDLE} || die "Failed to install environment files"
+	make DESTDIR=${D} install || die
+	cp ${FILESDIR}/${PF} ${T}/${VMHANDLE} || die
+	set_java_env ${T}/${VMHANDLE} || die
 }
 
 pkg_postinst() {
