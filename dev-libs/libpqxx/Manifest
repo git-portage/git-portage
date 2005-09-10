@@ -3,9 +3,9 @@ MD5 b4a1a1b973b007c0ea2894e69f2860f4 libpqxx-2.4.4.ebuild 772
 MD5 7137eafc9fce2742a2519ef52ba5011c libpqxx-2.4.2.ebuild 764
 MD5 a80ee973d94ddb56b237d746bc7ba0d9 libpqxx-1.5.1.ebuild 641
 MD5 f8d3d207746da2a3cd14dcaab8daab76 metadata.xml 163
-MD5 0e1696cdeff223960f0e7cc0cfe8a099 ChangeLog 3122
+MD5 3691a192dabbbae0a618f2ca2cf6cf54 ChangeLog 3226
 MD5 e81da6850d37b6e66ba950e3fc952df2 libpqxx-2.5.5.ebuild 951
-MD5 1e8e7296e8009b7fcd8880a4d015ad6c libpqxx-2.5.1.ebuild 946
+MD5 bc5a13dc70df136f06f3ac100c22afe6 libpqxx-2.5.1.ebuild 948
 MD5 224d17bf04a29c1eb7153d11f1bb23b6 libpqxx-2.5.0.ebuild 772
 MD5 98e4de7d10cd8235ba9e1c6e4653e288 files/digest-libpqxx-2.4.3 65
 MD5 974778e9611f54a4cb5d0cd38579c72f files/digest-libpqxx-2.4.4 65
