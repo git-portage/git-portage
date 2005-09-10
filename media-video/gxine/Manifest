@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1b13944ca65db7357e2189f4cd0d4ecc ChangeLog 6608
 MD5 92aafcd346319a4d24749c1fdc89b818 gxine-0.4.6.ebuild 1618
 MD5 79d0920e2fdab22f9ef6792340afbdd8 gxine-0.4.5.ebuild 1512
@@ -10,3 +13,10 @@ MD5 6681123d68137e59a504366751791a87 files/gxine-0.4.6-mkstemp.patch 1198
 MD5 f2e455a1b17385f10fa014eb9c7e14e3 files/digest-gxine-0.4.6 64
 MD5 fb579db8b42db43fb5c027ca8c78e951 files/digest-gxine-0.4.5 64
 MD5 69140a1cb8cc6acb6ffdca76e9301493 files/digest-gxine-0.4.1-r1 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDIuhfj5H05b2HAEkRAtu1AJ4920K5MAUgTiU4gAi1vT1sE31kowCfXwPI
+OsohoTR9oHFEpecChF69xXI=
+=0B3a
+-----END PGP SIGNATURE-----
