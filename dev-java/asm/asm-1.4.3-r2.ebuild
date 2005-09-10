@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/asm/Attic/asm-1.4.3-r1.ebuild,v 1.8 2005/07/15 17:46:06 axxo Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/asm/Attic/asm-1.4.3-r2.ebuild,v 1.1 2005/09/10 15:32:33 axxo Exp $
 
 inherit java-pkg
 

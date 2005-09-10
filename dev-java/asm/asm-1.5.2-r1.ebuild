@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/asm/Attic/asm-2.0_alpha.ebuild,v 1.4 2005/07/15 17:46:06 axxo Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/asm/Attic/asm-1.5.2-r1.ebuild,v 1.1 2005/09/10 15:32:33 axxo Exp $
 
 inherit java-pkg
 
@@ -8,11 +8,10 @@ DESCRIPTION="Bytecode manipulation framework for Java"
 HOMEPAGE="http://asm.objectweb.org"
 SRC_URI="http://download.forge.objectweb.org/${PN}/${P}.tar.gz"
 LICENSE="BSD"
-SLOT="2"
-KEYWORDS="x86 amd64 ppc"
-IUSE="doc jikes"
+SLOT="1.5"
+KEYWORDS="~x86 ~ppc ~amd64"
+IUSE="doc"
 DEPEND=">=virtual/jdk-1.3
-	jikes? ( >=dev-java/jikes-1.21 )
 	dev-java/ant
 	dev-java/ant-owanttask"
 RDEPEND=">=virtual/jre-1.3"
@@ -27,7 +26,6 @@ src_unpack() {
 src_compile() {
 	local antflags="jar"
 	use doc && antflags="${antflags} jdoc"
-	use jikes && antflags="${antflags} -Dbuild.compiler=jikes"
 	ant ${antflags} || die "compilation failed"
 }
 
