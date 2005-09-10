@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c3ed0ed14350666a1e54d0a014fe9591 gnome-system-monitor-2.8.3.ebuild 918
 MD5 811825f861cb9068b969fa9653ea7474 gnome-system-monitor-2.12.0.ebuild 794
 MD5 bde76f9bc56a551a3d713d5ec9baaa96 gnome-system-monitor-2.10.1.ebuild 929
@@ -10,3 +13,10 @@ MD5 7c28214b448264bb2db48c93401651ae files/digest-gnome-system-monitor-2.8.3 79
 MD5 23d046a3eb3b6f9c2b9ec078e73f3d5d files/digest-gnome-system-monitor-2.10.0 80
 MD5 4ce03a83c4231e4b30b504c9e3e8faf2 files/digest-gnome-system-monitor-2.10.1 80
 MD5 b832bac398e7057a0f304684039c9d97 files/digest-gnome-system-monitor-2.12.0 80
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDIkToomPajV0RnrERAouDAJ9Sc0hmSBPJ1nAvtxGK2e1fYKl3bwCdGCBD
+LCNjLdpXf7kfdaK7pl/jUlA=
+=mV8D
+-----END PGP SIGNATURE-----
