@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b2ddd92edbc173c71a7a26502da80535 openmsx-0.4.0.ebuild 1096
 MD5 7f1f3c0172523729641ba9bc11dcbe55 metadata.xml 248
 MD5 08a5208ab1bf5466f4b8f8babf8b090f ChangeLog 2525
@@ -13,3 +16,10 @@ MD5 2aa177e70143c6086066c46f58217c69 files/openmsx-0.4.0-symlinking.patch 772
 MD5 7e488066115ef9f2e653d6260cd2499b files/openmsx-0.4.0-custom.mk.patch 377
 MD5 10087388eb3cb770a95f8adb6191333b files/openmsx-0.5.2-gcc4.patch 19379
 MD5 91653dad0231dd7e9a7e3d6e4ec5cd99 files/digest-openmsx-0.5.2 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDI1LNp5vW4rUFj5oRAmcEAJ9BVIIHCWFa0rzgozrimsYCaQ04OACfbwuZ
+8vux21HpPAbygZEDQv1Mp6I=
+=IMVH
+-----END PGP SIGNATURE-----
