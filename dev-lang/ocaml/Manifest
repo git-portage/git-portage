@@ -2,8 +2,8 @@ MD5 ef7cc12a4ff8aeec9ddb58ff65f7e3c0 ocaml-3.07-r1.ebuild 2910
 MD5 d3e28c5c99b056007b6b5b0781a4e542 ocaml-3.06-r2.ebuild 1660
 MD5 8b350f19c06fcabf1053b0421b7c3f5a metadata.xml 155
 MD5 e3554fd0d2b4cbd09694d68ca3edb0d8 ocaml-3.08.1.ebuild 2149
-MD5 ba191da99f37cc8bc3d210d28a2709e9 ChangeLog 10096
-MD5 23f65e90d1a5d610fbaa83f620853291 ocaml-3.08.3.ebuild 2294
+MD5 cec53ffdaca86e8910e2630ecb0bdeae ChangeLog 10200
+MD5 39c0c2694677951c06c36b90d83e3b15 ocaml-3.08.3.ebuild 2296
 MD5 ede360aa66fcf54120c19798f0421e61 ocaml-3.08.ebuild 2209
 MD5 c42de320103c2d3eb1aa4002e2e0716b files/digest-ocaml-3.07-r1 130
 MD5 45ff13419dd955aa86d021abbf325fc2 files/ocaml-3.07-hppa.patch 15730
