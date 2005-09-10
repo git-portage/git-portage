@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f44e7916277f346bd86a5b21cd8f1851 gnome-terminal-2.10.0.ebuild 1161
 MD5 deb83fba66b34d722f90cc991168f174 gnome-terminal-2.12.0.ebuild 1225
 MD5 6b9716eb662f65087bd7a068907f2f3d ChangeLog 12291
@@ -8,3 +11,10 @@ MD5 1c5aaf13eb2a8bd0b2b03c529d5c8740 files/gnome-terminal-2-default_shell.patch 
 MD5 206e36d5520f43272f029d6411af6332 files/gnome-terminal-2-dnd_url_add_space.patch 1000
 MD5 c6d9c33f98e008a1bb1ca3caa6028f8d files/digest-gnome-terminal-2.10.0 75
 MD5 319f3c55edc2ba11fe8592faf32c35a3 files/digest-gnome-terminal-2.12.0 75
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDIlOaomPajV0RnrERAuG6AJ9yDO9FsC2CWa+XymzqkWfc3ulA7wCdESUR
+ryNFrgYmYxDMxhlQsgBofZw=
+=dOVA
+-----END PGP SIGNATURE-----
