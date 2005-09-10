@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/argouml/Attic/argouml-0.16.ebuild,v 1.3 2005/05/06 14:40:23 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/argouml/Attic/argouml-0.18.1-r1.ebuild,v 1.1 2005/09/10 14:20:38 axxo Exp $
 
 inherit java-pkg
 
@@ -16,21 +16,21 @@ SLOT="0"
 KEYWORDS="~x86 ~ppc ~amd64"
 RESTRICT="nomirror"
 IUSE="doc"
-RDEPEND=">=virtual/jre-1.2"
+RDEPEND=">=virtual/jre-1.3"
 S=${WORKDIR}
 
 src_compile() { :; }
 
 src_install() {
-	dodir /opt/${PN}
-	cp -a . ${D}/opt/${PN}/lib/
+	dodir /opt/${PN}/lib/
+	cp -pPR . ${D}/opt/${PN}/lib/
 	chmod -R 755 ${D}/opt/${PN}
 	touch ${D}/opt/${PN}/lib/argouml.log
 	chmod a+w ${D}/opt/${PN}/lib/argouml.log
 
 	echo "#!/bin/sh" > ${PN}
 	echo "cd /opt/${PN}/lib" >> ${PN}
-	echo '"${JAVA_HOME}"/bin/java -jar argouml.jar' >> ${PN}
+	echo 'java -jar argouml.jar' >> ${PN}
 	into /opt
 	dobin ${PN}
 
