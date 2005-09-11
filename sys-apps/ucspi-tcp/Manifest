@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 76034b124658a585b29a772acbf2b798 ucspi-tcp-0.88-r9.ebuild 2246
 MD5 9b7edefc3244d63241311cb3b66b1a44 ucspi-tcp-0.88-r12.ebuild 2574
 MD5 bcebd2ff9efe9a78bc734572a1db7342 ChangeLog 5605
@@ -16,3 +19,10 @@ MD5 9eab9910e2978160e33f6c4e9b227efa files/digest-ucspi-tcp-0.88-r9 350
 MD5 57161a76734c44c65d46f0f93826aaf3 files/digest-ucspi-tcp-0.88-r12 350
 MD5 0479a09fdd4ce855d35e36563cab4743 files/0.88-errno.patch 239
 MD5 fb41d7c55db5124d7488a923e4223576 files/0.88-bigendian.patch 478
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDJLN2j5H05b2HAEkRArC8AJ9v9yiv3RfB6LOXQEMUSy/i8lrl8gCgmBuo
+a+ZGbGvPq29EydnkJwUo+is=
+=hnSu
+-----END PGP SIGNATURE-----
