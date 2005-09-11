@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8745169bf7a202e5eb31ec7fb6c0f8a9 ChangeLog 12126
 MD5 5db4117db5eca1f36f1778625e85d190 files/digest-maildrop-1.7.0-r3 68
 MD5 be89a292c7c2bd4365fd160f4db22fb9 files/digest-maildrop-1.7.0.20040907-r1 77
@@ -16,3 +19,10 @@ MD5 3cbb6f6a6e1be7d2339173ab6d4a23cd maildrop-1.8.0-r3.ebuild 3642
 MD5 9f710ad4e5d37b2f26978ed8adfc08e4 maildrop-1.8.1-r2.ebuild 3276
 MD5 570947365aa78626425b04ad1573ff34 maildrop-1.8.1.20050828.ebuild 3303
 MD5 2fc9863fa18fa7e25fedaa87a92a3c43 metadata.xml 259
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDJDMOI1lqEGTUzyQRAt3IAKDF0CK42dFCDrBtmuUF0unC5+mDSQCdG9US
+I5VH55sOtR/nKYUCh77KhUA=
+=Copq
+-----END PGP SIGNATURE-----
