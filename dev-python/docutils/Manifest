@@ -1,7 +1,10 @@
-MD5 e256eee072db7f631ee707f3ec6c41d5 ChangeLog 5355
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 ff78187c1e224d5ec474af90e95cf35f ChangeLog 5354
 MD5 32c18f62ef442534b43d411bfd8c40a6 docutils-0.3-r1.ebuild 1770
 MD5 dddf09e76c6f943ebc4931e2ff794320 docutils-0.3.3-r1.ebuild 1903
-MD5 f545381a5406263ce3e19bb80762f46e docutils-0.3.5.ebuild 1970
+MD5 c45be82484f7cc076c69a559e3133d62 docutils-0.3.5.ebuild 1969
 MD5 f44c6ce48ebfec9973f98fb4b54f5f42 docutils-0.3.7.ebuild 2475
 MD5 74a7b1584824888016191380b65cea31 docutils-0.3_pre20030530-r3.ebuild 1541
 MD5 71c4638c9c88af75b58e5f5cb54fe008 metadata.xml 159
@@ -29,3 +32,10 @@ MD5 f3c575d69568fafe2159283355e7efc0 files/glep-0.3.3/glepread.py 1833
 MD5 8a92d518608c84c83ce14ac840f96834 files/glep-0.3.3/glep.py 699
 MD5 bacb84b99614ef28729cb5adf4763242 files/glep-0.3.3/glep_htmlwrite.py 3246
 MD5 bba4f5a38311f907d4ddb4a5514099ea files/glep-0.3.3/glepstrans.py 10898
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDJHNhEZCkKN40op4RAtnNAKCktxVZKSs9sdF2oME16inIguXPwQCdFc3v
+CoBZ4LMO9E6D8FlZgnxSIhY=
+=tM8s
+-----END PGP SIGNATURE-----
