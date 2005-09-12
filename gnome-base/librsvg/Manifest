@@ -4,8 +4,8 @@ MD5 bc3e3401ea4d027902f2ea596ec8e6f8 librsvg-2.8.1.ebuild 1313
 MD5 4bd76fdf498f73f383ff25d7aa630d34 librsvg-1.0.3.ebuild 925
 MD5 62862626e0141a94877b2316316786c9 librsvg-2.4.0-r1.ebuild 1021
 MD5 b64f9893ef38a233736163fddb30a743 librsvg-2.6.4.ebuild 1351
-MD5 2a95fa60e3230ba2d712c1305aca4951 librsvg-2.11.1.ebuild 1519
-MD5 d0c4a0e9c1652a2ba222dc0ea997e5da ChangeLog 9284
+MD5 4057ce584e88fcaee4b8010b93dcb1f5 librsvg-2.11.1.ebuild 1518
+MD5 b5e0e1c281ea5fb7e80623b47fcc069c ChangeLog 9407
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 799dfdee1c95c49cb64bfc299dfbab65 librsvg-2.9.5.ebuild 1509
 MD5 4da0dc642eed645fd4dcbbfa8c7f4989 files/librsvg-2.6.4-gcc2_fix.patch 653
