@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/gxine/Attic/gxine-0.4.1-r1.ebuild,v 1.5 2005/09/10 14:05:49 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/gxine/Attic/gxine-0.4.8.ebuild,v 1.1 2005/09/12 08:50:29 flameeyes Exp $
 
 inherit eutils nsplugins fdo-mime
 
@@ -10,26 +10,28 @@ LICENSE="GPL-2"
 
 DEPEND="media-libs/libpng
 	>=media-libs/xine-lib-1_beta10
-	>=x11-libs/gtk+-2.4
-	>=dev-libs/glib-2.4
+	>=x11-libs/gtk+-2.6
+	>=dev-libs/glib-2.6
+	dev-lang/spidermonkey
 	lirc? ( app-misc/lirc )
 	X? ( virtual/x11 )"
-RDEPEND="nls? ( sys-devel/gettext )"
+RDEPEND="nls? ( sys-devel/gettext )
+	dev-util/pkgconfig"
 
 IUSE="nls lirc nsplugin"
 
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 sparc x86"
+# Those needs spidermonkey: ~sparc
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 
 SRC_URI="mirror://sourceforge/xine/${P}.tar.gz"
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/${P}-menu-fix.patch
 
-	#fixes format string security bug #93532
-	epatch ${FILESDIR}/${PN}-0.4.4-secfix.patch
+	# Fix icon as per icon theme specs.
+	sed -i -e 's:gxine-logo.png:gxine:' ${S}/gxine.desktop
 }
 
 src_compile() {
@@ -37,6 +39,7 @@ src_compile() {
 		$(use_enable nls) \
 		$(use_enable lirc) \
 		$(use_with nsplugin browser-plugin) \
+		--disable-gtk-compat \
 		--disable-dependency-tracking || die
 	emake || die
 }
@@ -49,11 +52,9 @@ src_install() {
 
 	dodoc AUTHORS ChangeLog NEWS README
 
+	mv ${D}/usr/share/pixmaps/gxine-logo.png ${D}/usr/share/pixmaps/gxine.png
 	insinto /usr/share/icons/hicolor/48x48/apps
 	newins pixmaps/gxine-logo.png gxine.png
-
-	insinto /usr/share/pixmaps
-	doins pixmaps/gxine-logo.png
 
 	use nsplugin && inst_plugin /usr/$(get_libdir)/gxine/gxineplugin.so
 }
