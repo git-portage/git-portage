@@ -1,4 +1,4 @@
-MD5 4e1b56a3485e8dc877b09bb6ebc7d513 ChangeLog 8151
+MD5 ac53689c3c2657478b22c48f2096d81b ChangeLog 8261
 MD5 8aefbc0e49db723ca1ad02d0c409cd49 metadata.xml 160
 MD5 3ae9b96a992589aaba3c02371ad7b7ce xmule-1.10.0.ebuild 1237
 MD5 c93f51d9f6bde04ab84722577a376643 xmule-1.8.4-r1.ebuild 1020
@@ -8,7 +8,7 @@ MD5 d7190f63abc1cb188378de07ebba2db2 xmule-1.9.2.ebuild 1030
 MD5 1ef93365b8a4264b89a85248b29ee565 xmule-1.9.3.ebuild 1030
 MD5 f629867fef4802e31134ea8b4b698417 xmule-1.9.4.ebuild 1067
 MD5 c5f21f3c93e16b9aaf3dc1afbc4a2874 xmule-1.9.4b.ebuild 1044
-MD5 17558d715f682b48a25de48f441b4af3 xmule-1.10.1.ebuild 1237
+MD5 f95577df0ca4f3a6f6da756df3d3e110 xmule-1.10.1.ebuild 1237
 MD5 196bcbbfbdaaaaf0a59fefae64628be6 files/digest-xmule-1.10.0 66
 MD5 7af93e9c27cecc95812aaf13b2579dc9 files/digest-xmule-1.8.4-r1 65
 MD5 83413c32a94e2597771601d45b4ac116 files/digest-xmule-1.9.0 65
