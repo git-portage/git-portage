@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3fd5842b6468f5fd506f0cbb9811db9d udev-064-r1.ebuild 6011
 MD5 428e955c009eebb4173dd0e059327e96 udev-067.ebuild 5914
 MD5 43820d124485c872fbebc855051bbe4a udev-030.ebuild 3525
@@ -45,3 +48,10 @@ MD5 f1a1ae2d8dd0af1e1f5a2df7aa4bc33b files/digest-udev-067 61
 MD5 5a1604faa5c8a1b5cf7a6a66f13fe226 files/udev.rules.post_012 4185
 MD5 d03e92ce93131fd7d29fcae1b3f2627b files/digest-udev-068-r1 61
 MD5 7b0a35c905183730e4dfdcf29f5a1816 files/udev-050-udev_volume_id.patch 388
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDJZKW1ZcsMnZjRyIRAj4ZAJ0dHWJo0BgeOlwwnaE7FV7XfDrK6wCdHagD
+UuAAqRngR1AXH/QD6MF+o64=
+=GZO5
+-----END PGP SIGNATURE-----
