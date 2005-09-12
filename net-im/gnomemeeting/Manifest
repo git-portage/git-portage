@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 48cdac5c28606b38f8643fc327d9df4a gnomemeeting-1.2.1.ebuild 2998
 MD5 5e442d151db50f960aa0ed3ef72c081a gnomemeeting-1.00.ebuild 2043
 MD5 9adb1bf9d688e8be734b36bc0e54c110 gnomemeeting-1.0.2.ebuild 2286
@@ -21,3 +24,10 @@ MD5 0cc72cbb5df4cb6b2ac1e8d7953f79f0 files/gnomemeeting-1.00-gcc34.patch 892
 MD5 502d124d9459e770045a57078e9fcc9c files/gnomemeeting-1.2.2-dbus.diff 4549
 MD5 67fe9473695e53f1d3eb2093e925fa9b files/digest-gnomemeeting-1.00 70
 MD5 683dfd499a4dd803dd3cb8797a4d0efe files/gnomemeeting-1.2.1-configure.patch 669
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDJeM6omPajV0RnrERAgbbAJ4jv6QZXMJ902ihi4LSvlnEPZ7eVACaAqO/
+HxweBy0eKW2wSf/c1Bkx0Zs=
+=Qjcb
+-----END PGP SIGNATURE-----
