@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d49f47b9d5f71704c5d4b0010a841185 ChangeLog 8747
 MD5 ebfcbcbd629e41daf43f4812e1c0bf01 gtk-gnutella-0.93.3.ebuild 2171
 MD5 7501dfee4eca51d7affba43b576a6156 gtk-gnutella-0.95.ebuild 2177
@@ -14,3 +17,10 @@ MD5 e65fa40ee2f1d02bdb6f329e7ed2f577 files/digest-gtk-gnutella-0.93.3 73
 MD5 4fe4d39aa46ee9377a21fd889a537111 files/digest-gtk-gnutella-0.95-r1 71
 MD5 bac40ca24ed573630dfb545429d47b60 files/digest-gtk-gnutella-0.95.3 73
 MD5 0083753249fe618068f133b145544070 files/digest-gtk-gnutella-0.94 71
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDJtjnKRy60XGEcJIRAi87AKCHYrSCRkjFeYUEMiiLxDOUOnAjLwCgjDhS
+aPC7H7ZH9Ba/te7hCHLIYEY=
+=BzLx
+-----END PGP SIGNATURE-----
