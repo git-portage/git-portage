@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 615dd5dc24cb67c6ff5d7f4f8fd64b50 util-linux-2.12q-r1.ebuild 5124
 MD5 af4d9067188d2b9be9ff65f0a2482a1f util-linux-2.12i-r1.ebuild 3846
 MD5 89e5a363944a7f11b89567579426d84c ChangeLog 18562
@@ -36,3 +39,10 @@ MD5 a43d2b8c70c5f40a195721dc536abace files/util-linux-2.12-swapon-unistd.patch 2
 MD5 e3697bc8fd6a344e8cba1c7d32e34790 files/util-linux-2.11z-parallel-make.patch 369
 MD5 0b95e856fd2f375270cf2ec4eaa69c8a files/crypto-loop.confd 505
 MD5 d20405e12353610b3ef8fbc2e1d57f2a files/crypto-loop.initd 1625
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDJtzT1ZcsMnZjRyIRAmTcAJ9Nj3/Vt11GTlZ3PetIL/R0jNbIMwCgiSHs
+t7Humov1YCCtCdbx4Y8jXLM=
+=qNdg
+-----END PGP SIGNATURE-----
