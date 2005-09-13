@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 51929b8c2f940a6bcfea0c15ed799bc8 ChangeLog 6885
 MD5 a72a06a37ca4e5905085ebff07fe9e9e metadata.xml 217
 MD5 41fcc6daa91fca36a2a64bce086f5cad scribus-1.2.1.ebuild 1000
@@ -11,3 +14,10 @@ MD5 9e60755a652b03dbc13ae7814c3a7c8e files/digest-scribus-1.2.2 67
 MD5 9e60755a652b03dbc13ae7814c3a7c8e files/digest-scribus-1.2.2-r1 67
 MD5 ad6a8f28302ba5f2cd6602f15dcf8f0b files/digest-scribus-1.2.2.1 69
 MD5 395666226dc815cd6a75f53e1804bf58 files/scribus-1.2.2-crash-fix.diff 804
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDJ1OJr2QksT29OyARAjmIAJ9/7fIb8ENeTthPszEm4081hgANQACfVH+5
+e15zxqmFbEb2lH+sSYilo20=
+=7lf7
+-----END PGP SIGNATURE-----
