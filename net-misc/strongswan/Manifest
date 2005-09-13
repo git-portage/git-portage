@@ -1,6 +1,6 @@
 MD5 9181cbe1b69fe5bf1705356c673d2ac5 strongswan-2.5.4.ebuild 3711
 MD5 c51c49fe2382efe8b609625aad583409 strongswan-2.5.0.ebuild 3708
-MD5 7333281034ac481f761f902b8857d777 ChangeLog 5796
+MD5 38ccd7b424191858ad83e8c21d39f64c ChangeLog 5796
 MD5 48d78406890387afe4b0d4bba793f8d1 metadata.xml 634
 MD5 d35f8aea878066e110e6ff3d09a4f50e files/ipsec 1538
 MD5 e6a1667ed80d993a4631509fce802b2b files/digest-strongswan-2.5.0 70
