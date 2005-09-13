@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 39e8d718b4e1c785eeafdb242a99ed29 eix-0.3.0.ebuild 1179
 MD5 b2485b2d2f6531173b0ca3fa22a8a4e1 eix-0.3.0-r1.ebuild 1238
 MD5 8af269af59692b6ed9e9db62ddac1c1e ChangeLog 6025
@@ -15,3 +18,10 @@ MD5 451cd103e930d34810d0c426b7ad0ddb files/0.3.0-if-else-fi.patch 635
 MD5 b012df8992488da6f22e677cba2e1f9c files/0.2.2-incorrect-masks.patch 1661
 MD5 f0687628fdeca80bbcebef82a7a82e6f files/digest-eix-0.3.0-r1 62
 MD5 1df3eabe7a20b27cf2d3c1c0b2b5a090 files/0.2.6-cdb-cast.patch 516
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDJtfuKRy60XGEcJIRAjytAKCdvoHTVA+O/KtqLpYHVIeSxLEz6ACgkR+V
+nzoReyiWzCL/2UKCTCB43aw=
+=kXJL
+-----END PGP SIGNATURE-----
