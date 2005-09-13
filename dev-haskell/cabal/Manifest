@@ -1,4 +1,6 @@
-MD5 403966346bebb245c88688d60885eca5 ChangeLog 517
 MD5 65b39882bf4d56091907f65c82513d93 cabal-0.5.ebuild 2188
+MD5 549b0348ebf50c306e93efbea9091c9e cabal-1.1.3.ebuild 1754
+MD5 403966346bebb245c88688d60885eca5 ChangeLog 517
 MD5 0b2872d51fdf7a2694dab3d34b57667d metadata.xml 232
+MD5 b34aabec3ab15c7b74d940437870e91b files/digest-cabal-1.1.3 63
 MD5 9d318d0c3adc5992247ee3f54ff9c5b6 files/digest-cabal-0.5 58
