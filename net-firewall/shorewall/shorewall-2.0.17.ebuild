@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall/Attic/shorewall-2.0.7.ebuild,v 1.5 2005/06/17 20:46:31 hansmi Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall/Attic/shorewall-2.0.17.ebuild,v 1.1 2005/09/13 09:11:25 dragonheart Exp $
 
 IUSE="doc"
 
@@ -13,7 +13,7 @@ SRC_URI="http://shorewall.net/pub/${PN}/2.0/${P}/${P}.tgz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha ~amd64 ppc sparc x86"
+KEYWORDS="~alpha ~amd64 ppc ~sparc x86"
 
 DEPEND="virtual/libc
 	>=net-firewall/iptables-1.2.4
@@ -40,7 +40,10 @@ src_install() {
 pkg_postinst() {
 	einfo
 	einfo "Read the documentation from http://www.shorewall.net"
-	einfo "available at /usr/share/doc/${PF}/html/index.htm"
+	if use doc
+	then
+		einfo "available at /usr/share/doc/${PF}/html/index.htm"
+	fi
 	einfo "Do not blindly start shorewall, edit the files in /etc/shorewall first"
 	einfo
 	einfo "If you have just upgraded from shorewall-2.0.1 mark the following issues:"
