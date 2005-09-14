@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 319fe8f45b51a2d31f8d4e9a4071ca10 metadata.xml 248
 MD5 5f0d5d812cb19c3f1dd91bab090008bd ChangeLog 12138
 MD5 3e970dc883c7abdd6bf77e8ee07f6ad3 beep-media-player-0.9.7-r6.ebuild 2769
@@ -16,3 +19,10 @@ MD5 32c2097467512370b951158b88abbeda files/0.9.7-hidden-window.patch 658
 MD5 e0224d7dcc5a2cb1af6ea6b18a6daea8 files/beep-config 3347
 MD5 e279329d65732e4ce62f2ea78badc901 files/0.9.7-volume-crash.patch 600
 MD5 539d031b4930b4ce080fbe0804edfc28 files/0.9.7-window-focus.patch 850
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDKHbBp5vW4rUFj5oRAkbuAKCl7/9YqQA0YNnsT5pXXokYFiOxLACghVa8
+V7QmaqdxnrRVYSoOID1gkNs=
+=G5Kn
+-----END PGP SIGNATURE-----
