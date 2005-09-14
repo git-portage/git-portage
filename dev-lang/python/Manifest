@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 30cb784ddb6797530d135b5234d6bdf8 python-2.3.5-r2.ebuild 7993
 MD5 1df326999058ecec71a274a37ba15514 python-2.4.1.ebuild 8094
 MD5 3dc06bf8e04bd9880be6ee4402234e8b python-2.3.5-r1.ebuild 7924
@@ -58,3 +61,10 @@ MD5 3c77f8f9d55bbedacd9476a428088250 files/python-2.4-libdir.patch 8358
 MD5 2b953054102d344834597bc73b209e12 files/python-2.4-disable_modules_and_ssl.patch 1285
 MD5 fccf57b8c47164b676517e516898dc46 files/digest-python-2.4-r3 64
 MD5 ec16631b538a7481f0537191d5f23b27 files/python-2.4-mimetypes_apache.patch 454
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDKLDQEZCkKN40op4RAks1AKC5TswN0J1qZAW9IAMghhLmRT/d6QCggdy3
+DF4aApSoM+836d1SiuNSXYo=
+=2jSX
+-----END PGP SIGNATURE-----
