@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 fed1ac11d82c11784e6a95d428e1c840 openct-0.6.2.ebuild 1691
 MD5 dda6f7cf8df1216911a1c05a082673d3 openct-0.5.0.ebuild 1739
 MD5 aef19db41c4cdaff9f65d474bce70da9 openct-0.6.6.ebuild 1955
@@ -10,3 +13,10 @@ MD5 2a696bc8aef7e7b84c42314e41cb3730 files/digest-openct-0.5.0 64
 MD5 f2097a725de8fa534add565065bd3e6c files/digest-openct-0.6.2 64
 MD5 f0c5c525f3b6cecf937082e6a43622ed files/digest-openct-0.6.5 64
 MD5 f9bb624a2f171539f67614d14137476f files/openct.rc 591
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDJ5N4gIKl8Uu19MoRAp1OAJ9fSlD+wKZ+VmQ6+bYO4nZq8WBnZgCfYg3V
+pzMISrICNKMudBIN8qtynt4=
+=36SI
+-----END PGP SIGNATURE-----
