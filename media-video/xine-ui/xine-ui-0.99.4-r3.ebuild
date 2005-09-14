@@ -1,10 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/xine-ui/Attic/xine-ui-0.99.4-r2.ebuild,v 1.5 2005/09/14 09:30:34 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/xine-ui/Attic/xine-ui-0.99.4-r3.ebuild,v 1.1 2005/09/14 11:06:00 flameeyes Exp $
 
 inherit eutils autotools
 
-PATCHLEVEL="7"
+PATCHLEVEL="8"
 DESCRIPTION="Xine movie player"
 HOMEPAGE="http://xine.sourceforge.net/"
 SRC_URI="mirror://sourceforge/xine/${P}.tar.gz
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/xine/${P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
-IUSE="X nls lirc aalib libcaca readline curl ncurses"
+IUSE="X nls lirc aalib libcaca readline curl ncurses xinerama"
 
 RDEPEND="media-libs/libpng
 	>=media-libs/xine-lib-1.0
@@ -30,11 +30,11 @@ RDEPEND="media-libs/libpng
 			x11-libs/libXext
 			x11-libs/libXxf86vm
 			x11-libs/libXv
-			x11-libs/libXinerama
 			x11-libs/libXtst
 			x11-libs/libXft )
 		virtual/x11 )
-		)"
+		)
+	xinerama? ( || ( x11-libs/libXinerama virtual/x11 ) )"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )
 	X? ( || ( (
@@ -43,16 +43,16 @@ DEPEND="${RDEPEND}
 			x11-libs/libXt
 			x11-proto/xextproto
 			x11-proto/xproto
-			x11-proto/xf86vidmodeproto
-			x11-proto/xineramaproto )
+			x11-proto/xf86vidmodeproto )
 		virtual/x11 )
-		)"
+		)
+	xinerama? ( || ( x11-proto/xineramaproto virtual/x11 ) )"
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
 
-	EPATCH_SUFFIX="patch" epatch ${WORKDIR}/${PV}
+	EPATCH_SUFFIX="patch" epatch ${WORKDIR}/patches
 	AT_M4DIR="m4" eautoreconf
 }
 
@@ -63,6 +63,7 @@ src_compile() {
 	econf \
 		$(use_enable lirc) \
 		$(use_enable nls) \
+		$(use_enable xinerama) \
 		$(use_with X x) \
 		$(use_with aalib) \
 		$(use_with libcaca) \
