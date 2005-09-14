@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1e796facbd4e0e13db2e8f9e715414e3 ChangeLog 1770
 MD5 656aee83277d0f4b57861216330f2542 unieject-4.ebuild 1051
 MD5 7f0b2989cfdaf436a2cbd458a718368a metadata.xml 366
 MD5 564dd62090f6cb257cd2d247e5008a77 files/digest-unieject-4 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDKIdqj5H05b2HAEkRAsugAJ9fIk74n+6LMrnjhUhIGsGSCi0VXACeKBSL
+g+fQ+XGJuSSi9TeiNwG7aNc=
+=b4Cy
+-----END PGP SIGNATURE-----
