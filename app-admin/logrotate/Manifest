@@ -2,7 +2,7 @@ MD5 5990c6a2393224efe2d067d10de0a97c logrotate-3.7.1.ebuild 1723
 MD5 56b2e40af8f7d88199bcd55bf9b1d55a logrotate-3.7.1-r1.ebuild 1764
 MD5 098cc168fade54d752abb4316bf4860f logrotate-3.7.ebuild 1679
 MD5 af9e66d8014737b2344afe21501fae5f logrotate-3.6.5-r1.ebuild 1730
-MD5 0d10e2d66ebe1103e440f55102f8f4da ChangeLog 6685
+MD5 5f15f4b9340ac15a0ce9cf1c29ec1db3 ChangeLog 6808
 MD5 c7533062993ae53a9a32d0a58416cd84 metadata.xml 216
 MD5 6ebaa619f7cd1621eb7203fb8f651cee files/logrotate-3.7.1-manpage-fixes.patch 15684
 MD5 d268cc741e71398dc2a14bcdc0bcfeb2 files/logrotate-3.7.1-ignore-hidden.patch 517
