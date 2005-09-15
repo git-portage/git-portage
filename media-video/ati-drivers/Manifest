@@ -3,7 +3,7 @@ MD5 b0e07b107756bc3303e04b578b67d9a1 ati-drivers-8.14.13-r2.ebuild 6687
 MD5 a37cb5612ebeb94a8e4fa889c88c7c9e ati-drivers-8.14.13-r4.ebuild 7495
 MD5 b349644e1bbe997832e57e9e2bddb72e ati-drivers-8.14.13-r5.ebuild 7763
 MD5 142444f733b464a3c075fac4415aef50 ati-drivers-8.16.20.ebuild 6227
-MD5 8ae30c722759861e47d3361ff2a7b865 ChangeLog 19930
+MD5 be785be44e7204b74f25f9234f432375 ChangeLog 20044
 MD5 105e48927920d0a38ce78b201f10b5ba ati-drivers-8.14.13-r3.ebuild 7659
 MD5 b6f094c1c5d5b686866cbe72cd810d8b ati-drivers-8.16.20-r1.ebuild 6498
 MD5 0850638c4f5ac2466c793df428fc5d84 files/fglrx-2.6.12-pci_name.patch 2807
