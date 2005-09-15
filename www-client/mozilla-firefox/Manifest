@@ -2,9 +2,9 @@ MD5 7f073b544e7967d3453ab8579292ef3e mozilla-firefox-1.0.6-r4.ebuild 9543
 MD5 d8c6c3085e4fc8d06ef878579dddf116 mozilla-firefox-1.0.6-r6.ebuild 11233
 MD5 06023401dbf9f17149696616a240647d mozilla-firefox-1.0.6-r3.ebuild 9154
 MD5 27212c3bfc3d15dc4bb42454380c533b mozilla-firefox-1.0.6-r5.ebuild 9631
-MD5 3b600027915eb279ee0b8ffdfa5c2217 ChangeLog 29861
+MD5 2826b241a8377547e37ed52678e978b6 ChangeLog 29949
 MD5 ce23390351fe8020387d93ee29e09a3d metadata.xml 160
-MD5 4af6429329bf95f5660e99543065b405 mozilla-firefox-1.0.6-r7.ebuild 9778
+MD5 79dc1b903d05e548edacd0a0fa8967a2 mozilla-firefox-1.0.6-r7.ebuild 9776
 MD5 6d3af6331c1b75d7991a5680fc9602c7 mozilla-firefox-1.0.6-r2.ebuild 8318
 MD5 3961b39c763ff8f98b56098ac0cdbecc files/mozilla-firefox-1.0-kp_separator.patch 444
 MD5 3970f49b3f72cec38e126a2a140b524f files/gtk-prompt-service.patch 5520
