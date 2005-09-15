@@ -1,19 +1,9 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 149071cff87c229ea1de13ab965fc008 haddock-0.7.ebuild 1816
-MD5 128b9a894439f7226495b06aa0ea7b3c haddock-0.6-r2.ebuild 1981
-MD5 9452b1257542a1efb797c19271eae1af haddock-0.6-r3.ebuild 2222
+MD5 de8e4d940134f180b5d9f799c0ee7952 haddock-0.7.ebuild 2482
+MD5 9e4633b3925decd0b4823004144cd3d5 haddock-0.6-r2.ebuild 2647
+MD5 d818da3f2596e03c320255d4efadb62e haddock-0.6-r3.ebuild 2888
 MD5 78a7d0444b1df418cc0e7de0c8c00516 ChangeLog 3822
 MD5 a769ecfcd1cdd2d40986627df7dfb249 metadata.xml 224
 MD5 6c35081e22594c96591797459c28da01 files/digest-haddock-0.6-r2 67
 MD5 6c35081e22594c96591797459c28da01 files/digest-haddock-0.6-r3 67
 MD5 bd211a7c5442dadeee6975dbb15f2e45 files/haddock-0.6-gcc3.4.patch 1967
 MD5 574da10760a87f23fa635f37265b7c0c files/digest-haddock-0.7 67
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDFxXCKRy60XGEcJIRAjGsAJ40Zqm45HlgIMXmfrEx37sjcINLQgCgsdle
-4Bh86BJRNS43ffF/XKFM6+o=
-=oWbW
------END PGP SIGNATURE-----
