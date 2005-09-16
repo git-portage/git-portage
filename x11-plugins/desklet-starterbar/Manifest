@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b37b75fbf6ffc0f207b7e80ecffbff8e desklet-starterbar-0.30.ebuild 1244
 MD5 234c6ddf97f8681e4855989793df925f desklet-starterbar-0.21.ebuild 1099
 MD5 704080d9c79994881b47826878550fbd desklet-starterbar-0.22.1.ebuild 1235
@@ -10,3 +13,10 @@ MD5 780965281e4f0b18a7947846264ec4c6 files/digest-desklet-starterbar-0.21 75
 MD5 4675e9bc5d2c9b32b359f231a368d193 files/digest-desklet-starterbar-0.30 75
 MD5 01da384bca3fffa9e9a106097ceda0d7 files/digest-desklet-starterbar-0.22.1 77
 MD5 744e6e48a6f8c68b1519ad5e432054e4 files/digest-desklet-starterbar-0.31.2 77
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDKwBYomPajV0RnrERAlCBAJ90GLap/nvWjAD8+VNnEUg4ilVeZgCeJrSf
+JNimg9Js43CkoyxohEtLEzM=
+=+bOT
+-----END PGP SIGNATURE-----
