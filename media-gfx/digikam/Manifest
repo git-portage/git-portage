@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 917dcba85aa295dcb0f67216c3d0d45c digikam-0.7.3.ebuild 657
 MD5 39e9ad6bec1d265882709b6b27cea5ba digikam-0.6.2.ebuild 862
 MD5 0470205e8c3f24bc2c27cc8e3e5d345b digikam-0.7.2.ebuild 602
@@ -10,3 +13,10 @@ MD5 65d75029c28dfdaa673c86aa6366ddd2 files/digest-digikam-0.7.1 67
 MD5 030583179af0e65f1ac5e7d96db0e09c files/digest-digikam-0.7.2 68
 MD5 b5fd7a796c5c3a9ec2095c2e71555eeb files/digest-digikam-0.7.3 68
 MD5 55bccecf6ae17fe2365bc62da5ab1640 files/digest-digikam-0.7.4 139
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDKyI0ntT9W3vfTuoRArfIAJ91Rr37oUVH4hFmbyvhzv25LGItlgCZAeDA
+bBaYfuOISWCmJXwGnAezAjE=
+=H1yk
+-----END PGP SIGNATURE-----
