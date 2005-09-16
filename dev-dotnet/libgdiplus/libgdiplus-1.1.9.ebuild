@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/libgdiplus/Attic/libgdiplus-1.1.8.ebuild,v 1.2 2005/09/16 05:10:57 latexer Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/libgdiplus/Attic/libgdiplus-1.1.9.ebuild,v 1.1 2005/09/16 05:10:57 latexer Exp $
 
 inherit libtool eutils
 
@@ -28,8 +28,7 @@ DEPEND="sys-devel/libtool
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/${PN}-1.1.4-included-cairo-fix.diff || die
-	epatch ${FILESDIR}/${PN}-1.1.8-giflib.diff || die
+	epatch ${FILESDIR}/${PN}-1.1.8-giflib.diff
 	libtoolize --copy --force || die "libtoolize failed"
 	autoheader || die "autoheader failed"
 	aclocal || die "aclocal failed"
@@ -52,7 +51,5 @@ src_compile() {
 
 src_install() {
 	make DESTDIR=${D} install || die
-	#einstall || die
-
 	dodoc AUTHORS ChangeLog NEWS README
 }
