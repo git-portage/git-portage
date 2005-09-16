@@ -1,5 +1,5 @@
-MD5 4fcc17c251ee2b977affb3bc99b4695e ChangeLog 19311
-MD5 0fd559b9faa6c516e5039b37599274fa clamav-0.86.2.ebuild 3689
+MD5 2f721f7e2ef385a88780d7508ec3f91e ChangeLog 19311
+MD5 0a6b99afacc591544e87d3e8bf8d7c93 clamav-0.86.2.ebuild 3689
 MD5 7e32edfd72887a57b16ecd73f0f7a1a0 metadata.xml 184
 MD5 08f7b320461c04bbb88555e389c2e544 files/clamav-milter.README.gentoo 1124
 MD5 e29ee77ca9bfe28ed18dbf67a9c90e75 files/clamd.conf 193
