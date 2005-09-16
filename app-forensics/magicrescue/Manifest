@@ -1,4 +1,4 @@
-MD5 743281b6e0e38a7a2855cd9ab17d68b3 ChangeLog 590
-MD5 07494bccad1752dbb42e74649afe13c6 magicrescue-1.1.4.ebuild 759
 MD5 105847dd9829f12cc71df98401454278 metadata.xml 846
-MD5 d4dd9dcad4dd90429113ac6544057531 files/digest-magicrescue-1.1.4 68
+MD5 3687e4ef6a0fcdc2a603124772334bd0 ChangeLog 766
+MD5 36db95b4ac803ee322be28abe6d7fe3a magicrescue-1.1.4-r1.ebuild 774
+MD5 d4dd9dcad4dd90429113ac6544057531 files/digest-magicrescue-1.1.4-r1 68
