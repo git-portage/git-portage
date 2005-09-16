@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/Attic/squid-2.5.10-r1.ebuild,v 1.1 2005/07/31 11:47:55 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/Attic/squid-2.5.10-r4.ebuild,v 1.1 2005/09/16 18:15:34 mrness Exp $
 
 inherit eutils pam toolchain-funcs
 
@@ -9,7 +9,7 @@ S_PV=${PV%.*}
 S_PL=${PV##*.}
 S_PL=${S_PL/_rc/-RC}
 S_PP=${PN}-${S_PV}.STABLE${S_PL}
-PATCH_VERSION="20050731"
+PATCH_VERSION="20050916"
 
 DESCRIPTION="A caching web proxy, with advanced features"
 HOMEPAGE="http://www.squid-cache.org/"
@@ -20,7 +20,7 @@ S=${WORKDIR}/${S_PP}
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc x86"
 IUSE="pam ldap ssl sasl snmp debug selinux underscores logrotate customlog zero-penalty-hit follow-xff"
 
 RDEPEND="pam? ( virtual/pam )
@@ -57,9 +57,9 @@ src_unpack() {
 
 	if ! use debug ; then
 		sed -i -e 's%LDFLAGS="-g"%LDFLAGS=""%' configure.in
-		export WANT_AUTOCONF=2.1
-		autoconf || die "autoconf failed"
 	fi
+	export WANT_AUTOCONF=2.1
+	autoconf || die "autoconf failed"
 }
 
 src_compile() {
@@ -129,6 +129,7 @@ src_compile() {
 		--enable-htcp \
 		--enable-carp \
 		--enable-poll \
+		`use_enable follow-xff follow-x-forwarded-for` \
 		--host=${CHOST} ${myconf} || die "bad ./configure"
 		#--enable-icmp
 
