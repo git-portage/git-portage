@@ -1,20 +1,22 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/doxygen/Attic/doxygen-1.3.6.ebuild,v 1.10 2005/07/28 20:52:24 caleb Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-doc/doxygen/Attic/doxygen-1.4.4.ebuild,v 1.1 2005/09/16 00:31:39 nerdboy Exp $
 
-DESCRIPTION="documentation system for C++, C, Java, IDL, PHP and C#"
+inherit eutils
+
+DESCRIPTION="Documentation and analysis tool for C++, C, Java, IDL, PHP and C#"
 HOMEPAGE="http://www.doxygen.org/"
 SRC_URI="ftp://ftp.stack.nl/pub/users/dimitri/${P}.src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc sparc ~mips alpha hppa amd64 ~ia64"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86 ~ppc-macos"
 IUSE="doc qt tetex"
 
 RDEPEND="media-gfx/graphviz
 	qt? ( =x11-libs/qt-3* )
 	doc? ( tetex? ( virtual/tetex )
-		virtual/ghostscript )"
+	virtual/ghostscript )"
 DEPEND=">=sys-apps/sed-4
 	${RDEPEND}"
 
@@ -25,11 +27,12 @@ src_unpack() {
 	sed -i.orig -e "s:^\(TMAKE_CFLAGS_RELEASE\t*\)= .*$:\1= ${CFLAGS}:" \
 		-e "s:^\(TMAKE_CXXFLAGS_RELEASE\t*\)= .*$:\1= ${CXXFLAGS}:" \
 		tmake/lib/linux-g++/tmake.conf
-	# fix doxygen_manual.tex to work with latex-2.x
-	sed -i.orig "s:^\\\setlength\({\\\footrulewidth}\):\\\renewcommand\1:" \
-		doc/doxygen_manual.tex
-	# fix configure to work w/ install from either fileutils or coreutils
-	sed -ie "s/grep fileutils/egrep 'fileutils|coreutils'/" ${S}/configure
+	epatch ${FILESDIR}/${P}-cp1251.patch
+	if use ppc-macos; then
+		epatch ${FILESDIR}/bsd-configure.patch
+		[[ "$MACOSX_DEPLOYMENT_TARGET" == "10.4" ]] && 	sed -i -e 's:-D__FreeBSD__:-D__FreeBSD__=5:' \
+			tmake/lib/macosx-c++/tmake.conf
+	fi
 }
 
 src_compile() {
@@ -39,7 +42,7 @@ src_compile() {
 
 	# ./configure and compile
 	./configure ${confopts} || die '"./configure" failed.'
-	emake all || die '"emake all" failed.'
+	emake all || die 'emake failed'
 
 	# generate html and pdf (if tetex in use) documents.
 	# errors here are not considered fatal, hence the ewarn message
