@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-3.2.1.2242-r3.ebuild,v 1.10 2005/08/29 14:50:54 wolf31o2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-3.2.1.2242-r4.ebuild,v 1.1 2005/09/16 19:07:24 wolf31o2 Exp $
 
 # Unlike many other binary packages the user doesn't need to agree to a licence
 # to download VM Ware.  The agreeing to a licence is part of the configure step
@@ -41,6 +41,12 @@ RDEPEND="sys-libs/glibc
 
 dir=/opt/vmware
 Ddir=${D}/${dir}
+VMWARE_GROUP=${VMWARE_GROUP:-vmware}
+
+pkg_setup() {
+	# This is due to both bugs #104480 and #106170
+	enewgroup "${VMWARE_GROUP}"
+}
 
 src_unpack() {
 	check_KV
@@ -109,6 +115,10 @@ src_install() {
 	dodir /etc/vmware/init.d/rc5.d
 	dodir /etc/vmware/init.d/rc6.d
 	cp -pPR installer/services.sh ${D}/etc/vmware/init.d/vmware
+	dosed 's/mknod -m 600/mknod -m 660/' /etc/vmware/init.d/vmware || die
+	dosed '/c 119 "$vHubNr"/ a\
+		chown root:vmware /dev/vmnet*\
+		' /etc/vmware/init.d/vmware || die
 
 	# This is to fix a problem where if someone merges vmware and then
 	# before configuring vmware they upgrade or re-merge the vmware
@@ -121,6 +131,18 @@ src_install() {
 	doicon ${DISTDIR}/vmware.png || die
 
 	make_desktop_entry vmware "VMWare Workstation" vmware.png
+
+	# this removes the user/group warnings
+	chown -R root:0 ${D} || die
+
+	# this makes the vmware-vmx executable only executable by vmware group
+	fowners root:vmware ${dir}/lib/bin{,-debug}/vmware-vmx || die
+	fperms 750 ${dir}/lib/bin{,-debug}/vmware-vmx || die
+
+	# this adds udev rules for vmmon*
+	dodir /etc/udev/rules.d
+	echo 'KERNEL=="vmmon*", GROUP="vmware" MODE=660' > \
+		${D}/etc/udev/rules.d/60-vmware.rules || die
 
 	# Questions:
 	einfo "Adding answers to /etc/vmware/locations"
@@ -203,6 +225,12 @@ pkg_postinst() {
 	einfo "before trying to run vmware.  Or you could just add"
 	einfo "it to the default run level:"
 	einfo "rc-update add vmware default"
+	echo
+	ewarn "Remember, in order to run vmware, you have to"
+	ewarn "be in the '${VMWARE_GROUP}' group."
+	echo
+	ewarn "VMWare allows for the potential of overwriting files as root.  Only"
+	ewarn "give VMWare access to trusted individuals."
 }
 
 pkg_postrm() {
