@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.6.13_rc1-r1.ebuild,v 1.1 2005/07/02 15:22:30 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.6.14_rc1-r1.ebuild,v 1.1 2005/09/16 18:01:12 chainsaw Exp $
 
 K_PREPATCHED="yes"
 UNIPATCH_STRICTORDER="yes"
@@ -14,7 +14,7 @@ RESTRICT="nomirror"
 DESCRIPTION="Andrew Morton's kernel, mostly fixes for 2.6 vanilla, some vm stuff too"
 SRC_URI="${KERNEL_URI} mirror://kernel/linux/kernel/people/akpm/patches/2.6/${KV/-mm*/}/${KV}/${KV}.bz2"
 
-KEYWORDS="~x86 ~amd64 ~ia64 -* ~ppc"
+KEYWORDS="-* ~amd64 ~ppc ~ppc64 ~x86"
 IUSE=""
 
 K_EXTRAEINFO="This kernel is not supported by Gentoo due to its unstable and
