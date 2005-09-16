@@ -1,6 +1,16 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ced740229799575e35487154e4bc3c7b metadata.xml 652
 MD5 bc4130eed8a21a2c7d091f524f1866c4 gtetrinet-0.7.9.ebuild 1407
 MD5 7a58a6e8fbfabfeb04d651f2c311126b gtetrinet-0.7.7.ebuild 1527
 MD5 94c19ff591c14e0db1dc19b0f1393940 ChangeLog 4015
 MD5 28baac0d4fdcd05afefc657e27785734 files/digest-gtetrinet-0.7.7 143
 MD5 cc4bb567009396c6013ba18cb4d79307 files/digest-gtetrinet-0.7.9 143
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDKhw3gIKl8Uu19MoRAg3/AJ91/gvL5fvDoA9e9PlzCLYpVuQOqQCeIipP
+Tp3RRQOL0s601yQLmOYeTU0=
+=RG9h
+-----END PGP SIGNATURE-----
