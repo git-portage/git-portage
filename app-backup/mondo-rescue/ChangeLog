@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/mondo-rescue
 # Copyright 2002-2005 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mondo-rescue/Attic/ChangeLog,v 1.2 2005/07/04 07:21:53 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mondo-rescue/Attic/ChangeLog,v 1.3 2005/09/16 20:24:10 ciaranm Exp $
+
+  16 Sep 2005; Ciaran McCreesh <ciaranm@gentoo.org> ChangeLog:
+  Converted to UTF-8, fixed encoding screwups
 
   04 Jul 2005; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +mondo-rescue-1.47.ebuild, +mondo-rescue-1.61.ebuild,
@@ -66,7 +69,7 @@
 
   14 Jan 2003; Brandon Low <lostlogic@gentoo.org> mondo-rescue-1.60:
 
-  This thanks to François-Xavier LAMARE <flx-linuxnews@ifrance.com>
+  This thanks to FranÃ§ois-Xavier LAMARE <flx-linuxnews@ifrance.com>
 
   Updated dependencies (buffer is no longer needed)
 
