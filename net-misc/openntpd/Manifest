@@ -1,5 +1,5 @@
-MD5 d5026f79986bde5508434acb0e5555b6 ChangeLog 2840
-MD5 85ec9763e7245610307873391c6d465a openntpd-3.7_p1.ebuild 1105
+MD5 69ddea1111f7ab8e44798f61ab57135b ChangeLog 2946
+MD5 58748f6465154c15aac7822b01a83beb openntpd-3.7_p1.ebuild 1106
 MD5 5b2bb7e8dd4728c8a2dadedec85df4a3 openntpd-3.6.1_p1-r1.ebuild 1202
 MD5 9cb3424ed5b3f20a231d581b78629afb files/openntpd.conf.d 257
 MD5 31c9feba04713eebbe16cd1979fca83d files/openntpd.rc 918
