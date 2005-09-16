@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b4137cf5d98a0dc381479c22e6f56bb8 flow-tools-0.67.ebuild 2102
 MD5 8f9c6d7e1e7e86ef04599a7774c85b16 flow-tools-0.66.ebuild 1001
 MD5 a5eba5008729fa7c037c6b4d59277eb6 flow-tools-0.68-r1.ebuild 2466
@@ -19,3 +22,10 @@ MD5 94581c1ca18b1891395fe1f3daeb04ca files/linkme 283
 MD5 f16f4ba51648f2b7f0e3830bc7670f6e files/flow-tools-0.67-nodebug.patch 933
 MD5 4550f09b9ca0a0f2e3e83beadfa3f964 files/digest-flow-tools-0.68-r1 67
 MD5 eddbfc9694d3f0b00a46f84a0e58a651 files/flow-tools-0.67-memleak.patch 465
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDKqi6EZCkKN40op4RAitWAJ0Xn0USdKErtFMlR2p0CbdkZIEXnwCbBxJK
+UxDAZY1BuMdZaJW5po6BUWQ=
+=zB5A
+-----END PGP SIGNATURE-----
