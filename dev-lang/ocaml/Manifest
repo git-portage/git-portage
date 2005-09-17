@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8b350f19c06fcabf1053b0421b7c3f5a metadata.xml 155
 MD5 d3e28c5c99b056007b6b5b0781a4e542 ocaml-3.06-r2.ebuild 1660
 MD5 ef7cc12a4ff8aeec9ddb58ff65f7e3c0 ocaml-3.07-r1.ebuild 2910
@@ -15,3 +18,10 @@ MD5 4df214d6cd74b3c5955d868879dd6cc7 files/ocaml-3.06-tcltk-8.4compat-patch.bz2 
 MD5 45ff13419dd955aa86d021abbf325fc2 files/ocaml-3.07-hppa.patch 15730
 MD5 c57fc46d92565b5d44c8c4f2a4a072d3 files/ocaml-3.08.3-gcc4.patch 710
 MD5 3148840e70f4bb5263bdf7cd6c97e6d9 files/ocaml-rebuild.sh 1215
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDLHdFKf2g/qXtneoRAgKlAJ935f96OZWHW1ttCbR26mcS4hoY+wCfV9V5
+srH0WxA5AVLEbd6URWLVneM=
+=wMyd
+-----END PGP SIGNATURE-----
