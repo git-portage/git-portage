@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 031415a72aeecf5baa91ce45ab7ad0bc nautilus-2.10.1-r1.ebuild 2559
 MD5 b9d8c5181dc3e5138aa2c26e1a94fd3a ChangeLog 20511
@@ -18,3 +21,10 @@ MD5 29bf62fc0e7eaa6cd6aa5cf4e2dd291d files/nautilus-2.10.1-font_sizes.patch 1532
 MD5 3db7f854e279f4032b8d1e86d64157aa files/digest-nautilus-1.0.6-r9 68
 MD5 7cb2f285f24e86a90c6a65b0b9356d39 files/macros/gnome.m4 16426
 MD5 486b971d706aec59655a72282d3feb0b files/macros/nautilus-macros.m4 7993
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDLC9qJrHF4yAQTrARAh/wAKCfw5awFFqOwW4xhvQkXPk/mFDpSQCgiXuD
+ryOoQ8TVnh9dZNKhEq/SxtY=
+=rAuI
+-----END PGP SIGNATURE-----
