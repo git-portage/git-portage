@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6bc5f88008d02f6e7f2e80b974eab252 vsftpd-1.2.2.ebuild 2296
 MD5 0451b23327c004752edf415e25931d07 metadata.xml 344
 MD5 22661533cabd243c58e91c4b58584fa3 ChangeLog 8400
@@ -15,3 +18,10 @@ MD5 2ed3e6179c0660f4b836fc5e21611740 files/vsftpd.pam 408
 MD5 10727329a1de642694a73e3655774015 files/vsftpd-2.0.3-gentoo.diff 5598
 MD5 e4a0ae5ba000a0e22576618d76760957 files/vsftpd.pam-include 340
 MD5 8578d5c3f50e7b090ba023dfa626ec89 files/vsftpd.xinetd 432
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDK33cJrHF4yAQTrARApR3AKC6H+jkpNYH/NSHe+TcwducG5YrhwCgk/9E
+B6MW70MYQAuxz3/bf1GY7ss=
+=ICIT
+-----END PGP SIGNATURE-----
