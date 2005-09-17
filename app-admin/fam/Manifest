@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a23feab85a6a00218b5804e3b2827f33 fam-2.7.0-r1.ebuild 2086
 MD5 ab439f0d4820a5e6bf2e2567120aee21 fam-2.7.0-r2.ebuild 2103
 MD5 c00a11317fe9c85994595a8cb8a5e923 fam-2.7.0-r3.ebuild 2186
@@ -14,3 +17,10 @@ MD5 46e90fb6975cfcaa7f5946ab36aa2023 files/fam-2.7.0-dnotify.patch 26419
 MD5 47b41e0b0498793af004696a096d7da1 files/fam-2.7.0-largefiles.patch 326
 MD5 363f25f0db08bacef13b12e81b32d624 files/fam-2.7.0-limits.patch 316
 MD5 4c750113abbc289ee93c3aa378692f07 files/famd 490
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDLDHYKf2g/qXtneoRAgxeAJsGYc48xGdGT9eMkKjyqVqK9R/+zwCdG5D3
+Q8jXGhl9yJjnlA8SLB8DQ3Q=
+=7xxZ
+-----END PGP SIGNATURE-----
