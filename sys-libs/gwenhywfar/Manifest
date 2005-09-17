@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5f5eb6d1feda6711e9d705d895b56301 gwenhywfar-1.9.0.ebuild 1095
 MD5 00e12ab49aa5d55916221e2edd679ed3 gwenhywfar-1.7.2.ebuild 1096
 MD5 2db30840398a62ed59eb67c68c27292f gwenhywfar-1.11.0.ebuild 1098
@@ -10,3 +13,10 @@ MD5 bde20725b03dc2ab865ec30137dd9b9f files/digest-gwenhywfar-1.14.0 70
 MD5 fc33ab392abe9d756648cfb811cac8c7 files/digest-gwenhywfar-1.11.0 70
 MD5 7a1cc07892a744298df2923c784938f4 files/digest-gwenhywfar-1.9.0 69
 MD5 5235175c0f49d38d01e77c84c9778ae1 files/digest-gwenhywfar-1.7.2 68
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDK2cRLLFUmVNQ7rkRAhUdAJ4porGNa4xAug6RsphXqqx1HNSazgCgkfXp
+BzLQ8lAAl+gMbJ4hZ1/2qFI=
+=NIAm
+-----END PGP SIGNATURE-----
