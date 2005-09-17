@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 c6073a11ea3fcb5cc0d1625a54aad8d4 file-4.12.ebuild 2081
 MD5 d46373392481ffa4240b13570efa88dd file-4.15.ebuild 1449
@@ -14,3 +17,10 @@ MD5 d336b3490362624aec2e30679c44a198 files/digest-file-4.12 61
 MD5 f0f2d2181cac822f0c4d4675fb1ff38c files/cracklib.magic 360
 MD5 26f26c3f7caf28f0bdb9dbb6fe83c254 files/file-4.15-libtool.patch 561
 MD5 66df8eecd30769daeb3f643dc6432db3 files/file-4.xx-mips-gentoo.patch 5578
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDK9AwgIKl8Uu19MoRAlMyAJoCWz5sQzWzJNT1BzqbIDdVlbBJ8ACfQBt8
+xi5Ppbv9Xp4sCVmU2BK9kAk=
+=ddtK
+-----END PGP SIGNATURE-----
