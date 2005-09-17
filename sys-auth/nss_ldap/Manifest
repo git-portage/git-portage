@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5ba8c9c9be079ebcbc93c08f838665bd metadata.xml 255
 MD5 9dcfa229ed6ea2efa18f34f9ecfff661 nss_ldap-174-r2.ebuild 996
 MD5 2facb9b8b2db2a53cdcb1ffca8254a4a nss_ldap-202.ebuild 1006
@@ -35,3 +38,10 @@ MD5 2af7b597298bb9269f739cbb8a25224d files/nss_ldap-220-db4.2-patch.diff 1707
 MD5 1923bbb463805e6cad70e98e567297f5 files/nss_ldap-238-whitespace-fix.diff 2043
 MD5 a85a2ad9e438c3ac6f0fb7087621ed35 files/nss_ldap-239-tls-security-bug.patch 1022
 MD5 1fe060c70b1c673346b696dbe194260a files/nsswitch.ldap.diff 575
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDK/1RKf2g/qXtneoRAsNNAKCl2Tq2KKknFdMdjFQ0J1oYTWTv+gCeLg+w
+RtdzlsaLY3Xrxypi807hQmo=
+=vXUh
+-----END PGP SIGNATURE-----
