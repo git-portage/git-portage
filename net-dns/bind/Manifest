@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bf7284c3e31bd3292a01fa046b3220bb metadata.xml 352
 MD5 6f00b40ca2f6c222d0987d992f6c6351 bind-9.3.1-r4.ebuild 8035
 MD5 3199ed715db23a50e1c31f972bc99e04 bind-9.2.5-r6.ebuild 8221
@@ -25,3 +28,10 @@ MD5 d47c8a742a2645377ba4d783907700dd files/digest-bind-9.2.5-r4 127
 MD5 b3af799ce2505e78a14bb16868cf0593 files/named.conf-r1 758
 MD5 21e3efd21e18f4c660155978105f8ebe files/named.confd 351
 MD5 ccfca63035b534556c3910270d40a4b9 files/localhost 412
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDK9N/gIKl8Uu19MoRAkIEAJ4pLBijoqk4dm8pjJBslvlfFLiVyACggkdm
+jIgAzo1jnlACU+euIi9WNqc=
+=PWg2
+-----END PGP SIGNATURE-----
