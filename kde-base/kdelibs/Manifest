@@ -3,10 +3,10 @@ MD5 a0a423eb46bcca9f140b0a97645a0177 kdelibs-3.3.2-r10.ebuild 4318
 MD5 97766212645b832cda19843b15698607 kdelibs-3.2.3-r7.ebuild 3566
 MD5 2c3feefcb9434725dedeef7d9c400d02 kdelibs-3.4.1-r2.ebuild 3357
 MD5 2fd53a7c014e4527505ec32ec5425575 kdelibs-3.4.2.ebuild 3346
-MD5 68507538dfd19da8853d49fa3c64cdb0 kdelibs-3.5_alpha1.ebuild 3528
-MD5 5c61d42fb2eef8299d217f01cbbe9fc1 kdelibs-3.4.2-r1.ebuild 3331
+MD5 fc8e5888a89364756c8da36a47668862 kdelibs-3.5_alpha1.ebuild 3512
+MD5 06b75ddcec5d5e38f703654a2d50030c kdelibs-3.4.2-r1.ebuild 3333
 MD5 a2754ea94836037eda37593282978e6c kdelibs-3.2.3-r9.ebuild 3831
-MD5 e9a021e235d2f29029f50ed978ce2a67 ChangeLog 43337
+MD5 086c191022d2928e430660349c8c873b ChangeLog 43818
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
 MD5 25ab050b323a8efb2049fd770f50058b files/kdelibs-3.3.2-anchor-fix.patch 5947
 MD5 b291a4a134cac9072ad1140a78eee9ce files/kdelibs-3.4.1-kntlm.patch 1323
