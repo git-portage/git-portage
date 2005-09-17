@@ -1,0 +1,7 @@
+MD5 ba0035547f2be94605ff4fda2e70cb31 metadata.xml 542
+MD5 23df93d2cfa8fe0e02c69ac28627ea43 boxbackup-0.09.ebuild 2193
+MD5 b6a8c5b08f688c050814445a092fc153 files/bbstored.rc 425
+MD5 10ad8802434518abe87eba09444a4855 files/boxbackup-0.09-darwin.patch 443
+MD5 a5aea4f1d604c930129b8efc62612f51 files/digest-boxbackup-0.09 138
+MD5 21a608266d776fcc9099d8d58418f8ed files/boxbackup-0.09-gentoo.patch 6695
+MD5 a4dcc62b0c8458dfe19611b1a92dfdb3 files/bbackupd.rc 413
