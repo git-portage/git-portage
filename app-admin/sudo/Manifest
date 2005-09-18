@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6701a41091d5d432a0037b61a5e0a5e2 ChangeLog 10195
 MD5 ea5d9d51e647a2dbd410d952019ff19b files/digest-sudo-1.6.7_p5-r2 64
 MD5 ea5d9d51e647a2dbd410d952019ff19b files/digest-sudo-1.6.7_p5-r5 64
@@ -20,3 +23,10 @@ MD5 02caf6e86d5e08fd89baccd299a0ee3c sudo-1.6.7_p5-r5.ebuild 1508
 MD5 7ec8076c273c0ad66f4e51c8e675730e sudo-1.6.8_p9-r1.ebuild 6317
 MD5 24c8aa2a48ed5e76dc1aaeb632c97be3 sudo-1.6.8_p9-r2.ebuild 6747
 MD5 9eb89c67b32298a4af16098d4c499d34 sudo-1.6.8_p9.ebuild 6054
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDLWtDI1lqEGTUzyQRAsHXAKCS0fIac2Bu2kObUHLgFl8IATRIdACfabti
+0uLC5qOqdQ7KdcVve/ek1oY=
+=8ula
+-----END PGP SIGNATURE-----
