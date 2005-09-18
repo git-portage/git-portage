@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 05d61a59c02ce37c9ebc2d047c7745e3 ChangeLog 1958
 MD5 3f1cc8b3109f15a7a1a34219493e989a metadata.xml 596
 MD5 0bac226e1a1f12945be787d703534845 mod_xslt-1.0.5a-r1.ebuild 1356
@@ -12,3 +15,10 @@ MD5 426f6f25b09522583bdfce52e8b2b8b8 files/digest-mod_xslt-1.0.5a-r1 66
 MD5 426f6f25b09522583bdfce52e8b2b8b8 files/digest-mod_xslt-1.0.5a 66
 MD5 331747cbb5656939bd9533245f4dd03c files/digest-mod_xslt-2.0.4 62
 MD5 e3de159e58c2c948876fc05b3034f103 files/1.0.5a-r1/25_mod_xslt.conf 1001
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDLdFzmPFBzbX68WERAr39AKCbLtM0jiFIMPfyrh2Kl/EnIq43+gCfYviE
+F/TkC5303Ot/bJpSFub4buY=
+=Lvx0
+-----END PGP SIGNATURE-----
