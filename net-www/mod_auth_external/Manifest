@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5d027d7c422b69868f43343d95a91ff1 ChangeLog 2288
 MD5 0d18f0fe5d603b41b988373892caf195 metadata.xml 226
 MD5 e053bc92cc6ee163b5be9c4cf45426f7 mod_auth_external-2.1.19.ebuild 659
@@ -12,3 +15,10 @@ MD5 0682340a42fcdf3d43f063ef6174bdcc files/digest-mod_auth_external-2.2.7-r1 74
 MD5 0682340a42fcdf3d43f063ef6174bdcc files/digest-mod_auth_external-2.2.7 74
 MD5 07bc3a6f49dfe0c257265b3415514855 files/digest-mod_auth_external-2.2.9 74
 MD5 c1a9a5e119336cf9524711598141c554 files/2.2.7-r1/10_mod_auth_external.conf 1292
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDLdPSmPFBzbX68WERAnH4AJ9PaTv/uRkUhlFEqi17fx5TwXGV0wCgj3fw
+heQZVxqaHuNpsHowyPcANlc=
+=xvzp
+-----END PGP SIGNATURE-----
