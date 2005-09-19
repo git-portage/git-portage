@@ -1,3 +1,5 @@
 MD5 9b88b9f94fa78e013e90db078bee5a59 ChangeLog 1663
-MD5 def713ebb472d3e5bb941ab3723802d1 bsdsfv-1.18.ebuild 526
+MD5 913227de61e21efd2836478aedeb11ee bsdsfv-1.18-r1.ebuild 586
+MD5 9cdf8f8e27eabb71f8dce2d0ffcc5da4 files/bsdsfv-1.18-64bit.patch 2392
+MD5 edec83a4548c43916e86bf0263c41b9c files/digest-bsdsfv-1.18-r1 62
 MD5 edec83a4548c43916e86bf0263c41b9c files/digest-bsdsfv-1.18 62
