@@ -1,0 +1,6 @@
+MD5 900e9cb9e13a3514e2ac4fded18839e6 bfilter-0.9.4.ebuild 1155
+MD5 59c8af85f08eaafc38f6c3421caa8ca3 files/bfilter-0.9.4-droppriv.patch 5108
+MD5 e6e2c311139ed184131d6a945b12a3fb files/digest-bfilter-0.9.4 66
+MD5 51acec84c4acfc995ab2a02fd8a3c7fe files/bfilter.8 9512
+MD5 540f7cf4785103e470ac58cd7d998a00 files/bfilter.conf 275
+MD5 270e205b4f910fe004f69609fad563dc files/bfilter.init 395
