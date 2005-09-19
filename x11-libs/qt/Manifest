@@ -1,5 +1,6 @@
-MD5 61c42aae7200acf2c43d12e30b80a50d qt-4.0.1.ebuild 5558
+MD5 6acd882ce2d3a57e130688c94f10f385 qt-4.0.1.ebuild 5614
 MD5 20c9b273d559aebcc6aa71b28f47fcbd qt-3.3.5.ebuild 9940
+MD5 e7366b5adc1eeed632d7e72a025dd1ef qt-3.3.4-r8.ebuild 9997
 MD5 a242233fb1072c5cfbe5ebbab1443e8d qt-3.3.4-r3.ebuild 9049
 MD5 cf386ea22e4be00ea893fecf5a6220ba qt-4.0.0.ebuild 5721
 MD5 29eb571b78b63bccc11984b19cd7153b qt-3.3.4-r7.ebuild 9966
@@ -22,6 +23,7 @@ MD5 c115b4205c2a2eab0a547375e2f62460 files/digest-qt-3.3.4-r2 166
 MD5 c115b4205c2a2eab0a547375e2f62460 files/digest-qt-3.3.4-r3 166
 MD5 c115b4205c2a2eab0a547375e2f62460 files/digest-qt-3.3.4-r6 166
 MD5 c115b4205c2a2eab0a547375e2f62460 files/digest-qt-3.3.4-r7 166
+MD5 c115b4205c2a2eab0a547375e2f62460 files/digest-qt-3.3.4-r8 166
 MD5 7e6cdd22e2c697769754db9d6b3ae963 files/qt-3.3.4-macos.patch 18798
 MD5 f23686dab01383c584bb16c69e36b68e files/qt-3.3.4-gcc4-volatile.patch 2480
 MD5 7dc4f78d52452c28ba797ffc7db34f23 files/50qtdir3 16
