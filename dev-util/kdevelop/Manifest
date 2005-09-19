@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e940bb0a107baa39c8a1b42e13e57e98 kdevelop-3.2.2.ebuild 2832
 MD5 fcdf8b6e07601d13749602ff76e0bfda kdevelop-3.3_alpha1.ebuild 2956
 MD5 af2bf95f6867509e24f9d4ccda1cfba9 kdevelop-3.2.1-r1.ebuild 2858
@@ -12,3 +15,10 @@ MD5 529d6ae5875e5eff1f3ec62dd5234e81 files/digest-kdevelop-3.1.2 68
 MD5 a94b1b00d38f496db64b8fcbd85bbb9b files/digest-kdevelop-3.2.2 68
 MD5 dcdcaf1dea68db854de8dad4df83c096 files/kdevelop-3.1_beta1-bdb-fPIC.patch 391
 MD5 72bf5d9a24a821f9584ec59ccf1a2d6e files/kdevelop-3.2.1-gcc4.patch 446
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDLp0JntT9W3vfTuoRAg6/AKCcZgB1QeLXrOhYb5Uw2mevNCBOIwCfavuC
+zQwApKF7dcv7QPU0BUPub8A=
+=7dhl
+-----END PGP SIGNATURE-----
