@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8f17acd0d0987a6a4da0d2eab879b589 ChangeLog 20277
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 5497e9050dc8cde95a0e015edcd59c81 util-linux-2.12i-r1.ebuild 3960
@@ -37,3 +40,10 @@ MD5 9d4c2454a6506ec913d901830ab06a22 files/util-linux-2.12-only-root-can-remount
 MD5 99fa2ff2cb56217b6971e76e275923f9 files/util-linux-2.12q-more-fake-checks-v2.patch 1176
 MD5 8a13c61b447c1533df4b919cf2646fea files/util-linux-2.12q-umount-dont-write-mtab-with-remount.patch 467
 MD5 202b78b99074c7c91faea44d1de6e1bd files/util-linux-2.12q-use-update_mtab-for-fake.patch 546
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDLsWVCRZPokWLroQRAjENAKDZ3o0rvlm/PUms1H6gXt6Gv4NcyACgqA7n
+a2sCSwaXQ4h20nvhxxigq20=
+=SeNl
+-----END PGP SIGNATURE-----
