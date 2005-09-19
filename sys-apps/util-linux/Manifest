@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 fdd342690cd084b9677cb9f8deff9868 util-linux-2.12q-r3.ebuild 5810
 MD5 5497e9050dc8cde95a0e015edcd59c81 util-linux-2.12i-r1.ebuild 3960
 MD5 42a00cdd523f8facea7f10a9f4df86a1 util-linux-2.12q-r2.ebuild 5692
@@ -37,3 +40,10 @@ MD5 c9c2c92d7bba0652f22b638127c2107e files/util-linux-2.12i-pic.patch 2457
 MD5 e3697bc8fd6a344e8cba1c7d32e34790 files/util-linux-2.11z-parallel-make.patch 369
 MD5 f182d2c3c90cdc74c816a4656a8f3bbf files/util-linux-2.12q-update_mtab-fixes.patch 2636
 MD5 202b78b99074c7c91faea44d1de6e1bd files/util-linux-2.12q-use-update_mtab-for-fake.patch 546
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDLwM1ViELBEf1JB0RAnBFAJ0W1hiM/W8DOfJNRCdPm7IkxUpIDwCfaISE
+I4eCcIByAS32pyFgZEekbIk=
+=NKVF
+-----END PGP SIGNATURE-----
