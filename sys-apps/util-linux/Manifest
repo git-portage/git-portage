@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0bb5df89209875e467c036da7f15d41e ChangeLog 20066
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 5497e9050dc8cde95a0e015edcd59c81 util-linux-2.12i-r1.ebuild 3960
@@ -37,3 +40,10 @@ MD5 99fa2ff2cb56217b6971e76e275923f9 files/util-linux-2.12q-more-fake-checks-v2.
 MD5 8a13c61b447c1533df4b919cf2646fea files/util-linux-2.12q-umount-dont-write-mtab-with-remount.patch 467
 MD5 f182d2c3c90cdc74c816a4656a8f3bbf files/util-linux-2.12q-update_mtab-fixes.patch 2636
 MD5 202b78b99074c7c91faea44d1de6e1bd files/util-linux-2.12q-use-update_mtab-for-fake.patch 546
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDLhL2wUpWvClEHQoRAjXxAJ9mTu4oq6u9Q9P75iQwri0XLP9eYgCfXLR1
+RUkUU+fQhJLpUpo4ebEC04c=
+=EM+y
+-----END PGP SIGNATURE-----
