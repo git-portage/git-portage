@@ -1,18 +1,18 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/bzr/Attic/bzr-0.0.4.ebuild,v 1.1 2005/05/08 16:04:19 arj Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/bzr/Attic/bzr-0.0.8.ebuild,v 1.1 2005/09/20 19:15:20 arj Exp $
 
 inherit distutils
 MY_P="bzr-${PV}"
 PYTHON_MODNAME="bzrlib"
 DESCRIPTION="next generation distributed version control"
 HOMEPAGE="http://bazaar-ng.org/"
-SRC_URI="http://bazaar-ng.org/pkg/${MY_P}.tgz"
+SRC_URI="http://bazaar-ng.org/pkg/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
-DEPEND=">=dev-lang/python-2.3
+DEPEND=">=dev-lang/python-2.4
 	dev-python/elementtree"
 S="${WORKDIR}/${MY_P}"
 
