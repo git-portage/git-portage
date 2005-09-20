@@ -1,5 +1,5 @@
-MD5 d0949ddb8d98ec05d632611a1b5471c5 shash-0.2.6-r1.ebuild 949
-MD5 7ed72e74335a3379a87850de24fec5f8 ChangeLog 1483
+MD5 6abad53d4f97d3478d78585c2e6d550b shash-0.2.6-r1.ebuild 951
+MD5 e2173c7a06049ccbb5e3d03dac6b33f4 ChangeLog 1590
 MD5 5aa9af147b815004b0cf0a2dfd88124a metadata.xml 445
 MD5 6a686d232cbb0eeadba51ea32851c8a9 files/0.2.6-manpage-fixes.patch 1451
 MD5 d49dfbc3613b62886594562719104b4a files/digest-shash-0.2.6-r1 63
