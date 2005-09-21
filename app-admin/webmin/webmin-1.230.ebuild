@@ -1,12 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/webmin/Attic/webmin-1.200.ebuild,v 1.8 2005/07/13 20:56:47 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/webmin/Attic/webmin-1.230.ebuild,v 1.1 2005/09/21 23:57:57 eradicator Exp $
 
 IUSE="apache2 postgres ssl webmin-minimal"
 
-inherit eutils
+inherit eutils pam
 
-VM_V="2.50"
+VM_V="2.601"
 
 DESCRIPTION="Webmin, a web-based system administration interface"
 HOMEPAGE="http://www.webmin.com/"
@@ -18,7 +18,7 @@ LICENSE="BSD"
 SLOT="0"
 
 # ~mips removed because of broken deps. Bug #86085
-KEYWORDS="alpha amd64 hppa ppc ppc64 s390 sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~ppc ~ppc64 ~s390 sparc x86"
 
 DEPEND="dev-lang/perl"
 RDEPEND="${DEPEND}
@@ -26,20 +26,24 @@ RDEPEND="${DEPEND}
 	 postgres? ( dev-perl/DBD-Pg )
 	 dev-perl/XML-Generator"
 
+# See bug #62123
+#	 pam? ( dev-perl/Authen-PAM )
+
+
 src_unpack() {
 	unpack ${A}
 
 	cd ${S}
 
-	# in webmin-minimal webalizer and apache2 are not present
+	# in webmin-minimal apache2 are not present
 	if ! use webmin-minimal ; then
-		# Bug #47020
-		epatch ${FILESDIR}/${PN}-1.130-webalizer.patch
-
 		# Bug #50810, #51943
 		if use apache2; then
 			epatch ${FILESDIR}/${PN}-1.140-apache2.patch
 		fi
+
+		# Correct ldapness
+		epatch ${FILESDIR}/${PN}-1.230-ldap-useradmin.patch
 
 		# Postfix should modify the last entry of the maps file
 		epatch ${FILESDIR}/${PN}-1.170-postfix.patch
@@ -48,7 +52,7 @@ src_unpack() {
 		tar -xf ${T}/vs.tar
 
 		# Don't create ${HOME}/cgi-bin on new accounts
-		epatch ${FILESDIR}/virtual-server-2.31-nocgibin.patch
+		epatch ${FILESDIR}/virtual-server-2.60-nocgibin.patch
 
 		# Check if a newly added IP is already active
 		epatch ${FILESDIR}/virtual-server-2.31-checkip.patch
@@ -64,15 +68,16 @@ src_unpack() {
 }
 
 src_install() {
+	# Bug #97212
+	addpredict /var/lib/rpm
+
 	rm -f mount/freebsd-mounts*
 	rm -f mount/openbsd-mounts*
 	rm -f mount/macos-mounts*
 
 	(find . -name '*.cgi' ; find . -name '*.pl') | perl perlpath.pl /usr/bin/perl -
 	dodir /usr/libexec/webmin
-	dodir /etc/init.d
 	dodir /var
-	dodir /etc/pam.d
 
 	cp -rp * ${D}/usr/libexec/webmin
 
@@ -82,15 +87,13 @@ src_install() {
 			${D}/usr/libexec/webmin/openslp/config-gentoo-linux
 	fi
 
-	exeinto /etc/init.d
-	newexe ${FILESDIR}/init.d.webmin webmin
+	newinitd ${FILESDIR}/init.d.webmin webmin
 
-	insinto /etc/pam.d/
-	newins ${FILESDIR}/webmin-pam webmin
+	newpamd ${FILESDIR}/webmin-pam webmin
 	echo gentoo > ${D}/usr/libexec/webmin/install-type
 
 	# Fix ownership
-	chown -R root:root ${D}
+	chown -R root:0 ${D}
 
 	dodir /etc/webmin
 	dodir /var/log/webmin
@@ -115,22 +118,27 @@ src_install() {
 	${D}/usr/libexec/webmin/setup.sh > ${T}/webmin-setup.out 2>&1 || die "Failed to create initial webmin configuration."
 
 	# Fixup the config files to use their real locations
-	sed -i 's:^pidfile=.*$:pidfile=/var/run/webmin.pid:' ${D}/etc/webmin/miniserv.conf
-	find ${D}/etc/webmin -type f -exec sed -i "s:${D}:${ROOT}:g" {} \;
+	sed -i -e "s:^pidfile=.*$:pidfile=${ROOT}/var/run/webmin.pid:" ${D}/etc/webmin/miniserv.conf
+	find ${D}/etc/webmin -type f | xargs sed -i -e "s:${D}:${ROOT}:g"
 
 	# Cleanup from the config script
 	rm -rf ${D}/var/log/webmin
 	keepdir /var/log/webmin/
+
+	# Get rid of this crap...
+	rm -rf ${D}/usr/libexec/webmin/acl/Authen-SolarisRBAC-0.1
+	rm -f ${D}/usr/libexec/webmin/acl/Authen-SolarisRBAC-0.1.tar.gz
 }
 
 pkg_postinst() {
 	local crypt=$(grep "^root:" ${ROOT}/etc/shadow | cut -f 2 -d :)
 	crypt=${crypt//\\/\\\\}
 	crypt=${crypt//\//\\\/}
-	sed -i "s/root:XXX/root:${crypt}/" /etc/webmin/miniserv.users
+	sed -i -e "s/root:XXX/root:${crypt}/" /etc/webmin/miniserv.users
 
 	einfo "To make webmin start at boot time, run: 'rc-update add webmin default'."
-	einfo "Point your web browser to http://localhost:10000 to use webmin."
+	use ssl && einfo "Point your web browser to https://localhost:10000 to use webmin."
+	use ssl || einfo "Point your web browser to http://localhost:10000 to use webmin."
 }
 
 pkg_prerm() {
