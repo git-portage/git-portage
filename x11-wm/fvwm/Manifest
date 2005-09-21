@@ -1,6 +1,7 @@
 MD5 cfc37d7eb6be1a5a71178973ca1a2e3f fvwm-2.5.13-r1.ebuild 7864
 MD5 d4ad99d2edb49ee23de8acb401f8ba0c fvwm-2.5.12.ebuild 8960
 MD5 da4719f7566ca15947e15dda23cbbf48 fvwm-2.5.14.ebuild 7774
+MD5 dbaee4c51fc3a2bc1c8297eed2fb08e0 fvwm-2.5.14-r1.ebuild 7552
 MD5 896f0556c9c391e8b36a391f564280f8 ChangeLog 17531
 MD5 4833e4d0685ef48988c0c5c4f9c6b377 metadata.xml 527
 MD5 ba8d61baf42b7f21be2488b3581ff51d fvwm-2.4.18.ebuild 2956
@@ -14,5 +15,6 @@ MD5 38cb0131791d07053b5d90bf21d1993f files/fvwm-translucent-menus.diff.gz 3582
 MD5 0dc5ddac8cf6767f4a753feef77e6c65 files/fvwm-noxbell-grab-fail.diff 360
 MD5 20d3c9bb419ce71c80fd25fd85364a45 files/fvwm-64bit-fixes.diff.gz 12220
 MD5 326a3b450dd43ec75b78fd0058026a3b files/digest-fvwm-2.5.13-r1 209
+MD5 f3538419cf078abb6adb941ee864fbd2 files/digest-fvwm-2.5.14-r1 209
 MD5 e9263b93f666293d0a1220ea3457efcd files/mini.happy.xpm 425
 MD5 df03a10a40a620ce8f1fab75f9758884 files/disable-debug-statements.diff 419
