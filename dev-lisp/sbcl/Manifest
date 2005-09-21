@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 87f41f552f3b4d9f8e4ea7d7c9b2f8ee ChangeLog 21110
 MD5 845ba0e216f2adf5eb504a5eb06b9037 sbcl-0.9.4.ebuild 5046
 MD5 0c9bf11185a2a2f1916fc3dc72c0e89e metadata.xml 1037
@@ -18,3 +21,10 @@ MD5 653f804ebcd167d167f8163756b7da17 files/0.9.3/sbclrc 639
 MD5 3869dca83085d07e01386eda00c05943 files/0.9.3/install-clc.lisp 980
 MD5 683427165f7d0717333bbb9762972b8d files/0.9.3/customize-target-features.lisp-prefix 95
 MD5 a525c50480694091f6a6688c1472ab10 files/0.9.3/README.Gentoo 1060
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDMZclKRy60XGEcJIRAkkKAJ9RAITNNeTS8j6EIeBfaD3dUj3rzQCfaPpO
+8sAxYeilABFhxRhP6ZbJnk0=
+=yPU+
+-----END PGP SIGNATURE-----
