@@ -1,6 +1,6 @@
 MD5 ec8e7c366c9ca5cfbee98026c21af65f ChangeLog 660
 MD5 ba0035547f2be94605ff4fda2e70cb31 metadata.xml 542
-MD5 20f5020e4c52a631252f18dd3ae3cd13 boxbackup-0.09.ebuild 2298
+MD5 e13e956eec445872dacf357d4f82c902 boxbackup-0.09.ebuild 2227
 MD5 c5bf24fdd27367aeea4b3833683683e7 files/bbstored.rc 526
 MD5 10ad8802434518abe87eba09444a4855 files/boxbackup-0.09-darwin.patch 443
 MD5 a5aea4f1d604c930129b8efc62612f51 files/digest-boxbackup-0.09 138

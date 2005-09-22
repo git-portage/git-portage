@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/Attic/boxbackup-0.09.ebuild,v 1.1 2005/09/17 13:30:47 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/Attic/boxbackup-0.09.ebuild,v 1.2 2005/09/22 17:19:51 grobian Exp $
 
 inherit eutils toolchain-funcs
 
@@ -59,9 +59,8 @@ src_install() {
 }
 
 pkg_preinst() {
-	enewgroup bbstored || die "problem adding group bbstored"
-	enewuser bbstored -1 -1 -1 \
-	|| die "problem adding user bbstored"
+	enewgroup bbstored
+	enewuser bbstored -1 -1 -1 bbstored
 }
 
 pkg_postinst() {
