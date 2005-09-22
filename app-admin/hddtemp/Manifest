@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ac68604576ccfc58e653bc0982bef4d4 metadata.xml 281
 MD5 c9b104341465cbb56ca24ae37dfd0358 hddtemp-0.3_beta12.ebuild 1220
 MD5 67358d9fae033adf04e11bd6e19204d6 hddtemp-0.3_beta10.ebuild 1135
@@ -17,3 +20,10 @@ MD5 a4e0540c259f86b5ed2c4af2a7ead160 files/hddtemp-0.2-db_location.patch 593
 MD5 fb10a6dcf20731e49bdd8a408702e27a files/digest-hddtemp-0.3_beta10 70
 MD5 d2b4b7b99f1a5c3a26d093cea53e85a0 files/digest-hddtemp-0.3_beta13 71
 MD5 92bf0d7e78de1bafcedee9c9042df8b2 files/hddtemp-conf.d 342
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDMiQxgIKl8Uu19MoRAqHnAJwJajJLxcoggg2SVkmLVG8i8HJCVQCfVyPN
+uYLk3gJR0vIKsLQLQQSsaqk=
+=Q3qy
+-----END PGP SIGNATURE-----
