@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.3_pre1.ebuild,v 1.4 2005/07/01 13:53:12 kugelfang Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.3.ebuild,v 1.1 2005/09/23 01:04:19 caleb Exp $
 
 ONIGURUMA="onigd2_4_2"
 
@@ -35,15 +35,15 @@ S=${WORKDIR}/${P%_*}
 src_unpack() {
 	unpack ${A}
 
-	if use cjk ; then
-		einfo "Applying ${ONIGURUMA}"
-		pushd ${WORKDIR}/oniguruma
-		epatch ${FILESDIR}/oniguruma-2.3.1-gentoo.patch
-		cp ${FILESDIR}/re.c.182.patch .
-		econf --with-rubydir=${S} || die "econf failed"
-		make ${SLOT/./}
-		popd
-	fi
+#	if use cjk ; then
+#		einfo "Applying ${ONIGURUMA}"
+#		pushd ${WORKDIR}/oniguruma
+#		epatch ${FILESDIR}/oniguruma-2.3.1-gentoo.patch
+#		cp ${FILESDIR}/re.c.182.patch .
+#		econf --with-rubydir=${S} || die "econf failed"
+#		make ${SLOT/./}
+#		popd
+#	fi
 
 	# Enable build on alpha EV67 (but run gnuconfig_update everywhere)
 	gnuconfig_update || die "gnuconfig_update failed"
