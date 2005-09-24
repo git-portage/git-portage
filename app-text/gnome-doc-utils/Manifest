@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 77c7e3f56ca32c24f88a64c3680c8485 metadata.xml 183
 MD5 5591e26d3f166aeee6149e2665b7a72e gnome-doc-utils-0.2.1.ebuild 997
 MD5 6606e55684c4e0e3b850d548eef3f7bd gnome-doc-utils-0.4.1.ebuild 927
@@ -8,3 +11,10 @@ MD5 8aea252325cbef504264752f65fd110f files/digest-gnome-doc-utils-0.2.1 74
 MD5 187390057c80dbdb9582ea4ce9332100 files/digest-gnome-doc-utils-0.1.3 74
 MD5 c11248fc58519e82dc0590a0b8d98443 files/digest-gnome-doc-utils-0.4.1 74
 MD5 0f3180719f9bd2a7bf8484fd7735eb86 files/digest-gnome-doc-utils-0.2.0 74
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDNNLOgIKl8Uu19MoRAuODAJ9YjB8pn084RUaJkcfJGAC26TWKNACeKveZ
+zX2rnH/5tmyUnRIum2PGn2w=
+=dUnu
+-----END PGP SIGNATURE-----
