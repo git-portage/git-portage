@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d7a4b1a0b530884bc66a11f5ca6b139d xfce4-netload-0.2.3.ebuild 735
 MD5 0224c87896f3e6f6a038f882cde32ec1 xfce4-netload-0.2.3-r1.ebuild 396
 MD5 c390804e060ffd11a5bbb143434b2b2d metadata.xml 157
@@ -12,3 +15,10 @@ MD5 2c91dfa041ede312bf559f62213dffdc files/digest-xfce4-netload-0.2.4 78
 MD5 1057e2f9ea55ebb89533861a319cf6c7 files/digest-xfce4-netload-0.3.2 79
 MD5 19335b87c54a1cf33825330c46903f87 files/digest-xfce4-netload-0.2.3-r1 78
 MD5 a477599ba752f810601381daeab01e56 files/digest-xfce4-netload-0.3.1 79
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDNNihgIKl8Uu19MoRAgOxAJ4tnT0OLXbkIIHnoEdDJAKFNZ1QUACfYxed
+TdLXgzLTU0w82p9i02tkOM4=
+=iPoy
+-----END PGP SIGNATURE-----
