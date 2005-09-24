@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e26723ead93a1b3ca44453d6dcd6bf99 libcdio-0.74.ebuild 1683
 MD5 2f84819030cd3823545c687eee626d18 libcdio-0.76.ebuild 1326
 MD5 5b65a899b146ee1b9378bc2dc1cac22e ChangeLog 5427
@@ -17,3 +20,10 @@ MD5 8276d2edab3e451a5639073967339ebb files/digest-libcdio-0.69 65
 MD5 a6c330ba467869360ed8db78de15e9b7 files/libcdio-0.75-freebsd.patch 1227
 MD5 f2b45d6e206620dddfde7136a8939409 files/digest-libcdio-0.76 65
 MD5 c4a757d92ae8d58de0538803b4650900 files/digest-libcdio-0.74 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDNKgej5H05b2HAEkRApzFAJ0YdGpqZ1DG2zGOsoYRZngvCXWRSQCfS6t/
+aPgWGJMotgBkbn1v1GQ4+JI=
+=5uiz
+-----END PGP SIGNATURE-----
