@@ -1,3 +1,6 @@
 MD5 f7f3b3dbc7ff7b6cd95243953be26132 ChangeLog 703
+MD5 f0d043c2c7954c5080eb596bdfcf855a nomadii-utils-0.8-r1.ebuild 1530
 MD5 deb1a561b30f34aa5c8e2eabc018a6c2 nomadii-utils-0.8.ebuild 1428
+MD5 282c7694de28329ace49de28cf586ee6 files/digest-nomadii-utils-0.8-r1 65
 MD5 282c7694de28329ace49de28cf586ee6 files/digest-nomadii-utils-0.8 65
+MD5 aeba2df545b8a3b93a9eeb102ba4ecf3 files/nomadii-utils-0.8-struct.diff 744
