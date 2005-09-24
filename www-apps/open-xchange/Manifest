@@ -1,0 +1,7 @@
+MD5 cd7494aedaa10b1eb342692b86dd4b16 open-xchange-0.8.1.2.ebuild 21515
+MD5 65c7e4c20fc38cac91ae5bfb4c6fb674 files/SocketHandler.java.debug 991
+MD5 ec8d72f6da3dbefde48787a53fa071bf files/digest-open-xchange-0.8.1.2 138
+MD5 5388f979621c5e4d333aef5cd37f0062 files/init.d.open-xchange 1877
+MD5 cfa72c4f5e62b779052acf1cd629234b files/88_mod_jk.ox.conf 1228
+MD5 ad3894d059bf4fce235b76ad4521eff7 files/open-xchange-htaccess 172
+MD5 a6f59437ac9557974132d5648d662f72 files/slapd.ox.inc 1113
