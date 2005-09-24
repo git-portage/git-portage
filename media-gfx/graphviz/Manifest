@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7bd123ddeecdc6ba9863af47f4577292 ChangeLog 8907
 MD5 2339df982693f89bc4ea845062b0597d graphviz-1.10.ebuild 1276
 MD5 56c7e33463f29fd71f4af44c0fa687a5 graphviz-1.12-r1.ebuild 1913
@@ -23,3 +26,10 @@ MD5 280fc858f990639d5d8fb7102b2636ac files/graphviz-1.16-build.patch 6200
 MD5 5c7f01258da58810d0175461e0c1d14b files/graphviz-1.16-common_h.patch 292
 MD5 52118c7d90398202a81b72b67bf0b0d7 files/digest-graphviz-2.6 65
 MD5 6f4c558cccabd9d79fe071b4b21fa67b files/graphviz-2.4.conf 236
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDNOneCRZPokWLroQRAp8/AKCKl8v/xa4ttGnpUijaiHerG1t5pwCgt8dy
+X0o2zhCYGcD+gWn9cc9q/i4=
+=kYU6
+-----END PGP SIGNATURE-----
