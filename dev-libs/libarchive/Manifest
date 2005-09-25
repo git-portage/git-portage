@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2df6ad4e6edf8d21ddbf8d7641c24bf5 ChangeLog 2345
 MD5 d78421190cbcc2af81b5b67488b3bb47 libarchive-1.02.030.ebuild 1068
 MD5 6530e11ad3afae081d8c1cd12c6fdd39 libarchive-1.02.027.ebuild 691
@@ -10,3 +13,10 @@ MD5 d7fe2d46a0582f18a38c90c0e79545d2 files/digest-libarchive-1.02.030 71
 MD5 7050cbd8598ed396d741592975d848ce files/digest-libarchive-1.02.027 71
 MD5 7bf2f3770c7741740f3b554684b51b9b files/digest-libarchive-1.02.034 71
 MD5 7050cbd8598ed396d741592975d848ce files/digest-libarchive-1.02.027-r1 71
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDNpPoj5H05b2HAEkRAqiaAJwLLwss7EzJM2lTVHn40wqauENiOQCfa9Pg
+hWkpAF19zsswd9xubf4yj58=
+=o7yB
+-----END PGP SIGNATURE-----
