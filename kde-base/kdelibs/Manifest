@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2c3feefcb9434725dedeef7d9c400d02 kdelibs-3.4.1-r2.ebuild 3357
 MD5 a2754ea94836037eda37593282978e6c kdelibs-3.2.3-r9.ebuild 3831
 MD5 2fd53a7c014e4527505ec32ec5425575 kdelibs-3.4.2.ebuild 3346
@@ -32,3 +35,10 @@ MD5 3c54378872cb0af555c68a12dddf156d files/kdelibs-3.5_beta1-configure-acl.patch
 MD5 ac733469cad0b673ee2a6fc35edc0e91 files/digest-kdelibs-3.4.2-r1 68
 MD5 b93484486086ff60f9633f48ed311877 files/post-3.2.3-kdelibs-kimgio.diff 39789
 MD5 119cc73926dceafff9107b5f916277ee files/post-3.2.3-kdelibs-htmlframes.patch 15435
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDN7Hgj5H05b2HAEkRAtyMAKCimSE/FcNDsn1HPRMexW24bYE+sACfVMzx
+Za2HJbJBxhUrSKAI2GN3nH0=
+=fIvX
+-----END PGP SIGNATURE-----
