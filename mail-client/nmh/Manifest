@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 61328c981af8cf348a2b188506eff58c nmh-1.0.4-r3.ebuild 1391
 MD5 63ee46b00901ffb46894a4160aff52d1 nmh-1.1-r1.ebuild 1656
 MD5 2dc5ef7375ec5ed5dbc288505dff0502 nmh-1.1.ebuild 1525
@@ -13,3 +16,10 @@ MD5 fa36a4dfabf2747ec6314bd0d81e71ef files/nmh-1.1-m_getfld.patch 571
 MD5 637757c29641c06801989cb38c272984 files/nmh-1.1-install.patch 1077
 MD5 06add1122d19eaf6dce391f099b76d3f files/digest-nmh-1.1 59
 MD5 70aa719a7d3c1d0ee4d481a8a603537a files/nmh-1.1-configure-vitest.patch 332
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDN7F3QlM6RnzZP+IRArWWAJ93nGke00FDG0TZx5rlnB8/HbI1SwCeK0Rb
++9C/u/+P2MnXW6tjvfX6NJA=
+=P0j0
+-----END PGP SIGNATURE-----
