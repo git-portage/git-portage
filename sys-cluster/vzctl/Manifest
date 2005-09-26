@@ -1,0 +1,7 @@
+MD5 a650568afe35fbb26e1845c005d31527 vzctl-2.7.0.21.ebuild 1477
+MD5 b55bfb88b955107a0f0e6c5aaef21723 metadata.xml 162
+MD5 0bcc3bfdeef39d8fcccf1b6938192257 ChangeLog 372
+MD5 687eaa4427600a7a5edfc0b8b7f69480 files/vzctl-2.7.0-gentoo_conf_d.patch 3899
+MD5 9ab78117d5f3fb123a7c44f948aafb3d files/vzctl-2.7.0-gentoo_etc_vz.patch 7412
+MD5 7de322556f2db11c53a126cb7f46d16c files/vz.initd 5371
+MD5 59b8869cf562ff10c9561f1f38cd37cc files/digest-vzctl-2.7.0.21 66
