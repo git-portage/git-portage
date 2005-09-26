@@ -1,5 +1,5 @@
-MD5 317db334325ba20619bb7c2d9300752f httperf-0.8.ebuild 1011
-MD5 f5115ee605b0f3075a86d77225e4c3ba ChangeLog 561
+MD5 e400600689cab6fbd81fd11e90bd1fd4 httperf-0.8.ebuild 1011
+MD5 0fc6b034c75f65aba58e8f37379b7969 ChangeLog 561
 MD5 895c658c1644917118d147978f7d1147 metadata.xml 945
 MD5 81630570d60ade0eaf6caad7ee4a1c4a files/httperf-0.8-optional-ssl.diff 694
 MD5 a719ff22f9a66c55067ea922e45d13a0 files/httperf-0.8-respect-DESTDIR.diff 712
