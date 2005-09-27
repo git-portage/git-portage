@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8d067537a06634e898b40532dd5d3233 mpeg-tools-1.5b.ebuild 1127
 MD5 9ef4af14dad87b03fde8e43f19e08d26 metadata.xml 225
 MD5 0ca9d85354046cd139e1fab894900df0 mpeg-tools-1.5b-r1.ebuild 1354
@@ -16,3 +19,10 @@ MD5 ee6ac6a97ef340aecff643f24bc2f02c files/1.5b/mpeg-tools-1.5b-gentoo.patch 560
 MD5 1c465916c02ad5e984eefda8b236fbc9 files/1.5b/libpnmrw.c 37348
 MD5 b45f0ebe9bad10888b67ac1d1475c0d4 files/1.5b/mpeg-tools-1.5b-fix-exit-call.patch 464
 MD5 1f0b9c5d21516dc0b597bdd8563a7e39 files/1.5b/libpnmrw.h 6791
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDOJcfgIKl8Uu19MoRAlCEAJ4wKlxn7yYRcTe5vVye6Zeb2iJ/DgCfS7C9
+NRF1bub974fy/QNwe72gWU4=
+=Op/+
+-----END PGP SIGNATURE-----
