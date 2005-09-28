@@ -2,8 +2,8 @@ MD5 5fd0fb969fe181169f3bacc8ea0238ec dvutil-0.13.13.ebuild 874
 MD5 2a76f7294c0d19f0030cf03dd6da9400 dvutil-0.13.15-r2.ebuild 993
 MD5 36f32cf88135aa428b40685b955c8c3a dvutil-0.13.15.ebuild 748
 MD5 baecda85db8f2f90e495be668d7108a8 metadata.xml 250
-MD5 60bf32e570084a5b20385342271b9e5f ChangeLog 3657
-MD5 ffd52301242c177c85fb23209f120fb6 dvutil-0.13.17.ebuild 996
+MD5 1ac647b75bb44260be74a0117cbc3357 ChangeLog 3658
+MD5 ef34e23abc7e8d43b64dc6da937496ae dvutil-0.13.17.ebuild 995
 MD5 75609f1d5318b7d0a9e375ddbca118b3 files/0.13.13-gentoo-doc_distdir.patch 455
 MD5 c811d8de8b8fdf0d0524c1e57e637129 files/digest-dvutil-0.13.13 66
 MD5 b9c081ae2386a2b75bf1b5835364233b files/digest-dvutil-0.13.15 66
