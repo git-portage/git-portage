@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7a20e26b7cddf8179591f77334b5641c linux-headers-2.4.25.ebuild 3410
 MD5 c29c48dc661695aeebaf78abbe8a81c3 linux-headers-2.4.22.ebuild 4017
 MD5 b4b75e3794ee1d001ddad2a7a867529f ChangeLog 29351
@@ -33,3 +36,10 @@ MD5 2574d3f1b776f2df365737f456bfe435 files/digest-linux-headers-2.4.26 67
 MD5 e300a3e148a7dcc38a0e099494fb6cb3 files/bigendian-byteorder-fix.patch 1557
 MD5 48ebb9368ff477da66306503da02c6fd files/digest-linux-headers-2.6.8.1-r4 222
 MD5 45ff5cde07cfe93ecbb514226def606f files/generate-asm-sparc 1661
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDO/yPKRy60XGEcJIRAgG9AJ9P36PUwUFk/LboTO/IS96qPdb/AgCghGOX
+kWnOLnMtFPlldX7AK2Ixcu8=
+=bZSp
+-----END PGP SIGNATURE-----
