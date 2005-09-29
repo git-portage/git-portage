@@ -1,5 +1,7 @@
 MD5 d05d05ab0b510b63235f05b3cc01353b ChangeLog 1329
 MD5 dc98bf77a8df106f19f64a6870ae5d38 neXtaw-0.12.ebuild 733
 MD5 61c211e8264d080ac2f37f6f2883a953 neXtaw-0.15.1.ebuild 767
+MD5 77c22a28fdc52b7428ccd9ce653aa77f neXtaw-0.15.1-r1.ebuild 638
 MD5 bc5549fb1bff5f7a480d56d9cde31262 files/digest-neXtaw-0.12 63
 MD5 1c3dd4595fe26cb0d47924d98df607ba files/digest-neXtaw-0.15.1 65
+MD5 1c3dd4595fe26cb0d47924d98df607ba files/digest-neXtaw-0.15.1-r1 65
