@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 540f88ab8b68a91e34545452e0e20363 ChangeLog 13161
 MD5 132ce1429adec878c1187def863967cf w3m-0.5.1-r3.ebuild 3597
 MD5 6dbb19793ae901d3aa90c1ef1dabdabb w3m-0.4.2.ebuild 1887
@@ -10,3 +13,10 @@ MD5 f818841f47776f4cdfe686de95223019 files/digest-w3m-0.4.2-r10 210
 MD5 0fd075401455ce9205836b4267202e22 files/w3m-w3mman-gentoo.diff 1059
 MD5 f91cc75929689839efc1a8dfb0dcbd83 files/w3m-0.4.2-imglib-gentoo.diff 5019
 MD5 ccf8db4eb493664368e4e4c77cea99d4 files/digest-w3m-0.4.2 61
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDPDhtKRy60XGEcJIRAkq1AKCYo9h6DmwftlxzyUu5hf+K0gV2IACfarmY
+jZbXESuJuLgrXYxTvgYEL0g=
+=wVQ1
+-----END PGP SIGNATURE-----
