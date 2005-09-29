@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 68e8f6854f38d88b6b6f0cd7ded9b721 gecko-sdk-1.7.8.ebuild 6838
 MD5 8b22525bd9a836743abec05930d9543f gecko-sdk-1.7.12.ebuild 6945
 MD5 edaa2043e54cc72e157499f79f855cf8 ChangeLog 3762
@@ -18,10 +15,3 @@ MD5 c927b56f320d1bacf28c49a7ee3c37ba files/digest-gecko-sdk-1.7.12 376
 MD5 f7930e7f2cba691a9b6654b61ba1217e files/mozilla-1.7.12-libart-freetype.patch 2412
 MD5 19bfbff741d54e3b35b048ab445096ed files/digest-gecko-sdk-1.7.12-r1 232
 MD5 be67106b98a3cc1562eee877200e6ae0 files/digest-gecko-sdk-1.7.8 280
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDO8fE3og80iZgVQgRAumOAJ4t5LKVZOOS6VkL+fJaBCb/bcmgjACeM588
-C1xovqf47Lgc2upvDbQWbGo=
-=zA3Y
------END PGP SIGNATURE-----
