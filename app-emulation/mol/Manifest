@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8ca7b5ed6930915784abebce8a5c633c ChangeLog 10122
 MD5 56f8a1561157a28124d55347470da6c8 mol-0.9.70.ebuild 4047
 MD5 90f79bdde801865b57b9e5f4645df4df mol-0.9.71_pre1-r1.ebuild 4819
@@ -23,3 +26,10 @@ MD5 1b1d52b69bcae00d0339c0f3f4ae9a6d files/mol-tiger.patch 3681
 MD5 8eb2c97c995cba996b31b0ba38ef4fd0 files/mol-0.9.71_pre1-tmp-offset.patch 864
 MD5 c0056d18f99396ba8607109a26dc9188 files/mol-uname.diff 618
 MD5 3bf68312e4299f777065f55eea5297fa files/mol-0.9.71_pre1-nopriority.patch 1861
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDO1oDcsIHjyDViGQRAr0lAKCn2BSHgI1tywJVeGVdMM/AH3X58QCeOnZV
+cSEZwrSVvEaIq+l4e/+SHvM=
+=l3NX
+-----END PGP SIGNATURE-----
