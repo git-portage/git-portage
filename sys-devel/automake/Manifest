@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 038fd25744010b665c4f8176dc74cbc3 automake-1.9.6-r1.ebuild 1463
 MD5 c2b7648d70be8a4ab0080ed00cb796e3 automake-1.6.3.ebuild 1431
 MD5 60753f865fa023a3bcd0466250a743a7 automake-1.4_p6.ebuild 1809
@@ -25,3 +28,10 @@ MD5 9587f00ace066c11b5c22d72afe630a9 files/automake-1.8.2-infopage-namechange.pa
 MD5 0fe9854b3a6384ef4c7b0bd2bad72c59 files/digest-automake-1.8.5-r3 67
 MD5 a1b9c06cc3ba7ac88f3b870f51d35758 files/digest-automake-1.9.6-r1 67
 MD5 5c2fe79f8f664efdb7e2736e88c10f09 files/automake-1.5-test-fixes.patch 2303
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDO6qWgIKl8Uu19MoRAtTvAJ4ryIoTvRj/c/DTBsAHslKDdLSzewCfU082
+q/r1nVI/dc875i3eHNXopFw=
+=Q+pJ
+-----END PGP SIGNATURE-----
