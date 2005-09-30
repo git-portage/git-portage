@@ -1,5 +1,5 @@
-MD5 1d03677e13e7c9f92290395c8c4fb09f backuppc-2.1.2.ebuild 3100
+MD5 5be218126dc80a61348fc968eca3ce26 backuppc-2.1.2.ebuild 3204
 MD5 3c20dccad7b705d7e9a379e6831149f9 metadata.xml 252
-MD5 3cf4e2bb789394d6804ca70c8a7a54d2 ChangeLog 513
+MD5 5b7aae8dc0badcc401a172cf1c9adad4 ChangeLog 605
 MD5 0336fa906c634b8bce2e040039a2d9a9 files/postinstall-en.txt 69
 MD5 ac73cb1a93d9daee69e7bbab5e502390 files/digest-backuppc-2.1.2 143
