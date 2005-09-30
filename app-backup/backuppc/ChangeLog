@@ -1,6 +1,6 @@
 # ChangeLog for app-backup/backuppc
 # Copyright 1999-2005 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/ChangeLog,v 1.1 2005/09/30 14:59:01 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/ChangeLog,v 1.2 2005/09/30 15:05:57 seemant Exp $
 
 *backuppc-2.1.2 (30 Sep 2005)
 
@@ -9,5 +9,5 @@
   New package which makes it easy to backup windows and *nix computers. I
   useit at work, and klieber and tigger^ both want to try it. Furthermore,
   it's in high demand on the forums and submitted in bug #80818 by chewi
-  (James LeCuirot)
+  (James LeCuirot).  Metadata needed adjusting
 
