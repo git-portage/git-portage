@@ -2,14 +2,13 @@ MD5 1b865e9c0349146f352678370c667127 tcsh-6.13-r1.ebuild 1889
 MD5 c250d0af9e636acf93f75180f66ed639 tcsh-6.14.ebuild 1234
 MD5 89674d2fb5c06a3b4b5310a3212c81a2 tcsh-6.12-r3.ebuild 1382
 MD5 40885229543eeb01a6a91b426c29e29d tcsh-6.13.ebuild 1249
-MD5 c51eff2354a323a6fb563c668423b605 tcsh-6.14-r1.ebuild 2452
-MD5 68ae6ae936111250398633fbfe8b05c7 ChangeLog 5555
+MD5 efacfc119398b8f59b9ee3f65ca80c58 tcsh-6.14-r1.ebuild 2454
+MD5 17b2dbd92367c80ba3d034ac758d4267 ChangeLog 6074
 MD5 57ae68ef95b893d172203de06faf380d metadata.xml 655
 MD5 4869b9da87c79854e2cc97241f125853 files/csh.login_new 1482
 MD5 c6384002cda1bc11c1e31ca9513b9ad6 files/tcsh-6.12.00-setpgrp.patch 545
 MD5 16713fff7d0ccc21e1c32b250cdc44ff files/tcsh-aliases 2399
 MD5 18a0fc2cb5f14ddf82a1947cdd43ca43 files/tcsh-6.11.00-termcap.patch 406
-MD5 b03e56d3ab9d13dccfd87da524f31d18 files/tcsh-6.14-gentoo.patch 671
 MD5 1b31eca34600baccddcfdf5d8bca139d files/tcsh-6.13.00-charset.patch 616
 MD5 8c5915d05b8b0c2db109c754a2bee20f files/tcsh-bindkey 3597
 MD5 a51fb6146ec2bcb7a603e5af41f6c7a2 files/tcsh_enable_kanji.diff 466
