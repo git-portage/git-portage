@@ -1,3 +1,5 @@
+MD5 a15e0a278e3ffc9cdff430e82142ebd8 octave-forge-2004.11.16-r2.ebuild 2259
+MD5 c2e1476d5b1ae968630dec038adc7272 octave-forge-2005.06.13-r1.ebuild 2316
 MD5 ea7677dfdbf3fb96e543120d8f75d26e octave-forge-2004.11.16-r1.ebuild 2269
 MD5 c0b992412fda6a292815ccacec4c3fec octave-forge-2005.06.13.ebuild 2326
 MD5 95df7d1e148433d157c178c826f3cb94 ChangeLog 4338
@@ -5,4 +7,6 @@ MD5 8c623e53daafa025137077c6b65815bd metadata.xml 156
 MD5 64ae87b1b1190c6a51f7dfd91be73d05 files/octave-forge-mex.patch 1580
 MD5 cfc1fc06a341728e53b81d09d6376dea files/digest-octave-forge-2005.06.13 76
 MD5 3aacf6f3c335a1f63edef94a9bd7011a files/digest-octave-forge-2004.11.16-r1 76
+MD5 3aacf6f3c335a1f63edef94a9bd7011a files/digest-octave-forge-2004.11.16-r2 76
 MD5 e1393e9f0f19ccc9e6192c227cccc644 files/octave-forge-randmtzig.patch 428
+MD5 cfc1fc06a341728e53b81d09d6376dea files/digest-octave-forge-2005.06.13-r1 76
