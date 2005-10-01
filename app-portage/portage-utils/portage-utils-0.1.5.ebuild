@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/portage-utils/Attic/portage-utils-0.1.2.ebuild,v 1.1 2005/07/19 22:56:32 solar Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/portage-utils/Attic/portage-utils-0.1.5.ebuild,v 1.1 2005/10/01 23:53:49 solar Exp $
 
 inherit toolchain-funcs
 
@@ -17,7 +17,7 @@ DEPEND=""
 
 src_install() {
 	dobin q || die "dobin failed"
-	doman man/*
+	doman man/*.[0-9]
 	for applet in $(<applet-list) ; do
 		dosym q /usr/bin/${applet}
 	done
