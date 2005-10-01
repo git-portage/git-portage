@@ -1,5 +1,5 @@
-MD5 689d10c6858e5427e738cb373ef30296 ChangeLog 4084
-MD5 3f9f253bca0f59183deaf4663bd1f9c4 tftp-hpa-0.40.1.ebuild 1011
+MD5 196ddaf2534e352a067294e2a03fdaff ChangeLog 4217
+MD5 3294d34a49f574703165fc6fe107e551 tftp-hpa-0.40.1.ebuild 1024
 MD5 0b942a8eed3507099acec26ffd91bd07 tftp-hpa-0.40-r1.ebuild 1019
 MD5 ce9766cf2b5c3fcf0deab319ac68ad38 files/digest-tftp-hpa-0.40.1 67
 MD5 9e0867241bab97104a2d82fb8035725b files/in.tftpd.confd 145
