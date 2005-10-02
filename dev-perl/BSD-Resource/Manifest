@@ -1,5 +1,5 @@
 MD5 0a0f6e1776ef2c772bd38d1e1587b010 metadata.xml 309
-MD5 9cc3a4c054b2b24fb9a5ead72b389f09 ChangeLog 2215
-MD5 1b5ade32f915a01b6d250fe7e5f1ef24 BSD-Resource-1.24.ebuild 650
+MD5 f1139eb5bd93060e2aa2fab4ee22bb65 ChangeLog 2319
+MD5 78e81ffe7bd7921110f8aa16cad153ff BSD-Resource-1.24.ebuild 650
 MD5 7c0143f2a1de9325985efd9311baa470 files/digest-BSD-Resource-1.24 68
 MD5 53281413b2c669afae5d401d892c4693 files/portage_niceness.patch 479
