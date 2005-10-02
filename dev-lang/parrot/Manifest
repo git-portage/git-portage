@@ -1,5 +1,5 @@
-MD5 848f747a7ee36a296ae5ae0e7a2bc79d parrot-0.2.3.ebuild 2081
-MD5 4635093a57999fbc5afa157aa6edbc5c ChangeLog 1626
+MD5 2046bc464a3e1e418cb5afc3285fa982 parrot-0.2.3.ebuild 2079
+MD5 367bedfe7c4912e5b47f98679e1f586c ChangeLog 1747
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 173cae8d616eb7a79b78c15e34920888 files/parrot-config.patch 569
 MD5 1ac50a47aab4a14fbd9f47f929ee33c8 files/mod_parrot.patch 293
