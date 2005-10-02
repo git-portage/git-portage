@@ -7,5 +7,5 @@ MD5 b295a36d15f82fa34eeb24929920b0ab files/digest-portage-2.0.53_rc2 71
 MD5 87eff9b432487777e55298413c33ab4a files/digest-portage-2.1.0_alpha20050718 80
 MD5 e57748276505fab96a2ab4e64de45366 metadata.xml 220
 MD5 a4921b091c6057013549c33f933bfd40 portage-2.0.51.22-r2.ebuild 5708
-MD5 47ec11313d19f2cc556805e1105de34d portage-2.0.53_rc2.ebuild 3653
+MD5 fb71edf86a44d8a79da19c49bfe60fbe portage-2.0.53_rc2.ebuild 3653
 MD5 7c109f64a1b96c1134ac490d0233fa3b portage-2.1.0_alpha20050718.ebuild 2566
