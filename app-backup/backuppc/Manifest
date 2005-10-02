@@ -1,5 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3f049ebb936f3f4fa5eb066178968f20 ChangeLog 779
 MD5 16e58e2361e8ba19aa18de8b0174dc57 backuppc-2.1.2.ebuild 3198
 MD5 ac73cb1a93d9daee69e7bbab5e502390 files/digest-backuppc-2.1.2 143
 MD5 0336fa906c634b8bce2e040039a2d9a9 files/postinstall-en.txt 69
 MD5 95f802b1f64061dbaa6f1828efd53a03 metadata.xml 257
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDP/apj5H05b2HAEkRAhR6AJwKmjmwgDvHSQXjJhz0BW7jwOTWIACfa4AI
+drJl1p53NK4qw+Si4p1h5Fc=
+=Qg/m
+-----END PGP SIGNATURE-----
