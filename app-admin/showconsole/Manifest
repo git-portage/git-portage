@@ -1,5 +1,5 @@
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
-MD5 221b42a21c87effb6002d321d1229285 showconsole-1.07.ebuild 1014
+MD5 6dee76a8127e318b23e884a5009a1f22 showconsole-1.07.ebuild 1013
 MD5 0005ea873582116e82cee4e9638cbb7e ChangeLog 1065
 MD5 34f6358be961e4385337135c2de859ef files/1.07-no-TIOCGDEV.patch 819
 MD5 9e771682d403f6fa76f4496b6528af81 files/bootlogger.sh 657
