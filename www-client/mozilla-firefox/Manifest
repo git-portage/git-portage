@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 27212c3bfc3d15dc4bb42454380c533b mozilla-firefox-1.0.6-r5.ebuild 9631
 MD5 7f073b544e7967d3453ab8579292ef3e mozilla-firefox-1.0.6-r4.ebuild 9543
 MD5 a3cec6a265f7dde388b8ada806f0b1e1 mozilla-firefox-1.0.7-r3.ebuild 9324
@@ -40,3 +43,10 @@ MD5 23d1fbd03cc6dd346a4e4ce8f2d88ebf files/mozilla-1.3-alpha-stubs.patch 4646
 MD5 730bebc28f073d8c08d32c78252445d5 files/mozilla-1.7.12-rpath.patch 1752
 MD5 bff260036c5dcca45da3218517fb33d8 files/icon/firefox-icon.png 3979
 MD5 fc5e3a5d794abcb431bafdbc80c89103 files/icon/mozillafirefox.desktop 341
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDQDro1ZcsMnZjRyIRAs8aAKClDLBJRoCwCfJDOGG4M7cVqt55KwCeMwXR
+98bNGmceAOjGfavLdEW7O2g=
+=HL1B
+-----END PGP SIGNATURE-----
