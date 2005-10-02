@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 25f49b74d555ae01f63d25e3c6404561 ChangeLog 3565
 MD5 c1e212329f9083e2405b16dd382d6632 metadata.xml 259
 MD5 7fac8c4c30f64a7982262cc0cd780808 pixie-1.5.1.ebuild 1390
@@ -13,3 +16,10 @@ MD5 c47cd24a306a2475680ce9f914546c4e files/digest-pixie-1.4.1-r1 65
 MD5 48ac8837dbadef8c09f4707f8010c85f files/pixie-1.4.4-math.patch 836
 MD5 89da012136dbc32c9a68dabc09e802d4 files/digest-pixie-1.5.1 65
 MD5 391ca6aaedf3654e8e09f851cf502c01 files/pixie-1.4.7-libtool.patch 14583
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDQHIlOpjtAl+gMRURAtAdAJ4qIvzt5VWIYmYOiFKzdcSHZ0QBhQCfdJWi
+b5E8np7q6j7ZxxNtdnq6OhI=
+=+j3H
+-----END PGP SIGNATURE-----
