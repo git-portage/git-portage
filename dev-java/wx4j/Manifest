@@ -1,5 +1,5 @@
-MD5 2606e6d3ef3db7a4ff53308c1d51074d ChangeLog 647
+MD5 456d94508d9ee530bbcceb6c47f87a18 ChangeLog 815
 MD5 e94f4354c22588470879f10807e38d83 metadata.xml 768
-MD5 9f828a8b99446cd2b62d92a96f39b844 wx4j-0.2.0-r1.ebuild 1205
+MD5 3ce1c0ee86baf1512f20b23fe9728bb8 wx4j-0.2.0-r1.ebuild 1208
 MD5 1eb2e7bb0ca1b9e6c8644243652d077c files/wx4j-0.2.0-build.patch 642
 MD5 bca1747c76e3a9f5bf4c98914efea047 files/digest-wx4j-0.2.0-r1 63
