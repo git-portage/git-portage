@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.52-r1.ebuild,v 1.1 2005/09/08 23:57:44 jstubbs Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.0.53_rc2.ebuild,v 1.1 2005/10/02 07:11:55 jstubbs Exp $
 
 inherit toolchain-funcs
 
@@ -21,8 +21,6 @@ S=${WORKDIR}/${PN}-${PV}
 
 src_unpack() {
 	unpack ${A}
-	cd "${S}"
-	patch -p1 < ${FILESDIR}/2.0.52-fixes.patch
 }
 
 src_compile() {
@@ -58,6 +56,7 @@ src_install() {
 		newins make.conf make.conf.example
 	fi
 
+	Removing until next rc as the compile script points to python-2.2
 	if ! use ppc-macos; then
 		cd "${S}"/src/python-missingos
 		./setup.py install --root ${D} || die "Failed to install missingos module"
@@ -123,6 +122,6 @@ pkg_postinst() {
 
 	for x in ${ROOT}etc/._cfg????_make.globals; do
 		# Overwrite the globals file automatically.
-		[ -e "${X}" ] && mv -f "${X}" "${ROOT}etc/make.globals"
+		[ -e "${x}" ] && mv -f "${x}" "${ROOT}etc/make.globals"
 	done
 }
