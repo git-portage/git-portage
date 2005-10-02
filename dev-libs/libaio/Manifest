@@ -1,5 +1,5 @@
-MD5 c5e5b95de4b2c1dd37e387a2cb30fb46 ChangeLog 1020
-MD5 3f0fae34a85131f2768298c7e8ee6269 libaio-0.3.15.ebuild 907
+MD5 a2ab6b08b0c0abf362ad1c3f8390cbbf ChangeLog 1125
+MD5 29e53943085f389f153bbadeb849ecee libaio-0.3.15.ebuild 909
 MD5 08aeb8a15f772dfe8e124e6ea138ddef libaio-0.3.92.ebuild 649
 MD5 9ab89b277f4e93b87b8a50f7c524b0d9 files/digest-libaio-0.3.15 71
 MD5 da0b52d4053e3f897aa738e9adeee32b files/libaio-0.3.15-more-arches.patch 1649
