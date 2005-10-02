@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/daapd/Attic/daapd-0.2.4.ebuild,v 1.2 2005/08/24 16:49:23 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/daapd/Attic/daapd-0.2.4a.ebuild,v 1.1 2005/10/02 11:15:35 dsd Exp $
 
 
 inherit flag-o-matic eutils
@@ -23,11 +23,11 @@ DEPEND="sys-libs/zlib
 
 src_unpack() {
 	unpack ${A}
-	epatch ${FILESDIR}/${P}-gentoo.patch
-
 	cd ${S}
-	if ! use howl; then
-		sed -ie 's/HOWL_ENABLE = 1/HOWL_ENABLE = 0/g' makefile
+	epatch ${FILESDIR}/${PN}-0.2.4-gentoo.patch
+
+	if use howl; then
+		sed -ie 's/HOWL_ENABLE = 0/HOWL_ENABLE = 1/g' makefile
 	fi
 
 	if ! use mpeg4; then
