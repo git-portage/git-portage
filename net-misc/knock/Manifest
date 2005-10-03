@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 773cf0a1a316aa68c6704dd181c17ef6 ChangeLog 2255
 MD5 17156220622de497a4ce93ce3f98d7f1 knock-0.3.1.ebuild 775
 MD5 4046e0c50672e8c40f56dc81d0166e2b knock-0.3.ebuild 752
@@ -12,3 +15,10 @@ MD5 6f594c8b1eb17d15a0ab9a73331598e3 files/digest-knock-0.3 60
 MD5 56d82b74345f127c4af5b92580b2b465 files/nonblock.patch 617
 MD5 ae09af5fe36f302c2b18a66ec789e6d4 files/knockd.initd 492
 MD5 141b7202730b744d2e3f884d1c8e8eec files/knockd.confd 264
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDQQfB8vunf3B9+MERAqFuAKCF6C1r2XsgN4Y7CJmasWRxr1d8wACfbWqA
+q86spZVnSWqcrQvGmyCvUDA=
+=aazy
+-----END PGP SIGNATURE-----
