@@ -1,0 +1,5 @@
+MD5 603834da4faa9e6c3b09a7bd503f273c ChangeLog 284
+MD5 c4c2338780c2e4370b34593030f61ada files/digest-svn2cl-0.3 60
+MD5 b9691818298f540becb34adcb66a43fb files/svn2cl-no-same-dir-xsl.diff 504
+MD5 fa9f0ec1a9f013df4ca78764a473a250 metadata.xml 256
+MD5 862a696edd72c81c8a1bd0b7f22931f8 svn2cl-0.3.ebuild 753
