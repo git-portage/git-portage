@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c847ed58faaf246e143f2c123a0af6df dia-0.94-r3.ebuild 1743
 MD5 10e849e4cb173483ec12c126f3c2f25e ChangeLog 8498
 MD5 e64a64c8b1e5e3be5cf29d34c7374513 dia-0.94-r2.ebuild 1655
@@ -12,3 +15,10 @@ MD5 364d452e7bd501c01910f613c066608e files/dia-0.94-help.patch 2766
 MD5 5825798492b196ec96d3757e9e1d0de8 files/dia-0.94-no_font_cache.patch 473
 MD5 84f2dd6bc760e8dce273ceda328ef76e files/dia-0.94-secure-eval.patch 1940
 MD5 c6257d6dad2b46a83757991db3f3e6c5 files/digest-dia-0.94-r2 62
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDQXCXKRy60XGEcJIRAqVQAJ9PfSXO9SU7qTfdMjxU7pCBP3WJ9wCfUKHT
+eCkvqOdbEel3A65XtfTD0z0=
+=+i2f
+-----END PGP SIGNATURE-----
