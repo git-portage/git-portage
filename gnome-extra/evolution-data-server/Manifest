@@ -4,8 +4,8 @@ MD5 5539f8894a986955933492390ddfcf4d evolution-data-server-1.2.1-r1.ebuild 2435
 MD5 98bdbed2d5ce2bec87868d9a46b5f3b0 evolution-data-server-1.0.2.ebuild 1065
 MD5 0b3c1730fda1bca5e6b717b5a300a45f evolution-data-server-1.2.3.ebuild 2538
 MD5 4f1c59c7610ff6bcd04eae2d1c044753 evolution-data-server-1.0.4.ebuild 985
-MD5 7192f6abe1dc41559dfd57bd2e8e5c09 evolution-data-server-1.4.1.ebuild 3595
-MD5 b4b80eee37f35d75649d61140e5432f9 ChangeLog 8802
+MD5 4c1893adda875340cbdbe8ff4c6cf21a evolution-data-server-1.4.1.ebuild 3595
+MD5 93d90117824c415273cdeabe4c705548 ChangeLog 8931
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 31de33250de9b6fe2dba0deae946db46 files/evolution-data-server-no_lazy_bindings.patch 551
 MD5 b916b7c2e1730287c5e37f6c1707ff04 files/digest-evolution-data-server-1.2.1-r1 81
