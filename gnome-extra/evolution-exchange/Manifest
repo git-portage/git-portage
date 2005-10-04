@@ -1,5 +1,7 @@
 MD5 1391e5d24e87152048f49891e28ecb96 evolution-exchange-2.4.0.ebuild 1341
+MD5 c7557daa9fb3d2c8d357ba67ba9a7180 evolution-exchange-2.4.1.ebuild 1347
 MD5 4cc0582e36f22ab9d4b687eb4a79c13e ChangeLog 985
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 8e9cb8386aac62d3a0124200f562db09 files/evolution-exchange-2.4.0-kerb.patch 576
 MD5 bea063cbc12ca1face9c7262a6a8ada9 files/digest-evolution-exchange-2.4.0 78
+MD5 1fac0d46b9c505c385acfcff5c0215f9 files/digest-evolution-exchange-2.4.1 78
