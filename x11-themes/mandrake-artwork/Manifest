@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 cd042e2d0f21091a7ac2a65ba3957882 ChangeLog 4070
 MD5 807c722806216ba00fc787b70baf93e5 mandrake-artwork-0.9.1-r1.ebuild 1371
 MD5 10e3fc5082ce1ce640e9129ee7fd9cdb mandrake-artwork-0.9.1.ebuild 1410
@@ -15,3 +18,10 @@ MD5 18491a6a8d22c319b0dd7016ab0264ca files/digest-mandrake-artwork-0.9.6 70
 MD5 6bea26362a0cd43a50c9ae190a787468 files/digest-mandrake-artwork-1.0.0 70
 MD5 10b1eca8f5057c4501458d31fc3d7f11 files/digest-mandrake-artwork-1.0.2 70
 MD5 8c7ef0d2a90c25057c43ea946ead9ea7 files/galaxy-gtk24.patch 1336
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDQpPHwUpWvClEHQoRAq55AJ9u+Y3gAIda6EetFIL6nsvDfUzAJgCdFTNd
+qd0WOIvVpU3jVqsX42UaheQ=
+=EyfV
+-----END PGP SIGNATURE-----
