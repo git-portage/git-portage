@@ -1,4 +1,4 @@
-MD5 fcec1b5b7ecac4b6a1eb56b0909fa314 ChangeLog 93985
+MD5 3ab7f3adea89f3e8e690f00908b331fb ChangeLog 94216
 MD5 8ec9b0352d226e4693cabffe0fa5bba6 files/3.2.1/gcc31-loop-load-final-value.patch 3324
 MD5 5e8f2122ef7f9ce187b0a0d50ac9d24a files/3.2.1/gcc32-arm-disable-mathf.patch 2229
 MD5 044a164462d9392aa67cde6f9fd5c1bc files/3.2.1/gcc32-arm-reload1-fix.patch 932
@@ -65,7 +65,6 @@ MD5 e76a453a41518cf6a73123fe128c716f files/digest-gcc-3.4.3-r1 607
 MD5 f0d6e8b1503f1745061639b642fb1911 files/digest-gcc-3.4.3.20050110-r2 616
 MD5 397fee475b161984702afab06d76767c files/digest-gcc-3.4.4-r1 450
 MD5 f0c74f849066ffaefe7d364d69a71961 files/digest-gcc-4.0.1 380
-MD5 66d62dd847a21fe341997c6130f06aae files/digest-gcc-4.0.2 380
 MD5 350da7918a8358a0181af433b1f603b7 files/digest-gcc-4.0.2-r1 381
 MD5 1acd56209164ab837c5f91723434464e files/fix_libtool_files.sh 1712
 MD5 f80fd6ebeeea00d3e1649dfccdd85062 files/gcc-spec-env.patch 893
@@ -93,6 +92,5 @@ MD5 8ad652a1c6c3b0b27963da2a8684dfc7 gcc-3.4.3-r1.ebuild 5429
 MD5 f3320fc6b7547238588e8d01266c7d1c gcc-3.4.3.20050110-r2.ebuild 5192
 MD5 f5804f3b322c22138f87bca0b3b3a69c gcc-3.4.4-r1.ebuild 5010
 MD5 040ce3a966ff6b910a65e218fdeb137f gcc-4.0.1.ebuild 1668
-MD5 d58fb42b4971e7c26d02bd3761feb75a gcc-4.0.2-r1.ebuild 1935
-MD5 f2ad30bcb72783b7d5c3d7630655eb5c gcc-4.0.2.ebuild 1935
+MD5 87de802d0e73130faf85694d828beaf5 gcc-4.0.2-r1.ebuild 1938
 MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
