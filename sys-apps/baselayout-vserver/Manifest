@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 46e247600447ce78388ecfd354e97fb4 ChangeLog 3014
 MD5 62648662d2305c044a9c92f90c624098 baselayout-vserver-1.11.13.ebuild 12918
 MD5 61e88d37b9d7a2ab226edbbfe3b94180 baselayout-vserver-1.12.0_pre8-r2.ebuild 12599
@@ -12,3 +15,10 @@ MD5 cf693ea87e77c1dc6f72cf58c32b7143 files/baselayout-vserver-1.11.13-cleanup.pa
 MD5 a551ddae4bfb1b2bd7cbc16c57f481d3 files/digest-baselayout-vserver-1.11.13-r1 78
 MD5 a551ddae4bfb1b2bd7cbc16c57f481d3 files/digest-baselayout-vserver-1.11.13 78
 MD5 d1b600f26f783320972a6692720df0d3 files/digest-baselayout-vserver-1.12.0_pre8-r2 83
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDQolzmPFBzbX68WERAhnlAJ9Ne3gNzC+9ZNrX81V0gSWxhIN3PgCfUNuT
+rlExHZhHbJ+a2Ys4bLaGvfA=
+=hA33
+-----END PGP SIGNATURE-----
