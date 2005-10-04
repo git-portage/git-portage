@@ -1,16 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 98e591676094e85e924e56b0c2d86160 dansguardian-dgav-6.4.2a.ebuild 1941
+MD5 ccc9e58e4330d320a7c1804440328ebd dansguardian-dgav-6.4.3.ebuild 1995
+MD5 aa82526783a6f66cd5caad253586428b dansguardian-dgav-6.4.2a.ebuild 1925
 MD5 e2ab2165b8ba88cfd4b8fbe329681519 ChangeLog 1397
 MD5 775fe3a71382d0807bfddb0235f35f30 metadata.xml 233
 MD5 df46e58e17a1ca38be926736d9e10b70 files/digest-dansguardian-dgav-6.4.2a 177
 MD5 bf8c351940c7a2c26da9395e7a494937 files/dansguardian.init 576
+MD5 3b16f94c2f006a6d45f4221ee7b8d7d4 files/digest-dansguardian-dgav-6.4.3 169
 MD5 6313b934a33da7e4308812e834494074 files/dansguardian-xnaughty-2.7.6-1.diff 2325
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDGcFiNSP4Vda7IdsRAjTyAJ0Q2LXcYD/ukm1IgUE/w0yLIkTRkwCeLAjN
-u5KttdJK9yCsZl6XiHL8UJo=
-=BYuB
------END PGP SIGNATURE-----
