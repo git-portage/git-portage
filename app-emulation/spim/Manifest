@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0a95d8001ea354287a34f5a1baded57e ChangeLog 3488
 MD5 ee5e79f45e895aacb34203fba4fc09f1 spim-6.5-r1.ebuild 1443
 MD5 56d5b124929236c4d6a74eb7b58ebfec spim-7.0.ebuild 1483
@@ -17,3 +20,10 @@ MD5 7fdc53102c71df807c81f19ce98f2e08 files/spim-7.2.1-ptrsize.patch 458
 MD5 12aa5d2009bfce93f35bc5b5845fe9b0 files/spim-7.2.1-string-stream.patch 488
 MD5 54351d3e666c30c161818777d2cb5746 files/digest-spim-7.2.1 62
 MD5 a1da7be88dc0cab1e55ec1862aa3f338 files/spim-7.2.1-font.patch 430
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDQ2yOOpjtAl+gMRURAj8LAJ401XVV6nPGDuCgFGTxzI5GltG/cACfU2qs
+qwYZJgR1i4DqmkKx8fjAVUk=
+=ouVO
+-----END PGP SIGNATURE-----
