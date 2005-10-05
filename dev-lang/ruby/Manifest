@@ -2,9 +2,9 @@ MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
 MD5 67de00f5d7b9ced2530317f945d0ebc9 ruby-1.8.2.ebuild 3446
 MD5 3f3ef53019f559def811f446ba1b0f04 ruby-1.8.2-r1.ebuild 3753
 MD5 3c1c7073b75a7c7dc6e6fc48de2ebe64 ruby-1.8.2-r2.ebuild 3828
-MD5 6f62b9e01fb2e8b56c5a8d071fed09a0 ruby-1.6.8-r12.ebuild 1943
+MD5 29d32e55b5af0f171faf7fc85be425e6 ruby-1.6.8-r12.ebuild 1940
 MD5 538b1bae6a7bf09a16412a9d2f76e6ef ruby-1.8.3.ebuild 3628
-MD5 d92522f60635c31282da47f1aad835f2 ChangeLog 23760
+MD5 644ff2763a9db9cd0fcbb5db842580e1 ChangeLog 23764
 MD5 65c0fa57dea7939af268a53a2e50b173 files/digest-ruby-1.8.3 125
 MD5 d4b55b8964955655827a50afba707a69 files/re.c.182.patch 2472
 MD5 e7fc14a584186eb629eddc20bc853a24 files/ruby-rdoc-gentoo.diff 455
