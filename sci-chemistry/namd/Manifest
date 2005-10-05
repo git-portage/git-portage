@@ -1,0 +1,6 @@
+MD5 555dc8c66a67227ce8f3b13f173aead5 namd-2.6_beta1.ebuild 2597
+MD5 df60c46a295673222f31348cee4dda67 files/namd-fftw-lib-gentoo.patch 528
+MD5 657770d1760ff431fb8f8972c1c11ccc files/digest-namd-2.6_beta1 70
+MD5 c1bfcdb371a5b74c577aa14d32f88d4b files/namd-barrier-fix-gentoo.patch 2362
+MD5 11475a5133058462e1e7a1fd33052974 files/namd-tcl-lib-gentoo.patch 576
+MD5 099224935074d14aa720ab88f4e36b0b files/namd-makefile-gentoo.patch 2804
