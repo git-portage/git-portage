@@ -1,4 +1,6 @@
-MD5 9aa16a3b96f7080793facea7545c7bcb charm-5.9.ebuild 3414
+MD5 c897869932b267dd65e4e2d7fdb65223 charm-5.9.ebuild 3503
+MD5 c4df9d0b5b24d25dfcb5a6c77f27b981 ChangeLog 605
+MD5 0ffcd41aa96cf1bcffd8b539c27957db metadata.xml 157
 MD5 43245f7dc8f2b58f1980c467341773c4 files/digest-charm-5.9 62
 MD5 0b343e0d9021a96327bd9255a3ed885d files/charm-charmc-gentoo.patch 1078
 MD5 33c5bf01e103e9957966f8de2dbec2a5 files/charm-examples-gentoo.patch 21815
