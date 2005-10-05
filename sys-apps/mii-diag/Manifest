@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 28962e2fc95a38c3f0f97433969ea57a mii-diag-2.09.ebuild 1209
 MD5 a216541da13a740c4bbee766fa36c5bd ChangeLog 1292
 MD5 ba5fc28572e78ee0093c9f3c58feeb6d mii-diag-2.07.ebuild 1135
@@ -15,3 +18,10 @@ MD5 c830d0a359111de4b2a49a73bb909f55 files/mii-diag.c-2.07-gcc33.patch 3257
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-mii-diag-2.09 0
 MD5 0d616641e571129e984ee0925e898ddd files/mii-diag.c-2.07 17835
 MD5 64a9a08dd016d02b6af3deef3277ad98 files/mii-diag.c-2.11 20252
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDQ92oKRy60XGEcJIRAvRWAJ4jDKLM4DIPIB2kS8rydyI1IBZ2hQCgg4Zx
+5+ip0tszU+S3dFSy0ITWKyg=
+=uLce
+-----END PGP SIGNATURE-----
