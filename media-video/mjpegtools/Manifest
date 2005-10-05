@@ -1,4 +1,4 @@
-MD5 48fd371ccd59015db219c680fb849c5c ChangeLog 17286
+MD5 8c732a794f64501c42b19f15ce85a2a3 ChangeLog 17283
 MD5 3150d43b1c44c02265b8481e271093c8 files/altivec-fix-1.6.2.patch 1011
 MD5 0d8b5844ab88ae9b60a7785572273347 files/digest-mjpegtools-1.6.2-r4 213
 MD5 e0c5507384a9c0a03df00cde6fe67164 files/digest-mjpegtools-1.8.0 69
@@ -12,4 +12,4 @@ MD5 abdfec9a9d07b842509b709ba17d69ab files/mjpegtools-1.6.2-nogtk.patch 556
 MD5 cbcc90f9de3aaf0ac12aa6bd1c4db025 files/no-x11-lib-2.patch 469
 MD5 fe49014257499366bdc6903a9aa33fe5 metadata.xml 311
 MD5 6d8a62b5b79393430be157295ac7b559 mjpegtools-1.6.2-r4.ebuild 3309
-MD5 26375c2b976c3dcc636dcfba9ccdfe55 mjpegtools-1.8.0.ebuild 2683
+MD5 0f4410c758d53e51381b2ced54eaa9ce mjpegtools-1.8.0.ebuild 2678
