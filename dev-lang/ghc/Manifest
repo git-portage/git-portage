@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 61737029efceb6072316909fd84998ec ChangeLog 12681
 MD5 6b0575f665b30bd942f60a152f52dca8 ghc-6.0.1.ebuild 4709
 MD5 fe0e389aa3150e5fcfc59b4c5ff142cc ghc-6.2.2.ebuild 5581
@@ -12,3 +15,10 @@ MD5 1ae8c6b539b6706ba0e8b988a918a944 files/ghc-6.2.hardened.patch 525
 MD5 558c6b9e9b0e15185b69cdfe241dad9a files/ghc-updater 8775
 MD5 ffd472c0685cf2766ce6533265f9a3c9 files/ghc-6.4-powerpc.patch 908
 MD5 75417bc4dea34cd08ea105457ccd3032 files/digest-ghc-6.4 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDQxg2BQBy/eDH5uERAgx8AJ4pTj8pa+7G04kZ2cQKBqUAVDPtWACfU24c
+7eTsaVfgxqOUX6bSTfoWMJQ=
+=kygF
+-----END PGP SIGNATURE-----
