@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r1.ebuild,v 1.1 2005/07/04 01:52:06 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r2.ebuild,v 1.1 2005/10/06 21:10:25 dragonheart Exp $
 
 inherit eutils
 
@@ -53,6 +53,7 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	epatch ${FILESDIR}/${P}-cdrecord-configure.patch || die "Patch failed"
+	cp ${FILESDIR}/randpass-1.37.40 ${S}/autoconf/randpass
 
 	# This changes the default conf files to /etc/bacula files
 	sed -i -e 's:"./gnome-console.conf":"/etc/bacula/gnome-console.conf":' \
@@ -68,6 +69,7 @@ src_unpack() {
 }
 
 src_compile() {
+	echo $TMPDIR
 	econf --enable-smartalloc \
 		--with-dir-user=root \
 		--with-dir-group=bacula \
@@ -79,22 +81,22 @@ src_compile() {
 		--with-subsys-dir=/var/lock/subsys \
 		--with-working-dir=/var/bacula \
 		--with-scriptdir=/var/lib/bacula \
-		`use_enable readline` \
-		`use_enable gnome` \
-		`use_enable static static-tools` \
-		`use_enable static static-fd` \
-		`use_enable static static-sd` \
-		`use_enable static static-dir` \
-		`use_enable static static-cons` \
-		`use_enable gnome tray-monitor` \
-		`use_enable tcpd tcp-wrappers` \
-		`use_enable X x` \
-		`use_enable readline` \
-		`use_enable client-only` \
-		`use_with mysql` \
-		`use_with postgres postgresql` \
-		`use_with sqlite` \
-		`use_enable ncurses conio` \
+		$(use_enable readline) \
+		$(use_enable gnome) \
+		$(use_enable static static-tools) \
+		$(use_enable static static-fd) \
+		$(use_enable static static-sd) \
+		$(use_enable static static-dir) \
+		$(use_enable static static-cons) \
+		$(use_enable gnome tray-monitor) \
+		$(use_enable tcpd tcp-wrappers) \
+		$(use_enable X x) \
+		$(use_enable readline) \
+		$(use_enable client-only) \
+		$(use_with mysql) \
+		$(use_with postgres postgresql) \
+		$(use_with sqlite) \
+		$(use_enable ncurses conio) \
 		|| die "configure failed"
 
 	emake || die "make failed"

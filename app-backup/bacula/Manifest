@@ -1,34 +1,11 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 6e312fa1d1b9e59021235e7228de872f ChangeLog 8377
+MD5 8b1f7976358c3e115aa2bc37370d7d3c ChangeLog 9002
 MD5 9f1f576d172e849915f36c885efce3c3 bacula-1.34.4.ebuild 4245
-MD5 116d0950d857298fbda9f27717efec21 bacula-1.34.5.ebuild 4434
-MD5 18f9996c9629c9a5a8676ba61140bf3b bacula-1.34.6.ebuild 4434
-MD5 2d88576df5f0c3b9bed189529793d5f8 bacula-1.36.0.ebuild 9229
-MD5 c7e3e0ace7e4b531adfbb7afdd2ef757 bacula-1.36.3-r1.ebuild 5412
-MD5 f030f60784c96b85d809c8949f9a3532 bacula-1.36.3.ebuild 10126
-MD5 28a23cdcf8c8723f3f8cb0b87d110864 files/bacula-1.36.2-cdrecord-configure.patch 635
-MD5 43cfaaf0d0cd0cf963f005a524edddfa files/bacula-1.36.2-nocdrecord.patch 8874
+MD5 c368c93b8c90e76ffe9e96ddd3eb5a60 bacula-1.36.3-r2.ebuild 5499
 MD5 42374b055f69dd5eb5eebe2b17542c03 files/bacula-1.36.3-cdrecord-configure.patch 616
-MD5 8ff342665d696d0719491c33d744f294 files/bacula-1.36.3-init-depends.patch 1864
-MD5 618c837ccb4512095e8e3e274db54ce5 files/bacula-1.36.3-rescue-makefile.patch 1275
-MD5 2552434ccc44047b9b503045a9cff932 files/bacula-3.6.0-configure.diff 7578
 MD5 c8ead9a2d0974cccce147e7c1780dc60 files/bacula-conf 562
 MD5 4afbdd1c49e65b66baf46a935480a186 files/bacula-init 1916
-MD5 adaa5c336e2f7b57a17ad2a522fb9d2e files/bacula-init2 2575
 MD5 03ffd8d0949fd8fd22690ecfbadce1df files/bacula-init3 1479
 MD5 0b9309406bd6631e14ba47c132ef3b33 files/digest-bacula-1.34.4 66
-MD5 8e55a5f04a3cd9e096e9a5dfb46f1de7 files/digest-bacula-1.34.5 66
-MD5 551003183e612a958cc974532d004224 files/digest-bacula-1.34.6 66
-MD5 aad89729d5313c52d3b3b0b9246f8f47 files/digest-bacula-1.36.0 66
-MD5 100b7479b58ce6c2f62473914b12c02d files/digest-bacula-1.36.3 67
-MD5 100b7479b58ce6c2f62473914b12c02d files/digest-bacula-1.36.3-r1 67
+MD5 100b7479b58ce6c2f62473914b12c02d files/digest-bacula-1.36.3-r2 67
+MD5 48a955f044c868aefad5bf4ff3991deb files/randpass-1.37.40 682
 MD5 7ab3ac8b0c5f4bcb03495c99dcbec0b0 metadata.xml 290
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCzIY7I1lqEGTUzyQRAkMzAKConRMnub0/QBTrLV9gxnwRSyJl6QCeKgpD
-4niN43LrpTsq3Zf4laP3o7A=
-=eK6Q
------END PGP SIGNATURE-----
