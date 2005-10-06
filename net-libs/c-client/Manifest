@@ -1,4 +1,4 @@
-MD5 7a4e35182111732df5cfef9d28f9fcfd ChangeLog 3906
+MD5 ea43380bced168754a00f131df85b1e5 ChangeLog 4045
 MD5 47ac744573c05e8e5c5dc6b471bde3fa c-client-2002d-r1.ebuild 1869
 MD5 cc926ec2e710759c314acd92cd84b770 c-client-2002d.ebuild 1853
 MD5 81f0f9656a107854fa3ddf25217525a6 c-client-2002e-r1.ebuild 1974
@@ -7,7 +7,7 @@ MD5 5fb5acd5c2e0b78dbaca4aa75cb36b74 c-client-2002e.ebuild 1893
 MD5 4c13a5d66e19772a66b8a407a0d32bb9 c-client-2004a-r1.ebuild 2590
 MD5 ecdbce3ee2598f6cf9d5f037333c9766 c-client-2004a.ebuild 2183
 MD5 6d40d56dec0a2c40e801393e6511e83b c-client-2004c.ebuild 2534
-MD5 07e86249ed24a10b4e5366118ab5edce c-client-2004g.ebuild 2533
+MD5 08831025d4f5754ca025e7e34b222164 c-client-2004g.ebuild 2533
 MD5 c8cf618ac210e06a1641871b30550e8f files/2002d-Makefile.patch 2174
 MD5 cde23dc2375a8c33998202c8f0c9ae0e files/c-client-2004a-amd64-so-fix.patch 675
 MD5 1fc1132a6fb90046b701e9196e7a96b0 files/digest-c-client-2002d 62
