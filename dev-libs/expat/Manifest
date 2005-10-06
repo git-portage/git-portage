@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bd1a7ac3e214371675eba8471d1fb853 ChangeLog 5807
 MD5 588390c6d6676d327a3594a5df5adb03 expat-1.95.7-r1.ebuild 798
 MD5 bd735a5e7d7bc2ca13effd3fabddb63e expat-1.95.7.ebuild 657
@@ -6,3 +9,10 @@ MD5 0137bf2c738329ab03f266ac859b4613 files/digest-expat-1.95.7 64
 MD5 0137bf2c738329ab03f266ac859b4613 files/digest-expat-1.95.7-r1 64
 MD5 be97487dd2627fe82f06252c88b83ab1 files/digest-expat-1.95.8 64
 MD5 43e377139ff5f3b7415b94a8c8d5260d metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDRaoSgIKl8Uu19MoRAt7VAJ9UHXnLmuV1gE9D8GU1NaFCPCRMigCfZWxB
+hBzWmHUdosLHImFKXLkLFT0=
+=+5kd
+-----END PGP SIGNATURE-----
