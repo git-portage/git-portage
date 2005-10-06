@@ -1,0 +1,164 @@
+--- scripts/mtx-changer.in.orig	2005-10-07 07:41:38.000000000 +1000
++++ scripts/mtx-changer.in	2005-10-07 07:41:52.000000000 +1000
+@@ -2,19 +2,26 @@
+ #
+ # Bacula interface to mtx autoloader
+ #
+-#  $Id: bacula-1.36.3-mtxtmpfile.patch,v 1.1 2005/10/06 21:44:43 dragonheart Exp $
++#  $Id: bacula-1.36.3-mtxtmpfile.patch,v 1.1 2005/10/06 21:44:43 dragonheart Exp $
+ #
+ #  If you set in your Device resource
+ #
+ #  Changer Command = "path-to-this-script/mtx-changer" %c %o %S %a %d
+ #    you will have the following input to this script:
+ #
++#  So Bacula will always call with all the following arguments, even though
++#    in come cases, not all are used.
++
+ #  mtx-changer "changer-device" "command" "slot" "archive-device" "drive-index"
+ #		   $1		   $2	    $3	      $4	       $5
+ #
+ #  for example:
+ #
+ #  mtx-changer /dev/sg0 load 1 /dev/nst0 0 (on a Linux system)
++# 
++#  will request to load the first cartidge into drive 0, where
++#   the SCSI control channel is /dev/sg0, and the read/write device
++#   is /dev/nst0.
+ #
+ #  If you need to an offline, refer to the drive as $4
+ #    e.g.   mt -f $4 offline
+@@ -30,24 +37,37 @@
+ MTX=@MTX@
+ 
+ #
++# Create a temporary file
++#
++make_temp_file() {
++  TMPFILE=`mktemp -t mtx.XXXXXXXXXX`
++  if test x${TMPFILE} = x; then
++     TMPFILE="@working_dir@/mtx.$$"
++     if test -f ${TMPFILE}; then
++	echo "Temp file security problem on: ${TMPFILE}"
++	exit 1
++     fi
++  fi
++}
++
++#
+ # The purpose of this function to wait a maximum 
+ #   time for the drive. It will
+ #   return as soon as the drive is ready, or after
+-#   waiting a maximum of 180 seconds.
++#   waiting a maximum of 300 seconds.
+ # Note, this is very system dependent, so if you are
+ #   not running on Linux, you will probably need to
+-#   re-write it.
+-#
+-# If you have a FreeBSD system, you might want to change
+-#  the $(seq 180) to $(jot 180) -- tip from Brian McDonald
++#   re-write it, or at least change the grep target.
+ #
+ wait_for_drive() {
+-  for i in $(seq 180); do   # Wait max 180 seconds
++  i=0 
++  while [ $i -le 300 ]; do  # Wait max 300 seconds
+     if mt -f $1 status | grep ONLINE  >/dev/null 2>&1; then
+       break
+     fi
+ #   echo "Device $1 - not ready, retrying..."
+     sleep 1
++    i=`expr $i + 1`
+   done
+ }
+ 
+@@ -64,30 +84,21 @@
+ cmd="$2"
+ slot=$3
+ device=$4
+-# If drive not given, default to 0
+-if test $# = 5 ; then
+-  drive=$5
+-else
+-  drive=0
+-fi
++drive=$5
++
+ 
+ #
+ # Check for special cases where only 2 arguments are needed, 
+ #  all others are a minimum of 3
+ case $cmd in
+-   loaded)
+-     ;;
+-   unload)
+-     ;;
+    list)
+      ;;
+    slots)
+      ;;
+    *)
+-     if test $# -lt 3; then
++     if test $# -lt 5; then
+ 	echo "usage: mtx-changer ctl-device command slot archive-device drive"
+ 	echo "	Insufficient number of arguments arguments given."
+-	echo "	Mimimum usage is first three arguments ..."
+ 	exit 1
+      fi
+      ;;
+@@ -100,11 +111,7 @@
+ #
+ # enable the following line if you need to eject the cartridge
+ #     mt -f $device offline
+-      if test x$slot = x; then
+-	 ${MTX} -f $ctl unload
+-      else
+-	 ${MTX} -f $ctl unload $slot $drive
+-      fi
++      ${MTX} -f $ctl unload $slot $drive
+       ;;
+ 
+    load)
+@@ -120,27 +127,33 @@
+       ;;
+ 
+    list) 
+-#     echo "Requested list"
+-      ${MTX} -f $ctl status | grep " *Storage Element [0-9]*:.*Full" | awk "{print \$3 \$4}" | sed "s/Full *\(:VolumeTag=\)*//"
+-# Comment out the previous line and add a line here
+-# to print "fake" barcodes.
++#     echo "Doing mtx -f $ctl -- to list volumes"
++      make_temp_file
++      ${MTX} -f $ctl status >${TMPFILE}
++      rtn=$?
++      cat ${TMPFILE} | grep " *Storage Element [0-9]*:.*Full" | awk "{print \$3 \$4}" | sed "s/Full *\(:VolumeTag=\)*//"
++      cat ${TMPFILE} | grep "^Data Transfer Element [0-9]*:Full (Storage Element [0-9]" | awk '{printf "%s:%s\n",$7,$10}'
++      rm -f ${TMPFILE} 2>&1 >/dev/null
+ #
+ # If you have a VXA PacketLoader and the above does not work, try
+ #  turning it off and enabling the following line.
+ #     ${MTX} -f $ctl status | grep " *Storage Element [0-9]*:.*Full" | sed "s/*Storage Element //" | sed "s/Full :VolumeTag=//"
++      exit $rtn
+       ;;
+ 
+    loaded)
+-      ${MTX} -f $ctl status >/tmp/mtx.$$
++#     echo "Doing mtx -f $ctl $drive -- to find what is loaded"
++      make_temp_file
++      ${MTX} -f $ctl status >${TMPFILE}
+       rtn=$?
+-      cat /tmp/mtx.$$ | grep "^Data Transfer Element $drive:Full" | awk "{print \$7}"
+-      cat /tmp/mtx.$$ | grep "^Data Transfer Element $drive:Empty" | awk "{print 0}"
+-      rm -f /tmp/mtx.$$
++      cat ${TMPFILE} | grep "^Data Transfer Element $drive:Full" | awk "{print \$7}"
++      cat ${TMPFILE} | grep "^Data Transfer Element $drive:Empty" | awk "{print 0}"
++      rm -f ${TMPFILE} 2>&1 >/dev/null
+       exit $rtn
+       ;;
+ 
+    slots)
+-#     echo "Request slots"
++#     echo "Doing mtx -f $ctl -- to get count of slots"
+       ${MTX} -f $ctl status | grep " *Storage Changer" | awk "{print \$5}"
+       ;;
+ esac
