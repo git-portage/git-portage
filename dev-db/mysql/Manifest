@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e938bd48f8751ce935af1359c18a84c7 ChangeLog 43853
 MD5 c6fcd70c34bed04e59808ec71c5bedfb files/digest-mysql-3.23.58-r1 140
 MD5 631ed23db7ff8777599dee1c45edae0f files/digest-mysql-4.0.22 139
@@ -29,3 +32,10 @@ MD5 9fc68af6950fcbfe97e4731c9f34a662 mysql-4.1.13-r1.ebuild 17616
 MD5 5fcb6e78be5f7555724abdd0bd70d2cc mysql-4.1.14.ebuild 17995
 MD5 94e15c97ed893a6ca47d08c528e66a87 mysql-5.0.12_beta.ebuild 18239
 MD5 d41f19ea42e5ad2072adae7c4ccdbea6 mysql-5.0.13_rc.ebuild 18395
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDRJ4MgIKl8Uu19MoRAgaXAJ9eR568pGCh5mtGkudy0J4RswBxIQCfVLN2
+rQ8zpuPEqNywXt4lPpb4uk8=
+=2nVB
+-----END PGP SIGNATURE-----
