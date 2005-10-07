@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 52f8bfbb245ef947f797ac63eca799b7 xv-3.10a-r12.ebuild 2120
 MD5 dbc079b0004dcfe2bd4286fc96923eac ChangeLog 10103
 MD5 d3caaf1691b52006d2295f1443fe691b xv-3.10a-r9.ebuild 2529
@@ -23,3 +26,10 @@ MD5 32841798fbb3c9923d5d8a26994e1b0a files/xv-3.10a-vdcomp-osx.patch 341
 MD5 f555e07727c8b51042dae772ae474f42 files/xv-postscript-double-free.diff 864
 MD5 bf64513c42257ec1f60b78efabf94e6e files/digest-xv-3.10a-r12 145
 MD5 24acb62ee86813a3fde2819683b2ffc9 files/xv-3.10a-makefile-osx.patch 538
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDRtu/KRy60XGEcJIRAiZFAJ0TmgeycAPJG3Sz3F60z+4z2xWoaQCeLNYn
+Hi5ZmpB56f+OUSR4lLoM5U4=
+=HrW6
+-----END PGP SIGNATURE-----
