@@ -1,18 +1,10 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 58191e4655469984cafedaef64668666 ChangeLog 1463
+MD5 5f119205b82759ddfdbccfd2abbf10fe ChangeLog 1628
 MD5 a64b9a1937a5cfc2fbaf373521f65d47 metadata.xml 223
-MD5 8a4ed42fce0a638c79e2e70101be2aad gnbd-1.00.00-r1.ebuild 970
-MD5 ba721cd9cf6ac2d3c91b2b18c4f67456 files/gnbd-client.rc 2723
-MD5 dcb5af2eba55a19193d93220f9fa3399 files/gnbd-srv.rc 1947
+MD5 5fa63b70c6707059349f563a1cb4620d gnbd-1.00.00-r1.ebuild 1060
+MD5 5266ae6d0ed468fd44a76e005f01ed6d files/gnbd-client.rc 2745
+MD5 516dffecafa8a39155925cc927c1f4d7 files/gnbd-srv.rc 1967
 MD5 a96ced2be5dbc837a2d23bd3fbecaa12 files/gnbd.devfs 332
 MD5 79b84f9fc4b7bdee59dd1211663aef8d files/gnbdtab 177
 MD5 4f2d164091c3df995eb6cd31f2347a68 files/digest-gnbd-1.00.00-r1 68
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDRrnOgMUyd/cdjWsRAkL0AKCHnWhdJnJwRMQHg2PXxMNq81pmxwCdEVRL
-JA1AhilmoEv+oHLOaiO1Vv4=
-=4g8e
------END PGP SIGNATURE-----
+MD5 c25aec0f1c2d04360496ecf462cf6153 files/gnbd-client.conf 141
+MD5 de225a77d20ebbc7b6304b6e224b2d2f files/gnbd-srv.conf 138
