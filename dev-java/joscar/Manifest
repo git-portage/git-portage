@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 42238776a57a55f93fe1168b2a5e9040 ChangeLog 888
 MD5 c523474a26544868dd1d0f5831aa7059 files/digest-joscar-0.9.3 69
 MD5 d6a774aa669a3405b1745d3aa199c3a6 joscar-0.9.3.ebuild 919
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDRt93QiJ/wx066S4RAvbQAJ9zyR3/EgtP/tBxpbAuYefccOg5WwCeIzMK
+UO7EzyjTWniQtjANArh3D4I=
+=TiOZ
+-----END PGP SIGNATURE-----
