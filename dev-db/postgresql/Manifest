@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6c17c3cc5d82cb068de6cfa97cc02ad6 ChangeLog 44331
 MD5 8ca6301197c0d45d7530d4117d087b15 files/CAN-2005-1409-doc.patch 1749
 MD5 90acacf5efb7b8a73ec5d34128358c32 files/CAN-2005-1409.patch 1698
@@ -68,3 +71,10 @@ MD5 6974c8ce8289f43d19c4ea715a1b8ec3 postgresql-8.0.1-r4.ebuild 7871
 MD5 2390b8f1126086636289c0c7a8c37af5 postgresql-8.0.3.ebuild 7557
 MD5 9aca70437786ac31747055d13c19f642 postgresql-8.1_beta1.ebuild 7580
 MD5 57b51c540a66192d429fa37f77d3ba0d postgresql-8.1_beta2.ebuild 7580
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDSAIf/rLF9B432nYRAgBlAKDPdxEEYUPSLdhZaf+A81qY7yj/lACfU2EH
+eJD4O/SwZTirGvlWrYa0Uyk=
+=Oc13
+-----END PGP SIGNATURE-----
