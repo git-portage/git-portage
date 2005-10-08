@@ -1,33 +1,5 @@
 --- scripts/mtx-changer.in.orig	2005-10-07 07:41:38.000000000 +1000
 +++ scripts/mtx-changer.in	2005-10-07 07:41:52.000000000 +1000
-@@ -2,19 +2,26 @@
- #
- # Bacula interface to mtx autoloader
- #
--#  $Id: bacula-1.36.3-mtxtmpfile.patch,v 1.1 2005/10/06 21:44:43 dragonheart Exp $
-+#  $Id: bacula-1.36.3-mtxtmpfile.patch,v 1.1 2005/10/06 21:44:43 dragonheart Exp $
- #
- #  If you set in your Device resource
- #
- #  Changer Command = "path-to-this-script/mtx-changer" %c %o %S %a %d
- #    you will have the following input to this script:
- #
-+#  So Bacula will always call with all the following arguments, even though
-+#    in come cases, not all are used.
-+
- #  mtx-changer "changer-device" "command" "slot" "archive-device" "drive-index"
- #		   $1		   $2	    $3	      $4	       $5
- #
- #  for example:
- #
- #  mtx-changer /dev/sg0 load 1 /dev/nst0 0 (on a Linux system)
-+# 
-+#  will request to load the first cartidge into drive 0, where
-+#   the SCSI control channel is /dev/sg0, and the read/write device
-+#   is /dev/nst0.
- #
- #  If you need to an offline, refer to the drive as $4
- #    e.g.   mt -f $4 offline
 @@ -30,24 +37,37 @@
  MTX=@MTX@
  
