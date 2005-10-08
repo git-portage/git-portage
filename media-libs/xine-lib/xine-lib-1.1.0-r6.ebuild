@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/xine-lib/Attic/xine-lib-1.1.0-r4.ebuild,v 1.5 2005/10/06 03:42:27 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/xine-lib/Attic/xine-lib-1.1.0-r6.ebuild,v 1.1 2005/10/08 14:45:54 flameeyes Exp $
 
 inherit eutils flag-o-matic toolchain-funcs libtool autotools
 
@@ -70,7 +70,7 @@ DEPEND="${RDEPEND}
 		virtual/x11 )
 		)
 	xinerama? ( || ( x11-proto/xineramaproto virtual/x11 ) )
-	v4l? ( virtual/os-headers )
+	v4l? ( sys-kernel/linux-headers )
 	dev-util/pkgconfig
 	>=sys-devel/automake-1.7
 	>=sys-devel/autoconf-2.59
@@ -83,6 +83,7 @@ src_unpack() {
 	cd ${S}
 
 	EPATCH_SUFFIX="patch" epatch ${WORKDIR}/patches/
+	epatch ${FILESDIR}/xine-lib-formatstring.patch
 
 	AT_M4DIR="m4" eautoreconf
 	elibtoolize
