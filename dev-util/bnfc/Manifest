@@ -1,4 +1,6 @@
-MD5 0b5b5c836b0d01f2dcc76caddd3de7a5 ChangeLog 534
 MD5 5d4d405612753ab288bf4d4fc96483ca bnfc-2.1.2.ebuild 780
+MD5 dd3a1e779d4a2172b64b0453882aae46 bnfc-2.2.ebuild 840
+MD5 196acfb1cd19146b6b826ad1ee0959c5 ChangeLog 686
 MD5 a769ecfcd1cdd2d40986627df7dfb249 metadata.xml 224
 MD5 c39f54377c63e2af74a4ef4e99624313 files/digest-bnfc-2.1.2 59
+MD5 20fc3fd3d13153ffa6c3c4221cf80135 files/digest-bnfc-2.2 57
