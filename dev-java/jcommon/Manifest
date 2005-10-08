@@ -2,7 +2,7 @@ MD5 9aa46adac2cc87960f7f237b688f4cf6 ChangeLog 1628
 MD5 8eaa092f9e56aa5c625aad517d4b9887 files/digest-jcommon-0.9.7 65
 MD5 8eaa092f9e56aa5c625aad517d4b9887 files/digest-jcommon-0.9.7-r1 65
 MD5 9042920c2f79fdc6fdb4a2409fc6d057 files/digest-jcommon-1.0.0_rc1 70
-MD5 e2ae0cf90159968e1aaba9008e0fef9e jcommon-0.9.7-r1.ebuild 997
-MD5 bec7354775ad56ff85974dbb9f9a414e jcommon-0.9.7.ebuild 982
-MD5 023eae88ea739ffcc605c52045515494 jcommon-1.0.0_rc1.ebuild 1261
+MD5 5016f642e87bad2f55f839629d33a7c0 jcommon-0.9.7-r1.ebuild 997
+MD5 3595ff6898abc699dfe5bdbce449ed05 jcommon-0.9.7.ebuild 982
+MD5 1c7a06b228c924b84678ba5423be4a88 jcommon-1.0.0_rc1.ebuild 1261
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
