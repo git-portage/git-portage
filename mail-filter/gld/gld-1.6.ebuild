@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/gld/Attic/gld-1.5-r1.ebuild,v 1.4 2005/04/16 18:48:42 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/gld/Attic/gld-1.6.ebuild,v 1.1 2005/10/08 08:36:12 slarti Exp $
 
 DESCRIPTION="A standalone anti-spam greylisting algorithm on top of Postfix"
 HOMEPAGE="http://www.gasmi.net/gld.html"
@@ -18,9 +18,6 @@ DEPEND="virtual/libc
 	!postgres? ( dev-db/mysql )"
 RDEPEND="${DEPEND}
 	>=mail-mta/postfix-2.1"
-
-MY_P="${P}.1"
-S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
 	unpack ${A}
@@ -57,10 +54,10 @@ src_install() {
 }
 
 pkg_postinst() {
-	echo
+	einfo
 	einfo "Please read /usr/share/doc/${PF}/README.gz for details on how to setup"
 	einfo "gld."
-	echo
-	einfo "The tables.*sql files are located at /usr/share/${PN}/sql."
-	echo
+	einfo
+	einfo "The sql files have been installed to /usr/share/${PN}/sql."
+	einfo
 }
