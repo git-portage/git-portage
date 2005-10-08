@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2bd4b86f2bf7e6f99952ae5339ea8183 ChangeLog 11595
 MD5 c6073a11ea3fcb5cc0d1625a54aad8d4 file-4.12.ebuild 2081
 MD5 213bc8ded7a22b2fcb129f4ee60e892c file-4.13.ebuild 2226
@@ -17,3 +20,10 @@ MD5 26f26c3f7caf28f0bdb9dbb6fe83c254 files/file-4.15-libtool.patch 561
 MD5 66df8eecd30769daeb3f643dc6432db3 files/file-4.xx-mips-gentoo.patch 5578
 MD5 a952f0eca26a046e4b815529d2b734ef files/misc.magic 71
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDR/FJgIKl8Uu19MoRApwLAJ9XPxhlMyMz9DcZQ69H7XGnoWgFsACfago+
+TlkiXctfABjA5CF517mU2tY=
+=14P9
+-----END PGP SIGNATURE-----
