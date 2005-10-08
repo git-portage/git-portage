@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 046cd32319d1a54845012f175d325695 ChangeLog 7686
 MD5 a2c21c53079eb65c306a08d230d15b2b files/digest-texinfo-4.7-r1 65
 MD5 1c6181fd6a19db98315a1f737a5ae839 files/digest-texinfo-4.8 65
@@ -12,3 +15,10 @@ MD5 75c60847c4f9b9d75375567cd1a3ba81 texinfo-4.7-r1.ebuild 1979
 MD5 85306271dc0f544e3b5da1761895b881 texinfo-4.8-r1.ebuild 1963
 MD5 7b944058f6712de4dec1796d99f5ebfc texinfo-4.8-r2.ebuild 1962
 MD5 51d0756296f7f75f5a8cf3ec558fe1aa texinfo-4.8.ebuild 1909
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD4DBQFDSAFOgIKl8Uu19MoRAiZkAJ41VcRv7W+wXHyGgKhWUOjHOytLhwCVG2r2
+ugcb4K8MxZHiCwTZKEtJZA==
+=CMt8
+-----END PGP SIGNATURE-----
