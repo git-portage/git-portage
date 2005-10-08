@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b2c2e3d2fe34adf5699943ba00ccb402 ChangeLog 10586
 MD5 3a3d8bd1a03bbf2c51a4e77a3516febd files/digest-nfs-utils-1.0.6-r6 67
 MD5 46e91b0dea9cbbfedcdccc9386b6326d files/digest-nfs-utils-1.0.7-r1 67
@@ -15,3 +18,10 @@ MD5 9cee4adcef8a47ea4ee35090f7f89b0a metadata.xml 225
 MD5 a5785bca6bda4d00aabdc28e36802df1 nfs-utils-1.0.6-r6.ebuild 2926
 MD5 297d2da334fb6df5e747f61b989ef7ca nfs-utils-1.0.7-r1.ebuild 3272
 MD5 854612a273789b0188aa41905996ead6 nfs-utils-1.0.7-r2.ebuild 3414
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDSC21gIKl8Uu19MoRAkiPAJwOOAbhMXeEYvykDv+iMkIIGdU+ygCfZCU1
+0jPuxOeQL2CywwVsrnbBRaY=
+=xTKO
+-----END PGP SIGNATURE-----
