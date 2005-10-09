@@ -6,6 +6,10 @@
 		including both full and incremental backups, as well as backups to other
 		media (CD-R, Tape, etc.).
 	</longdescription>
+	<longdescription lang="ja">
+		app-backupカテゴリにはデータバックアップ(充実と増分)を実行すると
+		メディア(CD-R、テープ…)にバックアップするツールが含まれます。
+	</longdescription>
 	<longdescription lang="vi">
 		Nhóm app-backup chứa các công cụ để sao lưu dữ liệu, bao gồm
 		sao lưu toàn bộ và sao lưu tăng tiến, cũng như sao lưu ra các phương
