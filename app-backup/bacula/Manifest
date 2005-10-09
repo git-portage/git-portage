@@ -1,9 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 69d35feaa7c625afea00244d5c311ab6 ChangeLog 9356
 MD5 9f1f576d172e849915f36c885efce3c3 bacula-1.34.4.ebuild 4245
-MD5 647758ac40c86a0c22f1cb79b20db5b7 bacula-1.36.3-r2.ebuild 5516
+MD5 9a0f7b77650b441aa09e3f9eab1a5541 bacula-1.36.3-r2.ebuild 5515
 MD5 42374b055f69dd5eb5eebe2b17542c03 files/bacula-1.36.3-cdrecord-configure.patch 616
 MD5 fb24badd7d80c46f5bdb1dd2c8ee249b files/bacula-1.36.3-mtxtmpfile.patch 3994
 MD5 c8ead9a2d0974cccce147e7c1780dc60 files/bacula-conf 562
@@ -13,10 +10,3 @@ MD5 0b9309406bd6631e14ba47c132ef3b33 files/digest-bacula-1.34.4 66
 MD5 100b7479b58ce6c2f62473914b12c02d files/digest-bacula-1.36.3-r2 67
 MD5 48a955f044c868aefad5bf4ff3991deb files/randpass-1.37.40 682
 MD5 7ab3ac8b0c5f4bcb03495c99dcbec0b0 metadata.xml 290
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
-
-iD8DBQFDR2LtmdTrptrqvGERAiMXAKCMkJQwgsYMX8l48K9CwxLNAXJrRACdEYqc
-DKk2gA/AJvAIZnoig+qRDnI=
-=/Nyr
------END PGP SIGNATURE-----
