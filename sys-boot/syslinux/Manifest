@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8b8c20778198096e0ea9e607870e567c ChangeLog 4375
 MD5 26489361fe682baf353e4b7cef7bba16 files/digest-syslinux-1.76 65
 MD5 d44d8f9a65b91ec75463ccc8dd60cee3 files/digest-syslinux-2.13 66
@@ -15,3 +18,10 @@ MD5 87356b71e2805dafa9e2b0ff5bb21059 syslinux-2.13.ebuild 942
 MD5 3a4f99082ffcdeeee54d16c334378b82 syslinux-3.07.ebuild 1040
 MD5 899370b03a110730daf94f5ca5d86aad syslinux-3.09.ebuild 1088
 MD5 625d186a95e6fa13924bb67f5a3cf988 syslinux-3.11.ebuild 1094
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDSKsTCRZPokWLroQRAsDtAJ0Y4rEk0oQXKf772XRJk3zyJCs6+ACdFI9u
+wQBFJan7WDJlIyJIeI8UJyM=
+=IAWl
+-----END PGP SIGNATURE-----
