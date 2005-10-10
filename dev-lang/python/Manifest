@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d49abed8e570e34660b16fae1f8efe82 python-2.3.5-r2.ebuild 8039
 MD5 efa0cb41c9515ba32428fd8f013e13fa ChangeLog 28342
 MD5 4928085fdd7860dd8104011c9955a7f2 python-2.3.5.ebuild 7799
@@ -61,3 +64,10 @@ MD5 b530d6f9dbcf30239061be3de80932cc files/python-config-2.2.2 178
 MD5 b530d6f9dbcf30239061be3de80932cc files/python-config-2.2 178
 MD5 e8c8ffd37f007b6ee62180d31b2100fe files/python-2.3-xmlrpc.patch 4228
 MD5 47ee57ffc9b69af4ff828a3a1ae26afd files/python-2.3-pcre.patch 4278
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDSqWYKRy60XGEcJIRAgY5AJ9AQEZG1+uEnyr3X20aKyA/r/WFwwCeJ1FE
+8Pi5PZ9HZc0y3Na70LTuH5c=
+=fHmE
+-----END PGP SIGNATURE-----
