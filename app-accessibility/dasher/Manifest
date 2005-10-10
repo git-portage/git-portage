@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 76d666e6399f7768a17fe572e9a3096e metadata.xml 718
 MD5 069505ea9ef3b1c6713048f6a9df9d8d ChangeLog 6090
 MD5 993cd40f1be659a5450be19014171459 dasher-3.2.17.ebuild 1738
@@ -10,3 +13,10 @@ MD5 5b4b3e17b421919e17bc182404ffa36c files/digest-dasher-3.2.15 67
 MD5 9fcdb2723451b2020f4736773717c62b files/digest-dasher-3.2.17 67
 MD5 497bed8a975cd29705cb0e9b41f45d76 files/dasher-3.2.11-xtst_fix.patch 872
 MD5 29b515c44bcfdd79db45f38f65879994 files/dasher-3.2.15-buildwindowtree.patch 499
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDSoyNFdQwWVoAgN4RAjGbAJ9KrLxy2a0izF94k04eVHHTBxITmwCgy+/N
+KofwDGCrlymyvt3gsGJx8PM=
+=VzRO
+-----END PGP SIGNATURE-----
