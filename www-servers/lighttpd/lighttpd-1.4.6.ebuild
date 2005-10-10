@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.4.5.ebuild,v 1.1 2005/10/03 12:11:24 ka0ttic Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.4.6.ebuild,v 1.1 2005/10/10 17:20:15 ka0ttic Exp $
 
 inherit eutils depend.php
 
