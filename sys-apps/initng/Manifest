@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d6a28769220595bfa149278ccf8f9406 ChangeLog 3549
 MD5 6cef60eedc984421cfe296cb3767e298 files/digest-initng-0.3.1 65
 MD5 19d26cbd2417625c976f9eaf2e65d78b files/digest-initng-0.3.2 65
@@ -6,3 +9,10 @@ MD5 fc1d9f5111c5d9fbcdd8978f9825396d initng-0.3.1.ebuild 1021
 MD5 ef505e07ef4343dbb64618b11dd8f1bf initng-0.3.2.ebuild 1021
 MD5 ffde518ba51da6650947f36b7f2b0fe8 initng-9999.ebuild 1105
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDSnd+gIKl8Uu19MoRAiZVAJ9akrOgh2oXDpjUK/GPCDmQmAvWxgCfSLw8
+P4lxvUDCcrnz+wkwQQJCKRA=
+=OLjq
+-----END PGP SIGNATURE-----
