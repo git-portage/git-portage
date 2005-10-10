@@ -1,6 +1,6 @@
 MD5 c6215d1c2c1e382ec1f6972285e87677 metadata.xml 861
 MD5 805a775b8d31754e343f2554d06aae97 eflite-0.3.8-r2.ebuild 1211
-MD5 e5b4a83ee0fa1329ba76268245861c1f ChangeLog 2704
+MD5 74d0aff8fc2a7995b868cf4d2e4df50c ChangeLog 2706
 MD5 d949972b01c054d877819c4c4f863576 eflite-0.3.9.ebuild 1112
 MD5 0f5da4dd97b480750c68391658e4bee6 files/digest-eflite-0.3.8-r2 63
 MD5 04ce044bc8ad5b7b53ce872026df8178 files/eflite-0.3.8-read_pipe.patch 380
