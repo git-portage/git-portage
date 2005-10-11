@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e5a30ed579eb211c506299b6e412b693 ChangeLog 30349
 MD5 99dee3ece4f06bd49f471db77a5cea21 files/digest-gentoolkit-0.2.0 67
 MD5 99dee3ece4f06bd49f471db77a5cea21 files/digest-gentoolkit-0.2.0-r1 67
@@ -10,3 +13,10 @@ MD5 83de6e1010084bfb0ed83caa6c522d5d gentoolkit-0.2.0.ebuild 1007
 MD5 3a2dc1dfe86c39e8537ee76067306f82 gentoolkit-0.2.1_pre7.ebuild 1464
 MD5 25c8a9c300866914596368ff94306e29 gentoolkit-0.2.1_pre8.ebuild 1464
 MD5 c36d3e9465a96d7220228d2ef5457bd3 metadata.xml 451
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDTE6ngIKl8Uu19MoRAmlgAJ9xyrpzzLrKoa04Ih+vLJtPLq0JzgCfWaAU
+KZOgUK/2XMoI304bf1Khzx4=
+=gp6C
+-----END PGP SIGNATURE-----
