@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6949fc6d16d4d50ad3ff8562726b0265 ChangeLog 3108
 MD5 e3ccd1fed7f3a0f146a8242eb2e3c5dc cl-tbnl-0.8.3.ebuild 1011
 MD5 ae0a708202d5fc902b362aa99ca17b35 files/digest-cl-tbnl-0.8.3 66
 MD5 a2199253dbe57d398c785af8f7744485 metadata.xml 804
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDTAEDyiNZaEAZA+ARAuxDAJ4sB0kCdSG7lWXYuwoj01Epy2hN2wCfeUUN
+nbGc3tGBUMUse2E4nFcYo1s=
+=YFhj
+-----END PGP SIGNATURE-----
