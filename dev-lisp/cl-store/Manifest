@@ -1,4 +1,5 @@
-MD5 6bcfa1b3a5a68cf6ec0d02b5207e0443 cl-store-0.6.ebuild 1076
+MD5 8476af08fd20d858f9cc1b4581353e98 ChangeLog 444
+MD5 3568df73e447b0730acb6d83a811a4e7 cl-store-0.6.ebuild 1062
 MD5 6fd9c721e013f77b673891f8c00d87d4 files/0.6-custom.lisp-sbcl.patch 830
 MD5 62ff491c1f72d0213204c8b70617cf59 files/digest-cl-store-0.6 60
 MD5 9b65b0341efc8f4b29498aad23315229 metadata.xml 164
