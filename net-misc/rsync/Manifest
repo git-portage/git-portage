@@ -1,4 +1,4 @@
-MD5 a61f992a61dc53686c37ab2b2b357bf8 ChangeLog 10881
+MD5 b6574cecbc082351516537018dc6fde3 ChangeLog 10958
 MD5 e04533ca371c57d742250cc0622c005e files/digest-rsync-2.6.0-r5 204
 MD5 e04533ca371c57d742250cc0622c005e files/digest-rsync-2.6.0-r6 204
 MD5 62972fab38bf033135efad0bd025f65b files/digest-rsync-2.6.3-r1 63
@@ -17,4 +17,4 @@ MD5 6ad7d546901dc8f5953ba4978b143b2f rsync-2.6.0-r6.ebuild 2544
 MD5 3685ae9a09bfe55c04044538bf81fe59 rsync-2.6.3-r1.ebuild 2009
 MD5 aa87fe072475d63b9476540033b38d01 rsync-2.6.4.ebuild 2001
 MD5 e498c1a53adae08aa9947326d1cde06b rsync-2.6.5.ebuild 2002
-MD5 edea1fe4a94d3f4912d029e4e394bf81 rsync-2.6.6.ebuild 2013
+MD5 cb139d23b5710072b79baf8546b9d7c4 rsync-2.6.6.ebuild 2011
