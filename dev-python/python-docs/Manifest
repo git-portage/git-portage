@@ -1,4 +1,4 @@
-MD5 6829d895a44f2056c0b5c68446eb9e62 ChangeLog 7782
+MD5 12e97e31ba2ffc1f45e5930163464175 ChangeLog 7784
 MD5 71c4638c9c88af75b58e5f5cb54fe008 metadata.xml 159
 MD5 44c0b2369601927ba5d36ddc39c60158 python-docs-2.2.2.ebuild 706
 MD5 d0c7dadcfc4671c1d1587cf2cd9e07c6 python-docs-2.2.3.ebuild 738
@@ -9,7 +9,7 @@ MD5 5c9ada1759a31887ace8ad6b94b3d26c python-docs-2.3.4.ebuild 723
 MD5 2626303164a38e62cf35b175bfdbc5d9 python-docs-2.4.ebuild 728
 MD5 33a51f99fd5e8f791fdfb9c1d49c484d python-docs-2.3.5.ebuild 728
 MD5 e71014cff126ef82530de785dc5be905 python-docs-2.4.1.ebuild 971
-MD5 c046bffb857108f1800c8130bcba99c9 python-docs-2.4.2.ebuild 976
+MD5 3fe88ae0a975474760642f0e24f7ac36 python-docs-2.4.2.ebuild 980
 MD5 f228bfc10d3eb9dfb215177275b0e1c9 files/digest-python-docs-2.2.2 63
 MD5 e9b50e3077ea663db9a42bc42b725ef1 files/digest-python-docs-2.2.3 63
 MD5 d7a3f8363864425c84dcd47a1524035d files/digest-python-docs-2.3.3 64
