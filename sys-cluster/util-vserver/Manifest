@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bc27cf508f797d6dd8285ddebae4ea32 ChangeLog 6183
 MD5 4bd7088cb72bd60e8ed7b7e562f3ea95 files/digest-util-vserver-0.30.205-r1 74
 MD5 fa04b4cbc865fd7ef34386bee737b4e6 files/digest-util-vserver-0.30.208-r3 157
@@ -11,3 +14,10 @@ MD5 493021fa14e20216e8ce772e9dc10a62 metadata.xml 588
 MD5 c5f348ce535b90b26e953ef356181e1d util-vserver-0.30.205-r1.ebuild 1946
 MD5 4ad677a3bd9403ff6243365f42fd5250 util-vserver-0.30.208-r3.ebuild 2701
 MD5 ab43eabdf469de7dff04968715e60859 util-vserver-0.30.208-r4.ebuild 2542
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDTr9RmPFBzbX68WERAmzRAJ9Es5i9+a8/LQPy6LHkWnPDclq1zwCfY0o2
+e9+jQvBw2ZCod8Md+f+bFjE=
+=Zx6w
+-----END PGP SIGNATURE-----
