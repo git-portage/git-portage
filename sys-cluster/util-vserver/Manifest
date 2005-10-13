@@ -1,4 +1,4 @@
-MD5 2772d14204a31eaf50c672cc9980d670 ChangeLog 6183
+MD5 bc27cf508f797d6dd8285ddebae4ea32 ChangeLog 6183
 MD5 4bd7088cb72bd60e8ed7b7e562f3ea95 files/digest-util-vserver-0.30.205-r1 74
 MD5 fa04b4cbc865fd7ef34386bee737b4e6 files/digest-util-vserver-0.30.208-r3 157
 MD5 23a0e28296d1d5b79ad08a816e01e605 files/digest-util-vserver-0.30.208-r4 157
@@ -10,4 +10,4 @@ MD5 9f45fd567b0b82deb30b950b680d983a files/vservers.initd 1692
 MD5 493021fa14e20216e8ce772e9dc10a62 metadata.xml 588
 MD5 c5f348ce535b90b26e953ef356181e1d util-vserver-0.30.205-r1.ebuild 1946
 MD5 4ad677a3bd9403ff6243365f42fd5250 util-vserver-0.30.208-r3.ebuild 2701
-MD5 546508b6466387e32ddd14af50b5dda7 util-vserver-0.30.208-r4.ebuild 2542
+MD5 ab43eabdf469de7dff04968715e60859 util-vserver-0.30.208-r4.ebuild 2542
