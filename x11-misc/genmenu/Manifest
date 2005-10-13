@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d5a177c14aed92ee91b7cfba24ce43fb ChangeLog 3007
 MD5 ac64e0e5ec90d362cac3870b795582b3 files/digest-genmenu-1.0.6 64
 MD5 abfb187316c487ebb28afb631f9a166a files/digest-genmenu-1.0.7 64
@@ -5,3 +8,10 @@ MD5 3abc1c6e254ffaf6c9b6c8a07c586dea files/genmenu-1.0.2.patch 486
 MD5 11d01c93c3ad49d1b1352be938169a23 genmenu-1.0.6.ebuild 678
 MD5 2ef1fce370efaf22795414ced1d21665 genmenu-1.0.7.ebuild 681
 MD5 503ccb1138f9c49f0855884d830988a6 metadata.xml 253
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDTcqZwUpWvClEHQoRAn2XAJ0fSqGek0q8InWAvF8ejG9Ah0w4QgCfQcPR
+gn23WuprOXH6cnvfg139g3I=
+=9hga
+-----END PGP SIGNATURE-----
