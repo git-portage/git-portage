@@ -1,4 +1,4 @@
-MD5 da4785ef539cd7ea5606af67ac1f2299 ChangeLog 33743
+MD5 a381fd52f1a661b0af6ba03f364a1bc7 ChangeLog 34303
 MD5 cb90e9f6097b975187892682ed286544 files/1.5/embed-typeaheadfind.patch 41361
 MD5 7847d262e628dcac303586fe02f2e8c4 files/1.5/firefox-cairo-canvas.patch 446
 MD5 91661761f2f232b08b74f5adc4f1eff0 files/1.5/firefox-nopangoxft.patch 839
@@ -50,4 +50,4 @@ MD5 d8c6c3085e4fc8d06ef878579dddf116 mozilla-firefox-1.0.6-r6.ebuild 11233
 MD5 8a30120dc035d60c58db0a9dc8c3b91b mozilla-firefox-1.0.6-r7.ebuild 9771
 MD5 a98efa57e6fa9ad9a44343f5db5e8bf7 mozilla-firefox-1.0.7-r2.ebuild 8562
 MD5 b686423c9050edfcfd7ff72ea4081f09 mozilla-firefox-1.0.7-r3.ebuild 9734
-MD5 f66e6976138d78eb40dfea00b3e4633f mozilla-firefox-1.5_beta2-r1.ebuild 9240
+MD5 e9f0096a17477f08fed0b37fa9d71b55 mozilla-firefox-1.5_beta2-r1.ebuild 9245
