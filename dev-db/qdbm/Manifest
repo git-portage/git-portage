@@ -5,7 +5,7 @@ MD5 3e4b7b76496991eee1cca2b8329753ca ChangeLog 4871
 MD5 baa34b4deb9f8a225a9751b44b1f2d71 qdbm-1.8.16.ebuild 1165
 MD5 8b61f2a38d68ddc4a9c6921b306542b4 qdbm-1.8.24.ebuild 1201
 MD5 358c12eedbb9ecdff61f17ae3f6aca73 qdbm-1.8.30.ebuild 1202
-MD5 13a0676bc04388fbe91ced4c7acb7839 qdbm-1.8.31.ebuild 1210
+MD5 cca731a8149ff331c9c654b418d50f6b qdbm-1.8.31.ebuild 1209
 MD5 171bad7087326755b76957b5ffafc318 files/digest-qdbm-1.8.30 63
 MD5 5e73e3df7c9ba5df4312934edf80cd9a files/digest-qdbm-1.8.16 63
 MD5 340399145118f869822d6127294a3ebb files/digest-qdbm-1.8.17 63
