@@ -1,4 +1,4 @@
-MD5 a3adc63273b7d4ab538f422d3ad4dfd5 ChangeLog 11795
+MD5 42dc3d556cafc793c69e2f2b1e73c42e ChangeLog 11954
 MD5 44501c7c8b83bf06c34a755121274e50 files/digest-getmail-4.3.10 66
 MD5 86240c0d474cc541504969f938a0e7f2 files/digest-getmail-4.3.11 66
 MD5 0e00d2f84aaec37e2d43c04266dd30b5 files/digest-getmail-4.3.12 66
@@ -11,7 +11,7 @@ MD5 0816084fea7e8c63bcaf3a3a06989971 files/digest-getmail-4.3.8 65
 MD5 a76ebc67214c74977c6a6191b3c4362a files/python2.4-fix.patch 3119
 MD5 a9abfa3836d8a7f2410e433e3ef22869 getmail-4.3.10.ebuild 1576
 MD5 3fdc4f664b92aa170d211d5cd63691f2 getmail-4.3.11.ebuild 1576
-MD5 fd0d01def87735651cdd808efd0ab2dd getmail-4.3.12.ebuild 1622
+MD5 34a7028bbf7006efd607a026ada3a2dc getmail-4.3.12.ebuild 1721
 MD5 fdef5056f5957616e00845af65dca038 getmail-4.3.3.ebuild 1536
 MD5 7ff569cfd8e9625cc2d510aa8bab82fb getmail-4.3.4.ebuild 1535
 MD5 26cbc55544cd00c4a3c50446469b4483 getmail-4.3.5.ebuild 1535
