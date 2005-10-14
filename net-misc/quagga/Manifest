@@ -1,10 +1,7 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 c0a941e08060816c4c7068cd4023602c quagga-0.98.3.ebuild 4861
 MD5 d30997e32c750bff03590ab79f7276ff quagga-0.98.2.ebuild 4468
 MD5 c4bcfc277e856924ed9ba4cead328cba ChangeLog 8277
-MD5 c5d35e84e9953411d425350619e46b15 quagga-0.98.4.ebuild 4238
+MD5 6791ada709386cc96ecb9080eb944c5e quagga-0.98.4.ebuild 4393
 MD5 f0c8f9afaf3bbefcea71ff3b6fa139c4 metadata.xml 1389
 MD5 7b34e71571fb66352e5e6713fe6840a2 quagga-0.96.5-r1.ebuild 3861
 MD5 cc109a746273bc0d6aee9d758e7524ab files/bgpd.init 900
@@ -26,10 +23,3 @@ MD5 e70bf25e2ca5f76efb2c5704234ccc1f files/patches-0.98.2/ht-20040304-classless-
 MD5 a5a7f270b8ccff05a27e0fa943a0aaf5 files/patches-0.98.3/amir-connected-route.patch 6091
 MD5 6c9cdbdc237bb8d24dfd26504059464b files/patches-0.98.3/ht-20050110-0.98.0-bgp-md5.patch 14570
 MD5 e70bf25e2ca5f76efb2c5704234ccc1f files/patches-0.98.3/ht-20040304-classless-bgp.patch 1581
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDKAVkNSP4Vda7IdsRAhXPAJ92dT40836Pr+s0x8EV30gLLpBiAwCfR+SV
-ANB85ToVTVAmKFMBbVxmdiw=
-=hC/h
------END PGP SIGNATURE-----
