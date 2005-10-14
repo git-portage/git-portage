@@ -1,4 +1,4 @@
-MD5 1cbc930fe798e4442cceeda4cd2c0147 ChangeLog 348
-MD5 7adc0354fee006677ce16c7003b35762 files/digest-nc6-0.5 60
+MD5 72c9985fc228d12f3463d8d2f5cde4ba ChangeLog 366
 MD5 7adc0354fee006677ce16c7003b35762 files/digest-netcat6-0.5 60
-MD5 1536bd4a8f9689ab2fde3be725946d73 netcat6-0.5.ebuild 607
+MD5 2997d779a1f7ab59cb6038bbf041427c metadata.xml 220
+MD5 1cf7088439d286a3b2af6152165213e1 netcat6-0.5.ebuild 767
