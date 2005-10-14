@@ -1,5 +1,6 @@
 MD5 d35a0c0793dbfc65191588d2eca405d1 git-0.99.8a.ebuild 2835
 MD5 134e1de50624a1500a842e644ac4617e git-0.99.8c.ebuild 2921
+MD5 96bf9e6348415093decc7f01cbe6cbb0 git-0.99.8c-r1.ebuild 2957
 MD5 edebd592261315b29a6b903b414573d2 git-0.7.ebuild 1312
 MD5 37b46b1dfe818b2bf62ee6b8f576d682 git-0.99.8b.ebuild 2921
 MD5 bece04f1ff8a2020d9f15749fc738044 ChangeLog 4728
@@ -10,3 +11,4 @@ MD5 62316f61a79143fdaf1e9f747d1ddf03 files/digest-git-0.99.8a 69
 MD5 fd5868fcfa11211c2a38977cb3a252c8 files/digest-git-0.99.8b 69
 MD5 c54bcb57e21a5986c4befcf024d75e18 files/digest-git-0.99.8c 69
 MD5 8ebc37d29c321b95a3c0ae51ebee4d4d files/digest-git-0.7 59
+MD5 c54bcb57e21a5986c4befcf024d75e18 files/digest-git-0.99.8c-r1 69
