@@ -14,6 +14,5 @@ MD5 3196f5d7edade715c6861def61990244 kdebase-kioslaves-3.4.1.ebuild 895
 MD5 aa60665f6528f6da8f064764de4bfe70 kdebase-kioslaves-3.4.2-r1.ebuild 1299
 MD5 baa5d6bb5f0bda49ce3e96283732ca46 kdebase-kioslaves-3.4.2.ebuild 1096
 MD5 b7583ec6467e8d473837e74c07a6fb88 kdebase-kioslaves-3.4.3.ebuild 1302
-MD5 4a38d875fc0838a7cf111063c81b75cf kdebase-kioslaves-3.5.0_beta2.ebuild 1024
-MD5 06a88c81d95a7d3eeda92d506171826d kdebase-kioslaves-3.5_beta1.ebuild 1024
+MD5 6ec4eb94c36f9c76d6780bfed3842be8 kdebase-kioslaves-3.5.0_beta2.ebuild 919
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
