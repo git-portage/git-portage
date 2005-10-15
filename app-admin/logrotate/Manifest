@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 457917413851c31a99c16802a3f7045e ChangeLog 7104
 MD5 746e982f984139e917c7d7ee39af40fa files/digest-logrotate-3.7.1-r1 67
 MD5 746e982f984139e917c7d7ee39af40fa files/digest-logrotate-3.7.1-r2 67
@@ -13,3 +16,10 @@ MD5 cf1ca2cfa810abaefc504a76ca38b52a files/logrotate.cron 52
 MD5 56b2e40af8f7d88199bcd55bf9b1d55a logrotate-3.7.1-r1.ebuild 1764
 MD5 b173c5de8be193de7d0e47e4f719c3a6 logrotate-3.7.1-r2.ebuild 1807
 MD5 c7533062993ae53a9a32d0a58416cd84 metadata.xml 216
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDUX3YomPajV0RnrERAhCGAJoDMqq+mM6RSCRghjpsFRcnJLBkTQCeIgw/
+TMgSzxXmiOKoJ4w0D9cj/LY=
+=Uuot
+-----END PGP SIGNATURE-----
