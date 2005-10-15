@@ -6,6 +6,6 @@ MD5 40554f7678788d1d4cdcf0824da8434f files/digest-ksnapshot-3.5_beta1 72
 MD5 b8b19abbbc49524d1043eeed31098905 files/ksnapshot-qt-3.3.5.patch 621
 MD5 0aa08a65a12a76768433cefa5248ce5c ksnapshot-3.4.1.ebuild 450
 MD5 d3e719d472764887f36ed2f5b18dd945 ksnapshot-3.4.3.ebuild 405
-MD5 c7844142057325106e7ef7f69f333dcd ksnapshot-3.5.0_beta2.ebuild 427
+MD5 02a55ccf1246670dfdc46a5e97014e84 ksnapshot-3.5.0_beta2.ebuild 383
 MD5 f5e3c728676b169b224dfa4ea1051417 ksnapshot-3.5_beta1.ebuild 426
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
