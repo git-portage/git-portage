@@ -1,4 +1,4 @@
-MD5 cd54fe43aa76efd72a1790a593bc3abf ChangeLog 12289
+MD5 f68beb535180251eeb010687253e6c41 ChangeLog 12290
 MD5 8338cfc9815a953d85195bdccd9fbc97 files/digest-slmodem-2.9.11_pre20050816 140
 MD5 cae2ec761f3db78791ab4ec7f0e83d5b files/digest-slmodem-2.9.11_pre20051009 140
 MD5 fd55ef399408a109742263cd5b4a5219 files/digest-slmodem-2.9.9d 66
@@ -14,5 +14,5 @@ MD5 9c47e598fd639d46a03493fe7a52595e files/slmodem-remove-URB_ASYNC_UNLINK.patch
 MD5 a5c2c40e3a6c4665033c97bb9088f03d files/slusb.hotplug 262
 MD5 e487a8ab7ec754f06a85f64f4aaa7540 metadata.xml 409
 MD5 b2b21056f56133cae32bd313c57eccd2 slmodem-2.9.11_pre20050816.ebuild 4344
-MD5 df9a880b79e803a5b985863fbaf6d832 slmodem-2.9.11_pre20051009.ebuild 4548
+MD5 2c199b5a99fbf92ba03af59c785abb72 slmodem-2.9.11_pre20051009.ebuild 4549
 MD5 d8bfc7e54bbf93358bef2ed665278ad0 slmodem-2.9.9d.ebuild 3552
