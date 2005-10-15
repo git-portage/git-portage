@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/logrotate/Attic/logrotate-3.7.1.ebuild,v 1.2 2005/07/09 13:51:53 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/logrotate/Attic/logrotate-3.7.1-r2.ebuild,v 1.1 2005/10/15 22:08:08 dang Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~ia64 ~amd64 ~ppc64 ~s390 ~hppa"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
 IUSE="selinux"
 
 RDEPEND="
@@ -37,6 +37,8 @@ src_unpack() {
 	epatch ${FILESDIR}/${P}-ignore-hidden.patch
 	epatch ${FILESDIR}/${P}-manpage-fixes.patch
 	epatch ${FILESDIR}/${P}-taboo-to-debug.patch
+	epatch ${FILESDIR}/${P}-no-tmpdir.patch
+	epatch ${FILESDIR}/${P}-weekly.patch
 }
 
 src_compile() {
