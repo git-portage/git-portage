@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/tomcat/Attic/tomcat-5.0.28-r6.ebuild,v 1.1 2005/09/20 17:56:51 betelgeuse Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/tomcat/Attic/tomcat-5.0.28-r8.ebuild,v 1.1 2005/10/15 11:40:42 axxo Exp $
 
 inherit eutils java-pkg
 
@@ -27,7 +27,7 @@ RDEPEND=">=virtual/jdk-1.4
 	>=dev-java/commons-pool-1.2
 	~dev-java/jaxen-1.0
 	>=dev-java/junit-3.8.1
-	dev-java/jmx
+	dev-java/sun-jmx
 	>=dev-java/log4j-1.2.8
 	=dev-java/jakarta-regexp-1.3*
 	>=dev-java/saxpath-1.0
@@ -64,7 +64,7 @@ src_unpack() {
 
 	mkdir ./bin && cd ./bin
 	java-pkg_jar-from commons-logging commons-logging-api.jar
-	java-pkg_jar-from jmx jmxri.jar jmx.jar
+	java-pkg_jar-from sun-jmx jmxri.jar jmx.jar
 	java-pkg_jar-from commons-daemon
 
 	mkdir ../common/endorsed && cd ../common/endorsed
@@ -110,8 +110,8 @@ src_compile(){
 	antflags="${antflags} -Dcommons-logging.jar=$(java-pkg_getjar commons-logging commons-logging.jar)"
 	antflags="${antflags} -Dcommons-logging-api.jar=$(java-pkg_getjar commons-logging commons-logging-api.jar)"
 	antflags="${antflags} -Djaxen.jar=$(java-pkg_getjar jaxen jaxen-full.jar)"
-	antflags="${antflags} -Djmx.jar=$(java-pkg_getjar jmx jmxri.jar)"
-	antflags="${antflags} -Djmx-tools.jar=$(java-pkg_getjar jmx jmxtools.jar)"
+	antflags="${antflags} -Djmx.jar=$(java-pkg_getjar sun-jmx jmxri.jar)"
+	antflags="${antflags} -Djmx-tools.jar=$(java-pkg_getjar sun-jmx jmxtools.jar)"
 	antflags="${antflags} -Dsaxpath.jar=$(java-pkg_getjar saxpath saxpath.jar)"
 	antflags="${antflags} -DxercesImpl.jar=$(java-pkg_getjar xerces-2 xercesImpl.jar)"
 	antflags="${antflags} -Dxml-apis.jar=$(java-pkg_getjar xerces-2 xml-apis.jar)"
@@ -138,21 +138,18 @@ src_install() {
 	fi
 
 	# create dir structure
-	diropts -m755
-	dodir /usr/share/${TOMCAT_NAME}
-
+	diropts -m755 -o tomcat -g tomcat
+	dodir   /usr/share/${TOMCAT_NAME}
 	keepdir /var/log/${TOMCAT_NAME}/default
-	chown -R tomcat:tomcat ${D}/var/log/${TOMCAT_NAME}
-	keepdir /etc/${TOMCAT_NAME}/default/
-	chown -R tomcat:tomcat ${D}/etc/${TOMCAT_NAME}
 	keepdir /var/tmp/${TOMCAT_NAME}/default
-	chown -R tomcat:tomcat ${D}/var/tmp/${TOMCAT_NAME}
 	keepdir /var/run/${TOMCAT_NAME}/default
-	chown -R tomcat:tomcat ${D}/var/run/${TOMCAT_NAME}
-	dodir /var/lib/${TOMCAT_NAME}/default
-	chown -R tomcat:tomcat ${D}/var/lib/${TOMCAT_NAME}
+	dodir   /var/lib/${TOMCAT_NAME}/default
+	dodir   /etc/${TOMCAT_NAME}/default
+	fperms  440 /etc/${TOMCAT_NAME}/default
 
-	# we don't need dos scripts	
+	diropts -m0755
+
+	# we don't need dos scripts
 	rm -f bin/*.bat
 
 	# copy the manager and admin context's to the right position
@@ -188,11 +185,11 @@ src_install() {
 	java-pkg_jar-from struts-1.1 struts.jar
 	cd ${base}
 
-	# replace the default pw with a random one, see #92281 
+	# replace the default pw with a random one, see #92281
 	local randpw=$(echo ${RANDOM}|md5sum|cut -c 1-15)
 	sed -e s:SHUTDOWN:${randpw}: -i conf/{server,server-minimal}.xml
 
-	# copy over the directories	
+	# copy over the directories
 	chmod -R 750 conf/*
 	chown -R tomcat:tomcat webapps/* conf/*
 	cp -pR conf/* ${D}/etc/${TOMCAT_NAME}/default || die "failed to copy conf"
