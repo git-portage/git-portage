@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/cogito/Attic/cogito-0.15.ebuild,v 1.1 2005/10/05 15:49:02 ferdy Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/cogito/Attic/cogito-0.15.1.ebuild,v 1.1 2005/10/15 22:26:28 ferdy Exp $
 
 inherit eutils
 
@@ -26,7 +26,7 @@ src_compile() {
 	emake || die "emake failed"
 
 	if use doc ; then
-		epatch "${FILESDIR}/${P}-doc.patch"
+		#epatch "${FILESDIR}/${P}-doc.patch"
 		sed -i -e "/^docdir=/s:cogito:${PF}:" \
 			${S}/Documentation/Makefile || die "sed failed (Documentation)"
 		emake -C Documentation || die "make documentation failed"
