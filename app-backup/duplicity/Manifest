@@ -1,4 +1,4 @@
-MD5 e92605154208f1cb3f6c7d9bf536be9f duplicity-0.4.1.ebuild 705
-MD5 72ad6e131e29560851d4217c56703bdf ChangeLog 1580
-MD5 bd9e210457c22384582e7c1394314d3f metadata.xml 250
+MD5 47375642fab624f48b42d7c140e3b4f5 ChangeLog 1689
+MD5 ed7b72a8780e38926badaa0bf866ac8d duplicity-0.4.1.ebuild 703
 MD5 5fe71b465051c84995eee335f8a2c98a files/digest-duplicity-0.4.1 67
+MD5 bd9e210457c22384582e7c1394314d3f metadata.xml 250
