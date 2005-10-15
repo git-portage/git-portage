@@ -1,4 +1,6 @@
+MD5 da9f1c498d1f89d41160d0d7499f1c80 libmoe-1.5.8.ebuild 1009
 MD5 5ee2b2c750416ddf728a71437af6adca ChangeLog 1572
 MD5 e92a48548554c80cf90e18df17ff6a82 metadata.xml 156
-MD5 da9f1c498d1f89d41160d0d7499f1c80 libmoe-1.5.8.ebuild 1009
+MD5 f959305b367f53f06211075a80314a97 libmoe-1.5.8-r1.ebuild 862
+MD5 f70d51adb730402fb0ed8b46d24a5e01 files/digest-libmoe-1.5.8-r1 65
 MD5 f70d51adb730402fb0ed8b46d24a5e01 files/digest-libmoe-1.5.8 65
