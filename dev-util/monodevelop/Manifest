@@ -3,6 +3,8 @@ MD5 e236f49fd346c46a9c0dfe00f2b0aa3d ChangeLog 6230
 MD5 76b314cc7b7b79b298dd4889dff8c9cd metadata.xml 159
 MD5 9cf588769f67de01bdb230e64b451ac5 monodevelop-0.7-r1.ebuild 1800
 MD5 a430f9561f918a21f460a4749427c249 monodevelop-0.7-r2.ebuild 1843
+MD5 e231115c0c79aafcc4b8fbe4b19f3d57 monodevelop-0.8.ebuild 1276
+MD5 2200a01878af7bc8553e3c3181d70463 files/digest-monodevelop-0.8 68
 MD5 f36ce806f3552f974021d1a56021f67c files/monodevelop-0.5.1-iconloader.diff 1255
 MD5 9e3ea3908c299c9240a5f7689f83909a files/monodevelop-0.5.1-nemerle-gtk-sharp.diff 1874
 MD5 48b44fa7ba76c3b567d260ecff9e7aea files/digest-monodevelop-0.7-r1 68
