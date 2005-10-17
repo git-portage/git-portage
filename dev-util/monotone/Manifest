@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f4b158cbc5a7cf0759ca8d2ccb092fe7 ChangeLog 3815
 MD5 f00af7715fb0a67538d5960d7cfcd4c7 files/30monotone-gentoo.el 120
 MD5 f7dab86750bae0e4ff09e2139b790084 files/digest-monotone-0.16 66
@@ -13,3 +16,10 @@ MD5 aa7a28ac1380cf89fb5a1d0576a76707 monotone-0.18.ebuild 1687
 MD5 af2251480135572c461c610665a18ab6 monotone-0.19.ebuild 1589
 MD5 6cd832995f221bde6f669b44bce65c11 monotone-0.22.ebuild 2221
 MD5 5c8a5b0f5499ecbe46691c3e5767002a monotone-0.23-r1.ebuild 2327
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDU/1WmdTrptrqvGERAh+jAJ9AGTXp5Uf0Epd5hjarKG3g4vhuIQCeNZiX
+S9QPhSULuyQ+opJZPlHWNSs=
+=hIhj
+-----END PGP SIGNATURE-----
