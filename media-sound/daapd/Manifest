@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 24134d107499a585552a174cbf79458c ChangeLog 3652
 MD5 671db4d6a437056ae62192a7799de75a daapd-0.2.4a-r1.ebuild 1835
 MD5 660b25ab66dc0cb5147d21b2db00b685 files/daapd-0.2.4-gentoo.patch 1564
@@ -5,3 +8,10 @@ MD5 3beda326653c14c1fbd33c762af01e2e files/daapd.conf.d 673
 MD5 55d5a5f4ecb94a9b34a603fa95047c48 files/daapd.init.d-2 1053
 MD5 3bce8ff40d70534e3b94f58ea9043b07 files/digest-daapd-0.2.4a-r1 61
 MD5 5209c0057b32b7d92999700515bed3aa metadata.xml 440
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDU47Jj5H05b2HAEkRAgYZAJ0bN51L6Rc0FwW0NN66SyhkHOmNlwCgiyqD
+YzlMsbON4yM7Z4g5sS/yapU=
+=/kxm
+-----END PGP SIGNATURE-----
