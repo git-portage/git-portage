@@ -1,0 +1,5 @@
+MD5 3057d95d4d99261780978144153211fa formencode-0.2.2.ebuild 768
+MD5 9ac4199ebe7cd3e7e311274994767f82 metadata.xml 160
+MD5 2c25f816674023347919495e92bc6483 ChangeLog 316
+MD5 b2bc4df3b59ec5949c4f9563ef49e289 files/formencode-0.2.2-setup-gentoo.patch 405
+MD5 682d58dd2af7c91480246df7bdcb1fda files/digest-formencode-0.2.2 67
