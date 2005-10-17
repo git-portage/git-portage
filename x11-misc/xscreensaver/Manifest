@@ -1,4 +1,4 @@
-MD5 704e7950c9fb8b199741a43b18b421d3 ChangeLog 19411
+MD5 5415e2cf125fb798fd4a500c837a507a ChangeLog 19408
 MD5 51377e1938cf119bd11972b3c30c0a25 files/desktop_entries/screensaver-properties.desktop 1000
 MD5 64d504c9ea04705ce78f9ffb87c96321 files/digest-xscreensaver-4.20 70
 MD5 24bb039b898635c9224f9866f29757ed files/digest-xscreensaver-4.22-r2 70
@@ -14,4 +14,4 @@ MD5 7528066fa9a88bd1b6d46224d118dd7b files/xscreensaver-blank-screen.patch 487
 MD5 cdb11033a3fa6525334cecf938961c07 metadata.xml 166
 MD5 30baa75aa8ad6b15fa87c15cce9d3f40 xscreensaver-4.20.ebuild 4842
 MD5 ec122eaf5cf8ae7c3738b52c5d3d42c1 xscreensaver-4.22-r2.ebuild 5474
-MD5 b72ae396a7478215c02069869eca0837 xscreensaver-4.22-r4.ebuild 5586
+MD5 55a3de6db909c2d6b9735ffc4edf1b2d xscreensaver-4.22-r4.ebuild 5583
