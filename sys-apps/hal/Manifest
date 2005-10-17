@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 62920c9866cbed87777a4c60869c231b ChangeLog 7120
 MD5 40a7b45f127bfdcacaa142660ad8b5f9 files/0.5-hald.rc 537
 MD5 ada3b2801b82813b4f10fd6f6caf9d6f files/digest-hal-0.4.5-r2 62
@@ -21,3 +24,10 @@ MD5 1a146b79d18a689bbc8a96b81f74c7f6 hal-0.4.7-r2.ebuild 3455
 MD5 0c43f691d7e607d57a1ab2077d745751 hal-0.4.8.ebuild 3375
 MD5 5e420f80c5c9cdaabfbf920679b0ce3c hal-0.5.4.ebuild 3413
 MD5 a60767d83157413d549c69b98fac962c metadata.xml 303
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDU9DIBtvusYtCZMsRAldrAJ4gFpwDIzRnwxhFmgNX8wY5JcVrgACfdqku
+S/J5z8nzBbLz61qiwYsw0l8=
+=g4I/
+-----END PGP SIGNATURE-----
