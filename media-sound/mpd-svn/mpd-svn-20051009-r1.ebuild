@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd-svn/Attic/mpd-svn-20050731.ebuild,v 1.1 2005/07/30 22:21:08 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd-svn/Attic/mpd-svn-20051009-r1.ebuild,v 1.1 2005/10/17 00:52:17 ticho Exp $
 
 inherit eutils
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="aac alsa ao audiofile flac icecast ipv6 mad mikmod musepack ogg unicode"
+IUSE="aac alsa ao audiofile flac icecast ipv6 mad mikmod mp3 musepack vorbis oss unicode"
 
 DEPEND="dev-util/gperf
 	!media-sound/mpd
@@ -25,18 +25,38 @@ DEPEND="dev-util/gperf
 	mad? ( media-libs/libmad
 	       media-libs/libid3tag )
 	mikmod? ( media-libs/libmikmod )
-	musepack? ( >=media-libs/libmusepack-1.1 )
-	ogg? ( media-libs/libogg
-		media-libs/libvorbis )"
+	musepack? ( media-libs/libmpcdec )
+	vorbis? ( media-libs/libvorbis )"
+
+upgrade_warning() {
+	echo
+	ewarn "This package now correctly uses 'vorbis' USE flag, instead of 'ogg'."
+	ewarn "See http://bugs.gentoo.org/show_bug.cgi?id=101877 for details."
+	echo
+	ewarn "Home directory of user mpd, as well as default locations in mpd.conf have"
+	ewarn "been changed to /var/lib/mpd, please bear that in mind while updating"
+	ewarn "your mpd.conf file."
+	echo
+	epause 7
+}
 
 pkg_setup() {
-	enewuser mpd '' '' '' audio || die "problem adding user mpd"
+	upgrade_warning
+	enewuser mpd '' '' "/var/lib/mpd" audio || die "problem adding user mpd"
+
+	# also change the homedir if the user has existed before
+	usermod -d "/var/lib/mpd" mpd
 }
 
 src_compile() {
 	econf \
+		$(use_enable alsa) \
+		$(use_enable alsa alsatest) \
+		$(use_enable oss) \
+		$(use_enable mp3) \
 		$(use_enable aac) \
 		$(use_enable ao) \
+		$(use_enable ao aotest) \
 		$(use_enable audiofile) \
 		$(use_enable audiofile audiofiletest) \
 		$(use_enable flac libFLACtest) \
@@ -44,13 +64,13 @@ src_compile() {
 		$(use_enable icecast shout) \
 		$(use_enable ipv6) \
 		$(use_enable !mad mpd-mad) \
-		$(use_enable !mad id3tag) \
+		$(use_enable !mad mpd-id3tag) \
 		$(use_enable mikmod libmikmodtest) \
 		$(use_enable mikmod mod) \
 		$(use_enable musepack mpc) \
-		$(use_enable ogg) \
-		$(use_enable ogg oggtest) \
-		$(use_enable ogg vorbistest) \
+		$(use_enable vorbis ogg) \
+		$(use_enable vorbis oggtest) \
+		$(use_enable vorbis vorbistest) \
 		|| die "could not configure"
 
 	emake || die "emake failed"
@@ -71,7 +91,7 @@ src_install() {
 	newins doc/mpdconf.example mpd.conf
 
 	exeinto /etc/init.d
-	newexe ${FILESDIR}/mpd.pidfile.rc6 mpd
+	newexe ${FILESDIR}/mpd.rc6 mpd
 
 	if use unicode; then
 		dosed 's:^#filesystem_charset.*$:filesystem_charset "UTF-8":' /etc/mpd.conf
@@ -79,17 +99,18 @@ src_install() {
 	dosed 's:^#user.*$:user "mpd":' /etc/mpd.conf
 	dosed 's:^#bind.*$:bind_to_address "localhost":' /etc/mpd.conf
 	dosed 's:^port.*$:port "6600":' /etc/mpd.conf
-	dosed 's:^music_directory.*$:music_directory "/usr/share/mpd/music":' /etc/mpd.conf
-	dosed 's:^playlist_directory.*$:playlist_directory "/usr/share/mpd/playlists":' /etc/mpd.conf
+	dosed 's:^music_directory.*$:music_directory "/var/lib/mpd/music":' /etc/mpd.conf
+	dosed 's:^playlist_directory.*$:playlist_directory "/var/lib/mpd/playlists":' /etc/mpd.conf
 	dosed 's:^log_file.*$:log_file "/var/log/mpd.log":' /etc/mpd.conf
 	dosed 's:^error_file.*$:error_file "/var/log/mpd.error.log":' /etc/mpd.conf
 	dosed 's:^pid_file.*$:pid_file "/var/run/mpd/mpd.pid":' /etc/mpd.conf
+	dosed 's:^db_file.*:db_file "/var/lib/mpd/database":' /etc/mpd.conf
+	dosed 's:^#state_file.*$:state_file "/var/lib/mpd/state:' /etc/mpd.conf
 	diropts -m0755 -o mpd -g audio
-	dodir /usr/share/mpd/music
-	keepdir /usr/share/mpd/music
-	dodir /usr/share/mpd/playlists
-	keepdir /usr/share/mpd/playlists
-	dodir /usr/share/mpd/
+	dodir /var/lib/mpd/music
+	keepdir /var/lib/mpd/music
+	dodir /var/lib/mpd/playlists
+	keepdir /var/lib/mpd/playlists
 	insinto /var/log
 	touch ${T}/blah
 	insopts -m0640 -o mpd -g audio
@@ -105,25 +126,19 @@ pkg_postinst() {
 	einfo "The default config now binds the daemon strictly to localhost,"
 	einfo "rather than to all available IPs."
 	echo
-	if use ao; then
-		einfo "libao prior to 0.8.4 has issues with the ALSA drivers"
-		einfo "please refer to the FAQ"
-		einfo "http://www.musicpd.org/wiki/moin.cgi/MpdFAQ if you are"
-		einfo "having problems."
-		echo
-	else
-		draw_line
+	if ! use ao ; then
 		ewarn "As you're not using libao for audio output, you need to"
 		ewarn "adjust audio_output sections in /etc/mpd.conf to use"
 		ewarn "ALSA or OSS. See"
 		ewarn "/usr/share/doc/${PF}/mpdconf.example.gz."
-		draw_line
 		echo
 	fi
 	einfo "Please make sure that MPD's pid_file is set to /var/run/mpd/mpd.pid."
 	echo
+	draw_line
 	ewarn "Note that this is just a development version of Music Player Daemon,"
-	ewarn "so if you want to report any bug, please state this fact in your"
-	ewarn "report, as well as the fact that you used a ${P} Gentoo ebuild."
-	echo
+	ewarn "so if you want to report any bug to MPD developers, please state this fact in"
+	ewarn "your bug report, as well as the fact that you used a ${P} Gentoo ebuild."
+	draw_line
+	upgrade_warning
 }
