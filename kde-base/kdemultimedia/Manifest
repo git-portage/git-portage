@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
 MD5 93863e4c481dfe303b0afd932a054cea kdemultimedia-3.4.3.ebuild 2014
 MD5 07c3c5c2b16ffe5a9f2d3b04423253a9 kdemultimedia-3.4.2.ebuild 2008
@@ -18,3 +21,10 @@ MD5 7768e89277edde1b1e163ae65e5a4e9c files/digest-kdemultimedia-3.4.1 73
 MD5 0ed594ab9238b688fca70c1959d3932e files/kdemultimedia-3.4.1-akode-hang.patch 653
 MD5 0af60268ec8424c72256db89062b6f31 files/kdemultimedia-64bit.patch 634
 MD5 dfce952f93ee14ecafcfea645134aec2 files/digest-kdemultimedia-3.4.2 73
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDU+eYJrHF4yAQTrARAqPBAJ9qyNNPRGVnNnsMqntxBo63A0DXZACgmhZs
+R+O5FDz0yjNaT0TXFLYfIng=
+=uH+m
+-----END PGP SIGNATURE-----
