@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6c942f2d89711fe775a838da6ce4b457 bittorrent-4.1.4.ebuild 2305
 MD5 8aefbc0e49db723ca1ad02d0c409cd49 metadata.xml 160
 MD5 1c25fbcd2278284f5701985577b7c8f8 ChangeLog 9851
@@ -18,3 +21,10 @@ MD5 a94d4e97cceef0143a1a5c8784b6f70c files/bttrack.conf 728
 MD5 139c4a4367e37fcf7dc6bd18515456c2 files/btdownloadgui.desktop 166
 MD5 8254615ee527cd608123c83de2616ede files/bttrack.rc 631
 MD5 21ec89d06de83ddcc4cf6d6616355190 files/bittorrent-4.1.0-fix-all.patch 2483
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDVHXaJrHF4yAQTrARAiv/AKCQnKPxoy0ITpDewUGYPD3ttQE0swCghy4V
+9plYiynxSuJeGNZuF/AEIdQ=
+=GW85
+-----END PGP SIGNATURE-----
