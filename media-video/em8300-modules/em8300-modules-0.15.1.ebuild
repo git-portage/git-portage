@@ -1,6 +1,8 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/em8300-modules/Attic/em8300-modules-0.14.0.ebuild,v 1.1 2004/08/11 10:50:10 arj Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/em8300-modules/Attic/em8300-modules-0.15.1.ebuild,v 1.1 2005/10/18 14:45:02 arj Exp $
+
+inherit eutils linux-info
 
 S="${WORKDIR}/${A/.tar.gz/}/modules"
 DESCRIPTION="em8300 (RealMagic Hollywood+/Creative DXR3) video decoder card kernel modules"
@@ -11,20 +13,26 @@ DEPEND="virtual/linux-sources"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 src_unpack () {
 
 	unpack ${A}
 	cd ${S}
-
 }
 
 src_compile ()  {
 
-	make all || die
-
+	check_KV
+	set_arch_to_kernel
+	cd ..
+	for file in autotools/config.guess configure em8300.sysv.in modules/ldm modules/Makefile modules/INSTALL; do
+		sed -i -e 's/uname[[:space:]]*-r/echo ${KV}/' $file
+	done
+	cd modules
+	make || die
+	set_arch_to_portage
 }
 
 src_install () {
@@ -32,9 +40,18 @@ src_install () {
 	insinto "/usr/include/linux"
 	doins ../include/linux/em8300.h
 
+	check_KV
+
+
 	# The driver goes into the standard modules location
 	insinto "/lib/modules/${KV}/kernel/drivers/video"
-	doins em8300.o bt865.o adv717x.o
+
+	if [ "${KV:0:3}" == "2.6" ]
+	then
+		doins em8300.ko bt865.ko adv717x.ko
+	else
+		doins em8300.o bt865.o adv717x.o
+	fi
 
 	# Docs
 	dodoc README-modoptions \

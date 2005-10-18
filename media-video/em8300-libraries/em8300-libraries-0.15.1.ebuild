@@ -1,23 +1,25 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/em8300-libraries/Attic/em8300-libraries-0.12.0-r1.ebuild,v 1.10 2004/07/14 21:33:42 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/em8300-libraries/Attic/em8300-libraries-0.15.1.ebuild,v 1.1 2005/10/18 14:43:39 arj Exp $
+
+inherit flag-o-matic
 
 DESCRIPTION="em8300 (RealMagic Hollywood+/Creative DXR3) video decoder card libraries"
 HOMEPAGE="http://dxr3.sourceforge.net"
 SRC_URI="mirror://sourceforge/dxr3/${P/-libraries/}.tar.gz"
 
 DEPEND="media-video/em8300-modules
-	x11-libs/gtk+"
+	gtk? ( x11-libs/gtk+ )"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86"
-IUSE=""
-
+KEYWORDS="~amd64 ~ppc ~x86"
+IUSE="gtk"
 
 src_unpack () {
 
 	unpack ${A}
+
 	cd ${WORKDIR}
 	mv ${A/.tar.gz/} ${P}
 
@@ -28,9 +30,20 @@ src_unpack () {
 	    Makefile.in > Makefile.in.hacked
 	mv Makefile.in.hacked Makefile.in
 
+	cd em8300setup
+	mv em8300setup.c em8300setup.c.old
+	sed -e "s:/usr/share/misc/em8300.uc:/usr/share/em8300/em8300.uc:g" \
+	       < em8300setup.c.old > em8300setup.c
+	rm em8300setup.c.old
+
 }
 
-src_compile ()  {
+src_compile ()	{
+
+	use amd64 && append-flags -fPIC
+
+	local myconf
+	use gtk || myconf="${myconf} --disable-gtktest"
 
 	./configure \
 		--prefix=/usr \
@@ -59,10 +72,6 @@ src_install () {
 	insinto /usr/share/em8300
 	doins modules/em8300.uc
 
-	#this isn't how the installer does this, but it makes more
-	#sense than copying it like they do.
-	dosym /usr/share/em8300/microcode_upload.pl /usr/bin/em8300init
-
 	dodoc AUTHORS COPYING ChangeLog NEWS README
 
 }
@@ -71,12 +80,12 @@ pkg_postinst() {
 
 	einfo
 	einfo "The em8300 libraries and modules have now beein installed,"
-	einfo "you will probably want to add /usr/bin/em8300init to your"
+	einfo "you will probably want to add /usr/bin/em8300setup to your"
 	einfo "/etc/conf.d/local.start so that your em8300 card is "
 	einfo "properly initialized on boot."
 	einfo
 	einfo "If you still need a microcode other than the one included"
-	einfo "with the package, you can simply use em8300init <microcode.ux>"
+	einfo "with the package, you can simply use em8300setup <microcode.ux>"
 	einfo
 
 }
