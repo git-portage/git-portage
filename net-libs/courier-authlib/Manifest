@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d59c188617d2aed926a0d49c1fb91f96 courier-authlib-0.55.ebuild 6057
 MD5 1639b87658242c2406f7f7f8deda7388 metadata.xml 334
 MD5 ead53e30977f8d368de26fae5a67ad32 courier-authlib-0.53.ebuild 5903
@@ -16,3 +19,10 @@ MD5 535d72419715dfcd4a6c00fd8708c63e files/digest-courier-authlib-0.57 74
 MD5 380c06d7560d80b3fcc49f611ec57391 files/courier-authlib-initd 1049
 MD5 535d72419715dfcd4a6c00fd8708c63e files/digest-courier-authlib-0.57-r1 74
 MD5 6fa78b5922594232cd149eb6d6e02b5a files/digest-courier-authlib-0.56 74
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDVGaCJrHF4yAQTrARAj2LAKC09h/sAOtxBv05j9ZRi0vTmF17hgCffJoJ
+ETTxpICP/ovLdxSlVbXFr3g=
+=yCUN
+-----END PGP SIGNATURE-----
