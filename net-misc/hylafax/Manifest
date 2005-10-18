@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d82acf1bcf0f7f9e181d6a2821292f2e metadata.xml 435
 MD5 21516d5d24d3ba17d8f1540c8c7f876f hylafax-4.2.2.ebuild 3825
 MD5 6e72cb7e2ed5c9704c118920d995a80d ChangeLog 11446
@@ -16,3 +19,10 @@ MD5 e1c4b78af20d5e332db1aef29080caf7 files/digest-hylafax-4.2.1-r2 66
 MD5 61b6d16148a84723c2996b519a57d498 files/digest-hylafax-4.2.0-r3 66
 MD5 393322f25c85e29fe90c0d2cbe503833 files/digest-hylafax-4.2.2 66
 MD5 c4edcc178e6eeca8ec4680be0790e6da files/hylafax-4.2.0-fPIC.patch 1627
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDVHCqJrHF4yAQTrARAibkAJ0T/S3orqIlhh5ahek5iPOccbOxNgCfcA8D
+91Fg7bqlmzsVf+nY/f3Je/g=
+=4H/3
+-----END PGP SIGNATURE-----
