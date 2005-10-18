@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 d32b422eba97956ff1c4b2d270460b9a ChangeLog 15690
 MD5 6ca52fbed898edc06399865fb0634ade libtool-1.5.20.ebuild 5130
@@ -33,3 +36,10 @@ MD5 c7faa473d0ebb7cddcae5fb6e76ed29d files/1.5.20/libtool-1.5.20-override-LD_LIB
 MD5 2196d46d17a239f4b4d7629ca264a9ff files/1.5.10/libtool-1.5.10-locking.patch 513
 MD5 6a91891583a50a0bc2124ee61814b7b8 files/1.5.10/libtool-1.5.10-portage.patch 2895
 MD5 7e914d56a9e704e071b385ca3380a974 files/1.5.10/libtool-1.5.10-version-checking.patch 1841
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDVPKkJrHF4yAQTrARAuyIAKCX585d9MtFyQ12UavQaLDAMyaXowCgqjiE
+KhLP3phZ/qAahGBFDKjbiuU=
+=UKJU
+-----END PGP SIGNATURE-----
