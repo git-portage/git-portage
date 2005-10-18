@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e6e362ff10627e5211b949725a94cf19 cairo-1.0.2.ebuild 1554
 MD5 1d2ad415e2e6db1a58640bb93b15a34f cairo-0.4.0.ebuild 994
 MD5 ea284a6e24864155e0176859cbddf1b3 metadata.xml 335
@@ -15,3 +18,10 @@ MD5 2a0e4de10c4b8aacdb9b5991825b30d5 files/digest-cairo-0.3.0-r2 63
 MD5 8045b9ac7481eb952f3c2fdfda944c65 files/digest-cairo-0.1.23-r1 64
 MD5 6600a332745a27c0333f2c8193a805fa files/cairo-1.0.2-pkg_macro.patch 542
 MD5 f84da26023eb9d5a29079fbccc555523 files/digest-cairo-0.4.0 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDVPzbJrHF4yAQTrARAgEJAJ0V/SlqGRKLB3HEXmpZq9bRTeFM0wCgtmUz
+p8RpvyVwqdfLg5+YAuh0Q0Q=
+=MqV3
+-----END PGP SIGNATURE-----
