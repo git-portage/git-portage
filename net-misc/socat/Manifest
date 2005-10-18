@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 17a9be2cf8cb9f24e7e5b398392483b4 metadata.xml 224
 MD5 178c7731706c17a7a8c94613c5a8053d ChangeLog 3227
 MD5 b6333d9d43942f7e98f845361fc85944 socat-1.4.2.0-r1.ebuild 1098
@@ -12,3 +15,10 @@ MD5 c69f1c15c04237f76ac1c77d96a70dc0 files/digest-socat-1.4.3.0-r1 66
 MD5 7e75e101e793cb7f39eddab4eeb0d286 files/digest-socat-1.4.2.0-r1 66
 MD5 3e1450e1811fbf675f8069ed1bbe2a18 files/digest-socat-1.4.0.3 66
 MD5 7e75e101e793cb7f39eddab4eeb0d286 files/digest-socat-1.4.2.0 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDVHRvJrHF4yAQTrARAisoAKCLivNbiYAC6DKJUQ4bo6jPPaK1XACeOump
+61D7Aqy7HLp7qmSuuAbk9G8=
+=z8CA
+-----END PGP SIGNATURE-----
