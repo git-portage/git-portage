@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e9914343b13388692a7ed11361d53724 metadata.xml 218
 MD5 80d159bc59c41fccb02cea04b3969e01 ChangeLog 12608
 MD5 79cfb94890d2d1d32fb0331bc01cc022 jack-audio-connection-kit-0.99.0-r3.ebuild 2318
@@ -21,3 +24,10 @@ MD5 b5dc5c728b1bdc6c5ebf5e54dc3ca246 files/jack-audio-connection-kit-0.98.1-conf
 MD5 e1e0561e8f67b2f527014a57f5eb7a05 files/digest-jack-audio-connection-kit-0.99.0-r2 84
 MD5 a3265365ae4f49605813783bb1b87306 files/jack-audio-connection-kit-0.100.0-driver_interface.patch 374
 MD5 8e9c72734364a9d7e4a6d781e13beec8 files/jack-audio-connection-kit-transport.patch 309
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDVFSmJrHF4yAQTrARAtzzAKCLAruTHTTMA/Kt/suqKdDGnzyp3ACfVhRJ
+cF71OB18zdo4UNuujPHSc5M=
+=yfku
+-----END PGP SIGNATURE-----
