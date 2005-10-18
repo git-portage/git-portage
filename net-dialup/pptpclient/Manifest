@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 91a738e62b5ea1adbef4717455f58c19 pptpclient-1.5.0-r1.ebuild 1074
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
 MD5 736ebe7bbf50dd2a9a7ddae04fac4a87 ChangeLog 5023
@@ -12,3 +15,10 @@ MD5 dad6352a156cbe6ce71b057f50af2eec files/options.pptp 359
 MD5 437731fcd809ae5dd2adfc4bd5746c09 files/digest-pptpclient-1.7.0 129
 MD5 10a1583f3984e35a544b59b0d9595b2c files/digest-pptpclient-1.5.0-r2 135
 MD5 eeee374ec64214d7f9c26a21ce8f4a36 files/new-mppe/options.pptp 340
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDVGCzJrHF4yAQTrARAuq/AJ4/FzOpW9pe3D+++5jl2Uh7UTx1pACgpgr3
+gCZkXfX0btITiBbLXzU6psE=
+=26/9
+-----END PGP SIGNATURE-----
