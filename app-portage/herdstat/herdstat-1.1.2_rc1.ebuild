@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/herdstat/Attic/herdstat-1.1.2_alpha5.ebuild,v 1.1 2005/09/30 07:00:26 ka0ttic Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/herdstat/Attic/herdstat-1.1.2_rc1.ebuild,v 1.1 2005/10/19 15:45:11 ka0ttic Exp $
 
 inherit bash-completion
 
@@ -12,22 +12,18 @@ RESTRICT="primaryuri"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~mips ~ppc ~sparc ~x86"
-IUSE="debug doc curl ncurses"
+IUSE="debug doc ncurses"
 
-RDEPEND=">=dev-libs/xmlwrapp-0.5.0
-	curl? ( net-misc/curl )"
+RDEPEND=">=dev-cpp/libherdstat-0.1.0"
 DEPEND="${RDEPEND}
 	>=sys-apps/sed-4
 	dev-util/pkgconfig
 	doc? ( dev-python/docutils )"
-RDEPEND="${RDEPEND}
-	!curl? ( net-misc/wget )"
 
 src_compile() {
 	econf \
 		$(use_enable debug) \
 		$(use_with ncurses) \
-		$(use_with curl) \
 		|| die "econf failed"
 
 	emake || die "emake failed"
