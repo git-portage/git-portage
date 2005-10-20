@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/doxygen/Attic/doxygen-1.4.1.ebuild,v 1.12 2005/07/28 20:52:24 caleb Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-doc/doxygen/Attic/doxygen-1.4.5.ebuild,v 1.1 2005/10/20 06:34:43 nerdboy Exp $
 
 inherit eutils
 
@@ -10,34 +10,35 @@ SRC_URI="ftp://ftp.stack.nl/pub/users/dimitri/${P}.src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm hppa ia64 ~mips ppc ~ppc-macos ppc64 ~s390 sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~s390 ~sparc ~x86"
 IUSE="doc qt tetex"
 
 RDEPEND="media-gfx/graphviz
 	qt? ( =x11-libs/qt-3* )
-	doc? ( tetex? ( virtual/tetex )
-	virtual/ghostscript )"
+	tetex? ( virtual/tetex )
+	virtual/ghostscript"
 DEPEND=">=sys-apps/sed-4
 	${RDEPEND}"
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	# use CFLAGS and CXXFLAGS
+	# use CFLAGS and CXXFLAGS (on linux and ppc-macos)
 	sed -i.orig -e "s:^\(TMAKE_CFLAGS_RELEASE\t*\)= .*$:\1= ${CFLAGS}:" \
 		-e "s:^\(TMAKE_CXXFLAGS_RELEASE\t*\)= .*$:\1= ${CXXFLAGS}:" \
-		tmake/lib/linux-g++/tmake.conf
-	use ppc-macos && epatch ${FILESDIR}/bsd-configure.patch
+		tmake/lib/{linux-g++,macosx-c++}/tmake.conf
+	epatch ${FILESDIR}/doxygen-1.4.3-cp1251.patch
+	epatch ${FILESDIR}/doxygen-1.4.4-darwin.patch
 }
 
 src_compile() {
 	# set ./configure options (prefix, Qt based wizard, docdir)
-	local confopts="--prefix ${D}/usr"
+	local confopts="--prefix ${D}usr"
 	use qt && confopts="${confopts} --with-doxywizard"
 
 	# ./configure and compile
-	./configure ${confopts} || die '"./configure" failed.'
-	make DESTDIR="${D}" all || die '"make all" failed.'
+	./configure ${confopts} || die '"configure" failed.'
+	emake all || die 'emake failed'
 
 	# generate html and pdf (if tetex in use) documents.
 	# errors here are not considered fatal, hence the ewarn message
@@ -48,7 +49,7 @@ src_compile() {
 			addwrite /var/cache/fonts
 			addwrite /usr/share/texmf/fonts/pk
 			addwrite /usr/share/texmf/ls-R
-			make pdf || ewarn '"make docs" failed.'
+			make pdf || ewarn '"make pdf docs" failed.'
 		else
 			cp doc/Doxyfile doc/Doxyfile.orig
 			cp doc/Makefile doc/Makefile.orig
@@ -56,13 +57,14 @@ src_compile() {
 			sed -i.orig -e "s/@epstopdf/# @epstopdf/" \
 				-e "s/@cp Makefile.latex/# @cp Makefile.latex/" \
 				-e "s/@sed/# @sed/" doc/Makefile
-			make docs || ewarn '"make docs" failed.'
+			make docs || ewarn '"make html docs" failed.'
 		fi
 	fi
 }
 
 src_install() {
-	make install || die '"make install" failed.'
+	make DESTDIR=${D} MAN1DIR=share/man/man1 \
+		install || die '"make install" failed.'
 
 	dodoc INSTALL LANGUAGE.HOWTO LICENSE README VERSION
 
