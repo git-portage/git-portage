@@ -1,3 +1,4 @@
-MD5 15a564e067a21abd1a5ad034c9311fa2 ChangeLog 247
+MD5 70a7d730f277d54f29af19f12309be3d ChangeLog 338
 MD5 f3104d3b19c1294bceb7df3f517b2664 files/digest-switchtower-0.9.0 65
-MD5 7afb026089ed5ee489006762f99f1a0d switchtower-0.9.0.ebuild 554
+MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
+MD5 d26df274faeab890212209443f111d97 switchtower-0.9.0.ebuild 551
