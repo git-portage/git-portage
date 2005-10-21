@@ -1,6 +1,6 @@
 MD5 e0fac43400bd894a9783543aa3108cd8 kasablanca-0.4.0.1.ebuild 1423
 MD5 7b4e2f4b9b36c17a4e8c4906d8a8c289 kasablanca-0.4.0.2.ebuild 657
-MD5 4001dd059bf3f63f235472fbf60c41db ChangeLog 2596
+MD5 ddb1bccef1def7602111da26f319ebbb ChangeLog 2718
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
 MD5 386f5c1b7f72dccddc10e6fbd86018d7 files/kasablanca-0.4.0.2-64bit.patch 583
 MD5 9ebcacc290d963ccd9b9b8c44e531cb0 files/digest-kasablanca-0.4.0.1 70
