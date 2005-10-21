@@ -9,4 +9,4 @@ MD5 48002ae17f4c768412ac70a33023d09d files/vzctl-2.7.0.23-gentoo_etc_vz.patch 71
 MD5 b55bfb88b955107a0f0e6c5aaef21723 metadata.xml 162
 MD5 9dd7479c278946fc668a457f0256d77f vzctl-2.7.0.21.ebuild 1577
 MD5 67c5b5981b6aefbbdac3ce516b3a7ddb vzctl-2.7.0.22.ebuild 1575
-MD5 6c530cb771970844edd079a7ba5dfa50 vzctl-2.7.0.23.ebuild 1578
+MD5 4f0e8a8008b3f3457e219a1da52c1c12 vzctl-2.7.0.23.ebuild 1578
