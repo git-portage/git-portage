@@ -1,17 +1,9 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 98b64efbbebc1f4c6169d84df691a970 metadata.xml 504
-MD5 fc7310ac8a76dbf916899a8be2cc2163 openvz-sources-022.034.ebuild 907
-MD5 c5e336aa5626b2a04adff471beda0418 ChangeLog 586
-MD5 34e5c7bbd7baf200744ab5f77965b434 openvz-sources-022.038.ebuild 907
-MD5 3ae3bab30256016777b44cbe71b53f76 files/linux-2.6.8.1.patch 711
+MD5 5fe633fe6fcafdcc630fbac4c51ddddd ChangeLog 775
 MD5 8059df244197e2bc4c9001148e7b089d files/digest-openvz-sources-022.034 143
 MD5 8c043ef00db5837ae78eb255a17fae6d files/digest-openvz-sources-022.038 143
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDNBYzmPFBzbX68WERAqs9AJ9MxCSEWQZ2ZuuOcbt2kcPSvtAg2ACfc6qK
-osdJZ43jIDK7DJS5HZckLGU=
-=haWm
------END PGP SIGNATURE-----
+MD5 6ac5cd5d3e68664565f7fd08b9acc803 files/digest-openvz-sources-022.044 143
+MD5 3ae3bab30256016777b44cbe71b53f76 files/linux-2.6.8.1.patch 711
+MD5 98b64efbbebc1f4c6169d84df691a970 metadata.xml 504
+MD5 6f9713e183976d6f9890b504daaa2e75 openvz-sources-022.034.ebuild 906
+MD5 34e5c7bbd7baf200744ab5f77965b434 openvz-sources-022.038.ebuild 907
+MD5 edeb6d062c01b84ee8a2ff9529b54b60 openvz-sources-022.044.ebuild 886
