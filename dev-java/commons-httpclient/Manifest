@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bcd30b640140aeb80e1107cbd5a88d10 ChangeLog 3254
 MD5 85a7cd05a7569930a02041ec5cda33ee commons-httpclient-2.0.1.ebuild 1692
 MD5 94cb3b6f257ce9c601940d42f3f71aec commons-httpclient-2.0.2.ebuild 1708
@@ -10,3 +13,10 @@ MD5 14cc53f92e92bd2504de2e82758f8532 files/digest-commons-httpclient-3.0_rc3 83
 MD5 35bcb566781a909ae25bac9979bf497c files/gentoo.diff 444
 MD5 20316ee59dc3bf35dd5c04778ae6882f files/jikes.diff 955
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDWQMmQiJ/wx066S4RAoybAJ9w+BbZhzwvC1KVEgaUo638SY9lzgCfY/uP
+Mrr5waNZfgUvghm599Yqgw4=
+=n3n/
+-----END PGP SIGNATURE-----
