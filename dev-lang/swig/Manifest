@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b2b34389f6f45306511f262788842462 ChangeLog 6608
 MD5 612242e40ef11cd73ec029e52f6a6e0d files/digest-swig-1.3.21 64
 MD5 23c0a3cf6bf490d36300b9ad06baf451 files/digest-swig-1.3.24 64
@@ -8,3 +11,10 @@ MD5 ee73f98bd5bd9c43b8ef87a8d380ed46 swig-1.3.21.ebuild 1922
 MD5 e27ffef811e03d0bffed935db35d13e9 swig-1.3.24.ebuild 1840
 MD5 240f7082d8efecdc1a4b91b3935d16b0 swig-1.3.25.ebuild 1664
 MD5 0faf06b52d38eff619ce18eb81b26654 swig-1.3.27.ebuild 1684
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDWqYsgIKl8Uu19MoRAj+FAJ9GI6XGhC6mNqG+0s88DThhdIIv/gCeJPhm
+hgA3FDHQ5q7/e4HeSDKpOv4=
+=rx5b
+-----END PGP SIGNATURE-----
