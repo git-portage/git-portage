@@ -1,4 +1,4 @@
-MD5 483ceec60027da236b48ad4a0e976e5c ChangeLog 12687
+MD5 4f0986be300de1b60d7c7a258c20ae3d ChangeLog 13247
 MD5 b84b32e9963589c0f2f76d98019b44d7 files/digest-mozilla-thunderbird-1.0.7 303
 MD5 34fc13a505bfb805c539a3b4f0b1bcbf files/digest-mozilla-thunderbird-1.0.7-r1 303
 MD5 1c810870d0c92c730341e491c310e2d4 files/icon/mozillathunderbird.desktop 184
@@ -8,5 +8,5 @@ MD5 07a5a1ce0146f1badc4e04849a9b1830 files/mozilla-thunderbird-1.0.6-gcc4.patch 
 MD5 1783f8e4678fb4731ccc67b4bfba1981 files/mozilla-thunderbird-1.0.7-gcc-4.0.2.patch 6861
 MD5 07f9a980afa2dde67554657c00b8be18 files/thunderbird-rpath-1.patch 1716
 MD5 ce23390351fe8020387d93ee29e09a3d metadata.xml 160
-MD5 4776b4ea3e33d958e014950674f8ce75 mozilla-thunderbird-1.0.7-r1.ebuild 5710
+MD5 2896cc99ffbb38fe463d98feb1e954f0 mozilla-thunderbird-1.0.7-r1.ebuild 5640
 MD5 55697b53bd932c2ea9c20d3d5e3b771e mozilla-thunderbird-1.0.7.ebuild 5632
