@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3519c93c8e8fc7439818dc2e716d553f ChangeLog 6387
 MD5 6b4c83400b7b7a44afb53e1a7ac388af metadata.xml 300
 MD5 7bde7e05d6c25d018346d3e5a453b580 partimage-0.6.2.ebuild 1708
@@ -24,3 +27,10 @@ MD5 86ccd8a7d116f22182ae60e01da1bfff files/partimaged.init 756
 MD5 938ecb802f7e26ff8df88404f0648c7c files/partimagedusers.5 1263
 MD5 b854c74900be1967b69b5997a434897c files/servercert.cnf 1096
 MD5 3bbd1e2fc0dd50034c600d01d08e8997 files/digest-partimage-0.6.4-r4 68
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDXBDQgMUyd/cdjWsRAn9sAJ4srUy5T6LloLFtiX6ie5CuPavxAACeJruR
+RZtjGzAVwmyCuMfcIYhV/lw=
+=ADr+
+-----END PGP SIGNATURE-----
