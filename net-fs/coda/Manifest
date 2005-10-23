@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a1ccb711cf71f01ddb5118676c3a9bd1 ChangeLog 5333
 MD5 c048c72d0ae39dc5e46aa54d70669160 coda-6.0.10.ebuild 7736
 MD5 304c6f62d91a078ed731d55cb9a6d43e coda-6.0.11.ebuild 7659
@@ -13,3 +16,10 @@ MD5 fcba6f871a054b13f4f49b5c64c746f2 files/digest-coda-6.0.10 64
 MD5 90ab5e322be7ffed9b181e74c6c35072 files/digest-coda-6.0.11 64
 MD5 57ae3214fc33e1ba8d8d4d0406ad9afe files/digest-coda-6.0.12 64
 MD5 f905a614fde3a85e0adefb203ece18fc metadata.xml 321
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDW1zHMGnpIbeahxwRAi10AKCy5S3+9Mgh8CgrZ02Ts0Pv7l9EsQCgjf1Z
+Fwj94tV/X3wiCllx1bjiUhU=
+=9uNn
+-----END PGP SIGNATURE-----
