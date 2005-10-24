@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 069348f252ace2327cf9be24687dd6ac ChangeLog 1233
 MD5 d54e8a4d5935b1e97cff81e856bbf81a files/digest-vpnc-0.2 69
 MD5 a39fb4aa56f341f55789da220fe25c22 files/digest-vpnc-0.2_pre7 72
@@ -10,3 +13,10 @@ MD5 39d4e738948eab214d837d8132a175ec vpnc-0.2.ebuild 816
 MD5 91d0df2f6face8216eb31781c454707f vpnc-0.2_pre7.ebuild 823
 MD5 902f606380fea4093d70e3c080cc1054 vpnc-0.3.2.ebuild 854
 MD5 b0939d68e6a35e645e2969fe80634358 vpnc-0.3.3.ebuild 887
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDXJvmr2QksT29OyARAnJzAJwOUS5egi+1FEJUI5HP70TdtPtrygCbBtxC
+yVD6Aq9a94AM7ulC0aO3zxY=
+=mNqp
+-----END PGP SIGNATURE-----
