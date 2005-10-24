@@ -1,4 +1,4 @@
-MD5 4d172137c43dff7ad18556ee7184c2fc ChangeLog 9158
+MD5 a716a35a72dc9477eb917b3e15b5419a ChangeLog 9158
 MD5 ea7e00b7c49179d3961458a98aee9d6c files/digest-graphviz-1.10 66
 MD5 cea8244a5db85a3bc5e74e4ecd3c9a2b files/digest-graphviz-1.12 66
 MD5 54cdc52906c56a19e4e09cd0773d4633 files/digest-graphviz-1.12-r1 139
@@ -18,7 +18,7 @@ MD5 6f4c558cccabd9d79fe071b4b21fa67b files/graphviz-2.4.conf 236
 MD5 2339df982693f89bc4ea845062b0597d graphviz-1.10.ebuild 1276
 MD5 56c7e33463f29fd71f4af44c0fa687a5 graphviz-1.12-r1.ebuild 1913
 MD5 3cfddfbe2fa0fe541cb4243d9e109e69 graphviz-1.12.ebuild 1408
-MD5 885ceebba109e987a9538733178f3139 graphviz-1.16-r1.ebuild 2226
+MD5 29acea9f458fe592d5b2e9aa66b470be graphviz-1.16-r1.ebuild 2228
 MD5 885ceebba109e987a9538733178f3139 graphviz-1.16.ebuild 2226
 MD5 4eead72d8554c4afd813032f4ce96ddf graphviz-2.2.1-r1.ebuild 1215
 MD5 a5310746d1a39897c72cd3fd0477646c graphviz-2.2.1.ebuild 1159
