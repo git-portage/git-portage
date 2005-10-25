@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 86a7a4861c91624ef8c32ff8ecf66eb5 mantisbt-0.19.3.ebuild 1072
 MD5 6ce1a5afa10c30a0f884d736ffcea1a3 mantisbt-1.0.0_rc2.ebuild 897
 MD5 e67a6491209c31c20ef7a49d4000398c ChangeLog 2728
@@ -7,3 +10,10 @@ MD5 35d6b6f4cf6611c8b6232b0c83c67f52 files/postinstall-en.txt 680
 MD5 072dd6da83b18a0497e3376b597b20ef files/digest-mantisbt-0.19.3 66
 MD5 97c947f30d07a6405194bed5981ceceb files/postinstall-en-1.0.0.txt 488
 MD5 8fd686995bd33035d403d5d0971ece6d files/0.19.3-debian.patch 593
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDXk5SEzitwsaoONoRAm03AJ48QQ5QoWiQ6uqxgzj07UflF2SsvACfVNrl
+taN+3lVPFZIi+cbbCTRrYyY=
+=z6Q+
+-----END PGP SIGNATURE-----
