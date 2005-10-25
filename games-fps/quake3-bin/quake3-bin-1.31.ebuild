@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/quake3/Attic/quake3-1.31.ebuild,v 1.21 2005/10/21 17:37:43 wolf31o2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/quake3-bin/Attic/quake3-bin-1.31.ebuild,v 1.1 2005/10/25 00:38:03 vapier Exp $
 
 inherit eutils games
 
@@ -14,7 +14,7 @@ KEYWORDS="-* amd64 x86"
 IUSE="dedicated opengl"
 RESTRICT="nostrip"
 
-RDEPEND="virtual/libc
+RDEPEND="sys-libs/glibc
 	opengl? ( virtual/opengl
 		virtual/x11 )
 	dedicated? ( app-misc/screen )
@@ -26,7 +26,7 @@ RDEPEND="virtual/libc
 			>=media-video/ati-drivers-8.8.25-r1 ) ) )"
 
 S=${WORKDIR}
-dir=${GAMES_PREFIX_OPT}/${PN}
+dir=${GAMES_PREFIX_OPT}/quake3
 Ddir=${D}/${dir}
 
 pkg_setup() {
@@ -47,17 +47,17 @@ src_install() {
 
 	exeinto ${dir}
 	insinto ${dir}
-	doexe bin/x86/{quake3.x86,q3ded}
+	doexe bin/x86/{quake3.x86,q3ded} || die "doexe"
 	doins quake3.xpm README* Q3A_EULA.txt
-	games_make_wrapper quake3 ./quake3.x86 "${dir}" "${dir}"
-	games_make_wrapper q3ded ./q3ded "${dir}" "${dir}"
+	games_make_wrapper quake3-bin ./quake3.x86 "${dir}" "${dir}"
+	games_make_wrapper q3ded-bin ./q3ded "${dir}" "${dir}"
 
-	newinitd ${FILESDIR}/q3ded.rc q3ded
-	newconfd ${FILESDIR}/q3ded.conf.d q3ded
+	newinitd "${FILESDIR}"/q3ded.rc q3ded
+	newconfd "${FILESDIR}"/q3ded.conf.d q3ded
 	doicon quake3.xpm
 
 	prepgamesdirs
-	make_desktop_entry quake3 "Quake III Arena" quake3.xpm
+	make_desktop_entry quake3-bin "Quake III Arena (binary)" quake3.xpm
 }
 
 pkg_postinst() {

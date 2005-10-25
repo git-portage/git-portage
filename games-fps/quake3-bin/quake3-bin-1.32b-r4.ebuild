@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/quake3/Attic/quake3-1.32b-r3.ebuild,v 1.22 2005/10/21 17:37:43 wolf31o2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/quake3-bin/Attic/quake3-bin-1.32b-r4.ebuild,v 1.1 2005/10/25 00:38:03 vapier Exp $
 
 inherit eutils games
 
@@ -10,11 +10,11 @@ SRC_URI="ftp://ftp.idsoftware.com/idstuff/quake3/linux/linuxq3apoint-${PV}-3.x86
 
 LICENSE="Q3AEULA"
 SLOT="0"
-KEYWORDS="-* x86 amd64"
-IUSE="dedicated opengl"
+KEYWORDS="-* amd64 x86"
+IUSE="cdinstall dedicated opengl"
 RESTRICT="nostrip"
 
-RDEPEND="virtual/libc
+RDEPEND="sys-libs/glibc
 	opengl? ( virtual/opengl
 		virtual/x11 )
 	dedicated? ( app-misc/screen )
@@ -23,10 +23,11 @@ RDEPEND="virtual/libc
 		opengl? (
 			app-emulation/emul-linux-x86-xlibs
 			|| ( >=media-video/nvidia-glx-1.0.6629-r3
-			>=media-video/ati-drivers-8.8.25-r1 ) ) )"
+			>=media-video/ati-drivers-8.8.25-r1 ) ) )
+	cdinstall? ( games-fps/quake3-data )"
 
 S=${WORKDIR}
-dir=${GAMES_PREFIX_OPT}/${PN}
+dir=${GAMES_PREFIX_OPT}/quake3
 Ddir=${D}/${dir}
 
 pkg_setup() {
@@ -39,26 +40,34 @@ src_unpack() {
 }
 
 src_install() {
-	insinto ${dir}/baseq3
-	doins baseq3/*.pk3
-	mv Docs ${Ddir}/
-	insinto ${dir}/missionpack
-	doins missionpack/*.pk3
-	mv pb ${Ddir}/
+	if use cdinstall ; then
+		dodir ${dir}/{baseq3,missionpack}
+		for pk3 in baseq3/*.pk3 missionpack/*.pk3 ; do
+			dosym ${GAMES_DATADIR}/quake3/${pk3} ${dir}/${pk3}
+		done
+	else
+		insinto ${dir}/baseq3
+		doins baseq3/*.pk3 || die "ins baseq3"
+		insinto ${dir}/missionpack
+		doins missionpack/*.pk3 || die "ins missionpack"
+	fi
+
+	insinto ${dir}
+	doins -r Docs pb || die "ins docs/pb"
 
 	exeinto ${dir}
 	insinto ${dir}
-	doexe bin/Linux/x86/{quake3.x86,q3ded}
+	doexe bin/Linux/x86/{quake3.x86,q3ded} || die "doexe"
 	doins quake3.xpm README* Q3A_EULA.txt
-	games_make_wrapper quake3 ./quake3.x86 "${dir}" "${dir}"
-	games_make_wrapper q3ded ./q3ded "${dir}" "${dir}"
+	games_make_wrapper quake3-bin ./quake3.x86 "${dir}" "${dir}"
+	games_make_wrapper q3ded-bin ./q3ded "${dir}" "${dir}"
 
-	newinitd ${FILESDIR}/q3ded.rc q3ded
-	newconfd ${FILESDIR}/q3ded.conf.d q3ded
-	doicon quake3.xpm
+	newinitd "${FILESDIR}"/q3ded.rc q3ded
+	newconfd "${FILESDIR}"/q3ded.conf.d q3ded
+	newicon quake3.xpm quake3-bin.xpm
 
 	prepgamesdirs
-	make_desktop_entry quake3 "Quake III Arena" quake3.xpm
+	make_desktop_entry quake3-bin "Quake III Arena (binary)" quake3-bin.xpm
 }
 
 pkg_postinst() {
@@ -67,9 +76,11 @@ pkg_postinst() {
 	ewarn "There are two possible security bugs in this package, both causing a	denial"
 	ewarn "of service.  One affects the game when running a server, the other when running"
 	ewarn "as a client.  For more information, see bug #82149."
-	echo
-	einfo "You need to copy pak0.pk3 from your Quake3 CD into ${dir}/baseq3."
-	einfo "Or if you have got a Window installation of Q3 make a symlink to save space."
+	if ! use cdinstall ; then
+		echo
+		einfo "You need to copy pak0.pk3 from your Quake3 CD into ${dir}/baseq3."
+		einfo "Or if you have got a Window installation of Q3 make a symlink to save space."
+	fi
 	if use dedicated; then
 		echo
 		einfo "To start a dedicated server, run"
