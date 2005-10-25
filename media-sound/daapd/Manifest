@@ -1,5 +1,5 @@
-MD5 24134d107499a585552a174cbf79458c ChangeLog 3652
-MD5 f0bca3de7b15198b9009067c5432c1da daapd-0.2.4a-r2.ebuild 1724
+MD5 7033ecab9f8c5f16aa4dec249f03e207 ChangeLog 3928
+MD5 edeeb9b70969437b5920281d0d7637bc daapd-0.2.4a-r2.ebuild 1725
 MD5 31dc37e250f18a48db2181a27bd4f1a8 files/daapd-0.2.4-gentoo.patch 1547
 MD5 a1337fb36f64debbe8643a95d2231f25 files/daapd-0.2.4a-defaults.patch 617
 MD5 3beda326653c14c1fbd33c762af01e2e files/daapd.conf.d 673
