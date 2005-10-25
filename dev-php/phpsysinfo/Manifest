@@ -1,5 +1,5 @@
 MD5 b80ef71c5139b545da3f3f470fee3e15 phpsysinfo-2.3-r2.ebuild 1132
-MD5 5fe54f9a208e6af1e42ce93bd106cc4b ChangeLog 4667
+MD5 caf6e89c84aad2bee086c412e24fa205 ChangeLog 4751
 MD5 c339473e0ff43da76eb2f2607c441921 metadata.xml 280
 MD5 b31f7b9dcef2784b2ba530a58585e35c files/phpsysinfo-2.3-sparc.patch 1622
 MD5 501fae5353e496d97e246bbc33197476 files/phpsysinfo-2.3-xss-and-path.patch 4327
