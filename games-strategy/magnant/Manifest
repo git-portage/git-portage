@@ -1,3 +1,4 @@
+MD5 c43ceb290ba190bc0de9c834b4657723 ChangeLog 348
 MD5 8f7f9fcf2d1539b169755c83431a4131 files/digest-magnant-2.00 74
-MD5 ceada51cb6ca434340e790d688842fc5 files/magnant 62
-MD5 b3a794b69320abc38583d7e0c5879f2e magnant-2.00.ebuild 683
+MD5 778a7e9f257948cdca7c648b1f8abf26 magnant-2.00.ebuild 1007
+MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
