@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 feb6391ece9afa87e4d19534b1ccb996 ChangeLog 31540
 MD5 b5b7f947ffb9e6c19f7457ff7c14d0db files/1.0.6111/conftest_koutput_includes.patch 1082
 MD5 762e6f6e16aa6dd5b2469e99fe8decd3 files/1.0.6111/nv-pci_find_class.patch 2903
@@ -51,3 +54,10 @@ MD5 4005c9a8094dcdfcba1fdec1fc2dfd9d nvidia-kernel-1.0.7174.ebuild 3991
 MD5 6aba502097ccdfa8ae9697ecfbb42383 nvidia-kernel-1.0.7667.ebuild 4507
 MD5 731d9029e10a2cc3667dcb12b80be70c nvidia-kernel-1.0.7676-r1.ebuild 4642
 MD5 bb1452c4b0662d0852e6a817b1058819 nvidia-kernel-1.0.7676.ebuild 4520
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDYc+HOpjtAl+gMRURAiEXAJ0WkUx0YJk+7OMxId8FuSVq+mpBjwCfSO9p
+Xu3W3JFcw6JvdShTk+ZVBmM=
+=VVYh
+-----END PGP SIGNATURE-----
