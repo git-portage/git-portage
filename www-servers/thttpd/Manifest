@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 83414b97f4d5beb3e67f1e9f04612630 ChangeLog 2323
 MD5 1e6cbba778f6846533ae1d69310e0c4e files/digest-thttpd-2.25b 64
 MD5 1e6cbba778f6846533ae1d69310e0c4e files/digest-thttpd-2.25b-r1 64
@@ -17,3 +20,10 @@ MD5 9638e3f16ce376f6259c3963fe78da43 thttpd-2.25b-r1.ebuild 1234
 MD5 3275e777a332a1525de88c1b458009c5 thttpd-2.25b-r2.ebuild 2088
 MD5 d8de2aefcaa09167a51a9b1451cfa21d thttpd-2.25b-r3.ebuild 2155
 MD5 9938eaae4deb104a092e8b4fc966a692 thttpd-2.25b.ebuild 1186
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDYkiLEZCkKN40op4RAh/SAJ9LWRNlQJqPlIQd7yW3LwT6smLqRwCgq8pQ
+zdr5rdT5mWcCucMyUM/Rjw8=
+=NJIX
+-----END PGP SIGNATURE-----
