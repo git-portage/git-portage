@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 371ae0d78858d1fe8ccf23054600c96e libwww-5.4.0-r4.ebuild 2151
 MD5 4c70dae7ce4964982b3ebe728633f9f0 libwww-5.4.0-r3.ebuild 1943
 MD5 883596986ec1f5b2902f1a85ef618a44 ChangeLog 6086
@@ -10,3 +13,10 @@ MD5 1866b237427a244b9923469b52f54473 files/libwww-5.4.0-autoconf-gentoo.diff 108
 MD5 0851f5aef9f0960efcdcabfdfa960341 files/libwww-5.4.0-disable-ndebug-gentoo.diff 370
 MD5 b0a8e638d02da0d0284e8555866f1f38 files/libwww-5.4.0-mysql-4.1.patch 1674
 MD5 6853cd848815d9446ef820e3a74878ca files/libwww-5.4.0-htbound.patch 13279
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDYoaAViELBEf1JB0RAr+WAKCAB8JGMmoM8mAOAASrO7mH+fRULgCfS9ca
+m0FmSIA+5GOkwWcSu0doT8M=
+=XOx4
+-----END PGP SIGNATURE-----
