@@ -1,8 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/gnump3d/Attic/gnump3d-2.8.ebuild,v 1.8 2005/02/18 21:53:19 chainsaw Exp $
-
-IUSE=""
+# $Header: /var/cvsroot/gentoo-x86/media-sound/gnump3d/Attic/gnump3d-2.9.6.ebuild,v 1.1 2005/10/28 15:49:18 eradicator Exp $
 
 inherit eutils
 
@@ -10,25 +8,25 @@ DESCRIPTION="A streaming server for MP3, OGG vorbis and other streamable files"
 HOMEPAGE="http://www.gnump3d.org/"
 SRC_URI="http://savannah.gnu.org/download/${PN}/${P}.tar.bz2"
 
-SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~ppc sparc amd64 ppc64"
+SLOT="0"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc-macos ~ppc64 ~sparc ~x86"
+IUSE=""
 
 DEPEND="sys-apps/sed"
-
 RDEPEND=">=dev-lang/perl-5.8.0"
 
-LIBDIR=/usr/$(get_libdir)/gnump3d
-
 pkg_setup() {
-	enewuser gnump3d '' '' '' nogroup || die
+	enewuser gnump3d '' '' '' nogroup || die "couldnt add new user"
+	LIBDIR=/usr/$(get_libdir)/gnump3d
 }
 
 src_unpack() {
 	unpack ${A}
+
 	cd ${S}/bin
-	for binary in gnump3d-index gnump3d2; do
-		sed -i "s,#!/usr/bin/perl,#!/usr/bin/perl -I${LIBDIR},g" $binary
+	for binary in gnump3d-index gnump3d-top gnump3d2; do
+		sed -i "s,/usr/bin/perl,/usr/bin/perl -I${LIBDIR},g" $binary
 	done
 }
 
@@ -46,13 +44,10 @@ src_install() {
 	dosed "s,PLUGINDIR,${LIBDIR},g" /etc/gnump3d/gnump3d.conf
 	dosed 's,^user *= *\(.*\)$,user = gnump3d,g' /etc/gnump3d/gnump3d.conf
 
-	dodoc AUTHORS ChangeLog README COPYING TODO
+	dodoc AUTHORS ChangeLog README TODO
 
-	exeinto /etc/init.d
-	newexe ${FILESDIR}/${PN}.init.d gnump3d
-
-	insinto /etc/conf.d
-	newins ${FILESDIR}/${PN}.conf.d gnump3d
+	newinitd ${FILESDIR}/${PN}.init.d gnump3d
+	newconfd ${FILESDIR}/${PN}.conf.d gnump3d
 
 	dodir /etc/env.d
 	cat >${D}/etc/env.d/50gnump3d <<EOF
@@ -78,3 +73,5 @@ Please edit your /etc/gnump3d/gnump3d.conf before running
 
 EOF
 }
+
+src_test() { :; }
