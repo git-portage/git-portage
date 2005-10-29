@@ -9,8 +9,8 @@ MD5 0320b3883c761bc3e567cc1f04a30e53 pygtk-0.6.11.ebuild 590
 MD5 7ffd433ac94020e9547ed67c93806054 pygtk-2.0.0.ebuild 925
 MD5 c98fd03000b9e5894521c5e818946aa7 pygtk-2.6.1.ebuild 2550
 MD5 45543d429e90ce33b89f93daf796ea3c pygtk-0.6.11-r1.ebuild 1874
-MD5 ea7eac904b8fca450cadf075a37306a5 pygtk-2.8.2.ebuild 2647
-MD5 5ff86cda32baf79f93f2cfb644a90cb0 ChangeLog 11891
+MD5 8a5d11f8b0e13bd05fddafef2ffa99a8 pygtk-2.8.2.ebuild 2648
+MD5 9e9ee1d1b61cc3189eff34f9ab5c1bab ChangeLog 11895
 MD5 8f03582f883634bcb2007a13b8350931 metadata.xml 487
 MD5 95c5edd167295a3eb9f3799bcfde09e9 pygtk-2.8.0-r2.ebuild 2646
 MD5 f7476a916a6add9b10800b1f5bf31e98 files/digest-pygtk-0.6.11 64
