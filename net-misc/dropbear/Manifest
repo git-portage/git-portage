@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7f21b5c13f3c9c1f5bbe297147664af5 ChangeLog 2836
 MD5 eca949c2fcf358c97cbf8071bf15e3ae dropbear-0.43.ebuild 1685
 MD5 68c50009dd00b23b70f2c214457a75cf dropbear-0.45.ebuild 1946
@@ -10,3 +13,10 @@ MD5 c7d976a23e72e6dce3c022e588def172 files/dropbear-0.46-dbscp.patch 500
 MD5 64abc6b82756a97391c12d730c8da084 files/dropbear.conf.d 352
 MD5 34fea1c967596ebcd6d10d38444f2b92 files/dropbear.init.d 913
 MD5 ef25f543b5438ee7595e2ae0f98a5093 metadata.xml 671
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDYx1bgIKl8Uu19MoRAlKCAJ4sv/HUOZcsDSvAYGrSVmUGpS6NoQCfTcaU
+R2lRNIuxYX4U5ktalJsjkI4=
+=QijB
+-----END PGP SIGNATURE-----
