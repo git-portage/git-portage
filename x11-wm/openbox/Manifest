@@ -1,4 +1,4 @@
-MD5 2fa629a9ae90b19af90ed0ed2a3e8288 ChangeLog 17818
+MD5 0588f82b56b2fdf20ee18a94291d4faf ChangeLog 17921
 MD5 90beb2a0e34f8958dd4c1f3312856d09 files/digest-openbox-3.2-r1 134
 MD5 90beb2a0e34f8958dd4c1f3312856d09 files/digest-openbox-3.2-r2 134
 MD5 519483ed863bad15ab1a51dc3a9d8e07 files/digest-openbox-3.3_rc1-r1 138
@@ -14,4 +14,4 @@ MD5 79cff5950461065f7c400f64e3ff2c92 openbox-3.2-r1.ebuild 1504
 MD5 51397ff312937bcbf2bfdb88761a0784 openbox-3.2-r2.ebuild 1580
 MD5 8fc6220800cdabdff66278338255b2d2 openbox-3.3_rc1-r1.ebuild 1732
 MD5 e798f2ca4ac6aea747d905d99447ed86 openbox-3.3_rc1-r2.ebuild 1734
-MD5 980388cf8e5c5d409199a9b3fc875284 openbox-3.3_rc2.ebuild 1645
+MD5 7713c362072065b5b6ab5548884aee91 openbox-3.3_rc2.ebuild 1644
