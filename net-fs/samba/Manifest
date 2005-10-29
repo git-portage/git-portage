@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 587a9d45dae727cd81d449d24a5c6cc4 ChangeLog 37314
 MD5 a81151c8ce798cbb8498e4e3723dd5bb files/README.gentoo 2458
 MD5 8655ff25f25d7e80f85a5e527d43e94b files/digest-samba-3.0.14a-r2 209
@@ -11,3 +14,10 @@ MD5 72241950493402811f88e16d77dcc69a samba-3.0.14a-r3.ebuild 9241
 MD5 c837e49c112f33ecbf1115e70d64366a samba-3.0.20-r1.ebuild 7920
 MD5 259a6f898dca1d3e7a0d2bf54e779c60 samba-3.0.20a.ebuild 8024
 MD5 d6d87646bad75b112b3420599ce91f0c samba-3.0.20b.ebuild 8474
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDY1f4j5H05b2HAEkRAhXaAJ4tEv6C3KSeWaKwIsTy64Q0TN1wiwCcCBNB
+j5fJh5kf+x3cRvbD+63PM0g=
+=BouQ
+-----END PGP SIGNATURE-----
