@@ -1,5 +1,5 @@
-MD5 11361b37b7d24b8790d1a42aedec67c5 ChangeLog 1861
-MD5 10c2af36181635215bb8fd99b34ee583 elementtree-1.2.6.ebuild 667
+MD5 d2c865a2c1ed2ead7da5ed2352e6e6af ChangeLog 1953
+MD5 1796a931211b58e0cfcd34541848b146 elementtree-1.2.6.ebuild 668
 MD5 baf9f7c965149e653abce13e5230443a elementtree-1.2.ebuild 588
 MD5 02d3d673dcd875a82306445f62f5b232 files/digest-elementtree-1.2 75
 MD5 34ece01bd958e2f6c0a493fb1fcee254 files/digest-elementtree-1.2.6 77
