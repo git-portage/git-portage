@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 08416a271189b338c6d60532b22bb315 ChangeLog 658
 MD5 1e69042f047a1a3f46ea8787d555ca7e files/digest-vim-spell-de-20051008 75
 MD5 376cb6ed1eadf5cd5c172d92a820d73f metadata.xml 387
 MD5 73a0507b2d383f328fd8b063c04cdc85 vim-spell-de-20051008.ebuild 328
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDY3ZuCHk4+ZoBpvsRAvsHAKC/NO8DAopZNMG0pNzzaeYj3Las5gCgvxE9
+pqFoV6b+RzT30Fu0Do76nbo=
+=xhuY
+-----END PGP SIGNATURE-----
