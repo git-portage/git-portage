@@ -1,6 +1,6 @@
 MD5 f6d358b62ab5873e1730216c378c42bd ChangeLog 4937
 MD5 0f21b057521b7d0447a3a34aefbe786e cmd5checkpw-0.22-r3.ebuild 1554
-MD5 bb4b73a355833ba0f1c3d3ed50ad2bf9 cmd5checkpw-0.30.ebuild 2007
+MD5 42bcedb35fe7017c15b2e2ad82ff318e cmd5checkpw-0.30.ebuild 2006
 MD5 ad1486139852e253c71bccd1c53083ba files/digest-cmd5checkpw-0.22-r3 67
 MD5 f06d212bf2d9d0028a1d87879b438a8e files/digest-cmd5checkpw-0.30 67
 MD5 970ef1c2abdda72f534516f43e89f20a files/euid.diff 931
