@@ -1,5 +1,5 @@
 MD5 87f8394a1eaec58d059d1283e326daac lha-114i-r5.ebuild 1107
-MD5 e470eb5963d8ee09bfd2727eeb56bba2 ChangeLog 3054
+MD5 ac6dd53f23a9165c38efa159e6c350ec ChangeLog 3281
 MD5 a1ef659783bc7224c48dbc07cf436788 files/lha-114i-sec.patch 1621
 MD5 bf52f3a88c9f88cdbaadda926050333e files/lha-114i-detect-cmd-extract-fail.patch 3151
 MD5 6cea43d9473cb137305f2a1c9175eac6 files/lha-114i-build.patch 1450
