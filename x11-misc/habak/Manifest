@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 06ff8f1b30cf1e2f38e2fde25a695700 ChangeLog 2320
 MD5 1eb9928171d8bff4312b6fdb48ec4f85 files/README.en 6729
 MD5 29141cd94765be7794ae60b9d1661d5a files/digest-habak-0.2.1 63
@@ -11,3 +14,10 @@ MD5 c5d633b98e31fe162b792d99a288924a habak-0.2.4.1.ebuild 653
 MD5 0a2ea0ea723d008a911010785063fe34 habak-0.2.4.ebuild 647
 MD5 b0d2f2e333d0797155fd26b106f0a5df habak-0.2.5.ebuild 657
 MD5 807f1ca77ed467a2c8207419eac9fa67 metadata.xml 222
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDZR9IwUpWvClEHQoRAu33AJwPCFSJRidcP1I5XKAtc5xpcfv5eACdEJTE
+GqU9+XeOaKQ7IqcyU76+x2Y=
+=Zjwo
+-----END PGP SIGNATURE-----
