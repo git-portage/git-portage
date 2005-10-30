@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7c2ea6c34dd5471e64c59ac868de233b ChangeLog 11043
 MD5 d3a321fa8b70eef6df11d7343a14fd02 files/2.4.7.20020116-hfsc.patch 9507
 MD5 2469b9a3673ce5a18fa92cfb7c98a71f files/2.6.12-rc1-esfq.patch 5677
@@ -28,3 +31,10 @@ MD5 24e2eb8ac403ef2934f26c3f36c479bf iproute2-2.6.11.20050330-r1.ebuild 2055
 MD5 a359582b72257ed8c6e907da77d89166 iproute2-2.6.11.20050330.ebuild 1995
 MD5 6965651f639e49b593086b4b1e5be994 iproute2-2.6.7.20040608-r1.ebuild 2375
 MD5 d0dad7daa0e6d356fc35f778fed36006 metadata.xml 225
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDZEkTgIKl8Uu19MoRAmx8AJ0V3e81/hNYvC+Xdscnoy/ve9VePwCdF2V+
+9KtNKslvHhN5vyc7Bac3Qpw=
+=wgk0
+-----END PGP SIGNATURE-----
