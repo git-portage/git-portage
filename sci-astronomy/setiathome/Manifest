@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 889a2cb49b48e516924b18a05b89a3f1 ChangeLog 6566
 MD5 5d17f0de19d8a17b19630e964e6af47e files/app_info.xml 300
 MD5 9a7e850d8e364823f360c347d3a37ff8 files/digest-setiathome-3.03-r1 342
@@ -13,3 +16,10 @@ MD5 6cef461cbc72a362b4384e70cc17e627 setiathome-3.03-r1.ebuild 2188
 MD5 705e061c6929d90f7ae75362a021bced setiathome-3.03-r2.ebuild 2142
 MD5 2e2e20a64df13c2d3aa9a8e5b7e48efd setiathome-3.08-r4.ebuild 2328
 MD5 c6ede11bb88bf231e44f63ca8c933ad4 setiathome-4.18-r1.ebuild 1515
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDZMq6ntT9W3vfTuoRAqtKAJ0X46wbuVbajalUISKNNKamHzFqxQCfR8nE
+jj/Tk8eO5pDnAfH/c270HHA=
+=m8H3
+-----END PGP SIGNATURE-----
