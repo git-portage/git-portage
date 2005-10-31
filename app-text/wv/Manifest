@@ -1,5 +1,4 @@
-MD5 25ad4c868925752d0ebdfba380cfb80f .wv-1.2.0.ebuild.swp 12288
-MD5 dadfa1fe3e6969fbbf48893d177fc5a0 ChangeLog 2925
+MD5 d66c1dcde786d780c9aef11f87253f7c ChangeLog 3059
 MD5 97079efa2a5256ad07ada6260b7ec298 files/digest-wv-1.0.0-r1 60
 MD5 79e495e6bfc4b192499c4d28f631ea01 files/digest-wv-1.0.3-r1 60
 MD5 46b9432b004237ad01179545e665cb16 files/digest-wv-1.2.0 60
@@ -9,4 +8,4 @@ MD5 f7e6bc9c507c536f3b48679fe2dfafba files/wv-1.0.3-libole2-readonly.patch 1053
 MD5 525c7299058f839eff524bc25c39267e metadata.xml 345
 MD5 6335e6111535a1ebd438e329cee9694e wv-1.0.0-r1.ebuild 1052
 MD5 0577e093bf220e56cb0c3072451c3f0b wv-1.0.3-r1.ebuild 1213
-MD5 888e5cb1bf7d168e687358ef6b688fa0 wv-1.2.0.ebuild 1269
+MD5 d6f866ea0fe1fe6b4dad96618dc07724 wv-1.2.0.ebuild 1037
