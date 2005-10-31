@@ -1,4 +1,4 @@
-MD5 888fe634c3f15e95dc293481bc4940bf ChangeLog 7254
+MD5 d488db4999a774213ac88afa0b1203f8 ChangeLog 7255
 MD5 389638f1d46b6c41cd4d87b471572f4b files/4-any/apache-1.3/70_mod_php.conf 484
 MD5 ee36e31632adb08b7abf70f78b5b2125 files/4-any/apache-2.0/70_mod_php.conf 485
 MD5 f0acca9c6387b8ca139d2849665bd16f files/4-any/php4-fastbuild.patch 9012
@@ -49,7 +49,7 @@ MD5 c9e2d252f3ae26871c06d35ebfe6fb1e files/digest-php-4.4.0-r2 221
 MD5 71facfede997494a03e635bc07a14a2f files/digest-php-5.0.4-r2 220
 MD5 96fdb35fc6f5b775c569db88d89200d7 files/digest-php-5.0.5-r2 143
 MD5 c58d07ca1c1235bbad9bccaec96fc062 metadata.xml 157
-MD5 cfb1fcb7f433303107d23329ee7fe723 php-4.3.11-r2.ebuild 8755
-MD5 9446542cccde9fc11f4c82716f3effb5 php-4.4.0-r2.ebuild 8757
-MD5 22d7c3b6a5ca3727ddc67edce737e606 php-5.0.4-r2.ebuild 5815
-MD5 f29cd9f7d7acfeecb8bf00145f7c55a8 php-5.0.5-r2.ebuild 5282
+MD5 f103552f91a89b2a01a7af3e546b80f8 php-4.3.11-r2.ebuild 8850
+MD5 4e500d2d3950816464e12d30a683a0fb php-4.4.0-r2.ebuild 8851
+MD5 8deedda3c7fb2fe1c6fba3bdf0264386 php-5.0.4-r2.ebuild 5909
+MD5 94d452c40e94cbe3775732802448ea52 php-5.0.5-r2.ebuild 5376
