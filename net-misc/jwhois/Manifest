@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1e4465f5f5187a6b57ed215d911ad807 jwhois-3.2.3.ebuild 745
 MD5 8650b911e7bd5abb5571edbc236a1c83 jwhois-3.2.0.ebuild 767
 MD5 1340e640f52c2106618adcf5200fc519 jwhois-3.2.2.ebuild 789
@@ -8,3 +11,10 @@ MD5 a3be5e722f33856d6bf281f4251e8b03 files/digest-jwhois-3.2.0 64
 MD5 8cbb8abe6a191a786d5b46109cda625d files/digest-jwhois-3.2.1 64
 MD5 7411f47db9ecd1d63caf18c87ef5c9db files/digest-jwhois-3.2.2 64
 MD5 bdae1dc474252cf39261057151097484 files/digest-jwhois-3.2.3 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDZ2rrKRy60XGEcJIRAklgAKCEJPR7EO5lvM2o2kgrpH2K7RK6hwCgpM8r
+jDla6+DzUflOKXTRMYQeY0Q=
+=ckmE
+-----END PGP SIGNATURE-----
