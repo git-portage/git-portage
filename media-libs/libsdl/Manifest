@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 615cbb0073743f48e5419333aa856525 ChangeLog 14679
 MD5 0c2020ec3ce37ea0612064c52d1014b1 files/1.2.6-alsa-1.0.0.patch 557
 MD5 4f1ce33c931d461bed06277f60341085 files/1.2.6-nobuggy-X.patch 568
@@ -40,3 +43,10 @@ MD5 458d9903cf678ea5065444a33f93e574 libsdl-1.2.8-r1.ebuild 5073
 MD5 73615ae9e9d33c956f8a802dab0f0897 libsdl-1.2.9-r1.ebuild 4661
 MD5 950a76c3f9f7cf9503758f5432319e2b libsdl-1.2.9.ebuild 4279
 MD5 baaaa69f33ef9027dac84ee4ff02773b metadata.xml 974
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDZtgEgIKl8Uu19MoRAtKTAJ4rmqStTQkQ4QWW8P4+xEhXt6KCGgCeONyv
+hnGvIdchbdasWPly8wv/lOk=
+=qi31
+-----END PGP SIGNATURE-----
