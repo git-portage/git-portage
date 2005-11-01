@@ -1,4 +1,4 @@
-MD5 baae4dfafa0fd2c0d6739b98b40338eb ChangeLog 6191
+MD5 31b7059103b5cfd987f1630fc1e631a3 ChangeLog 6191
 MD5 21abc06a6e969b1a6b5b1ca2f1f09474 files/digest-libdv-0.101 63
 MD5 d577f2ed689030f4f13088422f1fa185 files/digest-libdv-0.102 63
 MD5 2524a27d2f6e849452d1d5d1f97580ec files/digest-libdv-0.104 63
@@ -10,7 +10,7 @@ MD5 592d600ce50f0a107ecd5b348d434f9f files/libdv-0.99-2.6.patch 439
 MD5 db1c07312c8a5de3d64bc80c44b26d6e files/libdv-0.99-disablegtk.patch 3309
 MD5 9ff480f44ba52c721c629991852b4ddf libdv-0.101.ebuild 1147
 MD5 60942b2edbb86e8d72b2a8b583cb5e9c libdv-0.102.ebuild 1153
-MD5 b7073b484ff0d76e4a23f3ef26b9e3ea libdv-0.104-r1.ebuild 1327
+MD5 46ad4a8491145251881134cd131d5c4d libdv-0.104-r1.ebuild 1329
 MD5 4b6f2ab5770ea5c031c0cebdcd4e3c90 libdv-0.104.ebuild 1225
 MD5 9eddaa9f84b052f62b463beadff4dfe7 libdv-0.99-r1.ebuild 1169
 MD5 1427fcf4db28b76b675aae8bac20ab39 metadata.xml 274
