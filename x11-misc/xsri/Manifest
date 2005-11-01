@@ -1,4 +1,4 @@
-MD5 944d26430e9828f875cbb412638c8d09 ChangeLog 787
+MD5 7fa22eee186bde5df3957d463d6dae21 ChangeLog 389
 MD5 4c0ded822d575297d8ce3b6248aa2f5f files/digest-xsri-2.1.0 64
-MD5 c089e4586127d0dda3396887446f8184 metadata.xml 1083
-MD5 7a24f7f26754dea2843afc7af3a490dd xsri-2.1.0.ebuild 477
+MD5 9ba3ceca3ae81ec759fbb9a277c0e45c metadata.xml 165
+MD5 9e26d49bfa6f05dc7687bb5d14118753 xsri-2.1.0.ebuild 572
