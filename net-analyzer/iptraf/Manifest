@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0778f39c2d1240985f0e8c1ba4f16dc6 ChangeLog 4156
 MD5 301043df68f5969e9455c53d409a8c3e files/digest-iptraf-2.7.0-r1 138
 MD5 ddf09316d6ccb3f72355dbf82d9fd1e2 files/digest-iptraf-3.0.0 64
@@ -9,3 +12,10 @@ MD5 59493b3c2f0bb06541a55aeffd9f097c files/iptraf-3.0.0-linux-headers.patch 963
 MD5 ff7fbdbad9ee9726c93c7ae00b072900 iptraf-2.7.0-r1.ebuild 1455
 MD5 fbad68fe2caf5b78a9ee437bcd634377 iptraf-3.0.0.ebuild 1188
 MD5 a94566c6927ccaeca24681c25540624d metadata.xml 236
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDZwDFgIKl8Uu19MoRAndQAJ9WfkgeHdIvmouTQt7qpswmZIOLRQCaAzYl
+m8yM+XfJ9fO/m+Old40/Ib4=
+=Vhjt
+-----END PGP SIGNATURE-----
