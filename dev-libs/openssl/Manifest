@@ -42,6 +42,6 @@ MD5 685c33f8a3f1980105944ab3c23a346c openssl-0.9.6m.ebuild 3074
 MD5 8d0cc3c95e7be6bd21e6ea68e1e55971 openssl-0.9.7e-r2.ebuild 8797
 MD5 4a6626d9417b73b3cf097f2c7b088e2c openssl-0.9.7g-r1.ebuild 5534
 MD5 5529efcdf1ed36de4ad475f2c7e29ed8 openssl-0.9.7h.ebuild 5354
-MD5 4a35fa4f00af0e7983e25fe2ff52bea8 openssl-0.9.7i.ebuild 5354
+MD5 c767d38e05265d958e1238ac73b9bbb7 openssl-0.9.7i.ebuild 5391
 MD5 46e37d3c5d41a3350216b1ebc83b3238 openssl-0.9.8-r1.ebuild 5389
 MD5 f82f8ac87f99859031f6c7d34ec9a26d openssl-0.9.8a.ebuild 4562
