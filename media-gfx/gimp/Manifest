@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 86dd44b9cfacfe4b681b20e5ee102e91 ChangeLog 19480
 MD5 662e7b51f4c882429b73dea3263b39de files/digest-gimp-1.2.5 65
 MD5 5bd6fc067eba3828be1e3a49b4aa1c44 files/digest-gimp-2.2.6-r1 134
@@ -12,3 +15,10 @@ MD5 39d4983eff8a926fd6bc0b8bc122ee3f gimp-2.2.6-r1.ebuild 4307
 MD5 326e632efd23ae195f7be64beaaa659d gimp-2.2.8-r1.ebuild 4424
 MD5 d3d11252683dd54108025b6564f9ad0e gimp-2.2.9.ebuild 4312
 MD5 f4713bbf77ae895c7ff6c022a7a2f542 metadata.xml 222
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDZ1XA1ZcsMnZjRyIRAq1RAJsHoY4x9ce/mWV6EdtxZ5Bnv9f9XACfUzH9
+4y8KoxDcneO0b04pw20virE=
+=j35n
+-----END PGP SIGNATURE-----
