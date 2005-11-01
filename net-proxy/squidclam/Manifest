@@ -1,6 +1,16 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f6ed8aa035ae6886724db19558ee989c squidclam-0.18.ebuild 1625
 MD5 4c5a3744e5fb6b957f1343de90d8da87 ChangeLog 927
 MD5 0fcd3e06211b4df6185d71e97e6ff23f metadata.xml 296
 MD5 afa1c5c02baa3f0403152013469b625c squidclam-0.17.ebuild 1625
 MD5 7a831ed6b3ebd9b5c46d3b61a4f64d1c files/digest-squidclam-0.17 65
 MD5 d7ece3b9a1e907efa78faa1a3d8f999c files/digest-squidclam-0.18 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDZulVNSP4Vda7IdsRAvytAJwKnWXuFSxArGfu1kxR0bIkof5pdgCfeNux
+j6RBxwAfGZxRy2wqruldp+4=
+=Rw9t
+-----END PGP SIGNATURE-----
