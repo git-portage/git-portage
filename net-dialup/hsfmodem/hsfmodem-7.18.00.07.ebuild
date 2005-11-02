@@ -1,17 +1,21 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/hsfmodem/Attic/hsfmodem-7.18.00.03-r2.ebuild,v 1.4 2005/06/09 06:00:51 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/hsfmodem/Attic/hsfmodem-7.18.00.07.ebuild,v 1.1 2005/11/02 05:27:29 mrness Exp $
 
 inherit eutils
+
+#The document is the same as in hcfpcimodem, even if it has a different URL
+MY_DOC="100498D_RM_HxF_Released.pdf"
 
 DESCRIPTION="Linuxant's modem driver for Conexant HSF chipset"
 HOMEPAGE="http://www.linuxant.com/drivers/hsf/index.php"
 SRC_URI="x86? ( http://www.linuxant.com/drivers/hsf/full/archive/${P}full/${P}full.tar.gz )
-	amd64? ( http://www.linuxant.com/drivers/hsf/full/archive/${P}x86_64full/${P}x86_64full.tar.gz )"
+	amd64? ( http://www.linuxant.com/drivers/hsf/full/archive/${P}x86_64full/${P}x86_64full.tar.gz )
+	doc? ( http://www.linuxant.com/drivers/hsf/full/archive/${P}full/${MY_DOC} )"
 
 LICENSE="Conexant"
-KEYWORDS="-* x86 ~amd64"
-IUSE=""
+KEYWORDS="-* ~x86 ~amd64"
+IUSE="doc"
 SLOT="0"
 
 DEPEND="virtual/libc
@@ -28,13 +32,6 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
-	unpack ${A}
-
-	cd $MY_ARCH_S
-	epatch ${FILESDIR}/${P}-nvminstall.patch
-}
-
 src_compile() {
 	cd ${MY_ARCH_S}
 	emake all || die "make failed"
@@ -43,6 +40,8 @@ src_compile() {
 src_install () {
 	cd ${MY_ARCH_S}
 	make PREFIX=${D}/usr/ ROOT=${D} install || die "make install failed"
+
+	use doc && dodoc "${DISTDIR}/${MY_DOC}"
 }
 
 pkg_preinst() {
