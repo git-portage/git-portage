@@ -1,5 +1,5 @@
-MD5 88eff846d177bc7ac78538608a0ac1b7 boxbackup-0.09-r1.ebuild 2319
-MD5 645ace0f626289f9d5188f59fa9dfced ChangeLog 815
+MD5 9673dfd85a458200ae1812c0e871a58b boxbackup-0.09-r1.ebuild 2328
+MD5 b59e0359c6e51ca6e24ac8da02c21025 ChangeLog 1025
 MD5 ba0035547f2be94605ff4fda2e70cb31 metadata.xml 542
 MD5 d561b4735dee4eb7a3466f3d27c0f002 boxbackup-0.09.ebuild 2227
 MD5 c5bf24fdd27367aeea4b3833683683e7 files/bbstored.rc 526
