@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/boxbackup
 # Copyright 1999-2005 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.2 2005/09/22 17:19:51 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.3 2005/11/02 20:44:19 grobian Exp $
+
+*boxbackup-0.09-r1 (02 Nov 2005)
+
+  02 Nov 2005; Fabian Groffen <grobian@gentoo.org>
+  +boxbackup-0.09-r1.ebuild:
+  Added new version which uses client-only USE-flag to only install the client
+  (bug #109246)
 
   22 Sep 2005; Fabian Groffen <grobian@gentoo.org> boxbackup-0.09.ebuild:
   Fix for bug #106872 : tell enewuser which group the new user should belong to
