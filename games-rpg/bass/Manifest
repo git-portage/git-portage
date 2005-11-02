@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9526818a799e18c50c46b5815605faf9 ChangeLog 934
 MD5 32ab2a5448abfafc6296b07e98f2064b bass-1.2.ebuild 802
 MD5 3a55fe0961583fa19706d4c9d116f141 files/digest-bass-1.2 62
 MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDaEVOgIKl8Uu19MoRAu+/AJ93Hv/JnxZ5VPDAK8o5u/J2wgSJngCfXiAL
+6LfSPvRC7KRmlt2Kv5gykho=
+=kgmc
+-----END PGP SIGNATURE-----
