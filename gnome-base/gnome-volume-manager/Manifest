@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1dc9d4c8eb503b037e42ca0056f879da ChangeLog 5830
 MD5 fcd04d3a6284a16bdffaddaf7311cfe8 files/digest-gnome-volume-manager-1.2.1 79
 MD5 16d8909214e29b02eb989b948601461c files/digest-gnome-volume-manager-1.2.2 79
@@ -12,3 +15,10 @@ MD5 a9385b6ba060065fb7d55f25902e3bbf gnome-volume-manager-1.5.1.ebuild 1527
 MD5 0f67e70ef2099c779265301e2c6f84c5 gnome-volume-manager-1.5.3.ebuild 1490
 MD5 357f2d091b0d013dbbe3a9013d15e860 gnome-volume-manager-1.5.4.ebuild 1426
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDaK9Q1ZcsMnZjRyIRAvI5AJwI3IQSpTAy7XbI9P1VbQ8EqXTfWwCdEr9g
+NRV/S0WLYoHgJ/dTlfZCJhY=
+=br0d
+-----END PGP SIGNATURE-----
