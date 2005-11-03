@@ -4,6 +4,6 @@ MD5 ccae6ec1333b846db55deb7538155cc6 files/digest-lavaps-2.7 62
 MD5 ccae6ec1333b846db55deb7538155cc6 files/digest-lavaps-2.7-r1 62
 MD5 308abf7f4c9df163feabd98e62c1e9b6 files/lavaps-2.7-this-makes-it-compile.patch 2387
 MD5 a15004a13de3a670961ccbbacede755e lavaps-2.4.ebuild 562
-MD5 0f7910c4ca7a0731cb7ee414ecbc7d3d lavaps-2.7-r1.ebuild 986
+MD5 ddbeb041c4d84b30a3f05da9dd25ff70 lavaps-2.7-r1.ebuild 985
 MD5 52b28248c2ed3789ff2cf4fbb7912d34 lavaps-2.7.ebuild 869
 MD5 cdb11033a3fa6525334cecf938961c07 metadata.xml 166
