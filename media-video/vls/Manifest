@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9a345078cbfdf62f4d81db89dae17052 ChangeLog 2171
 MD5 c02a9033fcb3db177a39b972ffb0cc6d files/digest-vls-0.5.5 61
 MD5 c02a9033fcb3db177a39b972ffb0cc6d files/digest-vls-0.5.5-r1 61
@@ -9,3 +12,10 @@ MD5 52744eb89fffd04d8138ae5c00d6cc0c vls-0.5.5-r1.ebuild 881
 MD5 48e1a9390b117c0525b135c88ccfd0f4 vls-0.5.5.ebuild 760
 MD5 60fa4a8e9faf3a00dc2a8df953e3c5c3 vls-0.5.6-r1.ebuild 1039
 MD5 00d30ef01924a34bccc75f10c2a65b6d vls-0.5.6-r2.ebuild 1109
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDaf9wj5H05b2HAEkRArS7AJ9s5NC9IrW4lJPVRdZtnju24sXEVACfUlxi
+D0Y/NcWTqdpYsxPKjk0a3lY=
+=97lh
+-----END PGP SIGNATURE-----
