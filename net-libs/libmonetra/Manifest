@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3f7f9f5da940b69735bbb0b5cfc7d5be ChangeLog 2021
 MD5 216bca1622db024e6224bc0a9a4e2f09 files/digest-libmonetra-4.0 151
 MD5 712e09b1b696c860918a9f094c669cc2 files/digest-libmonetra-4.1 66
@@ -10,3 +13,10 @@ MD5 8914a40d9507a246a85f662d1eeb056a libmonetra-4.2.2.ebuild 776
 MD5 9c0691df327624ffc735a33ca921494e libmonetra-4.2.ebuild 719
 MD5 6e467a65bb752da85d5e1ec947722dec libmonetra-5.2.ebuild 782
 MD5 b0d485ea1a51fb83c70daedef2599272 metadata.xml 279
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDaszkgIKl8Uu19MoRAkDwAJ9VcgrfndWEfrLkXGKPOUEVCZEz1gCeMP2h
+J84eCPeaX9vN5zrA+MrAWg0=
+=83cv
+-----END PGP SIGNATURE-----
