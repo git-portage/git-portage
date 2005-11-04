@@ -1,4 +1,4 @@
-MD5 1a7294a848f1708e7e41e838674e7ddd ChangeLog 21987
+MD5 07e3d7f1e1b45b625b42eeae2a893f88 ChangeLog 21987
 MD5 b0e07b107756bc3303e04b578b67d9a1 ati-drivers-8.14.13-r2.ebuild 6687
 MD5 a96355b7f8818179863b85c69bf584c3 ati-drivers-8.14.13-r3.ebuild 7675
 MD5 a37cb5612ebeb94a8e4fa889c88c7c9e ati-drivers-8.14.13-r4.ebuild 7495
@@ -7,7 +7,7 @@ MD5 9f31103cb72e7f3a236941fa70891c5a ati-drivers-8.16.20-r1.ebuild 6512
 MD5 142444f733b464a3c075fac4415aef50 ati-drivers-8.16.20.ebuild 6227
 MD5 3d37cc1ba0ff95564e3da181e3f1eed8 ati-drivers-8.18.6-r1.ebuild 7910
 MD5 2e5825fd6b2b03eb70a10b920f7eb3e3 ati-drivers-8.18.6.ebuild 7086
-MD5 9ea353c3f501c3f2a1a25af58ddb8f57 ati-drivers-8.18.8-r1.ebuild 8057
+MD5 ec484cd3e1f4b41a61ec90075caf75aa ati-drivers-8.18.8-r1.ebuild 8060
 MD5 62c92bb51d8753565542d8ab3167f664 ati-drivers-8.18.8.ebuild 7857
 MD5 e61309d064f12cc623e4d6e78aa82b36 files/09ati 39
 MD5 32c54a887820a2712b641217c3b54272 files/8.8.25-smp.patch 376
