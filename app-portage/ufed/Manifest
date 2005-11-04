@@ -1,18 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 13ac721673e56e05d0510fe78a714400 ChangeLog 4338
-MD5 5ccf37e59ee3f6c65bd263050cf2d85e metadata.xml 265
-MD5 e0b0654bdb84c335b99618eb130b606f ufed-0.36.ebuild 661
-MD5 b5afc70abeaaee4f62f36a700488fe7e ufed-0.39.ebuild 674
-MD5 877f5f1e0c64d7fabc2d2590b0a0ea91 ufed-0.40_rc.ebuild 828
+MD5 f030f8f64ded02a10cdbae51bf8fe4e0 ChangeLog 4338
 MD5 4c94b074dd20cd29d231b0bf50bea06c files/digest-ufed-0.36 61
 MD5 773221c03c705b595a0aa42d003532ab files/digest-ufed-0.39 61
 MD5 2e234ab448009a536f3d6825360eb9e8 files/digest-ufed-0.40_rc 64
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDay1jwnQyISwouHwRAkF+AJ4wTaNSCdf5p9tuj8ZTiIfAOdGOtwCgjsGq
-KWsaCTfcpSYYPUWcoFFrx2k=
-=0XRt
------END PGP SIGNATURE-----
+MD5 5ccf37e59ee3f6c65bd263050cf2d85e metadata.xml 265
+MD5 e0b0654bdb84c335b99618eb130b606f ufed-0.36.ebuild 661
+MD5 b5afc70abeaaee4f62f36a700488fe7e ufed-0.39.ebuild 674
+MD5 86f03cb8396463e7a1aaf508fb86d819 ufed-0.40_rc.ebuild 826
