@@ -1,0 +1,6 @@
+MD5 01bf02e016de77a69aadc63a1a73e7f4 ChangeLog 377
+MD5 3938f7fad7120ae34dfb6ef1e7aca0d7 Eidetic-2.003003.ebuild 1703
+MD5 701f43a5e772155825860de41a5961e0 files/Eidetic-2.003003-destdir.patch 1142
+MD5 c8e2352e31ca96dd76d62f7fe06a8861 files/Eidetic-2.003003-sql.patch 1733
+MD5 526f7a225f883b0abd418f354a8330ae files/digest-Eidetic-2.003003 67
+MD5 a4dd86fa69880d54653fb2ebb25c1a92 metadata.xml 684
