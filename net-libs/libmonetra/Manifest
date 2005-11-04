@@ -6,7 +6,7 @@ MD5 c53147f9a93b9a99e18baac2111dd7c6 files/digest-libmonetra-4.2.2 68
 MD5 a75b0e99a36499e467f105ad03d398cc files/digest-libmonetra-5.2 66
 MD5 be221f3278ed971b1c845f1aca7bfde2 libmonetra-4.0.ebuild 960
 MD5 45ca2654ccaad1f9b63c6829299fb99c libmonetra-4.1.ebuild 714
-MD5 b7e5d8a1fa1794b62d129b6919e0691e libmonetra-4.2.2.ebuild 773
+MD5 8914a40d9507a246a85f662d1eeb056a libmonetra-4.2.2.ebuild 776
 MD5 9c0691df327624ffc735a33ca921494e libmonetra-4.2.ebuild 719
-MD5 c50f8e1b0ed3c4f38da519bbfd1f21f5 libmonetra-5.2.ebuild 776
+MD5 6e467a65bb752da85d5e1ec947722dec libmonetra-5.2.ebuild 782
 MD5 b0d485ea1a51fb83c70daedef2599272 metadata.xml 279
