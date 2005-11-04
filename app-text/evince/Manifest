@@ -1,6 +1,6 @@
 MD5 4f1932f3308bba03acd744eff15afc96 ChangeLog 2948
 MD5 e4d15a65822c1ff8fd89a3a2568a371f evince-0.4.0-r1.ebuild 1657
-MD5 02380dbe4dd128841310bc556621833c evince-0.4.0-r2.ebuild 1992
+MD5 049a84aba44ff3ff385a2832468a6aee evince-0.4.0-r2.ebuild 2042
 MD5 a8bcc7dab66f7a60936b49f43bc4e9a9 files/digest-evince-0.4.0-r1 65
 MD5 a8bcc7dab66f7a60936b49f43bc4e9a9 files/digest-evince-0.4.0-r2 65
 MD5 185784a35b672ed49ea8afb3aba25e30 files/evince-0.4.0-display-menu.patch 471
