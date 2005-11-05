@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 458fe2a741eb6e94f94f5c905c5f5311 ChangeLog 9372
 MD5 98bdbed2d5ce2bec87868d9a46b5f3b0 evolution-data-server-1.0.2.ebuild 1065
 MD5 368efaf736537929d3c127b9608a1ae2 evolution-data-server-1.0.3.ebuild 983
@@ -19,3 +22,10 @@ MD5 f198c2b5ab564c7e450ae07be5b1efc5 files/evolution-data-server-1.2.1-local-pro
 MD5 9301f93589ecd825aa39e32465a707a3 files/evolution-data-server-1.2.3-gcc4.patch 558
 MD5 31de33250de9b6fe2dba0deae946db46 files/evolution-data-server-no_lazy_bindings.patch 551
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDbD/DomPajV0RnrERAgR8AJ4rPRc/VDqOd9WFo3or1a+FjaDC+gCeJIS6
+/Ae/OJweHBgFonU9NAPJ9NM=
+=WKsX
+-----END PGP SIGNATURE-----
