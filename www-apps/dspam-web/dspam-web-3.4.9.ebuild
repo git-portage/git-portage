@@ -1,19 +1,18 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/dspam-web/Attic/dspam-web-3.2.7.ebuild,v 1.3 2005/11/05 15:53:55 st_lim Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/dspam-web/Attic/dspam-web-3.4.9.ebuild,v 1.1 2005/11/05 15:53:55 st_lim Exp $
 
 inherit webapp eutils
 
 MY_PN=${PN/-web/}
-MY_PV=${PV/_rc3/.pr1}
-MY_P=${MY_PN}-${MY_PV}
+MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="Web based administration and user controls for dspam"
 SRC_URI="http://dspam.nuclearelephant.com/sources/${MY_P}.tar.gz"
 
 HOMEPAGE="http://dspam.nuclearelephant.com/"
 LICENSE="GPL-2"
-DEPEND=">=mail-filter/dspam-3.2_rc3
+DEPEND=">=mail-filter/dspam-${PV}
 	>=net-www/apache-1.3
 	>=dev-lang/perl-5.8.2
 	>=dev-perl/GD-2.0
@@ -21,78 +20,71 @@ DEPEND=">=mail-filter/dspam-3.2_rc3
 	dev-perl/GDGraph
 	dev-perl/GDTextUtil"
 KEYWORDS="~x86 ~ppc ~amd64"
-IUSE="debug mysql neural oci8 postgres sqlite"
 S=${WORKDIR}/${MY_P}
 HOMEDIR=/etc/mail/dspam
+IUSE="debug large-domain mysql neural oci8 postgres sqlite sqlite3 virtual-users"
 
 src_compile() {
 	local myconf
 
-	# these are the default settings
-	myconf="${myconf} --with-signature-life=14"
-	myconf="${myconf} --enable-broken-return-codes"
-	myconf="${myconf} --enable-experimental"
 	myconf="${myconf} --enable-long-username"
-	myconf="${myconf} --enable-robinson"
-	#myconf="${myconf} --enable-chi-square"
-	myconf="${myconf} --enable-robinson-pvalues"
-	#myconf="${myconf} --enable-broken-mta"
-	myconf="${myconf} --enable-large-scale"
-	#myconf="${myconf} --enable-domain-scale"
+	use large-domain && myconf="${myconf} --enable-large-scale" ||\
+	    myconf="${myconf} --enable-domain-scale"
 
-	# ${HOMEDIR}/data is a symlink to ${DATADIR}
 	myconf="${myconf} --with-dspam-mode=4755"
 	myconf="${myconf} --with-dspam-owner=dspam"
 	myconf="${myconf} --with-dspam-group=dspam"
-	myconf="${myconf} --enable-homedir --with-dspam-home=${HOMEDIR} --sysconfdir=${HOMEDIR}"
-	myconf="${myconf} --with-logdir=/var/log/dspam"
+	myconf="${myconf} --sysconfdir=${HOMEDIR}"
+	myconf="${myconf} --with-logdir=${LOGDIR}"
+	use virtual-users || myconf="${myconf} --with-dspam-home=${HOMEDIR}"
 
 	# enables support for debugging (touch /etc/dspam/.debug to turn on)
 	# optional: even MORE debugging output, use with extreme caution!
 	use debug && myconf="${myconf} --enable-debug --enable-verbose-debug"
 
 	# select storage driver
-	if use mysql ; then
+	if use mysql; then
 		myconf="${myconf} --with-storage-driver=mysql_drv"
 		myconf="${myconf} --with-mysql-includes=/usr/include/mysql"
 		myconf="${myconf} --with-mysql-libraries=/usr/lib/mysql"
-		myconf="${myconf} --with-client-compression"
-		myconf="${myconf} --enable-virtual-users"
 		myconf="${myconf} --enable-preferences-extension"
 
-		# an experimental feature available with MySQL and PgSQL backend
-		if use neural ; then
-			myconf="${myconf} --enable-neural-networking"
+		if has_version sys-kernel/linux26-headers; then
+			myconf="${myconf} --enable-daemon"
 		fi
+
+		use virtual-users && myconf="${myconf} --enable-virtual-users"
+		# an experimental feature available with MySQL and PgSQL backend
+		use neural && myconf="${myconf} --enable-neural-networking"
 	elif use postgres ; then
 		myconf="${myconf} --with-storage-driver=pgsql_drv"
 		myconf="${myconf} --with-pgsql-includes=/usr/include/postgresql"
 		myconf="${myconf} --with-pgsql-libraries=/usr/lib/postgresql"
-		myconf="${myconf} --enable-virtual-users"
 		myconf="${myconf} --enable-preferences-extension"
 
-		# an experimental feature available with MySQL and PgSQL backend
-		if use neural ; then
-			myconf="${myconf} --enable-neural-networking"
+		if has_version sys-kernel/linux26-headers; then
+			myconf="${myconf} --enable-daemon"
 		fi
+
+		use virtual-users && myconf="${myconf} --enable-virtual-users"
+		# an experimental feature available with MySQL and PgSQL backend
+		use neural && myconf="${myconf} --enable-neural-networking"
 	elif use oci8 ; then
 		myconf="${myconf} --with-storage-driver=ora_drv"
 		myconf="${myconf} --with-oracle-home=${ORACLE_HOME}"
 		myconf="${myconf} --enable-virtual-users"
-		myconf="${myconf} --enable-preferences-extension"
 
 		# I am in no way a Oracle specialist. If someone knows
 		# how to query the version of Oracle, then let me know.
-		if (expr ${ORACLE_HOME/*\/} : 10 1>/dev/null 2>&1)
-		then
-			--with-oracle-version=MAJOR
+		if (expr ${ORACLE_HOME/*\/} : 10 1>/dev/null 2>&1); then
 			myconf="${myconf} --with-oracle-version=10"
 		fi
+	elif use sqlite3 ; then
+		myconf="${myconf} --with-storage-driver=sqlite3_drv"
+		myconf="${myconf} --enable-virtual-users"
 	elif use sqlite ; then
 		myconf="${myconf} --with-storage-driver=sqlite_drv"
 		myconf="${myconf} --enable-virtual-users"
-		myconf="${myconf} --enable-preferences-extension"
-
 	else
 		myconf="${myconf} --with-storage-driver=libdb4_drv"
 	fi
