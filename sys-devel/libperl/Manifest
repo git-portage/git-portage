@@ -1,4 +1,4 @@
-MD5 e229fae4b6b7192d06a94a8ec8e5c0f6 ChangeLog 12837
+MD5 1cd13b98afbba7c1238bba0718b8d10a ChangeLog 12836
 MD5 c354e2fbf8141a769c20032e94f45fd3 files/digest-libperl-5.8.5 64
 MD5 c354e2fbf8141a769c20032e94f45fd3 files/digest-libperl-5.8.5-r1 64
 MD5 0a07934d74ccb1133cf0f3650cb94efc files/digest-libperl-5.8.6 64
@@ -9,8 +9,8 @@ MD5 0bdca74363c218d91a0db4ad1ea55485 files/libperl-create-libperl-soname.patch 4
 MD5 076dcbef37263d6dd7af719b55cfc2de files/libperl-noksh.patch 611
 MD5 f7324a62f22aabde3387b7e8a8b2106e files/libperl-reorder-INC.patch 1141
 MD5 ce442db939c59218a16be167f793b817 files/libperl-uclibc.patch 573
-MD5 bf351c9bc3f57515610fd2dfc8968db3 libperl-5.8.5-r1.ebuild 10032
-MD5 70d37fcb3e18a10c9483749694bcbc64 libperl-5.8.5.ebuild 9923
+MD5 2fb571ee80c894f660e610ef4c717082 libperl-5.8.5-r1.ebuild 10032
+MD5 642d6d7d6f6cdd65347342bcb7970733 libperl-5.8.5.ebuild 9923
 MD5 be57b8457762771bc4b3018afd55d704 libperl-5.8.6-r1.ebuild 10463
 MD5 f054ea04a2aec379bbb4e1726d6b62ff libperl-5.8.6.ebuild 10468
 MD5 85257c5e1cd61e97e7f9db5cff242eda libperl-5.8.7.ebuild 11070
