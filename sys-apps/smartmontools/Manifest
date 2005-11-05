@@ -1,5 +1,5 @@
-MD5 bb4bd0b4d83ab8800a1e88b0d702a559 smartmontools-5.33.ebuild 1037
-MD5 6de552e60aaf5fdb97b171c00d24537f ChangeLog 5421
+MD5 8dd9af44eabe5f971efd45b592627817 smartmontools-5.33.ebuild 1038
+MD5 8f73ec2effe7970e6f149e59d9d25c2a ChangeLog 5537
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 79699d2f3e2d148b1d5498b00792cd33 files/smartd.confd 273
 MD5 17aee6cd24fc0842f02c255e128dafaf files/smartd.rc 806
