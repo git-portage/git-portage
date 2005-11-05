@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f020f4bc83a2d498c6b0c1241597055e ChangeLog 9754
 MD5 51eea8a2c9a5189571de49ad32b88ac1 files/digest-openvpn-1.5.0-r1 65
 MD5 64180e225493c8fc2e085071ff65897b files/digest-openvpn-1.6.0 65
@@ -21,3 +24,10 @@ MD5 c7972a16f833a3ac9bd624e365f200a8 openvpn-2.0.4-r1.ebuild 3175
 MD5 4ea9399739b319523acb8de014bf498d openvpn-2.0.4-r2.ebuild 3841
 MD5 330a395d3f9192768b5c3b61238994ae openvpn-2.0.5-r1.ebuild 3867
 MD5 aa1228914b5b57702475a7bd02b87320 openvpn-2.0.5.ebuild 3195
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDbLW8Kf2g/qXtneoRAhjfAKCyTEL7lxfFDc7QM2ni1D9D/rjfsgCgtNP/
+Um65pBMdKD2reDrjZzfPZp8=
+=7g+J
+-----END PGP SIGNATURE-----
