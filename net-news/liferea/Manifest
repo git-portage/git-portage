@@ -2,10 +2,10 @@ MD5 a1d3ffe9b9a77fdf5499f16eec7ae39e liferea-0.9.4.ebuild 754
 MD5 aed35f3670dd5999f07f2939bb25d01d liferea-0.9.7a.ebuild 1653
 MD5 0fe6a7dbc1797c24738228a6335d1b1f liferea-0.9.6.ebuild 763
 MD5 c10756261b814d4100664099a531ec08 liferea-0.9.3.ebuild 746
-MD5 7e68ec4b6ea5ea7c19be1014b4e2b1ad liferea-1.0_rc3.ebuild 1591
+MD5 dfe4d68a660f96863bbb2d31a99ea4b4 liferea-1.0_rc3.ebuild 1696
 MD5 9d15342caa6fd5c98c66bf3e54575ec8 liferea-0.9.5.ebuild 754
 MD5 34fb76c3e6811967de9e30dd77623e8b liferea-0.9.7b.ebuild 1652
-MD5 e19bfb5dbbb6931795f665fd67723622 ChangeLog 7402
+MD5 d3a312ae2993219af0202d1e0cdaf507 ChangeLog 7530
 MD5 17fcd57ee01a46b7951c709fb6763c52 metadata.xml 255
 MD5 e095cad58a0b42c61be1be19dcee0bbd liferea-1.0_rc2.ebuild 1701
 MD5 f9efd550765d540bf2d15dd7fafe153f files/digest-liferea-1.0_rc2 68
