@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 66125c3152b8d49c4d8b36bcce1e1340 ChangeLog 10870
 MD5 41b41aaa36ba84805514d34f2d9b491f files/digest-vte-0.11.13-r2 64
 MD5 d1ed443a14f417affb1932a7765c120c files/digest-vte-0.11.15 64
@@ -10,3 +13,10 @@ MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 MD5 aa4d3fbbdfc954475759cebe1f450a58 vte-0.11.13-r2.ebuild 1401
 MD5 b45b0e0e702c8f81d624ea8ba4748320 vte-0.11.15-r1.ebuild 1456
 MD5 91bbba7d68b5a5c202912b63bae30148 vte-0.11.15.ebuild 1301
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDboFhomPajV0RnrERApNuAJ4uW/gA6gX7LvJ49NoqTNwbI8+0eACdEN+L
+9b4Kr27aepb44CoUp4rP/1Q=
+=tuSz
+-----END PGP SIGNATURE-----
