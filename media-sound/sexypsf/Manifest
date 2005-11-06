@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2425b677a78d8b5ac1725b7bc6a51fef ChangeLog 1568
 MD5 41f230a0e2debf8b51025a2d796c6e31 files/digest-sexypsf-0.4.5 61
 MD5 0ed9b80602e1c597dff882701ce72f64 files/digest-sexypsf-0.4.6 61
@@ -10,3 +13,10 @@ MD5 ffaa113215ddcecac79374633543e52d metadata.xml 248
 MD5 16e48240eb45b3d014770cf1a4977226 sexypsf-0.4.5.ebuild 1365
 MD5 718f9cbb34b957c7f1045b94c9225c7a sexypsf-0.4.6.ebuild 1402
 MD5 14225400a2a13a1cb0e1e7430856c331 sexypsf-0.4.7.ebuild 1607
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDbiN7wnQyISwouHwRAiOpAKCq8hZiLAh2OmQVgxk2tu9Fb3sguACgkE31
+vz2M1zwWkZknUA/uehQ67J0=
+=xAdI
+-----END PGP SIGNATURE-----
