@@ -1,4 +1,4 @@
-MD5 dd7305d4507d473060e3a6dcfa9df153 ChangeLog 10551
+MD5 c495280e489793ec0d3b596438042c61 ChangeLog 10556
 MD5 4cd212682be24bfbff707f07b8549f83 bittorrent-3.4.2-r2.ebuild 1930
 MD5 d6f1c6f8065a984e5ebefed06d3fabfd bittorrent-4.0.2.ebuild 1973
 MD5 462e522f275310b5d305c18a6ef57829 bittorrent-4.0.4.ebuild 2045
@@ -7,7 +7,7 @@ MD5 6c942f2d89711fe775a838da6ce4b457 bittorrent-4.1.4.ebuild 2305
 MD5 f2b2386b47dd171378e0cccabeafa057 bittorrent-4.1.6-r1.ebuild 2574
 MD5 00a26824d82b4ea9ba09880f4590f048 bittorrent-4.1.6-r2.ebuild 2013
 MD5 4cc659a077dc3dbf02ad922c9175cb81 bittorrent-4.1.6.ebuild 2305
-MD5 ca21910ada7c0a76df67106176a54b2f bittorrent-4.1.7.ebuild 1961
+MD5 f72994367a318ca7c21364a8c4d456cd bittorrent-4.1.7.ebuild 1958
 MD5 21ec89d06de83ddcc4cf6d6616355190 files/bittorrent-4.1.0-fix-all.patch 2483
 MD5 139c4a4367e37fcf7dc6bd18515456c2 files/btdownloadgui.desktop 166
 MD5 a94d4e97cceef0143a1a5c8784b6f70c files/bttrack.conf 728
