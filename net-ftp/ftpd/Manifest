@@ -1,4 +1,4 @@
-MD5 519950150d050fe4ca1c10fd02d16fcf ChangeLog 2362
+MD5 fa6218792ae76f43f99589d6b4e5efdc ChangeLog 2368
 MD5 1185c6db5ae646d809d0c757f02d8e35 files/digest-ftpd-0.17 66
 MD5 1185c6db5ae646d809d0c757f02d8e35 files/digest-ftpd-0.17-r1 66
 MD5 1185c6db5ae646d809d0c757f02d8e35 files/digest-ftpd-0.17-r2 66
@@ -7,5 +7,5 @@ MD5 fb54312525ec906691ee16975f1658be files/ftpd-0.17+ssl-0.3-overflowpatch.diff 
 MD5 7e1217f2de231dda2c8e842a7d7dfb7b files/ftpd-0.17-shadowfix.patch 895
 MD5 0630d5a4a420220cc8b912bdad705f6c files/ssl.diff.gz 10444
 MD5 753fb4b95ec8ae858ff343a599376b18 ftpd-0.17-r1.ebuild 1461
-MD5 4e5860c74f17edf1d20b7d9b6da711d5 ftpd-0.17-r2.ebuild 1518
+MD5 7bfd62aa7556709bd5f5192594ac3230 ftpd-0.17-r2.ebuild 1523
 MD5 a49ca8164b73a5b126e5d4403ec0e6ef ftpd-0.17.ebuild 1410
