@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9e94d13f9f7d9874fdcc3cbeb822501a ChangeLog 4437
 MD5 7f4e867ab9a86c4f3618228fdccc48f4 files/digest-mpg321-0.2.10-r1 65
 MD5 7f4e867ab9a86c4f3618228fdccc48f4 files/digest-mpg321-0.2.10-r2 65
@@ -8,3 +11,10 @@ MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 a1d77c22265e044894eba32cee17b2ab mpg321-0.2.10-r1.ebuild 1397
 MD5 3b49b319cd80db365c301d73227e17cf mpg321-0.2.10-r2.ebuild 1484
 MD5 2f0c8df9662fc45a2385c3e10999faf6 mpg321-0.2.10-r3.ebuild 1673
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDbzcsj5H05b2HAEkRAuG7AKCR3XRKsL/65lxLtNHE8xzVxYdZiwCfV5Ko
+aXYYPnpBiWD59fasg8XtrbI=
+=KPle
+-----END PGP SIGNATURE-----
