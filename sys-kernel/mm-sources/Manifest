@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 cb6c1d878d3ccf5bbbaae355fc716d20 ChangeLog 44388
 MD5 e45b7ee0ecff0d5ab786e001098123db files/digest-mm-sources-2.6.13-r1 127
 MD5 0be73573833fd6a1132c609c4696c058 files/digest-mm-sources-2.6.14-r1 127
@@ -12,3 +15,10 @@ MD5 fe5c91b4d80e7ccd2141a1aa01630e91 mm-sources-2.6.14_rc1-r1.ebuild 1013
 MD5 9420489ebd975f8333d41b69ee1e8c84 mm-sources-2.6.14_rc2-r2.ebuild 1013
 MD5 ad2c5ba9b5f6a2fbb127ebdced20ab13 mm-sources-2.6.14_rc4-r1.ebuild 1013
 MD5 c29dcc4e501333c3bddef60c5155e334 mm-sources-2.6.14_rc5-r1.ebuild 1013
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDb9iwp5vW4rUFj5oRAmpmAJ9QEdu8eojQUHJ4VlA4O23fxqNjBACeP3TA
+LEG8f4/kg7e2qrHbwzDBIT8=
+=gF43
+-----END PGP SIGNATURE-----
