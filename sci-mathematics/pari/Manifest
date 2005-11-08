@@ -6,4 +6,4 @@ MD5 dccf7ef464f99fa750a5c7fc3ec67e8f files/wrong_functype-r1.patch 1498
 MD5 cbd309a01e2fee1a5ba6cb3a93ba5708 files/wrong_functype.patch 1946
 MD5 8c623e53daafa025137077c6b65815bd metadata.xml 156
 MD5 c49cfeebeab95672f9d228b76c63522b pari-2.1.5-r4.ebuild 2520
-MD5 b280810de2c9996b6da854bc3a813bc7 pari-2.1.6.ebuild 2240
+MD5 e8705ee7fbd424ee0c342567bef34919 pari-2.1.6.ebuild 2312
