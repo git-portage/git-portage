@@ -1,4 +1,4 @@
-MD5 60bc6574865cad050f956b9d36ab0390 ChangeLog 20975
+MD5 041a94f068cf868c61415e8e0dd7175c ChangeLog 20979
 MD5 310551d0852ba9c1fe5c0f8c231c3589 files/digest-pcmcia-cs-3.2.7-r3 287
 MD5 89130d20833db1421e8f624c90d19516 files/digest-pcmcia-cs-3.2.8-r2 68
 MD5 da3f5dc50768f0a5d9868dd5bd227329 files/network 768
@@ -17,4 +17,4 @@ MD5 693d508b7dd24e64735b5ba4a16e699b files/pcmcia.rc 2038
 MD5 fb59203b176eea34b5969d465efb85a9 files/ppc.config.opts 1687
 MD5 b280eebc74d70d85e664debf1adce2c3 metadata.xml 255
 MD5 0bfee4ba21dccf419e0b31c05c27c5f7 pcmcia-cs-3.2.7-r3.ebuild 4953
-MD5 fb805d3faf9563615dcef8af2834ecc5 pcmcia-cs-3.2.8-r2.ebuild 3870
+MD5 1275790139f43857e15323f7967b9a76 pcmcia-cs-3.2.8-r2.ebuild 3874
