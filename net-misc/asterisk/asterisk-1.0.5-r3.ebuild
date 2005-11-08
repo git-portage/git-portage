@@ -1,21 +1,19 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.0.6-r1.ebuild,v 1.12 2005/09/15 02:40:34 stkn Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.0.5-r3.ebuild,v 1.1 2005/11/08 15:35:21 stkn Exp $
 
 inherit eutils perl-module
 
-ADDONS_VERSION="1.0.6"
-BRI_VERSION="0.2.0-RC7k"
+ADDONS_VERSION="1.0.4"
 
 DESCRIPTION="Asterisk: A Modular Open Source PBX System"
 HOMEPAGE="http://www.asterisk.org/"
 SRC_URI="ftp://ftp.digium.com/pub/telephony/${PN}/old-releases/${P}.tar.gz
-	 ftp://ftp.digium.com/pub/telephony/${PN}/old-releases/${PN}-addons-${ADDONS_VERSION}.tar.gz
-	 bri? ( http://www.junghanns.net/downloads/bristuff-${BRI_VERSION}.tar.gz )"
+	 ftp://ftp.digium.com/pub/telephony/${PN}/old-releases/${PN}-addons-${ADDONS_VERSION}.tar.gz"
 
 S_ADDONS=${WORKDIR}/${PN}-addons-${ADDONS_VERSION}
 
-IUSE="alsa doc gtk mmx mysql pri zaptel debug postgres vmdbmysql vmdbpostgres bri hardened speex resperl"
+IUSE="alsa doc gtk mmx mysql pri zaptel uclibc resperl debug postgres vmdbmysql vmdbpostgres"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~x86 ~sparc ~hppa ~amd64"
@@ -27,17 +25,16 @@ DEPEND="dev-libs/newt
 	doc? ( app-doc/doxygen )
 	gtk? ( =x11-libs/gtk+-1.2* )
 	pri? ( >=net-libs/libpri-1.0.4-r1 )
-	bri? ( >=net-libs/libpri-1.0.6
-		>=net-misc/zaptel-1.0.6-r1 )
 	alsa? ( media-libs/alsa-lib )
 	mysql? ( dev-db/mysql )
-	speex? ( media-libs/speex )
+	uclibc? ( sys-libs/uclibc )
 	zaptel? ( >=net-misc/zaptel-1.0.4-r1 )
+	resperl? ( dev-lang/perl
+		   >=net-misc/zaptel-1.0.4-r1 )
 	postgres? ( dev-db/postgresql )
 	vmdbmysql? ( dev-db/mysql )
-	vmdbpostgres? ( dev-db/postgresql )
-	resperl? ( dev-lang/perl
-		   >=net-misc/zaptel-1.0.4-r1 )"
+	vmdbpostgres? ( dev-db/postgresql )"
+
 
 pkg_setup() {
 	local n
@@ -55,26 +52,19 @@ pkg_setup() {
 	ewarn "- Permissions of /var/{log,lib,run,spool}/asterisk have been changed"
 	ewarn "  to asterisk:asterisk 750 (directories) / 640 (files)"
 	ewarn
-	ewarn "- Asterisk's unix socket and pidfile are now in /var/run/asterisk"
+	ewarn "- Asterisk's unix socket and pidfile are now in /var/run/astrisk"
 	ewarn
 	ewarn "- More information at the end of this emerge"
 	ewarn
 	ewarn "     http://bugs.gentoo.org/show_bug.cgi?id=88732"
 	ewarn "     http://www.voip-info.org/wiki-Asterisk+non-root"
 	ewarn
-	if has_version "net-misc/asterisk"; then
-		echo
-		eerror "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-		eerror "! PLEASE RUN THE FOLLOWING COMMAND AFTER UPDATING ASTERISK:               !"
-		eerror "! \"ebuild /usr/portage/net-misc/asterisk/asterisk-${PVR}.ebuild config\" !"
-		eerror "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	fi
 	echo
 	einfo "Press Ctrl+C to abort"
 	echo
 	ebeep
 
-	n=20
+	n=15
 	while [[ $n -gt 0 ]]; do
 		echo -en "  Waiting $n seconds...\r"
 		sleep 1
@@ -98,19 +88,6 @@ pkg_setup() {
 		eerror "MySQL and PostgreSQL Voicemail support are mutually exclusive... choose one!"
 		die "Conflicting use-flags"
 	fi
-
-	# check if zaptel and libpri have been built with bri enabled
-	if use bri; then
-		if ! built_with_use net-misc/zaptel bri; then
-			eerror "Re-emerge zaptel with bri use-flag enabled!"
-			die "Zaptel without bri support detected"
-		fi
-
-		if ! built_with_use net-libs/libpri bri; then
-			eerror "Re-emerge libpri with bri use-flag enabled!"
-			die "Libpri without bri support detected"
-		fi
-	fi
 }
 
 src_unpack() {
@@ -124,32 +101,16 @@ src_unpack() {
 
 	# gsm codec still uses -fomit-frame-pointer, and other codecs have their
 	# own flags. We only change the arch.
-	sed -i  -e "s:^OPTIMIZE+=.*:OPTIMIZE=${CFLAGS}:" \
-		-e "s:^CFLAGS[\t ]\++=:CFLAGS =:" \
-		codecs/gsm/Makefile
-
-	# hppa patch for gsm codec
-	epatch ${FILESDIR}/1.0.0/${PN}-1.0.5-hppa.patch
+	sed -i -e "s:^OPTIMIZE+=.*:OPTIMIZE+=${CFLAGS}:" codecs/gsm/Makefile
 
 	if use mmx; then
-		if ! use hardened; then
-			einfo "Enabling mmx optimization"
-			sed -i  -e "s:^#\(K6OPT[\t ]\+= -DK6OPT\):\1:" \
-				codecs/gsm/Makefile
-		else
-			ewarn "Hardened use-flag is set, not enabling mmx optimization for codec_gsm!"
-
-		fi
-	fi
-	if ! use mmx || use hardened; then
-		# don't build + link asm mmx object file
-		# without this codec_gsm.so will include text relocations
-		sed -i  -e "/k6opt\.\(s\|o\)/ d" \
-			codecs/gsm/Makefile
+		einfo "enabling mmx optimization"
+		sed -i -e "s:^#\(K6OPT.*\):\1:" Makefile
+		sed -i -e "s:^#\(K6OPT[\t ]\+= -DK6OPT\):\1:" codecs/gsm/Makefile
 	fi
 
 	if ! use debug; then
-		einfo "Disabling debugging"
+		einfo "disabling debugging"
 		sed -i -e "s:^\(DEBUG=\):#\1:" Makefile
 	fi
 
@@ -164,11 +125,9 @@ src_unpack() {
 		epatch ${S_ADDONS}/res_perl/astmake.diff
 
 		# create necessary .c file
-		perl -MExtUtils::Embed -e xsinit || die "Could not create perlxsi.c"
+		/usr/bin/perl -MExtUtils::Embed -e xsinit || die "Could not create perlxsi.c"
 
 		cd ${S_ADDONS}
-		# asterisk-1.0.6 changed two channel functions
-		epatch ${FILESDIR}/1.0.0/${P}-resperl.diff
 
 		# fix perl path, source location and remove res_musiconhold
 		sed -i -e "s:/usr/local/bin/perl:/usr/bin/perl:" \
@@ -187,7 +146,7 @@ src_unpack() {
 	#
 	if use elibc_uclibc; then
 		einfo "Patching asterisk for uclibc..."
-		epatch ${FILESDIR}/1.0.0/${PN}-1.0.5-uclibc-dns.diff
+		epatch ${FILESDIR}/1.0.0/${P}-uclibc-dns.diff
 	fi
 
 	#
@@ -196,13 +155,16 @@ src_unpack() {
 
 	# fix lpc10 Makefile, remove the
 	# CFLAGS+=-march=$(shell uname -m) part
-	epatch ${FILESDIR}/1.0.0/${PN}-1.0.5-lpc10flags.diff
+	epatch ${FILESDIR}/1.0.0/${P}-lpc10flags.diff
 
 	# asterisk-config
-	epatch ${FILESDIR}/1.0.0/${PN}-1.0.5-astcfg-0.0.2.diff
+	epatch ${FILESDIR}/1.0.0/${P}-astcfg-0.0.2.diff
 
 	# fix include path for speex >= 1.1.0
-	epatch ${FILESDIR}/1.0.0/${PN}-1.0.5-speex.diff
+	epatch ${FILESDIR}/1.0.0/${P}-speex.diff
+
+	# hppa build fix
+	epatch ${FILESDIR}/1.0.0/${P}-hppa.patch
 
 	#
 	# database voicemail support
@@ -241,25 +203,6 @@ src_unpack() {
 		-e "s:^\(CFLAGS=\)\(.*\):\1-I${S}/include -fPIC \2:" \
 		format_mp3/Makefile
 
-
-	#
-	# BRI patches
-	#
-	if use bri; then
-		cd ${S}
-		einfo "Patching asterisk w/ BRI stuff"
-		epatch ${WORKDIR}/bristuff-${BRI_VERSION}/patches/asterisk.patch
-	fi
-
-	#
-	# Revived snmp plugin support
-	#
-#	if use snmp; then
-#		cd ${S}
-#		einfo "Patching snmp plugin helper functions"
-#		epatch ${FILESDIR}/1.0.0/ast-ax-snmp-1.0.6.diff
-#	fi
-
 	# fix path for non-root
 	cd ${S}
 	sed -i -e "s:^\(ASTVARRUNDIR=\).*:\1\$(INSTALL_PREFIX)/var/run/asterisk:" \
@@ -278,6 +221,9 @@ src_unpack() {
 
 	# fix segfault on amd64 and possibly other 64bit systems (#105762)
 	epatch ${FILESDIR}/1.0.0/${PN}-1.0.8-ptr64fix.diff
+
+	# security fix, bug #11836
+	epatch ${FILESDIR}/1.0.0/${PN}-1.0.9-vmail.cgi.patch
 }
 
 src_compile() {
@@ -315,8 +261,8 @@ src_install() {
 	dosbin contrib/scripts/addmailbox
 	dosbin contrib/scripts/astgenkey
 
-	newinitd ${FILESDIR}/1.0.0/asterisk.rc6.sec asterisk
-	newconfd ${FILESDIR}/1.0.0/asterisk.confd.sec asterisk
+	newinitd  ${FILESDIR}/1.0.0/asterisk.rc6.sec asterisk
+	newconfd  ${FILESDIR}/1.0.0/asterisk.confd.sec asterisk
 
 	# don't delete these, even if they are empty
 	keepdir /var/spool/asterisk/voicemail/default/1234/INBOX
@@ -327,16 +273,16 @@ src_install() {
 	# install standard docs...
 	dodoc BUGS CREDITS LICENSE ChangeLog HARDWARE README README.fpm SECURITY
 
-	docinto scripts
-	dodoc contrib/scripts/*
-	docinto firmware/iax
-	dodoc contrib/firmware/iax/*
-
 	# install api docs
 	if use doc; then
 		insinto /usr/share/doc/${PF}/api/html
 		doins doc/api/html/*
 	fi
+
+	docinto scripts
+	dodoc contrib/scripts/*
+	docinto firmware/iax
+	dodoc contrib/firmware/iax/*
 
 	insinto /usr/share/doc/${PF}/cgi
 	doins contrib/scripts/vmail.cgi
@@ -366,7 +312,7 @@ src_install() {
 		dodir ${VENDOR_LIB}/AstAPIBase
 		for x in AstAPI.pm AstConfig.pm LoadFile.pm PerlSwitch.pm WebServer.pm; do
 			mv ${D}/etc/asterisk/perl/${x} ${D}${VENDOR_LIB}/AstAPI
-			dosed "s/^use[\t ]\+${x/.pm/};/use AstAPI::${x/.pm/};/" /etc/asterisk/perl/asterisk_i$
+			dosed "s/^use[\t ]\+${x/.pm/};/use AstAPI::${x/.pm/};/" /etc/asterisk/perl/asterisk_init.pm
 		done
 		mv ${D}/etc/asterisk/perl/AstAPIBase.pm ${D}${VENDOR_LIB}/AstAPIBase
 		dosed "s/^use[\t ]\+AstAPI;/use AstAPI::AstAPI;/" /etc/asterisk/perl/asterisk_init.pm
@@ -394,7 +340,7 @@ pkg_postinst() {
 	# directories and files
 	#
 	einfo "Fixing permissions and ownerships"
-	# fix permissions
+	# fix permissions in /var/...
 	for x in spool run lib log; do
 		chown -R asterisk:asterisk ${ROOT}/var/${x}/asterisk
 		chmod -R u=rwX,g=rX,o=     ${ROOT}/var/${x}/asterisk
@@ -425,15 +371,13 @@ pkg_postinst() {
 	einfo "to add new Mailboxes use: /usr/sbin/addmailbox"
 	einfo ""
 	einfo "If you want to know more about asterisk, visit these sites:"
-	einfo "http://www.asteriskdocs.org/"
-	einfo "http://www.voip-info.org/wiki-Asterisk"
-	echo
-	einfo "http://asterisk.xvoip.com/"
-	einfo "http://junghanns.net/asterisk/"
 	einfo "http://www.automated.it/guidetoasterisk.htm"
+	einfo "http://asterisk.xvoip.com/"
+	einfo "http://www.voip-info.org/wiki-Asterisk"
+	einfo "http://ns1.jnetdns.de/jn/relaunch/asterisk/"
 	echo
-	einfo "Gentoo VoIP IRC Channel:"
-	einfo "#gentoo-voip @ irc.freenode.net"
+	ewarn "Additional sounds have been split-out into"
+	ewarn "net-misc/asterisk-sounds"
 
 	#
 	# Warning about security changes...
@@ -454,7 +398,7 @@ pkg_postinst() {
 	ewarn "- Permissions of /var/{log,lib,run,spool}/asterisk have been changed"
 	ewarn "  to asterisk:asterisk 750 / 640"
 	ewarn
-	ewarn "- Asterisk's unix socket and pidfile are now in /var/run/astrisk"
+	ewarn "- Asterisk's unix socket and pidfile are now in /var/run/asterisk"
 	ewarn
 	ewarn "- Asterisk cannot set the IP ToS bits when run as user,"
 	ewarn "  use something like this to make iptables set them for you:"

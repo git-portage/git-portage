@@ -1,15 +1,15 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.0.9-r1.ebuild,v 1.6 2005/10/28 23:06:23 stkn Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.0.8-r1.ebuild,v 1.1 2005/11/08 15:35:21 stkn Exp $
 
 inherit eutils perl-module
 
-ADDONS_VERSION="1.0.9"
-BRI_VERSION="0.2.0-RC8n"
+ADDONS_VERSION="1.0.8"
+BRI_VERSION="0.2.0-RC8h"
 
 DESCRIPTION="Asterisk: A Modular Open Source PBX System"
 HOMEPAGE="http://www.asterisk.org/"
-SRC_URI="ftp://ftp.digium.com/pub/telephony/${PN}/${P}.tar.gz
+SRC_URI="ftp://ftp.digium.com/pub/telephony/${PN}/old-releases/${P}.tar.gz
 	 ftp://ftp.digium.com/pub/telephony/${PN}/${PN}-addons-${ADDONS_VERSION}.tar.gz
 	 bri? ( http://www.junghanns.net/downloads/bristuff-${BRI_VERSION}.tar.gz )"
 
@@ -18,7 +18,7 @@ S_ADDONS=${WORKDIR}/${PN}-addons-${ADDONS_VERSION}
 IUSE="alsa doc gtk mmx mysql pri zaptel debug postgres vmdbmysql vmdbpostgres bri hardened speex resperl"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~sparc ~hppa ~amd64 ~ppc"
+KEYWORDS="x86 sparc ~hppa ~amd64 ~ppc"
 
 DEPEND="dev-libs/newt
 	dev-libs/openssl
@@ -26,18 +26,18 @@ DEPEND="dev-libs/newt
 	media-sound/sox
 	doc? ( app-doc/doxygen )
 	gtk? ( =x11-libs/gtk+-1.2* )
-	pri? ( >=net-libs/libpri-1.0.9 )
-	bri? ( >=net-libs/libpri-1.0.9
-		>=net-misc/zaptel-1.0.9 )
+	pri? ( >=net-libs/libpri-1.0.8 )
+	bri? ( >=net-libs/libpri-1.0.8
+		>=net-misc/zaptel-1.0.8 )
 	alsa? ( media-libs/alsa-lib )
 	mysql? ( dev-db/mysql )
 	speex? ( media-libs/speex )
-	zaptel? ( >=net-misc/zaptel-1.0.9 )
+	zaptel? ( >=net-misc/zaptel-1.0.8 )
 	postgres? ( dev-db/postgresql )
 	vmdbmysql? ( dev-db/mysql )
 	vmdbpostgres? ( dev-db/postgresql )
 	resperl? ( dev-lang/perl
-		   >=net-misc/zaptel-1.0.9 )"
+		   >=net-misc/zaptel-1.0.8 )"
 
 pkg_setup() {
 	local n
@@ -123,7 +123,7 @@ src_unpack() {
 	epatch ${FILESDIR}/1.0.0/${PN}-1.0.8-hppa.patch
 
 	# mark adsi functions as weak references, things will blow
-	# on hardened otherwise (bug #100697 and #85655)
+	# on hardened otherwise (bug #100697 and possibly #85655)
 	epatch ${FILESDIR}/1.0.0/${PN}-1.0.9-weak-references.diff
 
 	# gsm codec still uses -fomit-frame-pointer, and other codecs have their
@@ -274,13 +274,14 @@ src_unpack() {
 	# user (start-stop-daemons --chguid breaks realtime priority support)
 	epatch ${FILESDIR}/1.0.0/${PN}-1.0.8-initgroups.diff
 
+	# fix callerid matching bug in dialplan
+	epatch ${FILESDIR}/1.0.0/${P}-callerid.patch
+
 	# fix segfault on amd64 and possibly other 64bit systems (#105762)
 	epatch ${FILESDIR}/1.0.0/${PN}-1.0.8-ptr64fix.diff
 
-	# needed for >=freetds-0.6.3
-	if has_version ">=dev-db/freetds-0.6.3"; then
-		epatch ${FILESDIR}/1.0.0/${P}-freetds.diff
-	fi
+	# security fix, bug #11836
+	epatch ${FILESDIR}/1.0.0/${PN}-1.0.9-vmail.cgi.patch
 }
 
 src_compile() {
