@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 cb709e469cc3b60af59e1a8ffa21a8b8 ChangeLog 5981
 MD5 92391e16e18a77102b7975e5dc1ce49d aumix-2.8-r2.ebuild 1848
 MD5 00da88dc336799f1385f518dd005dd5a files/aumix-2.8-close-dialogs.patch 613
@@ -8,3 +11,10 @@ MD5 f39abfbf49ff4a33e109eeb14a4325c2 files/aumix.desktop 124
 MD5 1ddf032a74e8441c64775370c1b446bd files/aumix.rc6 1155
 MD5 857a1fe260905ab09b7befd877affafd files/digest-aumix-2.8-r2 62
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDcO0BOpjtAl+gMRURAuO9AJ4x63qBZb6NmvMZw5yeUVSsNgcm7QCgnqc+
+1gmltxYQc41LjbdOBpeW5Bw=
+=Iver
+-----END PGP SIGNATURE-----
