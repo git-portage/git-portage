@@ -1,20 +1,10 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 335c1b5d35964972004cb89ad65294a0 ChangeLog 3451
+MD5 85e04d0ecd0fcb428fde4d0b18e74d66 ChangeLog 3562
 MD5 3125bec127754bb5fb5fd85f47d9ff4c metadata.xml 202
-MD5 4058f968ca7c1fe8b0c9cb0733f25c65 rsnapshot-1.1.7.ebuild 1168
-MD5 c3e5932b4283b1bdb54a35e8fd5cd02d rsnapshot-1.2.1.ebuild 1151
 MD5 d639d6e1c0f2eecf37c1933d5465cbf3 rsnapshot-1.1.7-r1.ebuild 1221
+MD5 4058f968ca7c1fe8b0c9cb0733f25c65 rsnapshot-1.1.7.ebuild 1168
 MD5 19b3d4c7c0e0d4d5b8573a03d5a279ad rsnapshot-1.2.1-r1.ebuild 1208
+MD5 31c8a55a29145bf4aa69f42b62dd9276 rsnapshot-1.2.1.ebuild 1150
 MD5 d048e8113a23305b3583f6abb78850f5 files/digest-rsnapshot-1.1.7 66
-MD5 98526d4680fb46b5516a19e8c48956c4 files/digest-rsnapshot-1.2.1 67
 MD5 d048e8113a23305b3583f6abb78850f5 files/digest-rsnapshot-1.1.7-r1 66
+MD5 98526d4680fb46b5516a19e8c48956c4 files/digest-rsnapshot-1.2.1 67
 MD5 98526d4680fb46b5516a19e8c48956c4 files/digest-rsnapshot-1.2.1-r1 67
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDPFl3Kf2g/qXtneoRArjsAJ93e7y7LVh6CwEJBa9eWf3vYH1piwCgqtDD
-pg4IEcxOwQPwRilc6QLWCJY=
-=5+8Y
------END PGP SIGNATURE-----
