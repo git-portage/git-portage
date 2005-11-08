@@ -1,0 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 2763b91fa59c641c21c87d1a84a058d4 astng-0.13.1.ebuild 498
+MD5 9ac4199ebe7cd3e7e311274994767f82 metadata.xml 160
+MD5 24a03a03f2c9ab0d498e80b366892bda ChangeLog 283
+MD5 db05dcf4fe985e0e5fc9d14737bd5d23 files/digest-astng-0.13.1 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDcNryTry2jroju7wRAqMlAJ9d9ZiYGu8+X+uiV+uUUDRgD81g4gCbBija
+i85dk4cRN5jWN9y/b1b8cws=
+=m7o0
+-----END PGP SIGNATURE-----
