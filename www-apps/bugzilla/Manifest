@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 438eb678506682782baeb279889d55da bugzilla-2.18.4.ebuild 1825
 MD5 47aa0157107e020c3ad3537ae57d016d bugzilla-2.20.ebuild 1857
 MD5 0d20b25ade49a4a82dba50986cc13f81 ChangeLog 10123
@@ -14,3 +17,10 @@ MD5 7b5e1b8ee2d4e49224f15287c5070b57 files/2.20/postinstall-en.txt 278
 MD5 0be5a588dc7fdfc9e4898a855bd32361 files/2.20/bugzilla.cron.daily 115
 MD5 42151252d49e42c9839f80c80dff9138 files/2.20/apache.htaccess 94
 MD5 899c42853fbf73268c49d3602eae77d2 files/2.20/reconfig 349
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDckMPEzitwsaoONoRAguKAKCA1iztEoC3uR/K6Z/hv29A7ykhMQCgoC6J
+vaqR6HWlnBADdmrPtrI/MeA=
+=ojUw
+-----END PGP SIGNATURE-----
