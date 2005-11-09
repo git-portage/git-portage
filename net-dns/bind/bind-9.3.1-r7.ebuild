@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/Attic/bind-9.3.1-r6.ebuild,v 1.4 2005/11/02 10:26:31 voxus Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/Attic/bind-9.3.1-r7.ebuild,v 1.1 2005/11/09 09:25:52 voxus Exp $
 
 inherit eutils libtool
 
@@ -115,7 +115,16 @@ src_compile() {
 		`use_enable ipv6` \
 		${myconf} || die "econf failed"
 
-	emake -j1 || die "failed to compile bind"
+	# idea from dev-libs/cyrus-sasl
+	if has distcc ${FEATURES}; then
+		einfo "You have \"distcc\" enabled"
+		einfo "build with MAKEOPTS=\"-j1\""
+		MAKEOPTS="-j1"
+	else
+		einfo "build with MAKEOPTS=${MAKEOPTS}"
+	fi
+
+	emake ${MAKEOPTS} || die "failed to compile bind"
 
 	use idn && {
 		cd ${S}/contrib/idn/idnkit-1.0-src
@@ -162,8 +171,8 @@ src_install() {
 	insinto /var/bind ; doins ${FILESDIR}/named.ca
 	insinto /var/bind/pri ; doins ${FILESDIR}/{127,localhost}.zone
 
-	cp ${FILESDIR}/named.init-r2 ${T}/named && doinitd ${T}/named
-	cp ${FILESDIR}/named.confd ${T}/named && doconfd ${T}/named
+	cp ${FILESDIR}/named.init-r3 ${T}/named && doinitd ${T}/named
+	cp ${FILESDIR}/named.confd-r1 ${T}/named && doconfd ${T}/named
 
 	dosym ../../var/bind/named.ca /var/bind/root.cache
 	dosym ../../var/bind/pri /etc/bind/pri
