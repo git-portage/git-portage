@@ -1,4 +1,6 @@
-MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 0a5098409f34addc52f2cf59f7299428 ChangeLog 605
 MD5 8def877d152be61e62c1e832b1f66fd7 String-Ediff-0.03.ebuild 508
+MD5 55d9015c7e87b891b759c0f2ac80f60d String-Ediff-0.08.ebuild 535
 MD5 d78f9bd30bf7b01f7442fa6d248f3a7a files/digest-String-Ediff-0.03 68
+MD5 9af1ccc957832beb8d9cba5c68841e4a files/digest-String-Ediff-0.08 68
+MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
