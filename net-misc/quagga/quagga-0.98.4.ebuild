@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/quagga/Attic/quagga-0.98.4.ebuild,v 1.6 2005/10/18 03:58:04 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/quagga/Attic/quagga-0.98.4.ebuild,v 1.7 2005/11/10 05:19:51 mrness Exp $
 
 inherit eutils multilib
 
@@ -20,7 +20,9 @@ RDEPEND="sys-apps/iproute2
 	pam? ( sys-libs/pam )"
 DEPEND="${RDEPEND}
 	virtual/libc
-	sys-devel/binutils"
+	sys-devel/binutils
+	sys-devel/autoconf-wrapper
+	sys-devel/libtool"
 
 src_unpack() {
 	unpack ${A} || die "failed to unpack sources"
