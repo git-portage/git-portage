@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 189ef9e1acde41c585061ec6d469d399 ChangeLog 15870
 MD5 a370aabb0870d2822a0ab839947919f3 files/digest-ncurses-5.4-r5 64
 MD5 a370aabb0870d2822a0ab839947919f3 files/digest-ncurses-5.4-r6 64
@@ -14,3 +17,10 @@ MD5 d303a209fc62dfcb17c00343f1fc6dcb ncurses-5.4-r6.ebuild 5385
 MD5 45af8f6f6c26f746944e5e170f4ce537 ncurses-5.4.20050319.ebuild 5741
 MD5 edf823f9288a022eb5b682decb638b3c ncurses-5.5-r1.ebuild 5251
 MD5 05ffcf86aeb3d3f5c9a5bfd5a72fb2d2 ncurses-5.5.ebuild 5253
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDcrTSgIKl8Uu19MoRAm1NAKCAkkRQS0mNpQKnNauDKL8e6YIYCgCfTLws
+CSh6YaUWM6qHUkLD1hqSaN0=
+=mV0p
+-----END PGP SIGNATURE-----
