@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7bfd62aa7556709bd5f5192594ac3230 ftpd-0.17-r2.ebuild 1523
 MD5 753fb4b95ec8ae858ff343a599376b18 ftpd-0.17-r1.ebuild 1461
 MD5 d94a40a0fbdbad7596478edbb45bcda5 ftpd-0.17-r3.ebuild 1408
@@ -11,3 +14,10 @@ MD5 fb54312525ec906691ee16975f1658be files/ftpd-0.17+ssl-0.3-overflowpatch.diff 
 MD5 1185c6db5ae646d809d0c757f02d8e35 files/digest-ftpd-0.17-r1 66
 MD5 1185c6db5ae646d809d0c757f02d8e35 files/digest-ftpd-0.17-r2 66
 MD5 d6140676fe7acab811160aa574573e83 files/digest-ftpd-0.17-r3 135
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDc8bp3og80iZgVQgRAgcjAJsFkq9yi4uM4897KXaJdBafjYe5dQCfXw03
+FhpmVnwE07au9b1XjRKjuJU=
+=tytw
+-----END PGP SIGNATURE-----
