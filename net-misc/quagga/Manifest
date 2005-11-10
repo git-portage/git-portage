@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 fa39f9112f11093de5c4588bd571ad14 quagga-0.98.5.ebuild 4441
 MD5 89e7fe5c8a95c1564895e7b5ce057e81 quagga-0.98.2.ebuild 4672
 MD5 810315e4d784bee637ef9b9f0d39de34 ChangeLog 9074
@@ -20,3 +23,10 @@ MD5 2c1c5b782f96a74b48ccc496ad7a3865 files/zebra.init 1168
 MD5 7da4097332468741416e156a2e5d35e4 files/patches-0.98.2/amir-connected-route.patch 6336
 MD5 6c9cdbdc237bb8d24dfd26504059464b files/patches-0.98.2/ht-20050110-0.98.0-bgp-md5.patch 14570
 MD5 e70bf25e2ca5f76efb2c5704234ccc1f files/patches-0.98.2/ht-20040304-classless-bgp.patch 1581
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDctiKNSP4Vda7IdsRAkZnAJ9D87qM3eBEC+qf/vyrSUGCzTrbrwCdF6Xv
+x7QDMWdKarTCrphUhGBjYX8=
+=rnaD
+-----END PGP SIGNATURE-----
