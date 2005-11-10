@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 84243bd9d25301bcbbb58599a2dd9f5d ChangeLog 13071
 MD5 85f36b5553a8d70e2fea0709edbc74f1 e2fsprogs-1.35-r1.ebuild 3271
 MD5 7110400b8107690e0f1ec51538148f9b e2fsprogs-1.36-r2.ebuild 2519
@@ -14,3 +17,10 @@ MD5 e49935e8abf94d6e906bad2d068d43c3 files/e2fsprogs-1.37-e2p-test.patch 380
 MD5 e85d057f99af6c980acf9a8697da9dd7 files/e2fsprogs-1.38-disconnected-inodes.patch 2881
 MD5 f079047f6885f762f6fa838b55236cb2 files/e2fsprogs-sed-locale.patch 5989
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDcsV1gIKl8Uu19MoRAgfpAJ9EIbR5XFJcMJbeZiPX0k0D1eQNTQCeNg1e
+WAZQFDvZl+vE5M5I1GRqrgc=
+=OEsD
+-----END PGP SIGNATURE-----
