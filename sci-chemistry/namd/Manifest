@@ -1,5 +1,5 @@
-MD5 0e8ccdc09320675854916b1fb8f971c4 namd-2.6_beta1.ebuild 2701
-MD5 38071211f572ce77f755f11efa709bf1 ChangeLog 783
+MD5 8b352eae553dde7a270ee42130cbf15e namd-2.6_beta1.ebuild 2701
+MD5 e856ffeb84ed7c4af60374280136fe0e ChangeLog 783
 MD5 df166a2ae1cb64196abc394d4fa522ed metadata.xml 272
 MD5 df60c46a295673222f31348cee4dda67 files/namd-fftw-lib-gentoo.patch 528
 MD5 657770d1760ff431fb8f8972c1c11ccc files/digest-namd-2.6_beta1 70
