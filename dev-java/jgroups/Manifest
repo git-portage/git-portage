@@ -1,4 +1,6 @@
-MD5 536e3e642aef23a94f7a5281258ffbae ChangeLog 918
+MD5 05089083b42d8eaef9e68e319585529b ChangeLog 1144
 MD5 2d0fc8f95c511b631fb60b33d6fbd5dc files/digest-jgroups-2.2.7 67
+MD5 2d0fc8f95c511b631fb60b33d6fbd5dc files/digest-jgroups-2.2.7-r1 67
+MD5 f10949b9454a77b0167bbbcdf7eb9804 jgroups-2.2.7-r1.ebuild 1625
 MD5 2ba3923dcc7599c764b06136a852a0eb jgroups-2.2.7.ebuild 1480
 MD5 123cf9440c1d4ac78f2caba1624765f9 metadata.xml 158
