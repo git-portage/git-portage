@@ -1,16 +1,14 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/Attic/bind-9.3.2_beta2-r1.ebuild,v 1.1 2005/11/11 00:13:22 voxus Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/Attic/bind-9.3.1-r8.ebuild,v 1.1 2005/11/12 00:11:09 voxus Exp $
 
 inherit eutils libtool
-
-BETA="${PV/_beta/b}"
 
 DESCRIPTION="BIND - Berkeley Internet Name Domain - Name Server"
 HOMEPAGE="http://www.isc.org/products/BIND/bind9.html"
 
-SRC_URI="ftp://ftp.isc.org/isc/bind9/${BETA}/${PN}-${BETA}.tar.gz
-	dlz? ( http://dev.gentoo.org/~voxus/bind/ctrix_dlz_${BETA/b2/b1}.patch.bz2 )"
+SRC_URI="ftp://ftp.isc.org/isc/bind9/${PV}/${P}.tar.gz
+	dlz? ( http://projects.navynet.it/DLZ/ctrix_dlz_9.3.1-1.patch.gz )"
 
 LICENSE="as-is"
 SLOT="0"
@@ -26,8 +24,6 @@ DEPEND="sys-apps/groff
 
 RDEPEND="${DEPEND}
 	selinux? ( sec-policy/selinux-bind )"
-
-S="${WORKDIR}/${PN}-${BETA}"
 
 pkg_setup() {
 	use threads && {
@@ -59,13 +55,13 @@ src_unpack() {
 	done
 
 	use dlz && {
-		epatch ${DISTDIR}/ctrix_dlz_${BETA/b2/b1}.patch.bz2 || \
+		epatch ${DISTDIR}/ctrix_dlz_${PV}-1.patch.gz || \
 			die "dlz patch failed"
 	}
 
 	use idn && {
-		epatch ${S}/contrib/idn/idnkit-1.0-src/patch/bind9/${PN}-${BETA/b2}-patch \
-			|| die "idn patch failed"
+		epatch ${S}/contrib/idn/idnkit-1.0-src/patch/bind9/${P}-patch || \
+			die "idn patch failed"
 	}
 
 	# it should be installed by bind-tools
@@ -103,13 +99,15 @@ src_compile() {
 			ewarn "Because of this BIND MUST only run with a single thread when"
 			ewarn "using the MySQL driver."
 			echo
-			myconf="${myconf} --disable-threads"
+			myconf="${myconf} --disable-linux-caps --disable-threads"
 			einfo "Threading support disabled"
 			epause 10
 		else
 			myconf="${myconf} --enable-linux-caps --enable-threads"
 			einfo "Threading support enabled"
 		fi
+	else
+		myconf="${myconf} --disable-linux-caps --disable-threads"
 	fi
 
 	econf \
@@ -173,7 +171,7 @@ src_install() {
 	insinto /etc/bind ; newins ${FILESDIR}/named.conf-r3 named.conf
 	# ftp://ftp.rs.internic.net/domain/named.ca:
 	insinto /var/bind ; doins ${FILESDIR}/named.ca
-	insinto /var/bind/pri ; doins ${FILESDIR}/{127,localhost-r1}.zone
+	insinto /var/bind/pri ; doins ${FILESDIR}/{127,localhost}.zone
 
 	cp ${FILESDIR}/named.init-r3 ${T}/named && doinitd ${T}/named
 	cp ${FILESDIR}/named.confd-r1 ${T}/named && doconfd ${T}/named
@@ -201,7 +199,15 @@ src_install() {
 
 pkg_postinst() {
 	if [ ! -f '/etc/bind/rndc.key' ]; then
-		/usr/sbin/rndc-confgen -a -u named
+		if [ -c /dev/urandom ]; then
+			einfo "Using /dev/urandom for generating rndc.key"
+			/usr/sbin/rndc-confgen -r /dev/urandom -a -u named
+			echo
+		else
+			einfo "Using /dev/random for generating rndc.key"
+			/usr/sbin/rndc-confgen -a -u named
+			echo
+		fi
 	fi
 
 	install -d -o named -g named ${ROOT}/var/run/named \
