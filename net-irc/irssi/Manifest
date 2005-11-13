@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3128dcf7f045e723a4da06d946dca758 ChangeLog 10272
 MD5 f6b8616b8bf8962bd0d491c457733ea5 files/0.8.9-gcc4-fix.patch 309
 MD5 86c23e50268afba6a28bd266bc1d0915 files/digest-irssi-0.8.10_rc6 69
@@ -9,3 +12,10 @@ MD5 2bd16fabdc8db3900096c2fa6232394b irssi-0.8.10_rc6.ebuild 1991
 MD5 8d333de931e2ed167c3833728289ca3f irssi-0.8.10_rc7.ebuild 1991
 MD5 23bd14008db42e94626d8fc02d72db6e irssi-0.8.9-r1.ebuild 2250
 MD5 66fbf3744370d75438e10d4d8b6a3900 metadata.xml 250
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDdzAXI1lqEGTUzyQRAvDWAKC77gBpYlmCnZ8MKS1PnJPW7T3YlwCfXQcL
+1xgvpT0KuyLECQADt5RK2LM=
+=Vwzw
+-----END PGP SIGNATURE-----
