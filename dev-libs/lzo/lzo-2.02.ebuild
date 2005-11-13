@@ -1,26 +1,27 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/lzo/Attic/lzo-1.08.ebuild,v 1.12 2005/04/01 20:59:44 hansmi Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/lzo/Attic/lzo-2.02.ebuild,v 1.1 2005/11/13 09:48:20 dragonheart Exp $
 
 DESCRIPTION="An extremely fast compression and decompression library"
 HOMEPAGE="http://www.oberhumer.com/opensource/lzo/"
 SRC_URI="http://www.oberhumer.com/opensource/lzo/download/${P}.tar.gz"
 
-SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ppc sparc alpha hppa amd64"
+SLOT="2"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~s390 ~sparc ~x86"
 IUSE=""
 
-DEPEND="virtual/libc"
+DEPEND="x86? ( dev-lang/nasm )"
+RDEPEND=""
 
 src_compile() {
 	econf --enable-shared || die
 	emake || die
 }
 
-src_install () {
+src_install() {
 	make DESTDIR=${D} install || die
-	dodoc AUTHORS BUGS COPYING ChangeLog INSTALL NEWS README THANKS doc/LZO*
+	dodoc AUTHORS BUGS ChangeLog NEWS README THANKS doc/LZO*
 	docinto examples
 	dodoc examples/*.c examples/Makefile
 }
