@@ -1,2 +1,4 @@
+MD5 7adcb4b5e6987e83c9b7d14294100584 ChangeLog 323
 MD5 4883f3004485dbd9944260595b0dec30 files/digest-gtkfxp-0.5 61
-MD5 f88e7a269346d22732ba5c02e6f6742b gtkfxp-0.5.ebuild 440
+MD5 3682ebd8522dc0deb868bdf100677c7f files/gtkfxp-0.5-build.patch 527
+MD5 843ae6cca460fbccdd05970217e4bdf3 gtkfxp-0.5.ebuild 658
