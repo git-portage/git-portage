@@ -1,24 +1,21 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/anthy-ss/Attic/anthy-ss-7015.ebuild,v 1.1 2005/10/24 07:19:52 hattya Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/anthy/Attic/anthy-7100b.ebuild,v 1.1 2005/11/13 08:13:18 hattya Exp $
 
 inherit elisp-common eutils
 
 IUSE="emacs ucs4"
 
-MY_P="${P/-ss/}"
-
 DESCRIPTION="Anthy -- free and secure Japanese input system"
 HOMEPAGE="http://anthy.sourceforge.jp/"
-SRC_URI="mirror://sourceforge.jp/anthy/16940/${MY_P}.tar.gz"
+SRC_URI="mirror://sourceforge.jp/anthy/17231/${P}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc-macos ~ppc64 ~sparc ~x86"
 SLOT="0"
-S="${WORKDIR}/${MY_P}"
 
 DEPEND="emacs? ( virtual/emacs )
-	!app-i18n/anthy"
+	!app-i18n/anthy-ss"
 
 src_compile() {
 
