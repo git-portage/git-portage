@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/vtun/Attic/vtun-2.6.ebuild,v 1.11 2004/11/14 21:21:21 kloeri Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/vtun/Attic/vtun-2.6.ebuild,v 1.12 2005/11/13 06:21:54 dragonheart Exp $
 
 inherit eutils
 
@@ -18,7 +18,7 @@ SLOT="0"
 #		to do tun/tap tunneling
 DEPEND="virtual/libc
 	>=sys-libs/zlib-1.1.3
-	>=dev-libs/lzo-1.07
+	=dev-libs/lzo-1*
 	sys-devel/bison
 	ssl? ( >=dev-libs/openssl-0.9.6c )"
 
