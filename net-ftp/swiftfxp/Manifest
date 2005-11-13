@@ -1,2 +1,4 @@
+MD5 5e971eb737c778f35b8f2250a75863d4 ChangeLog 331
 MD5 e27f8098d95ef36dd7bde34b75ce56b5 files/digest-swiftfxp-0.4.4 62
-MD5 ba167765d96ad3d982182e4ea1881c7b swiftfxp-0.4.4.ebuild 458
+MD5 78ab80bde7035b5fdaebfa422280fde3 files/swiftfxp-0.4.4-build.patch 475
+MD5 6ddf4d6b959e47b83414d889ffb1b9f6 swiftfxp-0.4.4.ebuild 686
