@@ -1,3 +1,5 @@
+MD5 016c1db546275137fca857007deb8987 ChangeLog 528
 MD5 178a873ac50643d22ef0bea2cbf11f15 files/acpi_notifier-0.3-ibm.patch 611
 MD5 306d22889cf1447ec6182916ecd22260 files/digest-sylpheed-claws-acpi-notifier-0.3 92
-MD5 c5242ad581c26c98a098c01979726265 sylpheed-claws-acpi-notifier-0.3.ebuild 1390
+MD5 5d0a878a0318c6d261424c0f55af1345 metadata.xml 392
+MD5 30fd4a7845b389eda78bf39f80a3a859 sylpheed-claws-acpi-notifier-0.3.ebuild 1545
