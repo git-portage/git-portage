@@ -4,8 +4,8 @@ MD5 746f157bc17c254b1760e42817cac122 ctags-5.5-r1.ebuild 1176
 MD5 d558b0b6798d7a7dcda35f2c33ebd293 ctags-5.5.ebuild 1182
 MD5 bf5b65da4eef9b3182a324b5a81b1875 ctags-5.5.4.ebuild 1195
 MD5 6d32bd4880394b14d8d0372822e54d95 ctags-5.5.4-r1.ebuild 1291
-MD5 7d61620182cf99632dcc1dd613f0c588 ctags-5.5.4-r3.ebuild 1303
-MD5 97e7dd95f04d684009ab989332f21016 ChangeLog 4900
+MD5 5a8a38b9ec637a7f8ff9a044245fa7f6 ctags-5.5.4-r3.ebuild 1302
+MD5 1493ef86ede2636b4765270d467dc123 ChangeLog 5150
 MD5 f3583430b2f7b0686cafd606b08bf203 metadata.xml 156
 MD5 1fe9a83e8e373e39e2f1522f22afefb7 files/digest-ctags-5.5 61
 MD5 812f885add61d6f575f8391e852b6b1c files/ctags-5.5.4-haskell.patch 2513
