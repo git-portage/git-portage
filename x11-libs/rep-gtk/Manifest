@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e42d7d8a30a56a914bfe71e45cee743c ChangeLog 7233
 MD5 220aadeb6d56c63c76c4a8ee31e2099f files/digest-rep-gtk-0.15-r3 64
 MD5 a84fef69d72f4d670468dd74e8e788de files/digest-rep-gtk-0.18-r2 64
@@ -9,3 +12,10 @@ MD5 683a44340139387ede0f0a8ec990f6af metadata.xml 252
 MD5 28825bbf0baee564c0d855e629409549 rep-gtk-0.15-r3.ebuild 1083
 MD5 1b25b0a0c6fc5e9ce7f37370caa59685 rep-gtk-0.18-r2.ebuild 1663
 MD5 067a6daa2422df562c31034e83780db2 rep-gtk-0.18-r3.ebuild 1586
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDeER8wnQyISwouHwRAvH4AKC3mrboKLQWy1jWNfrB/5WYM6DaWACeMIaW
+ef9eUGXe+IRouqUc0qRdQxM=
+=4pxr
+-----END PGP SIGNATURE-----
