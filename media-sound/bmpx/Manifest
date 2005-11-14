@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3b4de0784391dfcf45173e002cf2b155 ChangeLog 2878
 MD5 8e84da6ca8f9329c7ef5f8041e4e6a54 bmpx-0.12.6.1.ebuild 2446
 MD5 0a184bb0709b591642e5fb7040cf2919 files/digest-bmpx-0.12.6.1 138
 MD5 b612d343db3c54560665171eb7db245c metadata.xml 223
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDeM6z1ZcsMnZjRyIRAhGvAJ9iGes7qjp+kRFSCHpSXjqiAsFZvQCeJ6tT
+tSIMpjbFdeUZ13wnU41/mAA=
+=Blsu
+-----END PGP SIGNATURE-----
