@@ -1,6 +1,16 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c77f9a43957e90189bed35b357aaeaae ChangeLog 753
 MD5 8b105b1aef1e3ecc9a59746e20db13b1 files/digest-tmsnc-0.2.5 63
 MD5 96107b54f248cf1898d8720e668a7de5 files/digest-tmsnc-0.3.0 63
 MD5 a9df75e0d6358c894c7236055a417c7d metadata.xml 583
 MD5 13c20485194caf694513157208803978 tmsnc-0.2.5.ebuild 1112
 MD5 7fdad03e80cdcf82a35be1c2d8c39512 tmsnc-0.3.0.ebuild 1113
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDeJqowUpWvClEHQoRApcEAJsFK4ceLNlJSRcq1ZPsFgGMPJwC3QCdETee
+uAbF8MsD7FK612Oewu0IuQs=
+=572B
+-----END PGP SIGNATURE-----
