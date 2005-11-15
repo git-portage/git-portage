@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b01a9e62178ac2e1240f370a30beac7d ChangeLog 6891
 MD5 e996540d4833ca538c4f8e02bf0d9d41 cscope-15.5-r3.ebuild 1643
 MD5 c2a7c3251bd5fc4106ecb8d6497fd6c5 cscope-15.5-r4.ebuild 1732
@@ -10,3 +13,10 @@ MD5 6b8c74fb664bfaada3d95003f6c1134a files/cscope-15.5-tempfile.patch 2817
 MD5 25ad9fe446a7cabf4c482bbe150c7eaa files/digest-cscope-15.5-r3 63
 MD5 25ad9fe446a7cabf4c482bbe150c7eaa files/digest-cscope-15.5-r4 63
 MD5 79094d1585cb050b3855fbfe440f22b9 metadata.xml 790
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDeYPUgIKl8Uu19MoRAmaMAJwNzDC+VKn0OxdKX87QdRhvCGOV7gCfWQMs
+l9OT5Mgltu7AkZ5E/rCm+NY=
+=t0NZ
+-----END PGP SIGNATURE-----
