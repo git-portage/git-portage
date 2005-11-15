@@ -1,6 +1,6 @@
 MD5 b01a9e62178ac2e1240f370a30beac7d ChangeLog 6891
 MD5 e996540d4833ca538c4f8e02bf0d9d41 cscope-15.5-r3.ebuild 1643
-MD5 8743becf6ee64e40bb1256baa0e8ebfd cscope-15.5-r4.ebuild 1735
+MD5 c2a7c3251bd5fc4106ecb8d6497fd6c5 cscope-15.5-r4.ebuild 1732
 MD5 22e8d669b78f301c45e9075e2793dfd3 files/15.5-noclobber-tempfile-rexotec.patch 1055
 MD5 28ddc553966bf7045758be324600f5c8 files/50xcscope-gentoo.el 95
 MD5 c8aeadd309e54712241dec1b77072cbb files/cscope-15.5-can-2004-0996.patch 1125
