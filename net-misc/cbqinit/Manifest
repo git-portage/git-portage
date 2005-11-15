@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ee6a465dd210fd74fefff067e01ddb1c ChangeLog 1758
 MD5 b3eef38201071f9bcfc3064ba27e4278 cbqinit-0.7.2.ebuild 1211
 MD5 e2f8861d1a792b0dedc714105fa79538 cbqinit-0.7.3-r1.ebuild 860
@@ -11,3 +14,10 @@ MD5 1e272f674fd1bd74d9508f4a50b74ab5 files/digest-cbqinit-0.7.3 59
 MD5 1e272f674fd1bd74d9508f4a50b74ab5 files/digest-cbqinit-0.7.3-r1 59
 MD5 bf58f1ad519fe89dc6c6b90eabb3c860 files/rc_cbqinit 188
 MD5 2325b9a2bb95d33fe41ee40a511ec8bf files/rc_cbqinit-r1 504
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDeTBsgIKl8Uu19MoRAqCJAJ9vN02d0FYAfM9vR3NhiiE7AgqmqgCbB9Qc
+mNXUlvPZYthrMhu/kSB0Q/M=
+=As3l
+-----END PGP SIGNATURE-----
