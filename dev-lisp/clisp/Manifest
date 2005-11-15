@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 703fc21066f759fb89bd66a28a9ee91f clisp-2.34-r1.ebuild 4160
 MD5 fce61ccc24ef4d9aa4b70cc4c8fde0be clisp-2.33.2-r2.ebuild 4238
 MD5 b7ef5c7e35d1a066604d73f1adfe6d62 ChangeLog 9344
@@ -20,3 +23,10 @@ MD5 a9325cfeff703a21e63dbd2b3aad34c1 files/2.33.2/fastcgi-Makefile.in-gentoo.pat
 MD5 3eb393d2fbfe2e395744f45ce0d3e4f0 files/2.33.2/glibc-linux.lisp-sigpause-gentoo.patch 622
 MD5 66e5b3968b3a6ad0301ca028447b26b3 files/2.33.2/README.Gentoo 334
 MD5 fe93240f140623bf55d2e503f6d8e01e files/2.33.2/clisp.sh 2792
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDee8CKRy60XGEcJIRAk63AJoCbcDhiaBefXjgP/QIpS9UNmjBOQCfS6by
+F1e4eDPOywRai5jBgO36RBU=
+=WLCR
+-----END PGP SIGNATURE-----
