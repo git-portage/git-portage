@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f9233a80d91fcaac099d95da3b3885c8 teapop-0.3.7-r1.ebuild 1483
 MD5 dd016b049f2c047e50e758fca1035f54 teapop-0.3.8.ebuild 1521
 MD5 c8af71bca7650d7eb281bacf0929a42d teapop-0.3.3.ebuild 1128
@@ -15,3 +18,10 @@ MD5 c1ff745885fd91ab9bdab44961a05d92 files/tpop.xinetd 301
 MD5 fa42f37eed3061bfa135eb72673414c5 files/teapop-confd 143
 MD5 b9fae0c93b35960a5291164082aa29ad files/digest-teapop-0.3.7-r1 64
 MD5 230d3f3ae839f2ef4842405070f63079 files/digest-teapop-0.3.8-r1 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDefg1KRy60XGEcJIRAuI1AJ9C+QgjXCTnWGoKvcgWGv3oNNH2kQCeIjFR
+/B4f4o2RAqFe3Juy/QfId0Q=
+=LP13
+-----END PGP SIGNATURE-----
