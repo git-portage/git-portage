@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8004fceed39f2ca000b330169db3530e vnc-4.0-r1.ebuild 2792
 MD5 f915651ee1c8a1d1fd423f770f341578 vnc-4.0.ebuild 2078
 MD5 6f59f15a8b013fa3c8897c311ae596ff vnc-3.3.7.ebuild 1628
@@ -25,3 +28,10 @@ MD5 999db9342ac0003537daee1f4193fd92 files/vnc-4.0/vnc-sparc.patch 1244
 MD5 7237b4f63e22a412ecba796be21e218d files/vnc-4.0/vnc-gcc34.patch 5911
 MD5 79e22af66b56cf67fa9e517ad69c8f71 files/vnc-4.0/vnc-restart.patch 698
 MD5 ff4f3d8258e8e4612c637b86fcc50605 files/vnc-4.0/vnc-fPIC.patch 2401
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDe000KRy60XGEcJIRAs1LAKCwoEyzBmVfoEH8jvnPC49cfcv1xwCcDqgg
+pD9vycgeOoGQ4G10v7LlFU0=
+=TTzj
+-----END PGP SIGNATURE-----
