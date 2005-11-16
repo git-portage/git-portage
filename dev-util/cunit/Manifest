@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7f36800e0f2cab15625a166e667dc830 ChangeLog 1734
 MD5 b5a67110ba209d866a919fce35121095 cunit-1.0.0.6.ebuild 702
 MD5 5c50c1a19f9db117dc52d0ec38e76e35 cunit-1.0.0.8-r1.ebuild 856
@@ -13,3 +16,10 @@ MD5 7b8e4175a4d75fb58daea1e419f1027b files/digest-cunit-1.1.0.1 63
 MD5 7b8e4175a4d75fb58daea1e419f1027b files/digest-cunit-1.1.0.1-r1 63
 MD5 96bd14a67ff89d3fb36de258235fdbe8 files/digest-cunit-2.0 63
 MD5 c4c708e3dc384f836a21bfea63ae3288 metadata.xml 162
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDe1WpwUpWvClEHQoRAkogAJ4mmBzkcUAaNRwNg+48T5MBn8wg7gCcC7k5
+SvvHE3jX+SNUqRYxi5fXdYM=
+=w149
+-----END PGP SIGNATURE-----
