@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 52729cfc3adc8a4400f7196c40ce8904 ChangeLog 1865
 MD5 d70a42e3ead229a1001fbe2b09ee2937 files/digest-jacksum-1.4.0 62
 MD5 a309849eb2163c087c093b09be3c0787 files/digest-jacksum-1.5.0 62
@@ -8,3 +11,10 @@ MD5 e225e69868246434ca443e7dc17f376e jacksum-1.5.0.ebuild 1124
 MD5 17cabec9b18090d5bf4d6abf566fb0c1 jacksum-1.5.1.ebuild 1128
 MD5 723827417b11c1b5b175fa1066f125bc jacksum-1.6.0.ebuild 1138
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDe1amwUpWvClEHQoRAmb4AJ0fbPRMtL7Z7AK8oRAYn865je1wbQCfSZtL
+NOsxfcMA5ST8QiSGbqu6nHM=
+=GzJJ
+-----END PGP SIGNATURE-----
