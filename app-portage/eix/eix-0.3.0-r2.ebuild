@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/eix/Attic/eix-0.2.6.ebuild,v 1.8 2005/09/10 05:34:01 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/eix/Attic/eix-0.3.0-r2.ebuild,v 1.1 2005/11/17 23:53:47 hollow Exp $
 
 inherit eutils flag-o-matic bash-completion
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/eix/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha ~amd64 ~ia64 ppc sparc x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~mips ~ppc ~sparc ~x86"
 IUSE=""
 
 DEPEND="sys-apps/portage"
@@ -18,17 +18,17 @@ DEPEND="sys-apps/portage"
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/0.2.6-package.cc.patch
-	epatch ${FILESDIR}/0.2.6-cdb-cast.patch
+
+	epatch ${FILESDIR}/0.3.0-if-else-fi.patch
+	epatch ${FILESDIR}/0.3.0-datatype-mix.patch
+	epatch ${FILESDIR}/0.3.0-dbmatchcriteria-fix.patch
+	epatch ${FILESDIR}/0.3.0-getParentProfile.patch
+	epatch ${FILESDIR}/0.3.0-insecure-tmpfile.patch
 }
 
 src_compile() {
-	aclocal || die "aclocal"
-	libtoolize --force --copy || die "libtoolize"
-	autoconf || die "autoconf"
-
-	econf || die "configure failed"
-	emake || die "emake failed"
+	econf
+	emake || die "make failed"
 }
 
 src_install() {
