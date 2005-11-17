@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 06fff654fe3e9c411ab6b8ad9754a1dd darcs-1.0.1.ebuild 1360
 MD5 c4be54b2e961643c27b93178ff04e48d darcs-1.0.3.ebuild 1375
 MD5 f03c9959c3740619ec07544fb7128250 darcs-1.0.3_rc1.ebuild 1379
@@ -10,3 +13,10 @@ MD5 f575d4994edef2bafd09e0c520feb65f files/digest-darcs-1.0.2 63
 MD5 7a71d24a646e5a87396a3ae6e47d67c4 files/digest-darcs-1.0.3 63
 MD5 da9a5baba3176cbc6ba4df0190fc4b00 files/digest-darcs-1.0.4 63
 MD5 fd728a88bd0806ea0ca1d3d24a35f0f8 files/digest-darcs-1.0.3_rc1 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDfOV9OKSBj1ObwosRAviAAJ9qvLOqhYiUjjZqlirK4r7qe+o0eQCfatu7
+iITe91BKfr5SEkCYzQQY8SQ=
+=C09D
+-----END PGP SIGNATURE-----
