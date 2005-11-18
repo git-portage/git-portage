@@ -9,6 +9,7 @@ MD5 1652483bf7e1d08241cd5e0436bea2ae files/10MozillaFirefox 32
 MD5 1d1a1fe09e04d58a8d9faa9f14ffd0c6 files/digest-mozilla-firefox-1.0.7-r2 231
 MD5 1d1a1fe09e04d58a8d9faa9f14ffd0c6 files/digest-mozilla-firefox-1.0.7-r3 231
 MD5 da6afa804e1889df3e817af39a298708 files/digest-mozilla-firefox-1.5_rc2-r3 216
+MD5 35b078763516e6b1552ff655f6dc7781 files/digest-mozilla-firefox-1.5_rc3 216
 MD5 8e7d6f3220336cd4467d20bbe402e09a files/embedprompter-modal.patch 1548
 MD5 48baf2f328e6478812c24e59037ff99c files/firefox-0.9-init.tar.bz2 3322
 MD5 24adc1e2452f01103d41e4d8e970781f files/firefox-pkgconfig.patch 1575
@@ -41,3 +42,4 @@ MD5 ce23390351fe8020387d93ee29e09a3d metadata.xml 160
 MD5 7ec6e77c0014718ffae4a55c76acd1db mozilla-firefox-1.0.7-r2.ebuild 8564
 MD5 b686423c9050edfcfd7ff72ea4081f09 mozilla-firefox-1.0.7-r3.ebuild 9734
 MD5 e3e11ce1d1bf9b74687b952dc0706f43 mozilla-firefox-1.5_rc2-r3.ebuild 8843
+MD5 944837823711d4e3f531d4a1f6fda0ed mozilla-firefox-1.5_rc3.ebuild 8837
