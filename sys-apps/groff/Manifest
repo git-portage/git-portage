@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 76cd621054a0207a7d654c368a3a9c20 ChangeLog 8606
 MD5 b887e99fa5e1252f1bf827af9892a238 files/digest-groff-1.18.1-r4 132
 MD5 5ad2fe2219d24cfa7f9513e0671c0643 files/digest-groff-1.18.1.1 137
@@ -19,3 +22,10 @@ MD5 dee06c655e952d21181ff84957b4cc8b groff-1.18.1.1.ebuild 3155
 MD5 f5848d8ffad604e64ae98341f898ba2c groff-1.19.1-r2.ebuild 3191
 MD5 a56500e15e87fe4a693ef6eae2eb18dc groff-1.19.2.ebuild 2206
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDfWc6gIKl8Uu19MoRAjRRAJ96Kfevvc+UDBmbW/UBlN1fm5qnLgCeMfNZ
+eH+B0z61hunLptknzldc3jo=
+=vG3Q
+-----END PGP SIGNATURE-----
