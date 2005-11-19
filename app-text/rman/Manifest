@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9cfc3d6579740c6ff1e7972d73c9e256 ChangeLog 1879
 MD5 056057d8a5eaf7203c9f2316465ba33e files/digest-rman-3.0.9 55
 MD5 e6b97eb40694d5c78aaf96e3dcf20f87 files/digest-rman-3.1 59
@@ -8,3 +11,10 @@ MD5 7c24cf8147972b5fc9a74dcd11a345f3 files/rman-3.2-gentoo.diff 560
 MD5 fbbc1086058fd13785ae3f050787a9ec rman-3.0.9.ebuild 671
 MD5 d6a1189f73825b18a8d5b4dabe577d42 rman-3.1.ebuild 719
 MD5 cb301bea955b20050a5f417af5cc93cc rman-3.2.ebuild 694
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDfnxkwUpWvClEHQoRAvlrAJ0bAt3stkKrT+PZH2JTghEmX5pKXQCfcHXx
+avXeht7VbMXiEYFEI3HyFUg=
+=yRuw
+-----END PGP SIGNATURE-----
