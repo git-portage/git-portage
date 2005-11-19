@@ -1,5 +1,5 @@
-MD5 2f3f9351fb1b552c6b3126c854cf708a ChangeLog 2404
-MD5 bca923e46724ae0a7fa619e105cd6c44 cups-pdf-1.7.0a.ebuild 867
+MD5 53f2122d542d04c93dcf2cc2d4e825d0 ChangeLog 2498
+MD5 3974adb92bfc83daa77086187652a741 cups-pdf-1.7.0a.ebuild 865
 MD5 13685c4f39fa051e3e206ff599202c3b cups-pdf-1.7.3.ebuild 867
 MD5 63d30955280af99d1bc5c3c73d00c038 files/README.gentoo 1141
 MD5 176f85d8e8929d023c44364dda413dd9 files/digest-cups-pdf-1.7.0a 66
