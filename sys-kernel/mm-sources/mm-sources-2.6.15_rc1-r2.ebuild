@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.6.14_rc2-r2.ebuild,v 1.1 2005/09/30 21:27:49 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.6.15_rc1-r2.ebuild,v 1.1 2005/11/19 14:32:15 chainsaw Exp $
 
 K_PREPATCHED="yes"
 UNIPATCH_STRICTORDER="yes"
