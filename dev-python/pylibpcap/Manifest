@@ -1,4 +1,6 @@
 MD5 529ddbc08a351c35060a7a0b524eb60d ChangeLog 849
+MD5 7f72dd0e8422b038631633864940cd56 files/digest-pylibpcap-0.4 64
+MD5 4465e8717c4517331dac28d6e80e775c files/digest-pylibpcap-0.5.1 66
 MD5 71c4638c9c88af75b58e5f5cb54fe008 metadata.xml 159
 MD5 faa09054986efba372dcd6a30b1a9cfd pylibpcap-0.4.ebuild 578
-MD5 7f72dd0e8422b038631633864940cd56 files/digest-pylibpcap-0.4 64
+MD5 b63d4e943ebe7c0d1805cc36fe0709fd pylibpcap-0.5.1.ebuild 579
