@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ad0196dbed2eb0990f75312a9cd7820c ChangeLog 3969
 MD5 76c98072408ae5c4e5a96245e5a20466 files/digest-gnome-pilot-conduits-0.9 77
 MD5 dfa62058be26fe2b26b39fef4de1658b files/digest-gnome-pilot-conduits-2.0.10-r1 80
@@ -9,3 +12,10 @@ MD5 eabfd9516ebbe45cc044ac8a305c89b9 gnome-pilot-conduits-2.0.10-r1.ebuild 797
 MD5 fee7cf100ee14dce38297d8c33a61a65 gnome-pilot-conduits-2.0.12.ebuild 641
 MD5 f78abe5fd18504067a91a733eee5e843 gnome-pilot-conduits-2.0.13.ebuild 641
 MD5 1e1031eae2f36a13b2cd73550a31d03d metadata.xml 175
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDf3CZ9ZFPrqoILX8RAt/dAKDT/FHqgnwROJ2/fnQCtJZAw85I7ACgwpUk
+WhQF4x0JItl3rO4mjebLYBM=
+=F7M8
+-----END PGP SIGNATURE-----
