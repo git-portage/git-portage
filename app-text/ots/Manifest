@@ -3,5 +3,5 @@ MD5 4fb352a699bbaed36ab4cd3ae199aca5 files/digest-ots-0.4.1 61
 MD5 90b8180610e12a5b5f83f128256082ea files/digest-ots-0.4.2 61
 MD5 77ea1e5c9421e55a38bc2f9bebcb17ed files/ots-0.4.2-gcc4.diff 677
 MD5 5c0cf8693a8e3f46bbd06854f4d8a6f7 metadata.xml 258
-MD5 1167e8a27c583ee55ba8845845d70373 ots-0.4.1.ebuild 842
-MD5 d570b734519b5b1f97b8b5259a5b85cb ots-0.4.2.ebuild 951
+MD5 efb6af4233bfc4fb13a0381528250e75 ots-0.4.1.ebuild 881
+MD5 fb7d0d5d4622cdbb3eafdcbef0f47b92 ots-0.4.2.ebuild 990
