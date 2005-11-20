@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 acc0a6a0bbd609865c8b7ae6ff46cfbc ChangeLog 1739
 MD5 1558781da657276105d167b3dbadf63e at76c503a-0.12_beta19.ebuild 1637
 MD5 ecfb5632d54153fea15ac11f1729f7a3 at76c503a-0.12_beta23-r1.ebuild 1697
@@ -10,3 +13,10 @@ MD5 35f5c84feb2694bb071d04073ba6d6e5 files/digest-at76c503a-0.12_beta23 151
 MD5 35f5c84feb2694bb071d04073ba6d6e5 files/digest-at76c503a-0.12_beta23-r1 151
 MD5 35f5c84feb2694bb071d04073ba6d6e5 files/digest-at76c503a-0.12_beta23-r2 151
 MD5 19fd766bac8e110b4620363a1ace26dd metadata.xml 159
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDf7zfQiJ/wx066S4RAq25AJ9qxLVHW8FKjGh77PaPS8AToogfaQCeMUsU
+htLA7UVlQNmuy214y5z2EWo=
+=OTMn
+-----END PGP SIGNATURE-----
