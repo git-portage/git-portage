@@ -19,5 +19,9 @@
 		Die Kategorie app-backup enthält Programme zur Erstellung inkrementeller und
 		vollständiger Backups, sowie zur Sicherung auf andere Medien (CD-R, Band, etc.).
 	</longdescription>
+	<longdescription lang="it">
+		La categoria app-backup contiene strumenti per il backup dei dati, incluso
+		backup completo o incrementale, come backup su altri media (CD-R, nastri, ecc.).
+	</longdescription>
 </catmetadata>
 
