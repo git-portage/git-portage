@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 68c0bb0a7103594b11d9f98c6c76c49e ChangeLog 8028
 MD5 b3c15e104e1b64f5499fad3b01f9b27d amule-1.2.8-r1.ebuild 829
 MD5 52781eab799d0ab31cdcd3847805789e amule-1.2.8-r2.ebuild 826
@@ -25,3 +28,10 @@ MD5 393ff0bdafbbb32d292387e1ca196737 files/digest-amule-2.0.3-r2 65
 MD5 393ff0bdafbbb32d292387e1ca196737 files/digest-amule-2.0.3-r3 65
 MD5 393ff0bdafbbb32d292387e1ca196737 files/digest-amule-2.0.3-r4 65
 MD5 8aefbc0e49db723ca1ad02d0c409cd49 metadata.xml 160
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDf/LjcsIHjyDViGQRAojHAJ49+Qj6japqF+j1SGkNC+vbYZ9jdACfeG2A
+wnL+qoR2/+2iUYEmcw3Gk4c=
+=0QU7
+-----END PGP SIGNATURE-----
