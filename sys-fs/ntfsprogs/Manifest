@@ -1,6 +1,16 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 79c0e01770493e898e8a6da2efec51c5 ChangeLog 4726
 MD5 0aaf0cd7f2c2123f7d4ed5bcfc96a3d0 files/digest-ntfsprogs-1.11.2 68
 MD5 47897d207e03e02303e7d27672ca0533 files/digest-ntfsprogs-1.12.1 68
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 362f01fbee6f08384e917a52d3522ca6 ntfsprogs-1.11.2.ebuild 985
 MD5 fb99ff4cb6af071f86438ea7ee378c7a ntfsprogs-1.12.1.ebuild 956
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDgBbdgIKl8Uu19MoRAoWaAJ9PeV+yekMPX1nRDwVaADDnvFsb4wCfaXLD
+NNNEJ0VvFGWQB8SuZRxtYMo=
+=dc18
+-----END PGP SIGNATURE-----
