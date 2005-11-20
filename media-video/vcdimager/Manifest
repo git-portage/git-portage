@@ -1,4 +1,4 @@
-MD5 eb0189322a44624ac80cffd09954ef38 ChangeLog 5636
+MD5 f560b8a79d1ba1189857ac6786f40176 ChangeLog 5635
 MD5 e82176935b2c91da5a4bc00977928d5c files/cdio.patch 301
 MD5 bc5affe96540d5d15693b7cb5b0e16ea files/digest-vcdimager-0.7.19 73
 MD5 5e0c78969e48bd4c779ccda811e163e3 files/digest-vcdimager-0.7.20 68
@@ -15,4 +15,4 @@ MD5 6463f36c7b061098c188898be1e99ba6 vcdimager-0.7.20-r2.ebuild 1240
 MD5 cc511d5252df214ed0e6946785fb87d6 vcdimager-0.7.20.ebuild 1169
 MD5 ef5f4f1df55b8264d4e9f45db8022c0a vcdimager-0.7.21.ebuild 1167
 MD5 1cf18f5f5f5adaf9b9d74d18b33eb398 vcdimager-0.7.22.ebuild 1234
-MD5 4416e3db380e9ee34f615177e6c56a34 vcdimager-0.7.23.ebuild 1092
+MD5 e48bfaf541db77c76a8f3993e93f04ca vcdimager-0.7.23.ebuild 1199
