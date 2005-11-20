@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 53d288a13c1bb5da27256644de9dcf34 ChangeLog 9699
 MD5 40e2d329b2936535797e4ee8eaee5729 files/digest-gzip-1.3.5-r8 62
 MD5 3ac15e61ddb326ae27cb0ae6aa4d580f files/gzip-1.3.5-alpha.patch 1302
@@ -13,3 +16,10 @@ MD5 6f23d31c688bfc0b10ebf505dc8aabc2 files/gzip-1.3.5-zgreppipe.patch 347
 MD5 17f0be7717f949fc0acd0ef316982cd6 files/gzip-1.3.5-znew-tempfile-2.patch 1931
 MD5 b594e382dd311889df82ace89522066b gzip-1.3.5-r8.ebuild 2275
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDgBeFgIKl8Uu19MoRAtx9AJ90WqzOeV+uJsrs5Aq0LAzjPcp+0ACfae0s
+jcMluw0MwV58qEifuaZ53nE=
+=fMxh
+-----END PGP SIGNATURE-----
