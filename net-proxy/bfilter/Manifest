@@ -1,18 +1,11 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 f0ccb6eae44507f9faf8faf911bc9b9a bfilter-0.9.4.ebuild 1259
-MD5 04de055e268efcd15fcf2790fd58a71b ChangeLog 505
+MD5 7501f43f364f7a2b55a2fdbf5b0a43e6 bfilter-0.10.1.ebuild 1731
+MD5 459698d9736f92d185bb5099df004e3e ChangeLog 723
 MD5 2b32df81d3a9693c235baddd9386cce9 metadata.xml 1179
+MD5 8c7f7fd24bd2fc2681e185c511db4d57 files/digest-bfilter-0.10.1 67
 MD5 59c8af85f08eaafc38f6c3421caa8ca3 files/bfilter-0.9.4-droppriv.patch 5108
 MD5 e6e2c311139ed184131d6a945b12a3fb files/digest-bfilter-0.9.4 66
 MD5 51acec84c4acfc995ab2a02fd8a3c7fe files/bfilter.8 9512
+MD5 13b255051243f8ef4f66a4118d4a1cbd files/bfilter-0.10.1-droppriv.patch 3650
 MD5 598c43884dae3c39ecd580f74fbf5bef files/bfilter.conf 154
 MD5 cf9b6d00bed0c12ed1fc046cda9b49e5 files/bfilter.init 493
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDLk4+NSP4Vda7IdsRApnQAJ4jGiEGDIrq7SRfGU4NVc/Zg9KMRgCgj2xx
-0ix4zKv2Os0caEGIS+2i3TA=
-=zGg0
------END PGP SIGNATURE-----
