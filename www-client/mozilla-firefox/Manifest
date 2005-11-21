@@ -9,8 +9,11 @@ MD5 1652483bf7e1d08241cd5e0436bea2ae files/10MozillaFirefox 32
 MD5 1d1a1fe09e04d58a8d9faa9f14ffd0c6 files/digest-mozilla-firefox-1.0.7-r2 231
 MD5 1d1a1fe09e04d58a8d9faa9f14ffd0c6 files/digest-mozilla-firefox-1.0.7-r3 231
 MD5 35b078763516e6b1552ff655f6dc7781 files/digest-mozilla-firefox-1.5_rc3 216
+MD5 be57f8b6663426f9fa2f58ed85f56595 files/digest-mozilla-firefox-1.5_rc3-r1 292
 MD5 8e7d6f3220336cd4467d20bbe402e09a files/embedprompter-modal.patch 1548
 MD5 48baf2f328e6478812c24e59037ff99c files/firefox-0.9-init.tar.bz2 3322
+MD5 2bd0dd9035dcb875b8340be358347e8d files/firefox-1.1-uriloader.patch 15300
+MD5 aa88a21776616e6b98a28d7d043e033c files/firefox-gentoo-pkgconfig.patch 2304
 MD5 24adc1e2452f01103d41e4d8e970781f files/firefox-pkgconfig.patch 1575
 MD5 6a7a2240dc5864e7f8ee444e34e84461 files/firefox.1 2538
 MD5 9afab9469fd1d8af3d674a07ab0a0128 files/gentoo-default-prefs.js 281
@@ -40,4 +43,5 @@ MD5 f48be110754a5106f06cd313c22c4337 files/svg-cairo-0.3.0-fix.patch 1063
 MD5 ce23390351fe8020387d93ee29e09a3d metadata.xml 160
 MD5 7ec6e77c0014718ffae4a55c76acd1db mozilla-firefox-1.0.7-r2.ebuild 8564
 MD5 b686423c9050edfcfd7ff72ea4081f09 mozilla-firefox-1.0.7-r3.ebuild 9734
+MD5 c9f4b2e21f4f822f1e3ab4bc5fcc0d80 mozilla-firefox-1.5_rc3-r1.ebuild 8785
 MD5 28b81e5a671619d49e65f4519870447c mozilla-firefox-1.5_rc3.ebuild 8834
