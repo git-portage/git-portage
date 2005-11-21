@@ -1,0 +1,5 @@
+MD5 db2c0390f7a6963fdefbb49d73e988a7 files/digest-coot-0.0.33 64
+MD5 e1ff3a23a7b31886db0b5eca88385776 files/digest-molscript-2.1.2 67
+MD5 218484e776003634c6eb6da4d42569c1 files/fix-makefile-shared.patch 2057
+MD5 a222d271cfb2d53968f619493075b925 files/glutbitmap.h 845
+MD5 ae146e1ca7354ea94954b70cd443ef21 molscript-2.1.2.ebuild 1330
