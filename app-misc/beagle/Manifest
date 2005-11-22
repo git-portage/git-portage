@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 506ecf389d5703406ae3803c36510c8a ChangeLog 1399
 MD5 76fc6dcf5b9e19be1671056ac3189cff beagle-0.1.1.ebuild 3099
 MD5 21d241e9eb81a3ffb9e015281e582736 beagle-0.1.2.ebuild 2857
@@ -6,3 +9,10 @@ MD5 9c5c2f0ad3f959022b402ddba4dc671d files/beagle-0.1.1-uri-serialization.patch 
 MD5 4840546d3689482f55c682ef01d4807b files/digest-beagle-0.1.1 66
 MD5 804bc08b17b5cd22cad5ceb7d6d45e9b files/digest-beagle-0.1.2 66
 MD5 43c872252a620e391c449e150e344a3a metadata.xml 224
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDgrC4csIHjyDViGQRArAHAKCSOjBjoo51wD81DXeGSqYyqMtqcwCeMk/f
+ueGbQ6ESObXILm4u/jg85Os=
+=ayQF
+-----END PGP SIGNATURE-----
