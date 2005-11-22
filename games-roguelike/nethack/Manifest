@@ -1,5 +1,5 @@
-MD5 611aa4befed1efc0d09e2de666b9ab88 nethack-3.4.3-r1.ebuild 5142
-MD5 d11c747e08a496fd7591a57ab504d7cb ChangeLog 5177
+MD5 4b78761ac97564de58357cebfe29c646 nethack-3.4.3-r1.ebuild 5147
+MD5 52422b86143698f4f7c916c33930c799 ChangeLog 5374
 MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
 MD5 68200eaa7e6d116868700aab23e7e1d5 files/3.4.3-X-support.patch 920
 MD5 ed68fbd43d4e591eee4930aa4578a012 files/digest-nethack-3.4.3-r1 65
