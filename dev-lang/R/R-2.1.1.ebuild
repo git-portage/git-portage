@@ -1,12 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/Attic/R-2.1.1.ebuild,v 1.5 2005/09/03 19:24:43 corsair Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/Attic/R-2.1.1.ebuild,v 1.6 2005/11/22 15:11:55 kugelfang Exp $
 
 inherit fortran toolchain-funcs
 
 IUSE="blas jpeg nls png readline tcltk X"
 DESCRIPTION="R is GNU S - A language and environment for statistical computing and graphics."
-SRC_URI="http://cran.r-project.org/src/base/R-2/${P}.tar.gz"
+SRC_URI="mirror://cran/src/base/R-2/${P}.tar.gz"
 #There are daily release patches, don't know how to utilize these
 #"ftp://ftp.stat.math.ethz.ch/Software/${PN}/${PN}-release.diff.gz"
 HOMEPAGE="http://www.r-project.org/"
