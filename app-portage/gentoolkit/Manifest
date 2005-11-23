@@ -1,4 +1,4 @@
-MD5 1db5fd0df34288dfa0caccc6e8b7f587 ChangeLog 31606
+MD5 b562f1987d39002aec89cf3d46ebcf9f ChangeLog 31971
 MD5 99dee3ece4f06bd49f471db77a5cea21 files/digest-gentoolkit-0.2.0 67
 MD5 99dee3ece4f06bd49f471db77a5cea21 files/digest-gentoolkit-0.2.0-r3 67
 MD5 20da55ab7855d3b009f9bf8171c5725b files/digest-gentoolkit-0.2.1_rc1 71
@@ -10,5 +10,5 @@ MD5 54512c5b6ccfdad8c9bd5e7785cd3f4c files/revdep-rebuild.112099.patch 1040
 MD5 210c6b284b9407d52d7dc5cfc860e54f gentoolkit-0.2.0-r3.ebuild 1387
 MD5 83de6e1010084bfb0ed83caa6c522d5d gentoolkit-0.2.0.ebuild 1007
 MD5 c54bc0a5353895244c16c40a2fff745d gentoolkit-0.2.1_rc1.ebuild 1573
-MD5 5d47d938958aa9e17ac804c51b4582b6 gentoolkit-0.2.1_rc2.ebuild 1459
+MD5 3c4f5a246c4f37fc57b3bc8f3fb5ad9e gentoolkit-0.2.1_rc2.ebuild 1573
 MD5 c36d3e9465a96d7220228d2ef5457bd3 metadata.xml 451
