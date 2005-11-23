@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f806b255ab6c2dfc8da0aac6a1f3b36d ChangeLog 52335
 MD5 fb66bd5497f574c00a8ba4d5f798dc00 files/Changelog-2.4.bz2 6590
 MD5 179bd3656f72932f69b0f860d23483cd files/digest-gentoo-sources-2.4.28-r9 226
@@ -39,3 +42,10 @@ MD5 5e8d15c677287cdd6d28b103ceb8a446 gentoo-sources-2.6.14-r2.ebuild 1215
 MD5 ddedd86bf4e0c17341b2e58ba14dfc65 gentoo-sources-2.6.14.ebuild 1213
 MD5 2d2150ca2b1b3db3d469a5a2356161fb gentoo-sources-2.6.9-r9.ebuild 1625
 MD5 410c3afeb274354a7ce68257edc18012 metadata.xml 283
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDhO9untT9W3vfTuoRAu7SAJ91ol7Uvsqx2/23Zcr9WfXBHS4PpACePPOf
+pATYyIhIuCMiPRc9Q21Lhs0=
+=P3uq
+-----END PGP SIGNATURE-----
