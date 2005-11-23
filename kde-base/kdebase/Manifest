@@ -50,7 +50,7 @@ MD5 bca1b08e31bfa89d6d04e9996a77c0bd kdebase-3.4.2-r2.ebuild 4527
 MD5 d97f07ad36c0135703d7d85d89fe8785 kdebase-3.4.2.ebuild 4086
 MD5 71d63b9e44334013e0008591620de1eb kdebase-3.4.3-r1.ebuild 4492
 MD5 591117532cfbeb0a773148c9edf13f60 kdebase-3.4.3.ebuild 4256
-MD5 93409dbeae846719a527346ee8b42fd3 kdebase-3.5.0.ebuild 4233
+MD5 5565d39e84a2345fadf0dd7e1fd1c12d kdebase-3.5.0.ebuild 4100
 MD5 b358eab7eab8c227d0985ba4f2280470 kdebase-3.5.0_beta2.ebuild 4265
 MD5 f4815f27488d7c174d789ce94ef90afc kdebase-3.5.0_rc1.ebuild 4238
 MD5 c9a8dd6584d378e6e0130a37ab107632 kdebase-3.5_beta1.ebuild 4087
