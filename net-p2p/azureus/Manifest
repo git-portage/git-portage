@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 fa06dfd414a4dc1289c8b92c014978c8 ChangeLog 1393
 MD5 ff3e702ff946e17b534a1a0971cab592 azureus-2.2.0.0-r1.ebuild 2345
 MD5 e0f53d42b0f9005919d82d10fa28a526 azureus-2.3.0.4.ebuild 2532
@@ -11,3 +14,10 @@ MD5 3ae1e81c8450fa93040e4e97a1311d88 files/build.xml 661
 MD5 67821fe5d66efda508803dfa3a87b967 files/digest-azureus-2.2.0.0-r1 134
 MD5 29bddb8c1c68b6c8cb4fd46b070b7a2d files/digest-azureus-2.3.0.4 134
 MD5 a63336d02253ae5fe2ad69f813bdd7d8 metadata.xml 329
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDhkcMQiJ/wx066S4RAhi9AJ9CqgE2EZhr7wsufW6FQOdjsUFuEgCdEl4N
+BCLfEJ/wuo+2JSzDcUCPWFU=
+=msBk
+-----END PGP SIGNATURE-----
