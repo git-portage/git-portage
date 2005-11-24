@@ -1,4 +1,4 @@
-MD5 bd1e21bce33e002ed3167e03f052ce0c ChangeLog 3561
+MD5 b6b492033315db1bd6409c32e6582d9f ChangeLog 3559
 MD5 07523ebbe30f8f113791aa0328a95890 files/digest-smarty-docs-2.6.0 69
 MD5 3c8aa222810b57064cec711243cb95e7 files/digest-smarty-docs-2.6.2 69
 MD5 c9ec59dbd8dbeeeee96a9f39ca6b355a files/digest-smarty-docs-2.6.3 69
@@ -12,5 +12,5 @@ MD5 201ad618758eb7b0c52a5549d13fdf11 smarty-docs-2.6.2.ebuild 529
 MD5 7d5ad1254787f538502caa8600c246dc smarty-docs-2.6.3.ebuild 536
 MD5 e1644d9385342119f107f29626a04475 smarty-docs-2.6.5.ebuild 540
 MD5 a5887d168f7e363e9bbde7f0a51aeffa smarty-docs-2.6.7.ebuild 536
-MD5 deb15b880f3eb4fc81fb724b9255855c smarty-docs-2.6.9-r1.ebuild 465
+MD5 2061948ea85fc0babccd17e5a90c1123 smarty-docs-2.6.9-r1.ebuild 574
 MD5 bc9d114b786c12677666887bfe987698 smarty-docs-2.6.9.ebuild 538
