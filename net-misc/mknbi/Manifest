@@ -1,4 +1,4 @@
-MD5 2f753ebd29690d305edf094cf62024a4 ChangeLog 1784
+MD5 599f96ca993fd2d394f8aec8c101c4e0 ChangeLog 1994
 MD5 febff7af7446b0484f11f6a4274e6590 files/digest-mknbi-1.2.11 61
 MD5 febff7af7446b0484f11f6a4274e6590 files/digest-mknbi-1.2.12 61
 MD5 5907f8ed1ed6b036f9ce50c8e0d09636 files/digest-mknbi-1.4.0 63
@@ -12,4 +12,4 @@ MD5 a3a1403ba800b2b1ff9cee7d56af7347 mknbi-1.2.12.ebuild 871
 MD5 0018b82355f92f489a46c370c7f99034 mknbi-1.4.0.ebuild 733
 MD5 7ed4ecca75cd040c4d6766a28c666cf8 mknbi-1.4.1.ebuild 711
 MD5 a39f5d5775f290a6880eb1fa95ebf33a mknbi-1.4.3.ebuild 1083
-MD5 3b65e8b1c6787c533ab4da9cafe82dab mknbi-1.4.4.ebuild 1079
+MD5 ae4786e1bfe4e18a4fb2588529e3db54 mknbi-1.4.4.ebuild 1080
