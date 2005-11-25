@@ -4,4 +4,4 @@ MD5 fe2501dcc09df3df298fd3c54453529b files/digest-xalan-2.6.0-r3 140
 MD5 9191b4a78191c1b0485ebf92aae74e9d files/xalan.script 135
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
 MD5 6e5020e4d14bf0bd02fa4e3a90efcf68 xalan-2.6.0-r2.ebuild 1505
-MD5 e2d2214ec36d48dd1a4cabbe3508315b xalan-2.6.0-r3.ebuild 1550
+MD5 5a0c35d7d3071da31cf32f80a6c8fda1 xalan-2.6.0-r3.ebuild 1554
