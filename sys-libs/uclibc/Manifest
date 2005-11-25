@@ -1,4 +1,4 @@
-MD5 667cf792cd21ab4e1aa44772a4933d12 ChangeLog 9930
+MD5 bce3bfbe67f2845926f95b3f385001ae ChangeLog 9930
 MD5 e6443710aea7fb2e9056b67be27b68d1 files/digest-uclibc-0.9.27 229
 MD5 9a39fb9a2446443aa355070e819107a0 files/digest-uclibc-0.9.27-r1 298
 MD5 851ff3547906842b0d94c848a876be2c files/digest-uclibc-0.9.28 213
@@ -6,4 +6,4 @@ MD5 684def72ebc0da73cb8b6d1c53e7e8fb files/getent 1112
 MD5 e96b4dfc373a1cdf7735aeae52c4cf7e metadata.xml 999
 MD5 8a028ea0b10d685a727217115e064d5e uclibc-0.9.27-r1.ebuild 12127
 MD5 81cee933f6981c689db448c06576ec3c uclibc-0.9.27.ebuild 10387
-MD5 b301fed2703c064191389a188ce2a3c6 uclibc-0.9.28.ebuild 13084
+MD5 7093e6433cbe7672f2551286c869d2ff uclibc-0.9.28.ebuild 13083
