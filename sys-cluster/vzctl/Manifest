@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 343eac93ae0ba7334abf61b22af8b25d ChangeLog 1191
 MD5 59b8869cf562ff10c9561f1f38cd37cc files/digest-vzctl-2.7.0.21 66
 MD5 090adf5c130cc2cd5a761354e80590c8 files/digest-vzctl-2.7.0.22 66
@@ -12,3 +15,10 @@ MD5 9dd7479c278946fc668a457f0256d77f vzctl-2.7.0.21.ebuild 1577
 MD5 67c5b5981b6aefbbdac3ce516b3a7ddb vzctl-2.7.0.22.ebuild 1575
 MD5 4f0e8a8008b3f3457e219a1da52c1c12 vzctl-2.7.0.23.ebuild 1578
 MD5 4370a81f942a5f6cf9dc683d7b560f5b vzctl-2.7.0.24.ebuild 1584
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDiCtxflZ8QqxhrsMRAp9jAKCrc+wNRsw0Cj9TE7MBwnUqYgV6lQCglaao
+KB/IavjZ5pAFuQAQ6CvMUGw=
+=qJBM
+-----END PGP SIGNATURE-----
