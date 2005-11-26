@@ -1,2 +1,4 @@
+MD5 282b692a56e88ffd3d71f505d8616403 ChangeLog 402
 MD5 b2325878ba7e46058b0e1d9deead53d6 files/digest-ilbc-rfc3951-0 64
-MD5 0b2c7aca55ec1e4eab08b3a1adefeda1 ilbc-rfc3951-0.ebuild 554
+MD5 625d95305f1c558badaebb0b5f1a65d1 ilbc-rfc3951-0.ebuild 680
+MD5 270deeec3a988c14356bc7a771c86fc8 metadata.xml 319
