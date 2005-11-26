@@ -3,4 +3,4 @@ MD5 6ac5cd5d3e68664565f7fd08b9acc803 files/digest-openvz-sources-022.044 143
 MD5 282ac3d6c8d376fa5a46a6fcc1790ce2 files/digest-openvz-sources-022.045-r1 145
 MD5 647244b44cdc8ef50e6dd53b4b8e88af metadata.xml 564
 MD5 385503940903d91e35e555245f5860c6 openvz-sources-022.044.ebuild 943
-MD5 fb5f3b25d8746071ba298d2b368349c2 openvz-sources-022.045-r1.ebuild 710
+MD5 c05635d93cd803b6cdda00ec4115b0a9 openvz-sources-022.045-r1.ebuild 710
