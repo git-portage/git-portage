@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 cbd9a750fb8191bb4e33543767251358 ChangeLog 2439
 MD5 2a9e814b7851e9e22178430153da8110 files/digest-libast-0.5-r2 62
 MD5 0cf4b65fa766332e528bddb7cf3d74e2 files/digest-libast-0.6.1 64
@@ -10,3 +13,10 @@ MD5 e5cbce1bf7c1ba6529f62bb87ee80c94 libast-0.6.1-r1.ebuild 1044
 MD5 f273f8360749863678a12164e2783887 libast-0.6.1.ebuild 846
 MD5 cdf153f9f63c593807adda0e8513e79c libast-9999.ebuild 1100
 MD5 ec45fec065a8eccc43870fc678126de7 metadata.xml 820
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDie9NgIKl8Uu19MoRAoDmAJ0Uyoqg8u6T28cOH3PP7HxfwmGAogCfQivJ
+yRdbMt/qX9i8UnPAcWGWJnc=
+=KuUC
+-----END PGP SIGNATURE-----
