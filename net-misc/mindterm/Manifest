@@ -1,5 +1,5 @@
-MD5 2641aa4724bb6dcf137b5f9c66eaf768 ChangeLog 818
+MD5 158fcf0a5109ad20909d403e6bd60ba2 ChangeLog 822
 MD5 26c0b1cebcbecee86d841d777d59f8b1 files/2.4.2-buildxml.patch 1225
 MD5 dadd3c7dad54c71db8facb7891677489 files/digest-mindterm-2.4.2 67
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
-MD5 14e5d6eb73de6f8b877926a119dfea5c mindterm-2.4.2.ebuild 1377
+MD5 c703bec4bc389235e5100392ed8af16b mindterm-2.4.2.ebuild 1381
