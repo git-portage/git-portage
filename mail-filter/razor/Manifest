@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 655a48c4d25bb7a66652a741918e6cc6 ChangeLog 8576
 MD5 7a82279f793cdd8926569fcc1f2c51e6 files/digest-razor-2.67 68
 MD5 a903c073103cad6f1bccaa20ecdabf1e files/digest-razor-2.71 68
@@ -13,3 +16,10 @@ MD5 1268cd4d4410c92d81ce8df1e222f995 razor-2.72.ebuild 2596
 MD5 47cebe107d01e4bc0c9e765b7842ee55 razor-2.74.ebuild 2733
 MD5 a9a6fafec1799bb501d1ec6ef296d0fd razor-2.75.ebuild 2600
 MD5 bb323c022e36500dadfe8b75d262d312 razor-2.77.ebuild 2595
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDiwB8tG5z4I8BtQoRAmsOAKCIc3NNb8Wf559oX80vEBBDyqenUwCgjFWC
+r97fn0lti2t8uVFdAu7T5P4=
+=xe8E
+-----END PGP SIGNATURE-----
