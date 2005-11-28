@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d8457385aefc33bbd81b2275451c3e10 ChangeLog 5220
 MD5 9b414c7b815d3ede7ef22bc0569ac761 boehm-gc-6.3-r1.ebuild 1156
 MD5 c82aeb6fa446251b7192e425ae3c163a boehm-gc-6.4.ebuild 1153
@@ -10,3 +13,10 @@ MD5 b8b5e747f06731368f0e8b8f8dfbf43f files/digest-boehm-gc-6.5 57
 MD5 e080f72c7b4eb1514628f50533dbf9ff files/digest-boehm-gc-6.6 57
 MD5 9c4bd0e5865bf94d974b64a40c54544a files/gc6.6-gcc41.patch 461
 MD5 ae35aecf3e681586ace5f8c15866aed7 metadata.xml 222
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDi0/Wr2QksT29OyARAoLVAJ90lyhKg2u/Pu6egzpiPlEong7qlACeOVA3
+I3kJ06i+AookoWjSoYFDv4w=
+=Xyxy
+-----END PGP SIGNATURE-----
