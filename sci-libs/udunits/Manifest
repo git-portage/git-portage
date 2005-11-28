@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f50ea8c88fd4226783497d02c2e3edca ChangeLog 2440
 MD5 cea4faba4689abec3805139902ddd0d2 files/digest-udunits-1.12.0 65
 MD5 3fdb828dd9ab28f5f06e2456b1c96c65 files/digest-udunits-1.12.1 65
@@ -10,3 +13,10 @@ MD5 176a9013a3fbf4d813fbe2ae5c54b409 metadata.xml 583
 MD5 13854994049a339f3ec55e5ded45aea1 udunits-1.12.0.ebuild 1852
 MD5 04d2b6e9867268963d59fc93aaa7f61d udunits-1.12.1.ebuild 2009
 MD5 9edab20756db1a2002f82f16ec1130ff udunits-1.12.3.ebuild 2011
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDivJetG5z4I8BtQoRAmt4AKCIRs2f0O+dGeSyjLeQFaI0doQ4kwCfbhGC
+y1rd634ah4/MJl++vgsOu+c=
+=HMCo
+-----END PGP SIGNATURE-----
