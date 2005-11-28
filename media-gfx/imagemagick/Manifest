@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 1d054c23cda5a5d73ad576e4d8856379 ChangeLog 24552
 MD5 42fd34630ded62400ed31be1426e3b32 files/digest-imagemagick-6.1.8.8 73
 MD5 b5fd28bb0167a5ab5f5422e7335a5c11 files/digest-imagemagick-6.2.0.4 72
@@ -21,21 +18,14 @@ MD5 0ec169e44bbf685be7f25684344ff9a6 files/imagemagick-perlmagick.patch 1193
 MD5 26d349b9ac3126394eca1640b90c1e66 imagemagick-6.1.8.8.ebuild 2317
 MD5 4a944fd0845cf1ffc4651141bb76fbc5 imagemagick-6.2.0.4.ebuild 2281
 MD5 ba4ddb58c87859514dc6fdb4c45d3a0c imagemagick-6.2.0.6.ebuild 2290
-MD5 4c6b5a9b2f6836174c4cd4834f76b67e imagemagick-6.2.1.5-r1.ebuild 2617
-MD5 c065399950638c0256aab63246c0f238 imagemagick-6.2.1.5.ebuild 2592
-MD5 e217021f88f2b1597d5946f36f4f7ec3 imagemagick-6.2.2.0-r1.ebuild 2609
-MD5 3dce9cbb137138524f39515905101a35 imagemagick-6.2.2.0.ebuild 2584
-MD5 44276ac94f4ce41654185285a85dd336 imagemagick-6.2.2.3-r1.ebuild 2658
-MD5 6ddba8488efcce8504bb7c7143f55345 imagemagick-6.2.2.3.ebuild 2582
-MD5 3c5815b5f5801d71e285a0f674393dba imagemagick-6.2.4.2-r1.ebuild 2705
-MD5 f83f94636e500cc9b4e38e637e19eeaa imagemagick-6.2.4.2.ebuild 2678
-MD5 cc6c155e7a58cc1d780b805d3f4fdab1 imagemagick-6.2.5.2.ebuild 2714
-MD5 e02cd9e89244f3179ecfe2aa37a56ecb imagemagick-6.2.5.4.ebuild 2629
+MD5 0b663fc4cd95ce0c0527d76c2e073194 imagemagick-6.2.1.5-r1.ebuild 2608
+MD5 c6fb8970369068dec6255d2e29ed6104 imagemagick-6.2.1.5.ebuild 2583
+MD5 b7618ce49660b8831ac1eb0e47bb2c82 imagemagick-6.2.2.0-r1.ebuild 2600
+MD5 25f7bd4e901762781aa20f04e0110319 imagemagick-6.2.2.0.ebuild 2575
+MD5 39167f432f6133c1a2e8c3cec46256f0 imagemagick-6.2.2.3-r1.ebuild 2649
+MD5 fea4806ab6730d554fd43164058b7284 imagemagick-6.2.2.3.ebuild 2573
+MD5 9bdf4e4a92a5220398654f64ead319b7 imagemagick-6.2.4.2-r1.ebuild 2696
+MD5 b20696017865cd6738e3c9c22de5025e imagemagick-6.2.4.2.ebuild 2669
+MD5 6b88a0360dd7242eb9777d29a16e4bbf imagemagick-6.2.5.2.ebuild 2705
+MD5 bec8dcbc2cd73c184348a5919171eb85 imagemagick-6.2.5.4.ebuild 2620
 MD5 3dc350be33069338fa083ca16ec11cc8 metadata.xml 224
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD4DBQFDdAZtgIKl8Uu19MoRArMjAJ9+v6W5blGxyAsq0de+Khy58KQzhACYmNip
-tjwxJsneOZVJxqtqJICkig==
-=15xZ
------END PGP SIGNATURE-----
