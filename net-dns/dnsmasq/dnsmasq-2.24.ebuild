@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/dnsmasq/Attic/dnsmasq-2.20.ebuild,v 1.1 2005/01/25 00:32:24 avenj Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/dnsmasq/Attic/dnsmasq-2.24.ebuild,v 1.1 2005/11/28 10:14:21 avenj Exp $
 
-inherit toolchain-funcs
+inherit eutils toolchain-funcs
 
 MY_P="${P/_/}"
 MY_PV="${PV/_rc*/}"
@@ -12,15 +12,14 @@ SRC_URI="http://www.thekelleys.org.uk/dnsmasq/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~s390 ~sh ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~s390 ~sh ~sparc ~x86 ~alpha"
 IUSE=""
 
-RDEPEND="virtual/libc"
+RDEPEND=""
 DEPEND="${RDEPEND}
-	>=sys-apps/sed-4
 	>=sys-apps/portage-2.0.51"
 
-S="${WORKDIR}/${PN}-${MY_PV}"
+S=${WORKDIR}/${PN}-${MY_PV}
 
 src_compile() {
 	emake CC="$(tc-getCC)" || die
@@ -30,13 +29,13 @@ src_install() {
 	make \
 		PREFIX=/usr \
 		MANDIR=/usr/share/man \
-		DESTDIR=${D} \
+		DESTDIR="${D}" \
 		install || die
 	dodoc CHANGELOG FAQ
 	dohtml *.html
 
-	newinitd ${FILESDIR}/dnsmasq-init dnsmasq
-	newconfd ${FILESDIR}/dnsmasq.confd dnsmasq
+	newinitd "${FILESDIR}"/dnsmasq-init dnsmasq
+	newconfd "${FILESDIR}"/dnsmasq.confd dnsmasq
 	insinto /etc
 	newins dnsmasq.conf.example dnsmasq.conf
 }
