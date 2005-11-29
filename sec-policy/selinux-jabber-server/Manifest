@@ -1,4 +1,4 @@
-MD5 1e38a16bac987acf6efd2ed89c8a9d59 ChangeLog 130
+MD5 9ca63a146208282ecf02ebb2c7f91073 ChangeLog 400
 MD5 9df14bc853ce4e92d876a494d63408a7 files/digest-selinux-jabber-server-20050219 80
 MD5 3a0fde9a669ccb51c6165d0890553755 metadata.xml 519
-MD5 af932ef11a53e8f6c84c79b6dac03ee6 selinux-jabber-server-20050219.ebuild 294
+MD5 25b59646bab72b46bf606570bc8a7f90 selinux-jabber-server-20050219.ebuild 423
