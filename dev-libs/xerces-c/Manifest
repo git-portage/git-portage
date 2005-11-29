@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3b3f165b2d14a1a387b58d18e8b7360b ChangeLog 5699
 MD5 df82644c18f756a618ceb4e3e378a64c files/digest-xerces-c-2.6.0 71
 MD5 df82644c18f756a618ceb4e3e378a64c files/digest-xerces-c-2.6.0-r1 71
@@ -8,3 +11,10 @@ MD5 751dbed21e1e078fa8f07ef9bf0991b2 metadata.xml 376
 MD5 91a0101a543246aced87b8b5cdc0ce27 xerces-c-2.6.0-r1.ebuild 1222
 MD5 2d7d991c4c4b919fb8536f4a95d96f6f xerces-c-2.6.0.ebuild 1054
 MD5 0764e9e9e938e267d57c2a6f0c2a65f0 xerces-c-2.7.0.ebuild 1213
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD4DBQFDi8fNgIKl8Uu19MoRAqWlAJYjazuWl8Qg2GRdoC2oFn5c+AaNAJ4xtnRs
+SpaBaEmJtxgF+BxT/Pq4nA==
+=P8qB
+-----END PGP SIGNATURE-----
