@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 efea8a714832f399caf4f548d46ffab4 ChangeLog 2840
 MD5 e2d210765074f03bd2e2c5d2ce8f6b63 files/digest-wxglade-0.3.1 62
 MD5 e2d210765074f03bd2e2c5d2ce8f6b63 files/digest-wxglade-0.3.1-r1 62
@@ -14,3 +17,10 @@ MD5 0ffbf9f1b8859d90ac915018494b6d38 wxglade-0.3.3.ebuild 1062
 MD5 0189f4cddb25f4db5492b516e84ce659 wxglade-0.3.4.ebuild 1082
 MD5 0b3a9f919da1e6ce1a6fde2f95b5c912 wxglade-0.3.5.1.ebuild 1087
 MD5 4c23e178c89ba92ddc5eb2771464324c wxglade-0.3.5.ebuild 1070
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDi9WEwUpWvClEHQoRAsjfAJ9S7UisYgMbC47VjZeJr7yA3bSkAgCeKzNe
+7PvC2nCDwfyTFRBLDuzMLV8=
+=n4De
+-----END PGP SIGNATURE-----
