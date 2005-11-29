@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 de35d8f600d3d75d8075a8d848787013 metadata.xml 223
 MD5 a10d51b48e20010be8babe7a95b38615 ChangeLog 2415
 MD5 a788ec80489ce2dbad5394b9b1786eec hdup-1.6.37.ebuild 1094
 MD5 5ffb21e1c9933268637ee6178d86780a files/digest-hdup-1.6.37 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDi/pOFdQwWVoAgN4RAn9LAKCqPRy1LuO+VGaqvwwkGlW9s4oACACfbiGN
+WHUsdedhrAjGayugCmQo17Y=
+=LSML
+-----END PGP SIGNATURE-----
