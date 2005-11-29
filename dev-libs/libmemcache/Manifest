@@ -2,13 +2,13 @@
 Hash: SHA1
 
 MD5 2f98bc3b06bc48d35ab20cac5cc47e9d ChangeLog 553
-MD5 f8d10f350e91f30316ea4e1bd1e76470 metadata.xml 254
-MD5 2bc2a33f7468a51e6974cc1725437911 libmemcache-1.2.4.ebuild 928
 MD5 a2d2972791ce89284811923d72af1855 files/digest-libmemcache-1.2.4 69
+MD5 af0bc127fc7e267829bcfafc5c431051 libmemcache-1.2.4.ebuild 932
+MD5 f8d10f350e91f30316ea4e1bd1e76470 metadata.xml 254
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1-ecc0.1.6 (GNU/Linux)
+Version: GnuPG v1.4.2 (GNU/Linux)
 
-iD8DBQFDMWUJKRy60XGEcJIRAoeHAJ4n3VwgnDcIRMmIxwUFXITohyvmcACgnziI
-RkXMDvPRYs7IbXGr4N3w4A8=
-=nWZc
+iD8DBQFDi9GKgIKl8Uu19MoRAhe3AJ9XfybRN/ifCaQLNML46tDQaHtb7QCeK6T5
+UHwqSMNwqDWQsNf7g2XG7Eo=
+=p4xQ
 -----END PGP SIGNATURE-----
