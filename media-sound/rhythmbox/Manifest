@@ -1,4 +1,4 @@
-MD5 006e34979ad5b4e56ab3fa1e2ed33948 ChangeLog 6797
+MD5 75c913055e8f2d8cce2b84a5df300d4c ChangeLog 6797
 MD5 44a42f72ca8c0f3136fded12f1aa7172 files/digest-rhythmbox-0.8.8-r1 69
 MD5 518953859231ab23eec13b7d8a004fdc files/digest-rhythmbox-0.9.2 69
 MD5 7c49ce1b3d4a78dc9adba805fd3b82fb files/rhythmbox-0.8.7-gst_shn_support.patch 665
@@ -6,4 +6,4 @@ MD5 a3ff016aec5eec7277e2598ad013b80a files/rhythmbox-0.8.8-empty-xlib.patch 496
 MD5 9f5bc9bf255b78cc67342f9fc9423ef6 files/rhythmbox-0.8.8-ipod.patch 809
 MD5 e854b7f54a4de6256186cbdcaabbc1ec metadata.xml 200
 MD5 ff60c2d320a8e0e8e55bfac395f77eb3 rhythmbox-0.8.8-r1.ebuild 2636
-MD5 710113391d67f59f9657ab38d49ae7c5 rhythmbox-0.9.2.ebuild 2247
+MD5 3965be0470728cd3411939351da1e15f rhythmbox-0.9.2.ebuild 2244
