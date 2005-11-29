@@ -1,4 +1,4 @@
-MD5 47b0b96153f116ae54285395b08d623c ChangeLog 1257
+MD5 17a4759057e76aa5b7dfbd87e21ee2cc ChangeLog 1379
 MD5 dc5a3058857036eb5ca33a35819f1164 files/digest-twinkle-0.3.1 65
 MD5 7190799a48d4e6410e3b085f6060ec58 files/digest-twinkle-0.3.2 65
 MD5 7190799a48d4e6410e3b085f6060ec58 files/digest-twinkle-0.3.2-r1 65
@@ -13,4 +13,4 @@ MD5 7abbf78091ee015b297347fb0b1c9d09 twinkle-0.3.1.ebuild 855
 MD5 e2a484f7eed40b4feb94cac24975e8a3 twinkle-0.3.2-r1.ebuild 1031
 MD5 6927584c0ecd78f39a77a33016dc3df8 twinkle-0.3.2.ebuild 892
 MD5 10128ef335cfe934c39355c200ec03b7 twinkle-0.4.1.ebuild 995
-MD5 cceaea1047bd5b13a3a6e86f41d88a87 twinkle-0.4.2.ebuild 1002
+MD5 297ea0290e47908e78db0014f149a7fa twinkle-0.4.2.ebuild 1002
