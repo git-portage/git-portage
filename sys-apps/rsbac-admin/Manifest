@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 15eeaeccf0bd6f8465b34aeed7228c9c ChangeLog 4155
 MD5 1b8e1b375f69babf1fd8b370c33aa4bf files/digest-rsbac-admin-1.2.4 71
 MD5 5b133f0238ddfd21834460d1b7ea1b99 files/digest-rsbac-admin-1.2.5 70
@@ -9,3 +12,10 @@ MD5 035ff78da2388cc0585f93ef2247332d metadata.xml 161
 MD5 2af626ad2bd32bd1a95f45b88c18f545 rsbac-admin-1.2.4.ebuild 2771
 MD5 dfa12750f04fd3adac7d6bc8aadb4e29 rsbac-admin-1.2.5.ebuild 2100
 MD5 660066c9ca7ce196987f4a9a05344775 rsbac-admin-1.2.99.ebuild 2168
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDjLCDAiZjviIA2XgRAkkgAJ4+c4PVfUS0ylIFZgr5paYAjX3+ZwCfQRLm
+Y54P6gXJEPMW93T2BLif3do=
+=jd/8
+-----END PGP SIGNATURE-----
