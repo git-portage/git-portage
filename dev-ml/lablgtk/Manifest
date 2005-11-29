@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ae420f0d0669b40bb09a0ed9b5c53b21 ChangeLog 5461
 MD5 58e497f72394c82abd2991deb196cb5d files/digest-lablgtk-1.2.5 65
 MD5 7942d753e9ae00567c6a9f7de0242d53 files/digest-lablgtk-1.2.6 65
@@ -13,3 +16,10 @@ MD5 f4b6fed96ff9eb04b6a27d77005cfb55 lablgtk-2.2.0.ebuild 1388
 MD5 65e6110f9b7d61d7e54542238d97f874 lablgtk-2.4.0.ebuild 1979
 MD5 ed2b0c10c2884484d3adb9b5a4bccd54 lablgtk-2.6.0.ebuild 1951
 MD5 845dbbef4eb685e1bfd5f9e13a03f2b8 metadata.xml 225
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDi8regIKl8Uu19MoRAhiLAJ9LUF++nNzBeiTlgUfvLZCL/lmnbACfUGfd
+EgpLAzlHri6kse7vLwR0hyo=
+=XHKF
+-----END PGP SIGNATURE-----
