@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 07160f6b6760098cb517bfaa2434ea1c ChangeLog 2412
 MD5 cfa72c4f5e62b779052acf1cd629234b files/88_mod_jk.ox.conf 1228
 MD5 9bc76a01ee94faa11aaf1e5b47f59236 files/digest-open-xchange-0.8.0.6 138
@@ -12,12 +9,5 @@ MD5 7d1504e4241974d3583575b3827b0f5a files/open-xchange-htaccess 174
 MD5 4c772a7e944bed0e5f8e17b99cb32939 files/ox_reminder.sql 178
 MD5 2ad5cb7b97eca4314016247cde421449 files/slapd.ox.inc 2019
 MD5 a339b15041bb6d450a7535f3df1fcc4c metadata.xml 247
-MD5 897f33f32e7bc95a602c3ddcf3a7f6eb open-xchange-0.8.0.6.ebuild 21246
-MD5 b3b53f1297c1003133a13aa839f65c1e open-xchange-0.8.1.5.ebuild 21469
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDjivOOpjtAl+gMRURAo9IAJ49iM+sdqMTBLXMgCPGRbC0mPFDvQCeNWQ0
-B7Wrz5VjECnJxkao1163ojw=
-=3Gco
------END PGP SIGNATURE-----
+MD5 ca7bf7ffb2949869546bab9caa8438dc open-xchange-0.8.0.6.ebuild 21239
+MD5 7b969cadb7769db842d3dc71a9ce3d7c open-xchange-0.8.1.5.ebuild 21460
