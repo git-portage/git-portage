@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 daa59dbff6c6f2c54fa0384185b81ab1 ChangeLog 4933
 MD5 02a749d768d2c60df972e04643b4a071 files/0.11/lsusb-endian.patch 1834
 MD5 79f1705c48b215f002d9f6541cdca376 files/0.11/ppc64-usbutils-kheaderfix.patch 621
@@ -12,3 +15,10 @@ MD5 126fca63244365009de4c30b6b0c41d2 usbutils-0.11-r5.ebuild 1440
 MD5 3bf5ce706718e4c6b91aa5399624c849 usbutils-0.11-r6.ebuild 1486
 MD5 6ec07a2b5eee7d9f54357fe11a7b2707 usbutils-0.71-r1.ebuild 1277
 MD5 2f96f4804743b4736dc41cd054df0d12 usbutils-0.71.ebuild 1215
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDjUndgIKl8Uu19MoRAuSDAJ4r/6jvyCV6wOKBEtyrgfFYZTS4sACfX4PJ
+famsFpO36v1l/CZ/WheJp4k=
+=0RZ2
+-----END PGP SIGNATURE-----
