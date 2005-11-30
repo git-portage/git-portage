@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/xsane/Attic/xsane-0.97.ebuild,v 1.11 2005/09/13 17:49:14 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/xsane/Attic/xsane-0.97.ebuild,v 1.12 2005/11/30 07:20:39 phosphan Exp $
 
 DESCRIPTION="graphical scanning frontend"
 HOMEPAGE="http://www.xsane.org/"
@@ -61,7 +61,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	if [ $OLDXSANE = 'yes' ]; then
+	if [ x${OLDXSANE} = 'xyes' ]; then
 		einfo ""
 		ewarn "If you are upgrading from <=xsane-0.93, please make sure to"
 		ewarn "remove ~/.sane/xsane/xsane.rc _before_ you start xsane for"
