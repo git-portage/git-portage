@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 9611b5351c6cb50a649652aa869048e2 ChangeLog 2312
 MD5 ff3e702ff946e17b534a1a0971cab592 azureus-2.2.0.0-r1.ebuild 2345
 MD5 0aee5632d7755d629ae59035e6e59f92 azureus-2.3.0.4.ebuild 2603
@@ -8,7 +5,7 @@ MD5 d6e296fcd97d1e4b84db63ef7d1f61e9 azureus-2.3.0.6.ebuild 3522
 MD5 21218e1a7c134f02c8e42bcb63375e74 files/SWTThread.java 2549
 MD5 e3cc00baa30d499993d4f65e56ad03bc files/UpdaterPatcher.java 2523
 MD5 6d60bd5e1461cf5f8bc467794e6a1827 files/azureus-gentoo-2.3.0.4.sh 1008
-MD5 fff7df72d052f92ba0414aa3d6cf8b66 files/azureus-gentoo-2.3.0.6.sh 1107
+MD5 74f798a09be3542c8bdfdc7d219c6d73 files/azureus-gentoo-2.3.0.6.sh 1125
 MD5 77d299aef0633c501b998f3ec0c1f0c9 files/azureus-gentoo.sh 1010
 MD5 70c17db47c9a596929112714f82ac010 files/azureus.desktop 153
 MD5 2d3136c60488dd51bef012cbcb59201b files/azureus.png 743
@@ -17,10 +14,3 @@ MD5 67821fe5d66efda508803dfa3a87b967 files/digest-azureus-2.2.0.0-r1 134
 MD5 29bddb8c1c68b6c8cb4fd46b070b7a2d files/digest-azureus-2.3.0.4 134
 MD5 54e557185ba087a7b67c5fd0600fef12 files/digest-azureus-2.3.0.6 72
 MD5 0d0384a2c9c3495944bd250aac2fd8a0 metadata.xml 276
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDjiJcQiJ/wx066S4RAotwAJ9gl5QMCtRrOHfiWKy11O0+8Cwa9ACeM6B+
-Sk/szL1Xh752rRPm1vDTKUM=
-=WdTy
------END PGP SIGNATURE-----
