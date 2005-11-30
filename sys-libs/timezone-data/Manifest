@@ -1,5 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8f0a1609f12f420e523c8c6effd27ac3 ChangeLog 1076
 MD5 e239f1eb8b63fac34d4526fac04015d4 files/digest-timezone-data-2005o 126
 MD5 648febdd6feeaeb8c85323151917d163 files/timezone-data-2005n-makefile.patch 3128
 MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
 MD5 a85cee3278010e4d2ba5d4f8b5e92708 timezone-data-2005o.ebuild 833
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDjjMGugEuf3OQ0akRAr5QAKCYZCHPcD7ymn+A7jQJjBxcWwER/gCdHfoh
+FQeAc2zZEwgtibWLIliRWPs=
+=RaEA
+-----END PGP SIGNATURE-----
