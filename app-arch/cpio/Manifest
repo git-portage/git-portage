@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 43e45b8ed1f32b225ec50b06574389c8 ChangeLog 6814
 MD5 e55fdc50aad5d87ac28cc3317fc750d8 cpio-2.6-r3.ebuild 1367
 MD5 f6a1777511b6fdef55f762281e3b97fc cpio-2.6-r4.ebuild 1419
@@ -16,3 +19,10 @@ MD5 898f15e2e1a554916e69e9397f130e81 files/digest-cpio-2.6-r3 61
 MD5 898f15e2e1a554916e69e9397f130e81 files/digest-cpio-2.6-r4 61
 MD5 898f15e2e1a554916e69e9397f130e81 files/digest-cpio-2.6-r5 61
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDjsbEgIKl8Uu19MoRAn5SAJ49XkIIcwacrjhRdKMKoNfYm7qIDwCfeHSM
+qOCNDIL5FE4Rvg+Ik5dcXrw=
+=o7tt
+-----END PGP SIGNATURE-----
