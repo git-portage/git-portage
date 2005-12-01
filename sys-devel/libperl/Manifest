@@ -1,4 +1,4 @@
-MD5 6f3564637d064ddd1de1cb22c272301a ChangeLog 13189
+MD5 8a18d7c186a77bb6c02b14e094a2715a ChangeLog 13184
 MD5 c354e2fbf8141a769c20032e94f45fd3 files/digest-libperl-5.8.5 64
 MD5 c354e2fbf8141a769c20032e94f45fd3 files/digest-libperl-5.8.5-r1 64
 MD5 0a07934d74ccb1133cf0f3650cb94efc files/digest-libperl-5.8.6 64
@@ -13,5 +13,5 @@ MD5 2fb571ee80c894f660e610ef4c717082 libperl-5.8.5-r1.ebuild 10032
 MD5 642d6d7d6f6cdd65347342bcb7970733 libperl-5.8.5.ebuild 9923
 MD5 b84aca47b4bf72b939c2058d36f9a4f5 libperl-5.8.6-r1.ebuild 10525
 MD5 95d8eb043ad2bad59f1c56d50c39afca libperl-5.8.6.ebuild 10529
-MD5 00f7616fcb69dad578cde61874af18b7 libperl-5.8.7.ebuild 11130
+MD5 2b8720f5c827485c13d78f5a0a8c8172 libperl-5.8.7.ebuild 11125
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
