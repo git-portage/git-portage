@@ -1,14 +1,4 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 82badd44bf09ae3409a9c41b3101f6a4 ChangeLog 474
+MD5 d2104ca31835a8f0aebeeccd8b5caa1c ChangeLog 578
 MD5 216c395711a7d2d0f890dcebb9f7838d files/digest-vzquota-2.7.0.7 67
 MD5 e5ba31c20aa49371e645a8950abd1054 metadata.xml 231
-MD5 45d88e3b2a7d7a2d4b8929a8bbe0d183 vzquota-2.7.0.7.ebuild 892
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDiCyPflZ8QqxhrsMRAlq6AJ9oQ3UEhH823++E562xxgQnr2PYxACfToFX
-JzStnliOAbAM2jh9LcRms5A=
-=9uOi
------END PGP SIGNATURE-----
+MD5 6ab75552c2b30e54cd2f376345ce5b6d vzquota-2.7.0.7.ebuild 898
