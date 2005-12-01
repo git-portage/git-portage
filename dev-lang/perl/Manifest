@@ -1,4 +1,4 @@
-MD5 2ef1d24c736a1ad401a98ebbdf8ad18c ChangeLog 44203
+MD5 4dca2e1fcb3004f846ca1662fd514493 ChangeLog 44377
 MD5 bd75f0242e3b7791803d089c38a3f920 files/CAN-2005-0156-suid.patch 703
 MD5 2bd41aec5e22962224dc9376e27bdde3 files/CAN-2005-0448-rmtree.patch 7629
 MD5 0a07934d74ccb1133cf0f3650cb94efc files/digest-perl-5.8.6-r5 64
@@ -29,7 +29,7 @@ MD5 ce442db939c59218a16be167f793b817 files/perl-uclibc.patch 573
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 e377e6ec5a77f51ef1da80ae0600c08c perl-5.8.6-r5.ebuild 17675
 MD5 71c976f23db314752dab5af982dca654 perl-5.8.6-r6.ebuild 18053
-MD5 f52946e4118ce24e637efda45384c144 perl-5.8.6-r7.ebuild 18032
+MD5 14ba2460ddef216f45ed85adb1d7f842 perl-5.8.6-r7.ebuild 18131
 MD5 3abc228b743a2fc63223edc90daeff7c perl-5.8.7-r1.ebuild 19533
-MD5 ae96eb324a56dca7bbf5bf89de274b50 perl-5.8.7-r2.ebuild 19507
+MD5 36fa21d350f8ae12048fe019a7a2a27e perl-5.8.7-r2.ebuild 19606
 MD5 3a9ecfb3b8b741ea324c7c05e88c5a65 perl-5.8.7.ebuild 19301
