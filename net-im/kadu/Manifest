@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 00a952b1f4c6e06055068f0aad6b0fb8 ChangeLog 5419
 MD5 7259b6aef0a2d10501b79c455fe4b763 files/digest-kadu-0.3.8 63
 MD5 27947a323558dd9aaa82c5b164f398b8 files/digest-kadu-0.4.0 1699
@@ -19,3 +22,10 @@ MD5 b8f5450da56121565a9dd721b184397a kadu-0.4.2.ebuild 8787
 MD5 2dc0cb72c2c99dcb710f8cf328941db1 kadu-0.4.3.ebuild 8835
 MD5 872af84048e3067944b76c5c6c7913a4 kadu-0.5.0_pre20051122.ebuild 7006
 MD5 33e3466c984190a7bda01f7d4089f7a6 metadata.xml 245
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDj2JIwUpWvClEHQoRAmNlAJ9DaZQNIoaRXKeaaUKtXSsACLhqjwCfdTih
+vpz6IxRLrzqRcSDHqsPSU0o=
+=Mc43
+-----END PGP SIGNATURE-----
