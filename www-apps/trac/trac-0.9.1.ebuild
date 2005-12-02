@@ -1,15 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/trac/Attic/trac-0.9_beta2.ebuild,v 1.1 2005/09/28 22:35:52 dju Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/trac/Attic/trac-0.9.1.ebuild,v 1.1 2005/12/02 18:20:46 dju Exp $
 
 inherit distutils webapp
 
-MY_P=${P/_beta/b}
-
 DESCRIPTION="Trac is a minimalistic web-based project management, wiki and bug/issue tracking system."
 HOMEPAGE="http://trac.edgewall.com/"
-SRC_URI="http://ftp.edgewall.com/pub/trac/${MY_P}.tar.gz"
-S=${WORKDIR}/${MY_P}
+SRC_URI="http://ftp.edgewall.com/pub/trac/${P}.tar.gz"
 
 LICENSE="trac"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
@@ -24,6 +21,7 @@ WEBAPP_MANUAL_SLOT="yes"
 # we need virtual/httpd-python to bring mod_python/whatever in (when USE python?)
 DEPEND="$DEPEND
 	>=dev-lang/python-2.3
+	app-text/pytextile
 	>=dev-python/docutils-0.3.3
 	dev-libs/clearsilver
 	>=dev-util/subversion-1.1
@@ -50,7 +48,6 @@ src_install () {
 	distutils_src_install
 
 	dodoc AUTHORS INSTALL RELEASE THANKS UPGRADE
-	rm ${D}/usr/share/doc/${P}/COPYING.gz
 	rm ${D}/usr/share/doc/${P}/MANIFEST.in.gz
 	rm ${D}/usr/share/doc/${P}/PKG-INFO.gz
 
