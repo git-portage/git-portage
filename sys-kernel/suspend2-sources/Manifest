@@ -6,10 +6,10 @@ MD5 3d963bf6d8c5faa596abbb068dec2318 suspend2-sources-2.6.13-r3.ebuild 1967
 MD5 9a1a245c42ac8ba5b633d8c1c4e51382 suspend2-sources-2.6.13-r5.ebuild 1967
 MD5 aa65b078bf0942f139815933db9c3a46 suspend2-sources-2.6.14-r4.ebuild 1762
 MD5 5d404bb0571ae11e7702c33c9577af76 suspend2-sources-2.6.13-r2.ebuild 1967
-MD5 07f6505bd27b778dd897b546d63cfb2c ChangeLog 5961
+MD5 88c6d595d741aa318317a028ce54e613 ChangeLog 5961
 MD5 e40cb3df546efa5003fe3778c5a50854 metadata.xml 275
 MD5 a24f87b3199f5a851070c6ce817dc3ca suspend2-sources-2.6.14.ebuild 1758
-MD5 46947674630bdc2c2fd1079956016620 suspend2-sources-2.6.14-r6.ebuild 1641
+MD5 ef0d8e7f3382db7f92650dca96517ac3 suspend2-sources-2.6.14-r6.ebuild 1762
 MD5 8c885e50de95004ba759a137c3f93495 files/101-software-suspend-2.2-rc3-for-2.6.13-gcc4.patch 877
 MD5 4c9a2a6532217c3e54a52f6633e33c9f files/suspend2-2.2-rc13-filewriter.patch 5283
 MD5 5ff92c313009119044ed51956fb509f9 files/digest-suspend2-sources-2.6.13-r1 310
