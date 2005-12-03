@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d8340e2196e2c8f31913d564cab77c07 ChangeLog 44883
 MD5 bd75f0242e3b7791803d089c38a3f920 files/CAN-2005-0156-suid.patch 703
 MD5 2bd41aec5e22962224dc9376e27bdde3 files/CAN-2005-0448-rmtree.patch 7629
@@ -33,3 +36,10 @@ MD5 07145b25f7ec099648f72dbd79e312d2 perl-5.8.6-r7.ebuild 18120
 MD5 3abc228b743a2fc63223edc90daeff7c perl-5.8.7-r1.ebuild 19533
 MD5 1df4fd4365bfd25bc5d824602ca2e693 perl-5.8.7-r2.ebuild 19598
 MD5 3a9ecfb3b8b741ea324c7c05e88c5a65 perl-5.8.7.ebuild 19301
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDkfnfgIKl8Uu19MoRAk7iAJ9slKYkmvvszh18BU6ExuIqzwsYzwCaAzZr
+sMF6x4JHnz1NnGEc0bMgfNk=
+=BqZE
+-----END PGP SIGNATURE-----
