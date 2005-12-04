@@ -7,5 +7,5 @@ MD5 5243cb60063760c1f71d7d026720421e files/hplip.init.d 898
 MD5 f3a777f2c6eeebb99f32e02b52b65a70 hplip-0.9.3.ebuild 2570
 MD5 39df325ae3f38e64a979900d6c54d24f hplip-0.9.4.ebuild 2575
 MD5 b8797d3c934c32f6ad30b83ac842356b hplip-0.9.5.ebuild 2709
-MD5 be3d392fccb6af65e377f6b2a87e9934 hplip-0.9.7.ebuild 2739
+MD5 4272dbc693f1a94175f5f53599471bba hplip-0.9.7.ebuild 2865
 MD5 26b4b081d538c195dc39bcb2ec8e6f3a metadata.xml 161
