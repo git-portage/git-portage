@@ -1,28 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
+MD5 39b2abc537b57514775c7ab7c7fe307e gnome-2.10.1.ebuild 3948
+MD5 dc9b2bd2a001413aa255319df656d028 gnome-2.8.3-r1.ebuild 3833
+MD5 8fe6a8ea2e251ef10bd5b2ecc6e789b5 gnome-2.10-r1.ebuild 3973
+MD5 b09ac2c1f9d01f4679ecc08b38d48481 gnome-1.4-r3.ebuild 545
+MD5 5e1346b63f13fcee66cf9088aaebc4ce gnome-2.12.1.ebuild 4206
+MD5 ba0dec48770db5c290bdba6063fd60b7 gnome-2.10.2.ebuild 3962
 MD5 ed9f39c65db3e0b2d924bc48ac52e4ff ChangeLog 27292
-MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gnome-1.4-r3 0
+MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+MD5 238b1bdc0d3a85ad0b679a9cfd779b20 gnome-2.8.2.ebuild 3798
+MD5 8e3e3c40f1d98621ecfc8d9d6f77088d gnome-2.12.0.ebuild 4211
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gnome-2.8.3-r1 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gnome-2.8.2 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gnome-2.10-r1 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gnome-1.4-r3 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gnome-2.10.1 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gnome-2.10.2 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gnome-2.12.0 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gnome-2.12.1 0
-MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gnome-2.8.2 0
-MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gnome-2.8.3-r1 0
-MD5 b09ac2c1f9d01f4679ecc08b38d48481 gnome-1.4-r3.ebuild 545
-MD5 7972dafc7ec9c6226634b122f2e2f0ac gnome-2.10-r1.ebuild 3977
-MD5 e31647e45e0762d794cfaee512c56b68 gnome-2.10.1.ebuild 3952
-MD5 96743b3726f77a3751eaf29bd7249853 gnome-2.10.2.ebuild 3968
-MD5 4f4b1ef4d21c5870424eec9e152d9ba7 gnome-2.12.0.ebuild 4217
-MD5 80e86900bc594e8b9d44a5606f2226e1 gnome-2.12.1.ebuild 4212
-MD5 f1c46ee8548ef3766c699eebac4262de gnome-2.8.2.ebuild 3802
-MD5 31a02a85034a99e68f048e080066edcf gnome-2.8.3-r1.ebuild 3837
-MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDf4nvcsIHjyDViGQRAuPTAKDcpRZ2AN/rFirv/WnAaokQHt/s6wCeKAlI
-T+lZ3y3ybbrE9WXbR0Kk/6s=
-=zyWK
------END PGP SIGNATURE-----
