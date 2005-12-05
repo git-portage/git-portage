@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0db1d7d92f8af0e9f30b14a6d70aa034 ChangeLog 1878
 MD5 4392f9e8857795dec69f9c5608f4ffe9 files/digest-wings-0.98.29b 67
 MD5 575bd76e50382b276ccbbacb7cfb2fe6 files/digest-wings-0.98.32a 67
@@ -5,3 +8,10 @@ MD5 56a37b6b86b97612494f6b71ebf0bc58 files/wings.sh 171
 MD5 9bddf18f4d4f69f23d00d06d85d28daa metadata.xml 604
 MD5 50207998224814ac946ca3b9a7a5fa18 wings-0.98.29b.ebuild 944
 MD5 0261c4155d78e6ec630f8effdc4889be wings-0.98.32a.ebuild 944
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDk9pPgIKl8Uu19MoRAhsaAJ4u3gdU5vul491xPJr7FyhnXwtf7ACcCBTZ
+JcpNrLATjM0/PqNiJg98D4M=
+=ooiP
+-----END PGP SIGNATURE-----
