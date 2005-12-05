@@ -1,4 +1,4 @@
-MD5 d1727fa389b0112f73a02d08fb420484 ChangeLog 14408
+MD5 2331bd10f410816bfbfb3908483c7701 ChangeLog 14408
 MD5 a4667dca1eda69c90ff9dede2d1c4e00 files/digest-xorg-server-0.99.2-r2 137
 MD5 c2222f9d7528b5e753eca9c857b47bad files/digest-xorg-server-0.99.3 137
 MD5 c2222f9d7528b5e753eca9c857b47bad files/digest-xorg-server-0.99.3-r1 137
@@ -9,5 +9,5 @@ MD5 a37bab73e2f24b213932c30997d3d360 metadata.xml 156
 MD5 a01a1416152f751b32b2ac812defee06 xorg-server-0.99.2-r2.ebuild 4014
 MD5 03a5d02913e8550e82561cb555d37ad6 xorg-server-0.99.3-r1.ebuild 4073
 MD5 c2c289a801304b85e5e623df89362c92 xorg-server-0.99.3.ebuild 4068
-MD5 76d76eaf76c652775238028e85d0109c xorg-server-0.99.4-r1.ebuild 4083
+MD5 3f41504764c1dc04c0ab2504672fcbf9 xorg-server-0.99.4-r1.ebuild 4086
 MD5 879dddfff1592b3eca427d396b4c1ff1 xorg-server-0.99.4.ebuild 4079
