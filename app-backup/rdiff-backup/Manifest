@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 cc0d9807c50156a049e319a37702e69b ChangeLog 6170
 MD5 4ba9005b3a1cd4ab65557faec4af5eaf files/digest-rdiff-backup-0.12.7 71
 MD5 20b9a591d83980f79870fbd681e33195 files/digest-rdiff-backup-0.12.8 71
@@ -13,3 +16,10 @@ MD5 fd10af1e543e1f5130dd1109977529d4 rdiff-backup-0.13.4.ebuild 547
 MD5 38a2a11ebcad19df8571061ed972b182 rdiff-backup-0.13.6.ebuild 561
 MD5 8efdcc782825cbdbbc72e32050077cf8 rdiff-backup-1.0.1-r1.ebuild 679
 MD5 49e8b4ec59fa8d253363561ba56ef676 rdiff-backup-1.0.1.ebuild 623
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD4DBQFDlHwpKRy60XGEcJIRArczAJ9b0wnFEEZCbTtisUSO6qXrEcPwTQCY0Dx0
+qK6+JQKFlSdno05DFQxrIA==
+=IayL
+-----END PGP SIGNATURE-----
