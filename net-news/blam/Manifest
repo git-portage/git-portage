@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2e49034e05c2a3f5c129ae078712559f ChangeLog 4504
 MD5 ab0b935822689433e94347df645b5de7 blam-1.6.1-r2.ebuild 995
 MD5 9f5a4eebb7a634d6e37b50d71a6be5e2 blam-1.8.0.ebuild 1096
@@ -12,3 +15,10 @@ MD5 b12739b8bb161809852551f6f26d3af1 files/digest-blam-1.8.0 62
 MD5 898d64f02fd1e7c9f3afaa2b6d5cda29 files/digest-blam-1.8.2 62
 MD5 898d64f02fd1e7c9f3afaa2b6d5cda29 files/digest-blam-1.8.2-r1 62
 MD5 a60fdfbce7c7cfc52187ff86a7f8bbf8 metadata.xml 222
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDlFmC2G5bA0cA/ScRAoXmAJ9xgtJ08ER3M5t/5PqA7TbMK+XRXwCg3csu
+ICZgND3VSrL/OqhAuYN7Vm8=
+=Mpa5
+-----END PGP SIGNATURE-----
