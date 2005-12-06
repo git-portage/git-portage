@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3cec5d090d6dc344fa4ef85699af0a87 ChangeLog 10057
 MD5 0433ac1be1a1e05d61281b7a1ebe377b files/2.1.6.200506131347-non-lazy-bindings.patch 546
 MD5 0433ac1be1a1e05d61281b7a1ebe377b files/2.1.7.200511041858-non-lazy-bindings.patch 546
@@ -10,3 +13,10 @@ MD5 b98247eb3f77f4eda11cd38125fa734e gradm-2.1.5.200504081812.ebuild 1317
 MD5 f713e0269c8451f633f5b779eb5d0401 gradm-2.1.6.200506131347.ebuild 1492
 MD5 e96f3e486ac7fb16edc7cea52de8dbf4 gradm-2.1.7.200511041858.ebuild 1495
 MD5 695a3bd3cfb34ea27e7dd493ce9ef398 metadata.xml 221
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDlYHVz7mlh8wQzGMRAvu5AJ91LQKmGLwyz0SjrOywljSeSjxeqgCePfy5
+PYkQ7VSo3IQt+x+IgsgM9JA=
+=5kos
+-----END PGP SIGNATURE-----
