@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/koffice/Attic/koffice-1.4.2-r1.ebuild,v 1.1 2005/12/03 19:43:17 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/koffice/Attic/koffice-1.4.2-r3.ebuild,v 1.1 2005/12/06 01:53:48 carlo Exp $
 
 inherit kde
 
@@ -44,7 +44,9 @@ need-kde 3.3
 # the dependency on python is needed for scripting support in kexi
 # and for kivio/kiviopart/kiviosdk.
 
-PATCHES="${FILESDIR}/kspread-1.4.2-gcc41.patch ${FILESDIR}/kexi-1.4.2-gcc41.patch"
+PATCHES="${FILESDIR}/kspread-1.4.2-gcc41.patch 
+	${FILESDIR}/kexi-1.4.2-gcc41.patch
+	${FILESDIR}/kword-1.4.2-CAN-2005-3193.patch"
 
 src_compile() {
 	local myconf="$(use_enable mysql) $(use_enable postgres pgsql)"
