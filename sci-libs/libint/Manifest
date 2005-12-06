@@ -1,0 +1,3 @@
+MD5 0730269bdb4a466ff828dfbb1ed77444 files/digest-libint-1.1.2 64
+MD5 7e1902351932e8fa08fffb0f3374a73f files/dont-append-mcpu.patch 647
+MD5 a9f8ceb14d112110bcf25d7dbbad3dd2 libint-1.1.2.ebuild 895
