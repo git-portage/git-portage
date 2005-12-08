@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1f353266e9ad1b0651217d1e48455ac5 ChangeLog 3623
 MD5 93ccb861f2d7f46f773ced90f3ed61ca cmucl-18e-r4.ebuild 2963
 MD5 06e069d6d55039826fdd58ce9222ffa2 cmucl-19a-r1.ebuild 4683
@@ -27,3 +30,10 @@ MD5 6d03d3afa9c49f60a0aaa0e71597cfba files/digest-cmucl-19a-r1 240
 MD5 a7972648eda13df8cec3a330f29a45b9 files/digest-cmucl-19b 239
 MD5 764f277b179f1114309842862b1d79b0 files/digest-cmucl-19c 239
 MD5 929688a2167434e2a4f0169de47e7428 metadata.xml 1107
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDl+DUyiNZaEAZA+ARAvzpAJ40x7UlMdxgf5zBtqQfSuLmd2dLYwCbB5B6
+4f0PPh+Ax2nAMRfeBPCSkto=
+=D3V0
+-----END PGP SIGNATURE-----
