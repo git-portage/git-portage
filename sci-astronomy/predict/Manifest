@@ -1,5 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f8f66c0078831f2d9dc1539366a54313 ChangeLog 2185
 MD5 729e9f2e1ecbb139b17f650d2916da21 files/digest-predict-2.2.2-r3 66
 MD5 95dc86360de601d5c7c9d2f7d87c2c79 files/predict-update 4037
 MD5 8c623e53daafa025137077c6b65815bd metadata.xml 156
 MD5 7b8d3b5a1afd8f9ac705eeed70ffe10c predict-2.2.2-r3.ebuild 4418
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDl4QSntT9W3vfTuoRAv1iAKCPWI9uVR+pDrnspBy2vDSgmgWUlgCgkkRO
+UtrASpXhGMd9rxoaQCyW1Oc=
+=svJo
+-----END PGP SIGNATURE-----
