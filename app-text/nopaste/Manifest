@@ -1,2 +1,4 @@
+MD5 90a0c607a0d2782cd6caa724d99d618a ChangeLog 399
 MD5 80f1235d613876276df588c91de8d653 files/digest-nopaste-1252 55
-MD5 fe5248ce952dfe78ca41d3a222aa3730 nopaste-1252.ebuild 569
+MD5 a665f2675f13020037bd5fe782c1c546 metadata.xml 252
+MD5 db6a0d61d12f5d73d0cc624e6442727f nopaste-1252.ebuild 575
