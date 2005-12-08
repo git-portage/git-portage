@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 417febf61ac7e268e0252516ded8556a ChangeLog 12061
 MD5 38756cea2e4f8e36c2e45b890f1a7463 files/50po-mode-gentoo.el 183
 MD5 83b80576c27ac3a75d70802eb9c92790 files/digest-gettext-0.12.1-r2 67
@@ -20,12 +17,5 @@ MD5 0890c612ec51d74a5cefbb0ca3ab8ae7 gettext-0.12.1-r2.ebuild 2543
 MD5 ac4041bb4e436a9935d04cd63b40d425 gettext-0.14.1-r1.ebuild 2886
 MD5 f46f927893861e2d082d7b836f597ef7 gettext-0.14.2.ebuild 3509
 MD5 430e22b4c52c95f6c61427e5ec6d9439 gettext-0.14.4.ebuild 3578
-MD5 c01230991728fd8cb2d1167f7c49a33b gettext-0.14.5.ebuild 3818
+MD5 dc7a517c686c00d2be213dc35a8185df gettext-0.14.5.ebuild 3842
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDcschgIKl8Uu19MoRAgqAAJ9vcwj6M0KhCJrMR4cnp/Kwgjj9nACeMN23
-mVZCRW5kDX/LFnS3W1n5LBA=
-=XPKN
------END PGP SIGNATURE-----
