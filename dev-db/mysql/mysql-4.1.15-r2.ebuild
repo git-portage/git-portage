@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/Attic/mysql-5.0.16-r3.ebuild,v 1.5 2005/12/08 14:54:31 vivo Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/Attic/mysql-4.1.15-r2.ebuild,v 1.1 2005/12/09 18:32:30 vivo Exp $
 
 # helper function, version (integer) may have section separated by dots
 # for readbility
@@ -11,8 +11,9 @@ stripdots() {
 }
 
 # major * 10e6 + minor * 10e4 + micro * 10e2 + gentoo magic number, all [0..99]
-MYSQL_VERSION_ID=$(stripdots "5.00.16.00")
-NDB_VERSION_ID=50016
+MYSQL_VERSION_ID=$(stripdots "4.01.15.00")
+PROTOCOL_VERSION=10
+NDB_VERSION_ID=40115
 #major, minor only in the slot
 SLOT=0
 #NOSLOT SLOT=$(( ${MYSQL_VERSION_ID} / 10000 ))
@@ -30,7 +31,7 @@ SRC_URI="mirror://mysql/Downloads/MySQL-${PV%.*}/${NEWP}.tar.gz
 	mirror://gentoo/mysql-extras-20051122.tar.bz2"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~arm ~ppc ~s390 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86"
 IUSE="big-tables berkdb debug minimal perl selinux ssl static"
 RESTRICT="primaryuri"
 
@@ -432,6 +433,8 @@ src_compile() {
 		fi
 	fi
 
+	#Bug #114895,Bug #110149
+	filter-flags "-O" "-O[s01]"
 	#glibc-2.3.2_pre fix; bug #16496
 	append-flags "-DHAVE_ERRNO_AS_DEFINE=1"
 
