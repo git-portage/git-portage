@@ -1,4 +1,4 @@
-MD5 09d06d9a54967947dcedde5d7c18550e ChangeLog 8363
+MD5 b52760c26d72d7952cae3e22ecadd8a4 ChangeLog 8361
 MD5 c9d55e535778f7a2386f5bba1c2cfcf7 files/digest-gnome-spell-0.5 68
 MD5 959c92eeb724ca5380e81f09805df109 files/digest-gnome-spell-1.0.5-r2 70
 MD5 60b79a4908f65bef8d5bc1765fb61c4a files/digest-gnome-spell-1.0.6 70
@@ -8,5 +8,5 @@ MD5 312bf5d650d4960f7f2077f477892dc7 files/gnome-spell-1.0.6-combo.patch 12895
 MD5 62828aa3cfc3de6aaa8604520ee943d8 files/gnome-spell-1.0.6-enchant.patch 16509
 MD5 6e7d79a7385f1722c083fcfb4fe61660 gnome-spell-0.5.ebuild 1082
 MD5 c4c9a0a1cb931a6c1ca3bf7fc93a2e51 gnome-spell-1.0.5-r2.ebuild 1021
-MD5 5396331850d86f63d4ea78caa3c12a32 gnome-spell-1.0.6.ebuild 1265
+MD5 e75b67bc2e646d264c8fcbda88d053bb gnome-spell-1.0.6.ebuild 1263
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
