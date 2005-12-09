@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 34e70ed2cea63251759eddc1aeb5fbe4 ChangeLog 7931
 MD5 7a74a3135f746668eccc7a1521bd11cb files/digest-policycoreutils-1.22 146
 MD5 888c48de2a246f60017c7d2f3b6eccd0 files/digest-policycoreutils-1.24-r2 146
@@ -9,3 +12,10 @@ MD5 2eeb1df30e87ba2861eddbdc34a48bb8 metadata.xml 836
 MD5 1c03a495acacf417638cc547adbbc501 policycoreutils-1.22.ebuild 3374
 MD5 0323878a39e087e3934272daabf4e88f policycoreutils-1.24-r2.ebuild 3609
 MD5 6e2986f88db435d4dfa24e2f6568bb6d policycoreutils-1.28.ebuild 3548
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDmNewJ+ChZlpDtAoRApRgAJoDHIOyrH5/UuNKcTK8TRJhtSwIXQCcD+Hr
+9fmaZycNSIhw3caON3TopOs=
+=+uLf
+-----END PGP SIGNATURE-----
