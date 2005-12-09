@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/sip/Attic/sip-4.1.1.ebuild,v 1.10 2005/11/25 22:03:32 tgall Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/sip/Attic/sip-4.1.1.ebuild,v 1.11 2005/12/09 22:00:47 carlo Exp $
 
 inherit distutils
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.riverbankcomputing.co.uk/sip/"
 SRC_URI="mirror://gentoo/${MY_P}.tar.gz"
 
 SLOT="0"
-LICENSE="GPL-2"
+LICENSE="sip"
 KEYWORDS="alpha amd64 ppc ppc64 sparc x86"
 IUSE="debug doc"
 
@@ -23,7 +23,7 @@ DEPEND="virtual/libc
 src_compile(){
 	distutils_python_version
 
-	local myconf="-l qt-mt -b /usr/bin -d /usr/$(get_libdir)/python${PYVER}/site-packages -e /usr/include/python${PYVER}"
+	local myconf="-l qt-mt -b ${ROOT}usr/bin -d ${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages -e ${ROOT}usr/include/python${PYVER}"
 	use debug && myconf="${myconf} -u"
 
 	python configure.py ${myconf} "CFLAGS+=${CFLAGS}" "CXXFLAGS+=${CXXFLAGS}"
