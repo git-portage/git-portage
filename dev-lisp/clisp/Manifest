@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 692d604f0a4ca724084459cf4c175c4d ChangeLog 9604
 MD5 fce61ccc24ef4d9aa4b70cc4c8fde0be clisp-2.33.2-r2.ebuild 4238
 MD5 703fc21066f759fb89bd66a28a9ee91f clisp-2.34-r1.ebuild 4160
@@ -25,3 +28,10 @@ MD5 d8868b134ba5463d87df11818719fcec files/digest-clisp-2.34-r1 64
 MD5 f9c5dbcccff51886eb3704fd7fa7c429 files/digest-clisp-2.35 64
 MD5 08b8b798be80ccd9fe2e06b3a94d11ec files/digest-clisp-2.36 64
 MD5 485cde76397408cf913fc6d4c7a45a67 metadata.xml 882
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDmhgxyiNZaEAZA+ARAl3IAJ4hKaobcMFpoNPpEjVVWd2FTYbdZACfaunO
+thwl2eP1r4azJj3aFwIePCQ=
+=PaGd
+-----END PGP SIGNATURE-----
