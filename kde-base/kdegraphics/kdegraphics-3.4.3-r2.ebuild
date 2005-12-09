@@ -1,15 +1,17 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdegraphics/Attic/kdegraphics-3.4.1-r2.ebuild,v 1.1 2005/12/08 02:26:57 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdegraphics/Attic/kdegraphics-3.4.3-r2.ebuild,v 1.1 2005/12/09 21:05:06 carlo Exp $
 
 inherit kde-dist eutils
 
 DESCRIPTION="KDE graphics-related apps"
 
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~sparc ~x86"
-IUSE="gphoto2 imlib nodrm opengl povray scanner tetex"
+IUSE="gphoto2 imlib nodrm openexr opengl povray scanner tetex"
 
 DEPEND="~kde-base/kdebase-${PV}
+	>=media-libs/freetype-2
+	media-libs/fontconfig
 	gphoto2? ( media-libs/libgphoto2 )
 	scanner? ( media-gfx/sane-backends )
 	media-libs/libart_lgpl
@@ -18,6 +20,7 @@ DEPEND="~kde-base/kdebase-${PV}
 	imlib? ( media-libs/imlib )
 	virtual/ghostscript
 	media-libs/tiff
+	openexr? ( >=media-libs/openexr-1.2 )
 	povray? ( media-gfx/povray
 		  virtual/opengl )"
 
@@ -29,15 +32,22 @@ RDEPEND="${DEPEND}
 	     app-text/cstetex
 	     app-text/dvipdfm ) )"
 
+DEPEND="${DEPEND}
+	dev-util/pkgconfig"
+
 src_unpack() {
 	kde_src_unpack
 
 	# Fix detection of gocr (kde bug 90082).
-	epatch "${FILESDIR}/${P}-gocr.patch"
+	epatch "${FILESDIR}/kdegraphics-3.4.1-gocr.patch"
 
-	epatch "${FILESDIR}/post-3.4.1-kdegraphics-4.diff"
+	# Configure patch. Applied for 3.5.
+	epatch "${FILESDIR}/kdegraphics-3.4-configure.patch"
 
-	epatch "${FILESDIR}/kpdf-3.4.3-CAN-2005-3193.patch"
+	epatch "${FILESDIR}/post-3.4.3-kdegraphics-CAN-2005-3193.diff"
+
+	# For the configure patch.
+	make -f admin/Makefile.common || die
 }
 
 src_compile() {
@@ -52,7 +62,8 @@ src_compile() {
 	use scanner || export DO_NOT_COMPILE="${DO_NOT_COMPILE} kooka libkscan"
 	use povray || export DO_NOT_COMPILE="${DO_NOT_COMPILE} kpovmodeler"
 
-	myconf="${myconf} $(use_with imlib) $(use_enable !nodrm kpdf-drm)"
+	myconf="${myconf} $(use_with imlib) $(use_enable !nodrm kpdf-drm)
+		$(use_with openexr)"
 
 	kde_src_compile
 }
