@@ -1,4 +1,4 @@
-MD5 82a89ca3c68e86a1434f79b19cffcd39 ChangeLog 11986
+MD5 818a63a042ed9604c80ce3331c44e668 ChangeLog 11985
 MD5 d3ab2683d88b3cbecb8a9faa439703a1 files/bfd-malloc-wrap.patch 782
 MD5 460629563df21e6a68b8941c07d4f30b files/digest-gdb-6.1 131
 MD5 b3790be989db97b22c599572afbce109 files/digest-gdb-6.2.1 133
@@ -29,6 +29,6 @@ MD5 7ea8f83bb7b0d70e7e6d6c8cf42292d3 files/gdb-6.x-crash.patch 678
 MD5 2a52c4cd9bf5e2667c6bc7312e179fa0 gdb-6.1.ebuild 1807
 MD5 fb4ab4aaccb90b523c650a5f30d02281 gdb-6.2.1.ebuild 1784
 MD5 20334b11833489b3bcc13c0fea645a1d gdb-6.3-r4.ebuild 2983
-MD5 b09d1f9aabbfadd80f373eaca59bd8fb gdb-6.4-r1.ebuild 3007
-MD5 66ab0ed16fcc83957c0165424eed37ed gdb-6.4.ebuild 2997
+MD5 abe5b46c3552ca8670ffb68c048d4ffd gdb-6.4-r1.ebuild 3009
+MD5 f5428a658b66b60aeaa511d39cc450b3 gdb-6.4.ebuild 2996
 MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
