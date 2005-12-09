@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9b4ca9123ea1c27889be520a890f410b ChangeLog 494
 MD5 abd9d8477b709cc177be14b1a653d27a files/digest-mpck-0.10 61
 MD5 319fe8f45b51a2d31f8d4e9a4071ca10 metadata.xml 248
 MD5 90ad67cfbc54d1cd600008eda9ccaff4 mpck-0.10.ebuild 536
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDmhdsFdQwWVoAgN4RAqe9AJ4qWHv9C9zSbnQkmWPH9UipQg8CkgCg/2CO
+wBC2Texrongk/uyLNTXBwSY=
+=jUyG
+-----END PGP SIGNATURE-----
