@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 cbf584544182b73e5791285868ab4c3c ChangeLog 2944
 MD5 4871ee30ae0243d8e3883677b20f09b2 arj-3.10.18.ebuild 889
 MD5 c56ba07e37dec37c343269e23b35f156 arj-3.10.20.ebuild 757
@@ -15,3 +18,10 @@ MD5 f51bf31b56b6e0f9191beb570b38502c files/digest-arj-3.10.21 63
 MD5 678545b31fd18e384761e80ed0f5bc50 files/digest-arj-3.10.22 63
 MD5 678545b31fd18e384761e80ed0f5bc50 files/digest-arj-3.10.22-r1 63
 MD5 37236013e0d26d43c6bff35a8a48e8ec metadata.xml 220
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDmaNacsIHjyDViGQRAvlZAJ9v/iICmSYg5Zs5UMVCNH2TZiUrpACg3SA2
+0w/5htUXB2YmiBylqDOEPwg=
+=jXut
+-----END PGP SIGNATURE-----
