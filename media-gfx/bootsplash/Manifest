@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1a805eda3e71ba56cc27370c8d07b300 ChangeLog 12234
 MD5 e82fa0ea2fa87ab46e6c42f200791134 bootsplash-0.6-r16.ebuild 6690
 MD5 a93cb3db61c532b39e8c461c713a25f8 bootsplash-0.6.1-r4.ebuild 2973
@@ -10,3 +13,10 @@ MD5 3f2697605cd4c22d7ec6a8a56e562da4 files/digest-bootsplash-0.6.1-r4 232
 MD5 00168dc069b71a54b9a8fcb10e0c4752 files/digest-bootsplash-0.6.1-r6 232
 MD5 5c26bfaea2b292570606b499e4efdb53 files/digest-bootsplash-0.6.1-r7 232
 MD5 d94d306da3804e41296e1bf04c7c9cae metadata.xml 255
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDmwlHchej4aZK9/cRAsgpAJ4rRUZVbiER5iXWgA1RA+Du9jfHiQCfZAcc
+WLuoeH9vk1lCmEcLg+W6xc4=
+=dfQ0
+-----END PGP SIGNATURE-----
