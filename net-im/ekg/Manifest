@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 009883ed2971ddc3322db36c4610f067 ChangeLog 4008
 MD5 4da0ca4266b73a113cab33b4dba8ef03 ekg-1.4-r1.ebuild 1109
 MD5 f43c4aa49c2172a1d4f64eef10bca1f5 ekg-1.5.ebuild 1224
@@ -10,3 +13,10 @@ MD5 5f85e8a786d72281d79bb0adacc7df71 files/digest-ekg-1.6_rc3 62
 MD5 7e938e2282dbaf23d5789db2a53c1ddd files/ekg-1.6_rc1-fpic.patch 487
 MD5 73bffbc0a70d4856d52bc58a58fd5615 files/ekg-1.6_rc3-libgadu.patch 833
 MD5 d94d306da3804e41296e1bf04c7c9cae metadata.xml 255
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDmvwFchej4aZK9/cRAnB4AJ97hrdN8o6ZSIZ9WhvAfK0Po9BlJACeP705
+9MRZA3iyGEOlkV1MihQLTdE=
+=dUNI
+-----END PGP SIGNATURE-----
