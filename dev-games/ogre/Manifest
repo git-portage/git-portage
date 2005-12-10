@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7030c9d4b1bf78391a2f2a43762da67d ChangeLog 3066
 MD5 0d32a739d9a15e9734ab1f73a763e150 files/0.15.1-nocg.patch 1535
 MD5 1a623c9495c1a9f63d402d570d74e79d files/digest-ogre-0.15.1 77
@@ -17,3 +20,10 @@ MD5 269e60601427284b5996689c4d5ff208 ogre-1.0.3_p1.ebuild 2446
 MD5 f9df69d54123bd5bac080ca1d837a119 ogre-1.0.4.ebuild 2536
 MD5 df0b4799b3ceef6be597881d6289f945 ogre-1.0.5.ebuild 2536
 MD5 81f608c9265948896f566461c37aee45 ogre-1.0.6.ebuild 2536
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDmko4gIKl8Uu19MoRAsExAJ98q+Lei1DdJwarUnUfUEhUNW4sVACeNAme
+gxwlTlbqmTbQ+LXQnvae/xY=
+=TsFv
+-----END PGP SIGNATURE-----
