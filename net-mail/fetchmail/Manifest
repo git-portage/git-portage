@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8322e2903e126bbaab53e6493091f1e0 ChangeLog 13301
 MD5 04125f54e4be33fd55348f69c38e0942 fetchmail-6.2.5.2-r1.ebuild 3051
 MD5 0136920aabb2c3d064af46b355c86773 fetchmail-6.3.0.ebuild 2428
@@ -10,3 +13,10 @@ MD5 bc67e24e50b2607de8ed8bbfe8c475ea files/fetchmail-6.2.5-gentoo.patch 1878
 MD5 9e74bd5507acf5a39559d76646bac254 files/fetchmail-6.2.5-kerberos.patch 1175
 MD5 9fdac9fcc5797bfb643d850abe200105 files/fetchmail-6.2.5-mit-krb5-1.4.patch 406
 MD5 5721b86fd871bdfab77231abc6e02f68 metadata.xml 161
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDmsrgQlM6RnzZP+IRAl00AJ9GQyhusbi9Mkosxy0qTRdczRpAKQCfSEDc
+CbW1RQ+9LLZBX3lvGunZDtc=
+=I2cg
+-----END PGP SIGNATURE-----
