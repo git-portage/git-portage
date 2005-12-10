@@ -3,10 +3,10 @@ MD5 79cfb94890d2d1d32fb0331bc01cc022 jack-audio-connection-kit-0.99.0-r3.ebuild 
 MD5 0d56eae2a04a15dbe5e7ca024a87a097 jack-audio-connection-kit-0.80.0.ebuild 1771
 MD5 de43c85f549fb9f68102ff44ba2d3476 jack-audio-connection-kit-0.100.0.ebuild 2948
 MD5 6ebc2222ead15f67dbaa1246567ea9fb jack-audio-connection-kit-0.100.0-r1.ebuild 3493
-MD5 a61d657b88506fad3a8dfcb327e5c6e4 jack-audio-connection-kit-0.100.7.ebuild 3404
+MD5 94668a516026001d8074aaa2bd39e622 jack-audio-connection-kit-0.100.7.ebuild 3398
 MD5 4ee3c27feb88ab9f33c934e0262fbc45 jack-audio-connection-kit-0.98.1-r1.ebuild 2116
 MD5 aa8ace272092dee1f0391e64569d045d jack-audio-connection-kit-0.99.0-r2.ebuild 2284
-MD5 bd8bba98698925140762d6cf3d92eb62 ChangeLog 12867
+MD5 cbec623919fc059e02f3c36230024d36 ChangeLog 13021
 MD5 e9914343b13388692a7ed11361d53724 metadata.xml 218
 MD5 1081e2f37f20874fb10b5a9c183df0b4 files/digest-jack-audio-connection-kit-0.98.1-r1 84
 MD5 e1e0561e8f67b2f527014a57f5eb7a05 files/digest-jack-audio-connection-kit-0.99.0-r1 84
