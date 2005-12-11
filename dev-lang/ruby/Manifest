@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 bae9be7c884213aa4b102a13d4eea5cd ChangeLog 25073
 MD5 c0305f496353b27f98c0c42e4005cb8a files/digest-ruby-1.8.2 125
 MD5 c0305f496353b27f98c0c42e4005cb8a files/digest-ruby-1.8.2-r1 125
@@ -18,11 +15,4 @@ MD5 3f3ef53019f559def811f446ba1b0f04 ruby-1.8.2-r1.ebuild 3753
 MD5 3c1c7073b75a7c7dc6e6fc48de2ebe64 ruby-1.8.2-r2.ebuild 3828
 MD5 e847e0e7a41e6a1492eb66edab66a10d ruby-1.8.2.ebuild 3449
 MD5 45d029636ba95764b867302e60d757df ruby-1.8.3.ebuild 3582
-MD5 532201a6446424e072d064cdf4b555f1 ruby-1.8.4_pre2.ebuild 3665
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDlsbFAiZjviIA2XgRArRCAKDuJ9uWdabmm+Ylt2ZQ+vEF5sFQSgCeKNwl
-hp6N6afD41sAA0ZNtSPy2yw=
-=Ga2A
------END PGP SIGNATURE-----
+MD5 9640b75fb6fcfa8d5e438cc834a02dc7 ruby-1.8.4_pre2.ebuild 3753
