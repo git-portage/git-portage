@@ -8,6 +8,6 @@ MD5 a1e39698b13f5388ba47d580378df4b6 files/digest-jaxen-1.1_beta7 72
 MD5 917b383454a8f38fb290d4a69ddb47ca files/jaxen-1.1_beta2-gentoo.diff 1254
 MD5 9a071b0e08942ac6d1ef8de29b2b9269 jaxen-1.0.ebuild 1402
 MD5 fe00f31aee65341c5c85d26aaf6d03fa jaxen-1.1_beta2-r1.ebuild 1377
-MD5 1075345d96ff713f8adbe26938987b3e jaxen-1.1_beta6.ebuild 1386
-MD5 8f3d48695738b1f4b19c984e949ba231 jaxen-1.1_beta7.ebuild 1662
+MD5 d626577777e5fb69c905a79368f36ff6 jaxen-1.1_beta6.ebuild 1386
+MD5 01d62bbd1e31e16f555e647b29dad8f9 jaxen-1.1_beta7.ebuild 1662
 MD5 123cf9440c1d4ac78f2caba1624765f9 metadata.xml 158
