@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 271913ac70a9fc0fd50a15e9da89e01b ChangeLog 4732
 MD5 d229ae67e003f0be52f27a896f6bdeac files/digest-jabref-1.7 68
 MD5 5b3028166c382f310e75f818ad5a744e files/digest-jabref-1.7.1-r1 70
@@ -15,3 +18,10 @@ MD5 630e44734099bd9581bba000a16620ae jabref-1.8.1.ebuild 1813
 MD5 1cbbde1f51c446d32598c8b2d903d30f jabref-1.8.ebuild 1799
 MD5 451cda0c3d111590d6d0cd62de2d6659 jabref-1.8_beta.ebuild 1686
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDnKulndWRXhKOboURAkFNAKCkLVYfYNczDH/RajYwaHjo2IcMeQCfZSfS
+MojvloyNvdSnFTbMA21CLcw=
+=WI8x
+-----END PGP SIGNATURE-----
