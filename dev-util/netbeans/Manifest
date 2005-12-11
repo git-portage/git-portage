@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6ee8406273c87baf987e3b4bec0f479e ChangeLog 6193
 MD5 0c98dd3e09a6ddfc91bf8eac2ef22871 files/4.0/startscript.sh 409
 MD5 95ab6db4dc5ed189e21f0e6ae1aa657e files/antbuild.xml.patch 957
@@ -17,3 +20,10 @@ MD5 3995327ee30375ca261228f816a9f9a2 netbeans-3.4.1.ebuild 3191
 MD5 a2ecc45e7604ad37b1d92d16d18ba3c0 netbeans-3.5.1.ebuild 3155
 MD5 123427f9dd5f7996a3f5fdd909eb65db netbeans-3.6-r1.ebuild 3155
 MD5 dd8ad3eb423418ff3459ab40ec9bcf84 netbeans-4.0-r2.ebuild 12164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDnHlDQiJ/wx066S4RAsBNAJ9r04M3G9xzP6OVpTuRrHicHgzzqwCglZzV
+XyPUsVOPcNOtsxpI9+X4k2o=
+=WUFK
+-----END PGP SIGNATURE-----
