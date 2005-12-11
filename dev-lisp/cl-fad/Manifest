@@ -1,14 +1,4 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 56928d4e607d29eadbb81d318a5bd718 ChangeLog 1506
-MD5 b2f74c8dc86c205d61b651d5f216e15b cl-fad-0.3.3.ebuild 698
-MD5 433e13e1493336a0a82ea152cd5efb5e files/digest-cl-fad-0.3.3 67
+MD5 1faec0e54704942c7d84eb14a3addccd cl-fad-0.4.0.ebuild 698
+MD5 a8f90f71af533db45e927faf915a89de files/digest-cl-fad-0.4.0 67
 MD5 406b468caca69a1e7c3670831594f9f2 metadata.xml 496
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDeUm0yiNZaEAZA+ARAkXsAJ9hyJ0qR3Rb4KNd+Hrk+NborbZfMQCdFEDe
-Xf/vn9IqHrJnM31ohX6lduY=
-=Rp4t
------END PGP SIGNATURE-----
