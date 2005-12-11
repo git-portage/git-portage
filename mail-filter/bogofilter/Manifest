@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7735f6c435965b11c6921d9e71f6a6c1 ChangeLog 13572
 MD5 edab439ee9294d96fb67b0567d6968d6 bogofilter-0.92.8.ebuild 1671
 MD5 0fe922bced50c25b4a3a722a910e5bee bogofilter-0.96.5.ebuild 2397
@@ -8,3 +11,10 @@ MD5 4d0b162c16401cd805a8c5bededda302 files/digest-bogofilter-0.96.5 70
 MD5 0fe90ce601d03af1f4d35fec0634f298 files/digest-bogofilter-0.96.6 134
 MD5 fc42ce17f830dcc131e4cce9d1a67861 files/digest-bogofilter-1.0.0 69
 MD5 48bd0f185b30f8151e8da04a025e0373 metadata.xml 424
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDnDSUV3J2n04EauwRAnNJAJ0Y6mUgTHoRpOL/0VkjxmgzhG/x5gCeLxMU
+oyUdJ/HQh78C7JfQdRuzjs8=
+=0vt1
+-----END PGP SIGNATURE-----
