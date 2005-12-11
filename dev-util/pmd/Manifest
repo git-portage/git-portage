@@ -1,4 +1,4 @@
-MD5 7cdbba1b23abfac78bfbd177190a9b6f ChangeLog 1566
+MD5 92720f70d5a17e9915e8d2352053dee6 ChangeLog 1680
 MD5 f4fd6e2650f6d50125b3e546a7c0a54b files/digest-pmd-1.5 61
 MD5 f4fd6e2650f6d50125b3e546a7c0a54b files/digest-pmd-1.5-r1 61
 MD5 9cd4c2c64ebddf354fb7475e86887505 files/digest-pmd-3.1 61
@@ -8,5 +8,5 @@ MD5 becc4704fc6c51da372aff190ab06b78 files/pmd-3.3-gentoo.patch 3140
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
 MD5 b131da5bb636d0aa455f681cad502d75 pmd-1.5-r1.ebuild 1092
 MD5 de5629bb3e4f74880b7481c1db6d1d2f pmd-1.5.ebuild 790
-MD5 3f035fb0043ce2fcb7662e6aed4be3e0 pmd-3.1.ebuild 1446
-MD5 b0b76f08c1d249da8a03ed5db7ab66c3 pmd-3.3.ebuild 1627
+MD5 c350d228faedf2333f206d7199e88222 pmd-3.1.ebuild 1448
+MD5 c7bb6545cf7611cb55ea13b406f20f9e pmd-3.3.ebuild 1627
