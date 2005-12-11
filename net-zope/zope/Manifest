@@ -1,4 +1,4 @@
-MD5 2b3460b2cde28f638933351f6089321a ChangeLog 13765
+MD5 0e78d3d1172395baddb0d5dc2b6dbed1 ChangeLog 13882
 MD5 a18ddd3f2cdcb815cf86f4b9c4bdd6fe files/2.6.4/zope.confd 950
 MD5 4d278d26bb7be7693f7213861a9d3805 files/2.6.4/zope.initd 3791
 MD5 c97d6dc27b456ae0fbfdf8ee5627ac1b files/2.7.4/i18n-1.0.0.patch 7630
@@ -28,4 +28,4 @@ MD5 03dd7525a3392e245889fba308edc438 zope-2.8.0.ebuild 3362
 MD5 a51712c4e56687605942d3c914c60d31 zope-2.8.1.ebuild 3512
 MD5 6e4ba5b7bd92b20ad3f28cb7e3158deb zope-2.8.2.ebuild 3515
 MD5 0ce3afe5cd3f944a3fa984afa74a43af zope-2.8.3.ebuild 3512
-MD5 0ce3afe5cd3f944a3fa984afa74a43af zope-2.8.4.ebuild 3512
+MD5 38de27b03b7128af70fed16cee33afd0 zope-2.8.4.ebuild 3512
