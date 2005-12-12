@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3ae0d4329363540bf3701319a3fbd75f spca5xx-20041224.ebuild 761
 MD5 334e4f71306cef3c0456b8ba59bbbfe8 metadata.xml 224
 MD5 18a0130cb3eaa08bb2cffc36cf77287f ChangeLog 2038
@@ -24,3 +27,10 @@ MD5 3a8194eb01a1084675989f75a2d93bfc files/digest-spca5xx-20050903 68
 MD5 13819bb3fbd176414381c607eeb7b73a files/digest-spca5xx-20051001 68
 MD5 82a655703f8e21159d5b17c13356a604 files/digest-spca5xx-20051105 68
 MD5 52422e95861644dc3427e76e1ab6b7d9 files/digest-spca5xx-20051212 68
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDneDb0K3RJaeXx6cRArnuAKDJGEXrE+JMXbaQafJiO5t4gIgVgQCffsWa
+9hK9gEuLLe+klJRemafRF1s=
+=OEno
+-----END PGP SIGNATURE-----
