@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 efb16dfc5b14ebc9c8b72bc7a1709e5f ChangeLog 488
 MD5 2129c8f560a868033c51f1630f05d8bd files/digest-mirdir-2.1 66
 MD5 b0d485ea1a51fb83c70daedef2599272 metadata.xml 279
 MD5 9c15b62d8e6653f874cd6b39d48fb517 mirdir-2.1.ebuild 565
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDndSvwUpWvClEHQoRAqOFAJoDYhBs75cUSS+7hmA+tiwuamafggCfXWc5
+rLYFLB8XSXzcF9MTEGE2Tts=
+=LRs+
+-----END PGP SIGNATURE-----
