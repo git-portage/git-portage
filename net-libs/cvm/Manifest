@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 889fa8b06d1a1d8bf0ab7d4dae9a1363 ChangeLog 1215
 MD5 33732ff6120bb4b3bf1f0de06210ca64 cvm-0.18.ebuild 1282
 MD5 cfc9024c2e3895d6fb8faa33c7005f2a cvm-0.32-r1.ebuild 1182
@@ -8,3 +11,10 @@ MD5 51108b9115b8df5073cf8007c873e46f files/digest-cvm-0.32 59
 MD5 51108b9115b8df5073cf8007c873e46f files/digest-cvm-0.32-r1 59
 MD5 2d8d362f132bf87c8bb3011a926f9dd1 files/digest-cvm-0.76 59
 MD5 21cd68602737d7c996bceabf6e62c468 metadata.xml 223
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDnZVbI1lqEGTUzyQRAi4TAKCXNQt7F+iuUOVcCe+f17u8USvDMACfddqN
+wyYgWbNwFwd9SYc9ugSVM+w=
+=AdUM
+-----END PGP SIGNATURE-----
