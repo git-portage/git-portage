@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 915d2f50a3767855313e78d2da528745 ChangeLog 13577
 MD5 f8df469837b3a964d556a54c89c4dd7e ethereal-0.10.12.ebuild 3472
 MD5 8254382d79bbfa4ae10fcf3ed648c525 ethereal-0.10.13-r1.ebuild 3462
@@ -11,3 +14,10 @@ MD5 e37a324c1e08bfd08a70fd5958dadeb4 files/ethereal-0.10.12-fix-encrypted-confli
 MD5 e58b082ef143490cd14bbd423d5e7f4d files/ethereal-0.10.13-fix-irc-loop-DoS-CVE-2005-3313.diff 612
 MD5 c334d7d6daae506c1e3a9a61d892a00c files/ethereal-0.10.13-packet-ospf.diff 18115
 MD5 17a9be2cf8cb9f24e7e5b398392483b4 metadata.xml 224
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDnxm1KRy60XGEcJIRAtBuAKCwBeW9mH5NhAH1NR6jlpojpok6pQCfcUBY
+Z5/V1XzNAzjKjCXnZUQiq2E=
+=FCMp
+-----END PGP SIGNATURE-----
