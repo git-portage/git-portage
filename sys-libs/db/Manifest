@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a0435de0fd1dacc747f315502eda91bc db-1.85-r2.ebuild 1467
 MD5 b3cb97191214b2260603ee79ee1cc8e0 db-4.0.14-r3.ebuild 2480
 MD5 2b53b92447c5f06991103d07b2443168 db-4.1.25_p1-r4.ebuild 2706
@@ -44,3 +47,10 @@ MD5 9cf113248f29b1e319ae73b266df4986 files/patch.3.2.9.1 2139
 MD5 f8edd1cf6535cd62f9b8ff81e0474273 files/patch.3.2.9.2 495
 MD5 3c47ce6ed92e948fbde232c1e3571f16 files/db-4.2-jarlocation.patch 599
 MD5 68a677d9846ad3fc623f173581ff9aa5 files/digest-db-4.2.52_p2-r1 175
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDn0mNViELBEf1JB0RAjuPAJ9CkrdJkC3B2/UX/F8voAZDbNC/WQCfd9JK
+IoIcjYcyyzBTEZ7lBiLFLfU=
+=XBMU
+-----END PGP SIGNATURE-----
