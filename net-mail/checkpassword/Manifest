@@ -1,5 +1,5 @@
-MD5 06e9de61040067a76cb768dc1d5a04d3 ChangeLog 2055
-MD5 9cfc85b3ec7f70bfb41f70e7c8877885 checkpassword-0.90-r2.ebuild 1006
+MD5 f71d4d651d99052938961885d893e98b ChangeLog 2256
+MD5 33cecfd2996b6c4af2aabde44d0b6998 checkpassword-0.90-r2.ebuild 1006
 MD5 760d73c8b3091ca1cae9a1ae5b6fab8f files/0.90-errno.patch 243
 MD5 5c5ff561b8a7baeb2e1a0e38503fa425 files/0.90-head-1.patch 1201
 MD5 894ae022f7765b23ddfce23bc2f91c3e files/digest-checkpassword-0.90-r2 69
