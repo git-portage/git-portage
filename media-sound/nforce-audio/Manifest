@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c4249d5b21deea20d34296534297e426 ChangeLog 2731
 MD5 f4086b92b1ebc4bcb2c158a4562c0c76 files/digest-nforce-audio-1.0.0292-r1 163
 MD5 e511938c1bb02442f98225418c8c11bd files/digest-nforce-audio-1.0.0301 163
@@ -8,3 +11,10 @@ MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 e479a1ee6a738e548ee22b4069a88bab nforce-audio-1.0.0292-r1.ebuild 1616
 MD5 0382d12941bf866611a99d6303616f5a nforce-audio-1.0.0301.ebuild 1716
 MD5 ce3ace76372fad24c33f72340592e841 nforce-audio-1.0.0310.ebuild 1716
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDnhi3wUpWvClEHQoRAi4TAJ93RQGRnk5sR4e7OeR1Zxcp+RwDWQCeISyn
+NcQdArkpOIAG9Hv+d06gONc=
+=1CtK
+-----END PGP SIGNATURE-----
