@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/boxbackup
 # Copyright 1999-2005 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.3 2005/11/02 20:44:19 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.4 2005/12/13 15:47:44 grobian Exp $
+
+  13 Dec 2005; Fabian Groffen <grobian@gentoo.org> boxbackup-0.09-r1.ebuild:
+  Marked x86 after some period of flawless functioning.
 
 *boxbackup-0.09-r1 (02 Nov 2005)
 
