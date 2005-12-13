@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/Attic/mysql-4.1.15-r30.ebuild,v 1.10 2005/12/12 10:15:56 vivo Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/Attic/mysql-4.1.16-r30.ebuild,v 1.1 2005/12/13 15:26:14 vivo Exp $
 
 # helper function, version (integer) may have section separated by dots
 # for readbility
@@ -494,7 +494,7 @@ src_test() {
 
 		mysql_version_is_at_least "5.00.15.00" \
 		&& make test-force-pl \
-		|| make test-pl
+		|| make test
 		retstatus=$?
 
 		# to be sure ;)
