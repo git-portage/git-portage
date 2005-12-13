@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 921ff28e85b5b5da9e7b62dd7639c6e7 ChangeLog 3325
 MD5 9fcae20e4d0c670e6f53602e516991aa files/digest-poppler-0.3.0 65
 MD5 9fcae20e4d0c670e6f53602e516991aa files/digest-poppler-0.3.0-r1 65
@@ -13,3 +16,10 @@ MD5 6999412acc1316a8e229eada23ab192b poppler-0.3.0.ebuild 856
 MD5 656418812935c7dc1fffc950ee0410c0 poppler-0.4.2-r1.ebuild 1433
 MD5 0a4aeea8b99f0bde18dd89db5fc6d313 poppler-0.4.2.ebuild 1383
 MD5 617805244f3eeabddfd4577dfa7e858a poppler-0.4.3.ebuild 1342
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDn06aomPajV0RnrERArKQAJ4sNF1NcyP8/MXy/oVmcw863MODeQCcDCis
+tPloFzOED9DHSbO7HZCJvbU=
+=SnF7
+-----END PGP SIGNATURE-----
