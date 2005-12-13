@@ -5,5 +5,5 @@ MD5 52d6f3845641e5004a00cb8fffc1d8a8 files/digest-metacity-2.12.2 69
 MD5 98f6fd8a6545a37a2ddf9b0e11ce54f7 files/metacity-2-logout.patch 7363
 MD5 32bfb0fc7521103b5b5a4f5c6f32ce3a metacity-2.10.3.ebuild 1257
 MD5 7c3acd3b4aaeab17a989e45166252589 metacity-2.12.1.ebuild 1282
-MD5 d169214716cd8bd7f80caf504373e1b9 metacity-2.12.2.ebuild 1284
+MD5 dca8d7a49fff48a499f4905fe12821fa metacity-2.12.2.ebuild 1505
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
