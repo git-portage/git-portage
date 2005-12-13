@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 30b1d4f8daae54e42d748d994d0aabc1 phpldapadmin-0.9.7.2.ebuild 857
 MD5 b8d5d85b0d2ef66c851335110f2d950d phpldapadmin-0.9.7_rc1.ebuild 919
 MD5 79890e899d5dd3ee979f75ec8de4bf1c phpldapadmin-0.9.7.ebuild 914
@@ -15,3 +18,10 @@ MD5 b798e91898b186ba4354f10a38bc47b2 files/welcome.php.patch 170
 MD5 d1ff22c7d7576d337ecf17671a2e9672 files/postinstall2-en.txt 131
 MD5 447f0b97c430c87e30d406becb470446 files/digest-phpldapadmin-0.9.7_rc1 74
 MD5 2c175e57faef32f4b2b038631f048d59 files/digest-phpldapadmin-0.9.7_rc3 74
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDng8aEzitwsaoONoRAootAKCs14PDDPt4ZpFhkkE1sWIPqqHSBwCeJ8iw
+itaph3qwwofeb5w/dewLyzo=
+=A3+x
+-----END PGP SIGNATURE-----
