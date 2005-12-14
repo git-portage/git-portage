@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 95adb64c94682c95d4e13827c82b26d7 ChangeLog 18882
 MD5 b92beaae46fa3940593e9915f4feb8f0 cups-1.1.23-r1.ebuild 4130
 MD5 8d5e79b93c34f48926709d33a54eed0f cups-1.1.23-r2.ebuild 4239
@@ -22,3 +25,10 @@ MD5 f6149424fd2880c5017da501e876de59 files/pdftops.pl 5630
 MD5 2fce5bedd61300fad1566a41f991a782 files/xpdf-goo-sizet.patch 1424
 MD5 a097b6a9c53c9ef50a6f3662d802cdfa files/xpdf-pl3.patch 348
 MD5 26b4b081d538c195dc39bcb2ec8e6f3a metadata.xml 161
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDoHoFomPajV0RnrERAq5/AJ90G76zAPtuWj01kW9LXVhfZh1QlACfX3xA
+E/EQ+XnnZMM+yAKvq38/mog=
+=DamG
+-----END PGP SIGNATURE-----
