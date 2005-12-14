@@ -1,3 +1,4 @@
-MD5 1c5fe050f9988c8e7a0088f4937fe618 nqc-2.5.1.ebuild 1114
 MD5 b3ab5cc4f137e90d75a91799ac702496 ChangeLog 844
 MD5 ec2eb2fa60d922ccddc0e768135303c4 files/digest-nqc-2.5.1 59
+MD5 397f6d97f513b13c40f92743258e64ff files/nqc-2.5.1-gcc34-fix.patch 425
+MD5 c6e8c41287cbad705e837c5e652d70c2 nqc-2.5.1.ebuild 1215
