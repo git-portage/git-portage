@@ -1,16 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcp/Attic/dhcp-3.0.4_beta2.ebuild,v 1.1 2005/12/09 14:13:30 uberlord Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcp/Attic/dhcp-3.0.3-r2.ebuild,v 1.1 2005/12/14 20:30:19 uberlord Exp $
 
 inherit eutils flag-o-matic multilib toolchain-funcs
 
 DESCRIPTION="ISC Dynamic Host Configuration Protocol"
 HOMEPAGE="http://www.isc.org/products/DHCP"
-
-MY_PV="${PV//_beta/b}"
-MY_P="${PN}-${MY_PV}"
-SRC_URI="ftp://ftp.isc.org/isc/dhcp/${MY_P}.tar.gz"
-S="${WORKDIR}/${MY_P}"
+SRC_URI="ftp://ftp.isc.org/isc/dhcp/${P}.tar.gz"
 
 LICENSE="isc-dhcp"
 SLOT="0"
@@ -32,43 +28,18 @@ src_unpack() {
 	epatch "${FILESDIR}/${PN}-3.0-paranoia.patch"
 	# Fix some permission issues
 	epatch "${FILESDIR}/${PN}-3.0-fix-perms.patch"
+	# Fix token ring compiling, #102473 
+	epatch "${FILESDIR}/${P}-tr.patch"
 	# Install libdst, #75544
-	epatch "${FILESDIR}/${PN}-3.0.3-libdst.patch"
+	epatch "${FILESDIR}/${P}-libdst.patch"
 	# Fix building on Gentoo/FreeBSD
 	epatch "${FILESDIR}/${PN}-3.0.2-gmake.patch"
 
 	# Enable dhclient to equery NTP servers, fixed #63868
 	epatch "${FILESDIR}/dhclient-ntp.patch"
-	# Quiet the isc blurb
-	epatch "${FILESDIR}/dhcp-3.0.3-no_isc_blurb.patch"
 
-	# Brand the version with Gentoo
-	# include revision if >0
-	local newver="${MY_PV}-Gentoo"
-	[[ ${PR} != "r0" ]] && newver="${newver}-${PR}"
-	sed -i -e '/^#define DHCP_VERSION[ \t]\+/ s/'"${MY_PV}/${newver}/g" \
-		includes/version.h
-
-	# Tart up the scripts for Gentoo baselayout
-	local comment="# This script is not called by Gentoo net scripts\n"
-	comment="${comment}# and is inluded purely for reference.\n"
-	comment="${comment}# We do however call /etc/dhcp/dhclient-exit-hooks\n"
-	sed -i -e '1 a '"${comment}" \
-		-e 's,/etc/dhclient-exit-hooks,/etc/dhcp/dhclient-exit-hooks,g' \
-		client/scripts/*
-
-	# Only install different man pages if we don't have en
-	if [[ " ${LINGUAS} " != *" en "* ]]; then
-		# Install Japanese man pages
-		if [[ " ${LINGUAS} " == *" ja "* && -d doc/ja_JP.eucJP ]]; then
-			einfo "Installing Japanese documention"
-			cp doc/ja_JP.eucJP/dhclient* client
-			cp doc/ja_JP.eucJP/dhcp* common
-		fi
-	fi
-
-	# Now remove the non-english docs so there are no errors later 
-	[[ -d doc/ja_JP.eucJP ]] && rm -rf doc/ja_JP.eucJP
+	# FreeBSD doesn't like -Werror that is forced on
+	sed -i -e 's:-Werror::' Makefile.conf
 }
 
 src_compile() {
@@ -134,12 +105,13 @@ pkg_preinst() {
 pkg_postinst() {
 	chown dhcp:dhcp "${ROOT}"/var/{lib,run}/dhcp
 
-	einfo "You can edit /etc/conf.d/dhcp to customize dhcp settings."
+	einfo "You can edit /etc/conf.d/dhcp to customize dhcp settings"
 	einfo
 	einfo "The DHCP ebuild now includes chroot support."
 	einfo "If you would like to run dhcpd in a chroot, simply configure the"
 	einfo "CHROOT directory in /etc/conf.d/dhcp and then run:"
 	einfo "  ebuild /var/db/pkg/${CATEGORY}/${PF}/${PF}.ebuild config"
+	echo
 }
 
 pkg_config() {
