@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5f214e4e8e65645257db66900a1de2f8 ChangeLog 38462
 MD5 cc5756b8c7af5c88b248b86c73fc5c8d files/1.5/firefox-1.1-visibility.patch 930
 MD5 7847d262e628dcac303586fe02f2e8c4 files/1.5/firefox-cairo-canvas.patch 446
@@ -52,3 +55,10 @@ MD5 2d5a6a285e00d8e6d9fca32065b81296 mozilla-firefox-1.0.7-r4.ebuild 9851
 MD5 a3626a3b65708e8afdd44d21c1125b2a mozilla-firefox-1.5-r1.ebuild 8931
 MD5 970bf2ab5547e0d8138fb7c6bbfb7778 mozilla-firefox-1.5-r2.ebuild 8973
 MD5 af83c78f670aa82820729e6065fec316 mozilla-firefox-1.5.ebuild 8847
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDoBUlKRy60XGEcJIRAtqCAJ9MHK/XvWC+xr0Y5RjuGJbMuIMn5wCgqgeK
+wFruQIxRN1Ive9mYUBE1t5o=
+=HAwA
+-----END PGP SIGNATURE-----
