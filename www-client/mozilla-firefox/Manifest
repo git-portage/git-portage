@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 970bf2ab5547e0d8138fb7c6bbfb7778 mozilla-firefox-1.5-r2.ebuild 8973
 MD5 b686423c9050edfcfd7ff72ea4081f09 mozilla-firefox-1.0.7-r3.ebuild 9734
 MD5 a3626a3b65708e8afdd44d21c1125b2a mozilla-firefox-1.5-r1.ebuild 8931
@@ -52,3 +55,10 @@ MD5 ff2980bf169954f9b255029e4312b6f8 files/1.5/mozilla-firefox-1.1a2-ia64.patch 
 MD5 2cdd03eb2752bc01ba07ad837e926f39 files/icon/mozillafirefox.desktop 168
 MD5 f49aab1950ec54d7e8b2a51909dc6a5e files/icon/deerpark-icon.png 2963
 MD5 bff260036c5dcca45da3218517fb33d8 files/icon/firefox-icon.png 3979
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDoMHe3og80iZgVQgRAtuKAJ9S66h2ZOnuXVWHukFBV61/UglHPwCeLl7H
+drlhwCBk/PeDkpvNPrXEnzw=
+=yxHL
+-----END PGP SIGNATURE-----
