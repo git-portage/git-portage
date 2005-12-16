@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8918948c85104748030dd513eb69c144 ChangeLog 2260
 MD5 5fb755a6c19276a2b8bda8bd9a2b9902 aegis-4.11.ebuild 1627
 MD5 6364105030f0f79409b819afdaa3771d aegis-4.16.ebuild 1638
@@ -8,3 +11,10 @@ MD5 e193743536c421fa27b47c4c2baa1146 files/digest-aegis-4.16 63
 MD5 320f358163dd684b8ff96b0940e5a28c files/digest-aegis-4.19 63
 MD5 bf858995188ef45cf39a79a3a842c73c files/digest-aegis-4.9 62
 MD5 7f4e76055474b0c87aca8a622ffd145c metadata.xml 708
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDoryaAiZjviIA2XgRAqmxAJwOJXMVHM4ir1QbJcjeqM6rfhTISwCg743r
+hHiSsxPzgypla3m8v5mUQ0M=
+=ZUYQ
+-----END PGP SIGNATURE-----
