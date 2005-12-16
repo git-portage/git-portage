@@ -1,4 +1,4 @@
-MD5 20d5786603be2710b8e75bc3409ee7fe ChangeLog 7231
+MD5 e38adcc9a1fbb28c8dcfac8132b2ee74 ChangeLog 7456
 MD5 a5f4b4836da859fb3b50704c437e2ba9 files/1.3.12-errno.patch 1732
 MD5 7fea29ea3b0c1cd4cda72553db01dfa9 files/2.2.0-gentoo.patch 15011
 MD5 473c7b8b865ecfdfd794414c980fe659 files/digest-icecast-2.0.1-r1 65
@@ -11,5 +11,5 @@ MD5 5eff8bd7d69f53898b122ef0ce6d4019 icecast-2.0.1-r1.ebuild 1047
 MD5 f21d4be19306962df91c96bc5cfd7f8c icecast-2.0.2.ebuild 1113
 MD5 f0d6c4a492be7ed7ef6f3ee6a49cb2e0 icecast-2.1.0.ebuild 1068
 MD5 2c2b3c9ebae24f5549c6bf6b7b71a3db icecast-2.2.0.ebuild 1152
-MD5 461acb7a9b79f4d7e6c9f428ea87c63c icecast-2.3.1.ebuild 1009
+MD5 ce7087d4df80d089969608a5e68a8acb icecast-2.3.1.ebuild 1108
 MD5 d0d7ea03e238a808414b4426394c100f metadata.xml 221
