@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c7291972d23c518ec0640626df5f79e3 ChangeLog 12504
 MD5 9f528fa7b6b4d2c202ce5f4e3a5173ba files/chdir-4.6.0.gentoo 159
 MD5 d576baf06c64df107664f4724b7632a2 files/digest-mc-4.6.0-r12 139
@@ -22,3 +25,10 @@ MD5 cbab313c52ad5cde562cf360d4e7582b mc-4.6.0-r12.ebuild 3147
 MD5 555d357fd8ed626786ac81e143c5fc00 mc-4.6.0-r13.ebuild 3297
 MD5 27a972292833db8cf2d20cf6db7a0194 mc-4.6.0-r14.ebuild 3817
 MD5 503ccb1138f9c49f0855884d830988a6 metadata.xml 253
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDoqtRAiZjviIA2XgRAibEAKDTeApVijWcBdcmWLlOul09FeiFPgCcC5Yq
+wZhCUi+j2vnOj/uJ0NGjVx4=
+=uxwn
+-----END PGP SIGNATURE-----

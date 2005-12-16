@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b0192cdfc42eb82a883348054cde29ba ChangeLog 1208
 MD5 6c9838e26eae25f8c03081b98dd62408 files/digest-pgcluster-1.3.0b 70
 MD5 c3f16a39a8ce23df03bc691c4a0b7533 files/digest-pgcluster-1.3.0c 70
@@ -18,3 +21,10 @@ MD5 a7f52fea43e9a85bfc8d81c27ab760c9 files/pgreplicate.init-1.3.0c 669
 MD5 f8d3d207746da2a3cd14dcaab8daab76 metadata.xml 163
 MD5 3929651504be989ff69f230c4c42cb57 pgcluster-1.3.0b.ebuild 7780
 MD5 0b2545c9df4937963b5f94bc3cd97002 pgcluster-1.3.0c.ebuild 7765
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDoquPAiZjviIA2XgRAj+FAJ40oTt25bOSSljgdzcchrHTe02TFgCfYjBw
+T8IawHOa0vSs4ejMLy/asRw=
+=5mDF
+-----END PGP SIGNATURE-----
