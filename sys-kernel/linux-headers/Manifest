@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0cb29e31310cb5abe124a12955d64db3 ChangeLog 30484
 MD5 e32b5df37d1bd1fde32f19276f8bc5e2 files/2.6.11-ppc64-32ul-spinlock.patch 510
 MD5 e300a3e148a7dcc38a0e099494fb6cb3 files/bigendian-byteorder-fix.patch 1557
@@ -37,3 +40,10 @@ MD5 6cf8a3d5b351f3a78641e8cd3979ffff linux-headers-2.6.11-r2.ebuild 1694
 MD5 50f0269653dbe0f2a66dace878ac3a82 linux-headers-2.6.11-r3.ebuild 1789
 MD5 4b7f9dd73295707d019c97d76b76a021 linux-headers-2.6.8.1-r4.ebuild 1213
 MD5 248488cc2cb6484a305e8108b4eaaa6a metadata.xml 489
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDoxtcKRy60XGEcJIRAupMAKCkeWhV5aHomhf95QNbx+J0iExjRwCgjevv
+A+8uBt14tL5h/qoPl8T4XkU=
+=2+T0
+-----END PGP SIGNATURE-----
