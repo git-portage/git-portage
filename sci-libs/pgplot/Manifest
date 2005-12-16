@@ -1,0 +1,5 @@
+MD5 ef0e808c413549505a4c1f147da16e3d files/digest-pgplot-5.2.2 62
+MD5 4f8ac4db89ea14bd777557e225b200e4 files/pgplot-compile-setup.patch 1600
+MD5 d097f08f0c028bea283303904d133116 files/pgplot-drivers.patch 4024
+MD5 1e3d99da0d638ce62b08ca0958eb66fb files/pgplot-makemake.patch 1040
+MD5 d32534793850acdad09b05af4ae4d563 pgplot-5.2.2.ebuild 1390
