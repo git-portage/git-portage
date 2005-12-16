@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a8d33f83dc44ed1d9cb8541e74d602b8 ChangeLog 3005
 MD5 1123b95db582c759e9690ed96a6fa5ff files/Gnome 2383
 MD5 0471910aaa15413b1324a48f181d3bb8 files/digest-gnome-core-1.4.0.8 71
@@ -14,3 +17,10 @@ MD5 add7f10e3182dbe6c679c508d79d0a67 gnome-core-1.4.1.ebuild 2362
 MD5 7aecf8c3dd18f66b730f915ac6872a63 gnome-core-1.4.2-r1.ebuild 2439
 MD5 dfb6444f2db1e0e63f3250997322e79a gnome-core-1.4.2.ebuild 2297
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDop1ZAiZjviIA2XgRAtLOAKCoDC3rzOD8D9uPOsZg48q2vDJ7yQCdELRG
+8mn+PWzFzTybl4u4EDDQPHg=
+=6+eX
+-----END PGP SIGNATURE-----
