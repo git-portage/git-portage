@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/xine-lib/Attic/xine-lib-1.1.1.ebuild,v 1.2 2005/11/22 10:34:43 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/xine-lib/Attic/xine-lib-1.1.1-r2.ebuild,v 1.1 2005/12/16 18:05:41 flameeyes Exp $
 
 inherit eutils flag-o-matic toolchain-funcs libtool autotools
 
@@ -86,6 +86,9 @@ src_unpack() {
 
 	# AT_M4DIR="m4" eautoreconf
 	elibtoolize
+
+	cd "${S}/src/libffmpeg"
+	epatch "${FILESDIR}/CVE-2005-4048.patch"
 }
 
 # check for the X11 path for a given library
