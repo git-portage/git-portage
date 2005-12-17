@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b1159e750332cfd50e8e85215a58d2d4 ChangeLog 9652
 MD5 ff186f769724f65b45dcedf2b9e7c9a3 files/digest-rxvt-unicode-3.0 69
 MD5 0454b0e411ee7798e273a94fcabdc823 files/digest-rxvt-unicode-4.0 69
@@ -13,3 +16,10 @@ MD5 2e49f34769297a5cdf516e44c8aa40c2 rxvt-unicode-4.0.ebuild 1587
 MD5 4a59732c305c41e1347aa674334213a1 rxvt-unicode-5.1.ebuild 1571
 MD5 a85edd99140d01a457111d8d28f52bf9 rxvt-unicode-5.3.ebuild 1919
 MD5 1a8601605d766c3a35c45b70bf4b64d0 rxvt-unicode-5.9.ebuild 1982
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDpIm2LLFUmVNQ7rkRAi5zAJ9VTqMctb6JQer0xZYfa7rClLAL5wCggGlX
+F+ijgljaafzve4MwyhFMCis=
+=IVrN
+-----END PGP SIGNATURE-----
