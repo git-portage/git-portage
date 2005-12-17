@@ -1,5 +1,5 @@
-MD5 fb9d667456b6e732e86070b7380684b3 ChangeLog 1919
-MD5 df46ffa94f3f499634d2ef03f1282f6c dfbsee-0.7.4-r1.ebuild 920
+MD5 ddaaf740d7b6a2fec033e1c7dcd1e7d2 ChangeLog 2234
+MD5 d7e2ccc28d2bd514bc9ef6ffe8e0443b dfbsee-0.7.4-r1.ebuild 924
 MD5 e10c0e6461a0109b5655701842238f1c dfbsee-0.7.4.ebuild 783
 MD5 8423cbb1ac402ba1ac3e227bc603e056 files/dfbsee-0.7.4-direcfb-0.9.24.patch 732
 MD5 bee0daacade74e22f21b35b4ba4ac927 files/dfbsee-0.7.4-gcc4.patch 1748
