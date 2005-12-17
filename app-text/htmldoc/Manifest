@@ -1,4 +1,4 @@
-MD5 2cf5fc0fa72a2480240005c318bc4f20 ChangeLog 3557
+MD5 2a1015be24bc5dec49569cfd6fa55c61 ChangeLog 3556
 MD5 4fd3b7ec1b30af0be9c2fd4695062c0c files/digest-htmldoc-1.8.20-r1 77
 MD5 37ab4f0733aa74e1862ba433b9a56936 files/digest-htmldoc-1.8.23 75
 MD5 a1859265d921a0a2270b8db008396c83 files/digest-htmldoc-1.8.24 75
@@ -7,5 +7,5 @@ MD5 06678439bd4de915b822ec99aa90b426 files/fonts.diff 353
 MD5 43894bc5d8432f559664896a6b1c3964 htmldoc-1.8.20-r1.ebuild 1347
 MD5 97590895b235e703505b5e203761757d htmldoc-1.8.23.ebuild 1289
 MD5 672530eb7714edf90c31ed7331d9e3fa htmldoc-1.8.24.ebuild 1323
-MD5 458b585af33890156f77c087d9b228b8 htmldoc-1.8.25.ebuild 1614
+MD5 0bc750e62b5467e2ff50bbd2feee51bd htmldoc-1.8.25.ebuild 1713
 MD5 ad57f9f8342c8d705da0060ad496c84c metadata.xml 251
