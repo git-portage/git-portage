@@ -1,0 +1,4 @@
+MD5 e173bb7f2e9b945f1c06358dd244a23b files/digest-mead-2.2.5 62
+MD5 34cb076ea699bd80ad6d90040ed7446f files/digest-ortep3-1.0.3 52
+MD5 b9546545930ca744210e8fcb0607cca9 files/respect-cflags.patch 2202
+MD5 b5a2fc24f27e91740853e6f317824376 mead-2.2.5.ebuild 984
