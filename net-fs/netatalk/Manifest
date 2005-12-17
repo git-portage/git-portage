@@ -7,5 +7,5 @@ MD5 9eeca2a8610190fcd373ff619d56a298 files/netatalk-1.6.4-tempfile.patch 557
 MD5 bb9fcf495bb4dfd88b684b4c0f934beb files/netatalk-2.0.3-setXid.patch 545
 MD5 43c6b606d88eab1f3467634846a77491 metadata.xml 347
 MD5 725e95b5d90ddc8ad32795170e447286 netatalk-1.6.4-r1.ebuild 1277
-MD5 847853761a1a9ced2ed02b6b926fce80 netatalk-2.0.3-r2.ebuild 2881
+MD5 02b774c6c0ee45a246c61a633400ae2a netatalk-2.0.3-r2.ebuild 2880
 MD5 70079668b1a40270670877da571a57cc netatalk-2.0.3.ebuild 2431
