@@ -1,29 +1,30 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/smarteiffel/Attic/smarteiffel-2.0_rc2.ebuild,v 1.3 2005/05/04 11:00:24 dholm Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/smarteiffel/Attic/smarteiffel-2.2_rc3.ebuild,v 1.1 2005/12/17 01:15:29 carlo Exp $
 
-IUSE="doc tcc"
+inherit toolchain-funcs multilib
 
-MY_PV=${PV//./-}
+
+MY_PV="${PV/./-}"
+S="${WORKDIR}/SmartEiffel"
 
 DESCRIPTION="GNU Eiffel compiler"
 HOMEPAGE="http://smarteiffel.loria.fr/"
+SRC_URI="http://www.loria.fr/~colnet/SmartEiffel/SmartEiffel-${MY_PV/_/-}.tar.bz2"
 
-SRC_URI="ftp://ftp.loria.fr/pub/loria/SmartEiffel/se.latest/se-${MY_PV//_/-}.tar.bz2"
-
-LICENSE="GPL-2"
 SLOT="0"
+LICENSE="GPL-2"
 KEYWORDS="~x86 ~amd64 ~sparc ~ppc"
+IUSE="doc tcc"
 
 DEPEND="tcc? ( >=dev-lang/tcc-0.9.14 )"
 
-S="${WORKDIR}/SmartEiffel"
 # Destination directory to hold most of the SmartEiffel distribution.
-SE_DIR="/usr/lib/SmartEiffel"
+SE_DIR="/usr/$(get_libdir)/SmartEiffel"
 
 src_compile() {
 	use tcc && CFLAGS=""
-	use tcc && COMPILER=tcc || COMPILER=gcc
+	use tcc && COMPILER=tcc || COMPILER="$(tc-getCC)"
 	einfo "Using ${COMPILER} as default C-compiler for SmartEiffel!"
 
 	export SmartEiffel="${S}/sys/system.se"
@@ -44,13 +45,13 @@ src_compile() {
 		echo 12 #CFLAGS setup
 		echo "${CFLAGS}"
 		echo "${CXXFLAGS}"
-		echo 13 #main menu
+		echo 0; #main menu
 		echo 1; # configure
 		echo 1; echo "${S}/sys/system.se"; #set configuration file
-		echo 3; echo "${S}/bin/"; # set bin dir
-		echo 4; echo "${S}/sys/"; # set Sys dir
-		echo 5; echo "${S}/sys/"; # set Short dir
-		echo 6; # configure environment variables
+		echo 4; echo "${S}/bin/"; # set bin dir
+		echo 5; echo "${S}/sys/"; # set Sys dir
+		echo 6; echo "${S}/sys/"; # set Short dir
+		echo 7; # configure environment variables
 		echo 1;
 		echo "path_tutorial";
 		echo "${S}/tutorial/"
@@ -60,11 +61,12 @@ src_compile() {
 		echo 1;
 		echo "path_lib";
 		echo "${S}/lib/";
-		echo 3;
-		echo 8 #exit menu
-		echo 4 #save conf file
-		echo 5; echo
-		echo 6; echo #leave the menu
+		echo 0;
+		echo 0; #exit menu
+		echo 5; #save conf file
+		echo 6; echo
+		echo 0; echo #leave the menu
+		
 	) | ./install.bin || die
 	einfo "finished running install"
 
@@ -78,10 +80,10 @@ src_install () {
 
 	# Create symlinks to the appropriate executable binaries.
 	dodir /usr/bin
-	rm ${S}/bin/README.txt
+	rm ${S}/bin/READ_ME.txt
 	#since then this became a bin file?
 	for NAME in ${S}/bin/*; do
-		NAME=`basename ${NAME}`
+		NAME="$(basename ${NAME})"
 		dosym ${SE_DIR}/bin/${NAME} /usr/bin/${NAME}
 	done
 
@@ -89,7 +91,7 @@ src_install () {
 	if use doc; then
 		einfo "Installing documentation"
 		dodir /usr/share/doc/${PF}
-		cp -a ${S}/{man,misc,tutorial,READ_ME} ${D}/usr/share/doc/${PF} || die
+		cp -a ${S}/{man,misc,tutorial,READ_ME.txt} ${D}/usr/share/doc/${PF} || die
 	fi
 
 	# Setup 'SmartEiffel' environment variable.
