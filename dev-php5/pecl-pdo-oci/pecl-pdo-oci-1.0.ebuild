@@ -1,23 +1,23 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php5/pecl-pdo-firebird/Attic/pecl-pdo-firebird-0.2.ebuild,v 1.5 2005/12/18 01:41:13 chtekk Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php5/pecl-pdo-oci/Attic/pecl-pdo-oci-1.0.ebuild,v 1.1 2005/12/18 01:42:49 chtekk Exp $
 
-PHP_EXT_NAME="pdo_firebird"
-PHP_EXT_PECL_PKG="PDO_FIREBIRD"
+PHP_EXT_NAME="pdo_oci"
+PHP_EXT_PECL_PKG="PDO_OCI"
 PHP_EXT_INI="yes"
 PHP_EXT_ZENDEXT="no"
 
 inherit php-ext-pecl-r1
 
-KEYWORDS="~amd64 ~sparc ~x86"
-DESCRIPTION="PHP Data Objects (PDO) Driver For Firebird/Interbase Server."
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~x86"
+DESCRIPTION="PHP Data Objects (PDO) Driver For Oracle Call Interface (OCI)."
 LICENSE="PHP"
 SLOT="0"
-IUSE=""
+IUSE="oci8-instant-client"
 
 DEPEND="${DEPEND}
 		dev-php5/pecl-pdo
-		dev-db/firebird"
+		oci8-instant-client? ( dev-db/oracle-instantclient-basic )"
 
 need_php_by_category
 
@@ -37,6 +37,12 @@ pkg_setup() {
 
 src_compile() {
 	has_php
-	my_conf="--with-pdo-firebird"
+	if useq oci8-instant-client ; then
+		OCI8IC_PKG="`best_version dev-db/oracle-instantclient-basic`"
+		OCI8IC_PKG="`printf ${OCI8IC_PKG} | sed -e 's|dev-db/oracle-instantclient-basic-||g'`"
+		my_conf="--with-pdo-oci=instantclient,/usr,${OCI8IC_PKG}"
+	else
+		my_conf="--with-pdo-oci"
+	fi
 	php-ext-pecl-r1_src_compile
 }
