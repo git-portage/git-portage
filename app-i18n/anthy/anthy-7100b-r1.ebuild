@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/anthy/Attic/anthy-7100b.ebuild,v 1.1 2005/11/13 08:13:18 hattya Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/anthy/Attic/anthy-7100b-r1.ebuild,v 1.1 2005/12/18 13:18:59 hattya Exp $
 
 inherit elisp-common eutils
 
@@ -25,20 +25,15 @@ src_compile() {
 	use emacs || myconf="EMACS=no"
 	use ucs4 && myconf="${myconf} --enable-ucs4"
 
-	if has_version 'app-dicts/canna-zipcode'; then
-		einfo "Adding zipcode.t and jigyosyo.t to anthy.dic."
-		cp ${cannadicdir}/{zipcode,jigyosyo}.t mkanthydic
-		sed -i -e "/^EXTRA_DICS/s|$| zipcode.t jigyosyo.t|" mkanthydic/Makefile.in
-	fi
-
 	if has_version 'app-dicts/canna-2ch'; then
 		einfo "Adding nichan.ctd to anthy.dic."
-		cp ${cannadicdir}/nichan.ctd mkanthydic/2ch.t
-		sed -i -e "/^EXTRA_DICS/s|$| 2ch.t|" mkanthydic/Makefile.in
+		sed -i -e /placename/a"read ${cannadicdir}/nichan.ctd" \
+			mkanthydic/dict.args.in
 	fi
 
+	unset TMPDIR
 	econf ${myconf} || die
-	emake -j1 || die
+	emake || die
 
 }
 
