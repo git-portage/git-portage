@@ -1,5 +1,5 @@
-MD5 93efc67352da22a498552ed3036acf56 ChangeLog 1140
-MD5 9ac5ca949d578062f964a97cfc566907 c-jdbc-1.0.4-r1.ebuild 3724
+MD5 1689032a7b2a6c5265a3caeedc234413 ChangeLog 1254
+MD5 0ddb16210255443d5e4d28a366fe52e4 c-jdbc-1.0.4-r1.ebuild 3720
 MD5 6f7e7b9ace7df13d6bab70f487a31189 files/c-jdbc-1.0.4-gentoo.patch 5047
 MD5 c366d1203f27f5438c29bc3a5724ab73 files/cjdbc-conf 313
 MD5 9c7589e63d5760dde9a3d56fdc58e6a7 files/cjdbc-init 926
