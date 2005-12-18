@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ea7a351589defbd9aafdaca09ccb9d16 ChangeLog 4128
 MD5 2e4104084577e624961e3622335525e5 boinc-4.72.20050813-r3.ebuild 2323
 MD5 390706261c0bb69ece5fedd90a269b7a boinc-5.2.14.ebuild 2373
@@ -8,3 +11,10 @@ MD5 65f52ec0126ca93deeec92362b6a31fe files/boinc.init 1823
 MD5 54ee39e6bbb50b705cb5fac638568d8b files/digest-boinc-4.72.20050813-r3 80
 MD5 2a247d3dbe62f019735a5ad35134fd7c files/digest-boinc-5.2.14 137
 MD5 4b2e94b92c84896e0204d9e7710f9c6a metadata.xml 420
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDpWQtntT9W3vfTuoRAq28AKCRb5P+6aXn5Wn+7Mmj2rrYITk25ACdHWE7
+CfSR7BDlK3IillUZEGrE/K0=
+=f7il
+-----END PGP SIGNATURE-----
