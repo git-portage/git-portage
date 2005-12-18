@@ -1,0 +1,6 @@
+MD5 58d459eacbeaa84c039bad48bb30baf5 files/digest-sparky-3.111 72
+MD5 4be84fed797386cc8986d1b3e4b579d8 files/fix-install-working.patch 7992
+MD5 53c15336a39923c3345a2f7dd841db27 files/fix-install-working2.patch 9131
+MD5 edd4cafd319052b6792fe4918f0bfaa4 files/fix-install.patch 10206
+MD5 d380a123f668307505d6e516408ad685 files/sparky.patch 10038
+MD5 0d9ee98ebeefaa098fe9adb383eeb5e9 sparky-3.111.ebuild 2846
