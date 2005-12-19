@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-3.2.1.2242-r6.ebuild,v 1.1 2005/11/28 22:35:56 wolf31o2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-3.2.1.2242-r7.ebuild,v 1.1 2005/12/19 17:14:21 wolf31o2 Exp $
 
 # Unlike many other binary packages the user doesn't need to agree to a licence
 # to download VM Ware.  The agreeing to a licence is part of the configure step
@@ -136,9 +136,12 @@ src_install() {
 	# this removes the user/group warnings
 	chown -R root:0 ${D} || die
 
+	dodir /etc/vmware
 	# this makes the vmware-vmx executable only executable by vmware group
-	fowners root:vmware ${dir}/lib/bin{,-debug}/vmware-vmx || die
+	fowners root:vmware ${dir}/lib/bin{,-debug}/vmware-vmx /etc/vmware \
+		|| die "Changing permissions"
 	fperms 4750 ${dir}/lib/bin{,-debug}/vmware-vmx || die
+	fperms 770 /etc/vmware || die
 
 	# this adds udev rules for vmmon*
 	dodir /etc/udev/rules.d
