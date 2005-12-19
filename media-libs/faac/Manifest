@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b9cba2deca9cefed6c2bcd68cd5a8b47 ChangeLog 4211
 MD5 376eff56e5468e5e556e185136b498a0 faac-1.23.5.ebuild 855
 MD5 bf33170043aee274cbc63755f1339254 faac-1.24-r1.ebuild 905
@@ -9,3 +12,10 @@ MD5 af9d89575787d0f3507d3c710b588924 files/faac-1.24-faad.patch 885
 MD5 cdd79fb009d4c52796f1b1e31bf6ed20 files/fix-linefeeds.sh 122
 MD5 049efb5435eb21d0c652a01219932747 files/libsndfile-1.0.diff 1368
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDptQoAiZjviIA2XgRAmABAKCWrnBv0g2pofGCGMI9DyVr8ohOHACeI09v
+h0BB0dbsvCuksSlgEEwNv+c=
+=E/Q3
+-----END PGP SIGNATURE-----
