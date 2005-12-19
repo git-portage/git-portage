@@ -1,22 +1,26 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/sane-backends/Attic/sane-backends-1.0.16-r1.ebuild,v 1.2 2005/08/22 10:44:06 phosphan Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/sane-backends/Attic/sane-backends-1.0.17.ebuild,v 1.1 2005/12/19 14:32:40 phosphan Exp $
 
-inherit eutils flag-o-matic
+inherit eutils
 
 IUSE="usb gphoto2 ipv6 v4l"
 
 DESCRIPTION="Scanner Access Now Easy - Backends"
 HOMEPAGE="http://www.sane-project.org/"
 
-DEPEND=">=media-libs/jpeg-6b
+RDEPEND=">=media-libs/jpeg-6b
 	amd64? ( sys-libs/libieee1284 )
 	x86? ( sys-libs/libieee1284 )
 	usb? ( dev-libs/libusb )
 	gphoto2? ( media-libs/libgphoto2 )
 	v4l? ( sys-kernel/linux-headers )"
 
-BROTHERMFCDRIVER="sane-${PV}-brother-driver.diff"
+DEPEND="${DEPEND}
+	>=sys-apps/sed-4"
+
+BROTHERMFCPATCHVER="1.0.16"
+BROTHERMFCDRIVER="sane-${BROTHERMFCPATCHVER}-brother-driver.diff"
 
 SRC_URI="ftp://ftp.sane-project.org/pub/sane/${P}/${P}.tar.gz
 	ftp://ftp.sane-project.org/pub/sane/old-versions/${P}/${P}.tar.gz
@@ -28,16 +32,22 @@ KEYWORDS="~x86 ~sparc ~ppc ~ppc64 ~amd64 ~alpha ~ia64"
 
 # To enable specific backends, define SANE_BACKENDS with the backends you want
 # in those:
-#   abaton agfafocus apple artec as6e avision bh canon canon630u coolscan
-#   coolscan2 dc25 dmc epson fujitsu genesys gt68xx hp leo matsushita microtek
-#   microtek2 mustek mustek_usb nec pie plustek plustek_pp ricoh s9036
-#   sceptre sharp sp15c st400 tamarack test teco1 teco2 teco3 umax umax_pp
-#   umax1220u artec_eplus48u ma1509 ibm hp5400 u12 sm3840 snapscan niash dc210 dc240
-#   pint net
+# 
+#         abaton agfafocus apple artec as6e avision bh canon
+#         canon630u coolscan coolscan2 dc25 dmc
+#         epson fujitsu genesys gt68xx hp leo lexmark matsushita microtek
+#         microtek2 mustek mustek_usb nec pie plustek
+#         plustek_pp ricoh s9036 sceptre sharp
+#         sp15c st400 tamarack test teco1 teco2 teco3 umax umax_pp umax1220u
+#         artec_eplus48u ma1509 ibm hp5400 u12 snapscan niash sm3840 hp4200
+#         sm3600
 #
 # Note that some backends has specific dependencies which make the compilation
 # fail because not supported on your current platform.
+
 pkg_setup() {
+	enewgroup scanner
+
 	IEEE1284_BACKENDS="canon_pp hpsj5s mustek_pp"
 
 	if [[ "${SANE_BACKENDS}" != "" ]]; then
@@ -79,13 +89,11 @@ src_unpack() {
 		epatch ${WORKDIR}/${BROTHERMFCDRIVER}
 		sed -e 's/bh canon/bh brother canon/' -i configure || \
 			die "could not add 'brother' to backend list"
-		epatch ${FILESDIR}/libusbscanner-device-r1.patch
-		:
 	fi
+
 }
 
 src_compile() {
-	filter-flags -ffast-math
 	SANEI_JPEG="sanei_jpeg.o" SANEI_JPEG_LO="sanei_jpeg.lo" \
 	BACKENDS="${SANE_BACKENDS}" \
 	econf \
@@ -105,7 +113,9 @@ src_compile() {
 
 src_install () {
 	einstall docdir=${D}/usr/share/doc/${PF}
-
+	keepdir /var/lib/lock/sane
+	fowners root:scanner /var/lib/lock/sane
+	fperms g+w /var/lib/lock/sane
 	if use usb; then
 		cd tools/hotplug
 		insinto /etc/hotplug/usb
@@ -125,8 +135,3 @@ src_install () {
 	doins 30sane
 
 }
-
-pkg_preinst() {
-	enewgroup scanner
-}
-
