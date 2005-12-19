@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6c55f626086d3b19298a669251a1a2c1 ChangeLog 24590
 MD5 33d51532d0f696fefa15593b2cf2f6de files/digest-vanilla-sources-2.0.40-r1 66
 MD5 556c7008fbfdf81750bbd4ab2beb111e files/digest-vanilla-sources-2.2.26-r1 67
@@ -48,3 +51,10 @@ MD5 1d55d581e2e28473c4ebc74de1be8994 vanilla-sources-2.6.15_rc5.ebuild 497
 MD5 54708331f4777918bf33fd8c22dfcaa0 vanilla-sources-2.6.15_rc6.ebuild 497
 MD5 1b0bfa0114e892a7f294531c22c7084c vanilla-sources-2.6.5.ebuild 450
 MD5 2b03b5303004069d236540fff82d3077 vanilla-sources-2.6.7.ebuild 456
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDpzU9p5vW4rUFj5oRAnF/AJ9nBQO2g3Eu6g93YCiY98lFRK7tTgCfUVYV
+vtBHSlPNtlHiqAxIpMjT+l4=
+=FZBv
+-----END PGP SIGNATURE-----
