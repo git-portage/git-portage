@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9430b2b53820f286f32e81b3573818a5 ChangeLog 17995
 MD5 3150d43b1c44c02265b8481e271093c8 files/altivec-fix-1.6.2.patch 1011
 MD5 0d8b5844ab88ae9b60a7785572273347 files/digest-mjpegtools-1.6.2-r4 213
@@ -14,3 +17,10 @@ MD5 cbcc90f9de3aaf0ac12aa6bd1c4db025 files/no-x11-lib-2.patch 469
 MD5 fe49014257499366bdc6903a9aa33fe5 metadata.xml 311
 MD5 6bc4c32743683d5ce9f4686ea9c32041 mjpegtools-1.6.2-r4.ebuild 3275
 MD5 eee0c8ba56c342e775dcc523cb515428 mjpegtools-1.8.0-r1.ebuild 2786
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDpolTAiZjviIA2XgRAsIBAJ9eYK55lDWZJMw9hN5MEoxtUHnLeQCffrJ7
+BY56IQGwX/IGNxgYBz3qic0=
+=5buo
+-----END PGP SIGNATURE-----
