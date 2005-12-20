@@ -1,4 +1,4 @@
-MD5 db4579214c36856d0b0a005359ac6b36 ChangeLog 730
+MD5 fd8abc3dbe5443f6a5491b0195dd7485 ChangeLog 824
 MD5 a2ddae4b1f9d97aa89560c3c75aa8c44 files/digest-ruby-postgres-0.7.1 70
 MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
-MD5 30bce8211ccbf68621efc2f250c80794 ruby-postgres-0.7.1.ebuild 677
+MD5 ec21aa443c8d3d5f5fad14ef8105d5cb ruby-postgres-0.7.1.ebuild 684
