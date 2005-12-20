@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 285e94990d44c5edfe923e25ad0bbbcb ChangeLog 6331
 MD5 387355913ede91692759147273543555 bluefish-1.0.2.ebuild 897
 MD5 10ceb3c1ebbf34eadf7dee32362c01ef bluefish-1.0.4-r1.ebuild 966
@@ -8,3 +11,10 @@ MD5 52bca1b5248301ce7359f135e824a98f files/digest-bluefish-1.0.2 68
 MD5 c150fdac29f2c1bcf452e3102c045dd5 files/digest-bluefish-1.0.4 68
 MD5 c150fdac29f2c1bcf452e3102c045dd5 files/digest-bluefish-1.0.4-r1 68
 MD5 a72a06a37ca4e5905085ebff07fe9e9e metadata.xml 217
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDqIeJr2QksT29OyARAsxDAJ9F9kkE5mZFcRG8JHNATXJJAGay0ACfRdZ9
+y5+CBmwE8sP7fWR1cO2ZTxk=
+=4cMm
+-----END PGP SIGNATURE-----
