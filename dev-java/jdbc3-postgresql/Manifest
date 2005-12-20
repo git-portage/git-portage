@@ -1,4 +1,4 @@
-MD5 230089c3977240bc20be7f0d08d819aa ChangeLog 1384
+MD5 6d2651223769763f104bb5e71320671a ChangeLog 1564
 MD5 927470f50a83ea9bf353f3d3e8c68c4f files/digest-jdbc3-postgresql-7.3 58
 MD5 e71acb8b196dc2466141bfe8dabe0eee files/digest-jdbc3-postgresql-7.4.5 73
 MD5 68212c0fc3f178e7dcd29a128bc6dbb5 files/digest-jdbc3-postgresql-8.0_p311 79
@@ -8,5 +8,5 @@ MD5 3d80aae0ac6bc38c96a1eb2756a7d62b jdbc3-postgresql-7.3.ebuild 577
 MD5 d48c8950c95796f70666b0874df8f4d6 jdbc3-postgresql-7.4.5.ebuild 1115
 MD5 aafcc49fe60193eedeb00150bdcc2b60 jdbc3-postgresql-8.0_p311.ebuild 1213
 MD5 383b03657aca36b9aa418e36d08724bb jdbc3-postgresql-8.0_p312.ebuild 1213
-MD5 04ab9a2e636a82b478dd5eb00bfd6e62 jdbc3-postgresql-8.1_p404.ebuild 1242
+MD5 ca2d6af106ac3c5bd9c7507df6bbb259 jdbc3-postgresql-8.1_p404.ebuild 1244
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
