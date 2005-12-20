@@ -1,4 +1,4 @@
-MD5 069348f252ace2327cf9be24687dd6ac ChangeLog 1233
+MD5 1c21418a2666a539c694f4b4186ce059 ChangeLog 1415
 MD5 d54e8a4d5935b1e97cff81e856bbf81a files/digest-vpnc-0.2 69
 MD5 a39fb4aa56f341f55789da220fe25c22 files/digest-vpnc-0.2_pre7 72
 MD5 93f950ddb46dfe6df41af92346c4176f files/digest-vpnc-0.3.2 61
@@ -11,5 +11,5 @@ MD5 a72a06a37ca4e5905085ebff07fe9e9e metadata.xml 217
 MD5 39d4e738948eab214d837d8132a175ec vpnc-0.2.ebuild 816
 MD5 91d0df2f6face8216eb31781c454707f vpnc-0.2_pre7.ebuild 823
 MD5 902f606380fea4093d70e3c080cc1054 vpnc-0.3.2.ebuild 854
-MD5 f0f0a434fd4c3b1dc1a10ec1b299bd17 vpnc-0.3.3-r1.ebuild 889
+MD5 91b0d95fadd080b5b9d9b1dff1d8f294 vpnc-0.3.3-r1.ebuild 892
 MD5 b0939d68e6a35e645e2969fe80634358 vpnc-0.3.3.ebuild 887
