@@ -1,0 +1,6 @@
+MD5 f0539a87f3decb3c2a841511143cabb9 files/digest-pdb-extract-1.700 80
+MD5 f0539a87f3decb3c2a841511143cabb9 files/digest-rcsb-data-1.700 80
+MD5 2945df7eb475ba3da5fba282404ba5ec files/digest-validation-8.061 79
+MD5 008f15f3e5c0253396f3c44e4193cb5b files/respect-bindir.patch 798
+MD5 e315289ad58f3b5fb006bbf4d2b482a2 files/respect-cflags-and-fix-install.patch 8415
+MD5 7561654f403f92d45353ada799ba6937 rcsb-data-1.700.ebuild 923
