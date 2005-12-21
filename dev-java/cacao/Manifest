@@ -1,6 +1,6 @@
 MD5 a371d94414942eec3d336620e8b8d1f7 ChangeLog 868
 MD5 500a092baa3f5735bf31135042b865cc cacao-0.91.ebuild 1176
-MD5 c0956ab3f5be9a37dded36941c5be7cf cacao-0.93.ebuild 1057
+MD5 35cdb58232e4e69be999808e5301963b cacao-0.93.ebuild 1057
 MD5 77af59ed311f182690b4e5dcac85d064 files/0.93-no-exec-stack.patch 403
 MD5 1b8ece1ea129936e89b66052a7f28b0c files/digest-cacao-0.91 64
 MD5 d6095d9ed2b40cc02512dd70e9e90201 files/digest-cacao-0.93 63
