@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c7fe25b1bf54e0e4bccd5e4a8ec7c425 ChangeLog 11282
 MD5 13c4abf06e236e8835011a387f90ecc9 files/digest-ocaml-3.06-r2 63
 MD5 c42de320103c2d3eb1aa4002e2e0716b files/digest-ocaml-3.07-r1 130
@@ -17,3 +20,10 @@ MD5 e3554fd0d2b4cbd09694d68ca3edb0d8 ocaml-3.08.1.ebuild 2149
 MD5 cfcf2e84fee42ef8460d98c45a4b947f ocaml-3.08.3.ebuild 2292
 MD5 df9e8e8ef7471d9588373dea12b7f49e ocaml-3.08.4.ebuild 2499
 MD5 b2f71c18310d84ec7f3faa4b27fed380 ocaml-3.09.0.ebuild 2499
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDqWocntT9W3vfTuoRAlAzAKCU14o+PbPbv3IK2mXFKFZfvcAgQgCfRcIN
+A8QKil4/95XHrU/NNmnW+xY=
+=Gzvu
+-----END PGP SIGNATURE-----
