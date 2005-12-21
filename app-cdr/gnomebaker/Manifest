@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 00a2c285e4326114f85095ff33a405d6 ChangeLog 2373
 MD5 f1f3df84ffcb90188e6f78e6f42ea6f4 files/digest-gnomebaker-0.4.2 68
 MD5 dc88a6c8a1a049ee0aa85387225bdc3d files/digest-gnomebaker-0.5.0 69
@@ -7,3 +10,10 @@ MD5 2926a13a4f9293e17115de061d5ceb67 gnomebaker-0.4.2.ebuild 1128
 MD5 7399f6f2f7558346fa6688dc59f989c8 gnomebaker-0.5.0-r1.ebuild 1264
 MD5 a0bdd3231d525d3c160b6f9f787e005f gnomebaker-0.5.0.ebuild 1137
 MD5 261972da02920d2246124b6fc395ac37 metadata.xml 168
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDqVNzwUpWvClEHQoRAlOhAJoCP+JUEIVx4TnhIJ7Cf4q24VsP1wCfYUQ8
+XWBZfHy6HZILxJMbdoCy0LQ=
+=AvF/
+-----END PGP SIGNATURE-----
