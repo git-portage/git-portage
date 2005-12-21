@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a9a490b1c5c65ce442e13693dc8f8be6 ChangeLog 6241
 MD5 30402e91a4759242922f7eecc7337672 files/digest-phpsysinfo-2.3-r2 66
 MD5 bac44e6bc288288a1b515c8d6590386a files/digest-phpsysinfo-2.3-r3 134
@@ -10,3 +13,10 @@ MD5 93c8e3bbe1ea37361175bb8c3b4e7f6d phpsysinfo-2.3-r2.ebuild 1131
 MD5 699122f557709c38ce8a1d395e762cc9 phpsysinfo-2.3-r3.ebuild 1179
 MD5 9766ceff7fe19150c68db121240d41f7 phpsysinfo-2.4.1.ebuild 1204
 MD5 c6bcce81dbbbcd700d9a1d75dd196376 phpsysinfo-2.5.1.ebuild 790
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDqVt7EzitwsaoONoRAmKyAKChEaYK+P03C7XaYebKFBX2XWxClACeI6c9
+vPnWFrJamoarchvjfJsorDs=
+=bt3k
+-----END PGP SIGNATURE-----
