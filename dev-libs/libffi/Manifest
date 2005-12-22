@@ -9,6 +9,6 @@ MD5 1ca677e646f4d209e68601c9ba83c629 files/libffi-without-libgcj.dpatch 2255
 MD5 ea5e2ecd7602d6f2fb898c3f25f6e353 libffi-1.20.ebuild 604
 MD5 80bb0fc8fbb6690e139e43c20573c5a4 libffi-3.3.5.ebuild 6593
 MD5 0bfe33cbee49cf9068c44632e0fe1133 libffi-3.4.1-r1.ebuild 5756
-MD5 1a22fbfb7f17a593f82b50f1d2d99349 libffi-3.4.1.ebuild 7000
+MD5 223f7c87490f50ead6312a58489f155d libffi-3.4.1.ebuild 7049
 MD5 1b9d42065b42f423dc07cd24afa99385 libffi-3.4.3.ebuild 5705
 MD5 ef1d6e99f954cc3412a9e513a2d80c64 metadata.xml 1836
