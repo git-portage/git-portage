@@ -2,7 +2,7 @@ MD5 f70fee92ab2e258ea7be208d0ddfa4b6 xchat-2.4.3.ebuild 2266
 MD5 7d4cd824eee5215e98a083a09abecd45 xchat-2.4.5-r1.ebuild 2362
 MD5 b07304c2f6e1aa08bf112928e9558223 xchat-2.4.5.ebuild 2301
 MD5 4634f562e01b219d3bcfb0ae6acb8397 xchat-1.8.11-r1.ebuild 2264
-MD5 46b9c2d5d442b62b82c5ab7b36a007ba ChangeLog 27755
+MD5 da406953738c69c779352b7342800835 ChangeLog 27757
 MD5 44c39c6ad372a8e5a5e7ee3311f703a7 metadata.xml 160
 MD5 95d53db19acfbc8d85a8ac0c8d695133 xchat-2.6.0.ebuild 2261
 MD5 21bc6820aa6d0c8722509a74c7fccb3d files/digest-xchat-2.4.3 134
