@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 88a23d5906ecb1496151a8b445ca440b ChangeLog 2653
 MD5 55671361131ffc00d6ab74e8bebbecbd files/digest-nbd-2.7.2 127
 MD5 fd3fb561bafa4b382526a90c675be601 files/digest-nbd-2.7.3 127
@@ -13,3 +16,10 @@ MD5 6ccc31f89d7cbc4f2b959a6b4047014c nbd-2.7.3.ebuild 951
 MD5 d27ba6f296400c23a19b8c1038fb1ea3 nbd-2.7.4.ebuild 954
 MD5 1e50967e444103b7f70e686c08091c0b nbd-2.8.2-r1.ebuild 989
 MD5 c2ac0bbe68d730f447584af47d32d3eb nbd-2.8.2.ebuild 940
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDqjC/2+ySkm8kpY0RAgWeAJ9jgH3e2d0975xv8kLX7vCxcV9s9gCdGA7C
+klyy8yQlZZ21Y9DGNJLfLWQ=
+=+a3o
+-----END PGP SIGNATURE-----
