@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5a017376b68a1977ebc9de62db0518d7 ChangeLog 5848
 MD5 c110adefe6c3d268c4c1e861d120fe3a files/digest-ifplugd-0.28 64
 MD5 c110adefe6c3d268c4c1e861d120fe3a files/digest-ifplugd-0.28-r4 64
@@ -12,3 +15,10 @@ MD5 b85f99eae3afefda5a054752b3b51d5c files/ifplugd.init 3938
 MD5 b191509af3823a04f7dd0294ccebbd6c ifplugd-0.28-r4.ebuild 1327
 MD5 e6ac7d869a0eb46fcd8069766bcf9370 ifplugd-0.28.ebuild 1445
 MD5 d13433a9981e2386ff10934a71b003a6 metadata.xml 359
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDq5Y2CRZPokWLroQRArZbAKC5fU8n12qpzkKGvU6pCQ67UWTFoACgpEY2
+0R9qBSHzmiBaUHHYmtzO2LU=
+=0GDh
+-----END PGP SIGNATURE-----
