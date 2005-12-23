@@ -1,4 +1,4 @@
-MD5 12303f766aa729c9a9669b50fa6d8b05 ChangeLog 5170
+MD5 212581f1b478fd37245e2977c4788f4a ChangeLog 5173
 MD5 9052eb692ddc0cbb296d7712b0cc6f44 files/digest-qemu-0.6.0 62
 MD5 1f8638d68cffbd8b96df97dcb0868b88 files/digest-qemu-0.6.1 63
 MD5 1f8638d68cffbd8b96df97dcb0868b88 files/digest-qemu-0.6.1-r1 63
@@ -22,4 +22,4 @@ MD5 a5f64bfa0ee03fa38a4b40c6faddd0ca qemu-0.7.0-r1.ebuild 493
 MD5 a69f6c23e1e4815aeae158b73abbe952 qemu-0.7.0.ebuild 4195
 MD5 0acd15b543d8330d56ef04e77b5ee1a1 qemu-0.7.1.ebuild 490
 MD5 3d713fa1f670e463c3204f254ed6e4e8 qemu-0.7.2.ebuild 505
-MD5 3d713fa1f670e463c3204f254ed6e4e8 qemu-0.8.0.ebuild 505
+MD5 1f24e04cbc815e54292d3ecd78c15fc1 qemu-0.8.0.ebuild 505
