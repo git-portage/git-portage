@@ -1,6 +1,6 @@
 MD5 f9c42d0c85e914e1e75a632c92826ce6 ChangeLog 8447
 MD5 09cf4262be1e0bfc3de7f9f36b91c7cb devtodo-0.1.18-r2.ebuild 1383
-MD5 3e2d6f42faf27baadaaeb0539338f27d devtodo-0.1.19-r1.ebuild 1463
+MD5 f38bcfc0d09c9918feb8f745f6b4459e devtodo-0.1.19-r1.ebuild 1468
 MD5 0b04bf001ab92637893c47ad1eaa36cb devtodo-0.1.19.ebuild 1437
 MD5 30a6fe495de6d0a0aaf435d52f83e254 files/devtodo-0.1.18-gcc4.diff 225
 MD5 d2457f597a941172dfdc9e12d13ce605 files/devtodo-0.1.18-gentoo.diff 4853
