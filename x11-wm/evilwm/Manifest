@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8a11f19b222fc940080b42489ff96b1e ChangeLog 3466
 MD5 f4a3f615c0ebf96b2c71df418cded1e9 evilwm-0.99.14.ebuild 859
 MD5 243275325d21d425faf787cbf1380c31 evilwm-0.99.17.ebuild 949
@@ -8,3 +11,10 @@ MD5 1e8b24dfa1f73166710560f5c0b56751 files/digest-evilwm-0.99.17 70
 MD5 9e2d8ad64be70e4805d96ce330be3bbf files/digest-evilwm-0.99.18 65
 MD5 f1c3baa65c3f9d38f66da5acd242f087 files/digest-evilwm-0.99.4 66
 MD5 ab5c7d15679acb15af8d4f8ba3ae2084 metadata.xml 360
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDrQEVBtvusYtCZMsRAriTAJ4sEIybv89zCI0/J6pfnQAh7OrEkwCcD+cG
+nE2Cv0D2uSoplvEEmQxr1qI=
+=aPpJ
+-----END PGP SIGNATURE-----
