@@ -1,4 +1,4 @@
-MD5 ab034397d8a5a5a254d2aecde0418105 ChangeLog 5099
+MD5 33f245d9391470d3b1248782a0325eb5 ChangeLog 5349
 MD5 5a2e7c990f27ecf4a864bc72a8324695 files/0.40-radial.patch 487
 MD5 43383d33f039e916a8092b3703f3ede2 files/digest-inkscape-0.37 66
 MD5 2351ba855aa9cbb514d6b9d61c29158b files/digest-inkscape-0.38 66
@@ -26,6 +26,6 @@ MD5 4c583041c079432faa856dc42cf0c117 inkscape-0.41-r1.ebuild 2294
 MD5 240974d91790d179edb2b847e002b2d6 inkscape-0.41.ebuild 2120
 MD5 dc737b2039d3e51cf505eea83e106b33 inkscape-0.42.2.ebuild 1819
 MD5 b7eec73faa910b3210eabe052f56dcb1 inkscape-0.42.ebuild 1823
-MD5 87393d37bc329bfccc06216151b44750 inkscape-0.43-r1.ebuild 1941
-MD5 3306862793e481ead00ca27b1bd5cf93 inkscape-0.43.ebuild 1885
+MD5 ac63a4d153c55c0f7407d7d69c5268ca inkscape-0.43-r1.ebuild 1944
+MD5 ba1c6b1e02a39cc459a9c077fb2ab0ad inkscape-0.43.ebuild 1890
 MD5 45828204906035f66f3428b9f2f53eca metadata.xml 223
