@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 33cd5ed466df8397bb9f5aa144551eae ChangeLog 12310
 MD5 ee50839a364965911fa700d599b16d7a files/digest-leafnode-1.11.3 72
 MD5 7ee01acd208feace189374ca68479911 files/digest-leafnode-1.11.4 68
@@ -11,3 +14,10 @@ MD5 b63cdf975c6b0e4033e3ceac16357126 leafnode-1.11.3.ebuild 1530
 MD5 c0687575ae93955b5ade7643ae1c94ac leafnode-1.11.4.ebuild 1492
 MD5 505e5dfc2434ea8cf5d6f36b2e5c9fc1 leafnode-2.0.0_alpha20050914.ebuild 1667
 MD5 d4764f5c17f5e0b416f7ddf271c77d71 metadata.xml 161
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDrrlBAiZjviIA2XgRAhpvAJwKj8epVYW2tOO3KI5RcKh5CEh3WgCg0AMk
+ZOdPfS6lgoXcWOjndsDVxfY=
+=Pnlo
+-----END PGP SIGNATURE-----
