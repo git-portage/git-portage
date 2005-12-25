@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 55e410c824d541e70e88454b879b5899 ChangeLog 5156
 MD5 00dc5439d1237d8da5351107131d6e28 files/digest-netkit-rsh-0.17-r5 71
 MD5 5b6497e87f4d7de5851f57d8ba73d75b files/digest-netkit-rsh-0.17-r6 126
@@ -39,3 +42,10 @@ MD5 9b184bf125dc1c12dea5364f6aeb2f69 files/va_start.diff 569
 MD5 0d35953e8d20a584860aec805fb3176f netkit-rsh-0.17-r5.ebuild 1956
 MD5 524b466dcb2793a0a08e77bb9956db67 netkit-rsh-0.17-r6.ebuild 1707
 MD5 3f4d0a183ed42cdd7aec6149828dfbaf netkit-rsh-0.17-r7.ebuild 1748
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDrrhLAiZjviIA2XgRAg9vAJ9FBK3sjcdSclt83QUboyAzPcAlSACeMFtX
+oMp8Em77apsSniWH9mMGooA=
+=mulZ
+-----END PGP SIGNATURE-----
