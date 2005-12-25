@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b4547da4f293bbb8ed2d822354090c41 ChangeLog 21567
 MD5 684399cf97b724099222a88434701c6a courier-0.48.1-r1.ebuild 8956
 MD5 8de8434ea05e6a76656ba7f1d08fecb5 courier-0.48.1.ebuild 8510
@@ -26,3 +29,10 @@ MD5 098e16e61446aceb242735b1ca70509a files/norewrite.patch 489
 MD5 52f032e570c6f5f9f69b4e4bdfa562a1 files/password.dist 247
 MD5 e3a4ab031bd750b7ce2c7b85fee83d8e files/set-mime 741
 MD5 b287829e2f9edbcf1ff7bb349055e77e metadata.xml 392
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDrs18AiZjviIA2XgRAru3AJ9drHwm7eQu33Nsa78FgJ+2EU55LwCfbonQ
+rh8ugGLkGMGzsQfvs8dDfQc=
+=xCgF
+-----END PGP SIGNATURE-----
