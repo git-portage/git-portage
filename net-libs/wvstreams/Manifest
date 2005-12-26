@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d37c0e0bfda29f574f6b81e5cfbeb545 ChangeLog 11830
 MD5 722051cdd8d4e8747f83c0d512f3ec2a files/digest-wvstreams-4.0.2-r1 68
 MD5 722051cdd8d4e8747f83c0d512f3ec2a files/digest-wvstreams-4.0.2-r2 68
@@ -20,3 +23,10 @@ MD5 227de7f678ad662524292836709de75f metadata.xml 313
 MD5 e594922148c5a6f7087f083cf392e55c wvstreams-4.0.2-r1.ebuild 2558
 MD5 1176f09d8109b258ee1bbbe54919df5c wvstreams-4.0.2-r2.ebuild 2597
 MD5 0f394a505a2cd861ac48238d43803e02 wvstreams-4.2.1.ebuild 2521
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDsCjRugEuf3OQ0akRArgHAJ9KqGZvwDLq3gKzWbQklbbU7WEfXACfXwU8
+ORpAeJ0dyJc2k6PYTlreCNA=
+=njYK
+-----END PGP SIGNATURE-----
