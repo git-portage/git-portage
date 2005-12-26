@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 cc52478543a36191da954290db071682 ChangeLog 12538
 MD5 ac8a4cf594e065c2ddc00dc70c8d2170 files/digest-totem-1.0.4 65
 MD5 e7c829d2432b645ddb68128a4bead344 files/digest-totem-1.2.0-r1 65
@@ -10,3 +13,10 @@ MD5 74b9bd3cc5015b286abc33eb51408252 metadata.xml 521
 MD5 6645b9eed7d922972cb815cadddf7d89 totem-1.0.4.ebuild 2709
 MD5 576377003e0d8cbbf36c9194914a1099 totem-1.2.0-r1.ebuild 3175
 MD5 f85917b792a3da2bc466757ff3ba0de3 totem-1.2.0-r2.ebuild 3082
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDsBahugEuf3OQ0akRApJdAJ9eZo/L+Td3C6BWj6cqC8PkzElXTgCeLgid
+6/xBvkuZgiXv80Me9kIfEGA=
+=/Sp2
+-----END PGP SIGNATURE-----
