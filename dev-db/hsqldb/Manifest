@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 12bd9ba9570f550754d836702c3a07fb ChangeLog 2170
 MD5 bf129311ef11ab7952cef6512717408d files/digest-hsqldb-1.7.3.1-r1 64
 MD5 bf129311ef11ab7952cef6512717408d files/digest-hsqldb-1.7.3.1-r2 64
@@ -9,3 +12,10 @@ MD5 094dd08ec8e3d3e273b2fab5b32008a7 files/sqltool.rc-r1 619
 MD5 fdaba688267d398e70b0468d0b9fe3bb hsqldb-1.7.3.1-r1.ebuild 2484
 MD5 c082ccea6fa17d84f1c45b00ea7a9c44 hsqldb-1.7.3.1-r2.ebuild 3807
 MD5 123cf9440c1d4ac78f2caba1624765f9 metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDsMhbndWRXhKOboURAqArAJ9RPc54Gbss9IivkbgbFfaK7y8RcQCg3WwP
+Sjya2lU/44Glik/2CRGRBr4=
+=7LjM
+-----END PGP SIGNATURE-----
