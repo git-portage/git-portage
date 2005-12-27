@@ -4,4 +4,4 @@ MD5 5678edf4358eb382b146af8408ced5c2 files/digest-xdm-1.0.1 62
 MD5 4a17967449d093f6430fbee47a24afba files/xdm.pamd 169
 MD5 584252c9909d51023ea18799151cf12e files/xdm.start 3415
 MD5 a37bab73e2f24b213932c30997d3d360 metadata.xml 156
-MD5 2ae74c257073f3e09216e84267ccab2d xdm-1.0.1.ebuild 1187
+MD5 f249d5cc7966593ce9fc6fdce9856c28 xdm-1.0.1.ebuild 1194
