@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 807417a853b19d8e3848b4d7ffd04b61 ChangeLog 8125
 MD5 3ffd372397aa4b63f5a08f711df8e02c files/4.1.4/gmp-impl.h.MPF_SIGNIFICANT_DIGITS.diff 1182
 MD5 62a1429c81d8b2631590acf519385b7c files/4.1.4/gmp-impl.h.MPN_SIZEINBASE.diff 1315
@@ -15,3 +18,10 @@ MD5 b09c48dc9a2b0af55284315d91caae96 gmp-4.1.4-r1.ebuild 1941
 MD5 2f45d80e37eeb2d30ce5058aeaf8603a gmp-4.1.4-r2.ebuild 1918
 MD5 b4dd3c83d4a7beb03fe81545e8b96ab4 gmp-4.1.4.ebuild 1904
 MD5 dffd46174e78b327c834fc3e4b1cf848 metadata.xml 160
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDs5/0mdTrptrqvGERAsTqAJ0TlEoFfvxDd5TtYTkU4P1Qytd+tQCeO0qp
+HSrebBAQG2V1NHBKktbTSig=
+=jsTn
+-----END PGP SIGNATURE-----
