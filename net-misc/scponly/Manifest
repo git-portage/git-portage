@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 42d1540993f2d96fd45b46468701fbc5 ChangeLog 2880
 MD5 a1f6bee0be7b749e155d9ec945ce31a4 files/digest-scponly-4.0 59
 MD5 43e0a1f99fd0eb893cf3608c3f1a236d files/digest-scponly-4.1 59
@@ -11,3 +14,10 @@ MD5 48f3604e22751295c07e471844ade2bb scponly-4.0.ebuild 3067
 MD5 dadf22d4d802d59445e6a28a7f7fc934 scponly-4.1.ebuild 1124
 MD5 0e85e30c913d79adb0036280672542dd scponly-4.2.ebuild 1147
 MD5 85075c0d77f4b351082bcd6161b0e725 scponly-4.3.ebuild 1146
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD4DBQFDsmGjugEuf3OQ0akRAtzWAJ0aN9sYPyHGfhuOlux0MOimZVNWkQCXUdyw
+Jw6QyHbG9vPRUgkSb3Cy1Q==
+=goQJ
+-----END PGP SIGNATURE-----
