@@ -7,6 +7,6 @@ MD5 0e36e0835fbd7d8017fd7fa55b077647 files/digest-less-393 115
 MD5 e4b7ae3d1ca32841a3b551aaba4d7944 files/lesspipe.sh 5409
 MD5 adb0b1124c355f33197454d2be87bfd3 less-382-r2.ebuild 791
 MD5 147e4c10285042fad83d0c3592498e8c less-385.ebuild 800
-MD5 b3aa2921d97853e908ccba70fadd3167 less-385_p4-r2.ebuild 1516
+MD5 45269de27294fe1cfa4b0cbeee2836bc less-385_p4-r2.ebuild 1515
 MD5 82c1bcbfea4daad1215e436bb842aed9 less-393.ebuild 1302
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
