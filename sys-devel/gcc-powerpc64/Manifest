@@ -1,4 +1,4 @@
-MD5 8872aae0e1b52b0956753913c6aec870 ChangeLog 600
+MD5 5d6b51e0a5725cb0b3b15b5c58309f41 ChangeLog 597
 MD5 4b8b4306f268900392bbd0319bdfdf65 files/digest-gcc-powerpc64-3.4.4 64
-MD5 f870e42282736a570917408a238c290b gcc-powerpc64-3.4.4.ebuild 3479
+MD5 13cff8ced945869d44927b52daf57596 gcc-powerpc64-3.4.4.ebuild 3476
 MD5 b7f9c085d68ee4d2c8aaab58ef574457 metadata.xml 365
