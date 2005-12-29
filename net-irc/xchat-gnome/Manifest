@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 872b82d7673dd4dcd353f1a6961c6cda ChangeLog 1908
 MD5 6b74f53c26e12ea2bc55b54b33ada601 files/digest-xchat-gnome-0.4 69
 MD5 ba4f8ea248bc0fbcb776188ff3378f5f files/digest-xchat-gnome-0.5 69
@@ -13,3 +16,10 @@ MD5 56cd43f4d2579e3c7e7b26beb3c9b5fe xchat-gnome-0.5.ebuild 1667
 MD5 09539bbeae697f7de7b0352190ca4d02 xchat-gnome-0.6.ebuild 1739
 MD5 a7c39027ae8b98c23ac1f28316c86625 xchat-gnome-0.7-r1.ebuild 1902
 MD5 9df7885cb0444e197d5c5c1ea8ff4a79 xchat-gnome-0.8.ebuild 1829
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDs9yXI1lqEGTUzyQRAhblAKC0jqDxgDQ9/IftWliB2B/MISQWEgCcCW9s
+Jl3vxlzu8Odg9Qv91kQXWPw=
+=2GNo
+-----END PGP SIGNATURE-----
