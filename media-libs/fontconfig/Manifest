@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8ccb1a52a25319624fc8ce190ed4d96e ChangeLog 9549
 MD5 d2b7ff87a89e51efb73ac1aaaa9a4957 files/digest-fontconfig-2.2.2 68
 MD5 343e067196a814af79985df16682b8ab files/digest-fontconfig-2.2.3 68
@@ -10,3 +13,10 @@ MD5 6f36d026d3722add6b265c408667c502 fontconfig-2.2.2.ebuild 2697
 MD5 51ec8bc79ae06d9c87c59006be0b4136 fontconfig-2.2.3.ebuild 2747
 MD5 d964d025ea30311b8831536e7533707d fontconfig-2.3.2.ebuild 2133
 MD5 ae7171ca850597a2455b8b10c72a8de1 metadata.xml 419
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDszlY2+ySkm8kpY0RAp69AJ94Tu8/ZadTu0rjd6rMxmvt/yavNQCeL/ZF
+CArVmjb4vXgINGMXzdtawiw=
+=O5S9
+-----END PGP SIGNATURE-----
