@@ -1,2 +1,4 @@
+MD5 48dfe4964e719470114eaa12c8a2fdd9 ChangeLog 455
 MD5 f6ad40c3e91258a909647a1e4bcf1ea2 files/digest-tango-icon-theme-0.6.3 74
-MD5 f9f0272855e356a87cef17c040136189 tango-icon-theme-0.6.3.ebuild 790
+MD5 a3014aa05822105a2b16fe0bd52692af metadata.xml 289
+MD5 a668c7364d1c0418940069ba65f56a26 tango-icon-theme-0.6.3.ebuild 886
