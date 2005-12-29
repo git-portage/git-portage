@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7b711ca281da1cc501e2761fc55c9084 ChangeLog 4318
 MD5 42c777ae654196e02a69556045798633 audiofile-0.2.3-r1.ebuild 781
 MD5 faf526e53972f56a50f0e5180591b393 audiofile-0.2.4.ebuild 835
@@ -12,3 +15,10 @@ MD5 614e3fa2ecce47cc2b638aee1d145dba files/digest-audiofile-0.2.6 67
 MD5 614e3fa2ecce47cc2b638aee1d145dba files/digest-audiofile-0.2.6-r1 67
 MD5 6be24f4f613faf959f406fcbe756324e files/sfconvert-eradicator.patch 4345
 MD5 b263ff7675308d90b75a170acae3f5ff metadata.xml 177
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDs44A2+ySkm8kpY0RAv4NAJ9qwziditIb5OuZVBGvlcJsHGSLgQCgkUm9
+9OeY+XthaX0AwuSsEVG6E5Q=
+=xJeO
+-----END PGP SIGNATURE-----
