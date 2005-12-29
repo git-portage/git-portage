@@ -1,20 +1,14 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 41664043c4624dedcfeeb07950f08d13 metadata.xml 312
-MD5 fd8e8f95c74945f84d9c5318f6c3c24f openpbs-2.3.16-r1.ebuild 2238
 MD5 2ee291121aa126f00f15b0f2794590ea ChangeLog 2804
-MD5 2d8a496fec89f313c73085a241bb9cdc openpbs-2.3.16-r2.ebuild 2311
-MD5 b0aa1dcd6dafcc6dc4f45dbceb41d6a1 files/pbs.rc 2255
 MD5 49fb3f2f647a254c00afde279a3bd724 files/digest-openpbs-2.3.16-r1 67
-MD5 ae564f0950612dba4e6fea5b2b8e8065 files/openpbs-2.3.16-r1-errno-fixup.patch 1212
-MD5 26475a5f76dd888dfbc3b5fa49f7238a files/makedepend-sh-gcc3.patch 549
-MD5 9e55c4fa7219df24902d986e5b485bb0 files/openpbs-2.3.16-r2-errno-fixup.patch 1212
 MD5 49fb3f2f647a254c00afde279a3bd724 files/digest-openpbs-2.3.16-r2 67
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDHEgnKtJO8LeSoosRAn08AJ4orgVws+AMSNsXvNJxRNbthgCFhQCfU0Mn
-gcazqycf1e36YY4r7PVdniQ=
-=nCHS
------END PGP SIGNATURE-----
+MD5 49fb3f2f647a254c00afde279a3bd724 files/digest-openpbs-2.3.16-r3 67
+MD5 26475a5f76dd888dfbc3b5fa49f7238a files/makedepend-sh-gcc3.patch 549
+MD5 9e55c4fa7219df24902d986e5b485bb0 files/openpbs-2.3.16-errno-fixup.patch 1212
+MD5 ae564f0950612dba4e6fea5b2b8e8065 files/openpbs-2.3.16-r1-errno-fixup.patch 1212
+MD5 9e55c4fa7219df24902d986e5b485bb0 files/openpbs-2.3.16-r2-errno-fixup.patch 1212
+MD5 b91fe9abd830fd429cc275b6eebb872d files/openpbs-gcc32.patch 284
+MD5 b0aa1dcd6dafcc6dc4f45dbceb41d6a1 files/pbs.rc 2255
+MD5 41664043c4624dedcfeeb07950f08d13 metadata.xml 312
+MD5 453ba543830983aa459d0e7a12f15e08 openpbs-2.3.16-r1.ebuild 2246
+MD5 f75753fff70c4b2de622582317f76cdf openpbs-2.3.16-r2.ebuild 2319
+MD5 5c1518e8213b24171929e868d46c212f openpbs-2.3.16-r3.ebuild 2360
