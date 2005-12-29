@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 921e3fea2af476c039e176db6f9e35a0 ChangeLog 9784
 MD5 9bf9811b5db655640e7f280bb9bab24c files/digest-libgcrypt-1.1.12 68
 MD5 9f546283fe69d56096f3707d52a4668a files/digest-libgcrypt-1.1.94 68
@@ -17,3 +20,10 @@ MD5 7dc93eccc7b1d3187503d3316fc5c449 libgcrypt-1.2.1.ebuild 1277
 MD5 1e837b17e5f1562097ce2d2d5b0e5744 libgcrypt-1.2.2-r1.ebuild 1146
 MD5 27ec73eb30a43599906954d2fbf18b22 libgcrypt-1.2.2.ebuild 1121
 MD5 918a1b851dd53568897b4fc7c503912e metadata.xml 276
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDtASpKRy60XGEcJIRArIIAJ94oDlAwd5A9AB4rzyfcI60t+VtewCfYTqE
+aUwU8oi2WlFNk7VVYuW8js4=
+=8C8Y
+-----END PGP SIGNATURE-----
