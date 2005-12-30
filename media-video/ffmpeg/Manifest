@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 da648d037bee6244a9b38cb3c5a4cfdd ChangeLog 17300
 MD5 af3a24b95f43ea461192736d7e9968c2 ffmpeg-0.4.9_p20050226-r3.ebuild 4384
 MD5 ff615b7d4ca2c8355c1d0a358271e2d8 ffmpeg-0.4.9_p20050226-r5.ebuild 4543
@@ -21,3 +24,10 @@ MD5 f1b8d58e9341846b0f9c6df3b2d4595c files/ffmpeg-soname-symlink.patch 5174
 MD5 02a1298f3a982efa3dc25f1746e3dccc files/ffmpeg-unknown-options.patch 414
 MD5 f0c54c934c78216a2bd0b157028a6f84 files/gentoo-ffmpeg001.patch 752
 MD5 7300a7b361fa9f48e37722c6952bd432 metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDtVIUKRy60XGEcJIRArwyAJ4gK97Noyysnp/+ycE9tTcp1rW0rwCdGevr
+NnPbbqSWSLvYZYe15Yj0pGE=
+=qLmA
+-----END PGP SIGNATURE-----
