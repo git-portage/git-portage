@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ed9a1b7c661d8adccbbabbb76d4814e2 ChangeLog 2782
 MD5 0934df016f72c1014a1af3c23a98610f files/10_mod_lisp.conf 258
 MD5 1f3a0bdf19c02dda19ca25e457b2e9e0 files/README.Gentoo 130
@@ -7,3 +10,10 @@ MD5 a1514685fe8ed7bb595b97ede56a938e files/digest-mod_lisp-2.43 59
 MD5 ee3df1ea4e43c452304e380ccd539c06 metadata.xml 251
 MD5 cbf9eb30fc123e4aab21d5eb3093bffa mod_lisp-2.42.ebuild 662
 MD5 45c08d977ffc309708853bcd26f9d5ea mod_lisp-2.43.ebuild 668
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDtXBOyiNZaEAZA+ARAglqAJ96JLRt6/YADguBA1nyS8CALoVKiwCcDC2v
+VBzv/jFCuGViJ0nOdLVvbv8=
+=6C2Q
+-----END PGP SIGNATURE-----
