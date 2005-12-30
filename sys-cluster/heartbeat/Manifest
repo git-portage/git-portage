@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 50744ec1a80e566d91d9364bf44e2300 ChangeLog 6542
 MD5 6cf2ecfcee6a47d187e99cc1fa3081f0 files/digest-heartbeat-1.2.3 68
 MD5 6cf2ecfcee6a47d187e99cc1fa3081f0 files/digest-heartbeat-1.2.3-r1 68
@@ -11,3 +14,10 @@ MD5 76dacaf8146a8305bf041ae9f67748f1 heartbeat-1.2.3-r2.ebuild 2151
 MD5 b6296f97d4407d37eeda9a668cb4d937 heartbeat-1.2.3.ebuild 1876
 MD5 830a5a2453b90ea68e25210e43bcad16 heartbeat-2.0.2.ebuild 2665
 MD5 469a4f6cad0c54b4faed31a2852af816 metadata.xml 339
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDtSKntG5z4I8BtQoRAnd7AJ4gFyY4zbmXcLkNdjUSEGVMTtl1CwCfR2X3
+Rab04rVR3RNFBvvvgnSOWMs=
+=4V+c
+-----END PGP SIGNATURE-----
