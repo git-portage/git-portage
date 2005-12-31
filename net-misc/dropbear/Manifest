@@ -7,7 +7,7 @@ MD5 c3634543250cd9f910161b351bb15ccc files/digest-dropbear-0.43 67
 MD5 c9381e8354263ae69eda6efabca753ad files/digest-dropbear-0.45 67
 MD5 8ae09936c352dfd5a8ddb95182b1afc6 files/digest-dropbear-0.46 67
 MD5 9d60e23c082173af1e4294b2c914c7d5 files/digest-dropbear-0.47 67
-MD5 19eeb080e4923141f1a714ba01ff9135 files/dropbear-0.45-urandom.patch 1887
+MD5 df7f6fb1df6f7a44da55ad2f09ba7d26 files/dropbear-0.45-urandom.patch 1889
 MD5 c7d976a23e72e6dce3c022e588def172 files/dropbear-0.46-dbscp.patch 500
 MD5 64abc6b82756a97391c12d730c8da084 files/dropbear.conf.d 352
 MD5 34fea1c967596ebcd6d10d38444f2b92 files/dropbear.init.d 913
