@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a51d13575464cd3dac7aec3e077e3a42 ChangeLog 3198
 MD5 2cc5330c07947c6e3ac113d1e1e8bc6b files/7.1.0-default-config.patch 1230
 MD5 d7fb2ea1489aabedba9a5ec2f160eb23 files/conf.d_ircd 410
@@ -13,3 +16,10 @@ MD5 94af7d9c90fe5412cbbaf172a628a565 ircd-hybrid-7.0.3.ebuild 10100
 MD5 ef8d5a4a643df4fd25944866e827ec43 ircd-hybrid-7.1.0.ebuild 4873
 MD5 4239b9b0611d04c54373794cb77d8509 ircd-hybrid-7.1.1.ebuild 3996
 MD5 44c39c6ad372a8e5a5e7ee3311f703a7 metadata.xml 160
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDto5pAiZjviIA2XgRAkrjAKDnLqtBSGdR3Ke0UCyLbOEvahHHawCghXZi
+zPHhX0Y7qK1kO1Lhzyvqfys=
+=zV6A
+-----END PGP SIGNATURE-----
