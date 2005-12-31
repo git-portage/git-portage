@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 31b6a74e2ccb34ba7c37d2a1d11aafc2 ChangeLog 7810
 MD5 c107ecfb4a281a8f76d39389b8d5a873 amanda-2.4.5.ebuild 12181
 MD5 f28eb5f982b698408385a19da8d5748e amanda-2.4.5_p1.ebuild 12522
@@ -17,3 +20,10 @@ MD5 fe28f64731a2dbf85f76b6f38942e032 files/example_disklist 55
 MD5 95a109a0edbf12da91dbabf7977a97f7 files/example_global.conf 1377
 MD5 1c3320d56e74e925e4b3e4a8936488cd files/patch-tar-1.14.90 984
 MD5 b0d485ea1a51fb83c70daedef2599272 metadata.xml 279
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDtpJCAiZjviIA2XgRAuqSAJ97x3QVOj9J2eB0zsDfNmedi4mueQCgjRe1
+bffoHA/xMutbwnHY6U2K4nI=
+=Hjbi
+-----END PGP SIGNATURE-----

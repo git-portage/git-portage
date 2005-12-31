@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2b769c517f32f6f63ec898da1649b026 ChangeLog 4899
 MD5 c367e5657509b68e227ffa43f954a211 files/digest-nullmailer-1.00 67
 MD5 4fbcdae998661648262584be8be8b7df files/digest-nullmailer-1.00_rc7 70
@@ -17,3 +20,10 @@ MD5 52ec79f027ce456d57c887779c9012f3 nullmailer-1.00_rc7-r2.ebuild 3453
 MD5 0b62f146f078fb8ca6c3882cf7beacd8 nullmailer-1.00_rc7-r4.ebuild 3750
 MD5 8006d00f06f72fcfeb67b8a7c9fa8616 nullmailer-1.00_rc7-r5.ebuild 4354
 MD5 924e99d087a6b09c6dca72afeccf5eca nullmailer-1.00_rc7.ebuild 3151
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDtpMnAiZjviIA2XgRAue5AJ0eR3SivGGkUyRtdgpAajdKtzq+AACg70EL
+UGgcCFz/Yh+N1OH7xqfKs20=
+=hkpF
+-----END PGP SIGNATURE-----
