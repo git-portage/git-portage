@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.5.ebuild,v 1.5 2005/08/14 10:09:13 hansmi Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.5.ebuild,v 1.6 2005/12/31 14:14:14 flameeyes Exp $
 
 inherit eutils
 
@@ -57,7 +57,7 @@ amanda_variable_setup() {
 	[ -z "${AMANDA_GROUP_NAME}" ] && AMANDA_GROUP_NAME=amanda
 	[ -z "${AMANDA_USER_NAME}" ] && AMANDA_USER_NAME=amanda
 	[ -z "${AMANDA_USER_UID}" ] && AMANDA_USER_UID=87
-	[ -z "${AMANDA_USER_SH}" ] && AMANDA_USER_SH=/bin/false
+	[ -z "${AMANDA_USER_SH}" ] && AMANDA_USER_SH=-1
 	[ -z "${AMANDA_USER_HOMEDIR}" ] && AMANDA_USER_HOMEDIR=/var/spool/amanda
 	[ -z "${AMANDA_USER_GROUPS}" ] && AMANDA_USER_GROUPS="${AMANDA_GROUP_NAME}"
 	# This installs Amanda, with the server. However, it could be a client,
