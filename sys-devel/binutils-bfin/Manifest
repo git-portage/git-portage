@@ -1,3 +1,5 @@
-MD5 41e3744812802d4c1b159972171a5377 binutils-bfin-2005.3.1.ebuild 558
+MD5 f9efe6af288226f0dd19df99bec51514 ChangeLog 353
+MD5 4023ba0984ac1eb5d2c2845a2d53395e binutils-bfin-2005.3.1.ebuild 812
+MD5 1e006f68961f68debad9df04f0b98955 files/binutils-bfin-2005.3.1-build.patch 881
 MD5 2e67f8ce5d0ab15db41f211037a9bddd files/digest-binutils-bfin-2005.3.1 75
 MD5 c6712d4b439bc632a23799aa1793fc84 metadata.xml 184
