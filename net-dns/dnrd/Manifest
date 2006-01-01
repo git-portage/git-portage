@@ -1,5 +1,5 @@
-MD5 2c35fa8bab677571aa46ba33bd95114f ChangeLog 1721
-MD5 2994f86ae67905f2a3adf7289c32a2df dnrd-2.20.1.ebuild 841
+MD5 8b3e27abe25786c495c388c9fe228feb ChangeLog 1908
+MD5 ac57705cb67f6e59c5fbf61668433e2e dnrd-2.20.1.ebuild 843
 MD5 2994f86ae67905f2a3adf7289c32a2df dnrd-2.20.ebuild 841
 MD5 e7b62b952726db11c21b2a225eb5310e files/digest-dnrd-2.20 61
 MD5 4cf7c690b5e05743b81c4530159abdbb files/digest-dnrd-2.20.1 63
