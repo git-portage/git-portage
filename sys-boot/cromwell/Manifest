@@ -1,5 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4a46481da2760ed061581060a4343cbc ChangeLog 1341
 MD5 0b3bb265ee0082988590062874e40fe0 cromwell-2.40-r2.ebuild 746
 MD5 d15ffeaa755b42301208b04385c9595d files/cromwell-2.40-cvs-fixes.patch 18123
 MD5 115f47bffab07dc390eebe15170d597c files/digest-cromwell-2.40-r2 66
 MD5 6fa4899ddcfd1045cf3db88eeda6ceaa metadata.xml 305
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDuWBfD78nYLRGtEERAovjAKClNmRle9V0PB5a90H+5hF+Kbeo3wCeIX3i
+4TTMP6WRj335cNyKlWiQjNI=
+=hgug
+-----END PGP SIGNATURE-----
