@@ -1,4 +1,4 @@
-MD5 4850a13089239174d7221c92e2f510ca ChangeLog 2020
+MD5 9307894228aa071f33c2a32c6bcb7981 ChangeLog 2161
 MD5 bc8dbf4b64aee6fb4265bc1834e8fc6f files/1.0-banlist-fix.patch 428
 MD5 1d2c979312a0f446a2c84f2b3a98f76b files/1.0-fPIC.patch 296
 MD5 4cf5e0d2734feda88b77fecd650ef181 files/1.0-tempfile-vuln.patch 509
@@ -7,4 +7,4 @@ MD5 99ebacfe051669a5743797d5291a2b98 files/digest-silc-server-1.0.2 70
 MD5 e6e284a15d071cfdf8df8a2b7bff775a files/silcd.rc6 519
 MD5 44c39c6ad372a8e5a5e7ee3311f703a7 metadata.xml 160
 MD5 8cc57cf62f2c65e8bbfb9b3edef407f6 silc-server-1.0-r1.ebuild 1806
-MD5 08f5dfe91a61ad53e68c10e6d636352b silc-server-1.0.2.ebuild 1710
+MD5 2e550a59c1edbdc7f7b81b506295463c silc-server-1.0.2.ebuild 1709
