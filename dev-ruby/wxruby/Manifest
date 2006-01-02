@@ -1,4 +1,4 @@
-MD5 2322a7a312e05cad110c4466b1525191 ChangeLog 1220
+MD5 4a5973ba57aaceb399bf7dda82b6ce98 ChangeLog 1350
 MD5 1f0111880794012e64b69fc682484e9b files/digest-wxruby-0.4.0 65
 MD5 9980a9d8fd764998769e8247c2301971 files/digest-wxruby-0.5 63
 MD5 363c4d9ac68231d41eb47831435f6a13 files/digest-wxruby-0.6 63
@@ -6,5 +6,5 @@ MD5 363c4d9ac68231d41eb47831435f6a13 files/digest-wxruby-0.6-r1 63
 MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
 MD5 9c381cc8a759d3bf1103b917c852e230 wxruby-0.4.0.ebuild 843
 MD5 ae49f7d4dcd9c5bac7679f71cdc368a6 wxruby-0.5.ebuild 842
-MD5 493c7284dd892bd6c4c7e6f0e0bd3fb4 wxruby-0.6-r1.ebuild 923
+MD5 6d6d68b937399a23776e46c18d33b4f9 wxruby-0.6-r1.ebuild 925
 MD5 3d2bce4be06da3d1f524969444ed50d9 wxruby-0.6.ebuild 842
