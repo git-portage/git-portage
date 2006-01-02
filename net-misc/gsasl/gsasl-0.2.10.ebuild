@@ -1,16 +1,16 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libgsasl/Attic/libgsasl-0.2.4.ebuild,v 1.11 2006/01/02 15:57:55 slarti Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/gsasl/Attic/gsasl-0.2.10.ebuild,v 1.1 2006/01/02 15:57:07 slarti Exp $
 
-DESCRIPTION="The GNU SASL library"
+DESCRIPTION="The GNU SASL client, server, and library"
 HOMEPAGE="http://www.gnu.org/software/gsasl/"
 SRC_URI="http://josefsson.org/gsasl/releases/${P}.tar.gz"
-LICENSE="LGPL-2.1"
+LICENSE="GPL-2"
 SLOT="0"
 # TODO: check http://www.gnu.org/software/gsasl/#dependencies for more
 # 	optional external libraries.
-KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86"
-IUSE="kerberos nls static"
+KEYWORDS="~amd64 ~ia64 ~ppc ~sparc ~x86"
+IUSE="kerberos nls static doc idn"
 PROVIDE="virtual/gsasl"
 DEPEND="virtual/libc
 	nls? ( sys-devel/gettext )
@@ -21,7 +21,11 @@ RDEPEND="${DEPEND}
 
 src_compile() {
 	econf \
+		--enable-client \
+		--enable-server \
 		$(use_enable kerberos gssapi) \
+		$(use_enable kerberos kerberosv5) \
+		$(use_with idn stringprep) \
 		$(use_enable nls) \
 		$(use_enable static) \
 	|| die "econf failed"
@@ -29,6 +33,14 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR=${D} install || die "installation failed"
+	make DESTDIR=${D} install || die "einstall failed"
 	dodoc ABOUT-NLS AUTHORS ChangeLog NEWS README README-alpha THANKS
+	doman doc/gsasl.1
+
+	if use doc; then
+		dodoc doc/*.{eps,ps,pdf}
+		dohtml doc/*.html
+		docinto examples
+		dodoc examples/*.c
+	fi
 }
