@@ -1,5 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c082971acbbf7a375492bdd7f61a5059 ChangeLog 5672
 MD5 ed1b98717ae185328af09c8127668fdf files/digest-setools-2.2 65
 MD5 e7f3c1619fcbcf575ad7dee10f250108 files/setools-2.2-nogui.diff 3821
 MD5 f5d096116ff7743b040148ced68e4f7b metadata.xml 369
 MD5 a268d0c9b61d5d4bdd08e243cbac52c9 setools-2.2.ebuild 1935
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDuLzcJ+ChZlpDtAoRAtTsAJsHxSrWnE3piL06XzlvSbgUP78OdACgpbPf
+5hs/qLREj4pmYh43vILKKHI=
+=Q8rx
+-----END PGP SIGNATURE-----
