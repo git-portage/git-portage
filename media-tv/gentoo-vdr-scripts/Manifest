@@ -1,4 +1,4 @@
-MD5 aa8a98f86b49e83e00ffc573b28dbc07 ChangeLog 5361
+MD5 69961a9c801db34d3e4842645810c737 ChangeLog 5361
 MD5 d9485415ec9d1edf7e68020efec2c8e7 files/digest-gentoo-vdr-scripts-0.1 70
 MD5 c1da33589e98866a75625412f61f5e32 files/digest-gentoo-vdr-scripts-0.2_alpha1 77
 MD5 87543e99ee549abb36309f30152b50e1 files/digest-gentoo-vdr-scripts-0.2_alpha2 77
@@ -17,6 +17,6 @@ MD5 8daf118a9439f993f781876b1ba712e7 gentoo-vdr-scripts-0.2_alpha3.ebuild 1428
 MD5 c44190a89edc49ee4e68eacb70f1097d gentoo-vdr-scripts-0.2_alpha4-r1.ebuild 2031
 MD5 7bb47cd8dc8366ccdf8c9a922b558e58 gentoo-vdr-scripts-0.2_alpha4.ebuild 1541
 MD5 b5afbfe80f8835814c7cddf827b25f79 gentoo-vdr-scripts-0.2_alpha5.ebuild 2095
-MD5 3fe6aa61e464b68c23b36ed48b9c00ad gentoo-vdr-scripts-0.2_alpha6-r1.ebuild 2650
-MD5 60b11521ceadf3f32d162b943f84ffd6 gentoo-vdr-scripts-0.2_alpha6.ebuild 2095
+MD5 5aec10e5de60ca4854c2f97d9c115cbf gentoo-vdr-scripts-0.2_alpha6-r1.ebuild 2653
+MD5 ee43d4133d32df1bf3dc528c59c22e8c gentoo-vdr-scripts-0.2_alpha6.ebuild 2095
 MD5 a973dfa1638779880ca99f1c1435cac7 metadata.xml 259
