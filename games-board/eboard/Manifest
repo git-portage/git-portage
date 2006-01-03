@@ -1,5 +1,5 @@
-MD5 7c4dd5de233fdbfc6ea51d256114c286 ChangeLog 2682
-MD5 972a419814fa2f39c3119ad76b1ec00f eboard-0.9.5.ebuild 1875
+MD5 03291ad612f9f4e4ce4ebe56600f734e ChangeLog 2901
+MD5 2fae6c948d078c0fb60e8e8a274efa29 eboard-0.9.5.ebuild 1875
 MD5 f37e8356d4b5cb9585c1bdae8dcd889c files/digest-eboard-0.9.5 201
 MD5 a1dc527f388a26579a14ec853e326124 files/eboard-0.9.5-gcc4.patch 1634
 MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
