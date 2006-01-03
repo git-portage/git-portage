@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8f6025e356d1bb31db61123ef3e5236d ChangeLog 11088
 MD5 73577e1e79ca49e1a7083b3e1c53a1c6 files/digest-usermin-1.180 66
 MD5 2e7c19bb66f99c168fc2e86b4bb4862c files/init.d.usermin 825
@@ -7,3 +10,10 @@ MD5 2e7603feaff187884dd9b1e66601f02b files/usermin.pam 382
 MD5 609774f17b0470a793fb7791278e270d files/usermin.pam-include 210
 MD5 3923b6ae9bc25fc124e24e7747c8a802 metadata.xml 226
 MD5 7599c4321fea923be98b95907b887625 usermin-1.180.ebuild 2290
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDulN6OpjtAl+gMRURAtWIAKDYvmskeYRiO86H9LMZKK/LJrFV8wCg4LJ6
+Hh0fsSpK4QywZKw6vRj7Ykg=
+=wfiK
+-----END PGP SIGNATURE-----
