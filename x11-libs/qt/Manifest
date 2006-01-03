@@ -1,4 +1,4 @@
-MD5 926f21669677a4ff508ebe4ac70f9175 ChangeLog 4822
+MD5 c72073684dfdb7bd11f4316609a21930 ChangeLog 4822
 MD5 8ffca1b1b7523339af04fd24b4595ce4 files/0001-dnd_optimization.patch 5623
 MD5 8b3da5dae8babfcbdee3be465579d6c2 files/0002-dnd_active_window_fix.patch 7289
 MD5 0cc401186f490faf55906cd458280db8 files/0037-dnd-timestamp-fix.patch 2138
@@ -21,8 +21,8 @@ MD5 0495f1d3f467a2972feccba453135258 files/qt-4.1.0-configure-no-mysql.diff 1114
 MD5 b50b8f687bb25b6b372b22abc591e20c files/qt-4.1.0-debug-and-release.diff 1727
 MD5 fff1c03b4a3ad38904a30d1b2de88a07 files/qt4-nomkdir.patch 866
 MD5 512150b47a904b0240101e319856aab1 metadata.xml 156
-MD5 501b74683e4448634f813ad916fa5f82 qt-3.3.4-r8.ebuild 10357
-MD5 7df7d46960f3fd95cd1ac497e3b8754f qt-3.3.5.ebuild 10324
+MD5 535413f7903ecea020dd6ae98fa3a8d3 qt-3.3.4-r8.ebuild 10353
+MD5 9cb64e365be8153b3aa5d14291cc58cc qt-3.3.5.ebuild 10320
 MD5 013f53daa2fbe33eec94e47726c9e853 qt-4.0.1.ebuild 5936
-MD5 58981e6f6ffca9ae57ee8676cdc87311 qt-4.1.0.ebuild 6251
+MD5 646d36bb71f8b40f3f91ee8bed5e059a qt-4.1.0.ebuild 6251
 MD5 6212755080bc0fd437c6e83d2db3ae82 qt-4.1.0_rc1.ebuild 6088
