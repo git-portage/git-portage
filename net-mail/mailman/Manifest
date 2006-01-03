@@ -1,4 +1,4 @@
-MD5 7dc2366d9bd6b3ebcc260eedeb66425a ChangeLog 9073
+MD5 847357a8356e1091d4a8655b8e7343a3 ChangeLog 9241
 MD5 165ec3889c73f334f7b524c654977066 files/50_mailman.conf 429
 MD5 ea0c850a55a563d90a520ab52809112f files/README.gentoo 4963
 MD5 136d82be0bd84eff6961446171dbe288 files/digest-mailman-2.1.5-r4 63
@@ -17,7 +17,7 @@ MD5 3089c1f0f8d91abdd612997b085959eb files/mailman.conf 385
 MD5 ce6d06f51e3da34e92048369e9fe14d2 files/mailman.rc 597
 MD5 4b900bf200ef5581266a4b9c66cef87b mailman-2.1.5-r4.ebuild 4511
 MD5 8c528315bd7d3fd689d76c7b88027f8d mailman-2.1.5-r5.ebuild 4018
-MD5 729527a8e34797ecf08edf358cecde26 mailman-2.1.6.ebuild 4349
-MD5 a19eee07497872371f6c59e2f2f49414 mailman-2.1.6_rc4.ebuild 4353
-MD5 729527a8e34797ecf08edf358cecde26 mailman-2.1.7.ebuild 4349
+MD5 f36af8331b8bd29b548ac2dcb5f2e601 mailman-2.1.6.ebuild 4349
+MD5 0eba7b183f41b3ecaa8eaa2e6941cd53 mailman-2.1.6_rc4.ebuild 4353
+MD5 b132438ff61c144bd4399f86b003f1f0 mailman-2.1.7.ebuild 4349
 MD5 5721b86fd871bdfab77231abc6e02f68 metadata.xml 161
