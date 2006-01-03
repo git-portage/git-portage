@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1a5aa390eedf6f2399171dce74118878 ChangeLog 17806
 MD5 e2ceb5d855c5406a09d82442196efad8 files/README.transluceny.gz 5788
 MD5 a580b9f394262307f85eae492bbd68d9 files/centerplacement-2.5.10.diff 2431
@@ -16,3 +19,10 @@ MD5 d4ad99d2edb49ee23de8acb401f8ba0c fvwm-2.5.12.ebuild 8960
 MD5 cfc37d7eb6be1a5a71178973ca1a2e3f fvwm-2.5.13-r1.ebuild 7864
 MD5 64c4054742fdadf488d0c5fc7ebb0912 fvwm-2.5.14-r1.ebuild 7784
 MD5 4833e4d0685ef48988c0c5c4f9c6b377 metadata.xml 527
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDuxl/Z/iYVBmujdURAv8dAKCuVPTXArGDZ8TayNpr71vbTLeahwCdHX23
+lxhFnb3vnDZmdn8vLHKafZA=
+=oHPt
+-----END PGP SIGNATURE-----
