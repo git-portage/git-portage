@@ -4,9 +4,11 @@ MD5 d416765253f23a5b4cfce084ddf4de6e files/digest-getmail-4.3.14 66
 MD5 0d4853cf0395a0aee0fdf5900ad6cdf6 files/digest-getmail-4.4.1 65
 MD5 0b9836f4abb9eaada38ef3906c316960 files/digest-getmail-4.4.2 65
 MD5 987a34191d483a717260383cf1b91736 files/digest-getmail-4.4.3 65
+MD5 0257f6242bf7c181f69e05b7bf6de92f files/digest-getmail-4.4.4 65
 MD5 791dcd5fcb91b0c678d5d48fdd66cfc3 getmail-4.3.11.ebuild 1574
 MD5 202ddf0a9087557a8e9a8d0052bf0f74 getmail-4.3.14.ebuild 1720
 MD5 8c82a2c72b9280937552b9458c762e07 getmail-4.4.1.ebuild 1576
 MD5 42e21fd9b6f42e965a395ed10546c780 getmail-4.4.2.ebuild 1573
-MD5 4e19e19501d9af1cd94ea5459299cd23 getmail-4.4.3.ebuild 1575
+MD5 ced9f2f7d3b6e96421ddbf62dc30a31e getmail-4.4.3.ebuild 1574
+MD5 e0b4ebc3a9926dd84952c936f920715d getmail-4.4.4.ebuild 1477
 MD5 5721b86fd871bdfab77231abc6e02f68 metadata.xml 161
