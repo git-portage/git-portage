@@ -1,5 +1,5 @@
-MD5 cf23bdbb3397c2c0e023e40bfd3ec740 ChangeLog 718
+MD5 d61dcc341cb0b7b1b03b247ec41b398a ChangeLog 931
 MD5 be0bda1e61a418231b438f1d8ac57d2a files/digest-flobopuyo-0.20 64
 MD5 bb8afd6e04bde08fd33e22c466674878 files/flobopuyo-0.20-gcc4.patch 967
-MD5 e691421de4b002e8a4941317b0f2ad2c flobopuyo-0.20.ebuild 1059
+MD5 bdf1e2eaa2d3ee101caa03e734c129a2 flobopuyo-0.20.ebuild 1060
 MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
