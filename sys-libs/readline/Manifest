@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 700594fb255dc5da5014fdaa385a5b6f ChangeLog 8748
 MD5 d687545889dacb43e121f4932d99a534 files/bash-3.0-etc-inputrc.patch 1443
 MD5 cca21eb56279efff8356d028b1b39dd8 files/digest-readline-4.3-r5 348
@@ -19,3 +22,10 @@ MD5 f57994b50a6ef31969945eef6dfa6a80 readline-4.3-r5.ebuild 2765
 MD5 6af52eb762dd5c0220974c9c853181c2 readline-4.3-r6.ebuild 3091
 MD5 5c962060bc5f3a5bb5935407f4fdf1a8 readline-5.0-r2.ebuild 2781
 MD5 328392b6dbdd45107aac5c12048f7d7f readline-5.1-r2.ebuild 3015
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDuhsj2+ySkm8kpY0RAsczAJwLDplIE70IFIw8YZK6wVgEzEAMygCghxSK
+mCwRXa4kidvxkgHdDdlDzNc=
+=bc7L
+-----END PGP SIGNATURE-----
