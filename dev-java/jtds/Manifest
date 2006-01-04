@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7705326eb5686a907153cf88fbe083f4 ChangeLog 1367
 MD5 8e7fbdf02cfe16bde704f6ea7a76f60d files/1.0.2-buildxml.patch 1293
 MD5 791c11d2de983b6e6a4cf3694cf0106f files/1.0.3-buildxml.patch 1043
@@ -9,3 +12,10 @@ MD5 cf5f873ff771d3b7af0dbbf865dc6165 jtds-0.9.1.ebuild 1381
 MD5 050b500864d72d1f71af69a787615ccf jtds-1.0.3.ebuild 1412
 MD5 62dd4abc8de9c7c029f6bf6589e5ed9b jtds-1.2.ebuild 1300
 MD5 5160ef2dd424a31e8938c7080a66d496 metadata.xml 734
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDuxSCQiJ/wx066S4RAgZOAKCYQcO31lMuEmTGyumGQBD+jBhvMQCaA/CZ
+NwIyX/CXfWLh/b8u6GAZmkk=
+=JRJt
+-----END PGP SIGNATURE-----
