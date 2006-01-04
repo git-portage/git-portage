@@ -8,4 +8,4 @@ MD5 ef65448a33725bf0e7f4d02d5e0b8fb1 files/torrc.sample-0.1.0.14.patch 1120
 MD5 ab82c91feb4f7eceb4d1ed496a17f928 files/torrc.sample-0.1.0.16.patch 1134
 MD5 b79b08e0f979feb256c93295714b4fc9 metadata.xml 224
 MD5 68f8bf751a6bddbb1209e520d23c6337 tor-0.1.0.14-r1.ebuild 1271
-MD5 e0825583dd6b0981df35b5e152624af9 tor-0.1.0.16.ebuild 4059
+MD5 5d87894b2eb81d47dc20b445408a499a tor-0.1.0.16.ebuild 4059
