@@ -1,0 +1,6 @@
+MD5 3ed137fc1d22ebbac1fc207d8d758b91 ChangeLog 381
+MD5 adae2ccfe37f39d4a68bc1d959716d0e files/digest-vdr-image-0.2.4 67
+MD5 f6d91a552789e8da00a278d3f03ee393 files/rc-addon.sh 339
+MD5 2fbaec1ecda7806379715e09d4a7227c files/vdr-image-0.2.4-gentoo.diff 3328
+MD5 e7055a92958497a9a028c06b8223f110 metadata.xml 439
+MD5 d7e5946925022dd48ab279654a9a860c vdr-image-0.2.4.ebuild 782
