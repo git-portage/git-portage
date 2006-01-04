@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c0168e85844bc48bc138fa8a0dae0008 ChangeLog 9092
 MD5 8fc24b590738d4420bb8df6521fbbda0 files/canon.powershot.usermap 4575
 MD5 e396fe3bbcfd38d33ec78004f27db148 files/digest-libgphoto2-2.1.4 70
@@ -16,3 +19,10 @@ MD5 84b14458116bed8e0c301719b08005a5 libgphoto2-2.1.5.ebuild 4011
 MD5 513ae41f5ce2572a4b66cd877d75accd libgphoto2-2.1.6-r1.ebuild 4420
 MD5 09e03121ecd86f34ca1d457b262fcc66 libgphoto2-2.1.6.ebuild 4097
 MD5 80850151bae2bd61c4ac796f83656ef6 metadata.xml 217
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDvEApQiJ/wx066S4RAm/HAJ4ps2BKUEP8RQMWzqZyyeSjqORqIgCeLmnW
+kgNoESApwpahZlDDM1PE7kk=
+=Xfai
+-----END PGP SIGNATURE-----
