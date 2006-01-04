@@ -1,13 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 4aee6c355fe288ac39ca5eb0203dcf95 ChangeLog 527
 MD5 5287b57eaf4fb9c49fb2d23fd0149f09 files/digest-tardy-1.12 62
-MD5 962ec2067600c3bfa681a9e411eea965 tardy-1.12.ebuild 582
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDuwFawUpWvClEHQoRArZ2AJ4gxig/Dt9uASz6UPQoJgYIbxSNkACfZDwz
-AaJ6gRgMj4RZrn6JRdotLEQ=
-=VwEt
------END PGP SIGNATURE-----
+MD5 efec9df955ce7312609a257f03cc98ca tardy-1.12.ebuild 581
