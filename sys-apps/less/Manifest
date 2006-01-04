@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 867760db7fa5e978703af0ca0cf40cac ChangeLog 6683
 MD5 cc2e18acb9743c8fc0e391f796153007 files/code2color.patch 460
 MD5 6f05cb473c8bd03fb8fb5ba7466aa804 files/digest-less-382-r2 60
@@ -8,3 +11,10 @@ MD5 adb0b1124c355f33197454d2be87bfd3 less-382-r2.ebuild 791
 MD5 45269de27294fe1cfa4b0cbeee2836bc less-385_p4-r2.ebuild 1515
 MD5 f4fef6137ce1feb1d3cfa3de783fed5e less-394.ebuild 1257
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDu2Mv2+ySkm8kpY0RAv9qAJ4qlC/iX+iOh+VyULzoykqOM0ZP4gCfRvpk
+OnJVIQHjYv5a3LaRBzH/b14=
+=P2J5
+-----END PGP SIGNATURE-----
