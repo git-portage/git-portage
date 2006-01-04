@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1ff99997a7ae6394006ef18bba5b9278 ChangeLog 604
 MD5 7a3a79c65223982e6f227f2dde499e0d evolution-sharp-0.10.2.ebuild 738
 MD5 57940e36815a8a991745927dc9c914dc files/digest-evolution-sharp-0.10.2 75
 MD5 41c8c61dcf74c45eb359a4a41958abb3 metadata.xml 308
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDuyNHwUpWvClEHQoRAunfAJsHMFzQw0DsikSEClYmvIL71/Z/mQCfZwnB
+qQjls4r5IAqRhjXbJ5OccC0=
+=TqE0
+-----END PGP SIGNATURE-----
