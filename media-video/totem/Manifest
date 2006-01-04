@@ -6,7 +6,8 @@ MD5 cccfa415897f1198d6cb702e258b85a9 files/totem-1.0.4-fbsd.patch 1190
 MD5 d8432eb528995986645e6e70fdccba48 files/totem-1.2.0-gecko-sdk.patch 1178
 MD5 faed9bfdf2ea1835a17c9e56e7738ac1 files/totem-1.2.0-gmoduledep.patch 1535
 MD5 d64b50de60d0223b68b67b7788086b5b files/totem-1.2.0-lang_it_fix.patch 834
+MD5 06e5959e07633fd5260c6935f547d0d4 files/totem-dbus-0.60.patch 562
 MD5 74b9bd3cc5015b286abc33eb51408252 metadata.xml 521
 MD5 6645b9eed7d922972cb815cadddf7d89 totem-1.0.4.ebuild 2709
 MD5 d7a1624ffff28b89921b884b1b2565cc totem-1.2.0-r1.ebuild 3200
-MD5 97456b1f934824181fbe6a59f5bb6ea8 totem-1.2.0-r2.ebuild 3108
+MD5 e23ec782f996f964579d204d2250af28 totem-1.2.0-r2.ebuild 3158
