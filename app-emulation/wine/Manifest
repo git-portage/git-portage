@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 76ca0e5813e9b48917db94136cd6866c ChangeLog 21288
 MD5 fb8724a36ec3bef0ad3a3c36376b786a files/digest-wine-0.9 63
 MD5 d46df5add2535f22ad43db8247d7a45b files/digest-wine-0.9.1 65
@@ -49,3 +52,10 @@ MD5 702ffb168cd28c8c50f750e4a44443b5 wine-20050725-r1.ebuild 4007
 MD5 849a137354726b72c926deb4acaaf265 wine-20050830.ebuild 3993
 MD5 f1bcb4cda3f905a8530180119919a7c3 wine-20050930.ebuild 4232
 MD5 1755d1d5e576c6a1c9c567f380843050 wine-9999.ebuild 4171
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDva6S2+ySkm8kpY0RAn2eAJ9DtIPuLnsk8+wLpU3rPK0znL64owCfed0X
+oB9yUSsvFMNVlo4tfyh9sig=
+=OVfS
+-----END PGP SIGNATURE-----
