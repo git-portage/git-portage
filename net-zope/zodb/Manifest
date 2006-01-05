@@ -1,4 +1,4 @@
-MD5 420b24923f2ba9d0874892c7e7b0848f ChangeLog 3359
+MD5 30b2aad9e40dcdf79f846968953a61d0 ChangeLog 3359
 MD5 27a91b40c9701da470369eda322ef786 files/digest-zodb-3.2.8 60
 MD5 ccd57537a21261a171605e4205d626d0 files/digest-zodb-3.2.9 60
 MD5 3d574bdd418fdbcf73684f535731af8f files/digest-zodb-3.3.1 61
@@ -16,4 +16,4 @@ MD5 3740dcb62c6784df9849c0e2364e536a zodb-3.4.0.ebuild 740
 MD5 0d855454f68dad39082c57c2aad4c826 zodb-3.4.1.ebuild 739
 MD5 4639db8bf1a78ca716347320d2d4190f zodb-3.5.0.ebuild 518
 MD5 ed6105d2b80f6f79b12060660b69efec zodb-3.5.1.ebuild 518
-MD5 cdadd6255fae657b2be07e86755d5f46 zodb-3.6.0.ebuild 518
+MD5 16690c29c744e898f5a4c3b1f3d82b9e zodb-3.6.0.ebuild 518
