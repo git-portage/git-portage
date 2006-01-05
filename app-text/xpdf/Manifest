@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 34a19bdf77a0a437bc92db78e2a3fe58 ChangeLog 13934
 MD5 ec978d9450f061ea49ee697b39d545bf files/digest-xpdf-3.00-r10 767
 MD5 ec978d9450f061ea49ee697b39d545bf files/digest-xpdf-3.00-r8 767
@@ -35,3 +38,10 @@ MD5 a563cb37418209e3fac5f026184a916f xpdf-3.01-r3.ebuild 3912
 MD5 b8ab9f515f3b5126dcc64ff0a428f30c xpdf-3.01-r4.ebuild 3683
 MD5 f2fa1c7fe2960201d0748161455e2da0 xpdf-3.01-r5.ebuild 3689
 MD5 763deff18a7e6e7125aca1f3d6be3229 xpdf-3.01.ebuild 3529
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDvXrqomPajV0RnrERAqqUAJ4rvwJxTfVfVAoGrv7wMMPsh3XITgCdGSC1
++N4J2hJ2GPvQ3wkhN8YpxKQ=
+=6XVJ
+-----END PGP SIGNATURE-----
