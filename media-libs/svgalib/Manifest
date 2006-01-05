@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e3d8fdce72cddb51401ebd4451b36896 ChangeLog 11495
 MD5 71fa9630e100dc3a6ce8672b4b4b2cff files/digest-svgalib-1.9.19-r3 66
 MD5 7c5fef40667dc2dd4c54518fbafa831b files/digest-svgalib-1.9.21-r1 66
@@ -20,3 +23,10 @@ MD5 69845288d94413820ea3441dc9e60b24 metadata.xml 303
 MD5 cbd7300125a37d2d029b6ec00166fac8 svgalib-1.9.19-r3.ebuild 5629
 MD5 883ab8f536976b79259747f70b41046d svgalib-1.9.21-r1.ebuild 4619
 MD5 c26062ed56860238444ea04729203cf3 svgalib-1.9.23.ebuild 4510
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDvI1g2+ySkm8kpY0RAhRwAKC/jmB3JfqMxUVpGLZzuNYwVc7LjQCfS62s
+8ZVROQ0PT6lznxkSkfRPgLE=
+=o4L5
+-----END PGP SIGNATURE-----
