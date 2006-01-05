@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3ffe4a67450e1c382b4cdd6ec5152c3e ChangeLog 22978
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gcc-config-1.3.12-r5 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gcc-config-1.3.13 0
@@ -9,3 +12,10 @@ MD5 63e27aa76e788bb004681de123fe56d8 gcc-config-1.3.12-r5.ebuild 1458
 MD5 7f9885dad4dc0c03271e92bc65ad8ec6 gcc-config-1.3.13.ebuild 1468
 MD5 35fee17d74ce037258c00f8d9e9dd820 gcc-config-2.0.0_beta2.ebuild 781
 MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDvI1F2+ySkm8kpY0RAhlrAJ0enC54sNGCo1PVHEgkYegklJIvVwCgptpV
+ixZmRhM07ziD3g241JtL5mg=
+=4yCh
+-----END PGP SIGNATURE-----
