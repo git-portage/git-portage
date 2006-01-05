@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8cd9fe3cf821e5722597711bcbb937fa ChangeLog 4217
 MD5 9162e4c32c2c33fbd26696da1f83d559 cabextract-0.5.ebuild 581
 MD5 b197eacfa2bb10ff8a9ba1b188e7620f cabextract-0.6.ebuild 612
@@ -9,3 +12,10 @@ MD5 431bb1a17fb1d3e563e496974053738e files/digest-cabextract-0.6 65
 MD5 e946dad6f9bd58cc6df05b8c58d279bb files/digest-cabextract-1.0 66
 MD5 a71d568bc3da500b98a9996bed7d216a files/digest-cabextract-1.1 66
 MD5 295674d4bed87f5a7c2796e032ed561e metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDvQX6AiZjviIA2XgRAuBKAKDFTyk7bCgUedaC5pDHrg6QL/OXuACfR8d7
+MA1RVYtVgI/Ex6AIZqzy70w=
+=HCTq
+-----END PGP SIGNATURE-----
