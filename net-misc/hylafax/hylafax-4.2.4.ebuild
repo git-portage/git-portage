@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/hylafax/Attic/hylafax-4.2.3.ebuild,v 1.1 2005/12/19 01:39:23 nerdboy Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/hylafax/Attic/hylafax-4.2.4.ebuild,v 1.1 2006/01/05 07:51:49 nerdboy Exp $
 
 inherit eutils multilib pam
 
