@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1e956708ee1b58e2c93c3f140104387c ChangeLog 2235
 MD5 aa81afb9cffef205c955fc1ab2a9bfd1 files/digest-pcsc-lite-1.2.0 67
 MD5 b92c5548172bf19ad5f25561b649982d files/digest-pcsc-lite-1.2.9_beta8 74
@@ -8,3 +11,10 @@ MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 07d1198a3ee3b56212a7bde0ddbcc0e6 pcsc-lite-1.2.0.ebuild 1267
 MD5 b491a8d2750e8405ba206f7e69a99797 pcsc-lite-1.2.9_beta8.ebuild 1295
 MD5 b22781e0bf6f65567ee849a95eecbe6b pcsc-lite-1.2.9_beta9.ebuild 1295
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDvJZy2+ySkm8kpY0RAogNAKCDTwyA5nm7/ZWTHWS7nByaFtg57gCfTnj8
+rQLsLbAwZcgFMlZHt/loioo=
+=KzEm
+-----END PGP SIGNATURE-----
