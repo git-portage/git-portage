@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f0e1c75dfedc791b8e311ae91fa23cfd ChangeLog 1692
 MD5 f428ecdc8be7efe16c318119722043bf files/digest-libaio-0.3.104 65
 MD5 05478a585c2ac19835dd5082d7c2f009 files/digest-libaio-0.3.106 65
@@ -12,3 +15,10 @@ MD5 bd9363ec4f98acceb29b66f0f7709081 libaio-0.3.104.ebuild 761
 MD5 eba9291aa19609b593315a2c09f6f8ef libaio-0.3.106.ebuild 892
 MD5 655e6937dcfd4cead6878d04496dc54d libaio-0.3.15-r1.ebuild 983
 MD5 29e53943085f389f153bbadeb849ecee libaio-0.3.15.ebuild 909
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDva1B2+ySkm8kpY0RAoVxAKCcBZsk3GlZvVGcNbaohOMfI4d0sQCfZgFz
+Ow7ze2n9iAoBFYzk+j8PoMw=
+=aJ9e
+-----END PGP SIGNATURE-----
