@@ -1,4 +1,4 @@
-MD5 5403e97fb29a52fafa9096130ec143a4 ChangeLog 12933
+MD5 96c5d1f4e664118db262f6f9401c40e6 ChangeLog 13090
 MD5 ac8a4cf594e065c2ddc00dc70c8d2170 files/digest-totem-1.0.4 65
 MD5 e7c829d2432b645ddb68128a4bead344 files/digest-totem-1.2.0-r1 65
 MD5 e7c829d2432b645ddb68128a4bead344 files/digest-totem-1.2.0-r2 65
@@ -12,5 +12,5 @@ MD5 06e5959e07633fd5260c6935f547d0d4 files/totem-dbus-0.60.patch 562
 MD5 74b9bd3cc5015b286abc33eb51408252 metadata.xml 521
 MD5 6645b9eed7d922972cb815cadddf7d89 totem-1.0.4.ebuild 2709
 MD5 d7a1624ffff28b89921b884b1b2565cc totem-1.2.0-r1.ebuild 3200
-MD5 d7342e70db056f27148a90bd480d377c totem-1.2.0-r2.ebuild 3161
-MD5 5ba1f0a9a9f0aa5c13e8035f75b30bac totem-1.2.1.ebuild 2933
+MD5 a6c5cda926beb5b7a47c63e650d74ae5 totem-1.2.0-r2.ebuild 3160
+MD5 89753bfe90d44357bf594cd8dfeaa7eb totem-1.2.1.ebuild 2929
