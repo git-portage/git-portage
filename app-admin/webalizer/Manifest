@@ -1,5 +1,5 @@
-MD5 35ed78fda1726b5124d346c0cbd4f8a8 ChangeLog 6025
-MD5 da6011fe62daf3bf5aee55280d1def1c files/2.01.10/apache.webalizer 306
+MD5 08b1563e904b31f729cc18cfec00db2b ChangeLog 6135
+MD5 f04ad397866d35f9ede71fc6da2392ed files/2.01.10/apache.webalizer 306
 MD5 45d6e8c8bd9f76c0e22d80acc0603aff files/2.01.10/reconfig 394
 MD5 7a71200318400e9c4a33e23bfc65904d files/2.01.10/webalizer.conf 23927
 MD5 363fe90869a7e9ea50f37ac714bdac2a files/digest-webalizer-2.01.10-r10 157
