@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 878a34290868b00ab120fbb7a703d54b ChangeLog 87757
 MD5 941f13d27badc76c1e3704c59acaff26 files/2.3.1/glibc-2.3.1-ctype-compat-v3.patch 2823
 MD5 67b125cec4f1f0d26ce4df706451fee6 files/2.3.1/glibc-2.3.1-fpu-cw-mips.patch 433
@@ -139,3 +142,10 @@ MD5 22fd599468cdef40f494d009951d0469 glibc-2.3.6-r1.ebuild 41910
 MD5 8afa057ade9494de27c056073e937ea9 glibc-2.3.6-r2.ebuild 41917
 MD5 4ea7e852a74de296a3883b7137452626 glibc-2.3.6.ebuild 40240
 MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDvhY8CRZPokWLroQRAs0WAJwKe5cst05vRtnBA8Ae9qLKvY5oxwCeJBNY
+brUiHxTsUakdNpXac9liVaI=
+=A0Dc
+-----END PGP SIGNATURE-----
