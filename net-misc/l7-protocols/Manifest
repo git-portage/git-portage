@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 eb87cd70974698d3d8616506a77699dd ChangeLog 4221
 MD5 d41f93d0fa74a54ab989fba3daf185ad files/digest-l7-protocols-2005.09.05 74
 MD5 eaa41d61e00224d03b96044e9c0037b7 files/digest-l7-protocols-2005.09.12 74
@@ -6,3 +9,10 @@ MD5 06f4a1da1428b37ac7629a80b44e63eb l7-protocols-2005.09.05.ebuild 1496
 MD5 d6e602e170f30478453f4d84b52b116d l7-protocols-2005.09.12.ebuild 1503
 MD5 4dda68869b921dba798586ad9048f8f1 l7-protocols-2005.12.16.ebuild 1503
 MD5 89edb769612add8464eb3c324f09e197 metadata.xml 374
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDvk/BmdTrptrqvGERAuNxAJ4hVfW+di4Qogps3PF/P/j7es6TqACeJYzH
+L1LUcfWHz6W6bDv6CNuYiUQ=
+=dmDu
+-----END PGP SIGNATURE-----
