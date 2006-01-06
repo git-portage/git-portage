@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7323b6db59a37c24cbade7cd4d8c3a3b ChangeLog 1509
 MD5 4acdfa97d781bcecd8107b66a882ada8 files/1.32-install.patch 1432
 MD5 16562ebfbe49bca89d32784bca1126f2 files/1.32-stack-overflow.patch 1818
@@ -13,3 +16,10 @@ MD5 6399dbb185314c6017b02b3df2cdf5ea files/glftpd.xinetd.d 384
 MD5 fb8d5f6b8fac69dbe80b089824d8d257 glftpd-1.32-r2.ebuild 2815
 MD5 9765afee47eb196dd38c07bf2c28fef0 glftpd-2.00.ebuild 2852
 MD5 c62fc873c7151e566817ff18912aee72 glftpd-2.01.ebuild 2771
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDvdkR2+ySkm8kpY0RAmX3AKCCDEPMqSE4+AVm/XIGIlsNDvq3ZACgnCRi
+t010FifB061CHkbwv3eR5GA=
+=8tI7
+-----END PGP SIGNATURE-----
