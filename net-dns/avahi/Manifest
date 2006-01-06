@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 43d87d721df251f2c7d7cc4361072a4a ChangeLog 3740
 MD5 5da4a9160b981e4d0f2e64e12a39de37 avahi-0.5.2-r1.ebuild 2085
 MD5 1117c1a65eb0f528a5cffd53b985addc avahi-0.6.1-r1.ebuild 2807
@@ -11,3 +14,10 @@ MD5 82793ef545794b3d74b3094017ed5572 files/digest-avahi-0.6.1 63
 MD5 82793ef545794b3d74b3094017ed5572 files/digest-avahi-0.6.1-r1 63
 MD5 ee6a891040729b5b87b36d3d4f6471d1 files/digest-avahi-0.6.2 63
 MD5 b8a99a5b7fa586fe9cabbacc87d88bfe metadata.xml 223
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDvc6W2+ySkm8kpY0RAgqWAKCgUHLKWSqu13rc018iyb1UmsU6aQCfWzd5
+Rk88LsAVzFUi3SnnZqBV8Kw=
+=oeD/
+-----END PGP SIGNATURE-----
