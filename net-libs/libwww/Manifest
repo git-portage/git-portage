@@ -1,4 +1,4 @@
-MD5 f4cd091babe9da794abeb8d10235f889 ChangeLog 7291
+MD5 7f7329dc9787a78255d7a1ba75f17d91 ChangeLog 7292
 MD5 078b6239f293e1cc65f3f977b3136317 files/digest-libwww-5.4.0-r3 151
 MD5 4c3f7314020d5a1a6a01463a71b4944c files/digest-libwww-5.4.0-r4 151
 MD5 4c3f7314020d5a1a6a01463a71b4944c files/digest-libwww-5.4.0-r5 151
@@ -13,5 +13,5 @@ MD5 db10aa1f9442be23cfec06ad586d1afa files/libwww-5.4.0-noexport.patch 402
 MD5 e99f48d15e0834666b84203b48805872 files/libwww-config-liborder.patch 776
 MD5 4c70dae7ce4964982b3ebe728633f9f0 libwww-5.4.0-r3.ebuild 1943
 MD5 469a45f9eb035116e1c88cfaee53eff7 libwww-5.4.0-r4.ebuild 2145
-MD5 b94df7bc6c485d2b32e1041d41a0b735 libwww-5.4.0-r5.ebuild 2189
+MD5 f3c5fc29fd674e21a4f9bb95e0a57e94 libwww-5.4.0-r5.ebuild 2189
 MD5 c472f5fd1646eb8bca71d8df5cb2bdcc metadata.xml 164
