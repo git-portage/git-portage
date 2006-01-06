@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1f5791be578afe49ab0b64b3685b3912 ChangeLog 2666
 MD5 88124038f9bc0fb6771c9d12f9bcbac9 files/digest-pycrypto-1.9_alpha4 66
 MD5 b59c388eacd676d40313043ecea7841e files/digest-pycrypto-1.9_alpha6 66
@@ -11,3 +14,10 @@ MD5 3172f23539eb54a31ad3a7d8321d4557 pycrypto-1.9_alpha6.ebuild 622
 MD5 d4fb605909249a6d153becb95ab0d3da pycrypto-2.0-r1.ebuild 599
 MD5 d9f822668d225711e529c75f075dac63 pycrypto-2.0.1.ebuild 750
 MD5 1ff484937e9f3be035fe383ea160e8ad pycrypto-2.0.ebuild 573
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDvvi02+ySkm8kpY0RAkVdAKCvaBa1xUI4uzlmhTwDRFyd4UMoAQCgqhFO
+UgfK6G9ao5bXR4HNd1mInFs=
+=iycB
+-----END PGP SIGNATURE-----
