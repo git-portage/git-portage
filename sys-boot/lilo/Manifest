@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a59aa0e77998ee48803e27ecfca52639 ChangeLog 4182
 MD5 3caa133b51ca935f818fd53102b0b62a files/digest-lilo-22.7 126
 MD5 de6a5065fca97cf5df35c8bc9bebfafc files/lilo-22.7-correct-usage-info.patch 557
@@ -7,3 +10,10 @@ MD5 78f9720430dac90363e7b5120a262a3a files/lilo-22.7-novga.patch 936
 MD5 5f2172291cc1252b30f5a60981a51ac4 files/lilo.conf 1722
 MD5 43cd08add6c1a0b1a892c76483e20c25 lilo-22.7.ebuild 5113
 MD5 eeee4743c4e463eeed3a7a4c15380e0d metadata.xml 254
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDvcN8mOfEJZHYOKcRAp+tAJ4uL+fXvCyrzb2/TuFTd/aIb3xJWQCePtWV
+RjSq6Nm7DuNGf9D1wlyThEE=
+=zbOH
+-----END PGP SIGNATURE-----
