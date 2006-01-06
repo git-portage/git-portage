@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7d6a6bbd5315cecc06bb9e3bd00bf064 ChangeLog 2802
 MD5 be2078616ef13161f5362a4ed9918cd9 files/digest-libcroco-0.5.0 67
 MD5 fc3c39963742918982d87fae16bc7ed9 files/digest-libcroco-0.5.1 67
@@ -7,3 +10,10 @@ MD5 d3831a27f0d25ed96a9e79923c69c9eb libcroco-0.5.0.ebuild 635
 MD5 44bbf0b9157226f6b373fd4b81aad48e libcroco-0.5.1.ebuild 639
 MD5 d2c0a190a0d86aa142b59e3e534359c2 libcroco-0.6.0.ebuild 752
 MD5 863e62787cde759db7281dde0e11d5df metadata.xml 506
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDvlKXAiZjviIA2XgRArhVAKCKkHOqRcpxb7RfWzpi/KfkuKN1NACfc3RK
+ZGiq1ZTyj8dARL6IO3Qcguc=
+=yWzA
+-----END PGP SIGNATURE-----
