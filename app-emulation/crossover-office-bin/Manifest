@@ -1,22 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 a410cc31f32569d7eaadc31de951e65d ChangeLog 1037
-MD5 e56eb7319c6a1b06fd1edd4a414cc60a crossover-office-bin-3.0.1.ebuild 917
-MD5 fdeb79046d8b925b6bfa59033b84dcc9 crossover-office-bin-4.0.ebuild 915
-MD5 bb9864b1644c9777ae79f74a6411cdfa crossover-office-bin-4.1.ebuild 1032
-MD5 90cfedcc196250c95004f0a7d8661d47 crossover-office-bin-4.2.ebuild 1086
-MD5 2ff56b369b64735926663565f8aa1db4 crossover-office-bin-5.0.0.ebuild 971
+MD5 89542ad8392e1fbad4c8ad3bbd4dd56c crossover-office-bin-3.0.1.ebuild 917
+MD5 bd2454cc76583941e1aed2cce16a1d81 crossover-office-bin-4.0.ebuild 915
+MD5 937a1241f4b791d583a74e80a73e2712 crossover-office-bin-4.1.ebuild 1032
+MD5 d83dea9d55197f6853bf740baecd6a17 crossover-office-bin-4.2.ebuild 1086
+MD5 ac99666ca2d739566445b5835530c54a crossover-office-bin-5.0.0.ebuild 971
 MD5 cd3ffa8407ac094aa56c0d80edb96e61 files/digest-crossover-office-bin-3.0.1 82
 MD5 7ecc5ba7b6c1138905b6f352ec7e6e9d files/digest-crossover-office-bin-4.0 80
 MD5 f381c74d9cb69f7e54447e0ebe1680b9 files/digest-crossover-office-bin-4.1 80
 MD5 1e60da20abc768da5f823acc9f1254b2 files/digest-crossover-office-bin-4.2 80
 MD5 23dafc6887d2577101cf9eecb5c6eea4 files/digest-crossover-office-bin-5.0.0 82
 MD5 6e817c3f6b82338028366853fddccf5f metadata.xml 157
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDvvFt2+ySkm8kpY0RAjktAKCtF1Rm8vCwlpHeww1pHmKgU6FMiACfZIfa
-jtZFP9xUpmXEqEtxf6x8Wac=
-=1kBQ
------END PGP SIGNATURE-----
