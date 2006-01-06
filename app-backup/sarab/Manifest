@@ -1,17 +1,10 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 83e411936c19f6c20a11f263399b8e86 ChangeLog 889
-MD5 fac42ad5e6199d546ff4f3683fdd4da1 metadata.xml 478
-MD5 775e64d4c25dc35cafaf8ffdc23b7e1a sarab-0.2.2.ebuild 937
 MD5 1158ff2c096755fee64285dc78eac006 files/0.2.2-better-defaults-gentoo.patch 1274
+MD5 bf4d8827efddcb3c272a36cdd553d431 files/0.2.2-fix-rotation-gentoo.patch 538
 MD5 d0fa024057272bd7aad055ecc9ee5299 files/0.2.2-test-with-encryption-gentoo.patch 2978
 MD5 259987143010b10eb68843ff1da743df files/README.Gentoo 720
 MD5 19b06302a278f9fdc3dab8e1faabd189 files/digest-sarab-0.2.2 62
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDPYzwyiNZaEAZA+ARAtHcAJoD06sbIRf/nFCO2T3rLiDjYd0fdwCeNb6v
-uW7Yo57WI5ADZ0ZfCelGZUw=
-=4H1U
------END PGP SIGNATURE-----
+MD5 19b06302a278f9fdc3dab8e1faabd189 files/digest-sarab-0.2.2-r1 62
+MD5 fac42ad5e6199d546ff4f3683fdd4da1 metadata.xml 478
+MD5 1971b3a45fa495dafd7b87d614aee761 sarab-0.2.2-r1.ebuild 996
+MD5 775e64d4c25dc35cafaf8ffdc23b7e1a sarab-0.2.2.ebuild 937

@@ -1,6 +1,14 @@
 # ChangeLog for app-backup/sarab
-# Copyright 1999-2005 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/sarab/ChangeLog,v 1.3 2005/09/30 19:06:50 mkennedy Exp $
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/sarab/ChangeLog,v 1.4 2006/01/06 16:47:43 mkennedy Exp $
+
+*sarab-0.2.2-r1 (06 Jan 2006)
+
+  06 Jan 2006; Matthew Kennedy <mkennedy@gentoo.org>
+  +files/0.2.2-fix-rotation-gentoo.patch, -sarab-0.2.2.ebuild,
+  +sarab-0.2.2-r1.ebuild:
+  Include patch for rotation schedule filename courtesy of Gunnar Wrobel
+  <wrobel@gentoo.org>; Resolves Bug #117718.
 
   30 Sep 2005; Matthew Kennedy <mkennedy@gentoo.org> sarab-0.2.2.ebuild:
   Added missing dependency mail-client/mailx; Resolves Bug #106903.

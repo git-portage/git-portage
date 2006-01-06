@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/sarab/Attic/sarab-0.2.2.ebuild,v 1.3 2005/09/30 19:06:50 mkennedy Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/sarab/Attic/sarab-0.2.2-r1.ebuild,v 1.1 2006/01/06 16:47:43 mkennedy Exp $
 
 inherit eutils
 
@@ -22,6 +22,7 @@ src_unpack() {
 	unpack ${A}
 	epatch ${FILESDIR}/${PV}-test-with-encryption-gentoo.patch || die
 	epatch ${FILESDIR}/${PV}-better-defaults-gentoo.patch || die
+	epatch ${FILESDIR}/${PV}-fix-rotation-gentoo.patch || die
 }
 
 src_install() {
