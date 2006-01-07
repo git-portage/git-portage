@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f6ac4bde15aef06d75604e47d49071fb ChangeLog 28247
 MD5 6354e2efb6f0d1323ad8849be7303575 files/44_fix_alignment_endianess.dpatch 8676
 MD5 e2b99b2d2dfc54ba96e560c0ed8392df files/digest-xchat-1.8.11-r1 65
@@ -15,3 +18,10 @@ MD5 f70fee92ab2e258ea7be208d0ddfa4b6 xchat-2.4.3.ebuild 2266
 MD5 1d96b6a159995e2ba2d2a95ca9b17df1 xchat-2.4.5-r1.ebuild 2362
 MD5 b07304c2f6e1aa08bf112928e9558223 xchat-2.4.5.ebuild 2301
 MD5 208e3c91c0ac3d3f95706018ba9aeec4 xchat-2.6.1.ebuild 2218
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDv66/I1lqEGTUzyQRAqUgAKCIPujpDeF5v8J7XmJ0aubBvyo4xQCg0Lid
+fvot7v+qdXL7NJH+JttwM7U=
+=PXij
+-----END PGP SIGNATURE-----
