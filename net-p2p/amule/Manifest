@@ -1,4 +1,4 @@
-MD5 e4ea84f5af953a41fdbde9cf4da0011c ChangeLog 8509
+MD5 8277809788cfafd5cb167b4096df8ee1 ChangeLog 8514
 MD5 b3c15e104e1b64f5499fad3b01f9b27d amule-1.2.8-r1.ebuild 829
 MD5 52781eab799d0ab31cdcd3847805789e amule-1.2.8-r2.ebuild 826
 MD5 8089773038f60bec63f9fc87c15aa26e amule-1.2.8.ebuild 922
@@ -9,7 +9,7 @@ MD5 9842bde0d727d0714cf5ae1f01c14f19 amule-2.0.3-r2.ebuild 2167
 MD5 28a843108dc2a81ececee701965cb3da amule-2.0.3-r3.ebuild 2183
 MD5 eb091bbab1311a771145c644cc437b84 amule-2.0.3-r4.ebuild 2763
 MD5 1abaced287e5f9e1594893fb667a96df amule-2.0.3.ebuild 2258
-MD5 0ca2c4d7c0e75448cb2a0c21d6b0ad8c amule-2.1.0.ebuild 3366
+MD5 e21961e5d469eeaf58dd1d310efb6370 amule-2.1.0.ebuild 3357
 MD5 8cde6982e4b5300f4521da90ab8733d6 files/amule-2.0.0_rc7-wxgtk.patch 1293
 MD5 6cfdc1b9b4a65d47e9047a8fed427889 files/amuled.confd 409
 MD5 37c7ee8278a02051a68d062beba82fbc files/amuled.initd 1138
