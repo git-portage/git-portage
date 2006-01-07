@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f7cf846af84245ed7108404227f488c7 ChangeLog 5877
 MD5 e58a523f218b83377e26940d3b59d4c7 enlightenment-0.16.5-r4.ebuild 1602
 MD5 58272e98cbbb3629a3a94780fe2671bd enlightenment-0.16.6.ebuild 1854
@@ -13,3 +16,10 @@ MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-enlightenment-0.16.9999 0
 MD5 943d1947d4bd7b7ee6387ba5827166a4 files/enlightenment 33
 MD5 3ad2dae193789dec0097cd6675a150ab files/enlightenment-0.16.7.2-no-nls.patch 469
 MD5 7ed1cbab645402fbf7666ed95588542d metadata.xml 1572
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDv2322+ySkm8kpY0RAi1eAKCevlATuMDylArUJ5qVtPoMmGSB1QCgmWlM
+hhavqJ0sLxCKQIuVx5lrvic=
+=8NKv
+-----END PGP SIGNATURE-----
