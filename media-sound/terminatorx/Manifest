@@ -1,16 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 53d803e2d14d44442ef2b5eccbde3688 terminatorx-3.82.ebuild 1378
-MD5 58f2f97c503d3f49f2a03465a06e1123 terminatorx-3.81.ebuild 2193
 MD5 e6cb2a454e0d2ad9f3d6d39dfc348892 ChangeLog 2415
-MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 ed6038ad12972f0534133cb65dff99a0 files/digest-terminatorx-3.81 68
 MD5 94137a13ec8a5f0c45a221fe3804a5f4 files/digest-terminatorx-3.82 68
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFCmKWi06ebR+OMO78RAlR2AJ9042X0IdmpFWLcfXbCeJHy0sit9ACfQYE5
-WSRKwFEsoGwDPOH0BQGQV20=
-=1F6j
------END PGP SIGNATURE-----
+MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
+MD5 dbcd59e4bb50ea1e4b742d582b3f8257 terminatorx-3.81.ebuild 2195
+MD5 3f8c6409538e2176c30589f6bac86aa4 terminatorx-3.82.ebuild 1380
