@@ -1,4 +1,4 @@
-MD5 745a612326365eeedd03d1740bfb6952 ChangeLog 24607
+MD5 86a540ff099c75ad7b525c42e3242408 ChangeLog 24729
 MD5 45c4c194bdc01c92730e2f8ea5bbb2e5 files/0.9.3/README.Gentoo 1060
 MD5 683427165f7d0717333bbb9762972b8d files/0.9.3/customize-target-features.lisp-prefix 95
 MD5 7b753c4f6f63f1fc8630f3c9100a8ca9 files/0.9.3/customize-target-features.lisp-suffix 8
@@ -34,4 +34,4 @@ MD5 276b2c3efa0ff299306d94ad4704a9e2 metadata.xml 1004
 MD5 e6a8dc74061cced7fd5fab222e795d5f sbcl-0.9.3.ebuild 5046
 MD5 845ba0e216f2adf5eb504a5eb06b9037 sbcl-0.9.4.ebuild 5046
 MD5 6fb2c817d4e75aa34ed25d784d2ce7e5 sbcl-0.9.7.ebuild 4420
-MD5 c7457a4c199cb0da59ca61fd5a28afcd sbcl-0.9.8.ebuild 4428
+MD5 d56abad879727c8c2bf588568f60d4bc sbcl-0.9.8.ebuild 4429
