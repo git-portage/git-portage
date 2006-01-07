@@ -1,4 +1,4 @@
-MD5 9d87482dd492f6c1164e8c40074f84eb ChangeLog 1113
+MD5 766bf69d0aa3ef31d4051dea4fcdee0a ChangeLog 1096
 MD5 8104d29f4f544ed24fc54349b3c50968 files/2.2.0/patch01 1248
 MD5 34ae93cd0ed0b3adcb49cfdc68c18b75 files/2.2.0/patch02 2177
 MD5 a7af9750238fdf49c8dffcf151f57049 files/2.2.0/patch03 407
@@ -9,4 +9,4 @@ MD5 f6dac72eea74ed7475bfcb5461ebe3af files/digest-mpfr-2.2.0_p4 63
 MD5 868ae437254277cb5364323564dc124d files/digest-mpfr-2.2.0_p7 120
 MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
 MD5 69440ff8d7609c44fc1569e999970150 mpfr-2.2.0_p4.ebuild 988
-MD5 f117db2732cc7bb690d37e632aeb86ab mpfr-2.2.0_p7.ebuild 1311
+MD5 7747bb38df271ad7663d39604c33dcb8 mpfr-2.2.0_p7.ebuild 1315
