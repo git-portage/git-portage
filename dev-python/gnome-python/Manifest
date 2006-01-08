@@ -1,4 +1,4 @@
-MD5 b53656e235e7b3c6c014fcfc0b7c5ad3 ChangeLog 6531
+MD5 c1c6bcee38fdb3ac7d3818a84d0df9b6 ChangeLog 6531
 MD5 7fd6852037c022d0f0f2413aabae59b4 files/digest-gnome-python-1.4.2 70
 MD5 ba9ea8c1b972e53626b9ab2d6cab4225 files/digest-gnome-python-1.4.4 71
 MD5 ba9ea8c1b972e53626b9ab2d6cab4225 files/digest-gnome-python-1.4.4-r1 71
@@ -17,6 +17,6 @@ MD5 088818e715d16d6b0e2b3ff0fa7a6bc7 gnome-python-2.0.0.ebuild 1086
 MD5 6abefe511c4eb0f08929376ad7249b58 gnome-python-2.0.2.ebuild 1295
 MD5 38234bd1d44ef57540d10c1b333d8f57 gnome-python-2.10.0.ebuild 1371
 MD5 01c5aab406027b06c94f2884880ff1f9 gnome-python-2.12.0.ebuild 1387
-MD5 89a3a5c03629ac44ad6d80a1dddfe444 gnome-python-2.12.1.ebuild 1387
+MD5 d595d582dabd5bd8e71731cb6c01e92a gnome-python-2.12.1.ebuild 1387
 MD5 744a2b99b65118ec82f17842c1649113 gnome-python-2.6.1.ebuild 1561
 MD5 aab7d8b8a9c5777f5acad94eb998f367 metadata.xml 178
