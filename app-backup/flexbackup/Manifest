@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6103eddd038a0dcd1368ba1b464148ae ChangeLog 2917
 MD5 b0c86b38bbe5091e6f24dcb361170543 files/digest-flexbackup-1.2.0-r1 67
 MD5 156189bdeb1f9b8db71fa687b7c017bd files/digest-flexbackup-1.2.1 67
@@ -7,3 +10,10 @@ MD5 223e0f7ba00ac655d583e5a31668ae30 flexbackup-1.2.0-r1.ebuild 1139
 MD5 60fb6f8bbbc676243c8c633ac4c08671 flexbackup-1.2.1-r1.ebuild 1219
 MD5 50205fa8ce4a627f13590878011b7afa flexbackup-1.2.1.ebuild 1209
 MD5 879ea9a0091c88c494002224721b98bd metadata.xml 219
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDwWeQV3J2n04EauwRApgLAJ4vb33huwPMwciipo7X8Izad7uptgCgqruY
+Fnvn3PiYpNOMo9rpvJ36GbU=
+=BPh8
+-----END PGP SIGNATURE-----
