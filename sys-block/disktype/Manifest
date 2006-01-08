@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 244358bb33affcd990244adeba590715 ChangeLog 926
 MD5 293500188fc865355abd9f0c7a9a0eab disktype-8.ebuild 621
 MD5 447fa7f87b130ed587bf7224bd41498f files/digest-disktype-8 61
 MD5 ac09ff5648ac83e89b15ec8b94703517 metadata.xml 1372
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDwJvNmdTrptrqvGERAkdwAJ9FGMNl6iu8Bxcybx2tcshv2nmbYwCeMVdy
+EwmItjB3gql3zIRY+dxVj6c=
+=peTC
+-----END PGP SIGNATURE-----
