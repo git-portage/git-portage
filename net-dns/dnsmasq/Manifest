@@ -19,7 +19,7 @@ MD5 4b5657f628105447730b0fc0f5ac00be files/digest-dnsmasq-2.24 64
 MD5 9740ffe29b6d012b66cd2e532b8915ce files/digest-dnsmasq-2.5-r1 62
 MD5 39075dfeab4bbded5f0e8680df29e414 files/digest-dnsmasq-2.8-r1 63
 MD5 d48a297550b42f81be10bd5fcf4e15a7 files/digest-dnsmasq-2.9 63
-MD5 51224c4bafcccf490d6de12440f681e5 files/dnsmasq-init 504
+MD5 9146583bea2181855769bb4eaabeb2e3 files/dnsmasq-init 635
 MD5 fc1326c5ef78a5ba4a73f6261806579f files/dnsmasq.confd 339
 MD5 d1c7a35f0fe7e1e17d98990eec175b06 files/dnsmasq221-netlink.diff 337
 MD5 51334b67d2cbed22e0efec4143bc6ff0 metadata.xml 245
