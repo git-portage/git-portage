@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3ac811a25599402068f78956852bce51 ChangeLog 7181
 MD5 891b50cff5827a4e77573ee8f2f40e48 files/digest-nut-2.0.0 61
 MD5 891b50cff5827a4e77573ee8f2f40e48 files/digest-nut-2.0.0-r1 61
@@ -10,3 +13,10 @@ MD5 a961228140ef319b2ddba54d99b6e401 metadata.xml 219
 MD5 da6f6cfef1b75a5df4a46f8aa910e847 nut-2.0.0-r1.ebuild 3112
 MD5 7a4b25821ba8388e45f7fb67c8b8c54c nut-2.0.0.ebuild 3095
 MD5 ef7d65b48b1e528c421ad3fa4ad33bd1 nut-2.0.1_pre4.ebuild 3180
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDwWViV3J2n04EauwRAig+AKDMHnxveo36AwOmiCRu183FsjhpdgCdHqio
+37cvicYzNNTKqCGOczhnusw=
+=Ck7/
+-----END PGP SIGNATURE-----
