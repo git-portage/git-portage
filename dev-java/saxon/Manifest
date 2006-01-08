@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 506ad1b1ef5390e1e62e93c246a61b67 ChangeLog 918
 MD5 d202789d6c409cdf9b7ff6598a412e6c files/build-6.5.2.xml 2394
 MD5 e858aa507902d409b110be423e735339 files/build-8.4b.xml 4120
@@ -7,3 +10,10 @@ MD5 7bc2c04efaafba15df5fa9c221a00a29 files/saxon-8.4b-jikes.patch 795
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
 MD5 becc7c1b177c5096c7bafb4a810aef64 saxon-6.5.2.ebuild 1334
 MD5 04bc225bac83acfd82d6b7328ccf75d5 saxon-8.4b.ebuild 1393
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDwKOAndWRXhKOboURAmNlAKDKf7JJjSe0QJd4+wVAP3yIk1i6+gCfU0v9
+obT7f9Bu6xjFqQcvOJeq2Yc=
+=cjEQ
+-----END PGP SIGNATURE-----
