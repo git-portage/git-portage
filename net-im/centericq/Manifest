@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9f212891551f1b9e06b9fd2f4071e2b1 ChangeLog 12462
 MD5 f87bde9c0093587ef76f595a99652913 centericq-4.20.0-r2.ebuild 2492
 MD5 665a58f3929149c9064cd31a3c554601 centericq-4.20.0-r3.ebuild 2433
@@ -16,3 +19,10 @@ MD5 da3f03f51a55055f887cd8f39f4a3126 files/digest-centericq-4.21.0 70
 MD5 da3f03f51a55055f887cd8f39f4a3126 files/digest-centericq-4.21.0-r1 70
 MD5 da3f03f51a55055f887cd8f39f4a3126 files/digest-centericq-4.21.0-r2 70
 MD5 4588dc7b14345d6b88f07edc9d82c682 metadata.xml 555
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDwG4w8zY1VwezZiERAjYuAJ9f7NYg+qztrqTWrVmehJxZLlmo5QCfYjvz
+A+xhJHvF0FsIaLADbB989mw=
+=nGxL
+-----END PGP SIGNATURE-----
