@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b5773c14359042a174557eea8712c466 ChangeLog 3699
 MD5 9fc8ba8582cf5e04f67ee32ad9c8a967 files/1.03-r2/samples.ldif 1215
 MD5 180a513f34e3f00abc609672a190072c files/1.03-r3/99qmail 137
@@ -93,3 +96,10 @@ MD5 6a5e4949061fd67a21011d96a363193d qmail-ldap-1.03-r1.ebuild 11525
 MD5 d551e1aa3902aa345622c15cbf665ca9 qmail-ldap-1.03-r2.ebuild 11740
 MD5 56842746182247fa2d6013969a2e0fc3 qmail-ldap-1.03-r3.ebuild 10681
 MD5 22f9b0f5d8a4bbdd27ca6acb95927d37 qmail-ldap-1.03-r4.ebuild 11364
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDwV8WV3J2n04EauwRAkFxAKCPQf4z6MiQu2B8TkR/A8a+yq5DiwCgu7qG
+arqcqPW6Sz61yM/KDJmLIh8=
+=PEJP
+-----END PGP SIGNATURE-----
