@@ -1,4 +1,4 @@
-MD5 dc024b6c6048f3fea1d72684ce14988d ChangeLog 1877
+MD5 5a9f5b993eaac4429bf5becefa9cd593 ChangeLog 1995
 MD5 f4fd6e2650f6d50125b3e546a7c0a54b files/digest-pmd-1.5 61
 MD5 f4fd6e2650f6d50125b3e546a7c0a54b files/digest-pmd-1.5-r1 61
 MD5 9cd4c2c64ebddf354fb7475e86887505 files/digest-pmd-3.1 61
@@ -11,4 +11,4 @@ MD5 b131da5bb636d0aa455f681cad502d75 pmd-1.5-r1.ebuild 1092
 MD5 de5629bb3e4f74880b7481c1db6d1d2f pmd-1.5.ebuild 790
 MD5 c350d228faedf2333f206d7199e88222 pmd-3.1.ebuild 1448
 MD5 82d721c9d2e2aa35c109aa97f9eb2fcb pmd-3.3.ebuild 1684
-MD5 7d8998ae39761d277beb578dee500f5e pmd-3.4.ebuild 1689
+MD5 b22d516c96e95b9cd2c5dd5b1e3b3165 pmd-3.4.ebuild 1685
