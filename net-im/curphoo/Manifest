@@ -1,5 +1,5 @@
-MD5 3fc65d8a7759a87efcec2f29419ec74e ChangeLog 2990
-MD5 ca93ed18f18ebb5ae3c780bfd594cdc4 curphoo-0.3.12-r1.ebuild 1068
+MD5 dd7cd4c5c2fd9e9503da735e9a0e5549 ChangeLog 3093
+MD5 da177a35f2d16d647d5b625e77b6895d curphoo-0.3.12-r1.ebuild 1067
 MD5 122cab072db3abe0d1b856902409642f files/0.3.12-session-server-gentoo.patch 507
 MD5 1a18c568484293132a02204630d6324d files/curphoo.1 1755
 MD5 7bfb17e560e41bd3286ed9948e874972 files/curphoo.sh 113
