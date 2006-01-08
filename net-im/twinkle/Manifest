@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e7e9cac98b773cf57a24d132b4669ebc ChangeLog 1545
 MD5 dc5a3058857036eb5ca33a35819f1164 files/digest-twinkle-0.3.1 65
 MD5 7190799a48d4e6410e3b085f6060ec58 files/digest-twinkle-0.3.2 65
@@ -16,3 +19,10 @@ MD5 6927584c0ecd78f39a77a33016dc3df8 twinkle-0.3.2.ebuild 892
 MD5 10128ef335cfe934c39355c200ec03b7 twinkle-0.4.1.ebuild 995
 MD5 297ea0290e47908e78db0014f149a7fa twinkle-0.4.2.ebuild 1002
 MD5 6995f1b931149086ea52c506282c184a twinkle-0.5.ebuild 1000
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDwO3OmdTrptrqvGERAsn1AJsFLAr1Dk9vhzDtDmNmBJr9Zc7cLQCfcS4f
+6C3QwyRvwjwMNLKh5h3aSZo=
+=RP2j
+-----END PGP SIGNATURE-----
