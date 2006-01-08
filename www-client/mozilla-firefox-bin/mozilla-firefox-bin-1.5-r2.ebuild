@@ -1,20 +1,26 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-firefox-bin/Attic/mozilla-firefox-bin-1.5-r1.ebuild,v 1.3 2005/12/24 19:31:16 halcy0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-firefox-bin/Attic/mozilla-firefox-bin-1.5-r2.ebuild,v 1.1 2006/01/08 16:18:27 anarchy Exp $
 
-inherit eutils mozilla-launcher multilib
+inherit eutils mozilla-launcher multilib mozextension
+
+LANGS="ar ca cs da de el es-AR es-ES fi fr he it ja ko nb-NO nl pl pt-BR ro ru sk sl sv-SE tr zh-CN zh-TW"
 
 DESCRIPTION="Firefox Web Browser"
 SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${PV}/linux-i686/en-US/firefox-${PV}.tar.gz"
 HOMEPAGE="http://www.mozilla.org/projects/firefox"
 RESTRICT="nostrip"
 
+for X in ${LANGS} ; do
+	SRC_URI="${SRC_URI} linguas_${X}? ( http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${PV}/linux-i686/xpi/${X}.xpi )"
+done
+
 KEYWORDS="-* ~amd64 ~x86"
 SLOT="0"
 LICENSE="MPL-1.1 NPL-1.1"
 IUSE=""
 
-DEPEND="virtual/libc"
+DEPEND="app-arch/unzip"
 RDEPEND="|| ( (	x11-libs/libXrender
 		x11-libs/libXt
 		x11-libs/libXmu
@@ -30,7 +36,8 @@ RDEPEND="|| ( (	x11-libs/libXrender
 		>=app-emulation/emul-linux-x86-gtklibs-1.0
 	)
 	>=www-client/mozilla-launcher-1.41
-	=virtual/libstdc++-3.3"
+	=virtual/libstdc++-3.3
+	virtual/libc"
 
 S=${WORKDIR}/firefox
 
@@ -41,6 +48,15 @@ pkg_setup() {
 	has_multilib_profile && ABI="x86"
 }
 
+src_unpack() {
+	unpack firefox-${PV}.tar.gz
+
+	strip-linguas ${LANGS} en
+	for X in ${LINGUAS/en}; do
+		xpi_unpack ${X}.xpi
+	done
+}
+
 src_install() {
 	declare MOZILLA_FIVE_HOME=/opt/firefox
 
@@ -48,6 +64,20 @@ src_install() {
 	dodir ${MOZILLA_FIVE_HOME%/*}
 	touch ${S}/extensions/talkback@mozilla.org/chrome.manifest
 	mv ${S} ${D}${MOZILLA_FIVE_HOME}
+
+	# Locale support
+	strip-linguas ${LANGS} en
+	for X in ${LINGUAS/en}; do
+		xpi_install ${WORKDIR}/${X}
+	done
+
+	if [ -n ${LINGUAS%% *} ] && [ "${LINGUAS%% *}" != "en" ]; then
+		ebegin "Setting default locale to ${LINGUAS%% *}"
+		sed -i "s:pref(\"general.useragent.locale\", \"en-US\"):pref(\"general.useragent.locale\", \"${LINGUAS%% *}\"):" \
+			${D}${MOZILLA_FIVE_HOME}/defaults/pref/firefox.js \
+			${D}${MOZILLA_FIVE_HOME}/defaults/pref/firefox-l10n.js
+		eend $? || die "sed failed to changed locale"
+	fi
 
 	# Create /usr/bin/firefox-bin
 	install_mozilla_launcher_stub firefox-bin ${MOZILLA_FIVE_HOME}
