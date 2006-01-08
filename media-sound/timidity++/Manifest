@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a2b226de8022eccf954f82b8f04852cd ChangeLog 9165
 MD5 dbfc5d45b6177ffaf7dd74d4971a520a files/conf.d.timidity 912
 MD5 2762e58e610bb861189b3d6b424312fc files/digest-timidity++-2.13.2 71
@@ -12,3 +15,10 @@ MD5 80fb82d4216373cbf4efafd7719628e0 files/timidity.cfg-r1 669
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 64139cf755355defe1357cfe9ccc0099 timidity++-2.13.2-r2.ebuild 4096
 MD5 9cb6f48c3571e0ef7446942fab32b3b3 timidity++-2.13.2.ebuild 3822
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDwJLu2+ySkm8kpY0RAgM7AJ4tDlqIj3ov/4ZjFqGs81WvIIhJBgCfcbdf
+cEY+g24bt7bsvBPvzNuKF/o=
+=7zgI
+-----END PGP SIGNATURE-----
