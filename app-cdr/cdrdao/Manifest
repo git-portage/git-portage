@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e9682f41c033304dab3faf5635236de7 ChangeLog 11688
 MD5 0c1971384fcc8685d250e89c0f0c3d88 cdrdao-1.1.7-r3.ebuild 2996
 MD5 64512dea0ed843a5ef724b3c56703c20 cdrdao-1.1.9-r2.ebuild 1970
@@ -23,3 +26,10 @@ MD5 45fa9680f74df7e54494cf8ebd0842d3 files/digest-cdrdao-1.2.1 65
 MD5 45fa9680f74df7e54494cf8ebd0842d3 files/digest-cdrdao-1.2.1-r1 65
 MD5 bfcab12a6211829eb71aa6ee3d0245be files/gcdmaster.desktop 127
 MD5 dbe5456b02450a781ff76c4ffc65fcec metadata.xml 319
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDwVVaoFw4q70f3SsRAqMaAKCxqiLWZHdFGHeEgP20zv+4FvuqOgCeO6xn
+O+gKo7ePszDb4/tRSmX3RAI=
+=ufLw
+-----END PGP SIGNATURE-----
