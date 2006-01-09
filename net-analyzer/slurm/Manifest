@@ -1,4 +1,4 @@
-MD5 e1f7a17daa6deed927121e37a6c3b0fa ChangeLog 2342
+MD5 429295b07171174b9af86fcf4b4ddcac ChangeLog 2520
 MD5 8a743905ff4f988e739f163cfed42e89 files/digest-slurm-0.3.3 63
 MD5 a96a9c0d4be659091bc997c67c36d781 metadata.xml 258
-MD5 6107c013b88a4573f2ad6e9bf97cc8de slurm-0.3.3.ebuild 770
+MD5 f04c5355e62592fbfdd367cfaac53211 slurm-0.3.3.ebuild 775
