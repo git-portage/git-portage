@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 139fd0489b45828efb3d9374f528e974 ChangeLog 10622
 MD5 cc109a746273bc0d6aee9d758e7524ab files/bgpd.init 900
 MD5 8550c2f78b4c3ba7ba66c6bcb0bf4913 files/digest-quagga-0.98.4 147
@@ -15,3 +18,10 @@ MD5 f0c8f9afaf3bbefcea71ff3b6fa139c4 metadata.xml 1389
 MD5 e3212aca12f84a5cd7164e7727020318 quagga-0.98.4.ebuild 4438
 MD5 9927651424dd0548ba520a169d1afa88 quagga-0.98.5-r1.ebuild 4901
 MD5 2d3296289e42656d7a1f9c313bf1da36 quagga-0.98.5-r2.ebuild 5012
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDwmX+jG8pv1lIUX4RAj4mAJ4w8OrrVxNvdpMS1KKUmCUT08XnZwCcDlwa
+5EdBZFR4C8/+ONGAGYRkigE=
+=UaM5
+-----END PGP SIGNATURE-----
