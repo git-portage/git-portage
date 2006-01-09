@@ -1,0 +1,5 @@
+MD5 9c3086bcff0417e08ef1cd1bb0d410a1 files/digest-ndsad-1.33 59
+MD5 3bf001b31963c71c751be8805e2e3078 files/ndsad.conf.d 178
+MD5 008744c239e9c8914f3f95034fd9bdb9 files/ndsad.init 571
+MD5 fa7efd48634c9e35a244007890eb63bf metadata.xml 545
+MD5 0b926d02f1b9a87164f7fdd2069ed8bb ndsad-1.33.ebuild 1442
