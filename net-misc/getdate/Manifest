@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f5e31ebb3350a71f12829d30d45f3f2d ChangeLog 1155
 MD5 d2ce55fde628cfd4d7493625da97c22e files/digest-getdate-1.2 68
 MD5 c73958bf8452f120e072f78bffbb0dd0 getdate-1.2.ebuild 787
 MD5 dffd46174e78b327c834fc3e4b1cf848 metadata.xml 160
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDwpqcugEuf3OQ0akRAgDYAKCSzYAf+cv71thOzTtG3eYcATBaKwCfTt8O
+z8DfgIHH3uwNgs7ixvl65bw=
+=um3z
+-----END PGP SIGNATURE-----
