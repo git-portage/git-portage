@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 729e9e1e2899ab9861ca42d4e722e391 ChangeLog 6589
 MD5 a64b9a1937a5cfc2fbaf373521f65d47 metadata.xml 223
 MD5 028f168b40983177f6460d8e579e5487 drbd-0.6.12-r1.ebuild 2147
@@ -17,3 +20,10 @@ MD5 96f405e763a4e7f0735cedc0277c3703 files/digest-drbd-0.7.10 63
 MD5 58cd0979a7f3222afae119b1c4f35939 files/digest-drbd-0.7.11 63
 MD5 3e85c9a71ad19acd37dccb48d7b1da92 files/digest-drbd-0.7.14 63
 MD5 d94cde508a8950d7241a41bc15739a22 files/digest-drbd-0.7.15 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDwdkNgMUyd/cdjWsRAurHAJ0f2b/iKNN1F/cF1fNj8AtPGEvRUACeIas3
+aoTrKiI2HGsthvWCdP/DSsU=
+=QVyN
+-----END PGP SIGNATURE-----
