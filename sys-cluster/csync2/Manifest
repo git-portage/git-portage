@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9dffcb750e6e7d20097a5401b87c0d08 csync2-1.16.ebuild 1278
 MD5 a64b9a1937a5cfc2fbaf373521f65d47 metadata.xml 223
 MD5 8f33ce8b0de4adb96f9b3f1988b485d4 ChangeLog 1235
@@ -9,3 +12,10 @@ MD5 4f935e316a184e40ddf6dfd0f386c761 files/digest-csync2-1.16 62
 MD5 204c4e198fb5a256de4f61c6069a862b files/digest-csync2-1.22 63
 MD5 8fe2d3ad1d8b14adfaa878252ca38430 files/digest-csync2-1.26 63
 MD5 ef30595753fb34c69ed854d074ea69d4 files/digest-csync2-1.29 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDwecagMUyd/cdjWsRAlR4AJ0fywcGuNRwFK+neMZc3IKQ8d8+DgCeKa58
+OB/HNqDfkE5vwBKmC0kKP2E=
+=CjkX
+-----END PGP SIGNATURE-----
