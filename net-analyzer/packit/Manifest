@@ -1,4 +1,4 @@
 MD5 0485b0eca49f2f766aa86d2d61d7c5af ChangeLog 2328
-MD5 828add64d896c29b87566ae8c0842d9d metadata.xml 291
-MD5 613e2fcaad8a2153c6501da100641f4a packit-1.0.ebuild 787
 MD5 7eb74f02f5f953dd695526486d7ceed6 files/digest-packit-1.0 59
+MD5 828add64d896c29b87566ae8c0842d9d metadata.xml 291
+MD5 b1da88b3cb01ca321806821abc0f95eb packit-1.0.ebuild 772
