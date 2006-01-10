@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2744da33da384b50b422a17ecea49c8e ChangeLog 15007
 MD5 94b7b5a9e866775b5f76d1c0d672a414 cyrus-imapd-2.2.10-r1.ebuild 9134
 MD5 ced6ee910436e03f72d9d0bc72ea1b9b cyrus-imapd-2.2.10.ebuild 8735
@@ -26,3 +29,10 @@ MD5 0b3de6cdb50c6422f35588a9f8a5c5dc files/digest-cyrus-imapd-2.3.1 70
 MD5 ef68faa77664a88f939cee2f12019507 files/imap.pam 195
 MD5 66137eb399ec7760afc24491a10d8bd7 files/imapd.conf 1587
 MD5 5721b86fd871bdfab77231abc6e02f68 metadata.xml 161
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDxBoL5FrxP71izLARAtZqAKC5KLek+mt31fjtCkPYBJ9mUQ/QOgCfessm
+xzLZnQJVNY9fso+MG2H6DrA=
+=IkEE
+-----END PGP SIGNATURE-----
