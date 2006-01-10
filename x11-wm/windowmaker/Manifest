@@ -1,4 +1,4 @@
-MD5 d5ed0a89a9e11f827ec8e469a1be9b91 ChangeLog 15110
+MD5 778f741143423fb239d69ee176cbaf36 ChangeLog 15424
 MD5 c8eb68627dc7b53b10143626018ff597 files/0.80.2/gtk2flickerfix.patch 1969
 MD5 a42a33a349ca84fb6e2cc5fdbd627b99 files/0.80.2/trance.patch.WM-0.80.2.diff 9738
 MD5 9a5c9f1b2b44a678526f0fd71b2cf51d files/0.80.2/windowmaker-0.80.2-r1-gentoo.patch 4331
@@ -25,4 +25,4 @@ MD5 056f320591b95b4adaec5b906ae25035 windowmaker-0.80.2-r4.ebuild 4094
 MD5 0b7d5f0f23bea9a4793a92f25117d9f3 windowmaker-0.91.0-r1.ebuild 5881
 MD5 6dfb07e767918268038ad952d0e38029 windowmaker-0.91.0-r7.ebuild 6800
 MD5 7cd4046827ba9b7b99679af4c0a14586 windowmaker-0.92.0-r1.ebuild 5354
-MD5 8790202f6340404b6cc4bc2370364ba0 windowmaker-0.92.0-r2.ebuild 5089
+MD5 21e5037aa8d2c458702857a109ed3530 windowmaker-0.92.0-r2.ebuild 5199
