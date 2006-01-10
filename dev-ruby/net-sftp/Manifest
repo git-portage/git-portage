@@ -5,4 +5,4 @@ MD5 7fa372e3d0bf9637bd33f771adea1aa2 files/digest-net-sftp-1.1.0 62
 MD5 361f6d725852fb94bd54b66b6a48cea1 metadata.xml 254
 MD5 9486f318a6454554012b6353260fc0a4 net-sftp-1.0.0.ebuild 476
 MD5 08526223630b54b36a6c90132ffcb11c net-sftp-1.0.1.ebuild 471
-MD5 0fb7ae23d1b169660cc063972ba6b9ce net-sftp-1.1.0.ebuild 466
+MD5 020b84006167be624b54d50970452376 net-sftp-1.1.0.ebuild 366
