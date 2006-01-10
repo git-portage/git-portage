@@ -8,4 +8,4 @@ MD5 34f51a4e22b9c551e4d20d56daf45c85 files/digest-trac-0.9.3 62
 MD5 fc3b5dec4ccef02547c54bf840024aa6 metadata.xml 220
 MD5 dc7f3171220dede396380a7d76b9d5e0 trac-0.8.2.ebuild 1838
 MD5 f605a49aef73a61cbcc7527da21fd418 trac-0.8.4.ebuild 1511
-MD5 5caabce057680cffae7e2d4355bae3e3 trac-0.9.3.ebuild 2205
+MD5 87695f91ea09812f5c4e7b97e96edcd5 trac-0.9.3.ebuild 2204
