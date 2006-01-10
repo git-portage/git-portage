@@ -1,4 +1,4 @@
-MD5 141e115247cb7e4f02e114676ea8f169 ChangeLog 1556
+MD5 0bdb1e5198e80f7037eb9281ce8ffe3b ChangeLog 1695
 MD5 d1973ea3781773cbbe8510ea648ddb19 files/digest-mserv-0.35 62
 MD5 d1973ea3781773cbbe8510ea648ddb19 files/digest-mserv-0.35-r1 62
 MD5 d5465c51ab8fd155dab29a702c04897a files/mserv-0.35-acl 52
@@ -9,5 +9,5 @@ MD5 80c9282eed058c3239f45586473cbf70 files/mserv-0.35-mservplay.patch 430
 MD5 bab25861d10f61d56534a40883052be3 files/mserv-0.35-paths.patch 2673
 MD5 a823115f64db37b88b25a3689b0f9e19 files/mserv-0.35-webacl 39
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
-MD5 998033fd42a1554e7db9de7309100c98 mserv-0.35-r1.ebuild 2494
+MD5 de6f612fe93d5d475791003e58184f92 mserv-0.35-r1.ebuild 2592
 MD5 6a26beb7d45a4d3c335db226d08c4329 mserv-0.35.ebuild 2556
