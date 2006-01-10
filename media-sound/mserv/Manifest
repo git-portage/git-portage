@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0bdb1e5198e80f7037eb9281ce8ffe3b ChangeLog 1695
 MD5 d1973ea3781773cbbe8510ea648ddb19 files/digest-mserv-0.35 62
 MD5 d1973ea3781773cbbe8510ea648ddb19 files/digest-mserv-0.35-r1 62
@@ -11,3 +14,10 @@ MD5 a823115f64db37b88b25a3689b0f9e19 files/mserv-0.35-webacl 39
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 de6f612fe93d5d475791003e58184f92 mserv-0.35-r1.ebuild 2592
 MD5 6a26beb7d45a4d3c335db226d08c4329 mserv-0.35.ebuild 2556
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDw+nbEzitwsaoONoRAoBfAKCyOL56t9Giv5s9NeWyxGbR19cJWwCfcRsa
+YfiuJDD9SHIRXPPtvtLDZ90=
+=zECq
+-----END PGP SIGNATURE-----
