@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 778f741143423fb239d69ee176cbaf36 ChangeLog 15424
 MD5 c8eb68627dc7b53b10143626018ff597 files/0.80.2/gtk2flickerfix.patch 1969
 MD5 a42a33a349ca84fb6e2cc5fdbd627b99 files/0.80.2/trance.patch.WM-0.80.2.diff 9738
@@ -26,3 +29,10 @@ MD5 0b7d5f0f23bea9a4793a92f25117d9f3 windowmaker-0.91.0-r1.ebuild 5881
 MD5 6dfb07e767918268038ad952d0e38029 windowmaker-0.91.0-r7.ebuild 6800
 MD5 7cd4046827ba9b7b99679af4c0a14586 windowmaker-0.92.0-r1.ebuild 5354
 MD5 21e5037aa8d2c458702857a109ed3530 windowmaker-0.92.0-r2.ebuild 5199
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDwwjwwUpWvClEHQoRAjpLAJsFs5HrSufX5jUkLOeOYBEiAFj8KQCfVYpZ
+/cFplHT8jVSznmRyb4wHyeM=
+=99Mj
+-----END PGP SIGNATURE-----
