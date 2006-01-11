@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6c07ad3c79eb948db8c3378f1a102852 ChangeLog 4122
 MD5 3a97850f5f76e1bd8fe6082fc70e091d files/digest-ipython-0.6.13 66
 MD5 7631bba5e54a813acc27c705fd86f421 files/digest-ipython-0.6.14 66
@@ -8,3 +11,10 @@ MD5 d35091ccc91d50ef92c780b8633b6b80 ipython-0.6.14.ebuild 564
 MD5 0c5977f87953185844d6400f6e54eb39 ipython-0.6.15.ebuild 560
 MD5 c0b4a2fdbef59e1a9c8a8a44b126e8a2 ipython-0.7.0.ebuild 569
 MD5 06bf581552d6f6debd761e5135c4cc68 metadata.xml 2253
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDxVEzW78445TWHXcRAj9JAKCCgH702pTlNyQ1eGVUdLjGb9DoGwCgiT41
+LK1JszRRsBEswCcYmBgh5z8=
+=+KY7
+-----END PGP SIGNATURE-----
