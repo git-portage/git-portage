@@ -1,4 +1,4 @@
-MD5 3f24582e03fb2f85825f76f16b2bffd3 ChangeLog 26986
+MD5 d97586a9d31544059eebcce88ef77264 ChangeLog 27128
 MD5 743b9535636a8b39507545bc03a1a265 files/digest-sylpheed-claws-1.0.5-r1 74
 MD5 a72739cfabebb4db4cd7f05261380027 files/digest-sylpheed-claws-1.9.100 76
 MD5 5e3551b9ba068cb0188878c84d1c1c17 files/digest-sylpheed-claws-1.9.15 75
@@ -11,4 +11,4 @@ MD5 484135355470bc01da2f593d635fc6c0 sylpheed-claws-1.0.5-r1.ebuild 3899
 MD5 4f0ae36e6d0c516d74d40586435554ee sylpheed-claws-1.9.100.ebuild 4450
 MD5 15b5c9348ba0b0a416892588256b4cbc sylpheed-claws-1.9.15.ebuild 4821
 MD5 9e71fa0c613ff0ce3b614d5c31e3c1e6 sylpheed-claws-2.0.0_rc1.ebuild 4451
-MD5 ddb242a1f9d676a8f3a1618f1c6ccd6d sylpheed-claws-2.0.0_rc3.ebuild 4452
+MD5 f1a2abfbd73aa9e89231381377668d10 sylpheed-claws-2.0.0_rc3.ebuild 4452
