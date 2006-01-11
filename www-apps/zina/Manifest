@@ -1,0 +1,5 @@
+MD5 1d89b8b9051e497bc38fc1c27fc23440 ChangeLog 319
+MD5 e72ee361fb9ad68fdbf39316f6e4c8ed files/digest-zina-0.12.10 64
+MD5 08a93be061fd007465da62f0c269109f files/postinstall-en.txt 1073
+MD5 c339473e0ff43da76eb2f2607c441921 metadata.xml 280
+MD5 122704da8502f8fb8e3d67d08f59f89c zina-0.12.10.ebuild 995
