@@ -1,4 +1,4 @@
-MD5 36f4bd4474bb14e459faae45bf92bfd3 ChangeLog 1200
+MD5 df3719176d524ab857d573e08f84715d ChangeLog 1199
 MD5 2b340edcc01d9e1afddcf52d7cc5cb32 files/digest-pecl-memcache-2.0.0 62
 MD5 c58d07ca1c1235bbad9bccaec96fc062 metadata.xml 157
-MD5 bf6dbdb2d8445efc8676bbc572915d0e pecl-memcache-2.0.0.ebuild 773
+MD5 c61614e10e23309da3cb7c7a2381499e pecl-memcache-2.0.0.ebuild 772
