@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 be6227cfe727badb1a5c03a54f41e921 ChangeLog 3217
 MD5 bcefbe9c96d7d7044dfdd9e430156786 files/digest-glademm-0.6.4 67
 MD5 34d6c3ac9817acb1763ff8020a18e0e4 files/digest-glademm-2.0.0 65
@@ -12,3 +15,10 @@ MD5 0fd9ab9faf9b687341e75a3625b20897 glademm-2.0.0.1.ebuild 654
 MD5 5c9e298b3f16893f52b6bb9790ffb650 glademm-2.0.0.ebuild 641
 MD5 e3f7410ce998baf0857c5caba89f5d63 glademm-2.6.0.ebuild 734
 MD5 d55015f2e0ee69e92ab287320c27c5b2 metadata.xml 161
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDxJjxCRZPokWLroQRArtsAJ4kGhS1zBvZaE1Crm4rKrS+MpqnsQCg5oQy
+waJ4J+g8P7L98njQT2Z+Caw=
+=OCqF
+-----END PGP SIGNATURE-----
