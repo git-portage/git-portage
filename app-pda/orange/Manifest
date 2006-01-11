@@ -1,14 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 cb1feccf2d08f0d3b6021d5b5b25b6d8 orange-0.2-r1.ebuild 788
-MD5 de6165bd00e440fd93135692763ce33f metadata.xml 338
 MD5 fca23f2156492e53a3c197757baed4de ChangeLog 1137
 MD5 3339a3a1177eae3ebf876657ef36d831 files/digest-orange-0.2-r1 62
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDwaA3FdQwWVoAgN4RAj7AAKCGQqKpEy7PECVrp1TMu7PRjKZKHwCg1qa0
-XnGHF6vo7BfctKvvBuBpoAs=
-=dmrS
------END PGP SIGNATURE-----
+MD5 8c1be2b186b6053740eb3f0eb36be86c files/digest-orange-0.3 62
+MD5 de6165bd00e440fd93135692763ce33f metadata.xml 338
+MD5 cb1feccf2d08f0d3b6021d5b5b25b6d8 orange-0.2-r1.ebuild 788
+MD5 ae5b348a9aab094ad1e09fc6bc5bcda3 orange-0.3.ebuild 730
