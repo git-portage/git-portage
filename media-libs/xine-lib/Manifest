@@ -1,4 +1,4 @@
-MD5 f2987008148c645fdd777623a5331e81 ChangeLog 22493
+MD5 ce2ca46a6ed746366e088e33f9672a4c ChangeLog 22637
 MD5 943fd105ac79aeededd17357690d76bc files/CVE-2005-4048.patch 3426
 MD5 33da8deb9637be23cd464aba9c5c4ac4 files/digest-xine-lib-1.1.0 137
 MD5 60ba654646d7fd13683362fa0121bbd3 files/digest-xine-lib-1.1.1-r2 138
@@ -10,5 +10,5 @@ MD5 40462be9f1caff6326630fc3b93e7105 metadata.xml 330
 MD5 3e7009cff141eff5526219bfc185ece9 xine-lib-1.1.0.ebuild 7254
 MD5 d876573d0c98143ef9fe1272aa6df29d xine-lib-1.1.1-r2.ebuild 6761
 MD5 5ca805419411d2215b6136f71672feae xine-lib-1.1.1-r3.ebuild 7146
-MD5 1cba6bf1c5bc674786721bbef7c7fd09 xine-lib-1.1.1-r4.ebuild 7217
+MD5 6316e31f50bb0f8d8f745f8e86aca9ec xine-lib-1.1.1-r4.ebuild 7217
 MD5 9763f892b768b1c556fb311680ede798 xine-lib-1_rc8-r2.ebuild 5278
