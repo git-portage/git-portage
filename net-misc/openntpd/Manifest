@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 69ddea1111f7ab8e44798f61ab57135b ChangeLog 2946
 MD5 71e8d0be6ce1e3324576b9ddce02c74e files/3.6.1_p1-ntpd.8.patch 664
 MD5 8ff46ca71725c4c9ccbdaed5ecbd8ea3 files/3.6.1_p1-pollerr.patch 1218
@@ -7,3 +10,10 @@ MD5 9cb3424ed5b3f20a231d581b78629afb files/openntpd.conf.d 257
 MD5 31c9feba04713eebbe16cd1979fca83d files/openntpd.rc 918
 MD5 5b2bb7e8dd4728c8a2dadedec85df4a3 openntpd-3.6.1_p1-r1.ebuild 1202
 MD5 9bfe9bba92a9a831d94acc2a86607e9c openntpd-3.7_p1.ebuild 1211
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDxa4T2+ySkm8kpY0RAlkFAJ4g8sypCfh1ZLBfA2IRBrNCrFL4sgCgkrgT
+VN87uQXP5WptYX3vR9D9YcY=
+=SUf+
+-----END PGP SIGNATURE-----
