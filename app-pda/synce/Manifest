@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ad4aa6d7d5b6e40e59af0b17f1fd92b3 synce-0.9.1.ebuild 796
 MD5 1c3f5b664886e9d3869dc472b195cb7e synce-0.8.4.ebuild 790
 MD5 075fea99b82d61028585dc3e42f00466 metadata.xml 156
@@ -10,3 +13,10 @@ MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-synce-0.8.4 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-synce-0.9.0 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-synce-0.8.4-r1 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-synce-0.9.1 0
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDxn+zFdQwWVoAgN4RAhMCAJ9wzEUbOc3dzfuNM3X5OESNN7lh1wCfXtAV
+NuyUb22kOqi4/zh8yeIn7AE=
+=2JGQ
+-----END PGP SIGNATURE-----
