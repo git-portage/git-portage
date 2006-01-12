@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 fea9249baebbbdc6b77fddb3f1767ecf ChangeLog 2596
 MD5 4b8b1c61ee0756b730105821afcae4e6 files/apmiser.rc 560
 MD5 4a6eccb7b79fc6b89897fa42a9d63835 files/digest-tpctl-3.2 60
@@ -14,3 +17,10 @@ MD5 3419199a9b7da60895caf80c894ab27d tpctl-4.2.ebuild 1478
 MD5 fefbcf9dbfd273ce24af45381bdfa0c7 tpctl-4.4-r1.ebuild 1620
 MD5 8a137ec2e81e6384c845860483dfca1f tpctl-4.4.ebuild 1476
 MD5 e39dfb3bb70c1820ffa4a8c2932fb4a8 tpctl-4.8.ebuild 1615
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDxaeBAiZjviIA2XgRAu64AJoDqS2NG5XPQJNpM8gcVG0iDkSDRwCfRLd2
+yVsa39wOHapHJQz1mNAplhY=
+=uIVf
+-----END PGP SIGNATURE-----
