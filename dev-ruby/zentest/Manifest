@@ -1,0 +1,4 @@
+MD5 bc4555bf727139c3f7438eaf985ae3e3 files/digest-zentest-2.4.0 64
+MD5 e5c108bddf744de7e90e909de63f5077 files/zentest-dirfix.diff 532
+MD5 c56c2f62ee21f47e83389abe1062f872 files/zentest-fixrubyloc.diff 257
+MD5 f31b8b3b3be7e7eeb8359c7d3241d6f6 zentest-2.4.0.ebuild 887
