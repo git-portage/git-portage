@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 64bd7484c929504c96d1ab8d1ab476d5 ChangeLog 6562
 MD5 21abc06a6e969b1a6b5b1ca2f1f09474 files/digest-libdv-0.101 63
 MD5 d577f2ed689030f4f13088422f1fa185 files/digest-libdv-0.102 63
@@ -14,3 +17,10 @@ MD5 f601692a9022cae65ad5fc88a6fa9be2 libdv-0.104-r1.ebuild 1434
 MD5 4b6f2ab5770ea5c031c0cebdcd4e3c90 libdv-0.104.ebuild 1225
 MD5 9eddaa9f84b052f62b463beadff4dfe7 libdv-0.99-r1.ebuild 1169
 MD5 526f11a066c4a4c196484c623e3aa5c5 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFDx8ooKRy60XGEcJIRAnnWAKCAy7vC/pS78DBVUVEQa7XFOV1NzgCeLCnS
+8OKGRSu/VpI3jxuOFD81kt8=
+=1ODB
+-----END PGP SIGNATURE-----
