@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b2d8a6d1549bd8c4feefad5045c39765 ChangeLog 7103
 MD5 f138047c23306296259dd46c6a272ef3 files/digest-gentoo-vdr-scripts-0.2 70
 MD5 e4a3058940d9d891326a79470f2fabc7 files/digest-gentoo-vdr-scripts-0.2.1 72
@@ -12,3 +15,10 @@ MD5 1b50c10a7fd9a43654b499e2be7bdb20 gentoo-vdr-scripts-0.2.ebuild 2603
 MD5 ec1ce06424309ad5e140f08aed08e794 gentoo-vdr-scripts-0.2_alpha3-r1.ebuild 2034
 MD5 533633a9538a3421e177f69a110d1e83 gentoo-vdr-scripts-0.2_alpha3.ebuild 1406
 MD5 a973dfa1638779880ca99f1c1435cac7 metadata.xml 259
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDx2i7ZfSl1Kp5KmoRAk87AJ406Vb5fh2JBf6kLgTLimxUed/fQACg5o9G
+erkVHlWb9rEXwEF0FhrPZpo=
+=W+Ln
+-----END PGP SIGNATURE-----
