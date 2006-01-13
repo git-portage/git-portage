@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3fbcf2fb6955b94129673721a4d39ad7 ChangeLog 29563
 MD5 1c5cd53cb89c821a549968bac31df0f1 files/depreorder.py 2235
 MD5 f3f370c8d1382c1a7571cfc1cbb196d9 files/digest-python-2.1.3-r1 62
@@ -62,3 +65,10 @@ MD5 eb681c731b011f69718d04351d341741 python-2.4-r3.ebuild 7355
 MD5 ee21268fe5f633029a2575a6e0808d75 python-2.4.1-r1.ebuild 9144
 MD5 83d5f6cfce039d87c651dbad4224912a python-2.4.1.ebuild 8344
 MD5 f9de6829c64c8f780d4c3b90ea5105a9 python-2.4.2.ebuild 9234
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDx12o2+ySkm8kpY0RAkCSAJ9YBjPsh+lbYby/J63H81iEYVGy0ACfZpx5
+Pi4bYvevLzX9ugjMVNBCwZ8=
+=AZyc
+-----END PGP SIGNATURE-----
