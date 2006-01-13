@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0a7da5d6056d9a67933b9884bf2b682b ChangeLog 10100
 MD5 dcdc16c0a53303167229ad2749c591a8 elfutils-0.108-r1.ebuild 1745
 MD5 8162d8d05d72f5c542bb943ccc5581b4 elfutils-0.108.ebuild 1728
@@ -12,3 +15,10 @@ MD5 c96d3cf0593d10e4994829b1bfe3995b files/elfutils-0.118-PaX-support.patch 954
 MD5 fa69d386e8ae35fe375ce49897b1d3e2 files/elfutils-0.118-libelf-link.patch 1495
 MD5 0228df51885bf33b7ef07cf3ee5db319 files/elfutils-0.118-no-nested-functions.patch 1961
 MD5 567094e03359ffc1c95af7356395228d metadata.xml 162
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDx2fn2+ySkm8kpY0RAhz1AJ9OIxvy0hBFu5tPDgNVoGYrNwwTgQCgrnOs
+cdgeX4Ox+fx3FruF6nOuF34=
+=bLz+
+-----END PGP SIGNATURE-----
