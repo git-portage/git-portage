@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 62d96b22c76c5f1158dc2f97b8d5fd25 ChangeLog 10051
 MD5 1f399235f11cf563eae5d9ca1085b5b2 files/alevtd-style-mozilla.diff 307
 MD5 e115a525876d643613edd9306ecbc01d files/digest-xawtv-3.86-r2 205
@@ -18,3 +21,10 @@ MD5 b656c9ce1bf60ab75f08e8b4beff94a3 xawtv-3.86-r2.ebuild 2151
 MD5 ddaee2d76f650fa8b2839b5c103c68ec xawtv-3.94-r1.ebuild 2347
 MD5 712f090edf08fcb884b58b94a7ff7666 xawtv-3.94-r2.ebuild 2988
 MD5 e970779c66d008c21cb6b1a650d4a316 xawtv-3.95.ebuild 3662
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDx6+4AiZjviIA2XgRAhtgAJsHRCimpL1x689spZw45dsjwpDJ/QCfbC35
+S9B0ElZoxxbLXEL8Bk0ysds=
+=jc2+
+-----END PGP SIGNATURE-----
