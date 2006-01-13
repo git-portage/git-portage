@@ -1,4 +1,6 @@
 MD5 d0323a66c9a85749331f603165ee4d55 ChangeLog 777
 MD5 793d84ccd47c3bb32450c0f6408fd6b5 files/digest-wxperl-0.22 59
+MD5 e52b67e1688aac0e57738caf265d22b6 files/digest-wxperl-0.27 59
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 1969ec8f9a1d8fe268f9fe59917ba377 wxperl-0.22.ebuild 768
+MD5 fbe61952ef23d52b2aa7b031bd609286 wxperl-0.27.ebuild 669
