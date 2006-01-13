@@ -5,6 +5,6 @@ MD5 242b88f25a0dc329fb64272ddf5a3d40 files/digest-jhead-2.5 60
 MD5 7b4626f3d33f81e78651e4e78cd6032c files/jhead-2.4-gcc4.diff 5559
 MD5 78553c79093dbd7cb0a3f1e1ef461076 files/jhead-2.5-gcc4.diff 1492
 MD5 088f32d3a102d96ca5231db2c396e0d7 jhead-2.2.ebuild 791
-MD5 ac71d330f94996b9645721e1eec813cc jhead-2.4.ebuild 857
-MD5 4e2f87f51c6fb44fc750c22731ec5357 jhead-2.5.ebuild 885
+MD5 7475882539416cae62b72765d246ca7b jhead-2.4.ebuild 883
+MD5 8fa821cc84072e2ea6267e941f79db80 jhead-2.5.ebuild 911
 MD5 daf676490886bcebc03a96609cd21923 metadata.xml 227
