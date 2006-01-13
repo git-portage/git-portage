@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ab7fb139d74522b50fc1f373a708b7c1 ChangeLog 10540
 MD5 047fe77e01bc9335b07bcc5d963d8683 files/4.1.2-droproot.patch 12672
 MD5 0ac690ae52fe02f336ae73f9857461ec files/4.2.0-droproot.patch 13908
@@ -31,3 +34,10 @@ MD5 4874c08acda470ce7373d36b64c39c09 ntp-4.1.2.ebuild 3162
 MD5 7e567989a1392464a324fd0cd64e54a3 ntp-4.2.0-r2.ebuild 3815
 MD5 92e2cb55c1c98f39c61e6d88c464ff17 ntp-4.2.0.20040617-r3.ebuild 4248
 MD5 c833f076378515e568dac37ac729f0f7 ntp-4.2.0.20050303-r1.ebuild 4284
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDx4aF2+ySkm8kpY0RAqUXAJ95SObvE2HgjYWblyym2PM2CkAokgCcCgph
+F81MDOWirJSNV2bMmrSwuls=
+=+nM8
+-----END PGP SIGNATURE-----
