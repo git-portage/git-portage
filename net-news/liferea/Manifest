@@ -1,4 +1,4 @@
-MD5 add95c0f99aa36d9a29e3a99c106c59b ChangeLog 8804
+MD5 ef6f3a499e570b548f7978e51ce74ad7 ChangeLog 8806
 MD5 ca0f3d49b323b6401d4b75e56fb151fe files/digest-liferea-0.9.6 66
 MD5 e79d04e2dcb1066bf83edf55b9b1e9f7 files/digest-liferea-0.9.7a 67
 MD5 4d464b035de4131b12167c6ce4a1dffd files/digest-liferea-0.9.7b 67
@@ -11,7 +11,7 @@ MD5 86662e7c1f5a7d08669b0d6c729de55a files/liferea-firefox-1.5.patch 650
 MD5 848125241aa76ebb1329aac056983151 liferea-0.9.6.ebuild 757
 MD5 78a818f82f583f893b65118fec404ff7 liferea-0.9.7a.ebuild 1647
 MD5 7403b38f1f62d15594acf84a395f7c5f liferea-0.9.7b.ebuild 1646
-MD5 6374fcd25d269d259ef6455138a42dac liferea-1.0-r1.ebuild 1751
+MD5 bffcbdddf3249f9fc59d74216e3140b4 liferea-1.0-r1.ebuild 1855
 MD5 391508720123ff6001823e9ff1d05a61 liferea-1.0.ebuild 1643
 MD5 b529e5920b2ec3ddd5cdc901d0d2a425 liferea-1.0_rc2.ebuild 1695
 MD5 208c62688dcb41b305fb84c70218c4d5 liferea-1.0_rc3.ebuild 1695
