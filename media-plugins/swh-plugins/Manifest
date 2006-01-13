@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b052d47a683e0eb254acba22e20b3507 ChangeLog 4816
 MD5 3566688b3137d825328645ee202c38cb files/digest-swh-plugins-0.4.11 70
 MD5 9b623c0940b738b4851300c7a1dbdea3 files/digest-swh-plugins-0.4.13 70
@@ -9,3 +12,10 @@ MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 6db402fd00e6249cba8b359b988f204c swh-plugins-0.4.11.ebuild 1076
 MD5 4177551596358101a270634b2e3d9150 swh-plugins-0.4.13.ebuild 1340
 MD5 ef377ecee1c7788c36b38b1f92e54fb9 swh-plugins-0.4.14.ebuild 1337
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDx9Nqvpz1081QvMkRAj3dAJ41RM5mxXQXLlok86zYjS1jFGXJuQCfTUmF
+oqz2Sf+VWOcVn0i1ee2QDkY=
+=pUq5
+-----END PGP SIGNATURE-----
