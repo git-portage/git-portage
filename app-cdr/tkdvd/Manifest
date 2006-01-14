@@ -1,4 +1,4 @@
-MD5 9d3f559a521e4e6461a6e6d83894d541 ChangeLog 1369
+MD5 52235f491570ba96cd784c0aa8682058 ChangeLog 1488
 MD5 fd103e3aaa5be07e4b8d65ed16e4eb23 files/digest-tkdvd-3.10.0 63
 MD5 8eadda1a687bf71c2eaa2eee344e8874 files/digest-tkdvd-3.10.1 63
 MD5 e6131fc63581a649363075e75325e067 files/digest-tkdvd-3.7 60
@@ -8,7 +8,7 @@ MD5 c47d742fe8cc2c32e083ea3fb09b477c files/digest-tkdvd-3.8.4 62
 MD5 8c97f3b1d5aef381568643b9de51ddde files/digest-tkdvd-3.9.0 62
 MD5 d0eb51fbe8e05b6ee3ff2486ce2197a8 metadata.xml 166
 MD5 bccd50de5b061d2c3d719c2c665bf8a6 tkdvd-3.10.0.ebuild 911
-MD5 5c357393320178dda9fc31eecfea7349 tkdvd-3.10.1.ebuild 911
+MD5 2336f034f9f7eb06e6c4ea7dadb6890f tkdvd-3.10.1.ebuild 911
 MD5 ff0446809621abf3510feef97de88a45 tkdvd-3.7.ebuild 908
 MD5 4c9ab6f68db5f4d7cddd49275a59e2d3 tkdvd-3.8.1.ebuild 910
 MD5 6c951e43ed319ae044c1fb98b8c829be tkdvd-3.8.2.ebuild 910
