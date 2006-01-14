@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 11dedec635601b2936af6de0badeb3bd ChangeLog 13407
 MD5 1c4b04910816f84c849789b214381c4f e2fsprogs-1.38-r1.ebuild 3854
 MD5 d73f86d05b5b726d16729639ccaa33b9 e2fsprogs-1.38.ebuild 3688
@@ -10,3 +13,10 @@ MD5 478cd49f138b6b047fb1c465c9d05c80 files/e2fsprogs-1.38-blkid-swsuspend.patch 
 MD5 e85d057f99af6c980acf9a8697da9dd7 files/e2fsprogs-1.38-disconnected-inodes.patch 2881
 MD5 71ae8634de714335ebbc93dc0bbbd643 files/e2fsprogs-1.38-vfat-labels.patch 6667
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDyIjN2+ySkm8kpY0RApfBAJwN098jYTqLndsnQhNEfLd7ICFMbQCdEi6D
+5OydxnPVByMUKPvlweNpj5M=
+=NAmA
+-----END PGP SIGNATURE-----

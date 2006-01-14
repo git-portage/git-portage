@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d7179d0b79fdc01831668bf6e27d2efb ChangeLog 8920
 MD5 05ebbcad45030e806f8be710defa0aac files/digest-net-tools-1.60-r11 145
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 525ce366a2cad86e72c01e2cfe84ef2c net-tools-1.60-r11.ebuild 2103
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDyIli2+ySkm8kpY0RAuKBAJ4sFwz/N2nQKcsxX4UFM6QzLool1QCeJ8SH
+5mHmZnXkT4+9ZWbnWP2FOhU=
+=ExYa
+-----END PGP SIGNATURE-----
