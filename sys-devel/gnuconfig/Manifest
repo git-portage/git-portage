@@ -1,6 +1,16 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bbc391246ffd7558e72912f954dcf91c ChangeLog 2029
 MD5 00f890354f799f43e70536ee5f57f18c files/digest-gnuconfig-20051113 70
 MD5 67986513f95dd264ab7abc9b0a864679 files/digest-gnuconfig-20051223 70
 MD5 b1cbe9cf5099b5650b557f8a23707f47 gnuconfig-20051113.ebuild 754
 MD5 d643e8ec8c05f41af28662abe76ca6d6 gnuconfig-20051223.ebuild 754
 MD5 d63a72170e518490dcdf40f5ea8fcd62 metadata.xml 293
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDyIbQ2+ySkm8kpY0RAp10AJ4hRudG/5mOWbCA+hQUtdN9VZm2gACfap5U
+YDM/LtJ7qFATQQippi/A/NY=
+=pLBa
+-----END PGP SIGNATURE-----
