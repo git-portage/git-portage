@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e7b5ca6fca7f8dcbb96bd134e8c6b336 ChangeLog 2162
 MD5 ddb2656db72efd82cb2053a7e1eca471 files/digest-mpeg2vidcodec-12-r1 69
 MD5 9ef4af14dad87b03fde8e43f19e08d26 metadata.xml 225
 MD5 8aa637ca319ce666db725aa288591f49 mpeg2vidcodec-12-r1.ebuild 780
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDyFZ82+ySkm8kpY0RAm9IAKC/rkZ9cJmGhx3KIIh02KUtkBuNbgCgomnM
+XeidjHKXtvCjqQYvecdY0W8=
+=A9va
+-----END PGP SIGNATURE-----
