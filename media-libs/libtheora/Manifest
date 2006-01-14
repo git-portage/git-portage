@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a022932026fbd742fe8bfa3c67b7c3a3 ChangeLog 4696
 MD5 a9f9ea68a0659a1bd63f423e5028d5bf files/digest-libtheora-1.0_alpha3 72
 MD5 f828864823910f80ec4368be981c0a61 files/digest-libtheora-1.0_alpha4-r1 73
@@ -7,3 +10,10 @@ MD5 826568d3db817852b40b6ac12d9962bd libtheora-1.0_alpha3.ebuild 920
 MD5 c233112ea55c5cdfacff0291ada327d2 libtheora-1.0_alpha4-r1.ebuild 1329
 MD5 5a61f27e469ae86a8f63eee4d4430f4c libtheora-1.0_alpha5.ebuild 1205
 MD5 9ef4af14dad87b03fde8e43f19e08d26 metadata.xml 225
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDyEA62+ySkm8kpY0RAq3lAJ0Ucf8ilpRbDpUZ1zQoAC68IpCGVwCeJl7L
+0jPnRRU0aNHDQHnw5dZndVU=
+=hcni
+-----END PGP SIGNATURE-----
