@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 76df5cefdd58ffb4d46c9161cb6e9ee1 ChangeLog 2364
 MD5 a9a10dbf44f9cf0902bde6113cbb305f files/digest-jamin-0.9.0-r1 63
 MD5 e4c7f947b6008bcea0a8d4643548232f files/digest-jamin-0.95.0 65
@@ -11,3 +14,10 @@ MD5 d61090a271d16f78652d4bf4175d4623 jamin-0.95.0-r1.ebuild 871
 MD5 30246851005218b856b60bc3c8745d65 jamin-0.95.0-r2.ebuild 951
 MD5 f78db7e0f94b1c250e9cfe3bdea3b4ec jamin-0.95.0.ebuild 832
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDyOXcvpz1081QvMkRArATAKCJ/CJvexGcqjdxG+Os87KVK4YbcACgkvfF
+Y3Q7UgxgoZYdB4ByyV6ZtHw=
+=Rn5v
+-----END PGP SIGNATURE-----
