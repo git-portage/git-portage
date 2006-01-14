@@ -1,4 +1,4 @@
-MD5 a39851156bed5dde1790386e62f2e4ac ChangeLog 6984
+MD5 27274d21870284654caba919d8966748 ChangeLog 7233
 MD5 48b44fa7ba76c3b567d260ecff9e7aea files/digest-monodevelop-0.7-r1 68
 MD5 48b44fa7ba76c3b567d260ecff9e7aea files/digest-monodevelop-0.7-r2 68
 MD5 2200a01878af7bc8553e3c3181d70463 files/digest-monodevelop-0.8 68
@@ -14,5 +14,5 @@ MD5 76b314cc7b7b79b298dd4889dff8c9cd metadata.xml 159
 MD5 9cf588769f67de01bdb230e64b451ac5 monodevelop-0.7-r1.ebuild 1800
 MD5 a430f9561f918a21f460a4749427c249 monodevelop-0.7-r2.ebuild 1843
 MD5 5aad04df993aec977ae3ca15a3bc192a monodevelop-0.8.ebuild 1358
-MD5 43dd5e2c6f7d6e94baa5c1a9d52edaaf monodevelop-0.9-r1.ebuild 1418
-MD5 c47643ec7af8e9396027fb0bc4694426 monodevelop-0.9.ebuild 1379
+MD5 b8cffbdfea35de56fd1d1f0089108557 monodevelop-0.9-r1.ebuild 1423
+MD5 932ee3ed7050fa82053679c3cf9f5fb6 monodevelop-0.9.ebuild 1381
