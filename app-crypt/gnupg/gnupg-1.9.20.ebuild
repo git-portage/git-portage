@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/gnupg/Attic/gnupg-1.9.19.ebuild,v 1.3 2005/12/25 14:44:07 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/gnupg/Attic/gnupg-1.9.20.ebuild,v 1.1 2006/01/14 18:36:40 vanquirius Exp $
 
 inherit eutils flag-o-matic
 
@@ -27,16 +27,18 @@ DEPEND="
 	ldap? ( net-nds/openldap )
 	caps? ( sys-libs/libcap )"
 
-RDEPEND="
+RDEPEND="${DEPEND}
 	X? ( || ( media-gfx/xloadimage media-gfx/xli ) )
 	virtual/mta
 	selinux? ( sec-policy/selinux-gnupg )"
 
-
+RESTRICT="test"
+# self tests can't work since it depends on gpg-agent
+# Gentoo has put this in its own package (app-crypt/gpg-agent)
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	if use smartcard && ! built_with_use dev-libs/opensc pcsc-lite ; then
 		sed -i -e 's:OPENSC_LIBS="\$OPENSC_LIBS -lpcsclite -lpthread":OPENSC_LIBS="\$OPENSC_LIBS -lopenct -lpthread":' \
 		acinclude.m4 || die "openct patching failed."
@@ -73,11 +75,6 @@ src_compile() {
 		${myconf} \
 		|| die
 	emake || die
-}
-
-src_test() {
-	einfo "self tests can't work since it depends on gpg-agent"
-	einfo "Gentoo has put this in its own package (app-crypt/gpg-agent"
 }
 
 src_install() {
