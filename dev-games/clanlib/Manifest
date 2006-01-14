@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d822ed578c506056f1ae2656d9479506 ChangeLog 6223
 MD5 b64db9839066255a1a4c2e2bf692a01e clanlib-0.6.5-r3.ebuild 2214
 MD5 2f33bdafa760af4ae920601287c7d0db clanlib-0.7.8-r1.ebuild 2465
@@ -11,3 +14,10 @@ MD5 2b74f3abb88b08665766135f0e794ed6 files/clanlib-0.7.8-gcc41.patch 1663
 MD5 3e439d751339f684be1c709644d71a4d files/digest-clanlib-0.6.5-r3 68
 MD5 96c4aa6ca05f84d43464c80d9e7565d9 files/digest-clanlib-0.7.8-r1 69
 MD5 33ee8adc6546aef9881086d98bfadb79 metadata.xml 3010
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDyIPQCRZPokWLroQRAqavAJ9RxPGTWZSg6gwG2l1bNNfTB/4+6gCfROf7
+rJSq4WRgxG0opgKr67juDnM=
+=Lgav
+-----END PGP SIGNATURE-----
