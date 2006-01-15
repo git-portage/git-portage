@@ -6,6 +6,6 @@ MD5 b5fa036877461225b796e1bab1fb2179 files/jbigkit-1.6-build.patch 284
 MD5 70021e4d1632a1277102944be46039d7 files/jbigkit-1.6-respect-make.patch 916
 MD5 390efb595be40382210383e92f50b8e9 files/jbigkit-1.6-shared-lib.patch 925
 MD5 b52cd5b7a608a7b01a35446df4b6e322 jbigkit-1.4.ebuild 1114
-MD5 e55d4a6b891cbfc9c0e347b90122133e jbigkit-1.6-r1.ebuild 1303
+MD5 1385d69f2791b8cf23b962fec080b5ec jbigkit-1.6-r1.ebuild 1301
 MD5 4e84e1e79ca429311ce5af75fb72c3c5 jbigkit-1.6.ebuild 1016
 MD5 5bd1fcf0894b1dd21559106de586c6ca metadata.xml 286
