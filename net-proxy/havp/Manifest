@@ -1,0 +1,6 @@
+MD5 cec7ecea19cf7af093e649a38bf9d5f6 ChangeLog 311
+MD5 5f0038e98c854750a47b461140103117 files/digest-havp-0.76 61
+MD5 84d09e8602d90d8f9be9fffbd4dbf0d3 files/havp-0.76-gentoo.patch 1684
+MD5 2a830a7c8f88a3fc5df6dc89e67bef72 files/havp.initd 1604
+MD5 4adddfc3edb1040db2abc497dbb3684e havp-0.76.ebuild 971
+MD5 eeef2b4ba39eb40826f14b0bd0489563 metadata.xml 309
