@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 404eec6ede95b10ae789e5ca0bb155e0 ChangeLog 3560
 MD5 71800b30685d4cede4910d9706b0b9a4 alevt-1.6.1-r1.ebuild 1176
 MD5 5b46f8d09a55bd6ade5473eb92fce306 alevt-1.6.1-r3.ebuild 1292
@@ -8,3 +11,10 @@ MD5 4efa79ac8fff061235d1298475fad40d files/alevt-1.6.1-v4l2.patch 1328
 MD5 009c3ba83c0f16b20b2066f15fbe295e files/digest-alevt-1.6.1-r1 122
 MD5 009c3ba83c0f16b20b2066f15fbe295e files/digest-alevt-1.6.1-r3 122
 MD5 20e2255501865de5b568424821abf69d metadata.xml 161
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDytRoAiZjviIA2XgRAqHJAJ91x4PhvVbxE2ivhooR8iu6a8AOywCglAFN
+Sa0WusFzC70GkO08gj2t7mI=
+=eYus
+-----END PGP SIGNATURE-----
