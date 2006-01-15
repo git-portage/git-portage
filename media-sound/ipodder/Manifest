@@ -1,5 +1,5 @@
-MD5 487a72a1aefa1333129cbb4280a3bcbc ChangeLog 791
+MD5 536f99e3ad0a01e83a54a72e6d61d8f8 ChangeLog 787
 MD5 535cd8628eb9d4003ab9bd7e653fc205 files/2.0_rc4-wx26-selector.patch 1953
 MD5 1d983b972f7bd801d6b38e6a48c8318c files/digest-ipodder-2.0_rc4 74
-MD5 5baf166a1c464b72246f5a982a25f25e ipodder-2.0_rc4.ebuild 1264
+MD5 5a3e1258f5abb02e6c5eb855560ab925 ipodder-2.0_rc4.ebuild 1260
 MD5 89548ff452209f596c02be0e9571ba88 metadata.xml 414
