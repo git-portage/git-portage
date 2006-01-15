@@ -6,4 +6,4 @@ MD5 8871962155e5503d97764fa621063dc9 files/strongswan-2.5.0-gentoo.patch 11561
 MD5 3c4497cd3d13f2c5e42de1e36579b2f8 files/strongswan-2.5.7-gentoo.patch 11561
 MD5 48d78406890387afe4b0d4bba793f8d1 metadata.xml 634
 MD5 c51c49fe2382efe8b609625aad583409 strongswan-2.5.0.ebuild 3708
-MD5 1118710dfff6db7e6bc39a447e00765b strongswan-2.5.7.ebuild 3708
+MD5 e6fe3f7334ab69535231b4becdf86658 strongswan-2.5.7.ebuild 3715
