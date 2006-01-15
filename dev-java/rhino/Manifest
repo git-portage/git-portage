@@ -1,4 +1,4 @@
-MD5 9f7c9d7a16fbf1e277fa9c42b7ad024f ChangeLog 4336
+MD5 3fff32fa2d870dc11a5383daeac1c021 ChangeLog 4402
 MD5 0a5ef83b30538dd468f24d14be07769f files/00_dont-fetch-swing-ex.patch 604
 MD5 5ab916fbf55d8587da8547b2d264a383 files/1.5.5_jdk15.patch 1217
 MD5 6d48e39fc85ff462180102a36f8fc589 files/digest-rhino-1.5.5-r1 126
@@ -9,6 +9,6 @@ MD5 b62e19aa798647a3e963b0b3be774776 files/jsscript 131
 MD5 1efa33d52544cf9e08d6538fd15936c2 files/rhino-1.6-gentoo.patch 4761
 MD5 4622606981d4aa0930c917b65cf2f202 metadata.xml 350
 MD5 ffada4f238f8cbf3ee67e1bd469e9f7b rhino-1.5.5-r1.ebuild 1411
-MD5 4ef9f6b4f7a43d49a3daf4eb63825af3 rhino-1.5.5-r2.ebuild 1498
-MD5 bb5fffa1fbad2a2b3de4f21b9e124970 rhino-1.6.1-r1.ebuild 1504
-MD5 ab0a06cc6300e28f0dc5bdee1631b611 rhino-1.6.1-r2.ebuild 1522
+MD5 2d5c54a2cb2632a1702fc0344dd949ca rhino-1.5.5-r2.ebuild 1500
+MD5 269e1cdae8100cb542bf58898ac4e044 rhino-1.6.1-r1.ebuild 1502
+MD5 68582229b2a32bfaf7d2ce72713c64f9 rhino-1.6.1-r2.ebuild 1520
