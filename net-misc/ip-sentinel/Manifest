@@ -1,0 +1,7 @@
+MD5 baf55e2d661ed2451aa3027a641a4d2f ChangeLog 337
+MD5 196e4c59b0c8b9af825b26b05c58f01a files/digest-ip-sentinel-0.12 69
+MD5 204bbb3a56048aff8085af335043e7f4 files/ip-sentinel.cfg 272
+MD5 264a00a7107a2ad3d6e4f3d6a939e742 files/ip-sentinel.conf.d 350
+MD5 f82279353c12964556347745d5ac5767 files/ip-sentinel.init 870
+MD5 65487009cdc38580c0960f6de583fb1e ip-sentinel-0.12.ebuild 2264
+MD5 627b588df7cff1f95032d83d410a6a7d metadata.xml 632
