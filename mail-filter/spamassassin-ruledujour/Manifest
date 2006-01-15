@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c5f89f7fb0366bf57685496dfb28784c ChangeLog 1809
 MD5 998db9369c998907270da8bc9ac54da6 files/digest-spamassassin-ruledujour-20040701 85
 MD5 9d1bea9ead3b9e70de27441abf853ea6 files/digest-spamassassin-ruledujour-20050106 85
@@ -8,3 +11,10 @@ MD5 7bbde4c6288951c126a578a403f27c0b spamassassin-ruledujour-20040701.ebuild 140
 MD5 45bc59d94bd9c1675e96e8a8e3dd3aa8 spamassassin-ruledujour-20050106.ebuild 1957
 MD5 5309b6244ad93c97c00dcb0439a86506 spamassassin-ruledujour-20050822.ebuild 2008
 MD5 6b3e9011daad20785dcf648274fd23cf spamassassin-ruledujour-20051123.ebuild 2003
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDyap4ntT9W3vfTuoRAsP2AKCwNjzLn1bxIBAKX7c+DWpgpcNUoACfQGFr
+aqbRIAVEEUnqUWH/YvtuW28=
+=uPcC
+-----END PGP SIGNATURE-----
