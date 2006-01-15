@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4ddcfa1f1da51bd6b36356b1661ada08 ChangeLog 868
 MD5 c40ea29a84ae96a8d38976a36c963335 files/1 175
 MD5 3b574bfad17bf4d2d22e025289d2bad7 files/2 551
@@ -12,3 +15,10 @@ MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 ffb1ffa5c5d33922de9a9a55beb1e1ec runit-1.0.5.ebuild 1661
 MD5 dff69f8ddb8b476d1a1ac3d85ab9c7e4 runit-1.3.0.ebuild 1666
 MD5 597aef6d87564970430b75ac1c2858c4 runit-1.3.3.ebuild 1664
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDyp/p2+ySkm8kpY0RAuGbAKCm3caDrzm5ViLsVbjlVHGmx7W64QCdHC7Q
+7OHiehuQ91dMbSSCPYn0dnw=
+=Xgyi
+-----END PGP SIGNATURE-----
