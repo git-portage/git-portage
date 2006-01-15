@@ -1,4 +1,4 @@
-MD5 2fbe4763206468a95ea3cbbec14a2a2b ChangeLog 3808
+MD5 c62e78a22db619d492ecc6cf1a3f0c09 ChangeLog 3808
 MD5 673cd925126b07ea0e78cf91269b7d66 files/digest-singular-2.0.5-r4 859
 MD5 5c5f7df613188aa8d18e5fe1ab655696 files/digest-singular-3.0.1.1 143
 MD5 0e00386f918c494270d01873de5cbe4f files/digest-singular-3.0.1.2 143
@@ -8,4 +8,4 @@ MD5 5b489be217e784298e549744b0b2a3fa files/singular-3.0.1-gentoo.diff 4566
 MD5 8c623e53daafa025137077c6b65815bd metadata.xml 156
 MD5 04e6be188d434a23dbb138e9a5889ef6 singular-2.0.5-r4.ebuild 4271
 MD5 cd39e5ab8e6b0bb7d73746b86607dfb4 singular-3.0.1.1.ebuild 2869
-MD5 f43357949d64a42c64b83036714c8819 singular-3.0.1.2.ebuild 2870
+MD5 172a8359836d837d0543dd7e8a0fd24d singular-3.0.1.2.ebuild 2869
