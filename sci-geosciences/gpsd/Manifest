@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f5b4c61c22ec2fe5fde338247506e421 ChangeLog 2355
 MD5 f6622a741ad185c494741151fac6f920 files/40-usb-serial.rules 212
 MD5 45dc7d436da7eb835597bd28d5f6d292 files/digest-gpsd-2.29 61
@@ -7,3 +10,10 @@ MD5 56fd36d7f177ce4c229e2d61abcf7d15 files/gpsd.init 949
 MD5 79fd1c29bebc3aab8f92caa4159ea858 gpsd-2.29.ebuild 3303
 MD5 6051b704cfc02b1fefc2c189cbe4bc8e gpsd-2.30.ebuild 3289
 MD5 78ec9f0a49a5a89267a4b8953d904de9 metadata.xml 420
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDykqwntT9W3vfTuoRAiaFAJ9KDomeMcW/Vib578CGnDxgrIMlOgCeLoA2
+bYGFYK9LmoBEsr4dvxo22Vk=
+=gbB+
+-----END PGP SIGNATURE-----
