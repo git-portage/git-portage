@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4dd57d8a3f409a7a000c250a52e035bf ChangeLog 31853
 MD5 e32b5df37d1bd1fde32f19276f8bc5e2 files/2.6.11-ppc64-32ul-spinlock.patch 510
 MD5 505d7b7cd4ace73dbd5473c7fd3cdf37 files/2.6.11-s390-cflags-update.patch 391
@@ -42,3 +45,10 @@ MD5 d468f5243b73982267def6124fbd32d9 linux-headers-2.6.11-r4.ebuild 1940
 MD5 ad0f6ced55cd55b35ac0fe22bb7e1667 linux-headers-2.6.15_rc6.ebuild 1678
 MD5 4b7f9dd73295707d019c97d76b76a021 linux-headers-2.6.8.1-r4.ebuild 1213
 MD5 248488cc2cb6484a305e8108b4eaaa6a metadata.xml 489
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDyrb32+ySkm8kpY0RAnlVAKCZUm3HLLb21f33H7dLdtUH+0AdcACgxDgS
+3kV/Q9b7VreystW4ZRuj32k=
+=FJkg
+-----END PGP SIGNATURE-----
