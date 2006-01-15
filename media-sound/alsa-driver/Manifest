@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 495ee0d6848d4c7291d13f9907d0e683 ChangeLog 32763
 MD5 4d36586e82b663b31cef834a9fa0d38b alsa-driver-1.0.10-r1.ebuild 4720
 MD5 7bd2cc67889de8bcd4ff55490f1189c1 alsa-driver-1.0.10.ebuild 4619
@@ -13,3 +16,10 @@ MD5 ad7631557a0317471d29e4c26cfb4cf2 files/digest-alsa-driver-1.0.10_rc3 75
 MD5 855ac1fe064602102d683b3396a7c582 files/digest-alsa-driver-1.0.11_rc2 75
 MD5 27ccbe36406f145c1d63725a53517233 files/makefile.patch 1122
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDym/BJrHF4yAQTrARAmEuAJ9VD4cm2a36q9tPXpFURTDgT9TtlwCfdGLR
+UYQ0pqYO8kXeqfQQV6GkwNY=
+=TaCs
+-----END PGP SIGNATURE-----
