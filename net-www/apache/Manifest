@@ -8,7 +8,7 @@ MD5 8dfa3f0fbdc01264e754bd3ebf7b8a5a apache-2.0.54-r15.ebuild 12594
 MD5 be59fbc220730a0212fbf6f34a1a6652 apache-2.0.54-r30.ebuild 12930
 MD5 17f7420f9957d17a514ee70bc4786a25 apache-2.0.54-r31.ebuild 13375
 MD5 e1e33b99a1b8f95a419f0e95a6ebb2dc apache-2.0.54-r9.ebuild 12595
-MD5 a889a3f412aeca199e8171cc16c90bb7 apache-2.0.55.ebuild 13417
+MD5 b6ad23f2ecdeb65973f8f241b3ad4581 apache-2.0.55.ebuild 13409
 MD5 8b12871dd74fcd3f4fdf451c9d8c259e files/00_apache_manual.conf 781
 MD5 3d94c56af17136b6c408f076c32e0362 files/2.0.49/40_mod_ssl.conf 3213
 MD5 1d10cc98714a34ddc38525743c2989f9 files/2.0.49/41_mod_ssl.default-vhost.conf 8053
