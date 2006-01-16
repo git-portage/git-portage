@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7fade04a6df5c40312fa33284df2c6b1 ChangeLog 2935
 MD5 5765fd9f59544067de23c828314bda75 PerlQt-3.006.ebuild 1491
 MD5 ba37dd6f51b5e2a4d15a5198ee5f65e2 PerlQt-3.008-r1.ebuild 1622
@@ -11,3 +14,10 @@ MD5 ceef6c70a11f2b773cebdfdd3f9fe21a files/digest-PerlQt-3.008-r1 64
 MD5 82816eee040a4748cc35d7cce3b57604 files/digest-PerlQt-3.009_beta1 68
 MD5 8fab2ce6c719fd10328d5dc14089b3a3 files/digest-PerlQt-3.009_beta2 67
 MD5 1cb6da3bebab4edbf728de5472795074 metadata.xml 418
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFDy6edtG5z4I8BtQoRAkSAAJ4ioJQ6ZUrfg4aKNmyrvvv/Ewc/wgCfY16s
+ZUje1LJ7RKA/e2k8Lbr8Q5o=
+=pOhU
+-----END PGP SIGNATURE-----
