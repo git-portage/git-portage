@@ -7,6 +7,7 @@ MD5 3ba510126b95cfdc0c77bfd3a03a9243 files/digest-libextractor-0.4.2 72
 MD5 9dcd1291fbfdc404ff1bb00b71258aa2 files/digest-libextractor-0.5.0 72
 MD5 d34bd3053ea54d9b482af8ff31d43f01 files/digest-libextractor-0.5.4 71
 MD5 7c027835ee6a775fac1af3ade942137a files/digest-libextractor-0.5.6a 72
+MD5 2e86a19d705ad7bf42ff30bc1d58b693 files/digest-libextractor-0.5.9 71
 MD5 32663ad54db490287bc8276e29dea25b files/libextractor-0.2.2-vorbisfile.patch 499
 MD5 5b364c8b7c41b3fe78817bbcbded91c0 files/libextractor-0.5.0-autotools.patch 1958
 MD5 f6df8116caec565efe3fc275602d9503 libextractor-0.2.2.ebuild 942
@@ -17,4 +18,5 @@ MD5 8c4900c0374d7a775c20ab3f0da153fb libextractor-0.4.2.ebuild 799
 MD5 c363e823c55f244f1d3f6e4e3e5b3de4 libextractor-0.5.0.ebuild 954
 MD5 21607af95305337a03097320dd56051a libextractor-0.5.4.ebuild 1017
 MD5 a72fd80fd48ad6edc673d3b2766644d1 libextractor-0.5.6a.ebuild 1016
+MD5 a72fd80fd48ad6edc673d3b2766644d1 libextractor-0.5.9.ebuild 1016
 MD5 8aefbc0e49db723ca1ad02d0c409cd49 metadata.xml 160
