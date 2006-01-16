@@ -1,14 +1,4 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 eb0c9c4833536f002834b9f826b940d2 ChangeLog 2328
+MD5 50dddf6eacb2ccd416ca411f2e97ea41 ChangeLog 2591
 MD5 7554d22b15effd3543bf8ef9cf297c25 files/digest-gtk2-fu-0.10 62
 MD5 73503281a286a47cab5b27a290270137 gtk2-fu-0.10.ebuild 671
 MD5 8a487db2af4fee760b23e1ac102047b0 metadata.xml 240
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDyyMmCRZPokWLroQRAqQvAKC6mFnHyjIvXslU+KHszSNQZqvx7wCfWbnq
-1v76ILzt4ZXh06Po1GKGhB8=
-=nw3I
------END PGP SIGNATURE-----
