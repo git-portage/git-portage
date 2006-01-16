@@ -3,12 +3,15 @@ MD5 b690422be68807e2ef346762c1578aa7 eq-xmms-0.6-r1.ebuild 1054
 MD5 7d3e79e717f7ef2ae544e7c12713cb4f eq-xmms-0.6-r2.ebuild 1097
 MD5 69cf504d357ca0d7090d474f2947b1a6 eq-xmms-0.6-r3.ebuild 1348
 MD5 64a8fce7201e0629af99bf28ef1ea7f0 eq-xmms-0.6-r4.ebuild 1453
+MD5 b53f05aac16e934fded6be112fdb7e35 eq-xmms-0.6-r5.ebuild 1493
 MD5 db5859d8d2612551a48a6363903b97ec eq-xmms-0.7.ebuild 1164
 MD5 2cf1a0e042cf2afb1366cd05f91bedce files/digest-eq-xmms-0.6-r1 63
 MD5 2cf1a0e042cf2afb1366cd05f91bedce files/digest-eq-xmms-0.6-r2 63
 MD5 2cf1a0e042cf2afb1366cd05f91bedce files/digest-eq-xmms-0.6-r3 63
 MD5 473111a92d380f6be88fc3af3719d677 files/digest-eq-xmms-0.6-r4 141
+MD5 473111a92d380f6be88fc3af3719d677 files/digest-eq-xmms-0.6-r5 141
 MD5 c110ae19ac06195520c881daa09c6941 files/digest-eq-xmms-0.7 63
+MD5 dfe9301cb1a915654e54d2a6adb61f62 files/eq-xmms-0.6-exit_fix.patch 2051
 MD5 774f966c8056c9448a2cdd295cf76302 files/eq-xmms-0.6-mono_fix.patch 418
 MD5 e2cda8be9765888166aa11cb345e6a41 files/eq-xmms-0.6-nonx86.patch 410
 MD5 db956a0ebfff40720bb6487f96564a00 files/eq-xmms-0.6-shade_fix.patch 1116
