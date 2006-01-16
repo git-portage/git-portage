@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4178deddeefee333273d63b1681bbb88 ChangeLog 2864
 MD5 3edf1638789f8529fb17f44a33907e47 files/1.0.57.patch 1955
 MD5 5c748030f6e6f803d4e272ce57a31361 files/digest-yacas-1.0.56 130
@@ -8,3 +11,10 @@ MD5 8c623e53daafa025137077c6b65815bd metadata.xml 156
 MD5 5d5cdc9104e23720c296277ed1212723 yacas-1.0.56.ebuild 1606
 MD5 7c9ce8a1e1e8f6c676c528519e99272d yacas-1.0.58.ebuild 1407
 MD5 fad2a030641b34c21b326f17276529b1 yacas-1.0.61.ebuild 1408
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDyvaontT9W3vfTuoRAltIAKCkYMnQQyDxhetg1e4R7ddDMCxQxwCgq4jT
+cPV0cxmJFhsJ0lvoDQJsCRg=
+=ak7M
+-----END PGP SIGNATURE-----
