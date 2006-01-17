@@ -1,4 +1,4 @@
-MD5 870cbff981f91cece080ec7afeae57db ChangeLog 10242
+MD5 8492b79bee9e2ea79a4cd8bfdaf41075 ChangeLog 10238
 MD5 909705b6dbfe23a99cd6353c2a1a0710 bluez-utils-2.19.ebuild 2897
 MD5 bc6b50744c64a764187e0f446a3233de bluez-utils-2.21.ebuild 2630
 MD5 d0e19891447a948a174e349b8c35304e bluez-utils-2.22-r1.ebuild 2741
@@ -18,7 +18,7 @@ MD5 b0d830f3f31316886a42497d632d0ac1 files/bluez-utils-2.22-dbus-0.60.patch 374
 MD5 2844834ee91bf2b0d0cf925c682eef28 files/bluez-utils-2.22-init.d 3399
 MD5 e7df7cd2ca07f4f1ab415d457a6e1c13 files/bluez-utils-2.22-pin 5
 MD5 992426019dbbd772c9326512d2a0033d files/bluez-utils-2.22-pin-helper.sh 49
-MD5 32fd42576b2b919ccbb7c4c0ed3fd215 files/bluez-utils-2.24-init.d 3274
+MD5 5745d89920c361946bf6f6908a3d20a6 files/bluez-utils-2.24-init.d 3388
 MD5 e7df7cd2ca07f4f1ab415d457a6e1c13 files/bluez-utils-2.24-pin 5
 MD5 992426019dbbd772c9326512d2a0033d files/bluez-utils-2.24-pin-helper.sh 49
 MD5 6492c6e959a40f4e32e331d2dfbd60a2 files/bluez-utils-2.24-udev.rules 74
