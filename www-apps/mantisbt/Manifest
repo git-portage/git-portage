@@ -1,4 +1,4 @@
-MD5 436d4b6ea0db932b1a8d223c00a20824 ChangeLog 3534
+MD5 b3a69a4853aec5483fbe79e9af06ff87 ChangeLog 3685
 MD5 7ab426f7d5548fd47c15c66320bd7ff2 files/0.19.4-debian.patch 593
 MD5 28728af7e2eb7b32266ef26d87b398c1 files/digest-mantisbt-0.19.4 66
 MD5 aaabd486081a3b2aeb22bddd759bb22d files/digest-mantisbt-1.0.0_rc2 68
@@ -11,5 +11,5 @@ MD5 1551fddbc27f5b36c773007689d93c32 mantisbt-0.19.4.ebuild 1072
 MD5 b8787b64b3c3b48b47ad5757dcf82a6d mantisbt-1.0.0_rc2.ebuild 959
 MD5 7482adb56759934e9b1db696dac6ab3e mantisbt-1.0.0_rc3.ebuild 959
 MD5 d6d0628a6bd491622c62308c73cb2876 mantisbt-1.0.0_rc4.ebuild 959
-MD5 163421a04f59d25be7f79fe8d1957a2e mantisbt-1.0.0_rc5.ebuild 959
+MD5 3d9baed851e77a624f4152660907e60d mantisbt-1.0.0_rc5.ebuild 959
 MD5 f61bfa064e3acdfcd826e4a38b121196 metadata.xml 161
