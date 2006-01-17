@@ -8,6 +8,6 @@ MD5 598b25b23072a612346b807aeb00c296 files/digest-vmware-console-3.1.0.9089 79
 MD5 e943173395ac6bf9d95b593a3c8a0463 metadata.xml 351
 MD5 3b59428edde27b784385036e19a3bc82 vmware-console-2.1.0.7728.ebuild 995
 MD5 84859b472d63d7e3567bbce47143b857 vmware-console-2.5.1.5336.ebuild 994
-MD5 5e69408fac0390ec1ed5e1a2f51ed0a4 vmware-console-2.5.2.16390.ebuild 991
+MD5 961bbff50b6e4274f8e17a944605948a vmware-console-2.5.2.16390.ebuild 992
 MD5 31ad2e8c1398c7a5b2f0adede28ef307 vmware-console-3.0.0.7592.ebuild 2578
 MD5 93db3fd9435514c004773467fc35fcca vmware-console-3.1.0.9089.ebuild 2726
