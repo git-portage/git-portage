@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 53495eaee7ad26e7f1ccea51694f95d7 ChangeLog 9919
 MD5 caeb1eaaf77305901f5c3bc19f3637d5 files/Sawfish.desktop 449
 MD5 1ae747636b3422e00ef41cc07fc37ab4 files/capplet-crash.patch 556
@@ -14,3 +17,10 @@ MD5 eb5d859670c6ea8a0904662860c180b0 sawfish-1.0.1-r6.ebuild 2017
 MD5 38a41c33b244c5704ca3dec0a903ba61 sawfish-1.3.20040120-r1.ebuild 2560
 MD5 2dfef4a3fc9332df431ea0b2b06c5ee8 sawfish-1.3.20040120.ebuild 2700
 MD5 5c7d686215aefdfebe3d2b8c07498910 sawfish-1.3.20050816.ebuild 2808
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDzHnnJrHF4yAQTrARAtuaAJ9KpMOF7fJsdXkGyKu2HPUH0Qd1owCgvOS4
+vlLeBNrvR4w6mRzvSrLAJCk=
+=XQSy
+-----END PGP SIGNATURE-----
