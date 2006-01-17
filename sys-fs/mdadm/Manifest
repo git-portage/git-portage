@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 acfd6f6fe1f216c197cafe36f81c10dd ChangeLog 5524
 MD5 29424204ff8bad1b89969061398f354e files/digest-mdadm-1.11.0 64
 MD5 2f8e7421a23b99428a0f7ed81360532b files/digest-mdadm-1.12.0 64
@@ -15,3 +18,10 @@ MD5 087b416e7f17ebbe4f6eb4c96d2519a2 mdadm-1.9.0-r1.ebuild 1235
 MD5 cda31de501f452502de1ce7c7d8cd579 mdadm-2.1.ebuild 1165
 MD5 e4fd9131d9bd9179507762825c14c1cb mdadm-2.2-r1.ebuild 1222
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDzGev2+ySkm8kpY0RAuFyAJ4wGE4Vv3qA2xbb6e1bzDjIAoqB6ACfT2A/
+0USggMxo4lRBImH9IQzNw3k=
+=gjFj
+-----END PGP SIGNATURE-----
