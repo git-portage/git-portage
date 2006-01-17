@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f328e9265f2f5610d9d8d0c3b1b7a513 ChangeLog 4535
 MD5 44dae63001c0ad007604a7ba55403838 files/digest-portmap-5b-r9 64
 MD5 c4cab1b374730a709460d95211200852 files/portmap-4.0-cleanup.patch 2193
@@ -13,3 +16,10 @@ MD5 417c9dc094234061ad301e5b5413b120 files/portmap.rc6 1132
 MD5 0ec47652f96bfda762a2ffc72a78f002 files/portmap_5beta.dif 8871
 MD5 def1cd0cee829a8caa56efd6a51d937c metadata.xml 184
 MD5 5ce90742848c7ff2e36dfc7ab72daa8a portmap-5b-r9.ebuild 1993
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDzGYP2+ySkm8kpY0RAie2AKC/oy9F0IBDsFRWza6b/ufKFRiZQwCgxECW
+6KMFBgTRb7gKo1Uaexues58=
+=yai4
+-----END PGP SIGNATURE-----
