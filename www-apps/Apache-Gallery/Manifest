@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 88551a93725b273a01a1e68ae17e19d7 Apache-Gallery-0.6.ebuild 1408
 MD5 7046d8bc257379a8222fef19ad471e7b Apache-Gallery-1.0_rc3.ebuild 1604
 MD5 29018b9582b5518588daa5801b94662e ChangeLog 4228
@@ -9,3 +12,10 @@ MD5 f372bf3342f63c4d3a680051e80b5571 files/digest-Apache-Gallery-0.6 69
 MD5 af084bb70094ac69911af16d31ebf83f files/digest-Apache-Gallery-1.0_rc3 72
 MD5 5edd6a9688af26ad0b3f71d8e2ad8770 files/postinstall-en.txt 90
 MD5 2a5bdc93be7720976d88be5034a17df2 metadata.xml 444
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDzsq+EzitwsaoONoRAlAvAJ44L93VPqPqqtqUXRXyXHpW7jVw6wCfTULB
+f3+tRWXhQh7kgIa0+ALIHNk=
+=9Ut5
+-----END PGP SIGNATURE-----
