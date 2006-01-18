@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a72656a49ac92f9a8adcf80e7589decb ChangeLog 2969
 MD5 986d4f67476a2c02f6ca1b20e7c57c0b files/digest-moc-2.1.4-r1 61
 MD5 285908314a37f1af4c045d98d60a1e0d files/digest-moc-2.2.0-r1 61
@@ -11,3 +14,10 @@ MD5 2b58a49dbe642ee3cee6254157ac2c5f moc-2.2.0-r1.ebuild 1201
 MD5 67bdf1e18ab8094ed9524b8ad9c580fc moc-2.3.0.ebuild 1225
 MD5 f1d543413a02f59851a4a727e1dcd9e6 moc-2.3.2.ebuild 1850
 MD5 bd4d61f99b5c34b6d2bdba4410cfcac4 moc-2.3.3.ebuild 1643
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDzdmrFdQwWVoAgN4RAi2wAJ9sFuAj0l/VP+xZmtWGLGKANQJrkwCg1ULe
+NqyYltqmImBOw+AX53tm4gs=
+=mk2y
+-----END PGP SIGNATURE-----
