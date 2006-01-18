@@ -1,4 +1,4 @@
-MD5 58ffcbcdc8b95ba9b4abdfd5f0370371 ChangeLog 6694
+MD5 c3f5c9253271ef5ec2c517352419b218 ChangeLog 6694
 MD5 dc77856d07055e511131e862afbb09eb files/digest-pax-utils-0.1.4 67
 MD5 a600ef77f69ccf3b549a95e326603592 files/digest-pax-utils-0.1.5 67
 MD5 2423859a4ed3486389cbb553bd1bf0f0 files/digest-pax-utils-0.1.6 67
@@ -7,5 +7,5 @@ MD5 4c62b41578df556f326806228afe1f99 files/scanelf-null-rpath.patch 534
 MD5 90f775b6c4fdbeb494f7d8e1d94ad30d metadata.xml 604
 MD5 16be1632892be8a4398d2284ec734854 pax-utils-0.1.4.ebuild 930
 MD5 8b51b7c8db335a2bf83e439832c23a89 pax-utils-0.1.5.ebuild 1028
-MD5 6200b581a5a07d0168fa62dde5307f6f pax-utils-0.1.6.ebuild 1015
-MD5 e5caef79d2b6a2179204a9e4f8970755 pax-utils-0.1.7-r1.ebuild 1197
+MD5 b3f155a95d4684a1c398bdf2dbad2152 pax-utils-0.1.6.ebuild 1013
+MD5 1cf59984913adbf72186dfde270ff096 pax-utils-0.1.7-r1.ebuild 1200
