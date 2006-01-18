@@ -3,7 +3,7 @@ MD5 909705b6dbfe23a99cd6353c2a1a0710 bluez-utils-2.19.ebuild 2897
 MD5 bc6b50744c64a764187e0f446a3233de bluez-utils-2.21.ebuild 2630
 MD5 d0e19891447a948a174e349b8c35304e bluez-utils-2.22-r1.ebuild 2741
 MD5 31ae77e0e67d31710053fec9ed8a9671 bluez-utils-2.22.ebuild 2635
-MD5 92382853567e2c1a4539e4d15d76e701 bluez-utils-2.24.ebuild 2837
+MD5 61638d82b701880519a7d739d7fb08de bluez-utils-2.24.ebuild 2947
 MD5 cba196ec0ce8e3622a29f93b030ed027 files/2.10-r1/bluetooth.rc 3340
 MD5 e7df7cd2ca07f4f1ab415d457a6e1c13 files/2.10-r1/pin 5
 MD5 992426019dbbd772c9326512d2a0033d files/2.10-r1/pin-helper.sh 49
