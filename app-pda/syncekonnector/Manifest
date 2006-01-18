@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3811f924875b346107b549448b8e900f ChangeLog 1054
 MD5 eec13d229bb82896de30fe9113e9d787 files/digest-syncekonnector-0.2.1 72
 MD5 eec13d229bb82896de30fe9113e9d787 files/digest-syncekonnector-0.2.1-r1 72
@@ -12,3 +15,10 @@ MD5 7dda6d348a6d7f9e3f145a94fb963b49 syncekonnector-0.2.1-r1.ebuild 974
 MD5 b8bc0a9574e150038216631527352813 syncekonnector-0.2.1.ebuild 804
 MD5 ca62fe509e6223e0c4cfd7a8a220a2a8 syncekonnector-0.3_pre20060108.ebuild 913
 MD5 30debb683dc2bfd268bb0482cafcc7fc syncekonnector-0.3_pre20060117.ebuild 880
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDzfXjFdQwWVoAgN4RArcEAJ91yHLjp2+Ksne51WDmTuzF4PFY5wCg6jls
+uYoc7lfxSEnxHYx4iohgspM=
+=eV84
+-----END PGP SIGNATURE-----
