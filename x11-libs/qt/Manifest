@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c61e9e550d52d5d6f2ea4a28062765e1 ChangeLog 5969
 MD5 8ffca1b1b7523339af04fd24b4595ce4 files/0001-dnd_optimization.patch 5623
 MD5 8b3da5dae8babfcbdee3be465579d6c2 files/0002-dnd_active_window_fix.patch 7289
@@ -28,3 +31,10 @@ MD5 b3c513259a35a93f7887b52ce29fdd16 qt-4.0.1.ebuild 5950
 MD5 d2603f63c8272769089394a4f2ef8e37 qt-4.1.0-r1.ebuild 6259
 MD5 a04ae47c7787c6585983cbdac19eaf90 qt-4.1.0-r2.ebuild 6451
 MD5 646d36bb71f8b40f3f91ee8bed5e059a qt-4.1.0.ebuild 6251
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDzpbhcsIHjyDViGQRAlbTAJ9uZlgO+pzBRHkAkQ8Hbe95G2r+ZACgnO0t
+0TZJyyAlBAZluCHhUYWIVfw=
+=nQhQ
+-----END PGP SIGNATURE-----
