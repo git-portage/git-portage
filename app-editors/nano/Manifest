@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b8e8ebabee94510ea3d9378fe2c40f80 ChangeLog 10011
 MD5 b075a7a5fe393380c5f00e4efd3146fb files/digest-nano-1.2.5 62
 MD5 12a38b1eed4e09bc09aa3e26f3d4886e files/digest-nano-1.3.10 64
@@ -8,3 +11,10 @@ MD5 b297797b490f7c6ca8d5f40f2d6347cc metadata.xml 1015
 MD5 32ad8dd2260ac44dbbeb2d50e2ed0df6 nano-1.2.5.ebuild 1429
 MD5 9221a1c204707554b4c05ad03d5042e6 nano-1.3.10.ebuild 1954
 MD5 02ab1949e07d6f81c569e5fe3f607173 nano-1.3.9.ebuild 1863
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDzs7I2+ySkm8kpY0RApXrAJ0UdLmwkmVjQ93PdMBo2ziJ9lFlEACglw83
+b6fSd5P9RmLjOureIzGwSOk=
+=GImV
+-----END PGP SIGNATURE-----
