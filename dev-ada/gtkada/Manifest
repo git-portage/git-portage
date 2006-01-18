@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8bc2bd17e2c12cb70428f4447b832ec4 ChangeLog 2169
 MD5 27c6dd96e1ff25f77f4f3a50b4961a24 files/digest-gtkada-2.2.0-r1 62
 MD5 67a1b0d6cd1202e37a89427fbdecb948 files/digest-gtkada-2.2.1 62
@@ -10,3 +13,10 @@ MD5 79b8eca7eabbb3c1ca415837992e922a gtkada-2.2.1-r1.ebuild 2469
 MD5 2ee37843f32e599514669b946e2e5e40 gtkada-2.2.1.ebuild 2473
 MD5 ea85fa7fe8574940a094b98d31a4ccbd gtkada-2.4.0.ebuild 2496
 MD5 406df42dba8304e0bfa98dd1a79452b7 metadata.xml 556
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDzk1CwUpWvClEHQoRAlkeAJ481F7NCS6s2Vw4K06Dpp/9oRVTdwCeKBsD
+Ba9Euuq1rvjQGek/q9fGrNo=
+=1PLO
+-----END PGP SIGNATURE-----
