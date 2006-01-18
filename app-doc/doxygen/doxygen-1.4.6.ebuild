@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/doxygen/Attic/doxygen-1.4.4.ebuild,v 1.15 2006/01/18 07:17:19 nerdboy Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-doc/doxygen/Attic/doxygen-1.4.6.ebuild,v 1.1 2006/01/18 07:17:19 nerdboy Exp $
 
 inherit eutils toolchain-funcs
 
@@ -10,10 +10,10 @@ SRC_URI="ftp://ftp.stack.nl/pub/users/dimitri/${P}.src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ~ppc-macos ppc64 s390 sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc-macos ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="doc qt tetex unicode"
 
-RDEPEND="media-gfx/graphviz
+RDEPEND=">=media-gfx/graphviz-2.6
 	qt? ( =x11-libs/qt-3* )
 	tetex? ( virtual/tetex )
 	virtual/ghostscript"
@@ -22,21 +22,21 @@ DEPEND=">=sys-apps/sed-4
 
 src_unpack() {
 	unpack ${A}
-	cd "${S}"
+	cd ${S}
 	# use CFLAGS and CXXFLAGS (on linux and ppc-macos)
 	sed -i.orig -e "s:^\(TMAKE_CFLAGS_RELEASE\t*\)= .*$:\1= ${CFLAGS}:" \
 		-e "s:^\(TMAKE_CXXFLAGS_RELEASE\t*\)= .*$:\1= ${CXXFLAGS}:" \
 		tmake/lib/{linux-g++,macosx-c++}/tmake.conf
 
-	epatch "${FILESDIR}"/doxygen-1.4.3-cp1251.patch
-	epatch "${FILESDIR}"/${P}-darwin.patch
+	epatch ${FILESDIR}/doxygen-1.4.3-cp1251.patch
+#	epatch ${FILESDIR}/doxygen-1.4.4-darwin.patch
 
 	if use unicode; then
-		epatch "${FILESDIR}"/${PN}-utf8-ru.patch.gz || die "utf8-ru patch failed"
+		epatch ${FILESDIR}/${PN}-utf8-ru.patch.gz || die "utf8-ru patch failed"
 	fi
 
 	if [ $(gcc-major-version) -eq 4 ] ; then
-		epatch "${FILESDIR}"/${PN}-gcc4.patch || die "gcc4 patch failed"
+		epatch ${FILESDIR}/${PN}-gcc4.patch || die "gcc4 patch failed"
 	fi
 }
 
@@ -50,7 +50,7 @@ src_compile() {
 	fi
 
 	# ./configure and compile
-	./configure ${my_conf} || die '"./configure" failed.'
+	./configure ${my_conf} || die '"configure" failed.'
 	emake all || die 'emake failed'
 
 	# generate html and pdf (if tetex in use) documents.
@@ -62,7 +62,7 @@ src_compile() {
 			addwrite /var/cache/fonts
 			addwrite /usr/share/texmf/fonts/pk
 			addwrite /usr/share/texmf/ls-R
-			make pdf || ewarn '"make docs" failed.'
+			make pdf || ewarn '"make pdf docs" failed.'
 		else
 			cp doc/Doxyfile doc/Doxyfile.orig
 			cp doc/Makefile doc/Makefile.orig
@@ -70,16 +70,16 @@ src_compile() {
 			sed -i.orig -e "s/@epstopdf/# @epstopdf/" \
 				-e "s/@cp Makefile.latex/# @cp Makefile.latex/" \
 				-e "s/@sed/# @sed/" doc/Makefile
-			make docs || ewarn '"make docs" failed.'
+			make docs || ewarn '"make html docs" failed.'
 		fi
 	fi
 }
 
 src_install() {
-	make DESTDIR="${D}" MAN1DIR=share/man/man1 \
+	make DESTDIR=${D} MAN1DIR=share/man/man1 \
 		install || die '"make install" failed.'
 
-	dodoc INSTALL LANGUAGE.HOWTO README VERSION
+	dodoc INSTALL LANGUAGE.HOWTO LICENSE README VERSION
 
 	# pdf and html manuals
 	if use doc; then
