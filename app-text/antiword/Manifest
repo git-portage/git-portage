@@ -1,6 +1,6 @@
 MD5 34770a33a0d4ca5369fde37f3366a8c2 ChangeLog 3943
 MD5 e1e4217dfb45debd7da4d287b018d813 antiword-0.36.1.ebuild 903
-MD5 939778e6032bca6014105cbb761d6217 antiword-0.37.ebuild 1038
+MD5 0d6dd1f06ef9a4394e370595d7dd7d40 antiword-0.37.ebuild 1037
 MD5 f35c9cb9fec58f1b5fc7379ebab7dcb5 files/antiword-0.36.1-ppc-macos.diff 440
 MD5 8970b39f62ba21a9a9699c6f6b907147 files/digest-antiword-0.36.1 67
 MD5 87c4f04119c126255fc64ede6ed4217c files/digest-antiword-0.37 140
