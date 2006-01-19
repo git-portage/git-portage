@@ -1,5 +1,5 @@
-MD5 af0e7aecac9552f8ff8b1e00c2d24822 ChangeLog 765
+MD5 3ff6045c5c3b62e4b2fc0a683c1e3a00 ChangeLog 870
 MD5 268b521924cf1c9e6f31dcf8d95f577c files/digest-logmon-0.4.4 64
 MD5 9d1229ebb0d52a760f4ae0d41d7107a0 files/logmon-0.4.4-char2int.diff 202
-MD5 f68da813bb28fba9fcec2ef0a1903051 logmon-0.4.4.ebuild 762
+MD5 720e1ca508bf1f6bd244b6b853c4ef44 logmon-0.4.4.ebuild 757
 MD5 5c0cf8693a8e3f46bbd06854f4d8a6f7 metadata.xml 258
