@@ -1,4 +1,4 @@
-MD5 3337fb887901a32dfdc86307905529f3 ChangeLog 2607
+MD5 a63d10d2e6cf1e23ffbec34cb8ecb96d ChangeLog 2716
 MD5 86b913e3c3ab730fed224d04077a41b7 files/digest-rake-0.4.15 59
 MD5 dda8c4770336deeaa107e0921ad4014f files/digest-rake-0.4.15-r1 118
 MD5 909a65fbcf0532c13b743da4d793c5a1 files/digest-rake-0.5.3 116
@@ -11,4 +11,4 @@ MD5 249e947507af99fbbcd694f39bc9d0e8 rake-0.4.15.ebuild 860
 MD5 413f869180d3a7f706cb904a089ab583 rake-0.5.3.ebuild 862
 MD5 ac3233a92eac2a18532d31ca5b31f93e rake-0.6.0.ebuild 865
 MD5 e1ec1b5dfdc3a0190a2ddc6e07dd292a rake-0.6.2.ebuild 870
-MD5 0fd9656ce5a7d3c551c14274ccbfa3c0 rake-0.7.0.ebuild 873
+MD5 625e52d1bdb4f87d589060fc6e15771f rake-0.7.0.ebuild 872
