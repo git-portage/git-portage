@@ -1,5 +1,5 @@
-MD5 3212022ecac9dfe74493b71305fe0ee3 ChangeLog 1347
-MD5 c6946d41d99f09f7ef746777ae6e1610 ebtables-2.0.6-r1.ebuild 1076
+MD5 d958a91f6e3734f5ee144cbb6dcfca37 ChangeLog 1540
+MD5 830295ff5277d1f2e049fe9136998c0f ebtables-2.0.6-r1.ebuild 1078
 MD5 9979552c18681dd6edfe1e91f6717609 ebtables-2.0.6.ebuild 975
 MD5 72232fd4c734d316f9f588216d3228f2 files/digest-ebtables-2.0.6 66
 MD5 72232fd4c734d316f9f588216d3228f2 files/digest-ebtables-2.0.6-r1 66
