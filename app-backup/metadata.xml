@@ -23,5 +23,10 @@
 		La categoria app-backup contiene strumenti per il backup dei dati, incluso
 		backup completo o incrementale, come backup su altri media (CD-R, nastri, ecc.).
 	</longdescription>
+	<longdescription lang="pt">
+		A categoria app-backup contém ferramentas para fazer backup de dados,
+		incluindo tanto backups completos como incrementais, bem como backups
+		para outras mídias (CD-R, Fita, etc.).
+	</longdescription>
 </catmetadata>
 
