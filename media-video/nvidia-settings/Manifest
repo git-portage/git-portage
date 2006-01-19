@@ -1,4 +1,4 @@
-MD5 fa685ee8d19f8bd71d64fddf8bbd7d11 ChangeLog 3352
+MD5 6589e99dc5930c25c6398501f347828a ChangeLog 3542
 MD5 ba114bf17302ecdb08e065953295cc03 files/digest-nvidia-settings-1.0.20050525 81
 MD5 47ecc5e991834fd43188034d76fbbc96 files/digest-nvidia-settings-1.0.20050729 81
 MD5 5f2cbe0077553362cfec46c11a1839fa files/digest-nvidia-settings-1.0.20051122 81
@@ -16,7 +16,7 @@ MD5 6a85441f269b195cfa3f1a8a6422120c nvidia-settings-1.0.20050525.ebuild 1539
 MD5 7bbeebd18631e196cdf02e30c2008310 nvidia-settings-1.0.20050729.ebuild 1607
 MD5 5016b0fa9d39b1ed1d46603957c66c7e nvidia-settings-1.0.20051122-r1.ebuild 1659
 MD5 de224fd54ba4e9440b3629559f8d8112 nvidia-settings-1.0.20051122-r2.ebuild 1756
-MD5 9431f4b4071efa66015c28f83b5df89c nvidia-settings-1.0.20051122-r3.ebuild 2811
+MD5 128a5344b14fe5b48dd72e050078b35b nvidia-settings-1.0.20051122-r3.ebuild 2813
 MD5 e7136664ccde2a8050e6b17b803fbdb0 nvidia-settings-1.0.20051122.ebuild 1607
 MD5 9df89547cf34bfb5ffa1177e2ce00c00 nvidia-settings-1.0.6111.ebuild 1128
 MD5 230d885c5f928254a3791e8f7b2bcc17 nvidia-settings-1.0.6629.ebuild 1128
