@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_survey/Attic/mod_survey-3.2.3_pre2-r1.ebuild,v 1.1 2006/01/16 18:08:43 rl03 Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_survey/Attic/mod_survey-3.2.3_pre3.ebuild,v 1.1 2006/01/19 02:28:42 rl03 Exp $
 
 inherit webapp
 
@@ -22,7 +22,7 @@ DEPEND=">=dev-lang/perl-5.6.1"
 RDEPEND="${DEPEND}
 		apache2? ( >=net-www/apache-2 >=www-apache/mod_perl-1.99 )
 		!apache2? ( >=net-www/apache-1 <www-apache/mod_perl-1.99 )
-		postgres? ( >=dev-perl/DBI-1.38	dev-perl/DBD-Pg )
+		postgres? ( >=dev-perl/DBI-1.38 dev-perl/DBD-Pg )
 		mysql? ( >=dev-perl/DBI-1.38 dev-perl/DBD-mysql )
 		>=perl-core/CGI-3.0.0"
 LICENSE="GPL-2"
