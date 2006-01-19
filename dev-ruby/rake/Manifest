@@ -4,9 +4,11 @@ MD5 dda8c4770336deeaa107e0921ad4014f files/digest-rake-0.4.15-r1 118
 MD5 909a65fbcf0532c13b743da4d793c5a1 files/digest-rake-0.5.3 116
 MD5 dabd389ed725fb855eb8019eb90ccd6d files/digest-rake-0.6.0 116
 MD5 5ff9aefb3b5ff119b33e2113f6921182 files/digest-rake-0.6.2 116
+MD5 54e69f3d04ee801383e8ef2b5d090355 files/digest-rake-0.7.0 116
 MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
 MD5 ffd0bbceb16dcae04736ae9dab9abe0b rake-0.4.15-r1.ebuild 948
 MD5 249e947507af99fbbcd694f39bc9d0e8 rake-0.4.15.ebuild 860
 MD5 413f869180d3a7f706cb904a089ab583 rake-0.5.3.ebuild 862
 MD5 ac3233a92eac2a18532d31ca5b31f93e rake-0.6.0.ebuild 865
 MD5 e1ec1b5dfdc3a0190a2ddc6e07dd292a rake-0.6.2.ebuild 870
+MD5 0fd9656ce5a7d3c551c14274ccbfa3c0 rake-0.7.0.ebuild 873
