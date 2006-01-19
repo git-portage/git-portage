@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7f433e2483c681fb45755de0d88272e9 ChangeLog 4358
 MD5 33ec0e0ab40e02bedea5e6b2b8ec51bc files/digest-libmcal-0.7 62
 MD5 33ec0e0ab40e02bedea5e6b2b8ec51bc files/digest-libmcal-0.7-r1 62
@@ -13,3 +16,10 @@ MD5 54153ab860d8c06b01b0e00c03ce7aad libmcal-0.7-r3.ebuild 1871
 MD5 2af4889e025a7238c3fb4f5b5e4c7270 libmcal-0.7-r5.ebuild 2000
 MD5 0d2106dd953946fad1542111a3946d62 libmcal-0.7.ebuild 691
 MD5 b0d485ea1a51fb83c70daedef2599272 metadata.xml 279
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDz3EI2+ySkm8kpY0RApenAJ9ZVZtJm3aMbX0dXdqbhXDbppob5ACfQgLh
+Dt7dHQu7Kr8Wu0JkEja1kOU=
+=n9CQ
+-----END PGP SIGNATURE-----
