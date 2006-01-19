@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4507c745aa87db19ae2ade633c0e5537 ChangeLog 4430
 MD5 914162d5ed1fd8cf9f24104fff013410 files/digest-jhead-2.2 60
 MD5 89f78d6efa8594f34ceb1a4a20b61803 files/digest-jhead-2.4 60
@@ -8,3 +11,10 @@ MD5 088f32d3a102d96ca5231db2c396e0d7 jhead-2.2.ebuild 791
 MD5 d6cccee500cdaf75733dd8748e3bf2fc jhead-2.4.ebuild 880
 MD5 4c411caec7f68dbb1aec4b6c17a84975 jhead-2.5.ebuild 911
 MD5 daf676490886bcebc03a96609cd21923 metadata.xml 227
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFDz4AXntT9W3vfTuoRAtKHAJwL7f0z5symbKcVFlQKFRDwBGeYmACfdCDQ
+BuF+pbZREnWi+gMGEbdRqtM=
+=5hS2
+-----END PGP SIGNATURE-----
