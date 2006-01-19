@@ -4,5 +4,5 @@ MD5 6f915eca707d184af05408eb5a75e73c files/digest-zziplib-0.13.38 68
 MD5 2e7c47c7774d9c41b99fbb49a686a665 files/digest-zziplib-0.13.45 68
 MD5 86d067c70c3a362f7761faf2776050bd metadata.xml 285
 MD5 de39c4481f01799a68687e64255b391b zziplib-0.13.36.ebuild 934
-MD5 5be749ec7e4c65d330011ad3bdada9a1 zziplib-0.13.38.ebuild 1031
-MD5 094a56d255dece843cd0a94cd14f66ea zziplib-0.13.45.ebuild 1072
+MD5 48249d028e32b1960fd39b79459b24cd zziplib-0.13.38.ebuild 1034
+MD5 4020fa70f23724bf07bbc7d1b8425f6d zziplib-0.13.45.ebuild 1076
