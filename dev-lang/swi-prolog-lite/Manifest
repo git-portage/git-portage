@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 659872cd908aaf20fd2c7040c9113ce5 ChangeLog 3650
 MD5 8eed8feaa65a3ab28f60e67e609ed512 files/destdir.patch 488
 MD5 ac0b2bc6ebbb0b4d807dc2e7f88c0edf files/digest-swi-prolog-lite-5.0.10 67
@@ -20,3 +23,10 @@ MD5 7d72dd5171c98a306021fbf58e52fb43 swi-prolog-lite-5.2.11.ebuild 1157
 MD5 e5130b48bc4c49b2a6c9fb96947892a7 swi-prolog-lite-5.3.14.ebuild 1153
 MD5 9604df1e2eb962f22c4e1a82e56dc79f swi-prolog-lite-5.4.7.ebuild 1212
 MD5 25f5437b798aceee8ff4f6a2660d37c7 swi-prolog-lite-5.5.39.ebuild 1991
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD0D8r2+ySkm8kpY0RAm3pAJwLuwh5WSRnbo918PZ9JvRo2zyYEwCgw4xZ
+ueCd16LQHYrVntD/PjcEIq8=
+=dCiT
+-----END PGP SIGNATURE-----
