@@ -9,4 +9,4 @@ MD5 4ecf2a69badd7ba1b12fc497544726f3 files/php-select-modules/php-cgi.sh 452
 MD5 e4c69f3c38351cce893f12122cf3262c files/php-select-modules/php-devel.sh 532
 MD5 13c38bfdc416d740518637fe1425f467 files/php-select-modules/php.sh 436
 MD5 c58d07ca1c1235bbad9bccaec96fc062 metadata.xml 157
-MD5 5ee6191fde86f93e4fe18648e22138bd php-toolkit-1.0-r2.ebuild 1021
+MD5 966255a654649ef542c5a4f19f151ec0 php-toolkit-1.0-r2.ebuild 1014
