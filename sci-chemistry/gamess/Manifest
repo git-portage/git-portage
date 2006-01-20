@@ -1,4 +1,4 @@
-MD5 29755e3ad150ce4983538e4ec9124075 ChangeLog 1874
+MD5 379a1f9dfc103c328a3c9cc0f93b982d ChangeLog 1891
 MD5 5b5d5d5d530d675c1f8fea3e2bda27c6 files/comp-gentoo.1.patch 1376
 MD5 cc629344d268783ea8be555bd06249af files/comp-gentoo.patch 1276
 MD5 88aa0ef3a19289c609a5167e2176bbf6 files/compall-gentoo.patch 445
@@ -16,5 +16,5 @@ MD5 b071fb871be1c8b9bc57bcd160dc6fd9 files/rungms-gentoo.patch 1801
 MD5 2e42d76c41b4338282fe7e1b5cfd3093 gamess-05272005.3-r1.ebuild 6664
 MD5 189d64d4b2256ad8e759f5266216254c gamess-05272005.3-r2.ebuild 6664
 MD5 81efef3dd25f618ec470f589743f1882 gamess-05272005.3.ebuild 7057
-MD5 b549d4ab7deff45dead780c6547a38a9 gamess-05272005.5.ebuild 6664
+MD5 8215cbf09d5546ae271659d60f6fbd92 gamess-05272005.5.ebuild 6661
 MD5 041650a939ada57b9df1755a488ad1b7 metadata.xml 254
