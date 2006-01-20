@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 165db7fb8dec3037c5adb62f07d2be99 ChangeLog 563
 MD5 2ea616c7436c738dbb0fec597510dd8d files/digest-ipkg-utils-1.7 65
 MD5 a8fc045f26d689031bb38c868e55aef8 ipkg-utils-1.7.ebuild 1013
 MD5 e6ad5c4b3b5323376c74ca8efe34381a metadata.xml 484
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD0V2ywUpWvClEHQoRAogxAJ95Ti1lydibWZf+3SV6A2AAcTqtSACaAwlX
+1ns5LT3kLEUe4K+2saqqrB8=
+=X24g
+-----END PGP SIGNATURE-----
