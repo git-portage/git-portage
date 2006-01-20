@@ -3,5 +3,5 @@ MD5 5c10df628bd8e993b404759fef5d70dc files/digest-sara-6.0.4 60
 MD5 e8a1965d072936eccafb53ed1018210c files/digest-sara-6.0.7d 61
 MD5 291ce83a97555c503a53904467cae289 files/sara 246
 MD5 f34e3c8858756da0001b12d2d3fa1af2 metadata.xml 159
-MD5 4d94863ed1540fcca8ba78e2bfb7875c sara-6.0.4.ebuild 3559
-MD5 8eee793cfb288b7eb41a62187cfce0d8 sara-6.0.7d.ebuild 3568
+MD5 b33ab92a37fba95834556f19146a2f46 sara-6.0.4.ebuild 3630
+MD5 894c2e6e8b6ad2a301ebff4cc3b32f89 sara-6.0.7d.ebuild 3639
