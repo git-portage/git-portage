@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2744d9bbd1914034125c6e433aa8c3a8 ChangeLog 17532
 MD5 6a822233a7d4799925d086c7fe2b743e file-roller-2.10.0-r1.ebuild 1489
 MD5 fab7851231fc02801db3f51c775a447a file-roller-2.10.3.ebuild 1354
@@ -16,3 +19,10 @@ MD5 52258671fa0060fb4c537665f1be68b6 files/file-roller-2.10.3-use_bin_tar.patch 
 MD5 67f58f96b7c00be703c9bf9cf38cd191 files/file-roller-2.8.0-use_bin_tar.patch 405
 MD5 d23f66e1c734a44ce6ee89b0e724b371 files/rpm2cpio-file-roller 2556
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFD0WdPKRy60XGEcJIRApHIAKCg32oTNsO0opuyJiDPNvhn0/5J/gCgpR3k
+diBmgK2fdUfIQ5BzPdif+bQ=
+=S7H7
+-----END PGP SIGNATURE-----
