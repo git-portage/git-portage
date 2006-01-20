@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 137017edbbb7c6bbe5a83a2b58a49f3b ChangeLog 68644
 MD5 8bd6dd1987c5333b1c1cf227a296bd76 baselayout-1.11.13-r1.ebuild 18944
 MD5 22a10db577b1b646d12ba31ed7b77a6c baselayout-1.11.13-r2.ebuild 19014
@@ -19,3 +22,10 @@ MD5 6d158e9a0e9b32c05e6633a68b39b4cc files/digest-baselayout-1.11.14-r2 70
 MD5 2c06dc3a42153a5b07bab75e0337f0be files/digest-baselayout-1.12.0_pre13-r1 76
 MD5 2629fa7eb55e4f72024f4e46e7b2714b files/digest-baselayout-1.12.0_pre15 76
 MD5 e02bb32cac91dad28d3c05b731b37b04 metadata.xml 385
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD0L4cEbVyYKaZ/NERAko4AJwIKbjpCyS+BtMhTcsX54cC0BpMTwCgh84M
+oyyvCgdMpxzVdOG809Zhwsk=
+=SlGk
+-----END PGP SIGNATURE-----
