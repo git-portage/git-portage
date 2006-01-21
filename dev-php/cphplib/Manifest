@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1d75f9d687069b6d54a6e8efd3676678 ChangeLog 770
 MD5 7965dd837016709e72a163998e0a1905 cphplib-0.50.ebuild 730
 MD5 9d4d6556c5bec5b83267fd0c54cdbef2 files/digest-cphplib-0.50 64
 MD5 c58d07ca1c1235bbad9bccaec96fc062 metadata.xml 157
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD0eSNaGfFFLhbXWkRAg7VAKCQC8u+1WhncbJSvtqU4YzAFxAZNQCbBLCv
+tRaD9DNyhOT9E4B9pskXhx0=
+=Pvqt
+-----END PGP SIGNATURE-----
