@@ -5,4 +5,4 @@ MD5 093c63bdced794db036ee6ea29df14bd files/xvidcap-1.1.3-new-ffmpeg.patch 2200
 MD5 588ec359065346a6c3413d4ce9427ec5 files/xvidcap-1.1.3-use-ffmpeg-0.4.9.patch 573
 MD5 cdb11033a3fa6525334cecf938961c07 metadata.xml 166
 MD5 be08635e21ff337fbe4e5a806cfeed7e xvidcap-1.1.3-r1.ebuild 1084
-MD5 720d65d4b29f01f6ec7bd02fa9b3e59a xvidcap-1.1.3-r2.ebuild 1379
+MD5 b127ec9a865e1e42fdae0af5770bf4ea xvidcap-1.1.3-r2.ebuild 1378
