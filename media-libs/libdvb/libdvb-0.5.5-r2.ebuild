@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libdvb/Attic/libdvb-0.5.5.ebuild,v 1.8 2006/01/21 13:54:27 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libdvb/Attic/libdvb-0.5.5-r2.ebuild,v 1.1 2006/01/21 13:54:27 zzam Exp $
 
 inherit eutils
 
@@ -10,14 +10,10 @@ SRC_URI="http://www.metzlerbros.org/dvb/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha ~amd64 ia64 ppc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~x86"
 IUSE="doc"
 
-RDEPEND="
-	|| (
-		>=sys-kernel/linux-headers-2.6.11-r2
-		media-tv/linuxtv-dvb
-	)"
+RDEPEND="media-tv/linuxtv-dvb-headers"
 
 DEPEND="${RDEPEND}"
 
@@ -26,8 +22,10 @@ src_unpack() {
 
 	# Disable compilation of sample programs
 	# and use DESTDIR when installing
-	epatch "${FILESDIR}/${P}-gentoo.patch" || die "patch failed"
-	epatch ${FILESDIR}/errno.patch || die "patch failed"
+	epatch "${FILESDIR}/${P}-gentoo.patch"
+	epatch "${FILESDIR}/errno.patch"
+	epatch "${FILESDIR}/${P}-gentoo-file-collisions.patch"
+	sed -i.orig Makefile -e 's-/include-/include/libdvb-g'
 }
 
 src_compile() {
