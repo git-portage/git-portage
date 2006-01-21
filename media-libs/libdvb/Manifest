@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b12a73b6f7332a761c635ad33b1b1375 ChangeLog 4393
 MD5 b60c65ce69975d3a63cce5830639e6fd files/digest-libdvb-0.5.0-r1 64
 MD5 b60c65ce69975d3a63cce5830639e6fd files/digest-libdvb-0.5.0-r2 64
@@ -25,3 +28,10 @@ MD5 7f27b3d68a225574bbcfc3794bcb09c3 libdvb-0.5.5.1-r2.ebuild 1303
 MD5 ee02cb01e35096c862f3a90eea650799 libdvb-0.5.5.1.ebuild 1234
 MD5 5d374892aafc3e2d726d59bd714564df libdvb-0.5.5.ebuild 1326
 MD5 dff9ded73ffb6549a59f5e6144af1cfd metadata.xml 217
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD0j1OZfSl1Kp5KmoRAtW+AJ9EIRXYJv+5PT7igMdkEINAIi6qVwCdFWqQ
+t6Dsbi3klRyHTVEwMWI9kfI=
+=HoSi
+-----END PGP SIGNATURE-----
