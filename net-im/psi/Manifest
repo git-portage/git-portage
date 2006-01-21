@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 343a6d22852649be1b667c1b635319a0 ChangeLog 10402
 MD5 f13f9686a5acb361193702deb53cb477 files/digest-psi-0.10 2087
 MD5 fc8fae7a49b592b4f2c2914c21494c11 files/digest-psi-0.9.3-r1 1924
@@ -23,3 +26,10 @@ MD5 3c2b96d4564d64824c71f4bc8e35a873 psi-0.9.3-r1.ebuild 8177
 MD5 e526c4a46dc2ead569b41607c46ceb5f psi-0.9.3-r2.ebuild 9464
 MD5 9cc6eb11ab3f94a5ebc0506bf57838aa psi-0.9.3-r3.ebuild 9862
 MD5 0c6d6cce6f4af4a0160f4f31c407c237 psi-0.9.3-r4.ebuild 9160
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD0qQC8zY1VwezZiERAj5eAKCc/vsi9mxr+bIgzCqRYdcAj/2RBwCgnblm
+v8apaWgFJf9H9JvCWSc1Uo4=
+=tqig
+-----END PGP SIGNATURE-----
