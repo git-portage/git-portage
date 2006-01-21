@@ -7,7 +7,7 @@ MD5 2766aeba32226962ae298487f56c37aa files/digest-gallery-2.0.2-r1 71
 MD5 d86a2cffa618ecf7fe9a2b001be69523 files/postinstall-en.txt 430
 MD5 7fd340b3582fa5f65153a85c04f01160 files/postinstall-en2.txt 913
 MD5 3c943a093c3ab24cc1cfd1409c794d83 gallery-1.5.1.ebuild 987
-MD5 c441b7a07d8d722758a271026c435f20 gallery-1.5.2.ebuild 967
+MD5 bf0c53de19778b3843ca04867495a661 gallery-1.5.2.ebuild 966
 MD5 7cae145d1aa9b7900fb4b1b00ebdc774 gallery-1.5_p1.ebuild 980
 MD5 427f5f6b3b92cbf6f11ec1c33b8318eb gallery-2.0.2-r1.ebuild 1125
 MD5 c339473e0ff43da76eb2f2607c441921 metadata.xml 280
