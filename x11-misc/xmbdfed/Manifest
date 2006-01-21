@@ -1,5 +1,5 @@
-MD5 2cb6be316e1b0bc4ae74a596ddacfd6b ChangeLog 1973
+MD5 d49a706efed2a21c669247f14b62c50e ChangeLog 2155
 MD5 eecc06fe77a7c9a2d32fcfca6e6f7b4c files/digest-xmbdfed-4.7_p1 124
 MD5 1a4e7c5cb2bcbb41fda2fb230fd3d352 files/xmbdfed-4.7_p1-gcc4.patch 784
 MD5 b1f688ff3e6c85c5e4d8e5ef35807192 metadata.xml 186
-MD5 110ab6ebcf437623275404bee21574c3 xmbdfed-4.7_p1.ebuild 1347
+MD5 60a9c604810c86b526a2ff55922c8100 xmbdfed-4.7_p1.ebuild 1347
