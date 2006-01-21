@@ -1,18 +1,15 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/usermode-sources/Attic/usermode-sources-2.6.12-r2.ebuild,v 1.1 2005/08/23 14:41:08 dsd Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/usermode-sources/Attic/usermode-sources-2.6.15.ebuild,v 1.1 2006/01/21 20:38:30 dsd Exp $
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base"
-K_GENPATCHES_VER="13"
+K_GENPATCHES_VER="3"
 inherit kernel-2
 detect_version
 
-UML_VER="uml-2.6.12-bs11"
+UML_VER="uml-2.6.15-bs1"
 UNIPATCH_LIST="${DISTDIR}/${UML_VER}.patch.bz2"
-
-#The uml-2.6.12-bs11 patch has a collision with the 2.6.12.3 patch
-UNIPATCH_EXCLUDE="1003_linux-2.6.12.3.patch"
 
 DESCRIPTION="Full sources for the User Mode Linux kernel"
 SRC_URI="${KERNEL_URI} ${GENPATCHES_URI}
