@@ -1,4 +1,4 @@
-MD5 bc57df925963e6edba93bb245d999324 ChangeLog 2105
+MD5 a24b51715205223bd2df345de1beba71 ChangeLog 2093
 MD5 23af670a16b78f2ed91017e898efa177 files/digest-mydns-0.11.0 65
 MD5 9d4a562f99499ac86ee42d360e55b4d8 files/digest-mydns-1.0.0 64
 MD5 2e5710abe63e66ba058b8cab7a3c7fa7 files/digest-mydns-1.1.0 64
@@ -8,4 +8,4 @@ MD5 4c0162b2fafe950563e223e5a939c5c7 files/mydns.rc6-0.11.0 763
 MD5 c50346bf0fb8b39c521dca42b145f6ee metadata.xml 230
 MD5 80e9ef6371c327c8784736f7cfdbba9f mydns-0.11.0.ebuild 2148
 MD5 22250bac26f3f000198d9016dfd9c935 mydns-1.0.0.ebuild 2140
-MD5 f8aa042af796e16f6260c7a96be1cd37 mydns-1.1.0.ebuild 2251
+MD5 2ac07796324fb9911b9aa33d9f6b2423 mydns-1.1.0.ebuild 2251
