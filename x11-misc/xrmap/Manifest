@@ -6,4 +6,4 @@ MD5 68f544c43102455686aedc82bd5a2727 files/xrmap-2.32-Makefile.kit.patch 750
 MD5 cdb11033a3fa6525334cecf938961c07 metadata.xml 166
 MD5 4578bf01dee82a5900058673e3431e41 xrmap-2.29.ebuild 2039
 MD5 4aa929bb8e2c0e51fd0ad5bd0d56df9f xrmap-2.30.ebuild 2040
-MD5 1e8973749bab8197851db03d0a14b7ca xrmap-2.32.ebuild 2102
+MD5 1ec49c3f01e084ce4fd74dfdcf0c4cb2 xrmap-2.32.ebuild 2127
