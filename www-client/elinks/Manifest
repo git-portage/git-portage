@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 21e35535078d2823213c597e68b4208b ChangeLog 12432
 MD5 77809539a1fc470b15666ab9b111932b elinks-0.10.5-r1.ebuild 4068
 MD5 a6aae1c470f18573d077f9a17f3dc12d elinks-0.10.5.ebuild 3573
@@ -11,3 +14,10 @@ MD5 52b202f65c123224829a121624237100 files/elinks-0.11.0-gcc4-inline.patch 388
 MD5 94333484d4304521e637c2c5f7a43a67 files/elinks-0.11.0-make.patch 479
 MD5 8641dcff9f251387e7eba19875a7077c files/elinks-osx-configure.diff 919
 MD5 d94d306da3804e41296e1bf04c7c9cae metadata.xml 255
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD04Dvchej4aZK9/cRAqHPAJ4pmyb8z6WvxHY/etsDiN6pzKkxVgCgiImn
+1E92/c1ckwXUsxC/X4kohIw=
+=bwXg
+-----END PGP SIGNATURE-----
