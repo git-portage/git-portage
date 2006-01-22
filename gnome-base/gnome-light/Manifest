@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 769e50eaa56538e86e6bf51d02f08727 ChangeLog 2948
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gnome-light-2.10 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gnome-light-2.10_pre0 0
@@ -12,3 +15,10 @@ MD5 d46f4eedb66ccab9d35614173b2c10fd gnome-light-2.6.2.ebuild 2167
 MD5 e27fd93777eecc9c172831e2a1d63be0 gnome-light-2.8.0.ebuild 2135
 MD5 c43138fea8cc4925dfdc7a5d7fb14e32 gnome-light-2.8.1.ebuild 2174
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFD0uweKRy60XGEcJIRArtzAKCEGCkkQVwGY6enmoY1AicyVZcPaQCgoTj4
+Ohq0/44KDNwP/VWsDM1oXmk=
+=tKhK
+-----END PGP SIGNATURE-----
