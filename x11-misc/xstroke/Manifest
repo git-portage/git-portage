@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 11c76b7ab02b919c109532d9aa7508c4 ChangeLog 3002
 MD5 0bff6fe5c7b5973932081ba82302166d files/digest-xstroke-0.6 64
 MD5 cdb11033a3fa6525334cecf938961c07 metadata.xml 166
 MD5 c846e902c3c4ee28b965001757e110a1 xstroke-0.6.ebuild 855
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD0ujnugEuf3OQ0akRAqBdAJ96z5BcAeiSkP88TUOkc1jEU9CeEACfeNzg
+NTR6ORG91Lh2fF+NnrB3FtU=
+=hGjd
+-----END PGP SIGNATURE-----
