@@ -1,5 +1,5 @@
-MD5 1e3c9ce6189ad51438fcb684f40b790b ChangeLog 2300
+MD5 2064cbf079fbf9e1f5aa8ba234d3b109 ChangeLog 2299
 MD5 1bc69f6a689f8553a641ce0309ac1311 files/digest-wmi-10 58
 MD5 607f0418f6681898ac8da1fbe4e8b6e7 files/wmi.desktop 112
 MD5 384dcc3ab785c0f3c798da8ba631b2c1 metadata.xml 400
-MD5 bbabbe77ddf95ad7af959355877a9a2a wmi-10.ebuild 1413
+MD5 af4c6dcce87940c44a4ccaedafe1d8fe wmi-10.ebuild 1412
