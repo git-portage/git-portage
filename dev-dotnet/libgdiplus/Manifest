@@ -16,7 +16,7 @@ MD5 37699b78babed5fa31a7ddb0a8937c22 files/libgdiplus-1.1.8-giflib.diff 2461
 MD5 be8fad5b9016dd2cac36fdbc08169e7d libgdiplus-1.1.10.ebuild 1840
 MD5 69ed216432607d4a95420409914a88d7 libgdiplus-1.1.11.ebuild 1848
 MD5 ce79ee34e51c3b2ad2d80b581e87ff91 libgdiplus-1.1.13.ebuild 1848
-MD5 f1f7a08fc8d14a32411a71bb1b51d7ea libgdiplus-1.1.8.ebuild 1573
+MD5 b92266ec074edb8034742930efc1655f libgdiplus-1.1.8.ebuild 1572
 MD5 2ca22b339a9e83bf9a73bc248ac17aa4 libgdiplus-1.1.9.1.ebuild 1691
 MD5 66bc886177b77261ffec2c935141cd9f libgdiplus-1.1.9.2.ebuild 1832
 MD5 a60fdfbce7c7cfc52187ff86a7f8bbf8 metadata.xml 222
