@@ -1,14 +1,4 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 2d5d7a5f4f1bbe172c857c271cfb3e7d ChangeLog 1608
-MD5 8c623e53daafa025137077c6b65815bd metadata.xml 156
-MD5 c173699b276d708cc2ad4f5770b6e624 spice-3.5.5.ebuild 1285
 MD5 95e9084323d2adf97b66193093ed2262 files/digest-spice-3.5.5 65
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.9.10 (GNU/Linux)
-
-iD8DBQFB0HlxI1lqEGTUzyQRAtjoAJ9sM5ZolEFsphYeMqpb/clLoZfExgCcDyix
-nNycscIGgdAACdMaqzT+dnA=
-=sQXw
------END PGP SIGNATURE-----
+MD5 8c623e53daafa025137077c6b65815bd metadata.xml 156
+MD5 b1fb599dac45a7b2c4a28c972852acff spice-3.5.5.ebuild 1335
