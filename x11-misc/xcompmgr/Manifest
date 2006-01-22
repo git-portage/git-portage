@@ -7,5 +7,5 @@ MD5 fcac96a3388e51713ee63c0c8f861c8e files/xcompmgr-fix.diff 832
 MD5 a37bab73e2f24b213932c30997d3d360 metadata.xml 156
 MD5 c213ee6c4fb070f148bbc520e93bd9dd xcompmgr-1.1.1.ebuild 596
 MD5 f4a5d00b0cc0756562ab510a285ecf4a xcompmgr-1.1.2.ebuild 720
-MD5 919bb38f6980b7ad723c0c8f733cc431 xcompmgr-1.1.3.ebuild 724
+MD5 1f14bf5a189e4af4b517b75cded71e30 xcompmgr-1.1.3.ebuild 731
 MD5 f3967a8321ed1d9e2e1e22ba9bb8dc8f xcompmgr-1.1.ebuild 774
