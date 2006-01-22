@@ -1,4 +1,4 @@
-MD5 a68fd0b455e22951a7d4e4807a25f23c ChangeLog 4773
+MD5 4e4fa4d0c415134ebe461ce4a525a37c ChangeLog 4839
 MD5 91804808fca23d8a14cc7a801e512b76 files/digest-libidn-0.5.15 66
 MD5 37f648a35c4c8afce81983e58a927bcd files/digest-libidn-0.5.20 66
 MD5 34af7cf0c0c059728bc3b2870298d456 files/digest-libidn-0.5.4 65
@@ -6,5 +6,5 @@ MD5 680592690b911d75fe6455fa7901b206 files/digest-libidn-0.6.1 65
 MD5 482802408b6b4a743f32f2df57a79d42 libidn-0.5.15.ebuild 1257
 MD5 b358885f6d843cd09fcb09993d97decf libidn-0.5.20.ebuild 1267
 MD5 c33918231e4239d278a3f701319462b7 libidn-0.5.4.ebuild 543
-MD5 fe9cef2692a7fdddaa3d7b10a79cbabc libidn-0.6.1.ebuild 1279
+MD5 142700c535d35bcf42ed28350e521dbb libidn-0.6.1.ebuild 1283
 MD5 1652522405f5936eb29776ef8d5ffa5b metadata.xml 310
