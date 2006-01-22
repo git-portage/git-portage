@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d917c47461a86aaea447aacb888c172f ChangeLog 4633
 MD5 77cbf948cbe69222901e61a0803ffd27 files/digest-xfractint-20.3.01 71
 MD5 cb49b3df1715d0315e8a37576aaf6f8b files/digest-xfractint-20.3.02 66
@@ -12,3 +15,10 @@ MD5 54ffaca140969ecef033688cd3ea3a3b xfractint-20.3.01.ebuild 1314
 MD5 d78f7ee881bb81c34b6a7c411842a1d5 xfractint-20.3.02.ebuild 1325
 MD5 58158abbc78765d2a87adf4651f95abc xfractint-20.4.00.ebuild 1326
 MD5 a9d2c0e3ba3615552884a704d33ff099 xfractint-20.4.03.ebuild 1362
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD06kechej4aZK9/cRAhCrAJ9dGvvjSeiHk8eAStFsa31cRkgeLwCdFDjK
+FA7hKhJJ8ZiT2PCcXgrZaJ0=
+=5Sh4
+-----END PGP SIGNATURE-----
