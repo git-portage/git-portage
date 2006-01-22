@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 90bff59fc0e51b3c52ddda778c3a5943 ChangeLog 6795
 MD5 12cd6316db89eaf0efe7f5f33b5be707 files/digest-sox-12.17.5-r1 63
 MD5 d489ca9068a273a4a383094d2336edff files/digest-sox-12.17.6 63
@@ -21,3 +24,10 @@ MD5 6b0ba2acfa0396856c328217f286b00f sox-12.17.6.ebuild 1596
 MD5 f8ec3d3502188796332362bc6ca772c8 sox-12.17.7-r1.ebuild 1276
 MD5 5bf814ebb228201d44ec4e4283a15da8 sox-12.17.7-r2.ebuild 1400
 MD5 1ac0e5b661dbd240dad05316fddadcf5 sox-12.17.9.ebuild 1395
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFD04bWp5vW4rUFj5oRAm5DAJ0dZdWBloHBDGn3KYp0+BPx2sKEbwCePipT
+tJy8p8qLwgenpZgYVoT4XgI=
+=kl5j
+-----END PGP SIGNATURE-----
