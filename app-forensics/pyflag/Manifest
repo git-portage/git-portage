@@ -1,0 +1,4 @@
+MD5 a3edd9f59a1c4290729470fc03f75d8c files/digest-pyflag-0.80 63
+MD5 a5c5ecb770c6d3295f58b2c80d768f29 files/pyflag-0.80-nodbtool.patch 4484
+MD5 337a7b8bb8752ec54a72b7429432af11 metadata.xml 841
+MD5 0c4be288f230fef96cddb3d65180f128 pyflag-0.80.ebuild 2753
