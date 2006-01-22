@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 650f7673064f96e185224d6cd1b9ad1f ChangeLog 1966
 MD5 4e01494f4274dfe8fbed0b4982405537 files/build-patch.diff 1484
 MD5 9ca0559020eae581281496f04c53dd7b files/build.xml 710
@@ -6,3 +9,10 @@ MD5 16d1fac29c56d57e0eee5aecefee4fcf files/jing-20030619-xerces.patch 1393
 MD5 60267d864fc6a05822d8b732ff12e8dd files/manifest.mf 136
 MD5 e1836574ad24fe4864d2d3f14b588803 jing-20030619-r1.ebuild 1471
 MD5 79a5dd1b805e5bca495aec6d6a73826b metadata.xml 176
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD0xW/ndWRXhKOboURAhsWAKDTpOmxdJRrw1EnuD/qFepK/ryWCACdHhiE
+afjXxWIOwmk8CkDJaPlV0C0=
+=47Z+
+-----END PGP SIGNATURE-----
