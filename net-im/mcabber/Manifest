@@ -1,2 +1,4 @@
+MD5 4e5b460497dbf7fd9a1e92260edf3087 ChangeLog 419
 MD5 47eee034069beda7b217eb5b61415862 files/digest-mcabber-0.7.4 66
-MD5 a7fc1c9ed3d126a5b624e066067e4ed1 mcabber-0.7.4.ebuild 1128
+MD5 c0c413ba00e4cb839cb1fd18cd41e0ba mcabber-0.7.4.ebuild 1219
+MD5 355c04aa4a9dda9f5ff471aff404d32e metadata.xml 313
