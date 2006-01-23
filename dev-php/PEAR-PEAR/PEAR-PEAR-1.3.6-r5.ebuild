@@ -1,13 +1,13 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-PEAR/Attic/PEAR-PEAR-1.4.6.ebuild,v 1.1 2006/01/23 14:37:33 sebastian Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-PEAR/Attic/PEAR-PEAR-1.3.6-r5.ebuild,v 1.1 2006/01/23 16:03:17 chtekk Exp $
 
 inherit depend.php
 
 ARCHIVE_TAR="1.3.1"
 CONSOLE_GETOPT="1.2"
-PEAR="1.4.6"
-XML_RPC="1.4.4"
+PEAR="1.3.6"
+XML_RPC="1.4.5"
 
 [ -z "${PEAR_CACHEDIR}" ] && PEAR_CACHEDIR="/tmp/pear/cache"
 
@@ -20,7 +20,7 @@ SRC_URI="http://pear.php.net/get/Archive_Tar-${ARCHIVE_TAR}.tgz
 
 LICENSE="PHP"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+KEYWORDS="~alpha amd64 arm ia64 ppc ppc64 s390 sh sparc x86"
 IUSE=""
 
 # we deliberately force people to remove their old PEAR installations,
@@ -49,15 +49,6 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
-	unpack ${A}
-
-	cd "${WORKDIR}"
-
-	# fix packagingroot option
-	epatch "${FILESDIR}/fix-packagingroot-${PV}.patch"
-}
-
 src_install() {
 	require_php_cli
 
@@ -80,23 +71,6 @@ src_install() {
 	sed -i "s:@php_bin@:${PHPCLI}:g" "${WORKDIR}/PEAR/pear" || die
 	sed -i "s:@bin_dir@:/usr/bin:g" "${WORKDIR}/PEAR/pear" || die
 	sed -i "s:@php_dir@:/usr/share/php:g" "${WORKDIR}/PEAR/pear" || die
-	sed -i "s:-d output_buffering=1:-d output_buffering=1 -d memory_limit=16M:g" "${WORKDIR}/PEAR/pear" || die
-
-	# Prepare /usr/bin/peardev script.
-	cp "${WORKDIR}/PEAR-${PEAR}/scripts/peardev.sh" "${WORKDIR}/PEAR/peardev"
-	sed -i "s:@php_bin@:${PHPCLI}:g" "${WORKDIR}/PEAR/peardev" || die
-	sed -i "s:@bin_dir@:/usr/bin:g" "${WORKDIR}/PEAR/peardev" || die
-	sed -i "s:@php_dir@:/usr/share/php:g" "${WORKDIR}/PEAR/peardev" || die
-
-	# Prepare /usr/bin/pecl script.
-	cp "${WORKDIR}/PEAR-${PEAR}/scripts/peclcmd.php" "${WORKDIR}/PEAR/peclcmd.php"
-	cp "${WORKDIR}/PEAR-${PEAR}/scripts/pecl.sh" "${WORKDIR}/PEAR/pecl"
-	sed -i "s:@php_bin@:${PHPCLI}:g" "${WORKDIR}/PEAR/pecl" || die
-	sed -i "s:@bin_dir@:/usr/bin:g" "${WORKDIR}/PEAR/pecl" || die
-	sed -i "s:@php_dir@:/usr/share/php:g" "${WORKDIR}/PEAR/pecl" || die
-
-	# Prepare PEAR/Dependency2.php.
-	sed -i "s:@PEAR-VER@:${PEAR}:g" "${WORKDIR}/PEAR/PEAR/Dependency2.php" || die
 
 	# Install Archive_Tar Package.
 	cp -r "${WORKDIR}/Archive_Tar-${ARCHIVE_TAR}/Archive" "${WORKDIR}/PEAR/Archive"
@@ -112,7 +86,7 @@ src_install() {
 	cd "${WORKDIR}/PEAR"
 	insinto /usr/share/php
 	doins -r Archive Console OS PEAR XML *.php
-	dobin pear peardev pecl
+	dobin pear
 
 	insinto /etc
 	doins "${FILESDIR}/pear.conf"
@@ -122,17 +96,13 @@ src_install() {
 	fperms 755 "${PEAR_CACHEDIR}"
 }
 
+pkg_preinst() {
+	rm -f "${ROOT}/etc/pear.conf"
+}
+
 pkg_postinst() {
 	if has_version "<${PV}" ; then
 		ewarn "The location of the local PEAR repository has been changed"
 		ewarn "from /usr/lib/php to /usr/share/php."
 	fi
-
-	# Update PEAR channels as needed, add new ones to the list if needed
-	pearchans="pear.php.net pecl.php.net components.ez.no"
-
-	for chan in ${pearchans} ; do
-		pear channel-discover ${chan}
-		pear channel-update ${chan}
-	done
 }
