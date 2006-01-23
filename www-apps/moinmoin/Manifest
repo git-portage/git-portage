@@ -1,4 +1,4 @@
-MD5 a23f2643d527f0f81077a776c5b3e203 ChangeLog 3542
+MD5 3a2ca4a38eb785bf38a18a8da6cd1227 ChangeLog 3805
 MD5 83ae27d75112afb66a2d5d1319ba9874 files/digest-moinmoin-1.2.3 63
 MD5 4b756ef0b0c4eb10b5b2646ce792c0dc files/digest-moinmoin-1.3.5-r1 63
 MD5 2c05a12b877e632b32c4ebb3a2e01f82 files/digest-moinmoin-1.5.1 63
@@ -7,4 +7,4 @@ MD5 929e3e71ef7af009d9f289c33c382026 files/reconfig-2 421
 MD5 4defd726d2b03decc5b7ff21b0aac1a3 metadata.xml 225
 MD5 1e73d40d888212699794efd23c42a5a5 moinmoin-1.2.3.ebuild 1323
 MD5 433cde73049ddc005366d7dc79ebc4bc moinmoin-1.3.5-r1.ebuild 1773
-MD5 fc336cb56afff70a040ea9d81430eb49 moinmoin-1.5.1.ebuild 1824
+MD5 6149c7970858ca18d2db24085b868b22 moinmoin-1.5.1.ebuild 1824
