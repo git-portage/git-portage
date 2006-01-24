@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3e4e6b742badf8beb96705a0f9bebcd2 ChangeLog 1508
 MD5 7ee227ba2b1a15860d0386f176711e5f files/digest-lrmi-0.10 60
 MD5 c2587bd78295f2acb8207bd8875dc762 files/digest-lrmi-0.6 58
@@ -10,3 +13,10 @@ MD5 004c0994a69b79084efd604e0f77b11a lrmi-0.7.ebuild 640
 MD5 88a8a366fe42a072a00b730409d92686 lrmi-0.8.ebuild 730
 MD5 bd572a0b1cc5a96f86dcaae028ef2573 lrmi-0.9.ebuild 780
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD1W6r2+ySkm8kpY0RAs5sAJ9BLlFQ6BP9wXHvvj/CimRhRjiWoACfRZ6S
+s3m7E9CfqJjBAxF+3OyA6q0=
+=F5g+
+-----END PGP SIGNATURE-----
