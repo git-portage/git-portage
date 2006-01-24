@@ -1,4 +1,4 @@
-MD5 31402644606731e08e283f9882413725 ChangeLog 4448
+MD5 d1f3fd49d70f59aafc04a9258226142f ChangeLog 4448
 MD5 d9ccc9cd26549470b4fbb3f2a30a3362 files/digest-streamripper-1.60.10 72
 MD5 3232a9e9e35ff8917e02fc8f68142ec7 files/digest-streamripper-1.61.11 73
 MD5 ce58023c9de6ddccb9b4eead46de6a4e files/digest-streamripper-1.61.17 73
@@ -10,6 +10,6 @@ MD5 f14a8f3e07e34e02752ffc14533b357d files/streamripper-1.60.8-syslibmad.patch 2
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 cd20a63d6a48d5d9a4efd23f69fa1cb6 streamripper-1.60.10.ebuild 995
 MD5 79ee16d155953314a3c63f7107e1229a streamripper-1.61.11.ebuild 899
-MD5 4be858e6ff44d9078416be20a02412fb streamripper-1.61.17.ebuild 808
+MD5 75e87a8b2262d610a8229a7cc24394c7 streamripper-1.61.17.ebuild 924
 MD5 712d4e62e8e83fe82f41575c0d5b68fb streamripper-1.61.7.ebuild 845
 MD5 8d984a459c35c18f619e631c1594f30d streamripper-1.61.8.ebuild 897
