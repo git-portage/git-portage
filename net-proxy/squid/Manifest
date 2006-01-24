@@ -1,4 +1,4 @@
-MD5 2186d0d089fd91a7889cfdbb4d13b14f ChangeLog 25056
+MD5 214045d4141afda30a0285f8fd13e449 ChangeLog 25056
 MD5 9aae33d4872e127be17e8a1bc587c2a7 files/digest-squid-2.5.11 157
 MD5 3e02deef24558936110d58663433ace3 files/digest-squid-2.5.12 157
 MD5 5d6f903d6b8e8bbcd6fd6f93b8db5986 files/digest-squid-2.5.12-r1 157
@@ -10,5 +10,5 @@ MD5 5286e7e73ca5687381fa09ff41dccbd1 files/squid.logrotate 101
 MD5 2957ca0ec8bf84e4af8ed5adef7acb90 files/squid.pam 315
 MD5 cf398556bce540358644ce9a452abfba metadata.xml 241
 MD5 e134f5c38aadc2fd333ac8b006dbc252 squid-2.5.11.ebuild 6389
-MD5 e9334a5e62aac7778cae14aaa9575cde squid-2.5.12-r1.ebuild 6716
+MD5 1b95dc2beca2cfd9149d02f87f9e6c41 squid-2.5.12-r1.ebuild 6719
 MD5 31e9c5b0a022091d02569297aec7e5e4 squid-2.5.12.ebuild 6414
