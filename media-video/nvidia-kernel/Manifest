@@ -1,4 +1,4 @@
-MD5 d48451c27e0623958c726faf862ad5ca ChangeLog 34017
+MD5 e130b764e38ac4e78b66f9381227c2ec ChangeLog 34280
 MD5 b5b7f947ffb9e6c19f7457ff7c14d0db files/1.0.6111/conftest_koutput_includes.patch 1082
 MD5 762e6f6e16aa6dd5b2469e99fe8decd3 files/1.0.6111/nv-pci_find_class.patch 2903
 MD5 c2b155f40d7b904f07550e8e326969c2 files/1.0.6111/nv-remap-range.patch 5715
@@ -69,7 +69,7 @@ MD5 29777a7a6934d750d1f2743d384267d2 nvidia-kernel-1.0.6629-r4.ebuild 4600
 MD5 8aac41beeb1f441bb1dc5fe1aaabbd84 nvidia-kernel-1.0.6629-r5.ebuild 4772
 MD5 b44523732e779c46cebed035eb62cbfc nvidia-kernel-1.0.7167-r1.ebuild 3982
 MD5 574b07187a85bf2e576649bc0629d553 nvidia-kernel-1.0.7174-r1.ebuild 4226
-MD5 fb3ad5be762410f6745465afc58f483f nvidia-kernel-1.0.7174-r2.ebuild 4277
+MD5 ca24e01d6a1f384a349d4ed597a4c077 nvidia-kernel-1.0.7174-r2.ebuild 4277
 MD5 2e12cd6f21aaabd1424b51b10d2c0c34 nvidia-kernel-1.0.7174.ebuild 4025
 MD5 0da986517ab8d7beb13c5d1fe5a4c1c6 nvidia-kernel-1.0.7667.ebuild 4538
 MD5 6e28642fae4a75a66584dd04910cbac4 nvidia-kernel-1.0.7676-r1.ebuild 4669
