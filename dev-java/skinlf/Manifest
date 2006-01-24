@@ -1,4 +1,4 @@
-MD5 ff591a1b1d50681f94e98a4d870adb82 ChangeLog 521
+MD5 826a52f3c62f4cdd880fdff01594c0f1 ChangeLog 741
 MD5 712c7b8f9a62b32643ac3bbe18b56e36 files/digest-skinlf-1.2.12 71
 MD5 712c7b8f9a62b32643ac3bbe18b56e36 files/digest-skinlf-1.2.12-r1 71
 MD5 3fb7968ec94470fdcdce84fa8cbe2bab files/skinlf-1.2.12-build.xml 11622
@@ -7,5 +7,5 @@ MD5 5c756abb1a1f464545c91c576b919dfc files/skinlf-1.2.12-common.xml 5452
 MD5 a25557204224b7e4a380d42b2df424ee files/skinlf-1.2.12-image-utils-without-jimi.patch 2968
 MD5 105061490c4431c113a77768131aa5fe files/skinlf-1.2.12-image-utils.patch 1497
 MD5 2edcd635da8bde46bdfbb82e5929a5da metadata.xml 296
-MD5 6bf9c37b8d8c41d656e44a50087cc02b skinlf-1.2.12-r1.ebuild 1340
+MD5 886cfaa4683887fc1540dbf8a0c43a9d skinlf-1.2.12-r1.ebuild 1343
 MD5 209a8550773afe9b590f9c2edb9196c9 skinlf-1.2.12.ebuild 1406
