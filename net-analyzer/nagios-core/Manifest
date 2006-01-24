@@ -1,4 +1,4 @@
-MD5 51a88cb829ac927e66a8db1ac4aa4b35 ChangeLog 12526
+MD5 994d226e2aba5662bb83420ebacfef5b ChangeLog 12612
 MD5 446906907cccdbf195442373c6f17f77 files/2.x-series-nsca.patch 767
 MD5 673bda0ac6ab9230d23331e7f3846b7b files/99_nagios.conf 350
 MD5 565ce2a690d50aeb542e7afe44b8c733 files/Makefile-distclean.diff.bz2 1133
