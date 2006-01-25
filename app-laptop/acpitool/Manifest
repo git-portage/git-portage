@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 dc94b354cde38f2700a41ea78d5e5c32 ChangeLog 1257
 MD5 bef17e15dd04e689b0ab7990676d06bd acpitool-0.2.5.ebuild 672
 MD5 56555fe1c9c2c5daf611d33cd54882f7 acpitool-0.2.6.ebuild 821
@@ -10,3 +13,10 @@ MD5 451f8882f44f7b7dc0967841a64dcac0 files/digest-acpitool-0.2.6 66
 MD5 8b9f311205786b4bc4413caca0101be7 files/digest-acpitool-0.2.7 66
 MD5 795d53d63c3cff48ad82627008fcacf8 files/digest-acpitool-0.4.2 66
 MD5 8629d3ef30ef3be4b273182406eef4f2 metadata.xml 224
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD13uzub4+zaPCR/oRAkxQAJ4rifM0Zr+esIwMaQQqocUSnsGWGQCfXV6q
+DpmJwnvyw/+M9ULYS2sGprY=
+=e4er
+-----END PGP SIGNATURE-----
