@@ -1,5 +1,5 @@
-MD5 b65413f0c34f615429236004a043719a ChangeLog 3220
+MD5 ef250d84ab5e9531bfb671cff6464470 ChangeLog 3373
 MD5 e810e01b587c8fc167a868700f105be6 files/4.2-fPIC-python.patch 498
 MD5 f268a08e0cf98bde33935553e4378912 files/digest-snns-4.2-r7 345
 MD5 c000c0728c9136f1b54cbc3a5fc07644 metadata.xml 220
-MD5 1eae284b46d02ccd165ed7d4838e57d6 snns-4.2-r7.ebuild 2891
+MD5 197df9156aae3cf13fb7d3da405c2c7f snns-4.2-r7.ebuild 2893
