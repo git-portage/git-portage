@@ -1,4 +1,4 @@
-MD5 987389bae009b997f116a4b5caf5b645 ChangeLog 3269
+MD5 83dfdc551b5b78b096ac0a57a5969a7c ChangeLog 3477
 MD5 54690e8cf4fe2f9308c9d79afcd97e2e files/digest-limewire-4.0.8 69
 MD5 453ebe9343d43798ebdf6a9a6dfb4d55 files/digest-limewire-4.2.3 69
 MD5 6e6bfb4ba1ba1c613fbebc4ae965ef07 files/digest-limewire-4.6.0 69
@@ -10,5 +10,5 @@ MD5 6370a903dabb9f3898adf4f13787035d limewire-4.0.8.ebuild 1280
 MD5 d619691b681b04b5321b04f9ee5b250b limewire-4.2.3.ebuild 1419
 MD5 783dbd3e3fb451bbfc71d37d85daa5c7 limewire-4.6.0.ebuild 1377
 MD5 5178084bdf41b9e5ec9022bf2b3fabae limewire-4.8.1.ebuild 1372
-MD5 f5b74e5ec01e7b0b1d8c75847c00240c limewire-4.9.37.ebuild 1380
+MD5 922fbcfa1b378fc77a620b333664b344 limewire-4.9.37.ebuild 1381
 MD5 8aefbc0e49db723ca1ad02d0c409cd49 metadata.xml 160
