@@ -1,4 +1,4 @@
-MD5 759366f90eb94d80c0457d6a1748d7af ChangeLog 1045
+MD5 c0879888396a9d3c01ac4f9a7c8dda44 ChangeLog 1159
 MD5 c515bd2931ce697be23219be4556b62e files/0.7.6.1/10openjms-0.7.6.1 37
 MD5 11397a4bdb1b5d7d6a489766a6c58279 files/0.7.6.1/buildfile.patch.bz2 797
 MD5 fdae6fd4595f87aba37b3a3674faf490 files/0.7.6.1/conf 21
@@ -6,4 +6,4 @@ MD5 d1af3351d5e9ab88690027aab468d22b files/0.7.6.1/rc2 759
 MD5 2b897d3922776b256092ce64beb2792c files/0.7.6.1/source.patch.bz2 2628
 MD5 34edc166c8f579300fc1cf16650b3c9e files/digest-openjms-0.7.6.1-r1 145
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
-MD5 f9b1382d181f921140deada0d8cfee3b openjms-0.7.6.1-r1.ebuild 2300
+MD5 fd3dd60dffca4d34353d3ea9715f1eef openjms-0.7.6.1-r1.ebuild 2302
