@@ -1,5 +1,5 @@
-MD5 243ecd802a0891993784fa08544e0812 ChangeLog 1861
-MD5 8f7acdcec4dda6091525c068f7a44d0a cal3d-0.10.0.ebuild 838
+MD5 d105d29212db90083c16a0bc68cff10c ChangeLog 2021
+MD5 8e31324554672eda3e61e44b3d38bc92 cal3d-0.10.0.ebuild 836
 MD5 c65e69e23c8f64eb05babb8c4df774f1 cal3d-0.11.0_pre20050823.ebuild 826
 MD5 d00d94b81e7d78eda6ae6325d6f8712c files/cal3d-0.11.0_pre20050823-libtool-compat.patch 288
 MD5 f3ca4d499a49cfb9c816eac941532332 files/digest-cal3d-0.10.0 71
