@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a5b5eadb302ff2912ae245a363ea4783 ChangeLog 20389
 MD5 b736c67bb1a5d294ee2df24413cf9100 exim-4.43-r2.ebuild 8033
 MD5 9b839c970416e71bf6e0602bda37fa76 exim-4.50-r1.ebuild 7956
@@ -32,3 +35,10 @@ MD5 49698cb738763bbaebbbe89470f914ef files/mailer.conf 169
 MD5 d230e0fa45f2b65d5bc50c0879c40148 files/pam.d-exim 101
 MD5 4c0b8ee742360c08f0bc0b526fcaad10 files/system_filter.exim 8120
 MD5 ee52da73838435e93e200a5cba155fa3 metadata.xml 1029
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD2VicJrHF4yAQTrARAhlrAKCaeRzYu4o6Z8gMHafL5lTgImhB1gCgvoue
+OjnX+FZqB04OyVNTFjccwhM=
+=lidU
+-----END PGP SIGNATURE-----
