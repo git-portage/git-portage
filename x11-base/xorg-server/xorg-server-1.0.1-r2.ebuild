@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.0.1.ebuild,v 1.4 2006/01/19 03:53:22 joshuabaergen Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.0.1-r2.ebuild,v 1.1 2006/01/26 02:48:58 spyderous Exp $
 
 # Must be before x-modular eclass is inherited
 # Hack to make sure autoreconf gets run
@@ -15,7 +15,8 @@ MESA_PV="6.4.1"
 MESA_P="${MESA_PN}-${MESA_PV}"
 MESA_SRC_P="${MESA_PN}Lib-${MESA_PV}"
 
-PATCHES="${FILESDIR}/${P}-Sbus.patch"
+PATCHES="${FILESDIR}/${P}-Sbus.patch
+	${FILESDIR}/${P}-backtrace.patch"
 
 SRC_URI="${SRC_URI}
 	mirror://sourceforge/mesa3d/${MESA_SRC_P}.tar.bz2"
@@ -95,6 +96,9 @@ pkg_setup() {
 	# localstatedir is used for the log location; we need to override the default
 	# from ebuild.sh
 	# sysconfdir is used for the xorg.conf location; same applies
+
+	# --enable-xorg needed because darwin defaults off
+	# --enable-install-setuid needed because sparcs default off
 	CONFIGURE_OPTIONS="
 		$(use_enable ipv6)
 		$(use_enable !minimal dmx)
@@ -102,14 +106,10 @@ pkg_setup() {
 		$(use_enable !minimal xnest)
 		$(use_enable dri)
 		$(use_enable xprint)
-		--enable-xcsecurity
 		--with-mesa-source=${WORKDIR}/${MESA_P}
 		--enable-xorg
-		--enable-xtrap
-		--enable-xevie
 		--sysconfdir=/etc/X11
 		--localstatedir=/var
-		--disable-static
 		--enable-install-setuid
 		--with-default-font-path=/usr/share/fonts/misc,/usr/share/fonts/75dpi,/usr/share/fonts/100dpi,/usr/share/fonts/TTF,/usr/share/fonts/Type1"
 }
@@ -118,9 +118,6 @@ src_install() {
 	x-modular_src_install
 
 	dynamic_libgl_install
-
-	# As of 20051028, should be taken care of by upstream
-	dosym Xorg /usr/bin/X
 }
 
 pkg_postinst() {
@@ -141,7 +138,7 @@ dynamic_libgl_install() {
 	ebegin "Moving GL files for dynamic switching"
 		dodir /usr/$(get_libdir)/opengl/${OPENGL_DIR}/extensions
 		local x=""
-		for x in ${D}/usr/$(get_libdir)/xorg/modules/libglx*; do
+		for x in ${D}/usr/$(get_libdir)/xorg/modules/extensions/libglx*; do
 			if [ -f ${x} -o -L ${x} ]; then
 				mv -f ${x} ${D}/usr/$(get_libdir)/opengl/${OPENGL_DIR}/extensions
 			fi
