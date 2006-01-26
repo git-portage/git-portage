@@ -1,5 +1,5 @@
-MD5 ec73904a5bd6dd10a51835d4aa528ca8 ChangeLog 774
+MD5 6785d7683ab72e54b2f6d79862a2527f ChangeLog 908
 MD5 585f9e842d3ddae0483c38ff2c9992f9 files/50matlab-gentoo.el 410
 MD5 4ca7d27b7cfcaa20dff07173ba9d01a1 files/digest-matlab-2.2.3 64
-MD5 0d381847d68ae870b6dd1849246498e4 matlab-2.2.3.ebuild 669
+MD5 c61bc9e69915fdc6dc893bb79b247f8f matlab-2.2.3.ebuild 671
 MD5 fcd33d07e4ee719b01157946734f4fe8 metadata.xml 158
