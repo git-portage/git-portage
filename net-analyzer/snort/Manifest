@@ -1,4 +1,4 @@
-MD5 3db46d33c9c20658b3b3f70d105ba46f ChangeLog 16536
+MD5 0ce111aef69f4e8dc37c55fc2b347f0d ChangeLog 16863
 MD5 564bfdf90fe29f5924c68885ccfcddb8 files/2.3.0-libnet-1.0.patch 5424
 MD5 24851ef65be2d80a70ba4bebe3e8c0ff files/digest-snort-2.3.3 287
 MD5 04f9ed946469f7954b6bd27f8f1aca39 files/digest-snort-2.3.3-r1 284
@@ -10,5 +10,5 @@ MD5 9c325479975ea9fcb4f62c01407e8194 files/snort.rc6 712
 MD5 53edc4328d9adeaf087c65ea94b1594b metadata.xml 246
 MD5 93a2c9aa40931af85a80c9fddb4261e0 snort-2.3.3-r1.ebuild 4035
 MD5 b360cb079bb12675a615301852e71a7f snort-2.3.3.ebuild 3975
-MD5 89b4ab45922fce25724b78af89185614 snort-2.4.3-r1.ebuild 4398
+MD5 31569e35af81eb2cbc3c2e52242bb557 snort-2.4.3-r1.ebuild 4403
 MD5 fb1657b65226b6ff73c2d0f89081eb04 snort-2.4.3.ebuild 4319
