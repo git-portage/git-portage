@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4a5cd9ae252238dda9908e1972bf50f9 ChangeLog 8767
 MD5 911b4db00dda0d9aad7d79c8f2de99c3 files/2.6.13-configure.patch 238
 MD5 7b6e7879f947d56d486f1d17f3c8f3e1 files/2.6.13-uclibc-mincore.patch 1141
@@ -12,3 +15,10 @@ MD5 6dc6bf4e5e0c4fe36b73aa34a556ec69 xfsprogs-2.6.25.ebuild 1812
 MD5 f96dabde93dcb22a745c41dcb95c9f24 xfsprogs-2.6.36.ebuild 1651
 MD5 9f9e5b30a400b11f0ba8b828ebb79e40 xfsprogs-2.7.11.ebuild 1645
 MD5 730379f2cad36530cbee759502ac674d xfsprogs-2.7.3.ebuild 1640
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD2W2P2+ySkm8kpY0RAk3zAJ4jGbQxFa4/FmEOEIRnJlGDEf1B0gCgnuDY
+NW5QxXRXFGz+c/7xwd0s0cQ=
+=Emd+
+-----END PGP SIGNATURE-----
