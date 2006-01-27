@@ -1,5 +1,5 @@
-MD5 c38565ce6adb43a1d0596bcf94d163e8 ChangeLog 310
+MD5 e3a661468a8e81684111796538cd1b47 ChangeLog 405
 MD5 4d172b9257a42ada248704644738bfb7 files/digest-ifp-gnome-0.7 64
 MD5 383708eb30a6077362d5bb49cb33449b files/ifp-gnome-0.7-file-locations.patch 1737
-MD5 1dd19ea4d62b74cc22bd21ecda7d364c ifp-gnome-0.7.ebuild 690
+MD5 d1e81b9ac26689a273b36084fd5fa1ff ifp-gnome-0.7.ebuild 796
 MD5 9ca662d9657a089a8b5334488ddb3a86 metadata.xml 361
