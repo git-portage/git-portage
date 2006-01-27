@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/gradm/Attic/gradm-2.1.5.200504081812.ebuild,v 1.3 2005/09/17 15:05:20 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/gradm/Attic/gradm-2.1.5.200504081812.ebuild,v 1.4 2006/01/27 01:27:59 solar Exp $
 
 inherit flag-o-matic toolchain-funcs versionator
 
