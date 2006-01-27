@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 5fe5f7031b6b9507aad66fa7cd8421de ChangeLog 1303
 MD5 af2f8bd250fae641a5934c15173048d9 files/digest-xfmail-1.5.3 65
 MD5 5cd490c9d4971d8f547a1496509b926a files/digest-xfmail-1.5.4 65
@@ -10,11 +7,4 @@ MD5 5721b86fd871bdfab77231abc6e02f68 metadata.xml 161
 MD5 7adfa85335f11f5a2ac2048c883ffc1e xfmail-1.5.3.ebuild 955
 MD5 f855af2491f866530d39e4fa697f0d21 xfmail-1.5.4-r1.ebuild 1082
 MD5 9ee1c987b8df30d35d876cb4197792dc xfmail-1.5.4.ebuild 1072
-MD5 d99d17f67c5a6fbf126f99737d7a3030 xfmail-1.5.5.ebuild 1216
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD4DBQFD2lO7QlM6RnzZP+IRAuGQAJj3QKWcC9Dt12WLyzXJnJQQltZpAJwJEpKp
-5XqCqE1BkZiD2naKAc2Ldg==
-=kCcA
------END PGP SIGNATURE-----
+MD5 e4a53b3274dfa31d7275456422320301 xfmail-1.5.5.ebuild 1195
