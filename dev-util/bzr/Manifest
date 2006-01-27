@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ac9929860d9fc3d4215a8b3de1c05e57 ChangeLog 1541
 MD5 aead7488731c21671c7e77bca6a1e8d4 bzr-0.0.9.ebuild 688
 MD5 bd513588df0e2bd410c43e79b6e2890e bzr-0.6.2.ebuild 688
@@ -9,3 +12,10 @@ MD5 8f97e12c107fb24ebad57f0873b0e78c files/digest-bzr-0.6 59
 MD5 61a5c235b1f05bbb3f8c606866941097 files/digest-bzr-0.6.2 61
 MD5 ce53e69fc74ceb5842fa335c9112a4a7 files/digest-bzr-0.7 59
 MD5 bc29fb845d6836abeba3eeff41da8476 metadata.xml 218
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD2iAuW78445TWHXcRAoy1AJ9ZeZf4ualUREtHkL/XHdr0SFilywCcCGoW
+kD42+c6h6QpCJoiU9v5Pzuk=
+=7YVv
+-----END PGP SIGNATURE-----
