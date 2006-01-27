@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e13937cd4b0c276b2d86370803170e41 ChangeLog 3189
 MD5 14dadab5afaf81bd5cf65948db60ce16 aqbanking-1.6.0_beta.ebuild 1616
 MD5 0ed6716611dbbcd2cad0da2430f08802 aqbanking-1.8.0_beta.ebuild 1624
@@ -10,3 +13,10 @@ MD5 9d76f5866308b688b2515a483c9c8039 files/digest-aqbanking-1.9.1_beta 72
 MD5 760424bab72132fbebd0f93a5718fb7f files/digest-aqbanking-1.9.2_beta 72
 MD5 4c33b7d8592be2c996c48092fa3ffb22 files/digest-aqbanking-1.9.4_beta 72
 MD5 a72a06a37ca4e5905085ebff07fe9e9e metadata.xml 217
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD2qgDr2QksT29OyARAiwKAJ9OhEIFelM603cT2wJVYZR3uHxxhACgieO0
+1CH1oPaXE5Gqy4w9u2/JZ3A=
+=glTU
+-----END PGP SIGNATURE-----
