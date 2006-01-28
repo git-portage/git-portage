@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/gtk-gnutella/Attic/gtk-gnutella-0.96b-r1.ebuild,v 1.1 2006/01/23 17:22:01 mkay Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/gtk-gnutella/Attic/gtk-gnutella-0.96.ebuild,v 1.1 2006/01/28 12:53:50 mkay Exp $
 
 inherit eutils
 
