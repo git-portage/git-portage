@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e9f7d4ca7077ff3c37837c31ab22aabc ChangeLog 2533
 MD5 922a7aee31b05e5c9fe29c08ad41efbb files/digest-ncpfs-2.2.0.19 67
 MD5 922a7aee31b05e5c9fe29c08ad41efbb files/digest-ncpfs-2.2.0.19-r1 67
@@ -14,3 +17,10 @@ MD5 b9a976d20bfd39a3e1c6c17fb9a12e91 ncpfs-2.2.0.19.ebuild 732
 MD5 c7d2a68cc89c164a2022c4d7cf270d5e ncpfs-2.2.3.ebuild 959
 MD5 9d486449be9d79517a06d9de5dab75d9 ncpfs-2.2.5.ebuild 1350
 MD5 63cf42ca2eea6a66de6a33c46e58fee1 ncpfs-2.2.6.ebuild 1300
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD2wPBCRZPokWLroQRAps9AKCF1tMYyWWkc0GGZgX0tvD2cKLwLwCbBpEL
+EQDLqtcF/R6ctcGWIER3n7Y=
+=TSaf
+-----END PGP SIGNATURE-----
