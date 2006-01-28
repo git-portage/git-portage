@@ -4,6 +4,6 @@ MD5 b7b0497a04f349977d259c76f5cc887b files/digest-gnome-python-extras-2.12.0 79
 MD5 f6b648dacaa5c2cfe66a073f44957bef files/digest-gnome-python-extras-2.12.1 79
 MD5 7b23c53f1b63e82632bff46795e87506 files/gnome-python-extras-nogda.patch 469
 MD5 390328416983a72b9d3241bcc005879f gnome-python-extras-2.10.2.ebuild 1678
-MD5 e6b2c6edd07ec2200e1335e980a3c013 gnome-python-extras-2.12.0.ebuild 2096
-MD5 c5dd06a75278061f98f016155dbe8175 gnome-python-extras-2.12.1.ebuild 1849
+MD5 587481d2b329cbc5b78ebafbb9af7f07 gnome-python-extras-2.12.0.ebuild 2007
+MD5 8a86f7a1473de064713fda10632fbe89 gnome-python-extras-2.12.1.ebuild 1760
 MD5 7815efa8e3c1eece4b748785c644df85 metadata.xml 243
