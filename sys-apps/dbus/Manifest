@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 72b479a441265866f6ac8e6fc078da46 ChangeLog 13310
 MD5 2f46957776ab8bd83cfd271870d598da dbus-0.23.4-r1.ebuild 3587
 MD5 9cbbbd99c7ff7776f7b857effba153d2 dbus-0.50-r1.ebuild 3904
@@ -23,3 +26,10 @@ MD5 ac15aecd52ac9b55048015edba699800 files/digest-dbus-0.50-r1 62
 MD5 ac15aecd52ac9b55048015edba699800 files/digest-dbus-0.50-r2 62
 MD5 d1d5323f6bb155eef5cf44b19078aa07 files/digest-dbus-0.60-r3 62
 MD5 d854e952b3179d33b2ece377ce9980f3 metadata.xml 222
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD3F+d2+ySkm8kpY0RAmeBAKChls/Q8E+yn5TxPECGlbYVVkF6TwCfddFn
+7ESSV/jjjbDTjz3gkMSqQSs=
+=uIV4
+-----END PGP SIGNATURE-----
