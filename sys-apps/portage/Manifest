@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 dad7d00ebd9e26bd3f59891a19e3afdb ChangeLog 4468
 RMD160 ba796a1b09d3f0284b6d96eb1ce89e3a0ad651f9 ChangeLog 4468
 SHA256 6260d6673b63fbea25483998a1536c8d895f819d35d63e8ae0c1e9334f3c4f90 ChangeLog 4468
@@ -40,13 +37,6 @@ SHA256 f167640e6dfcaaf626a9dfd6614c1b712f895410eaa77ea23f524956167aa4eb portage-
 MD5 5039dc82682399a41dfdf6e10384446b portage-2.0.54.ebuild 3697
 RMD160 c63024b4a73e5b3a2462e2dc4eaea61510de6a26 portage-2.0.54.ebuild 3697
 SHA256 919667b991cbe8ab1439ceee4f1c96cf4ed0d2a68a8758798e18e01ee828bc22 portage-2.0.54.ebuild 3697
-MD5 670feedb9f42abe8a54cb0a51667f91e portage-2.1_pre4-r1.ebuild 4704
-RMD160 7abbc6f0a15996da456a7579a6a956cd4cd5da38 portage-2.1_pre4-r1.ebuild 4704
-SHA256 b7c09be4b08d362e38b795a6accbaab3a21db209855830ccaee7beba7da6ede4 portage-2.1_pre4-r1.ebuild 4704
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD3K84xvWNPsk/ZP4RAhZ5AKDBYtHZbmZxq9Lck9MeSrGAUOEfdgCcCLQP
-DMeH+l5RFR1PbZbfcIP+ts4=
-=8p7Y
------END PGP SIGNATURE-----
+MD5 74a1a7b8b9a5b4df1ed35558c4a55e2f portage-2.1_pre4-r1.ebuild 4719
+RMD160 aee337f2984b840afeb9e92009b215a8f451c2bb portage-2.1_pre4-r1.ebuild 4719
+SHA256 e492412c166c37b6059e14d824d1e717fbc8412fa1cc4bf4f44469d344aaf954 portage-2.1_pre4-r1.ebuild 4719
