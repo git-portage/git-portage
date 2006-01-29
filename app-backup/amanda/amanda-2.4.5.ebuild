@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.5.ebuild,v 1.6 2005/12/31 14:14:14 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.5.ebuild,v 1.7 2006/01/29 19:44:32 cryos Exp $
 
 inherit eutils
 
@@ -13,7 +13,7 @@ KEYWORDS="amd64 ppc ~sparc x86"
 RDEPEND="sys-libs/readline
 		virtual/inetd
 		app-arch/mt-st
-		media-gfx/gnuplot
+		sci-visualization/gnuplot
 		sys-apps/gawk
 		app-arch/tar
 		dev-lang/perl
