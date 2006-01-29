@@ -1,15 +1,15 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 09b1f814383bde099cf1e5eee8aa981e speechd-up-0.3_pre20041029.ebuild 824
-MD5 c317af0e61f2256804a486f227f73f61 ChangeLog 1456
-MD5 e206f7cd655afe2644bb78cc9d15bd7f metadata.xml 166
-MD5 f79e693d2592f8b2d2656e1cbed07415 files/digest-speechd-up-0.3_pre20041029 79
+MD5 70caf36fecbef7e44e987956c4066af0 ChangeLog 1703
+RMD160 898d3e9507a934e46af4378f36701447a71400d9 ChangeLog 1703
+SHA256 c37babd4ccf367e66cf3738d15c7e8c0082b566539b0ab9ed5131692902480d7 ChangeLog 1703
+MD5 ca7f83951f4934bbfb2d8def1bca2426 files/digest-speechd-up-0.3 244
+RMD160 76b5f111fe00c5c2371c818718c71ba1c58edc38 files/digest-speechd-up-0.3 244
+SHA256 4b6b3756b08e0580f400a345f24abae38d8e372a78722d26f849ab9fcc0cf546 files/digest-speechd-up-0.3 244
 MD5 abed5ea303064114398358f1a2a8d396 files/speechd-up.rc 563
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDIIh6V3J2n04EauwRAsAOAJ9jv6RQiye145OA8Khi5GLF86ojywCgq0Rx
-sCr3jtUDIRDrkGGQQGdMvdQ=
-=7FVM
------END PGP SIGNATURE-----
+RMD160 cecb949c67fc1b982deabb4f8c55016382240457 files/speechd-up.rc 563
+SHA256 8cb3f55b76dfc5a1c1c1754652859ab6b82aa0f1855f39c7fc4143ce0447f8e3 files/speechd-up.rc 563
+MD5 f49c8c33105389ec215a01ef378c98e1 metadata.xml 228
+RMD160 eab1a8846c5f4d7218d7f3065702c36abd697537 metadata.xml 228
+SHA256 5caa0f8c17af41df6a1cc2c79b27566dfa6a67bbbd0116241dc7f5d17454f1d7 metadata.xml 228
+MD5 cc9e77c98e85f78e59d6064c67f5c863 speechd-up-0.3.ebuild 745
+RMD160 317f4d1208daffff0253fd5327a394e9c3afc3b7 speechd-up-0.3.ebuild 745
+SHA256 af105a8143d79bf006d1e204d2fe6f8e2411c907c5d0838ae43164fe109a6de8 speechd-up-0.3.ebuild 745
