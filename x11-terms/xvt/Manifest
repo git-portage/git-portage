@@ -3,5 +3,5 @@ MD5 4f71b61cf1aadf01933a54eed5787e0c files/digest-xvt-2.1 116
 MD5 4f71b61cf1aadf01933a54eed5787e0c files/digest-xvt-2.1-r1 116
 MD5 58ed6be7fe5214ba8025a652b45df904 files/xvt-ttyinit-svr4pty.diff 1380
 MD5 3ad0818ec98b13c8b0ea5e54fee8ef84 metadata.xml 326
-MD5 3645fc16fd28632d00f0c931d83a3d2b xvt-2.1-r1.ebuild 1142
-MD5 016af27cf2a62b9dcc82a876fe5357b4 xvt-2.1.ebuild 1074
+MD5 f9483ae6d1074c8d3a54819168317afc xvt-2.1-r1.ebuild 1142
+MD5 7c7475becc57b64d5231e254b1ed363f xvt-2.1.ebuild 1071

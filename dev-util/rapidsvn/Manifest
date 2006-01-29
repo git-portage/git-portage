@@ -1,4 +1,4 @@
-MD5 ec83defcdff6e4dd131d5b5f3a0fe61d ChangeLog 4250
+MD5 461d5e6a6de47ce5ae86c00008942478 ChangeLog 4246
 MD5 33b2f551a1f5109276382650f2bb1e6f files/digest-rapidsvn-0.6.0-r1 66
 MD5 42cbed2e361c2977189f54e6ccd1c2de files/digest-rapidsvn-0.7.0 66
 MD5 700515264c7cf5aa0b3bf855fad68369 files/digest-rapidsvn-0.7.1 66
@@ -10,4 +10,4 @@ MD5 b62f525a500db5984abccc595ed713d8 rapidsvn-0.6.0-r1.ebuild 1956
 MD5 03c5c5fc5d96a77119a0e2d62e6bfe6b rapidsvn-0.7.0.ebuild 2057
 MD5 ca580a3a7901b16078d1f470b8aeb912 rapidsvn-0.7.1.ebuild 2057
 MD5 a7c307ae8fda4cdf6bfbe028b3098e50 rapidsvn-0.8.0.ebuild 2200
-MD5 51415acf25866f60d5998da1883e0a28 rapidsvn-0.9.0-r1.ebuild 2392
+MD5 13c524693ddabeec95a496dfde042553 rapidsvn-0.9.0-r1.ebuild 2388
