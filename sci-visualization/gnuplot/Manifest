@@ -1,6 +1,9 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
+- -----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 71919ab7e0ff320d1e1ba308ee0f0924 ChangeLog 6768
 RMD160 5c5852f26a1124f1bf138149b20b2a386015dfa5 ChangeLog 6768
 SHA256 cab45b6a60378abbf75b1d1b3ef137056dd5a2ef2c594f6e75c45bfd8f0a8c24 ChangeLog 6768
@@ -34,10 +37,17 @@ SHA256 2eee5b8a0ae97f92b3d8751faffaee43f3a5319ddf86c3f3e03ea0a9b768dd5d gnuplot-
 MD5 0d0ccbc08efef8b97818204479649574 metadata.xml 220
 RMD160 f220b5db3b6de3f59e08ab45bfaae138eaae63ee metadata.xml 220
 SHA256 bcdae0f0c39207d696ad66e9c264b241cc25453afeadc3f6eb194a7e4452f770 metadata.xml 220
------BEGIN PGP SIGNATURE-----
+- -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.2 (GNU/Linux)
 
 iD8DBQFD3RnbntT9W3vfTuoRAh/zAKCyMWPyxMoJ09vLowUWZ5EbyJYCLACfR+Be
 C9uKpq6ZHvxtKxBtBqiU0Y8=
 =3KoE
+- -----END PGP SIGNATURE-----
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD3Rn8ntT9W3vfTuoRAiHGAKCnSU7wK1dFB5++u9wf4CvUJCbp+wCeMovn
+rPFyyDzTkN3DRKLla8nePNI=
+=fgOv
 -----END PGP SIGNATURE-----
