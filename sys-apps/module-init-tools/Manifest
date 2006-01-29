@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 30a37bd59c4c3681b4dc755682009f39 ChangeLog 18371
 MD5 469d7fc1f915c60585afc8d895b1668a files/digest-module-init-tools-3.0-r2 142
 MD5 813f2779e10e8f29d9e1d58dda93a5e3 files/digest-module-init-tools-3.1-r1 142
@@ -20,3 +23,10 @@ MD5 b525f2e968d9a07affdc03215b293222 module-init-tools-3.2.1.ebuild 5759
 MD5 602d273f05cace7e63b3989bda4a10d0 module-init-tools-3.2.2.ebuild 5769
 MD5 0e9cc79d40e71ac19d2c30beb83ee0a3 module-init-tools-3.2_pre7-r1.ebuild 5833
 MD5 ef19ad39c0567e3720cd650a2a07f6b2 module-init-tools-3.2_pre7.ebuild 5434
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD3MLK2+ySkm8kpY0RAllNAJoC+JHAgi0hmP5i535ucbqCLNxzgwCfXKnV
+syXNbmYz55v3HwoM6F8NWh4=
+=6xDR
+-----END PGP SIGNATURE-----
