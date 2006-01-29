@@ -4,9 +4,9 @@ MD5 67a8b24a03b89fc874812fbfa5b5ff50 tcsh-6.14-r2.ebuild 2312
 MD5 89674d2fb5c06a3b4b5310a3212c81a2 tcsh-6.12-r3.ebuild 1382
 MD5 40885229543eeb01a6a91b426c29e29d tcsh-6.13.ebuild 1249
 MD5 2076c4be609061fe61b9e961b3abc6f1 tcsh-6.14-r1.ebuild 2542
-MD5 f2d9e849e038e1e079268dd287483880 ChangeLog 7580
+MD5 f2a558a2ce24b9c125ba6bac6a9e77dc ChangeLog 7874
 MD5 57ae68ef95b893d172203de06faf380d metadata.xml 655
-MD5 bbcd396b794a4ef1591a666d40084fae tcsh-6.14-r3.ebuild 2246
+MD5 c95ff30676abf1f0143e527a4122bc48 tcsh-6.14-r3.ebuild 2246
 MD5 4869b9da87c79854e2cc97241f125853 files/csh.login_new 1482
 MD5 c6384002cda1bc11c1e31ca9513b9ad6 files/tcsh-6.12.00-setpgrp.patch 545
 MD5 16713fff7d0ccc21e1c32b250cdc44ff files/tcsh-aliases 2399
