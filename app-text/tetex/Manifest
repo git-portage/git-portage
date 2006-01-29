@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f4d3cd4152836f92a93be53755c50ae7 ChangeLog 19140
 MD5 9179c455d1a594b0b06b670e0b051374 files/digest-tetex-1.0.7-r13 343
 MD5 d9e3971f8b0ed3b93c4c8db657fc3629 files/digest-tetex-2.0.2-r5 282
@@ -32,3 +35,10 @@ MD5 6d84991ef4fd00210a9eb68fdb393bd8 tetex-3.0-r3.ebuild 1272
 MD5 1fe71bbc946829906e955a0380bbbcef tetex-3.0-r4.ebuild 1345
 MD5 5a2a4686b5586b98469959979d34ca76 tetex-3.0_p1-r1.ebuild 1886
 MD5 d140b2a9bcdb3c2b0776b12488a19065 tetex-3.0_p1.ebuild 1528
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD3F6u2+ySkm8kpY0RAllcAJ0SyIq9Q0Acb/8vKMiXwQs8ZXIzNwCfURNs
+CE/fOOaY8urmrMOjH2K60bs=
+=H5e5
+-----END PGP SIGNATURE-----
