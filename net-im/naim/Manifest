@@ -1,4 +1,4 @@
-MD5 be624f52ca74d79ce8cc0ecb47a55c55 ChangeLog 8434
+MD5 609f8af68a8a3bd2edc11fe6448169e7 ChangeLog 8549
 MD5 cce37b118d5ddc9511362f4996c41680 files/digest-naim-0.11.6.1 66
 MD5 4f0d7cdac355995f31c937363881b089 files/digest-naim-0.11.6.4 66
 MD5 8173d59a57157573df8be77614285f60 files/digest-naim-0.11.6.7 66
@@ -13,4 +13,4 @@ MD5 b6403355ed392cba1ba5313e31e4b9d4 naim-0.11.6.7.ebuild 818
 MD5 1400e2d202dd704ac659676cc42032fc naim-0.11.7.1.ebuild 828
 MD5 c3fbb2e2c7dc0cc10e2400fabb5243fe naim-0.11.7.2.ebuild 884
 MD5 58403568d30a9a41f765abf6f357ab41 naim-0.11.7.3.1.ebuild 1132
-MD5 50d35ea881d448f8320b24fc3b0f4cbc naim-0.11.8.1.ebuild 1035
+MD5 39c86daf385f8b4cdb129dc9973acdf3 naim-0.11.8.1.ebuild 1128
