@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f01e694ecc9cf0781361dc9590a0cdde ChangeLog 1692
 RMD160 fb33bf63aa9d3fc8b1fbdbd57fcebb953d1745a0 ChangeLog 1692
 SHA256 59c6f0601c9f6e5ee628c0dc3a552ceb5f04d72592254f00a0b1fb6aaf7d6599 ChangeLog 1692
@@ -19,3 +22,10 @@ SHA256 649977dd79ebddf6795951317c384db0d5ff75617cfdfc9ba50190210b83cf5c zopeinte
 MD5 45af489a8e43089828da93bcded54f47 zopeinterface-3.0.1.ebuild 822
 RMD160 43da0416b23aa7c1a80288e859669bde36c622fc zopeinterface-3.0.1.ebuild 822
 SHA256 5d67dbf69c2012de282faa1e1508d6e27f2efd11d886ab251dafe7c4a6ed1f60 zopeinterface-3.0.1.ebuild 822
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFD38uNJrHF4yAQTrARAvpKAJ0cUyQ+U1juAyTxxuLsWjhbo0ApvACdER+s
+prUIpNnwf/7NfcYFrC/z6fc=
+=TZMR
+-----END PGP SIGNATURE-----
