@@ -1,16 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 6acad1e496047570ba74061293a3c1dd ChangeLog 1519
-MD5 d3420619483a290f516acd6bc5289f90 Sys-Hostname-Long-1.2.ebuild 521
+RMD160 e19b57b78406a5b8c802ff1858567bef38fd7261 ChangeLog 1519
+SHA256 49921d9deac7449c5d5a3c1ed2c0aa77c1684d39913ab8678ceda8937761debf ChangeLog 1519
+MD5 75a62f1fcff9a01c828d53b1ef5568d8 Sys-Hostname-Long-1.2.ebuild 520
+RMD160 f00219b5105a2ad0eddc3f8122f4201ea447e3b1 Sys-Hostname-Long-1.2.ebuild 520
+SHA256 545aa50be9eb1affd92c69fba6410093ba0dbc6f4e70bfd508fa44d7f5991336 Sys-Hostname-Long-1.2.ebuild 520
 MD5 87541f21485a80a4dfe99961a81c91fb Sys-Hostname-Long-1.4.ebuild 528
+RMD160 e38f7bea473a1785e5fbad1d68901421b98d5dc9 Sys-Hostname-Long-1.4.ebuild 528
+SHA256 bbeb70ddf0efc2de0ba872a85027a60acb5bd131755f254ad0416e3fdd9bb4b0 Sys-Hostname-Long-1.4.ebuild 528
 MD5 2902d9dcf3573609ada284f2d3f90e35 files/digest-Sys-Hostname-Long-1.2 71
+RMD160 7b6f5fc8763cbf78ddb3387f6cdbc92ed2689788 files/digest-Sys-Hostname-Long-1.2 71
+SHA256 fb92e9f9319b1b3702264bc231d5e01b434bc90c11491a72ffcfd6cf0a84ca03 files/digest-Sys-Hostname-Long-1.2 71
 MD5 c57b50e7ea1ccf19867e55e649024371 files/digest-Sys-Hostname-Long-1.4 71
+RMD160 f295e4c0befc15b945934089bf1892309e8dcdfc files/digest-Sys-Hostname-Long-1.4 71
+SHA256 ca59c085254e5f14862815394c8f91ed858ebe1e3e225cc78bf48fc087a0c26f files/digest-Sys-Hostname-Long-1.4 71
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDx9dntG5z4I8BtQoRAkNOAJ4ndD2P0BVCRrA1BmaTBnHfeW64egCeOjc6
-e3gMBXG1bGl7LgBIVBaurs4=
-=+HjR
------END PGP SIGNATURE-----
+RMD160 647980838c590f54441a053916ea629e53e551c0 metadata.xml 305
+SHA256 f05dbef15061919972882cab07057e102760a542beba17d131194091401cd7ca metadata.xml 305
