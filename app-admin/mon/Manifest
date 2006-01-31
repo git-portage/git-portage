@@ -1,15 +1,21 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 3a8d04cf9ce9affed4b3c687bf4545a1 ChangeLog 2191
+RMD160 dfcbf753fec44f31b37b851e657e3b89b82ed8b7 ChangeLog 2191
+SHA256 96e7a36a3b6c3cb66a062e9f95accd83eb69e1d1e08bfaf9aa98424d957a94c8 ChangeLog 2191
 MD5 c1b296ca6c47a90395f9950e261dbd85 files/digest-mon-0.99.2-r1 63
+RMD160 55e26f5c0af4c5c611bfb9dd96a4dfe41681721c files/digest-mon-0.99.2-r1 63
+SHA256 0c494a597a917f737f18e25ed3d064ec25f6e6cae8d2caa7c8ac0a44fecf813c files/digest-mon-0.99.2-r1 63
+MD5 6003157ddfa519f68ef7254beebbf820 files/digest-mon-0.99.2-r2 235
+RMD160 505f3db465e2759302704fcd6aac48bb6f85252b files/digest-mon-0.99.2-r2 235
+SHA256 d9b5de51078cfcfd8e50fdeb8cb53317cbff72c80dba642e2fd0ce1e2bdcdbe0 files/digest-mon-0.99.2-r2 235
 MD5 b7e59d208dfd4162a4d6c04f8410cafd files/mon.cf 795
-MD5 f83ef533930787d7b81f5e434a42ac78 files/mon.rc6 715
+RMD160 66cbc499affb318ba8912dd803bdafa916a2d41c files/mon.cf 795
+SHA256 3afc4fdcfa55b8486a8d86971677fb842e034d184010ce986a16aa20d10cb1a8 files/mon.cf 795
+MD5 edd24a68c556594b948835d0bee4395b files/mon.rc6 734
+RMD160 ece5783f96ae23f02516c21bd8db873db1c19cff files/mon.rc6 734
+SHA256 b47883ce1ca0afb788b91749cb5f83eec8a2bbb158ba0ce5742170341f99aaa2 files/mon.rc6 734
 MD5 fba066736dd3b66a5738f1ec9fde0684 mon-0.99.2-r1.ebuild 1257
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD1lx4tG5z4I8BtQoRAqM2AKCTeCF04C0n6du+4rTpBAShSqSqWgCfTx4p
-dqyNH4X5oPNe+yMNpobWfgo=
-=db78
------END PGP SIGNATURE-----
+RMD160 6b9724e7d25f3efdd2c5506b428bd0f8376b87e6 mon-0.99.2-r1.ebuild 1257
+SHA256 2fa0578c276a1875b8aaab4929accab528f772e53e460df3e933025f1898e598 mon-0.99.2-r1.ebuild 1257
+MD5 fba066736dd3b66a5738f1ec9fde0684 mon-0.99.2-r2.ebuild 1257
+RMD160 6b9724e7d25f3efdd2c5506b428bd0f8376b87e6 mon-0.99.2-r2.ebuild 1257
+SHA256 2fa0578c276a1875b8aaab4929accab528f772e53e460df3e933025f1898e598 mon-0.99.2-r2.ebuild 1257
