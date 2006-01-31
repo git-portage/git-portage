@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2f79b2e2aa2d3087aa600f292c4c2548 ChangeLog 5957
 MD5 d3278f869be37481ddde143f5ee98c4a files/70firebird 50
 MD5 d3278f869be37481ddde143f5ee98c4a files/70firebird-1.5.0 50
@@ -14,3 +17,10 @@ MD5 667b422797ea74ed41b2c5bf70059b02 firebird-1.5.1.ebuild 6498
 MD5 c14c574c680ed6244f27eb49c1514886 firebird-1.5.2.ebuild 6509
 MD5 5bba2d53d58e3a5a3868f0e6b7583b53 firebird-1.5.3.ebuild 6505
 MD5 70eaf71c2018b87fe06aed9df3799509 metadata.xml 225
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFD33rRKRy60XGEcJIRAhLFAKCvN/TgF/U+nDr+Pc2iGcWC9o5TjwCfaRYT
+z0pkiMah7VG9kdjqFyXmzCo=
+=fmME
+-----END PGP SIGNATURE-----
