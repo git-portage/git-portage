@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/rdiff-backup
 # Copyright 2002-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/rdiff-backup/ChangeLog,v 1.12 2006/01/31 21:10:34 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/rdiff-backup/ChangeLog,v 1.13 2006/01/31 21:17:06 dragonheart Exp $
+
+  31 Jan 2006; Daniel Black <dragonheart@gentoo.org> metadata.xml:
+  maintainer to app-backup herd
 
 *rdiff-backup-1.0.4 (31 Jan 2006)
 
