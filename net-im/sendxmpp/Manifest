@@ -1,4 +1,6 @@
 MD5 8d0106c0f3c57f55e0c5543e3f6a69ea ChangeLog 914
+MD5 3148e9749b00e87fb31fbf1ccef9743c files/digest-sendxmpp-0.0.6 64
+MD5 040a57d28c5a28bcec634b23dc5509e6 files/digest-sendxmpp-0.0.8 64
 MD5 777dd6192cc0e6ca0bc051ab9f92a54a metadata.xml 221
 MD5 1207051af9791f34ada3ac32bacdd59e sendxmpp-0.0.6.ebuild 760
-MD5 3148e9749b00e87fb31fbf1ccef9743c files/digest-sendxmpp-0.0.6 64
+MD5 e86030925daee0fa03690f20d2041e8b sendxmpp-0.0.8.ebuild 661
