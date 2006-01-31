@@ -1,16 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 7fcbad02c22fa016315b538ba8d70045 Cache-Memcached-1.14.ebuild 568
-MD5 16a598a4fc1de8e55cfcd9a43d21a993 Cache-Memcached-1.15.ebuild 559
+RMD160 299653358f03d9fab859cbce2f86d72c367f8345 Cache-Memcached-1.14.ebuild 568
+SHA256 f630a7113b4105b1d0eeb48e3ce3ed18c14a5f49eccc8567d8d20674db3ca945 Cache-Memcached-1.14.ebuild 568
+MD5 d51ded52d12a335fd78bdc49d472c06d Cache-Memcached-1.15.ebuild 558
+RMD160 14ef9820caa5f3e07e6ad8378f3e03d0ab3a1301 Cache-Memcached-1.15.ebuild 558
+SHA256 2a6c686f12bd091b7a396eb9faededeb49c829a35db5e49757735fa4222a963b Cache-Memcached-1.15.ebuild 558
 MD5 5e4293055920ef14fd77152ce505f157 ChangeLog 3957
+RMD160 bb023c74e983f41a43bd8a4e5abed8ecb7f50b6e ChangeLog 3957
+SHA256 7c48e8d4167869eb578f32865b0c0688691189a85beaa86caaf17f30ae2702b3 ChangeLog 3957
 MD5 0c33c2e7cf9de107d9a9d59d5ab77850 files/digest-Cache-Memcached-1.14 71
+RMD160 30b4019ccbb24952136281a3642240f7bd138fad files/digest-Cache-Memcached-1.14 71
+SHA256 090808b07376427a67a2e104e411f197270d5ed0973e2b4942fb129072f336b2 files/digest-Cache-Memcached-1.14 71
 MD5 f1450cea513d6e0e47e4d781276f022a files/digest-Cache-Memcached-1.15 71
+RMD160 4d4468b2676c7b1438495039620b35f180834133 files/digest-Cache-Memcached-1.15 71
+SHA256 ff63a7e752d6d6eac03cd2f47a9aef317f9a0b5b51039d5c156bd1aaaefdf418 files/digest-Cache-Memcached-1.15 71
 MD5 f2e60a39c14a553bfc32ffec7d951e6d metadata.xml 414
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDx+0WtG5z4I8BtQoRAqsKAJ9ydze8Mzq6XrXdLe5lmVMnD2UmPwCghifo
-RMBPhWVkmhBVnPoSRNTAVHI=
-=HSg/
------END PGP SIGNATURE-----
+RMD160 56c996ac21e1d3f9f3625c7c8e17d1e551281c46 metadata.xml 414
+SHA256 0b555804887d20343f3b5c8a8d677dbb8c36bb371f4906e50ded58e00d320f02 metadata.xml 414
