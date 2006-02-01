@@ -35,6 +35,6 @@ MD5 b2ca914ffcff3e5296d6b5acc7fac182 files/gs7.07.1-ps2ps.patch 244
 MD5 0201da09644874147627750546511c36 files/gs7.07.1-tempfile.patch 3125
 MD5 32d445682c030ec35813551b5ddb8814 ghostscript-esp-7.07.1-r10.ebuild 6170
 MD5 87d9695f4326a6755be96ea89362b2db ghostscript-esp-7.07.1-r7.ebuild 4605
-MD5 b584da4517292459eafdb80487029115 ghostscript-esp-7.07.1-r8.ebuild 5617
+MD5 774cd07332adf9110ebaaa6e805a98a4 ghostscript-esp-7.07.1-r8.ebuild 5592
 MD5 d3b90c0d4e5b5d12c622c83579d3201a ghostscript-esp-8.15.1.ebuild 4194
 MD5 26b4b081d538c195dc39bcb2ec8e6f3a metadata.xml 161
