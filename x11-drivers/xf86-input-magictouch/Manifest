@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e871e9f704c6cf764559b6b2aa5656df ChangeLog 1977
 RMD160 214fe50a5a23137b38b9d05ab7ad048b92f11e16 ChangeLog 1977
 SHA256 615d539bb6c2b6fba2b8749615d00b0cf3c7d76b7491785a6ddfa394233eed0e ChangeLog 1977
@@ -10,3 +13,10 @@ SHA256 5101ab0d4cc8c7125eea733c44e86962769bd77acaf53b69223b9cadcdd29055 metadata
 MD5 f7556fdb89f600b655adaa922eed4d2f xf86-input-magictouch-1.0.0.5.ebuild 530
 RMD160 5f9f08a365775e784c77873726b7b34df89414c6 xf86-input-magictouch-1.0.0.5.ebuild 530
 SHA256 8d97e5b202ffe4c134cbfee199365aa15f6a37c8086d35152a9e38ddfa7914fc xf86-input-magictouch-1.0.0.5.ebuild 530
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD4TdWwUpWvClEHQoRAlReAJ0ai5rPvQb9HuwHxWqFLsGi8SjtNACdGBn4
++2zXaBgz4rZxWSXYecas5Mg=
+=zXUI
+-----END PGP SIGNATURE-----
