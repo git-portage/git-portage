@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 62b2d423113702f6bc1fcdd3064e46f2 ChangeLog 9473
 RMD160 a159fe24c3eaf01e85c0a10a9c783bd636154a78 ChangeLog 9473
 SHA256 435b1ca6fa56595d177a588fcc9c1b15787c62983f7b021a7aa8eafb57a8619b ChangeLog 9473
@@ -19,16 +16,9 @@ SHA256 f6d17345529ac8a76abc620e8e67db942dc28eb551a097c4840beddc3bd8119e libgnome
 MD5 eabd9d3654738d06a65d9dee0e2440bb libgnomecanvas-2.10.2.ebuild 773
 RMD160 ed2364ae94a61ac744286ac476830f3e8ce51ce3 libgnomecanvas-2.10.2.ebuild 773
 SHA256 85166014b03837e0f9efc18b62fdb4676eaf3d9ff24824b7830368338b130e49 libgnomecanvas-2.10.2.ebuild 773
-MD5 3207e668c19e76f9e3b47ae8038197d9 libgnomecanvas-2.12.0.ebuild 792
-RMD160 4174a504f813e926a9e6c50b3a99838e9cd5104f libgnomecanvas-2.12.0.ebuild 792
-SHA256 66f787e4a5f7553615c3797ffc7dd35f0dc14e5de8b4c5e77fddd7810604ef0f libgnomecanvas-2.12.0.ebuild 792
+MD5 c1edb6a10b1a65afaaf1385127302bf7 libgnomecanvas-2.12.0.ebuild 791
+RMD160 4cf6b43c59cc75a125baaf0d58d41b70ea552936 libgnomecanvas-2.12.0.ebuild 791
+SHA256 33ade6b27d5f1e52f29182c825ce90e2bccf425c8b370336582e28cc4b145d2e libgnomecanvas-2.12.0.ebuild 791
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 RMD160 c0e2bae8e91bb6be8922bac5e4f597302e06587e metadata.xml 158
 SHA256 3a7dbca0fdc557de69783e0663e2d76ddab129ea8a19b2d0ef6d3e5d1b947ce1 metadata.xml 158
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFD4hJHJrHF4yAQTrARAo8SAJ9dEgrY055lU/l5MXaaJB+Vs5Zy7wCeOrWv
-JulnAdPaMW4xoJdSfhZMwjA=
-=Gdio
------END PGP SIGNATURE-----
