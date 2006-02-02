@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/lsh/Attic/lsh-2.0.1.ebuild,v 1.4 2006/02/02 01:27:31 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/lsh/Attic/lsh-2.0.1-r2.ebuild,v 1.1 2006/02/02 01:27:31 vapier Exp $
 
 inherit eutils
 
@@ -11,7 +11,7 @@ SRC_URI="ftp://ftp.lysator.liu.se/pub/security/lsh/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ppc ~sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="pam tcpd ipv6 zlib X"
 
 RDEPEND="dev-libs/gmp
@@ -22,12 +22,20 @@ RDEPEND="dev-libs/gmp
 	tcpd? ( sys-apps/tcp-wrappers )
 	pam? ( sys-libs/pam )"
 #	kerberos? ( virtual/krb5 )
+# need guile because the source changes
 DEPEND="${RDEPEND}
+	dev-util/guile
 	>=sys-apps/portage-2.0.51"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+	epatch "${FILESDIR}"/${P}-fix-fd-leak.patch
+	# Rename 'sftp-server' to something that doesn't conflict with openssh
+	sed -i \
+		-e 's:sftp-server:lsh-sftp-server:' \
+		doc/{lshd.8,lsh.info} src/lshd.c src/sftp/sftp-server.[c8] \
+		|| die "rename sftp-server"
 	# remove bundled nettle crap #56156 ... this is pretty ugly sed foo,
 	# but the alternative is a bigger, uglier patch which would probably 
 	# need updating with every version :/
@@ -64,9 +72,14 @@ src_compile() {
 }
 
 src_install() {
-	emake install DESTDIR="${D}" || die "install failed"
+	emake -j1 install DESTDIR="${D}" || die "install failed"
 	dodoc ANNOUNCE AUTHORS ChangeLog FAQ NEWS README
 
 	newinitd "${FILESDIR}"/lsh.rc lshd
 	newconfd "${FILESDIR}"/lsh.confd lshd
+
+	# cleanup conflicting crap
+	mv "${D}"/usr/sbin/{,lsh-}sftp-server || die
+	mv "${D}"/usr/share/man/man8/{,lsh-}sftp-server.8
+	rm -r "${D}"/usr/share/man/man5
 }
