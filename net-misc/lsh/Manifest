@@ -1,4 +1,4 @@
-MD5 300c00672b86c2e35b06d145602b8c80 ChangeLog 2578
+MD5 27100175ae61ed3fb3b09ebdff30e86a ChangeLog 2694
 MD5 912d87383add43e1cb70bcbe484dc674 files/digest-lsh-2.0.1 62
 MD5 912d87383add43e1cb70bcbe484dc674 files/digest-lsh-2.0.1-r1 62
 MD5 912d87383add43e1cb70bcbe484dc674 files/digest-lsh-2.0.1-r2 62
@@ -6,5 +6,5 @@ MD5 17924a8f895867a1cb1c97131000a329 files/lsh-2.0.1-fix-fd-leak.patch 2170
 MD5 6813ec4e9dc95f6767e612961d38f090 files/lsh.confd 210
 MD5 3e325f3a64bf91a900f317fd2e49a4c2 files/lsh.rc 814
 MD5 0d974f91487e9517070d99ec667251ca lsh-2.0.1-r1.ebuild 2219
-MD5 ed983e6adaa029bef4f58c4fabc0ac83 lsh-2.0.1-r2.ebuild 2598
+MD5 65bd85fe5a69109edc1038113c66f844 lsh-2.0.1-r2.ebuild 2597
 MD5 ae203675ed680d2133aacee7b1497669 lsh-2.0.1.ebuild 2115
