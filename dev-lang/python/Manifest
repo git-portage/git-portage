@@ -1,4 +1,4 @@
-MD5 f489a7002367b7b9d0e9252b11fb90dd ChangeLog 29862
+MD5 743bb6795aadd151444605d4630baf80 ChangeLog 29994
 MD5 7e423c353b08a2c05693d13f21e067d0 files/depreorder-topsort.py 1958
 MD5 1c5cd53cb89c821a549968bac31df0f1 files/depreorder.py 2235
 MD5 f3f370c8d1382c1a7571cfc1cbb196d9 files/digest-python-2.1.3-r1 62
@@ -45,7 +45,7 @@ MD5 eaa33949f072a9787c453c37c1236108 files/python-2.4.1-db4.patch 1414
 MD5 5fdb512b55d4ed9b13a5a3af00a5ba40 files/python-2.4.1-libdir.patch 7875
 MD5 47e9455f3e16c3369c9e57388ba3d643 files/python-2.4.1-readline.patch 8984
 MD5 5af982af8ad4befbf15567ae399cf2b9 files/python-2.4.1-st_flags.patch 5649
-MD5 134fc0ada515c191e69c6092240240c8 files/python-2.4.2-mmap+fd.patch 4844
+MD5 bb94b5ecedcbfd85b7ac283b79ff07be files/python-2.4.2-mmap+fd.patch 4920
 MD5 73616f083daf8e22a7bff21c4a51678e files/python-2.4.2-no-threads.patch 591
 MD5 36b36bac050785b8e393dc72f8e51d2f files/python-2.4.2-readline.patch 8628
 MD5 b530d6f9dbcf30239061be3de80932cc files/python-config-2.2 178
