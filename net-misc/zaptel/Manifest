@@ -1,4 +1,4 @@
-MD5 6c8c902a2e9755b7460789343bfad2fc ChangeLog 13205
+MD5 a891adbf8ee71bf54379a8cd50171f74 ChangeLog 13205
 MD5 5d92c84f7e556e1552efc5531483a727 files/digest-zaptel-1.0.10 136
 MD5 051e2ff3f1222e2b551a70e9cd1b31f0 files/digest-zaptel-1.0.4-r1 64
 MD5 0c81001d4c9efeeffeb1332580fb4cdc files/digest-zaptel-1.0.6-r1 212
@@ -45,4 +45,4 @@ MD5 a9b97edfc9559f48e71f9f232590143f zaptel-1.0.9_p1-r1.ebuild 6641
 MD5 f0c8a8a514efa543a36618d72d4ade3d zaptel-1.0.9_p2.ebuild 6641
 MD5 a170d2a6dba63bc4de86eb9766c8d8f3 zaptel-1.2.0.ebuild 9102
 MD5 5f7d588d0581d344b87cc078bf54af1f zaptel-1.2.1.ebuild 9125
-MD5 f1c2b20f20b0c0d87bafb368ac9603ac zaptel-1.2.3.ebuild 9247
+MD5 41f515d16e0e167a57019df913cef4f4 zaptel-1.2.3.ebuild 9247
