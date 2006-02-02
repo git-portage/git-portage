@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d218e459fdcc94d5ef6a45352f2c1eee ChangeLog 1357
 RMD160 a384b18e801819460f72cd4b6719a0192c81619e ChangeLog 1357
 SHA256 5d4ce14d4f40b1c566340469d15f8af347afdf3ff1881c911b2cc59165ad6f57 ChangeLog 1357
@@ -16,3 +19,10 @@ SHA256 b7b8681e3193d2aaa4fcc5db946194cbc0b527ca47aa39f4201b843fa95e8383 pecl-mem
 MD5 a17ff908579d90aabc39e1cd6a1c4a0b pecl-memcache-2.0.1.ebuild 775
 RMD160 cc3bab844a46c843a3fcb4aa61a9c055dcf07c2a pecl-memcache-2.0.1.ebuild 775
 SHA256 a3b92614c57afb1196bd8573f9a7300c3c2fffd5fa907334d94a0b1aad9fe7ad pecl-memcache-2.0.1.ebuild 775
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD4agnaGfFFLhbXWkRAvxJAJ9y+YpVdz6c+B/zPDV7K89h+KcYXQCdFvT/
+HoIjbl+fG1+jfbQyfaSvCtI=
+=KMQZ
+-----END PGP SIGNATURE-----
