@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 46e4b809770fec3d95cf29944fa118a3 ChangeLog 24287
 MD5 1c2b632d1118068966049ae41b33c012 files/digest-openssh-3.9_p1-r3 281
 MD5 c92c33beb73a2d008cb3744ebd7e4f88 files/digest-openssh-4.0_p1-r2 360
@@ -33,3 +36,10 @@ MD5 db737fe30d1a450fa8d5e10745b593a8 openssh-4.0_p1-r2.ebuild 5359
 MD5 112e42c96cf751ba3ee3629c2de59b8b openssh-4.1_p1-r1.ebuild 5320
 MD5 6f809596c9f2ae5c5ed684f2fe9d6c1d openssh-4.2_p1-r1.ebuild 5368
 MD5 c7273be55a352ac07e71c0dedde21882 openssh-4.2_p1.ebuild 5288
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFD4kUqKRy60XGEcJIRAjg6AJ42eg5l7EFnvKKR68brNiDOSSBLQQCfQWza
+P0z5VA6Hk993U4cPHsSgpIM=
+=Pgj4
+-----END PGP SIGNATURE-----
