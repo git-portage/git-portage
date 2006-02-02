@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 743bb6795aadd151444605d4630baf80 ChangeLog 29994
 MD5 7e423c353b08a2c05693d13f21e067d0 files/depreorder-topsort.py 1958
 MD5 1c5cd53cb89c821a549968bac31df0f1 files/depreorder.py 2235
@@ -67,3 +70,10 @@ MD5 ee21268fe5f633029a2575a6e0808d75 python-2.4.1-r1.ebuild 9144
 MD5 83d5f6cfce039d87c651dbad4224912a python-2.4.1.ebuild 8344
 MD5 c453c29aa3366ad1e50b2c1f73efedde python-2.4.2-r1.ebuild 9566
 MD5 f9de6829c64c8f780d4c3b90ea5105a9 python-2.4.2.ebuild 9234
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD4okCugEuf3OQ0akRArSBAJ9bsL8TQsOXW7e5RQc1qIg4BqSypQCfVW+S
+qREIrQZDpPHJW/zQ28baOuc=
+=Lq5r
+-----END PGP SIGNATURE-----
