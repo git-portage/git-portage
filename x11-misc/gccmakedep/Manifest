@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4f4b03f69e1a0149289b8c1aa6658476 ChangeLog 1124
 MD5 b7f2006ec18910b7afeb0149537a650a files/digest-gccmakedep-1.0.1 68
 MD5 f7563651fad5ecf0c5c9f4d084c930ea gccmakedep-1.0.1.ebuild 466
 MD5 a37bab73e2f24b213932c30997d3d360 metadata.xml 156
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD4mRVoFw4q70f3SsRAh39AKDVyCmw6YEwygRx3UDKTI8vxTGUtQCgzllS
+gwt6Dd68auQVkNPMxVbzLC0=
+=MKWK
+-----END PGP SIGNATURE-----
