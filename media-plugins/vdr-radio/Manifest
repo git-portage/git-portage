@@ -1,16 +1,15 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 f9908e5f7c6d87deceec29823a180ae8 ChangeLog 519
-MD5 aebdb128c405980bd1a5a702967870ef files/digest-vdr-radio-0.0.9 135
+RMD160 12e0f67ca3473e61181f7a537fa994ebd613a4ef ChangeLog 519
+SHA256 ad64e38b95a0aa717e2a72cabda445141b4e12bd57d162ca81b5b4ceaac0b4d6 ChangeLog 519
+MD5 b2854dd51280b0d008631d5cdf41abd8 files/digest-vdr-radio-0.0.9 720
+RMD160 6ff57c5a0c2f177cfe129d515e3f91669a821d98 files/digest-vdr-radio-0.0.9 720
+SHA256 1c648b471162df38c9d6e69d8587281d19d38b2c551fa2a4ed85b008d86c5dd0 files/digest-vdr-radio-0.0.9 720
 MD5 990b9c7d96c8bdf5211c01655a482b73 files/rc-addon.sh 401
+RMD160 18a1b17a4de490fb774c56063d5d87d8baf30678 files/rc-addon.sh 401
+SHA256 719ee102dacaa9bc6dc72895835a245bb8f87180edff445ba1fa84b7145dadf3 files/rc-addon.sh 401
 MD5 b5c3dc612fd599de6dcf69711e09be2f metadata.xml 525
-MD5 db72f2e205a85e32b6cb64a01bb26261 vdr-radio-0.0.9.ebuild 675
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-Comment: no further Information
-
-iD8DBQFD3NmNdn07HTTCgIoRAs0hAKCLjKY2BBN1Ve0NtoDMHrZW7ypvGQCgiicU
-LJp+B/qUMaaz3YFjdNq1BU8=
-=3gTq
------END PGP SIGNATURE-----
+RMD160 f98116dfffeec6f21f5258cb0ea995bbfd7eb6b6 metadata.xml 525
+SHA256 561cd8371933da71069f90f95e75416a706a31c2aef516d45cbc379e12889744 metadata.xml 525
+MD5 527c763121fc83016cd41ef1896ae8ff vdr-radio-0.0.9.ebuild 755
+RMD160 89e66492a874c8ad7df9f9a3c5dd010265530ec7 vdr-radio-0.0.9.ebuild 755
+SHA256 6b91c07b72544b0fec77697fd0540e347e266a9839ee42cd23159684f863453e vdr-radio-0.0.9.ebuild 755
