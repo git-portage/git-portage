@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 d7ebebecc453aea2c8bc2509ffc28e0d ChangeLog 9891
 RMD160 7247da048e8479179431cd9ac3dbc2e2fa34e6b9 ChangeLog 9891
 SHA256 70993663ba93ea1189604156091c78b46615ee3f50891120730ebe1277fd8be7 ChangeLog 9891
@@ -10,9 +7,9 @@ SHA256 68ba4ff1747f2ea50ff120ec15c25b1f9edbc2fb4fadba2aa368bdc470e3669b bug-budd
 MD5 d583accc79efb5084181644db97d9f7f bug-buddy-2.10.0.ebuild 1142
 RMD160 fe855fb5df009bbf70d7542e6ede19eeced40bf1 bug-buddy-2.10.0.ebuild 1142
 SHA256 119c8d30399cb6a9f20b71eade795a52248f9db93a8a9656e13d04228a43363f bug-buddy-2.10.0.ebuild 1142
-MD5 7074996618eaabe6745570a23fb50bb2 bug-buddy-2.12.1.ebuild 1333
-RMD160 5e294e2bf22689acbc0c11a9c3c7cbe492de318d bug-buddy-2.12.1.ebuild 1333
-SHA256 ae0372196c6011c56499cb0506f363a30fcd24ab4f4fb69459aa35bc8c61691a bug-buddy-2.12.1.ebuild 1333
+MD5 93996dbf80704e5a673056a5e50b1911 bug-buddy-2.12.1.ebuild 1332
+RMD160 d24ae35dcfc8c150772cae3264c8c2df6c2ba285 bug-buddy-2.12.1.ebuild 1332
+SHA256 6e683ebe867d9bdbb20d8eedfd351ed5c07cd6792c6f03520eb1f8e45893b878 bug-buddy-2.12.1.ebuild 1332
 MD5 08da40f07e8b341b8d350e8be1ef7323 files/bug-buddy-2.10.0-fbsd.patch 278
 RMD160 d1ee049a32d69ca63f3e4063c11d0bc558ba6886 files/bug-buddy-2.10.0-fbsd.patch 278
 SHA256 ee04f762b750f5692e80422e24e49a893fee9fb8be131fdc494c632af190cefe files/bug-buddy-2.10.0-fbsd.patch 278
@@ -28,10 +25,3 @@ SHA256 5cb3c8005001f53220273dafa2bb3118bc20e8e069250c0f325beaa5d5d3e733 files/di
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 RMD160 c0e2bae8e91bb6be8922bac5e4f597302e06587e metadata.xml 158
 SHA256 3a7dbca0fdc557de69783e0663e2d76ddab129ea8a19b2d0ef6d3e5d1b947ce1 metadata.xml 158
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD4ovkJrHF4yAQTrARAh0KAKCHfh0moxrZJdq/Ai/J55yx1U/ruQCgmLJf
-P4mCqMFJ4Rc4xih1s6dd0FY=
-=Jm4d
------END PGP SIGNATURE-----
