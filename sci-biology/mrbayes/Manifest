@@ -1,4 +1,6 @@
 MD5 ebe716ebfa4e92c34b04a8cfeeb6e13e ChangeLog 1371
 MD5 633f96bc05400c5b178fdc58853587b5 files/digest-mrbayes-3.1.1 69
+MD5 cb2170ec57c56c01dedb5dee551a5e77 files/digest-mrbayes-3.1.2 65
 MD5 46d1202caca9c2f105090b5cc095f7e9 metadata.xml 817
 MD5 8a687395a16f5a66a06f3b5862caf073 mrbayes-3.1.1.ebuild 816
+MD5 605ba1cc887264e90eedc6102100cc6e mrbayes-3.1.2.ebuild 1132
