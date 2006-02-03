@@ -1,18 +1,24 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 b89e1b7499c4bd20c3616206a2595404 ChangeLog 2881
+RMD160 2e4c3637fd28414a4d95c95e2456a181dc6f694b ChangeLog 2881
+SHA256 c19024ffaa08d578a7efba7e5a0b0ab6b626be3097a38f26cac8a0c1836235a8 ChangeLog 2881
 MD5 946729e7340edc6a1bae2e1a5e02a1d2 files/digest-system-tools-backends-1.2.0 80
+RMD160 62fa08badb8dbb4ca2b417cd9723c8a339485dab files/digest-system-tools-backends-1.2.0 80
+SHA256 cb290901bc7113c777bbc5a3feece9d1d4e60819f9659bec72c1b4963f39e771 files/digest-system-tools-backends-1.2.0 80
 MD5 54db3221ddfb6a9393e2f1576f8d7a5e files/digest-system-tools-backends-1.4.0 80
+RMD160 917bfcaac5ff3fe2779bfc1a3434f392f9d46ae3 files/digest-system-tools-backends-1.4.0 80
+SHA256 5609a633034a94d8905fec92f5ca68b08d78218f96a82204c49d5cca4cd809d6 files/digest-system-tools-backends-1.4.0 80
 MD5 db143143d44f996cd2407f556fc67c92 files/digest-system-tools-backends-1.4.1 80
+RMD160 3d3078c637fcb6b36de7641ff012a746c206eb19 files/digest-system-tools-backends-1.4.1 80
+SHA256 df475718509c04eb6d4b4e1cb0f01840310cd97868c68394e8e375aff4614444 files/digest-system-tools-backends-1.4.1 80
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+RMD160 c0e2bae8e91bb6be8922bac5e4f597302e06587e metadata.xml 158
+SHA256 3a7dbca0fdc557de69783e0663e2d76ddab129ea8a19b2d0ef6d3e5d1b947ce1 metadata.xml 158
 MD5 aab38d32daaa9ee6e5c99cd978603fac system-tools-backends-1.2.0.ebuild 754
+RMD160 7c3672d78aa83cb9aa76e49ec3aef90f20671d9a system-tools-backends-1.2.0.ebuild 754
+SHA256 9e6db3348b0b15f68fc0415bf468fe0f150ad684f334bb15bab3d32fa738ab6e system-tools-backends-1.2.0.ebuild 754
 MD5 481c8379524aaefeedacf79c8438321b system-tools-backends-1.4.0.ebuild 763
-MD5 def4f33a84d8415866fc731fc256b352 system-tools-backends-1.4.1.ebuild 767
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD3GKQ2+ySkm8kpY0RAlXOAJ4k46NQUBaldeaMalETfDGpAQ+jvQCgpRih
-AsPe4IkYlg2Gu3voihk3T8c=
-=Y7lc
------END PGP SIGNATURE-----
+RMD160 71125ad4125dc7046cb2d8dd415c116074ac4457 system-tools-backends-1.4.0.ebuild 763
+SHA256 67ab02bd8cbe8ebee57ab8b68b9eb8587e3ca258538d41dfaa0e5180d3e61b91 system-tools-backends-1.4.0.ebuild 763
+MD5 47a9c0f6ccdd9922b1a18957d07fe1a8 system-tools-backends-1.4.1.ebuild 766
+RMD160 3b5667c059dec6cef9be4d4161a4180a6edf13e0 system-tools-backends-1.4.1.ebuild 766
+SHA256 ff15bb808c0d72ab92df5e93a71a0dd14b43b0490afc0dba6487fbe39c57d06f system-tools-backends-1.4.1.ebuild 766
