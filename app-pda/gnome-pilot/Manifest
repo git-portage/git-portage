@@ -1,4 +1,4 @@
-MD5 656a007b5899dcce61ce736385d1b369 ChangeLog 6892
+MD5 0e0fb3e9401dde37676db1b9506b64bd ChangeLog 7079
 MD5 6dd42dbe52e081c7ac130b8303cd84ac files/digest-gnome-pilot-0.1.65-r5 71
 MD5 327dd488b418afec2cac40f6b8bbbcd7 files/digest-gnome-pilot-0.1.71 71
 MD5 4c1bf3e985e3e12a7196902b013f314c files/digest-gnome-pilot-2.0.10-r1 71
@@ -17,8 +17,8 @@ MD5 95d8bbe1bdf7dc712cc5d616a9a93995 files/gnome-pilot-2.0.12-zire31.patch 474
 MD5 f50c6d977f5c1c3729bb88a763356de4 files/gnome-pilot-gentoo.diff 4186
 MD5 a1fb0bdf5ba3b104f29ba839cb4e4d06 gnome-pilot-0.1.65-r5.ebuild 1206
 MD5 bab3e760fa1f372fad7455a5d0be1f78 gnome-pilot-0.1.71.ebuild 1408
-MD5 7c8601a7cce1fa6618c94f3291dd87e4 gnome-pilot-2.0.10-r1.ebuild 1520
+MD5 879da0751a9f111ff62b75a0df98963e gnome-pilot-2.0.10-r1.ebuild 1523
 MD5 759226b766ff7c1baa484c90c5605d00 gnome-pilot-2.0.10-r2.ebuild 1664
 MD5 0ee8aa20a23401b608d2ea073e19ceb3 gnome-pilot-2.0.12.ebuild 985
-MD5 ebf657acb47ce201c7b51874d5c6ff78 gnome-pilot-2.0.13.ebuild 964
+MD5 34a2e491b2b515d0998399d559e479b0 gnome-pilot-2.0.13.ebuild 967
 MD5 1e1031eae2f36a13b2cd73550a31d03d metadata.xml 175
