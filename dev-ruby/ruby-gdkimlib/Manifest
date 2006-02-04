@@ -1,28 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 be64e13fc1ce81f641739e603b833b5f ChangeLog 2712
-RMD160 a5841be0a4be9b876ad1dbd78e496cfeb1c12bf9 ChangeLog 2712
-SHA256 cbd920fe9a5dd069cf8d784a18720d03ec3d43844f8b140326af3bead29424c2 ChangeLog 2712
+MD5 7413669523da0971549aea3d9c963128 ChangeLog 2800
+RMD160 a1a132391f83cad966c48f56b4f768789cc0146e ChangeLog 2800
+SHA256 398c97ecbf6e70b7f99abf2355ad68b70badd350f59af94571e8cfff76e1a327 ChangeLog 2800
 MD5 3b4706cc9d3b5cb2d9d5ec941909a5a2 files/digest-ruby-gdkimlib-0.30 70
-RMD160 3c6bd3a3c7f09a5fc564a0441a733e3205943c72 files/digest-ruby-gdkimlib-0.30 70
+RMD160 4887c582c8cfea7038bd2a03751aa09eb69a5900 files/digest-ruby-gdkimlib-0.30 70
 SHA256 7ba2530282fb68738ef6c2d79bec378de15a4dffd5b610c05df7340232d1b8a8 files/digest-ruby-gdkimlib-0.30 70
-MD5 9c06484497032c542eb25fda52406232 files/digest-ruby-gdkimlib-0.34 71
-RMD160 ddaf5e6084ec3bc4eb435893d7ac47697902e2ad files/digest-ruby-gdkimlib-0.34 71
-SHA256 e6a008369e02e1f4a7777b932504c1fba7f6d98891b6ba032867c14f95b731fb files/digest-ruby-gdkimlib-0.34 71
+MD5 00c7e811d8a4759f11aa3631b6e4f3dc files/digest-ruby-gdkimlib-0.34 259
+RMD160 4b4ccb5638b8f08438b9fa63f0b453835998660a files/digest-ruby-gdkimlib-0.34 259
+SHA256 c9f46c1daa1c569089ea000f43896b5f553d13e68930958d165eb1f133e877e2 files/digest-ruby-gdkimlib-0.34 259
 MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
-RMD160 e11407ce8fd8190481bf0bf20b788cdea87f76b3 metadata.xml 157
+RMD160 5d9e2c7ecba96ffebd936d38acedf859cdea84e1 metadata.xml 157
 SHA256 11fba03a217e2d996f5cd8895493a5692ece8ddac2c1a2dfc71d0e830555121c metadata.xml 157
-MD5 6616655a3423c3887c092ea4f8010374 ruby-gdkimlib-0.30.ebuild 785
-RMD160 c0e85524bd649027925a0f55aff7ac287dcb8638 ruby-gdkimlib-0.30.ebuild 785
-SHA256 31505b2225d3cfb1b5be2262dab934d629209fe5b52cab64c67d05882313f6c0 ruby-gdkimlib-0.30.ebuild 785
+MD5 413f7d2dabe4f7545ac6be64978eb69b ruby-gdkimlib-0.30.ebuild 785
+RMD160 c67c6f0c82f173c8fc1c3efec1b79f32e7d191c6 ruby-gdkimlib-0.30.ebuild 785
+SHA256 2257ee4d52fd2d81051751a9d018a3c4c300b6bc131fc3e255247a5c781e7329 ruby-gdkimlib-0.30.ebuild 785
 MD5 3b13aa29a9e26f95c18e08780071a4b8 ruby-gdkimlib-0.34.ebuild 852
-RMD160 6ba0a9d7461a97b69c59886a49e2bebecfd42294 ruby-gdkimlib-0.34.ebuild 852
+RMD160 0285c26174c37fd7047cf75ca3b5d44a625824ad ruby-gdkimlib-0.34.ebuild 852
 SHA256 3fe883232cb444840d826a05f2bbffaf2f5f7a6ec4ff3267d75c41d0ee547613 ruby-gdkimlib-0.34.ebuild 852
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFD38JKJrHF4yAQTrARAjNcAJsH4OuFTwvXbkawCgOi4JAFA97wOACfVX41
-zAESY8aCOgNm64rD611m7Dc=
-=3bjr
------END PGP SIGNATURE-----
