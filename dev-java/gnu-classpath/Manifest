@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4e98f49f77f65f00701bb16e4a577427 ChangeLog 6882
 MD5 4c21037c9eaf2d9fe12e88ced8caab80 files/0.19-dssi.patch 1410
 MD5 7e2cbdd8bd825a0e9b8fff8312f08c23 files/0.19-dssi_data.h 4174
@@ -11,3 +14,10 @@ MD5 6c9872b9933574fb5cc69813ae5f2c13 gnu-classpath-0.18.ebuild 1928
 MD5 4ced42eb677b8c36afdb7367afd46057 gnu-classpath-0.19.ebuild 2307
 MD5 27b3fd820c0ae7d0d74a2d84c7d08019 gnu-classpath-0.20.ebuild 2310
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD8DBQFD5PGJ/NoSW7FuNV8RAtZWAKCgRxnrf+5fiA7zQCBATNsPIrikLwCg2nAW
+rDWpwGyHE9NmwUqhJmgLyGI=
+=+sWS
+-----END PGP SIGNATURE-----
