@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 cffe76f306682abb188f4d976f6e200c ChangeLog 6744
 MD5 4c21037c9eaf2d9fe12e88ced8caab80 files/0.19-dssi.patch 1410
 MD5 7e2cbdd8bd825a0e9b8fff8312f08c23 files/0.19-dssi_data.h 4174
@@ -11,13 +8,6 @@ MD5 18a746e3e78ba32a9bf81f152ccdeda0 files/digest-gnu-classpath-0.20 67
 MD5 887f044e4350323f1324cc1368943c1a files/gtk28.patch 1522
 MD5 f076bc9c2bfe9d094c6255f2beec9abc gnu-classpath-0.14.ebuild 1195
 MD5 b906f7e1050511b7a12b99e9b79d5d3b gnu-classpath-0.18.ebuild 1927
-MD5 952fe51754df87b3e8065dab93892115 gnu-classpath-0.19.ebuild 2307
-MD5 35d2a8dfc1f303a7381dbd9026f5aacc gnu-classpath-0.20.ebuild 2306
+MD5 c09bd0654be514bfd0fdea4ec93d2444 gnu-classpath-0.19.ebuild 2312
+MD5 52a80cf27ea1258cbd24dd7691b79f4c gnu-classpath-0.20.ebuild 2311
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD1QiYQiJ/wx066S4RAoWEAJ0VxFo68XEfg8Rs8qEjU3xwVklDQQCghv18
-t6upkqjKrIxMS0FWLiO1UGg=
-=1g0S
------END PGP SIGNATURE-----
