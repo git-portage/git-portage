@@ -1,4 +1,4 @@
-MD5 c6f14798818feb5ec796ce941b763eb8 ChangeLog 1798
+MD5 b427c00c8edada45e13b27bd97ef9ba7 ChangeLog 1799
 MD5 437542031246a33fb8628c0e4200d44b files/digest-nagios-nsca-2.4 59
 MD5 bb18a5c9e25e4b125e924a268482bf5f files/digest-nagios-nsca-2.5 59
 MD5 218223213e92b553a8b48303099e8074 files/nsca 449
@@ -7,4 +7,4 @@ MD5 8b86cb8a22eb4b17001fbabccdcb815b files/nsca.cfg 4960
 MD5 76939517175739a4759384705421d632 files/send_nsca.cfg 1628
 MD5 d01d27586cb77c61a399d77b3b33c408 metadata.xml 1129
 MD5 a438669b4f305a3c834920170611635e nagios-nsca-2.4.ebuild 1391
-MD5 dfac232b7b435810890201608eafbd24 nagios-nsca-2.5.ebuild 1407
+MD5 b82b10e0fb183db3a266b6bf06e439d5 nagios-nsca-2.5.ebuild 1408
