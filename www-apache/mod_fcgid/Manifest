@@ -1,4 +1,4 @@
-MD5 82ec8144cbbe49d80b10cdf52d69c640 ChangeLog 2303
+MD5 82d778de0609d222aab414b124c4b737 ChangeLog 2430
 MD5 afcfa360a9a77fd3bdb6c2ec89efa594 files/20_mod_fcgid.conf 192
 MD5 2f3017d748d633af44a9d82fa83cdef7 files/20_mod_fcgid.conf-oldlayout 197
 MD5 cafc8c22c15bd694177cb04afbc32d42 files/digest-mod_fcgid-1.06 65
@@ -8,5 +8,5 @@ MD5 de376068e5a3f43f82ad16267b9acfa8 files/digest-mod_fcgid-1.07-r1 65
 MD5 b04c3f93349f84b2bc615931f1c1d6c9 metadata.xml 483
 MD5 5bb980229b513cdcc7e5f232ead6d62a mod_fcgid-1.06-r1.ebuild 974
 MD5 e95e8936717845fcad4ff043f114c4d3 mod_fcgid-1.06.ebuild 1203
-MD5 5e390339cd05be409fe70f26c957bbb7 mod_fcgid-1.07-r1.ebuild 977
-MD5 4da8135c1bf43cb1edb113c424be2eff mod_fcgid-1.07.ebuild 1203
+MD5 b70bba25c574c9866d201c854c6e2b28 mod_fcgid-1.07-r1.ebuild 981
+MD5 9e2858803d92a30e1ca2f0974b20538b mod_fcgid-1.07.ebuild 1203
