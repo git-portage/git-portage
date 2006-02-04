@@ -7,4 +7,4 @@ MD5 abe3205a75d6aa4ea8e088d2e4f77529 files/gentoo.init 577
 MD5 92be665e7bf354958af6da4fc1c5dbdd metadata.xml 228
 MD5 f8f42bb1cf4728ad52311a2650f3dd9e prelude-lml-0.8.6.ebuild 1449
 MD5 7da9c62780b8528baaefb6c4dc151b7f prelude-lml-0.9.0.ebuild 1279
-MD5 a2c9c7f00f6dae62cee3cf9dfb172b3a prelude-lml-0.9.1.ebuild 1279
+MD5 b7b33bb77b91f7125a720d2881fb6e99 prelude-lml-0.9.1.ebuild 1286
