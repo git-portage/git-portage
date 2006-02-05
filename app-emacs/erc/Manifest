@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1009a89751fce8873c953f1693e857cf ChangeLog 2907
 RMD160 7c89cbcab5e3e3e69ccb5a6fb3af5133b74fc519 ChangeLog 2907
 SHA256 666164ce755ec7e2e2934d8a0a10ddadbd574fcedd06e7ee059a6de8c2eb2747 ChangeLog 2907
@@ -49,3 +52,10 @@ SHA256 08d4548a88ecd7edc1152c87a5d27f71350e706d42bb41980e810312373ad9af files/di
 MD5 412b2136b80db7ac2a1fc58fccb01f63 metadata.xml 239
 RMD160 2cdaca82e665ac369d4573dcad74131fc3cfe138 metadata.xml 239
 SHA256 bc74ca14f8742b60e9d2ff045ed346fcd69f7a7527d71dfdce67b366ba5574e8 metadata.xml 239
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD5mp5yiNZaEAZA+ARAtiuAJsE+fBGi21ag87jggGw++pf+DW2ugCeIVzF
+i4iqgDxbXsSIf+y5pTq9vW4=
+=Elmc
+-----END PGP SIGNATURE-----
