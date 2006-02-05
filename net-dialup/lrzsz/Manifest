@@ -1,5 +1,5 @@
-MD5 6ffbbe4a603bfafa98c9d2f315019070 ChangeLog 2744
+MD5 0ab2a733f0bed8def689bc06e8b17204 ChangeLog 2743
 MD5 f80a86c7ba2802ef0504f62f182bc046 files/digest-lrzsz-0.12.20-r1 65
 MD5 bd12dbf8699043e8c2bbe12c154d4b47 files/lrzsz-makefile-smp.patch 4310
-MD5 8292a672b5325384fb496ba948b2de15 lrzsz-0.12.20-r1.ebuild 1104
+MD5 5db00e9db75b6a149b43401978978d08 lrzsz-0.12.20-r1.ebuild 1104
 MD5 29d92f71b5132598910e225de4e85f93 metadata.xml 364
