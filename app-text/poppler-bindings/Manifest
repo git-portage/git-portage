@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 03a97acbede18d18b1ed76dd5b2b9e39 ChangeLog 2339
 RMD160 aa8a046e9a7312d66c6a8a12e712827fc679d81a ChangeLog 2339
 SHA256 b418d5ba640325f72529386c292b1d9f2ff43bf43a52077a684655daf9bb9385 ChangeLog 2339
@@ -31,3 +34,10 @@ SHA256 7f246db5b3f761186cca57ec89513cfa037e2a437bca7249a913eef84a55c81d poppler-
 MD5 5682e223bc20e4caee465e6bef9c0bb3 poppler-bindings-0.5.0.ebuild 1925
 RMD160 70e5aa7ce53bd6eb9618bfe0e595d6e6a18b6a76 poppler-bindings-0.5.0.ebuild 1925
 SHA256 db45af92341aa73c35ff327c0680d9a4050eaada646344956c14c9bf2f0bc869 poppler-bindings-0.5.0.ebuild 1925
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD5g332G5bA0cA/ScRAtoNAJ0S2NqaQwZZtj0jsGC5NcHi8BLptgCfamuu
+glPf8xZVeuExQhZKjswhkyE=
+=ghby
+-----END PGP SIGNATURE-----
