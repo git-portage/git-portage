@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bdbf33397addcde808c1f0022357d876 ChangeLog 4846
 MD5 c819378823e7b8610d4e164757dc25be files/0.1.10a-fbsd.patch 734
 MD5 9b71253641038ba3d13b833a85cdcf76 files/digest-libusb-0.1.10a 66
@@ -10,3 +13,10 @@ MD5 4ac261f16822c0d708d78fe288c2e7ab libusb-0.1.11.ebuild 943
 MD5 67bd4c482479738a34057710a43b70de libusb-0.1.7-r1.ebuild 917
 MD5 ecc4ed6c771b98aea70ec6f3955f569f libusb-0.1.8.ebuild 1361
 MD5 8f906ffe0aa837e5e26fe03af3043461 metadata.xml 219
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD58Ve9ZFPrqoILX8RAixzAKDArHppkhuhj00WDoa9xKb4vRPtCgCgh+yl
+EK1RTYblIWFMnmqwCtyGEN0=
+=Pmzl
+-----END PGP SIGNATURE-----
