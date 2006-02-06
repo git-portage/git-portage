@@ -1,16 +1,24 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 e88c084f28614a1b117133de31aedaa6 ChangeLog 466
-MD5 bf8ec66e917b8bccfe45e72ca7950197 metadata.xml 722
-MD5 41a0330052d691600799247547b8dd01 netlogo-bin-2.1.ebuild 1134
+RMD160 e180328eb1fdf5a325c50b003aa1b73cda0e12fc ChangeLog 466
+SHA256 047b4e98db5b58dadb5782b756483c7336661abad74d96e11ade4d66890733a4 ChangeLog 466
 MD5 e80f3b27fc5a19efdc56f316c957dd48 files/digest-netlogo-bin-2.1 65
+RMD160 ae646c2308d68a487bdc4f2d38e7feb3e40a7e24 files/digest-netlogo-bin-2.1 65
+SHA256 c9bd25fbff85abc8e4bc23019d6bc3f0fb41abf1fd28249c6e1f4974558eb75e files/digest-netlogo-bin-2.1 65
+MD5 06f372eb24fa643517ecae0fcab63177 files/digest-netlogo-bin-3.0.2 247
+RMD160 74f61983607a6f1f4785f8dd251d034f8202d88f files/digest-netlogo-bin-3.0.2 247
+SHA256 6415b21cb07b78f1f044802d82d36ba76c54cc08db70d1725679e732274711ef files/digest-netlogo-bin-3.0.2 247
 MD5 5c160f47ddbc4d03ef13ad2fb904bf9c files/netlogo.gif 93
+RMD160 739b573a8067d77dd017d1508b4ac20fdb7880b6 files/netlogo.gif 93
+SHA256 0b0cc020b4e9bde7a9a2b633efd7cde019b118cdd2fdbbad5caf2b3bdb898f8c files/netlogo.gif 93
 MD5 07afb3302de3a59cf3b8c29f64b1d918 files/netlogo.sh 149
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFCOFjB8zY1VwezZiERApktAKCO8p//xm54R8Nd9jSmnwxjA7vC+QCghkYz
-wFYlwFKWEQ3Dc/SFOaENE00=
-=ZhUB
------END PGP SIGNATURE-----
+RMD160 d3821c7aa7eb0ad12311fa82b783f42b015f7d7e files/netlogo.sh 149
+SHA256 958f0dff96893c225f26985a13d491cf7ba2827a5aecebf8ae250e441ad100eb files/netlogo.sh 149
+MD5 bf8ec66e917b8bccfe45e72ca7950197 metadata.xml 722
+RMD160 3223f2c3162334405168d65bb195c0c14b695b20 metadata.xml 722
+SHA256 06924d13668f1dddf9413ce8664fb2640e3762bd8d43cc3795bc0adec77f8aac metadata.xml 722
+MD5 41a0330052d691600799247547b8dd01 netlogo-bin-2.1.ebuild 1134
+RMD160 ee2d58e09f6643661960524e9ceb740e859fdd44 netlogo-bin-2.1.ebuild 1134
+SHA256 8006e6236641565f8078f5e25370452f57e018e47b67e0f9818a464607cd1425 netlogo-bin-2.1.ebuild 1134
+MD5 366dd3b0480daaa72f3ee1fa3cfed8d6 netlogo-bin-3.0.2.ebuild 1021
+RMD160 64853ffc2c99faa53095c97e6659876dfc4cf2ba netlogo-bin-3.0.2.ebuild 1021
+SHA256 83f965a3ace22e063272d0aedadb086ba6487ca5deef0448dd9a0d29240fcaad netlogo-bin-3.0.2.ebuild 1021
