@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b0b95b61ca73ac2af12e85f20a1fabae ChangeLog 802
 RMD160 03ce611ef052231484a2cdf16b51e80f87a966d1 ChangeLog 802
 SHA256 be50808de8e4f0f5dd58f2dfe9c4ddc70f3cbb2416e31ab804ec44212263b523 ChangeLog 802
@@ -22,3 +25,10 @@ SHA256 d9a61d8fd567f5ffb1b30c1e4a768942c7ebf0d620cce52ebde7845e3c95591e vdr-nord
 MD5 1fecf99b73b4e8a06de146a9d5fb8564 vdr-nordlichtsepg-0.5.ebuild 514
 RMD160 a21ea00452b2b1f36d8f8ed77ba118cfa68cde15 vdr-nordlichtsepg-0.5.ebuild 514
 SHA256 ec0ca1cda0a129e9a893e70fd8faac5b10e8f83bfdf97d99e5994c9c39c77645 vdr-nordlichtsepg-0.5.ebuild 514
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD59Z7ZfSl1Kp5KmoRAm6WAJ9NTG3lP9nX1wzX0vFYHT7g7gcOQwCg1xtG
+nnjZIsauxol84Zq/0DsKQ0I=
+=TZUq
+-----END PGP SIGNATURE-----
