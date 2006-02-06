@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0968c663f776c9e0bd1609b899526f8d ChangeLog 4463
 MD5 1d6220f156b7733fc0579d4a35719837 files/digest-phpldapadmin-0.9.7 70
 MD5 3a0747741c9ccb68abaf6c1a97389b48 files/digest-phpldapadmin-0.9.8 70
@@ -6,3 +9,10 @@ MD5 d1ff22c7d7576d337ecf17671a2e9672 files/postinstall2-en.txt 131
 MD5 2b9f3758019e1a5695a4e4d3e3152383 metadata.xml 275
 MD5 95d450e76e90b413b218432e0b7483ad phpldapadmin-0.9.7.ebuild 941
 MD5 d2d96db28d3c4d099e345eee5d298974 phpldapadmin-0.9.8.ebuild 881
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD526VEzitwsaoONoRAjD5AJ9z4cOZCiK2qy8maZXxnU7lcIc46ACgjIhN
+i4cYFWmGq5YZahvqtx838Vc=
+=gRou
+-----END PGP SIGNATURE-----
