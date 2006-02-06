@@ -1,4 +1,4 @@
-MD5 64258178170b77e27c83974bad575524 ChangeLog 1750
+MD5 36aa6c24d0c37064a602e9816e3f71ea ChangeLog 2035
 MD5 883d7b506158bac65ae416cfbbb30736 files/debian_mbox.patch 11250
 MD5 3f779e11cd93d820e75567bf24ab2e37 files/digest-pyzor-0.4.0 63
 MD5 3f779e11cd93d820e75567bf24ab2e37 files/digest-pyzor-0.4.0-r1 63
@@ -7,5 +7,5 @@ MD5 82dccdcfa0df0b39e37c784a84c3d1a4 files/handle_unknown_encodings.patch 3216
 MD5 6e1a6983f5565656d563fb0d89bf45a9 files/unknown_type.patch 472
 MD5 71c4638c9c88af75b58e5f5cb54fe008 metadata.xml 159
 MD5 27c4e241c491a3ce40991657e49c5a7d pyzor-0.4.0-r1.ebuild 846
-MD5 04eb2bd81fae977f36af008aae9b658f pyzor-0.4.0-r2.ebuild 1014
+MD5 70a5b5d9378db281b30d1c9b7075a725 pyzor-0.4.0-r2.ebuild 1017
 MD5 3c170e1cf94bfddbe3588e4b6e231510 pyzor-0.4.0.ebuild 656
