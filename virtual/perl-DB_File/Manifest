@@ -1,0 +1,7 @@
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-DB_File-1.811 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-DB_File-1.813 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-DB_File-1.814 0
+MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
+MD5 12d09665d721fa7ed358049a886ee8e2 perl-DB_File-1.811.ebuild 369
+MD5 505335aaab2772ae9866fa9dc587f303 perl-DB_File-1.813.ebuild 382
+MD5 d8c3624acb5db1793f43546510e10520 perl-DB_File-1.814.ebuild 371
