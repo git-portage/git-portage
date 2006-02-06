@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d6d1e1b72048436190ed8512839ee0da ChangeLog 2342
 MD5 283cdf9cb08cc4d819adacde98f27dda files/digest-tagtool-0.11.1 66
 MD5 0afbe723cd47379541f8742a5483764f files/digest-tagtool-0.12.1 66
@@ -7,3 +10,10 @@ MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 8aa405050e6220bf32df81bdf5df905f tagtool-0.11.1.ebuild 1513
 MD5 77128531a37c146868c7d56e2435897e tagtool-0.12.1.ebuild 1368
 MD5 dd9008a20d3070eb6703b60eb79bc5da tagtool-0.12.2.ebuild 1374
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFD52HKKRy60XGEcJIRAnqRAJwP4dUfwzF6nBGgNyigXCeI8S3uyACfROcz
+BENVzQeNldEdc/Cgo3vkY8c=
+=Wuy8
+-----END PGP SIGNATURE-----
