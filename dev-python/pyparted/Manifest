@@ -4,5 +4,5 @@ MD5 d0b426a010ec790060151f6c56b4aaa6 files/digest-pyparted-1.6.9 69
 MD5 870e184dc826576ff5943b1e39586621 files/digest-pyparted-1.6.9-r1 69
 MD5 2b0b0623d889932d22c276713b4b8d7d metadata.xml 223
 MD5 3e969922cc9b62c92a80cd5a108eeb9c pyparted-1.6.6.ebuild 878
-MD5 d70bec673369af11d59fee435e6eb90c pyparted-1.6.9-r1.ebuild 1059
+MD5 e30363b5da8dceb66ff031f1ee725770 pyparted-1.6.9-r1.ebuild 1058
 MD5 e60ac629923dab401918fc86d7a6a207 pyparted-1.6.9.ebuild 1057
