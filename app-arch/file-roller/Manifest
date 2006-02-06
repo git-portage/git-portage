@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 0bfab20d46e5a9915bae609f2f4dba52 ChangeLog 18208
 RMD160 12b42ca032994e2c583cd0197fa628620a0b9f99 ChangeLog 18208
 SHA256 d26c9c387161dca73604a0bce816f177d52d60851b454fdc5c12fbe00c65d425 ChangeLog 18208
@@ -16,9 +13,9 @@ SHA256 b9fc43bb4c17d8eea184fe06a4e4efc3f643a87580082a16f5fe8abe7c1b986d file-rol
 MD5 e50968e75d2b69cc87787c176ef6ced4 file-roller-2.12.1.ebuild 1385
 RMD160 a8cb7f96c036d559a230e34a6c628f923acef54e file-roller-2.12.1.ebuild 1385
 SHA256 4a5b981a7dba02cffe11582dcdb7055c00e2cc19e0514023400b5b0a20ca5300 file-roller-2.12.1.ebuild 1385
-MD5 6f4cd5b0fb33a553acbb853fb6d54f6e file-roller-2.12.2.ebuild 1377
-RMD160 d05b44ec9ba2ec918062ebdb89bafd9bdd792716 file-roller-2.12.2.ebuild 1377
-SHA256 7fe58ff4a761321f2466534eef6b08bfa38b478cfccf5ab81fa6e9e5f5015a14 file-roller-2.12.2.ebuild 1377
+MD5 770c43eb2c197ab7b2edda541299887e file-roller-2.12.2.ebuild 1376
+RMD160 f59aeb5f07b28d73a7ae768ccf5a91d45d47030c file-roller-2.12.2.ebuild 1376
+SHA256 4a7c6afd92fc794c62370c2b8380ac374b1bfbcf6f09220705ee8df6b7cee118 file-roller-2.12.2.ebuild 1376
 MD5 d779986864325c09e5caba951a634f9a files/digest-file-roller-2.10.0-r1 72
 RMD160 8f38431eddb180265461a7767523aadfd9bfa49e files/digest-file-roller-2.10.0-r1 72
 SHA256 bddb639eebed7acac505fb1a0a90e9c00ae1b689b17f83d6ddb16be67d2c196e files/digest-file-roller-2.10.0-r1 72
@@ -55,10 +52,3 @@ SHA256 75dc7413d516d1f315534662c5a098c7973866b4d125547cd2696190818b8b6a files/rp
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 RMD160 c0e2bae8e91bb6be8922bac5e4f597302e06587e metadata.xml 158
 SHA256 3a7dbca0fdc557de69783e0663e2d76ddab129ea8a19b2d0ef6d3e5d1b947ce1 metadata.xml 158
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFD5RnnJrHF4yAQTrARAq55AJ9GQv0+ITnT9ZswxPLCNOLUBFBFPgCfWHdP
-jiNiRspk9GGqhgJeDoeP2+g=
-=aboX
------END PGP SIGNATURE-----
