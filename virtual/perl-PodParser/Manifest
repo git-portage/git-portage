@@ -1,0 +1,6 @@
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-PodParser-1.28 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-PodParser-1.30 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-PodParser-1.32 0
+MD5 4e852f0b111ecf665e3dcf8b259229fc perl-PodParser-1.28.ebuild 359
+MD5 af6cea5bd835637cd6816f04438c61b4 perl-PodParser-1.30.ebuild 374
+MD5 89eebd9dc63e95c5967aec12783cafe8 perl-PodParser-1.32.ebuild 385
