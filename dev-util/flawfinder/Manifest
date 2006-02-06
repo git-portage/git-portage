@@ -1,8 +1,19 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 42fd7672b572270595b0b67f09a94ebf ChangeLog 937
+MD5 dffd46174e78b327c834fc3e4b1cf848 metadata.xml 160
 MD5 6f717ebb76a9e81734810f3e05229db1 flawfinder-1.23.ebuild 596
 MD5 eb9077dbebbe24ea3666daa127bff847 flawfinder-1.24.ebuild 605
-MD5 dffd46174e78b327c834fc3e4b1cf848 metadata.xml 160
-MD5 1b003685f1136405242c3aa3427ec49f flawfinder-1.26.ebuild 622
+MD5 43858365dbb931765c12571247e35470 flawfinder-1.26-r1.ebuild 725
 MD5 66485bdc1ded12fbcab0ada3ce4ab07d files/digest-flawfinder-1.23 66
 MD5 aa429f57a688a31d3c2b58b6b49403b0 files/digest-flawfinder-1.24 66
-MD5 611e31eb40377ee7bc24b1e91897ce22 files/digest-flawfinder-1.26 67
+MD5 611e31eb40377ee7bc24b1e91897ce22 files/digest-flawfinder-1.26-r1 67
+MD5 1b12df59ef9e3ad94f4b767ab357bdab files/flawfinder-1.26-linenumbers.patch 353
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD5x2iwnQyISwouHwRApN3AJ9cWAF7BAUMDibHmYuNNELDzeUPjwCfdwp6
+IMDcexRT6VMvQWroWVZDtQM=
+=1Ugt
+-----END PGP SIGNATURE-----
