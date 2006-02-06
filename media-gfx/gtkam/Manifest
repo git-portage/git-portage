@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f56a1fba44286ac7a838d818ec7a09fd ChangeLog 4966
 MD5 a1c4a2f9990b3356ce169554c82dd2f6 files/digest-gtkam-0.1.10-r1 64
 MD5 d37596d611b2b5fe213cf911c5988211 files/digest-gtkam-0.1.11 64
@@ -15,3 +18,10 @@ MD5 40928e4f954bd1b1991cfdfc79dd7b44 gtkam-0.1.12-r1.ebuild 1158
 MD5 79b367b1ba57f428197c0e85d38ed6ef gtkam-0.1.12-r2.ebuild 1180
 MD5 b9cf5355ba6178aae4261866e51374ea gtkam-0.1.12.ebuild 1305
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFD5170KRy60XGEcJIRAkdEAJ9egO6Hi94Hky8CM2KIFz23F4ft/QCgk+ha
+a/E9++83CBojSIGERm+IGlg=
+=ByDh
+-----END PGP SIGNATURE-----
