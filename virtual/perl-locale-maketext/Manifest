@@ -1,0 +1,5 @@
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-locale-maketext-1.09 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-locale-maketext-1.10 0
+MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
+MD5 61717d3f89c1b3c31149336c4ab026cc perl-locale-maketext-1.09.ebuild 366
+MD5 b9632f4dcaef9218478a90f8d6ecb21b perl-locale-maketext-1.10.ebuild 375
