@@ -1,4 +1,4 @@
-MD5 11aa4cf91b433d98dee30a1903e297ff ChangeLog 14751
+MD5 d860c4d6196c9fefee12dddf6e5eb75d ChangeLog 14843
 MD5 0a07934d74ccb1133cf0f3650cb94efc files/digest-libperl-5.8.6 64
 MD5 0a07934d74ccb1133cf0f3650cb94efc files/digest-libperl-5.8.6-r1 64
 MD5 c10e44e47d7f702efe7d4009064a97ca files/digest-libperl-5.8.7 64
@@ -13,5 +13,5 @@ MD5 ce442db939c59218a16be167f793b817 files/libperl-uclibc.patch 573
 MD5 9fe69fdbfc5ff4096e83a0aea7ac96c8 libperl-5.8.6-r1.ebuild 10587
 MD5 8138254c857a5c439bfc0c39c9a9dc9b libperl-5.8.6.ebuild 10591
 MD5 4bc541a781cafd9a9e54efd62d45b1e7 libperl-5.8.7.ebuild 10987
-MD5 cfa962a40364622fd6c7faa691342a49 libperl-5.8.8.ebuild 11586
+MD5 8e95758465f1e9889d4c6bef818f424f libperl-5.8.8.ebuild 11586
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
