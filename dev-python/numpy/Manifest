@@ -1,2 +1,4 @@
+MD5 b09317a5c235fb501c713cac7f2fb5dc ChangeLog 355
 MD5 22d45be0cf5e365559a44bf0d4f5d512 files/digest-numpy-0.9.4 63
-MD5 f9988b0ee1e9c03ea5426c721676048d numpy-0.9.4.ebuild 676
+MD5 485ea1fb2083d4705baa1e4efb747e95 metadata.xml 600
+MD5 94c5b949541bcce1eb89e86a79a3ad3c numpy-0.9.4.ebuild 719
