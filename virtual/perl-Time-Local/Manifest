@@ -1,0 +1,7 @@
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-Time-Local-1.10 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-Time-Local-1.11 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-Time-Local-1.12 0
+MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
+MD5 2269d4ca4cc899b7ea7754b4edd0bc7e perl-Time-Local-1.10.ebuild 367
+MD5 ccc57c480ebb70d4d18666328355b7cf perl-Time-Local-1.11.ebuild 372
+MD5 a321d1f3f869c62cd2a6973aa3a5d39a perl-Time-Local-1.12.ebuild 382
