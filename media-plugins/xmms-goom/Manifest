@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9f3317cc2c4f0a375bb7c4243570b35d ChangeLog 2535
 RMD160 0cfe2e03ddc44dd7b514a786176b2007bb09a6db ChangeLog 2535
 SHA256 e4e4a24f062ead00763bc7cddbf738c39e3489200d0037a7654945fb4cc77ca9 ChangeLog 2535
@@ -19,3 +22,10 @@ SHA256 d16c8f8d56e6fe1eca6bfd5b90b4faf97efc98bebd0d6e32eeaea28076e59533 xmms-goo
 MD5 8ba9d5d4ea554de0f5c066f5a9da1174 xmms-goom-2004.0.ebuild 930
 RMD160 a91d6edd413158e147e336ac62e91a385cdea32a xmms-goom-2004.0.ebuild 930
 SHA256 c3eb8cb576f1089f5216d9fb0cdfaef15f32854c967aaa7f7766aaca519bd0a2 xmms-goom-2004.0.ebuild 930
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD6Qy/JrHF4yAQTrARArgUAKCy/DTIj1yFvReuzOuOHnYsA4cy8gCfSkgy
+dJs8N2PKwBGHFf3znxxWX1I=
+=YrNu
+-----END PGP SIGNATURE-----
