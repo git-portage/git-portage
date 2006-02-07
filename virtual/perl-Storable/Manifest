@@ -1,0 +1,7 @@
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-Storable-2.07 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-Storable-2.13 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-Storable-2.15 0
+MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
+MD5 80c2f521ed1bd1df69791fb31afce2bb perl-Storable-2.07.ebuild 349
+MD5 3dd710b4b6048f23e241a735dac2d7a4 perl-Storable-2.13.ebuild 366
+MD5 835b065f017af7dcfe5d4252902b97a6 perl-Storable-2.15.ebuild 368
