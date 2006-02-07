@@ -1,27 +1,51 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 8f531ce72813b8fc68d15c3fa275146b ChangeLog 14657
+RMD160 b0e42e2f07e30539dbfaac3d0439e949e9722836 ChangeLog 14657
+SHA256 bc3c29a9622df4181aa731a5a64d760a830b21ff197b92b2566cd82e31900fe4 ChangeLog 14657
 MD5 0a07934d74ccb1133cf0f3650cb94efc files/digest-libperl-5.8.6 64
+RMD160 65b25cf2b098d17ae8354e087ff03f8c4a79a081 files/digest-libperl-5.8.6 64
+SHA256 0f4931ee9ace7fa9c9aedf2213b09a91789c1887d78d17c829c4b479aec9e4f3 files/digest-libperl-5.8.6 64
 MD5 0a07934d74ccb1133cf0f3650cb94efc files/digest-libperl-5.8.6-r1 64
+RMD160 65b25cf2b098d17ae8354e087ff03f8c4a79a081 files/digest-libperl-5.8.6-r1 64
+SHA256 0f4931ee9ace7fa9c9aedf2213b09a91789c1887d78d17c829c4b479aec9e4f3 files/digest-libperl-5.8.6-r1 64
 MD5 c10e44e47d7f702efe7d4009064a97ca files/digest-libperl-5.8.7 64
+RMD160 21381de31d6da67594744081be0a94da3fd067ff files/digest-libperl-5.8.7 64
+SHA256 681fd892979121a8ff1ead060881146194c9fd448b77f94d6f88cdb5b3cce34c files/digest-libperl-5.8.7 64
 MD5 f408b45cbe8f14c380ae6ffce87c01c4 files/digest-libperl-5.8.8 65
+RMD160 25b183ec478f7aba6ba98471e97a9fd9f96a6478 files/digest-libperl-5.8.8 65
+SHA256 d083e2a403dd2011be23b6a000310da291fb19d2b9be606b324a2c7088187902 files/digest-libperl-5.8.8 65
 MD5 ce442db939c59218a16be167f793b817 files/libperl-5.8.2-uclibc.patch 573
+RMD160 d8a1b40e86094a63f60783f550afd1087bb5a5f0 files/libperl-5.8.2-uclibc.patch 573
+SHA256 a054e63156fb2f1c167c2806f4d8c1a97a85dc0eecf2bd737bb63c92f079e98d files/libperl-5.8.2-uclibc.patch 573
 MD5 b67f84d9f78688c8d1d06503241d0f6d files/libperl-5.8.8-lib64.patch 3393
+RMD160 406206c33b10b4af8cb2d1aba2fa6aadf5d9eea6 files/libperl-5.8.8-lib64.patch 3393
+SHA256 3efe8048934093a1a66bc37b22fbb56a6e10df2940bb85b57802c9129c9bd1bd files/libperl-5.8.8-lib64.patch 3393
 MD5 f6c5dc893c771f72cc183c946628d35e files/libperl-5.8.8-reorder-INC.patch 3046
+RMD160 73bc824bebee8889073656a7b547dc63b35696dc files/libperl-5.8.8-reorder-INC.patch 3046
+SHA256 136ca6c6cfaa3467f6a164f26b34ff06cc55823ca5723118764589cc15d37aed files/libperl-5.8.8-reorder-INC.patch 3046
 MD5 0bdca74363c218d91a0db4ad1ea55485 files/libperl-create-libperl-soname.patch 417
+RMD160 ea221c4f1a284ad28b30e9354222859ac1c6392e files/libperl-create-libperl-soname.patch 417
+SHA256 cf417526a71b7c8a5015171fdefb6d7a52dbd6914762bb628d2662f6c28c7f61 files/libperl-create-libperl-soname.patch 417
 MD5 076dcbef37263d6dd7af719b55cfc2de files/libperl-noksh.patch 611
+RMD160 6ddb9e7140c60e05042c3c488c97399a86f965fc files/libperl-noksh.patch 611
+SHA256 0861f7f54c184e99a0ffeebeab9420d969d2002f921bc3fb14841a1e24be1f5e files/libperl-noksh.patch 611
 MD5 f7324a62f22aabde3387b7e8a8b2106e files/libperl-reorder-INC.patch 1141
+RMD160 4a889fa029fb77e7454ed0c6f7870359340df672 files/libperl-reorder-INC.patch 1141
+SHA256 4e075cb6b6b418ab3b2a6f6b9af633ac51cc7d7749330d3981fa69d0f2d16564 files/libperl-reorder-INC.patch 1141
 MD5 ce442db939c59218a16be167f793b817 files/libperl-uclibc.patch 573
+RMD160 d8a1b40e86094a63f60783f550afd1087bb5a5f0 files/libperl-uclibc.patch 573
+SHA256 a054e63156fb2f1c167c2806f4d8c1a97a85dc0eecf2bd737bb63c92f079e98d files/libperl-uclibc.patch 573
 MD5 820e89622ea2fd58728c9c34fe72a5ff libperl-5.8.6-r1.ebuild 10584
+RMD160 3406ed8af7031b0cbda1383a20454254fbed08ff libperl-5.8.6-r1.ebuild 10584
+SHA256 f0ff45993001a97efc0da3487f04aadba303a407cc1af5358c1ccc1a93a2f1b2 libperl-5.8.6-r1.ebuild 10584
 MD5 659c5dad609e390b9210cc05a4909003 libperl-5.8.6.ebuild 10588
+RMD160 c31f92fd1aa0c8cdead6c604c49c00483e153ed0 libperl-5.8.6.ebuild 10588
+SHA256 ab4ec1ee550f46e80af8a337976e4e402d33b5d1faff146838bc440a76df2681 libperl-5.8.6.ebuild 10588
 MD5 4bc541a781cafd9a9e54efd62d45b1e7 libperl-5.8.7.ebuild 10987
-MD5 9453e190a0f92580bd4fbab285fefe6b libperl-5.8.8.ebuild 11465
+RMD160 807450f51a594759dc7b8522e0223a9fa21a6ce5 libperl-5.8.7.ebuild 10987
+SHA256 a78bfd1ed6a1ac81673a6467b4fcc7787003f1dda3a67f21448611a6dd4bf3e7 libperl-5.8.7.ebuild 10987
+MD5 fceab44ea5426b394d216fe2c6152239 libperl-5.8.8.ebuild 11600
+RMD160 de787058097a47441e2ff36f53707f8c7dea1e66 libperl-5.8.8.ebuild 11600
+SHA256 efc23fd7735566669d17642ec654252b8ff06c6b1d16171aabee577ce4920e7e libperl-5.8.8.ebuild 11600
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFD6Lr4tG5z4I8BtQoRAlvMAJoCf3qU0dG2DR7lBAYWV/VwEpkvngCfbVq0
-r/jD9dAPFwJ4Hp4HkCefkss=
-=rP17
------END PGP SIGNATURE-----
+RMD160 647980838c590f54441a053916ea629e53e551c0 metadata.xml 305
+SHA256 f05dbef15061919972882cab07057e102760a542beba17d131194091401cd7ca metadata.xml 305
