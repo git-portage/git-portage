@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 648d28f7b9ba2ad52294df5c687d6205 ChangeLog 1568
 RMD160 83ad12c709ae69e6f7104ca127686c15491db623 ChangeLog 1568
 SHA256 172eec34cf9d1ee03724dda0cd5fa876abeeed69c1806c96f768c7aa76e8df32 ChangeLog 1568
@@ -19,3 +22,10 @@ SHA256 cb376a62369032d168f0a29b8eb5b6501ae169be20686bff66bd6608aa643b81 multipat
 MD5 3c314d91d5daee8226b025e4f4f2bcc6 multipath-tools-0.4.6.ebuild 1682
 RMD160 d5a3964414b7dde908e6df6a3095b18daf26bf6a multipath-tools-0.4.6.ebuild 1682
 SHA256 b873e86e8705ce967506f2e3e4e64a91b7ec99cd8c0e0a944e51ca92d2d9311a multipath-tools-0.4.6.ebuild 1682
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD6T+A2+ySkm8kpY0RAmRoAKCCtz5xuULliGo99tsxI2OIGc6ZGQCgvkNk
+kbhLvZWv55yOaqndnTG0V6c=
+=7et+
+-----END PGP SIGNATURE-----
