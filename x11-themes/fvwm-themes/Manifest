@@ -1,17 +1,15 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-MD5 fe2c4cb8d985d9f72a66ea022ec56466 fvwm-themes-0.6.2.ebuild 1108
-MD5 92c86ee3e6e42a773682653bf6ca64ba fvwm-themes-0.7.0.ebuild 1125
-MD5 5fc120fa79f574c8e86738713067e55c ChangeLog 1545
-MD5 fe26baf3e5e1b12866fe888f9b54cbc7 files/fvwm-themes-0.6.2-gentoo.patch 903
-MD5 c3edb7a019e0e522dd05ba85af0f7e7d files/digest-fvwm-themes-0.6.2 70
+MD5 fa82d8b262fff792612cfc29babe3299 ChangeLog 1822
+MD5 6829a5e08ae5216c84baa6a01c1dee2f fvwm-themes-0.7.0.ebuild 1175
 MD5 bb635670857b6057a6a65ce5d2778a2a files/digest-fvwm-themes-0.7.0 70
 MD5 fe26baf3e5e1b12866fe888f9b54cbc7 files/fvwm-themes-0.7.0-gentoo.patch 903
+MD5 fc403291a24a48fd3bc7929d196d0004 files/fvwm-themes-0.7.0-posix-sort.patch 772
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
+Version: GnuPG v1.4.2 (GNU/Linux)
 
-iD8DBQFDaP5iKRy60XGEcJIRAmeGAKCE6bYPP3Qk9hnwt7CflKsoirG+1gCfYgau
-bfIb6mn8QbtRhuk6cK7M74A=
-=mY0s
+iD8DBQFD6aYnwnQyISwouHwRAkioAJ98S9Y5WBOG0bwpm+LPWib7IRJgxQCfW3aX
+jxUOM7HzkLeCWwP6mX+4cK8=
+=NdCk
 -----END PGP SIGNATURE-----
