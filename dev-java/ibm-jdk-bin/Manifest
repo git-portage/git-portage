@@ -7,6 +7,9 @@ SHA256 b90ea3549103fa261cd711ecb3d11158c984bc20a020630aa3ebc3f8b402ec11 files/cp
 MD5 d32d7e0e95c351ef33523cb7c9477b55 files/digest-ibm-jdk-bin-1.4.2.03 626
 RMD160 71eda6abd64e576028eeb669b4d4f28533945cee files/digest-ibm-jdk-bin-1.4.2.03 626
 SHA256 1e6fbc4beb98763ba3485e535cba9312cd5c21f8052219c1bd3c639c8384d38b files/digest-ibm-jdk-bin-1.4.2.03 626
+MD5 c19d7ce9eec8f57d6fd010bb74ff56f8 files/digest-ibm-jdk-bin-1.4.2.04 2246
+RMD160 d12ae51ee0f0a28bb326bee1f9a028b40a2e4c31 files/digest-ibm-jdk-bin-1.4.2.04 2246
+SHA256 a5127550bd989784acfae9886629a4e1b1611b94c5f7eaab454edb05787b2aa0 files/digest-ibm-jdk-bin-1.4.2.04 2246
 MD5 9ac027f56be716fae31993669346cb7f files/digest-ibm-jdk-bin-1.5.0 640
 RMD160 53329d39173c20fe102bbd9b05b92d3129ccfa7f files/digest-ibm-jdk-bin-1.5.0 640
 SHA256 b2c85f35fd0691093465846168e52e8796c20fe691fb94f497c6947c20b0102b files/digest-ibm-jdk-bin-1.5.0 640
@@ -22,6 +25,9 @@ SHA256 87403cfbbe8ee41c0ff3622a0f20e34fec024f12dcafad158bcbce1a36168634 files/ib
 MD5 ed0a35656aeaadd78b998559dffd503f ibm-jdk-bin-1.4.2.03.ebuild 4371
 RMD160 fb74a5f6c1d1dc145dba9278500de58e1a237fc5 ibm-jdk-bin-1.4.2.03.ebuild 4371
 SHA256 8fc2b7cfbf4c473075af44ba94a698e5051eb642e24b15fdc5a0b9d8bcaab0a1 ibm-jdk-bin-1.4.2.03.ebuild 4371
+MD5 54ade72d31e2757e96e5f565199f191c ibm-jdk-bin-1.4.2.04.ebuild 4169
+RMD160 4d1fc259a24f3154e3d62c000ad2c8120bd46cb8 ibm-jdk-bin-1.4.2.04.ebuild 4169
+SHA256 4b54bc7dee937153df66349a9c43de8c348ca0fd0be2797cc89a97803023f5ba ibm-jdk-bin-1.4.2.04.ebuild 4169
 MD5 f6dcd37d71ec836a8e56f111ce0e2321 ibm-jdk-bin-1.5.0.ebuild 3074
 RMD160 b31ffe89c99719a19d197b0e143db04e3e186eed ibm-jdk-bin-1.5.0.ebuild 3074
 SHA256 820bbba1581b40dd59613fcc8467381325713b64a955d6e06f9a5c080e33accf ibm-jdk-bin-1.5.0.ebuild 3074
