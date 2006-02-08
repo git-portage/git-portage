@@ -1,0 +1,6 @@
+MD5 8496ae7ba929159680774f4a8fbc7214 files/digest-scsirastools-1.4.16 259
+RMD160 e7d114e1e4da3a30cabc663af09e652ed564f6d1 files/digest-scsirastools-1.4.16 259
+SHA256 a96ae547feb44c9f9672480038b4029287271e9012fd8ee2967df660b4d1b059 files/digest-scsirastools-1.4.16 259
+MD5 f758727fe63e626ef33a5c589f9b5434 scsirastools-1.4.16.ebuild 927
+RMD160 ccc53ebb43749c72cac2582bac4796280ab6d6f4 scsirastools-1.4.16.ebuild 927
+SHA256 66d071ee8d9bcc82a03413c03e20d0bdd16287c058ef4eb83ba382fcc7a8883d scsirastools-1.4.16.ebuild 927
