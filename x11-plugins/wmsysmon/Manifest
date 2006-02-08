@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9d9eba7fe57c778da5daa6cef0f6a14e ChangeLog 4088
 MD5 9ba5653a25ebfe02dfd7baab0b11feef files/digest-wmsysmon-0.7.6-r3 138
 MD5 c931633db09e7b39d8d94fd7487694e3 files/digest-wmsysmon-0.7.7 138
@@ -5,3 +8,10 @@ MD5 f92c36a3e2cda76a531745835a0bb145 files/wmsysmon-high-ints.patch 489
 MD5 62ba71d3b2fa785a4cbd5d47fdbd0eb6 metadata.xml 165
 MD5 548b21eaba46b35292d545a664ca5c09 wmsysmon-0.7.6-r3.ebuild 1152
 MD5 eadf9f5e96e40ea13a0a997afb1cfdbd wmsysmon-0.7.7.ebuild 1147
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFD6kGnKRy60XGEcJIRAuKBAJ0dvLgc554Wpob1LMQnrwk+qmctxACeJrfX
+5oir+n1J9YQNaYNrHwagiOs=
+=KRsL
+-----END PGP SIGNATURE-----
