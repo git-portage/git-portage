@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5898bbb45d67f5c7573c423f52b50fa0 ChangeLog 16178
 MD5 d3e6638242e53a9457d91b5e5bf1c648 files/digest-sparc-sources-2.4.31 140
 MD5 4066f3c14b801909fca3c83f3d72c564 files/digest-sparc-sources-2.4.31-r2 143
@@ -10,3 +13,10 @@ MD5 5717b5d7466eb1fdc0556f693ebce473 sparc-sources-2.4.31.ebuild 1195
 MD5 432e18c7124bdeb7e47ca2765abdea9f sparc-sources-2.4.32-r1.ebuild 1198
 MD5 4061b259f49dd15e31de63261657e92b sparc-sources-2.4.32-r2.ebuild 1201
 MD5 8866c1c8549bf7279d06fa8522be085a sparc-sources-2.4.32.ebuild 1195
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFD6gCVKRy60XGEcJIRAkG6AKCw/vUWa2yyEdFlOT+oOZ7fEcxyQwCeOMpo
+AnmTCWE0cFOmPRBnh6+b3F4=
+=p/UI
+-----END PGP SIGNATURE-----
