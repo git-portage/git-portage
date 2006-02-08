@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4ef7e8b5e35d1d98dfdcb3af0fc55c3f ChangeLog 11243
 RMD160 850dbfea2dade7e3c03af3ab598371b97fcf5ed9 ChangeLog 11243
 SHA256 c93211ad83927b0b1a52286d40fd3110feaa41f7e21addf1f679def9cc03c5d9 ChangeLog 11243
@@ -37,3 +40,10 @@ SHA256 92880feb5eee1bdf41a3b627fd84119384ffd5706c09850f642fe7f42eb286d0 openvpn-
 MD5 ad93ca28f8d512eb78e4a35d7c97ff99 openvpn-2.0.5.ebuild 3217
 RMD160 ed92bfb2b1a8e82132c9f214651329a1b463cac4 openvpn-2.0.5.ebuild 3217
 SHA256 ce2e1d43a043073adba6436738fd0a61e277fe07ab0f93fae1edaa72f3663aa0 openvpn-2.0.5.ebuild 3217
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD6dSWEbVyYKaZ/NERAldOAJ41zyGPvppCY5LhHokpbJfbcYAcHQCdF4va
+VZcA3PPKtayVK4aas/7ly8g=
+=8Fhl
+-----END PGP SIGNATURE-----
