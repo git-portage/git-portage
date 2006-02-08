@@ -7,9 +7,9 @@ SHA256 43f84a15bd3067664b6427646045e5e7e9d7479fc7b2dcfc2507c3ebb953b66c files/di
 MD5 813f2779e10e8f29d9e1d58dda93a5e3 files/digest-module-init-tools-3.1-r1 142
 RMD160 de039a9903b0b22fd694ac7ad4f3d9320cdd18ce files/digest-module-init-tools-3.1-r1 142
 SHA256 db4f98a458fd8d23c2841e3ab25aa705fe02c42c59fac038debe1420c71de701 files/digest-module-init-tools-3.1-r1 142
-MD5 5dbb0c3c30e8dd445395ad3d7e9c35fa files/digest-module-init-tools-3.2.1 144
-RMD160 1cf1f72a6cc6688aab4d68315e488c4d1dbc73e8 files/digest-module-init-tools-3.2.1 144
-SHA256 3b73235cbeb5c414d596c64ccbdbbe12fae090676047aabfea13d5039ad7ba9c files/digest-module-init-tools-3.2.1 144
+MD5 a63d71cb3e3c43afc87d6ad259ebf9e2 files/digest-module-init-tools-3.2.1 326
+RMD160 fd5d4bb90c5bbd5401a2b7726688a87f19489683 files/digest-module-init-tools-3.2.1 326
+SHA256 8ffc577e1ad066d36d364f25f2e6f318732ae96c23b47f9dbae0ab5a2fa0815b files/digest-module-init-tools-3.2.1 326
 MD5 0943f2e29b15a610fe01b111c3d948e7 files/digest-module-init-tools-3.2.2 144
 RMD160 560c3a45b70e6045c30f46e5478176acfd8d49d3 files/digest-module-init-tools-3.2.2 144
 SHA256 7a385e11f5c27165bea98eae9968f126e8b3ad1efd15950dbedaf33792e517c7 files/digest-module-init-tools-3.2.2 144
@@ -52,9 +52,9 @@ SHA256 79dd9e08809f82bdb1b61fc95cf603a62bc8ed1b4b0e1f68b8fc68c887d7d46a module-i
 MD5 47229c8c9b55ff325e42a6d1fa6cb4aa module-init-tools-3.1-r1.ebuild 5550
 RMD160 0e4994609de3193a1a3481b72ceb32735b50dc5d module-init-tools-3.1-r1.ebuild 5550
 SHA256 25dabf4903c1dddf8c31cf99798e0569d8018a97c83ce544cc982608b86da44b module-init-tools-3.1-r1.ebuild 5550
-MD5 be1b3ce80ba01c4cc48982d00b242f3a module-init-tools-3.2.1.ebuild 5757
-RMD160 4262096de3ec53642dc29df1d2d473a928f4908b module-init-tools-3.2.1.ebuild 5757
-SHA256 6ae9b79636ba525caf2103abd564234836952dc344949180ea2f5b786d40c0aa module-init-tools-3.2.1.ebuild 5757
+MD5 512ac1581fb4ab18102d0035fcbc2a7c module-init-tools-3.2.1.ebuild 5756
+RMD160 a5758f259890197bd6e702bc08b963987312ed20 module-init-tools-3.2.1.ebuild 5756
+SHA256 ce55afb69b3677f3c8a0e21bd5957f8d98d43284c9dd498f00453aa8d14ac77a module-init-tools-3.2.1.ebuild 5756
 MD5 602d273f05cace7e63b3989bda4a10d0 module-init-tools-3.2.2.ebuild 5769
 RMD160 c846a98a24c1211b007ce73737e28a7e797d8830 module-init-tools-3.2.2.ebuild 5769
 SHA256 8fa9caac7cc2f8fcfb6aad66080a71dd3874fa161cc60683a6887ddb7b096ee6 module-init-tools-3.2.2.ebuild 5769
