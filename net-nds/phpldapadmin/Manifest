@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4542939c3e908f89e9db93b0f87fe6f3 ChangeLog 4583
 RMD160 d76ba42d43be2d485cd6ea85f869173c9ea7bfc7 ChangeLog 4583
 SHA256 9ae43d7dc0233d8abdbf63fa8dc6e4e4fe42d0ec3913df3172bdc87bc0e8fd24 ChangeLog 4583
@@ -22,3 +25,10 @@ SHA256 fe4a357ae21e512acab4e559ba84e6f473228d1a7c361804dc758b003362b42d phpldapa
 MD5 0c3274464ed718e06f2cdfcf5f9e0636 phpldapadmin-0.9.8.ebuild 899
 RMD160 b13dff0922947a70d9ae50ec7d64555bf58a7eb6 phpldapadmin-0.9.8.ebuild 899
 SHA256 8f97aaedc25179356609a5fca54e4e88a0dea6890aceea4e87caa3bbbc7ce30b phpldapadmin-0.9.8.ebuild 899
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD6ix6EzitwsaoONoRAhWlAJ0Vl24VUNE1kISoKRn+ABdaf07rjgCggc46
+oYO2X3v6I+2LUTBhywhFOVg=
+=cuuS
+-----END PGP SIGNATURE-----
