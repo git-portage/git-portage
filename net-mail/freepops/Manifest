@@ -1,9 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 0213e8fe006f069268f3ac8d2a4917d0 ChangeLog 3123
-RMD160 307a9836986664e030631a6664a4bea4d9d03b43 ChangeLog 3123
-SHA256 87c7c35ddbd93d5e902e3434e840beb962234b7abc8dcc076188e695912c25ae ChangeLog 3123
+MD5 4efde4f1ac2e578472fc5983052e7260 ChangeLog 3293
+RMD160 609bc0bf1c02136a4ff0970a8ba5a5a6f18bbed1 ChangeLog 3293
+SHA256 eb794b9331e1b25c0f83d404a012734bb8f2317ea355575877ca383f1ca6df36 ChangeLog 3293
 MD5 d7ca204372719b1d3fa4aca59cf9a442 files/digest-freepops-0.0.27-r1 68
 RMD160 faf0b1d0d4d02d87aabdf480e6d5e351a652e05b files/digest-freepops-0.0.27-r1 68
 SHA256 0f827b940fa23aa19283d3c5abab2a885ae8f5de155cae082a4fcff530efd6e0 files/digest-freepops-0.0.27-r1 68
@@ -19,6 +16,9 @@ SHA256 bb338deed6e6da09817c9c9cb88edb121685df4d12ac1eb5f70f844edbb4f49c files/di
 MD5 8711bb3f89904131b5a9acef59e4c3ee files/digest-freepops-0.0.97 250
 RMD160 e3fe7f1a33cf13d5a0baea9a1e1d68f7829e0fd7 files/digest-freepops-0.0.97 250
 SHA256 ba49a95060d00388af06fc91b2a3b07ec1e8bd6491ab2702f62bcf97902b3c61 files/digest-freepops-0.0.97 250
+MD5 0a4dea94fd78c15092d925a722baf65c files/digest-freepops-0.0.97-r1 461
+RMD160 cd106e5cb745e1272d9ce5f80e136c1214b4b05a files/digest-freepops-0.0.97-r1 461
+SHA256 9c0d84f4f7a53c125a232a00c5fbc3f3df06f7a396331ec4a97fc40cf87d28c5 files/digest-freepops-0.0.97-r1 461
 MD5 87de47c4792aa1687b9d521a4e4c313a files/freepops-0.0.27-initd.patch 634
 RMD160 b711ccad88acb5043b8c2fcb114ac2016b8c9492 files/freepops-0.0.27-initd.patch 634
 SHA256 afddccc99281e911bb44aad84873d9be50af8fdb20376e654dbe4777acdcd2cb files/freepops-0.0.27-initd.patch 634
@@ -43,16 +43,12 @@ SHA256 c0cf18edb855c658cc51a57683ff8ae4ed58bb0cc6ccc5db78f883bd4f5dec69 freepops
 MD5 0a2bda7247ec44c0df51233f3a1c3edd freepops-0.0.96.ebuild 1193
 RMD160 b609c5275aab678239ad9edbc75ade5b4603b7bd freepops-0.0.96.ebuild 1193
 SHA256 2284c3c1fe3e51f7672e6ea4277a895bdf09293cdd57f18cbc5935a2221a03ca freepops-0.0.96.ebuild 1193
+MD5 8630b9897b83e84508412806e7b777b8 freepops-0.0.97-r1.ebuild 1552
+RMD160 eb27b419b8dd3df0a795b2826ee8beeb75f63fcc freepops-0.0.97-r1.ebuild 1552
+SHA256 9e67c948f01adc1ff5cd649b9c3943cc32b52a92e882adb2a35ef8ddbaed98cd freepops-0.0.97-r1.ebuild 1552
 MD5 fea9126f90c14969caa97bef24472dd0 freepops-0.0.97.ebuild 1446
 RMD160 95e46dbb0359df8cc72393e11410b994d7de1e95 freepops-0.0.97.ebuild 1446
 SHA256 eb5083689b43e7b30d4e91f7bd2f5f92c1a62cf9b936e9e63a9feea818551a3a freepops-0.0.97.ebuild 1446
 MD5 c5cea2c71a3038980c2975d684e9e1fb metadata.xml 288
 RMD160 9156c20410e399eefadae2d44edaa536f0a93c0f metadata.xml 288
 SHA256 313310f7c1c73fdab56202d7087ea4275c706996f4f9049cc1bdd7ddbabba9db metadata.xml 288
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
-
-iD8DBQFD6nQgmdTrptrqvGERAs05AJoC6xcfbF6XnJPJ7QTOeFdzsmgQXwCeMpHx
-9Dep0dj4W54YupLWpTBVzAY=
-=oq1V
------END PGP SIGNATURE-----
