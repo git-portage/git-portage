@@ -16,9 +16,9 @@ SHA256 44350daa7594842894d676413708d8ea77ccb0017bed24711af5b256281f5e61 metadata
 MD5 a92454bf80f23e99ba33c674436d0cec xfce4-battery-0.2.0-r1.ebuild 395
 RMD160 890438bbfea4c592dd8e122df9ed5eac758cec9f xfce4-battery-0.2.0-r1.ebuild 395
 SHA256 1821b0aafe7d2268c99ec96e7e7f1c6c91b42d9ec5ceb4efa604d7b42c2175f6 xfce4-battery-0.2.0-r1.ebuild 395
-MD5 c21cfd85e7ae1dfe6d6a1f40c09009b8 xfce4-battery-0.3.0-r1.ebuild 382
-RMD160 9da3201db1b064437a753864fb4b999d3f27f66e xfce4-battery-0.3.0-r1.ebuild 382
-SHA256 b898328a6bde4951aecaecd8e5bc776a5d06d93ddabb7787020e6d047d2c7cb6 xfce4-battery-0.3.0-r1.ebuild 382
+MD5 8299b9dbffb63b4d7e676a1c78c9b4c6 xfce4-battery-0.3.0-r1.ebuild 381
+RMD160 4005d48787fcff0f6cdef4d9a602b7d8f90ce54c xfce4-battery-0.3.0-r1.ebuild 381
+SHA256 aad90ceca1eb546f026db769fc6d144b2a5f4c36933c49e10b28e05efc7f1670 xfce4-battery-0.3.0-r1.ebuild 381
 MD5 75f39ce9a71022ec8c9e4898f934c605 xfce4-battery-0.3.0.ebuild 400
 RMD160 de7c1212012643841674eca08cef8010fe81a141 xfce4-battery-0.3.0.ebuild 400
 SHA256 d30c9169e2bca32c3bc1721a0ee9b7849d63ceb0e09b3cb140820f4ee7564c4f xfce4-battery-0.3.0.ebuild 400
