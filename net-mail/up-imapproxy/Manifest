@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 de2ae703fcbce99da66b9249d28d986c ChangeLog 1616
 RMD160 4e23985c441113f62a7bd3bf471ab6d2e2233e47 ChangeLog 1616
 SHA256 9c24ef337bcb0207f90e07cb0dd4cb863b98f8926d03825c139d0d47de6ef24e ChangeLog 1616
@@ -40,3 +43,10 @@ SHA256 2239c1451cf0bda494e1166e929bfca73eeb77f6bd0a90beadbc979fd72ef3c9 up-imapp
 MD5 e10e131eed3d8f3cf5a5ecc4b9b01cbb up-imapproxy-1.2.4.ebuild 1277
 RMD160 1560ee2e8daf236fd41f4189c773ba6773cdcec7 up-imapproxy-1.2.4.ebuild 1277
 SHA256 a843d07aee6f843126b5d5fcdb619cce1760c8284c85aa2b12aea4ed0fae944b up-imapproxy-1.2.4.ebuild 1277
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD6yRfV3J2n04EauwRAsiiAJ4lVXb7uFNdXgOWvaYOdyalrvz0LwCaA04E
+ZMkQGJRIX5frg+Q2zE4Ew00=
+=bfFt
+-----END PGP SIGNATURE-----
