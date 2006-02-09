@@ -1,17 +1,21 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 3faeb30c45f6405758cc2f767c4efbae ChangeLog 1054
+RMD160 741614e4bd5649a8eddd593fb4d3c86344838ad3 ChangeLog 1054
+SHA256 15f913f4a2fd31c2159f4f24c3b866bff4566681546f92aa0922f05a7331723a ChangeLog 1054
 MD5 6f827d1afc639044d5838cbf0c834d85 files/digest-kmp-0.01 61
-MD5 4a3ebfe8bfb67de92e1cb05bec2e65af files/digest-kmp-0.5 60
+RMD160 23b6fdfa6e3af8a40f8ae57a0490a8f4f6bc9abc files/digest-kmp-0.01 61
+SHA256 27fc2089dcc7953f1a3749151e6ced4c60778aae261cbf14d27fd1f0184cc189 files/digest-kmp-0.01 61
+MD5 ed93a61f0581882e5de9c02876971ffb files/digest-kmp-0.5 226
+RMD160 a31c043448c5d7a1889dc64acbf1499761ec33cb files/digest-kmp-0.5 226
+SHA256 a06db1d3def0adc45fb2d962ef1b8c05d5a1464c2f792117e74177c7cc2c8d1e files/digest-kmp-0.5 226
 MD5 367223b8cfcde84caf89a4f46cab4e8e files/kmp-0.01-gcc34.patch 483
+RMD160 e339e89dabf1a5d8ae650292c4605c68a3fcf8b2 files/kmp-0.01-gcc34.patch 483
+SHA256 732d95dae1e9c565ca40dcbeda897579510fcba419cd3e265eed633a73c0b2a9 files/kmp-0.01-gcc34.patch 483
 MD5 82a7d1c387aba4b058366445cedf1fdb kmp-0.01.ebuild 986
-MD5 1886dd8195044f32f4692757e418cfa6 kmp-0.5.ebuild 933
+RMD160 b38f7a6d3530e55e49f43a8774822f389f3ba8d5 kmp-0.01.ebuild 986
+SHA256 b22b4fd94e6cae25dcef13a0414c9a1f1d61f7cfc04f29143c062c916f2695ac kmp-0.01.ebuild 986
+MD5 7ee75a42aebaff92ab39fc6db8279c55 kmp-0.5.ebuild 1009
+RMD160 b9b506feb9db02d089dcc5629dbd311ab5672980 kmp-0.5.ebuild 1009
+SHA256 cb2d41301c044c3b27867c428791052d59952fd89e56c9566169ca40d1bfc7d7 kmp-0.5.ebuild 1009
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDwQR6AiZjviIA2XgRAnT1AJ0QSMq//6ANgfPnlIOM9bae40RNwwCbBt3V
-7hOBgr+sOlVMhod2gvCSyIs=
-=f+Si
------END PGP SIGNATURE-----
+RMD160 6842e2189a50bd8a98e84802c38180ac1421c00e metadata.xml 158
+SHA256 dfb5b47e6836db39fb187301dfcff1c2605e91d13d21db160806a563d8c75f9b metadata.xml 158
