@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 46a0651ec028046ecfa69ded0e05aedd ChangeLog 9305
 RMD160 02c47fa9d4a05e7311dd5acf29878ea02f8e270b ChangeLog 9305
 SHA256 4fa2dddc60787d1b9f334d4f9beaa5797900274c1747941d2e198862ac42efa2 ChangeLog 9305
@@ -40,3 +43,10 @@ SHA256 752135de20bc99a4eeec8a78962d3194a934290df2391a47bbbeee5df8e2545d pciutils
 MD5 3f1bfc65549f8a6daf759a56a0c73dd5 pciutils-2.2.0-r1.ebuild 1779
 RMD160 a58f304ca511bc8c5d04063a6dce65a28af9d558 pciutils-2.2.0-r1.ebuild 1779
 SHA256 31ecda06d9db52dfc652bf21b9944e4d6ac9ecc2a66ecbcea841aebf7ec362d7 pciutils-2.2.0-r1.ebuild 1779
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD67gRV3J2n04EauwRAhN6AJ9bKKXEv1ttHFNH5nlOFmkKq/JFfgCgj9NQ
+Om4vsFBkNruizu3zrDDhLoU=
+=rYDA
+-----END PGP SIGNATURE-----
