@@ -1,18 +1,30 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 9628d270f951516f6dacedf9394d85de ChangeLog 2923
-MD5 b896bcee65b7519f24c1ae1cb2652704 libiconv-1.10.ebuild 1819
-MD5 abfe510c3ac1a78cb231d3bcbb38f532 libiconv-1.9.2-r3.ebuild 1318
-MD5 c9d8d5d37487d29e41f03ef9dc5dc198 metadata.xml 378
+RMD160 3837a9a8fd5a51d61b4ae055c804c71bddc2e33a ChangeLog 2923
+SHA256 c31991de04027ebd38f5ab3b9a0b0837204d505e76024f4f036dbf8e06fcb622 ChangeLog 2923
 MD5 0f60d7695c7c3a779ae0635797f6eead files/digest-libiconv-1.10 66
-MD5 c48abf520f6345ca1cb28be835796db8 files/libiconv-1.10-link.patch 910
-MD5 97aebb7d7ded50f07b44c23768d25928 files/libiconv-1.9.2-RPATH-fix.patch 1906
+RMD160 79b2fe76747232b2a48d7f3be07ad5c817626736 files/digest-libiconv-1.10 66
+SHA256 fde8de5f6cb1205a4051ec0b0427733fe88911701a56c0efd0b9bd475d2e9f71 files/digest-libiconv-1.10 66
+MD5 2d014aafae964b13a69e1d82cfaa59fc files/digest-libiconv-1.10-r1 244
+RMD160 dbde82fd8aeac80fa429fa49bd5dbe25134fbcbf files/digest-libiconv-1.10-r1 244
+SHA256 de9e37a3ece1321b4015b1c771711db4f464c4601745165e931384aa95624975 files/digest-libiconv-1.10-r1 244
 MD5 ba26148d2aed650a790b129b9907ae59 files/digest-libiconv-1.9.2-r3 67
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDKYouj5H05b2HAEkRAvAPAJ9BALbYQ3PpJ9ecMgWWNiNxqxuV+wCgpoWq
-U2X+BaoLvI5/Oh+En8v5KBE=
-=oYfh
------END PGP SIGNATURE-----
+RMD160 f1defc352820f8db84e7560d01ceae1d28b490b6 files/digest-libiconv-1.9.2-r3 67
+SHA256 d95b32b814ae517eabc8f03543477e80e82f57df8f4b4d802a205cdc5de26060 files/digest-libiconv-1.9.2-r3 67
+MD5 c48abf520f6345ca1cb28be835796db8 files/libiconv-1.10-link.patch 910
+RMD160 9ffdad30a03ec8013c4e7eb257de01b096026853 files/libiconv-1.10-link.patch 910
+SHA256 99618454073097c4946acd4df69f2af961f7bfd3b52d0e385722a6cc4b81d8d8 files/libiconv-1.10-link.patch 910
+MD5 97aebb7d7ded50f07b44c23768d25928 files/libiconv-1.9.2-RPATH-fix.patch 1906
+RMD160 1c593d24f3e5d3b94c841eb89222f8bef9baf827 files/libiconv-1.9.2-RPATH-fix.patch 1906
+SHA256 2c337fc794bdcd3930bc9ece5898d91c4425cc77a4c00c4f05db4e6028f5c16a files/libiconv-1.9.2-RPATH-fix.patch 1906
+MD5 de331d59d2fce90d4989a3de308e9ac6 libiconv-1.10-r1.ebuild 1859
+RMD160 a3cbf2492ba63c3d37d608269ac46f782d04fbbb libiconv-1.10-r1.ebuild 1859
+SHA256 6f352bbbc1f05acbbc5aa0d657f245298cf0fd20406cefd415cda2988f44dd9c libiconv-1.10-r1.ebuild 1859
+MD5 b896bcee65b7519f24c1ae1cb2652704 libiconv-1.10.ebuild 1819
+RMD160 41fc82d512820707b8c47ff0ffdebdaa90c6fb97 libiconv-1.10.ebuild 1819
+SHA256 f455bf4575c4cb05de97f32ee703db62e587906affc842c963fd60c05a8489c9 libiconv-1.10.ebuild 1819
+MD5 abfe510c3ac1a78cb231d3bcbb38f532 libiconv-1.9.2-r3.ebuild 1318
+RMD160 73be9a01813468cb3f32c0f769f1054a56a1ac78 libiconv-1.9.2-r3.ebuild 1318
+SHA256 a3bc8455d7fefb6279c15a2495d46b3e60063a4a1bdb7aaaf02b22ef9334016e libiconv-1.9.2-r3.ebuild 1318
+MD5 c9d8d5d37487d29e41f03ef9dc5dc198 metadata.xml 378
+RMD160 907b05848e357c89928e9e40c8eacfba66a20d04 metadata.xml 378
+SHA256 fb61ffaf9539c5b433445c9145ce53945ccbbb19b02e97afa513574f88d64b1f metadata.xml 378
