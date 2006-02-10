@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a8e30ad03501e5b313f9e3e0982bb9ae ChangeLog 12337
 MD5 d12710062cc8edc7c79aea8597867db1 files/1.4.4-nodoxygen.patch 532
 MD5 99b3eee4a8cc881197b9b4ecb14a60d4 files/digest-scim-1.2.3 63
@@ -13,3 +16,10 @@ MD5 c9019868a93593cdd16bec7d523ee9d0 scim-1.4.1.ebuild 2823
 MD5 290159abe3b7fd20ce94ffb1c9d2242f scim-1.4.2.ebuild 2819
 MD5 2d99bee5cc0389a65d4d86f297e2f104 scim-1.4.3.ebuild 2828
 MD5 474ddc780eef6e740c8276e9b9b3f44b scim-1.4.4.ebuild 3007
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD7LM09ZFPrqoILX8RAvxxAJ9cwJ1tcgZYF8xAN4g9qUr4b67lIwCeIa8c
+dPciOEp6Vio76Fs8ZtKZ2B4=
+=KhuI
+-----END PGP SIGNATURE-----
