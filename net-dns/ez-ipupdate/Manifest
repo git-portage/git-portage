@@ -25,9 +25,9 @@ SHA256 beb76bd1362bee077d90b67ec8c7251d13b5c08e2d565d8ffb3f000f48a41198 files/ez
 MD5 a4f8cd6940114080f701918bd00b1800 files/ez-ipupdate-3.0.11_beta8-syslog.patch 300
 RMD160 518a93e2e1add19895cc88a1e88b332db5d04394 files/ez-ipupdate-3.0.11_beta8-syslog.patch 300
 SHA256 d938f6366aa9fd71259f2ad909a0959ddb6160bcfe97d71d2cf0f3adbaece548 files/ez-ipupdate-3.0.11_beta8-syslog.patch 300
-MD5 a86f6c45f48dc904e4d9a9447226889e files/ez-ipupdate.initd 2658
-RMD160 ad64a1c9c0f8dc86488abc793c0cf329946472ef files/ez-ipupdate.initd 2658
-SHA256 dbbb4db796fb2f7972a843f5420d2bc25dc18d3a175aed048f3fbea69649f7a9 files/ez-ipupdate.initd 2658
+MD5 fa828f9ba55c8a9da0acdec659878819 files/ez-ipupdate.initd 2674
+RMD160 9d2b8a006aea072904f20c96df257d60804bdd56 files/ez-ipupdate.initd 2674
+SHA256 46f8586b10a0917276e8bb181482e43bb8f5941e089b016b6fe305a26b67a7d6 files/ez-ipupdate.initd 2674
 MD5 cce1451ebc90d2c8a8068f6fe7d7a875 files/ez-ipupdate.rc6 1226
 RMD160 c1620048a471f4b721acf44bb5b5899b336f27a1 files/ez-ipupdate.rc6 1226
 SHA256 cbf7934f767fddd4cb8a49e632f56fc05769a0c352cadee03552b7f64ce4aec4 files/ez-ipupdate.rc6 1226
