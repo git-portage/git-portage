@@ -1,6 +1,5 @@
-MD5 480df69bacdb7c64eb12fc6c9e4bd73a ChangeLog 12147
-MD5 4cfac770831429e266438ba1acdcd8f1 doc.patch 1613
-MD5 d12710062cc8edc7c79aea8597867db1 files/1.4.4-doc.patch 532
+MD5 a8e30ad03501e5b313f9e3e0982bb9ae ChangeLog 12337
+MD5 d12710062cc8edc7c79aea8597867db1 files/1.4.4-nodoxygen.patch 532
 MD5 99b3eee4a8cc881197b9b4ecb14a60d4 files/digest-scim-1.2.3 63
 MD5 82eea24cbbcb316453e8ba41d946532d files/digest-scim-1.3.3 63
 MD5 dd0aa4fefdd378f8a2e4fee1d27863fd files/digest-scim-1.4.1 63
@@ -13,4 +12,4 @@ MD5 5361ccc2230d7f42b148a0bf3ee04189 scim-1.3.3.ebuild 2828
 MD5 c9019868a93593cdd16bec7d523ee9d0 scim-1.4.1.ebuild 2823
 MD5 290159abe3b7fd20ce94ffb1c9d2242f scim-1.4.2.ebuild 2819
 MD5 2d99bee5cc0389a65d4d86f297e2f104 scim-1.4.3.ebuild 2828
-MD5 9e1c0388a05b17d687d35e4e0bff3e16 scim-1.4.4.ebuild 3009
+MD5 474ddc780eef6e740c8276e9b9b3f44b scim-1.4.4.ebuild 3007
