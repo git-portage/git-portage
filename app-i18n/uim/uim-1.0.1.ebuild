@@ -1,13 +1,13 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim/Attic/uim-1.0.0_beta.ebuild,v 1.1 2005/12/17 16:54:34 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim/Attic/uim-1.0.1.ebuild,v 1.1 2006/02/10 20:31:22 liquidx Exp $
 
 inherit eutils kde-functions flag-o-matic multilib elisp-common
 
 MY_P="${P/_/-}"
 S="${WORKDIR}/${MY_P}"
 
-DESCRIPTION="a simple, secure and flexible input method library"
+DESCRIPTION="Simple, secure and flexible input method library"
 HOMEPAGE="http://uim.freedesktop.org/"
 SRC_URI="http://uim.freedesktop.org/releases/${MY_P}.tar.gz"
 
@@ -15,9 +15,18 @@ LICENSE="GPL-2 BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE="gtk qt immqt immqt-bc nls X m17n-lib canna emacs"
-#IUSE="${IUSE} scim"
 
-RDEPEND="X? ( virtual/x11 )
+RDEPEND="
+	X? ( || ( (
+	   	 	    x11-libs/libX11
+				x11-libs/libXft
+				x11-libs/libXt
+				x11-libs/libICE
+				x11-libs/libSM
+				x11-libs/libXext
+				x11-libs/libXrender
+			  )
+		   	  virtual/x11 ) )
 	gtk? ( >=x11-libs/gtk+-2 )
 	m17n-lib? ( dev-libs/m17n-lib )
 	!app-i18n/uim-svn
@@ -26,11 +35,15 @@ RDEPEND="X? ( virtual/x11 )
 	immqt? ( $(qt_min_version 3.3.4) )
 	immqt-bc? ( $(qt_min_version 3.3.4) )
 	qt? ( $(qt_min_version 3.3.4) )
+	emacs? ( virtual/emacs )
 	!<app-i18n/prime-0.9.4
 	!app-i18n/uim-qt
 	!app-i18n/uim-kdehelper
 	!app-emacs/uim-el"
+
 DEPEND="${RDEPEND}
+	X? ( || ( ( x11-proto/xextproto x11-proto/xproto )
+	   	 	  virtual/x11 ) )
 	dev-lang/perl
 	dev-perl/XML-Parser
 	>=sys-apps/sed-4
