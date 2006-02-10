@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8a06dd6e39d77630e19e5fc6002bcd0d ChangeLog 5807
 MD5 a82ba08a8abb4ae38bcc8d467c665e7b files/10ghc 40
 MD5 aeec673d67613d60a91b5d8d3a11b184 files/digest-ghc-bin-6.2.2-r1 218
@@ -7,3 +10,10 @@ MD5 d4c41357e843c4af8ce3e6a4c1596627 ghc-bin-6.2.2-r1.ebuild 1032
 MD5 b0a31ddf8d263743df07356583007803 ghc-bin-6.4.1.ebuild 1238
 MD5 9e5e3b68f1863c338a231811b31c00f1 ghc-bin-6.4.ebuild 1137
 MD5 a769ecfcd1cdd2d40986627df7dfb249 metadata.xml 224
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD7IsO/B0cxt+cq+wRAhuhAJ4nVHxnHNSS8Ev9lu51unJhDiNxiwCfaBw4
+T2GJSfRKgZEsIsFIq9/SFLM=
+=LwHx
+-----END PGP SIGNATURE-----
