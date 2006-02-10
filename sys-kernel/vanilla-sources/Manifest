@@ -1,4 +1,4 @@
-MD5 2013dc49073c3e01c961928d4b448c83 ChangeLog 26896
+MD5 e3313cc858b67e19aa886a24ad2d75aa ChangeLog 26896
 MD5 33d51532d0f696fefa15593b2cf2f6de files/digest-vanilla-sources-2.0.40-r1 66
 MD5 556c7008fbfdf81750bbd4ab2beb111e files/digest-vanilla-sources-2.2.26-r1 67
 MD5 9854e47afccae85e887bcb970fc68890 files/digest-vanilla-sources-2.4.21 67
@@ -46,7 +46,7 @@ MD5 86a24e25c06fb3a270dbe61cc49b0bd6 vanilla-sources-2.6.14.5.ebuild 491
 MD5 058b488103258b9c694d5e8827557073 vanilla-sources-2.6.14.6.ebuild 493
 MD5 3f19fe953ab305090f213cd0cb12f8e8 vanilla-sources-2.6.15.1.ebuild 495
 MD5 4956f6a505b58441034cf9a64b26e293 vanilla-sources-2.6.15.3.ebuild 498
-MD5 4956f6a505b58441034cf9a64b26e293 vanilla-sources-2.6.15.4.ebuild 498
+MD5 982a2b0afd5c705687308a2ec2a48af2 vanilla-sources-2.6.15.4.ebuild 498
 MD5 a6d1e6f6a3dd468c9363b300fb1ffde0 vanilla-sources-2.6.15.ebuild 489
 MD5 e88982d7a7fe8fc50b4aaa5d56bdf3c0 vanilla-sources-2.6.16_rc1.ebuild 504
 MD5 07b3f03b15b65121271ada5f42c2e144 vanilla-sources-2.6.16_rc2.ebuild 500
