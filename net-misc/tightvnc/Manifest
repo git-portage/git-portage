@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0be64a8cf51617a68614273ce02f4914 ChangeLog 9047
 MD5 68903d8d341d5f9a8d576dee0716f4b8 files/README.JavaViewer 18585
 MD5 11be6d47e594297c9a92c56056df2f73 files/digest-tightvnc-1.2.8 76
@@ -20,3 +23,10 @@ MD5 59a8848188e5992cbe142be7d6285ee5 metadata.xml 309
 MD5 ad61c2374702756a5341de9f1a63efda tightvnc-1.2.8.ebuild 1595
 MD5 2c77a8c7ea08c44bd57e7258ad3b04fb tightvnc-1.2.9-r1.ebuild 1792
 MD5 ed9c7feb1ba516c6dced31eae3b2b0bc tightvnc-1.3_alpha7.ebuild 2576
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD7nmU/aM9DdBw91cRAmGrAJ4tiHM3FGtdMQ0XRSrzNOKXixvZ+gCeLYpu
+7d+lMBtDHQAB6/M9C5UWbcU=
+=kd12
+-----END PGP SIGNATURE-----
