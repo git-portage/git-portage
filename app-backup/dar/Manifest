@@ -4,9 +4,11 @@ MD5 2c2e07921cdc827bb7a64dd8cbcfd6f1 dar-2.2.2.ebuild 1141
 MD5 dbbf0d7df46edad5bed2b5dca4f61536 dar-2.2.3.ebuild 1145
 MD5 b92eb4b3d83dbeb61fdb2a6c9813c212 dar-2.2.4.ebuild 1145
 MD5 358c05036c69a8e0969c7cd5b8be7ca7 dar-2.2.5.ebuild 1145
+MD5 18bc5a0b587e8340686458b55154f0cb dar-2.2.6.ebuild 1619
 MD5 386d1068d568e85b87309a279da188c4 files/digest-dar-2.1.6 61
 MD5 a08cb65f15e68f63e8ad0d30f060d3d2 files/digest-dar-2.2.2 62
 MD5 215cc41777cf38cbd5e8973467199fee files/digest-dar-2.2.3 62
 MD5 9ec92eb91a511d72b956660cc7df1316 files/digest-dar-2.2.4 62
 MD5 d0ba8118888a829b0feb24799f759da3 files/digest-dar-2.2.5 62
+MD5 f97a32b761f1cc3ff6654cd524ccedf3 files/digest-dar-2.2.6 62
 MD5 ae8f2b13b9e79b5760aa8c08f84bebe8 metadata.xml 468
