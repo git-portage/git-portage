@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/kdar-2.0.6.ebuild,v 1.2 2005/10/12 11:28:54 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/kdar-2.0.6.ebuild,v 1.3 2006/02/11 16:05:46 matsuu Exp $
 
 inherit kde
 
@@ -21,6 +21,9 @@ need-kde 3.3
 
 src_compile() {
 	local myconf
+
+	filter-flags -Os
+
 	use dar32 && myconf="${myconf} --enable-mode=32"
 	use dar64 && myconf="${myconf} --enable-mode=64"
 	kde_src_compile

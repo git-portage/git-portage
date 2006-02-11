@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/kdar
-# Copyright 2000-2005 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/ChangeLog,v 1.5 2005/10/12 11:28:54 matsuu Exp $
+# Copyright 2000-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/ChangeLog,v 1.6 2006/02/11 16:05:46 matsuu Exp $
+
+  11 Feb 2006; MATSUU Takuto <matsuu@gentoo.org> kdar-2.0.6.ebuild,
+  kdar-2.0.7.ebuild:
+  Added filter-flags -Os, Bug 116112.
 
 *kdar-2.0.7 (12 Oct 2005)
 
