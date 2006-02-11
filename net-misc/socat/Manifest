@@ -1,4 +1,4 @@
-MD5 99a3c6e30798a8e14387e2dd42702a17 ChangeLog 3639
+MD5 fbd5e903a01ddc5c2be3b4b80ebc2949 ChangeLog 3774
 MD5 3e1450e1811fbf675f8069ed1bbe2a18 files/digest-socat-1.4.0.3 66
 MD5 7e75e101e793cb7f39eddab4eeb0d286 files/digest-socat-1.4.2.0 66
 MD5 7e75e101e793cb7f39eddab4eeb0d286 files/digest-socat-1.4.2.0-r1 66
@@ -13,4 +13,4 @@ MD5 24da1c9641086bd30d52503eaceca876 socat-1.4.2.0-r1.ebuild 1094
 MD5 7496b06950337734d9a6c273d9ee67b4 socat-1.4.2.0.ebuild 1024
 MD5 e4db15575c72e3b86fb62c5d7d4020e0 socat-1.4.3.0-r1.ebuild 1331
 MD5 dadb08b3ec55ab84c53735ef8a5b5535 socat-1.4.3.0.ebuild 1264
-MD5 190f4e850204c6356332047734505fba socat-1.4.3.1.ebuild 1361
+MD5 d3d61e58f8db8d3a5b4d6daec5621075 socat-1.4.3.1.ebuild 1362
