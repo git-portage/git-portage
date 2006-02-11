@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/nullmailer/Attic/nullmailer-1.02.ebuild,v 1.1 2006/01/30 03:50:34 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/nullmailer/Attic/nullmailer-1.02.ebuild,v 1.2 2006/02/11 10:35:51 robbat2 Exp $
 
 inherit eutils flag-o-matic
 
@@ -69,8 +69,10 @@ src_compile() {
 
 src_install () {
 	einstall localstatedir=${D}/var/nullmailer || die "einstall failed"
+	local mailqloc=/usr/bin/mailq
 	if use mailwrapper; then
 		mv ${D}/usr/sbin/sendmail ${D}/usr/sbin/sendmail.nullmailer
+		mailqloc=/usr/bin/mailq.nullmailer
 		mv ${D}/usr/bin/mailq ${D}/usr/bin/mailq.nullmailer
 		insinto /etc/mail
 		doins ${FILESDIR}/mailer.conf
@@ -94,8 +96,8 @@ src_install () {
 	# permissions stuff
 	keepdir /var/log/nullmailer /var/nullmailer/{tmp,queue}
 	fperms 770 /var/log/nullmailer /var/nullmailer/{tmp,queue}
-	fowners nullmail:nullmail /usr/sbin/nullmailer-queue /usr/bin/mailq
-	fperms 4711 /usr/sbin/nullmailer-queue /usr/bin/mailq
+	fowners nullmail:nullmail /usr/sbin/nullmailer-queue ${mailqloc}
+	fperms 4711 /usr/sbin/nullmailer-queue ${mailqloc}
 	fowners nullmail:nullmail /var/log/nullmailer /var/nullmailer/{tmp,queue,trigger}
 	fperms 660 /var/nullmailer/trigger
 	msg_mailerconf
@@ -113,11 +115,15 @@ msg_svscan() {
 	einfo "To start nullmailer at boot you have to enable the /etc/init.d/svscan rc file"
 	einfo "and create the following link :"
 	einfo "ln -fs /var/nullmailer/service /service/nullmailer"
+	einfo
+	einfo "If the nullmailer service is already running, please restart it now,"
+	einfo "using 'svc-restart nullmailer' or the init.d script."
+	einfo
 	einfo "As an alternative, we also provide an init.d script."
 }
 msg_mailerconf() {
 	use mailwrapper && \
-		ewarn "Please ensure you have selected nullmailer in your /etc/mailer.conf"
+		ewarn "Please ensure you have selected nullmailer in your /etc/mail/mailer.conf"
 }
 
 pkg_postinst() {
@@ -131,7 +137,7 @@ pkg_postinst() {
 	use mailwrapper && dosym /usr/sbin/sendmail /usr/bin/mailq
 
 	einfo "To create an initial setup, please do:"
-	einfo "ebuild /var/db/pkg/${CATEGORY}/${PF}/${PF}.ebuild config"
+	einfo "emerge --config =${PF}"
 	msg_svscan
 	msg_mailerconf
 }

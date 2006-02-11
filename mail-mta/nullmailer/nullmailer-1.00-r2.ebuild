@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/nullmailer/Attic/nullmailer-1.00.ebuild,v 1.7 2006/02/11 10:35:51 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/nullmailer/Attic/nullmailer-1.00-r2.ebuild,v 1.1 2006/02/11 10:35:51 robbat2 Exp $
 
-inherit eutils flag-o-matic
+inherit eutils flag-o-matic mailer
 
 MY_P="${P/_rc/RC}"
 S=${WORKDIR}/${MY_P}
@@ -17,9 +17,7 @@ IUSE="mailwrapper"
 
 DEPEND="virtual/libc
 		sys-apps/groff"
-RDEPEND="!mailwrapper? ( !virtual/mta )
-		mailwrapper? ( >=net-mail/mailwrapper-0.2 )
-		virtual/libc
+RDEPEND="virtual/libc
 		>=sys-process/supervise-scripts-3.2
 		>=sys-process/daemontools-0.76-r1
 		sys-apps/shadow"
@@ -67,6 +65,7 @@ src_install () {
 		mv ${D}/usr/bin/mailq ${D}/usr/bin/mailq.nullmailer
 		insinto /etc/mail
 		doins ${FILESDIR}/mailer.conf
+		mailer_install_conf
 	fi
 	dodoc AUTHORS BUGS COPYING HOWTO INSTALL NEWS README YEAR2000 TODO ChangeLog
 	# A small bit of sample config

@@ -1,18 +1,21 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/nullmailer/Attic/nullmailer-1.00.ebuild,v 1.7 2006/02/11 10:35:51 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/nullmailer/Attic/nullmailer-1.02-r1.ebuild,v 1.1 2006/02/11 10:35:51 robbat2 Exp $
 
 inherit eutils flag-o-matic
 
 MY_P="${P/_rc/RC}"
 S=${WORKDIR}/${MY_P}
+DEBIAN_PV="1"
+DEBIAN_SRC="${MY_P/-/_}-${DEBIAN_PV}.diff.gz"
 DESCRIPTION="Simple relay-only local mail transport agent"
-SRC_URI="http://untroubled.org/${PN}/${MY_P}.tar.gz"
-HOMEPAGE="http://untroubled.org/${PN}/"
+SRC_URI="http://untroubled.org/${PN}/${MY_P}.tar.gz
+		mirror://debian/pool/main/n/${PN}/${DEBIAN_SRC}"
+HOMEPAGE="http://untroubled.org/nullmailer/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~ppc"
+KEYWORDS="~x86 ~ppc ~amd64"
 IUSE="mailwrapper"
 
 DEPEND="virtual/libc
@@ -40,12 +43,16 @@ setupuser() {
 
 src_unpack() {
 	unpack ${MY_P}.tar.gz
-	EPATCH_OPTS="-d ${S} -p0" \
-	epatch "${FILESDIR}/${P}-smtp-auth.patch" || die "SMTP auth patch failed"
 	EPATCH_OPTS="-d ${S} -p1" \
-	epatch "${FILESDIR}/${P}-syslog.patch" || die "syslog patch failed"
-	EPATCH_OPTS="-d ${S} -p0" \
-	epatch "${FILESDIR}/${P}-gcc34-fix.patch" || die "GCC-3.4 patch failed"
+	epatch ${DISTDIR}/${DEBIAN_SRC}
+	EPATCH_OPTS="-d ${S} -p1" \
+	epatch ${S}/debian/patches/03ipv6.diff || die "IPV6 patch failed"
+	EPATCH_OPTS="-d ${S} -p1" \
+	epatch ${S}/debian/patches/05syslog.diff || die "daemon/syslog patch failed"
+	# this fixes the debian daemon/syslog to actually compile
+	sed -i.orig \
+		-e '/^nullmailer_send_LDADD/s, =, = ../lib/cli++/libcli++.a,' \
+		${S}/src/Makefile.am || die "Sed failed"
 }
 
 
@@ -62,8 +69,10 @@ src_compile() {
 
 src_install () {
 	einstall localstatedir=${D}/var/nullmailer || die "einstall failed"
+	local mailqloc=/usr/bin/mailq
 	if use mailwrapper; then
 		mv ${D}/usr/sbin/sendmail ${D}/usr/sbin/sendmail.nullmailer
+		mailqloc=/usr/bin/mailq.nullmailer
 		mv ${D}/usr/bin/mailq ${D}/usr/bin/mailq.nullmailer
 		insinto /etc/mail
 		doins ${FILESDIR}/mailer.conf
@@ -87,11 +96,12 @@ src_install () {
 	# permissions stuff
 	keepdir /var/log/nullmailer /var/nullmailer/{tmp,queue}
 	fperms 770 /var/log/nullmailer /var/nullmailer/{tmp,queue}
-	fowners nullmail:nullmail /usr/sbin/nullmailer-queue /usr/bin/mailq
-	fperms 4711 /usr/sbin/nullmailer-queue /usr/bin/mailq
+	fowners nullmail:nullmail /usr/sbin/nullmailer-queue ${mailqloc}
+	fperms 4711 /usr/sbin/nullmailer-queue ${mailqloc}
 	fowners nullmail:nullmail /var/log/nullmailer /var/nullmailer/{tmp,queue,trigger}
 	fperms 660 /var/nullmailer/trigger
 	msg_mailerconf
+	newinitd ${FILESDIR}/init.d-nullmailer nullmailer
 }
 
 pkg_config() {
@@ -105,10 +115,16 @@ msg_svscan() {
 	einfo "To start nullmailer at boot you have to enable the /etc/init.d/svscan rc file"
 	einfo "and create the following link :"
 	einfo "ln -fs /var/nullmailer/service /service/nullmailer"
+	einfo "As an alternative, we also provide an init.d script."
+	einfo
+	einfo "If the nullmailer service is already running, please restart it now,"
+	einfo "using 'svc-restart nullmailer' or the init.d script."
+	einfo
 }
+
 msg_mailerconf() {
 	use mailwrapper && \
-		ewarn "Please ensure you have selected nullmailer in your /etc/mailer.conf"
+		ewarn "Please ensure you have selected nullmailer in your /etc/mail/mailer.conf"
 }
 
 pkg_postinst() {
@@ -118,8 +134,6 @@ pkg_postinst() {
 	chown nullmail:nullmail /var/log/nullmailer /var/nullmailer/{tmp,queue,trigger}
 	chmod 770 /var/log/nullmailer /var/nullmailer/{tmp,queue}
 	chmod 660 /var/nullmailer/trigger
-
-	use mailwrapper && dosym /usr/sbin/sendmail /usr/bin/mailq
 
 	einfo "To create an initial setup, please do:"
 	einfo "emerge --config =${PF}"
