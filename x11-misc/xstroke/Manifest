@@ -1,14 +1,21 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 11c76b7ab02b919c109532d9aa7508c4 ChangeLog 3002
+MD5 13085c4ee18fda402d69290be2589458 ChangeLog 3197
+RMD160 76d4baeab68fe50b84218cb068fc3f87976a9391 ChangeLog 3197
+SHA256 112af8561d6e940134ba0aae7d5727a110b876fc8025e3197d0d82f331fcab21 ChangeLog 3197
 MD5 0bff6fe5c7b5973932081ba82302166d files/digest-xstroke-0.6 64
+RMD160 1c4080c3005aba78203dc7798f1e247812673fe4 files/digest-xstroke-0.6 64
+SHA256 fa99c1982f9e617db86d4344a8fca2aff432be28c11678eaf457fb5b6c6eb77d files/digest-xstroke-0.6 64
+MD5 90228eed14629ca7a947b20c302f1639 files/digest-xstroke-0.6-r1 238
+RMD160 168746aae8b97bfef885baf801385ac689c0c2c3 files/digest-xstroke-0.6-r1 238
+SHA256 cee05aac221875aa683aac424caf4932c390261270b8478f9904f2cb65151d2f files/digest-xstroke-0.6-r1 238
+MD5 76562ba25791586cd928104aee494702 files/xstroke-0.6-sigsegv_sprintf.patch 438
+RMD160 d5e4f2d4fb427c0087cf3648d4967998aef170e4 files/xstroke-0.6-sigsegv_sprintf.patch 438
+SHA256 d0acd3dac33f2e4bfc03c3b8a73bd04fd5525bdc5a407d04e1ed180284a8c98a files/xstroke-0.6-sigsegv_sprintf.patch 438
 MD5 cdb11033a3fa6525334cecf938961c07 metadata.xml 166
+RMD160 7b80226659bf40e97050b1ffce1858d5f20b3c60 metadata.xml 166
+SHA256 8e7de0a7f7c15840474de373a3ce36adcc5dd658b2e4d18366fcb63b964a0826 metadata.xml 166
+MD5 ebdc635a97b99131eb9e0403a163f22f xstroke-0.6-r1.ebuild 955
+RMD160 f604ab7a6093bfab952e2b1217e100750a0626f4 xstroke-0.6-r1.ebuild 955
+SHA256 e07b7df869af9beca17bcd69eab978b3c8cd077c03656df8e8dc752e061b1501 xstroke-0.6-r1.ebuild 955
 MD5 c846e902c3c4ee28b965001757e110a1 xstroke-0.6.ebuild 855
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD0ujnugEuf3OQ0akRAqBdAJ96z5BcAeiSkP88TUOkc1jEU9CeEACfeNzg
-NTR6ORG91Lh2fF+NnrB3FtU=
-=hGjd
------END PGP SIGNATURE-----
+RMD160 851c70448daadc8b138f221db0f96fbfaddd2379 xstroke-0.6.ebuild 855
+SHA256 1c34856d1d2e2eb6e559023efa00a2019ff947dc11d01639e3a581d33f34ca3b xstroke-0.6.ebuild 855
