@@ -7,6 +7,12 @@ SHA256 01c40f747d0ca4d3e47359cff6ac24ae5da22521c4e0be0122d19bed0cef722f enigmail
 MD5 9135cffca87783cce3d9b07d3c484f9e enigmail-0.93.1-r3.ebuild 4324
 RMD160 016b1fde7d3c16438f19cd8afe04771e5f64f06e enigmail-0.93.1-r3.ebuild 4324
 SHA256 ac4b0d58e04ed470314d0f96dd8f6c38dd6f0bc2f8286ca399e48a9a0e161ee2 enigmail-0.93.1-r3.ebuild 4324
+MD5 d74a12ab3bf86c65533b91716046063e enigmail-0.94.0.ebuild 4498
+RMD160 10787fcc2225e8f299201a9b3ec563024408f7e5 enigmail-0.94.0.ebuild 4498
+SHA256 55a5e04b356df10423725789ee1496c8641cd1f4f5cc6f9c6e8990e428307e47 enigmail-0.94.0.ebuild 4498
+MD5 fd7ac5cd0e3e465ce1c03909671c4a16 files/50_enigmail_no_upgrade-1.patch 651
+RMD160 1631ce4cb6e2758d2fe475327b9665fbefbcbe56 files/50_enigmail_no_upgrade-1.patch 651
+SHA256 1dbbc22e22d4639c407b9690280cc37d9a86919fde694be10daa3eac6c44ada2 files/50_enigmail_no_upgrade-1.patch 651
 MD5 f6da2f617f170f8bbc915d81d7588fa1 files/50_enigmail_no_upgrade.patch 633
 RMD160 38d30cb7ac0b1fddea62224d60b209dbafe0a26e files/50_enigmail_no_upgrade.patch 633
 SHA256 db3cf07fb3acf18d31716b30f7b4d74c543b6acf304a3fc18686b7bcd91ececb files/50_enigmail_no_upgrade.patch 633
@@ -19,6 +25,9 @@ SHA256 fd9f57faf042401d2c78d28eec452f0930f0c77de7604401e9d47d70c5b8003c files/di
 MD5 c1b00e08ff8408b2c73c9b8d41e119eb files/digest-enigmail-0.93.1-r3 1060
 RMD160 9be39b7702d7a6f1521b487afbee8868b6718e9e files/digest-enigmail-0.93.1-r3 1060
 SHA256 e117bbe850a282dd870e0fe5ccfdd2935dab97fa633afc4834f7f9c8e501e851 files/digest-enigmail-0.93.1-r3 1060
+MD5 ae0343cdc7a6578cae9391954cefae59 files/digest-enigmail-0.94.0 831
+RMD160 dc81c6e71741f709cd8b1e1fcec418c546dabdec files/digest-enigmail-0.94.0 831
+SHA256 f7f94087eb0d4280bf6398026cea3cdd41db7f31352a3a571b4aac2aac777248 files/digest-enigmail-0.94.0 831
 MD5 c00ea2b2717491804ceababb4c14cc5b files/firefox-1.5-visibility-check.patch 10955
 RMD160 9a5db3a7d6f5539ca77e116aed276d833925a43a files/firefox-1.5-visibility-check.patch 10955
 SHA256 439355e899ea43fd2f82adae6fb4dc7363ca526ce307ce0faba76e533af1dc7c files/firefox-1.5-visibility-check.patch 10955
