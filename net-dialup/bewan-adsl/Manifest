@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7bce05b4d98992bf463a003d085f72e2 ChangeLog 1523
 MD5 d0efc1235be91ab4c58bddd5f1b38b59 bewan-adsl-0.8.7.ebuild 2353
 MD5 bd16ca2d11981fbdae9a990f3af11ff5 bewan-adsl-0.9.0.ebuild 2127
@@ -10,3 +13,10 @@ MD5 d93f0e970aec5e90512811f43cd55c48 files/digest-bewan-adsl-0.9.0 59
 MD5 0582f71161d9846420b9ee9bd856e9b2 files/digest-bewan-adsl-0.9.3 82
 MD5 0582f71161d9846420b9ee9bd856e9b2 files/digest-bewan-adsl-0.9.3-r1 82
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD7xStjG8pv1lIUX4RAuegAKDuotjV+Zrk6T+eHmJq2Q9RdQ5GDwCgj3Do
+FJbZp46FJaAPr73LpSYxtzM=
+=NkQP
+-----END PGP SIGNATURE-----
