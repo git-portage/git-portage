@@ -1,23 +1,24 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/usb-pwc-re/Attic/usb-pwc-re-10.0.7a.ebuild,v 1.2 2005/08/10 11:50:07 phosphan Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/usb-pwc-re/Attic/usb-pwc-re-10.0.11.ebuild,v 1.1 2006/02/13 07:50:05 phosphan Exp $
 
 
 inherit linux-info toolchain-funcs eutils
 
 DESCRIPTION="Free Philips USB Webcam driver for Linux that supports VGA resolution, newer kernels and replaces the old pwcx module."
 HOMEPAGE="http://www.saillard.org/pwc/"
-SRC_URI="http://www.saillard.org/pwc/files/pwc-${PV}.tar.bz2"
+MY_PV="${PV/_/-}"
+SRC_URI="http://www.saillard.org/pwc/files/pwc-${MY_PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE=""
 DEPEND="sys-kernel/linux-headers"
 RDEPEND=""
 
-S=${WORKDIR}/pwc-${PV}
+S=${WORKDIR}/pwc-${MY_PV}
 
 src_compile() {
 	export ARCH="$(tc-arch-kernel)"
