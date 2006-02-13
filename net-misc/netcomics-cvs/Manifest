@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a80ee038e41859f8c6599b4285e1e9d5 ChangeLog 631
 RMD160 0ca9b1ab5525f7b94394d051c6f0dbf567b9b4a4 ChangeLog 631
 SHA256 4cd60b5b1725f7cc52a6c1a58fef0f47d05cca6b04f9291573fc9cb7c080a980 ChangeLog 631
@@ -10,3 +13,10 @@ SHA256 af217ae9bd180b9d9822a3b708faa310e63e93bd2f7bece1ccea4f96781d5ef5 metadata
 MD5 eb920fd271fef6ddc8f31db7293a40c9 netcomics-cvs-0.14.1.ebuild 1161
 RMD160 fdb609ad8888ee5f0c940dbb84684a7dbbe7bbcb netcomics-cvs-0.14.1.ebuild 1161
 SHA256 4320bf1a83010dd6e990df57537591748053a47b9ade5c7c2e8da9cb4395fd50 netcomics-cvs-0.14.1.ebuild 1161
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD79a7CRZPokWLroQRAnRDAKCxwLXxx6/tdbDnF3jv85gGf8zBCgCdHW96
+5pv4xZ5UdmWEpAftDqGlDxE=
+=VFKp
+-----END PGP SIGNATURE-----
