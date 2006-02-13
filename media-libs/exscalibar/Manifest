@@ -1,0 +1,25 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 6017e081473df88e1637db77db0b5016 ChangeLog 393
+RMD160 e278715f6e2f440887aa600e62c94fe2fce83875 ChangeLog 393
+SHA256 a87baecdf2e6a0dd65125e3c92a9a36d9a5dbd67488b3058a3079ee9a29c7abd ChangeLog 393
+MD5 ed344c674fb922e6c37f112e23a1caeb exscalibar-1.0.4.ebuild 1483
+RMD160 d1ba6e758a2c379ae33d5b00d0983ddd2601a2c2 exscalibar-1.0.4.ebuild 1483
+SHA256 4e3d7bbba0207f8430204b68715a710fbc6a74c47fc2554c2be122fb20c5b9ff exscalibar-1.0.4.ebuild 1483
+MD5 101fa04dd319f3cf78f79dbe528ee52c files/digest-exscalibar-1.0.4 253
+RMD160 4d5ff8c620369fffe46b5a6456449d291d2ba06c files/digest-exscalibar-1.0.4 253
+SHA256 43c3bdf8cc0737373dd2fd2d7581f0601bd52209c621f248385a742080604259 files/digest-exscalibar-1.0.4 253
+MD5 89dd19eccf4e638d4dd4dd88addcbe9f files/exscalibar-configure-disable-features.diff 1976
+RMD160 bb994d0922faaf23077eeebeb9437c9be4b99373 files/exscalibar-configure-disable-features.diff 1976
+SHA256 e81973aa973ee65c47cad31a7b4c7d331b2078dfdf0df8cdd06feb3d26dd3b0f files/exscalibar-configure-disable-features.diff 1976
+MD5 2b0e9087ef8939ab0578160c97b115e0 metadata.xml 215
+RMD160 3c90f64bec54294d08fbffbc172ebc321c5245f1 metadata.xml 215
+SHA256 258b7218817d5b106d0de87dff165d12f747ce78b9333ca5ab0b07129823849c metadata.xml 215
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD8OFfr2QksT29OyARAlSAAKCQAXQQfA/U84ATpjCzA2IcFe2z9wCggW/K
+0vi6MpD9ujqKZV471Ec8tPs=
+=vwIx
+-----END PGP SIGNATURE-----
