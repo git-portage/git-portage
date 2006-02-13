@@ -1,3 +1,13 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6ab971a60ab7e14120332075ba531fde ChangeLog 871
 MD5 227e64da69bc22bd4bf75ff7e5775bc4 files/digest-profxp-3_pre2 121
 MD5 b6b6c41cf6df84ad0d48917ab4ea19b6 profxp-3_pre2.ebuild 1016
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFD8J2etG5z4I8BtQoRAoEMAJsFprG60clG8HND39KUkjlmFqafXwCeJH5Y
+cx67F9+meGjG8AbWDtfjFjM=
+=cSqI
+-----END PGP SIGNATURE-----

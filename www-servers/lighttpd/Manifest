@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6b263b9b0e04a2198606453bad840ff0 ChangeLog 17593
 MD5 df5b2360ea380d988bf16905ab214286 files/conf/lighttpd.conf 8182
 MD5 fef397e7bcf1b741dea211a555e1803c files/conf/mime-types.conf 3291
@@ -26,3 +29,10 @@ MD5 27da889c3872f4dd8d1d9607c86b82ab lighttpd-1.4.10.ebuild 5161
 MD5 409c3573899a53281837a5bcb1bb1813 lighttpd-1.4.7.ebuild 5153
 MD5 b0faa2cea78724fc0910eff8b6823484 lighttpd-1.4.8.ebuild 5160
 MD5 6a9d4814404d8d51327e5b8306ee3d7e metadata.xml 726
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFD8KS3tG5z4I8BtQoRAqDnAKCEKQdpJFuUOPT6hFwDWQRv/8qR9wCdFLQk
+BUagtnn0+cKvaLdjBsMsDFw=
+=wrY+
+-----END PGP SIGNATURE-----
