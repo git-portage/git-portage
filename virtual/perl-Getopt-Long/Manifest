@@ -1,0 +1,5 @@
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-Getopt-Long-2.34 0
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-Getopt-Long-2.35 0
+MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
+MD5 5e847a78c67d1d2281ebb0c414f0a7cd perl-Getopt-Long-2.34.ebuild 360
+MD5 2df0b7cfcc314f3abdf538323d9c74cc perl-Getopt-Long-2.35.ebuild 369
