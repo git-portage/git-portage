@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2e9b70f5f784f2b618790ba5e13bc2a4 ChangeLog 536
 RMD160 84ebbcf57e4bbf007e724bc3736c84b463fb0877 ChangeLog 536
 SHA256 c51e8fb93866fa0577682c6fef4b02f1933eaabbce613d0ccc5d2975835398d6 ChangeLog 536
@@ -13,3 +16,10 @@ SHA256 d6a50e60f7da5adbd3441ffe816dee9e7e8ee0d9cf4efde8f1bb14027da55b8a metadata
 MD5 f7b35de5f3639ebc2cbc485a1b7a96b4 vertex-0.1.ebuild 796
 RMD160 4ea3fe41dda163ab2ab1463c8af25781a5ca0815 vertex-0.1.ebuild 796
 SHA256 c3acadab1abd51690f8e9fc501c6225233ed0499edae59976413368fc210b772 vertex-0.1.ebuild 796
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD8Q0qW78445TWHXcRAmrfAJ4q9qVjL4xtliXYmfmt4DbPrBd9zQCfbyqB
+Yf+CzeOYUQYjNZqG2bQEesg=
+=8alA
+-----END PGP SIGNATURE-----
