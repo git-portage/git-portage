@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 07865f17d8bb48ae3bda174941ca14ba ChangeLog 4448
 MD5 36e0afd27cb81175c9061166525856e8 Net-SNMP-4.1.2.ebuild 629
 MD5 79e7a1dfb81b7af81facba3ceb7deaa3 Net-SNMP-5.0.0.ebuild 622
@@ -8,3 +11,10 @@ MD5 dcf653c4174d6f402d3c717f9313968b files/digest-Net-SNMP-5.0.0 65
 MD5 d73b423266c5c377e5e0d161614ef949 files/digest-Net-SNMP-5.0.1 65
 MD5 da41aaadba24f6ac89a98cc88f017458 files/digest-Net-SNMP-5.2.0 65
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFD8I11tG5z4I8BtQoRAkWzAJ0aUfJTvLGyQ5nAH/uUed0qQsGSzACdH4JC
+l+7e5dl+tN6ZWjgIEtWq5ck=
+=zB4J
+-----END PGP SIGNATURE-----
