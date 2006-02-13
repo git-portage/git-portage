@@ -1,4 +1,4 @@
-MD5 6acc3c7c100bbf5b75486da40355679c ChangeLog 8602
+MD5 d465240c8f9540d3545799ad80908bf9 ChangeLog 8754
 MD5 8642e3be6b1af51cbbf7e7790cc8ba12 files/digest-mplayerplug-in-2.80 71
 MD5 c2e30e3c9bd430344299015704bc28b6 files/digest-mplayerplug-in-2.85 71
 MD5 8c3b348cd7951d7c21c115f602e22f31 files/digest-mplayerplug-in-3.11 71
@@ -11,4 +11,4 @@ MD5 dd12cc307a2fc2c00237b06a38cd20c5 mplayerplug-in-2.85.ebuild 1464
 MD5 d174642592b4970d02eb7966feb4fdac mplayerplug-in-3.11.ebuild 1911
 MD5 85f4f3c5466fd961c07628145fe4b627 mplayerplug-in-3.15.ebuild 2113
 MD5 39a680aaf1bf6b15a32bb56572d10f0b mplayerplug-in-3.17.ebuild 2114
-MD5 39a680aaf1bf6b15a32bb56572d10f0b mplayerplug-in-3.21.ebuild 2114
+MD5 522109c576223fc5666e75da7aff348a mplayerplug-in-3.21.ebuild 2114
