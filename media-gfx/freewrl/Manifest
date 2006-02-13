@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e0ff6088f8ba69d7ef288d1c6d281c1b ChangeLog 1722
 MD5 dc0d00c8e6965ece64a0d6e85cf00a57 files/FreeWRL-1.06+gentoo_pd.diff 4123
 MD5 1debb4c7bf95c1ae23a71d9c61830039 files/digest-freewrl-1.06 65
@@ -8,3 +11,10 @@ MD5 84a326f975c5a350e047b1e09a30dff0 files/freewrl-1.16.1-use-java-home.patch 12
 MD5 310cc414d62a070a44676b1e0deb36ac freewrl-1.06.ebuild 1547
 MD5 de4fad77fcdc029307b52f8066b12f74 freewrl-1.16.1.ebuild 1698
 MD5 a72a06a37ca4e5905085ebff07fe9e9e metadata.xml 217
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFD8JxetG5z4I8BtQoRArXbAJsF8ndz6yonrqS7yPPnDXCgTxvAUACeLjTQ
+OHpKeIjaxT/C42vy2KZ0f4w=
+=Oc55
+-----END PGP SIGNATURE-----
