@@ -1,4 +1,6 @@
 MD5 d1faab57da1bc65988f3e334d649b11f ChangeLog 907
 MD5 7de86b1b20a4105a56fcabaffbfe81ae files/digest-ftester-0.9 62
-MD5 5d9ae78459b1f0a9dd05c9dc3953c5c9 ftester-0.9.ebuild 669
+MD5 d9af499c769ccbe28aa137eeff507180 files/digest-ftester-1.0 62
+MD5 952534dd749cd6ac04ca187642a70ab3 ftester-0.9.ebuild 668
+MD5 f287a6511503608ab49271951132c4d2 ftester-1.0.ebuild 670
 MD5 f34f84fa79c8d028b0ba9615a23fe7dd metadata.xml 257
