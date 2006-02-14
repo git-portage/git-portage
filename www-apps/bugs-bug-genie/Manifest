@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9ab7e414e8b80da580da25856b1b139a ChangeLog 1378
 RMD160 72e41c2aba192ecc572a1f80f823a2d505164a12 ChangeLog 1378
 SHA256 acffb6f7ddea994ca484e8f2dd923f673fd6c30bbbe0e40ef69c2a2a6dae07e5 ChangeLog 1378
@@ -13,3 +16,10 @@ SHA256 0108fc4055bda3ea64cd7a6c72c3ac7e5272ffb6e5f7be792b72fa0bb13fa449 files/po
 MD5 f61bfa064e3acdfcd826e4a38b121196 metadata.xml 161
 RMD160 d47e924599b33a35a50f4c9f5564d325c271f83b metadata.xml 161
 SHA256 9cd891fcf0af580e98b62d2f4ded9e53671599f5a7aafd5dce692b996d2a83f4 metadata.xml 161
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD8gL1EzitwsaoONoRAr25AKCUxOHbnm5Bau3elaaYtgf6D6DOVQCgo1Od
+6tPqgPeUF8mb7G8yY4c+1Qc=
+=nGMP
+-----END PGP SIGNATURE-----
