@@ -1,4 +1,4 @@
-MD5 e526b9ef96406df0959825e0d8f33ebd ChangeLog 851
+MD5 8fa1746128a0f37dad3344cd659e04d9 ChangeLog 1073
 MD5 e577d54f3c894252ec4dd6067242d695 files/digest-ldapvi-1.1 61
 MD5 6af0273595639c82ad70f109d1782a59 files/digest-ldapvi-1.4 61
 MD5 6af0273595639c82ad70f109d1782a59 files/digest-ldapvi-1.4-r1 61
@@ -7,5 +7,5 @@ MD5 78fcaa4803942625bf2d842ed4492bed files/ldapvi-filter.diff 383
 MD5 14842cc764820395adce165f458cb4aa ldapvi-1.1.ebuild 602
 MD5 f51ecc7bb29f7aa6c1ba167c71a16e60 ldapvi-1.4-r1.ebuild 711
 MD5 38d0ad3f735040aafcacd93954d4ad01 ldapvi-1.4.ebuild 614
-MD5 38d0ad3f735040aafcacd93954d4ad01 ldapvi-1.5.ebuild 614
+MD5 37115741f52884564d321910b0a7ee7e ldapvi-1.5.ebuild 613
 MD5 ded28f3618875f1ee411e3e426e401c0 metadata.xml 384
