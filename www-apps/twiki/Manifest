@@ -1,19 +1,21 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 89ef04a98ec8c9d583ab42fb3a711640 ChangeLog 4116
-MD5 4369d80c9ef3589ccebce4a23095082b files/digest-twiki-20041030-r1 138
-MD5 e2754c98027bd6468cfe636616377892 files/exec_command.patch 2445
-MD5 fab10473182738fadb4188bf90af8162 files/execwithsearch.patch 653
-MD5 ade44a9892b0925e73e2aae832a08e0f files/postinstall-en.txt 790
-MD5 ccb6e12008c8bb68dce61d0ab690a70d files/reconfig 639
-MD5 d6ef3da92ece6d68c83fa4be8f6f97be files/twiki.conf 508
+RMD160 648471885357db94b2fcced00c9c6e1dd070c608 ChangeLog 4116
+SHA256 0fd59f11fa0e2941e9ea7138c7f770b024f0b78eb90d0e018b668f99b9eae275 ChangeLog 4116
+MD5 31710ea4552684e8487d19f277b1da6a files/digest-twiki-4.0.1 229
+RMD160 e6489159d65198115eac8917cb1207a475b057c1 files/digest-twiki-4.0.1 229
+SHA256 89f5fd5db54e613cd62b9b6f86b4a231965ec98021cf4c0a559e8f6ed0e1d332 files/digest-twiki-4.0.1 229
+MD5 0fb6bff6113baf316a822f611593a0a5 files/postinstall-en.txt 945
+RMD160 cb9968cf0d8f7b217790f2176898202b56ce1905 files/postinstall-en.txt 945
+SHA256 bf8d1eceda6d9383abd4bd3ab3c19cf101606fac89d1bd8e60155b29fb46030a files/postinstall-en.txt 945
+MD5 e9c9f48c4d156962a55730ea5ba5daed files/postupgrade-en.txt 106
+RMD160 39efa9b5cdb5ff0337c199a5f8a3a2bee59e3bc8 files/postupgrade-en.txt 106
+SHA256 f789b40a01c44b0bb80a47de0885a659d728ffcbb8a3c1e421b24bd560396aca files/postupgrade-en.txt 106
+MD5 b54ed2926e5754a14d265cfa477ebb8a files/reconfig 553
+RMD160 e80469e5b4b0e2538c597b96b0d905fce4aa6193 files/reconfig 553
+SHA256 9bff3cbfb8ecbfe396e6e61ddf189c24f4500c469e9c0e0a5961a4b5b3fce851 files/reconfig 553
 MD5 c339473e0ff43da76eb2f2607c441921 metadata.xml 280
-MD5 7a0c193568974e81c309aa3f1004cf74 twiki-20041030-r1.ebuild 1601
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFD8KPDtG5z4I8BtQoRAtKLAJ4g6NKFDfeYDRgS5KohFTPhH/CYOwCeN2rw
-3NW9lvawa/W8ViOI5JIGX/A=
-=WVnN
------END PGP SIGNATURE-----
+RMD160 c449ad35e8af3f158d8f8305f8a02ff98a420970 metadata.xml 280
+SHA256 fd37fa0f441b1b68ef8dc4bffbb0a51f0414aa7c370b48369453af5f4bff177a metadata.xml 280
+MD5 aaf0db95ce451cb17ac5f822883e0b7b twiki-4.0.1.ebuild 2078
+RMD160 570175a0ba0861ab778b5db242731b877baf7bf4 twiki-4.0.1.ebuild 2078
+SHA256 7f6bbaf51e57e918a10ac127870bb49b51a4709be6c2cd09aecab2c08387d005 twiki-4.0.1.ebuild 2078
