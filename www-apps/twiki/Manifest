@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 69ed92f3be5322f2762e0900ead6a1ad ChangeLog 4505
 RMD160 6dc01e13786d64f4f950aff06e92a29afffb4a1e ChangeLog 4505
 SHA256 1757aaddafdf12fab1fa76d76a52affdfe90033ab3b0c1595bff0edaa894ea84 ChangeLog 4505
@@ -19,3 +22,10 @@ SHA256 fd37fa0f441b1b68ef8dc4bffbb0a51f0414aa7c370b48369453af5f4bff177a metadata
 MD5 39848b8ea29cd31246b525bec3753407 twiki-4.0.1.ebuild 2073
 RMD160 cd18efbb03e980edd35a6cb7a8d5ee3d6f3b9d89 twiki-4.0.1.ebuild 2073
 SHA256 828ddc30a4d7cde5d3b72bd6f1ecdda9c40b200f43f8a21bbe8ef40dbbcfb824 twiki-4.0.1.ebuild 2073
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD8jE0EzitwsaoONoRAsuJAJ0V4KAeoPKWyjVgQoQyzxU671MrsgCeL4LM
+AflNJxTOgueI+ieYDiFna+E=
+=JoDh
+-----END PGP SIGNATURE-----
