@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d38a91b56b3356c3840ee74fd7a33dda ChangeLog 4007
 RMD160 ef072c535c6df7bd4454ad796070b234dea58b85 ChangeLog 4007
 SHA256 1b0885b0ef8cace15717a6457ed811bbfdbefcfe78f9085f03e1d2cac39263d7 ChangeLog 4007
@@ -22,3 +25,10 @@ SHA256 1c72e94d729e7236928d28934c5cc9e5b1aa4447da945db2ba7e7352c37f1b16 silc-plu
 MD5 4f5fca3403aa83ceb3caec8d9cca0a64 silc-plugin-1.0.1-r5.ebuild 3663
 RMD160 061a5a3d303c8253ec8132f2331babe03a4db68c silc-plugin-1.0.1-r5.ebuild 3663
 SHA256 f684fa57f4b6bf21ee382d1e676c4312e409b3bb12d166208ed7f1be5e73ee5c silc-plugin-1.0.1-r5.ebuild 3663
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD8nwNwUpWvClEHQoRAtIrAJ0f4h4sKulbKa21Kgi2OyWyYLn8hwCeMuvR
+CHBZ6WZqQa0lp03YIWdAHZY=
+=yGyp
+-----END PGP SIGNATURE-----
