@@ -1,4 +1,4 @@
-MD5 1abc39c0d7d1fc5ca6ab4922f86245a0 ChangeLog 101180
+MD5 cadd078f652b8bf66e4674a07912f0ef ChangeLog 101178
 MD5 8ec9b0352d226e4693cabffe0fa5bba6 files/3.2.1/gcc31-loop-load-final-value.patch 3324
 MD5 5e8f2122ef7f9ce187b0a0d50ac9d24a files/3.2.1/gcc32-arm-disable-mathf.patch 2229
 MD5 044a164462d9392aa67cde6f9fd5c1bc files/3.2.1/gcc32-arm-reload1-fix.patch 932
@@ -90,7 +90,7 @@ MD5 d045fb00a1701a44a417ed30c113be8c gcc-3.3.5.20050130-r1.ebuild 3279
 MD5 af5f12b517a97a2185797f639bfc842f gcc-3.3.6.ebuild 3234
 MD5 307b46ee9b86bb1d182824303c4b01f3 gcc-3.4.1-r3.ebuild 31283
 MD5 c44289f25b99d3c631f97a8043826901 gcc-3.4.4-r1.ebuild 5203
-MD5 80b45c01fa665eb66da38dfdacbff5fc gcc-3.4.5-r1.ebuild 5308
+MD5 2121c0614a694ffd958615a3895ac2c8 gcc-3.4.5-r1.ebuild 5308
 MD5 d771594bed0108dd38d143656cbb52c4 gcc-3.4.5.ebuild 5111
 MD5 33a1e5955698636f9c2577ec2425dd7e gcc-4.0.2-r3.ebuild 2141
 MD5 3b0b7d8a257892b8d176c54136ce5d06 gcc-4.1.0_beta20060210.ebuild 2092
