@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 27bdf9d247c7a8ffff128d57e1b5b89a ChangeLog 15063
 RMD160 a433c1f2bf811a26f19d043ae0a78d4e4622c2ec ChangeLog 15063
 SHA256 c234182b1bd4895b3cabb69e8300d4ab0ec451d4270da1f4a2fa9497ef50429c ChangeLog 15063
@@ -28,6 +25,9 @@ SHA256 b425347f0afe3370a4b10dd85212fa1b418adc1aa624ac2533c4b01e0fec5dc0 files/di
 MD5 ed62c5c4f73729cde245dde4d25f3bab files/digest-getmail-4.5.3 241
 RMD160 1a780c7573f1d3a436c26e3cbd741f6877dffbb4 files/digest-getmail-4.5.3 241
 SHA256 09f1a5c692230819bc43a7ce628db5ab61a6dd0f1fe8ebb207673fd782cbddaa files/digest-getmail-4.5.3 241
+MD5 ffae45a16b84f75d174a5d3f960cc0d3 files/digest-getmail-4.5.4 241
+RMD160 8f1e3df117a3b0046ca71a984245fe5439c502e3 files/digest-getmail-4.5.4 241
+SHA256 53c2d9be7cf2c1902b859b1f6ad2fe9e9a60034002a9fc62efa85dfe5b1c3df1 files/digest-getmail-4.5.4 241
 MD5 1e51a7448e62ee3fd6ad7562b290729b getmail-4.3.11.ebuild 1574
 RMD160 3b3dcb14074bba2efba4901a620943694a432e68 getmail-4.3.11.ebuild 1574
 SHA256 231a2e7c274f1750c3a150ca3ce7770d46b5dda710b7c6adc8f894c56d88f87b getmail-4.3.11.ebuild 1574
@@ -52,13 +52,9 @@ SHA256 c5ab33261c2adeec02263454a3e3d32b8f9ba4f50f4aae2de25545bb8f261280 getmail-
 MD5 6d3dc6a619cdd8860a999864136651a8 getmail-4.5.3.ebuild 1575
 RMD160 d4a34a09209f22c39dd3156a80eaa246acfe5813 getmail-4.5.3.ebuild 1575
 SHA256 8c4b9d836df7b4a32fad648f0289e23aa67ca6fa1106cb4501c6eed999a64b3b getmail-4.5.3.ebuild 1575
+MD5 81793ec5dc05fa2f0d422d3386b3216e getmail-4.5.4.ebuild 1477
+RMD160 affcccaeb6006afe764cbc2d49a375cd03212121 getmail-4.5.4.ebuild 1477
+SHA256 522712337680ae279dfb0455bdb858027ab94324fa7bb6b1d2d71dcd535ce84d getmail-4.5.4.ebuild 1477
 MD5 5721b86fd871bdfab77231abc6e02f68 metadata.xml 161
 RMD160 273e570423fa3cd9d3f15f7967a43307c8ee9661 metadata.xml 161
 SHA256 4ebf9a8f60040bfb95f13790c1d146a49c69f791f9c421e02a5d96fd6fcb2b32 metadata.xml 161
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD67OTV3J2n04EauwRAitUAKDHDOAIRqYOhxdvzhvnbznpBTy0pACg0SV8
-9GsNShPpY6JsyJGicdeWBCU=
-=7HGg
------END PGP SIGNATURE-----
