@@ -1,4 +1,4 @@
-MD5 1a017298a4f94e656b0bd412d19da875 ChangeLog 5516
+MD5 f348052c3b0c4c43f1ebe89dfce12194 ChangeLog 5687
 MD5 f0985e07520ccd93372582a61d920e5c files/digest-glib-perl-1.062 62
 MD5 2a320dc6f223bfb71122994c982133be files/digest-glib-perl-1.081 62
 MD5 4d74c754b3541dbd44a59805eeb904bd files/digest-glib-perl-1.101 62
@@ -7,5 +7,5 @@ MD5 9d21d09a81a7145dd384f540639a7382 files/gtypes.patch 385
 MD5 9255c8a3f432f2cd0ad1e1a045079079 glib-perl-1.062.ebuild 754
 MD5 2e8a89384245ef851a789ecbdcf41a5f glib-perl-1.081.ebuild 765
 MD5 b97f83c4f22d6e820da8c2a641d3511a glib-perl-1.101.ebuild 770
-MD5 81e1eac435277058c2c76085ebc9ba56 glib-perl-1.102.ebuild 1062
+MD5 360fca6d1ddb32e62a215f3b93619d9f glib-perl-1.102.ebuild 1062
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
