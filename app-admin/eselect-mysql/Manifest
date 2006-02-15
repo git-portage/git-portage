@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 15942113d1b3a14f59d60b24f8892efc .links/bookmarks.html 912
 RMD160 dbe6db549bb91ea4286461449c513c8a01a32ff9 .links/bookmarks.html 912
 SHA256 1cc6418b0cc92e6fec97ac48df22ba95a0322ba527cb7ed604a7ed5b24a0adb0 .links/bookmarks.html 912
@@ -19,3 +22,10 @@ SHA256 dac017112bfea13e08ecbde4f77e282f6c7a2d7b6bae94cc67e501d9a7926042 files/my
 MD5 fa97fe3e6f213f79ccf7ffbd53838095 metadata.xml 338
 RMD160 73a2e747b9cb92a8a03ab792fcc0aa997b31c8d1 metadata.xml 338
 SHA256 6a290284a517ad042ee98313454b6615a0498d59f8dcf428aac3da3da7340065 metadata.xml 338
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD8ocGKolR564NvWYRAryPAKC2p+Aklm6HBQSEitd2QRIajCS0BgCffE43
+BQrxL/RmPyCyMMmjsqqoIFs=
+=kzEu
+-----END PGP SIGNATURE-----
