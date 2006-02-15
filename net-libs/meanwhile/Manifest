@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 d48a221602fee3282d2514a05548505c ChangeLog 3117
 RMD160 6e9ceff1aafe07023c0d63be5923b2a639fac763 ChangeLog 3117
 SHA256 3dd58007ed1e026ebb9a3c1dc7b3c4dc77e56016495044f94299833a4416bc0e ChangeLog 3117
@@ -16,6 +13,9 @@ SHA256 ab33255419137a40c4992d3d20897ddc08eb9a20527458bdfc757506c342570b files/di
 MD5 38cb92996aeab18b918872d0e97b07fb files/digest-meanwhile-1.0.1 67
 RMD160 479b87380afd473a81c6c01384251c9376a69862 files/digest-meanwhile-1.0.1 67
 SHA256 49835eb4c633f550d2abb7a894405fed3162f3465d8f657963ef07678c221b4f files/digest-meanwhile-1.0.1 67
+MD5 68506d8bccc48c47f57b748e10373d7e files/digest-meanwhile-1.0.2 247
+RMD160 25baa3f81faff40be8c1cd62a486fdcc81ed2a05 files/digest-meanwhile-1.0.2 247
+SHA256 bf5ef1d68069d9ebd63b2b23f004326976f63faeacfa44a9a547a937197a359e files/digest-meanwhile-1.0.2 247
 MD5 54a68b70aac85bd876ebba642621ea12 files/mw_debug_glib.diff 388
 RMD160 cd533977308fa9b99adcc8ef848a393d714f0b8a files/mw_debug_glib.diff 388
 SHA256 fa730e3d222a313fe79a4979e861c9612dbd71253b8ed959a8650daa44ed5ade files/mw_debug_glib.diff 388
@@ -31,13 +31,9 @@ SHA256 b9fd5a79e9ebee0d4be4fc5c9e45fb3bc5b49b57a913930f59b235b43a1b4bb8 meanwhil
 MD5 0500866756dc8d1441f4d49638298bde meanwhile-1.0.1.ebuild 891
 RMD160 cbccd6005446a18ff1b3a5478a6a18e4d0e597a5 meanwhile-1.0.1.ebuild 891
 SHA256 6f18dbd3933fb5a28a327110bba5dade09983b61fe9b2830fadc256065e6987d meanwhile-1.0.1.ebuild 891
+MD5 a107fddc617939f9e7ad5e3c233c344a meanwhile-1.0.2.ebuild 784
+RMD160 94eea7da6a550e6e010ea83ff8f3ce1b3f3e8644 meanwhile-1.0.2.ebuild 784
+SHA256 761c6de5336c3da220af08987c082a423646a9590b9ca318b7ab04ba05610214 meanwhile-1.0.2.ebuild 784
 MD5 dffd46174e78b327c834fc3e4b1cf848 metadata.xml 160
 RMD160 d86217bb48cf4283e08e43bcaabbc919101ad795 metadata.xml 160
 SHA256 56fca1e06f6dcbe3bc12e7d3962998c7cb79d74f218ce8a17b07771b3e06f49e metadata.xml 160
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD5/P+JrHF4yAQTrARAqV7AJ9Co1/xLHdnTgRIJ4QrzBFyVptkCgCdG8DU
-UGVzGALeg9cjSrykWqtpzD0=
-=O6gQ
------END PGP SIGNATURE-----
