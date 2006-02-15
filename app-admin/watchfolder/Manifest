@@ -4,9 +4,15 @@ SHA256 0891e66af550be0b85bd0c8b512e081136bf5c58b9306c83cb3317392179efe8 ChangeLo
 MD5 dc35a8413c2ac69ffc39a48998c43bad files/digest-watchfolder-0.3.1.1 71
 RMD160 358c647898b4dd0490a5ba3a509e341b81533517 files/digest-watchfolder-0.3.1.1 71
 SHA256 ccbce45d79aff64b23a02e66e84c1fabca275d188065d9df2521a9e7560ea7d7 files/digest-watchfolder-0.3.1.1 71
+MD5 813a88e0406b8eb243a400412bdeb53f files/digest-watchfolder-0.3.3 250
+RMD160 aaae55ca3c61fa1c42e1bc93cc3f9f665b7bea6e files/digest-watchfolder-0.3.3 250
+SHA256 658eefe7d7a3ad3d887e62100f6e4e902fe3b8b41e6fd0095ae2adb1eab1b09b files/digest-watchfolder-0.3.3 250
 MD5 dffd46174e78b327c834fc3e4b1cf848 metadata.xml 160
 RMD160 d86217bb48cf4283e08e43bcaabbc919101ad795 metadata.xml 160
 SHA256 56fca1e06f6dcbe3bc12e7d3962998c7cb79d74f218ce8a17b07771b3e06f49e metadata.xml 160
 MD5 49d0031f720d8eded31c66a3db8a0a0e watchfolder-0.3.1.1.ebuild 796
 RMD160 8b4d9f33382a5c1b31d1a304ebc5fc88f3d5f30b watchfolder-0.3.1.1.ebuild 796
 SHA256 6e6e3f916a4867ab82e02c9acc944ad042831297f108af5994e1555276a8ef0f watchfolder-0.3.1.1.ebuild 796
+MD5 72eb7eace9e399dbef8e43a1e5375202 watchfolder-0.3.3.ebuild 595
+RMD160 103ca094f8d359a257f733ec4ceee9c63db8ac84 watchfolder-0.3.3.ebuild 595
+SHA256 b38a40aba369a4ea96fd5a853b7de1d950a4859c1ec4c82b3b816429425d35cf watchfolder-0.3.3.ebuild 595
