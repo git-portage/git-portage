@@ -1,18 +1,24 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 94a3b57037bef592ac7def9aa9f05ab3 wxhaskell-0.8-r1.ebuild 1809
-MD5 41c62e72cbc618dbf6dd6231a6f7897e wxhaskell-0.9.ebuild 1810
-MD5 6adbe0a956eaa6499ceb55c55dc0bf2d wxhaskell-0.9.4.ebuild 2059
-MD5 3aed2cebeb8bf43d8b9867f6fc6cd9e8 ChangeLog 2248
-MD5 a769ecfcd1cdd2d40986627df7dfb249 metadata.xml 224
-MD5 3a0410506498ebc06bcb1ce2c504fe75 files/digest-wxhaskell-0.9.4 68
-MD5 252f6e6df89834ca7cc1f0b68cecbd3c files/digest-wxhaskell-0.9 66
+MD5 0c1904f3d96d08ace5ab832eb8edcd28 ChangeLog 2653
+RMD160 3940bb5b0c99b05b58fa1b0ac463775059244126 ChangeLog 2653
+SHA256 e0ab53d648d3ab77b4a285439913eb189c8cca1219b3c566a796d707c825d3f6 ChangeLog 2653
 MD5 08efb7ecd02832c5599b968bdc329dc9 files/digest-wxhaskell-0.8-r1 66
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCgnkIOKSBj1ObwosRAkDKAJ42LI3zCo21uOPSBUV5cxrH/d5+RACcCdE7
-oDQPFBdu6JKuIgtdoR9W+L8=
-=bkXH
------END PGP SIGNATURE-----
+RMD160 e965d869ae1e7002e54a4daa1aa804b727ddf54f files/digest-wxhaskell-0.8-r1 66
+SHA256 9b171172f9fd8956b6c931065ff615fcb578aa81e2ea85794789e1ea7797aeae files/digest-wxhaskell-0.8-r1 66
+MD5 252f6e6df89834ca7cc1f0b68cecbd3c files/digest-wxhaskell-0.9 66
+RMD160 32aef4fcf5a09906a33feb665bf9c3fd8a94f4f9 files/digest-wxhaskell-0.9 66
+SHA256 0a9085cb68f9626940939dc6a297436aa9733c866419168022414b2283e09bca files/digest-wxhaskell-0.9 66
+MD5 d65df2d0e35a232f916aa03605183014 files/digest-wxhaskell-0.9.4 250
+RMD160 44e2bab5fe15dc3bc1c736c008068884ad674953 files/digest-wxhaskell-0.9.4 250
+SHA256 38ad5e3401720ff06d5eead8cd11d7646b4f6ee7c896d1b191d9d5b68077f7d0 files/digest-wxhaskell-0.9.4 250
+MD5 c694674dcbef799cd4fdb6914683ebff metadata.xml 223
+RMD160 7783e6057effb8b8f0b79cffe8b557b32c633839 metadata.xml 223
+SHA256 1d00c8be162a6cb87b3de440b3e63e10b39c12d56e8fbfe592e75aed872b2508 metadata.xml 223
+MD5 e8f15195e71b7c8d90192123342bad4d wxhaskell-0.8-r1.ebuild 1886
+RMD160 c1988a4955da409228e1c2cd0ac425a226d659ec wxhaskell-0.8-r1.ebuild 1886
+SHA256 d955443feb58038759704ca2ccb694f77f3b32b08c735d831a5d67ce41b38cf3 wxhaskell-0.8-r1.ebuild 1886
+MD5 d95d551cd6c25b38ef2fea458cea2a50 wxhaskell-0.9.4.ebuild 2102
+RMD160 9820658f7a2411b15db1a8c9a66cc1b76bbc1e11 wxhaskell-0.9.4.ebuild 2102
+SHA256 4daf2aae04d4e1a2edcc334e2a45f1f85cab76228542f77504c15f06e8061e6f wxhaskell-0.9.4.ebuild 2102
+MD5 f6554b3baa257a600c0cbbeb91d7224b wxhaskell-0.9.ebuild 1887
+RMD160 c635fdadca2514b7db744f9e9afc28d9b5499e65 wxhaskell-0.9.ebuild 1887
+SHA256 a3205401535d47fc4bd3b969a836f8323907f5840dcba87e0f41bfa5fcce54ad wxhaskell-0.9.ebuild 1887
