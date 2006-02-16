@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bc00bc99038920a70c901e6228918d65 ChangeLog 609
 RMD160 4b29f3dd34e2d47d7b08afa7faece6d5cdb56b49 ChangeLog 609
 SHA256 9dcf04dd2c28c87b831192a4c9c16208c7fb49f2f22a71e50e323ca926fae756 ChangeLog 609
@@ -16,3 +19,10 @@ SHA256 0dce1943c70054cb984c5eb549e9c21db9fd7b5dfedfd6aa8946432589abb39f perl-loc
 MD5 f90a05a6be0cc98f6b65d0c4e83ca6ff perl-locale-maketext-1.10.ebuild 501
 RMD160 756c8fc07b52bed585d02fddedc1015341a71bcc perl-locale-maketext-1.10.ebuild 501
 SHA256 216894513e35aee41a8125e18149106ab3e1ab3046453562a3cc579b3fec385a perl-locale-maketext-1.10.ebuild 501
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD9N7KI1lqEGTUzyQRAsOGAKC8YCS+FrF3wMk4fQv+R/s+Yp/IiACgjIvb
+0qqUTtqxBBK5K9QQppAkVEA=
+=7AXA
+-----END PGP SIGNATURE-----
