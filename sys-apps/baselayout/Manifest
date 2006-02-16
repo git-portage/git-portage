@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 60a5520676ca316bfc5e206c27d88d37 ChangeLog 69276
 RMD160 f5c8b9a2ed8ae950b08c72de01298addeacfcb44 ChangeLog 69276
 SHA256 6e9680d3da33a2c0c27218e8dd5c0d248c7f87dec9b99dc61627966c9cab0144 ChangeLog 69276
@@ -19,6 +16,9 @@ SHA256 c0e993ca67f68ea923ee361bd7b1205e870974413d4976a8566e172d1bc060e4 baselayo
 MD5 0a68869598188f35025aada57e54bcdd baselayout-1.11.14-r3.ebuild 19171
 RMD160 830428af7654afc7e3c504569149910d38a30850 baselayout-1.11.14-r3.ebuild 19171
 SHA256 d654f531b014cf03d0075547b933ecfc1e8d0971abd31cf8b94e1491ab62d170 baselayout-1.11.14-r3.ebuild 19171
+MD5 a552a2d15a87f1c38f1678d0babb7220 baselayout-1.11.14-r4.ebuild 19213
+RMD160 ed00660e27cbc8f7e68fb1cba7c967219adb84c6 baselayout-1.11.14-r4.ebuild 19213
+SHA256 a8db22b0a145784ecee6e43f137a750fc9d1156803657668ddc635e4961be6a3 baselayout-1.11.14-r4.ebuild 19213
 MD5 83b799404d491c3b9e95a2665921f53f baselayout-1.11.14.ebuild 19039
 RMD160 113bc3c6f4484926ed4efbd3dc2821a34f84ddea baselayout-1.11.14.ebuild 19039
 SHA256 a619c8f48fd78a158a16b5e34dbc994a27773d4ad6f6f48d00cfd580745c6316 baselayout-1.11.14.ebuild 19039
@@ -37,6 +37,9 @@ SHA256 5634f36c4f27ddae7a4a22c6dc7b6adad5f83cdb5d9f4291ce061d62361a71c8 files/ba
 MD5 ab0d5a169769126f5c9d679a86244ee2 files/baselayout-1.11.14-essidnet.patch 619
 RMD160 9cd29b7be10ef4c665be44a84c84df64fca8c64e files/baselayout-1.11.14-essidnet.patch 619
 SHA256 2fdce59727910e4ae4f30aedc0d1ae32b852bfc9f740e049676104052900407b files/baselayout-1.11.14-essidnet.patch 619
+MD5 2fec6588967848db3a9415f4cba49234 files/baselayout-1.11.14-iwconfig.patch 635
+RMD160 5a2af056ee56063b17dfab3fcc789e255a70557c files/baselayout-1.11.14-iwconfig.patch 635
+SHA256 ade89317d5b43e7443d625797088260dbf0c191a3a8a87eb22740e51329a84de files/baselayout-1.11.14-iwconfig.patch 635
 MD5 34964dc9fff04e8eaa948a9a60185e94 files/baselayout-1.11.14-udev-sysinit.patch 1097
 RMD160 533a2f4fb62eb1371413c120048b7f70a58fd41e files/baselayout-1.11.14-udev-sysinit.patch 1097
 SHA256 3bdaae5c1ce59856f77b57e8312a369b61fe1f3cbb17993454a699ea7703e0a6 files/baselayout-1.11.14-udev-sysinit.patch 1097
@@ -67,6 +70,9 @@ SHA256 ec698c106288e0a5dbc32b961ff0fb6fdc0c0647bb529eee47e1c3230cb2d94f files/di
 MD5 6d158e9a0e9b32c05e6633a68b39b4cc files/digest-baselayout-1.11.14-r3 70
 RMD160 46c07fa01d82a73a31fb29a3c15584a93d7917e3 files/digest-baselayout-1.11.14-r3 70
 SHA256 ec698c106288e0a5dbc32b961ff0fb6fdc0c0647bb529eee47e1c3230cb2d94f files/digest-baselayout-1.11.14-r3 70
+MD5 00d79deae663edaa627c8bbc572c6967 files/digest-baselayout-1.11.14-r4 256
+RMD160 61e4bfb394dabe52a62e8b2b56102ad0e6f60d66 files/digest-baselayout-1.11.14-r4 256
+SHA256 939da19d06f033b18784c7ab4a9d168d9b68caaf4cdbafde33ae754a10af754d files/digest-baselayout-1.11.14-r4 256
 MD5 a65d49ca9a3a16bf744aebc2180cc299 files/digest-baselayout-1.12.0_pre13-r1 274
 RMD160 a3b004639a949ac82a707e3413b23eb96bf0587b files/digest-baselayout-1.12.0_pre13-r1 274
 SHA256 536181e6af76b11cbe6d8f612c6438482a9e0cbfb59b7280c5a6011c3e411219 files/digest-baselayout-1.12.0_pre13-r1 274
@@ -76,10 +82,3 @@ SHA256 e47055f8bac04c7175c39daa659fa48f87a8f0e1d46519325cda7592efbbea20 files/di
 MD5 e02bb32cac91dad28d3c05b731b37b04 metadata.xml 385
 RMD160 99e2546d3cc014ca5af909b5adb2f43693664bad metadata.xml 385
 SHA256 fbd7e4a5615d68c8d6f9438136dd18e41c43b393a9c00b0bea12661d790441e1 metadata.xml 385
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD8dG9EbVyYKaZ/NERAltbAJ4ifZDPvV0ofHCxpM38AY2yQOfprQCfRD6t
-AIhKqYT/lyAS+NSMpA7UwQA=
-=blKP
------END PGP SIGNATURE-----
