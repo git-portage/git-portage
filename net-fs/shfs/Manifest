@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 02ad2d1bccadb5eed8de713ff22b8e7a ChangeLog 4487
 MD5 29b3f063e5feb8c259abc86d07f92f85 files/0.35/df.patch 1652
 MD5 47388261d70d4dc5210fd93021dc8479 files/0.35/shfs-0.35-clean-inode-clear.patch 496
@@ -12,3 +15,10 @@ MD5 bdf9a4a620ff5bcd7828251c144ec02b files/shfs.mount 1346
 MD5 b66027267bc1b372e656d834984ad137 metadata.xml 316
 MD5 c3536676fb9853643bdb2482cbef8412 shfs-0.35-r1.ebuild 2861
 MD5 6944b6c55014314530bdfb473333809b shfs-0.35-r2.ebuild 2754
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFD9I2jKRy60XGEcJIRAupTAJ9CjOplwv+R4d0/IdeV/c109Dvg2gCglANv
+P+3nX8Szux5LfhaDh1hw+Fg=
+=nv6K
+-----END PGP SIGNATURE-----
