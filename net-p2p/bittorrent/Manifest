@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 60c32146b9d70aacbc41b8a47178ff2f ChangeLog 12627
 RMD160 63214a3f9336c6273a7a781455e36575f0d55bc6 ChangeLog 12627
 SHA256 b519c567fd8a5cdda4fdf744c9e075b82b78771765cec4586fab40d1318e581a ChangeLog 12627
@@ -13,9 +10,6 @@ SHA256 86d72aad2253b976d98a4bdefc5e317a1339e2a82718b492c7383c44ccf075e1 bittorre
 MD5 863e5e7637b562b77f53b92bd49ce360 bittorrent-4.4.0.ebuild 1959
 RMD160 8f53aa52b518dbbffcd8d47185bc53f6584191dc bittorrent-4.4.0.ebuild 1959
 SHA256 a12e1e48a3ea34186db17952dc6bd3d75b567f113324f303158771ce9c91a570 bittorrent-4.4.0.ebuild 1959
-MD5 21ec89d06de83ddcc4cf6d6616355190 files/bittorrent-4.1.0-fix-all.patch 2483
-RMD160 721f3f6aec7549f215914612a6479d9e55072b92 files/bittorrent-4.1.0-fix-all.patch 2483
-SHA256 ceb35643595848c56f678d9d0c346b83b536775c784007410cad80ba1cd5eff2 files/bittorrent-4.1.0-fix-all.patch 2483
 MD5 c200bdbccb6ccbf18bef6338363c1a4a files/bittorrent-tracker.confd 565
 RMD160 d9ff91c65fee606eb536eb672d6a28f7d0cf4ba3 files/bittorrent-tracker.confd 565
 SHA256 b6094703dfc486b6e8d10885284479ee4f03308d7bed25d1411c28a8428d227d files/bittorrent-tracker.confd 565
@@ -46,10 +40,3 @@ SHA256 5647d176012b90ab0808b044469648a3ebdd5f85b6fa3891ac321d78e578fe7d files/fa
 MD5 8aefbc0e49db723ca1ad02d0c409cd49 metadata.xml 160
 RMD160 828887200387b28c37fc97111fc6bc3a0a2fcccd metadata.xml 160
 SHA256 fe06593409e7f28665c032001005e94cb650299711a0af7f1a558bdb56c4004f metadata.xml 160
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD9MZXub4+zaPCR/oRAqAgAJ9tj5mOv8u0O1TSQTrkGtTJnIT0wgCgnM6A
-aocplyn55TrIn1/uzE3SU9g=
-=5ent
------END PGP SIGNATURE-----
