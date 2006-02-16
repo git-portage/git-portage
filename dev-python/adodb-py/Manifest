@@ -1,18 +1,24 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 b5572e0c3e11e5da5ab6e59a7c6872a7 ChangeLog 1296
-MD5 43cd7b30bc861355c7f81345a32c13da adodb-py-1.0.1.ebuild 757
-MD5 c534894361be82f038923158d3ed8a71 adodb-py-1.10.ebuild 753
-MD5 8239cb63e28770a4d9af56b3bc8cd2f6 adodb-py-1.13.ebuild 753
+RMD160 59df9ef3baf43dbc36de387399a89a179271601a ChangeLog 1296
+SHA256 737646c7d8d8a29d83d7ac2cc212bde47bff7290f3aa75d52a5b9e37b30439d8 ChangeLog 1296
+MD5 d00cddf0bbac8f3fce5bff6fa50efe8d adodb-py-1.0.1.ebuild 782
+RMD160 04648ccdf1af31e66087fe2f5bc4d2fa2adf9e56 adodb-py-1.0.1.ebuild 782
+SHA256 abb03c1e1a7e92f255ca61a429f7c51c18aff39a1e4b2b99c4062bf1434251b7 adodb-py-1.0.1.ebuild 782
+MD5 699f20dd6a680d0ec2b0263ba4673ad2 adodb-py-1.10.ebuild 778
+RMD160 35aceb2c469cee941cd98cd3eafed6b1fa1de1f6 adodb-py-1.10.ebuild 778
+SHA256 b8ccacd2c89dd5aefa8ff0bceb47b890f71927aa10827256a93996004f2a002e adodb-py-1.10.ebuild 778
+MD5 679cc2f64db2a9e88a41baf38a670575 adodb-py-1.13.ebuild 778
+RMD160 e4a5b53ebe78b9b6303ddae83a6623eea98b6157 adodb-py-1.13.ebuild 778
+SHA256 cd6246b524b7d06ec4c6adf0e59b65395c534ca11853cf10323aada794c1301c adodb-py-1.13.ebuild 778
 MD5 450db37bc2cdb99957226a0f971b1cb3 files/digest-adodb-py-1.0.1 59
+RMD160 8045e5174e0db13c696a9e61b53a736f11565e68 files/digest-adodb-py-1.0.1 59
+SHA256 722d6a6f2bb34d6a131daf48eef428106b6bf576885128b4bf0cb5c1a12e3505 files/digest-adodb-py-1.0.1 59
 MD5 3266987c7c92564c77b529bb10fd57dd files/digest-adodb-py-1.10 59
-MD5 0319cc534d13027c933ae109f7d46c4d files/digest-adodb-py-1.13 59
+RMD160 3e170133444bb122f060a1302c12ba8e5d7e04a7 files/digest-adodb-py-1.10 59
+SHA256 8b5191c161616ba6e61f31741bfc828e1df73cd85c709c5d1a9558a58f13d064 files/digest-adodb-py-1.10 59
+MD5 6c13758eff67322d65b86696bf29333a files/digest-adodb-py-1.13 223
+RMD160 772bdde0f059c0da73aa6c73067963dbb5e95a44 files/digest-adodb-py-1.13 223
+SHA256 31c10027f14bdf84a1fbd899fcd3df7d3b44c6be02ec1997e22e52eba6afd3c6 files/digest-adodb-py-1.13 223
 MD5 7b46f44b322d2dfc86bdd3551c64e565 metadata.xml 348
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDfvi8FdQwWVoAgN4RAkR3AJ9W5jXVSG3DiqRhIfcTWNBUaRtYQACgu7SW
-rRxVUpeLoRmDXv2v3XFi9Xg=
-=4RyK
------END PGP SIGNATURE-----
+RMD160 4499e99014166103673ca56f8c12799e9c0099ac metadata.xml 348
+SHA256 216ccb87118bed46216e7d161576801be2bd155b3a86d41860550978c77e941b metadata.xml 348
