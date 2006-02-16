@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a036fdfec679ebb0d35d77669218d7ae ChangeLog 418
 RMD160 1378be9513e8b564c928d6d0074f98aae68dc747 ChangeLog 418
 SHA256 490726f7de4c33d126235c1c8101473b644514269ff7c762b3bc2b2ed3f47fe5 ChangeLog 418
@@ -10,3 +13,10 @@ SHA256 d0c029748d4142e716bbd1302d1fc545a0af318b7fc43e05d824ffed89db45d3 metadata
 MD5 250875614b64a058ec573f3178a1f6e0 sylpheed-claws-att-remover-0.4.ebuild 903
 RMD160 848eb7e164b6f9e7817e5d48049c8b8e5cfe7465 sylpheed-claws-att-remover-0.4.ebuild 903
 SHA256 d9fd05f66e97cd36f32aa4c5e4f4b2b202b2f7e144213e32e726ae4ac4084b1f sylpheed-claws-att-remover-0.4.ebuild 903
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD9M5xI1lqEGTUzyQRAn/qAJ9/UkqKFb0SriuC0NbKPbeX+hQftwCghhAW
+xFLCDz2V8o6xh4VAwk3kgL4=
+=lHLz
+-----END PGP SIGNATURE-----
