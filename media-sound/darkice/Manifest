@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 86218602dfcac731b3a7ad176300155a ChangeLog 3023
 MD5 260b306ec7775a5187d8aabccc56e795 darkice-0.14.ebuild 1316
 MD5 e5a110dc052bd52f1b0ffc5e0fd4f073 darkice-0.15.ebuild 1415
@@ -6,3 +9,10 @@ MD5 dc687438c29f2bf61a02265c3c1632ce files/digest-darkice-0.14 64
 MD5 90f40fff234ed9f0943b2afd28765961 files/digest-darkice-0.15 65
 MD5 f76bb25a841acb7158dddc0ea9569731 files/digest-darkice-0.17 241
 MD5 527dcfe3ce0f0b53c6b6aa8b82eb930c metadata.xml 252
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFD9L/KKRy60XGEcJIRArNMAJ9MZJspaTA+l38+cTcRPn194WfWqQCgnLFo
+55zVsGUXMjCvwtLH3sv8Yis=
+=KgF+
+-----END PGP SIGNATURE-----
