@@ -1,4 +1,4 @@
-MD5 7228ba768fbbffe8357362e19a395b2c ChangeLog 3200
+MD5 a2791557c738b5265202943188c90638 ChangeLog 3461
 MD5 4274d0fb58b88876a5767ab9d1c6204c files/digest-flow-tools-0.66 67
 MD5 1101576a17a0a70941408d279474aa97 files/digest-flow-tools-0.67 67
 MD5 4550f09b9ca0a0f2e3e83beadfa3f964 files/digest-flow-tools-0.68 67
@@ -18,6 +18,6 @@ MD5 94581c1ca18b1891395fe1f3daeb04ca files/linkme 283
 MD5 8f9c6d7e1e7e86ef04599a7774c85b16 flow-tools-0.66.ebuild 1001
 MD5 b4137cf5d98a0dc381479c22e6f56bb8 flow-tools-0.67.ebuild 2102
 MD5 a5eba5008729fa7c037c6b4d59277eb6 flow-tools-0.68-r1.ebuild 2466
-MD5 783e852a3fcbe3f473c5b3009c66d20e flow-tools-0.68-r2.ebuild 2650
+MD5 15106d3fa507c2c145b34aa6a4f871c2 flow-tools-0.68-r2.ebuild 2651
 MD5 fecd6516b359b067be27796d980a2152 flow-tools-0.68.ebuild 2166
 MD5 657939d746987d289ffa06516ae69d46 metadata.xml 261
