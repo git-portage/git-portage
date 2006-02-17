@@ -28,5 +28,10 @@
 		incluindo tanto backups completos como incrementais, bem como backups
 		para outras mídias (CD-R, Fita, etc.).
 	</longdescription>
+	<longdescription lang="pl">
+		Kategoria app-backup zawiera programy służące do tworzenia pełnych i
+		przyrostowych kopii zapasowych danych oraz do zapisywania
+		ich na inne nośniki danych (jak płyty CD-R, taśmy etc.).
+	</longdescription>
 </catmetadata>
 
