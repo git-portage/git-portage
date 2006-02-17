@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 68ce0d057b390b3eae6c203558081d7e ChangeLog 33872
 MD5 36db5c88337dd805a65f485604e321d6 files/0.9.13/fluxbox-0.9.13-4023-overlapping-icons-are-bad-92915.patch 829
 MD5 17110f6fe071a751aaa29832e92832fd files/0.9.13/fluxbox-0.9.13-our-styles-go-over-here.patch 653
@@ -10,3 +13,10 @@ MD5 9ae40c5c7aebae1c5919adbd888710b4 files/styles-menu-user 93
 MD5 0ab6aaa2b3fe345e811fb196c52ed2ea fluxbox-0.9.13-r1.ebuild 4139
 MD5 b0443d66082554a81ab3b42d2eac70d8 fluxbox-0.9.14-r1.ebuild 4691
 MD5 fb91a86bbf58cb4d7e40f9536c319766 metadata.xml 437
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFD9kaEJrHF4yAQTrARAoviAJ9wPRO4XJY8o0X/D3g9rFmEcsW45gCgmaQu
+ytxt83vkKNTSTQtdWvoxCI0=
+=O+Xw
+-----END PGP SIGNATURE-----
