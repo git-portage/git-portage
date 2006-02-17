@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c30d26d7ab222671987d8de201527f3c ChangeLog 4407
 MD5 3827cdddb51c272de82c6ac8b54a862f files/digest-wvdial-1.54.0-r1 64
 MD5 3bb0fa07eb7345c3bcc2d997d370ad46 files/digest-wvdial-1.55 62
@@ -6,3 +9,10 @@ MD5 c886af611ca16a54eacb6cf2487e94e7 files/wvdial-1.55-destdir.patch 500
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
 MD5 db91309fc5b414b32b2c62ce661cb2e8 wvdial-1.54.0-r1.ebuild 1096
 MD5 67905ddace207be8eb65fe163136d042 wvdial-1.55.ebuild 952
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD9hvgjG8pv1lIUX4RAsxtAKCsMWb1ArZFii5seT8EWuiMKRTjkgCggw7W
+kDhCNMONQgaeTwdZTq/QwZ0=
+=mwUR
+-----END PGP SIGNATURE-----
