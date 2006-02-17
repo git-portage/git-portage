@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 d0dba3c5eb455aa64931ea2da5a23927 infobus-bin-1.2.ebuild 1075
 MD5 323f07ed4684036d5274cf55e8145376 ChangeLog 1267
+RMD160 1db6e231e246ad17788fa92a1cbc78625c10bbc2 ChangeLog 1267
+SHA256 502a861e94eb122eede2ee42f7b0b6572acfbbd9b0d105855ad1a5804cc955da ChangeLog 1267
+MD5 009a451ed86341ac3e11d247feaa6017 files/digest-infobus-bin-1.2 205
+RMD160 03b384462f13b39c2d8846064fc22e3c2c6f752f files/digest-infobus-bin-1.2 205
+SHA256 b145dfb7c1e1ccc2cde7bffac999f3478c6bed69b7d08e0dcd639c6860ec576a files/digest-infobus-bin-1.2 205
+MD5 d8bd001aa5c14994ab7b0bce6f89006a infobus-bin-1.2.ebuild 1098
+RMD160 edda0ef68c42a6a4c8f52600fb8cd9e21166bdb2 infobus-bin-1.2.ebuild 1098
+SHA256 9e4ca6b8c041fdabc8b159ea3a625ca1e19dc2d248dbd3873b2624cc28166158 infobus-bin-1.2.ebuild 1098
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
-MD5 15a231f78014048eb979c4e059965832 files/digest-infobus-bin-1.2 53
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFC2Phy/rLF9B432nYRAk3JAJ4/CNS35MTJxLZzhkrEZNLggEji9ACfa18/
-pN02qaHN9Cbqg8ubGiMwafk=
-=W80V
------END PGP SIGNATURE-----
+RMD160 ab0b3741457dee7531f59c4da0f0e9e8399af084 metadata.xml 157
+SHA256 295d02c5805b0257938eb80314b371daac94b8d6ea85629a902de7a824adc0c9 metadata.xml 157
