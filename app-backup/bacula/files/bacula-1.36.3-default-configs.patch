@@ -1,0 +1,144 @@
+diff -uNr ../bacula-1.36.3/src/console/console.c ./src/console/console.c
+--- ../bacula-1.36.3/src/console/console.c	2005-04-05 12:23:51.000000000 -0500
++++ ./src/console/console.c	2005-08-05 00:01:57.000000000 -0500
+@@ -97,7 +97,7 @@
+ static int sleepcmd(FILE *input, BSOCK *UA_sock);
+ 
+ 
+-#define CONFIG_FILE "./bconsole.conf"   /* default configuration file */
++#define CONFIG_FILE "/etc/bacula/bconsole.conf"   /* default configuration file */
+ 
+ static void usage()
+ {
+diff -uNr ../bacula-1.36.3/src/dird/dird.c ./src/dird/dird.c
+--- ../bacula-1.36.3/src/dird/dird.c	2005-02-14 04:02:19.000000000 -0600
++++ ./src/dird/dird.c	2005-08-05 00:01:32.000000000 -0500
+@@ -69,7 +69,7 @@
+ extern URES res_all;
+ 
+ 
+-#define CONFIG_FILE "./bacula-dir.conf" /* default configuration file */
++#define CONFIG_FILE "/etc/bacula/bacula-dir.conf" /* default configuration file */
+ 
+ static void usage()
+ {
+diff -uNr ../bacula-1.36.3/src/filed/filed.c ./src/filed/filed.c
+--- ../bacula-1.36.3/src/filed/filed.c	2005-02-14 04:02:23.000000000 -0600
++++ ./src/filed/filed.c	2005-08-05 00:01:06.000000000 -0500
+@@ -51,7 +51,7 @@
+ #endif
+ 
+ 
+-#define CONFIG_FILE "./bacula-fd.conf" /* default config file */
++#define CONFIG_FILE "/etc/bacula/bacula-fd.conf" /* default config file */
+ 
+ static char *configfile = NULL;
+ static bool foreground = false;
+diff -uNr ../bacula-1.36.3/src/gnome-console/console.c ./src/gnome-console/console.c
+--- ../bacula-1.36.3/src/gnome-console/console.c	2004-07-28 04:42:49.000000000 -0500
++++ ./src/gnome-console/console.c	2005-08-04 23:55:32.000000000 -0500
+@@ -75,7 +75,7 @@
+ static bool quit = FALSE;
+ static guint initial;
+ 
+-#define CONFIG_FILE "./gnome-console.conf"   /* default configuration file */
++#define CONFIG_FILE "/etc/bacula/gnome-console.conf"   /* default configuration file */
+ 
+ static void usage()
+ {
+diff -uNr ../bacula-1.36.3/src/gnome2-console/console.c ./src/gnome2-console/console.c
+--- ../bacula-1.36.3/src/gnome2-console/console.c	2005-02-25 03:47:07.000000000 -0600
++++ ./src/gnome2-console/console.c	2005-08-04 23:56:00.000000000 -0500
+@@ -80,7 +80,7 @@
+ static bool quit = false;
+ static guint initial;
+ 
+-#define CONFIG_FILE "./gnome-console.conf"   /* default configuration file */
++#define CONFIG_FILE "/etc/bacula/gnome-console.conf"   /* default configuration file */
+ 
+ static void usage()
+ {
+diff -uNr ../bacula-1.36.3/src/stored/bcopy.c ./src/stored/bcopy.c
+--- ../bacula-1.36.3/src/stored/bcopy.c	2004-09-19 13:56:27.000000000 -0500
++++ ./src/stored/bcopy.c	2005-08-04 23:58:40.000000000 -0500
+@@ -46,7 +46,7 @@
+ static uint32_t jobs = 0;
+ static DEV_BLOCK *out_block;
+ 
+-#define CONFIG_FILE "bacula-sd.conf"
++#define CONFIG_FILE "/etc/bacula/bacula-sd.conf"
+ char *configfile;
+ bool forge_on = true;
+ 
+diff -uNr ../bacula-1.36.3/src/stored/bextract.c ./src/stored/bextract.c
+--- ../bacula-1.36.3/src/stored/bextract.c	2005-02-15 05:51:04.000000000 -0600
++++ ./src/stored/bextract.c	2005-08-04 23:57:57.000000000 -0500
+@@ -63,7 +63,7 @@
+ static uint32_t wsize;		      /* write size */
+ static uint64_t fileAddr = 0;	      /* file write address */
+ 
+-#define CONFIG_FILE "bacula-sd.conf"
++#define CONFIG_FILE "/etc/bacula/bacula-sd.conf"
+ char *configfile;
+ bool forge_on = false;
+ 
+diff -uNr ../bacula-1.36.3/src/stored/bls.c ./src/stored/bls.c
+--- ../bacula-1.36.3/src/stored/bls.c	2005-02-15 05:51:04.000000000 -0600
++++ ./src/stored/bls.c	2005-08-04 23:57:32.000000000 -0500
+@@ -53,7 +53,7 @@
+ static uint32_t num_files = 0;
+ static ATTR *attr;
+ 
+-#define CONFIG_FILE "bacula-sd.conf"
++#define CONFIG_FILE "/etc/bacula/bacula-sd.conf"
+ char *configfile;
+ bool forge_on = false;
+ 
+diff -uNr ../bacula-1.36.3/src/stored/bscan.c ./src/stored/bscan.c
+--- ../bacula-1.36.3/src/stored/bscan.c	2005-02-14 04:02:27.000000000 -0600
++++ ./src/stored/bscan.c	2005-08-04 23:58:58.000000000 -0500
+@@ -98,7 +98,7 @@
+ static int num_media = 0;
+ static int num_files = 0;
+ 
+-#define CONFIG_FILE "bacula-sd.conf"
++#define CONFIG_FILE "/etc/bacula/bacula-sd.conf"
+ char *configfile;
+ bool forge_on = false;
+ 
+diff -uNr ../bacula-1.36.3/src/stored/btape.c ./src/stored/btape.c
+--- ../bacula-1.36.3/src/stored/btape.c	2005-02-27 15:53:29.000000000 -0600
++++ ./src/stored/btape.c	2005-08-04 23:59:58.000000000 -0500
+@@ -85,7 +85,7 @@
+ 
+ 
+ /* Static variables */
+-#define CONFIG_FILE "bacula-sd.conf"
++#define CONFIG_FILE "/etc/bacula/bacula-sd.conf"
+ char *configfile;
+ 
+ #define MAX_CMD_ARGS 30
+diff -uNr ../bacula-1.36.3/src/stored/stored.c ./src/stored/stored.c
+--- ../bacula-1.36.3/src/stored/stored.c	2005-02-27 15:53:29.000000000 -0600
++++ ./src/stored/stored.c	2005-08-05 00:00:19.000000000 -0500
+@@ -43,7 +43,7 @@
+ 
+ 
+ 
+-#define CONFIG_FILE "bacula-sd.conf"  /* Default config file */
++#define CONFIG_FILE "/etc/bacula/bacula-sd.conf"  /* Default config file */
+ 
+ 
+ /* Global variables exported */
+diff -uNr ../bacula-1.36.3/src/tray-monitor/tray-monitor.c ./src/tray-monitor/tray-monitor.c
+--- ../bacula-1.36.3/src/tray-monitor/tray-monitor.c	2005-03-28 07:33:27.000000000 -0600
++++ ./src/tray-monitor/tray-monitor.c	2005-08-04 23:56:37.000000000 -0500
+@@ -91,7 +91,7 @@
+ char** xpm_generic_var;
+ static gboolean blinkstate = TRUE;
+ 
+-#define CONFIG_FILE "./tray-monitor.conf"   /* default configuration file */
++#define CONFIG_FILE "/etc/bacula/tray-monitor.conf"   /* default configuration file */
+ 
+ static void usage()
+ {
