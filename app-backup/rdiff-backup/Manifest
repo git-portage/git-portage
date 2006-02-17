@@ -1,9 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 2c74526b23d2ef88e1887369c15b7806 ChangeLog 6727
-RMD160 7895ba6b838c51b98564c00c32688efd9e48a1ec ChangeLog 6727
-SHA256 57cf6f133859304de5e78c1f4c910edd6d05804d8119973913038b83e3b5bfa3 ChangeLog 6727
+MD5 e617fd05ecaef1238f06ade142419f48 ChangeLog 6826
+RMD160 1356372292f307c019143dcd253e877e34215123 ChangeLog 6826
+SHA256 2abdf4c0c8390b0e605efbcaabebeab498acb51922ed836b3c5348bb87ce8d8d ChangeLog 6826
 MD5 ac993dbce3164220885f4a160c2c048f files/digest-rdiff-backup-1.0.1 70
 RMD160 3de68443dd19a0d3b6cf2aebc5eda23ab1e8fa5b files/digest-rdiff-backup-1.0.1 70
 SHA256 cf1c0a7f43b812499b19962fb365f6fe7acc49fe3a80e4d7850b4d375848765c files/digest-rdiff-backup-1.0.1 70
@@ -16,19 +13,12 @@ SHA256 ecef8c589ac1c83a5419e50c8d8e9a3614fa919e645c66915b96a9f5195fdf13 files/di
 MD5 d0e7f9b59837d3f49d369021366e563d metadata.xml 229
 RMD160 361faad2aa64dc56553b74541a2b31f2ca2cce87 metadata.xml 229
 SHA256 dd8168978da302bbe4ca583614aa9721a9bedf46c72e6259c73a47decae7dae9 metadata.xml 229
-MD5 96b0e19a30b1552d3fe5236d473cf413 rdiff-backup-1.0.1-r1.ebuild 682
-RMD160 a08e616dfeaa1aacba127e2271fa1229713327b4 rdiff-backup-1.0.1-r1.ebuild 682
-SHA256 dc689efdba07747d1f471c6fc189a6f09fc3460ae261f595ca7ff5319baac558 rdiff-backup-1.0.1-r1.ebuild 682
+MD5 9543f748b233ceb72ec2e400d42f1b4e rdiff-backup-1.0.1-r1.ebuild 681
+RMD160 db5bf362fc10635cdaffb0c8c6bf17b03cba8557 rdiff-backup-1.0.1-r1.ebuild 681
+SHA256 05614dc8a62f4af73d6cb33ba3c9a13d1273a9c12ec984b19817d0c85a33e1e8 rdiff-backup-1.0.1-r1.ebuild 681
 MD5 49e8b4ec59fa8d253363561ba56ef676 rdiff-backup-1.0.1.ebuild 623
 RMD160 52a9c7351d4470bdc1bfb8d9bccf2cc515906cf0 rdiff-backup-1.0.1.ebuild 623
 SHA256 4182224c3e37c1340c31ac9079ca1593d49dbee74d3f97752afdac57e254f8b3 rdiff-backup-1.0.1.ebuild 623
 MD5 5bd1ed4626c5d1af9a4db4137bc01d8e rdiff-backup-1.0.4.ebuild 703
 RMD160 e2313bb22e2e7c668ac806a69adc12badcf3fa8d rdiff-backup-1.0.4.ebuild 703
 SHA256 d7b2ee313f9910999494795d4499c6d165bd89bfc3eaf80dbf78f331b307d660 rdiff-backup-1.0.4.ebuild 703
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
-
-iD8DBQFD39WImdTrptrqvGERAmHAAJ4k5NESZBHCz6Itxr4Xb834h4AungCgiNfK
-c0AqPP+rtA03KBLLpOxQZ7M=
-=Rjee
------END PGP SIGNATURE-----
