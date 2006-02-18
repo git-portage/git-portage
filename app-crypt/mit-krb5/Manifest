@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 699bf010cf106b1018a5af96e81e09ee ChangeLog 18065
 MD5 bd5b2d0e988dc8f634c70e965d75cb3a files/digest-mit-krb5-1.4.1-r2 200
 MD5 6ba0d8f5bbf423058a90022e33bd30a4 files/digest-mit-krb5-1.4.3 247
@@ -11,3 +14,10 @@ MD5 c214030264300e2d84375d23d7c1f892 files/mit-krb5kdc.initd 656
 MD5 f3ea9dd1d52f37139fbc4d101044f821 metadata.xml 241
 MD5 065afd5317faf1801fb5f5f5c9b16321 mit-krb5-1.4.1-r2.ebuild 3111
 MD5 49a4ce3cd1a25f2b942fdfbeff97ca9a mit-krb5-1.4.3.ebuild 2846
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD9xHqugEuf3OQ0akRAsLQAJ40UiENsUrTl2SxYRFE6llTrberlgCaAolb
+pIFdBhVpbKENXwAuBLTQQ+Q=
+=Oea5
+-----END PGP SIGNATURE-----
