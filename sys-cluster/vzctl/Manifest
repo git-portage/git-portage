@@ -1,21 +1,21 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 eb5887541f4d341a74096db81a932359 ChangeLog 1836
-MD5 8aea757fe2bda9943ef7cfd6d6c51fe6 files/digest-vzctl-2.7.0.24 66
-MD5 fdc2f878f8d875de1d34854ef14675c9 files/digest-vzctl-2.7.0.25 66
+RMD160 a6666482f8e6404639c859d1765b24f5fffef78d ChangeLog 1836
+SHA256 151a792c5249bd8fde2067f64284223de8f6b437f705f5159b29590f1c26a516 ChangeLog 1836
+MD5 3236a2f9ce3ca6d1b4bd679a1a9f7d23 files/digest-vzctl-2.7.0.24 518
+RMD160 7583c7394f5774b22756ca351b7e1905cab5a918 files/digest-vzctl-2.7.0.24 518
+SHA256 163bc729b5ce1ee15d1f284baf29c2b780304a89f36cfcf0f3b5ac4f448e8441 files/digest-vzctl-2.7.0.24 518
+MD5 c6ced3cddbb3dda9a60336e82e68e52f files/digest-vzctl-2.7.0.25 518
+RMD160 96b6b1293ccff487df49dcab044152842f480216 files/digest-vzctl-2.7.0.25 518
+SHA256 9324d6f79c8c7052d3c6fc5f37675ec8ca360c14b7357840f36f37a68f4c7c9d files/digest-vzctl-2.7.0.25 518
 MD5 a2de79b189da1c2d3fd01fa2116bcea9 files/vz.initd 5465
-MD5 aa370ed43c03e3e93a36812d3eaf903a files/vzctl-2.7.0-amd64.patch 4434
-MD5 687eaa4427600a7a5edfc0b8b7f69480 files/vzctl-2.7.0-gentoo_conf_d.patch 3899
-MD5 48002ae17f4c768412ac70a33023d09d files/vzctl-2.7.0.23-gentoo_etc_vz.patch 7115
-MD5 d2877804e8c71fc4a8b5a9c97d2e79a7 files/vzctl-2.7.0.24-pic.patch 2419
+RMD160 303e4877e95db9f90d512b37d67cdaa94e823d52 files/vz.initd 5465
+SHA256 63c17d2783cfd01fcfb66aa8b0c572ea6bf366d59a72c10f1728091c7eaa5fc0 files/vz.initd 5465
 MD5 e5ba31c20aa49371e645a8950abd1054 metadata.xml 231
-MD5 e8ffa79f8864cae469d1c57dadede85c vzctl-2.7.0.24.ebuild 1731
-MD5 d2fb08f050dde7aa7780bf5693545a0d vzctl-2.7.0.25.ebuild 1678
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDxmgjmPFBzbX68WERAr99AJ447OBgyGB+K+BeQdO0tFNuXtH6vgCfX15E
-WvdCiDI/oekuzIfkVSdzUgg=
-=DKx3
------END PGP SIGNATURE-----
+RMD160 532e75c33676f402571b5033faf42b7d0dbb9d28 metadata.xml 231
+SHA256 018942ba3f2ac5b93ec2576f55ff8d85b7808b35b751bfabb1879957f4f6c442 metadata.xml 231
+MD5 cfab23d687d3689d5463d4d52ef37904 vzctl-2.7.0.24.ebuild 1885
+RMD160 bd52a46fcd0c60a64f166c22e3a617359ffd91dd vzctl-2.7.0.24.ebuild 1885
+SHA256 67d656e9a2505b16e456ddd79a57568af0f5f84a1e476f1c45204ed9e62e97e3 vzctl-2.7.0.24.ebuild 1885
+MD5 95d6e52dfdffaaae98819113bdd8b707 vzctl-2.7.0.25.ebuild 1821
+RMD160 d3affa08492c2f2567ca61c1716af3f61ae795ae vzctl-2.7.0.25.ebuild 1821
+SHA256 13f9ea011169cf35872db0f45e085877e11ed5e8f7362aed44e9d3b20008fd51 vzctl-2.7.0.25.ebuild 1821
