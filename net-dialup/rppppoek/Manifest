@@ -1,0 +1,6 @@
+MD5 75cbd290a51a1a88ecd85f3e8494036e ChangeLog 1006
+MD5 d0d6e3cd0f368699b3b66c963b6240c0 files/digest-rppppoek-0.34 66
+MD5 2a9cc06fc8d62e325745ffebade06d98 files/digest-rppppoek-0.40 66
+MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
+MD5 01cb46e6338609242b4f6776a78ebc45 rppppoek-0.34.ebuild 569
+MD5 01cb46e6338609242b4f6776a78ebc45 rppppoek-0.40.ebuild 569
