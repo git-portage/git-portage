@@ -1,4 +1,4 @@
-MD5 32d4ca520c63fff8fc42f5ba58363f44 ChangeLog 25418
+MD5 5ce91a7c7e9d106c52822fce89b2b45f ChangeLog 25417
 MD5 239a562c31f4486b3665948b60831839 files/digest-openssh-3.9_p1-r3 835
 MD5 c92c33beb73a2d008cb3744ebd7e4f88 files/digest-openssh-4.0_p1-r2 360
 MD5 9da4e1a777f8baaa5caffb5084a68ed4 files/digest-openssh-4.1_p1-r1 360
@@ -33,6 +33,6 @@ MD5 02a1e50ab3fa841edec86694bd71c8d1 metadata.xml 1251
 MD5 4bf2ed1ba4e71ff7a799b27f958b8214 openssh-3.9_p1-r3.ebuild 4984
 MD5 f348bd329ca422946f501cc5ed1cbfb8 openssh-4.0_p1-r2.ebuild 5420
 MD5 2c888cf3a4cf4a20bf8b399f0e41dd0b openssh-4.1_p1-r1.ebuild 5381
-MD5 328aba5eda9befcad2a37b615591647f openssh-4.2_p1-r1.ebuild 5417
+MD5 a9d7923f3909976222c24efd31c147f5 openssh-4.2_p1-r1.ebuild 5416
 MD5 0123e9e036a3a2a83d279f4edb18f2bd openssh-4.2_p1.ebuild 5349
 MD5 d9d5ef9d6626f46949671061c8fe71a8 openssh-4.3_p1.ebuild 5519
