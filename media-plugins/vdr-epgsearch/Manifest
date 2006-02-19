@@ -1,22 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 7017aa060ee16234c90c470c6492cef2 ChangeLog 396
 RMD160 3415666332d932f97acefd9e09012de2b0fd436a ChangeLog 396
 SHA256 437bb8aecbe85576e67e276b76e0e76a044f53fbbfbb24dc1c0ea683808d3415 ChangeLog 396
 MD5 befac8d612501d53c9cd28a673362f09 files/digest-vdr-epgsearch-0.9.10 491
 RMD160 a482f233e5eaffdc3102184032285395fa7eec16 files/digest-vdr-epgsearch-0.9.10 491
 SHA256 aa4311c139837d7a867e29b3b8e344801c04ed825df91515d687e242827f8f66 files/digest-vdr-epgsearch-0.9.10 491
+MD5 22f12a6e7308d124549b7d1ba1d58091 files/digest-vdr-epgsearch-0.9.12 253
+RMD160 9504bf205c3611976055959b4ac683810d57c63b files/digest-vdr-epgsearch-0.9.12 253
+SHA256 9f36d34973e45a9a987d61832147ddee6b1b4a00179cc074d2a663207c63ab37 files/digest-vdr-epgsearch-0.9.12 253
 MD5 7c30ab7528b676a1a0c2737821599b29 metadata.xml 300
 RMD160 c85719cef743cf573efe73f8f84564292085c91c metadata.xml 300
 SHA256 29feafd8b7177b65f8bd92553ac96779d9a91e3b7b4eeecfb0924eb7b6979587 metadata.xml 300
-MD5 afd851429b2b7b11530d77f009a059c1 vdr-epgsearch-0.9.10.ebuild 692
-RMD160 8091da510362c636ab2b738044d615e8f409733a vdr-epgsearch-0.9.10.ebuild 692
-SHA256 7f29e516842536097f895331cc2b4688e2cc0927bcff89af4a72c6c9cd6a1cd0 vdr-epgsearch-0.9.10.ebuild 692
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD40yRZfSl1Kp5KmoRAgPOAJ4+5sqIje8yFdoYDKLBU0Yw5y/tzwCg6QGt
-O6ALL7u79WEGWOdW/28Vhtc=
-=HQKI
------END PGP SIGNATURE-----
+MD5 a5dc7bbb8431ee18719fb7876ad69217 vdr-epgsearch-0.9.10.ebuild 659
+RMD160 310e724c510c59c63989e7a27b94bfcfe7387534 vdr-epgsearch-0.9.10.ebuild 659
+SHA256 f7f260767aa44b3b8bae084c2e67799c8107edfe931cfdbd4f430dd3afe8ebb0 vdr-epgsearch-0.9.10.ebuild 659
+MD5 1ceb1adf602757f0dfeef3cda69f2679 vdr-epgsearch-0.9.12.ebuild 580
+RMD160 f8789b73716d6df3c7f30243a05e3807eecb1ee2 vdr-epgsearch-0.9.12.ebuild 580
+SHA256 a3fa8f0ae3c6533301176e17a91cec49d00987547ca9b1afa8b05f83aff32521 vdr-epgsearch-0.9.12.ebuild 580
