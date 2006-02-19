@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.10 2006/02/17 18:03:51 labmonkey Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.11 2006/02/19 03:48:29 labmonkey Exp $
+
+  19 Feb 2006; Chris Lee <labmonkey@gentoo.org> bacula-1.38.5.ebuild:
+  Fixed enewuser invocation wrt #123152
 
   17 Feb 2006; Chris Lee <labmonkey@gentoo.org>
   +files/bacula-1.38.5-default-configs.patch:

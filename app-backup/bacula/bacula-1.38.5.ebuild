@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.38.5.ebuild,v 1.1 2006/02/17 04:20:48 labmonkey Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.38.5.ebuild,v 1.2 2006/02/19 03:48:29 labmonkey Exp $
 
 inherit eutils
 
@@ -76,7 +76,7 @@ pkg_setup() {
 	if ! use bacula-clientonly ; then
 		HAVE_BACULA_USER="`id -u bacula 2>/dev/null`"
 		if [ -z "${HAVE_BACULA_USER}" ] ; then
-			enewuser "bacula" -1 "/bin/false" "/var/lib/bacula" "bacula,disk,tape,cdrom,cdrw"
+			enewuser "bacula" -1 -1 "/var/lib/bacula" "bacula,disk,tape,cdrom,cdrw"
 			einfo "The user bacula has been created.  Please see the bacula manual"
 			einfo "for information about running bacula as a non-root user."
 			einfo ""
