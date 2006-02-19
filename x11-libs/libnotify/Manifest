@@ -1,0 +1,6 @@
+MD5 18c70aefbb9166e2c5b7feffb02b32b0 files/digest-libnotify-0.3.2 247
+RMD160 3fa3578e87794116bd53f6c1670e756497f99f14 files/digest-libnotify-0.3.2 247
+SHA256 62ff67de3853c3cb69e397669a4e9cd52f651037d57f21e033ec6cc70e78cd1d files/digest-libnotify-0.3.2 247
+MD5 ce6ce73c570e8e074680a4cf018171dc libnotify-0.3.2.ebuild 551
+RMD160 a31dd740c100f7126bdfe60911ca5fa99a27bc71 libnotify-0.3.2.ebuild 551
+SHA256 741cd59d2d4a97c80fdd191bbd1212ebde4ca7ab1e60c1eed7872a2913df1129 libnotify-0.3.2.ebuild 551

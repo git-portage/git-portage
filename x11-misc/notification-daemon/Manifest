@@ -1,0 +1,6 @@
+MD5 91890dbb73703ab1de1a9f2cd32e02fe files/digest-notification-daemon-0.3.4 277
+RMD160 7d616ad1cd13e1f5af4f2bf7511cd22f32fffba5 files/digest-notification-daemon-0.3.4 277
+SHA256 77c3dca6ca448fccc9712a020412c441ab8f44e3d9ae11aa2a4a43b306d9ee86 files/digest-notification-daemon-0.3.4 277
+MD5 35a7a066e00facbb84f021cfbc279b6e notification-daemon-0.3.4.ebuild 701
+RMD160 1e9f7648e51eca93c9d76dc5b44492fff1e6b6e8 notification-daemon-0.3.4.ebuild 701
+SHA256 d2cc5b5cfd4d1b289c393ba033620ffe82f9a0aebc2b9e3d5dcf9aea759425c3 notification-daemon-0.3.4.ebuild 701
