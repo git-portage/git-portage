@@ -1,4 +1,4 @@
-MD5 26058ae0fe73faca3f44c145d8d4d014 ChangeLog 5079
+MD5 8d80d7efa250303df04319f81e8e4fcd ChangeLog 5078
 MD5 d5d5b818347fd87b290ecb0b17516b34 files/05portage.envd 34
 MD5 bb9cb80f927bcc2b9e0f512d8a200e18 files/2.0.51.22-fixes.patch 10579
 MD5 e3d8f54d06dce6fa8c4b9a9ff660f96e files/2.1_pre4-r1.patch 1581
@@ -12,6 +12,6 @@ MD5 9e669b11a86a57aa8d2a452531085bb6 files/xterm-titles.patch 1115
 MD5 e57748276505fab96a2ab4e64de45366 metadata.xml 220
 MD5 4df85686b65f5591383e16bf3d6845ba portage-2.0.51.22-r3.ebuild 5796
 MD5 74f65b9f31d3d8baef97314065d2d720 portage-2.0.53.ebuild 3696
-MD5 a439a5abd8a4702c2f61f8782bdf7f18 portage-2.0.54.ebuild 3700
+MD5 daf6422b5f97afa34fd6c30a2af5ceec portage-2.0.54.ebuild 3697
 MD5 908c5af92ff8ea543ed011aefd0832ea portage-2.1_pre3-r1.ebuild 4715
 MD5 156418acea4b688132aa58236b85b065 portage-2.1_pre4-r1.ebuild 4734
