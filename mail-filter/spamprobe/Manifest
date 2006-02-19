@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9e6f4537f752a9b422edaf0e33ce09a8 ChangeLog 2246
 RMD160 2a4365d67af2243a500a1686201f8ba30bdf3d82 ChangeLog 2246
 SHA256 089839011d506bae3a5edcadc66a68dfb60be80fd0b24dee15cbea73a12fcad9 ChangeLog 2246
@@ -40,3 +43,10 @@ SHA256 ca61c6048eec2b91981967bbdf552df7084051ffddb5d4fa3847f0cd470c0e87 spamprob
 MD5 13ffa6a0cdd9aefa03545b085a676c42 spamprobe-1.4b.ebuild 803
 RMD160 8b6f5f8ab3e351fc6a66cb94fc431d6c160d567a spamprobe-1.4b.ebuild 803
 SHA256 221d05f1738beee0a69bc22afb783fecaab164aa8ed0b17cb69c247fdd05c253 spamprobe-1.4b.ebuild 803
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFD+L81QlM6RnzZP+IRAjmSAKC+kDCmreyAaKEcM3Lyrjtd6rEP1ACglFVq
+SVTazNksT4EdRpThQkKTxP0=
+=slMc
+-----END PGP SIGNATURE-----
