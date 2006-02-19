@@ -1,6 +1,34 @@
-MD5 bc5ed04b5e53694cc4604f6693f18eba ChangeLog 3820
-MD5 ff3d843bd695f3a1a9d9ffeee60d3068 metadata.xml 277
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 6d99803b07a7cff9cbb0ff84cc3e692d ChangeLog 3964
+RMD160 c2104aa98fc01780268194a21fdc869a3fba0b7b ChangeLog 3964
+SHA256 d9d699840fcdc6491bf092e935e73c91e54d33d139f4bcf8d3a015a7182ed79f ChangeLog 3964
 MD5 6cc8d5c2dce1643a39bb77e3e9046bb0 abook-0.5.4.ebuild 778
+RMD160 ea60466b831fdcc5af50cdaeede6b987c34765a2 abook-0.5.4.ebuild 778
+SHA256 c903794a0749fa33b883b19057d39781b741746c699dae9f933cd5879d742d48 abook-0.5.4.ebuild 778
+MD5 5883964418797b4fabecc8ce2175a9f0 abook-0.5.5-r1.ebuild 957
+RMD160 b3591d415fc275338cd214b09e20318627b9d867 abook-0.5.5-r1.ebuild 957
+SHA256 3db1911fca1b7755fb96ffeec49e8188d2601dcd7f32748c4a530d6dd074fa30 abook-0.5.5-r1.ebuild 957
 MD5 59b69566f05d4e988465d0a88606ae4b abook-0.5.5.ebuild 781
+RMD160 1d91fa95a800c6608e367aebb6caa649164d2e5d abook-0.5.5.ebuild 781
+SHA256 d4b1c6bf3ec62308c35b594f38139f6df3d72168c69e2170416f1ccc26461547 abook-0.5.5.ebuild 781
 MD5 379ff2ec5d24511e7beeadbb801e6431 files/digest-abook-0.5.4 63
+RMD160 045cbc0b4707e9457d18c819519dd67dafca5991 files/digest-abook-0.5.4 63
+SHA256 db1fee2ee46e736b649d816acb5dd0738744ec3c00b8108652b844f6dbd53640 files/digest-abook-0.5.4 63
 MD5 45b636a69be9680eb2643f72a20a1b8f files/digest-abook-0.5.5 63
+RMD160 81839620758f60815665adc5fa801ae4a0fc08fc files/digest-abook-0.5.5 63
+SHA256 9a07bf7610f6a01f431340cd3d96d89735990ccde9fbf4734b0e6b7219606e95 files/digest-abook-0.5.5 63
+MD5 eacd4f5c7f1ce0902cb1b9b34b6ea221 files/digest-abook-0.5.5-r1 482
+RMD160 edb68ab9890722ed043ee51dc25d1f16fdb76d50 files/digest-abook-0.5.5-r1 482
+SHA256 30761c406a84161281bac6a41e505c0f01d8fa5217ae0d3accc759d9c1b024a1 files/digest-abook-0.5.5-r1 482
+MD5 ff3d843bd695f3a1a9d9ffeee60d3068 metadata.xml 277
+RMD160 714f3386e1e40ab95489b87a15b97b05f230a093 metadata.xml 277
+SHA256 b4d9ec08fcedf6ef469e5eda6cf968678daa03f8c9ad244d97acc5b3223bde1a metadata.xml 277
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFD+JGsV3J2n04EauwRApcUAJ4/6ZlqYLQ2lzUgKfUGksekprnWVwCguhic
+2ZjqTufL9T+6d78shvUbBTk=
+=dBqu
+-----END PGP SIGNATURE-----
