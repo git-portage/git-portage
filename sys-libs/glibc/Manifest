@@ -1,4 +1,4 @@
-MD5 df4b727a4c4f00e8deaf3c419ff5c54e ChangeLog 89709
+MD5 10ff0d40006ea802292e47575b83e91e ChangeLog 89708
 MD5 941f13d27badc76c1e3704c59acaff26 files/2.3.1/glibc-2.3.1-ctype-compat-v3.patch 2823
 MD5 67b125cec4f1f0d26ce4df706451fee6 files/2.3.1/glibc-2.3.1-fpu-cw-mips.patch 433
 MD5 1c4e567ed001f9489e11ee06c1ced0b7 files/2.3.1/glibc-2.3.1-libc_wait-compat.patch 1053
@@ -129,7 +129,7 @@ MD5 e337828bc398e3d16f95a910837afaba glibc-2.3.4.20041102-r2.ebuild 41505
 MD5 9f72e78b4c96f252333eaad89515b24f glibc-2.3.4.20050125-r1.ebuild 39698
 MD5 6401d1207d6ace460c03b83d98ce410f glibc-2.3.5-r1.ebuild 41104
 MD5 8dcc5c8dcb0b1798861bbce2ac7ee363 glibc-2.3.5-r2.ebuild 39430
-MD5 f17a023398ee167ea2eb4d55a90ba84f glibc-2.3.5-r3.ebuild 39524
+MD5 ba7d7436ab87fe42033cec86e97468b4 glibc-2.3.5-r3.ebuild 39523
 MD5 5b933b2793d4ca7fadad57630b194840 glibc-2.3.5.ebuild 40367
 MD5 f3242057456201a0d59a96a33cf2e3ff glibc-2.3.6-r1.ebuild 42287
 MD5 f07be1575b5d04702f099dbbce7f78de glibc-2.3.6-r2.ebuild 42796
