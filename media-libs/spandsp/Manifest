@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7a5163bda1202da8080f9222249a671c ChangeLog 1476
 MD5 53b061a920e87b15b999b62794ee0cfa files/digest-spandsp-0.0.2_pre18 71
 MD5 7dd6337017a4fc9df010c299c4cf7035 files/digest-spandsp-0.0.2_pre20 71
@@ -6,3 +9,10 @@ MD5 d620cd424e6c6553736cc5304899deae metadata.xml 253
 MD5 eaaadc820ec3e78634f6f845610ee27c spandsp-0.0.2_pre18.ebuild 655
 MD5 174f1ddeb32c97cf058c2f02b9752014 spandsp-0.0.2_pre20.ebuild 655
 MD5 9ed2aa0c5131f2c4fe5e4c695cd15674 spandsp-0.0.2_pre25.ebuild 655
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFD+gdAKRy60XGEcJIRAhD9AJ9eUgcibZhMJoFRSLnoPPvW5AYp2gCeOOBV
+cjIH2BojtvgpU5xqPr+OwEk=
+=x4nJ
+-----END PGP SIGNATURE-----
