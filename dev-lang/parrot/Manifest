@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 482870a350bf775ec3e647ec431b37e4 ChangeLog 1986
 MD5 6fefa983d0557ec5599f54babc66d7df files/digest-parrot-0.2.3 65
 MD5 4b001f6dcd682c00fd9ca9afb3804b04 files/digest-parrot-0.4.0 65
@@ -7,3 +10,10 @@ MD5 b3c3aa33bd9cf54b6eafa26e89063113 files/root.in.patch 987
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 9387aef54f07326e0f34306f08878992 parrot-0.2.3.ebuild 2097
 MD5 e24f7b80475cdb9db6e75c1cc7d5d1f5 parrot-0.4.0.ebuild 1798
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFD+hd7tG5z4I8BtQoRAs8FAJ9ie74hEzz6NjQyyeFgquXt9sFJDQCfXPiA
+O37kryJ3Rsv9bFqB7OQ0g2U=
+=BjgW
+-----END PGP SIGNATURE-----
