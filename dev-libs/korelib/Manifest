@@ -1,15 +1,15 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 8bd5863e151c3b398a4011af9930ce5e ChangeLog 866
-MD5 c9a2b6d65ac4fdcb808ccf3760099602 korelib-1.0.ebuild 988
-MD5 41d7ac32dc54956e937401bb5a2c3810 metadata.xml 156
-MD5 294f27803a27740c1a1c85c655909e62 files/digest-korelib-1.0 63
+RMD160 9769d34c6d5ea22aff27e483e3ca65c45c7a2971 ChangeLog 866
+SHA256 2e8ec69e5809313ea982c31f08ad3eec723b50c3da91dcdfe58b1fd1dca55268 ChangeLog 866
+MD5 0a06a0bab4e687c32d9b641c929428dd files/digest-korelib-1.0 235
+RMD160 fde0af5eb7733d8150caa4b17b67a7ec51982f12 files/digest-korelib-1.0 235
+SHA256 c89e4e2172ff4b2589cdf29aa3bd01f8c4c50a8242bc7310a0b21e8d2ad94d77 files/digest-korelib-1.0 235
 MD5 ef713962f1c2ae6a2190db3f50d66d3d files/korelib-1.0-gentoo.diff 972
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDLzuJCRZPokWLroQRAp9hAJwKV8tFLgNAkcCMllSNBaSQB004cQCfftsY
-CUkPxdISpXK6FJpQ52XYHUo=
-=D/GI
------END PGP SIGNATURE-----
+RMD160 713c8c7aeb439ac52eebbcf1557c8feea5f550bc files/korelib-1.0-gentoo.diff 972
+SHA256 ec648e639060433c7fe274128b87ba2eab7793251c166786f90711699c8e775b files/korelib-1.0-gentoo.diff 972
+MD5 4fc3190ece67f219f8cad0e41323eb00 korelib-1.0.ebuild 1048
+RMD160 b2840b87a3ecaa3c67e7cfa64c0c9e6a49343bc1 korelib-1.0.ebuild 1048
+SHA256 56632ba2454a57cb650a232fb5187acba37400ccddd6a060ae9989c142cc2c3a korelib-1.0.ebuild 1048
+MD5 41d7ac32dc54956e937401bb5a2c3810 metadata.xml 156
+RMD160 537178ef5a820896e97475fb9aded47d50474bef metadata.xml 156
+SHA256 0e8490f9c62cb74e5894b52f643a02de0024d97dbfebad43082dce6bcb39555f metadata.xml 156
