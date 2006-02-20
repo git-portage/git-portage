@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8a5fa305facf5cddc80b9467ff56a239 ChangeLog 11534
 MD5 8b5ccb169d823795a11450a1c052da55 files/digest-lirc-0.7.0-r1 63
 MD5 be588343f18b4d80100ecee0efd3870c files/digest-lirc-0.7.2 63
@@ -12,3 +15,10 @@ MD5 9c4eade6284e36d80953d8cd0080e06a lirc-0.7.0-r1.ebuild 4541
 MD5 cb4d1fc7278b7357a6ca6aee2b1adc1c lirc-0.7.2.ebuild 4472
 MD5 ef9e58db4f95b38f1ac29f017a1b701e lirc-0.8.0.ebuild 4631
 MD5 40a6e0a06901a627d29f4c528e40c9ad metadata.xml 265
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFD+c1zKRy60XGEcJIRArYnAKCEKv+ozDUZ4O+NkQvlpJhS8PSJVACgtC1p
+YvurH1O+ol2/HZopKZR65E8=
+=Zq2y
+-----END PGP SIGNATURE-----
