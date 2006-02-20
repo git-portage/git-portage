@@ -1,4 +1,4 @@
-MD5 92d9f3831b1ebe4a15905c894c379b50 ChangeLog 8518
+MD5 20a6c18337198cbd16abb1eb6adc034b ChangeLog 8518
 MD5 d285bb203f9e48fc23492e4c72d61a94 files/digest-tcpdump-3.8.3-r4 65
 MD5 ede90d270bda1c6dcdf701ea18c6dbdc files/digest-tcpdump-3.9.3 65
 MD5 68ea0a2e59c47f06c9961da92b9d40a8 files/digest-tcpdump-3.9.4 65
@@ -7,5 +7,5 @@ MD5 373e9bba235a67d1de8eb1356151f32c files/tcpdump-3.8.3-gcc4.patch 3162
 MD5 4d0df7aa1535098ccef25ba7e86e5e95 files/tcpdump-3.8.3-gentoo.patch 4002
 MD5 1465cdeb961745379a8ae1402b3e51ab metadata.xml 268
 MD5 2323a0f53259fe81ae327e183ad6ab6d tcpdump-3.8.3-r4.ebuild 1472
-MD5 d772bd3654efbb48cc7420cd8e266dbb tcpdump-3.9.3.ebuild 1457
+MD5 afcd04d0437ce5d2d0a481e14c230e7e tcpdump-3.9.3.ebuild 1457
 MD5 179abebd37bbba9b5d251365a1b690f8 tcpdump-3.9.4.ebuild 1468

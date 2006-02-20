@@ -1,4 +1,4 @@
-MD5 7833d57ccebc004f0ef0469ee74f2b16 ChangeLog 37408
+MD5 d89e796428f149f25fa2b0e0abfe8fb6 ChangeLog 37404
 MD5 c2fd2c8cd7f31c4c876db365a98b972e files/digest-postfix-2.1.5-r2 363
 MD5 ff949f18a6d77e67fba4ed20907d0592 files/digest-postfix-2.2.4 135
 MD5 a45bc89f84c0c8cd2f467b49eba737c8 files/digest-postfix-2.2.5 135
@@ -19,7 +19,7 @@ MD5 86c229fe394877d2c6a26aa5367bc697 metadata.xml 253
 MD5 ac54433bbfb8588c01144dd4d61ecdd7 postfix-2.1.5-r2.ebuild 7525
 MD5 6a23485292037b5bd4444da2b636fabe postfix-2.2.4.ebuild 9235
 MD5 f1052a274b0e52f23522e679c102d016 postfix-2.2.5-r1.ebuild 9246
-MD5 bd117966d012ff2e3a09c6e200421ecc postfix-2.2.5.ebuild 9536
+MD5 b9d87dbf24464c335f81059f4c8ab124 postfix-2.2.5.ebuild 9535
 MD5 402958b40868c3887702f48885250798 postfix-2.2.7-r1.ebuild 10129
 MD5 ff679f52883e8b0239f0320afab9d5d6 postfix-2.2.7.ebuild 10332
 MD5 e096b2140dc52302a2fdf4030e43992f postfix-2.2.8-r1.ebuild 10187
