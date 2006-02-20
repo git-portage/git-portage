@@ -1,4 +1,4 @@
-MD5 b5896fa3f88573d8846ffa2c31a77591 ChangeLog 61631
+MD5 164eedbc9040587126727b9304f13030 ChangeLog 61632
 MD5 7a9b202499409304a68680f9d749ec8d files/digest-mysql-3.23.58-r1 512
 MD5 c43796de98df1d4cbf33c1eb0f40159a files/digest-mysql-4.0.25-r2 509
 MD5 7e23e7da8ca77866dfb81a8bb7577556 files/digest-mysql-4.0.26 509
@@ -34,7 +34,7 @@ MD5 94e66d421dd7650e25b31d3f3e1d51be mysql-4.0.26.ebuild 14866
 MD5 1a657a69941a9928242c744a7c2e57af mysql-4.1.14.ebuild 18831
 MD5 b717e8d3d0941586addaadd1c2cd23ff mysql-4.1.16-r30.ebuild 2040
 MD5 6b8a37d3d7936b65fbe81a8cf8917450 mysql-4.1.16.ebuild 24845
-MD5 81db97cef6f0d210fc6b63adead588db mysql-4.1.18-r30.ebuild 2037
+MD5 5f82ee826611d4061bba179e1b24031b mysql-4.1.18-r30.ebuild 2038
 MD5 7808a4da500c2a734b115dfbf6b56dfb mysql-5.0.18-r30.ebuild 2040
 MD5 c4ded86a0fdb58b34c5232ac37a3b42e mysql-5.0.18.ebuild 24842
 MD5 acf35e7d3b0059d9c644848e78661423 mysql-5.1.6_alpha-r30.ebuild 2045
