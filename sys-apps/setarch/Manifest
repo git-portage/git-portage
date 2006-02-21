@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ccf5e36f895d89d3f1dfe9a02a0dfed3 ChangeLog 336
 RMD160 bd41f44a15e202570f7c3ede99025ffa2bd32c86 ChangeLog 336
 SHA256 e071bf3397569abd43cb4397e5d15659e5d4a7882d1175eb7b575fe2074bdc3a ChangeLog 336
@@ -31,3 +34,10 @@ SHA256 f5f2891f2a4791cd31350bb2bb572131ad7235cd0eeb124c9912c187ac10ce92 metadata
 MD5 6b9f2681f5f92060cdf6ac9668bf79cb setarch-1.8.ebuild 965
 RMD160 19df04629244746ca0fc2f2bf43dc6afbfaab5ab setarch-1.8.ebuild 965
 SHA256 caaf1d9552a105c40b1a51b37a1d6d5018c5b0e74187376c4afc21d2df72e9b6 setarch-1.8.ebuild 965
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFD+qXD2+ySkm8kpY0RAjCGAJ4vFXcOlDbGoRWmkdOOIdo53oROugCgu8lO
+0r2p2+lRFfh28QduzontvYw=
+=7Rkz
+-----END PGP SIGNATURE-----
