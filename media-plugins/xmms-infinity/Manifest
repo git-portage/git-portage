@@ -1,16 +1,24 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 9850ccc656191818161098a0958d5985 ChangeLog 1544
-MD5 0c96eeafb11704181fc49281ce14cee2 xmms-infinity-0.2.ebuild 819
-MD5 6d267e5c0f6930c52d67c256061974b3 xmms-infinity-0.5.8.ebuild 742
-MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
+RMD160 af9313295c83d47b1470ddc4e6cb644918359cba ChangeLog 1544
+SHA256 1598b79d971d2dfab0ed247f45eb1a65057cb4ea5e235cb09b8a86dfa668df71 ChangeLog 1544
 MD5 1686a447a6ea8ebf5d764aa3ed053b78 files/digest-xmms-infinity-0.2 64
+RMD160 2b87efa1520d077fe48c36c0b0a574decfbac29c files/digest-xmms-infinity-0.2 64
+SHA256 b728b9a712ea908eb03fe323f0c67e6c2b16638d69d7ee1a0aa097ef25bdbe5b files/digest-xmms-infinity-0.2 64
 MD5 d31671953abd672c6d7f6aa03e4567fb files/digest-xmms-infinity-0.5.8 74
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDGslQj5H05b2HAEkRAp3lAKCdHiZJv7v3kq4WnEoJVRHKIjbZ1QCffrY5
-O9hdv6T/BREFLwXWCuSDJ18=
-=zsyK
------END PGP SIGNATURE-----
+RMD160 748e9aeafb8b2c5174912868792fb29190fe9f75 files/digest-xmms-infinity-0.5.8 74
+SHA256 87d8c78bb15a6868e9dccc35cb36b084afe5c2886ea8855fbd12e9b220498e5f files/digest-xmms-infinity-0.5.8 74
+MD5 8c5876cf442b0854565d8cdefd4b5121 files/digest-xmms-infinity-0.6.2 262
+RMD160 f576680ea3b6df39c173aaf3ed5590ce0a29682e files/digest-xmms-infinity-0.6.2 262
+SHA256 c7309aeda0e151d03e6955c6b3bab67adea65819d4ef32693aa833db844800c5 files/digest-xmms-infinity-0.6.2 262
+MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
+RMD160 6842e2189a50bd8a98e84802c38180ac1421c00e metadata.xml 158
+SHA256 dfb5b47e6836db39fb187301dfcff1c2605e91d13d21db160806a563d8c75f9b metadata.xml 158
+MD5 0c96eeafb11704181fc49281ce14cee2 xmms-infinity-0.2.ebuild 819
+RMD160 1470b7163bed26964d1fea28caa90be2d11557c8 xmms-infinity-0.2.ebuild 819
+SHA256 150dc5afac5c84b5b9d9fa16c27c8328d1745da46565d1516f89b9030ca23335 xmms-infinity-0.2.ebuild 819
+MD5 6d267e5c0f6930c52d67c256061974b3 xmms-infinity-0.5.8.ebuild 742
+RMD160 c6a23bd3625d0868ebf3bbfbd70bac10d70b838b xmms-infinity-0.5.8.ebuild 742
+SHA256 2d50ad0f6e1dc9c794134812d9c9c99e2d6caa99db73eae12328a7672c3b3f19 xmms-infinity-0.5.8.ebuild 742
+MD5 7c1d7a6eb08545758db47ef58ccc83b1 xmms-infinity-0.6.2.ebuild 671
+RMD160 aecc32fc5ce5bc56fd18d46ce06a6bd162fc1cef xmms-infinity-0.6.2.ebuild 671
+SHA256 182873e4ca5bf2a6e08891d7d9e3692d96eae866d25d099f1269800995854216 xmms-infinity-0.6.2.ebuild 671
