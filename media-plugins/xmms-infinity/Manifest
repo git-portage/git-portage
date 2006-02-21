@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5853ad9dd443193f29ca0569cc419aa1 ChangeLog 1735
 RMD160 d7fd3d8b7f9a5202fba4880d4949fb0939c27d01 ChangeLog 1735
 SHA256 59365d8c6fbe7e74f1fc4701c94d56dcf8f1d49e5ef57fe235d1d2a94747c61e ChangeLog 1735
@@ -22,3 +25,10 @@ SHA256 2d50ad0f6e1dc9c794134812d9c9c99e2d6caa99db73eae12328a7672c3b3f19 xmms-inf
 MD5 adaf892df125a8bc82f0cbe31ea31193 xmms-infinity-0.6.2.ebuild 670
 RMD160 3a29456c9d0403def17c6d860f4457edb8295971 xmms-infinity-0.6.2.ebuild 670
 SHA256 f0f956503be73b54bcfb8d775d7e9dc2f3d457acd7f66c9b3fae2e93e0d89a4d xmms-infinity-0.6.2.ebuild 670
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFD+lvnwUpWvClEHQoRAmwvAJ9NvLQ8FoGTqmR8FLyp6734rs9frACeIVlt
+Dw+GC5erFC+nobnAi8D0Ds8=
+=ZpwM
+-----END PGP SIGNATURE-----
