@@ -1,0 +1,6 @@
+MD5 1c6befb6674e6ac7b3771995ab0db5ab files/digest-setarch-1.8 229
+RMD160 c3967542255864b979b31b975c713eeb547d9631 files/digest-setarch-1.8 229
+SHA256 f5b26a1ddf0b29a7364ee6db51e2ada256143fe70990fca163d2562c3dad52a8 files/digest-setarch-1.8 229
+MD5 83ed8baa4d76e75bc42286f9f514d537 setarch-1.8.ebuild 644
+RMD160 58e01ade1980c093638b5b31286aec3cfd421b0a setarch-1.8.ebuild 644
+SHA256 e6b41e1ec2c9e5de4bc869882da02ce49921a0563c72e8ecded3aa316f526189 setarch-1.8.ebuild 644
