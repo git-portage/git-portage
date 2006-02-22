@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9e3e94aee48ae439a4db9c445af82f4f ChangeLog 1760
 MD5 3a0ed27c8e0851676f171a5fd00affba files/digest-gtkmathview-0.5.1 69
 MD5 00b7d8f65dfcc01cf66295ddfc50f117 files/digest-gtkmathview-0.5.2 69
@@ -10,3 +13,10 @@ MD5 c5833ca0cf6a78cb8fc27b711a504590 gtkmathview-0.6.3.ebuild 754
 MD5 90cfd34133e07fd9cd96ccebae7ace15 gtkmathview-0.7.5.ebuild 904
 MD5 5029d2211121631e1bed420ff063f988 gtkmathview-0.7.6.ebuild 1433
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFD+6tEJrHF4yAQTrARAgMEAKCB/36q0DC27pOVTdWTlkI0PM5YKwCdHcNA
+dM5khzgsV+XFV6NO3Y1Bb8s=
+=uILL
+-----END PGP SIGNATURE-----
