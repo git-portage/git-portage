@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 57cf047567f9495c8f6d23bdceca8a60 ChangeLog 6863
 RMD160 7957f465ea2e09d2bb9d19cc2a19c2dcd4efc557 ChangeLog 6863
 SHA256 d93fa6441f628c238b5d2140cbc3aeccccd479c5416c81ae19d7fe95fed65f22 ChangeLog 6863
@@ -46,3 +49,10 @@ SHA256 d93dd2fed0c7f1eb1b34fe86d7f9a6e5990a2dcc420d6210bdd011cc107c1517 webalize
 MD5 e7883822bb2a1bcd2b8409ba709a964e webalizer-2.01.10-r5.ebuild 2550
 RMD160 d43659606a2a07f14b7a8cf7e68f40f2ede441c7 webalizer-2.01.10-r5.ebuild 2550
 SHA256 681815ed96b90494361145ecee5dfa8cfc2c5316a6f5e5886a2bbaed93992ed2 webalizer-2.01.10-r5.ebuild 2550
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD/JG5EzitwsaoONoRAiPRAKCzDaDgm+em6QHEPkq2klnTks8lggCfQw4W
+fhjEKqa3ExdiHSIDSm8gbK0=
+=JpS1
+-----END PGP SIGNATURE-----
