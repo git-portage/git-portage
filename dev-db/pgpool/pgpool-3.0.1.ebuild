@@ -1,10 +1,10 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/pgpool/Attic/pgpool-2.6.5.ebuild,v 1.1 2005/11/12 15:05:07 nakano Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/pgpool/Attic/pgpool-3.0.1.ebuild,v 1.1 2006/02/22 09:39:30 nakano Exp $
 
 DESCRIPTION="Connection pool server for PostgreSQL"
 HOMEPAGE="http://pgpool.projects.postgresql.org/"
-SRC_URI="http://pgfoundry.org/frs/download.php/499/${P}.tar.gz"
+SRC_URI="http://pgfoundry.org/frs/download.php/733/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
