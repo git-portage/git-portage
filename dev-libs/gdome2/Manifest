@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 42dc4c77b5ff274ab251824101aa8544 ChangeLog 2167
 MD5 e6b845ed3e5939ce62ee4d95f942071f files/digest-gdome2-0.7.2 64
 MD5 998bb98160e3d9c3f967b518e4d12341 files/digest-gdome2-0.7.4 64
@@ -11,3 +14,10 @@ MD5 f7f7c1291cddbbfac67f139a0c39052e gdome2-0.8.0.ebuild 889
 MD5 7e4099439253fe1844ab6bce5226f472 gdome2-0.8.1-r1.ebuild 753
 MD5 145361578d518500a08aab2a95ba869b gdome2-0.8.1.ebuild 625
 MD5 dffd46174e78b327c834fc3e4b1cf848 metadata.xml 160
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFD+6nTJrHF4yAQTrARAhFzAJ4r63qbKxYtS10Cgjh23KUv0HKX9ACgrUYo
+ASxDJGj109gJMtKv78o7j/c=
+=SUSi
+-----END PGP SIGNATURE-----
