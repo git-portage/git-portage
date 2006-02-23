@@ -7,6 +7,6 @@ SHA256 b52fed128320b9c0aec1327895fbb050358b97c708c6c090aa35669e9c234e00 files/di
 MD5 a37bab73e2f24b213932c30997d3d360 metadata.xml 156
 RMD160 c1274bdccf57603d580de0075ba07a35b7509560 metadata.xml 156
 SHA256 5101ab0d4cc8c7125eea733c44e86962769bd77acaf53b69223b9cadcdd29055 metadata.xml 156
-MD5 52a60f11297db9c26d11cbfd6f7aa7fb xcursor-themes-1.0.1.ebuild 563
-RMD160 12efc198257838eb1f4c26d6368ea2f419809b8a xcursor-themes-1.0.1.ebuild 563
-SHA256 52b1551def0860478526f04bb3bb5b37ae15ba03349c5c61aa09f9f55a13eb6c xcursor-themes-1.0.1.ebuild 563
+MD5 f0b90c5522f02ea0a15ccf9ae08f60c5 xcursor-themes-1.0.1.ebuild 579
+RMD160 4cd86ea542fc7ad44aeb4e605b96ebb5816724ed xcursor-themes-1.0.1.ebuild 579
+SHA256 4ccfafd9231c6aeff38d8325d78c64f7ffd39973c5dfbb54987abcc3e6ce50d9 xcursor-themes-1.0.1.ebuild 579
