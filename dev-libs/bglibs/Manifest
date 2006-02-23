@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 52181505cd938ec9add1e719cf5e1c7b ChangeLog 3938
 MD5 a34cc890d690e7d4e65f2c851e9f2259 bglibs-1.001.ebuild 658
 MD5 65b35772b75f5e197fe820cc06da8d0d bglibs-1.009-r1.ebuild 1190
@@ -16,3 +19,10 @@ MD5 8c9e81780e348b2d88639640431cafb9 files/digest-bglibs-1.019 64
 MD5 8c9e81780e348b2d88639640431cafb9 files/digest-bglibs-1.019-r1 64
 MD5 5a68518177325a5df04f79225377b6c9 files/digest-bglibs-1.031 64
 MD5 b0d485ea1a51fb83c70daedef2599272 metadata.xml 279
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFD/fc3KRy60XGEcJIRAsGLAJ9OplasgZNsjQD43+RJwC82H1q4ZwCfZwhD
++61to5QfANKeFjYMyvHECbs=
+=K9Rf
+-----END PGP SIGNATURE-----
