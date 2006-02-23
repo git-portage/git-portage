@@ -1,4 +1,4 @@
-MD5 7f8ab5908bb7e859cbead2273ecad5e5 ChangeLog 13054
+MD5 0e8a5882970b19e670731c0c742b38d3 ChangeLog 13154
 MD5 438d865640f00b860f2c3f88b21e621e files/digest-gpgme-0.3.14-r1 64
 MD5 4ca60fb78dc0701418130b3f6f18c18f files/digest-gpgme-1.0.2 63
 MD5 c7fc60919fd40585f41b90da49e9bf3f files/digest-gpgme-1.0.3 63
@@ -8,5 +8,5 @@ MD5 afc6d9e463f4b389eb085af310f8b74f files/gpgme3.m4.patch 482
 MD5 01c6d97b40dda97420a63cb2499101a5 gpgme-0.3.14-r1.ebuild 2436
 MD5 30461cc0601654249f402132f3b8d286 gpgme-1.0.2.ebuild 1901
 MD5 c2d5eb24b51350faf76c13725219ddc9 gpgme-1.0.3.ebuild 1527
-MD5 548ea368059faada404d31e7b740907c gpgme-1.1.0.ebuild 1666
+MD5 13921b094794db02ff53f2631138fb77 gpgme-1.1.0.ebuild 1667
 MD5 ce0db60fd655ade98789a1643d4fdd9d metadata.xml 314
