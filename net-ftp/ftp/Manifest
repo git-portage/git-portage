@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a48e776639eb4ab2fed08ae92441de4b ChangeLog 3848
 MD5 036b2200a177f3266c5cbb3f4d5e4ed5 files/digest-ftp-0.17-r3 66
 MD5 036b2200a177f3266c5cbb3f4d5e4ed5 files/digest-ftp-0.17-r5 66
@@ -17,3 +20,10 @@ MD5 80ca646c7ebf7d86e937294242836ea6 ftp-0.17-r3.ebuild 1034
 MD5 45fd632e8f4c81f73a7ab97dac005132 ftp-0.17-r5.ebuild 1413
 MD5 d2179d107f4ebe75e9aea265b28c4f9c ftp-0.17-r6.ebuild 1543
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFD/XftViELBEf1JB0RAgLiAJ9KzKuamkqHSIe6gApM/ekV47yghwCffJ2J
+2CXnzT4WVfceip9vJVmG9xw=
+=6w20
+-----END PGP SIGNATURE-----
