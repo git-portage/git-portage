@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0866f26918a258e8dee630f9aedfac3b ChangeLog 15205
 MD5 b1cd4f5d4adf64b0c6ce68ebe818a495 files/digest-gedit-0.9.6-r1 64
 MD5 763002eaf1fd9644372270e02cd47510 files/digest-gedit-2.10.3 66
@@ -11,3 +14,10 @@ MD5 8f1e9c292ba4538868f72a7413279984 gedit-2.10.3.ebuild 923
 MD5 21be6ae25fea18ed5c0045e4dce9e0bb gedit-2.10.5.ebuild 1024
 MD5 8157abc0a72adfc4771bfbebae5e818e gedit-2.12.1.ebuild 980
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFD/RNdJrHF4yAQTrARAjiMAJ9AL1qv1WSQ1GsnGiK+kxZIf9sxpQCdGXZ0
+L17mnlB/fFbWbcAZdUDMnns=
+=r1b4
+-----END PGP SIGNATURE-----
