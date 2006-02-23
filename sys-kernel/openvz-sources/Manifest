@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 06bb6c37ef9c5fd89f69f2462b75bb3d ChangeLog 3556
 RMD160 ae91841a1dd71af43a2698075bf40b52accbaeb9 ChangeLog 3556
 SHA256 cdcfee0c98948a0f1de32b32ccef66689456f91578b09c3e9ecee90b96d5a24f ChangeLog 3556
@@ -28,3 +31,10 @@ SHA256 ecf31353aad07dc4ee72ed93bcd1bc02b7f839e0267c2a4bf4e9276e1b1a6ba2 openvz-s
 MD5 a264a6f69fe6838b096dcffb437329cd openvz-sources-025.014.ebuild 803
 RMD160 5919b644234343094961a5faaf79c528e8e60775 openvz-sources-025.014.ebuild 803
 SHA256 0e6cadf6a773aca3948a5f784bcbad8a999ec03c0bf78a96ba9e523f78f93aff openvz-sources-025.014.ebuild 803
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFD/iX3flZ8QqxhrsMRAj9+AJ4gfgU0a36hPpqyGncAA+XHhJmw2QCgsR4A
+vD0aoRaG+8zWujytxdvW1KQ=
+=JNhy
+-----END PGP SIGNATURE-----
