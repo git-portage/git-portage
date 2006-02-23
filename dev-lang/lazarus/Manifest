@@ -1,4 +1,6 @@
-MD5 dac5ea50c2d379cc8e0f8e1ed2323f2a ChangeLog 895
+MD5 fed39e4266e64f691c6506e380405226 ChangeLog 1049
 MD5 abbae63cd6c109adfb2535d9b12c5625 files/digest-lazarus-0.9.10 69
+MD5 d5b2041991280d361d5294e1b39ecca4 files/digest-lazarus-0.9.12 69
 MD5 18fafbb8dbbb226c1f7a7fbe95d6a8bc lazarus-0.9.10.ebuild 2056
+MD5 9b139f9acc08bd3c8c92cd63a5c3c67e lazarus-0.9.12.ebuild 2175
 MD5 8773813255798a06aad7b06e083a1a55 metadata.xml 281
