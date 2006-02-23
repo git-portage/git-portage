@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8974290d72b03a624ef45e4da75ebe32 ChangeLog 5044
 MD5 69d713e85c4b770343fa03ed0e8c01b7 files/digest-python-ldap-2.0.10 147
 MD5 150055e48f2631fffd32bdb4e40b067b files/digest-python-ldap-2.0.11 147
@@ -6,3 +9,10 @@ MD5 71c4638c9c88af75b58e5f5cb54fe008 metadata.xml 159
 MD5 a42b1bf591212834005bfc07fae44dc9 python-ldap-2.0.10.ebuild 1537
 MD5 d6ea8238c5cf21635dce7e96f9e26bb3 python-ldap-2.0.11.ebuild 1537
 MD5 0d58c818214b1bc1e5c4f0fd7c93749e python-ldap-2.0.6.ebuild 1499
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFD/c5WKRy60XGEcJIRAkWvAJ0VVI043DYupDdL2/Hpyq45f51g0ACfSNDe
+sVTaeTizKwdNjBj5QkxVbWI=
+=6ilt
+-----END PGP SIGNATURE-----
