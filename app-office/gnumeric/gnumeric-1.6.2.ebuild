@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/gnumeric/Attic/gnumeric-1.6.1.ebuild,v 1.3 2006/02/23 17:31:55 chutzpah Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/gnumeric/Attic/gnumeric-1.6.2.ebuild,v 1.1 2006/02/23 17:31:55 chutzpah Exp $
 
 inherit eutils flag-o-matic gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/projects/gnumeric/"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="gnome python static"
 # bonobo libgda
@@ -18,7 +18,7 @@ RDEPEND="sys-libs/zlib
 	app-arch/bzip2
 	>=dev-libs/glib-2.6
 	>=gnome-extra/libgsf-1.13.2
-	~x11-libs/goffice-0.1.2
+	>=x11-libs/goffice-0.2.0
 	>=dev-libs/libxml2-2.4.12
 	>=x11-libs/pango-1.8.1
 
