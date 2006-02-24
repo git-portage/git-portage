@@ -1,4 +1,4 @@
-MD5 7b66cb239734664324c57f991b4ea3f8 ChangeLog 7525
+MD5 7f1dd0aae131b3bd8f3d80661cf53d2c ChangeLog 7639
 MD5 4e1e8378e4303b131780f2b9263a6810 files/digest-gst-plugins-ffmpeg-0.10.0 71
 MD5 4e1e8378e4303b131780f2b9263a6810 files/digest-gst-plugins-ffmpeg-0.10.0-r1 71
 MD5 bca5ec805820433590977e10928cc8a3 files/digest-gst-plugins-ffmpeg-0.8.4 70
@@ -11,7 +11,7 @@ MD5 622065818c9e4ae7054c4230d3205d5f files/ffmpeg_dos.patch 3467
 MD5 59ef3574f3e888dd1353990d7b3c74ba files/gst-ffmpeg-gcc4.patch 4606
 MD5 17bff3394f5317a370ff75f983c76d16 files/gst-plugins-ffmpeg-0.8.4-eoshangfix.patch 905
 MD5 2963f26bd29fbec176f2e0fb08213e75 files/gst-plugins-ffmpeg-0.8.5-gmake.patch 322
-MD5 88b2f6fa9bb106219c9770c357d0f63c gst-plugins-ffmpeg-0.10.0-r1.ebuild 1336
+MD5 f9f04da297ecf129fb6678dbfd8116d9 gst-plugins-ffmpeg-0.10.0-r1.ebuild 1339
 MD5 bd9a573e4c8653240c98a7b3cb718210 gst-plugins-ffmpeg-0.10.0.ebuild 1261
 MD5 435de796dc56190d7ddcab415a7569d4 gst-plugins-ffmpeg-0.8.4-r1.ebuild 1677
 MD5 e71143901d9b301f20a71ae2667d5d12 gst-plugins-ffmpeg-0.8.4.ebuild 1487
