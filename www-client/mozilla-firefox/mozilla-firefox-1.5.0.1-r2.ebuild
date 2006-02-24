@@ -1,13 +1,14 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-firefox/Attic/mozilla-firefox-1.5.0.1.ebuild,v 1.4 2006/02/06 14:18:58 anarchy Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-firefox/Attic/mozilla-firefox-1.5.0.1-r2.ebuild,v 1.1 2006/02/24 14:21:23 anarchy Exp $
 
 unset ALLOWED_FLAGS  # stupid extra-functions.sh ... bug 49179
 
 inherit flag-o-matic toolchain-funcs eutils mozconfig-2 mozilla-launcher makeedit multilib fdo-mime mozextension autotools
 
-LANGS="ar bg ca cs da de el en-GB es-AR es-ES eu fi fr ga-IE gu-IN he hu it ja ko lt mk mn  nb-NO nl pa-IN pl pt-BR ro ru sk sl sv-SE tr zh-CN zh-TW"
-PVER="1.0"
+LANGS="ar ca cs da de el en-GB es-AR es-ES fi fr ga-IE he hu it ja ko mk nb-NO nl pl pt-BR ro ru sk sl sv-SE tr zh-CN zh-TW"
+SHORTLANGS="es-ES ga-IE nb-NO sv-SE"
+PVER="1.1"
 
 DESCRIPTION="Firefox Web Browser"
 HOMEPAGE="http://www.mozilla.org/projects/firefox/"
@@ -16,8 +17,11 @@ SRC_URI="ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${PV}/source/fir
 	http://dev.gentoo.org/~anarchy/dist/${P}-patches-${PVER}.tar.bz2"
 
 for X in ${LANGS} ; do
-	SRC_URI="${SRC_URI} linguas_${X/-/_}? ( mirror://gentoo/firefox-${X}-${PV}.xpi
-		http://dev.gentoo.org/~anarchy/linguas/firefox-${X}-${PV}.xpi )"
+	SRC_URI="${SRC_URI} linguas_${X/-/_}? ( mirror://gentoo/firefox-${X}-${PV}.xpi )"
+done
+
+for X in ${SHORTLANGS} ; do
+	SRC_URI="${SRC_URI} linguas_${X%%-*}? ( mirror://gentoo/firefox-${X}-${PV}.xpi )"
 done
 
 KEYWORDS="-* ~amd64 ~ppc ~x86"
@@ -48,6 +52,12 @@ linguas() {
 	for LANG in ${LINGUAS//_/-}; do
 		if hasq ${LANG} ${LANGS} en; then
 			echo -n "${LANG} "
+		else
+			local SLANG
+			for SLANG in ${SHORTLANGS}; do
+				[[ ${LANG} == ${SLANG%%-*} ]] && \
+					echo -n "${SLANG} "
+			done
 		fi
 	done
 }
@@ -100,6 +110,7 @@ src_compile() {
 	mozconfig_annotate ''  --enable-canvas
 	mozconfig_annotate '' --with-system-nspr
 	mozconfig_annotate '' --with-system-nss
+	mozconfig_annotate '' --enable-official-branding
 
 	# Bug 60668: Galeon doesn't build without oji enabled, so enable it
 	# regardless of java setting.
@@ -244,15 +255,15 @@ pkg_postinst() {
 
 	echo  ""
 	ewarn "Please remember to rebuild any packages that you have built"
-	ewarn "against firefox. Some packages might be busted please search"
-	ewarn "http://bugs.gentoo.org if no bug is open, then please open a new"
-	ewarn "bug report so these can be fixed. Before filling bugs make sure you"
-	ewarn "have moved $HOME/.mozilla our of way and tested with clean profile."
+	ewarn "against firefox. Some packages might be broken by the upgrade; if this"
+	ewarn "is the case, please search at http://bugs.gentoo.org and open a new bug"
+	ewarn "if one does not exist. Before filing any bugs, please move or remove ~/.mozilla"
+	ewarn "and test with a clean profile directory."
 	ewarn "Thank you! anarchy@gentoo.org."
 
 	echo     ""
-	einfo "I am unable to brand firefox or thunderbird officially yet."
-	einfo "You will see that everything says Deer Park cause of this."
+	einfo "Any regchrome errors can be ignored right now, this is due to"
+	einfo "mozilla-firefox-1.0.x. being unregistered with mozilla-launcher."
 
 	epause 15
 }
