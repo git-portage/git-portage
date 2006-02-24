@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 2ca60cc5fca52a62d4687670b42239ae ChangeLog 44964
 RMD160 5a37cafce9fdbbc00da0f3218148a15bd7bab286 ChangeLog 44964
 SHA256 49bea12de6d373a5d1ac2fd9e6d1a3c8239f58a75f5db62c1d9330800786bedf ChangeLog 44964
@@ -76,6 +73,9 @@ SHA256 55dfdfa182c6a8f9b39a15a5d897313cef65aa4369630e588f8410aab6970627 files/di
 MD5 340e546ce7b64129122115c8301d915e files/digest-kdebase-3.5.1-r1 142
 RMD160 8fcd5454724efcf07804b2296a098343733bc198 files/digest-kdebase-3.5.1-r1 142
 SHA256 55dfdfa182c6a8f9b39a15a5d897313cef65aa4369630e588f8410aab6970627 files/digest-kdebase-3.5.1-r1 142
+MD5 4438fa374b4da526bac328d7346a802d files/digest-kdebase-3.5.1-r2 518
+RMD160 780914788cfe9180ceb9cf4494aeb8ff7e86f8df files/digest-kdebase-3.5.1-r2 518
+SHA256 5e2089f73b62efd9f20d7499ff0801b215a8a28d887d7629ca7bfa5764aea14a files/digest-kdebase-3.5.1-r2 518
 MD5 2b5419b0b173138e22fe03f4157d5660 files/kde-np.pam 379
 RMD160 a7ce9d94fac98f513e0df2b59026c17e0999c33c files/kde-np.pam 379
 SHA256 e84fa10df5ec9b81b9a19d373fa60d4ebeaad4cd748a775f3dcc15921c7657e0 files/kde-np.pam 379
@@ -112,6 +112,9 @@ SHA256 f2f9adca33d71f4b27763a07251cf6f2e0be75613e92449a816b7efc9ef3e734 files/kd
 MD5 f06224b0a38152e5d3435b00a70bcf6c files/konsole-3.3.2.patch 1201
 RMD160 b25eaa3561a402620413ba8a2be2db91e564461e files/konsole-3.3.2.patch 1201
 SHA256 bab26c70517b86d93423ea2c73e6ba85c14df1e317b0b91d5ed7aef4db736e78 files/konsole-3.3.2.patch 1201
+MD5 568485759876c71e1165233732805315 files/konsole-3.5.1-detach-send2all.patch 951
+RMD160 e299f233a2960feb34ceea378ce80e09bebfbf33 files/konsole-3.5.1-detach-send2all.patch 951
+SHA256 7502f1ff32ccdd0d1570b51cee2c3519e490b10654485f7b4d200d4f41f91962 files/konsole-3.5.1-detach-send2all.patch 951
 MD5 42226b3baf60c509e74036e7bb7a7b4e files/kxkb3.5.1.xx_XX_layouts.patch 806
 RMD160 9c0f77dd658e01795ad4ec0fa7ed11fcb2218af1 files/kxkb3.5.1.xx_XX_layouts.patch 806
 SHA256 fd3010f128ad54327558857135d0ab8f814b2e88cb4fb99086b4ac831c7dc83d files/kxkb3.5.1.xx_XX_layouts.patch 806
@@ -151,16 +154,12 @@ SHA256 95a4752cf7990a31a4ae3ba381b1d01840a7e526c875f3a45475d784bc910da1 kdebase-
 MD5 44c869f0a4cbebddf5726413985217d9 kdebase-3.5.1-r1.ebuild 5212
 RMD160 5bc39a5675a2499ef01c9a3b93d5af423be2ed69 kdebase-3.5.1-r1.ebuild 5212
 SHA256 86ac748dccd7b740709cb0cf1af1562f49eb7e1c35ce93a30a0d3c9a240c1c02 kdebase-3.5.1-r1.ebuild 5212
+MD5 66b2503ef20a5ee0c6eb78d2080aa900 kdebase-3.5.1-r2.ebuild 5261
+RMD160 1f650152ad33715fab707a135b767dcdb92a4a61 kdebase-3.5.1-r2.ebuild 5261
+SHA256 89575de00bfa6b2a54fe1209c280f3579b6aa541d8a72b7f65caac5fb5528599 kdebase-3.5.1-r2.ebuild 5261
 MD5 e4b268e5fd737ffd4858993020e915ab kdebase-3.5.1.ebuild 5116
 RMD160 29a90af9ace387020879187c1dd7580661e4ea0d kdebase-3.5.1.ebuild 5116
 SHA256 18607df8898fa044582cca3d40cb94ba255991b3398183dbe9aaeda5f8eca714 kdebase-3.5.1.ebuild 5116
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
 RMD160 ecce3b981f150c45ae1e84e2d208e678d6124259 metadata.xml 156
 SHA256 2f4da28506b9d4185f320f67a6191d30c7a921217ed4447ed46ea0bc4aefc79a metadata.xml 156
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD9OHHJrHF4yAQTrARAh8wAJ0Yo+eKxU90kgSBiI77UpI6A0EsawCglRqX
-psyIjK4lKeSzV66oZity81w=
-=NM7T
------END PGP SIGNATURE-----
