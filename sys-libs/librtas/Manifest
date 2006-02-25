@@ -1,0 +1,3 @@
+MD5 4999365d095cb8f019bf095a5489184d files/digest-librtas-2.0.0 64
+MD5 9ac28076298d5466a7326e296d302538 files/librtas-2.0.0-remove-doc.patch 430
+MD5 ebcfdf86494718c425c3256ef62275ab librtas-2.0.0.ebuild 613
