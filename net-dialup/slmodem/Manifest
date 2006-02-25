@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 869e338efdc34bd749b77ccbb02b4128 ChangeLog 13060
 RMD160 3a5eb4515119051dab7cda753a7c84c50b5b7a19 ChangeLog 13060
 SHA256 65f51828c8efe1d893dc5733db33c588d7eec6ca853e58eef60c971b8a10d0e4 ChangeLog 13060
@@ -67,3 +70,10 @@ SHA256 a4e46e3bbc892779f8a0fed00ebd13c7ac901b982f1dddb6c547d1d795df8587 slmodem-
 MD5 da3f5db025a3799ee1bdf5b9eef53601 slmodem-2.9.9d.ebuild 3553
 RMD160 f1ca0a06fc2228fb0ef83dc9ce45c235fe3de9bb slmodem-2.9.9d.ebuild 3553
 SHA256 ca8ea2ac5d1eaa896b6c43576ffedd66561c5c900b4db301e53721c1a1db9c58 slmodem-2.9.9d.ebuild 3553
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEAM0EmdTrptrqvGERAnVgAJ9aPs4Z7Lu7KN5b3oWkcNswpvkSIACfcTnc
+xmiVOy5KDai6hrVcav8jLZM=
+=FazC
+-----END PGP SIGNATURE-----
