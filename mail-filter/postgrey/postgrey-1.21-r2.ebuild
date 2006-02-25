@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/postgrey/Attic/postgrey-1.21-r2.ebuild,v 1.3 2005/12/12 10:31:25 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/postgrey/Attic/postgrey-1.21-r2.ebuild,v 1.4 2006/02/25 17:59:13 ticho Exp $
 
 inherit eutils
 
@@ -50,8 +50,8 @@ src_install () {
 	dodoc Changes README
 
 	# init.d + conf.d files
-	newinitd ${FILESDIR}/${PN}.rc.new-r2 ${PN}
-	newconfd ${FILESDIR}/${PN}.conf.new ${PN}
+	newinitd ${FILESDIR}/${PN}.rc ${PN}
+	newconfd ${FILESDIR}/${PN}.conf ${PN}
 }
 
 pkg_postinst() {
