@@ -1,22 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 0aa114909046c3173c5b60094e1e4191 ChangeLog 674
 RMD160 cfcf59b6b6af12efd6c4a56c30adc79d74a79f54 ChangeLog 674
 SHA256 17c8851a3eecc6cac73facb8f339433a66c4ab79c75dc5a1ba7f44e69660989f ChangeLog 674
-MD5 91fc8fd2d52e2d06a928a29bb1fc712f audacious-docklet-0.1.1.ebuild 734
-RMD160 5a6a078e1ea4559ef205f10f231c89770e775fd6 audacious-docklet-0.1.1.ebuild 734
-SHA256 219e816b9888d464c855a70985efa43f420d5ab2a7118da2c52547790137dac9 audacious-docklet-0.1.1.ebuild 734
+MD5 a12ea7327262179dda0fd8f05a72a382 audacious-docklet-0.1.1.ebuild 761
+RMD160 95c4ee98fe07051269c6a4101c977130ccbd54a9 audacious-docklet-0.1.1.ebuild 761
+SHA256 b4b188d88ccd5fd8204409bbb5247f30df1ad97a181ed6d694d9d22ecb6f1660 audacious-docklet-0.1.1.ebuild 761
 MD5 21e78b2eb3aa9926f4126799b429a97b files/digest-audacious-docklet-0.1.1 274
 RMD160 55a42f41c67fd6fe0a6e0399b9bb5b8c42148605 files/digest-audacious-docklet-0.1.1 274
 SHA256 00184e6a9984a425f1410ec6e0d1bb62413594043f37a644fd90b3681ffcbd34 files/digest-audacious-docklet-0.1.1 274
 MD5 319fe8f45b51a2d31f8d4e9a4071ca10 metadata.xml 248
 RMD160 f9de13e16a150195633b055ebe61bb4cea95160d metadata.xml 248
 SHA256 6a8ca116bded5cdd92cb700f92acd22b01ae159ef1b69c60a03fc9859bb9b3d6 metadata.xml 248
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.1 (GNU/Linux)
-
-iD8DBQFEAN/yp5vW4rUFj5oRArIvAJ43BOVsWBowqp0/4VhwytHWPGdgWwCglWDP
-vmK6MtC/FLivrAK3mr9cJ60=
-=rZ4F
------END PGP SIGNATURE-----
