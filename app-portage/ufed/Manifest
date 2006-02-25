@@ -1,4 +1,4 @@
-MD5 59e29846fcc5d3c4fe2dd6f29e8fab5f ChangeLog 5295
+MD5 36a07d950375f9c547aab42a39693794 ChangeLog 5297
 MD5 4c94b074dd20cd29d231b0bf50bea06c files/digest-ufed-0.36 61
 MD5 773221c03c705b595a0aa42d003532ab files/digest-ufed-0.39 61
 MD5 b67e3c8b2f81a167ba48470321e02a14 files/digest-ufed-0.40-r1 61
@@ -6,4 +6,4 @@ MD5 9ce640539af57edfa74d5269b82b8a79 files/ufed-0.40-useorder.patch 983
 MD5 5ccf37e59ee3f6c65bd263050cf2d85e metadata.xml 265
 MD5 e0b0654bdb84c335b99618eb130b606f ufed-0.36.ebuild 661
 MD5 b5afc70abeaaee4f62f36a700488fe7e ufed-0.39.ebuild 674
-MD5 afc5a424b605a46fd28142eab382ff83 ufed-0.40-r1.ebuild 875
+MD5 817bb38ed016472d9a640ca846072a87 ufed-0.40-r1.ebuild 877
