@@ -1,4 +1,4 @@
-MD5 e25a598f9df10bbf4749cfd14f0cc794 ChangeLog 4233
+MD5 da45466a574c0c99684eb380fd2999e5 ChangeLog 4232
 MD5 036b2200a177f3266c5cbb3f4d5e4ed5 files/digest-ftp-0.17-r3 66
 MD5 036b2200a177f3266c5cbb3f4d5e4ed5 files/digest-ftp-0.17-r5 66
 MD5 036b2200a177f3266c5cbb3f4d5e4ed5 files/digest-ftp-0.17-r6 66
@@ -15,5 +15,5 @@ MD5 d632888a47c713e0ee59c4677338ca57 files/netkit-ftp-0.17-segv.patch 2009
 MD5 c6d25ab53501677130cabad19092b0a5 files/netkit-ftp-0.17-ssl-0.2.patch 29528
 MD5 80ca646c7ebf7d86e937294242836ea6 ftp-0.17-r3.ebuild 1034
 MD5 45fd632e8f4c81f73a7ab97dac005132 ftp-0.17-r5.ebuild 1413
-MD5 7efe9b6b292465f0333baab0b8616322 ftp-0.17-r6.ebuild 1540
+MD5 e350f94e8c4266e4168836180c243d62 ftp-0.17-r6.ebuild 1539
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
