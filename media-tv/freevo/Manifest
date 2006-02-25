@@ -1,21 +1,39 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 6a7865952cccddf09a31c2ee7b4cc6da ChangeLog 4274
+RMD160 3d470f90d8481d37c95fe9c776e027cd2d15760e ChangeLog 4274
+SHA256 6175ecf727d9a65d11e20f7a056434e2d7490f06f12cf244206f0213f35160de ChangeLog 4274
 MD5 20137be2595c8c7411bc0082bab68834 files/digest-freevo-1.5.1 65
+RMD160 ef8cb569117a0dc7c7f2426497ba8762b2d0421b files/digest-freevo-1.5.1 65
+SHA256 ae4dfb1d8c27ffcc48a0dccdef0c504e5b632695da1a2a0656d4a7126e07efa5 files/digest-freevo-1.5.1 65
 MD5 84e85cacf67d54ca5f607eaed7b728fc files/digest-freevo-1.5.2 65
+RMD160 f447ac71b7afc6ee777cdaabfc3390ea22f6948c files/digest-freevo-1.5.2 65
+SHA256 28c24226221cd6ef3180e3c38fc1df3968d0414700fd4bfe176f1ba7f5a8e567 files/digest-freevo-1.5.2 65
 MD5 265aeae68ac52ecefc9c67c8ee66dd9a files/digest-freevo-1.5.3 65
+RMD160 d40617d74869b9eb0a886a6762ba84cfc0f63daa files/digest-freevo-1.5.3 65
+SHA256 0433c5bea0be1cb0b0ab237a18ccb433ac85c63658d2846781e863832304f3dc files/digest-freevo-1.5.3 65
+MD5 184c875557413ec1c5bc7072ae220c39 files/digest-freevo-1.5.4 241
+RMD160 61eb8204602ac4fd0bb46cc27fb1c72cee1fa47a files/digest-freevo-1.5.4 241
+SHA256 fffc92b576365886ae6b20c7f3c8a720461e55563ad628c05c16121f3db54a97 files/digest-freevo-1.5.4 241
 MD5 059b24952b8a2cc20aca4572f32a6630 files/freevo.conf 1265
+RMD160 3a64dbd4f6978ff77780c2cfb663e4937e0f84e3 files/freevo.conf 1265
+SHA256 c74b609e3b1177cbbbd3ca507e65b5392eed18fcd488e327c63478664fbd6143 files/freevo.conf 1265
 MD5 b4b9c96e219591f94f781cbb7e023333 files/freevo.rc6 1709
+RMD160 490c9e87bf32c6becdba09c91d8370906df9c873 files/freevo.rc6 1709
+SHA256 5c660c29e212d1828b8596047c962622627c7733bee9faf77d829eb502b28341 files/freevo.rc6 1709
 MD5 bac3c1bd1a66937edf2ce722b769b0af files/xbox-lircrc 1690
+RMD160 8472024be1e467c69346ce0ea87033d76f389a2e files/xbox-lircrc 1690
+SHA256 91e726a9a99c705067931d1361352a8200a03cebb0d9e1e79187098ae1dd1070 files/xbox-lircrc 1690
 MD5 1ef09a4ee788bec2daf1f196e1cc469e freevo-1.5.1.ebuild 2942
+RMD160 c493719dc2be493f00cd8ff60661561353454634 freevo-1.5.1.ebuild 2942
+SHA256 dc2f2ada6ca338196c349211e1125adee3b17982f6a9cd029357b06cfa3a691b freevo-1.5.1.ebuild 2942
 MD5 e4d0be4338043bdd8bf8b14931568eb5 freevo-1.5.2.ebuild 2942
+RMD160 63229186cf981009f65b5b0d36446413d01e7e12 freevo-1.5.2.ebuild 2942
+SHA256 6aa3855ad01c86c602fd39a08cb9b514f3eb8ac5b8ca9e00e729fb83c6c2650d freevo-1.5.2.ebuild 2942
 MD5 415882f992c0aad6e03d18cf3e79f7a7 freevo-1.5.3.ebuild 2948
+RMD160 d73d776b79c993719620a79d684884c431ac0ad5 freevo-1.5.3.ebuild 2948
+SHA256 4dbf42950bfd993fbda93245dc8a2cc1363679e6a8284e79df9d01892514f9ae freevo-1.5.3.ebuild 2948
+MD5 3e3f00ebe830a7817dd701cef1a6cbca freevo-1.5.4.ebuild 2983
+RMD160 f003b00f1f51dc9d188f1e8d978d13e5bb51ae1c freevo-1.5.4.ebuild 2983
+SHA256 16031628097607612034d5c94e9019b5166bf0e0bdeed8e4238d2b46ebf9b384 freevo-1.5.4.ebuild 2983
 MD5 20e2255501865de5b568424821abf69d metadata.xml 161
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFC0HiAI1lqEGTUzyQRAncMAKCNeBnAF5zKGl26dmgabPbcs4JyRQCgpQ7R
-3cXouT5+Hc8IMgBhBIKyKhc=
-=9WWF
------END PGP SIGNATURE-----
+RMD160 fee76f69ba822cd04301c58fa0c26ecaf8cc8fb9 metadata.xml 161
+SHA256 82d33b3ca60662bc745d30d53bb20d04ea588d5aae556ed16efcacdcc37fd4bd metadata.xml 161
