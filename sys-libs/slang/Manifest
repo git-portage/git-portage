@@ -1,21 +1,21 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 e67e87bbc2336a819942c664f2c46a7f ChangeLog 5620
 RMD160 a187e4c2d84384955924b70e475366b46a0dfde7 ChangeLog 5620
 SHA256 110ef56297548fc27c88b0f8a359eaa1f85756177d036b40fcd0ad082f3ccf19 ChangeLog 5620
-MD5 074ddbf39cb8b9708ca9de2b1fb24366 files/digest-slang-1.4.9-r1 64
-RMD160 0fcc5d38f8f819ad388cfdf2279a7ef55ecc2869 files/digest-slang-1.4.9-r1 64
-SHA256 d016ff62758a9ae6f93793f3cc0e614949412d29095e1073c2d7a11fce3401cf files/digest-slang-1.4.9-r1 64
-MD5 074ddbf39cb8b9708ca9de2b1fb24366 files/digest-slang-1.4.9-r2 64
-RMD160 0fcc5d38f8f819ad388cfdf2279a7ef55ecc2869 files/digest-slang-1.4.9-r2 64
-SHA256 d016ff62758a9ae6f93793f3cc0e614949412d29095e1073c2d7a11fce3401cf files/digest-slang-1.4.9-r2 64
+MD5 b5f98b4cf87ea619127e661ae4a35556 files/digest-slang-1.4.9-r1 494
+RMD160 6dbac91c514e2635369b6a9cb25ee6bc31992a54 files/digest-slang-1.4.9-r1 494
+SHA256 c9f9566aec42fda74490eb91710d5630b85bcf5c6a25e5c6a56b6af5638e6c4a files/digest-slang-1.4.9-r1 494
+MD5 b5f98b4cf87ea619127e661ae4a35556 files/digest-slang-1.4.9-r2 494
+RMD160 6dbac91c514e2635369b6a9cb25ee6bc31992a54 files/digest-slang-1.4.9-r2 494
+SHA256 c9f9566aec42fda74490eb91710d5630b85bcf5c6a25e5c6a56b6af5638e6c4a files/digest-slang-1.4.9-r2 494
 MD5 11daf6d137e1d6ec0e3475e55522cd06 files/slang-1.4.9-autoconf.patch 4143
 RMD160 37962611ffc5c4ed3d3931ca0fdcabe350375c15 files/slang-1.4.9-autoconf.patch 4143
 SHA256 43af573129d7d08a0c5b184b667f871f656d9126f296088bfa0fbfab5cf6623f files/slang-1.4.9-autoconf.patch 4143
 MD5 7ba45dd45645107adc167e543634b8eb files/slang-1.4.9-fsuid.patch 1661
 RMD160 9a7cf62d43185bfcf20a671c9e1ca9b0fc6dbd21 files/slang-1.4.9-fsuid.patch 1661
 SHA256 9f82345946423708864373e3a8593980dedad33f66e0d427f450e1c39268c98e files/slang-1.4.9-fsuid.patch 1661
+MD5 a69e4f7558e727decb3efa8d9a9e77b6 files/slang-1.4.9-r2.tar.gz 12132
+RMD160 02c7df8f7d51c39c0bf9e729606aa1b94c3e6aaf files/slang-1.4.9-r2.tar.gz 12132
+SHA256 487174a2b5df8564b99589e789319b37ee75c52d09ce98bfb12656414cdca3fb files/slang-1.4.9-r2.tar.gz 12132
 MD5 7f9b0cb76e754575d54b6ea8f5de59f4 files/slang-1.4.9.patch 1367
 RMD160 19faebcad11394b283bd212ebd6b5e1e5bab5ef5 files/slang-1.4.9.patch 1367
 SHA256 1881233d22dfa9c69671215835fb559972f5e80a144bfdd326a067848631c273 files/slang-1.4.9.patch 1367
@@ -34,16 +34,9 @@ SHA256 9fa01b76d41790f0821da6430ea6758195d86eb9726ca43a8fc7ce2b585326ca files/sl
 MD5 bc00f0356947154d3250243bd5ec08f5 metadata.xml 219
 RMD160 355a59738ac2c3bb2de2c5cdf45b5a15a91fe4aa metadata.xml 219
 SHA256 2dd88647b8f46df7519fe3a112dba84d9af4c7933908984766cf3a25d2e30e3d metadata.xml 219
-MD5 aa05b5e6a399e3db621b204b914913ea slang-1.4.9-r1.ebuild 1792
-RMD160 4267db54799e11954b5a7877820f988ab77ae2c9 slang-1.4.9-r1.ebuild 1792
-SHA256 919843c31875cac5711fdbf2be8af11412fae7a1a50b59f919490ef0a2d9b310 slang-1.4.9-r1.ebuild 1792
-MD5 fa097ee8ef4995aeee6585a0336646da slang-1.4.9-r2.ebuild 1879
-RMD160 8f96ae3e9e9d269c9e2f72556ee90427b0ae3e11 slang-1.4.9-r2.ebuild 1879
-SHA256 3d82f4e41a0570104c9519ed566718faa0f5f1f91970dd2d5151a1f151f238ce slang-1.4.9-r2.ebuild 1879
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD9Nc69ZFPrqoILX8RAp8sAJ0R2XPmBXFAMrsC7GxOsnWugM5LygCgx/WX
-oiTdtFUq/QyctUB5DtYdlsc=
-=Ymgp
------END PGP SIGNATURE-----
+MD5 5ed19a1a8a2f44fe685b81ce6f3eb48d slang-1.4.9-r1.ebuild 1892
+RMD160 c485297c34ecae6ca5d6789e7909bee6357d2093 slang-1.4.9-r1.ebuild 1892
+SHA256 d15c98272053c7074b749bb4476d51fe752625abfbc2d0a03374f28a987fd045 slang-1.4.9-r1.ebuild 1892
+MD5 e67b8efc33dfd52c93fb139203195a98 slang-1.4.9-r2.ebuild 1905
+RMD160 b1e58b45faed0477fba92ce1eec0c19b5674d444 slang-1.4.9-r2.ebuild 1905
+SHA256 57c093f972e31fc55940e9f8f85f84ad0429626243893367c84cfe2820dd4f07 slang-1.4.9-r2.ebuild 1905
