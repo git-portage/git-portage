@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1605ddb5cb95d3da9cd52ae74cc6d2a6 ChangeLog 706
 RMD160 1f6620c67fe9ed6d8bec5efa7148b4948f81b0c1 ChangeLog 706
 SHA256 9d3b9f7c525045d6fa5e116d2d0a5607448b71e5e9ebed65d0554571ccb6aa1b ChangeLog 706
@@ -16,3 +19,10 @@ SHA256 22ed4cef9a1ee0c32d44b475daa73ad39548318eec1472fe846e898719ca770a sylpheed
 MD5 1cb1e74ba74097db8b2ab6ec1447498e sylpheed-claws-rssyl-0.4.ebuild 962
 RMD160 9b5676c737c26d9fd637442ca84f6cb94ccd491f sylpheed-claws-rssyl-0.4.ebuild 962
 SHA256 07918960e573157d1eed6654ac81700d2398eda09c8962b26043ba36fdafdfc7 sylpheed-claws-rssyl-0.4.ebuild 962
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEAhYXQlM6RnzZP+IRApG0AJ9kpp2kFs5B3A4i244QpBbQrTz3wACdHjF6
+0yvm+5pd5Hvonp31TAVqE+M=
+=yZ4M
+-----END PGP SIGNATURE-----
