@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 89b41d3c7640ebf554f0d50706f43bc4 ChangeLog 2697
 MD5 078351ded0866d14e308e5214a6e7020 files/digest-skyutils-2.8 64
 MD5 336f1121ad1f2ee4c38b3fdc24534247 metadata.xml 319
 MD5 87ceb97c5bfd07b22adaa4c852d85f59 skyutils-2.8.ebuild 696
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEAWYnjG8pv1lIUX4RAlhrAJ4mb1UX0SHgbGrfKYG3uqBjGgjnEACg2NuC
+RQRotmR+GN5YrCFuYTtW2vk=
+=aHXu
+-----END PGP SIGNATURE-----
