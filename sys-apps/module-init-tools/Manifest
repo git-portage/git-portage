@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 41572d8f3b7b83d37b675ea88b5a63f3 ChangeLog 18843
 RMD160 6862a5c1a59b184ecca0318ce0d2ff6511d1f688 ChangeLog 18843
 SHA256 3e624ed1f2566ed233a9658328843e3ac3ca1b6177aa84660ca2d0e723d327af ChangeLog 18843
@@ -64,3 +67,10 @@ SHA256 57e583e102d6c316f16ef1f098660f807880cb34ce16364611a413a793ee97d6 module-i
 MD5 ef19ad39c0567e3720cd650a2a07f6b2 module-init-tools-3.2_pre7.ebuild 5434
 RMD160 28c27e66a96863f18a06eb7f9c9bd63ca53d47a7 module-init-tools-3.2_pre7.ebuild 5434
 SHA256 ea6da4c3e5890dc80869429f1a80f354cd45647dd547bfc03b3b3c5cfdbb1e78 module-init-tools-3.2_pre7.ebuild 5434
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEAft+2+ySkm8kpY0RAhePAJ9gNxN/d0HPZPU7H/w/cVKzrfsodACggxq7
+i0wH/l2xtfPhuMtln5FgUh0=
+=AGeF
+-----END PGP SIGNATURE-----
