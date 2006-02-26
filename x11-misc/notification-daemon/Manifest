@@ -1,4 +1,4 @@
-MD5 3b420e6c07c73cb7aad039b9e4f7fd2d ChangeLog 527
+MD5 5a5ff745152b913a9031034a881494ab ChangeLog 651
 MD5 485d3e6c490bd22f64db6fdbdfb1cceb files/digest-notification-daemon-0.3.4 77
 MD5 f5775272cd7e22ae38566107c416c1e4 metadata.xml 275
-MD5 262c6c95046c809cd4492df4813b02de notification-daemon-0.3.4.ebuild 835
+MD5 558bf76638c6e4872c5add42c4636946 notification-daemon-0.3.4.ebuild 837
