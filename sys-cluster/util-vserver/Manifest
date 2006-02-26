@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 564aca321d7156115fda0f88f17a8f50 ChangeLog 8573
 RMD160 1340ebb85a9134d882d1cde6bf43eee762f48675 ChangeLog 8573
 SHA256 5251b6f15acb989260519898afa927fd25bf3256015e459ac44d337801a09e1d ChangeLog 8573
@@ -10,6 +7,9 @@ SHA256 63d21d3dfaf63cb2aa1fbe4cd9b3e710ee0647f963f41c7b586eb86728e4aab3 files/di
 MD5 75712dd6af32e28841931ad0411467cd files/digest-util-vserver-0.30.210-r3 566
 RMD160 3ae4ec6f0006ac4bf3c9cd8c16250c02f09e819d files/digest-util-vserver-0.30.210-r3 566
 SHA256 57e9dd89c26d703df8f6b226bf6784636fd21d7d0243cdfe3bb815d8b82d82c4 files/digest-util-vserver-0.30.210-r3 566
+MD5 cdd658bc475744b5bfbde25bdb949b35 files/digest-util-vserver-0.30.210-r4 566
+RMD160 3c799d2dbd534920c40f1c0004f541505ed7daaa files/digest-util-vserver-0.30.210-r4 566
+SHA256 c32a4f3d3f179735fdc7bad959294949fafc288d51880744c4d62d3dca7b174d files/digest-util-vserver-0.30.210-r4 566
 MD5 493021fa14e20216e8ce772e9dc10a62 metadata.xml 588
 RMD160 43bd819942f6f0c03bec0bcf67601a7099b59a2b metadata.xml 588
 SHA256 798e87b6d5fb379322178e9f8b7432371f630caaf3fd6ff369e35056483cc31d metadata.xml 588
@@ -19,10 +19,6 @@ SHA256 6679506da923d54bf212fededb8a739af243f5376e790dc9c427f8ebe581f930 util-vse
 MD5 e3abd2c15b504a40e930f0ea0e28af6f util-vserver-0.30.210-r3.ebuild 2911
 RMD160 c3c0d9580896c91d45cada65954fdf1b5be86ad7 util-vserver-0.30.210-r3.ebuild 2911
 SHA256 67cf084e801c3131749d681d216baa10c6bfca69807b450f259f250fec318aa2 util-vserver-0.30.210-r3.ebuild 2911
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.1 (GNU/Linux)
-
-iD8DBQFD/qnbmPFBzbX68WERAi+eAKCN++HAJ+mJwK6qRC9hXGiqBmB46wCePvW2
-DkVfR0YoFtz9LFZw4cV7fhg=
-=ntDM
------END PGP SIGNATURE-----
+MD5 1e3dbd53ed44d54cf1cc108fd2fe81ee util-vserver-0.30.210-r4.ebuild 2793
+RMD160 eb464f5d4e5231afb209ddd3b84ba545852e5d32 util-vserver-0.30.210-r4.ebuild 2793
+SHA256 f1c412a5aeabb6c11e0bb11de3f43930edb53c1aff7678d7bc999f2506bbf3d8 util-vserver-0.30.210-r4.ebuild 2793
