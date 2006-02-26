@@ -1,22 +1,15 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 becc3630047ea25c924e177ca71d2832 ChangeLog 803
-RMD160 0a7b75bdbdc2a8fa0f3ea26f5dd82ae333085651 ChangeLog 803
-SHA256 072822f8b43f2e85e6202fecf777787c38f239c4d209be66d99e78b411594577 ChangeLog 803
-MD5 0ecebc3fa25e3ff1089475aff943481f audacious-docklet-0.1.1.ebuild 760
-RMD160 2adf932cfb1d4d47ad8a3d66aabc123ba230720b audacious-docklet-0.1.1.ebuild 760
-SHA256 ddafeb51d2e2e7937daa894d785cf29797d8b9b595fa02cdeeb3abf80d92363d audacious-docklet-0.1.1.ebuild 760
-MD5 21e78b2eb3aa9926f4126799b429a97b files/digest-audacious-docklet-0.1.1 274
-RMD160 55a42f41c67fd6fe0a6e0399b9bb5b8c42148605 files/digest-audacious-docklet-0.1.1 274
-SHA256 00184e6a9984a425f1410ec6e0d1bb62413594043f37a644fd90b3681ffcbd34 files/digest-audacious-docklet-0.1.1 274
+MD5 118028a7bd399e11b07219f1324b41e0 ChangeLog 1174
+RMD160 6d034bd5bea7081c3179fbc78c9274259314560d ChangeLog 1174
+SHA256 1091bbf01a749485010b03924158a1c5c49d631a61b309174f68fa4aaea4329a ChangeLog 1174
+MD5 8c2db71e16f529f1af8eadb589fddc81 audacious-docklet-0.1.1-r1.ebuild 857
+RMD160 e882e5636c5d63fd1739cf175c8de005bb527144 audacious-docklet-0.1.1-r1.ebuild 857
+SHA256 908ed6ccca4901fcd0f6946055a318aa86fd2821ee214131a28940045f69b954 audacious-docklet-0.1.1-r1.ebuild 857
+MD5 949f5d10e3fe4e9051cf160d3188d2eb files/0.1.1-includes.patch 341
+RMD160 48d1b2e68820e856b01ed0e55b1a93da4a1a05b3 files/0.1.1-includes.patch 341
+SHA256 01da5cb37dc29980c23d04fa29c41d07ff81cf3e67d88a42ecbe03b62a65738b files/0.1.1-includes.patch 341
+MD5 21e78b2eb3aa9926f4126799b429a97b files/digest-audacious-docklet-0.1.1-r1 274
+RMD160 55a42f41c67fd6fe0a6e0399b9bb5b8c42148605 files/digest-audacious-docklet-0.1.1-r1 274
+SHA256 00184e6a9984a425f1410ec6e0d1bb62413594043f37a644fd90b3681ffcbd34 files/digest-audacious-docklet-0.1.1-r1 274
 MD5 5e7a1151a81ff2eeef7347de380c9b3f metadata.xml 246
 RMD160 1b8f363c4cb36f3bba27568265e89400ccd2690e metadata.xml 246
 SHA256 bac2ec20d538b74d2d7010325430853c2e5a447836277abe009aa0d311a965c1 metadata.xml 246
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.1 (GNU/Linux)
-
-iD8DBQFEAOYhCRZPokWLroQRAq/UAKCboC0Iuz5Wa+Tc6zSW7rNN3O3M8gCdEmXf
-mieukV7cc9mdnPL0yaj6Oxk=
-=l6DP
------END PGP SIGNATURE-----
