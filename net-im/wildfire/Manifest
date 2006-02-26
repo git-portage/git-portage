@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 86db06ca742c24bc0c26e31be13e8494 ChangeLog 484
 RMD160 e0215825fa8417087ce18495ff48f81f0b6c33fa ChangeLog 484
 SHA256 203b87ab117317cdff4ad77c3e985f7acc9eded98ae1eb25a1fd1ff065174dfa ChangeLog 484
@@ -16,3 +19,10 @@ SHA256 6b064022dfa4e0ccb9db8aed410a56c65e7d89c9fa5086de77352d9ebc6d5c9b metadata
 MD5 24ec9ec30cbca1c10010c6894a7c14d9 wildfire-2.5.0.ebuild 1944
 RMD160 2afda46b07d1dcf12c67e57f409359e63ceb1ebd wildfire-2.5.0.ebuild 1944
 SHA256 dd7887b47a9acf7f864e4556985790b5c7088d938da33bee4d76db2663d57b74 wildfire-2.5.0.ebuild 1944
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD4DBQFEAa828zY1VwezZiERAlatAJ9FbdW13NInNrZTo/HjHHulxjkY/ACXchtL
+tbSMSQA5mpPjI4rKvcttMg==
+=OSiw
+-----END PGP SIGNATURE-----
