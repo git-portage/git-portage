@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 75cbe0bdbe7a9ee3ec37ae36f196dc8c ChangeLog 1634
 MD5 72ff7fa68f0ab905336522c6398b4f17 files/76_mod_apreq.conf 384
 MD5 1fad30fc51874d46cd39dd7ada8d17d8 files/digest-libapreq2-2.04.03 73
@@ -9,3 +12,10 @@ MD5 c963ceb69bb70efa9f9563ba42af5158 libapreq2-2.04.03.ebuild 2917
 MD5 4905041d94a219f620e55a9361af331f libapreq2-2.06.ebuild 2033
 MD5 d1bf5ee9d1189bfb5b1bf015599d7cfb libapreq2-2.07.ebuild 2254
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD4DBQFEAdgUtG5z4I8BtQoRAnb9AJQL39MujsDoFZp7vLu9iKHVr1P4AKCOwhnv
+krMVSpFGh4EKGilco1VgJg==
+=D6y1
+-----END PGP SIGNATURE-----
