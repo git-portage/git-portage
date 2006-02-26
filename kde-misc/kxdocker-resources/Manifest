@@ -1,16 +1,24 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 63ed15042114de76d8bb5a3ed44fa868 ChangeLog 700
+RMD160 ec4139ccf469d19594bef9110c793aab6230b2eb ChangeLog 700
+SHA256 6d2f9849cf372103f4cc3ee702a4fdd1e0c92b24f1ca55b95ba3e4b312b59e8f ChangeLog 700
 MD5 61cd5d6e015ac14d5a0e7bd0f1bfc9cc files/digest-kxdocker-resources-0.13 77
+RMD160 83e5cf624cc7b04aea0670fb16395d28934664a2 files/digest-kxdocker-resources-0.13 77
+SHA256 5ea147b6adebdeb722bf496eca9f907212dd16a086626674e24fb53218e85da0 files/digest-kxdocker-resources-0.13 77
 MD5 10cb8611bbdfd4345a4559f32dda5ea5 files/digest-kxdocker-resources-0.14 77
+RMD160 45b8095afec77528f69aa6de86ab6b6837a9ad7e files/digest-kxdocker-resources-0.14 77
+SHA256 5394f5c8e8c939c4951badd622c796b7d85ea1dd0fc5a1aa0b7b42fd1d71fc3a files/digest-kxdocker-resources-0.14 77
+MD5 4e0efb756931567e1062b5f0acef97ee files/digest-kxdocker-resources-1.0.0 280
+RMD160 e740cdfc87205a950b34b88669849185f2a48fe3 files/digest-kxdocker-resources-1.0.0 280
+SHA256 dd4f34eb4653858a54a0f6966d56a7db05f587dc813641baa33228ee83ff39b0 files/digest-kxdocker-resources-1.0.0 280
 MD5 dad10e6fb852b9e4a4044310381e304c kxdocker-resources-0.13.ebuild 567
+RMD160 eb90f4281ae6be98042b700d6c2bd3f615b0b573 kxdocker-resources-0.13.ebuild 567
+SHA256 c599225a653723fe497f7ad52739e95e7912f435acd5d65fe63e048f5a9a9e2d kxdocker-resources-0.13.ebuild 567
 MD5 a89fc380ea6272f245339d596ba055f8 kxdocker-resources-0.14.ebuild 572
+RMD160 f33ca9a6e30e2f35509d8df32d8df0e0780990b6 kxdocker-resources-0.14.ebuild 572
+SHA256 00df03d001d81c021feae581856e4c6e99041e42214762920237a4562eedf578 kxdocker-resources-0.14.ebuild 572
+MD5 5c23b2e17ccba1b8b04237d049f0457e kxdocker-resources-1.0.0.ebuild 644
+RMD160 d3c3f6fdaeee5a401ebfd50366145aaba4779860 kxdocker-resources-1.0.0.ebuild 644
+SHA256 9dd479518ebe8095b2fb2a1e91b7bd9345fc4243082d84dc8d51032883313580 kxdocker-resources-1.0.0.ebuild 644
 MD5 af0f2c1aa4185c52dd4f4ea588f22286 metadata.xml 349
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDgGcK5mJXAu5GbtIRAjVrAJ4pGHWvI12Gkv2NgPnVzYhTjLv+owCdEJ5I
-058ldrtDB+G8JSjiWcIysRI=
-=ccxK
------END PGP SIGNATURE-----
+RMD160 d2ff75e9ad34ca5bd7bf1af21510d2c4e20ca084 metadata.xml 349
+SHA256 56e8b49cdda4e9edda2aa32fd91aae96b0c89d3b4774867a5cea4c5c58c62545 metadata.xml 349
