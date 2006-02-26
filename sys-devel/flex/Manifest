@@ -1,4 +1,4 @@
-MD5 2c39f829596c660b7157d7114c3c8405 ChangeLog 4371
+MD5 e3fad404013fc4379c5d9d08a935cb65 ChangeLog 4464
 MD5 8c9da1ab91353ab97d100e499ae722f7 files/digest-flex-2.5.31-r2 131
 MD5 e6485ab79816d0be72d96b32f139f0a0 files/digest-flex-2.5.33 64
 MD5 a50411d58e9407414db98087253bdacd files/digest-flex-2.5.4a-r5 63
@@ -14,7 +14,7 @@ MD5 de46348f431a1b72e51b8f2253ebcaf3 files/flex-2.5.4a-gcc31.patch 3189
 MD5 28010d818ed73f21c9d37fd955c9f25b files/flex-2.5.4a-skel.patch 350
 MD5 e0ebf10eb8bf4542ae57ba591daa68a4 files/flex-configure-LANG.patch 1686
 MD5 e19ca70e113a7d7d0a857350fd3ceddd flex-2.5.31-r2.ebuild 1290
-MD5 4a6829076c83a20ee9b3c5134bfcb9f3 flex-2.5.33.ebuild 1124
+MD5 3b298584c2516074b6cf877f254b0cef flex-2.5.33.ebuild 1127
 MD5 3f4500ac9117f90f14a3a82e3a5dc488 flex-2.5.4a-r5.ebuild 1304
 MD5 055a6a57659d8fa91289b775dc8d796a flex-2.5.4a-r6.ebuild 1513
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
