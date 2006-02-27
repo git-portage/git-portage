@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a98fdecb283d9ee4ac59c4ff27490d91 ChangeLog 13223
 RMD160 54ad3fa25baf9cad2fa382c4330b56bf3bff514f ChangeLog 13223
 SHA256 e05bb9010096ccd5197c7eecdb50464d707f5e22fbc0e6d72b75d9b86cfdad8b ChangeLog 13223
@@ -28,3 +31,10 @@ SHA256 2ee9717a3bfc69b2536c4682f5f6e671be6af1d52ebf66ea206d926a5d57d876 vserver-
 MD5 434bc333636bdf2d20894cdccdb81a7f vserver-sources-2.1.1_rc9-r1.ebuild 912
 RMD160 db5db6633cefc7497774166f2a6606c3023fa2ec vserver-sources-2.1.1_rc9-r1.ebuild 912
 SHA256 17666144b0894076365d60d91ec8c6c1ecdb0e580ea11832e74e3369150608e8 vserver-sources-2.1.1_rc9-r1.ebuild 912
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEAx7VflZ8QqxhrsMRAnJ0AKDHL3P/LOKRTerYrknA7PKO8r/nhgCeP3kM
+f/nc1iM7NLKCle7vHM3SMHE=
+=BBas
+-----END PGP SIGNATURE-----
