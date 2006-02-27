@@ -1,4 +1,4 @@
-MD5 2beefb00a89736773b3b590002cef3ab ChangeLog 3231
+MD5 430bba7e4e16c40776b9c3e015c21312 ChangeLog 3429
 MD5 a1f6bee0be7b749e155d9ec945ce31a4 files/digest-scponly-4.0 59
 MD5 43e0a1f99fd0eb893cf3608c3f1a236d files/digest-scponly-4.1 59
 MD5 18902f9bf0f2f546d7bdcf8d96174d8a files/digest-scponly-4.3 59
@@ -10,4 +10,4 @@ MD5 e10a0da4fac2882942ffa8360ccdd921 metadata.xml 201
 MD5 48f3604e22751295c07e471844ade2bb scponly-4.0.ebuild 3067
 MD5 dadf22d4d802d59445e6a28a7f7fc934 scponly-4.1.ebuild 1124
 MD5 6dcab119834e16747a1d62afa6be3ced scponly-4.3.ebuild 1147
-MD5 45168f94568d87dc3391d527a00b4c96 scponly-4.6.ebuild 3934
+MD5 9bf0ff80af9710e903a70988abf2508f scponly-4.6.ebuild 4031
