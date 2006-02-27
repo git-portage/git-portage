@@ -16,7 +16,7 @@ MD5 bd9a573e4c8653240c98a7b3cb718210 gst-plugins-ffmpeg-0.10.0.ebuild 1261
 MD5 435de796dc56190d7ddcab415a7569d4 gst-plugins-ffmpeg-0.8.4-r1.ebuild 1677
 MD5 e71143901d9b301f20a71ae2667d5d12 gst-plugins-ffmpeg-0.8.4.ebuild 1487
 MD5 d3fd16950041773cb07e314b73140b31 gst-plugins-ffmpeg-0.8.5.ebuild 1618
-MD5 7251fdac77e8a3ab01f83718c6074cfe gst-plugins-ffmpeg-0.8.6.ebuild 1663
-MD5 a68f6d7a7d8eb4f0234de9eeab6485b4 gst-plugins-ffmpeg-0.8.7-r1.ebuild 1582
-MD5 b2ee7964fb68b8d1930e482f1ebc9731 gst-plugins-ffmpeg-0.8.7.ebuild 1551
+MD5 ea7dbf65c777fdc0a4d019ce98317d94 gst-plugins-ffmpeg-0.8.6.ebuild 1719
+MD5 70f5ebf8ea3e37029ce42d98c1d534e9 gst-plugins-ffmpeg-0.8.7-r1.ebuild 1638
+MD5 db0b49327bf600cc13ea7ccedc8261ba gst-plugins-ffmpeg-0.8.7.ebuild 1607
 MD5 6cf6f97e79b43eaf70fa938c431342a3 metadata.xml 181
