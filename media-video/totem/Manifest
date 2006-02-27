@@ -1,4 +1,4 @@
-MD5 a8cf47cdc51559328e058c69ddbb8a71 ChangeLog 14108
+MD5 c2aa3a025d5373187f240eaba519b245 ChangeLog 14243
 MD5 ac8a4cf594e065c2ddc00dc70c8d2170 files/digest-totem-1.0.4 65
 MD5 e7c829d2432b645ddb68128a4bead344 files/digest-totem-1.2.0-r1 65
 MD5 e7c829d2432b645ddb68128a4bead344 files/digest-totem-1.2.0-r2 65
@@ -11,6 +11,6 @@ MD5 bb48541b00fafc98142cfbbea5490e8b files/totem-1.2.1-gecko-sdk.patch 1118
 MD5 06e5959e07633fd5260c6935f547d0d4 files/totem-dbus-0.60.patch 562
 MD5 74b9bd3cc5015b286abc33eb51408252 metadata.xml 521
 MD5 6645b9eed7d922972cb815cadddf7d89 totem-1.0.4.ebuild 2709
-MD5 b7d9297964f2f01c017e8c741899956d totem-1.2.0-r1.ebuild 3282
-MD5 00c3eafe90e396a5485df7ae6f64b42d totem-1.2.0-r2.ebuild 3246
-MD5 7f509918a1aff0339e2e99f87a58878a totem-1.2.1.ebuild 3020
+MD5 ea6702813a8719f6b65a4a36b125dcd9 totem-1.2.0-r1.ebuild 3281
+MD5 e8433623f9f559d1f9f291cbfa0ef509 totem-1.2.0-r2.ebuild 3246
+MD5 5a3785327c2554af7dacaa9cece917a1 totem-1.2.1.ebuild 3019
