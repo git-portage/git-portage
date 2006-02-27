@@ -1,4 +1,4 @@
-MD5 7e75b606d61f81c9a152ff47a61aa0ca ChangeLog 5559
+MD5 1a46cd5032dd23ed9ac35761ded806c9 ChangeLog 5724
 MD5 e3d10364009173b6d5e955ce5269a255 files/digest-gst-plugins-a52dec-0.10.0 76
 MD5 d3a52f3ff5372729e88874924a24265e files/digest-gst-plugins-a52dec-0.10.1 76
 MD5 e5a6b80e2dfc0bf36559f4663fb90e25 files/digest-gst-plugins-a52dec-0.8.10 72
@@ -8,5 +8,5 @@ MD5 c6fb5a06234e77c6e7bcb7cb5f2faf85 gst-plugins-a52dec-0.10.0.ebuild 344
 MD5 54df75cfb23750617bd144e83a1c97bb gst-plugins-a52dec-0.10.1.ebuild 345
 MD5 9ed8564b66270c6e2e2017eb0c45cbe9 gst-plugins-a52dec-0.8.10.ebuild 370
 MD5 41c8aca552390a361b6274f9c1fafcc0 gst-plugins-a52dec-0.8.11.ebuild 370
-MD5 e18410108cae73debaf2e170e70c00f1 gst-plugins-a52dec-0.8.12.ebuild 378
+MD5 c50a4a19fc4b09393ed48c42e8123a36 gst-plugins-a52dec-0.8.12.ebuild 377
 MD5 6cf6f97e79b43eaf70fa938c431342a3 metadata.xml 181
