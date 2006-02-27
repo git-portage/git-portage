@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 37de5040036d45c5e710e45fa846f551 ChangeLog 4728
 MD5 8c9da1ab91353ab97d100e499ae722f7 files/digest-flex-2.5.31-r2 131
 MD5 e68b10187d8bdca8df57ac846f303f60 files/digest-flex-2.5.33-r1 238
@@ -16,3 +19,10 @@ MD5 e19ca70e113a7d7d0a857350fd3ceddd flex-2.5.31-r2.ebuild 1290
 MD5 c4690d299fd6ff85952311537f0c1bbe flex-2.5.33-r1.ebuild 1176
 MD5 055a6a57659d8fa91289b775dc8d796a flex-2.5.4a-r6.ebuild 1513
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEAxcpKRy60XGEcJIRAuvdAKCJ0QSqPv/45T0zkd6LuTn2pLvNCACZAVMM
+7yaKilU511Pa1s2qM1g9PsU=
+=1yg1
+-----END PGP SIGNATURE-----
