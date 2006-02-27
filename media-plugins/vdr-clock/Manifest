@@ -1,0 +1,5 @@
+MD5 b96aab42a6ff8324575630892cefd4c0 ChangeLog 346
+MD5 75d38d043c64aa3a04f881efd3d218f4 files/digest-vdr-clock-0.0.5b-r1 65
+MD5 65762d5c2aae48a810627abb4b7409a2 files/vdr-clock-0.0.5b-makefile.diff 552
+MD5 be5c8d8b0c1571a394981c8eed960cf0 metadata.xml 522
+MD5 4d020175f8b4e56a1b6a45a2430eb3a4 vdr-clock-0.0.5b-r1.ebuild 599
