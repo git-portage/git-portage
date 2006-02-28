@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2554dfe32b593d8cfb74579911e021ff ChangeLog 2928
 RMD160 9f46d7c62a8552bf3abdd0c530fea97581c84212 ChangeLog 2928
 SHA256 bf43cbc1cc28ecabfc0a858424ae978f6374cefeb6dd2487543186b4dd89b7c6 ChangeLog 2928
@@ -31,3 +34,10 @@ SHA256 62e06454f69ccb6e46f6fd80995d3ff95a94fa75b70dab50eca882f1308326b2 spidermo
 MD5 168eaec996bbe59b074f1df9eb309e00 spidermonkey-1.5_rc6-r1.ebuild 1376
 RMD160 2debe413dc2d9cc52d56545ada521436a690baac spidermonkey-1.5_rc6-r1.ebuild 1376
 SHA256 569ddabff2a76f8ac4b262cf81bb7d15206345f8c89327e400476c3092860ab0 spidermonkey-1.5_rc6-r1.ebuild 1376
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEA6562+ySkm8kpY0RAjHTAJ4pLd5EUCW+7IwMaxk5PaXmomiZ9QCbB5IK
+0cj1I77hLrClugtq3WI8gAc=
+=rqi1
+-----END PGP SIGNATURE-----
