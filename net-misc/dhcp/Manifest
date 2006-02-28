@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 66bd579eae8ab56c79db70b64687ae75 ChangeLog 13733
 RMD160 f219105b9d902d72b3ebecfc25723c113f43bf74 ChangeLog 13733
 SHA256 03123e3a302fc5920c86ee201cdccac3dc4aa4d400e6aa45ac1b7893ec194151 ChangeLog 13733
@@ -13,6 +10,9 @@ SHA256 ef661a44c1c3c6b82dbf7527b55ee8bd0e1ce4339e701addb5eea5e228b7fb5f dhcp-3.0
 MD5 7915c80b308528c55e43b82110fb3a71 dhcp-3.0.4_beta2-r2.ebuild 5381
 RMD160 89d101ba94f54736839da5be3036298a40171fb3 dhcp-3.0.4_beta2-r2.ebuild 5381
 SHA256 59d379657cdaa22f5e66ccfdb8b85c11953780bb6f10f82cf2e525cd6e76e71d dhcp-3.0.4_beta2-r2.ebuild 5381
+MD5 4f6bdc8db310066cc92e126492d9eb4c dhcp-3.0.4_beta3.ebuild 5639
+RMD160 7c2c1733ec50e7d7765efe688e7f9480fc3ef64c dhcp-3.0.4_beta3.ebuild 5639
+SHA256 49e408107f4af52c88bd1ca953b2396afae0eb52ece12907e7eb53e29abb67e2 dhcp-3.0.4_beta3.ebuild 5639
 MD5 d909d81a4d4ea39ddfc9898d33488c73 files/dhcp-3.0-fix-perms.patch 485
 RMD160 3857270dffed5feee95609aeb37d0c9ef8844945 files/dhcp-3.0-fix-perms.patch 485
 SHA256 a805a60b36e148886887aebb797e80f642386b3e55ef4a0b5132f96a2877e018 files/dhcp-3.0-fix-perms.patch 485
@@ -46,6 +46,12 @@ SHA256 dad532fc00d98edce2da5c1fcce16db42a0084eefc6da00599a7fcfb8faac0f0 files/dh
 MD5 a68019721576cb5e96df2d55130c9e9e files/dhcp.init 1530
 RMD160 3a26ae62f15a8a3a3c92c68f8afe8bd4d61e9ec2 files/dhcp.init 1530
 SHA256 fb142b26646c3b0ffb95001e437658da1caaf82e263b341c3e75a61cb2a6cf57 files/dhcp.init 1530
+MD5 431ad519efb9e00ce6218a3c0962185d files/dhcpd.conf 1093
+RMD160 31e99b1fcc2759c3f86863f549d8ddd974b06d30 files/dhcpd.conf 1093
+SHA256 0f0c2a46bd649cdd4214c2503b6d2b7318a61ac129d6060011232390afdd31b1 files/dhcpd.conf 1093
+MD5 235dafe19f2d95509d3885be5b1bc493 files/dhcpd.init 2091
+RMD160 1332d498fae3fff65c58c647ecfb1e2001742a36 files/dhcpd.init 2091
+SHA256 b44684b4c69ad1bace6c07c587e75cb2ff5a3d706308d8222658acfe5fa92c7e files/dhcpd.init 2091
 MD5 7d49ecbe9f433f8c00d1fafe087abb9b files/dhcrelay.conf 408
 RMD160 943d64b87699f4c0aa498a425b692fc84af882ea files/dhcrelay.conf 408
 SHA256 78cf04d4e32f937bfc658a11492811a0570499481ffc12f2ffb78dc69ca9fad4 files/dhcrelay.conf 408
@@ -61,13 +67,9 @@ SHA256 cbcca1aed82577796a5287973fc78c3d4f5011a7279852b5fdf3e3e368067f14 files/di
 MD5 f57c85892cf988656b213b419bf69c55 files/digest-dhcp-3.0.4_beta2-r2 238
 RMD160 962392441afe513bad3b200d84203d46b14b8be5 files/digest-dhcp-3.0.4_beta2-r2 238
 SHA256 6c5131c539857b1b0105c0b878f70fffe0c4553d484f47cb12b95b5c316c952a files/digest-dhcp-3.0.4_beta2-r2 238
+MD5 b83cbac7552369e722a4c59768363c0d files/digest-dhcp-3.0.4_beta3 238
+RMD160 921c4ec44dad932cdb35ac3659b42581a551fcfd files/digest-dhcp-3.0.4_beta3 238
+SHA256 8cf36e2e9d5c1d147a8635fd156ba84d5ce0d4bad70f85e73b9aafee89c71382 files/digest-dhcp-3.0.4_beta3 238
 MD5 436163172942ee1a0bcfb47534a71cce metadata.xml 330
 RMD160 216100112bb6a0ffcd8f7779fb876e4a726913fe metadata.xml 330
 SHA256 456ab9c26235fa4c1eda6b53b163e901869d5f64ba442b30db1fe86c57fe56af metadata.xml 330
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.1 (GNU/Linux)
-
-iD8DBQFEA8kH2+ySkm8kpY0RAh+6AJ9Mk4g0QjG8lUIrBk2O/+uBDEkdNgCgmxsP
-sXM5aFmbzENEYSAHzI+mlc0=
-=gMIC
------END PGP SIGNATURE-----
