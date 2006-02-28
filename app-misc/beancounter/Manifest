@@ -1,14 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 822071bd1fdd8401852d9908885c7234 ChangeLog 766
+RMD160 73249e74211dcddd996e58b46f5d3e77f20d377e ChangeLog 766
+SHA256 dfd4ac097159e50dc8c73ffd1378d0c5d221c79fd00f77abd049230b64e25517 ChangeLog 766
 MD5 bca441ed3d0dc20ccfd0853c6fb6b5ff beancounter-0.8.1.ebuild 841
+RMD160 d24c948664c7d42222137927ba363b92a325fe0f beancounter-0.8.1.ebuild 841
+SHA256 28fa34d1f6cfe2b09791f79232af61fe7939f86c436073f49167faf0e05f0570 beancounter-0.8.1.ebuild 841
+MD5 bca441ed3d0dc20ccfd0853c6fb6b5ff beancounter-0.8.4.ebuild 841
+RMD160 d24c948664c7d42222137927ba363b92a325fe0f beancounter-0.8.4.ebuild 841
+SHA256 28fa34d1f6cfe2b09791f79232af61fe7939f86c436073f49167faf0e05f0570 beancounter-0.8.4.ebuild 841
 MD5 07b323f61f3c1c625beb0befddab61b5 files/digest-beancounter-0.8.1 68
+RMD160 997c6edd6f37c2ea95704bb179d1285e54f7792b files/digest-beancounter-0.8.1 68
+SHA256 a646bd2e6cc4521d7aabd2e54721ce5cc5a11be0d688efb41493ee632bb8da9d files/digest-beancounter-0.8.1 68
+MD5 350921759624d4d0cd5498fa6a0b247a files/digest-beancounter-0.8.4 250
+RMD160 ab2b669fe6f414d445ee13ac84e10b0c4b6eab6a files/digest-beancounter-0.8.4 250
+SHA256 c0131461864620dc9e1daf33b2b8e6bb34d9dafc5cb6465edb567cb3a0fab1aa files/digest-beancounter-0.8.4 250
 MD5 b81d2134c86b4a5b2152bfe686131f64 metadata.xml 410
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDivOftG5z4I8BtQoRAgoSAJ45waKYey+1w0sIWWXMnIaTw8XMNACcDyaF
-kDr/sxdvcW868L4WBqGq5Lk=
-=v1+a
------END PGP SIGNATURE-----
+RMD160 b5581bf3d9208b220e922ba1648e6682a20f219b metadata.xml 410
+SHA256 c1cd1469d366a2883f7949385eb12cafcbfb57a523aeed72580845e02ef01253 metadata.xml 410
