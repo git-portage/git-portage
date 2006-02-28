@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 48a25660ab56e703d4cdb5b51031e637 ChangeLog 4659
 MD5 d694fb2bdc7e5e1fc12e40d51e72d972 etherape-0.9.3.ebuild 1321
 MD5 ceea5c54b989ba22996560b9d95953b2 etherape-0.9.4.ebuild 1282
@@ -10,3 +13,10 @@ MD5 4c9a26055b22c23b639f1807cb0710f0 files/etherape-0.9.1-gcc4.diff 8075
 MD5 878e13dfd52ac79ec511a2ff1d259b73 files/etherape-0.9.1-res_mkquery.patch 466
 MD5 5ce49da683534b84b59d34525deb611b files/etherape-0.9.3-res_mkquery.patch 620
 MD5 d8307d213e01909e87c072d2b3e9450c metadata.xml 254
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEBGj2KRy60XGEcJIRAkwmAJ9uqJ/yCGm4Yiv22lX6zOiN+WCW7wCdF9Sd
+VPBLIJoREWgI6tM/Mkq+vrs=
+=w/Sd
+-----END PGP SIGNATURE-----
