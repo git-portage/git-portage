@@ -1,0 +1,6 @@
+MD5 48a45305511cc9097fc6bfbe45eeb02e files/digest-katapult-0.3.1.1 250
+RMD160 bfb6ddc20b9e4f85ce32ef1a2f26f3b910d57f86 files/digest-katapult-0.3.1.1 250
+SHA256 e37eb23b6fe899c0dee0c94dc19e084d7322bb986d04ae36eeccebc7db8cf906 files/digest-katapult-0.3.1.1 250
+MD5 34c1948eceafe55630df0b2b2e4192da katapult-0.3.1.1.ebuild 386
+RMD160 709603e97df30211866076b0ad3e5b4aed7b1b17 katapult-0.3.1.1.ebuild 386
+SHA256 b2ae7b1a52bc3b4528d9d5cc2f6bad1d958077689c2b14393e692a647a035abe katapult-0.3.1.1.ebuild 386
