@@ -1,16 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 2eb11df7eceae2e8667d032c7eb1f6f4 ChangeLog 822
-MD5 46e99d02032cfc2cc7e1b8b19ff82baa files/digest-yasm-0.3.0 63
+MD5 4f842757eee1fafece991a1eaea5876a ChangeLog 1061
+RMD160 eb0bbceee5a09e377d198b6e5ae681aee583ff70 ChangeLog 1061
+SHA256 439e6b2d33ccd576f181feaee3c0d1c984f2b1e366dae4ab048f85d7d095a167 ChangeLog 1061
 MD5 8398914ad2f594691d2386a599637eea files/digest-yasm-0.4.0 63
+RMD160 06e4a727c088fdddd7ab675c4e09790fd101070f files/digest-yasm-0.4.0 63
+SHA256 a32da5913886cc1d8e9af04170b0fb7d1e87e77f217c4054e25f7f42c8c58758 files/digest-yasm-0.4.0 63
+MD5 d5008f63fb67b24a7e9c505e365e089a files/digest-yasm-0.5.0_rc1 244
+RMD160 e81a53eb7973ad93453e8ad304cd68463f4e18f6 files/digest-yasm-0.5.0_rc1 244
+SHA256 a7328278cbb5fbe2ebbd7e35e25421270fb8939ffe5fdd77a6e20d8603b290da files/digest-yasm-0.5.0_rc1 244
 MD5 0075a0521cc6d639918c3ae2c4e2124e metadata.xml 223
-MD5 3716bab7055e285687b5998ff73129d8 yasm-0.3.0.ebuild 589
-MD5 21494505cb0b11f7267a6ca497076d6b yasm-0.4.0.ebuild 544
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDi9CtgIKl8Uu19MoRAi/AAJ9mFBfmsOIeb6DeEmT5fxJpy9wfrgCeLyMv
-jwdSg4hlG6tWgESe/9TRzTo=
-=vEMi
------END PGP SIGNATURE-----
+RMD160 66619929dcaf8f2a60ce4d1b84d5e86a6918a44d metadata.xml 223
+SHA256 bcf5dd3799bf72bcde5d588d153223cf72b050341f6d44945b8767657834ccdd metadata.xml 223
+MD5 3183c7862f3c923f8ea684f6e1c428ac yasm-0.4.0.ebuild 543
+RMD160 9c1570b56bc6e56a670b2a05160dd7cc61bdeaea yasm-0.4.0.ebuild 543
+SHA256 5a8cab8f0aba7e910abd0c9a15496a5b80dd02e23766e479b844f430e2842ed9 yasm-0.4.0.ebuild 543
+MD5 f3a260f534c4bcf6e30005ff18c76267 yasm-0.5.0_rc1.ebuild 637
+RMD160 a1e95df4ed6224163f240c761a0c4a18b3a0ee7e yasm-0.5.0_rc1.ebuild 637
+SHA256 8b207647c25f0e4e6778bd0d7a467a7546e2350476faf382e8ce8e22d2fdf6db yasm-0.5.0_rc1.ebuild 637
