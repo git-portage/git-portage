@@ -1,26 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 9bb88565ff4939deeac1ca3ed8110be1 ChangeLog 4171
-MD5 fcda909e9a6d3cfd61a2ec945f439ef7 files/digest-traceroute-1.4_p12-r2 68
-MD5 fcda909e9a6d3cfd61a2ec945f439ef7 files/digest-traceroute-1.4_p12-r3 68
-MD5 6c8a0f4cf4ebbc93362e3100325f3ffa files/traceroute-1.4-emptylabel.patch 366
-MD5 32d8c8e06ae121436c95a2992552ab84 files/traceroute-1.4-target-resolv.patch 539
-MD5 7b7dbb5ba09f5fa1eb77df4d1ebc17f6 files/traceroute-1.4a12-LDFLAGS.patch 221
-MD5 0502b89228de25efeefd5a95fcc58aeb files/traceroute-1.4a12.patch 1097
-MD5 cd50b5830f5b207329b7884746927503 files/traceroute-1.4a5-bigpacklen.patch 530
-MD5 f5c863e684d2ab284f1ad126e2b71fce files/traceroute-1.4a5-droproot.patch 2778
-MD5 ec9afbce16d7136e1c4a785afacecec6 files/traceroute-1.4a5-llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch.patch 1346
-MD5 45878a065e3d7577e6177b55d175b7f1 files/traceroute-1.4a5-lsrr.patch 9287
-MD5 b5a0fddf1127ff8dff438c21559f1211 files/traceroute-1.4a5-secfix.patch 1151
-MD5 2cbc4c5f84cfb5e98982fdc14951faa0 files/traceroute-1.4a5-unaligned.patch 769
+RMD160 ca53bfd1422bfcc253f6dad06e4490167ddd1bb9 ChangeLog 4171
+SHA256 9c9be22d2e31dfe074d22d2a5445b6387f1b61c749792d239bad27d818ceb59d ChangeLog 4171
+MD5 8122082980a7ee66b278371da18b5c61 files/digest-traceroute-1.4_p12-r2 521
+RMD160 347245db1ccc102e599090e0592efeaaba1bf41c files/digest-traceroute-1.4_p12-r2 521
+SHA256 8013b2342e32d798ab799788e833eefdb58dab81d5fdf56c465599c7296669f4 files/digest-traceroute-1.4_p12-r2 521
+MD5 8122082980a7ee66b278371da18b5c61 files/digest-traceroute-1.4_p12-r3 521
+RMD160 347245db1ccc102e599090e0592efeaaba1bf41c files/digest-traceroute-1.4_p12-r3 521
+SHA256 8013b2342e32d798ab799788e833eefdb58dab81d5fdf56c465599c7296669f4 files/digest-traceroute-1.4_p12-r3 521
 MD5 7ed4ef8e3d3fd7d4c7e9682b2519d739 metadata.xml 235
-MD5 1731d7d9c4e9cf77dcbe935e512350bd traceroute-1.4_p12-r2.ebuild 1253
-MD5 12b993c6c631cf8f3d0e3e18afd8228f traceroute-1.4_p12-r3.ebuild 1555
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDrrSyAiZjviIA2XgRAvAUAJ9dgE95CMTH/Toumcyyj1oZAlLh9ACfbGWw
-W1FvbzzDRjrHz+wht+oMiPA=
-=NlJW
------END PGP SIGNATURE-----
+RMD160 de3c26bbe3899e398acc788b01189adf8487038e metadata.xml 235
+SHA256 0dd7765ffffa47a13dd4ffcd8f83d0b1f7cb64a0b80abe132ecaf0373bf6d11e metadata.xml 235
+MD5 7bac76e502747d93374a666274824a38 traceroute-1.4_p12-r2.ebuild 1302
+RMD160 2a6b72b5d9d3849fef8a2cf7b4df0f775db61e0e traceroute-1.4_p12-r2.ebuild 1302
+SHA256 00b2e8b4215fdc9a35b980c6d96258b503a8662a7499d2e1d7c5b347bdc5a4ec traceroute-1.4_p12-r2.ebuild 1302
+MD5 b9ddfd8dda40401fec98ca2f16848fd3 traceroute-1.4_p12-r3.ebuild 1587
+RMD160 b7748bb068d00236806cd34ee415ca3a0062865c traceroute-1.4_p12-r3.ebuild 1587
+SHA256 e14bb3133b5104ada5efefe9742993278ac8f7a862fc163d78476f4193593ccc traceroute-1.4_p12-r3.ebuild 1587
