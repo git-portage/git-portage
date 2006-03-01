@@ -7,6 +7,9 @@ SHA256 f32a12b9c9fc579c7eb8818c9464fbc94512317ccbe1b7540478aa5a6cd5d7ae files/di
 MD5 6c85807fb1aaa0903e3c928e18df6c88 files/digest-squirrelmail-1.4.5-r1 634
 RMD160 358e4f39ea5970a9a07cd2b918b94a660bbdb2e1 files/digest-squirrelmail-1.4.5-r1 634
 SHA256 49adc0080e95f0d15bf5c47356e1383105699cec07890cb9fb1ff16150891102 files/digest-squirrelmail-1.4.5-r1 634
+MD5 f27b1442a7c66f76bd75202b6a039903 files/digest-squirrelmail-1.4.6 2316
+RMD160 409c1f40cea3a8c7d976f9a6c060624637dcaf09 files/digest-squirrelmail-1.4.6 2316
+SHA256 a300f1f22a64a7c16b26621397e765dc443e232deadf1fa4efc43dc0ec66cd6a files/digest-squirrelmail-1.4.6 2316
 MD5 1ebd5ce3ff0ce02fa62f3890b6a8f255 files/ldapuserdata-0.4-gentoo.patch 709
 RMD160 a7b5fe1aba60530c193919ecb6b213cdd57dddf8 files/ldapuserdata-0.4-gentoo.patch 709
 SHA256 bff9cf8e7518df983b03b3f4e7f10fcf31fb75f6d73afb21c8923f2a8312b4a3 files/ldapuserdata-0.4-gentoo.patch 709
@@ -28,3 +31,6 @@ SHA256 3ef185c3a7e40c845d2ae1d227c1215815fe3927afd82a57b59f1182df44f54f squirrel
 MD5 648deab7f2e50fdf480c7bb2af2c9796 squirrelmail-1.4.5.ebuild 5479
 RMD160 6eba48434e1241e2f07a49c47660c0abf42c4ae2 squirrelmail-1.4.5.ebuild 5479
 SHA256 eaf93016a0d40b3abed219fd0c72980b83d018a9249ee71794f51b6840f29ece squirrelmail-1.4.5.ebuild 5479
+MD5 16983fe7486d8aaf1e8ada461fa7d2e2 squirrelmail-1.4.6.ebuild 5483
+RMD160 e915f06c862b62a1f7d5725e5b0543ee20077ba8 squirrelmail-1.4.6.ebuild 5483
+SHA256 67443e90105e4129d93f7e9ae996897731620576bf8658a2875382f06134936a squirrelmail-1.4.6.ebuild 5483
