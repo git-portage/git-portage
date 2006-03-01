@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8cee1308c7d5a609e10179a42f42e3c4 ChangeLog 825
 RMD160 85ed3a0d799411154293ada1becef6ca89d98582 ChangeLog 825
 SHA256 2b4c71cfef4f0adf8e5df6ee9d8b2a53eec867211fc5cae230bbdec6a59d86b1 ChangeLog 825
@@ -16,3 +19,10 @@ SHA256 88b7ebfd252731fbdb68a7ebf4c27d1e111a096b1442d2a14a9760e54ca4bde7 uclibc++
 MD5 b9ebc15d5fc9a9cd5d1b683bd67ddc09 uclibc++-0.2.0.ebuild 1854
 RMD160 1af7a795f9f7aee8c436bb78d40d99463a6cc03d uclibc++-0.2.0.ebuild 1854
 SHA256 80b88fe6d7c50485998a0f6ad6593b3e37685f488dc1f19b9ae0ae51eb10261c uclibc++-0.2.0.ebuild 1854
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEBSTm2+ySkm8kpY0RAgaAAJ9SClThtFBUWmvMK/3jdy8b41qBBACgpPAg
+Mb0LVNHgfqAt6GRZTzYbCGQ=
+=9qtb
+-----END PGP SIGNATURE-----
