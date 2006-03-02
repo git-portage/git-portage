@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/xen-sources/Attic/xen-sources-2.6.12.6-r2.ebuild,v 1.4 2006/02/24 13:18:11 chrb Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/xen-sources/Attic/xen-sources-2.6.12.6-r3.ebuild,v 1.1 2006/03/02 11:50:18 chrb Exp $
 
 ETYPE="sources"
 inherit kernel-2 eutils
@@ -26,7 +26,8 @@ RESTRICT="nostrip"
 src_unpack() {
 	unpack ${A}
 	cd ${MY_P}
-	epatch ${FILESDIR}/mkbuildtree.patch
+	sed -e 's:relative_lndir \([^(].*\):cp -dpPR \1/* .:' \
+		-i linux-2.6-xen-sparse/mkbuildtree || die
 	# the echo is because the current sources seem to have no default for XEN_NETDEV_PIPELINED_TRANSMITTER
 	echo "n" | make LINUX_SRC_PATH=${DISTDIR} -f buildconfigs/mk.linux-2.6-xen \
 		linux-2.6.12-xen/include/linux/autoconf.h
