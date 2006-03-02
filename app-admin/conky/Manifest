@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b1bdf88f6a29abeb53225191c1db0926 ChangeLog 4206
 MD5 daec6353bf84e62c4edd4d82d00cd350 conky-1.3.4-r2.ebuild 2662
 MD5 18290bbc2ed560becdfe5c1eed21f28a conky-1.3.5-r1.ebuild 2247
@@ -9,3 +12,10 @@ MD5 2441f16c8370649ea372b69c895f0bd1 files/digest-conky-1.3.5-r1 64
 MD5 dd1c99f09b0ec583eadca05832f8c5ea files/digest-conky-1.4.0-r1 238
 MD5 5d84594f42f7e10ad9b8a6bf8617b5bd files/portmon-mpd.patch 7143
 MD5 32bd4230c3ee12a8d5502d4bd57a9a3d metadata.xml 588
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEBx9OKRy60XGEcJIRAmPXAKChcMhZZFtbGSsehgA5oAZeMPsndACeKk1+
++PMirNeCvGPrQWGfO57NozI=
+=IvUt
+-----END PGP SIGNATURE-----
