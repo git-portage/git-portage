@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/sarab
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/sarab/ChangeLog,v 1.4 2006/01/06 16:47:43 mkennedy Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/sarab/ChangeLog,v 1.5 2006/03/03 18:16:13 mkennedy Exp $
+
+*sarab-0.2.2-r2 (03 Mar 2006)
+
+  03 Mar 2006; Matthew Kennedy <mkennedy@gentoo.org>
+  +files/0.2.2-refname-calculation-gentoo.patch, +sarab-0.2.2-r2.ebuild:
+  Reference name calculation patch to support filenames with leading periods;
+  Resolves Bug #124565.
 
 *sarab-0.2.2-r1 (06 Jan 2006)
 
