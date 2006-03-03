@@ -1,4 +1,4 @@
-MD5 ed86b618c99d4eb165d38aeebd98e6e0 ChangeLog 1101
+MD5 6b4acfe5d8ae594f1a072f6dfd39146c ChangeLog 1372
 MD5 9edde30be18467eead751bd619a887bd files/0.1.2/radiotext-lcr-service.diff 3429
 MD5 f9dbceea60471cbeb4538f2a36152e16 files/0.1.3/radiotext-lcr-service.diff 4307
 MD5 b52e340ed185e77044523dcee028aae6 files/confd 681
@@ -6,5 +6,5 @@ MD5 c06ef00216c435d94502bd44c0cf7e51 files/digest-vdr-graphlcd-0.1.2_pre6-r1 72
 MD5 c341490e02e23c9bbb495fec8d01d4f0 files/digest-vdr-graphlcd-0.1.3 67
 MD5 517fd6e47ab25170f56df5a2a07510e6 files/rc-addon.sh 453
 MD5 363fe851c7edc1284983ea5393b8c2a9 metadata.xml 403
-MD5 8c23756d331def0a4c58d288cea0ed6f vdr-graphlcd-0.1.2_pre6-r1.ebuild 2369
-MD5 5aca20a97f732251ab30bbb5ae5b3d15 vdr-graphlcd-0.1.3.ebuild 2281
+MD5 1967de93e3cc18efa9a885e122366697 vdr-graphlcd-0.1.2_pre6-r1.ebuild 2369
+MD5 93ee6eddfe36aea4289821a07ed9e943 vdr-graphlcd-0.1.3.ebuild 2273
