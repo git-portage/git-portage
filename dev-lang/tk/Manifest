@@ -2,6 +2,7 @@ MD5 e96ccf9df0638ed64d5ede856b3e7586 ChangeLog 8567
 MD5 60b4e7758ce769df141b81b19c338f34 files/digest-tk-8.3.4-r1 60
 MD5 f340f38756a0efb0539b53d64511f6a9 files/digest-tk-8.4.11 65
 MD5 f340f38756a0efb0539b53d64511f6a9 files/digest-tk-8.4.11-r1 65
+MD5 2c7f40cd2d3510fd3243146e4499cd54 files/digest-tk-8.4.12 65
 MD5 f64532dbe89c04cefe0e16a9743f5f57 files/digest-tk-8.4.6 64
 MD5 f64532dbe89c04cefe0e16a9743f5f57 files/digest-tk-8.4.6-r1 64
 MD5 76d0b4599f29136b31e902d15566e8c8 files/digest-tk-8.4.9 64
@@ -16,6 +17,7 @@ MD5 37d9be6d753633a1cb6704052776ab1f metadata.xml 159
 MD5 670ac1b343b68583bd99f4adc39765eb tk-8.3.4-r1.ebuild 2413
 MD5 a29dfc6044a952b0d976bdcd546fca8f tk-8.4.11-r1.ebuild 3182
 MD5 3a38b175fbbcd3a4325d66b5d8aeaf87 tk-8.4.11.ebuild 3085
+MD5 39b70cc8a580b8ad573277fe7678d93a tk-8.4.12.ebuild 3190
 MD5 ba9899b0ace4194528167ac97b9e818d tk-8.4.6-r1.ebuild 2848
 MD5 988041e4ca6e6ecfb534d8745cab9f0b tk-8.4.6.ebuild 2471
 MD5 fb0cef9b14192ab396f10bc2825d06e0 tk-8.4.9.ebuild 3094
