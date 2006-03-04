@@ -1,15 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 76fb110816dc135bd0abdaf41878a303 ChangeLog 3675
 RMD160 0ecad994d389c7ee967e21d56619e484fd8c8177 ChangeLog 3675
 SHA256 6219aeddb8acca643e2db66d035738a94f47fdffc4107f768ad60cd4f1b5f811 ChangeLog 3675
 MD5 6a9fb7213c10b8b816af3fd013c9fa80 enhancedcommentify-2.1-r4.ebuild 771
 RMD160 340479e41003de702959098fac6c19214f03b340 enhancedcommentify-2.1-r4.ebuild 771
 SHA256 e0c6ff4c6da657fcb87da724207b0327fc940d670f6c2ab75461fdcaaa8279b3 enhancedcommentify-2.1-r4.ebuild 771
+MD5 63f02b4a691356c6fdb9be9850634c70 enhancedcommentify-2.2.ebuild 746
+RMD160 7c9bf7f03ea0ff6ff6673446a510732d8e3d99a9 enhancedcommentify-2.2.ebuild 746
+SHA256 da40a4a2a7ff4d1364121c8f8358c159c23185bf22c87da24273b28cdaad8ff2 enhancedcommentify-2.2.ebuild 746
 MD5 dc6810e2bc0248b2c6c4da46dbf3d276 files/digest-enhancedcommentify-2.1-r4 77
 RMD160 62fa924578a71e5188f21109bf48e5ce42694f64 files/digest-enhancedcommentify-2.1-r4 77
 SHA256 595b8906cae33c297814d333c9f28ad84b034df31ad29933b41a09c95a8bb9a1 files/digest-enhancedcommentify-2.1-r4 77
+MD5 b90a7d3173af6428a9b0be707aa16efa files/digest-enhancedcommentify-2.2 268
+RMD160 e63169661a5e2e66ef4436bef73f3ac2c065df95 files/digest-enhancedcommentify-2.2 268
+SHA256 0fcf86807a392936142629966eeb59fbabb643d485dec4f1d43ad19a60b2b54b files/digest-enhancedcommentify-2.2 268
 MD5 dd0734694fa4df5fae67151ea28c0bb4 files/enhancedcommentify-2.1-extra-ft-support.patch 666
 RMD160 8a431e2a575726a35394fe38222519a81a118df0 files/enhancedcommentify-2.1-extra-ft-support.patch 666
 SHA256 27868a8207886bdb31bc96ad22ebb461725c1d90a74a203c18bf35c1706ea75a files/enhancedcommentify-2.1-extra-ft-support.patch 666
@@ -19,10 +22,3 @@ SHA256 bb0a2f338c5481e5e15afb6d438addc087c7fb7f594c28addadcde4c6de9e102 files/en
 MD5 34acc0250b08e4f3f0b5044e1294aa22 metadata.xml 250
 RMD160 b5598c82a21f5c6aa94933bd1846b9067d9a7ea9 metadata.xml 250
 SHA256 cff0700db48bf10bf7276f4a483a52464b3806430cf239336bf5abbc836b210d metadata.xml 250
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD9rnHLLFUmVNQ7rkRAvymAJ4sZpGiU+rpXoevAQmybXIxrIYH2ACgvNWm
-Eq6yfZ1/isApaVgRAVQP0KE=
-=VYco
------END PGP SIGNATURE-----
