@@ -1,4 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2c293451e313125de050c237ac5b1a3e ChangeLog 937
 MD5 c50e3417f0ccbf6858f77cbbe8c6abf3 files/digest-vdr-lcr-0.0.5 65
 MD5 39901b6ecb5930c3cf71fefaf9d10228 metadata.xml 478
 MD5 68919c57858090cc01db4720d4e88a20 vdr-lcr-0.0.5.ebuild 963
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+Comment: no further Information
+
+iD8DBQFECduodn07HTTCgIoRArU+AJ4hkdxHeyq4Z+KPKgZ6dQIoAKtK/QCfeR+c
+lUva1Fn8KEoQjsHjyyiqDJ4=
+=3MJG
+-----END PGP SIGNATURE-----
