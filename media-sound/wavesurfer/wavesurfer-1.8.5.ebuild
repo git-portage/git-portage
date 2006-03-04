@@ -1,6 +1,8 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/wavesurfer/Attic/wavesurfer-1.7.ebuild,v 1.7 2005/03/05 08:51:38 corsair Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/wavesurfer/Attic/wavesurfer-1.8.5.ebuild,v 1.1 2006/03/04 07:54:26 matsuu Exp $
+
+inherit eutils
 
 DESCRIPTION="tool for recording, playing, editing, viewing and labeling of audio"
 HOMEPAGE="http://www.speech.kth.se/wavesurfer/"
@@ -8,7 +10,7 @@ SRC_URI="http://www.speech.kth.se/wavesurfer/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86 ~ppc amd64 sparc ppc64"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-tcltk/snack-2.2.4"
@@ -21,7 +23,7 @@ src_unpack() {
 }
 
 src_install() {
-	local mydir="wsurf${PV}"
+	local mydir="wsurf${PV%.*}"
 
 	newbin wavesurfer.tcl wavesurfer
 	dodir /usr/$(get_libdir)/${mydir}
