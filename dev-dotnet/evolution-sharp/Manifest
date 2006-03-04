@@ -1,14 +1,15 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 1ff99997a7ae6394006ef18bba5b9278 ChangeLog 604
-MD5 7a3a79c65223982e6f227f2dde499e0d evolution-sharp-0.10.2.ebuild 738
-MD5 57940e36815a8a991745927dc9c914dc files/digest-evolution-sharp-0.10.2 75
+RMD160 f595ea4e89f7bd7c668659757dc38a82e3cda448 ChangeLog 604
+SHA256 f6b89827b47fec6f32a314422eb9e6a273c1d174da4b30ecd5c3c69639f5698c ChangeLog 604
+MD5 1198e16012a18b3eae70ae5c4a722137 evolution-sharp-0.10.2-r1.ebuild 867
+RMD160 0b687ba5726aebd296777caf09eda2ae916d9bdf evolution-sharp-0.10.2-r1.ebuild 867
+SHA256 f9c8a176585475e45d41989dc14aa38ae1bd079a337a2e09402e10901b103192 evolution-sharp-0.10.2-r1.ebuild 867
+MD5 c290aaec6de69da9bef4ef8b73d6da64 files/digest-evolution-sharp-0.10.2-r1 271
+RMD160 d3cc15e676309f077c603dc11a9003e3b0d8c1c6 files/digest-evolution-sharp-0.10.2-r1 271
+SHA256 ed2200da9c1998588564d78d0e95b090b0b02deb3de83358b7a62277db0f3c66 files/digest-evolution-sharp-0.10.2-r1 271
+MD5 1f1221967325e4cc7dd03afa77696c46 files/evolution-sharp-0.10.2-use-glibsharpglue-2.patch 893
+RMD160 6d7a03937368cc9c46ca7482061d96f272f87a8c files/evolution-sharp-0.10.2-use-glibsharpglue-2.patch 893
+SHA256 b4fdb230525fa2633747f40262aad21f1a8c7de9afbf6a42c68b0fb4f493d933 files/evolution-sharp-0.10.2-use-glibsharpglue-2.patch 893
 MD5 41c8c61dcf74c45eb359a4a41958abb3 metadata.xml 308
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDuyNHwUpWvClEHQoRAunfAJsHMFzQw0DsikSEClYmvIL71/Z/mQCfZwnB
-qQjls4r5IAqRhjXbJ5OccC0=
-=TqE0
------END PGP SIGNATURE-----
+RMD160 6070e5bc9d8a4e0983004f0e24da1de81f52d2c4 metadata.xml 308
+SHA256 d4e9c60cc0ce735082c4f3cb0837a68a34a51d6bfc38dc2b2bd2ce044e7c7259 metadata.xml 308
