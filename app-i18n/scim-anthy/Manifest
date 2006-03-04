@@ -1,4 +1,4 @@
-MD5 396f38522d940e830387a103e491c965 ChangeLog 3956
+MD5 c782bcde175912b17e2bb33bd27ea1b7 ChangeLog 4084
 MD5 e7bf6c6ea71a0dadd1e3373bfeffb8dd files/digest-scim-anthy-0.5.3 68
 MD5 c37fbcc4207cabb9615761df5d84bdc3 files/digest-scim-anthy-0.6.1 68
 MD5 c81050d7a5d43e19b77fbc5a73ecf48e files/digest-scim-anthy-0.7.0 68
@@ -11,4 +11,4 @@ MD5 a6c168fd7ae6e62ac8e3bedecce089e1 scim-anthy-0.6.1.ebuild 1023
 MD5 07c8c6e5ac5291a951d01b5db8febec2 scim-anthy-0.7.0.ebuild 1049
 MD5 7e07215d0e918a0cad4eaa277d2e722c scim-anthy-0.7.1.ebuild 1059
 MD5 20cfb7e7d47cc926b734597f27006fff scim-anthy-0.8.0.ebuild 1049
-MD5 91b446025003cae1abc34a60fe3c5023 scim-anthy-0.9.0.ebuild 1058
+MD5 b99d25dc13c95a81a0dace7ed283601b scim-anthy-0.9.0.ebuild 1059
