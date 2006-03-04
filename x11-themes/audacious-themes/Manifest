@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e372830498f85e631a2dc6d153694c37 ChangeLog 627
 MD5 fa2e1d8386c9c7086024d9592edcab7e audacious-themes-0.0.3.ebuild 4079
 MD5 1d037ce205b0aeb02a6646bd25d99ccc files/digest-audacious-themes-0.0.3 21031
 MD5 319fe8f45b51a2d31f8d4e9a4071ca10 metadata.xml 248
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFECcxJViELBEf1JB0RAu7nAJwLknD8pVU9SSOazvezuH+X68Nv/gCfUDlG
+yDPDd37vPFSt3pl3gIM/dqs=
+=1spd
+-----END PGP SIGNATURE-----
