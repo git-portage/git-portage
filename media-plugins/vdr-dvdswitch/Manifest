@@ -1,0 +1,6 @@
+MD5 34f681c0b1d68d9352f06f39475216c5 ChangeLog 446
+MD5 dc503da6e2ddd67ed66ee39cffc2eedd files/confd 334
+MD5 a661530dbfd06339933c307f5c91fb03 files/digest-vdr-dvdswitch-0.1.0 71
+MD5 520f0be6e94ea65d198e5acb33f76ff5 files/rc-addon.sh 405
+MD5 2b547c9031a9710165a2be3ad3393292 metadata.xml 451
+MD5 a69828b24d07c1b49da35b9a7a35b227 vdr-dvdswitch-0.1.0.ebuild 790
