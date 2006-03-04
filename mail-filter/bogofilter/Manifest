@@ -1,16 +1,24 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 5bb6d803d0e779b6f325aee2f2e7ae0d ChangeLog 13808
+MD5 8467595eb080025c7b6f700d1b4f4d73 ChangeLog 13953
+RMD160 826790e767f90bdd1e09632662cfd13848cdabfa ChangeLog 13953
+SHA256 f9d477bcbd9f68828bff2ef7e7c9676e506a689d4efe7365ce27f6c3a2c312fb ChangeLog 13953
 MD5 edab439ee9294d96fb67b0567d6968d6 bogofilter-0.92.8.ebuild 1671
+RMD160 dd689f102d58d59bce235a3803beca5b760b2d47 bogofilter-0.92.8.ebuild 1671
+SHA256 fbc179d1ccbd17adf59302b8c4f3ab6f5c054bf83f62cdab66369bb5aecd3c75 bogofilter-0.92.8.ebuild 1671
 MD5 2043378167c6ea73987e6603ed1cbcb9 bogofilter-1.0.1.ebuild 2418
+RMD160 a4c2308ed46165d3a86d70876ae269ee39f13e14 bogofilter-1.0.1.ebuild 2418
+SHA256 7ba3f7cdf2b35325cc4bb394f4cecdc51b8d1eacf9899538d1c7eb33128f6b75 bogofilter-1.0.1.ebuild 2418
+MD5 46c64145fe937df44f3bf0869b35f1fd bogofilter-1.0.2.ebuild 2362
+RMD160 98b495df1e83b667909fbe66aa5cfd15b6609eff bogofilter-1.0.2.ebuild 2362
+SHA256 17a16ae6c8f83c29453ca4f494f2aeada70db7cf2787bb94f1ede426ccc665db bogofilter-1.0.2.ebuild 2362
 MD5 1970df6e6d8dabe53d04a6f120d0b8bb files/digest-bogofilter-0.92.8 70
+RMD160 ec5ede02a34032ee2b7cf7ce36aa6e73ec11591f files/digest-bogofilter-0.92.8 70
+SHA256 d0274b7d7833a84d15f8b63e9f16eac16b348eec75451bd433914e259210bc76 files/digest-bogofilter-0.92.8 70
 MD5 e1974dec02cbc975b6469b9e54183f5a files/digest-bogofilter-1.0.1 69
+RMD160 dd2ecfe0f56b08834803af41f0a9d60a00b32e32 files/digest-bogofilter-1.0.1 69
+SHA256 da64d84b38def29fe60b47ed1c2d8648b58955bfd7cd8714e201fff6781ce90c files/digest-bogofilter-1.0.1 69
+MD5 ff6a92735970fdeda3a18283042f112d files/digest-bogofilter-1.0.2 253
+RMD160 52d06af02e33973ffa102626eaba9d631ed50198 files/digest-bogofilter-1.0.2 253
+SHA256 ebd8d69d82513570666503a35bf9b5bb8ee441f7cf0827031df3708de02b5c69 files/digest-bogofilter-1.0.2 253
 MD5 48bd0f185b30f8151e8da04a025e0373 metadata.xml 424
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDuojTV3J2n04EauwRAiW1AKDcEgGQmPkHKOYSxQ9nAfMkPQNZIQCgiAce
-um/mkXsIzYw5ObAsDeiiQE8=
-=UTCJ
------END PGP SIGNATURE-----
+RMD160 7780bbf745ba6b51f837cdc076b1b315ba8d33b9 metadata.xml 424
+SHA256 ace8b08d5d5b207b9226c509b6d1f9610da16264d08033e28713df61063563d9 metadata.xml 424
