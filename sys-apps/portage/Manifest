@@ -31,9 +31,9 @@ SHA256 cd12a5e31772411563894bf174cef7e49965dbb2c3dc58321441995e26ea4820 files/2.
 MD5 d3f491aba0c765a9f06f473d92262789 files/2.1_pre5/1060_r2812_bug_124471_worldfile_ROOT.patch 1762
 RMD160 a4c7695a5298c819b24f75fe9821d585ff5e5347 files/2.1_pre5/1060_r2812_bug_124471_worldfile_ROOT.patch 1762
 SHA256 3ad39a43bef0fa94b5fd3ffd2173c8b076ffbd3179e9c15c9844fdaddeaa6aed files/2.1_pre5/1060_r2812_bug_124471_worldfile_ROOT.patch 1762
-MD5 74454e32fe1367ae9df6152f2bc41dde files/2.1_pre5/version_bump_2.1_pre5-r4.patch 401
-RMD160 4b0625ae33205099baffa58f1979180133dcb7dd files/2.1_pre5/version_bump_2.1_pre5-r4.patch 401
-SHA256 de29fba6c037733cfef035b51948a564ce76b1808d9eede1df89733a037250a5 files/2.1_pre5/version_bump_2.1_pre5-r4.patch 401
+MD5 b0f0aee3708359245752289af4a8923b files/2.1_pre5/version_bump_2.1_pre5-r4.patch 378
+RMD160 3e96116e5c06994417fc3dfa2fd344676f8f7a53 files/2.1_pre5/version_bump_2.1_pre5-r4.patch 378
+SHA256 5619c164def7cd20db802ca878714669fe258ac285a219e24068f378f8e70d98 files/2.1_pre5/version_bump_2.1_pre5-r4.patch 378
 MD5 c906e2e6782e197725b70f84cfe112a4 files/README.RESCUE 137
 RMD160 b8d015f266501fd1f57c91899c6815de9f9d5685 files/README.RESCUE 137
 SHA256 69bea0c755eab59b6b4d90838b8551744f0b0c8eeac170b1cd13a71ee83f9ac4 files/README.RESCUE 137
