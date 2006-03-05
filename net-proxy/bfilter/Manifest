@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ffe32d93ac10f29f36362b3a72c05aa5 ChangeLog 1131
 MD5 70889ee77a02542ea04a05e106645823 bfilter-0.10.1.ebuild 1732
 MD5 10809a79ce5a5c073a97bd55bfd93e02 bfilter-0.10.3.ebuild 1541
@@ -8,3 +11,10 @@ MD5 caa4efdfba69567046fe1205231ed8b8 files/bfilter.init 918
 MD5 8c7f7fd24bd2fc2681e185c511db4d57 files/digest-bfilter-0.10.1 67
 MD5 d6dea972b0d02c7f77440d983ce2e375 files/digest-bfilter-0.10.3 67
 MD5 2b32df81d3a9693c235baddd9386cce9 metadata.xml 1179
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFECqH1jG8pv1lIUX4RAu4bAJsGoZrk+n1KqS0Up8K1Ks7AET+j+wCdErnC
+j3opIpmjaOmNS3HXiVMHhg0=
+=icDV
+-----END PGP SIGNATURE-----
