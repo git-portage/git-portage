@@ -1,4 +1,4 @@
-MD5 b97540cdcb7bdae01eda324dd3a29453 ChangeLog 292
+MD5 58dfb9dbdb6086cf9da8832f0733d526 ChangeLog 386
 MD5 5510cd6fc2d4b54671b851974ca20fd3 files/digest-requant-0.0.1 69
 MD5 72218fae70d3ae2c8b605729729c3fe9 metadata.xml 445
-MD5 3ffccf7624dfec75cba531ec58dc0190 requant-0.0.1.ebuild 730
+MD5 198842db27972386b83ea964424618d3 requant-0.0.1.ebuild 835
