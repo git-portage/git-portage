@@ -135,3 +135,63 @@ grobian@gentoo.org:
  	}
  	
  	close SCRIPT;
+--- boxbackup-0.10/bin/bbstored/BackupConstants.h
++++ boxbackup-0.10/bin/bbstored/BackupConstants.h
+@@ -48,7 +48,7 @@
+ #ifndef BACKUPCONSTANTS__H
+ #define BACKUPCONSTANTS__H
+ 
+-#define BACKUP_STORE_DEFAULT_ACCOUNT_DATABASE_FILE	"/etc/box/backupstoreaccounts"
++#define BACKUP_STORE_DEFAULT_ACCOUNT_DATABASE_FILE	"/etc/boxbackup/backupstoreaccounts"
+ 
+ // 15 minutes to timeout (milliseconds)
+ #define	BACKUP_STORE_TIMEOUT			(15*60*1000)
+--- boxbackup-0.10/lib/common/BoxPortsAndFiles.h
++++ boxbackup-0.10/lib/common/BoxPortsAndFiles.h
+@@ -53,7 +53,7 @@
+ 
+ // Backup store daemon
+ #define BOX_PORT_BBSTORED					(BOX_PORT_BASE+1)
+-#define BOX_FILE_BBSTORED_DEFAULT_CONFIG	"/etc/box/bbstored.conf"
++#define BOX_FILE_BBSTORED_DEFAULT_CONFIG	"/etc/boxbackup/bbstored.conf"
+ // directory within the RAIDFILE root for the backup store daemon
+ #define BOX_RAIDFILE_ROOT_BBSTORED			"backup"
+ 
+@@ -61,11 +61,11 @@
+ #ifdef WIN32
+ #define BOX_FILE_BBACKUPD_DEFAULT_CONFIG	"C:\\Program Files\\Box Backup\\bbackupd.conf"
+ #else
+-#define BOX_FILE_BBACKUPD_DEFAULT_CONFIG	"/etc/box/bbackupd.conf"
++#define BOX_FILE_BBACKUPD_DEFAULT_CONFIG	"/etc/boxbackup/bbackupd.conf"
+ #endif
+ 
+ // RaidFile conf location default
+-#define BOX_FILE_RAIDFILE_DEFAULT_CONFIG	"/etc/box/raidfile.conf"
++#define BOX_FILE_RAIDFILE_DEFAULT_CONFIG	"/etc/boxbackup/raidfile.conf"
+ 
+ // Default name of the named pipe
+ #define BOX_NAMED_PIPE_NAME L"\\\\.\\pipe\\boxbackup"
+--- boxbackup-0.10/notes/backup_encryption.txt
++++ boxbackup-0.10/notes/backup_encryption.txt
+@@ -33,7 +33,8 @@
+ 
+ The file data is encrypted with AES in CBC mode, with a 256 bit key (max length). Blowfish is used elsewhere because the larger block size of AES, while more secure, would be terribly space inefficient. Note that Blowfish may also be used when older versions of OpenSSL are in use, and for backwards compatibility with older versions.
+ 
+-The keys are generated using "openssl rand", and a 1k file of key material is stored in /etc/box/bbackupd. The configuration scripts make this readable only by root.
++The keys are generated using "openssl rand", and a 1k file of key
++material is stored in /etc/boxbackup/bbackupd. The configuration scripts make this readable only by root.
+ 
+ Code for review: BackupClientCryptoKeys_Setup()
+ in lib/backupclient/BackupClientCryptoKeys.cpp
+--- boxbackup-0.10/notes/lib_raidfile.txt
++++ boxbackup-0.10/notes/lib_raidfile.txt
+@@ -11,7 +11,8 @@
+ 
+ SUBTITLE Controller
+ 
+-The raid disc sets are managed by RaidFileController. This reads the configuration file, /etc/box/raidfile.conf, and then stores the sets of discs for use by the other classes.
++The raid disc sets are managed by RaidFileController. This reads the
++configuration file, /etc/boxbackup/raidfile.conf, and then stores the sets of discs for use by the other classes.
+ 
+ In the code, files are referenced using an integer set number, and a filename within that set. For example, (0, "dir/subdir/filename.ext"). The RAID file controller turns this into actual physcial filenames transparently.
+ 

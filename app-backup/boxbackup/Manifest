@@ -19,9 +19,9 @@ SHA256 8063c7b0e26829ac7c58eaf87ecce92df77c9e4b189e2311555c40c29c7437d9 files/bo
 MD5 21a608266d776fcc9099d8d58418f8ed files/boxbackup-0.09-gentoo.patch 6695
 RMD160 698dd7b6d8dffc648a4ade458c8ffb0ba82397a4 files/boxbackup-0.09-gentoo.patch 6695
 SHA256 b5bbeefb639fcaa9658a20bc0e6ab6d839b1db36bca3386ec7cc47d9c04fed2d files/boxbackup-0.09-gentoo.patch 6695
-MD5 2f73db2211fd42f2cd394255b2e79672 files/boxbackup-0.10-gentoo.patch 4616
-RMD160 94a652d6b52fb71f8a6ce492a40179afa6ed5b12 files/boxbackup-0.10-gentoo.patch 4616
-SHA256 76b052551e5b8696a098defafea0016991254e82f32c5f9c12ba49c396b955c4 files/boxbackup-0.10-gentoo.patch 4616
+MD5 d863467fca83dc0f18e86d249610def4 files/boxbackup-0.10-gentoo.patch 7655
+RMD160 560f945af864ddd74faf74f74207b23d8443941a files/boxbackup-0.10-gentoo.patch 7655
+SHA256 5f96bde2e19dc001353a69cc177e0d224f5e98dc57b7b8cf99c1ea41a00cae53 files/boxbackup-0.10-gentoo.patch 7655
 MD5 62422da59467071552d61d58dfac89c3 files/digest-boxbackup-0.09-r1 506
 RMD160 411c3eb8e4c27b3057a982832ded434d25a68fe1 files/digest-boxbackup-0.09-r1 506
 SHA256 3fd085be1c5b39d3859dde094941be74e33a2e8430e1a19d6afee1aeaaee774f files/digest-boxbackup-0.09-r1 506
