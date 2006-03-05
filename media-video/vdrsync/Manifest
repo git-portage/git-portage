@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a1cd26987aa11d9f43c0d4ed0a45f9ad ChangeLog 905
 RMD160 f47b3c0fb1a9aca5bf8ad3defede5afa3323d602 ChangeLog 905
 SHA256 87b1a46fb08c0d70d1eb38a1dc930e4aab1f3143f652f8979566d615ace3bb89 ChangeLog 905
@@ -10,3 +13,10 @@ SHA256 c5f471e28305fd98cccb56b4196466a6b601cf6ec3a392cfeaaefeef7990a983 metadata
 MD5 6d8ecc2dfaa59fdda4f622c52f0d0788 vdrsync-0.1.3_pre050322.ebuild 1303
 RMD160 a83077cfe5c8016cd100eec1a7caada8b8eaaa6b vdrsync-0.1.3_pre050322.ebuild 1303
 SHA256 c8b019dbe117fd250e6751346a35aefc0eb920012a4ed5ddc65fc3af9ec9ed2f vdrsync-0.1.3_pre050322.ebuild 1303
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEC0q1CRZPokWLroQRAieDAKDhYbKXntADLMlBlsH++Kg5rFk28ACgqjUD
+ZrBbER+9+Vn1n8paK50tAig=
+=yy/O
+-----END PGP SIGNATURE-----
