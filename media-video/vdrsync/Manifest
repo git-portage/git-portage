@@ -1,4 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7b2a100e0d644dfb0e41a8c169faac97 ChangeLog 807
 MD5 ce3ab9c2f0c809f743cf98969b32f408 files/digest-vdrsync-0.1.3_pre050322 63
 MD5 ddab6dd873304661b343b889490c90f7 metadata.xml 303
 MD5 6d8ecc2dfaa59fdda4f622c52f0d0788 vdrsync-0.1.3_pre050322.ebuild 1303
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+Comment: no further Information
+
+iD8DBQFECzHbdn07HTTCgIoRAhYdAJ4p5BG/ldV2AmR/K1zGRxM2L2MtWgCeIKNH
+AGWtitiIfpj/B65oye9dYec=
+=J3lY
+-----END PGP SIGNATURE-----
