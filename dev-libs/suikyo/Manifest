@@ -4,4 +4,4 @@ MD5 59e814832cc49d5eefc10a41f9b85e7a files/digest-suikyo-2.0.1.2 66
 MD5 eb22ea60ff47e0d614807b677938b73f files/digest-suikyo-2.1.0 64
 MD5 8afe4eded45a484580ce855f24ffea2e metadata.xml 265
 MD5 8ffc5fddb74ccd0fc26e61d91550f330 suikyo-2.0.1.2.ebuild 893
-MD5 bdebd6bd7d30184a85afaa36fd9d436d suikyo-2.1.0.ebuild 914
+MD5 ed2dc8a9a96a40987a60fe0237a2ba27 suikyo-2.1.0.ebuild 915
