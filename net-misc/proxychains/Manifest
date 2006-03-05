@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 973bca9e98923e7a450dc6c255c8649a ChangeLog 1286
 RMD160 8bfeab6bd645dd2ef4a34594efd6a6a1c4d336fc ChangeLog 1286
 SHA256 cb20a348ef6c2337e2450c6ffe3fa6815454a610e8496e661a78018c36a0bcbb ChangeLog 1286
@@ -22,3 +25,10 @@ SHA256 b4c8e65cb3d7446c12fb60be2b812242f2ac9cda60fad82519ea89e9c90bb862 proxycha
 MD5 b840fba9a8f53a9a2eb42baeb4949c69 proxychains-3.0.ebuild 900
 RMD160 fc30daf2f7783772058368033807f237b7ea5da8 proxychains-3.0.ebuild 900
 SHA256 ae246f49b2f44fc8515b74cefd5bb6d7eace56bc82b8f9e7984bfaa9dcf1094a proxychains-3.0.ebuild 900
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEC0Us2+ySkm8kpY0RAqgEAJoDXGpX7E7VHIouo9S4+gKeCjpSmgCgiG+s
+IA3t0iiZAVEtp3P1qZLuKeE=
+=B+2R
+-----END PGP SIGNATURE-----
