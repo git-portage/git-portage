@@ -1,14 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
+MD5 8018e2bf1ae04016e6421adca2397bd7 ChangeLog 1006
+RMD160 f47492450131df64727e7027cd66c97569480dff ChangeLog 1006
+SHA256 a3a2ccb552a9d48be6afb23314323d40c8f40a6aca45aeaf169477fe7ff3e1f1 ChangeLog 1006
 MD5 a7ff8da998ce2866eab86163e638cc8e experience-3.03.ebuild 1039
-MD5 30196025b40b596bea852fc99bb41082 ChangeLog 847
-MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+RMD160 29f559718d03315bedb15250a59f3ed0c3ad5ba5 experience-3.03.ebuild 1039
+SHA256 30230dc1b08901a5ea03e5a2b6a1c9b4ac68c9efe1560a54ef3cb4d636615af5 experience-3.03.ebuild 1039
+MD5 450adec180e076b31380703448c7e438 experience-3.04.ebuild 1049
+RMD160 2bf597475e849242b62f69310a52cabf09277516 experience-3.04.ebuild 1049
+SHA256 7891cfa165706b86aacd303a291dfd4c4b8235c0f5c9da0b252e81cf905bbbae experience-3.04.ebuild 1049
 MD5 5aaa2ff2d5997a585fc6499563162f8a files/digest-experience-3.03 67
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDLr+0KRy60XGEcJIRAijTAKCQ9aqrBPL5x188CTdUppIUD77dAACgiVPm
-9GfJqEL7wiIuPTwTevIPixo=
-=bEaf
------END PGP SIGNATURE-----
+RMD160 9f88508ddd75ab003adc5b4753d5fe71631c6700 files/digest-experience-3.03 67
+SHA256 fc7fd597e1e52736ce4d8c7f29c14e8432af5417d9062aade699294b744d4cb8 files/digest-experience-3.03 67
+MD5 47ad51a92a02496c6dc0710d8c1ba55b files/digest-experience-3.04 247
+RMD160 6b42dd94e7d0e926b1117f70d35371e3d88a4e87 files/digest-experience-3.04 247
+SHA256 082ae41642fcba4faeb129b33080d5fb3b76d4bf5ee1d73071392d3a267e59e2 files/digest-experience-3.04 247
+MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+RMD160 c0e2bae8e91bb6be8922bac5e4f597302e06587e metadata.xml 158
+SHA256 3a7dbca0fdc557de69783e0663e2d76ddab129ea8a19b2d0ef6d3e5d1b947ce1 metadata.xml 158
