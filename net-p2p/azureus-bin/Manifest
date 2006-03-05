@@ -4,6 +4,12 @@ SHA256 737f7f50fb2b96533553be452583574cf60dc32b82e1f44c36c495d4d30a1556 ChangeLo
 MD5 e6f5a8d21bd0da79aac766231f65d4f0 azureus-bin-2.3.0.4.ebuild 3848
 RMD160 1ec3f2f9130134c5633608c530f7dbe9fdbf8d33 azureus-bin-2.3.0.4.ebuild 3848
 SHA256 8b1d50f9287465573fce74be1b1f1429b749453bda8fec133894bca4019777e5 azureus-bin-2.3.0.4.ebuild 3848
+MD5 ba1f410bf47cb57aacdba06fa1966a9a azureus-bin-2.3.0.6.ebuild 3060
+RMD160 4ec612ed6cfe36d5f06aa586e9f0f668e0c137cc azureus-bin-2.3.0.6.ebuild 3060
+SHA256 4d070351fb001499b1d115319af2a4dff5f4700e866647cac519117ef34794b7 azureus-bin-2.3.0.6.ebuild 3060
+MD5 ba1f410bf47cb57aacdba06fa1966a9a azureus-bin-2.4.0.0.ebuild 3060
+RMD160 4ec612ed6cfe36d5f06aa586e9f0f668e0c137cc azureus-bin-2.4.0.0.ebuild 3060
+SHA256 4d070351fb001499b1d115319af2a4dff5f4700e866647cac519117ef34794b7 azureus-bin-2.4.0.0.ebuild 3060
 MD5 6cf2c1041726decd44a55736aadda4f7 files/azureus-bin-gentoo.sh 1056
 RMD160 31af9752b941226dc70e2565b66874c82a5c81dd files/azureus-bin-gentoo.sh 1056
 SHA256 358456d16abdfce525ce232ab2d9d42b4314baee59e110b6b3e5ef0fe974a62a files/azureus-bin-gentoo.sh 1056
@@ -16,6 +22,12 @@ SHA256 951bcf1bbd46d049740f50be4d1cd41bbac0892ca40b83891db6a2beff9f6a30 files/az
 MD5 237fc0642db8aae1caac9d5316ec4412 files/digest-azureus-bin-2.3.0.4 382
 RMD160 c36a569e0d75e0983a299fd8e1cb0e6c0713277f files/digest-azureus-bin-2.3.0.4 382
 SHA256 663b9bcc285b06fbce601fd1b0eac93d2e9d0169cb04fbb31b4bbfdb54eaca1a files/digest-azureus-bin-2.3.0.4 382
+MD5 b621e2bdab22bfc427a7edc41465005e files/digest-azureus-bin-2.3.0.6 1078
+RMD160 e82d4f79b2c9729a42f3f8adec0e9b3d055cda9c files/digest-azureus-bin-2.3.0.6 1078
+SHA256 5fa675700db348348eee81a7b20e739768f99b6e300a3ab08775d4ed8fdb7793 files/digest-azureus-bin-2.3.0.6 1078
+MD5 387e475968b069506fb856e1e99695b0 files/digest-azureus-bin-2.4.0.0 1078
+RMD160 7e7337653d8023a7060bcdca138fdcfa1bc32566 files/digest-azureus-bin-2.4.0.0 1078
+SHA256 05c972ba21ad417fa6fd6d938c44a90a97868f98a4eac829be161edb6eb376b6 files/digest-azureus-bin-2.4.0.0 1078
 MD5 0d0384a2c9c3495944bd250aac2fd8a0 metadata.xml 276
 RMD160 30333f8e6bf59b86caedb107f84c17d6e4c0dd20 metadata.xml 276
 SHA256 ede99d07f35a45343fe0658cd64fa3b6fac103ca95b9285b94ebfa6883e7f3a0 metadata.xml 276
