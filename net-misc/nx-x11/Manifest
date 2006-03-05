@@ -1,4 +1,4 @@
-MD5 c8deddaab3459df69c2872d9b73b8214 ChangeLog 2371
+MD5 775fd205558083b0dc7450d32ad4c36b ChangeLog 2372
 MD5 a2e15c37686ddad8dd3854b2b9b70700 files/1.5.0/50nx-x11 57
 MD5 24e6e57f80b89abab29d9e19128d8353 files/1.5.0/nx-x11-windows-linux-resume.patch 1355
 MD5 cf67a8d2074fa0a92afa2be056b537e2 files/1.5.0/nxcomp-gcc4.patch 315
@@ -10,4 +10,4 @@ MD5 d2caae40bdf5748d68ca46ad1d0ec951 files/nx-x11-1.4.0.xprint.patch 341
 MD5 77fd36d93b0a1b9f35abbe6a1c146561 metadata.xml 482
 MD5 dd061df9cf4e99f32835ce0c74fc024e nx-x11-1.4.0-r3.ebuild 2847
 MD5 02c0cb9a393c005800a850130c417b22 nx-x11-1.4.0-r4.ebuild 2917
-MD5 449b682a67048326bd54b582bf485f4f nx-x11-1.5.0-r5.ebuild 2745
+MD5 4e2861a082a95c596fdb4c1d08714bd6 nx-x11-1.5.0-r5.ebuild 2746
