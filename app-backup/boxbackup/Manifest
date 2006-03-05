@@ -4,9 +4,6 @@ SHA256 b58e74301a1c85705941e3fa59ce60eaa5cfce9887ac6cd0545a089ea2ba1b3e ChangeLo
 MD5 936de91838c313ef0556bb504e740028 boxbackup-0.09-r1.ebuild 2327
 RMD160 f4de0b9e4fdc05de0fcb1d74ff6a1e64bcca8e33 boxbackup-0.09-r1.ebuild 2327
 SHA256 04266fd5e515f2ad18e1c4549fa87c65fe1b8ef3c1a536d72e1b2265770482f1 boxbackup-0.09-r1.ebuild 2327
-MD5 d561b4735dee4eb7a3466f3d27c0f002 boxbackup-0.09.ebuild 2227
-RMD160 494081616fd7a5a48ae704ce7dee0ba37b0c9e57 boxbackup-0.09.ebuild 2227
-SHA256 e090eda1336bfb3fc941e52e952e69d1ca54f78ceec1db6d4e732dcdf5857ba0 boxbackup-0.09.ebuild 2227
 MD5 50cea8f15f1e36712fe433be56d39437 boxbackup-0.10.ebuild 1831
 RMD160 798e374184d2ab8ddf19210de6a8440f0c149fc7 boxbackup-0.10.ebuild 1831
 SHA256 6efcfd5b9fd09597cfeb0ef248c2c29580303f50a392b6979f378348d4fe49c2 boxbackup-0.10.ebuild 1831
@@ -25,12 +22,9 @@ SHA256 b5bbeefb639fcaa9658a20bc0e6ab6d839b1db36bca3386ec7cc47d9c04fed2d files/bo
 MD5 2f73db2211fd42f2cd394255b2e79672 files/boxbackup-0.10-gentoo.patch 4616
 RMD160 94a652d6b52fb71f8a6ce492a40179afa6ed5b12 files/boxbackup-0.10-gentoo.patch 4616
 SHA256 76b052551e5b8696a098defafea0016991254e82f32c5f9c12ba49c396b955c4 files/boxbackup-0.10-gentoo.patch 4616
-MD5 a5aea4f1d604c930129b8efc62612f51 files/digest-boxbackup-0.09 138
-RMD160 5bf7871504d9a05026f2ccaa1bb2e361f8c565bb files/digest-boxbackup-0.09 138
-SHA256 5debd6d89b0d48d87935635beb12bb8228f58f6998429a663694e2003ecfd13e files/digest-boxbackup-0.09 138
-MD5 a5aea4f1d604c930129b8efc62612f51 files/digest-boxbackup-0.09-r1 138
-RMD160 5bf7871504d9a05026f2ccaa1bb2e361f8c565bb files/digest-boxbackup-0.09-r1 138
-SHA256 5debd6d89b0d48d87935635beb12bb8228f58f6998429a663694e2003ecfd13e files/digest-boxbackup-0.09-r1 138
+MD5 62422da59467071552d61d58dfac89c3 files/digest-boxbackup-0.09-r1 506
+RMD160 411c3eb8e4c27b3057a982832ded434d25a68fe1 files/digest-boxbackup-0.09-r1 506
+SHA256 3fd085be1c5b39d3859dde094941be74e33a2e8430e1a19d6afee1aeaaee774f files/digest-boxbackup-0.09-r1 506
 MD5 f78ca85ecd9a67cb385844e429257616 files/digest-boxbackup-0.10 235
 RMD160 f2d275e5d7d46b32dc3a4f5189fddb8db080fff5 files/digest-boxbackup-0.10 235
 SHA256 75c6e20e9ba97e4fd3a9269fc722f3fd1ba9a56bdfd0f1c1adacf14d0f29f63d files/digest-boxbackup-0.10 235
