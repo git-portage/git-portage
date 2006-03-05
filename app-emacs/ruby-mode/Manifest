@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 c81bd6a20558ef85c23e58eccd09376e ChangeLog 1898
 RMD160 3a685200313a38906f954bbdb401eecc2b8431a9 ChangeLog 1898
 SHA256 fc0725ea5c7c0aa8201aac7573051b11596b14c8c49ebcd6fa057d399ce4b92a ChangeLog 1898
@@ -31,3 +34,10 @@ SHA256 9e77a88b894feab37bf3c0f8f53db683164905d5bc7db95bd491aeedc30a38ab ruby-mod
 MD5 3f5f11a129a938fc9d79fbc7cc9b425b ruby-mode-1.8.4.ebuild 690
 RMD160 bfe39e045a87b7e8e1fc9ba0ebdbd67f756a071d ruby-mode-1.8.4.ebuild 690
 SHA256 e77b7f164f403d711c728f6d03bdeb1c8c143fb4ed18e22027e79f8a3bd816ef ruby-mode-1.8.4.ebuild 690
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFECydgyiNZaEAZA+ARAilDAJ9L4DdiegMf2tTfgE4jnBvfG+TzBQCcCADX
+70MCzX0gJOHfUeLEoRbZLSA=
+=xshZ
+-----END PGP SIGNATURE-----
