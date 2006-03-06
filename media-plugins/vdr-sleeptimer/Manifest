@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 eb67a67371fcec0b9a564a6b1126ff2a ChangeLog 437
 RMD160 15450697388da8ddd577127d103121c78882a2ff ChangeLog 437
 SHA256 5d1b4abe65d398aee3d48de1ec0dde5e5be0a9d97f33336f0dd1b8dd49edfc31 ChangeLog 437
@@ -13,3 +16,10 @@ SHA256 29feafd8b7177b65f8bd92553ac96779d9a91e3b7b4eeecfb0924eb7b6979587 metadata
 MD5 aabccdd26bee1b7167e870db9f6583a5 vdr-sleeptimer-0.6.ebuild 572
 RMD160 b1db07517bed2b445a8ac3479393e4ee6d10b20e vdr-sleeptimer-0.6.ebuild 572
 SHA256 6cc51f80a9d030d6a8623bd18ca449d96c0ecc9831b1573bc05499d6ecc85473 vdr-sleeptimer-0.6.ebuild 572
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEC9PfZfSl1Kp5KmoRAvUpAKCDo9ZvF5xjCo2cDEFmQRJtJa3EcwCfZuhk
+sqHZccfhiwsnmQ3q96FqATI=
+=faYp
+-----END PGP SIGNATURE-----
