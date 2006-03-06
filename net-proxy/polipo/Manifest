@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 97922359a669c20cf66538cf0596e9fa ChangeLog 989
 MD5 fdf9f12df918b0d2623ebe825a1aa705 files/config 167
 MD5 fc5f3d9392c55073aa7e3b2d90400d07 files/digest-polipo-0.9.9 64
@@ -6,3 +9,10 @@ MD5 70dea09e9d7e630836c05c4e32b9a1cc files/polipo.crond 76
 MD5 5fb40a3a7fab1ebaffdc988b47d00646 files/polipo.initd 767
 MD5 c3de0bbc117c44cd0aad81e19a01094c metadata.xml 294
 MD5 d5e9bfc66d90c79dba03ed409607e9ed polipo-0.9.9.ebuild 1327
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEDKJVjG8pv1lIUX4RAqGsAKC/N60VAFuRaOYuGb5nczpQpldZYACgiBYR
+c0j1FyQC7kTwk8lpJcU0gPc=
+=Ea9/
+-----END PGP SIGNATURE-----
