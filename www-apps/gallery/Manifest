@@ -13,6 +13,9 @@ SHA256 b38dca57e06bed5547ebe276181d4450d83efa8449c1a55b4bacb1f401e81dac files/di
 MD5 2766aeba32226962ae298487f56c37aa files/digest-gallery-2.0.2-r1 71
 RMD160 79522c528ec770842173ad841db6f34ab950fe0a files/digest-gallery-2.0.2-r1 71
 SHA256 3bca6cf123d091127413fc5fc7a425866fc735de539641b6a5784cdf77a219ba files/digest-gallery-2.0.2-r1 71
+MD5 59b3d00dde78ee0a2869cf879e39f626 files/digest-gallery-2.0.3 259
+RMD160 7c27894a4360b50ecbe40ffd66b6307218fdfbb5 files/digest-gallery-2.0.3 259
+SHA256 3e8eb714aace1376371e1d022010414c6745749bdc839a8ab8379fae4aca6ea0 files/digest-gallery-2.0.3 259
 MD5 d86a2cffa618ecf7fe9a2b001be69523 files/postinstall-en.txt 430
 RMD160 bfac0f557ce318745a713cf7a4b90c4473ee97a5 files/postinstall-en.txt 430
 SHA256 e2e63ec31b83e97fec9ecc7163f84beda4744150fa179ce39f0c26ed7ec54f3b files/postinstall-en.txt 430
@@ -28,6 +31,9 @@ SHA256 b2045b34d21ea0912bcb20fe982f9040c146d662a2bb6d8979924b5f65b4ce06 gallery-
 MD5 78e0817689de49d654eb8c2863a4d4fe gallery-2.0.2-r1.ebuild 1117
 RMD160 98e78b8dca48d3caabfed53e30245788eb68f7f3 gallery-2.0.2-r1.ebuild 1117
 SHA256 a661e64645c3a56f89eb461836d7cc45aedc15cea62b7f8cba4483b80edebb6d gallery-2.0.2-r1.ebuild 1117
+MD5 a175deb73b2ba9418b994480148d0062 gallery-2.0.3.ebuild 1123
+RMD160 105bfc7262c378414d42222deb713625f427e5d2 gallery-2.0.3.ebuild 1123
+SHA256 bdd1533a356afa502795dfff1393df1d963516b92b5aca0c3d7dfece0b154e30 gallery-2.0.3.ebuild 1123
 MD5 c339473e0ff43da76eb2f2607c441921 metadata.xml 280
 RMD160 c449ad35e8af3f158d8f8305f8a02ff98a420970 metadata.xml 280
 SHA256 fd37fa0f441b1b68ef8dc4bffbb0a51f0414aa7c370b48369453af5f4bff177a metadata.xml 280
