@@ -1,4 +1,4 @@
-MD5 519e1533771c9ac35962e5e9e0f817d5 ChangeLog 3560
+MD5 9211d92e194dda7139a6a99aaeaf3e17 ChangeLog 3664
 MD5 0279b46d6d44e209fead5769b6fdea30 files/checkvpw-loginfail 45
 MD5 dada9de263c4a08a0d043350821a42b4 files/digest-vmailmgr-0.96.9-r2 67
 MD5 dada9de263c4a08a0d043350821a42b4 files/digest-vmailmgr-0.96.9-r3 67
@@ -13,4 +13,4 @@ MD5 2757698f66f98b27d5e23fdc2a9a2e44 files/vmailmgr-0.97-no-authvmailmgr.patch 6
 MD5 911634f611838bc9b119dfb48b047c35 metadata.xml 250
 MD5 ccbcd62fcb2f8a6143c108147f78e68f vmailmgr-0.96.9-r2.ebuild 1644
 MD5 68fc95ecff8428697a46f9bb4a5bd2a8 vmailmgr-0.96.9-r3.ebuild 1645
-MD5 1cf52574f4dbdf381a4ff3460eadd86b vmailmgr-0.97.ebuild 1732
+MD5 6876ba5dfb22dd0fa3f0a05d3914ca71 vmailmgr-0.97.ebuild 1739
