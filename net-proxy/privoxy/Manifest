@@ -4,4 +4,4 @@ MD5 199b985be5ba80912fdd3bf5776e697f files/privoxy-zlib.patch 17945
 MD5 f2b6a652dbfbc65e5b89024a8ea3da7e files/privoxy.logrotate 191
 MD5 2a366b72a6ff8d6d01cf0bef2ac71f0a files/privoxy.rc7 579
 MD5 a31f52e5785898edac47ca00310413e2 metadata.xml 291
-MD5 c9d617aa8ec220ad5f4743d5e32aee9b privoxy-3.0.3-r3.ebuild 2354
+MD5 116b629d35a9c45ff430fbbda3f46b51 privoxy-3.0.3-r3.ebuild 2355
