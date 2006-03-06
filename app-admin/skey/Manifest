@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 15f7f9f466e4a90542c279612273077b ChangeLog 5329
 MD5 f1c337772d8c495c76c36499d9efa5c9 files/digest-skey-1.1.5-r3 131
 MD5 f1c337772d8c495c76c36499d9efa5c9 files/digest-skey-1.1.5-r4 131
@@ -10,3 +13,10 @@ MD5 fb946a077c4e2ae03befc41f3a095b39 metadata.xml 1425
 MD5 44750741ff7ca51feec40095290259f3 skey-1.1.5-r3.ebuild 2313
 MD5 467bfb8254076bef10ae320c38d1d528 skey-1.1.5-r4.ebuild 2891
 MD5 ef3e61cdbbd0441c1d0c482e31a62cf0 skey-1.1.5-r5.ebuild 3077
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEDErPKRy60XGEcJIRAgw4AKCYdmWhklqWBVDdO3ThFmI/E+1OuACgqX+R
+LryNdtBYZS691FaZhJclBl8=
+=iWzR
+-----END PGP SIGNATURE-----
