@@ -1,5 +1,5 @@
-MD5 f9a2ebf3c9480600542c13859cf7f7f4 ChangeLog 329
+MD5 ef24ad05b3d2e2111991ff64ca250f0b ChangeLog 427
 MD5 b6b93df845356f7325d3e7a05f02f6ee files/digest-vdr-games-0.6.1 66
 MD5 c1d34ed0de94b78d77dba84bc86e712c files/vdr-games-0.6.1-gentoo.diff 4185
 MD5 63ae65f20bff0bce0b3a6e1c9c3a5598 metadata.xml 890
-MD5 5199bb5fafc0121daaddb98b8897d66a vdr-games-0.6.1.ebuild 467
+MD5 60deb4927711477f1c2e73797ffae451 vdr-games-0.6.1.ebuild 578
