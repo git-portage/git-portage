@@ -1,5 +1,5 @@
-MD5 841b0f00420e42d2fdf2a694fc98add8 ChangeLog 1941
-MD5 45715011fa2fa86e2e9f452f72c3b235 dansguardian-dgav-6.4.3-r1.ebuild 1624
+MD5 b78f63a7dd0de8053231d8f88b753381 ChangeLog 2081
+MD5 41b1845294f494282a35de2d43a05b8a dansguardian-dgav-6.4.3-r1.ebuild 1624
 MD5 6328464c9d6747a4f054f17fb2c4844b files/dansguardian-dgav-6.4.3-gentoo.patch 1291
 MD5 6313b934a33da7e4308812e834494074 files/dansguardian-xnaughty-2.7.6-1.diff 2325
 MD5 40108287ed99da7e2d4f078e50288100 files/dansguardian.init 837
