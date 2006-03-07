@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1b2d0d6e79d10a3f24bbb0eba9494c39 ChangeLog 1748
 RMD160 3f388fbe1acdfb0606fcca0a17f08a3570f3bfc4 ChangeLog 1748
 SHA256 32d8e33a2e635b193760cd0953d6d8a2414ed8fffac477225dad03ec71769fb9 ChangeLog 1748
@@ -28,3 +31,10 @@ SHA256 12ac3af94796dbec2ebd8e0df47b213894f9ce94e5b86704fd29c444ee1e16f7 squeak-f
 MD5 48fb5cdc4fe793d902fb776899ea0cdd squeak-fullimage-3.8.6665.ebuild 1273
 RMD160 b6905d10e83a04e040c6204f400614d10dfaa9b3 squeak-fullimage-3.8.6665.ebuild 1273
 SHA256 6cad71aadb540e07b63d3af8ef644ec9852047b0a006778c9e77e320192c6f2d squeak-fullimage-3.8.6665.ebuild 1273
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFEDXJxdZ42PGEF17URAnH4AKCyF9ikj1Qg6fAvDeR9GKntw7V/+wCeIhtm
+X0qz2PU4aV+gpr0hBfFTwdY=
+=im9V
+-----END PGP SIGNATURE-----
