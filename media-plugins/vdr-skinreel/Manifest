@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 efcf9a650b8fa911ec06c53cc7f28e11 ChangeLog 399
 RMD160 1be8a364aa500301166e6c653ddec5d3cfbf4083 ChangeLog 399
 SHA256 f5f3666c8c01bca5dacc3425aeb11eaa4e063725cb9d56a5d637d3b0d1fa9a6b ChangeLog 399
@@ -10,3 +13,10 @@ SHA256 29feafd8b7177b65f8bd92553ac96779d9a91e3b7b4eeecfb0924eb7b6979587 metadata
 MD5 dc6777b5bce37ee4c24934d7c4dff2a1 vdr-skinreel-0.0.1.ebuild 650
 RMD160 099cfc188c8735da199837e144da16f9aa064c3e vdr-skinreel-0.0.1.ebuild 650
 SHA256 1c7b53d0f6f5dc3bbb66b66dcb31ac7d1031a717f6a6484b5270ad766a471ccc vdr-skinreel-0.0.1.ebuild 650
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEDfN6ZfSl1Kp5KmoRAlxOAJ9uMKYJiBPcHFV1Ra7Lb2ikdHZH3ACgnWrw
+UA+eCFrc4C2DAWZla97abUo=
+=4wtT
+-----END PGP SIGNATURE-----
