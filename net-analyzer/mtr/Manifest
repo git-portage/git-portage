@@ -4,5 +4,5 @@ MD5 ce43e9fae32e2db595e780b4a4b2fcd8 files/digest-mtr-0.69-r1 60
 MD5 1b2fafeb55048e9993c48c330ca7a4bf files/mtr-0.69-debian.patch 2558
 MD5 0bbdffc84e47f22daaf46c76e941a02a files/mtr-ac-res_mkquery.patch 510
 MD5 720bffd73acf542e859034ca9d443c19 metadata.xml 244
-MD5 28bbbddbfbc77ed851f2210cf7d5db2a mtr-0.69-r1.ebuild 1391
+MD5 ae4b4cbf30dd2a911307dbde89b8a199 mtr-0.69-r1.ebuild 1390
 MD5 59a554945b84eb7036b372325acdffae mtr-0.69.ebuild 1343
