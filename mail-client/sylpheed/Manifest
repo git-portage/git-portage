@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 405b3198ed55a8ddf64d5f9be3a07f97 ChangeLog 31114
 MD5 4d08519a369aeb7229167e0d1d7e75a8 files/digest-sylpheed-2.0.4 68
 MD5 6b71dbeb45c82f1bb30f96347c10921f files/digest-sylpheed-2.2.0 68
@@ -10,3 +13,10 @@ MD5 126ca8f672f0296d2f1e6830e6729a91 metadata.xml 231
 MD5 38118ad46ff05a99e88f44780bf8ff9c sylpheed-2.0.4.ebuild 1445
 MD5 269d14fbffe49f760a373ddb72a63021 sylpheed-2.2.0.ebuild 1473
 MD5 cce1cb0f25349e8422041e2669d97bcd sylpheed-2.2.2.ebuild 1473
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEDcw2KRy60XGEcJIRAvZNAJ9KqxG0GeE1lWuq5oHs7V/Y5+kuDQCgl71V
+jdOBhRDT+psY9NYzOkp4aaA=
+=xIMc
+-----END PGP SIGNATURE-----
