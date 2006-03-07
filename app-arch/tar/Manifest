@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ed3ffc7ea3814a022be93612cbac54c0 ChangeLog 11082
 MD5 a1433bcc25f8f63d8ee96bddbf877962 files/1.15.1-flex-arg.patch 519
 MD5 9873b609521d574ae1f98d1c092c80e4 files/append.at 1065
@@ -14,3 +17,10 @@ MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
 MD5 d4f800ee8a2c5ddd00931249e680def8 tar-1.14.ebuild 1329
 MD5 15feaa3f2b782be08c349b31ffc362d2 tar-1.15.1-r1.ebuild 2107
 MD5 e9fe7de46eb4b1aa489fc8a619e1f042 tar-1.15.1.ebuild 2046
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEDf6QKRy60XGEcJIRAvbsAJ9QZIrAqG8cdhpvGsc9e5Qp1Gyl9gCfbxFw
+hDk/i9Kb+4iHMpOg9lCQWys=
+=+PSL
+-----END PGP SIGNATURE-----
