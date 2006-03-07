@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 21765c8fc157e70e98031c7ce25b5a28 ChangeLog 30606
 MD5 1982acfd06faa04e30f2ae073550dc02 ck-sources-2.6.15_p5.ebuild 1552
 MD5 b5cab6844d523b6fb8336f86f5837986 files/digest-ck-sources-2.6.15_p5 273
 MD5 7187b8c28501f454a2412c9e4a7fcf53 metadata.xml 421
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFEDTpviP+LossGzjARAmRMAJ0dSQO5W80THMRMes6UsnEfi5lI9ACgtSIC
+jmXYEtRczJX00EgFA1OEQvA=
+=pk+z
+-----END PGP SIGNATURE-----
