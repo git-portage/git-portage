@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8698ba5512be2fdcbcd9e9d3422992a5 ChangeLog 2205
 RMD160 9c5b039c5bcf5012cb9c4c6b13320fe1d1755bc2 ChangeLog 2205
 SHA256 18d4ec766afee4ff18e58411fdc0c7e7de9139dc8d195ad63834d60de4be6b09 ChangeLog 2205
@@ -19,3 +22,10 @@ SHA256 91272ead16f8a8d2d3660ff27c6eb8d97ef08b987538d11c4f2f4e4851936e24 secure-d
 MD5 558e7b65c2538c4092bbbcb48bfc59b0 secure-delete-3.1.ebuild 1435
 RMD160 78f74ddfbdc6abab8092839a87cebd0c74bea247 secure-delete-3.1.ebuild 1435
 SHA256 6674206c0615b636e3d0cdd3b8443871fef01d7e9bebc276391235af1fcf0b50 secure-delete-3.1.ebuild 1435
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEDzkDl5AvwDPiUowRAiCGAKDemPT3UbtvN/2/gDAK+A90NozekACePfwO
+BHZXIyfmSbM1hnqom4JW+Gs=
+=o8Pb
+-----END PGP SIGNATURE-----
