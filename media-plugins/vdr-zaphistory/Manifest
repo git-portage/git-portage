@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f42e8b82bf873e71b172e447aa6933de ChangeLog 406
 RMD160 efd2962323614f90be9eab7cdd1e56dbaac76bb8 ChangeLog 406
 SHA256 048bf694071f18fd88f86c2efbf7a67378b7d363bb6a8fcfa6b6116259e13dc9 ChangeLog 406
@@ -10,3 +13,10 @@ SHA256 29feafd8b7177b65f8bd92553ac96779d9a91e3b7b4eeecfb0924eb7b6979587 metadata
 MD5 ddbeb9c926d318f15558471eace9a570 vdr-zaphistory-0.0.2.ebuild 561
 RMD160 02b1937cd367d66b268afbf39aff31b2716a8ed8 vdr-zaphistory-0.0.2.ebuild 561
 SHA256 7ec8afb703f42b0872e0fefe5b413600b93016de5343825f2a48442bfb6b71b3 vdr-zaphistory-0.0.2.ebuild 561
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFED8WmZfSl1Kp5KmoRAr2rAJ93JKVINJebHjbd0JkLi6heisfM8wCfWlsm
++N+vCbKomzx7thTBtDH3Tlc=
+=PCKH
+-----END PGP SIGNATURE-----
