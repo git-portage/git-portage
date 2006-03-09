@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 815214eb67a9bca2e95b8490f3c24194 ChangeLog 10746
 MD5 dbe187da39bfb1546a14fedc9bdbae0e autoconf-2.13.ebuild 1550
 MD5 2f177a535539f25d52f270603bca85fa autoconf-2.59-r6.ebuild 1237
@@ -9,3 +12,10 @@ MD5 02c192b9ea3e4945d007a8cfde221c73 files/digest-autoconf-2.13 65
 MD5 ed1c29020cbdfc79d6a1ece183afd936 files/digest-autoconf-2.59-r6 66
 MD5 ed1c29020cbdfc79d6a1ece183afd936 files/digest-autoconf-2.59-r7 66
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEEI3fKRy60XGEcJIRArBQAJ42yopwOYwY04S4dqs2MorfGUT8VQCgkdgV
+YHOERopNkXUeEVi1FIfaqi0=
+=EH64
+-----END PGP SIGNATURE-----
