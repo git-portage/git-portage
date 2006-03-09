@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e9421e6700a6d599021cf2979808c68c ChangeLog 27787
 MD5 f972c88baf3f90f8ef0953df6f328e28 files/digest-gnupg-1.4.2-r3 190
 MD5 bc6b26af83d8258c025e691ff0c1a711 files/digest-gnupg-1.4.2.1 192
@@ -17,3 +20,10 @@ MD5 8dcabb00eac251f533b741a88fca98d8 gnupg-1.4.2.1.ebuild 6839
 MD5 ce4f8a093e7b06200e3d02b1f5243d34 gnupg-1.4.2.2.ebuild 6846
 MD5 657a743dbb9b75102f7ef9ec68dd26ef gnupg-1.9.20-r1.ebuild 3239
 MD5 b507ee36c7487372de42cc9dab034370 metadata.xml 481
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEEKszViELBEf1JB0RAqcwAJ9vo8vp9J1GJC1WcoHFL+v2DrrnlQCbB8Tq
+YH0PzVW1sBGNq4XMOzg7NFs=
+=DnT2
+-----END PGP SIGNATURE-----
