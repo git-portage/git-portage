@@ -1,18 +1,33 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 aa4e0fecea491f317cdbaa2b179ca8b5 ChangeLog 773
+MD5 5577967182ba3e43f684fb40d21592c6 ChangeLog 978
+RMD160 04ff33492bade2abcfaa8d6976fede268b96d74a ChangeLog 978
+SHA256 4a28d899f53a9ef871e2885655f123e14e52b2c3f908fc67e1b09fffce68ae2f ChangeLog 978
 MD5 8c9cc137769da71d444c2208209857a7 files/70_mod_suphp.conf 1647
-MD5 350380d3dd8b4a29db78e1f336344688 files/digest-mod_suphp-0.6.0 63
-MD5 2c7cae5f9c20456b4355e49e91a65e8f files/digest-mod_suphp-0.6.1 63
+RMD160 5ce6c57e1b9874f96a13a4246646a113c72800b5 files/70_mod_suphp.conf 1647
+SHA256 eee1940f1f96c95d00bf5fabf65cc1e2b13d27da390c85eba540273e380292b1 files/70_mod_suphp.conf 1647
+MD5 20ed141234c6ec7123f9088296b6bc26 files/digest-mod_suphp-0.6.0 235
+RMD160 bcb6993133f35ca61b87740faa22ea7033a65dc2 files/digest-mod_suphp-0.6.0 235
+SHA256 d21b2818c61cc277ecf38dd9107d17a177ea5128d67b4ad8583c02dc2d862003 files/digest-mod_suphp-0.6.0 235
+MD5 e13102858fd8132c87bfc61e2d089691 files/digest-mod_suphp-0.6.1 235
+RMD160 8faac9395fa8a523aab5d1d427fb92e7ca7bb933 files/digest-mod_suphp-0.6.1 235
+SHA256 59a2c8876291b3a883b38e3840cd5fed86f7fc44d53ec2aece917411d7ea1617 files/digest-mod_suphp-0.6.1 235
+MD5 e13102858fd8132c87bfc61e2d089691 files/digest-mod_suphp-0.6.1-r1 235
+RMD160 8faac9395fa8a523aab5d1d427fb92e7ca7bb933 files/digest-mod_suphp-0.6.1-r1 235
+SHA256 59a2c8876291b3a883b38e3840cd5fed86f7fc44d53ec2aece917411d7ea1617 files/digest-mod_suphp-0.6.1-r1 235
+MD5 d57cae6ff210d37eefad751f436d60f7 files/suphp-apache22-compat.patch 2360
+RMD160 11fd01355efef32209d5228ed0340ce9501b78c7 files/suphp-apache22-compat.patch 2360
+SHA256 b45d6cb81a31c7844cb0fe9206f9c7b77229c7bf7c20a6ef3382f70171945613 files/suphp-apache22-compat.patch 2360
 MD5 4c2c4f6d464975c72a932c9eef2e3461 files/suphp.conf 905
+RMD160 a95a7ed6f3d135ea6ab6e6ecaa272b735a306f43 files/suphp.conf 905
+SHA256 8a1dd8bee95dc8ab599cdcca966a583e7fbde5c41b377aa208e1f60af54b6dd7 files/suphp.conf 905
 MD5 7272d8b6d09e3e301b6a08aa9c912eb0 metadata.xml 226
-MD5 9746971345c0497bae5d50931d05be1c mod_suphp-0.6.0.ebuild 2657
-MD5 67e4e24869f448b3682e48a2ef74de12 mod_suphp-0.6.1.ebuild 2657
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDjwWXmPFBzbX68WERAn+TAJ9R6esl398R6n8+2wuExoStRY5eJwCePfE2
-P5NEFoDaTcp1QyTnQLzziuA=
-=gudf
------END PGP SIGNATURE-----
+RMD160 d11ce73e47adf4b3d91309ec6489fded2f4d4e0e metadata.xml 226
+SHA256 376a327f91f69eb96f0c1b05cc1481dd7017a0570f631a03b1f6d14d58215ca8 metadata.xml 226
+MD5 511acc874b2360b65732156203157dd3 mod_suphp-0.6.0.ebuild 2657
+RMD160 25155f4df8048da0a04d2bd0b393fd3774a99375 mod_suphp-0.6.0.ebuild 2657
+SHA256 e82830a5742ad42c6f66188fb405aa7807cb52af71ea3083fb1b4da86b8973c8 mod_suphp-0.6.0.ebuild 2657
+MD5 58df6d42af97990dce74eddcb19bde22 mod_suphp-0.6.1-r1.ebuild 2912
+RMD160 132881b654681ecd9b714dc0ba3d5b4bcf862e78 mod_suphp-0.6.1-r1.ebuild 2912
+SHA256 31e2982c828690a933c44ab696b3424d60d849d95ae5a71510fe2167de4f60b8 mod_suphp-0.6.1-r1.ebuild 2912
+MD5 30badc50c55dd721ac3c36bdb281c9a9 mod_suphp-0.6.1.ebuild 2657
+RMD160 c8f7b074daf260242330b6e2ccec56e00b44e0d7 mod_suphp-0.6.1.ebuild 2657
+SHA256 92ad1650cdabd5907b21abfa41aabcf07a56a7abdfe0be49eee99b75863f0a8e mod_suphp-0.6.1.ebuild 2657
