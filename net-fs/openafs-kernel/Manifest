@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2dc87e881f663626c719d3bdf2a92c7f ChangeLog 2732
 RMD160 223abcb1235761a9a87810fca68f90458d492396 ChangeLog 2732
 SHA256 0a09d23c3aafdc0a6f2aedac2caccfdeece70e64f67e91e89ab525effb3f3335 ChangeLog 2732
@@ -16,3 +19,10 @@ SHA256 6d377d407f4dda8f2d1a7a24b109b26f6158f0bd786166c9dbe3b726a09ebc4f openafs-
 MD5 d5369a507d9db3051c88dc41e488f603 openafs-kernel-1.4.0.ebuild 1242
 RMD160 0a11ecd8204aee3f38bfecd667497ebe4ea29482 openafs-kernel-1.4.0.ebuild 1242
 SHA256 c73c567d1990b3a36f068655ceae619a08f5491c148f7f2e0a9811265b09d8b7 openafs-kernel-1.4.0.ebuild 1242
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFEEMnRJrHF4yAQTrARAkf2AJ9TOpAESLP60uwhRdTu36gXr4kSjgCfbU8h
+yLr3rLHOwojmqmSZAxRxvuw=
+=7ha0
+-----END PGP SIGNATURE-----
