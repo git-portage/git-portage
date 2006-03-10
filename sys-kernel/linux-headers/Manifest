@@ -1,4 +1,4 @@
-MD5 ded476404ac033de1460443cd9ffc8f3 ChangeLog 32261
+MD5 0571223a3b6a8e00c9165ad821634a7c ChangeLog 32381
 MD5 e32b5df37d1bd1fde32f19276f8bc5e2 files/2.6.11-ppc64-32ul-spinlock.patch 510
 MD5 505d7b7cd4ace73dbd5473c7fd3cdf37 files/2.6.11-s390-cflags-update.patch 391
 MD5 e300a3e148a7dcc38a0e099494fb6cb3 files/bigendian-byteorder-fix.patch 1557
@@ -38,7 +38,7 @@ MD5 ef6c9fc5cb00848cdfb02589897b0654 linux-headers-2.4.26-r1.ebuild 774
 MD5 da434d4a8e489fbbd6ff72d550db12ac linux-headers-2.4.26.ebuild 3336
 MD5 35a08ce92d78b165f66c9d9748623dc0 linux-headers-2.6.11-r2.ebuild 2009
 MD5 989e9552908cfe304f9673ff3049b27a linux-headers-2.6.11-r3.ebuild 2101
-MD5 fde25149b6f745c1522d02a8bf66a833 linux-headers-2.6.11-r4.ebuild 2106
+MD5 be4f67287e4c8ceea3abc316172d12a4 linux-headers-2.6.11-r4.ebuild 2107
 MD5 ad0f6ced55cd55b35ac0fe22bb7e1667 linux-headers-2.6.15_rc6.ebuild 1678
 MD5 4b7f9dd73295707d019c97d76b76a021 linux-headers-2.6.8.1-r4.ebuild 1213
 MD5 248488cc2cb6484a305e8108b4eaaa6a metadata.xml 489
