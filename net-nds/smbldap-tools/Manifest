@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bcf8dfcc1201bc59f397062b2d9d5217 ChangeLog 2537
 RMD160 845fe6f0a376fdf812560ff89d89a8abf99ea8d9 ChangeLog 2537
 SHA256 f9193d0679454a1bf3edcac416f1f2ff6abb5562c75ffc997c7a7e1a240cc91f ChangeLog 2537
@@ -16,3 +19,10 @@ SHA256 708f6584e8b3e518c86c9f1f3fadd5eb022d4e0afa1bcaaaf5bc3b7ec75ccc98 smbldap-
 MD5 3f2af449b8c2fd9551d66b615f4579cb smbldap-tools-0.9.2-r1.ebuild 1473
 RMD160 126c5ac83cd82f2bf0da86fbb4cf16fcdf8e9e0b smbldap-tools-0.9.2-r1.ebuild 1473
 SHA256 2b5ffc1b453030faaedb74db170bd1bb2d7ed0c43c5b349ee457e7f04d467cdd smbldap-tools-0.9.2-r1.ebuild 1473
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEEXaSJrHF4yAQTrARAh0/AJ4rA/f0bp1S6G/rEutM7F++luGG1ACfXw9r
+0bkjRI7wt0n08NoQJxZgP3w=
+=FnhB
+-----END PGP SIGNATURE-----
