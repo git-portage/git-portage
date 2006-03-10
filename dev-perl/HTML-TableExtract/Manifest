@@ -7,9 +7,9 @@ SHA256 2afc39abac9dea178aecd990ac669c5b0ececf70f727eec9b2387deefeca44cf HTML-Tab
 MD5 5dff81721c39bcae9cdc446c1146e64d HTML-TableExtract-1.10.ebuild 546
 RMD160 c65946bcda65f33a22b0f9e5baed87299a88ba2c HTML-TableExtract-1.10.ebuild 546
 SHA256 4a2459191e1b38357ce89409e1c24d4ccf4a01e47abca502d0da516529e25353 HTML-TableExtract-1.10.ebuild 546
-MD5 999f77860451cb71de773ec8940aec18 HTML-TableExtract-2.06.ebuild 642
-RMD160 2192a5df2b6b262eb9963c1aa5ff955b27604b10 HTML-TableExtract-2.06.ebuild 642
-SHA256 f13562668b75be3a646bf03f3e3d3a9c5f63a3fdb691749c10bc61b57cb77234 HTML-TableExtract-2.06.ebuild 642
+MD5 a3ffdf7564ea00e39940e714ca9c4198 HTML-TableExtract-2.06.ebuild 647
+RMD160 a26a1280def2b2755f337a3871bc7dd2a3d85991 HTML-TableExtract-2.06.ebuild 647
+SHA256 de7932b6db93efa4a9a7322f64bf1cc8c07cfde14d775b53a453c940d6912b9f HTML-TableExtract-2.06.ebuild 647
 MD5 17aecdf5fa48b640132bd082188beea1 files/digest-HTML-TableExtract-1.08 73
 RMD160 4e8f7573db896cafbeab1c5733a8ee12ac43ea45 files/digest-HTML-TableExtract-1.08 73
 SHA256 d0e4630b2b6ba8e7f01ee255e0bd7bac7f201de668cd76f2aa046fb9a0b8c69a files/digest-HTML-TableExtract-1.08 73
