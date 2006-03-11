@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/jasspa-microemacs/Attic/jasspa-microemacs-20050505.ebuild,v 1.1 2005/05/21 19:48:33 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/jasspa-microemacs/Attic/jasspa-microemacs-20050505.ebuild,v 1.2 2006/03/11 19:26:15 mkennedy Exp $
 
 inherit eutils
 
@@ -13,7 +13,7 @@ SRC_URI="http://www.jasspa.com/release_${PV}/jasspa-memacros-${PV}.tar.gz
 	http://www.jasspa.com/release_${PV}/jasspa-mesrc-${PV}.tar.gz
 	http://www.jasspa.com/release_${PV}/meicons-extra.tar.gz"
 #	http://www.jasspa.com/release_${MY_PV}/me.ehf.gz
-#	http://www.jasspa.com/release_${MY_PV}/meicons.tar.gz 
+#	http://www.jasspa.com/release_${MY_PV}/meicons.tar.gz
 ##	http://www.jasspa.com/spelling/ls_enus.tar.gz
 ##	http://www.jasspa.com/release_${MY_PV}/readme.jasspa_gnome
 
@@ -24,7 +24,7 @@ IUSE="X"
 
 DEPEND="virtual/libc
 	sys-libs/ncurses
-	X? ( virtual/x11 )"
+	X? ( || ( x11-libs/libX11 virtual/x11 ) )"
 
 S="${WORKDIR}/me${PV:2}/src"
 
