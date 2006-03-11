@@ -1,5 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bbfa7b1adfcac7483f8d7b3bb9193796 ChangeLog 1351
 MD5 767c1494b5a45e9ae91231f47258bfbc audacious-docklet-0.1.1-r1.ebuild 865
 MD5 949f5d10e3fe4e9051cf160d3188d2eb files/0.1.1-includes.patch 341
 MD5 21e78b2eb3aa9926f4126799b429a97b files/digest-audacious-docklet-0.1.1-r1 274
 MD5 5e7a1151a81ff2eeef7347de380c9b3f metadata.xml 246
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEEwq6ViELBEf1JB0RAn6pAJ4kz0TYPQLxPAYMCQeaNNUVdTmlIQCfXOoY
+QPzKPI0DkJeimUQPTNTzTuA=
+=Cl2I
+-----END PGP SIGNATURE-----
