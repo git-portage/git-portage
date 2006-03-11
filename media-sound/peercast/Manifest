@@ -1,4 +1,4 @@
-MD5 b50076c7bd52cf4fcf730d06694ff26d ChangeLog 2140
+MD5 4f61e1928517d6b88a15fbbb4542bcf2 ChangeLog 2251
 MD5 9aa0a0713c5edcfc7e6a5dad02a2bb78 files/digest-peercast-0.1212 70
 MD5 ccb83f95f9c19145299082adbe267f5e files/digest-peercast-0.1217 68
 MD5 53a464d7a03db2920377543df9720640 files/peercast-0.1216-amd64.patch 339
@@ -8,4 +8,4 @@ MD5 14e1c6925a3e64280f5a6ce143c95af7 files/peercast.init.gpl 565
 MD5 8767b186abeb57c3f8c5537b2f0dd754 files/peercast.wrapper.sh 100
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
 MD5 f4851d46b0cf2a245e80c1a617fe610a peercast-0.1212.ebuild 1454
-MD5 1539a0e3ba593c4d9d4e21a0a030057c peercast-0.1217.ebuild 1376
+MD5 9422a0f4a5ae28cbc178ab1cc260a183 peercast-0.1217.ebuild 1377
