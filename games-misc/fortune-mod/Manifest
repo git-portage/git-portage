@@ -1,17 +1,24 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 93f27593bdaa6eca5cd1847f895076da ChangeLog 4736
+MD5 5f7311c2764928d157abe1aa97a6104d ChangeLog 4922
+RMD160 075206b4d0c2ec2748d7cb2127851c61aa3f0938 ChangeLog 4922
+SHA256 e6222ad45ddae634cb7e43c25de56f13105aaf55bb2a396c4516960bce934a39 ChangeLog 4922
+MD5 e85b073f16dc6f0e8f0ed90044797aa3 files/01_all_fortune_all-fix.patch 783
+RMD160 b9e0958d5f2ac3a6cd6404dfb70513077266ae0f files/01_all_fortune_all-fix.patch 783
+SHA256 2208361d950999f14d59eda8f7b07e1fbef500d1424dd54bee7ad2082dee62c1 files/01_all_fortune_all-fix.patch 783
 MD5 5ff47d4205e2b0ea5e0a538115a58237 files/digest-fortune-mod-1.99.1-r1 71
-MD5 5ff47d4205e2b0ea5e0a538115a58237 files/digest-fortune-mod-1.99.1-r2 71
+RMD160 a7dcbb99f1e097bd45d6d16a3f70513be762dfcf files/digest-fortune-mod-1.99.1-r1 71
+SHA256 3dfe94a0d3779227b8f32a718c86c3da92b0c7073063695b8acc2d86503bd75d files/digest-fortune-mod-1.99.1-r1 71
+MD5 3be5e813234e7aa9b79c243a23391461 files/digest-fortune-mod-1.99.1-r2 259
+RMD160 52a6698c67bb1469a42813b3560994862f8ceadf files/digest-fortune-mod-1.99.1-r2 259
+SHA256 6ff616a1e74857afd6bee810aad1c1cdddf28e1c6f8652de66fb0a8980394fee files/digest-fortune-mod-1.99.1-r2 259
 MD5 dfeb667d0b8e224327bc2adfe359f9af files/fortune-mod-1.99.1-gentoo.patch 2699
+RMD160 01c0e6a534933841dd5529cb36bcc24874861275 files/fortune-mod-1.99.1-gentoo.patch 2699
+SHA256 840c56ee0128d118a861dd33c3aa04e635d20af5febc626864cdc22943223490 files/fortune-mod-1.99.1-gentoo.patch 2699
 MD5 d962711282e74285afccfbe293c27bfe fortune-mod-1.99.1-r1.ebuild 1641
-MD5 8163bf6e09f06a09452b09d6965a26e4 fortune-mod-1.99.1-r2.ebuild 1041
+RMD160 a3fce8c36f84fb1aedb1b8f3a8a47bdac4e16809 fortune-mod-1.99.1-r1.ebuild 1641
+SHA256 a26947d1741e9c3910787c5369ad719e70379fdeaf84772486651c080268c7ed fortune-mod-1.99.1-r1.ebuild 1641
+MD5 acfcee4b5d2b95175a16f4ca39b15883 fortune-mod-1.99.1-r2.ebuild 1088
+RMD160 e450b51b4225ddb8fd6ead9f637b88d019817a51 fortune-mod-1.99.1-r2.ebuild 1088
+SHA256 dde2afb55167e0ff62d2d521a70b6b7e41563cef8a637445d00f973926e6222c fortune-mod-1.99.1-r2.ebuild 1088
 MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDWdZZgIKl8Uu19MoRAsJhAJ0f39/o7+hn1gCwJKVL+OYSPoDnewCfTIsn
-8BJwg2zEn/7jqvoP1dlw7Rk=
-=EXyU
------END PGP SIGNATURE-----
+RMD160 cbd9984bb6b426c8c9cee5022fe0a26261612fea metadata.xml 158
+SHA256 1423a4fdd4a79b1728a2056d9e300f7e1074253095d82726218d9e9b953888a3 metadata.xml 158
