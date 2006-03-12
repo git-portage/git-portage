@@ -1,5 +1,5 @@
-MD5 8ab960a234e39751b6e04c7922908314 ChangeLog 662
-MD5 8f13906aeeaf36d85b494fbd77811793 capifwd-0.6.3.ebuild 1013
+MD5 4a25d6a6e0fc005639f8e1722b35bc2f ChangeLog 763
+MD5 0a6b7138c28ba440221aa43808312251 capifwd-0.6.3.ebuild 1014
 MD5 3e3512b77612880bfe174bee8870e609 files/capifwd-0.6.3.patch 1057
 MD5 449537e26587ce2daaf23629bcad366a files/capifwd.conf 255
 MD5 d9ba73a7ed9b8ec964aa75ce3890da52 files/capifwd.init 552
