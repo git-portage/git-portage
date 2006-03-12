@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 279ad6bb0a6b85613ac7417948c890de ChangeLog 14796
 MD5 857c709217075d76229be25e413710d9 files/auerswald.usermap 397
 MD5 6ac41911cd731019286016727a61f5ac files/config-3.8_pre20050821 2781
@@ -23,3 +26,10 @@ MD5 48266d44ebe70519d3fc67a6b0e260ff files/options.ippp0 443
 MD5 fc26bfe4f4efed33ef1dc46f1b0d0b77 isdn4k-utils-3.8_pre20050821.ebuild 11099
 MD5 3a6c98e35e64667ef6b400a2e303f244 isdn4k-utils-3.9_pre20060124.ebuild 12056
 MD5 41bb308eb7db7d75c04a60f8cfb73be3 metadata.xml 418
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEFCqZjG8pv1lIUX4RAjA9AKC2mIxWr71YIYnQSNwB/mNKh3bGAwCfd0VC
+jDW7uL+ejlf34kYGV/fceDA=
+=srQy
+-----END PGP SIGNATURE-----
