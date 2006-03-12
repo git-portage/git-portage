@@ -1,5 +1,5 @@
-MD5 dc815d4db0fcf4a5f83a97bc9fb4e927 ChangeLog 3249
+MD5 b9db410c1e8b941b280ade6bf3f44884 ChangeLog 3249
 MD5 075c1c15d87393ab98a10d051bbfd1bd files/digest-pppconfig-2.3.11-r2 68
 MD5 0a18599faef6a8d04e0df3fb632aa3e4 files/pppconfig 219
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
-MD5 d3085805e910c378850b752b3626bafb pppconfig-2.3.11-r2.ebuild 1678
+MD5 194c1cc3e6e32d163b75efbcc7bc3d07 pppconfig-2.3.11-r2.ebuild 1678
