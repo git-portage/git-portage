@@ -1,0 +1,6 @@
+MD5 33ed704549ab0f8f9e0bc91f20e414b6 files/digest-qla-fc-firmware-20060312 277
+RMD160 a4f80f2656780f72a089396b7a47bc9069776a7e files/digest-qla-fc-firmware-20060312 277
+SHA256 b03c66c1201acbed68b2da8c3695b9a276f4825929c1aa7a4d15b701ac06fb08 files/digest-qla-fc-firmware-20060312 277
+MD5 9ce09ad70b2cadbf40e5b1854b4dc871 qla-fc-firmware-20060312.ebuild 860
+RMD160 20e99249f0907573cfb450e1874de7f8eeba5cda qla-fc-firmware-20060312.ebuild 860
+SHA256 440a7f5c27155fc591840355bef07bfe2be912ecfa959616f02e929a747816bf qla-fc-firmware-20060312.ebuild 860
