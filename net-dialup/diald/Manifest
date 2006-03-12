@@ -1,5 +1,5 @@
-MD5 b3e558013086ba99f98c72a69fa42f07 ChangeLog 881
-MD5 fe17ce28239194c297b0a73a50049db9 diald-1.0-r1.ebuild 1546
+MD5 70ecda4ac82991269ded3088df7b2de1 ChangeLog 987
+MD5 3bf1e3a6c439f4c56d0cd3ddeffcfefb diald-1.0-r1.ebuild 1561
 MD5 52298aa6dc071ff73b8da0ec2d66fcaa files/diald-1.0-c-files.patch 442
 MD5 da73a1bce6fab85994853324521c0d69 files/diald-1.0-gentoo.patch 3262
 MD5 0c082c51f45b19f083013649003444f6 files/diald-init 718
