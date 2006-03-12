@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 38deaed005af7463079a30b92de82e2b ChangeLog 24405
 MD5 1fd88dda7f4996799c69a9501d42cc23 files/README.mpls 530
 MD5 140bc2a08334d3546f43259934da603e files/chat-default 347
@@ -22,3 +25,10 @@ MD5 e6fdfdc4317d7fe324c50bd0477ca3f8 metadata.xml 295
 MD5 aa48e6320cfa9b25e6ffbb743aa1c343 ppp-2.4.2-r10.ebuild 6730
 MD5 e09fd0128344ae0a0cc4da422f9975d0 ppp-2.4.2-r15.ebuild 7752
 MD5 70c4b1202ba64952830fbb2064e13503 ppp-2.4.3-r11.ebuild 10173
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEFI3qjG8pv1lIUX4RAqhqAJ9OUng+jzISsNJ8ftS0BeCJxWgAywCfVZ9D
+8pYZsCGexOLXCB3sdaixoXA=
+=lldk
+-----END PGP SIGNATURE-----
