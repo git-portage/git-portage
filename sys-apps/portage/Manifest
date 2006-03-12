@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 6de6430b92354d891ae259daaf4e22ff ChangeLog 7938
 RMD160 7ab24642554fb93c7c4526221103eec26e8ae021 ChangeLog 7938
 SHA256 f7f5e9ee76562c1c363dfc69c626cc44d8b7c18bf800e774042a2d41356b764e ChangeLog 7938
@@ -34,9 +31,6 @@ SHA256 3ad39a43bef0fa94b5fd3ffd2173c8b076ffbd3179e9c15c9844fdaddeaa6aed files/2.
 MD5 b0f0aee3708359245752289af4a8923b files/2.1_pre5/version_bump_2.1_pre5-r4.patch 378
 RMD160 3e96116e5c06994417fc3dfa2fd344676f8f7a53 files/2.1_pre5/version_bump_2.1_pre5-r4.patch 378
 SHA256 5619c164def7cd20db802ca878714669fe258ac285a219e24068f378f8e70d98 files/2.1_pre5/version_bump_2.1_pre5-r4.patch 378
-MD5 43e6f0038bd9660c6df8c3b6019b33d8 files/2.1_pre6/1000-r2849-quiet-spinner.patch 553
-RMD160 9f83e5d105348dcab20d37212e83422be4b4b86d files/2.1_pre6/1000-r2849-quiet-spinner.patch 553
-SHA256 7277668d65bb47fa5d82f7b9e098378872ff6c8b67b3caa2298324d242952d17 files/2.1_pre6/1000-r2849-quiet-spinner.patch 553
 MD5 43e6f0038bd9660c6df8c3b6019b33d8 files/2.1_pre6/1000_r2849_quiet_spinner.patch 553
 RMD160 9f83e5d105348dcab20d37212e83422be4b4b86d files/2.1_pre6/1000_r2849_quiet_spinner.patch 553
 SHA256 7277668d65bb47fa5d82f7b9e098378872ff6c8b67b3caa2298324d242952d17 files/2.1_pre6/1000_r2849_quiet_spinner.patch 553
@@ -103,10 +97,3 @@ SHA256 f21564ed3d7f7ac1822464e8bc21d1f69cefe418582fba1ba6f146841899e99c portage-
 MD5 6c59acf9c6f676370b4fc812a4d68780 portage-2.1_pre6-r1.ebuild 5261
 RMD160 cf7e94080dc58ee889c414bdce5f2b815c11583e portage-2.1_pre6-r1.ebuild 5261
 SHA256 a67029416b25744d4ea79e74b9f9effd57500c275beaaa22272f76031179d72c portage-2.1_pre6-r1.ebuild 5261
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-
-iD8DBQFEFCob/ejvha5XGaMRAkoJAKCqmWqxzFc/nRTwQJH91fnR6X6XrwCdGU+G
-H5SVuBHDlNpeNSGQgGCaRYU=
-=gjqN
------END PGP SIGNATURE-----
