@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 e0d6a9e20da23f0757e91dce641d01c5 ChangeLog 6378
 RMD160 fe26ff9da62f022fb37aac148c437e869ba12419 ChangeLog 6378
 SHA256 84023a65b26bff7aceaea37f321e5a736d1c77d49c8e7c63c0e052d504e23522 ChangeLog 6378
@@ -22,6 +19,9 @@ SHA256 b8580ae0680dfd3ad20680b85d90050305c59f974c4cdacda80171d581ab1f63 files/di
 MD5 f1d4d352244f29abc4a6a5fd113207fc files/digest-libxklavier-2.0-r1 247
 RMD160 1719063b52619b61a43e5beba9a020e888440927 files/digest-libxklavier-2.0-r1 247
 SHA256 c4b6daa81c46914c76943bb2072eb0a694a76721ff8a8df04eb6a4f8580ea309 files/digest-libxklavier-2.0-r1 247
+MD5 a5c9364b5623b5374bdab1db9de2d9b3 files/digest-libxklavier-2.2 247
+RMD160 6a8341794b00d9ee8fc9e144c7c9e85e75fd4181 files/digest-libxklavier-2.2 247
+SHA256 09b842e23964a64676ab5336dfad40ed4bdba90e53e9520e94b4fc0ad2228ee7 files/digest-libxklavier-2.2 247
 MD5 31529efcf0188518d362d24a148c74b5 files/libxklavier-1.04-fix_free.patch 301
 RMD160 550287ec2c09691d217cba8498d4b3c3416ca41f files/libxklavier-1.04-fix_free.patch 301
 SHA256 e633145786a863ca5eb220966e38dd480837aa6c54d5d830c1b6bf8eeb6e5452 files/libxklavier-1.04-fix_free.patch 301
@@ -58,13 +58,9 @@ SHA256 7bd197472f5261114ce139278fe61e1e29b2104b7995fa1c2283daf2c8df4484 libxklav
 MD5 b438ab07e92289b506f360e5ebd557cf libxklavier-2.0.ebuild 1182
 RMD160 e6e98594ea0622f258564ec7d18cf3ca726e9797 libxklavier-2.0.ebuild 1182
 SHA256 ecc1b222c69d5b18975ca0af62f87d56d66e6899ed222bc953db86e96f1e0ba0 libxklavier-2.0.ebuild 1182
+MD5 98c455603ee3aa6fbf1ce9689fe28444 libxklavier-2.2.ebuild 1276
+RMD160 4f1681f11ca6cd0fc2ad66f9910e68252a3e5ea7 libxklavier-2.2.ebuild 1276
+SHA256 7bd197472f5261114ce139278fe61e1e29b2104b7995fa1c2283daf2c8df4484 libxklavier-2.2.ebuild 1276
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 RMD160 c0e2bae8e91bb6be8922bac5e4f597302e06587e metadata.xml 158
 SHA256 3a7dbca0fdc557de69783e0663e2d76ddab129ea8a19b2d0ef6d3e5d1b947ce1 metadata.xml 158
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD6F2kJrHF4yAQTrARAgASAKCoRaiMAb9qI5SyzNALuAUfhWOdnwCbBdEh
-EJDnJOUENglSAxJEsBt22LU=
-=iLxQ
------END PGP SIGNATURE-----
