@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a7a01d4e02db0b21f32a3dbd04013a7c ChangeLog 1373
 RMD160 3aeb2c8a021578cbcaf0224ff03915be246e698f ChangeLog 1373
 SHA256 a2985ab42e09e3d2036e4b28d1edd080dd006255d998dae37245ee84182df436 ChangeLog 1373
@@ -16,3 +19,10 @@ SHA256 73e1b2acd67bece1570d5ed0ef048305389b3c9d2cd9710eccbc66cb246a538b nautilus
 MD5 3c89f0dd6ba7541f1fe8d217db0ae6df nautilus-open-terminal-0.6.ebuild 812
 RMD160 c30506a0e9753154fd57c20e5d1b226ec08022a1 nautilus-open-terminal-0.6.ebuild 812
 SHA256 634759dc20f774c274c05fe4066b1f3db9c73c4dae6df2290213304107372acc nautilus-open-terminal-0.6.ebuild 812
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEE+qqoFw4q70f3SsRArqoAKCyZeu3Zu+5G3HxN4JgsyHw8V80rACgrMgp
+U0XTSw9AC9uzDlYBdJMX4pg=
+=4ZJJ
+-----END PGP SIGNATURE-----
