@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a855f26fef7bc1c031a4d8ae79e17620 ChangeLog 3677
 MD5 12264d3e7ed2b0c95b436e4b2dc91e3e DBD-SQLite-0.31.ebuild 539
 MD5 7683193116b97bd936b47b69b1d634dd DBD-SQLite-1.07.ebuild 576
@@ -11,3 +14,10 @@ MD5 8eca7d30c780c2299b4fb90529ffdcb2 files/digest-DBD-SQLite-1.09 67
 MD5 aff3b27ce72143014dff8bd7f5744ff8 files/digest-DBD-SQLite-1.11 67
 MD5 68d2bbb77a78f9c45cba3c995be2c110 files/sparc-DBD-SQLite-1.06.patch 1923
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEFeRUKRy60XGEcJIRAn3YAJ4y5kjmrXRv9T0um4Kax4uXU+IfXgCeLFtE
++iHd2MvpW/8TfQg8ZpfvTTs=
+=z379
+-----END PGP SIGNATURE-----
