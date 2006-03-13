@@ -1,19 +1,33 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 7d6a6bbd5315cecc06bb9e3bd00bf064 ChangeLog 2802
+MD5 d82aa370ab7d21e7b362941e99030aee ChangeLog 2977
+RMD160 fd7f22431a1afa684943d5ac81dd8c9dd8c3def0 ChangeLog 2977
+SHA256 91830c8959e0c22d9e9b2a1429cdd0848857059df442594cafbc2aa6aa573af3 ChangeLog 2977
 MD5 be2078616ef13161f5362a4ed9918cd9 files/digest-libcroco-0.5.0 67
+RMD160 ab47b73cbaea30a05a364444e77455a2693d42b2 files/digest-libcroco-0.5.0 67
+SHA256 2e2073e3db87a62936049318615728824c6717a6622c92c22cbff3e8a26a1379 files/digest-libcroco-0.5.0 67
 MD5 fc3c39963742918982d87fae16bc7ed9 files/digest-libcroco-0.5.1 67
+RMD160 1443dbfd4f605146170169282b98c726eca1ba2b files/digest-libcroco-0.5.1 67
+SHA256 e6719671e982808b819d7a6ffa3585aff1216ab0a292bfd08855a2c84eeb0499 files/digest-libcroco-0.5.1 67
 MD5 1f74db63432b8827c84f5a820fef3e80 files/digest-libcroco-0.6.0 67
+RMD160 b138cf0e04b48ddc084a08256fb50ea83daa3870 files/digest-libcroco-0.6.0 67
+SHA256 94eabda88edcaaa45196060eddf329773a2a37105c59946f44200aa3df9bc2a5 files/digest-libcroco-0.6.0 67
+MD5 aff28c586b84499bb02f90ff075bfc23 files/digest-libcroco-0.6.1 247
+RMD160 df8e79a40635e91ebf84442ee76d51841a972077 files/digest-libcroco-0.6.1 247
+SHA256 74f7db4380b29c20db21fd5f2c69c4a5640190cb5f7815c939da407815bbbc5a files/digest-libcroco-0.6.1 247
 MD5 d98a0df2877c19f4ce7593ae4875c3e8 files/libcroco-as_needed_ldflags_fix.patch 395
+RMD160 365917c2306c2660681425a3b737762754ed6621 files/libcroco-as_needed_ldflags_fix.patch 395
+SHA256 f49af52174ad7d12f40115afbcc98d337b1fc480d9e100a0a32209c82352ec9c files/libcroco-as_needed_ldflags_fix.patch 395
 MD5 d3831a27f0d25ed96a9e79923c69c9eb libcroco-0.5.0.ebuild 635
+RMD160 ad4bf78f7b778dac32ed55678a6238bcf8d50167 libcroco-0.5.0.ebuild 635
+SHA256 6afa83738a49c0d258f41322443f79cf133de1ec35a4ad69cc21e503fb0eda44 libcroco-0.5.0.ebuild 635
 MD5 44bbf0b9157226f6b373fd4b81aad48e libcroco-0.5.1.ebuild 639
+RMD160 c90df65b8f57dfbaec55d0272aa62effb4781ae2 libcroco-0.5.1.ebuild 639
+SHA256 94234738cc69a008728a0089052fa85cd8419ac6ba9d095c6a791438db6ed493 libcroco-0.5.1.ebuild 639
 MD5 d2c0a190a0d86aa142b59e3e534359c2 libcroco-0.6.0.ebuild 752
+RMD160 5679ad2bcbcc9ed8b78625c807a103a53371a27d libcroco-0.6.0.ebuild 752
+SHA256 597c3b928859646dc11d71fc5a40b7528ab623e2ee26c1a207d963884325f732 libcroco-0.6.0.ebuild 752
+MD5 aecb2c8a57b364fa49426649f0e7478f libcroco-0.6.1.ebuild 639
+RMD160 78462581392d4a437effbd4044bb3ea9b1de51ce libcroco-0.6.1.ebuild 639
+SHA256 d422e1fbb19680bf3f030d663abe8eee3c2a23160cc3bed037f784236400ea90 libcroco-0.6.1.ebuild 639
 MD5 863e62787cde759db7281dde0e11d5df metadata.xml 506
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDvlKXAiZjviIA2XgRArhVAKCKkHOqRcpxb7RfWzpi/KfkuKN1NACfc3RK
-ZGiq1ZTyj8dARL6IO3Qcguc=
-=yWzA
------END PGP SIGNATURE-----
+RMD160 115b4d9c78dd481a95521171620ca2d86ef6067c metadata.xml 506
+SHA256 5f8b109e92fd7c14d0f63f9c73ce84df22ddc10baee3b2ee28d1c24a902f409f metadata.xml 506
