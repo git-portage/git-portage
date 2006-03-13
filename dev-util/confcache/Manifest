@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d980802d50a578c6f171d1d677b9c1c6 ChangeLog 1643
 MD5 2feedd67afbba398e0603b333880f68c confcache-0.4.2.ebuild 640
 MD5 8098534207e3d1933b8eb94f4f11a1c5 files/digest-confcache-0.4.2 247
 MD5 126182d41e8ea220308cac82369d1778 metadata.xml 225
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEFURLViELBEf1JB0RAgquAJ4np4xUFOJcpFoffkE3x2HLDcfyxwCeKRSN
+GZ2XYYHnAmZodVXRBWqdx3c=
+=dtxw
+-----END PGP SIGNATURE-----
