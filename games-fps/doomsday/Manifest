@@ -1,16 +1,21 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 a56605ab549ada0dc3cc85439131054b doomsday-1.8.6.ebuild 1129
-MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
-MD5 a8b3d78b09410ccc3edc91842579597e ChangeLog 1607
-MD5 5f91dc6393ff5aba59c015a5ab9ccbd0 files/1.8.0-filename-case.patch 502
+MD5 210d7c54decb5e5829fed18baaf6492c ChangeLog 1868
+RMD160 9b47d6d782b14161e8900265b3585bf244ce4239 ChangeLog 1868
+SHA256 5fa10a67e8a627f0227effeae4448dcc98d3fb4a3fcaa41acbce5da95f7f6da1 ChangeLog 1868
+MD5 dc6f91494a3f9eddacf0c661d5d398e2 doomsday-1.8.6-r1.ebuild 1421
+RMD160 84b9c18ccd613886abc227aecd3884a754c8b4d1 doomsday-1.8.6-r1.ebuild 1421
+SHA256 6c61de07e87f3cbe14bd348a855dd7ded81ef03a9e53971895952a2fac8213fa doomsday-1.8.6-r1.ebuild 1421
+MD5 f2e4fa4344b720bf424b6e46a1e2d21d doomsday-1.8.6.ebuild 1185
+RMD160 e6c1712ab9158f6372776275c7daafca39f86de4 doomsday-1.8.6.ebuild 1185
+SHA256 9d30647ba44e8d84f410fc27dee7d0fbaca2c4d0fb9c67983a5433962665999c doomsday-1.8.6.ebuild 1185
+MD5 4406244484e6be19557eee89dc6f91d9 files/digest-doomsday-1.8.6 235
+RMD160 7e61b42606aea6f4700ebe6eea2ba40e96773563 files/digest-doomsday-1.8.6 235
+SHA256 a18ba2bfaceea76a0c3f102f1a36647429e95cb1219129b94342b4bfca8bf970 files/digest-doomsday-1.8.6 235
+MD5 4406244484e6be19557eee89dc6f91d9 files/digest-doomsday-1.8.6-r1 235
+RMD160 7e61b42606aea6f4700ebe6eea2ba40e96773563 files/digest-doomsday-1.8.6-r1 235
+SHA256 a18ba2bfaceea76a0c3f102f1a36647429e95cb1219129b94342b4bfca8bf970 files/digest-doomsday-1.8.6-r1 235
 MD5 5fa792096b783fb6b3cd3bd45c2f709c files/wrapper 136
-MD5 71acf317b5b79c25ed9aba5de47e4708 files/digest-doomsday-1.8.6 63
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDK0N8LLFUmVNQ7rkRAl50AJ9RJ5Hn4XDS4m0IARwjuEuUSMQTrwCfQnzL
-hk+GB5qP+ChxZDIa7fDIWGU=
-=o3zr
------END PGP SIGNATURE-----
+RMD160 9eb253537d5e2b443cf0807401b86a7526ae3e4e files/wrapper 136
+SHA256 64b959cfeb77bd778f16768c0ee509cd128eb855fa4acd8e7c37046c5885dbc8 files/wrapper 136
+MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
+RMD160 cbd9984bb6b426c8c9cee5022fe0a26261612fea metadata.xml 158
+SHA256 1423a4fdd4a79b1728a2056d9e300f7e1074253095d82726218d9e9b953888a3 metadata.xml 158
