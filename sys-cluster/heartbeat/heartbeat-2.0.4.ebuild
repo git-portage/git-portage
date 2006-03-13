@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/heartbeat/Attic/heartbeat-2.0.2.ebuild,v 1.6 2006/02/13 15:10:06 mcummings Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/heartbeat/Attic/heartbeat-2.0.4.ebuild,v 1.1 2006/03/13 02:02:37 xmerlin Exp $
 
 inherit flag-o-matic
 
@@ -11,7 +11,7 @@ SRC_URI="http://www.linux-ha.org/download/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 -mips -ppc -amd64"
-IUSE="ldirectord doc"
+IUSE="ldirectord doc snmp"
 
 DEPEND="
 	=dev-libs/glib-2*
@@ -20,30 +20,28 @@ DEPEND="
 	dev-lang/perl
 	net-misc/iputils
 	net-misc/openssh
+	net-libs/gnutls
 	ldirectord? (	sys-cluster/ipvsadm
 			dev-perl/Net-DNS
 			dev-perl/libwww-perl
 			dev-perl/perl-ldap
-			virtual/perl-libnet
+			perl-core/libnet
 			dev-perl/Crypt-SSLeay
 			dev-perl/HTML-Parser
 			dev-perl/perl-ldap
 			dev-perl/Mail-IMAPClient
 	)
+	snmp? ( net-analyzer/net-snmp )
 	net-misc/telnet-bsd
-"
+	dev-lang/swig
+	"
 
-
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	#epatch ${FILESDIR}/heartbeat-1.2.3-misc_security_fixes.patch || die
-}
 
 src_compile() {
 	append-ldflags $(bindnow-flags)
 
 	./configure --prefix=/usr \
+		--mandir=/usr/share/man \
 		--sysconfdir=/etc \
 		--localstatedir=/var \
 		--with-group-name=cluster \
@@ -87,8 +85,8 @@ src_install() {
 	if ! use ldirectord ; then
 		rm ${D}/etc/init.d/ldirectord
 		rm ${D}/etc/logrotate.d/ldirectord
-		rm ${D}/usr/man/man8/supervise-ldirectord-config.8
-		rm ${D}/usr/man/man8/ldirectord.8
+		rm ${D}/usr/share/man/man8/supervise-ldirectord-config.8
+		rm ${D}/usr/share/man/man8/ldirectord.8
 		rm ${D}/usr/sbin/ldirectord
 		rm ${D}/usr/sbin/supervise-ldirectord-config
 	fi
