@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a604aca2267948be3454afff38f6df09 ChangeLog 20013
 MD5 5ef08e685400da84661b9f037d81a668 epiphany-1.6.0-r3.ebuild 1539
 MD5 d89a18b9e1f3c752a5ea444c4ccfc52f epiphany-1.6.3.ebuild 1387
@@ -20,3 +23,10 @@ MD5 2a6d9343d321b67fb737cb87301facfc files/epiphany-1.6.0-wallet_password.patch 
 MD5 3e5d6d82d44078ec1c95566207f9bad1 files/epiphany-1.6.3-fix_includes.patch 369
 MD5 9bff9c987534a9f2cbefa291a28affe7 files/epiphany-1.9.2-broken-firefox.patch 563
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEFZBQKRy60XGEcJIRApeGAJ0U5vu4KEMOZXPyc370S7JPwte9fACgolTu
+nVgwJOa+yXTmTrwvjHhAzxE=
+=kAUz
+-----END PGP SIGNATURE-----
