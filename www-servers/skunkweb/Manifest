@@ -10,6 +10,9 @@ SHA256 3d2ed6412a88c3d3ca6d250a3c2c7f8ad2b8c0ce0ad0526178b5dd3957c49ff7 files/di
 MD5 f649daf3fb435a3f6edc0307de265e57 files/digest-skunkweb-3.4.0-r1 67
 RMD160 7d03d9906d5c923042ee3cb8a17bf88b6e5a6f70 files/digest-skunkweb-3.4.0-r1 67
 SHA256 3d2ed6412a88c3d3ca6d250a3c2c7f8ad2b8c0ce0ad0526178b5dd3957c49ff7 files/digest-skunkweb-3.4.0-r1 67
+MD5 750db253c253371b2ea673119aaefca9 files/digest-skunkweb-3.4.1 247
+RMD160 57ca8b2f0971ae9103080e1df96bd35cebf11cbc files/digest-skunkweb-3.4.1 247
+SHA256 e846b5f3c2ace185da1971e14ae5809d1151ba0739dda3fe37e799e03188f75f files/digest-skunkweb-3.4.1 247
 MD5 33defac2f69099260dac7f1a043b2643 files/digest-skunkweb-3.4_beta5 67
 RMD160 d438ec685d5ff0a895d55ce28a9f400fe2a9dd3c files/digest-skunkweb-3.4_beta5 67
 SHA256 6c8464cffdedfd347792c5ee5e90d416de90f38fb21a3b08894eaa14ddf9a442 files/digest-skunkweb-3.4_beta5 67
@@ -31,6 +34,9 @@ SHA256 7f8a7d429d0fd907dbb477e0b4c72bf68b2e5e35fc6b1f085465786081dbc415 skunkweb
 MD5 8897f3e1347f3f7bdb3d0bae93d1e445 skunkweb-3.4.0.ebuild 2659
 RMD160 2f1b334cb5491243384883c3a0b9a88b9a5a58d3 skunkweb-3.4.0.ebuild 2659
 SHA256 b2d3b1f3f7e16af64d59912a735d69c8e5484daf4b683453e55624bdd5b7d78b skunkweb-3.4.0.ebuild 2659
+MD5 a36a94c0a34520f0a28dd8b3a5491c38 skunkweb-3.4.1.ebuild 2276
+RMD160 207647fad3308add15a8f2e7988295e8f2722171 skunkweb-3.4.1.ebuild 2276
+SHA256 7f8a7d429d0fd907dbb477e0b4c72bf68b2e5e35fc6b1f085465786081dbc415 skunkweb-3.4.1.ebuild 2276
 MD5 9f99669ca68585c1f4f4c38b52bb218a skunkweb-3.4_beta5-r1.ebuild 2600
 RMD160 5a2f4a672783d6ad63103ea954f0f95b9daf692b skunkweb-3.4_beta5-r1.ebuild 2600
 SHA256 2f467629da1da336160102c158705d9e96ed361ae3523d9176c79e8b16bae8cb skunkweb-3.4_beta5-r1.ebuild 2600
