@@ -1,6 +1,16 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3be682f3d5a2a99f4c9c79917607f7d3 ChangeLog 6483
 MD5 b5f98b4cf87ea619127e661ae4a35556 files/digest-slang-1.4.9-r1 494
 MD5 094909eb3092af15c2557a7052fad7aa files/digest-slang-1.4.9-r2 134
 MD5 bc00f0356947154d3250243bd5ec08f5 metadata.xml 219
 MD5 9d14ded2d330bec23d17df71ff41547d slang-1.4.9-r1.ebuild 1847
 MD5 65dae2f111bdbc2bd01dbd01f29dbd2a slang-1.4.9-r2.ebuild 1899
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEFyiYFdQwWVoAgN4RAlVvAKDShyejwDFzxm6nE3BLFLYRKfcm3ACffS9d
+GcHaPvyc2mHUSC6581y5smU=
+=5NHM
+-----END PGP SIGNATURE-----
