@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1c19f71eb4c96fd3aa094497615af45d ChangeLog 15651
 MD5 48691f4945f1b98de5fe5d5e4f48ef8b files/digest-heimdal-0.6.5 147
 MD5 7e46678d57392f8cfcf60114e30768e4 files/digest-heimdal-0.7.1-r1 149
@@ -6,3 +9,10 @@ MD5 1abe6db9c36ed47686737e246ff7774f heimdal-0.6.5.ebuild 3671
 MD5 310ccb6b530f2793e79c7066536233b5 heimdal-0.7.1-r1.ebuild 3826
 MD5 863167c47738b55f2c71afaa751f38fa heimdal-0.7.2.ebuild 3865
 MD5 6c9cbfc951ebeca1a88d8722de4dde80 metadata.xml 231
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEFvLMViELBEf1JB0RAqKGAJsFYP22Kr3epNC2nhIEGCKaYfoCsACeKNFy
+jgmi1FYVJZs0fVz6t6Yi3pc=
+=vD1r
+-----END PGP SIGNATURE-----
