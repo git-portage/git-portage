@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 19583065e46b8577fe3464eb8377a7dc ChangeLog 13221
 MD5 e256337ccf7d47ff464ed060f29383b2 emacs-18.59.ebuild 1952
 MD5 5c875ab13297dfc0030f9cf2b9cb714b emacs-21.4-r1.ebuild 4684
@@ -21,3 +24,10 @@ MD5 3a0ce8880fff1be2f5e8281633532546 files/emacs-22.0.50.desktop 242
 MD5 277b238c9263aabcc2ef92de1d6d68bb files/emacs-nofink-gentoo.diff 1520
 MD5 5f423550e3d32b7c0511eccd93a94750 files/emacs-subdirs-el-gentoo.diff 1369
 MD5 fcd33d07e4ee719b01157946734f4fe8 metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEFywJViELBEf1JB0RAt/MAJ9gSlquPRdY+q9tOE74DT7b1O9cWACfUfVD
+1ESfC7ObIsOJtTAu4pLHy+o=
+=e6M1
+-----END PGP SIGNATURE-----
