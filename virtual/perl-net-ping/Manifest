@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 83c576193e2118f82139b99811a440a8 ChangeLog 594
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-perl-net-ping-2.31 0
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 b4ecc0d798afb0b6c88186d9c3fab6b7 perl-net-ping-2.31.ebuild 489
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEFhuuKRy60XGEcJIRArtsAJ9p9+sN+zs8jeOrLABloSQhU+KTxgCfdepn
+GscqHwGTle5ZZCpUJkNv4F4=
+=T6N1
+-----END PGP SIGNATURE-----
