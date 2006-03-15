@@ -1,4 +1,4 @@
-MD5 a8fff1f0d122c6271c1198d3670a2e33 ChangeLog 5633
+MD5 cf141cb6438f78f5b76d2febe824bf92 ChangeLog 5746
 MD5 f1c337772d8c495c76c36499d9efa5c9 files/digest-skey-1.1.5-r3 131
 MD5 f1c337772d8c495c76c36499d9efa5c9 files/digest-skey-1.1.5-r4 131
 MD5 f1c337772d8c495c76c36499d9efa5c9 files/digest-skey-1.1.5-r5 131
@@ -9,4 +9,4 @@ MD5 2bc2fd632a13d33a3832ec3bf2449c1b files/skey-login_name_max.diff 386
 MD5 fb946a077c4e2ae03befc41f3a095b39 metadata.xml 1425
 MD5 44750741ff7ca51feec40095290259f3 skey-1.1.5-r3.ebuild 2313
 MD5 467bfb8254076bef10ae320c38d1d528 skey-1.1.5-r4.ebuild 2891
-MD5 06fa3d097b51e26c4ea965194771c528 skey-1.1.5-r5.ebuild 3068
+MD5 45bf7eb43d1e05e45b1bfd5849bc6425 skey-1.1.5-r5.ebuild 3067
