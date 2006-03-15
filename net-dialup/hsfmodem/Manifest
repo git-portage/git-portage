@@ -1,4 +1,4 @@
-MD5 0820e43e47183f242d0641d417d03edf ChangeLog 6304
+MD5 cf0cb1acb7c9152bc703cb4116421e5a ChangeLog 6550
 MD5 83ef8c3c538249abc93745ecf124151b files/digest-hsfmodem-7.18.00.07-r1 230
 MD5 83ef8c3c538249abc93745ecf124151b files/digest-hsfmodem-7.18.00.07-r2 230
 MD5 fb610b9a599d3b2ede68a872f52e95b3 files/digest-hsfmodem-7.43.00.01-r2 230
@@ -9,5 +9,5 @@ MD5 d4d8d616c23eb37833008e2a76bc9a47 files/hsfmodem-7.43.00.01-try_to_freeze-2.p
 MD5 72c3d70f94e3712b160f7b41b2978f1d files/hsfmodem-7.43.00.01-udev-group.patch 603
 MD5 6f3c975173976a825b545ae010d9047c hsfmodem-7.18.00.07-r1.ebuild 1592
 MD5 7806adb04b92a668c65c709b70959929 hsfmodem-7.18.00.07-r2.ebuild 1635
-MD5 4bb9a247cab4dfa4ea1d9ac296fdc15a hsfmodem-7.43.00.01-r2.ebuild 1757
+MD5 55bf101f8265a87f589c33ba1738ff50 hsfmodem-7.43.00.01-r2.ebuild 1757
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
