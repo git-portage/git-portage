@@ -10,6 +10,9 @@ SHA256 07432f994ada5b2c690c9b32d5cee4cc87ec09851ad633e3d54c574cf1108a3d adesklet
 MD5 09b47fdb34143a09d874762d092e82ef adesklets-0.5.1.ebuild 2631
 RMD160 02c1eff2945ec3885549f42bfc7809f1f4b63880 adesklets-0.5.1.ebuild 2631
 SHA256 620642423d16e91e3fa46706a78f98d27591f7a9711e34b28ffdbc05c5c87cdb adesklets-0.5.1.ebuild 2631
+MD5 d1cbf17a8afd4542807f7e1454a6357f adesklets-0.6.0.ebuild 2645
+RMD160 6cbea228b021417ac01154e5ebf9282a1428c899 adesklets-0.6.0.ebuild 2645
+SHA256 4207193bd1c86f19345184666ae713e7e6f2affff88c490a735c9294fe7ed0ed adesklets-0.6.0.ebuild 2645
 MD5 e045c26201a3144d26662d727f31e7a8 files/adesklets-0.5.0-adesklets_installer.patch 1743
 RMD160 bcf7c62f1e02d63e42f27dd34b90218fa362b76c files/adesklets-0.5.0-adesklets_installer.patch 1743
 SHA256 c00864541593c5252910815aa41334c97f8c86529f1093a53f01ca12d3096df4 files/adesklets-0.5.0-adesklets_installer.patch 1743
@@ -28,6 +31,9 @@ SHA256 7a044b6081b8b9f4f22e39c5a560ab0ee9aa4d105c54e85a15aca5703ff6bef9 files/di
 MD5 8b28d9ec3ec7addd58df0bb0e5f7b88c files/digest-adesklets-0.5.1 250
 RMD160 56c36dea0c26ee3fc7f51579c09bd0a2dcc62d1a files/digest-adesklets-0.5.1 250
 SHA256 9d3dbfac7263c54aa412a9a039cdbe5c018de6db8e1a7c3711e2c55fc4bc5502 files/digest-adesklets-0.5.1 250
+MD5 4b10fc900bfffb69703a40d18fc80d2b files/digest-adesklets-0.6.0 250
+RMD160 92c8bacef7c500d920d2b52021f97b9421181659 files/digest-adesklets-0.6.0 250
+SHA256 bfdc913f644fa8491b29ad2409fb202dcc6b9c1c05f8689415088b341987d7bc files/digest-adesklets-0.6.0 250
 MD5 ba2766b0b67886a694c4c93cdab3c972 metadata.xml 551
 RMD160 99b9eb03ca5c5ab03e1625584e1d09cd1724f7c3 metadata.xml 551
 SHA256 a6180c2f4d9890bb483e436f94c17de4a08b9e027d54d712240df00b62950e54 metadata.xml 551
