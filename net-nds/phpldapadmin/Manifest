@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 b14ac5c86987b43e49df1a3da56e2593 ChangeLog 4966
 RMD160 eaf8c7634a9691d8360f56aad752a5e94c112b7d ChangeLog 4966
 SHA256 a0ced4c3a95dd06c7d05aab854f224765b9a08239363244c5c61a641e528e465 ChangeLog 4966
@@ -28,13 +25,6 @@ SHA256 fe4a357ae21e512acab4e559ba84e6f473228d1a7c361804dc758b003362b42d phpldapa
 MD5 ff4e67dfbdceea5f15b85d0e95b7f0b4 phpldapadmin-0.9.8.2.ebuild 906
 RMD160 00f4eb46aa218e43fb9c2d0dff924771ef73c4ce phpldapadmin-0.9.8.2.ebuild 906
 SHA256 015390ee0bde55c8abdbe7b16b044d31d1cb09d6c5f01c1174ae81020331b862 phpldapadmin-0.9.8.2.ebuild 906
-MD5 b493fad98e0a1b5b43e06b6ec9865cb8 phpldapadmin-1.0.0.ebuild 904
-RMD160 22970d90c14c106ba4a49eb4305c36d10e91d8bc phpldapadmin-1.0.0.ebuild 904
-SHA256 8f985c333404df23237067f35341cc5c59b8466487eb6b39212e2ad334e95498 phpldapadmin-1.0.0.ebuild 904
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFEGEBYEzitwsaoONoRAtUNAKDccaGleHl2CdAj74CDtdmuSMQ2uQCfU64s
-0zTpLGpwp+wxweBCjZ666Gs=
-=VzBb
------END PGP SIGNATURE-----
+MD5 0ae3450a386a837386953c5de3e7303c phpldapadmin-1.0.0.ebuild 915
+RMD160 920e522375a93e46fd67343439a83eccd30bffef phpldapadmin-1.0.0.ebuild 915
+SHA256 930d94133b0876447ddfd8619d8af173a955f45f26b3e1bdd01ffb3e5a87cbca phpldapadmin-1.0.0.ebuild 915
