@@ -1,14 +1,18 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/darcs/Attic/darcs-1.0.3.ebuild,v 1.4 2005/12/24 15:21:04 hansmi Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/darcs/Attic/darcs-1.0.6.ebuild,v 1.1 2006/03/15 18:17:18 kosmikus Exp $
+
+inherit base
 
 DESCRIPTION="David's Advanced Revision Control System is yet another replacement for CVS"
 HOMEPAGE="http://abridgegame.org/darcs"
-SRC_URI="http://abridgegame.org/darcs/${P/_rc/rc}.tar.gz"
+MY_P0="${P/_rc/rc}"
+MY_P="${MY_P0/_pre/pre}"
+SRC_URI="http://abridgegame.org/darcs/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ppc x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 # disabled wxwindows use flag for now, as I got build errors
 
@@ -23,7 +27,16 @@ RDEPEND=">=net-misc/curl-7.10.2
 	virtual/mta"
 #	wxwindows?  ( dev-haskell/wxhaskell )"
 
-S=${WORKDIR}/${P/_rc/rc}
+S=${WORKDIR}/${MY_P}
+
+src_unpack() {
+	base_src_unpack
+
+	# If we're going to use the CFLAGS with GHC's -optc flag then we'd better
+	# use it with -opta too or it'll break with some CFLAGS, eg -mcpu on sparc
+	sed -i 's:\($(addprefix -optc,$(CFLAGS))\):\1 $(addprefix -opta,$(CFLAGS)):' \
+		${S}/autoconf.mk.in
+}
 
 src_compile() {
 	local myconf
