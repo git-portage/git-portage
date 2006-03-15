@@ -10,6 +10,9 @@ SHA256 708b9f0e47fbd972bdc41a33a6a9d1cdc963118c6d93e499dae9d3f580607ca7 files/di
 MD5 c7d25f6009e94e4db6cf296b9a3bfcc5 files/digest-libgdiplus-1.1.13.2 262
 RMD160 33766e9f152ca749c8e2a27abecf8432c5be7f6b files/digest-libgdiplus-1.1.13.2 262
 SHA256 0aeb1e3beaad2b2ea1814900c0969b3b46fe67ac23bf45d8b2074cb55f47ab7e files/digest-libgdiplus-1.1.13.2 262
+MD5 a1ace3edeeb558f9ab4bc5bc47f2dae4 files/digest-libgdiplus-1.1.13.4 262
+RMD160 6727ccfe8f08357760372e95520fda8ac82f4b78 files/digest-libgdiplus-1.1.13.4 262
+SHA256 d463456c0a117711680b41f3f0fc9ed66adafe88bde6f24131d589e06f0f1d09 files/digest-libgdiplus-1.1.13.4 262
 MD5 72be9aea1153a84083e40505c54b6d7a files/digest-libgdiplus-1.1.8 69
 RMD160 7c40fae1936d5f5ddbd19b435bbaaddb22cce376 files/digest-libgdiplus-1.1.8 69
 SHA256 e5233695d6a2e46495ab6160fb4c7428c7187a65af307872595cd9ae01773ff8 files/digest-libgdiplus-1.1.8 69
@@ -43,6 +46,9 @@ SHA256 117a8fbe08f4a0d5f0e1ac367252c1605f8a8fa439d9f95e0774780f12558b40 libgdipl
 MD5 5069530e2c6489a50f338a5f424aa52e libgdiplus-1.1.13.2.ebuild 1850
 RMD160 4dce4716036705134e8dad5ad938310203f5923e libgdiplus-1.1.13.2.ebuild 1850
 SHA256 760cb730d9c76a4295bb887b077550e42624d7b86eb6aedda39eb4b560a8f809 libgdiplus-1.1.13.2.ebuild 1850
+MD5 5069530e2c6489a50f338a5f424aa52e libgdiplus-1.1.13.4.ebuild 1850
+RMD160 4dce4716036705134e8dad5ad938310203f5923e libgdiplus-1.1.13.4.ebuild 1850
+SHA256 760cb730d9c76a4295bb887b077550e42624d7b86eb6aedda39eb4b560a8f809 libgdiplus-1.1.13.4.ebuild 1850
 MD5 ce79ee34e51c3b2ad2d80b581e87ff91 libgdiplus-1.1.13.ebuild 1848
 RMD160 f09b1a0efdea935bb7252d1de4edb2395970535b libgdiplus-1.1.13.ebuild 1848
 SHA256 1b20f3d42bc179d2483a8f64b8e4333e86e7c478ec2f57901a8f94aa48c8ded4 libgdiplus-1.1.13.ebuild 1848
