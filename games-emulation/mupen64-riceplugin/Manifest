@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a27751ffa120dfcd2cd50691e2fc79bf ChangeLog 2051
 RMD160 da37b870cfe92764549ea507b898a97e26cfa00b ChangeLog 2051
 SHA256 292e2ce66c0e180ee037cf2dc16a2a5e44953709543512a8081ad9c7dae9341e ChangeLog 2051
@@ -22,3 +25,10 @@ SHA256 ff809a9b645ca993316fed51f8ef6d918d1ad9bc1118a775efc7fa37716e8ad8 metadata
 MD5 42d4df70b03c18d41e7a289c71ee5694 mupen64-riceplugin-5.1.0.ebuild 1031
 RMD160 19c006abc05ae64c0697a081d7c1b8c3ac81a8c9 mupen64-riceplugin-5.1.0.ebuild 1031
 SHA256 7a8cd5080035a1680ff41bb8646db8afe659ceabbeca27879ee450f4fc3cc4ac mupen64-riceplugin-5.1.0.ebuild 1031
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEF5twCRZPokWLroQRAh6AAJ9ffvYFcymrC0jHZ9uDXZMntaU3vACgzf4+
+WfTbKQrZRvGVKGY/w0/zzjQ=
+=QV7j
+-----END PGP SIGNATURE-----
