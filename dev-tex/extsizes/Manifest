@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 309f9109a13132ddf8b0103eaa94fbeb ChangeLog 781
-MD5 2f8a76cfc2621ec15785dda7a18887fd extsizes-1.0.ebuild 767
-MD5 c472f5fd1646eb8bca71d8df5cb2bdcc metadata.xml 164
+MD5 ed8e4b11385e4c8b4a55797a3d0b232f ChangeLog 888
+RMD160 8cddc3ec9120c5bbf08e33150a70c63409edf063 ChangeLog 888
+SHA256 29bda6e88ed5ddb9d9ec7c5ac177f8564cf6768662a3e985ebf2f2426c273d45 ChangeLog 888
+MD5 de1c1e6b89dbb9423555f9e7e5597362 extsizes-1.0.ebuild 665
+RMD160 6640ca894ecffe2599a8076bdfbcbc49ee5f1003 extsizes-1.0.ebuild 665
+SHA256 1cf94cf207fd9a81f9a4be466defae9dffaab2d3365a8525e72600a413c025ab extsizes-1.0.ebuild 665
 MD5 caef2c572681b616ba21af21e79d9a64 files/digest-extsizes-1.0 55
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
-
-iD8DBQFBdR/8VWNWqTUmv+0RArkEAKCik8Aht/AJgi8npafdxijQOogg/QCgtTlE
-vNyKELiHpLOjs1+IHBfIeX0=
-=ZpCh
------END PGP SIGNATURE-----
+RMD160 24042a14e4d8d5e9726157a50ae6e33dad3fe705 files/digest-extsizes-1.0 55
+SHA256 9f82c4b06fb222f6606f5a35896f2a7df453b8a466b391cfc33a77e094c1c074 files/digest-extsizes-1.0 55
+MD5 c472f5fd1646eb8bca71d8df5cb2bdcc metadata.xml 164
+RMD160 698422e821458386b8da17baa6014296f8284e0b metadata.xml 164
+SHA256 7bd4d93c657a26aa9af1dea4232520c0d388cc92115dd9ca0eb04259228e044f metadata.xml 164
