@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f8e1072492d97ac4103824472a3384f3 ChangeLog 14253
 MD5 88069f3f6c274e4285bbbba7f5cb5a4f files/FfmpegToolkit.class.patch 576
 MD5 f98e440afe625e13a8b90e5ad7f6e773 files/digest-gallery-1.5.2_p2 256
@@ -11,3 +14,10 @@ MD5 78e0817689de49d654eb8c2863a4d4fe gallery-2.0.2-r1.ebuild 1117
 MD5 ed6936e02ce4362444cd82843e5d150f gallery-2.0.3.ebuild 1122
 MD5 7800db3a807ccdca4c7ddb1c72c6b7bf gallery-2.0.4.ebuild 1122
 MD5 c339473e0ff43da76eb2f2607c441921 metadata.xml 280
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEGaDdKRy60XGEcJIRAmEsAJ98+eqOQ62DSQEWyfU4WkUNteUodwCdEuLy
+l9hc/IOQfzbQa3HnJup/6Ic=
+=Xf9V
+-----END PGP SIGNATURE-----
