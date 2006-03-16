@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e33b7af5d24283785291966b51df0a52 ChangeLog 10197
 MD5 d455684124113e2349a9c674b55b493e files/digest-rp-pppoe-3.5-r11 125
 MD5 25bde10ecb7d85440305687fcb0be656 files/digest-rp-pppoe-3.7 125
@@ -12,3 +15,10 @@ MD5 161308d48042efd0ade491fd5429e4bc files/rp-pppoe-3.7-username-charset.patch 1
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
 MD5 d728978d28ed0d7042bac5857e5f62ff rp-pppoe-3.5-r11.ebuild 2404
 MD5 0c6719b47153d176887304dffe0848b9 rp-pppoe-3.7.ebuild 2551
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEGdDxjG8pv1lIUX4RApy1AJ9ed0Rnlvao6lQ6LQGc6q23wdQkvACeOYrl
+lYQO+ATJ9E+wtqaaE41JB7s=
+=BFxH
+-----END PGP SIGNATURE-----
