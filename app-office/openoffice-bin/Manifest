@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 744d4b9be03002a0d680963f9fddcdb8 ChangeLog 22298
 RMD160 3d79cfa3365da37d6c0fb30bb4c1f7ae8beab1d8 ChangeLog 22298
 SHA256 85115029731b135740559817f96576231d588bfdfd21e0e4cb672e68efae81e7 ChangeLog 22298
@@ -22,3 +25,10 @@ SHA256 3e0ce971dbb78145796a1820812d710546c042dfbc0f9a26dce59fb96c8ac709 openoffi
 MD5 51aacca9b964c1aecb7a3853f965f31a openoffice-bin-2.0.2.ebuild 6772
 RMD160 c4b8ad56ab8be2cee3721729deb93edcf6369251 openoffice-bin-2.0.2.ebuild 6772
 SHA256 0d301e22e19f8ffbac262195ea9ea72770cdfd37e7d8ac05cfbef6f098faac6d openoffice-bin-2.0.2.ebuild 6772
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEGZ11wUpWvClEHQoRAsUdAJ0fUVL6zXSta2JxyIU3fFJgLgWk+gCdH+o7
+e+tcpitARlRgMwTcRxdUuOc=
+=o520
+-----END PGP SIGNATURE-----
