@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 9e6f4537f752a9b422edaf0e33ce09a8 ChangeLog 2246
 RMD160 2a4365d67af2243a500a1686201f8ba30bdf3d82 ChangeLog 2246
 SHA256 089839011d506bae3a5edcadc66a68dfb60be80fd0b24dee15cbea73a12fcad9 ChangeLog 2246
@@ -19,9 +16,12 @@ SHA256 f03d630acbc065b55c514c1179b21d3285ad06ee81629cb8285a617a402acf34 files/di
 MD5 c95f74e0e80dfdf4979b7101a7668402 files/digest-spamprobe-1.4a 244
 RMD160 6f03c50d87bab24295c74abab5d033a9de6d43fe files/digest-spamprobe-1.4a 244
 SHA256 9735b136d45197b5803b5e4db5a8ff8b1644541ccc1fab92ff670dc2ae21eb8d files/digest-spamprobe-1.4a 244
-MD5 cbeb7d5bd9db0316da09d058352eb3d9 files/digest-spamprobe-1.4b 244
-RMD160 5ca53a9cdf976dcab8dc62f414b9cbe2f84d5509 files/digest-spamprobe-1.4b 244
-SHA256 6da525c4c0c278b25584100214c7a0a5c41e91dfa582b22bc6d8c1cf8fe4987e files/digest-spamprobe-1.4b 244
+MD5 14b719b235cb39d3ca25e869ae360ab8 files/digest-spamprobe-1.4b 244
+RMD160 f3d8e35039b9458169bce418898e931526a4f881 files/digest-spamprobe-1.4b 244
+SHA256 9a93f23fc79b5c3d3c8043acb7a695a3dd9da3071ba9ff7be1cafb45a85767e7 files/digest-spamprobe-1.4b 244
+MD5 3432a84753cb3ff03ba8685ec2abc264 files/spamprobe-1.4b-gcc41.patch 383
+RMD160 0422df9bf43fd510fe320b3617a9f0359da02dd9 files/spamprobe-1.4b-gcc41.patch 383
+SHA256 998b00e4fb1e4ad214baa7609cf9f9bb9732678d0fa444c4a352ca395c163a92 files/spamprobe-1.4b-gcc41.patch 383
 MD5 7a63986c893466830ff3fb3aad7f89fa metadata.xml 251
 RMD160 fe636c5fe7e6050829285b0af3d05793a7bd210c metadata.xml 251
 SHA256 01e22d563319856b8f2ad43bab5d9cb66de405ebfd186277b0c97253216359be metadata.xml 251
@@ -40,13 +40,6 @@ SHA256 a11f71a6c226b85f1ca7cfd80cf0d32ac24c57db441886d13af85ef44ea70b71 spamprob
 MD5 ba277001c8ed05d1ff6ce62a4d621ab4 spamprobe-1.4a.ebuild 803
 RMD160 b4e3132352fdcdfbd0ac7904578f570ced0a1b1c spamprobe-1.4a.ebuild 803
 SHA256 ca61c6048eec2b91981967bbdf552df7084051ffddb5d4fa3847f0cd470c0e87 spamprobe-1.4a.ebuild 803
-MD5 13ffa6a0cdd9aefa03545b085a676c42 spamprobe-1.4b.ebuild 803
-RMD160 8b6f5f8ab3e351fc6a66cb94fc431d6c160d567a spamprobe-1.4b.ebuild 803
-SHA256 221d05f1738beee0a69bc22afb783fecaab164aa8ed0b17cb69c247fdd05c253 spamprobe-1.4b.ebuild 803
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.1 (GNU/Linux)
-
-iD8DBQFD+L81QlM6RnzZP+IRAjmSAKC+kDCmreyAaKEcM3Lyrjtd6rEP1ACglFVq
-SVTazNksT4EdRpThQkKTxP0=
-=slMc
------END PGP SIGNATURE-----
+MD5 678085493c8a653d0d1dc24e2f4cdd9a spamprobe-1.4b.ebuild 870
+RMD160 84b3a3c11e1a7fecd89c10176746cf39821857d6 spamprobe-1.4b.ebuild 870
+SHA256 d2e0275a072d1e3a65220fe1d8c37838e3f1bd8565e0ae07b0c6adad77100c2e spamprobe-1.4b.ebuild 870
