@@ -1,5 +1,5 @@
-MD5 50a873439f1d584ac802644858d66c18 ChangeLog 3023
-MD5 6c9a975af8eaacc41b65aa8eaf669790 Pod-Coverage-0.16.ebuild 616
+MD5 d20b484cba8ad2d680651cbf054cb15d ChangeLog 3024
+MD5 feda16f125b8e067e24a445c7c44a08d Pod-Coverage-0.16.ebuild 621
 MD5 ab3500e4e2aaa50c3a8797f361f575f5 Pod-Coverage-0.17.ebuild 630
 MD5 3b1351cf268d7b23d25940bec749bb75 files/digest-Pod-Coverage-0.16 68
 MD5 a2d83a69742bc1af4d30a62a442b2b45 files/digest-Pod-Coverage-0.17 68
