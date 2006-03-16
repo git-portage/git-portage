@@ -1,0 +1,6 @@
+MD5 73ebdcfc7b5952ed0e2cf5a08eba12e9 files/digest-xsel-0.9.6 229
+RMD160 d5928bde15cb65b84b27353f3ad1df3fa804b45f files/digest-xsel-0.9.6 229
+SHA256 ac8d779c941c556c6c7afd709f04fa8994941cd65d48485a7989a7db5a1aa698 files/digest-xsel-0.9.6 229
+MD5 fae83f2508ccfa7069b8ad1b9bc11eae xsel-0.9.6.ebuild 728
+RMD160 aa7197a77acfa5bbfeb7793588591e0e79ee85f4 xsel-0.9.6.ebuild 728
+SHA256 ddae260978f5b04ea8c2faad63c15c57687ff60628311c643c3295c2ed4980c4 xsel-0.9.6.ebuild 728
