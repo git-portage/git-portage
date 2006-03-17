@@ -1,6 +1,16 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 45ea7f5e4f5ff25f2d51dd4da782514c ChangeLog 4439
 MD5 feb8195c915d5109dfd6b96df7bf4f91 files/digest-vice-1.17 62
 MD5 a3c398734bf808672ba34c9328f8ef1e files/digest-vice-1.19 62
 MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
 MD5 2d1b39ff22170da1997f8533003e554e vice-1.17.ebuild 1946
 MD5 3ab1b31433974ed477b84853e68516b8 vice-1.19.ebuild 1954
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEGswRKRy60XGEcJIRAg/uAKCnYHzGV9BLz273vk1FBAiAKrNkpQCfRRx4
+VlLPAfIHZnWUGmvWOplNfqQ=
+=axIt
+-----END PGP SIGNATURE-----
