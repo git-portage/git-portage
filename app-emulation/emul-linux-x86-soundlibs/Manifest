@@ -1,28 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 83d1f4f3ff5cf1dfbedc578240e6d824 ChangeLog 2526
-RMD160 d6276740e0b9bff301e083aed885b75f77a07fc7 ChangeLog 2526
-SHA256 b3760cdd49a9a35434e7b239c327143f2ffd5b23d066436df461b0fe05d3af54 ChangeLog 2526
-MD5 009319bd8f516719ce5d1f1f06ba6185 emul-linux-x86-soundlibs-2.2.ebuild 685
-RMD160 c7f59efb8baafd62229b5d72fa2a91ad28862b7a emul-linux-x86-soundlibs-2.2.ebuild 685
-SHA256 2f2f6c3bd29963552835349c41cb7fdfd7e62174399f544fc21029d56aef6461 emul-linux-x86-soundlibs-2.2.ebuild 685
-MD5 cc3043b56bbda7972a693d2b064a25a5 emul-linux-x86-soundlibs-2.3.ebuild 685
-RMD160 e2a0be347e876b2049d98d40fddbbbbc991f2112 emul-linux-x86-soundlibs-2.3.ebuild 685
-SHA256 d0002e96df131cb19c6298e0278bbc8d98d290a9147a687f06eb2f15cdd11943 emul-linux-x86-soundlibs-2.3.ebuild 685
-MD5 f60336665aa72c0c5c99a99ded56afb5 files/digest-emul-linux-x86-soundlibs-2.2 81
-RMD160 ada2c9df74ce9765001b197f3b196b4092c1e060 files/digest-emul-linux-x86-soundlibs-2.2 81
-SHA256 10474a9f92cca641365542ab7c77b2794a406c6259cc5ad50c880cb7adf26750 files/digest-emul-linux-x86-soundlibs-2.2 81
+MD5 d1a65cac26d58b0fced21459c2a4f280 ChangeLog 2825
+RMD160 b1e347860b962199bf360b335917f3eef12a2dca ChangeLog 2825
+SHA256 73b910676caa967cd74ac521146baef3e8aa0268f512d439bc1576666d06a589 ChangeLog 2825
+MD5 f1c928ebdcfae7a55ccb3caf85f1eb75 emul-linux-x86-soundlibs-2.3.ebuild 687
+RMD160 0a6a3c98986ab978fee07cfb121fda464946189d emul-linux-x86-soundlibs-2.3.ebuild 687
+SHA256 98bb799d4b36543d0d82b5b0ac1127c256df487141e913da09cef41ea1d9e630 emul-linux-x86-soundlibs-2.3.ebuild 687
 MD5 f27dc8415cd3ef2584cec38dc41b53ec files/digest-emul-linux-x86-soundlibs-2.3 81
 RMD160 43e79a018dcb270cb36a4152a900c17aa3f7a794 files/digest-emul-linux-x86-soundlibs-2.3 81
 SHA256 2d2a9eed417d8e70a94e9135ef11f178b28490045c7cdbf01854e102606c8722 files/digest-emul-linux-x86-soundlibs-2.3 81
 MD5 5e8c61d551dad88488a66992865ba737 metadata.xml 290
 RMD160 29c2eafcf00e4b115ba5ae455218ee6eebda67ae metadata.xml 290
 SHA256 8f04703141bc8cd55a0e56bf7593f657a891ed4796e71e3d6e8770c7ea098c30 metadata.xml 290
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-
-iD8DBQFED4fXAiZjviIA2XgRArHrAJ9ZVWhMq7GTYTkINRUez8tAfnsiCgCbBNXb
-4g1pC9bbHnpVZBCoqaauytg=
-=3HOC
------END PGP SIGNATURE-----
