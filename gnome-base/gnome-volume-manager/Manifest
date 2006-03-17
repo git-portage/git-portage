@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 4ba5e5cd977365b2b42495ce2e093501 ChangeLog 6685
 RMD160 46e1b44f7a32d645d00f712b6d0ac6a0686f2566 ChangeLog 6685
 SHA256 2bfaca428475647e5611d81dfa13b7c7bd9e30eb905d055af9cac262b9f5db21 ChangeLog 6685
@@ -13,6 +10,9 @@ SHA256 a35addc882f39f481ea646f6e47187753473c7f6a47f8f1136d4dd9211853544 files/di
 MD5 019e01caf376cfa12bd42566ab4d4f44 files/digest-gnome-volume-manager-1.5.1 173
 RMD160 cb3fe14047a8a68d78fed0b8431ae86847dc27e2 files/digest-gnome-volume-manager-1.5.1 173
 SHA256 82b4b63a63b62fdfe724df854eab28171f85e5844bee27d91d0f868012f3a241 files/digest-gnome-volume-manager-1.5.1 173
+MD5 46d8f8c4a698968d0dedf251ed195187 files/digest-gnome-volume-manager-1.5.15 286
+RMD160 46394415956017d72ab8295404fbdf49a3df0f09 files/digest-gnome-volume-manager-1.5.15 286
+SHA256 6def8741110d166c59864fe6e7224b5ffaa58d9a4ee3f41803311bb73731be93 files/digest-gnome-volume-manager-1.5.15 286
 MD5 77f899fe161d78731023d3946978d92c files/digest-gnome-volume-manager-1.5.3 174
 RMD160 a2534017eaf95a8b55048f49fa11e07dae765164 files/digest-gnome-volume-manager-1.5.3 174
 SHA256 6547e621c182a17254aa33d1bbdac0b188f19876a8dc6110fefdbde383a81f28 files/digest-gnome-volume-manager-1.5.3 174
@@ -34,6 +34,9 @@ SHA256 f4a2f91630491808e6854c122f9c491d5cbd240bf21db1a2c1d2237bbcd51a19 gnome-vo
 MD5 a9385b6ba060065fb7d55f25902e3bbf gnome-volume-manager-1.5.1.ebuild 1527
 RMD160 cf10e689717b4bea027199292015ceeafd58dc7a gnome-volume-manager-1.5.1.ebuild 1527
 SHA256 1c6e16289ade29d27763488a6ccf5c1cf672eb51455e407c806fe2a79d318ac0 gnome-volume-manager-1.5.1.ebuild 1527
+MD5 3ff662aea63eb53ef91a59d5c851d320 gnome-volume-manager-1.5.15.ebuild 1457
+RMD160 21a954c322a80f11aa9dd8b94b2e59c362464ec5 gnome-volume-manager-1.5.15.ebuild 1457
+SHA256 488430c7fac5612b7420fe8a17b67cc60657954c4ea6f63b8680a098e9f770c7 gnome-volume-manager-1.5.15.ebuild 1457
 MD5 0f67e70ef2099c779265301e2c6f84c5 gnome-volume-manager-1.5.3.ebuild 1490
 RMD160 9f40272726951781b4b1a77f5c0d83310e3dda09 gnome-volume-manager-1.5.3.ebuild 1490
 SHA256 9f2ce8c1fcd3140efae29ae33c9f5bcc2444962fa1a65f9605f7df1d77dca341 gnome-volume-manager-1.5.3.ebuild 1490
@@ -43,10 +46,3 @@ SHA256 48b731c79a14a5c8ec57a2a3da2f892e59899e252167aff1604427660301667e gnome-vo
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
 RMD160 c0e2bae8e91bb6be8922bac5e4f597302e06587e metadata.xml 158
 SHA256 3a7dbca0fdc557de69783e0663e2d76ddab129ea8a19b2d0ef6d3e5d1b947ce1 metadata.xml 158
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFD47CRJrHF4yAQTrARAiG5AJ0S6magBHsx8MnxNPHYljdxVHi5tgCbBhVj
-djeuXgPNEd+F5EUK6R1c+bs=
-=FwB3
------END PGP SIGNATURE-----
