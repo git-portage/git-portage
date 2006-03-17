@@ -1,4 +1,4 @@
-MD5 0bbd151defba7ccfde6b5f0b15930aa2 ChangeLog 3088
+MD5 77ece88bd018be3388fe76e7d0909669 ChangeLog 3198
 MD5 792d1ec217d44781e9d154e69f665156 files/digest-net-server-0.85 66
 MD5 8fc233c7ca183bb3aedc37e423b3fc8b files/digest-net-server-0.87 66
 MD5 8fc233c7ca183bb3aedc37e423b3fc8b files/digest-net-server-0.87-r1 66
@@ -8,5 +8,5 @@ MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 MD5 8ebfa90fd7ffc63ff01a1ff25bd56f63 net-server-0.85.ebuild 605
 MD5 a25e4072a0b2144eb4256e264ab5bbf7 net-server-0.87-r1.ebuild 602
 MD5 4dcc804770af05b578530a1d30c6042c net-server-0.87.ebuild 598
-MD5 ebe17fe1a55ef1b5bdfb3f2d60caeafc net-server-0.88.ebuild 628
+MD5 5095e3f9f5201f227c2ef6aebfee7243 net-server-0.88.ebuild 630
 MD5 167b9a7ec23f95265cb661d2334c8aa8 net-server-0.90.ebuild 627
