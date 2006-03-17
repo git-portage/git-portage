@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 eb291130d91293f4731438e7a5ad7959 ChangeLog 3594
 RMD160 bcfb741d8f3c971595aa457885e2ed5c0b060c4e ChangeLog 3594
 SHA256 ae7ffbd2b670330ae0b8970c3225441e050cfb992ea718a272e5a9d3c14dc3d7 ChangeLog 3594
@@ -13,6 +10,9 @@ SHA256 e5860ce20a576c99fb4cd3e6f8d5b9a4c44caecfe98f909002893464cf0c9927 emul-lin
 MD5 90c3b7bf6adad67e1aa764d6125413dc emul-linux-x86-gtklibs-2.3.ebuild 717
 RMD160 d9792c9f4fcf571f2d4629d76f6e90ab825149a3 emul-linux-x86-gtklibs-2.3.ebuild 717
 SHA256 e3d4c8639166c3ac4d8608a6df378e18ddb1eb7c7fbe46f26a917ce726b65c77 emul-linux-x86-gtklibs-2.3.ebuild 717
+MD5 cbca16d5348623183a7f5009c5090898 emul-linux-x86-gtklibs-2.8.8.ebuild 911
+RMD160 9fcc40ef7fc8cb4075643225ec67f51fcc0939b6 emul-linux-x86-gtklibs-2.8.8.ebuild 911
+SHA256 2aea68aae6a250c989fef61259347f69b221614ab4d9adc3a38d1e4a772ba7bc emul-linux-x86-gtklibs-2.8.8.ebuild 911
 MD5 c5be4cc3b169ef841633df1d37e28a64 files/50emul-linux-x86-gtklibs 14
 RMD160 bfec6865ba08ad120cfb30218b31b50120a55931 files/50emul-linux-x86-gtklibs 14
 SHA256 82ec78c260f9f7c1a0bd0ad98dd2cf70bc1d09cc57bfb43e7d690999f7a4e7aa files/50emul-linux-x86-gtklibs 14
@@ -25,13 +25,9 @@ SHA256 a2748f14e22858c80c4c449b644677277ece30b65fd1465b7d35ad36ce13dfbb files/di
 MD5 6073071bbff7e13d70671238535b6820 files/digest-emul-linux-x86-gtklibs-2.3 80
 RMD160 2124d9a91f3d3c1702c28028e352a1c7fa634a5b files/digest-emul-linux-x86-gtklibs-2.3 80
 SHA256 b3b893a2633b9ca7db68d0bae2d941054bfba308979b2fdd4ab8b49345836e73 files/digest-emul-linux-x86-gtklibs-2.3 80
+MD5 d8bad6a383478262dd6579505a602f8c files/digest-emul-linux-x86-gtklibs-2.8.8 292
+RMD160 ba00c276a28df06524e0288685644da3f66cbd06 files/digest-emul-linux-x86-gtklibs-2.8.8 292
+SHA256 ca07ffba3c41994c96fae1596ef72e23718e5b5e4042acea834ddf76aa7ec754 files/digest-emul-linux-x86-gtklibs-2.8.8 292
 MD5 5e8c61d551dad88488a66992865ba737 metadata.xml 290
 RMD160 29c2eafcf00e4b115ba5ae455218ee6eebda67ae metadata.xml 290
 SHA256 8f04703141bc8cd55a0e56bf7593f657a891ed4796e71e3d6e8770c7ea098c30 metadata.xml 290
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-
-iD8DBQFED4ndAiZjviIA2XgRAuMDAKCdvlGlY8W1QHOG0ousqYc07qTFTwCg3Fjj
-/INiWV+nQzYniXsLnzW7jnc=
-=vo8M
------END PGP SIGNATURE-----
