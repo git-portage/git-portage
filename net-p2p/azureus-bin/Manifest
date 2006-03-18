@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 db03dd4911088eeae3ebe977ba699b71 ChangeLog 6719
 RMD160 60379236994d7e7b6948b70c7759f1b0e5ce6e08 ChangeLog 6719
 SHA256 de84682f075c67d529eec65136223c21b974b66ec4afa4664dd83a78d009d36c ChangeLog 6719
@@ -13,6 +10,9 @@ SHA256 8f085f5d6d7f3103bfd42185417fd37f74ca4965b934463f633b54bd9d06cf28 azureus-
 MD5 3a9b952842f740b281b4573d50887188 azureus-bin-2.4.0.0.ebuild 3064
 RMD160 227a9f53dc2dd67755ae24147cc58ff9ca1ce05d azureus-bin-2.4.0.0.ebuild 3064
 SHA256 d12200b43c93ba4a5d48010d98c5ae21bca093cf8682d2832e147b8fa2c68424 azureus-bin-2.4.0.0.ebuild 3064
+MD5 3a9b952842f740b281b4573d50887188 azureus-bin-2.4.0.2.ebuild 3064
+RMD160 227a9f53dc2dd67755ae24147cc58ff9ca1ce05d azureus-bin-2.4.0.2.ebuild 3064
+SHA256 d12200b43c93ba4a5d48010d98c5ae21bca093cf8682d2832e147b8fa2c68424 azureus-bin-2.4.0.2.ebuild 3064
 MD5 6cf2c1041726decd44a55736aadda4f7 files/azureus-bin-gentoo.sh 1056
 RMD160 31af9752b941226dc70e2565b66874c82a5c81dd files/azureus-bin-gentoo.sh 1056
 SHA256 358456d16abdfce525ce232ab2d9d42b4314baee59e110b6b3e5ef0fe974a62a files/azureus-bin-gentoo.sh 1056
@@ -31,13 +31,9 @@ SHA256 5fa675700db348348eee81a7b20e739768f99b6e300a3ab08775d4ed8fdb7793 files/di
 MD5 387e475968b069506fb856e1e99695b0 files/digest-azureus-bin-2.4.0.0 1078
 RMD160 7e7337653d8023a7060bcdca138fdcfa1bc32566 files/digest-azureus-bin-2.4.0.0 1078
 SHA256 05c972ba21ad417fa6fd6d938c44a90a97868f98a4eac829be161edb6eb376b6 files/digest-azureus-bin-2.4.0.0 1078
+MD5 96c803a4cc42698b83f65de016408e41 files/digest-azureus-bin-2.4.0.2 1078
+RMD160 7b14a451b802f748a7d230450f3dbc448a7ab48d files/digest-azureus-bin-2.4.0.2 1078
+SHA256 c909634ad0f8ed9402f9ffe6b135361923b7322918dc69e13716d6cddfd57813 files/digest-azureus-bin-2.4.0.2 1078
 MD5 0d0384a2c9c3495944bd250aac2fd8a0 metadata.xml 276
 RMD160 30333f8e6bf59b86caedb107f84c17d6e4c0dd20 metadata.xml 276
 SHA256 ede99d07f35a45343fe0658cd64fa3b6fac103ca95b9285b94ebfa6883e7f3a0 metadata.xml 276
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.1 (GNU/Linux)
-
-iD8DBQFEC1ikOpjtAl+gMRURAmrzAJ4oTir7+fwjWZxyaUx8JMnnDPVvyQCfVbns
-I3TfZ+L+fJ/q0EwkP3Q5KJ8=
-=dBJY
------END PGP SIGNATURE-----
