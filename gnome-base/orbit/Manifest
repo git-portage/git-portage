@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6dfd66159d3f46bfb0b1bde6619e754f ChangeLog 7111
 MD5 51bfc1efb763de186ee1b1f1e594891a files/digest-orbit-0.5.17 66
 MD5 51bfc1efb763de186ee1b1f1e594891a files/digest-orbit-0.5.17-r1 66
@@ -16,3 +19,10 @@ MD5 de5762757b63214d7f117d5141114acf orbit-2.12.3.ebuild 1064
 MD5 44a60d7ad7e009b68b69f71049a258f4 orbit-2.12.4.ebuild 1064
 MD5 2cb37254b182deec0a059812905c3e32 orbit-2.12.5.ebuild 1067
 MD5 f3b3d0d63d9ab7481a3f88a3c8b1f2ac orbit-2.14.0.ebuild 1064
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEHICyoGcCqvCmTSIRAi6fAJ9tCzknv8VPvjTNeTXrnqqQRl3P/wCfTYAO
+Q2hwGOqJ9OgyuY20AC6E3Aw=
+=IIxY
+-----END PGP SIGNATURE-----
