@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f948134dfa325cbc3dcda1873d847b48 ChangeLog 1855
 RMD160 17e1b16e9c5141e52d413c6be61e070486ed2cd9 ChangeLog 1855
 SHA256 d153bae5ec19e26e2c9b41458798c36b940bac926790b8e2fff835f963db8346 ChangeLog 1855
@@ -34,3 +37,10 @@ SHA256 7fa319a5a14749f10a4a3fb7dd7d4e02f2ad9dbf93d8e79bc803a889dac6791b mod_ldap
 MD5 998ce39bfef2ba93bf34158b52cc643e mod_ldap_userdir-1.1.5.ebuild 1294
 RMD160 4b39ab7000f8297d9e5c368ea6bf2abfb76edfbf mod_ldap_userdir-1.1.5.ebuild 1294
 SHA256 79074ca708e1c2deec7eb32fb1bafbf73e7a7aeec3b0c768bfb451d77f89b1f4 mod_ldap_userdir-1.1.5.ebuild 1294
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEG+zvugEuf3OQ0akRAohUAJ91557rlWXrj0rAx71O5Vd4is/hGgCfY/Qk
+Jb7S1zAvlmY6QGdDmVv7efg=
+=0iAT
+-----END PGP SIGNATURE-----
