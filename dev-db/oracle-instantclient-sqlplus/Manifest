@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b062eff9e81e591d60fc1f262a7af3c8 ChangeLog 2367
 RMD160 fa0a40c7fceaf170bd84081c80376ac5a805675a ChangeLog 2367
 SHA256 d9e5c92457d6c0a5909c859d654e4daa2f54b98d3d304862f66ec3a897c3616d ChangeLog 2367
@@ -34,3 +37,10 @@ SHA256 27dc5d9231543967d9cf61ed375a51662ccddaf4da445ac64d181455323ef5c3 oracle-i
 MD5 ac1cf0a5c0878fb96369c5afd33c6946 oracle-instantclient-sqlplus-10.2.0.1.ebuild 1644
 RMD160 d02d8a7fd47c67630a6b1dd2491e3b847c6fb49c oracle-instantclient-sqlplus-10.2.0.1.ebuild 1644
 SHA256 dc5d5bb3fb388552da52eb5e6ef81aabfefdfc7d4a94df6a047d6221a18394c2 oracle-instantclient-sqlplus-10.2.0.1.ebuild 1644
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEHdYpCRZPokWLroQRAg5bAJ9GEOgPmy7fAP9+XFZgMVrnZVYdrgCeKDXn
+txKRbuuyuWzHUIoXTI0dt9g=
+=e96f
+-----END PGP SIGNATURE-----
