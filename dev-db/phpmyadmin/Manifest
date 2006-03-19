@@ -1,4 +1,4 @@
-MD5 7e134bbe760cad222aadd6bab1348efb ChangeLog 22657
+MD5 c6071585e0650645329efc805b4a706e ChangeLog 22794
 MD5 ab6e8b5ecc163d415aebb7d2c42238a3 files/config.default.php-2.7.0.patch 5533
 MD5 9dc203a856638d41f9992d0e54f8c8f8 files/config.default.php-2.8.0.patch 5553
 MD5 1d85eb9be97d60027aaf8510dfa9f6d5 files/digest-phpmyadmin-2.7.0_p1 268
@@ -13,5 +13,5 @@ MD5 cf0af0543cb29eb88163220df6f14669 files/reconfig-2.8 329
 MD5 7b6e6cf3eaafa0480ab619fadfb37e2e metadata.xml 162
 MD5 ed2bb53f46dfc48ddbc758d5dc07fdc6 phpmyadmin-2.7.0_p1.ebuild 2097
 MD5 a24be197d7a2a4d85249218fda511daf phpmyadmin-2.7.0_p2.ebuild 2103
-MD5 790a058ebffcf1b4b23b4829cabc6e99 phpmyadmin-2.8.0.2.ebuild 2381
+MD5 015e68f120f91e52fad4e4191b1a8be0 phpmyadmin-2.8.0.2.ebuild 2386
 MD5 790a058ebffcf1b4b23b4829cabc6e99 phpmyadmin-2.8.0.ebuild 2381
