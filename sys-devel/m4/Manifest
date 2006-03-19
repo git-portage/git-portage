@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0ba70461a210519014c678c2b197f80a ChangeLog 5853
 MD5 7703a5bdcc14909f62302b74508db3d3 files/digest-m4-1.4.2-r1 60
 MD5 a0fbe19c80ff3efb55bbc711d4ef2648 files/digest-m4-1.4.3 61
@@ -8,3 +11,10 @@ MD5 91da8d2c90ce807e73b59ec3ba895e7e m4-1.4.2-r1.ebuild 763
 MD5 56c8a0ca688d09c662e353745b32390d m4-1.4.3.ebuild 1004
 MD5 5c6765bba80f58c38853d6176fe9d9b1 m4-1.4.4.ebuild 978
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEHceyViELBEf1JB0RAqQOAJ46ToopwuLKfHFtQ20XfVYl4wDf0gCfZcKU
+21Ef1QusQFvqjn5nWc6ZbVE=
+=wFic
+-----END PGP SIGNATURE-----
