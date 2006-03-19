@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 138b23fc7308bd5305acaca48b7046b2 ChangeLog 1183
 MD5 ea4780455e349d757a5b77d6868e5395 files/0.3.3-64bit.patch 477
 MD5 dc35a8413c2ac69ffc39a48998c43bad files/digest-watchfolder-0.3.1.1 71
@@ -5,3 +8,10 @@ MD5 813a88e0406b8eb243a400412bdeb53f files/digest-watchfolder-0.3.3 250
 MD5 442b63f97d60b5f5a8f6b4709d98f453 metadata.xml 252
 MD5 49d0031f720d8eded31c66a3db8a0a0e watchfolder-0.3.1.1.ebuild 796
 MD5 d94fb9806d9f3f6540afa4021268b38e watchfolder-0.3.3.ebuild 830
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEHc+7ViELBEf1JB0RArFnAJ4sO12DfTyrDNBZakwef3Dpe96bxQCdH30F
+VHYpb49SLVIHbmbsqDRS9oY=
+=bUNl
+-----END PGP SIGNATURE-----
