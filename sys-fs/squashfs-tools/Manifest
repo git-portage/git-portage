@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4299c9b0c9eecb80a70a0867f788cf65 ChangeLog 4664
 MD5 79b98e5d18ebd17486dca6802a1ac7d4 files/digest-squashfs-tools-2.1_p2-r1 66
 MD5 8e1ba2a524f27a8d5629ea4c5082d4cc files/digest-squashfs-tools-2.2_p2 65
@@ -6,3 +9,10 @@ MD5 d86e5b5e47260e5a965eae2afe6d6d40 metadata.xml 159
 MD5 775b98e784ddd48e7168e2e4cce3cf12 squashfs-tools-2.1_p2-r1.ebuild 952
 MD5 2c817aafd845123627d43223e22d8320 squashfs-tools-2.2_p2.ebuild 949
 MD5 993765016235c7f763510d5e0cafc599 squashfs-tools-3.0.ebuild 928
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEHrgwKRy60XGEcJIRAo4wAJ49ycTkl6SI8Z3So+EgP4zSYt9JhACfWQzb
+mtJUzidVxd6195r2LxhSFx4=
+=pPcc
+-----END PGP SIGNATURE-----
