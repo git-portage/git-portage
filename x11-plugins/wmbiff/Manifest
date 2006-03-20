@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 99c1a749d03d4065bf20ca4fd7e643f8 ChangeLog 3074
 MD5 e84517c77095652edc87803d423092d1 files/digest-wmbiff-0.4.25 65
 MD5 e84517c77095652edc87803d423092d1 files/digest-wmbiff-0.4.25-r1 65
@@ -7,3 +10,10 @@ MD5 62ba71d3b2fa785a4cbd5d47fdbd0eb6 metadata.xml 165
 MD5 9b924d279c63260e423645afd6c3538a wmbiff-0.4.25-r1.ebuild 1176
 MD5 a3b165b4385a5b50ab5168a6ab8f9ca2 wmbiff-0.4.25.ebuild 988
 MD5 1ec087f4f8eaca565774d7b87172f646 wmbiff-0.4.27.ebuild 988
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEHwYPKRy60XGEcJIRAgvBAJ9S1ZvSWtpF86kfj3101mHEeSo7EQCgma8X
+ioBbUWrtUnL3ihSXylhmRG0=
+=yi2d
+-----END PGP SIGNATURE-----
