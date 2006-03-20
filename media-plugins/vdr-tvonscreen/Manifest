@@ -1,3 +1,6 @@
+MD5 931846e19b5ea86d8cbbd8c651d0aabd ChangeLog 472
+RMD160 06a844c691617fcf58b2787b151af8e49f54cdc2 ChangeLog 472
+SHA256 2dfc42bce72040df5fae527b78307dbfc353abbd7c175fba2ccc91d40683d822 ChangeLog 472
 MD5 b5e84c2d2347cfb30c81a21765005f7f files/digest-vdr-tvonscreen-0.7.1 262
 RMD160 a0905d422462dfad7640e9b28dcdea3049a2e637 files/digest-vdr-tvonscreen-0.7.1 262
 SHA256 b1e9350b7f15623d84391913e4caab16e1a6452b15182c1281ec93d84f567a65 files/digest-vdr-tvonscreen-0.7.1 262
@@ -10,6 +13,6 @@ SHA256 f080f326fb530acbc54d859f4757471c0ed4d43881a8b75ea66c185c774335ce files/vd
 MD5 7c30ab7528b676a1a0c2737821599b29 metadata.xml 300
 RMD160 c85719cef743cf573efe73f8f84564292085c91c metadata.xml 300
 SHA256 29feafd8b7177b65f8bd92553ac96779d9a91e3b7b4eeecfb0924eb7b6979587 metadata.xml 300
-MD5 f4c57013c50e413cf3ff6f49da2b756e vdr-tvonscreen-0.7.1.ebuild 568
-RMD160 ff642bb68b01f1fccebe93fcf288569775fa8128 vdr-tvonscreen-0.7.1.ebuild 568
-SHA256 7f71869aaab3a5acf8b7aa1772b6a9e87bb84c109e84462fadd0255ac3ee1d84 vdr-tvonscreen-0.7.1.ebuild 568
+MD5 bfc79505a2a5166d8455300ec90ea9ff vdr-tvonscreen-0.7.1.ebuild 568
+RMD160 f2acecf7bbc8eab243ac6ccba8f2de2df48ac92f vdr-tvonscreen-0.7.1.ebuild 568
+SHA256 6369671c15a709a23b52eda65bda0202370633c4e39636c7560c5746abaca3e5 vdr-tvonscreen-0.7.1.ebuild 568
