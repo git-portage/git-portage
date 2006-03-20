@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e3afd2d7890e42ebf577a59f8c539433 ChangeLog 411
 RMD160 1c1f07e8cc5aa720cdb0a35a68ec136aab322ff3 ChangeLog 411
 SHA256 ecd2536f8919769257a48e8cc400a510b587b716492013ffa98c78f1a20085db ChangeLog 411
@@ -13,3 +16,10 @@ SHA256 29feafd8b7177b65f8bd92553ac96779d9a91e3b7b4eeecfb0924eb7b6979587 metadata
 MD5 90991996b689df9c4447d47a4053ffd1 vdr-newsticker-0.0.4.ebuild 629
 RMD160 82f9c3dd6dbebd08f89787a96d2cabe349a5570a vdr-newsticker-0.0.4.ebuild 629
 SHA256 5e6ba0592420b558d82f22c04ca57d9fdbc67d9e6af1ee9ad11883ddca50bf1b vdr-newsticker-0.0.4.ebuild 629
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEHuBlZfSl1Kp5KmoRAo0eAKDvYfD4i/uEwkqwJnvDTEgNNelyxACg0Uw+
+la7eIhvaFmN9xRmmriVzLDI=
+=d6Aq
+-----END PGP SIGNATURE-----
