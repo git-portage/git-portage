@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 50f6e714a9fc1ce8cd45144db8641e70 ChangeLog 6717
 MD5 83382b2a04b7b2532ac3246aa49a982f files/digest-qdbm-1.8.33-r2 63
 MD5 a1c233a01ba5b6922a06c451b3c2992b files/digest-qdbm-1.8.35 63
@@ -7,3 +10,10 @@ MD5 c9f54ac0eadf3d14a44e5dc692f0df73 metadata.xml 230
 MD5 d6d8bf5d72668b8a77a61d9c44a543f0 qdbm-1.8.33-r2.ebuild 1304
 MD5 444686b6db992c7ed26e0d001bb42d43 qdbm-1.8.35.ebuild 1314
 MD5 419bf10d559452d0e91539690b9b0489 qdbm-1.8.46.ebuild 1364
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEHu2xKRy60XGEcJIRAlXUAJ90SxB2PikYBaeP2QWGpYgzBACaBgCfVEwM
+VtWSUZguxLWb4Ce6GhtWDJ0=
+=np2P
+-----END PGP SIGNATURE-----
