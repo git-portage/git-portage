@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ed93f3ae438ce8236fb1bcf17841b852 ChangeLog 517
 RMD160 249a7fc7e02272f22a6e7dc1ff42c8ca59dd6dbd ChangeLog 517
 SHA256 f786dc23a148607e4f4f9e621a77b4ec5df5c5a2ce549ea209f7f65a735c1c38 ChangeLog 517
@@ -10,3 +13,10 @@ SHA256 973c0eae894d588abff15c7dbabdaff0bfbaf5f4faab334239dc3dc3e31f95a9 files/sw
 MD5 5adedd9ea7748649b8203ca1be9aa065 swiftfxp-0.4.4.ebuild 729
 RMD160 c1d8c72fe654fae34a85c42791aa28aff27c8a88 swiftfxp-0.4.4.ebuild 729
 SHA256 8b400c9c70e1ac81b64a6b6e6762eeaf009bdefccc0f791e71a78469a063920d swiftfxp-0.4.4.ebuild 729
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEHfNuCRZPokWLroQRAqhzAJ9tpyCfLKOw+Wkd7G33j2UnJf48HgCeLj7A
+fHSlhDLjsirRDGGtbh9XXsM=
+=mV/Z
+-----END PGP SIGNATURE-----
