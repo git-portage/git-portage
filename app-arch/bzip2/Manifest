@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 de1dc671267f7dfe58624c2d4a5e8c76 ChangeLog 8015
 MD5 a8859052e282ebc02dafdb66abf24dec bzip2-1.0.3-r5.ebuild 2220
 MD5 eb221e47f975152979561e71cf5993cc bzip2-1.0.3-r6.ebuild 2348
@@ -13,3 +16,10 @@ MD5 613ebf0fa8c5fd2ed2973ffe0d727e2a files/bzip2-1.0.3-shared-largefile-support.
 MD5 f413035bf75710d87670f302692e1233 files/digest-bzip2-1.0.3-r5 63
 MD5 f413035bf75710d87670f302692e1233 files/digest-bzip2-1.0.3-r6 63
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEHrVhKRy60XGEcJIRAkg7AKCl3UPpaVpuANxBZfLPG6jWZ2npWwCfb5uZ
+NyE4n6kUogcBQWGkcWKuNwQ=
+=kXht
+-----END PGP SIGNATURE-----
