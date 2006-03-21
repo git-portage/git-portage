@@ -49,9 +49,9 @@ SHA256 ae67a291c40ed09e8726c4ed65a6f93cc4cca90b9eb5d16105f23638a2b10096 ati-driv
 MD5 2c599a8c0985a244933812ab478545c4 ati-drivers-8.22.5.ebuild 8894
 RMD160 2ac6e4fe56cbb072c386568ceab434ef0a358fa2 ati-drivers-8.22.5.ebuild 8894
 SHA256 cfd53c585cddbf3dcfc02e54633d5851eaeb4eee886fc7547d276a2da37b8db2 ati-drivers-8.22.5.ebuild 8894
-MD5 0a245f209f93e8161f805400a416b88f ati-drivers-8.23.7.ebuild 8902
-RMD160 821ada3a18476d13e2496ffb01b749537b88c17b ati-drivers-8.23.7.ebuild 8902
-SHA256 5107c2b3fa2a1348c3da507afdf2f9dde62a563ed76b4e75df20f25232317cff ati-drivers-8.23.7.ebuild 8902
+MD5 3e0b09f166e070ad3f7b863d0d91058f ati-drivers-8.23.7.ebuild 8944
+RMD160 b2f3cd82ee643439f2d1c26aba8a99b07eac98a9 ati-drivers-8.23.7.ebuild 8944
+SHA256 b9b8f9878fdf02c801473c27e7959a8fe9cd486a44c5ac2c46af3f04e32c0ca6 ati-drivers-8.23.7.ebuild 8944
 MD5 e61309d064f12cc623e4d6e78aa82b36 files/09ati 39
 RMD160 2eb917685ae226a6913f00d0247514faf998d92f files/09ati 39
 SHA256 44336cd56c2712a3260a1289c1085f08e4cb61e6a73175eac4a7b3ebabe5011e files/09ati 39
@@ -70,6 +70,9 @@ SHA256 134172104d1e7bcf056e723b05eff9d16745b49a4911a765666f4f5c81c59c51 files/at
 MD5 ead3d9f8477752d9059916e567916e5d files/ati-drivers-8.22.5-intermodule.patch 831
 RMD160 fdc33818770a97f1b90a8b413cf88c1ad381bdc8 files/ati-drivers-8.22.5-intermodule.patch 831
 SHA256 b2cd8404b415ec472ba07604ba77aa6b52aa9a7bb98b08fbf9d18ac180bfe749 files/ati-drivers-8.22.5-intermodule.patch 831
+MD5 e33c06b8983330741fe60ab12265a144 files/ati-drivers-8.23.7-noiommu.patch 407
+RMD160 12b506cb26db5ebfe11db3d0d909008008dfac79 files/ati-drivers-8.23.7-noiommu.patch 407
+SHA256 ad666b54963a14aab83a04beed38902df4a586e0de25778905fe00a1cec37b54 files/ati-drivers-8.23.7-noiommu.patch 407
 MD5 82c5244e2e3822f5e73ff38138dc23c1 files/digest-ati-drivers-8.14.13-r2 157
 RMD160 64a8113b9d97d97e499206831806f92b9fbd08e7 files/digest-ati-drivers-8.14.13-r2 157
 SHA256 835d5b4060013736135b0a18a0e8805c379a2b811f326489c6194ecf0b947f00 files/digest-ati-drivers-8.14.13-r2 157
@@ -118,9 +121,9 @@ SHA256 5c104d7d09ff96a5ea5ffec862143a98d7f1a787fb0fdcaeb4d6a2872a2d3859 files/di
 MD5 c3eca00b2284649ba6d10e1d27ef260a files/digest-ati-drivers-8.22.5 596
 RMD160 a31343326c85aeb28e9f88542542ded42a256453 files/digest-ati-drivers-8.22.5 596
 SHA256 eb5ca9c22deac672f2e3afff6028f5bfb06840c674660b9a610ef2befc1095cd files/digest-ati-drivers-8.22.5 596
-MD5 73ed5ba89fc27d97d8487ddbbb91d1c8 files/digest-ati-drivers-8.23.7 596
-RMD160 d4270cb764537c2c2e172f72a01b0e30b99cc856 files/digest-ati-drivers-8.23.7 596
-SHA256 e6e4bbc3a090c81cb390b64eca1ec85d12b62e8aa9d1e3a36dd48f458b8f6b14 files/digest-ati-drivers-8.23.7 596
+MD5 250c0726c282e48a47e4eeee68cabbc5 files/digest-ati-drivers-8.23.7 596
+RMD160 85747666a80de0d63610b54692418e8d523e1bd0 files/digest-ati-drivers-8.23.7 596
+SHA256 130f7567d43a252545fcc477c09fb712b00711fa9519fc4cfc801463803fc0af files/digest-ati-drivers-8.23.7 596
 MD5 9ae27a9d7736cb6ce30b41ff384004d8 files/fglrx-2.6.12-inter_module_get.patch 1265
 RMD160 1c349a894ed606b8f51b4caf0b63a0dc152626f8 files/fglrx-2.6.12-inter_module_get.patch 1265
 SHA256 f1aedd70278cb8a11fdc9139ab698056dcc7ad2922aaa902fa7a8816ec10c43b files/fglrx-2.6.12-inter_module_get.patch 1265
