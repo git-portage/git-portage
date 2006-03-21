@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 bf3c464bc31f072e5e77369259c7f43f ChangeLog 1151
 RMD160 19bd09f1b6b6bba01667f2639a71f37e5a8b0b09 ChangeLog 1151
 SHA256 c7f3f27e1f35cf2292b0ab506c74ffde12156c1dc5e3621be9b900b50c0e6f0a ChangeLog 1151
@@ -13,6 +10,9 @@ SHA256 5358f4ff86350539ce50fceb27dbafdda7513fe3cef9b588b8b25877f24c08b6 files/di
 MD5 3d5c836f53b4db0142257b264dd27760 files/digest-kopete-0.12_beta1 259
 RMD160 39180130a670754c2decd579d2f421941075b6e4 files/digest-kopete-0.12_beta1 259
 SHA256 49254109389e626e7d6952e1f0e813cf0eed8807d0f88cfeef806d4aa12b50f0 files/digest-kopete-0.12_beta1 259
+MD5 14c244eb65ad7b624faa2e0d5ea62341 files/digest-kopete-0.12_beta2 259
+RMD160 c53807638738b756a41a7cbca6dd4112f92ce001 files/digest-kopete-0.12_beta2 259
+SHA256 8d7affd8107f1d1fabad39fdb29935baa818db42b9656fc1430517ce98808bc5 files/digest-kopete-0.12_beta2 259
 MD5 638d3cc679fc614b53fbeff0c41aa05c files/kopete-0.12_alpha1-xscreensaver.patch 778
 RMD160 d188f074982191f6f961c7e32ec97a79746e73df files/kopete-0.12_alpha1-xscreensaver.patch 778
 SHA256 2152d2d2d1ed29b986d5b7f80a6f7bcabd56e5580146298973b4114353b5686d files/kopete-0.12_alpha1-xscreensaver.patch 778
@@ -28,13 +28,9 @@ SHA256 85a9e51a3e9e798c50a81d8b0441966061c3e0de826f55eea2d7eeed43b57c99 kopete-0
 MD5 e73fced8206f7d01e4b8e50af1ba5907 kopete-0.12_beta1.ebuild 1749
 RMD160 644ef8a26015e7921f49544ed8203b3b5c86bc70 kopete-0.12_beta1.ebuild 1749
 SHA256 35b9d45f74402e63e1a6b6b28c2784fc10e8b82700dff8e4c7b907c5e0875a52 kopete-0.12_beta1.ebuild 1749
+MD5 e73fced8206f7d01e4b8e50af1ba5907 kopete-0.12_beta2.ebuild 1749
+RMD160 644ef8a26015e7921f49544ed8203b3b5c86bc70 kopete-0.12_beta2.ebuild 1749
+SHA256 35b9d45f74402e63e1a6b6b28c2784fc10e8b82700dff8e4c7b907c5e0875a52 kopete-0.12_beta2.ebuild 1749
 MD5 64e213d0db015eb97e16b31ec6e748c3 metadata.xml 254
 RMD160 ddca3e329213be86e7b2d62c52078a77ea308f4a metadata.xml 254
 SHA256 addaf999f171c0e580a0399105382e9b213e14f3bd85b74671742b41f41c2261 metadata.xml 254
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-
-iD8DBQFEFKIxAiZjviIA2XgRAivzAKDUkcbBADULxjSF0f+YvsKh7RDNXgCdFtdx
-wF+0WowQuc0BTQs86a16e5g=
-=cEE+
------END PGP SIGNATURE-----
