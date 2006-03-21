@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 13c1e18d907eb5e39bc6306bc3fbac2a ChangeLog 8568
 RMD160 3895d0b285fcba3277a7d2ccc4776fe30238e890 ChangeLog 8568
 SHA256 e211ee25f47382ba1737f6bdeb316ee36b29ca23ec320e98f156e25be81883d5 ChangeLog 8568
@@ -19,3 +22,10 @@ SHA256 ddcf3309a5dc386e0de3deb0ed44cfd2543ea3e2195f4bbd37e341a003de99a6 wordpres
 MD5 d63dcd4c18d6de2c98d03f1a240dbb3b wordpress-2.0.2.ebuild 2980
 RMD160 e01890ccf4cb51bfb5af4811d8c8c6785a1fd91e wordpress-2.0.2.ebuild 2980
 SHA256 5a0e328dd31a9159b361e16c6950834cb421fb9e4c516df19dd5b7fe1b1ecf05 wordpress-2.0.2.ebuild 2980
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEH4ISSENan+PfizARAuniAJ9lJ6EIys6N+LWi8iT0/vgT4oyMdQCdGW4+
+qomrswrmg0UzttS3elNWhmQ=
+=XBzJ
+-----END PGP SIGNATURE-----
