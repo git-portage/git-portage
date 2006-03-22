@@ -1,24 +1,21 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 bb90cb683d72412d4ea9bc00f7553946 ChangeLog 4466
 RMD160 aad3b8277d09df5e325fb0cfb460a7e828ce9722 ChangeLog 4466
 SHA256 9641a2c41192f5695aa547a80ea611fcab9e01dfbf4903ee1d31946293ce8eb6 ChangeLog 4466
 MD5 48b22e51a819c59e46fc138c054cde24 bsdtar-1.02.027-r1.ebuild 1108
 RMD160 0373bfb85e38be5dce78b46fa79751310047aed1 bsdtar-1.02.027-r1.ebuild 1108
 SHA256 c440fc335e973e57a19a1b1b65950d7876dcdf82e3855a2590eb9d06cb348f84 bsdtar-1.02.027-r1.ebuild 1108
-MD5 02a7208fc0c30f82bf21014aef7c398a bsdtar-1.2.51-r1.ebuild 1562
-RMD160 00bf772e088848c969b744f34ad45a065a3e1c6a bsdtar-1.2.51-r1.ebuild 1562
-SHA256 64f73684ef82a7e4383a504019a153c5a091fdfb64acb516d54bcf24951fbb3e bsdtar-1.2.51-r1.ebuild 1562
+MD5 280365a5a729c56bb2aa918daf354b97 bsdtar-1.2.52.ebuild 1582
+RMD160 2b907fbb5d86ffe3ca0b49019dfd9bd09ed198e2 bsdtar-1.2.52.ebuild 1582
+SHA256 8e6fcd3dcbc14b14c15121c2b572180e25a6d8cd5083f7f151a5134a449a305d bsdtar-1.2.52.ebuild 1582
 MD5 23a5ba81fd708274f460d74e61f6f10d files/bsdtar-1.02.027-osx.patch 475
 RMD160 5bfe5047f3e629dbadd0de7221aa85e06499af91 files/bsdtar-1.02.027-osx.patch 475
 SHA256 4ae8a76c18ee03bc2d383fc3d7a1d7e2af663cfbf5cf2c37b95fdef5488d91d1 files/bsdtar-1.02.027-osx.patch 475
 MD5 7cf5fd7cad3a8974a71ce2e1622824c5 files/digest-bsdtar-1.02.027-r1 67
 RMD160 618738e0a47f352bf383afd3df2866acae5ac40f files/digest-bsdtar-1.02.027-r1 67
 SHA256 3dd7e1724d70f3a5df9c82b4e1bf31d3c1dc32b04d011811d7739224e3df5566 files/digest-bsdtar-1.02.027-r1 67
-MD5 dd471ad345c6243177cd28242dad6101 files/digest-bsdtar-1.2.51-r1 253
-RMD160 848783c97e22104341c65db199782082a2d5ad0d files/digest-bsdtar-1.2.51-r1 253
-SHA256 fd7251ab8a6dafd78fc18d19e80981acb7bd169c5c23dbc160cf1d172c0da98f files/digest-bsdtar-1.2.51-r1 253
+MD5 28db8b26898407cf4cd44434531f2efd files/digest-bsdtar-1.2.52 253
+RMD160 fcd39917faa2bfdbbb53520cded9a4864d21f1fd files/digest-bsdtar-1.2.52 253
+SHA256 892abeb87cd9e443401ff0e8b054e7181dc89e13a8d29601add841dec2bf4b03 files/digest-bsdtar-1.2.52 253
 MD5 1728ebab5ae7315f1ca463ab5448474c files/libarchive-1.2.51-acl.patch 2740
 RMD160 307439bd45948f57c68aaa581ee2728ba9582b2a files/libarchive-1.2.51-acl.patch 2740
 SHA256 9953e4ecfd7c905920a48ae66d35bf901f8ba89765a8b51c51065c1c01a15ec2 files/libarchive-1.2.51-acl.patch 2740
@@ -28,10 +25,3 @@ SHA256 88095bb5782102108f3048d900b23fe7746ae5fb881b268463bdbcf3512964a7 files/li
 MD5 afec809b169074e5d5b0803e4f8f5ec8 metadata.xml 428
 RMD160 b1ff6b3d84ad489dc4f5ab5f1d9ee9b60266c2ff metadata.xml 428
 SHA256 236fee13551e3785be53bd3f70c0784803827edf245c913851f239689e3278f4 metadata.xml 428
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-
-iD8DBQFEIIlPAiZjviIA2XgRAjrOAKDtNTQ74/BWvSEAndDxMbftG5VRXACeOqdq
-31jUaLNdcTFNQPvlygoQgOA=
-=YETW
------END PGP SIGNATURE-----
