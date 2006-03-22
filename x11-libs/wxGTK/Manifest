@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4e93208ac551fe2dcf885a0ff08ff840 ChangeLog 17945
 MD5 5087298be841a84071ea67830f5d6a2b files/digest-wxGTK-2.4.2-r2 65
 MD5 5087298be841a84071ea67830f5d6a2b files/digest-wxGTK-2.4.2-r3 65
@@ -29,3 +32,10 @@ MD5 9ed1e947b2a927c1758e7bdfd68a6fe4 wxGTK-2.6.1-r1.ebuild 2038
 MD5 56de842cb982e2aeb27abbfe3cb3d2ff wxGTK-2.6.1.ebuild 1922
 MD5 13eac5b6f714eff0fa3ab59b59faaf3e wxGTK-2.6.2-r1.ebuild 1571
 MD5 5160fec1fb87f760b1cd6cc0a25860b8 wxGTK-2.6.2.ebuild 1531
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEIcoPKRy60XGEcJIRAvc/AJ90s0TYrRbALD6JX2tEPhmyjU89BgCeLi3N
+ssyxUbhyOqx8e8ZUK+98jq4=
+=HfGQ
+-----END PGP SIGNATURE-----
