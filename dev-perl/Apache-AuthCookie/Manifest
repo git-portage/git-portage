@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 b41f0967943014b58fb1c06764a55d03 Apache-AuthCookie-3.08.ebuild 554
-MD5 29158bee026e87ae94b83bbecd5957e1 ChangeLog 447
-MD5 9bd5e78ad25e35d2f1a1abf9b11f3646 files/digest-Apache-AuthCookie-3.08 73
+MD5 584b6ddf6bc580a67bec1e4409997d2c Apache-AuthCookie-3.08.ebuild 553
+RMD160 90637392f8c1cdbce104dcced47bedf7aba192a9 Apache-AuthCookie-3.08.ebuild 553
+SHA256 ff9bcad10a42e3446e9624b0aaf5ddd972cb42f26ed215674374049d0c25783c Apache-AuthCookie-3.08.ebuild 553
+MD5 d86d0c8817a22d92f0884d6195ca6158 ChangeLog 557
+RMD160 c1d5674e757b158a5a8275d39926890be92fabaa ChangeLog 557
+SHA256 bcac34ea3d71f9f4f5e6a56a21895373552b236739078fa9662eb31211bf7881 ChangeLog 557
+MD5 20ab246a703d8251ae4ce70a7dc1a7a8 files/digest-Apache-AuthCookie-3.08 265
+RMD160 2e9dad0c39f8e5fadcdc7d8e19e902f990007119 files/digest-Apache-AuthCookie-3.08 265
+SHA256 d0e8160755648b623bad654f05d8da6b7940ba0df98a4936913ffa39d1e5b80b files/digest-Apache-AuthCookie-3.08 265
 MD5 a594262873480cace08512ed7c261956 metadata.xml 596
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDa6enFdQwWVoAgN4RAnl8AJ9ykHulqaQGGX0/mN4/iFskzlsTjwCdHv5x
-DBLci8hHccG6p2iFxgzC+Yo=
-=Ux4g
------END PGP SIGNATURE-----
+RMD160 4f608c750234d7b0562e97507c2f60f55736da98 metadata.xml 596
+SHA256 7b55e77c90727cf705d3525f59e7388bf8a64709d9212b668a89ddca729c7bf4 metadata.xml 596
