@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 53de6615dfa0419f8f91d3b2fb197ad0 ChangeLog 6554
 MD5 e78d929791c2b64e10b1eb7ea80caaaa docbook-xml-dtd-4.1.2-r5.ebuild 1004
 MD5 7a6381679476f336814d806836c88381 docbook-xml-dtd-4.1.2-r6.ebuild 1372
@@ -16,3 +19,10 @@ MD5 0c4ee65a9b4e3f4aad82e13ac2f82ec9 files/digest-docbook-xml-dtd-4.3-r1 63
 MD5 82b9f85711797b60107e18e6f299176c files/digest-docbook-xml-dtd-4.4 63
 MD5 82b9f85711797b60107e18e6f299176c files/digest-docbook-xml-dtd-4.4-r1 63
 MD5 c472f5fd1646eb8bca71d8df5cb2bdcc metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEIXLMKRy60XGEcJIRAriZAJ9fe8Z6tvcECKL4RQkM88qPXID5PwCdHVCG
+Hn9BL8KhtbPY+1Fy8/CGOAs=
+=QRoV
+-----END PGP SIGNATURE-----
