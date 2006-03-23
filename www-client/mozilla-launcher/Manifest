@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f0a184dd29a7eb738f268bec6b87aadf ChangeLog 17066
 RMD160 be29d79ebbd99a21cbd429495d80ebd70639875a ChangeLog 17066
 SHA256 b3c641b86133f7dd5cfdb357bf6d542eade1bb6c584e85ea043e50f1d07b8c4f ChangeLog 17066
@@ -43,3 +46,10 @@ SHA256 c59c0acb444f13ec65ceb71701d1b81dcfdbcde56eea403a235128d02bfa7e52 mozilla-
 MD5 950528cbd514d567e67fb85f378bd1d6 mozilla-launcher-1.51.ebuild 966
 RMD160 e80d07035a9a4e7c3ad6e15756cf61cbc715e7f5 mozilla-launcher-1.51.ebuild 966
 SHA256 17b2eed78e703917c2eb462e16b537b22e30501ebfd3bbe5b679592f358da466 mozilla-launcher-1.51.ebuild 966
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEIvsJJrHF4yAQTrARAseiAJ9bQd/BJoCnxmPojqAcVapDNUDExwCfQFUd
+Mz92VZbPgpYfGSrVd7uhdWU=
+=00Lt
+-----END PGP SIGNATURE-----
