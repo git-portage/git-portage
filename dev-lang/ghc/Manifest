@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8064a37d7262af5fe4a98e2a027de1b8 ChangeLog 15344
 MD5 7e423c353b08a2c05693d13f21e067d0 files/depsort.py 1958
 MD5 9e9c22452b545fd9ec1367155c15d8e2 files/digest-ghc-6.2.2 67
@@ -12,3 +15,10 @@ MD5 49113531ecf3c15247194f067ffe00bd ghc-6.2.2.ebuild 5582
 MD5 023083edca77ca477112f30ab38fda1d ghc-6.4.1-r2.ebuild 6576
 MD5 9620778937a1aff6ef88863c81222cfc ghc-6.4.ebuild 6109
 MD5 c694674dcbef799cd4fdb6914683ebff metadata.xml 223
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEIwo/FdQwWVoAgN4RAlYEAKDdfKleMGl904p4OBsHePs4VSyf+QCcD3Us
+bzdAXPIgI3qHc1QVNaoxGxw=
+=k9ix
+-----END PGP SIGNATURE-----
