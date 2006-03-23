@@ -1,4 +1,4 @@
-MD5 301eb127585ddc94c751627188826513 ChangeLog 15213
+MD5 8064a37d7262af5fe4a98e2a027de1b8 ChangeLog 15344
 MD5 7e423c353b08a2c05693d13f21e067d0 files/depsort.py 1958
 MD5 9e9c22452b545fd9ec1367155c15d8e2 files/digest-ghc-6.2.2 67
 MD5 75417bc4dea34cd08ea105457ccd3032 files/digest-ghc-6.4 65
@@ -9,6 +9,6 @@ MD5 e522470e9d323932951f9efdb3fbf7e8 files/ghc-6.4.1-configure.patch 2666
 MD5 f55d9cead45de0979d9650dccde5e168 files/ghc-6.4.1-openal.patch 1270
 MD5 e7ba0887c43fd8333a4d1bd92c184244 files/ghc-updater 9045
 MD5 49113531ecf3c15247194f067ffe00bd ghc-6.2.2.ebuild 5582
-MD5 cbfe07875d923cc3d3064128cbd951cd ghc-6.4.1-r2.ebuild 6574
+MD5 023083edca77ca477112f30ab38fda1d ghc-6.4.1-r2.ebuild 6576
 MD5 9620778937a1aff6ef88863c81222cfc ghc-6.4.ebuild 6109
 MD5 c694674dcbef799cd4fdb6914683ebff metadata.xml 223
