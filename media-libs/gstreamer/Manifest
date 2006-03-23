@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 707d771ec6c49cd5abb0d7068508ec81 ChangeLog 17652
 MD5 c1cec5e094b7ebbe11584a8669874e8c files/digest-gstreamer-0.10.0 70
 MD5 0f14c7bd23dc03c71777a8dbbfa57e62 files/digest-gstreamer-0.10.1 70
@@ -20,3 +23,10 @@ MD5 301bbbe66729c54178c3244326b42651 gstreamer-0.8.10.ebuild 2810
 MD5 2e3d7406652a9eac93f40d1e69b5f511 gstreamer-0.8.11.ebuild 2836
 MD5 96b2d885faf135d2ae797253f2b2066c gstreamer-0.8.12.ebuild 2842
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEIuUzKRy60XGEcJIRAr7UAKCTqRfccfSxT8CjruP58wC9wbwDmwCgmLvH
+QT755xpOfFtPx94LdR8okkQ=
+=7dFj
+-----END PGP SIGNATURE-----
