@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 61870fa17c996e654b2fafd973f70ea9 ChangeLog 1920
 MD5 1fc953bca00642892e35d2a286a90fc5 cooledit-3.17.12.ebuild 859
 MD5 a7024058e24947fd65d123dfe7a09266 cooledit-3.17.17.ebuild 966
@@ -7,3 +10,10 @@ MD5 f1bdf7075843ece5a84088b337e30c9b files/digest-cooledit-3.17.12 69
 MD5 4d9540499e4d23e0b1ba3a917d13efd0 files/digest-cooledit-3.17.17 253
 MD5 cd0766c29eb3b2519e2104cbdfb99772 files/digest-cooledit-3.17.7 68
 MD5 50117cfdeb267d9181cf9cacac87d8a6 metadata.xml 256
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD8DBQFEIuno/NoSW7FuNV8RApkoAKC8oC6y58p9NBTouJNAJCqX0dXWvQCg2qj+
+5JHmas7y8bKxbWwsvYlSua4=
+=k2st
+-----END PGP SIGNATURE-----
