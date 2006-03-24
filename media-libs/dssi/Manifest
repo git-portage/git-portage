@@ -1,5 +1,5 @@
-MD5 c55009e85c6f3c99ed106b7ec296e05a ChangeLog 673
-MD5 3e20cdcd6e9b2c7a754b6ffb7e57f9da dssi-0.9.1.ebuild 1073
+MD5 c9d0e0a84cf3ff36ef2946d30305e476 ChangeLog 779
+MD5 10de09add3eeb737edc63e6c53c2e47b dssi-0.9.1.ebuild 1069
 MD5 927eb45ff6275dd158103f134a272e99 dssi-0.9.ebuild 1369
 MD5 60334803a138fa9d85603be2da373328 files/digest-dssi-0.9 59
 MD5 1cd0f6045ccb1dfaa6451f777423f4d5 files/digest-dssi-0.9.1 62
