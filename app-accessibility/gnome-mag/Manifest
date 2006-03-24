@@ -3,6 +3,6 @@ MD5 6d95101ffd2106830305441f9eb9ca1d files/digest-gnome-mag-0.12.2 69
 MD5 0898302ea634735cef41dc14dea7546e files/digest-gnome-mag-0.12.3 69
 MD5 e001f8b3518dce61b3754b7a7774b8a8 files/digest-gnome-mag-0.12.4 253
 MD5 95285a25b388cccc6ff5bb185b3ea4e6 gnome-mag-0.12.2.ebuild 854
-MD5 7c3190bb18337978ac5f7c36d861f5f4 gnome-mag-0.12.3.ebuild 853
+MD5 b6ffc5e49ac58422ac77f6930b335646 gnome-mag-0.12.3.ebuild 852
 MD5 5430e6cdf726fc5cc8d443c1f6c26652 gnome-mag-0.12.4.ebuild 861
 MD5 5253659a4a0e45baa9f1788dcb705895 metadata.xml 172
