@@ -1,4 +1,4 @@
-MD5 aa7ef29160dec9b42a242a0fffd2e1fb ChangeLog 8776
+MD5 76b9db989cc547ff363a3fbbb2f6ff00 ChangeLog 8884
 MD5 69f5b66452909cba98afabb58a6e826b files/digest-lynx-2.8.5-r1 140
 MD5 3609542671c4be7e881627bc5ca33c4f files/digest-lynx-2.8.5-r2 135
 MD5 0cede7a416df080ba71bf014941a7605 files/digest-lynx-2.8.5-r3 131
@@ -6,5 +6,5 @@ MD5 a041d139e8868dac8d23fd879f31809a files/lynx-2.8.5-darwin.patch 687
 MD5 0cbf6e7f62c43375c180ab6c3042bb8c files/lynx-2.8.5-tab_to.patch 433
 MD5 0133ecbd50dec3f32395e2e65f072544 lynx-2.8.5-r1.ebuild 1819
 MD5 0581bddb82d9d3193d974381ce1937aa lynx-2.8.5-r2.ebuild 1928
-MD5 15542863ec6921dd6c5a5e626306767a lynx-2.8.5-r3.ebuild 1959
+MD5 3562ee4862247324155861d46a4a383f lynx-2.8.5-r3.ebuild 1959
 MD5 b43fed3eecce002714f31c6d246cef5b metadata.xml 288
