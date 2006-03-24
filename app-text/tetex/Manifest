@@ -1,4 +1,4 @@
-MD5 e5887272e1fa850cf393db7dc9d25b4e ChangeLog 21777
+MD5 f6891e8ce5eae9e4c910c4c397d8872a ChangeLog 21884
 MD5 22d6dcce2ae5229c5ba109e6638041ef files/digest-tetex-2.0.2-r5 1030
 MD5 22d6dcce2ae5229c5ba109e6638041ef files/digest-tetex-2.0.2-r8 1030
 MD5 d9e3971f8b0ed3b93c4c8db657fc3629 files/digest-tetex-2.0.2-r9 282
@@ -30,7 +30,7 @@ MD5 362296e34a1a04a6e5e2a7d9e97547c6 files/xpdf2-underflow.patch 2363
 MD5 c472f5fd1646eb8bca71d8df5cb2bdcc metadata.xml 164
 MD5 737f6917ce23deb2aa303118f0f81d90 tetex-2.0.2-r5.ebuild 1374
 MD5 c8219d6c107f2752b05ed3b33a018a9f tetex-2.0.2-r8.ebuild 1580
-MD5 10f21aa5e23449d40e2ef92e7822bc1c tetex-2.0.2-r9.ebuild 1679
+MD5 d1319ef707f7b66b13988cb97eb7b729 tetex-2.0.2-r9.ebuild 1681
 MD5 8fc79845c5f5b858d41dd0c6eb26f11a tetex-3.0-r3.ebuild 1280
 MD5 b1bad49209865e541749d39d325bb4ea tetex-3.0-r4.ebuild 1349
 MD5 d70f5a484f19fa8e7c3e77f2df7b182c tetex-3.0_p1-r1.ebuild 2086
