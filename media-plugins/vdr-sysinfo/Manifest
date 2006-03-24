@@ -1,0 +1,6 @@
+MD5 46f39cc2dbf69a20f4db3e410e7722f6 files/digest-vdr-sysinfo-0.0.4a 244
+RMD160 b96844bb5167b346b370c66580f84a371e0f1ffa files/digest-vdr-sysinfo-0.0.4a 244
+SHA256 d5ba35722a9209c8b937a87979ffb69e6f7f83532597b9e41828d62433e8bc7e files/digest-vdr-sysinfo-0.0.4a 244
+MD5 faa61e2a2ef86c130894fa9781086aba vdr-sysinfo-0.0.4a.ebuild 810
+RMD160 9c5dcc2bac07eb2dc21bb236fa1b7b409fe26fc0 vdr-sysinfo-0.0.4a.ebuild 810
+SHA256 3c0287d4d92c715af8330bec5a9273ef32da76b59acff61379dd69cc586c9ead vdr-sysinfo-0.0.4a.ebuild 810
