@@ -1,4 +1,4 @@
-MD5 d4b5624bf20ea261eec7e90990c4980f ChangeLog 4752
+MD5 d9075921ce13893756dba9c18548fd78 ChangeLog 4852
 MD5 c5fa588b242d6077e2c13bc01f2e0761 files/digest-kstars-3.4.1 208
 MD5 b190e5cce85ed284d453d1a2e85c1e67 files/digest-kstars-3.4.2 282
 MD5 e6c244e749eb5eaea2195aab1a2b3f23 files/digest-kstars-3.4.3 67
@@ -7,7 +7,7 @@ MD5 f189373524a470a1665a94fe8ba1f935 files/digest-kstars-3.5.1 67
 MD5 ff544adf35a1e206ccc834b16497445e files/digest-kstars-3.5.2 247
 MD5 2903c2a4c1065de2e18011a06826afaa kstars-3.4.1.ebuild 649
 MD5 18f1b2297565b1d2b59343c697865d65 kstars-3.4.2.ebuild 662
-MD5 4bdd90f79b4eb016a9ce3bb615f1ea86 kstars-3.4.3.ebuild 663
+MD5 21e0df1823e9a54a0025e8b9cd42064c kstars-3.4.3.ebuild 665
 MD5 c2351beb303a6a977ea5f8ea5cefae3e kstars-3.5.0.ebuild 682
 MD5 2060aa12603b3e356d22a7cd30b3f039 kstars-3.5.1.ebuild 683
 MD5 f3b988bce69c8a2c0cf4454c7647947b kstars-3.5.2.ebuild 683
