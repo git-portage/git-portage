@@ -1,6 +1,28 @@
-MD5 5f913ba0b114ee7dbf43ab67df2c6466 i8krellm-2.3.ebuild 992
-MD5 735a09e87b0a9d8bf23afdd3777e4995 i8krellm-2.5.ebuild 1222
-MD5 5b35976a27cb4fc568eb9d207becc753 ChangeLog 1132
-MD5 4eda2fda81ea6a89d8f1f4a2dcd12a85 metadata.xml 233
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+MD5 5efaf9d8ec618d7ded16aa06f51b485d ChangeLog 1288
+RMD160 1d8edf1bf7ef434f278c406b6d9cf9aaf652af8b ChangeLog 1288
+SHA256 de91f30c84cfb6d76cfcae0346dbfb943efa157f976bd2e75c674d36f276240b ChangeLog 1288
 MD5 d3fcf98bdcd86e56476425aa160f8574 files/digest-i8krellm-2.3 63
+RMD160 7c53655eb5ddb43e894fe8913f8c971b3fe6af49 files/digest-i8krellm-2.3 63
+SHA256 58be083dbf1a41698332fdb7559ad2b09cf0539c72f71cc2b53bbb5d1558f56f files/digest-i8krellm-2.3 63
 MD5 7aa6185d1690363a1789d64f1a5c9fb5 files/digest-i8krellm-2.5 63
+RMD160 b43e4a2124e09ccbb92c7f6ed237a5a712ba65f1 files/digest-i8krellm-2.5 63
+SHA256 14de4ee5a3ae2c03a35e455ee0ce5f9e9b3d3f84c78f75e463cd86c6a3ff78c3 files/digest-i8krellm-2.5 63
+MD5 f87a07ea8f7d4cc90cf0d72fed3aa57c i8krellm-2.3.ebuild 992
+RMD160 61c867dd46142de4b6d7e83238ca09400178be4e i8krellm-2.3.ebuild 992
+SHA256 3fa4ff4604bde64faebde6d3334265859559be67d318f189d1c4110b6b0ee5aa i8krellm-2.3.ebuild 992
+MD5 a40f25c95daf3e4d47aa37c8d8d55129 i8krellm-2.5.ebuild 1222
+RMD160 6961db0fe16207abb6fdf37e1e9453fd6fdba527 i8krellm-2.5.ebuild 1222
+SHA256 8f8ef4f068fb8e0077bb657df942dfce3a3914e5caffc0be5d2f2742a695defb i8krellm-2.5.ebuild 1222
+MD5 4eda2fda81ea6a89d8f1f4a2dcd12a85 metadata.xml 233
+RMD160 d81ec1a0582856aeac5ef3bfec5c80d9850216f6 metadata.xml 233
+SHA256 dce03f6cdd96135caf3c971a5ca4a8c916f44532fe8cfb6df88b7bdade407e8b metadata.xml 233
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEI8PAugEuf3OQ0akRAq6CAKCCeo+MHlYDy1r1nP21f/W/mQGbEwCgnuG3
+mF0N8MtAHoZuKYc8unM7LWA=
+=o4y4
+-----END PGP SIGNATURE-----
