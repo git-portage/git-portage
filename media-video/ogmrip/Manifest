@@ -1,20 +1,39 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 0204dd3ce4791c1f566b8c5529d18c06 ChangeLog 1364
+RMD160 e19ff15b3be85d75c6fb0812aad7724c15a6113b ChangeLog 1364
+SHA256 33cf8efe812e7299a9df12ffae6bac736fb27f56fa6bc71d2c9227bc0c666308 ChangeLog 1364
 MD5 aa7f34882cf21f05139524a800cb1ccb files/digest-ogmrip-0.6.2 64
+RMD160 8b4b2dfdcc56cfe856bd9445ba2f4c9bbf01db78 files/digest-ogmrip-0.6.2 64
+SHA256 94849e0cfcbf8140b0e880531dc7af06baf6b57f9c39f830a96b6531e16a0ce4 files/digest-ogmrip-0.6.2 64
 MD5 605be9978689669c27e4a0d5fbcd57d9 files/digest-ogmrip-0.8.2 64
+RMD160 5f9d20368bf8d8cd4ea1d5f9c173fac52fe0f101 files/digest-ogmrip-0.8.2 64
+SHA256 db84d39ffc11eaa302b9a2b0d49b4cab36829c8100b924bf9e05e88ab0110bd2 files/digest-ogmrip-0.8.2 64
 MD5 87e11fb2b44c544d59834a678e353021 files/digest-ogmrip-0.9.0 64
+RMD160 4f9fa1820afac494769490754805f1c5ba4fd56a files/digest-ogmrip-0.9.0 64
+SHA256 267c273de78d9b789426fb91da8c31cc55b39512c092aabaad98112f60bbe8bc files/digest-ogmrip-0.9.0 64
+MD5 58c52a07bd9cf54de41cee72fdecc33c files/digest-ogmrip-0.9.0-r1 238
+RMD160 439aeaef1abd8a3f22e8f1d2fa15b135d6498085 files/digest-ogmrip-0.9.0-r1 238
+SHA256 1b6a9bbe95cff33dbf4b77fbf5cf3e8ce09aae77882b9197487de06d27a16f9b files/digest-ogmrip-0.9.0-r1 238
 MD5 0b8ceac327eb68f927a2fbb841bfb53a files/ogmrip-0.9.0-gcc4.patch 5279
+RMD160 092ed7eadab3a8a56f26f0a2b47fc5121db04f20 files/ogmrip-0.9.0-gcc4.patch 5279
+SHA256 7165a632039d2df3cdd2677e82a1fdcd6fefc9ac3c4dc33896c03afb36269792 files/ogmrip-0.9.0-gcc4.patch 5279
 MD5 d3c45dfbfd5046c58d6a1e774471e280 files/ogmrip-0.9.0-lang.patch 450
+RMD160 df73b14cce05835e6fe8b570c80a4d54f3f39ed2 files/ogmrip-0.9.0-lang.patch 450
+SHA256 256d22d224548dd63824e6c78ce7250536d39bf53a105b2e0cb4f7b6e4de51c4 files/ogmrip-0.9.0-lang.patch 450
+MD5 3457036780fd123b29fc2ac6c1ff4a64 files/ogmrip-0.9.0-mplayercvs.patch 1681
+RMD160 67d32a1c28ac7ee79a5e25913726881663ed0901 files/ogmrip-0.9.0-mplayercvs.patch 1681
+SHA256 73fb2d14c5ed10ab7517aaef0305be55f870e2c1061a7708b8d28fdcc4d0dd4f files/ogmrip-0.9.0-mplayercvs.patch 1681
 MD5 f6ae03147b33c97f5bb09d5de8690601 metadata.xml 227
+RMD160 206c730a3be9fde1ae2c98cd70e6a6b2ee28e799 metadata.xml 227
+SHA256 79f9813a9c3d402b218c93c05af4fff6c87335240d334357476a6ef711a7114f metadata.xml 227
 MD5 7a59f2d062b22745c800381e382c118b ogmrip-0.6.2.ebuild 1770
+RMD160 4ec4afcf602e8c1d369316d2dcd32dd7f4b07ffc ogmrip-0.6.2.ebuild 1770
+SHA256 3c326e112111c4bd023c4b4ae6a7ea0f32c009046fde7903b16118b6b3e580f6 ogmrip-0.6.2.ebuild 1770
 MD5 2dc95dfe1db0913608eb8b4b100b5957 ogmrip-0.8.2.ebuild 1859
+RMD160 b00c0e931dbb44c15e029d4e9d7cd828815d87a8 ogmrip-0.8.2.ebuild 1859
+SHA256 0a267677f68c379cac7be4c2ffdfa2d5b3338e4bce54600c5d91ed4d14fd4b0b ogmrip-0.8.2.ebuild 1859
+MD5 b93b1eaf5ae6e70a8d31cf0902259d45 ogmrip-0.9.0-r1.ebuild 2034
+RMD160 f9de7e5a635a21749b3281d6bbd670493fced136 ogmrip-0.9.0-r1.ebuild 2034
+SHA256 657037930c7eb660ca4b8c2f54825638230b6951cd9db2cd4e3375c867cfcdb7 ogmrip-0.9.0-r1.ebuild 2034
 MD5 d5df55549fb701989c1c159b2c7696d8 ogmrip-0.9.0.ebuild 1969
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDLEU2I1lqEGTUzyQRAqOmAJ9OopK4aidQluM8oW92Zj7vEcLEkwCfTJl1
-ujWLQEuzb9ZE88AQqhBLwog=
-=X6JJ
------END PGP SIGNATURE-----
+RMD160 cb278c2214bfd0df7b87dae67f0a99a08c65054c ogmrip-0.9.0.ebuild 1969
+SHA256 d7f2031d7fe6937dc628cd9f0019a40aa67e13150b4e0aeb48381afaef4d42a0 ogmrip-0.9.0.ebuild 1969
