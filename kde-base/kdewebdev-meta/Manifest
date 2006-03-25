@@ -1,4 +1,4 @@
-MD5 e95a101c67f3cb379f10b908c3259635 ChangeLog 5259
+MD5 442c995692c2c74fcdb5d0a37428a56f ChangeLog 5369
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-kdewebdev-meta-3.4.1 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-kdewebdev-meta-3.4.2 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-kdewebdev-meta-3.4.3 0
@@ -7,7 +7,7 @@ MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-kdewebdev-meta-3.5.1 0
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-kdewebdev-meta-3.5.2 0
 MD5 f1b5338a7e3191c8c29a5a1ee7d7068d kdewebdev-meta-3.4.1.ebuild 747
 MD5 573b24ac6190fe235bf2cba2e9157703 kdewebdev-meta-3.4.2.ebuild 762
-MD5 2f8e97b5c0bfdb096585a348b97e4ac6 kdewebdev-meta-3.4.3.ebuild 759
+MD5 094ef5d047e49c8e0e90303918267f37 kdewebdev-meta-3.4.3.ebuild 761
 MD5 e866a0ab1bd8fae9a429ca1285002f3a kdewebdev-meta-3.5.0.ebuild 761
 MD5 600c7dec8525ae10c6b200b537778d0a kdewebdev-meta-3.5.1.ebuild 762
 MD5 633de6d9bf463bd930163ce700fa2972 kdewebdev-meta-3.5.2.ebuild 762
