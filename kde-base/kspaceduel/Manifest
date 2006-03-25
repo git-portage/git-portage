@@ -1,4 +1,4 @@
-MD5 c0a4f8aac4664332f2f43bdbbe757d1b ChangeLog 4746
+MD5 b971ae9ea9053284785f33803d463b6d ChangeLog 4850
 MD5 7f12555bf2fdc56b256b49f72230e062 files/digest-kspaceduel-3.4.1 212
 MD5 b780128b9240f26d24e96f1b7d8a0208 files/digest-kspaceduel-3.4.2 288
 MD5 bafb1bf1d1decae41875c6a20c9d5dca files/digest-kspaceduel-3.4.3 68
@@ -7,7 +7,7 @@ MD5 23693adb4d93b662b3f08d2c2d8b7092 files/digest-kspaceduel-3.5.1 69
 MD5 ed93d0050d30937bce3f66dc86656e76 files/digest-kspaceduel-3.5.2 253
 MD5 2427e0b5586605512fa47cd5b3173bbc kspaceduel-3.4.1.ebuild 533
 MD5 15a727a402747625f159dddfb514d9d1 kspaceduel-3.4.2.ebuild 546
-MD5 1c5f4f02485e0da04e6d574ccedc5e32 kspaceduel-3.4.3.ebuild 545
+MD5 2781f3d1e7a796210ff7cb011ae56415 kspaceduel-3.4.3.ebuild 547
 MD5 a4dc7015231b793ebf68f32f8127a9f0 kspaceduel-3.5.0.ebuild 510
 MD5 fbebe8aa9f101cf33b59e82a9211107f kspaceduel-3.5.1.ebuild 511
 MD5 a4894ff233993313d01d07cd4fa5a93d kspaceduel-3.5.2.ebuild 513
