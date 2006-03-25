@@ -1,4 +1,4 @@
-MD5 548ea07ca58bf5ca3c52c06b7e19891a ChangeLog 5221
+MD5 2611553cea136869f17ae475cc1f28fa ChangeLog 5339
 MD5 3ce4c765a64632e913584e2bc500f6d3 files/digest-kdeartwork-kworldclock-3.4.1 220
 MD5 52630059e55189d550ffb49b50e90d85 files/digest-kdeartwork-kworldclock-3.4.2 298
 MD5 48256bc40d421d92b903308f172a596e files/digest-kdeartwork-kworldclock-3.4.3 71
@@ -7,7 +7,7 @@ MD5 884bfbc2c4b4225b3520577c0ac6fe75 files/digest-kdeartwork-kworldclock-3.5.1 7
 MD5 a703f4c18266818b6057e09748eba62d files/digest-kdeartwork-kworldclock-3.5.2 259
 MD5 cf3349896ee1e58a53a73cf4cb4821b1 kdeartwork-kworldclock-3.4.1.ebuild 500
 MD5 cb5b9a8d02e0062330eeb83fc1dcaa57 kdeartwork-kworldclock-3.4.2.ebuild 513
-MD5 852e9c216a05abe290abfc1bc29acc5f kdeartwork-kworldclock-3.4.3.ebuild 512
+MD5 cc82fc53e9e390dc3d5c8aeac02bba66 kdeartwork-kworldclock-3.4.3.ebuild 514
 MD5 4ba6e80688f93c5bacf2afb9678fa4ad kdeartwork-kworldclock-3.5.0.ebuild 514
 MD5 52a9f554ab0d42f396d24112eeae0e1b kdeartwork-kworldclock-3.5.1.ebuild 515
 MD5 d870c86fd0e10bb9cdca7e93db178da8 kdeartwork-kworldclock-3.5.2.ebuild 515
