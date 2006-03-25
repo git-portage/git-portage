@@ -1,4 +1,4 @@
-MD5 2295201a3d58e18d24a909de6a52d875 ChangeLog 4704
+MD5 6cfa5933e9f044235893dea12b605f11 ChangeLog 4802
 MD5 92bc3a39b10976f1a0aa8342b525a4ab files/digest-krdc-3.4.1 218
 MD5 1277f401bade54acfa086cf013950252 files/digest-krdc-3.4.2 296
 MD5 c259b2aa6bede478d4afff87117e9685 files/digest-krdc-3.4.3 70
@@ -7,7 +7,7 @@ MD5 4747b54355e84108037b9fd2986a8f87 files/digest-krdc-3.5.1 70
 MD5 490109d9cea36a78cfcb0fbd933c7661 files/digest-krdc-3.5.2 256
 MD5 76bf0cd95f7581ec08ef84ef271a7e10 krdc-3.4.1.ebuild 624
 MD5 791727c7f81ac5267426f868db432175 krdc-3.4.2.ebuild 636
-MD5 f8b4f3eed0566e5a2b7c126c16c4d673 krdc-3.4.3.ebuild 632
+MD5 3b43f65bad48d3b24db442e9fd43c6ef krdc-3.4.3.ebuild 634
 MD5 585ee8f7586f18e06ea0e4958f5bbd7a krdc-3.5.0.ebuild 634
 MD5 1ec73a0f8b8f1b6b54f566aafb353b91 krdc-3.5.1.ebuild 635
 MD5 f96496450fe741f0d36acf4f61fae6e2 krdc-3.5.2.ebuild 635
