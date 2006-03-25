@@ -1,4 +1,4 @@
-MD5 7d391b52833c767dfd47cba44658fda3 ChangeLog 4815
+MD5 e35988f1d45a08ae75f8bbd2a4f9bb2b ChangeLog 4920
 MD5 e951879abebc3cb3931132db3f1c508a files/digest-klinkstatus-3.4.1 215
 MD5 aa19f6252c3ee8966919f391f9ccd717 files/digest-klinkstatus-3.4.2 292
 MD5 5f811f6d3a4356fe91386db8ad46b787 files/digest-klinkstatus-3.4.3 69
@@ -7,7 +7,7 @@ MD5 abb8468fa7557d2174e9974843af4d44 files/digest-klinkstatus-3.5.1 69
 MD5 2d93b098697cafe5a773a3b76fa5b835 files/digest-klinkstatus-3.5.2 253
 MD5 d9f351c365471c037ce5c8e009cfbfa0 klinkstatus-3.4.1.ebuild 413
 MD5 cb5bf1648cdd6cdc875843165469ba2e klinkstatus-3.4.2.ebuild 426
-MD5 dba5863aa2afee68e1cab9f79297d2b7 klinkstatus-3.4.3.ebuild 425
+MD5 b5649a0154a2140b1fcb9cf17e173d6b klinkstatus-3.4.3.ebuild 427
 MD5 f865d3cdec415f1a8a8c9206dee41b2c klinkstatus-3.5.0.ebuild 427
 MD5 6079e9971ec6a205150671ae19fd3239 klinkstatus-3.5.1.ebuild 428
 MD5 24765427f806c5d99770a4d855d115a4 klinkstatus-3.5.2.ebuild 428
