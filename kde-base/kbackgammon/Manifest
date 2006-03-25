@@ -1,4 +1,4 @@
-MD5 2abdf6924954a1d7f43c8f059bb113f7 ChangeLog 4802
+MD5 e48b1132487b72a34d9ff8894afbf02f ChangeLog 4907
 MD5 7f12555bf2fdc56b256b49f72230e062 files/digest-kbackgammon-3.4.1 212
 MD5 b780128b9240f26d24e96f1b7d8a0208 files/digest-kbackgammon-3.4.2 288
 MD5 bafb1bf1d1decae41875c6a20c9d5dca files/digest-kbackgammon-3.4.3 68
@@ -7,7 +7,7 @@ MD5 23693adb4d93b662b3f08d2c2d8b7092 files/digest-kbackgammon-3.5.1 69
 MD5 ed93d0050d30937bce3f66dc86656e76 files/digest-kbackgammon-3.5.2 253
 MD5 0353cc128a6f7f89acf7922fee8a9296 kbackgammon-3.4.1.ebuild 549
 MD5 283943169f14216890da50dc44565372 kbackgammon-3.4.2.ebuild 562
-MD5 58505205c40d317edee86970c2fa175e kbackgammon-3.4.3.ebuild 561
+MD5 bc0d51018b68932d24439dcce8abbf43 kbackgammon-3.4.3.ebuild 563
 MD5 fbf1a9ca02894c77db327467314892ca kbackgammon-3.5.0.ebuild 526
 MD5 f54a5845c79bc94b550f59ef6413aec3 kbackgammon-3.5.1.ebuild 527
 MD5 602e2d0865e7eee0aed9bd07bf2602eb kbackgammon-3.5.2.ebuild 529
