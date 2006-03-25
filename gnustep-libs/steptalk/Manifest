@@ -1,16 +1,30 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 6c4359ece5068a7ca68c8acc0588d9ab ChangeLog 1724
-MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-steptalk-0.8.3_pre20050106 0
+RMD160 2e8fbdb169aa5b3fab1159debde1b1aa5c225654 ChangeLog 1724
+SHA256 1cc49a079860b38c947b452cd2ced6f42010e15b522c41b56ba896e7b1bc1703 ChangeLog 1724
+MD5 7d10285cbbed837ab1ddbcd61a9e1302 files/digest-steptalk-0.10.0 247
+RMD160 6c90b307e438e57078244cd16cab03bac3a104b8 files/digest-steptalk-0.10.0 247
+SHA256 8d947c957cef5d376c2738fe4927620cf829e325a0c8cdd8efae68be680d3f4f files/digest-steptalk-0.10.0 247
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-steptalk-0.8.3_pre20050312 0
+RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-steptalk-0.8.3_pre20050312 0
+SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-steptalk-0.8.3_pre20050312 0
+MD5 4e91d950049e01af845171ee15af4a94 files/digest-steptalk-0.9.0 244
+RMD160 7d784ec79cb4399e33254204971c0471d9ed6194 files/digest-steptalk-0.9.0 244
+SHA256 1aef3722a162e47a42ed841daceda1863e371d27a1eebd24e9dc0fc50d11b89a files/digest-steptalk-0.9.0 244
+MD5 a117b850e67c765107cecf91cfcd6255 files/digest-steptalk-0.9.1 244
+RMD160 15a7a7ad8ca3e532b29a1378b3982706cbabaa6a files/digest-steptalk-0.9.1 244
+SHA256 abb1705ccbb8736ed68e96776ef1e8214fc58232fafa6c5c39acf85735a33b6b files/digest-steptalk-0.9.1 244
 MD5 2306f8060e1888706195402ce19e8bed metadata.xml 2189
-MD5 ca16a7f85aa4ed08a0162f62197a2c46 steptalk-0.8.3_pre20050106.ebuild 1277
-MD5 b80c7a625336498fd8bb9905e931ce4a steptalk-0.8.3_pre20050312.ebuild 1277
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFC2Sq6I1lqEGTUzyQRApjkAJ4xIZNJUD6s2F3uMKa2moxPsAljsgCfRLPj
-4NkT5W0tQKWws0W500oO9rQ=
-=OgTJ
------END PGP SIGNATURE-----
+RMD160 aaaf6f8943ffd9efea03535c764135999311432f metadata.xml 2189
+SHA256 25fdd2c0e385ec133d1eb2e69865364816a23e307a79269a4cb6e14f00abebb7 metadata.xml 2189
+MD5 87a4b96420f95da1d06480b1937ca56d steptalk-0.10.0.ebuild 1084
+RMD160 dd87d99f53f24a5eee1ee112759b037becd2155c steptalk-0.10.0.ebuild 1084
+SHA256 304c92c351109eab46cd34e1b219380f47bf6d11f18bb129903b791ce41e1894 steptalk-0.10.0.ebuild 1084
+MD5 55e28d48b1e77c5b5be29e7a2d64ef20 steptalk-0.8.3_pre20050312.ebuild 1127
+RMD160 124349e46ab22976a32858b6e59fac0467fb487a steptalk-0.8.3_pre20050312.ebuild 1127
+SHA256 1cd2883681962d60c16e08afbbb1748de962cc27ca1cbb26ac7d7a6c76dbee3c steptalk-0.8.3_pre20050312.ebuild 1127
+MD5 bad4eb3643cec3ddef8dd9944df90ee7 steptalk-0.9.0.ebuild 1076
+RMD160 4a1a0df533e0ac4f634b9b4ab666893575ec6603 steptalk-0.9.0.ebuild 1076
+SHA256 d5e208fce37d6e9f3a3900d5d2e92f0c7220163dea28daa63c1a5844b474d3b4 steptalk-0.9.0.ebuild 1076
+MD5 530d7bfbb7e1415246ff17773473ed0a steptalk-0.9.1.ebuild 1101
+RMD160 6a900a25ad40d611215cb93ab32c516980093cda steptalk-0.9.1.ebuild 1101
+SHA256 247652b1fd0256385bec0febbfcae7ea408a8f6b406b91e89b8fc2217ed81428 steptalk-0.9.1.ebuild 1101
