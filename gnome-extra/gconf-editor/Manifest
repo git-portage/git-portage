@@ -16,6 +16,9 @@ SHA256 40de7fa8aae6e95e03ebc79ea3f4c0b911accb5aad26d643df4d1909e93bb383 files/di
 MD5 1a02c71e7fe8df4aeb8b35a48667c2b9 files/digest-gconf-editor-2.8.2 71
 RMD160 b3176f36be12e09c0b8be870b5d32b135c28f4cb files/digest-gconf-editor-2.8.2 71
 SHA256 4dc8dacf3b7dee64e01741c74de5dd5244f93522996d7fc487ca4a6e95cb8cc0 files/digest-gconf-editor-2.8.2 71
+MD5 c3cc99a920f7d8f60cda6f591d19035f files/gconf-editor-2.14.0-mem_corrupt.patch 1341
+RMD160 05248eb3f87947ba26f8793878f04202c270e285 files/gconf-editor-2.14.0-mem_corrupt.patch 1341
+SHA256 dfdf0480fd5e210d78f16788e5aa5d1d8065ca8f7183a0cc20ea5af8d1ff6d0e files/gconf-editor-2.14.0-mem_corrupt.patch 1341
 MD5 fb8d85327d58a8f5df3fefd141869725 gconf-editor-2.10.0.ebuild 711
 RMD160 af42d05af083f1aa021439fe25bd0bccc7fb2825 gconf-editor-2.10.0.ebuild 711
 SHA256 ec373afe1df16abfda12dd802ef3c07d93e05371337ea6a247c2f6b53f745601 gconf-editor-2.10.0.ebuild 711
@@ -25,9 +28,9 @@ SHA256 9e9338a3896e99a1404ed57500390a98171fdac7b2b3dbb1b55f9d9f38e42c34 gconf-ed
 MD5 6cdd028982e299e36f41c7caab7dd9f1 gconf-editor-2.12.1.ebuild 716
 RMD160 c56bdb5c8393532e770fb27f0055c63e530acd07 gconf-editor-2.12.1.ebuild 716
 SHA256 4121f332e5c0123e4cfd51d445c0a203d89ba03931feb3f277325ab3b0b8c20b gconf-editor-2.12.1.ebuild 716
-MD5 f2d89ba96a31920f13f953fd7fd50f6c gconf-editor-2.14.0.ebuild 733
-RMD160 a1f650f1d6aba6d9ec60c07ffe9ac63127501ef7 gconf-editor-2.14.0.ebuild 733
-SHA256 5ff21812721539ffe25b4992459f075d4bb75e1363f3e20aafe4433400399c14 gconf-editor-2.14.0.ebuild 733
+MD5 9d5091d1a3c6e978299fa4d5b36402b9 gconf-editor-2.14.0.ebuild 807
+RMD160 769a7c60636e32016032a112928b3e58bc5adf30 gconf-editor-2.14.0.ebuild 807
+SHA256 136a73142bbfefd1458b55e54a0db1a4826031bcaefe87e1a3c0c798dbb86033 gconf-editor-2.14.0.ebuild 807
 MD5 e4aa9d6ef39937d97a1324819c0ccc1d gconf-editor-2.8.2.ebuild 687
 RMD160 16c78aa872d05b7a1e3706ebd70fa5298bfd7e33 gconf-editor-2.8.2.ebuild 687
 SHA256 8c327ab22fce1a0005bdf4c3ed8c28a987ccac8b6438d63f6ad490401664eece gconf-editor-2.8.2.ebuild 687
