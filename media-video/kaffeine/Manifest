@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 be8fbe36ae9a77869b169da49254d965 ChangeLog 6512
 RMD160 abab8aedd35011d195edd12447ed1f14068b0d3a ChangeLog 6512
 SHA256 f9938a3714a4604e9545d3d3a90de36ccc6514b99d60b06ca8794842f45d0bd7 ChangeLog 6512
@@ -10,6 +7,9 @@ SHA256 163c75a6548acea933e26e1ff891902b8744e5347ab71d4da88f8947747356d0 files/di
 MD5 baa75a66b8d3d549ad9f21ff7924d9d1 files/digest-kaffeine-0.7.1-r1 250
 RMD160 d8d51761537e9c4d29cc821c5e0589a821904952 files/digest-kaffeine-0.7.1-r1 250
 SHA256 be7cdc2892bb3974674212480a401b7a94746757df65e419657a4b117dc46676 files/digest-kaffeine-0.7.1-r1 250
+MD5 849d5274cba2a51535717f014ab97942 files/digest-kaffeine-0.8 244
+RMD160 b822f853b832a7b51d6a96fa6f612d5a86413ce8 files/digest-kaffeine-0.8 244
+SHA256 f3150a31a2e25277b220cc5c5625abbfeba0b137d60739b13dd6108c80ca3014 files/digest-kaffeine-0.8 244
 MD5 b7928429203a468028065c0c285dd5da files/kaffeine-0.7.1-respectflags.patch 782
 RMD160 5ebc90fcb28f80ed0cc16a5bd0b4e030e5116983 files/kaffeine-0.7.1-respectflags.patch 782
 SHA256 dd0ee0894669490381e9f87132a4c0d0c7ce05ce6dba0e582a573317d0354ac5 files/kaffeine-0.7.1-respectflags.patch 782
@@ -25,13 +25,9 @@ SHA256 2f781a276a11a0bd4547b72d683dc605ac23b026bce1bd2aa013c3d22d2a729b kaffeine
 MD5 9c4a5494b3cdf2d6eea3ea75aad55d28 kaffeine-0.7.1.ebuild 924
 RMD160 d602e7de068f60c6de284721fbaa578c7b59d0e5 kaffeine-0.7.1.ebuild 924
 SHA256 7ece6c6cf2a21fd7be2dec15add9daff78ac4097f21160ed00df3b358fe4bb97 kaffeine-0.7.1.ebuild 924
+MD5 d6aec9dfaef1f1283c97fef14e38d97c kaffeine-0.8.ebuild 1154
+RMD160 27a2b2fe161250c6113923e1897ee666f78ff7d0 kaffeine-0.8.ebuild 1154
+SHA256 b4de1b47085da610b5d76f5d239e83a9dba639f54ab6c412a317c155dbede340 kaffeine-0.8.ebuild 1154
 MD5 f252d0d8aaea067fe6be5e09527ab18e metadata.xml 175
 RMD160 4e4c9dfa9b5102163a4f7b231f95672bd2266c0d metadata.xml 175
 SHA256 ee81a2309bd9eae88d896b77f0d87adbb941cf18f82eea08c025eb583ac6043d metadata.xml 175
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-
-iD8DBQFEHfbgAiZjviIA2XgRAsxDAJkB8aju4RzKx1pKkBzteEPWYXeWSwCg13hP
-LVFkHoDI7kW2pKrjzGHoFPE=
-=ThkN
------END PGP SIGNATURE-----
