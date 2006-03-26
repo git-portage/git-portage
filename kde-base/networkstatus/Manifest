@@ -1,4 +1,4 @@
-MD5 6142e999635783e19d5fc1a89165d9ff ChangeLog 4529
+MD5 7c54610151fdd88bdc5a4b2c1e999a02 ChangeLog 4638
 MD5 e8e3fc943d40a2fa3260a042e8f0dcf6 files/digest-networkstatus-3.4.1 208
 MD5 90abf0bc7995b02daa2daec3aaeefa52 files/digest-networkstatus-3.4.2 282
 MD5 0b5d543dd13db98ba9001990b2e77964 files/digest-networkstatus-3.5.0 67
@@ -6,7 +6,7 @@ MD5 4505de7bf9eafb017c93b041e2fe4f2d files/digest-networkstatus-3.5.1 67
 MD5 4b77483fe398773d23a75714c3dd6223 files/digest-networkstatus-3.5.2 247
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
 MD5 e99f178608901d861b2f73237e1c9b22 networkstatus-3.4.1.ebuild 418
-MD5 bc8ee15ee801684dc6a516b3b73bfb9c networkstatus-3.4.2.ebuild 432
+MD5 0868902dbdf84cd25bedf4909169d65c networkstatus-3.4.2.ebuild 435
 MD5 f05b4092db075222ed313db2d85286c0 networkstatus-3.5.0.ebuild 432
 MD5 b3ffa104f609f18049ca4b4bf4d54da5 networkstatus-3.5.1.ebuild 433
 MD5 356bbfe2603467bae7214df4753c1d6b networkstatus-3.5.2.ebuild 433
