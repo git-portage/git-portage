@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pcmciautils/Attic/pcmciautils-011.ebuild,v 1.6 2006/01/19 17:40:39 brix Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pcmciautils/Attic/pcmciautils-013.ebuild,v 1.1 2006/03/26 13:26:34 brix Exp $
 
 inherit toolchain-funcs linux-info
 
@@ -11,9 +11,9 @@ SRC_URI="mirror://kernel/linux/utils/kernel/pcmcia/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~arm ~ppc ~sh ~x86"
 
-IUSE="debug staticsocket udev"
+IUSE="debug static staticsocket udev"
 RDEPEND=">=sys-fs/sysfsutils-1.2.0-r1
 		>=sys-apps/module-init-tools-3.2_pre4
 		udev? ( >=sys-fs/udev-068 )
@@ -42,12 +42,16 @@ src_unpack() {
 
 	sed -i \
 		-e "s:^\(KERNEL_DIR\) = .*:\1 = ${KV_DIR}:" \
-		-e "s:^\(V\)=false:\1=true:" \
+		-e "s:^\(V\) = false:\1 = true:" \
 		-e "s:^\(CFLAGS \:=.*\):\1 ${CFLAGS}:" \
 		${S}/Makefile || die
 
 	if use debug; then
 		sed -i -e "s:^\(DEBUG\) = .*:\1 = true:" ${S}/Makefile || die
+	fi
+
+	if use static; then
+		sed -i -e "s:^\(STATIC\) = .*:\1 = true:" ${S}/Makefile || die
 	fi
 
 	if use staticsocket; then
