@@ -1,0 +1,7 @@
+MD5 590e1e11b8f7cff565a3edd7c719dc6b files/digest-noad-0.6.0-r2 63
+MD5 59537f1f5164f2b2bbb0c0a5d3174112 files/noad-0.6.0-directoryfix.diff 1254
+MD5 129ab2c83615337c4242c2ec9a47a3c5 files/reccmds.noad.conf 51
+MD5 ee8812cb7641ba40092e3547194dbb4a files/record-20-noad.sh 1230
+MD5 133674d6cab6cf57efc1ced70a034306 files/vdraddon.noad 782
+MD5 ef3f86afdf532df1d68f1aabc700e9aa metadata.xml 315
+MD5 577eb73e2c506ca28376bfd06898abf4 noad-0.6.0-r2.ebuild 2008
