@@ -1,4 +1,4 @@
-MD5 4e3b3d279f3aa837fdda37b5c0e7530b ChangeLog 5100
+MD5 928e675d38fb164097b215194c042f27 ChangeLog 5210
 MD5 e8e3fc943d40a2fa3260a042e8f0dcf6 files/digest-kdepim-wizards-3.4.1 208
 MD5 ed5f8c08265b32641a4cc480b7414fce files/digest-kdepim-wizards-3.4.2 282
 MD5 1abd06c61033b13feaa26798ccacf032 files/digest-kdepim-wizards-3.4.3 67
@@ -7,7 +7,7 @@ MD5 4505de7bf9eafb017c93b041e2fe4f2d files/digest-kdepim-wizards-3.5.1 67
 MD5 4b77483fe398773d23a75714c3dd6223 files/digest-kdepim-wizards-3.5.2 247
 MD5 92126b82bcf471e050d502f8f6205a71 kdepim-wizards-3.4.1.ebuild 2244
 MD5 42269dac2386e8af3adf8b3ceae72f26 kdepim-wizards-3.4.2.ebuild 2259
-MD5 d8d92624cd37bf0dfa61d9080c4eceb8 kdepim-wizards-3.4.3.ebuild 2256
+MD5 42b0f131f877ca10d093169e41fe6665 kdepim-wizards-3.4.3.ebuild 2258
 MD5 61f0ae3e0f76657b20462f3b9c22024d kdepim-wizards-3.5.0.ebuild 2106
 MD5 69c257e31e33aa8d470804a68873d20b kdepim-wizards-3.5.1.ebuild 2107
 MD5 8f9f56737eecf1ae909aba926690199a kdepim-wizards-3.5.2.ebuild 2107
