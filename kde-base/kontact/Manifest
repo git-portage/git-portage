@@ -1,4 +1,4 @@
-MD5 f487e727c9a345404f260ba1f33659ea ChangeLog 4994
+MD5 9c06348e0a4428f0f1d864fc16ec11ac ChangeLog 5095
 MD5 e8e3fc943d40a2fa3260a042e8f0dcf6 files/digest-kontact-3.4.1 208
 MD5 ed5f8c08265b32641a4cc480b7414fce files/digest-kontact-3.4.2 282
 MD5 1abd06c61033b13feaa26798ccacf032 files/digest-kontact-3.4.3 67
@@ -7,7 +7,7 @@ MD5 4505de7bf9eafb017c93b041e2fe4f2d files/digest-kontact-3.5.1 67
 MD5 4b77483fe398773d23a75714c3dd6223 files/digest-kontact-3.5.2 247
 MD5 bf6c02ee111ecd3a5d8af5991ac75f9d kontact-3.4.1.ebuild 1048
 MD5 9dff7a48160f0e72f3b691d41cb5126b kontact-3.4.2.ebuild 1054
-MD5 480815b2b3db54fcf330469c5b6f3b10 kontact-3.4.3.ebuild 1051
+MD5 fd48ccb0ae21479dd73b1432123d49d6 kontact-3.4.3.ebuild 1053
 MD5 f943390220354bc6bb32565b2bb7000e kontact-3.5.0.ebuild 1018
 MD5 f7f7256bd82b9140f3a7f665c765c737 kontact-3.5.1.ebuild 1019
 MD5 952c75af0d77b7caa2376bec0e9fc0f6 kontact-3.5.2.ebuild 1019
