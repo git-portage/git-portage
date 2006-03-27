@@ -1,5 +1,7 @@
 MD5 e2dd1eb3defc61baed8c7ed803eec8c6 ChangeLog 610
 MD5 15572c09b111983e7b568c673d21e407 files/digest-holotz-castle-1.3.7 76
+MD5 5f65265efbe72e5370ff4d9774e19522 files/digest-holotz-castle-1.3.8 76
 MD5 fdc54b7fe2b093393997873483fa38db files/holotz-castle-1.3.7-build.patch 1703
 MD5 ade93d5200a5daad2d773e24f3e439d4 holotz-castle-1.3.7.ebuild 1083
+MD5 ade93d5200a5daad2d773e24f3e439d4 holotz-castle-1.3.8.ebuild 1083
 MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
