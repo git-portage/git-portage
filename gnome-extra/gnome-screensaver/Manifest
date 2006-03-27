@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ce8c7847db1f5bc260d22718174248dc ChangeLog 569
 MD5 ee1b6521b9b37600d3a24a89086132d1 files/digest-gnome-screensaver-2.14.0 280
 MD5 98e7b49bda74da999716263a0b30c433 gnome-screensaver-2.14.0.ebuild 1959
 MD5 77f62dae0c1bc21d5cf698695368d2d8 metadata.xml 472
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEKASTKRy60XGEcJIRAjFfAKCjK4eYs+9tRLtg+x+Llmf51TPhsACgq0lg
+A2R7NpFW3jwl0lXH2HsbK/U=
+=ihcZ
+-----END PGP SIGNATURE-----
