@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r3.ebuild,v 1.1 2006/02/17 04:20:48 labmonkey Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r3.ebuild,v 1.2 2006/03/27 00:48:26 labmonkey Exp $
 
 inherit eutils
 
@@ -290,8 +290,8 @@ pkg_postinst() {
 	if ! use bacula-clientonly ; then
 		einfo "If this is a new install, you must create the ${mydb} databases with:"
 		einfo " /usr/libexec/bacula/create_${mydb}_database"
-		einfo " /usr/libexec/bacula/grant_${mydb}_privileges"
 		einfo " /usr/libexec/bacula/make_${mydb}_tables"
+		einfo " /usr/libexec/bacula/grant_${mydb}_privileges"
 		einfo ""
 		einfo "If you're upgrading from a major release, you must upgrade your bacula catalog database."
 		einfo "Please read the manual chapter for how to upgrade your database."
