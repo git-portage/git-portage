@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 01a7b1f02dfd75425c9142d01a202ff7 ChangeLog 3134
 MD5 9534d30864250e81bfaa47900c5c7061 files/digest-paragui-1.0.4 66
 MD5 86d14fd1c5e607d6ad92be49ee5ec2be files/digest-paragui-1.1.7 66
@@ -7,3 +10,10 @@ MD5 ed8349e980407e49b724e04ee5a9a2ed metadata.xml 231
 MD5 363f73747537dd21b426d23d1314bdd3 paragui-1.0.4.ebuild 802
 MD5 36f6e2a1f1020bc70b0ed4f998c0000d paragui-1.1.7.ebuild 918
 MD5 9b670a126e664aa4632951de9506fa82 paragui-1.1.8.ebuild 920
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEJ16IFdQwWVoAgN4RAoUlAKC6a/Cb45ADYWTwIdEIFxONoKW3/gCgsucf
+V5O/S9bdG3DsG7XDIIwR9Wk=
+=PrLk
+-----END PGP SIGNATURE-----
