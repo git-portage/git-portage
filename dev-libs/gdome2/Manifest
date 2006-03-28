@@ -1,4 +1,4 @@
-MD5 45618acaceed6b47ce7cd3dbf1e2abf4 ChangeLog 2352
+MD5 9cf047d2bbcfeb252c484267e860bc83 ChangeLog 2458
 MD5 e6b845ed3e5939ce62ee4d95f942071f files/digest-gdome2-0.7.2 64
 MD5 998bb98160e3d9c3f967b518e4d12341 files/digest-gdome2-0.7.4 64
 MD5 5f9413aa7e0b6062f96137db96fac4e9 files/digest-gdome2-0.8.0 64
@@ -9,6 +9,6 @@ MD5 1d6bd642af9bab1cb3071e76cf892521 files/gdome2-0.8.1-docs-destdir.patch 276
 MD5 baaa394c648bdda12e53fcc83518ac97 gdome2-0.7.2.ebuild 781
 MD5 2ce412c7611212f9c03468856fafb694 gdome2-0.7.4.ebuild 803
 MD5 f7f7c1291cddbbfac67f139a0c39052e gdome2-0.8.0.ebuild 889
-MD5 2ba8caa494d0a8b87de9cad22441f3d9 gdome2-0.8.1-r1.ebuild 826
+MD5 0e95d9db9615ce9e20a506e29691c01a gdome2-0.8.1-r1.ebuild 826
 MD5 145361578d518500a08aab2a95ba869b gdome2-0.8.1.ebuild 625
 MD5 dffd46174e78b327c834fc3e4b1cf848 metadata.xml 160
