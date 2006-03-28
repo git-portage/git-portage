@@ -1,4 +1,4 @@
-MD5 ac8d00bb0f31be734b375b1eade85aba ChangeLog 1715
+MD5 58cd45aa54e6c8164bf6af9e4dd1bd95 ChangeLog 1715
 MD5 9189b784d36ef34bf204fc33245c0980 files/digest-suspend2-userui-0.5.1 72
 MD5 8c01c12e7560cac8c27088d6f90f647b files/digest-suspend2-userui-0.6.1 72
 MD5 50a14df881aec01f7f1c060f0b54d647 files/digest-suspend2-userui-0.6.2 72
@@ -10,5 +10,5 @@ MD5 b280eebc74d70d85e664debf1adce2c3 metadata.xml 255
 MD5 cd7fdd45f1bc8f0cb307a9e6147d6fb4 suspend2-userui-0.5.1.ebuild 1504
 MD5 4ffd8254bbe84baa2868d9efddec7bb9 suspend2-userui-0.6.1.ebuild 1504
 MD5 b10fdb770ad3ff62d474720c4821bde0 suspend2-userui-0.6.2.ebuild 1505
-MD5 ea5eebc18a4716d1ac847b9ca8fe6d7c suspend2-userui-0.6.3-r1.ebuild 1520
+MD5 224372f6c6538e56e4c376fc95d75bc6 suspend2-userui-0.6.3-r1.ebuild 1636
 MD5 5345fa27c2ab0794eef342edea123154 suspend2-userui-0.6.3.ebuild 1504
