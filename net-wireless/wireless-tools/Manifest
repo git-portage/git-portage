@@ -1,4 +1,4 @@
-MD5 827f3c78482f59f6d0282622ffa4ae60 ChangeLog 16003
+MD5 d173e9192125dc5173f911b5818a0b85 ChangeLog 16001
 MD5 7c44525122efc01a49db2723c5f0d5c6 files/digest-wireless-tools-27-r1 69
 MD5 7e76f132026f6d2011564531281acb61 files/digest-wireless-tools-28_pre10 75
 MD5 d8796177aa95dc5f7802f8fcf0c7b11d files/digest-wireless-tools-28_pre11 75
@@ -15,4 +15,4 @@ MD5 df9cd195658ac9baa8b7af45f01dbf5b wireless-tools-28_pre12.ebuild 2027
 MD5 4b2986d27bd1fd26df0e0efc9987b0ac wireless-tools-28_pre13.ebuild 2027
 MD5 a51e5bc0e38da1263719f8a1b9da9823 wireless-tools-28_pre14.ebuild 2027
 MD5 4ccee5d2e6be09a2450a5a0eff2b6e1e wireless-tools-28_pre15.ebuild 2027
-MD5 1becf22f7768896ef364e23f846f9c5c wireless-tools-28_pre16.ebuild 1909
+MD5 1308a7358bd926c76c6704d34a27d45d wireless-tools-28_pre16.ebuild 2027
