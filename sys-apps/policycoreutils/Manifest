@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a536102e7b433b9dd1568719d098bafb ChangeLog 9083
 RMD160 b6bde173070b8888cbc723cefa3c0ceb1bb60514 ChangeLog 9083
 SHA256 0fba04be827ec6d05dfd3f514f2caf5ce7b43c5e83aedb46f2b0b2465a35bf25 ChangeLog 9083
@@ -22,3 +25,10 @@ SHA256 1009800d22a1515baae61a65af5e8393076893a9e7f8189b6a773d9e70dd4361 policyco
 MD5 d55d4b96c909de805f74dce9b0a4e1ce policycoreutils-1.30-r1.ebuild 3793
 RMD160 317ede6db7c027d1d53a1487d55fd4ef22f1861d policycoreutils-1.30-r1.ebuild 3793
 SHA256 90b3243d95f1ab4c674b06435b1f7a37c5cff5278b9b91650bf8294de9c6a8b8 policycoreutils-1.30-r1.ebuild 3793
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEKJBcJ+ChZlpDtAoRAuBgAJ92f22gq2gGRjDUgau2lo044aQz1wCgj398
+8cAtGLVCarI8py8alwRQbqg=
+=KQXE
+-----END PGP SIGNATURE-----
