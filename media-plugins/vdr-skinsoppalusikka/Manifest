@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bbb88ef3434f8ae58071e4979e550a78 ChangeLog 2158
 RMD160 a4e721ece540761a59158c7a1ee73154819caadc ChangeLog 2158
 SHA256 4757b617b33001c52b9970bbea81ca7fbc41c604462d6f71ac8f87f66427d43c ChangeLog 2158
@@ -55,3 +58,10 @@ SHA256 4204ca9b6cb197eec1cad717585d5726ca2ee8db1e01f4059c2eab5fa179151e vdr-skin
 MD5 ab045a56581506a3659512ad9a87309a vdr-skinsoppalusikka-0.0.6.ebuild 1003
 RMD160 28d049a6eaa37768438890e62d37e23bf57094dd vdr-skinsoppalusikka-0.0.6.ebuild 1003
 SHA256 56a7fa4ea1e6ecfcc76648ef7e16595030aadd99ee1e37397d7ecc00bab8c1b9 vdr-skinsoppalusikka-0.0.6.ebuild 1003
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEKWddZfSl1Kp5KmoRAuXxAKDf9dTC71tvRerRWuGKtSEfIWElzQCghR6f
+SyP03tyeiOS0IMWNMrznSFg=
+=+Vhv
+-----END PGP SIGNATURE-----
