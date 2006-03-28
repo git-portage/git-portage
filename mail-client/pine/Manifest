@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ed69bcb008c7e46f198db6a355b4e1a2 ChangeLog 19479
 MD5 8f1d4661a745dab7f2113e7068c6e04e files/digest-pine-4.61-r5 139
 MD5 703bc17b1c6091139b0675429d414550 files/digest-pine-4.63-r3 139
@@ -21,3 +24,10 @@ MD5 68514ee5deb5aa96b92f1560495a3fa7 pine-4.63-r3.ebuild 5492
 MD5 cc2ba54bc815796d07fad7f889ae4983 pine-4.64-r1.ebuild 5451
 MD5 79a8c975e7bb57a87fbbbce1b5388827 pine-4.64-r3.ebuild 5454
 MD5 f5c3b6e2fcc8955980d54be53436e01e pine-4.64.ebuild 5489
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEKYXcKRy60XGEcJIRAoeXAJ9qjpuUdm3p/I6yuRJyobkzxupM8gCfUGAL
+7On4TBwKuO8/Q/Dz8SsHpFo=
+=jwsQ
+-----END PGP SIGNATURE-----
