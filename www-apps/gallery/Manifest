@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 3b09023bf1c63158508be4f673a47d1e ChangeLog 14729
 RMD160 9163fe15c1a343cd8fd530ef339e44e99e97f557 ChangeLog 14729
 SHA256 dede4dcf12fc381828a71451cd33a219047159b41568b9cfdc16fbb922022c46 ChangeLog 14729
@@ -19,6 +16,9 @@ SHA256 6f24e3bb87912c206c11d0493ad6cbfc500a4d52ac9a1b053ec78d5e8c590d1d files/di
 MD5 d62b21398b0b140801d92a260073bb79 files/digest-gallery-2.1 253
 RMD160 f086b4b83d76bb4ede5dbae3fa6c3e60d1a8241f files/digest-gallery-2.1 253
 SHA256 cc7a8acfad06a1db1b6f064fde4c731ae62647a453b010249be006652404ae68 files/digest-gallery-2.1 253
+MD5 d62b21398b0b140801d92a260073bb79 files/digest-gallery-2.1-r1 253
+RMD160 f086b4b83d76bb4ede5dbae3fa6c3e60d1a8241f files/digest-gallery-2.1-r1 253
+SHA256 cc7a8acfad06a1db1b6f064fde4c731ae62647a453b010249be006652404ae68 files/digest-gallery-2.1-r1 253
 MD5 d86a2cffa618ecf7fe9a2b001be69523 files/postinstall-en.txt 430
 RMD160 bfac0f557ce318745a713cf7a4b90c4473ee97a5 files/postinstall-en.txt 430
 SHA256 e2e63ec31b83e97fec9ecc7163f84beda4744150fa179ce39f0c26ed7ec54f3b files/postinstall-en.txt 430
@@ -34,16 +34,12 @@ SHA256 a661e64645c3a56f89eb461836d7cc45aedc15cea62b7f8cba4483b80edebb6d gallery-
 MD5 c0891d7032de2d2241c16879cc942c30 gallery-2.0.4.ebuild 1117
 RMD160 9ebd8b22ffe95140a2056a2d19c839c277df9fd1 gallery-2.0.4.ebuild 1117
 SHA256 2b5dbb65f305ff9f96d2e533ec23c8a046c682c5c8315ec80bf9fe22dd0edde0 gallery-2.0.4.ebuild 1117
+MD5 11c7a7aaa6411f2da435cb8c03335a81 gallery-2.1-r1.ebuild 1527
+RMD160 e77a757d5b1807dbaebd9003c0bef6c30ce7eb36 gallery-2.1-r1.ebuild 1527
+SHA256 57c228ead77712fb0b45bc022324673b9fa613f85865733ac3b7e230689b7b52 gallery-2.1-r1.ebuild 1527
 MD5 16c861ac62609116796625cf3987cdde gallery-2.1.ebuild 1506
 RMD160 66467685635bc20f47721d406c80d16059c4a211 gallery-2.1.ebuild 1506
 SHA256 619cce15fa93262e424ce1d101d4590996c7652ffa4775e7e2422b2c21489eb3 gallery-2.1.ebuild 1506
 MD5 c339473e0ff43da76eb2f2607c441921 metadata.xml 280
 RMD160 c449ad35e8af3f158d8f8305f8a02ff98a420970 metadata.xml 280
 SHA256 fd37fa0f441b1b68ef8dc4bffbb0a51f0414aa7c370b48369453af5f4bff177a metadata.xml 280
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFEJBawEzitwsaoONoRAnhRAKDPvb9P5WRKgXSBDIpVK9YT3iSGVwCcDmTc
-XplTqFRC/2NVQUQwIa2iY38=
-=TcDB
------END PGP SIGNATURE-----
