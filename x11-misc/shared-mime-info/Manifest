@@ -37,6 +37,6 @@ SHA256 e681ac72707aa257216a0a1faeeb29e4e0d99ad486f1326b28fd265ffaecd6a1 shared-m
 MD5 42291430214466dfdaab30331bf5773b shared-mime-info-0.16.ebuild 1086
 RMD160 f75341a635fb329690691f2ba93ed595f5861b99 shared-mime-info-0.16.ebuild 1086
 SHA256 2bac3f56c2432024686f05ee73585a05a176ef53ed059a82d2d172e78a685b2b shared-mime-info-0.16.ebuild 1086
-MD5 bc83bd02c35bf8e2dde0ae5f2cd38739 shared-mime-info-0.17.ebuild 1089
-RMD160 a28f606e39bb128c80a0439b7bbcb3edcbb8ffc9 shared-mime-info-0.17.ebuild 1089
-SHA256 cb4514f1434282a0f78008ca92c0751a6d5fa054d74b9679b34c9a1f74e8f822 shared-mime-info-0.17.ebuild 1089
+MD5 3c564c323c3d59e9e108ba9f9296e708 shared-mime-info-0.17.ebuild 988
+RMD160 85aac5ff6532d07fb8f6a9b10be23dd9f3298c10 shared-mime-info-0.17.ebuild 988
+SHA256 7cfe677562dacd795d0479de82316ccd844bf634a765de4cbca1257159e29d8f shared-mime-info-0.17.ebuild 988
