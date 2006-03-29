@@ -19,6 +19,9 @@ SHA256 5c29ff239459c96427c388b47ebe66d8495e24e01f315bc64a14c1897155db0e files/di
 MD5 22b1ae2a918f16e10a155ac905e84d37 files/digest-mediawiki-1.4.14 253
 RMD160 86aae27e29cf20f2f66e5abed4dcfc1f45092488 files/digest-mediawiki-1.4.14 253
 SHA256 72c9cf6793c08881febea372a5fb82d7b3934aeed21a4ad40e51b9827c1bd6fc files/digest-mediawiki-1.4.14 253
+MD5 01280440a861ad1ac806008bbf5cf5a9 files/digest-mediawiki-1.4.15 253
+RMD160 14e5b48d8b58622f0d42fbb9c7f6fc14d34c894e files/digest-mediawiki-1.4.15 253
+SHA256 3bf4ddb51e2e8068e756d70bf74c460563828bba4e612b46da1c8875e228f074 files/digest-mediawiki-1.4.15 253
 MD5 42e1bd65c10adb286a970248e94cdf75 files/digest-mediawiki-1.5.3 68
 RMD160 6b51dad43c512da64a87da018d420f47c3658102 files/digest-mediawiki-1.5.3 68
 SHA256 e4e9644b743e30b17d4a9299a53c812d3e066d49f1f982c765a8ea71a07f360e files/digest-mediawiki-1.5.3 68
@@ -55,6 +58,9 @@ SHA256 f99d0d44232128ea7256007d4d280fd534c753f32b42a086755bbb47441dd86a mediawik
 MD5 9f74d09607a32e5277a403c97350f322 mediawiki-1.4.14.ebuild 2786
 RMD160 5b55e7c3e457cb291f2da0abceacd4c5dab74eb5 mediawiki-1.4.14.ebuild 2786
 SHA256 1c15cb0a8df62c21498d98d679beacbab9f088f7cdefe26e89bf461c881013fa mediawiki-1.4.14.ebuild 2786
+MD5 9f74d09607a32e5277a403c97350f322 mediawiki-1.4.15.ebuild 2786
+RMD160 5b55e7c3e457cb291f2da0abceacd4c5dab74eb5 mediawiki-1.4.15.ebuild 2786
+SHA256 1c15cb0a8df62c21498d98d679beacbab9f088f7cdefe26e89bf461c881013fa mediawiki-1.4.15.ebuild 2786
 MD5 e8b5e1abb0b60b3068b48e5c0a2f4709 mediawiki-1.5.3.ebuild 2934
 RMD160 86765ff0cfecf32c8b7983baaf30223489d0a55e mediawiki-1.5.3.ebuild 2934
 SHA256 bf9b97d79c8caf03bb97c0901c7b9d111527e8cfe439780b3e06a27977ebb0ef mediawiki-1.5.3.ebuild 2934
