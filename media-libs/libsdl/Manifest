@@ -1,4 +1,4 @@
-MD5 e882bd6aecf389410af4e15b6d02717e ChangeLog 15500
+MD5 9db2b2cc086f38932e557afc05f2334f ChangeLog 15605
 MD5 71a857d2bbcc34c4807638eb5d710f2e files/1.2.7-26headers.patch 1017
 MD5 206ddd08dd3e33819d03245d11af3014 files/1.2.7-gcc34.patch 8196
 MD5 e71ab5ce20cb7c70631a59f9d209cce1 files/1.2.7-joystick.patch 1317
@@ -33,6 +33,6 @@ MD5 1aec1ecf1921c28a0b02c6e47c35b192 files/libsdl-1.2.9-no-exec-stack.patch 1146
 MD5 7335dd719002ab81477446278b2f786f files/libsdl-1.2.9-sdl-blit-mmx-check.patch 551
 MD5 295699b0a2b7e8a2a173bcc3d5cd416e libsdl-1.2.7-r3.ebuild 4269
 MD5 5c442d00f0d05f9935c3f7ac6756d4d2 libsdl-1.2.8-r1.ebuild 5430
-MD5 3d9b115541cb88ae9ba48f50060de142 libsdl-1.2.9-r1.ebuild 5021
+MD5 87a0ec5932d3461489bba3e09fbf6b7c libsdl-1.2.9-r1.ebuild 5022
 MD5 62041b7bb258830e75ef4464d7124598 libsdl-1.2.9.ebuild 4643
 MD5 baaaa69f33ef9027dac84ee4ff02773b metadata.xml 974
