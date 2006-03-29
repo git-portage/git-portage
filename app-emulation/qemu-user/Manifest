@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2d4d72178093a8406c2e9139291eb9be ChangeLog 1280
 MD5 4fac7d5e68ef58489e7734f5dccb2918 files/digest-qemu-user-0.7.0-r1 63
 MD5 36d599117f12a2bf8edc47c1daeff3a6 files/digest-qemu-user-0.7.1 63
@@ -10,3 +13,10 @@ MD5 431458f4c01ad6238f20d77302e4b871 qemu-user-0.7.0-r1.ebuild 2250
 MD5 4af0f0b4cf2b13fc6dfbf3c770d5be6c qemu-user-0.7.1.ebuild 2254
 MD5 6844e6102d3882420b7fc684e72fde6a qemu-user-0.7.2.ebuild 2254
 MD5 39a51a5a8619d1e2247ec96304128e8f qemu-user-0.8.0.ebuild 2128
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEKjuxFdQwWVoAgN4RAtrwAJ49XDF0hjHHYIt0CjOwv22LsY+i/gCg5ugQ
+5t1tILskINaZVpfQuY55bgE=
+=scOE
+-----END PGP SIGNATURE-----
