@@ -1,16 +1,24 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 b130d46046bcebafc602b98e8e624391 ChangeLog 548
+RMD160 69a7649e4fa8fdd13604da4c496437cb37be2c62 ChangeLog 548
+SHA256 9f5fe747b457f62d53fff778dd87f87fa79e0b1a2a88c79db824e0b2048d3b52 ChangeLog 548
 MD5 da1716a3a00bdd0c3c571975d1ee7c2a cl-launch-1.69.ebuild 845
+RMD160 962c3c3a4aa4299e24032a26c48873b4cad5f01d cl-launch-1.69.ebuild 845
+SHA256 3af6b940dd516eab68c27286aeea3f576bf1f9966f2302b46711e985518b8dbd cl-launch-1.69.ebuild 845
 MD5 cc87295155aa22fef059be228ed752a1 cl-launch-1.71.ebuild 845
+RMD160 48176e9f2babbba64b15b07f46048be4afdf7f5f cl-launch-1.71.ebuild 845
+SHA256 2dde368395485cf5abcf038e92a4fa99c6bfc7ca3a0c5159c9330fdca227d730 cl-launch-1.71.ebuild 845
+MD5 cc87295155aa22fef059be228ed752a1 cl-launch-1.72.ebuild 845
+RMD160 48176e9f2babbba64b15b07f46048be4afdf7f5f cl-launch-1.72.ebuild 845
+SHA256 2dde368395485cf5abcf038e92a4fa99c6bfc7ca3a0c5159c9330fdca227d730 cl-launch-1.72.ebuild 845
 MD5 3d62afd4f80992c356b279c033de5e86 files/digest-cl-launch-1.69 67
+RMD160 55a3d31f9aab12f4a2120e10c8ba7f96bcf2ec4d files/digest-cl-launch-1.69 67
+SHA256 dc520f412df6aeb75a7f85d7c25e3ee2b6547b7befb498f75960053c613ef0ba files/digest-cl-launch-1.69 67
 MD5 2daafdb04dbcb3b728e1335fd34d4307 files/digest-cl-launch-1.71 67
+RMD160 3b73935d0e4e6d24a1aa3ddc0972c1bba33de19c files/digest-cl-launch-1.71 67
+SHA256 5aa2f5fcdd1e765bd0200ed7dcf3c59368c78c30025a2aa5e2e1f35cf2acc27b files/digest-cl-launch-1.71 67
+MD5 46996eeecfb7e76c9d6ae4b3cf7189ed files/digest-cl-launch-1.72 247
+RMD160 ba916c1057c8b5be9d62cb2d2a8df560fd52dbaf files/digest-cl-launch-1.72 247
+SHA256 37e1af5cf2ba9f4df136c751ccd27672ac0b0a91cff108919417ab526d861cfa files/digest-cl-launch-1.72 247
 MD5 9b65b0341efc8f4b29498aad23315229 metadata.xml 164
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDeO/zyiNZaEAZA+ARAqjqAJ9MN7b4RZWMkQ6DRMpQ1/BZ1g45CQCcCLjT
-pukjpcv8hkb1uG4HpxezF9I=
-=2ALY
------END PGP SIGNATURE-----
+RMD160 5edb79931b874dc3a72128f0742b9d4c4eb3c8c1 metadata.xml 164
+SHA256 f8efc9385015233c71f279f85bd0a327525b7136cf8714cc04449d8bea4ce22f metadata.xml 164
