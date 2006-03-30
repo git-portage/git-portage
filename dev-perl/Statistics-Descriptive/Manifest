@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 7eda6a290e84d07b1ee5da180462202a ChangeLog 826
-MD5 4ce16645aaf5a47d8d25316fc312cdda Statistics-Descriptive-2.6.ebuild 559
+RMD160 6976be65d4e965bac4f87ab727849a64f7795db2 ChangeLog 826
+SHA256 43cbf9cc2e9a9db77fabbf7c6cb5833fac79192368e4f7303b245fd9b1620883 ChangeLog 826
+MD5 c5a885189f1de2f7e3c3b5da0f77dd98 Statistics-Descriptive-2.6.ebuild 565
+RMD160 dea2020677d09e4e2c4bfd2cf73f498d28ee52f3 Statistics-Descriptive-2.6.ebuild 565
+SHA256 b75c2e44f07afc9c88234fa67ca7f9b9f66a122f130c03d02a4549be9f27a3e7 Statistics-Descriptive-2.6.ebuild 565
 MD5 f091af204c270052bdd176c9619a20be files/digest-Statistics-Descriptive-2.6 77
+RMD160 dfc06cfa559d8861e04d83bc55a8879823708682 files/digest-Statistics-Descriptive-2.6 77
+SHA256 a92d8699a1b313d7b945be91946858156a634f526a53c795a75f9557f8c71fcc files/digest-Statistics-Descriptive-2.6 77
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDyCertG5z4I8BtQoRAsA7AJ9UNE8OcmNlLsPe0HH+ctT9sC3XFACfYjdQ
-TfNsbmfeoS/sWagL85/O0Fc=
-=zqL2
------END PGP SIGNATURE-----
+RMD160 647980838c590f54441a053916ea629e53e551c0 metadata.xml 305
+SHA256 f05dbef15061919972882cab07057e102760a542beba17d131194091401cd7ca metadata.xml 305
