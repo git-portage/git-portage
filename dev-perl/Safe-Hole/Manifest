@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 7098f62da502fb3ce38e00a5ade6584d ChangeLog 557
-MD5 a6b77dbf4188e3a0aed8c3a26d7be08c Safe-Hole-0.10.ebuild 523
+RMD160 395ea63fc5ebb8adad7373fea92668bddd5b28d3 ChangeLog 557
+SHA256 2789f5adcc2dbf2c5a6bb0ec56efe881e8296db2ff5b01bc6ea4dafc3f925031 ChangeLog 557
+MD5 e129af8f30105c313fcee79a404345dc Safe-Hole-0.10.ebuild 529
+RMD160 08ad5c60516f229cab612b26de5d95c88c542607 Safe-Hole-0.10.ebuild 529
+SHA256 86506f542fac33068b66364fcc9f8cc4e7b956e7a19dc9011c457ee7c9f5cfd0 Safe-Hole-0.10.ebuild 529
 MD5 1ff7029055e9c81b43fc7eddcfe66ccc files/digest-Safe-Hole-0.10 65
+RMD160 7d0750122a0f99f2f01ec2883f3197a9a8221589 files/digest-Safe-Hole-0.10 65
+SHA256 28f86acf84a792e46bfaea85d6a71f0e7e4bf2e55ef9fd01cf230bf6b4b2702e files/digest-Safe-Hole-0.10 65
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDyCbhtG5z4I8BtQoRAstjAJ9QB2EWOaJumvFaQ0AL/OQ4/E13/QCghMmi
-JrdCnh4YEuwxklzloPnuC6s=
-=deTO
------END PGP SIGNATURE-----
+RMD160 647980838c590f54441a053916ea629e53e551c0 metadata.xml 305
+SHA256 f05dbef15061919972882cab07057e102760a542beba17d131194091401cd7ca metadata.xml 305
