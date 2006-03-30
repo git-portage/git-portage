@@ -10,9 +10,9 @@ SHA256 6b9e082f1e7b692693f1e68df52c3b3110121bdcc4e2a6b828938b9d32feaebd Net-Pcap
 MD5 0e6062d35121435397ee14979a028b1d Net-Pcap-0.10.ebuild 521
 RMD160 dc8d45ab7d3afba59e2a59447b02bf93ad99d563 Net-Pcap-0.10.ebuild 521
 SHA256 ea33ee6bb69efabb3f3631e910cec6affdda6c2dd25e34c9660559c63da2935a Net-Pcap-0.10.ebuild 521
-MD5 36787e587d9acd02a6364739da9a83c2 Net-Pcap-0.11.ebuild 521
-RMD160 df4757aa8bc31f107fd0f1fc91e2a87b61bc5947 Net-Pcap-0.11.ebuild 521
-SHA256 e66820b7046116c2c9ec06d187d692a2bccf73c0d95af23dea6a97e78cbf57cf Net-Pcap-0.11.ebuild 521
+MD5 fd18d756a07bedbcbdd4e2a529591ad5 Net-Pcap-0.11.ebuild 527
+RMD160 c459d7b8436e53dabb61e3c9b0e77d0bd990be94 Net-Pcap-0.11.ebuild 527
+SHA256 57bcecc93a564c44a5d88e1a0ce05cc3197324b5f54ebc2fa2ba77f57729c072 Net-Pcap-0.11.ebuild 527
 MD5 b85cb3a98637130d8cb2b038dcc7fabb files/digest-Net-Pcap-0.04 63
 RMD160 a28f636eaae41bd955db9bfa6cc9222eee4f2bb2 files/digest-Net-Pcap-0.04 63
 SHA256 2c76e392662f0f5ad993ad39163b03ba2263bc5eaeb6210fef2b55e5b79bd1ae files/digest-Net-Pcap-0.04 63
