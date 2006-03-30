@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 da83550d693e42e9c25517b33388afa1 ChangeLog 898
+RMD160 0da948f6de51f1a62849cc78d55a823c3753e5e9 ChangeLog 898
+SHA256 6d37c2bb2f9dc550b97a7db67f5e1ec2ea773bb0066ec8cb277111f7cdfcfb34 ChangeLog 898
 MD5 a962167e64c72b7923ae7d54b22b1afd files/digest-gtk2-trayicon-0.03 68
-MD5 c0bb5de4102b21f91d19f5ef276827aa gtk2-trayicon-0.03.ebuild 702
+RMD160 433c00b4517732b2ab815b5077e23f6459a4f35f files/digest-gtk2-trayicon-0.03 68
+SHA256 9327ecb02d3deb7f0e34fad5bce9c8bc16c2ca5568d73450218d7d8932f4ebb7 files/digest-gtk2-trayicon-0.03 68
+MD5 c0fad3dd609befda2b07317b25cd43f4 gtk2-trayicon-0.03.ebuild 708
+RMD160 da7174c46fde34aa44f619553788e8fbb2f1f6a9 gtk2-trayicon-0.03.ebuild 708
+SHA256 cfdb1cd9ce6dfc06f96479dc40e14d590cea4d30113a9c29ebe4e2fc5b64e066 gtk2-trayicon-0.03.ebuild 708
 MD5 854ad93ffa90b305b1f1f87592698ed8 metadata.xml 167
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD1XJXwUpWvClEHQoRAveeAJ4xXGrDFFaFuH3TpV36zgWqnScd3QCghP66
-xBFT8FWbmsAbq9yGYSc3tbs=
-=rzuA
------END PGP SIGNATURE-----
+RMD160 6f174fdd5033945a3da1b7bbea9796fe17ba2bf8 metadata.xml 167
+SHA256 63163ddb9082af2890999b3c825b2d21df911f59611694e0e077e75a12bf7241 metadata.xml 167
