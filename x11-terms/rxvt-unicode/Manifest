@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6ec75dc2d22c51553b0d1927173099e3 ChangeLog 11122
 RMD160 d5341599c6c7ee280512e8e3f5cde66e6a75e926 ChangeLog 11122
 SHA256 7cab608cfed0d3d46a37f66bed27f4a9b827bcd2256a7e4335038bac49ef11ed ChangeLog 11122
@@ -55,3 +58,10 @@ SHA256 194699296b6e42b9287e8f2a575da8ff0655efdc0481ed55fdc41f498b9f3c8a rxvt-uni
 MD5 7a2edc1ae9c7476e2b2a3be1f7c0bb70 rxvt-unicode-7.7.ebuild 1620
 RMD160 7ac51193e148469f7fd8bac7c6b7e68ea468fd09 rxvt-unicode-7.7.ebuild 1620
 SHA256 7f92c77ac11a62a262a28af407053745237e4c45396b24ff8fe0ead1ba878798 rxvt-unicode-7.7.ebuild 1620
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFELFaN2iXjgNjfe5sRAooyAKCo4QaXptXaKcsWwQjPPzflbutcywCgoQq1
+EgxCGKr6RLSwQujEpYV1frU=
+=imaC
+-----END PGP SIGNATURE-----
