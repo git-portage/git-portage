@@ -1,15 +1,15 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 e961679fcac24bd8bb18e4499fb849c0 ChangeLog 1017
-MD5 eb2be7c519bd1fa4a2fcac2712613e31 Gtk2-Ex-PodViewer-0.14.ebuild 792
+RMD160 460e6ef70da52f5b47f68d8f3c0e44785e2b4d7f ChangeLog 1017
+SHA256 9f5330eb1f54788f4975ed72d50dada13a11637173f365b91a3a3ec9ade53e26 ChangeLog 1017
+MD5 49b3c472927657d16f4bae189f41b26d Gtk2-Ex-PodViewer-0.14.ebuild 798
+RMD160 612bfd7ad8114a0d1f66735572d8fdd6733f3a4e Gtk2-Ex-PodViewer-0.14.ebuild 798
+SHA256 4b32536138db7dca5f93b796020c8bb9c177b1bc4e6e4a18f6a1ed2aa7ffcdb1 Gtk2-Ex-PodViewer-0.14.ebuild 798
 MD5 70dce0d6bfa6ca1ffeda07d727f4fb46 files/digest-Gtk2-Ex-PodViewer-0.14 73
+RMD160 cc2759c13609ea0bf8bd8239bb09b7cdc0f6b455 files/digest-Gtk2-Ex-PodViewer-0.14 73
+SHA256 39a24a8fd6cc26c748592c1722c7054f924bbda64bd9cbff0e1839c6e70190fb files/digest-Gtk2-Ex-PodViewer-0.14 73
 MD5 77a6965a7e3cbeb18e07ae9bbb050350 files/gtk2-ex-podviewer-makefile.patch 392
+RMD160 0657ea1cfff31efc70067ac5a1aaa1a0914e625d files/gtk2-ex-podviewer-makefile.patch 392
+SHA256 b6e2b13eda0979c626fd87c56406e5223ca90c2ce6511c629c29499d8d3bdd65 files/gtk2-ex-podviewer-makefile.patch 392
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFD+h61tG5z4I8BtQoRAljyAJwIob8Pc/hnwGz52FasKokHYQKh/wCeOPWS
-5ka5atty1XItGBO96CrQsN8=
-=uJj4
------END PGP SIGNATURE-----
+RMD160 647980838c590f54441a053916ea629e53e551c0 metadata.xml 305
+SHA256 f05dbef15061919972882cab07057e102760a542beba17d131194091401cd7ca metadata.xml 305
