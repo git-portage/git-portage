@@ -25,6 +25,9 @@ SHA256 a7f770b3ed1b8b5a6333eb45309913aad9bb4024666e59849d648ebf8dc02fe0 files/di
 MD5 f29c62d772cc41d0402fa4d3c17333ce files/digest-gaim-encryption-3.0_beta4-r1 274
 RMD160 611edca7e5b75e381e40b42865366cd99951c90a files/digest-gaim-encryption-3.0_beta4-r1 274
 SHA256 a7f770b3ed1b8b5a6333eb45309913aad9bb4024666e59849d648ebf8dc02fe0 files/digest-gaim-encryption-3.0_beta4-r1 274
+MD5 e491a42c16f83c0df855e499b87f6ff1 files/digest-gaim-encryption-3.0_beta5 274
+RMD160 881981be2f3355a828b8fc9fe812eec0e4579e41 files/digest-gaim-encryption-3.0_beta5 274
+SHA256 26146c42378dd2264ee51b1f39480dee359afc72131786a346349caeec66b36e files/digest-gaim-encryption-3.0_beta5 274
 MD5 c33a7ee554fd61adb3272fabea5a0487 files/encryption_icon_fix.diff 528
 RMD160 4b69b1992ed27e21caadc7c1634d6e64a89659de files/encryption_icon_fix.diff 528
 SHA256 84e397d026a22e251bb629c35cb078477b07edaeb2b3247015e275dc605265a4 files/encryption_icon_fix.diff 528
@@ -58,6 +61,9 @@ SHA256 e8acdd6efb7755c6997f605b9f5bade0687e3afb0e9313f3d3796be84d12fc2c gaim-enc
 MD5 ed564acce89d1e43990a8a1f3daf4f96 gaim-encryption-3.0_beta4.ebuild 1124
 RMD160 880981dfec0b6a4aba42d5317ada955e1541ab5a gaim-encryption-3.0_beta4.ebuild 1124
 SHA256 5809b83ac4951e3ebf98482dfe84684e45bb740af5f22b0f129156b722e9d7e3 gaim-encryption-3.0_beta4.ebuild 1124
+MD5 35f52442f0495386f6d428edfbe1843f gaim-encryption-3.0_beta5.ebuild 875
+RMD160 b966618c50e16a5913822fe791ec9f2b8eb17063 gaim-encryption-3.0_beta5.ebuild 875
+SHA256 4bfcd07d1bc809cc37453dbeb69ff22a520cb8e2736d4ae2b13277406bbe1b6a gaim-encryption-3.0_beta5.ebuild 875
 MD5 f9adb0cad926cb239205a2b354cbda8b metadata.xml 286
 RMD160 64e5cd11f5b3d8c4714af32da1cf9d2cb23a8b49 metadata.xml 286
 SHA256 3e1e422380a4599a6f9d08a13a59c1675fc7877dcb5f59c1fde77a937fab6292 metadata.xml 286
