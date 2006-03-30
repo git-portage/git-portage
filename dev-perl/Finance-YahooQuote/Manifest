@@ -4,9 +4,9 @@ SHA256 45ade3757ae12ba4e05e7c1f5f405f0720f9a5c134c9c38ceded923990e1e631 ChangeLo
 MD5 145699b1e873cf45b3056642072bb4c0 Finance-YahooQuote-0.20.ebuild 702
 RMD160 1ab72c1770499bff73814b8e95c36203b6e253bf Finance-YahooQuote-0.20.ebuild 702
 SHA256 43c9cc3472d0dfad3141d3cfbda587914472a340dfcb326b4240b03a34e5aeee Finance-YahooQuote-0.20.ebuild 702
-MD5 326c81044740f63304bd3b599b6e5f00 Finance-YahooQuote-0.21.ebuild 684
-RMD160 7e8e1bdb7ad414182b4aab1e31a55251aad796d1 Finance-YahooQuote-0.21.ebuild 684
-SHA256 e234d7bf1adad460b7ddc1f9ccf04ace468742bbac1e4bf4c852c106a6b65b44 Finance-YahooQuote-0.21.ebuild 684
+MD5 7a56721aa6f0d9a9f41ddfe564cdab6b Finance-YahooQuote-0.21.ebuild 690
+RMD160 6c7983fed3a4dabf2741d62e855584f2c2f8a011 Finance-YahooQuote-0.21.ebuild 690
+SHA256 f0330ab5a20a9d8baeee52e4d9ac30e59fb2ede6a0ae8f0a50c808b39d10129f Finance-YahooQuote-0.21.ebuild 690
 MD5 ec0d13bd6e8b8147e5972f8729ed7484 files/digest-Finance-YahooQuote-0.20 74
 RMD160 a128beda78c5d7f6242e59365d4adcb0d558c8c4 files/digest-Finance-YahooQuote-0.20 74
 SHA256 3ed43c947a857b653db782906671dfb84ba273f88f416f968cd4c66ec893115b files/digest-Finance-YahooQuote-0.20 74
