@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 b46f488cce789c0027c949ac183bb39c ChangeLog 4752
-MD5 267c1925d291df61d8b60d9de3be8800 bioperl-1.4.ebuild 1170
+RMD160 d0acc199169846dfda3d2ce7c99e0774089aeee4 ChangeLog 4752
+SHA256 64d0508f0e942eed20e41bdabda440efcc570051a7a73517b415760f934655d1 ChangeLog 4752
+MD5 ca629c9d72d8da99987da4e98031a725 bioperl-1.4.ebuild 1176
+RMD160 84096d75ecc10cfc2aab95d69ca709b34d92cdd5 bioperl-1.4.ebuild 1176
+SHA256 d16e4fb2c412f06fad58e703cb7dc6fe1d614f80cdc7ca6b48ecf170145494d0 bioperl-1.4.ebuild 1176
 MD5 d5d0bc711fb345c9b91086c5d47e1442 files/digest-bioperl-1.4 65
+RMD160 f46f3ddc7b276e7c6a6381b0b6750cc1aba2a5b8 files/digest-bioperl-1.4 65
+SHA256 c9727f1eba04d582ab1ba559da3ab91f88e4ce32880b21021515af842bb0a199 files/digest-bioperl-1.4 65
 MD5 f189a3c4ff5ae55bcee4f8ed0ace5d20 metadata.xml 254
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFD8KDutG5z4I8BtQoRAhRiAKCTrfbEoWePbqIaoGym+5+fCM1EQwCcDfnZ
-PWUI9wQCF9PPxpd+WWJIELw=
-=+MsJ
------END PGP SIGNATURE-----
+RMD160 f02847af149737bf8044b3de239c5bd4b42abca5 metadata.xml 254
+SHA256 3392ded43ad861595a8cfeb0441342fdbcd6e731b4793c3e8a22ff927ce09f27 metadata.xml 254
