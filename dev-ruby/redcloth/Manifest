@@ -1,18 +1,24 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 fae4b40083d57e2cb8067ffc370f2f9e redcloth-3.0.4.ebuild 936
-MD5 10b50a9c23f221a53d195044d0377f4a redcloth-3.0.3.ebuild 947
 MD5 5c482f92dce8e7913bac3f2483afe717 ChangeLog 1223
-MD5 1a24e0b48460c02e20931fceded24e1a metadata.xml 254
-MD5 579dbfc457f6f2e8e8974f5043227e9c redcloth-3.0.2.ebuild 913
+RMD160 ec609f527d9f82823bb625ba4df5d2d23a3a7c9e ChangeLog 1223
+SHA256 e0424c4e5cb57c1d01ba28808348c1ee9f3665fcc638db2d2ff99d09d5bccc4f ChangeLog 1223
 MD5 b9838cf4682185a89eca06878760ad48 files/digest-redcloth-3.0.2 65
+RMD160 e64aca86c01e4eeeb99034836c80f536029b9ff6 files/digest-redcloth-3.0.2 65
+SHA256 afad667e23ebf1fd409d90ceb7efc937e71cda1f1c9c921e7320a72f83df899e files/digest-redcloth-3.0.2 65
 MD5 063890b46cdc8872cd1fcc32263e3b21 files/digest-redcloth-3.0.3 62
+RMD160 c98de30db5cf86a79e1fb70ac4be4f026368dc9f files/digest-redcloth-3.0.3 62
+SHA256 c3d34ce68b595d6bfda6eca63c3bb163514a54c60fad760d3d2daecb63f579fb files/digest-redcloth-3.0.3 62
 MD5 97fce9cd86a27c0e77672b1eeeb8bab9 files/digest-redcloth-3.0.4 62
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDKap4ehlBotwFZuQRAi2TAJ9kEgVbXWPVyvwpFe7D+INPcx4MVACcC1FL
-p/GPKQTEV/OI+lqzQwMEBo4=
-=X2Cu
------END PGP SIGNATURE-----
+RMD160 fbed8d7e0d07d7094031cdad2e609dc2dd15cd49 files/digest-redcloth-3.0.4 62
+SHA256 82bdcbcb487a4b69835009324f2e5b7d5934500f8fd17430ede62c4025ee0bb4 files/digest-redcloth-3.0.4 62
+MD5 1a24e0b48460c02e20931fceded24e1a metadata.xml 254
+RMD160 45352e67c97e6f541e16e45effa6cc89a075efa4 metadata.xml 254
+SHA256 793f01b5f7ab962d5845ec1c730edf86460cf792428710ef7bf6aeb046fc08bf metadata.xml 254
+MD5 579dbfc457f6f2e8e8974f5043227e9c redcloth-3.0.2.ebuild 913
+RMD160 c27d63014e254a9deb0fc3dfa81268c897742fb9 redcloth-3.0.2.ebuild 913
+SHA256 b960bb4408a10b80b1ce55a6ace3819d051b64ed4e181f0d31a41694bdef16a0 redcloth-3.0.2.ebuild 913
+MD5 852839ecd1ba2e3f3e5c4a9333167b24 redcloth-3.0.3.ebuild 953
+RMD160 f26b3f55219c9a36dbec9626573d9ac6a13a6d27 redcloth-3.0.3.ebuild 953
+SHA256 daae9623ede3e494fff447b1167d677e7bb15a5c9fa7791339f9e2d34aef5a74 redcloth-3.0.3.ebuild 953
+MD5 70f971afa398b98ab815fd62b517ac0c redcloth-3.0.4.ebuild 942
+RMD160 3b4f37c070a6553ce926b4f553be489507682ceb redcloth-3.0.4.ebuild 942
+SHA256 7d3980720bff2f3d395df8c2570d3bb37def9d6ce8afdf9e3a78aa10841510ea redcloth-3.0.4.ebuild 942
