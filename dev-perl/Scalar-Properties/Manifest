@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 4bd2830a42be76c19ce31feddb3af9be ChangeLog 727
-MD5 8e6d2e8774e18a2821ea5a45f4f1a822 Scalar-Properties-0.12.ebuild 504
-MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
+RMD160 6c88deb621e8d03d4ed2063f377e849fa15ee7d1 ChangeLog 727
+SHA256 c2ad461a320c3b6e12bcce7091f4cffa01ce97512c0b9d28ba60217f73f7c8f0 ChangeLog 727
+MD5 67431025c3866aa0d050642432290894 Scalar-Properties-0.12.ebuild 510
+RMD160 115419436870c7724ab7bd2174af9d26f2cd06e0 Scalar-Properties-0.12.ebuild 510
+SHA256 6c0cafa59d36e3a441ecb95d0dd1e6be1ce878fba0f6572f632f25c42c06a9ea Scalar-Properties-0.12.ebuild 510
 MD5 ef00faf29545448faaae33dfc0b6c3fd files/digest-Scalar-Properties-0.12 73
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCcif3tG5z4I8BtQoRAooSAJ4x31xIIDJN8hewmf89UJa9nYSo6gCfc2Jf
-1LgGDE+zEDg7/PtcbTTRHHI=
-=vs8A
------END PGP SIGNATURE-----
+RMD160 579dad3a474baf3795eab811f6484888a968f65f files/digest-Scalar-Properties-0.12 73
+SHA256 a30f41065f9089d067777ab918c61c92454f78ff88dad9a77bf3bfaf42a56ece files/digest-Scalar-Properties-0.12 73
+MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
+RMD160 647980838c590f54441a053916ea629e53e551c0 metadata.xml 305
+SHA256 f05dbef15061919972882cab07057e102760a542beba17d131194091401cd7ca metadata.xml 305
