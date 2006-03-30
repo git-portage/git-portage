@@ -1,16 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 bd39f941d9619b29453f19f5a4930783 ChangeLog 870
+RMD160 663cce60e2484688a54867eb0982fd481fbc24be ChangeLog 870
+SHA256 bd3910069248a29f1a65977a4ff0e06ec94cb14ff47225936681932b7d996900 ChangeLog 870
 MD5 691a859999cefaf22ac825642d77a1e9 Test-LongString-0.07.ebuild 505
-MD5 85cc601499389cf6d2d14e06d2bfaad7 Test-LongString-0.09.ebuild 507
+RMD160 7c10e304777b246d339e83f7965b325c5df283ce Test-LongString-0.07.ebuild 505
+SHA256 0083f696b7b17cea68e755a952643ace7a5c4435aedec1fc3e6cdfc83b300bf8 Test-LongString-0.07.ebuild 505
+MD5 b7ba41f2e3c9c4de54b04c6c286809c8 Test-LongString-0.09.ebuild 513
+RMD160 74e8523cd026e79aaeb0d6f1b66b2e9056cc1423 Test-LongString-0.09.ebuild 513
+SHA256 f822a4ada6fc3c80cc808b4ce9e10ae65c278fccbb7cff9d08c592b9b25efbaa Test-LongString-0.09.ebuild 513
 MD5 8ce302c4bbeb71df883fae03900f4147 files/digest-Test-LongString-0.07 70
+RMD160 9c01fe89c3325a58eefd35199f24ad935a3aab9b files/digest-Test-LongString-0.07 70
+SHA256 98adbc54c636ddf519037ddd801e332ba749e8252e6f8433355012f1888f3b9d files/digest-Test-LongString-0.07 70
 MD5 86dbcc7d99db63166ab647f6685150d3 files/digest-Test-LongString-0.09 70
+RMD160 ecf1f06dfde6153488ea0d0a6ce7777f98958226 files/digest-Test-LongString-0.09 70
+SHA256 46278c9b4d9f876b771ce7b105bd9013baa340e9e6ebbc6f05e7f9e1feedce84 files/digest-Test-LongString-0.09 70
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDyChRtG5z4I8BtQoRAqdNAJwI25rmgYawl4kfIrVlt+JnfUw86ACfUGf8
-c5l1T4xlMiwH4sOFEwpqB78=
-=Tgb5
------END PGP SIGNATURE-----
+RMD160 647980838c590f54441a053916ea629e53e551c0 metadata.xml 305
+SHA256 f05dbef15061919972882cab07057e102760a542beba17d131194091401cd7ca metadata.xml 305
