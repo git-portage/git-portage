@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 9b082cab4f344928df9ab6cd79cd9c8c http-access2-0j-r1.ebuild 619
 MD5 d4dfb136c55f314424c791fff6e35a61 ChangeLog 887
-MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
+RMD160 50edef8d9e1959697f5dcecfb196736fa47563d9 ChangeLog 887
+SHA256 012bd7b8fbbdbe9d31cc15d34b796ec8adc5096b4c85e3990b529125dcdbb131 ChangeLog 887
 MD5 42359ccc381663d33e31f98f2e9a54fe files/digest-http-access2-0j-r1 65
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.4 (GNU/Linux)
-
-iD8DBQFBlzCcVWNWqTUmv+0RAtpNAJ9vYSzQAhd7LQRJR6pDIXvKiXBV+ACdHYeE
-BOFzCgZ6ALIS6tpLM1Zuv74=
-=GstO
------END PGP SIGNATURE-----
+RMD160 a36e279517b5ad3e46ae20f6575cb39fa1da07a9 files/digest-http-access2-0j-r1 65
+SHA256 fb9a4f3f102d92dc7e1861e7ca0b962388cd1459f1af75f62e9827913a2e4c9f files/digest-http-access2-0j-r1 65
+MD5 d82cff25f4531b57d3d335c70524207e http-access2-0j-r1.ebuild 625
+RMD160 633771ad46759976fcea26c31e1835dbeef3b26e http-access2-0j-r1.ebuild 625
+SHA256 a0fc7d6257d2135da1b65340b0fc655d147e6a0d0d3b9070e06c65319aa59983 http-access2-0j-r1.ebuild 625
+MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
+RMD160 5d9e2c7ecba96ffebd936d38acedf859cdea84e1 metadata.xml 157
+SHA256 11fba03a217e2d996f5cd8895493a5692ece8ddac2c1a2dfc71d0e830555121c metadata.xml 157
