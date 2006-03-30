@@ -1,15 +1,15 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 f33684a7dd811ab3ac8af096a428402e ChangeLog 1297
-MD5 93474c40e256d7788fd3d908839cad0d Text-Kakasi-2.04.ebuild 631
+RMD160 f6e91b1293e53a5423893c2bf5dee2d4b245baed ChangeLog 1297
+SHA256 95aee88a1835efb2f770670b90341fc25d60c5bc43a9db9a7ee44569a00f67fa ChangeLog 1297
+MD5 f76d696b01b835618d1c20ecbfefb944 Text-Kakasi-2.04.ebuild 637
+RMD160 dc32a1639f5382b30bba4f0422263617f26d65a6 Text-Kakasi-2.04.ebuild 637
+SHA256 5d03692212afd2e70406904a9ce09812bf5e0a4ab36b9be6b9232ce283ac31b2 Text-Kakasi-2.04.ebuild 637
 MD5 cda580468849e90bd729580b6f1c95c3 files/Text-Kakasi-1.05-gentoo.diff 530
+RMD160 11e85045666258c5b5ceed4c1a8a9ccc1a9670cc files/Text-Kakasi-1.05-gentoo.diff 530
+SHA256 46c6cd7803c0d9e9f4a8c7d5f3fbf1f10a530c68e0b4b3f37b100928facab683 files/Text-Kakasi-1.05-gentoo.diff 530
 MD5 3a4cb53b76d63ddcc1b2f66619e7f13c files/digest-Text-Kakasi-2.04 67
+RMD160 abb2184c1e74de7b744596d12411acd43b3ee68c files/digest-Text-Kakasi-2.04 67
+SHA256 be48e0eb607667544a2b1c73e2ba808c74c3dc4f1d6b10ed6025d12e71b7de86 files/digest-Text-Kakasi-2.04 67
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDyorltG5z4I8BtQoRAjwUAJ9240UosXiTBN6eRA0O+gye09YvDwCfUtOL
-6elS6wW+Vp8oNxQybtk4nh0=
-=mVvR
------END PGP SIGNATURE-----
+RMD160 647980838c590f54441a053916ea629e53e551c0 metadata.xml 305
+SHA256 f05dbef15061919972882cab07057e102760a542beba17d131194091401cd7ca metadata.xml 305
