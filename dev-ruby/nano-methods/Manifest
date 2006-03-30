@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 266de7c31820b827e6d4bf494b344ee6 ChangeLog 412
-MD5 1a24e0b48460c02e20931fceded24e1a metadata.xml 254
-MD5 6491c42fdaacf05230f1db05b218fcae nano-methods-0.8.2.ebuild 517
+RMD160 a8defc42ba4e42e87bd677b67e3845d02911f36a ChangeLog 412
+SHA256 84fb0344ed8746a9cc02d3cceccaf58cc75c5c3581578d93c7df87e2651c64c0 ChangeLog 412
 MD5 bd2f678c20c0d65a5c34d8c061556044 files/digest-nano-methods-0.8.2 59
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDKfTNehlBotwFZuQRAouDAJ4hCFYkWEECK+OqDUU1oq5wUoXu7gCfd6nk
-W9yTLEaD22lfE++bkTLo8PQ=
-=DrtM
------END PGP SIGNATURE-----
+RMD160 34fa385b74612883b92f54f954c1dbaa157ac330 files/digest-nano-methods-0.8.2 59
+SHA256 2cd1954919b81327b1fa2e4dcc1c7eee1929e37abcfa7fb3197c949d7093bd39 files/digest-nano-methods-0.8.2 59
+MD5 1a24e0b48460c02e20931fceded24e1a metadata.xml 254
+RMD160 45352e67c97e6f541e16e45effa6cc89a075efa4 metadata.xml 254
+SHA256 793f01b5f7ab962d5845ec1c730edf86460cf792428710ef7bf6aeb046fc08bf metadata.xml 254
+MD5 c903adc4079652c326efb0742203c586 nano-methods-0.8.2.ebuild 523
+RMD160 6d8b3dc52ae255db05ae364a1c9bd8b192685188 nano-methods-0.8.2.ebuild 523
+SHA256 a3382a7363d1aa83a7e2007c1e469fca60b5f62839cc5b88ee96b3e65afd6cc6 nano-methods-0.8.2.ebuild 523
