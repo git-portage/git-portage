@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 3c469ac107d01dbbe3b87527c7fc0069 ChangeLog 441
-MD5 e1cd644575bbc101a9766c19d919ab3b X11-FreeDesktop-DesktopEntry-0.04.ebuild 549
+RMD160 eae8fbaf860f9544518bde5cb416eeea9ae83b4f ChangeLog 441
+SHA256 457cbbd517eb32a3ea2f1a243c5a14c69853a6762b881f1e662f6280ad59e275 ChangeLog 441
+MD5 d3228a31cbac80c42dbeaa30dcb51207 X11-FreeDesktop-DesktopEntry-0.04.ebuild 555
+RMD160 13668164b771df79cda683f597c8d0494c902925 X11-FreeDesktop-DesktopEntry-0.04.ebuild 555
+SHA256 fc69434a846e89300853937653892a1bbbbf0a1b282b86f3ab4770c4c2c0052f X11-FreeDesktop-DesktopEntry-0.04.ebuild 555
 MD5 0e8baffc33ddcf5824a0e93848b65566 files/digest-X11-FreeDesktop-DesktopEntry-0.04 83
+RMD160 60356e8eaf87e35860009b9f171fa6a9d903be55 files/digest-X11-FreeDesktop-DesktopEntry-0.04 83
+SHA256 0990089bae3371ba35a72a83ce6b9a6ca97f0863bb3e0ec317dfd999e3059aec files/digest-X11-FreeDesktop-DesktopEntry-0.04 83
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD4DBQFD4eVztG5z4I8BtQoRAh1bAJjwdosH/tpMmXKiYmb1qHddnIvoAJ4i/gdp
-7tVGmLEG4uz7eUxroIjDwg==
-=L6va
------END PGP SIGNATURE-----
+RMD160 647980838c590f54441a053916ea629e53e551c0 metadata.xml 305
+SHA256 f05dbef15061919972882cab07057e102760a542beba17d131194091401cd7ca metadata.xml 305
