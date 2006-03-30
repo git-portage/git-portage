@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 0b46f0900b0005173393fbdead349130 ChangeLog 723
-MD5 5d67c8edc974ccd00c27958362e40927 bluecloth-1.0.0.ebuild 782
+RMD160 a8f25edefd4fd20ade12ccbb9a8d9c5c04862894 ChangeLog 723
+SHA256 dcc9b450a89879eb93e39c17081b2b17a485b31e2e24e3377567457bb8bc0519 ChangeLog 723
+MD5 871d27b34ce7ae3d972bef1a3b711846 bluecloth-1.0.0.ebuild 788
+RMD160 abde8356994fa4922d02ae38a91a9502c3dc2b23 bluecloth-1.0.0.ebuild 788
+SHA256 53ff28cc2f6754929fd20f3661c7ee67d887bcaed76b463156285374d0a0dcb0 bluecloth-1.0.0.ebuild 788
 MD5 b0818443c2418eb08529beb014509cbc files/digest-bluecloth-1.0.0 63
+RMD160 e87258167e6cfd938b3edceae66910a4d126cafd files/digest-bluecloth-1.0.0 63
+SHA256 b41e2aaf941d6d3983c0f0a4bf30ee143a6c3b543e624904604d24fa1d6054b1 files/digest-bluecloth-1.0.0 63
 MD5 1a24e0b48460c02e20931fceded24e1a metadata.xml 254
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDf9qzcsIHjyDViGQRAvp8AJ9TC4Hru31ulZiPX7DVDvF8NI+uaACfeCBQ
-4jNffqPRYtFtVNokj3JzZzE=
-=bInF
------END PGP SIGNATURE-----
+RMD160 45352e67c97e6f541e16e45effa6cc89a075efa4 metadata.xml 254
+SHA256 793f01b5f7ab962d5845ec1c730edf86460cf792428710ef7bf6aeb046fc08bf metadata.xml 254
