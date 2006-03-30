@@ -1,16 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 5ed17003238726440398bc4c51f9eb33 ruby-amazon-0.8.5.ebuild 552
 MD5 b60a7510a89f2f21b408830ff622c39e ChangeLog 1837
-MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
-MD5 20c169fc5abc93a7cc34008f09b4d85e ruby-amazon-0.9.0.ebuild 559
+RMD160 0c835bbf8f08f1897840a1472539c7638312c272 ChangeLog 1837
+SHA256 73a7a8decdba342cea3b688b327d013b4134f68d7c22fca886430d1300a12440 ChangeLog 1837
 MD5 d9e8ff5274e6e1d1285693c7893e3fde files/digest-ruby-amazon-0.8.5 69
+RMD160 ae1305e9845cc169710c0f14303be87e7b493dd6 files/digest-ruby-amazon-0.8.5 69
+SHA256 bb071294742841a419e9e6cb4bfeabc93f76815fb4f703dcdb01c5a8bebf9a79 files/digest-ruby-amazon-0.8.5 69
 MD5 3b1ee26eb7480a9821a1557d9a8a8907 files/digest-ruby-amazon-0.9.0 69
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.4 (GNU/Linux)
-
-iD8DBQFC5BeTehlBotwFZuQRAiZJAJ99SAtyC2GhmUqgGj03GKNBamvgvACePIGQ
-3XeolvyopspLSC0hiGw+LJE=
-=eUHS
------END PGP SIGNATURE-----
+RMD160 06d64642874272ab8485a0e56ce5c180dde4d85e files/digest-ruby-amazon-0.9.0 69
+SHA256 3045b68e2f0a001627a5e7b49d691662e43f55e46c580d0942cd9fb4eb0c0947 files/digest-ruby-amazon-0.9.0 69
+MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
+RMD160 5d9e2c7ecba96ffebd936d38acedf859cdea84e1 metadata.xml 157
+SHA256 11fba03a217e2d996f5cd8895493a5692ece8ddac2c1a2dfc71d0e830555121c metadata.xml 157
+MD5 5ed17003238726440398bc4c51f9eb33 ruby-amazon-0.8.5.ebuild 552
+RMD160 f935d0c5df79dc27e06527863eea4140982f023e ruby-amazon-0.8.5.ebuild 552
+SHA256 9b8dce9a40e736df5dc74e8653ac2dc84c292e5fd9823c48515988da3e7cddc1 ruby-amazon-0.8.5.ebuild 552
+MD5 dfbdd35b6570556d7e87ba1a7c264738 ruby-amazon-0.9.0.ebuild 565
+RMD160 09e0eacb324da157a063fddbb23df20189f72723 ruby-amazon-0.9.0.ebuild 565
+SHA256 a68b17d8ebe013526611b8b14cb3384756c57be93bf7e3b9b3bc96868ded9bfa ruby-amazon-0.9.0.ebuild 565
