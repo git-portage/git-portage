@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 0b54306b3f0026ab7331e5e7d4bbb991 ChangeLog 495
-MD5 c478b8de2f328cf1cc2c9e561ef7dd46 Crypt-Twofish-2.12.ebuild 476
+RMD160 8e5aee8ba6ac6aa5aa710ae3aad2772293010004 ChangeLog 495
+SHA256 6b59923825a7ab11d218fbc96bdb9ed1628efaf37497a54de47bb03e4b17d7b8 ChangeLog 495
+MD5 56d4b3a261ebae7c9786790fcd9f61d7 Crypt-Twofish-2.12.ebuild 482
+RMD160 0e2468fef38599d1fcc6577a3c33a87f05bff38f Crypt-Twofish-2.12.ebuild 482
+SHA256 84fca74feae3faa0c300bc0f2853543253749d4ab5d2ecd51caa66f03630c664 Crypt-Twofish-2.12.ebuild 482
 MD5 5495d735911c036ec216ef983566b3a8 files/digest-Crypt-Twofish-2.12 69
+RMD160 6bbcdb01c5a18df6e3fd27acc38fb5bae2f76ed7 files/digest-Crypt-Twofish-2.12 69
+SHA256 ec8a0091c06fad68b84ce2a71515a1d3a92a91144bb16c27404ad926815aa7b3 files/digest-Crypt-Twofish-2.12 69
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDyA2rtG5z4I8BtQoRAgGhAJ9adAmjGEOIQt62fwJyIc4T4ypAgACfWB/g
-OQGEcf5hisOerCt0ZWya6p0=
-=Ti29
------END PGP SIGNATURE-----
+RMD160 647980838c590f54441a053916ea629e53e551c0 metadata.xml 305
+SHA256 f05dbef15061919972882cab07057e102760a542beba17d131194091401cd7ca metadata.xml 305
