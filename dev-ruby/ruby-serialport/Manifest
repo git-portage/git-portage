@@ -7,6 +7,6 @@ SHA256 084866fee2335215a80a8079f135884b78a2922a77c2f0a5992568c3c923dcd2 files/di
 MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
 RMD160 5d9e2c7ecba96ffebd936d38acedf859cdea84e1 metadata.xml 157
 SHA256 11fba03a217e2d996f5cd8895493a5692ece8ddac2c1a2dfc71d0e830555121c metadata.xml 157
-MD5 2526e28f74c6ec6aa0e909f3ef98613d ruby-serialport-0.6.ebuild 696
-RMD160 623d44d7f4f8e5886442138d476d4bd47cc2d33f ruby-serialport-0.6.ebuild 696
-SHA256 1fa54ea60ba5414c905696eddea31c1488d134a66544acfdb268cb1dbd45a640 ruby-serialport-0.6.ebuild 696
+MD5 1c503fffd02c9431a0b5001306142cf6 ruby-serialport-0.6.ebuild 702
+RMD160 dea3b0ede9b2687cf47b67b1700fdb6394a07b0f ruby-serialport-0.6.ebuild 702
+SHA256 195c4519ef6f62976339854fed587070803786143fff788b6b3bf2aabcf0d8ec ruby-serialport-0.6.ebuild 702
