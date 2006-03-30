@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 19b02c0e81eea8d88f1337ca8027c1c8 ChangeLog 866
 RMD160 2fc63c638e5ec8d4304ba40db2131daf0bd1d6ae ChangeLog 866
 SHA256 76ccb114f051a02b6ade9cf9322faa86fbe29a0feb89bd8d9ff5655f1864412a ChangeLog 866
@@ -16,3 +19,10 @@ SHA256 1723c56a7f9dcbbe96b2bc25e12f6feb1dcc15d92b2ac49c3a423f7646e6a5f7 portage-
 MD5 a19eed01bd8f568728cd0bf9ae2cfd1d portage-manpages-1.2.ebuild 546
 RMD160 4f1b27f6ad4d6580c435507dc2f26c1ef2aa7e30 portage-manpages-1.2.ebuild 546
 SHA256 8c9d408189c7ff815e7fd24c33b18e7288ad93923522540c27a6fb68f7089b18 portage-manpages-1.2.ebuild 546
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEK+qmAiZjviIA2XgRAtjZAKChZNwAGz4ZMhbUGJTKqsExCTqxuACgvJyL
+uEYWkp2kUl+9ap4coE+KUsY=
+=fcu9
+-----END PGP SIGNATURE-----
