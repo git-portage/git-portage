@@ -1,22 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 133a3e7d6310f100003e430dd9915464 ChangeLog 1059
 RMD160 0ec41581209e8d72329bee1b7ee5b0596995feea ChangeLog 1059
 SHA256 9f65330cc0851dd7c1b46db483b1cc03550271a00cac81b82cdf5f58f8b89eb8 ChangeLog 1059
-MD5 44ac8aea4a26cede88aabb9fde9aafc6 Geography-Countries-1.4.ebuild 542
-RMD160 10f9deab415c6a9e17ba025a2496c6aed5a11b05 Geography-Countries-1.4.ebuild 542
-SHA256 0a91f22cb35f5401217d5abb275dd72a3ec42e2c5c01e70c2d12acebe559d7d0 Geography-Countries-1.4.ebuild 542
+MD5 3e4dea559123fd617f5186068dbc5d51 Geography-Countries-1.4.ebuild 548
+RMD160 81802d26acde7a6246ea51940cdae83f69099f6b Geography-Countries-1.4.ebuild 548
+SHA256 fac3ab522cde8ea5cfa790977e6c6e0de04ffaed09481cc5df145dfaa6a01cac Geography-Countries-1.4.ebuild 548
 MD5 50276bba0955436a110e1d4da1f80d14 files/digest-Geography-Countries-1.4 73
 RMD160 1918e079bbc90a3565eb009ec3ebf9dcd5774b95 files/digest-Geography-Countries-1.4 73
 SHA256 87e669f7ceb623565a251c7d9682e4c26b9c35110e1f21e856b7cb68df44520f files/digest-Geography-Countries-1.4 73
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
 RMD160 647980838c590f54441a053916ea629e53e551c0 metadata.xml 305
 SHA256 f05dbef15061919972882cab07057e102760a542beba17d131194091401cd7ca metadata.xml 305
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-
-iD8DBQFEIbZwAiZjviIA2XgRAv5zAJsG80rBivZm8AQRdVApfeNvNkt1DACgmZxR
-v759u0iakzlqnjWXLW1xwNc=
-=1RQu
------END PGP SIGNATURE-----
