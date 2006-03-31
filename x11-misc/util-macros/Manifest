@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b87a710ce149abea128f938dc6dfe952 ChangeLog 3341
 RMD160 e20002310a5cc4603adbed1dd46410cc84c1d6a6 ChangeLog 3341
 SHA256 05dd84782dedbff3eeadb83e751ebb046d554a51abfc7ed2db2b690b6ccd3ba5 ChangeLog 3341
@@ -13,3 +16,10 @@ SHA256 5101ab0d4cc8c7125eea733c44e86962769bd77acaf53b69223b9cadcdd29055 metadata
 MD5 89a0f3860e170897e99e93ca12d26abc util-macros-1.0.1.ebuild 535
 RMD160 5538ecd4076a64f7893063b3b2a5603a311dcb17 util-macros-1.0.1.ebuild 535
 SHA256 e9ef3cfe3f017f3030c77c40c180682bab2129bde0f75105d646346d3bc71557 util-macros-1.0.1.ebuild 535
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFELYJWAiZjviIA2XgRAqlMAKD0t7VfB4XATsg2oyghNIlO3RK8qgCcC6Zl
+v+I+Bwte66as+1vhh7mMlUA=
+=oghJ
+-----END PGP SIGNATURE-----
