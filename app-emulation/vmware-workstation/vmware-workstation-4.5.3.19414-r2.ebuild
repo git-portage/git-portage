@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-4.5.3.19414-r1.ebuild,v 1.1 2006/03/20 19:37:54 wolf31o2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-4.5.3.19414-r2.ebuild,v 1.1 2006/03/31 00:23:33 wolf31o2 Exp $
 
 # Unlike many other binary packages the user doesn't need to agree to a licence
 # to download VMWare. The agreeing to a licence is part of the configure step
@@ -9,7 +9,7 @@
 inherit eutils
 
 S=${WORKDIR}/vmware-distrib
-ANY_ANY="vmware-any-any-update98"
+ANY_ANY="vmware-any-any-update99"
 NP="VMware-workstation-4.5.3-19414"
 DESCRIPTION="Emulate a complete PC on your PC without the usual performance overhead of most emulators"
 HOMEPAGE="http://www.vmware.com/products/desktop/ws_features.html"
@@ -70,6 +70,7 @@ src_unpack() {
 	# Patch to resolve problems with VMware finding its distributed libraries.
 	# Patch submitted to bug #59035 by Georgi Georgiev <chutz@gg3.net>
 	epatch ${FILESDIR}/${P}-librarypath.patch
+	epatch ${FILESDIR}/${PN}-5.5.1.19175-config3.patch
 	unpack ${ANY_ANY}.tar.gz
 	mv -f ${ANY_ANY}/*.tar ${S}/lib/modules/source/
 	cd ${S}/${ANY_ANY}
