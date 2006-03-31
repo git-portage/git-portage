@@ -46,9 +46,9 @@ SHA256 3226b59edce62cf2b9adaf85bb74eaec80889aa425a3c23ce393a8be6471bdaf gentoo-s
 MD5 7dd0d457a0501243a2628add9176ca7a gentoo-sources-2.6.15-r7.ebuild 1242
 RMD160 3c3baa716b8eab91c20005dcfa0beb4351f92aaa gentoo-sources-2.6.15-r7.ebuild 1242
 SHA256 687b65743717e2297a3807b1de626adec49fcbec2fb17af1ff9f4e716941d21a gentoo-sources-2.6.15-r7.ebuild 1242
-MD5 f8f4e8417ef356615d7c9b06971489a1 gentoo-sources-2.6.15-r8.ebuild 1245
-RMD160 4166453d41436e18087f665d704f906b87cc5682 gentoo-sources-2.6.15-r8.ebuild 1245
-SHA256 1fd357ee54931d26ce8049fac5aa2ed996c2577403a5557b800e04d48dbd7c97 gentoo-sources-2.6.15-r8.ebuild 1245
+MD5 49a683f04550fab3ea12aa63e8edd76e gentoo-sources-2.6.15-r8.ebuild 1241
+RMD160 706215bf9d6a3be94612e476296221c704e04493 gentoo-sources-2.6.15-r8.ebuild 1241
+SHA256 eaae52024ca31a9d82ea908472d1f0dda92c25df6c797d4dc60899e56f8bdb5f gentoo-sources-2.6.15-r8.ebuild 1241
 MD5 75f073525673f817df6dbf28f4975a89 gentoo-sources-2.6.16-r1.ebuild 1221
 RMD160 d0616d65d828beb096566e9690ec0af22c0c1411 gentoo-sources-2.6.16-r1.ebuild 1221
 SHA256 1109752ae5c1c627ef100604f3d5ec3d778e35c9a2a6f64edd6dd2a3a9504d5e gentoo-sources-2.6.16-r1.ebuild 1221
