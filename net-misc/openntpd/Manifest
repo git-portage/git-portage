@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 497ff1e1bca24d4727c20398f3aea3fb ChangeLog 3289
 RMD160 ae2afbc5e8c397797c7a8082c8e1078bf8e454d6 ChangeLog 3289
 SHA256 abd0054f40963b78fe472281da44bbfcd48b2ba4b8f5fe3fb50b5f0a7efd502b ChangeLog 3289
@@ -28,3 +31,10 @@ SHA256 daaa8e5b9174f5431b2ff87fbfe470fa4f50514716e436867cfc2e4e30622082 openntpd
 MD5 e2508e5e75aa351cd76c2023cf0f50cb openntpd-3.7_p1.ebuild 1248
 RMD160 4acd1cd9e0fbf00197ac0c14b1fa68d4fab38b73 openntpd-3.7_p1.ebuild 1248
 SHA256 74961206bbbfff1bbb6c0ec204fe98a3fc214c6cd6e6c5f93576d48a8938e6df openntpd-3.7_p1.ebuild 1248
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFELaOwAiZjviIA2XgRAo0NAKCQgNHmSZhxWQ/apkgV3pvCjBUlJgCePz48
+WI6aNw3mqOtD/h+0f3WkHPU=
+=Zoei
+-----END PGP SIGNATURE-----
