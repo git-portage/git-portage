@@ -22,6 +22,9 @@ SHA256 e431304d186fbdbd9ccea6562b0dd20656b619e82b6579745059e335bbb3751d files/di
 MD5 f0f916254c9b6da339d546adc7aa3a9d files/digest-mozilla-thunderbird-1.5-r2 584
 RMD160 cb4e254822c407f35ed98f8842bcf167515736e3 files/digest-mozilla-thunderbird-1.5-r2 584
 SHA256 bee30da8770ef38141b2338e69ab762cd8b1749a219156e4c794a062d8fedba2 files/digest-mozilla-thunderbird-1.5-r2 584
+MD5 5748e9c3b3cf0e8667d9177fba436388 files/digest-mozilla-thunderbird-1.5-r3 584
+RMD160 525130f7c3a06c3b0fef26cc581f9f654c3b80da files/digest-mozilla-thunderbird-1.5-r3 584
+SHA256 9f414b8ba38ca26a507f74a62c8991410cdf976e0074cfa38c4c2874203d8728 files/digest-mozilla-thunderbird-1.5-r3 584
 MD5 b92734c051b7734d459e23f7c4a01b63 files/firefox-1.1-uriloader-1.patch 13902
 RMD160 cb816967a91e0a60a238ad11736eec5ac5da3754 files/firefox-1.1-uriloader-1.patch 13902
 SHA256 ac9ef7ec790856d35609a051596579b0cc5a327542614ab420505a2669b388bb files/firefox-1.1-uriloader-1.patch 13902
@@ -88,6 +91,9 @@ SHA256 c422bf730c084c2fd2d91369122ea9c26503d9d6bd587ca1c37d2c33c7e2f63a mozilla-
 MD5 9475f31723c262f32ccf93510505fd22 mozilla-thunderbird-1.5-r2.ebuild 4886
 RMD160 f4bd37afa220af8d0858ffb1ef2ee18658849dfa mozilla-thunderbird-1.5-r2.ebuild 4886
 SHA256 c03d6ba2db8db02df900b0c21bea410d6f0c8618906189e929a43ec64435ed64 mozilla-thunderbird-1.5-r2.ebuild 4886
+MD5 e8d3c106cad03856d818f313f27a5db1 mozilla-thunderbird-1.5-r3.ebuild 5769
+RMD160 275308477dcad55edf0caa01b9bac8fce3153511 mozilla-thunderbird-1.5-r3.ebuild 5769
+SHA256 08af0f9a92f6a10c7834c2151f6248466e9998d082607b988e974545023b840e mozilla-thunderbird-1.5-r3.ebuild 5769
 MD5 51c5ba513cf3d2726c09d6981e922299 mozilla-thunderbird-1.5.ebuild 5760
 RMD160 f532d9a7838e3310b85ac19720b5979adaf181ab mozilla-thunderbird-1.5.ebuild 5760
 SHA256 65edb632fc9feb8c6fe6668564ccf1f18422f2e948da0f5c585d6c24cd8a59e9 mozilla-thunderbird-1.5.ebuild 5760
