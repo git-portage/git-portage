@@ -1,17 +1,21 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 32908d3f2a1323e2a83a3e23414c3cf9 ChangeLog 2140
+MD5 2d72bab350debc95d56d6ba2225d04c5 ChangeLog 2329
+RMD160 b83e3cadb1ab448daa115b96adbd56b134362a1f ChangeLog 2329
+SHA256 288ad1aab68f96b7755528bb72c8f5dcb797c72e3758d52d30b66030160fc8a1 ChangeLog 2329
 MD5 a8864951b56c2a4abc07e4cb8a4067f2 files/build-1.0_beta4.xml 6500
+RMD160 2e5fb0fad0b54a79d185c51867e79fb3c1f764f7 files/build-1.0_beta4.xml 6500
+SHA256 165fb65cca421f53a2b985c396c9f80de9445a1a22636e1513856de6d107c523 files/build-1.0_beta4.xml 6500
 MD5 c2b76bdb1d4fad1a042d5c415bec441b files/digest-picocontainer-1.0_beta4 79
+RMD160 3ac469b61aab75315cb5db85b8635a7d816a02ff files/digest-picocontainer-1.0_beta4 79
+SHA256 ab1efd4fdbcc2fa67e49de3d63b21bf66213f71a95a073bd9f9741f11d7771cc files/digest-picocontainer-1.0_beta4 79
 MD5 d71ffcf4b8b881d50047dfd8a5ce3908 files/digest-picocontainer-1.1 72
+RMD160 ba21dbb9c7c028e9546ba5e08a0bdc8afb48c6f1 files/digest-picocontainer-1.1 72
+SHA256 09088683e564e8f98e5f7b0edc4bf82ec23fccb354a4a07f3b8d51523a9c9072 files/digest-picocontainer-1.1 72
 MD5 bebc5edd0414aba81a45ce457cd9d4f3 metadata.xml 553
-MD5 2a89d0a6f04e313a4e7a070c8e528939 picocontainer-1.0_beta4.ebuild 1086
-MD5 5413203fe635dba35a72c3832acfa2f8 picocontainer-1.1.ebuild 1116
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDsgc6ndWRXhKOboURAtoHAJ9Eun95lLLkFBXR2rXJrbIJBggDMwCfWjRv
-w9Fh8Yfhro3ZwJM4aE1U2do=
-=Og4P
------END PGP SIGNATURE-----
+RMD160 f0f191b3f4073125272d86340a586e4cc37b0ea8 metadata.xml 553
+SHA256 11842e69211e4ca21cfb7ec13510ce4daf8b17ad73487680773af302371d54d4 metadata.xml 553
+MD5 a2bebf3e3e93acb1d180cf9b60910c00 picocontainer-1.0_beta4.ebuild 1091
+RMD160 c8116052f7796d48a1fa3c96a7847a7e64bffbc6 picocontainer-1.0_beta4.ebuild 1091
+SHA256 73d16d05aa6618bf1adfdc854d27b5650c5937e228abde01556145cf1e56ee83 picocontainer-1.0_beta4.ebuild 1091
+MD5 dd7ddfc890df9b3b8b2fe5e3de2720ed picocontainer-1.1.ebuild 1121
+RMD160 6fbe7cf775846516af6ada0044cdba3faf5b3b15 picocontainer-1.1.ebuild 1121
+SHA256 c35c9f764680265ad0a9a556c55410936440a2e16af5886755db72f3a0226148 picocontainer-1.1.ebuild 1121
