@@ -13,6 +13,6 @@ SHA256 1ac3509e75b2cc8bf394a0c7e068039cc0152de1feae40a64b401365c9db67b2 metadata
 MD5 ca467f8b96d74500f701a3571b02594b twisted-conch-0.5.0-r1.ebuild 415
 RMD160 bb11e6c29c8fbd4559306f34d0e2bfff73d5e594 twisted-conch-0.5.0-r1.ebuild 415
 SHA256 7311952b88f0447a8fe4c28d8e720ff415ab06db8fd220740b197bee6a03c754 twisted-conch-0.5.0-r1.ebuild 415
-MD5 d633ca12bf852ae6b3b943fb4b664804 twisted-conch-0.6.0.ebuild 429
-RMD160 f44904552805071197c26447dbebe40020e6fda1 twisted-conch-0.6.0.ebuild 429
-SHA256 3f1f3791bfa80cf6eca09d619110ca63dbe0c41c47fd8c037ff3bee90f7ce809 twisted-conch-0.6.0.ebuild 429
+MD5 abc53f4a56225980ce043632d9b33d15 twisted-conch-0.6.0.ebuild 435
+RMD160 0db98f75b2b86c531fcb8d2c8803c016b237ea68 twisted-conch-0.6.0.ebuild 435
+SHA256 08b87e69c28aac944ae19e4de211e0a0fb2a3392464e2c6643db9ac03a3a8ebf twisted-conch-0.6.0.ebuild 435
