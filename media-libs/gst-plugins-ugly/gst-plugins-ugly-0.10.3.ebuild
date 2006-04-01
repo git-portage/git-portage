@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gst-plugins-ugly/Attic/gst-plugins-ugly-0.10.1.ebuild,v 1.1 2006/01/14 07:13:39 compnerd Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/gst-plugins-ugly/Attic/gst-plugins-ugly-0.10.3.ebuild,v 1.1 2006/04/01 13:50:51 zaheerm Exp $
 
 # order is important, gnome2 after gst-plugins
 inherit gst-plugins-ugly gst-plugins10 gnome2 eutils flag-o-matic libtool
@@ -13,7 +13,8 @@ LICENSE="GPL-2"
 KEYWORDS="~x86 ~amd64"
 #IUSE="esd alsa oss"
 
-RDEPEND=">=media-libs/gst-plugins-base-0.10.0
+RDEPEND=">=media-libs/gst-plugins-base-0.10.3
+	 >=media-libs/gstreamer-0.10.3
 	 >=dev-libs/liboil-0.3.0
 	 >=dev-libs/glib-2.6.0"
 
@@ -25,6 +26,7 @@ DEPEND="${RDEPEND}
 #	alsa? ( >=media-plugins/gst-plugins-alsa-${PV} )
 #	esd? ( >=media-plugins/gst-plugins-esd-${PV} )"
 
+GST_PLUGINS_BUILD=""
 
 # overrides the eclass
 src_unpack() {
