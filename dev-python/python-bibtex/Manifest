@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 a05a550fe12b6af58e16a9c8a0d21ffb python-bibtex-1.2.1.ebuild 517
 MD5 856a38c490a6f88dd7e6b0cf173a3220 ChangeLog 912
-MD5 684b7118ace06f88d4bdca2407ddc818 metadata.xml 184
+RMD160 c30e128fad7016a29830f489ea6eb69b6a9701ed ChangeLog 912
+SHA256 9e6cace6d109bf56e6e6a2fcbe333bb81a3ffd607936c9753fdec705fb93fc60 ChangeLog 912
 MD5 c9ebfddac7d413cd7217fa4840aac1f7 files/digest-python-bibtex-1.2.1 70
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFC2SbtcsIHjyDViGQRAibMAJ9B0Ecz/fZQBgGzGVWBriJKOrEuNwCgngRF
-9OmF6L5YsN41FTK/yCey3fA=
-=+4f2
------END PGP SIGNATURE-----
+RMD160 2d201e776a5556209cb1f72bef7130e0f84b7810 files/digest-python-bibtex-1.2.1 70
+SHA256 95fefd48f0697b40471c858a1e013eb17e3a11c6a6bd77ed16a323043f4d922a files/digest-python-bibtex-1.2.1 70
+MD5 684b7118ace06f88d4bdca2407ddc818 metadata.xml 184
+RMD160 a1423683e034566b2d007bc01864cbf7718b427a metadata.xml 184
+SHA256 7c5e9cda62c9c245564828a0ca521f5b4c4d170b80b37f69ffa8c353be5f83d7 metadata.xml 184
+MD5 b57506b16f715588e06a9110773316be python-bibtex-1.2.1.ebuild 523
+RMD160 515390e55f434242352797a1ccccd356bed94181 python-bibtex-1.2.1.ebuild 523
+SHA256 dd5de57d7ab5c8fd3b52158f0b09b79c411e675e774d3c6d492f22f90083255d python-bibtex-1.2.1.ebuild 523
