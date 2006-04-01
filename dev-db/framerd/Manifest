@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 156c02f3993a975505add33ac96f1f5c ChangeLog 1256
-MD5 9be9a07c60b8feedc0deb14f6a10d67c framerd-2.4.3-r1.ebuild 1165
-MD5 7cad1d06a6bf5d4c6b5c5747087869af files/setup.fdx.patch 284
+RMD160 7f58fbc94f5c834036754e2629d61cb827f69548 ChangeLog 1256
+SHA256 ba0a97e7e0da6bf70d95d2e79518a1a401a86b81e1728f2f851ddbf5ea8b0dd6 ChangeLog 1256
 MD5 8832d735ce7ad2d16791a623ed0ef91f files/digest-framerd-2.4.3-r1 66
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.9.10 (GNU/Linux)
-
-iD8DBQFB4R9EI1lqEGTUzyQRApTaAJ9m2vzp0jkt0Z7qULQCV31+ZWaEOQCeMf5c
-uiOI9aFMy9zX48lPbqhH0Jo=
-=Yawc
------END PGP SIGNATURE-----
+RMD160 011dfab9350b29884897d2309d393f533760121f files/digest-framerd-2.4.3-r1 66
+SHA256 718b8f9439c53d4384f7d70b833e6e621e301bcb13e04d51e53b3ed316ff8c2d files/digest-framerd-2.4.3-r1 66
+MD5 7cad1d06a6bf5d4c6b5c5747087869af files/setup.fdx.patch 284
+RMD160 a773fc0254acd4517e0c11dd07dc96384007b2ef files/setup.fdx.patch 284
+SHA256 9d7098302c63bd0d2c009b619d1ce3d19c1b4cfbea7443863a8dcc78a784da4f files/setup.fdx.patch 284
+MD5 039ae553a8ff26b8d841133c333adbfa framerd-2.4.3-r1.ebuild 1171
+RMD160 b6115e7c8092b6b4bdb7b7463f7eefd65c2442c1 framerd-2.4.3-r1.ebuild 1171
+SHA256 a9d1d3d9c003edcebc30797a6b1da16a920ca97af7f8f508a8b2a38c9e33df74 framerd-2.4.3-r1.ebuild 1171
