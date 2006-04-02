@@ -1,4 +1,4 @@
-MD5 7880874107103b69e6f8201958d1993d ChangeLog 28520
+MD5 11a174e3221e5c624089f5f0e2e42b01 ChangeLog 28819
 MD5 f972c88baf3f90f8ef0953df6f328e28 files/digest-gnupg-1.4.2-r3 190
 MD5 bc6b26af83d8258c025e691ff0c1a711 files/digest-gnupg-1.4.2.1 192
 MD5 836c0ef2fdc33d5ad4accba36f1d3cb6 files/digest-gnupg-1.4.2.2 192
@@ -15,6 +15,6 @@ MD5 81f86906b16ceca11d4820e173203475 files/gnupg-1.4.2.2-selftest.patch 1374
 MD5 c1f0da84dd36a25d22814b3ee959f9c7 files/gnupg-1.4.2.2-test.patch 282
 MD5 7704ccabfdf30bc1a86ad81b8449abec gnupg-1.4.2-r3.ebuild 6872
 MD5 8dcabb00eac251f533b741a88fca98d8 gnupg-1.4.2.1.ebuild 6839
-MD5 117fa42a85032a0781b09cf17d847771 gnupg-1.4.2.2.ebuild 6941
+MD5 67a0156779b320d1d2a719a3f6406201 gnupg-1.4.2.2.ebuild 6942
 MD5 65365053a48356ac9aec8fffb222c32d gnupg-1.9.20-r1.ebuild 3256
 MD5 b507ee36c7487372de42cc9dab034370 metadata.xml 481
