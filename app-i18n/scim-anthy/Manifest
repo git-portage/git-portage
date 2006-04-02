@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5a9d58cc1d06eccec1c98a7aca0ed353 ChangeLog 4314
 RMD160 89168061ec85e7c86a8beaf5a12ab0bd7c992c4b ChangeLog 4314
 SHA256 85a5a697c195378305a79934f1a1b0e500ba87420291acaf8baceb0ceafb34ec ChangeLog 4314
@@ -28,3 +31,10 @@ SHA256 e14816ce5da77611482cf36be7e8ad1eca4d5b1d957e50c41c14e4e9b2db5bd5 scim-ant
 MD5 3731dcacfc356fdea6c8e8bf7703d427 scim-anthy-1.0.0.ebuild 1135
 RMD160 45d39ef64acf7f3bb2e784d968f76ea38b20e27d scim-anthy-1.0.0.ebuild 1135
 SHA256 c96be1080ac84bf4cb3424044c8c3597afd55f68d2163efa24a7217e5383e696 scim-anthy-1.0.0.ebuild 1135
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFELyZUAiZjviIA2XgRAtIMAJsFYoaDkJraPkhLMMja0uL5KhLoDgCcDtaw
+k+V1uk2WK4TOifTMTW0y4ms=
+=aLKU
+-----END PGP SIGNATURE-----
