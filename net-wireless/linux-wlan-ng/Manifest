@@ -10,6 +10,9 @@ SHA256 90fc23911923fdd5f4a1371f086058b9fc23707708a3aebeb306aa6f3c22234f files/di
 MD5 3414fdda8cf331136d23c69378f70a97 files/digest-linux-wlan-ng-0.2.3 72
 RMD160 adffdad2052e56609c23427d899ec1e4fca57e7d files/digest-linux-wlan-ng-0.2.3 72
 SHA256 8ddd342c5146c6a1e38db8c36707a7562dd114a6d246b935278cfeb97a405789 files/digest-linux-wlan-ng-0.2.3 72
+MD5 b0151277be475255f82139fc101eae7f files/digest-linux-wlan-ng-0.2.3-r1 262
+RMD160 6e6a482a8ebdaf4bd7f77040cd3f717c25180b53 files/digest-linux-wlan-ng-0.2.3-r1 262
+SHA256 1755efc1d6124109999f9dda7aa3b4240e849ceaf3116244ff149783f635df09 files/digest-linux-wlan-ng-0.2.3-r1 262
 MD5 e2ca4c6c0bc3d8daef9ea0f822b88dca files/linux-wlan-2.6.10-fix.diff 3670
 RMD160 a4b9147fd817c9e346f98db02ad583e8e05be139 files/linux-wlan-2.6.10-fix.diff 3670
 SHA256 a105eebe4085979a36707e25f12c8806282bd60aba4f75cd447db03e6bb27479 files/linux-wlan-2.6.10-fix.diff 3670
@@ -22,6 +25,9 @@ SHA256 e302ef236226f33ce34c6365f4d6672665b4f6c171f11624579a6cd4c4a65fec linux-wl
 MD5 fb8021f1e563a5f4dec736741e8449e0 linux-wlan-ng-0.2.1_pre23.ebuild 3831
 RMD160 554960985761e1743bbf7ae4f5836bf75b5bd1e6 linux-wlan-ng-0.2.1_pre23.ebuild 3831
 SHA256 e7cb6c6f9155b2e79f1a211e3ea2780cef8bb1b9f23eedbe62bdf2da31277d8e linux-wlan-ng-0.2.1_pre23.ebuild 3831
+MD5 533b519b82dfb7b871bedbfd49b3d7ba linux-wlan-ng-0.2.3-r1.ebuild 3995
+RMD160 9ce62460106f6fc6f6f90b46faa3221b6ab623d0 linux-wlan-ng-0.2.3-r1.ebuild 3995
+SHA256 59f75b488e33402c2a4b432055b691f8fbfa6742c48ca67c04b11d53ea9aea23 linux-wlan-ng-0.2.3-r1.ebuild 3995
 MD5 66c18a4ea3ece9f3121e444a516fd6ec linux-wlan-ng-0.2.3.ebuild 4483
 RMD160 80489543e0898f2424e936fa7a438dbedd2d012d linux-wlan-ng-0.2.3.ebuild 4483
 SHA256 8f231c655d8a81225e7d037e2bf4a68e45f7bc81ef1b51254805e6e63236db06 linux-wlan-ng-0.2.3.ebuild 4483
