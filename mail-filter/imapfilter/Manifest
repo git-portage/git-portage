@@ -13,6 +13,9 @@ SHA256 9f8cc98da3079a585132d656ae3d998c36e1010ba9ed645d70bfc2c91d7ad494 files/di
 MD5 407d86b4cab0c741694b5964a5bb03b1 files/digest-imapfilter-1.2.1 250
 RMD160 e504df8d010afea49793ea73c7ec5a6959aed2bd files/digest-imapfilter-1.2.1 250
 SHA256 4fc964b9497ad80e8724267c1eabbbc07ab27f3c65af47f06c2ed59357f67a20 files/digest-imapfilter-1.2.1 250
+MD5 407d86b4cab0c741694b5964a5bb03b1 files/digest-imapfilter-1.2.1-r1 250
+RMD160 e504df8d010afea49793ea73c7ec5a6959aed2bd files/digest-imapfilter-1.2.1-r1 250
+SHA256 4fc964b9497ad80e8724267c1eabbbc07ab27f3c65af47f06c2ed59357f67a20 files/digest-imapfilter-1.2.1-r1 250
 MD5 35e578391a3859a4ea8d568ab5227125 files/imapfilter-1.0.patch 405
 RMD160 0d4828cc370e752348c03632b4ec3d281c808b6d files/imapfilter-1.0.patch 405
 SHA256 5fa709d4444f08f72658ec5fe5c5382d9c078dece8517e598bfe5abd9123c53f files/imapfilter-1.0.patch 405
@@ -25,6 +28,9 @@ SHA256 59dfca6a44edf1ebc3b271b6c83fce13a9272dd0db0eb30a65b4d75c465dd459 imapfilt
 MD5 08c3156cf640219265fd9cd9199263e8 imapfilter-1.1.1.ebuild 804
 RMD160 0286b74e5a7bdb4abcf5f49a75a8996c444d60f2 imapfilter-1.1.1.ebuild 804
 SHA256 3a85389f56e041ebf7b790db36a506b84415717ed5800232b82017d6f7f7a7a0 imapfilter-1.1.1.ebuild 804
+MD5 55723cae1b49ace8087bc7198604f565 imapfilter-1.2.1-r1.ebuild 698
+RMD160 161a80f5466d407b58ead3e6aec65c2d9c111b27 imapfilter-1.2.1-r1.ebuild 698
+SHA256 63ee290c3cce441380c943652ff08acd5d0922c175d13d73490793311d754152 imapfilter-1.2.1-r1.ebuild 698
 MD5 37085e3f6b89d39a05c005ca3a4723e9 imapfilter-1.2.1.ebuild 783
 RMD160 6ce9d1bd2d9585ed25d08b6df04ed080c657b2c5 imapfilter-1.2.1.ebuild 783
 SHA256 2b08ec896af01ff391828cfdf2cfb048a75cf5489fd0f7ffa8381cef09192443 imapfilter-1.2.1.ebuild 783
