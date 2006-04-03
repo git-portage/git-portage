@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 92bd15113f67b9db84bce9787f746bff ChangeLog 11751
 RMD160 60c9d7607184fb83cac1bb8f54d251b423c1190b ChangeLog 11751
 SHA256 70a8c6eb0753bf7828cd005dcddaacc96c36b503c51ec8becd86e4dd5888ba83 ChangeLog 11751
@@ -139,3 +142,10 @@ SHA256 634bed09fc46df9611027f97c3e658c6a11ab237ddc2c774bf10aadeda7f7451 portage-
 MD5 27307f949c41b5571ddc63e15b94b928 portage-2.1_pre7-r4.ebuild 5771
 RMD160 43046fa6d1c9054da123e57b6aa2f710a9c212ba portage-2.1_pre7-r4.ebuild 5771
 SHA256 3600b853e5d1ac4b69b07092ccfb7a632d8622be4fc65d7f31b249209b9bc6e6 portage-2.1_pre7-r4.ebuild 5771
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEMMWW/ejvha5XGaMRAog4AKDwmTDyq2TtBRcbkr35jknXN6+C/wCgs/aJ
+y2+Xrr3Dzmds3/2mG0FxbRw=
+=Krhi
+-----END PGP SIGNATURE-----
