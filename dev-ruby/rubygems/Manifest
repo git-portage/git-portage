@@ -1,4 +1,4 @@
-MD5 b914efb6d66494bd72e8071f5e029d98 ChangeLog 4185
+MD5 42108cb232f646953c966bcd0842e294 ChangeLog 4298
 MD5 15ffbd574f0d1b8f0e79d060c92749b4 files/10rubygems 21
 MD5 fafe3ad43fd0c53f7f10ec7736a90c4f files/auto_gem.rb 159
 MD5 8bbad53ea0e9bb1a53892ef892176238 files/digest-rubygems-0.8.10 64
@@ -11,5 +11,5 @@ MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
 MD5 be4b9fbb36f41acbaccc1e403faaa500 rubygems-0.8.10.ebuild 902
 MD5 e3bf8c60b5fc929ac94931bc38182d79 rubygems-0.8.11-r3.ebuild 993
 MD5 680b7994ac51ad7e11f4be37cdd90680 rubygems-0.8.11-r4.ebuild 1338
-MD5 533eb29ff38d8f21941a2bdd419d3163 rubygems-0.8.11-r5.ebuild 1483
+MD5 9a59e8e2dfa4d6666ad17086e21e2855 rubygems-0.8.11-r5.ebuild 1486
 MD5 ed04a907d861cd1bc1ca9aa0835e355d rubygems-0.8.11.ebuild 899
