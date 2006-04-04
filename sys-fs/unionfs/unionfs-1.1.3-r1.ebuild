@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/unionfs/Attic/unionfs-1.0.13.ebuild,v 1.2 2005/08/17 17:59:42 malc Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/unionfs/Attic/unionfs-1.1.3-r1.ebuild,v 1.1 2006/04/04 08:41:09 satya Exp $
 
 inherit eutils linux-mod
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.fsl.cs.sunysb.edu/project-unionfs.html"
 SRC_URI="ftp://ftp.fsl.cs.sunysb.edu/pub/unionfs/${P}.tar.gz"
 LICENSE="GPL-2"
 KEYWORDS="~x86 ~amd64 ~ppc"
-IUSE="acl debug"
+IUSE="acl debug nfs"
 
 pkg_setup() {
 	linux-mod_pkg_setup
@@ -24,16 +24,18 @@ src_unpack() {
 
 	unpack ${A}
 	cd ${S}
-
-	epatch ${FILESDIR}/${P}-delbranch-fix.patch
-	epatch ${FILESDIR}/${P}-amd64.patch
+	epatch ${FILESDIR}/unionfs-1.1.3-15-kernel_mutex.patch
 
 	if ! use debug; then
 		echo "UNIONFS_DEBUG_CFLAG=" >> ${user_Makefile}
 		EXTRACFLAGS="${EXTRACFLAGS} -DUNIONFS_NDEBUG"
 	fi
 
-	use acl && EXTRACFLAGS="${EXTRACFLAGS} -DUNIONFS_XATTR" # -DFIST_SETXATTR_CONSTVOID"
+	if use acl; then
+		EXTRACFLAGS="${EXTRACFLAGS} -DUNIONFS_XATTR" # -DFIST_SETXATTR_CONSTVOID"
+	elif use nfs; then
+		EXTRACFLAGS="${EXTRACFLAGS} -DNFS_SECURITY_HOLE"
+	fi
 
 	echo "EXTRACFLAGS=${EXTRACFLAGS}" >> ${user_Makefile}
 }
