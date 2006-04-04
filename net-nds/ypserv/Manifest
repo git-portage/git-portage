@@ -1,4 +1,4 @@
-MD5 d74bfae7b6def247322b9da4ea93f27b ChangeLog 5037
+MD5 42970b3c1e4d67e921f100f1992389f2 ChangeLog 5133
 MD5 45967caf49de0b5bc203268a007e97fa files/digest-ypserv-2.13-r1 64
 MD5 d92cf218d3682ced6bbb86dd3d364406 files/digest-ypserv-2.18 64
 MD5 463b1e5d4033eaab18a651576d81300d files/digest-ypserv-2.19 238
@@ -10,5 +10,5 @@ MD5 3f3f1488115fa4837c7963811e876db7 files/ypserv 577
 MD5 e5bb4de1f10631c93c5920f87059229a files/ypserv.confd 95
 MD5 ab59365f7f92becce9ea574af606ca09 metadata.xml 270
 MD5 a40d6f15107e368dd1e44802576ba19b ypserv-2.13-r1.ebuild 1892
-MD5 49b9ef70d7b9dd2a16f7a21752ee8483 ypserv-2.18.ebuild 1878
+MD5 7098d733d0c875d9752b958a8d50b768 ypserv-2.18.ebuild 1876
 MD5 fc4974c9f3a99e49437e20a5a1e1624e ypserv-2.19.ebuild 1877
