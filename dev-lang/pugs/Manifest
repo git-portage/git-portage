@@ -1,16 +1,27 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 b84593cc9adbc9318412041ab57a725e ChangeLog 1348
+RMD160 fc7166730770c073feb3f9297db630eb29ecf29a ChangeLog 1348
+SHA256 5a78233bf6421b800794b91b4c10e8e47a4fbbb0467c2c4a1acec65e137779f9 ChangeLog 1348
 MD5 3c12fada69b2ab1f135b1771e1e62a6a files/digest-pugs-6.2.10 70
+RMD160 cd69c13d525df0cc9c109400e531481b8cb8b0a3 files/digest-pugs-6.2.10 70
+SHA256 3df0d890cae72dc791e17940b79d7a2e7951e90f576e7319f9a3c4c109273122 files/digest-pugs-6.2.10 70
+MD5 790017ca9ad99f0521489a6373d4f1a7 files/digest-pugs-6.2.11 256
+RMD160 45b8cf3c28259415dbdcdc866016c3828fb9de9c files/digest-pugs-6.2.11 256
+SHA256 ffb96958bfc4426d2d9a1cf590caeaf7bf8822468462dd92f9896f3955341422 files/digest-pugs-6.2.11 256
 MD5 a6449849fecfd8db5e4e089e1565a706 files/digest-pugs-6.2.9 69
+RMD160 d809a664523becbdbec827a56d776b0c971b4113 files/digest-pugs-6.2.9 69
+SHA256 3548c297e26a3d40ed595b36e04c31acc4dbeea83e28293641720312bd1866f6 files/digest-pugs-6.2.9 69
+MD5 e0c5ce063bc40a087d03554e160d1f07 files/pugs-6.2.11-build_dir.patch 689
+RMD160 e95cf5b18d7979b21c872fcd2357fb3071e029c4 files/pugs-6.2.11-build_dir.patch 689
+SHA256 6df2cfd8bdcfc16962db3282f3c188d44e3085e1624ee49d47a4f20ab7621d20 files/pugs-6.2.11-build_dir.patch 689
 MD5 e195d07dd8c771cb3816ab6cece1510e metadata.xml 464
+RMD160 157d37c4ed808db2ecbf529c96054cff7aff1207 metadata.xml 464
+SHA256 c1e0cc76f835f8b9d3fcb9ed9c36c7cbe4b14d369de0465cd0d0cdc1e78ce638 metadata.xml 464
 MD5 2b72713b3ba3074f5be260bbe25aa74b pugs-6.2.10.ebuild 1021
+RMD160 c1e5a70a268e7ad0a44ebbfd94cce07e5b381b05 pugs-6.2.10.ebuild 1021
+SHA256 da58eb50c71d0b0dcef8cad28cc85d4845ab219b33cf140a704ab5f8538b7284 pugs-6.2.10.ebuild 1021
+MD5 23ba28b8922bf822c7ab8ce4d56cf431 pugs-6.2.11.ebuild 1038
+RMD160 f577cb1d9ce499efddcaa1bd98c90ed885a2d811 pugs-6.2.11.ebuild 1038
+SHA256 2eceaf82e56d5c5d6836242aab7a95f12c7b77bb4835c4ebcd9bf8f6c99b56a1 pugs-6.2.11.ebuild 1038
 MD5 2786eef5c97a1981c9c5cfb61f4b94e4 pugs-6.2.9.ebuild 1019
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDlawEtG5z4I8BtQoRAi4JAJsFXYzt03aMi3Ok/GV9Fpk2mR+MggCaAv2n
-HnC5ee4ozfD0Mh/gaL2/otA=
-=t3Sj
------END PGP SIGNATURE-----
+RMD160 1501fee1aee1f00d483b91650135d17110ecf9ab pugs-6.2.9.ebuild 1019
+SHA256 2ff90a97059fab1f71e930802adcba1e42048a8d05985391b043e86be30ec540 pugs-6.2.9.ebuild 1019
