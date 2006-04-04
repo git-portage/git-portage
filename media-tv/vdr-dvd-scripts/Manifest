@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 116aec06ea9ecc35f576b79b842fb1ce ChangeLog 1430
 MD5 8fefc6f4e655ea287128a1a1b517d44f files/0.0.1/dvdchanger_readdvd.sh 128
 MD5 15cdf3e7ee2f3f9ad62dd8bbb98656a2 files/0.0.1/dvdchanger_readdvd_real.sh 553
@@ -6,3 +9,11 @@ MD5 b5106e564d41d38d51f8be79799a5d5e files/0.0.1/dvdchanger_writedvd_real.sh 704
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-vdr-dvd-scripts-0.0.1-r4 0
 MD5 88b0ef99877dcc60ca92f9e29d6233e2 metadata.xml 377
 MD5 8f51a50a05066d59918144ec56516571 vdr-dvd-scripts-0.0.1-r4.ebuild 587
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+Comment: no further Information
+
+iD8DBQFEMtVmdn07HTTCgIoRArrKAJ9OBipqbs6llODOPFj7X+gHWz62YwCcCEzt
+cux5DMq1hMnvr7+yQky+1Kw=
+=z7Aw
+-----END PGP SIGNATURE-----
