@@ -1,4 +1,4 @@
-MD5 2eb9a8157f7dcea694f263f83a46215e ChangeLog 4809
+MD5 4aa6c484e80b6c5fd464a1946b4efa02 ChangeLog 4911
 MD5 29b3f063e5feb8c259abc86d07f92f85 files/0.35/df.patch 1652
 MD5 47388261d70d4dc5210fd93021dc8479 files/0.35/shfs-0.35-clean-inode-clear.patch 496
 MD5 aa8bade7210ab4840af4a009378a96c3 files/0.35/shfs-0.35-gcc4.patch 1008
@@ -13,5 +13,5 @@ MD5 23d4ad14fd92a038647d1f21b7abac18 files/shfs-0.35-2.6.16-dentry.patch 763
 MD5 bdf9a4a620ff5bcd7828251c144ec02b files/shfs.mount 1346
 MD5 b66027267bc1b372e656d834984ad137 metadata.xml 316
 MD5 c3536676fb9853643bdb2482cbef8412 shfs-0.35-r1.ebuild 2861
-MD5 50ffa7728d68998141e1e65e60acad7a shfs-0.35-r2.ebuild 2753
+MD5 94023ef074491b25e8e8629a97ee7f9a shfs-0.35-r2.ebuild 2753
 MD5 840866a5c6831a9f7ab1b12460fb2927 shfs-0.35-r3.ebuild 2978
