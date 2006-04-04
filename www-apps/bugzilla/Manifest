@@ -1,5 +1,5 @@
-MD5 9527b591d1480f4b857924974ec220c6 ChangeLog 11646
-MD5 dafc7aff8b516a8304a70d1d2cb84d55 bugzilla-2.18.5.ebuild 1811
+MD5 6d67b6646207607a4f2f9aec9f075a4d ChangeLog 11754
+MD5 779574584967d8ebab9ea157e68100a5 bugzilla-2.18.5.ebuild 1813
 MD5 530d10028669b4a4fdaeb206af1ee153 bugzilla-2.20.1.ebuild 1874
 MD5 42151252d49e42c9839f80c80dff9138 files/2.18/apache.htaccess 94
 MD5 0be5a588dc7fdfc9e4898a855bd32361 files/2.18/bugzilla.cron.daily 115
