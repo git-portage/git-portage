@@ -1,17 +1,21 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 b5b146316ebd465c2a50aeb027d3444f dircproxy-1.0.5.ebuild 603
-MD5 e2c689795c2e7ac99e6c00329d834b52 dircproxy-1.1.0-r1.ebuild 718
 MD5 12a0503ba065c77aa56fcabc458c072c ChangeLog 2762
-MD5 44c39c6ad372a8e5a5e7ee3311f703a7 metadata.xml 160
-MD5 8735716fa2ac751e4b10e7f38cd1bd38 files/digest-dircproxy-1.0.5 67
-MD5 3305b6d2321a112b03180bef0a02b0d6 files/digest-dircproxy-1.1.0-r1 67
+RMD160 c9abe5a34d917ddf857163ca73a51b9cd5d7e3c1 ChangeLog 2762
+SHA256 e0906d7b98e7b82c575fac7b1fc65dee71c74258179e1f510440ff2ceaf60b08 ChangeLog 2762
+MD5 b5b146316ebd465c2a50aeb027d3444f dircproxy-1.0.5.ebuild 603
+RMD160 9696c6a3534a1bf40e302e12bd7a468b94168293 dircproxy-1.0.5.ebuild 603
+SHA256 09ba20e2f6254087937eb7d9f212f6f538a76b40f7db29ec2711e8f169c312ef dircproxy-1.0.5.ebuild 603
+MD5 bc234b09c2321648fca2b53d8931a5a4 dircproxy-1.1.0-r1.ebuild 725
+RMD160 adc3c6d2949f98d1444ff28df91b0c99327b2682 dircproxy-1.1.0-r1.ebuild 725
+SHA256 32cf2ab760d732c390101e7f908da1aae96abd14e519c6b3e6493902aa81a4e3 dircproxy-1.1.0-r1.ebuild 725
 MD5 d020302a46b1d425abe235ba16582a03 files/1.1.0-less-lag-on-attach.patch 1506
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFChl9W06ebR+OMO78RAr4lAKCWEhu+lFuKa9JmwnH6FVs151TMewCfYGSh
-Zxvy97NdrMdCoPdT8srLDBg=
-=HLN7
------END PGP SIGNATURE-----
+RMD160 db8833d195f6b3bfa9743c17aa834148f5b3ade4 files/1.1.0-less-lag-on-attach.patch 1506
+SHA256 44059aa7df5ced6bf3b1db959f16eefbfdce18b0a22fdb5ae22d216b2d4a210e files/1.1.0-less-lag-on-attach.patch 1506
+MD5 8735716fa2ac751e4b10e7f38cd1bd38 files/digest-dircproxy-1.0.5 67
+RMD160 5ba7f346f99030f4c410e674c5e0459f3a15cfcd files/digest-dircproxy-1.0.5 67
+SHA256 b7af6a98aeec9b68efd4473949640efb7c5adefe20e7825f030eed3854d531b0 files/digest-dircproxy-1.0.5 67
+MD5 3305b6d2321a112b03180bef0a02b0d6 files/digest-dircproxy-1.1.0-r1 67
+RMD160 9cce0ca3e5a2455d59b5aa196b5bfd77082dbfd2 files/digest-dircproxy-1.1.0-r1 67
+SHA256 23cfcfae1c276e13b32366ab100e833e388ce2f6056c6287f636b5559a63e7f1 files/digest-dircproxy-1.1.0-r1 67
+MD5 44c39c6ad372a8e5a5e7ee3311f703a7 metadata.xml 160
+RMD160 279429d1df694561fc2b163cb81c09387b9d940c metadata.xml 160
+SHA256 5e058419199e306612929b80a996e3d16c6b20de674a56bb60558d3d36524fe2 metadata.xml 160
