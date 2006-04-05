@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 11ffbde0cef23ea2e0eae095c899ae76 ChangeLog 5383
 RMD160 3a6822674543a56a125bf8c2df5f69cde6bbec49 ChangeLog 5383
 SHA256 ed3ad195cc8c87c25ca02da6b23888d7567cba52d90610e70564c6dacb2051ba ChangeLog 5383
@@ -22,3 +25,10 @@ SHA256 08553153140a8cd48399433ec9955fcee77c14a4ef2fb9556251b857c5afbb57 sgml-com
 MD5 428de3eabcf9d640bbadd9f09ff3d29b sgml-common-0.6.3-r5.ebuild 2065
 RMD160 77c3f2529880a7d2cd8f2a2b7e4a1289e8ef7a6b sgml-common-0.6.3-r5.ebuild 2065
 SHA256 8361a0b3b81fabba4dc593fb5d325bcb8976448fa3fb7e10e3ffc9a5eb5df812 sgml-common-0.6.3-r5.ebuild 2065
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFENBmZAiZjviIA2XgRAnUYAJ0ZvgV+EGNwTFulea20Wnx6pkZQ9QCgi7kR
+yI5spi1wpqqZItt/vimQyh4=
+=/FfC
+-----END PGP SIGNATURE-----
