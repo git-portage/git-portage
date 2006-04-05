@@ -40,6 +40,9 @@ SHA256 2c197e3f1e84193eb011212b604c4b9abc092cb00f8c56438ed418dbad58ed76 files/gh
 MD5 5b476654e84a9748e3d56d86f264b277 files/ghostscript-esp-7.07.1-64bit-cmyk.patch 1777
 RMD160 6b59d9b2583c8fbc00ad1267809b815f167c27e9 files/ghostscript-esp-7.07.1-64bit-cmyk.patch 1777
 SHA256 6261f97860549cfd27ed5c0c9a2967bf00a58076c38529828ce99e794ab083b1 files/ghostscript-esp-7.07.1-64bit-cmyk.patch 1777
+MD5 95e181c9c56fda2cbdd59a1dccd853d7 files/ghostscript-esp-8.15.1-bsd.patch 542
+RMD160 a86fe4eeaf5ac6a4ded26cb8188786df547db7bf files/ghostscript-esp-8.15.1-bsd.patch 542
+SHA256 e5d84f8ccd438398722ef9717e123431fa8c7ee5164dd6cce947cf913b41335d files/ghostscript-esp-8.15.1-bsd.patch 542
 MD5 64856e99a488d61dfa4af58e24fb24b9 files/ghostscript-esp-8.15.1-fPIC.patch 322
 RMD160 a38646a9529c8b9d52c9b7910880ec54f89886e4 files/ghostscript-esp-8.15.1-fPIC.patch 322
 SHA256 dae3f78af76da535c057276c6b9fbeb70688016b2fc42ac4d318e31d9442fc5a files/ghostscript-esp-8.15.1-fPIC.patch 322
@@ -118,9 +121,9 @@ SHA256 4ee53b22ffb749db27f4b667580b8720122dde8e3a75ab70816e37aa7847f015 ghostscr
 MD5 46ca5e0ed613d3812d9d64d3c44ed4b9 ghostscript-esp-7.07.1-r8.ebuild 5597
 RMD160 48c71eb0c46455dfc57cddd37bb3b09bc503e8b8 ghostscript-esp-7.07.1-r8.ebuild 5597
 SHA256 0ebb51a5e91a07e3e1a816a7634cd35650fa9f7d32cc723ed14e28ff02480449 ghostscript-esp-7.07.1-r8.ebuild 5597
-MD5 18334730662eada981a4c4f8681d49a1 ghostscript-esp-8.15.1-r1.ebuild 3999
-RMD160 e74ae9d47fde1137dd884aa1e695ad00db32b6eb ghostscript-esp-8.15.1-r1.ebuild 3999
-SHA256 6292ad7fdd770c082d28be9d0975f8131f9297e08140192199633d96965cf173 ghostscript-esp-8.15.1-r1.ebuild 3999
+MD5 bbe3d17a15493b48a94407c2d987bf6a ghostscript-esp-8.15.1-r1.ebuild 4034
+RMD160 f71cd958411d99a9f8de8ea00c3657f74dc99f3c ghostscript-esp-8.15.1-r1.ebuild 4034
+SHA256 c159f6ca6352e2e7c5a5a2381b58cbbf8770c89a15f3873096934890dbf881ae ghostscript-esp-8.15.1-r1.ebuild 4034
 MD5 d40fb7aaaa18d6c6dfc3e1450c8346c9 ghostscript-esp-8.15.1.ebuild 3845
 RMD160 b8e292d2f8327d17f7990e05b185f769a8072121 ghostscript-esp-8.15.1.ebuild 3845
 SHA256 672abca0f80a23e301bc5f88004ffddab35551acf235ea6ff9d6733095cebe97 ghostscript-esp-8.15.1.ebuild 3845
