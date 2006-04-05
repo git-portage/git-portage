@@ -49,6 +49,9 @@ SHA256 4908487e0304b1985864e4cb5c15c0ccc2f0c825fdbc6ecce1027862e3b1bb85 files/di
 MD5 633564f81fa06ea0faae8ee83fc3d089 files/digest-mm-sources-2.6.16_rc6-r2 729
 RMD160 3f3d6b3e906da62a66a1cda908516380ba964776 files/digest-mm-sources-2.6.16_rc6-r2 729
 SHA256 8d2c9de7dadb3dccd5dcdc6a2af8b33567869f2f1a3a629e35e175f6c69f3c0b files/digest-mm-sources-2.6.16_rc6-r2 729
+MD5 8a814fe1d275eeb0d1e2e44d1917c99e files/digest-mm-sources-2.6.17_rc1-r1 729
+RMD160 36f7694b0598427cf1eafcb1db9897c6114f9b5a files/digest-mm-sources-2.6.17_rc1-r1 729
+SHA256 7fca29e714c90ecd36bcda889e50f3e7f794187e6e2a8a7e71bf9cf04f1475ce files/digest-mm-sources-2.6.17_rc1-r1 729
 MD5 5e95fced23ea7c26d39274bc200dabd5 metadata.xml 351
 RMD160 d7e7d723e749496ac98b70798afa612ba58753c6 metadata.xml 351
 SHA256 80f85f63243b3467e6b9a42cf3375e05ba17936b488aaf7b9505c3eead7bd3b6 metadata.xml 351
@@ -100,3 +103,6 @@ SHA256 f7e7a5cd74de169a6e80408353d1068626e09ab65a901af34f2400d399880174 mm-sourc
 MD5 df183451d83bd8bb753f357363c4d3b4 mm-sources-2.6.16_rc6-r2.ebuild 1010
 RMD160 78fbc63c284089483d21203aeacf73117fbabc95 mm-sources-2.6.16_rc6-r2.ebuild 1010
 SHA256 18c1b4ddb1d1ca99dcf16f83f2d296f5962665a452d208465ea2342276d45efb mm-sources-2.6.16_rc6-r2.ebuild 1010
+MD5 10dca1200c22d5fcd87a6e626852cd59 mm-sources-2.6.17_rc1-r1.ebuild 1006
+RMD160 125741770ed43536c9143839dad69596923d95af mm-sources-2.6.17_rc1-r1.ebuild 1006
+SHA256 269f998d5ad8824fa46f69d9b80afcd2d7d2702da8330d113d9f35a6008562a3 mm-sources-2.6.17_rc1-r1.ebuild 1006
