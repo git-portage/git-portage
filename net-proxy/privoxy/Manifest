@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e8c85b23b51865f68b27a3cba585f9ee ChangeLog 6151
 MD5 56d88e9a6970c67adde3386b83dcb2ae files/digest-privoxy-3.0.3-r3 77
 MD5 56d88e9a6970c67adde3386b83dcb2ae files/digest-privoxy-3.0.3-r5 77
@@ -8,3 +11,10 @@ MD5 2a366b72a6ff8d6d01cf0bef2ac71f0a files/privoxy.rc7 579
 MD5 a31f52e5785898edac47ca00310413e2 metadata.xml 291
 MD5 116b629d35a9c45ff430fbbda3f46b51 privoxy-3.0.3-r3.ebuild 2355
 MD5 acafb080d6a0f584ed4f113dff6c29e4 privoxy-3.0.3-r5.ebuild 2419
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFENSY3jG8pv1lIUX4RAnh5AJ9GoTPEWZy+CPDMp1cbQ1vZ/6h6NACfaMyN
+Nlze/r9Fdye806Dc58/qtCk=
+=IoR7
+-----END PGP SIGNATURE-----
