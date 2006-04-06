@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bcc50dc4a759841ac82dc2cacc809fa1 ChangeLog 430
 RMD160 897a417f47f1d482743b9130c4cf9ccd5e5c4521 ChangeLog 430
 SHA256 d77a48f796f59f58c472e3cc7a263a9523ca2ba272e9e2904d5a853c816b3499 ChangeLog 430
@@ -13,3 +16,10 @@ SHA256 baeefbe3daa237d133d1ffde92559fb1de5067f56ef4c59661daf534108e7435 metadata
 MD5 f3ffa31d6d25761a0b0cc2cf9304897b stumpwm-cvs-0.ebuild 1890
 RMD160 671f4680c395b795753f41d4fae2c0888ce4133c stumpwm-cvs-0.ebuild 1890
 SHA256 2f4f883ebff7b4ceb1fb3ba6d7ffc9d6cbb3b11228cf5ebca5362cbb26a96ca6 stumpwm-cvs-0.ebuild 1890
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFENZLaI1lqEGTUzyQRAhz+AJwKd1Sabf/Mp0eREM29jyYIqDYeIACdF4g/
+b+Q+cx8kqYGvthvA55v6/Hc=
+=ljam
+-----END PGP SIGNATURE-----
