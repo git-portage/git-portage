@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 2049d670ae067fa7548fbe63ac96987f ChangeLog 1781
 MD5 232ce6bbb6cc38936f56979269e5bd7b files/digest-gxmms-0.1.0 63
 MD5 c2f098f9e51f7348d813e4fb383ce463 files/digest-gxmms-0.1.1 63
@@ -8,3 +11,10 @@ MD5 38b692f35c23ef2869903be0ab7fb9dd gxmms-0.1.1.ebuild 533
 MD5 f83a69b0f7f5984ad25775b013c68367 gxmms-0.2.1.ebuild 540
 MD5 f8a7feade7888bcb2b8ebbdb39673ba7 gxmms-0.3.0.ebuild 695
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFENmQWKRy60XGEcJIRAnh5AKCEf++gd+78IN1Ry3A6py80XnSzbQCfYwvE
+brh/zWxBLBk25Kg5PKgSRIg=
+=eTIB
+-----END PGP SIGNATURE-----
