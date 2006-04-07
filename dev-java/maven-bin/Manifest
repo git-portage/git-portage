@@ -1,4 +1,4 @@
-MD5 20c7cb4063fe9429217a8ead2eab29c9 ChangeLog 4410
+MD5 3820040b8f2d51ec4bad60d12755ef46 ChangeLog 4522
 MD5 b62aef084315e664ba8ce901882c4087 files/25maven 61
 MD5 a122c6cbe18f3260971b5a9237ce581a files/digest-maven-bin-1.0.2 64
 MD5 fc48ae8abd9687043ff4f42b956fec9c files/digest-maven-bin-1.0_rc3 66
@@ -6,6 +6,6 @@ MD5 68806e9eabf8247e7025cf825bd7c4a6 files/digest-maven-bin-2.0.2 69
 MD5 ab1d62eede92eae029e1f5a25a40fdbe files/maven 5108
 MD5 74a13098bf9c5a96e423bb88a8c7927c files/maven-bin-1.0-script.patch 2110
 MD5 abe862c7b29f46f35c1c3dbd7e933de8 maven-bin-1.0.2.ebuild 951
-MD5 0fd9270c9e7a5650cb4d16daef5d6ef4 maven-bin-1.0_rc3.ebuild 760
-MD5 7e97bd4ee397cba8163782dc3107cd39 maven-bin-2.0.2.ebuild 921
+MD5 22fe5d86568f1f49027245e1c7314007 maven-bin-1.0_rc3.ebuild 756
+MD5 45cb3504cb2718812e3027b4112f711c maven-bin-2.0.2.ebuild 920
 MD5 8eec08a2cf3441c55736840e21a71c5a metadata.xml 534
