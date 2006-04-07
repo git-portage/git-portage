@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 3820040b8f2d51ec4bad60d12755ef46 ChangeLog 4522
 MD5 b62aef084315e664ba8ce901882c4087 files/25maven 61
 MD5 a122c6cbe18f3260971b5a9237ce581a files/digest-maven-bin-1.0.2 64
@@ -9,3 +12,10 @@ MD5 abe862c7b29f46f35c1c3dbd7e933de8 maven-bin-1.0.2.ebuild 951
 MD5 22fe5d86568f1f49027245e1c7314007 maven-bin-1.0_rc3.ebuild 756
 MD5 45cb3504cb2718812e3027b4112f711c maven-bin-2.0.2.ebuild 920
 MD5 8eec08a2cf3441c55736840e21a71c5a metadata.xml 534
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD8DBQFENtg5/NoSW7FuNV8RAjZ+AJ9ya6oznGZDCyAjJmtvyBt1aDcNGQCfXetC
+qxaM+GRVcqVkXAXg+dRxxN8=
+=rRDA
+-----END PGP SIGNATURE-----
