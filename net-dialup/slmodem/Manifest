@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX slmodem-2.9.11.init 2182 RMD160 bbacb69c48be43feff80eb0e6936ab293d9f66d9 SHA256 af9974afbcede01304f2367e9163a59db2ecca0e0fca7406e72f402968829e51
 MD5 67168d0e7a1be3e5041ec3cb8dabb50d files/slmodem-2.9.11.init 2182
 RMD160 bbacb69c48be43feff80eb0e6936ab293d9f66d9 files/slmodem-2.9.11.init 2182
@@ -69,3 +72,10 @@ size 140 files/digest-slmodem-2.9.11_pre20051101 140
 RMD160 3f3230049844aaf3a09ca309e5c02dfeb2afe0f1 files/digest-slmodem-2.9.11_pre20051101 140
 SHA256 ea8bd2be57d7528880a238d18be6ab8c7413b2b0c16d9236a44d59e9d2bce949 files/digest-slmodem-2.9.11_pre20051101 140
 MD5 66a7f4e6682670216c1497606c9c600b files/digest-slmodem-2.9.11_pre20051101 140
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEN+EHNJowsmZ/PzARAppgAJ9ebONcB+SkQKxASjDVy34FFouk7wCdEQEt
+MoHSVwLsDUNWqkL0xDUpNCc=
+=i0yK
+-----END PGP SIGNATURE-----
