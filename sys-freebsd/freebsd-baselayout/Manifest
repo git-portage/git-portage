@@ -1,25 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 d0988ff08f5b70763bb856e6df38ff2b ChangeLog 3854
 RMD160 7f604ea06ca63cf0f3923d5413fb0a445c705bbf ChangeLog 3854
 SHA256 20ed10d9af828d27bca24e49be4c3bcb144b328f6a384f312b3cf14a03fbd292 ChangeLog 3854
-MD5 e976bdc5ab7291838293ac9765bb3aaa files/digest-freebsd-baselayout-20060401 560
-RMD160 5e8df4ae6ac94bd3569a5c949419cbd3ff8c21ab files/digest-freebsd-baselayout-20060401 560
-SHA256 986d1edf26c70067016d1b46851130e3c24d7d3279635a6ec8654560730d5460 files/digest-freebsd-baselayout-20060401 560
+MD5 e976bdc5ab7291838293ac9765bb3aaa files/digest-freebsd-baselayout-20060401-r1 560
+RMD160 5e8df4ae6ac94bd3569a5c949419cbd3ff8c21ab files/digest-freebsd-baselayout-20060401-r1 560
+SHA256 986d1edf26c70067016d1b46851130e3c24d7d3279635a6ec8654560730d5460 files/digest-freebsd-baselayout-20060401-r1 560
+MD5 3982112fc4bf2d6f7adabbc28035fad3 files/dummy.initd 186
+RMD160 1802974f22719d82ec99911a3bd669412719a171 files/dummy.initd 186
+SHA256 1fe737503cd68c7a77aec997567e30aa5ff01adfb92f028ad57a5c4aab0afbc0 files/dummy.initd 186
 MD5 059ff3014205750225ae743b6821c0bd files/profile 2053
 RMD160 254d1aa5a81e2bfa7cb5d0b2f6f53d544195be52 files/profile 2053
 SHA256 489703e9a80c9b9d66f3b4f922a191f238ad9111479b22d90bb6d0c8905a2383 files/profile 2053
-MD5 0f66939de53ac85058d4262214ca2981 freebsd-baselayout-20060401.ebuild 19882
-RMD160 4653d746233dad5a8744dc0ee1aaabf4c2ae2ca5 freebsd-baselayout-20060401.ebuild 19882
-SHA256 eb8acfe6260735bbe3743dc3202e14bc606a7c0fe21ff8850f5c7349a248cba0 freebsd-baselayout-20060401.ebuild 19882
+MD5 59aceb8c3c3118b140be2aa8090f0ebb freebsd-baselayout-20060401-r1.ebuild 20091
+RMD160 fffdd41a54d12b64c0ce3e4530db2289bbf26da2 freebsd-baselayout-20060401-r1.ebuild 20091
+SHA256 e0f7f2ce43f7c0765be8439d5973483b2db35377118991cdc1608ecf943b5ee6 freebsd-baselayout-20060401-r1.ebuild 20091
 MD5 2bd48a5ae413433cbb36110b219ce97c metadata.xml 156
 RMD160 60b5820a08275f307e5bd936d78f5afd1f141086 metadata.xml 156
 SHA256 30ab515d6ac492d3d6c36ac3c675511742c2149e56a6b3228c8d22ab8edb3ff7 metadata.xml 156
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-
-iD8DBQFEMEcSAiZjviIA2XgRApIRAJ9hxQHUfieLVuIpn8OZh5YDx2PKEACgrDvE
-bc3COaHULGdkLh9i49bVtFo=
-=jWlM
------END PGP SIGNATURE-----
