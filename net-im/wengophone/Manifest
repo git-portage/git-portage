@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX debian.patch 9949 RMD160 1b12f92952b93eac26b0ef42d67e7fe781cb1500 SHA1 a2a65efb0d1ae51cb19f48a02326fa456eb7536f SHA256 433f9743203c9ec362d478281314685be828769a6ecb19db82fceaa28455f3e5
 MD5 d47f2ef8211845512e935a5c740e3b04 files/debian.patch 9949
 RMD160 1b12f92952b93eac26b0ef42d67e7fe781cb1500 files/debian.patch 9949
@@ -19,3 +22,10 @@ size 286 files/digest-wengophone-1.0_pre20060408 286
 RMD160 532214a55b8719365dec61a015741d80c6d96ed8 files/digest-wengophone-1.0_pre20060408 286
 SHA256 450eb0fc7add7dab07e423c3a9887fa7bbd2e5ae9d875716b4502485dd2d1ba9 files/digest-wengophone-1.0_pre20060408 286
 MD5 68c8b5230e8051bc2e17073abb579364 files/digest-wengophone-1.0_pre20060408 286
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEOD03NJowsmZ/PzARApV+AJ9uCmMiP0y1E8hMo5493q1QsTg+jQCghLLs
+M+WYgIO6SttzodPRrZaaxuc=
+=WQf/
+-----END PGP SIGNATURE-----
