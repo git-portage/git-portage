@@ -4,6 +4,15 @@ SHA256 4044a96e9ff76077637a161cf3083cb62ca0826c8e2124672edc44a59b750ee1 ChangeLo
 MD5 2dd6d662aaead3a85a057f8ef75c29e4 files/digest-mbtpdfasm-1.0.26 250
 RMD160 a11171ad56efe728c0d9ee1ba68d5488a601c722 files/digest-mbtpdfasm-1.0.26 250
 SHA256 350ccef86a78a994225f1cf7b212ac30ed7e32b14010a2cfbf90cc0a9c77cc44 files/digest-mbtpdfasm-1.0.26 250
+MD5 2dd6d662aaead3a85a057f8ef75c29e4 files/digest-mbtpdfasm-1.0.26-r1 250
+RMD160 a11171ad56efe728c0d9ee1ba68d5488a601c722 files/digest-mbtpdfasm-1.0.26-r1 250
+SHA256 350ccef86a78a994225f1cf7b212ac30ed7e32b14010a2cfbf90cc0a9c77cc44 files/digest-mbtpdfasm-1.0.26-r1 250
+MD5 9e1505082f60b5ba3f581ceb96adb3a4 files/mbtpdfasm-1.0.26-gcc4.patch 1047
+RMD160 d0955d9eeb79fa69f88a2537502a986acf701a70 files/mbtpdfasm-1.0.26-gcc4.patch 1047
+SHA256 3fe7a1107edfc9b6994bda21eaee8350232247e6570f8dfa3ae4860683d03664 files/mbtpdfasm-1.0.26-gcc4.patch 1047
+MD5 d92f827ad9de6593c2a1c32a8ba00db4 mbtpdfasm-1.0.26-r1.ebuild 1357
+RMD160 8f35501f94dfe3118b4bc24dbdfe8f8d0c11d784 mbtpdfasm-1.0.26-r1.ebuild 1357
+SHA256 9e6d4b3567a5b07e431ad98ffd9eb928b9b16712d63db5a1eac908e2e01ffca2 mbtpdfasm-1.0.26-r1.ebuild 1357
 MD5 b186a7e3a318aa52ffa1e061b664b8f7 mbtpdfasm-1.0.26.ebuild 1319
 RMD160 e318f50f186e143a140501dae8816b2e482c8264 mbtpdfasm-1.0.26.ebuild 1319
 SHA256 b2706273643e6b8f8dc5be242441f7562b6cbce21ae70e1ca76ee77811487501 mbtpdfasm-1.0.26.ebuild 1319
