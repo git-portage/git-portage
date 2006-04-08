@@ -34,9 +34,9 @@ SHA256 77276ca93fc66ff6471c84b001e5d4a6973abbb74ea059ff6c93792ca4e50cf5 gst-plug
 MD5 bb30310a69d1cbe79a513ff26f005cb5 gst-plugins-base-0.10.3.ebuild 1875
 RMD160 4ca89361c7505caf234adc8da17b960c448cdcaf gst-plugins-base-0.10.3.ebuild 1875
 SHA256 e0b586ae513eb6249f2db906b9acff3b669a114934ae50178eecdf623c98c63e gst-plugins-base-0.10.3.ebuild 1875
-MD5 d368d083b6e6d86f0a1bbe5d341792a0 gst-plugins-base-0.10.4-r1.ebuild 1543
-RMD160 e88f84d47a46c81a303a7c41a6e6bc5854a7b443 gst-plugins-base-0.10.4-r1.ebuild 1543
-SHA256 b27358d2f59473e77c3698ce0bcccd846632f28bb13376e007b9c8138abcc614 gst-plugins-base-0.10.4-r1.ebuild 1543
+MD5 1c06ff696cb6b2f826108380c8d8ff68 gst-plugins-base-0.10.4-r1.ebuild 1548
+RMD160 d7a7693846edea98e9b10f90b91094d49a24fa53 gst-plugins-base-0.10.4-r1.ebuild 1548
+SHA256 7b3de24b28c87ac9e0b652ee2d0de0db4bfc96023115ad0ffbc618a4c9c58272 gst-plugins-base-0.10.4-r1.ebuild 1548
 MD5 89f826b2f24182fc9fa4539c21c9924d gst-plugins-base-0.10.4.ebuild 1882
 RMD160 3fb4072ce24f3776206ea5396b6abc4b58d7eef1 gst-plugins-base-0.10.4.ebuild 1882
 SHA256 d83aa71ba0194a2cbe57ca2b9d12bc6da7ad31063b5292535e393bc3c8609dd2 gst-plugins-base-0.10.4.ebuild 1882
