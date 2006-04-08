@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b373ac38ee2a771aae832faf0f370bc9 ChangeLog 939
 RMD160 a9ebb233f1ef5c771ef61db57cacc6e3ebee5337 ChangeLog 939
 SHA256 218d032cfb3accd963d667f4b8454e3af5cea065815786c19bb8092109ee9cc9 ChangeLog 939
@@ -16,3 +19,10 @@ SHA256 e1f07c0c87b5b6f9a9437a644008ba847e2d2aafbc51b0d69451ee5e0f498cda mplus-ou
 MD5 fc713beb33ede14807115807da203391 mplus-outline-fonts-0_pre011.ebuild 984
 RMD160 622d26829ab6fd1e4a5f1817bf53e33cfa0ce35c mplus-outline-fonts-0_pre011.ebuild 984
 SHA256 405e817f4ff374923da0762b83bc5ab82342494f459cd7c0d289fb8d515fa911 mplus-outline-fonts-0_pre011.ebuild 984
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEN0x02+ySkm8kpY0RAqT7AJkBVHTJq4JJeAp1Q1v4K2DJOoGN+wCgo5r0
+iTGjynEwXN2aRdo0YFybh+A=
+=frBF
+-----END PGP SIGNATURE-----
