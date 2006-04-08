@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 081be29bdea79655a5a93c11f70ed412 ChangeLog 5430
 RMD160 4716551a48c20ffc0bc35cfdd55d62a062e42a49 ChangeLog 5430
 SHA256 7057e6a3e13771a838af0096796115e9fe98b526dea65e75099d1a47899fe179 ChangeLog 5430
@@ -13,3 +16,10 @@ SHA256 e0b9f5ff698d0d9b9de823c05edda4b48f884feb56bbc2a34dd8b6c97e5ed47c metadata
 MD5 00ff8f047691fc98b066691f7db2b869 mysql-administrator-1.1.6.ebuild 1523
 RMD160 83fa30c0f26d1ac7e1647c9d6bf0ed4e83d04edd mysql-administrator-1.1.6.ebuild 1523
 SHA256 a9f7c4ef64127cb62dc6f9ee4e7a17dcf9f35972f6283fed830a863347e6ce5f mysql-administrator-1.1.6.ebuild 1523
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEOElJI1lqEGTUzyQRAhbjAKCe3xJn3tuPbnJp8D/XT3SZasDQVACg3CyJ
+3DMsuXl1HJfbhXtcYl4XxcY=
+=nbg5
+-----END PGP SIGNATURE-----
