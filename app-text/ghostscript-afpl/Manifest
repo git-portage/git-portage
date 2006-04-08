@@ -40,9 +40,9 @@ SHA256 376c27aaa2765a27def1eb50c66e906ef3854c2b4ec748bb4a779c30886934a8 ghostscr
 MD5 e08f4af462003ece2bd9b585683ddfda ghostscript-afpl-8.53-r3.ebuild 4424
 RMD160 bdc146df6c827780f0de1232e78901e9f9f978a5 ghostscript-afpl-8.53-r3.ebuild 4424
 SHA256 9d95b9e49fdde8277635caa9a3a5873761b31e8c682fff3e0a8266f0da648369 ghostscript-afpl-8.53-r3.ebuild 4424
-MD5 c8c2b7d3a954f673470742c7118a9e06 ghostscript-afpl-8.53-r4.ebuild 4554
-RMD160 99f1c86a464766863396524c2ad128572d1ea25d ghostscript-afpl-8.53-r4.ebuild 4554
-SHA256 88a339930ed1cc07b697a6f261a82db9795b5ded1fce19927dfe0cde517258a9 ghostscript-afpl-8.53-r4.ebuild 4554
+MD5 45f2f2b0c2b6f4d19b2071d7b9eecb59 ghostscript-afpl-8.53-r4.ebuild 4553
+RMD160 e0f2672d2c8b53b84de39fc8f89c35a0fc08ea42 ghostscript-afpl-8.53-r4.ebuild 4553
+SHA256 d6af24313be9bd135c04483f079f7bd4ff00088ee4f5c1216cf67db4efda21bb ghostscript-afpl-8.53-r4.ebuild 4553
 MD5 5c242c8908b9c38553a655b25e2aa384 ghostscript-afpl-8.53-r5.ebuild 4638
 RMD160 8d96c8e52d43ad5bb44317d671b2c93ce6505dc5 ghostscript-afpl-8.53-r5.ebuild 4638
 SHA256 4edb5c1a6a3e1bd78cbab85a3dfa3f8c971ec86d15b54a114dd89259816722ee ghostscript-afpl-8.53-r5.ebuild 4638
