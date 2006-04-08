@@ -1,4 +1,4 @@
-MD5 177b8156b308f1fc1b8c2d5018468191 ChangeLog 5566
+MD5 c79009f3b93609171e312d42dd25bfe8 ChangeLog 5787
 MD5 bf208b3fef7857814d19fd17e38cbd66 files/digest-mpeg4ip-1.1 64
 MD5 f66eabf6e140aef8962a75cf06d15df0 files/digest-mpeg4ip-1.4.1 66
 MD5 f66eabf6e140aef8962a75cf06d15df0 files/digest-mpeg4ip-1.4.1-r1 66
@@ -8,5 +8,5 @@ MD5 22a76c68f55b131dfc602a61ededb699 files/mpeg4ip-1.4.1-disable-faac-test.patch
 MD5 75ef8fbc1d49d5a13a8f6ece3b8fff78 files/mpeg4ip-1.4.1-gcc41.patch 5332
 MD5 1b1b7046bccf0f835f8e3c5b68063d8e metadata.xml 255
 MD5 cfeb9a1214e667f72da42c40baf9fa32 mpeg4ip-1.1.ebuild 1789
-MD5 d777464538c8fbfbf1604e57fc49e759 mpeg4ip-1.4.1-r1.ebuild 3415
-MD5 1a37eb2aa7e8ccbf000a0a9ba0595992 mpeg4ip-1.4.1.ebuild 3288
+MD5 ac5ee1c7dec7c93da1ea83ecc30adcb1 mpeg4ip-1.4.1-r1.ebuild 3419
+MD5 9deb58efa348a00084de6bc21e7fbd80 mpeg4ip-1.4.1.ebuild 3289
