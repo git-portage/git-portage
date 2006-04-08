@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 EBUILD misdnuser-0.1_pre20060203.ebuild 1152 RMD160 9225fb80524ce8c4d06d58aef065f6b96df62f21 SHA256 9490f3f2979d3d81ce0de2d537d323217624984703eef8c98d91a4a72e24c170
 MD5 5a6c06eb84b570e50d9ff3525f8e7ad4 misdnuser-0.1_pre20060203.ebuild 1152
 RMD160 9225fb80524ce8c4d06d58aef065f6b96df62f21 misdnuser-0.1_pre20060203.ebuild 1152
@@ -18,3 +21,10 @@ size 1 files/digest-misdnuser-0.1_pre20060307 1
 RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-misdnuser-0.1_pre20060307 1
 SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-misdnuser-0.1_pre20060307 1
 MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-misdnuser-0.1_pre20060307 1
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEN/OsNJowsmZ/PzARAjdzAJ9xzJM3AIh8t4aqSV2+VgWAIrhBCACfTEnO
+I94085HCX0Lu252NzcsQdDo=
+=9dX2
+-----END PGP SIGNATURE-----

@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 DIST chan_misdn-0.3.0.tar.gz 77065 RMD160 d49b64b3f6c8b58a2d564c8838ac4727088a09f9 SHA1 62e6bba98df55b57a392db42322cf69c77ebfa21 SHA256 ad754695893ccb1a9dc9f260b168c871637b2f6e1371d6d92851ce4c24c9b112
 EBUILD asterisk-chan_misdn-0.3.0.ebuild 847 RMD160 53ce7b605de871fe69f2898363af3604d881bf6c SHA1 620e976fb9a95bb5c6f9245d6f40352a9a41999c SHA256 b6ec2f303db3d96ac01fbddb018cc023ff2321905e779cd245f9307809f0c120
 MD5 46ae68cd41558fe6faa96f18469bc631 asterisk-chan_misdn-0.3.0.ebuild 847
@@ -15,3 +18,10 @@ size 247 files/digest-asterisk-chan_misdn-0.3.0 247
 RMD160 4ac2faed0a3765ef71bd8624ab571c1936fd19f6 files/digest-asterisk-chan_misdn-0.3.0 247
 SHA256 353ca5d581d828ee4f4cac069668ccde4fa56c851c0228f7e019195940b4610d files/digest-asterisk-chan_misdn-0.3.0 247
 MD5 b06e19203b1a1419a83ada7d21ea6e96 files/digest-asterisk-chan_misdn-0.3.0 247
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEN/QeNJowsmZ/PzARAvSZAJ45P4BW+quVGLaG4Qw7JYvrS1ukGQCfe5zQ
+EwBbqBtntAHVxJgY0oIh2Mg=
+=TUT+
+-----END PGP SIGNATURE-----
