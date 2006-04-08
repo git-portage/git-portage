@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5fdae74a7ec578b5b4f62132e29fbe72 ChangeLog 13217
 MD5 8623111b91d1c7d14999e96d857384d9 files/digest-git-1.1.6 194
 MD5 84d4ff578de4ab1679708b38a45bc5a9 files/digest-git-1.2.4 194
@@ -8,3 +11,10 @@ MD5 d706b2feec7dc3f145eb36492d0e8190 git-1.1.6.ebuild 3145
 MD5 a2e605431541714572613ff01be60c8b git-1.2.4.ebuild 3208
 MD5 085ba9af7e4364fa103c97e2be1d14b1 git-1.2.6.ebuild 3201
 MD5 3526aab52e4319669bc1064d4d4ac83a metadata.xml 316
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEN5suViELBEf1JB0RAm0yAJ9Vagm3eynxgszG8X94B4zI2fJwSgCdHANs
+KTeTLoMrTvjpn+dmgQT1NMI=
+=stYM
+-----END PGP SIGNATURE-----
