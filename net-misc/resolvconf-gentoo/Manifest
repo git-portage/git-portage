@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5ffebbb626fe8c813c8aff6cecde4b83 ChangeLog 381
 RMD160 f99c8fc649064229f7a87b256a8b1c598acdba2c ChangeLog 381
 SHA256 0c16041c3310d297e560edc69f505e602631f558e202e3c8391bf36d7bc50d01 ChangeLog 381
@@ -10,3 +13,10 @@ SHA256 e579b678a12cbfb3e9f2ff9ba1d9e5c56adb3017a459b35472cbf2d7969a3ab0 metadata
 MD5 d2dac6d205819fd44530406695b2f3e0 resolvconf-gentoo-0.1.ebuild 2046
 RMD160 2ad3ef584aa4063298665ea96fc26345c5ee9358 resolvconf-gentoo-0.1.ebuild 2046
 SHA256 f0d7e3f13b4de1f66857dcb78a6ce50cabca8debf3c1ba6427a489c867d7186e resolvconf-gentoo-0.1.ebuild 2046
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFENv9aEbVyYKaZ/NERAhwKAKCJSaUjKQk4tQP5aUdSMZi9iuH0FQCfZPAH
+Cl4dAnd9a3UVStRmbiSvgdQ=
+=EQfD
+-----END PGP SIGNATURE-----
