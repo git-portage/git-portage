@@ -1,4 +1,4 @@
-MD5 0fa700ff5d43e4969d627418cd6fcb6a ChangeLog 4805
+MD5 368935f99a43c50a79073e08c99fb5d1 ChangeLog 4910
 MD5 650a0ea23c4939edf819b558dcc2284f files/digest-gossip-0.10.1 247
 MD5 671a141ca8175f2aec99fa6514f78216 files/digest-gossip-0.10.2 247
 MD5 8f16fde24fd9fe4c80d9aa70a0674dec files/digest-gossip-0.8 63
@@ -7,5 +7,5 @@ MD5 4d6353e147a3018802c29a0de9fc5c17 files/gossip-0.8-find_xss.patch 491
 MD5 48ac8ac33085bab33f46841f96d6c8be gossip-0.10.1.ebuild 1160
 MD5 cdbc8f192e7d9305669a862bf3eb58a9 gossip-0.10.2.ebuild 1160
 MD5 02cc266ae4e3d2ecf3bc97ce561095a4 gossip-0.8.ebuild 990
-MD5 b9da4c84f3f3cfc2de0efb5e57e17b82 gossip-0.9.ebuild 928
+MD5 e71f84611c8415c63e14d45535f2e508 gossip-0.9.ebuild 929
 MD5 9a9ed8f43621c860f0323fcd365a2dbf metadata.xml 271
