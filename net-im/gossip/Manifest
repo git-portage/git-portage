@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 368935f99a43c50a79073e08c99fb5d1 ChangeLog 4910
 MD5 650a0ea23c4939edf819b558dcc2284f files/digest-gossip-0.10.1 247
 MD5 671a141ca8175f2aec99fa6514f78216 files/digest-gossip-0.10.2 247
@@ -9,3 +12,10 @@ MD5 cdbc8f192e7d9305669a862bf3eb58a9 gossip-0.10.2.ebuild 1160
 MD5 02cc266ae4e3d2ecf3bc97ce561095a4 gossip-0.8.ebuild 990
 MD5 e71f84611c8415c63e14d45535f2e508 gossip-0.9.ebuild 929
 MD5 9a9ed8f43621c860f0323fcd365a2dbf metadata.xml 271
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEOVJvoGcCqvCmTSIRAmvnAKDUYKEkvDU+IkuPfZsSMSwBQ09zigCfXBAL
+NLvVLy/sJrQpmIos/i+Raxc=
+=41YO
+-----END PGP SIGNATURE-----
