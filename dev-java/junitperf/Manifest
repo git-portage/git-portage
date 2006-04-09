@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 ba71522fb59d5e5d10566f2985aac3ec ChangeLog 986
-MD5 e6bd9c030c72847507dfa879c8cda062 files/digest-junitperf-1.9.1 64
-MD5 ea41b63c7f0d70932d43d366ee023faa junitperf-1.9.1.ebuild 1059
+RMD160 e46d17e8c4ae1fc526cda646fe340ff56323a862 ChangeLog 986
+SHA256 50a73490da0debf041efa070391b78ffeb6f70ff0095c38101ab89fe1d7e7b64 ChangeLog 986
+MD5 0ef8ab8f55fcb4997c0d8b70bd2d8395 files/digest-junitperf-1.9.1 238
+RMD160 2ac392bb9b329dd1365daaf9198ffc699896675a files/digest-junitperf-1.9.1 238
+SHA256 1f30a3522cef6d5ce7e2296712b3077ed921b7c57e5c229c4028bd397d0aaac4 files/digest-junitperf-1.9.1 238
+MD5 6303a263c0d4280c1e392070c6c31d5a junitperf-1.9.1.ebuild 1075
+RMD160 7c158c35b8f280f395fb4e37ad2301a2bc03cfdf junitperf-1.9.1.ebuild 1075
+SHA256 2b7993e058c5727da3aff97ff2e9dde11539870bf6220eb78c6d10289f4062ce junitperf-1.9.1.ebuild 1075
 MD5 123cf9440c1d4ac78f2caba1624765f9 metadata.xml 158
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDWREnQiJ/wx066S4RAqIKAJ0Rvhaq1bOppS6F+zNoT96E5zTWTACgizci
-OiXvyMkycrv+XMXWA214Ck4=
-=vO4G
------END PGP SIGNATURE-----
+RMD160 493079b5fb71d66863beea1b023901c90ba81be5 metadata.xml 158
+SHA256 ea882ceccfd160b16cf7e79de423bdcc12b3fa000f124491a6df36f5783894fb metadata.xml 158
