@@ -5,8 +5,10 @@ MD5 cafc8c22c15bd694177cb04afbc32d42 files/digest-mod_fcgid-1.06 65
 MD5 cafc8c22c15bd694177cb04afbc32d42 files/digest-mod_fcgid-1.06-r1 65
 MD5 de376068e5a3f43f82ad16267b9acfa8 files/digest-mod_fcgid-1.07 65
 MD5 de376068e5a3f43f82ad16267b9acfa8 files/digest-mod_fcgid-1.07-r1 65
+MD5 26e63af639363dbf64fd0addd2a571ad files/digest-mod_fcgid-1.08 65
 MD5 b04c3f93349f84b2bc615931f1c1d6c9 metadata.xml 483
 MD5 5bb980229b513cdcc7e5f232ead6d62a mod_fcgid-1.06-r1.ebuild 974
 MD5 e95e8936717845fcad4ff043f114c4d3 mod_fcgid-1.06.ebuild 1203
 MD5 b70bba25c574c9866d201c854c6e2b28 mod_fcgid-1.07-r1.ebuild 981
 MD5 9e2858803d92a30e1ca2f0974b20538b mod_fcgid-1.07.ebuild 1203
+MD5 b70bba25c574c9866d201c854c6e2b28 mod_fcgid-1.08.ebuild 981
