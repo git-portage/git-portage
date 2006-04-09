@@ -1,18 +1,30 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 4dfa60b6f19079a9638224c4465f8adb ChangeLog 2918
+RMD160 8380f491521cf7bfce63a32acaacc020de03057d ChangeLog 2918
+SHA256 70a43a6979763992559006186b0cbde9b0f89dacbacfe177a637b08c8b2eb9cf ChangeLog 2918
 MD5 32a964754f69321292b8d2b29b2d89c0 files/digest-mathomatic-12.4.5 66
+RMD160 629e2421697b0cb55a3409be6ea9195feb51cce2 files/digest-mathomatic-12.4.5 66
+SHA256 092bc2861ce59f7163ab555c7fb52c41ae2008483b9a5de06b43546c75da741f files/digest-mathomatic-12.4.5 66
+MD5 ef792e91757cfade6776c06e62327d3e files/digest-mathomatic-12.5.13 259
+RMD160 4c08e54c6f2fcd4763fdd0c1430b6b91531b11c4 files/digest-mathomatic-12.5.13 259
+SHA256 daf7152d9a1de67b0f95d0cbd7210d5b87ec60bb27081a8642f7c87c0ee7645f files/digest-mathomatic-12.5.13 259
 MD5 7bbafc3bbfff74faef15beb3f2f9f022 files/digest-mathomatic-12.5.3 70
+RMD160 16a861aae80a255822849ca18ca4e241561026b1 files/digest-mathomatic-12.5.3 70
+SHA256 1da35a18f6acca886ed6873ce205039e26ec942fab2999f4f053413ac4e95d7b files/digest-mathomatic-12.5.3 70
 MD5 fd8b32bd96a2df85515b851a0c6bbfd7 files/digest-mathomatic-12.5.6 70
+RMD160 da20fde09b973142211906d88541452f6c80567a files/digest-mathomatic-12.5.6 70
+SHA256 b517b1199e5732368e9ba38365f93a8e12eedf398f87e4c581afc929b400bc49 files/digest-mathomatic-12.5.6 70
 MD5 f38bccf593e0f1fb97f5b13047bdd99e mathomatic-12.4.5.ebuild 942
+RMD160 2eb42f9684dce0c1e34c6745011be113b85ad410 mathomatic-12.4.5.ebuild 942
+SHA256 eb71e110de06cbb77f71c25bf3e23365b278dcffa72c0a078671175fcab3e4c6 mathomatic-12.4.5.ebuild 942
+MD5 c368ed9f048cbb379529377cd6653f5e mathomatic-12.5.13.ebuild 961
+RMD160 82573feafb4b15a01021d12bb9873eebcf3e221d mathomatic-12.5.13.ebuild 961
+SHA256 d7969ce7c0ebe6161198ee5b4873b01a69985048672ce92396b3a6454f797f3b mathomatic-12.5.13.ebuild 961
 MD5 19ff8a3c5c6784fa27d9601ecf71ddc0 mathomatic-12.5.3.ebuild 964
+RMD160 ee596880c122f4c1e2d103b653491d7568e6ad9a mathomatic-12.5.3.ebuild 964
+SHA256 444dda7122999a1b1f1e19202ba7352bfe4b120d68a473e7a65c9ca679bf3f4b mathomatic-12.5.3.ebuild 964
 MD5 c368ed9f048cbb379529377cd6653f5e mathomatic-12.5.6.ebuild 961
+RMD160 82573feafb4b15a01021d12bb9873eebcf3e221d mathomatic-12.5.6.ebuild 961
+SHA256 d7969ce7c0ebe6161198ee5b4873b01a69985048672ce92396b3a6454f797f3b mathomatic-12.5.6.ebuild 961
 MD5 ee7955cc2715e3bac994bb045163c8b1 metadata.xml 479
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD0SRnntT9W3vfTuoRAgHsAJ9x6A8oE0BFeQ0yQzljw+0Moi7pEwCeI9+K
-+NOZWWsFiGPLBJclU90vGGw=
-=Zm7G
------END PGP SIGNATURE-----
+RMD160 f9ed224cf43223da66ddac37820c9a0970c5df24 metadata.xml 479
+SHA256 1a85cdcb0b9882e41320adf2c2138dc5793e0891f1bb44fa25a6b84be337e56f metadata.xml 479
