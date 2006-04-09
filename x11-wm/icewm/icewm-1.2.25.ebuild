@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/icewm/Attic/icewm-1.2.22.ebuild,v 1.2 2005/09/22 22:41:14 morfic Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/icewm/Attic/icewm-1.2.25.ebuild,v 1.1 2006/04/09 01:29:21 morfic Exp $
 
 inherit eutils
 
@@ -17,11 +17,21 @@ SRC_URI="mirror://sourceforge/${PN}/${P/_}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 
-KEYWORDS="amd64 ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 
 IUSE="esd gnome imlib nls spell truetype xinerama silverxp"
 
-RDEPEND="virtual/x11
+RDEPEND="|| ( (
+		x11-libs/libXau
+		x11-libs/libX11
+		x11-libs/libXrandr
+		x11-libs/libXext
+		x11-libs/libXpm
+		x11-libs/libXrender
+		x11-libs/libXft
+		x11-libs/libXt
+		x11-libs/libXdmcp )
+	virtual/x11 )
 	esd? ( media-sound/esound )
 	gnome? ( gnome-base/gnome-libs gnome-base/gnome-desktop dev-util/pkgconfig )
 	imlib? ( >=media-libs/imlib-1.9.10-r1 )
@@ -31,10 +41,17 @@ RDEPEND="virtual/x11
 	media-libs/giflib"
 
 DEPEND="${RDEPEND}
+	|| ( (
+		x11-proto/xproto
+		x11-proto/xextproto
+		x11-proto/xineramaproto )
+	virtual/x11 )
 	>=sys-apps/sed-4"
 
 src_unpack() {
 	unpack ${A}
+	epatch ${FILESDIR}/${P}-gcc41.patch
+
 	cd ${S}/src
 	if use silverxp ; then
 		epatch ${FILESDIR}/${P/_}.ybutton.cc.patch
