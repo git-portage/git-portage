@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 47491bb52ec12c46657a6326ea786f9d ChangeLog 2819
 MD5 7e83c3e57eb87b819dec88cdfeb289df files/ac_adapter.patch 844
 MD5 62b116cba4726ccaafa617391576b91e files/digest-xfce4-battery-0.2.0-r1 78
@@ -9,3 +12,10 @@ MD5 a92454bf80f23e99ba33c674436d0cec xfce4-battery-0.2.0-r1.ebuild 395
 MD5 36f53558d54d787817e85194fa7ec229 xfce4-battery-0.3.0-r1.ebuild 383
 MD5 3861de49caddbc6ae6b5b99dbe852ec3 xfce4-battery-0.3.0-r2.ebuild 475
 MD5 75f39ce9a71022ec8c9e4898f934c605 xfce4-battery-0.3.0.ebuild 400
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEOsIhKRy60XGEcJIRAr6nAJ9zNcVZfgtD+wBmakARfkI62CarRgCfbFcy
+w+mmjqo7tIKGUO9n/1nqAAg=
+=nF8z
+-----END PGP SIGNATURE-----
