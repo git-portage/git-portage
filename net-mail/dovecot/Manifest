@@ -10,6 +10,9 @@ SHA256 2aff469c39319fb4af286fc921b306a2aa917a4e175596f3fe0c53f9cb88b004 dovecot-
 MD5 086025343666ac3f6ad1f43948e2639e dovecot-1.0_beta3.ebuild 4532
 RMD160 c0d2115e1b416da38b6d5e2db59957cfa6c4f8ef dovecot-1.0_beta3.ebuild 4532
 SHA256 86457d765e41adc4ccae417cf7d00912d58df85a15ebfea88277196d0fa36b42 dovecot-1.0_beta3.ebuild 4532
+MD5 98789c7f3ca710f8806cc56cfb8a6cf0 dovecot-1.0_beta5.ebuild 4665
+RMD160 f7eb67f7625f6ca2b6a5e73e2b384a4a7e1a8e0c dovecot-1.0_beta5.ebuild 4665
+SHA256 51939fcc3cf9db03d5abc3277ef446d94f47ea007d6d457d2d580d611788cf27 dovecot-1.0_beta5.ebuild 4665
 MD5 2a50200054849ca5e0173cb709ef649d files/digest-dovecot-0.99.14-r1 67
 RMD160 bef49c59ecd06cab21f39c1d82d2c7699952dc7e files/digest-dovecot-0.99.14-r1 67
 SHA256 e5526bcfe07df3f84790bc082da36c32c5957e560df53ed63fd2a8cce940dbe6 files/digest-dovecot-0.99.14-r1 67
@@ -19,6 +22,9 @@ SHA256 211bea2990f98a7d9df0a14a8eddb150a74d9d390eda662c718274e235879db1 files/di
 MD5 87b33f708335dfccf0ff9e3a9c03b6ca files/digest-dovecot-1.0_beta3 256
 RMD160 4377944b29bc6554689dca4a78aa8adf206b38dc files/digest-dovecot-1.0_beta3 256
 SHA256 548a177d3080f4fe8067b9d5a1057736372ca13901f638f2cd9580c13fbde158 files/digest-dovecot-1.0_beta3 256
+MD5 90e242f05e11d8f43543dce19c78da91 files/digest-dovecot-1.0_beta5 256
+RMD160 e91fd49816d5ffa10d492e679850843b1848c04f files/digest-dovecot-1.0_beta5 256
+SHA256 a377e503eb1fbded1521616a81051f1cffcc1fbeb8416385bb5650d42c81eb35 files/digest-dovecot-1.0_beta5 256
 MD5 155396035a3ecb1f5171b0432072181b files/dovecot.init 619
 RMD160 b0693a3f1e4aa34f2db5389e29d79b7e669622a8 files/dovecot.init 619
 SHA256 833c2121376e753c0a983cedc3854a855bce9b3765f6479aa15cad9acb23ca43 files/dovecot.init 619
