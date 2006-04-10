@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 dcaec85237518fbc79bdc4ba6cdff8e0 ChangeLog 3301
 RMD160 4faca50aef7391b8db79f716a4eaa5fe211391f6 ChangeLog 3301
 SHA256 acadaff03555a8a920c74a0b8ea1483ae5d94ccff235aedb502415b2f6cf60f6 ChangeLog 3301
@@ -19,3 +22,10 @@ SHA256 7d64fb8a811086c72fc9e1ddc626db47b1b9f9c11ceb4bfbf7d6bbf052e17698 vzctl-2.
 MD5 1a4d40e1c7b53285a5317ff8fcca4e6c vzctl-3.0.0.4.ebuild 1815
 RMD160 ed74e53ef3f6a1e4178a2f4e526afd96d79e37b3 vzctl-3.0.0.4.ebuild 1815
 SHA256 5219b25b9a57e07bd667677fb0b0aea08c356a31fedcc0577b73f0d1a69009a2 vzctl-3.0.0.4.ebuild 1815
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEOkklflZ8QqxhrsMRAlKYAKCnPuiLXDwhqpWCinFiQHDCr3KxFwCgmu5i
+crkA6RHiqwxhVpEexX03Ed4=
+=fg2a
+-----END PGP SIGNATURE-----
