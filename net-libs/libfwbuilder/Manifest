@@ -1,4 +1,4 @@
-MD5 195de143a97c0fac66e3ecc439095409 ChangeLog 8366
+MD5 55bd1f6a296b7bdec74c7e2ae89e098e ChangeLog 8364
 MD5 18d017187b228dd614d7ae00283f788a files/digest-libfwbuilder-1.0.2-r2 72
 MD5 8d7d58dd8f04faf069a57566a94b8bab files/digest-libfwbuilder-2.0.10 259
 MD5 9b58f8101e121abf1132f09b9edd9f3f files/digest-libfwbuilder-2.0.11 71
@@ -10,7 +10,7 @@ MD5 bd7f345d52b044e87b5cea9d1017f4bf files/libfwbuilder-1.0.2-libxml2.patch 2166
 MD5 9fa5f117b914955b9cd48ae1cfbe0c90 files/libfwbuilder-2.0.10-gcc41.patch 1639
 MD5 79f3fbdc4294417deabd422ed8ec6a4f libfwbuilder-1.0.2-r2.ebuild 958
 MD5 d1db0c7fe9d92842fcae60a7c73f4958 libfwbuilder-2.0.10.ebuild 903
-MD5 060f3c987301ba9791d1acbffeb46be0 libfwbuilder-2.0.11.ebuild 832
+MD5 c22b1141a664a9bf4b462f359b25d0c1 libfwbuilder-2.0.11.ebuild 830
 MD5 990394895c89adcecd264ca76a39f1bd libfwbuilder-2.0.6.ebuild 799
 MD5 4968e44d4179ddba6e7ad31bb6fb2215 libfwbuilder-2.0.7.ebuild 804
 MD5 f3ec80a11a8b755aa603285aaf303172 libfwbuilder-2.0.8.ebuild 804
