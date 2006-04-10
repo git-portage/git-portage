@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 aaef7209d5b62755cc70051d1df78ca9 ChangeLog 2332
 RMD160 13fd61933d6d478f110150d9815195d2b8e3cf09 ChangeLog 2332
 SHA256 38c67f3d6d1329e69603573271f65b397337c0ceaee132411c1b33de7c65060e ChangeLog 2332
@@ -28,3 +31,10 @@ SHA256 d79a53fbacda0c6b41974fe7138bdda2c5b1a9c1e4867bb4c20e61359caafb91 mplayer-
 MD5 9d25ef604b15917a5ca84cf520c83e6b mplayer-bin-1.0_pre7-r3.ebuild 1172
 RMD160 9e0d53bf48a0acf3cbacbfa5f872fe4977349659 mplayer-bin-1.0_pre7-r3.ebuild 1172
 SHA256 8bc714ad81e4843a8d0ae6cfbd445b6576be21a86fd0abd0525bc5085f7ec225 mplayer-bin-1.0_pre7-r3.ebuild 1172
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEOmEJomPajV0RnrERAlC0AJ94PpZpn7nGkGnBFzYiR9IIVJhOAgCfTajG
+QA0t0fcQTNJ2t/LxCumKhqo=
+=brfy
+-----END PGP SIGNATURE-----
