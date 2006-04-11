@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 DIST vzquota-3.0.0-2.tar.bz2 35118 RMD160 1ef805f20da63dcdbcd4b07112a793a0f9ea659b SHA1 5a50c1ce8727aa25b627a8a0cc4448d5a52e6d98 SHA256 ad7520a51533b970b855b6e91dd6289342adbfed303b470ab76ee70afd24071d
 EBUILD vzquota-3.0.0.2-r1.ebuild 1063 RMD160 fcb001d7cacba0920e813e1873cc112227482dcf SHA1 0a5b6563d5ddca1aedeb1b3256f9dcd1f702b4fa SHA256 dd27866e1c96a3c873394c0cf0b90a99d8a5a3da2a4691014166db2b91a94691
 MD5 14ec43d2c3088de0c295e1ba3dde51c9 vzquota-3.0.0.2-r1.ebuild 1063
@@ -15,3 +18,10 @@ size 247 files/digest-vzquota-3.0.0.2-r1 247
 RMD160 0d88328c31b1c74aaf0182168f126840b56c3627 files/digest-vzquota-3.0.0.2-r1 247
 SHA256 0547ca9b61e26b0f1fdadc25bcba641d7c2985e53cbd0f9ee4b16b1e99d67b9a files/digest-vzquota-3.0.0.2-r1 247
 MD5 f6a76a52b08a095c04291eeb3547e337 files/digest-vzquota-3.0.0.2-r1 247
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEO4vQflZ8QqxhrsMRApqfAJwPoTpo2IkfUMjrR4qnH0h9UCyPlgCdEbAc
+iGRqtBk19L7cAmpJMlKaIus=
+=gZI3
+-----END PGP SIGNATURE-----
