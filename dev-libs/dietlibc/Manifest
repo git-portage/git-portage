@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 dffed851474376e7840dec48b0168d59 ChangeLog 7719
 RMD160 92e1b5543e4abcf51a6093092f8f3cd9c7b4fd4d ChangeLog 7719
 SHA256 4af1b609fa2a6871b7ffcbdda862c5cb9ee33a2bd274c331c54deb1765c121fa ChangeLog 7719
@@ -13,9 +10,9 @@ SHA256 a7e4d6bc0cb4f09b06e809df7637ab372f92fd9d3990cd7a6b08c7caa50f85f2 dietlibc
 MD5 5893f3f2f10b3e58f4fbf09fd68f11b3 dietlibc-0.28.ebuild 1575
 RMD160 9508b5719d3cf8b38d9eed54f4803838729c809b dietlibc-0.28.ebuild 1575
 SHA256 e70704a8a284268012a38fed5e39f0280e9ebcb2bf2bdf2799817c467e90c44f dietlibc-0.28.ebuild 1575
-MD5 5294ef68812faf07ae63a4f346c038d2 dietlibc-0.29-r1.ebuild 1917
-RMD160 5e9d85627b4cbf960ee3d942f044c74653f36202 dietlibc-0.29-r1.ebuild 1917
-SHA256 39dbe01505a880ede700bb526a1d8d634ae25c22e9770dab79ed25d199c61e4e dietlibc-0.29-r1.ebuild 1917
+MD5 a412567596dd873364ecc06bc0a637cc dietlibc-0.29-r1.ebuild 1984
+RMD160 8bfb78ef07842801e052d13eca9dc8b88d7c3ea5 dietlibc-0.29-r1.ebuild 1984
+SHA256 760d425841534bc59b55d1e835cb32aaf807b332c4f0dd89852c7c3dbf91b926 dietlibc-0.29-r1.ebuild 1984
 MD5 335d8fa79c4c6e0a0df3986e2bf9be47 dietlibc-0.29.ebuild 1859
 RMD160 dcc1e2225476f0799be643084adb52fb8d7d8946 dietlibc-0.29.ebuild 1859
 SHA256 e76a51ae87fc4cdd076d8662284ba030a5a80501754f825924861c3dd0d3656a dietlibc-0.29.ebuild 1859
@@ -46,9 +43,9 @@ SHA256 3bc8de906d669ad1933df42bc93e13776cd11cfe64932b0e0edf46929ad7f6a1 files/di
 MD5 c55906ff5d2b87d811ba215657a41ab2 files/digest-dietlibc-0.29 66
 RMD160 492344b9b5cdc60dc8321541f761dbab8098f3f2 files/digest-dietlibc-0.29 66
 SHA256 7a496c4b04d1f64b297f0a74f7f26e5fb84c50cd86c273f471f1916912a7b209 files/digest-dietlibc-0.29 66
-MD5 ad61bfe71cf9c8ba92ee96f15d105a1a files/digest-dietlibc-0.29-r1 515
-RMD160 fc4507dca27a49c3c1c93e25b6fef28395c7f93a files/digest-dietlibc-0.29-r1 515
-SHA256 65e4839d63a170fde6eeb35b9fe08f1721ab5697b1be4d39cc74c9656d29ced5 files/digest-dietlibc-0.29-r1 515
+MD5 01381c381c17764ccad1a0ab50021568 files/digest-dietlibc-0.29-r1 515
+RMD160 86712c5f0763225d0b95dfefa3c38b6771558db6 files/digest-dietlibc-0.29-r1 515
+SHA256 98ea6a7913275d45021270073592a6480e2aa516d1f3c853e26e9432f64ff9d0 files/digest-dietlibc-0.29-r1 515
 MD5 ea791631782529db92c7b23198391a7a files/gcc-33-r2.patch 1077
 RMD160 41a0ab776eed6f3ba482c2a1ad642b3d8cdef729 files/gcc-33-r2.patch 1077
 SHA256 6f0e514e5c889c2c10d6e60f80da6248a82d88fadd22a61b5b461be8c31cba17 files/gcc-33-r2.patch 1077
@@ -64,10 +61,3 @@ SHA256 a35ab2cd397c28d850667d99ca39eab1c521c141c9bb4826fb9c91310406d52c files/ss
 MD5 3effe4dd8085cc629d8f6a42cbc10a31 metadata.xml 470
 RMD160 db39535bf43d1cea49d04c2ed52bbbc94c94d0cb metadata.xml 470
 SHA256 34784c3fc1a9a2c548ca86b04f3729cfd045140fcd54b6caeb8c53ce05f16639 metadata.xml 470
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-
-iD8DBQFENWPcflZ8QqxhrsMRAnRHAKCg/9plwTHlKDP8vpIOF78IoeFcqACgq2+2
-0cV1qnKadV+4a4f7ouxATIc=
-=TKKE
------END PGP SIGNATURE-----
