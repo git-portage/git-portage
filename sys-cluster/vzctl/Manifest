@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX vz.initd 5465 RMD160 303e4877e95db9f90d512b37d67cdaa94e823d52 SHA1 967cc1a9d71109db574f565d2f733332cfafcf50 SHA256 63c17d2783cfd01fcfb66aa8b0c572ea6bf366d59a72c10f1728091c7eaa5fc0
 MD5 a2de79b189da1c2d3fd01fa2116bcea9 files/vz.initd 5465
 RMD160 303e4877e95db9f90d512b37d67cdaa94e823d52 files/vz.initd 5465
@@ -30,3 +33,10 @@ size 515 files/digest-vzctl-3.0.0.4 515
 RMD160 6d19e07790751356a0f4f72920db9a2deb3fed9b files/digest-vzctl-3.0.0.4 515
 SHA256 b507aacc94a59bd84d101da243825f146d613e2d47e4b94bb07c8d02bf7c85bb files/digest-vzctl-3.0.0.4 515
 MD5 c47ebfe8d8208833215f14a2dd10b74f files/digest-vzctl-3.0.0.4 515
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEO43/flZ8QqxhrsMRAs0KAJ4kT99X0ctWPb4DSUbsHuF7XNkXNQCguSK9
+XpeNPffx3Hz5m9jOt2iquQ8=
+=isqf
+-----END PGP SIGNATURE-----
