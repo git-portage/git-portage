@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 adf32f9266474324de2dbd80786fbb3e ChangeLog 1194
 MD5 79e9088507c29d4854546506167d851c files/digest-opendx-samples-4.3.2 68
 MD5 8c623e53daafa025137077c6b65815bd metadata.xml 156
 MD5 a897a6dd902ba59faa83b3113a6cc27a opendx-samples-4.3.2.ebuild 1216
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD8DBQFEOvsr/NoSW7FuNV8RArSmAJ90JLt8hCtrytwiBSh+aLh1OTMttQCghpIO
+FeFA04cwDuK9HAmnFoWnwKo=
+=vVOO
+-----END PGP SIGNATURE-----
