@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ae7785d73316c1b44c91605e8aa031f0 ChangeLog 25618
 MD5 62a8961741a00d0c2f21edcc66ce68c5 coreutils-5.2.1-r7.ebuild 4601
 MD5 1bc0abc0240008e18c239b0b21d86ef5 coreutils-5.3.0-r2.ebuild 4297
@@ -9,3 +12,10 @@ MD5 6971790215509377129f29b52928ecae files/digest-coreutils-5.3.0-r2 148
 MD5 7c0fbf160186d90e1ea82400f3146f1c files/digest-coreutils-5.94-r1 530
 MD5 32efafe6f58e2787966ff63e90a5b4fa files/digest-coreutils-5.94-r2 530
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEPBFWKRy60XGEcJIRArB2AJ4mCW3+e2WthUkvh40qpSvnAkz83QCfVW9U
+RlD1n9+/6u0SQLED/nn/rzk=
+=y/0d
+-----END PGP SIGNATURE-----
