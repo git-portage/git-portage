@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8b5d8152814a92c4bb55b3250e4948ec ChangeLog 24922
 MD5 fc01656c85a58c998f5487eb72f44035 files/crypto-loop.confd 442
 MD5 d20405e12353610b3ef8fbc2e1d57f2a files/crypto-loop.initd 1625
@@ -46,3 +49,10 @@ MD5 d15a79f3ee1b51bf3363bc483887b4e8 util-linux-2.12r-r2.ebuild 5927
 MD5 8c6609e02c165488f89e486ff135c29b util-linux-2.12r-r3.ebuild 5937
 MD5 0d46d0e51b807242d6112edca4e38f97 util-linux-2.12r-r4.ebuild 6032
 MD5 7eeb5b93b8b212d235c1b6ff19f55de5 util-linux-2.13_pre6.ebuild 3966
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEO889KRy60XGEcJIRAn6kAJ9tFDIllz/W50CbZb/mSJoUFjkOIgCfZuaz
+pwqnISjJxvGIZzUFkcdZ3+0=
+=4uqd
+-----END PGP SIGNATURE-----
