@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8b0eb1d9dd96d806f76510f95efeac94 ChangeLog 9156
 RMD160 161ddeed11efdbd12cfc684e7d8f858127128cbe ChangeLog 9156
 SHA256 d15101a92c34e1341772a0536b63323591a764fc28c518daf9898887ea1c2bef ChangeLog 9156
@@ -22,3 +25,10 @@ SHA256 891cad7a59cebe8843f4957aac817d905b6e78f0ab8e044a3f6f4ad627c9fded files/di
 MD5 8ad8276b29c5f6ffcc0e746acfc02844 files/digest-dialog-1.0.20051107 76
 RMD160 647ef5cde2a8477bd3062e4c222b322352eef65e files/digest-dialog-1.0.20051107 76
 SHA256 8969ea1ee6ddd32bc4c8d46394a3397c088bcf63e85becfef9bb8a8ebfd5761b files/digest-dialog-1.0.20051107 76
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEO/txAiZjviIA2XgRAhKdAKCbougwGbOMhbD6/mxmdWLZpQk7mwCeJaFw
+Am/wizvtFEZ6ZBGzu2G11GE=
+=T7ql
+-----END PGP SIGNATURE-----
