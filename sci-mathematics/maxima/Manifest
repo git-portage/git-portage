@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b81d16cacb806b94d84a2b855f9e85fc ChangeLog 5825
 MD5 6957a9bafd71a24b58e148bb2ee58257 files/50maxima-gentoo.el 346
 MD5 6f3becd603f999b2bb7488753ec07518 files/digest-maxima-5.9.1 65
@@ -9,3 +12,10 @@ MD5 55d928e715074355a442baf0934487de files/maxima-emacs.patch 826
 MD5 f653050981b2fed1501454602f59ad11 maxima-5.9.1-r5.ebuild 2571
 MD5 a5bd93bd68dec962956ea5ed64b5c276 maxima-5.9.1.ebuild 2532
 MD5 8c623e53daafa025137077c6b65815bd metadata.xml 156
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD4DBQFEPJTP/NoSW7FuNV8RArpGAJQKQ8WjjLNQRPuTC8ubCFhDqiLZAKCTV6wE
+GV5LtW3Po0KRSTIT2TeURQ==
+=tD/L
+-----END PGP SIGNATURE-----
