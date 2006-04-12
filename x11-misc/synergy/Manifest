@@ -1,4 +1,4 @@
-MD5 55f9f3310d1e1f566d8a3791caf9c188 ChangeLog 5278
+MD5 cccc594513e85f76c861771c5d93e02b ChangeLog 5409
 MD5 d8b0d98a25b5d57140f0bd5f7e6307b0 files/digest-synergy-1.2.4 65
 MD5 4119f63bd787a7fb9923030f7d584f0c files/digest-synergy-1.2.7 65
 MD5 fe7502d3f8c3e11025fec718440e8e3e files/digest-synergy-1.2.8 241
@@ -7,4 +7,4 @@ MD5 df0a00ab2e7806ecc807a87439da742d metadata.xml 230
 MD5 fc34b7a4a5bd32ae5c73af67f713705d synergy-1.2.4.ebuild 1137
 MD5 195cf9012ae909748ddff0a4503d155e synergy-1.2.7.ebuild 1154
 MD5 b6dc63b8e803382ddc5d2950974446b6 synergy-1.2.8.ebuild 1152
-MD5 b6dc63b8e803382ddc5d2950974446b6 synergy-1.3.1.ebuild 1152
+MD5 118030b858b6c9b2b32f4de73df8a140 synergy-1.3.1.ebuild 1152
