@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX 05portage.envd 34 RMD160 014194a1786a0983a8ba91c3924b798f353c330d SHA1 2af2c9a7ce535c36749dfe81b6555426225620e2 SHA256 dbe8db19d03b39ad2b7f9f6dfcd24c615a14886b3fe6d5ce4dd88bac27c0e225
 MD5 d5d5b818347fd87b290ecb0b17516b34 files/05portage.envd 34
 RMD160 014194a1786a0983a8ba91c3924b798f353c330d files/05portage.envd 34
@@ -176,3 +179,10 @@ size 253 files/digest-portage-2.1_pre8-r2 253
 RMD160 eb295a54bb4f738705344007c0b7eec28e5558e0 files/digest-portage-2.1_pre8-r2 253
 SHA256 83c6db289e1011b461ee5ceaaf93e155749fd49a63e4f6963033d15dfb22f0c0 files/digest-portage-2.1_pre8-r2 253
 MD5 30b312b7ad9b1270598fc43f9c20b280 files/digest-portage-2.1_pre8-r2 253
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEPLbh/ejvha5XGaMRAuP5AKDClds/0GxtxpctYVOSlT+ndAXlOgCeKpDx
+YP7yncjOVY6lLRmxg8ctxWk=
+=uDWi
+-----END PGP SIGNATURE-----
