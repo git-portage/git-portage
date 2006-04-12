@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 6876e200a225d616c76eb4396267c6c1 ChangeLog 20673
 RMD160 876a1b5205a8cfd1baaf16e1a150f1779ef83c9d ChangeLog 20673
 SHA256 1c14bb97403da461a80fc619e9f0f0c9b8c5ef0d665400c71bfcd7ac1339a4b1 ChangeLog 20673
@@ -13,6 +10,9 @@ SHA256 65193968dffac2127626ef9e05aa8da9ec32d39703e4c3530e89bab059dfed74 files/1.
 MD5 a36a121279d71c130aefdf8f84e432cf files/digest-xorg-server-1.0.2-r3 771
 RMD160 1e76b7ca2a6430d0901f036dc90692bb1bf14546 files/digest-xorg-server-1.0.2-r3 771
 SHA256 8d9ab78da2938d08246fae35c4f61a04a7b9932cd722a549707731c9d9a87ab8 files/digest-xorg-server-1.0.2-r3 771
+MD5 2c19dfdb77621385755288fe88c4e0d8 files/digest-xorg-server-1.0.99.2 509
+RMD160 20bdd7703966bd67540349089d6853b62e2405e5 files/digest-xorg-server-1.0.99.2 509
+SHA256 29dee5a695cc7d935fe1f2cccaf449f3255f8ba6e9d17a490ee234da128f2351 files/digest-xorg-server-1.0.99.2 509
 MD5 900d8194df467de2c86276d446522062 files/xorg-server-1.0.2-64bit-fix-for-glx.patch 414
 RMD160 17732b6ebe06e1533ce8f9b97e6ca8d7e4347a88 files/xorg-server-1.0.2-64bit-fix-for-glx.patch 414
 SHA256 1b2337fa0438c72fc8a17d710133f79ed17d49650efd9bc530bbb97b116427c4 files/xorg-server-1.0.2-64bit-fix-for-glx.patch 414
@@ -37,10 +37,9 @@ SHA256 5101ab0d4cc8c7125eea733c44e86962769bd77acaf53b69223b9cadcdd29055 metadata
 MD5 f831e7e1ab71a0c6c60874777dd0fd32 xorg-server-1.0.2-r3.ebuild 5559
 RMD160 b1d34b43c1a06f4dbc2fbfe796278a506ed40dfb xorg-server-1.0.2-r3.ebuild 5559
 SHA256 e23394ec656136f0dfb4e1ed326f72a89e7f2d8ec7c70ba48c3d40ef59e738bb xorg-server-1.0.2-r3.ebuild 5559
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-
-iD8DBQFELY4qAiZjviIA2XgRAhWQAJ92V1oTCbLe6+2EaOKAUGwZaggljwCaA//q
-DxUDPx0JgXumWYCpd7Ktk3k=
-=EEGl
------END PGP SIGNATURE-----
+MD5 521f9b9e8bf9b53b90177ab5d3a74075 xorg-server-1.0.2.ebuild 4259
+RMD160 0b1e793c1c5c70ff4f18c27fa65edcf0de024c1a xorg-server-1.0.2.ebuild 4259
+SHA256 c62f4b1d346b486d989380942d3bd2cd6b9a9cef4ed7ffce61a00c19fb13a243 xorg-server-1.0.2.ebuild 4259
+MD5 88a90d0911aee951e374d0bc596054e3 xorg-server-1.0.99.2.ebuild 5339
+RMD160 d6cccd8afda2fa4b98bce5a14608ccdf0d5b42ae xorg-server-1.0.99.2.ebuild 5339
+SHA256 a5e8285e87d33bb2c123ed28109b5467e259ce6be1a72a7c67c5b3d7a5f65d32 xorg-server-1.0.99.2.ebuild 5339
