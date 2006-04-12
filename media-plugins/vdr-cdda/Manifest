@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b41addc45f8ad88b260795d7c035303c ChangeLog 1126
 RMD160 b4209799466f8c14f3e243fcd8bd942c24c88a8a ChangeLog 1126
 SHA256 ce59a6268c95304b5b50f1e22486bcbdc9a94f4d3d6237cb188a21c985b3bac8 ChangeLog 1126
@@ -16,3 +19,10 @@ SHA256 29feafd8b7177b65f8bd92553ac96779d9a91e3b7b4eeecfb0924eb7b6979587 metadata
 MD5 c3071f0aa6c0edeee8c13fa8ffb02ee0 vdr-cdda-0.1.0-r1.ebuild 590
 RMD160 a6b3b45d37bfab6db7d2060b0439afdf7f6c00fb vdr-cdda-0.1.0-r1.ebuild 590
 SHA256 e092e77837ecdea3ca22d2ad42f56be94e407810fbe77b378257902d452e020d vdr-cdda-0.1.0-r1.ebuild 590
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEPV+RZfSl1Kp5KmoRAiBdAJ9X3clWvmpNO2RNoyff+HpadAyHkgCgseHU
+X3RT8vIChIf/DmgeyR+r6c8=
+=52WO
+-----END PGP SIGNATURE-----
