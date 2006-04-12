@@ -1,16 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 180678153ada60b6788b4e95da226162 ChangeLog 855
-MD5 7a723a079564c3e97231c2f5b0be1e38 files/digest-vdr-cdda-0.1.0 65
-MD5 e3c20761b800512efc35c78a61d0f91e files/vdr-cdda-0.1.0.patch 1222
+RMD160 91670722ccd743988893ff5c60318a24e5209531 ChangeLog 855
+SHA256 f25e86a05e80afe00055851f63251f064c144af6b285f5ee2bf0a2acfae73cce ChangeLog 855
+MD5 246d44977fc2ee67fe617b355b8b9e5d files/digest-vdr-cdda-0.1.0-r1 241
+RMD160 9ea3f938b7ff3b71683ab530b8ea657afcaa4dbe files/digest-vdr-cdda-0.1.0-r1 241
+SHA256 656bc097a3983043d9a359be607a756ef69609c7e3fb5c1270e3046d1882d8e7 files/digest-vdr-cdda-0.1.0-r1 241
+MD5 90ad12d3de0556fe6e38a25d6f3207ff files/vdr-cdda-0.1.0-cdspeed.diff 607
+RMD160 367e1b7fda29821d67f3ab6ca410419bf590ac8b files/vdr-cdda-0.1.0-cdspeed.diff 607
+SHA256 996bc3032c57a26ddf52f9933cfffc5aed1ef7a0dfdb79c5590e17fad7f57f77 files/vdr-cdda-0.1.0-cdspeed.diff 607
+MD5 c87c921b79d2d98e5aae3d8ba7ac2be9 files/vdr-cdda-0.1.0.patch 1472
+RMD160 2afca5cfe8bbbfd90b7af389be82d12895c014b5 files/vdr-cdda-0.1.0.patch 1472
+SHA256 1871b9035839e7c9cb0e57f61cce5afb6e77639be749e17dac63602e101004b8 files/vdr-cdda-0.1.0.patch 1472
 MD5 7c30ab7528b676a1a0c2737821599b29 metadata.xml 300
-MD5 fe1ce36c7108584ab8755368bb7d16bb vdr-cdda-0.1.0.ebuild 562
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-Comment: no further Information
-
-iD8DBQFEIAwbdn07HTTCgIoRAnk5AJ9yRVs5vXLZ/pLU8cQlYPUvM86cLACgn2Z9
-f25zhrWNQpXuoFkYTnf9uUI=
-=duih
------END PGP SIGNATURE-----
+RMD160 c85719cef743cf573efe73f8f84564292085c91c metadata.xml 300
+SHA256 29feafd8b7177b65f8bd92553ac96779d9a91e3b7b4eeecfb0924eb7b6979587 metadata.xml 300
+MD5 b3e58fe0f71b15d53239cc591257e01f vdr-cdda-0.1.0-r1.ebuild 592
+RMD160 117cf4b4e2a5607d3d58942fa5d50967bbc11ff5 vdr-cdda-0.1.0-r1.ebuild 592
+SHA256 6a113dec37b15fa359d4b05179b7dcdff4a17c0a8800e332129c5ced01f1be2d vdr-cdda-0.1.0-r1.ebuild 592
