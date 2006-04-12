@@ -25,6 +25,9 @@ SHA256 4bca57647f145c6b8116e76480747fb7ea096c04d322796cc27ef04961665eb4 files/di
 MD5 13f66c77d13867c283c0d2e6a55c41d1 files/digest-gnome-panel-2.14.0 262
 RMD160 822a54220547cc20e23ca9b7703e0419bb2e2da6 files/digest-gnome-panel-2.14.0 262
 SHA256 2f51a30d1d036af74b8cbc44ed5b55f04e618a53292fd1067f1ffb7f4e840521 files/digest-gnome-panel-2.14.0 262
+MD5 3b5eff2f8d4ef7983190189c85c3e662 files/digest-gnome-panel-2.14.1 262
+RMD160 03332766a4ff727a77181cbb01f8741ff672a036 files/digest-gnome-panel-2.14.1 262
+SHA256 d0abb7222d3ed2fa44a553528551a3fc05ee4a51562304f61fddd891aad944ed files/digest-gnome-panel-2.14.1 262
 MD5 afd54e022092a94648da54cd0c646241 files/digest-gnome-panel-2.6.2 71
 RMD160 15ff2459cb68819b4e530ce9af581b42e3d6a835 files/digest-gnome-panel-2.6.2 71
 SHA256 514626338c6d517ac3f42abdbd9fa914c718e9799db71a8f575cad86a95fc6dc files/digest-gnome-panel-2.6.2 71
@@ -52,6 +55,9 @@ SHA256 dd9bfc11f0639007a4d7677899fc19b2659ed4ec34dd90ff21c621af3bd9329a gnome-pa
 MD5 954ed731b2e5d62048e7ed69a1a44dda gnome-panel-2.14.0.ebuild 1809
 RMD160 b00698bf64a2eca002c55a6d0f8891659a0d5129 gnome-panel-2.14.0.ebuild 1809
 SHA256 560e988fa22e57ca0a856c347263fde4cfd639cd0b0591bf0eed6637680135fb gnome-panel-2.14.0.ebuild 1809
+MD5 954ed731b2e5d62048e7ed69a1a44dda gnome-panel-2.14.1.ebuild 1809
+RMD160 b00698bf64a2eca002c55a6d0f8891659a0d5129 gnome-panel-2.14.1.ebuild 1809
+SHA256 560e988fa22e57ca0a856c347263fde4cfd639cd0b0591bf0eed6637680135fb gnome-panel-2.14.1.ebuild 1809
 MD5 2b7852739e5647ed45bbbbbfd4d18a24 gnome-panel-2.6.2.ebuild 1553
 RMD160 732421cdef4a9596fa317c808783134f8b21e1ed gnome-panel-2.6.2.ebuild 1553
 SHA256 239ac6d09ee6c7cc9c23c0323b31efc710e712d9be64e94d48e8b9cdf90dedc5 gnome-panel-2.6.2.ebuild 1553
