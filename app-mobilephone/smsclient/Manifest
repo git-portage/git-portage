@@ -1,5 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9081dcf632e76b090b6bb21eac2e9920 ChangeLog 1114
 MD5 e0fe7ea267d821fa69933bf04091060d files/digest-smsclient-2.0.9a 68
 MD5 0fea06e18f515cdbbe6461206ffa03ee files/smsclient-2.0.9a-gentoo.patch 6151
 MD5 58dc7e77c89c2dd53361a6a1d59b9f43 metadata.xml 317
 MD5 04c377833471909a2288cae6fb880707 smsclient-2.0.9a.ebuild 1223
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEPrJCjG8pv1lIUX4RAmYMAKCTly+IWzZpdA1HHuLTMyf2Hhc8/gCgmYC+
+v4zfziGTb5su2Ivx2iwpOVc=
+=VjsQ
+-----END PGP SIGNATURE-----
