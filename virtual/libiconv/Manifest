@@ -1,0 +1,6 @@
+MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-libiconv-0 1
+RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-libiconv-0 1
+SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-libiconv-0 1
+MD5 125b4dc08da021f48717cda09da84fb8 libiconv-0.ebuild 979
+RMD160 25555887bafe45b7bbd32a1757e6f65d4136ccc2 libiconv-0.ebuild 979
+SHA256 13ca9e7edc8ce36074d67ec4ab7afc1d35de8c8b63ea97a3fb2c88a199d4944e libiconv-0.ebuild 979
