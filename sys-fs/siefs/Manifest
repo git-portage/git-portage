@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 be806c6fbced806dcc9f0b7c08810c7b ChangeLog 1110
 MD5 44e51931d6b3d43444ed2feb1488e010 files/digest-siefs-0.5 61
 MD5 be65270725a42f9dd0f50f627947b319 metadata.xml 411
 MD5 7f431e8a2312a197e150ee0f6b45bfe8 siefs-0.5.ebuild 855
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEPrYwjG8pv1lIUX4RAvrWAKDw5ecDvTxdKizbMwvYmYttEsmFAACfS9aK
+LG8hePZXrx1jvOD+PkSZ5Wg=
+=yRIX
+-----END PGP SIGNATURE-----
