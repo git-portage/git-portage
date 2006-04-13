@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 4c2ca625d30a4b5f2c7adaf562a4e735 ChangeLog 7971
 RMD160 b280780a1b578b60d088ae8e4d05d48af5f33cac ChangeLog 7971
 SHA256 5f0a0855d26bdfc26403a6ec0e2e2770ac7ebe906f6b12e0d23e77136567604d ChangeLog 7971
@@ -16,6 +13,9 @@ SHA256 86457d765e41adc4ccae417cf7d00912d58df85a15ebfea88277196d0fa36b42 dovecot-
 MD5 575a702501b4127c3ada49c98a74e848 dovecot-1.0_beta5.ebuild 4647
 RMD160 ecd99c38b28e922c929c3ecf0b89a09ce9c02537 dovecot-1.0_beta5.ebuild 4647
 SHA256 053417328065388d5fe27c6dd7b3db29a43cd35dcda8d34fa9842cb870d97cb9 dovecot-1.0_beta5.ebuild 4647
+MD5 575a702501b4127c3ada49c98a74e848 dovecot-1.0_beta7.ebuild 4647
+RMD160 ecd99c38b28e922c929c3ecf0b89a09ce9c02537 dovecot-1.0_beta7.ebuild 4647
+SHA256 053417328065388d5fe27c6dd7b3db29a43cd35dcda8d34fa9842cb870d97cb9 dovecot-1.0_beta7.ebuild 4647
 MD5 2a50200054849ca5e0173cb709ef649d files/digest-dovecot-0.99.14-r1 67
 RMD160 bef49c59ecd06cab21f39c1d82d2c7699952dc7e files/digest-dovecot-0.99.14-r1 67
 SHA256 e5526bcfe07df3f84790bc082da36c32c5957e560df53ed63fd2a8cce940dbe6 files/digest-dovecot-0.99.14-r1 67
@@ -28,16 +28,12 @@ SHA256 548a177d3080f4fe8067b9d5a1057736372ca13901f638f2cd9580c13fbde158 files/di
 MD5 90e242f05e11d8f43543dce19c78da91 files/digest-dovecot-1.0_beta5 256
 RMD160 e91fd49816d5ffa10d492e679850843b1848c04f files/digest-dovecot-1.0_beta5 256
 SHA256 a377e503eb1fbded1521616a81051f1cffcc1fbeb8416385bb5650d42c81eb35 files/digest-dovecot-1.0_beta5 256
+MD5 20a266dfc2737255ee35f2d328f23fa6 files/digest-dovecot-1.0_beta7 256
+RMD160 c1bfe4ea1f9888b5a9019ab3bac01734ee4f6e0f files/digest-dovecot-1.0_beta7 256
+SHA256 dc0030a4e0022ae11475a10f0ed69857305486396ba2cc77299ff029d94ee448 files/digest-dovecot-1.0_beta7 256
 MD5 155396035a3ecb1f5171b0432072181b files/dovecot.init 619
 RMD160 b0693a3f1e4aa34f2db5389e29d79b7e669622a8 files/dovecot.init 619
 SHA256 833c2121376e753c0a983cedc3854a855bce9b3765f6479aa15cad9acb23ca43 files/dovecot.init 619
 MD5 61e0d05b1306513aede2838fa81b05b5 metadata.xml 225
 RMD160 ac3483d68e92cb16beee7988f212b78ba94bb6af metadata.xml 225
 SHA256 b745d82a37a83bc996e64dc2579616898317e0192e05047ec68b93a59ffdaa95 metadata.xml 225
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-
-iD8DBQFEOmCoEbVyYKaZ/NERAtjUAJ0WJ29XMa2Wx3Qm0TWM3ELzzoU+4QCeNBsm
-1Wk4Cutheb48P96oVDRiDNc=
-=xAmp
------END PGP SIGNATURE-----
