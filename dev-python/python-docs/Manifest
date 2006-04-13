@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 d0e466720404bfa62ee45dbf24f9f71d ChangeLog 8691
 RMD160 15bd6e18c1da5041bc40fb6c028638001b469335 ChangeLog 8691
 SHA256 b1e99d1772012adce4ed615df1e2d56d47c1ff391a0327ed94158ae73c9aeded ChangeLog 8691
@@ -34,6 +31,9 @@ SHA256 18b9b7dabeb19ee641fb8c9046001b2e976a9aa59af00bdcf3fff8901b3d05c0 files/di
 MD5 79855f0ce1bfef98b7091543cd0d2182 files/digest-python-docs-2.4.2 127
 RMD160 79d5207c271ff76aa6475d882ab9a2a594d4b8e6 files/digest-python-docs-2.4.2 127
 SHA256 15c68ed3a028445ae3503c46ca88f49cce738eba5edae77553ec071c16be7005 files/digest-python-docs-2.4.2 127
+MD5 d164549b692d50482023c4120e9ee00d files/digest-python-docs-2.4.3 473
+RMD160 a419a7218260a5295b9e1868f96d7a616530ef53 files/digest-python-docs-2.4.3 473
+SHA256 183e620e3e0f379cecdc24a19e33629e1d0a19362682e4e1a29967f7fa61f790 files/digest-python-docs-2.4.3 473
 MD5 71c4638c9c88af75b58e5f5cb54fe008 metadata.xml 159
 RMD160 900a8c55d7a7d2f6312594769aaf941bf9e99c7f metadata.xml 159
 SHA256 9f01104d3484792496faff4805eed0ecea2352a897151f3397d49a13800037b4 metadata.xml 159
@@ -64,13 +64,9 @@ SHA256 ca24fbcd5e7cb495c1d74b53085bc80434a1bc6d0fa5e0460b84d7340a68dba4 python-d
 MD5 aa362b7b94020e812e4b47b7b428be21 python-docs-2.4.2.ebuild 978
 RMD160 6a3b3a145e05fb8df3c4a0bfdf2b0ca81737b653 python-docs-2.4.2.ebuild 978
 SHA256 1e2fcf82699af342eb468d3d10a659b23366be0b0c2282824739267788a59280 python-docs-2.4.2.ebuild 978
+MD5 8f93571ebb78d1def643dd9da0146337 python-docs-2.4.3.ebuild 991
+RMD160 4a9521dbc2baca7ef0c4bb51ff83bdf14ba6d4ce python-docs-2.4.3.ebuild 991
+SHA256 837355bf92a954db6567109ec2fe4588f0749916efcdb71029ffd8823f8ccea5 python-docs-2.4.3.ebuild 991
 MD5 2626303164a38e62cf35b175bfdbc5d9 python-docs-2.4.ebuild 728
 RMD160 1337eac6af7399dd6d158735d8a56c5298d63fec python-docs-2.4.ebuild 728
 SHA256 2213e34780c63760f5628153f938016b4d7ce884e0ec71e2d8dbf8683040e49f python-docs-2.4.ebuild 728
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-
-iD8DBQFELAzcAiZjviIA2XgRAlsuAKC58FuRWgiHndrmh2oWuWpTV2g/TQCgqalT
-sya6LOrO0G+InX+EQr/Cu34=
-=mHPP
------END PGP SIGNATURE-----
