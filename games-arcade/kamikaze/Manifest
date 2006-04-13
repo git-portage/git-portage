@@ -1,16 +1,24 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 7fabdf6f63838b4e47c516a9b94eb6f8 ChangeLog 1218
+RMD160 3d3893bcf5469b3f6db3687fcdb4dd832c06b90c ChangeLog 1218
+SHA256 52d71beb7d69260cbbc70a06269e8923c9db016ca7743697c037825d4d168058 ChangeLog 1218
 MD5 2a89ed5f7d862f3da877ff2c678a7372 files/digest-kamikaze-0.1.0 67
+RMD160 fb3685240e933497f8c8f7a5c30be758a58ce8cb files/digest-kamikaze-0.1.0 67
+SHA256 85c30973303d7febb7558c4529a6f1a2a96bd2bb132145e80900084bdf408677 files/digest-kamikaze-0.1.0 67
 MD5 571ff19dd7e256676fdb30bc6f8dda42 files/digest-kamikaze-0.2.1 67
+RMD160 a246bccda2ab9241bdd46f7d1b913181cb32432f files/digest-kamikaze-0.2.1 67
+SHA256 09079f4c27ebaf3800354462a85d89530b9dda7dde7341bcc35fa66a627d1ce2 files/digest-kamikaze-0.2.1 67
+MD5 1bd9d71960251005f319be585cc4f984 files/digest-kamikaze-0.2.2 247
+RMD160 6eb2833e5bd64859e709412ffdc6b76c55974855 files/digest-kamikaze-0.2.2 247
+SHA256 538d3053d4b4efd73378ccf3b2075d706ffd3dbf585d218e4d90ffe576e8bba4 files/digest-kamikaze-0.2.2 247
 MD5 8c984be41dd98a0744c034a15a3985e9 kamikaze-0.1.0.ebuild 474
+RMD160 3ae19d064d580e085387e558110079aedbd7a5f2 kamikaze-0.1.0.ebuild 474
+SHA256 18d46d57219cc2d8a97fc4f742875aba916ab1dc5d9a756766e0ff2c0fba8c8f kamikaze-0.1.0.ebuild 474
 MD5 6874b5e0e1dac4ed8b6ba2adfcd69ab0 kamikaze-0.2.1.ebuild 469
+RMD160 9a889825ce6c466d653f39222e7ebc4af1de0a07 kamikaze-0.2.1.ebuild 469
+SHA256 86ae6a2d52a2dcd6049c295bc5eb714b6a8de8ab6c7ce512ad726bc3135c8d47 kamikaze-0.2.1.ebuild 469
+MD5 6874b5e0e1dac4ed8b6ba2adfcd69ab0 kamikaze-0.2.2.ebuild 469
+RMD160 9a889825ce6c466d653f39222e7ebc4af1de0a07 kamikaze-0.2.2.ebuild 469
+SHA256 86ae6a2d52a2dcd6049c295bc5eb714b6a8de8ab6c7ce512ad726bc3135c8d47 kamikaze-0.2.2.ebuild 469
 MD5 f17b9b8fa07a38914fe1c03268f51678 metadata.xml 158
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFDh4StntT9W3vfTuoRArI9AJ44ILthw4Emt4fKHyTYSwZx+IW0EQCfUVb4
-2lioaZ5uvY5a5Kx1ZiwKn98=
-=hmwC
------END PGP SIGNATURE-----
+RMD160 cbd9984bb6b426c8c9cee5022fe0a26261612fea metadata.xml 158
+SHA256 1423a4fdd4a79b1728a2056d9e300f7e1074253095d82726218d9e9b953888a3 metadata.xml 158
