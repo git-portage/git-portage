@@ -1,6 +1,15 @@
 # ChangeLog for app-backup/dar
 # Copyright 2000-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/ChangeLog,v 1.12 2006/02/11 15:48:51 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/ChangeLog,v 1.13 2006/04/14 11:03:14 matsuu Exp $
+
+  14 Apr 2006; MATSUU Takuto <matsuu@gentoo.org> dar-2.2.6.ebuild:
+  Mark stable on x86 and amd64.
+
+*dar-2.3.0 (14 Apr 2006)
+
+  14 Apr 2006; MATSUU Takuto <matsuu@gentoo.org> +dar-2.3.0.ebuild:
+  Version bumped, Bug 124255.
+  Removed stati USE flag.
 
 *dar-2.2.6 (11 Feb 2006)
 
