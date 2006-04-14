@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 007f2dc94bc3ce1c07223d6afe606925 eclipse-subclipse-bin-0.9.31.ebuild 1783
 MD5 1e95db2774dd383f0ddbb82f85d45d03 ChangeLog 487
+RMD160 78e6df66dccaacef5e972eaa6ba86b882e360177 ChangeLog 487
+SHA256 d67510eff1d5ecff25d342ea0e56240bf3be07eb3e94fd4cc571707b9879657f ChangeLog 487
+MD5 ca8798838ecfb3d6c11769f1ec7a9049 eclipse-subclipse-bin-0.9.31.ebuild 1781
+RMD160 b5ed43c6fa8dee578858108ec43cbc3367ab402d eclipse-subclipse-bin-0.9.31.ebuild 1781
+SHA256 e136a8144645615687b800f8c1c25cd6c9ddec1b3f847f4bccd644f9f3aae43c eclipse-subclipse-bin-0.9.31.ebuild 1781
+MD5 d89846d98b02406c607c201b0241bae9 files/digest-eclipse-subclipse-bin-0.9.31 268
+RMD160 773f625867a0b855da35a19e5666dc689064adfd files/digest-eclipse-subclipse-bin-0.9.31 268
+SHA256 8611b530d7541a9f3e72a422dc08a0673bf311756c308c63f4939135cbece5d7 files/digest-eclipse-subclipse-bin-0.9.31 268
 MD5 a6ec7d7724fbd068ffb39b5be56134ed metadata.xml 157
-MD5 9ed798289b59c79ae0e9c1e053f7ce47 files/digest-eclipse-subclipse-bin-0.9.31 268
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
-
-iD8DBQFCqDTx06ebR+OMO78RAnmkAJ4rwYLJnBWjgHIDnem4lQ1ncplHRgCeL57O
-QMOTwRrbgoRFS5gGqDg8QFQ=
-=U4B6
------END PGP SIGNATURE-----
+RMD160 ab0b3741457dee7531f59c4da0f0e9e8399af084 metadata.xml 157
+SHA256 295d02c5805b0257938eb80314b371daac94b8d6ea85629a902de7a824adc0c9 metadata.xml 157
