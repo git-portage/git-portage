@@ -1,6 +1,16 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 33b92c05283c63a405a328288ee78a7f 3proxy-0.5.1b.ebuild 1310
 MD5 d0d954c1dd482c672cc7a40b3f32d279 3proxy-0.5.2.ebuild 1392
 MD5 a01c403708184a30d296a88064233ad2 ChangeLog 1526
 MD5 8cf64a2e697152ac05289dd04447b5ea files/digest-3proxy-0.5.1b 62
 MD5 d431243cf4a9e8979f2ccad7c9869db7 files/digest-3proxy-0.5.2 61
 MD5 8bd192560c1e5eaf46ed53db9d50f885 metadata.xml 800
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFEP1C1jG8pv1lIUX4RAtDpAKClcAUaPdDfQejeEog+3+hYkfeqYACgwVAc
+ZlPw/4T7u3t5BTjZBfU/4v8=
+=K/7G
+-----END PGP SIGNATURE-----
