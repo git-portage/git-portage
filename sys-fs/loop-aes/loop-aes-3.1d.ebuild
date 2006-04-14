@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/loop-aes/Attic/loop-aes-3.1b.ebuild,v 1.1 2005/10/10 18:41:09 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/loop-aes/Attic/loop-aes-3.1d.ebuild,v 1.1 2006/04/14 22:23:34 genstef Exp $
 
 inherit linux-mod eutils
 
