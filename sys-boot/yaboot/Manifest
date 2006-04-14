@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1d31d2e842823fcec9436cd674d7f7df ChangeLog 7021
 MD5 15c7e4852d3cc4ca21044014d33737ee files/chrpfix.patch 979
 MD5 79f1707ceab2b7d7daa98a62e15ca98c files/digest-yaboot-1.3.11-r1 65
@@ -20,3 +23,10 @@ MD5 b18d892f9b853ca4f2a966f1f7fd0b76 yaboot-1.3.11-r1.ebuild 1131
 MD5 70ace287814f30a2f5879a646fcaff2a yaboot-1.3.12-r1.ebuild 1350
 MD5 2034aef6c163442c046c2c15823cbdd7 yaboot-1.3.13-r1.ebuild 1461
 MD5 04b1510eded97c0436fb4093f097aa02 yaboot-1.3.13.ebuild 1406
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD8DBQFEP9wl/NoSW7FuNV8RAojTAJ9qNWWdqMqWg6gLxUEukxL+QUCZ0QCgl5Bw
+l7hxqhDg/81Jt1b2K6thH0A=
+=d2Gr
+-----END PGP SIGNATURE-----
