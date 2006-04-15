@@ -10,6 +10,9 @@ SHA256 c9dd762163a821f858e63528556d1953c70eacba8fd2393501b2407514edb4bc files/di
 MD5 2165d78cb316cb30ab32d841eaf21484 files/digest-mrxvt-0.4.2 226
 RMD160 b2e10bb46a57a45d23bcecffffd07a4f878e8927 files/digest-mrxvt-0.4.2 226
 SHA256 32ccd3351bac6db9ff26ef64872fa6461312c13ff181c4158e417de186c1ace1 files/digest-mrxvt-0.4.2 226
+MD5 2ecbd83b55934b3aefeaae73d3c8c0b4 files/digest-mrxvt-0.5.0 235
+RMD160 7490e5522b0df9d0e3b5c6ea57faf5d54b97630b files/digest-mrxvt-0.5.0 235
+SHA256 8c4328f338de7a0aa7519821f402f5626c8c09333f65ffecdc1ba98817986018 files/digest-mrxvt-0.5.0 235
 MD5 d7ac26627011150a523bf15955a9067d files/mrxvt-0.3.13-xdefaults.patch 7709
 RMD160 430eafecd6f8984b4e1b60e58b64bdd53d8e93f5 files/mrxvt-0.3.13-xdefaults.patch 7709
 SHA256 9391593a3bf7c953d95a2b9a3f6c973f17b3551608448b934fbc0260e917babd files/mrxvt-0.3.13-xdefaults.patch 7709
@@ -31,3 +34,6 @@ SHA256 934b3dac132521031a3213acc0b17b4c8db1af6a451b6c4cbe7015af2dbc1d08 mrxvt-0.
 MD5 f80d2bcd7f80dfd34405e90dc9410a0e mrxvt-0.4.2.ebuild 2245
 RMD160 139a2182e9d9f265b91ba02fc456fe94c1b1cccd mrxvt-0.4.2.ebuild 2245
 SHA256 f14abb6aa392c2bfeb2b23e3f02d18eb59d736478b894fe9bbbdec4a8f6d2ec3 mrxvt-0.4.2.ebuild 2245
+MD5 ce644179e03ac1c0c0bf089e305f005b mrxvt-0.5.0.ebuild 2811
+RMD160 18cee80cd9d8c0adf20ff8faee97db266c4d2b2a mrxvt-0.5.0.ebuild 2811
+SHA256 7f3502b32de77050475ab0fed3b787a12a72ef02e53a2ed99e9e666f5664f14f mrxvt-0.5.0.ebuild 2811
