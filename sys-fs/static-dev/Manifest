@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 EBUILD static-dev-0.1.ebuild 1601 RMD160 ea45fbc3883f7a2640f0155532efa75cb2ad578f SHA1 859f9ceb8c02be7df2b3cbc2d7bf2ddf60404912 SHA256 7fa552c4af449dfa2e72c6acc67d72b7d3ad3b9e58eba9c5ad2df5ba2d16b174
 MD5 7ad5412f0c2e772bedfc6e47daea6394 static-dev-0.1.ebuild 1601
 RMD160 ea45fbc3883f7a2640f0155532efa75cb2ad578f static-dev-0.1.ebuild 1601
@@ -14,3 +17,10 @@ size 1 files/digest-static-dev-0.1 1
 RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-static-dev-0.1 1
 SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-static-dev-0.1 1
 MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-static-dev-0.1 1
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEQKicNzVYcyGvtWURAubBAJwIAt4UYc1pqpSzHZ24s5UX7ZbygwCguKro
+A4MJfQ/T2z8hyjk07PJfIfQ=
+=M7K0
+-----END PGP SIGNATURE-----
