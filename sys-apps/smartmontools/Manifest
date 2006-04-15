@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1f04638827f40924b34a38cbc013620a ChangeLog 5909
 RMD160 1c9ebcb53df6f5d0dbb546deb42cd0bf2db89fa3 ChangeLog 5909
 SHA256 bc060962e17128bcdcdc4ad0bdd92270ebd207659ec827e84f28b528bd3483fe ChangeLog 5909
@@ -22,3 +25,10 @@ SHA256 b770a6eccd85e0621d7f41c631035047b13ccaadfbf04c498fd74d203a3283cf smartmon
 MD5 283c6ffd8c3394e8b1702cd0d72e0b87 smartmontools-5.36.ebuild 1042
 RMD160 3c4cc0ea64df057d01479d85bf303be0229caf49 smartmontools-5.36.ebuild 1042
 SHA256 f86bba6e36b0db2ca40c0ccca417f8d557debb6f348914800f981edb05ed70f1 smartmontools-5.36.ebuild 1042
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEQJy72+ySkm8kpY0RAm/AAJsGUHfzwKll03KZruRK2MH1Csv60wCfQSuG
+J5LE5WyHBbu/13C5NDOedus=
+=kTqc
+-----END PGP SIGNATURE-----
