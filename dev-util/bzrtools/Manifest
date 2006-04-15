@@ -1,6 +1,16 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 e727a6ac72f54eed78400328ff98df71 ChangeLog 785
 MD5 f86e5dd6d8957d6332117777f44c3da9 bzrtools-0.6.1.ebuild 531
 MD5 8fb9bf41d277bf25934765335e0efc11 bzrtools-0.7.ebuild 603
 MD5 03e6ce6083f7bb3915faa7db2c234666 files/digest-bzrtools-0.6.1 65
 MD5 a0ffc6c67eb0f9bcbe6852a8ffa75e74 files/digest-bzrtools-0.7 63
 MD5 5dff6cc33967055cfde969cbcb7b6d5d metadata.xml 222
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD8DBQFEQDbW/NoSW7FuNV8RAqCqAKCIrFfPtYqdzyDuGWxC+q4pGGRkXwCgr3FD
+ISl+JU+oQzZgJ7kUG+QEBZY=
+=IZ7/
+-----END PGP SIGNATURE-----
