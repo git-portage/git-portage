@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 DIST genpatches-2.6.15-1.base.tar.bz2 2450 RMD160 8c08fa0a14c9426f6b5e798ba68407e966fcdfe9 SHA1 e5985ba7e0ac7ca16277c4b3fb702aba853e0f38 SHA256 1f5e9a8c7101be4a8964925d3040ffecff93d2f0335c5d9bb4911372be6c698b
 DIST genpatches-2.6.15-1.extras.tar.bz2 174205 RMD160 23b43c34902480ef1eb46b2f61b0ae07b86ebf0d SHA1 3d27c87d9cb7916d3c9d206fe7ae90b9829a8135 SHA256 98ebb669a8f6e4184a38d6fa0bdda4ddf75a47dcda500297715d7aeffaa6b989
 DIST genpatches-2.6.15-11.base.tar.bz2 54659 RMD160 2500afbafe0be03af24a8e9272cb558cb8bd1b48 SHA1 9ecf28ab80afafc47a25de5899b78ce7bae95d47 SHA256 4de6e2264f690f2d6bedb4b58bf260e3a7bbe63989f6e255823561498fed6743
@@ -88,3 +91,10 @@ size 1108 files/digest-vserver-sources-2.1.1_rc16 1108
 RMD160 83d3e76aa0a1c2a577780acd2f15f43606a8cd7d files/digest-vserver-sources-2.1.1_rc16 1108
 SHA256 c45745d7abcac94c474435698646c5550ba564def38d949b5485ccdc5e92ffde files/digest-vserver-sources-2.1.1_rc16 1108
 MD5 18edf680c4cec369d9a88c2bcffb6646 files/digest-vserver-sources-2.1.1_rc16 1108
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEQoowflZ8QqxhrsMRAoDEAJ4xBfffpRsvz6+zEuImpiLY5WBYiwCeMb2a
+TckEqPRV945O+jQA7/U34Tg=
+=4V0U
+-----END PGP SIGNATURE-----
