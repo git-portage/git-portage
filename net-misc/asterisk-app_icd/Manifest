@@ -1,5 +1,5 @@
-MD5 40d01ff225fb60da529405a94936834b ChangeLog 1304
-MD5 c4d0d382722682e5d894c84158df0be4 asterisk-app_icd-1.0.0.ebuild 1619
+MD5 85b58b5fbfa1e19349198d08ef695829 ChangeLog 1442
+MD5 7e3c0f53a01a3078c16db5b909ca5cb2 asterisk-app_icd-1.0.0.ebuild 1619
 MD5 142035f777abdfae08ca7cb332e6a4b1 files/asterisk-app_icd-1.0.0-bristuff.diff 457
 MD5 ca50446dbd8f5a351f341a467a7afd33 files/asterisk-app_icd-1.0.0-configsegv.diff 1684
 MD5 f91da9ee448dfc5a3b9528f7752d0657 files/asterisk-app_icd-1.0.0-gentoo.diff 4863
