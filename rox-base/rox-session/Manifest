@@ -3,7 +3,9 @@ MD5 6746e572a2e4a848f5228873903fad07 files/ROX-Session 51
 MD5 2fbd5b90cd0ab5251e571069b37ce294 files/digest-rox-session-0.1.20 67
 MD5 69620f9bcf7f4ca9ce765d68d957c25e files/digest-rox-session-0.1.21 67
 MD5 bed7c6fdff0fc34302a88e622fa4f54e files/digest-rox-session-0.26 65
+MD5 f8e69f8b8d600a98587b5648923065d1 files/digest-rox-session-0.27 69
 MD5 1652522405f5936eb29776ef8d5ffa5b metadata.xml 310
 MD5 849da1d36da619b985a1f32465ae8c91 rox-session-0.1.20.ebuild 734
 MD5 a07d7845f88ba1aa8a1011146187a8be rox-session-0.1.21.ebuild 738
 MD5 d2c76be41d21e1dd9b215c200b77e596 rox-session-0.26.ebuild 1607
+MD5 525ad2a6801d57c11b17951cd2ca766e rox-session-0.27.ebuild 1169
