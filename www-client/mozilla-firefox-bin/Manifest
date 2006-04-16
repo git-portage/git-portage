@@ -22,9 +22,9 @@ SHA256 0cc5126362a12cee42ec1197c528a804cf36859329dd2c6d9225726831d14b8b metadata
 MD5 18245262491b055758b3426f5367e9bf mozilla-firefox-bin-1.0.7.ebuild 1940
 RMD160 00c7a90084a0a219e64d2ac5058e674b598a98e1 mozilla-firefox-bin-1.0.7.ebuild 1940
 SHA256 88db90fcf2ae2b91bbf1fa8ce380faa5f8dda31ff0e1a3488f7c6cb0512b771c mozilla-firefox-bin-1.0.7.ebuild 1940
-MD5 68a95cf941731118a5d760ec3f079ad0 mozilla-firefox-bin-1.0.8.ebuild 1942
-RMD160 bd620bfe1eb73b7e7c0b432e303f0afec9d95b60 mozilla-firefox-bin-1.0.8.ebuild 1942
-SHA256 efaea95f5870171ada8fb684419032d679cf138226891c5587f18d77550b765b mozilla-firefox-bin-1.0.8.ebuild 1942
+MD5 3b39829cec43fa2e2cf79d03e23de93a mozilla-firefox-bin-1.0.8.ebuild 1941
+RMD160 6c043ce9090c081d03582a121e3650cce5d3b45c mozilla-firefox-bin-1.0.8.ebuild 1941
+SHA256 68506e5192d4e4c0b00d304b23aec46bfd74383042f9af3010132f4cd6a39f09 mozilla-firefox-bin-1.0.8.ebuild 1941
 MD5 98ae81743d005838c0beaf1f741b918a mozilla-firefox-bin-1.5.0.2.ebuild 3572
 RMD160 f1f733c7e45492a9f3717ab1b33809f848f1d336 mozilla-firefox-bin-1.5.0.2.ebuild 3572
 SHA256 863c4a8e1b5dfdbd49be9171a0b6a63936981eff52d4dbecfa3a00d91b2f77c8 mozilla-firefox-bin-1.5.0.2.ebuild 3572
