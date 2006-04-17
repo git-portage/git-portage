@@ -1,6 +1,16 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 d0bed0770b04da49e1c3ea852a2546fb ChangeLog 2857
 MD5 c95f7e47844d83e0e6207555c5882387 files/digest-g-cpan-0.13.01 65
 MD5 70a698f75ab6364836fa00a3b416a7b5 files/digest-g-cpan-0.13.02 65
 MD5 e4d72ce5c12e03cafd3300bfd3ba24e0 g-cpan-0.13.01.ebuild 855
 MD5 630c4dda4b730c281e959f02bac7b7cc g-cpan-0.13.02.ebuild 792
 MD5 9096a6a8640284b43070891d64ee698f metadata.xml 220
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEQ43htG5z4I8BtQoRAuL6AJ9FpzRfv2BwHr+gnNxtY+PXMz0MIwCfaWtu
+gl5hrX8+RIxd8Q8phGfgfjQ=
+=29+F
+-----END PGP SIGNATURE-----
