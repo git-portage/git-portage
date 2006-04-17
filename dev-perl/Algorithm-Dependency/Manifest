@@ -1,14 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 b1d157343f5552a0d498442265fc687f Algorithm-Dependency-1.101.ebuild 644
+RMD160 9b0e9eb33314e80d00693f48db2f695bbdebf54f Algorithm-Dependency-1.101.ebuild 644
+SHA256 df9f671c8b8acd251632b97ae376fc35d61cee2e4a2100b7d133fc1a36f9539e Algorithm-Dependency-1.101.ebuild 644
+MD5 69b7218b66a378ce9c501c449c253e5d Algorithm-Dependency-1.102.ebuild 651
+RMD160 0d5ec158b931d6f3e283676e570bf14ec68dd735 Algorithm-Dependency-1.102.ebuild 651
+SHA256 b281b04fd54b32ccf1a01f77ed9af11f2395078c6875b6a9c29264f80ee97ceb Algorithm-Dependency-1.102.ebuild 651
 MD5 52b32b8418580bee227b39615db64fed ChangeLog 1664
+RMD160 0c2683619e446188b1a26b11208b4f2d8faa200e ChangeLog 1664
+SHA256 d62167e5c05d3712e3a85ec1b0b614e30d650a1fe8275f99ba563581d2f2dcd1 ChangeLog 1664
 MD5 6aa8de3d8e467189720157ca1f361904 files/digest-Algorithm-Dependency-1.101 77
+RMD160 c1cd38e85da43f30c6e49428822bef3375737cf8 files/digest-Algorithm-Dependency-1.101 77
+SHA256 589dd6bafeccf37e12fa5a8fc0f3bc022a9f6e9d7c4afcc75b8d16be89e54bf0 files/digest-Algorithm-Dependency-1.101 77
+MD5 7f96fad530d1e1ad431db9d014b94ca9 files/digest-Algorithm-Dependency-1.102 277
+RMD160 692fbb15505de573e4534e08a1094205775c3daf files/digest-Algorithm-Dependency-1.102 277
+SHA256 e76c44189dc62a6a9369bda348d9c2da11ee669eaac5ca798eefa520b7b709ca files/digest-Algorithm-Dependency-1.102 277
 MD5 e2d8f1bf77722def1dd432e26455c818 metadata.xml 305
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.1 (GNU/Linux)
-
-iD8DBQFEIbdDFdQwWVoAgN4RAnNwAJ9awVqEmPxPPxakHKXe480nYUjPzgCfUqW5
-kwv3T2+LrjSRCmWl8iNxbAk=
-=LP1M
------END PGP SIGNATURE-----
+RMD160 647980838c590f54441a053916ea629e53e551c0 metadata.xml 305
+SHA256 f05dbef15061919972882cab07057e102760a542beba17d131194091401cd7ca metadata.xml 305
