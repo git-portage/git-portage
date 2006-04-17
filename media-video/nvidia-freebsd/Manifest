@@ -1,0 +1,6 @@
+MD5 e4b84ff6b5b2ca153044419d947cf150 files/digest-nvidia-freebsd-1.0.8178 286
+RMD160 bf4c941f4eff9b2b284ca38721216283e932cd00 files/digest-nvidia-freebsd-1.0.8178 286
+SHA256 a6d0f36c41009fcb509a37f1f461410245f09e79736db02ae2e51304c75efafc files/digest-nvidia-freebsd-1.0.8178 286
+MD5 db3af8a65792f6b59b93e78f8222d572 nvidia-freebsd-1.0.8178.ebuild 704
+RMD160 ea076e91b1e431d44b80cbcb584aafadf6cd490d nvidia-freebsd-1.0.8178.ebuild 704
+SHA256 0732c1fd04c0990e270c5dcf061bbad37402ad00486407fabaf439af343a4a32 nvidia-freebsd-1.0.8178.ebuild 704
