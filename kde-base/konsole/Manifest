@@ -1,4 +1,4 @@
-MD5 51bcbcae02c1f5a989159ca9d19b7bd2 ChangeLog 5761
+MD5 4a960f745328f06cdd4a5fae97610348 ChangeLog 5757
 MD5 b22a687fe2e8cf06cd5147f1ec68efb7 files/digest-konsole-3.4.1 212
 MD5 7deca5e51240260b2976fbbe9326ed6d files/digest-konsole-3.4.2 287
 MD5 b334b621242eaf5a23035e870f09dea6 files/digest-konsole-3.4.3 68
@@ -9,6 +9,6 @@ MD5 3c84180623f74d6a6ed74f7c18a5f769 files/konsole-3.5.2-session-save-crash.fix.
 MD5 6633760e033c5f04ab794e91bfdbff8f konsole-3.4.1.ebuild 392
 MD5 caded7869fdce4348fc731037bbcc504 konsole-3.4.2.ebuild 405
 MD5 9811302868cc54800e8db391afab300a konsole-3.4.3.ebuild 406
-MD5 e2d968e0f9dd5a589d044376c84f6945 konsole-3.5.2-r1.ebuild 610
+MD5 112e50216357c9624a473dcf023038d5 konsole-3.5.2-r1.ebuild 711
 MD5 8f4c65c9fc8d9aeaef78aff34c38c8c6 konsole-3.5.2.ebuild 659
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
