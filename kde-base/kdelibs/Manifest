@@ -1,4 +1,4 @@
-MD5 45318cbb96b7787a4c758b581c7d355e ChangeLog 51144
+MD5 e349ad6866a95a42177fdec813d221fe ChangeLog 51140
 MD5 e8b51d92930950619b2139c22d4e1407 files/digest-kdelibs-3.3.2-r10 517
 MD5 b6eeb54c84f336414abfd45f4fa6a156 files/digest-kdelibs-3.4.1-r1 68
 MD5 b6eeb54c84f336414abfd45f4fa6a156 files/digest-kdelibs-3.4.1-r2 68
@@ -36,5 +36,5 @@ MD5 2fd53a7c014e4527505ec32ec5425575 kdelibs-3.4.2.ebuild 3346
 MD5 2c50f5fde5dce4194f6b3dd5e21dfe4a kdelibs-3.4.3-r1.ebuild 3481
 MD5 8118ed2fe88987c7ed81197599658246 kdelibs-3.4.3.ebuild 3383
 MD5 a16c66fff6c663988a028192d97a00db kdelibs-3.5.2-r2.ebuild 4092
-MD5 c8542fe03b6750cd9f3b11ca1b75ab25 kdelibs-3.5.2-r3.ebuild 4127
+MD5 18775b90e73dcefd4db71497d6017420 kdelibs-3.5.2-r3.ebuild 4123
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
