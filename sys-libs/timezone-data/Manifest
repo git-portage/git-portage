@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX timezone-data-2005n-makefile.patch 3432 RMD160 b394008ee7a97f16abcb6d5ca31069a3181c4998 SHA1 2d0f38d5ebb1c2b863ff217c1628ef1326350e3a SHA256 ff424aedb50fbc89f4e7841e1416fbf82312a8e62b24f9654c44fd9f39d55087
 MD5 e2a93415d9e744e796aa870f2fde7ab9 files/timezone-data-2005n-makefile.patch 3432
 RMD160 b394008ee7a97f16abcb6d5ca31069a3181c4998 files/timezone-data-2005n-makefile.patch 3432
@@ -40,3 +43,10 @@ size 476 files/digest-timezone-data-2006b 476
 RMD160 4b8d4f338133a0eef11260fda0e606f7253f50e3 files/digest-timezone-data-2006b 476
 SHA256 c0b3f0197d170438ce5f806b29d6fa251370127e54e963101425f4d3f7cf72de files/digest-timezone-data-2006b 476
 MD5 4ea3ff149003fd3e011d1f17e9a73723 files/digest-timezone-data-2006b 476
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD4DBQFEQ0PK2+ySkm8kpY0RArmzAKCepoa+EjpqioDXWMO0yxgYRhY4PQCYi9hX
+vWy8IyuOAQoovceNXX4BGw==
+=hFYd
+-----END PGP SIGNATURE-----
