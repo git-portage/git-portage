@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.4.2.ebuild,v 1.1 2006/03/12 22:21:04 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.4.2.ebuild,v 1.2 2006/04/17 20:00:32 ticho Exp $
 
 inherit distutils
 
@@ -11,7 +11,7 @@ SRC_URI="http://savannah.nongnu.org/download/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ppc ~x86"
+KEYWORDS="~ppc x86"
 
 DEPEND="virtual/libc
 	>=dev-lang/python-2.3
