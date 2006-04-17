@@ -43,6 +43,6 @@ SHA256 524619e558133362f9d6ef9d5f9ad1fdfde76809c4e44c414826eca1d2e26357 oracle-i
 MD5 c199aa62820ed740c2a5392fb8844cd4 oracle-instantclient-basic-10.2.0.1.ebuild 2678
 RMD160 a2323b64b7908b954dafa28118426e7c67479d9b oracle-instantclient-basic-10.2.0.1.ebuild 2678
 SHA256 a3fb625cee8569ac4403f010dfd5630fce72a42f54caa228c87da3e733466a13 oracle-instantclient-basic-10.2.0.1.ebuild 2678
-MD5 656f8c35940248c565a1ad5abc58f70b oracle-instantclient-basic-10.2.0.2.ebuild 2828
-RMD160 50042f5d85135db2ea0a00173438f0bdb605281e oracle-instantclient-basic-10.2.0.2.ebuild 2828
-SHA256 44067ec3da9b4746dd2e6d2b9c353b422ef32d9f8fad4011ebdf45ba97a50131 oracle-instantclient-basic-10.2.0.2.ebuild 2828
+MD5 8db9b862ae3506bb7be9bc5e496b6b7e oracle-instantclient-basic-10.2.0.2.ebuild 3177
+RMD160 c90566db4fdb8d2065090d262df1e2efbb846ca3 oracle-instantclient-basic-10.2.0.2.ebuild 3177
+SHA256 21c05a63dd9f77ab8f4ce3c7dfc11a358bba7cc0f7b07db539a2bb7cd1a31578 oracle-instantclient-basic-10.2.0.2.ebuild 3177
