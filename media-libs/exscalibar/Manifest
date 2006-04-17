@@ -1,5 +1,5 @@
-MD5 8faaafd531b6b8d2ac27816f35f81855 ChangeLog 1019
-MD5 ea59d3acf2319a5ba991badca2084ed2 exscalibar-1.0.4.ebuild 1693
+MD5 2d26c5ae573091152e10b5551d4f8b5e ChangeLog 1133
+MD5 4cdf72e7c882381bfdb9cebb83b59062 exscalibar-1.0.4.ebuild 1693
 MD5 87632b2e0e2cba931319f1e98874c54a files/digest-exscalibar-1.0.4 69
 MD5 9c62e7295131f1e5b2a4caf4f1b4d10f files/exscalibar-1.0.4-gcc4-amd64.diff 2410
 MD5 25502ff1fad3f11b96935ae9abaaf0d8 files/exscalibar-configure-disable-features.diff 2003
