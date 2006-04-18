@@ -28,6 +28,9 @@ SHA256 d7c5994fa66d77ec956b2e1ca1020fadcf1200bdd2acce974033e9839bb8f7c3 files/su
 MD5 c357b009b610db967d0df27d61cd3704 files/subversion-1.3.1-neon-config.patch 1237
 RMD160 ccf7449e030afe6ef6388c12157831d5f2d59d6b files/subversion-1.3.1-neon-config.patch 1237
 SHA256 6e0f152a8254b7e7c0b498ce011f1798d475b2acf18d779b4dfe0758de1f3049 files/subversion-1.3.1-neon-config.patch 1237
+MD5 25d9476112d0d6e3a4f7efc5be8d6a21 files/subversion-apr-version.patch 2867
+RMD160 cc34107d60f3e1df7cb926b87e0c9cda094bbc25 files/subversion-apr-version.patch 2867
+SHA256 3c466fa14da964999aceabd19ca5c64176cf563a0fca54498bc36c881e163601 files/subversion-apr-version.patch 2867
 MD5 e7538c50c65c0ae5c7b0cfc7057f8620 files/subversion-apr_cppflags.patch 426
 RMD160 245d52ce05da6652e5f5984f0e33aa51e534082a files/subversion-apr_cppflags.patch 426
 SHA256 0d7e52ce90cc806270ccb5e3c2b700fdb6d251a17001b91f08de5beab66295e6 files/subversion-apr_cppflags.patch 426
@@ -73,6 +76,6 @@ SHA256 2a23c97f9b38bb55863b6eb753cf1c677759ca28d022de431339034080856340 subversi
 MD5 9d6f84d540f50aced2ea571c46975970 subversion-1.3.0.ebuild 11515
 RMD160 2eca0cc08a29594f7dac281ffdecc9306a8b5f60 subversion-1.3.0.ebuild 11515
 SHA256 5540cd1b4516b44bd093e68f6f4884e103fd9c893f0c49cb59128eadab6041ab subversion-1.3.0.ebuild 11515
-MD5 0356ed755035f783cac31d72da2a0ac8 subversion-1.3.1.ebuild 11568
-RMD160 e4a8bbb29d221f5a0782a5d8479273be6e860edc subversion-1.3.1.ebuild 11568
-SHA256 12f7151e0bcbe9d332f71cc7a5b68fc217e47df8734d927a5111d5c296ee0b31 subversion-1.3.1.ebuild 11568
+MD5 b044e5484968303ac4df79ec3df0ae08 subversion-1.3.1.ebuild 11617
+RMD160 5ecc525242b96f8405d575d2e053aa79326876d1 subversion-1.3.1.ebuild 11617
+SHA256 4f0c4ed88b8526b5ff1abeb8aa7b77e05f7957d61f00402ea9e91faac1acf355 subversion-1.3.1.ebuild 11617
