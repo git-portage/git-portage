@@ -13,6 +13,12 @@ SHA256 8dc25fd528fe6f957533779502e6da111ef4d3f2a4b1f7b42319f17452f8273b files/di
 MD5 f1335da386c60b0cf4f0c5c67fa9743c files/digest-rhythmbox-0.9.3.1_p1 71
 RMD160 0809c53b4b0db677c96f425e775a977c00093d96 files/digest-rhythmbox-0.9.3.1_p1 71
 SHA256 8dc25fd528fe6f957533779502e6da111ef4d3f2a4b1f7b42319f17452f8273b files/digest-rhythmbox-0.9.3.1_p1 71
+MD5 954c4f44bcf7a699ba6bc40c654b0ff2 files/digest-rhythmbox-0.9.4 253
+RMD160 1b3df0f615af3547ca0ae641550d98c1109ecacc files/digest-rhythmbox-0.9.4 253
+SHA256 d346f8d31393b3b5aa412e65e08d3e89a0ff64483141b2c40dea74cf5224a5fb files/digest-rhythmbox-0.9.4 253
+MD5 954c4f44bcf7a699ba6bc40c654b0ff2 files/digest-rhythmbox-0.9.4_p1 253
+RMD160 1b3df0f615af3547ca0ae641550d98c1109ecacc files/digest-rhythmbox-0.9.4_p1 253
+SHA256 d346f8d31393b3b5aa412e65e08d3e89a0ff64483141b2c40dea74cf5224a5fb files/digest-rhythmbox-0.9.4_p1 253
 MD5 7c49ce1b3d4a78dc9adba805fd3b82fb files/rhythmbox-0.8.7-gst_shn_support.patch 665
 RMD160 8f8eec7bf19405ea70b7ab5984c5d5a96e834822 files/rhythmbox-0.8.7-gst_shn_support.patch 665
 SHA256 1c4fbabdff94741c88fb92f37c84ae70e05be9054481241efcab49f8c2c19018 files/rhythmbox-0.8.7-gst_shn_support.patch 665
@@ -40,3 +46,9 @@ SHA256 4cfc913b2847ea4d7b1e17f909f74e96273af17674e70ec22bd6d4cb2f962b69 rhythmbo
 MD5 5e66f44207349857fa04c9756a0ecade rhythmbox-0.9.3.1_p1.ebuild 3452
 RMD160 77544b73ad190d348c2b4db4eb1af66110872745 rhythmbox-0.9.3.1_p1.ebuild 3452
 SHA256 94c758926aa960853536a35ac316482f8c006a2b1bb0cadb6f82ead784b4ba6f rhythmbox-0.9.3.1_p1.ebuild 3452
+MD5 a2e66053ecfdb1dda2d6edeb467322e1 rhythmbox-0.9.4.ebuild 2650
+RMD160 cdb18915ee9be217fc06f6e8f4e9af4e2dadce3b rhythmbox-0.9.4.ebuild 2650
+SHA256 89f4b0b26a7540bb562cc8c5b07c258b201d486174e98ccc49bfce96c2703d84 rhythmbox-0.9.4.ebuild 2650
+MD5 f34b0c14bde3dd7d6b27291a3db3f2b6 rhythmbox-0.9.4_p1.ebuild 3457
+RMD160 751198c8aaffd88e09c3f9e203f3aa226685b606 rhythmbox-0.9.4_p1.ebuild 3457
+SHA256 9ee4c6be680b9697a8dbe33fc9ce7ed7005a09577a3d0adcd95d1ec7120e14cb rhythmbox-0.9.4_p1.ebuild 3457
