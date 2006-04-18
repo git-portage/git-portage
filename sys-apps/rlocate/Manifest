@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX rlocate-0.3.3-build.patch 2655 RMD160 796455ca5fcd5f14c47ffb65868a65c8ef1753ad SHA1 5b1dddeda55c48e6aac1068637236ccb8d3abe06 SHA256 979cea75fae4b6c812f60cc73b31e83b68038b61bdf9e9c91dfa16df6b0caf83 size 2655
 MD5 43fee28c090b20de0b2c57b15e97caba files/rlocate-0.3.3-build.patch 2655
 RMD160 796455ca5fcd5f14c47ffb65868a65c8ef1753ad files/rlocate-0.3.3-build.patch 2655
@@ -79,3 +82,10 @@ MD5 b9c82f508e75e5d48b7095747400822a files/digest-rlocate-0.5.0-r1 241
 RMD160 35ed90e05cb795905a974dd79a283fac800fbb9e files/digest-rlocate-0.5.0-r1 241
 SHA256 30afa8219e4b45f4d06d462bab4d06067349f42f0899373a5ac9f4f35e9f3486 files/digest-rlocate-0.5.0-r1 241
 size 241 files/digest-rlocate-0.5.0-r1 241
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFERWpz2+ySkm8kpY0RAjhsAJ9+cVC7/cuEaGA1sAbrnUo/ypxnugCfRoFY
+OLKotp+Ef98c/zXyaZsg5lI=
+=z/j5
+-----END PGP SIGNATURE-----
