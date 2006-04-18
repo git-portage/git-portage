@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 a2cc619ddb6a8dad6c8668673ec16fd7 ChangeLog 2728
 RMD160 c04e002e8cc847cb2a5eaaef17288d832df87c8d ChangeLog 2728
 SHA256 3f00e5ab87e7ed01c56a65be06c9cd3a7ced07b38a1eebf5c30567fd1a193fab ChangeLog 2728
@@ -22,6 +19,9 @@ SHA256 3091add95c1505097e4c9858ca0b36cd9bcfa837d4e9b2df24cf33464e06a490 dejavu-2
 MD5 1aba051dfe967560a7bc5489162d7f8d dejavu-2.4.ebuild 699
 RMD160 dad71a75719c4133c7594d5b51b97fe7ff5e5a1d dejavu-2.4.ebuild 699
 SHA256 88fa2b6bd07ef4af65adf0a8d2a07c86002616f23c72628ddbd773c7e7e0a6e5 dejavu-2.4.ebuild 699
+MD5 877520658c52b167a635b86f30bf2883 dejavu-2.5.ebuild 632
+RMD160 89fc5d7576e2f6e319d1ce996111f3ff450aa20b dejavu-2.5.ebuild 632
+SHA256 3091add95c1505097e4c9858ca0b36cd9bcfa837d4e9b2df24cf33464e06a490 dejavu-2.5.ebuild 632
 MD5 802e023d624af60a02a26f2553da0f23 files/digest-dejavu-1.11 67
 RMD160 5bb8c721bc48e900f7babf6ba995513ff207dd76 files/digest-dejavu-1.11 67
 SHA256 5a6375c6ea44a16392517bb837547c4452006e02356d74bfe713c6f36770aff2 files/digest-dejavu-1.11 67
@@ -40,13 +40,9 @@ SHA256 e4bfd70c28a4bf5b8cfc1c308eec13f362115121c99addb74bbfe452f8202927 files/di
 MD5 fb23be120253a8be5b641047a85628f1 files/digest-dejavu-2.4.1 253
 RMD160 7fd7f0b391a92f770cf716c7b9c06f4381e39780 files/digest-dejavu-2.4.1 253
 SHA256 cb8605bdba4fccdcec87c5bcd7113195831f3ded292c6eb809d9deef9ebafce0 files/digest-dejavu-2.4.1 253
+MD5 8770b829eb2597ec0a6fc857994c63e1 files/digest-dejavu-2.5 247
+RMD160 e34242c2152f74dd585270799f076a61d5c55985 files/digest-dejavu-2.5 247
+SHA256 b3446fcf6d5485b9016ba2d05a8cbd6266319c0882bd1cbc32eaa339a10f7a3c files/digest-dejavu-2.5 247
 MD5 295674d4bed87f5a7c2796e032ed561e metadata.xml 158
 RMD160 e563fdca0707ee5927deab77f2e5ef79816384ca metadata.xml 158
 SHA256 9a8722fb0b5a1992b3942e85f23df4e08f10cabc2d783ca887479abe115b3ea8 metadata.xml 158
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-
-iD8DBQFEMA+iAiZjviIA2XgRAh9mAKDcoXhb+9pOUa7WQy38APjVlCMwxwCfTq/X
-rVeK1y7IdbTYVSPQbRgHgnU=
-=3qrC
------END PGP SIGNATURE-----
