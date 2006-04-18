@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX hdparm-conf.d.3 327 RMD160 2b3e0f38a748b57fcc8d5624a931d4a148d707a7 SHA1 5a86cc7149dcb80c8f2f598801c0758ffe629b45 SHA256 9e10f9d8eb9971207d89e2d14709d0f19ba7061b1239f57924348015784aa89a size 327
 MD5 35393ff70cd0030c94e6355281ed7f62 files/hdparm-conf.d.3 327
 RMD160 2b3e0f38a748b57fcc8d5624a931d4a148d707a7 files/hdparm-conf.d.3 327
@@ -50,3 +53,10 @@ MD5 882aa5ddbac2d329d81f76d6a13c5113 files/digest-hdparm-6.3 229
 RMD160 03a78e46ae3cfac9923ffdc2f6c5607277ee9541 files/digest-hdparm-6.3 229
 SHA256 f9c6327dde970138354ae21b78ae185a76959ed9c68c244fa4cf160301ec4fde files/digest-hdparm-6.3 229
 size 229 files/digest-hdparm-6.3 229
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFERXNN2+ySkm8kpY0RAosnAJ9lnGrD3zblvmEAXdQW/nJbFpWMkACfR+l+
+8QcucKJtdWEMjA+iRJjbMDU=
+=LhIl
+-----END PGP SIGNATURE-----
