@@ -37,5 +37,5 @@ MD5 4bf2ed1ba4e71ff7a799b27f958b8214 openssh-3.9_p1-r3.ebuild 4984
 MD5 f348bd329ca422946f501cc5ed1cbfb8 openssh-4.0_p1-r2.ebuild 5420
 MD5 2c888cf3a4cf4a20bf8b399f0e41dd0b openssh-4.1_p1-r1.ebuild 5381
 MD5 a9d7923f3909976222c24efd31c147f5 openssh-4.2_p1-r1.ebuild 5416
-MD5 0b99218db7cc0b6078f40a5a325badac openssh-4.3_p1.ebuild 5229
-MD5 a1f32b70629048fd7e1fd42d7945193e openssh-4.3_p2-r1.ebuild 5508
+MD5 1a209116363d8b78fa36fe11c8d7935e openssh-4.3_p1.ebuild 5207
+MD5 225042ab6c8c9a396814f1bb9e708bb8 openssh-4.3_p2-r1.ebuild 5486
