@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX baselayout-1.11.0-split-out-udev.patch 7413 RMD160 48eef541397ec0a21230de93518eed8a1ea63c16 SHA1 2dfa7e66c361459c8fce482b70d9e75ee51180bd SHA256 397221c066cbbb65d572df431b4babde766dc92d9177005e522e0df8faa25030 size 7413
 MD5 8d10a229861f862fca52cd8e3bc655d9 files/baselayout-1.11.0-split-out-udev.patch 7413
 RMD160 48eef541397ec0a21230de93518eed8a1ea63c16 files/baselayout-1.11.0-split-out-udev.patch 7413
@@ -122,3 +125,10 @@ MD5 9320336a070776b1cbb6b259829e7f14 files/digest-baselayout-1.12.0_pre17-r3 274
 RMD160 f9d171553d6780f16569e2982362574d0d4d404c files/digest-baselayout-1.12.0_pre17-r3 274
 SHA256 b402993965f1966e2b1dc15bb82ae7ca967c39ee6c11323bdb235700864b8fc4 files/digest-baselayout-1.12.0_pre17-r3 274
 size 274 files/digest-baselayout-1.12.0_pre17-r3 274
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFERYmZ2+ySkm8kpY0RAssqAKCyyJisDmtBQ0t/YXEGlSasN3V80ACguVkC
+CZFYpbA/4hibvbSOqhAhqM8=
+=1B8F
+-----END PGP SIGNATURE-----
