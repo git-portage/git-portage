@@ -1,4 +1,4 @@
-MD5 dd665555ffff6f3dcd06b3948df3643e ChangeLog 8184
+MD5 29d9e23d9157de9f2a2e597c9e5dddbc ChangeLog 8187
 MD5 c8c25561d4871462ea03dc0490ced91b files/check_swap.c.patch 2212
 MD5 39af7074b023625d9a75730bd6932437 files/digest-nagios-plugins-1.3.1-r1 72
 MD5 639ea6f5791cdf3ad540489c66d1f356 files/digest-nagios-plugins-1.4 70
@@ -14,5 +14,5 @@ MD5 167afaeaa89ede0c04d49c15d14da5cf nagios-plugins-1.3.1-r1.ebuild 3261
 MD5 3f909cf7b9e1321b9be00f8bc60662d8 nagios-plugins-1.4.1.ebuild 3386
 MD5 ace250f43f05a43e83aec3629cdda075 nagios-plugins-1.4.2-r1.ebuild 3445
 MD5 6b2c7a0cd3db0524589e75e88cf85375 nagios-plugins-1.4.2.ebuild 3384
-MD5 ea8ef17117354af44cb30fc97f200828 nagios-plugins-1.4.3.ebuild 3473
+MD5 413d23b288bf3ec25cbaaf9e50111a56 nagios-plugins-1.4.3.ebuild 3473
 MD5 6b8c13bd0d1ade8611baf2a2bc064ba1 nagios-plugins-1.4.ebuild 3277
