@@ -1,14 +1,18 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 c5e339a644a80b9fb7c250894a5b8a07 screenie-1.19.0.ebuild 764
-MD5 d9b97d293206635927075fbc034b1f78 metadata.xml 713
-MD5 d3091106a9f20c84418e69a4c1d1b245 ChangeLog 668
+MD5 758bc76e6db5cf0ac850da62a45da1cd ChangeLog 869
+RMD160 ad8b162afb948aabe2e9fa80576a8eb57693ef26 ChangeLog 869
+SHA256 883e6a3668bf33518c3e2d7961a5b366c9c676ff2246bfa1688c513a8ae815da ChangeLog 869
 MD5 10ce9be4cf7ce8307ec89cf13d02c917 files/digest-screenie-1.19.0 65
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFDj8PtFdQwWVoAgN4RAnIrAJ90x6x7DKPt+GLu/Fthfb4tfXYcMgCg2ue3
-10m/ilyZ5q8Tr9pVIqYnjck=
-=NV13
------END PGP SIGNATURE-----
+RMD160 e142b3f46302872113156dc6c8d3a7c6b278ec1e files/digest-screenie-1.19.0 65
+SHA256 2f8d6e3403a7abfbbc659111df4fcf1202e4d9271b3d350315889c457be33a3e files/digest-screenie-1.19.0 65
+MD5 37e0c8f936763ca1823a8ed7e337e46c files/digest-screenie-1.30.0 244
+RMD160 e8c52d180a24676cec1618dbf21fab7cd5a3c8b7 files/digest-screenie-1.30.0 244
+SHA256 9b03059a2457be71f385e2222e1927ebdad9e107b4cf1a1b371f2639fed074fc files/digest-screenie-1.30.0 244
+MD5 d9b97d293206635927075fbc034b1f78 metadata.xml 713
+RMD160 774bf384157433768256c39caa2cab3b6ac719be metadata.xml 713
+SHA256 b2dfc26a93ee214c1d74ccde36515e8d4a11640d1fac94f4d9be8946914c0065 metadata.xml 713
+MD5 c5e339a644a80b9fb7c250894a5b8a07 screenie-1.19.0.ebuild 764
+RMD160 0be85ba76c8a6aada88109982f46afa4939b1276 screenie-1.19.0.ebuild 764
+SHA256 2a43883bbfb41627eef7df61017f1c510a8406da3323eb8d38d784d07e62cc07 screenie-1.19.0.ebuild 764
+MD5 fdd81b6c2a475c2db88484c3f34cd216 screenie-1.30.0.ebuild 764
+RMD160 a46296f50f35c83a3d9a1d2453ef7166fbcfafcf screenie-1.30.0.ebuild 764
+SHA256 37d8d3c642c639ab8858eae6f22961dd8534b0090f1cc3c51dde9ed59c738175 screenie-1.30.0.ebuild 764
