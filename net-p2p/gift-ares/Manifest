@@ -1,17 +1,27 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 b9155b08bc73115589e0942f7e59ecdf gift-ares-0.2.2.ebuild 1133
 MD5 dd763194b60b567b1749b36891047ba4 ChangeLog 571
-MD5 875f23093b78af2d864a7a7ba464f126 metadata.xml 223
-MD5 aa118d317cc068d4772d1b72e9c6642a gift-ares-0.2.1.ebuild 1031
+RMD160 7c3db0c9e56603c4fca4ce589e51a6a92fd26319 ChangeLog 571
+SHA256 e8e31f566f33299a9575af4f32247312a3d8fb1904fb93fb3b14626f8cf1d1a9 ChangeLog 571
 MD5 ad7fa2d1b20b72336619bc7e9a7bba09 files/digest-gift-ares-0.2.1 68
+RMD160 5c34bc64da403f28f19116f61748c3d213739983 files/digest-gift-ares-0.2.1 68
+SHA256 9dd35b6b971129dab505c0f4014362de45240490f62834da784907dc84e476dc files/digest-gift-ares-0.2.1 68
 MD5 50732685dbaf342f1c36e21207d63da2 files/digest-gift-ares-0.2.2 68
+RMD160 50e8e2e48f365b7bcd7180ff5836a392873cfcc8 files/digest-gift-ares-0.2.2 68
+SHA256 d847f87b4e9b5aea6292b267c30c2ace63f337f7bafb28b996844ed06ef73c8c files/digest-gift-ares-0.2.2 68
+MD5 3fa0d3f8d4cb6b9e743805bd1e82f2e6 files/digest-gift-ares-0.3.0 250
+RMD160 eb794f918ff5bd7dfb6dc9ce7f1cfbcb8d7afb69 files/digest-gift-ares-0.3.0 250
+SHA256 c57843d71da277c1db69dfbe22c6b6f34483d3f7b864275ec0953db35ceb4106 files/digest-gift-ares-0.3.0 250
 MD5 1175b97752dbb324a27b449ef4997e18 files/gift-ares-0.2.2-gentoo.patch 663
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFCb/EUZ/iYVBmujdURAstpAKCp6v5J4D5wQBI1fR9LllnGNxl8vwCgrt3I
-9CCadfoNzZA2+Ip7DPpKaWE=
-=H2Uq
------END PGP SIGNATURE-----
+RMD160 886c511af9bfc4a1757fcb668e302239315bf221 files/gift-ares-0.2.2-gentoo.patch 663
+SHA256 0deae1e1b7af40c06c0254586a63f0ac63ddec87d3a510de47fe844af5f6f71c files/gift-ares-0.2.2-gentoo.patch 663
+MD5 aa118d317cc068d4772d1b72e9c6642a gift-ares-0.2.1.ebuild 1031
+RMD160 4a969cc2f23b2b8e56c7f5415b49e9ddab476b35 gift-ares-0.2.1.ebuild 1031
+SHA256 d6c6997e283b788ea1f89a4ae532e45d615c1c69ba917b2aa3e9c8abacd273ed gift-ares-0.2.1.ebuild 1031
+MD5 b9155b08bc73115589e0942f7e59ecdf gift-ares-0.2.2.ebuild 1133
+RMD160 4599c4fff7043fa18c88adb4e83c05240c73da9c gift-ares-0.2.2.ebuild 1133
+SHA256 2d033c59ab008d07b18e6bd7e4e7774c0e324da4db7e585d7b927d879e0f23e4 gift-ares-0.2.2.ebuild 1133
+MD5 7250cbd382a5952e55f64a075fa14f89 gift-ares-0.3.0.ebuild 1094
+RMD160 6ee65ee171edd98945c57fa0eff8da5affafdc94 gift-ares-0.3.0.ebuild 1094
+SHA256 6f7aa8f41708b5acfbbdc286c0609d38ccc8ad6caaf6c5e5bf0fdc84977d30b9 gift-ares-0.3.0.ebuild 1094
+MD5 875f23093b78af2d864a7a7ba464f126 metadata.xml 223
+RMD160 04492d6d9ec5940eb67563e2498d6a5a79028978 metadata.xml 223
+SHA256 fea830dcdf6851fe6a940828046810f5f6eb8a8472c06b7529d81142185df0e6 metadata.xml 223
