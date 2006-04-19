@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 aa834f08691ff8d1a81db358e4e01a52 ChangeLog 4606
 RMD160 9d41af5d3e6827609b578b319e11cf3276bd3e4d ChangeLog 4606
 SHA256 f163e5e63134c20e024eb67b4417b76c8032a7dda85ca4b3868090e64ae203ee ChangeLog 4606
@@ -19,9 +16,12 @@ SHA256 876dc53071bf2f743ae443eed42fa55a5d902a7c7902e1f1581dd20979be12c7 files/SA
 MD5 afbee903132dd6d6d400b6d1ede0146f files/SA-06-11-ipsec.patch 906
 RMD160 dbd41d9ce4d2f0b6d5c45f915c9780c2ee43391a files/SA-06-11-ipsec.patch 906
 SHA256 33ee98a658ac5abaa8b1d1dea7e53c0e8a47aa11d109c3279defe29c734728ad files/SA-06-11-ipsec.patch 906
-MD5 fdd5f9464a24e94d9c07afb96d280ec8 files/digest-freebsd-sources-6.0-r3 256
-RMD160 f0a1c1e21d535da51ee9e2839293c99a8b3fea3b files/digest-freebsd-sources-6.0-r3 256
-SHA256 d131f7b9b2b777da5691e816935b626d3c2bb33eaf3085b5dac2e64f1c9011ad files/digest-freebsd-sources-6.0-r3 256
+MD5 fe620e5fe67345b123180d225957c9ee files/SA-06-14-fpu.patch 3778
+RMD160 d76db671e257ad3310ddd02484c60829562ad9f7 files/SA-06-14-fpu.patch 3778
+SHA256 b8a630eb05974fc69424c0f64a90134976de12126131cad1ba472d316d3ff887 files/SA-06-14-fpu.patch 3778
+MD5 fdd5f9464a24e94d9c07afb96d280ec8 files/digest-freebsd-sources-6.0-r4 256
+RMD160 f0a1c1e21d535da51ee9e2839293c99a8b3fea3b files/digest-freebsd-sources-6.0-r4 256
+SHA256 d131f7b9b2b777da5691e816935b626d3c2bb33eaf3085b5dac2e64f1c9011ad files/digest-freebsd-sources-6.0-r4 256
 MD5 d7ba170be5603b2bc377cbd544c82a23 files/freebsd-sources-6.0-asm.patch 4172
 RMD160 7872cbedbbe9fbead0d69f26674489b335317606 files/freebsd-sources-6.0-asm.patch 4172
 SHA256 2431b2dae991eef15c00c3e19ac01e23e374a1e8e6992053e64486032631b52e files/freebsd-sources-6.0-asm.patch 4172
@@ -37,16 +37,9 @@ SHA256 7fbd139296e98697c94dcc6a4cd4d926b057779cb2415cb62bbb881b8acf26e5 files/fr
 MD5 91662a80d0cd0cd3dca34f3c1ca54830 files/freebsd-sources-gentoo.patch 1191
 RMD160 1c8ce1849d767a995f075fe43b7313b341bd0805 files/freebsd-sources-gentoo.patch 1191
 SHA256 e5e7186858259e7d6d21e925dde640a68b27255cf69ab089ee82675568e7d9a7 files/freebsd-sources-gentoo.patch 1191
-MD5 52a0830eabd832deddac9d7f1227edf8 freebsd-sources-6.0-r3.ebuild 1848
-RMD160 f2f743a1daaa9ae05f0599c25e51a3d650951c5f freebsd-sources-6.0-r3.ebuild 1848
-SHA256 b065b28b0c59576ef7cd49e14f514be673831d16452d089b8e94d98ef331be9e freebsd-sources-6.0-r3.ebuild 1848
+MD5 ff836af4ff66ccfdffe56c9f37824712 freebsd-sources-6.0-r4.ebuild 1916
+RMD160 659417796c4f8495cd09a0a33c767cf0c0524f71 freebsd-sources-6.0-r4.ebuild 1916
+SHA256 7f81ba1b6756fd09a49c94a1668eeccf77c6a164e39687bc5417aa9a4f552437 freebsd-sources-6.0-r4.ebuild 1916
 MD5 2bd48a5ae413433cbb36110b219ce97c metadata.xml 156
 RMD160 60b5820a08275f307e5bd936d78f5afd1f141086 metadata.xml 156
 SHA256 30ab515d6ac492d3d6c36ac3c675511742c2149e56a6b3228c8d22ab8edb3ff7 metadata.xml 156
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-
-iD8DBQFEPQeFAiZjviIA2XgRAmChAJsF8lGbSD0V49oDIoRVw6ctwCt7YQCfTq3Z
-sQtlHs9Dur+nxRq0trpGpZA=
-=xKOS
------END PGP SIGNATURE-----
