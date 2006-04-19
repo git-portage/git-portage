@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a78db37c104932ff0370f27e111fae7a ChangeLog 2767
 RMD160 66968046ab85d12a343c5afae3c93bec772f9de1 ChangeLog 2767
 SHA256 9d50f75f8a28149c1de994c8ea9d2a7b89d0fba18a15c6b5285e04ccc8ed2fea ChangeLog 2767
@@ -16,3 +19,10 @@ SHA256 b57b72eea37b59d126aec96a9f2fc236c32ad5d044735bb76e889442dc79507a metadata
 MD5 979fd28cb1aac325c9a6d86edefc17bf unace-1.2b-r1.ebuild 866
 RMD160 f63519031a4df592368c4f5ebc2d978c371a20cf unace-1.2b-r1.ebuild 866
 SHA256 47af2b6bc35dc2b89ddfcbb0d3ea7fce7adfabeaccc815188f351c79fbea4e02 unace-1.2b-r1.ebuild 866
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFERbJ+SENan+PfizARAusjAJ0VMgZkXS6Jy++n/56tFKtDJTJE+gCeLoIO
+qcHPP3nBH/ZE0CNu6TC86tM=
+=mxJv
+-----END PGP SIGNATURE-----
