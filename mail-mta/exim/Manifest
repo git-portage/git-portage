@@ -3,7 +3,7 @@ MD5 1af128deb098f20841d4af818951dd27 exim-4.50-r999.ebuild 7640
 MD5 a6bbbee630fa63abe39c7156e93cd79f exim-4.54.ebuild 8656
 MD5 d5eed320104f562ff39e65ed311e4f6b exim-4.60-r1.ebuild 9160
 MD5 d167a6ce531ad11c3c5633af650417f3 exim-4.60.ebuild 9137
-MD5 562e2d42882425acc648c21867021188 exim-4.61.ebuild 9168
+MD5 ee3fee4f9106d53cb6506eedea1de501 exim-4.61.ebuild 9164
 MD5 68fc403ba2c98ccba281939085cb9052 files/auth_conf.sub 775
 MD5 0cb2ffe88c81fd7ac8429b5a19d58b35 files/configure 16346
 MD5 1c2f7177e8deb2c85ee6bd4b6754cd2e files/digest-exim-4.50-r999 63
