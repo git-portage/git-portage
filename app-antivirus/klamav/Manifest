@@ -1,4 +1,4 @@
-MD5 6c6adbcc43fc091946b4c64b8943e655 ChangeLog 2025
+MD5 eb4f601e8b2ef6165dddcfe9ffd8ff80 ChangeLog 2025
 MD5 05418e4762e6978f2b5138c304e5d4bf files/digest-klamav-0.17.3 244
 MD5 326f080e1560b4ba7d9a8d13f09b52e5 files/digest-klamav-0.22.1 244
 MD5 193ef82b8cec98567eea39ce816cc13f files/digest-klamav-0.30.3 73
@@ -11,6 +11,6 @@ MD5 663ae694ff0c2c6d89b70af1005ce731 klamav-0.17.3.ebuild 493
 MD5 016c7c8f4c86f116407a7950d9cf21cc klamav-0.22.1.ebuild 494
 MD5 1d437e09b9859aa86ae234eae86a40c3 klamav-0.30.3.ebuild 541
 MD5 e4eb6eda210f1a4e9bd6ff6f9bda9434 klamav-0.32.ebuild 649
-MD5 55ca8ab24f4942b3688a64c299c9497e klamav-0.35.1.ebuild 615
+MD5 2d38e8c3d71fc151bb6bd16e2d6af18a klamav-0.35.1.ebuild 616
 MD5 6d996d6a6415f567ba13882688fd9efc klamav-0.35.ebuild 728
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
