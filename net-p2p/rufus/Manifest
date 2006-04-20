@@ -1,5 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 924f993e86009ed77c4e854447a9da9b ChangeLog 591
 MD5 53735818a492283e4e0e7ef317d78650 files/digest-rufus-0.7.0 235
 MD5 8800e003805fd336956205b3cf50a1aa files/rufus-0.7.0-gentoo.patch 7756
 MD5 5f9315eda32fdb086c4a24d2df0d484c metadata.xml 335
 MD5 7da5bf02443d5bea79965b99b194b76d rufus-0.7.0.ebuild 1147
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFERwZdoGcCqvCmTSIRAobLAJ9+ituCrVpnVvPxZjIB8XsgwbboUQCg3H6C
+OF8sCGLPLeDkhGEZQUVtzSU=
+=AecQ
+-----END PGP SIGNATURE-----
