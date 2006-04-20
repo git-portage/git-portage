@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX dmapi-2.2.1-only-symlink-when-needed.patch 836 RMD160 5b36f392f12d2382dd051c9766ae128a71b659ec SHA1 79fefd16a84e51797165fc8438382382156a149b SHA256 fede0dc42499b8903e42ea976d2ebfe8965750a8b2b116433364e657fbc8189d size 836
 MD5 6204834fe8dda5a8e61bb52b8db06673 files/dmapi-2.2.1-only-symlink-when-needed.patch 836
 RMD160 5b36f392f12d2382dd051c9766ae128a71b659ec files/dmapi-2.2.1-only-symlink-when-needed.patch 836
@@ -32,3 +35,10 @@ MD5 6fdc4487c8c1ea742b9ca31c78d79f26 files/digest-dmapi-2.2.3 244
 RMD160 4f77d4c51a8e4bb3862e980d42b7352dbc898ad7 files/digest-dmapi-2.2.3 244
 SHA256 9b9b1ac68a6e3cafa9f0154fbc54a811a03fe0f08e426dd3fe5d45a1dec71950 files/digest-dmapi-2.2.3 244
 size 244 files/digest-dmapi-2.2.3 244
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFERuc12+ySkm8kpY0RAkE0AJ0RO0NdyQscj6V5sjnUwMa5hJ9T0QCePX7k
+ww0MYV+C2NTvs2NjGXgIijw=
+=ODas
+-----END PGP SIGNATURE-----
