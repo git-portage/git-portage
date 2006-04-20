@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX elfutils-0.101-bswap.patch 849 RMD160 94c3d4cd05dad8a1418a4f1503d3e3210918e6b3 SHA1 97182418f9913f819eb0795659b516fb54a30759 SHA256 a771a1143431e4f6eb8b2b8251178c417ca9d9484bbc0d9ce47353a485cfb430 size 849
 MD5 1e6460efdb609828aa57b5874813972a files/elfutils-0.101-bswap.patch 849
 RMD160 94c3d4cd05dad8a1418a4f1503d3e3210918e6b3 files/elfutils-0.101-bswap.patch 849
@@ -77,3 +80,10 @@ MD5 85a416f3bac5c46537b704d32039f538 files/digest-elfutils-0.120 527
 RMD160 07b8fbea5f4469a1a4feea5c1f8d1cb555c003f3 files/digest-elfutils-0.120 527
 SHA256 d783ea93ae7a1d2dd2ad6eb740d5abf47011e89adb5e482408a2474f92aaf38d files/digest-elfutils-0.120 527
 size 527 files/digest-elfutils-0.120 527
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFERxA42+ySkm8kpY0RAtSiAKChH46XFUC+Q02Ogs3aJVsrV+VIAwCgmFg9
+8IlGEg6GDiHPbkT/gjuaE4E=
+=/87A
+-----END PGP SIGNATURE-----
