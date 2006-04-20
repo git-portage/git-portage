@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX attr-2.4.19-attr_copy_file-suppress-warning.patch 715 RMD160 35f59aa90bbfed03a3829ad8bdcab7f9acfab30b SHA1 c25e0310dca46edb025477f9c64776c20a2bc045 SHA256 03041691b4480fc8c654765460aeb991a574421ad131fa664df38855f11afcfc size 715
 MD5 c09974172d4e6f9fd20a4c4b53c0a8d4 files/attr-2.4.19-attr_copy_file-suppress-warning.patch 715
 RMD160 35f59aa90bbfed03a3829ad8bdcab7f9acfab30b files/attr-2.4.19-attr_copy_file-suppress-warning.patch 715
@@ -66,3 +69,10 @@ MD5 49f032859772544facc2fe4ca148c180 files/digest-attr-2.4.28-r1 247
 RMD160 e894a50d8e770748517a7c05d87d5a25128bf8dd files/digest-attr-2.4.28-r1 247
 SHA256 ce3656f691b3ca4f20fb9124677f09f52a67d8ba4573c6b6617abd614a8378c0 files/digest-attr-2.4.28-r1 247
 size 247 files/digest-attr-2.4.28-r1 247
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFERuWI2+ySkm8kpY0RAjxXAKDAEUwUgQPI/iN0b1u5gSwdsZDKqgCgrT72
+cgch2v33iwhCgVlfijFvDHk=
+=fJaH
+-----END PGP SIGNATURE-----
