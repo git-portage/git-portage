@@ -1,5 +1,5 @@
-MD5 bc4de33b687b19e97ea8a250f696b227 ChangeLog 3403
-MD5 66960cf0187cb1adb919b9dfb1a0f9c9 bonnie++-1.93c.ebuild 950
+MD5 1ec0a8835a3feac459389626b404ca9f ChangeLog 3403
+MD5 f32e610281d9752fd440f009c316db24 bonnie++-1.93c.ebuild 948
 MD5 e1523060054e41baed39c972d27731f3 files/bonnie++-1.93c-64bit.patch 646
 MD5 52da670893e9dbaa752cd942a3e37eb2 files/digest-bonnie++-1.93c 63
 MD5 aeb5a6b55ca2477b1f998c03e6c42a15 metadata.xml 493
