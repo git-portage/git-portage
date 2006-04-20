@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX generator-0.35-gcc.patch 869 RMD160 7811e635412b9d337df06b45279b63a98aa2db5c SHA1 b04fe28b4a7745fd01603ecb6f7e4ce315a8f812 SHA256 092700ea33fb0bbb92703f7a8d0d8a0dfea11fba0bb38b66604e54c8b8de754f size 869
 MD5 4e3f56fa4f130e01fac79543b75a50a6 files/generator-0.35-gcc.patch 869
 RMD160 7811e635412b9d337df06b45279b63a98aa2db5c files/generator-0.35-gcc.patch 869
@@ -32,3 +35,10 @@ MD5 ff7a8432caed77851c8d8e189a754e8f files/digest-generator-0.35-r1 268
 RMD160 48fd2f473fe4896a05c7ff970cd0b7c681418fc6 files/digest-generator-0.35-r1 268
 SHA256 ac0ab0054952af5117de70ecf7039c60ddd3b2bfa21dd901f5a626b51ababbaf files/digest-generator-0.35-r1 268
 size 268 files/digest-generator-0.35-r1 268
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFERwQv2+ySkm8kpY0RAp+BAJ0SroPH3Fzd1Ohc6HmFtz28ZQC70wCcD7T1
+bF0wU/FWR9gmxwJ2HNvCN6Q=
+=4MIT
+-----END PGP SIGNATURE-----
