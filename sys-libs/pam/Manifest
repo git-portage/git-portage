@@ -1,6 +1,9 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
+MD5 16c71fddf369310f9367a3343f09a3cb .pam-0.78-r5.ebuild.swp 16384
+RMD160 432a5e32af2f5642c9bde7ef1404d490145f8c56 .pam-0.78-r5.ebuild.swp 16384
+SHA256 fdc945f52927fb89e8464ad25216614c7a5e5c82f5768e2b5ee6e6187b87a95c .pam-0.78-r5.ebuild.swp 16384
+MD5 a58f0904c1cc306a67f4939fb3eeabdf .pam-0.99.3.0.ebuild.swp 12288
+RMD160 51bcad28d985cc7717ebe49dbf6b1fb134a1744a .pam-0.99.3.0.ebuild.swp 12288
+SHA256 e31fa3c37f1ebbc9502abb41141fe2660e04e44a43f227367d1c0c7d91a57ba6 .pam-0.99.3.0.ebuild.swp 12288
 MD5 f53f0b19c4a98d1605d474073a4ea9f2 ChangeLog 15794
 RMD160 e0cb479d3de66324bb7e3c0caabc52840974aa33 ChangeLog 15794
 SHA256 e7b606b2aa95e470eae8fc52efa68fba2275d44fe39b6ef0231bf92c5293b33e ChangeLog 15794
@@ -25,6 +28,9 @@ SHA256 518dc8f48f4411fdd1bfe37b7b75dcc8bbd3e34dcdb8f8866f6f8d0ee81a6c4e files/di
 MD5 62a0abc2cadbed30c294d6138e9580d3 files/digest-pam-0.78-r5 976
 RMD160 51b00ba98d54859cde7a1a37e4a786014c67e979 files/digest-pam-0.78-r5 976
 SHA256 1afc2f64a13c8dd8aa8b23db87ed5441c6961b44e13e48d91be1468957baba5c files/digest-pam-0.78-r5 976
+MD5 2ec8f1207e14c55949bf8e5a8b226b22 files/digest-pam-0.99.3.0 259
+RMD160 850f52c6ebb0167642586a181070fcf1a78a315c files/digest-pam-0.99.3.0 259
+SHA256 200428e4f49e48109a12b420b0f0a6eb6b3b50c014d85f96c9577f6dff4175d0 files/digest-pam-0.99.3.0 259
 MD5 69f8cfad7f241eb669085eaa753cd9dd files/pam-0.77-console-reset.patch 1826
 RMD160 60f727fda6e17ec1b0cfebf9759586605af4de28 files/pam-0.77-console-reset.patch 1826
 SHA256 d0afffc9af74838c86853c5f5f862a413c4be487cf090dad2c3f6b034a34b524 files/pam-0.77-console-reset.patch 1826
@@ -64,10 +70,6 @@ SHA256 cc6b2bb9c7fc6cf58e83ff7cce1d41cfe8333ccd8df27ab7d99c85392ff628be pam-0.78
 MD5 1fb6b2c2713d79064139e3fcd9434fb2 pam-0.78-r5.ebuild 11464
 RMD160 47e23bc9fc5b0086264e3bb7fe999a0f1f9de0fc pam-0.78-r5.ebuild 11464
 SHA256 82048e5858bcf2b6ed9d34906f1da619d41ead0c08a0bdb021805ad18601ec6a pam-0.78-r5.ebuild 11464
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFECm7sJ+ChZlpDtAoRAjcKAJ9Mrd02/V0ZyZyBt3+apSh/8yL9bQCfcqs3
-fDwf6PU89az0zRiTP6C8eG8=
-=PEDQ
------END PGP SIGNATURE-----
+MD5 bda60cec06577fbf35fd30092abaddf2 pam-0.99.3.0.ebuild 390
+RMD160 a3a8749ab4daa902412420cf131385b4ff7e00fd pam-0.99.3.0.ebuild 390
+SHA256 ef039e1bf5c0e30de566e3d89d2b6676ba8fa95a9ed27fe6080ad5a98a116b51 pam-0.99.3.0.ebuild 390
