@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 eceafd81db440f2746ab62e85ef0229b ChangeLog 24719
 RMD160 cdf2347adc2ec8216ad2af237fb9626f0ab5477a ChangeLog 24719
 SHA256 0b1407ecec2a6bc279bdfce09df66b9357e4275be8fa4b24aa3af229214ca33f ChangeLog 24719
@@ -52,3 +55,10 @@ SHA256 347b9f65d79dcebf5b1703c833d5de47f737746bfc22fa8e2aad477678bc6af3 spamassa
 MD5 7f0c87bd783f395b6c87c479edcba6b3 spamassassin-3.1.1.ebuild 7910
 RMD160 69cca26480802821b24a59faa53c10adb1f83734 spamassassin-3.1.1.ebuild 7910
 SHA256 a798f0ea81b3d07dd864795da7741d950d26ddbd458814b1f09b08731430de5a spamassassin-3.1.1.ebuild 7910
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFESS6Er2QksT29OyARAjThAJ43aHRkz9tllWz92oFpsv6ItE9mnwCgiw5s
+4/QS7Ss1h6K4yujCeX9kkhU=
+=YPhu
+-----END PGP SIGNATURE-----
