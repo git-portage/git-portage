@@ -1,4 +1,4 @@
-MD5 dfcd155a40260f1993e5ac21a39163d3 ChangeLog 6557
+MD5 c9d1e56d78b95ca688355a40f9decc83 ChangeLog 6553
 MD5 b22a687fe2e8cf06cd5147f1ec68efb7 files/digest-ksysguard-3.4.1 212
 MD5 b22a687fe2e8cf06cd5147f1ec68efb7 files/digest-ksysguard-3.4.1-r1 212
 MD5 7deca5e51240260b2976fbbe9326ed6d files/digest-ksysguard-3.4.2 287
@@ -13,5 +13,5 @@ MD5 9fe1b72a5365ccbc9e7b788ddbc4f6b7 ksysguard-3.4.1.ebuild 446
 MD5 ae2847a5d3a13f0813b8aefef185e54a ksysguard-3.4.2.ebuild 592
 MD5 c388907b22169601ee853aeca2f63763 ksysguard-3.4.3.ebuild 593
 MD5 a82cddf483331a5b97d0e811d52a171c ksysguard-3.5.2-r1.ebuild 701
-MD5 8926a6562323facc51cb1130e677dfef ksysguard-3.5.2-r2.ebuild 800
+MD5 2335dcd304883a18e8caff5b8e6c6d67 ksysguard-3.5.2-r2.ebuild 799
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
