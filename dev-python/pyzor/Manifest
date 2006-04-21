@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ee9f7abbe97b68d9ac9ca87f6b51f4e7 ChangeLog 2950
 MD5 883d7b506158bac65ae416cfbbb30736 files/debian_mbox.patch 11250
 MD5 3f779e11cd93d820e75567bf24ab2e37 files/digest-pyzor-0.4.0 63
@@ -9,3 +12,10 @@ MD5 71c4638c9c88af75b58e5f5cb54fe008 metadata.xml 159
 MD5 27c4e241c491a3ce40991657e49c5a7d pyzor-0.4.0-r1.ebuild 846
 MD5 c8a2f32d66fc3a888faa8460a19d480a pyzor-0.4.0-r2.ebuild 1024
 MD5 3c170e1cf94bfddbe3588e4b6e231510 pyzor-0.4.0.ebuild 656
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFESVDYKRy60XGEcJIRAo7CAJ9iFiMyhVzoNFb4YzZv0CYhDhuSoACfdAXx
+LpTCBflitPrqu+i1RhKe6nM=
+=caUh
+-----END PGP SIGNATURE-----
