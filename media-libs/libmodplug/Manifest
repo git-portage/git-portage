@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0570fb51deed59fbbcf35deec600b5b5 ChangeLog 1842
 MD5 5009236d8b451fecef858961aed24428 files/digest-libmodplug-0.7 66
 MD5 6099a721c7a188eabdc91042dac3de3d files/digest-libmodplug-0.8 244
@@ -6,3 +9,10 @@ MD5 9ad05c4679d06d99935b79cc3ad19026 files/libmodplug-0.7-asneeded.patch 421
 MD5 4512e87aa4ca1db50c4c4dd6baa3ec66 libmodplug-0.7.ebuild 817
 MD5 1fe712fc57886b2fd95d6a74b3f91fdc libmodplug-0.8.ebuild 860
 MD5 319fe8f45b51a2d31f8d4e9a4071ca10 metadata.xml 248
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFESU3NKRy60XGEcJIRAvQ4AJwJeTLphmjKlJr1+wu/npJFdhui7wCdFrUH
+muCpJkMlstInFGIZQJcK4is=
+=HPrx
+-----END PGP SIGNATURE-----

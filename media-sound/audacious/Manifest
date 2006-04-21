@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b2a175cd3fb6517c97f936a28f57cb35 ChangeLog 6122
 MD5 fe1ea03aa4a3e638681490e809f8d7c1 audacious-0.1.2.ebuild 2342
 MD5 eb0bf108c3d5da722ea2e30219065c91 audacious-0.2-r1.ebuild 2849
@@ -15,3 +18,10 @@ MD5 967776259dd717995dadcbb98a451603 files/digest-audacious-0.2.2 500
 MD5 9cbe86544380e509bd1111cbb1d15a33 files/digest-audacious-0.2.3 136
 MD5 c208147e974fdba9e399a029cea95bd1 files/digest-audacious-1.0.0 500
 MD5 319fe8f45b51a2d31f8d4e9a4071ca10 metadata.xml 248
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFESU4gKRy60XGEcJIRAv+SAKCIuu0Ge46VsFGdr8g2gxWjkf8PEwCeI5X7
+GvXysqkzPvD9pdNi916shPc=
+=uaxs
+-----END PGP SIGNATURE-----
