@@ -10,9 +10,9 @@ SHA256 5223d1d575184878a914e6b93dbb7fccd5f44f16db4eea35f19452c57d8c410a debianut
 MD5 da541a1bec7e0b76e453054cab836a04 debianutils-2.15-r1.ebuild 1188
 RMD160 c354385e7a6dccce0883defd8915e268cee3e007 debianutils-2.15-r1.ebuild 1188
 SHA256 dcdc586c229d0474f91161b55df6a2d940ee1999731e75605116ae6f6a953112 debianutils-2.15-r1.ebuild 1188
-MD5 c256bb3241a1a34e9030b0ffde676f11 debianutils-2.15.ebuild 1133
-RMD160 b1f9809be845ffb0e14fdabe0ddcaefcf7de1cae debianutils-2.15.ebuild 1133
-SHA256 770e5c75971ef568d36f80731d0f54b29ca76ba370dc1dfa38dbbe0db73fc737 debianutils-2.15.ebuild 1133
+MD5 394eecb7755895d9ad5f676d0bc2335e debianutils-2.15.ebuild 1132
+RMD160 d656fea81fa9d35322bcb21ad07c2b8d4767f477 debianutils-2.15.ebuild 1132
+SHA256 3cb9bd658c226197810376892181102ead0d67034c2be4bcd85fc4352b71a2e4 debianutils-2.15.ebuild 1132
 MD5 c2a83b7cc35cd0a76df37cf57c8f6563 files/debianutils-2.14.1-no-bs-namespace.patch 1412
 RMD160 20226c9f11a6e3708c39c426f46391c5e828c1b9 files/debianutils-2.14.1-no-bs-namespace.patch 1412
 SHA256 1cac8819abad2ae16568461ccddfd27e98e2adc3103a61d647358f05ef6eb365 files/debianutils-2.14.1-no-bs-namespace.patch 1412
