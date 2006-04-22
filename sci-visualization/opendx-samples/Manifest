@@ -1,14 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 adf32f9266474324de2dbd80786fbb3e ChangeLog 1194
+RMD160 89098598459654c14916f13c4a5c81a8d3642079 ChangeLog 1194
+SHA256 f6ae1c5f9083429f1d6591f8d06715b67309e097b60e66cb7df316b43dd13027 ChangeLog 1194
 MD5 79e9088507c29d4854546506167d851c files/digest-opendx-samples-4.3.2 68
+RMD160 fcf3c80c7ebb8562bbb7a2a993b1f20f9f4dda25 files/digest-opendx-samples-4.3.2 68
+SHA256 cdee1fc1922f2072656ce3977d450fff1b35b6660e6ce9c4747b3efe89b410cb files/digest-opendx-samples-4.3.2 68
 MD5 8c623e53daafa025137077c6b65815bd metadata.xml 156
-MD5 a897a6dd902ba59faa83b3113a6cc27a opendx-samples-4.3.2.ebuild 1216
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.4 (GNU/Linux)
-
-iD8DBQFEOvsr/NoSW7FuNV8RArSmAJ90JLt8hCtrytwiBSh+aLh1OTMttQCghpIO
-FeFA04cwDuK9HAmnFoWnwKo=
-=vVOO
------END PGP SIGNATURE-----
+RMD160 dc078172bfebcb25d69bdf8731714f9cce9d3e36 metadata.xml 156
+SHA256 5d22100902db7507a5b5493dd4a66cdb08025faf80a2c0b75e6392315c47f900 metadata.xml 156
+MD5 c997e2b8f2e4c30cd76e498a1561b7ad opendx-samples-4.3.2.ebuild 1215
+RMD160 d12c95237ac518b462677813e03abd110c734b44 opendx-samples-4.3.2.ebuild 1215
+SHA256 440ecfb07d4b15f118bce9b1649df90bf42f98ef0921f1362e4f053f638bb869 opendx-samples-4.3.2.ebuild 1215
