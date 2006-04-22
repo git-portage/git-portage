@@ -1,4 +1,4 @@
-MD5 aacd6a6204cadc775ac5cea79817d0cf ChangeLog 4468
+MD5 6155980185c743bbf197ac83668b8232 ChangeLog 4763
 MD5 54d3d1f463b503f1ad2fe16ab183fe4b files/0.6.0-segv.patch 458
 MD5 ff63b2b07eb50db8962f544a45028bee files/digest-gnome-bluetooth-0.4.1 73
 MD5 6da6c9018b79e0077f1a3bb071a01cef files/digest-gnome-bluetooth-0.5.1 73
@@ -20,6 +20,6 @@ MD5 8be3b2e5c4ab65eb0947646d0cf4f88a gnome-bluetooth-0.5.1-r2.ebuild 1382
 MD5 ca451d450412e5dad4d0ca6c058b6891 gnome-bluetooth-0.5.1.ebuild 1289
 MD5 79a7f6c060b36fef60a48e584567c7f6 gnome-bluetooth-0.6.0-r1.ebuild 1433
 MD5 05d959e26d478b4c14acf590e58bdbfa gnome-bluetooth-0.6.0.ebuild 1404
-MD5 a219dc50b43d436f4825832103b018a4 gnome-bluetooth-0.7.0-r1.ebuild 1498
+MD5 9c148aaabf9945b0ed9653017e3f0500 gnome-bluetooth-0.7.0-r1.ebuild 1471
 MD5 7b69b6ce2c9525ab14dee0e15bd971ff gnome-bluetooth-0.7.0.ebuild 1511
 MD5 439de383d422683abddb9ff8b75aa67b metadata.xml 235
