@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 10ae8aea77d2993050806e928fd22989 ChangeLog 3702
 MD5 165cdde955fa7f445d03005d25665e20 files/digest-openobex-1.0.0 66
 MD5 a577e794f16a7f437408fcbd5861b9ed files/digest-openobex-1.0.1 66
@@ -11,3 +14,10 @@ MD5 b1fe0220e290db877f78f6c5996bcd76 openobex-1.0.1.ebuild 914
 MD5 61e6b174ba8f1bc89d73cdc46d212c72 openobex-1.1.ebuild 993
 MD5 1d47409ee126950074954481482808c8 openobex-1.2-r1.ebuild 1093
 MD5 6b1af9ee016c5b8ff9af7d5d232727dc openobex-1.2.ebuild 1017
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFESgRjjG8pv1lIUX4RAmDEAJ4oSF5+WwNTrtMyqwnP6sHpHSX8lwCeJtk8
+tIYP5aDTpDNKhni/pqyr01Y=
+=SwiV
+-----END PGP SIGNATURE-----
