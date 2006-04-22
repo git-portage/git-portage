@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 79e67fcc9e2bb06e3da8fce382eec8d8 ChangeLog 10458
 MD5 ef0d6edb066135c347d7cf0b303e502d files/digest-pax-utils-0.1.10 250
 MD5 5a6875dda5979124fb31d983a7713008 files/digest-pax-utils-0.1.11-r1 68
@@ -8,3 +11,12 @@ MD5 90f775b6c4fdbeb494f7d8e1d94ad30d metadata.xml 604
 MD5 39c94cf8998ff9521ae1a6c7a45fdead pax-utils-0.1.10.ebuild 1177
 MD5 97a6459b6097a67bc47b398bd25df362 pax-utils-0.1.11-r1.ebuild 1253
 MD5 ecc20ffdd7188cc6b47fd7aa6a9234d4 pax-utils-0.1.9.ebuild 1094
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iQCVAwUBREobnp4WFLgrx1GWAQK3/wP9GFfIBFNFwlHH98dh117Rug+OuKyX+UeW
+kTNFlGQEj3CwS1Gn5kKXn2lg3xj949h+jfIJglAuB3NqRV1nvYhaQ3AIz8FseGmr
+KMM0EKhrULCEi6DXWo6vP9aji033GrLuov7HNvV4PuywrEqqUUWOd49BBBOqJ2qK
+wWcsLFmUCbU=
+=D/tl
+-----END PGP SIGNATURE-----
