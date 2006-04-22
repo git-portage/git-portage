@@ -1,4 +1,4 @@
-MD5 843a023bffa4656400b3aad96c302f0d ChangeLog 3455
+MD5 68ca8a26434de3433d579a63dc6892e4 ChangeLog 3761
 MD5 6fd25ef01add3d4f6b205a586233e783 files/digest-libbtctl-0.3 64
 MD5 89c026311c1c9a92f14e59fe40698804 files/digest-libbtctl-0.4.1 66
 MD5 89c026311c1c9a92f14e59fe40698804 files/digest-libbtctl-0.4.1-r1 66
@@ -12,6 +12,6 @@ MD5 b6d146ee15ee1b84bb14b9564b072000 libbtctl-0.3.ebuild 875
 MD5 335a33b28ec9cfe8087fd383477ee4d8 libbtctl-0.4.1-r1.ebuild 1138
 MD5 9b0385b4591ffdb2ac70a14bdbc0d2e8 libbtctl-0.4.1.ebuild 1249
 MD5 55254f4675a641caac5f81b35f227f66 libbtctl-0.5.0.ebuild 1115
-MD5 c7a2b3cb399e75a3a44b09693d11b572 libbtctl-0.6.0-r1.ebuild 1186
+MD5 34c0d6da9bc9d5aa1236bf14da4fa400 libbtctl-0.6.0-r1.ebuild 1188
 MD5 63e663db1b2d215f43454436f3365d55 libbtctl-0.6.0.ebuild 1118
 MD5 7a66fef4deb08f29b7cf0de1c2e3a4de metadata.xml 254
