@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 68ca8a26434de3433d579a63dc6892e4 ChangeLog 3761
 MD5 6fd25ef01add3d4f6b205a586233e783 files/digest-libbtctl-0.3 64
 MD5 89c026311c1c9a92f14e59fe40698804 files/digest-libbtctl-0.4.1 66
@@ -15,3 +18,10 @@ MD5 55254f4675a641caac5f81b35f227f66 libbtctl-0.5.0.ebuild 1115
 MD5 34c0d6da9bc9d5aa1236bf14da4fa400 libbtctl-0.6.0-r1.ebuild 1188
 MD5 63e663db1b2d215f43454436f3365d55 libbtctl-0.6.0.ebuild 1118
 MD5 7a66fef4deb08f29b7cf0de1c2e3a4de metadata.xml 254
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFESfZnjG8pv1lIUX4RAmPLAJ0QsqIbBN5D2QeLzcQR9QeZZHNn8ACfVq1V
+2TNiYvn6hGNYLykoGTPbiRY=
+=7SqF
+-----END PGP SIGNATURE-----
