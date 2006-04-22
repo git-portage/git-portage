@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 78b3d0adb3631bf7502ae32a8f35d9be ChangeLog 5517
 MD5 c668aca6eec704faa03632e0588bbe3e files/digest-multisync-0.83_pre20050414-r2 71
 MD5 c668aca6eec704faa03632e0588bbe3e files/digest-multisync-0.83_pre20050414-r3 71
@@ -8,3 +11,10 @@ MD5 4eb51641834063e986569d108f657719 metadata.xml 450
 MD5 1b02a3193fee90560f759fa0f4f9e33e multisync-0.83_pre20050414-r2.ebuild 3331
 MD5 5d2b9955aa13d8e4a696aec3a3f2a5dc multisync-0.83_pre20050414-r3.ebuild 3541
 MD5 5bb118b7db83f9d19ce9d5c18492a679 multisync-0.83_pre20050414-r4.ebuild 3724
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFESe7FjG8pv1lIUX4RAqqSAJ0fMQU61AYRUEKZBZ0ivMAyiBs4LACgyvRD
+jx0w1wEe0x3MO1DxJoOhXKg=
+=1V6A
+-----END PGP SIGNATURE-----
