@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 c0ea53476bb22bfc6323cb4eb6f29117 ChangeLog 2047
 RMD160 c63fa8b822569cdd8792d11ff0ae77ae607f1904 ChangeLog 2047
 SHA256 e1a4e0ed270421240af90ca773765020dcec22e6b1509f67d3f289df7a4356a1 ChangeLog 2047
@@ -16,6 +13,9 @@ SHA256 1e34e0b044772408664cc53d26f7d165f1c74d229d2a2fe349bd1471488caeac cl-fad-0
 MD5 416f8ef6ac9bba9fe9f19ba13289c67a cl-fad-0.4.3.ebuild 698
 RMD160 4ba78208c73b5a14b08c1bb4348c68181f689ff1 cl-fad-0.4.3.ebuild 698
 SHA256 8da1fa4b2339625f3f8396ed3a3f2885e49fdf3f9d49f82bc4b833e9306cf6b9 cl-fad-0.4.3.ebuild 698
+MD5 416f8ef6ac9bba9fe9f19ba13289c67a cl-fad-0.5.0.ebuild 698
+RMD160 4ba78208c73b5a14b08c1bb4348c68181f689ff1 cl-fad-0.5.0.ebuild 698
+SHA256 8da1fa4b2339625f3f8396ed3a3f2885e49fdf3f9d49f82bc4b833e9306cf6b9 cl-fad-0.5.0.ebuild 698
 MD5 a8f90f71af533db45e927faf915a89de files/digest-cl-fad-0.4.0 67
 RMD160 d75c1f161bd384fbc0663dad59f9c9b385f6df74 files/digest-cl-fad-0.4.0 67
 SHA256 861dc3e129d5f699fd5aed2e2c1595546d8bd0ad049cbb37135f66597e7daea2 files/digest-cl-fad-0.4.0 67
@@ -28,13 +28,9 @@ SHA256 cdd4af710ffebc237636286666e56addfd01838eee0ee8b8d8da3e49bb2cc620 files/di
 MD5 cb5d982b3ec16a2c3e87bf0b40f39e1a files/digest-cl-fad-0.4.3 250
 RMD160 f3de6c545b8e60bef6d7403ad8aa76326273c633 files/digest-cl-fad-0.4.3 250
 SHA256 b07c6209d348c176d4b5f2463de4832683be3311e23165b12443fd92d4faee98 files/digest-cl-fad-0.4.3 250
+MD5 620f747c2c427ba85504077793729939 files/digest-cl-fad-0.5.0 250
+RMD160 978270806a6d8996a559df25e7c2737f8ac56941 files/digest-cl-fad-0.5.0 250
+SHA256 31a2c953c99ee567e1be4b4e2818419aeb97953e7f78c3bc957ed67055771e8e files/digest-cl-fad-0.5.0 250
 MD5 406b468caca69a1e7c3670831594f9f2 metadata.xml 496
 RMD160 11c5d81bc01bfdd001147703e2b4d38fcbd715ca metadata.xml 496
 SHA256 67c96290a34e6c6862bf6a5ed8fca5341b3b914a40c05e9d46747d1df6c6f400 metadata.xml 496
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFEGJqAyiNZaEAZA+ARAp/fAJ4iKnngGh0ZgivOVZG+G4Dz9bNdjgCfZzzz
-Y0Z+XdshXFyBqkam3cmwxoo=
-=scsH
------END PGP SIGNATURE-----
