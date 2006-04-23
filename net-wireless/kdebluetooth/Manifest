@@ -1,4 +1,4 @@
-MD5 01703f5feecd5c2f4528f0acebf2ce46 ChangeLog 6774
+MD5 5b77f683665b893ceaae0a65f4acd4a3 ChangeLog 7026
 MD5 8cc409d86fe7e8cdbe634fd6a075797d files/digest-kdebluetooth-0.99_beta1-r1 76
 MD5 65837e8b7c7f001267c9139f49051cd2 files/digest-kdebluetooth-1.0_beta1 75
 MD5 447924f1bcc44581ffbfa3b19b0b38ca files/digest-kdebluetooth-1.0_beta1-r1 271
@@ -8,6 +8,6 @@ MD5 3e91edd365c0b05c5f0ad91eec16c34b files/kdebluetooth-1.0_beta1-kde3.5.2.patch
 MD5 fb53e3cd32d8a10945c6108015f8d4c3 files/kdebluetooth-1.0_beta1-openobex-1.1.patch 4030
 MD5 8882322a8d44d082629230230be6ccfd kdebluetooth-0.99_beta1-r1.ebuild 1619
 MD5 bc045eece2d19c6d8155e6ebeeb03dfb kdebluetooth-1.0_beta1-r1.ebuild 1742
-MD5 0e46386f4e83abb31fbcae4c846f43b1 kdebluetooth-1.0_beta1-r2.ebuild 1873
+MD5 ec5705872cc23d04da6fb776fc79c442 kdebluetooth-1.0_beta1-r2.ebuild 1870
 MD5 1f2e8942e98a24d72fd694e8dd8befe0 kdebluetooth-1.0_beta1.ebuild 1704
 MD5 02039d51ca4a42817775fd436dfaa956 metadata.xml 157
