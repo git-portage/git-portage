@@ -1,0 +1,6 @@
+MD5 a8e57dee3b853f28f39d70dd2f47eda1 files/digest-pessulus-0.9.1 247
+RMD160 f449e27404b3019db9356ece1e321bd691178357 files/digest-pessulus-0.9.1 247
+SHA256 3c4a786df8e4c5b17839e9d22087e4611f432cf62f0ade8372a5c41535bd134b files/digest-pessulus-0.9.1 247
+MD5 fd50825bc167ab1c27f3a875cbef3680 pessulus-0.9.1.ebuild 620
+RMD160 0279646c8bae68575edb000d5ec06affa8ee2c0c pessulus-0.9.1.ebuild 620
+SHA256 633704953fbb2ce173ed4109bf3d3fc1849e4c3a70c07bc6c3badb0d5f93f244 pessulus-0.9.1.ebuild 620
