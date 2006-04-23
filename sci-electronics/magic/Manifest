@@ -1,4 +1,4 @@
-MD5 95089a13762ace38e8f3dec01b00ae48 ChangeLog 3182
+MD5 14038dee9d56b66f2505978dc886f86d ChangeLog 3181
 MD5 fdb38b03c3fbdbb89eff8081e9953744 files/10magic 14
 MD5 3386112ab484d0dff56bbd07451f7cf6 files/README.Gentoo 533
 MD5 0d0472ae43dbddd46bc658a75f0c3b9e files/defs.mak-7.1-r2 2108
@@ -11,5 +11,5 @@ MD5 992da190c2a177e9c61c1fc564c49723 files/magic-7.1-misc.patch 14546
 MD5 0b93bab0d27faa7228d74cb25337d866 files/magic-7.1-ppc-endian.patch 704
 MD5 d7a32efd29c53033d57c233d7da01e8a files/magic-7.1-remove-decl.patch 488
 MD5 ae7115a2dca6b39223eb53cb2f2384e8 magic-7.1-r5.ebuild 3302
-MD5 c56e98a9eff592ef8f355cd0f7dab145 magic-7.4.14.ebuild 1238
+MD5 b50146a6af2fdd353da207ab7ce9fb14 magic-7.4.14.ebuild 1342
 MD5 cefa75b0a06053277ea938f4e4fdd6e5 metadata.xml 219
