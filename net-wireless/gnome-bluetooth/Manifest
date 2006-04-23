@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6155980185c743bbf197ac83668b8232 ChangeLog 4763
 MD5 54d3d1f463b503f1ad2fe16ab183fe4b files/0.6.0-segv.patch 458
 MD5 ff63b2b07eb50db8962f544a45028bee files/digest-gnome-bluetooth-0.4.1 73
@@ -23,3 +26,10 @@ MD5 05d959e26d478b4c14acf590e58bdbfa gnome-bluetooth-0.6.0.ebuild 1404
 MD5 92b082de97c2b7c4862afdcfb002810f gnome-bluetooth-0.7.0-r1.ebuild 1474
 MD5 7b69b6ce2c9525ab14dee0e15bd971ff gnome-bluetooth-0.7.0.ebuild 1511
 MD5 439de383d422683abddb9ff8b75aa67b metadata.xml 235
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFES7YvjG8pv1lIUX4RAvO0AKDByoHUE5Iu1o5obZvBvAetvNvHdACfZMUe
+Q0NoDSLtODMAKP1N/YugmG8=
+=I1p8
+-----END PGP SIGNATURE-----
