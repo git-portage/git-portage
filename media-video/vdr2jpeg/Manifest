@@ -1,0 +1,6 @@
+MD5 ea34897de83386a02fcb471b77c13fc8 ChangeLog 662
+MD5 981b94f4a8e2bd88c1e53a39bea586a4 files/digest-vdr2jpeg-0.0.7 62
+MD5 449190278e2f7bcc82eef7a874a9987a files/digest-vdr2jpeg-0.0.8b 63
+MD5 7b722ef32ccfeed4b869c4377ef2bbe8 metadata.xml 422
+MD5 f28c2b1b4fd7328f2daaa53381a2053e vdr2jpeg-0.0.7.ebuild 887
+MD5 2519cc7d311643878746663c6b2e6b92 vdr2jpeg-0.0.8b.ebuild 734
