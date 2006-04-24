@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX 0.1.10a-fbsd.patch 734 RMD160 b706b7037681eba98afcbb84d40cacc0e79622ed SHA1 2f548adba56ae84366e17af4ea03396862b3e65e SHA256 d876430aba91cb3ccca65c1930002edcf4339ed3fcc60512ec23609a58f5f62f size 734
 MD5 c819378823e7b8610d4e164757dc25be files/0.1.10a-fbsd.patch 734
 RMD160 b706b7037681eba98afcbb84d40cacc0e79622ed files/0.1.10a-fbsd.patch 734
@@ -54,3 +57,10 @@ MD5 edf695ba0c7ee442c501401384faaa94 files/digest-libusb-0.1.8 64
 RMD160 720dfc6a66bef730b9abaf97a3a56b708393843e files/digest-libusb-0.1.8 64
 SHA256 66ec90a76bb591c77fa26cf9d50890533a292d2cd94da9db4f19439f8fd34bab files/digest-libusb-0.1.8 64
 size 64 files/digest-libusb-0.1.8 64
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFETUN09ZFPrqoILX8RAggEAKC1n9o65LwBeECE0+5cExS5BJRDxQCg4z1F
+FzlG1GLdmy7YxHkAh/DWA7g=
+=MP2J
+-----END PGP SIGNATURE-----
