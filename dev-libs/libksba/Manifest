@@ -1,4 +1,4 @@
-MD5 3ffbf559f1acbb4ad5ee6f48e235b9c9 ChangeLog 3998
+MD5 cd628047ec8194dbbeed6dd6c9e49950 ChangeLog 4101
 MD5 da2b4329ca86c4a9f002c48856ef4123 files/digest-libksba-0.4.7 65
 MD5 e6e539b2679ae5c66dd51839cf59d8ec files/digest-libksba-0.9.11 66
 MD5 22be074cfc15845eead90489d55fea41 files/digest-libksba-0.9.12 67
@@ -9,7 +9,7 @@ MD5 94b86fd10cc9a5c194284d58355f97fa files/libksba-0.9.8-m4.patch 261
 MD5 22cac7b18ff235140a01c4b6e2f223d1 libksba-0.4.7.ebuild 614
 MD5 427e5969179918460656dea0aa79854d libksba-0.9.11.ebuild 774
 MD5 ae07347dcfc28e91e7414f3c968a7729 libksba-0.9.12.ebuild 781
-MD5 cb8af4a63160de375f4180479483dbbf libksba-0.9.13.ebuild 729
+MD5 8ca5e6631b5ba6df6f0f57c3839a5506 libksba-0.9.13.ebuild 726
 MD5 f891f895cfa155d39451df7b84cefc32 libksba-0.9.6.ebuild 694
 MD5 fe6498e8ae40c37430b6b07c4ba1547e libksba-0.9.8.ebuild 845
 MD5 09a95314388ecbaa03fbe0dce408227e metadata.xml 286
