@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 DIST pygtk-0.6.11.tar.gz 401327 size 401327
 DIST pygtk-2.6.1.tar.bz2 729460 size 729460
 DIST pygtk-2.6.2.tar.bz2 731185 size 731185
@@ -69,3 +72,10 @@ MD5 586072dad1d37a363bbcc2bfc42af557 files/digest-pygtk-2.8.6 479
 RMD160 71ff336209e299f679dc202319fd3aa038bdb7ea files/digest-pygtk-2.8.6 479
 SHA256 4bae4e78337b902815088c4bd6e0c48b933df10c5ee9d7b1638cce6b6b0e5869 files/digest-pygtk-2.8.6 479
 size 479 files/digest-pygtk-2.8.6 479
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFETUkU9ZFPrqoILX8RAi2aAKDFnWx8SKemiSxphy0MxmlXoZXfxQCdFNVB
+RcaiNZHldJrjsNwHGN/wBFY=
+=eNvi
+-----END PGP SIGNATURE-----
