@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX rpm2targz-9.0-bzip2.patch 605 RMD160 d3ebc6557dd20d75b3940ebf02afa6ee243a1685 SHA1 a97878c8535a55b3c74a39bf6446268dec1af376 SHA256 1825c52ec046e114d2d07ee9f66a40eca6123a9ad1b106f1b48222984223f6dd size 605
 MD5 6103109c4b978649b2b06ee1c2ddbdb7 files/rpm2targz-9.0-bzip2.patch 605
 RMD160 d3ebc6557dd20d75b3940ebf02afa6ee243a1685 files/rpm2targz-9.0-bzip2.patch 605
@@ -63,3 +66,10 @@ MD5 3a54053fb2f77d2d968fad47adcf8c2c files/digest-rpm2targz-9.0-r5 235
 RMD160 95f55e45b54d60dc1c7a4375087ff19ecbbf1493 files/digest-rpm2targz-9.0-r5 235
 SHA256 43ee4ddb04df7e95dc1a70954e661ad40d6a5cf00296a9ff964091a95bf3b10a files/digest-rpm2targz-9.0-r5 235
 size 235 files/digest-rpm2targz-9.0-r5 235
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFETUeI9ZFPrqoILX8RAoOVAKDrW3hY+jUOE5fWLY5EzS5ec7bwvACglnPo
+zYjM959wy3PULY/uPJ4gvcU=
+=gIRb
+-----END PGP SIGNATURE-----
