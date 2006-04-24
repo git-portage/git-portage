@@ -1,15 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 MD5 a3ab465f83550e0f447277f3ac2aaeb3 ChangeLog 12097
 RMD160 e6f65b4d92dffeb69ac6adee9710d4439ef61a4f ChangeLog 12097
 SHA256 dc43e877819369e3cc6ea1799dd547e6d63b113df28126b55f5df47fb6f05505 ChangeLog 12097
 MD5 18d55c8d4eac86f9ee3071fcd5830f47 clisp-2.38-r1.ebuild 3163
 RMD160 e058c5b3d60a55bb59f61d618c70b36efa6da52d clisp-2.38-r1.ebuild 3163
 SHA256 030d8425bbe6072fa79d279c36092e4316817f51bf44a469127f6443deb6134f clisp-2.38-r1.ebuild 3163
-MD5 77979e6f1d5b5231894f83bd02fd8d87 clisp-2.38-r2.ebuild 3511
-RMD160 005f06613eaf7ac98fe1586910555cf6d0e4adb2 clisp-2.38-r2.ebuild 3511
-SHA256 a6071ee680fcb3d1ebbf40a0e381944ac83a355ea788400ed83d9fd41425ae46 clisp-2.38-r2.ebuild 3511
+MD5 2a069172223f2b169093f367d97c64a8 clisp-2.38-r2.ebuild 3598
+RMD160 913ddda6a57858ac964aa89888912f13065eb7b7 clisp-2.38-r2.ebuild 3598
+SHA256 7dc1385c79c00dff6d136c8ad379bc5f6d010f6e24be5021a537be9acb0ee575 clisp-2.38-r2.ebuild 3598
 MD5 dcf6f597090f7d2d4ad822bcf92427a9 clisp-2.38.ebuild 3141
 RMD160 7d76975b149b88b11fe6b6f22ab9cc86ea996f09 clisp-2.38.ebuild 3141
 SHA256 a54f3acd15e422dd3af3f996eb9278781e696538ed3726e987c77ca699217c05 clisp-2.38.ebuild 3141
@@ -19,6 +16,9 @@ SHA256 336e4287ec4cfdbe8fda692bd217431adb4e303d3f5204bdf3df0ea711fbebd6 files/2.
 MD5 fe93240f140623bf55d2e503f6d8e01e files/2.38/clisp.sh 2792
 RMD160 107eccac30fc373f449d0d252ca82fa400ce0877 files/2.38/clisp.sh 2792
 SHA256 5ba7c78f3d99b9264c9cb8909135ccd0bca113d66d5a998acc520fb431dc75ad files/2.38/clisp.sh 2792
+MD5 8f6c314c6c8f3b08f59d17a32cee3a40 files/2.38/fastcgi-Makefile-gentoo.patch 681
+RMD160 13eaed6b82c26f47d8e574da4e1c4d5d83696a46 files/2.38/fastcgi-Makefile-gentoo.patch 681
+SHA256 202fe32bc4e1d4cab9e77c2d147822bcdf75cd34cc6e3fe59c2a5c9cc71f40d1 files/2.38/fastcgi-Makefile-gentoo.patch 681
 MD5 2f431f5c714c00d04b55e02a9d54f452 files/2.38/install-clc.lisp 501
 RMD160 c4848c195ef194fce8ec73eb4aceeb5f34b919ac files/2.38/install-clc.lisp 501
 SHA256 93ff66189e490ae806c2d227e24295af0cf01e1bb0a1d7de2cf57ff59523f09e files/2.38/install-clc.lisp 501
@@ -34,10 +34,3 @@ SHA256 0cac2d185676cab92bb8516501d45c36c0867fde92ccef75a959ceb658460c46 files/di
 MD5 485cde76397408cf913fc6d4c7a45a67 metadata.xml 882
 RMD160 c1c9236c3fb6d0594a998221fbff50add9b1d1b2 metadata.xml 882
 SHA256 b55a5dec0b7c7764565517bab024bb1526dd21cf58bc4a727f09ac3d2ff4983f metadata.xml 882
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2.2 (GNU/Linux)
-
-iD8DBQFEMdyIyiNZaEAZA+ARAtmoAJ46zxpGmUt++UIMXrirVwDv4Y/ipwCfdan5
-j1XWtFDUvZIR5XKrPdm4YZY=
-=4HWR
------END PGP SIGNATURE-----
