@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 656d3cf8a2f3555871ccdfe7c1ffc290 ChangeLog 23099
 MD5 5331ab3504762b397113ab2996b7ba61 asterisk-1.0.10-r1.ebuild 14665
 MD5 bb0a1e5098f140166d38b18999f996f7 asterisk-1.0.10-r2.ebuild 14790
@@ -52,3 +55,10 @@ MD5 e9e9701fad77824bcfdff1f02b9634e3 files/digest-asterisk-1.0.9-r3 768
 MD5 e9e9701fad77824bcfdff1f02b9634e3 files/digest-asterisk-1.0.9-r4 768
 MD5 03e2e55422979c602afee0c184679bba files/digest-asterisk-1.2.7_p1 1421
 MD5 488aea6fbdb7537394cc049b0ff9e5d5 metadata.xml 384
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFETm10KRy60XGEcJIRAsADAKCj/7cLx3rxePk3TLK05e9JscBM4QCeLpog
+t5yMnWGfOEL+2WWaCUW1pQ0=
+=Uu+8
+-----END PGP SIGNATURE-----
