@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 28de5bcbae20ba6cda2fe88d5b8678a0 ChangeLog 13852
 MD5 66a7f4e6682670216c1497606c9c600b files/digest-slmodem-2.9.11_pre20051101 140
 MD5 fd55ef399408a109742263cd5b4a5219 files/digest-slmodem-2.9.9d 66
@@ -16,3 +19,10 @@ MD5 a5c2c40e3a6c4665033c97bb9088f03d files/slusb.hotplug 262
 MD5 ec2f84816306825d125d0c01bd86758d metadata.xml 163
 MD5 d6960faceb3ff583377e5203da151e6c slmodem-2.9.11_pre20051101.ebuild 4552
 MD5 da3f5db025a3799ee1bdf5b9eef53601 slmodem-2.9.9d.ebuild 3553
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFET5xKjG8pv1lIUX4RAuHJAJ9WxOCoyFpzwZZ9iorX3frwHGh1iwCeK8jJ
+O+4XTapTUwUKlVbUom+d/k4=
+=TS8u
+-----END PGP SIGNATURE-----
