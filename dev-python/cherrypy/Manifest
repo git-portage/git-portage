@@ -1,9 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 a36408ed68735bc62bdbb6b64087ac34 ChangeLog 2527
-RMD160 8127841bc48f81916cd2ead8cefc769977141452 ChangeLog 2527
-SHA256 8dc9c538f3aea3f9646f609cd204b5c3f37c8ae1f6ebec7d7cae5778a195d00d ChangeLog 2527
+MD5 52c283fe7d0dc81f49dee5c751f8e5b5 ChangeLog 2527
+RMD160 fc1526dd0f165f83e3f7ffbe2431328f9117b3a2 ChangeLog 2527
+SHA256 8bc236a0fa35ecdfee21186407260a9953b2d16d09137c2e9725455eb7fd0966 ChangeLog 2527
 MD5 0f5c2b2e82673db6c01ba3e74a22858c cherrypy-2.0.0.ebuild 1144
 RMD160 1afe3c2eaaa25389ddbcff87dc490f1c5aa81673 cherrypy-2.0.0.ebuild 1144
 SHA256 0340f97eb67ad6caa9a40ffcbad70472c5a823b3fd677ab560bf1d2b4aa29a66 cherrypy-2.0.0.ebuild 1144
@@ -16,9 +13,9 @@ SHA256 6d4d09db55619eaf45b5b43466e686044ba94a689db9384712ab238747c071a5 cherrypy
 MD5 46edcb9f39effc81b5ebf1fe43d2e63d cherrypy-2.2.0.ebuild 923
 RMD160 4bf609e3ce44675dfd54393f0eb75af4a610057c cherrypy-2.2.0.ebuild 923
 SHA256 5348cb40c6a429f47d5ba399bdc7560cf5889f1e2cee1d2ef45f0cb7e9c0f35c cherrypy-2.2.0.ebuild 923
-MD5 81561cada66176c20714817c0cc01252 cherrypy-2.2.1.ebuild 920
-RMD160 1bb6fdaa6a5495a4b7b19395c60a972c8d5fdd0b cherrypy-2.2.1.ebuild 920
-SHA256 8c6338e57ab851d74af52dd48d2a4bb74d83ed9c4eaa898c5fd5e8e9cae1c870 cherrypy-2.2.1.ebuild 920
+MD5 b70d5bf70e8040e1ac575c647e0e8090 cherrypy-2.2.1.ebuild 923
+RMD160 b7a5ffcfbe6f9ea021061ae67bb7e655c430c98c cherrypy-2.2.1.ebuild 923
+SHA256 b5888006178a005d022c443953486c5353e53365fba380281a1c0bac20da3c64 cherrypy-2.2.1.ebuild 923
 MD5 c885c6173e005c060a73ecf836011132 files/cherrypy-2.0.0-setup-gentoo.diff 471
 RMD160 1bde9a6a712a11df1da9ec831f104d88f4ebf171 files/cherrypy-2.0.0-setup-gentoo.diff 471
 SHA256 f8f2a9ac6bf99a779b228544b759e26e31842734eecd0415738ef6779cf26ca3 files/cherrypy-2.0.0-setup-gentoo.diff 471
@@ -55,10 +52,3 @@ SHA256 8f63ac22513c6bc4d84d9cbf6b62befefc3e8bcee201d8f1d0a62ee866584699 files/di
 MD5 9ac4199ebe7cd3e7e311274994767f82 metadata.xml 160
 RMD160 e730f96ab97c5be577a6d6d05f04990374a0dffb metadata.xml 160
 SHA256 6cd954a9de2307c57d32b25fa3599dee2908a4ddc6a98594f593d53577307a3a metadata.xml 160
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
-
-iD8DBQFETs/kTry2jroju7wRAlhmAJ9Vcno108+f6271u4k0otQ7zQoxXQCZAbs1
-5R3PzMrpOk5i9wlmaBGwIvc=
-=5Snu
------END PGP SIGNATURE-----
