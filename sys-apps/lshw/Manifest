@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 29e9fc163704c8ff8244bcc0c863cf98 ChangeLog 4261
 MD5 555b9015ffbcc8fd484c63ab096069d7 files/02.00b-cpuid-PIC.patch 1098
 MD5 ffda9b57dd4cf74fbe4c1889a0fc6cfc files/digest-lshw-02.05.01b 247
@@ -9,3 +12,10 @@ MD5 9fc17a631054c8a60f3dbb36b494feb2 lshw-02.05.01b.ebuild 1329
 MD5 56907d3424e75f60c0a3502e38e2d20f lshw-02.06b.ebuild 1127
 MD5 b34a7fbda1ada642d0dc14d64745922c lshw-02.07b.ebuild 1131
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFET5SHKRy60XGEcJIRAoEcAKCgyk7VKiNaypH2B1V2cDtC3Q7fxACfbN8J
+O325SFZslwaKOsuRqLXOqk4=
+=SjVB
+-----END PGP SIGNATURE-----
