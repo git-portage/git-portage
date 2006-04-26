@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ee478f9477ab1e24abb4ca3c4d738c58 ChangeLog 2526
 MD5 988001e6838973894fa89082d8bc8b01 bitpim-0.8.08.ebuild 887
 MD5 e194319727b4ccc10d97512676768b51 bitpim-0.8.12.ebuild 4248
@@ -8,3 +11,10 @@ MD5 0a0ef0672d7c7ddda19e132a49ca1a71 files/digest-bitpim-0.8.08 71
 MD5 fcfa1e2142b56a6591a3c48b68708f4e files/digest-bitpim-0.8.12 67
 MD5 923f2a8f3c714afebffa1c6365188579 files/digest-bitpim-0.8.13 67
 MD5 b05575cd16c40945a62bcfee6f1fce07 metadata.xml 493
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFET7lMjG8pv1lIUX4RAjFSAKCQNf1LlCDkLQfl79qAL2mzrKrBcQCfWg5H
+Iv165OgDInihEotHIozv8jo=
+=xqYl
+-----END PGP SIGNATURE-----
