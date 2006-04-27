@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 ff44e75ab6993edc1e2085a635613121 ChangeLog 871
 MD5 b2854dd51280b0d008631d5cdf41abd8 files/digest-vdr-radio-0.0.9 720
 MD5 4ee5cbcbbcce23d0f5f97ba38bd4e294 files/digest-vdr-radio-0.1.2 64
@@ -5,3 +8,11 @@ MD5 990b9c7d96c8bdf5211c01655a482b73 files/rc-addon.sh 401
 MD5 f4f4a829824beb2f777989ad9650bf10 metadata.xml 622
 MD5 3f0b3153fdd8cd72253da71b0e0ac332 vdr-radio-0.0.9.ebuild 749
 MD5 d8ab662757d88c538f7f13c77f08003d vdr-radio-0.1.2.ebuild 785
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+Comment: no further Information
+
+iD8DBQFEUTXndn07HTTCgIoRAsoqAJ9OHGde1zUwsHWOD5sK/U9d6V7niwCeLZ1x
+YKuoPN+HldF2RFDVB2ryJr4=
+=73ns
+-----END PGP SIGNATURE-----
