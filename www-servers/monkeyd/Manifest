@@ -1,18 +1,24 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 9acf7a0058075895d6d05707155530d1 ChangeLog 3264
-MD5 b4069bcda46c5e3e1d3811511b4d9594 files/digest-monkeyd-0.9.0-r1 63
-MD5 810e268a8cb64ca8f70e205ab8e1d5e2 files/digest-monkeyd-0.9.1 63
+MD5 eefe4c5e883fdac08fd32db436c71279 ChangeLog 3392
+RMD160 ed84329fb60be0727bb7d99ebee7a79e0d434c3e ChangeLog 3392
+SHA256 624d380a9122cc80e254b361c0bc75160b841ca9dd3d0530c96e488dec8fc315 ChangeLog 3392
+MD5 c300802a58af26e4533bbbbd2ba6b183 files/digest-monkeyd-0.9.0-r1 235
+RMD160 445badba9085472eafb23007dd94a234996bbc9d files/digest-monkeyd-0.9.0-r1 235
+SHA256 c623213349333936bf5990b36293c065c63bb23114521f7a4c02d2bab9ef50d9 files/digest-monkeyd-0.9.0-r1 235
+MD5 fce975a2bc6495384d95a74fc7ad5e7d files/digest-monkeyd-0.9.1 235
+RMD160 9e894204d03e802877b7e142a27c24bfce6c6fe1 files/digest-monkeyd-0.9.1 235
+SHA256 032fcfd3ceac0c279a8133d43b68811aa1428068684446262ff3ff7b4471e938 files/digest-monkeyd-0.9.1 235
 MD5 744c1e82caccabdc0a9a61e81dabef4c files/monkeyd.conf.d 278
+RMD160 cb1c63336d326d53385745979d7323ab6382809f files/monkeyd.conf.d 278
+SHA256 403fd75c0a9dbdd6994e6b3dea2583f01c50a048fe2a904be305890b406d5074 files/monkeyd.conf.d 278
 MD5 69c4c944e7c908857c48df0e8b8a1eb4 files/monkeyd.init.d 484
+RMD160 c25ab63ecb67d6d97698f7d1451093ed2f418bd2 files/monkeyd.init.d 484
+SHA256 a3f1f888cde204182a984138d4b33d3fa6e6a20570012a4a0809d50a27734db8 files/monkeyd.init.d 484
 MD5 291658390dada237b2e8533a44409448 metadata.xml 164
-MD5 1b406a89dcd194302ffe13c0dafcb81e monkeyd-0.9.0-r1.ebuild 2047
+RMD160 898ac97013b213230bb265ed2ace7751bc5421bc metadata.xml 164
+SHA256 23f2af7dc1d37e6e2c95358cd2399e487ebf8858a7e6f1798018196ade3132aa metadata.xml 164
+MD5 4138385683508fcb7e1721b6ce8d3359 monkeyd-0.9.0-r1.ebuild 2105
+RMD160 3176ffaeb49ec59d7fc4bcf60f1c7d0848ba3f67 monkeyd-0.9.0-r1.ebuild 2105
+SHA256 94872d724d8d7ae763b35ce05e646e85143109abdc877875add57c85225449bc monkeyd-0.9.0-r1.ebuild 2105
 MD5 9f2f7d5de03e3b00f7ef0018494a6d5f monkeyd-0.9.1.ebuild 2136
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.2 (GNU/Linux)
-
-iD8DBQFD0eXmaGfFFLhbXWkRAtzYAJoDPB9EbX9R67nZYEhek2FtjhD53wCfQhxT
-q1tLubuVoFnMs58o0QKll44=
-=F6UA
------END PGP SIGNATURE-----
+RMD160 e19aa37ff7eaf7b8d1a7aebd29247e5965b1db96 monkeyd-0.9.1.ebuild 2136
+SHA256 1aca00c1add6ead79ed6a66d1b12c28d14a73f217650f78b3b47b7aa15aec4c6 monkeyd-0.9.1.ebuild 2136
