@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b2cbf19ca905be3179845f252c6bbb50 ChangeLog 8537
 MD5 841f98e9e42888ec6d3869f716017c5f files/digest-pdnsd-1.2.3 67
 MD5 21ca3184ba7f84328d7cfbe1c4fcb596 files/digest-pdnsd-1.2.4 67
@@ -10,3 +13,10 @@ MD5 03c559c81ebc357c5f906e8247f1b79b metadata.xml 402
 MD5 ff5367e7e1e820b6d58bbf69326d72a1 pdnsd-1.2.3.ebuild 4280
 MD5 10ad0e6a7ec63bdbb6ef460562abb361 pdnsd-1.2.4-r1.ebuild 3972
 MD5 0bd9240a8e73728857da354bc687531e pdnsd-1.2.4.ebuild 3889
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFEUGvDjG8pv1lIUX4RAlxuAJ0Yz+jByjo3nZ3DCocJ/oV43ak9WgCgzq9z
+4Oh41PyMxBIs1UNjNBNpulI=
+=Pxsi
+-----END PGP SIGNATURE-----
