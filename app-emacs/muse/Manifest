@@ -1,5 +1,5 @@
-MD5 e01e0c9d8e10e4d254e48359dc19069f ChangeLog 915
+MD5 9424b8e2608517fd781a79012e5c4030 ChangeLog 1126
 MD5 2629c00e1e62c3fcc06a1c64b066c403 files/50muse-mode-gentoo.el 242
 MD5 da6259256c4a032db812ba84d357573a files/digest-muse-3.02.6b 64
 MD5 df75ca97b80c3613c88548db5cbc5cc5 metadata.xml 1548
-MD5 ad85d5c2d333440161bf405a2c70f3ae muse-3.02.6b.ebuild 894
+MD5 ab7e30000cd71d435c44b245a8bfa518 muse-3.02.6b.ebuild 894
