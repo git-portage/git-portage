@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5b25c5db9956a6d87e8e824ad43185ad ChangeLog 2274
 MD5 79531dd6c3cfaf21362ba9f06a3d1278 eagle-usb-2.3.3.ebuild 2899
 MD5 1be21c3db71831527e5651ecb2ba2cbd files/confd 807
@@ -6,3 +9,10 @@ MD5 a26da8905bd09e0c8d5628c0afd96a8b files/dsl.peer 185
 MD5 a8c66d048f6a6f7651cf2d8a0a36700c files/eagle-usb-2.3.3-kernel-2.6.14.patch 1181
 MD5 4080058818261b0bbb604c68bd2ddb1d files/initd 9368
 MD5 784ec6993aa07588926fec5a7fbf2c70 metadata.xml 246
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEVLgsjG8pv1lIUX4RAoOmAKDtBu7nNfNYhVvEtLP9aF/8YaXdwwCcD845
+1t9Q9OXysxaWK+Ba8GvsOss=
+=NVrT
+-----END PGP SIGNATURE-----
