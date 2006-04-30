@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/clvm/Attic/clvm-2.01.09.ebuild,v 1.5 2005/11/17 02:18:46 xmerlin Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/clvm/Attic/clvm-2.01.15.ebuild,v 1.1 2006/04/30 13:32:53 xmerlin Exp $
 
 MY_P="${PN/clvm/LVM2}.${PV}"
 
