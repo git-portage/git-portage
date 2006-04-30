@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/ccollect
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/ChangeLog,v 1.8 2006/04/30 18:26:11 killerfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/ChangeLog,v 1.9 2006/04/30 19:37:27 killerfox Exp $
+
+  30 Apr 2006; Rene Nussbaumer <killerfox@gentoo.org> ccollect-0.3.3.ebuild:
+  Stable on hppa, ppc.
 
   30 Apr 2006; Rene Nussbaumer <killerfox@gentoo.org> -ccollect-0.3.ebuild,
   -ccollect-0.3.1.ebuild, -ccollect-0.3.2.ebuild:
