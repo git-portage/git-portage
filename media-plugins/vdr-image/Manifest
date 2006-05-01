@@ -1,4 +1,4 @@
-MD5 3a5316badb6c36cc5b6123708a8a6015 ChangeLog 1542
+MD5 1830d34ceebe5ae7860c5b93c8f6fc43 ChangeLog 1710
 MD5 59baabd71c55a6f4df40edbcd964a60e files/digest-vdr-image-0.2.4 247
 MD5 82b1660f3adfb8fe37e41b3dce8b0f38 files/digest-vdr-image-0.2.5 247
 MD5 7701969ac7cc614b7646bd9b4bed4203 files/digest-vdr-image-0.2.6 67
@@ -9,4 +9,4 @@ MD5 6cdf1cbf04e79395a00e2e0893207adf files/vdr-image-0.2.6-gentoo.diff 3497
 MD5 e7055a92958497a9a028c06b8223f110 metadata.xml 439
 MD5 7568857a0dc010e19cdb6e8f0a54879d vdr-image-0.2.4.ebuild 1325
 MD5 25f4f49bb96fe691a88384eb76426ee3 vdr-image-0.2.5.ebuild 1423
-MD5 1d798465dcc07fc445e0a2f84fa19f5f vdr-image-0.2.6.ebuild 1435
+MD5 e2afa44f8697654d62e8c76667fae9aa vdr-image-0.2.6.ebuild 1435
