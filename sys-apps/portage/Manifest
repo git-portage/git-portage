@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 RMD160 b39dc7804cd2e7846ba32e5bf8b5ad83c0cf84fa ChangeLog 18378
 MD5 084bd89d8ce0a5c80872f57a5aa21fd1 ChangeLog 18378
 RMD160 014194a1786a0983a8ba91c3924b798f353c330d files/05portage.envd 34
@@ -102,3 +105,10 @@ RMD160 2b36bc22a0b19f920e856d3113131ca374d57a85 portage-2.1_pre7-r5.ebuild 5990
 MD5 6ef8ace6b92df29e8a3f528127f48c06 portage-2.1_pre7-r5.ebuild 5990
 RMD160 71271c686b9178700380fcc5cfdb6a1057f8c338 portage-2.1_pre9-r5.ebuild 6180
 MD5 7d6fdf4428877b6d56eca645c9f53698 portage-2.1_pre9-r5.ebuild 6180
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.3 (GNU/Linux)
+
+iD8DBQFEVc5C/ejvha5XGaMRAh/qAJ9nXxzECxx4peCQh1QdobRAInMSDACfWY+0
+NiJsq8CGbsiqqz0UvX6Vbks=
+=AKuW
+-----END PGP SIGNATURE-----
