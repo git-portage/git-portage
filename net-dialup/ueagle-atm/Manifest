@@ -1,5 +1,5 @@
-MD5 ac35590338b695da88a6d766cf03863c ChangeLog 401
+MD5 100ac52fc1942d8882808cc1f4d78f26 ChangeLog 683
 MD5 0cf8405a4993538a941f235f6410b15f files/README 8766
 MD5 0d747d791cf20ab224f960ab892c767d files/digest-ueagle-atm-1.1-r1 72
 MD5 7bb58ae97db72c0e60691f42e245e6ba metadata.xml 312
-MD5 cfd42d0593ff393220bfdb8c71863ed3 ueagle-atm-1.1-r1.ebuild 2631
+MD5 4df716d7c8fa69e948c76c9f2d01cd26 ueagle-atm-1.1-r1.ebuild 2634
