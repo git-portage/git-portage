@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1830d34ceebe5ae7860c5b93c8f6fc43 ChangeLog 1710
 MD5 59baabd71c55a6f4df40edbcd964a60e files/digest-vdr-image-0.2.4 247
 MD5 82b1660f3adfb8fe37e41b3dce8b0f38 files/digest-vdr-image-0.2.5 247
@@ -10,3 +13,11 @@ MD5 e7055a92958497a9a028c06b8223f110 metadata.xml 439
 MD5 7568857a0dc010e19cdb6e8f0a54879d vdr-image-0.2.4.ebuild 1325
 MD5 25f4f49bb96fe691a88384eb76426ee3 vdr-image-0.2.5.ebuild 1423
 MD5 e2afa44f8697654d62e8c76667fae9aa vdr-image-0.2.6.ebuild 1435
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+Comment: no further Information
+
+iD8DBQFEVfUvdn07HTTCgIoRAkDZAKCfLgDrN+QYv6HT1DKqoCF1KwAi8ACgreIq
+3ijPnMkNFpfxbQKZ2ybLfWs=
+=wpBu
+-----END PGP SIGNATURE-----
