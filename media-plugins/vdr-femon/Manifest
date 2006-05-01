@@ -1,4 +1,4 @@
-MD5 13e2f53d95924de2525ec19f1c4bcb10 ChangeLog 1207
+MD5 50cd884070954218cd047ebd4519667c ChangeLog 1337
 MD5 a56a5dbae3107fd3c80e79b285f37b0e files/digest-vdr-femon-0.9.1 63
 MD5 f4720cc38be3acde8a7f21ec71ec3420 files/digest-vdr-femon-0.9.4 63
 MD5 81358cc350f1be8daa219ce7d345e2f3 files/digest-vdr-femon-0.9.5 63
@@ -11,4 +11,4 @@ MD5 33fc8d487fce789387ae031b76833d82 vdr-femon-0.9.4.ebuild 544
 MD5 9bd701f17393bc952c0493b8ade100e3 vdr-femon-0.9.5.ebuild 543
 MD5 27f3af1c244710a32d1050ac8e13d63a vdr-femon-0.9.6.ebuild 544
 MD5 4a5866f9d8d89112e3fe67b63a0a2706 vdr-femon-0.9.8.ebuild 549
-MD5 6fbfa74e9a6f14ad705af57bbac6dc06 vdr-femon-1.0.0.ebuild 548
+MD5 af17a8b4215db3d0d271c2187f3f9848 vdr-femon-1.0.0.ebuild 547
