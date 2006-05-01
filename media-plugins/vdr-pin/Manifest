@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 660db0990361325a5b40aef6cda62ab2 ChangeLog 656
 MD5 ac541bfffd3695c22503c806cab58c7c files/digest-vdr-pin-0.0.12 62
 MD5 940de818038f4b501b0776b21daef5bb files/digest-vdr-pin-0.0.15 62
@@ -7,3 +10,11 @@ MD5 9fb53e523ccd0b1dea478e6c66e58447 files/vdr-pin.sh 213
 MD5 940276680236cf2e3c7c89af35f97adb metadata.xml 510
 MD5 3fab57a784dc2777723a4b8440144ca5 vdr-pin-0.0.12.ebuild 930
 MD5 0c0f179a4b24be3dd7f6473b97bc6e06 vdr-pin-0.0.15.ebuild 947
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+Comment: no further Information
+
+iD8DBQFEVfn8dn07HTTCgIoRAikCAJ93RonOUkk9f6+EMbryo8r1QlEa4QCgtIK5
++5UDT+Bg2lLec+tw6X36nYA=
+=Mdhs
+-----END PGP SIGNATURE-----
