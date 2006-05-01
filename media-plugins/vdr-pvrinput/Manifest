@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1f4eed8781822e8b3c25874ec19ae756 ChangeLog 898
 MD5 d77fceef004b077015320ecf4fac0bfd files/digest-vdr-pvrinput-0.1.1 244
 MD5 2b979d17d147920bebc8be1355328328 files/digest-vdr-pvrinput-0.1.1_pre1 259
@@ -6,3 +9,11 @@ MD5 01dc5701b18a5f18085fd6e135334f35 files/vdr-pvrinput-0.1.1_pre1-include-order
 MD5 70450585776173c8dfb75ed9346971f1 metadata.xml 469
 MD5 9ed548ca74cad3967d5a4a2ba2f87b9f vdr-pvrinput-0.1.1.ebuild 703
 MD5 45a41512fbae20ff8df91b4514ec8cb0 vdr-pvrinput-0.1.1_pre1.ebuild 755
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+Comment: no further Information
+
+iD8DBQFEVgN7dn07HTTCgIoRAnD1AJ9ViBCLH2QDe9iKGKoGlr63lhL5fQCdHpmY
+vIqL7FCI925kLtrheTFl4PE=
+=sMCo
+-----END PGP SIGNATURE-----
