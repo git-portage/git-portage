@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1902efbd7deac936331e869ef0d89303 ChangeLog 3758
 MD5 d78d1b2bd36da73b8fb0ff8e5663ec26 files/digest-itcl-3.2-r2 60
 MD5 e3a3b717c90821cebb7c3e22fa8be626 files/digest-itcl-3.2.1-r1 62
@@ -10,3 +13,10 @@ MD5 05447b5d029c84b5762bae17460ab4d9 itcl-3.2.1-r1.ebuild 1059
 MD5 20e1876a7688b86b3688c0d921f6231d itcl-3.3-r1.ebuild 865
 MD5 c62aff48c0369689978e7b758f9c1fda itcl-3.3.ebuild 739
 MD5 43e377139ff5f3b7415b94a8c8d5260d metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEVqOyKRy60XGEcJIRAv46AJ9Fhy2f+z4KNaehiuGdVTGzk5LDOQCfbXkE
+YrgqcXzt4uh1v1SP1vLLnLA=
+=6DWW
+-----END PGP SIGNATURE-----
