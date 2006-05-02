@@ -18,7 +18,6 @@ MD5 bca6ad85efa6071a949bdcb24fce1733 files/1.0.6629/NVIDIA_kernel-1.0-6629-agp_b
 MD5 0983a2cbdacbaa3ae1a9ac1759a37706 files/1.0.6629/NVIDIA_kernel-1.0-7174-1296092.diff 3663
 MD5 dbf80a2cbaf69a10521429e1b2a7e10c files/1.0.6629/conftest_koutput_includes.patch 1082
 MD5 5aef5c6a394896bbb8392816f6795147 files/1.0.6629/nv-amd64-shutup-warnings.patch 902
-MD5 c039797780f78262baa02ff488e822ff files/1.0.6629/nv-disable-preempt-on-smp_processor_id.patch 435
 MD5 ddeae194df6bb2112d7de723df8d84c2 files/1.0.6629/nv-fix-memory-limit.patch 18398
 MD5 e70739410861defb6bf3d40f2706d554 files/1.0.6629/nv-pgd_offset.patch 3139
 MD5 0009ccc8f3896f22bad06fd549639072 files/1.0.6629/nv-pgprot-speedup.patch 1518
@@ -28,7 +27,6 @@ MD5 70bb10b2da2423a6be2a4c2bce38d807 files/1.0.7167/NVIDIA_kernel-1.0-7167-12339
 MD5 e2625e9e0a6679c38783b5d8985fdaf6 files/1.0.7167/NVIDIA_kernel-1.0-7167-1237815.patch 1100
 MD5 82d99e72fddbc1b0447708afd84dc8c5 files/1.0.7167/NVIDIA_kernel-1.0-7167-amd64-shutup-warnings.patch 770
 MD5 7ae487fba8a81fb91d53f35b9066512f files/1.0.7167/NVIDIA_kernel-1.0-7167-conftest-koutput-includes.patch 1082
-MD5 9df3fbed7af6fcb4ad13b1b5c3851381 files/1.0.7167/NVIDIA_kernel-1.0-7167-disable-preempt-on-smp_processor_id.patch 419
 MD5 6c6bd7d2e4589cf3f4725082bb413a43 files/1.0.7167/NVIDIA_kernel-1.0-7167-x86-shutup-warnings.patch 742
 MD5 fea578e529e3261412ebbf622e05531a files/1.0.7174/NVIDIA_kernel-1.0-7174-1258475.diff 3971
 MD5 0983a2cbdacbaa3ae1a9ac1759a37706 files/1.0.7174/NVIDIA_kernel-1.0-7174-1296092.diff 3663
@@ -58,11 +56,11 @@ MD5 fd91b5143517828d72c387da3596a8df files/digest-nvidia-kernel-1.0.8756 164
 MD5 e8166a48172ea0f32a3b73e2d44f30a3 files/nvidia 704
 MD5 075fe48a4f1fc90d2c3814e7bcd1d1ab metadata.xml 313
 MD5 6912838fee04de491aa184c309e274a9 nvidia-kernel-1.0.6111-r3.ebuild 4523
-MD5 8aac41beeb1f441bb1dc5fe1aaabbd84 nvidia-kernel-1.0.6629-r5.ebuild 4772
-MD5 b44523732e779c46cebed035eb62cbfc nvidia-kernel-1.0.7167-r1.ebuild 3982
-MD5 ca24e01d6a1f384a349d4ed597a4c077 nvidia-kernel-1.0.7174-r2.ebuild 4277
-MD5 0da986517ab8d7beb13c5d1fe5a4c1c6 nvidia-kernel-1.0.7667.ebuild 4538
-MD5 6e28642fae4a75a66584dd04910cbac4 nvidia-kernel-1.0.7676-r1.ebuild 4669
-MD5 37df0e5dfe53647a35ffd1166d5311e8 nvidia-kernel-1.0.8174-r1.ebuild 3584
-MD5 2e142484a5623be668193eac6e097914 nvidia-kernel-1.0.8178-r3.ebuild 3585
-MD5 f0d3fd1248d77eb37489cf44b2010c54 nvidia-kernel-1.0.8756.ebuild 3540
+MD5 2308f10da18441c793930f6890489c2e nvidia-kernel-1.0.6629-r5.ebuild 4638
+MD5 1184c8ae78e072d9f380c3eb7dc385fc nvidia-kernel-1.0.7167-r1.ebuild 3850
+MD5 245860374d9e7a92d35aef03c81bbddf nvidia-kernel-1.0.7174-r2.ebuild 4134
+MD5 2989f1241567591b53a925a108a52aeb nvidia-kernel-1.0.7667.ebuild 4246
+MD5 3f6a147dc092eabb6074854e18d13b3d nvidia-kernel-1.0.7676-r1.ebuild 4377
+MD5 b515560b694117754fa319c3b44e3b97 nvidia-kernel-1.0.8174-r1.ebuild 3444
+MD5 3ab9761b5f93050a2068af2a87a05584 nvidia-kernel-1.0.8178-r3.ebuild 3445
+MD5 50d7b78db253d25e3f3ee7a9e32d02cf nvidia-kernel-1.0.8756.ebuild 3400
