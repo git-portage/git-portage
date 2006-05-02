@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/Attic/ccollect-0.4.ebuild,v 1.1 2006/04/30 18:22:04 killerfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/Attic/ccollect-0.4.ebuild,v 1.2 2006/05/02 05:11:47 killerfox Exp $
 
 DESCRIPTION="(pseudo) incremental backup with different exclude lists using
 hardlinks and rsync"
@@ -14,7 +14,8 @@ IUSE="doc"
 
 DEPEND="doc? ( >=app-text/asciidoc-7.0.2 )"
 RDEPEND="sys-devel/bc
-	net-misc/rsync"
+	net-misc/rsync
+	app-arch/pax"
 
 src_compile() {
 	if use doc; then
