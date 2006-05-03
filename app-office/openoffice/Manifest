@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 edd82f5f72a01f9974462dd32942eef2 ChangeLog 45411
 MD5 500f7e71be57d40b0a8042cab1484df9 files/2.0.1/alwayscrystal.diff 3222
 MD5 6bdcbcb4270ebd6863e30cc2bd0220d1 files/2.0.2/gentoo-2.0.2.diff 840
@@ -8,3 +11,10 @@ MD5 e3ec4a70395943b59adad7fc4f0538d7 metadata.xml 461
 MD5 4036291770fc77e15ca28b0136d44805 openoffice-2.0.1-r1.ebuild 7334
 MD5 e9066e8af898d07905a7b9d8611358f9 openoffice-2.0.2-r1.ebuild 7836
 MD5 1a6d153c17721aa52221927a9e063064 openoffice-2.0.2-r2.ebuild 7940
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEWQepKRy60XGEcJIRAnOeAKCIl9RLOaXyZYrqbESeMlnzfnnypQCgmFBc
+i8n6IrHgnzJJYFGE55mzehE=
+=CxbE
+-----END PGP SIGNATURE-----
