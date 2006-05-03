@@ -1,12 +1,12 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/ck-sources/Attic/ck-sources-2.6.15_p7.ebuild,v 1.1 2006/03/14 07:51:49 marineam Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/ck-sources/Attic/ck-sources-2.6.16_p9.ebuild,v 1.1 2006/05/03 20:37:20 marineam Exp $
 
 K_PREPATCHED="yes"
 UNIPATCH_STRICTORDER="yes"
 K_NOUSENAME="yes"
 K_WANT_GENPATCHES="base"
-K_GENPATCHES_VER="10"
+K_GENPATCHES_VER="8"
 ETYPE="sources"
 inherit kernel-2
 detect_version
@@ -29,17 +29,17 @@ fi
 
 UNIPATCH_LIST="${DISTDIR}/${CK_PATCH}"
 # Note: 2.6.x.y updates in genpatches begin with 10 but are included in -ck
-UNIPATCH_EXCLUDE="${UNIPATCH_EXCLUDE} 10??_1_ 10??_2_ 10??_3_ 10??_4_ 1054 1100 1110 1115"
+UNIPATCH_EXCLUDE="${UNIPATCH_EXCLUDE} 10 2400"
 
 DESCRIPTION="Full sources for the Linux kernel with Con Kolivas' high
 performance patchset and Gentoo's basic patchset."
 HOMEPAGE="http://members.optusnet.com.au/ckolivas/kernel/"
 SRC_URI="${KERNEL_URI} ${GENPATCHES_URI}
 	ck-server? (
-	http://ck.kolivas.org/patches/cks/patch-${KV_CK/ck/cks}.bz2
+	mirror://kernel/linux/kernel/people/ck/patches/cks/patch-${KV_CK/ck/cks}.bz2
 	)
 	!ck-server? (
-	http://ck.kolivas.org/patches/2.6/${OKV}/${KV_CK}/patch-${KV_CK}.bz2 )"
+	mirror://kernel/linux/kernel/people/ck/patches/2.6/${OKV}/${KV_CK}/patch-${KV_CK}.bz2 )"
 
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 
