@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 22e04add425592b65962a4d81e47d547 ChangeLog 5311
 MD5 db7d595d5d3f1a47417d753e763467df cdparanoia-3.9.8-r1.ebuild 1303
 MD5 a58184eb94cb4488ede5c28ddca40219 cdparanoia-3.9.8-r2.ebuild 1534
@@ -14,3 +17,10 @@ MD5 f9b0d4ff89eb1cbdad1f611c7e13eb85 files/digest-cdparanoia-3.9.8-r2 274
 MD5 79a3ceab9bf5b728e3a804e7df39f91a files/digest-cdparanoia-3.9.8-r3 355
 MD5 e0ebf10eb8bf4542ae57ba591daa68a4 files/flex-configure-LANG.patch 1686
 MD5 a1eaeb2ae801daeb712c90c060e922dc metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEWPktKRy60XGEcJIRAtToAJ92vkwNyayltYNoWWaXgjtrMLT3rwCgiZCV
+R21IgMHEyxxrVuIVnCX4DTI=
+=ebX9
+-----END PGP SIGNATURE-----
