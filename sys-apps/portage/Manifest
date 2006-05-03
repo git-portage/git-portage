@@ -1,4 +1,4 @@
-MD5 9b1f8e277949002bce8db016a8c7931e ChangeLog 18806
+MD5 6853714e5c0db8bd83a503bb5740f66e ChangeLog 18804
 MD5 d5d5b818347fd87b290ecb0b17516b34 files/05portage.envd 34
 MD5 bb9cb80f927bcc2b9e0f512d8a200e18 files/2.0.51.22-fixes.patch 10579
 MD5 8c623d6ee5dc6030cd338cf0d1372166 files/2.1/pre10/1000_r3291_bug_73350_configroot.patch 10736
@@ -48,7 +48,7 @@ MD5 dc02eeaf8060043bfa8d483a42696963 metadata.xml 276
 MD5 4df85686b65f5591383e16bf3d6845ba portage-2.0.51.22-r3.ebuild 5796
 MD5 32e170fcab414ec74bf14dc5a44d581f portage-2.0.53.ebuild 3694
 MD5 4f62f37006f604eb560eaa27666edd6e portage-2.0.54-r1.ebuild 3998
-MD5 4b657caea67b3ad647c13df8f31f56db portage-2.0.54-r2.ebuild 4195
+MD5 4a55b32bdaedbee688eabc833e997807 portage-2.0.54-r2.ebuild 4194
 MD5 f9c41fcd6a2155552f0cacbe7a62101c portage-2.0.54.ebuild 3891
 MD5 8771bc2aee69944ffbd079cf77828e68 portage-2.1_pre10-r2.ebuild 5845
 MD5 6ef8ace6b92df29e8a3f528127f48c06 portage-2.1_pre7-r5.ebuild 5990
