@@ -1,4 +1,4 @@
-MD5 ca04b946a7f2542825f742d13c8dfd0c ChangeLog 3020
+MD5 18599d7fd34822eb520f9746c20f2dd5 ChangeLog 3299
 MD5 2ef1113265e590280a45c65034eb7e5e files/digest-prewikka-0.9.3 244
 MD5 2ef1113265e590280a45c65034eb7e5e files/digest-prewikka-0.9.3-r1 244
 MD5 0853253fcac0dbb7e2a851d2859a3c44 files/digest-prewikka-0.9.5 66
@@ -6,4 +6,4 @@ MD5 1c302c9082fc295a8308b1d492d00d3c files/prewikka.conf-sample 666
 MD5 4fbb6885cc73a96f82855db5b77a7fd6 metadata.xml 216
 MD5 73649210921c9a00ce059a00bc9fe90d prewikka-0.9.3-r1.ebuild 1143
 MD5 8296cd06796fad705d62b1015722e688 prewikka-0.9.3.ebuild 951
-MD5 73649210921c9a00ce059a00bc9fe90d prewikka-0.9.5.ebuild 1143
+MD5 9e46b17e38c7ce5f203b539839a2709b prewikka-0.9.5.ebuild 1145
