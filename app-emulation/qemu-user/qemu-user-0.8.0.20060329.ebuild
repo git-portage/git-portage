@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu-user/Attic/qemu-user-0.8.0.20060329.ebuild,v 1.3 2006/04/27 23:56:09 lu_zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu-user/Attic/qemu-user-0.8.0.20060329.ebuild,v 1.4 2006/05/06 08:52:33 lu_zero Exp $
 
 inherit eutils flag-o-matic
 
@@ -37,7 +37,9 @@ src_unpack() {
 
 	cd ${S}
 	epatch ${FILESDIR}/qemu-ppc-dirty-hack.patch
+	epatch ${FILESDIR}/qemu-0.8.0-gcc4-hacks.patch
 	epatch ${FILESDIR}/qemu-0.8.0-stwbrx.patch
+
 	# Alter target makefiles to accept CFLAGS set via flag-o.
 	sed -i 's/^\(C\|OP_C\|HELPER_C\)FLAGS=/\1FLAGS+=/' \
 		Makefile Makefile.target tests/Makefile
