@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk-chan_capi-cm/Attic/asterisk-chan_capi-cm-0.5.4.ebuild,v 1.5 2006/05/06 15:11:36 stkn Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk-chan_capi-cm/Attic/asterisk-chan_capi-cm-0.6.5.ebuild,v 1.1 2006/05/06 15:11:36 stkn Exp $
 
 IUSE=""
 
@@ -9,49 +9,42 @@ inherit eutils
 MY_P="chan_capi-cm-${PV}"
 
 DESCRIPTION="Alternative CAPI2.0 channel module for Asterisk"
-HOMEPAGE="http://sourceforge.net/projects/chan-capi"
-SRC_URI="mirror://sourceforge/chan-capi/${MY_P}.tar.gz"
+HOMEPAGE="http://www.chan-capi.org/"
+SRC_URI="ftp://ftp.chan-capi.org/chan-capi/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ppc x86"
+KEYWORDS="~ppc ~x86"
 
 DEPEND="!net-misc/asterisk-chan_capi
 	>=net-misc/asterisk-1.0.5-r2
-	!>=net-misc/asterisk-1.2.0
 	net-dialup/capi4k-utils"
 
-S=${WORKDIR}/chan_capi-${PV}
+S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
 
 	cd ${S}
-	epatch ${FILESDIR}/chan_capi-0.3.5-gentoo.diff
+	epatch ${FILESDIR}/chan_capi-0.6.3-gentoo.diff
 
-	if has_version "<net-misc/asterisk-1.1.0"; then
-		einfo "Building for asterisk-1.0.x"
-		# compile for asterisk-stable
-		sed -i -e "s:^\(CFLAGS+=-DCVS_HEAD\):#\1:" \
-			Makefile
-	else
-		einfo "Building for asterisk-1.2.x"
-	fi
+	use elibc_uclibc && \
+		epatch "${FILESDIR}/chan_capi-0.6.4-uclibc.diff"
 }
 
 src_compile() {
-	emake || die "emake failed"
+	emake -j1 OPTIMIZE="${CFLAGS}" || die "emake failed"
 }
 
 src_install() {
-	make INSTALL_PREFIX=${D} install config || die "make install failed"
+	make INSTALL_PREFIX=${D} install install_config || die "make install failed"
 
 	dodoc INSTALL LICENSE README capi.conf
 
 	# fix permissions
 	if [[ -n "$(egetent group asterisk)" ]]; then
-		chown -R root:asterisk ${D}etc/asterisk/capi.conf
-		chmod -R u=rwX,g=rX,o= ${D}etc/asterisk/capi.conf
+		chown -R root:asterisk ${D}/etc/asterisk/capi.conf
+		chmod -R u=rwX,g=rX,o= ${D}/etc/asterisk/capi.conf
 	fi
 }
 
