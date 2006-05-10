@@ -7,4 +7,4 @@ MD5 1c18975ce0c3b75b08def80ec4846342 files/digest-nxclient-1.5.0-r4 150
 MD5 c1c67a77261d3b3fede94b41a9d0ce1e metadata.xml 455
 MD5 50aec3b613c8f24cd291f2a645bd089e nxclient-1.4.0-r5.ebuild 1702
 MD5 f0e6e7745483a6c3cbcb373819f84258 nxclient-1.5.0-r2.ebuild 2336
-MD5 51ec53b24e665574ecd99e6bd98a24ed nxclient-1.5.0-r4.ebuild 2452
+MD5 e68f00f945a2e388325b139042d83d96 nxclient-1.5.0-r4.ebuild 2402
