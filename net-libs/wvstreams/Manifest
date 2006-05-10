@@ -1,4 +1,4 @@
-MD5 0aaed8ff30592ddc4b698925c782b1da ChangeLog 13691
+MD5 84dea252485dfddd143476fc53bf9d16 ChangeLog 13994
 MD5 8cc8c894e6b85859553c7e3e0e787601 files/digest-wvstreams-4.0.2-r1 250
 MD5 8cc8c894e6b85859553c7e3e0e787601 files/digest-wvstreams-4.0.2-r2 250
 MD5 ce2f63ffae6742f96ede8200eb39c3d1 files/digest-wvstreams-4.2.2 250
@@ -23,5 +23,5 @@ MD5 227de7f678ad662524292836709de75f metadata.xml 313
 MD5 e594922148c5a6f7087f083cf392e55c wvstreams-4.0.2-r1.ebuild 2558
 MD5 893ee737135acd020f6245da7959dc5a wvstreams-4.0.2-r2.ebuild 2595
 MD5 23c4f5469035465548514ddc368028ea wvstreams-4.2.2-r1.ebuild 2594
-MD5 bdfa6256d72747f631768498a88196c1 wvstreams-4.2.2-r2.ebuild 2504
+MD5 4e00c406ff61b32b92f27ec9618661f1 wvstreams-4.2.2-r2.ebuild 2503
 MD5 51bf2ef4a85cbaf7c6af47794f84014a wvstreams-4.2.2.ebuild 2543
