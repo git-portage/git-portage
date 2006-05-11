@@ -1,4 +1,4 @@
-MD5 1accad0aa65ff3ad4889d846802d8dfe ChangeLog 11291
+MD5 f3e00b8eb4a5c5ccd12dc8a527a1be18 ChangeLog 11526
 MD5 cc109a746273bc0d6aee9d758e7524ab files/bgpd.init 900
 MD5 8550c2f78b4c3ba7ba66c6bcb0bf4913 files/digest-quagga-0.98.4 147
 MD5 0b154eae203de93e62ad66e0a926b170 files/digest-quagga-0.98.5-r3 147
@@ -14,4 +14,4 @@ MD5 2c1c5b782f96a74b48ccc496ad7a3865 files/zebra.init 1168
 MD5 f0c8f9afaf3bbefcea71ff3b6fa139c4 metadata.xml 1389
 MD5 e3212aca12f84a5cd7164e7727020318 quagga-0.98.4.ebuild 4438
 MD5 ba9898a1ed3cd80945e86a4f5027ad24 quagga-0.98.5-r3.ebuild 5004
-MD5 56f9050f2d72575065d6f07698aa5e1f quagga-0.98.6-r1.ebuild 5177
+MD5 ea41ebb67d33f16a72cd9465ea78a929 quagga-0.98.6-r1.ebuild 5180
