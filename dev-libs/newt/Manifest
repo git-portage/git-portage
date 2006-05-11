@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0b00cb651723bb5f3412a3bd38822e9f ChangeLog 3527
 MD5 6d5a67f6fae3839c22aa176ffbd96790 files/digest-newt-0.50.35-r2 64
 MD5 6d5a67f6fae3839c22aa176ffbd96790 files/digest-newt-0.50.35-r3 64
@@ -13,3 +16,10 @@ MD5 9dd901e4c2a68f204f1b2dce5cff066b newt-0.50.35-r3.ebuild 898
 MD5 05a3d2b2cf5f4c237d48322136b3e7bf newt-0.50.35-r4.ebuild 1568
 MD5 c2ade65d119d04e30f6cd445aeecdc85 newt-0.51.6-r1.ebuild 1990
 MD5 118eea19024a681f0abddc13e5aae970 newt-0.51.6.ebuild 1919
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEY2fWgMUyd/cdjWsRAhwCAJ9+HEjRumAkgJc+N1hEXREMueI8CgCdEiwI
+zu99E0KPn0lkV+3oVW7k7N0=
+=7K9q
+-----END PGP SIGNATURE-----
