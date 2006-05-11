@@ -1,0 +1,10 @@
+# ChangeLog for app-backup/bobs
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/ChangeLog,v 1.1 2006/05/11 16:50:44 lisa Exp $
+
+*bobs-0.6.2 (11 May 2006)
+
+  11 May 2006; Lisa Seelye <lisa@gentoo.org> +files/bobs-0.6.2.patch,
+  +files/postinstall-en.txt, +metadata.xml, +bobs-0.6.2.ebuild:
+  New backup package submitted by Ed Wildgoose, gentoo@wildgooses.com. Bug 84652
+

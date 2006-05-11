@@ -1,0 +1,11 @@
+See the INSTALL doc and man page for configuration info
+Also see the http://bobs.sf.net website.
+
+However, quickstart is to log into the website on the admin page:
+  http://localhost/bobs/admin.php
+  password: admin
+promptly change the password!!
+
+Then setup your details of shares to backup
+Remember to start the /etc/init.d/cmdloopd script to make the
+backups actually happen!

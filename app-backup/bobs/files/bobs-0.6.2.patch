@@ -1,0 +1,61 @@
+diff -r -u ../bobs-0.6.2.orig/inc/class_db.php ./inc/class_db.php
+--- ../bobs-0.6.2.orig/inc/class_db.php	2004-03-28 04:21:07.000000000 +0100
++++ ./inc/class_db.php	2005-03-09 18:47:09.727338650 +0000
+@@ -46,7 +46,13 @@
+ 		if ( $dbcheck === FALSE ) {
+ 			$dbcheck = @dba_open($tmpfile, "c", "db4");
+ 			if ( $dbcheck === FALSE ) {
+-				echo "Could not create a database of type db3 or db4 (tried both)\n";
++				$dbcheck = @dba_open($tmpfile, "c", "gdbm");
++				if ( $dbcheck === FALSE ) {
++					echo "Could not create a database of type db3,db4 or gdbm (tried all)\n";
++				} else {
++					dba_close($dbcheck);
++					$this->db_type = "gdbm";
++				}
+ 			} else {
+ 				dba_close($dbcheck);
+ 				$this->db_type = "db4";
+Only in ./inc: class_db.php.orig
+diff -r -u ../bobs-0.6.2.orig/inc/templates/backup_create_databases.php ./inc/templates/backup_create_databases.php
+--- ../bobs-0.6.2.orig/inc/templates/backup_create_databases.php	2004-03-28 04:21:07.000000000 +0100
++++ ./inc/templates/backup_create_databases.php	2005-03-09 18:47:10.317245460 +0000
+@@ -14,9 +14,12 @@
+ 			$this->id = dba_open ($db, "n", "db3");
+ 	                if ( $this->id === FALSE ) {
+ 				$this->id = dba_open ($db, "n", "db4");
+-	                        if ( $this->id === FALSE ) {
+-	                                echo "Could not create a database of type db3 or db4 (tried both)\n";
+-	                        }
++				if ( $this->id === FALSE ) {
++					$this->id = dba_open ($db, "n", "gdbm");
++						if ( $this->id === FALSE ) {
++							echo "Could not create a database of type db3,db4 or gdbm (tried all)\n";
++						}
++				}
+ 	                }
+ 			return;
+ 		}
+Only in ./inc/templates: backup_create_databases.php.orig
+diff -r -u ../bobs-0.6.2.orig/systemcheck.php ./systemcheck.php
+--- ../bobs-0.6.2.orig/systemcheck.php	2004-03-28 21:46:11.000000000 +0100
++++ ./systemcheck.php	2005-03-09 18:47:10.736179279 +0000
+@@ -245,11 +245,14 @@
+ if (!$handle) {
+     $handle = @dba_open("$tempfile", "c", "db4");      // open a temporary database
+     if (!$handle) {
+-        $t->assign ('STATUS', 'FAIL');
+-        $t->assign ('HELP', "dba database support is not working.<br>
++		$handle = @dba_open("$tempfile", "c", "gdbm");      // open a temporary database
++		if (!$handle) {
++	        $t->assign ('STATUS', 'FAIL');
++    	    $t->assign ('HELP', "dba database support is not working.<br>
+                              You need to check your php configuration and<br>
+                              include dba database support.");
+-        putfail();
++        	putfail();
++		}
+     }
+ }
+ if ($handle) {
+Only in .: systemcheck.php.orig
