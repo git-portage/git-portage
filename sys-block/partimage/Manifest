@@ -1,4 +1,4 @@
-MD5 3662b795ec17a3c832c7c74ca5802559 ChangeLog 7428
+MD5 72d79aeddfe9a37f114617393d197d36 ChangeLog 7622
 MD5 3bbd1e2fc0dd50034c600d01d08e8997 files/digest-partimage-0.6.4-r3 68
 MD5 3bbd1e2fc0dd50034c600d01d08e8997 files/digest-partimage-0.6.4-r4 68
 MD5 60b6a720fc1d32cb9325428d7aeb49c2 files/partimage-0.6.4-LP64-fixes.patch 1773
@@ -15,5 +15,5 @@ MD5 86ccd8a7d116f22182ae60e01da1bfff files/partimaged.init 756
 MD5 938ecb802f7e26ff8df88404f0648c7c files/partimagedusers.5 1263
 MD5 b854c74900be1967b69b5997a434897c files/servercert.cnf 1096
 MD5 6b4c83400b7b7a44afb53e1a7ac388af metadata.xml 300
-MD5 3fa4791b848c7fcc3f7b5b29c15a48cb partimage-0.6.4-r3.ebuild 4304
-MD5 5b9f4a131c2011f89386a0f594a479ca partimage-0.6.4-r4.ebuild 4833
+MD5 f98521eac443460f765bcab2e2c61650 partimage-0.6.4-r3.ebuild 4302
+MD5 09ffa41085c66940086f0132847f2332 partimage-0.6.4-r4.ebuild 4831
