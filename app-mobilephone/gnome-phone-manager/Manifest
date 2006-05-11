@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b8143392007cf3f0509b19c887d9df1b ChangeLog 2028
 MD5 596786c32d3fc69b6689d77546e49a52 files/digest-gnome-phone-manager-0.6 76
 MD5 8b6f3ed78e9842269e0a21ccf72258d1 files/digest-gnome-phone-manager-0.7 76
@@ -6,3 +9,10 @@ MD5 8e5ac58c297ecfe0770df57de5cba23d files/gnome-phone-manager-0.7-pixmaps.patch
 MD5 fdaf673a63683d861ecce4cd68546d6c gnome-phone-manager-0.6.ebuild 1015
 MD5 1208f208545b2173bdf3bbee30930752 gnome-phone-manager-0.7.ebuild 1125
 MD5 8e68d11b191a36c6430cb32308a182c4 metadata.xml 735
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEY4UzjG8pv1lIUX4RArCyAKC0/7ciWDxStDNDLkSUxk/Y/Tm0+ACgwI8L
+5RrCoas9an+4NaiuLZfnwgw=
+=3jdD
+-----END PGP SIGNATURE-----
