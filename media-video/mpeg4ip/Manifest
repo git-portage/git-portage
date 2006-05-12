@@ -1,4 +1,4 @@
-MD5 c79009f3b93609171e312d42dd25bfe8 ChangeLog 5787
+MD5 4508f77cfed2e5d399d4ca0c6fe0086c ChangeLog 5902
 MD5 bf208b3fef7857814d19fd17e38cbd66 files/digest-mpeg4ip-1.1 64
 MD5 f66eabf6e140aef8962a75cf06d15df0 files/digest-mpeg4ip-1.4.1 66
 MD5 f66eabf6e140aef8962a75cf06d15df0 files/digest-mpeg4ip-1.4.1-r1 66
@@ -11,4 +11,4 @@ MD5 1b1b7046bccf0f835f8e3c5b68063d8e metadata.xml 255
 MD5 cfeb9a1214e667f72da42c40baf9fa32 mpeg4ip-1.1.ebuild 1789
 MD5 ac5ee1c7dec7c93da1ea83ecc30adcb1 mpeg4ip-1.4.1-r1.ebuild 3419
 MD5 9deb58efa348a00084de6bc21e7fbd80 mpeg4ip-1.4.1.ebuild 3289
-MD5 48dc2c29cc5af5047af5ab7ec33fe8e9 mpeg4ip-1.5.ebuild 3373
+MD5 22b0d0ae1b675eb9f473fac7815e629c mpeg4ip-1.5.ebuild 3368
