@@ -1,4 +1,4 @@
-MD5 386cad7922603be6148c2d6d7165d120 ChangeLog 16947
+MD5 77ef92c19aed90a98150b28403146e7a ChangeLog 16947
 MD5 f473bbbb717ca6c5f07465e3d83df2ae files/digest-sparc-sources-2.4.32-r2 143
 MD5 4500e92fdfd8cbcf0d735fcc94300254 files/digest-sparc-sources-2.4.32-r3 143
 MD5 c0d2d8ed6a9d3d0131602b04c9ffac15 files/digest-sparc-sources-2.4.32-r4 143
@@ -7,4 +7,4 @@ MD5 6706a601c155869440dcb544e3759a04 metadata.xml 381
 MD5 4061b259f49dd15e31de63261657e92b sparc-sources-2.4.32-r2.ebuild 1201
 MD5 1421ab83858a3113c0271867b298c70f sparc-sources-2.4.32-r3.ebuild 1202
 MD5 b8150aa6ac28de38446625c3d5a02e01 sparc-sources-2.4.32-r4.ebuild 1201
-MD5 81653689d934aedb2ca06a2b52e87a36 sparc-sources-2.4.32-r5.ebuild 1083
+MD5 6ab4d50138912dafe6b619d77cdf51bd sparc-sources-2.4.32-r5.ebuild 1202
