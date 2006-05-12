@@ -1,4 +1,4 @@
-MD5 b9026c547bb52b8fbba22870e045b02a ChangeLog 6432
+MD5 ceb9a406a1b62048ec50c11db0bd4b01 ChangeLog 6431
 MD5 6b397bce8176411819610e6b92401be2 files/0.9.1-OSS.patch 995
 MD5 1755f7143c139eddaed591c6ea39e695 files/digest-hydrogen-0.9.0 67
 MD5 c2de54ec169afbb90c9eaa6440bafed5 files/digest-hydrogen-0.9.1 67
@@ -10,5 +10,5 @@ MD5 e43555677b71dcf988a5e85a2304c301 files/hydrogen-0.9.3-gcc-4.1-tinyxml.h.patc
 MD5 fea473fcef25faecb98954bbba814d7b hydrogen-0.9.0.ebuild 1112
 MD5 10b1831d7ab2e0688391bc11f2f52101 hydrogen-0.9.1.ebuild 1321
 MD5 d9fc02ee718af6e1dee8be969182a221 hydrogen-0.9.2.ebuild 2451
-MD5 a60b000ed86b7c3cd3465aaecd9d3923 hydrogen-0.9.3.ebuild 2496
+MD5 d5382b59b3b2a6229b18d3db188d5223 hydrogen-0.9.3.ebuild 2496
 MD5 958cdff6e2710ee30529dd9af63497de metadata.xml 257
