@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8e12b76a48fae758e53fb6bfa6dcd1c4 ChangeLog 11968
 MD5 b87fdf40c39c4e55a17a5e720b10e3a5 eix-0.5.1-r2.ebuild 1476
 MD5 af4dc4c7f51c15b96ebe76e6da044729 eix-0.5.5.ebuild 1364
@@ -8,3 +11,10 @@ MD5 d49568728f1c4f806614ae6ead679b22 files/eix-0.5.1-bug122005.patch 1681
 MD5 a9660cd29b21ef88a4add5db325a25a4 files/eix-0.5.5-gentoo-obsd.patch 821
 MD5 5b4795679be3f35cca3da98b5eb37a63 files/eix-bug127184.patch 307
 MD5 ee74c7f02bf2436a61be85649d0bfade metadata.xml 344
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEZI0AKRy60XGEcJIRAmV4AJ9dLPjtJI8Mi7J6HNi03i/8p+ueOgCgqMAl
+wj5KZFgZvBTUmgwONqGE7Ic=
+=8lzG
+-----END PGP SIGNATURE-----
