@@ -1,4 +1,4 @@
-MD5 f068c3b42684aff0341deed96f8c477b ChangeLog 23368
+MD5 bf6ca6ecf5e4cd48b3af8e9ee8439251 ChangeLog 23368
 MD5 2a87ad5bf27ff10aff0d045c0b555c1b files/digest-hardened-sources-2.4.32-r2 527
 MD5 65978af3c90114888c22a1b1cf1ee3ee files/digest-hardened-sources-2.4.32-r3 527
 MD5 330ce64074c425642900b1985803b811 files/digest-hardened-sources-2.4.32-r4 145
@@ -7,8 +7,8 @@ MD5 87c01de70c0e2eda3686d7625cbe9de7 files/digest-hardened-sources-2.6.14-r8 828
 MD5 f273bc9338b9745587d0211565801a5f files/digest-hardened-sources-2.6.16-r5 822
 MD5 80453845aa53526341379af02596c045 files/digest-hardened-sources-2.6.16-r6 822
 MD5 ac0297536730649b7eea4ca1cd9ff6e9 hardened-sources-2.4.32-r2.ebuild 935
-MD5 5613e34100bc194bc608d27b76d1cdcf hardened-sources-2.4.32-r3.ebuild 938
-MD5 39244388469399c4e1e07ad1a4977ebc hardened-sources-2.4.32-r4.ebuild 939
+MD5 32d6d724638c556f0a486c5ae4329694 hardened-sources-2.4.32-r3.ebuild 938
+MD5 78b7d06efdd2660a082e3edaed179947 hardened-sources-2.4.32-r4.ebuild 939
 MD5 dcc5d8548b4add567903ed915b2e0a26 hardened-sources-2.6.14-r7.ebuild 791
 MD5 e44c0d4ce8df10eafee3a3b9712e6399 hardened-sources-2.6.14-r8.ebuild 699
 MD5 b9dd78bb1b255fa966c64161a49c591e hardened-sources-2.6.16-r5.ebuild 700
