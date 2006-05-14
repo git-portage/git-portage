@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 17b76cf31762d3e4da6052fd0625f73b ChangeLog 1440
 MD5 ecd213d08b8b9809b4bdb46af714cf83 files/commands.weatherng.conf 119
 MD5 3b502807d03a9e772d6fd3d56b6f1ae9 files/confd 482
@@ -11,3 +14,11 @@ MD5 bce97cb8cb7239be710def93added4df files/vdr-weatherng-0.0.8_pre2-gentoo.diff 
 MD5 7dfb137c446412814a7c98d51eceee7e metadata.xml 484
 MD5 93f7e7d4ea4eb88794a20471d33c05a6 vdr-weatherng-0.0.5.ebuild 1582
 MD5 240eb16f49bb25377948d6091a4a8d6b vdr-weatherng-0.0.8_pre2.ebuild 1535
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+Comment: no further Information
+
+iD8DBQFEZ4sodn07HTTCgIoRAo1oAKCzCq5UC7JeNhxtVJiQk1cWGKVSGwCgtgPW
+hqueT9Y5dYHoej1AedOzV5w=
+=0gKC
+-----END PGP SIGNATURE-----
