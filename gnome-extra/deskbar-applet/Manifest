@@ -1,5 +1,5 @@
-MD5 c17e138acf4a69462d22e0f87b136f27 ChangeLog 1603
-MD5 849eec1fa725ea22baf0c22a0c9b433d deskbar-applet-2.14.1.1.ebuild 1103
+MD5 511f25887f6274a0c688c9147b6531ab ChangeLog 1724
+MD5 ed24a3ad70957dbe567bd272e381899e deskbar-applet-2.14.1.1.ebuild 1106
 MD5 8e8fdbd5aa2d0ab8bf18c380813c4ab0 files/deskbar-applet-2.13.91-multilib.patch 3380
 MD5 8afe5b19d45ccaa722b6d67e237f4c0c files/digest-deskbar-applet-2.14.1.1 76
 MD5 c96fe9e3f7052e7e1e929b940d8bb263 metadata.xml 413
