@@ -1,4 +1,4 @@
-MD5 677edefab9bf19b18790c50a9fc7b1f0 ChangeLog 24486
+MD5 b8a84b239d42ffa2ff2aed7611f9619e ChangeLog 24585
 MD5 4072a11c3c98c493cbc0bb851176fb44 files/1.0/gnome-vfs-1.0.5-codeset.patch 1762
 MD5 071edd844b13f596a2f7d986b4512521 files/1.0/gnome-vfs-1.0.5-fix-segfault.patch 430
 MD5 2ae3110a6e6fb30cfa593e4210535dc2 files/1.0/gnome-vfs-1.0.5-gcc3.4.patch 837
@@ -24,5 +24,5 @@ MD5 cfa26c4d1fd63991f0fd2a0aff0c7f72 gnome-vfs-2.10.1-r1.ebuild 2013
 MD5 96d33118d80e373a88330035c848eacc gnome-vfs-2.10.1-r2.ebuild 2207
 MD5 72157111f2d012cdcfff224a8cac70ce gnome-vfs-2.12.1.1-r1.ebuild 2161
 MD5 f524aba4b9dd6fce7fb65af89c9aed7c gnome-vfs-2.12.2.ebuild 2158
-MD5 135da0a3dc6a953f12021e7548143d35 gnome-vfs-2.14.1.ebuild 1860
+MD5 6cbc5634b431aaae317f4c613b8576ea gnome-vfs-2.14.1.ebuild 1861
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
