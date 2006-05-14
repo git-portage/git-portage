@@ -1,5 +1,5 @@
-MD5 2d1c5615fd5d0a4e1a2bfd3539ebcd83 ChangeLog 1630
+MD5 ba473d63e24ea8f05a46b8d7ffbe90b1 ChangeLog 1790
 MD5 1b48eba45c46d9cb2f340b54c6ccb594 files/digest-slidentd-1.0.0 65
 MD5 7941403451e35e669a28d6472eb33db5 files/slidentd-run 234
 MD5 a53cdec0cfda3a35f78ea4731b206b9c metadata.xml 255
-MD5 e88c6d03a0576a11fcc2cf6610ebb615 slidentd-1.0.0.ebuild 1106
+MD5 c442bd1984151fd70c2667822691560c slidentd-1.0.0.ebuild 1107
