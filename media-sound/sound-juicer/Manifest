@@ -1,4 +1,4 @@
-MD5 72fa3f1d15d77240d45dba029c1b33c0 ChangeLog 10451
+MD5 ef84ade54a6b58da25d7fd9454c053d0 ChangeLog 10571
 MD5 5b964fa5dd02ffa1cd4bafdefc94b69c files/digest-sound-juicer-2.10.1 262
 MD5 3087742987ba4528dda92fd1560181a8 files/digest-sound-juicer-2.12.2-r1 262
 MD5 2692d361222d33a5cd828596048b1e98 files/digest-sound-juicer-2.12.3 262
@@ -10,4 +10,4 @@ MD5 175cf9e1cb190e493ba296dc9d8fe748 sound-juicer-2.10.1.ebuild 1156
 MD5 5bbc1031e86b118c601ff99b49b74733 sound-juicer-2.12.2-r1.ebuild 1468
 MD5 a74f389b841bbd836247381a9b6f47cd sound-juicer-2.12.3.ebuild 1325
 MD5 d4f6410bb6e6130740e2842b69766cc5 sound-juicer-2.14.0.ebuild 1327
-MD5 d06e13b22b9fc491f1d2235cb32d726b sound-juicer-2.14.2.ebuild 1328
+MD5 493ac7c7c89a2e2af2added6b24ad220 sound-juicer-2.14.2.ebuild 1334
