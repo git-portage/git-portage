@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 7966d932676cc4be18c498866c52151f ChangeLog 1386
 MD5 fdaf3c1d625b2427c501d8b3bf5e1056 files/digest-serlook-0.3.1-r1 66
 MD5 ae26cfe4425ac23d4070de330d9c61e5 files/digest-serlook-0.3.2 139
@@ -5,3 +8,10 @@ MD5 3f39eec80d1e4154a94aad447bc93a18 files/serlook-0.3.1-noarts.patch 3533
 MD5 cf5f047091cbfcd00440b6cce50aa9d3 metadata.xml 323
 MD5 e016f434ae3d1665e2ad96275f7c8b6e serlook-0.3.1-r1.ebuild 612
 MD5 d05884500753ce9569264248a185d8b8 serlook-0.3.2.ebuild 664
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEZ16ijG8pv1lIUX4RAh6vAKDCjXpT7I3WqsJ+pO7z3lFaBme/OgCbBMQv
+b2mU2kNt1P/i1cKzOEX91fg=
+=5CGy
+-----END PGP SIGNATURE-----
