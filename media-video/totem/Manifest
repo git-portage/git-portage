@@ -1,4 +1,4 @@
-MD5 7a9ecb6828d64ad352ebc7fee7d1ced9 ChangeLog 15191
+MD5 e28c77739432f3ab02f5f5ce9b010e94 ChangeLog 15296
 MD5 ac8a4cf594e065c2ddc00dc70c8d2170 files/digest-totem-1.0.4 65
 MD5 6d8241b1512824562008ee7b7043d628 files/digest-totem-1.2.0-r1 241
 MD5 6d8241b1512824562008ee7b7043d628 files/digest-totem-1.2.0-r2 241
@@ -17,4 +17,4 @@ MD5 6645b9eed7d922972cb815cadddf7d89 totem-1.0.4.ebuild 2709
 MD5 ea6702813a8719f6b65a4a36b125dcd9 totem-1.2.0-r1.ebuild 3281
 MD5 e8433623f9f559d1f9f291cbfa0ef509 totem-1.2.0-r2.ebuild 3246
 MD5 5a3785327c2554af7dacaa9cece917a1 totem-1.2.1.ebuild 3019
-MD5 06d15d3f72216d6f39a84908a1edacfa totem-1.4.0.ebuild 3683
+MD5 bd928dc4314495322925f71555e8bec9 totem-1.4.0.ebuild 3684
