@@ -1,4 +1,6 @@
-MD5 844f16dae1b576c63dbfdcb8017f524e ChangeLog 3417
+MD5 bc94249fb1cc22513f91133a8a110f66 ChangeLog 3566
 MD5 cd1bc668a06184e6e98d7b69aa780495 files/digest-lib-compat-1.4 68
+MD5 f81b526cb5793e0ac3f04d5b30b12cd7 files/digest-lib-compat-1.4.1 70
+MD5 916b95038c959c0c4f26f9ade57f48c2 lib-compat-1.4.1.ebuild 1110
 MD5 31ec6270dfbbbe0bf4da1a500fc63766 lib-compat-1.4.ebuild 1104
 MD5 9a09f8d531c582e78977dbfd96edc1f2 metadata.xml 164
