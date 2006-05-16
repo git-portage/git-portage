@@ -1,0 +1,11 @@
+--- Makefile.in.dist	2006-05-15 23:22:50.000000000 +0100
++++ Makefile.in	2006-05-15 23:23:10.000000000 +0100
+@@ -539,7 +539,7 @@
+ 		echo "*******************************"; \
+ 	fi
+ 
+-	-$(myrealSYSCONFDIR)/init.d/cmdloopd start
++#	-$(myrealSYSCONFDIR)/init.d/cmdloopd start
+ 
+ # Remove some other crap for 'make distclean'
+ 

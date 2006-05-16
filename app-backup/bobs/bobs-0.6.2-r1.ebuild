@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/bobs-0.6.2-r1.ebuild,v 1.1 2006/05/15 12:45:12 lisa Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/bobs-0.6.2-r1.ebuild,v 1.2 2006/05/16 16:56:18 lisa Exp $
 
 inherit webapp eutils
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/bobs/${P}.tar.gz"
 
 LICENSE="GPL-2"
 
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
 IUSE=""
 
@@ -21,6 +21,9 @@ src_unpack() {
 	unpack ${A} ; cd ${S}
 
 	epatch ${FILESDIR}/bobs-0.6.2.patch
+
+	#Makefile was executing commands out of the sandbox (bug #133409)
+	epatch ${FILESDIR}/Makefile-fixcmdloopd.patch
 
 	# Original configure looks for httpd process.  Hardwire to apache2...
 	sed -e "s:\$(ps -C httpd:\$(ps -C apache2:" \
@@ -39,8 +42,8 @@ src_unpack() {
 }
 
 src_compile() {
-	./configure \
-		--with-webdir=/usr/share/webapps/${PN}/${PV}/htdocs \
+	econf \
+		--with-webdir=/usr/share/webapps/${PN}/${PVR}/htdocs \
 		|| die "configure failed"
 
 	emake || die "emake failed"
@@ -48,6 +51,7 @@ src_compile() {
 
 src_install() {
 	webapp_src_preinst
+#	MY_HTDOCSDIR="/usr/share/webapps/${PN}/${PVR}"
 	if [[ ! `built_with_use virtual/php posix` ]]; then
 	  ewarn "Your PHP does not appear to support POSIX functions. ${P} requires"
 	  ewarn "POSIX functions to be enabled.  I will continue to install ${P} but"
@@ -76,4 +80,5 @@ src_install() {
 	webapp_postinst_txt en "${FILESDIR}"/postinstall-en.txt
 
 	webapp_src_install
+	einfo "Add /etc/init.d/cmdloopd to default runlevel"
 }

@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/bobs
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/ChangeLog,v 1.3 2006/05/15 12:45:12 lisa Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/ChangeLog,v 1.4 2006/05/16 16:56:18 lisa Exp $
+
+  16 May 2006; Lisa Seelye <lisa@gentoo.org>
+  +files/Makefile-fixcmdloopd.patch, -bobs-0.6.2.ebuild,
+  bobs-0.6.2-r1.ebuild:
+  Fix bug 133409 and put this in ~arch. Not sure how it got committed without it.
 
 *bobs-0.6.2-r1 (15 May 2006)
 
