@@ -1,4 +1,4 @@
-MD5 da2638af6b7f7c025b8e1ccf8d5522d7 ChangeLog 2246
+MD5 da88268396e2c56a9fbfbf78094c07fc ChangeLog 2353
 MD5 b16866ae5b915c74ccb69ff8591a4ada files/50python-mode-gentoo.el 334
 MD5 2f5fc2b5c01b7202432d5e420db9d66b files/55python-mode-gentoo.el 505
 MD5 e65e3c9263afd795f2ca7309a54f7255 files/60python-mode-gentoo.el 723
@@ -8,7 +8,7 @@ MD5 3c240a6ba22c786eda3fb9a99fdfaf9c files/digest-python-mode-4.63-r1 259
 MD5 a38965b9a09c8b914e4e23afbdf0051c files/digest-python-mode-4.70 521
 MD5 6d29bd6bc2d870795491141dcb821e06 files/setup.py 86
 MD5 fcd33d07e4ee719b01157946734f4fe8 metadata.xml 158
-MD5 c6db8e07ff878e73e691d453fccafaac python-mode-1.0.ebuild 934
+MD5 c396527d70bee265da3774f2ed0e9b3f python-mode-1.0.ebuild 932
 MD5 0ecb08054b678f7912068f673c5a2a54 python-mode-4.6.ebuild 773
 MD5 1481a60b331d0154e8933557b382eb59 python-mode-4.63-r1.ebuild 880
 MD5 9469101daa0ea149e320d0af1f330ff7 python-mode-4.70.ebuild 996
