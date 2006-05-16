@@ -1,5 +1,5 @@
-MD5 3eb192e81f6a38f8c1bddfa85f69ec45 ChangeLog 465
-MD5 b1d60b2fa33f1648d5218358b6a859df dibbler-0.4.1.ebuild 1455
+MD5 5c6a51036035626cb07ef15db4a0c7bf ChangeLog 601
+MD5 5e5f2f40710dcdc58a540b963df50496 dibbler-0.4.1.ebuild 1455
 MD5 ef5ae7d52342350eab3c684d8aa3dbe0 files/dibbler-client 465
 MD5 c00cfddc3093220bb75272c275995a96 files/dibbler-gcc-4.1.patch 3060
 MD5 c584858dc5d5056fdae143114c65a211 files/dibbler-relay 458
