@@ -1,4 +1,4 @@
-MD5 fb0e08e2aa129caa4fc114d11c98847d ChangeLog 2505
+MD5 d2ff89cbc9072795d78f2fecf7ee6b0a ChangeLog 2503
 MD5 89d2c5718559030b51532b37db3d6baf files/digest-mecab-0.78 127
 MD5 d1028488de24a640c56a9eda48124838 files/digest-mecab-0.79 127
 MD5 436949af36c7d36e3aea462cf05fdef3 files/digest-mecab-0.80 127
@@ -8,5 +8,5 @@ MD5 4791b77f237eb329b280249cc831b031 mecab-0.78.ebuild 820
 MD5 995b5d3103496377cc3aac716a219102 mecab-0.79.ebuild 851
 MD5 88d9b76cfc82b553a64bb5d492612b22 mecab-0.80.ebuild 942
 MD5 7c607d33be4fdf09187926d4d1c6c6d4 mecab-0.81.ebuild 1074
-MD5 3f4c31be75cce5b11e915fbf08ec5a24 mecab-0.91.ebuild 682
+MD5 dc540f00417c549b075831c46b26e426 mecab-0.91.ebuild 776
 MD5 e92a48548554c80cf90e18df17ff6a82 metadata.xml 156
