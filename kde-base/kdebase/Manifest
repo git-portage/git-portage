@@ -1,4 +1,4 @@
-MD5 106e60c77136ab1276a7aebb06359f78 ChangeLog 47570
+MD5 5a0292453432415c9b4941a823745208 ChangeLog 47571
 MD5 3403677f5c4e44815c5a97c507d4f117 files/3.3.2-r1/Xsetup 758
 MD5 2f1f31f38b93136baeb537500c8cfabc files/3.3.2-r1/backgroundrc 342
 MD5 928f7208882e2a90d9cb633dcfa9abf9 files/3.3.2-r1/kdmrc 19878
@@ -46,6 +46,6 @@ MD5 2460a9a5d5f1376ef48a27eac374ec8d kdebase-3.4.2-r2.ebuild 4731
 MD5 b55487abdc171cd67c3b95c3a17aeb4a kdebase-3.4.2.ebuild 4288
 MD5 0b4820cb5b5d77766fe92f595d9610d6 kdebase-3.4.3-r1.ebuild 4742
 MD5 5a8b0e61c66d4067b0c55485d5d7468e kdebase-3.4.3.ebuild 4467
-MD5 2cc626d1d6d0ee12b9d39dd1b22211f3 kdebase-3.5.2-r1.ebuild 5444
+MD5 bc4312ab9f3cba608de64a761c6d191e kdebase-3.5.2-r1.ebuild 5445
 MD5 07ec54cd2a8057c99720a9557adb8298 kdebase-3.5.2.ebuild 5314
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
