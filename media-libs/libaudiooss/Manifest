@@ -1,3 +1,4 @@
-MD5 f76679e707a433994a29328c68869e10 ChangeLog 624
+MD5 d937a38a1814d1327c8c6c4d5b9e1dd9 ChangeLog 772
 MD5 effdcbcfda30409e0f327cb62074bc58 files/digest-libaudiooss-1.1.0-r1 65
-MD5 1d5d930b4d01a6ae8a0792409b38d457 libaudiooss-1.1.0-r1.ebuild 899
+MD5 6401bd8b1a5d2b775174a152f876a94e libaudiooss-1.1.0-r1.ebuild 893
+MD5 65fa08aea349081b82e9db9ef7c25d91 metadata.xml 159
