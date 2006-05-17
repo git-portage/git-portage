@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b6d436507b85d356288652c13504b2ce ChangeLog 4492
 MD5 15bb28371128e3b3dab37b46c19f7343 files/digest-gramps-1.0.10 66
 MD5 1d3ac2cc5540566d102e91c380154464 files/digest-gramps-1.0.11 244
@@ -10,3 +13,10 @@ MD5 e3c81ba587480f2d446b7a68ebf11413 gramps-1.0.8.ebuild 1284
 MD5 47c13e965eab3c0794da726dfaf26fae gramps-2.0.11.ebuild 1645
 MD5 345b25027028620d91d595250d5fadb3 gramps-2.0.9.ebuild 1643
 MD5 03ad2e6c4ab41244af1015a8bbb0b39f metadata.xml 158
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEayefKRy60XGEcJIRAm+SAKCI0lX9IarhENUCYNjHyMQL6ejINQCfU+SN
+IDB2GP3BcOn5o31A5h/+tGg=
+=4e/g
+-----END PGP SIGNATURE-----
