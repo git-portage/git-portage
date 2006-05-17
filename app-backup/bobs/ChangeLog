@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/bobs
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/ChangeLog,v 1.4 2006/05/16 16:56:18 lisa Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/ChangeLog,v 1.5 2006/05/17 22:17:05 robbat2 Exp $
+
+  17 May 2006; Robin H. Johnson <robbat2@gentoo.org>
+  files/Makefile-fixcmdloopd.patch, bobs-0.6.2-r1.ebuild:
+  Full fix for sandbox bug #133409 - in some cases automake was being called,
+  blowing away the previous patch. So now patch Makefile.am and always call
+  automake.
 
   16 May 2006; Lisa Seelye <lisa@gentoo.org>
   +files/Makefile-fixcmdloopd.patch, -bobs-0.6.2.ebuild,

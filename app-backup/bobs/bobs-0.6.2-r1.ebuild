@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/bobs-0.6.2-r1.ebuild,v 1.2 2006/05/16 16:56:18 lisa Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/bobs-0.6.2-r1.ebuild,v 1.3 2006/05/17 22:17:05 robbat2 Exp $
 
-inherit webapp eutils
+inherit webapp eutils autotools
 
 DESCRIPTION="The Browsable Online Backup System"
 HOMEPAGE="http://bobs.sourceforge.net/"
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/bobs/${P}.tar.gz"
 
 LICENSE="GPL-2"
 
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc"
 
 IUSE=""
 
@@ -39,6 +39,8 @@ src_unpack() {
 	# Modify the webdir to match the webapp format
 	sed -e "s:myWEBDIR=\$with_webdir/bobs:myWEBDIR=\$with_webdir:" \
 		-i 'configure' || die "configure bodge failed"
+
+	eautomake
 }
 
 src_compile() {
