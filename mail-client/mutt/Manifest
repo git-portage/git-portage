@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 5cc2116caea552b223941f3226bff6d3 ChangeLog 20049
 MD5 74ddaf505ea8bd19fbeb1330a23506ea files/8patch-1.5.6.dyc.source_stat 1531
 MD5 6064ff5a3d1a71ccdb48f88872feb3a3 files/Muttrc 667
@@ -25,3 +28,10 @@ MD5 884f6aca64cbdbc3b1864a945f429413 mutt-1.5.11.ebuild 5695
 MD5 cb2a1c4875a1f091afd9577f4f61d2e8 mutt-1.5.8-r1.ebuild 4605
 MD5 b684c056a91bcad2e4f3d99c9332c1a0 mutt-1.5.8-r2.ebuild 4961
 MD5 8838ca64d9cd8c5e27b83645106b1ddc mutt-1.5.9.ebuild 6268
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEbJHeViELBEf1JB0RAnjeAJ4/PbEZbNQEL3eYkQQeTrUGxkThPACfR3+i
+F2xccMZ7yhehdnzz9GXMsVY=
+=iWap
+-----END PGP SIGNATURE-----
