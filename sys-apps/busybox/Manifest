@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 04c16477f4adf28e18dc274490d0207b ChangeLog 15691
 MD5 ef371aabe6da10b27577d6b87f35df44 busybox-1.00-r4.ebuild 7100
 MD5 b0336ac088a950a2da4f6466bc199b02 busybox-1.01.ebuild 6933
@@ -30,3 +33,12 @@ MD5 254257cdc3e7a26e8f27dbd5182000fa files/digest-busybox-1.1.1 247
 MD5 66c1d874e3f70a9e6071cee23a018bb0 files/digest-busybox-1.1.2 247
 MD5 6b3653be9cc525b567d1ecf4da83a7d2 files/digest-busybox-1.1.3 67
 MD5 8ef75eba39772bdd1a8facc7815dbebb metadata.xml 161
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iQCVAwUBRGxez54WFLgrx1GWAQKWpgQAk8uz6Eic4bAqj1T7dE/PMhInZ3Q3j3ZU
+jeUKULm+It8XnJ//D5/ONt2YkkhSYw19OCWZauP5QtL5jsjOA/oUg/d2WUNqAHoj
+XwWtvReSAkroSy0liNuvhLeJwSdp+cjrSe+oAPv8ZNYXhGNbOSDcfDJ+9ickqBJG
+4c3NrP2q5Pg=
+=vMGg
+-----END PGP SIGNATURE-----
