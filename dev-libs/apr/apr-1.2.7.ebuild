@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/apr/Attic/apr-1.2.7.ebuild,v 1.3 2006/05/18 01:22:33 vericgar Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/apr/Attic/apr-1.2.7.ebuild,v 1.5 2006/05/18 18:14:40 vericgar Exp $
 
-inherit libtool
+inherit flag-o-matic libtool
 
 DESCRIPTION="Apache Portable Runtime Library"
 HOMEPAGE="http://apr.apache.org/"
@@ -17,6 +17,9 @@ RESTRICT="test"
 DEPEND=""
 
 src_compile() {
+
+	filter-ldflags -Wl,--as-needed --as-needed
+
 	elibtoolize || die "elibtoolize failed"
 
 	myconf="--datadir=/usr/share/apr-1"
@@ -31,7 +34,7 @@ src_compile() {
 		einfo "Using /dev/random as random device"
 		myconf="${myconf} --with-devrandom=/dev/random"
 	fi
-	
+
 	# We pre-load the cache with the correct answer!  This avoids
 	# it violating the sandbox.  This may have to be changed for
 	# non-Linux systems or if sem_open changes on Linux.  This
