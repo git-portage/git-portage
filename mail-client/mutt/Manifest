@@ -6,6 +6,7 @@ MD5 cae412df424c3f499c539c93ebd02e48 files/digest-mutt-1.4.2.1 292
 MD5 7beb1d2025d90ce7e9e6772507627431 files/digest-mutt-1.5.10-r1 655
 MD5 86777e24060a785994a8ddd2bd22c38f files/digest-mutt-1.5.11 653
 MD5 dfc509d0b1283134c72b0be93dcb1815 files/digest-mutt-1.5.11-r1 653
+MD5 ce8fe4233ad2fb1f0b6f8d62fe4c61ba files/digest-mutt-1.5.11-r30 149
 MD5 17ca1e2a5696251d01b9b488bcb0fc79 files/digest-mutt-1.5.8-r1 581
 MD5 2f50af3ba9259b1ac0dcf7faa2e9545e files/digest-mutt-1.5.8-r2 662
 MD5 3f1450d2a3bdb1e595bf5820239364cc files/digest-mutt-1.5.9 659
@@ -19,6 +20,7 @@ MD5 ab8fa36a71860fbc36c89a2c91745d28 metadata.xml 348
 MD5 dc42018781b04e0934dcfc4f3a6e6303 mutt-1.4.2.1.ebuild 3331
 MD5 327b8e25b061f5295baca07bfddab43d mutt-1.5.10-r1.ebuild 5581
 MD5 3b8e3d76bcfb51c31777a7ebd70ebebd mutt-1.5.11-r1.ebuild 5781
+MD5 850e9af12c2384131e938dd841897b4b mutt-1.5.11-r30.ebuild 5322
 MD5 884f6aca64cbdbc3b1864a945f429413 mutt-1.5.11.ebuild 5695
 MD5 cb2a1c4875a1f091afd9577f4f61d2e8 mutt-1.5.8-r1.ebuild 4605
 MD5 b684c056a91bcad2e4f3d99c9332c1a0 mutt-1.5.8-r2.ebuild 4961
