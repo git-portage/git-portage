@@ -1,4 +1,4 @@
-MD5 2975518cf7a80272de090993c2df1ab8 ChangeLog 1209
+MD5 71958009d43dcb2ba1de46f926ae4785 ChangeLog 1476
 MD5 22b449239fb78913844ae3b6e0dffc0e files/config-hook-2.0.0.sh 250
 MD5 6666e69e804d1d4ea85830dd5802d02e files/config-hook-3.0.1.sh 226
 MD5 6666e69e804d1d4ea85830dd5802d02e files/config-hook-3.0.2.sh 226
@@ -12,5 +12,5 @@ MD5 74c339e2cae7428170cffffc458ebc1f files/postupgrade-en-3.0.1.txt 681
 MD5 74c339e2cae7428170cffffc458ebc1f files/postupgrade-en-3.0.2.txt 681
 MD5 6bd6ef4ff11bf403c2b526fbda762a76 knowledgetree-2.0.7.ebuild 2089
 MD5 d24e8897790113c2427588f553b25b6a knowledgetree-3.0.1.ebuild 1992
-MD5 aef5af3da75eac7251e5a3350f29e98d knowledgetree-3.0.2.ebuild 2131
+MD5 368850ffd98386eda880684fc5c7d93b knowledgetree-3.0.2.ebuild 2131
 MD5 f61bfa064e3acdfcd826e4a38b121196 metadata.xml 161
