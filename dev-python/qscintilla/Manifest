@@ -8,4 +8,4 @@ MD5 e2ef183d503f0d553f92c182d655be67 files/qscintilla-1.61-sandbox.patch 710
 MD5 f5f01b5ca1b6758b69a04a4897c0a370 files/qscintilla-1.65-sandbox.patch 710
 MD5 811c07ba7510a315382249fc3adb44fc metadata.xml 175
 MD5 e70bf3827275bc2c00f845ef1a9667fc qscintilla-1.5.1.ebuild 2071
-MD5 ea80d9d7ff265ffd86d01a48a7c64ade qscintilla-1.6.ebuild 2380
+MD5 17e39303becc5b7e19b0202d5b4ca4f9 qscintilla-1.6.ebuild 2386
