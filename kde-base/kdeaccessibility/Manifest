@@ -1,4 +1,4 @@
-MD5 b15452e3bd33d71e4db9b9010d0ebc85 ChangeLog 12866
+MD5 ad5d49dddbe4c31b17d41a35551a7393 ChangeLog 12863
 MD5 39b0d45ba034c139eed4599fe33074d0 files/digest-kdeaccessibility-3.3.2 76
 MD5 a96a1d7a63ac3bfb215cda52b2a9c3e6 files/digest-kdeaccessibility-3.4.1 76
 MD5 8340ca34cb0bed2c4acfd82f444a2624 files/digest-kdeaccessibility-3.4.2 76
@@ -12,5 +12,5 @@ MD5 d0a1d06ed0fcf05d425606f15b87923a kdeaccessibility-3.4.1.ebuild 996
 MD5 c3e9d3070a019305dab7a3440b9c4a73 kdeaccessibility-3.4.2.ebuild 1136
 MD5 aa692641f9f0f6a6b9a3cfbbcdc35a95 kdeaccessibility-3.4.3-r1.ebuild 1245
 MD5 92fb385bf6414b9756f55bf9d7d71992 kdeaccessibility-3.4.3.ebuild 1202
-MD5 1982d175c26a0984411e92baeb7eda71 kdeaccessibility-3.5.2.ebuild 836
+MD5 5bda6b647276ea7c41d0a3b4443df34c kdeaccessibility-3.5.2.ebuild 834
 MD5 acc03a4b12bb0433a57e95bd253b9501 metadata.xml 156
