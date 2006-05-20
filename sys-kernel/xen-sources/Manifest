@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 1a96f8014cee9ab36a809a96b38cbaaf ChangeLog 4621
 RMD160 0aaac31b5296e0a32c5680288971443d9d4e697d ChangeLog 4621
 SHA256 f5333fa618db108fd93645db238c4f36a28ab70ebd42cde0618b74ab3efa2eed ChangeLog 4621
@@ -10,3 +13,10 @@ SHA256 79ddf2debe775cd0465984dd0d1e706e7b967b0590a3e36aba5b13239586272f metadata
 MD5 f554726a78eece0a37d2bafb6ba2c852 xen-sources-2.6.16.16.ebuild 1493
 RMD160 bf2a9d1db7c43ce696530781bbdccb3c2fbdf5c4 xen-sources-2.6.16.16.ebuild 1493
 SHA256 06a7272888e72abfe833ab22453e78a6fa301ec70da98b8025aaa8ae054301e7 xen-sources-2.6.16.16.ebuild 1493
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEbxidJrHF4yAQTrARAlB0AKCnufYnObAo4B6eZg/9Ed+lB0wDRACfZGmi
+wxNRnvKTS02ewyluc4UJqZc=
+=2ir9
+-----END PGP SIGNATURE-----
