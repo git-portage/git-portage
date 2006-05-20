@@ -1,4 +1,4 @@
-MD5 310d07467d25924cba559e06d26e576a ChangeLog 5080
+MD5 09193e8aeddea22b854842c9f5637cb2 ChangeLog 5077
 MD5 2ac98b4c3bd182f4d422edead25c56d9 files/digest-kphone-4.1.0 64
 MD5 c96af639b76079a8a65e634df2154fb8 files/digest-kphone-4.1.1 64
 MD5 021fac998cd116c8390408634abaf994 files/digest-kphone-4.2 62
@@ -9,6 +9,6 @@ MD5 9cfd15f592300e5711b7c39acd5d8b8e files/kphone-4.2-CVE-2006-2442.diff 574
 MD5 aa1742f0c810c439d129b6e2d08a2f42 files/kphone-4.2-gcc4.diff 960
 MD5 79a9d63d5116f9fd85489f5b0464cfdb kphone-4.1.0.ebuild 933
 MD5 34e862915786f759ee014aa4aab3d0b9 kphone-4.1.1.ebuild 1031
-MD5 b16f7f7a8e25370ff2a586ecfce47781 kphone-4.2-r1.ebuild 1249
+MD5 3290ab4221904a5408f9c4ff756dbb35 kphone-4.2-r1.ebuild 1251
 MD5 af646ec7a417940c2b44ccb081ba0ae5 kphone-4.2.ebuild 1041
 MD5 70f06600556327dcfbc31fa03f610042 metadata.xml 155
