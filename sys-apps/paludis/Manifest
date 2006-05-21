@@ -1,4 +1,4 @@
-MD5 316306ed767e55be152211a2c862dec7 ChangeLog 757
+MD5 0348b0e529af29ddae5495a31e66d377 ChangeLog 881
 MD5 42db18d5a1ebec93ea60237c0c956c94 files/digest-paludis-0.2.1 244
 MD5 7de2802c9bcc9834d5ee8b2a210bb1d9 files/digest-paludis-0.2.2 244
 MD5 87062c4c4a17f123b1ec4c02f395a6ed files/digest-paludis-0.2.3 244
@@ -7,4 +7,4 @@ MD5 8c5e29d94c8a82c144af81732a6eaf13 metadata.xml 215
 MD5 9dc2ad2875bdb702b0388c3583534060 paludis-0.2.1.ebuild 1152
 MD5 74237e00cfce2add693ac2792d104bf9 paludis-0.2.2.ebuild 1155
 MD5 9b67338710957975c74b6131f3f96636 paludis-0.2.3.ebuild 1184
-MD5 d019044264309bbd069dd71658fb1fc5 paludis-0.2.4.ebuild 1165
+MD5 f77757fe4ce3d1585d0e71aab983094d paludis-0.2.4.ebuild 1167
