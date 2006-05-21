@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0348b0e529af29ddae5495a31e66d377 ChangeLog 881
 MD5 42db18d5a1ebec93ea60237c0c956c94 files/digest-paludis-0.2.1 244
 MD5 7de2802c9bcc9834d5ee8b2a210bb1d9 files/digest-paludis-0.2.2 244
@@ -8,3 +11,10 @@ MD5 9dc2ad2875bdb702b0388c3583534060 paludis-0.2.1.ebuild 1152
 MD5 74237e00cfce2add693ac2792d104bf9 paludis-0.2.2.ebuild 1155
 MD5 9b67338710957975c74b6131f3f96636 paludis-0.2.3.ebuild 1184
 MD5 f77757fe4ce3d1585d0e71aab983094d paludis-0.2.4.ebuild 1167
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEcNvFViELBEf1JB0RAvyVAJwLL+VSTWn+qqm+jegE9AUl4yfSSwCfd/pc
+dwpvOvWBtmSUkiDhJ2VGymM=
+=03rn
+-----END PGP SIGNATURE-----
