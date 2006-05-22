@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f3f4b049ad3057c75f61b4a83c406aa9 ChangeLog 1137
 MD5 67410df1245e2fd434387753464dcb77 files/confd-0.1.0a 443
 MD5 46f39cc2dbf69a20f4db3e410e7722f6 files/digest-vdr-sysinfo-0.0.4a 244
@@ -8,3 +11,11 @@ MD5 7c30ab7528b676a1a0c2737821599b29 metadata.xml 300
 MD5 0a44932d8ca5cf700f4f63c21db88bda vdr-sysinfo-0.0.4a.ebuild 834
 MD5 1e7315e6dc0bd1a94e0a990db99ddfd8 vdr-sysinfo-0.1.0a-r1.ebuild 883
 MD5 b288d5c2b0af861f8457043f985bb9ec vdr-sysinfo-0.1.0a.ebuild 834
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+Comment: no further Information
+
+iD8DBQFEciqndn07HTTCgIoRAlNpAJ0SQ48p3LC122nhC+nLuJiOsGzamQCgtuy0
+5ct2dqKPoOSQtUN5O3DNBok=
+=xUjP
+-----END PGP SIGNATURE-----
