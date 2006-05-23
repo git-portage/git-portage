@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 897e082230d020e7ba5305dd1ddbba2b ChangeLog 2950
 MD5 3a81c3a2a15519a0ca30d43714275139 enigmail-0.93.1-r2.ebuild 4166
 MD5 9135cffca87783cce3d9b07d3c484f9e enigmail-0.93.1-r3.ebuild 4324
@@ -17,3 +20,10 @@ MD5 13d162e051f702712c72dd7efa9aeb47 files/digest-enigmail-0.94.0-r3 855
 MD5 c00ea2b2717491804ceababb4c14cc5b files/firefox-1.5-visibility-check.patch 10955
 MD5 9c2b48ceea1c5ec25a32bf5225946f7b files/firefox-1.5-visibility-fix.patch 485
 MD5 d048ab0ca56f9151afdebcff86b18438 metadata.xml 303
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEc03QKRy60XGEcJIRAjBeAKCKmOlS29oqvolJaSmKTRRzpYnkBQCfcYEd
+uDQ2N7C68tpfQTki2AjUrs8=
+=pxi5
+-----END PGP SIGNATURE-----
