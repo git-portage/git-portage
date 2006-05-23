@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 83af29eb5b7d911d5fe22a221838eb92 ChangeLog 8712
 MD5 18d017187b228dd614d7ae00283f788a files/digest-libfwbuilder-1.0.2-r2 72
 MD5 8d7d58dd8f04faf069a57566a94b8bab files/digest-libfwbuilder-2.0.10 259
@@ -18,3 +21,10 @@ MD5 4968e44d4179ddba6e7ad31bb6fb2215 libfwbuilder-2.0.7.ebuild 804
 MD5 f3ec80a11a8b755aa603285aaf303172 libfwbuilder-2.0.8.ebuild 804
 MD5 7b940aa96bd322bd7f08ec693cb72b1b libfwbuilder-2.0.9.ebuild 811
 MD5 4eda2fda81ea6a89d8f1f4a2dcd12a85 metadata.xml 233
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEc2w4KRy60XGEcJIRAmYaAKCnqk9VLxDy9G07ISPlrUgxn+s0JACfag7x
+s11A+4ki90sCoPxrWdKvtU0=
+=dTML
+-----END PGP SIGNATURE-----
