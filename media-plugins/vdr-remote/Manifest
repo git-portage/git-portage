@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 bdddf3e111011c2d8d92d698052863a1 ChangeLog 1050
 MD5 e5af7e38dbc2643f5cdeb13ee725c4ed files/confd 1103
 MD5 17e17982dab55ec346ffcc11965b5976 files/digest-vdr-remote-0.3.6 238
@@ -6,3 +9,11 @@ MD5 63f43e4f41badf70d420f3f650106b04 files/rc-addon.sh 2336
 MD5 fab5ff3a59c3f98050c8f7414682ec2c metadata.xml 405
 MD5 34486f7a9771e33d7fe9f1de996d8a5f vdr-remote-0.3.6.ebuild 494
 MD5 1ec26c811a9fe5abe16480e7f4e65fc4 vdr-remote-0.3.7.ebuild 501
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+Comment: no further Information
+
+iD8DBQFEc0cUdn07HTTCgIoRAuJxAKCWgxAODpJZZQOhZcMLk8rdQSWt3wCeIzTA
+syldtpafK28clGVkLY0m4zs=
+=vwWi
+-----END PGP SIGNATURE-----
