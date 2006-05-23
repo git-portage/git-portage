@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 0b8879e7123c15b5f710496a3d00fb0e ChangeLog 3733
 MD5 4f1570403a8986b7343b0b87c6b41ef9 files/digest-telnet-bsd-1.0-r1 247
 MD5 6651749586a41d06b99accc30392ebad files/digest-telnet-bsd-1.2 247
@@ -10,3 +13,10 @@ MD5 25a39d92639858c521476ce631557d6c metadata.xml 162
 MD5 786f97f92092f1b116ce97842d20d255 telnet-bsd-1.0-r1.ebuild 1064
 MD5 433bbe934b89e6f5dd88701470190a28 telnet-bsd-1.2-r1.ebuild 1122
 MD5 ff7e5662e92ca6feddd895beaac357d5 telnet-bsd-1.2.ebuild 752
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEc0PNKRy60XGEcJIRAswyAJ9loPtlFqhraI9xc9oJA+NzrVBkHgCgoJyD
+fzjY8Vn3UrXcu4XSk/xfSrM=
+=HM3R
+-----END PGP SIGNATURE-----
