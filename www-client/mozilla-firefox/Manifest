@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 4ee7941ed2b97fdf955c8ec1793db5d5 ChangeLog 45139
 MD5 328c58524dbe1f58eea781194cc7de94 files/1.5/mozilla-firefox-1.5-history.patch 2376
 MD5 5d8ef39dd84f5d5a67a7a784e9abcbd0 files/1.5/mozilla-firefox-1.5-mork.patch 1248
@@ -30,3 +33,10 @@ MD5 703f41edab0049cce34b1a4226fe59a4 mozilla-firefox-1.5.0.1-r4.ebuild 9075
 MD5 0da698ed2668524ff6547a697f49f554 mozilla-firefox-1.5.0.2-r1.ebuild 9018
 MD5 14d7706f0b3cbb7c7ebf80c9a1de9074 mozilla-firefox-1.5.0.2.ebuild 9015
 MD5 a1765f6688e1a6fd72ed805285e0f9bc mozilla-firefox-1.5.0.3.ebuild 9265
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEc0zRKRy60XGEcJIRAkMzAJ4nE6VddejuA88yRR8yrOumnyX+CwCffjuE
+/74JWoA7yxsN95rdtQUdr48=
+=oPsn
+-----END PGP SIGNATURE-----
