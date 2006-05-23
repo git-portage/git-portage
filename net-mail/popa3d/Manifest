@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 019fc8d0a5313a4a5381de560e5fbd7e ChangeLog 3925
 MD5 d5e922ceb0a1fbe958b60cefb5029e1b files/digest-popa3d-0.6.4.1-r2 208
 MD5 361c1454d68521669150fc25f5078c82 files/digest-popa3d-1.0 204
@@ -7,3 +10,10 @@ MD5 5b48d9a897a74987026c74a16e2478e5 metadata.xml 235
 MD5 76b82c38818ea590156682b0504acfcc popa3d-0.6.4.1-r2.ebuild 4471
 MD5 62a30b527ddaa69494697d2cec729590 popa3d-1.0.2.ebuild 5558
 MD5 0c6a249e00612aa98eb0d8725ff68cb5 popa3d-1.0.ebuild 5447
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEc1oEViELBEf1JB0RAmyRAJ0dtuzlb9G0NdpIj18dTyb2nCvqbwCfTtOM
+rRzhwqGUtYEWe+0rpECRfMg=
+=iYod
+-----END PGP SIGNATURE-----
