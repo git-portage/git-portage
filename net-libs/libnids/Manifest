@@ -1,4 +1,4 @@
-MD5 6b56ced8a62cab73bc456b31cd3c2ef2 ChangeLog 3773
+MD5 2fa6777347cad4290b776e9740889268 ChangeLog 3982
 MD5 3ecc570410d01c3be5b93322f2f982e6 files/digest-libnids-1.18 238
 MD5 7693c739298a6b46760a1c2636e7cb0c files/digest-libnids-1.20 238
 MD5 1b7680f06cb88b7ba7280f1472212832 files/digest-libnids-1.21 64
@@ -6,5 +6,5 @@ MD5 4f1acaf2ec159ddfba1e456f21c99112 files/libnids-1.18-chksum.c-ebx.patch 615
 MD5 9562afeb0aef6794b0b94779fab9c381 files/libnids-1.20-chksum.c-ebx.patch 718
 MD5 c9fb482d3856b8804b23fe96caf1b8ce libnids-1.18.ebuild 935
 MD5 5c70299b7329011abdc1f7429b0842aa libnids-1.20.ebuild 896
-MD5 91b26e72d20e5872c7daa88ad7ada05c libnids-1.21.ebuild 899
+MD5 6414ab3dd1a9b1f43f4ced5544e737e6 libnids-1.21.ebuild 904
 MD5 c9a3c259574bc6c3d7583402ad67e763 metadata.xml 311
