@@ -1,4 +1,4 @@
-MD5 183172be1b20c9e4d4d28f05bf8087d7 ChangeLog 4018
+MD5 24ec50b1eecf45cd6f5d12181e1cc66e ChangeLog 4221
 MD5 074aae91efbecf981a1e8ed73d5d1681 files/0.8.1-64bit.patch 577
 MD5 b8af432c32a9be02d6da7830e452d342 files/digest-opensc-0.10.1 66
 MD5 f5739a887f202707baeb3816529dca09 files/digest-opensc-0.11.0 66
@@ -6,5 +6,5 @@ MD5 4fcfcb66c332083c66d4758cd414fc48 files/digest-opensc-0.9.4 65
 MD5 c16f3cf2a3cb31195b173e54f4d2212d files/opensc-0.9.4-gcc4.patch 446
 MD5 286a92520aa59a11916aacd680088270 metadata.xml 663
 MD5 d1811b32daaea5a81301ba5cffd10a37 opensc-0.10.1.ebuild 1500
-MD5 1485ad405d8960b9fe887ed6181f460f opensc-0.11.0.ebuild 1509
+MD5 9796497a3cf7b3eaf8bfef9a35ac35c3 opensc-0.11.0.ebuild 1513
 MD5 ee098da16bebb2cdb28490b35e1fd288 opensc-0.9.4.ebuild 1601
