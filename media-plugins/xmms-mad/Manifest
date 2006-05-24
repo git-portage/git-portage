@@ -1,4 +1,4 @@
-MD5 956b6d1a64abf23ad88a364d7ac2ee06 ChangeLog 5974
+MD5 8819b74ba65883fd9318ed2c1d7aa6f4 ChangeLog 6293
 MD5 fd47546527740710d5314aff9bc28f6e files/digest-xmms-mad-0.8 64
 MD5 fd47546527740710d5314aff9bc28f6e files/digest-xmms-mad-0.8-r1 64
 MD5 fd47546527740710d5314aff9bc28f6e files/digest-xmms-mad-0.8-r2 64
@@ -7,5 +7,5 @@ MD5 302fc0b4331d282a51ef5d1bcbbcecf9 files/xmms-mad-0.8-mp3-header.patch 1547
 MD5 0d73404fc01811eac2ce000c6c876cd2 files/xmms-mad-0.8-song_change.patch 472
 MD5 05ab4d4775083f0930841e415df18ad6 metadata.xml 160
 MD5 7413f67be71f917f01f5eaf2924b51dc xmms-mad-0.8-r1.ebuild 830
-MD5 86c103b16e9dbecc3c786fe73de6e531 xmms-mad-0.8-r2.ebuild 873
+MD5 2ca2fc479eb46b5575a9e3aae1985269 xmms-mad-0.8-r2.ebuild 870
 MD5 5c64e095db682235fe51b946799dc0f2 xmms-mad-0.8.ebuild 822
