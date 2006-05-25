@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 8141eece68f0b78b43f72cbdd9be76f2 ChangeLog 6357
 MD5 01d7ea5644c29972a910ab27e3ab4738 files/digest-sysklogd-1.4.1-r11 65
 MD5 5f4c00c1c302c0e501fb6c6fb205a31e files/digest-sysklogd-1.4.2 145
@@ -17,3 +20,10 @@ MD5 5d4b89ceb689887a6cbb582b875bf3e7 files/syslogd-listfiles.8 2540
 MD5 6fe58567b648100d4ff11902921b6889 metadata.xml 165
 MD5 39840d555ebf738d6250ea9796f53f28 sysklogd-1.4.1-r11.ebuild 1430
 MD5 32183b29bda176450c70d43d628a8b20 sysklogd-1.4.2.ebuild 1852
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEdQBxK3VlI3Kj19sRArQQAJ9dGTpB9NV23V38BwLR0ggKQ+vCbQCgqrNG
++tWXDvnQ927lb5V8JeRpuNc=
+=HQ2l
+-----END PGP SIGNATURE-----
