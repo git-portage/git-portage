@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/geos/Attic/geos-2.1.4.ebuild,v 1.2 2006/05/25 19:18:46 nerdboy Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/geos/Attic/geos-2.2.2.ebuild,v 1.1 2006/05/25 19:18:46 nerdboy Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://geos.refractions.net/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="static doc python"
 
 RDEPEND="virtual/libc"
@@ -18,18 +18,18 @@ DEPEND="${RDEPEND}
 		doc? ( app-doc/doxygen )\
 		python? ( dev-lang/python dev-lang/swig )"
 
-src_compile(){
+src_compile() {
 	cd ${S}
 	libtoolize --force
+
 	local myconf
 	myconf=""
-	if use static; then
-		myconf="$(use_enable static)"
-	fi
-	econf \
-		${myconf} \
-		|| die "Error: econf failed"
-	emake || die "Error: emake failed"
+	use static && myconf="$(use_enable static)"
+
+	econf ${myconf} || die "Error: econf failed"
+
+	# intermittent build failures with emake
+	make || die "Error: make failed"
 	if use python; then
 		einfo "Compilling PyGEOS"
 		cd ${S}/swig/python
@@ -45,7 +45,7 @@ src_test() {
 #	if use python; then
 #		cd ${S}/swig/python
 #		python tests/runtests.py -v
-#	fi		
+#	fi
 }
 
 src_install(){
@@ -67,4 +67,3 @@ src_install(){
 		doins tests/cases/*
 	fi
 }
-
