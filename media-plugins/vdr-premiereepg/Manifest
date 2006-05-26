@@ -1,0 +1,5 @@
+MD5 95c9a759115ee873e7915c8a7a5f821e ChangeLog 233
+MD5 abfeb30e6849e1bc24ca96ed635a14ca files/digest-vdr-premiereepg-0.0.5 72
+MD5 ffed710f6e9e35b604b9e698f15d8c4f files/libsi_include-0.0.5.patch 372
+MD5 6896566963a3092c2f1a560b72fb4ec6 metadata.xml 354
+MD5 018e8f1d63224986a6292ad6f09c69e2 vdr-premiereepg-0.0.5.ebuild 620
