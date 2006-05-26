@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX banshee-0.10.9-event-reduction.patch 1152 RMD160 f1fa6c8b29a77627f7b50916a1b2371e88fec61a SHA1 faa1a2c3ec7b0583c3d42bbcde2830b825b248b6 SHA256 668b7bc0270dd7f9277f0e9bd2aef1cfa7a6754795ee92365553ac66544d201e
 MD5 ba188fd48b3a9664f36390ed617202ae files/banshee-0.10.9-event-reduction.patch 1152
 RMD160 f1fa6c8b29a77627f7b50916a1b2371e88fec61a files/banshee-0.10.9-event-reduction.patch 1152
@@ -30,3 +33,10 @@ SHA256 d29718eb197a6c9d4df49fb845ab9b7013976bf08cdae4fdeb20228eed46c9c4 files/di
 MD5 472c7bed0ed7f7bde4a02cbbe05ce126 files/digest-banshee-0.10.9-r1 247
 RMD160 4936f49a45d9dc638116b5df80a06a20fd30a256 files/digest-banshee-0.10.9-r1 247
 SHA256 629aad018eac96f855d8c6f01d3bfa333857decfe8980b9e41ba69439b658806 files/digest-banshee-0.10.9-r1 247
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.3 (GNU/Linux)
+
+iD8DBQFEdz/xwUpWvClEHQoRAuZ5AJ9NodIck2uZVuEH1avDxtsp2Y2dAgCfRUo6
+QRIiAhvRByFLJgwedAeTRmo=
+=RFmQ
+-----END PGP SIGNATURE-----
