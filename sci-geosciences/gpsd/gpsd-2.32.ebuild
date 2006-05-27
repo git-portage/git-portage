@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gpsd/Attic/gpsd-2.30-r1.ebuild,v 1.4 2006/05/27 02:21:41 nerdboy Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gpsd/Attic/gpsd-2.32.ebuild,v 1.1 2006/05/27 02:21:41 nerdboy Exp $
 
 inherit eutils libtool distutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://download.berlios.de/gpsd/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~arm amd64 ppc ~ppc64 ~sparc x86"
+KEYWORDS="~arm ~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="X usb dbus"
 
@@ -33,7 +33,7 @@ RDEPEND="X? ( || (
 		)
 	)
 	usb? ( sys-apps/hotplug )
-	dbus? ( ~sys-apps/dbus-0.23.4 )
+	dbus? ( >=sys-apps/dbus-0.6 )
 	dev-lang/python
 	app-text/xmlto
 	virtual/libc
