@@ -1,4 +1,4 @@
-MD5 3f0163dc810b8defb31d953bdac64fb3 ChangeLog 1772
+MD5 2744297ede81c3d20beab6510e9e0ad0 ChangeLog 1893
 MD5 ccee309168671d6ef36c7cbfb44755d1 files/digest-picprog-1.7 232
 MD5 ccee309168671d6ef36c7cbfb44755d1 files/digest-picprog-1.7-r1 232
 MD5 51f54ed3399a4baf6f97fdc4fe070337 files/digest-picprog-1.8.1 64
@@ -7,4 +7,4 @@ MD5 72e83a1c722fa24f95702a8367c95a95 files/picprog-1.7-werner-almesberger.diff 3
 MD5 c5b5ceb7ecb0df0ecfd4508c06ee7f37 metadata.xml 289
 MD5 bf3d958976d736f7b489c10bed9c85a0 picprog-1.7-r1.ebuild 879
 MD5 88882b9fc239d8a050baf69a8610ef41 picprog-1.7.ebuild 724
-MD5 71fb71c0bd95ed796b0b61c5377ee329 picprog-1.8.1.ebuild 781
+MD5 822a0cc790748fd3a80f1a09d894cb2a picprog-1.8.1.ebuild 885
