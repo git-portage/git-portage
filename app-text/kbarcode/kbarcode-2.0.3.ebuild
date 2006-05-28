@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/kbarcode/Attic/kbarcode-2.0.0.ebuild,v 1.1 2006/03/16 17:26:01 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/kbarcode/Attic/kbarcode-2.0.3.ebuild,v 1.1 2006/05/28 21:07:19 carlo Exp $
 
 inherit kde
 
@@ -10,7 +10,7 @@ S="${WORKDIR}/${MY_P}"
 DESCRIPTION="KBarcode is a barcode and label printing application for KDE."
 HOMEPAGE="http://www.kbarcode.net/"
 SRC_URI="mirror://sourceforge/kbarcode/${MY_P}.tar.gz
-	doc? ( mirror://sourceforge/kbarcode/${P}.pdf )"
+	doc? ( mirror://sourceforge/kbarcode/${PN}-2.0.0.pdf )"
 
 SLOT="0"
 LICENSE="GPL-2"
