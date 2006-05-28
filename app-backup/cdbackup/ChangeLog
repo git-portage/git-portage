@@ -1,0 +1,11 @@
+# ChangeLog for app-backup/cdbackup
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbackup/ChangeLog,v 1.1 2006/05/28 23:45:01 lisa Exp $
+
+*cdbackup-0.7.0 (28 May 2006)
+
+  28 May 2006; Lisa Seelye <lisa@gentoo.org> +metadata.xml,
+  +cdbackup-0.7.0.ebuild:
+  New package submitted by Juan J. Garcia de Soria, skandalfo at gmail dot
+  com. Bug 75291
+
