@@ -1,4 +1,4 @@
-MD5 497ff1e1bca24d4727c20398f3aea3fb ChangeLog 3289
+MD5 a9fcdfef39d22ae30d8199d2e8d8e855 ChangeLog 3499
 MD5 71e8d0be6ce1e3324576b9ddce02c74e files/3.6.1_p1-ntpd.8.patch 664
 MD5 8ff46ca71725c4c9ccbdaed5ecbd8ea3 files/3.6.1_p1-pollerr.patch 1218
 MD5 ab87a8b0466a0c1c687eb7648b7f8754 files/digest-openntpd-3.6.1_p1-r1 68
@@ -6,7 +6,7 @@ MD5 369bed7d1a552bee3536c8f71d38397a files/digest-openntpd-3.7_p1 66
 MD5 8ee0493ad309dfb741c76163ef6069e9 files/digest-openntpd-3.9_p1 66
 MD5 9cb3424ed5b3f20a231d581b78629afb files/openntpd.conf.d 257
 MD5 31c9feba04713eebbe16cd1979fca83d files/openntpd.rc 918
-MD5 ed8349e980407e49b724e04ee5a9a2ed metadata.xml 231
+MD5 4d2bf1a30a1c5819189a29be006b2073 metadata.xml 507
 MD5 98a331c1a65ea36b090a16e1ee5bb27e openntpd-3.6.1_p1-r1.ebuild 1191
 MD5 e2508e5e75aa351cd76c2023cf0f50cb openntpd-3.7_p1.ebuild 1248
-MD5 ca3f47410549144f54e8f7317dc8effa openntpd-3.9_p1.ebuild 1259
+MD5 3e5679dd0ace1e6435a078c652d062f7 openntpd-3.9_p1.ebuild 1256
