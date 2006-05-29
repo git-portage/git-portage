@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 21ddf3d91a25bdd27d67220c729a84f3 ChangeLog 2592
 MD5 60546316323edd02169d26190ea376d8 files/digest-vdkbuilder-2.4.0 70
 MD5 4947ebb6ec8d86caf11db3b648b545b4 metadata.xml 226
 MD5 253a840b469fce8362effefe8f02d925 vdkbuilder-2.4.0.ebuild 1131
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEe05CKRy60XGEcJIRAmhoAJ0QNGDj/cADM42ULhPt/lVWgY85xACglmCH
+MbGew/HmvZLTgZruzMdbIOw=
+=dnzO
+-----END PGP SIGNATURE-----
