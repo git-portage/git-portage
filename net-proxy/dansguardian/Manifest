@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b97cd2c678b748615a8a586d8e0c7ba0 ChangeLog 7720
 MD5 731f8b248c22fd1b51895c8ee7b94d4c dansguardian-2.8.0.6-r1.ebuild 1239
 MD5 acff886bb73804227167b8b5a360aed4 dansguardian-2.9.6.2_alpha.ebuild 2892
@@ -12,3 +15,10 @@ MD5 421e49847907b8c4d53ccc01d17656e6 files/digest-dansguardian-2.8.0.6-r1 79
 MD5 eb34ef587ab663199d838cbdd79bc61f files/digest-dansguardian-2.9.6.2_alpha 72
 MD5 246cd22af55fb951f54cdc498198f95f files/digest-dansguardian-2.9.7.0_alpha 72
 MD5 30b14eaf02c479d70f60157c1a29a294 metadata.xml 568
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEfJXijG8pv1lIUX4RAkIAAKCuv7Y82CBTIQZGK/T3/AfsRyhysACdGYJ7
+0qse0IqkV42mwo152kXuTE4=
+=9vsw
+-----END PGP SIGNATURE-----
