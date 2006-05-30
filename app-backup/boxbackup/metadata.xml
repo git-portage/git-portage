@@ -5,12 +5,6 @@
 	<maintainer>
 		<email>grobian@gentoo.org</email>
 	</maintainer>
-	<maintainer>
-		<email>mark@spanbroek.net</email>
-		<name>Mark Spanbroek</name>
-		<description>Original submitter of the ebuild, will help out
-			maintaining if problems arise.</description>
-	</maintainer>
 	<longdescription>An open source, completely automatic on-line backup
 		system for UNIX.</longdescription>
 </pkgmetadata>
