@@ -1,3 +1,5 @@
+MD5 6d44dde40a3d062edc266137af3251fa ChangeLog 422
 MD5 c0494910abd2a9c98e958d5b764d4d0b files/digest-xl2tpd-1.04 63
-MD5 c97eaae6e975be2b251ef3dc9b63098a files/l2tpd-init 623
-MD5 d4af3de40fed1b6758262401d2ff20fd xl2tpd-1.04.ebuild 721
+MD5 e9f9b7f11f160180074c80fc8e3ba42d files/l2tpd-init 719
+MD5 2489971def1ce6f019a703c6b877a124 metadata.xml 281
+MD5 c1f0801f8bcd1453960a77726f031864 xl2tpd-1.04.ebuild 835
