@@ -1,4 +1,4 @@
-MD5 6d382ab8c3324f7fc9e14c3dd3b90994 ChangeLog 22153
+MD5 7e06a685a62170ea9ab4cfdeb5b020f0 ChangeLog 22155
 MD5 24669453e8f69faf4212dfa43e90e3dd files/1.4.10/01_all_r990_mod_cgi_dont_reset_physical_path.diff 517
 MD5 8c00894c801011ca682400a243aa49cb files/1.4.10/02_all_r991_posix_fadvise.diff 805
 MD5 f9b6a2f0c377777945de48d3e7bdda40 files/1.4.10/03_all_r992_posix_fadvise_2.4.x.diff 638
@@ -37,7 +37,7 @@ MD5 44374d14af9b69b8f60f8d73f14c848d files/lighttpd-1.3.13-pam-name.diff 564
 MD5 f111e60bb593bffbdb01b9aece46ab20 files/lighttpd-1.3.13-php.diff 1399
 MD5 9cc5ffbffdd7554797c338c5972ed813 files/lighttpd-1.3.13-valid-user.diff 762
 MD5 5eb378dcd8905a09175df3e48953100c files/lighttpd-1.3.13-zope-deserves-lovins-too.diff 5970
-MD5 552264c5d1bc5eb8771fb9193e783ade files/lighttpd.initd 1232
+MD5 795944f04932a980650397d21a4264f9 files/lighttpd.initd 1232
 MD5 ad091c9157134890499f26d170352c9f files/lighttpd.logrotate 487
 MD5 1d925aed297ec4541fb230dd19e11bc1 files/spawn-fcgi.confd 1076
 MD5 e605a4ead0ce7b1e0788c0b0b1161871 files/spawn-fcgi.initd 1383
@@ -45,7 +45,7 @@ MD5 f18029dea31126d04d7287f80610b2ca lighttpd-1.3.13-r3.ebuild 2649
 MD5 0df89754aec138ad20821ef93c45833b lighttpd-1.3.16.ebuild 2589
 MD5 051c33f9eaa96575c4e85ff92ee8b149 lighttpd-1.4.10-r1.ebuild 5028
 MD5 619f2f526d05f21e61a9d1a93dd194ed lighttpd-1.4.10-r2.ebuild 5047
-MD5 9996a6bb3ee18b95822366e33de26988 lighttpd-1.4.11.ebuild 5206
+MD5 778d1ba0e24be3791d6c052d9d322956 lighttpd-1.4.11.ebuild 5208
 MD5 409c3573899a53281837a5bcb1bb1813 lighttpd-1.4.7.ebuild 5153
 MD5 9a318d179b54cb88bd1c8ac45a1e643b lighttpd-1.4.8.ebuild 5156
 MD5 6a9d4814404d8d51327e5b8306ee3d7e metadata.xml 726
