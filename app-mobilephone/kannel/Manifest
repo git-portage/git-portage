@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 9c23c43b38f58c0fdadafeffb57441c0 ChangeLog 1472
 MD5 a7c05f05df99dd759d119b393cbe59e0 files/digest-kannel-1.4.0 66
 MD5 a7c05f05df99dd759d119b393cbe59e0 files/digest-kannel-1.4.0-r2 66
@@ -8,3 +11,10 @@ MD5 0b79d37344165b8743061f68a18959ce files/kannel-initd 1529
 MD5 bed56ab2ae54242f843bc1c0d90945cb kannel-1.4.0-r2.ebuild 2331
 MD5 b66c40044356888f58a83e491406a6fc kannel-1.4.0.ebuild 2264
 MD5 8e6557d777542beebd0e35c01bdc156c metadata.xml 389
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEgJDvjG8pv1lIUX4RAkGnAKC8P1dUscnCMgWEs82PtamO1yZ6aACeN0vI
+KvSsyD7H66SKmp5cShEDhzY=
+=RM9M
+-----END PGP SIGNATURE-----
