@@ -1,14 +1,14 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/gammu/Attic/gammu-1.04.0-r2.ebuild,v 1.5 2006/04/01 14:13:29 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/gammu/Attic/gammu-1.04.0-r2.ebuild,v 1.6 2006/06/02 18:09:47 mrness Exp $
 
 inherit eutils
 
 MY_MAJOR_VER=${PV:0:3}
 
 DESCRIPTION="a fork of the gnokii project, a tool to handle your cellular phone"
+HOMEPAGE="http://www.gammu.org"
 SRC_URI="http://www.mwiacek.com/zips/gsm/${PN}/stable/${MY_MAJOR_VER/./_}x/${P}.tar.gz"
-HOMEPAGE="http://www.gammu.net/projects/gammu.php"
 
 IUSE="debug bluetooth irda mysql"
 SLOT="0"
