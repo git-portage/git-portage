@@ -1,4 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 f7a2729b2f4822d9a88f54ca1047fe36 ChangeLog 1920
 MD5 5a402a2850d81a89b3cfc4788d9fe963 files/digest-p3nfs-5.19 232
 MD5 8e1fd49c29f85eea8da87d6e7de450c6 metadata.xml 165
 MD5 142bf6e8f3dd6c728951fc508d61e267 p3nfs-5.19.ebuild 1137
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEgHEbjG8pv1lIUX4RAq9kAJ4/9KyV08DVI4Vac2NMc983wwa8mgCgh3lb
+1ksHOtelWdceYuRgPMJLwJE=
+=W7aF
+-----END PGP SIGNATURE-----
