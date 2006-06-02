@@ -1,5 +1,6 @@
-MD5 d43d81858484f5c350ee25b5e9620f5d ChangeLog 1917
+MD5 7c94317e6232c79663f42e7878da83f9 ChangeLog 2164
 MD5 22b449239fb78913844ae3b6e0dffc0e files/config-hook-2.0.0.sh 250
+MD5 6666e69e804d1d4ea85830dd5802d02e files/config-hook-3.0.2.sh 226
 MD5 6666e69e804d1d4ea85830dd5802d02e files/config-hook-3.0.3.sh 226
 MD5 74f02fdd8e803af4673121fe6df90ae4 files/digest-knowledgetree-2.0.7 68
 MD5 f878e336c3df1670d0335aa42c782687 files/digest-knowledgetree-3.0.3 69
