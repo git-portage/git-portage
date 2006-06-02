@@ -1,0 +1,11 @@
+# ChangeLog for app-backup/pybackpack
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/pybackpack/ChangeLog,v 1.1 2006/06/02 08:04:16 robbat2 Exp $
+
+*pybackpack-0.4.2 (02 Jun 2006)
+
+  02 Jun 2006; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +pybackpack-0.4.2.ebuild:
+  Initial commit, based on submission from bug #109465, thanks to Fabian
+  Neumann <bugzilla@pseudopost.org>.
+
