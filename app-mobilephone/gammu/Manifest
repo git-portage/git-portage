@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 37cf674515e3acbd6e30c02af2c9e8e6 ChangeLog 5629
 MD5 33f5aa8593cdf2bf3524869f6f128ec5 files/digest-gammu-1.04.0-r2 64
 MD5 b12e70f5f534269b8ed6358b05350b8e files/digest-gammu-1.05.00 66
@@ -9,3 +12,10 @@ MD5 1abfdf38578cdeaa100c3410cf929189 gammu-1.04.0-r2.ebuild 1327
 MD5 2196de4267a5c5089eabfba8244afbec gammu-1.05.00.ebuild 1329
 MD5 10711bc4d1edbf6773eda090c2cad907 gammu-1.06.00.ebuild 1330
 MD5 e161c5ddb0e2ddbe68a21690f41e90e1 metadata.xml 227
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEgH77jG8pv1lIUX4RAruwAJ9Eb2geC4FyscbWvoqFUUMFwTNt0QCbBJJe
+TYY5DyMM9DFqjzxXFxr4NcE=
+=orWJ
+-----END PGP SIGNATURE-----
