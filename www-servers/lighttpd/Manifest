@@ -1,4 +1,4 @@
-MD5 bdedd34cde16db24dba69c59458e24cb ChangeLog 23320
+MD5 4936d909b7efe8c5f5067a8f0b822465 ChangeLog 23320
 MD5 1b3bebe51407cf5a2f406a53465d9901 files/1.4.11/01_all_r1046.mod_compress.c-fixes.diff 5992
 MD5 322a27dd300158534f8cb65ffad9e03d files/1.4.11/02_all_r1057_fix_If-Modified-Since-ETag.diff 2464
 MD5 efe7fb8d01b34d2bef55f80b450f7a86 files/1.4.11/03_all_r1095_fix_stalling_SSL_POST_requests.diff 500
