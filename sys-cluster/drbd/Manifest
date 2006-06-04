@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 fc7b78615b2cbb6fe105fbc877138bff ChangeLog 7930
 MD5 028f168b40983177f6460d8e579e5487 drbd-0.6.12-r1.ebuild 2147
 MD5 f23e21a3827cbddf8887ce6fd26b0321 drbd-0.7.11.ebuild 2120
@@ -19,3 +22,10 @@ MD5 5985c0630131bb98f8fb42f3b23fa3b3 files/digest-drbd-8.0_pre3 64
 MD5 cc42f194896b14c87944e9a5c5aaebf9 files/drbd-0.7-module-Makefile.patch 948
 MD5 a14de7575636de014d1338331c965fc3 files/drbd-0.7.rc 1625
 MD5 a64b9a1937a5cfc2fbaf373521f65d47 metadata.xml 223
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
+
+iD8DBQFEgv+9gMUyd/cdjWsRArUpAJ9c82IGJvI2W/Eot4zL6sQeKI+RdwCcDwYt
+Cll9l8T515uYluBjP1vVM0s=
+=D56D
+-----END PGP SIGNATURE-----
