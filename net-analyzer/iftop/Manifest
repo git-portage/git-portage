@@ -1,4 +1,4 @@
-MD5 1253d080baf2ca2739de275723b3c1d8 ChangeLog 3749
+MD5 ea9eed653e45a2cf6ad772e575ac2268 ChangeLog 3856
 MD5 a36766a23959cee0651fcf16d2eecb8c files/digest-iftop-0.16 62
 MD5 a36766a23959cee0651fcf16d2eecb8c files/digest-iftop-0.16-r1 62
 MD5 72477d569e74a30bbce71e25aa764f9f files/digest-iftop-0.17 62
@@ -6,5 +6,5 @@ MD5 e33f87395f61a95327b1963341bcec95 files/iftop-0.16-bar_in_bytes.patch 542
 MD5 c9d0a2ec49378a93c55b607f8bb88f91 files/iftoprc 1391
 MD5 a59b7c8bb10e6581c6f5d3eea4f3aa24 iftop-0.16-r1.ebuild 758
 MD5 ca7f6a4de55c62ca243ab19f65a8cdaa iftop-0.16.ebuild 628
-MD5 1c6c060bb48c4e934a6c2fba3d4b41de iftop-0.17.ebuild 756
+MD5 4fb33500c1f351eb09e77bd33d8941da iftop-0.17.ebuild 753
 MD5 f34e3c8858756da0001b12d2d3fa1af2 metadata.xml 159
