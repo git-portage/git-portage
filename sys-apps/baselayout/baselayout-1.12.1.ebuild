@@ -1,17 +1,15 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.11.15-r3.ebuild,v 1.2 2006/06/05 14:32:04 uberlord Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.12.1.ebuild,v 1.1 2006/06/05 14:32:04 uberlord Exp $
 
 inherit flag-o-matic eutils toolchain-funcs multilib
 
-SV=1.6.${PV##*.}
-SVREV=
-
 DESCRIPTION="Filesystem baselayout and init scripts"
 HOMEPAGE="http://www.gentoo.org/"
-SRC_URI="mirror://gentoo/rc-scripts-${SV}${SVREV}.tar.bz2
-	http://dev.gentoo.org/~azarah/${PN}/rc-scripts-${SV}${SVREV}.tar.bz2
-	http://dev.gentoo.org/~vapier/dist/rc-scripts-${SV}${SVREV}.tar.bz2"
+SRC_URI="mirror://gentoo/${P}.tar.bz2
+	http://dev.gentoo.org/~uberlord/baselayout/${P}.tar.bz2
+	http://dev.gentoo.org/~azarah/baselayout/${P}.tar.bz2
+	http://dev.gentoo.org/~vapier/dist/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -24,23 +22,16 @@ IUSE="bootstrap build static unicode"
 RDEPEND=">=sys-apps/sysvinit-2.86-r3
 	!build? ( !bootstrap? (
 		>=sys-libs/readline-5.0-r1
-		>=app-shells/bash-3.0-r10
+		>=app-shells/bash-3.1_p7
 		>=sys-apps/coreutils-5.2.1
-		|| ( >=sys-fs/udev-070 >=sys-fs/devfsd-1.3.25-r9 )
 	) )"
 DEPEND="virtual/os-headers
 	>=sys-apps/portage-2.0.51"
 PROVIDE="virtual/baselayout"
 
-S=${WORKDIR}/rc-scripts-${SV}${SVREV}
-
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-
-	epatch "${FILESDIR}/${P}"-halt-sort.patch
-	epatch "${FILESDIR}/${P}"-coldplug.patch
-	epatch "${FILESDIR}/${PN}"-1.11.14-man.patch #113298
 
 	# Setup unicode defaults for silly unicode users
 	if use unicode ; then
@@ -53,13 +44,28 @@ src_unpack() {
 	case $(tc-arch) in
 	sparc)
 		sed -i -e '/^KEYMAP=/s:us:sunkeymap:' etc/conf.d/keymaps || die
+		# Disable interactive boot on sparc due to stty calls, #104067
+		sed -i -e '/^RC_INTERACTIVE=/s:yes:no:' etc/conf.d/rc || die
 		;;
 	esac
+
+	# Use correct path to filefuncs.so on multilib systems
+	sed -i -e "s:/lib/rcscripts:/$(get_libdir)/rcscripts:" \
+		${S}/src/awk/{cachedepends,genenviron}.awk || die
 }
 
 src_compile() {
+	local libdir="lib"
+
 	use static && append-ldflags -static
-	make -C "${S}"/src CC="$(tc-getCC)" LD="$(tc-getCC)" || die
+
+	[[ ${SYMLINK_LIB} == "yes" ]] && libdir=$(get_abi_LIBDIR "${DEFAULT_ABI}")
+
+	make -C "${S}"/src \
+		CC="$(tc-getCC)" \
+		LD="$(tc-getCC) ${LDFLAGS}" \
+		CFLAGS="${CFLAGS}" \
+		LIBDIR="${libdir}" || die
 }
 
 # ${PATH} should include where to get MAKEDEV when calling this
@@ -155,15 +161,12 @@ src_install() {
 	libdirs=$(get_all_libdirs)
 	: ${libdirs:=lib}	# it isn't that we don't trust multilib.eclass...
 
-	# fixes 110143
-	if [[ ${SYMLINK_LIB} == "yes" ]]; then
-		default_lib_dir="$(get_abi_LIBDIR ${DEFAULT_ABI})"
-	else
-		default_lib_dir="lib"
-	fi
-
 	# This should be /lib/rcscripts, but we have to support old profiles too.
-	rcscripts_dir="/${default_lib_dir}/rcscripts"
+	if [[ ${SYMLINK_LIB} == "yes" ]]; then
+		rcscripts_dir="/$(get_abi_LIBDIR ${DEFAULT_ABI})/rcscripts"
+	else
+		rcscripts_dir="/lib/rcscripts"
+	fi
 
 	einfo "Creating directories..."
 	kdir /usr
@@ -186,8 +189,7 @@ src_install() {
 	kdir ${rcscripts_dir}
 	kdir ${rcscripts_dir}/awk
 	kdir ${rcscripts_dir}/sh
-	kdir ${rcscripts_dir}/net.modules.d
-	kdir ${rcscripts_dir}/net.modules.d/helpers.d
+	kdir ${rcscripts_dir}/net
 	# Only install /mnt stuff at bootstrap time #88835 / #90022
 	if use build ; then
 		kdir /mnt
@@ -245,8 +247,8 @@ src_install() {
 		ksym $(get_abi_LIBDIR ${DEFAULT_ABI}) /usr/local/lib
 	fi
 
-	kdir /${default_lib_dir}/dev-state
-	kdir /${default_lib_dir}/udev-state
+	kdir /$(get_libdir)/dev-state
+	kdir /$(get_libdir)/udev-state
 
 	# FHS compatibility symlinks stuff
 	ksym /var/tmp /usr/tmp
@@ -284,7 +286,7 @@ src_install() {
 		libdirs_env="${libdirs_env}:/lib32:/usr/lib32:/usr/local/lib32"
 	fi
 
-	# List all the multilib libdirs in /etc/env/04multilib (only if they're 
+	# List all the multilib libdirs in /etc/env/04multilib (only if they're
 	# actually different from the normal
 	if has_multilib_profile || [[ $(get_libdir) != "lib" || -n ${CONF_MULTILIBDIR} ]]; then
 		echo "LDPATH=\"${libdirs_env}\"" > ${D}/etc/env.d/04multilib
@@ -298,7 +300,7 @@ src_install() {
 	cp -r "${S}"/rc-lists "${D}"/usr/share/baselayout
 
 	# rc-scripts version for testing of features that *should* be present
-	echo "Gentoo Base System version ${SV}" > ${D}/etc/gentoo-release
+	echo "Gentoo Base System version ${PV}" > ${D}/etc/gentoo-release
 
 	#
 	# Setup files related to /dev
@@ -363,8 +365,8 @@ src_install() {
 	# Original design had these in /etc/net.modules.d but that is too
 	# problematic with CONFIG_PROTECT
 	dodir ${rcscripts_dir}
-	cp -a "${S}"/lib/rcscripts/net.modules.d ${D}${rcscripts_dir}
-	chown -R root:root ${D}${rcscripts_dir}
+	cp -pPR "${S}"/lib/rcscripts/net ${D}${rcscripts_dir}
+	chown -R root:0 ${D}${rcscripts_dir}
 
 	#
 	# Install baselayout documentation
@@ -380,7 +382,7 @@ src_install() {
 	# Install baselayout utilities
 	#
 	cd "${S}"/src
-	make DESTDIR="${D}" install || die
+	make DESTDIR="${D}" LIBDIR="$(get_libdir)" install || die
 
 	# Hack to fix bug 9849, continued in pkg_postinst
 	unkdir
@@ -560,7 +562,7 @@ pkg_postinst() {
 	# write it here so that the new version is immediately in the file
 	# (without waiting for the user to do etc-update)
 	rm -f ${ROOT}/etc/._cfg????_gentoo-release
-	echo "Gentoo Base System version ${SV}" > ${ROOT}/etc/gentoo-release
+	echo "Gentoo Base System version ${PV}" > ${ROOT}/etc/gentoo-release
 
 	echo
 	einfo "Please be sure to update all pending '._cfg*' files in /etc,"
@@ -607,5 +609,17 @@ pkg_postinst() {
 			ewarn "found in ${ROOT}/etc/conf.d/net.example as there is no"
 			ewarn "guarantee that they will work in future versions."
 			echo
+	fi
+
+	# Remove old stuff that may cause problems.
+	if [[ -e "${ROOT}"/etc/env.d/01hostname ]] ; then
+		rm -f "${ROOT}"/etc/env.d/01hostname
+	fi
+	if [[ -e "${ROOT}"/etc/init.d/domainname ]] ; then
+		rm -f "${ROOT}"/etc/init.d/domainname
+		rm -f "${ROOT}"/etc/runlevels/*/domainname
+		ewarn "The domainname init script has been removed in this version."
+		ewarn "Consult ${ROOT}/etc/conf.d/net.example for details about how"
+		ewarn "to apply dns/nis information to the loopback interface."
 	fi
 }
