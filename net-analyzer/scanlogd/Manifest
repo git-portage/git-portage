@@ -1,4 +1,4 @@
-MD5 c9fd7a24d0bb3837db8ab5d54c986180 ChangeLog 1810
+MD5 50e53b0c4355d653696f5640bfaddbda ChangeLog 1808
 MD5 f3b5d3f3b476cf7d249d5063d9965cd4 files/digest-scanlogd-2.2 62
 MD5 4be54a9e63a2d22f46e9c511151231e6 files/digest-scanlogd-2.2.5 65
 MD5 fe8d66c482578bd140880d0502f3fa25 files/digest-scanlogd-2.2.6 65
@@ -7,6 +7,6 @@ MD5 d4640d4842e82214596968321bc88ab5 files/scanlogd-2.2.6-Makefile.patch 358
 MD5 6a8c9bce33e75966ebc0d4695c1d6f8c files/scanlogd.rc 497
 MD5 ec2d6d79ae70a3531cc4c1349fbaec41 metadata.xml 237
 MD5 3a60e1a0203aada57629a256558d7faf scanlogd-2.2.5.ebuild 863
-MD5 a06c155e0213980e1154ca3a1aaa3e5e scanlogd-2.2.6-r1.ebuild 1138
+MD5 b095ab75e2cb5c45d06940f4e4497d34 scanlogd-2.2.6-r1.ebuild 1136
 MD5 a209a986a8ec82f1a064ea003d0e0a8d scanlogd-2.2.6.ebuild 866
 MD5 394a78abf8870808be867ff6fa40700b scanlogd-2.2.ebuild 910
