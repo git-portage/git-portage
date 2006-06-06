@@ -1,4 +1,4 @@
-MD5 4936d909b7efe8c5f5067a8f0b822465 ChangeLog 23320
+MD5 c271e2943ac2a2722a59ad1fb3293de1 ChangeLog 23608
 MD5 1b3bebe51407cf5a2f406a53465d9901 files/1.4.11/01_all_r1046.mod_compress.c-fixes.diff 5992
 MD5 322a27dd300158534f8cb65ffad9e03d files/1.4.11/02_all_r1057_fix_If-Modified-Since-ETag.diff 2464
 MD5 efe7fb8d01b34d2bef55f80b450f7a86 files/1.4.11/03_all_r1095_fix_stalling_SSL_POST_requests.diff 500
@@ -21,5 +21,5 @@ MD5 ad091c9157134890499f26d170352c9f files/lighttpd.logrotate 487
 MD5 1d925aed297ec4541fb230dd19e11bc1 files/spawn-fcgi.confd 1076
 MD5 e605a4ead0ce7b1e0788c0b0b1161871 files/spawn-fcgi.initd 1383
 MD5 0df89754aec138ad20821ef93c45833b lighttpd-1.3.16.ebuild 2589
-MD5 37eb646bd06c4cdabcf1da8189063345 lighttpd-1.4.11.ebuild 5355
+MD5 45841ff6eb15ba7004fa71ea40ffa491 lighttpd-1.4.11.ebuild 5355
 MD5 6a9d4814404d8d51327e5b8306ee3d7e metadata.xml 726
