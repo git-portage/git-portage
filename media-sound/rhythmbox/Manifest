@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 b39aa29a6c2ea7ebc46104ddff5a0771 ChangeLog 9651
 MD5 fa3285c4a57f8ee08054aeaa32d83add files/digest-rhythmbox-0.8.8-r1 253
 MD5 954c4f44bcf7a699ba6bc40c654b0ff2 files/digest-rhythmbox-0.9.4 253
@@ -13,3 +16,10 @@ MD5 afaf09dad8a37b524662268bea3b9fb7 rhythmbox-0.8.8-r1.ebuild 2625
 MD5 1311f97cc1a789df664be137f00ea7cc rhythmbox-0.9.4.1.ebuild 2816
 MD5 f53a26152fc6cb677de0bd5387ba64eb rhythmbox-0.9.4.ebuild 2641
 MD5 1512bf0223ed222bf780e4c1b641eaae rhythmbox-0.9.4_p1.ebuild 3544
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEhe7wKRy60XGEcJIRAm3MAJ9hW0xf3Um80EQqOGp65gNuTVw2AgCfcLSi
+nlA+tw13mbYfRX0nuiEwDW4=
+=fKZu
+-----END PGP SIGNATURE-----
