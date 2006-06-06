@@ -12,3 +12,14 @@ diff -urN backup-manager-0.7.2/Makefile backup-manager-0.7.2-modified/Makefile
  
  docs:
  	make -C doc all
+--- backup-manager-0.7.2/Makefile.orig	2006-06-06 15:25:05.000000000 +0100
++++ backup-manager-0.7.2/Makefile	2006-06-06 15:25:25.000000000 +0100
+@@ -1,7 +1,7 @@
+ DESTDIR?=
+ 
+ # For the backup-manager package
+-PERL5DIR=$(DESTDIR)/usr/share/perl5
++PERL5DIR=$(DESTDIR)/usr/lib/perl5/vendor_perl
+ LIBDIR=$(DESTDIR)/usr/share/backup-manager
+ CONTRIB=$(LIBDIR)/contrib
+ SHAREDIR=$(DESTDIR)/usr/share/backup-manager

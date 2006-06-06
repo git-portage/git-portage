@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/Attic/backup-manager-0.7.2.ebuild,v 1.1 2006/06/05 13:36:09 lisa Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/Attic/backup-manager-0.7.2.ebuild,v 1.2 2006/06/06 15:55:08 lisa Exp $
 
 inherit eutils
 
@@ -20,6 +20,7 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	epatch ${FILESDIR}/Makefile-fix.diff
+	#epatch ${FILESDIR}/Makefile-perl-path-fix.diff
 	epatch ${FILESDIR}/bzip2-path-fix.diff
 	epatch ${FILESDIR}/backup-manager-upload-execution-fix.diff
 }
