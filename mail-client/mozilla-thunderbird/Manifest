@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 6a4bf6dca431107b0c555f8a2156b874 ChangeLog 18373
 MD5 56fbb889c56c6882123dbb546dd6dd49 files/digest-mozilla-thunderbird-1.0.7 1093
 MD5 56fbb889c56c6882123dbb546dd6dd49 files/digest-mozilla-thunderbird-1.0.7-r1 1093
@@ -35,3 +38,10 @@ MD5 57740a117c0daa2b629751d2bc471faa mozilla-thunderbird-1.5-r3.ebuild 5768
 MD5 7e45156ab91859d50f1f2ad70d4ba4f8 mozilla-thunderbird-1.5.0.2-r1.ebuild 5930
 MD5 fe4696a5f18a8a10103db013efd2ea79 mozilla-thunderbird-1.5.0.2.ebuild 5818
 MD5 6f0d09c9f5d40e5e71248213687cb8f9 mozilla-thunderbird-1.5.0.4.ebuild 5824
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.2-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFEhbYFKRy60XGEcJIRAnljAJ0W1gXpTyZrQKSHAM7Hfq1Tz5/NAQCfRvQK
+njgHbhOzbX9lZOczoMoqZyU=
+=Cyen
+-----END PGP SIGNATURE-----
