@@ -1,14 +1,6 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
-MD5 c7c303875c39d80a2815ee8667d9d256 libctl-2.2.ebuild 866
-MD5 90296bd083e2ef2d809822d5d016ca4a ChangeLog 859
-MD5 8c623e53daafa025137077c6b65815bd metadata.xml 156
+MD5 ad79f1855b21effb65664687a7c9d7e3 ChangeLog 968
 MD5 39defd793bca19eea46ea1d36b9bb01b files/digest-libctl-2.2 62
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.9.10 (GNU/Linux)
-
-iD8DBQFB0fhBI1lqEGTUzyQRAt4gAJ93ivBAiMOjznBp21M7AULUwsY6gACfUEOU
-J3spzT3WqmHPe3J4rrm5MSo=
-=Mog6
------END PGP SIGNATURE-----
+MD5 cf19465db2f55523d70776c21c8092e7 files/digest-libctl-3.0.1 64
+MD5 c7c303875c39d80a2815ee8667d9d256 libctl-2.2.ebuild 866
+MD5 3e400126df2f2272af46fd41227e314b libctl-3.0.1.ebuild 867
+MD5 8c623e53daafa025137077c6b65815bd metadata.xml 156
