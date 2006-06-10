@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX usbutils-0.71-new-video-format.patch 2391 RMD160 683496cfc8a8021406083a73e011ee3e206c718a SHA1 43b7ee15f01c84681cdee9b4b547327d71534d37 SHA256 14b39cb2981ec852dc2a0bb17a5b96d4c9854db088e3b077e3f709219b6cf0e8
 MD5 e092e74597092401bebd1db3c9ce6122 files/usbutils-0.71-new-video-format.patch 2391
 RMD160 683496cfc8a8021406083a73e011ee3e206c718a files/usbutils-0.71-new-video-format.patch 2391
@@ -18,3 +21,10 @@ SHA256 f5f2891f2a4791cd31350bb2bb572131ad7235cd0eeb124c9912c187ac10ce92 metadata
 MD5 85ab89963a7fd11f8611547fb202cd72 files/digest-usbutils-0.71-r1 65
 RMD160 378211009ccd3e9e6805df5b035117377222c051 files/digest-usbutils-0.71-r1 65
 SHA256 f64b04a3b9c2b7558b97441647b2b9c1af7c02933b657a4ed57c6aa7f35db99d files/digest-usbutils-0.71-r1 65
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.3 (GNU/Linux)
+
+iD8DBQFEirE82+ySkm8kpY0RArdsAJ9UJQeuNqO/ytPPhMU2QhiEbvyqlQCePh8h
+PPDbwwrlkhjSqde7/qSK9CA=
+=V0sk
+-----END PGP SIGNATURE-----
