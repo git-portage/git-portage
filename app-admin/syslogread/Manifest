@@ -1,0 +1,7 @@
+MD5 5c5b21caa3064bf82a33afb611e73b5b files/0.92/klogd.run 84
+MD5 84576263116d99da02062a90bb977921 files/0.92/syslogread-log.run 129
+MD5 45f34ac0ad45972afd4ec10db389f15d files/0.92/syslogread.init 467
+MD5 ebe9a8b57bc182da441215d444f4f142 files/0.92/syslogread.run 56
+MD5 a282495362222238b84745d11e1d1047 files/digest-syslogread-0.92 66
+MD5 5cfab3469cc46dfd651eac091bee53da metadata.xml 408
+MD5 3ca4249baeb9f6ccde0d0b2653d23075 syslogread-0.92.ebuild 2146
