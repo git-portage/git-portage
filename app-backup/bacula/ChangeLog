@@ -1,13 +1,17 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.13 2006/06/14 15:57:07 lisa Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.14 2006/06/14 16:16:04 lisa Exp $
+
+  14 Jun 2006; Lisa Seelye <lisa@gentoo.org> ChangeLog, Manifest:
+  Typo in the ChangeLog about the bug number. Oops. bacula-1.38.9 deals with
+  bug #125729 not #12529.
 
 *bacula-1.38.9 (14 Jun 2006)
 
   14 Jun 2006; Lisa Seelye <lisa@gentoo.org> files/1.38.5/bacula-all-conf,
   +files/bacula-1.38.9-default-configs.patch, files/1.38.5/bacula-dir-conf,
   +bacula-1.38.9.ebuild:
-  For bug #12529. Version bump, fix the issues, and to deal with comment #9: I've
+  For bug #125729. Version bump, fix the issues, and to deal with comment #9: I've
   fixed sqlite vs. sqlite3 support as well as NOT defaulting to any database if
   two or more database USE flags are set. Likewise, the ebuild will die if the
   user hasn't set any database USE flags (or it'll fail in econf).
