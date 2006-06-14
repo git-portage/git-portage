@@ -3,8 +3,8 @@
 <pkgmetadata>
     <herd>app-backup</herd>
     <maintainer>
-        <email>robbat2@gentoo.org</email>
         <name>Robin H. Johnson</name>
+        <email>robbat2@gentoo.org</email>
 		<description>Primary maintainer</description>
     </maintainer>
 </pkgmetadata>
