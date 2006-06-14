@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/files/1.38.5/Attic/bacula-dir-conf,v 1.1 2006/02/17 04:20:48 labmonkey Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/files/1.38.5/Attic/bacula-dir-conf,v 1.2 2006/06/14 15:57:07 lisa Exp $
 
 # Config file for /etc/init.d/bacula-dir
 
@@ -12,4 +12,4 @@ LOCAL_DB=1
 #  The DIR and SD can be run as a non-root user, however
 #  please ensure that this user has proper permissions to
 #  access your backup devices.
-DIR_OPTIONS="-u bacula -g bacula -c /etc/bacula/bacula-dir.conf"
+DIR_OPTIONS="-u root -g bacula -c /etc/bacula/bacula-dir.conf"
