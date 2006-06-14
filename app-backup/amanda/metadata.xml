@@ -4,7 +4,7 @@
     <herd>app-backup</herd>
     <maintainer>
         <email>robbat2@gentoo.org</email>
-        <name>Robin H. Johnson</name>
 		<description>Primary maintainer</description>
+        <name>Robin H. Johnson</name>
     </maintainer>
 </pkgmetadata>
