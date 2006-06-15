@@ -4,8 +4,11 @@ MD5 470e80bc008f602eb5fcc165f9e3546b files/digest-sendmail-8.13.4 68
 MD5 470e80bc008f602eb5fcc165f9e3546b files/digest-sendmail-8.13.4-r1 68
 MD5 547c158de3942168b8e90f37531675a1 files/digest-sendmail-8.13.5 68
 MD5 3206d3a17d3c2a44de586fb7d776a617 files/digest-sendmail-8.13.6 68
+MD5 3206d3a17d3c2a44de586fb7d776a617 files/digest-sendmail-8.13.6-r1 68
+MD5 26621881ab9d37b2ef1e69626cf92128 files/digest-sendmail-8.13.7 68
 MD5 61d4e49cceb149f6ff46cf6a1b598b88 files/mailer.conf 1306
 MD5 a66e50b3a5cf1d70054dccf17d7ec13f files/sendmail 605
+MD5 f415c8850b3ea38169c6f397ad109a3a files/sendmail-CVE-2006-1173.patch 1486
 MD5 7b2a2b2f8f608ddbd8b0c1b910ffb981 files/sendmail-delivered_hdr.patch 341
 MD5 40db5be0dc4aad98df023d3af8e8c132 files/sendmail-procmail.mc 357
 MD5 1a9fedeb2f17b9a7de4f0f8da6c06d63 files/sendmail.mc 299
@@ -15,4 +18,6 @@ MD5 e4c3a51c9f021de8b9ec26ec73c59da6 sendmail-8.13.3.ebuild 5993
 MD5 ef6487d3a1283e49903a312338dda797 sendmail-8.13.4-r1.ebuild 6289
 MD5 615c6258bab2b8a5728ec91293c8a1a8 sendmail-8.13.4.ebuild 5847
 MD5 797c3e84ad380ef586e1fa0eb53772c6 sendmail-8.13.5.ebuild 6286
+MD5 0446c942813012498516f5e374b94933 sendmail-8.13.6-r1.ebuild 6657
 MD5 bbfec85d419149f779a161b5d68b7ef1 sendmail-8.13.6.ebuild 6601
+MD5 28e0e38c4a250191caa4da99d8f6173c sendmail-8.13.7.ebuild 6610
