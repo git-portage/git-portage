@@ -1,4 +1,4 @@
-MD5 443ec7777dc02e38c51633cf5b83e88b ChangeLog 5802
+MD5 74886385e3427ebd0e8d141a897879ac ChangeLog 6021
 MD5 85fb640ceecd949521bef397e8e23d0b files/digest-hplip-0.9.11-r1 768
 MD5 68a5b9bc1ecb54c47e0aec2ea66b457a files/digest-hplip-0.9.7-r3 208
 MD5 7bd172767b3400cad05526d58630944b files/digest-hplip-0.9.8-r2 762
@@ -7,5 +7,5 @@ MD5 dcda3bf144b5f2cd4bebd1719383dd31 files/hplip.init.d 948
 MD5 f5607fe7587656f6248c9bde90bc6822 hplip-0.9.11-r1.ebuild 3334
 MD5 59049b57d4e2248499c09e11408c2c38 hplip-0.9.7-r3.ebuild 3336
 MD5 12340dda48ab3f17a14149a5c797cf67 hplip-0.9.8-r2.ebuild 3325
-MD5 9b60ec8a59eb39737806081374d93171 hplip-1.6.6.ebuild 3235
+MD5 0da6e6051e4253a147246b75f8a1fd55 hplip-1.6.6.ebuild 3234
 MD5 26b4b081d538c195dc39bcb2ec8e6f3a metadata.xml 161
