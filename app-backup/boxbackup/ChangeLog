@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/boxbackup
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.5 2006/03/05 13:16:02 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.6 2006/06/19 19:50:08 grobian Exp $
+
+  19 Jun 2006; Fabian Groffen <grobian@gentoo.org>
+  +files/boxbackup-0.10-gcc41-noll.patch, boxbackup-0.10.ebuild:
+  Adding a patch for compiling with GCC4.1, many thanks to Stuart Hickinbottom
+  <stuart@hickinbottom.demon.co.uk> (bug #136300)
 
 *boxbackup-0.10 (05 Mar 2006)
 

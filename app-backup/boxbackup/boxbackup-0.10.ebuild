@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.1 2006/03/05 13:16:02 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.2 2006/06/19 19:50:08 grobian Exp $
 
 inherit eutils
 
@@ -14,7 +14,8 @@ IUSE="client-only"
 DEPEND="sys-libs/zlib
 	sys-libs/db
 	>=dev-libs/openssl-0.9.7
-	>=dev-lang/perl-5.6"
+	>=dev-lang/perl-5.6
+	>=sys-devel/autoconf-2.50"
 RDEPEND="${DEPEND}
 	virtual/mta"
 
@@ -22,9 +23,11 @@ src_unpack() {
 	unpack ${A}
 
 	epatch "${FILESDIR}/${P}"-gentoo.patch
+	epatch "${FILESDIR}/${P}"-gcc41-noll.patch
 }
 
 src_compile() {
+	./bootstrap || die "bootstrap failed"
 	econf || die "configure failed"
 	make || die
 }
@@ -58,12 +61,15 @@ pkg_preinst() {
 
 pkg_postinst() {
 	while read line; do einfo "${line}"; done <<EOF
-After configuring the boxbackup client and/or server, you can start
-the boxbackup daemons using the init scripts /etc/init.d/bbackupd
-and /etc/init.d/bbstored.
+After configuring the Box Backup client and/or server, you can start
+the daemon using the init scripts /etc/init.d/bbackupd and
+/etc/init.d/bbstored.
+The configuration files can be found in /etc/boxbackup
+
 More information about configuring the client can be found at
 ${HOMEPAGE}client.html,
 and more information about configuring the server can be found at
 ${HOMEPAGE}server.html.
 EOF
+	echo
 }
