@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX autoconf-2.13-destdir.patch 677 RMD160 ff71fb18c1676455e267dfd8f3059e8c9384fe19 SHA1 5ef1905e271e078cecea3424560207585868e9cd SHA256 67c3eaf2f8aaf3acbcff387bc3fc6d46688b56a6b51043344e301bfaf16186a0
 MD5 dee8e039dbcfd6a6543e28688615ee17 files/autoconf-2.13-destdir.patch 677
 RMD160 ff71fb18c1676455e267dfd8f3059e8c9384fe19 files/autoconf-2.13-destdir.patch 677
@@ -34,3 +37,10 @@ SHA256 867ffd3f8499014b6bd437350f14c4d3fe42cb0b8c8daa3c00c2d6d2e87893b6 files/di
 MD5 ed1c29020cbdfc79d6a1ece183afd936 files/digest-autoconf-2.59-r7 66
 RMD160 468925a5fd7ec734b45e394f5b51c1d2c5a0c577 files/digest-autoconf-2.59-r7 66
 SHA256 610a706c7ac9eba8caadccba589863ff920a33dab17af4075675a5ea6ff14537 files/digest-autoconf-2.59-r7 66
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.3 (GNU/Linux)
+
+iD8DBQFEndBMamhnQswr0vIRAlLBAJ4vPvwDSKACBZR41QrN5iZFBGodqwCdHQzF
+EvE3q/iYYE3Jl5oa0znaQEU=
+=QxzP
+-----END PGP SIGNATURE-----
