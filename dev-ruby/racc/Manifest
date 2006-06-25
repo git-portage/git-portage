@@ -1,6 +1,16 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 MD5 a233e02d0b947897abaf0251964a20bb ChangeLog 3229
 MD5 5c1930dfaaa3511fcccc7949d5ebda20 files/digest-racc-1.4.4 244
 MD5 5de5b5880914d0bd40884e281200e30b files/digest-racc-1.4.5 244
 MD5 3eec9f3fe48b51f49dbc1f171a3b026f metadata.xml 157
 MD5 f1e830a19866c790aaf0db274e5e5de5 racc-1.4.4.ebuild 613
 MD5 902f7384c21b29954621875f301524f4 racc-1.4.5.ebuild 698
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2.1 (GNU/Linux)
+
+iD8DBQFEnlVK60LfUIagIAkRAvOpAJ0TKwq9fytZ9AmnI5ds5Ff9dnsVGgCg6Cd4
+AlQoO6kNJXQ2buqoaE9QrqU=
+=ZouQ
+-----END PGP SIGNATURE-----
