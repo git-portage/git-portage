@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/scite/Attic/scite-1.68.ebuild,v 1.2 2006/03/19 19:02:12 halcy0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/scite/Attic/scite-1.68.ebuild,v 1.3 2006/06/26 19:47:13 pythonhead Exp $
 
 inherit toolchain-funcs
 
@@ -45,7 +45,11 @@ src_unpack() {
 
 src_compile() {
 	make -C ../../scintilla/gtk || die "prep make failed"
-	emake || die "make failed"
+	if use lua; then
+		emake || die "make failed"
+	else
+		emake NO_LUA=1 || die "make failed"
+	fi
 }
 
 src_install() {

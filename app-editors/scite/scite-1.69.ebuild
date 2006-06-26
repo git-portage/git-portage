@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/scite/Attic/scite-1.62.ebuild,v 1.3 2006/06/26 19:47:13 pythonhead Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/scite/Attic/scite-1.69.ebuild,v 1.1 2006/06/26 19:47:13 pythonhead Exp $
 
 inherit toolchain-funcs
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/scintilla/${PN}${MY_PV}.tgz"
 
 LICENSE="Scintilla"
 SLOT="0"
-KEYWORDS="ppc sparc x86 amd64"
+KEYWORDS="~ppc ~sparc ~x86 ~amd64"
 IUSE="lua"
 
 RDEPEND=">=x11-libs/gtk+-2
@@ -39,7 +39,6 @@ src_unpack() {
 		-e "s#^CC =\(.*\)#CC = $(tc-getCXX)#" \
 		-e 's#${D}##' \
 		|| die "error patching makefile"
-
 }
 
 src_compile() {
@@ -52,11 +51,8 @@ src_compile() {
 }
 
 src_install() {
-	dodir /usr
 	dodir /usr/bin
-	dodir /usr/share
-	dodir /usr/share/pixmaps
-	dodir /usr/share/applications
+	dodir /usr/share/{pixmaps,applications}
 
 	make prefix=${D}/usr install || die
 
