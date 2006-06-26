@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX nano-1.3.10-crash.patch 2409 RMD160 5aa12ba776b5f1be0a906c97bcba5afccd734d36 SHA1 50a01feb7d03d174ea0bcbf3b7953276a932547f SHA256 ea4ac8594bbbe0a2e4305ceca9390dfe72fcb86cb9ac94e2a05c11b1895c3a99
 MD5 7151e8b7b8c9267b63a4f9b84148992a files/nano-1.3.10-crash.patch 2409
 RMD160 5aa12ba776b5f1be0a906c97bcba5afccd734d36 files/nano-1.3.10-crash.patch 2409
@@ -70,3 +73,10 @@ SHA256 52f1a86cfaac6443a84afd7bd023597650db74e61389483bcb57dbbd7e1e8bf3 files/di
 MD5 4baa4a2c2e0b0ad343cf3f648184d5ad files/digest-nano-1.3.12 238
 RMD160 06dc9bd947bc9f3fe88c0b5346ec3e5493aa5dfb files/digest-nano-1.3.12 238
 SHA256 ea6e29364ff13378968ac433b1142ceabbc525a0424760b66fa1d8524bbd17cf files/digest-nano-1.3.12 238
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.3 (GNU/Linux)
+
+iD8DBQFEoDitamhnQswr0vIRAu1rAJwJoDv+AL8wgX+YZfzLeQgWwSFLDACdGL/G
+FvdMTlXVqN5eiMXw5+LtQhQ=
+=xyy4
+-----END PGP SIGNATURE-----
