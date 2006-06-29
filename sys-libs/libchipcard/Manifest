@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX chipcardd 498 RMD160 09f8f3bad90b93fd1554139cde66fc326a158fa5 SHA1 4a25a40d27ea0ea1e1352cc7ffad541b4ce5785f SHA256 e9d2460f4d29d36bdb2f50a9a237a52ad547ad6f470beab9f519cf1ace635624
 MD5 0dd97ad441e61b3374622f7fe4372cb0 files/chipcardd 498
 RMD160 09f8f3bad90b93fd1554139cde66fc326a158fa5 files/chipcardd 498
@@ -46,3 +49,10 @@ SHA256 65247bfd31429bcea645ffa64af34aac6a2880a0c794d03be90fbf2cc6b12db1 files/di
 MD5 a8493c06e6dad441b07face4d0b7f8e2 files/digest-libchipcard-2.1.6 259
 RMD160 f6f562e8701392cab4fef80ab12095775637bbdf files/digest-libchipcard-2.1.6 259
 SHA256 761032b1e9774e1733ab3f7d18f73b8cd512f07a2bcef4363cacc717d85707b4 files/digest-libchipcard-2.1.6 259
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.4 (GNU/Linux)
+
+iD8DBQFEozeZr2QksT29OyARAvAZAJ4xLm4XKeq55Nl7c6zP/EevpsyIEACfT6a3
+XG09dIThp6jgIskJ61PhI/k=
+=9GG9
+-----END PGP SIGNATURE-----
