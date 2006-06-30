@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX binutils-configure-LANG.patch 2082 RMD160 ac49fd3d0053d1a330e810a1f02c80f6f8fe5e8e SHA1 452e586e1a6ca5885420f947df46004a91d4aecd SHA256 316f75980bfcccc306bd466d72d0e20a0ac327b8b7642fa2e3cf8d95d65f24d6
 MD5 a18bff5d18e042d6873644aa515efca9 files/binutils-configure-LANG.patch 2082
 RMD160 ac49fd3d0053d1a330e810a1f02c80f6f8fe5e8e files/binutils-configure-LANG.patch 2082
@@ -208,3 +211,10 @@ SHA256 2b8bbb39108c574f8005f86baedd271db495382db1d9ce61e63a0ad3a059c840 files/di
 MD5 2853ad9a72c640fbd743b7b777ec504f files/digest-binutils-2.17.50.0.2 882
 RMD160 cde48665d43904b42c69d3ef07b45b8f8a498e87 files/digest-binutils-2.17.50.0.2 882
 SHA256 04b810a8f0c9a5ee2605580943defca9c2143e402a499bd98d3e26aa9f4fd527 files/digest-binutils-2.17.50.0.2 882
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.4 (GNU/Linux)
+
+iD8DBQFEpJLgamhnQswr0vIRAijCAJ9H0T9D1L6asaqpTDdTJeq0XDArngCgunqk
+wo6j3xONmlfNTbvp7cSzUQE=
+=p9GM
+-----END PGP SIGNATURE-----
