@@ -1,0 +1,11 @@
+--- rsnapshot-1.2.9/rsnapshot-program.pl.orig	2006-07-01 22:20:18.000000000 +0200
++++ rsnapshot-1.2.9/rsnapshot-program.pl	2006-07-01 22:20:29.000000000 +0200
+@@ -3014,7 +3014,7 @@
+ 				if (0 == $test) {
+ 					$result = cp_al(
+ 						"$config_vars{'snapshot_root'}/$interval.0/",
+-						"$config_vars{'snapshot_root'}/$interval.1/"
++						"$config_vars{'snapshot_root'}/$interval.1"
+ 					);
+ 					if (! $result) {
+ 						my $errstr = '';
