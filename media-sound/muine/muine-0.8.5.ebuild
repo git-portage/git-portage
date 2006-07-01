@@ -1,35 +1,36 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/muine/Attic/muine-0.8.3-r1.ebuild,v 1.2 2006/01/23 17:58:30 latexer Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/muine/Attic/muine-0.8.5.ebuild,v 1.1 2006/07/01 03:25:42 latexer Exp $
 
-inherit gnome2 mono eutils multilib
+inherit gnome2 mono eutils multilib autotools
 
 DESCRIPTION="A music player for GNOME"
-HOMEPAGE="http://muine.gooeylinux.org/"
-SRC_URI="${HOMEPAGE}/${P}.tar.gz"
+HOMEPAGE="http://muine-player.org/"
+SRC_URI="${HOMEPAGE}/releases/${P}.tar.gz"
 
 LICENSE="GPL-2"
 IUSE="xine mad vorbis flac aac"
 SLOT="0"
-KEYWORDS="~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 
-RDEPEND=">=dev-lang/mono-1.0
-	>=dev-dotnet/gtk-sharp-2.3.90
-	>=dev-dotnet/gnome-sharp-2.3.90
-	>=dev-dotnet/gnomevfs-sharp-2.3.90
-	>=dev-dotnet/glade-sharp-2.3.90
-	>=dev-dotnet/gconf-sharp-2.3.90
+RDEPEND=">=dev-lang/mono-1.1
+	>=dev-dotnet/gtk-sharp-2.4.0
+	>=dev-dotnet/gnome-sharp-2.4.0
+	>=dev-dotnet/gnomevfs-sharp-2.4.0
+	>=dev-dotnet/glade-sharp-2.4.0
+	>=dev-dotnet/gconf-sharp-2.4.0
 	xine? ( >=media-libs/xine-lib-1_rc4 )
 	!xine? (
-		=media-libs/gstreamer-0.8*
-		=media-libs/gst-plugins-0.8*
-		=media-plugins/gst-plugins-gnomevfs-0.8*
-		mad? ( =media-plugins/gst-plugins-mad-0.8* )
-		vorbis? ( =media-plugins/gst-plugins-ogg-0.8*
-			=media-plugins/gst-plugins-vorbis-0.8* )
-		flac? ( =media-plugins/gst-plugins-flac-0.8* )
+		=media-libs/gstreamer-0.10*
+		=media-libs/gst-plugins-base-0.10*
+		=media-plugins/gst-plugins-gnomevfs-0.10*
+		=media-plugins/gst-plugins-gconf-0.10*
+		mad? ( =media-plugins/gst-plugins-mad-0.10* )
+		vorbis? ( =media-plugins/gst-plugins-ogg-0.10*
+			=media-plugins/gst-plugins-vorbis-0.10* )
+		flac? ( =media-plugins/gst-plugins-flac-0.10* )
 		aac? (
-			=media-plugins/gst-plugins-faad-0.8*
+			=media-plugins/gst-plugins-faad-0.10*
 			>=media-libs/faad2-2.0-r4
 		)
 	)
@@ -60,6 +61,8 @@ USE_DESTDIR=1
 DOCS="AUTHORS COPYING ChangeLog INSTALL \
 	  MAINTAINERS NEWS README TODO"
 
+AT_M4DIR="${S}/m4"
+
 pkg_setup() {
 	if ! built_with_use sys-apps/dbus mono ; then
 		echo
@@ -77,14 +80,7 @@ src_unpack() {
 	sed -i "s:libdir)/dbus-1.0:datadir)/dbus-1:" \
 		${S}/data/Makefile.am || die "sed failed"
 
-	epatch ${FILESDIR}/${P}-gtk-sharp-2.x.90-compat.diff || die
-	epatch ${FILESDIR}/${P}-64-bit-int.diff || die
-	epatch ${FILESDIR}/${P}-monodoc-update.diff || die
-
-	libtoolize --force --copy || die "libtoolize failed"
-	aclocal -I "${S}/m4" || die "aclocal failed"
-	autoconf || die "autoconf failed"
-	automake || die "automake failed"
+	eautoreconf
 }
 
 src_compile() {
@@ -97,7 +93,6 @@ src_install() {
 
 	insinto /usr/$(get_libdir)/muine/plugins/
 	doins ${S}/plugins/TrayIcon.dll
-	doins ${S}/plugins/DashboardPlugin.dll
 }
 
 pkg_postinst() {
