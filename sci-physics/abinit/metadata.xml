@@ -3,6 +3,7 @@
 <pkgmetadata>
 <herd>sci-physics</herd>
 <maintainer>
-  <email>robbat2@gentoo.org</email>
+<email>spyderous@gentoo.org</email>
+<name>Donnie Berkholz</name>
 </maintainer>
 </pkgmetadata>
