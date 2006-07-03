@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX e2fsprogs-1.32-mk_cmds-cosmetic.patch 316 RMD160 42dae53c318fb52b39c8e1d357974111bf8712bf SHA1 2515d77050072bcd1ae7defa90f32fb101ac01c5 SHA256 182da8741b852fdaf2d17a485da0451ec0c665adb83327b29b3372e2e43f712a
 MD5 1a896f2697b055d4b8b4139c3482ac9e files/e2fsprogs-1.32-mk_cmds-cosmetic.patch 316
 RMD160 42dae53c318fb52b39c8e1d357974111bf8712bf files/e2fsprogs-1.32-mk_cmds-cosmetic.patch 316
@@ -46,3 +49,10 @@ SHA256 f5f2891f2a4791cd31350bb2bb572131ad7235cd0eeb124c9912c187ac10ce92 metadata
 MD5 cf2928368b4cb4e71afb0a17b60a0061 files/digest-e2fsprogs-1.38-r1 247
 RMD160 75dc4dc256f36244cdf5c7c4e87ef67716bfbf66 files/digest-e2fsprogs-1.38-r1 247
 SHA256 ba5da1ec95bf8c47c4b79cf425db318b9c5bfa309c9f805aa63275b69728a5aa files/digest-e2fsprogs-1.38-r1 247
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.4 (GNU/Linux)
+
+iD8DBQFEqO/xamhnQswr0vIRAt58AJ9T1QJ9Fz6Annm8JLa2/+zzkhAyjQCfYZEO
+6Lvqq3wPEdEhlAENoUbf/l0=
+=djLF
+-----END PGP SIGNATURE-----
