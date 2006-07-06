@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX debianutils-2.14.1-no-bs-namespace.patch 1412 RMD160 20226c9f11a6e3708c39c426f46391c5e828c1b9 SHA1 718fb46d5279619d86fbc35f6e91e13bd1ee2946 SHA256 1cac8819abad2ae16568461ccddfd27e98e2adc3103a61d647358f05ef6eb365
 MD5 c2a83b7cc35cd0a76df37cf57c8f6563 files/debianutils-2.14.1-no-bs-namespace.patch 1412
 RMD160 20226c9f11a6e3708c39c426f46391c5e828c1b9 files/debianutils-2.14.1-no-bs-namespace.patch 1412
@@ -29,3 +32,10 @@ SHA256 91a2e89dbc7288812733d6c0b9f6c0eecd70a387dd84ea5a4f495246d26cbfa9 files/di
 MD5 d30e26a9ea91d5454308017a7bbcc684 files/digest-debianutils-2.15-r1 250
 RMD160 7cb6e56ae3e64d9f32d470b64132364b736fb6c6 files/digest-debianutils-2.15-r1 250
 SHA256 91a2e89dbc7288812733d6c0b9f6c0eecd70a387dd84ea5a4f495246d26cbfa9 files/digest-debianutils-2.15-r1 250
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.4 (GNU/Linux)
+
+iD8DBQFErJF3amhnQswr0vIRAlc3AJ9ngddqeDGVazZ3+vQPZyO12a/nxwCgg/KF
+KqeivJc261CENW+xRoJ6Osg=
+=Dbr/
+-----END PGP SIGNATURE-----
