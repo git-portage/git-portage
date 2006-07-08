@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-sources/Attic/freebsd-sources-6.1-r2.ebuild,v 1.1 2006/06/12 09:52:13 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-sources/Attic/freebsd-sources-6.1-r2.ebuild,v 1.2 2006/07/08 17:15:02 the_paya Exp $
 
 inherit bsdmk freebsd flag-o-matic
 
@@ -56,7 +56,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	if [[ ! -L $"{ROOT}/usr/src/sys" ]]; then
+	if [[ ! -L "${ROOT}/usr/src/sys" ]]; then
 		einfo "/usr/src/sys symlink doesn't exist; creating..."
 		ln -sf "sys-${MY_PVR}" "${ROOT}/usr/src/sys" || \
 			eerror "Couldn't create ${ROOT}/usr/src/sys symlink."
