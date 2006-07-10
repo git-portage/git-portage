@@ -1,5 +1,5 @@
-MD5 3c8e97f78649d5d0ec9dbfa24c714c79 ChangeLog 1762
-MD5 7bbcae84fa59cc250ea039d37cb98c24 Mail-DomainKeys-0.80.ebuild 618
+MD5 a2f32403d701ee4fabd392ce85d083a3 ChangeLog 1876
+MD5 d57a9a3a89f6381106635ce0a8ca8352 Mail-DomainKeys-0.80.ebuild 623
 MD5 31a19b42292953cd94d821db70112b62 Mail-DomainKeys-0.82.ebuild 663
 MD5 1dce8fc632b95029b03a2b769f826be7 files/digest-Mail-DomainKeys-0.80 70
 MD5 57c56422182e46ee84109fa7529f8072 files/digest-Mail-DomainKeys-0.82 256
