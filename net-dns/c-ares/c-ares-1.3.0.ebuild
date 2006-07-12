@@ -1,12 +1,12 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/c-ares/Attic/c-ares-1.3.0.ebuild,v 1.16 2006/02/07 21:33:32 blubb Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/c-ares/Attic/c-ares-1.3.0.ebuild,v 1.17 2006/07/12 02:37:48 dragonheart Exp $
 
 DESCRIPTION="C library that resolves names asynchronously"
 HOMEPAGE="http://daniel.haxx.se/projects/c-ares/"
 SRC_URI="http://daniel.haxx.se/projects/c-ares/${P}.tar.gz"
 
-LICENSE="as-is"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ~ppc-macos ppc64 s390 sh sparc x86"
 IUSE=""
