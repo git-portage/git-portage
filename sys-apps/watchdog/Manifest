@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX watchdog-5.2.4_p5-sundries.patch 752 RMD160 1506a9ffd0476aca6b8fe4f848fd72483857951f SHA1 a71f6db59e4f931d4ac18489fe35b99c9fa4f9b0 SHA256 c95e6fb0329c92ea5e20daa632028d50e94dd3804701597f64a8df688db9c467
 MD5 ba2c02768a2e772c14e6332dd6b2e65e files/watchdog-5.2.4_p5-sundries.patch 752
 RMD160 1506a9ffd0476aca6b8fe4f848fd72483857951f files/watchdog-5.2.4_p5-sundries.patch 752
@@ -65,3 +68,10 @@ SHA256 2d32189ea1809dd3909b6ff8bef0abd0b9d7814ffa056c7f3c66a0e5bcf766b9 files/di
 MD5 c286ccc7564fb453a6f960da0de30ec7 files/digest-watchdog-5.2.6_p2 506
 RMD160 a018640305a6543180374a52a8ef35bdcbdfd6ab files/digest-watchdog-5.2.6_p2 506
 SHA256 7c65e3ea3903db58cb835d58f82d565da0633c3baf885972e70d7b9265d99345 files/digest-watchdog-5.2.6_p2 506
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.4 (GNU/Linux)
+
+iD8DBQFEtoFRflZ8QqxhrsMRAnxiAKCg4oHhKcYC/DuxyaFk43PmDz1VagCaA46j
++TShIHyp3bWLG+K6QxuNtbw=
+=Uejk
+-----END PGP SIGNATURE-----
