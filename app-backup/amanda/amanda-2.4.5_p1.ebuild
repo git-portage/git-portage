@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.5_p1.ebuild,v 1.3 2006/01/29 19:45:02 cryos Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.5_p1.ebuild,v 1.4 2006/07/13 00:01:40 robbat2 Exp $
 
 inherit eutils
 
@@ -275,7 +275,7 @@ src_install() {
 	prepalldocs
 
 	# Just make sure it exists for XFS to work...
-	use !sparc && use xfs && keepdir ${D}/var/xfsdump/inventory
+	use !sparc && use xfs && keepdir /var/xfsdump/inventory
 
 	insinto /etc/amanda
 	einfo "Installing .amandahosts File for ${AMANDA_USER_NAME} user"
