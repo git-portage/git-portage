@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX rsync-2.6.0-cvsignore.patch 797 RMD160 7094b320063516d732eb64cf072c8e3ab6449548 SHA1 086add35ec4cd700fe182b1457ce7262c134a00d SHA256 cfad3288bfbd523df324680b9ccec56c5bd512e0e110551db8b6cbdcbc4ef0b8
 MD5 d4a2634dfd2e7e9f6e5537c2b6c8af8d files/rsync-2.6.0-cvsignore.patch 797
 RMD160 7094b320063516d732eb64cf072c8e3ab6449548 files/rsync-2.6.0-cvsignore.patch 797
@@ -68,3 +71,10 @@ SHA256 f8225ccc97f935bccbda4609d3f36c0db04c41885d4e551d303f2f91c9cc8500 files/di
 MD5 41cb6cb57de67daaa9f08c143309eee3 files/digest-rsync-2.6.8-r2 235
 RMD160 c6900a235985b17ea63dc2d85460901d94ed3cff files/digest-rsync-2.6.8-r2 235
 SHA256 db6586c22adcb91ef50be62ec39d19e233d47868c93d087780853c657c356a4c files/digest-rsync-2.6.8-r2 235
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.4 (GNU/Linux)
+
+iD8DBQFEuUframhnQswr0vIRAk4sAKC6WBlZ41UqIdTaIMzidq9dWDNkmgCgj3AR
+wqntBDFjj+xqGboIGZvjzgM=
+=vnp2
+-----END PGP SIGNATURE-----
