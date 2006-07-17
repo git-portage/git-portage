@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX numeric-23.7.patch 2311 RMD160 bab250c3106bda159fc73f85f35e82f6ab2b93fa SHA1 ad733a495b3115ecd24ca4d8f8458923d0a308d5 SHA256 eafed2342ecd71ae00c8f1e780e4fcf3fc561e33c5499a6112edefe5de4af9b4
 MD5 b962c2f9fe39159f4c6025bb24cdf701 files/numeric-23.7.patch 2311
 RMD160 bab250c3106bda159fc73f85f35e82f6ab2b93fa files/numeric-23.7.patch 2311
@@ -34,3 +37,10 @@ SHA256 aaee47a9b2b160539310d1b7215f1ff93a48fa3ad9576be20d56bd241ba39ac6 files/di
 MD5 ecd78d1bb4d2b61725a79deb65e5bb75 files/digest-numeric-24.2 238
 RMD160 fc57f969862ead472f970e34a365c6aff70c906e files/digest-numeric-24.2 238
 SHA256 d672c5f7d95f34bcc793b9091ebe6ebb22ed591f953e172ffc338679e5fa4a00 files/digest-numeric-24.2 238
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.4 (GNU/Linux)
+
+iD8DBQFEu7o3uB6ZT1m7QRERAiB7AJ0TmfeAB0FRDEfhzn36+xihsq+YRQCfeWDY
+MYGzqDNSP4HwU7S+pXpdqlQ=
+=zN7p
+-----END PGP SIGNATURE-----
