@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX filefuncs/Makefile 1212 RMD160 7b94f136f4a1e5cbfeade53c952c353378584c22 SHA1 e23965d28e8ae856b20211faedaca22cee613c11 SHA256 954bc6e837240b8d756cf6bd1460a24cae2a1cc5c738daf53746a0cff23791a1
 MD5 bcc8ea75aa8f87927bb5e498f4222d2e files/filefuncs/Makefile 1212
 RMD160 7b94f136f4a1e5cbfeade53c952c353378584c22 files/filefuncs/Makefile 1212
@@ -50,3 +53,10 @@ SHA256 f5f2891f2a4791cd31350bb2bb572131ad7235cd0eeb124c9912c187ac10ce92 metadata
 MD5 5717d8332bd2e98dbded1334cc76bee2 files/digest-gawk-3.1.5-r1 235
 RMD160 3d116e6731687336128135022efa9fa0e506dbad files/digest-gawk-3.1.5-r1 235
 SHA256 01e8243cf09dada7e4b9a224466042712149a3e32a8941dd0c2319064daf6e3b files/digest-gawk-3.1.5-r1 235
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.4 (GNU/Linux)
+
+iD8DBQFEuy0famhnQswr0vIRAv8sAKCCrOQ/BJiZHKeBc8jXsmHuI43n/wCgpgGH
+S+RMeAl6yLRrILx2fv4fRyY=
+=vmja
+-----END PGP SIGNATURE-----
