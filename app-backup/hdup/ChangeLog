@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/hdup
-# Copyright 2000-2005 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/ChangeLog,v 1.3 2005/11/29 06:50:37 chriswhite Exp $
+# Copyright 2000-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/ChangeLog,v 1.4 2006/07/22 12:36:53 chtekk Exp $
+
+*hdup-2.0.14 (22 Jul 2006)
+
+  22 Jul 2006; Luca Longinotti <chtekk@gentoo.org> metadata.xml,
+  hdup-1.6.37.ebuild, +hdup-2.0.14.ebuild:
+  Cleanup 1.6 ebuild, add 2.0 ebuild (fixes bug #75419).
+  Take over maintainance.
 
   29 Nov 2005; Chris White <chriswhite@gentoo.org> hdup-1.6.37.ebuild:
   In order to make bug #82822 obtain a RESOLVED status, I am marking this
