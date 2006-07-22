@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX hibernate-script-1.12-gentoo.patch 834 RMD160 3eef1a8651344191491b2687d472a860d4af5bbd SHA1 128ddf545adb0c93d3169406a0cebf8d0f67f55f SHA256 e54d9ea0a6664dbe51cb44c1802f63472e3d3b493e0b5c2730366922a02d5aee
 MD5 4771f1307f9d9d0d08fdfa6b4de5af48 files/hibernate-script-1.12-gentoo.patch 834
 RMD160 3eef1a8651344191491b2687d472a860d4af5bbd files/hibernate-script-1.12-gentoo.patch 834
@@ -31,3 +34,10 @@ SHA256 245468f631843dc85438ff9e62e91fbee4a39ce575f577bf8b536de5078a39b9 files/di
 MD5 c08cbd333e65548e8748e3badf6b256e files/digest-hibernate-script-1.93-r4 560
 RMD160 5d9b38025f31dd14db02a98af21c60f80a3c2c13 files/digest-hibernate-script-1.93-r4 560
 SHA256 e085f4442e842de51e2ae93343f72d990747342993b8508f5a3a04dfc1c12827 files/digest-hibernate-script-1.93-r4 560
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.4 (GNU/Linux)
+
+iD8DBQFEwXNyflZ8QqxhrsMRAgRQAJ4hLA90+NyApRo6tmC2DwY4vCzCCACfUtIO
+hGTbO7jDqP//MeViCWTJrPQ=
+=jsOS
+-----END PGP SIGNATURE-----
