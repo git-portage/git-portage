@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX gentoo-sources-2.4.81106.patch 2364 RMD160 9ffa11595df8585c8c6f2aae0d39c6c6f5e4686f SHA1 1e2677ef889a3ad6f8636ae4ae498b98739f3cb2 SHA256 76263e98e732abccc04f8cf6ce5f9419a1c8927d7ffad60066a598414b1b9976
 MD5 10ce33b7636259f96a9a16a19c8955b3 files/gentoo-sources-2.4.81106.patch 2364
 RMD160 9ffa11595df8585c8c6f2aae0d39c6c6f5e4686f files/gentoo-sources-2.4.81106.patch 2364
@@ -124,3 +127,10 @@ SHA256 101ff84def4d79909c92e52721f2a632c1aa80a7646dcc8926b3f1e4fcf056c9 files/di
 MD5 0813ead2329bbe07a2fd3a5cd9483267 files/digest-gentoo-sources-2.6.17-r4 804
 RMD160 1a0329910b4ca36fb37d71e238f31c0000c80ae3 files/digest-gentoo-sources-2.6.17-r4 804
 SHA256 ecb05690c022aa5bff85e0803dfac7e14b2e51bfa532945c90c3ca50c51c7baa files/digest-gentoo-sources-2.6.17-r4 804
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.4 (GNU/Linux)
+
+iD8DBQFExeknTOXg++0VvJQRAtYKAKCV8ZM5CPGXXv4bhCIsL5+rH5vpXwCfYnkC
+VjqAle1Rt95ixKlzhja2i/Q=
+=0UHz
+-----END PGP SIGNATURE-----
