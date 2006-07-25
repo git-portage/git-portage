@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX klibc-1.1-mips32.patch 670 RMD160 ecab014d68b65837eb6088c21d95be0c23170cfc SHA1 68b24422a59e4479c636dfd4fcd56be06dc01db3 SHA256 42d127d2d5348b7856d33b7ffce986d49c7adbef82cf2bb34aa06a022fabad4c
 MD5 d771e07746a2d5b2bdac366cd992c885 files/klibc-1.1-mips32.patch 670
 RMD160 ecab014d68b65837eb6088c21d95be0c23170cfc files/klibc-1.1-mips32.patch 670
@@ -81,3 +84,10 @@ SHA256 382c935239962cf639e051b35213a499e7a8762baee40721d5d33fe5d0edfe32 files/di
 MD5 973d90be82ca36897f675b3d968e8679 files/digest-klibc-1.4.12 241
 RMD160 fdc29ccbed7abccc934f99ca8adec88f7e47a652 files/digest-klibc-1.4.12 241
 SHA256 f7f48c53b5630392ad4dcdd6603ff14bf4922f30a918dcde8836dda59f54ea27 files/digest-klibc-1.4.12 241
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.4 (GNU/Linux)
+
+iD8DBQFExi701ZcsMnZjRyIRAuaIAKCJqLN9Qhs0P96Lj5etnGD5N+qEKACfazkk
+fKwgmSPE9OsNJGlmPYNtxQk=
+=NW4V
+-----END PGP SIGNATURE-----
