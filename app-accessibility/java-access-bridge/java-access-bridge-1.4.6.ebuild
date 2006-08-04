@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/java-access-bridge/Attic/java-access-bridge-1.4.6.ebuild,v 1.6 2006/03/19 11:13:58 corsair Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/java-access-bridge/Attic/java-access-bridge-1.4.6.ebuild,v 1.7 2006/08/04 03:27:12 leonardop Exp $
 
 inherit java-pkg gnome2
 
@@ -27,6 +27,8 @@ DOCS="AUTHORS ChangeLog NEWS README"
 
 
 pkg_setup() {
+	java-pkg_pkg_setup
+
 	G2CONF="--with-java-home=${JDK_HOME}"
 }
 

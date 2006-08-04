@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/java-access-bridge/Attic/java-access-bridge-1.5.0.ebuild,v 1.2 2006/08/04 03:27:12 leonardop Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/java-access-bridge/Attic/java-access-bridge-1.6.0.ebuild,v 1.1 2006/08/04 03:27:12 leonardop Exp $
 
 inherit java-pkg gnome2
 
@@ -13,7 +13,7 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 COMMON_DEPEND=">=gnome-base/libbonobo-2
-	>=gnome-extra/at-spi-1.7"
+	>=gnome-extra/at-spi-1.7.10"
 
 RDEPEND="$COMMON_DEPEND
 	>=virtual/jre-1.4"
