@@ -1,12 +1,12 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/sylpheed-claws/Attic/sylpheed-claws-2.0.0.ebuild,v 1.11 2006/06/05 18:25:43 blubb Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/sylpheed-claws/Attic/sylpheed-claws-2.0.0.ebuild,v 1.12 2006/08/05 06:10:54 genone Exp $
 
 IUSE="gnome dillo crypt spell ssl ldap ipv6 pda clamav xface kde imap spamassassin doc"
 
 inherit eutils
 
-DESCRIPTION="Bleeding edge version of Sylpheed"
+DESCRIPTION="Sylpheed-Claws is an email client (and news reader) based on GTK+"
 HOMEPAGE="http://claws.sylpheed.org"
 
 if [ -n "${P/*_rc*/}" ]; then
