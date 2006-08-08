@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX mpeg4ip-1.4.1-disable-faac-test.patch 1149 RMD160 fabfac7262e34ad8ba0aea08938fa61ca9f2c389 SHA1 a84ae2a263374edbe104c682fd2db385ff1145ca SHA256 cbe9093e82530731e4dc53973c62e3879b7297199f52f25b7d0317cfe4c0d2ba
 MD5 22a76c68f55b131dfc602a61ededb699 files/mpeg4ip-1.4.1-disable-faac-test.patch 1149
 RMD160 fabfac7262e34ad8ba0aea08938fa61ca9f2c389 files/mpeg4ip-1.4.1-disable-faac-test.patch 1149
@@ -30,3 +33,10 @@ SHA256 1ffffd6707a54c8f378bfcd9616bef82c93d6d15bb56d1e582e8297ccf887c03 files/di
 MD5 e2f664c0648cfd656f71ec99f49c8a32 files/digest-libmp4v2-1.5.0.1 250
 RMD160 92cd3b3759cc48d6714f344756350b6d045478db files/digest-libmp4v2-1.5.0.1 250
 SHA256 0f7df09398e7002cb89b9685203d3148c6c6c878c748380a78735aaaa7ba1bbc files/digest-libmp4v2-1.5.0.1 250
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFE2JcWmOfEJZHYOKcRAugTAJ9X4ocvB6exX3pu2stT8GsuvoERVwCggzGF
+yTzXOZ3VrFA1aouhsLs0Kig=
+=TgPK
+-----END PGP SIGNATURE-----
