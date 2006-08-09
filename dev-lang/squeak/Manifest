@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX squeak-3.4.1-gcc33-string-fix.patch 16184 RMD160 101ab86b4c2f1d0c6ab6a5ed7600cd4bc654654d SHA1 f101887b865000191f35171840b81063ee183afa SHA256 ae47c66f2aeb33a65f1efbbc6165b3372e0bd929949ef6e2985cd224540fc4e9
 MD5 4b2bf4f92065c5e86350d0cbaefe5fb8 files/squeak-3.4.1-gcc33-string-fix.patch 16184
 RMD160 101ab86b4c2f1d0c6ab6a5ed7600cd4bc654654d files/squeak-3.4.1-gcc33-string-fix.patch 16184
@@ -42,3 +45,10 @@ SHA256 c99d8a9b35b8a0db0dacb6a6358cdea875c513c35e9ab7b5049148dde7ba090e files/di
 MD5 1df347961361ad54e90bed699a902c61 files/digest-squeak-3.7.7-r1 253
 RMD160 6ae40ebe9b2ba35375047cb0640b14915d912c8f files/digest-squeak-3.7.7-r1 253
 SHA256 b12dc99e7a8af93af5c65ce994d49706c16a792e5607b4448cf56ff1a216acc4 files/digest-squeak-3.7.7-r1 253
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFE2eucdZ42PGEF17URAjYaAKCKqB2xj2kU17pnFW1jEWGgcc8zIACfaMXx
+BpW8X+/BACHkDvqSwUR715g=
+=/sz9
+-----END PGP SIGNATURE-----
