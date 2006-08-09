@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.5_p1.ebuild,v 1.4 2006/07/13 00:01:40 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.5_p1.ebuild,v 1.5 2006/08/09 20:08:04 ranger Exp $
 
 inherit eutils
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.amanda.org/"
 SRC_URI="mirror://sourceforge/amanda/${P/_/}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 RDEPEND="sys-libs/readline
 		virtual/inetd
 		app-arch/mt-st
