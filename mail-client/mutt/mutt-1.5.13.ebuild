@@ -1,36 +1,19 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/mutt/Attic/mutt-1.5.11.ebuild,v 1.10 2006/08/14 17:48:48 ferdy Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/mutt/Attic/mutt-1.5.13.ebuild,v 1.1 2006/08/14 17:48:48 ferdy Exp $
 
-inherit eutils flag-o-matic
-
-patch_assumed_charset="patch-1.5.10.tt.assumed_charset.1.gz"
-patch_compressed="patch-${PV}.rr.compressed.gz"
-patch_mbox_hook="patch-1.5.6.dw.mbox-hook.1"
-patch_pgp_timeout="patch-1.5.6.dw.pgp-timeout.1"
-patch_imap_fcc_status="mutt-1.5.4-imap-fcc-status.patch"
-patch_collapse_flagged="patch-1.5.4.lpr.collapse_flagged"
-opt_patch_nntp="patch-${PV}.vvv.nntp-gentoo.bz2"
+inherit eutils flag-o-matic autotools
 
 DESCRIPTION="a small but very powerful text-based mail client"
 HOMEPAGE="http://www.mutt.org"
 SRC_URI="ftp://ftp.mutt.org/mutt/devel/${P}.tar.gz
 	!vanilla? (
-		http://www.emaillab.org/${PN}/1.5.10/${patch_assumed_charset}
-		http://mutt.kiev.ua/download/${P}/${patch_compressed}
-		http://www.woolridge.ca/${PN}/patches/${patch_mbox_hook}
-		http://www.woolridge.ca/${PN}/patches/${patch_pgp_timeout}
-		http://www.plumlocosoft.com/software/download/${patch_imap_fcc_status}
-		http://debian.lpr.ch/Mutt/${patch_collapse_flagged}
-		nntp? (
-			http://dev.gentoo.org/~ferdy/distfiles/${opt_patch_nntp}
-			mirror://gentoo/mutt-1.5.7-mixmaster+nntp.patch
-		)
+		mirror://gentoo/${P}-gentoo-patches.tar.bz2
 	)"
 IUSE="berkdb buffysize cjk crypt debug gdbm gnutls gpgme idn imap mbox nls nntp pop sasl smime ssl vanilla"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 hppa ia64 mips ppc ppc-macos ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~sparc ~x86"
 RDEPEND="nls? ( sys-devel/gettext )
 	>=sys-libs/ncurses-5.2
 	gdbm?    ( sys-libs/gdbm )
@@ -50,44 +33,27 @@ RDEPEND="nls? ( sys-devel/gettext )
 	smime?   ( >=dev-libs/openssl-0.9.6 )
 	app-misc/mime-types"
 DEPEND="${RDEPEND}
-	net-mail/mailbase
-	~sys-devel/autoconf-2.59
-	!vanilla? ( sys-devel/automake )"
+	net-mail/mailbase"
 
-pkg_setup() {
-	if ! use imap; then
-		echo
-		einfo "The USE variable 'imap' is not in your USE flags."
-		einfo "For imap support in mutt, you will need to restart the build with USE=imap"
-		echo
-	fi
-}
+PATCHDIR="${WORKDIR}"/${P}-gentoo-patches
 
 src_unpack() {
-	unpack ${P}.tar.gz && cd ${S} || die "unpack failed"
-
-	# Fix configure.in sasl checking
-	epatch "${FILESDIR}/${P}-sasl.patch"
+	unpack ${A} && cd "${S}" || die "unpack failed"
 
 	if ! use vanilla ; then
-		for p in ${!patch_*} ; do
-			epatch ${DISTDIR}/${!p}
-		done
-
-		if use nntp; then
-			epatch ${DISTDIR}/${opt_patch_nntp}
-			# Allow mutt to build with mixmaster and nntp both enabled
-			epatch ${DISTDIR}/mutt-1.5.7-mixmaster+nntp.patch
+		if ! use nntp ; then
+			rm "${PATCHDIR}"/07-vvv.nntp-gentoo.patch
+			rm "${PATCHDIR}"/08-mixmaster_nntp.patch
 		fi
 
-		rm -rf configure autom4te.cache
-		aclocal -I m4					|| die "aclocal failed"
-		autoheader						|| die "autoheader failed"
-		emake -C m4 -f Makefile.am.in	|| die "emake in m4 failed"
-		automake --foreign				|| die "automake failed"
-	fi
+		for p in "${PATCHDIR}"/*.patch ; do
+			epatch "${p}"
+		done
 
-	WANT_AUTOCONF=2.5 autoconf		|| die "autoconf failed"
+		AT_M4DIR="m4" eautoreconf
+	else
+		eautoconf
+	fi
 }
 
 src_compile() {
