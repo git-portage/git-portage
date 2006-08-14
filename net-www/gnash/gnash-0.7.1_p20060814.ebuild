@@ -1,18 +1,21 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/gnash/Attic/gnash-0.7.1_p20060704.ebuild,v 1.4 2006/08/14 15:28:19 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/gnash/Attic/gnash-0.7.1_p20060814.ebuild,v 1.1 2006/08/14 15:28:19 genstef Exp $
 
 inherit nsplugins kde-functions autotools
 
 DESCRIPTION="Gnash is a GNU Flash movie player that supports many SWF v7 features"
 HOMEPAGE="http://www.gnu.org/software/gnash"
+#SRC_URI="ftp://ftp.gnu.org/pub/gnu/${PN}/${PV}/${P}.tar.bz2"
 SRC_URI="http://gentooexperimental.org/~genstef/dist/${P}.tar.bz2"
-S=${WORKDIR}/${PN}
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc -sparc ~x86"
+KEYWORDS="-*"
 IUSE="mad nsplugin nptl xml kde video_cards_i810"
+#dmalloc, broken see bug 142939
+#dmalloc? ( dev-libs/dmalloc )
+#		$(use_enable dmalloc) \
 
 RDEPEND="
 	xml? ( dev-libs/libxml2 )
@@ -26,7 +29,6 @@ RDEPEND="
 	media-libs/libogg
 	media-libs/libpng
 	media-libs/libsdl
-	media-libs/sdl-mixer
 	net-misc/curl
 	virtual/opengl
 	|| (
@@ -39,10 +41,13 @@ RDEPEND="
 	)
 	dev-libs/atk
 	dev-libs/glib
-	x11-libs/cairo
 	>x11-libs/gtk+-2
-	x11-libs/gtkglext
-	x11-libs/pango"
+	x11-libs/pango
+	media-libs/sdl-mixer
+	x11-libs/gtkglext"
+	#cairo? ( x11-libs/cairo )
+	#gstreamer? ( media-libs/gstreamer )
+	#!gstreamer? ( media-libs/sdl-mixer )
 
 set-kdedir
 
@@ -50,16 +55,10 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 
-	# as-needed patch
-	# http://savannah.gnu.org/bugs/?func=detailitem&item_id=16684
-	epatch ${FILESDIR}/${P}-opengl.diff
-	# CXXFLAGS should be ussed for cpp code and libtool for installation
-	# http://savannah.gnu.org/bugs/?func=detailitem&item_id=17049
-	epatch ${FILESDIR}/gnash-fix-cxxflags-rpath.patch
-
-
-	# we want sound
-	sed -i -e "s:bool do_sound = .*:bool do_sound = true;:" backend/gnash.cpp
+	# enable sound by default
+	ssed="bool.*do_sound[ \t]*=[ \t]*"
+	grep "${ssed}" . -rl | xargs \
+		sed -i -e "s:\(${ssed}\)false:\1true:"
 
 	AT_M4DIR="macros" eautoreconf
 }
@@ -67,19 +66,25 @@ src_unpack() {
 src_compile() {
 	local myconf
 
-	use nsplugin && myconf="${myconf}  --enable-plugin --with-plugindir=/opt/netscape/plugins"
+	use nsplugin && myconf="${myconf} --enable-plugin --with-plugindir=/opt/netscape/plugins"
 
 	#--enable-renderer=engine Specify rendering engine:
 	#				OpenGL (default)
 	#				Cairo  (experimental)
-	#cairo: does not compile, offers flash for non-accelerated gfx?
+	#cairo: does not work for plugins yet, offers flash for non-accelerated gfx?
 	#if use cairo; then
-	#	myconf="${myconf}  --enable-renderer=cairo"
+	#	myconf="${myconf} --enable-renderer=cairo"
 	#fi
 	#--enable-gui=flavor Specify gui flavor:
 	#				GTK
 	#				SDL -> has no controls, we do not USE it
 	#$(use_enable gtk glext) with USE=-gtk, fails to detect gtkglext, bug 135010
+	#--enable-sound=gst,sdl
+	#if use gstreamer; then
+	#	myconf="${myconf} --enable-sound=gst"
+	#else
+		myconf="${myconf} --enable-sound=sdl"
+	#fi
 
 	econf \
 		$(use_enable kde klash) \

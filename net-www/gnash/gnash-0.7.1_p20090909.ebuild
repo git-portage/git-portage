@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/gnash/Attic/gnash-0.7.1_p20090909.ebuild,v 1.3 2006/08/13 18:05:59 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/gnash/Attic/gnash-0.7.1_p20090909.ebuild,v 1.4 2006/08/14 15:28:19 genstef Exp $
 
 inherit nsplugins kde-functions autotools cvs
 
@@ -52,13 +52,16 @@ RDEPEND="
 	x11-libs/gtkglext"
 	#cairo? ( x11-libs/cairo )
 
-S=${WORKDIR}/gnash
-
 set-kdedir
 
 src_unpack() {
 	cvs_src_unpack
 	cd ${S}
+
+	# enable sound by default
+	ssed="bool.*do_sound[ \t]*=[ \t]*"
+	grep "${ssed}" . -rl | xargs \
+		sed -i -e "s:\(${ssed}\)false:\1true:"
 
 	AT_M4DIR="macros" eautoreconf
 }
@@ -107,6 +110,4 @@ pkg_postinst() {
 	ewarn "ALPHA"
 	ewarn "gnash is still in heavy development"
 	ewarn "please report gnash bugs upstream to the gnash devs"
-	echo
-	ewarn "To try out sound support use \"gnash -r 3 file.swf\""
 }
