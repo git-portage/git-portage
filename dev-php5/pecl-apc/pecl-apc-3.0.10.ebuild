@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php5/pecl-apc/Attic/pecl-apc-3.0.10.ebuild,v 1.1 2006/03/12 07:25:25 sebastian Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php5/pecl-apc/Attic/pecl-apc-3.0.10.ebuild,v 1.2 2006/08/17 07:08:47 sebastian Exp $
 
 PHP_EXT_NAME="apc"
 PHP_EXT_PECL_PKG="APC"
@@ -10,12 +10,12 @@ PHP_EXT_ZENDEXT="no"
 inherit php-ext-pecl-r1 confutils
 
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
-DESCRIPTION="The Alternative PHP Cache."
+DESCRIPTION="A free, open, and robust framework for caching and optimizing PHP intermediate code."
 LICENSE="PHP"
 SLOT="0"
 IUSE="mmap"
 
-DEPEND="${DEPEND} >=dev-lang/php-5.1.1"
+DEPEND="${DEPEND} !>=dev-lang/php-5.2.0"
 
 pkg_setup() {
 	has_php
