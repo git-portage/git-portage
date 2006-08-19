@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/backup-manager
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/ChangeLog,v 1.2 2006/06/06 15:55:08 lisa Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/ChangeLog,v 1.3 2006/08/19 12:35:56 lisa Exp $
+
+*backup-manager-0.7.4 (19 Aug 2006)
+
+  19 Aug 2006; Lisa Seelye <lisa@gentoo.org>
+  +files/backup-manager-upload-execution-fix-0.7.4.diff,
+  +backup-manager-0.7.4.ebuild:
+  Version bump for bug #143097
 
   06 Jun 2006; Lisa Seelye <lisa@gentoo.org> files/Makefile-fix.diff,
   backup-manager-0.7.2.ebuild:
