@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/canna/canna-3.7_p2.ebuild,v 1.14 2006/01/25 07:24:58 spyderous Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/canna/canna-3.7_p2.ebuild,v 1.15 2006/08/20 14:14:09 liquidx Exp $
 
 inherit cannadic eutils multilib
 
@@ -10,7 +10,7 @@ DESCRIPTION="A client-server based Kana-Kanji conversion system"
 HOMEPAGE="http://canna.sourceforge.jp/"
 SRC_URI="mirror://sourceforge.jp/canna/9558/${MY_P/_/}.tar.bz2"
 
-LICENSE="as-is"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="alpha amd64 hppa ppc ppc64 sparc x86"
 IUSE="doc"
@@ -40,6 +40,9 @@ src_unpack() {
 	cd ${S}
 	# Multilib-strict fix for amd64
 	sed -i -e "s:\(DefLibCannaDir.*\)/lib:\1/$(get_libdir):g" Canna.conf*
+	# fix deprecated sort syntax
+	sed -e 's:^\(sortcmd=\".* -s\).*$:\1 -k 1,1\":' \
+		-i cmd/mkbindic/mkbindic.cpp
 }
 
 src_compile() {
