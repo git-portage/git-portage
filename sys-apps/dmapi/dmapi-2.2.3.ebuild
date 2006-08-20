@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/dmapi/Attic/dmapi-2.2.3.ebuild,v 1.7 2006/08/18 02:20:42 metalgod Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/dmapi/Attic/dmapi-2.2.3.ebuild,v 1.9 2006/08/20 21:17:36 vapier Exp $
 
-inherit eutils
+inherit eutils toolchain-funcs
 
 DESCRIPTION="XFS data management API library"
 HOMEPAGE="http://oss.sgi.com/projects/xfs/"
@@ -10,7 +10,7 @@ SRC_URI="ftp://oss.sgi.com/projects/xfs/download/cmd_tars/${P}.src.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND="sys-fs/xfsprogs"
