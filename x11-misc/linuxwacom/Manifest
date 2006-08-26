@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX linuxwacom-0.7.2-modular-x.patch 3139 RMD160 8743a2ec5f9bb0a77c96b370b598325778c0ebb6 SHA1 17eed677f5e68ee97035732860cd0e800faa4daa SHA256 a5614ab425f9a3104f656e12c0e99abc8854ee55b7115369902add654d6dd862
 MD5 f2a560693573941df8d2d80f52121e36 files/linuxwacom-0.7.2-modular-x.patch 3139
 RMD160 8743a2ec5f9bb0a77c96b370b598325778c0ebb6 files/linuxwacom-0.7.2-modular-x.patch 3139
@@ -18,3 +21,10 @@ SHA256 437b6b7b25a842130a8a726afd95106b0e7c3a6939015d880ef8038a7a6d4e3d metadata
 MD5 dd86b4a2f3227fed8818eada1545b7b0 files/digest-linuxwacom-0.7.2 253
 RMD160 a5f9b66e4acfbc6e32477027d08bbd7d527bb8a8 files/digest-linuxwacom-0.7.2 253
 SHA256 a79017c36673a3f7d5db1200f5a4a4235ebee16fc29a0855f3f015c3a4eb2a86 files/digest-linuxwacom-0.7.2 253
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFE77Y4r2QksT29OyARAqp7AJ0YAI6bOvwIExvkXT2qV1G6m6GfwgCeO15q
+pxbspRmNwP/Om2sNs+MbDMA=
+=EMBA
+-----END PGP SIGNATURE-----
