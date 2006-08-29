@@ -1,24 +1,28 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/sobby/Attic/sobby-0.2.0.ebuild,v 1.1 2005/08/14 22:01:58 humpback Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/sobby/Attic/sobby-0.4.1.ebuild,v 1.1 2006/08/29 23:29:21 humpback Exp $
 
 inherit eutils
+
+#MY_P=${P/_rc/rc}
+#S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="Standalone Obby server"
 HOMEPAGE="http://darcs.0x539.de/gobby"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
-SRC_URI="http://releases.0x539.de/${PN}/${P}.tar.gz"
+SRC_URI="http://releases.0x539.de/${PN}/${P/_/}.tar.gz"
 
 DEPEND=">=dev-cpp/glibmm-2.6
 	>=dev-libs/libsigc++-2.0
 	>=dev-libs/gmp-4.1.4
-	>=net-libs/net6-1.1.0
-	>=net-libs/obby-0.2.0"
+	>=net-libs/obby-0.4.1"
 
 RDEPEND=""
+
+S=${WORKDIR}/${P/_/}
 
 src_compile() {
 	econf || die "./configure failed"
