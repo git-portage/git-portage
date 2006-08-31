@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/java-config/Attic/java-config-1.3.3.ebuild,v 1.2 2006/08/31 04:12:42 nichoj Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/java-config/Attic/java-config-1.3.3-r1.ebuild,v 1.1 2006/08/31 04:12:42 nichoj Exp $
 
 inherit base distutils eutils
 
@@ -15,6 +15,7 @@ IUSE=""
 
 RDEPEND="virtual/python
 	dev-java/java-config-wrapper"
+PDEPEND="|| ( =virtual/jdk-1.4* =virtual/jdk-1.3* )"
 
 src_install() {
 	distutils_src_install
@@ -28,5 +29,11 @@ pkg_postinst() {
 	einfo "The way Java is handled on Gentoo has been recently updated."
 	einfo "If you have not done so already, you should follow the"
 	einfo "instructions available at:"
-	einfo "http://www.gentoo.org/proj/en/java/java-upgrade.xml"
+	einfo "\thttp://www.gentoo.org/proj/en/java/java-upgrade.xml"
+	echo
+	einfo "While we moving towards the new Java system, we require"
+	einfo "a 1.3 or 1.4 JDK to be installed to ensure backwards compatibility"
+	einfo "with the old system."
+	einfo "For more details about this, please see:"
+	einfo "\thttps://overlays.gentoo.org/proj/java/wiki/Why_We_Need_Java14"
 }
