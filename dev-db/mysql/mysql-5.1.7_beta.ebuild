@@ -1,9 +1,10 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/Attic/mysql-5.1.7_beta.ebuild,v 1.7 2006/05/05 19:51:40 chtekk Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/Attic/mysql-5.1.7_beta.ebuild,v 1.8 2006/08/31 21:53:12 chtekk Exp $
 
 # Leave this empty
 MYSQL_VERSION_ID=""
+MYSQL_RERELEASE=""
 # Set the patchset revision to use, must be either empty or a decimal number
 MYSQL_PATCHSET_REV="1"
 
