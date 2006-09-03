@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/kdar
 # Copyright 2000-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/ChangeLog,v 1.7 2006/08/05 22:07:17 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/ChangeLog,v 1.8 2006/09/03 15:40:12 matsuu Exp $
+
+  02 Sep 2006; MATSUU Takuto <matsuu@gentoo.org> kdar-2.0.7.ebuild:
+  Use replace-flags instead filter-flags, Bug 116112.
 
   05 Aug 2006; MATSUU Takuto <matsuu@gentoo.org> -kdar-2.0.6.ebuild,
   kdar-2.0.7.ebuild:

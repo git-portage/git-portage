@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/kdar-2.0.7.ebuild,v 1.3 2006/08/05 22:07:17 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/kdar-2.0.7.ebuild,v 1.4 2006/09/03 15:40:12 matsuu Exp $
 
 inherit kde
 
@@ -23,7 +23,7 @@ src_compile() {
 	local myconf
 
 	# Bug 116112
-	filter-flags -Os
+	replace-flags "-Os" "-O2"
 
 	use dar32 && myconf="${myconf} --enable-mode=32"
 	use dar64 && myconf="${myconf} --enable-mode=64"
