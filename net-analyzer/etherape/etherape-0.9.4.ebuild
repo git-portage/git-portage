@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/etherape/Attic/etherape-0.9.4.ebuild,v 1.6 2006/08/17 00:21:57 tcort Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/etherape/Attic/etherape-0.9.4.ebuild,v 1.7 2006/09/04 16:41:30 pva Exp $
 
 inherit eutils
 
@@ -19,11 +19,12 @@ DEPEND=">=gnome-base/libglade-2.0
 	sys-devel/gettext"
 
 src_unpack() {
-	unpack ${A}; cd "${S}"
-	epatch "${FILESDIR}"/${PN}-0.9.3-res_mkquery.patch
-	epatch "${FILESDIR}"/${PN}-0.9.1-fix-mkinstalldirs.diff
+	unpack ${A};
 
-	aclocal || die "aclocal failed"
+	cd "${S}"
+	epatch "${FILESDIR}"/${PN}-0.9.3-res_mkquery.patch
+
+	aclocal -I m4 || die "aclocal failed"
 	autoconf || die "autoconf failed"
 	libtoolize --copy --force
 }
