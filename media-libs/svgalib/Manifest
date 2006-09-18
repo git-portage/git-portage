@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX svgalib-1.9.19-dont-touch-ld.conf.patch 839 RMD160 d50daaa39423a6fc7b689752866f4cc29907fb03 SHA1 0a38cba929b1d4aca141ff97f630de6ea202a00f SHA256 95bb36a50d841c4cbfbc73560045ee8bf7dd784c9f0975ca1a9f3dc6616fd8ce
 MD5 22d45025a562c43872e5750a05dfa9df files/svgalib-1.9.19-dont-touch-ld.conf.patch 839
 RMD160 d50daaa39423a6fc7b689752866f4cc29907fb03 files/svgalib-1.9.19-dont-touch-ld.conf.patch 839
@@ -58,3 +61,10 @@ SHA256 e9aeec91a16ef008173ec45162e2680a29fdabee914c2a516acc1da133a98c86 files/di
 MD5 ce3612b32d5d810bc066f94884ad1651 files/digest-svgalib-1.9.25 244
 RMD160 b58d83ff0bf0aece90a1a8fac86924e53ba1a704 files/digest-svgalib-1.9.25 244
 SHA256 ddcc343b075e1ebcbceb0952eaa273fb40fd3a0bc00bb00b7d64e1c500a6cac4 files/digest-svgalib-1.9.25 244
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFDl1LamhnQswr0vIRAtvOAKCybTlCalRrosso1Ne/6stkTTm8SwCeLIKG
+Hzr91B8F6czn2L3rk/H7tk4=
+=yuZH
+-----END PGP SIGNATURE-----
