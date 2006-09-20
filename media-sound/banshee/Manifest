@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX banshee-0.10.10-disableplugin.patch 817 RMD160 7088bde78a3ef71fea841753c98b61a5adbc571e SHA1 e36ee54dc04437f6bcbe4b4b086e7411cad70fe4 SHA256 f29516bb380e2029200fed3568378fdf9edb6144451621e87570fb49906707a7
 MD5 a259daa9dc2ecbe3bcf7a9a135ecbef1 files/banshee-0.10.10-disableplugin.patch 817
 RMD160 7088bde78a3ef71fea841753c98b61a5adbc571e files/banshee-0.10.10-disableplugin.patch 817
@@ -46,3 +49,10 @@ SHA256 96e803f837329580a0dcce9233b1fb5217845ad1529ba9ae954c922ae17a6641 files/di
 MD5 6cadd55b2e83b3fa061f246b593e7a4f files/digest-banshee-0.11.0 247
 RMD160 d68c1e6e90be224ed71799bd5a28fabd916775a1 files/digest-banshee-0.11.0 247
 SHA256 ce675456a23f57a45988236a129ca211f5d2cd3be378b5b429cdaea153103402 files/digest-banshee-0.11.0 247
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFEJXMwUpWvClEHQoRAojgAJwPf/BND/t/KXp63Nm34LWtfiYc9gCeIQB3
++2+wSX6HUmBze949vw20Joo=
+=nbRQ
+-----END PGP SIGNATURE-----
