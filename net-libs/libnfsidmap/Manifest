@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX libnfsidmap-0.16-optional-ldap.patch 812 RMD160 1433013411100a5009a89a287a10f2ed8ef2d586 SHA1 dc575929b0673b99184bc8b5231f5bea51b0a5ca SHA256 52cc4c80b7a80b9d3e1eaa6f11e475df9b6cd6e6a1c0fd9e5a54eb7e08ca3783
 MD5 15251cf0840e56703cbe76cc7061bc83 files/libnfsidmap-0.16-optional-ldap.patch 812
 RMD160 1433013411100a5009a89a287a10f2ed8ef2d586 files/libnfsidmap-0.16-optional-ldap.patch 812
@@ -18,3 +21,10 @@ SHA256 562c59615c028ffa088de789b3a792fd4cbbbfe71628ddd6a55d3b176becbc6b metadata
 MD5 a4ec8bbeacb6e26a1f07d6321f7c46e6 files/digest-libnfsidmap-0.17 250
 RMD160 9a2df927d7690661ef60655fc2f0c64c8a6e2ff1 files/digest-libnfsidmap-0.17 250
 SHA256 8ca7b3fe187bfbc224242d51be297f8df11f8853b90dd552e3bc19b5e5334fdf files/digest-libnfsidmap-0.17 250
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFFgAdamhnQswr0vIRAvLrAJ0ffjX3Xx98IySckqDC0S47UFifDQCeOJ8d
+uhiMjYViCaSqrJSnQOXNuFU=
+=PpQZ
+-----END PGP SIGNATURE-----
