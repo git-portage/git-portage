@@ -1,12 +1,12 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/bzr/Attic/bzr-0.9.ebuild,v 1.2 2006/09/24 20:59:17 marienz Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/bzr/Attic/bzr-0.10-r1.ebuild,v 1.1 2006/09/24 20:59:17 marienz Exp $
 
 inherit distutils bash-completion elisp-common eutils
 
 DESCRIPTION="next generation distributed version control"
 HOMEPAGE="http://bazaar-vcs.org/"
-SRC_URI="http://bazaar-vcs.org/pkg/${P}.tar.gz"
+SRC_URI="http://bazaar-vcs.org/releases/src/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -29,11 +29,12 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	# Make bzr work with recent versions of diffutils.
-	epatch "${FILESDIR}/${P}-binary-diff.patch"
-
 	# Install the manpage in /usr/share/man instead of /usr/man
-	epatch "${FILESDIR}/${PN}-0.8-fix-manpage-location.patch"
+	epatch "${FILESDIR}/${P}-fix-manpage-location.patch"
+
+	# Mostly work with python 2.5 (some tar export related things are
+	# still broken, but will be fixed in bzr 0.11).
+	epatch "${FILESDIR}/${P}-python-2.5-compat.patch"
 }
 
 src_compile() {
