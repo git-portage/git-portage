@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-3.2.1.2242-r11.ebuild,v 1.5 2006/09/15 23:12:29 wolf31o2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-3.2.1.2242-r11.ebuild,v 1.6 2006/09/27 18:31:37 wolf31o2 Exp $
 
 # Alter ebuild so that the metadata cache is invalidated.
 
@@ -26,13 +26,10 @@ RESTRICT="strip"
 # vmware-workstation should not use virtual/libc as this is a
 # precompiled binary package thats linked to glibc.
 RDEPEND="sys-libs/glibc
-	|| (
-		(
-			x11-libs/libXrandr
-			x11-libs/libXcursor
-			x11-libs/libXinerama
-			x11-libs/libXi )
-		virtual/x11 )
+	x11-libs/libXrandr
+	x11-libs/libXcursor
+	x11-libs/libXinerama
+	x11-libs/libXi
 	virtual/xft
 	!app-emulation/vmware-player
 	!app-emulation/vmware-server

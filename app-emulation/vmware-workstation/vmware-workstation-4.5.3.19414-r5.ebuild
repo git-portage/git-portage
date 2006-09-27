@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-4.5.3.19414-r4.ebuild,v 1.7 2006/09/27 18:31:37 wolf31o2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-4.5.3.19414-r5.ebuild,v 1.1 2006/09/27 18:31:37 wolf31o2 Exp $
 
 # Alter ebuild so that the metadata cache is invalidated.
 
@@ -19,7 +19,7 @@ SRC_URI="mirror://vmware/software/wkst/${MY_P}.tar.gz
 
 LICENSE="vmware"
 SLOT="0"
-KEYWORDS="-* amd64 x86"
+KEYWORDS="-* ~amd64 ~x86"
 IUSE=""
 RESTRICT="strip"
 
