@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/backuppc
-# Copyright 1999-2005 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/ChangeLog,v 1.3 2005/10/02 15:02:29 flameeyes Exp $
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/ChangeLog,v 1.4 2006/09/28 00:09:59 seemant Exp $
+
+*backuppc-2.1.2-r1 (28 Sep 2006)
+
+  28 Sep 2006; Seemant Kulleen <seemant@gentoo.org>
+  +files/BackupPC-2.1.2pl2.diff, +backuppc-2.1.2-r1.ebuild:
+  Patch to make this work with more recent versions of rsync. Closes bug
+  #148935 by David Relson
 
   02 Oct 2005; Diego Pettenò <flameeyes@gentoo.org> backuppc-2.1.2.ebuild:
   Don't use /bin/false as shell for backuppc user. Use -1 instead.
