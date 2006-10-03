@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/sylpheed-claws-smime/Attic/sylpheed-claws-smime-0.5.5.ebuild,v 1.1 2006/10/03 16:09:39 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/sylpheed-claws-smime/Attic/sylpheed-claws-smime-0.5.5.ebuild,v 1.3 2006/10/03 16:12:12 ticho Exp $
 
 MY_P="${P##sylpheed-claws-}"
 MY_PN="${PN##sylpheed-claws-}"
