@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/mtr/Attic/mtr-0.69-r1.ebuild,v 1.10 2006/03/13 19:23:38 gustavoz Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/mtr/Attic/mtr-0.69-r1.ebuild,v 1.11 2006/10/09 10:12:05 jokey Exp $
 
 inherit eutils flag-o-matic
 
@@ -14,7 +14,7 @@ KEYWORDS="~alpha amd64 ~arm hppa ia64 ppc ~ppc-macos ~s390 sparc x86"
 IUSE="gtk ipv6"
 
 DEPEND="dev-util/pkgconfig
-	>=sys-libs/ncurses-5.2
+	sys-libs/ncurses
 	gtk? ( >=x11-libs/gtk+-2 )"
 
 src_unpack() {

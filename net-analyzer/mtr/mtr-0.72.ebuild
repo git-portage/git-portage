@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/mtr/Attic/mtr-0.71.ebuild,v 1.2 2006/10/09 10:12:05 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/mtr/Attic/mtr-0.72.ebuild,v 1.1 2006/10/09 10:12:05 jokey Exp $
 
-inherit eutils flag-o-matic
+inherit flag-o-matic
 
 DESCRIPTION="My TraceRoute. Excellent network diagnostic tool."
 HOMEPAGE="http://www.bitwizard.nl/mtr/"
@@ -18,8 +18,6 @@ DEPEND="dev-util/pkgconfig
 	gtk? ( >=x11-libs/gtk+-2 )"
 
 src_compile() {
-	autoconf || die "autoconf failed"
-
 	local myconf
 	use gtk || myconf="${myconf} --without-gtk"
 
