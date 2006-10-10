@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/backuppc-2.1.2-r1.ebuild,v 1.1 2006/09/28 00:10:00 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/backuppc-2.1.2-r1.ebuild,v 1.2 2006/10/10 14:45:52 seemant Exp $
 
 inherit eutils webapp
 
@@ -127,4 +127,9 @@ pkg_postinst() {
 	ebegin "Adjusting ownership of /var/lib/backuppc"
 	chown -R backuppc:backuppc "${ROOT}/var/lib/backuppc"
 	eend $?
+
+	elog "Please read the documentation"
+	elog "It is important to know that the webserver and the backuppc user"
+	elog "*must* be one and the same"
+
 }
