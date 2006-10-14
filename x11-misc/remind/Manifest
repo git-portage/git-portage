@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX 03.00.24/01-optional-filename.patch 3902 RMD160 6d48bfead05c11de8da20e942fc5292b321881d5 SHA1 fe9fb83030d2eddc89fb8809d770c08a2ce3ed35 SHA256 d7c890fb48e09784ef611069ff44a37f784a20c49e7e553aa51b6fee3e9c2fc2
 MD5 b7701150bf46f3ec8d4fba40050fd70b files/03.00.24/01-optional-filename.patch 3902
 RMD160 6d48bfead05c11de8da20e942fc5292b321881d5 files/03.00.24/01-optional-filename.patch 3902
@@ -30,3 +33,10 @@ SHA256 63163ddb9082af2890999b3c825b2d21df911f59611694e0e077e75a12bf7241 metadata
 MD5 46013ece91c7d2a44848035404efc900 files/digest-remind-03.00.24 247
 RMD160 ffa128fb2d9cc55934ef8c164836b52740707bcd files/digest-remind-03.00.24 247
 SHA256 dc819d5fb431b02444bda57aa8c067e2777d6ca2c226a81e4534e14bcba3df09 files/digest-remind-03.00.24 247
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFMRgJgo/w9rxVVVERAmIjAKCuGzaLSxcXPPNOJ5/liPCMD7q6VQCeOibI
+6JdiQ49wvahzc4FWzbXzjsA=
+=1eQn
+-----END PGP SIGNATURE-----
