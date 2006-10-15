@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/reoback/reoback-1.0_p3.ebuild,v 1.3 2005/09/02 14:29:26 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/reoback/reoback-1.0_p3.ebuild,v 1.4 2006/10/15 19:09:28 dertobi123 Exp $
 
 DESCRIPTION="Reoback Backup Solution"
 HOMEPAGE="http://reoback.sourceforge.net/"
@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/reoback/reoback-${PV/_p/_r}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="amd64 ppc x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/perl-5.6.1"
