@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX rpm-4.4.6-stupidness.patch 4548 RMD160 b19b84e0a76eff3e7c5c63f6b428ae88f1888ff6 SHA1 9698050929574a854a2a10ea76b888ca9e0d70d1 SHA256 e8f30eda707ee2c19dd607d338e9e6e7d9837e7522db147b5b9922f9eb712cbb
 MD5 a867d67e5d1190da7f32f65f1294ed68 files/rpm-4.4.6-stupidness.patch 4548
 RMD160 b19b84e0a76eff3e7c5c63f6b428ae88f1888ff6 files/rpm-4.4.6-stupidness.patch 4548
@@ -22,3 +25,10 @@ SHA256 4595c2615fd7c9095517949b1a920d4457f92801eb9d46307b18aafe58ec2a8a metadata
 MD5 5ee2f2cd59d279b728247d54548a3529 files/digest-rpm-4.4.6-r1 235
 RMD160 cb1beebaaafaa9024dca4713846df4da6877e723 files/digest-rpm-4.4.6-r1 235
 SHA256 1a9d97d24a7c07cfd808a471e9fd22ced0813b41a109f6716b1d216fc828ecce files/digest-rpm-4.4.6-r1 235
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFMv9IamhnQswr0vIRAqOSAJ9H47kOwLOg9QLCZvaUrCSKvxP+cgCdGRVK
+pZ0UWqZWZJBSmmc6obcdR5c=
+=H8/Y
+-----END PGP SIGNATURE-----
