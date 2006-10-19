@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX 0.5.2-custom.mk.patch 793 RMD160 db71f8629b88147e1a907e40c0c0c66a6a38bef7 SHA1 9f50dcf4fce92dac2f4607abbf89ca93565e8604 SHA256 de5c78a121f038798057a13cdee1d1ee3eb6295b88fe4cbacc73fb923bfe626c
 MD5 c9145ee916ff637d0bb770affed4df4d files/0.5.2-custom.mk.patch 793
 RMD160 db71f8629b88147e1a907e40c0c0c66a6a38bef7 files/0.5.2-custom.mk.patch 793
@@ -46,3 +49,10 @@ SHA256 ccdd4c0ea14f2e1d0bdcc4fa25738223030589cbfb480da87c5b16154d86c07f files/di
 MD5 2ecf0a8299baa1c58160cd23d9de0069 files/digest-openmsx-0.6.1 244
 RMD160 d9d8eb34c06f50254c1130a5bce9b307145de2e6 files/digest-openmsx-0.6.1 244
 SHA256 1ace329a660a15099ed0d83aa237319b8569622c4e604a2384e1929e7f2b1e02 files/digest-openmsx-0.6.1 244
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFN5Ewdz7hIScOURERArcDAJ9ZfBTnDAYlNIUxTiEXIhDrQnLabQCgzWUV
+TTHKyjLa5KcSE5IpuxMX36M=
+=N2p0
+-----END PGP SIGNATURE-----
