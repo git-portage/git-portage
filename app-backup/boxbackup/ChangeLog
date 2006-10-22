@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/boxbackup
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.6 2006/06/19 19:50:08 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.7 2006/10/22 13:49:24 peper Exp $
+
+  22 Oct 2006; Piotr Jaroszyński <peper@gentoo.org> boxbackup-0.10.ebuild:
+  Add ~amd64 keyword. Bug #122420.
 
   19 Jun 2006; Fabian Groffen <grobian@gentoo.org>
   +files/boxbackup-0.10-gcc41-noll.patch, boxbackup-0.10.ebuild:
