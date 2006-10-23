@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX whois-4.7.2-config-file.patch 198 RMD160 874ed86cab594d8fa69ee9599e2a1c3b52c611c7 SHA1 83b2db998f9ee90398138029816952f19a91634a SHA256 b7ad9cb716a8dbd1bb64dc80c1d4460c4a5661ba9420b771f9323c4337dbbea2
 MD5 1327d76b68095d1c08e847fe3bbb4367 files/whois-4.7.2-config-file.patch 198
 RMD160 874ed86cab594d8fa69ee9599e2a1c3b52c611c7 files/whois-4.7.2-config-file.patch 198
@@ -18,3 +21,10 @@ SHA256 ea21cc8449f352bca1e846cfe7ab7177469eb81718326ea1803675dd267462d1 ChangeLo
 MD5 33cc462188db3936e5bcce9f18f585be files/digest-whois-4.7.12 235
 RMD160 74a765eeff820d54d5c4261fdac95b94c53c745a files/digest-whois-4.7.12 235
 SHA256 8f94c78df8968144295e4fa634620423e2e6626ca7b8f5501bbc806082e4d273 files/digest-whois-4.7.12 235
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFPShHamhnQswr0vIRArv1AKCinPxcghps8GbeT7tbIm1X6pk4PwCdHcNE
+1NTHztrhbth8chjFPXxPo6I=
+=vsup
+-----END PGP SIGNATURE-----
