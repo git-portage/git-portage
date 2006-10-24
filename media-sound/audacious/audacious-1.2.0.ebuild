@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/audacious/Attic/audacious-1.2.0_rc1.ebuild,v 1.3 2006/10/24 09:56:53 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/audacious/Attic/audacious-1.2.0.ebuild,v 1.1 2006/10/24 09:56:53 chainsaw Exp $
 
 inherit flag-o-matic
 
@@ -19,14 +19,13 @@ IUSE="chardet nls gnome"
 RDEPEND=">=x11-libs/gtk+-2.6
 	>=gnome-base/libglade-2.3.1
 	dev-libs/libxml2
-	>=media-libs/taglib-1.4-r1
 	gnome? ( >=gnome-base/gconf-2.6.0 )"
 
 DEPEND="${RDEPEND}
 	nls? ( dev-util/intltool )
 	>=dev-util/pkgconfig-0.9.0"
 
-PDEPEND="media-plugins/audacious-plugins"
+PDEPEND=">=media-plugins/audacious-plugins-1.2.2"
 
 src_compile() {
 	# Bug #42893
