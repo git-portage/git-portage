@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX spidermonkey-1.5-build.patch 3457 RMD160 323b186d6be267bce42f15fe0694b8c17d1e927d SHA1 995708c8cbd03ed690505fab70a54349d4b94d09 SHA256 04a2b3b1b85825f463c6eb703d32e66747e2a8cca81b0026b958862eb1248fdb
 MD5 eb5760a041c83fe1bc5cb5ffb9515e78 files/spidermonkey-1.5-build.patch 3457
 RMD160 323b186d6be267bce42f15fe0694b8c17d1e927d files/spidermonkey-1.5-build.patch 3457
@@ -22,3 +25,10 @@ SHA256 ccc1683b427d27b181a3216dec1a64f59759d1263c7a69eca326b39c925e0255 files/di
 MD5 e7bfb72073e1ade3470d60ba93042804 files/digest-spidermonkey-1.5_rc5 63
 RMD160 57d592fdb69d165a4ed78546e4c09e86d1fb6c4c files/digest-spidermonkey-1.5_rc5 63
 SHA256 6577cd567c5bccf00de98430ddca7bff41370c39a60fd87f989a8a0d92bdd81e files/digest-spidermonkey-1.5_rc5 63
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFPr4namhnQswr0vIRAs+/AKCnvOyOx95tWfa3+uQF0eFV5u5f2ACfT1/T
+ovnRBXJ1a8bnLzXJ5kcc7ug=
+=JCxD
+-----END PGP SIGNATURE-----
