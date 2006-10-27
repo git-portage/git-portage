@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/grisbi/Attic/grisbi-0.5.8.ebuild,v 1.2 2006/05/13 21:24:56 tester Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/grisbi/Attic/grisbi-0.5.8.ebuild,v 1.3 2006/10/27 17:15:02 gustavoz Exp $
 
 inherit eutils
 
@@ -12,9 +12,10 @@ SRC_URI="mirror://sourceforge/grisbi/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~sparc x86"
+KEYWORDS="amd64 ~ppc sparc x86"
 
 DEPEND="dev-libs/libxml2
+	>=dev-util/pkgconfig-0.20
 	>=x11-libs/gtk+-2.2.0
 	ofx? ( >=dev-libs/libofx-0.7.0 )
 	print? ( virtual/tetex
