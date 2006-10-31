@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX imagemagick-6.2.5.4-docs.patch 1025 RMD160 ff4d59b7c7b447fec55f981cd9f94f1f27cf6a06 SHA1 4f674ebc4554f7edc6c938f14360dc8a50881141 SHA256 c7ee14154f5a26c6b744bef518adcdba3a33797b29fdfa456f96c748886c6db2
 MD5 a2ea32f35ad5cd39b86e963c6af87076 files/imagemagick-6.2.5.4-docs.patch 1025
 RMD160 ff4d59b7c7b447fec55f981cd9f94f1f27cf6a06 files/imagemagick-6.2.5.4-docs.patch 1025
@@ -29,3 +32,10 @@ SHA256 629523b989b4d82c8858bedb4416832ec397618e345609225dac7ac65587a319 files/di
 MD5 cee80301208cab77996ca62352b9189d files/digest-imagemagick-6.2.9.5-r1 265
 RMD160 ac4d6f121492e7e41e22c8b08a95fd8b54d0c250 files/digest-imagemagick-6.2.9.5-r1 265
 SHA256 629523b989b4d82c8858bedb4416832ec397618e345609225dac7ac65587a319 files/digest-imagemagick-6.2.9.5-r1 265
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFRyFbamhnQswr0vIRAtyYAJ4hKseGIvY5I0lkD0Ibbid22C3/dgCfRBuj
+VJ84j4GHLbnm6aYjwa3O00g=
+=SEus
+-----END PGP SIGNATURE-----
