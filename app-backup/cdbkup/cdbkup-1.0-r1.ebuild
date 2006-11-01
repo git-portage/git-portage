@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbkup/cdbkup-1.0-r1.ebuild,v 1.1 2005/07/04 06:40:20 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbkup/cdbkup-1.0-r1.ebuild,v 1.2 2006/11/01 03:56:40 pylon Exp $
 
 inherit eutils
 
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86 ~ppc ~amd64"
 IUSE=""
 
-DEPEND=">=app-cdr/cdrtools-1.11.28"
+DEPEND="virtual/cdrtools"
 RDEPEND="${DEPEND}
 	virtual/eject
 	!app-misc/cdcat"

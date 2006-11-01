@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/cdbkup
-# Copyright 2002-2005 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbkup/ChangeLog,v 1.2 2005/07/04 07:20:45 robbat2 Exp $
+# Copyright 2002-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbkup/ChangeLog,v 1.3 2006/11/01 03:56:40 pylon Exp $
+
+  01 Nov 2006; Lars Weiler <pylon@gentoo.org> cdbkup-1.0.ebuild,
+  cdbkup-1.0-r1.ebuild:
+  Changing to virtual/cdrtools; bug #147880.
 
   04 Jul 2005; Robin H. Johnson <robbat2@gentoo.org> +cdbkup-1.0.ebuild,
   +cdbkup-1.0-r1.ebuild:
