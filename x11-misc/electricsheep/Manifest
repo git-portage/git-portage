@@ -1,6 +1,9 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
+- -----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX electricsheep-2.6.7-cflagsfix.patch 16890 RMD160 2ee5709fb7bfd2ae5a3fa11f271f5d8b8b9633fd SHA1 00c59e7196f69a066b16acca67350ea550070390 SHA256 b4d6343d1159c5c755d75412548c20ef6b27b18aeee6386e64cc84acc46f9ff0
 MD5 d73734597cf76749bb649d73d7e7f3bb files/electricsheep-2.6.7-cflagsfix.patch 16890
 RMD160 2ee5709fb7bfd2ae5a3fa11f271f5d8b8b9633fd files/electricsheep-2.6.7-cflagsfix.patch 16890
@@ -41,10 +44,17 @@ SHA256 4bd8a14d43ec63eb5f662cec2cb62c5a5a8690ea2617259954ea12c3c67edd5a files/di
 MD5 db9f89b7c6b03c0af3820cb0c020c11d files/digest-electricsheep-2.6.8 262
 RMD160 8c555173937f8a5266c40837aa66cde3096a7ece files/digest-electricsheep-2.6.8 262
 SHA256 1e502fef1ab43c6d3ffba747278f3d432b802607dbde2fbeeab0071c8e44d01d files/digest-electricsheep-2.6.8 262
------BEGIN PGP SIGNATURE-----
+- -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.5-ecc0.1.6 (GNU/Linux)
 
 iD8DBQFFS9OEmdTrptrqvGERAlczAJ4q+3S/MBkT79jOO7bcR5ylH8iubACcDynn
 VmUiTQ/MPMEJHJoBejJIdHk=
 =ozxW
+- -----END PGP SIGNATURE-----
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5-ecc0.1.6 (GNU/Linux)
+
+iD8DBQFFS9TTmdTrptrqvGERAnDRAJ9/TsoIjg5yGuNWaEjMruzCgQPzkQCgkFcb
+V+TarZBAEt9Wg6f4GBhv3Lg=
+=Rd3/
 -----END PGP SIGNATURE-----
