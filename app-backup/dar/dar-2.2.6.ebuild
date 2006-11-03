@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/Attic/dar-2.2.6.ebuild,v 1.4 2006/04/26 18:03:19 gustavoz Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/Attic/dar-2.2.6.ebuild,v 1.5 2006/11/03 04:15:11 matsuu Exp $
 
 inherit flag-o-matic
 
@@ -19,6 +19,14 @@ DEPEND=">=sys-libs/zlib-1.2.3
 	doc? ( app-doc/doxygen )
 	nls? ( sys-devel/gettext )
 	ssl? ( dev-libs/openssl )"
+
+pkg_setup() {
+	if use dar32 && use dar64 ; then
+		eerror "dar32 and dar64 cannot be enabled together."
+		eerror "Please remove one of them and try the emerge again."
+		die "Please remove dar32 or dar64."
+	fi
+}
 
 src_compile() {
 	local myconf="--disable-upx"
