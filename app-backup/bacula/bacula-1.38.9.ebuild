@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.38.9.ebuild,v 1.2 2006/09/21 22:22:11 blubb Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.38.9.ebuild,v 1.3 2006/11/04 09:17:14 grobian Exp $
 
 inherit eutils
 
@@ -104,10 +104,10 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	# adjusts default configuration files for several binaries
 	# to /etc/bacula/<config> instead of ./<config>
-	epatch ${FILESDIR}/${P}-default-configs.patch
+	epatch "${FILESDIR}/${P}"-default-configs.patch
 }
 
 src_compile() {
@@ -174,10 +174,10 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR=${D} install || die "Failed install to ${D} !"
+	emake DESTDIR="${D}" install || die "Failed install to ${D} !"
 
 	if use static ; then
-		cd ${D}/usr/sbin
+		cd "${D}"/usr/sbin
 		mv static-bacula-fd bacula-fd
 		mv static-bconsole bconsole
 		if ! use bacula-clientonly ; then
@@ -187,12 +187,12 @@ src_install() {
 		if use gnome ; then
 			mv static-gnome-console gnome-console
 		fi
-		cd ${S}
+		cd "${S}"
 	fi
 
 	if use bacula-console ; then
 		if use gnome ; then
-			emake DESTDIR=${D} \
+			emake DESTDIR="${D}" \
 				install-menu \
 				install-menu-xsu || die "Failed to install gnome menu files to ${D}" \
 			make_desktop_entry \
@@ -209,7 +209,7 @@ src_install() {
 		dodir /usr/libexec/bacula/updatedb
 		insinto /usr/libexec/bacula/updatedb/
 		insopts -m0754
-		doins ${S}/updatedb/*
+		doins "${S}"/updatedb/*
 		fperms 0640 /usr/libexec/bacula/updatedb/README
 
 		# the logrotate configuration
@@ -218,7 +218,7 @@ src_install() {
 			dodir /etc/logrotate.d
 			insinto /etc/logrotate.d
 			insopts -m0644
-			newins ${S}/scripts/logrotate bacula
+			newins "${S}"/scripts/logrotate bacula
 		fi
 
 		# the logwatch scripts
@@ -227,41 +227,41 @@ src_install() {
 			dodir /etc/log.d/scripts/services
 			dodir /etc/log.d/conf/logfiles
 			dodir /etc/log.d/conf/services
-			cd ${S}/scripts/logwatch
-			emake DESTDIR=${D} install || die "Failed to install logwatch scripts to ${D} !"
-			cd ${S}
+			cd "${S}"/scripts/logwatch
+			emake DESTDIR="${D}" install || die "Failed to install logwatch scripts to ${D} !"
+			cd "${S}"
 		fi
 	fi
 
 	# documentation
-	for my_doc in ${S}/{ChangeLog,LICENSE,README,ReleaseNotes,kernstodo,doc/BaculaRoadMap_*.pdf}
+	for my_doc in "${S}"/{ChangeLog,LICENSE,README,ReleaseNotes,kernstodo,doc/BaculaRoadMap_*.pdf}
 	do
-		dodoc ${my_doc}
+		dodoc "${my_doc}"
 	done
 	if use doc ; then
-		dodoc ${WORKDIR}/${PN}-docs-${DOC_VER}/developers/developers.pdf
-		dodoc ${WORKDIR}/${PN}-docs-${DOC_VER}/manual/bacula.pdf
+		dodoc "${WORKDIR}/${PN}-docs-${DOC_VER}"/developers/developers.pdf
+		dodoc "${WORKDIR}/${PN}-docs-${DOC_VER}"/manual/bacula.pdf
 		diropts -m0755
-		dodir /usr/share/doc/${PF}/developers
-		dodir /usr/share/doc/${PF}/manual
+		dodir /usr/share/doc/"${PF}"/developers
+		dodir /usr/share/doc/"${PF}"/manual
 		insopts -m0644
-		insinto /usr/share/doc/${PF}/developers
-		doins ${WORKDIR}/${PN}-docs-${DOC_VER}/developers/developers/*
-		insinto /usr/share/doc/${PF}/manual
-		doins ${WORKDIR}/${PN}-docs-${DOC_VER}/manual/bacula/*
+		insinto /usr/share/doc/"${PF}"/developers
+		doins "${WORKDIR}/${PN}-docs-${DOC_VER}"/developers/developers/*
+		insinto /usr/share/doc/"${PF}"/manual
+		doins "${WORKDIR}/${PN}-docs-${DOC_VER}"/manual/bacula/*
 	fi
 
 	# clean up permissions left broken by install
-	fperms 0644 ${D}/usr/libexec/bacula/query.sql
+	fperms 0644 "${D}"/usr/libexec/bacula/query.sql
 	prepall
 
 	# setup init scripts
 	my_services="fd"
 	if ! use bacula-clientonly ; then
-		if ! use bacula-no-dir ; then
+		if ! use bacula-nodir ; then
 			my_services="${my_services} dir"
 		fi
-		if ! use bacula-no-sd ; then
+		if ! use bacula-nosd ; then
 			my_services="${my_services} sd"
 		fi
 	fi
@@ -276,16 +276,16 @@ src_install() {
 		my_scripts="bacula-all"
 	fi
 	for script in ${my_scripts}; do
-		cp ${FILESDIR}/${PV}/${script}-conf ${T}/${script}.conf
-		cp ${FILESDIR}/${PV}/${script}-init ${T}/${script}.init
+		cp "${FILESDIR}/${PV}/${script}"-conf "${T}/${script}".conf
+		cp "${FILESDIR}/${PV}/${script}"-init "${T}/${script}".init
 		if [ "${mydb}" == "sqlite" ]; then
-			sed -i -e "s:%database%::" ${T}/${script}.init
+			sed -i -e "s:%database%::" "${T}/${script}".init
 		else
-			sed -i -e "s:%database%:${mydb}:" ${T}/${script}.init
+			sed -i -e "s:%database%:${mydb}:" "${T}/${script}".init
 		fi
-		sed -i -e "s:%services%:${my_services}:" ${T}/${script}.conf
-		newexe ${T}/${script}.init ${script}
-		newins ${T}/${script}.conf ${script}
+		sed -i -e "s:%services%:${my_services}:" "${T}/${script}".conf
+		newexe "${T}/${script}".init "${script}"
+		newins "${T}/${script}".conf "${script}"
 	done
 
 	# make sure the working directory exists
@@ -300,7 +300,7 @@ pkg_postinst() {
 		fowners bacula:bacula /var/lib/bacula
 	fi
 
-	if ! use bacula-clientonly && ! use bacula-no-dir ; then
+	if ! use bacula-clientonly && ! use bacula-nodir ; then
 		einfo "If this is a new install, you must create the ${mydb} databases with:"
 		einfo " /usr/libexec/bacula/create_${mydb}_database"
 		einfo " /usr/libexec/bacula/make_${mydb}_tables"
