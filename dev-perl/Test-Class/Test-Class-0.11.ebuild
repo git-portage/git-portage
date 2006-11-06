@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-Class/Attic/Test-Class-0.11.ebuild,v 1.15 2006/08/18 01:34:56 mcummings Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-Class/Attic/Test-Class-0.11.ebuild,v 1.16 2006/11/06 16:44:46 mcummings Exp $
 
 inherit perl-module
 
@@ -21,6 +21,3 @@ DEPEND=">=virtual/perl-Storable-2
 	dev-perl/Test-SimpleUnit
 	dev-perl/Pod-Coverage
 	dev-lang/perl"
-RDEPEND="${DEPEND}"
-
-
