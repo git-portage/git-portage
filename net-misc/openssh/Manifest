@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX openssh-3.9_p1-chroot.patch 3026 RMD160 23b2a1c819580b0f2fcb927c13c63e4f16387333 SHA1 78f85bc81c0034e03d06dd3c7ab91b9210fc18fb SHA256 014158a32c707b2a79ac606aeefb6bc09f24c3f07ce5df353ddad96095518597
 MD5 c4edd6a7aa1418ce5bf74aeb46627dbf files/openssh-3.9_p1-chroot.patch 3026
 RMD160 23b2a1c819580b0f2fcb927c13c63e4f16387333 files/openssh-3.9_p1-chroot.patch 3026
@@ -241,3 +244,10 @@ SHA256 a02a26ccb3fdf24c5b0a7196af3bb5273e61193f91fa383d479dc9e0e959630c files/di
 MD5 1640aac282df2ff3bbca8fd7e94bd891 files/digest-openssh-4.4_p1-r6 1334
 RMD160 31d7d0e9b09bd8837de83abe8ee24b7878df7d9a files/digest-openssh-4.4_p1-r6 1334
 SHA256 81ff3d47e3f63ad4d4c31f6208d7926654b98b6a7cf6d3b937847faae6117d0e files/digest-openssh-4.4_p1-r6 1334
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFT0+kamhnQswr0vIRAiHmAKCHYv489byWqzAgUUOv0j3DxFf/GQCeL6e5
+/oI1ZPgE9qP/h3UFKRKPM5M=
+=shSQ
+-----END PGP SIGNATURE-----
