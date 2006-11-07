@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/ccollect-0.5.1.ebuild,v 1.1 2006/10/20 07:53:42 killerfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/ccollect-0.5.1.ebuild,v 1.2 2006/11/07 22:27:03 dev-zero Exp $
 
 DESCRIPTION="(pseudo) incremental backup with different exclude lists using
 hardlinks and rsync"
@@ -9,13 +9,11 @@ SRC_URI="http://linux.schottelius.org/ccollect/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~hppa ~ppc ~x86"
+KEYWORDS="~amd64 ~hppa ~ppc ~x86"
 IUSE="doc"
 
 DEPEND="doc? ( >=app-text/asciidoc-7.0.2 )"
-RDEPEND="sys-devel/bc
-	net-misc/rsync
-	app-arch/pax"
+RDEPEND="net-misc/rsync"
 
 src_compile() {
 	if use doc; then
@@ -45,4 +43,3 @@ pkg_postinst() {
 	ewarn "/usr/share/ccollect/tools/config-pre-0.4-to-0.4.sh"
 	ewarn "because the old configuration is no longer compatible."
 }
-
