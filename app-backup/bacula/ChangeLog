@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.16 2006/11/04 09:17:14 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.17 2006/11/07 09:30:41 aross Exp $
+
+  07 Nov 2006; Andrew Ross <aross@gentoo.org> metadata.xml:
+  Remove labmonkey from metadata.xml, as he's no longer bacula's maintainer.
+  bacula.
 
   04 Nov 2006; Fabian Groffen <grobian@gentoo.org> bacula-1.38.9.ebuild:
   Quoted some variables, and fixed use of USE-flags, see bug #153995
