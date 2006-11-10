@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-pda/libopensync-plugin-palm/Attic/libopensync-plugin-palm-0.19.ebuild,v 1.1 2006/10/25 16:21:34 peper Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-pda/libopensync-plugin-palm/Attic/libopensync-plugin-palm-0.19.ebuild,v 1.2 2006/11/10 18:49:16 peper Exp $
 
 inherit autotools
 
@@ -13,10 +13,9 @@ SLOT="0"
 LICENSE="LGPL-2.1"
 IUSE=""
 
-DEPEND=">=app-pda/libopensync-0.19
+DEPEND="=app-pda/libopensync-${PV}*
 	>=app-pda/pilot-link-0.11.8
 	dev-libs/libxml2"
-
 RDEPEND="${DEPEND}"
 
 src_unpack() {
@@ -29,6 +28,6 @@ src_unpack() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog COPYING NEWS README
 }

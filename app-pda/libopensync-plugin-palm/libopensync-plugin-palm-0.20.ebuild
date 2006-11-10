@@ -1,21 +1,31 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-pda/libopensync-plugin-irmc/Attic/libopensync-plugin-irmc-0.19.ebuild,v 1.3 2006/11/10 18:47:39 peper Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-pda/libopensync-plugin-palm/Attic/libopensync-plugin-palm-0.20.ebuild,v 1.1 2006/11/10 18:49:16 peper Exp $
 
-DESCRIPTION="OpenSync IrMC plugin"
+inherit autotools
+
+DESCRIPTION="OpenSync Palm Plugin"
 HOMEPAGE="http://www.opensync.org/"
 SRC_URI="http://dev.gentooexperimental.org/~peper/distfiles/${P}.tar.gz"
 
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
-LICENSE="GPL-2"
+LICENSE="LGPL-2.1"
 IUSE=""
 
 DEPEND="=app-pda/libopensync-${PV}*
-	>=dev-libs/openobex-1.0
-	net-wireless/bluez-libs"
-
+	>=app-pda/pilot-link-0.11.8
+	dev-libs/libxml2"
 RDEPEND="${DEPEND}"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
+	# Patch fixing includedir for pisock
+	epatch "${FILESDIR}/${P}-include_pisock.patch"
+	eautoreconf
+}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
