@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX 2.2.0/debian-disable-buggy-umul_ppmm.patch 753 RMD160 e0ae8ad88deaa925ea5415d6e77eb5cd5d894109 SHA1 e329ddb795f6969028a2c46e69e2e8a82c69b560 SHA256 8d1ee311fee1f09f7311ce72428845e7233021c5578c42bed7a24bb01fc1f4da
 MD5 be0b2edcf2ceb8c3af3ee4e72512dc5e files/2.2.0/debian-disable-buggy-umul_ppmm.patch 753
 RMD160 e0ae8ad88deaa925ea5415d6e77eb5cd5d894109 files/2.2.0/debian-disable-buggy-umul_ppmm.patch 753
@@ -100,3 +103,10 @@ SHA256 fd671c3ccece1d416e9b46718913d3ed839e8d0129ad8577df0551e91e6f6ece files/di
 MD5 f515569e399ff1b91bd8361728ae26a1 files/digest-mpfr-2.2.0_p16 452
 RMD160 77c49e26a5a04eb5fdf1356812b0bd59034eaaa9 files/digest-mpfr-2.2.0_p16 452
 SHA256 fd671c3ccece1d416e9b46718913d3ed839e8d0129ad8577df0551e91e6f6ece files/digest-mpfr-2.2.0_p16 452
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFVo2tamhnQswr0vIRAse+AKCTV/xOYVcBYRH1oLpw4u/tWiSmFwCggXfx
+NDV8FD9yI7uJ8OxCNtUz7+k=
+=C6Sz
+-----END PGP SIGNATURE-----
