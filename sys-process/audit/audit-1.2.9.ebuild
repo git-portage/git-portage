@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/audit/Attic/audit-1.2.3.ebuild,v 1.2 2006/11/13 11:41:07 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-process/audit/Attic/audit-1.2.9.ebuild,v 1.1 2006/11/13 11:41:07 robbat2 Exp $
 
 inherit eutils autotools toolchain-funcs
 
@@ -8,23 +8,28 @@ DESCRIPTION="Userspace utilities for storing and processing auditing records."
 HOMEPAGE="http://people.redhat.com/sgrubb/audit/"
 SRC_URI="${HOMEPAGE}${P}.tar.gz"
 
+
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-*"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/python-2.4"
 DEPEND="${RDEPEND}
 		dev-lang/swig
-		>=sys-kernel/linux-headers-2.6.17_p3"
+		>=sys-kernel/linux-headers-2.6.17-r1"
 # Do not use os-headers as this is linux specific
-# linux-headers 2.6.17_p3 is NOT in the tree yet.
-# It is basically linux-headers-2.6.17 + patch-2.6.17-git3 - 2.6.16-appCompat.patch
 
+HEADER_KV="2.6.18-rc4"
 src_unpack() {
 	unpack ${A} || die "unpack failed"
-	epatch ${FILESDIR}/${P}-syscall-partial.patch
 	cd ${S} || die "cd '${S}' failed"
+	for i in audit.h elf-em.h; do
+		cp -f ${FILESDIR}/${i}-${HEADER_KV} ${S}/lib/${i}
+	done
+	sed -i -e 's,<linux/elf-em.h>,"elf-em.h",g' ${S}/lib/audit.h
+	sed -i -e 's,<linux/audit.h>,"audit.h",g' ${S}/lib/libaudit.h
+	cp -f ${S}/lib/{audit,elf-em}.h ${S}/src/mt/
 	eautoreconf || die "eautoreconf failed"
 }
 
