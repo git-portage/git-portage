@@ -1,0 +1,10 @@
+# ChangeLog for app-backup/cpdup
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/cpdup/ChangeLog,v 1.1 2006/11/14 09:33:48 drizzt Exp $
+
+*cpdup-1.07 (14 Nov 2006)
+
+  14 Nov 2006; Timothy Redaelli <drizzt@gentoo.org> +metadata.xml,
+  +cpdup-1.07.ebuild:
+  Initial version, imported from transition overlay.
+
