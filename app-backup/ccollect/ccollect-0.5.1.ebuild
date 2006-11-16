@@ -1,11 +1,11 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/ccollect-0.5.1.ebuild,v 1.2 2006/11/07 22:27:03 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/ccollect-0.5.1.ebuild,v 1.3 2006/11/16 07:07:10 killerfox Exp $
 
 DESCRIPTION="(pseudo) incremental backup with different exclude lists using
 hardlinks and rsync"
-HOMEPAGE="http://linux.schottelius.org/ccollect/"
-SRC_URI="http://linux.schottelius.org/ccollect/${P}.tar.bz2"
+HOMEPAGE="http://unix.schottelius.org/ccollect/"
+SRC_URI="http://unix.schottelius.org/ccollect/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"

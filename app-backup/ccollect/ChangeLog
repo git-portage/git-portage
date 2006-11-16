@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/ccollect
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/ChangeLog,v 1.16 2006/11/07 22:27:03 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/ChangeLog,v 1.17 2006/11/16 07:07:10 killerfox Exp $
+
+  16 Nov 2006; René Nussbaumer <killerfox@gentoo.org>
+  ccollect-0.3.3.ebuild, ccollect-0.4.ebuild, ccollect-0.4.2.ebuild,
+  ccollect-0.5.1.ebuild:
+  Changed URL from linux.schottelius.org to unix.schottelius.org
 
   07 Nov 2006; Tiziano Müller <dev-zero@gentoo.org> ccollect-0.5.1.ebuild:
   Added ~amd64 keyword. Removed pax and bc from dependency list (since not
