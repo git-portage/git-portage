@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX scorched3d-40-freealut.patch 1642 RMD160 f1b34457eb557593c9d41227353cd0d44d7e1737 SHA1 ea6eabe5a8d79f31e67b8cf2827ecbadf67789a6 SHA256 65bb549d836d2cd724cb1ab2ce41b57696f2ac0ae3ba5b9457acab57e04c039f
 MD5 8fa3a944a0ab30b2ca9ce943f979ae20 files/scorched3d-40-freealut.patch 1642
 RMD160 f1b34457eb557593c9d41227353cd0d44d7e1737 files/scorched3d-40-freealut.patch 1642
@@ -38,3 +41,10 @@ SHA256 b892449b76a28869efd1fbd3df0537f743f17a82493c3c9094ee923a8eea2ddc files/di
 MD5 f72c3d802af589fdfb40d73f9b12e0e9 files/digest-scorched3d-40.1d 268
 RMD160 796c57bfbb7dc79fc349d5d405958684cc83a41d files/digest-scorched3d-40.1d 268
 SHA256 f6da9071ada6d9d7fb77f67df2cafdb9d74bed1d4374288bd489cd274bf9136b files/digest-scorched3d-40.1d 268
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFYKYzdz7hIScOURERAt0qAJ4stJzqGkv/kRmQvDJi/gkDmppmygCg8kP5
+wxatwxes3xhfNR3v1FvXiEo=
+=zq4N
+-----END PGP SIGNATURE-----
