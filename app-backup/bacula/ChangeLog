@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.17 2006/11/07 09:30:41 aross Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.18 2006/11/23 15:17:07 vivo Exp $
+
+  23 Nov 2006; Francesco Riosa <vivo@gentoo.org> bacula-1.36.3-r2.ebuild,
+  bacula-1.36.3-r3.ebuild, bacula-1.38.5.ebuild, bacula-1.38.9.ebuild:
+  dev-db/mysql => virtual/mysql
 
   07 Nov 2006; Andrew Ross <aross@gentoo.org> metadata.xml:
   Remove labmonkey from metadata.xml, as he's no longer bacula's maintainer.
