@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 DIST SDLSasteroids-3.0.1.tar.gz 531781
 EBUILD sdlsasteroids-3.0.1.ebuild 1176 RMD160 84ace6dfa44aa2afaa679e84d67ca6168b52e115 SHA1 be92d2e67c7e8ef518607532637867054b2fb380 SHA256 edd4bfa923dcf753014ad5bd9bc05655da5ce847132b8741172c37bfc1d3db6d
 MD5 1b0381372e96365cae88ffb1db9c664c sdlsasteroids-3.0.1.ebuild 1176
@@ -14,3 +17,10 @@ SHA256 1423a4fdd4a79b1728a2056d9e300f7e1074253095d82726218d9e9b953888a3 metadata
 MD5 c86a258d418bf42aab1af60f31635fb1 files/digest-sdlsasteroids-3.0.1 71
 RMD160 b274c6bf843978074553f2cde7d3287fb21a2e7b files/digest-sdlsasteroids-3.0.1 71
 SHA256 ded2f629c5d9661128f4d40a1d00ab18ede204be56e5ad91b114896f4bfba3df files/digest-sdlsasteroids-3.0.1 71
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFZgNQdz7hIScOURERAvV1AKDMVyxT1LvWyFLFdfobuKLig+VQAwCg9n/Z
+OmEckGN7H+1o2D3hbPxXS40=
+=x3Ah
+-----END PGP SIGNATURE-----
