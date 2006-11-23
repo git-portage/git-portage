@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX kamikaze-0.2.2-gcc41.patch 684 RMD160 b56ea2bc02a8d9300abada74447879d3c608416f SHA1 9c7f6c448661df5c84441d8e51182e7674f02ac2 SHA256 72fc3b92c9dda4be2bbc3e092e12ab15794431f23a53e7d8ffcc5a8069fe0ce1
 MD5 d8e5cd6c7e495d0b6224d4768b9c55a2 files/kamikaze-0.2.2-gcc41.patch 684
 RMD160 b56ea2bc02a8d9300abada74447879d3c608416f files/kamikaze-0.2.2-gcc41.patch 684
@@ -25,3 +28,10 @@ SHA256 c69f22a55401a438c70fd93c7d5e477f70b249e8f1abe0e12eab6be2e3e6241b files/di
 MD5 1bd9d71960251005f319be585cc4f984 files/digest-kamikaze-0.2.2-r1 247
 RMD160 6eb2833e5bd64859e709412ffdc6b76c55974855 files/digest-kamikaze-0.2.2-r1 247
 SHA256 c69f22a55401a438c70fd93c7d5e477f70b249e8f1abe0e12eab6be2e3e6241b files/digest-kamikaze-0.2.2-r1 247
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFZf74dz7hIScOURERAqj4AJ4xYjI0AGqcOZdBi5rIqMdnhZCXAgCgm60K
+vobgCeBLi8OtGFCdGVEcucw=
+=lV1k
+-----END PGP SIGNATURE-----
