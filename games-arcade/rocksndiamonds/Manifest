@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX rocksndiamonds-3.2.2-parallel-build.patch 380 RMD160 c7be803b01337e5462490ba85a13b140321682b7 SHA1 500bf286a9a8e88f01dda77214921db600922904 SHA256 45b34ccf039153021b74d553553faa5fe913c68028acf59d57448f1e779df1a2
 MD5 e32e5d43ac5ba72b7710c2b97c3abec2 files/rocksndiamonds-3.2.2-parallel-build.patch 380
 RMD160 c7be803b01337e5462490ba85a13b140321682b7 files/rocksndiamonds-3.2.2-parallel-build.patch 380
@@ -28,3 +31,10 @@ SHA256 1423a4fdd4a79b1728a2056d9e300f7e1074253095d82726218d9e9b953888a3 metadata
 MD5 005bbd7c5ce1079b6ee3a9fc2fa9809b files/digest-rocksndiamonds-3.2.2 2753
 RMD160 691b8c90430511e6ccf1360da0c3117ceb7cba14 files/digest-rocksndiamonds-3.2.2 2753
 SHA256 a6b25c5a0246bc1b104b036bb2fb0575b078bdfbd61fdfb91e56fcefd9876abd files/digest-rocksndiamonds-3.2.2 2753
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFZgC2dz7hIScOURERAqfzAKCxtnN4abQzTQcNuhQs8t2rs50uqwCgzXwa
+86AJ0xk+5mkJHPf2Z28SK1c=
+=qqNQ
+-----END PGP SIGNATURE-----
