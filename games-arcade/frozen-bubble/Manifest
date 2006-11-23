@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX 1.0.0-no-chainreaction.patch 357 RMD160 49e017082d91488cd9d069d8566cba869013c700 SHA1 ae5dd0dbcdeab78788a5c729f4da24391b9ac15e SHA256 610811d88be84319f6e61ec73ffbb93c261b5b5be3d8c12aa7c26da1bd8f24c6
 MD5 c30d59b06b6112e4d3ca9ba2117c3202 files/1.0.0-no-chainreaction.patch 357
 RMD160 49e017082d91488cd9d069d8566cba869013c700 files/1.0.0-no-chainreaction.patch 357
@@ -45,3 +48,10 @@ SHA256 d5bc4171f6949e4cf0884c5dbca3813eb49fcce410ccfc4b8636a2a1197e6825 files/di
 MD5 85e6587dd90f6a84e66d098801ae03a8 files/digest-frozen-bubble-2.0.0 596
 RMD160 e680acb88603a7fdc7e236f9d3f3ee6b5e322898 files/digest-frozen-bubble-2.0.0 596
 SHA256 e2ed4a0c5f29844a509da3d32b72bcfe591e47a3f6b5bab3a0b4e920a970f3d9 files/digest-frozen-bubble-2.0.0 596
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFZf0Ldz7hIScOURERAnU2AJ9k4z9uRIW+RNCfPuXNLxM1IVLhtgCg2knC
+Zt549xgTRO4o/x/TziV6DDM=
+=gDW0
+-----END PGP SIGNATURE-----
