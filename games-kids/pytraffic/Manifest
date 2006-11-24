@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX 2.5-gentoo-dirs.patch 2013 RMD160 5a76fd451790f772bd6ff9c8859f4ab90f9efca9 SHA1 dfb0717e6fcca0ce3a53ee7fea35f06a7bace2e4 SHA256 209c68607b5d2581e4be16ad14c39bfa1cd4fe358870980e1609f496a5731ac2
 MD5 f2e093329e4a626fbfd1f4b5bca0bf98 files/2.5-gentoo-dirs.patch 2013
 RMD160 5a76fd451790f772bd6ff9c8859f4ab90f9efca9 files/2.5-gentoo-dirs.patch 2013
@@ -26,3 +29,10 @@ SHA256 e2cea7503d8e4c5105e079ec60fcaa283e12ddf2321019be0c89da66bc9b7483 files/di
 MD5 1d50a281012247a155636270cbed7774 files/digest-pytraffic-2.5.3 250
 RMD160 c77fbb686667ae696f563821dd675a4c91e91622 files/digest-pytraffic-2.5.3 250
 SHA256 90576d7a46c08f34ae90dbecd07141fc2c5573cf07682619a176e0c1e8732938 files/digest-pytraffic-2.5.3 250
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFZxVDdz7hIScOURERAtA4AJ94GOGpz64KjonnjKI9f+nutGtKDACgo47n
+Lb1FsESxLvuZM6VSraNFUAE=
+=6NGw
+-----END PGP SIGNATURE-----
