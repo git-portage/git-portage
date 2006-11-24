@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX liquidwar-5.6.3-exec-stack.patch 430 RMD160 979cd0d211211a1864ca237d4af394d04c2e5635 SHA1 e911562d977b4f8f38ef2ed3e9095969918f4d17 SHA256 d661dab2c07f2df8089c618d4ccf6e40032fe3af19704ff9b4273aec21043263
 MD5 82fad0c0744730fbff03e63f19adb90f files/liquidwar-5.6.3-exec-stack.patch 430
 RMD160 979cd0d211211a1864ca237d4af394d04c2e5635 files/liquidwar-5.6.3-exec-stack.patch 430
@@ -18,3 +21,10 @@ SHA256 1423a4fdd4a79b1728a2056d9e300f7e1074253095d82726218d9e9b953888a3 metadata
 MD5 8f690ec5f0097c29d0477bf7d257d59c files/digest-liquidwar-5.6.3 250
 RMD160 14cda961017941df3ccad590a21c8cdd2a5d6489 files/digest-liquidwar-5.6.3 250
 SHA256 c42c637fa68afb40c41cc13b75b6c8d7a65a03f5f0fc8ce13a7900aba221b48e files/digest-liquidwar-5.6.3 250
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFZzPTdz7hIScOURERAkWXAKDw/6yeMfRdyJJM5BpADbIEXpsW8ACff2Aq
+HpLyBr5SyQs02NGOgF9ciA8=
+=W2Ci
+-----END PGP SIGNATURE-----
