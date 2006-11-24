@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 DIST uqm-0.5.0-3domusic.uqm 18980071
 DIST uqm-0.5.0-content.uqm 11584345
 DIST uqm-0.5.0-source.tar.gz 1267039
@@ -20,3 +23,10 @@ SHA256 1423a4fdd4a79b1728a2056d9e300f7e1074253095d82726218d9e9b953888a3 metadata
 MD5 8124a223a881ec549870c2eee2b2d2ae files/digest-uqm-0.5.0 471
 RMD160 16afb9b22f75ad4d2067cdb0b8bfc125c6343b68 files/digest-uqm-0.5.0 471
 SHA256 85dee62c2ee939d47185941c8be645910bfabbd67024cc58d85313418d6ad3f6 files/digest-uqm-0.5.0 471
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFZzXGdz7hIScOURERAh4XAKCol50JRrBHCoRn3muhqk4qVauS+QCeOg76
+lVy3oZVFwoVqcRC17dL7I0w=
+=K6bW
+-----END PGP SIGNATURE-----
