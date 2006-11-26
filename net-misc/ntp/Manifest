@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX ntp-client.confd 747 RMD160 06c8312f745b6d532d41cb9f2319ef91c7d26c4a SHA1 5b1bf1d65683b66c284bee25e14b7f66fe21ec46 SHA256 fe0277d2b38cc52c2336b20fb46a62c20e2a273f025bbad6348a393aac4bb3ee
 MD5 47d7106c23cb6ac99c5bbfdcd2f3a7fa files/ntp-client.confd 747
 RMD160 06c8312f745b6d532d41cb9f2319ef91c7d26c4a files/ntp-client.confd 747
@@ -39,3 +42,10 @@ SHA256 14dc7da8f6d0ccaafa8408e289acd1a23f7adff23ef45c2fdd0d8b89d97d0222 metadata
 MD5 f6077d70e67af23af7319e71ed94cf8a files/digest-ntp-4.2.2_p3 500
 RMD160 40cc7ef3b95bb7f7c2ac5448100abf644be8487b files/digest-ntp-4.2.2_p3 500
 SHA256 560137fe3eb14759fad10b8b4c6af6e785a4de18be8103add02244e587d41f55 files/digest-ntp-4.2.2_p3 500
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFacWoamhnQswr0vIRAp3kAJ0TrNUpiATMBzZAtlf4W39vaXY93QCfVK6d
+TCil3W04SvJNrBx5n+ZUY3U=
+=zTxW
+-----END PGP SIGNATURE-----
