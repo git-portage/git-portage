@@ -1,12 +1,12 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-scheme/gauche-gl/Attic/gauche-gl-0.4.1.ebuild,v 1.4 2006/07/03 16:14:56 hattya Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-scheme/gauche-gl/Attic/gauche-gl-0.4.1.ebuild,v 1.5 2006/12/01 13:53:07 hattya Exp $
 
 inherit eutils flag-o-matic
 
 IUSE="cg"
 
-MY_P="${P/g/G}"
+MY_P=${P/g/G}
 
 DESCRIPTION="OpenGL binding for Gauche"
 HOMEPAGE="http://gauche.sf.net/"
@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/gauche/${MY_P}.tgz"
 LICENSE="BSD"
 KEYWORDS="~ppc x86"
 SLOT="0"
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 DEPEND="virtual/opengl
 	virtual/glut
@@ -39,7 +39,7 @@ src_compile() {
 
 src_install() {
 
-	emake DESTDIR=${D} install || die
+	emake DESTDIR="${D}" install || die
 
 	dodoc README ChangeLog
 
