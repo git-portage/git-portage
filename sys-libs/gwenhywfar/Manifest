@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 DIST gwenhywfar-1.18.0.tar.gz 1153882
 DIST gwenhywfar-2.4.0.tar.gz 1176666 RMD160 effa48e2d4576f87affdbf64d1a3d6b65bb142f5 SHA1 9fb439a2db4df5c377783635b2a8cdb433c01a02 SHA256 8165cecc0f28547da16fdc4e4e63c97027f29d5c21b459fda8f20a9bccdd81a7
 EBUILD gwenhywfar-1.18.0.ebuild 1169 RMD160 c8efcbe12a6399f55e9b3a0198bd8f17ede72e26 SHA1 eb9eb7775bdc34bc1ae246064e06b96f7812ae76 SHA256 d521f03dc6b854c5c065cb17e0eb69fa5992181fb9330e349d1d9579ec831230
@@ -22,3 +25,10 @@ SHA256 c513d6562fdb4fe5c8de5955c49fc8f674f50ff56fbc5d64b2027b40e2dbee01 files/di
 MD5 2fd3f39b79129d654aeb7b6e04fd140a files/digest-gwenhywfar-2.4.0 253
 RMD160 c4ad36b29631bc339bff9d704f79b3da3acf0bef files/digest-gwenhywfar-2.4.0 253
 SHA256 941fcf86c0ce090f68abf6416209d1744fccf2ddd688a0073e10ca9ec20baee5 files/digest-gwenhywfar-2.4.0 253
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+iD8DBQFFdB+6r2QksT29OyARAuRCAJ45/3TWwtIoIbOZ2muKIBjdZ6YxLACgmSq0
+beMsfhSAOzGA9tvijUyfXQ8=
+=YCKv
+-----END PGP SIGNATURE-----
