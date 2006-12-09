@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/Attic/curl-7.15.5.ebuild,v 1.2 2006/12/09 03:30:39 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/Attic/curl-7.16.0.ebuild,v 1.1 2006/12/09 03:30:39 dragonheart Exp $
 
 # NOTE: If you bump this ebuild, make sure you bump dev-python/pycurl!
 
@@ -51,7 +51,8 @@ src_compile() {
 		--enable-manual
 		--enable-telnet
 		--enable-nonblocking
-		--enable-largefile"
+		--enable-largefile
+		--enable-maintainer-mode"
 
 	if use ipv6 && use ares; then
 		ewarn "c-ares support disabled because it is incompatible with ipv6."
@@ -92,4 +93,12 @@ src_install() {
 	dodoc CHANGES README
 	dodoc docs/FEATURES docs/INTERNALS
 	dodoc docs/MANUAL docs/FAQ docs/BUGS docs/CONTRIBUTE
+}
+
+pkg_postinst() {
+	if [[ -e "${ROOT}"/usr/$(get_libdir)/libcurl.so.3 ]] ; then
+		ewarn "You must re-compile all packages that are linked against"
+		ewarn "curl-7.15.* by using revdep-rebuild from gentoolkit:"
+		ewarn "# revdep-rebuild --library libcurl.so.3"
+	fi
 }
