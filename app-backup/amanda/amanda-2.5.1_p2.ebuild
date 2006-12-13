@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.1_p2.ebuild,v 1.1 2006/12/12 15:59:08 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.1_p2.ebuild,v 1.2 2006/12/13 04:33:05 jer Exp $
 
 inherit eutils
 
@@ -32,7 +32,7 @@ DEPEND="${RDEPEND}
 	sys-devel/autoconf
 	sys-devel/automake"
 
-IUSE="berkdb debug gdbm samba xfs"
+IUSE="berkdb debug gdbm minimal samba xfs"
 
 S="${WORKDIR}/${P/_/}"
 MYFILESDIR="${WORKDIR}/files"
@@ -109,6 +109,10 @@ src_unpack() {
 	unpack "${A}"
 	# Fix glitch with recognizing tar-1.14.90
 	EPATCH_OPTS="-p1 -d ${S}" epatch ${FILESDIR}/patch-tar-1.14.90 || die "Failed to add tar support patch"
+	# Fix tar 1.16 changes
+	# ( http://cvs.savannah.gnu.org/viewcvs/tar/NEWS?rev=1.125&root=tar )
+	EPATCH_OPTS="-p0 -d ${S}" epatch ${FILESDIR}/${P}-tar-1.16.patch || die "Failed to add tar 1.16 patch"
+
 	# now the real fun
 	amanda_variable_setup
 	# places for us to work in
@@ -175,6 +179,9 @@ src_compile() {
 
 	# Force the correct TAR
 	myconf="${myconf} --with-gnutar=/bin/tar"
+
+	# Client only, as requested in bug #127725
+	use minimal && myconf="${myconf} --without-server"
 
 	econf ${myconf} || die "econf failed!"
 	emake -j1 || die "emake failed!"
