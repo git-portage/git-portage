@@ -86,6 +86,18 @@ AUX baselayout-1.12.7-ifconfig.patch 941 RMD160 ba51d02f9d491d678bb9723bf6a15502
 MD5 de46ee8253ddd51cd9f2cbfdfb154c9a files/baselayout-1.12.7-ifconfig.patch 941
 RMD160 ba51d02f9d491d678bb9723bf6a155025719df5d files/baselayout-1.12.7-ifconfig.patch 941
 SHA256 3e314527b3b9bb2780ce570d92bb038c82c87abc001b44ebc76ef3733791ca0c files/baselayout-1.12.7-ifconfig.patch 941
+AUX baselayout-1.13.0_alpha7-2380.patch 1245 RMD160 9569358ba672b873cbfdc055ef5be856493565b5 SHA1 993001c59552cff32599b55086cbde58faedcbe3 SHA256 9e08046a07819462f8042e4bf23322d1e56594fa49aa6bd5fe223d7977808074
+MD5 f58aed630c19dbfe0178f9fb69d670d7 files/baselayout-1.13.0_alpha7-2380.patch 1245
+RMD160 9569358ba672b873cbfdc055ef5be856493565b5 files/baselayout-1.13.0_alpha7-2380.patch 1245
+SHA256 9e08046a07819462f8042e4bf23322d1e56594fa49aa6bd5fe223d7977808074 files/baselayout-1.13.0_alpha7-2380.patch 1245
+AUX baselayout-1.13.0_alpha8-stop.patch 2421 RMD160 3bb4a03e5bafcff403a9d8c5432e4dbb41a36941 SHA1 fa09c2105df4774aa8aa2ddc71df842aed791a54 SHA256 2a2e67ea8047a2a2a1682a47a44fba8ce40c964be213fe40e9f35b4034fc22f2
+MD5 53bebb0c746cf571aaad1f2fde187940 files/baselayout-1.13.0_alpha8-stop.patch 2421
+RMD160 3bb4a03e5bafcff403a9d8c5432e4dbb41a36941 files/baselayout-1.13.0_alpha8-stop.patch 2421
+SHA256 2a2e67ea8047a2a2a1682a47a44fba8ce40c964be213fe40e9f35b4034fc22f2 files/baselayout-1.13.0_alpha8-stop.patch 2421
+AUX baselayout-1.13.0_alpha8-use.patch 685 RMD160 297e0d9529f83f2b7acd2d5e17926242cda31e64 SHA1 07c095e0c449b78d8747c3a4079091723d206ae2 SHA256 b785458e90cc9afa5bbe76aa9593e046fe3b6865024211afaa92a1f8e0b657c9
+MD5 8526913205a8290f5620ed14b12c54f1 files/baselayout-1.13.0_alpha8-use.patch 685
+RMD160 297e0d9529f83f2b7acd2d5e17926242cda31e64 files/baselayout-1.13.0_alpha8-use.patch 685
+SHA256 b785458e90cc9afa5bbe76aa9593e046fe3b6865024211afaa92a1f8e0b657c9 files/baselayout-1.13.0_alpha8-use.patch 685
 AUX baselayout-1.13.0_alpha9-ifconfig.patch 1197 RMD160 03441ec09c7f7ca671b332f938594644961b9b51 SHA1 6e62ea3e63022938a31dea9b3994773b487b36ad SHA256 c591cb5e322042d7a0788335c36e5ea05e3c26d60d6776783e7359630841f093
 MD5 565734ac3ee00122eb5713021637705e files/baselayout-1.13.0_alpha9-ifconfig.patch 1197
 RMD160 03441ec09c7f7ca671b332f938594644961b9b51 files/baselayout-1.13.0_alpha9-ifconfig.patch 1197
