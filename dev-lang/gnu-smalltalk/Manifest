@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX 50gnu-smalltalk-gentoo.el 268 RMD160 a6d540fa013e0b687137642ef85e188988441629 SHA1 1a22d586d3b0fd82e8b4cb232551e89bd9c36c69 SHA256 acfa1581fd8871a0a7ab610afbf678ecbfbe1b2c7b844316b96aebf43dd5b141
 MD5 1b43b00217fd402ab0f309202f633e46 files/50gnu-smalltalk-gentoo.el 268
 RMD160 a6d540fa013e0b687137642ef85e188988441629 files/50gnu-smalltalk-gentoo.el 268
@@ -38,3 +41,10 @@ SHA256 47ef6d56bad23943ca4b256f46c3b15ef6632b84bea5fdda553e03aedd009320 files/di
 MD5 d927e7b04845f2f543534c02547e3090 files/digest-gnu-smalltalk-2.3.1 250
 RMD160 93e363eed54594ab6e0d98ee828eb9dc29fa8d55 files/digest-gnu-smalltalk-2.3.1 250
 SHA256 6dd3db12845f73a65fd9e871a3922e4db4d3f15a36ba1c5ce7005f27ed1b487f files/digest-gnu-smalltalk-2.3.1 250
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFFhlHkaTNpke9pJcURAvkOAJwNHlmgf5NZ5mgP0eFjjdD7O7utSwCfW/KB
+q1nHfM+a2fsySItVvG60v94=
+=Tidm
+-----END PGP SIGNATURE-----
