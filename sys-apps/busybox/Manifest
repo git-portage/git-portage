@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX 1.2.0/bb.patch 1160 RMD160 fbee612ec7aea6ab9564bcd569e3ae69a553fceb SHA1 f88e645606a52f1192dea7e1509f30ec5c1d4c79 SHA256 5c0ee3389ae1b505c7dbf509bfc5d35279edf968ac2c1db25e9771c7e26754a2
 MD5 26cfb25027beabeb14d99db5a8c4afd0 files/1.2.0/bb.patch 1160
 RMD160 fbee612ec7aea6ab9564bcd569e3ae69a553fceb files/1.2.0/bb.patch 1160
@@ -26,3 +29,10 @@ SHA256 a11fdd02015a232398fdf22a20d26a95fc34d44c54513e6b26b6128d0b76122e metadata
 MD5 25f839e8bd7a70105b2b44cf151b57fa files/digest-busybox-1.2.2.1 253
 RMD160 aa8a187cdaf8ffc550a024deda2f779f31c60ae3 files/digest-busybox-1.2.2.1 253
 SHA256 7334648f93857477ce8a8b8d36c2dadbdd6a32b58ad6d15644ed4fdbceafb0dd files/digest-busybox-1.2.2.1 253
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFFj5RQ8bi6rjpTunYRAvy4AJ9mUQWRetQcEYc8N9TVkLtN+Y+iygCePp6M
+5wqOXNU3cKSrnmjCTLpfzAs=
+=ryZa
+-----END PGP SIGNATURE-----
