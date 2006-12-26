@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/Attic/kbackup-0.5.1.ebuild,v 1.1 2006/10/15 19:55:34 deathwing00 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/Attic/kbackup-0.5.1.ebuild,v 1.2 2006/12/26 14:28:19 peper Exp $
 
 inherit kde
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.kde-apps.org/content/files/44998-${P}.tar.bz2"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 DEPEND=">=app-arch/bzip2-1.0.2
