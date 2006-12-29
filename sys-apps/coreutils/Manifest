@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX 130_all_coreutils-gnulibs-regex-symbol-hiding.patch 1024 RMD160 cedf30f1dedfe4893f6f01cd45e288a59211ff1a SHA1 49e8da9f939b2758a7e3f54661ea2ecfe08f46d2 SHA256 7ad379725aec72a27173c2e9297019d94525af654f3eae41ddf1654f28cc6cbc
 MD5 55735adb690972eec2c296929d3c7856 files/130_all_coreutils-gnulibs-regex-symbol-hiding.patch 1024
 RMD160 cedf30f1dedfe4893f6f01cd45e288a59211ff1a files/130_all_coreutils-gnulibs-regex-symbol-hiding.patch 1024
@@ -41,3 +44,10 @@ SHA256 bdaa6b3e2cbd8bb7063828d82bd6c8217bdcfa38f55fa2196799a5484561750d files/di
 MD5 3767fddf63f9f267b0eaffb54238d372 files/digest-coreutils-6.7 524
 RMD160 c0972faeadaae125b37ff47cb80bd606e2ce02bd files/digest-coreutils-6.7 524
 SHA256 e54bf8b4e1020e5c102b26466f52273a255391afd62baa76898d01a14860a7cf files/digest-coreutils-6.7 524
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFFlZLA8bi6rjpTunYRAjyoAJ9VtoUZis8Ux9CHwHLfSk8Qwp6okgCeKZyW
+9FHaII+FVgGMWLuIUwoYJ4E=
+=A2Sj
+-----END PGP SIGNATURE-----
