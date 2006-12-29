@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 DIST fakeroot_1.1.5.tar.gz 1700401
 EBUILD fakeroot-1.1.5.ebuild 578 RMD160 872a02b5d8bc9f8388f822bbe40d17c4602ad69f SHA1 a5110e66fc5f6b83ad3348dd5daf33c7e67e44bc SHA256 a2da565c2ad1f78893f875929d6f04d6a156ed67c0043107c3aaf057bc7107f2
 MD5 9ce0b947971bccd2d0b570f7f47e2071 fakeroot-1.1.5.ebuild 578
@@ -14,3 +17,10 @@ SHA256 f5f2891f2a4791cd31350bb2bb572131ad7235cd0eeb124c9912c187ac10ce92 metadata
 MD5 4f0d7f1308c49429b78e25f29fe29e20 files/digest-fakeroot-1.1.5 67
 RMD160 d7a9ef7471e17fbf38256f1d166f6c5fe30d52bf files/digest-fakeroot-1.1.5 67
 SHA256 c51344e20596fa16a9e5f62d967b8d256c0daafa906b40ac17a895985c65feea files/digest-fakeroot-1.1.5 67
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFFlY4o8bi6rjpTunYRAhSTAKCbcuG2pzjobWh4fFOVLq3xeomKbQCfTOTI
+tZR7zRyLtvyw6uqFLbh9JHo=
+=0jsJ
+-----END PGP SIGNATURE-----
