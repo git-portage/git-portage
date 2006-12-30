@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX groff-1.18-infoext.patch 673 RMD160 f0038c01fd702c543240ea79220b0b2eaebd6285 SHA1 9035cb640de6f8ad9f681b0768d3624412406daa SHA256 aeaf8f2058504c98a8f4f7a99332b4862f613d610bcd948455d9460e07c4b0b6
 MD5 c43ddaf604dd389afc6107d79b90ce6c files/groff-1.18-infoext.patch 673
 RMD160 f0038c01fd702c543240ea79220b0b2eaebd6285 files/groff-1.18-infoext.patch 673
@@ -52,3 +55,10 @@ SHA256 d12724927ef4b1c5279f1e4e6dd7acc11a875f50af8c79aec47ffd88ee8efeae files/di
 MD5 70f6b75efd3a05a24339ea8d0881804c files/digest-groff-1.19.2-r1 515
 RMD160 1cca63d735d0fff253b21c61f7fe68053a952fc5 files/digest-groff-1.19.2-r1 515
 SHA256 498177c9549e0a83bf5aa3f3a8e5f41deeb09094c9c6f52fc6d55806e4100972 files/digest-groff-1.19.2-r1 515
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFFla3G8bi6rjpTunYRAixVAKC6vx/Wv02gTGpb4AxvsGEg6JjXMwCeNxkA
+6VyLYFE6OmBk2YeM5hB+7Z4=
+=bbSa
+-----END PGP SIGNATURE-----
