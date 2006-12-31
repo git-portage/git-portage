@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX man-pages-2.08-updates.patch 351 RMD160 090c1d31d4589fa19f8cb7e287a84f4f18e612e1 SHA1 d0092cdc98bc4326c7b9deffbeb9fd4666635f3b SHA256 c1302276b420acf3d9447cb3436ee2b70567b92917d7cf912c59f622086d1e37
 MD5 078cd80352b7ac508adeda912eba0cc9 files/man-pages-2.08-updates.patch 351
 RMD160 090c1d31d4589fa19f8cb7e287a84f4f18e612e1 files/man-pages-2.08-updates.patch 351
@@ -26,3 +29,10 @@ SHA256 fbcbdf616a6474ef4d6ce1217377df36a877501c0c756abd20df59bc7e3e85f4 files/di
 MD5 510e2f5cda84a584002a757b341a4863 files/digest-man-pages-2.43 250
 RMD160 1521097045e46f6c110dc974b86c79efb77a1bfa files/digest-man-pages-2.43 250
 SHA256 56ca00145e12a8bba82bdb9611878f4e6f5f670f1ddd09fe68cccaa9f84623b3 files/digest-man-pages-2.43 250
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2.0.1 (GNU/Linux)
+
+iD4DBQFFl7pY8bi6rjpTunYRAuKiAJdQzN6SDU64PI5c8iYwEGfLD0QIAKDUf/52
+BYDzoqN4FfurAhkHOczx8g==
+=LEM4
+-----END PGP SIGNATURE-----
