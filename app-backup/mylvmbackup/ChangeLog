@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/mylvmbackup
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/ChangeLog,v 1.1 2007/01/12 13:03:10 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/ChangeLog,v 1.2 2007/01/12 15:01:01 robbat2 Exp $
+
+  12 Jan 2007; Robin H. Johnson <robbat2@gentoo.org>
+  mylvmbackup-0.4_pre1.ebuild:
+  Clean up thinko, SRC_URI and RDEPEND.
 
 *mylvmbackup-0.4_pre1 (12 Jan 2007)
 
