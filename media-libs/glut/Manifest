@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX glut-3.7.1-fix-GLU-linking.patch 793 RMD160 031f5f95876ef2a9bed63fd20c08ba20efff3b62 SHA1 1ef65be16e4d6de36f351bab28e3fb5e13d70e1b SHA256 0f2241ebfbff02fd5cf116a39a0d49180f77d72b9c6d8dc880c1fc5ebf03c69e
 MD5 131cf67a22642ad25df5dd8971fad6a5 files/glut-3.7.1-fix-GLU-linking.patch 793
 RMD160 031f5f95876ef2a9bed63fd20c08ba20efff3b62 files/glut-3.7.1-fix-GLU-linking.patch 793
@@ -23,3 +26,10 @@ SHA256 1423a4fdd4a79b1728a2056d9e300f7e1074253095d82726218d9e9b953888a3 metadata
 MD5 a3bd3de99794ec2f9bf65e228042f68a files/digest-glut-3.7.1 485
 RMD160 d4fd1028fc23c4ff4a169f53d67ab91e2584e887 files/digest-glut-3.7.1 485
 SHA256 235b9e4e6628f2171c55cf8867277800f454f94481d9374d4a1cb7d42dc32625 files/digest-glut-3.7.1 485
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2.0.1 (GNU/Linux)
+
+iD8DBQFFpzJfdz7hIScOURERAlttAJ9rvNCKWC+r88LU7hZdJHjKAYNE5ACg2tq9
+9mj+JS7T8OuEsYr07PjDq7A=
+=oAfv
+-----END PGP SIGNATURE-----
