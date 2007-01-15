@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/Attic/mylvmbackup-0.4_pre1.ebuild,v 1.2 2007/01/12 15:01:01 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/Attic/mylvmbackup-0.4_pre1.ebuild,v 1.3 2007/01/15 18:59:45 robbat2 Exp $
 
 inherit eutils
 
@@ -13,9 +13,9 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~amd64"
 IUSE=""
-DEPEND=">=app-text/asciidoc-7.1.2"
+DEPEND=">=app-text/asciidoc-8.1.0"
 RDEPEND="dev-perl/Config-IniFiles
-		>=sys-fs/lvm2-2.02.6
+		>=sys-fs/lvm2-2.02.06
 		dev-perl/DBD-mysql
 		virtual/mysql"
 
