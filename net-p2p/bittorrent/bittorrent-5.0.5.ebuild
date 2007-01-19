@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/bittorrent/Attic/bittorrent-5.0.4.ebuild,v 1.1 2007/01/16 15:53:09 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/bittorrent/Attic/bittorrent-5.0.5.ebuild,v 1.1 2007/01/19 18:49:31 armin76 Exp $
 
 inherit distutils fdo-mime eutils
 
