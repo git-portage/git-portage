@@ -1,10 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/netkit-telnetd/Attic/netkit-telnetd-0.17-r7.ebuild,v 1.3 2007/01/22 20:32:24 solar Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/netkit-telnetd/Attic/netkit-telnetd-0.17-r8.ebuild,v 1.1 2007/01/22 20:32:24 solar Exp $
 
 inherit eutils toolchain-funcs
 
-PATCHLEVEL=32
+PATCHLEVEL=35
 DESCRIPTION="Standard Linux telnet client and server"
 HOMEPAGE="ftp://ftp.uk.linux.org/pub/linux/Networking/netkit/"
 # http://packages.debian.org/stablesource/netkit-telnet
