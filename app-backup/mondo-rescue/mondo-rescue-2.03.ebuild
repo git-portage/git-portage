@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mondo-rescue/Attic/mondo-rescue-2.03.ebuild,v 1.1 2005/07/04 06:35:58 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mondo-rescue/Attic/mondo-rescue-2.03.ebuild,v 1.2 2007/01/24 04:22:44 genone Exp $
 
 inherit libtool
 
@@ -48,19 +48,19 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "${P} was successfully installed."
-	einfo "Please read the associated docs for help."
-	einfo "Or visit the website @ ${HOMEPAGE}"
-	echo
+	elog "${P} was successfully installed."
+	elog "Please read the associated docs for help."
+	elog "Or visit the website @ ${HOMEPAGE}"
+	elog
 	ewarn "This package is still in unstable."
 	ewarn "Please report bugs to http://bugs.gentoo.org/"
 	ewarn "However, please do an advanced query to search for bugs"
 	ewarn "before reporting. This will keep down on duplicates."
-	echo
-	einfo "Prior to running mondo, ensure /boot is mounted."
+	ewarn
+	elog "Prior to running mondo, ensure /boot is mounted."
 	ewarn "Grub users need to have a symlink like this:"
 	ewarn "ln -s /boot/grub/menu.lst /etc/grub.conf"
-	einfo "Unless you want to have mondo backup your distfiles,"
-	einfo "append \"-E ${DISTDIR}\" to your mondoarchive command."
-	echo
+	elog "Unless you want to have mondo backup your distfiles,"
+	elog "append \"-E ${DISTDIR}\" to your mondoarchive command."
+	elog
 }

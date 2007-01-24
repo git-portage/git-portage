@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/bobs-0.6.2-r1.ebuild,v 1.3 2006/05/17 22:17:05 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/bobs-0.6.2-r1.ebuild,v 1.4 2007/01/24 04:13:36 genone Exp $
 
 inherit webapp eutils autotools
 
@@ -75,12 +75,12 @@ src_install() {
 
 	# Why doesn't this next line work?
 	chown -R root:apache "${D}"/var/bobsdata/
-	einfo "/var/bobsdata MUST be accessible to the apache user"
+	elog "/var/bobsdata MUST be accessible to the apache user"
 
 	dodoc README INSTALL TODO
 
 	webapp_postinst_txt en "${FILESDIR}"/postinstall-en.txt
 
 	webapp_src_install
-	einfo "Add /etc/init.d/cmdloopd to default runlevel"
+	elog "Add /etc/init.d/cmdloopd to default runlevel"
 }

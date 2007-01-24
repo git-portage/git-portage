@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r3.ebuild,v 1.3 2006/11/23 15:17:07 vivo Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r3.ebuild,v 1.4 2007/01/24 04:11:40 genone Exp $
 
 inherit eutils
 
@@ -70,17 +70,17 @@ pkg_setup() {
 	HAVE_BACULA_GROUP="`cat /etc/group | grep bacula\: 2>/dev/null`"
 	if [ -z "${HAVE_BACULA_GROUP}" ]; then
 		enewgroup bacula
-		einfo "The group bacula has been created. Any users you add to this"
-		einfo "group have access to files created by the daemons."
-		einfo ""
+		eerror "The group bacula has been created. Any users you add to this"
+		eerror "group have access to files created by the daemons."
+		eerror ""
 	fi
 	if ! use bacula-clientonly ; then
 		HAVE_BACULA_USER="`id -u bacula 2>/dev/null`"
 		if [ -z "${HAVE_BACULA_USER}" ] ; then
 			enewuser "bacula" -1 -1 "/var/lib/bacula" "bacula,disk,tape,cdrom,cdrw"
-			einfo "The user bacula has been created.  Please see the bacula manual"
-			einfo "for information about running bacula as a non-root user."
-			einfo ""
+			eerror "The user bacula has been created.  Please see the bacula manual"
+			eerror "for information about running bacula as a non-root user."
+			eerror ""
 		fi
 	fi
 }
@@ -288,14 +288,14 @@ pkg_postinst() {
 	fi
 
 	if ! use bacula-clientonly ; then
-		einfo "If this is a new install, you must create the ${mydb} databases with:"
-		einfo " /usr/libexec/bacula/create_${mydb}_database"
-		einfo " /usr/libexec/bacula/make_${mydb}_tables"
-		einfo " /usr/libexec/bacula/grant_${mydb}_privileges"
-		einfo ""
-		einfo "If you're upgrading from a major release, you must upgrade your bacula catalog database."
-		einfo "Please read the manual chapter for how to upgrade your database."
-		einfo "You can find database upgrade scripts in /usr/libexec/bacula/updatedb."
-		einfo ""
+		elog "If this is a new install, you must create the ${mydb} databases with:"
+		elog " /usr/libexec/bacula/create_${mydb}_database"
+		elog " /usr/libexec/bacula/make_${mydb}_tables"
+		elog " /usr/libexec/bacula/grant_${mydb}_privileges"
+		elog ""
+		elog "If you're upgrading from a major release, you must upgrade your bacula catalog database."
+		elog "Please read the manual chapter for how to upgrade your database."
+		elog "You can find database upgrade scripts in /usr/libexec/bacula/updatedb."
+		elog ""
 	fi
 }

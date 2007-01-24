@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r2.ebuild,v 1.7 2006/11/23 15:17:07 vivo Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r2.ebuild,v 1.8 2007/01/24 04:11:40 genone Exp $
 
 inherit eutils
 
@@ -33,18 +33,18 @@ RDEPEND="${DEPEND}
 
 pkg_setup() {
 	if ! use mysql && ! use postgres && ! use sqlite && ! use client-only; then
-		einfo "Bacula must compile with one database or client only."
-		einfo "Please add mysql, postgres, sqlite or client-only to your USE flags."
-		einfo "You may add the right USE flags on /etc/portage/package.use if you want to."
+		eerror "Bacula must compile with one database or client only."
+		eerror "Please add mysql, postgres, sqlite or client-only to your USE flags."
+		eerror "You may add the right USE flags on /etc/portage/package.use if you want to."
 		die "Invalid USE flags"
 	fi
 
 	if ( use mysql && use sqlite ) ||
 		( use mysql && use postgres ) ||
 		( use sqlite && use postgres ) ; then
-		einfo "For this ebuild to work, only one database may be selected."
-		einfo "Please select mysql, postgres OR sqlite only on the USE flags."
-		einfo "You may add the right USE flags on /etc/portage/package.use if you want to."
+		eerror "For this ebuild to work, only one database may be selected."
+		eerror "Please select mysql, postgres OR sqlite only on the USE flags."
+		eerror "You may add the right USE flags on /etc/portage/package.use if you want to."
 		die "Invalid USE flags"
 	fi
 }
@@ -174,14 +174,14 @@ pkg_postinst() {
 	if use sqlite ; then DB="sqlite" ; fi
 
 	if ! use client-only ; then
-		einfo "If this is a new install, you must create the ${DB} databases with:"
-		einfo " /var/lib/bacula/create_${DB}_database"
-		einfo " /var/lib/bacula/make_${DB}_tables"
-		einfo " /var/lib/bacula/grant_${DB}_privileges"
-		einfo
-		einfo "If you're upgrading from a major release, you must upgrade your bacula database."
-		einfo "Please read the manual chapter for how to upgrade your database."
-		einfo "You can find database upgrade scripts on /var/lib/bacula."
-		einfo
+		elog "If this is a new install, you must create the ${DB} databases with:"
+		elog " /var/lib/bacula/create_${DB}_database"
+		elog " /var/lib/bacula/make_${DB}_tables"
+		elog " /var/lib/bacula/grant_${DB}_privileges"
+		elog
+		elog "If you're upgrading from a major release, you must upgrade your bacula database."
+		elog "Please read the manual chapter for how to upgrade your database."
+		elog "You can find database upgrade scripts on /var/lib/bacula."
+		elog
 	fi
 }

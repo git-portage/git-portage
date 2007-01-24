@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/backup-manager-0.7.5.ebuild,v 1.1 2007/01/14 15:52:13 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/backup-manager-0.7.5.ebuild,v 1.2 2007/01/24 04:07:56 genone Exp $
 
 inherit eutils
 
@@ -34,10 +34,10 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "After installing,"
-	einfo "copy ${ROOT%/}/usr/share/backup-manager/backup-manager.conf.tpl to"
-	einfo "/etc/backup-manager.conf and customize it for your environment."
-	einfo "You could also set-up your cron for daily or weekly backup."
+	elog "After installing,"
+	elog "copy ${ROOT%/}/usr/share/backup-manager/backup-manager.conf.tpl to"
+	elog "/etc/backup-manager.conf and customize it for your environment."
+	elog "You could also set-up your cron for daily or weekly backup."
 	ebeep 3
 	ewarn "New configuration keys have been defined. Please check the docs for info"
 }

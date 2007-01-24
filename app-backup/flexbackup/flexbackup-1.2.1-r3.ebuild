@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/Attic/flexbackup-1.2.1-r3.ebuild,v 1.1 2007/01/15 01:32:51 humpback Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/Attic/flexbackup-1.2.1-r3.ebuild,v 1.2 2007/01/24 04:17:10 genone Exp $
 
 inherit eutils
 
@@ -45,8 +45,8 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Please edit your /etc/flexbackup.conf file to suit your"
-	einfo "needs.  If you are using devfs, the tape device should"
-	einfo "be set to /dev/tapes/tape0/mtn.  If you need to use any"
-	einfo "archiver other than tar, please emerge it separately."
+	elog "Please edit your /etc/flexbackup.conf file to suit your"
+	elog "needs.  If you are using devfs, the tape device should"
+	elog "be set to /dev/tapes/tape0/mtn.  If you need to use any"
+	elog "archiver other than tar, please emerge it separately."
 }

@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/backup-manager
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/ChangeLog,v 1.4 2007/01/14 15:52:13 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/ChangeLog,v 1.5 2007/01/24 04:07:56 genone Exp $
+
+  24 Jan 2007; Marius Mauch <genone@gentoo.org> backup-manager-0.7.2.ebuild,
+  backup-manager-0.7.4.ebuild, backup-manager-0.7.5.ebuild:
+  Replacing einfo with elog
 
 *backup-manager-0.7.5 (14 Jan 2007)
 

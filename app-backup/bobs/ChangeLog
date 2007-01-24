@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/bobs
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/ChangeLog,v 1.5 2006/05/17 22:17:05 robbat2 Exp $
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/ChangeLog,v 1.6 2007/01/24 04:13:36 genone Exp $
+
+  24 Jan 2007; Marius Mauch <genone@gentoo.org> bobs-0.6.2-r1.ebuild:
+  Replacing einfo with elog
 
   17 May 2006; Robin H. Johnson <robbat2@gentoo.org>
   files/Makefile-fixcmdloopd.patch, bobs-0.6.2-r1.ebuild:

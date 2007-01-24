@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/reoback/reoback-1.0_p3-r1.ebuild,v 1.1 2005/09/02 12:42:33 lostlogic Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/reoback/reoback-1.0_p3-r1.ebuild,v 1.2 2007/01/24 04:24:00 genone Exp $
 
 DESCRIPTION="Reoback Backup Solution"
 HOMEPAGE="http://reoback.sourceforge.net/"
@@ -38,6 +38,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Reoback can now be activated by simply configuring the files in"
-	einfo "/etc/reoback and then doing: chmod +x /etc/cron.daily/reoback"
+	elog "Reoback can now be activated by simply configuring the files in"
+	elog "/etc/reoback and then doing: chmod +x /etc/cron.daily/reoback"
 }

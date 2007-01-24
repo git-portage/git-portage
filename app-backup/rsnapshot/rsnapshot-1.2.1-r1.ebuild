@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/rsnapshot/Attic/rsnapshot-1.2.1-r1.ebuild,v 1.1 2005/09/29 21:15:21 kloeri Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/rsnapshot/Attic/rsnapshot-1.2.1-r1.ebuild,v 1.2 2007/01/24 04:25:37 genone Exp $
 
 inherit eutils
 
@@ -36,11 +36,11 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo
-	einfo "The configuration file: /etc/rsnapshot.conf.default "
-	einfo "  has been installed. "
-	einfo "This is a template. "
-	einfo "Copy, or move, the above file to: /etc/rsnapshot.conf "
-	einfo "Note that upgrading will update the template, not real config. "
-	einfo
+	elog
+	elog "The configuration file: /etc/rsnapshot.conf.default "
+	elog "  has been installed. "
+	elog "This is a template. "
+	elog "Copy, or move, the above file to: /etc/rsnapshot.conf "
+	elog "Note that upgrading will update the template, not real config. "
+	elog
 }

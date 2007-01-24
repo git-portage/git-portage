@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.5.ebuild,v 1.8 2006/07/13 00:01:40 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.5.ebuild,v 1.9 2007/01/24 04:06:29 genone Exp $
 
 inherit eutils
 
@@ -328,22 +328,22 @@ pkg_postinst() {
 		chmod 600 ${ROOT}/etc/${i}
 	done
 
-	einfo "You should configure Amanda in /etc/amanda now."
-	echo
-	einfo "If you use xinetd, Don't forget to check /etc/xinetd.d/amanda"
-	einfo "and restart xinetd afterwards!"
-	echo
-	einfo "Otherwise, please look at /usr/share/doc/${P}/inetd.amanda.sample"
-	einfo "as an example of how to configure your inetd."
-	echo
-	einfo "NOTICE: If you need raw acces to partitions you need to add the"
-	einfo "amanda user to the 'disk' group and uncomment following lines in"
-	einfo "your /etc/devfs.d/amanda:"
-	einfo "SCSI:"
-	einfo "REGISTER   ^scsi/host.*/bus.*/target.*/lun.*/part[0-9]  PERMISSIONS root.disk 660"
-	einfo "IDE:"
-	einfo "REGISTER   ^ide/host.*/bus.*/target.*/lun.*/part[0-9]   PERMISSIONS root.disk 660"
-	echo
-	einfo "NOTICE: If you have a tape changer, also uncomment the following"
-	einfo "REGISTER   ^scsi/host.*/bus.*/target.*/lun.*/generic    PERMISSIONS root.disk 660"
+	elog "You should configure Amanda in /etc/amanda now."
+	elog
+	elog "If you use xinetd, Don't forget to check /etc/xinetd.d/amanda"
+	elog "and restart xinetd afterwards!"
+	elog
+	elog "Otherwise, please look at /usr/share/doc/${P}/inetd.amanda.sample"
+	elog "as an example of how to configure your inetd."
+	elog
+	elog "NOTICE: If you need raw acces to partitions you need to add the"
+	elog "amanda user to the 'disk' group and uncomment following lines in"
+	elog "your /etc/devfs.d/amanda:"
+	elog "SCSI:"
+	elog "REGISTER   ^scsi/host.*/bus.*/target.*/lun.*/part[0-9]  PERMISSIONS root.disk 660"
+	elog "IDE:"
+	elog "REGISTER   ^ide/host.*/bus.*/target.*/lun.*/part[0-9]   PERMISSIONS root.disk 660"
+	elog
+	elog "NOTICE: If you have a tape changer, also uncomment the following"
+	elog "REGISTER   ^scsi/host.*/bus.*/target.*/lun.*/generic    PERMISSIONS root.disk 660"
 }

@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/afbackup-server/Attic/afbackup-server-3.3.8.1.ebuild,v 1.1 2006/05/10 14:26:48 lisa Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/afbackup-server/Attic/afbackup-server-3.3.8.1.ebuild,v 1.2 2007/01/24 04:04:02 genone Exp $
 
 inherit eutils
 
@@ -109,6 +109,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	ewarn "The key of afbackup server and client have to match."
-	einfo "Be sure to use the same environment variable or keyfile."
+	elog "The key of afbackup server and client have to match."
+	elog "Be sure to use the same environment variable or keyfile."
 }

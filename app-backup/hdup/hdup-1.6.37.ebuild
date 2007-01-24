@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/Attic/hdup-1.6.37.ebuild,v 1.3 2006/07/22 12:36:53 chtekk Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/Attic/hdup-1.6.37.ebuild,v 1.4 2007/01/24 04:18:38 genone Exp $
 
 KEYWORDS="~amd64 ~ppc x86"
 DESCRIPTION="Hdup is backup program using tar, find, gzip/bzip2, mcrypt and ssh."
@@ -37,6 +37,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Now edit your /etc/hdup/${PN}.conf to configure your backups."
-	einfo "You can also check included examples and contrib, see /usr/share/doc/${P}/."
+	elog "Now edit your /etc/hdup/${PN}.conf to configure your backups."
+	elog "You can also check included examples and contrib, see /usr/share/doc/${P}/."
 }

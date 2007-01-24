@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mondo-rescue/Attic/mondo-rescue-1.61.ebuild,v 1.1 2005/07/04 06:35:58 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mondo-rescue/Attic/mondo-rescue-1.61.ebuild,v 1.2 2007/01/24 04:22:44 genone Exp $
 
 DESCRIPTION="a nice backup tool"
 SRC_URI="http://www.microwerks.net/~hugo/download/stable/final/${PN/-rescue/}-${PV}.tgz"
@@ -48,14 +48,14 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo
-	einfo "Installation notes:"
-	einfo "1) /boot must be mounted before running mondo"
-	einfo "   (/etc/fstab does not automount it by default)"
-	einfo "2) make a symlink \"ln -s /boot/grub/menu.lst /etc/grub.conf\""
-	einfo "   as mondo wants to have a /etc/grub.conf file"
-	einfo "3) when doing a system backup be sure to use"
-	einfo "   \"-E ${DISTDIR}\" because otherwise"
-	einfo "   all source files will be included into the backup"
-	einfo
+	elog
+	elog "Installation notes:"
+	elog "1) /boot must be mounted before running mondo"
+	elog "   (/etc/fstab does not automount it by default)"
+	elog "2) make a symlink \"ln -s /boot/grub/menu.lst /etc/grub.conf\""
+	elog "   as mondo wants to have a /etc/grub.conf file"
+	elog "3) when doing a system backup be sure to use"
+	elog "   \"-E ${DISTDIR}\" because otherwise"
+	elog "   all source files will be included into the backup"
+	elog
 }

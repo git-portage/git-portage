@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.4 2006/12/04 07:56:36 opfer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.5 2007/01/24 04:15:09 genone Exp $
 
 inherit eutils
 
@@ -60,7 +60,7 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	while read line; do einfo "${line}"; done <<EOF
+	while read line; do elog "${line}"; done <<EOF
 After configuring the Box Backup client and/or server, you can start
 the daemon using the init scripts /etc/init.d/bbackupd and
 /etc/init.d/bbstored.

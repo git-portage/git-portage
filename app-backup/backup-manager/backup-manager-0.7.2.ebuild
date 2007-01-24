@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/Attic/backup-manager-0.7.2.ebuild,v 1.2 2006/06/06 15:55:08 lisa Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/Attic/backup-manager-0.7.2.ebuild,v 1.3 2007/01/24 04:07:56 genone Exp $
 
 inherit eutils
 
@@ -36,9 +36,9 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "After installing,"
-	einfo "copy ${ROOT%/}/usr/share/backup-manager/backup-manager.conf.tpl to /etc/backup-manager.conf"
-	einfo "and set for your environment."
-	einfo "You could also set-up your cron for daily or weekly backup."
+	elog "After installing,"
+	elog "copy ${ROOT%/}/usr/share/backup-manager/backup-manager.conf.tpl to /etc/backup-manager.conf"
+	elog "and set for your environment."
+	elog "You could also set-up your cron for daily or weekly backup."
 	ebeep 3
 }
