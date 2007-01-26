@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rubygems/Attic/rubygems-0.9.0-r2.ebuild,v 1.2 2006/12/23 01:27:10 pclouds Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rubygems/Attic/rubygems-0.9.0-r2.ebuild,v 1.3 2007/01/26 15:39:10 pclouds Exp $
 
 inherit ruby
 
@@ -30,7 +30,7 @@ src_install() {
 	# RUBYOPT=-rauto_gem without rubygems installed will cause ruby to fail, bug #158455
 	unset RUBYOPT
 	ver=$(${RUBY} -r rbconfig -e 'print Config::CONFIG["MAJOR"] + "." + Config::CONFIG["MINOR"]')
-	GEM_HOME=${D}/usr/lib/ruby/gems/$ver ruby_src_install
+	GEM_HOME=${D}usr/lib/ruby/gems/$ver ruby_src_install
 	cp "${FILESDIR}/auto_gem.rb" "${D}"/$(${RUBY} -r rbconfig -e 'print Config::CONFIG["sitedir"]')
 	keepdir /usr/lib/ruby/gems/$ver/doc
 	doenvd "${FILESDIR}/10rubygems"
