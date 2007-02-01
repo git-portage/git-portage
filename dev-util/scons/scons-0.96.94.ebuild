@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/scons/Attic/scons-0.96.93.ebuild,v 1.2 2007/01/19 15:14:13 masterdriverz Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/scons/Attic/scons-0.96.94.ebuild,v 1.1 2007/02/01 10:35:40 twp Exp $
 
 NEED_PYTHON="1.5.2"
 
