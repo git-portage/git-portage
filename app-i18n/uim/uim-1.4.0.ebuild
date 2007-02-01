@@ -1,20 +1,17 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim/Attic/uim-1.2.1.ebuild,v 1.16 2007/02/01 14:55:32 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim/Attic/uim-1.4.0.ebuild,v 1.1 2007/02/01 14:55:32 matsuu Exp $
 
-inherit eutils kde-functions flag-o-matic multilib elisp-common
-
-MY_P="${P/_/-}"
-S="${WORKDIR}/${MY_P}"
+inherit eutils qt3 multilib elisp-common
 
 DESCRIPTION="Simple, secure and flexible input method library"
 HOMEPAGE="http://uim.freedesktop.org/"
-SRC_URI="http://uim.freedesktop.org/releases/${MY_P}.tar.gz"
+SRC_URI="http://uim.freedesktop.org/releases/uim/stable/${P}.tar.bz2"
 
 LICENSE="BSD GPL-2 LGPL-2.1"
 SLOT="0"
-KEYWORDS="alpha ~amd64 hppa ppc ppc64 sparc x86"
-IUSE="anthy canna eb emacs gnome gtk libedit m17n-lib nls prime qt3 X"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
+IUSE="anthy canna eb emacs gnome gtk kde libedit m17n-lib ncurses nls prime qt3 X"
 
 RDEPEND="X? ( || ( (
 			x11-libs/libX11
@@ -32,12 +29,13 @@ RDEPEND="X? ( || ( (
 	emacs? ( virtual/emacs )
 	gnome? ( >=gnome-base/gnome-panel-2.14 )
 	gtk? ( >=x11-libs/gtk+-2.4 )
+	kde? ( kde-base/kdelibs )
 	libedit? ( dev-libs/libedit )
 	m17n-lib? ( >=dev-libs/m17n-lib-1.3.1 )
+	ncurses? ( sys-libs/ncurses )
 	nls? ( virtual/libintl )
 	prime? ( app-i18n/prime )
 	qt3? ( $(qt_min_version 3.3.4) )
-	sys-libs/ncurses
 	!app-i18n/uim-svn
 	!<app-i18n/prime-0.9.4"
 
@@ -62,8 +60,10 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
+
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-nls.patch
+	epatch "${FILESDIR}"/${PN}-1.2.1-nls.patch
+	epatch "${FILESDIR}"/${P}-gentoo.patch
 }
 
 src_compile() {
@@ -79,15 +79,23 @@ src_compile() {
 		append-flags -DQT_THREAD_SUPPORT
 	fi
 
+	if use gtk || use qt3 ; then
+		myconf="${myconf} --enable-pref"
+	else
+		myconf="${myconf} --disable-pref"
+	fi
+
 	econf $(use_with X x) \
 		$(use_with anthy) \
 		$(use_with canna) \
-		$(use_enable eb) \
+		$(use_with eb) \
 		$(use_enable emacs) \
-		$(use_with gnome panel) \
+		$(use_enable gnome gnome-applet) \
 		$(use_with gtk gtk2) \
 		$(use_with libedit) \
+		$(use_enable kde kde-applet) \
 		$(use_with m17n-lib m17nlib) \
+		$(use_enable ncurses fep) \
 		$(use_enable nls) \
 		$(use_with qt3 qt) \
 		$(use_with qt3 qt-immodule) \
@@ -107,20 +115,20 @@ pkg_postinst() {
 	elog "To use uim-skk you should emerge app-i18n/skk-jisyo."
 	elog
 
-	ewarn
-	ewarn "New input method switcher has been introduced. You need to set"
-	ewarn
-	ewarn "% GTK_IM_MODULE=uim ; export GTK_IM_MODULE"
-	ewarn "% QT_IM_MODULE=uim ; export QT_IM_MODULE"
-	ewarn "% XMODIFIERS=@im=uim ; export XMODIFIERS"
-	ewarn
-	ewarn "If you would like to use uim-anthy as default input method, put"
-	ewarn "(define default-im-name 'anthy)"
-	ewarn "to your ~/.uim."
-	ewarn
-	ewarn "All input methods can be found by running uim-im-switcher-gtk"
-	ewarn "or uim-im-switcher-qt."
-	ewarn
+	elog
+	elog "New input method switcher has been introduced. You need to set"
+	elog
+	elog "% GTK_IM_MODULE=uim ; export GTK_IM_MODULE"
+	elog "% QT_IM_MODULE=uim ; export QT_IM_MODULE"
+	elog "% XMODIFIERS=@im=uim ; export XMODIFIERS"
+	elog
+	elog "If you would like to use uim-anthy as default input method, put"
+	elog "(define default-im-name 'anthy)"
+	elog "to your ~/.uim."
+	elog
+	elog "All input methods can be found by running uim-im-switcher-gtk"
+	elog "or uim-im-switcher-qt."
+	elog
 
 	use gtk && gtk-query-immodules-2.0 > "${ROOT}"/${GTK2_CONFDIR}/gtk.immodules
 	use emacs && elisp-site-regen
