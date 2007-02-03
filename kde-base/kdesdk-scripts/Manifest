@@ -5,10 +5,10 @@ EBUILD kdesdk-scripts-3.5.2.ebuild 476 RMD160 eba3fa17f7d2f61986edef1f74f6a67edb
 MD5 6b4966f131acfd7d89a33e8ed6e70448 kdesdk-scripts-3.5.2.ebuild 476
 RMD160 eba3fa17f7d2f61986edef1f74f6a67edb023399 kdesdk-scripts-3.5.2.ebuild 476
 SHA256 da3c99b079bd68a81213cb11a3d22f7634f39b925a87eef213f2920421766e1e kdesdk-scripts-3.5.2.ebuild 476
-EBUILD kdesdk-scripts-3.5.5.ebuild 491 RMD160 71e62da0e962680991e5990da93f5f9a95b1a58c SHA1 cadf23899ef219af54920c9805d21b8941f6e962 SHA256 4ce70395b82629525c9c29250d346e1c4d23e068c42cd3c1681e7fc56886372c
-MD5 0bfae2a48e36951c7adfe8827d5d9365 kdesdk-scripts-3.5.5.ebuild 491
-RMD160 71e62da0e962680991e5990da93f5f9a95b1a58c kdesdk-scripts-3.5.5.ebuild 491
-SHA256 4ce70395b82629525c9c29250d346e1c4d23e068c42cd3c1681e7fc56886372c kdesdk-scripts-3.5.5.ebuild 491
+EBUILD kdesdk-scripts-3.5.5.ebuild 487 RMD160 807fe55162f3bcf597c4353e0741c709b5d0ca99 SHA1 90ec17215e9fe9c1539d3832cf9524ca465697dc SHA256 6acce471804a95befdcd4c1dcd9e40b8e231250ca84c15eaa6ca3ad989e9b3a9
+MD5 4e33dda6e6de79f6fc2cb93299a21d8b kdesdk-scripts-3.5.5.ebuild 487
+RMD160 807fe55162f3bcf597c4353e0741c709b5d0ca99 kdesdk-scripts-3.5.5.ebuild 487
+SHA256 6acce471804a95befdcd4c1dcd9e40b8e231250ca84c15eaa6ca3ad989e9b3a9 kdesdk-scripts-3.5.5.ebuild 487
 EBUILD kdesdk-scripts-3.5.6.ebuild 497 RMD160 35d8eea209907c79f85bfc165c3ae9833baa6d4d SHA1 42a6815d3c3836a5e81cf22c112c3708d14fda8b SHA256 d32e4c1dd8d6173b984f95f5c45317271eee7c3bca367286811f1ce02dbb644b
 MD5 b8f8ee7ccc24106ad1c1cbf454b93238 kdesdk-scripts-3.5.6.ebuild 497
 RMD160 35d8eea209907c79f85bfc165c3ae9833baa6d4d kdesdk-scripts-3.5.6.ebuild 497
