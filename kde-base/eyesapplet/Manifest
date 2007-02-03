@@ -5,10 +5,10 @@ EBUILD eyesapplet-3.5.2.ebuild 469 RMD160 26ce2ddebc8fb10acd2cd851c53cba25c0675e
 MD5 f33cb925ed9ccdd34d9d9810345410ab eyesapplet-3.5.2.ebuild 469
 RMD160 26ce2ddebc8fb10acd2cd851c53cba25c0675e89 eyesapplet-3.5.2.ebuild 469
 SHA256 04991af221fc6d20f339ccd0d8e7f39ead1d9fb465215668ec7bc729e2abc510 eyesapplet-3.5.2.ebuild 469
-EBUILD eyesapplet-3.5.5.ebuild 479 RMD160 85808d49db06128cfcbaafac289f20094642c839 SHA1 ccfc800fd39487dc008bae8af07842a5ac2f33a2 SHA256 1d3b8c1aac3c81d668a89b0d07c69f59d6c852908a3ea9794e9289b790e1c2e5
-MD5 560854a4fbdfcd2fc95a6bb4405ba78a eyesapplet-3.5.5.ebuild 479
-RMD160 85808d49db06128cfcbaafac289f20094642c839 eyesapplet-3.5.5.ebuild 479
-SHA256 1d3b8c1aac3c81d668a89b0d07c69f59d6c852908a3ea9794e9289b790e1c2e5 eyesapplet-3.5.5.ebuild 479
+EBUILD eyesapplet-3.5.5.ebuild 474 RMD160 0e1c8c46911c98ae8d0d50e2cd681fa7f3c12f70 SHA1 f83e896ff6419f015aef8d946b90752bf9026f18 SHA256 63b328e714d3baaabba8b392092b9d0b74366852fe737022913cb1c8baca1eca
+MD5 7371bcd4419edc86167d4accdfa1c40f eyesapplet-3.5.5.ebuild 474
+RMD160 0e1c8c46911c98ae8d0d50e2cd681fa7f3c12f70 eyesapplet-3.5.5.ebuild 474
+SHA256 63b328e714d3baaabba8b392092b9d0b74366852fe737022913cb1c8baca1eca eyesapplet-3.5.5.ebuild 474
 EBUILD eyesapplet-3.5.6.ebuild 484 RMD160 d1692ec6f0fd9cccdb77b6eacedaae0c7c596615 SHA1 ebd2085b7627525851fc79923984a0eee5832d7d SHA256 d6aba2779a4d3228efa946a91621328428ae4ea94c53124a16ad36dae7422f46
 MD5 9dae2beb8fcfa53e4fc74191e7696a84 eyesapplet-3.5.6.ebuild 484
 RMD160 d1692ec6f0fd9cccdb77b6eacedaae0c7c596615 eyesapplet-3.5.6.ebuild 484
