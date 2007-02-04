@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.5 2007/01/24 04:15:09 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.6 2007/02/04 12:38:39 blubb Exp $
 
 inherit eutils
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.fluffy.co.uk/boxbackup/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc-macos x86"
+KEYWORDS="amd64 ~ppc-macos x86"
 IUSE="client-only"
 DEPEND="sys-libs/zlib
 	sys-libs/db
