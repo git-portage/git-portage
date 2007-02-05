@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.2-r5.ebuild,v 1.3 2007/01/31 17:50:22 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.2-r8.ebuild,v 1.1 2007/02/05 23:16:07 zmedico Exp $
 
 inherit toolchain-funcs eutils flag-o-matic
 
