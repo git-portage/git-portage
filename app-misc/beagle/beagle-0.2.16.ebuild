@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/beagle/Attic/beagle-0.2.13.ebuild,v 1.4 2007/01/28 04:55:05 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/beagle/Attic/beagle-0.2.16.ebuild,v 1.1 2007/02/07 19:09:15 metalgod Exp $
 
 inherit gnome.org eutils autotools mono
 
@@ -13,7 +13,7 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="chm doc evo galago gtk ole pdf python thunderbird"
 
 RDEPEND="
-	>=dev-lang/mono-1.1.16.1
+	>=dev-lang/mono-1.1.13.5
 	app-shells/bash
 	app-arch/zip
 	sys-devel/gettext
@@ -24,7 +24,6 @@ RDEPEND="
 	>=gnome-base/librsvg-2.0
 	>=media-libs/libexif-0.6.0
 	>=dev-libs/libxml2-2.6.19
-	>=dev-dotnet/gsf-sharp-0.6
 
 	||		(	>=dev-db/sqlite-3.3.1
 				=dev-db/sqlite-2* )
@@ -45,6 +44,7 @@ RDEPEND="
 				>=dev-dotnet/gconf-sharp-2.3 )
 
 	ole?	(	>=app-text/wv-1.2.0
+				>=dev-dotnet/gsf-sharp-0.6
 				>=app-office/gnumeric-1.4.3-r3 )
 	pdf?	(	>=app-text/poppler-0.5.1 )
 	chm?	(	app-doc/chmlib )
@@ -87,6 +87,7 @@ src_unpack() {
 		${S}/configure.in || die "sed failed"
 
 	epatch ${FILESDIR}/${PN}-0.2.7-crawltweek.patch
+	epatch ${FILESDIR}/${PN}-log-level-warn.patch
 
 	eautoreconf
 }
@@ -98,6 +99,7 @@ src_compile() {
 		$(use_enable evo evolution) \
 		$(use_enable gtk gui) \
 		$(use_enable python ) \
+		$(use_enable ole gsf-sharp ) \
 		--enable-libbeagle \
 		|| die "configure failed"
 	emake || die "Make failed"
