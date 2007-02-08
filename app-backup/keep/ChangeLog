@@ -1,0 +1,20 @@
+# ChangeLog for app-backup/keep
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/keep/Attic/ChangeLog,v 1.1 2007/02/08 09:52:05 drizzt Exp $
+
+*keep-0.4.0 (08 Feb 2007)
+
+  08 Feb 2007; Timothy Redaelli <drizzt@gentoo.org> +metadata.xml,
+  +keep-0.4.0.ebuild:
+  Imported in main tree from sunrise.
+
+  14 Dec 2006; Markus Ullmann <jokey@gentoo.org> keep-0.4.0.ebuild:
+  needs go below DEPs
+
+  12 Dec 2006; Jakub Moc <jakub@gentoo.org> -keep-0.3.0.ebuild,
+  +keep-0.4.0.ebuild:
+  Version bump, remove old
+
+  22 Jun 2006; DrChandra <gentooperson@yahoo.com> ChangeLog:
+  New Ebuild for bug 135362 thanks to Mike Pagano
+
