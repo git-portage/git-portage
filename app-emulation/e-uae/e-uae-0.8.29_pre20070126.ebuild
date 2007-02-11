@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/e-uae/Attic/e-uae-0.8.29_pre20061116.ebuild,v 1.1 2006/11/17 13:51:30 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/e-uae/Attic/e-uae-0.8.29_pre20070126.ebuild,v 1.1 2007/02/11 20:44:33 pva Exp $
 
 inherit eutils flag-o-matic
 
@@ -90,7 +90,7 @@ pkg_setup() {
 	use gtk && myconf="$myconf --enable-ui --enable-threads"
 	use gtk || myconf="$myconf --disable-ui"
 
-	use capslib && myconf="$myconf --with-caps"
+	myconf="$myconf $(use_with capslib caps)"
 
 	myconf="$myconf --with-zlib"
 
@@ -101,7 +101,6 @@ pkg_setup() {
 }
 
 src_compile() {
-	#/usr/share/X11/xkb /usr/lib/X11/xkb /usr/X11R6/lib/X11/xkb
 	strip-flags
 
 	econf ${myconf} \
