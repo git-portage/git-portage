@@ -1,6 +1,10 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/xemacs/Attic/xemacs-21.4.20.ebuild,v 1.1 2006/12/11 19:00:32 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/xemacs/Attic/xemacs-21.4.20-r2.ebuild,v 1.1 2007/02/11 12:48:45 graaff Exp $
+
+# Note: xemacs currently does not work with a hardened profile. If you
+# want to use xemacs on a hardened profile then compile with the
+# -nopie flag in CFLAGS or help fix bug #75028.
 
 export WANT_AUTOCONF="2.1"
 inherit autotools eutils
@@ -13,7 +17,7 @@ SRC_URI="http://ftp.xemacs.org/xemacs-21.4/${P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
-IUSE="eolconv gif gpm pop postgres ldap xface nas dnd X jpeg tiff png mule motif freewnn canna athena neXt Xaw3d gdbm berkdb"
+IUSE="eolconv esd gif gpm pop postgres ldap xface nas dnd X jpeg tiff png mule motif freewnn canna xim athena neXt Xaw3d gdbm berkdb"
 
 X_DEPEND="x11-libs/libXt x11-libs/libXmu x11-libs/libXext x11-misc/xbitmaps"
 
@@ -27,10 +31,12 @@ DEPEND="virtual/libc
 	gpm? ( >=sys-libs/gpm-1.19.6 )
 	postgres? ( >=dev-db/postgresql-7.2 )
 	ldap? ( net-nds/openldap )
+	esd? ( media-sound/esound )
 	nas? ( media-libs/nas )
+	X? ( $X_DEPEND !Xaw3d? ( !neXt? ( x11-libs/libXaw ) ) )
 	dnd? ( x11-libs/dnd )
 	motif? ( >=x11-libs/openmotif-2.1.30 )
-	athena? ( || ( ( $X_DEPEND	x11-libs/libXaw ) virtual/x11 ) )
+	athena? ( x11-libs/libXaw )
 	Xaw3d? ( x11-libs/Xaw3d )
 	neXt? ( x11-libs/neXtaw )
 	xface? ( media-libs/compface )
@@ -39,8 +45,7 @@ DEPEND="virtual/libc
 	jpeg? ( media-libs/jpeg )
 	canna? ( app-i18n/canna )
 	!amd64? ( freewnn? ( app-i18n/freewnn ) )
-	>=sys-libs/ncurses-5.2
-	X? ( || ( ( $X_DEPEND ) virtual/x11 ) )"
+	>=sys-libs/ncurses-5.2"
 
 PDEPEND="app-xemacs/xemacs-base
 	mule? ( app-xemacs/mule-base )"
@@ -56,6 +61,9 @@ src_unpack() {
 
 	# see bug 58350, 102540 and 143580
 	epatch "${FILESDIR}"/xemacs-21.4.19-db.patch
+
+	# Fix constent crashes with the combination native sound,linux,wav
+	epatch "${FILESDIR}"/xemacs-21.4.20-linuxplay.patch
 
 	# Run autoconf. XEmacs tries to be smart by providing a stub
 	# configure.ac file for autoconf 2.59 but this throws our
@@ -114,17 +122,29 @@ src_compile() {
 
 	if use mule ; then
 		myconf="${myconf} --with-mule"
-		use motif && myconf="${myconf} --with-xim=motif" ||
-			myconf="${myconf} --with-xim=xlib"
-			use canna && myconf="${myconf} --with-canna" ||
+
+		if use xim ; then
+			if use motif ; then
+				myconf="${myconf} --with-xim=motif"
+			else
+				myconf="${myconf} --with-xim=xlib"
+			fi
+		else
+			myconf="${myconf} --with-xim=no"
+		fi
+
+		use canna && myconf="${myconf} --with-canna" ||
 					myconf="${myconf} --without-canna"
 		use freewnn && myconf="${myconf} --with-wnn" ||
 					myconf="${myconf} --without-wnn"
 	fi
 
+	# This determines the type of sounds we are playing
 	local soundconf="native"
 
+	# This determines how these sounds should be played
 	use nas	&& soundconf="${soundconf},nas"
+	use esd && soundconf="${soundcond},esd"
 
 	myconf="${myconf} --with-sound=${soundconf}"
 
@@ -138,10 +158,11 @@ src_compile() {
 		myconf="${myconf} --without-database"
 	fi
 
-	# fixes #21264
+	# fixes #21264, this should be fixed in 21.4.21 and has been fixed
+	# in 21.5 for sure.
 	use alpha && myconf="${myconf} --with-system-malloc"
-
 	use ppc64 && myconf="${myconf} --with-system-malloc"
+	use ia64  && myconf="${myconf} --with-system-malloc"
 
 	# Don't use econf because it uses options which this configure
 	# script does not understand (like --host).
