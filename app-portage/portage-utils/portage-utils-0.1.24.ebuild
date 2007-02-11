@@ -1,6 +1,6 @@
-# Copyright 2006-2007 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/portage-utils/Attic/portage-utils-0.1.20.ebuild,v 1.6 2007/01/24 03:45:36 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/portage-utils/Attic/portage-utils-0.1.24.ebuild,v 1.1 2007/02/11 22:49:21 solar Exp $
 
 inherit toolchain-funcs
 
@@ -10,13 +10,14 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
-IUSE="python"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+IUSE=""
 
 DEPEND=""
 
 src_compile() {
-	use python && export PYTHON=1
+	tc-export CC
+	#use python && export PYTHON=1
 	unset PYTHON
 	emake || die
 }
@@ -52,10 +53,10 @@ __EOF__
 	if [ ! -e ${ROOT}/etc/portage/postsync.d/q-reinitialize ]; then
 		mkdir -p ${ROOT}/etc/portage/postsync.d/
 		echo '[ -x /usr/bin/q ] && /usr/bin/q -qr' > ${ROOT}/etc/portage/postsync.d/q-reinitialize
-		chmod 755 ${ROOT}/etc/portage/postsync.d/q-reinitialize
-		elog "${ROOT}/etc/portage/postsync.d/q-reinitialize has been installed for convenience and will be automatically run at the end of every --sync"
+		elog "${ROOT}/etc/portage/postsync.d/q-reinitialize has been installed for convenience"
+		elog "If you wish for it to be automatically run at the end of every --sync simply chmod +x ${ROOT}/etc/portage/postsync.d/q-reinitialize"
 		elog "Normally this should only take a few seconds to run but file systems such as ext3 can take a lot longer."
-		elog "If you find this to be an inconvenience simply chmod -x ${ROOT}/etc/portage/postsync.d/q-reinitialize"
+		elog "If ever you find this to be an inconvenience simply chmod -x ${ROOT}/etc/portage/postsync.d/q-reinitialize"
 	fi
 	:
 }
