@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/rpm/Attic/rpm-4.4.7-r2.ebuild,v 1.2 2007/02/12 19:44:53 sanchan Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/rpm/Attic/rpm-4.4.6-r4.ebuild,v 1.1 2007/02/12 19:44:53 sanchan Exp $
 
 inherit eutils autotools distutils perl-module flag-o-matic
 
@@ -14,7 +14,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86
 IUSE="nls python perl doc sqlite"
 
 RDEPEND="=sys-libs/db-3.2*
-	>=sys-libs/zlib-1.2.3-r1
+	>=sys-libs/zlib-1.1.3
 	>=app-arch/bzip2-1.0.1
 	>=dev-libs/popt-1.7
 	>=app-crypt/gnupg-1.2
@@ -33,11 +33,10 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/rpm-4.4.6-with-sqlite.patch
-	epatch "${FILESDIR}"/rpm-4.4.7-stupidness.patch
-	epatch "${FILESDIR}"/rpm-4.4.6-autotools.patch
-	epatch "${FILESDIR}"/rpm-4.4.6-buffer-overflow.patch
-	epatch "${FILESDIR}"/${P}-qa-implicit-function-to-pointer.patch
+	epatch "${FILESDIR}"/${P}-with-sqlite.patch
+	epatch "${FILESDIR}"/${P}-stupidness.patch
+	epatch "${FILESDIR}"/${P}-autotools.patch
+	epatch "${FILESDIR}"/${P}-buffer-overflow.patch
 	epatch "${FILESDIR}"/${P}-qa-fix-undefined.patch
 
 	# rpm uses AM_GNU_GETTEXT() but fails to actually
@@ -70,7 +69,7 @@ src_compile() {
 		$(use_with sqlite) \
 		$(use_enable nls) \
 		|| die "econf failed"
-	emake -j1 || die "emake failed"
+	emake || die "emake failed"
 }
 
 src_install() {
@@ -88,6 +87,10 @@ src_install() {
 
 	# Fix perllocal.pod file collision
 	use perl && fixlocalpod
+
+	for magic_file in "magic.mime.mgc" "magic.mgc" "magic.mime" "magic"; do
+		dosym /usr/share/misc/file/${magic_file} /usr/lib/rpm/${magic_file}
+	done
 }
 
 pkg_postinst() {
