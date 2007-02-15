@@ -1,16 +1,17 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/openafs-kernel/Attic/openafs-kernel-1.4.3_pre20061220.ebuild,v 1.2 2007/01/04 20:49:16 stefaan Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/openafs-kernel/Attic/openafs-kernel-1.4.3_rc2.ebuild,v 1.1 2007/02/15 15:44:04 stefaan Exp $
 
 inherit eutils linux-mod versionator toolchain-funcs
 
-PATCHVER=0.11
+PATCHVER=0.12
+MY_PV=${PV/_rc/rc}
 MY_PN=${PN/-kernel}
-MY_P=${MY_PN}-${PV}
+MY_P=${MY_PN}-${MY_PV}
 S=${WORKDIR}/${MY_P}
 DESCRIPTION="The OpenAFS distributed file system kernel module"
 HOMEPAGE="http://www.openafs.org/"
-SRC_URI="http://openafs.org/dl/${MY_PN}/${PV}/${MY_P}-src.tar.bz2
+SRC_URI="http://openafs.org/dl/${MY_PN}/${MY_PV}/${MY_P}-src.tar.bz2
 	mirror://gentoo/${MY_PN}-gentoo-${PATCHVER}.tar.bz2"
 
 LICENSE="IBM openafs-krb5 openafs-krb5-a APSL-2 sun-rpc"

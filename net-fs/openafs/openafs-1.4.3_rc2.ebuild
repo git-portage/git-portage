@@ -1,14 +1,17 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/openafs/Attic/openafs-1.4.3_pre20061220-r1.ebuild,v 1.1 2007/01/10 19:15:13 stefaan Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/openafs/Attic/openafs-1.4.3_rc2.ebuild,v 1.1 2007/02/15 15:45:45 stefaan Exp $
 
-inherit flag-o-matic eutils toolchain-funcs versionator
+inherit flag-o-matic eutils linux-mod toolchain-funcs versionator
 
-PATCHVER=0.11
+PATCHVER=0.12
+MY_PV=${PV/_rc/rc}
+MY_P=${PN}-${MY_PV}
+S=${WORKDIR}/${MY_P}
 DESCRIPTION="The OpenAFS distributed file system"
 HOMEPAGE="http://www.openafs.org/"
-SRC_URI="http://openafs.org/dl/${PN}/${PV}/${P}-src.tar.bz2
-	doc? ( http://openafs.org/dl/${PN}/${PV}/${P}-doc.tar.bz2 )
+SRC_URI="http://openafs.org/dl/${PN}/candidate/${MY_PV}/${MY_P}-src.tar.bz2
+	doc? ( http://openafs.org/dl/${PN}/candidate/${MY_PV}/${MY_P}-doc.tar.bz2 )
 	mirror://gentoo/${PN}-gentoo-${PATCHVER}.tar.bz2"
 
 LICENSE="IBM openafs-krb5 openafs-krb5-a APSL-2 sun-rpc"
@@ -45,12 +48,14 @@ src_compile() {
 		myconf="--with-krb5-conf=$(type -p krb5-config)"
 	fi
 
+	ARCH="$(tc-arch-kernel)" \
 	XCFLAGS="${CFLAGS}" \
 	econf \
 		$(use_enable pam) \
 		$(use_enable debug) \
 		--enable-largefile-fileserver \
 		--enable-supergroups \
+		--with-linux-kernel-headers=${KV_DIR} \
 		${myconf} || die econf
 
 	emake -j1 all_nolibafs || die "Build failed"
