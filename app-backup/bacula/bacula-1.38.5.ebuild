@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.38.5.ebuild,v 1.5 2007/01/24 04:11:40 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.38.5.ebuild,v 1.6 2007/02/15 11:14:56 dragonheart Exp $
 
 inherit eutils
 
@@ -235,7 +235,6 @@ src_install() {
 
 	# clean up permissions left broken by install
 	fperms 0644 ${D}/usr/libexec/bacula/query.sql
-	prepall
 
 	# setup init scripts
 	my_services="bacula-fd"

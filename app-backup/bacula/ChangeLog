@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.20 2007/01/24 04:11:40 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.21 2007/02/15 11:14:56 dragonheart Exp $
+
+  15 Feb 2007; Daniel Black <dragonheart@gentoo.org>
+  bacula-1.36.3-r3.ebuild, bacula-1.38.5.ebuild, bacula-1.38.9.ebuild:
+  no more prep all as per bug #140699
 
   24 Jan 2007; Marius Mauch <genone@gentoo.org> bacula-1.36.3-r2.ebuild,
   bacula-1.36.3-r3.ebuild, bacula-1.38.5.ebuild, bacula-1.38.9.ebuild:
