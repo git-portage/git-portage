@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/Attic/dar-2.3.2.ebuild,v 1.1 2006/11/03 04:15:11 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/Attic/dar-2.3.2-r1.ebuild,v 1.1 2007/02/16 15:38:08 matsuu Exp $
 
 inherit flag-o-matic
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://dar.linux.free.fr/"
 SRC_URI="mirror://sourceforge/dar/${P}.tar.gz"
 
 LICENSE="GPL-2"
-SLOT="4"
+SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="acl dar32 dar64 doc nls ssl"
 
@@ -26,6 +26,14 @@ pkg_setup() {
 		eerror "Please remove one of them and try the emerge again."
 		die "Please remove dar32 or dar64."
 	fi
+}
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	sed -i -e '/^dist_noinst_DATA/s/$/ macro_tools.hpp/' \
+		-e '/^noinst_HEADERS/s/macro_tools.hpp//' \
+		src/libdar/Makefile* || die
 }
 
 src_compile() {
