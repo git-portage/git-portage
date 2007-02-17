@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/enigmail/Attic/enigmail-0.94.1-r1.ebuild,v 1.3 2007/01/06 17:44:34 kloeri Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/enigmail/Attic/enigmail-0.94.2-r1.ebuild,v 1.1 2007/02/17 11:55:54 armin76 Exp $
 
 unset ALLOWED_FLAGS  # stupid extra-functions.sh ... bug 49179
 WANT_AUTOCONF=2.1
@@ -10,17 +10,18 @@ LANGS="de el es-AR es-ES nb-NO pt-BR sv-SE zh-CN"
 SHORTLANGS="ca-AD cs-CZ es-ES fi-FI fr-FR hu-HU it-IT ja-JP ko-KR nb-NO nl-NL pl-PL pt-PT ru-RU sk-SK sl-SI sv-SE"
 
 EMVER=${PV}
-TBVER="2.0a1"
-MY_TBVER="2.0_alpha1"
-TBPVER="1.0"
+TBVER="2.0b2"
+MY_TBVER="2.0_beta2"
+TBPVER="0.1"
 
 DESCRIPTION="Gnupg encryption plugin for thunderbird."
 HOMEPAGE="http://enigmail.mozdev.org"
 SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${TBVER}/source/thunderbird-${TBVER}-source.tar.bz2
+	http://dev.gentooexperimental.org/~anarchy/dist/mozilla-thunderbird-${MY_TBVER}-patches-${TBPVER}.tar.bz2
 	mirror://gentoo/mozilla-thunderbird-${MY_TBVER}-patches-${TBPVER}.tar.bz2
 	http://www.mozilla-enigmail.org/downloads/src/enigmail-${EMVER}.tar.gz"
 
-KEYWORDS="~alpha ~amd64 ia64 mips ppc sparc x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 SLOT="0"
 LICENSE="MPL-1.1 GPL-2"
 IUSE=""
@@ -175,6 +176,9 @@ src_install() {
 	dodir ${MOZILLA_FIVE_HOME}/extensions/${emid}
 	cd ${D}${MOZILLA_FIVE_HOME}/extensions/${emid}
 	unzip ${S}/dist/bin/*.xpi
+
+	# Fix module to work with 2.0_beta1
+	sed -i -e "s/2\.0a1/2.0b1/" ${D}${MOZILLA_FIVE_HOME}/extensions/${emid}/install.rdf
 
 	# these files will be picked up by mozilla-launcher -register
 	dodir ${MOZILLA_FIVE_HOME}/{chrome,extensions}.d
