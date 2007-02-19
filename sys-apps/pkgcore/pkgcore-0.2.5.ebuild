@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.2.2.ebuild,v 1.1 2007/01/30 13:11:15 marienz Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.2.5.ebuild,v 1.1 2007/02/19 21:02:30 marienz Exp $
 
 inherit distutils
 
@@ -18,6 +18,8 @@ RDEPEND=">=dev-lang/python-2.4
 	|| ( >=dev-lang/python-2.5 dev-python/pycrypto )
 	>=app-shells/bash-3.0
 	doc? ( >=dev-python/docutils-0.4 )"
+
+DOCS="AUTHORS NEWS"
 
 src_unpack() {
 	unpack ${A}
@@ -55,5 +57,5 @@ pkg_postinst() {
 }
 
 src_test() {
-	"${python}" setup.py test || die "tested returned non zero"
+	"${python}" setup.py test || die "testing returned non zero"
 }
