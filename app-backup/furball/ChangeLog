@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/furball
-# Copyright 2002-2005 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/furball/ChangeLog,v 1.2 2005/07/04 07:21:18 robbat2 Exp $
+# Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/furball/ChangeLog,v 1.3 2007/02/21 20:08:15 peper Exp $
+
+  21 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
+  Transition to Manifest2.
 
   04 Jul 2005; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +furball-0.5.ebuild:

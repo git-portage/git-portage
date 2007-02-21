@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/bobs
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/ChangeLog,v 1.6 2007/01/24 04:13:36 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/ChangeLog,v 1.7 2007/02/21 20:07:20 peper Exp $
+
+  21 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
+  Transition to Manifest2.
 
   24 Jan 2007; Marius Mauch <genone@gentoo.org> bobs-0.6.2-r1.ebuild:
   Replacing einfo with elog

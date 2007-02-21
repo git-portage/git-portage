@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/afbackup-server
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/afbackup-server/Attic/ChangeLog,v 1.2 2007/01/24 04:04:02 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/afbackup-server/Attic/ChangeLog,v 1.3 2007/02/21 20:06:53 peper Exp $
+
+  21 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
+  Transition to Manifest2.
 
   24 Jan 2007; Marius Mauch <genone@gentoo.org>
   afbackup-server-3.3.8.1.ebuild:
