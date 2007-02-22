@@ -1,8 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/irssi/Attic/irssi-0.8.10-r4.ebuild,v 1.10 2007/01/17 17:33:22 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/irssi/Attic/irssi-0.8.10-r4.ebuild,v 1.11 2007/02/22 20:52:32 swegener Exp $
 
-inherit perl-module eutils flag-o-matic
+inherit perl-module eutils
 
 DESCRIPTION="A modular textUI IRC client with IPv6 support"
 HOMEPAGE="http://irssi.org/"
