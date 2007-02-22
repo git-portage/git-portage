@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/demerge/Attic/demerge-0.025.ebuild,v 1.1 2007/02/21 21:10:12 ian Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/demerge/Attic/demerge-0.027.ebuild,v 1.1 2007/02/22 23:47:20 ian Exp $
 
 DESCRIPTION="demerge - revert to previous installation states"
 HOMEPAGE="http://download.iansview.com/gentoo/tools/demerge/"
