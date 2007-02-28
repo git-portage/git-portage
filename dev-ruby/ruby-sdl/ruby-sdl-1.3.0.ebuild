@@ -1,6 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-sdl/Attic/ruby-sdl-1.0.0-r1.ebuild,v 1.2 2006/07/12 13:56:34 kugelfang Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-sdl/Attic/ruby-sdl-1.3.0.ebuild,v 1.1 2007/02/28 14:52:17 pclouds Exp $
+
+inherit eutils
 
 MY_P="${P/-/}"
 S="${WORKDIR}/${MY_P}"
@@ -10,13 +12,8 @@ HOMEPAGE="http://www.kmc.gr.jp/~ohai/rubysdl.en.html"
 SRC_URI="http://www.kmc.gr.jp/~ohai/rubysdl/${MY_P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
-# Optional libraries, not in Portage as of writing:
-#	SGE -- ebuild submitted, not yet in portage CVS
-#	SDLSKK	--	http://www.kmc.gr.jp/~ohai/
-
-# local USE flags "image mixer sge"
 IUSE="image mixer truetype mpeg sge"
 
 RDEPEND="virtual/ruby
@@ -43,7 +40,7 @@ src_install () {
 }
 
 pkg_postinst () {
-	if ! use image || ! use mixer || ! use truetype || ! use mpeg ; then
+	if ! use image || ! use mixer || ! use truetype || ! use mpeg || ! use sge; then
 		echo ""
 		ewarn "If any of the following packages are not installed, Ruby/SDL"
 		ewarn "will be missing some functionality. This is ok, but may"
@@ -52,7 +49,7 @@ pkg_postinst () {
 		ewarn "\tmedia-libs/sdl-image\tImage loading (PNG, JPEG, etc.)"
 		ewarn "\tmedia-libs/sdl-mixer\tSound mixing"
 		ewarn "\tmedia-libs/sdl-ttf\tTrueType Fonts"
-		#ewarn "\tmedia-libs/sge\t\tVarious cool graphics extensions"
+		ewarn "\tmedia-libs/sge\t\tVarious cool graphics extensions"
 		ewarn "\tmedia-libs/smpeg\tMPEG playback (including mp3)"
 		ewarn ""
 		ewarn "If you need the functionality offered by these libraries,"
