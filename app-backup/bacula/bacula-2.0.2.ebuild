@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.0.2.ebuild,v 1.1 2007/02/28 14:40:44 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.0.2.ebuild,v 1.2 2007/02/28 19:37:12 wschlich Exp $
 
 #
 # TODO:
@@ -14,6 +14,7 @@
 #   - examples/reports/baculareport.pl
 # - correctly filter unneeded /usr/libexec/bacula/ stuff depending
 #   on selected USE flags, e.g. bacula-clientonly
+# - install bacula-web and/or bweb from bacula-gui
 #
 
 inherit eutils
@@ -45,7 +46,7 @@ DEPEND="
 		wxwindows? ( >=x11-libs/wxGTK-2.4.2 )
 		gnome? (
 			>=gnome-base/libgnome-2
-			app-admin/gnomesu
+			x11-libs/gksu
 		)
 	)
 	ssl? ( dev-libs/openssl )
@@ -122,6 +123,9 @@ src_unpack() {
 	# adjusts default configuration files for several binaries
 	# to /etc/bacula/<config> instead of ./<config>
 	pushd src && epatch "${FILESDIR}/${P}"-default-configs.patch && popd
+
+	# replaces (deprecated) gnomesu with gksu in the gnome menu files
+	useq bacula-console && useq gnome && epatch "${FILESDIR}/${P}"-gnomesu2gksu.diff
 }
 
 src_compile() {
@@ -200,21 +204,16 @@ src_install() {
 			mv static-bacula-dir bacula-dir
 			mv static-bacula-sd bacula-sd
 		fi
-		if useq gnome; then
+		if useq bacula-console && useq gnome; then
 			mv static-gnome-console gnome-console
 		fi
 		popd
 	fi
 
-	# gnome menu files
+	# gnome-console menu entries using gksu
 	if useq bacula-console && useq gnome; then
-		emake DESTDIR="${D}" \
-			install-menu \
-			install-menu-xsu || die "Failed to install gnome menu files" \
-		make_desktop_entry \
-			"gnome-console -c /etc/bacula/gnome-console.conf" \
-			"Bacula Console" /usr/share/pixmaps/bacula.png "app-admin" \
-			"/usr/sbin"
+		emake DESTDIR="${D}" install-menu-xsu \
+			|| die "Failed to install gnome menu files"
 	fi
 
 	# extra files which 'make install' doesn't cover
