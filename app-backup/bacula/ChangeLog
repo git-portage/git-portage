@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.23 2007/02/28 19:37:12 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.24 2007/03/02 19:58:29 wschlich Exp $
+
+  02 Mar 2007; Wolfram Schlich <wschlich@gentoo.org> bacula-2.0.2.ebuild:
+  remove prepall (already called by install_qa_check)
 
   28 Feb 2007; Wolfram Schlich <wschlich@gentoo.org>
   +files/bacula-2.0.2-gnomesu2gksu.diff, bacula-2.0.2.ebuild:

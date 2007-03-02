@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.0.2.ebuild,v 1.2 2007/02/28 19:37:12 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.0.2.ebuild,v 1.3 2007/03/02 19:58:29 wschlich Exp $
 
 #
 # TODO:
@@ -263,7 +263,6 @@ src_install() {
 		insinto /usr/share/doc/"${PF}"/manual
 		doins "${WORKDIR}/${PN}-docs-${DOC_VER}"/manual/bacula/*
 	fi
-	prepall
 
 	# setup init scripts
 	myservices="fd"
