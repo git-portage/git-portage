@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/backup-manager-0.7.5.ebuild,v 1.2 2007/01/24 04:07:56 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/backup-manager-0.7.5.ebuild,v 1.3 2007/03/03 12:00:10 ticho Exp $
 
 inherit eutils
 
@@ -15,6 +15,9 @@ IUSE="doc"
 
 DEPEND="dev-lang/perl
 	sys-devel/gettext"
+
+RDEPEND="${DEPEND}
+	>=sys-apps/findutils-4.3.0"
 
 src_unpack() {
 	unpack ${A}
