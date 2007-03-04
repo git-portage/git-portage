@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_jk/Attic/mod_jk-1.2.19.ebuild,v 1.6 2007/01/15 16:45:26 chtekk Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_jk/Attic/mod_jk-1.2.19-r1.ebuild,v 1.1 2007/03/04 23:06:43 wltjr Exp $
 
 inherit apache-module autotools java-pkg-opt-2
 
