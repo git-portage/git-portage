@@ -1,27 +1,30 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/Attic/php4_4-sapi.eclass,v 1.31 2006/12/07 08:47:47 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/Attic/php4_4-sapi.eclass,v 1.32 2007/03/05 01:50:47 chtekk Exp $
+
+# ========================================================================
 #
-# ########################################################################
+# php4_4-sapi.eclass
+#		Eclass for building different php4 SAPI instances
 #
-# eclass/php4_4-sapi.eclass
-#               Eclass for building different php4 SAPI instances
+#		USE THIS ECLASS FOR THE "CONCENTRATED" PACKAGES
 #
-#				USE THIS ECLASS FOR THE "CONCENTRATED" PACKAGES
+#		Based on robbat2's work on the php4 sapi eclass
 #
-#               Based on robbat2's work on the php4 sapi eclass
+# Author:	Stuart Herbert
+#			<stuart@gentoo.org>
 #
-# Author(s)		Stuart Herbert
-#				<stuart@gentoo.org>
-#
-#				Luca Longinotti
-#				<chtekk@gentoo.org>
+# Author:	Luca Longinotti
+#			<chtekk@gentoo.org>
 #
 # ========================================================================
 
-PHPCONFUTILS_MISSING_DEPS="adabas birdstep db2 dbmaker empress empress-bcs esoob frontbase hyperwave-api informix interbase mnogosearch msql oci8 oracle7 ovrimos pfpro sapdb solid sybase sybase-ct"
+PHPCONFUTILS_MISSING_DEPS="adabas birdstep db2 dbmaker empress empress-bcs esoob frontbase hyperwave-api informix interbase mnogosearch msql oci8 oracle7 pfpro sapdb solid sybase sybase-ct"
 
-inherit flag-o-matic toolchain-funcs libtool eutils phpconfutils php-common-r1
+WANT_AUTOCONF="latest"
+WANT_AUTOMAKE="latest"
+
+inherit flag-o-matic autotools toolchain-funcs libtool eutils phpconfutils php-common-r1
 
 # set MY_PHP_P in the ebuild
 
@@ -38,7 +41,7 @@ if [[ "${PHP_PACKAGE}" == 1 ]] ; then
 	S="${WORKDIR}/${MY_PHP_P}"
 fi
 
-IUSE="adabas bcmath berkdb birdstep bzip2 calendar cdb cjk crypt ctype curl db2 dbase dbmaker dbx debug doc empress empress-bcs esoob exif expat frontbase fdftk filepro firebird flatfile ftp gd gd-external gdbm gmp hardenedphp hyperwave-api iconv imap informix inifile interbase iodbc ipv6 java-internal java-external kerberos ldap libedit mcal mcve memlimit mhash ming mnogosearch msql mssql mysql ncurses nls oci8 oci8-instant-client odbc oracle7 overload ovrimos pcntl pcre pfpro pic posix postgres readline recode sapdb session sharedext sharedmem snmp sockets solid spell sqlite ssl sybase sybase-ct sysvipc tokenizer truetype unicode wddx xml xmlrpc xpm xsl yaz zip zlib"
+IUSE="adabas bcmath berkdb birdstep bzip2 calendar cdb cjk crypt ctype curl db2 dbase dbmaker dbx debug doc empress empress-bcs esoob exif expat frontbase fdftk filepro firebird flatfile ftp gd gd-external gdbm gmp hyperwave-api iconv imap informix inifile interbase iodbc ipv6 java-internal java-external kerberos ldap libedit mcal mcve memlimit mhash ming mnogosearch msql mssql mysql ncurses nls oci8 oci8-instant-client odbc oracle7 overload pcntl pcre pfpro pic posix postgres readline recode sapdb session sharedext sharedmem snmp sockets solid spell sqlite ssl suhosin sybase sybase-ct sysvipc tokenizer truetype unicode wddx xml xmlrpc xpm xsl yaz zip zlib"
 
 # these USE flags should have the correct dependencies
 DEPEND="adabas? ( >=dev-db/unixODBC-1.8.13 )
@@ -64,11 +67,11 @@ DEPEND="adabas? ( >=dev-db/unixODBC-1.8.13 )
 		iconv? ( virtual/libiconv )
 		imap? ( virtual/imap-c-client )
 		iodbc? ( dev-db/libiodbc >=dev-db/unixODBC-1.8.13 )
-		java-internal? ( >=virtual/jdk-1.4.2 dev-java/java-config !dev-php4/php-java-bridge )
+		java-internal? ( >=virtual/jdk-1.4.2 dev-java/java-config )
 		kerberos? ( virtual/krb5 )
 		ldap? ( >=net-nds/openldap-1.2.11 )
-		libedit? ( dev-libs/libedit )
-		mcal? ( dev-libs/libmcal !=dev-libs/libmcal-0.7-r2 )
+		libedit? ( || ( sys-freebsd/freebsd-lib dev-libs/libedit ) )
+		mcal? ( >=dev-libs/libmcal-0.7-r5 )
 		mcve? ( net-libs/libmonetra >=dev-libs/openssl-0.9.7 )
 		mhash? ( app-crypt/mhash )
 		ming? ( media-libs/ming )
@@ -111,11 +114,7 @@ RDEPEND="${DEPEND}"
 # those are only needed at compile-time
 DEPEND="${DEPEND}
 		>=sys-devel/m4-1.4.3
-		>=sys-devel/libtool-1.5.18
-		>=sys-devel/automake-1.9.6
-		sys-devel/automake-wrapper
-		>=sys-devel/autoconf-2.59
-		sys-devel/autoconf-wrapper"
+		>=sys-devel/libtool-1.5.18"
 
 # Additional features
 #
@@ -126,6 +125,9 @@ PDEPEND="doc? ( app-doc/php-docs )
 		sqlite? ( dev-php4/pecl-sqlite )
 		yaz? ( dev-php4/pecl-yaz )
 		zip? ( dev-php4/pecl-zip )"
+
+# Until Suhosin is stable on all archs
+[[ "${PV}" == "4.4.6" ]] && PDEPEND="${PDEPEND} suhosin? ( dev-php4/suhosin )"
 
 # ========================================================================
 # php.ini Support
@@ -139,8 +141,8 @@ PHP_INI_UPSTREAM="php.ini-dist"
 # PHP patchsets support
 SRC_URI="${SRC_URI} http://gentoo.longitekk.com/php-patchset-${MY_PHP_PV}-r${PHP_PATCHSET_REV}.tar.bz2"
 
-# Hardened-PHP patch support
-[[ -n "${HARDENEDPHP_PATCH}" ]] && SRC_URI="${SRC_URI} hardenedphp? ( http://gentoo.longitekk.com/${HARDENEDPHP_PATCH} )"
+# Suhosin patch support
+[[ -n "${SUHOSIN_PATCH}" ]] && SRC_URI="${SRC_URI} suhosin? ( http://gentoo.longitekk.com/${SUHOSIN_PATCH} )"
 
 # ========================================================================
 
@@ -157,18 +159,19 @@ php4_4-sapi_check_use_flags() {
 	phpconfutils_use_depend_any "exif" "gd" "gd" "gd-external"
 
 	# Simple USE dependencies
-	phpconfutils_use_depend_all "xpm"               "gd"
+	phpconfutils_use_depend_all "xpm"				"gd"
 	phpconfutils_use_depend_all "gd"				"zlib"
 	phpconfutils_use_depend_all "xml"				"zlib"
 	phpconfutils_use_depend_all "xmlrpc"			"iconv"
 	phpconfutils_use_depend_all "xsl"				"iconv"
 	phpconfutils_use_depend_all "java-external"		"session"
 	phpconfutils_use_depend_all "mcve"				"ssl"
+	phpconfutils_use_depend_all "suhosin"			"unicode"
 	phpconfutils_use_depend_all "adabas"			"odbc"
 	phpconfutils_use_depend_all "birdstep"			"odbc"
 	phpconfutils_use_depend_all "dbmaker"			"odbc"
 	phpconfutils_use_depend_all "empress-bcs"		"odbc" "empress"
-	phpconfutils_use_depend_all "empress"           "odbc"
+	phpconfutils_use_depend_all "empress"			"odbc"
 	phpconfutils_use_depend_all "esoob"				"odbc"
 	phpconfutils_use_depend_all "db2"				"odbc"
 	phpconfutils_use_depend_all "iodbc"				"odbc"
@@ -218,7 +221,8 @@ php4_4-sapi_install_ini() {
 	# work out where we are installing the ini file
 	php4_4-sapi_set_php_ini_dir
 
-	local phpinisrc=${PHP_INI_UPSTREAM}
+	cp "${PHP_INI_UPSTREAM}" "${PHP_INI_UPSTREAM}-${PHPSAPI}"
+	local phpinisrc="${PHP_INI_UPSTREAM}-${PHPSAPI}"
 
 	# Set the extension dir
 	einfo "Setting extension_dir in php.ini"
@@ -232,6 +236,36 @@ php4_4-sapi_install_ini() {
 	einfo "Setting correct include_path"
 	sed -e 's|^;include_path = ".:/php/includes".*|include_path = ".:/usr/share/php4:/usr/share/php"|' -i ${phpinisrc}
 
+	# Add needed MySQL extension charset configuration
+	local phpmycnfcharset=""
+
+	if [[ "${PHPSAPI}" == "cli" ]] ; then
+		phpmycnfcharset="`php_get_mycnf_charset cli`"
+		einfo "MySQL extension charset for 'cli' SAPI is: ${phpmycnfcharset}"
+	elif [[ "${PHPSAPI}" == "cgi" ]] ; then
+		phpmycnfcharset="`php_get_mycnf_charset cgi-fcgi`"
+		einfo "MySQL extension charset for 'cgi' SAPI is: ${phpmycnfcharset}"
+	elif [[ "${PHPSAPI}" == "apache" ]] ; then
+		phpmycnfcharset="`php_get_mycnf_charset apache`"
+		einfo "MySQL extension charset for 'apache' SAPI is: ${phpmycnfcharset}"
+	elif [[ "${PHPSAPI}" == "apache2" ]] ; then
+		phpmycnfcharset="`php_get_mycnf_charset apache2handler`"
+		einfo "MySQL extension charset for 'apache2' SAPI is: ${phpmycnfcharset}"
+	else
+		einfo "No supported SAPI found for which to get the MySQL charset."
+	fi
+
+	if [[ -n "${phpmycnfcharset}" ]] && [[ "${phpmycnfcharset}" != "empty" ]] ; then
+		einfo "Setting MySQL extension charset to ${phpmycnfcharset}"
+		echo "" >> ${phpinisrc}
+		echo "; MySQL extension default connection charset settings" >> ${phpinisrc}
+		echo "mysql.connect_charset = ${phpmycnfcharset}" >> ${phpinisrc}
+	else
+		echo "" >> ${phpinisrc}
+		echo "; MySQL extension default connection charset settings" >> ${phpinisrc}
+		echo ";mysql.connect_charset = utf8" >> ${phpinisrc}
+	fi
+
 	dodir ${PHP_INI_DIR}
 	insinto ${PHP_INI_DIR}
 	newins ${phpinisrc} ${PHP_INI_FILE}
@@ -243,7 +277,7 @@ php4_4-sapi_install_ini() {
 	php_install_java_inifile
 
 	# Install any extensions built as shared objects
-	if useq sharedext ; then
+	if use sharedext ; then
 		for x in `ls "${D}/${PHPEXTDIR}/"*.so | sort | sed -e "s|.*java.*||g"` ; do
 			inifilename=${x/.so/.ini}
 			inifilename=`basename ${inifilename}`
@@ -306,28 +340,28 @@ php4_4-sapi_src_unpack() {
 	fi
 
 	# Patch for PostgreSQL support
-	if useq postgres ; then
+	if use postgres ; then
 		sed -e 's|include/postgresql|include/postgresql include/postgresql/pgsql|g' -i ext/pgsql/config.m4 || die "Failed to fix PostgreSQL include paths"
 	fi
 
-	# Hardened-PHP support
-	if useq hardenedphp ; then
-		if [[ -n "${HARDENEDPHP_PATCH}" ]] && [[ -f "${DISTDIR}/${HARDENEDPHP_PATCH}" ]] ; then
-			epatch "${DISTDIR}/${HARDENEDPHP_PATCH}"
+	# Suhosin support
+	if use suhosin ; then
+		if [[ -n "${SUHOSIN_PATCH}" ]] && [[ -f "${DISTDIR}/${SUHOSIN_PATCH}" ]] ; then
+			epatch "${DISTDIR}/${SUHOSIN_PATCH}"
 		else
-			ewarn "There is no Hardened-PHP patch available for this PHP release yet!"
+			ewarn "There is no Suhosin patch available for this PHP release yet!"
 		fi
 	fi
 
-	# Fix configure scripts to correctly support Hardened-PHP
+	# Fix configure scripts to correctly support Suhosin
 	einfo "Running aclocal"
-	WANT_AUTOMAKE=1.9 aclocal --force || die "Unable to run aclocal successfully"
+	aclocal --force || die "Unable to run aclocal successfully"
 	einfo "Running libtoolize"
 	libtoolize --copy --force || die "Unable to run libtoolize successfully"
 
 	# Rebuild configure to make sure it's up to date
 	einfo "Rebuilding configure script"
-	WANT_AUTOCONF=2.5 autoreconf --force -W no-cross || die "Unable to regenerate configure script successfully"
+	autoreconf --force -W no-cross || die "Unable to regenerate configure script successfully"
 
 	# Run elibtoolize
 	elibtoolize
@@ -384,7 +418,6 @@ php4_4-sapi_src_compile() {
 	phpconfutils_extension_with		"openssl"		"ssl"			0
 	phpconfutils_extension_with		"openssl-dir"	"ssl"			0 "/usr"
 	phpconfutils_extension_disable	"overload"		"overload"		0
-	phpconfutils_extension_with		"ovrimos"		"ovrimos"		1
 	phpconfutils_extension_enable	"pcntl" 		"pcntl" 		1
 	phpconfutils_extension_without	"pcre-regex"	"pcre"			0
 	phpconfutils_extension_with		"pfpro"			"pfpro"			1
@@ -408,7 +441,7 @@ php4_4-sapi_src_compile() {
 	phpconfutils_extension_enable	"debug"			"debug"			0
 
 	# DBA support
-	if useq cdb || useq berkdb || useq flatfile || useq gdbm || useq inifile ; then
+	if use cdb || use berkdb || use flatfile || use gdbm || use inifile ; then
 		my_conf="${my_conf} --enable-dba${shared}"
 	fi
 
@@ -423,7 +456,7 @@ php4_4-sapi_src_compile() {
 	phpconfutils_extension_enable	"dbx"	"dbx"		1
 
 	# Support for the GD graphics library
-	if useq gd-external || phpconfutils_usecheck gd-external ; then
+	if use gd-external || phpconfutils_usecheck gd-external ; then
 		phpconfutils_extension_with		"freetype-dir"	"truetype"		0 "/usr"
 		phpconfutils_extension_with		"t1lib"			"truetype"		0 "/usr"
 		phpconfutils_extension_enable	"gd-jis-conv"	"cjk" 			0
@@ -442,30 +475,30 @@ php4_4-sapi_src_compile() {
 	fi
 
 	# Java support
-	if useq java-internal || phpconfutils_usecheck java-internal ; then
+	if use java-internal || phpconfutils_usecheck java-internal ; then
 		phpconfutils_extension_with		"java"			"java-internal"	0 "`java-config --jdk-home`"
 	fi
 
 	# IMAP support
-	if useq imap || phpconfutils_usecheck imap ; then
+	if use imap || phpconfutils_usecheck imap ; then
 		phpconfutils_extension_with		"imap"			"imap"			1
 		phpconfutils_extension_with		"imap-ssl"		"ssl"			0
 	fi
 
 	# Interbase support
-	if useq firebird || useq interbase ; then
+	if use firebird || use interbase ; then
 		my_conf="${my_conf} --with-interbase=/usr"
 	fi
 
 	# LDAP support
-	if useq ldap || phpconfutils_usecheck ldap ; then
+	if use ldap || phpconfutils_usecheck ldap ; then
 		phpconfutils_extension_with		"ldap"			"ldap"			1
 	fi
 
 	# MySQL support
 	# In PHP4, MySQL is enabled by default, so if no 'mysql' USE flag is set,
 	# we must turn it off explicitely
-	if useq mysql ; then
+	if use mysql ; then
 		phpconfutils_extension_with		"mysql"			"mysql"			1 "/usr"
 		phpconfutils_extension_with		"mysql-sock"	"mysql"			0 "/var/run/mysqld/mysqld.sock"
 	else
@@ -473,14 +506,14 @@ php4_4-sapi_src_compile() {
 	fi
 
 	# ODBC support
-	if useq odbc || phpconfutils_usecheck odbc ; then
+	if use odbc || phpconfutils_usecheck odbc ; then
 		phpconfutils_extension_with		"unixODBC"		"odbc"			1 "/usr"
 
 		phpconfutils_extension_with		"adabas"		"adabas"		1
 		phpconfutils_extension_with		"birdstep"		"birdstep"		1
 		phpconfutils_extension_with		"dbmaker"		"dbmaker"		1
 		phpconfutils_extension_with		"empress"		"empress"		1
-		if useq empress || phpconfutils_usecheck empress ; then
+		if use empress || phpconfutils_usecheck empress ; then
 			phpconfutils_extension_with	"empress-bcs"	"empress-bcs"	0
 		fi
 		phpconfutils_extension_with		"esoob"			"esoob"			1
@@ -498,20 +531,20 @@ php4_4-sapi_src_compile() {
 	# Sablotron/XSLT support
 	phpconfutils_extension_enable		"xslt"			"xsl"			1
 	phpconfutils_extension_with			"xslt-sablot"	"xsl"			1
-	if useq xml || phpconfutils_usecheck xml ; then
+	if use xml || phpconfutils_usecheck xml ; then
 		phpconfutils_extension_with		"dom-xslt"		"xsl"			0 	"/usr"
 		phpconfutils_extension_with		"dom-exslt"		"xsl"			0	"/usr"
 	fi
 
 	# Session support
-	if ! useq session && ! phpconfutils_usecheck session ; then
+	if ! use session && ! phpconfutils_usecheck session ; then
 		phpconfutils_extension_disable	"session"		"session"		0
 	else
 		phpconfutils_extension_with		"mm"			"sharedmem"		0
 	fi
 
 	# Fix ELF-related problems
-	if useq pic || phpconfutils_usecheck pic ; then
+	if use pic || phpconfutils_usecheck pic ; then
 		einfo "Enabling PIC support"
 		my_conf="${my_conf} --with-pic"
 	fi
@@ -546,7 +579,7 @@ php4_4-sapi_src_install() {
 	make INSTALL_ROOT="${D}" install-build install-headers install-programs || die "make install failed"
 
 	# Install missing header files
-	if useq unicode || phpconfutils_usecheck unicode ; then
+	if use unicode || phpconfutils_usecheck unicode ; then
 		dodir ${destdir}/include/php/ext/mbstring
 		insinto ${destdir}/include/php/ext/mbstring
 		doins ext/mbstring/mbregex/mbregex.h
@@ -556,7 +589,7 @@ php4_4-sapi_src_install() {
 	[[ -z "${PHPEXTDIR}" ]] && PHPEXTDIR="`"${D}/${destdir}/bin/php-config" --extension-dir`"
 
 	# And install the modules to it
-	if useq sharedext ; then
+	if use sharedext ; then
 		for x in `ls "${S}/modules/"*.so | sort | sed -e "s|.*java.*||g"` ; do
 			module=`basename ${x}`
 			modulename=${module/.so/}
@@ -584,7 +617,7 @@ php4_4-sapi_pkg_postinst() {
 	ewarn "with the newer PHP packages releases, so please reemerge any"
 	ewarn "PHP extensions you have installed to automatically adapt to"
 	ewarn "the new configuration layout."
-	if useq sharedext ; then
+	if use sharedext ; then
 		ewarn "The core PHP extensions are now loaded through external"
 		ewarn ".ini files, not anymore using a 'extension=name.so' line"
 		ewarn "in the php.ini file. Portage will take care of this by"
@@ -593,7 +626,7 @@ php4_4-sapi_pkg_postinst() {
 	fi
 	ewarn
 
-	if useq curl ; then
+	if use curl ; then
 		ewarn "Please be aware that CURL can allow the bypass of open_basedir restrictions."
 		ewarn "This can be a security risk!"
 		ewarn
@@ -605,6 +638,13 @@ php4_4-sapi_pkg_postinst() {
 	ewarn "is enabled automatically). You may also need this on other"
 	ewarn "configurations where TEXTRELs are disabled, for example when using"
 	ewarn "certain PaX options in the kernel."
+	ewarn
+
+	ewarn "The Ovrimos extension was recently removed and has no available"
+	ewarn "substitute, our ebuilds reflect this."
+	ewarn "Hardened-PHP was also removed from the PHP 4.4 ebuilds in"
+	ewarn "favour of its successor Suhosin, enable the 'suhosin' USE"
+	ewarn "flag to install it."
 	ewarn
 
 	ewarn "The 'xml' and 'xml2' USE flags were unified in only the 'xml' USE"
