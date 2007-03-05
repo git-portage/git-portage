@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/php/Attic/php-4.4.4-r8.ebuild,v 1.1 2006/10/27 12:17:35 chtekk Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/php/Attic/php-4.4.6.ebuild,v 1.1 2007/03/05 02:14:43 chtekk Exp $
 
 CGI_SAPI_USE="discard-path force-cgi-redirect"
 APACHE2_SAPI_USE="concurrentmodphp threads"
@@ -20,8 +20,8 @@ MY_PHP_P="php-${MY_PHP_PV}"
 PHP_PACKAGE="1"
 
 # php patch settings, general
-PHP_PATCHSET_REV="4"
-HARDENEDPHP_PATCH="hardening-patch-${MY_PHP_PV}-0.4.15-gentoo.patch.gz"
+PHP_PATCHSET_REV="1"
+SUHOSIN_PATCH="suhosin-patch-${MY_PHP_PV}-0.9.6-gentoo.patch.gz"
 MULTILIB_PATCH="${MY_PHP_PV}/opt/php${MY_PHP_PV}-multilib-search-path.patch"
 # php patch settings, ebuild specific
 FASTBUILD_PATCH="${MY_PHP_PV}/opt/php${MY_PHP_PV}-fastbuild.patch"
@@ -405,6 +405,10 @@ src_install() {
 				;;
 		esac
 	done
+
+	# Install env.d files
+	newenvd "${FILESDIR}/20php4-envd" "20php4"
+	sed -e "s|/lib/|/$(get_libdir)/|g" -i "${D}/etc/env.d/20php4"
 }
 
 pkg_postinst() {

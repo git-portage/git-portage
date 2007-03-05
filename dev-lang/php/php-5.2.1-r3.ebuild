@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/php/Attic/php-5.1.6-r8.ebuild,v 1.1 2006/10/27 12:17:35 chtekk Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/php/Attic/php-5.2.1-r3.ebuild,v 1.1 2007/03/05 02:14:43 chtekk Exp $
 
 CGI_SAPI_USE="discard-path force-cgi-redirect"
 APACHE2_SAPI_USE="concurrentmodphp threads"
@@ -21,13 +21,13 @@ PHP_PACKAGE="1"
 
 # php patch settings, general
 PHP_PATCHSET_REV="4"
-HARDENEDPHP_PATCH="hardening-patch-${MY_PHP_PV}-0.4.15-gentoo-r1.patch.gz"
+SUHOSIN_PATCH="suhosin-patch-${MY_PHP_PV}-0.9.6.2-gentoo.patch.gz"
 MULTILIB_PATCH="${MY_PHP_PV}/opt/php${MY_PHP_PV}-multilib-search-path.patch"
 # php patch settings, ebuild specific
 FASTBUILD_PATCH="${MY_PHP_PV}/opt/php${MY_PHP_PV}-fastbuild.patch"
 CONCURRENTMODPHP_PATCH="${MY_PHP_PV}/opt/php${MY_PHP_PV}-concurrent_apache_modules.patch"
 
-inherit php5_1-sapi apache-module
+inherit php5_2-sapi apache-module
 
 DESCRIPTION="The PHP language runtime engine: CLI, CGI and Apache SAPIs."
 
@@ -103,7 +103,7 @@ pkg_setup() {
 		ewarn
 	fi
 
-	php5_1-sapi_pkg_setup
+	php5_2-sapi_pkg_setup
 }
 
 php_determine_sapis() {
@@ -157,7 +157,7 @@ src_unpack() {
 	fi
 
 	# Now let the eclass do the rest and regenerate the configure
-	php5_1-sapi_src_unpack
+	php5_2-sapi_src_unpack
 
 	# Fix Makefile.global:test to consider the CGI SAPI if present
 	if useq cgi ; then
@@ -234,7 +234,7 @@ src_compile_fastbuild() {
 	fi
 
 	# Now we know what we are building, build it
-	php5_1-sapi_src_compile
+	php5_2-sapi_src_compile
 
 	# To keep the separate php.ini files for each SAPI, we change the
 	# build-defs.h and recompile
@@ -320,23 +320,23 @@ src_compile_normal() {
 		case ${x} in
 			cli)
 				my_conf="${my_conf} --enable-cli --disable-cgi"
-				php5_1-sapi_src_compile
+				php5_2-sapi_src_compile
 				cp sapi/cli/php php-cli || die "Unable to copy CLI SAPI"
 				;;
 			cgi)
 				my_conf="${my_conf} --disable-cli --enable-cgi --enable-fastcgi"
 				phpconfutils_extension_enable "discard-path" "discard-path" 0
 				phpconfutils_extension_enable "force-cgi-redirect" "force-cgi-redirect" 0
-				php5_1-sapi_src_compile
+				php5_2-sapi_src_compile
 				cp sapi/cgi/php php-cgi || die "Unable to copy CGI SAPI"
 				;;
 			apache1)
 				my_conf="${my_conf} --disable-cli --with-apxs=/usr/sbin/apxs"
-				php5_1-sapi_src_compile
+				php5_2-sapi_src_compile
 				;;
 			apache2)
 				my_conf="${my_conf} --disable-cli --with-apxs2=/usr/sbin/apxs2"
-				php5_1-sapi_src_compile
+				php5_2-sapi_src_compile
 				;;
 		esac
 
@@ -351,7 +351,7 @@ src_install() {
 	destdir=/usr/$(get_libdir)/php5
 
 	# Let the eclass do the common work
-	php5_1-sapi_src_install
+	php5_2-sapi_src_install
 
 	einfo
 	einfo "Installing SAPI(s) ${PHPSAPIS}"
@@ -366,13 +366,13 @@ src_install() {
 				einfo "Installing CLI SAPI"
 				into ${destdir}
 				newbin php-cli php || die "Unable to install ${x} sapi"
-				php5_1-sapi_install_ini
+				php5_2-sapi_install_ini
 				;;
 			cgi)
 				einfo "Installing CGI SAPI"
 				into ${destdir}
 				dobin php-cgi || die "Unable to install ${x} sapi"
-				php5_1-sapi_install_ini
+				php5_2-sapi_install_ini
 				;;
 			apache1)
 				einfo "Installing Apache${APACHE_VERSION} SAPI"
@@ -380,7 +380,7 @@ src_install() {
 				einfo "Installing Apache${APACHE_VERSION} config file for PHP5 (70_mod_php5.conf)"
 				insinto ${APACHE_MODULES_CONFDIR}
 				newins "${FILESDIR}/70_mod_php5.conf-apache1" "70_mod_php5.conf"
-				php5_1-sapi_install_ini
+				php5_2-sapi_install_ini
 				;;
 			apache2)
 				einfo "Installing Apache${APACHE_VERSION} SAPI"
@@ -401,10 +401,14 @@ src_install() {
 					insinto ${APACHE_MODULES_CONFDIR}
 					newins "${FILESDIR}/70_mod_php5.conf-apache2" "70_mod_php5.conf"
 				fi
-				php5_1-sapi_install_ini
+				php5_2-sapi_install_ini
 				;;
 		esac
 	done
+
+	# Install env.d files
+	newenvd "${FILESDIR}/20php5-envd" "20php5"
+	sed -e "s|/lib/|/$(get_libdir)/|g" -i "${D}/etc/env.d/20php5"
 }
 
 pkg_postinst() {
@@ -500,7 +504,7 @@ pkg_postinst() {
 		ewarn
 	fi
 
-	php5_1-sapi_pkg_postinst
+	php5_2-sapi_pkg_postinst
 }
 
 src_test() {
