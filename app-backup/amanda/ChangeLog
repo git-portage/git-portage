@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/amanda
 # Copyright 2000-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.20 2007/03/07 18:46:54 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.21 2007/03/07 20:14:56 robbat2 Exp $
+
+  07 Mar 2007; Robin H. Johnson <robbat2@gentoo.org>
+  -amanda-2.5.1_p2.ebuild, -amanda-2.5.1_p3.ebuild:
+  Remove the builds of amanda-2.5.1_p[23] that caused brokenness. You must
+  upgrade to p3-r1!.
 
 *amanda-2.5.1_p3-r1 (07 Mar 2007)
 
