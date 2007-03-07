@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r3.ebuild,v 1.5 2007/02/15 11:14:56 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r3.ebuild,v 1.6 2007/03/07 11:57:31 genstef Exp $
 
 inherit eutils
 
@@ -36,7 +36,7 @@ DEPEND="
 		gnome? (
 			>=gnome-base/gnome-2
 			>=gnome-base/libgnome-2
-			app-admin/gnomesu
+			x11-libs/gksu
 		)
 	)
 	logrotate? ( app-admin/logrotate )
@@ -103,6 +103,8 @@ src_unpack() {
 		epatch ${FILESDIR}/${PN}-doc-${DOC_VER}-latex-icons.patch
 		cd ${S}
 	fi
+
+	patch -p0 -f < "${FILESDIR}"/bacula-2.0.2-gnomesu2gksu.diff
 
 	# autoconf
 	cd ${S}/autoconf

@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r2.ebuild,v 1.8 2007/01/24 04:11:40 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r2.ebuild,v 1.9 2007/03/07 11:57:31 genstef Exp $
 
 inherit eutils
 
@@ -18,7 +18,7 @@ DEPEND=">=sys-libs/zlib-1.1.4
 	readline? ( >=sys-libs/readline-4.1 )
 	tcpd? ( >=sys-apps/tcp-wrappers-7.6 )
 	gnome? ( gnome-base/libgnome )
-	gnome? ( app-admin/gnomesu )
+	gnome? ( x11-libs/gksu )
 	sqlite? ( =dev-db/sqlite-2* )
 	mysql? ( virtual/mysql )
 	postgres? ( >=dev-db/postgresql-7.4.0 )
@@ -67,6 +67,7 @@ src_unpack() {
 	sed -i -e 's:"./bacula-fd.conf":"/etc/bacula/bacula-fd.conf":' src/filed/filed.c
 	sed -i -e 's:"./bacula-dir.conf":"/etc/bacula/bacula-dir.conf":' src/dird/dird.c
 	sed -i -e 's:"./bconsole.conf":"/etc/bacula/bconsole.conf":' src/console/console.c
+	patch -p0 -f < "${FILESDIR}"/bacula-2.0.2-gnomesu2gksu.diff
 }
 
 src_compile() {

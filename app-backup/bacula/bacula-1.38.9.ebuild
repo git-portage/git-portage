@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.38.9.ebuild,v 1.7 2007/02/15 11:14:56 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.38.9.ebuild,v 1.8 2007/03/07 11:57:31 genstef Exp $
 
 inherit eutils
 
@@ -31,7 +31,7 @@ DEPEND="
 		wxwindows? ( >=x11-libs/wxGTK-2.4.2 )
 		gnome? (
 			>=gnome-base/libgnome-2
-			app-admin/gnomesu
+			x11-libs/gksu
 		)
 	)
 	ssl? ( dev-libs/openssl )
@@ -108,6 +108,7 @@ src_unpack() {
 	# adjusts default configuration files for several binaries
 	# to /etc/bacula/<config> instead of ./<config>
 	epatch "${FILESDIR}/${P}"-default-configs.patch
+	patch -p0 -f < "${FILESDIR}"/bacula-2.0.2-gnomesu2gksu.diff
 }
 
 src_compile() {
