@@ -1,6 +1,20 @@
 # ChangeLog for app-backup/amanda
 # Copyright 2000-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.19 2007/03/05 15:23:12 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.20 2007/03/07 18:46:54 robbat2 Exp $
+
+*amanda-2.5.1_p3-r1 (07 Mar 2007)
+
+  07 Mar 2007; Robin H. Johnson <robbat2@gentoo.org>
+  +files/amanda-amandahosts-client-2.5.1_p3-r1,
+  +files/amanda-amandahosts-server-2.5.1_p3-r1,
+  +files/amanda-inetd.amanda.sample-2.5.1_p3-r1,
+  +files/amanda-xinetd-2.5.1_p3-r1, +files/example_disklist-2.5.1_p3-r1,
+  +files/amanda-2.5.1_p3-displayunit.patch, +amanda-2.5.1_p3-r1.ebuild:
+  Add proper p3 changes from upstream developer Stefan G. Weichinger
+  (monitor@oops.co.at). This moves the builds to using the new Amanda auth
+  system. If you use localhost in your disklist you should replace it with the
+  actual hostname! Please also see the syntax changes to amandahosts. We also
+  support USE=minimal now to build clients.
 
 *amanda-2.5.1_p3 (05 Mar 2007)
 
