@@ -1,12 +1,12 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_jk/Attic/mod_jk-1.2.20-r1.ebuild,v 1.1 2007/03/04 23:06:43 wltjr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_jk/Attic/mod_jk-1.2.21-r2.ebuild,v 1.1 2007/03/08 16:04:50 wltjr Exp $
 
 inherit apache-module autotools
 
 MY_P="tomcat-connectors-${PV}-src"
 
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 DESCRIPTION="JK module for connecting Tomcat and Apache using the ajp13 protocol."
 HOMEPAGE="http://tomcat.apache.org/connectors-doc/"
@@ -56,6 +56,11 @@ src_install() {
 
 	# call the nifty default src_install :-)
 	apache-module_src_install
+
+	if ! use apache2 ; then
+		sed -i -e 's:/apache2/:/apache/:' "${D}${APACHE_CONFDIR}/modules.d/88_${PN}.conf" \
+			|| die "Could not update jk-workers.properties for apache"
+	fi
 }
 
 pkg_postinst() {
