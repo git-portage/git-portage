@@ -1,11 +1,12 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/gnbd-kernel/Attic/gnbd-kernel-1.02.00-r1.ebuild,v 1.9 2007/03/03 00:27:34 xmerlin Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/gnbd-kernel/Attic/gnbd-kernel-1.02.00-r1.ebuild,v 1.10 2007/03/09 14:35:01 xmerlin Exp $
 
 inherit eutils linux-mod linux-info
 
+CLUSTER_RELEASE="1.02.00"
+MY_P="cluster-${CLUSTER_RELEASE}"
 CVS_RELEASE="20060713"
-MY_P="cluster-${PV}"
 
 DESCRIPTION="GFS Network Block Devices module"
 HOMEPAGE="http://sources.redhat.com/cluster/"
@@ -38,6 +39,10 @@ src_unpack() {
 	if kernel_is 2 6; then
 		if [ "$KV_PATCH" -ge "18" ] ; then
 			epatch ${FILESDIR}/${PN}-remove-devfs-support.patch || die
+		fi
+
+		if [ "$KV_PATCH" -ge "19" ] ; then
+			epatch ${FILESDIR}/${PN}-1.03.00-compile-fix-kernel-post-2.6.18.patch || die
 		fi
 	fi
 }

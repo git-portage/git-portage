@@ -1,10 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/gnbd-kernel/Attic/gnbd-kernel-1.03.00.ebuild,v 1.9 2007/03/09 14:35:01 xmerlin Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/gnbd-kernel/Attic/gnbd-kernel-1.04.00.ebuild,v 1.1 2007/03/09 14:35:01 xmerlin Exp $
 
 inherit linux-mod linux-info
 
-CLUSTER_RELEASE="1.03.00"
+CLUSTER_RELEASE="1.04.00"
 MY_P="cluster-${CLUSTER_RELEASE}"
 
 DESCRIPTION="GFS Network Block Devices module"
@@ -37,8 +37,15 @@ src_unpack() {
 			epatch ${FILESDIR}/${PN}-remove-devfs-support.patch || die
 		fi
 
-		if [ "$KV_PATCH" -ge "19" ] ; then
-			epatch ${FILESDIR}/${P}-compile-fix-kernel-post-2.6.18.patch || die
+		if [ "$KV_PATCH" -lt "18" ] ; then
+			sed -i \
+				-e 's|utsrelease.h|version.h|g' \
+				configure \
+				|| die "sed failed"
+		fi
+
+		if [ "$KV_PATCH" -lt "19" ] ; then
+			epatch ${FILESDIR}/${P}-compile-fix-kernel-pre-2.6.19.patch || die
 		fi
 	fi
 }
