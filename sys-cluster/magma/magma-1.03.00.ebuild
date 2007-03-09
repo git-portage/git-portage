@@ -1,10 +1,11 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/magma/Attic/magma-1.03.00.ebuild,v 1.2 2006/10/14 18:26:35 xmerlin Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/magma/Attic/magma-1.03.00.ebuild,v 1.3 2007/03/09 09:05:14 xmerlin Exp $
 
 inherit eutils
 
-MY_P="cluster-${PV}"
+CLUSTER_RELEASE="1.03.00"
+MY_P="cluster-${CLUSTER_RELEASE}"
 
 DESCRIPTION="Magma cluster interface"
 HOMEPAGE="http://sources.redhat.com/cluster/"
