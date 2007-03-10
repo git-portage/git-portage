@@ -1,6 +1,17 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.26 2007/03/08 09:31:30 lisa Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.27 2007/03/10 21:41:31 wschlich Exp $
+
+*bacula-2.0.3 (10 Mar 2007)
+
+  10 Mar 2007; Wolfram Schlich <wschlich@gentoo.org>
+  +files/2.0.3/bacula-all-init, +files/2.0.3/bacula-dir-init,
+  +files/bacula-2.0.3-default-configs.patch, +files/2.0.3/bacula-dir-conf,
+  +files/2.0.3/bacula-fd-conf, +files/bacula-2.0.3-gnomesu2gksu.diff,
+  +files/2.0.3/bacula-all-conf, +files/2.0.3/bacula-fd-init,
+  +files/2.0.3/bacula-sd-conf, +files/2.0.3/bacula-sd-init,
+  +bacula-2.0.3.ebuild:
+  version bump
 
   08 Mar 2007; Lisa Seelye <lisa@gentoo.org> bacula-2.0.2.ebuild:
   Change src_compile so --with-$mydbtype as per bug 169698
