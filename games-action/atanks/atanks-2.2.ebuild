@@ -1,12 +1,12 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/atanks/Attic/atanks-2.0.ebuild,v 1.1 2007/01/11 22:26:02 nyhm Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-action/atanks/Attic/atanks-2.2.ebuild,v 1.1 2007/03/10 08:46:10 nyhm Exp $
 
 inherit eutils toolchain-funcs games
 
 DESCRIPTION="Worms and Scorched Earth-like game"
 HOMEPAGE="http://atanks.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${P}-final.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
