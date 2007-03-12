@@ -1,8 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Snowball-Swedish/Attic/Snowball-Swedish-1.01.ebuild,v 1.10 2007/01/19 15:45:59 mcummings Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Snowball-Swedish/Attic/Snowball-Swedish-1.01.ebuild,v 1.11 2007/03/12 16:58:24 mcummings Exp $
 
-inherit perl-module
+inherit perl-module multilib
 
 DESCRIPTION="Porters stemming algorithm for Swedish"
 HOMEPAGE="http://search.cpan.org/~asksh/"
@@ -17,3 +17,25 @@ SRC_TEST="do"
 
 
 DEPEND="dev-lang/perl"
+
+src_install() {
+	perl-module_src_install
+	local version
+	eval `perl '-V:version'`
+	perl_version=${version} 
+	local myarch
+	eval `perl '-V:archname'`
+	myarch=${archname} 
+
+	if [ -f ${D}/usr/$(get_libdir)/perl5/vendor_perl/${perl_version}/Lingua/Stem/Snowball/stemmer.pl ]; then
+		mv \
+		${D}/usr/$(get_libdir)/perl5/vendor_perl/${perl_version}/Lingua/Stem/Snowball/stemmer.pl \
+		${D}/usr/$(get_libdir)/perl5/vendor_perl/${perl_version}/Lingua/Stem/Snowball/se-stemmer.pl
+	fi 
+}
+
+pkg_postinst() {
+	perl-module_pkg_postinst
+	elog "The stemmer.pl that ships with this distribution has been renamed to"
+	elog "se-stemmer.pl to avoid collisions with other Lingua::Stem packages."
+}
