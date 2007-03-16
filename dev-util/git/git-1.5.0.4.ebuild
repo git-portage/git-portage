@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/git/Attic/git-1.5.0.3.ebuild,v 1.1 2007/03/09 18:42:09 ferdy Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/git/Attic/git-1.5.0.4.ebuild,v 1.1 2007/03/16 15:39:11 ferdy Exp $
 
 inherit toolchain-funcs eutils elisp-common perl-module bash-completion
 
@@ -68,6 +68,8 @@ showpkgdeps() {
 src_unpack() {
 	unpack ${A}
 	cd ${S}
+
+	epatch "${FILESDIR}"/${PN}-1.5.0-symlinks.patch
 
 	sed -i \
 		-e "s:^\(CFLAGS = \).*$:\1${CFLAGS} -Wall:" \
