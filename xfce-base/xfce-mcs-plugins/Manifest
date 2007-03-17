@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 AUX xfce-mcs-plugins-4.4.0-no-broken-themes.patch 702 RMD160 b48a0e17582b12a598a3f01d8fd58c78d258a20b SHA1 f499e7fc7f4ee8b945c17ded7cac045eb421c6aa SHA256 ccba45507f99d87fa874036d7ebaaf7cd1254f5c7e40bb6be7e88edef5aab03e
 MD5 088c3a86fb008c06a05c053dd2e44019 files/xfce-mcs-plugins-4.4.0-no-broken-themes.patch 702
 RMD160 b48a0e17582b12a598a3f01d8fd58c78d258a20b files/xfce-mcs-plugins-4.4.0-no-broken-themes.patch 702
@@ -8,10 +11,10 @@ EBUILD xfce-mcs-plugins-4.2.3.ebuild 772 RMD160 31f7e6c4f0576c4c20d1dc57e47f0b63
 MD5 31c888d9b98a004cca0c441f6a775299 xfce-mcs-plugins-4.2.3.ebuild 772
 RMD160 31f7e6c4f0576c4c20d1dc57e47f0b630b89e79f xfce-mcs-plugins-4.2.3.ebuild 772
 SHA256 4dc341da8659a636fb5cfda99f26f9f97f0a07751753b3933de24f038d8ae71b xfce-mcs-plugins-4.2.3.ebuild 772
-EBUILD xfce-mcs-plugins-4.4.0-r1.ebuild 1002 RMD160 e3632e5c79225d1af11226b43bad6364d3027456 SHA1 ec15db6be770bdecb69d9d70ed952927a8917115 SHA256 cffe93c1957c582a29ec46150ec3ef8b5b65825a7708d210035309cc9331802b
-MD5 e1433373d6c39b244fc19e7e22da4c28 xfce-mcs-plugins-4.4.0-r1.ebuild 1002
-RMD160 e3632e5c79225d1af11226b43bad6364d3027456 xfce-mcs-plugins-4.4.0-r1.ebuild 1002
-SHA256 cffe93c1957c582a29ec46150ec3ef8b5b65825a7708d210035309cc9331802b xfce-mcs-plugins-4.4.0-r1.ebuild 1002
+EBUILD xfce-mcs-plugins-4.4.0-r1.ebuild 1001 RMD160 01eec271b1977a4ddd7abc776d83671a90be595e SHA1 a47941a68287a30d83d82513a9aa1a96da6a72f4 SHA256 061abdb01f42be3388e76b5c76fbbeddaa929f8f883fd1612cc20c3310f799c0
+MD5 6dfd14d08693e8bba2de910d0c1e7519 xfce-mcs-plugins-4.4.0-r1.ebuild 1001
+RMD160 01eec271b1977a4ddd7abc776d83671a90be595e xfce-mcs-plugins-4.4.0-r1.ebuild 1001
+SHA256 061abdb01f42be3388e76b5c76fbbeddaa929f8f883fd1612cc20c3310f799c0 xfce-mcs-plugins-4.4.0-r1.ebuild 1001
 MISC ChangeLog 11997 RMD160 53306f08c5df575ea908e306558f60d6f5f39ffa SHA1 a9dc83bfa46ea1e259c6237e04fd375ab3145468 SHA256 1f37fb4a0443400e46e72cf207e77a300c347f6eac875ccf9710c845684693cc
 MD5 965fe00bbe38d6787f3b4b370b94dc31 ChangeLog 11997
 RMD160 53306f08c5df575ea908e306558f60d6f5f39ffa ChangeLog 11997
@@ -26,3 +29,10 @@ SHA256 08d4bc13661cdfafcb4e69b68b20703eb5b31eb8a11d41c878da929689c32a8a files/di
 MD5 7f8779ced364d6da5e3a7e8a34c938e0 files/digest-xfce-mcs-plugins-4.4.0-r1 271
 RMD160 5da6cce1ce483e62eecfb0a194f3c3a2d799fb73 files/digest-xfce-mcs-plugins-4.4.0-r1 271
 SHA256 9ea0157bd3dc53bc329b1c235231230fa8bb5b705f34f990bd524bbc06ee298b files/digest-xfce-mcs-plugins-4.4.0-r1 271
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2.0.3 (GNU/Linux)
+
+iD8DBQFF/F488bi6rjpTunYRArIZAKC5CPlrsNGYWOvOTDxcQsNgPXOiGgCfd263
+z+R/opMbgYV1t/Sg1DZSX3E=
+=f/FK
+-----END PGP SIGNATURE-----
