@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/uptimed/Attic/uptimed-0.3.10.ebuild,v 1.2 2007/03/12 17:22:13 drizzt Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/uptimed/Attic/uptimed-0.3.11.ebuild,v 1.1 2007/03/19 10:15:45 armin76 Exp $
 
 inherit autotools
 
