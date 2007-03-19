@@ -2,8 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <maintainer>
-  <email>mkennedy@gentoo.org</email>
-  <name>Matthew Kennedy</name>
+  <email>maintainer-needed@gentoo.org</email>
 </maintainer>
 <longdescription>
 SaraB works with DAR (Disk ARchive) to schedule backups.  SaraB provides a
