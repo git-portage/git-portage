@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/Attic/postfix-2.3.5.ebuild,v 1.1 2006/12/24 18:36:10 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/Attic/postfix-2.3.8.ebuild,v 1.1 2007/03/23 22:55:14 ticho Exp $
 
 # NOTE: this ebuild is regular ebuild without mailer-config support
 # comment lines below "regular ebuild" and uncomment lines below "mailer-config support"
@@ -73,7 +73,7 @@ group_user_check() {
 	einfo "checking for postdrop group...	create if missing."
 	enewgroup postdrop 208
 	einfo "checking for postfix user...		create if missing."
-	enewuser postfix 207 -1 /var/spool/postfix postfix
+	enewuser postfix 207 -1 /var/spool/postfix postfix,mail
 }
 
 pkg_setup() {
