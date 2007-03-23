@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-nntp/leafnode/Attic/leafnode-1.11.4.ebuild,v 1.1 2005/11/23 16:59:12 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-nntp/leafnode/Attic/leafnode-1.11.6.ebuild,v 1.1 2007/03/23 11:37:05 swegener Exp $
 
 DESCRIPTION="A USENET software package designed for small sites"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
@@ -33,7 +33,7 @@ src_install() {
 		/var/spool/news/{failed.postings,interesting.groups,leaf.node,out.going,temp.files} \
 		/var/spool/news/message.id/{0,1,2,3,4,5,6,7,8,9}{0,1,2,3,4,5,6,7,8,9}{0,1,2,3,4,5,6,7,8,9}
 
-	chown -R news:news "${D}"/var/{lib,spool}/news
+	fowners -R news:news /var/{lib,spool}/news
 
 	insinto /etc/xinetd.d
 	newins "${FILESDIR}"/leafnode.xinetd leafnode-nntp
