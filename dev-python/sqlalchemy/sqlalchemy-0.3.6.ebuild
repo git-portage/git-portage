@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/sqlalchemy/Attic/sqlalchemy-0.3.5.ebuild,v 1.2 2007/03/20 08:23:56 lucass Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/sqlalchemy/Attic/sqlalchemy-0.3.6.ebuild,v 1.1 2007/03/24 07:59:14 lucass Exp $
 
 NEED_PYTHON=2.4
 
@@ -41,18 +41,8 @@ src_unpack() {
 	# skip testorderby and testorderby_desc
 	# which require sqlite-3.3.13 to pass
 	sed -i \
-		-e '1048,1060d' \
-		-e '1142,1155d' \
+		-e '1091,1119d' \
 		test/orm/mapper.py || die "sed failed"
-
-	sed -i -e 's/sleep(3)/sleep(5)/' \
-		test/engine/pool.py || die "sed failed"
-
-	# fix alltests.py to return 1 on failure
-	sed -i \
-		-e '1iimport sys' \
-		-e 's/\(testbase\.run.*\)/sys.exit(not \1.wasSuccessful())/' \
-		test/alltests.py || die "sed failed"
 }
 
 src_install() {
