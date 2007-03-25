@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r2.ebuild,v 1.9 2007/03/07 11:57:31 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r2.ebuild,v 1.10 2007/03/25 19:22:55 genstef Exp $
 
 inherit eutils
 
@@ -22,7 +22,6 @@ DEPEND=">=sys-libs/zlib-1.1.4
 	sqlite? ( =dev-db/sqlite-2* )
 	mysql? ( virtual/mysql )
 	postgres? ( >=dev-db/postgresql-7.4.0 )
-	X? ( virtual/x11 )
 	ncurses? ( sys-libs/ncurses )
 	virtual/mta
 	dev-libs/gmp"

@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.28 2007/03/23 23:01:19 killerfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.29 2007/03/25 19:22:55 genstef Exp $
+
+  25 Mar 2007; <genstef@gentoo.org> ChangeLog:
+  Remove virtual/x11 depend
 
   23 Mar 2007; René Nussbaumer <killerfox@gentoo.org> bacula-2.0.3.ebuild:
   Added to ~hppa, ~ppc. Requested by Mr_Bones_.
