@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/amanda
 # Copyright 2000-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.22 2007/03/08 10:15:51 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.23 2007/03/26 07:46:22 antarus Exp $
+
+  26 Mar 2007; Alec Warner <antarus@gentoo.org> amanda-2.4.5.ebuild,
+  amanda-2.5.1_p3-r1.ebuild, amanda-2.5.1_p3-r2.ebuild:
+  Remove dependency on portage: ref bug 162516
 
 *amanda-2.5.1_p3-r2 (08 Mar 2007)
 

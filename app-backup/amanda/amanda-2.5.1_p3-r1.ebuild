@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.1_p3-r1.ebuild,v 1.1 2007/03/07 18:46:54 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.1_p3-r1.ebuild,v 1.2 2007/03/26 07:46:22 antarus Exp $
 
 inherit eutils
 
@@ -20,7 +20,6 @@ RDEPEND="sys-libs/readline
 		berkdb? ( sys-libs/db )
 		gdbm? ( sys-libs/gdbm )
 		!sparc? ( xfs? ( sys-fs/xfsdump ) )
-		>=sys-apps/portage-2.0.51-r3
 		!minimal? ( virtual/mailx
 			app-arch/mt-st
 			sys-block/mtx
