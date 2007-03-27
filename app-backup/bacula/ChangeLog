@@ -1,6 +1,20 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.29 2007/03/25 19:22:55 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.30 2007/03/27 15:27:44 mr_bones_ Exp $
+
+  27 Mar 2007; Michael Sterrett <mr_bones_@gentoo.org>
+  -files/bacula-1.38.5-default-configs.patch,
+  -files/bacula-1.38.9-default-configs.patch, -files/1.38.5/bacula-all-conf,
+  -files/1.38.5/bacula-all-init, -files/1.38.5/bacula-dir-conf,
+  -files/1.38.5/bacula-dir-init, -files/1.38.5/bacula-fd-conf,
+  -files/1.38.5/bacula-fd-init, -files/1.38.5/bacula-sd-conf,
+  -files/1.38.5/bacula-sd-init, -files/2.0.2/bacula-all-conf,
+  -files/2.0.2/bacula-all-init, -files/2.0.2/bacula-dir-conf,
+  -files/2.0.2/bacula-dir-init, -files/2.0.2/bacula-fd-conf,
+  -files/2.0.2/bacula-fd-init, -files/2.0.2/bacula-sd-conf,
+  -files/2.0.2/bacula-sd-init, -bacula-1.36.3-r3.ebuild,
+  -bacula-1.38.5.ebuild, -bacula-1.38.9.ebuild, -bacula-2.0.2.ebuild:
+  clean out old versions with keywords overshadowed by newer ebuilds per lisa
 
   25 Mar 2007; <genstef@gentoo.org> ChangeLog:
   Remove virtual/x11 depend
