@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/pixie/Attic/pixie-2.0.2-r1.ebuild,v 1.6 2007/03/29 01:31:25 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/pixie/Attic/pixie-2.1.1.ebuild,v 1.1 2007/03/29 01:31:25 eradicator Exp $
 
 IUSE="fltk openexr X"
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_PN}-src-${PV}.tgz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~amd64 ~ppc sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 
 RDEPEND="media-libs/jpeg
 	 sys-libs/zlib
@@ -24,9 +24,6 @@ RDEPEND="media-libs/jpeg
 	 X? ( x11-libs/libXext )"
 
 src_compile() {
-	strip-flags
-	replace-flags -O? -O2
-
 	ewarn "Compilation of pixie is memory intensive.  If you experience problems, try"
 	ewarn "removing -pipe from your CFLAGS.  Additionally, disabling optimizations (-O0)"
 	ewarn "will cause much less memory consumption.  See bug #171367 for more info."

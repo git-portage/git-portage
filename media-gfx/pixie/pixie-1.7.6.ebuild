@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/pixie/Attic/pixie-1.7.6.ebuild,v 1.4 2007/03/14 23:42:28 eradicator Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/pixie/Attic/pixie-1.7.6.ebuild,v 1.5 2007/03/29 01:31:25 eradicator Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -41,6 +41,10 @@ src_unpack() {
 src_compile() {
 	strip-flags
 	replace-flags -O? -O2
+
+	ewarn "Compilation of pixie is memory intensive.  If you experience problems, try"
+	ewarn "removing -pipe from your CFLAGS.  Additionally, disabling optimizations (-O0)"
+	ewarn "will cause much less memory consumption.  See bug #171367 for more info."
 
 	econf || die "econf failed"
 	emake -j1 || die "Make failed"
