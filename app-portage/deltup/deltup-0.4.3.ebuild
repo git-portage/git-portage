@@ -1,12 +1,12 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/deltup/Attic/deltup-0.4.3_pre2-r1.ebuild,v 1.1 2007/01/31 00:56:55 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/deltup/Attic/deltup-0.4.3.ebuild,v 1.1 2007/03/30 11:02:24 genstef Exp $
 
 inherit eutils toolchain-funcs flag-o-matic
 
 DESCRIPTION="Delta-Update - patch system for updating source-archives."
 HOMEPAGE="http://deltup.sourceforge.net"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz
+SRC_URI="http://deltup.org/e107_files/downloads//${P}.tar.gz
 		http://www.bzip.org/1.0.2/bzip2-1.0.2.tar.gz
 		http://www.bzip.org/1.0.2/bzip2-1.0.3.tar.gz"
 SLOT="0"
