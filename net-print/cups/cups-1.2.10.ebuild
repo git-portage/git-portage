@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.2.7.ebuild,v 1.1 2006/11/17 17:31:31 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.2.10.ebuild,v 1.1 2007/04/07 12:22:55 genstef Exp $
 
 WANT_AUTOMAKE=latest
 
@@ -10,17 +10,18 @@ MY_P=${P/_}
 
 DESCRIPTION="The Common Unix Printing System"
 HOMEPAGE="http://www.cups.org/"
-SRC_URI="http://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/cups/${PV}/${MY_P}-source.tar.bz2"
+SRC_URI="http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${PV}/${MY_P}-source.tar.bz2"
 #ESVN_REPO_URI="http://svn.easysw.com/public/cups/trunk"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
-IUSE="ssl slp pam php samba nls dbus tiff png ppds jpeg X"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
+IUSE="ldap ssl slp pam php samba nls dbus tiff png ppds jpeg X"
 
 DEP="pam? ( virtual/pam )
 	ssl? ( net-libs/gnutls )
 	slp? ( >=net-libs/openslp-1.0.4 )
+	ldap? ( net-nds/openldap )
 	dbus? ( sys-apps/dbus )
 	png? ( >=media-libs/libpng-1.2.1 )
 	tiff? ( >=media-libs/tiff-3.5.5 )
@@ -97,6 +98,7 @@ src_compile() {
 		$(use_enable jpeg) \
 		$(use_enable tiff) \
 		$(use_with php) \
+		$(use_enable ldap) \
 		--enable-libpaper \
 		--enable-threads \
 		--enable-static \
@@ -134,7 +136,7 @@ src_install() {
 	newexe ${FILESDIR}/pdftops.pl pdftops
 
 	keepdir /usr/share/cups/profiles /usr/libexec/cups/driver /var/log/cups \
-		/var/run/cups/certs /var/cache/cups /var/spool/cups/tmp
+		/var/run/cups/certs /var/cache/cups /var/spool/cups/tmp /etc/cups/ssl
 
 	# .desktop handling. X useflag. xdg-open from freedesktop is preferred
 	if use X; then
