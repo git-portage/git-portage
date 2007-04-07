@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/bouml/Attic/bouml-2.21.5.ebuild,v 1.1 2007/02/13 21:55:06 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/bouml/Attic/bouml-2.22.2.ebuild,v 1.1 2007/04/07 19:25:59 ferdy Exp $
 
 inherit qt3 toolchain-funcs multilib eutils
 
