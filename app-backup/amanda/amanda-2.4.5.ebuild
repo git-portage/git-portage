@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.5.ebuild,v 1.10 2007/03/26 07:46:22 antarus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.5.ebuild,v 1.11 2007/04/09 21:07:22 robbat2 Exp $
 
 inherit eutils
 
@@ -306,8 +306,7 @@ src_install() {
 
 	# Env.d
 	einfo "Installing environment config file"
-	insinto /etc/env.d
-	doins ${MYFILESDIR}/${ENVDFILE}
+	doenvd ${MYFILESDIR}/${ENVDFILE}
 
 	# Installing Amanda Xinetd Services Definition
 	einfo "Installing xinetd service file"
