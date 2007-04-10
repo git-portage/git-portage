@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.1_p3-r3.ebuild,v 1.2 2007/04/09 21:07:22 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.1_p3-r4.ebuild,v 1.1 2007/04/10 09:13:06 robbat2 Exp $
 
 inherit eutils
 
@@ -19,7 +19,6 @@ RDEPEND="sys-libs/readline
 		net-misc/openssh
 		samba? ( net-fs/samba )
 		berkdb? ( sys-libs/db )
-		krb4? ( app-crypt/kth-krb )
 		kerberos? ( app-crypt/mit-krb5 )
 		gdbm? ( sys-libs/gdbm )
 		!sparc? ( xfs? ( sys-fs/xfsdump ) )
@@ -34,7 +33,7 @@ DEPEND="${RDEPEND}
 	sys-devel/autoconf
 	sys-devel/automake"
 
-IUSE="berkdb debug gdbm minimal samba xfs"
+IUSE="berkdb debug gdbm minimal samba xfs kerberos"
 
 S="${WORKDIR}/${P/_/}"
 MYFILESDIR="${WORKDIR}/files"
@@ -197,7 +196,8 @@ src_compile() {
 	myconf="${myconf} --with-bsdtcp-security"
 
 	# kerberos-security mechanism version 4
-	myconf="${myconf} `use_with krb4 krb4-security`"
+	# always disable, per bug #173354
+	myconf="${myconf} --without-krb4-security"
 
 	# kerberos-security mechanism version 5
 	myconf="${myconf} `use_with kerberos krb5-security`"
