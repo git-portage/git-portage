@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall/Attic/shorewall-3.2.9.ebuild,v 1.2 2007/04/12 18:35:51 gustavoz Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall/Attic/shorewall-3.2.9.ebuild,v 1.3 2007/04/12 18:45:42 jokey Exp $
 
 inherit eutils
 
@@ -13,7 +13,7 @@ SRC_URI="http://shorewall.net/pub/${PN}/3.2/${P}/${P}.tgz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc64 sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc64 sparc x86"
 IUSE="doc"
 
 DEPEND=">=net-firewall/iptables-1.2.4
@@ -21,7 +21,7 @@ DEPEND=">=net-firewall/iptables-1.2.4
 
 pkg_setup() {
 	if built_with_use sys-apps/iproute2 minimal; then
-	    die "Shorewall requires sys-apps/iproute2 to be built without the \"minimal\" USE flag."
+		die "Shorewall requires sys-apps/iproute2 to be built without the \"minimal\" USE flag."
 	fi
 }
 
