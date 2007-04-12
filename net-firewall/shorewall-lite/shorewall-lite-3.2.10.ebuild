@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall-lite/Attic/shorewall-lite-3.2.4.ebuild,v 1.2 2006/10/11 08:39:06 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall-lite/Attic/shorewall-lite-3.2.10.ebuild,v 1.1 2007/04/12 18:50:37 jokey Exp $
 
 MY_P="shorewall-${PV}"
 MY_P_DOCS="${P/${PN}/shorewall-docs-html}"
