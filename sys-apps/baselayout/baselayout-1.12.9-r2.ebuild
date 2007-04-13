@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.12.9.ebuild,v 1.14 2007/03/27 23:20:42 spb Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.12.9-r2.ebuild,v 1.1 2007/04/13 18:35:33 vapier Exp $
 
 inherit flag-o-matic eutils toolchain-funcs multilib
 
@@ -31,12 +31,16 @@ RDEPEND="virtual/init
 	!<net-misc/dhcpcd-2.0.0"
 DEPEND="virtual/os-headers
 	>=sys-apps/portage-2.0.51"
-PDEPEND="!build? ( !bootstrap? ( >=sys-apps/module-init-tools-3.2.2-r2 ) )"
+PDEPEND="!build? ( !bootstrap? ( >=sys-apps/module-init-tools-3.2.2-r3 ) )"
 PROVIDE="virtual/baselayout"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+
+	epatch "${FILESDIR}/${P}-wireless-deprecate.patch"
+	rm -f man/modules-update.8
+	sed -i 's:modules-update:update-modules:' init.d/modules
 
 	# Setup unicode defaults for silly unicode users
 	if use unicode ; then
