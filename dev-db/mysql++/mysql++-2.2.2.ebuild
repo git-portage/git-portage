@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql++/Attic/mysql++-2.2.1.ebuild,v 1.1 2007/03/02 21:02:52 hansmi Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql++/Attic/mysql++-2.2.2.ebuild,v 1.1 2007/04/13 20:28:38 hansmi Exp $
 
 inherit eutils gnuconfig
 
