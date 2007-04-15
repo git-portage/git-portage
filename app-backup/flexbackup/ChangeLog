@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/flexbackup
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.13 2007/03/19 17:22:54 kloeri Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.14 2007/04/15 15:41:51 genstef Exp $
+
+  15 Apr 2007; John R. Graham (john_r_graham) <john_r_graham@mindspring.com>
+  +flexbackup-1.2.1-r4.ebuild, +files/flexbackup-1.2.1-mbuffer-switch.patch,
+  +files/flexbackup-1.2.1-remote-bufftest.patch:
+  New ebuild addresses bugs #171205 (mbuffer command line option fix & doc
+  improvements) and #173672 (remote host buffer detection).
 
   19 Mar 2007; Bryan Østergaard <kloeri@gentoo.org> metadata.xml:
   Remove mholzer from metadata.xml due to retirement.
