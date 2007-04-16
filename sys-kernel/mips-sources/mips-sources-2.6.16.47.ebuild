@@ -1,17 +1,17 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.16.27.ebuild,v 1.2 2006/09/05 17:16:09 kumba Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.16.47.ebuild,v 1.1 2007/04/16 06:36:45 kumba Exp $
 
 
 # INCLUDED:
 # 1) linux sources from kernel.org
 # 2) linux-mips.org GIT snapshot diff from 14 Sep 2005
 # 3) Generic Fixes
-# 4) Security fixes
-# 5) Patch for IP30 Support			(http://www.linux-mips.org/~skylark/)
+# 4) Patch for IP30 Support			(http://www.linux-mips.org/~skylark/)
 # 5) Patch for IP28 Support			(http://home.alphastar.de/fuerst/download.html)
-# 6) Patch for Remaining Cobalt Bits		(http://www.colonel-panic.org/cobalt-mips/)
-# 7) Experimental patches (IP27 hacks, et al)
+# 6) Patches (hacks) for IP27 support		(ftp://ftp.linux-mips.org/pub/linux/mips/people/ralf/ip27/)
+# 7) Patch for Remaining Cobalt Bits		(http://www.colonel-panic.org/cobalt-mips/)
+# 8) Experimental patches (IP27 hacks, et al)
 
 
 #//------------------------------------------------------------------------------
@@ -20,9 +20,8 @@
 
 # Version Data
 OKV=${PV/_/-}
-GITDATE="20060320"			# Date of diff between kernel.org and lmo GIT
-SECPATCHVER="1.15"			# Tarball version for security patches
-GENPATCHVER="1.24"			# Tarball version for generic patches
+GITDATE="20070415"			# Date of diff between kernel.org and lmo GIT
+GENPATCHVER="1.27"			# Tarball version for generic patches
 EXTRAVERSION="-mipsgit-${GITDATE}"
 KV="${OKV}${EXTRAVERSION}"
 F_KV="${OKV}"				# Fetch KV, used to know what mipsgit diff to grab.
@@ -32,7 +31,6 @@ PATCHVER=""
 # Directories
 S="${WORKDIR}/linux-${OKV}-${GITDATE}"
 MIPS_PATCHES="${WORKDIR}/mips-patches"
-MIPS_SECURITY="${WORKDIR}/security"
 
 # Inherit Eclasses
 ETYPE="sources"
@@ -95,7 +93,6 @@ fi
 DESCRIPTION="Linux-Mips GIT sources for MIPS-based machines, dated ${GITDATE}"
 SRC_URI="mirror://kernel/linux/kernel/v2.6/linux-${STABLEVER}.tar.bz2
 		mirror://gentoo/mipsgit-${F_KV}-${GITDATE}.diff.bz2
-		mirror://gentoo/${PN}-security_patches-${SECPATCHVER}.tar.bz2
 		mirror://gentoo/${PN}-generic_patches-${GENPATCHVER}.tar.bz2
 		${PATCHVER}"
 
@@ -385,9 +382,8 @@ do_generic_patches() {
 		epatch ${MIPS_PATCHES}/misc-2.6.16-fix-fpu_save_double-on-64bit.patch
 		epatch ${MIPS_PATCHES}/misc-2.6.16-disable-stupid-nls-cruft.patch
 		epatch ${MIPS_PATCHES}/misc-2.6.16-def-arch_has_irq_per_cpu-for-smp.patch
-		epatch ${MIPS_PATCHES}/misc-2.6.16-fix-mempolicy.patch
 		epatch ${MIPS_PATCHES}/misc-2.6.16-tweak-makefiles.patch
-		epatch ${MIPS_PATCHES}/misc-2.6.17-squashfs-3.0.patch
+		epatch ${MIPS_PATCHES}/misc-2.6.16-squashfs-3.2-r2.patch
 	eend
 }
 
@@ -408,17 +404,6 @@ do_sekrit_patches() {
 ##	sleep 0
 
 	# /* EXPERIMENTAL - DO NOT USE IN PRODUCTION KERNELS */
-}
-
-
-do_security_patches() {
-	echo -e ""
-	ebegin ">>> Applying Security Fixes"
-		echo -e ""
-		einfo ">>> None to apply! ..."
-		echo -e ""
-##		epatch ${MIPS_SECURITY}/
-	eend
 }
 
 
@@ -514,9 +499,6 @@ src_unpack() {
 
 	# Patches for experimental use
 	do_sekrit_patches
-
-	# Security Fixes
-	do_security_patches
 
 
 	# All done, resume normal portage work
