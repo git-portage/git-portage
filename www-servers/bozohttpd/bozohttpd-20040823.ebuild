@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/bozohttpd/Attic/bozohttpd-20040823.ebuild,v 1.2 2005/09/16 07:06:28 s4t4n Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/bozohttpd/Attic/bozohttpd-20040823.ebuild,v 1.3 2007/04/19 09:33:11 s4t4n Exp $
 
 inherit eutils
 
@@ -16,11 +16,10 @@ DEPEND=">=dev-libs/openssl-0.9.7d-r1"
 src_unpack()
 {
 	unpack ${A}
-
-	# We substitute the Makefile because the original works only with BSD make
 	cd ${S}
-	rm -f Makefile
-	cp ${FILESDIR}/${PN}.Makefile Makefile
+
+	# Rename Makefile
+	mv Makefile.boot Makefile
 
 	# Apparently, support for '-a' cmd line arg was removed, but left in
 	# 'bozohpptd -h' explanations
@@ -29,9 +28,8 @@ src_unpack()
 
 src_install ()
 {
-	dodir usr/bin
-	dodir usr/share/man
-	PREFIX="${D}/usr" einstall || die
+	dobin bozohttpd
+	doman bozohttpd.8
 
 	insinto /etc/conf.d; newins ${FILESDIR}/${PN}.conffile   bozohttpd
 	exeinto /etc/init.d; newexe ${FILESDIR}/${PN}.initscript bozohttpd
