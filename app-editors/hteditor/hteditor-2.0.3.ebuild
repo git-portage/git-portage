@@ -1,8 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/hteditor/Attic/hteditor-2.0.3.ebuild,v 1.1 2007/04/19 20:43:38 dragonheart Exp $
-
-inherit eutils autotools
+# $Header: /var/cvsroot/gentoo-x86/app-editors/hteditor/Attic/hteditor-2.0.3.ebuild,v 1.2 2007/04/21 22:24:03 dragonheart Exp $
 
 MY_PV=${PV/_/}
 DESCRIPTION="editor for executable files"
