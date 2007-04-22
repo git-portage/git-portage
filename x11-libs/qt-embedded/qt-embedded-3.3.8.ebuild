@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-embedded/Attic/qt-embedded-3.3.4.ebuild,v 1.4 2006/11/23 20:11:01 vivo Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-embedded/Attic/qt-embedded-3.3.8.ebuild,v 1.1 2007/04/22 11:48:33 caleb Exp $
 
 DESCRIPTION="Embedded Linux port of Qt"
 HOMEPAGE="http://www.trolltech.com/products/embedded/"
@@ -8,7 +8,7 @@ SRC_URI="ftp://ftp.trolltech.com/qt/source/qt-embedded-free-${PV}.tar.bz2"
 LICENSE="|| ( QPL-1.0 GPL-2 )"
 
 SLOT="3"
-KEYWORDS="x86 ~amd64 ~ppc"
+KEYWORDS="~x86 ~amd64 ~ppc"
 IUSE="cups debug doc firebird gif ipv6 mysql nis odbc opengl postgres sqlite"
 
 DEPEND="media-libs/libpng
@@ -17,11 +17,11 @@ DEPEND="media-libs/libpng
 	media-libs/lcms
 	sys-libs/zlib
 	cups? ( net-print/cups )
-	odbc? ( >=dev-db/unixODBC-2 )
 	firebird? ( dev-db/firebird )
 	mysql? ( virtual/mysql )
 	opengl? ( virtual/opengl virtual/glu )
 	postgres? ( dev-db/postgresql )"
+PDEPEND="odbc? ( ~dev-db/qt-unixODBC-3.3.8 )"
 
 S=${WORKDIR}/qt-embedded-free-${PV}
 
@@ -71,7 +71,6 @@ src_compile() {
 	use opengl || myconf="${myconf} -disable-opengl"
 	use mysql && myconf="${myconf} -plugin-sql-mysql -I/usr/include/mysql -L/usr/lib/mysql" || myconf="${myconf} -no-sql-mysql"
 	use postgres && myconf="${myconf} -plugin-sql-psql -I/usr/include/postgresql/server -I/usr/include/postgresql/pgsql -I/usr/include/postgresql/pgsql/server" || myconf="${myconf} -no-sql-psql"
-	use odbc && myconf="${myconf} -plugin-sql-odbc" || myconf="${myconf} -no-sql-odbc"
 	use firebird && myconf="${myconf} -plugin-sql-ibase" || myconf="${myconf} -no-sql-ibase"
 	use sqlite && myconf="${myconf} -plugin-sql-sqlite" || myconf="${myconf} -no-sql-sqlite"
 	use debug && myconf="${myconf} -debug" || myconf="${myconf} -release -no-g++-exceptions"
@@ -79,7 +78,7 @@ src_compile() {
 	./configure ${myconf} -shared -depths 8,16,24,32 -system-zlib -thread -stl \
 		-freetype -qvfb -plugin-imgfmt-{jpeg,mng,png} -system-lib{jpeg,mng,png} \
 		-prefix ${QTBASE} -platform ${PLATFORM} -xplatform ${XPLATFORM} \
-		-embedded || die
+		-embedded -no-sql-odbc || die
 
 	export LD_LIBRARY_PATH="${S}/lib:${LD_LIBRARY_PATH}"
 
