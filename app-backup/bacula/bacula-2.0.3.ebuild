@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.0.3.ebuild,v 1.2 2007/03/23 23:01:19 killerfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.0.3.ebuild,v 1.3 2007/04/22 16:16:55 wschlich Exp $
 
 #
 # TODO:
@@ -205,7 +205,7 @@ src_compile() {
 		# unfortunately broken in 2.0.3, so we only
 		# build stuff in ./manual/, which works.
 		pushd manual
-		emake || die "emake for bacula-docs failed"
+		emake -j1 || die "emake for bacula-docs failed"
 		popd
 
 		popd
@@ -298,8 +298,6 @@ src_install() {
 			myservices="${myservices} sd"
 		fi
 	fi
-	exeinto /etc/init.d/
-	insinto /etc/conf.d/
 	if useq bacula-split-init; then
 		myscripts=""
 		for service in ${myservices}; do
@@ -327,8 +325,8 @@ src_install() {
 		# set services for the all-in-one init script
 		sed -i -e "s:%services%:${myservices}:" "${T}/${script}".conf
 		# install init script and config
-		newexe "${T}/${script}".init "${script}"
-		newins "${T}/${script}".conf "${script}"
+		newinitd "${T}/${script}".init "${script}"
+		newconfd "${T}/${script}".conf "${script}"
 	done
 
 	# make sure the working directory exists
