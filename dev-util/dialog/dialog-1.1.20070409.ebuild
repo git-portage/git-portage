@@ -1,17 +1,19 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/dialog/Attic/dialog-1.0.20050306.ebuild,v 1.3 2007/02/28 22:09:16 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/dialog/Attic/dialog-1.1.20070409.ebuild,v 1.1 2007/04/23 22:27:32 truedfx Exp $
 
-MY_PV="${PV/1.0./1.0-}"
+inherit eutils
+
+MY_PV="${PV/1.1./1.1-}"
 S=${WORKDIR}/${PN}-${MY_PV}
 DESCRIPTION="tool to display dialog boxes from a shell"
-HOMEPAGE="http://hightek.org/dialog/"
-SRC_URI="mirror://debian/pool/main/d/${PN}/${PN}_${MY_PV}.orig.tar.gz"
+HOMEPAGE="http://invisible-island.net/dialog/dialog.html"
+SRC_URI="ftp://invisible-island.net/${PN}/${PN}-${MY_PV}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
-IUSE="unicode"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+IUSE="examples unicode"
 
 DEPEND=">=app-shells/bash-2.04-r3
 	>=sys-libs/ncurses-5.2-r5"
@@ -27,16 +29,17 @@ pkg_setup() {
 }
 
 src_compile() {
-	#export LANG=C
 	use unicode && ncursesw="w"
 	econf "--with-ncurses${ncursesw}" || die "configure failed"
 	emake || die "build failed"
 }
 
 src_install() {
-	make install DESTDIR="${D}" || die
+	emake install DESTDIR="${D}" || die
 	dodoc CHANGES README VERSION
 
-	docinto samples
-	dodoc samples/*
+	if use examples; then
+		docinto samples
+		dodoc samples/*
+	fi
 }
