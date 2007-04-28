@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r2.ebuild,v 1.10 2007/03/25 19:22:55 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-1.36.3-r2.ebuild,v 1.11 2007/04/28 16:40:25 swegener Exp $
 
 inherit eutils
 
@@ -135,8 +135,7 @@ src_install() {
 
 	dodoc ChangeLog README ReleaseNotes
 
-	exeinto /etc/init.d
-	newexe ${FILESDIR}/bacula-init3 bacula
+	newinitd ${FILESDIR}/bacula-init3 bacula
 
 	# fix init script
 	if use mysql ; then
@@ -148,8 +147,7 @@ src_install() {
 	fi
 	sed -i -e "s:%%USE_DB%%:${USEDB}:" ${D}/etc/init.d/bacula
 
-	insinto /etc/conf.d
-	newins ${FILESDIR}/bacula-conf bacula
+	newconfd ${FILESDIR}/bacula-conf bacula
 	if use client-only ; then
 		SERVICES='fd'
 	else

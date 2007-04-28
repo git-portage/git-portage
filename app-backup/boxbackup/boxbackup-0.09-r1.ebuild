@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/Attic/boxbackup-0.09-r1.ebuild,v 1.3 2007/01/24 04:15:09 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/Attic/boxbackup-0.09-r1.ebuild,v 1.4 2007/04/28 16:40:44 swegener Exp $
 
 inherit eutils toolchain-funcs
 
@@ -52,8 +52,7 @@ src_install() {
 		make DESTDIR=${D} install-backup-server || die "server install failed"
 
 	dodoc *.txt
-	exeinto /etc/init.d
-	newexe ${FILESDIR}/bbackupd.rc bbackupd
+	newinitd ${FILESDIR}/bbackupd.rc bbackupd
 	use client-only || \
 		newexe ${FILESDIR}/bbstored.rc bbstored
 

@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/boxbackup
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.10 2007/02/04 12:38:39 blubb Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.11 2007/04/28 16:40:44 swegener Exp $
+
+  28 Apr 2007; Sven Wegener <swegener@gentoo.org> boxbackup-0.09-r1.ebuild,
+  boxbackup-0.10.ebuild:
+  Fix *initd and *envd calls, bug #173884.
 
   04 Feb 2007; Simon Stelling <blubb@gentoo.org> boxbackup-0.10.ebuild:
   stable on amd64; bug 156901

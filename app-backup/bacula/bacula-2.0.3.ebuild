@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.0.3.ebuild,v 1.3 2007/04/22 16:16:55 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.0.3.ebuild,v 1.4 2007/04/28 16:40:25 swegener Exp $
 
 #
 # TODO:
@@ -243,8 +243,7 @@ src_install() {
 	if ! useq bacula-clientonly; then
 	    # the database update scripts
 		diropts -m0750
-		dodir /usr/libexec/bacula/updatedb
-		insinto /usr/libexec/bacula/updatedb/
+		insinto /usr/libexec/bacula/updatedb
 		insopts -m0754
 		doins "${S}"/updatedb/*
 		fperms 0640 /usr/libexec/bacula/updatedb/README
@@ -252,7 +251,6 @@ src_install() {
 		# the logrotate configuration
 		if useq logrotate; then
 			diropts -m0755
-			dodir /etc/logrotate.d
 			insinto /etc/logrotate.d
 			insopts -m0644
 			newins "${S}"/scripts/logrotate bacula
