@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/Attic/boxbackup-0.09-r1.ebuild,v 1.4 2007/04/28 16:40:44 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/Attic/boxbackup-0.09-r1.ebuild,v 1.5 2007/04/28 22:21:41 swegener Exp $
 
 inherit eutils toolchain-funcs
 
@@ -54,7 +54,7 @@ src_install() {
 	dodoc *.txt
 	newinitd ${FILESDIR}/bbackupd.rc bbackupd
 	use client-only || \
-		newexe ${FILESDIR}/bbstored.rc bbstored
+		newinitd ${FILESDIR}/bbstored.rc bbstored
 
 	keepdir /etc/boxbackup
 }
