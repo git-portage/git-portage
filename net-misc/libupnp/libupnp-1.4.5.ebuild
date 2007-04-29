@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/libupnp/Attic/libupnp-1.4.4-r1.ebuild,v 1.2 2007/04/19 14:32:28 drizzt Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/libupnp/Attic/libupnp-1.4.5.ebuild,v 1.1 2007/04/29 14:50:41 gurligebis Exp $
 
 WANT_AUTOMAKE=1.9
 
@@ -20,8 +20,6 @@ RDEPEND="!net-misc/upnp"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-
-	epatch "${FILESDIR}"/${PN}-${PVR}-fbsd.patch
 
 	AT_M4DIR="m4" eautoreconf
 
