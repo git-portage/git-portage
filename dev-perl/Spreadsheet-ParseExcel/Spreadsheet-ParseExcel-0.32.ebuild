@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Spreadsheet-ParseExcel/Attic/Spreadsheet-ParseExcel-0.30.ebuild,v 1.1 2007/04/06 20:53:12 mcummings Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Spreadsheet-ParseExcel/Attic/Spreadsheet-ParseExcel-0.32.ebuild,v 1.1 2007/05/05 19:09:22 ian Exp $
 
 inherit perl-module
 
@@ -11,13 +11,15 @@ SRC_URI="mirror://cpan/authors/id/S/SZ/SZABGAB/${P}.tar.gz"
 LICENSE="Artistic"
 SLOT="0"
 KEYWORDS="~amd64 ~ia64 ~sparc ~x86"
-IUSE=""
-
+IUSE="test"
 SRC_TEST="do"
 
 RDEPEND="dev-perl/OLE-StorageLite
-	dev-perl/IO-stringy
-	dev-lang/perl"
-
+		dev-perl/IO-stringy
+		dev-lang/perl"
 DEPEND="dev-perl/module-build
+		test? ( dev-perl/Test-Pod
+				dev-perl/Unicode-Map
+				dev-perl/Spreadsheet-WriteExcel
+				dev-perl/Jcode )
 		${RDEPEND}"
