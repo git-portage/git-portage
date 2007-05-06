@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/python-docs/Attic/python-docs-2.3.5.ebuild,v 1.10 2005/09/14 23:22:04 ka0ttic Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/python-docs/Attic/python-docs-2.3.5.ebuild,v 1.11 2007/05/06 22:36:16 kloeri Exp $
 
 DESCRIPTION="HTML documentation for Python"
 HOMEPAGE="http://www.python.org/doc/2.3/"
@@ -20,5 +20,5 @@ src_install() {
 	docinto html
 	cp -R ${S}/Python-Docs-${PV}/* ${D}/usr/share/doc/${PF}/html
 	dodir /etc/env.d
-	echo "PYTHONDOCS=/usr/share/doc/${PF}/html" > ${D}/etc/env.d/50python-docs
+	echo "PYTHONDOCS=/usr/share/doc/${PF}/html/lib" > ${D}/etc/env.d/50python-docs
 }
