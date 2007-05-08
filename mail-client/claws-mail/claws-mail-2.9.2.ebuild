@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail/Attic/claws-mail-2.7.0.ebuild,v 1.4 2007/04/16 11:33:59 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail/Attic/claws-mail-2.9.2.ebuild,v 1.1 2007/05/08 16:22:59 ticho Exp $
 
 IUSE="gnome dillo crypt spell ssl ldap ipv6 pda clamav xface kde imap spamassassin doc startup-notification bogofilter"
 
@@ -19,7 +19,7 @@ fi
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
 COMMONDEPEND=">=x11-libs/gtk+-2.6
 	pda? ( >=app-pda/jpilot-0.99 )
@@ -45,7 +45,7 @@ RDEPEND="${COMMONDEPEND}
 	app-misc/mime-types
 	x11-misc/shared-mime-info"
 
-PLUGIN_NAMES="acpi-notifier att-remover cachesaver etpan-privacy fetchinfo gtkhtml maildir mailmbox newmail notification perl rssyl smime synce vcalendar"
+PLUGIN_NAMES="acpi-notifier att-remover cachesaver etpan-privacy fetchinfo gtkhtml maildir mailmbox newmail notification pdf-viewer perl rssyl smime synce vcalendar"
 
 src_compile() {
 	local myconf
@@ -73,6 +73,7 @@ src_compile() {
 
 	econf \
 		--enable-trayicon-plugin \
+		--disable-maemo \
 		${myconf} || die "./configure failed"
 
 	emake || die
@@ -120,7 +121,7 @@ src_install() {
 		newins template_${desktopfile} ${desktopfile} || die
 		dodir ${kdeprefix}/bin
 		insopts -m 755
-		insinto ${kdeprefix}/bin
+		exeinto ${kdeprefix}/bin
 		doexe ${servicescript} || die
 	fi
 
@@ -138,29 +139,29 @@ pkg_postinst() {
 		has_version mail-client/sylpheed-claws-$x && RENAME_PLUGINS="${RENAME_PLUGINS} $x"
 	done
 	if [ -n "${RENAME_PLUGINS}" ]; then
-		ewarn
+		elog
 		elog "The following sylpheed-claws plugins were found on your system:"
-		ewarn
+		elog
 		for x in ${RENAME_PLUGINS}; do
 			elog "    mail-client/sylpheed-claws-$x"
 		done
-		ewarn
+		elog
 		elog "If you want to continue using those you need to merge their "
 		elog "renamed counterparts:"
-		ewarn
+		elog
 		for x in ${RENAME_PLUGINS}; do
 			elog "    mail-client/${PN}-$x"
 		done
-		ewarn
+		elog
 	fi
 	if [ -n "${UPDATE_PLUGINS}" ]; then
-		ewarn
+		elog
 		elog "You have to re-emerge or update the following plugins:"
-		ewarn
+		elog
 		for x in ${UPDATE_PLUGINS}; do
 			elog "    mail-client/${PN}-$x"
 		done
-		ewarn
+		elog
 	fi
 	if [ -n "${RENAME_PLUGINS}${UPDATE_PLUGINS}" ]; then
 		elog
