@@ -1,12 +1,12 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/dvdisaster/Attic/dvdisaster-0.66.ebuild,v 1.1 2006/06/17 20:51:47 pylon Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/dvdisaster/Attic/dvdisaster-0.66.ebuild,v 1.2 2007/05/12 15:12:23 pylon Exp $
 
 inherit eutils gnome2
 
 DESCRIPTION="Data-protection and recovery tool for DVDs"
-HOMEPAGE="http://dvdisaster.berlios.de/"
-SRC_URI="http://download.berlios.de/dvdisaster/${P}.tar.bz2"
+HOMEPAGE="http://dvdisaster.sourceforge.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 KEYWORDS="~x86"

@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/dvdisaster/Attic/dvdisaster-0.70.1.ebuild,v 1.6 2007/05/12 15:12:23 pylon Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/dvdisaster/Attic/dvdisaster-0.70.4.ebuild,v 1.1 2007/05/12 15:12:23 pylon Exp $
 
 inherit eutils gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://dvdisaster.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 SLOT="0"
 IUSE_LINGUAS="linguas_cs linguas_de linguas_it linguas_sv"
 IUSE="${IUSE_LINGUAS} gnome nls"
@@ -36,7 +36,7 @@ src_compile() {
 		--docdir=/usr/share/doc \
 		--docsubdir=${PF} \
 		|| die "econf failed"
-	emake || die "emake failed"
+	make || die "make failed"
 }
 
 src_install() {
