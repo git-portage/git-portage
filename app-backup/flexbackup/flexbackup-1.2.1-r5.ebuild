@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/Attic/flexbackup-1.2.1-r3.ebuild,v 1.2 2007/01/24 04:17:10 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/Attic/flexbackup-1.2.1-r5.ebuild,v 1.1 2007/05/12 08:33:02 genstef Exp $
 
 inherit eutils
 
@@ -13,19 +13,20 @@ SLOT="0"
 KEYWORDS="~amd64 ~hppa ~ppc ~x86"
 IUSE=""
 
-RDEPEND="dev-lang/perl
-	sys-apps/findutils
-	app-arch/tar
-	app-arch/mt-st"
+RDEPEND="app-arch/mt-st"
+DEPEND="${RDEPEND}"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch ${FILESDIR}/flexbackup-1.2.1-lzma.patch
+	epatch "${FILESDIR}"/flexbackup-1.2.1-lzma.patch
 	#Substituting out this patch for bug #116510
 #	epatch "${FILESDIR}"/${P}-CAN-2005-2965.patch
 	epatch "${FILESDIR}"/flexbackup-1.2.1-secure-tempfile.patch
-	epatch ${FILESDIR}/flexbackup-1.2.1-bash.patch
+	epatch "${FILESDIR}"/flexbackup-1.2.1-bash.patch
+	epatch "${FILESDIR}"/flexbackup-1.2.1-mbuffer-switch.patch
+	epatch "${FILESDIR}"/flexbackup-1.2.1-remote-bufftest.patch
+	epatch "${FILESDIR}"/flexbackup-1.2.1-prune.patch
 
 	sed -i \
 		-e '/^\$type = /s:afio:tar:' \
@@ -35,10 +36,10 @@ src_unpack() {
 
 src_install() {
 	dodir /etc /usr/bin /usr/share/man/man{1,5}
-	make install \
+	emake install \
 		PREFIX="${D}"/usr \
 		CONFFILE="${D}"/etc/flexbackup.conf \
-		|| die
+		|| die "emake install failed"
 
 	dodoc CHANGES CREDITS INSTALL README TODO
 	dohtml faq.html
