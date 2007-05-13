@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/rsnapshot
 # Copyright 2000-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/rsnapshot/ChangeLog,v 1.15 2007/01/24 04:25:37 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/rsnapshot/ChangeLog,v 1.16 2007/05/13 17:56:40 bangert Exp $
+
+  13 May 2007; Thilo Bangert <bangert@gentoo.org> metadata.xml:
+  add herd
 
   24 Jan 2007; Marius Mauch <genone@gentoo.org> rsnapshot-1.1.7.ebuild,
   rsnapshot-1.1.7-r1.ebuild, rsnapshot-1.2.1.ebuild,
