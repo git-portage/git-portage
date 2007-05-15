@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_caucho/Attic/mod_caucho-3.1.0.ebuild,v 1.6 2007/04/14 21:05:31 nelchael Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_caucho/Attic/mod_caucho-3.0.23.ebuild,v 1.1 2007/05/15 16:37:41 nelchael Exp $
 
 inherit eutils apache-module autotools
 
@@ -12,9 +12,6 @@ SRC_URI="http://www.caucho.com/download/resin-${PV}-src.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
-
-DEPEND=""
-RDEPEND=""
 
 S="${WORKDIR}/resin-${PV}"
 

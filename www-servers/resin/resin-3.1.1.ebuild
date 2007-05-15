@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/resin/Attic/resin-3.1.0.ebuild,v 1.4 2007/04/29 12:32:28 betelgeuse Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/resin/Attic/resin-3.1.1.ebuild,v 1.1 2007/05/15 16:36:50 nelchael Exp $
 
 JAVA_PKG_IUSE="doc source"
 
