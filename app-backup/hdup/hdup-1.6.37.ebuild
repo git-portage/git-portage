@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/Attic/hdup-1.6.37.ebuild,v 1.4 2007/01/24 04:18:38 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/Attic/hdup-1.6.37.ebuild,v 1.5 2007/05/17 16:27:20 chtekk Exp $
 
 KEYWORDS="~amd64 ~ppc x86"
 DESCRIPTION="Hdup is backup program using tar, find, gzip/bzip2, mcrypt and ssh."
@@ -10,12 +10,12 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-DEPEND="app-arch/tar
-		sys-apps/findutils
+DEPEND="app-arch/bzip2
 		app-arch/gzip
-		app-arch/bzip2
+		app-arch/tar
 		net-misc/openssh
-		sys-apps/coreutils"
+		sys-apps/coreutils
+		sys-apps/findutils"
 
 RDEPEND="${DEPEND}"
 

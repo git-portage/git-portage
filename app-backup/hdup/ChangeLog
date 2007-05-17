@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/hdup
 # Copyright 2000-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/ChangeLog,v 1.6 2007/05/13 17:56:40 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/ChangeLog,v 1.7 2007/05/17 16:27:20 chtekk Exp $
+
+  17 May 2007; Luca Longinotti <chtekk@gentoo.org> hdup-1.6.37.ebuild,
+  hdup-2.0.14.ebuild:
+  Fix bug #163471.
 
   13 May 2007; Thilo Bangert <bangert@gentoo.org> metadata.xml:
   add herd
