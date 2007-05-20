@@ -7,4 +7,9 @@
 		<description>Primary maintainer</description>
 		<name>Robin H. Johnson</name>
 	</maintainer>
+	<maintainer>
+		<email>sgw@oops.co.at</email>
+		<description>Proxied developer. Please CC on bugs.</description>
+		<name>Stefan G. Weichinger</name>
+	</maintainer>
 </pkgmetadata>
