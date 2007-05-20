@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/amanda
 # Copyright 2000-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.27 2007/05/20 04:00:25 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.28 2007/05/20 04:02:09 robbat2 Exp $
+
+  20 May 2007; Robin H. Johnson <robbat2@gentoo.org>:
+  Please note that amanda-2.5.2 should NOT be added to the Portage tree.
+  It has upstream issues, and it's recommended that we wait for 2.5.3
+  instead.
 
   20 May 2007; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
   Add sgw as a proxy developer for Amanda. Please CC him on all Amanda bugs.
