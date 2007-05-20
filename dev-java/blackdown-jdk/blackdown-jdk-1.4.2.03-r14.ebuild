@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/blackdown-jdk/Attic/blackdown-jdk-1.4.2.03-r12.ebuild,v 1.10 2007/03/04 07:52:33 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/blackdown-jdk/Attic/blackdown-jdk-1.4.2.03-r14.ebuild,v 1.1 2007/05/20 20:53:23 caster Exp $
 
 JAVA_SUPPORTS_GENERATION_1="true"
 inherit java-vm-2 versionator
