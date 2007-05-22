@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/dar
 # Copyright 2000-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/ChangeLog,v 1.21 2007/05/13 17:56:40 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/ChangeLog,v 1.22 2007/05/22 15:25:27 gustavoz Exp $
+
+  22 May 2007; Gustavo Zacarias <gustavoz@gentoo.org> dar-2.3.3.ebuild:
+  Stable on sparc wrt #170894
 
   13 May 2007; Thilo Bangert <bangert@gentoo.org> metadata.xml:
   add herd

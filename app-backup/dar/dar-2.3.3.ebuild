@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/Attic/dar-2.3.3.ebuild,v 1.1 2007/02/26 14:20:17 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/Attic/dar-2.3.3.ebuild,v 1.2 2007/05/22 15:25:27 gustavoz Exp $
 
 inherit flag-o-matic
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/dar/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc sparc ~x86"
 IUSE="acl dar32 dar64 doc nls ssl"
 
 DEPEND=">=sys-libs/zlib-1.2.3
