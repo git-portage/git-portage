@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/kdar
 # Copyright 2000-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/ChangeLog,v 1.9 2007/02/16 15:40:15 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/ChangeLog,v 1.10 2007/05/23 08:54:23 opfer Exp $
+
+  23 May 2007; Christian Faulhammer <opfer@gentoo.org>
+  kdar-3_pre20060314.ebuild:
+  x86/amd64 stable, bug 170894
 
 *kdar-3_pre20060314 (16 Feb 2007)
 

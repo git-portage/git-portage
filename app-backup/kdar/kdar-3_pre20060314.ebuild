@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/kdar-3_pre20060314.ebuild,v 1.1 2007/02/16 15:40:15 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/kdar-3_pre20060314.ebuild,v 1.2 2007/05/23 08:54:23 opfer Exp $
 
 inherit kde flag-o-matic
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/kdar/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="amd64 ~ppc ~sparc x86"
 IUSE="dar32 dar64"
 
 RDEPEND=">=app-backup/dar-2.3.2-r1
