@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/bsdtar/Attic/bsdtar-2.0.25.ebuild,v 1.1 2007/03/13 15:52:37 drizzt Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/bsdtar/Attic/bsdtar-2.2.3.ebuild,v 1.1 2007/05/27 15:28:28 flameeyes Exp $
 
 inherit eutils autotools toolchain-funcs flag-o-matic
 
@@ -33,8 +33,8 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}"/libarchive-1.3.1-static.patch
-	epatch "${FILESDIR}"/libarchive-2.0b6-acl.patch
+	epatch "${FILESDIR}"/libarchive-2.1.9-static.patch
+	epatch "${FILESDIR}"/libarchive-2.1.5-acl.patch
 
 	eautoreconf
 	epunt_cxx
