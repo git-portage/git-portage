@@ -1,6 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/eyeD3/Attic/eyeD3-0.6.11.ebuild,v 1.1 2007/01/28 21:49:18 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/eyeD3/Attic/eyeD3-0.6.14.ebuild,v 1.1 2007/05/29 06:51:58 lucass Exp $
+
+NEED_PYTHON=2.3
 
 inherit distutils
 
@@ -11,9 +13,6 @@ IUSE=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-
-DEPEND=">=dev-lang/python-2.3"
-RDEPEND="${DEPEND}"
 
 src_compile() {
 	econf || die "econf failed"
