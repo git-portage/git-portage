@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/rsnapshot
 # Copyright 2000-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/rsnapshot/ChangeLog,v 1.16 2007/05/13 17:56:40 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/rsnapshot/ChangeLog,v 1.17 2007/05/31 01:58:01 kloeri Exp $
+
+  31 May 2007; Bryan Østergaard <kloeri@gentoo.org> metadata.xml:
+  Remove myself as I'm retiring.
 
   13 May 2007; Thilo Bangert <bangert@gentoo.org> metadata.xml:
   add herd
