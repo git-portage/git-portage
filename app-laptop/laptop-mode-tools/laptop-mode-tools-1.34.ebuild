@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-laptop/laptop-mode-tools/Attic/laptop-mode-tools-1.32.ebuild,v 1.1 2006/12/05 15:17:03 uberlord Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-laptop/laptop-mode-tools/Attic/laptop-mode-tools-1.34.ebuild,v 1.1 2007/06/01 09:08:36 genstef Exp $
 
 inherit fixheadtails linux-info
 
