@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/ion3/Attic/ion3-20070506.ebuild,v 1.1 2007/05/31 09:42:57 mabi Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/ion3/Attic/ion3-20070506-r1.ebuild,v 1.1 2007/06/01 22:55:01 mabi Exp $
 
 inherit eutils flag-o-matic
 
@@ -27,7 +27,7 @@ SRC_URI="http://iki.fi/tuomov/dl/${MY_PN}.tar.gz
 	mirror://gentoo/${IONFLUX_PN}-${IONFLUX_PV}.tar.bz2
 	doc?	( http://iki.fi/tuomov/dl/${IONDOC_PN}-${IONDOC_PV}.tar.gz )"
 
-LICENSE="LGPL-2.1"
+LICENSE="LGPL-2.1+tuomov"
 SLOT="0"
 KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="unicode voidsupport-truetype doc"
@@ -116,15 +116,15 @@ src_compile() {
 
 	cd ${S}
 	make \
-		LIBDIR=$(get_libdir) \
+		LIBDIR=/usr/$(get_libdir) \
 		DOCDIR=/usr/share/doc/${PF} || die
 
 	for i in ${MODULES}
 	do
 		cd ${WORKDIR}/${i}
 
-		emake \
-		LIBDIR=$(get_libdir)
+		make \
+			LIBDIR=/usr/$(get_libdir)
 	done
 
 	if ( use doc )
