@@ -1,7 +1,7 @@
 #!/sbin/runscript
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/hostapd/files/Attic/hostapd-0.4.7-init.d,v 1.2 2006/01/09 16:55:36 brix Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/hostapd/files/Attic/hostapd-0.6.0-init.d,v 1.1 2007/06/06 20:03:36 gurligebis Exp $
 
 opts="start stop reload"
 
@@ -30,14 +30,14 @@ start() {
 	checkconfig || return 1
 
 	ebegin "Starting hostapd"
-	start-stop-daemon --start --quiet --exec /usr/sbin/hostapd \
-		-- ${OPTIONS} ${CONFIGS}
+	start-stop-daemon --start --exec /usr/sbin/hostapd \
+		-- -B ${OPTIONS} ${CONFIGS}
 	eend ${?}
 }
 
 stop() {
 	ebegin "Stopping hostapd"
-	start-stop-daemon --stop --quiet --exec /usr/sbin/hostapd
+	start-stop-daemon --stop --exec /usr/sbin/hostapd
 	eend ${?}
 }
 
