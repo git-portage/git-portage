@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/webmin/Attic/webmin-1.320.ebuild,v 1.1 2007/01/27 18:46:29 antarus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/webmin/Attic/webmin-1.350.ebuild,v 1.1 2007/06/09 14:25:50 armin76 Exp $
 
 inherit eutils pam
 
@@ -131,5 +131,6 @@ pkg_postinst() {
 }
 
 pkg_prerm() {
+	# XXX: this is wrong ... prerm is called during upgrades as well
 	"${ROOT}"/etc/init.d/webmin stop >& /dev/null
 }
