@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios-nrpe/Attic/nagios-nrpe-2.5.2.ebuild,v 1.2 2007/04/28 17:40:40 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios-nrpe/Attic/nagios-nrpe-2.8.1.ebuild,v 1.1 2007/06/10 17:02:37 dertobi123 Exp $
 
 inherit eutils toolchain-funcs
 
@@ -12,7 +12,7 @@ RESTRICT="nomirror"
 LICENSE="GPL-2"
 SLOT="0"
 
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="ssl command-args"
 DEPEND=">=net-analyzer/nagios-plugins-1.3.0
@@ -55,7 +55,7 @@ src_install() {
 		contrib/README.nrpe_check_control
 
 	insinto /etc/nagios
-	newins ${S}/sample-config/nrpe.cfg nrpe.cfg
+	newins "${S}"/sample-config/nrpe.cfg nrpe.cfg
 	fowners root:nagios /etc/nagios/nrpe.cfg
 	fperms 0640 /etc/nagios/nrpe.cfg
 
@@ -67,8 +67,16 @@ src_install() {
 	exeinto /usr/nagios/libexec
 	doexe src/check_nrpe contrib/nrpe_check_control
 
-	newinitd ${FILESDIR}/nrpe-${PV} nrpe
+	newinitd "${FILESDIR}"/nrpe nrpe
+
+	cat << EOF > "${T}"/55-nagios-nrpe-revdep
+SEARCH_DIRS="/usr/nagios/bin /usr/nagios/libexec"
+EOF
+
+	insinto /etc/revdep-rebuild
+	doins "${T}"/55-nagios-nrpe-revdep
 }
+
 pkg_postinst() {
 	einfo
 	einfo "If you are using the nrpe daemon, remember to edit"
