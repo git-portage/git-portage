@@ -1,13 +1,27 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/amarok/Attic/amarok-1.4.9999.ebuild,v 1.1 2007/06/14 13:30:24 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/amarok/Attic/amarok-1.4.6_pre20070608-r1.ebuild,v 1.1 2007/06/14 14:01:56 flameeyes Exp $
 
-inherit kde subversion
+LANGS="af ar az be bg bn br ca cs cy da de el en_GB eo es et eu fa fi
+fr ga gl he hi hu id is it ja km ko ku lo lt mk ms nb nds nl nn pa pl
+pt pt_BR ro ru rw se sk sl sq sr sr@Latn ss sv ta tg th tr uk uz zh_CN
+zh_TW"
+LANGS_DOC="da de es et fr it nl pl pt pt_BR ru sv"
 
-ESVN_REPO_URI="svn://anonsvn.kde.org/home/kde/branches/stable/extragear/multimedia/amarok"
-ESVN_STORE_DIR="${PORTAGE_ACTUAL_DISTDIR-${DISTDIR}}/svn-src/"
+USE_KEG_PACKAGING=1
+
+inherit kde eutils flag-o-matic
 
 PKG_SUFFIX=""
+
+if [[ ${P/_pre} == ${P} ]]; then
+	MY_P="${P/_/-}"
+	S="${WORKDIR}/${P/_/-}"
+
+	SRC_URI="mirror://kde/stable/amarok/${PV}/src/${MY_P}.tar.bz2"
+else
+	SRC_URI="mirror://gentoo/${P}.tar.bz2"
+fi
 
 DESCRIPTION="Advanced audio player based on KDE framework."
 HOMEPAGE="http://amarok.kde.org/"
@@ -15,11 +29,13 @@ HOMEPAGE="http://amarok.kde.org/"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="aac kde mysql noamazon opengl postgres
 visualization ipod ifp real njb mtp musicbrainz daap
 python"
 # kde: enables compilation of the konqueror sidebar plugin
+
+SQLITEVER="3.3.17"
 
 RDEPEND="kde? ( || ( kde-base/konqueror kde-base/kdebase ) )
 	>=media-libs/xine-lib-1.1.2_pre20060328-r8
@@ -29,14 +45,15 @@ RDEPEND="kde? ( || ( kde-base/konqueror kde-base/kdebase ) )
 	opengl? ( virtual/opengl )
 	visualization? ( media-libs/libsdl
 					 =media-plugins/libvisual-plugins-0.4* )
-	ipod? ( >=media-libs/libgpod-0.3 )
+	ipod? ( >=media-libs/libgpod-0.4.2 )
 	aac? ( media-libs/libmp4v2 )
 	ifp? ( media-libs/libifp )
 	real? ( media-video/realplayer )
 	njb? ( >=media-libs/libnjb-2.2.4 )
 	mtp? ( >=media-libs/libmtp-0.1.1 )
 	musicbrainz? ( media-libs/tunepimp )
-	=dev-lang/ruby-1.8*"
+	=dev-lang/ruby-1.8*
+	>=dev-db/sqlite-${SQLITEVER}"
 
 DEPEND="${RDEPEND}"
 
@@ -47,22 +64,14 @@ RDEPEND="${RDEPEND}
 
 need-kde 3.3
 
-S="${WORKDIR}/${PN}"
-
-src_unpack() {
-	ESVN_UPDATE_CMD="svn update -N" \
-	ESVN_FETCH_CMD="svn checkout -N" \
-	ESVN_REPO_URI=`dirname ${ESVN_REPO_URI}` \
-		subversion_src_unpack
-
-	S="${WORKDIR}/${PN}/admin" \
-	ESVN_REPO_URI="svn://anonsvn.kde.org/home/kde/branches/KDE/3.5/kde-common/admin" \
-		subversion_src_unpack
-
-	ESVN_UPDATE_CMD="svn up" \
-	ESVN_FETCH_CMD="svn checkout" \
-	S="${WORKDIR}/${PN}/amarok" \
-		subversion_src_unpack
+pkg_setup() {
+	if built_with_use ">=dev-db/sqlite-${SQLITEVER}" nothreadsafe; then
+		eerror "SQLite was built without thread safety."
+		eerror "Amarok requires thread safety enabled in SQLite."
+		eerror "Please rebuild >=dev-db/sqlite-${SQLITEVER} with the"
+		eerror "nothreadsafe USE flag disabled."
+		die "SQLite built with nothreadsafe USE flag."
+	fi
 }
 
 src_compile() {
@@ -81,7 +90,8 @@ src_compile() {
 				  $(use_with daap)
 				  --with-xine
 				  --without-mas
-				  --without-nmm"
+				  --without-nmm
+				  --without-included-sqlite"
 
 	kde_src_compile
 }
