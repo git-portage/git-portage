@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/amarok/Attic/amarok-1.4.6_pre20070608-r1.ebuild,v 1.1 2007/06/14 14:01:56 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/amarok/Attic/amarok-1.4.6_rc2.ebuild,v 1.1 2007/06/17 21:15:35 flameeyes Exp $
 
 LANGS="af ar az be bg bn br ca cs cy da de el en_GB eo es et eu fa fi
 fr ga gl he hi hu id is it ja km ko ku lo lt mk ms nb nds nl nn pa pl
@@ -16,9 +16,14 @@ PKG_SUFFIX=""
 
 if [[ ${P/_pre} == ${P} ]]; then
 	MY_P="${P/_/-}"
-	S="${WORKDIR}/${P/_/-}"
 
-	SRC_URI="mirror://kde/stable/amarok/${PV}/src/${MY_P}.tar.bz2"
+	if [[ ${P/_rc} == ${P} ]]; then
+		SRC_URI="mirror://kde/stable/amarok/${PV}/src/${MY_P}.tar.bz2"
+		S="${WORKDIR}/${P/_/-}"
+	else
+		SRC_URI="mirror://gentoo/${MY_P}.tar.bz2"
+		S="${WORKDIR}/${P/_rc*}"
+	fi
 else
 	SRC_URI="mirror://gentoo/${P}.tar.bz2"
 fi
