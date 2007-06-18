@@ -1,11 +1,12 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/qmail-ldap/Attic/qmail-ldap-1.03-r5.ebuild,v 1.1 2007/06/16 13:48:10 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/qmail-ldap/Attic/qmail-ldap-1.03-r7.ebuild,v 1.1 2007/06/18 08:33:32 hollow Exp $
 
 inherit eutils toolchain-funcs fixheadtails flag-o-matic
 
 QMAIL_LDAP_PATCH=20060201
 QMAIL_SPP_PATCH=0.42
+CONTROLS_PATCH=20060401d
 
 DESCRIPTION="qmail -- a secure, reliable, efficient, simple message transfer agent"
 HOMEPAGE="
@@ -16,15 +17,15 @@ HOMEPAGE="
 SRC_URI="
 	mirror://qmail/qmail-${PV}.tar.gz
 	http://www.nrg4u.com/qmail/${P}-${QMAIL_LDAP_PATCH}.patch.gz
-	!vanilla? (
-		qmail-spp? ( mirror://gentoo/${P}-spp-${QMAIL_SPP_PATCH}.patch )
-	)
+	mirror://gentoo/${P}-${QMAIL_LDAP_PATCH}-controls${CONTROLS_PATCH}.patch
+	mirror://gentoo/${P}-queue-custom-error.patch
+	qmail-spp? ( mirror://gentoo/${P}-spp-${QMAIL_SPP_PATCH}.patch )
 "
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE="cluster gencertdaily highvolume mailwrapper qmail-spp ssl vanilla zlib"
+IUSE="cluster debug gencertdaily highvolume mailwrapper qmail-spp rfc2307 rfc822 ssl zlib"
 RESTRICT="test"
 
 DEPEND="
@@ -62,53 +63,24 @@ fi
 
 src_unpack() {
 	unpack qmail-${PV}.tar.gz
-
 	cd "${MY_S}"
 
 	# main ldap patch
 	# includes: netqmail-1.05, EXTTODO, BIGTODO, TLS/SMTPAUTH, 0.0.0.0 fix
-	epatch ${DISTDIR}/${P}-${QMAIL_LDAP_PATCH}.patch.gz || die "ldap patch failed"
+	epatch ${DISTDIR}/${P}-${QMAIL_LDAP_PATCH}.patch.gz
 
-	local LDAPFLAGS="-DALTQUEUE -DEXTERNAL_TODO -DDASH_EXT"
+	# QmailLDAP/Controls patch
+	# includes: RFC2307/822 fixes
+	epatch ${DISTDIR}/${P}-${QMAIL_LDAP_PATCH}-controls${CONTROLS_PATCH}.patch
 
-	if ! use vanilla; then
-		use cluster && LDAPFLAGS="${LDAPFLAGS} -DQLDAP_CLUSTER"
-		use highvolume && LDAPFLAGS="${LDAPFLAGS} -DBIGTODO"
-		use zlib && LDAPFLAGS="${LDAPFLAGS} -DDATA_COMPRESS -D QMQP_COMPRESS"
+	# fix libraries for controls patch
+	sed -i -e 's|NEWLDAPPROGLIBS=.*|& str.a|' Makefile
 
-		if use qmail-spp; then
-			epatch ${DISTDIR}/${P}-spp-${QMAIL_SPP_PATCH}.patch
-		fi
+	# Add custom bounce messages to qmail-queue
+	epatch ${DISTDIR}/${P}-queue-custom-error.patch
 
-		# a lot of sed magic to get Makefile right
-		sed -i \
-			-e "s:^#LDAPFLAGS=.*:LDAPFLAGS=${LDAPFLAGS}:" \
-			-e 's:^LDAPLIBS=.*:LDAPLIBS=-L/usr/lib -lldap -llber:' \
-			-e 's:^LDAPINCLUDES=.*:LDAPINCLUDES=-I/usr/include:' \
-			Makefile || die "could not enable OpenLDAP"
-
-		sed -i -e 's:^#SHADOWLIBS=.*:SHADOWLIBS=-lcrypt:' \
-			Makefile || die "could not enable shadow passwords"
-
-		sed -i \
-			-e 's:^#\(MDIRMAKE=.*\):\1:' \
-			-e 's:^#\(HDIRMAKE=.*\):\1:' \
-			Makefile || die "could not enabled automaildirmake"
-
-		if use zlib; then
-			sed -i -e 's:^#ZLIB=.*:ZLIB=-lz:' \
-			Makefile || die "could not enable zlib"
-		fi
-
-		if use ssl; then
-			sed -i \
-				-e 's:^#\(TLS=.*\):\1:g' \
-				-e 's:^#TLSINCLUDES=.*:TLSINCLUDES=/usr/include:' \
-				-e 's:^#TLSLIBS=.*:TLSLIBS=-L/usr/lib -lssl -lcrypto:' \
-				-e 's:^#OPENSSLBIN=.*:OPENSSLBIN=/usr/bin/openssl:' \
-				Makefile || die "could not enable TLS"
-		fi
-	fi
+	# qmail-spp patch
+	use qmail-spp && epatch ${DISTDIR}/${P}-spp-${QMAIL_SPP_PATCH}.patch
 
 	if [[ -n "${QMAIL_PATCH_DIR}" && -d "${QMAIL_PATCH_DIR}" ]]
 	then
@@ -120,6 +92,52 @@ src_unpack() {
 		epatch "${QMAIL_PATCH_DIR}/"*
 		echo
 	fi
+
+	# makefile options
+	local INCLUDES="-I/usr/include"
+	local LDAPLIBS="-L/usr/lib -lldap -llber"
+	local LDAPFLAGS="-DALTQUEUE -DEXTERNAL_TODO -DDASH_EXT -DSMTPEXECCHECK"
+	local CONTROLDB="-DUSE_CONTROLDB -DQLDAP_BAILOUT"
+	local SECUREBIND= RFCFLAGS=
+
+	use cluster    && LDAPFLAGS="${LDAPFLAGS} -DQLDAP_CLUSTER"
+	use highvolume && LDAPFLAGS="${LDAPFLAGS} -DBIGTODO"
+	use zlib       && LDAPFLAGS="${LDAPFLAGS} -DDATA_COMPRESS -D QMQP_COMPRESS"
+
+	use rfc2307    && RFCFLAGS="${RFCFLAGS} -DUSE_RFC2307"
+	use rfc822     && RFCFLAGS="${RFCFLAGS} -DUSE_RFC822"
+
+	use ssl        && SECUREBIND="-DSECUREBIND_TLS -DSECUREBIND_SSL"
+
+	# a lot of sed magic to get Makefile right
+	local EXP=
+
+	EXP="${EXP} s|^#LDAPINCLUDES=.*|LDAPINCLUDES=${INCLUDES}|;"
+	EXP="${EXP} s|^#LDAPLIBS=.*|LDAPLIBS=${LDAPLIBS}|;"
+	EXP="${EXP} s|^#LDAPFLAGS=.*|LDAPFLAGS=${LDAPFLAGS}|;"
+
+	EXP="${EXP} s|^#CONTROLDB=.*|CONTROLDB=${CONTROLDB}|;"
+	EXP="${EXP} s|^#RFCFLAGS=.*|RFCFLAGS=${RFCFLAGS}|;"
+	EXP="${EXP} s|^#SECUREBIND=.*|SECUREBIND=${SECUREBIND}|;"
+
+	# TODO: do we even need this with LDAP?
+	EXP="${EXP} s|^#SHADOWLIBS=.*|SHADOWLIBS=-lcrypt|;"
+
+	# automagic maildir creation
+	EXP="${EXP} s|^#\(MDIRMAKE=.*\)|\1|;"
+	EXP="${EXP} s|^#\(HDIRMAKE=.*\)|\1|;"
+
+	use debug && EXP="${EXP} s|^#\(DEBUG=.*\)|\1|;"
+	use zlib  && EXP="${EXP} s|^#ZLIB=.*|ZLIB=-lz|;"
+
+	if use ssl; then
+		EXP="${EXP} s|^#\(TLS=.*\)|\1|;"
+		EXP="${EXP} s|^#TLSINCLUDES=.*|TLSINCLUDES=${INCLUDES}|;"
+		EXP="${EXP} s|^#TLSLIBS=.*|TLSLIBS=-L/usr/lib -lssl -lcrypto|;"
+		EXP="${EXP} s|^#OPENSSLBIN=.*|OPENSSLBIN=/usr/bin/openssl|;"
+	fi
+
+	sed -i -e "${EXP}" Makefile || die "could not patch Makefile"
 
 	is_prime ${MY_CONF_SPLIT} || die 'QMAIL_CONF_SPLIT is not a prime number.'
 	einfo "Using conf-split value of ${MY_CONF_SPLIT}."
@@ -270,6 +288,7 @@ src_install() {
 	einfo "Installing OpenLDAP schema ..."
 	insinto /etc/openldap/schema
 	doins qmail.schema
+	use controldb && doins qmail-ldap-control/qmailControl.schema
 
 	einfo "Installing some stock configuration files"
 	insinto /var/qmail/control
@@ -399,6 +418,7 @@ pkg_preinst() {
 pkg_setup() {
 	# keep in sync with mini-qmail pkg
 	einfo "Creating groups and users"
+	enewgroup nofiles 200
 	enewgroup qmail 201
 	enewuser alias 200 -1 /var/qmail/alias 200
 	enewuser qmaild 201 -1 /var/qmail 200
