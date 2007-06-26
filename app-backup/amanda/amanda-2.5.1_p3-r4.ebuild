@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.1_p3-r4.ebuild,v 1.1 2007/04/10 09:13:06 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.1_p3-r4.ebuild,v 1.2 2007/06/26 01:33:15 mr_bones_ Exp $
 
 inherit eutils
 
@@ -177,7 +177,7 @@ src_compile() {
 	# Extras
 	# Speed option
 	myconf="${myconf} --with-buffered-dump"
-	# "debugging" in the configuration is NOT debug in the conventional sense. 
+	# "debugging" in the configuration is NOT debug in the conventional sense.
 	# It is actually just useful output in the application, and should remain
 	# enabled. There are some cases of breakage with MTX tape changers as of
 	# 2.5.1p2 that it exposes when turned off as well.
