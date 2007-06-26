@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/postgrey/Attic/postgrey-1.21-r2.ebuild,v 1.6 2007/06/26 18:26:03 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/postgrey/Attic/postgrey-1.28.ebuild,v 1.1 2007/06/26 18:26:03 dertobi123 Exp $
 
 inherit eutils
 
@@ -17,10 +17,10 @@ RDEPEND=">=dev-lang/perl-5.6.0
 	dev-perl/IO-Multiplex
 	dev-perl/BerkeleyDB
 	dev-perl/Net-DNS
-	>=sys-libs/db-4.1
-	>=mail-mta/postfix-2.1.0"
+	dev-perl/Parse-Syslog
+	>=sys-libs/db-4.1"
 
-KEYWORDS="alpha ~amd64 x86"
+KEYWORDS="~amd64 ~x86"
 
 pkg_setup() {
 	enewgroup ${PN}
@@ -41,6 +41,9 @@ src_install () {
 	dosbin ${PN}
 	dosbin contrib/postgreyreport
 
+	# policy-test script
+	dosbin policy-test
+
 	# postgrey data in /etc/postfix
 	insinto /etc/postfix
 	insopts -o root -g ${PN} -m 0640
@@ -50,8 +53,8 @@ src_install () {
 	dodoc Changes README
 
 	# init.d + conf.d files
-	newinitd ${FILESDIR}/${PN}.rc ${PN}
-	newconfd ${FILESDIR}/${PN}.conf ${PN}
+	newinitd ${FILESDIR}/${PN}.rc.new ${PN}
+	newconfd ${FILESDIR}/${PN}.conf.new ${PN}
 }
 
 pkg_postinst() {
