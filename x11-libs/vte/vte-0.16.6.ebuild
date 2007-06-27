@@ -1,10 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/vte/Attic/vte-0.16.3.ebuild,v 1.2 2007/04/30 13:32:12 uberlord Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/vte/Attic/vte-0.16.6.ebuild,v 1.1 2007/06/27 12:18:25 leio Exp $
 
 inherit eutils gnome2 autotools
 
-DESCRIPTION="Xft powered terminal widget"
+DESCRIPTION="Gnome terminal widget"
 HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="LGPL-2"
@@ -27,7 +27,7 @@ RDEPEND=">=dev-libs/glib-2.9
 				>=dev-python/pygtk-2.4
 				>=dev-lang/python-2.2
 			)
-	|| ( x11-libs/libX11 virtual/x11 )
+	x11-libs/libX11
 	virtual/xft"
 
 DEPEND="${RDEPEND}
