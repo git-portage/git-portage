@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/kopete-otr/Attic/kopete-otr-0.2.ebuild,v 1.4 2007/05/02 20:32:43 gustavoz Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/kopete-otr/Attic/kopete-otr-0.5.ebuild,v 1.1 2007/06/27 08:48:06 drizzt Exp $
 
 inherit kde
 
@@ -10,14 +10,12 @@ SRC_URI="http://kopete-otr.follefuder.org/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 #FIXME Fix deps before KDE-4
 DEPEND=">=net-libs/libotr-3.0.0
-		|| ( >=kde-base/kopete-3.5.5-r2 >=kde-base/kdenetwork-3.5.5-r2 )"
-
-PATCHES="${FILESDIR}"/${P}-as-needed.patch
+	|| ( >=kde-base/kopete-3.5.5-r2 >=kde-base/kdenetwork-3.5.5-r2 )"
 
 need-kde 3.5.5
 
