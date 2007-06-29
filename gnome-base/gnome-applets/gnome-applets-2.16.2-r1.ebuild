@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-applets/Attic/gnome-applets-2.18.0-r1.ebuild,v 1.1 2007/05/02 04:46:04 compnerd Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-applets/Attic/gnome-applets-2.16.2-r1.ebuild,v 1.1 2007/06/29 22:24:08 dsd Exp $
 
 inherit eutils gnome2 autotools
 
@@ -10,14 +10,16 @@ HOMEPAGE="http://www.gnome.org/"
 LICENSE="GPL-2 FDL-1.1 LGPL-2"
 SLOT="2"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="acpi apm doc gnome gstreamer hal ipv6"
+IUSE="acpi apm gstreamer hal ipv6"
 
 RDEPEND=">=x11-libs/gtk+-2.6
 		>=dev-libs/glib-2.6
 		>=gnome-base/libgnome-2.8
 		>=gnome-base/libgnomeui-2.8
+		>=gnome-base/gnome-vfs-2.15.4
 		>=gnome-base/gconf-2.8
 		>=gnome-base/gnome-panel-2.13.4
+		>=gnome-base/libgtop-2.11.92
 		>=gnome-base/libglade-2.4
 		>=gnome-base/gail-1.1
 		>=x11-libs/libxklavier-2.91
@@ -26,26 +28,19 @@ RDEPEND=">=x11-libs/gtk+-2.6
 		>=gnome-base/gnome-desktop-2.11.1
 		>=x11-libs/libnotify-0.3.2
 		hal? ( >=sys-apps/hal-0.5.3 )
-		||  (
-				>=dev-libs/dbus-glib-0.71
-				( <sys-apps/dbus-0.90 >=sys-apps/dbus-0.34 )
-			)
+		|| ( >=dev-libs/dbus-glib-0.71
+			( <sys-apps/dbus-0.90 >=sys-apps/dbus-0.34 ) )
+		>=dev-python/pygtk-2.6
+		>=dev-python/gnome-python-2.10
 		>=x11-themes/gnome-icon-theme-2.15.91
 		>=dev-libs/libxml2-2.5.0
 		>=virtual/python-2.4
-		apm? ( sys-apps/apmd )
+		kernel_linux? (
+			apm? ( sys-apps/apmd )
+			acpi? ( sys-power/acpid )
+		)
 		x11-apps/xrdb x11-libs/libX11
-		gnome?	(
-					gnome-base/libgnomekbd
-					gnome-base/control-center
-
-					>=gnome-extra/gucharmap-1.4
-					>=gnome-base/libgtop-2.11.92
-					>=gnome-base/gnome-vfs-2.15.4
-
-					>=dev-python/pygtk-2.6
-					>=dev-python/gnome-python-2.10
-				)
+		>=gnome-extra/gucharmap-1.4
 		gstreamer?	(
 						>=media-libs/gstreamer-0.10.2
 						>=media-libs/gst-plugins-base-0.10.2
@@ -56,21 +51,26 @@ DEPEND="${RDEPEND}
 		>=dev-util/pkgconfig-0.19
 		>=dev-util/intltool-0.35
 		dev-libs/libxslt
-		doc? (
-				app-text/docbook-sgml-utils
-				>=app-text/gnome-doc-utils-0.3.2
-				~app-text/docbook-xml-dtd-4.3
-			)"
+		app-text/docbook-sgml-utils
+		>=app-text/gnome-doc-utils-0.3.2
+		~app-text/docbook-xml-dtd-4.3"
 
 DOCS="AUTHORS ChangeLog NEWS README"
 
 MAKEOPTS="${MAKEOPTS} -j1"
 
+src_unpack() {
+	gnome2_src_unpack
+
+	epatch "${FILESDIR}/${PN}-2.16.1-dbus-version.patch"
+	epatch ${FILESDIR}/${PN}-2.18.0-acpi-procfs.patch
+	use x86-fbsd && epatch "${FILESDIR}"/${P}-malloc.patch
+}
+
 pkg_setup() {
 	G2CONF="--disable-scrollkeeper --enable-flags \
-		$(use_with hal)
 		$(use_enable ipv6)
-		$(use_enable doc gtk-doc)"
+		$(use_with hal)"
 
 	if use gstreamer; then
 		G2CONF="${G2CONF} --with-gstreamer=0.10"
@@ -83,11 +83,6 @@ pkg_setup() {
 	if use ppc && ! use apm; then
 		G2CONF="${G2CONF} --disable-battstat"
 	fi
-}
-
-src_unpack() {
-	gnome2_src_unpack
-	epatch ${FILESDIR}/${PN}-2.18.0-deprecated-acpi-info.patch
 }
 
 src_install() {
@@ -104,14 +99,4 @@ src_install() {
 			[ -s ${applet}/${d} ] && dodoc ${applet}/${d}
 		done
 	done
-}
-
-pkg_postinst() {
-	gnome2_pkg_postinst
-
-	if use acpi && ! use hal ; then
-		elog "It is highly recommended that you install acpid if you use the"
-		elog "battstat applet to prevent any issues with other applications "
-		elog "trying to read acpi information."
-	fi
 }
