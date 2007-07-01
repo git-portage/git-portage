@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/devede/Attic/devede-3.0.ebuild,v 1.1 2007/06/24 14:13:47 drac Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/devede/Attic/devede-3.01.ebuild,v 1.1 2007/07/01 22:10:09 drac Exp $
 
 DESCRIPTION="DVD Video Creator"
 HOMEPAGE="http://www.rastersoft.com/programas/devede.html"
@@ -22,7 +22,7 @@ RDEPEND=">=x11-libs/gtk+-2.6
 DEPEND="${RDEPEND}
 	sys-apps/sed"
 
-# DESTDIR is broken in this version.
+# DESTDIR is broken.
 src_unpack() {
 	unpack ${A}
 	sed -i -e 's:usr/local:usr:g' "${S}"/install.sh
@@ -35,9 +35,11 @@ src_install() {
 }
 
 pkg_postinst() {
+	elog
 	elog "To create DIVX/MPEG4 files, be sure that MPlayer is compiled with LAME support."
 	elog "In this case you want to check for both the encode and mp3 USE flags."
 	elog ""
 	elog "To change the font used to render the subtitles, choose a TrueType font you like"
 	elog "and copy it in \$HOME/.spumux directory, renaming it to devedesans.ttf."
+	elog
 }
