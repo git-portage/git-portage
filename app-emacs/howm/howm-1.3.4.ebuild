@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/howm/Attic/howm-1.2-r1.ebuild,v 1.4 2007/07/06 18:37:09 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/howm/Attic/howm-1.3.4.ebuild,v 1.1 2007/07/06 18:37:09 ulm Exp $
 
 inherit elisp
 
@@ -11,24 +11,25 @@ SRC_URI="http://howm.sourceforge.jp/a/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE=""
+IUSE="linguas_ja"
 
 SITEFILE="55howm-gentoo.el"
 
 src_compile() {
-	cp ${FILESDIR}/${SITEFILE} ${T}
 	if use linguas_ja ; then
-		cat >>${T}/${SITEFILE}<<-EOF
+		cat >>"${T}/${SITEFILE}"<<-EOF
 		(setq howm-menu-lang 'ja)	; Japanese interface"
 		EOF
 	fi
 
-	econf --with-docdir=/usr/share/doc/${P} || die
-	emake < /dev/null || die
+	econf --with-docdir=/usr/share/doc/${P} || die "econf failed"
+	emake < /dev/null || die "emake failed"
 }
 
 src_install() {
 	emake < /dev/null \
-		DESTDIR=${D} PREFIX=/usr LISPDIR=${SITELISP}/${PN} install || die
-	elisp-site-file-install ${T}/${SITEFILE} || die
+		DESTDIR="${D}" PREFIX=/usr LISPDIR="${SITELISP}/${PN}" install \
+		|| die "emake install failed"
+	elisp-site-file-install "${FILESDIR}/${SITEFILE}"
+	dodoc ChangeLog || die "dodoc failed"
 }
