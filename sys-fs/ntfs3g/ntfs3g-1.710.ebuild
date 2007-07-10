@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/ntfs3g/Attic/ntfs3g-1.616-r1.ebuild,v 1.1 2007/06/23 16:12:20 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/ntfs3g/Attic/ntfs3g-1.710.ebuild,v 1.1 2007/07/10 15:02:49 chutzpah Exp $
 
 inherit multilib toolchain-funcs
 
@@ -37,7 +37,7 @@ src_install() {
 
 	gen_usr_ldscript libntfs-3g.so
 
-	use suid && fperms u+s /usr/bin/${MY_PN}
+	use suid && fperms u+s /bin/${MY_PN}
 }
 
 pkg_postinst() {
