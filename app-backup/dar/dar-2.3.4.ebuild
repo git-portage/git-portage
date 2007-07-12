@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/Attic/dar-2.3.2-r1.ebuild,v 1.1 2007/02/16 15:38:08 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/Attic/dar-2.3.4.ebuild,v 1.1 2007/07/12 16:42:09 matsuu Exp $
 
 inherit flag-o-matic
 
