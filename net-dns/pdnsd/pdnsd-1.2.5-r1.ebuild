@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/pdnsd/Attic/pdnsd-1.2.5.ebuild,v 1.9 2007/05/06 09:18:17 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/pdnsd/Attic/pdnsd-1.2.5-r1.ebuild,v 1.1 2007/07/13 07:46:00 mrness Exp $
 
 inherit eutils
 
