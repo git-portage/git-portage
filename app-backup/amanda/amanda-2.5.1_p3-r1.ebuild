@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.1_p3-r1.ebuild,v 1.3 2007/04/09 21:07:22 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.1_p3-r1.ebuild,v 1.4 2007/07/15 04:23:35 mr_bones_ Exp $
 
 inherit eutils
 
@@ -231,8 +231,6 @@ src_install() {
 		sed -re "${sedexpr}" <${i} >"${MYFILESDIR}/${filename}"
 	done
 
-
-
 	# Build the envdir file
 	# Don't forget this..
 	einfo "Building environment file"
@@ -365,7 +363,6 @@ pkg_postinst() {
 			echo
 		fi
 	fi
-
 
 	elog "You should configure Amanda in /etc/amanda now."
 	elog

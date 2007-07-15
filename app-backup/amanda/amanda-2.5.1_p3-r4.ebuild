@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.1_p3-r4.ebuild,v 1.2 2007/06/26 01:33:15 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.1_p3-r4.ebuild,v 1.3 2007/07/15 04:23:35 mr_bones_ Exp $
 
 inherit eutils
 
@@ -254,8 +254,6 @@ src_install() {
 		#einfo "Applying compiled SED expression to ${filename}"
 		sed -re "${sedexpr}" <${i} >"${MYFILESDIR}/${filename}"
 	done
-
-
 
 	# Build the envdir file
 	# Don't forget this..
