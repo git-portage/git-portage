@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/netkit-rwho/Attic/netkit-rwho-0.17-r2.ebuild,v 1.10 2007/06/24 22:58:51 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/netkit-rwho/Attic/netkit-rwho-0.17-r3.ebuild,v 1.1 2007/07/20 15:23:14 pva Exp $
 
 inherit eutils
 
