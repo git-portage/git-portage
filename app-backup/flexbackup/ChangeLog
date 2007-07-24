@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/flexbackup
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.15 2007/05/12 08:33:02 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.16 2007/07/24 07:10:12 genstef Exp $
+
+  19 Jul 2007; John R. Graham (john_r_graham) <john_r_graham@mindspring.com>
+  +flexbackup-1.2.1-r6.ebuild,
+  +files/flexbackup-1.2.1-spaces-in-filenames.patch:
+  New ebuild addresses bug #184560 (fails to backup targets with spaces in
+  their names).
 
   12 May 2007; John R. Graham (john_r_graham) <john_r_graham@mindspring.com>
   +flexbackup-1.2.1-r5.ebuild, +files/flexbackup-1.2.1-prune.patch:
