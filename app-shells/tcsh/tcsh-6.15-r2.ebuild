@@ -1,21 +1,21 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/tcsh/Attic/tcsh-6.14-r33.ebuild,v 1.4 2007/07/15 05:23:38 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/tcsh/Attic/tcsh-6.15-r2.ebuild,v 1.1 2007/07/24 20:53:13 grobian Exp $
 
 inherit eutils
 
-PATCHVER="1.4"
+CONFVER="1.5"
 
 MY_P="${P}.00"
 DESCRIPTION="Enhanced version of the Berkeley C shell (csh)"
 HOMEPAGE="http://www.tcsh.org/"
 SRC_URI="ftp://ftp.astron.com/pub/tcsh/${MY_P}.tar.gz
-	mirror://gentoo/tcsh-config-${PATCHVER}.tar.bz2
-	http://www.gentoo.org/~grobian/distfiles/tcsh-config-${PATCHVER}.tar.bz2"
+	mirror://gentoo/tcsh-config-${CONFVER}.tar.bz2
+	http://www.gentoo.org/~grobian/distfiles/tcsh-config-${CONFVER}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE="perl catalogs"
 
 DEPEND=">=sys-libs/ncurses-5.1
@@ -26,13 +26,15 @@ S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
-	epatch "${FILESDIR}/${MY_P}"-debian-dircolors.patch # bug #120792
-	epatch "${FILESDIR}/${P}"-makefile.patch # bug #151951
+	cd "${S}"
+	epatch "${FILESDIR}/${MY_P/15/14}"-debian-dircolors.patch # bug #120792
+	epatch "${FILESDIR}"/${PN}-6.14-makefile.patch # bug #151951
+	epatch "${FILESDIR}"/${MY_P}-normalize-command-fix.patch # bug #183754
 
 	if use catalogs ; then
 		einfo "enabling NLS catalogs support..."
 		sed -i -e "s/#undef NLS_CATALOGS/#define NLS_CATALOGS/" \
-			${WORKDIR}/${MY_P}/config_f.h || die
+			config_f.h || die
 		eend $?
 	fi
 }
@@ -54,11 +56,6 @@ src_install() {
 	doins \
 		"${WORKDIR}"/tcsh-config/csh.cshrc \
 		"${WORKDIR}"/tcsh-config/csh.login
-
-	insinto /etc/profile.d
-	doins \
-		"${WORKDIR}"/tcsh-config/tcsh-bindkey.csh \
-		"${WORKDIR}"/tcsh-config/tcsh-settings.csh
 
 	dodoc FAQ Fixes NewThings Ported README WishList Y2K
 
