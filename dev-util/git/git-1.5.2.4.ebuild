@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/git/Attic/git-1.5.2.2.ebuild,v 1.2 2007/07/27 01:29:46 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/git/Attic/git-1.5.2.4.ebuild,v 1.1 2007/07/27 01:29:46 robbat2 Exp $
 
 inherit toolchain-funcs eutils elisp-common perl-module bash-completion
 
