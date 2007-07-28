@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/mondo-rescue
 # Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mondo-rescue/Attic/ChangeLog,v 1.5 2007/03/19 13:10:01 kloeri Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mondo-rescue/Attic/ChangeLog,v 1.6 2007/07/28 22:32:00 mr_bones_ Exp $
+
+  28 Jul 2007; Michael Sterrett <mr_bones_@gentoo.org>
+  -mondo-rescue-1.47.ebuild, -mondo-rescue-1.61.ebuild,
+  -mondo-rescue-2.03.ebuild, -mondo-rescue-2.04.ebuild:
+  clean out unneeded ebuilds
 
   19 Mar 2007; Bryan Østergaard <kloeri@gentoo.org> metadata.xml:
   Remove pfeifer from metadata.xml due to retirement.
