@@ -1,20 +1,22 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/cyrus-imapd/Attic/cyrus-imapd-2.3.6.ebuild,v 1.5 2007/07/14 22:22:19 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/cyrus-imapd/Attic/cyrus-imapd-2.3.8.ebuild,v 1.1 2007/07/28 15:22:26 dertobi123 Exp $
 
-inherit eutils ssl-cert fixheadtails pam
+inherit autotools eutils ssl-cert fixheadtails pam
 
 DESCRIPTION="The Cyrus IMAP Server."
 HOMEPAGE="http://asg.web.cmu.edu/cyrus/imapd/"
-SRC_URI="ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/${P}.tar.gz"
-LIBWRAP_PATCH_VER="2.2.10"
-DRAC_PATCH_VER="2.3.6"
-MY_8BIT_PATCH_VER="2.3.6"
+SRC_URI="ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/${P}.tar.gz
+	mirror://gentoo/${P}-uoa.tbz2"
+LIBWRAP_PATCH_VER="2.2"
+DRAC_PATCH_VER="2.3.8"
+AUTOCREATE_PATCH_VER="0.10-0"
+AUTOSIEVE_PATCH_VER="0.6.0"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86 ~sparc ~amd64 ~ppc ~hppa ~ppc64"
-IUSE="afs drac idled kerberos pam snmp ssl tcpd unsupported_8bit"
+IUSE="afs autocreate autosieve drac idled kerberos nntp pam snmp ssl tcpd"
 
 PROVIDE="virtual/imapd"
 RDEPEND=">=sys-libs/db-3.2
@@ -37,22 +39,19 @@ DEPEND="$RDEPEND
 
 new_net-snmp_check() {
 	# tcpd USE flag check. Bug #68254.
-	local i
-	for i in net-analyzer/ucd-snmp net-analyzer/net-snmp; do
-		if use tcpd ; then
-			if has_version $i && ! built_with_use $i tcpd ; then
-				eerror "You are emerging this package with USE=\"tcpd\""
-				eerror "but ${i} has been emerged with USE=\"-tcpd\""
-				fail_msg $i
-			fi
-		else
-			if has_version $i && built_with_use $i tcpd ; then
-				eerror "You are emerging this package with USE=\"-tcpd\""
-				eerror "but ${i} has been emerged with USE=\"tcpd\""
-				fail_msg $i
-			fi
+	if use tcpd ; then
+		if has_version net-analyzer/net-snmp && ! built_with_use net-analyzer/net-snmp tcpd ; then
+			eerror "You are emerging this package with USE=\"tcpd\""
+			eerror "but \"net-analyzer/net-snmp\" has been emerged with USE=\"-tcpd\""
+			fail_msg
 		fi
-	done
+	else
+		if has_version net-analyzer/net-snmp && built_with_use net-analyzer/net-snmp tcpd ; then
+			eerror "You are emerging this package with USE=\"-tcpd\""
+			eerror "but \"net-analyzer/net-snmp\" has been emerged with USE=\"tcpd\""
+			fail_msg
+		fi
+	fi
 	# DynaLoader check. Bug #67411
 
 	if [ -x "$(type -p net-snmp-config)" ]; then
@@ -84,19 +83,14 @@ new_net-snmp_check() {
 }
 
 fail_msg() {
-	local i
-	i=$1
 	eerror "enable "snmp" USE flag for this package requires"
-	eerror "that ${i} and this package both build with"
+	eerror "that net-analyzer/net-snmp and this package both build with"
 	eerror "\"tcpd\" or \"-tcpd\". Bug #68254"
 	die "sanity check failed."
 }
 
 pkg_setup() {
-	if use snmp; then
-		new_net-snmp_check
-	fi
-
+	use snmp && new_net-snmp_check
 	enewuser cyrus -1 -1 /usr/cyrus mail
 }
 
@@ -105,26 +99,30 @@ src_unpack() {
 
 	ht_fix_file ${S}/imap/xversion.sh
 
-	epatch "${FILESDIR}/cyrus-imapd-2.3.6-afs.patch"
-	# Add unsupported patch wrt #18706 and #80630
-	use unsupported_8bit && epatch "${FILESDIR}/${PN}-${MY_8BIT_PATCH_VER}-unsupported-8bit.patch"
+	# db-4.5 fix
+	epatch "${FILESDIR}/${PN}-2.2-db45.patch"
 
-	# Add drac database support.
-	if use drac ; then
-		# better check for drac. Bug #79442.
-		epatch "${FILESDIR}/${PN}-${DRAC_PATCH_VER}-drac.patch"
-		epatch "${S}/contrib/drac_auth.patch"
+	# Unsupported UoA patch. Bug #112912 .
+	# http://email.uoa.gr/projects/cyrus/autocreate/
+	if use autocreate ; then
+		epatch "${WORKDIR}/${P}-autocreate-${AUTOCREATE_PATCH_VER}.diff"
+		use drac \
+			&& epatch "${FILESDIR}/${PN}-${DRAC_PATCH_VER}-drac_with_autocreate.patch" \
+			&& epatch "${S}/contrib/drac_auth.patch"
+	else
+		use drac && epatch "${S}/contrib/drac_auth.patch"
 	fi
+
+	# Unsupported UoA patch. Bug #133187 .
+	# http://email.uoa.gr/projects/cyrus/autosievefolder/
+	use autosieve && epatch	"${WORKDIR}/${P}-autosieve-${AUTOSIEVE_PATCH_VER}.diff"
+
+	# fix undefine symbols.
+	use afs && epatch "${FILESDIR}/cyrus-imapd-2.3.6-afs.patch" \
+		&& epatch "${FILESDIR}/${P}-pts.patch"
 
 	# Add libwrap defines as we don't have a dynamicly linked library.
-	if use tcpd ; then
-		epatch "${FILESDIR}/${PN}-${LIBWRAP_PATCH_VER}-libwrap.patch"
-	fi
-
-	# DB4 detection and versioned symbols.
-	# The new cyrus-imapd has a new DB detection.
-	# Hopefully we don't need this patch anymore.
-	# epatch "${FILESDIR}/${P}-db4.patch"
+	use tcpd && epatch "${FILESDIR}/${PN}-${LIBWRAP_PATCH_VER}-libwrap.patch"
 
 	# Fix master(8)->cyrusmaster(8) manpage.
 	for i in `grep -rl -e 'master\.8' -e 'master(8)' "${S}"` ; do
@@ -140,10 +138,7 @@ src_unpack() {
 
 	# Recreate configure.
 	export WANT_AUTOCONF="2.5"
-	rm -rf configure config.h.in autom4te.cache || die
-	ebegin "Recreating configure"
-	sh SMakefile &>/dev/null || die "SMakefile failed"
-	eend $?
+	eautoreconf
 
 	# When linking with rpm, you need to link with more libraries.
 	sed -i -e "s:lrpm:lrpm -lrpmio -lrpmdb:" configure || die "sed failed"
@@ -158,6 +153,13 @@ src_compile() {
 	myconf="${myconf} $(use_with tcpd libwrap)"
 	myconf="${myconf} $(use_enable kerberos gssapi) $(use_enable kerberos krb5afspts)"
 	myconf="${myconf} $(use_enable idled)"
+	myconf="${myconf} $(use_enable nntp nntp)"
+
+	if use kerberos; then
+		myconf="${myconf} --with-auth=krb5"
+	else
+		myconf="${myconf} --with-auth=unix"
+	fi
 
 	econf \
 		--enable-murder \
@@ -168,7 +170,6 @@ src_compile() {
 		--with-cyrus-user=cyrus \
 		--with-cyrus-group=mail \
 		--with-com_err=yes \
-		--with-auth=unix \
 		--without-perl \
 		--disable-cyradm \
 		${myconf} || die "econf failed"
@@ -227,17 +228,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	ewarn "*****NOTE*****"
-	ewarn "If you're upgrading from versions prior to 2.2.2_BETA"
-	ewarn "be sure to read the following thoroughly:"
-	ewarn "http://asg.web.cmu.edu/cyrus/download/imapd/install-upgrade.html"
-	ewarn "*****NOTE*****"
-	echo
-
-	ewarn "If you change the fs-type of /var/imap or"
-	ewarn "/var/spool/imap you should read step 9 of"
-	ewarn "/usr/share/doc/${P}/html/install-configure.html."
-	echo
 
 	enewuser cyrus -1 -1 /usr/cyrus mail
 
@@ -258,11 +248,11 @@ pkg_postinst() {
 	ewarn "synchronously. E.g. 'chattr +S /var/spool/mqueue'."
 	echo
 
-	einfo "For correct logging add the following to /etc/syslog.conf:"
-	einfo "    local6.*         /var/log/imapd.log"
-	einfo "    auth.debug       /var/log/auth.log"
+	elog "For correct logging add the following to /etc/syslog.conf:"
+	elog "    local6.*         /var/log/imapd.log"
+	elog "    auth.debug       /var/log/auth.log"
 	echo
 
-	ewarn "You have to add user cyrus to the sasldb2. Do this with:"
-	ewarn "    saslpasswd2 cyrus"
+	elog "You have to add user cyrus to the sasldb2. Do this with:"
+	elog "    saslpasswd2 cyrus"
 }
