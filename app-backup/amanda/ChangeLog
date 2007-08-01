@@ -1,6 +1,14 @@
 # ChangeLog for app-backup/amanda
 # Copyright 2000-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.30 2007/07/24 19:48:07 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.31 2007/08/01 18:42:41 robbat2 Exp $
+
+*amanda-2.5.2_p1-r2 (01 Aug 2007)
+
+  01 Aug 2007; Robin H. Johnson <robbat2@gentoo.org>
+  +amanda-2.5.2_p1-r2.ebuild:
+  Document the custom env.d foo that our Amanda package does to allow users to
+  customize their install. Add AMANDA_TAR to the list of settings, to allow
+  users to specify implementation like STar instead of GNU tar.
 
 *amanda-2.5.2_p1-r1 (24 Jul 2007)
 
