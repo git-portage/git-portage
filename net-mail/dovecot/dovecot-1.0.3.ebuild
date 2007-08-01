@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/dovecot/Attic/dovecot-1.0.2-r1.ebuild,v 1.2 2007/08/01 11:01:14 uberlord Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/dovecot/Attic/dovecot-1.0.3.ebuild,v 1.1 2007/08/01 11:01:14 uberlord Exp $
 
 inherit autotools eutils ssl-cert
 
