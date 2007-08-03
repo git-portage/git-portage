@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.33 2007/04/29 03:08:53 dirtyepic Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.34 2007/08/03 12:01:41 opfer Exp $
+
+  03 Aug 2007; Christian Faulhammer <opfer@gentoo.org> bacula-2.0.3.ebuild:
+  stable x86, bug 153189
 
   29 Apr 2007; Ryan Hill <dirtyepic@gentoo.org> bacula-2.0.3.ebuild:
   Fix wxGTK dep for bug #164139
