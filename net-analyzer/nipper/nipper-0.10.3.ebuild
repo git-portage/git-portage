@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nipper/Attic/nipper-0.10.1.ebuild,v 1.1 2007/07/03 23:44:39 ikelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nipper/Attic/nipper-0.10.3.ebuild,v 1.1 2007/08/05 21:47:08 ikelos Exp $
 
 inherit toolchain-funcs eutils
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=""
