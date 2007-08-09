@@ -1,10 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/b2evolution/Attic/b2evolution-0.9.2.ebuild,v 1.5 2007/01/28 01:35:48 dsd Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/b2evolution/Attic/b2evolution-1.10.2.ebuild,v 1.1 2007/08/09 11:27:08 wrobel Exp $
 
 inherit webapp eutils
 
-MY_EXT="-2006-05-22"
+MY_EXT="-2007-06-08"
 
 DESCRIPTION="Multilingual multiuser multi-blog engine"
 HOMEPAGE="http://www.b2evolution.net"
@@ -29,6 +29,11 @@ pkg_setup() {
 	fi
 }
 
+pkg_setup() {
+	webapp_pkg_setup
+	require_php_with_use tokenizer mysql
+}
+
 src_install() {
 	webapp_src_preinst
 
@@ -41,9 +46,9 @@ src_install() {
 
 	# Identify the configuration files that this app uses
 	# User can want to make changes to these!
-	webapp_configfile ${MY_HTDOCSDIR}/conf/_config.php
-	webapp_serverowned ${MY_HTDOCSDIR}/conf/_config.php
 	webapp_serverowned ${MY_HTDOCSDIR}
+	webapp_serverowned ${MY_HTDOCSDIR}/conf/_basic_config.php
+	webapp_configfile ${MY_HTDOCSDIR}/conf/_{basic_config,advanced,locales,formatting,admin,stats,application}.php
 
 	# post-install instructions
 	webapp_postinst_txt en ${FILESDIR}/postinstall-en.txt
