@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.3_rc9.ebuild,v 1.1 2007/07/22 22:38:54 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.3.4.ebuild,v 1.1 2007/08/10 22:14:39 zmedico Exp $
 
 inherit toolchain-funcs eutils flag-o-matic multilib
 
@@ -27,7 +27,7 @@ RDEPEND=">=dev-lang/python-2.4
 	>=app-misc/pax-utils-0.1.13
 	userland_GNU? ( >=sys-apps/coreutils-6.4 )
 	selinux? ( >=dev-python/python-selinux-2.16 )
-	doc? ( app-portage/portage-manpages )
+	doc? ( || ( app-portage/eclass-manpages app-portage/portage-manpages ) )
 	>=dev-python/pycrypto-2.0.1-r5
 	>=net-misc/rsync-2.6.4"
 # coreutils-6.4 rdep is for date format in emerge-webrsync #164532
@@ -36,7 +36,7 @@ SRC_ARCHIVES="http://dev.gentoo.org/~zmedico/portage/archives"
 
 PV_PL="2.1.2"
 PATCHVER_PL=""
-TARBALL_PV="2.1.2"
+TARBALL_PV="${PV%.*}"
 SRC_URI="mirror://gentoo/${PN}-${TARBALL_PV}.tar.bz2
 	${SRC_ARCHIVES}/${PN}-${TARBALL_PV}.tar.bz2
 	linguas_pl? ( mirror://gentoo/${PN}-man-pl-${PV_PL}.tar.bz2
@@ -218,6 +218,10 @@ pkg_postinst() {
 		[ -e "${x}" ] && mv -f "${x}" "${ROOT}etc/make.globals"
 	done
 
+	elog
+	elog "FEATURES=\"userfetch\" is now enabled by default. Depending on your \${DISTDIR}"
+	elog "permissions, this may result in Permission Denied errors. If you would like"
+	elog "to fetch with superuser privileges, add FEATURES=\"-userfetch\" to make.conf."
 	elog
 	elog "The world file now supports slot atoms such as 'sys-devel/gcc:3.4'. In some"
 	elog "cases, emerge --depclean may remove slots that it would not have removed"
