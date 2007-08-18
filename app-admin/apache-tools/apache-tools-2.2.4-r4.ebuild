@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/apache-tools/Attic/apache-tools-2.2.4-r2.ebuild,v 1.3 2007/07/29 16:43:05 phreak Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/apache-tools/Attic/apache-tools-2.2.4-r4.ebuild,v 1.1 2007/08/18 18:24:44 chtekk Exp $
 
 inherit flag-o-matic eutils
 
@@ -32,10 +32,7 @@ src_unpack() {
 	# (1)	apache-tools-Makefile.patch:
 	#		- fix up the `make install' for support/
 	#		- remove envvars from `make install'
-	# (2)	apache-tools-ab-ssl.patch:
-	#		- Add support for SSL-capable version of ab
 	epatch "${FILESDIR}"/${PN}-Makefile.patch
-	use ssl && epatch "${FILESDIR}"/${PN}-ab-ssl.patch
 }
 
 src_compile() {
@@ -46,7 +43,10 @@ src_compile() {
 	# Thanks to Harald van Dijk
 	append-ldflags -Wl,--no-as-needed
 
-	use ssl && myconf="${myconf} --with-ssl=/usr"
+	if use ssl ; then
+		myconf="${myconf} --with-ssl=/usr"
+		append-flags -DHAVE_OPENSSL -DUSE_SSL -lssl -I/usr/include/openssl
+	fi
 
 	# econf overwrites the stuff from config.layout, so we have to put them into
 	# our myconf line too
@@ -72,7 +72,7 @@ src_install () {
 
 	# install manpages
 	doman "${S}"/docs/man/{dbmmanage,htdigest,htpasswd,htdbm}.1 \
-		"${S}"/docs/man/{ab,apxs,htcacheclean,logresolve,rotatelogs}.8
+		"${S}"/docs/man/{ab,htcacheclean,logresolve,rotatelogs}.8
 
 	# Providing compatiblity symlinks for #177697 (which we'll stop to install
 	# at some point).
