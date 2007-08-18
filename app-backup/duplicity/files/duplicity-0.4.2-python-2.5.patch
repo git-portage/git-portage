@@ -1,0 +1,24 @@
+diff -ur duplicity-0.4.2.orig/src/tarfile.py duplicity-0.4.2/src/tarfile.py
+--- duplicity-0.4.2.orig/src/tarfile.py	2006-02-03 05:44:31.000000000 +0200
++++ duplicity-0.4.2/src/tarfile.py	2007-08-18 22:12:53.000000000 +0300
+@@ -1062,12 +1062,14 @@
+         """
+         tarinfo = TarInfo()
+         tarinfo.name = nts(buf[0:100])
+-        tarinfo.mode = int(buf[100:108], 8)
+-        tarinfo.uid = int(buf[108:116],8)
+-        tarinfo.gid = int(buf[116:124],8)
+-        tarinfo.size = long(buf[124:136], 8)
+-        tarinfo.mtime = long(buf[136:148], 8)
+-        tarinfo.chksum = int(buf[148:156], 8)
++        tarinfo.mode = int(buf[100:107], 8)
++        tarinfo.uid = int(buf[108:115],8)
++        tarinfo.gid = int(buf[116:123],8)
++        tarinfo.size = long(buf[124:135], 8)
++        tarinfo.mtime = long(buf[136:147], 8)
++		# chksum stored as a six digit octal number with
++		# leading zeroes followed by a nul and then a space
++        tarinfo.chksum = int(buf[148:154], 8)
+         tarinfo.type = buf[156:157]
+         tarinfo.linkname = nts(buf[157:257])
+         tarinfo.uname = nts(buf[265:297])
