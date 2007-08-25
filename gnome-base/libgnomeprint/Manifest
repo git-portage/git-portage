@@ -8,10 +8,10 @@ EBUILD libgnomeprint-2.12.1.ebuild 1012 RMD160 63318efca60826c61aebf6a275f315eed
 MD5 b30f009230399e17f3484e84824be209 libgnomeprint-2.12.1.ebuild 1012
 RMD160 63318efca60826c61aebf6a275f315eeda087d07 libgnomeprint-2.12.1.ebuild 1012
 SHA256 cca1975b6a189bfc500c99e7a2f6a62b70efca15add023165cfa18deafaf0e86 libgnomeprint-2.12.1.ebuild 1012
-EBUILD libgnomeprint-2.18.0.ebuild 1012 RMD160 c53c77f67b0acf1d11804f0f082c0e2ab185c1ea SHA1 967c1f10dd8116d6f5f4bc1bff0e1ce188e5940a SHA256 439995d4acb75781e896539b4923b07e739b53136c8ad2cb0795df4144a17356
-MD5 6f94590f7861e75deccc090b2de22930 libgnomeprint-2.18.0.ebuild 1012
-RMD160 c53c77f67b0acf1d11804f0f082c0e2ab185c1ea libgnomeprint-2.18.0.ebuild 1012
-SHA256 439995d4acb75781e896539b4923b07e739b53136c8ad2cb0795df4144a17356 libgnomeprint-2.18.0.ebuild 1012
+EBUILD libgnomeprint-2.18.0.ebuild 1011 RMD160 9574836d024ef70f560ba017d9e79dfea7c45f13 SHA1 f3fe90a2873624568ba036ff266b01264d832042 SHA256 968f1a3ab19fe8811639773b8ad4c0a4d57dd25ad10f397f4cb1948f7cbf3258
+MD5 09d6f40346a9859872b3e200488d4cb4 libgnomeprint-2.18.0.ebuild 1011
+RMD160 9574836d024ef70f560ba017d9e79dfea7c45f13 libgnomeprint-2.18.0.ebuild 1011
+SHA256 968f1a3ab19fe8811639773b8ad4c0a4d57dd25ad10f397f4cb1948f7cbf3258 libgnomeprint-2.18.0.ebuild 1011
 EBUILD libgnomeprint-2.18.1.ebuild 1016 RMD160 74c389a77893feb328edc4ea8379d0c38f6f276b SHA1 55bef3a109032ec1e0879a5a491f3e5137a5f211 SHA256 b1132dcaf6e8e3b6ea970495c0683fbe30e949da84dfc927ea93f895db0a8f54
 MD5 cc790ab6e6afc85d742dff44ebf6709e libgnomeprint-2.18.1.ebuild 1016
 RMD160 74c389a77893feb328edc4ea8379d0c38f6f276b libgnomeprint-2.18.1.ebuild 1016
@@ -34,9 +34,9 @@ MD5 dd16afca7997aa670b75e50bfc4da1ca files/digest-libgnomeprint-2.18.1 265
 RMD160 cd97a83b7ccc4544695ea0a7b5e3cc766c126a59 files/digest-libgnomeprint-2.18.1 265
 SHA256 70bf1d5962d05f451bc91f33ec11ba6ca391e8175fe8c48ad81dc6182106a04a files/digest-libgnomeprint-2.18.1 265
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.7 (GNU/Linux)
+Version: GnuPG v2.0.5 (GNU/Linux)
 
-iD8DBQFGvc24QlM6RnzZP+IRArzeAJ9QcyO30ngkYV5JgsTywokmRsGPmwCbBFhy
-GyR1xeOG6kjAZzGxMn9Cd7U=
-=Cl94
+iD8DBQFG0DwZp/wUKkr7RBoRAoXaAJ9Vbmj/TxQwrDRi4FYIizen9fuYUQCeMC7Z
+nighoiizCpPBzF897sabd5g=
+=/Rlo
 -----END PGP SIGNATURE-----
