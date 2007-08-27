@@ -1,6 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/mythweb/Attic/mythweb-0.21_pre14151.ebuild,v 1.3 2007/08/15 13:43:17 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/mythweb/Attic/mythweb-0.21_pre14235.ebuild,v 1.1 2007/08/27 14:37:33 cardoe Exp $
+
+ESVN_PROJECT="mythplugins"
 
 inherit mythtv webapp depend.php subversion
 
@@ -29,19 +31,16 @@ src_compile() {
 src_install() {
 	webapp_src_preinst
 
+	cd "${S}/mythweb"
 	dodoc README TODO
 
 	dodir ${MY_HTDOCSDIR}/data
 
-	cp -R ${S}/[[:lower:]]* ${D}${MY_HTDOCSDIR}
-	cp ${S}/mythweb.conf.apache ${MY_SERVERCONFIGDIR}/
-	cp ${S}/mythweb.conf.lighttpd ${MY_SERVERCONFIGDIR}/
+	cp -R [[:lower:]]* ${D}${MY_HTDOCSDIR}
+	cp mythweb.conf.apache ${MY_SERVERCONFIGDIR}/
+	cp mythweb.conf.lighttpd ${MY_SERVERCONFIGDIR}/
 
 	webapp_serverowned ${MY_HTDOCSDIR}/data
-
-	# should these be uncommented?
-	#webapp_configfile ${MY_SERVERCONFIGDIR}/mythweb.conf.apache
-	#webapp_configfile ${MY_SERVERCONFIGDIR}/mythweb.conf.lighttpd
 
 	webapp_postinst_txt en ${FILESDIR}/postinstall-en-0.21.txt
 
