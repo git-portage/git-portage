@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/setools/Attic/setools-3.3.ebuild,v 1.1 2007/08/04 18:00:46 pebenito Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/setools/Attic/setools-3.3.1.ebuild,v 1.1 2007/08/27 02:50:31 pebenito Exp $
 
 inherit java-pkg-opt-2
 
@@ -56,10 +56,11 @@ src_compile() {
 		--disable-bwidget-check \
 		$(use_enable python swig-python) \
 		$(use_enable java swig-java) \
+		$(use_enable X swig-tcl) \
 		$(use_enable X gui) \
 		$(use_enable debug)
 
-	emake
+	emake || die
 }
 
 src_install() {
