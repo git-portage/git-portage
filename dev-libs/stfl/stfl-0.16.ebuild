@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/stfl/Attic/stfl-0.14.ebuild,v 1.1 2007/06/21 16:54:00 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/stfl/Attic/stfl-0.16.ebuild,v 1.1 2007/08/30 17:06:51 ticho Exp $
 
 inherit perl-module toolchain-funcs
 
@@ -8,7 +8,7 @@ DESCRIPTION="A library which implements a curses-based widget set for text termi
 HOMEPAGE="http://www.clifford.at/stfl/"
 SRC_URI="http://www.clifford.at/${PN}/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="~x86"
 
