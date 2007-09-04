@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/cherrypy/Attic/cherrypy-2.2.1.ebuild,v 1.3 2007/02/27 22:47:19 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/cherrypy/Attic/cherrypy-3.0.2.ebuild,v 1.1 2007/09/04 09:22:30 lucass Exp $
 
 inherit distutils
 
@@ -17,15 +17,12 @@ LICENSE="BSD"
 DEPEND=""
 RDEPEND=""
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	sed -i \
-		-e '/raw_input/d' \
-		cherrypy/test/test.py || die "sed failed"
 	sed -i \
 		-e 's/"cherrypy.tutorial",//' \
 		-e "/('cherrypy\/tutorial',/, /),/d" \
@@ -42,5 +39,5 @@ src_install() {
 }
 
 src_test() {
-	PYTHONPATH=. "${python}" cherrypy/test/test.py || die "test failed"
+	PYTHONPATH=. "${python}" cherrypy/test/test.py --dumb || die "test failed"
 }
