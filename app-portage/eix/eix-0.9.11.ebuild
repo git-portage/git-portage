@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/eix/Attic/eix-0.9.4.ebuild,v 1.1 2007/04/27 21:17:55 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/eix/Attic/eix-0.9.11.ebuild,v 1.1 2007/09/05 09:42:34 genstef Exp $
 
 DESCRIPTION="Small utility for searching ebuilds with indexing for fast results"
 HOMEPAGE="http://eix.sourceforge.net"
