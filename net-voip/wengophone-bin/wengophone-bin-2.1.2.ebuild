@@ -1,17 +1,13 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-voip/wengophone-bin/Attic/wengophone-bin-2.1.0.ebuild,v 1.2 2007/05/20 03:36:50 rajiv Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-voip/wengophone-bin/Attic/wengophone-bin-2.1.2.ebuild,v 1.1 2007/09/05 21:32:42 tester Exp $
 
 inherit	eutils
 
 MY_PN="WengoPhone"
 DESCRIPTION="Wengophone NG is a VoIP client featuring the SIP protocol"
 HOMEPAGE="http://www.openwengo.org/"
-SRC_URI="http://download.wengo.com/wengophone/release/2007-05-15/${MY_PN}-${PV/_/-}-linux-bin-x86.tar.bz2
-	amd64? (
-		mirror://debian/pool/main/libg/libgcrypt11/libgcrypt11_1.2.4-1_i386.deb
-		mirror://debian/pool/main/libg/libgpg-error/libgpg-error0_1.4-2_i386.deb
-	)"
+SRC_URI="http://download.wengo.com/wengophone/release/2007-08-24/${MY_PN}-${PV/_/-}-linux-bin-x86.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -19,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 
 RESTRICT="strip"
 
-DEPEND="amd64? ( app-arch/dpkg )"
+DEPEND=""
 RDEPEND="${DEPEND}
 	!net-im/wengophone
 	amd64? ( app-emulation/emul-linux-x86-baselibs
@@ -45,19 +41,14 @@ RDEPEND="${DEPEND}
 		x11-libs/libXrender
 	)"
 
-S=${WORKDIR}/WengoPhone-2.1-minsizerel
+S=${WORKDIR}/WengoPhone-${PV}-minsizerel
 
 QA_TEXTRELS="opt/wengophone/libwebcam.so
 	opt/wengophone/libphapi.so
+	opt/wengophone/libowwebcam.so
+	opt/wengophone/libcoredumper.so
+	opt/wengophone/libphamrplugin.so
 	opt/wengophone/libsfp-plugin.so"
-
-src_unpack() {
-	for pkg in ${A}
-	do
-		echo ${pkg} | grep -q "tar.bz2" && unpack ${pkg}
-		echo ${pkg} | grep -q ".deb" && /usr/bin/dpkg --extract ${DISTDIR}/$pkg ${WORKDIR}
-	done
-}
 
 src_install() {
 	local WENGO_HOME="/opt/wengophone"
@@ -70,7 +61,6 @@ src_install() {
 	insopts -m0755
 	insinto "${WENGO_HOME}"
 	doins *.so*
-	use amd64 && doins ${WORKDIR}/usr/lib/*
 
 	exeinto "${WENGO_HOME}"
 	doexe qtwengophone
