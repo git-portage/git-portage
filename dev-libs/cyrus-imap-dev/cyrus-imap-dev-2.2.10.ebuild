@@ -1,8 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/cyrus-imap-dev/Attic/cyrus-imap-dev-2.2.10.ebuild,v 1.8 2007/01/05 07:32:22 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/cyrus-imap-dev/Attic/cyrus-imap-dev-2.2.10.ebuild,v 1.9 2007/09/07 18:58:27 dertobi123 Exp $
 
-inherit eutils
+inherit eutils autotools
 
 DESCRIPTION="Developer support for the Cyrus IMAP Server."
 HOMEPAGE="http://asg.web.cmu.edu/cyrus/imapd/"
@@ -39,15 +39,10 @@ src_unpack() {
 	fi
 
 	epatch "${FILESDIR}"/${PV}-imapopts.h.patch || die "imapopts.h.patch failed"
-	# DB4 detection and versioned symbols.
-	#epatch "${FILESDIR}/cyrus-imapd-${PV}-db4.patch" || die "patch failed."
 
 	# Recreate configure.
 	export WANT_AUTOCONF="2.5"
-	ebegin "Recreating configure"
-	rm -rf configure config.h.in autom4te.cache || die
-	sh SMakefile &>/dev/null || die "SMakefile failed"
-	eend $?
+	eautoreconf
 
 	# When linking with rpm, you need to link with more libraries.
 	sed -e "s:lrpm:lrpm -lrpmio -lrpmdb:" -i configure || die "sed failed"
