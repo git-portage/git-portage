@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.4.1.ebuild,v 1.2 2005/10/15 20:37:48 josejx Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.4.1.ebuild,v 1.3 2007/09/11 20:44:45 ticho Exp $
 
 IUSE=""
 DESCRIPTION="duplicity is a secure backup system using gnupg to encrypt data"
