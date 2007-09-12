@@ -1,23 +1,23 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/otrs/Attic/otrs-2.0.4.ebuild,v 1.13 2007/08/19 11:40:10 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/otrs/Attic/otrs-2.2.2.ebuild,v 1.1 2007/09/12 07:00:31 wrobel Exp $
 
-inherit webapp eutils
+inherit webapp eutils depend.apache
 
-S=${WORKDIR}/${PN}
-
-IUSE="mysql postgres fastcgi ldap gd"
+IUSE="mysql postgres fastcgi ldap gd pdf"
 
 DESCRIPTION="OTRS is an Open source Ticket Request System"
 HOMEPAGE="http://otrs.org/"
-SRC_URI="ftp://ftp.otrs.org/pub/${PN}/${P}-01.tar.bz2"
+SRC_URI="ftp://ftp.otrs.org/pub/${PN}/${P}.tar.bz2"
 
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 
-DEPEND="
+RDEPEND="
+	${DEPEND}
 	=dev-lang/perl-5*
 	dev-perl/Date-Pcalc
 	dev-perl/TimeDate
+	dev-perl/Crypt-PasswdMD5
 	dev-perl/DBI
 	virtual/perl-CGI
 	virtual/perl-Digest-MD5
@@ -30,30 +30,35 @@ DEPEND="
 	virtual/perl-libnet
 	dev-perl/Authen-SASL
 	dev-perl/XML-Parser
-"
-
-RDEPEND="
-	${DEPEND}
 	virtual/mta
+	pdf? ( dev-perl/PDF-API2 )
 	ldap? ( dev-perl/perl-ldap net-nds/openldap )
 	mysql? ( dev-perl/DBD-mysql )
 	postgres? ( dev-perl/DBD-Pg )
-	>=www-servers/apache-2
 	fastcgi? ( dev-perl/FCGI )
-	!fastcgi? ( =www-apache/libapreq2-2* )
+	apache2? ( =www-apache/libapreq2-2* )
 	gd? ( dev-perl/GD dev-perl/GDTextUtil dev-perl/GDGraph )
 "
+
+want_apache
 
 LICENSE="GPL-2"
 
 pkg_setup() {
 	webapp_pkg_setup
-	enewuser otrs -1 -1 /dev/null apache
+	if use apache2; then
+		enewuser otrs -1 -1 /dev/null apache
+	fi
 }
 
 src_unpack() {
 	unpack ${A}
 	cp ${S}/Kernel/Config.pm.dist ${S}/Kernel/Config.pm
+
+	# http://bugs.otrs.org/show_bug.cgi?id=1231
+	cd ${S}
+	epatch ${FILESDIR}/dbi_finish.patch
+
 	cd ${S}/Kernel/Config/
 	for foo in *.dist; do cp ${foo} $(basename ${foo} .dist); done
 
@@ -104,5 +109,10 @@ pkg_postinst() {
 	ewarn "Don't run webapp-config with -d otrs. Instead, try"
 	ewarn "webapp-config -I -h <host> -d ot ${PN} ${PVR}"
 	ewarn
+	if !use apache2; then
+		ewarn "You did not activate the USE-flag apache2 which means you"
+		ewarn "will need to create the otrs user yourself. Make this user"
+		ewarn "a member of your webserver group."
+	fi
 	# webapp_pkg_postinst
 }
