@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/duplicity
 # Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.16 2007/09/11 20:44:45 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.17 2007/09/12 12:10:37 ticho Exp $
+
+  12 Sep 2007; Andrej Kacian <ticho@gentoo.org> duplicity-0.4.3.ebuild:
+  Added py-gnupg and pexpect to RDEPEND. Bug #192270, by Neil Bothwick <neil
+  at digimed.co.uk>.
 
 *duplicity-0.4.3 (11 Sep 2007)
 
