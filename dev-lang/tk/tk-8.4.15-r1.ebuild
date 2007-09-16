@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/tk/Attic/tk-8.4.14.ebuild,v 1.11 2007/07/22 08:39:45 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/tk/Attic/tk-8.4.15-r1.ebuild,v 1.1 2007/09/16 02:23:57 matsuu Exp $
 
 WANT_AUTOCONF=latest
 WANT_AUTOMAKE=latest
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/tcl/${PN}${PV}-src.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE="debug threads"
 
 RDEPEND="x11-libs/libX11
@@ -45,7 +45,10 @@ src_unpack() {
 	epatch "${FILESDIR}"/${PN}-8.4.11-multilib.patch
 
 	# Bug 125971
-	epatch "${FILESDIR}"/${PN}-8.3.5-tclm4-soname.patch
+	epatch "${FILESDIR}"/${P}-tclm4-soname.patch
+
+	# Bug 192539
+	epatch "${FILESDIR}"/${PN}-CVE-2007-4851.patch
 
 	local d
 	for d in */configure ; do
@@ -102,10 +105,15 @@ src_install() {
 
 	# install symlink for libraries
 	#dosym libtk${v1}.a /usr/${mylibdir}/libtk.a
+	if use debug ; then
+		dosym libtk${v1}g.so /usr/${mylibdir}/libtk${v1}.so
+		dosym libtkstub${v1}g.a /usr/${mylibdir}/libtkstub${v1}.a
+		dosym ../tk${v1}g/pkgIndex.tcl /usr/${mylibdir}/tk${v1}/pkgIndex.tcl
+	fi
 	dosym libtk${v1}.so /usr/${mylibdir}/libtk.so
 	dosym libtkstub${v1}.a /usr/${mylibdir}/libtkstub.a
 
-	ln -sf wish${v1} "${D}"/usr/bin/wish
+	dosym wish${v1} /usr/bin/wish
 
 	cd "${S}"
 	dodoc ChangeLog README changes license.terms
