@@ -1,10 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-115-r4.ebuild,v 1.1 2007/09/20 17:17:57 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-115-r5.ebuild,v 1.1 2007/09/20 20:28:42 zzam Exp $
 
 inherit eutils flag-o-matic multilib toolchain-funcs versionator
 
-PATCH="${P}-update-20070920.diff"
+PATCH="${P}-update-20070920-2.diff"
 DESCRIPTION="Linux dynamic and persistent device naming support (aka userspace devfs)"
 HOMEPAGE="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html"
 SRC_URI="mirror://kernel/linux/utils/kernel/hotplug/${P}.tar.bz2
