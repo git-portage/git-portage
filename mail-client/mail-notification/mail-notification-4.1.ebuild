@@ -1,16 +1,14 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/mail-notification/Attic/mail-notification-4.0_rc2.ebuild,v 1.4 2007/08/30 16:08:54 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/mail-notification/Attic/mail-notification-4.1.ebuild,v 1.1 2007/09/22 15:39:03 graaff Exp $
 
 inherit eutils gnome2 multilib flag-o-matic versionator
-
-MY_PV=$(replace_version_separator 2 '-')
 
 DESCRIPTION="A GNOME trayicon which checks for email. Supports mbox, MH,
 Maildir, IMAP, Sylpheed, POP3, Gmail and Evolution.  Authenticates via
 apop, ssl, sasl."
 HOMEPAGE="http://www.nongnu.org/mailnotify/"
-SRC_URI="http://savannah.nongnu.org/download/mailnotify/${PN}-${MY_PV}.tar.gz"
+SRC_URI="http://savannah.nongnu.org/download/mailnotify/${P}.tar.bz2"
 
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"
@@ -25,17 +23,16 @@ DEPEND=">=x11-libs/gtk+-2.6
 	>=gnome-base/gnome-panel-2.6
 	>=gnome-base/eel-2.6
 	>=gnome-base/gconf-2.6
-	>=gnome-base/libgnomeui-2.6
+	>=gnome-base/libgnomeui-2.14
 	>=gnome-base/libglade-2.0
 	>=gnome-base/orbit-2.6
 	>=dev-libs/gmime-2.1
+	x11-libs/libnotify
 	dev-perl/XML-Parser
 	ssl? ( >=dev-libs/openssl-0.9.6 )
 	sasl? ( >=dev-libs/cyrus-sasl-2 )
 	evo? ( >=mail-client/evolution-2.6 )
 	sylpheed? ( virtual/sylpheed )"
-
-S="${WORKDIR}/${P/_/-}"
 
 pkg_setup() {
 	if use evo ; then
@@ -60,7 +57,6 @@ pkg_setup() {
 
 src_unpack() {
 	gnome2_src_unpack
-	gnome2_omf_fix
 
 	sed -i -e 's:gtk-update-icon-cache:true:' ./art/Makefile.in
 }
