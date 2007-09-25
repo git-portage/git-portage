@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.4.3.ebuild,v 1.2 2007/09/12 12:10:37 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.4.3.ebuild,v 1.3 2007/09/25 23:33:12 ticho Exp $
 
 inherit distutils eutils
 
@@ -18,7 +18,7 @@ DEPEND="virtual/libc
 	>=net-libs/librsync-0.9.6"
 RDEPEND="${DEPEND}
 	dev-python/py-gnupg
-	dev-python/pexpect"
+	>=dev-python/pexpect-2.1"
 
 src_unpack() {
 	unpack ${A}
