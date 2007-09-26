@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/motif-config/Attic/motif-config-0.9.ebuild,v 1.12 2007/02/28 22:26:49 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/motif-config/Attic/motif-config-0.10-r1.ebuild,v 1.1 2007/09/26 18:17:55 jer Exp $
 
 inherit multilib
 
@@ -10,37 +10,27 @@ SRC_URI=""
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND="!<x11-libs/openmotif-2.1.30-r13
-!=x11-libs/openmotif-2.2.2*
-!=x11-libs/openmotif-2.2.3
-!=x11-libs/openmotif-2.2.3-r1
-!=x11-libs/openmotif-2.2.3-r2
-!=x11-libs/openmotif-2.2.3-r3
-!=x11-libs/openmotif-2.2.3-r4
-!=x11-libs/openmotif-2.2.3-r5
-!=x11-libs/openmotif-2.2.3-r6
+	!=x11-libs/openmotif-2.2.2*
+	!=x11-libs/openmotif-2.2.3
+	!=x11-libs/openmotif-2.2.3-r1
+	!=x11-libs/openmotif-2.2.3-r2
+	!=x11-libs/openmotif-2.2.3-r3
+	!=x11-libs/openmotif-2.2.3-r4
+	!=x11-libs/openmotif-2.2.3-r5
+	!=x11-libs/openmotif-2.2.3-r6
 
-!<x11-libs/lesstif-0.93.94-r4
-!=x11-libs/lesstif-0.93.97
-!=x11-libs/lesstif-0.94.0*"
-
+	!<x11-libs/lesstif-0.93.94-r4
+	!=x11-libs/lesstif-0.93.97
+	!=x11-libs/lesstif-0.94.0*"
 RDEPEND="${DEPEND}
 	app-shells/bash"
 
-src_unpack(){
-	einfo "nothing to unpack"
-}
-
-src_compile() {
-	einfo "nothing to compile"
-}
-
-src_install () {
-	exeinto /usr/bin
-	newexe ${FILESDIR}/${P} motif-config
+src_install() {
+	newbin "${FILESDIR}"/${P} motif-config || die
 	dosed "s:@@LIBDIR@@:$(get_libdir):g" /usr/bin/motif-config
 
 	# for profile
@@ -56,10 +46,10 @@ src_install () {
 
 	# mwm default config
 	insinto /etc/X11/app-defaults
-	doins ${FILESDIR}/Mwm.defaults
+	doins "${FILESDIR}"/Mwm.defaults
 
 	insinto /etc/X11/mwm
-	doins ${FILESDIR}/system.mwmrc
+	doins "${FILESDIR}"/system.mwmrc
 
 	dodir /usr/$(get_libdir)/X11
 	dosym /etc/X11/mwm /usr/$(get_libdir)/X11/mwm
