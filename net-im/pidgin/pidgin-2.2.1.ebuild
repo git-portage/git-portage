@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/Attic/pidgin-2.2.0-r1.ebuild,v 1.1 2007/09/20 20:11:42 drizzt Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/Attic/pidgin-2.2.1.ebuild,v 1.1 2007/09/30 16:10:10 tester Exp $
 
 inherit flag-o-matic eutils toolchain-funcs multilib perl-app gnome2
 
@@ -99,9 +99,6 @@ print_pidgin_warning() {
 	ewarn "or forgotten, buddy icons not working as you expect, plugins or"
 	ewarn "other external files not properly being found."
 	ewarn
-	ewarn "If you are merging ${MY_P} from an earlier version of gaim,"
-	ewarn "you may need to re-merge any plugins like gaim-encryption."
-	ewarn
 	ewarn "If you experience problems with pidgin, file them as bugs with"
 	ewarn "Gentoo's bugzilla, http://bugs.gentoo.org.  DO NOT report them"
 	ewarn "as bugs with pidgin's bug tracker, and by all means DO NOT"
@@ -149,13 +146,6 @@ pkg_setup() {
 		die "Configure failed"
 	fi
 
-}
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}"/${P}-proxy.patch
 }
 
 src_compile() {
