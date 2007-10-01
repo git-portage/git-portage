@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/openfire/Attic/openfire-3.3.0.ebuild,v 1.4 2007/05/28 16:23:31 betelgeuse Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/openfire/Attic/openfire-3.3.3.ebuild,v 1.1 2007/10/01 18:40:07 humpback Exp $
 
 # because of ant-contrib
 WANT_SPLIT_ANT=true
@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 
 SLOT="0"
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 # For transports
