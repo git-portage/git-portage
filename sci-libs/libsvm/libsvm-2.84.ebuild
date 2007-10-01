@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/libsvm/Attic/libsvm-2.81.ebuild,v 1.2 2006/08/01 03:41:25 nichoj Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/libsvm/Attic/libsvm-2.84.ebuild,v 1.1 2007/10/01 22:14:22 opfer Exp $
 
-inherit toolchain-funcs python java-pkg
+inherit java-pkg-opt-2 python toolchain-funcs
 
 DESCRIPTION="Library for Support Vector Machines"
 HOMEPAGE="http://www.csie.ntu.edu.tw/~cjlin/libsvm/"
@@ -10,11 +10,12 @@ SRC_URI="http://www.csie.ntu.edu.tw/~cjlin/libsvm/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
-IUSE="python java"
+KEYWORDS="~amd64 ~x86"
+IUSE="java python tools"
 
-DEPEND="java? ( virtual/jdk )"
-#RDEPEND=""
+DEPEND="java? ( >=virtual/jdk-1.4 )"
+RDEPEND="${DEPEND}
+	tools? ( sci-visualization/gnuplot )"
 
 src_compile() {
 	emake CXXC="$(tc-getCXX)" CFLAGS="${CXXFLAGS}" || die
@@ -31,6 +32,8 @@ src_compile() {
 
 	if use java ; then
 		cd java
+		local JAVAC_FLAGS="$(java-pkg_javac-args)"
+		sed -i -e "s/JAVAC_FLAGS =/JAVAC_FLAGS=${JAVAC_FLAGS}/g" Makefile || die
 		emake || die
 		cd -
 	fi
@@ -41,12 +44,14 @@ src_install() {
 	dohtml FAQ.html
 	dodoc README
 
-	cd tools
-	insinto /usr/share/doc/${PF}/tools
-	doins easy.py grid.py subset.py
-	docinto tools
-	dodoc README
-	cd -
+	if use tools; then
+		cd tools
+		insinto /usr/share/doc/${PF}/tools
+		doins easy.py grid.py subset.py
+		docinto tools
+		dodoc README
+		cd -
+	fi
 
 	if use python ; then
 		cd python
@@ -61,6 +66,7 @@ src_install() {
 	if use java ; then
 		cd java
 		java-pkg_dojar libsvm.jar
+		docinto html
 		dohtml test_applet.html
 		cd -
 	fi
