@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/Attic/tracker-0.6.2.ebuild,v 1.1 2007/09/07 02:28:02 compnerd Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/Attic/tracker-0.6.3.ebuild,v 1.1 2007/10/02 02:38:24 compnerd Exp $
 
 inherit autotools eutils flag-o-matic linux-info
 
@@ -18,6 +18,7 @@ RDEPEND=">=dev-libs/glib-2.12.0
 		 >=dev-libs/gmime-2.1.0
 		 >=media-gfx/imagemagick-5.2.1
 		 >=dev-libs/dbus-glib-0.71
+		 >=dev-db/qdbm-1.8
 		 >=dev-db/sqlite-3.4
 		 >=media-libs/libpng-1.2
 		 >=dev-libs/libxml2-2.6
@@ -90,6 +91,14 @@ pkg_setup() {
 	fi
 }
 
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+
+	epatch ${FILESDIR}/${PN}-0.6.3-fix-unac-option.patch
+	eautoreconf
+}
+
 src_compile() {
 	local myconf=
 
@@ -109,6 +118,7 @@ src_compile() {
 
 	econf ${myconf} \
 		  --enable-preferences --disable-xmp --disable-unac \
+		  --enable-libxml2 --enable-external-qdbm \
 		  $(use_enable applet deskbar-applet) \
 		  $(use_enable debug debug-code) \
 		  $(use_enable gnome gui) \
