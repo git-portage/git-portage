@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/glpk/Attic/glpk-4.15.ebuild,v 1.1 2007/04/23 15:07:11 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/glpk/Attic/glpk-4.22.ebuild,v 1.1 2007/10/03 12:56:14 bicatali Exp $
 
 DESCRIPTION="GNU Linear Programming Kit"
 LICENSE="GPL-2"
@@ -25,7 +25,7 @@ src_install() {
 
 	# 385Kb
 	insinto /usr/share/doc/${PF}/examples
-	doins examples/*.{c,mod,tsp} || \
+	doins examples/*.{c,mod,lp,mps,dat} || \
 		die "failed to install examples"
 
 	# manual/ is 2.5Mb in size
