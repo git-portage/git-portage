@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/g15daemon/Attic/g15daemon-1.9.0.ebuild,v 1.2 2007/03/12 22:14:57 rbu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/g15daemon/Attic/g15daemon-1.2.7-r1.ebuild,v 1.1 2007/10/04 08:43:58 rbu Exp $
 
 inherit eutils linux-info perl-module python multilib
 
@@ -14,8 +14,8 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="perl python"
 
 DEPEND="dev-libs/libusb
+	dev-libs/libdaemon
 	>=dev-libs/libg15-1.2.0
-	>=dev-libs/libg15render-1.2
 	perl? ( >=dev-perl/Inline-0.4 )
 	python? ( dev-lang/python )"
 
@@ -79,8 +79,8 @@ src_install() {
 		doins contrib/testbindings.pl
 	fi
 
-	newconfd "${FILESDIR}/${PN}-1.2.7.confd" ${PN}
-	newinitd "${FILESDIR}/${PN}-1.2.7.initd" ${PN}
+	newconfd "${FILESDIR}/${P}.confd" ${PN}
+	newinitd "${FILESDIR}/${PF}.initd" ${PN}
 
 	if use perl; then
 		ebegin "Installing Perl Bindings (G15Daemon.pm)"
@@ -96,7 +96,6 @@ src_install() {
 
 		insinto /usr/$(get_libdir)/python${PYVER}/site-packages/g15daemon
 		doins g15daemon.py
-
 		docinto python
 		dodoc AUTHORS
 	fi
