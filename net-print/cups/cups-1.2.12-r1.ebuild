@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.2.9.ebuild,v 1.10 2007/08/25 14:35:21 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.2.12-r1.ebuild,v 1.1 2007/10/09 18:46:50 genstef Exp $
 
 WANT_AUTOMAKE=latest
 
@@ -10,12 +10,13 @@ MY_P=${P/_}
 
 DESCRIPTION="The Common Unix Printing System"
 HOMEPAGE="http://www.cups.org/"
-SRC_URI="http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${PV}/${MY_P}-source.tar.bz2"
+SRC_URI="mirror://sourceforge/cups/${MY_P}-source.tar.bz2"
+#http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${PV}/${MY_P}-source.tar.bz2"
 #ESVN_REPO_URI="http://svn.easysw.com/public/cups/trunk"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE="ldap ssl slp pam php samba nls dbus tiff png ppds jpeg X"
 
 DEP="pam? ( virtual/pam )
@@ -29,6 +30,8 @@ DEP="pam? ( virtual/pam )
 	php? ( dev-lang/php )
 	app-text/libpaper"
 DEPEND="${DEP}
+	!<net-print/foomatic-filters-ppds-20070501
+	!<net-print/hplip-1.7.4a-r1
 	nls? ( sys-devel/gettext )"
 RDEPEND="${DEP}
 	nls? ( virtual/libintl )
@@ -61,6 +64,15 @@ RESTRICT="test"
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
+	if use x86 && [ -d "/usr/lib64" ]
+	then
+		eerror "You are running an x86 system, but /usr/lib64 exists, cups will install all library objects into this directory!"
+		eerror "You should remove /usr/lib64, but before you do, you should check for existing objects, and re-compile all affected packages."
+		eerror "You can use qfile (emerge portage-utils to install qfile) to get a list of the affected ebuilds:"
+		eerror "# qfile -qC /usr/lib64"
+		die "lib64 on x86 detected"
+	fi
+
 	enewgroup lp
 	enewuser lp -1 -1 -1 lp
 
@@ -149,6 +161,10 @@ src_install() {
 	else
 		rm -r ${D}/usr/share/applications
 	fi
+
+	# Fix a symlink collision, see bug #172341
+	dodir /usr/share/ppd
+	dosym /usr/share/ppd /usr/share/cups/model/foomatic-ppds
 }
 
 pkg_preinst() {
