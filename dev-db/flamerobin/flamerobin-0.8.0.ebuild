@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/flamerobin/Attic/flamerobin-0.7.5-r1.ebuild,v 1.4 2007/10/09 20:00:46 wltjr Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/flamerobin/Attic/flamerobin-0.8.0.ebuild,v 1.1 2007/10/09 20:00:46 wltjr Exp $
 
 inherit eutils wxwidgets
 
@@ -21,7 +21,7 @@ DEPEND="${RDEPEND}"
 S="${WORKDIR}/${P}-src"
 
 pkg_setup() {
-	export	WX_GTK_VER="2.6"
+	export WX_GTK_VER="2.6"
 	need-wxwidgets gtk2
 }
 src_compile() {
