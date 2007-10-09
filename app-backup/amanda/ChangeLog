@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/amanda
 # Copyright 2000-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.32 2007/09/06 20:35:34 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.33 2007/10/09 09:23:15 robbat2 Exp $
+
+  09 Oct 2007; Robin H. Johnson <robbat2@gentoo.org> amanda-2.4.5.ebuild,
+  amanda-2.4.5_p1.ebuild, amanda-2.5.1_p3-r1.ebuild,
+  amanda-2.5.1_p3-r2.ebuild, amanda-2.5.1_p3-r4.ebuild,
+  amanda-2.5.2_p1.ebuild, amanda-2.5.2_p1-r1.ebuild,
+  amanda-2.5.2_p1-r2.ebuild, amanda-2.5.2_p1-r3.ebuild:
+  Fix quoting in all ebuilds.
 
 *amanda-2.5.2_p1-r3 (06 Sep 2007)
 

@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.5_p1.ebuild,v 1.8 2007/07/15 04:23:35 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.4.5_p1.ebuild,v 1.9 2007/10/09 09:23:15 robbat2 Exp $
 
 inherit eutils
 
@@ -126,7 +126,7 @@ src_compile() {
 	[ ! -f "${TMPENVFILE}" ] && die "Variable setting file (${TMPENVFILE}) should exist!"
 	source "${TMPENVFILE}"
 	local myconf
-	cd ${S}
+	cd "${S}"
 
 	einfo "Using '${AMANDA_DBMODE}' style database"
 	myconf="${myconf} --with-db=${AMANDA_DBMODE}"
@@ -197,11 +197,11 @@ src_install() {
 	source ${TMPENVFILE}
 
 	einfo "Doing stock install"
-	make DESTDIR=${D} install || die
+	emake -j1 DESTDIR="${D}" install || die
 
 	# Prepare our custom files
 	einfo "Building custom configuration files"
-	cp ${FILESDIR}/amanda-* ${MYFILESDIR}
+	cp "${FILESDIR}"/amanda-* "${MYFILESDIR}"
 	local i # our iterator
 	local sedexpr # var for sed expr
 	sedexpr=''
@@ -215,19 +215,21 @@ src_install() {
 	# now apply the sed expr
 	for i in "${FILESDIR}"/amanda-* ; do
 		local filename
-		filename=`basename ${i}`
+		filename="`basename ${i}`"
 		#einfo "Applying compiled SED expression to ${filename}"
-		sed -re "${sedexpr}" <${i} >"${MYFILESDIR}/${filename}"
+		sed -re "${sedexpr}" <"${i}" >"${MYFILESDIR}"/${filename}
 	done
 
 	# Build the envdir file
 	# Don't forget this..
 	einfo "Building environment file"
-	echo "# These settings are what was present in the environment when this" >>${MYFILESDIR}/${ENVDFILE}
-	echo "# Amanda was compiled.  Changing anything below this comment will" >>${MYFILESDIR}/${ENVDFILE}
-	echo "# have no effect on your application, but it merely exists to" >>${MYFILESDIR}/${ENVDFILE}
-	echo "# preserve them for your next emerge of Amanda" >>${MYFILESDIR}/${ENVDFILE}
-	cat ${TMPENVFILE} | sed "s,=\$,='',g" >>${MYFILESDIR}/${ENVDFILE}
+	local t
+	t="${MYFILESDIR}"/${ENVDFILE}
+	echo "# These settings are what was present in the environment when this" >>"${t}"
+	echo "# Amanda was compiled.  Changing anything below this comment will" >>"${t}"
+	echo "# have no effect on your application, but it merely exists to" >>"${t}"
+	echo "# preserve them for your next emerge of Amanda" >>"${t}"
+	cat "${TMPENVFILE}" | sed "s,=\$,='',g" >>"${t}"
 
 	into /usr
 
@@ -239,36 +241,36 @@ src_install() {
 	einfo "Installing documentation"
 	dodoc AUTHORS C* INSTALL NEWS README
 	# Clean up some bits
-	dodoc ${D}/usr/share/amanda/*
-	rm -rf ${D}/usr/share/amanda
-	mkdir -p ${D}/${MYINSTTMPDIR} || die
-	cp ${TMPENVFILE} "${D}/${TMPINSTENVFILE}" || die
+	dodoc "${D}"/usr/share/amanda/*
+	rm -rf "${D}"/usr/share/amanda
+	mkdir -p "${D}"/${MYINSTTMPDIR} || die
+	cp ${TMPENVFILE} "${D}"/${TMPINSTENVFILE} || die
 	# our inetd sample
 	einfo "Installing standard inetd sample"
-	dodoc ${MYFILESDIR}/amanda-inetd.amanda.sample
+	dodoc "${MYFILESDIR}"/amanda-inetd.amanda.sample
 	# Stock extra docs
 	docinto docs
-	dodoc ${S}/docs/*
+	dodoc "${S}"/docs/*
 	# Labels
 	einfo "Installing labels"
 	docinto labels
-	dodoc ${S}/example/3hole.ps
-	dodoc ${S}/example/8.5x11.ps
-	dodoc ${S}/example/DIN-A4.ps
-	dodoc ${S}/example/DLT.ps
-	dodoc ${S}/example/EXB-8500.ps
-	dodoc ${S}/example/HP-DAT.ps
+	dodoc "${S}"/example/3hole.ps
+	dodoc "${S}"/example/8.5x11.ps
+	dodoc "${S}"/example/DIN-A4.ps
+	dodoc "${S}"/example/DLT.ps
+	dodoc "${S}"/example/EXB-8500.ps
+	dodoc "${S}"/example/HP-DAT.ps
 	# Amanda example configs
 	einfo "Installing example configurations"
 	docinto example
-	dodoc ${S}/example/*
+	dodoc "${S}"/example/*
 	docinto example1
-	newdoc ${FILESDIR}/example_amanda.conf amanda.conf
-	newdoc ${FILESDIR}/example_disklist disklist
-	newdoc ${FILESDIR}/example_global.conf global.conf
+	newdoc "${FILESDIR}"/example_amanda.conf amanda.conf
+	newdoc "${FILESDIR}"/example_disklist disklist
+	newdoc "${FILESDIR}"/example_global.conf global.conf
 	docinto example2
-	newdoc ${S}/example/amanda.conf amanda.conf
-	newdoc ${S}/example/disklist disklist
+	newdoc "${S}"/example/amanda.conf amanda.conf
+	newdoc "${S}"/example/disklist disklist
 	# Compress it all
 	prepalldocs
 
@@ -277,16 +279,16 @@ src_install() {
 
 	insinto /etc/amanda
 	einfo "Installing .amandahosts File for ${AMANDA_USER_NAME} user"
-	newins ${MYFILESDIR}/amanda-amandahosts amandahosts
+	newins "${MYFILESDIR}"/amanda-amandahosts amandahosts
 	dosym /etc/amanda/amandahosts ${AMANDA_USER_HOMEDIR}/.amandahosts
 	insinto ${AMANDA_USER_HOMEDIR}
 	einfo "Installing .profile for ${AMANDA_USER_NAME} user"
-	newins ${MYFILESDIR}/amanda-profile .profile
+	newins "${MYFILESDIR}"/amanda-profile .profile
 
 	einfo "Installing Sample Daily Cron Job for Amanda"
 	CRONDIR=/etc/cron.daily/
 	exeinto ${CRONDIR}
-	newexe ${MYFILESDIR}/amanda-cron amanda
+	newexe "${MYFILESDIR}"/amanda-cron amanda
 	# Not excetuable by default
 	fperms 644 ${CRONDIR}/amanda
 
@@ -306,32 +308,32 @@ src_install() {
 	# DevFS
 	einfo "Installing DevFS config file"
 	insinto /etc/devfs.d
-	newins ${MYFILESDIR}/amanda-devfs amanda
+	newins "${MYFILESDIR}"/amanda-devfs amanda
 
 	# Env.d
 	einfo "Installing environment config file"
-	doenvd ${MYFILESDIR}/${ENVDFILE}
+	doenvd "${MYFILESDIR}"/${ENVDFILE}
 
 	# Installing Amanda Xinetd Services Definition
 	einfo "Installing xinetd service file"
 	insinto /etc/xinetd.d
-	newins ${MYFILESDIR}/amanda-xinetd amanda
+	newins "${MYFILESDIR}"/amanda-xinetd amanda
 
 }
 
 pkg_postinst() {
-	local aux="${ROOT}/${TMPINSTENVFILE}"
+	local aux="${ROOT}"/${TMPINSTENVFILE}
 	[ ! -f "${aux}" ] && die "Variable setting file (${aux}) should exist!"
 	source "${aux}"
 	rm "${aux}"
-	rmdir ${ROOT}/${MYINSTTMPDIR} 2>/dev/null # ignore error
+	rmdir "${ROOT}"/${MYINSTTMPDIR} 2>/dev/null # ignore error
 
 	local i
 	for i in amandates dumpdates; do
 		einfo "Creating inital Amanda file (${i})"
-		touch ${ROOT}/etc/${i}
-		chown ${AMANDA_USER_NAME}:${AMANDA_GROUP_NAME} ${ROOT}/etc/${i}
-		chmod 600 ${ROOT}/etc/${i}
+		touch "${ROOT}"/etc/${i}
+		chown ${AMANDA_USER_NAME}:${AMANDA_GROUP_NAME} "${ROOT}"/etc/${i}
+		chmod 600 "${ROOT}"/etc/${i}
 	done
 
 	elog "You should configure Amanda in /etc/amanda now."
