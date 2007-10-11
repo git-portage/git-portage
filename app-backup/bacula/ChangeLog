@@ -1,6 +1,17 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.37 2007/08/21 15:50:10 fmccor Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.38 2007/10/11 00:12:59 wschlich Exp $
+
+*bacula-2.2.4 (10 Oct 2007)
+
+  10 Oct 2007; Wolfram Schlich <wschlich@gentoo.org>
+  +files/2.2.4/bacula-all-conf, +files/2.2.4/bacula-all-init,
+  +files/2.2.4/bacula-default-configs.patch, +files/2.2.4/bacula-dir-conf,
+  +files/2.2.4/bacula-dir-init, +files/2.2.4/bacula-fd-conf,
+  +files/2.2.4/bacula-fd-init, +files/2.2.4/bacula-gnomesu2gksu.diff,
+  +files/2.2.4/bacula-sd-conf, +files/2.2.4/bacula-sd-init,
+  +bacula-2.2.4.ebuild:
+  version bump
 
   21 Aug 2007; Ferris McCormick <fmccor@gentoo.org> bacula-2.0.3.ebuild:
   Sparc stable --- Bug #153189 --- (requires ghostscript upgrade for USE=doc:
