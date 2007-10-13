@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.2.5.ebuild,v 1.1 2007/10/12 08:49:35 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.2.5.ebuild,v 1.2 2007/10/13 16:38:17 jer Exp $
 
 #
 # TODO:
@@ -126,7 +126,7 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 
 	# adjusts default configuration files for several binaries
 	# to /etc/bacula/<config> instead of ./<config>
@@ -212,7 +212,7 @@ src_compile() {
 		pushd "${WORKDIR}/${PN}-docs-${DOC_VER}"
 
 		./configure \
-			--with-bacula=${S} \
+			--with-bacula="${S}" \
 			|| die "configure for bacula-docs failed"
 
 		# the main Makefile tries to build stuff in
