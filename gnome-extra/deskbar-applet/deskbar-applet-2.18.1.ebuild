@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/deskbar-applet/Attic/deskbar-applet-2.18.1.ebuild,v 1.11 2007/09/23 13:41:19 tgall Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/deskbar-applet/Attic/deskbar-applet-2.18.1.ebuild,v 1.12 2007/10/13 13:24:27 eva Exp $
 
 inherit gnome2 eutils autotools python
 
@@ -39,7 +39,7 @@ src_unpack() {
 	gnome2_src_unpack
 
 	# Fix installing libs into pythondir
-	epatch ${FILESDIR}/${PN}-2.15.3-multilib.patch
+	epatch "${FILESDIR}"/${PN}-2.15.3-multilib.patch
 
 	AT_M4DIR="m4" eautoreconf
 }
