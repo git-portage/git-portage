@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/git-sources/Attic/git-sources-2.6.23_rc3.ebuild,v 1.1 2007/08/27 13:11:07 phreak Exp $
+# $Headers: $
 
 UNIPATCH_STRICTORDER="yes"
 K_NOUSENAME="yes"
