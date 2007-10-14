@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.40 2007/10/13 16:38:17 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.41 2007/10/14 18:13:48 wschlich Exp $
+
+*bacula-2.2.5-r1 (14 Oct 2007)
+
+  14 Oct 2007; Wolfram Schlich <wschlich@gentoo.org>
+  +files/2.2.5/fix-nextvol.patch, +bacula-2.2.5-r1.ebuild:
+  fix bug #195794
 
   13 Oct 2007; Jeroen Roovers <jer@gentoo.org> bacula-2.2.5.ebuild:
   Fix quoting issues found by repoman.
