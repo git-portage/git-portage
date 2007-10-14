@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.41 2007/10/14 18:13:48 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.42 2007/10/14 23:16:39 jer Exp $
+
+  14 Oct 2007; Jeroen Roovers <jer@gentoo.org> bacula-2.2.5.ebuild,
+  bacula-2.2.5-r1.ebuild:
+  Marked ~hppa (bug #195682).
 
 *bacula-2.2.5-r1 (14 Oct 2007)
 
