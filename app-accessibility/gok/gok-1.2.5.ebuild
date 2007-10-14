@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/gok/Attic/gok-1.2.5.ebuild,v 1.8 2007/09/10 07:07:19 tgall Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/gok/Attic/gok-1.2.5.ebuild,v 1.9 2007/10/14 13:50:43 eva Exp $
 
 inherit virtualx gnome2
 
@@ -54,8 +54,8 @@ pkg_setup() {
 
 src_test() {
 	# Remove missing file from the Makefile to fix tests (bug #140265), and POTFILES.in
-	sed -i -e '/char-frequency.xml.in/d' ${S}/po/Makefile
-	sed -i -e '/char-frequency.xml.in/d' ${S}/po/POTFILES.in
+	sed -i -e '/char-frequency.xml.in/d' "${S}"/po/Makefile
+	sed -i -e '/char-frequency.xml.in/d' "${S}"/po/POTFILES.in
 	addwrite "/root/.gnome2_private"
 	Xmake check || die
 }
