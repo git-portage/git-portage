@@ -1,22 +1,26 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/ndiswrapper/Attic/ndiswrapper-1.44.ebuild,v 1.2 2007/05/25 07:13:57 opfer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/ndiswrapper/Attic/ndiswrapper-1.49_rc4.ebuild,v 1.1 2007/10/16 05:28:05 peper Exp $
 
 inherit linux-mod
 
+MY_P=${PN}-${PV/_/}
+
 DESCRIPTION="Wrapper for using Windows drivers for some wireless cards"
 HOMEPAGE="http://ndiswrapper.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="debug usb"
 
 DEPEND="sys-apps/pciutils"
 RDEPEND="${DEPEND}
 	net-wireless/wireless-tools"
 
-CONFIG_CHECK="NET_RADIO"
+CONFIG_CHECK="WIRELESS_EXT"
+
+S=${WORKDIR}/${MY_P}
 
 MODULE_NAMES="ndiswrapper(misc:${S}/driver)"
 BUILD_TARGETS="all"
@@ -26,8 +30,11 @@ ERROR_USB="You need to enable USB support in your kernel
 to use usb support in ndiswrapper."
 
 pkg_setup() {
-	einfo "See http://www.gentoo.org/doc/en/gentoo-kernel.xml for a list of supported kernels."
-	echo  ""
+	echo
+	einfo "See http://www.gentoo.org/doc/en/gentoo-kernel.xml"
+	einfo "for a list of supported kernels."
+	echo
+
 	use usb && CONFIG_CHECK="${CONFIG_CHECK} USB"
 	linux-mod_pkg_setup
 }
@@ -60,8 +67,8 @@ src_compile() {
 }
 
 src_install() {
-	dodoc README INSTALL AUTHORS ChangeLog
-	doman ndiswrapper.8
+	dodoc AUTHORS ChangeLog INSTALL README
+	doman ndiswrapper.8 || die
 
 	keepdir /etc/ndiswrapper
 
@@ -73,32 +80,42 @@ src_install() {
 
 pkg_postinst() {
 	linux-mod_pkg_postinst
+
 	echo
-	elog "ndiswrapper requires .inf and .sys files from a Windows(tm) driver"
+	elog "NDISwrapper requires .inf and .sys files from a Windows(tm) driver"
 	elog "to function. Download these to /root for example, then"
 	elog "run 'ndiswrapper -i /root/foo.inf'. After that you can delete them."
-	elog "They will be copied to the proper location."
+	elog "They will be copied to /etc/ndiswrapper/."
 	elog "Once done, please run 'update-modules'."
-	echo
-	elog "check http://ndiswrapper.sf.net/mediawiki/index.php/List for drivers"
-	I=$(lspci -n | egrep 'Class (0280|0200):' |  cut -d' ' -f4)
-	elog "Look for the following on that page for your driver:"
-	elog "Possible Hardware: ${I}"
-	echo
-	elog "Please have a look at http://ndiswrapper.sourceforge.net/wiki/"
-	elog "for the FAQ, HowTos, Tips, Configuration, and installation"
+	elog
+
+	elog "Please look at ${HOMEPAGE}"
+	elog "for the FAQ, HowTos, tips, configuration, and installation"
 	elog "information."
-	echo
-	einfo "ndiswrapper devs need support(_hardware_, cash)."
-	einfo "Don't hesitate if you can help, see http://ndiswrapper.sf.net for details."
+	elog
+
+	local i=$(lspci -n | egrep 'Class (0280|0200):' |  cut -d' ' -f4)
+	if [[ -n "${i}" ]] ; then
+		elog "Possible hardware: ${i}"
+		elog
+	fi
+
+	elog "NDISwrapper devs need support (_hardware_, cash)."
+	elog "Don't hesitate if you can help."
+	elog "See ${HOMEPAGE} for details."
 	echo
 
-	einfo "Attempting to automatically reinstall any Windows drivers"
-	einfo "you might already have."
-	for driver in $(ls /etc/ndiswrapper)
-	do
-		einfo "Driver: ${driver}"
-		mv /etc/ndiswrapper/${driver} ${T}
-		ndiswrapper -i ${T}/${driver}/${driver}.inf
-	done
+	if [[ ${ROOT} == "/" ]]; then
+
+		einfo "Attempting to automatically reinstall any Windows drivers"
+		einfo "you might already have."
+		echo
+
+		local driver
+		for driver in $(ls /etc/ndiswrapper) ; do
+			einfo "Driver: ${driver}"
+			mv "/etc/ndiswrapper/${driver}" "${T}"
+			ndiswrapper -i "${T}/${driver}/${driver}.inf"
+		done
+	fi
 }
