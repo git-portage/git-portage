@@ -1,8 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/evince/Attic/evince-2.20.0.ebuild,v 1.2 2007/10/17 22:19:51 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/evince/Attic/evince-2.20.1.ebuild,v 1.1 2007/10/17 22:19:51 eva Exp $
 
-WANT_AUTOMAKE="1.10"
+WANT_AUTOMAKE="1.9"
 inherit eutils gnome2 autotools
 
 DESCRIPTION="Simple document viewer for GNOME"
@@ -64,9 +64,8 @@ pkg_setup() {
 	fi
 }
 
-src_unpack(){
-	unpack ${A}
-	cd "${S}"
+src_unpack() {
+	gnome2_src_unpack
 
 	# Fix .desktop file so menu item shows up
 	epatch "${FILESDIR}"/${PN}-0.7.1-display-menu.patch

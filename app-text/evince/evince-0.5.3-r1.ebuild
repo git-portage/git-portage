@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/evince/Attic/evince-0.5.3-r1.ebuild,v 1.13 2007/08/02 05:07:59 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/evince/Attic/evince-0.5.3-r1.ebuild,v 1.14 2007/10/17 22:19:51 eva Exp $
 
 inherit eutils gnome2
 
@@ -63,12 +63,12 @@ pkg_setup() {
 }
 
 src_unpack(){
-	unpack "${A}"
+	unpack ${A}
 	cd "${S}"
 
 	# Fix .desktop file so menu item shows up
-	epatch ${FILESDIR}/${PN}-0.5.3-display-menu.patch
+	epatch "${FILESDIR}"/${PN}-0.5.3-display-menu.patch
 
 	# Fix documents with links
-	epatch ${FILESDIR}/${P}-links.patch
+	epatch "${FILESDIR}"/${P}-links.patch
 }
