@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/libglademm/Attic/libglademm-2.6.4.ebuild,v 1.7 2007/10/14 15:30:20 corsair Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/libglademm/Attic/libglademm-2.6.4.ebuild,v 1.8 2007/10/17 23:31:57 eva Exp $
 
 inherit gnome2
 
@@ -51,6 +51,6 @@ src_install() {
 	fi
 
 	if use examples; then
-		cp -R examples ${D}/usr/share/doc/${PF}
+		cp -R examples "${D}"/usr/share/doc/${PF}
 	fi
 }
