@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/hplip/Attic/hplip-2.7.7-r3.ebuild,v 1.1 2007/09/29 20:31:08 calchan Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/hplip/Attic/hplip-2.7.9-r1.ebuild,v 1.1 2007/10/18 13:08:21 calchan Exp $
 
 inherit eutils linux-info
 
@@ -15,43 +15,50 @@ IUSE="X doc fax minimal parport ppds scanner snmp"
 
 DEPEND="!net-print/hpijs
 	!net-print/hpoj
-	dev-libs/openssl
 	virtual/ghostscript
 	>=media-libs/jpeg-6b
-	>=net-print/cups-1.2
-	dev-libs/libusb
-	>=dev-lang/python-2.2
 	net-print/foomatic-filters
-	fax? ( >=dev-lang/python-2.3 )
-	snmp? ( net-analyzer/net-snmp )"
+	!minimal? (
+		>=net-print/cups-1.2
+		dev-libs/libusb
+		scanner? ( X? ( >=media-gfx/xsane-0.89 )
+			!X? ( >=media-gfx/sane-frontends-1.0.9 ) )
+		snmp? (
+			net-analyzer/net-snmp
+			dev-libs/openssl
+		) )"
 
 RDEPEND="${DEPEND}
-	!<sys-fs/udev-114
-	fax? ( dev-python/reportlab )
-	X? ( >=dev-python/PyQt-3.14 )
-	scanner? (
-		X? ( >=media-gfx/xsane-0.89 )
-		!X? ( >=media-gfx/sane-frontends-1.0.9 )
-		)"
+	!minimal? ( !<sys-fs/udev-114
+		fax? ( dev-python/reportlab )
+		X? ( >=dev-python/PyQt-3.14 ) )"
 
 CONFIG_CHECK="PARPORT"
 ERROR_PARPORT="Please make sure Device Drivers -> Parallel port support is enabled in your kernel"
 
 pkg_setup() {
-	use parport && linux-info_pkg_setup
-
-	# avoid collisions with cups-1.2 compat symlinks
-	if [ -e ${ROOT}/usr/lib/cups/backend/hp ] && [ -e ${ROOT}/usr/libexec/cups/backend/hp ]; then
-		rm -f ${ROOT}/usr/libexec/cups/backend/hp{,fax};
+	if ! use ppds ; then
+		ewarn "Not installing built-in PPD files, which is probably not what you want."
+		ewarn "You need USE=ppds if you want to install them."
+	fi
+	if use minimal ; then
+		ewarn "Installing hpijs driver only, make sure you know what you are doing."
+	else
+		use parport && linux-info_pkg_setup
 	fi
 
-	use ppds || ewarn "Not installing built-in PPD files. You need USE=ppds if you want to install them."
-	use minimal && ewarn "Installing hpijs driver only, make sure you know what you are doing."
+	# avoid collisions with cups-1.2 compat symlinks
+	if [ -e "${ROOT}"/usr/lib/cups/backend/hp ] && [ -e "${ROOT}"/usr/libexec/cups/backend/hp ]; then
+		rm -f "${ROOT}"/usr/libexec/cups/backend/hp{,fax};
+	fi
 }
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+
+	# Fix bug #195565
+	epatch "${FILESDIR}"/${P}-subprocess_replacement.patch
 
 	sed -i -e "s:\$(doc_DATA)::" Makefile.in || die "Patching Makefile.in failed"
 	sed -i -e "s/'skipstone']/'skipstone', 'epiphany']/" \
@@ -67,7 +74,8 @@ src_unpack() {
 		installer/core_install.py || die "sed core_install.py"
 
 	# bug 186906, makes udev-rules work also for kernel-2.6.22
-	epatch "${FILESDIR}/${P}-udev-kernel.2.6.22.diff"
+	sed -i -e "s/usb_device/usb|usb_device/" -e "s/SYSFS/ATTRS/g" \
+		data/rules/55-hpmud.rules || die "Patching 55-hpmud.rules failed"
 }
 
 src_compile() {
@@ -92,13 +100,15 @@ src_install() {
 
 	# bug 106035
 	use X || rm -Rf "${D}"/usr/share/applications
+
+	use minimal && rm -rf "${D}"/usr/lib
 }
 
 pkg_preinst() {
-	if use scanner; then
+	if ! use minimal && use scanner ; then
 		insinto /etc/sane.d
 		[ -e /etc/sane.d/dll.conf ] && cp /etc/sane.d/dll.conf .
-		[ -e ${ROOT}/etc/sane.d/dll.conf ] && cp ${ROOT}/etc/sane.d/dll.conf .
+		[ -e "${ROOT}"/etc/sane.d/dll.conf ] && cp "${ROOT}"/etc/sane.d/dll.conf .
 		grep -q hpaio dll.conf || echo hpaio >> dll.conf
 		doins dll.conf
 	fi
@@ -107,8 +117,6 @@ pkg_preinst() {
 pkg_postinst() {
 	elog "You should run hp-setup as root if you are installing hplip for the first time, and may also"
 	elog "need to run it if you are upgrading from an earlier version."
-	elog
-	elog "If your device is connected using USB, users will need to be in the lp group to access it."
 	elog
 	elog "This release doesn't use an init script anymore, so you should probably do a"
 	elog "'rc-update del hplip' if you are updating."
