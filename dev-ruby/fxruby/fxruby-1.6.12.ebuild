@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/fxruby/Attic/fxruby-1.6.4.ebuild,v 1.7 2007/04/19 06:29:14 opfer Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/fxruby/Attic/fxruby-1.6.12.ebuild,v 1.1 2007/10/19 12:50:47 mabi Exp $
 
 RUBY_BUG_145222=yes
 inherit ruby
@@ -9,11 +9,11 @@ MY_P="FXRuby-${PV}"
 
 DESCRIPTION="Ruby language binding to the FOX GUI toolkit"
 HOMEPAGE="http://www.fxruby.org/"
-SRC_URI="http://rubyforge.org/frs/download.php/15181/${MY_P}.tar.gz"
+SRC_URI="http://rubyforge.org/frs/download.php/26727/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="1.6"
-KEYWORDS="~alpha amd64 hppa ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE="examples doc"
 
 DEPEND="=x11-libs/fox-1.6*
@@ -24,7 +24,7 @@ S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 
 	sed -i -e 's:libs, "fxscintilla":libs, "fxscintilla-1.6":g' \
 		 ext/fox16/extconf.rb || die "sed error"
