@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.12.0-r1.ebuild,v 1.2 2007/09/25 08:15:50 leio Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.12.1.ebuild,v 1.1 2007/10/20 05:44:35 leio Exp $
 
 inherit gnome.org flag-o-matic eutils autotools virtualx
 
@@ -68,18 +68,14 @@ src_unpack() {
 	# dont clash on multilib systems
 	has_multilib_profile && epatch "${FILESDIR}/${PN}-2.8.0-multilib.patch"
 
-	# http://bugzilla.gnome.org/show_bug.cgi?id=476342
-	epatch "${FILESDIR}/${P}-icon-cache-speedup.patch"
-
-	# http://bugzilla.gnome.org/show_bug.cgi?id=478173
-	epatch "${FILESDIR}/${PN}-2.12.0-libtracker_so.patch"
-
 	# Workaround adobe flash infinite loop. Patch from http://bugzilla.gnome.org/show_bug.cgi?id=463773#c11
-	epatch "${FILESDIR}/${P}-flash-workaround.patch"
+	epatch "${FILESDIR}/${PN}-2.12.0-flash-workaround.patch"
 
-	# Gtk tooltips + swt crash at a later point, upstream has committed this by now - http://bugzilla.gnome.org/show_bug.cgi?id=460194
-	# Seems to also fix a weird behaviour where GtkTreeView rows got a tooltip that shouldn't be there
-	epatch "${FILESDIR}/${P}-swt-tooltips-fix.patch"
+	# OpenOffice.org might hang at startup (on non-gnome env) without this workaround, bug #193513
+	epatch "${FILESDIR}/${PN}-2.12.0-openoffice-freeze-workaround.patch"
+
+	# Firefox print review crash fix, bug #195644
+	epatch "${FILESDIR}/${P}-firefox-print-preview.patch"
 
 	# -O3 and company cause random crashes in applications. Bug #133469
 	replace-flags -O3 -O2
