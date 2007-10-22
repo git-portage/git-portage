@@ -1,13 +1,13 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/xmltv/Attic/xmltv-0.5.47.ebuild,v 1.1 2007/08/12 09:26:55 mattepiu Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/xmltv/Attic/xmltv-0.5.49.ebuild,v 1.1 2007/10/22 10:59:18 mattepiu Exp $
 
 inherit eutils perl-module
 
 DESCRIPTION="Set of utilities to manage TV listings stored in the XMLTV format."
 HOMEPAGE="http://membled.com/work/apps/xmltv/"
 SRC_URI="mirror://sourceforge/xmltv//${P}.tar.bz2"
-IUSE="ar be br brnet ch dtvla uk_rt uk_bleb is it na_dd na_icons fi es es_laguiatv ee il re nc nl nl_wolf huro dk jp se_swedb hr no_gf fr no pt za tv_combiner tv_pick_cgi tv_check"
+IUSE="ar be brnet ch dtvla uk_rt uk_bleb it na_dd na_icons fi es es_laguiatv ee il re nc nl nl_wolf huro dk jp se_swedb hr no_gf fr no pt za tv_combiner tv_pick_cgi tv_check"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
@@ -77,7 +77,7 @@ make_config() {
 	# Enable Agentina
 	use ar && echo "yes" || echo "no"
 	# Enable Brazil
-	use br && echo "yes" || echo "no"
+	#use br && echo "yes" || echo "no"
 	# Enable Brazil Cable
 	use brnet && echo "yes" || echo "no"
 	# Enable Switzerland Search
@@ -91,7 +91,7 @@ make_config() {
 	# Enable Belgium and Luxemburg
 	use be && echo "yes" || echo "no"
 	#Enable Iceland
-	use is && echo "yes" || echo "no"
+	#use is && echo "yes" || echo "no"
 	# Enable Italy
 	use it && echo "yes" || echo "no"
 	# Enable North America using DataDirect
