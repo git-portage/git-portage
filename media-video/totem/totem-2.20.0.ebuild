@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/totem/Attic/totem-2.20.0.ebuild,v 1.1 2007/10/01 20:46:08 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/totem/Attic/totem-2.20.0.ebuild,v 1.2 2007/10/23 21:19:09 eva Exp $
 
 inherit autotools eutils gnome2 multilib
 
@@ -92,6 +92,7 @@ DEPEND="${RDEPEND}
 	  x11-proto/inputproto
 	  app-text/scrollkeeper
 	  gnome-base/gnome-common
+	  app-text/gnome-doc-utils
 	>=dev-util/intltool-0.35
 	>=dev-util/pkgconfig-0.20"
 
