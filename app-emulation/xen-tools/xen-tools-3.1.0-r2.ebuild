@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/Attic/xen-tools-3.1.0-r1.ebuild,v 1.2 2007/10/02 00:44:19 marineam Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/Attic/xen-tools-3.1.0-r2.ebuild,v 1.1 2007/10/23 19:09:08 marineam Exp $
 
 inherit flag-o-matic eutils multilib
 
@@ -119,6 +119,9 @@ src_unpack() {
 	# Security fix, CVE-2007-4993
 	# https://bugs.gentoo.org/show_bug.cgi?id=193808
 	epatch "${FILESDIR}/${PN}-3.1.0-pygrub-security-fix.patch"
+
+	# Fix an insecure temp file creation, bug #196824, CVE-2007-3919
+	epatch "${FILESDIR}/${PN}-3.1.1-insecure-file-creation-fix.patch"
 }
 
 src_compile() {
