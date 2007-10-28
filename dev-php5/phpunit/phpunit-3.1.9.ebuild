@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php5/phpunit/Attic/phpunit-3.1.7.ebuild,v 1.1 2007/08/27 10:26:47 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php5/phpunit/Attic/phpunit-3.1.9.ebuild,v 1.1 2007/10/28 12:04:19 jokey Exp $
 
 inherit php-pear-lib-r1
 
@@ -32,6 +32,5 @@ pkg_setup() {
 pkg_postinst() {
 	has_php
 	elog "${PN} can optionally use json, pdo-sqlite and pdo-mysql features."
-	elog "If you want those, emerge ${PHP_PKG} with USE=\"json sqlite mysql\" and"
-	elog "either USE=\"pdo\" or USE=\"pdo-external\"."
+	elog "If you want those, emerge ${PHP_PKG} with USE=\"json pdo sqlite mysql\"."
 }
