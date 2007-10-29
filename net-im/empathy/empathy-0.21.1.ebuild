@@ -1,17 +1,19 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/empathy/Attic/empathy-0.13.ebuild,v 1.1 2007/09/30 01:35:16 coldwind Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/empathy/Attic/empathy-0.21.1.ebuild,v 1.1 2007/10/29 00:54:20 coldwind Exp $
 
-inherit gnome2 eutils
+inherit gnome2 eutils versionator
+
+MAJOR_V="$(get_version_component_range 1-2)"
 
 DESCRIPTION="Empathy Telepathy client"
 HOMEPAGE="http://live.gnome.org/Empathy"
-SRC_URI="http://ftp.gnome.org/pub/GNOME/sources/${PN}/${PV}/${P}.tar.bz2"
+SRC_URI="http://ftp.gnome.org/pub/GNOME/sources/${PN}/${MAJOR_V}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gnome python spell"
+IUSE="python spell"
 
 RDEPEND=">=dev-libs/dbus-glib-0.51
 	>=dev-libs/glib-2.14.0
@@ -19,24 +21,26 @@ RDEPEND=">=dev-libs/dbus-glib-0.51
 	>=gnome-base/gconf-2
 	>=gnome-base/libglade-2
 	>=net-libs/libtelepathy-0.0.57
-	>=net-im/telepathy-mission-control-4.33
+	>=net-im/telepathy-mission-control-4.37
 	>=x11-libs/gtk+-2.12.0
 	>=gnome-base/gnome-vfs-2
 	>=gnome-extra/evolution-data-server-1.2
-	gnome? ( gnome-base/gnome-panel )
+	gnome-base/gnome-panel
 	spell? ( app-text/aspell )
 	python? ( >=dev-lang/python-2.4.4-r5 )"
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.12.0
-	dev-util/gtk-doc"
+	>=dev-util/pkgconfig-0.12.0"
 
 DOCS="CONTRIBUTORS AUTHORS README"
 
 pkg_setup() {
+	# NotHere is too broken to be included by default
 	G2CONF="$(use_enable spell aspell)
 		$(use_enable python)
-		$(use_enable gnome megaphone)
-		$(use_enable gnome nothere)"
+		--enable-voip=no
+		--enable-megaphone
+		--disable-nothere
+		--disable-gtk-doc"
 }
 
 src_install() {
