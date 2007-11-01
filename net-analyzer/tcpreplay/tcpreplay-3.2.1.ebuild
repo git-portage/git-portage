@@ -1,13 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/tcpreplay/Attic/tcpreplay-3.0_beta7.ebuild,v 1.3 2007/07/02 14:42:27 peper Exp $
-
-MY_P=${PN}-${PV/_beta7/.beta7}
-S=${WORKDIR}/${MY_P}
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/tcpreplay/Attic/tcpreplay-3.2.1.ebuild,v 1.1 2007/11/01 12:11:14 pva Exp $
 
 DESCRIPTION="replay saved tcpdump or snoop files at arbitrary speeds"
-HOMEPAGE="http://tcpreplay.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
+HOMEPAGE="http://tcpreplay.synfin.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 RESTRICT="mirror"
 
 LICENSE="BSD"
@@ -24,7 +21,7 @@ src_compile() {
 	econf \
 		$(use_enable debug) \
 		|| die "econf failed"
-	emake CFLAGS="${CFLAGS}" || die "emake failed"
+	emake || die "emake failed"
 }
 
 src_test() {
@@ -35,12 +32,13 @@ src_test() {
 		make -C test tcpprep || die "self test failed - see ${S}/test/test.log"
 	else
 		make test || \
+			ewarn "Note, that some tests require eth0 iface to be UP."
 			die "self test failed - see ${S}/test/test.log"
 	fi
 }
 
 src_install() {
-	make DESTDIR=${D} install || die "emake install failed"
-	rm ${D}/usr/bin/man2html
-	dodoc docs/*
+	make DESTDIR="${D}" install || die "emake install failed"
+	rm "${D}"/usr/bin/man2html
+	dodoc docs/{CHANGELOG,CREDIT,HACKING,TODO}
 }
