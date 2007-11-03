@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/himerge/Attic/himerge-0.14.ebuild,v 1.1 2007/09/08 02:49:52 araujo Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/himerge/Attic/himerge-0.14.ebuild,v 1.2 2007/11/03 21:37:00 araujo Exp $
 
 inherit base haskell-cabal
 
@@ -32,9 +32,9 @@ src_install() {
 	cabal-copy
 	cabal-pkg
 	einfo "Installing data files."
-	mkdir -p ${D}/usr/share/himerge/icons
-	mkdir -p ${D}/usr/share/doc/${P}
-	cp ${S}/data/himerge/doc/himerge.css ${D}/usr/share/doc/${P}/
-	cp ${S}/data/himerge/doc/himerge_doc.html ${D}/usr/share/doc/${P}/
-	cp ${S}/data/himerge/icons/* ${D}/usr/share/himerge/icons/
+	mkdir -p "${D}"/usr/share/himerge/icons
+	mkdir -p "${D}"/usr/share/doc/"${P}"
+	cp "${S}"/data/himerge/doc/himerge.css "${D}"/usr/share/doc/"${P}"/
+	cp "${S}"/data/himerge/doc/himerge_doc.html "${D}"/usr/share/doc/"${P}"/
+	cp "${S}"/data/himerge/icons/* "${D}"/usr/share/himerge/icons/
 }
