@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/keep/Attic/keep-0.4.0.ebuild,v 1.1 2007/02/08 09:52:05 drizzt Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/keep/Attic/keep-0.4.0.ebuild,v 1.2 2007/11/06 20:20:14 drac Exp $
 
 inherit kde
 
@@ -10,7 +10,7 @@ SRC_URI="http://jr.falleri.free.fr/files/devel/keep/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
