@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/audacious-plugins/Attic/audacious-plugins-1.4.0_rc1-r1.ebuild,v 1.1 2007/11/02 11:16:46 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/audacious-plugins/Attic/audacious-plugins-1.4.0.ebuild,v 1.1 2007/11/10 16:12:54 chainsaw Exp $
 
 inherit eutils flag-o-matic
 
@@ -16,12 +16,13 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="aac adplug alsa arts chardet esd flac gnome jack lirc modplug mp3 mtp musepack nls oss pulseaudio sdl sid sndfile timidity tta vorbis wavpack wma"
 
 RDEPEND="app-arch/unzip
+	>=dev-libs/dbus-glib-0.60
 	>=dev-libs/libcdio-0.78.2
 	dev-libs/libxml2
 	>=gnome-base/libglade-2.3.1
 	media-libs/libsamplerate
 	>=media-libs/libcddb-1.2.1
-	>=media-sound/audacious-1.4.0_rc1
+	>=media-sound/audacious-1.4.0
 	>=net-misc/neon-0.26.3
 	>=x11-libs/gtk+-2.6
 	adplug? ( >=dev-cpp/libbinio-1.4 )
@@ -63,7 +64,10 @@ src_compile() {
 
 	econf \
 		--enable-cdaudio-ng \
+		--enable-dbus \
 		--enable-neon \
+		--disable-projectm \
+		--disable-projectm-1.0 \
 		$(use_enable aac) \
 		$(use_enable adplug) \
 		$(use_enable alsa) \
