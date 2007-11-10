@@ -1,8 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/xmlsec/Attic/xmlsec-1.2.9.ebuild,v 1.3 2007/07/12 02:25:34 mr_bones_ Exp $
-
-inherit eutils
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/xmlsec/Attic/xmlsec-1.2.11.ebuild,v 1.1 2007/11/10 15:29:03 alonbl Exp $
 
 DESCRIPTION="command line tool for signing, verifying, encrypting and decrypting XML"
 HOMEPAGE="http://www.aleksey.com/xmlsec"
@@ -25,9 +23,10 @@ DEPEND=">=sys-devel/autoconf-2.2
 S="${WORKDIR}/${PN}1-${PV}"
 
 src_compile() {
-
-	econf --enable-xkms $(use_with mozilla nss) $(use_with mozilla nspr) \
-		$(use_enable ssl openssl) $(use_enable ssl aes) --with-html-dir=/usr/share/doc/${PF} \
+	econf --enable-xkms \
+		$(use_enable ssl openssl) \
+		$(use_enable ssl aes) \
+		--with-html-dir=/usr/share/doc/${PF} \
 		|| die "configure failed"
 	emake || die "emake failed"
 }
@@ -35,7 +34,9 @@ src_compile() {
 src_test() {
 	TMPFOLDER="${T}" make check || die
 }
+
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 	dodoc AUTHORS README NEWS
 }
+
