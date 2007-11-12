@@ -1,11 +1,3 @@
-AUX bub-n-bros-1.5-home.patch 1819 RMD160 81da0b47fe9d00e6317d0b176b1c50f8ef494fa4 SHA1 3c85bb4a921d6beb4ff8f9770a30257bdd0659de SHA256 14fc8284c3b1035fd4a5f578adb6d0ba3cabc53d476282c3ae6937b270e59f0c
-MD5 32402753b47dfe81a3376d34d17b837f files/bub-n-bros-1.5-home.patch 1819
-RMD160 81da0b47fe9d00e6317d0b176b1c50f8ef494fa4 files/bub-n-bros-1.5-home.patch 1819
-SHA256 14fc8284c3b1035fd4a5f578adb6d0ba3cabc53d476282c3ae6937b270e59f0c files/bub-n-bros-1.5-home.patch 1819
-AUX bub-n-bros-1.5-python25.patch 1086 RMD160 dfae82f172616e554cdb3206bc59160ddfd6388a SHA1 516bc50f007a1461ae7ef526b4889f3fcdb3645e SHA256 4b59b8f48d7828eef9e9c22934a0e1c2ef54ef99ad33e56c847e6befc06f7262
-MD5 48f45808d06f738af9c658cc42662b94 files/bub-n-bros-1.5-python25.patch 1086
-RMD160 dfae82f172616e554cdb3206bc59160ddfd6388a files/bub-n-bros-1.5-python25.patch 1086
-SHA256 4b59b8f48d7828eef9e9c22934a0e1c2ef54ef99ad33e56c847e6befc06f7262 files/bub-n-bros-1.5-python25.patch 1086
 AUX bub-n-bros-1.6-home.patch 2035 RMD160 6ba15ad4bbd1f2463abfe7962e75690646808c53 SHA1 f790c118adb5d1396c3e880b5dca83253619f7c5 SHA256 13bfced9b7b4bbb543ba32fa209bcf7d313a2f6c0dda979d71dba83dd717ff95
 MD5 f37690393ccd1779902f4328b5e0e500 files/bub-n-bros-1.6-home.patch 2035
 RMD160 6ba15ad4bbd1f2463abfe7962e75690646808c53 files/bub-n-bros-1.6-home.patch 2035
