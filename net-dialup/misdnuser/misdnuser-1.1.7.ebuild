@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/misdnuser/Attic/misdnuser-1.1.5.ebuild,v 1.2 2007/10/11 20:31:00 sbriesen Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/misdnuser/Attic/misdnuser-1.1.7.ebuild,v 1.1 2007/11/12 19:16:27 genstef Exp $
 
 inherit eutils
 
@@ -21,8 +21,8 @@ MAKEOPTS="${MAKEPOPTS} -j1"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/misdnuser-as-needed.patch
+	cd "${S}"
+	epatch "${FILESDIR}"/misdnuser-as-needed.patch
 }
 
 src_install() {
