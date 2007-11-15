@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.2.6.ebuild,v 1.1 2007/11/14 10:18:36 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.2.6.ebuild,v 1.2 2007/11/15 13:26:52 wschlich Exp $
 
 #
 # TODO:
@@ -134,9 +134,6 @@ src_unpack() {
 
 	# replaces (deprecated) gnomesu with gksu in the gnome menu files
 	useq bacula-console && useq gnome && epatch "${FILESDIR}/${PV}/${PN}"-gnomesu2gksu.diff
-
-	# fix bug #195794
-	epatch "${FILESDIR}/${PV}"/fix-nextvol.patch
 }
 
 src_compile() {
