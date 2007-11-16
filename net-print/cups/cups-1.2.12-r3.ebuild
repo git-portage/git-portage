@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.2.12-r1.ebuild,v 1.7 2007/10/28 13:36:07 corsair Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.2.12-r3.ebuild,v 1.1 2007/11/16 20:13:07 tgurr Exp $
 
 WANT_AUTOMAKE=latest
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/cups/${MY_P}-source.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~arm hppa ~ia64 ~m68k ~mips ppc ppc64 ~s390 ~sh sparc ~sparc-fbsd x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE="ldap ssl slp pam php samba nls dbus tiff png ppds jpeg X"
 
 DEP="pam? ( virtual/pam )
@@ -85,6 +85,11 @@ src_unpack() {
 
 	# upstream does not acknowledge bindnow as a solution
 	epatch "${FILESDIR}"/cups-1.2.0-bindnow.patch
+
+	# CVE-2007-4351 security patch, bug #196736
+	epatch "${FILESDIR}"/${PN}-1.2-str2561-v2.patch
+	# CVE-2007-4045 security patch, bug #199195
+	epatch "${FILESDIR}"/${PN}-1.2.4-CVE-2007-4045.patch
 
 	# cups does not use autotools "the usual way" and ship a static config.h.in
 	eaclocal

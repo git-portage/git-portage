@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.3.4-r2.ebuild,v 1.1 2007/11/12 23:36:45 tgurr Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.3.4-r3.ebuild,v 1.1 2007/11/16 20:13:07 tgurr Exp $
 
 inherit autotools eutils flag-o-matic multilib pam
 
@@ -99,6 +99,9 @@ src_unpack() {
 
 	# disable configure automagic for acl/attr
 	epatch "${FILESDIR}/${PN}-1.3.0-configure.patch"
+
+	# CVE-2007-4045 security patch, bug #199195
+	epatch "${FILESDIR}/${P}-CVE-2007-4045.patch"
 
 	# cups does not use autotools "the usual way" and ship a static config.h.in
 	eaclocal
