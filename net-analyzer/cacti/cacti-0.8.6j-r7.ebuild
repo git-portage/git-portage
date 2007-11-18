@@ -1,12 +1,12 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/cacti/Attic/cacti-0.8.7.ebuild,v 1.1 2007/10/29 15:03:46 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/cacti/Attic/cacti-0.8.6j-r7.ebuild,v 1.1 2007/11/18 12:44:52 pva Exp $
 
 inherit eutils webapp depend.apache depend.php
 
 # Support for _p* in version.
 MY_P=${P/_p*/}
-HAS_PATCHES=0
+HAS_PATCHES=1
 
 DESCRIPTION="Cacti is a complete frontend to rrdtool"
 HOMEPAGE="http://www.cacti.net/"
@@ -18,7 +18,8 @@ if [ $HAS_PATCHES == 1 ] ; then
 					  tree_console_missing_hosts
 					  thumbnail_graphs_not_working
 					  graph_debug_lockup_fix
-					  snmpwalk_fix"
+					  snmpwalk_fix
+					  sec_sql_injection-0.8.6j"
 	for i in $UPSTREAM_PATCHES ; do
 		SRC_URI="${SRC_URI} http://www.cacti.net/downloads/patches/${PV/_p*}/${i}.patch"
 	done
@@ -53,9 +54,11 @@ src_unpack() {
 		unpack ${MY_P}.tar.gz
 	fi
 
+	epatch "${FILESDIR}/${P}"-dos-large-values.patch
+
 	use bundled-adodb || sed -i -e \
-	's:$config\["library_path"\] . "/adodb/adodb.inc.php":"/usr/share/php5/adodb/adodb.inc.php":' \
-	"${S}"/include/global.php
+	's:$config\["library_path"\] . "/adodb/adodb.inc.php":"adodb/adodb.inc.php":' \
+	"${S}"/include/config.php
 }
 
 pkg_setup() {
@@ -77,6 +80,7 @@ src_compile() {
 src_install() {
 	webapp_src_preinst
 
+	rm LICENSE README
 	dodoc docs/{CHANGELOG,CONTRIB,INSTALL,README,REQUIREMENTS,UPGRADE}
 	rm -rf docs
 	use bundled-adodb || rm -rf lib/adodb
