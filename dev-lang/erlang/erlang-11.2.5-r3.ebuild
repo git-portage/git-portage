@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/erlang/Attic/erlang-11.2.4-r1.ebuild,v 1.3 2007/08/22 06:48:47 opfer Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/erlang/Attic/erlang-11.2.5-r3.ebuild,v 1.1 2007/11/21 17:14:08 opfer Exp $
 
 inherit elisp-common eutils flag-o-matic multilib versionator
 
@@ -25,7 +25,7 @@ SRC_URI="http://www.erlang.org/download/${MY_P}.tar.gz
 
 LICENSE="EPL"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc emacs hipe java kpoll odbc smp ssl tk"
 
 RDEPEND=">=dev-lang/perl-5.6.1
@@ -40,7 +40,32 @@ S="${WORKDIR}/${MY_P}"
 
 SITEFILE=50erlang-gentoo.el
 
-pkg_setup() {
+src_unpack() {
+
+	unpack ${A}
+	cd "${S}"
+
+	epatch "${FILESDIR}"/${P}-build.patch #184419
+
+	# needed for amd64
+	epatch "${FILESDIR}/${PN}-10.2.6-export-TARGET.patch"
+
+	# needed for FreeBSD
+	epatch "${FILESDIR}/${P}-gethostbyname.patch"
+
+	# odbc is disabled in the amd64 code, but it works
+	if use x86 && use odbc; then
+		epatch "${FILESDIR}/${P}-odbc-support-amd64.patch"
+	fi
+
+	# needed for building with hipe and recent coreutils
+	use hipe && epatch "${FILESDIR}"/${P}-hipe.patch
+
+	use odbc || sed -i 's: odbc : :' lib/Makefile
+
+	# make sure we only link ssl dynamically
+	sed -i '/SSL_DYNAMIC_ONLY=/s:no:yes:' erts/configure #184419
+
 	if use hipe; then
 		ewarn
 		ewarn "You enabled High performance Erlang. Be aware that this extension"
@@ -48,19 +73,6 @@ pkg_setup() {
 		ewarn "Don't cry, don't file bugs, just disable it!"
 		ewarn
 	fi
-}
-
-src_unpack() {
-	## fix compilation on hardened systems, see bug #154338
-	filter-flags "-fstack-protector"
-	filter-flags "-fstack-protector-all"
-
-	unpack ${A}
-	cd "${S}"
-
-	# needed for amd64
-	epatch "${FILESDIR}/${PN}-10.2.6-export-TARGET.patch"
-	use odbc || sed -i 's: odbc : :' lib/Makefile
 }
 
 src_compile() {
@@ -92,39 +104,40 @@ src_install() {
 	local ERL_ERTS_VER=$(extract_version erts VSN)
 
 	emake -j1 INSTALL_PREFIX="${D}" install || die "install failed"
-	dodoc AUTHORS EPLICENCE README
+	dodoc AUTHORS README
 
-	dosym ${ERL_LIBDIR}/bin/erl /usr/bin/erl
-	dosym ${ERL_LIBDIR}/bin/erlc /usr/bin/erlc
-	dosym ${ERL_LIBDIR}/bin/ear /usr/bin/ear
-	dosym ${ERL_LIBDIR}/bin/escript /usr/bin/escript
+	dosym "${ERL_LIBDIR}/bin/erl" /usr/bin/erl
+	dosym "${ERL_LIBDIR}/bin/erlc" /usr/bin/erlc
+	dosym "${ERL_LIBDIR}/bin/ear" /usr/bin/ear
+	dosym "${ERL_LIBDIR}/bin/escript" /usr/bin/escript
 	dosym \
-		${ERL_LIBDIR}/lib/erl_interface-${ERL_INTERFACE_VER}/bin/erl_call \
+		"${ERL_LIBDIR}/lib/erl_interface-${ERL_INTERFACE_VER}/bin/erl_call" \
 		/usr/bin/erl_call
-	dosym ${ERL_LIBDIR}/erts-${ERL_ERTS_VER}/bin/beam /usr/bin/beam
+	dosym "${ERL_LIBDIR}/erts-${ERL_ERTS_VER}/bin/beam" /usr/bin/beam
 
 	## Remove ${D} from the following files
-	dosed ${ERL_LIBDIR}/bin/erl
-	dosed ${ERL_LIBDIR}/bin/start
-	grep -rle "${D}" "${D}"/${ERL_LIBDIR}/erts-${ERL_ERTS_VER} | xargs sed -i -e "s:${D}::g"
+	dosed "${ERL_LIBDIR}/bin/erl"
+	dosed "${ERL_LIBDIR}/bin/start"
+	grep -rle "${D}" "${D}/${ERL_LIBDIR}/erts-${ERL_ERTS_VER}" | xargs sed -i -e "s:${D}::g"
 
 	## Clean up the no longer needed files
-	rm "${D}"/${ERL_LIBDIR}/Install
+	rm "${D}/${ERL_LIBDIR}/Install"
 
 	if use doc ; then
 		for i in "${WORKDIR}"/man/man* ; do
-			dodir /usr/share/${i##${WORKDIR}}erl
+			dodir "${ERL_LIBDIR}/${i##${WORKDIR}}"
 		done
 		for file in "${WORKDIR}"/man/man*/*.[1-9]; do
-			# Avoid namespace collisions
-			local newfile=${file}erl
-			cp ${file} ${newfile}
 			# Man page processing tools expect a capitalized "SEE ALSO" section
-			# header
-			sed -i -e 's,\.SH See Also,\.SH SEE ALSO,g' ${newfile}
+			# header, has been reported upstream, should be fixed in R12
+			sed -i -e 's,\.SH See Also,\.SH SEE ALSO,g' ${file}
 			# doman sucks so we can't use it
-			cp ${newfile} "${D}"/usr/share/man/man${newfile##*.}/
+			cp ${file} "${D}/${ERL_LIBDIR}"/man/man${file##*.}/
 		done
+		# extend MANPATH, so the normal man command can find it
+		# see bug 189639
+		dodir /etc/env.d/
+		echo "MANPATH=\"${ERL_LIBDIR}/man\"" > "${D}/etc/env.d/90erlang"
 		dohtml -A README,erl,hrl,c,h,kwc,info -r \
 			"${WORKDIR}"/doc "${WORKDIR}"/lib "${WORKDIR}"/erts-*
 	fi
@@ -135,6 +148,10 @@ src_install() {
 		elisp-site-file-install "${FILESDIR}"/${SITEFILE}
 		popd
 	fi
+
+	# prepare erl for SMP, fixes bug #188112
+	use smp && sed -i -e 's:\(exec.*erlexec\):\1 -smp:' \
+		"${D}/${ERL_LIBDIR}/bin/erl"
 }
 
 pkg_postinst() {
@@ -143,7 +160,7 @@ pkg_postinst() {
 	elog "If you need a symlink to one of erlang's binaries,"
 	elog "please open a bug and tell the maintainers."
 	elog
-	elog "Gentoo's versioning scheme differs from the author's, so please refer to this version as R11B-4"
+	elog "Gentoo's versioning scheme differs from the author's, so please refer to this version as R11B-5"
 	elog
 }
 
