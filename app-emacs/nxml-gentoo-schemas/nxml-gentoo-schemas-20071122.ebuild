@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/nxml-gentoo-schemas/Attic/nxml-gentoo-schemas-20071121.ebuild,v 1.1 2007/11/21 11:25:53 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/nxml-gentoo-schemas/Attic/nxml-gentoo-schemas-20071122.ebuild,v 1.1 2007/11/22 15:24:48 flameeyes Exp $
 
 inherit elisp-common
 
