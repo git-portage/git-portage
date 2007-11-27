@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-23.0.0_p20070920.ebuild,v 1.8 2007/11/22 22:08:00 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-22.1.50_p20070829-r2.ebuild,v 1.1 2007/11/27 16:03:26 ulm Exp $
 
 WANT_AUTOCONF="2.5"
 WANT_AUTOMAKE="latest"
@@ -12,9 +12,9 @@ HOMEPAGE="http://www.gnu.org/software/emacs/"
 SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="GPL-3 FDL-1.2 BSD"
-SLOT="23-unicode"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="alsa gif gpm gtk gzip-el hesiod jpeg kerberos motif png spell sound source svg tiff toolkit-scroll-bars X Xaw3d xft xpm"
+SLOT="22"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+IUSE="alsa gif gpm gtk gzip-el hesiod jpeg kerberos motif png spell sound source svg tiff toolkit-scroll-bars X Xaw3d xpm"
 RESTRICT="strip"
 
 X_DEPEND="x11-libs/libXmu x11-libs/libXt x11-misc/xbitmaps"
@@ -36,7 +36,6 @@ RDEPEND="sys-libs/ncurses
 		png? ( media-libs/libpng )
 		svg? ( >=gnome-base/librsvg-2.0 )
 		xpm? ( x11-libs/libXpm )
-		xft? ( media-libs/fontconfig virtual/xft >=dev-libs/libotf-0.9.4 )
 		gtk? ( =x11-libs/gtk+-2* )
 		!gtk? (
 			Xaw3d? ( x11-libs/Xaw3d )
@@ -52,7 +51,7 @@ DEPEND="${RDEPEND}
 # FULL_VERSION keeps the full version number, which is needed in order to
 # determine some path information correctly for copy/move operations later on
 FULL_VERSION="${PV%%_*}"
-EMACS_SUFFIX="emacs-${SLOT}"
+EMACS_SUFFIX="emacs-${SLOT}-cvs"
 
 src_unpack() {
 	unpack ${A}
@@ -72,8 +71,8 @@ src_unpack() {
 	epatch "${FILESDIR}/${PN}-freebsd-sparc.patch"
 	epatch "${FILESDIR}/${PN}-make-tramp-temp-file.patch"
 	epatch "${FILESDIR}/${PN}-makeinfo-regexp.patch"
-	epatch "${FILESDIR}/${PN}-no-x-compile.patch"
 	epatch "${FILESDIR}/${PN}-hack-local-variables.patch"
+	epatch "${FILESDIR}/${PN}-format-int.patch"
 	# ALSA is detected and used even if not requested by the USE=alsa flag.
 	# So remove the automagic check
 	use alsa || epatch "${FILESDIR}/${PN}-disable_alsa_detection-r1.patch"
@@ -103,9 +102,6 @@ src_compile() {
 	if use X; then
 		myconf="${myconf} --with-x"
 		myconf="${myconf} $(use_with toolkit-scroll-bars)"
-		myconf="${myconf} $(use_enable xft font-backend)"
-		myconf="${myconf} $(use_with xft freetype)"
-		myconf="${myconf} $(use_with xft)"
 		myconf="${myconf} $(use_with jpeg) $(use_with tiff)"
 		myconf="${myconf} $(use_with gif) $(use_with png)"
 		myconf="${myconf} $(use_with xpm) $(use_with svg rsvg)"
@@ -189,7 +185,7 @@ src_install () {
 		elisp-site-file-install 00${PN}-${SLOT}-gentoo.el
 	fi
 
-	dodoc AUTHORS BUGS CONTRIBUTE README README.unicode || die "dodoc failed"
+	dodoc AUTHORS BUGS CONTRIBUTE README || die "dodoc failed"
 }
 
 emacs-infodir-rebuild() {

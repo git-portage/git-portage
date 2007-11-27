@@ -1,26 +1,20 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-22.1.50-r1.ebuild,v 1.12 2007/11/22 22:08:00 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-23.0.0_p20070920-r1.ebuild,v 1.1 2007/11/27 16:03:26 ulm Exp $
 
-ECVS_AUTH="pserver"
-ECVS_SERVER="cvs.savannah.gnu.org:/sources/emacs"
-ECVS_MODULE="emacs"
-ECVS_BRANCH="EMACS_22_BASE"
-ECVS_LOCALNAME="emacs-22"
-
-WANT_AUTOCONF="latest"
+WANT_AUTOCONF="2.5"
 WANT_AUTOMAKE="latest"
 
-inherit autotools cvs elisp-common eutils flag-o-matic
+inherit autotools elisp-common eutils flag-o-matic
 
 DESCRIPTION="The extensible, customizable, self-documenting real-time display editor"
 HOMEPAGE="http://www.gnu.org/software/emacs/"
-SRC_URI=""
+SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="GPL-3 FDL-1.2 BSD"
-SLOT="22"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="alsa gif gtk gzip-el hesiod jpeg kerberos motif png spell sound source tiff toolkit-scroll-bars X Xaw3d xpm"
+SLOT="23-unicode"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+IUSE="alsa gif gpm gtk gzip-el hesiod jpeg kerberos motif png spell sound source svg tiff toolkit-scroll-bars X Xaw3d xft xpm"
 RESTRICT="strip"
 
 X_DEPEND="x11-libs/libXmu x11-libs/libXt x11-misc/xbitmaps"
@@ -32,6 +26,7 @@ RDEPEND="sys-libs/ncurses
 	kerberos? ( virtual/krb5 )
 	spell? ( || ( app-text/ispell app-text/aspell ) )
 	alsa? ( media-libs/alsa-lib )
+	gpm? ( sys-libs/gpm )
 	X? (
 		$X_DEPEND
 		x11-misc/emacs-desktop
@@ -39,7 +34,9 @@ RDEPEND="sys-libs/ncurses
 		jpeg? ( media-libs/jpeg )
 		tiff? ( media-libs/tiff )
 		png? ( media-libs/libpng )
+		svg? ( >=gnome-base/librsvg-2.0 )
 		xpm? ( x11-libs/libXpm )
+		xft? ( media-libs/fontconfig virtual/xft >=dev-libs/libotf-0.9.4 )
 		gtk? ( =x11-libs/gtk+-2* )
 		!gtk? (
 			Xaw3d? ( x11-libs/Xaw3d )
@@ -52,26 +49,14 @@ RDEPEND="sys-libs/ncurses
 DEPEND="${RDEPEND}
 	gzip-el? ( app-arch/gzip )"
 
-S="${WORKDIR}/${ECVS_LOCALNAME}"
-
-EMACS_SUFFIX="emacs-${SLOT}-cvs"
+# FULL_VERSION keeps the full version number, which is needed in order to
+# determine some path information correctly for copy/move operations later on
+FULL_VERSION="${PV%%_*}"
+EMACS_SUFFIX="emacs-${SLOT}"
 
 src_unpack() {
-	cvs_src_unpack
-
+	unpack ${A}
 	cd "${S}"
-	# FULL_VERSION keeps the full version number, which is needed in
-	# order to determine some path information correctly for copy/move
-	# operations later on
-	FULL_VERSION=$(grep 'defconst[	 ]*emacs-version' lisp/version.el \
-		| sed -e 's/^[^"]*"\([^"]*\)".*$/\1/')
-	[ "${FULL_VERSION}" ] || die "Cannot determine current Emacs version"
-	echo
-	einfo "Emacs CVS branch: ${ECVS_BRANCH}"
-	einfo "Emacs version number: ${FULL_VERSION}"
-	[ "${FULL_VERSION}" = ${PV} ] \
-		|| die "Upstream version number changed to ${FULL_VERSION}"
-	echo
 
 	sed -i -e "s:/usr/lib/crtbegin.o:$(`tc-getCC` -print-file-name=crtbegin.o):g" \
 		-e "s:/usr/lib/crtend.o:$(`tc-getCC` -print-file-name=crtend.o):g" \
@@ -84,8 +69,12 @@ src_unpack() {
 			|| die "unable to sed configure.in"
 	fi
 
-	epatch "${FILESDIR}/${PN}-Xaw3d-headers.patch"
 	epatch "${FILESDIR}/${PN}-freebsd-sparc.patch"
+	epatch "${FILESDIR}/${PN}-make-tramp-temp-file.patch"
+	epatch "${FILESDIR}/${PN}-makeinfo-regexp.patch"
+	epatch "${FILESDIR}/${PN}-no-x-compile.patch"
+	epatch "${FILESDIR}/${PN}-hack-local-variables.patch"
+	epatch "${FILESDIR}/${PN}-format-int.patch"
 	# ALSA is detected and used even if not requested by the USE=alsa flag.
 	# So remove the automagic check
 	use alsa || epatch "${FILESDIR}/${PN}-disable_alsa_detection-r1.patch"
@@ -99,7 +88,6 @@ src_compile() {
 	strip-flags
 	unset LDFLAGS
 	replace-flags -O[3-9] -O2
-	sed -i -e "s/-lungif/-lgif/g" configure* src/Makefile* || die
 
 	local myconf
 
@@ -116,9 +104,12 @@ src_compile() {
 	if use X; then
 		myconf="${myconf} --with-x"
 		myconf="${myconf} $(use_with toolkit-scroll-bars)"
+		myconf="${myconf} $(use_enable xft font-backend)"
+		myconf="${myconf} $(use_with xft freetype)"
+		myconf="${myconf} $(use_with xft)"
 		myconf="${myconf} $(use_with jpeg) $(use_with tiff)"
 		myconf="${myconf} $(use_with gif) $(use_with png)"
-		myconf="${myconf} $(use_with xpm)"
+		myconf="${myconf} $(use_with xpm) $(use_with svg rsvg)"
 
 		# GTK+ is the default toolkit if USE=gtk is chosen with other
 		# possibilities. Emacs upstream thinks this should be standard
@@ -147,6 +138,7 @@ src_compile() {
 
 	myconf="${myconf} $(use_with hesiod)"
 	myconf="${myconf} $(use_with kerberos) $(use_with kerberos kerberos5)"
+	myconf="${myconf} $(use_with gpm)"
 
 	econf \
 		--program-suffix=-${EMACS_SUFFIX} \
@@ -198,7 +190,7 @@ src_install () {
 		elisp-site-file-install 00${PN}-${SLOT}-gentoo.el
 	fi
 
-	dodoc AUTHORS BUGS CONTRIBUTE README || die "dodoc failed"
+	dodoc AUTHORS BUGS CONTRIBUTE README README.unicode || die "dodoc failed"
 }
 
 emacs-infodir-rebuild() {
