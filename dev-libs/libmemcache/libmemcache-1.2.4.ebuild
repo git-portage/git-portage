@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libmemcache/Attic/libmemcache-1.2.4.ebuild,v 1.16 2006/11/23 19:52:47 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libmemcache/Attic/libmemcache-1.2.4.ebuild,v 1.17 2007/11/28 18:51:45 robbat2 Exp $
 
 inherit toolchain-funcs
 
@@ -35,5 +35,5 @@ src_install() {
 	dosym /usr/lib/libmemcache.so.${PV%.*} /usr/lib/libmemcache.so
 
 	doman memcache.4
-	dodoc ChangeLog COPYING INSTALL
+	dodoc ChangeLog INSTALL
 }
