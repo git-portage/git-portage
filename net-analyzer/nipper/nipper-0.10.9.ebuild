@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nipper/Attic/nipper-0.9.5.ebuild,v 1.4 2007/10/29 23:57:01 ikelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nipper/Attic/nipper-0.10.9.ebuild,v 1.1 2007/12/01 13:18:50 ikelos Exp $
 
 inherit toolchain-funcs eutils
 
@@ -17,11 +17,10 @@ DEPEND="sys-libs/glibc"
 RDEPEND="sys-libs/glibc"
 
 src_compile() {
-	cd "${S}"
 	$(tc-getCC) ${CFLAGS} ${PN}.c -o${PN}
 }
 
 src_install() {
 	dobin ${PN}
-	dodoc INSTALL TODO Changelog
+	dodoc Readme INSTALL TODO Changelog docs/*
 }
