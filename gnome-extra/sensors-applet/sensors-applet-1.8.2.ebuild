@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/sensors-applet/Attic/sensors-applet-1.7.9.ebuild,v 1.1 2006/11/02 21:15:28 allanonjl Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/sensors-applet/Attic/sensors-applet-1.8.2.ebuild,v 1.1 2007/12/02 18:29:33 dang Exp $
 
 inherit gnome2 eutils
 
@@ -13,13 +13,20 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="hddtemp libnotify lm_sensors nvidia"
 
-RDEPEND=">=x11-libs/gtk+-2.8.0
-	>=gnome-base/libgnomeui-2
+RDEPEND="
+	>=dev-libs/glib-2.6
+	>=x11-libs/gtk+-2.8.0
 	>=gnome-base/gnome-panel-2
+	>=gnome-base/libgnome-2.8
+	>=gnome-base/libgnomeui-2.8
+	>=x11-libs/cairo-1.0.4
 	hddtemp? ( >=app-admin/hddtemp-0.3_beta13 )
 	libnotify? ( >=x11-libs/libnotify-0.4.0 )
 	lm_sensors? ( sys-apps/lm_sensors )
-	nvidia? ( media-video/nvidia-settings )"
+	nvidia? ( || (
+		>=x11-drivers/nvidia-drivers-100.14.09
+		media-video/nvidia-settings
+	) )"
 
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.12
