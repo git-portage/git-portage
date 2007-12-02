@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.4.3.ebuild,v 1.3 2007/09/25 23:33:12 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.4.3.ebuild,v 1.4 2007/12/02 08:55:40 ticho Exp $
 
 inherit distutils eutils
 
@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 
 	# Fix behavior for scp:// URL when /bin/sh is bash, bug #151938.
 	sed -i -e "s:echo -e:printf:" src/backends.py
@@ -33,7 +33,7 @@ src_compile() {
 }
 
 src_install() {
-	python setup.py install --prefix=${D}/usr
+	python setup.py install --prefix="${D}"/usr
 }
 
 pkg_postinst() {
