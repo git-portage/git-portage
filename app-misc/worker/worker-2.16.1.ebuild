@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/worker/Attic/worker-2.14.0.ebuild,v 1.2 2007/07/22 09:46:31 omp Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/worker/Attic/worker-2.16.1.ebuild,v 1.1 2007/12/04 20:25:28 dertobi123 Exp $
 
 inherit eutils
 
@@ -10,15 +10,15 @@ SRC_URI="http://www.boomerangsworld.de/worker/downloads/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~sparc ~x86"
-IUSE="unicode"
-#S="${WORKDIR}/${P/_}"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~sparc ~x86"
+IUSE="avfs unicode"
 
-DEPEND="x11-libs/libSM"
+DEPEND="x11-libs/libSM
+	avfs? ( sys-fs/avfs )"
 
 src_compile() {
-	econf \
-		$(use_enable unicode utf-8) || die "./configure failed"
+	econf	$(use_enable unicode utf-8) \
+		$(use_with avfs) || die "./configure failed"
 	emake || die "make failed"
 }
 
@@ -26,5 +26,5 @@ src_install() {
 	einstall || die "make install failed"
 	doman man/worker.1
 	dodoc AUTHORS ChangeLog INSTALL NEWS README README_LARGEFILES THANKS
-	make_desktop_entry ${PN} Worker WorkerIcon.xpm "FileManager"
+	make_desktop_entry ${PN} Worker WorkerIcon "FileManager"
 }
