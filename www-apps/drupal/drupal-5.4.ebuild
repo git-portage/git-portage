@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/drupal/Attic/drupal-5.3.ebuild,v 1.1 2007/10/18 06:30:12 uberlord Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/drupal/Attic/drupal-5.4.ebuild,v 1.1 2007/12/06 14:40:54 wrobel Exp $
 
 inherit webapp eutils
 
@@ -14,7 +14,8 @@ LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~ppc ~x86"
 IUSE=""
 
-RDEPEND="virtual/httpd-php"
+RDEPEND="virtual/httpd-php
+	 virtual/httpd-cgi"
 
 src_install() {
 	webapp_src_preinst
@@ -32,8 +33,12 @@ src_install() {
 	# create the files upload directory
 	mkdir "${D}/${MY_HTDOCSDIR}"/files
 	webapp_serverowned "${MY_HTDOCSDIR}"/files
+	webapp_serverowned "${MY_HTDOCSDIR}"/sites/default/settings.php
 
 	webapp_configfile "${MY_HTDOCSDIR}"/sites/default/settings.php
 	webapp_configfile "${MY_HTDOCSDIR}"/.htaccess
+
+	webapp_postinst_txt en "${FILESDIR}"/postinstall-en.txt
+
 	webapp_src_install
 }
