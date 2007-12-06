@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.8.ebuild,v 1.2 2007/11/23 15:47:45 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.8-r2.ebuild,v 1.1 2007/12/06 17:34:44 flameeyes Exp $
 
 inherit eutils libtool autotools
 
@@ -73,6 +73,7 @@ src_unpack() {
 	epatch "${FILESDIR}/${P}-svn2074.patch"
 	epatch "${FILESDIR}/${P}-polkit.patch"
 	epatch "${FILESDIR}/${P}-bt-nohal.patch"
+	epatch "${FILESDIR}/${P}-esoundpath.patch"
 
 	eautoreconf
 	elibtoolize
