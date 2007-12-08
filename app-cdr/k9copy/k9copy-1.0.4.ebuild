@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/k9copy/Attic/k9copy-1.0.4.ebuild,v 1.6 2007/08/22 20:41:18 keytoaster Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/k9copy/Attic/k9copy-1.0.4.ebuild,v 1.7 2007/12/08 10:58:28 mattepiu Exp $
 
 inherit kde
 
@@ -28,17 +28,17 @@ src_unpack() {
 	kde_src_unpack
 
 	# Fix the desktop file for compliance with the spec.
-	sed -i -e '/MimeTypes/d' ${S}/src/${PN}.desktop
+	sed -i -e '/MimeTypes/d' "${S}/src/${PN}.desktop"
 }
 
 src_install() {
 	kde_src_install
 
 	dodir /usr/share/applications/kde
-	mv ${D}/usr/share/applnk/Multimedia/k9copy.desktop \
-		${D}/usr/share/applications/kde
+	mv "${D}/usr/share/applnk/Multimedia/k9copy.desktop" \
+		"${D}/usr/share/applications/kde"
 
 	# Add Categories to put k9copy in the right menu
 	echo -e "\nCategories=Qt;KDE;Application;AudioVideo;" >> \
-		${D}/usr/share/applications/kde/k9copy.desktop
+		"${D}/usr/share/applications/kde/k9copy.desktop"
 }
