@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/duplicity
 # Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.19 2007/12/02 08:55:40 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.20 2007/12/09 11:05:08 ticho Exp $
+
+*duplicity-0.4.7 (09 Dec 2007)
+
+  09 Dec 2007; Andrej Kacian <ticho@gentoo.org> +duplicity-0.4.7.ebuild:
+  Version bump. Includes upstream fix for #201548, reported by <bdonlan at
+  gmail.com>.
 
 *duplicity-0.4.6 (02 Dec 2007)
 
