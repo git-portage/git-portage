@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/eselect-gnat/Attic/eselect-gnat-1.0.ebuild,v 1.2 2007/12/11 23:46:45 george Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/eselect-gnat/Attic/eselect-gnat-1.1-r1.ebuild,v 1.1 2007/12/11 23:46:45 george Exp $
 
 inherit eutils
 
@@ -17,9 +17,16 @@ RDEPEND="app-admin/eselect"
 
 MODULEDIR="/usr/share/eselect/modules"
 
+# NOTE!!
+# This path is duplicated in gnat-eselect module,
+# adjust in both locations!
+LIBDIR="/usr/share/gnat/lib"
+
 src_install() {
 	dodir ${MODULEDIR}
 	insinto ${MODULEDIR}
-	doins "${FILESDIR}"/gnat.eselect-${PVR}
-	mv "${D}${MODULEDIR}"/gnat.eselect-${PVR} "${D}${MODULEDIR}"/gnat.eselect
+	newins "${FILESDIR}"/gnat.eselect-${PVR} gnat.eselect
+	dodir ${LIBDIR}
+	insinto ${LIBDIR}
+	doins "${FILESDIR}"/gnat-common.bash
 }
