@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/openal/Attic/openal-1.3.1.ebuild,v 1.1 2007/07/09 12:40:29 dcoutts Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/openal/Attic/openal-1.3.1.ebuild,v 1.3 2007/12/12 09:56:31 opfer Exp $
 
 CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
@@ -14,7 +14,7 @@ SRC_URI="http://www.haskell.org/ghc/dist/${GHC_PV}/ghc-${GHC_PV}-src-extralibs.t
 LICENSE="BSD"
 SLOT="0"
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
@@ -26,7 +26,7 @@ S="${WORKDIR}/ghc-${GHC_PV}/libraries/${MY_PN}"
 # Sadly Setup.hs in the ghc-6.6.1 extralibs was not tested with Cabal-1.1.6.x
 src_unpack() {
 	unpack "${A}"
-	sed -i -e "/type Hook/ s/UserHooks/Maybe UserHooks/" ${S}/Setup.hs
+	sed -i -e "/type Hook/ s/UserHooks/Maybe UserHooks/" "${S}/Setup.hs"
 }
 
 #TODO: install examples perhaps?
