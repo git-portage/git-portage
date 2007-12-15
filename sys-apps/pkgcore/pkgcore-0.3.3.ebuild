@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.3.2.ebuild,v 1.4 2007/11/06 17:51:13 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.3.3.ebuild,v 1.1 2007/12/15 21:34:08 jokey Exp $
 
 inherit distutils eutils
 
@@ -49,16 +49,12 @@ pkg_postinst() {
 
 	if [[ -d "${ROOT}etc/pkgcore/plugins" ]]; then
 		elog "You still have an /etc/pkgcore/plugins from pkgcore 0.1."
-		elog "It is unused by pkgcore >= 0.2, so you can remove it now."
+		elog "It is unused by pkgcore >= 0.2, remove it now."
+		die "remove /etc/pkgcore/plugins from pkgcore 0.1"
 	fi
 
 	# This is left behind by pkgcore 0.2.
 	rm -f "${ROOT}"usr/$(get_libdir)/python${PYVER}/site-packages/pkgcore/plugins/plugincache
-
-	elog "If the new layman sync support causes problems you can disable it"
-	elog "with FEATURES=-layman-sync. If you cannot sync a layman overlay"
-	elog "using pkgcore, file a bug in pkgcore.org trac instead of complaining"
-	elog "to the layman or overlay maintainer."
 }
 
 pkg_postrm() {
