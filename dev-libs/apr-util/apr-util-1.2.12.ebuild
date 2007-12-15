@@ -1,35 +1,41 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/apr-util/Attic/apr-util-1.2.8.ebuild,v 1.11 2007/06/27 19:59:06 pylon Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/apr-util/Attic/apr-util-1.2.12.ebuild,v 1.1 2007/12/15 14:26:31 hollow Exp $
 
-inherit eutils flag-o-matic libtool db-use
+inherit autotools eutils flag-o-matic libtool db-use
 
-DESCRIPTION="Apache Portable Runtime Library"
+DESCRIPTION="Apache Portable Runtime Utility Library"
 HOMEPAGE="http://apr.apache.org/"
-SRC_URI="mirror://apache/apr/${P}.tar.gz"
+SRC_URI="mirror://apache/apr/${P}.tar.gz
+	mirror://apache/apr/apr-${PV}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="1"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc ~sparc-fbsd x86 ~x86-fbsd"
-IUSE="berkdb gdbm ldap postgres sqlite sqlite3"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+IUSE="berkdb doc gdbm ldap mysql postgres sqlite sqlite3"
 RESTRICT="test"
 
 DEPEND="dev-libs/expat
-	~dev-libs/apr-${PV}
+	>=dev-libs/apr-${PV}
 	berkdb? ( =sys-libs/db-4* )
+	doc? ( app-doc/doxygen )
 	gdbm? ( sys-libs/gdbm )
 	ldap? ( =net-nds/openldap-2* )
+	mysql? ( =virtual/mysql-5* )
 	postgres? ( dev-db/libpq )
 	sqlite? ( =dev-db/sqlite-2* )
 	sqlite3? ( =dev-db/sqlite-3* )"
 
-# NOTE: This package in theory can support mysql,
-# but in reality the build system is broken for it....
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
+	./buildconf --with-apr=../apr-${PV} || die "buildconf failed"
+	elibtoolize || die "elibtoolize failed"
+}
 
 src_compile() {
 	local myconf=""
-
-	elibtoolize || die "elibtoolize failed"
 
 	use ldap && myconf="${myconf} --with-ldap"
 
@@ -47,18 +53,27 @@ src_compile() {
 		--with-apr=/usr \
 		--with-expat=/usr \
 		$(use_with gdbm) \
+		$(use_with mysql) \
 		$(use_with postgres pgsql) \
 		$(use_with sqlite sqlite2) \
 		$(use_with sqlite3) \
-		${myconf} || die "econf failed!"
+		${myconf}
 
 	emake || die "emake failed!"
+
+	if use doc; then
+		emake dox || die "emake dox failed"
+	fi
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 
 	dodoc CHANGES NOTICE
+
+	if use doc; then
+		dohtml docs/dox/html/* || die "dohtml failed"
+	fi
 
 	# This file is only used on AIX systems, which gentoo is not,
 	# and causes collisions between the SLOTs, so kill it
