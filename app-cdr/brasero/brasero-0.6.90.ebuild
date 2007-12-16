@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/brasero/Attic/brasero-0.6.0.ebuild,v 1.4 2007/08/24 19:57:49 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/brasero/Attic/brasero-0.6.90.ebuild,v 1.1 2007/12/16 21:40:50 pylon Exp $
 
 inherit gnome2 gnome.org
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/projects/brasero"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="beagle dvd gdl libburn libnotify totem nls"
 
 RDEPEND=">=x11-libs/gtk+-2.10
@@ -50,7 +50,7 @@ USE_DESTDIR="1"
 
 src_install() {
 	gnome2_src_install
-	use nls || rm -rf ${D}/usr/share/locale
+	use nls || rm -rf "${D}"/usr/share/locale
 }
 
 pkg_postinst() {
@@ -58,5 +58,8 @@ pkg_postinst() {
 	elog
 	elog "For a best experience you should have a Linux Kernel >= 2.6.13"
 	elog "to enable system features such as Extended Attributes and inotify."
+	elog
+	elog "To use the libburn backend you need to add USE=libburn and activate"
+	elog "in gconf editor. Note that the default backend is the cdrtools/cdrkit."
 	elog
 }
