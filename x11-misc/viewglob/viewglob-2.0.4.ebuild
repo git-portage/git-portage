@@ -1,36 +1,25 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/viewglob/Attic/viewglob-2.0.2.ebuild,v 1.2 2005/07/16 11:40:28 dholm Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/viewglob/viewglob-2.0.4.ebuild,v 1.1 2007/12/17 17:50:20 armin76 Exp $
 
 inherit eutils
 
-DESCRIPTION="Graphical display of directories and globs referenced at the shell prompt"
+DESCRIPTION="Graphical display of directories and globs referenced at the shell
+prompt."
 HOMEPAGE="http://viewglob.sourceforge.net/"
 SRC_URI="mirror://sourceforge/viewglob/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-libs/glib-2.2.0
 	>=x11-libs/gtk+-2.4.0
 	|| ( app-shells/bash app-shells/zsh )"
 
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-
-	epatch ${FILESDIR}/viewglob-2.0.2-64bit.patch
-}
-
-src_compile() {
-	econf || die "econf failed"
-	emake || die "emake failed"
-}
-
 src_install () {
 	make DESTDIR=${D} install || die "install failed"
-	dodoc AUTHORS COPYING COPYING2 ChangeLog HACKING INSTALL NEWS README TODO
+	dodoc AUTHORS ChangeLog HACKING NEWS README TODO
 }
 
 pkg_postinst() {
@@ -47,7 +36,7 @@ pkg_postinst() {
 	einfo '  fi'
 	einfo " "
 	einfo "Have a look at http://viewglob.sourceforge.net/faq.html for a"
-	einfo "couple more viewglob tricks."
+	einfo "few more viewglob tricks."
 	ewarn " "
 	ewarn "There are some known bugs in viewglob with screen. Exercise some"
 	ewarn "caution and take results with a pinch of salt if you try the two"
