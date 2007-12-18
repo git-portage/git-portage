@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.3.4-r3.ebuild,v 1.1 2007/11/16 20:13:07 tgurr Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.3.5.ebuild,v 1.1 2007/12/18 20:57:22 tgurr Exp $
 
 inherit autotools eutils flag-o-matic multilib pam
 
@@ -101,7 +101,7 @@ src_unpack() {
 	epatch "${FILESDIR}/${PN}-1.3.0-configure.patch"
 
 	# CVE-2007-4045 security patch, bug #199195
-	epatch "${FILESDIR}/${P}-CVE-2007-4045.patch"
+	epatch "${FILESDIR}/${PN}-1.3.4-CVE-2007-4045.patch"
 
 	# cups does not use autotools "the usual way" and ship a static config.h.in
 	eaclocal
@@ -160,7 +160,7 @@ src_compile() {
 		${myconf} \
 		|| die "econf failed"
 
-	# Install in /usr/libexec always, instead of using /usr/lib/cups, as that
+	# install in /usr/libexec always, instead of using /usr/lib/cups, as that
 	# makes more sense when facing multilib support.
 	sed -i -e 's:SERVERBIN.*:SERVERBIN = "$(BUILDROOT)"/usr/libexec/cups:' Makedefs
 	sed -i -e 's:#define CUPS_SERVERBIN.*:#define CUPS_SERVERBIN "/usr/libexec/cups":' config.h
@@ -196,7 +196,7 @@ src_install() {
 
 	# install pdftops filter
 	exeinto /usr/libexec/cups/filter/
-	newexe "${FILESDIR}"/pdftops.pl pdftops
+	newexe "${FILESDIR}"/pdftops-1.20.gentoo pdftops
 
 	# only for gs-esp this is correct, see bug 163897
 	if has_version app-text/ghostscript-gpl || has_version app-text/ghostscript-gnu; then
@@ -213,9 +213,13 @@ src_install() {
 		rm -r "${D}"/usr/share/applications
 	fi
 
-	# Fix a symlink collision, see bug #172341
+	# fix a symlink collision, see bug #172341
 	dodir /usr/share/ppd
 	dosym /usr/share/ppd /usr/share/cups/model/foomatic-ppds
+
+	# create RSS feed directory
+	diropts -m 0740 -o lp -g lp
+	dodir /var/cache/cups/rss
 }
 
 pkg_preinst() {
