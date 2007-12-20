@@ -1,17 +1,17 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/Attic/squid-3.0_rc1.ebuild,v 1.4 2007/11/15 08:37:42 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/Attic/squid-3.0.1.ebuild,v 1.1 2007/12/20 10:07:12 mrness Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
 
 inherit eutils pam toolchain-funcs flag-o-matic autotools linux-info
 
-#lame archive versioning scheme..
+# lame archive versioning scheme..
 S_PMV="${PV%%.*}"
-S_PV="${PV%_*}"
-S_PL="${PV#*_rc}"
-S_PP="${PN}-${S_PV}.RC${S_PL}"
+S_PV="${PV%.*}"
+S_PL="${PV##*.}"
+S_PP="${PN}-${S_PV}.STABLE${S_PL}"
 
 RESTRICT="test" # check if test works in next bump
 
@@ -51,7 +51,7 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A} || die "unpack failed"
-	cd "${S}" || die "dir ${S} not found"
+	cd "${S}" || die "source dir not found"
 
 	epatch "${FILESDIR}"/${P}-gentoo.patch
 
