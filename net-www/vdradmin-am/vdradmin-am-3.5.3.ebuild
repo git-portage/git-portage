@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-www/vdradmin-am/Attic/vdradmin-am-3.5.3.ebuild,v 1.3 2007/07/15 04:40:21 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-www/vdradmin-am/Attic/vdradmin-am-3.5.3.ebuild,v 1.4 2007/12/20 14:38:01 zzam Exp $
 
 inherit eutils
 
@@ -38,8 +38,8 @@ pkg_setup() {
 src_unpack() {
 
 	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${PN}-config-autoflush.diff
+	cd "${S}"
+	epatch "${FILESDIR}"/${PN}-config-autoflush.diff
 	sed -i vdradmind.pl \
 		-e "/COMPILE_DIR/s-/tmp-${TMP_DIR}-" \
 		-e "s-/var/run/vdradmind.pid-/var/tmp/vdradmin/vdradmind.pid-"
@@ -51,33 +51,33 @@ src_compile() {
 		einfo "no need to compile"
 	else
 		einfo "additionally generating utf8 locales"
-		${S}/make.sh utf8add || die
-		${S}/make.sh po || die
+		"${S}"/make.sh utf8add || die
+		"${S}"/make.sh po || die
 	fi
 }
 
 src_install() {
 
-	newinitd ${FILESDIR}/vdradmin-2 vdradmin
-	newconfd ${FILESDIR}/confd-2 vdradmin
+	newinitd "${FILESDIR}"/vdradmin-2 vdradmin
+	newconfd "${FILESDIR}"/confd-2 vdradmin
 
 	dobin vdradmind.pl
 
 	insinto ${LIB_DIR}/template
-	doins -r ${S}/template/*
+	doins -r "${S}"/template/*
 
 	insinto ${LIB_DIR}/lib/Template/Plugin
-	doins -r ${S}/lib/Template/Plugin/JavaScript.pm
+	doins -r "${S}"/lib/Template/Plugin/JavaScript.pm
 
 	insinto /usr/share/locale/
-	doins -r ${S}/locale/*
+	doins -r "${S}"/locale/*
 
 	exeinto ${LIB_DIR}
 	doexe autotimer2searchtimer.pl
 
 	dodoc HISTORY INSTALL CREDITS README* REQUIREMENTS FAQ
 	docinto contrib
-	dodoc ${S}/contrib/*
+	dodoc "${S}"/contrib/*
 
 	diropts "-m755 -o ${VDRADMIN_USER} -g ${VDRADMIN_GROUP}"
 	keepdir "${ETC_DIR}"
@@ -88,12 +88,12 @@ src_install() {
 
 pkg_preinst() {
 	if [[ -f ${ROOT}${ETC_DIR}/vdradmind.conf ]]; then
-		cp ${ROOT}${ETC_DIR}/vdradmind.conf ${D}${ETC_DIR}/vdradmind.conf
+		cp "${ROOT}"${ETC_DIR}/vdradmind.conf "${D}"${ETC_DIR}/vdradmind.conf
 	else
 		elog "Creating a new config-file."
 		echo
 
-		cat <<-EOF > ${D}${ETC_DIR}/vdradmind.conf
+		cat <<-EOF > "${D}${ETC_DIR}/vdradmind.conf"
 			VDRCONFDIR = /etc/vdr
 			VIDEODIR = /var/vdr/video
 			EPG_FILENAME = /var/vdr/video/epg.data
@@ -103,7 +103,7 @@ pkg_preinst() {
 		EOF
 		# feed it with newlines
 		yes "" \
-		  | ${D}/usr/bin/vdradmind.pl --cfgdir ${D}${ETC_DIR} --config \
+		  | "${D}"/usr/bin/vdradmind.pl --cfgdir "${D}"${ETC_DIR} --config \
 		  |sed -e 's/: /: \n/g'
 
 		[[ ${PIPESTATUS[1]} == "0" ]] || die "Failed to create initial configuration."
@@ -116,7 +116,7 @@ pkg_preinst() {
 		elog "installation or change it in Setup-Menu of Web-Interface."
 		elog
 	fi
-	chown ${VDRADMIN_USER}:${VDRADMIN_GROUP} ${D}${ETC_DIR}/vdradmind.conf
+	chown ${VDRADMIN_USER}:${VDRADMIN_GROUP} "${D}"${ETC_DIR}/vdradmind.conf
 }
 
 pkg_postinst() {
@@ -124,7 +124,7 @@ pkg_postinst() {
 		local owner=$(stat ${ROOT}${ETC_DIR} -c "%U")
 		if [[ ${owner} != vdradmin ]]; then
 			elog "Changing ownership of ${ETC_DIR}."
-			chown -R ${VDRADMIN_USER}:${VDRADMIN_GROUP} ${ROOT}${ETC_DIR}
+			chown -R ${VDRADMIN_USER}:${VDRADMIN_GROUP} "${ROOT}"${ETC_DIR}
 		fi
 	fi
 
@@ -175,5 +175,5 @@ pkg_postinst() {
 
 pkg_config() {
 	/usr/bin/vdradmind.pl -c
-	chown ${VDRADMIN_USER}:${VDRADMIN_GROUP} ${ROOT}${ETC_DIR}/vdradmind.conf
+	chown ${VDRADMIN_USER}:${VDRADMIN_GROUP} "${ROOT}"${ETC_DIR}/vdradmind.conf
 }
