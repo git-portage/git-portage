@@ -1,13 +1,13 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/tk/Attic/tk-8.5_alpha6.ebuild,v 1.1 2007/07/20 18:39:46 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/tk/Attic/tk-8.5.0.ebuild,v 1.1 2007/12/22 03:58:06 matsuu Exp $
 
 WANT_AUTOCONF=latest
 WANT_AUTOMAKE=latest
 
 inherit autotools eutils multilib toolchain-funcs
 
-MY_P="${PN}${PV/_alpha/a}"
+MY_P="${PN}${PV/_beta/b}"
 DESCRIPTION="Tk Widget Set"
 HOMEPAGE="http://www.tcl.tk/"
 SRC_URI="mirror://sourceforge/tcl/${MY_P}-src.tar.gz"
@@ -44,7 +44,7 @@ src_unpack() {
 	epatch "${FILESDIR}"/${PN}-8.4.11-multilib.patch
 
 	# Bug 125971
-	epatch "${FILESDIR}"/${P}-tclm4-soname.patch
+	epatch "${FILESDIR}"/${PN}-8.5_alpha6-tclm4-soname.patch
 
 	cd "${S}"/unix
 	eautoreconf
@@ -67,7 +67,7 @@ src_compile() {
 src_install() {
 	#short version number
 	local v1
-	v1=${PV%_*}
+	v1=${PV%.*}
 
 	cd "${S}"/unix
 	S= emake DESTDIR="${D}" install || die

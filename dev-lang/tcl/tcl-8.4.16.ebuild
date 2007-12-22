@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/tcl/Attic/tcl-8.4.14-r1.ebuild,v 1.1 2007/07/12 18:06:14 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/tcl/Attic/tcl-8.4.16.ebuild,v 1.1 2007/12/22 03:54:54 matsuu Exp $
 
 WANT_AUTOCONF=latest
 WANT_AUTOMAKE=latest
@@ -18,12 +18,12 @@ IUSE="debug threads"
 
 DEPEND=""
 
-S=${WORKDIR}/${PN}${PV}
+S="${WORKDIR}/${PN}${PV}"
 
 pkg_setup() {
 	if use threads ; then
 		ewarn ""
-		ewarn "PLEASE NOTE: You are compiling ${P} with"
+		ewarn "PLEASE NOTE: You are compiling ${PF} with"
 		ewarn "threading enabled."
 		ewarn "Threading is not supported by all applications"
 		ewarn "that compile against tcl. You use threading at"
@@ -36,10 +36,10 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${PN}-8.4.11-multilib.patch
+	epatch "${FILESDIR}"/${P}-multilib.patch
 
 	# Bug 125971
-	epatch "${FILESDIR}"/${PN}-8.3.5-tclm4-soname.patch
+	epatch "${FILESDIR}"/${PN}-8.4.15-tclm4-soname.patch
 
 	local d
 	for d in */configure ; do
@@ -73,7 +73,7 @@ src_install() {
 	v1=${PV%.*}
 
 	cd "${S}"/unix
-	S= make DESTDIR="${D}" install || die
+	S= emake DESTDIR="${D}" install || die
 
 	# fix the tclConfig.sh to eliminate refs to the build directory
 	local mylibdir=$(get_libdir) ; mylibdir=${mylibdir//\/}
@@ -107,7 +107,7 @@ src_install() {
 	dosym tclsh${v1} /usr/bin/tclsh
 
 	cd "${S}"
-	dodoc README changes license.terms
+	dodoc ChangeLog* README changes
 }
 
 pkg_postinst() {
