@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/vzctl/Attic/vzctl-3.0.18.ebuild,v 1.2 2007/07/13 07:32:46 phreak Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/vzctl/Attic/vzctl-3.0.22.ebuild,v 1.1 2007/12/24 10:29:12 pva Exp $
 
 inherit bash-completion eutils
 
@@ -39,8 +39,9 @@ src_install() {
 	rm -rf "${D}"/etc/bash_completion.d
 	dobashcompletion "${S}"/etc/bash_completion.d/vzctl.sh vzctl
 
-	# We need to keep /etc/vz/names
-	keepdir /etc/vz/names
+	# We need to keep some dirs
+	keepdir /vz/{dump,lock,root,private,template/cache}
+	keepdir /etc/vz/names /var/lib/vzctl/veip
 }
 
 pkg_postinst() {
