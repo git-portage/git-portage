@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/l7-filter/Attic/l7-filter-2.9.ebuild,v 1.5 2007/12/24 09:26:19 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/l7-filter/Attic/l7-filter-2.17.ebuild,v 1.1 2007/12/24 09:26:19 pva Exp $
 
 inherit linux-info eutils
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/l7-filter/${MY_P}.tar.gz
 	mirror://gentoo/additional_patch_for_2.6.13.diff"
 
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE=""
 #break repoman
 #SLOT="${KV}"
@@ -20,9 +20,15 @@ S=${WORKDIR}/${MY_P}
 RDEPEND="net-misc/l7-protocols"
 
 which_patch() {
-	if kernel_is ge 2 6 18
+	if kernel_is ge 2 6 22
 	then
-		PATCH=kernel-2.6.18-2.6.19-layer7-2.9.patch
+		PATCH=kernel-2.6.22-2.6.24-layer7-${PV}.patch
+	elif kernel_is ge 2 6 20
+	then
+		PATCH=for_older_kernels/kernel-2.6.20-2.6.21-layer7-2.16.1.patch
+	elif kernel_is ge 2 6 18
+	then
+		PATCH=for_older_kernels/kernel-2.6.18-2.6.19-layer7-2.9.patch
 	elif kernel_is ge 2 6 17
 	then
 		PATCH=for_older_kernels/kernel-2.6.17-layer7-2.5.patch
@@ -40,7 +46,7 @@ which_patch() {
 		PATCH=for_older_kernels/kernel-2.6.0-2.6.8.1-layer7-0.9.2.patch
 	elif kernel_is 2 4
 	then
-		PATCH=kernel-2.4-layer7-2.9.patch
+		PATCH=kernel-2.4-layer7-${PV}.patch
 	else
 		die "No L7-filter patch for Kernel version ${KV_FULL} - sorry not supported"
 	fi
@@ -56,7 +62,8 @@ src_unpack() {
 
 	which_patch
 
-	if [ -f ${KV_DIR}/include/linux/netfilter_ipv4/ipt_layer7.h ]
+	if [ -f ${KV_DIR}/include/linux/netfilter_ipv4/ipt_layer7.h ] || \
+		[ -f ${KV_DIR}/include/linux/netfilter/xt_layer7.h ]
 	then
 		ewarn "already installed ${PN} for kernel ${KV_FULL}"
 		ewarn "If this is an upgrade attempt, try unmerging first."
@@ -72,24 +79,30 @@ src_unpack() {
 
 	cd "${S}"
 
-	mkdir  kernel
-	mkdir  kernel/Documentation
+	mkdir kernel
+	mkdir kernel/Documentation
 
 	# create needed directories
-	mkdir -p "${S}"/kernel/net/ipv4/netfilter/regexp/
-	mkdir -p "${S}"/kernel/include/linux/netfilter_ipv4/
+	if kernel_is ge 2 6 20
+	then
+		mkdir -p "${S}"/kernel/net/netfilter/regexp/
+		mkdir -p "${S}"/kernel/include/net/netfilter/
+	else
+		mkdir -p "${S}"/kernel/net/ipv4/netfilter/regexp/
+		mkdir -p "${S}"/kernel/include/linux/netfilter_ipv4/
+	fi
 
 	cd ${KV_DIR}
 
 	# start to copy needed files, if file not exists create an empty file
-	FILES=$(patch -t --dry-run -p1 < ${S}/${PATCH} | grep "^patching file" | cut -f 3 -d ' ')
+	FILES=$(patch -t --dry-run -p1 < "${S}"/${PATCH} | grep "^patching file" | cut -f 3 -d ' ')
 	for F in ${FILES};
 	do
 		if [ -f "${F}" ];
 		then
 			cp -P "${F}" "${S}/kernel/${F}"
-		else
-			touch "${S}/kernel/${F}"
+		#else
+		#	touch "${S}/kernel/${F}"
 		fi
 	done
 
@@ -117,8 +130,8 @@ src_install() {
 pkg_preinstall() {
 	if has collision-protect ${FEATURES}; then
 		ewarn
-		ewarn "Collisions are expected as this patches kernel code. Disable"
-		ewarn "FEATURES=collision-protect before use"
+		ewarn "Collisions are expected as this patches kernel code. Use"
+		ewarn "FEATURES=-collision-protect emerge ...... for this package"
 		die 'incompatible FEATURES=collision-protect'
 	fi
 }
@@ -137,15 +150,26 @@ pkg_postinst() {
 
 pkg_prerm() {
 	# How to determine what version it was installed against? - measily
-	eval $(/bin/fgrep KV=2 "${ROOT}"/var/db/pkg/net-misc/${PF}/environment |\
-		/bin/head -1)
+	if [ -f "${ROOT}"/var/db/pkg/net-misc/${PF}/environment ]; then
+		eval $(/bin/fgrep KV=2 "${ROOT}"/var/db/pkg/net-misc/${PF}/environment |\
+			/bin/head -1)
+	elif [ -f "${ROOT}"/var/db/pkg/net-misc/${PF}/environment.bz2 ]; then
+		eval $(/bin/bzfgrep KV=2 "${ROOT}"/var/db/pkg/net-misc/${PF}/environment.bz2 |\
+			/bin/head -1)
+	elif [ -f "${ROOT}"/var/db/pkg/net-misc/${PF}/environment.gz ]; then
+		eval $(/usr/bin/zfgrep KV=2	"${ROOT}"/var/db/pkg/net-misc/${PF}/environment.gz |\
+			/bin/head -1)
+	else
+		die 'could not find previous version'
+	fi
 	KV_DIR=/usr/src/linux-"${KV}"
 	if [ -d  ${KV_DIR} ]; then
 		ewarn "${KV_DIR} nolonger exists"
 		return 0;
 	fi
 	echo "KV_DIR=$KV_DIR"
-	if [ -f ${KV_DIR}/include/linux/netfilter_ipv4/ipt_layer7.h ]
+	if [ -f ${KV_DIR}/include/linux/netfilter_ipv4/ipt_layer7.h ] || \
+		[ -f ${KV_DIR}/include/linux/netfilter/xt_layer7.h ]
 	then
 		einfo 'attempting to unpatch l7-patch from kernel ${KV_FULL}'
 		which_patch
