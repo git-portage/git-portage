@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/backuppc
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/ChangeLog,v 1.5 2006/10/10 14:45:52 seemant Exp $
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/ChangeLog,v 1.6 2007/12/25 14:43:46 phreak Exp $
+
+  25 Dec 2007; Christian Heim <phreak@gentoo.org> metadata.xml:
+  Removing seemant from metadata.xml as per #202469.
 
   10 Oct 2006; Seemant Kulleen <seemant@gentoo.org> -backuppc-2.1.2.ebuild,
   backuppc-2.1.2-r1.ebuild:
