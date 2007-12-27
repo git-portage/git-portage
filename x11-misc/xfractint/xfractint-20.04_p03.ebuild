@@ -1,14 +1,14 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xfractint/Attic/xfractint-20.4.00.ebuild,v 1.8 2007/07/22 03:21:47 dberkholz Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xfractint/Attic/xfractint-20.04_p03.ebuild,v 1.1 2007/12/27 20:42:56 drac Exp $
 
 inherit eutils flag-o-matic
 
-MY_P=xfractint-20.04p00
+MY_P=xfractint-20.04p03
 S="${WORKDIR}/${MY_P}"
 DESCRIPTION="The best fractal generator for X."
 HOMEPAGE="http://www.fractint.org"
-SRC_URI="http://www.fractint.org/ftp/current/linux/${P/int-/}.tar.gz"
+SRC_URI="http://www.fractint.org/ftp/current/linux/${MY_P}.tar.gz"
 
 KEYWORDS="amd64 ppc sparc x86"
 SLOT="0"
@@ -25,28 +25,19 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/${PN}-20.03p01-make.patch
+	epatch "${FILESDIR}"/${PN}-20.4.03-makefile.patch
 }
 
 src_compile() {
-	cd ${S}
-	cp Makefile Makefile.orig
 	replace-flags "-funroll-all-loops" "-funroll-loops"
-	sed -e "s:CFLAGS = :CFLAGS = $CFLAGS :" Makefile.orig >Makefile
-
-	emake -j1
+	emake -j1 || die "make failed"
 }
 
 src_install() {
-	dodir /usr/bin
-	dodir /usr/share/xfractint
-	dodir /usr/man/man1
+	make DESTDIR="${D}"	install || die
 
-	make \
-		BINDIR=${D}usr/bin \
-		MANDIR=${D}usr/man/man1 \
-		SRCDIR=${D}usr/share/xfractint \
-		install || die
+	chmod 0644 -R ${D}usr/share/xfractint/*
+	chmod a+X -R ${D}usr/share/xfractint/*
 
 	newenvd ${FILESDIR}/xfractint.envd 60xfractint
 }
@@ -56,4 +47,8 @@ pkg_postinst() {
 	einfo "XFractInt requires the FRACTDIR variable to be set in order to start."
 	einfo "Please re-login or \`source /etc/profile\` to have this variable set automatically."
 	einfo
+
+	# Fix directory permissions as they might be broken because
+	# of an earlier installation.
+	chmod a+X -R ${ROOT}/usr/share/xfractint/*
 }
