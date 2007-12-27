@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/Attic/genkernel-3.4.9_pre9-r1.ebuild,v 1.1 2007/11/16 23:19:58 wolf31o2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/Attic/genkernel-3.4.9_pre12.ebuild,v 1.1 2007/12/27 19:10:13 wolf31o2 Exp $
 
 inherit bash-completion eutils
 
@@ -8,7 +8,7 @@ VERSION_DMAP='1.02.22'
 VERSION_DMRAID='1.0.0.rc14'
 VERSION_E2FSPROGS='1.39'
 VERSION_LVM='2.02.28'
-VERSION_PKG='3.4-r2'
+VERSION_PKG='3.4-r3'
 VERSION_UNIONFS='1.5pre-cvs200701042308'
 
 DESCRIPTION="Gentoo automatic kernel building scripts"
@@ -44,7 +44,7 @@ src_unpack() {
 	cd "${S}"
 	unpack ${PN}-pkg-${VERSION_PKG}.tar.bz2
 	use selinux && sed -i 's/###//g' gen_compile.sh
-	epatch "${FILESDIR}"/${P}-lvm2fix.patch
+#	epatch "${FILESDIR}"/${P}-lvm2fix.patch
 }
 
 src_install() {
