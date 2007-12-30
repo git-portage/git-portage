@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-antivirus/klamav/Attic/klamav-0.41.ebuild,v 1.7 2007/05/19 16:52:09 nixnut Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-antivirus/klamav/Attic/klamav-0.41.ebuild,v 1.8 2007/12/30 12:50:17 mattepiu Exp $
 
 inherit kde
 
@@ -26,7 +26,7 @@ PATCHES="${FILESDIR}/${P}-cl_loaddbdir.patch"
 src_unpack(){
 	kde_src_unpack
 	# Assure a future version won't try to build this.
-	rm -rf ${WORKDIR}/${MY_P}/dazuko* || die "We missed to eradicate some files"
+	rm -rf "${WORKDIR}/${MY_P}/dazuko"* || die "We missed to eradicate some files"
 }
 
 pkg_postinst(){
