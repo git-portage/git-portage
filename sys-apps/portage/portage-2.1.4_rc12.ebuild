@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.4_rc9.ebuild,v 1.2 2007/12/12 07:33:11 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.4_rc12.ebuild,v 1.1 2007/12/30 17:25:46 zmedico Exp $
 
 inherit toolchain-funcs eutils flag-o-matic multilib
 
@@ -93,7 +93,7 @@ src_compile() {
 		cd "${S}"/doc
 		touch fragment/date
 		sed -i "s/svn-trunk/${PVR}/" fragment/version
-		make xhtml-nochunks || die "failed to make docs"
+		make xhtml xhtml-nochunks || die "failed to make docs"
 	fi
 
 	if use epydoc; then
@@ -141,6 +141,13 @@ src_install() {
 	# BSD and OSX need a sed wrapper so that find/xargs work properly
 	if use userland_GNU; then
 		rm "${S}"/bin/sed || die "Failed to remove sed wrapper"
+	else
+		local x
+		for x in awk make patch ; do
+			# these wrappers will be preferred in $PATH
+			# and they do foo -> gfoo translation
+			dosym sed "${portage_base}/bin/${x}"
+		done
 	fi
 	cd "${S}"/bin
 	doexe *
