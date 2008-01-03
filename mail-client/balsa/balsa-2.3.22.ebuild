@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/balsa/Attic/balsa-2.3.13.ebuild,v 1.9 2007/10/10 15:22:32 remi Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/balsa/Attic/balsa-2.3.22.ebuild,v 1.1 2008/01/03 22:54:02 eva Exp $
 
 inherit gnome2
 
@@ -10,12 +10,13 @@ SRC_URI="http://balsa.gnome.org/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ppc sparc x86"
-IUSE="crypt doc gnome gtkhtml gtkspell kerberos ldap pcre sqlite ssl xface"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
+# Doesn't currently build with -gnome
+IUSE="crypt doc gtkhtml gtkspell kerberos ldap libnotify pcre rubrica sqlite ssl xface"
 
 RDEPEND=">=dev-libs/glib-2.0
-		 >=x11-libs/gtk+-2.4
-		 >=dev-libs/gmime-2.1.19
+		 >=x11-libs/gtk+-2.10
+		 >=dev-libs/gmime-2.1.9
 		 >=net-libs/libesmtp-1.0.3
 		 >=gnome-base/orbit-2
 		 >=gnome-base/libbonobo-2.0
@@ -24,35 +25,32 @@ RDEPEND=">=dev-libs/glib-2.0
 		   sys-devel/gettext
 		   net-mail/mailbase
 		crypt? ( >=app-crypt/gpgme-1.0 )
-		gnome? (
-				>=gnome-base/libgnome-2.0
-				>=gnome-base/libgnomeui-2.0
-				>=gnome-base/gnome-vfs-2.0
-				>=gnome-base/libgnomeprint-2.1.4
-				>=gnome-base/libgnomeprintui-2.1.4
-				=x11-libs/gtksourceview-1*
-			   )
-		gtkhtml? ( =gnome-extra/gtkhtml-2* )
+		>=gnome-base/libgnome-2.0
+		>=gnome-base/libgnomeui-2.0
+		>=gnome-base/gnome-vfs-2.0
+		=x11-libs/gtksourceview-1*
+		gtkhtml? ( gnome-extra/gtkhtml )
+		sqlite? ( >=dev-db/sqlite-2.8 )
+		libnotify? ( x11-libs/libnotify )
 		gtkspell? ( =app-text/gtkspell-2* )
 		!gtkspell? ( virtual/aspell-dict )
 		kerberos? ( app-crypt/mit-krb5 )
 		ldap? ( net-nds/openldap )
+		rubrica? ( dev-libs/libxml2 )
 		pcre? ( >=dev-libs/libpcre-5.0 )
-		sqlite? ( >=dev-db/sqlite-2.8 )
 		ssl? ( dev-libs/openssl )
 		xface? ( >=media-libs/compface-1.5.1 )"
 DEPEND="${RDEPEND}
 		dev-util/intltool
 		dev-util/pkgconfig
-		gnome? ( >=app-text/scrollkeeper-0.1.4 )
+		>=app-text/scrollkeeper-0.1.4
 		doc? ( dev-util/gtk-doc )"
 
 DOCS="AUTHORS ChangeLog HACKING NEWS README TODO docs/*"
-USE_DESTDIR="1"
 
 pkg_setup() {
 	# threads are currently broken with gpgme
-	G2CONF="--disable-threads"
+	G2CONF="${G2CONF} --disable-threads"
 
 	if use xface ; then
 		G2CONF="${G2CONF} --with-compface"
@@ -66,11 +64,11 @@ pkg_setup() {
 		G2CONF="${G2CONF} --without-gpgme"
 	fi
 
-	if use gnome ; then
+#	if use gnome ; then
 		G2CONF="${G2CONF} --with-gtksourceview"
-	else
-		G2CONF="${G2CONF} --without-gtksourceview"
-	fi
+#	else
+#		G2CONF="${G2CONF} --without-gtksourceview"
+#	fi
 
 	if use gtkhtml ; then
 		G2CONF="${G2CONF} --with-gtkhtml=2"
@@ -78,12 +76,13 @@ pkg_setup() {
 		G2CONF="${G2CONF} --without-gtkhtml"
 	fi
 
-	G2CONF="${G2CONF} 					\
-			$(use_with gnome) 			\
-			$(use_with gtkspell) 		\
-			$(use_with kerberos gss) 	\
-			$(use_with ldap) 			\
-			$(use_enable pcre) 			\
-			$(use_with sqlite) 			\
-			$(use_with ssl)"
+	G2CONF="${G2CONF}
+		$(use_with rubrica)
+		$(use_with gtkspell)
+		$(use_with kerberos gss)
+		$(use_with ldap)
+		$(use_enable pcre)
+		$(use_with sqlite)
+		$(use_with ssl)"
 }
+
