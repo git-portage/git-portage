@@ -1,8 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/cherrypy/Attic/cherrypy-3.0.2.ebuild,v 1.2 2007/11/01 19:25:42 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/cherrypy/Attic/cherrypy-2.2.1-r2.ebuild,v 1.1 2008/01/08 22:18:10 hawking Exp $
 
-inherit distutils
+inherit eutils distutils
 
 MY_P=CherryPy-${PV}
 
@@ -11,21 +11,27 @@ SRC_URI="http://download.cherrypy.org/cherrypy/${PV}/${MY_P}.tar.gz"
 HOMEPAGE="http://www.cherrypy.org/"
 IUSE="doc"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~ppc x86"
+KEYWORDS="~amd64 ~ia64 ~ppc ~x86"
 LICENSE="BSD"
 
-DEPEND=""
+DEPEND="dev-python/setuptools"
 RDEPEND=""
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
+	epatch "${FILESDIR}"/${P}-py2.5.patch
+	epatch "${FILESDIR}"/${P}-invalidsession.patch
+	sed -i \
+		-e '/raw_input/d' \
+		cherrypy/test/test.py || die "sed failed"
 	sed -i \
 		-e 's/"cherrypy.tutorial",//' \
 		-e "/('cherrypy\/tutorial',/, /),/d" \
+		-e 's/distutils.core/setuptools/' \
 		setup.py || die "sed failed"
 
 }
@@ -39,5 +45,5 @@ src_install() {
 }
 
 src_test() {
-	PYTHONPATH=. "${python}" cherrypy/test/test.py --dumb || die "test failed"
+	PYTHONPATH=. "${python}" cherrypy/test/test.py || die "test failed"
 }
