@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/gnucash/Attic/gnucash-2.2.2.ebuild,v 1.2 2007/12/20 15:20:13 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/gnucash/Attic/gnucash-2.2.3.ebuild,v 1.1 2008/01/08 21:51:49 tove Exp $
 
 inherit autotools eutils gnome2
 
@@ -8,8 +8,7 @@ DOC_VER="2.2.0"
 
 DESCRIPTION="A personal finance manager."
 HOMEPAGE="http://www.gnucash.org/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2
-	mirror://gentoo/${PN}-icon.svg.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
@@ -22,19 +21,16 @@ RDEPEND=">=dev-libs/glib-2.6.3
 	     (  <dev-scheme/guile-1.8.3  =dev-scheme/slib-3.1.1* ) )
 	>=sys-libs/zlib-1.1.4
 	>=dev-libs/popt-1.5
-	>=x11-libs/gtk+-2.6
+	>=x11-libs/gtk+-2.10
 	>=gnome-base/libgnomeui-2.4
 	>=gnome-base/libgnomeprint-2.10
 	>=gnome-base/libgnomeprintui-2.10
 	>=gnome-base/libglade-2.4
-	|| (
-		=gnome-extra/gtkhtml-3.12*
-		=gnome-extra/gtkhtml-3.10*
-	)
+	>=gnome-extra/gtkhtml-3.14
 	>=dev-libs/libxml2-2.5.10
 	>=gnome-base/gconf-2
 	>=app-text/scrollkeeper-0.3
-	x11-libs/goffice
+	>=x11-libs/goffice-0.6
 	ofx? ( >=dev-libs/libofx-0.7.0 )
 	hbci? ( net-libs/aqbanking
 		chipcard? ( sys-libs/libchipcard )
@@ -73,14 +69,6 @@ pkg_setup() {
 	if ${will_die} ; then
 		die "Please rebuild the packages with the use flags above."
 	fi
-}
-
-src_unpack() {
-	unpack ${A}
-	cp "${WORKDIR}"/gnucash-icon.svg "${S}"/src/pixmaps || die
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-icons.patch
-	AT_M4DIR=macros eautoreconf
 }
 
 src_compile() {
