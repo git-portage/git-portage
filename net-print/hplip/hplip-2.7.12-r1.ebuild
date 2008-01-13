@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/hplip/Attic/hplip-2.7.10.ebuild,v 1.7 2008/01/13 15:08:18 calchan Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/hplip/Attic/hplip-2.7.12-r1.ebuild,v 1.1 2008/01/13 15:08:18 calchan Exp $
 
-inherit eutils linux-info
+inherit eutils linux-info python
 
 DESCRIPTION="HP Linux Imaging and Printing System. Includes net-print/hpijs, scanner drivers and service tools."
 HOMEPAGE="http://hplip.sourceforge.net/"
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/hplip/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="X doc fax minimal parport ppds scanner snmp"
 
 DEPEND="!net-print/hpijs
@@ -123,6 +123,7 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
+	python_mod_optimize "${ROOT}"usr/share/hplip
 	elog "You should run hp-setup as root if you are installing hplip for the first time, and may also"
 	elog "need to run it if you are upgrading from an earlier version."
 	elog
@@ -130,4 +131,8 @@ pkg_postinst() {
 	elog
 	elog "This release doesn't use an init script anymore, so you should probably do a"
 	elog "'rc-update del hplip' if you are updating from an old version."
+}
+
+pkg_postrm() {
+	python_mod_cleanup /usr/share/hplip
 }
