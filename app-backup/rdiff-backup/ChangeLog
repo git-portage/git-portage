@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/rdiff-backup
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/rdiff-backup/ChangeLog,v 1.31 2008/01/10 19:53:00 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/rdiff-backup/ChangeLog,v 1.32 2008/01/14 18:43:46 angelos Exp $
+
+  14 Jan 2008; Christoph Mende <angelos@gentoo.org>
+  rdiff-backup-1.0.5.ebuild:
+  Stable on amd64 wrt bug #162231
 
   10 Jan 2008; Markus Meier <maekke@gentoo.org> rdiff-backup-1.0.5.ebuild:
   x86 stable, bug #162231
