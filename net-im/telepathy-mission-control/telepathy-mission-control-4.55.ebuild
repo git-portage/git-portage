@@ -1,9 +1,11 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/telepathy-mission-control/Attic/telepathy-mission-control-4.51.ebuild,v 1.1 2007/12/18 11:54:12 coldwind Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/telepathy-mission-control/Attic/telepathy-mission-control-4.55.ebuild,v 1.1 2008/01/16 22:08:49 coldwind Exp $
+
+inherit eutils
 
 DESCRIPTION="Nokia's implementation of a Telepathy Mission Control"
-HOMEPAGE="http://telepathy.freedesktop.org/wiki/Mission_Control"
+HOMEPAGE="http://mission-control.sourceforge.net/"
 SRC_URI="mirror://sourceforge/mission-control/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"

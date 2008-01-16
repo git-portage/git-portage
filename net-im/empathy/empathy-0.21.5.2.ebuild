@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/empathy/Attic/empathy-0.21.1.ebuild,v 1.1 2007/10/29 00:54:20 coldwind Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/empathy/Attic/empathy-0.21.5.2.ebuild,v 1.1 2008/01/16 22:11:15 coldwind Exp $
 
 inherit gnome2 eutils versionator
 
@@ -13,23 +13,30 @@ SRC_URI="http://ftp.gnome.org/pub/GNOME/sources/${PN}/${MAJOR_V}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="python spell"
+IUSE="python spell test"
 
 RDEPEND=">=dev-libs/dbus-glib-0.51
 	>=dev-libs/glib-2.14.0
-	dev-libs/libxml2
+	>=x11-libs/gtk+-2.12.0
 	>=gnome-base/gconf-2
 	>=gnome-base/libglade-2
-	>=net-libs/libtelepathy-0.0.57
-	>=net-im/telepathy-mission-control-4.37
-	>=x11-libs/gtk+-2.12.0
+	>=gnome-base/gnome-panel-2.10
+	>=net-libs/libtelepathy-0.3.1
+	>=net-libs/telepathy-glib-0.7.0
+	>=net-im/telepathy-mission-control-4.55
+	dev-libs/libxml2
 	>=gnome-base/gnome-vfs-2
 	>=gnome-extra/evolution-data-server-1.2
-	gnome-base/gnome-panel
-	spell? ( app-text/aspell )
-	python? ( >=dev-lang/python-2.4.4-r5 )"
+	spell? (
+		app-text/aspell
+		app-text/iso-codes )
+	python? (
+		>=dev-lang/python-2.4.4-r5
+		>=dev-python/pygtk-2 )"
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.12.0"
+	>=dev-util/intltool-0.35.0
+	>=dev-util/pkgconfig-0.16
+	test? ( >=dev-libs/check-0.9.4 )"
 
 DOCS="CONTRIBUTORS AUTHORS README"
 
