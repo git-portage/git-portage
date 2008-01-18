@@ -1,16 +1,16 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.4.0.90-r1.ebuild,v 1.1 2008/01/17 20:52:28 dberkholz Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.3.0.0-r4.ebuild,v 1.1 2008/01/18 21:31:33 dberkholz Exp $
 
 # Must be before x-modular eclass is inherited
-#SNAPSHOT="yes"
+SNAPSHOT="yes"
 
 inherit x-modular multilib
 
 OPENGL_DIR="xorg-x11"
 
 MESA_PN="Mesa"
-MESA_PV="7.0.2"
+MESA_PV="6.5.2"
 MESA_P="${MESA_PN}-${MESA_PV}"
 MESA_SRC_P="${MESA_PN}Lib-${MESA_PV}"
 
@@ -51,7 +51,6 @@ IUSE_INPUT_DEVICES="
 	input_devices_synaptics
 	input_devices_wacom"
 IUSE_VIDEO_CARDS="
-	video_cards_amd
 	video_cards_apm
 	video_cards_ark
 	video_cards_chips
@@ -93,13 +92,11 @@ IUSE_VIDEO_CARDS="
 	video_cards_trident
 	video_cards_tseng
 	video_cards_v4l
-	video_cards_vermilion
 	video_cards_vesa
 	video_cards_vga
 	video_cards_via
 	video_cards_vmware
 	video_cards_voodoo
-	video_cards_xgi
 	video_cards_fglrx
 	video_cards_nvidia"
 IUSE_SERVERS="dmx kdrive xorg"
@@ -107,41 +104,39 @@ IUSE="${IUSE_VIDEO_CARDS}
 	${IUSE_INPUT_DEVICES}
 	${IUSE_SERVERS}
 	3dfx
-	dri hal ipv6 minimal nptl sdl xprint"
-RDEPEND="hal? ( sys-apps/hal )
-	>=x11-libs/libXfont-1.3.1
-	>=x11-libs/xtrans-1.0.4
-	>=x11-libs/libXau-1.0.3
-	>=x11-libs/libXext-1.0.2
-	>=x11-libs/libX11-1.1.3
-	>=x11-libs/libxkbfile-1.0.4
-	>=x11-libs/libXdmcp-1.0.2
-	>=x11-libs/libXmu-1.0.3
-	>=x11-libs/libXrender-0.9.4
-	>=x11-libs/libXi-1.1.3
-	>=x11-libs/pixman-0.9.5
+	dri ipv6 minimal nptl sdl xprint"
+RDEPEND=">=x11-libs/libXfont-1.2.5
+	x11-libs/xtrans
+	x11-libs/libXau
+	x11-libs/libXext
+	x11-libs/libX11
+	x11-libs/libxkbfile
+	x11-libs/libXdmcp
+	x11-libs/libXmu
+	<x11-libs/libXrender-0.9.3
+	x11-libs/libXi
 	media-libs/freetype
-	>=media-libs/mesa-7.0.1
+	>=media-libs/mesa-6.5.2
 	media-fonts/font-adobe-75dpi
 	media-fonts/font-misc-misc
 	media-fonts/font-cursor-misc
-	>=x11-misc/xbitmaps-1.0.1
-	>=x11-misc/xkeyboard-config-0.9
-	>=x11-apps/iceauth-1.0.2
-	>=x11-apps/rgb-1.0.1
-	>=x11-apps/xauth-1.0.2
-	>=x11-apps/xinit-1.0.5
+	x11-misc/xbitmaps
+	|| ( x11-misc/xkeyboard-config x11-misc/xkbdata )
+	x11-apps/iceauth
+	x11-apps/rgb
+	x11-apps/xauth
+	x11-apps/xinit
 	app-admin/eselect-opengl
-	>=x11-libs/libXaw-1.0.4
-	>=x11-libs/libXpm-3.5.7
-	>=x11-libs/libXxf86misc-1.0.1
-	>=x11-libs/libXxf86vm-1.0.1
-	dmx? ( >=x11-libs/libdmx-1.0.2
-			>=x11-libs/libXfixes-4.0.3 )
-	!minimal? ( >=x11-libs/libXtst-1.0.3
-		>=x11-libs/libXres-1.0.3 )
+	x11-libs/libXaw
+	x11-libs/libXpm
+	x11-libs/libXxf86misc
+	x11-libs/libXxf86vm
+	dmx? ( x11-libs/libdmx
+			x11-libs/libXfixes )
+	!minimal? ( x11-libs/libXtst
+		x11-libs/libXres )
 	>=x11-libs/libxkbui-1.0.2
-	>=x11-libs/liblbxutil-1.0.1
+	x11-libs/liblbxutil
 	kdrive? ( sdl? ( media-libs/libsdl ) )"
 	# Xres is dmx-dependent, xkbui is xorgcfg-dependent
 	# Xaw is dmx- and xorgcfg-dependent
@@ -149,75 +144,73 @@ RDEPEND="hal? ( sys-apps/hal )
 	# Xxf86misc and Xxf86vm are xorgcfg-dependent
 	# liblbxutil is lbx- dependent
 DEPEND="${RDEPEND}
-	!net-dialup/dtrace
 	>=x11-proto/randrproto-1.2.1
-	>=x11-proto/renderproto-0.9.3
+	<x11-proto/renderproto-0.9.3
 	>=x11-proto/fixesproto-4
 	>=x11-proto/damageproto-1.1
-	>=x11-proto/xextproto-7.0.2
-	>=x11-proto/xproto-7.0.10
-	>=x11-proto/xf86dgaproto-2.0.3
-	>=x11-proto/xf86miscproto-0.9.2
-	>=x11-proto/xf86rushproto-1.1.2
-	>=x11-proto/xf86vidmodeproto-2.2.2
-	>=x11-proto/xf86bigfontproto-1.1.2
-	>=x11-proto/compositeproto-0.4
-	>=x11-proto/recordproto-1.13.2
-	>=x11-proto/resourceproto-1.0.2
-	>=x11-proto/videoproto-2.2.2
+	x11-proto/xextproto
+	x11-proto/xproto
+	x11-proto/xf86dgaproto
+	x11-proto/xf86miscproto
+	x11-proto/xf86rushproto
+	x11-proto/xf86vidmodeproto
+	x11-proto/xf86bigfontproto
+	>=x11-proto/compositeproto-0.3
+	x11-proto/recordproto
+	x11-proto/resourceproto
+	x11-proto/videoproto
 	>=x11-proto/scrnsaverproto-1.1.0
-	>=x11-proto/evieext-1.0.2
-	>=x11-proto/trapproto-3.4.3
+	x11-proto/evieext
+	x11-proto/trapproto
 	>=x11-proto/xineramaproto-1.1-r1
-	>=x11-proto/fontsproto-2.0.2
+	x11-proto/fontsproto
 	>=x11-proto/kbproto-1.0.3
-	>=x11-proto/inputproto-1.4.2.1
-	>=x11-proto/bigreqsproto-1.0.2
-	>=x11-proto/xcmiscproto-1.1.2
+	x11-proto/inputproto
+	x11-proto/bigreqsproto
+	x11-proto/xcmiscproto
 	>=x11-proto/glproto-1.4.8
-	dmx? ( >=x11-proto/dmxproto-2.2.2 )
-	dri? ( >=x11-proto/xf86driproto-2.0.3
+	dmx? ( x11-proto/dmxproto )
+	dri? ( x11-proto/xf86driproto
 		>=x11-libs/libdrm-2.3 )
-	xprint? ( >=x11-proto/printproto-1.0.3
-		>=x11-apps/mkfontdir-1.0.3
-		>=x11-apps/mkfontscale-1.0.3
-		>=x11-apps/xplsprinters-1.0.1 )"
+	xprint? ( x11-proto/printproto
+		x11-apps/mkfontdir
+		x11-apps/mkfontscale
+		x11-apps/xplsprinters )"
 
 # Drivers
 PDEPEND="
 	xorg? (
 		input_devices_acecad? ( >=x11-drivers/xf86-input-acecad-1.1.0 )
 		input_devices_aiptek? ( >=x11-drivers/xf86-input-aiptek-1.0.1 )
-		input_devices_calcomp? ( >=x11-drivers/xf86-input-calcomp-1.1.1 )
-		input_devices_citron? ( >=x11-drivers/xf86-input-citron-2.2.1 )
+		input_devices_calcomp? ( >=x11-drivers/xf86-input-calcomp-1.1.0 )
+		input_devices_citron? ( >=x11-drivers/xf86-input-citron-2.2.0 )
 		input_devices_digitaledge? ( >=x11-drivers/xf86-input-digitaledge-1.1.0 )
 		input_devices_dmc? ( >=x11-drivers/xf86-input-dmc-1.1.0 )
-		input_devices_dynapro? ( >=x11-drivers/xf86-input-dynapro-1.1.1 )
-		input_devices_elo2300? ( >=x11-drivers/xf86-input-elo2300-1.1.1 )
+		input_devices_dynapro? ( >=x11-drivers/xf86-input-dynapro-1.1.0 )
+		input_devices_elo2300? ( >=x11-drivers/xf86-input-elo2300-1.1.0 )
 		input_devices_elographics? ( >=x11-drivers/xf86-input-elographics-1.1.0 )
 		input_devices_evdev? ( >=x11-drivers/xf86-input-evdev-1.1.1 )
 		input_devices_fpit? ( >=x11-drivers/xf86-input-fpit-1.1.0 )
 		input_devices_hyperpen? ( >=x11-drivers/xf86-input-hyperpen-1.1.0 )
 		input_devices_jamstudio? ( >=x11-drivers/xf86-input-jamstudio-1.1.0 )
 		input_devices_joystick? ( >=x11-drivers/xf86-input-joystick-1.1.0 )
-		input_devices_keyboard? ( >=x11-drivers/xf86-input-keyboard-1.2.0 )
-		input_devices_magellan? ( >=x11-drivers/xf86-input-magellan-1.1.1 )
-		input_devices_microtouch? ( >=x11-drivers/xf86-input-microtouch-1.1.1 )
+		input_devices_keyboard? ( =x11-drivers/xf86-input-keyboard-1.1* )
+		input_devices_magellan? ( >=x11-drivers/xf86-input-magellan-1.1.0 )
+		input_devices_microtouch? ( >=x11-drivers/xf86-input-microtouch-1.1.0 )
 		input_devices_mouse? ( >=x11-drivers/xf86-input-mouse-1.1.0 )
 		input_devices_mutouch? ( >=x11-drivers/xf86-input-mutouch-1.1.0 )
 		input_devices_palmax? ( >=x11-drivers/xf86-input-palmax-1.1.0 )
-		input_devices_penmount? ( >=x11-drivers/xf86-input-penmount-1.2.1 )
-		input_devices_spaceorb? ( >=x11-drivers/xf86-input-spaceorb-1.1.1 )
+		input_devices_penmount? ( >=x11-drivers/xf86-input-penmount-1.1.0 )
+		input_devices_spaceorb? ( >=x11-drivers/xf86-input-spaceorb-1.1.0 )
 		input_devices_summa? ( >=x11-drivers/xf86-input-summa-1.1.0 )
 		input_devices_tek4957? ( >=x11-drivers/xf86-input-tek4957-1.1.0 )
 		input_devices_ur98? ( >=x11-drivers/xf86-input-ur98-1.1.0 )
-		input_devices_vmmouse? ( >=x11-drivers/xf86-input-vmmouse-12.4.2 )
+		input_devices_vmmouse? ( >=x11-drivers/xf86-input-vmmouse-12.4.0 )
 		input_devices_void? ( >=x11-drivers/xf86-input-void-1.1.0 )
 
 		input_devices_synaptics? ( x11-drivers/synaptics )
 		input_devices_wacom? ( x11-drivers/linuxwacom )
 
-		video_cards_amd? ( >=x11-drivers/xf86-video-amd-2.7.7.0 )
 		video_cards_apm? ( >=x11-drivers/xf86-video-apm-1.1.1 )
 		video_cards_ark? ( >=x11-drivers/xf86-video-ark-0.6.0 )
 		video_cards_chips? ( >=x11-drivers/xf86-video-chips-1.1.1 )
@@ -258,38 +251,41 @@ PDEPEND="
 		video_cards_trident? ( >=x11-drivers/xf86-video-trident-1.2.1 )
 		video_cards_tseng? ( >=x11-drivers/xf86-video-tseng-1.1.0 )
 		video_cards_v4l? ( >=x11-drivers/xf86-video-v4l-0.1.1 )
-		video_cards_vermilion? ( >=x11-drivers/xf86-video-vermilion-1.0.0 )
 		video_cards_vesa? ( >=x11-drivers/xf86-video-vesa-1.1.0 )
 		video_cards_vga? ( >=x11-drivers/xf86-video-vga-4.1.0 )
 		video_cards_via? ( >=x11-drivers/xf86-video-via-0.2.1 )
 		video_cards_vmware? ( >=x11-drivers/xf86-video-vmware-10.13.0 )
 		video_cards_voodoo? ( >=x11-drivers/xf86-video-voodoo-1.1.0 )
-		video_cards_xgi? ( >=x11-drivers/xf86-video-xgi-1.5.0 )
 		video_cards_tdfx? ( 3dfx? ( >=media-libs/glide-v3-3.10 ) )
-		video_cards_fglrx? ( >=x11-drivers/ati-drivers-8.433 )
-		video_cards_nvidia? ( >=x11-drivers/nvidia-drivers-71.86.01 )
+		video_cards_nvidia? ( x11-drivers/nvidia-drivers )
+		video_cards_fglrx? ( >=x11-drivers/ati-drivers-8.37.6 )
 	)"
 LICENSE="${LICENSE} MIT"
 
 PATCHES="
-	${FILESDIR}/1.4-ia64.patch
-	${FILESDIR}/1.3.0.0-use-proc-instead-of-sys.patch
-	${FILESDIR}/1.4-fpic-libxf86config.patch
-	${FILESDIR}/1.4-document-new-font-catalogs.patch
-	${FILESDIR}/1.4-fix-dmx-build.patch
-	${FILESDIR}/1.4-fix-dmx-link.patch
-	${FILESDIR}/1.4-fix-xephyr-link.patch
-	${FILESDIR}/1.4-fix-xprint-build.patch
-	${FILESDIR}/1.4-fix-xprint-link.patch
-	${FILESDIR}/1.4-fix-kdrive-automake.patch
-	${FILESDIR}/1.4-dont-hang-openoffice.patch
-	${FILESDIR}/${PV}-clean-generated-files.patch
+	${FILESDIR}/${PV}-fix-xkb-openoffice-hangs.patch
+	${FILESDIR}/${PV}-fix-dual-head-screen-resolutions.patch
+	${FILESDIR}/${PV}-fix-randr-resizing.patch
+	${FILESDIR}/${PV}-fix-xephyr-amd64-segfault.patch
+	${FILESDIR}/${PV}-ramdac.patch
+	${FILESDIR}/use-composite-for-unequal-depths.patch
+	${FILESDIR}/1.2.0-fix-amd-cpu-detection.patch
+	${FILESDIR}/1.2.0-properly-free-device-devprivates-memory-leak-fix.patch
+	${FILESDIR}/1.2.0-typo-fix.patch
+	${FILESDIR}/1.2.0-zero-out-client-devprivates-on-allocation.patch
+	${FILESDIR}/${PV}-use-proc-instead-of-sys.patch
+	${FILESDIR}/avoid-crash-on-minimized-xv-window.patch
+	${FILESDIR}/xorg-server-sam225bw-quirks.patch
+	${FILESDIR}/1.3-alpha-build-fix.patch
+	${FILESDIR}/${PV}-xephyr_crash_at_exit.patch
+	${FILESDIR}/xorg-x11-server-1.0.1-fpic-libxf86config.patch
 	${FILESDIR}/1.4-0001-Fix-for-CVE-2007-5760-XFree86-Misc-extension-out-o.patch
 	${FILESDIR}/1.4-0002-Fix-for-CVE-2007-6428-TOG-cup-extension-memory-cor.patch
-	${FILESDIR}/1.4-0003-Fix-for-CVE-2007-6427-Xinput-extension-memory-corr.patch
+	${FILESDIR}/1.3-0003-Fix-for-CVE-2007-6427-Xinput-extension-memory-corr.patch
 	${FILESDIR}/1.4-0004-Fix-for-CVE-2007-6429-MIT-SHM-and-EVI-extensions-i.patch
 	${FILESDIR}/1.4-0005-Fix-for-CVE-2008-0006-PCF-Font-parser-buffer-overf.patch
-	${FILESDIR}/1.4-0006-Fix-for-CVE-2007-5958-File-existence-disclosure.patch
+	${FILESDIR}/1.3-0006-Fix-for-CVE-2007-5958-File-existence-disclosure.patch
+	${FILESDIR}/1.4-0007-CVE-2007-6429-Don-t-spuriously-reject-8bpp-shm-pix.patch
 	"
 
 pkg_setup() {
@@ -324,8 +320,6 @@ pkg_setup() {
 		$(use_enable xprint)
 		$(use_enable nptl glx-tls)
 		$(use_enable !minimal xorgcfg)
-		$(use_enable hal config-dbus)
-		$(use_enable hal config-hal)
 		--sysconfdir=/etc/X11
 		--localstatedir=/var
 		--enable-install-setuid
@@ -355,11 +349,6 @@ src_unpack() {
 	x-modular_unpack_source
 	x-modular_patch_source
 
-	# Clean up for ${PV}-clean-generated-files.patch
-	pushd hw/xprint >/dev/null
-	rm -f *-wrapper.c || die
-	popd >/dev/null
-
 	# Set up kdrive servers to build
 	if use kdrive; then
 		kdrive_setup
@@ -368,19 +357,10 @@ src_unpack() {
 	# Make sure eautoreconf gets run if we need the autoconf/make
 	# changes.
 	if [[ ${SNAPSHOT} != "yes" ]]; then
-		if use kdrive || use dmx || use xprint; then
-			SNAPSHOT="yes"
+		if use kdrive; then
+			eautoreconf
 		fi
 	fi
-
-	if use hal; then
-		sed -i \
-			-e "s:^\(dbusconfigdir = \).*\(dbus-1.*\):\1/etc/\2:g" \
-			"${S}"/config/Makefile.am \
-			|| die "failed to fix DBUS config directory"
-		SNAPSHOT="yes"
-	fi
-
 	x-modular_reconf_source
 	#do not install xprint's Xsession.d files, we'll do it later
 	if use xprint; then
@@ -420,21 +400,6 @@ pkg_postinst() {
 	ewarn "   Option \"ReducedBlanking\""
 	ewarn "In the relevant Monitor section(s)."
 	ewarn "Make sure your reduced blanking modelines are safe!"
-
-	echo
-	ewarn "You must rebuild all drivers if upgrading from xorg-server 1.3"
-	ewarn "or earlier, because the ABI changed. If you cannot start X because"
-	ewarn "of module version mismatch errors, this is your problem."
-
-	ewarn "Here's a list of installed X drivers to emerge:"
-	print_installed x11-drivers/
-
-	echo
-	ewarn "You can generate a similar list at any point using this command:"
-	ewarn "emerge portage-utils; qlist -I -C x11-drivers/"
-
-	ebeep 5
-	epause 10
 }
 
 pkg_postrm() {
@@ -514,6 +479,14 @@ kdrive_setup() {
 		fi
 
 	done
+
+	# smi and via are the only things on line 2. If line 2 ends up blank,
+	# we need to get rid of the backslash at the end of line 1.
+	if ! use video_cards_siliconmotion && ! use video_cards_via; then
+		sed -i \
+			-e "s:^\(VESA_SUBDIRS.*\)\\\:\1:g" \
+			"${S}"/hw/kdrive/Makefile.am
+	fi
 }
 
 dynamic_libgl_install() {
@@ -549,27 +522,6 @@ switch_opengl_implem() {
 		eselect opengl set ${OLD_IMPLEM}
 }
 
-print_installed() {
-	local command line token=$1
-
-	if $(type -P qlist >/dev/null 2>&1); then
-		command="qlist -I -C ${token}"
-	elif $(type -P equery >/dev/null 2>&1); then
-		command="equery -q -C list ${token} | grep -o '${token}[[:alnum:].-]*'"
-	elif $(type -P epm >/dev/null 2>&1); then
-		command="epm -qaG | grep ${token}"
-	else
-		local dir
-		command="true"
-		for dir in "${PORTDIR}"/${token}*; do
-			command="${command} ; best_version ${dir#${PORTDIR}/}"
-		done
-	fi
-	while read line; do
-		ewarn "${line}"
-	done < <(eval ${command})
-}
-
 xprint_src_install() {
 	# RH-style init script, we provide a wrapper
 	exeinto /usr/$(get_libdir)/misc
@@ -579,10 +531,10 @@ xprint_src_install() {
 	# Install profile scripts
 	insinto /etc/profile.d
 	doins "${S}"/hw/xprint/etc/profile.d/xprint*
-	exeinto /etc/X11/xinit/xinitrc.d
-	doexe "${S}"/hw/xprint/etc/Xsession.d/92xprint-xpserverlist
+	insinto /etc/X11/xinit/xinitrc.d
+	doins "${S}"/hw/xprint/etc/Xsession.d/92xprint-xpserverlist
 	# Patch profile scripts
-	sed -e "s:/etc/init.*get_xpserverlist:/usr/$(get_libdir)/misc/xprint \
+	sed -e "s:/bin/sh.*get_xpserverlist:/usr/$(get_libdir)/misc/xprint \
 		get_xpserverlist:g" -i "${D}"/etc/profile.d/xprint* \
 		"${D}"/etc/X11/xinit/xinitrc.d/92xprint-xpserverlist
 	# Move profile scripts, we can't touch /etc/profile.d/ in Gentoo
