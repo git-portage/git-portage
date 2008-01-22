@@ -1,9 +1,9 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/sawfish/Attic/sawfish-1.3.20060816.ebuild,v 1.6 2007/11/07 19:55:28 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/sawfish/Attic/sawfish-1.3.2.ebuild,v 1.1 2008/01/22 20:58:35 truedfx Exp $
 
-# detect cvs snapshots; fex. 1.3.20040120
-[[ $PV == *.[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] ]]
+# detect cvs snapshots; fex. 1.3_p20040120
+[[ $PV == *_p[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] ]]
 (( snapshot = !$? ))
 
 if (( snapshot )); then
@@ -24,7 +24,9 @@ fi
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha ~amd64 ia64 ppc ~ppc64 sparc x86"
+# Will remain masked until a report of a segfault on the mailing list
+# is resolved
+KEYWORDS="" # ~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86
 IUSE="gnome esd nls audiofile pango"
 
 DEPEND=">=dev-util/pkgconfig-0.12.0
@@ -43,14 +45,8 @@ fi
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/libtool.patch"
-	# Fix configure warning about being unable
-	# to compile with <Xdbe.h> and <Xrandr.h>
-	epatch "${FILESDIR}"/sawfish-configure-warning.patch
-	# Fix utf8 with xft #121772
-	epatch "${FILESDIR}"/sawfish-xft-menu-utf8.patch
-	# Fix KDE menus
-	epatch "${FILESDIR}"/sawfish-kde-menus.patch
+	epatch "${FILESDIR}"/libtool.patch
+	epatch "${FILESDIR}"/${PN}-wm_name.patch
 
 	if (( snapshot )); then
 		eaclocal || die
@@ -101,12 +97,13 @@ src_compile() {
 	# (see bug 18294)
 	sed -i -e 's:REP_CFLAGS=:REP_CFLAGS=-I/usr/include/freetype2 :' Makedefs
 
-	# Parallel build doesn't work
-	emake -j1 || die "make failed"
+	# Parallel build didn't work, but appears to work now. This needs
+	# extra checking before this version is unmasked.
+	emake || die "make failed"
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die "make install failed"
 	dodoc AUTHORS BUGS ChangeLog DOC FAQ NEWS README THANKS TODO OPTIONS
 	newdoc src/ChangeLog ChangeLog.src
 }

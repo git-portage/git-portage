@@ -1,9 +1,9 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/sawfish/Attic/sawfish-1.3.20050816-r1.ebuild,v 1.8 2006/11/13 23:00:34 kloeri Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/sawfish/Attic/sawfish-1.3_p20050816-r1.ebuild,v 1.1 2008/01/22 20:58:35 truedfx Exp $
 
-# detect cvs snapshots; fex. 1.3.20040120
-[[ $PV == *.[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] ]]
+# detect cvs snapshots; fex. 1.3_p20040120
+[[ $PV == *_p[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] ]]
 (( snapshot = !$? ))
 
 inherit eutils
@@ -11,7 +11,7 @@ inherit eutils
 DESCRIPTION="Extensible window manager using a Lisp-based scripting language"
 HOMEPAGE="http://sawmill.sourceforge.net/"
 if (( snapshot )); then
-	SRC_URI="mirror://gentoo/${P}.tar.bz2"
+	SRC_URI="mirror://gentoo/${P/_p/.}.tar.bz2"
 else
 	SRC_URI="mirror://sourceforge/sawmill/${P}.tar.gz"
 fi
