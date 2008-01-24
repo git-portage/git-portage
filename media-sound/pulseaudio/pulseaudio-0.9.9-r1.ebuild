@@ -1,8 +1,10 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.8-r4.ebuild,v 1.2 2007/12/29 17:56:19 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.9-r1.ebuild,v 1.1 2008/01/24 02:07:11 flameeyes Exp $
 
-inherit eutils libtool autotools
+EAPI=1
+
+inherit eutils libtool autotools flag-o-matic
 
 DESCRIPTION="A networked sound server with an advanced plugin system"
 HOMEPAGE="http://0pointer.de/lennart/projects/pulseaudio/"
@@ -10,8 +12,8 @@ SRC_URI="http://0pointer.de/lennart/projects/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2 GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~x86 ~x86-fbsd"
-IUSE="alsa avahi caps jack lirc oss tcpd X hal dbus libsamplerate gnome bluetooth policykit"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc64 ~sparc ~x86"
+IUSE="alsa avahi caps jack lirc oss tcpd X hal dbus libsamplerate gnome bluetooth policykit asyncns +glib"
 
 RDEPEND="X? ( x11-libs/libX11 )
 	caps? ( sys-libs/libcap )
@@ -20,7 +22,7 @@ RDEPEND="X? ( x11-libs/libX11 )
 	>=media-libs/libsndfile-1.0.10
 	>=dev-libs/liboil-0.3.6
 	alsa? ( >=media-libs/alsa-lib-1.0.10 )
-	>=dev-libs/glib-2.4.0
+	glib? ( >=dev-libs/glib-2.4.0 )
 	avahi? ( >=net-dns/avahi-0.6.12 )
 	>=dev-libs/liboil-0.3.0
 	jack? ( >=media-sound/jack-audio-connection-kit-0.100 )
@@ -38,6 +40,7 @@ RDEPEND="X? ( x11-libs/libX11 )
 		>=sys-apps/dbus-1.0.0
 	)
 	policykit? ( sys-auth/policykit )
+	asyncns? ( net-libs/libasyncns )
 	>=sys-devel/libtool-1.5.24" # it's a valid RDEPEND, libltdl.so is used
 DEPEND="${RDEPEND}
 	dev-libs/libatomic_ops
@@ -70,22 +73,25 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/${P}-svn2074.patch"
-	epatch "${FILESDIR}/${P}-polkit.patch"
-	epatch "${FILESDIR}/${P}-bt-nohal.patch"
-	epatch "${FILESDIR}/${P}-esoundpath.patch"
-	epatch "${FILESDIR}/${P}-create-directory.patch"
+	epatch "${FILESDIR}/${PN}-0.9.8-svn2074.patch"
+	epatch "${FILESDIR}/${PN}-0.9.8-polkit.patch"
+	epatch "${FILESDIR}/${PN}-0.9.8-bt-nohal.patch"
+	epatch "${FILESDIR}/${PN}-0.9.8-esoundpath.patch"
+	epatch "${FILESDIR}/${PN}-0.9.8-create-directory.patch"
 
 	eautoreconf
 	elibtoolize
 }
 
 src_compile() {
+	# To properly fix CVE-2008-0008
+	append-flags -UNDEBUG
+
 	econf \
 		--enable-largefile \
-		--enable-glib2 \
+		$(use_enable glib) \
 		--disable-solaris \
-		--disable-asyncns \
+		$(use_enable asyncns) \
 		$(use_enable oss) \
 		$(use_enable alsa) \
 		$(use_enable lirc) \
@@ -121,9 +127,6 @@ src_install() {
 	[[ -n ${neededservices} ]] && sed -e "s/@neededservices@/need $neededservices/" "${FILESDIR}/pulseaudio.init.d-2" > "${T}/pulseaudio"
 	doinitd "${T}/pulseaudio"
 
-	if ! use hal; then
-		sed -i -e '/module-hal-detect/s:^:#: ; /module-detect/s:^#::' "${D}/etc/pulse/default.pa"
-	fi
 	use avahi && sed -i -e '/module-zeroconf-publish/s:^#::' "${D}/etc/pulse/default.pa"
 
 	dohtml -r doc
