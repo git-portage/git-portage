@@ -1,20 +1,20 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Mail-ClamAV/Attic/Mail-ClamAV-0.13.ebuild,v 1.7 2007/07/10 23:33:28 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Mail-ClamAV/Attic/Mail-ClamAV-0.21.ebuild,v 1.1 2008/01/24 13:09:24 xmerlin Exp $
 
 inherit perl-module
 
 DESCRIPTION="Perl extension for the clamav virus scanner."
 HOMEPAGE="http://search.cpan.org/~sabeck/"
-SRC_URI="http://search.cpan.org/CPAN/authors/id/S/SA/SABECK/${P}.tar.gz"
+SRC_URI="mirror://cpan/authors/id/S/SA/SABECK/${P}.tar.gz"
 
 LICENSE="Artistic"
 SLOT="0"
-KEYWORDS="~sparc x86"
+KEYWORDS="~amd64 ~ia64 ~sparc ~x86"
 
 IUSE=""
 
-DEPEND=">=app-antivirus/clamav-0.80
+DEPEND=">=app-antivirus/clamav-0.90
 	dev-perl/Inline
 	dev-lang/perl"
 
