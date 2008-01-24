@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/dkim-milter/Attic/dkim-milter-2.3.2.ebuild,v 1.3 2007/11/14 04:46:36 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/dkim-milter/Attic/dkim-milter-2.4.3.ebuild,v 1.1 2008/01/24 11:39:14 mrness Exp $
 
 inherit eutils toolchain-funcs
 
@@ -30,15 +30,16 @@ src_unpack() {
 	cd "${S}" || die "source dir not found"
 
 	cp site.config.m4.dist devtools/Site/site.config.m4 || \
-		die "failed to generate site.config.m4"
+		die "failed to copy site.config.m4"
 	epatch "${FILESDIR}/${P}-gentoo.patch"
 
 	local ENVDEF=""
 	use ipv6 && ENVDEF="${ENVDEF} -DNETINET6"
 	sed -i -e "s:@@CFLAGS@@:${CFLAGS}:" -e "s:@@ENVDEF@@:${ENVDEF}:" \
 		devtools/Site/site.config.m4
+	echo "APPENDDEF(\`confNO_MAN_BUILD', \` ')">>devtools/Site/site.config.m4
 
-	use diffheaders && epatch "${FILESDIR}/${P}-diffheaders.patch"
+	use diffheaders && epatch "${FILESDIR}/${PN}-diffheaders.patch"
 }
 
 src_compile() {
@@ -80,9 +81,13 @@ src_install() {
 
 pkg_postinst() {
 	elog "If you want to sign your mail messages, you will have to run"
-	elog "	emerge --config ${CATEGORY}/${PN}"
+	elog "  emerge --config ${CATEGORY}/${PN}"
 	elog "It will help you create your key and give you hints on how"
 	elog "to configure your DNS and MTA."
+
+	ewarn "Make sure your MTA has r/w access to the socket file."
+	ewarn "This can be done either by setting UMask to 002 and adding MTA's user"
+	ewarn "to milter group or you can simply set UMask to 000."
 }
 
 pkg_config() {
@@ -109,9 +114,10 @@ pkg_config() {
 		esac
 
 		# generate the private and public keys
-		openssl genrsa -out "${ROOT}"etc/mail/dkim-filter/${selector}.private ${keysize} && \
-			chown milter:milter "${ROOT}"etc/mail/dkim-filter/${selector}.private && chmod u=r,g-rwx,o-rwx "${ROOT}"etc/mail/dkim-filter/${selector}.private &&
-			openssl rsa -in "${ROOT}"etc/mail/dkim-filter/${selector}.private -out "${ROOT}"etc/mail/dkim-filter/${selector}.public -pubout -outform PEM || \
+		dkim-genkey -b ${keysize} -D "${ROOT}"etc/mail/dkim-filter/ \
+			-s ${selector} && \
+			chown milter:milter \
+			"${ROOT}"etc/mail/dkim-filter/"${selector}".private || \
 				{ eerror "Failed to create private and public keys." ; return 1; }
 	fi
 
@@ -128,17 +134,10 @@ pkg_config() {
 	einfo "  non_smtpd_milters = unix:/var/run/dkim-filter/dkim-filter.sock"
 
 	# DNS configuration
-	{
-		local line
-		pubkey=
-		while read line; do
-			[[ "${line}" == "--"* ]] || pubkey="${pubkey}${line}"
-		done
-	} < "${ROOT}"etc/mail/dkim-filter/${selector}.public
-	echo
 	einfo "After you configured your MTA, publish your key by adding this TXT record to your domain:"
-	einfo "  ${selector}._domainkey   IN   TXT  \"v=DKIM1\\; k=rsa\\; t=y\\; p=${pubkey}\""
-	echo
+	cat "${ROOT}"etc/mail/dkim-filter/${selector}.txt
 	einfo "t=y signifies you only test the DKIM on your domain. See following page for the complete list of tags:"
 	einfo "  http://www.dkim.org/specs/rfc4871-dkimbase.html#key-text"
+	einfo
+	einfo "Also look at the draft SSP http://www.dkim.org/specs/draft-ietf-dkim-ssp-01.html"
 }
