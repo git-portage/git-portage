@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/mythtv/Attic/mythtv-0.21_pre15362.ebuild,v 1.1 2008/01/07 20:18:31 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/mythtv/Attic/mythtv-0.21_pre15567.ebuild,v 1.1 2008/01/24 15:58:11 cardoe Exp $
 
 inherit flag-o-matic multilib eutils qt3 mythtv subversion toolchain-funcs
 
@@ -121,10 +121,11 @@ src_compile() {
 	use dbox2 || myconf="${myconf} --disable-dbox2"
 	use hdhomerun || myconf="${myconf} --disable-hdhomerun"
 	use altivec || myconf="${myconf} --disable-altivec"
+	use ivtv || myconf="${myconf} --disable-ivtv"
+	use perl || myconf="${myconf} --without-bindings=perl"
 	use xvmc && myconf="${myconf} --enable-xvmc"
 	use xvmc && use video_cards_via && myconf="${myconf} --enable-xvmc-pro"
 	use xvmc && ! use video_cards_nvidia && myconf="${myconf} --disable-xvmc-opengl"
-	use perl && myconf="${myconf} --with-bindings=perl"
 	myconf="${myconf}
 		--disable-audio-arts
 		$(use_enable lirc)
@@ -180,7 +181,7 @@ src_compile() {
 	einfo "Running ./configure ${myconf}"
 	./configure ${myconf} || die "configure died"
 
-	${QTDIR}/bin/qmake QMAKE=${QTDIR}/bin/qmake -o "Makefile" mythtv.pro || die "qmake failed"
+	eqmake3 -o "Makefile" mythtv.pro || die "qmake failed"
 	emake || die "emake failed"
 
 	# firewire support should build the tester
