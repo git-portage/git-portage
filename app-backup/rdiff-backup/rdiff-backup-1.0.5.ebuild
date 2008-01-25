@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/rdiff-backup/Attic/rdiff-backup-1.0.5.ebuild,v 1.7 2008/01/14 18:43:46 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/rdiff-backup/Attic/rdiff-backup-1.0.5.ebuild,v 1.8 2008/01/25 19:45:19 grobian Exp $
 
 inherit distutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://savannah.nongnu.org/download/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 arm ppc ~ppc-macos ppc64 sh sparc x86"
+KEYWORDS="amd64 arm ppc ppc64 sh sparc x86"
 IUSE="acl xattr"
 
 DEPEND=">=net-libs/librsync-0.9.7

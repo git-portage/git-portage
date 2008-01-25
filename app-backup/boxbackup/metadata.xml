@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>app-backup</herd>
-	<maintainer>
-		<email>grobian@gentoo.org</email>
-	</maintainer>
 	<longdescription>An open source, completely automatic on-line backup
 		system for UNIX.</longdescription>
 </pkgmetadata>
