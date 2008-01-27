@@ -1,8 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/dir2ogg/Attic/dir2ogg-0.11.ebuild,v 1.1 2007/12/12 17:33:32 drac Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/dir2ogg/Attic/dir2ogg-0.11.1.ebuild,v 1.1 2008/01/27 14:31:12 drac Exp $
 
-inherit eutils versionator
+inherit versionator
 
 MY_PR=$(get_version_component_range 1-2 ${PV})
 
@@ -23,12 +23,6 @@ RDEPEND="virtual/python
 	|| ( media-sound/mpg123 media-sound/mpg321 )
 	aac? ( media-libs/faad2 )
 	wma? ( media-video/mplayer )"
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-u1-01wav.patch
-}
 
 src_install() {
 	dobin dir2ogg
