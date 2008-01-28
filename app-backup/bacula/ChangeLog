@@ -1,6 +1,17 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.47 2008/01/01 09:41:28 mabi Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.48 2008/01/28 22:51:57 wschlich Exp $
+
+*bacula-2.2.8 (28 Jan 2008)
+
+  28 Jan 2008; Wolfram Schlich <wschlich@gentoo.org>
+  +files/2.2.8/bacula-all-conf, +files/2.2.8/bacula-all-init,
+  +files/2.2.8/bacula-default-configs.patch, +files/2.2.8/bacula-dir-conf,
+  +files/2.2.8/bacula-dir-init, +files/2.2.8/bacula-fd-conf,
+  +files/2.2.8/bacula-fd-init, +files/2.2.8/bacula-gnomesu2gksu.diff,
+  +files/2.2.8/bacula-sd-conf, +files/2.2.8/bacula-sd-init,
+  +bacula-2.2.8.ebuild:
+  version bump
 
   01 Jan 2008; Matti Bickel <mabi@gentoo.org> bacula-2.2.7.ebuild:
   ~ppc readded (bug #195682)
