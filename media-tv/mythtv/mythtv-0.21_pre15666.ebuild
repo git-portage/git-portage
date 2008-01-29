@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/mythtv/Attic/mythtv-0.21_pre15567.ebuild,v 1.3 2008/01/28 14:52:59 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/mythtv/Attic/mythtv-0.21_pre15666.ebuild,v 1.1 2008/01/29 14:50:25 cardoe Exp $
 
 inherit flag-o-matic multilib eutils qt3 mythtv subversion toolchain-funcs
 
@@ -99,11 +99,6 @@ pkg_setup() {
 src_unpack() {
 	subversion_src_unpack
 
-	# As needed fix since they don't know how to write qmake let alone a real
-	# make system. And they won't accept this upstream since it comes from
-	# Gentoo
-	#epatch "${FILESDIR}"/${PN}-0.20-as-needed.patch
-
 	# upstream wants the revision number in their version.cpp
 	# since the subversion.eclass strips out the .svn directory
 	# svnversion in MythTV's build doesn't work
@@ -139,7 +134,8 @@ src_compile() {
 		--enable-xv
 		--disable-directfb
 		--enable-x11
-		--enable-proc-opt"
+		--enable-proc-opt
+		--enable-gpl"
 
 	if use mmx || use amd64; then
 		myconf="${myconf} --enable-mmx"
