@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/Attic/kbackup-0.5.1.ebuild,v 1.4 2008/01/30 19:11:15 deathwing00 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/Attic/kbackup-0.5.4.ebuild,v 1.1 2008/01/30 19:11:15 deathwing00 Exp $
 
 inherit kde
 
 DESCRIPTION="KBackup is a program that lets you back up any directories or files."
 HOMEPAGE="http://www.kde-apps.org/content/show.php?content=44998"
-SRC_URI="http://www.kde-apps.org/content/files/44998-${P}.tar.bz2"
+SRC_URI="http://www.kde-apps.org/CONTENT/content-files/44998-${P}.tar.bz2"
 LICENSE="GPL-2"
 
 SLOT="0"
@@ -16,7 +16,7 @@ IUSE="doc"
 DEPEND=">=app-arch/bzip2-1.0.2
 	>=sys-libs/zlib-1.1.4"
 
-LANGS="de fr it ru sk"
+LANGS="de es fr it pt ru sk sv"
 
 LANGS_DOC="de fr"
 
