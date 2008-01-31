@@ -1,83 +1,16 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 AUX flexbackup-1.2.1-CAN-2005-2965.patch 1276 RMD160 f7daf7091212940b19af7c9eb3b0d3d4cb9b1adf SHA1 4c89cd5749e1aa199aa3b3988a84c85b85544fb7 SHA256 aa99ef49c155d1adef6feb745fddf40d291ffeb618682fa635dbbae14374b52f
-MD5 e5e9373a72a0f80f4af2019f64257e60 files/flexbackup-1.2.1-CAN-2005-2965.patch 1276
-RMD160 f7daf7091212940b19af7c9eb3b0d3d4cb9b1adf files/flexbackup-1.2.1-CAN-2005-2965.patch 1276
-SHA256 aa99ef49c155d1adef6feb745fddf40d291ffeb618682fa635dbbae14374b52f files/flexbackup-1.2.1-CAN-2005-2965.patch 1276
 AUX flexbackup-1.2.1-afio-large-files.patch 401 RMD160 48e23b777b5e1993412aa3d9832712281d749fa7 SHA1 5ab398ed6d76a84109fa9ae460396dd899b622da SHA256 d9f87c376c305a440ed0b0444c1b196648b89ce6ade9231a8f4cc0914f3a2762
-MD5 b099a18bcd89883121de57699fcfe636 files/flexbackup-1.2.1-afio-large-files.patch 401
-RMD160 48e23b777b5e1993412aa3d9832712281d749fa7 files/flexbackup-1.2.1-afio-large-files.patch 401
-SHA256 d9f87c376c305a440ed0b0444c1b196648b89ce6ade9231a8f4cc0914f3a2762 files/flexbackup-1.2.1-afio-large-files.patch 401
 AUX flexbackup-1.2.1-bash.patch 445 RMD160 251a048abbf3a81c07043d5a0c17886666610b66 SHA1 4a6ec9e58ea6e926208bc4692f002a1bf00efd9e SHA256 a072869e37b50f5da8652686a56aed8a45a225bb4eb00818377e006614e4a88e
-MD5 e47370340c6b2c5724b5a745be007f8d files/flexbackup-1.2.1-bash.patch 445
-RMD160 251a048abbf3a81c07043d5a0c17886666610b66 files/flexbackup-1.2.1-bash.patch 445
-SHA256 a072869e37b50f5da8652686a56aed8a45a225bb4eb00818377e006614e4a88e files/flexbackup-1.2.1-bash.patch 445
 AUX flexbackup-1.2.1-lzma.patch 4359 RMD160 0c23e536b9c3bb34206be774327808c1437d5781 SHA1 2f495bf90d83a4f9a8ce808369195f83f6505e88 SHA256 8d456218ea5bcaab3044e201f3a9d976c5a1f2a3ca8b1124673d06ea094394a9
-MD5 1e2266e37f72e47e81978f916b117f8a files/flexbackup-1.2.1-lzma.patch 4359
-RMD160 0c23e536b9c3bb34206be774327808c1437d5781 files/flexbackup-1.2.1-lzma.patch 4359
-SHA256 8d456218ea5bcaab3044e201f3a9d976c5a1f2a3ca8b1124673d06ea094394a9 files/flexbackup-1.2.1-lzma.patch 4359
 AUX flexbackup-1.2.1-mbuffer-switch.patch 5550 RMD160 de9d9258cf7f137bfbc1e0fe30c587453b29e801 SHA1 33bb22066ac5120b4c4c553fddf12ff678ff9d99 SHA256 a11379db1eca89398e3917ee9a6fa57e416ffdb0cabb773444ad53629b6e2917
-MD5 72badf7f0283bb12b82e90fd0779988e files/flexbackup-1.2.1-mbuffer-switch.patch 5550
-RMD160 de9d9258cf7f137bfbc1e0fe30c587453b29e801 files/flexbackup-1.2.1-mbuffer-switch.patch 5550
-SHA256 a11379db1eca89398e3917ee9a6fa57e416ffdb0cabb773444ad53629b6e2917 files/flexbackup-1.2.1-mbuffer-switch.patch 5550
 AUX flexbackup-1.2.1-prune.patch 5544 RMD160 45aa8e045224d94c0b4b547c5117e2a084893f5a SHA1 8fcc02f0b1590f0fe6cbba63d6b45ceefe08dbd3 SHA256 146e636ca08c21a3ec7f9e18c59f89e48a74db581ad3d5ca3a606093e6407fc7
-MD5 e3396a56d274feef92192c1b27983449 files/flexbackup-1.2.1-prune.patch 5544
-RMD160 45aa8e045224d94c0b4b547c5117e2a084893f5a files/flexbackup-1.2.1-prune.patch 5544
-SHA256 146e636ca08c21a3ec7f9e18c59f89e48a74db581ad3d5ca3a606093e6407fc7 files/flexbackup-1.2.1-prune.patch 5544
 AUX flexbackup-1.2.1-remote-bufftest.patch 1940 RMD160 c496cf86b6a0cece118c82e16f44c8bbff67d409 SHA1 c666612f485418857536da13ea4ed883aa75edc4 SHA256 aa209656fea52a4f541ff9eca4099e2b7dfc42f7efc52ec46016a95af378d7cc
-MD5 068f15d42883103cc18a059da900030c files/flexbackup-1.2.1-remote-bufftest.patch 1940
-RMD160 c496cf86b6a0cece118c82e16f44c8bbff67d409 files/flexbackup-1.2.1-remote-bufftest.patch 1940
-SHA256 aa209656fea52a4f541ff9eca4099e2b7dfc42f7efc52ec46016a95af378d7cc files/flexbackup-1.2.1-remote-bufftest.patch 1940
 AUX flexbackup-1.2.1-secure-tempfile.patch 2568 RMD160 0fa301ec32b15c3a34f7d5e6190a63104438a76d SHA1 7eeb306a1a3a030e2f49d8141163a662754cf814 SHA256 e2278e445a08c8aa444bc53a409db98e6fe53150dbf7168f1dacae15706b0376
-MD5 c5c6ff3572e706e87805bffbd33208fb files/flexbackup-1.2.1-secure-tempfile.patch 2568
-RMD160 0fa301ec32b15c3a34f7d5e6190a63104438a76d files/flexbackup-1.2.1-secure-tempfile.patch 2568
-SHA256 e2278e445a08c8aa444bc53a409db98e6fe53150dbf7168f1dacae15706b0376 files/flexbackup-1.2.1-secure-tempfile.patch 2568
 AUX flexbackup-1.2.1-spaces-in-filenames.patch 11037 RMD160 4a206d5ec122fd6ed2d35fba70f8f13fd32f62cd SHA1 3cb0fd485695387569a1df7f1b5cf47ed7faebd4 SHA256 4dde33d92ff0e97a614807f50a7a28a08c485a0cee5f19ab512550e0d431c5e2
-MD5 e607ffb6f4606e590c4ccc07d591d23c files/flexbackup-1.2.1-spaces-in-filenames.patch 11037
-RMD160 4a206d5ec122fd6ed2d35fba70f8f13fd32f62cd files/flexbackup-1.2.1-spaces-in-filenames.patch 11037
-SHA256 4dde33d92ff0e97a614807f50a7a28a08c485a0cee5f19ab512550e0d431c5e2 files/flexbackup-1.2.1-spaces-in-filenames.patch 11037
 DIST flexbackup-1.2.1.tar.gz 80158 RMD160 d2a56ce6a3770498ef96ffbf75f65026b04f492c SHA1 77247f1161208ca65b7cc6fe1743108d2078a166 SHA256 58282b21985be75f1219c5ff4906d217055ed8627ea3e2ffdfe7a2393bc9d2c3
 EBUILD flexbackup-1.2.1-r2.ebuild 1324 RMD160 8061e0ac8e04078b171a928a9a714d60d315c887 SHA1 263ba58fdff0d025773baa29c9f72af0ac469792 SHA256 7268316d05083a322158a66a0a63fc8e05b9760e91060776e454a6917508dbb8
-MD5 bdda5944b764b475105b214abdaca3ec flexbackup-1.2.1-r2.ebuild 1324
-RMD160 8061e0ac8e04078b171a928a9a714d60d315c887 flexbackup-1.2.1-r2.ebuild 1324
-SHA256 7268316d05083a322158a66a0a63fc8e05b9760e91060776e454a6917508dbb8 flexbackup-1.2.1-r2.ebuild 1324
 EBUILD flexbackup-1.2.1-r5.ebuild 1595 RMD160 c0c7d5889a359cf6cb323fa931c346a91f2f91b0 SHA1 9afceb1d7f5beda63a898633b14cff0182355bac SHA256 5bfee841889ef3a4d0ef44bcf29744d6bcf2a1f1b2c640ca7662fd79ff478844
-MD5 6ef5b6b4c1bd4ba3ad20a1a466732913 flexbackup-1.2.1-r5.ebuild 1595
-RMD160 c0c7d5889a359cf6cb323fa931c346a91f2f91b0 flexbackup-1.2.1-r5.ebuild 1595
-SHA256 5bfee841889ef3a4d0ef44bcf29744d6bcf2a1f1b2c640ca7662fd79ff478844 flexbackup-1.2.1-r5.ebuild 1595
 EBUILD flexbackup-1.2.1-r6.ebuild 1736 RMD160 8e511328af9b7bb7b151f0b7f583a310def0b948 SHA1 1fcfa8c0a18a97aa2fbde31ffb458334e7cda73b SHA256 32881105922839790e4bbef1453934b1c8c368366618e7cd4128de39e238ed74
-MD5 dd3eb15c219fe525d948189d1d5eaf67 flexbackup-1.2.1-r6.ebuild 1736
-RMD160 8e511328af9b7bb7b151f0b7f583a310def0b948 flexbackup-1.2.1-r6.ebuild 1736
-SHA256 32881105922839790e4bbef1453934b1c8c368366618e7cd4128de39e238ed74 flexbackup-1.2.1-r6.ebuild 1736
 EBUILD flexbackup-1.2.1-r7.ebuild 2365 RMD160 71d1c4f436f0e048050b920b682c909f3a7a1c77 SHA1 8c0c977ea0b0d1ab31278f85295fdcc2c05d8e3e SHA256 1bd3a75384a54fe33df41d561cfcf40864a6632a7a27da33c6d578d8954921a0
-MD5 ffb4d08a5b1777fa45f75eab74f95dda flexbackup-1.2.1-r7.ebuild 2365
-RMD160 71d1c4f436f0e048050b920b682c909f3a7a1c77 flexbackup-1.2.1-r7.ebuild 2365
-SHA256 1bd3a75384a54fe33df41d561cfcf40864a6632a7a27da33c6d578d8954921a0 flexbackup-1.2.1-r7.ebuild 2365
 MISC ChangeLog 5381 RMD160 175e72acc9feaf4a28c85a0f954338ae093db0ba SHA1 9fbddd07b80c46dbd95c8a1384d0c373b1b0c70b SHA256 1560966c22abbbd2a81503ce945e131647a3c35e0b186df85f61ffc1410520d8
-MD5 7cbc39f6ce95d8207b26bfd3368fbfd4 ChangeLog 5381
-RMD160 175e72acc9feaf4a28c85a0f954338ae093db0ba ChangeLog 5381
-SHA256 1560966c22abbbd2a81503ce945e131647a3c35e0b186df85f61ffc1410520d8 ChangeLog 5381
 MISC metadata.xml 229 RMD160 2a1d308992f662ae8a16143880f5210148796e50 SHA1 4b7828c041f477a8b50c301c257c231d1a44ff96 SHA256 2d73ac7be9836b3d76abf0d1bea66e6e87f91c31e0e600e12a26525737249a7f
-MD5 867b47a700d8d31abc9310eb155ba462 metadata.xml 229
-RMD160 2a1d308992f662ae8a16143880f5210148796e50 metadata.xml 229
-SHA256 2d73ac7be9836b3d76abf0d1bea66e6e87f91c31e0e600e12a26525737249a7f metadata.xml 229
-MD5 a859e552a2c9b55c5c3a3acdf6e4564a files/digest-flexbackup-1.2.1-r2 247
-RMD160 71b70ece5c46f8a232def1fdb67082b438411409 files/digest-flexbackup-1.2.1-r2 247
-SHA256 d4c01b9628152900c11e5b9621dd050d0d8037a07794fa03471ed6c73ff4eb6e files/digest-flexbackup-1.2.1-r2 247
-MD5 a859e552a2c9b55c5c3a3acdf6e4564a files/digest-flexbackup-1.2.1-r5 247
-RMD160 71b70ece5c46f8a232def1fdb67082b438411409 files/digest-flexbackup-1.2.1-r5 247
-SHA256 d4c01b9628152900c11e5b9621dd050d0d8037a07794fa03471ed6c73ff4eb6e files/digest-flexbackup-1.2.1-r5 247
-MD5 a859e552a2c9b55c5c3a3acdf6e4564a files/digest-flexbackup-1.2.1-r6 247
-RMD160 71b70ece5c46f8a232def1fdb67082b438411409 files/digest-flexbackup-1.2.1-r6 247
-SHA256 d4c01b9628152900c11e5b9621dd050d0d8037a07794fa03471ed6c73ff4eb6e files/digest-flexbackup-1.2.1-r6 247
-MD5 a859e552a2c9b55c5c3a3acdf6e4564a files/digest-flexbackup-1.2.1-r7 247
-RMD160 71b70ece5c46f8a232def1fdb67082b438411409 files/digest-flexbackup-1.2.1-r7 247
-SHA256 d4c01b9628152900c11e5b9621dd050d0d8037a07794fa03471ed6c73ff4eb6e files/digest-flexbackup-1.2.1-r7 247
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.7 (GNU/Linux)
-
-iD8DBQFG2cJBNQqtfCuFneMRAkClAJ4lHvEUtkplpAlEkaFv0ei/x1+i0ACfaeUM
-LIRpUOly7HTBZyiiOG90rOs=
-=3VuL
------END PGP SIGNATURE-----

@@ -1,58 +1,12 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA1
-
 AUX Makefile-fix.diff 1041 RMD160 a156d8e660c43e4baab36b7ac01d8e355384ca84 SHA1 bfbff396e3e43125c6a25d05f764d23fb9440465 SHA256 e4e394d7dd9297fb0743cebaae718f96d7171d1995ffdd009d156b513a49f11d
-MD5 635675ec6baf447f2823bf8933d3eb00 files/Makefile-fix.diff 1041
-RMD160 a156d8e660c43e4baab36b7ac01d8e355384ca84 files/Makefile-fix.diff 1041
-SHA256 e4e394d7dd9297fb0743cebaae718f96d7171d1995ffdd009d156b513a49f11d files/Makefile-fix.diff 1041
 AUX backup-manager-upload-execution-fix-0.7.4.diff 749 RMD160 99e61153abca17c703067f6553ecf4e530bc2687 SHA1 af36d6bf20b2f36be26d4a0ac755da5e84cc50e4 SHA256 4f9670d7cbb50e84bf2dddeea700ec70ea8b17778ea6661a6ed3ec3abcf56155
-MD5 f2ecedd763193df8916dc80743e52d1e files/backup-manager-upload-execution-fix-0.7.4.diff 749
-RMD160 99e61153abca17c703067f6553ecf4e530bc2687 files/backup-manager-upload-execution-fix-0.7.4.diff 749
-SHA256 4f9670d7cbb50e84bf2dddeea700ec70ea8b17778ea6661a6ed3ec3abcf56155 files/backup-manager-upload-execution-fix-0.7.4.diff 749
 AUX backup-manager-upload-execution-fix.diff 546 RMD160 f8c0cc28ac646d0e9fe3f7b6b0fea4bd6a9c360e SHA1 617df7f0851ee13aaeb87a2420b1c1f64b484c82 SHA256 a3c89d0a3e77d4031a1a50d3ed4ca80a7fa87a59fcf99494508f9b6b5f8e0357
-MD5 500ba08e95436076e5850f4f17008e53 files/backup-manager-upload-execution-fix.diff 546
-RMD160 f8c0cc28ac646d0e9fe3f7b6b0fea4bd6a9c360e files/backup-manager-upload-execution-fix.diff 546
-SHA256 a3c89d0a3e77d4031a1a50d3ed4ca80a7fa87a59fcf99494508f9b6b5f8e0357 files/backup-manager-upload-execution-fix.diff 546
 AUX bzip2-path-fix.diff 365 RMD160 8c8aadf30af8f3eb4efb04666d31bd99ea878939 SHA1 bd90ab32dfde27c07a1a625aa65c4fc159e4b2e6 SHA256 7c8c70277e6c11844f90c80c72682bc1da27e650623cc2a3050ff175afda38f8
-MD5 15a8556a448855e9c2015ff2433ef9ec files/bzip2-path-fix.diff 365
-RMD160 8c8aadf30af8f3eb4efb04666d31bd99ea878939 files/bzip2-path-fix.diff 365
-SHA256 7c8c70277e6c11844f90c80c72682bc1da27e650623cc2a3050ff175afda38f8 files/bzip2-path-fix.diff 365
 DIST backup-manager-0.7.2.tar.gz 110220 RMD160 c87c01513530ec89f6e4b5d75a2d96ba7ef04d97 SHA1 abe9ec308d5ab4ccefe361230f224c84be5aace3 SHA256 d303f7cace63936687b7e6101d1579fd5a7530dbed0e93914b0a89450a6383b7
 DIST backup-manager-0.7.4.tar.gz 116798 RMD160 d40cc17191dc89b31249132bb9d9dc8c2494f3a2 SHA1 08fa792a923505df6c5acd59879b57be14db1fe9 SHA256 b01f9c9a09d97b7db60ea6ed0e676806baaf66998468be2d90ff453a983db0f2
 DIST backup-manager-0.7.5.tar.gz 159855 RMD160 1b21f2129799f40e0fff9c3fa7ac2fccfbec3521 SHA1 e2f8f59eda49d04c332af4a1b6e453056c922991 SHA256 a7aa04ebec5b8a80d5e75d48121092afb969e1efb252b1ffdbcd28b04225e55a
 EBUILD backup-manager-0.7.2.ebuild 1212 RMD160 d633fe738b29ee6ec20eb93ebf0f6ddf13a92696 SHA1 19b00f7ab665162a5daede94c19740c65ca3a797 SHA256 ef37230f9b085efe940a2af9e3e868e41399f8feb01aca85d8790e679f9f467a
-MD5 5e8086c5eefd978542cc02ca0ad1b359 backup-manager-0.7.2.ebuild 1212
-RMD160 d633fe738b29ee6ec20eb93ebf0f6ddf13a92696 backup-manager-0.7.2.ebuild 1212
-SHA256 ef37230f9b085efe940a2af9e3e868e41399f8feb01aca85d8790e679f9f467a backup-manager-0.7.2.ebuild 1212
 EBUILD backup-manager-0.7.4.ebuild 1300 RMD160 e72d8560f247f074016f46a3804acf36bcdd526a SHA1 14cffb2c3e97e2c1543edc00860aa1fc422f42fe SHA256 3e50d6762968ef8c8bd32fb9c31f11dd4c0adac3600bd81401f7d2c7e6323d0e
-MD5 b57276a2db26930ce9660e6fcfe6464d backup-manager-0.7.4.ebuild 1300
-RMD160 e72d8560f247f074016f46a3804acf36bcdd526a backup-manager-0.7.4.ebuild 1300
-SHA256 3e50d6762968ef8c8bd32fb9c31f11dd4c0adac3600bd81401f7d2c7e6323d0e backup-manager-0.7.4.ebuild 1300
 EBUILD backup-manager-0.7.5.ebuild 1250 RMD160 470feabf5a769fb3998b46bf6a9450c03d934ebf SHA1 1c07c911d6778e14f4133ad5d6fff05334d795cb SHA256 43ba66581b900451af106b8494d221254ec3372a3d07240c91bf8b19e632281d
-MD5 d1c7b89c0fc868ddf58a8e1463c53eb8 backup-manager-0.7.5.ebuild 1250
-RMD160 470feabf5a769fb3998b46bf6a9450c03d934ebf backup-manager-0.7.5.ebuild 1250
-SHA256 43ba66581b900451af106b8494d221254ec3372a3d07240c91bf8b19e632281d backup-manager-0.7.5.ebuild 1250
 MISC ChangeLog 1489 RMD160 2f686b5072ded041822e005d96043a471fc1ed53 SHA1 4234adf12231b880730379a2107cadb6946cd6e6 SHA256 9dd86ae92a3f48c9b5ccac19c28622e12162481f27c78905303e3240c04aa750
-MD5 d15615f78ef66010fa3c6d4364781fa0 ChangeLog 1489
-RMD160 2f686b5072ded041822e005d96043a471fc1ed53 ChangeLog 1489
-SHA256 9dd86ae92a3f48c9b5ccac19c28622e12162481f27c78905303e3240c04aa750 ChangeLog 1489
 MISC metadata.xml 227 RMD160 05e03ea395ae973fbd6dafda8000a223ef47f3f4 SHA1 a984631ba3a0f9614035d594061bffa01944835e SHA256 f97db6ffe217c40bc3f0c496274c2c5e1b1c661f5e28b4d9992a82eb88ed948d
-MD5 fbfda8545e5fa523c6d455f635b3e7b3 metadata.xml 227
-RMD160 05e03ea395ae973fbd6dafda8000a223ef47f3f4 metadata.xml 227
-SHA256 f97db6ffe217c40bc3f0c496274c2c5e1b1c661f5e28b4d9992a82eb88ed948d metadata.xml 227
-MD5 2efc2b002d2dd7706c003193d0b8c827 files/digest-backup-manager-0.7.2 262
-RMD160 6cdaa5958cab03051a386edc5887ab1fcc478a83 files/digest-backup-manager-0.7.2 262
-SHA256 f909f0008caf849cddb4d5230d9f17c57f2e250c3e1b7b051b858a3da16c22f8 files/digest-backup-manager-0.7.2 262
-MD5 26ceb8d829d27d4484f013692415aeaa files/digest-backup-manager-0.7.4 262
-RMD160 b300873c6a9ac8960c9e9f52780fa58edb7a0293 files/digest-backup-manager-0.7.4 262
-SHA256 f0d9756b0cdf40e307ed46faff03a389d564f34b7ec398a017ceac4e9a25f4b7 files/digest-backup-manager-0.7.4 262
-MD5 cd550d1f879bc6b65443260d8d069726 files/digest-backup-manager-0.7.5 262
-RMD160 8c8a3d552777b2cb65191e3cc26ced37cf1b3da6 files/digest-backup-manager-0.7.5 262
-SHA256 fbb1e41f580e469decd52688f6c486524631da66b466eace29480136bd3c68d7 files/digest-backup-manager-0.7.5 262
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.6 (GNU/Linux)
-
-iD8DBQFF6WNTQlM6RnzZP+IRAnb5AJ9DvISMa1CVj5X3EC/SKE6pYuNh2QCdH2lc
-hGnzRRXf4STrjEab3glfYqU=
-=6LWm
------END PGP SIGNATURE-----
