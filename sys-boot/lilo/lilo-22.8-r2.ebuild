@@ -1,11 +1,11 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/lilo/Attic/lilo-22.7.3-r1.ebuild,v 1.7 2008/01/31 13:26:02 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/lilo/lilo-22.8-r2.ebuild,v 1.1 2008/01/31 13:26:02 chainsaw Exp $
 
 inherit eutils flag-o-matic toolchain-funcs
 
-DOLILO_V="0.4"
-IUSE="static minimal pxeserial"
+DOLILO_V="0.5"
+IUSE="static minimal pxeserial device-mapper"
 
 DESCRIPTION="Standard Linux boot loader"
 HOMEPAGE="http://lilo.go.dyndns.org/pub/linux/lilo/"
@@ -19,9 +19,10 @@ SRC_URI="http://home.san.rr.com/johninsd/pub/linux/lilo/${MY_P}.tar.gz
 
 SLOT="0"
 LICENSE="BSD GPL-2"
-KEYWORDS="-* x86 amd64"
+KEYWORDS="-* ~x86 ~amd64"
 
-DEPEND=">=sys-devel/bin86-0.15.5"
+DEPEND=">=sys-devel/bin86-0.15.5
+	device-mapper? ( >=sys-fs/device-mapper-1.02.12 )"
 
 PROVIDE="virtual/bootloader"
 
@@ -34,16 +35,14 @@ src_unpack() {
 	epatch "${FILESDIR}/${P}-correct-usage-info.patch"
 	# Install manpages to correct location, do not rely on incorrect manpath output, bug #117135
 	# Do not strip the main binary, it upsets portage, bug #140210
-	epatch "${FILESDIR}/${P}-makefile.patch"
 	# Do not install diag1.img, bug #149887
-	epatch "${FILESDIR}/${P}-makefile-nodiags.patch"
-	# Do not try to read the partition table on LVM2
-	epatch "${FILESDIR}/${P}-lvm2-not-partionable.patch"
+	epatch "${FILESDIR}/${P}-makefile.patch"
 
 	# this patch is needed when booting PXE and the device you're using
 	# emulates vga console via serial console.
 	# IE..  B.B.o.o.o.o.t.t.i.i.n.n.g.g....l.l.i.i.n.n.u.u.x.x and stair stepping.
 	use pxeserial && epatch "${FILESDIR}/${P}-novga.patch"
+	use device-mapper || epatch "${FILESDIR}/${P}-nodevmapper.patch"
 
 	unpack ${DOLILO_TAR}
 }
@@ -145,10 +144,10 @@ lilocheck () {
 }
 
 pkg_postinst() {
-	if [ ! -e "${ROOT}"/boot/boot.b -a ! -L "${ROOT}"/boot/boot.b ]
+	if [ ! -e "${ROOT}/boot/boot.b" -a ! -L "${ROOT}/boot/boot.b" ]
 	then
 		[ -f "${ROOT}/boot/boot-menu.b" ] && \
-			ln -snf boot-menu.b "${ROOT}"/boot/boot.b
+			ln -snf boot-menu.b "${ROOT}/boot/boot.b"
 	fi
 
 	if [ "${ROOT}" = "/" ] && use !minimal;
