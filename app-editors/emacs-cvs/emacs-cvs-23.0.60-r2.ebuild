@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-23.0.60-r1.ebuild,v 1.11 2008/02/01 14:59:36 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-23.0.60-r2.ebuild,v 1.1 2008/02/01 16:50:33 opfer Exp $
 
 ECVS_AUTH="pserver"
 ECVS_SERVER="cvs.savannah.gnu.org:/sources/emacs"
 ECVS_MODULE="emacs"
-ECVS_BRANCH="emacs-unicode-2"
-ECVS_LOCALNAME="emacs-unicode"
+ECVS_BRANCH="HEAD"
+ECVS_LOCALNAME="emacs"
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -18,8 +18,9 @@ HOMEPAGE="http://www.gnu.org/software/emacs/"
 SRC_URI=""
 
 LICENSE="GPL-3 FDL-1.2 BSD"
-SLOT="23-unicode"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+SLOT="23"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+
 IUSE="alsa dbus gif gpm gtk gzip-el hesiod jpeg kerberos motif png spell sound source svg tiff toolkit-scroll-bars X Xaw3d xft xpm"
 RESTRICT="strip"
 
