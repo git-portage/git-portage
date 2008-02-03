@@ -1,27 +1,24 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mpg123/Attic/mpg123-1.0.1.ebuild,v 1.1 2007/12/30 14:32:53 drac Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mpg123/Attic/mpg123-1.2.0.ebuild,v 1.1 2008/02/03 16:17:30 drac Exp $
 
-WANT_AUTOMAKE=1.9
-
-inherit autotools eutils
-
-DESCRIPTION="Real Time mp3 player"
+DESCRIPTION="a realtime MPEG 1.0/2.0/2.5 audio player for layers 1, 2 and 3."
 HOMEPAGE="http://www.mpg123.de"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
-IUSE="3dnow 3dnowext alsa altivec esd jack mmx nas oss portaudio pulseaudio sdl sse"
+IUSE="3dnow 3dnowext alsa altivec arts esd jack mmx nas oss portaudio pulseaudio sdl sse"
 
 RDEPEND="alsa? ( media-libs/alsa-lib )
-	sdl? ( media-libs/libsdl )
 	esd? ( media-sound/esound )
-	nas? ( media-libs/nas )
 	jack? ( media-sound/jack-audio-connection-kit )
+	nas? ( media-libs/nas )
 	portaudio? ( media-libs/portaudio )
-	pulseaudio? ( media-sound/pulseaudio )"
+	pulseaudio? ( media-sound/pulseaudio )
+	sdl? ( media-libs/libsdl )
+	arts? ( kde-base/arts )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
@@ -29,9 +26,7 @@ PROVIDE="virtual/mpg123"
 
 src_unpack() {
 	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-no-faltivec.patch
-	eautoreconf
+	sed -i -e 's:-faltivec::' "${S}"/configure
 }
 
 src_compile() {
@@ -42,8 +37,10 @@ src_compile() {
 	use jack && myaudio="${myaudio} jack"
 	use nas && myaudio="${myaudio} nas"
 	use oss && myaudio="${myaudio} oss"
+	use portaudio && myaudio="${myaudio} portaudio"
 	use pulseaudio && myaudio="${myaudio} pulse"
 	use sdl && myaudio="${myaudio} sdl"
+	use arts && myaudio="${myaudio} arts"
 
 	local mycpu
 
