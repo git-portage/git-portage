@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/tk/Attic/tk-8.4.16.ebuild,v 1.1 2007/12/22 03:58:06 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/tk/Attic/tk-8.4.17.ebuild,v 1.1 2008/02/04 16:28:02 matsuu Exp $
 
 WANT_AUTOCONF=latest
 WANT_AUTOMAKE=latest
@@ -46,6 +46,9 @@ src_unpack() {
 
 	# Bug 125971
 	epatch "${FILESDIR}"/${PN}-8.4.15-tclm4-soname.patch
+
+	# Bug 208464
+	epatch "${FILESDIR}"/${PN}-CVE-2006-4484.patch
 
 	local d
 	for d in */configure ; do
