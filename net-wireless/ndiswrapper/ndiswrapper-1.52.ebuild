@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/ndiswrapper/Attic/ndiswrapper-1.50_rc1.ebuild,v 1.1 2007/11/21 02:59:38 peper Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/ndiswrapper/Attic/ndiswrapper-1.52.ebuild,v 1.1 2008/02/06 23:06:52 peper Exp $
 
 inherit linux-mod
 
@@ -42,9 +42,6 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	convert_to_m "${S}/driver/Makefile"
-
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-makefile.patch"
 }
 
 src_compile() {
