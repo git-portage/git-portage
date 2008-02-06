@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/org-mode/Attic/org-mode-5.19a.ebuild,v 1.1 2008/01/18 17:24:58 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/org-mode/Attic/org-mode-5.20.ebuild,v 1.1 2008/02/06 21:02:47 ulm Exp $
 
 inherit elisp
 
