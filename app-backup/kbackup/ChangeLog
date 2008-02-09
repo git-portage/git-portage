@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/kbackup
 # Copyright 2006-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/ChangeLog,v 1.5 2008/02/02 21:31:49 opfer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/ChangeLog,v 1.6 2008/02/09 22:09:20 philantrop Exp $
+
+  09 Feb 2008; Wulf C. Krueger <philantrop@gentoo.org> kbackup-0.5.3.ebuild:
+  Marked stable on amd64 as per bug 208607.
 
   02 Feb 2008; Christian Faulhammer <opfer@gentoo.org> kbackup-0.5.3.ebuild:
   stable x86, bug 208607
