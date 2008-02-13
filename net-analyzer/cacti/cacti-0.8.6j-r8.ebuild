@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/cacti/Attic/cacti-0.8.7a.ebuild,v 1.3 2008/02/05 10:53:12 corsair Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/cacti/Attic/cacti-0.8.6j-r8.ebuild,v 1.1 2008/02/13 13:00:08 pva Exp $
 
 inherit eutils webapp depend.apache depend.php
 
 # Support for _p* in version.
 MY_P=${P/_p*/}
-HAS_PATCHES=0
+HAS_PATCHES=1
 
 DESCRIPTION="Cacti is a complete frontend to rrdtool"
 HOMEPAGE="http://www.cacti.net/"
@@ -14,14 +14,20 @@ SRC_URI="http://www.cacti.net/downloads/${MY_P}.tar.gz"
 
 # patches
 if [ $HAS_PATCHES == 1 ] ; then
-	UPSTREAM_PATCHES=""
+	UPSTREAM_PATCHES="ping_php_version4_snmpgetnext
+					  tree_console_missing_hosts
+					  thumbnail_graphs_not_working
+					  graph_debug_lockup_fix
+					  snmpwalk_fix
+					  sec_sql_injection-0.8.6j
+					  multiple_vulnerabilities-0.8.6j"
 	for i in $UPSTREAM_PATCHES ; do
 		SRC_URI="${SRC_URI} http://www.cacti.net/downloads/patches/${PV/_p*}/${i}.patch"
 	done
 fi
 
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 hppa ~ppc ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE="snmp bundled-adodb"
 
 DEPEND=""
@@ -49,9 +55,11 @@ src_unpack() {
 		unpack ${MY_P}.tar.gz
 	fi
 
+	epatch "${FILESDIR}/${P}"-dos-large-values.patch
+
 	use bundled-adodb || sed -i -e \
 	's:$config\["library_path"\] . "/adodb/adodb.inc.php":"adodb/adodb.inc.php":' \
-	"${S}"/include/global.php
+	"${S}"/include/config.php
 }
 
 pkg_setup() {
