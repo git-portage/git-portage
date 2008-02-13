@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/duplicity
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.23 2008/01/16 00:36:01 hanno Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.24 2008/02/13 21:15:30 ticho Exp $
+
+*duplicity-0.4.9 (13 Feb 2008)
+
+  13 Feb 2008; Andrej Kacian <ticho@gentoo.org> +duplicity-0.4.9.ebuild:
+  Version bump. Bug #205407 by Tupone Alfredo <tupone at gentoo org>.
 
   16 Jan 2008; Hanno Boeck <hanno@gentoo.org> duplicity-0.4.7.ebuild:
   Stable on amd64.
