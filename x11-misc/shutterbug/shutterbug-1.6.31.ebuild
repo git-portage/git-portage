@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/shutterbug/Attic/shutterbug-1.6.29.ebuild,v 1.1 2007/10/01 01:33:22 mabi Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/shutterbug/Attic/shutterbug-1.6.31.ebuild,v 1.1 2008/02/18 07:58:07 mabi Exp $
 
 inherit fox
 
