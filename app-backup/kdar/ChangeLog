@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/kdar
-# Copyright 2000-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/ChangeLog,v 1.10 2007/05/23 08:54:23 opfer Exp $
+# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/ChangeLog,v 1.11 2008/02/19 01:05:24 ingmar Exp $
+
+  19 Feb 2008; Ingmar Vanhassel <ingmar@gentoo.org> kdar-2.0.7.ebuild,
+  kdar-3_pre20060314.ebuild:
+  Update kde-base/* dependencies so that KDE 4 doesn't satisfy it. bug 206528.
 
   23 May 2007; Christian Faulhammer <opfer@gentoo.org>
   kdar-3_pre20060314.ebuild:

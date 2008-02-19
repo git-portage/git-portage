@@ -1,13 +1,13 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/kdar-3_pre20060314.ebuild,v 1.2 2007/05/23 08:54:23 opfer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/kdar-3_pre20060314.ebuild,v 1.3 2008/02/19 01:05:24 ingmar Exp $
 
 inherit kde flag-o-matic
 
 MY_P="${PN}-snapshot-${PV#*_pre}"
 DESCRIPTION="KDE Disk Archiver."
 HOMEPAGE="http://kdar.sourceforge.net/"
-SRC_URI="mirror://sourceforge/kdar/${MY_P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -18,7 +18,7 @@ RDEPEND=">=app-backup/dar-2.3.2-r1
 	>=app-arch/bzip2-1.0.2
 	>=sys-libs/zlib-1.1.4"
 DEPEND="${RDEPEND}
-	kde-base/kapptemplate"
+	=kde-base/kapptemplate-3.5*"
 
 S="${WORKDIR}/${MY_P}"
 
