@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/fvwm-crystal/Attic/fvwm-crystal-3.0.5.ebuild,v 1.2 2007/06/09 20:11:01 lucass Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/fvwm-crystal/Attic/fvwm-crystal-3.0.5.ebuild,v 1.3 2008/02/19 19:55:43 lucass Exp $
 
 DESCRIPTION="Configurable and full featured theme for FVWM, with lots of transparency."
 HOMEPAGE="http://fvwm-crystal.org/"
@@ -21,7 +21,7 @@ src_compile() {
 src_install() {
 	einstall || die "einstall failed"
 
-	dodoc AUTHORS COPYING README INSTALL NEWS ChangeLog doc/*
+	dodoc AUTHORS README INSTALL NEWS ChangeLog doc/*
 
 	insinto /usr/share/doc/${PF}
 	doins -r addons
