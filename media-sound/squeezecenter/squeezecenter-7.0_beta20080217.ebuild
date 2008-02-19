@@ -1,15 +1,17 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/squeezecenter/Attic/squeezecenter-7.0_beta20080102.ebuild,v 1.1 2008/01/07 19:26:59 lavajoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/squeezecenter/Attic/squeezecenter-7.0_beta20080217.ebuild,v 1.1 2008/02/19 03:43:15 lavajoe Exp $
 
 inherit eutils
 
-MY_PV="${PV:8:4}-${PV:12:2}-${PV:14:2}"
-MY_P="SqueezeCenter_trunk_v${MY_PV}"
+SVN_VER="17600"
+MAJOR_VER="${PV:0:3}"
+MY_SRC_DIR="SqueezeCenter_${MAJOR_VER}_v${PV:8:4}-${PV:12:2}-${PV:14:2}"
+MY_P="squeezecenter-${MAJOR_VER}-${SVN_VER}-noCPAN"
 
 DESCRIPTION="Logitech SqueezeCenter music server"
 HOMEPAGE="http://www.slimdevices.com/pi_features.html"
-SRC_URI="http://www.slimdevices.com/downloads/nightly/SqueezeCenter_v${MY_PV}/${MY_P}.no-cpan-arch.tar.gz"
+SRC_URI="http://www.slimdevices.com/downloads/nightly/${MY_SRC_DIR}/${MY_P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
@@ -65,7 +67,7 @@ src_unpack() {
 	cd "${S}"
 
 	# Apply patches
-	epatch "${FILESDIR}/mDNSResponder-7.0-gentoo.patch"
+	epatch "${FILESDIR}/mDNSResponder-${MAJOR_VER}-gentoo.patch"
 
 	# Remove bundled binaries that are supplied by other ebuilds
 	einfo "Removing binaries provided by other ebuilds ..."
@@ -94,17 +96,17 @@ src_install() {
 	cp -r * "${D}/${INSTROOT}/squeezecenter"
 
 	# Install init scripts.
-	newconfd "${FILESDIR}/squeezecenter-7.0.conf.d" squeezecenter
-	newinitd "${FILESDIR}/squeezecenter-7.0.init.d" squeezecenter
+	newconfd "${FILESDIR}/squeezecenter-${MAJOR_VER}.conf.d" squeezecenter
+	newinitd "${FILESDIR}/squeezecenter-${MAJOR_VER}.init.d" squeezecenter
 
 	# Install default preferences.
 	insinto /etc
-	newins "${FILESDIR}/squeezecenter-7.0.prefs" squeezecenter.prefs
+	newins "${FILESDIR}/squeezecenter-${MAJOR_VER}.prefs" squeezecenter.prefs
 
 	# Install the SQL configuration scripts.
 	insinto "${INSTROOT}/squeezecenter/SQL/mysql"
-	doins "${FILESDIR}/dbdrop-7.0-gentoo.sql"
-	doins "${FILESDIR}/dbcreate-7.0-gentoo.sql"
+	doins "${FILESDIR}/dbdrop-${MAJOR_VER}-gentoo.sql"
+	doins "${FILESDIR}/dbcreate-${MAJOR_VER}-gentoo.sql"
 
 	# Initialize /var/{cache,run}.
 	keepdir /var/{cache,run}/squeezecenter
@@ -124,12 +126,12 @@ src_install() {
 
 	# Install logrotate support.
 	insinto /etc/logrotate.d
-	newins "${FILESDIR}/squeezecenter-7.0.logrotate.d" squeezecenter
+	newins "${FILESDIR}/squeezecenter-${MAJOR_VER}.logrotate.d" squeezecenter
 
 	# Install Avahi support (if USE flag is set).
 	if use avahi; then
 		insinto /etc/avahi/services
-		newins "${FILESDIR}/avahi-7.0-squeezecenter.service" squeezecenter.service
+		newins "${FILESDIR}/avahi-${MAJOR_VER}-squeezecenter.service" squeezecenter.service
 	fi
 }
 
@@ -159,8 +161,8 @@ pkg_postinst() {
 	if ! use flac; then
 		ewarn "'flac' USE flag is not set.  Although not essential, FLAC is required"
 		ewarn "for playing lossless WAV and FLAC (for Squeezebox 1), and for"
-		ewarn "playing other less common file types (if you have a Squeezebox 2, 3"
-		ewarn "or Transporter)."
+		ewarn "playing other less common file types (if you have a Squeezebox 2, 3,"
+		ewarn "Receiver or Transporter)."
 		ewarn "For maximum flexibility you are recommended to set the 'flac' USE flag".
 		ewarn ""
 	fi
@@ -185,6 +187,8 @@ pkg_postinst() {
 		ewarn "to the file /etc/portage/package.use:"
 		ewarn "\tdev-perl/GD jpeg png"
 		ewarn "\tmedia-libs/gd jpeg png"
+		ewarn "And then rebuild those packages with:"
+		ewarn "\temerge --newuse dev-perl/GD media-libs/gd"
 		ewarn ""
 	fi
 
@@ -252,7 +256,7 @@ pkg_config() {
 		read -p "MySQL root password: " ROOT_PASSWD; echo
 		stty echo
 		trap ":" EXIT
-		mysql --user=root --password="${ROOT_PASSWD}" </dev/null >/dev/null 2>&1 && DONE=1
+		echo quit | mysql --user=root --password="${ROOT_PASSWD}" >/dev/null 2>&1 && DONE=1
 		if [ $DONE -eq 0 ]; then
 			eerror "Incorrect MySQL root password, or MySQL is not running"
 		fi
@@ -283,11 +287,11 @@ pkg_config() {
 	# from this as it probably just indicates that the database wasn't
 	# yet present.
 	einfo "Dropping old SqueezeCenter database and user ..."
-	sed -e "s/__DATABASE__/${DBUSER}/" -e "s/__DBUSER__/${DBUSER}/" < "${INSTROOT}/squeezecenter/SQL/mysql/dbdrop-7.0-gentoo.sql" | mysql --user=root --password="${ROOT_PASSWD}" >/dev/null 2>&1
+	sed -e "s/__DATABASE__/${DBUSER}/" -e "s/__DBUSER__/${DBUSER}/" < "${INSTROOT}/squeezecenter/SQL/mysql/dbdrop-${MAJOR_VER}-gentoo.sql" | mysql --user=root --password="${ROOT_PASSWD}" >/dev/null 2>&1
 
 	# Drop and create the SqueezeCenter user and database.
 	einfo "Creating SqueezeCenter MySQL user and database (${DBUSER}) ..."
-	sed -e "s/__DATABASE__/${DBUSER}/" -e "s/__DBUSER__/${DBUSER}/" -e "s/__DBPASSWORD__/${DBUSER_PASSWD}/" < "${INSTROOT}/squeezecenter/SQL/mysql/dbcreate-7.0-gentoo.sql" | mysql --user=root --password="${ROOT_PASSWD}" || die "Unable to create MySQL database and user"
+	sed -e "s/__DATABASE__/${DBUSER}/" -e "s/__DBUSER__/${DBUSER}/" -e "s/__DBPASSWORD__/${DBUSER_PASSWD}/" < "${INSTROOT}/squeezecenter/SQL/mysql/dbcreate-${MAJOR_VER}-gentoo.sql" | mysql --user=root --password="${ROOT_PASSWD}" || die "Unable to create MySQL database and user"
 
 	# Remove the existing MySQL preferences from SqueezeCenter (if any).
 	sc_remove_db_prefs "${PREFS}"
