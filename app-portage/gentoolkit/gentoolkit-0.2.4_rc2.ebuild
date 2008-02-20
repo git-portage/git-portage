@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/gentoolkit/Attic/gentoolkit-0.2.4_pre6.ebuild,v 1.5 2007/11/03 16:47:20 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/gentoolkit/Attic/gentoolkit-0.2.4_rc2.ebuild,v 1.1 2008/02/20 23:04:10 fuzzyray Exp $
 
 inherit eutils python
 
@@ -12,7 +12,7 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE="userland_GNU"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 
 DEPEND=">=sys-apps/portage-2.1.1_pre1
 	>=dev-lang/python-2.0
@@ -21,17 +21,12 @@ DEPEND=">=sys-apps/portage-2.1.1_pre1
 	userland_GNU? ( sys-apps/debianutils )"
 
 src_install() {
-	make DESTDIR=${D} install-gentoolkit || die
+	emake DESTDIR="${D}" install-gentoolkit || die "install-gentoolkit failed"
 }
 
 pkg_postinst() {
-	python_mod_optimize ${ROOT}usr/lib/gentoolkit
+	python_mod_optimize "${ROOT}"usr/lib/gentoolkit
 	echo
-	ewarn "This version of gentoolkit contains a rewritten version of"
-	ewarn "revdep-rebuild. If you encounter issues with the new version,"
-	ewarn "The previous version can be found at:"
-	ewarn "/usr/lib/gentoolkit/bin/revdep-rebuild"
-	ewarn
 	elog "Another alternative to equery is app-portage/portage-utils"
 	elog
 	elog "For further information on gentoolkit, please read the gentoolkit"
@@ -40,5 +35,5 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	python_mod_cleanup ${ROOT}usr/lib/gentoolkit
+	python_mod_cleanup "${ROOT}"usr/lib/gentoolkit
 }
