@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/quagga/Attic/quagga-0.98.6-r3.ebuild,v 1.9 2008/01/10 08:41:38 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/quagga/Attic/quagga-0.98.6-r4.ebuild,v 1.1 2008/02/20 05:19:32 mrness Exp $
 
 WANT_AUTOMAKE="latest"
 WANT_AUTOCONF="latest"
