@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/gwhois/Attic/gwhois-20070822.ebuild,v 1.1 2007/08/23 17:53:54 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/gwhois/Attic/gwhois-20080219.ebuild,v 1.1 2008/02/20 10:00:39 wschlich Exp $
 
 inherit eutils
 
