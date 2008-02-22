@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/dpkg/Attic/dpkg-1.14.12.ebuild,v 1.5 2008/02/04 20:41:37 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/dpkg/Attic/dpkg-1.14.12.ebuild,v 1.6 2008/02/22 04:10:05 vapier Exp $
 
 inherit eutils multilib
 
@@ -24,6 +24,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}"/${P}-nls.patch #192819
+	epatch "${FILESDIR}"/${PN}-1.14.16.6-check-PATH.patch #210997
 }
 
 src_compile() {

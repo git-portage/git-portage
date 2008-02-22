@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/dpkg/Attic/dpkg-1.14.16.4.ebuild,v 1.2 2008/02/22 04:10:05 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/dpkg/Attic/dpkg-1.14.16.6.ebuild,v 1.1 2008/02/22 04:10:05 vapier Exp $
 
 inherit eutils multilib
 
