@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/ejabberd/Attic/ejabberd-2.0.0_rc1.ebuild,v 1.2 2008/02/10 00:35:58 lu_zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/ejabberd/Attic/ejabberd-2.0.0.ebuild,v 1.1 2008/02/22 14:55:58 caleb Exp $
 
 inherit eutils multilib
 
@@ -9,7 +9,7 @@ JABBER_RUN="/var/run/jabber"
 JABBER_SPOOL="/var/spool/jabber"
 JABBER_LOG="/var/log/jabber"
 
-MY_PV=${PV/_rc1/}
+MY_PV=${PV}
 MY_P=${PN}-${MY_PV}
 
 DESCRIPTION="The Erlang Jabber Daemon"
