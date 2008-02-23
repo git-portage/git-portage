@@ -1,16 +1,16 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/xen-sources/Attic/xen-sources-2.6.18-r6.ebuild,v 1.1 2007/10/10 23:37:10 marineam Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/xen-sources/Attic/xen-sources-2.6.20-r7.ebuild,v 1.1 2008/02/23 00:31:56 marineam Exp $
 
 ETYPE="sources"
 UNIPATCH_STRICTORDER="1"
 K_WANT_GENPATCHES="base"
-K_GENPATCHES_VER="10"
+K_GENPATCHES_VER="19"
 inherit kernel-2
 detect_version
 
 DESCRIPTION="Full sources for a dom0/domU Linux kernel to run under Xen"
-HOMEPAGE="http://www.xensource.com/xen/xen/"
+HOMEPAGE="http://xen.xensource.com/"
 
 KEYWORDS="~x86 ~amd64"
 
@@ -21,3 +21,5 @@ XENPATCHES_URI="mirror://gentoo/${XENPATCHES}"
 SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${XENPATCHES_URI}"
 
 UNIPATCH_LIST="${DISTDIR}/${XENPATCHES}"
+
+DEPEND="${DEPEND} >=sys-devel/binutils-2.17"
