@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/quixote/Attic/quixote-2.4.ebuild,v 1.6 2008/02/23 23:04:32 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/quixote/Attic/quixote-1.2.ebuild,v 1.1 2008/02/23 23:04:32 hollow Exp $
 
 inherit distutils
 
@@ -10,12 +10,12 @@ DESCRIPTION="Python HTML templating framework for developing web applications."
 HOMEPAGE="http://quixote.ca"
 SRC_URI="http://quixote.ca/releases/${MY_P}.tar.gz"
 
-LICENSE="CNRI-QUIXOTE-2.4"
+LICENSE="CNRI"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/python-2.3"
+DEPEND=">=dev-lang/python-2.2"
 
 S="${WORKDIR}"/${MY_P}
 
@@ -24,4 +24,6 @@ src_install() {
 	distutils_src_install
 	dodoc doc/*.txt
 	dohtml doc/*.html
+	insinto /usr/share/${PN}/demo
+	doins demo/*
 }
