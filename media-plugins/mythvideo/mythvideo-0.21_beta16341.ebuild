@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/mythvideo/Attic/mythvideo-0.21_pre15448.ebuild,v 1.1 2008/01/15 16:23:25 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/mythvideo/Attic/mythvideo-0.21_beta16341.ebuild,v 1.1 2008/03/03 20:05:52 cardoe Exp $
 
-inherit mythtv-plugins subversion
+inherit mythtv-plugins
 
 DESCRIPTION="Video player module for MythTV."
 IUSE="mplayer xine"
@@ -17,16 +17,11 @@ RDEPEND="dev-perl/libwww-perl
 	sys-apps/eject"
 DEPEND="${RDEPEND}"
 
-src_unpack() {
-	subversion_src_unpack
-	mythtv-plugins_src_unpack_patch
-}
-
 pkg_postinst() {
 	elog "MythVideo can use any media player to playback files, since"
 	elog "it's a setting in the setup menu."
 	elog
-	elog "MythTv also has an 'Internal' player you can use, though"
+	elog "MythTV also has an 'Internal' player you can use, though"
 	elog "it will not support as many formats.  If you want to use it,"
 	elog "set the player to 'Internal' (note spelling & caps)."
 }
