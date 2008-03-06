@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/gnupg/Attic/gnupg-2.0.7.ebuild,v 1.8 2007/12/29 11:42:07 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/gnupg/Attic/gnupg-2.0.7-r1.ebuild,v 1.1 2008/03/06 07:21:30 alonbl Exp $
 
 inherit flag-o-matic eutils
 
@@ -71,6 +71,10 @@ src_install() {
 
 	dosym gpg2 /usr/bin/gpg
 	dosym gpgv2 /usr/bin/gpgv
+	dosym gpg2keys_ldap /usr/libexec/gpgkeys_ldap
+	dosym gpg2keys_hkp /usr/libexec/gpgkeys_hkp
+	dosym gpg2keys_finger /usr/libexec/gpgkeys_finger
+	dosym gpg2keys_curl /usr/libexec/gpgkeys_curl
 	echo ".so man1/gpg2.1" > "${D}/usr/share/man/man1/gpg.1"
 	echo ".so man1/gpgv2.1" > "${D}/usr/share/man/man1/gpgv.1"
 
