@@ -1,19 +1,19 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/acroread/Attic/acroread-8.1.1-r1.ebuild,v 1.1 2008/01/18 03:03:19 tgurr Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/acroread/Attic/acroread-8.1.2-r1.ebuild,v 1.1 2008/03/07 20:57:51 tgurr Exp $
 
 inherit eutils nsplugins
 
 DESCRIPTION="Adobe's PDF reader"
 HOMEPAGE="http://www.adobe.com/products/acrobat/"
-IUSE="cups ldap nsplugin"
+IUSE="cups ldap minimal nsplugin"
 
 SRC_HEAD="http://ardownload.adobe.com/pub/adobe/reader/unix/8.x/${PV}"
 SRC_FOOT="-${PV}-1.i486.tar.bz2"
 
 LINGUA_LIST="da:dan de:deu en:enu es:esp fi:suo fr:fra it:ita ja:jpn ko:kor nb:nor nl:nld pt:ptb sv:sve zh_CN:chs zh_TW:cht"
 DEFAULT_URI="${SRC_HEAD}/enu/AdobeReader_enu${SRC_FOOT}"
-for ll in ${LINGUA_LIST}; do
+for ll in ${LINGUA_LIST} ; do
 	iuse_l="linguas_${ll/:*}"
 	src_l=${ll/*:}
 	IUSE="${IUSE} ${iuse_l}"
@@ -22,27 +22,28 @@ for ll in ${LINGUA_LIST}; do
 		${iuse_l}? ( ${SRC_HEAD}/${src_l}/AdobeReader_${src_l}${SRC_FOOT} )"
 done
 SRC_URI="${SRC_URI}
-	${DEFAULT_URI}
-	x86? ( !cups? ( mirror://gentoo/libcups.so-i386.bz2 ) )"
+	${DEFAULT_URI}"
 
 LICENSE="Adobe"
 SLOT="0"
-# NOTE - Do not go stable until all language variants are released for this version
 KEYWORDS="-* ~amd64 ~x86"
 RESTRICT="strip mirror"
 
-# Needs libgtkembedmoz.so, which can come from xulrunner or mozilla-firefox.
-# In the case of mozilla-firefox, need to create /etc/gre.d/gre.conf with
-# GRE_PATH set to the /usr/lib/mozilla-firefox
-# TODO: sort out libgtkembedmoz.so for amd64.
-RDEPEND="x86? ( >=x11-libs/gtk+-2.0
-			cups? ( net-print/cups )
+# Needs libgtkembedmoz.so, which can come from xulrunner, mozilla-firefox or
+# seamonkey. In the case of mozilla-firefox and seamonkey, we need to create
+# /etc/gre.d/gre.conf with GRE_PATH set. On amd64 currently only seamonkey-bin
+# provides a 32bit libgtkembedmoz.so.
+RDEPEND="cups? ( net-print/cups )
+	x86? ( >=x11-libs/gtk+-2.0
 			ldap? ( net-nds/openldap )
-			|| ( net-libs/xulrunner
-				www-client/mozilla-firefox ) )
+			!minimal? ( || ( net-libs/xulrunner
+						www-client/mozilla-firefox
+						www-client/seamonkey
+						www-client/seamonkey-bin ) ) )
 	amd64? ( >=app-emulation/emul-linux-x86-baselibs-2.4.2
-			>=app-emulation/emul-linux-x86-gtklibs-2.0 )"
-QA_TEXTRELS="opt/Acrobat8/Reader/intellinux/plug_ins/PPKLite.api
+			>=app-emulation/emul-linux-x86-gtklibs-2.0
+			!minimal? ( >=www-client/seamonkey-bin-1.1.7 ) )"
+QA_TEXTRELS="opt/Adobe/Reader8/Reader/intellinux/plug_ins/PPKLite.api
 	opt/Adobe/Reader8/Browser/intellinux/nppdf.so
 	opt/netscape/plugins/nppdf.so"
 QA_EXECSTACK="opt/Adobe/Reader8/Reader/intellinux/plug_ins/Annots.api
@@ -73,10 +74,10 @@ acroread_get_ll() {
 	local f_src_l ll lingua src_l
 	f_src_l=${1/${SRC_FOOT}}
 	f_src_l=${f_src_l/*_}
-	for ll in ${LINGUA_LIST}; do
+	for ll in ${LINGUA_LIST} ; do
 		lingua=${ll/:*}
 		src_l=${ll/*:}
-		if [[ ${src_l} == ${f_src_l} ]]; then
+		if [[ ${src_l} == ${f_src_l} ]] ; then
 			echo ${lingua}
 			return
 		fi
@@ -88,26 +89,20 @@ src_unpack() {
 	local ll linguas fl launcher
 	# Unpack all into the same place; overwrite common files.
 	fl=""
-	for pkg in ${A}; do
+	for pkg in ${A} ; do
 		cd "${WORKDIR}"
 		unpack ${pkg}
 		cd "${S}"
-		if [[ ${pkg} =~ ^AdobeReader_ ]]; then
+		if [[ ${pkg} =~ ^AdobeReader_ ]] ; then
 			tar xf ILINXR.TAR ||
 				die "Failed to unpack ILINXR.TAR; is distfile corrupt?"
 			tar xf COMMON.TAR ||
 				die "Failed to unpack COMMON.TAR; is distfile corrupt?"
-			# Don't know if this is still necessary or not...
-			#epatch ${FILESDIR}/acroread-scim.patch
-			# Don't know if this is still necessary or not...
-			#epatch ${FILESDIR}/acroread-low-startup-fontissue.patch
-			# Old under-quoted expr functions no longer appear
-			#epatch ${FILESDIR}/acroread-expr.patch
 			ll=$(acroread_get_ll ${pkg})
-			for launcher in ${LAUNCHERS}; do
+			for launcher in ${LAUNCHERS} ; do
 				mv ${launcher} ${launcher}.${ll}
 			done
-			if [[ -z ${fl} ]]; then
+			if [[ -z ${fl} ]] ; then
 				fl=${ll}
 				linguas="${ll}"
 			else
@@ -115,9 +110,9 @@ src_unpack() {
 			fi
 		fi
 	done
-	if [[ ${linguas} == ${fl} ]]; then
+	if [[ ${linguas} == ${fl} ]] ; then
 		# Only one lingua selected - skip building the wrappers
-		for launcher in ${LAUNCHERS}; do
+		for launcher in ${LAUNCHERS} ; do
 			mv ${launcher}.${fl} ${launcher} ||
 				die "Failed to put ${launcher}.${fl} back to ${launcher}; please report"
 		done
@@ -132,7 +127,7 @@ src_unpack() {
 		#    (indicating internationalisation hasn't yet begin for 8.1.1)
 		# 2) HelpViewer is new - I don't know if Adobe are likely to
 		#    internationalise it or not.
-		for launcher in ${LAUNCHERS}; do
+		for launcher in ${LAUNCHERS} ; do
 			cat > ${launcher} <<-EOF
 				#!/bin/bash
 				# Copyright 1999-2007 Gentoo Foundation
@@ -147,7 +142,7 @@ src_unpack() {
 				L=\${L:-\${LANG}}
 				case \${L} in
 			EOF
-			for ll in ${linguas}; do
+			for ll in ${linguas} ; do
 				echo "${ll}*) exec ${INSTALLDIR}/${launcher}.${ll} \"\$@\";;" >> ${launcher}
 			done
 			# default to English (in particualr for LANG=C)
@@ -158,6 +153,18 @@ src_unpack() {
 			chmod 755 ${launcher}
 		done
 	fi
+
+	# remove cruft
+	rm "${S}"/Adobe/Reader8/bin/UNINSTALL
+	rm "${S}"/Adobe/Reader8/Resource/Support/vnd.*.desktop
+
+	# fix CVE-2008-0883 the sed way, see bug #212367
+	local binfile
+	for binfile in "${S}"/Adobe/Reader8/bin/* ; do
+	sed -i -e '/MkTemp()/,+17d' \
+		-e 's/MkTemp/mktemp/g' \
+		"${binfile}" || die "sed failed"
+	done
 }
 
 src_install() {
@@ -175,8 +182,7 @@ src_install() {
 
 	# The Browser_Plugin_HowTo.txt is now in a subdirectory, which
 	# is named according to the language the user is using.
-	# Ie. for German, it is in a DEU directory.	See bug #118015
-	#dodoc Browser/${LANG_TAG}/Browser_Plugin_HowTo.txt
+	# Ie. for German, it is in a DEU directory. See bug #118015
 	dodoc Adobe/Reader8/Browser/HowTo/*/Browser_Plugin_HowTo.txt
 
 	if use nsplugin ; then
@@ -189,62 +195,77 @@ src_install() {
 		rm "${D}"${INSTALLDIR}/Adobe/Reader8/Reader/intellinux/plug_ins/PPKLite.api
 	fi
 
-	# libcups is needed for printing support (bug 118417)
-	if use x86 && ! use cups ; then
-		mv "${WORKDIR}"/libcups.so-i386 "${WORKDIR}"/libcups.so.2
-		exeinto ${INSTALLDIR}/Adobe/Reader8/Reader/intellinux/lib
-		doexe "${WORKDIR}"/libcups.so.2
-		dosym libcups.so.2 ${INSTALLDIR}/Adobe/Reader8/Reader/intellinux/lib/libcups.so
-	fi
-
 	dodir /opt/bin
-	for launcher in ${LAUNCHERS}; do
+	for launcher in ${LAUNCHERS} ; do
 		dosym /opt/${launcher} /opt/bin/${launcher/*bin\/}
 	done
-
-#	# fix wrong directory permissions (bug #25931)
-#	find ${D}${INSTALLDIR}/. -type d | xargs chmod 755 || die
 }
 
 pkg_postinst () {
-	local ll lc
-	grep -q GRE_PATH= /etc/gre.d/* 2> /dev/null
-	if [[ $? != "0" ]]; then
-		for lib in /usr/lib/mozilla-firefox; do
-			if [[ -f ${lib}/libgtkembedmoz.so ]]; then
-				mkdir -p /etc/gre.d
-				cat > /etc/gre.d/gre.conf <<-EOF
-					GRE_PATH=${lib}
-				EOF
-				elog "Acrobat Reader depends on libgtkembedmoz.so, which I've found"
-				elog "on your system in ${lib}, and configured in /etc/gre.d/gre.conf"
-				break # don't search any more libraries
+	if ! use minimal ; then
+		local ll lc
+		grep -q GRE_PATH= /etc/gre.d/* 2> /dev/null
+		if [[ $? != "0" ]] ; then
+			if use x86 ; then
+				for lib in /opt/seamonkey /usr/lib/seamonkey /usr/lib/mozilla-firefox ; do
+					if [[ -f ${lib}/libgtkembedmoz.so ]] ; then
+						mkdir -p /etc/gre.d
+						cat > /etc/gre.d/gre.conf <<-EOF
+							GRE_PATH=${lib}
+						EOF
+						elog "Adobe Reader depends on libgtkembedmoz.so, which I've found on"
+						elog "your system in ${lib}, and configured in /etc/gre.d/gre.conf."
+						break # don't search any more libraries
+					fi
+				done
 			fi
-		done
+			if use amd64 ; then
+				for lib in /opt/seamonkey ; do
+					if [[ -f ${lib}/libgtkembedmoz.so ]] ; then
+						mkdir -p /etc/gre.d
+						cat > /etc/gre.d/gre.conf <<-EOF
+							GRE_PATH=${lib}
+						EOF
+						elog "Adobe Reader depends on libgtkembedmoz.so, which I've found on"
+						elog "your system in ${lib}, and configured in /etc/gre.d/gre.conf."
+						break # don't search any more libraries
+					fi
+				done
+			fi
+		fi
 	fi
+
 	use ldap ||
-		elog "The Acrobat(TM) Security Plugin can be enabled with USE=ldap"
+		elog "The Adobe Reader security plugin can be enabled with USE=ldap"
+
 	use nsplugin ||
-		elog "The Acrobat(TM) Browser Plugin can be enabled with USE=nsplugin"
+		elog "The Adobe Reader browser plugin can be enabled with USE=nsplugin"
+
 	lc=0
-	for ll in ${LINGUA_LIST}; do
+	for ll in ${LINGUA_LIST} ; do
 		use linguas_${ll/:*} && (( lc = ${lc} + 1 ))
 	done
-	if [[ ${lc} > 1 ]]; then
+	if [[ ${lc} > 1 ]] ; then
 		elog "Multiple languages have been installed, selected via a wrapper script."
 		elog "The language is selected according to the LANG environment variable"
 		elog "(defaulting to English if LANG is not set, or no matching language"
 		elog "version is installed).  Users may need to remove their preferences in"
 		elog "~/.adobe to switch languages."
 	fi
-	grep -q GRE_PATH= /etc/gre.d/* 2> /dev/null
-	if [[ $? != "0" ]]; then
-		ewarn "Acrobat Reader depends dynamically on libgtkembedmoz.so, which should"
-		ewarn "come with Mozilla Firefox or XULRunner, however it couldn't be found."
-		ewarn "The first time you start acroread, it will complain about this, telling"
-		ewarn "you to add the path to it to your preferences.  Clear the error dialog,"
-		ewarn "close the Beyond Acrobat Reader dialog, go to Edit -> Preferences -> Internet"
-		ewarn "and set the libgtkembedmoz directory to the place where it exists,"
-		ewarn "then close and restart acroread."
+
+	if ! use minimal ; then
+		grep -q GRE_PATH= /etc/gre.d/* 2> /dev/null
+		if [[ $? != "0" ]] ; then
+			ewarn "Adobe Reader depends dynamically on libgtkembedmoz.so, which should come"
+			ewarn "with Mozilla Firefox, XULRunner or Seamonkey, however it couldn't be found."
+			ewarn "The first time you start acroread, it will complain about this, telling you"
+			ewarn "to add the path to it to your preferences. Clear the error dialog, close the"
+			ewarn "beyond Adobe Reader dialog, go to Edit -> Preferences -> Internet and set the"
+			ewarn "libgtkembedmoz directory to the place where it exists, then close and restart"
+			ewarn "acroread."
+		fi
+	else
+		ewarn "If you want html support and/or view the help you have to re-emerge"
+		ewarn "acroread with USE=\"-minimal\"."
 	fi
 }
