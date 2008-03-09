@@ -1,8 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez-utils/Attic/bluez-utils-3.20.ebuild,v 1.2 2007/10/06 00:41:02 betelgeuse Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez-utils/Attic/bluez-utils-3.28.ebuild,v 1.1 2008/03/09 21:59:59 eva Exp $
 
-inherit autotools eutils
+inherit autotools multilib eutils
 
 DESCRIPTION="Bluetooth Tools and System Daemons for Linux"
 HOMEPAGE="http://bluez.sourceforge.net/"
@@ -10,7 +10,7 @@ SRC_URI="http://bluez.sourceforge.net/download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~hppa ~ppc ~sh ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~hppa ~ppc ~ppc64 ~sh ~sparc ~x86"
 
 IUSE="alsa cups debug examples gstreamer hal old-daemons test-programs usb"
 
@@ -84,7 +84,7 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die "make install failed"
 
 	dodoc AUTHORS ChangeLog README || die
 
@@ -106,7 +106,7 @@ src_install() {
 	newins "${FILESDIR}/${PN}-3.10.1-udev.rules" 70-bluetooth.rules || die
 	newins "${S}/scripts/bluetooth.rules" 70-bluetooth-pcmcia.rules || die
 
-	exeinto /lib/udev/
+	exeinto /$(get_libdir)/udev/
 	newexe "${FILESDIR}/${PN}-3.10.1-udev.script" bluetooth.sh || die
 	doexe  "${S}/scripts/bluetooth_serial" || die
 }
@@ -150,4 +150,7 @@ pkg_postinst() {
 		elog "The bluetooth service should be started automatically by udev"
 		elog "when the required hardware is inserted next time."
 	fi
+	elog
+	ewarn "On first install you need to run /etc/init.d/dbus reload or hcid"
+	ewarn "will fail to start."
 }
