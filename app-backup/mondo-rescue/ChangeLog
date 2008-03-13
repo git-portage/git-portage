@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/mondo-rescue
-# Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mondo-rescue/Attic/ChangeLog,v 1.6 2007/07/28 22:32:00 mr_bones_ Exp $
+# Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mondo-rescue/Attic/ChangeLog,v 1.7 2008/03/13 10:58:44 wschlich Exp $
+
+*mondo-rescue-2.2.5 (13 Mar 2008)
+
+  13 Mar 2008; Wolfram Schlich <wschlich@gentoo.org> metadata.xml,
+  -mondo-rescue-1.65.ebuild, +mondo-rescue-2.2.5.ebuild,
+  -mondo-rescue-2.10.ebuild:
+  re-activation of package as per bugs #106497 and #176738
 
   28 Jul 2007; Michael Sterrett <mr_bones_@gentoo.org>
   -mondo-rescue-1.47.ebuild, -mondo-rescue-1.61.ebuild,
