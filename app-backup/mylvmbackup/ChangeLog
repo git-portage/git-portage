@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/mylvmbackup
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/ChangeLog,v 1.4 2007/12/04 18:29:00 robbat2 Exp $
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/ChangeLog,v 1.5 2008/03/15 00:55:32 robbat2 Exp $
+
+*mylvmbackup-0.6-r1 (15 Mar 2008)
+
+  15 Mar 2008; Robin H. Johnson <robbat2@gentoo.org>
+  +files/mylvmbackup-0.6-pidfile-fix.patch, mylvmbackup-0.4_pre1.ebuild,
+  mylvmbackup-0.6.ebuild, +mylvmbackup-0.6-r1.ebuild:
+  Backport the pidfile fix from the upcoming 0.7 release.
 
 *mylvmbackup-0.6 (04 Dec 2007)
 

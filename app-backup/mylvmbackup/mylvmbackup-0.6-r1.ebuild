@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/Attic/mylvmbackup-0.6.ebuild,v 1.2 2008/03/15 00:55:32 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/Attic/mylvmbackup-0.6-r1.ebuild,v 1.1 2008/03/15 00:55:32 robbat2 Exp $
 
 inherit eutils
 
@@ -22,6 +22,9 @@ src_unpack() {
 	sed -i \
 		-e '/^prefix/s,/usr/local,/usr,' \
 		"${S}"/Makefile
+
+	cd "${S}"
+	epatch "${FILESDIR}"/mylvmbackup-0.6-pidfile-fix.patch
 }
 
 src_install() {

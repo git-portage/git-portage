@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/Attic/mylvmbackup-0.4_pre1.ebuild,v 1.3 2007/01/15 18:59:45 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/Attic/mylvmbackup-0.4_pre1.ebuild,v 1.4 2008/03/15 00:55:32 robbat2 Exp $
 
 inherit eutils
 
@@ -23,15 +23,15 @@ S="${WORKDIR}/${PN}-${MY_PV}"
 
 src_unpack() {
 	unpack ${PN}-${MY_PV}.tar.gz
-	epatch ${DISTDIR}/${PN}-0.3-to-0.4-changes.patch.gz
+	epatch "${DISTDIR}"/${PN}-0.3-to-0.4-changes.patch.gz
 	sed -i \
 		-e '/^VERSION/s,0.4,0.4_pre1,' \
 		-e '/^prefix/s,/usr/local,/usr,' \
-		${S}/Makefile
+		"${S}"/Makefile
 	# Clean up one thinko
 	sed -i \
 		-e '/^my$/d' \
-		${S}/mylvmbackup.pl.in
+		"${S}"/mylvmbackup.pl.in
 }
 
 src_install() {
