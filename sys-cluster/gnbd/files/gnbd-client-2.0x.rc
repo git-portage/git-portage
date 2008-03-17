@@ -1,13 +1,12 @@
 #!/sbin/runscript
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/gnbd/files/Attic/gnbd-client.rc,v 1.6 2007/03/12 19:55:57 xmerlin Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/gnbd/files/Attic/gnbd-client-2.0x.rc,v 1.1 2008/03/17 16:59:57 xmerlin Exp $
 
 depend() {
 	use dns logger
 	need net
-	need fenced
-	after gnbd-srv
+	need cman
 }
 
 load_modules() {
@@ -52,10 +51,9 @@ start() {
 }
 
 stop() {
-
 	# umount manually mounted gfs filesystems
 	local sig retry
-	local remaining="$(awk '$3 ~ /gfs/ && $1 ~ /\/dev\/gnbd\// { if ($2 != "/") print $2 }' /proc/mounts | sort -r)"
+	local remaining="$(awk '( $3 == "gfs" || $3 == "gfs2" ) && $1 ~ /\/dev\/gnbd\// { if ($2 != "/") print $2 }' /proc/mounts | sort -r)"
 
 	if [ -z "${remaining}" ]
 	then
@@ -76,7 +74,7 @@ stop() {
 	                        umount ${remaining} &>/dev/null
 	                        eend $? "Failed to unmount GFS filesystems"
 	                fi
-	                remaining="$(awk '$3 ~ /gfs/ && $1 ~ /\/dev\/gnbd\// { if ($2 != "/") print $2 }' /proc/mounts | sort -r)"
+	                remaining="$(awk '( $3 == "gfs" || $3 == "gfs2" ) && $1 ~ /\/dev\/gnbd\// { if ($2 != "/") print $2 }' /proc/mounts | sort -r)"
 	                [ -z "${remaining}" ] && break
 	                /bin/fuser -k -m ${sig} ${remaining} &>/dev/null
 	                sleep 5
