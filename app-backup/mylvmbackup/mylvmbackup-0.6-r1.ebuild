@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/Attic/mylvmbackup-0.6-r1.ebuild,v 1.1 2008/03/15 00:55:32 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/Attic/mylvmbackup-0.6-r1.ebuild,v 1.2 2008/03/18 00:06:46 robbat2 Exp $
 
 inherit eutils
 
@@ -15,7 +15,8 @@ DEPEND=">=app-text/asciidoc-8.1.0"
 RDEPEND="dev-perl/Config-IniFiles
 		>=sys-fs/lvm2-2.02.06
 		dev-perl/DBD-mysql
-		virtual/mysql"
+		virtual/mysql
+		dev-perl/TimeDate"
 
 src_unpack() {
 	unpack ${A}
