@@ -1,6 +1,21 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.49 2008/03/12 12:00:03 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.50 2008/03/19 13:38:53 wschlich Exp $
+
+  19 Mar 2008; Wolfram Schlich <wschlich@gentoo.org>
+  -files/bacula-1.36.3-cdrecord-configure.patch,
+  -files/bacula-1.36.3-default-configs.patch,
+  -files/bacula-doc-1.36.3-latex-icons.patch,
+  -files/bacula-1.36.3-mtxtmpfile.patch, -files/1.36.3/bacula-sd-init,
+  -files/bacula-2.0.2-default-configs.patch, files/2.0.3/bacula-all-init,
+  -files/bacula-2.0.2-gnomesu2gksu.diff, files/2.0.3/bacula-dir-init,
+  files/2.2.8/bacula-all-init, files/2.2.8/bacula-dir-init,
+  -files/bacula-conf, -files/bacula-init3, -files/randpass-1.37.40,
+  -files/1.36.3/bacula-all-conf, -files/1.36.3/bacula-all-init,
+  -files/1.36.3/bacula-dir-conf, -files/1.36.3/bacula-dir-init,
+  -files/1.36.3/bacula-fd-conf, -files/1.36.3/bacula-fd-init,
+  -files/1.36.3/bacula-sd-conf, metadata.xml, -bacula-1.36.3-r2.ebuild:
+  removed old versions
 
   11 Mar 2008; Wolfram Schlich <wschlich@gentoo.org>
   -files/2.2.4/bacula-all-conf, -files/2.2.4/bacula-all-init,
