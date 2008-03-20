@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/Attic/puppet-0.24.1.ebuild,v 1.1 2008/01/07 14:46:41 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/Attic/puppet-0.24.3.ebuild,v 1.1 2008/03/20 22:48:42 matsuu Exp $
 
 inherit elisp-common eutils ruby
 
@@ -10,7 +10,7 @@ SRC_URI="http://reductivelabs.com/downloads/${PN}/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="emacs"
+IUSE="emacs vim-syntax"
 KEYWORDS="~x86 ~amd64"
 
 DEPEND="emacs? ( virtual/emacs )"
@@ -34,7 +34,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}"/${P}-gentoo.patch
+	epatch "${FILESDIR}"/${PN}-0.24.2-gentoo.patch
 }
 
 src_compile() {
@@ -48,7 +48,9 @@ src_install() {
 	DESTDIR="${D}" erubydoc
 
 	# Installation of init scripts and configuration
-	doinitd conf/gentoo/init.d/puppetmaster
+	# bug #211910
+	#doinitd conf/gentoo/init.d/puppetmaster
+	newinitd "${FILESDIR}"/puppetmaster.init puppetmaster
 	doconfd conf/gentoo/conf.d/puppetmaster
 	doinitd conf/gentoo/init.d/puppet
 	doconfd conf/gentoo/conf.d/puppet
@@ -69,7 +71,11 @@ src_install() {
 		elisp-install ${PN} ext/emacs/puppet-mode.el* || die "elisp-install failed"
 		elisp-site-file-install "${FILESDIR}/${SITEFILE}"
 	fi
-	insinto /usr/share/vim/vimfiles/syntax; doins ext/vim/*.vim
+
+	if use vim-syntax ; then
+		insinto /usr/share/vim/vimfiles/syntax; doins ext/vim/syntax/puppet.vim
+		insinto /usr/share/vim/vimfiles/ftdetect; doins	ext/vim/ftdetect/puppet.vim
+	fi
 
 	# ext and examples files
 	for f in $(find ext examples -type f) ; do
