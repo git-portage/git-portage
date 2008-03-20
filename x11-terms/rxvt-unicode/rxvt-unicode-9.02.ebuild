@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/rxvt-unicode/Attic/rxvt-unicode-8.2.ebuild,v 1.4 2007/07/22 05:53:44 dberkholz Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/rxvt-unicode/Attic/rxvt-unicode-9.02.ebuild,v 1.1 2008/03/20 20:45:02 killerfox Exp $
 
 inherit flag-o-matic
 
@@ -16,7 +16,7 @@ IUSE="truetype perl iso14755"
 # see bug #115992 for modular x deps
 RDEPEND="x11-libs/libX11
 	x11-libs/libXft
-	x11-libs/libXpm
+	media-libs/libafterimage
 	x11-libs/libXrender
 	perl? ( dev-lang/perl )"
 DEPEND="${RDEPEND}
@@ -49,7 +49,7 @@ src_compile() {
 
 	sed -i \
 		-e 's/RXVT_BASENAME = "rxvt"/RXVT_BASENAME = "urxvt"/' \
-		${S}/doc/rxvt-tabbed || die "tabs sed failed"
+		"${S}"/doc/rxvt-tabbed || die "tabs sed failed"
 }
 
 src_install() {
