@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/truecrypt/Attic/truecrypt-5.1.ebuild,v 1.1 2008/03/13 07:01:39 alonbl Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/truecrypt/Attic/truecrypt-5.1a.ebuild,v 1.1 2008/03/21 17:24:53 alonbl Exp $
 
 inherit eutils toolchain-funcs multilib wxwidgets
 
@@ -38,10 +38,9 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${PN}-5.0-build.patch"
-	epatch "${FILESDIR}/${P}-64bit.patch"
+	epatch "${FILESDIR}/${P}-external-wx.patch"
+	epatch "${FILESDIR}/${PN}-5.1-64bit.patch"
 	epatch "${FILESDIR}/${PN}-5.0-bool.patch"
-	epatch "${FILESDIR}/${P}-nogui.patch"
 }
 
 src_compile() {
@@ -52,6 +51,7 @@ src_compile() {
 		${EXTRA} \
 		NOSTRIP=1 \
 		VERBOSE=1 \
+		NOTEST=1 \
 		CC="$(tc-getCC)" \
 		AR="$(tc-getAR)" \
 		CXX="$(tc-getCXX)" \
