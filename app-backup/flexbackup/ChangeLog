@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/flexbackup
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.20 2008/03/17 19:44:00 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.21 2008/03/22 06:21:12 graaff Exp $
+
+  22 Mar 2008; Hans de Graaff <graaff@gentoo.org> metadata.xml:
+  List myself as maintainer since I'm using this on several machines.
 
   17 Mar 2008; Markus Meier <maekke@gentoo.org> flexbackup-1.2.1-r7.ebuild:
   amd64/x86 stable, bug #213513
