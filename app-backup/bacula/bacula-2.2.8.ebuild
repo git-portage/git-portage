@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.2.8.ebuild,v 1.1 2008/01/28 22:51:57 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.2.8.ebuild,v 1.2 2008/03/22 18:05:17 wschlich Exp $
 
 #
 # TODO:
@@ -137,6 +137,12 @@ src_unpack() {
 }
 
 src_compile() {
+	if useq doc && has_version dev-tex/latex2html && ! built_with_use dev-tex/latex2html png; then
+		eerror "${PN} needs the PNG support of latex2html"
+		eerror "Please re-emerge dev-tex/latex2html with USE=png"
+		die "need dev-tex/latex2html built with png USE flag"
+	fi
+
 	local myconf=''
 
 	if useq bacula-clientonly; then
