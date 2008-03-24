@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/uclibc/Attic/uclibc-0.9.28.3-r1.ebuild,v 1.3 2008/03/24 19:30:04 solar Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/uclibc/Attic/uclibc-0.9.28.3-r3.ebuild,v 1.1 2008/03/24 19:30:04 solar Exp $
 
 #ESVN_REPO_URI="svn://uclibc.org/trunk/uClibc"
 #inherit subversion
@@ -21,7 +21,7 @@ fi
 
 MY_P=uClibc-${PV}
 SVN_VER=""
-PATCH_VER="1.1"
+PATCH_VER="1.3"
 DESCRIPTION="C library for developing embedded Linux systems"
 HOMEPAGE="http://www.uclibc.org/"
 SRC_URI="mirror://kernel/linux/libs/uclibc/${MY_P}.tar.bz2
