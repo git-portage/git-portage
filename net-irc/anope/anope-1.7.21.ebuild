@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/anope/Attic/anope-1.7.19.ebuild,v 1.2 2007/12/27 22:25:55 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/anope/Attic/anope-1.7.21.ebuild,v 1.1 2008/03/24 17:10:18 armin76 Exp $
 
 inherit eutils
 
@@ -19,7 +19,7 @@ INSTALL_DIR="/opt/anope"
 
 pkg_setup() {
 	enewgroup anope
-	enewuser anope -1 -1 ${INSTALL_DIR} anope
+	enewuser anope -1 -1 "${INSTALL_DIR}" anope
 	if has_version net-irc/anope ; then
 		ewarn
 		ewarn "Make backups before updating as they will be overwritten"
@@ -34,7 +34,7 @@ src_compile() {
 		myconf="${myconf} --without-mysql"
 	fi
 
-	epatch ${FILESDIR}/pid-patch.diff
+	epatch "${FILESDIR}"/pid-patch.diff
 
 	econf \
 		${myconf} \
@@ -78,8 +78,8 @@ src_install() {
 	insinto ${INSTALL_DIR}/data
 	newins data/example.conf services.conf.example
 
-	newinitd ${FILESDIR}/anope.initd anope
-	newconfd ${FILESDIR}/anope.confd anope
+	newinitd "${FILESDIR}"/anope.initd anope
+	newconfd "${FILESDIR}"/anope.confd anope
 
 	insinto ${INSTALL_DIR}/modules
 	doins src/modules/*.so
@@ -128,8 +128,8 @@ src_install() {
 pkg_preinst() {
 	if has_version net-irc/anope ; then
 		elog "Making a backup of your config to data/pre-update"
-		mkdir ${ROOT}opt/anope/data/pre-update
-		cp ${ROOT}opt/anope/data/* ${ROOT}opt/anope/data/pre-update
+		mkdir "${ROOT}"opt/anope/data/pre-update
+		cp "${ROOT}"opt/anope/data/* "${ROOT}"opt/anope/data/pre-update
 	fi
 }
 
@@ -139,7 +139,7 @@ pkg_postinst() {
 	ewarn "Edit ${INSTALL_DIR}/data/services.conf to configure Anope."
 	echo
 	ewarn "!!! ATTENTION !!!"
-	ewarn "If you had used 1.7.15 before, be sure to read Changes.mysql to update your MySQL"
+	ewarn "Be sure to read Changes.mysql to update your MySQL"
 	ewarn "tables or anope will break after restart"
 	ewarn "!!! ATTENTION !!!"
 }
