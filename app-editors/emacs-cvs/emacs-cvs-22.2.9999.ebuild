@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-23.0.60-r2.ebuild,v 1.12 2008/03/03 01:55:45 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-22.2.9999.ebuild,v 1.1 2008/03/26 14:43:00 ulm Exp $
 
 ECVS_AUTH="pserver"
 ECVS_SERVER="cvs.savannah.gnu.org:/sources/emacs"
 ECVS_MODULE="emacs"
-ECVS_BRANCH="HEAD"
-ECVS_LOCALNAME="emacs"
+ECVS_BRANCH="EMACS_22_BASE"
+ECVS_LOCALNAME="emacs-22"
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -18,21 +18,19 @@ HOMEPAGE="http://www.gnu.org/software/emacs/"
 SRC_URI=""
 
 LICENSE="GPL-3 FDL-1.2 BSD"
-SLOT="23"
+SLOT="22"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-
-IUSE="alsa dbus gif gpm gtk gzip-el hesiod jpeg kerberos m17n-lib motif png spell sound source svg tiff toolkit-scroll-bars X Xaw3d xft xpm"
+IUSE="alsa gif gtk gzip-el hesiod jpeg kerberos motif png spell sound source tiff toolkit-scroll-bars X Xaw3d xpm"
 RESTRICT="strip"
 
-RDEPEND="sys-libs/ncurses
+RDEPEND="!~app-editors/emacs-22.2
+	sys-libs/ncurses
 	>=app-admin/eselect-emacs-1.2
 	net-libs/liblockfile
 	hesiod? ( net-dns/hesiod )
 	kerberos? ( virtual/krb5 )
 	spell? ( || ( app-text/ispell app-text/aspell ) )
 	alsa? ( media-libs/alsa-lib )
-	gpm? ( sys-libs/gpm )
-	dbus? ( sys-apps/dbus )
 	X? (
 		x11-libs/libXmu
 		x11-libs/libXt
@@ -40,19 +38,9 @@ RDEPEND="sys-libs/ncurses
 		x11-misc/emacs-desktop
 		gif? ( media-libs/giflib )
 		jpeg? ( media-libs/jpeg )
-		png? ( media-libs/libpng )
-		svg? ( >=gnome-base/librsvg-2.0 )
 		tiff? ( media-libs/tiff )
+		png? ( media-libs/libpng )
 		xpm? ( x11-libs/libXpm )
-		xft? (
-			media-libs/fontconfig
-			media-libs/freetype
-			virtual/xft
-			m17n-lib? (
-				>=dev-libs/libotf-0.9.4
-				>=dev-libs/m17n-lib-1.5.1
-			)
-		)
 		gtk? ( =x11-libs/gtk+-2* )
 		!gtk? (
 			Xaw3d? ( x11-libs/Xaw3d )
@@ -63,12 +51,13 @@ RDEPEND="sys-libs/ncurses
 	)"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	alsa? ( dev-util/pkgconfig )
+	X? ( gtk? ( dev-util/pkgconfig ) )
 	gzip-el? ( app-arch/gzip )"
 
 S="${WORKDIR}/${ECVS_LOCALNAME}"
 
-EMACS_SUFFIX="emacs-${SLOT}"
+EMACS_SUFFIX="emacs-${SLOT}-cvs"
 
 src_unpack() {
 	cvs_src_unpack
@@ -83,10 +72,11 @@ src_unpack() {
 	echo
 	einfo "Emacs CVS branch: ${ECVS_BRANCH}"
 	einfo "Emacs version number: ${FULL_VERSION}"
-	[ "${FULL_VERSION}" = ${PV} ] \
-		|| die "Upstream version number changed to ${FULL_VERSION}"
+	#[ "${FULL_VERSION}" = ${PV} ] \
+	#	|| die "Upstream version number changed to ${FULL_VERSION}"
 	echo
 
+	epatch "${FILESDIR}/${PN}-Xaw3d-headers.patch"
 	epatch "${FILESDIR}/${PN}-freebsd-sparc.patch"
 
 	sed -i -e "s:/usr/lib/crtbegin.o:$(`tc-getCC` -print-file-name=crtbegin.o):g" \
@@ -116,6 +106,7 @@ src_compile() {
 	strip-flags
 	#unset LDFLAGS
 	replace-flags -O[3-9] -O2
+	sed -i -e "s/-lungif/-lgif/g" configure* src/Makefile* || die
 
 	local myconf
 
@@ -132,37 +123,28 @@ src_compile() {
 	if use X; then
 		myconf="${myconf} --with-x"
 		myconf="${myconf} $(use_with toolkit-scroll-bars)"
-		myconf="${myconf} $(use_with gif) $(use_with jpeg)"
-		myconf="${myconf} $(use_with png) $(use_with svg rsvg)"
-		myconf="${myconf} $(use_with tiff) $(use_with xpm)"
-
-		myconf="${myconf} $(use_enable xft font-backend)"
-		myconf="${myconf} $(use_with xft freetype) $(use_with xft)"
-
-		if use xft; then
-			myconf="${myconf} $(use_with m17n-lib libotf)"
-			myconf="${myconf} $(use_with m17n-lib m17n-flt)"
-		else
-			myconf="${myconf} --without-libotf --without-m17n-flt"
-			use m17n-lib && einfo \
-				"USE flag \"m17n-lib\" has no effect because xft is not set."
-		fi
+		myconf="${myconf} $(use_with jpeg) $(use_with tiff)"
+		myconf="${myconf} $(use_with gif) $(use_with png)"
+		myconf="${myconf} $(use_with xpm)"
 
 		# GTK+ is the default toolkit if USE=gtk is chosen with other
 		# possibilities. Emacs upstream thinks this should be standard
 		# policy on all distributions
 		if use gtk; then
-			einfo "Configuring to build with GTK+ support, disabling all other toolkits"
+			einfo "Configuring to build with GTK+ support"
 			myconf="${myconf} --with-x-toolkit=gtk"
 		elif use Xaw3d; then
 			einfo "Configuring to build with Xaw3d (athena) support"
 			myconf="${myconf} --with-x-toolkit=athena"
+			myconf="${myconf} --without-gtk"
 		elif use motif; then
 			einfo "Configuring to build with motif toolkit support"
 			myconf="${myconf} --with-x-toolkit=motif"
+			myconf="${myconf} --without-gtk"
 		else
 			einfo "Configuring to build with no toolkit"
 			myconf="${myconf} --with-x-toolkit=no"
+			myconf="${myconf} --without-gtk"
 		fi
 	else
 		myconf="${myconf} --without-x"
@@ -170,7 +152,6 @@ src_compile() {
 
 	myconf="${myconf} $(use_with hesiod)"
 	myconf="${myconf} $(use_with kerberos) $(use_with kerberos kerberos5)"
-	myconf="${myconf} $(use_with gpm) $(use_with dbus)"
 
 	econf \
 		--program-suffix=-${EMACS_SUFFIX} \
@@ -205,7 +186,6 @@ src_install () {
 
 	# avoid collision between slots, see bug #169033 e.g.
 	rm "${D}"/usr/share/emacs/site-lisp/subdirs.el
-	rm -rf "${D}"/usr/share/{applications,icons}
 	rm "${D}"/var/lib/games/emacs/{snake,tetris}-scores
 	keepdir /var/lib/games/emacs/
 
@@ -225,7 +205,7 @@ src_install () {
 		elisp-site-file-install 10${PN}-${SLOT}-gentoo.el
 	fi
 
-	dodoc README BUGS || die "dodoc failed"
+	dodoc AUTHORS BUGS CONTRIBUTE README || die "dodoc failed"
 }
 
 emacs-infodir-rebuild() {
@@ -245,12 +225,12 @@ emacs-infodir-rebuild() {
 }
 
 pkg_postinst() {
-	test -f "${ROOT}"/usr/share/emacs/site-lisp/subdirs.el ||
-		cp "${ROOT}"/usr/share/emacs{/${FULL_VERSION},}/site-lisp/subdirs.el
+	[ -f "${ROOT}"/usr/share/emacs/site-lisp/subdirs.el ] \
+		|| cp "${ROOT}"/usr/share/emacs{/${FULL_VERSION},}/site-lisp/subdirs.el
 
 	local f
 	for f in "${ROOT}"/var/lib/games/emacs/{snake,tetris}-scores; do
-		test -e "${f}" || touch "${f}"
+		[ -e "${f}" ] || touch "${f}"
 	done
 
 	elisp-site-regen
