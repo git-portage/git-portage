@@ -1,10 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/sphinx/Attic/sphinx-0.9.8_pre1112.ebuild,v 1.1 2008/02/18 15:10:53 caleb Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/sphinx/Attic/sphinx-0.9.8_rc1-r1.ebuild,v 1.1 2008/03/26 14:08:56 caleb Exp $
 
 inherit eutils autotools
 
-MY_P=${P/_pre/-svn-r}
+MY_P=${P/_/-}
 
 DESCRIPTION="Full-text search engine with support for MySQL and PostgreSQL"
 HOMEPAGE="http://www.sphinxsearch.com/"
@@ -17,7 +17,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE="mysql postgres debug"
 
 DEPEND="mysql? ( virtual/mysql )
-	postgres? ( dev-db/postgresql )"
+	postgres? ( dev-db/libpq )"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
@@ -25,7 +25,6 @@ S=${WORKDIR}/${MY_P}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-#	epatch "${FILESDIR}"/${P}-fix-sandbox.patch
 	eautoreconf
 }
 
