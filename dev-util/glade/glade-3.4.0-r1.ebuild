@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/glade/Attic/glade-3.4.1.ebuild,v 1.2 2008/03/13 16:48:14 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/glade/Attic/glade-3.4.0-r1.ebuild,v 1.1 2008/03/29 19:31:40 compnerd Exp $
 
 inherit eutils gnome2
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://gnome/sources/${MY_PN}/${PVP[0]}.${PVP[1]}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="3"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc gnome"
 
 RDEPEND=">=dev-libs/glib-2.8.0
@@ -32,6 +32,6 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 DOCS="AUTHORS BUGS ChangeLog HACKING INTERNALS MAINTAINERS NEWS README TODO"
 
-pkg_config() {
+pkg_setup() {
 	G2CONF="${G2CONF} $(use_enable gnome)"
 }
