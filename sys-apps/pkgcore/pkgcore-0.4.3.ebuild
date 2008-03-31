@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.3.4.ebuild,v 1.1 2007/12/26 17:35:54 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.4.3.ebuild,v 1.1 2008/03/31 15:56:07 jokey Exp $
 
 inherit distutils eutils
 
@@ -14,7 +14,7 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 
 RDEPEND=">=dev-lang/python-2.4
-	>=dev-python/snakeoil-0.1
+	>=dev-python/snakeoil-0.2
 	>=app-shells/bash-3.0
 	|| ( >=dev-lang/python-2.5 dev-python/pycrypto )"
 DEPEND="${RDEPEND}
