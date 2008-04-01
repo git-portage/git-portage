@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.0.0_rc1-r1.ebuild,v 1.1 2008/03/23 14:06:28 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.0.0.ebuild,v 1.1 2008/04/01 19:51:40 pva Exp $
 
 EAPI=1
 WANT_AUTOMAKE="1.9"
@@ -61,8 +61,6 @@ src_unpack() {
 	cd "${S}"
 	epatch "${FILESDIR}"/${PN}-0.99.7-asneeded.patch
 	epatch "${FILESDIR}"/${PN}-0.99.8-as-needed.patch
-	epatch "${FILESDIR}"/${PN}-1.0.0_rc1-fix-setcap-EPERM.patch
-	epatch "${FILESDIR}"/${PN}-1.0.0_rc1-fix-stop-capture.patch
 
 	cd "${S}"/epan
 	epatch "${FILESDIR}"/wireshark-except-double-free.diff
@@ -137,7 +135,8 @@ src_install() {
 	insinto /usr/include/wiretap
 	doins wiretap/wtap.h
 
-	dodoc AUTHORS ChangeLog NEWS README*
+	# FAQ is not required as is installed from help/faq.txt
+	dodoc AUTHORS ChangeLog NEWS README{,bsd,linux,macos,vmware} doc/randpkt.txt
 
 	if use gtk ; then
 		insinto /usr/share/icons/hicolor/16x16/apps
