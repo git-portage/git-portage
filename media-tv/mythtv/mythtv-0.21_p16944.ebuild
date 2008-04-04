@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/mythtv/Attic/mythtv-0.21_p16926.ebuild,v 1.2 2008/04/04 16:31:42 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/mythtv/Attic/mythtv-0.21_p16944.ebuild,v 1.1 2008/04/04 16:31:42 cardoe Exp $
 
 EAPI=1
 inherit flag-o-matic multilib eutils qt3 mythtv toolchain-funcs python
@@ -117,9 +117,12 @@ src_compile() {
 	use altivec || myconf="${myconf} --disable-altivec"
 	use jack || myconf="${myconf} --disable-audio-jack"
 	use opengl-video && myconf="${myconf} --enable-opengl-video"
-	use xvmc && ! use video_cards_via && ! use opengl-xvmc && myconf="${myconf} --enable-xvmc --xvmc-lib=XvMCW"
-	use xvmc && use video_cards_via && myconf="${myconf} --enable-xvmc --enable-xvmc-pro"
-	use xvmc && use video_cards_nvidia && use opengl-xvmc && myconf="${myconf} --enable-xvmc --enable-xvmc-opengl"
+	use xvmc && ! use video_cards_via && ! use opengl-xvmc && \
+		myconf="${myconf} --enable-xvmc"
+	use xvmc && use video_cards_via && myconf="${myconf} --enable-xvmc \
+		--enable-xvmc-pro --disable-xvmcw"
+	use xvmc && use video_cards_nvidia && use opengl-xvmc && \
+		myconf="${myconf} --enable-xvmc --enable-xvmc-opengl --disable-xvmcw"
 	# nvidia-drivers-71 don't support GLX 1.4
 	use video_cards_nvidia && has_version =x11-drivers/nvidia-drivers-71* \
 		&& myconf="${myconf} --enable-glx-procaddrarb"
