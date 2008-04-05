@@ -1,10 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/plotutils/Attic/plotutils-2.4.1-r2.ebuild,v 1.27 2007/07/22 09:33:22 dberkholz Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/plotutils/Attic/plotutils-2.5.ebuild,v 1.1 2008/04/05 12:47:47 genstef Exp $
 
-IUSE="X"
-
-inherit libtool eutils
+inherit libtool eutils flag-o-matic
 
 #The plotutils package contains extra X fonts.	These fonts are not installed
 #in the current ebuild.	 The commented out ebuild lines below are for future
@@ -14,31 +12,28 @@ inherit libtool eutils
 #See Bug# 30 at http://bugs.gentoo.org/show_bug.cgi?id=30
 
 DESCRIPTION="a powerful C/C++ function library for exporting 2-D vector graphics"
-SRC_URI="mirror://gnu/plotutils/${P}.tar.gz"
 HOMEPAGE="http://www.gnu.org/software/plotutils/"
+SRC_URI="mirror://gnu/plotutils/${P}.tar.gz"
 
-SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ppc sparc alpha amd64 ia64"
+SLOT="0"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86"
+IUSE="X"
 
 DEPEND="media-libs/libpng
 	X? ( x11-libs/libXaw
 		x11-proto/xextproto
 	)"
 
-# Filter out k6 from the CFLAGS
-export CFLAGS="${CFLAGS/k6-3/i586}"
-export CFLAGS="${CFLAGS/k6-2/i586}"
-export CFLAGS="${CFLAGS/k6/i586}"
-export CXXFLAGS="${CFLAGS}"
-
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/plotutils-2.4.1-gentoo.patch
+	cd "${S}"
+	epatch "${FILESDIR}/plotutils-2.5-rangecheck.patch"
+
 }
 
 src_compile() {
+	replace-cpu-flags k6 k6-2 k6-3 i586
 	elibtoolize
 
 	#enable build of C++ version
@@ -57,11 +52,10 @@ src_compile() {
 	emake || die "Parallel Make Failed"
 }
 
-src_install () {
-	einstall \
-		datadir=${D}/usr/share || die "Installation Failed"
+src_install() {
+	einstall datadir="${D}/usr/share" || die "Installation Failed"
 
-	dodoc AUTHORS COMPAT COPYING ChangeLog INSTALL* \
+	dodoc AUTHORS COMPAT ChangeLog INSTALL* \
 		KNOWN_BUGS NEWS ONEWS PROBLEMS README THANKS TODO
 }
 
