@@ -1,27 +1,28 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/buildbot/Attic/buildbot-0.7.5.ebuild,v 1.13 2008/04/05 17:24:13 hawking Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/buildbot/Attic/buildbot-0.7.7.ebuild,v 1.1 2008/04/05 17:24:13 hawking Exp $
+
+NEED_PYTHON="2.3"
 
 inherit distutils eutils
 
 DESCRIPTION="A Python system to automate the compile/test cycle to validate code changes"
 HOMEPAGE="http://buildbot.net/"
-SRC_URI="mirror://sourceforge/buildbot/${P}.tar.gz"
-
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="doc irc mail test web"
 
-commondepend=">=dev-lang/python-2.3
-	>=dev-python/twisted-2.0.1"
-RDEPEND="${commondepend}
+CDEPEND=">=dev-python/twisted-2.0.1"
+RDEPEND="${CDEPEND}
 	mail? ( dev-python/twisted-mail )
 	irc? ( dev-python/twisted-words )
 	web? ( dev-python/twisted-web )"
-DEPEND="${commondepend}
-	test? ( dev-python/twisted-web )
-	doc? ( dev-python/epydoc )"
+DEPEND="${CDEPEND}
+	test? ( dev-python/twisted-web
+		dev-python/twisted-mail )
+	doc? ( =dev-python/epydoc-2* )"
 
 pkg_setup() {
 	enewuser buildbot
@@ -31,7 +32,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/${P}-root-skip-tests.patch"
+	epatch "${FILESDIR}/${PN}-0.7.5-root-skip-tests.patch"
 }
 
 src_compile() {
@@ -58,9 +59,7 @@ src_install() {
 	insinto /usr/share/doc/${PF}
 	doins -r docs/examples
 
-	if use doc; then
-		doins -r docs/reference
-	fi
+	use doc && doins -r docs/reference
 
 	newconfd "${FILESDIR}/buildslave.confd" buildslave
 	newinitd "${FILESDIR}/buildbot.initd" buildslave
@@ -84,4 +83,10 @@ pkg_postinst() {
 	elog "at the right location.  The scripts can run as a different user"
 	elog "if desired.  If you need to run more than one master or slave"
 	elog "just copy the scripts."
+	elog ""
+	elog "Upstream recommands the following when upgrading:"
+	elog "Each time you install a new version of Buildbot, you should run the new"
+	elog "'buildbot upgrade-master' command on each of your pre-existing buildmasters."
+	elog "This will add files and fix (or at least detect) incompatibilities between"
+	elog "your old config and the new code."
 }

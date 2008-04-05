@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/buildbot/Attic/buildbot-0.7.6.ebuild,v 1.2 2008/03/10 21:49:48 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/buildbot/Attic/buildbot-0.7.6.ebuild,v 1.3 2008/04/05 17:24:13 hawking Exp $
 
 NEED_PYTHON="2.3"
 
 inherit distutils eutils
 
-DESCRIPTION="A Python system to automate the compile/test cycle to validate code changes (similar to Tinderbox, but simpler)"
+DESCRIPTION="A Python system to automate the compile/test cycle to validate code changes"
 HOMEPAGE="http://buildbot.net/"
 SRC_URI="mirror://sourceforge/buildbot/${P}.tar.gz"
 LICENSE="GPL-2"
