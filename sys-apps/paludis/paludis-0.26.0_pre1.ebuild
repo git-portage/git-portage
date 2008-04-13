@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/Attic/paludis-0.26.0_alpha9-r1.ebuild,v 1.1 2008/02/18 09:35:06 rbrown Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/Attic/paludis-0.26.0_pre1.ebuild,v 1.1 2008/04/13 14:14:14 zlin Exp $
 
 inherit bash-completion eutils flag-o-matic
 
@@ -65,13 +65,6 @@ pkg_setup() {
 			ewarn "when g++ eats all your RAM, we'll use ${FIXED_MAKEOPTS} instead."
 		fi
 	fi
-}
-
-src_unpack() {
-	unpack ${A}
-
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-echo-functions.patch"
 }
 
 src_compile() {
