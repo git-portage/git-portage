@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/hsfmodem/Attic/hsfmodem-7.60.00.09-r1.ebuild,v 1.1 2007/08/28 18:46:33 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/hsfmodem/Attic/hsfmodem-7.68.00.09.ebuild,v 1.1 2008/04/13 10:20:56 mrness Exp $
 
 inherit eutils linux-info
 
@@ -41,8 +41,7 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd "${MY_ARCH_S}"
-	epatch "${FILESDIR}/${P}-udev-group.patch"
-	epatch "${FILESDIR}/${P}-unset-locale.patch"
+	epatch "${FILESDIR}/${P}-gentoo.patch"
 }
 
 src_compile() {
@@ -52,7 +51,7 @@ src_compile() {
 
 src_install () {
 	cd "${MY_ARCH_S}"
-	make PREFIX="${D}/usr/" ROOT="${D}" install || die "make install failed"
+	make ROOT="${D}" install || die "make install failed"
 
 	# on testing arches, kernelcompiler.sh permissions are 0600 (#158736)
 	fperms a+rx /usr/lib/hsfmodem/modules/kernelcompiler.sh
@@ -70,6 +69,14 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	elog "To complete the installation and configuration of your HSF modem,"
-	elog "please run hsfconfig."
+	if [ "${ROOT}" = / ]; then
+		elog "To complete the installation and configuration of your HSF modem,"
+		elog "please run hsfconfig."
+	fi
+}
+
+pkg_prerm() {
+	if [ "${ROOT}" = / -a -f /etc/init.d/hsf ] ; then
+		hsfconfig --remove || die "hsfconfig --remove failed"
+	fi
 }
