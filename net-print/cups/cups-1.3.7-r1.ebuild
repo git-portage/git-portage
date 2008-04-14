@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.3.6-r3.ebuild,v 1.2 2008/04/05 13:42:26 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.3.7-r1.ebuild,v 1.1 2008/04/14 20:47:45 tgurr Exp $
 
 inherit autotools eutils flag-o-matic multilib pam
 
@@ -79,7 +79,7 @@ pkg_setup() {
 	if use avahi && ! built_with_use net-dns/avahi mdnsresponder-compat ; then
 		echo
 		eerror "In order to have cups working with avahi zeroconf support, you need"
-		eerror "to have net-dns/avahi emerged with 'mdnsresponder-compat' in your USE"
+		eerror "to have net-dns/avahi emerged with \"mdnsresponder-compat\" in your USE"
 		eerror "flag. Please add that flag, re-emerge avahi, and then emerge cups again."
 		die "net-dns/avahi is missing the mdnsresponder-compat feature."
 	fi
@@ -94,13 +94,14 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	# disable configure automagic for acl/attr, upstream bug STR #2723.
+	# disable configure automagic for acl/attr, upstream bug STR #2723
 	epatch "${FILESDIR}/${PN}-1.3.0-configure.patch"
 
-	# CVE-2008-0047 security patch, bug #212364
-	epatch "${FILESDIR}/${PN}-1.2.12-CVE-2008-0047.patch"
-	# CVE-2008-1373 security patch, bug #214068
-	epatch "${FILESDIR}/${P}-CVE-2008-1373.patch"
+	# create a missing symlink to allow https printing via IPP, bug #217293
+	epatch "${FILESDIR}/${PN}-1.3.7-backend-https.patch"
+
+	# CVE-2008-1722 security patch, bug #217232
+	epatch "${FILESDIR}/${PN}-1.3.7-CVE-2008-1722.patch"
 
 	# cups does not use autotools "the usual way" and ship a static config.h.in
 	eaclocal
@@ -108,6 +109,8 @@ src_unpack() {
 }
 
 src_compile() {
+	# needed to prevent ghostscript compile failures
+	use kerberos && strip-flags
 
 	# locale support
 	strip-linguas ${LANGS}
@@ -243,20 +246,17 @@ pkg_postinst() {
 			good_gs=true
 			break
 		fi
-	done;
-	if ! ${good_gs}; then
+	done
+	if ! ${good_gs} ; then
 		echo
-		ewarn "You need to emerge ghostscript with the \"cups\" USE flag turned on"
+		ewarn "You need to emerge ghostscript with the \"cups\" USE flag turned on."
 		echo
 	fi
 
-	if has_version =net-print/cups-1.1* ; then
+	if has_version =net-print/cups-1.2* ; then
 		echo
-		ewarn "The configuration changed with cups-1.3, you may want to save the old"
-		ewarn "one and start from scratch:"
-		ewarn "# mv /etc/cups /etc/cups.orig; emerge -va1 cups"
-		echo
-		ewarn "You need to rebuild kdelibs for kdeprinter to work with cups-1.3"
+		ewarn "You have upgraded from an older cups version. Please make sure"
+		ewarn "to run \"etc-update\" and \"revdep-rebuild\" NOW."
 		echo
 	fi
 
