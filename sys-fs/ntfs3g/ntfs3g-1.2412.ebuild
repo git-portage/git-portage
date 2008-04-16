@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/ntfs3g/Attic/ntfs3g-1.2129.ebuild,v 1.4 2008/02/20 17:32:41 nixnut Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/ntfs3g/Attic/ntfs3g-1.2412.ebuild,v 1.1 2008/04/16 02:33:21 chutzpah Exp $
 
 MY_PN="${PN/3g/-3g}"
 MY_P="${MY_PN}-${PV}"
