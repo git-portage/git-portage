@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/Attic/paludis-0.26.0_alpha14-r1.ebuild,v 1.1 2008/04/03 20:38:44 spb Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/Attic/paludis-0.26.0_pre2.ebuild,v 1.1 2008/04/16 22:31:13 zlin Exp $
 
 inherit bash-completion eutils flag-o-matic
 
@@ -65,13 +65,6 @@ pkg_setup() {
 			ewarn "when g++ eats all your RAM, we'll use ${FIXED_MAKEOPTS} instead."
 		fi
 	fi
-}
-
-src_unpack() {
-	unpack ${A}
-
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-broken-profiles.patch"
 }
 
 src_compile() {
