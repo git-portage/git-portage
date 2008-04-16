@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-vim/enhancedcommentify/Attic/enhancedcommentify-2.2.ebuild,v 1.1 2006/03/04 00:00:36 ciaranm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-vim/enhancedcommentify/Attic/enhancedcommentify-2.2.ebuild,v 1.2 2008/04/16 09:03:46 hawking Exp $
 
 inherit vim-plugin eutils
 
@@ -19,8 +19,8 @@ RDEPEND="!app-vim/ctx"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	# gentooy things, bug #79185
-	epatch ${FILESDIR}/${PN}-2.1-gentooisms.patch
-	epatch ${FILESDIR}/${PN}-2.1-extra-ft-support.patch
+	epatch "${FILESDIR}"/${PN}-2.1-gentooisms.patch
+	epatch "${FILESDIR}"/${PN}-2.1-extra-ft-support.patch
 }
