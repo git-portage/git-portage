@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/pam/Attic/pam-1.0.0-r1.ebuild,v 1.3 2008/04/14 11:55:51 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/pam/Attic/pam-1.0.1.ebuild,v 1.1 2008/04/18 04:18:59 flameeyes Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -106,7 +106,6 @@ src_unpack() {
 
 	epatch "${FILESDIR}/${MY_PN}-0.99.7.0-disable-regenerate-man.patch"
 	epatch "${FILESDIR}/${MY_PN}-0.99.8.1-xtests.patch"
-	epatch "${FILESDIR}/${MY_PN}-1.0.0-set-item.patch"
 
 	AT_M4DIR="m4" eautoreconf
 
@@ -154,15 +153,17 @@ src_install() {
 	mv "${D}/usr/$(get_libdir)/libpam_misc.so"* "${D}/$(get_libdir)/"
 	gen_usr_ldscript libpam.so libpamc.so libpam_misc.so
 
-	# No, we don't really need .la files for PAM modules.
-	rm -f "${D}/$(get_libdir)/security/"*.la
-
 	dodoc CHANGELOG ChangeLog README AUTHORS Copyright
 	docinto modules ; dodoc doc/txts/README.*
 
 	# Remove the wrongly installed manpages
 	rm "${D}"/usr/share/man/man8/pam_userdb.8*
 	use cracklib || rm "${D}"/usr/share/man/man8/pam_cracklib.8*
+
+	# Get rid of the .la files. We certainly don't need them for PAM
+	# modules, and libpam is installed as a shared object only, so we
+	# don't ned them for static linking either.
+	find "${D}" -name '*.la' -delete
 }
 
 pkg_preinst() {
