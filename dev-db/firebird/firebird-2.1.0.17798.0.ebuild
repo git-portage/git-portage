@@ -1,11 +1,11 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/firebird/Attic/firebird-2.1.0.17755_rc2-r1.ebuild,v 1.1 2008/04/10 22:59:59 wltjr Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/firebird/Attic/firebird-2.1.0.17798.0.ebuild,v 1.1 2008/04/19 01:35:53 wltjr Exp $
 
 inherit flag-o-matic eutils autotools versionator
 
-#MY_P=Firebird-$(replace_version_separator 4 -)
-MY_P=Firebird-${PV/_rc/-ReleaseCandidate}
+MY_P=Firebird-$(replace_version_separator 4 -)
+#MY_P=Firebird-${PV/_rc/-ReleaseCandidate}
 
 DESCRIPTION="A relational database offering many ANSI SQL-99 features"
 HOMEPAGE="http://firebird.sourceforge.net/"
@@ -203,11 +203,7 @@ src_install() {
 
 	# Install docs
 	use doc && dodoc "${WORKDIR}"/manuals/*
-
-	if use examples; then
-		docinto examples
-		dodoc examples/*
-	fi
+	use examples && docinto examples
 }
 
 pkg_postinst() {
