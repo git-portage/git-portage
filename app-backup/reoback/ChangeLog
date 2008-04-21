@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/reoback
-# Copyright 2000-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/reoback/ChangeLog,v 1.7 2007/01/24 04:24:00 genone Exp $
+# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/reoback/ChangeLog,v 1.8 2008/04/21 16:29:54 phreak Exp $
+
+  21 Apr 2008; Christian Heim <phreak@gentoo.org> metadata.xml:
+  Fix up metadata.xml. If there's no maintainer for the package, the metadata
+  also needs to contain m-needed@g.o.
 
   24 Jan 2007; Marius Mauch <genone@gentoo.org> reoback-1.0_p3-r1.ebuild:
   Replacing einfo with elog
