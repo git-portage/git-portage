@@ -1,11 +1,11 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-softplay/Attic/vdr-softplay-0.0.2.20060815.ebuild,v 1.3 2008/04/21 10:45:33 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-softplay/Attic/vdr-softplay-0.0.2.20080421.ebuild,v 1.1 2008/04/21 10:45:33 zzam Exp $
 
 inherit vdr-plugin versionator
 
 MY_PV=$(get_version_component_range 4)
-MY_P=${PN}-${MY_PV}
+MY_P=${PN}-cvs-${MY_PV}
 
 DESCRIPTION="VDR plugin: play media-files with vdr+vdr-softdevice as output device"
 HOMEPAGE="http://softdevice.berlios.de/softplay/index.html"
@@ -21,15 +21,20 @@ DEPEND=">=media-video/vdr-1.3.20
 		>=media-video/ffmpeg-0.4.9_pre1"
 RDEPEND="${DEPEND}"
 
-S=${WORKDIR}/${VDRPLUGIN}-${MY_PV}
+S=${WORKDIR}/${MY_P#vdr-}
 
 src_unpack() {
 	vdr-plugin_src_unpack
 
 	cd "${S}"
 	# Inclusion of vdr-softdevice header-files from /usr/include/vdr-softdevice
-	sed -i SoftPlayer.h -e 's#../softdevice/softdevice.h#vdr-softdevice/softdevice.h#'
+	sed -i SoftHandles.h -e 's#../softdevice/softdevice.h#vdr-softdevice/softdevice.h#'
 
 	# ffmpeg-header-directory
 	sed -i Makefile -e 's#^LIBFFMPEG=.*$#LIBFFMPEG=/usr/include/ffmpeg#'
+
+	epatch "${FILESDIR}/ffmpeg-linking.diff"
+	if has_version ">=media-video/ffmpeg-0.4.9_p20080326"; then
+		epatch "${FILESDIR}/ffmpeg-0.4.9_p20080326-new_header.diff"
+	fi
 }

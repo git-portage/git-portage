@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-softplay/Attic/vdr-softplay-0.0.2.20070730.ebuild,v 1.2 2007/07/30 16:47:41 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-softplay/Attic/vdr-softplay-0.0.2.20070730.ebuild,v 1.3 2008/04/21 10:45:33 zzam Exp $
 
 inherit vdr-plugin versionator
 
@@ -26,7 +26,7 @@ S=${WORKDIR}/${MY_P#vdr-}
 src_unpack() {
 	vdr-plugin_src_unpack
 
-	cd ${S}
+	cd "${S}"
 	# Inclusion of vdr-softdevice header-files from /usr/include/vdr-softdevice
 	sed -i SoftHandles.h -e 's#../softdevice/softdevice.h#vdr-softdevice/softdevice.h#'
 
