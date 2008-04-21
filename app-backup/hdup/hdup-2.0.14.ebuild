@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/hdup-2.0.14.ebuild,v 1.3 2007/05/17 16:27:20 chtekk Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/hdup-2.0.14.ebuild,v 1.4 2008/04/21 11:07:36 chtekk Exp $
 
 KEYWORDS="~amd64 ~x86"
 DESCRIPTION="Hdup is backup program using tar, find, gzip/bzip2, mcrypt and ssh."
@@ -12,23 +12,25 @@ IUSE="crypt"
 
 DEPEND="app-arch/bzip2
 		app-arch/gzip
-		app-arch/tar
-		dev-util/pkgconfig
+		app-arch/tar"
+
+RDEPEND="${DEPEND}
 		net-misc/openssh
 		sys-apps/coreutils
 		sys-apps/findutils
 		crypt? ( app-crypt/mcrypt )"
 
-RDEPEND="${DEPEND}"
+DEPEND="${DEPEND}
+		dev-util/pkgconfig"
 
 src_compile() {
-	econf || die "conf failed"
-	emake || die "make failed"
+	econf || die "econf failed"
+	emake || die "emake failed"
 }
 
 src_install() {
 	dodir /usr/sbin
-	make DESTDIR="${D}" install || die "install failed"
+	make DESTDIR="${D}" install || die "make install failed"
 
 	dohtml doc/FAQ.html
 	dodoc ChangeLog Credits README
