@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-softdevice/Attic/vdr-softdevice-0.4.0.ebuild,v 1.7 2008/04/24 19:21:52 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-softdevice/Attic/vdr-softdevice-0.5.0-r1.ebuild,v 1.1 2008/04/24 19:21:52 zzam Exp $
 
-inherit vdr-plugin versionator
+inherit eutils vdr-plugin versionator
 
 DESCRIPTION="VDR Plugin: Software output-Device"
 HOMEPAGE="http://softdevice.berlios.de/"
@@ -20,7 +20,7 @@ fi
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="xv fbcon directfb mmx mmxext xinerama"
 
 RDEPEND=">=media-video/vdr-1.3.36
@@ -49,9 +49,7 @@ DEPEND="${RDEPEND}
 # Remove this once default-linux/amd64/2006.1 is deprecated
 DEPEND="${DEPEND} amd64? ( >=sys-apps/portage-2.1.2 )"
 
-PATCHES=("${FILESDIR}/${PN}-0.2.3-shm-fullscreen.diff"
-	"${FILESDIR}/${PN}-0.4.0-xinerama-configure-opts.patch"
-	"${FILESDIR}/${PN}-0.3.1-osdmode-software-default.diff")
+PATCHES=("${FILESDIR}/patches-0.4.0/shm-fullscreen-parameter.diff")
 
 pkg_setup() {
 	vdr-plugin_pkg_setup
@@ -127,6 +125,7 @@ src_install() {
 	if [[ "${COMPILE_SHM}" = "1" ]]; then
 		exeinto "/usr/bin"
 		doexe ShmClient
+		make_desktop_entry ShmClient "VDR softdevice Client" "" "AudioVideo;TV"
 	fi
 
 	insinto /usr/include/vdr-softdevice
