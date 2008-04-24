@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/speechd-up/Attic/speechd-up-0.4-r1.ebuild,v 1.2 2007/03/03 23:09:58 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/speechd-up/speechd-up-0.4-r3.ebuild,v 1.1 2008/04/24 13:31:49 williamh Exp $
 
 IUSE=""
 
@@ -15,6 +15,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 DEPEND=">=app-accessibility/speech-dispatcher-0.6"
+RDEPEND="${DEPEND}
+	>=app-accessibility/speakup-3.0.2"
 
 src_compile() {
 	econf || die
@@ -23,8 +25,8 @@ src_compile() {
 
 src_install() {
 	make DESTDIR="${D}" install || die
-	newinitd ${FILESDIR}/speechd-up.rc speechd-up
-	newconfd ${FILESDIR}/speechd-up.confd speechd-up
+	newinitd "${FILESDIR}"/speechd-up.rc speechd-up
+	newconfd "${FILESDIR}"/speechd-up.confd speechd-up
 	dodoc AUTHORS ChangeLog NEWS README TODO
 	doinfo speechd-up.info
 }
