@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/chemtool/Attic/chemtool-1.6.9-r1.ebuild,v 1.7 2008/04/22 13:54:33 je_fro Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/chemtool/Attic/chemtool-1.6.9-r1.ebuild,v 1.8 2008/04/26 13:03:47 markusle Exp $
 
 inherit eutils kde-functions
 
@@ -15,7 +15,7 @@ IUSE="gnome kde nls"
 
 RDEPEND=">=media-gfx/transfig-3.2.3d
 		=x11-libs/gtk+-2*
-		kde? ( kde-base/kdelibs )
+		kde? ( =kde-base/kdelibs-3.5* )
 		x86? ( >=media-libs/libemf-1.0 )"
 
 DEPEND="${RDEPEND}

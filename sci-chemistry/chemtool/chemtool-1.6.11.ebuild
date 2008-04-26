@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/chemtool/Attic/chemtool-1.6.10.ebuild,v 1.4 2008/04/26 13:03:47 markusle Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/chemtool/Attic/chemtool-1.6.11.ebuild,v 1.1 2008/04/26 13:03:47 markusle Exp $
 
 inherit eutils kde-functions
 
@@ -20,6 +20,12 @@ RDEPEND="media-gfx/transfig
 
 DEPEND="${RDEPEND}
 		dev-util/pkgconfig"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}-makefile.patch
+}
 
 src_compile() {
 	local config_opts
