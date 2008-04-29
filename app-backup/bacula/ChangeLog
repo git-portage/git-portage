@@ -1,6 +1,15 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.52 2008/03/22 18:05:17 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.53 2008/04/29 10:00:49 wschlich Exp $
+
+*bacula-2.2.8-r1 (29 Apr 2008)
+
+  29 Apr 2008; Wolfram Schlich <wschlich@gentoo.org>
+  +files/2.2.8/2.2.8-bacula-conf.patch, +files/2.2.8/2.2.8-jobmedia.patch,
+  +files/2.2.8/2.2.8-jobmedia-fix.patch,
+  +files/2.2.8/2.2.8-pool-source.patch, +files/2.2.8/2.2.8-strip-path.patch,
+  +bacula-2.2.8-r1.ebuild:
+  incorporate upstream release patches
 
   22 Mar 2008; Wolfram Schlich <wschlich@gentoo.org> bacula-2.2.8.ebuild:
   depend on latex2html emerged with USE=png (bug #200562)
