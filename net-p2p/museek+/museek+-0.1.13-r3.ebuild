@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/museek+/Attic/museek+-0.1.13-r1.ebuild,v 1.3 2008/01/24 22:07:05 coldwind Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/museek+/Attic/museek+-0.1.13-r3.ebuild,v 1.1 2008/04/30 21:09:32 coldwind Exp $
 
 inherit qt3 eutils distutils multilib
 
@@ -37,6 +37,7 @@ src_unpack() {
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-optional-deps.patch"
 	epatch "${FILESDIR}/${P}-post_release_fixes.patch"
+	epatch "${FILESDIR}/${P}-gcc43.patch"
 	sed -i -e "s:join('lib':join('$(get_libdir)':g" \
 		*/CMakeLists.txt || die "sed failed"
 }
@@ -45,20 +46,16 @@ my_use() {
 	use $1 && echo "1" || echo "0"
 }
 
-my_not_use() {
-	use $1 && echo "0" || echo "1"
-}
-
 src_compile() {
 	# Build museekd, mucous, murmur, python bindings and clients
 	local myconf="-DPREFIX=/usr -DMANDIR=share/man -DBINDINGS=1 -DCLIENTS=1"
 	myconf="${myconf} -DSWIG_DIR='$(swig -swiglib)'" # bug #192594
 	myconf="${myconf} -DMUCOUS=$(my_use ncurses)
 		-DMURMUR=$(my_use gtk)
-		-DNO_MUSEEQ=$(my_not_use qt3)
+		-DNO_MUSEEQ=$(my_use !qt3)
 		-DTRAYICON=$(my_use trayicon)
 		-DQSA=$(my_use qsa)
-		-DNO_MUSCAND=$(my_not_use fam)
+		-DNO_MUSCAND=$(my_use !fam)
 		-DVORBIS=$(my_use vorbis)"
 	if ! use debug ; then
 		myconf="${myconf} -DMULOG=none"
@@ -80,6 +77,10 @@ src_install() {
 	# Install setup tools
 	cd "${S}/setup"
 	distutils_src_install
+
+	# fix wrong path to make musetup-gtk working, #193444, #210364
+	dodir /usr/share/museek/museekd
+	mv "${D}"/usr/share/{,museek/museekd/}config.xml.tmpl
 }
 
 pkg_postinst() {
