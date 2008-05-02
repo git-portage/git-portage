@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/beaker/Attic/beaker-0.7.3.ebuild,v 1.2 2007/06/30 21:42:38 hawking Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/beaker/Attic/beaker-0.9.4.ebuild,v 1.1 2008/05/02 02:39:57 pythonhead Exp $
 
 NEED_PYTHON=2.4
 
