@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/iozone/Attic/iozone-3.226-r1.ebuild,v 1.8 2007/08/25 13:44:45 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/iozone/Attic/iozone-3.291.ebuild,v 1.1 2008/05/03 00:12:30 dragonheart Exp $
 
 # TODO
 #        ->   linux-arm            (32bit)   <-
@@ -27,7 +27,7 @@ SRC_URI="http://www.iozone.org/src/current/${PN}${PV/./_}.tar"
 
 LICENSE="freedist"
 SLOT="0"
-KEYWORDS="amd64 arm ia64 ppc ~ppc64 ~sparc x86"
+KEYWORDS="~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND="sys-devel/gcc
@@ -35,19 +35,14 @@ DEPEND="sys-devel/gcc
 	virtual/libc"
 RDEPEND="virtual/libc"
 
-S=${WORKDIR}
-
-src_unpack() {
-	unpack ${PN}${PV/./_}.tar
-	epatch ${FILESDIR}/${P}-ppc64.patch
-}
+S=${WORKDIR}/${PN}${PV/./_}
 
 src_compile() {
 	cd src/current
 
 	# Options FIX
 	sed -i -e "s:CC	=.*:CC	=$(tc-getCC):g" \
-		-e "s:-O3 -Dunix:${CFLAGS} -Dunix:g" makefile
+		-e "s:-O3:${CFLAGS}:g" makefile
 
 	case ${ARCH} in
 		x86|alpha)	PLATFORM="linux";;
@@ -65,7 +60,7 @@ src_compile() {
 }
 
 src_install() {
-	dosbin src/current/iozone || die
+	dosbin src/current/iozone
 	dodoc docs/I*
 	dodoc docs/Run_rules.doc
 	dodoc src/current/Changes.txt
@@ -74,7 +69,6 @@ src_install() {
 	insinto /usr/share/doc/${PF}
 	cd src/current
 	doins Generate_Graphs Gnuplot.txt gengnuplot.sh gnu3d.dem
-
 }
 
 src_test() {
