@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/rawstudio/Attic/rawstudio-0.6.ebuild,v 1.2 2008/02/04 10:07:25 cla Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/rawstudio/Attic/rawstudio-1.0.ebuild,v 1.1 2008/05/03 08:48:45 drac Exp $
 
 inherit eutils
 
@@ -15,10 +15,11 @@ IUSE=""
 
 RDEPEND="media-libs/jpeg
 	media-libs/tiff
-	>=x11-libs/gtk+-2
+	>=x11-libs/gtk+-2.8
 	>=dev-libs/libxml2-2.4
 	media-libs/lcms
-	>=gnome-base/gconf-2"
+	>=gnome-base/gconf-2
+	sys-apps/dbus"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	sys-devel/gettext"
@@ -26,7 +27,12 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-desktop-entry.patch
+	epatch "${FILESDIR}"/${P}-desktop-entry-and-pixmaps-directory.patch
+}
+
+src_compile() {
+	econf --disable-dependency-tracking
+	emake || die "emake failed."
 }
 
 src_install() {
