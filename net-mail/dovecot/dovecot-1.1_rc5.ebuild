@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/dovecot/Attic/dovecot-1.1_rc4.ebuild,v 1.1 2008/04/02 12:09:14 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/dovecot/Attic/dovecot-1.1_rc5.ebuild,v 1.1 2008/05/05 11:47:09 wschlich Exp $
 
 inherit autotools eutils ssl-cert versionator
 
@@ -9,8 +9,8 @@ MY_PV12=$(get_version_component_range 1-2 ${PV})
 S="${WORKDIR}/${MY_P}"
 SIEVE="dovecot-sieve-1.1.4"
 SIEVE_S="${WORKDIR}/${SIEVE}"
-MANAGESIEVE_PATCH="managesieve-0.10.1"
-MANAGESIEVE="managesieve-0.10.1"
+MANAGESIEVE_PATCH="managesieve-0.10.2"
+MANAGESIEVE="managesieve-0.10.2"
 MANAGESIEVE_S="${WORKDIR}/${PN}-${MY_PV12}-${MANAGESIEVE}"
 
 SRC_URI="http://dovecot.org/releases/${MY_PV12}/rc/${MY_P}.tar.gz
@@ -23,7 +23,7 @@ HOMEPAGE="http://www.dovecot.org/"
 
 SLOT="0"
 LICENSE="LGPL-2.1"
-KEYWORDS="-* ~alpha ~amd64 ~ppc ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86 ~x86-fbsd"
 
 IUSE="debug doc ipv6 kerberos ldap managesieve mbox mysql pop3d pam postgres sieve sqlite3 ssl suid vpopmail"
 
@@ -108,7 +108,7 @@ src_install () {
 
 	rm -f "${D}"/etc/dovecot/dovecot-{ldap,sql}-example.conf
 
-	newinitd "${FILESDIR}"/dovecot.init dovecot
+	newinitd "${FILESDIR}"/dovecot.init-r1 dovecot
 
 	# Documentation
 	rm -rf "${D}"/usr/share/doc/dovecot
