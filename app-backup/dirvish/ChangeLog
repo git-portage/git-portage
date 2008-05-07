@@ -1,6 +1,6 @@
-# ChangeLog for app-admin/dirvish
+# ChangeLog for app-backup/dirvish
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/dirvish/ChangeLog,v 1.1 2008/04/28 21:03:40 ramereth Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/dirvish/ChangeLog,v 1.2 2008/05/07 19:32:11 swegener Exp $
 
   28 Apr 2008; Lance Albertson <ramereth@gentoo.org> -dirvish-1.2.ebuild,
   dirvish-1.2.1.ebuild:
