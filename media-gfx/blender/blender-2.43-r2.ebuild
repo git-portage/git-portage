@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/Attic/blender-2.43-r1.ebuild,v 1.1 2008/04/27 12:19:52 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/Attic/blender-2.43-r2.ebuild,v 1.1 2008/05/07 21:07:25 maekke Exp $
 
 inherit multilib flag-o-matic eutils python
 
@@ -61,6 +61,8 @@ src_unpack() {
 	cd "${S}"
 	epatch "${FILESDIR}"/blender-2.37-dirs.patch
 	epatch "${FILESDIR}"/blender-2.45-cve-2008-1102.patch
+	epatch "${FILESDIR}"/blender-2.45-cve-2008-1103-1.patch
+	epatch "${FILESDIR}"/blender-2.45-cve-2008-1103-2.patch
 
 	if use ffmpeg ; then
 		cd "${S}"/extern
