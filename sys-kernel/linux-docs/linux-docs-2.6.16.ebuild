@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-docs/Attic/linux-docs-2.6.16.ebuild,v 1.13 2006/11/13 00:03:23 josejx Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-docs/Attic/linux-docs-2.6.16.ebuild,v 1.14 2008/05/08 12:24:12 mpagano Exp $
 
 inherit toolchain-funcs
 
@@ -27,7 +27,7 @@ src_unpack() {
 	sed -i \
 		-e "s:db2:docbook2:g" \
 		-e "s:/usr/local/man:${D}/usr/share/man:g" \
-		${S}/Documentation/DocBook/Makefile
+		"${S}"/Documentation/DocBook/Makefile
 }
 
 src_compile() {
