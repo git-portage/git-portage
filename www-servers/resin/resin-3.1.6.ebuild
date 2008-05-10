@@ -1,10 +1,12 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/resin/Attic/resin-3.1.3.ebuild,v 1.3 2007/11/10 20:52:05 nelchael Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/resin/Attic/resin-3.1.6.ebuild,v 1.1 2008/05/10 20:17:00 nelchael Exp $
+
+EAPI="1"
 
 JAVA_PKG_IUSE="doc source"
 
-inherit java-pkg-2 java-ant-2 eutils flag-o-matic multilib
+inherit java-pkg-2 java-ant-2 eutils flag-o-matic multilib autotools
 
 DESCRIPTION="A fast Servlet 2.5 and JSP 2.0 engine."
 HOMEPAGE="http://www.caucho.com"
@@ -14,11 +16,14 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE="admin"
 
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+KEYWORDS="~amd64 ~x86"
 
 COMMON_DEP="~dev-java/resin-servlet-api-${PV}
 	>=dev-java/iso-relax-20050331
 	dev-java/aopalliance
+	=dev-java/sun-j2ee-deployment-bin-1.1*
+	dev-java/jax-ws-api:2
+	dev-java/jaxb:2
 	>=dev-java/sun-javamail-1.4
 	>=dev-java/sun-jaf-1.1"
 
@@ -45,6 +50,9 @@ src_unpack() {
 	java-ant_bsfix_one "${S}/build.xml"
 
 	sed -i -e 's/256m/384m/' "${S}/build.xml"
+
+	cd "${S}"
+	eautoreconf
 
 }
 
@@ -73,6 +81,9 @@ src_compile() {
 	java-pkg_jar-from sun-javamail
 	java-pkg_jar-from iso-relax
 	java-pkg_jar-from aopalliance-1
+	java-pkg_jar-from sun-j2ee-deployment-bin-1.1
+	java-pkg_jar-from jax-ws-api-2
+	java-pkg_jar-from jaxb-2
 	java-pkg_jar-from resin-servlet-api-2.5 resin-servlet-api.jar jsdk-15.jar
 	ln -s $(java-config --jdk-home)/lib/tools.jar
 	cd "${S}"
@@ -111,7 +122,7 @@ src_install() {
 	java-pkg_dojar "${S}"/lib/*.jar
 	rm -fr "${D}/${RESIN_HOME}/lib"
 	dosym /usr/share/resin/lib ${RESIN_HOME}/lib
-	keepdir /usr/share/resin/log
+	dosym /var/log/resin /usr/share/resin/log
 
 	dodir /var/lib/resin/webapps
 	mv "${D}"/${RESIN_HOME}/webapps/* "${D}/var/lib/resin/webapps"
