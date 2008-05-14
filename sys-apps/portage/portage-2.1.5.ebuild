@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.5_rc7.ebuild,v 1.1 2008/05/06 08:19:09 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.5.ebuild,v 1.1 2008/05/14 21:33:12 zmedico Exp $
 
-inherit toolchain-funcs eutils flag-o-matic multilib
+inherit eutils multilib
 
 DESCRIPTION="Portage is the package management and distribution system for Gentoo"
 HOMEPAGE="http://www.gentoo.org/proj/en/portage/index.xml"
@@ -38,13 +38,13 @@ SRC_ARCHIVES="http://dev.gentoo.org/~zmedico/portage/archives"
 
 PV_PL="2.1.2"
 PATCHVER_PL=""
-TARBALL_PV="2.1.4"
+TARBALL_PV="2.1.5"
 SRC_URI="mirror://gentoo/${PN}-${TARBALL_PV}.tar.bz2
 	${SRC_ARCHIVES}/${PN}-${TARBALL_PV}.tar.bz2
 	linguas_pl? ( mirror://gentoo/${PN}-man-pl-${PV_PL}.tar.bz2
 	${SRC_ARCHIVES}/${PN}-man-pl-${PV_PL}.tar.bz2 )"
 
-PATCHVER="${PV}"
+PATCHVER=""
 if [ -n "${PATCHVER}" ]; then
 	SRC_URI="${SRC_URI} mirror://gentoo/${PN}-${PATCHVER}.patch.bz2
 	${SRC_ARCHIVES}/${PN}-${PATCHVER}.patch.bz2"
@@ -83,11 +83,7 @@ src_unpack() {
 }
 
 src_compile() {
-	append-lfs-flags
-
 	cd "${S}"/src
-	$(tc-getCC) ${CFLAGS} ${LDFLAGS} -o tbz2tool tbz2tool.c || \
-		die "Failed to build tbz2tool"
 
 	if use doc; then
 		cd "${S}"/doc
@@ -144,7 +140,6 @@ src_install() {
 	fi
 	cd "${S}"/bin
 	doexe *
-	doexe "${S}"/src/tbz2tool
 	dosym newins ${portage_base}/bin/donewins
 
 	local mydir
@@ -168,7 +163,7 @@ src_install() {
 
 	dodir /usr/bin
 	local x
-	for x in ebuild emerge portageq repoman tbz2tool xpak; do
+	for x in ebuild emerge portageq repoman xpak; do
 		dosym ../${libdir}/portage/bin/${x} /usr/bin/${x}
 	done
 
@@ -211,9 +206,7 @@ pkg_preinst() {
 	local portage_base="/usr/$(get_libdir)/portage"
 	if has livecvsportage ${FEATURES} && [ "${ROOT}" = "/" ]; then
 		rm -rf "${D}"/${portage_base}/pym/*
-		mv "${D}"/${portage_base}/bin/tbz2tool "${T}"
 		rm -rf "${D}"/${portage_base}/bin/*
-		mv "${T}"/tbz2tool "${D}"/${portage_base}/bin/
 	fi
 }
 
@@ -242,7 +235,12 @@ pkg_postinst() {
 		"\`emerge --sync\` operation. If you use something" \
 		"like the sqlite module and want to keep all metadata" \
 		"in that format alone (useful for querying), enable" \
-		"FEATURES=\"metadata-transfer\" in make.conf." \
+		"FEATURES=\"metadata-transfer\" in make.conf. You should" \
+		"also enable FEATURES=\"metadata-transfer\" if you have" \
+		"any eclasses from PORTDIR_OVERLAY that override eclasses" \
+		"from PORTDIR (in this case, you may have disabled" \
+		"a relevant warning message by setting" \
+		"PORTAGE_ECLASS_WARNING_ENABLE=\"0\" in make.conf)." \
 		| fmt -w 75 | while read x ; do elog "$x" ; done
 
 	portage_docs
