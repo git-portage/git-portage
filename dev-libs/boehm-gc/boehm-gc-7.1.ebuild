@@ -1,10 +1,10 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/boehm-gc/Attic/boehm-gc-6.7.ebuild,v 1.11 2007/02/11 16:39:53 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/boehm-gc/Attic/boehm-gc-7.1.ebuild,v 1.1 2008/05/17 04:27:48 matsuu Exp $
 
 inherit eutils
 
-MY_P="gc${PV/_/}"
+MY_P="gc-${PV/_/}"
 S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="The Boehm-Demers-Weiser conservative garbage collector"
@@ -13,7 +13,7 @@ SRC_URI="http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/${MY_P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="nocxx threads"
 
 RDEPEND="virtual/libc"
@@ -45,7 +45,9 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install || die
+
+	rm -rf "${D}"/usr/share/gc || die
 
 	# dist_noinst_HEADERS
 	insinto /usr/include/gc
