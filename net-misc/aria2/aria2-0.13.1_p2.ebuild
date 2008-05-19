@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/aria2/Attic/aria2-0.13.1.ebuild,v 1.1 2008/03/15 22:39:12 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/aria2/Attic/aria2-0.13.1_p2.ebuild,v 1.1 2008/05/19 11:35:25 dev-zero Exp $
 
 inherit eutils
 
@@ -35,7 +35,8 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/${PV}-broken_tests.patch"
+	epatch "${FILESDIR}/0.13.1-broken_tests.patch" \
+		"${FILESDIR}/${PV}-missing_includes.patch"
 }
 
 src_compile() {
