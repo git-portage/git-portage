@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/rsyslog/Attic/rsyslog-3.17.1.ebuild,v 1.2 2008/05/14 20:35:36 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/rsyslog/Attic/rsyslog-3.19.2.ebuild,v 1.1 2008/05/19 16:13:44 dev-zero Exp $
 
-inherit eutils versionator
+inherit autotools eutils versionator
 
 DESCRIPTION="An enhanced multi-threaded syslogd with database support and more."
 HOMEPAGE="http://www.rsyslog.com/"
@@ -10,18 +10,26 @@ SRC_URI="http://download.rsyslog.com/${PN}/${P}.tar.gz"
 LICENSE="GPL-3 LGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug kerberos dbi mysql postgres relp snmp zlib"
+IUSE="debug kerberos dbi gnutls mysql postgres relp snmp zlib"
 
 DEPEND="kerberos? ( virtual/krb5 )
 	dbi? ( dev-db/libdbi )
+	gnutls? ( net-libs/gnutls )
 	mysql? ( virtual/mysql )
-	postgres? ( dev-db/libpq )
+	postgres? ( virtual/postgresql-base )
 	relp? ( >=dev-libs/librelp-0.1.1 )
 	snmp? ( net-analyzer/net-snmp )
 	zlib? ( sys-libs/zlib )"
 RDEPEND="${DEPEND}"
 
 BRANCH="3-devel"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}/${PV}-as_needed.patch"
+	eautomake
+}
 
 src_compile() {
 	# Maintainer notes:
@@ -51,7 +59,7 @@ src_compile() {
 		--disable-rfc3195 \
 		--enable-imfile \
 		--disable-imtemplate \
-		--disable-openssl
+		$(use_enable gnutls)
 	emake || die "emake failed"
 }
 
