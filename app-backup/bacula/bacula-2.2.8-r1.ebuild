@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.2.8-r1.ebuild,v 1.1 2008/04/29 10:00:49 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.2.8-r1.ebuild,v 1.2 2008/05/21 15:47:13 dev-zero Exp $
 
 #
 # TODO:
@@ -36,7 +36,7 @@ DEPEND="
 	>=sys-libs/zlib-1.1.4
 	dev-libs/gmp
 	!bacula-clientonly? (
-		postgres? ( >=dev-db/postgresql-7.4.0 )
+		postgres? ( >=virtual/postgresql-server-7.4 )
 		mysql? ( virtual/mysql )
 		sqlite? ( =dev-db/sqlite-2* )
 		sqlite3? ( >=dev-db/sqlite-3.0.0 )
