@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/epiphany/Attic/epiphany-2.22.1.ebuild,v 1.1 2008/04/10 22:09:42 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/epiphany/Attic/epiphany-2.22.2.ebuild,v 1.1 2008/05/31 14:27:12 eva Exp $
 
 inherit gnome2 eutils multilib
 
