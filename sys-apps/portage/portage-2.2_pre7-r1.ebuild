@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.2_pre7.ebuild,v 1.3 2008/05/29 18:01:52 hawking Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.2_pre7-r1.ebuild,v 1.1 2008/06/02 10:27:18 genone Exp $
 
 inherit eutils multilib python
 
@@ -62,7 +62,8 @@ S_PL="${WORKDIR}"/${PN}-${PV_PL}
 
 pkg_setup() {
 	MINOR_UPGRADE=$(has_version '>=sys-apps/portage-2.2_alpha' && echo true)
-	MIGRATION_UPGRADE=$(has_version '<=sys-apps/portage-2.2_pre5' && echo true)
+	WORLD_MIGRATION_UPGRADE=$(has_version '<=sys-apps/portage-2.2_pre5' && echo true)
+	NEEDED_REBUILD_UPGRADE=$(has_version '<=sys-apps/portage-2.2_pre7' && echo true)
 }
 
 src_unpack() {
@@ -222,20 +223,26 @@ pkg_postinst() {
 	# will be identified and removed in postrm.
 	python_mod_optimize /usr/$(get_libdir)/portage/pym
 
-	if [ -n "${MIGRATION_UPGRADE}" ]; then
+	if [ -n "${WORLD_MIGRATION_UPGRADE}" ]; then
 		einfo "moving set references from the worldfile into world_sets"
 		cd "${ROOT}/var/lib/portage/"
 		grep "^@" world >> world_sets
 		sed -i -e '/^@/d' world
+	fi
 
-		einfo "converting NEEDED files to new syntax"
-		cd "${ROOT}/var/db/pkg"
-		for cpv in */*; do
-			if [ -f "${cpv}/NEEDED" -a ! -f "${cpv}/NEEDED.ELF.2" ]; then
+	if [ -n "${NEEDED_REBUILD_UPGRADE}" ]; then
+		einfo "rebuilding NEEDED.ELF.2 files"
+		for cpv in "${ROOT}/var/db/pkg"/*/*; do
+			if [ -f "${cpv}/NEEDED" ]; then
+				rm -f "${cpv}/NEEDED.ELF.2"
 				while read line; do
 					filename=${line% *}
 					needed=${line#* }
-					newline=$(scanelf -BF "%a;%F;%S;$needed;%r" $filename)
+					needed=${needed//+/++}
+					needed=${needed//#/##}
+					needed=${needed//%/%%}
+					newline=$(scanelf -BF "%a;%F;%S;%r;${needed}" $filename)
+					newline=${newline//  -  }
 					echo "${newline:3}" >> "${cpv}/NEEDED.ELF.2"
 				done < "${cpv}/NEEDED"
 			fi
