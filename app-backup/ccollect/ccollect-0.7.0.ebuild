@@ -1,6 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/Attic/ccollect-0.7.0.ebuild,v 1.1 2008/06/03 10:36:19 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/Attic/ccollect-0.7.0.ebuild,v 1.2 2008/06/03 11:46:21 dev-zero Exp $
+
+EAPI="1"
 
 DESCRIPTION="(pseudo) incremental backup with different exclude lists using hardlinks and rsync"
 HOMEPAGE="http://unix.schottelius.org/ccollect/"
@@ -11,12 +13,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~hppa ~ppc ~x86"
 IUSE="doc"
 
-DEPEND="doc? ( >=app-text/asciidoc-7.0.2 )"
+DEPEND="doc? ( >=app-text/asciidoc-8.1.0
+		app-text/docbook-xsl-stylesheets
+		app-text/docbook-xml-dtd:4.2
+		dev-libs/libxslt )"
 RDEPEND="net-misc/rsync"
 
 src_compile() {
 	if use doc; then
-		make documentation
+		make XSL=/usr/share/sgml/docbook/xsl-stylesheets/html/docbook.xsl documentation
 	else
 		einfo 'Nothing to compile'
 	fi
@@ -28,14 +33,16 @@ src_install() {
 	insinto /usr/share/${PN}/tools
 	doins tools/*
 
-	dodoc CREDITS README
+	dodoc CREDITS README doc/CHANGES
 
 	if use doc; then
-		dodoc doc/*
+		dohtml doc/*.htm doc/*.html
+		dohtml -r doc/man
+		doman doc/man/*.1
 
 		# dodoc is not recursive. So do a workaround.
 		insinto /usr/share/doc/${PF}/examples/
-		doins -r "${S}/conf"
+		cp -Rdp "${S}/conf" "${D}/usr/share/doc/${PF}/examples/"
 	fi
 }
 
