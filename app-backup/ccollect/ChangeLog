@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/ccollect
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/ChangeLog,v 1.26 2008/06/03 11:46:21 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/ChangeLog,v 1.27 2008/06/03 20:07:55 dev-zero Exp $
+
+*ccollect-0.7.0-r1 (03 Jun 2008)
+
+  03 Jun 2008; Tiziano Müller <dev-zero@gentoo.org> -ccollect-0.7.0.ebuild,
+  +ccollect-0.7.0-r1.ebuild:
+  Updated upgrade warnings. Installing tools directly to /usr/bin (as
+  recommended by upstream).
 
   03 Jun 2008; Tiziano Müller <dev-zero@gentoo.org> ccollect-0.7.0.ebuild:
   Fixed dependencies for doc/manpage generation. Fixed doc/manpage
