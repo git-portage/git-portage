@@ -1,6 +1,19 @@
 # ChangeLog for app-backup/sarab
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/sarab/ChangeLog,v 1.9 2007/05/13 17:56:40 bangert Exp $
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/sarab/ChangeLog,v 1.10 2008/06/03 22:52:30 rbu Exp $
+
+*sarab-0.2.4 (03 Jun 2008)
+
+  03 Jun 2008; Robert Buchholz <rbu@gentoo.org>
+  -files/0.2.2-fix-rotation-gentoo.patch,
+  -files/0.2.2-test-with-encryption-gentoo.patch,
+  -files/0.2.2-refname-calculation-gentoo.patch,
+  +files/0.2.4-better-defaults-gentoo.patch,
+  -files/0.2.2-better-defaults-gentoo.patch, files/README.Gentoo,
+  -sarab-0.2.2-r1.ebuild, -sarab-0.2.2-r2.ebuild, +sarab-0.2.4.ebuild:
+  Version bump, fixes security bug #198473 (CVE-2008-2517), DAR encryption
+  passwords were visible to local users via ps. Also introduces support for
+  newer versions of DAR (bug #212048).
 
   13 May 2007; Thilo Bangert <bangert@gentoo.org> metadata.xml:
   add herd

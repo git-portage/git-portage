@@ -1,17 +1,13 @@
--*- outline -*- $Id: README.Gentoo,v 1.1 2005/07/27 18:10:37 mkennedy Exp $
+-*- outline -*- $Id: README.Gentoo,v 1.2 2008/06/03 22:52:30 rbu Exp $
 
 Gentoo GNU/Linux specific notes for SaraB
 -----------------------------------------
 
 This is the README.Gentoo file from /usr/share/doc/@PF@/ directory.
 
-  * The Gentoo port includes a patch to support testing of encrypted archives.
-    Previously, SaraB supported creating encrypted archives, but the test step
-    didn't use the same cipher information and would fail.
-
   * The Gentoo port includes more reasonable pathnames for the example
     configuration.
 
-If you encounter any problems or have suggestions, use http://bugs.gentoo.org.
+If you encounter any problems or have suggestions, use https://bugs.gentoo.org.
 Please don't bother the upstream authors unless you are absolutely certain it is
 not Gentoo-related.

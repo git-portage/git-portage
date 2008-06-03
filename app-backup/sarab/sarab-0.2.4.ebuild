@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/sarab/Attic/sarab-0.2.2-r2.ebuild,v 1.2 2006/03/05 18:06:51 mkennedy Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/sarab/sarab-0.2.4.ebuild,v 1.1 2008/06/03 22:52:30 rbu Exp $
 
 inherit eutils
 
@@ -16,14 +16,11 @@ DEPEND=""
 RDEPEND="app-backup/dar
 	virtual/mailx"
 
-S=${WORKDIR}/${PN}
-
 src_unpack() {
+	cd "${S}"
 	unpack ${A}
-	epatch ${FILESDIR}/${PV}-test-with-encryption-gentoo.patch || die
-	epatch ${FILESDIR}/${PV}-better-defaults-gentoo.patch || die
-	epatch ${FILESDIR}/${PV}-fix-rotation-gentoo.patch || die
-	epatch ${FILESDIR}/${PV}-refname-calculation-gentoo.patch || die
+
+	epatch "${FILESDIR}"/${PV}-better-defaults-gentoo.patch
 }
 
 src_install() {
@@ -32,6 +29,12 @@ src_install() {
 	doins -r etc/*
 	# sarab.conf could contain passphrase information
 	fperms 600 /etc/sarab/sarab.conf
-	dodoc CHANGELOG FAQ INSTALL LICENSE README
-	dodoc ${FILESDIR}/README.Gentoo
+	dodoc CHANGELOG FAQ INSTALL README
+	dodoc "${FILESDIR}"/README.Gentoo
+}
+
+pkg_postinstl() {
+	ewarn "The configuration format for DAR encryption has changed in Sarab 0.2.4."
+	ewarn "Replace DAR_ENCRYPTION_OPTIONS=\"--key blowfish:PASSPHRASE\""
+	ewarn "by SARAB_KEY=\"blowfish:PASSPHRASE\" in /etc/sarab/sarab.conf"
 }
