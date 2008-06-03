@@ -1,8 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/xdebug-client/Attic/xdebug-client-2.0.0.ebuild,v 1.1 2007/08/16 21:34:07 hoffie Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php/xdebug-client/Attic/xdebug-client-2.0.3.ebuild,v 1.1 2008/06/03 03:31:42 chtekk Exp $
 
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 
 MY_PV="${PV/_/}"
 MY_PV="${MY_PV/rc/RC}"
@@ -20,15 +20,12 @@ DEPEND="libedit? ( || ( dev-libs/libedit sys-freebsd/freebsd-lib ) )"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
-	unpack "${A}"
-	chmod +x "${S}/configure"
+	unpack ${A}
+	chmod +x "${S}"/configure
 }
 
 src_compile() {
-	econf \
-		$(use_with libedit) \
-		|| die "Configure of debug client failed!"
-
+	econf $(use_with libedit) --disable-dependency-tracking
 	emake || die "Build of debug client failed!"
 }
 
