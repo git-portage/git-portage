@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.9 2008/01/25 19:47:13 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.10 2008/06/04 16:56:43 flameeyes Exp $
 
-inherit eutils
+inherit eutils autotools
 
 DESCRIPTION="A completely automatic on-line backup system"
 HOMEPAGE="http://www.fluffy.co.uk/boxbackup/"
@@ -14,8 +14,7 @@ IUSE="client-only"
 DEPEND="sys-libs/zlib
 	sys-libs/db
 	>=dev-libs/openssl-0.9.7
-	>=dev-lang/perl-5.6
-	>=sys-devel/autoconf-2.50"
+	>=dev-lang/perl-5.6"
 RDEPEND="${DEPEND}
 	virtual/mta"
 
@@ -24,10 +23,12 @@ src_unpack() {
 
 	epatch "${FILESDIR}/${P}"-gentoo.patch
 	epatch "${FILESDIR}/${P}"-gcc41-noll.patch
+
+	cd "${S}"
+	AT_M4DIR="infrastructure/m4" eautoreconf
 }
 
 src_compile() {
-	./bootstrap || die "bootstrap failed"
 	econf || die "configure failed"
 	make || die
 }
