@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/dovecot/Attic/dovecot-1.0.13-r5.ebuild,v 1.2 2008/05/21 18:58:16 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/dovecot/Attic/dovecot-1.0.14.ebuild,v 1.1 2008/06/04 08:16:55 wschlich Exp $
 
 inherit autotools eutils ssl-cert versionator
 
@@ -43,8 +43,6 @@ RDEPEND="${DEPEND}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	# http://hg.dovecot.org/dovecot-1.0/rev/538f8892a2f1
-	epatch "${FILESDIR}"/${P}-body.patch
 	if use managesieve; then
 		epatch "${WORKDIR}"/${MY_P}-${MANAGESIEVE}.diff
 		eautoreconf
