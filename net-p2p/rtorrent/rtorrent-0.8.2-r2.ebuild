@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/rtorrent/Attic/rtorrent-0.8.0.ebuild,v 1.2 2008/04/21 15:08:51 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/rtorrent/Attic/rtorrent-0.8.2-r2.ebuild,v 1.1 2008/06/05 06:43:55 loki_val Exp $
 
 inherit eutils toolchain-funcs flag-o-matic
 
@@ -13,18 +13,17 @@ SLOT="0"
 KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="debug ipv6 xmlrpc"
 
-RDEPEND=">=net-libs/libtorrent-0.12.${PV##*.}
-	>=dev-libs/libsigc++-2.0
+DEPEND=">=net-libs/libtorrent-0.12.${PV##*.}
+	>=dev-libs/libsigc++-2
 	>=net-misc/curl-7.15
 	sys-libs/ncurses
 	xmlrpc? ( dev-libs/xmlrpc-c )"
-DEPEND="${RDEPEND}"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-
-	epatch "${FILESDIR}/${P}+gcc-4.3.patch"
+	epatch "${FILESDIR}"/${PN}-0.8.0+gcc-4.3.patch
+	epatch "${FILESDIR}"/${P}-fix_start_stop_filter.patch
 }
 
 src_compile() {
