@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/Attic/mylvmbackup-0.8.ebuild,v 1.1 2008/04/17 19:56:24 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/Attic/mylvmbackup-0.8.ebuild,v 1.2 2008/06/07 01:01:33 robbat2 Exp $
 
 inherit eutils
 
@@ -26,7 +26,7 @@ src_unpack() {
 }
 
 src_install() {
-	emake -j1 install DESTDIR="${D}"
+	emake -j1 install DESTDIR="${D}" mandir="/usr/share/man"
 	dodoc ChangeLog README TODO
 	keepdir /var/tmp/${PN}/{backup,mnt}
 	fperms 0700 /var/tmp/${PN}/

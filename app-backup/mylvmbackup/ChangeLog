@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/mylvmbackup
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/ChangeLog,v 1.7 2008/04/17 19:56:24 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/ChangeLog,v 1.8 2008/06/07 01:01:33 robbat2 Exp $
+
+  07 Jun 2008; Robin H. Johnson <robbat2@gentoo.org> mylvmbackup-0.8.ebuild:
+  Bug #162681, fix manpage location.
 
 *mylvmbackup-0.8 (17 Apr 2008)
 
