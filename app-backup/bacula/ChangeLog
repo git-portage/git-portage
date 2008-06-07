@@ -1,6 +1,25 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.54 2008/05/21 15:47:13 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.55 2008/06/07 15:41:29 wschlich Exp $
+
+*bacula-2.4.0 (07 Jun 2008)
+
+  07 Jun 2008; Wolfram Schlich <wschlich@gentoo.org>
+  -files/2.2.8/2.2.8-jobmedia.patch, -files/2.2.8/2.2.8-jobmedia-fix.patch,
+  -files/2.2.8/2.2.8-bacula-conf.patch,
+  -files/2.2.8/2.2.8-pool-source.patch, -files/2.2.8/2.2.8-strip-path.patch,
+  -files/2.2.8/bacula-all-conf, -files/2.2.8/bacula-all-init,
+  -files/2.2.8/bacula-default-configs.patch, -files/2.2.8/bacula-dir-conf,
+  -files/2.2.8/bacula-dir-init, -files/2.2.8/bacula-fd-conf,
+  -files/2.2.8/bacula-fd-init, -files/2.2.8/bacula-gnomesu2gksu.diff,
+  -files/2.2.8/bacula-sd-conf, -files/2.2.8/bacula-sd-init,
+  +files/2.4.0/bacula-all-conf, +files/2.4.0/bacula-all-init,
+  +files/2.4.0/bacula-default-configs.patch, +files/2.4.0/bacula-dir-conf,
+  +files/2.4.0/bacula-dir-init, +files/2.4.0/bacula-fd-conf,
+  +files/2.4.0/bacula-fd-init, +files/2.4.0/bacula-gnomesu2gksu.diff,
+  +files/2.4.0/bacula-sd-conf, +files/2.4.0/bacula-sd-init,
+  -bacula-2.2.8.ebuild, -bacula-2.2.8-r1.ebuild, +bacula-2.4.0.ebuild:
+  version bump
 
   21 May 2008; Tiziano Müller <dev-zero@gentoo.org> bacula-2.0.3.ebuild,
   bacula-2.2.8.ebuild, bacula-2.2.8-r1.ebuild:

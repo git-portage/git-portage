@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.2.8-r1.ebuild,v 1.2 2008/05/21 15:47:13 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.4.0.ebuild,v 1.1 2008/06/07 15:41:29 wschlich Exp $
 
 #
 # TODO:
@@ -15,6 +15,7 @@
 # - correctly filter unneeded /usr/libexec/bacula/ stuff depending
 #   on selected USE flags, e.g. bacula-clientonly
 # - install bacula-web and/or bweb from bacula-gui package
+# - bacula >=2.4.0 supports --without-qwt -- reflect with USE=qwt
 #
 
 inherit eutils
@@ -134,14 +135,6 @@ src_unpack() {
 
 	# replaces (deprecated) gnomesu with gksu in the gnome menu files
 	useq bacula-console && useq gnome && epatch "${FILESDIR}/${PV}/${PN}"-gnomesu2gksu.diff
-
-	# Apply patches from bacula-patches at
-	# http://sourceforge.net/project/showfiles.php?group_id=50727&package_id=93946
-	epatch "${FILESDIR}"/${PV}/${PV}-bacula-conf.patch
-	epatch "${FILESDIR}"/${PV}/${PV}-jobmedia.patch
-	epatch "${FILESDIR}"/${PV}/${PV}-jobmedia-fix.patch
-	epatch "${FILESDIR}"/${PV}/${PV}-pool-source.patch
-	epatch "${FILESDIR}"/${PV}/${PV}-strip-path.patch
 }
 
 src_compile() {
