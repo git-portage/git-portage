@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/python-gammu/Attic/python-gammu-0.23.ebuild,v 1.1 2007/12/01 09:53:50 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/python-gammu/Attic/python-gammu-0.26.ebuild,v 1.1 2008/06/07 09:47:20 mrness Exp $
 
 inherit distutils
 
@@ -13,9 +13,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-RDEPEND=">=app-mobilephone/gammu-1.15.0"
+RDEPEND=">=app-mobilephone/gammu-1.20.0"
 DEPEND="dev-util/pkgconfig
-		${RDEPEND}"
+	${RDEPEND}"
 
 src_install() {
 	DOCS="AUTHORS NEWS"
