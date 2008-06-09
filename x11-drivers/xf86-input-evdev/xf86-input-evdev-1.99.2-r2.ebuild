@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-input-evdev/Attic/xf86-input-evdev-1.99.2.ebuild,v 1.1 2008/06/06 22:07:08 dberkholz Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-input-evdev/Attic/xf86-input-evdev-1.99.2-r2.ebuild,v 1.1 2008/06/09 05:08:16 dberkholz Exp $
 
 # Must be before x-modular eclass is inherited
 #SNAPSHOT="yes"
@@ -23,6 +23,9 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}/${PV}/0001-Fail-if-the-device-cannot-be-grabbed-during-the-prob.patch"
 	"${FILESDIR}/${PV}/0002-Check-for-XINPUT-ABI-parameters-of-InitValuatorClas.patch"
+	"${FILESDIR}/${PV}/0003-Revert-Check-for-XINPUT-ABI-parameters-of-InitValu.patch"
+	"${FILESDIR}/${PV}/0004-Check-for-XINPUT-ABI-3-corrected-version.patch"
+	"${FILESDIR}/${PV}/0005-evdev-Port-b4a5a204-Fix-pointer-crossing-screen-bu.patch"
 	)
 
 pkg_postinst() {
