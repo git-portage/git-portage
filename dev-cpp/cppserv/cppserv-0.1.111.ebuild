@@ -1,6 +1,6 @@
 # Copyright 2008-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/cppserv/Attic/cppserv-0.1.103.ebuild,v 1.2 2008/03/01 20:33:21 iluxa Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/cppserv/Attic/cppserv-0.1.111.ebuild,v 1.1 2008/06/20 05:41:38 iluxa Exp $
 
 inherit eutils apache-module
 
@@ -18,6 +18,7 @@ APACHE2_MOD_DEFINE="CPPSERV"
 DEPEND="net-libs/socket++
 	>=dev-cpp/sptk-3.5.6
 	>=www-servers/apache-2
+	>=dev-libs/apr-1.2
 	dev-libs/boost
 "
 
@@ -26,13 +27,13 @@ need_apache2
 src_compile() {
 	local CPPSERV_DBG_FLAG
 	use debug && CPPSERV_DBG_FLAG="CPPFLAGS=-DMODCSERV_DEBUG"
-	emake PREFIX=/usr ADON_VERBOSE=1 ADON_BUILD=release ${CPPSERV_DBG_FLAG} || die "emake failed"
+	emake PREFIX=/usr ADON_VERBOSE=1 ADON_BUILD=release APRCFG_PATH=/usr/bin/apr-1-config ${CPPSERV_DBG_FLAG} || die "emake failed. Bug iluxa on #cppserv on irc.freenode.net immediately"
 }
 
 src_install() {
 	local CPPSERV_DBG_FLAG
 	use debug && CPPSERV_DBG_FLAG="CPPFLAGS=-DMODCSERV_DEBUG"
-	emake PREFIX=/usr ADON_BUILD=release DESTDIR="${D}" ${CPPSERV_DBG_FLAG} install || die "emake install failed"
+	emake PREFIX=/usr ADON_BUILD=release APRCFG_PATH=/usr/bin/apr-1-config DESTDIR="${D}" ${CPPSERV_DBG_FLAG} install || die "emake install failed. Bug iluxa on #cppserv on irc.freenode.net immediately"
 	insinto "${APACHE_MODULES_CONFDIR}"
-	doins "${FILESDIR}/${APACHE2_MOD_CONF}.conf" || die "internal ebuild error: \"${FILESDIR}/${APACHE2_MOD_CONF}.conf\" not found"
+	doins "${FILESDIR}/${APACHE2_MOD_CONF}.conf" || die "internal ebuild error: \"${FILESDIR}/${APACHE2_MOD_CONF}.conf\" not found. Bug iluxa on #cppserv on irc.freenode.net immediately"
 }
