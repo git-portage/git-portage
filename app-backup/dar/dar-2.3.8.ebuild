@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/Attic/dar-2.3.7.ebuild,v 1.1 2008/03/07 17:00:15 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/dar-2.3.8.ebuild,v 1.1 2008/06/20 17:21:18 matsuu Exp $
 
 inherit flag-o-matic
 
@@ -13,12 +13,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="acl dar32 dar64 doc nls ssl"
 
-DEPEND=">=sys-libs/zlib-1.2.3
+RDEPEND=">=sys-libs/zlib-1.2.3
 	>=app-arch/bzip2-1.0.2
 	acl? ( sys-apps/attr )
-	doc? ( app-doc/doxygen )
-	nls? ( sys-devel/gettext )
+	nls? ( virtual/libintl )
 	ssl? ( dev-libs/openssl )"
+DEPEND="${RDEPEND}
+	nls? ( sys-devel/gettext )
+	doc? ( app-doc/doxygen )"
 
 pkg_setup() {
 	if use dar32 && use dar64 ; then
