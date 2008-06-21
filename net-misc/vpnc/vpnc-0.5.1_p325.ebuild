@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/vpnc/Attic/vpnc-0.5.2_pre20080611.ebuild,v 1.1 2008/06/11 06:07:39 opfer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/vpnc/Attic/vpnc-0.5.1_p325.ebuild,v 1.1 2008/06/21 08:55:11 opfer Exp $
 
 inherit linux-info
 
