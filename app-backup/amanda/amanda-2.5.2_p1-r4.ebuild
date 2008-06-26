@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.2_p1-r4.ebuild,v 1.1 2008/06/26 01:20:32 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.2_p1-r4.ebuild,v 1.2 2008/06/26 02:17:33 mr_bones_ Exp $
 
 inherit autotools eutils
 
@@ -96,7 +96,7 @@ amanda_variable_setup() {
 
 	# What tar to use
 	[ -z "${AMANDA_TAR}" ] && AMANDA_TAR=/bin/tar
-	
+
 	# Text mode is the only one left.
 	AMANDA_DBMODE='text'
 
@@ -125,10 +125,10 @@ pkg_setup() {
 
 src_unpack() {
 	unpack "${A}"
-	
+
 	# Gentoo bug #192296, chg-multi fails
 	EPATCH_OPTS="-d ${S}" epatch ${FILESDIR}/${PN}-2.5.2_p1-chg-multi.patch || die "Failed to apply patch to correct typo in chg-multi!"
-	
+
 	# Gentoo bug #212970, --as-needed linking
 	EPATCH_OPTS="-d ${S}" epatch ${FILESDIR}/${PN}-2.5.2_p1-fix-asneeded.patch || die "Failed to apply patch to correct bug #212970!"
 
@@ -192,7 +192,7 @@ src_compile() {
 	# Extras
 	# Speed option
 	myconf="${myconf} --with-buffered-dump"
-	# "debugging" in the configuration is NOT debug in the conventional sense. 
+	# "debugging" in the configuration is NOT debug in the conventional sense.
 	# It is actually just useful output in the application, and should remain
 	# enabled. There are some cases of breakage with MTX tape changers as of
 	# 2.5.1p2 that it exposes when turned off as well.
@@ -219,7 +219,7 @@ src_compile() {
 
 	# Client only, as requested in bug #127725
 	use minimal && myconf="${myconf} --without-server"
-	
+
 	# Raise maximum configurable blocksize
 	myconf="${myconf} --with-maxtapeblocksize=${AMANDA_MAX_TAPE_BLOCK_KB}"
 
