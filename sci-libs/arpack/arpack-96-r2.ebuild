@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/arpack/Attic/arpack-96-r2.ebuild,v 1.3 2008/03/29 08:46:15 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/arpack/Attic/arpack-96-r2.ebuild,v 1.5 2008/06/29 08:11:47 tove Exp $
 
 inherit eutils autotools fortran
 
@@ -57,8 +57,8 @@ src_compile() {
 	econf \
 		--with-blas="${BLAS_LIBS}" \
 		$(use_enable mpi) \
-		|| "econf failed"
-	emake || "emake failed"
+		|| die "econf failed"
+	emake || die "emake failed"
 }
 
 src_test() {
