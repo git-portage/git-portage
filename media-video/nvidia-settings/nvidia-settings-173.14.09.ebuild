@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/nvidia-settings/Attic/nvidia-settings-173.08.ebuild,v 1.2 2008/06/29 15:25:51 peper Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/nvidia-settings/Attic/nvidia-settings-173.14.09.ebuild,v 1.1 2008/06/29 15:25:51 peper Exp $
 
 inherit eutils toolchain-funcs multilib
 
