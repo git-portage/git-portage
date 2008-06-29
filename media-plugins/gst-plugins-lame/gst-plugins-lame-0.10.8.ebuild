@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-lame/Attic/gst-plugins-lame-0.10.7.ebuild,v 1.1 2008/02/21 12:27:01 zaheerm Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-lame/Attic/gst-plugins-lame-0.10.8.ebuild,v 1.1 2008/06/29 18:46:46 drac Exp $
 
 inherit gst-plugins-ugly
 
