@@ -1,7 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/evolution/Attic/evolution-2.12.3-r1.ebuild,v 1.3 2008/04/01 20:16:50 leio Exp $
-EAPI="1"
+# $Header: /var/cvsroot/gentoo-x86/mail-client/evolution/Attic/evolution-2.22.3.1.ebuild,v 1.1 2008/07/03 21:31:37 eva Exp $
 
 inherit gnome2 flag-o-matic
 
@@ -11,19 +10,18 @@ SRC_URI="${SRC_URI}"
 
 LICENSE="GPL-2 FDL-1.1"
 SLOT="2.0"
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd"
-# gstreamer for audio-inline, when it uses 0.10
-IUSE="crypt dbus debug doc hal ipv6 kerberos krb4 ldap mono networkmanager nntp pda profile spell ssl"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+IUSE="crypt dbus debug hal ipv6 kerberos krb4 ldap mono networkmanager nntp pda profile spell ssl"
 
 # Pango dependency required to avoid font rendering problems
-RDEPEND="
-	>=x11-libs/gtk+-2.10
-	>=gnome-extra/evolution-data-server-1.11.90
-	>=x11-themes/gnome-icon-theme-1.2
+RDEPEND=">=dev-libs/glib-2.15.3
+	>=x11-libs/gtk+-2.12
+	>=gnome-extra/evolution-data-server-2.21.92
+	>=x11-themes/gnome-icon-theme-2.20
 	>=gnome-base/gnome-vfs-2.4
+	>=gnome-base/libbonobo-2.20.3
 	>=gnome-base/libbonoboui-2.4.2
-	>=gnome-base/libbonobo-2.16
-	>=gnome-extra/gtkhtml-3.16
+	>=gnome-extra/gtkhtml-3.17.5
 	>=gnome-base/gconf-2
 	>=gnome-base/libglade-2
 	>=gnome-base/libgnomecanvas-2
@@ -40,10 +38,9 @@ RDEPEND="
 		>=dev-libs/nspr-4.6.1
 		>=dev-libs/nss-3.11 )
 	networkmanager? ( net-misc/networkmanager )
-	>=net-libs/libsoup-2.2.96:2.2
+	>=net-libs/libsoup-2.4
 	kerberos? ( virtual/krb5 )
 	krb4? ( virtual/krb5 )
-	>=dev-libs/glib-2.10
 	>=gnome-base/orbit-2.9.8
 	spell? ( >=app-text/gnome-spell-1.0.5 )
 	crypt? ( || ( >=app-crypt/gnupg-2.0.1-r2 =app-crypt/gnupg-1.4* ) )
@@ -60,23 +57,22 @@ DEPEND="${RDEPEND}
 	sys-devel/bison
 	app-text/scrollkeeper
 	>=gnome-base/gnome-common-2.12.0
-	>=app-text/gnome-doc-utils-0.9.1
-	doc? ( >=dev-util/gtk-doc-0.6 )"
+	>=app-text/gnome-doc-utils-0.9.1"
 
 DOCS="AUTHORS ChangeLog* HACKING MAINTAINERS NEWS* README"
 ELTCONF="--reverse-deps"
 
 pkg_setup() {
-	G2CONF="--without-kde-applnk-path        \
-		--enable-plugins=experimental    \
-		$(use_enable ssl nss)            \
-		$(use_enable ssl smime)          \
-		$(use_enable ipv6)               \
-		$(use_enable mono)               \
-		$(use_enable nntp)               \
-		$(use_enable pda pilot-conduits) \
-		$(use_enable profile profiling)  \
-		$(use_with ldap openldap)        \
+	G2CONF="--without-kde-applnk-path
+		--enable-plugins=experimental
+		$(use_enable ssl nss)
+		$(use_enable ssl smime)
+		$(use_enable ipv6)
+		$(use_enable mono)
+		$(use_enable nntp)
+		$(use_enable pda pilot-conduits)
+		$(use_enable profile profiling)
+		$(use_with ldap openldap)
 		$(use_with kerberos krb5 /usr)"
 
 	# We need a graphical pinentry frontend to be able to ask for the GPG
@@ -99,45 +95,20 @@ pkg_setup() {
 		G2CONF="${G2CONF} $(use_with krb4 krb4 /usr)"
 	fi
 
-	# dang - I've changed this to do --enable-plugins=experimental.  This will autodetect
-	# new-mail-notify and exchange, but that cannot be helped for the moment.
-	# They should be changed to depend on a --enable-<foo> like mono is.  This
-	# cleans up a ton of crap from this ebuild.
+	# dang - I've changed this to do --enable-plugins=experimental.  This will
+	# autodetect new-mail-notify and exchange, but that cannot be helped for the
+	# moment.  They should be changed to depend on a --enable-<foo> like mono
+	# is.  This cleans up a ton of crap from this ebuild.
 }
 
 src_unpack() {
 	gnome2_src_unpack
 
-	# Mail-remote doesn't build
-	epatch "${FILESDIR}"/${PN}-2.12.1-mail-remote-broken.patch
-
 	# Fix timezone offsets on fbsd.  bug #183708
-	epatch "${FILESDIR}"/${PN}-2.10.2-fbsd.patch
+	epatch "${FILESDIR}"/${PN}-2.21.3-fbsd.patch
 
-	# Fix CVE-2008-0072
-	epatch "${FILESDIR}"/${PN}-CVE-2008-0072.patch
-
-	# Fix build with libsoup-2.4 present on system
-	epatch "${FILESDIR}"/${P}-no-libsoup24.patch
-
-	# Fix tests (again)
-	echo "evolution-addressbook.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution-calendar.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution-composer-entries.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution-editor.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution-event-editor.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution-mail-global.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution-mail-list.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution-mail-message.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution-mail-messagedisplay.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution-memo-editor.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution-memos.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution-message-composer.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution-signature-editor.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution-subscribe.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution-task-editor.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution-tasks.xml" >> "${S}"/po/POTFILES.in
-	echo "evolution.xml" >> "${S}"/po/POTFILES.in
+	# Fix extra space in translation, bug #230628
+	sed -i "s/\(Correio \) \(e Agenda do Evolution\)/\1\2/g" po/pt_BR.po
 }
 
 src_compile() {
