@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/calibre/Attic/calibre-0.4.73.ebuild,v 1.1 2008/06/24 22:35:39 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/calibre/Attic/calibre-0.4.76.ebuild,v 1.1 2008/07/04 14:42:25 flameeyes Exp $
 
 NEED_PYTHON=2.5
 
