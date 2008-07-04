@@ -1,24 +1,26 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ntop/Attic/ntop-3.2-r3.ebuild,v 1.12 2008/07/04 23:44:20 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ntop/Attic/ntop-3.3.6.ebuild,v 1.1 2008/07/04 23:44:20 mrness Exp $
 
 inherit eutils autotools
 
 DESCRIPTION="tool that shows network usage like top"
 HOMEPAGE="http://www.ntop.org/ntop.html"
-SRC_URI="mirror://sourceforge/ntop/${P}.tgz"
+SRC_URI="mirror://sourceforge/ntop/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 arm hppa ~ia64 ppc ~ppc64 sh sparc s390 x86"
-IUSE="ipv6 nls snmp ssl tcpd zlib"
+KEYWORDS="~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+IUSE="ipv6 nls ssl tcpd zlib"
+#IUSE="ipv6 nls snmp ssl tcpd zlib"
 
+#snmp? ( net-analyzer/net-snmp )
 COMMON_DEPEND="sys-apps/gawk
 	>=sys-libs/gdbm-1.8.0
 	net-libs/libpcap
 	>=media-libs/gd-2.0.22
 	>=media-libs/libpng-1.2.5
-	snmp? ( net-analyzer/net-snmp )
+	net-analyzer/rrdtool
 	ssl? ( >=dev-libs/openssl-0.9.6 )
 	tcpd? ( >=sys-apps/tcp-wrappers-7.6-r4 )
 	zlib? ( sys-libs/zlib )"
@@ -28,44 +30,45 @@ DEPEND="${COMMON_DEPEND}
 # Needed by xmldumpPlugin - couldn't get it to work
 #	dev-libs/gdome2
 #	>=dev-libs/glib-2"
-
 RDEPEND="${COMMON_DEPEND}
 	media-gfx/graphviz"
 
+S="${WORKDIR}/${PN}"
+
 pkg_setup() {
-	if use snmp ; then
-		ewarn "snmp plugin is under development and upstream does not recommend"
-		ewarn "it for usage in production environment."
-		if ! use ipv6 ; then
-			echo
-			eerror "snmp plugin has compilation problems without ipv6 support."
-			eerror "For additional information see bug #121497."
-			die "snmp without ipv6 is broken"
-		else
-			if ! built_with_use net-analyzer/net-snmp ipv6 ; then
-				echo
-				eerror "You have both ipv6 and snmp enabled."
-				eerror "This require ipv6 support in net-analyzer/net-snmp."
-				eerror "However, net-analyzer/net-snmp was compiled with ipv6 flag disabled."
-				eerror "Please, re-emerge net-analyzer/net-snmp with USE=\"ipv6\"."
-				die "net-analyzer/net-snmp was build without ipv6."
-			fi
-		fi
-	fi
+	# snmp doesn't compile in this release, disabled for now
+
+	#if use snmp ; then
+	#	ewarn "snmp plugin is under development and upstream does not recommend"
+	#	ewarn "it for usage in production environment."
+	#	if ! use ipv6 ; then
+	#		echo
+	#		eerror "snmp plugin has compilation problems without ipv6 support."
+	#		eerror "For additional information see bug #121497."
+	#		die "snmp without ipv6 is broken"
+	#	else
+	#		if ! built_with_use net-analyzer/net-snmp ipv6 ; then
+	#			echo
+	#			eerror "You have both ipv6 and snmp enabled."
+	#			eerror "This require ipv6 support in net-analyzer/net-snmp."
+	#			eerror "However, net-analyzer/net-snmp was compiled with ipv6 flag disabled."
+	#			eerror "Please, re-emerge net-analyzer/net-snmp with USE=\"ipv6\"."
+	#			die "net-analyzer/net-snmp was build without ipv6."
+	#		fi
+	#	fi
+	#fi
 	enewgroup ntop
 	enewuser ntop -1 -1 /var/lib/ntop ntop
 }
 
 src_unpack() {
 	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/globals-core.c.diff
-	epatch "${FILESDIR}"/${P}-build.patch
-	epatch "${FILESDIR}"/${P}-snmp.patch
-	eautoreconf
 
-	sed -i \
-		-e "s@/usr/local/bin/dot@/usr/bin/dot@" report.c || die "sed failed"
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}-gentoo.patch
+
+	eautoreconf
+	cp /usr/share/aclocal/libtool.m4 libtool.m4.in || die "failed to copy libtool.m4"
 }
 
 src_compile() {
@@ -81,15 +84,18 @@ src_compile() {
 	econf \
 		$(use_enable ipv6) \
 		$(use_enable nls i18n) \
-		$(use_enable snmp) \
 		$(use_with ssl) $(use_enable ssl sslv3) $(use_enable ssl sslwatchdog) \
 		$(use_with tcpd) \
 		$(use_with zlib) \
+		--with-rrd-home=/usr/lib \
+		--disable-snmp \
 		|| die "configure problem"
+		# $(use_enable snmp)
 	emake || die "compile problem"
 }
 
 src_install() {
+	LC_ALL=C # apparently doesn't work with some locales (#191576 and #205382)
 	emake DESTDIR="${D}" install || die "install problem"
 
 	keepdir /var/lib/ntop

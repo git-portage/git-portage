@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ntop/Attic/ntop-3.3.ebuild,v 1.6 2008/06/09 08:41:59 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ntop/Attic/ntop-3.3.ebuild,v 1.7 2008/07/04 23:44:20 mrness Exp $
 
 inherit eutils autotools
 
@@ -15,8 +15,7 @@ IUSE="ipv6 nls ssl tcpd zlib"
 #IUSE="ipv6 nls snmp ssl tcpd zlib"
 
 #snmp? ( net-analyzer/net-snmp )
-DEPEND="sys-apps/gawk
-	>=sys-devel/libtool-1.4
+COMMON_DEPEND="sys-apps/gawk
 	>=sys-libs/gdbm-1.8.0
 	net-libs/libpcap
 	>=media-libs/gd-2.0.22
@@ -25,12 +24,14 @@ DEPEND="sys-apps/gawk
 	ssl? ( >=dev-libs/openssl-0.9.6 )
 	tcpd? ( >=sys-apps/tcp-wrappers-7.6-r4 )
 	zlib? ( sys-libs/zlib )"
+DEPEND="${COMMON_DEPEND}
+	>=sys-devel/libtool-1.4"
 
 # Needed by xmldumpPlugin - couldn't get it to work
 #	dev-libs/gdome2
 #	>=dev-libs/glib-2"
 
-RDEPEND="${DEPEND}
+RDEPEND="${COMMON_DEPEND}
 	media-gfx/graphviz"
 
 pkg_setup() {
