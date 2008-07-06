@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.4.7.2.ebuild,v 1.1 2008/05/08 11:11:18 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.4.7.5.ebuild,v 1.1 2008/07/06 21:04:14 solar Exp $
 
 inherit distutils eutils
 
