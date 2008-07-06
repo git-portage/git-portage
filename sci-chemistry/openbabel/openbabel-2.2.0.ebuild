@@ -1,6 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/openbabel/Attic/openbabel-2.1.0.ebuild,v 1.1 2007/04/08 14:55:03 cryos Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/openbabel/Attic/openbabel-2.2.0.ebuild,v 1.1 2008/07/06 21:00:29 markusle Exp $
+
+inherit eutils
 
 DESCRIPTION="Open Babel interconverts file formats used in molecular modeling"
 SRC_URI="mirror://sourceforge/openbabel/${P}.tar.gz"
@@ -9,10 +11,14 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"
 LICENSE="GPL-2"
 IUSE=""
-RDEPEND="!sci-chemistry/babel"
+RDEPEND="!sci-chemistry/babel
+		 dev-libs/libxml2"
+DEPEND="${RDEPEND}
+		dev-libs/boost
+		dev-lang/perl"
 
 src_install () {
-	make DESTDIR=${D} install || die "make install failed."
+	make DESTDIR="${D}" install || die "make install failed."
 	dodoc AUTHORS ChangeLog NEWS README THANKS
 	cd doc
 	dohtml *.html *.png
