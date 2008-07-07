@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/k3b/Attic/k3b-1.0.4.ebuild,v 1.9 2008/07/07 19:39:26 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/k3b/Attic/k3b-1.0.5-r2.ebuild,v 1.1 2008/07/07 19:39:26 loki_val Exp $
 
 inherit kde eutils
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/k3b/${MY_P}.tar.bz2"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd"
 IUSE="alsa css dvdr dvdread encode ffmpeg flac hal mp3 musepack musicbrainz
 	sndfile vcd vorbis emovix"
 
@@ -22,7 +22,7 @@ DEPEND="hal? ( dev-libs/dbus-qt3-old sys-apps/hal )
 	media-libs/taglib
 	>=media-sound/cdparanoia-3.9.8
 	sndfile? ( media-libs/libsndfile )
-	ffmpeg? ( <media-video/ffmpeg-0.4.9_p20080326 )
+	ffmpeg? ( >=media-video/ffmpeg-0.4.9_p20080326 )
 	flac? ( media-libs/flac )
 	mp3? ( media-libs/libmad )
 	musepack? ( media-libs/libmpcdec )
@@ -47,6 +47,9 @@ DEPEND="${DEPEND}
 	dev-util/pkgconfig"
 
 need-kde 3.5
+
+PATCHES=(	"${FILESDIR}/k3b-1.0.5-desktop-entry.diff"
+		"${FILESDIR}/k3b-1.0.5-ffmpeg-0.4.9_p20080326-API.patch"	)
 
 I18N="${PN}-i18n-${PV}"
 
