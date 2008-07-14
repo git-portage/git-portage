@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/drupal/Attic/drupal-5.6.ebuild,v 1.3 2008/04/03 10:16:36 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/drupal/Attic/drupal-5.8.ebuild,v 1.1 2008/07/14 11:33:12 pva Exp $
 
 inherit webapp eutils depend.php
 
@@ -21,9 +21,9 @@ pkg_setup() {
 	webapp_pkg_setup
 	has_php
 	if [[ ${PHP_VERSION} == "4" ]] ; then
-		require_php_with_use expat
+		require_php_with_use expat gd
 	else
-		require_php_with_use xml
+		require_php_with_use xml gd
 	fi
 }
 
