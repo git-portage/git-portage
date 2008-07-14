@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/duplicity
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.25 2008/05/30 06:29:42 phreak Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.26 2008/07/14 01:24:46 vanquirius Exp $
+
+*duplicity-0.4.11 (14 Jul 2008)
+
+  14 Jul 2008; Marcelo Goes <vanquirius@gentoo.org> metadata.xml,
+  +duplicity-0.4.11.ebuild:
+  0.4.11 version bump for bug 231069. Thanks to Christian Ruppert <spooky85 at
+  gmail dot com>. Adding myself as a maintainer.
 
   30 May 2008; Christian Heim <phreak@gentoo.org> metadata.xml:
   Removing Andrej Kacian (Ticho) from metadata.xml (as per #59986). Assigning
