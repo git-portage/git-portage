@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/brasero/Attic/brasero-0.7.91.ebuild,v 1.2 2008/07/15 10:34:23 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/brasero/Attic/brasero-0.8.0.ebuild,v 1.1 2008/07/16 12:33:41 loki_val Exp $
 
 EAPI=1
 
@@ -17,9 +17,9 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="beagle +dvd gdl +libburn totem"
 
 RDEPEND=">=dev-libs/glib-2.15.6
-	>=x11-libs/gtk+-2.11.6
-	>=gnome-base/libgnome-2.10
-	>=gnome-base/libgnomeui-2.10
+	>=x11-libs/gtk+-2.12.0
+	>=gnome-base/libgnome-2.22.0
+	>=gnome-base/libgnomeui-2.22.0
 	>=media-libs/gstreamer-0.10.15
 	>=media-libs/gst-plugins-base-0.10.15
 	>=media-plugins/gst-plugins-ffmpeg-0.10
