@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/empathy/Attic/empathy-0.23.1.ebuild,v 1.2 2008/05/10 22:04:29 tester Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/empathy/Attic/empathy-0.23.4.ebuild,v 1.1 2008/07/18 22:47:15 coldwind Exp $
 
 inherit gnome2 eutils versionator
 
@@ -16,17 +16,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE="python spell test"
 
 RDEPEND=">=dev-libs/dbus-glib-0.51
-	>=dev-libs/glib-2.15.5
+	>=dev-libs/glib-2.16.0
 	>=x11-libs/gtk+-2.12.0
 	>=gnome-base/gconf-2
 	>=gnome-base/libglade-2
 	>=gnome-base/gnome-panel-2.10
-	>=net-libs/telepathy-glib-0.7.3
+	>=net-libs/telepathy-glib-0.7.7
 	>=net-im/telepathy-mission-control-4.61
 	dev-libs/libxml2
 	>=gnome-extra/evolution-data-server-1.2
 	spell? (
-		app-text/aspell
+		app-text/enchant
 		app-text/iso-codes )
 	python? (
 		>=dev-lang/python-2.4.4-r5
@@ -41,9 +41,9 @@ DEPEND="${RDEPEND}
 DOCS="CONTRIBUTORS AUTHORS ChangeLog NEWS README"
 
 pkg_setup() {
-	G2CONF="$(use_enable spell aspell)
+	G2CONF="$(use_enable debug)
+		$(use_enable spell)
 		$(use_enable python)
-		--enable-voip=yes
 		--enable-megaphone
 		--enable-nothere
 		--disable-gtk-doc"
