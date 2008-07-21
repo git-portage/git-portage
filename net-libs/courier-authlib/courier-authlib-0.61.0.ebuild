@@ -1,22 +1,20 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/courier-authlib/Attic/courier-authlib-0.59.2.ebuild,v 1.4 2008/07/16 16:09:31 chtekk Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/courier-authlib/Attic/courier-authlib-0.61.0.ebuild,v 1.1 2008/07/21 00:27:23 hanno Exp $
 
-WANT_AUTOCONF="latest"
-WANT_AUTOMAKE="latest"
+inherit eutils flag-o-matic autotools libtool
 
-inherit eutils flag-o-matic autotools
-
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
 
 DESCRIPTION="Courier authentication library."
 SRC_URI="mirror://sourceforge/courier/${P}.tar.bz2"
 HOMEPAGE="http://www.courier-mta.org/"
-LICENSE="GPL-2"
+LICENSE="GPL-3"
 SLOT="0"
 IUSE="berkdb crypt debug gdbm ldap mysql pam postgres vpopmail"
 
-RESTRICT="userpriv"
+RESTRICT="userpriv
+	!berkdb? ( test )"
 
 RDEPEND="gdbm? ( sys-libs/gdbm )
 		!gdbm? ( sys-libs/db )"
@@ -37,30 +35,44 @@ pkg_setup() {
 		ewarn 'However non-system authentication modules (LDAP, MySQL, PostgreSQL,'
 		ewarn 'and others) will work just fine.'
 	fi
+
+	if use vpopmail ; then
+		eerror
+		eerror "vpopmail support has been removed, it's unmaintained upstream and will be"
+		eerror "removed with the next release."
+		eerror
+		eerror "Please remove vpopmail USE-flag."
+		die "vpopmail support removed"
+	fi
+
 }
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	sed -i -e "s|^chk_file .* |&\${DESTDIR}|g" authmigrate.in || die "sed failed"
-
-	if use elibc_uclibc ; then
-		sed -i -e 's:linux-gnu\*:linux-gnu\*\ \|\ linux-uclibc:' config.sub || die "sed failed"
-	fi
-
 	if ! use gdbm ; then
-		epatch "${FILESDIR}/${PV}-configure-db4.patch"
+		epatch "${FILESDIR}/0.59.2-configure-db4.patch"
 	else
-		epatch "${FILESDIR}/${PV}-remove-obsolete-macro.patch"
+		epatch "${FILESDIR}/0.59.2-remove-obsolete-macro.patch"
 	fi
 
-	sed -i -e'/for dir in/a@@INDENT@@/etc/courier-imap \\' authmigrate.in || die "sed failed"
-	sed -i -e'/for dir in/a@@INDENT@@/etc/courier/authlib \\' authmigrate.in || die "sed failed"
-	sed -i -e"s|@@INDENT@@|		|g" authmigrate.in || die "sed failed"
+	sed -i -e "s|^chk_file .* |&\${DESTDIR}|g" authmigrate.in || die "sed failed"
+	sed -i -e'/for dir in/a\\t\t/etc/courier-imap \\' authmigrate.in || die "sed failed"
+	sed -i -e'/for dir in/a\\t\t/etc/courier/authlib \\' authmigrate.in || die "sed failed"
 	sed -i -e"s|\$sbindir/makeuserdb||g" authmigrate.in || die "sed failed"
 
-	eautoreconf
+	sed -i -e 's:AC_LIBLTDL_INSTALLABLE:AC_LIBLTDL_CONVENIENCE:' configure.in \
+		|| die "fixing libltdl call failed"
+
+	local d
+	for d in $(find -name configure.in) ; do
+		[[ ${d} == */libltdl/* ]] && continue
+		cd "${S}"/${d%configure.in}
+		AT_NO_RECURSIVE="yes" AT_NOELIBTOOLIZE="yes" eautoreconf
+	done
+
+	elibtoolize
 }
 
 src_compile() {
@@ -80,13 +92,7 @@ src_compile() {
 	fi
 	use gdbm && myconf="${myconf} --with-db=gdbm"
 
-	if use vpopmail ; then
-		myconf="${myconf} --with-authvchkpw --without-authmysql --without-authpgsql"
-		use mysql && ewarn "Building vpopmail support instead of authmysql"
-		use postgres && ewarn "Building vpopmail support instead of authpgsql"
-	else
-		myconf="${myconf} --without-authvchkpw `use_with mysql authmysql` `use_with postgres authpgsql`"
-	fi
+	myconf="${myconf} --without-authvchkpw `use_with mysql authmysql` `use_with postgres authpgsql`"
 
 	use debug && myconf="${myconf} debug=true"
 
@@ -151,7 +157,7 @@ src_install() {
 	use ldap && orderfirst authdaemonrc authmodulelist authldap
 	use postgres && orderfirst authdaemonrc authmodulelist authpgsql
 	use mysql && orderfirst authdaemonrc authmodulelist authmysql
-	dodoc AUTHORS COPYING ChangeLog* INSTALL NEWS README
+	dodoc AUTHORS ChangeLog* INSTALL NEWS README
 	dohtml README.html README_authlib.html NEWS.html INSTALL.html README.authdebug.html
 	if use mysql ; then
 		dodoc README.authmysql.myownquery
