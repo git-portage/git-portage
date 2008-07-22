@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcpcd/Attic/dhcpcd-4.0.0_beta2.ebuild,v 1.1 2008/05/08 21:02:45 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcpcd/Attic/dhcpcd-4.0.0_rc1.ebuild,v 1.1 2008/07/22 09:43:07 armin76 Exp $
 
 EAPI=1
 
@@ -8,6 +8,7 @@ inherit toolchain-funcs
 
 MY_P="${P/_alpha/-alpha}"
 MY_P="${MY_P/_beta/-beta}"
+MY_P="${MY_P/_rc/-rc}"
 S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="A DHCP client"
@@ -46,25 +47,25 @@ src_unpack() {
 	fi
 }
 
+pkg_setup() {
+	MAKE_ARGS="DBDIR=/var/lib/dhcpcd LIBEXECDIR=/lib/dhcpcd"
+}
+
 src_compile() {
-	emake CC="$(tc-getCC)" DBDIR=/var/lib/dhcpcd || die
+	[ -z "${MAKE_ARGS}" ] && die "MAKE_ARGS is empty"
+	emake CC="$(tc-getCC)" ${MAKE_ARGS} || die
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
-
-	dodir /etc/dhcpcd/dhcpcd-exit-hook.d
-	insinto /etc/dhcpcd/dhcpcd-exit-hook.d
-	# The sample ntp script only works with with NTP, not openntp
-	doins hook-samples/ntp.sh
-	# The sample ypbind script only works with linux
-	use elibc_glibc && doins hook-samples/ypbind.sh
+	local hooks="50-ntp.conf"
+	use elibc_glibc && hooks="${hooks} 50-yp.conf"
+	emake ${MAKE_ARGS} HOOKSCRIPTS="${hooks}" DESTDIR="${D}" install || die
 }
 
 pkg_postinst() {
 	# Upgrade the duid file to the new format if needed
 	local old_duid="${ROOT}"/var/lib/dhcpcd/dhcpcd.duid
-	local new_duid="${ROOT}"/etc/dhcpcd/dhcpcd.duid
+	local new_duid="${ROOT}"/etc/dhcpcd.duid
 	if [ -e "${old_duid}" ] && ! grep -q '..:..:..:..:..:..' "${old_duid}"; then
 		sed -i -e 's/\(..\)/\1:/g; s/:$//g' "${old_duid}"
 	fi
