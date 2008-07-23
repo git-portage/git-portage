@@ -12,4 +12,8 @@
 		<description>Proxied developer. Please CC on bugs.</description>
 		<name>Stefan G. Weichinger</name>
 	</maintainer>
+	<use>
+		<flag name='xfs'>Support for backing up raw XFS filesystems using
+			xfsdump</flag>
+	</use>
 </pkgmetadata>
