@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.63 2008/07/24 10:06:10 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.64 2008/07/24 11:49:20 fmccor Exp $
+
+  24 Jul 2008; Ferris McCormick <fmccor@gentoo.org> bacula-2.4.1-r1.ebuild:
+  Sparc stable, critical/P2 Bug #232828.
 
 *bacula-2.4.1-r1 (24 Jul 2008)
 
