@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.4.1-r1.ebuild,v 1.2 2008/07/24 11:49:20 fmccor Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.4.1-r1.ebuild,v 1.3 2008/07/24 15:57:21 jer Exp $
 
 #
 # TODO:
@@ -26,7 +26,7 @@ inherit eutils
 
 IUSE="bacula-clientonly bacula-console bacula-nodir bacula-nosd doc gnome ipv6 logrotate logwatch mysql postgres python qt4 readline sqlite sqlite3 ssl static tcpd wxwindows X"
 # bacula-web bimagemgr brestore bweb
-KEYWORDS="~amd64 ~hppa ~ppc sparc ~x86"
+KEYWORDS="~amd64 hppa ~ppc sparc ~x86"
 
 DESCRIPTION="Featureful client/server network backup suite"
 HOMEPAGE="http://www.bacula.org/"
