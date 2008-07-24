@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/backuppc-2.1.2-r1.ebuild,v 1.2 2006/10/10 14:45:52 seemant Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/backuppc-2.1.2-r1.ebuild,v 1.3 2008/07/24 21:12:04 rich0 Exp $
 
 inherit eutils webapp
 
@@ -17,7 +17,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz
 	mirror://gentoo/${P}-gentoo-${PATCH_VER}.tar.bz2"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 
 DEPEND="dev-lang/perl"
 RDEPEND="dev-perl/File-RsyncP
