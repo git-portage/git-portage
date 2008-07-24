@@ -7,8 +7,6 @@
 		<name>Crypto Herd</name>
 	</maintainer>
 	<use>
-		<flag name='nousb'>Disable USB support via
-			<pkg>sys-apps/pcsc-lite</pkg></flag>
-		<flag name='twinserial'>Enable twinserial reader</flag>
+		<flag name='nousb'>Disable USB support via pcsc-lite</flag>
 	</use>
 </pkgmetadata>
