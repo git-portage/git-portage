@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/clive/Attic/clive-0.4.17.ebuild,v 1.1 2008/07/01 05:46:44 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/clive/Attic/clive-0.4.19.ebuild,v 1.1 2008/07/26 12:49:09 aballier Exp $
 
 # We inherit distutils to get the pkg_* functions for byte compiling python
 inherit versionator distutils
@@ -22,11 +22,10 @@ DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
 
 src_compile() {
-	# with-lib means compile its own
 	econf $(use_with doc) \
-		--without-newt \
-		--without-feedparser \
-		--without-urlgrabber
+		--with-installed-newt \
+		--with-installed-feedparser \
+		--with-installed-urlgrabber
 	emake || die "emake failed"
 	if use doc; then
 		emake dox || die "failed to create the documentation"
