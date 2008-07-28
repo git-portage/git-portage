@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/qbittorrent/Attic/qbittorrent-1.1.0_beta1.ebuild,v 1.2 2008/07/27 01:16:26 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/qbittorrent/Attic/qbittorrent-1.1.0_rc2.ebuild,v 1.1 2008/07/28 18:14:19 armin76 Exp $
 
 EAPI="1"
 
@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="|| ( x11-libs/qt-gui:4 =x11-libs/qt-4.3*:4 )
-	>=net-libs/rb_libtorrent-0.13_p2335
+	>=net-libs/rb_libtorrent-0.13.1
 	dev-libs/boost
 	net-misc/curl
 	dev-cpp/commoncpp2"
