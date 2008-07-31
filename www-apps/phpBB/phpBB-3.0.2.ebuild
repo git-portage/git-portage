@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/phpBB/Attic/phpBB-3.0.0.ebuild,v 1.2 2008/03/07 12:33:54 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/phpBB/Attic/phpBB-3.0.2.ebuild,v 1.1 2008/07/31 20:23:52 wrobel Exp $
 
 inherit webapp depend.php
 
