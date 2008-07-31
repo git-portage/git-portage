@@ -1,15 +1,15 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/hardened-sources/Attic/hardened-sources-2.6.25-r1.ebuild,v 1.1 2008/06/30 00:37:12 solar Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/hardened-sources/Attic/hardened-sources-2.6.25-r3.ebuild,v 1.1 2008/07/31 02:29:34 solar Exp $
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="6"
+K_GENPATCHES_VER="8"
 
 inherit kernel-2
 detect_version
 
-HGPV=${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-2
+HGPV=${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-4
 HGPV_URI="http://confucius.dh.bytemark.co.uk/~kerin.millar/distfiles/hardened-patches-${HGPV}.extras.tar.bz2
 	mirror://gentoo/hardened-patches-${HGPV}.extras.tar.bz2"
 UNIPATCH_LIST="${DISTDIR}/hardened-patches-${HGPV}.extras.tar.bz2"
@@ -37,7 +37,7 @@ pkg_postinst() {
 	ewarn "If you intend to use grsecurity's RBAC system then you must ensure that"
 	ewarn "you are using a recent version of gradm (2.1.12 or higher). As such, it"
 	ewarn "is strongly recommended that you run the following command before"
-	ewarn "booting with a 2.6.25 kernel for the first time:"
+	ewarn "booting a ${PN} kernel >=2.6.25 for the first time:"
 	ewarn
 	ewarn "emerge -na '>=sys-apps/gradm-2.1.12'"
 	ewarn
