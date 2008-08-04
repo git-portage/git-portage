@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/re2c/Attic/re2c-0.12.0.ebuild,v 1.10 2007/07/14 14:06:15 drizzt Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/re2c/Attic/re2c-0.12.0.ebuild,v 1.11 2008/08/04 17:53:28 loki_val Exp $
 
 inherit eutils
 
@@ -22,7 +22,7 @@ S="${WORKDIR}/${MY_P}"
 src_unpack() {
 	unpack ${A} || die
 	# Fix permissions
-	chmod -R u+rw ${S}
+	chmod -R u+rw "${S}"
 	EPATCH_OPTS="-p1 -d ${S}" epatch "${FILESDIR}"/${PN}-0.9.11-gcc41.patch
 }
 
