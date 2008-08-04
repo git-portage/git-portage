@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/werkzeug/Attic/werkzeug-0.2.ebuild,v 1.2 2008/03/15 23:23:23 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/werkzeug/Attic/werkzeug-0.3.1-r1.ebuild,v 1.1 2008/08/04 12:02:26 hoffie Exp $
 
 NEED_PYTHON="2.4"
 
@@ -24,7 +24,15 @@ DEPEND=">=dev-python/setuptools-0.6_rc5
 
 S="${WORKDIR}/${MY_P}"
 
-DOCS="CHANGES"
+src_install() {
+	DOCS="CHANGES"
+	distutils_src_install
+
+	# Rearraning the docs
+	rm -rf "${D}/usr/docs"
+	dodoc docs/src/*
+	dohtml docs/html/*
+}
 
 src_test() {
 	distutils_python_version
