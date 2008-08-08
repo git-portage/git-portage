@@ -1,10 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/amule/Attic/amule-2.2.2_rc1.ebuild,v 1.1 2008/08/01 19:12:23 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/amule/Attic/amule-2.2.2.ebuild,v 1.1 2008/08/08 19:55:23 armin76 Exp $
 
 inherit eutils flag-o-matic wxwidgets
 
-MY_P=${PN/m/M}-${PV/_rc/rc}
+MY_P=${PN/m/M}-${PV}
 S="${WORKDIR}"/${MY_P}
 
 DESCRIPTION="aMule, the all-platform eMule p2p client"
