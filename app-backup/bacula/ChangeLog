@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.68 2008/08/01 18:23:44 nixnut Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.69 2008/08/11 17:26:35 yngwin Exp $
+
+  11 Aug 2008; Ben de Groot <yngwin@gentoo.org> bacula-2.4.1.ebuild,
+  bacula-2.4.1-r1.ebuild, bacula-2.4.2.ebuild:
+  Fix split qt4 deps wrt bug 217161.
 
   01 Aug 2008; nixnut <nixnut@gentoo.org> bacula-2.4.1-r1.ebuild:
   Stable on ppc wrt bug 232828

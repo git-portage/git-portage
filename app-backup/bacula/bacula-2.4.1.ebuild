@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.4.1.ebuild,v 1.6 2008/07/14 07:37:50 opfer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.4.1.ebuild,v 1.7 2008/08/11 17:26:35 yngwin Exp $
 
 #
 # TODO:
@@ -22,6 +22,7 @@
 # - bacula >=2.4.0 supports --without-qwt -- reflect with USE=qwt?
 #
 
+EAPI="1"
 inherit eutils
 
 IUSE="bacula-clientonly bacula-console bacula-nodir bacula-nosd doc gnome ipv6 logrotate logwatch mysql postgres python qt4 readline sqlite sqlite3 ssl static tcpd wxwindows X"
@@ -58,7 +59,7 @@ DEPEND="
 	bacula-console? (
 		wxwindows? ( =x11-libs/wxGTK-2.6* )
 		qt4? (
-			=x11-libs/qt-4*
+			|| ( x11-libs/qt-svg:4 =x11-libs/qt-4.3* )
 			>=x11-libs/qwt-5
 		)
 		gnome? (
