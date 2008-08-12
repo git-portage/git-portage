@@ -1,8 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/aria2/Attic/aria2-0.13.1_p2.ebuild,v 1.1 2008/05/19 11:35:25 dev-zero Exp $
-
-inherit eutils
+# $Header: /var/cvsroot/gentoo-x86/net-misc/aria2/Attic/aria2-0.15.1_p2.ebuild,v 1.1 2008/08/12 10:30:43 dev-zero Exp $
 
 MY_P="aria2c-${PV/_p/+}"
 
@@ -14,11 +12,12 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 SLOT="0"
 IUSE="ares bittorrent expat gnutls metalink nls ssl test"
 
-CDEPEND="ssl? (
-		gnutls? ( net-libs/gnutls )
+CDEPEND="sys-libs/zlib
+	ssl? (
+		gnutls? ( >=net-libs/gnutls-1.2.9 )
 		!gnutls? ( dev-libs/openssl ) )
 	ares? ( >=net-dns/c-ares-1.3.1 )
-	bittorrent? ( gnutls? ( dev-libs/libgcrypt ) )
+	bittorrent? ( gnutls? ( >=dev-libs/libgcrypt-1.2.0 ) )
 	metalink? (
 		!expat? ( >=dev-libs/libxml2-2.6.26 )
 		expat? ( dev-libs/expat )
@@ -35,8 +34,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/0.13.1-broken_tests.patch" \
-		"${FILESDIR}/${PV}-missing_includes.patch"
+	sed -i -e "s|/tmp|${T}|" test/*.cc || die "sed failed"
 }
 
 src_compile() {
@@ -47,7 +45,11 @@ src_compile() {
 	# - we don't have ares, only libcares
 	# - depends on libgcrypt only when using openssl
 	# - links only against libxml2 and libexpat when metalink is enabled
+	# - always enable gzip/http compression since zlib should always be anyway
+	# - always enable epoll since we can assume kernel 2.6.x
 	econf \
+		--enable-epoll \
+		--with-libz \
 		$(use_enable nls) \
 		$(use_enable metalink) \
 		$(use_with expat libexpat) \
