@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/mythweb/Attic/mythweb-0.20.2_p14282.ebuild,v 1.6 2008/02/23 22:21:01 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/mythweb/Attic/mythweb-0.21_p17573.ebuild,v 1.1 2008/08/12 23:59:44 cardoe Exp $
 
 ESVN_PROJECT="mythplugins"
 
@@ -8,7 +8,7 @@ inherit mythtv webapp depend.php subversion
 
 DESCRIPTION="PHP scripts intended to manage MythTV from a web browser."
 IUSE=""
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 RDEPEND="dev-perl/DBI
 	dev-perl/DBD-mysql"
@@ -33,19 +33,18 @@ src_install() {
 	webapp_src_preinst
 
 	cd "${S}"/mythweb
-	dodoc README TODO
+	dodoc README INSTALL
 
 	dodir "${MY_HTDOCSDIR}"/data
 
 	insinto "${MY_HTDOCSDIR}"
-	doins -r [[:lower:]]* .htaccess
+	doins -r [[:lower:]]*
+
+	webapp_configfile "${MY_HTDOCSDIR}"/mythweb.conf.{apache,lighttpd}
 
 	webapp_serverowned "${MY_HTDOCSDIR}"/data
-	webapp_serverowned "${MY_HTDOCSDIR}"/.htaccess
 
-	webapp_configfile "${MY_HTDOCSDIR}"/.htaccess
-
-	webapp_postinst_txt en "${FILESDIR}"/postinstall-en-0.20.txt
+	webapp_postinst_txt en "${FILESDIR}"/postinstall-en-0.21.txt
 
 	webapp_src_install
 }
