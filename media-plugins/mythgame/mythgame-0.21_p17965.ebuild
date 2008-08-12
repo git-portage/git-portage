@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/mythgame/Attic/mythgame-0.21_p16668.ebuild,v 1.1 2008/04/01 03:58:55 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/mythgame/Attic/mythgame-0.21_p17965.ebuild,v 1.1 2008/08/12 03:42:10 cardoe Exp $
 
 inherit mythtv-plugins
 
