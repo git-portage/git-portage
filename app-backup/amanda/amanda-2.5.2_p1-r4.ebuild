@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.2_p1-r4.ebuild,v 1.2 2008/06/26 02:17:33 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.2_p1-r4.ebuild,v 1.3 2008/08/13 21:13:32 robbat2 Exp $
 
 inherit autotools eutils
 
@@ -124,7 +124,7 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 
 	# Gentoo bug #192296, chg-multi fails
 	EPATCH_OPTS="-d ${S}" epatch ${FILESDIR}/${PN}-2.5.2_p1-chg-multi.patch || die "Failed to apply patch to correct typo in chg-multi!"

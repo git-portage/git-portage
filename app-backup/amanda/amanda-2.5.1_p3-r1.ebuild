@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.1_p3-r1.ebuild,v 1.5 2007/10/09 09:23:15 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.1_p3-r1.ebuild,v 1.6 2008/08/13 21:13:32 robbat2 Exp $
 
 inherit eutils
 
@@ -107,7 +107,7 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	# Fix glitch with recognizing tar-1.14.90
 	EPATCH_OPTS="-p1 -d ${S}" epatch ${FILESDIR}/patch-tar-1.14.90 || die "Failed to add tar support patch"
 	# Fix tar 1.16 changes
