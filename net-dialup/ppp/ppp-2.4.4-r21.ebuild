@@ -1,19 +1,19 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/ppp/Attic/ppp-2.4.4-r20.ebuild,v 1.2 2008/08/15 20:47:40 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/ppp/Attic/ppp-2.4.4-r21.ebuild,v 1.1 2008/08/19 18:20:11 mrness Exp $
 
 inherit eutils toolchain-funcs linux-info pam
 
 DESCRIPTION="Point-to-Point Protocol (PPP)"
 HOMEPAGE="http://www.samba.org/ppp"
 SRC_URI="ftp://ftp.samba.org/pub/ppp/${P}.tar.gz
-	mirror://gentoo/${P}-gentoo-20080815.tar.gz
+	mirror://gentoo/${P}-gentoo-20080819.tar.gz
 	dhcp? ( http://www.netservers.co.uk/gpl/ppp-dhcpc.tgz )"
 
 LICENSE="BSD GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
-IUSE="activefilter atm dhcp eap-tls gtk ipv6 mppe-mppc pam radius wins-ack"
+IUSE="activefilter atm dhcp eap-tls gtk ipv6 mppe-mppc pam radius"
 
 DEPEND="activefilter? ( >=virtual/libpcap-0.9.4 )
 	atm? ( net-dialup/linux-atm )
@@ -55,6 +55,7 @@ src_unpack() {
 	epatch "${WORKDIR}/patch/gtk2.patch"
 	epatch "${WORKDIR}/patch/pppoe-lcp-timeout.patch"
 	epatch "${WORKDIR}/patch/passwordfd-read-early.patch"
+	epatch "${WORKDIR}/patch/pppd-usepeerwins.patch"
 
 	use eap-tls && {
 		# see http://eaptls.spe.net/index.html for more info
@@ -115,9 +116,6 @@ src_unpack() {
 			pppd/plugins/radius/{*.8,*.c,*.h} \
 			pppd/plugins/radius/etc/*
 	}
-
-	# Acknowledge WINS servers even though pppd will ignore them (#234583)
-	use wins-ack && epatch "${WORKDIR}/patch/wins-ack.patch"
 }
 
 src_compile() {
