@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/dpkg/Attic/dpkg-1.14.17.ebuild,v 1.3 2008/04/12 20:32:44 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/dpkg/Attic/dpkg-1.14.19-r1.ebuild,v 1.1 2008/08/22 17:13:42 yvasilev Exp $
 
 inherit eutils multilib
 
@@ -14,12 +14,13 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~ppc ~s390 ~sh ~sparc ~x86"
 IUSE="bzip2 nls selinux test unicode zlib"
 
 RDEPEND=">=dev-lang/perl-5.6.0
+	dev-perl/TimeDate
 	>=sys-libs/ncurses-5.2-r7
 	zlib? ( >=sys-libs/zlib-1.1.4 )
 	bzip2? ( app-arch/bzip2 )"
 DEPEND="${RDEPEND}
 	nls? ( app-text/po4a )
-	test? ( dev-perl/TimeDate dev-perl/Test-Pod )"
+	test? ( dev-perl/Test-Pod )"
 
 src_unpack() {
 	unpack ${A}
