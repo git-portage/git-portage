@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/python-updater/Attic/python-updater-0.4.ebuild,v 1.1 2008/01/04 13:18:44 hawking Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/python-updater/Attic/python-updater-0.6.ebuild,v 1.1 2008/08/25 09:56:28 hawking Exp $
 
 DESCRIPTION="Script used to remerge python packages when changing Python version."
 HOMEPAGE="http://www.gentoo.org/proj/en/Python"
@@ -17,6 +17,7 @@ RDEPEND="!<dev-lang/python-2.3.6-r2
 
 src_install()
 {
-	dosbin ${PN}
-	dodoc AUTHORS ChangeLog
+	dosbin ${PN} || die "dosbin failed"
+	doman ${PN}.1 || die "doman failed"
+	dodoc AUTHORS ChangeLog || die "dodoc failed"
 }
