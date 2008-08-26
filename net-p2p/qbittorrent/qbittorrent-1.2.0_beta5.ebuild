@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/qbittorrent/Attic/qbittorrent-1.1.1.ebuild,v 1.1 2008/08/01 17:32:27 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/qbittorrent/Attic/qbittorrent-1.2.0_beta5.ebuild,v 1.1 2008/08/26 10:03:38 armin76 Exp $
 
 EAPI="1"
 
@@ -32,6 +32,14 @@ pkg_setup() {
 		eerror "${PN} needs dev-libs/boost built with threads USE flag"
 		die "dev-libs/boost is built without threads USE flag"
 	fi
+}
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
+	# Respect LDFLAGS
+	sed -i -e 's/-Wl,--as-needed/$(LDFLAGS)/g' src/src.pro
 }
 
 src_compile() {
