@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/flexbackup
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.22 2008/08/27 17:58:12 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.23 2008/08/27 18:05:58 graaff Exp $
+
+*flexbackup-1.2.1-r8 (27 Aug 2008)
+
+  27 Aug 2008; Hans de Graaff <graaff@gentoo.org>
+  +files/flexbackup-1.2.1-quieten.patch, +flexbackup-1.2.1-r8.ebuild:
+  Quieten flexbackup: don't write normal status message to stderr, fixing bug
+  235416, patch by John R. Graham <john_r_graham@mindspring.com>.
 
   27 Aug 2008; Hans de Graaff <graaff@gentoo.org>
   -flexbackup-1.2.1-r2.ebuild, -flexbackup-1.2.1-r5.ebuild,
