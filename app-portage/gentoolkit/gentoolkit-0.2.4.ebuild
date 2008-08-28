@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/gentoolkit/Attic/gentoolkit-0.2.4_rc4.ebuild,v 1.2 2008/05/29 15:50:39 hawking Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/gentoolkit/Attic/gentoolkit-0.2.4.ebuild,v 1.1 2008/08/28 15:45:36 fuzzyray Exp $
 
 inherit eutils python
 
@@ -22,9 +22,19 @@ DEPEND=">=sys-apps/portage-2.1.1_pre1
 
 src_install() {
 	emake DESTDIR="${D}" install-gentoolkit || die "install-gentoolkit failed"
+
+	# Create cache directory for revdep-rebuild
+	dodir /var/cache/revdep-rebuild
+	keepdir /var/cache/revdep-rebuild
+	fowners root:root /var/cache/revdep-rebuild
+	fperms 0700 /var/cache/revdep-rebuild
 }
 
 pkg_postinst() {
+	# Make sure that our ownership and permissions stuck
+	chown root:root "${ROOT}/var/cache/revdep-rebuild"
+	chmod 0700 "${ROOT}/var/cache/revdep-rebuild"
+
 	python_mod_optimize /usr/lib/gentoolkit
 	echo
 	elog "Another alternative to equery is app-portage/portage-utils"
