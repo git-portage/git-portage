@@ -1,8 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/vienna-rna/Attic/vienna-rna-1.6.1.ebuild,v 1.2 2007/04/29 01:06:35 je_fro Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/vienna-rna/Attic/vienna-rna-1.7.2.ebuild,v 1.1 2008/08/29 01:21:38 markusle Exp $
 
-inherit toolchain-funcs
+inherit toolchain-funcs multilib eutils versionator
 
 DESCRIPTION="The Vienna RNA Package - RNA secondary structure prediction and comparison"
 LICENSE="vienna-rna"
@@ -18,14 +18,21 @@ DEPEND="dev-lang/perl
 
 S="${WORKDIR}/ViennaRNA-${PV}"
 
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}"/${PN}-1.6.5-c-fixes.patch
+	epatch "${FILESDIR}"/${P}-gcc4.3.patch
+}
+
 src_compile() {
 	econf --with-cluster || die "Configuration failed."
-	cd "${S}"/RNAforester/g2-0.70
-	sed -e "s:LIBDIR = /usr/lib:LIBDIR = ${D}/usr/lib:" \
+	sed -e "s:LIBDIR = /usr/lib:LIBDIR = ${D}/usr/$(get_libdir):" \
 		-e "s:INCDIR = /usr/include:INCDIR = ${D}/usr/include:" \
-		-i Makefile || die "Failed patching RNAForester build system."
-	cd "${S}"
+		-i RNAforester/g2-0.70/Makefile \
+			|| die "Failed patching RNAForester build system."
 	emake || die "Compilation failed."
+
 	cd "${S}"/Readseq
 	sed -e "s:CC=cc:CC=$(tc-getCC):" -e "s:CFLAGS=:CFLAGS=${CFLAGS}:" \
 		-i Makefile || die "Failed patching readseq Makefile."
@@ -35,12 +42,13 @@ src_compile() {
 
 src_install() {
 	make install DESTDIR="${D}" || die "Installation failed."
-	dodoc AUTHORS ChangeLog NEWS README THANKS || \
-		die "Failed to install documentation."
-	newbin Readseq/readseq readseq-vienna || die \
-		"Installing readseq failed."
+	dodoc AUTHORS ChangeLog NEWS README THANKS \
+		|| die "Failed to install documentation."
+	newbin Readseq/readseq readseq-vienna \
+		|| die "Installing readseq failed."
 	dodoc Readseq/Readseq.help || die \
 		"Readseq Documentation installation failed."
-	newdoc Readseq/Readme README.readseq || die \
-		"Installing readseq Readme failed."
+	newdoc Readseq/Readme README.readseq && \
+		newdoc Readseq/Formats Formats.readseq \
+		|| die "Installing readseq Readme failed."
 }
