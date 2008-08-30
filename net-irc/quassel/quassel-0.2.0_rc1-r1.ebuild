@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/Attic/quassel-0.2.9999.ebuild,v 1.5 2008/08/26 12:01:44 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/Attic/quassel-0.2.0_rc1-r1.ebuild,v 1.1 2008/08/30 19:02:53 jokey Exp $
 
 EAPI=1
 
@@ -25,7 +25,7 @@ HOMEPAGE="http://quassel-irc.org/"
 
 LICENSE="GPL-3"
 
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 
 SLOT="0"
 
@@ -81,9 +81,11 @@ src_install() {
 
 	# Only install the icons if the X client was installed
 	if use X; then
-		insinto /usr/share/icons/hicolor
-		# avoid the connected/ directory, get only the ${size}x${size}
-		doins -r "${S}"/src/icons/quassel/*x*
+		local size
+		for size in 16 24 32 48 64 96 128 256 512; do
+			insinto /usr/share/icons/hicolor/${size}x${size}
+			newins "${S}"/src/icons/quassel/connected/${size}.png quassel.png
+		done
 	fi
 
 	if use server; then

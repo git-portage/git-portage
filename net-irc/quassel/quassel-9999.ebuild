@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/Attic/quassel-9999-r1.ebuild,v 1.5 2008/08/26 12:01:44 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/quassel-9999.ebuild,v 1.7 2008/08/30 19:02:53 jokey Exp $
 
 EAPI=1
 
