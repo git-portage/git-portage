@@ -1,14 +1,14 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/icc/Attic/icc-10.1.017.ebuild,v 1.2 2008/07/10 16:47:51 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ifc/Attic/ifc-10.1.018.ebuild,v 1.1 2008/09/02 09:47:16 bicatali Exp $
 
 inherit rpm eutils check-reqs
 
-PID=1136
-PB=cc
-PEXEC="icc icpc"
-DESCRIPTION="Intel C/C++ optimized compiler for Linux"
-HOMEPAGE="http://www.intel.com/software/products/compilers/clin/"
+PID=1208
+PB=fc
+PEXEC="ifort"
+DESCRIPTION="Intel FORTRAN 77/95 optimized compiler for Linux"
+HOMEPAGE="http://www.intel.com/software/products/compilers/flin/"
 
 ###
 # everything below common to ifc and icc

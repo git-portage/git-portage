@@ -1,14 +1,14 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ifc/Attic/ifc-10.1.013.ebuild,v 1.1 2008/03/13 21:27:32 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/icc/Attic/icc-10.1.018.ebuild,v 1.1 2008/09/02 09:43:20 bicatali Exp $
 
 inherit rpm eutils check-reqs
 
-PID=965
-PB=fc
-PEXEC="ifort"
-DESCRIPTION="Intel FORTRAN 77/95 optimized compiler for Linux"
-HOMEPAGE="http://www.intel.com/software/products/compilers/flin/"
+PID=1205
+PB=cc
+PEXEC="icc icpc"
+DESCRIPTION="Intel C/C++ optimized compiler for Linux"
+HOMEPAGE="http://www.intel.com/software/products/compilers/clin/"
 
 ###
 # everything below common to ifc and icc
@@ -70,6 +70,17 @@ src_unpack() {
 		-i *support \
 		|| die "sed support file failed"
 	chmod 644 *support
+
+	if use amd64; then
+		cat <<-EOF >>"${S}"/${INSTALL_DIR}/bin/icc.cfg
+		-D__amd64=__x86_64
+		-D__amd64__=__x86_64__
+		EOF
+		cat <<-EOF >>"${S}"/${INSTALL_DIR}/bin/icpc.cfg
+		-D__amd64=__x86_64
+		-D__amd64__=__x86_64__
+		EOF
+	fi
 }
 
 src_install() {
@@ -101,6 +112,6 @@ pkg_postinst () {
 	elog "Read the website for more information on this license:"
 	elog "${HOMEPAGE}"
 	elog "Then put the license file into ${ROOT}/opt/intel/licenses."
-	elog "\nTo use ${PN} issue first \n\tsource /etc/profile"
+	elog "\nTo use ${PN} issue first \n\tsource ${ROOT}/etc/profile"
 	elog "Debugger is installed with dev-lang/idb"
 }
