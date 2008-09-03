@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/banshee/Attic/banshee-1.2.1.ebuild,v 1.2 2008/09/03 10:13:52 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/banshee/Attic/banshee-1.2.1-r1.ebuild,v 1.1 2008/09/03 10:13:52 loki_val Exp $
 
 EAPI=1
 
@@ -63,7 +63,7 @@ RDEPEND=">=dev-lang/mono-1.2.6
 		>=media-plugins/gst-plugins-mad-${GVER}
 	)
 	mtp? (
-		<media-libs/libmtp-0.3
+		>=media-libs/libmtp-0.3
 	)
 	vorbis? (
 		>=media-plugins/gst-plugins-ogg-${GVER}
@@ -76,6 +76,8 @@ DEPEND="${RDEPEND}
 DOCS="AUTHORS ChangeLog HACKING NEWS README"
 
 S=${WORKDIR}/${PN}-1-${PV}
+
+PATCHES=( "${FILESDIR}/${P}-libmtp-0.3.0-API.patch" )
 
 pkg_setup() {
 	G2CONF="${G2CONF}
