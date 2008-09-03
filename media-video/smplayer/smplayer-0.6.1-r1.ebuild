@@ -1,11 +1,11 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/smplayer/Attic/smplayer-0.6.1.ebuild,v 1.2 2008/06/16 19:24:19 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/smplayer/Attic/smplayer-0.6.1-r1.ebuild,v 1.1 2008/09/03 20:42:34 yngwin Exp $
 
 EAPI="1"
 inherit eutils qt4
 
-DESCRIPTION="Great front-end for mplayer written in Qt4"
+DESCRIPTION="Great Qt4 GUI front-end for mplayer"
 HOMEPAGE="http://smplayer.sourceforge.net"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
@@ -36,6 +36,23 @@ pkg_setup() {
 		fi
 	fi
 	qt4_pkg_setup
+
+	if ! built_with_use media-video/mplayer srt ; then
+		echo
+		ewarn "SMPlayer needs MPlayer to be built with USE=srt for subtitle"
+		ewarn "support. Please enable the srt USE flag for mplayer and"
+		ewarn "re-emerge media-video/mplayer before emerging smplayer."
+		echo
+		die "media-video/mplayer needs USE=srt enabled"
+	fi
+	if ! built_with_use media-video/mplayer png; then
+		echo
+		ewarn "SMPlayer needs MPlayer built with USE=png for screenshot support."
+		ewarn "Please enable the png USE flag for mplayer and re-emerge"
+		ewarn "media-video/mplayer before emergeing smplayer."
+		echo
+		die "media-video/mplayer needs USE=png enabled"
+	fi
 }
 
 src_compile() {
@@ -85,15 +102,4 @@ src_install() {
 
 	emake DESTDIR="${D}" install || die "emake install failed"
 	prepalldocs
-}
-
-pkg_postinst() {
-	if ! built_with_use media-video/mplayer png; then
-		echo
-		ewarn "SMPlayer needs the media-video/mplayer package built with USE=png."
-		ewarn "To prevent crashes, please rebuild mplayer with png support, or"
-		ewarn "alternatively, clear the Folder for storing screenshots field in"
-		ewarn "the Preferences dialog."
-		echo
-	fi
 }
