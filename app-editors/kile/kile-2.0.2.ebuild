@@ -1,6 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/kile/Attic/kile-2.0.ebuild,v 1.10 2008/09/08 19:45:11 tgurr Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/kile/Attic/kile-2.0.2.ebuild,v 1.1 2008/09/08 19:45:11 tgurr Exp $
+
+ARTS_REQUIRED="never"
 
 inherit kde
 
@@ -10,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="amd64 hppa ppc ppc64 sparc x86"
+KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE="kde"
 
 RDEPEND="dev-lang/perl
@@ -28,26 +30,21 @@ need-kde 3.5
 
 LANGS="ar bg br ca cs cy da de el en_GB es et eu fi fr ga gl hi hu is it ja lt ms mt nb
 nds nl nn pa pl pt pt_BR ro ru rw sk sr sr@Latn sv ta th tr uk zh_CN"
+
 for lang in ${LANGS}; do
 	IUSE="${IUSE} linguas_${lang}"
 done
 
-PATCHES=( "${FILESDIR}/${P}-desktopentry.patch" )
+PATCHES=( "${FILESDIR}/kile-2.0.1-desktop-entry.diff" )
 
 src_unpack() {
 	kde_src_unpack
 
 	if [[ -n ${LINGUAS} ]]; then
-		MAKE_TRANSL=$(echo $(echo "${LINGUAS} ${LANGS}" | fmt -w 1 | sort | uniq -d))
+		MAKE_TRANSL=$(echo $(echo "${LINGUAS} ${LANGS}" | tr '[[:space:]]' '\n'  | sort | uniq -d))
 		sed -i -e "s:^SUBDIRS.*=.*:SUBDIRS = ${MAKE_TRANSL}:" "${S}/translations/Makefile.am" || die "sed for locale failed"
 		rm -f "${S}/configure"
 	fi
-}
-
-src_install() {
-	kde_src_install
-
-	dodoc AUTHORS ChangeLog README README.cwl README.MacOSX TODO || die "installing docs failed"
 }
 
 pkg_postinst() {
