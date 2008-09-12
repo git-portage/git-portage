@@ -9,4 +9,8 @@
       proxy maintainer, proxied by yngwin@gentoo.org
     </description>
   </maintainer>
+  <maintainer>
+	  <email>yngwin@gentoo.org</email>
+	  <description>Proxy maintainer</description>
+  </maintainer>
 </pkgmetadata>
