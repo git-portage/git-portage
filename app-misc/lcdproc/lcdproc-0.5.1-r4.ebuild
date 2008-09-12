@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/lcdproc/Attic/lcdproc-0.5.1-r4.ebuild,v 1.6 2007/05/06 21:26:27 rbu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/lcdproc/Attic/lcdproc-0.5.1-r4.ebuild,v 1.7 2008/09/12 23:58:55 rbu Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -135,12 +135,12 @@ src_compile() {
 
 	if use doc; then
 		ebegin "Creating user documentation"
-		cd ${S}/docs/lcdproc-user
+		cd "${S}"/docs/lcdproc-user
 		xmlto html lcdproc-user.docbook
 		eend $?
 
 		ebegin "Creating dev documentation"
-		cd ${S}/docs/lcdproc-dev
+		cd "${S}"/docs/lcdproc-dev
 		xmlto html lcdproc-dev.docbook
 		eend $?
 	fi
