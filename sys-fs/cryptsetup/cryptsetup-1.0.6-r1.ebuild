@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/cryptsetup/Attic/cryptsetup-1.0.5-r1.ebuild,v 1.13 2008/09/14 01:41:51 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/cryptsetup/Attic/cryptsetup-1.0.6-r1.ebuild,v 1.1 2008/09/14 01:41:51 cardoe Exp $
 
 inherit linux-info eutils flag-o-matic multilib
 
@@ -10,7 +10,7 @@ SRC_URI="http://luks.endorphin.org/source/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="build dynamic nls selinux"
 
 DEPEND=">=sys-fs/device-mapper-1.00.07-r1
@@ -19,7 +19,6 @@ DEPEND=">=sys-fs/device-mapper-1.00.07-r1
 	>=dev-libs/popt-1.7
 	sys-fs/udev
 	selinux? ( sys-libs/libselinux )
-	!>=sys-fs/udev-126
 	!sys-fs/cryptsetup-luks"
 
 dm-crypt_check() {
@@ -40,24 +39,27 @@ cbc_check() {
 	check_extra_config
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-}
-
 pkg_setup() {
 	dm-crypt_check
 	crypto_check
 	cbc_check
-}
 
-src_compile() {
 	if use dynamic ; then
 		ewarn "If you need cryptsetup for an initrd or initramfs then you"
 		ewarn "should NOT use the dynamic USE flag"
 		epause 5
 	fi
+}
 
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
+	# fix for bug #236481, use udevadm instead of udevsettle
+	epatch "${FILESDIR}"/${PN}-1.0.6-udevsettle.patch
+}
+
+src_compile() {
 	econf \
 		--sbindir=/sbin \
 		$(use_enable !dynamic static) \
@@ -65,7 +67,6 @@ src_compile() {
 		$(use_enable nls) \
 		$(use_enable selinux) \
 		|| die
-
 	emake || die
 }
 
@@ -73,7 +74,7 @@ src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 	rmdir "${D}"/usr/$(get_libdir)/cryptsetup
 	insinto /lib/rcscripts/addons
-	newins "${FILESDIR}"/1.0.5-dm-crypt-start.sh dm-crypt-start.sh || die
+	newins "${FILESDIR}"/1.0.6-dm-crypt-start.sh dm-crypt-start.sh || die
 	newins "${FILESDIR}"/1.0.5-dm-crypt-stop.sh dm-crypt-stop.sh || die
 	newconfd "${FILESDIR}"/1.0.5-dmcrypt.confd dmcrypt || die
 	newinitd "${FILESDIR}"/1.0.5-dmcrypt.rc dmcrypt || die
