@@ -1,19 +1,18 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/Attic/squid-3.0.7.ebuild,v 1.1 2008/06/26 19:32:15 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/Attic/squid-2.7.4-r2.ebuild,v 1.1 2008/09/14 09:14:16 mrness Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
 
 inherit eutils pam toolchain-funcs autotools linux-info
 
-# lame archive versioning scheme..
+#lame archive versioning scheme..
 S_PMV="${PV%%.*}"
 S_PV="${PV%.*}"
 S_PL="${PV##*.}"
+S_PL="${S_PL/_rc/-RC}"
 S_PP="${PN}-${S_PV}.STABLE${S_PL}"
-
-RESTRICT="test" # check if test works in next bump
 
 DESCRIPTION="A full-featured web proxy cache"
 HOMEPAGE="http://www.squid-cache.org/"
@@ -21,8 +20,9 @@ SRC_URI="http://www.squid-cache.org/Versions/v${S_PMV}/${S_PV}/${S_PP}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="pam ldap samba sasl nis radius ssl snmp selinux icap-client logrotate \
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+IUSE="pam ldap samba sasl nis ssl snmp selinux logrotate \
+	mysql postgres sqlite \
 	qos zero-penalty-hit \
 	pf-transparent ipf-transparent \
 	elibc_uclibc kernel_linux"
@@ -36,15 +36,23 @@ DEPEND="pam? ( virtual/pam )
 	>=sys-libs/db-4
 	dev-lang/perl"
 RDEPEND="${DEPEND}
-	samba? ( net-fs/samba )"
+	samba? ( net-fs/samba )
+	mysql? ( dev-perl/DBD-mysql )
+	postgres? ( dev-perl/DBD-Pg )
+	sqlite? ( dev-perl/DBD-SQLite )"
 
 S="${WORKDIR}/${S_PP}"
 
 pkg_setup() {
 	if use qos; then
-		eerror "qos patch is no longer supported by us!"
-		eerror "Please remove qos from your USE and select zero-penalty-hit flag instead."
+		eerror "qos patch is no longer supported!"
+		eerror "Please remove qos USE flag and use zph* config options instead."
 		die "unsupported USE flags detected"
+	fi
+	if use zero-penalty-hit; then
+		ewarn "This version supports natively IP TOS/Priority mangling,"
+		ewarn "but it does not support zph_preserve_miss_tos."
+		ewarn "If you need that, please use squid-3.0.6-r2 or higher."
 	fi
 	enewgroup squid 31
 	enewuser squid 31 -1 /var/cache/squid squid
@@ -55,8 +63,7 @@ src_unpack() {
 
 	cd "${S}" || die "source dir not found"
 	epatch "${FILESDIR}"/${P}-gentoo.patch
-	use zero-penalty-hit && epatch "${FILESDIR}"/${P}-adapted-zph.patch
-
+	epatch "${FILESDIR}"/${P}-charset.patch
 	eautoreconf
 }
 
@@ -67,7 +74,9 @@ src_compile() {
 	use pam && basic_modules="PAM,${basic_modules}"
 	use sasl && basic_modules="SASL,${basic_modules}"
 	use nis && ! use elibc_uclibc && basic_modules="YP,${basic_modules}"
-	use radius && basic_modules="squid_radius_auth,${basic_modules}"
+	if use mysql || use postgres || use sqlite ; then
+		basic_modules="DB,${basic_modules}"
+	fi
 
 	local ext_helpers="ip_user,session,unix_group"
 	use samba && ext_helpers="wbinfo_group,${ext_helpers}"
@@ -81,12 +90,17 @@ src_compile() {
 	# Support for uclibc #61175
 	if use elibc_uclibc; then
 		myconf="${myconf} --enable-storeio=ufs,diskd,aufs,null"
+		myconf="${myconf} --disable-async-io"
 	else
 		myconf="${myconf} --enable-storeio=ufs,diskd,coss,aufs,null"
+		myconf="${myconf} --enable-async-io"
 	fi
 
 	if use kernel_linux; then
 		myconf="${myconf} --enable-linux-netfilter"
+		if kernel_is ge 2 6 && linux_chkconfig_present EPOLL ; then
+			myconf="${myconf} --enable-epoll"
+		fi
 	elif use kernel_FreeBSD || use kernel_OpenBSD || use kernel_NetBSD ; then
 		myconf="${myconf} --enable-kqueue"
 		if use pf-transparent; then
@@ -103,23 +117,26 @@ src_compile() {
 		--libexecdir=/usr/libexec/squid \
 		--localstatedir=/var \
 		--datadir=/usr/share/squid \
-		--with-default-user=squid \
-		--enable-auth="basic,digest,negotiate,ntlm" \
+		--enable-auth="basic,digest,ntlm" \
 		--enable-removal-policies="lru,heap" \
 		--enable-digest-auth-helpers="password" \
 		--enable-basic-auth-helpers="${basic_modules}" \
 		--enable-external-acl-helpers="${ext_helpers}" \
 		--enable-ntlm-auth-helpers="${ntlm_helpers}" \
+		--enable-ident-lookups \
 		--enable-useragent-log \
 		--enable-cache-digests \
 		--enable-delay-pools \
 		--enable-referer-log \
 		--enable-arp-acl \
+		--with-pthreads \
 		--with-large-files \
-		--with-filedescriptors=8192 \
+		--enable-htcp \
+		--enable-carp \
+		--enable-follow-x-forwarded-for \
+		--with-maxfd=8192 \
 		$(use_enable snmp) \
 		$(use_enable ssl) \
-		$(use_enable icap-client) \
 		${myconf} || die "econf failed"
 
 	emake || die "emake failed"
@@ -174,9 +191,4 @@ pkg_postinst() {
 	echo
 	ewarn "Squid can be configured to run in transparent mode like this:"
 	ewarn "   ${HILITE}http_port internal-addr:3128 transparent${NORMAL}"
-	if use zero-penalty-hit; then
-		echo
-		ewarn "In order for zph_preserve_miss_tos to work, you will have to alter your kernel"
-		ewarn "with the patch that can be found on http://zph.bratcheda.org site."
-	fi
 }
