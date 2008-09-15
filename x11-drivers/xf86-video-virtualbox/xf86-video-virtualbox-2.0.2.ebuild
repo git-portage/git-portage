@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-virtualbox/Attic/xf86-video-virtualbox-1.6.6.ebuild,v 1.2 2008/09/15 19:47:16 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-virtualbox/Attic/xf86-video-virtualbox-2.0.2.ebuild,v 1.1 2008/09/15 19:47:16 jokey Exp $
 
 inherit x-modular eutils
 
@@ -16,7 +16,7 @@ IUSE=""
 
 RDEPEND="x11-base/xorg-server"
 DEPEND="${RDEPEND}
-		dev-util/kbuild
+		>=dev-util/kbuild-0.1.4
 		>=dev-lang/yasm-0.6.2
 		sys-devel/dev86
 		sys-power/iasl
@@ -35,6 +35,9 @@ src_unpack() {
 
 		# Remove shipped binaries (kBuild,yasm), see bug #232775
 		rm -rf kBuild/bin tools
+
+		# Disable things unused or splitted into separate ebuilds
+		cp "${FILESDIR}/${P}-localconfig" LocalConfig.kmk
 }
 
 src_compile() {
@@ -50,6 +53,7 @@ src_compile() {
 		for each in src/VBox/{Runtime,Additions/common/VBoxGuestLib} \
 		src/VBox/Additions/x11/xgraphics ; do
 			MAKE="kmk" emake TOOL_YASM_AS=yasm \
+			KBUILD_PATH="${S}/kBuild" \
 			|| die "kmk failed"
 		done
 }
@@ -58,10 +62,12 @@ src_install() {
 		cd "${S}/out/linux.${ARCH}/release/bin/additions"
 		insinto /usr/lib/xorg/modules/drivers
 
-		if has_version "<x11-base/xorg-server-1.4" ; then
-				newins vboxvideo_drv_13.so vboxvideo_drv.so
-		else
+		if has_version "=x11-base/xorg-server-1.5" ; then
+				newins vboxvideo_drv_15.so vboxvideo_drv.so
+		elif has_version "=x11-base/xorg-server-1.4" ; then
 				newins vboxvideo_drv_14.so vboxvideo_drv.so
+		else
+				newins vboxvideo_drv_13.so vboxvideo_drv.so
 		fi
 }
 

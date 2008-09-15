@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-guest-additions/Attic/virtualbox-guest-additions-1.6.6.ebuild,v 1.2 2008/09/15 19:50:08 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-guest-additions/Attic/virtualbox-guest-additions-2.0.2.ebuild,v 1.1 2008/09/15 19:50:08 jokey Exp $
 
 inherit eutils linux-mod
 
@@ -21,7 +21,7 @@ RDEPEND="x11-libs/libXt
 			 x11-apps/xrandr
 			 x11-apps/xrefresh )"
 DEPEND="${RDEPEND}
-		dev-util/kbuild
+		>=dev-util/kbuild-0.1.4
 		>=dev-lang/yasm-0.6.2
 		sys-devel/bin86
 		sys-devel/dev86
@@ -51,6 +51,9 @@ src_unpack() {
 		# Remove shipped binaries (kBuild,yasm), see bug #232775
 		cd "${S}"
 		rm -rf kBuild/bin tools
+
+		# Disable things unused or splitted into separate ebuilds 
+		cp "${FILESDIR}/${P}-localconfig" LocalConfig.kmk
 }
 
 src_compile() {
@@ -68,6 +71,7 @@ src_compile() {
 		for each in	src/VBox/{Runtime,Additions/common} \
 		src/VBox/Additions/linux{sharefolders,daemon} ; do
 				MAKE="kmk" emake TOOL_YASM_AS=yasm \
+				KBUILD_PATH="${S}/kBuild" \
 				|| die "kmk failed"
 		done
 }
@@ -92,8 +96,11 @@ src_install() {
 		# VBoxClient user service and xrandr wrapper
 		if use X; then
 			insinto /usr/bin
+
 			doins VBoxClient
+			doins VBoxComtrol
 			fperms 4755 /usr/bin/VBoxClient
+			fperms 4755 /usr/bin/VBoxControl
 
 			dodir /etc/X11/xinit/xinitrc.d/
 			echo -e "#/bin/sh\n/usr/bin/VBoxClient" \

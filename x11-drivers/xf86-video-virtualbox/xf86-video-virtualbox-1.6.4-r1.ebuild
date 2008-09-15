@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-virtualbox/Attic/xf86-video-virtualbox-1.6.4-r1.ebuild,v 1.1 2008/09/06 19:29:03 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-virtualbox/Attic/xf86-video-virtualbox-1.6.4-r1.ebuild,v 1.2 2008/09/15 19:47:16 jokey Exp $
 
 inherit x-modular eutils
 
