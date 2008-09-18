@@ -1,6 +1,14 @@
 # ChangeLog for app-backup/amanda
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.40 2008/09/03 00:18:46 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.41 2008/09/18 04:13:38 robbat2 Exp $
+
+*amanda-2.6.0_p2-r1 (18 Sep 2008)
+
+  18 Sep 2008; Robin H. Johnson <robbat2@gentoo.org>
+  +files/s3-list-keys.diff, +files/s3.c.part2.diff,
+  +amanda-2.6.0_p2-r1.ebuild, metadata.xml:
+  Ready for prime-time, with S3 patches tested by Lisa Seelye
+  <lisa@thedoh.com> (former Gentoo dev :-).
 
 *amanda-2.6.0_p2 (03 Sep 2008)
 

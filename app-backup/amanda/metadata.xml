@@ -13,7 +13,7 @@
 		<name>Stefan G. Weichinger</name>
 	</maintainer>
 	<use>
-		<flag name='xfs'>Support for backing up raw XFS filesystems using
-			xfsdump</flag>
+		<flag name='xfs'>Support for backing up raw XFS filesystems using xfsdump</flag>
+		<flag name='s3'>Support for backing up to the Amazon S3 system</flag>
 	</use>
 </pkgmetadata>
