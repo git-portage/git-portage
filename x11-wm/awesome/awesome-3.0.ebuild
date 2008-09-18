@@ -1,19 +1,19 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/awesome/Attic/awesome-3.0_rc5.ebuild,v 1.1 2008/08/29 16:26:16 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/awesome/Attic/awesome-3.0.ebuild,v 1.1 2008/09/18 15:40:25 matsuu Exp $
 
 EAPI=1
 
 inherit cmake-utils eutils
 
-MY_P="${P/_rc/-rc}"
 DESCRIPTION="A dynamic floating and tiling window manager"
 HOMEPAGE="http://awesome.naquadah.org/"
-SRC_URI="http://awesome.naquadah.org/download/${MY_P}.tar.bz2"
+SRC_URI="http://awesome.naquadah.org/download/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~x86 ~x86-fbsd"
+#IUSE="dbus doc +imlib bash-completion"
 IUSE="dbus doc +imlib"
 
 RDEPEND=">=dev-lang/lua-5.1
@@ -25,7 +25,7 @@ RDEPEND=">=dev-lang/lua-5.1
 	x11-libs/libX11
 	>=x11-libs/libxcb-1.1
 	x11-libs/pango
-	>=x11-libs/xcb-util-0.2.1
+	>=x11-libs/xcb-util-0.3
 	dbus? ( >=sys-apps/dbus-1 )
 	imlib? ( media-libs/imlib2 )
 	!imlib? ( >=x11-libs/gtk+-2.2 )"
@@ -44,10 +44,9 @@ DEPEND="${RDEPEND}
 
 RDEPEND="${RDEPEND}
 	app-shells/bash"
+#	bash-completion? ( app-shells/bash-completion )
 
-S="${WORKDIR}/${MY_P}"
-
-DOCS="AUTHORS BUGS README"
+DOCS="AUTHORS BUGS PATCHES README STYLE"
 
 pkg_setup() {
 	if ! built_with_use --missing false x11-libs/cairo xcb; then
