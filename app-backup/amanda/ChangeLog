@@ -1,6 +1,14 @@
 # ChangeLog for app-backup/amanda
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.42 2008/09/18 04:18:36 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.43 2008/09/19 19:34:30 robbat2 Exp $
+
+*amanda-2.6.0_p2-r2 (19 Sep 2008)
+
+  19 Sep 2008; Robin H. Johnson <robbat2@gentoo.org>
+  +files/amanda-inetd.amanda.sample-2.6.0_p2-r2,
+  +files/amanda-xinetd-2.6.0_p2-r2, +amanda-2.6.0_p2-r2.ebuild:
+  Revision bump to solve bug #238017. Fixes (x)inetd scripts, plus tries to
+  do automatic migration of amandates from /etc to the new location.
 
   18 Sep 2008; Robin H. Johnson <robbat2@gentoo.org>
   -amanda-2.6.0_p1.ebuild, -amanda-2.6.0_p2.ebuild:
