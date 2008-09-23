@@ -57,7 +57,7 @@ diff -Nuar --exclude '*~' --exclude '*.orig' --exclude '*.rej' amanda-2.6.0p2.or
 +		exit 1
 +	fi
 +	# block until the first of the input
-+	dd of="${WORKDIR}/data.buffer" bs=4 count=1 status=noxfer
++	dd of="${WORKDIR}/data.buffer" bs=4 count=1 2>/dev/null
 +	if [ $? -ne 0 ]; then
 +		echo "${ME}: encryption failed to get input data" >&2
 +		exit 1

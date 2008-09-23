@@ -56,7 +56,7 @@ diff -Nuar amanda-2.5.2p1.orig/server-src/amcrypt-ossl-asym.sh.in amanda-2.5.2p1
 +		exit 1
 +	fi
 +	# block until the first of the input
-+	dd of="${WORKDIR}/data.buffer" bs=4 count=1 status=noxfer
++	dd of="${WORKDIR}/data.buffer" bs=4 count=1 2>/dev/null
 +	if [ $? -ne 0 ]; then
 +		echo "${ME}: encryption failed to get input data" >&2
 +		exit 1

@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/amanda
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.44 2008/09/23 02:32:25 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.45 2008/09/23 06:18:07 robbat2 Exp $
+
+  23 Sep 2008; Robin H. Johnson <robbat2@gentoo.org>
+  files/amanda-2.5.2p1-amcrypt-ossl-asym-race-fix.patch,
+  files/amanda-2.6.0p2-amcrypt-ossl-asym-race-fix.patch:
+  Quick fix of to better suppress the extra output from dd, that was causing
+  a non-critical "STRANGE" warning during backups.
 
 *amanda-2.6.0_p2-r3 (22 Sep 2008)
 *amanda-2.5.2_p1-r5 (22 Sep 2008)
