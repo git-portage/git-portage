@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/linux-uvc/Attic/linux-uvc-0.1.0_pre173.ebuild,v 1.1 2008/02/02 12:17:44 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/linux-uvc/Attic/linux-uvc-0.1.0_pre246.ebuild,v 1.1 2008/09/24 07:03:20 genstef Exp $
 
 inherit linux-mod
 
@@ -11,7 +11,7 @@ SRC_URI="http://gentooexperimental.org/~genstef/dist/${P}.tar.bz2"
 #ESVN_OPTIONS="-r ${PV/*_pre}"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 SLOT="0"
 IUSE=""
 DEPEND=""
