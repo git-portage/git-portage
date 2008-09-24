@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r3.ebuild,v 1.1 2008/09/23 02:32:25 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r3.ebuild,v 1.2 2008/09/24 09:20:49 robbat2 Exp $
 
 inherit autotools eutils
 
@@ -422,18 +422,19 @@ pkg_postinst() {
 
 	# Migration of amandates from /etc to $localstatedir/amanda
 	if [ -f "${ROOT}/etc/amandates" -a \
-		! -f "${ROOT}/${AMANDA_USER_HOMEDIR}/amandates" ]; then
-		einfo "Migrating amandates from /etc/ to ${AMANDA_USER_HOMEDIR}"
+		! -f "${ROOT}/${AMANDA_USER_HOMEDIR}/amanda/amandates" ]; then
+		einfo "Migrating amandates from /etc/ to ${AMANDA_USER_HOMEDIR}/amanda"
 		einfo "A backup is also placed at /etc/amandates.orig"
 		cp -f "${ROOT}/etc/amandates" "${ROOT}/etc/amandates.orig"
-		cp -f "${ROOT}/etc/amandates" "${ROOT}/${AMANDA_USER_HOMEDIR}/amandates"
+		mkdir -p "${ROOT}/${AMANDA_USER_HOMEDIR}/amanda/"
+		cp -f "${ROOT}/etc/amandates" "${ROOT}/${AMANDA_USER_HOMEDIR}/amanda/amandates"
 	fi
 	if [ -f "${ROOT}/etc/amandates" ]; then
 		einfo "If you have migrated safely, please delete /etc/amandates"
 	fi
 	# Do setups
 	do_initial /etc dumpdates
-	do_initial "${AMANDA_USER_HOMEDIR}" amandates
+	do_initial "${AMANDA_USER_HOMEDIR}/amanda" amandates
 
 	# If USE=minimal, give out a warning, if AMANDA_SERVER is not set to
 	# another host than HOSTNAME.

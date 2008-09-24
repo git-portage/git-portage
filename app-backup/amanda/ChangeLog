@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/amanda
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.45 2008/09/23 06:18:07 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.46 2008/09/24 09:20:49 robbat2 Exp $
+
+  24 Sep 2008; Robin H. Johnson <robbat2@gentoo.org>
+  amanda-2.6.0_p2-r2.ebuild, amanda-2.6.0_p2-r3.ebuild:
+  Bug 238017, refix the migration of amandates. Sorry to the ~arch users.
+  You will need to fix it up yourself from the snafu location if you did rm
+  at the old location.
 
   23 Sep 2008; Robin H. Johnson <robbat2@gentoo.org>
   files/amanda-2.5.2p1-amcrypt-ossl-asym-race-fix.patch,
