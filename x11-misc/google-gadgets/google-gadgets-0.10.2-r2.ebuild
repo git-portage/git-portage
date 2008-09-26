@@ -1,10 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/google-gadgets/Attic/google-gadgets-0.10.2.ebuild,v 1.1 2008/09/14 15:41:29 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/google-gadgets/Attic/google-gadgets-0.10.2-r2.ebuild,v 1.1 2008/09/26 11:30:28 loki_val Exp $
 
-EAPI=1
+EAPI=2
 
-inherit base eutils fdo-mime
+inherit base autotools multilib eutils fdo-mime
 
 MY_PN=${PN}-for-linux
 MY_P=${MY_PN}-${PV}
@@ -20,18 +20,18 @@ IUSE="+dbus debug +gtk +qt4 +gstreamer"
 # I've just locked the deps to the versions I had as of Summer 2008. With any
 # luck, they'll be stable when we get to stabling this package.
 
-# FIXME: ggl doesn't work with xulrunner:1.9. The other options are
-# firefox-3 xulrunner and firefox-2. I was bitten by the fact that the configure
-# scripts indicate that xulrunner-1.9 is supported and so couldn't get this
-# POS software to run. It took me a couple of compiles to figure out what was
-# broken. For now, I've just locked the dep to xulrunner:1.8, since I'm a lazy
-# bastard.
+# FIXME: ggl should be able to compile with xulrunner-1.9, xulrunner-1.8 and
+# various combinations of mozilla and spidermonkey. Since its configure script
+# is broken, though, I've hacked it to depend only on xulrunner-1.9, to avoid
+# mid-air symbol collisions. A giant bonanza of automagic is what it takes to get
+# this to work. I say blah. Blocking spidermonkey to avoid incorrect linking.
 
-RDEPEND=">=dev-lang/spidermonkey-1.7.0
-	x11-libs/libX11
+RDEPEND="x11-libs/libX11
 	x11-libs/libXext
 	>=dev-libs/libxml2-2.6.32
 	sys-libs/zlib
+	net-libs/xulrunner:1.9
+	!dev-lang/spidermonkey
 
 	dbus? ( sys-apps/dbus )
 
@@ -43,8 +43,7 @@ RDEPEND=">=dev-lang/spidermonkey-1.7.0
 		>=x11-libs/gtk+-2.12.10
 		>=x11-libs/pango-1.20.3
 		gnome-base/librsvg
-		net-libs/xulrunner:1.8
-		>=net-misc/curl-7.18.2
+		>=net-misc/curl-7.18.2[ssl,-nss,-gnutls]
 		>=dev-libs/atk-1.22.0 )
 
 	qt4? (	dbus? ( >=x11-libs/qt-dbus-4.4.0 )
@@ -74,39 +73,37 @@ pkg_setup() {
 
 	if ! use gstreamer
 	then
-		ewarn "Disabling gstreamer disables the  multimedia functions of ${PN}."
+		ewarn "Disabling gstreamer disables the multimedia functions of ${PN}."
 		ewarn "This is not recommended. To enable gstreamer, do:"
 		ewarn "echo \"${CATEGORY}/${PN} gstreamer\" >> /etc/portage/package.use"
 	fi
 
-	if use gtk
-	then
-		if built_with_use net-misc/curl ssl
-		then
-			if built_with_use net-misc/curl nss || built_with_use net-misc/curl gnutls
-			then
-				curl_die
-			else
-				einfo "Congratulations! Your net-misc/curl is configured correctly to run"
-				einfo "${PN}. Not many can say that."
-			fi
-		else
-			curl_die
-		fi
-	fi
 }
 
-src_compile() {
+src_unpack() {
+	base_src_unpack
+	cd "${S}"
+
+	sed -i -r \
+		-e '/^GGL_SYSDEPS_INCLUDE_DIR/ c\GGL_SYSDEPS_INCLUDE_DIR=$GGL_INCLUDE_DIR' \
+		configure.ac||die "404"
+	eautoreconf
+}
+
+src_configure() {
 	#For the time being, the smjs-script runtime is required for both gtk and qt
 	#versions, but the goal is to make the qt4 version depend only on qt-script.
-
+	has_pkg_smjs=no \
 	econf	--disable-dependency-tracking \
 		--disable-update-desktop-database \
 		--disable-update-mime-database \
 		--disable-werror \
 		--enable-libxml2-xml-parser \
 		--enable-smjs-script-runtime \
-		--with-gtkmozembed=xulrunner \
+		--with-gtkmozembed=libxul \
+		--with-smjs-cppflags=-I/usr/include/nspr \
+		--with-smjs-libdir=/usr/$(get_libdir)/xulrunner-1.9 \
+		--with-smjs-incdir=/usr/include/xulrunner-1.9/unstable \
 		$(use_enable debug) \
 		$(use_enable dbus libggadget-dbus) \
 		$(use_enable gstreamer gst-audio-framework) \
@@ -123,7 +120,11 @@ src_compile() {
 		$(use_enable qt4 qt-xml-http-request) \
 		$(use_enable qt4 qt-script-runtime) \
 		|| die "econf failed"
-	emake || die "emake failed"
+}
+
+src_compile() {
+	default_src_compile
+	#See https://bugs.gentoo.org/238753
 }
 
 src_test() {
