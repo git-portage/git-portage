@@ -1,13 +1,13 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-sensors/Attic/xfce4-sensors-0.10.99.3.ebuild,v 1.4 2008/03/22 11:22:41 nixnut Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-sensors/Attic/xfce4-sensors-0.10.99.3-r3.ebuild,v 1.1 2008/09/26 14:18:47 angelos Exp $
 
-inherit xfce44
+inherit eutils xfce44
 
 xfce44
 
 DESCRIPTION="acpi, lm_sensors and hddtemp panel plugin"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="acpi debug hddtemp lm_sensors"
 
 RDEPEND="lm_sensors? ( sys-apps/lm_sensors )
@@ -23,6 +23,13 @@ pkg_setup() {
 		XFCE_CONFIG+=" --enable-procacpi"
 		ewarn "Because you disabled all USE flags, selecting acpi for you."
 	fi
+}
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
+	epatch "${FILESDIR}"/${P}-hddtemp2.patch
 }
 
 DOCS="AUTHORS ChangeLog NEWS NOTES README TODO"
