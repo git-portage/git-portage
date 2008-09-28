@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/cherokee/Attic/cherokee-0.7.2.ebuild,v 1.2 2008/06/20 08:35:51 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/cherokee/Attic/cherokee-0.9.0.ebuild,v 1.1 2008/09/28 17:16:23 bass Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -24,13 +24,6 @@ RDEPEND=">=sys-libs/zlib-1.1.4-r1
 	pam? ( virtual/pam )
 	admin? ( dev-lang/python )"
 DEPEND="${RDEPEND}"
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}/${P}-signed_unsigned_char.patch"
-}
 
 src_compile() {
 	local myconf
@@ -110,10 +103,4 @@ pkg_postinst() {
 		elog "Try USE=admin if you want a easy way to configure cherokee."
 		echo  ""
 	fi
-
-	echo ""
-	elog "Cherokee conf is quite different in 0.6.x and 0.7.x  series. You must use"
-	elog " cherokee-admin to create a new config or use /usr/share/doc/${PF}/contrib/05to06.py"
-	elog " or 06to07.py to export your old config (not ever works)."
-	echo ""
 }
