@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-player/Attic/vmware-player-1.0.6.80404.ebuild,v 1.3 2008/05/12 15:46:50 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-player/Attic/vmware-player-1.0.8.108000.ebuild,v 1.1 2008/09/30 16:00:24 ikelos Exp $
 
 inherit eutils vmware versionator
 
@@ -19,7 +19,7 @@ SRC_URI="http://download3.vmware.com/software/vmplayer/${MY_P}.tar.gz
 LICENSE="vmware"
 IUSE=""
 SLOT="0"
-KEYWORDS="-* amd64 x86"
+KEYWORDS="-* ~amd64 ~x86"
 RESTRICT="strip"
 
 DEPEND="${RDEPEND} virtual/os-headers

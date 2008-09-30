@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-player/Attic/vmware-player-2.0.3.80004.ebuild,v 1.2 2008/04/26 15:19:44 ikelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-player/Attic/vmware-player-2.0.5.109488.ebuild,v 1.1 2008/09/30 16:00:24 ikelos Exp $
 
 inherit vmware eutils versionator
 
@@ -33,9 +33,9 @@ RDEPEND="sys-libs/glibc
 	virtual/xft
 	!app-emulation/vmware-workstation
 	!app-emulation/vmware-server
-	~app-emulation/vmware-modules-1.0.0.17
-	!<app-emulation/vmware-modules-1.0.0.17
-	!>=app-emulation/vmware-modules-1.0.0.18
+	~app-emulation/vmware-modules-1.0.0.22
+	!<app-emulation/vmware-modules-1.0.0.22
+	!>=app-emulation/vmware-modules-1.0.0.23
 	>=dev-lang/perl-5
 	sys-apps/pciutils"
 
