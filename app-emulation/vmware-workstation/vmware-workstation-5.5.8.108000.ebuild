@@ -1,33 +1,28 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-4.5.3.19414-r7.ebuild,v 1.8 2008/04/26 16:29:15 ikelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-5.5.8.108000.ebuild,v 1.1 2008/09/30 16:44:18 ikelos Exp $
 
-# Alter ebuild so that the metadata cache is invalidated.
+inherit vmware eutils versionator
 
-inherit eutils vmware
-
-MY_P="VMware-workstation-4.5.3-19414"
+MY_P="VMware-workstation-$(replace_version_separator 3 - $PV)"
 
 DESCRIPTION="Emulate a complete PC on your PC without the usual performance overhead of most emulators"
-HOMEPAGE="http://www.vmware.com/products/desktop/ws_features.html"
+HOMEPAGE="http://www.vmware.com/download/ws/ws5.html"
 SRC_URI="mirror://vmware/software/wkst/${MY_P}.tar.gz
+	http://download.softpedia.ro/linux/${MY_P}.tar.gz
+	mirror://gentoo/${ANY_ANY}.tar.gz
 	http://platan.vc.cvut.cz/ftp/pub/vmware/${ANY_ANY}.tar.gz
 	http://platan.vc.cvut.cz/ftp/pub/vmware/obsolete/${ANY_ANY}.tar.gz
 	http://ftp.cvut.cz/vmware/${ANY_ANY}.tar.gz
 	http://ftp.cvut.cz/vmware/obsolete/${ANY_ANY}.tar.gz
 	http://knihovny.cvut.cz/ftp/pub/vmware/${ANY_ANY}.tar.gz
-	http://knihovny.cvut.cz/ftp/pub/vmware/obsolete/${ANY_ANY}.tar.gz
-	http://dev.gentoo.org/~wolf31o2/sources/dump/vmware-libssl.so.0.9.7l.tar.bz2
-	mirror://gentoo/vmware-libssl.so.0.9.7l.tar.bz2
-	http://dev.gentoo.org/~wolf31o2/sources/dump/vmware-libcrypto.so.0.9.7l.tar.bz2
-	mirror://gentoo/vmware-libcrypto.so.0.9.7l.tar.bz2
-	mirror://gentoo/vmware.png"
+	http://knihovny.cvut.cz/ftp/pub/vmware/obsolete/${ANY_ANY}.tar.gz"
 
 LICENSE="vmware"
 SLOT="0"
-KEYWORDS="-* amd64 x86"
+KEYWORDS="-* ~amd64 ~x86"
 IUSE=""
-RESTRICT="strip"
+RESTRICT="fetch strip"
 
 # vmware-workstation should not use virtual/libc as this is a
 # precompiled binary package thats linked to glibc.
@@ -42,7 +37,9 @@ RDEPEND="sys-libs/glibc
 		virtual/xft )
 	!app-emulation/vmware-player
 	!app-emulation/vmware-server
-	~app-emulation/vmware-modules-1.0.0.11
+	~app-emulation/vmware-modules-1.0.0.15
+	!<app-emulation/vmware-modules-1.0.0.15
+	!>=app-emulation/vmware-modules-1.0.0.16
 	>=dev-lang/perl-5
 	sys-apps/pciutils"
 
@@ -87,10 +84,17 @@ QA_EXECSTACK_amd64="${dir:1}/bin/vmnet-bridge
 
 src_install() {
 	vmware_src_install
-	# We remove the rpath libgdk_pixbuf stuff, to resolve bug #81344.
-	perl -pi -e 's#/tmp/rrdharan/out#/opt/vmware/null/#sg' \
-		"${Ddir}"/lib/lib/libgdk_pixbuf.so.2/lib{gdk_pixbuf.so.2,pixbufloader-{xpm,png}.so.1.0.0} \
-		|| die "Removing rpath"
 
-	make_desktop_entry vmware "VMware Workstation" ${PN}.png
+	doicon lib/share/pixmaps/vmware-player.png
+	# Fix an ugly GCC error on start
+	rm -f "${Ddir}lib/lib/libgcc_s.so.1/libgcc_s.so.1"
+	make_desktop_entry vmware "VMWare Workstation" ${PN}.png System
+	make_desktop_entry vmplayer "VMWare Player" vmware-player.png System
+}
+
+pkg_postinst() {
+	vmware_pkg_postinst
+	ewarn "Vmware Workstation has issues on systems with hal installed but"
+	ewarn "not running. If you experience trouble with VMware loading, try"
+	ewarn "starting the hal daemon."
 }
