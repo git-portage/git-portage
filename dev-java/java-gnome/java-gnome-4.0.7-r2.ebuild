@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/java-gnome/Attic/java-gnome-4.0.7-r1.ebuild,v 1.2 2008/10/01 11:35:00 serkan Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/java-gnome/Attic/java-gnome-4.0.7-r2.ebuild,v 1.1 2008/10/05 11:06:46 serkan Exp $
 
-EAPI=2
+EAPI=1
 JAVA_PKG_IUSE="doc examples source"
 
 inherit eutils versionator java-pkg-2
@@ -21,8 +21,7 @@ RDEPEND=">=dev-libs/glib-2.12.13
 		>=gnome-base/libglade-2.6.1
 		>=gnome-base/libgnome-2.18.0
 		>=gnome-base/gnome-desktop-2.18.0
-		>=virtual/jre-1.5
-		>=x11-libs/cairo-1.6.4[svg]"
+		>=virtual/jre-1.5"
 DEPEND="${RDEPEND}
 		dev-java/junit:0
 		dev-lang/python
@@ -32,12 +31,26 @@ DEPEND="${RDEPEND}
 # Needs X11
 RESTRICT="test"
 
-src_configure() {
-	# Handwritten in perl so not using econf
-	./configure --prefix=/usr || die
+src_unpack() {
+	unpack ${A}
+	cd "${S}" || die
+	epatch "${FILESDIR}/${PN}-gtk-214.patch"
+}
+
+pkg_setup() {
+	if ! built_with_use x11-libs/cairo svg; then
+		echo
+		eerror "x11-libs/cairo has not been built with svg support."
+		eerror "Please re-emerge cairo with the svg use-flag enabled."
+		die "missing svg flag for x11-libs/cairo"
+	fi
+	java-pkg-2_pkg_setup
 }
 
 src_compile() {
+	# Handwritten in perl so not using econf
+	./configure --prefix=/usr || die
+
 	# Fails parallel build in case GCJ is detected
 	# See https://bugs.gentoo.org/show_bug.cgi?id=200550
 	emake -j1 || die "Compilation of java-gnome failed"
