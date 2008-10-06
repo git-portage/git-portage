@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-vim/gentoo-syntax/Attic/gentoo-syntax-20070212.ebuild,v 1.1 2007/02/13 06:08:34 pioto Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-vim/gentoo-syntax/Attic/gentoo-syntax-20081006.ebuild,v 1.1 2008/10/06 12:49:02 hawking Exp $
 
 inherit eutils vim-plugin
 
