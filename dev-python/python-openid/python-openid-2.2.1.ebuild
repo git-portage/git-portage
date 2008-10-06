@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/python-openid/Attic/python-openid-2.1.1.ebuild,v 1.2 2008/03/13 15:37:22 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/python-openid/Attic/python-openid-2.2.1.ebuild,v 1.1 2008/10/06 16:40:05 hawking Exp $
 
 NEED_PYTHON=2.3
 
@@ -27,10 +27,9 @@ DEPEND="${RDEPEND}"
 PYTHON_MODNAME="openid"
 
 src_unpack() {
-	unpack ${A}
-	cd "${S}"
+	distutils_src_unpack
 
-	#Patch to fix confusion with localhost/127.0.0.1
+	# Patch to fix confusion with localhost/127.0.0.1
 	epatch "${FILESDIR}"/${PN}-2.0.0-gentoo-test_fetchers.diff
 }
 
