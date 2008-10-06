@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/flexbackup
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.23 2008/08/27 18:05:58 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.24 2008/10/06 15:06:43 graaff Exp $
+
+  06 Oct 2008; Hans de Graaff <graaff@gentoo.org>
+  files/flexbackup-1.2.1-lzma.patch:
+  Don't use absolute path in patch file, fixing #239212
 
 *flexbackup-1.2.1-r8 (27 Aug 2008)
 

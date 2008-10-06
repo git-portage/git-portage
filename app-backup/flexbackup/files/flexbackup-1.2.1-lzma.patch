@@ -1,5 +1,5 @@
 --- flexbackup	2003-10-10 15:12:09.000000000 +0100
-+++ /home/humpback/Desktop/flexbackup	2007-01-15 01:08:18.000000000 +0000
++++ flexbackup	2007-01-15 01:08:18.000000000 +0000
 @@ -687,6 +687,8 @@
  		$filename .= ".zip";
  	    } elsif ($cfg::compress eq "compress") {
