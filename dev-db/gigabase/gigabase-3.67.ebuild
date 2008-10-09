@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/gigabase/Attic/gigabase-3.62.ebuild,v 1.1 2008/02/14 21:17:33 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/gigabase/Attic/gigabase-3.67.ebuild,v 1.1 2008/10/09 18:15:33 pva Exp $
 
-inherit autotools eutils multilib
+inherit eutils multilib
 
 DESCRIPTION="OO-DBMS with interfaces for C/C++/Java/PHP/Perl"
 HOMEPAGE="http://www.garret.ru/~knizhnik/gigabase.html"
@@ -14,12 +14,6 @@ IUSE="doc"
 DEPEND=""
 
 S=${WORKDIR}/gigabase
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	eautoreconf
-}
 
 src_compile() {
 	mf="${S}/Makefile"
