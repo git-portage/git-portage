@@ -1,15 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdebase-startkde/Attic/kdebase-startkde-3.5.10.ebuild,v 1.1 2008/09/13 23:57:59 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdebase-startkde/Attic/kdebase-startkde-3.5.10-r4.ebuild,v 1.1 2008/10/12 00:56:08 cryos Exp $
 
 KMNAME=kdebase
 KMNOMODULE=true
 KMEXTRACTONLY="kdm/kfrontend/sessions/kde.desktop.in startkde"
 EAPI="1"
 inherit multilib kde-meta eutils
-
-SRC_URI="${SRC_URI}
-	mirror://gentoo/kdebase-3.5-patchset-13.tar.bz2"
 
 DESCRIPTION="startkde script, which starts a complete KDE session, and associated scripts"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
@@ -19,18 +16,20 @@ IUSE=""
 # kdesktop, kicker etc are started because they put files in $KDEDIR/share/autostart
 # and so in theory they aren't strictly necessary deps.
 RDEPEND="x11-apps/xmessage
-		x11-apps/xsetroot
-		x11-apps/xset
-		x11-apps/xrandr
-		x11-apps/mkfontdir
-		x11-apps/xprop
->=kde-base/kdesktop-${PV}:${SLOT}
->=kde-base/kcminit-${PV}:${SLOT}
->=kde-base/ksmserver-${PV}:${SLOT}
->=kde-base/kwin-${PV}:${SLOT}
->=kde-base/kpersonalizer-${PV}:${SLOT}
->=kde-base/kreadconfig-${PV}:${SLOT}
->=kde-base/ksplashml-${PV}:${SLOT}"
+	x11-apps/xsetroot
+	x11-apps/xset
+	x11-apps/xrandr
+	x11-apps/mkfontdir
+	x11-apps/xprop
+	>=kde-base/kdesktop-${PV}:${SLOT}
+	>=kde-base/kcminit-${PV}:${SLOT}
+	>=kde-base/ksmserver-${PV}:${SLOT}
+	>=kde-base/kwin-${PV}:${SLOT}
+	>=kde-base/kpersonalizer-${PV}:${SLOT}
+	>=kde-base/kreadconfig-${PV}:${SLOT}
+	>=kde-base/ksplashml-${PV}:${SLOT}"
+
+PATCHES=( "${FILESDIR}/${PN}-3.5-gentoo.patch" )
 
 src_compile() {
 	# Patch the startkde script to setup the environment for KDE 4.0
