@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/system-tools-backends/Attic/system-tools-backends-2.4.1-r1.ebuild,v 1.1 2008/01/24 22:41:26 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/system-tools-backends/Attic/system-tools-backends-2.6.0-r1.ebuild,v 1.1 2008/10/13 21:27:11 eva Exp $
 
-inherit gnome2 eutils
+inherit autotools eutils gnome2
 
 DESCRIPTION="Tools aimed to make easy the administration of UNIX systems"
 HOMEPAGE="http://www.gnome.org/projects/gst/"
@@ -10,13 +10,21 @@ HOMEPAGE="http://www.gnome.org/projects/gst/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="policykit"
+
+# FIXME: policykit is optional but doesn't have a configure switch ?
+#
+# status:
+#  * users-admin: can't create new users
+#  * services: not handled correctly
 
 RDEPEND="!<app-admin/gnome-system-tools-1.1.91
-		>=dev-libs/glib-2.4
-		>=dev-libs/dbus-glib-0.71
+		>=sys-apps/dbus-1.1.2
+		>=dev-libs/dbus-glib-0.74
+		>=dev-libs/glib-2.15.2
 		>=dev-perl/Net-DBus-0.33.4
 		dev-lang/perl
+		policykit? ( >=sys-auth/policykit-0.5 )
 		userland_GNU? ( sys-apps/shadow )"
 
 DEPEND="${RDEPEND}
@@ -26,13 +34,25 @@ DEPEND="${RDEPEND}
 DOCS="AUTHORS BUGS ChangeLog HACKING NEWS README TODO"
 
 pkg_setup() {
+	G2CONF="${G2CONF} $(use_enable policykit polkit)"
+
 	enewgroup stb-admin || die "Failed to create stb-admin group"
 }
 
 src_unpack() {
 	gnome2_src_unpack
-	# Fix baselayout-2 problems with services-admin
-	epatch "${FILESDIR}"/${P}-baselayout2.patch
+
+	# Fix a typo in services
+	epatch "${FILESDIR}/${P}-services.patch"
+
+	# Fix a distro detection in users to use proper variant
+	# of useradd
+	epatch "${FILESDIR}/${P}-users.patch"
+
+	# Fix automagic policykit dependency
+	epatch "${FILESDIR}/${P}-automagic-polkit.patch"
+
+	eautoreconf
 }
 
 src_compile() {
