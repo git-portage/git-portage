@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbackup/cdbackup-0.7.0.ebuild,v 1.1 2006/05/28 23:45:01 lisa Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbackup/cdbackup-0.7.0.ebuild,v 1.2 2008/10/14 22:52:25 flameeyes Exp $
 
 inherit eutils
 
@@ -13,9 +13,8 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-RDEPEND="virtual/libc
-	>=app-cdr/cdrtools-1.11.28"
-DEPEND="${RDEPEND}"
+RDEPEND=">=app-cdr/cdrtools-1.11.28"
+DEPEND=""
 
 src_unpack() {
 	unpack ${A} ; cd ${S}

@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/cdbackup
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbackup/ChangeLog,v 1.1 2006/05/28 23:45:01 lisa Exp $
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbackup/ChangeLog,v 1.2 2008/10/14 22:52:25 flameeyes Exp $
+
+  14 Oct 2008; Diego Pettenò <flameeyes@gentoo.org> cdbackup-0.7.0.ebuild:
+  Fix dependencies, cdrtools is not linked to and needs not to be around for
+  build.
 
 *cdbackup-0.7.0 (28 May 2006)
 
