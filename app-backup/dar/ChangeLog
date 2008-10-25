@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/dar
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/ChangeLog,v 1.36 2008/10/23 19:24:17 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/ChangeLog,v 1.37 2008/10/25 17:41:45 nixnut Exp $
+
+  25 Oct 2008; nixnut <nixnut@gentoo.org> dar-2.3.8.ebuild:
+  Stable on ppc wrt bug 243078
 
   23 Oct 2008; Markus Meier <maekke@gentoo.org> dar-2.3.8.ebuild:
   amd64/x86 stable, bug #243078
