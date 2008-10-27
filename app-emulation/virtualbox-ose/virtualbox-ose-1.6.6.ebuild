@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-ose/Attic/virtualbox-ose-1.6.6.ebuild,v 1.2 2008/09/15 19:54:48 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-ose/Attic/virtualbox-ose-1.6.6.ebuild,v 1.3 2008/10/27 17:19:20 jokey Exp $
 
 EAPI=1
 
@@ -20,8 +20,6 @@ RDEPEND="!app-emulation/virtualbox-bin
 	~app-emulation/virtualbox-modules-${PV}
 	dev-libs/libIDL
 	>=dev-libs/libxslt-1.1.19
-	dev-libs/xalan-c
-	dev-libs/xerces-c
 	!headless? (
 		qt3? ( x11-libs/qt:3 )
 		x11-libs/libXcursor
@@ -130,7 +128,7 @@ src_install() {
 
 	# create virtualbox configurations files
 	insinto /etc/vbox
-	newins "${FILESDIR}/${PN}-config" vbox.cfg
+	newins "${FILESDIR}/${PN}-1-config" vbox.cfg
 	newins "${FILESDIR}/${PN}-interfaces" interfaces
 
 	insinto /opt/VirtualBox
@@ -170,7 +168,7 @@ src_install() {
 	fi
 
 	exeinto /opt/VirtualBox
-	newexe "${FILESDIR}/${PN}-wrapper" "VBox.sh" || die
+	newexe "${FILESDIR}/${PN}-1-wrapper" "VBox.sh" || die
 	fowners root:vboxusers /opt/VirtualBox/VBox.sh
 	fperms 0750 /opt/VirtualBox/VBox.sh
 	newexe "${S}"/src/VBox/Installer/linux/VBoxAddIF.sh "VBoxAddIF.sh" || die
