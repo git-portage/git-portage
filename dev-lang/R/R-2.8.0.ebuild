@@ -1,8 +1,9 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/Attic/R-2.7.2.ebuild,v 1.3 2008/10/27 10:32:14 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/Attic/R-2.8.0.ebuild,v 1.1 2008/10/27 10:32:14 bicatali Exp $
 
-inherit fortran flag-o-matic bash-completion versionator
+EAPI=2
+inherit eutils fortran flag-o-matic bash-completion versionator
 
 DESCRIPTION="Language and environment for statistical computing and graphics"
 HOMEPAGE="http://www.r-project.org/"
@@ -17,11 +18,11 @@ IUSE="doc java jpeg lapack minimal nls png readline tk X cairo"
 
 # common depends
 CDEPEND="dev-lang/perl
-	>=dev-libs/libpcre-7.3
+	dev-libs/libpcre
 	app-arch/bzip2
 	virtual/blas
 	virtual/ghostscript
-	cairo? ( x11-libs/cairo x11-libs/pango )
+	cairo? ( x11-libs/cairo[X] x11-libs/pango[X] )
 	readline? ( sys-libs/readline )
 	jpeg? ( media-libs/jpeg )
 	png? ( media-libs/libpng )
@@ -49,38 +50,11 @@ pkg_setup() {
 	export FFLAGS="${FFLAGS:--O2}"
 	[[ ${FORTRANC} = gfortran || ${FORTRANC} = if* ]] && \
 		export FCFLAGS="${FCFLAGS:-${FFLAGS}}"
-
-	# make sure cairo and pango are both compiled with "X"
-	# use flag (see bug #231970)
-	if use cairo; then
-		if ( ! built_with_use x11-libs/cairo X ); then
-			eerror "x11-libs/cairo needs to be built with USE=\"X\""
-			die "Please rebuild x11-libs/cairo with USE=\"X\""
-		fi
-
-		if ( ! built_with_use x11-libs/pango X ); then
-			eerror "x11-libs/pango needs to be built with USE=\"X\""
-			die "Please rebuild x11-libs/pango with USE=\"X\""
-		fi
-	fi
-
 	filter-ldflags -Wl,-Bdirect -Bdirect
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${PN}-javareconf.patch
-	epatch "${FILESDIR}"/${PN}-2.7.1-test-fix.patch
-}
+src_prepare() {
 
-src_test() {
-	# we need to unset R_HOME otherwise some of the diff based
-	# tests fail due to warnings in the output
-	R_HOME="" make check || die "Some of the tests failed"
-}
-
-src_compile() {
 	# fix packages.html for doc (bug #205103)
 	# check in later versions if fixed
 	sed -i \
@@ -100,8 +74,11 @@ src_compile() {
 		export R_BROWSER="$(type -p xdg-open)"
 		export R_PDFVIEWER="$(type -p xdg-open)"
 	fi
+}
 
+src_configure() {
 	econf \
+		--disable-rpath \
 		--enable-R-profiling \
 		--enable-memory-profiling \
 		--enable-R-shlib \
@@ -120,18 +97,25 @@ src_compile() {
 		$(use_with png libpng) \
 		$(use_with readline) \
 		$(use_with cairo) \
-		$(use_with X x) \
-		|| die "econf failed"
-	emake || die "emake failed"
-	if use doc; then
-		export VARTEXFONTS="${T}/fonts"
-		emake info pdf || die "emake docs failed"
-	fi
+		$(use_with X x)
+}
 
+src_compile(){
+	emake || die "emake failed"
 	RMATH_V=0.0.0
 	emake -j1 -C src/nmath/standalone \
 		libRmath_la_LDFLAGS=-Wl,-soname,libRmath.so.${RMATH_V} \
 		|| die "emake math library failed"
+	if use doc; then
+		export VARTEXFONTS="${T}/fonts"
+		emake info pdf || die "emake docs failed"
+	fi
+}
+
+src_test() {
+	# we need to unset R_HOME otherwise some of the diff based
+	# tests fail due to warnings in the output
+	R_HOME="" emake -j1 check || die "Some of the tests failed"
 }
 
 src_install() {
