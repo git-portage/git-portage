@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/qmail-scanner/Attic/qmail-scanner-2.02-r1.ebuild,v 1.1 2008/02/13 06:03:51 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/qmail-scanner/Attic/qmail-scanner-2.02-r1.ebuild,v 1.2 2008/10/29 20:17:44 tupone Exp $
 
 inherit fixheadtails toolchain-funcs eutils
 
@@ -14,7 +14,7 @@ IUSE="clamav spamassassin"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 RESTRICT="userpriv"
 
 DEPEND=">=dev-lang/perl-5.6.1-r1
@@ -48,7 +48,7 @@ pkg_preinst() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch ${DISTDIR}/q-s-${PV}st-${Q_S_DATE}.patch.gz
+	epatch "${DISTDIR}"/q-s-${PV}st-${Q_S_DATE}.patch.gz
 	ht_fix_file autoupdaters/* configure
 	sed -i \
 		-e "s:/var/spool/qscand:/var/spool/qscan:g" \
