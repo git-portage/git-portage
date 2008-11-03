@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.4.9.ebuild,v 1.1 2008/02/13 21:15:30 ticho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.5.02.ebuild,v 1.1 2008/11/03 02:16:53 vanquirius Exp $
 
 inherit distutils
 
@@ -13,12 +13,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-DEPEND="virtual/libc
-	>=dev-lang/python-2.3
+DEPEND=">=dev-lang/python-2.3
 	>=net-libs/librsync-0.9.6
-	net-ftp/ncftp"
+	>=net-ftp/ncftp-3.1.9
+	app-crypt/gnupg"
 RDEPEND="${DEPEND}
-	dev-python/py-gnupg
+	>=dev-python/py-gnupg-0.3.2
 	>=dev-python/pexpect-2.1"
 
 src_install() {
