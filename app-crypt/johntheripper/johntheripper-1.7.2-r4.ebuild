@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/johntheripper/Attic/johntheripper-1.7.2-r4.ebuild,v 1.2 2008/02/04 18:47:56 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/johntheripper/Attic/johntheripper-1.7.2-r4.ebuild,v 1.3 2008/11/04 08:06:54 dragonheart Exp $
 
 inherit eutils flag-o-matic toolchain-funcs pax-utils
 
@@ -12,7 +12,7 @@ DESCRIPTION="fast password cracker"
 HOMEPAGE="http://www.openwall.com/john/"
 
 SRC_URI="http://www.openwall.com/john/f/${MY_P}.tar.gz
-	http://www.openwall.com/john/contrib/${MY_P}-all-9.diff.gz"
+	ftp://ftp.openwall.com/john/contrib/historical/${MY_P}-all-9.diff.gz"
 # When mpi stable:
 #	mpi? ( http://bindshell.net/tools/johntheripper/${MY_P}-bp17-mpi2.patch.gz )"
 

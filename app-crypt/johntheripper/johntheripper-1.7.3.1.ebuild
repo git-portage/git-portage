@@ -1,8 +1,11 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/johntheripper/Attic/johntheripper-1.7.2-r5.ebuild,v 1.3 2008/11/04 08:06:54 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/johntheripper/Attic/johntheripper-1.7.3.1.ebuild,v 1.1 2008/11/04 08:06:54 dragonheart Exp $
 
 inherit eutils flag-o-matic toolchain-funcs pax-utils
+
+JUMBO='all-3'
+MPI='mpi8-small'
 
 MY_PN="${PN/theripper/}"
 MY_P="${MY_PN/theripper/}-${PV}"
@@ -11,17 +14,18 @@ S="${WORKDIR}/${MY_P}"
 DESCRIPTION="fast password cracker"
 HOMEPAGE="http://www.openwall.com/john/"
 
-SRC_URI="http://www.openwall.com/john/f/${MY_P}.tar.gz
-	ftp://ftp.openwall.com/john/contrib/historical/${MY_P}-all-9.diff.gz
-	mpi? ( mirror://gentoo/${MY_P}-bp17-mpi8.patch.gz )"
+SRC_URI="http://www.openwall.com/john/g/${MY_P}.tar.gz
+	!minimal? ( ftp://ftp.openwall.com/john/contrib/historical/${MY_P}-${JUMBO}.diff.gz )
+	mpi? ( http://bindshell.net/tools/johntheripper/${MY_P}-${MPI}.patch.gz )"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
-IUSE="mmx altivec sse2 custom-cflags mpi"
+EAPI=1
+IUSE="mmx altivec sse2 custom-cflags -minimal -mpi"
 
 # Seems a bit fussy with other MPI implementations.
-RDEPEND=">=dev-libs/openssl-0.9.7
+RDEPEND="!minimal? ( >=dev-libs/openssl-0.9.7 )
 	mpi? ( sys-cluster/openmpi )"
 DEPEND="${RDEPEND}"
 
@@ -59,23 +63,34 @@ get_target() {
 	fi
 }
 
+#pkg_setup() {
+#	if use mpi && built_with_use sys-cluster/mpich2 threads; then
+#		die 'cannot work with sys-cluster/mpich2 USE=threads'
+#		#http://bindshell.net/tools/johntheripper/
+#	fi
+#}
+
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	PATCHLIST=""
 	if use mpi ; then
-		epatch "${WORKDIR}"/${MY_P}-bp17-mpi8.patch
-	else
-		cd "${S}/src"
-		epatch "${WORKDIR}"/${MY_P}-all-9.diff
+		epatch "${WORKDIR}"/${MY_P}-${MPI}.patch
+		# avoid the conflict on JOHN_VERSION until a better compromise is made
+		sed -i 's/_mpi"/"/' src/params.h
+	fi
+	if ! use minimal ; then
+		epatch "${WORKDIR}"/${MY_P}-${JUMBO}.diff
 		PATCHLIST=stackdef.S
 	fi
-	PATCHLIST="${PATCHLIST} stackdef-2.S mkdir-sandbox"
+	PATCHLIST="${PATCHLIST} params.h mkdir-sandbox"
 
 	cd "${S}/src"
 	for p in ${PATCHLIST}; do
 		epatch "${FILESDIR}/${P}-${p}.patch"
 	done
+
+	sed -i "s/LDFLAGS  *=  */override LDFLAGS += /" Makefile
 }
 
 src_compile() {
@@ -123,8 +138,18 @@ src_install() {
 	dosym john /usr/sbin/unique
 	dosym john /usr/sbin/unshadow
 
-	# for EGG only
-	dosym john /usr/sbin/undrop
+	# jumbo-patch additions
+	if ! use minimal ; then
+		dosym john /usr/sbin/undrop
+		# >=all-4
+		#dosbin run/calc_stat
+		#dosbin run/genmkvpwd
+		#dosbin run/mkvcalcproba
+		insinto /etc/john
+		# >=all-4
+		#doins run/genincstats.rb run/stats
+		doins run/netscreen.py run/sap_prepare.pl
+	fi
 
 	#newsbin src/bench john-bench
 
