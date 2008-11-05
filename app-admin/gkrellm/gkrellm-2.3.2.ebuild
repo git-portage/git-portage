@@ -1,6 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/gkrellm/Attic/gkrellm-2.3.0.ebuild,v 1.10 2008/02/29 17:40:13 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/gkrellm/Attic/gkrellm-2.3.2.ebuild,v 1.1 2008/11/05 18:18:10 lack Exp $
+
+EAPI=2
 
 inherit eutils multilib toolchain-funcs
 
@@ -10,15 +12,16 @@ SRC_URI="http://members.dslextreme.com/users/billw/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="2"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
-IUSE="hddtemp gnutls lm_sensors nls ssl X kernel_FreeBSD"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+IUSE="hddtemp gnutls lm_sensors nls ssl ntlm X kernel_FreeBSD"
 
 RDEPEND=">=dev-libs/glib-2
 	hddtemp? ( app-admin/hddtemp )
 	gnutls? ( net-libs/gnutls )
+	!gnutls? ( ssl? ( dev-libs/openssl ) )
 	lm_sensors? ( sys-apps/lm_sensors )
 	nls? ( virtual/libintl )
-	ssl? ( dev-libs/openssl )
+	ntlm? ( net-libs/libntlm )
 	X? ( >=x11-libs/gtk+-2 )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
@@ -31,13 +34,10 @@ pkg_setup() {
 	use kernel_FreeBSD && TARGET="freebsd"
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}"/${PN}-2.3-build.patch
-	epatch "${FILESDIR}"/${PN}-2.3-Makefile.patch
-	use gnutls && epatch "${FILESDIR}"/${PN}-2.3-gnutls.patch
+src_prepare() {
+	sed -e 's:-O2 ::' \
+		-e 's:override CC:CFLAGS:' \
+		-i */Makefile || die "sed Makefile(s) failed"
 
 	sed -e 's:#user\tnobody:user\tgkrellmd:' \
 		-e 's:#group\tproc:group\tgkrellmd:' \
@@ -50,22 +50,34 @@ src_unpack() {
 
 src_compile() {
 	if use X ; then
+		local sslopt=""
+		if use gnutls; then
+			sslopt="without-ssl=yes"
+		elif use ssl; then
+			sslopt="without-gnutls=yes"
+		else
+			sslopt="without-ssl=yes without-gnutls=yes"
+		fi
+
 		emake ${TARGET} \
 			CC="$(tc-getCC)" \
-			INSTALLROOT=/usr \
-			INCLUDEDIR=/usr/include/gkrellm2 \
-			LOCALEDIR=/usr/share/locale \
+			LINK_FLAGS="$LDFLAGS -Wl,-E" \
+			STRIP="" \
+			INSTALLROOT="/usr" \
+			INCLUDEDIR="/usr/include/gkrellm2" \
+			LOCALEDIR="/usr/share/locale" \
 			$(use nls || echo enable_nls=0) \
-			$(use gnutls || echo without-gnutls=yes) \
 			$(use lm_sensors || echo without-libsensors=yes) \
-			$(use ssl || echo without-ssl=yes) \
-			|| die "emake failed"
+			${sslopt} \
+		|| die "emake failed"
 	else
 		cd server
 		emake ${TARGET} \
 			CC="$(tc-getCC)" \
+			LINK_FLAGS="$LDFLAGS -Wl,-E" \
+			STRIP="" \
 			$(use lm_sensors || echo without-libsensors=yes) \
-			|| die "emake failed"
+		|| die "emake failed"
 	fi
 }
 
@@ -73,13 +85,13 @@ src_install() {
 	if use X ; then
 		emake install${TARGET:+_}${TARGET} \
 			$(use nls || echo enable_nls=0) \
-			INSTALLDIR="${D}"/usr/bin \
-			INCLUDEDIR="${D}"/usr/include \
-			LOCALEDIR="${D}"/usr/share/locale \
-			PKGCONFIGDIR="${D}"/usr/$(get_libdir)/pkgconfig \
-			MANDIR="${D}"/usr/share/man/man1 \
-			|| die "emake install failed"
-		dosym gkrellm /usr/bin/gkrellm2
+			STRIP="" \
+			INSTALLDIR="${D}/usr/bin" \
+			INCLUDEDIR="${D}/usr/include" \
+			LOCALEDIR="${D}/usr/share/locale" \
+			PKGCONFIGDIR="${D}/usr/$(get_libdir)/pkgconfig" \
+			MANDIR="${D}/usr/share/man/man1" \
+		|| die "emake install failed"
 
 		dohtml *.html
 
@@ -93,6 +105,7 @@ src_install() {
 	fi
 
 	doinitd "${FILESDIR}"/gkrellmd || die "doinitd failed"
+	doconfd "${FILESDIR}"/gkrellmd.conf || die "doconfd failed"
 
 	insinto /etc
 	doins server/gkrellmd.conf || die "doins failed"
@@ -101,8 +114,8 @@ src_install() {
 }
 
 pkg_postinst() {
-	ewarn "The old executable name 'gkrellm2' is deprecated."
-	ewarn "We have provided a compatible symlink for your convenience,"
-	ewarn "but this is only temporary.  You should run this as just 'gkrellm'"
-	ewarn "instead."
+	if use X ; then
+		ewarn "The old executable name 'gkrellm2' has been removed."
+		ewarn "Run 'gkrellm' instead."
+	fi
 }
