@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/freepops/Attic/freepops-0.2.6.ebuild,v 1.2 2008/04/03 13:22:50 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/freepops/Attic/freepops-0.2.8.ebuild,v 1.1 2008/11/06 08:19:32 dragonheart Exp $
 
 inherit eutils toolchain-funcs
 
@@ -54,7 +54,7 @@ src_compile() {
 }
 
 src_install() {
-	emake install DESTDIR="${D}" || die
+	emake -j1 install DESTDIR="${D}" || die
 	mv "${D}"/usr/share/doc/${PN} "${D}"/usr/share/doc/${PF}
 	dodoc AUTHORS README ChangeLog TODO
 
