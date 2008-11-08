@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/vzctl/Attic/vzctl-3.0.22-r10.ebuild,v 1.1 2008/10/13 09:25:59 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/vzctl/Attic/vzctl-3.0.22-r2.ebuild,v 1.1 2008/11/08 19:41:59 pva Exp $
 
 inherit bash-completion eutils
 
@@ -26,11 +26,11 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}"/${P}-capability-fix.patch
-	epatch "${FILESDIR}"/${P}-glibc28.patch
-	epatch "${FILESDIR}"/${P}-document-disable-modules.patch
-	epatch "${FILESDIR}"/${P}-workaround-gentoo-add_ip.patch
-	epatch "${FILESDIR}"/${P}-scripts-openrc.patch
+	epatch "${FILESDIR}/${P}-capability-fix.patch"
+	epatch "${FILESDIR}/${P}-glibc28.patch"
+	epatch "${FILESDIR}/${P}-document-disable-modules.patch"
+	epatch "${FILESDIR}/${P}-workaround-gentoo-add_ip.patch"
+	epatch "${FILESDIR}/${P}-adjust-meminfo.patch"
 }
 
 src_compile() {
@@ -38,7 +38,7 @@ src_compile() {
 		--enable-cron \
 		--enable-udev \
 		$(use_enable bash-completion bashcomp) \
-		$(use_enable logrotate)
+		$(use_enable logrotate) || die "econf failed!"
 
 	emake || die "emake failed!"
 }
