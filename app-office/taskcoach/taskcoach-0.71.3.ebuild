@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/taskcoach/Attic/taskcoach-0.71.1.ebuild,v 1.1 2008/10/13 22:26:36 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/taskcoach/Attic/taskcoach-0.71.3.ebuild,v 1.1 2008/11/12 10:21:56 caster Exp $
 
 inherit distutils eutils
 
