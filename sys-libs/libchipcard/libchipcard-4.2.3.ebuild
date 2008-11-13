@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/libchipcard/Attic/libchipcard-4.1.0.ebuild,v 1.3 2008/06/26 12:11:19 hanno Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/libchipcard/Attic/libchipcard-4.2.3.ebuild,v 1.1 2008/11/13 23:44:09 hanno Exp $
 
 DESCRIPTION="Libchipcard is a library for easy access to chip cards via chip card readers (terminals)."
 HOMEPAGE="http://www.libchipcard.de"
@@ -11,7 +11,7 @@ KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="debug doc ssl usb"
 
-DEPEND=">=sys-libs/gwenhywfar-3.1.1
+DEPEND=">=sys-libs/gwenhywfar-3.4.1
 	ssl? ( >=dev-libs/openssl-0.9.6b )
 	usb? ( dev-libs/libusb )
 	>=sys-fs/sysfsutils-1.2.0"
@@ -43,4 +43,6 @@ src_install() {
 		docinto tutorials
 		dodoc tutorials/*.{c,h,xml} tutorials/README || die
 	fi
+
+	find "${D}" -name '*.la' -delete
 }
