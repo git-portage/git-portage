@@ -1,10 +1,9 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/dlm-lib/Attic/dlm-lib-2.02.00-r1.ebuild,v 1.2 2008/03/23 17:09:49 xmerlin Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/dlm-lib/dlm-lib-2.03.09.ebuild,v 1.1 2008/11/13 19:02:22 xmerlin Exp $
 
-inherit eutils versionator
+inherit eutils linux-mod linux-info versionator
 
-CVS_RELEASE="20080323"
 CLUSTER_RELEASE="${PV}"
 MY_P="cluster-${CLUSTER_RELEASE}"
 
@@ -13,9 +12,7 @@ MIN_PV="$(get_version_component_range 2).$(get_version_component_range 3)"
 
 DESCRIPTION="General-purpose Distributed Lock Manager"
 HOMEPAGE="http://sources.redhat.com/cluster/"
-SRC_URI="ftp://sources.redhat.com/pub/cluster/releases/${MY_P}.tar.gz
-	mirror://gentoo/gfs-${PV}-${CVS_RELEASE}-cvs.patch.bz2
-	http://dev.gentoo.org/~xmerlin/gfs/gfs-${PV}-${CVS_RELEASE}-cvs.patch.bz2"
+SRC_URI="ftp://sources.redhat.com/pub/cluster/releases/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -41,9 +38,6 @@ src_unpack() {
 	#	/\tinstall/s/install/& -m 0644/' \
 	#	man/Makefile || die "failed patching man pages permission"
 
-	(cd "${WORKDIR}"/${MY_P};
-		epatch "${WORKDIR}"/gfs-2.02.00-20080323-cvs.patch || die
-	)
 }
 
 src_compile() {
@@ -52,6 +46,7 @@ src_compile() {
 			--cc=$(tc-getCC) \
 			--cflags="-Wall" \
 			--disable_kernel_check \
+			--kernel_src=${KERNEL_DIR} \
 			--somajor="$MAJ_PV" \
 			--sominor="$MIN_PV" \
 			--cmanlibdir=/usr/lib \
@@ -59,7 +54,7 @@ src_compile() {
 	) || die "configure problem"
 
 	#emake clean || die "clean problem"
-	emake || die "compile problem"
+	emake -j1 || die "compile problem"
 }
 
 src_install() {

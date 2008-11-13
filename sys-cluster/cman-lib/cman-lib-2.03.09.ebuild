@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/cman-lib/Attic/cman-lib-2.02.00.ebuild,v 1.1 2008/03/17 16:24:34 xmerlin Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/cman-lib/cman-lib-2.03.09.ebuild,v 1.1 2008/11/13 18:59:51 xmerlin Exp $
 
 inherit eutils versionator
 
@@ -27,21 +27,14 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}/${PN/-//}"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}"/${P}-include.patch || die
-}
-
 src_compile() {
 	(cd "${WORKDIR}"/${MY_P};
 		./configure \
 			--cc=$(tc-getCC) \
 			--cflags="-Wall" \
 			--disable_kernel_check \
-			--release_major="$MAJ_PV" \
-			--release_minor="$MIN_PV" \
+			--somajor="$MAJ_PV" \
+			--sominor="$MIN_PV" \
 	) || die "configure problem"
 
 	emake clean || die "clean problem"
