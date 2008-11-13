@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxdg-basedir/Attic/libxdg-basedir-0.1.4.ebuild,v 1.2 2008/08/28 11:28:27 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxdg-basedir/Attic/libxdg-basedir-0.2.0.ebuild,v 1.1 2008/11/13 02:05:07 flameeyes Exp $
 
 inherit libtool
 
