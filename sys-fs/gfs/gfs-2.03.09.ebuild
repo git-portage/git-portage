@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/gfs/Attic/gfs-2.02.00-r1.ebuild,v 1.1 2008/03/23 22:43:30 xmerlin Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/gfs/Attic/gfs-2.03.09.ebuild,v 1.1 2008/11/13 19:17:40 xmerlin Exp $
 
 inherit eutils versionator
 
@@ -13,9 +13,7 @@ MIN_PV="$(get_version_component_range 2).$(get_version_component_range 3)"
 
 DESCRIPTION="Shared-disk cluster file system"
 HOMEPAGE="http://sources.redhat.com/cluster/"
-SRC_URI="ftp://sources.redhat.com/pub/cluster/releases/${MY_P}.tar.gz
-	mirror://gentoo/gfs-${PV}-${CVS_RELEASE}-cvs.patch.bz2
-	http://dev.gentoo.org/~xmerlin/gfs/gfs-${PV}-${CVS_RELEASE}-cvs.patch.bz2"
+SRC_URI="ftp://sources.redhat.com/pub/cluster/releases/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -36,9 +34,6 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	(cd "${WORKDIR}"/${MY_P};
-		epatch "${WORKDIR}"/gfs-2.02.00-20080323-cvs.patch || die
-	)
 }
 
 src_compile() {
