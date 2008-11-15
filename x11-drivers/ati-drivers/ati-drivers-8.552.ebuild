@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-8.552.ebuild,v 1.1 2008/11/15 13:28:02 lu_zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-8.552.ebuild,v 1.2 2008/11/15 15:27:18 lu_zero Exp $
 
 IUSE="acpi debug"
 
@@ -9,7 +9,7 @@ inherit eutils multilib linux-mod toolchain-funcs versionator
 DESCRIPTION="Ati precompiled drivers for recent chipsets"
 HOMEPAGE="http://www.ati.com"
 ATI_URL="https://a248.e.akamai.net/f/674/9206/0/www2.ati.com/drivers/linux/"
-SRC_URI="${ATI_URL}/ati-driver-installer-8-10-x86.x86_64.run"
+SRC_URI="${ATI_URL}/ati-driver-installer-8-11-x86.x86_64.run"
 
 LICENSE="AMD GPL-2 QPL-1.0 as-is"
 KEYWORDS="~amd64 ~x86"
@@ -167,9 +167,6 @@ src_unpack() {
 	ln -s "${ARCH_DIR}"/lib/modules/fglrx/build_mod/libfglrx_ip.a.GCC$(gcc-major-version) \
 		|| die "symlinking precompiled core failed"
 
-	if kernel_is 2 6 27; then
-		epatch "${FILESDIR}/${PV}/ati-drivers-2.6.27.patch"
-	fi
 
 	convert_to_m 2.6.x/Makefile || die "convert_to_m failed"
 
