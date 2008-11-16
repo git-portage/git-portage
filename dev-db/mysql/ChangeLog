@@ -1,12 +1,6 @@
 # ChangeLog for dev-db/mysql
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/ChangeLog,v 1.470 2008/11/21 10:04:19 armin76 Exp $
-
-  21 Nov 2008; Raúl Porcel <armin76@gentoo.org> mysql-5.0.70.ebuild:
-  ia64/sparc/x86 stable wrt #246652
-
-  18 Nov 2008; Robin H. Johnson <robbat2@gentoo.org> mysql-5.0.70.ebuild:
-  Update archive_gis disable.
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/ChangeLog,v 1.468 2008/11/17 06:14:19 jer Exp $
 
   17 Nov 2008; Jeroen Roovers <jer@gentoo.org> mysql-5.0.70.ebuild:
   Stable for HPPA (bug #246652).
