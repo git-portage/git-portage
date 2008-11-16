@@ -1,8 +1,11 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/courier/Attic/courier-0.60.0.ebuild,v 1.2 2008/11/20 13:26:32 hanno Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/courier/Attic/courier-0.60.0.ebuild,v 1.1 2008/07/21 00:39:43 hanno Exp $
 
-inherit eutils flag-o-matic
+WANT_AUTOCONF="latest"
+WANT_AUTOMAKE="latest"
+
+inherit eutils flag-o-matic autotools
 
 DESCRIPTION="An MTA designed specifically for maildirs"
 [ -z "${PV/?.??/}" ] && SRC_URI="mirror://sourceforge/courier/${P}.tar.bz2"
@@ -139,7 +142,7 @@ src_install() {
 		keepdir "$dir2keep" || die "failed running keepdir: $dir2keep"
 	done
 
-	newinitd "${FILESDIR}/courier-init-r2" "courier"
+	newinitd "${FILESDIR}/courier-init-r1" "courier"
 	use fam || sed -i -e's|^.*use famd$||g' "${D}/etc/init.d/courier"
 
 	cd "${D}/etc/courier"
