@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/Attic/mysql-5.0.70.ebuild,v 1.9 2008/11/21 10:04:19 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/Attic/mysql-5.0.70.ebuild,v 1.7 2008/11/17 06:14:19 jer Exp $
 
 MY_EXTRAS_VER="20080601"
 SERVER_URI="http://mirror.provenscaling.com/mysql/enterprise/source/5.0/${P}.tar.gz"
@@ -10,7 +10,7 @@ inherit toolchain-funcs mysql
 IUSE="$IUSE"
 
 # REMEMBER: also update eclass/mysql*.eclass before committing!
-KEYWORDS="alpha amd64 ~arm hppa ia64 ~ppc ~ppc64 ~s390 ~sh sparc ~sparc-fbsd x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 ~arm hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
 # When MY_EXTRAS is bumped, the index should be revised to exclude these.
 EPATCH_EXCLUDE=''
@@ -43,11 +43,11 @@ src_test() {
 			mysql_disable_test "archive_gis" "Totally broken in 5.0.42"
 			;;
 
-			5.0.4[3-9]|5.0.[56]*|5.0.70)
+			5.0.44|5.0.45|5.0.46|5.0.48|5.0.5[0-7]*)
 			[ "$(tc-endian)" == "big" ] && \
 			mysql_disable_test \
 				"archive_gis" \
-				"Broken in 5.0.43-70 on big-endian boxes only"
+				"Broken in 5.0.44-56 on big-endian boxes only"
 			;;
 		esac
 
