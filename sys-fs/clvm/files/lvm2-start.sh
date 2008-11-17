@@ -1,5 +1,5 @@
 # /lib/rcscripts/addons/lvm2-start.sh
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/clvm/files/Attic/lvm2-start.sh,v 1.4 2008/11/21 23:31:44 xmerlin Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/clvm/files/Attic/lvm2-start.sh,v 1.3 2006/07/13 08:23:55 xmerlin Exp $
 
 # LVM support for /usr, /home, /opt ....
 # This should be done *before* checking local
@@ -21,11 +21,7 @@ if [[ -z ${CDBOOT} ]] && [[ -x /sbin/vgscan ]] ; then
 		if [[ $? == 0 ]] && [[ -x /sbin/vgchange ]] && \
 		   [[ -f /etc/lvmtab || -d /etc/lvm ]]
 		then
-			noclustervgs=`/sbin/vgdisplay 2> /dev/null | \
-				awk 'BEGIN {RS="VG Name"} {if (!/Clustered/) { if ($1 != "---") print $1; } }'`
-			for vg in $noclustervgs; do
-				/sbin/vgchange --ignorelockingfailure -a y ${vg} >/dev/null
-			done
+			/sbin/vgchange --ignorelockingfailure -a y >/dev/null
 		fi
 		eend $? "Failed to setup the LVM"
 	fi
