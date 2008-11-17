@@ -4,7 +4,7 @@
 
 depend() {
 	need net
-	use dns logger puppetmaster
+	use dns logger
 }
 
 checkconfig() {
