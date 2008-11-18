@@ -1,9 +1,9 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/config_confd/Attic/config_confd-0.0.2.ebuild,v 1.3 2008/11/23 18:09:09 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/config_confd/Attic/config_confd-0.0.2.ebuild,v 1.2 2005/07/09 21:35:58 swegener Exp $
 
 DESCRIPTION="Configuration editor for the /etc/conf.d files"
-HOMEPAGE="http://www.damz.net/config_confd/"
+HOMEPAGE="http://libconf.net/config_confd/"
 SRC_URI="http://libconf.net/config_confd/download/${P}.tar.bz2"
 
 SLOT="0"
