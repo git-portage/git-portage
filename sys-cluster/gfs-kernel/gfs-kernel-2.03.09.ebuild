@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/gfs-kernel/gfs-kernel-2.03.09.ebuild,v 1.4 2008/11/22 02:32:24 xmerlin Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/gfs-kernel/gfs-kernel-2.03.09.ebuild,v 1.2 2008/11/14 00:00:30 xmerlin Exp $
 
 inherit eutils linux-mod linux-info versionator
 
@@ -11,7 +11,7 @@ MAJ_PV="$(get_major_version)"
 MIN_PV="$(get_version_component_range 2).$(get_version_component_range 3)"
 
 DESCRIPTION="GFS kernel module"
-HOMEPAGE="http://sources.redhat.com/cluster/wiki/"
+HOMEPAGE="http://sources.redhat.com/cluster/"
 SRC_URI="ftp://sources.redhat.com/pub/cluster/releases/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -35,6 +35,15 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+
+	if kernel_is 2 6; then
+		if [ "$KV_PATCH" -lt "24" ] ; then
+			epatch "${FILESDIR}"/${P}-before-2.6.24.diff || die
+		fi
+		if [ "$KV_PATCH" -lt "23" ] ; then
+			epatch "${FILESDIR}"/${P}-before-2.6.23.diff || die
+		fi
+	fi
 
 }
 
