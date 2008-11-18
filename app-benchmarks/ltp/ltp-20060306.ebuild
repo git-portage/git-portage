@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/ltp/Attic/ltp-20060306.ebuild,v 1.3 2008/11/23 15:00:37 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/ltp/Attic/ltp-20060306.ebuild,v 1.2 2007/06/26 01:33:38 mr_bones_ Exp $
 
 inherit eutils portability
 
@@ -19,13 +19,13 @@ DEPEND="virtual/libc"
 
 src_unpack() {
 	unpack ${A}
-	cd "${S}"
+	cd ${S}
 	# IDcheck patch not needed anymore, superseded by CREATE=0
-	epatch "${FILESDIR}/runltp-path.patch"
+	epatch ${FILESDIR}/runltp-path.patch
 
 	# All that remains of bad perl paths
 	sed -i -e '1s,#!/usr/bin/perl5,#!/usr/bin/perl,' \
-		"${S}/testcases/ballista/ballista/create_code_standAlone.pl"
+		${S}/testcases/ballista/ballista/create_code_standAlone.pl
 }
 
 src_compile() {
@@ -45,7 +45,7 @@ src_install() {
 	dodir /usr/libexec/ltp/testcases
 
 	treecopy testcases pan/pan runtest ver_linux IDcheck.sh \
-		"${D}/usr/libexec/ltp" || die "treecopy failed"
+		${D}/usr/libexec/ltp || die "treecopy failed"
 	# TODO: clean up testcases directory to only include the data files
 
 	dobin runltp runalltests.sh || die "dobin failed"
@@ -54,7 +54,7 @@ src_install() {
 	# cp ltpmenu ${D}/usr/bin
 
 	# fix world-writable files
-	chmod -R o-w "${D}/usr/libexec/ltp/testcases"
+	chmod -R o-w ${D}/usr/libexec/ltp/testcases
 	# Full list, TODO: fix in upstream
 ##	a=/usr/libexec/ltp/testcases
 ##	for i in ${a}/network/tcp_cmds/ftp/datafiles/ascii.sm \
