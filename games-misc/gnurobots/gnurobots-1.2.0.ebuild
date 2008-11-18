@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-misc/gnurobots/Attic/gnurobots-1.2.0.ebuild,v 1.3 2008/11/22 17:47:17 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-misc/gnurobots/Attic/gnurobots-1.2.0.ebuild,v 1.1 2008/11/14 15:34:46 tupone Exp $
 
 inherit games
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 RESTRICT="test"
 
