@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/ndiswrapper/Attic/ndiswrapper-1.53-r1.ebuild,v 1.2 2008/11/20 15:40:08 peper Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/ndiswrapper/Attic/ndiswrapper-1.53-r1.ebuild,v 1.1 2008/10/27 12:52:56 peper Exp $
 
 inherit linux-mod
 
@@ -42,11 +42,6 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	convert_to_m "${S}/driver/Makefile"
-
-	if kernel_is ge 2 6 27 ; then
-		cd "${S}"
-		epatch "$FILESDIR/ndiswrapper-2.6.27.patch"
-	fi
 
 	cd "${S}/driver"
 	epatch "${FILESDIR}/ndiswrapper-CVE-2008-4395.patch"
