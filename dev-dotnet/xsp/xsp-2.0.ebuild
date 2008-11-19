@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/xsp/Attic/xsp-1.2.4-r1.ebuild,v 1.2 2008/05/30 22:51:22 jurek Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/xsp/Attic/xsp-2.0.ebuild,v 1.1 2008/11/19 22:57:41 loki_val Exp $
 
 inherit mono multilib autotools eutils
 
@@ -14,8 +14,10 @@ KEYWORDS="~amd64 ~ppc ~x86"
 
 IUSE=""
 
-DEPEND=">=dev-lang/mono-${PV}
-		dev-util/pkgconfig"
+RDEPEND=">=dev-lang/mono-${PV}
+		  =dev-db/sqlite-3*"
+DEPEND="${RDEPEND}
+		>=dev-util/pkgconfig-0.20"
 
 pkg_preinst() {
 	enewgroup aspnet
@@ -27,15 +29,16 @@ pkg_preinst() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+
 	sed -i -e "s:mkinstalldirs) \$(data:mkinstalldirs) \$(DESTDIR)\$(data:" \
-		-e "s:gif \$(data:gif \$(DESTDIR)\$(data:" \
-		"${S}"/test/2.0/treeview/Makefile.am
+		   -e "s:gif \$(data:gif \$(DESTDIR)\$(data:" \
+	"${S}"/test/2.0/treeview/Makefile.am
 	eautoreconf
 }
 
 src_compile() {
 	econf || die "./configure failed!"
-	emake || {
+	emake -j1 || {
 		echo
 		eerror "If xsp fails to build, try unmerging and re-emerging it."
 		die "make failed"
