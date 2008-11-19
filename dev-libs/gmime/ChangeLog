@@ -1,20 +1,6 @@
 # ChangeLog for dev-libs/gmime
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/gmime/ChangeLog,v 1.81 2008/11/22 13:52:37 maekke Exp $
-
-  22 Nov 2008; Markus Meier <maekke@gentoo.org> gmime-2.2.23.ebuild:
-  amd64/x86 stable, bug #247633
-
-  20 Nov 2008; Brent Baude <ranger@gentoo.org> gmime-2.2.23.ebuild:
-  stable ppc64, bug 247633
-
-  20 Nov 2008; Tobias Scherbaum <dertobi123@gentoo.org> gmime-2.2.23.ebuild:
-  ppc stable, bug #247633
-
-*gmime-2.4.3 (19 Nov 2008)
-
-  19 Nov 2008; Gilles Dartiguelongue <eva@gentoo.org> +gmime-2.4.3.ebuild:
-  Bump to 2.4.3. Bug fixes.
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/gmime/ChangeLog,v 1.77 2008/10/18 23:07:52 ranger Exp $
 
   18 Oct 2008; Brent Baude <ranger@gentoo.org> gmime-2.2.17.ebuild:
   Marking gmime-2.2.17 ppc stable for bug 236971
