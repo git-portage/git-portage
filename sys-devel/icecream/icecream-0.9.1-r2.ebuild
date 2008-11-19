@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/icecream/Attic/icecream-0.9.1-r2.ebuild,v 1.6 2008/11/24 23:34:41 bluebird Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/icecream/Attic/icecream-0.9.1-r2.ebuild,v 1.5 2008/09/11 13:32:11 ranger Exp $
 
 inherit autotools eutils flag-o-matic
 
@@ -25,8 +25,8 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/${PN}-dont-create-symlinks.patch"
-	epatch "${FILESDIR}/${PN}-conf.d-verbosity.patch"
+	epatch "${FILESDIR}/${PV}-dont-create-symlinks.patch"
+	epatch "${FILESDIR}/${PV}-conf.d-verbosity.patch"
 
 	# honour ${CFLAGS_${ABI}} environment variable, bug #232931
 	epatch "${FILESDIR}/${PN}-gentoo-multilib.patch"
