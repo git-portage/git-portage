@@ -3,11 +3,11 @@
 <pkgmetadata>
   <herd>net-irc</herd>
   <maintainer>
-	  <email>daniel.pielmeier@googlemail.com</email>
-	  <name>Daniel Pielmeier</name>
+    <email>jokey@gentoo.org</email>
   </maintainer>
   <maintainer>
-    <email>darkside@gentoo.org</email>
+	  <email>daniel.pielmeier@googlemail.com</email>
+	  <name>Daniel Pielmeier</name>
   </maintainer>
   <use>
     <flag name="X">
