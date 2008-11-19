@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-133.ebuild,v 1.3 2008/11/23 20:05:19 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-133.ebuild,v 1.1 2008/11/19 19:41:22 zzam Exp $
 
-inherit eutils flag-o-matic multilib toolchain-funcs versionator
+inherit eutils flag-o-matic multilib toolchain-funcs versionator autotools
 
 DESCRIPTION="Linux dynamic and persistent device naming support (aka userspace devfs)"
 HOMEPAGE="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html"
@@ -87,7 +87,13 @@ src_unpack() {
 		extras/rule_generator/write_*_rules \
 		udev/udev-util.c \
 		udev/udev-rules.c \
-		udev/udevd.c || die "sed failed"
+		udev/udevd.c \
+		$(find -name "Makefile.*") || die "sed failed"
+
+	# fix version of volume_id lib
+	sed -e 's/-version-info/-version-number/' -i extras/volume_id/lib/Makefile.am
+
+	eautoreconf
 }
 
 src_compile() {
@@ -109,13 +115,6 @@ src_compile() {
 src_install() {
 	into /
 	emake DESTDIR="${D}" install || die "make install failed"
-	if [[ "$(get_libdir)" != "lib" ]]; then
-		# we can not just rename /lib to /lib64, because
-		# make install creates /lib64 and /lib
-		mkdir -p "${D}/$(get_libdir)"
-		mv "${D}"/lib/* "${D}/$(get_libdir)/"
-		rmdir "${D}"/lib
-	fi
 
 	exeinto "${udev_helper_dir}"
 	newexe "${FILESDIR}"/net-130-r1.sh net.sh	|| die "net.sh not installed properly"
@@ -158,7 +157,7 @@ src_install() {
 
 	# our udev hooks into the rc system
 	insinto /$(get_libdir)/rcscripts/addons
-	newins "${FILESDIR}"/udev-start-133.sh udev-start.sh
+	newins "${FILESDIR}"/udev-start-126.sh udev-start.sh
 	newins "${FILESDIR}"/udev-stop-126.sh udev-stop.sh
 
 	# The udev-post init-script
@@ -166,9 +165,6 @@ src_install() {
 
 	# init-script for >=openrc-0.3.1, Bug #240984
 	newinitd "${FILESDIR}/udev.initd" udev
-
-	# config file for init-script and start-addon
-	newconfd "${FILESDIR}/udev.confd" udev
 
 	insinto /etc/modprobe.d
 	newins "${FILESDIR}"/blacklist-110 blacklist
