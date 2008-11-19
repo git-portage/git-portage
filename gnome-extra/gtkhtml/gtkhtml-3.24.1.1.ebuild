@@ -1,6 +1,7 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gtkhtml/Attic/gtkhtml-3.18.2.ebuild,v 1.5 2008/08/12 13:42:31 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gtkhtml/Attic/gtkhtml-3.24.1.1.ebuild,v 1.1 2008/11/19 22:06:39 eva Exp $
+
 EAPI="1"
 
 inherit gnome2
@@ -10,28 +11,35 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="3.14"
-KEYWORDS="alpha amd64 ~arm ~hppa ia64 ppc ~ppc64 ~sh sparc x86 ~x86-fbsd"
-IUSE="static"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
+IUSE=""
 
+# We keep bonobo until we can make sure no apps in tree uses
+# the old composer code.
+# We could probably enable the glade catalog installation with
+# USE="glade" if someone requests it
 RDEPEND=">=x11-libs/gtk+-2.12
 	>=gnome-base/gail-1.1
 	>=x11-themes/gnome-icon-theme-1.2
 	>=gnome-base/libbonobo-2.20.3
 	>=gnome-base/libbonoboui-2.2.4
+	>=gnome-base/orbit-2
 	>=gnome-base/libglade-2
 	>=gnome-base/libgnomeui-2
-	>=gnome-base/orbit-2
+	app-text/enchant
+	gnome-base/gconf:2
+	>=app-text/iso-codes-0.49
 	net-libs/libsoup:2.4"
 DEPEND="${RDEPEND}
 	sys-devel/gettext
-	>=dev-util/intltool-0.35.5
+	>=dev-util/intltool-0.36.3
 	>=dev-util/pkgconfig-0.9"
 
 DOCS="AUTHORS BUGS ChangeLog NEWS README TODO"
 
 pkg_setup() {
 	ELTCONF="--reverse-deps"
-	G2CONF="$(use_enable static) --enable-file-chooser"
+	G2CONF="--disable-static --with-bonobo-editor"
 }
 
 src_unpack() {
