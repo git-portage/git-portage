@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/radvd/Attic/radvd-1.1.ebuild,v 1.4 2008/11/19 00:03:54 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/radvd/Attic/radvd-1.2.ebuild,v 1.1 2008/11/19 00:04:47 robbat2 Exp $
 
 inherit eutils autotools
 
