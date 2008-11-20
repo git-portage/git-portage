@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/nxserver-freenx/Attic/nxserver-freenx-0.7.3-r1.ebuild,v 1.2 2008/11/24 14:14:11 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/nxserver-freenx/Attic/nxserver-freenx-0.7.3-r1.ebuild,v 1.1 2008/08/25 18:36:05 voyageur Exp $
 
 inherit multilib eutils
 
@@ -51,10 +51,8 @@ src_unpack() {
 	epatch "${FILESDIR}"/${P}-roundrobin.patch
 	epatch "${FILESDIR}"/${PN}-0.7.2-cups.patch
 
-	sed -e "s/3\.\[012\]/3.[0123]/g" \
-		-e "/PATH_LIB=/s/lib/$(get_libdir)/g" \
-		-e "/REAL_PATH_BIN=/s/lib/$(get_libdir)/g" \
-		-i nxloadconfig || die "nxloadconfig sed failed"
+	sed -i "/PATH_LIB=/s/lib/$(get_libdir)/g" nxloadconfig || die
+	sed -i "/REAL_PATH_BIN=/s/lib/$(get_libdir)/g" nxloadconfig || die
 
 	# Change the defaults in nxloadconfig to meet the users needs.
 	if use arts ; then
