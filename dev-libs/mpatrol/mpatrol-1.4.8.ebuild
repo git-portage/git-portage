@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/mpatrol/Attic/mpatrol-1.4.8.ebuild,v 1.16 2008/11/21 22:44:12 keri Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/mpatrol/Attic/mpatrol-1.4.8.ebuild,v 1.15 2004/06/24 23:28:52 agriffis Exp $
 
 IUSE="X"
 
@@ -14,8 +14,7 @@ LICENSE="GPL-2"
 KEYWORDS="x86 sparc"
 
 # To use X, mpatrol requires Motif
-DEPEND="!dev-lang/mercury
-	X? ( x11-libs/openmotif )"
+DEPEND="X? ( x11-libs/openmotif )"
 
 src_compile() {
 	cd $S/build/unix
