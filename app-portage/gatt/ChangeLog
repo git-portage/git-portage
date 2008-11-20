@@ -1,15 +1,6 @@
 # ChangeLog for app-portage/gatt
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/gatt/Attic/ChangeLog,v 1.23 2008/11/25 17:55:09 fmccor Exp $
-
-  25 Nov 2008; Ferris McCormick <fmccor@gentoo.org> gatt-0.6.2.ebuild:
-  Sparc stable, Bug #247464, accepting the invitation in Comment #4.
-
-  22 Nov 2008; Markus Meier <maekke@gentoo.org> gatt-0.6.2.ebuild:
-  x86 stable, bug #247464
-
-  21 Nov 2008; Thomas Anderson <gentoofan23@gentoo.org> gatt-0.6.2.ebuild:
-  stable amd64, bug 247464
+# $Header: /var/cvsroot/gentoo-x86/app-portage/gatt/Attic/ChangeLog,v 1.20 2008/08/12 15:24:17 ranger Exp $
 
   12 Aug 2008; Brent Baude <ranger@gentoo.org> ChangeLog:
   Marking 231233 ppc64 and ppc for bug gatt-0.6.1-r1.ebuild
