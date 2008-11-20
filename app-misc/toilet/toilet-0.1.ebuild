@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/toilet/Attic/toilet-0.1.ebuild,v 1.10 2008/11/25 16:34:17 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/toilet/Attic/toilet-0.1.ebuild,v 1.9 2008/10/27 05:48:33 vapier Exp $
 
 inherit autotools eutils
 
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="amd64 arm ~ppc ~sparc x86 ~x86-fbsd"
 IUSE=""
 
-RDEPEND="<media-libs/libcaca-0.99_beta16"
+RDEPEND="media-libs/libcaca"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
