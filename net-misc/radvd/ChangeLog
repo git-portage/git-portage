@@ -1,6 +1,21 @@
 # ChangeLog for net-misc/radvd
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/radvd/ChangeLog,v 1.43 2008/08/17 06:58:32 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/radvd/ChangeLog,v 1.47 2008/11/19 00:04:47 robbat2 Exp $
+
+*radvd-1.2 (19 Nov 2008)
+
+  19 Nov 2008; Robin H. Johnson <robbat2@gentoo.org> +radvd-1.2.ebuild:
+  Version bump.
+
+  19 Nov 2008; Robin H. Johnson <robbat2@gentoo.org> radvd-1.1.ebuild:
+  Avoid autotools maintainer mode.
+
+  19 Nov 2008; Robin H. Johnson <robbat2@gentoo.org> files/radvd.init:
+  Bug #230105, remember -w to sysctl.
+
+  18 Nov 2008; Robin H. Johnson <robbat2@gentoo.org>
+  +files/radvd-1.1-parallel-make.patch, radvd-1.1.ebuild:
+  Fix parallel make bug #198774.
 
   17 Aug 2008; Torsten Veller <tove@gentoo.org> metadata.xml:
   Remove latexer from metadata.xml (#206688)
