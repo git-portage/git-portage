@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/amanda
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.46 2008/09/24 09:20:49 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.47 2008/11/19 02:13:07 robbat2 Exp $
+
+*amanda-2.6.0_p2-r4 (19 Nov 2008)
+
+  19 Nov 2008; Robin H. Johnson <robbat2@gentoo.org> metadata.xml,
+  +amanda-2.6.0_p2-r4.ebuild:
+  Split out devpay support, as it is not for all users, thanks to Lisa
+  Seelye <lisa@thedoh.com>.
 
   24 Sep 2008; Robin H. Johnson <robbat2@gentoo.org>
   amanda-2.6.0_p2-r2.ebuild, amanda-2.6.0_p2-r3.ebuild:
