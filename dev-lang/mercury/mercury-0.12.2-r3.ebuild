@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/mercury/Attic/mercury-0.12.2-r3.ebuild,v 1.18 2008/11/21 22:51:21 keri Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/mercury/Attic/mercury-0.12.2-r3.ebuild,v 1.17 2008/11/21 22:38:56 keri Exp $
 
 inherit eutils
 
@@ -17,8 +17,7 @@ KEYWORDS="~amd64 ppc ~sparc x86"
 
 IUSE="debug minimal readline threads"
 
-DEPEND="!dev-libs/mpatrol
-	!dev-util/mono-debugger
+DEPEND="!dev-util/mpatrol
 	readline? ( sys-libs/readline )"
 
 S="${WORKDIR}"/${MY_P}
