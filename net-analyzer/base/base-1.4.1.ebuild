@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/base/Attic/base-1.4.1.ebuild,v 1.2 2008/11/18 17:30:11 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/base/Attic/base-1.4.1.ebuild,v 1.4 2008/11/21 11:43:25 pva Exp $
 
 inherit webapp versionator eutils depend.apache depend.php
 
@@ -27,6 +27,8 @@ want_apache
 DEPEND=">=sys-libs/zlib-1.2.1-r3"
 RDEPEND="${DEPEND}
 	dev-php/adodb
+	dev-php/PEAR-Mail
+	dev-php/PEAR-Mail_Mime
 	gd? ( >=dev-php/PEAR-PEAR-1.3.6-r1
 		>=dev-php/PEAR-Image_Color-1.0.2
 		>=dev-php/PEAR-Log-1.9.3
@@ -41,7 +43,7 @@ RDEPEND="${DEPEND}
 # Require PHP.
 need_php5
 
-S=${WORKDIR}/${PN}-php4
+S="${WORKDIR}/${PN}-php4"
 
 pkg_setup() {
 	webapp_pkg_setup
