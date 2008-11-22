@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xidle/xidle-24102005.ebuild,v 1.2 2008/11/24 09:15:43 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xidle/xidle-24102005.ebuild,v 1.1 2008/11/12 06:57:33 jer Exp $
 
 inherit eutils toolchain-funcs
 
@@ -30,12 +30,12 @@ src_unpack() {
 src_compile() {
 	local my_libs="-lXss -lXext -lX11"
 	local my_compile
-	my_compile="$(tc-getCC) ${CFLAGS} ${LDFLAGS} -o ${PN}{,.c} ${my_libs}"
+	my_compile="$(tc-getCC) ${CFLAGS} ${LDFLAGS} ${my_libs} -o ${PN}{,.c}"
 	echo ${my_compile}
-	eval ${my_compile} || die "compile failed"
+	eval ${my_compile}
 }
 
 src_install() {
-	dobin ${PN} || die "dobin failed"
-	doman ${PN}.1 || die "doman failed"
+	dobin ${PN}
+	doman ${PN}.1
 }
