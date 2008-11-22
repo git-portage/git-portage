@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/busybox/Attic/busybox-1.12.2-r1.ebuild,v 1.2 2008/11/23 15:02:44 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/busybox/Attic/busybox-1.12.2-r1.ebuild,v 1.1 2008/11/21 00:14:05 matsuu Exp $
 
 inherit eutils flag-o-matic savedconfig toolchain-funcs
 
@@ -75,7 +75,7 @@ busybox_config_option() {
 		   return 0
 		   ;;
 	esac
-	einfo $(grep "CONFIG_$2[= ]" .config || echo Could not find CONFIG_$2 ...)
+	einfo $(grep "CONFIG_$2[= ]" .config)
 }
 
 src_unpack() {
@@ -147,21 +147,10 @@ src_unpack() {
 	busybox_config_option selinux SELINUX
 
 	# default a bunch of uncommon options to off
-	local opt
-	for opt in \
-		APP_UDHCPD \
-		CRONTAB \
-		DC DEBUG_CROND_OPTION DEBUG_INIT DPKG \
-		FAKEIDENTD FBSPLASH FEATURE_UDHCP_DEBUG FOLD FTP{GET,PUT} \
-		HTTPD HUSH \
-		INETD INOTIFYD IPCALC \
-		LASH LOCALE_SUPPORT LOGNAME \
-		MSH \
-		OD \
-		SULOGIN \
-		TASKSET TFTP{,D} \
-		RPM RPM2CPIO \
-		UDPSVD UUDECODE UUENCODE
+	for opt in LOCALE_SUPPORT TFTP FTP{GET,PUT} IPCALC TFTP HUSH \
+		LASH MSH INETD DPKG RPM2CPIO RPM FOLD LOGNAME OD CRONTAB \
+		UUDECODE UUENCODE SULOGIN DC DEBUG_YANK_SUSv2 DEBUG_INIT \
+		DEBUG_CROND_OPTION FEATURE_UDHCP_DEBUG TASKSET INOTIFYD
 	do
 		busybox_config_option n ${opt}
 	done
