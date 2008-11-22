@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/gnuplot/Attic/gnuplot-4.2.4-r1.ebuild,v 1.4 2008/11/27 00:00:10 dirtyepic Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/gnuplot/Attic/gnuplot-4.2.4-r1.ebuild,v 1.2 2008/10/28 07:34:17 ulm Exp $
 
 WX_GTK_VER="2.8"
 
@@ -56,7 +56,6 @@ pkg_setup() {
 		eerror "media-libs/gd needs to be built with PNG support"
 		die "please rebuilt media-libs/gd with USE=png"
 	fi
-	use wxwindows && wxwidgets_pkg_setup
 }
 
 src_unpack() {
