@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-133.ebuild,v 1.5 2008/11/25 19:32:53 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-133.ebuild,v 1.2 2008/11/19 21:20:02 zzam Exp $
 
 inherit eutils flag-o-matic multilib toolchain-funcs versionator
 
@@ -57,6 +57,9 @@ pkg_setup() {
 	fi
 }
 
+# TODO: Can we keep the sources access /lib/udev and just
+#   install the files to /lib64/udev ?
+#   This makes eautoreconf superfluous
 sed_helper_dir() {
 	sed -e "s#/lib/udev#${udev_helper_dir}#" -i "$@"
 }
@@ -67,8 +70,6 @@ src_unpack() {
 	cd "${S}"
 
 	# patches go here...
-	epatch "${FILESDIR}/${P}-silence-physdev-warnings.diff"
-	epatch "${FILESDIR}/${P}-rules-update.diff"
 
 	# Make sure there is no sudden changes to upstream rules file
 	# (more for my own needs than anything else ...)
@@ -100,6 +101,8 @@ src_compile() {
 		--enable-logging \
 		$(use_with selinux)
 
+	# FIXME: logging causes messages about compat rules on boot
+
 	emake || die "compiling udev failed"
 }
 
@@ -107,8 +110,6 @@ src_install() {
 	into /
 	emake DESTDIR="${D}" install || die "make install failed"
 	if [[ "$(get_libdir)" != "lib" ]]; then
-		# we can not just rename /lib to /lib64, because
-		# make install creates /lib64 and /lib
 		mkdir -p "${D}/$(get_libdir)"
 		mv "${D}"/lib/* "${D}/$(get_libdir)/"
 		rmdir "${D}"/lib
@@ -155,7 +156,7 @@ src_install() {
 
 	# our udev hooks into the rc system
 	insinto /$(get_libdir)/rcscripts/addons
-	newins "${FILESDIR}"/udev-start-133.sh udev-start.sh
+	newins "${FILESDIR}"/udev-start-126.sh udev-start.sh
 	newins "${FILESDIR}"/udev-stop-126.sh udev-stop.sh
 
 	# The udev-post init-script
@@ -163,9 +164,6 @@ src_install() {
 
 	# init-script for >=openrc-0.3.1, Bug #240984
 	newinitd "${FILESDIR}/udev.initd" udev
-
-	# config file for init-script and start-addon
-	newconfd "${FILESDIR}/udev.confd" udev
 
 	insinto /etc/modprobe.d
 	newins "${FILESDIR}"/blacklist-110 blacklist
