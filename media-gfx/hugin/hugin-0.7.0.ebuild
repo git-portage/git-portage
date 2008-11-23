@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/Attic/hugin-0.7.0.ebuild,v 1.3 2008/11/26 21:08:36 dirtyepic Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/Attic/hugin-0.7.0.ebuild,v 1.2 2008/11/22 23:41:31 maekke Exp $
 
 EAPI="1"
 WX_GTK_VER="2.8"
@@ -37,7 +37,6 @@ pkg_setup() {
 		eerror "$msg"
 		die "$msg"
 	fi
-	wxwidgets_pkg_setup
 }
 
 src_unpack() {
