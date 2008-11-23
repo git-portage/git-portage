@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/netbeans/Attic/netbeans-6.5-r1.ebuild,v 1.4 2008/11/26 19:47:07 fordfrog Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/netbeans/Attic/netbeans-6.5-r1.ebuild,v 1.1 2008/11/22 18:11:25 fordfrog Exp $
 
 EAPI="2"
 WANT_SPLIT_ANT="true"
@@ -237,171 +237,93 @@ DESTINATION="/usr/share/netbeans-${SLOT}"
 JAVA_PKG_BSFIX="off"
 
 pkg_setup() {
-	# direct deps: harness, ide, java
-	if use netbeans_modules_apisupport && ! ( \
-		use netbeans_modules_harness && \
-		use netbeans_modules_ide && \
-		use netbeans_modules_java && \
-		use netbeans_modules_websvccommon ) ; then
-		eerror "'apisupport' module requires 'harness', 'ide', 'java' and 'websvccommon' modules"
-		die
+	if use netbeans_modules_apisupport && ! ( use netbeans_modules_harness && use netbeans_modules_ide && use netbeans_modules_java ) ; then
+		eerror "'apisupport' USE flag requires 'harness', 'ide' and 'java' USE flags"
+		exit 1
 	fi
 
-	# direct deps: ide
 	if use netbeans_modules_cnd && ! use netbeans_modules_ide ; then
-		eerror "'cnd' module requires 'ide' module"
-		die
+		eerror "'cnd' USE flag requires 'ide' USE flag"
+		exit 1
 	fi
 
-	# direct deps: gsf, ide, java
-	if use netbeans_modules_groovy && ! ( \
-		use netbeans_modules_gsf && \
-		use netbeans_modules_ide && \
-		use netbeans_modules_java && \
-		use netbeans_modules_websvccommon ) ; then
-		eerror "'groovy' module requires 'gsf', 'ide', 'java' and 'websvccommon' modules"
-		die
+	if use netbeans_modules_groovy && ! (use netbeans_modules_gsf && use netbeans_modules_ide && use netbeans_modules_java ) ; then
+		eerror "'groovy' USE flag requires 'gsf', 'ide' and 'java'"
+		exit 1
 	fi
 
-	# direct deps: ide
 	if use netbeans_modules_gsf && ! use netbeans_modules_ide ; then
-		eerror "'gsf' module requires 'ide' module"
-		die
+		eerror "'gsf' USE flag requires 'ide' USE flag"
+		exit 1
 	fi
 
-	# direct deps: gsf, ide, j2ee, java
-	if use netbeans_modules_identity && ! ( \
-		use netbeans_modules_groovy && \
-		use netbeans_modules_gsf && \
-		use netbeans_modules_ide && \
-		use netbeans_modules_j2ee && \
-		use netbeans_modules_java && \
-		use netbeans_modules_websvccommon ) ; then
-		eerror "'identity' module requires 'groovy', 'gsf', 'ide', 'j2ee', 'java' and 'websvccommon'  modules"
-		die
+	if use netbeans_modules_identity && ! ( use netbeans_modules_gsf && use netbeans_modules_ide && use netbeans_modules_j2ee && use netbeans_modules_java ) ; then
+		eerror "'identity' USE flag requires 'gsf', 'ide', 'j2ee' and 'java' USE flags"
+		exit 1
 	fi
 
-	# direct deps: groovy, gsf, ide, java
-	if use netbeans_modules_j2ee && ! ( \
-		use netbeans_modules_groovy && \
-		use netbeans_modules_gsf && \
-		use netbeans_modules_ide && \
-		use netbeans_modules_java && \
-		use netbeans_modules_websvccommon ) ; then
-		eerror "'j2ee' module requires 'groovy', 'gsf', 'ide', 'java' and 'websvccommon' modules"
-		die
+	if use netbeans_modules_j2ee && ! ( use netbeans_modules_groovy && use netbeans_modules_gsf && use netbeans_modules_ide && use netbeans_modules_java ) ; then
+		eerror "'j2ee' USE flag requires 'groovy', 'gsf', 'ide' and 'java' USE flags"
+		exit 1
 	fi
 
-	# direct deps: ide, websvccommon
-	if use netbeans_modules_java && ! ( \
-		use netbeans_modules_ide && \
-		use netbeans_modules_websvccommon ) ; then
-		eerror "'java' module requires 'ide' and 'websvccommon' module"
-		die
+	if use netbeans_modules_java && ! ( use netbeans_modules_ide && use netbeans_modules_websvccommon ) ; then
+		eerror "'java' USE flag requires 'ide' and 'websvccommon' USE flag"
+		exit 1
 	fi
 
 	# because of bug http://www.netbeans.org/issues/show_bug.cgi?id=151535 'j2ee' cluster is also
 	# needed to build 'mobility' cluster
 	# because of bug http://www.netbeans.org/issues/show_bug.cgi?id=151538 'apisupport' cluster is also
 	# needed to build 'mobility' cluster
-	# direct deps: apisupport, ide, j2ee, java
-	if use netbeans_modules_mobility && ! ( \
-		use netbeans_modules_apisupport && \
-		use netbeans_modules_groovy && \
-		use netbeans_modules_gsf && \
-		use netbeans_modules_harness && \
-		use netbeans_modules_ide && \
-		use netbeans_modules_j2ee && \
-		use netbeans_modules_java && \
-		use netbeans_modules_websvccommon ) ; then
-		eerror "'mobility' module requires 'apisupport', 'groovy', 'gsf', 'harness', 'ide', 'j2ee', 'java' and 'websvccommon' modules"
-		die
+	if use netbeans_modules_mobility && ! ( use netbeans_modules_apisupport && use netbeans_modules_ide && use netbeans_modules_j2ee && use netbeans_modules_java ) ; then
+		eerror "'mobility' USE flag requires 'apisupport', 'ide', 'j2ee' and 'java' USE flags"
+		exit 1
 	fi
 
-	# direct deps: harness, ide
-	if use netbeans_modules_nb && ! ( \
-		use netbeans_modules_harness && \
-		use netbeans_modules_ide ) ; then
-		eerror "'nb' module requires 'harness' and 'ide' module"
-		die
+	if use netbeans_modules_nb && ! ( use netbeans_modules_harness && use netbeans_modules_ide ) ; then
+		eerror "'nb' USE flag requires 'harness' and 'ide' USE flag"
+		exit 1
 	fi
 
-	# direct deps: gsf, ide, websvccommon
-	if use netbeans_modules_php && ! ( \
-		use netbeans_modules_gsf && \
-		use netbeans_modules_ide && \
-		use netbeans_modules_websvccommon ) ; then
-		eerror "'php' module requires 'gsf', 'ide' and 'websvccommon' modules"
-		die
+	if use netbeans_modules_php && ! ( use netbeans_modules_gsf && use netbeans_modules_ide && use netbeans_modules_websvccommon ) ; then
+		eerror "'php' USE flag requires 'gsf', 'ide' and 'websvccommon' USE flags"
+		exit 1
 	fi
 
-	# direct deps: gsf, ide, j2ee, java
-	if use netbeans_modules_profiler && ! ( \
-		use netbeans_modules_groovy && \
-		use netbeans_modules_gsf && \
-		use netbeans_modules_ide && \
-		use netbeans_modules_j2ee && \
-		use netbeans_modules_java && \
-		use netbeans_modules_websvccommon ) ; then
-		eerror "'profiler' module requires 'groovy', 'gsf', 'ide', 'j2ee', 'java' and 'websvccommon' modules"
-		die
+	if use netbeans_modules_profiler && ! ( use netbeans_modules_gsf && use netbeans_modules_ide && use netbeans_modules_j2ee && use netbeans_modules_java ) ; then
+		eerror "'profiler' USE flag requires 'gsf', 'ide', 'j2ee' and 'java' USE flags"
+		exit 1
 	fi
 
-	# direct deps: gsf, ide
 	#if use netbeans_modules_ruby && ! ( use netbeans_modules_gsf && use netbeans_modules_ide ) ; then
-	#	eerror "'ruby' module requires 'gsf' and 'ide' module"
-	#	die
+	#	eerror "'ruby' USE flag requires 'gsf' and 'ide' USE flag"
+	#	exit 1
 	#fi
 
-	# direct deps: gsf, ide, j2ee, java, xml
-	if use netbeans_modules_soa && ! ( \
-		use netbeans_modules_groovy && \
-		use netbeans_modules_gsf && \
-		use netbeans_modules_ide && \
-		use netbeans_modules_j2ee && \
-		use netbeans_modules_java && \
-		use netbeans_modules_websvccommon && \
-		use netbeans_modules_xml ) ; then
-		eerror "'soa' module requires 'groovy', 'gsf', 'ide', 'j2ee', 'java', 'websvccommon' and 'xml' modules"
-		die
+	if use netbeans_modules_soa && ! ( use netbeans_modules_gsf && use netbeans_modules_ide && use netbeans_modules_j2ee && use netbeans_modules_java && use netbeans_modules_xml ) ; then
+		eerror "'soa' USE flag requires 'gsf', 'ide', 'j2ee', 'java' and 'xml' USE flags"
+		exit 1
 	fi
 
-	# direct deps: gsf, ide, j2ee, java
-	if use netbeans_modules_visualweb && ! ( \
-		use netbeans_modules_groovy && \
-		use netbeans_modules_gsf && \
-		use netbeans_modules_ide && \
-		use netbeans_modules_j2ee && \
-		use netbeans_modules_java && \
-		use netbeans_modules_websvccommon ) ; then
-		eerror "'visualweb' module requires 'groovy', 'gsf', 'ide', 'j2ee', 'java' and 'websvccommon' modules"
-		die
+	if use netbeans_modules_visualweb && ! ( use netbeans_modules_gsf && use netbeans_modules_ide && use netbeans_modules_j2ee && use netbeans_modules_java ) ; then
+		eerror "'visualweb' USE flag requires 'gsf', 'ide', 'j2ee' and 'java' USE flags"
+		exit 1
 	fi
 
-	# direct deps: gsf, ide
-	if use netbeans_modules_webcommon && ! ( \
-		use netbeans_modules_gsf && \
-		use netbeans_modules_ide ) ; then
-		eerror "'webcommon' module requires 'gsf' and 'ide' modules"
-		die
+	if use netbeans_modules_webcommon && ! ( use netbeans_modules_gsf && use netbeans_modules_ide ) ; then
+		eerror "'webcommon' USE flag requires 'gsf' and 'ide' USE flags"
+		exit 1
 	fi
 
-	# direct deps: ide
 	if use netbeans_modules_websvccommon && ! use netbeans_modules_ide ; then
-		eerror "'websvccommon' module requires 'ide' module"
-		die
+		eerror "'websvccommon' USE flag requires 'ide' USE flag"
+		exit 1
 	fi
 
-	# direct deps: ide
 	if use netbeans_modules_xml && ! use netbeans_modules_ide ; then
-		eerror "'xml' module requires 'ide' module"
-		die
-	fi
-
-	if ! use netbeans_modules_nb ; then
-		ewarn "You are building netbeans without 'nb' module, this way you will build only specified"
-		ewarn "clusters, not a functional IDE. In case you want functional IDE, add 'nb' to NETBEANS_MODULES."
-		epause 5
+		eerror "'xml' USE flag requires 'ide' USE flag"
+		exit 1
 	fi
 
 	java-pkg-2_pkg_setup
@@ -412,11 +334,6 @@ src_unpack () {
 
 	epatch "${FILESDIR}"/${SLOT}/nbbuild_build.xml.patch \
 		"${FILESDIR}"/${SLOT}/nbbuild_templates_projectized.xml.patch
-
-	if use netbeans_modules_visualweb ; then
-		cd ${S}/visualweb.insync/src/org/netbeans/modules/visualweb/insync/markup || die
-		epatch "${FILESDIR}"/${SLOT}/all-visualweb.insync.JspxSerializer.java.patch
-	fi
 
 	# Clean up nbbuild
 	einfo "Removing prebuilt *.class files from nbbuild"
@@ -435,73 +352,91 @@ src_unpack () {
 	# We do not remove the jars that we ar not able to unbundle atm
 	# More info at: https://overlays.gentoo.org/proj/java/wiki/Netbeans_Maintenance
 
-	sed -e "/libs\.jna\/external\/jna-3\.0\.2\.jar/d" -i ${tmpfile} || die
+	local tmpfileplatform="${T}/platform.txt"
+	cat ${tmpfile} | grep -v "libs.jna/external/jna-3.0.2.jar" > ${tmpfileplatform}
+	mv ${tmpfileplatform} ${tmpfile}
 
 	if use netbeans_modules_groovy ; then
-		sed -e "/groovy\.editor\/external\/groovy-all-1\.5\.6\.jar/d" -i ${tmpfile} || die
+		local tmpfilegroovy="${T}/bundled-groovy.txt"
+		cat ${tmpfile} | grep -v "groovy.editor/external/groovy-all-1.5.6.jar" > ${tmpfilegroovy}
+		mv ${tmpfilegroovy} ${tmpfile}
 	fi
 
 	if use netbeans_modules_ide ; then
-		sed -e "/libs\.jaxb\/external\/jaxb-xjc\.jar/d" -i ${tmpfile} || die
-		sed -e "/libs\.jaxb\/external\/jaxb-impl\.jar/d" -i ${tmpfile} || die
-		sed -e "/libs\.svnClientAdapter\/external\/svnClientAdapter-1\.4\.0\.jar/d" -i ${tmpfile} || die
-		sed -e "/o\.apache\.xml\.resolver\/external\/resolver-1\.2\.jar/d" -i ${tmpfile} || die
-		sed -e "/libs\.javacapi\/external\/javac-api-nb-7\.0-b07\.jar/d" -i ${tmpfile} || die
-		sed -e "/httpserver\/external\/tomcat-webserver-3\.2\.jar/d" -i ${tmpfile} || die
-		sed -e "/libs\.ini4j\/external\/ini4j-0\.2\.6\.jar/d" -i ${tmpfile} || die
+		local tmpfileide="${T}/bundled-ide.txt"
+		cat ${tmpfile} | grep -v "libs.jaxb/external/jaxb-xjc.jar" | \
+			grep -v "libs.jaxb/external/jaxb-impl.jar" | \
+			grep -v "libs.svnClientAdapter/external/svnClientAdapter-1.4.0.jar" | \
+			grep -v "o.apache.xml.resolver/external/resolver-1.2.jar" | \
+			grep -v "libs.javacapi/external/javac-api-nb-7.0-b07.jar" | \
+			grep -v "httpserver/external/tomcat-webserver-3.2.jar" | \
+			grep -v "libs.ini4j/external/ini4j-0.2.6.jar" > ${tmpfileide}
+		mv ${tmpfileide} ${tmpfile}
 	fi
 
 	if use netbeans_modules_j2ee ; then
-		sed -e "/j2eeapis\/external\/jsr88javax\.jar/d" -i ${tmpfile} || die
-		sed -e "/servletjspapi\/external\/servlet2\.5-jsp2\.1-api\.jar/d" -i ${tmpfile} || die
-		sed -e "/web\.jspparser\/external\/glassfish-jspparser-2\.0\.jar/d" -i ${tmpfile} || die
-		sed -e "/j2ee\.sun\.appsrv81\/external\/appservapis-2\.0\.58\.3\.jar/d" -i ${tmpfile} || die
-		sed -e "/j2ee\.sun\.appsrv81\/external\/org-netbeans-modules-j2ee-sun-appsrv81\.jar/d" -i ${tmpfile} || die
-		sed -e "/libs\.glassfish_logging\/external\/glassfish-logging-2\.0\.jar/d" -i ${tmpfile} || die
-		sed -e "/spring\.webmvc\/external\/spring-webmvc-2\.5\.jar/d" -i ${tmpfile} || die
-		sed -e "/web\.jsf\/external\/shale-remoting-1\.0\.4\.jar/d" -i ${tmpfile} || die
-		sed -e "/websvc\.restlib\/external\/jsr311-api-doc\.jar/d" -i ${tmpfile} || die
-		sed -e "/websvc\.restlib\/external\/jersey-api-doc\.jar/d" -i ${tmpfile} || die
+		local tmpfilej2ee="${T}/bundled-j2ee.txt"
+		cat ${tmpfile} | grep -v "j2eeapis/external/jsr88javax.jar" | \
+			grep -v "servletjspapi/external/servlet2.5-jsp2.1-api.jar" | \
+			grep -v "web.jspparser/external/glassfish-jspparser-2.0.jar" | \
+			grep -v "j2ee.sun.appsrv81/external/appservapis-2.0.58.3.jar" | \
+			grep -v "j2ee.sun.appsrv81/external/org-netbeans-modules-j2ee-sun-appsrv81.jar" | \
+			grep -v "libs.glassfish_logging/external/glassfish-logging-2.0.jar" | \
+			grep -v "spring.webmvc/external/spring-webmvc-2.5.jar" | \
+			grep -v "web.jsf/external/shale-remoting-1.0.4.jar" | \
+			grep -v "websvc.restlib/external/jsr311-api-doc.jar" | \
+			grep -v "websvc.restlib/external/jersey-api-doc.jar" > ${tmpfilej2ee}
+		mv ${tmpfilej2ee} ${tmpfile}
 	fi
 
 	if use netbeans_modules_java ; then
-		sed -e "/libs\.javacimpl\/external\/javac-impl-nb-7\.0-b07\.jar/d" -i ${tmpfile} || die
-		sed -e "/j2ee\.toplinklib\/external\/glassfish-persistence-v2ur1-build-09d\.jar/d" -i ${tmpfile} || die
-		sed -e "/junit\/external\/Ant-1\.7\.1-binary-patch-72080\.jar/d" -i ${tmpfile} || die
-		sed -e "/libs\.springframework\/external\/spring-2\.5\.jar/d" -i ${tmpfile} || die
-		sed -e "/junit\/external\/junit-4\.5-src\.jar/d" -i ${tmpfile} || die
-		sed -e "/swingapp\/external\/appframework-1\.0\.3\.jar/d" -i ${tmpfile} || die
+		local tmpfilejava="${T}/bundled-java.txt"
+		cat ${tmpfile} | grep -v "libs.javacimpl/external/javac-impl-nb-7.0-b07.jar" | \
+			grep -v "j2ee.toplinklib/external/glassfish-persistence-v2ur1-build-09d.jar" | \
+			grep -v "junit/external/Ant-1.7.1-binary-patch-72080.jar" | \
+			grep -v "libs.springframework/external/spring-2.5.jar" | \
+			grep -v "junit/external/junit-4.5-src.jar" |
+			grep -v "swingapp/external/appframework-1.0.3.jar" > ${tmpfilejava}
+		mv ${tmpfilejava} ${tmpfile}
 	fi
 
 	if use netbeans_modules_mobility ; then
-		sed -e "/o\.n\.mobility\.lib\.activesync\/external\/nbactivesync-5\.0\.jar/d" -i ${tmpfile} || die
-		sed -e "/j2me\.cdc\.project\.bdj\/external\/security\.jar/d" -i ${tmpfile} || die
-		sed -e "/j2me\.cdc\.project\.bdj\/external\/bdjo\.jar/d" -i ${tmpfile} || die
-		sed -e "/j2me\.cdc\.project\.ricoh\/external\/RicohAntTasks-2\.0\.jar/d" -i ${tmpfile} || die
-		sed -e "/mobility\.databindingme\/lib\/netbeans_databindingme\.jar/d" -i ${tmpfile} || die
-		sed -e "/mobility\.databindingme\/lib\/netbeans_databindingme_pim\.jar/d" -i ${tmpfile} || die
-		sed -e "/mobility\.databindingme\/lib\/netbeans_databindingme_svg\.jar/d" -i ${tmpfile} || die
-		sed -e "/mobility\.deployment\.webdav\/external\/jakarta-slide-ant-webdav-2\.1\.jar/d" -i ${tmpfile} || die
-		sed -e "/mobility\.j2meunit\/external\/jmunit4cldc11-1\.2\.1\.jar/d" -i ${tmpfile} || die
-		sed -e "/mobility\.j2meunit\/external\/jmunit4cldc10-1\.2\.1\.jar/d" -i ${tmpfile} || die
-		sed -e "/svg\.perseus\/external\/perseus-nb-1\.0\.jar/d" -i ${tmpfile} || die
-		sed -e "/vmd\.components\.midp\/netbeans_midp_components_basic\/dist\/netbeans_midp_components_basic\.jar/d" -i ${tmpfile} || die
-		sed -e "/vmd\.components\.midp\.pda\/netbeans_midp_components_pda\/dist\/netbeans_midp_components_pda\.jar/d" -i ${tmpfile} || die
-		sed -e "/vmd\.components\.midp\.wma\/netbeans_midp_components_wma\/dist\/netbeans_midp_components_wma\.jar/d" -i ${tmpfile} || die
-		sed -e "/vmd\.components\.svg\/nb_svg_midp_components\/dist\/nb_svg_midp_components\.jar/d" -i ${tmpfile} || die
+		local tmpfilemobility="${T}/bundled-mobility.txt"
+		cat ${tmpfile} | grep -v "o.n.mobility.lib.activesync/external/nbactivesync-5.0.jar" | \
+			grep -v "j2me.cdc.project.bdj/external/security.jar" | \
+			grep -v "j2me.cdc.project.bdj/external/bdjo.jar" | \
+			grep -v "j2me.cdc.project.ricoh/external/RicohAntTasks-2.0.jar" | \
+			grep -v "mobility.databindingme/lib/netbeans_databindingme.jar" | \
+			grep -v "mobility.databindingme/lib/netbeans_databindingme_pim.jar" | \
+			grep -v "mobility.databindingme/lib/netbeans_databindingme_svg.jar" | \
+			grep -v "mobility.deployment.webdav/external/jakarta-slide-ant-webdav-2.1.jar" | \
+			grep -v "mobility.j2meunit/external/jmunit4cldc11-1.2.1.jar" | \
+			grep -v "mobility.j2meunit/external/jmunit4cldc10-1.2.1.jar" | \
+			grep -v "svg.perseus/external/perseus-nb-1.0.jar" | \
+			grep -v "vmd.components.midp/netbeans_midp_components_basic/dist/netbeans_midp_components_basic.jar" | \
+			grep -v "vmd.components.midp.pda/netbeans_midp_components_pda/dist/netbeans_midp_components_pda.jar" | \
+			grep -v "vmd.components.midp.wma/netbeans_midp_components_wma/dist/netbeans_midp_components_wma.jar" | \
+			grep -v "vmd.components.svg/nb_svg_midp_components/dist/nb_svg_midp_components.jar" > ${tmpfilemobility}
+		mv ${tmpfilemobility} ${tmpfile}
 	fi
 
 	if use netbeans_modules_soa ; then
-		sed -e "/bpel\.debugger\.bdi\/external\/bdi-1\.0\.0\.jar/d" -i ${tmpfile} || die
-		sed -e "/o\.n\.soa\.libs\.jgo\/external\/JGoLayout5\.1\.jar/d" -i ${tmpfile} || die
-		sed -e "/o\.n\.soa\.libs\.jgo\/external\/JGo5\.1\.jar/d" -i ${tmpfile} || die
-		sed -e "/o\.n\.soa\.libs\.jgo\/external\/JGoInstruments5\.1\.jar/d" -i ${tmpfile} || die
+		local tmpfilesoa="${T}/bundled-soa.txt"
+		cat ${tmpfile} | grep -v "bpel.debugger.bdi/external/bdi-1.0.0.jar" | \
+			grep -v "o.n.soa.libs.jgo/external/JGoLayout5.1.jar" | \
+			grep -v "o.n.soa.libs.jgo/external/JGo5.1.jar" | \
+			grep -v "o.n.soa.libs.jgo/external/JGoInstruments5.1.jar" > ${tmpfilesoa}
+		mv ${tmpfilesoa} ${tmpfile}
 	fi
 
 	if use netbeans_modules_xml ; then
-		sed -e "/libs\.jxpath\/external\/jxpath1\.1\.jar/d" -i ${tmpfile} || die
-		sed -e "/o\.n\.soa\.libs\.jbiadmincommon\/external\/jbi-admin-common\.jar/d" -i ${tmpfile} || die
+		local tmpfilexml="${T}/bundled-xml.txt"
+		cat ${tmpfile} | grep -v "libs.jxpath/external/jxpath1.1.jar" | \
+			grep -v "o.n.soa.libs.jbiadmincommon/external/jbi-admin-common.jar" > ${tmpfilexml}
+		mv ${tmpfilexml} ${tmpfile}
 	fi
+
+	cat ${tmpfile} | xargs rm -v
 }
 
 src_compile() {
@@ -530,18 +465,9 @@ src_compile() {
 	use netbeans_modules_profiler && clusters="${clusters},nb.cluster.profiler"
 	#use netbeans_modules_ruby && clusters="${clusters},nb.cluster.ruby"
 	use netbeans_modules_soa && clusters="${clusters},nb.cluster.soa"
-	use netbeans_modules_visualweb && clusters="${clusters},nb.cluster.visualweb"
 	use netbeans_modules_webcommon && clusters="${clusters},nb.cluster.webcommon"
 	use netbeans_modules_websvccommon && clusters="${clusters},nb.cluster.websvccommon"
 	use netbeans_modules_xml && clusters="${clusters},nb.cluster.xml"
-
-	local build_target=""
-	if use netbeans_modules_nb ; then
-		build_target="build-nozip"
-	else
-		build_target="build-clusters"
-		mkdir -p ${BUILDDESTINATION} || die
-	fi
 
 	# Fails to compile
 	java-pkg_filter-compiler ecj-3.1 ecj-3.2
@@ -549,7 +475,7 @@ src_compile() {
 	# Build the clusters
 	#use netbeans_modules_ruby && addpredict /root/.jruby
 	ANT_TASKS="ant-nodeps"
-	ANT_OPTS="-Xmx1g -Djava.awt.headless=true" eant ${antflags} ${clusters} -f nbbuild/build.xml ${build_target}
+	ANT_OPTS="-Xmx1g -Djava.awt.headless=true" eant ${antflags} ${clusters} -f nbbuild/build.xml build-nozip
 
 	use linguas_de && compile_locale_support "${antflags}" de
 	use linguas_es && compile_locale_support "${antflags}" es
@@ -604,7 +530,6 @@ src_compile() {
 
 	# Install Gentoo Netbeans ID
 	# This ID is used to identify our netbeans package while contacting update center
-	mkdir -p  ${BUILDDESTINATION}/nb${SLOT}/config || die
 	echo "NBGNT" > ${BUILDDESTINATION}/nb${SLOT}/config/productid || die "Could not set Gentoo Netbeans ID"
 
 	# fix paths per bug# 163483
@@ -699,11 +624,9 @@ src_install() {
 }
 
 pkg_postinst() {
-	if use netbeans_modules_nb ; then
-		einfo "If you want to use specific locale of netbeans, use --locale argument, for example:"
-		einfo "${PN}-${SLOT} --locale de"
-		einfo "${PN}-${SLOT} --locale pt:BR"
-	fi
+	einfo "If you want to use specific locale of netbeans, use --locale argument, for example:"
+	einfo "${PN}-${SLOT} --locale de"
+	einfo "${PN}-${SLOT} --locale pt:BR"
 }
 
 # Supporting functions for this ebuild
