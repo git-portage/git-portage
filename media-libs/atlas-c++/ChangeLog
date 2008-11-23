@@ -1,6 +1,16 @@
 # ChangeLog for media-libs/atlas-c++
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/atlas-c++/ChangeLog,v 1.25 2008/08/20 18:52:45 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/atlas-c++/ChangeLog,v 1.29 2008/11/20 11:04:24 tove Exp $
+
+  20 Nov 2008; Tupone Alfredo <tupone@gentoo.org> files/atlas-c++-0.6.1-as-needed.patch:
+  Adding all dependency within libraries. Tested with -Wl,-no-undefined
+
+*atlas-c++-0.6.1-r1 (19 Nov 2008)
+
+  19 Nov 2008; Tupone Alfredo <tupone@gentoo.org> +files/atlas-c++-0.6.1-as-needed.patch,
+  +atlas-c++-0.6.1-r1.ebuild:
+  Fix building cyphesis with --as-needed as from bug #247463 by
+  <flameeyes@gentoo.org>
 
   20 Aug 2008; Markus Meier <maekke@gentoo.org> atlas-c++-0.6.1.ebuild:
   amd64/x86 stable, bug #235169
