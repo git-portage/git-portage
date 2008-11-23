@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/wterm/Attic/wterm-6.2.9-r3.ebuild,v 1.6 2008/11/27 23:09:48 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/wterm/Attic/wterm-6.2.9-r3.ebuild,v 1.5 2008/05/05 14:19:06 ranger Exp $
 
 inherit eutils
 
@@ -22,7 +22,6 @@ src_unpack() {
 
 	# Security bug 219762
 	epatch "${FILESDIR}/${P}-display-security-issue.patch"
-	epatch "${FILESDIR}/${P}-strip.patch"
 }
 
 src_compile() {
