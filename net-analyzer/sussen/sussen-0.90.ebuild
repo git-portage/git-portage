@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/sussen/Attic/sussen-0.90.ebuild,v 1.4 2008/11/25 23:03:50 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/sussen/Attic/sussen-0.90.ebuild,v 1.2 2008/01/18 14:41:16 pva Exp $
 
 #WANT_AUTOCONF="latest"
 #WANT_AUTOMAKE="1.8"
 #inherit eutils gnome2 mono autotools
 
-inherit gnome2 mono eutils
+inherit gnome2 mono
 
 DESCRIPTION="Sussen is a tool that checks for vulnerabilities and configuration issues on computer systems"
 HOMEPAGE="http://dev.mmgsecurity.com/projects/sussen/"
@@ -20,7 +20,7 @@ RDEPEND="dev-lang/mono
 	gnome? ( >=dev-dotnet/gtk-sharp-2.4
 			 >=dev-dotnet/gnome-sharp-2.4
 			 >=dev-dotnet/gconf-sharp-2.4
-			 || ( >=dev-dotnet/gtk-sharp-2.12.6 >=dev-dotnet/glade-sharp-2.4 )
+			 >=dev-dotnet/glade-sharp-2.4
 			 gnome-base/gnome-panel )"
 
 DEPEND="${RDEPEND}
@@ -32,13 +32,6 @@ DEPEND="${RDEPEND}
 DOCS="AUTHORS ChangeLog README TODO NEWS"
 
 pkg_setup() {
-	if has_version '>=dev-dotnet/gtk-sharp-2.12.6'
-	then
-		if ! built_with_use --missing false 'dev-dotnet/gtk-sharp' 'glade'
-		then
-			eerror "Please rebuild >=dev-dotnet/gtk-sharp-2.12.6 with USE='glade'"
-		fi
-	fi
 	use gnome || elog "gnome is absent in USE thus applet and editor will not be built"
 }
 
