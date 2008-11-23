@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/enigmail/Attic/enigmail-0.95.7-r2.ebuild,v 1.4 2008/11/26 15:32:06 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/enigmail/Attic/enigmail-0.95.7-r2.ebuild,v 1.1 2008/11/23 16:16:24 armin76 Exp $
 
 WANT_AUTOCONF="2.1"
 
@@ -19,7 +19,7 @@ SRC_URI="http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${TBVE
 	mirror://gentoo/mozilla-thunderbird-${TBPATCH}.tar.bz2
 	http://www.mozilla-enigmail.org/download/source/enigmail-${EMVER}.tar.gz"
 
-KEYWORDS="alpha ~amd64 ia64 ~ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 SLOT="0"
 LICENSE="MPL-1.1 GPL-2"
 IUSE=""
@@ -74,14 +74,6 @@ linguas() {
 		fi
 		ewarn "Sorry, but ${PN} does not support the ${LANG} LINGUA"
 	done
-}
-
-pkg_setup() {
-	if has_version '>=app-crypt/gnupg-2.0.1-r2'; then
-		if ! built_with_use -o app-crypt/pinentry gtk qt3; then
-			die "You must build app-crypt/pinentry with GTK or QT3 support"
-		fi
-	fi
 }
 
 src_unpack() {
