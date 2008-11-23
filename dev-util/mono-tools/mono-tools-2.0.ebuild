@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/mono-tools/Attic/mono-tools-2.0.ebuild,v 1.4 2008/11/24 17:10:33 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/mono-tools/Attic/mono-tools-2.0.ebuild,v 1.2 2008/11/23 19:53:17 loki_val Exp $
 
 EAPI=2
 
@@ -13,7 +13,7 @@ SRC_URI="http://ftp.novell.com/pub/mono/sources/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~x86-fbsd"
-IUSE="webkit xulrunner"
+IUSE="webkit xulrunner gtkhtml"
 
 RDEPEND=">=dev-lang/mono-2.0
 	>=dev-util/monodoc-${PV}
@@ -29,9 +29,6 @@ DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.19"
 
 PATCHES=( "${FILESDIR}/${P}-html-renderer-fixes.patch" )
-
-#Fails parallel make.
-MAKEOPTS="${MAKEOPTS} -j1"
 
 src_prepare() {
 	base_src_prepare
