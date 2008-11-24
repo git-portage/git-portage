@@ -1,6 +1,17 @@
 # ChangeLog for app-emacs/pymacs
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/pymacs/ChangeLog,v 1.36 2008/10/27 07:53:27 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/pymacs/ChangeLog,v 1.39 2008/11/24 11:00:55 ulm Exp $
+
+  24 Nov 2008; Ulrich Mueller <ulm@gentoo.org> pymacs-0.23.ebuild:
+  Remove test from IUSE, bug 232497.
+
+  24 Nov 2008; Christian Faulhammer <opfer@gentoo.org> pymacs-0.23.ebuild:
+  Additional USE=test dependency is not needed as the real failure from bug
+  232497 is connected to USE=doc
+
+  20 Nov 2008; Ulrich Mueller <ulm@gentoo.org> pymacs-0.23.ebuild:
+  Additional dependencies with USE=doc for multirow.sty and aeguill.sty,
+  fixes bug 247703.
 
   27 Oct 2008; Ulrich Mueller <ulm@gentoo.org> pymacs-0.23.ebuild:
   Replace virtual/tetex dependency by tetex or ptex, bug 222501.
