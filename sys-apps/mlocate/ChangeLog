@@ -1,15 +1,6 @@
 # ChangeLog for sys-apps/mlocate
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/mlocate/ChangeLog,v 1.33 2008/11/28 12:50:39 fauli Exp $
-
-  28 Nov 2008; Christian Faulhammer <fauli@gentoo.org> metadata.xml:
-  Change my email address
-
-*mlocate-0.21.1 (25 Nov 2008)
-
-  25 Nov 2008; Christian Faulhammer <opfer@gentoo.org>
-  +mlocate-0.21.1.ebuild:
-  version bump
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/mlocate/ChangeLog,v 1.31 2008/11/05 17:51:25 opfer Exp $
 
   05 Nov 2008; Christian Faulhammer <opfer@gentoo.org> -files/mlocate.cron,
   -mlocate-0.21.ebuild:
