@@ -1,8 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/fbiterm/Attic/fbiterm-0.5.ebuild,v 1.10 2007/01/05 16:16:19 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/fbiterm/fbiterm-0.5-r2.ebuild,v 1.1 2008/11/24 16:52:22 matsuu Exp $
 
-inherit eutils flag-o-matic
+inherit autotools eutils multilib
 
 IUSE=""
 
@@ -12,32 +12,33 @@ SRC_URI="http://www-124.ibm.com/linux/projects/iterm/releases/iterm-${PV}.tar.gz
 
 LICENSE="CPL-0.5"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 DEPEND="x11-libs/libXfont
 	>=media-libs/freetype-2
 	x11-libs/libiterm-mbt
-	sys-libs/zlib
+	sys-libs/zlib"
+RDEPEND="${DEPEND}
+	media-fonts/font-sony-misc
 	media-fonts/unifont"
 
-S=${WORKDIR}/iterm/unix/fbiterm
+S="${WORKDIR}/iterm/unix/fbiterm"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${P}-gentoo.diff
+	cd "${S}"
+	epatch "${FILESDIR}/${PF}-gentoo.diff"
+	eautoreconf
 }
 
 src_compile() {
-	append-ldflags -lfreetype
-	append-ldflags $(bindnow-flags)
 	econf --x-includes=/usr/include \
-		--x-libraries=/usr/lib || die
+		--x-libraries=/usr/$(get_libdir) || die
 	emake || die
 }
 
 src_install() {
-	make DESTDIR=${D} install || die
+	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog README*
 }
 
