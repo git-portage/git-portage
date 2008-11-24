@@ -1,8 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/mono/Attic/mono-2.0.1.ebuild,v 1.3 2008/11/24 23:56:14 loki_val Exp $
-
-EAPI=2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/mono/Attic/mono-2.0.1.ebuild,v 1.2 2008/11/23 16:52:37 loki_val Exp $
 
 inherit base eutils flag-o-matic multilib autotools
 
@@ -17,9 +15,7 @@ IUSE=""
 
 RDEPEND="!<dev-dotnet/pnet-0.6.12
 		>=dev-libs/glib-2.6
-		=dev-dotnet/libgdiplus-${PV%%.*}*
-	ia64? ( sys-libs/libunwind )"
-
+		=dev-dotnet/libgdiplus-${PV%%.*}*"
 DEPEND="${RDEPEND}
 		sys-devel/bc
 		>=dev-util/pkgconfig-0.19"
@@ -27,36 +23,41 @@ PDEPEND="dev-dotnet/pe-format"
 
 RESTRICT="test"
 
-#Threading and mimeicon patches from Fedora CVS. Muine patch from Novell. Pointer conversions patch from Debian.
+#Threading and mimeicon patches from Fedora CVS. Muine patch from Novell.
 
 PATCHES=(	"${FILESDIR}/${PN}-biginteger_overflow.diff"
 		"${FILESDIR}/${PN}-2.0-ppc-threading.patch"
 		"${FILESDIR}/${PN}-2.0-mimeicon.patch"
-		"${FILESDIR}/${P}-fix-wsdl-troubles-with-muine.patch"
-		"${FILESDIR}/${P}-fix_implicit_pointer_conversions.patch" )
+		"${FILESDIR}/${P}-fix-wsdl-troubles-with-muine.patch" )
 
-src_configure() {
+
+function get-memory-total() {
+	cat /proc/meminfo | grep MemTotal | sed -r "s/[^0-9]*([[0-9]+).*/\1/"
+}
+
+src_compile() {
 	# mono's build system is finiky, strip the flags
 	strip-flags
 
 	#Remove this at your own peril. Mono will barf in unexpected ways.
 	append-flags -fno-strict-aliasing
 
-	econf	--disable-dependency-tracking \
-		--without-moonlight \
+	# Enable large heaps if memory is more than >=3GB
+	if [[ $(get-memory-total) -ge 3145728 ]] ; then
+		myconf="${myconf} --with-large-heap=yes"
+	fi
+
+	# Force the use of monolite mcs to prevent issues with classlibs (bug #118062)
+	touch "${S}"/mcs/build/deps/use-monolite
+
+	econf	--without-moonlight \
 		--with-preview=yes \
 		--with-glib=system \
 		--with-gc=included \
 		--with-libgdiplus=installed \
-		--with-tls=$(use arm && printf "pthread" || printf "__thread" ) \
-		--with-sigaltstack=$((use x86 || use amd64) && printf "yes" || printf "no" ) \
-		--with-ikvm-native=no \
+		--with-tls=__thread \
+		--with-ikvm=yes \
 		--with-jit=yes
-
-	# dev-dotnet/ikvm provides ikvm-native
-}
-
-src_compile() {
 	emake EXTERNAL_MCS=false EXTERNAL_MONO=false
 
 	if [[ "$?" -ne "0" ]]; then
