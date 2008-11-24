@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-misc/boinc/Attic/boinc-6.2.15.ebuild,v 1.3 2008/11/28 00:06:59 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-misc/boinc/Attic/boinc-6.2.15.ebuild,v 1.1 2008/11/24 19:03:49 scarabeus Exp $
 
 EAPI="1"
 
@@ -32,8 +32,7 @@ RDEPEND="sys-libs/zlib
 			>=dev-python/mysql-python-0.9.2
 		)
 	)"
-DEPEND="app-misc/ca-certificates
-	!bindist? (
+DEPEND="!bindist? (
 		>=sys-devel/gcc-3.0.4
 		>=sys-devel/autoconf-2.58
 		>=sys-devel/automake-1.8
@@ -80,12 +79,6 @@ src_unpack() {
 		cd "${WORKDIR}"
 		sh ${P/-/_}_${target}-pc-linux-gnu.sh
 	fi
-	# patch up certificates
-	mkdir "${S}"/curl/
-	ln -s /etc/ssl/certs/ca-certificates.crt "${S}"/curl/ca-bundle.crt
-	sed -i \
-		-e "s:::g" \
-		"${S}"/Makefile
 }
 
 src_compile() {
@@ -109,15 +102,16 @@ src_compile() {
 		sed -i \
 			-e "s:LDFLAGS = :LDFLAGS = -L../lib :g" \
 			*/Makefile || die "sed failed"
-		emake -j1 || die "emake failed"
+		emake || die "emake failed"
 	fi
 }
 
 src_install() {
-	dodir /var/lib/${PN}
+	mkdir -p "${D}"/var/lib/${PN}/
 	newinitd "${FILESDIR}"/${PN}.init ${PN}
 	newconfd "${FILESDIR}"/${PN}.conf ${PN}
 	if ! use bindist; then
+		cp "${S}"/ca-bundle.crt "${D}"/var/lib/${PN}
 		make install DESTDIR="${D}" || die "make install failed"
 		# icon
 		newicon "${S}"/sea/${PN}mgr.48x48.png ${PN}.png
@@ -144,6 +138,7 @@ src_install() {
 	else
 		local S_BIN="${WORKDIR}"/BOINC
 		cd "${S_BIN}"
+		cp "${S_BIN}"/ca-bundle.crt "${D}"/var/lib/${PN}
 		# fix ${PN}.conf file for binary package
 		sed -i -e "s:/usr/bin/${PN}_client:/opt/${PN}/${PN}:g" "${D}"/etc/conf.d/${PN}
 		if use X; then
@@ -164,7 +159,6 @@ src_install() {
 		# install binaries
 		exeopts -m0755
 		exeinto /opt/${PN}
-
 		doexe "${S_BIN}"//{${PN},${PN}_cmd,${PN}cmd,${PN}mgr,run_client,run_manager}
 		fowners 0:${PN} /opt/${PN}/{${PN},${PN}_cmd,${PN}cmd,${PN}mgr,run_client,run_manager}
 		# locale
@@ -178,12 +172,8 @@ src_install() {
 		dosym /opt/${PN}/locale /var/lib/${PN}/locale
 		cd "${S}"
 	fi
-	dosym /etc/ssl/certs/ca-certificates.crt /var/lib/${PN}/ca-bundle.crt
-	insopts -m0640
-	insinto /var/lib/${PN}
-	doins "${FILESDIR}"/gui_rpc_auth.cfg
-	fowners ${PN}:${PN} /var/lib/${PN}/gui_rpc_auth.cfg
-	fowners ${PN}:${PN} /var/lib/${PN}/
+	fowners ${PN}:${PN} /var/lib/${PN}/ca-bundle.crt
+	chown ${PN}:${PN} "${D}"/var/lib/${PN}
 }
 
 pkg_preinst() {
@@ -209,8 +199,9 @@ pkg_postinst() {
 	fi
 	echo
 	# Add warning about the new password for the client, bug 121896.
-	elog "If you need to use the graphical client the password is in"
-	elog "/var/lib/${PN}/gui_rpc_auth.cfg which is for first run empty."
-	elog "You should change this to something more secure."
+	elog "If you need to use the graphical client the password is in "
+	elog "/var/lib/${PN}/gui_rpc_auth.cfg which is randomly generated "
+	elog "by ${PN} upon successfully running the gui for the first time."
+	elog "You can change this to something more memorable."
 	echo
 }
