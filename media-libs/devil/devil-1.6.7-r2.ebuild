@@ -1,13 +1,12 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/devil/Attic/devil-1.6.7-r2.ebuild,v 1.3 2008/11/29 16:42:39 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/devil/Attic/devil-1.6.7-r2.ebuild,v 1.1 2007/08/14 17:20:57 nyhm Exp $
 
 inherit autotools eutils
 
 DESCRIPTION="DevIL image library"
 HOMEPAGE="http://openil.sourceforge.net/"
-SRC_URI="mirror://sourceforge/openil/DevIL-${PV}.tar.gz
-	mirror://gentoo/${P}-gcc42.patch.gz"
+SRC_URI="mirror://sourceforge/openil/DevIL-${PV}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
@@ -35,7 +34,7 @@ src_unpack() {
 	epatch \
 		"${FILESDIR}"/${P}-png-types.patch \
 		"${FILESDIR}"/${P}-sdl-checks.patch \
-		"${WORKDIR}"/${P}-gcc42.patch
+		"${FILESDIR}"/${P}-gcc42.patch
 	sed -i \
 		-e 's/<il/<IL/' \
 		include/IL/il_wrap.h \
