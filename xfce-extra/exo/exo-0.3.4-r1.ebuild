@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/exo/Attic/exo-0.3.4-r1.ebuild,v 1.11 2008/11/17 15:38:03 darkside Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/exo/Attic/exo-0.3.4-r1.ebuild,v 1.13 2008/11/20 16:44:51 ranger Exp $
 
 inherit eutils xfce44 python multilib autotools
 
@@ -9,7 +9,7 @@ xfce44
 xfce44_core_package
 
 DESCRIPTION="Extensions, widgets and framework library with session management support"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ~ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE="debug doc hal libnotify python"
 
 RDEPEND=">=dev-lang/perl-5.6
@@ -31,6 +31,12 @@ DEPEND="${RDEPEND}
 
 DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
 
+pkg_setup() {
+	XFCE_CONFIG="${XFCE_CONFIG}	$(use_enable python)
+		$(use_enable libnotify notifications)
+		$(use_enable hal) --enable-mcs-plugin"
+}
+
 # See bug 166568 for reference
 src_unpack() {
 	unpack ${A}
@@ -41,10 +47,6 @@ src_unpack() {
 		"${FILESDIR}"/${P}-remove-libmd5.patch
 	intltoolize --force --copy --automake || die "intltoolize failed."
 	AT_M4DIR=/usr/share/xfce4/dev-tools/m4macros eautoreconf
-
-	XFCE_CONFIG="${XFCE_CONFIG}	$(use_enable python) \
-		$(use_enable libnotify notifications) \
-		$(use_enable hal) --enable-mcs-plugin"
 }
 
 # See bug 164780 for reference
