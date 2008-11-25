@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-23.0.9999.ebuild,v 1.15 2008/11/29 12:19:25 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-23.0.9999.ebuild,v 1.13 2008/11/19 06:41:08 ulm Exp $
 
 ECVS_AUTH="pserver"
 ECVS_SERVER="cvs.savannah.gnu.org:/sources/emacs"
@@ -67,7 +67,6 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${ECVS_LOCALNAME}"
 
 EMACS_SUFFIX="emacs-${SLOT}"
-SITEFILE="20${PN}-${SLOT}-gentoo.el"
 
 src_unpack() {
 	cvs_src_unpack
@@ -215,30 +214,21 @@ src_install () {
 	keepdir /usr/share/emacs/site-lisp
 	keepdir /var/lib/games/emacs
 
-	local c=";;"
 	if use source; then
 		insinto /usr/share/emacs/${FULL_VERSION}/src
 		# This is not meant to install all the source -- just the
 		# C source you might find via find-function
 		doins src/*.[ch]
-		c=""
-	fi
+		sed 's/^X//' >10${PN}-${SLOT}-gentoo.el <<-EOF
 
-	sed 's/^X//' >"${SITEFILE}" <<-EOF
-	X
-	;;; ${PN}-${SLOT} site-lisp configuration
-	X
-	(when (string-match "\\\\\`${FULL_VERSION//./\\\\.}\\\\>" emacs-version)
-	X  ${c}(setq find-function-C-source-directory
-	X  ${c}      "/usr/share/emacs/${FULL_VERSION}/src")
-	X  (let ((path (getenv "INFOPATH"))
-	X	(dir "/usr/share/info/${EMACS_SUFFIX}"))
-	X    (and path
-	X	 ;; move Emacs Info dir to beginning of list
-	X	 (setq Info-directory-list
-	X	       (cons dir (delete dir (split-string path ":" t)))))))
-	EOF
-	elisp-site-file-install "${SITEFILE}" || die
+		;;; ${PN}-${SLOT} site-lisp configuration
+
+		(if (string-match "\\\\\`${FULL_VERSION//./\\\\.}\\\\>" emacs-version)
+		X    (setq find-function-C-source-directory
+		X	  "/usr/share/emacs/${FULL_VERSION}/src"))
+		EOF
+		elisp-site-file-install 10${PN}-${SLOT}-gentoo.el
+	fi
 
 	dodoc README BUGS || die "dodoc failed"
 }
@@ -249,14 +239,13 @@ emacs-infodir-rebuild() {
 	# INFOPATH, which is not guaranteed. So we rebuild it ourselves.
 
 	local infodir=/usr/share/info/${EMACS_SUFFIX} f
-	[ -d "${ROOT}"${infodir} ] || return	# may occur with FEATURES=noinfo
 	einfo "Regenerating Info directory index in ${infodir} ..."
 	rm -f "${ROOT}"${infodir}/dir{,.*}
 	for f in "${ROOT}"${infodir}/*.info*; do
-		[[ ${f##*/} != *[0-9].info* && -e ${f} ]] \
-			&& install-info --info-dir="${ROOT}"${infodir} "${f}" &>/dev/null
+		[[ ${f##*/} == *[0-9].info* ]] \
+			|| install-info --info-dir="${ROOT}"${infodir} "${f}" &>/dev/null
 	done
-	rmdir "${ROOT}"${infodir} 2>/dev/null	# remove dir if it is empty
+	rmdir "${ROOT}"${infodir} 2>/dev/null # remove dir if it is empty
 	echo
 }
 
