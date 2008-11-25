@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libdsp/Attic/libdsp-5.0.2.ebuild,v 1.3 2008/11/25 15:26:36 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libdsp/Attic/libdsp-5.0.2.ebuild,v 1.2 2008/11/25 15:19:29 armin76 Exp $
 
 inherit eutils
 
@@ -11,17 +11,20 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}-src-${PV}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-# This package is using x86 asm.
+
+# -amd64, -sparc: 4.9.2-r1 - uses x86 assembly
 KEYWORDS="-amd64 -sparc x86"
 IUSE="doc"
+DEPEND=""
 
 S=${WORKDIR}/${PN}-src-${PV}
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-Makefile.patch \
-		"${FILESDIR}"/${P}-gcc43.patch
+
+	# fixes some Makefile weirdness
+	epatch "${FILESDIR}"/${P}-Makefile.patch
 }
 
 src_compile() {
@@ -44,28 +47,28 @@ src_compile() {
 		sed -e "s/^LIBTOOL = libtool --tag=CXX/LIBTOOL = libtool/" -i libDSP/Makefile
 	fi
 
-	cd "${S}"/DynThreads
+	cd ${S}/DynThreads
 	emake || die "DynThreads make failed!"
 
-	cd "${S}"/libDSP
+	cd ${S}/libDSP
 	emake || die "libDSP make failed!"
 }
 
 src_install() {
 
-	mkdir -p "${D}"/usr/include
-	cd "${S}"/Inlines
+	mkdir -p ${D}/usr/include
+	cd ${S}/Inlines
 	make install || die "Inlines install failed!"
 
-	cd "${S}"/DynThreads
+	cd ${S}/DynThreads
 	make install || die "DynThreads install failed!"
 
-	cd "${S}"/libDSP
+	cd ${S}/libDSP
 	make install || die "libDSP install failed!"
 
 	if use doc; then
-		dohtml "${WORKDIR}"/${PN}-doc-html/*
+		dohtml ${WORKDIR}/${PN}-doc-html/*
 		docinto samples
-		dodoc "${S}"/libDSP/work/*
+		dodoc ${S}/libDSP/work/*
 	fi
 }
