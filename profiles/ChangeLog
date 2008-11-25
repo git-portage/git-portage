@@ -1,10 +1,72 @@
 # ChangeLog for profile directory
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2066 2008/11/20 04:34:54 darkside Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2085 2008/11/25 14:48:42 ssuominen Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  25 Nov 2008; <ssuominen@gentoo.org> package.mask:
+  Mask media-sound/cantus for removal by treecleaners and sound in 30 days.
+  No working version from old, or new upstream.
+
+  24 Nov 2008; <ssuominen@gentoo.org> package.mask:
+  Rename my old e-mail drac at gentoo.org.
+
+  24 Nov 2008; Tomas Chvatal <scarabeus@gentoo.org>
+  arch/amd64/package.use.mask, arch/x86/package.use.mask,
+  base/package.use.mask:
+  Mask bindist use for sci-misc/boinc for all arch expect x86/amd64
+
+  24 Nov 2008; Zac Medico <zmedico@gentoo.org> package.mask:
+  Mask portage-2.2 so portage-2.1.6 can get some testing.
+
+  24 Nov 2008; Marcelo Goes <vanquirius@gentoo.org> use.local.desc:
+  Update net-analyzer/snort local use flags for bug 245752. Thanks to Jason
+  Wallace <jason.r.wallace at gmail dot com>.
+
+  23 Nov 2008; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  Another entry for mono-2 package.mask.
+
+  23 Nov 2008; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  adding webkit-sharp to mono-2 mask
+
+  23 Nov 2008; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  banshee too...
+
+  23 Nov 2008; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  add f-spot to mono-2 mask
+
+  23 Nov 2008; Zac Medico <zmedico@gentoo.org> updates/3Q-2005:
+  Remove an old slotmove from 0 to 18 for =media-libs/portaudio-18* since
+  it has no purpose now that another slotmove in 3Q-2008 reverses it.
+
+  22 Nov 2008; Thilo Bangert <bangert@gentoo.org> package.mask:
+  remove qmail-vmailmgr mask
+
+  22 Nov 2008; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  Start mono-2 package.mask
+
+  22 Nov 2008; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  p.mask app-admin/gps for removal in 30 days. bug #173584
+
+  22 Nov 2008; Torsten Veller <tove@gentoo.org> package.mask:
+  Enforce downgrade: File-Spec-3.2701 is File-Spec-3.27.01 now
+
+  22 Nov 2008; Ulrich Mueller <ulm@gentoo.org> use.desc:
+  Update description of plotutils flag since it is not limited to gnuplot.
+
+  20 Nov 2008; Ulrich Mueller <ulm@gentoo.org> package.mask:
+  Unmask app-emacs/quilt-el.
+
+  20 Nov 2008; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  p.mask net-im/gnome-jabber for removal in 30 days, bug 152940
+
+  20 Nov 2008; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  removed net-misc/ssh from the tree, pending removal for years. bug #139969
+
+  20 Nov 2008; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  clean for non-existant packages
 
   20 Nov 2008; Jeremy Olexa <darkside@gentoo.org> package.mask:
   clean up p.mask - net-libs/libpcap-ringbuffer was removed from the tree, bug
