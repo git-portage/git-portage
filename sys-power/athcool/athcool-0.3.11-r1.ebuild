@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/athcool/athcool-0.3.11-r1.ebuild,v 1.3 2008/11/27 21:24:23 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/athcool/athcool-0.3.11-r1.ebuild,v 1.1 2007/10/01 10:57:44 uberlord Exp $
 
 inherit eutils
 
@@ -32,8 +32,7 @@ pkg_postinst() {
 	ewarn "enabling powersaving mode may cause:"
 	ewarn " * noisy or distorted sound playback"
 	ewarn " * a slowdown in harddisk performance"
-	ewarn " * system locks or unpredictable behavior"
-	ewarn " * file system corruption"
+	ewarn " * system locks or instability"
 	ewarn "If you met those problems, you should not use athcool.  Please use"
 	ewarn "athcool AT YOUR OWN RISK!"
 }
