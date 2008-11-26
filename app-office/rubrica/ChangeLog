@@ -1,13 +1,6 @@
 # ChangeLog for app-office/rubrica
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/rubrica/ChangeLog,v 1.10 2008/11/28 13:30:38 fauli Exp $
-
-  28 Nov 2008; Christian Faulhammer <fauli@gentoo.org> -files/hu.po,
-  +files/hu.po.bz2, rubrica-2.1.6-r1.ebuild:
-  compress hu.po file to make repoman and flameeyes happy, see bug 248962
-
-  28 Nov 2008; Christian Faulhammer <opfer@gentoo.org> metadata.xml:
-  change my email address
+# $Header: /var/cvsroot/gentoo-x86/app-office/rubrica/ChangeLog,v 1.8 2008/11/19 09:34:21 opfer Exp $
 
   19 Nov 2008; Christian Faulhammer <opfer@gentoo.org>
   rubrica-2.1.6-r1.ebuild:
