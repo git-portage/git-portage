@@ -1,6 +1,14 @@
 # ChangeLog for x11-terms/evilvte
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/evilvte/ChangeLog,v 1.2 2008/08/01 12:06:24 drac Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/evilvte/ChangeLog,v 1.4 2008/11/26 13:42:12 ssuominen Exp $
+
+*evilvte-0.4.4_pre6 (26 Nov 2008)
+
+  26 Nov 2008; <ssuominen@gentoo.org> +evilvte-0.4.4_pre6.ebuild:
+  Version bump.
+
+  24 Nov 2008; <ssuominen@gentoo.org> metadata.xml:
+  Rename my old e-mail drac at gentoo.org to ssuominen at gentoo.org.
 
   01 Aug 2008; Samuli Suominen <drac@gentoo.org> evilvte-0.4.3.ebuild:
   amd64 stable (tested by me) and keyword for ~x86 (tested by bheekling)
