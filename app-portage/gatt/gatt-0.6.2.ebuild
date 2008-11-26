@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/gatt/Attic/gatt-0.6.2.ebuild,v 1.7 2008/11/29 17:39:40 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/gatt/Attic/gatt-0.6.2.ebuild,v 1.5 2008/11/25 17:55:09 fmccor Exp $
 
 inherit eutils
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/gatt/${P}.tar.bz2"
 
 LICENSE="GPL-2 GPL-3 FDL-1.2"
 SLOT="0"
-KEYWORDS="amd64 ~hppa ~ia64 ppc ~ppc64 sparc x86"
+KEYWORDS="amd64 ~hppa ~ia64 ~ppc ~ppc64 sparc x86"
 IUSE="doc libpaludis"
 
 RDEPEND=">=dev-libs/boost-1.33.1
@@ -40,7 +40,6 @@ src_unpack() {
 	cd "${S}"
 
 	epatch "${FILESDIR}/${PN}-0.6.1-nonfataltests.patch"
-	epatch "${FILESDIR}/${PN}-0.6.1-tests.patch"
 }
 
 src_compile() {
