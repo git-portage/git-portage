@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-133.ebuild,v 1.6 2008/11/28 12:51:54 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-133.ebuild,v 1.5 2008/11/25 19:32:53 zzam Exp $
 
 inherit eutils flag-o-matic multilib toolchain-funcs versionator
 
@@ -301,8 +301,7 @@ fix_old_persistent_net_rules() {
 	local rules=${ROOT}/etc/udev/rules.d/70-persistent-net.rules
 	[[ -f ${rules} ]] || return
 
-	elog
-	elog "Updating persistent-net rules file"
+	ebegin "Fixing persistent-net rules file"
 
 	# Change ATTRS to ATTR matches, Bug #246927
 	sed -i -e 's/ATTRS{/ATTR{/g' "${rules}"
@@ -311,6 +310,8 @@ fix_old_persistent_net_rules() {
 	sed -ri \
 		-e '/KERNEL/ ! { s/NAME="(eth|wlan|ath)([0-9]+)"/KERNEL=="\1*", NAME="\1\2"/}' \
 		"${rules}"
+
+	eend 0 ""
 }
 
 # See Bug #129204 for a discussion about restarting udevd
@@ -329,6 +330,7 @@ restart_udevd() {
 
 	elog
 	elog "restarting udevd now."
+	elog
 
 	killall -15 udevd &>/dev/null
 	sleep 1
@@ -338,15 +340,6 @@ restart_udevd() {
 }
 
 pkg_postinst() {
-	fix_old_persistent_net_rules
-
-	restart_udevd
-
-	if [[ $previous_less_than_133 = 0 ]]
-	then
-		enable_udev_init_script
-	fi
-
 	# people want reminders, I'll give them reminders.  Odds are they will
 	# just ignore them anyway...
 
@@ -412,14 +405,19 @@ pkg_postinst() {
 	# requested in Bug #225033:
 	elog
 	elog "persistent-net does assigning fixed names to network devices."
-	elog "If you have problems with the persistent-net rules,"
+	elog "If you have problems with persistent-net rules,"
 	elog "just delete the rules file"
 	elog "\trm ${ROOT}etc/udev/rules.d/70-persistent-net.rules"
-	elog "and then reboot."
+	elog "and then trigger udev by either running"
+	elog "\tudevadm trigger --subsystem-match=net"
+	elog "or by rebooting."
 	elog
-	elog "This may however number your devices in a different way than they are now."
+	elog "This may number your devices in a different way than it is now."
 
-	ewarn
+	fix_old_persistent_net_rules
+
+	restart_udevd
+
 	ewarn "If you build an initramfs including udev, then please"
 	ewarn "make sure that the /sbin/udevadm binary gets included,"
 	ewarn "and your scripts changed to use it,as it replaces the"
@@ -429,6 +427,11 @@ pkg_postinst() {
 	ewarn "mount options for directory /dev are no longer"
 	ewarn "set in /etc/udev/udev.conf, but in /etc/fstab"
 	ewarn "as for other directories."
+
+	if [[ $previous_less_than_133 = 0 ]]
+	then
+		enable_udev_init_script
+	fi
 
 	elog
 	elog "For more information on udev on Gentoo, writing udev rules, and"
