@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mhwaveedit/Attic/mhwaveedit-1.4.15-r1.ebuild,v 1.4 2008/11/29 13:08:44 coldwind Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mhwaveedit/Attic/mhwaveedit-1.4.15-r1.ebuild,v 1.2 2008/11/26 08:49:57 ssuominen Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://download.gna.org/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="alsa arts esd jack ladspa libsamplerate nls oss sdl sndfile sox"
 
 RDEPEND=">=x11-libs/gtk+-2
