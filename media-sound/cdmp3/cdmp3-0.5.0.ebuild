@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/cdmp3/Attic/cdmp3-0.5.0.ebuild,v 1.6 2008/11/30 07:05:34 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/cdmp3/Attic/cdmp3-0.5.0.ebuild,v 1.5 2008/03/02 12:15:55 aballier Exp $
 
 DESCRIPTION="Conveniently rip audio CDs to MP3 or OGG files."
 HOMEPAGE="http://www.roland-riegel.de/cdmp3/index.html"
@@ -11,17 +11,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND="dev-lang/perl
-	media-sound/cdparanoia
+RDEPEND="media-sound/cdparanoia
+	app-cdr/cdrtools
 	media-sound/lame
 	media-sound/vorbis-tools
 	dev-perl/CDDB_get
-	app-misc/bfr
-	virtual/cdrtools"
-DEPEND=""
+	app-misc/bfr"
 
 src_install() {
-	dobin ${PN} || die "dobin failed."
-	dosym /usr/bin/${PN} /usr/bin/cdogg || die "dosym failed."
-	dodoc AUTHORS ChangeLog README
+	dobin cdmp3 || die "couldn't install cdmp3"
+	dosym /usr/bin/cdmp3 /usr/bin/cdogg || die "couldn't symlink cdogg"
+	dodoc ChangeLog AUTHORS README || die "dodoc failed"
 }
