@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9204 2008/11/23 16:16:33 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9222 2008/11/27 22:06:24 eva Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked
@@ -29,10 +29,44 @@
 
 #--- END OF EXAMPLES ---
 
+# Saleem Abdulrasool <compnerd@gentoo.org> (23 Nov 2007)
+# These might break automounting, so keep them masked for now.
+# Update by Gilles Dartiguelongue <eva@gentoo.org> (27 Nov 2008)
+# gnome-mount 0.8 doesn't depend on policykit.
+=gnome-base/gnome-mount-0.7
+>=sys-auth/policykit-0.6
+>=gnome-extra/policykit-gnome-0.6
+
+# Peter Alfredsen <loki_val@gentoo.org> (26 Nov 2008)
+# Mask non-working version to force their removal.
+<dev-dotnet/gtksourceview-sharp-0.12
+
+# Samuli Suominen <ssuominen@gentoo.org> (25 Nov 2008)
+# Cantus was moved to new upstream, but last modification
+# in subversion is from 2007. Versions we have in tree,
+# all fail on different errors. See bugs 205681 and 247831
+# for example about latest version. Masked for removal
+# in 30 days. Please try maintained media-sound/easytag.
+media-sound/cantus
+
+# Doug Goldstein <cardoe@gentoo.org> (24 Nov 2008)
+# Fails to configure in all situations. Just plain broken
+# bug #247677
+=net-libs/wvstreams-4.4.1
+
+# Zac Medico <zmedico@gentoo.org> (24 Nov 2008)
+# In order to ensure that portage-2.1.6 gets sufficient testing,
+# portage-2.2 will be masked in package.mask until portage-2.1.6 has
+# been marked stable. If you would like to continue using portage-2.2
+# then you should unmask it (instead of downgrading to portage-2.1.6).
+>=sys-apps/portage-2.2_pre
+
 # Peter Alfredsen <loki_val@gentoo.org> (22 Nov 2008)
 # Packages not building with mono-2
 # Masked for removal in 60 days.
 app-misc/gnutu
+app-pda/dopi
+media-sound/monopod
 
 # Jeremy Olexa <darkside@gentoo.org> (22 Nov 2008)
 # Masked for removal in 30 days, requested by maintainers. bug #173584
@@ -87,11 +121,22 @@ dev-db/fastdb
 >=media-gfx/f-spot-0.5
 >=media-sound/banshee-1.4
 dev-dotnet/webkit-sharp
-
-# Matthias Schwarzott <zzam@gentoo.org> (19 Nov 2008)
-# This ebuild contains intrusive changes
-# masked until all changes are tested
-~sys-fs/udev-133
+>=media-sound/muine-0.8.10
+>=app-misc/tomboy-0.12.1
+>=net-news/blam-1.8.6
+=dev-dotnet/art-sharp-2.24*
+=dev-dotnet/gconf-sharp-2.24*
+=dev-dotnet/gnome-desktop-sharp-2.24*
+=dev-dotnet/gnome-panel-sharp-2.24*
+=dev-dotnet/gnome-print-sharp-2.24*
+=dev-dotnet/gnome-sharp-2.24*
+=dev-dotnet/gnomevfs-sharp-2.24*
+=dev-dotnet/gtkhtml-sharp-2.24*
+=dev-dotnet/gtksourceview-sharp-2.24*
+=dev-dotnet/nautilusburn-sharp-2.24*
+=dev-dotnet/rsvg-sharp-2.24*
+=dev-dotnet/vte-sharp-2.24*
+=dev-dotnet/wnck-sharp-2.24*
 
 # Jeremy Olexa <darkside@gentoo.org> (19 Nov 2008)
 # Stops playing at random intervals when HAL is used. Unmaintained upstream.
@@ -107,11 +152,6 @@ media-sound/workman
 # ytin hasn't been updated in years.  Use games-mud/tintin instead
 # which is still being maintained.
 games-mud/ytin
-
-# Jim Ramsay <lack@gentoo.org> (17 Nov 2008)
-# The NEW 64-bit version of flash player is alpha, p.mask it until it's a wee
-# bit more tested (Bug #247200)
-=net-www/netscape-flash-10.0.20.7_alpha
 
 # Matthias Schwarzott <zzam@gentoo.org> (28 Oct 2008)
 # This breaks kernels with older sysfs layout, Bug #246938
@@ -191,11 +231,6 @@ sys-apps/usbd
 # Daniel Black <dragonheart@gentoo.org> (4 Nov 2008)
 # Legal problems #241650 causing distribution problems #245322 and build problems #237493
 app-crypt/truecrypt
-
-# Jeremy Olexa <darkside@gentoo.org> (3 Nov 2008)
-# Proxy commit for Cardoe, ncurses-5.7 seems broke with USE=berkdb and is
-# causing issues for users, see bug #245370
-=sys-libs/ncurses-5.7
 
 # Daniel Gryniewicz <dang@gentoo.org> (2 Nov 2008)
 # Feed counts and updates seem to be broken
@@ -491,7 +526,7 @@ dev-python/twibber
 # Security masked: bug #233929
 <games-simulation/openttd-0.6.3
 
-# Samuli Suominen <drac@gentoo.org> (3 Aug 2008)
+# Samuli Suominen <ssuominen@gentoo.org> (3 Aug 2008)
 # Unmaintained. Masked for removal wrt #233394.
 # Open security bugs  #208566, #215006 and #231836.
 media-video/mplayer-bin
@@ -523,13 +558,6 @@ dev-db/ctdb
 # Alin Năstac <mrness@gentoo.org> (24 Jul 2008)
 # This version stops responding after awhile (#229049).
 =net-proxy/privoxy-3.0.8
-
-# MATSUU Takuto <matsuu@gentoo.org> (10 Jul 2008)
-# mask for security bug #231283
-dev-cpp/poslib
-net-dns/posadis
-net-dns/mfedit
-net-dns/dnsquery
 
 # Alexis Ballier <aballier@gentoo.org> (9 Jul 2008)
 # Latest slv2 release has API changes
@@ -610,7 +638,7 @@ www-apps/gitweb
 # Live SVN Ebuild
 =dev-python/django-9999
 
-# Samuli Suominen <drac@gentoo.org> (05 Jun 2008)
+# Maintainer Needed <maintainer-needed@gentoo.org> (05 Jun 2008)
 # Masked for testing wrt #163724
 dev-libs/libffi
 x11-libs/gtk-server
@@ -1055,12 +1083,6 @@ sys-kernel/hppa-sources
 =app-pda/libopensync-plugin-python-9999
 =app-pda/libopensync-plugin-syncml-9999
 =app-pda/libopensync-plugin-vformat-9999
-
-# Saleem Abdulrasool <compnerd@gentoo.org> (23 Nov 2007)
-# These might break automounting, so keep them masked for now.
->=sys-auth/policykit-0.6
->=gnome-base/gnome-mount-0.7
->=gnome-extra/policykit-gnome-0.6
 
 # Duncan Coutts <dcoutts@gentoo.otg> (05 Nov 2007)
 # dev-lang/ghc-bin is going away, use dev-lang/ghc instead.
