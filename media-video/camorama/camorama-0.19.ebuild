@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/camorama/Attic/camorama-0.19.ebuild,v 1.4 2008/11/30 11:56:17 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/camorama/Attic/camorama-0.19.ebuild,v 1.3 2008/01/23 19:53:23 maekke Exp $
 
 inherit gnome2
 
@@ -23,7 +23,3 @@ DEPEND="${RDEPEND}
 	dev-util/intltool"
 
 SCROLLKEEPER_UPDATE="0"
-
-pkg_setup() {
-	G2CONF="${G2CONF} --disable-schemas-install"
-}
