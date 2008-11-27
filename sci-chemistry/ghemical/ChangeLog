@@ -1,15 +1,6 @@
 # ChangeLog for sci-chemistry/ghemical
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ghemical/ChangeLog,v 1.28 2008/11/30 22:50:27 je_fro Exp $
-
-  30 Nov 2008; Jeff Gardner <je_fro@gentoo.org> +files/ghemical-gcc43.patch,
-  ghemical-2.98.ebuild:
-  Incorporating gcc4.3 fixes
-
-*ghemical-2.98 (27 Nov 2008)
-
-  27 Nov 2008; Patrick Lauer <patrick@gentoo.org> +ghemical-2.98.ebuild:
-  Bump to 2.98
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ghemical/ChangeLog,v 1.26 2008/08/06 15:35:02 ulm Exp $
 
   06 Aug 2008; Ulrich Mueller <ulm@gentoo.org> metadata.xml:
   Add USE flag description to metadata wrt GLEP 56.
