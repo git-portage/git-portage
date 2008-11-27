@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/gsf-sharp/Attic/gsf-sharp-0.8.ebuild,v 1.6 2008/10/31 20:18:32 dsd Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/gsf-sharp/Attic/gsf-sharp-0.8.ebuild,v 1.7 2008/11/25 23:41:03 loki_val Exp $
 
 inherit eutils mono autotools
 
 DESCRIPTION="C# bindings for libgsf"
 HOMEPAGE="http://www.mono-project.com/"
-SRC_URI="http://primates.ximian.com/~joe/${P}.tar.gz"
+SRC_URI="mirror://gentoo/${P}.tar.gz"
 LICENSE="LGPL-2"
 
 SLOT="0"
