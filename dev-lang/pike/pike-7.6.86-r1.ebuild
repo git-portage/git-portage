@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/pike/pike-7.6.86-r1.ebuild,v 1.11 2008/11/27 23:14:01 araujo Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/pike/pike-7.6.86-r1.ebuild,v 1.10 2008/02/28 08:27:12 araujo Exp $
 
 DESCRIPTION="Pike programming language and runtime"
 HOMEPAGE="http://pike.ida.liu.se/"
