@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/procmail/Attic/procmail-3.22-r9.ebuild,v 1.5 2008/11/29 17:11:42 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/procmail/Attic/procmail-3.22-r9.ebuild,v 1.1 2008/06/15 10:22:20 dertobi123 Exp $
 
 inherit eutils flag-o-matic
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.procmail.org/${P}.tar.gz"
 
 LICENSE="|| ( Artistic GPL-2 )"
 SLOT="0"
-KEYWORDS="alpha amd64 arm ~hppa ia64 ~mips ppc ~ppc64 ~s390 ~sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="mbox selinux"
 
 DEPEND="virtual/libc virtual/mta"
@@ -18,9 +18,15 @@ RDEPEND="virtual/libc
 	selinux? ( sec-policy/selinux-procmail )"
 PROVIDE="virtual/mda"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_compile() {
+	# -finline-functions (implied by -O3) leaves strstr() in an infinite loop.
+	# To work around this, we append -fno-inline-functions to CFLAGS
+	append-flags -fno-inline-functions
+
+	sed -e "s:CFLAGS0 = -O:CFLAGS0 = ${CFLAGS}:" \
+		-e "s:LOCKINGTEST=__defaults__:#LOCKINGTEST=__defaults__:" \
+		-e "s:#LOCKINGTEST=/tmp:LOCKINGTEST=/tmp:" \
+		-i Makefile || die "sed failed"
 
 	# disable flock, using both fcntl and flock style locking
 	# doesn't work with NFS with 2.6.17+ kernels, bug #156493
@@ -49,17 +55,6 @@ src_unpack() {
 
 	# Fix for bug #200006
 	epatch "${FILESDIR}/${PN}-pipealloc.diff"
-}
-
-src_compile() {
-	# -finline-functions (implied by -O3) leaves strstr() in an infinite loop.
-	# To work around this, we append -fno-inline-functions to CFLAGS
-	append-flags -fno-inline-functions
-
-	sed -e "s:CFLAGS0 = -O:CFLAGS0 = ${CFLAGS}:" \
-		-e "s:LOCKINGTEST=__defaults__:#LOCKINGTEST=__defaults__:" \
-		-e "s:#LOCKINGTEST=/tmp:LOCKINGTEST=/tmp:" \
-		-i Makefile || die "sed failed"
 
 	emake || die
 }
