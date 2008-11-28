@@ -1,27 +1,6 @@
 # ChangeLog for net-wireless/crda
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/crda/ChangeLog,v 1.5 2008/12/02 11:47:04 armin76 Exp $
-
-  02 Dec 2008; Raúl Porcel <armin76@gentoo.org> crda-0.9.5.ebuild:
-  Add ~x86 wrt #249606
-
-*crda-0.9.5 (02 Dec 2008)
-
-  02 Dec 2008; <chainsaw@gentoo.org> -files/0.9.4-as-needed.patch,
-  -crda-0.9.4.ebuild, +crda-0.9.5.ebuild:
-  New upstream release, incorporating build & coding style fixes by Diego E.
-  "Flameeyes" Pettenò <flameeyes@gentoo.org>. Removed old ebuild.
-
-  01 Dec 2008; Diego E. Pettenò <flameeyes@gentoo.org>
-  files/0.9.4-as-needed.patch:
-  Replace --as-needed patch with one that solves the problem, the same as
-  sent upstream.
-
-  01 Dec 2008; <chainsaw@gentoo.org> crda-0.9.4.ebuild:
-  Force -j1 as the current Makefile is not safe for parallel building,
-  closes bug #249181 by Emil Karlson <jkarlson@cc.hut.fi>. Fixes have been
-  sent upstream to linux-wireless by Diego E. "Flameeyes" Pettenò
-  <flameeyes@gentoo.org>.
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/crda/ChangeLog,v 1.1 2008/11/27 15:27:20 chainsaw Exp $
 
 *crda-0.9.4 (27 Nov 2008)
 

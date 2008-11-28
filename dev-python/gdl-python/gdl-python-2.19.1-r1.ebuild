@@ -1,10 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/gdl-python/Attic/gdl-python-2.19.1-r1.ebuild,v 1.3 2008/12/01 14:33:50 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/gdl-python/Attic/gdl-python-2.19.1-r1.ebuild,v 1.1 2008/11/24 12:44:48 eva Exp $
 
 G_PY_PN="gnome-python-extras"
 
-inherit gnome-python-common
+inherit gnome-python-common python
 
 PVP="$(get_version_component_range 1-2)"
 SRC_URI="mirror://gnome/sources/${G_PY_PN}/${PVP}/${G_PY_PN}-${PV}.tar.bz2
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="examples"
 
-RDEPEND=">=dev-libs/gdl-2.24.0"
+RDEPEND=">=dev-libs/gdl-0.6.1"
 DEPEND="${RDEPEND}"
 
 EXAMPLES="examples/gdl/*"
@@ -41,3 +41,7 @@ src_unpack() {
 	epatch "${FILESDIR}/${P}-gdlicons.patch"
 }
 
+src_install() {
+	python_need_rebuild
+	gnome-python-common_src_install
+}
