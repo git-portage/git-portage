@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/totem/Attic/totem-2.24.2.ebuild,v 1.5 2008/12/02 15:58:59 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/totem/Attic/totem-2.24.2.ebuild,v 1.3 2008/11/02 02:17:00 leio Exp $
 
 inherit eutils gnome2 multilib python
 
@@ -79,8 +79,6 @@ pkg_setup() {
 	fi
 
 	G2CONF="${G2CONF}
-		--disable-scrollkeeper
-		--disable-schemas-install
 		--disable-vala
 		--with-dbus
 		--enable-easy-codec-installation
@@ -123,9 +121,9 @@ src_compile() {
 	# FIXME: why does it need write access here, probably need to set up a fake
 	# home in /var/tmp like other pkgs do
 
-	addpredict "$(unset HOME; echo ~)/.gconf"
-	addpredict "$(unset HOME; echo ~)/.gconfd"
-	addpredict "$(unset HOME; echo ~)/.gnome2"
+	addpredict "/root/.gconfd"
+	addpredict "/root/.gconf"
+	addpredict "/root/.gnome2"
 
 	gnome2_src_compile
 }
