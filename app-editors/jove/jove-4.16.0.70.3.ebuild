@@ -1,13 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/jove/Attic/jove-4.16.0.70.3.ebuild,v 1.5 2008/12/02 20:17:37 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/jove/Attic/jove-4.16.0.70.3.ebuild,v 1.4 2008/02/24 17:24:18 opfer Exp $
 
 inherit eutils flag-o-matic
 
 MY_P=${P/-/_}
 MY_DIFFP=${MY_P%.*}-${MY_P##*.}.diff
 MY_P=${MY_P%.*}
-
 DESCRIPTION="Jonathan's Own Version of Emacs -- a light emacs-like editor without LISP bindings"
 HOMEPAGE="ftp://ftp.cs.toronto.edu/cs/ftp/pub/hugh/jove-dev/"
 SRC_URI="mirror://debian/pool/main/j/${PN}/${MY_P}.orig.tar.gz
@@ -16,13 +15,15 @@ SRC_URI="mirror://debian/pool/main/j/${PN}/${MY_P}.orig.tar.gz
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 ~ppc x86"
-IUSE="unix98"
+IUSE="X unix98"
 
-RDEPEND="sys-libs/ncurses"
+RDEPEND="sys-libs/ncurses
+	X? ( x11-libs/xview )"
+
 DEPEND="${RDEPEND}
 	>=sys-apps/sed-4"
 
-S=${WORKDIR}/${MY_P/_/}
+S="${WORKDIR}/${MY_P/_/}"
 
 src_unpack() {
 	unpack ${A}
@@ -38,14 +39,26 @@ src_unpack() {
 
 src_compile() {
 	local myconf
-	if use unix98; then
-		emake SYSDEFS="-DSYSVR4 -D_XOPEN_SOURCE=500" || die "emake failed."
+	if use unix98 ; then
+		emake SYSDEFS="-DSYSVR4 -D_XOPEN_SOURCE=500" || die
 	else
-		emake || die "emake failed."
+		emake || die
+	fi
+
+	if use X ; then
+		emake XJOVEHOME=/usr makexjove || die
 	fi
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed."
+	emake DESTDIR="${D}" install || die
+
+	if use X ; then
+		make DESTDIR="${D}" \
+			XJOVEHOME="${D}"/usr \
+			MANDIR="${D}"/usr/share/man/man1 \
+			installxjove || die
+	fi
+
 	keepdir /var/lib/jove/preserve
 }
