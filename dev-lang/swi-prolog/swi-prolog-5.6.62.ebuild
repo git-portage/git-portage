@@ -1,10 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/swi-prolog/Attic/swi-prolog-5.6.62.ebuild,v 1.3 2008/12/01 20:33:31 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/swi-prolog/Attic/swi-prolog-5.6.62.ebuild,v 1.1 2008/10/28 06:44:52 keri Exp $
 
 inherit eutils flag-o-matic java-pkg-opt-2
 
-PATCHSET_VER="1"
+PATCHSET_VER="0"
 
 DESCRIPTION="free, small, and standard compliant Prolog compiler"
 HOMEPAGE="http://www.swi-prolog.org/"
@@ -13,7 +13,7 @@ SRC_URI="http://gollem.science.uva.nl/cgi-bin/nph-download/SWI-Prolog/pl-${PV}.t
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
 IUSE="berkdb debug doc gmp hardened java minimal odbc readline ssl static test zlib X"
 
 DEPEND="!media-libs/ploticus
@@ -54,9 +54,15 @@ src_compile() {
 	use hardened && append-flags -fno-unit-at-a-time
 	use debug && append-flags -DO_DEBUG
 
+	local jpltestconf
+	if use java && use test ; then
+		jpltestconf="--with-junit=$(java-config --classpath junit)"
+	fi
+
 	cd "${S}"/src
 	econf \
 		--libdir=/usr/$(get_libdir) \
+		${jpltestconf} \
 		$(use_enable gmp) \
 		$(use_enable readline) \
 		$(use_enable !static shared) \
@@ -66,11 +72,6 @@ src_compile() {
 
 	if ! use minimal ; then
 		einfo "Building SWI-Prolog additional packages"
-
-		local jpltestconf
-		if use java && use test ; then
-			jpltestconf="--with-junit=$(java-config --classpath junit)"
-		fi
 
 		cd "${S}/packages"
 		econf \
@@ -86,7 +87,6 @@ src_compile() {
 			--with-http \
 			--without-jasmine \
 			$(use_with java jpl) \
-			${jpltestconf} \
 			--with-nlp \
 			$(use_with odbc) \
 			--with-pldoc \
