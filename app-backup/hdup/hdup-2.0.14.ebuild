@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/hdup-2.0.14.ebuild,v 1.4 2008/04/21 11:07:36 chtekk Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/hdup-2.0.14.ebuild,v 1.5 2008/11/26 03:11:58 flameeyes Exp $
 
 KEYWORDS="~amd64 ~x86"
 DESCRIPTION="Hdup is backup program using tar, find, gzip/bzip2, mcrypt and ssh."
@@ -22,6 +22,16 @@ RDEPEND="${DEPEND}
 
 DEPEND="${DEPEND}
 		dev-util/pkgconfig"
+
+src_unpack() {
+	unpack ${A}
+
+	sed -i \
+		-e '/hdup:/s|${HDR}.*||' \
+		-e 's:GLIB_LIBS *=:LDLIBS =:' \
+		-e '/-o hdup/,+1d' \
+		"${S}"/src/Makefile.in || die "Makefile fix failed"
+}
 
 src_compile() {
 	econf || die "econf failed"
