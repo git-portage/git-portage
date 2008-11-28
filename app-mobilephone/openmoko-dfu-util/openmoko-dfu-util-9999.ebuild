@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/openmoko-dfu-util/Attic/openmoko-dfu-util-9999.ebuild,v 1.2 2008/11/28 20:03:58 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/openmoko-dfu-util/Attic/openmoko-dfu-util-9999.ebuild,v 1.1 2008/09/06 00:56:02 vapier Exp $
 
 ESVN_REPO_URI="http://svn.openmoko.org/trunk/src/host/dfu-util/"
 inherit subversion autotools
@@ -24,5 +24,4 @@ src_unpack() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Make install failed"
-	doman doc/dfu-util.1
 }
