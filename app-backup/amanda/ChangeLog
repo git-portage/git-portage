@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/amanda
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.47 2008/11/19 02:13:07 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.48 2008/11/26 01:51:57 robbat2 Exp $
+
+  26 Nov 2008; Robin H. Johnson <robbat2@gentoo.org>
+  +files/amanda-2.6.0_p2-syslocpath.patch, amanda-2.6.0_p2-r4.ebuild:
+  Bug #248838, avoid a too-generic binary named dump in /usr/bin.
 
 *amanda-2.6.0_p2-r4 (19 Nov 2008)
 
