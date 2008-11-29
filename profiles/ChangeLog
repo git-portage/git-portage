@@ -1,10 +1,49 @@
 # ChangeLog for profile directory
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2085 2008/11/25 14:48:42 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2098 2008/11/28 21:49:03 dev-zero Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  28 Nov 2008; Tiziano Müller <dev-zero@gentoo.org> package.mask:
+  p.masked bluez and bluez-gnome-1.8
+
+  27 Nov 2008; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Masking net-misc/logjam and net-news/straw
+
+  27 Nov 2008; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  update gnome-mount/policykit mask for gnome-mount-0.8 bump.
+
+  27 Nov 2008; Mike Frysinger <vapier@gentoo.org> package.mask:
+  Remove ncurses-5.7 mask -- just disable berkdb in ebuild.
+
+  26 Nov 2008; MATSUU Takuto <matsuu@gentoo.org> package.mask:
+  remove posadis mask
+
+  26 Nov 2008; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  Force removal of non-working gtksourceview-sharp versions.
+
+  26 Nov 2008; Matthias Schwarzott <zzam@gentoo.org> package.mask:
+  Finally unmask udev-133, it is finished now.
+
+  26 Nov 2008; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  Gnome-sharp and gnome-desktop-sharp added to mono-2 mask
+
+  25 Nov 2008; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  Another couple of packages depending on the great mono-2 unmasking
+
+  25 Nov 2008; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  monopod doesn't build with mono-2
+
+  25 Nov 2008; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  dopi doesn't build with mono-2, bug 212097
+
+  25 Nov 2008; Ben de Groot <yngwin@gentoo.org> package.mask:
+  Remove mask on qscintilla-python
+
+  25 Nov 2008; Jim Ramsay <lack@gentoo.org> package.mask:
+  Many good reports received, unmasking native 64-bit flash plugin
 
   25 Nov 2008; <ssuominen@gentoo.org> package.mask:
   Mask media-sound/cantus for removal by treecleaners and sound in 30 days.
