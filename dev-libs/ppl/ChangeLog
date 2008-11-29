@@ -1,17 +1,6 @@
 # ChangeLog for dev-libs/ppl
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/ppl/ChangeLog,v 1.4 2008/12/01 16:52:10 vapier Exp $
-
-  01 Dec 2008; Mike Frysinger <vapier@gentoo.org> ppl-0.10.ebuild:
-  Fix typo pointed out by Sigmatador.
-
-*ppl-0.10 (30 Nov 2008)
-
-  30 Nov 2008; Mike Frysinger <vapier@gentoo.org> metadata.xml,
-  +ppl-0.10.ebuild:
-  Version bump #245799 by Sigmatador. Fix doc install #241276 by Diego E.
-  Pettenò. Control prolog support via USE=prolog #249320 by Diego E.
-  Flameeyes Pettenò.
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/ppl/ChangeLog,v 1.2 2008/09/21 09:56:20 robbat2 Exp $
 
   21 Sep 2008; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml:
   Mike is a slacker and did not include metadata.xml for his new package.
