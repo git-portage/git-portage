@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/exempi/Attic/exempi-2.0.2.ebuild,v 1.4 2008/12/04 05:14:09 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/exempi/Attic/exempi-2.0.2.ebuild,v 1.2 2008/10/22 22:37:30 eva Exp $
 
 inherit autotools eutils
 
@@ -10,13 +10,15 @@ SRC_URI="http://libopenraw.freedesktop.org/download/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="2"
-KEYWORDS="~amd64 ~hppa ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="examples test"
 
 RDEPEND="dev-libs/expat
 	virtual/libiconv"
 DEPEND="${RDEPEND}
-	test? ( >=dev-libs/boost-1.33.0 )"
+	test? (
+		>=dev-libs/boost-1.33.0
+		dev-util/valgrind )"
 
 src_unpack() {
 	unpack ${A}
