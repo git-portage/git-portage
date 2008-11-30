@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>benchmarks</herd>
+<herd>no-herd</herd>
 <maintainer>
-  <email>patrick@gentoo.org</email>
-    <name>Patrick Lauer</name>
+  <email>robbat2@gentoo.org</email>
+    <name>Robin H. Johnson</name>
     <description>Maintainer</description>
 </maintainer>
 <longdescription>
