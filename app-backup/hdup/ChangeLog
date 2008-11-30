@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/hdup
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/ChangeLog,v 1.8 2008/04/21 11:07:36 chtekk Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/ChangeLog,v 1.9 2008/11/26 03:11:58 flameeyes Exp $
+
+  26 Nov 2008; Diego E. Pettenò <flameeyes@gentoo.org> hdup-2.0.14.ebuild:
+  Fix building with --as-needed, respect LDFLAGS, don't strip.
 
   21 Apr 2008; Luca Longinotti <chtekk@gentoo.org> hdup-1.6.37.ebuild,
   hdup-2.0.14.ebuild:
