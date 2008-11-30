@@ -1,29 +1,6 @@
 # ChangeLog for dev-util/netbeans
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/netbeans/ChangeLog,v 1.97 2008/12/04 12:15:51 fordfrog Exp $
-
-  04 Dec 2008; Miroslav Šulc <fordfrog@gentoo.org> netbeans-6.5-r2.ebuild:
-  Fixed bug in checking of what netbeans modules need to be added
-
-  04 Dec 2008; Miroslav Šulc <fordfrog@gentoo.org> netbeans-6.5-r2.ebuild:
-  Rewritten checking of needed and not specified modules so it should be
-  easier for users to add the missing modules
-
-  04 Dec 2008; Miroslav Šulc <fordfrog@gentoo.org> netbeans-6.5-r2.ebuild:
-  Filtered all ecj compilers
-
-*netbeans-6.5-r2 (03 Dec 2008)
-
-  03 Dec 2008; Miroslav Šulc <fordfrog@gentoo.org> -netbeans-6.5-r1.ebuild,
-  +netbeans-6.5-r2.ebuild:
-  Fixed runtime linkage to java-ws-tools-2
-
-  01 Dec 2008; Miroslav Šulc <fordfrog@gentoo.org> netbeans-6.5-r1.ebuild:
-  Netbeans still depends on com.sun packages so added dependency on
-  java-virtuals/jdk-with-com-sun.
-
-  30 Nov 2008; Miroslav Šulc <fordfrog@gentoo.org> netbeans-6.5-r1.ebuild:
-  Fixed default NETBEANS_MODULES dependency (bug #249204).
+# $Header: /var/cvsroot/gentoo-x86/dev-util/netbeans/ChangeLog,v 1.91 2008/11/26 19:47:07 fordfrog Exp $
 
   26 Nov 2008; Miroslav Šulc <fordfrog@gentoo.org>
   +files/6.5/all-visualweb.insync.JspxSerializer.java.patch,
