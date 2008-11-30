@@ -1,22 +1,6 @@
 # ChangeLog for net-misc/cfengine
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/cfengine/ChangeLog,v 1.89 2008/12/05 08:25:52 robbat2 Exp $
-
-  05 Dec 2008; Robin H. Johnson <robbat2@gentoo.org>
-  cfengine-2.2.8-r1.ebuild:
-  Bug #124314 - implement ROOT support. cfkeys must be run with ROOT==/, but
-  is not run until emerge --config now.
-
-*cfengine-2.2.8-r1 (05 Dec 2008)
-*cfengine-2.1.22-r2 (05 Dec 2008)
-
-  05 Dec 2008; Robin H. Johnson <robbat2@gentoo.org>
-  +files/cfengine-2.1-package-locking-fixup.patch,
-  +files/cfengine-2.2-package-locking-fixup.patch,
-  +cfengine-2.1.22-r2.ebuild, +cfengine-2.2.8-r1.ebuild:
-  Avoid a collision on the lock names inside the packages method when the
-  package name, cmp and action are the same, but version and
-  define/elsedefine are different.
+# $Header: /var/cvsroot/gentoo-x86/net-misc/cfengine/ChangeLog,v 1.87 2008/09/27 16:17:37 armin76 Exp $
 
   27 Sep 2008; Raúl Porcel <armin76@gentoo.org> cfengine-2.1.22-r1.ebuild:
   arm stable wrt #220927
