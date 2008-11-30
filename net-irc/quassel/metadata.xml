@@ -7,7 +7,7 @@
 	  <name>Daniel Pielmeier</name>
   </maintainer>
   <maintainer>
-    <email>darkside@gentoo.org</email>
+    <email>patrick@gentoo.org</email>
   </maintainer>
   <use>
     <flag name="X">
