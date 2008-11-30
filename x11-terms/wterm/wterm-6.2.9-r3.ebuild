@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/wterm/Attic/wterm-6.2.9-r3.ebuild,v 1.5 2008/05/05 14:19:06 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/wterm/Attic/wterm-6.2.9-r3.ebuild,v 1.7 2008/11/27 23:15:04 jer Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/wterm/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ppc sparc x86"
+KEYWORDS="~amd64 ~hppa ppc sparc x86"
 IUSE="cjk"
 
 DEPEND="x11-libs/libXpm
@@ -22,6 +22,7 @@ src_unpack() {
 
 	# Security bug 219762
 	epatch "${FILESDIR}/${P}-display-security-issue.patch"
+	epatch "${FILESDIR}/${P}-strip.patch"
 }
 
 src_compile() {
