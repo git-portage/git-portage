@@ -1,8 +1,9 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/cocoon/cocoon-2.1.11.ebuild,v 1.2 2008/12/01 21:50:17 betelgeuse Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/cocoon/cocoon-2.1.11.ebuild,v 1.1 2008/07/13 10:54:47 nelchael Exp $
 
 JAVA_PKG_IUSE="doc"
+WANT_ANT_TASKS=""
 
 inherit java-pkg-2 java-ant-2
 
@@ -15,7 +16,8 @@ SLOT="0"
 KEYWORDS="~x86 ~ppc ~amd64"
 IUSE=""
 
-DEPEND=">=virtual/jdk-1.5"
+DEPEND=">=virtual/jdk-1.5
+	>=dev-java/ant-core-1.5.3"
 RDEPEND=">=virtual/jre-1.5"
 
 # I know this way of building cocoon is not the best, it will be fixed for
@@ -34,7 +36,6 @@ src_unpack() {
 		echo "exclude.webapp.idldocs=true" >> local.build.properties
 	fi
 	java-ant_bsfix_files tools/targets/*-build.xml
-	sed -i -e 's/maxmemory="192m"/maxmemory="384m"/' tools/src/blocks-build.xsl
 }
 
 src_compile() {
@@ -54,12 +55,11 @@ src_install() {
 		doins "${S}/lib/${i}"/*
 	done
 
-	dodoc CREDITS.txt INSTALL.txt KEYS README.txt || die
-
-	use doc && java-pkg_dojavadoc build/cocoon/javadocs
-
+	dodoc CREDITS.txt INSTALL.txt KEYS README.txt
 	docinto legal
 	dodoc legal/*
+
+	use doc && java-pkg_dojavadoc build/webapp/api
 }
 
 pkg_postinst() {
