@@ -1,10 +1,52 @@
 # ChangeLog for profile directory
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2095 2008/11/27 21:27:31 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2108 2008/12/01 18:52:53 angelos Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  01 Dec 2008; Christoph Mende <angelos@gentoo.org> profiles.desc:
+  Removed 2006.1 profiles
+
+  01 Dec 2008; Tomas Chvatal <scarabeus@gentoo.org>
+  desc/foo2zjs_devices.desc:
+  Update foo2zjs devices list.
+
+  01 Dec 2008; <ssuominen@gentoo.org> package.mask:
+  Removed media-sound/cantus because it moved to new upstream and there is
+  nothing working out yet. Removed media-sound/workman because it's using
+  deprecated xview library.
+
+  30 Nov 2008; Ulrich Mueller <ulm@gentoo.org> updates/4Q-2008:
+  Slotmove app-doc/elisp-manual.
+
+  30 Nov 2008; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  Mono-2 is ready for ~arch.
+
+  30 Nov 2008; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  Add mono-addins-0.4 to mono-2 mask
+
+  30 Nov 2008; Ulrich Mueller <ulm@gentoo.org> package.mask:
+  Package mask app-emacs/emacs-daemon.
+
+  30 Nov 2008; Robin H. Johnson <robbat2@gentoo.org> package.mask:
+  Fix loki_val's package.mask corruption typo.
+
+  30 Nov 2008; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  Something more for mono-2 package.mask.
+
+  29 Nov 2008; Gilles Dartiguelongue <eva@gentoo.org> desc/cameras.desc:
+  add description for a new kind of camera.
+
+  28 Nov 2008; Tiziano Müller <dev-zero@gentoo.org> package.mask:
+  p.masked bluez and bluez-gnome-1.8
+
+  27 Nov 2008; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Masking net-misc/logjam and net-news/straw
+
+  27 Nov 2008; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  update gnome-mount/policykit mask for gnome-mount-0.8 bump.
 
   27 Nov 2008; Mike Frysinger <vapier@gentoo.org> package.mask:
   Remove ncurses-5.7 mask -- just disable berkdb in ebuild.
