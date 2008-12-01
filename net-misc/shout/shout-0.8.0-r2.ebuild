@@ -1,22 +1,26 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/shout/shout-0.8.0-r2.ebuild,v 1.6 2008/12/03 06:32:55 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/shout/shout-0.8.0-r2.ebuild,v 1.5 2007/07/12 02:52:15 mr_bones_ Exp $
+
+IUSE=""
 
 inherit eutils
 
 DESCRIPTION="Shout is a program for creating mp3 stream for use with icecast or shoutcast"
-HOMEPAGE="http://www.icecast.org"
 SRC_URI="http://icecast.org/releases/${P}.tar.gz"
-
+HOMEPAGE="http://www.icecast.org"
+KEYWORDS="alpha ~ppc sparc x86"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha ~ppc sparc x86"
-IUSE=""
+
+DEPEND="virtual/libc"
 
 src_unpack() {
 	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/variables.diff
+
+	cd ${S}
+	epatch ${FILESDIR}/variables.diff
+
 	rm -f sock.o
 }
 
@@ -25,13 +29,13 @@ src_compile() {
 		--host=${CHOST} \
 		--sysconfdir=/etc/shout \
 		--localstatedir=/var \
-		|| die "econf failed."
+		|| die "configure failed"
 
-	emake || die "emake failed."
+	emake || die "emake failed"
 }
 
 src_install () {
-	emake DESTDIR="${D}" install || die "emake install failed."
+	make DESTDIR=${D} install || die
 	keepdir /var/log/shout
 	fowners root:audio /var/log/shout
 	fperms 775 /var/log/shout
