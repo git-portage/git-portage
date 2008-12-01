@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/util-linux/Attic/util-linux-2.14.1.ebuild,v 1.11 2008/12/05 17:42:19 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/util-linux/Attic/util-linux-2.14.1.ebuild,v 1.7 2008/11/30 14:53:06 maekke Exp $
 
 EGIT_REPO_URI="git://git.kernel.org/pub/scm/utils/util-linux-ng/util-linux-ng.git"
 inherit eutils
@@ -15,13 +15,13 @@ HOMEPAGE="http://www.kernel.org/pub/linux/utils/util-linux-ng/"
 if [[ ${PV} == "9999" ]] ; then
 	SRC_URI=""
 else
-	SRC_URI="mirror://kernel/linux/utils/util-linux-ng/v${PV:0:4}/${MY_P}.tar.bz2
+	SRC_URI="http://www.kernel.org/pub/linux/utils/util-linux-ng/v${PV:0:4}/${MY_P}.tar.bz2
 		loop-aes? ( http://loop-aes.sourceforge.net/updates/util-linux-ng-2.14.1-20081015.diff.bz2 )"
 fi
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86"
+KEYWORDS="~alpha amd64 ~arm hppa ~ia64 ~m68k ~mips ppc ~ppc64 ~s390 ~sh ~sparc x86"
 IUSE="crypt loop-aes nls old-linux selinux slang uclibc unicode"
 
 RDEPEND="!sys-process/schedutils
