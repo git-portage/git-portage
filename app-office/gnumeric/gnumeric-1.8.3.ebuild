@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/gnumeric/Attic/gnumeric-1.8.3.ebuild,v 1.10 2008/12/04 22:04:07 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/gnumeric/Attic/gnumeric-1.8.3.ebuild,v 1.9 2008/09/28 07:59:43 aballier Exp $
 
-inherit gnome2 flag-o-matic python
+inherit gnome2 flag-o-matic
 
 DESCRIPTION="Gnumeric, the GNOME Spreadsheet"
 HOMEPAGE="http://www.gnome.org/projects/gnumeric/"
@@ -92,9 +92,4 @@ src_install() {
 	dosym \
 		/usr/share/gnome/help/gnumeric \
 		/usr/share/${PN}/${PV}/doc
-}
-
-pkg_postinst() {
-	gnome2_pkg_postinst
-	python_need_rebuild
 }
