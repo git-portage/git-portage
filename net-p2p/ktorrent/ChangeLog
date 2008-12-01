@@ -1,17 +1,6 @@
 # ChangeLog for net-p2p/ktorrent
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/ktorrent/ChangeLog,v 1.96 2008/12/03 22:43:38 scarabeus Exp $
-
-*ktorrent-3.2_beta1 (03 Dec 2008)
-*ktorrent-3.1.5-r1 (03 Dec 2008)
-
-  03 Dec 2008; Tomas Chvatal <scarabeus@gentoo.org>
-  +ktorrent-3.1.5-r1.ebuild, +ktorrent-3.2_beta1.ebuild:
-  Change slot to have correct one based on app version instead of kde
-  version. Version bump for new beta.
-
-  01 Dec 2008; Friedrich Oslage <bluebird@gentoo.org> ktorrent-2.2.8.ebuild:
-  Stable on sparc, security bug #244741
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/ktorrent/ChangeLog,v 1.94 2008/11/28 21:56:45 dertobi123 Exp $
 
   28 Nov 2008; Tobias Scherbaum <dertobi123@gentoo.org>
   ktorrent-2.2.8.ebuild:
