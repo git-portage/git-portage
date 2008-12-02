@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ario/Attic/ario-1.1.ebuild,v 1.5 2008/12/06 21:13:51 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ario/Attic/ario-1.1.ebuild,v 1.4 2008/10/14 16:12:08 flameeyes Exp $
 
 EAPI=1
 inherit gnome2-utils
@@ -12,14 +12,14 @@ SRC_URI="mirror://sourceforge/${PN}-player/${P}.tar.gz"
 LICENSE="GPL-1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="dbus debug zeroconf"
+IUSE="avahi dbus debug"
 
 RDEPEND=">=dev-libs/glib-2.14:2
 	gnome-base/libglade:2.0
 	net-misc/curl
 	net-libs/gnutls
 	>=x11-libs/gtk+-2.12:2
-	zeroconf? ( net-dns/avahi )
+	avahi? ( net-dns/avahi )
 	dbus? ( dev-libs/dbus-glib )"
 DEPEND="sys-devel/gettext
 	dev-util/intltool
@@ -29,7 +29,7 @@ S="${WORKDIR}"
 
 src_compile() {
 	econf \
-		$(use_enable zeroconf avahi) \
+		$(use_enable avahi) \
 		$(use_enable dbus) \
 		$(use_enable debug) \
 		--disable-audioscrobbler \
@@ -41,10 +41,6 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 	dodoc AUTHORS ChangeLog NEWS README TODO
-}
-
-pkg_preinst() {
-	gnome2_icon_savelist
 }
 
 pkg_postinst() {
