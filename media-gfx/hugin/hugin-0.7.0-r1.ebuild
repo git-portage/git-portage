@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/Attic/hugin-0.7.0-r1.ebuild,v 1.2 2008/10/06 19:10:52 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/Attic/hugin-0.7.0-r1.ebuild,v 1.4 2008/12/02 12:57:59 chainsaw Exp $
 
 EAPI="2"
 WX_GTK_VER="2.8"
@@ -12,13 +12,14 @@ HOMEPAGE="http://hugin.sf.net"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2 SIFT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~ppc"
 IUSE="+sift"
 
 DEPEND="
 	app-arch/zip
 	|| ( >=dev-libs/boost-1.34 =dev-libs/boost-1.33*[threads] )
 	>=media-gfx/enblend-3.0_p20080807
+	media-gfx/exiv2
 	media-libs/jpeg
 	media-libs/libpano13
 	media-libs/libpng
