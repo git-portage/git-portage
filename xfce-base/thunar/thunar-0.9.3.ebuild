@@ -1,10 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/thunar/Attic/thunar-0.9.3.ebuild,v 1.4 2008/12/06 19:28:20 nixnut Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/thunar/Attic/thunar-0.9.3.ebuild,v 1.2 2008/11/10 22:35:42 angelos Exp $
 
 EAPI=1
 
-inherit eutils virtualx xfce44 flag-o-matic
+inherit eutils virtualx xfce44
 
 MY_P=${P/t/T}
 S=${WORKDIR}/${MY_P}
@@ -14,7 +14,7 @@ xfce44
 
 DESCRIPTION="File manager"
 HOMEPAGE="http://thunar.xfce.org"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc dbus debug exif gnome hal pcre startup-notification +trash-plugin"
 
 RDEPEND=">=dev-lang/perl-5.6
@@ -73,11 +73,6 @@ src_unpack() {
 	cd "${S}"
 	epatch "${FILESDIR}"/${PN}-0.9.0-missing-audio-cds-for-volman.patch \
 		"${FILESDIR}"/${PN}-0.9.0-fix-defuncts.patch
-}
-
-src_compile() {
-	append-flags -Wno-error
-	xfce44_src_compile
 }
 
 src_test() {
