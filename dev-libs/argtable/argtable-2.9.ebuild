@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/argtable/Attic/argtable-2.9.ebuild,v 1.2 2008/12/07 01:00:47 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/argtable/Attic/argtable-2.9.ebuild,v 1.1 2008/05/14 00:03:22 angelos Exp $
 
 inherit versionator
 
@@ -14,19 +14,18 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="doc debug examples"
 
 S="${WORKDIR}/${MY_P}"
 
 src_compile() {
-	econf $(use_enable debug)
-	emake || die "build failed"
+	econf $(use_enable debug) || die
+	emake || die
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "install failed"
-	rm -rf "${D}"/usr/share/doc/${PN}2/
+	make DESTDIR="${D}" install || die
 
 	dodoc AUTHORS ChangeLog NEWS README
 
