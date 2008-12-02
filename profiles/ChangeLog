@@ -1,90 +1,10 @@
 # ChangeLog for profile directory
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2132 2008/12/06 14:30:13 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2109 2008/12/01 21:29:56 mrness Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
-
-  06 Dec 2008; Matthias Schwarzott <zzam@gentoo.org> package.mask:
-  Remove mask entries for no longer existing udev ebuilds.
-
-  06 Dec 2008; Arun Raghavan <ford_prefect@gentoo.org> package.mask:
-  Masking gnome-extra/gnome-do-0.6 till gnome-extra/gnome-do-plugins-0.6 is
-  added to the tree
-
-  06 Dec 2008; <ssuominen@gentoo.org> package.mask:
-  Removed unmaintained xfce-extra/pynetworkmanager.
-
-  05 Dec 2008; <ssuominen@gentoo.org> package.mask:
-  Remove gst-plugins-good-0.10.9 mask which isn't in tree anymore.
-
-  05 Dec 2008; Jeroen Roovers <jer@gentoo.org> package.mask:
-  Mask www-client/opera-10.
-
-  05 Dec 2008; Robert Buchholz <rbu@gentoo.org> package.mask:
-  Update networkmanager-0.7.0 mask
-
-  05 Dec 2008; Sébastien Fabbro <bicatali@gentoo.org> package.mask:
-  Masked sci-libs/scipy-0.7.0_beta1
-
-  05 Dec 2008; Raúl Porcel <armin76@gentoo.org> profiles.desc:
-  2006.1 x86 profile has been removed
-
-  04 Dec 2008; Tomas Chvatal <scarabeus@gentoo.org> package.mask:
-  Add new networkmanager stuff (0.7.0) to the package mask.
-
-  04 Dec 2008; Jeremy Olexa <darkside@gentoo.org> updates/4Q-2008:
-  pkgmove net-misc/gtk2-ssh-askpass net-misc/ssh-askpass-fullscreen due to a
-  name change from upstream
-
-  04 Dec 2008; Bernard Cafarelli <voyageur@gentoo.org> package.mask:
-  Last rites mask net-misc/nxclient-2xterminalserver and
-  net-misc/nxserver-2xterminalserver, bug #249799
-
-  04 Dec 2008; Robin H. Johnson <robbat2@gentoo.org> package.mask:
-  Add warning to package.mask about invalid atoms.
-
-  03 Dec 2008; Tomas Chvatal <scarabeus@gentoo.org> package.mask:
-  ktorrent 3.2_beta added to the mask.
-
-  03 Dec 2008; <wrobel@gentoo.org> package.mask:
-  www-apps/phpcollab, www-apps/net2ftp, and www-apps/moregroupware were
-  removed from the tree.
-
-  03 Dec 2008; <ssuominen@gentoo.org> package.mask:
-  Mask media-libs/pablio which is a separate library for deprecated
-  Portaudio v18.
-
-  02 Dec 2008; Alin Năstac <mrness@gentoo.org> package.mask:
-  Unmask net-misc/br2684ctl (#204186).
-
-  02 Dec 2008; Ulrich Mueller <ulm@gentoo.org> arch/amd64/package.use.mask,
-  default-linux/amd64/package.use.mask, hardened/amd64/package.use.mask,
-  hardened/linux/amd64/package.use.mask:
-  Remove app-editors/jove X from package.use.mask in amd64 profiles, since
-  the package doesn't have the flag anymore, bug 88334.
-
-  02 Dec 2008; Christian Faulhammer <fauli@gentoo.org> package.mask:
-  mask mail-client/claws-mail-smime for removal as it has been integrated
-  into Claws Mail itself
-
-  02 Dec 2008; <ssuominen@gentoo.org> package.mask:
-  Mask x11-libs/xview for bugs bugs 88334, 244190, 245408 and 245409.
-
-  02 Dec 2008; Chris PeBenito <pebenito@gentoo.org>
-  default/linux/package.mask:
-  Update selinux package masking on non-selinux profiles for setools, which
-  depends on the masked libsepol.
-
-  02 Dec 2008; Tobias Scherbaum <dertobi123@gentoo.org> package.mask:
-  p.mask mail-filter/procmail-3.22-r9
-
-  02 Dec 2008; Jeremy Olexa <darkside@gentoo.org> package.mask:
-  p.mask app-emulation/xcopilot, bug #246891
-
-  02 Dec 2008; Jeremy Olexa <darkside@gentoo.org> package.mask:
-  p.mask kde-misc/kio_perldoc, bug 249308
 
   01 Dec 2008; Alin Năstac <mrness@gentoo.org> package.mask:
   P.mask net-misc/br2684ctl (#248082).
