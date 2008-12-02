@@ -1,6 +1,17 @@
 # ChangeLog for media-gfx/hugin
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/ChangeLog,v 1.50 2008/11/26 21:08:36 dirtyepic Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/ChangeLog,v 1.52 2008/12/02 12:57:59 chainsaw Exp $
+
+  02 Dec 2008; <chainsaw@gentoo.org> hugin-0.7.0.ebuild,
+  hugin-0.7.0-r1.ebuild:
+  Add ~ppc keyword based on PowerBook6,7 testing by Christian "papillon81"
+  Schmitt <chrschmitt@gmail.com>. Closes bug #234909.
+
+  28 Nov 2008; Markus Meier <maekke@gentoo.org>
+  -files/hugin-0.7_beta4-insec-file.patch,
+  -files/hugin-0.7_beta4-as-needed.patch, -hugin-0.7_beta4-r1.ebuild,
+  hugin-0.7.0.ebuild, hugin-0.7.0-r1.ebuild:
+  add missing media-gfx/exiv2 dependency for bug #248628; remove old
 
   26 Nov 2008; Ryan Hill <dirtyepic@gentoo.org> hugin-0.7.0.ebuild:
   Call wxwidgets_pkg_setup.
