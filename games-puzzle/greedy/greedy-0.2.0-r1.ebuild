@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/greedy/greedy-0.2.0-r1.ebuild,v 1.9 2008/12/06 16:13:36 nyhm Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/greedy/greedy-0.2.0-r1.ebuild,v 1.8 2008/05/15 13:03:38 nyhm Exp $
 
-inherit toolchain-funcs games
+inherit games
 
 DESCRIPTION="fun little ncurses puzzle game"
 HOMEPAGE="http://www.kotinet.com/juhamattin/linux/index.html"
@@ -15,14 +15,8 @@ IUSE=""
 
 DEPEND="sys-libs/ncurses"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	rm -f Makefile
-}
-
 src_compile() {
-	emake CC="$(tc-getCC)" LDLIBS=-lncurses ${PN} || die "emake failed"
+	emake FLAGS="${CFLAGS}" STRIP=ls || die "emake failed"
 }
 
 src_install() {
