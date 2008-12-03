@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/make/Attic/make-3.81.ebuild,v 1.13 2008/12/07 03:18:17 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/make/Attic/make-3.81.ebuild,v 1.12 2006/11/05 12:12:43 vapier Exp $
 
 inherit flag-o-matic
 
@@ -32,7 +32,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
+	make DESTDIR="${D}" install || die "make install failed"
 	dodoc AUTHORS ChangeLog NEWS README*
 	if [[ ${USERLAND} == "GNU" ]] ; then
 		# we install everywhere as 'gmake' but on GNU systems,
