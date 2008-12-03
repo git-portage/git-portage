@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/sdl-flic/sdl-flic-1.2.ebuild,v 1.5 2008/12/06 16:50:21 nyhm Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/sdl-flic/sdl-flic-1.2.ebuild,v 1.4 2005/12/10 20:48:51 tgall Exp $
 
 inherit eutils
 
@@ -13,9 +13,10 @@ SLOT="0"
 KEYWORDS="alpha ~amd64 ~hppa ~mips ~ppc ppc64 ~sparc x86"
 IUSE=""
 
-DEPEND="media-libs/libsdl"
+DEPEND="sys-libs/zlib
+	>=media-libs/libsdl-1.2.4"
 
-S=${WORKDIR}/SDL_flic-${PV}
+S="${WORKDIR}"/SDL_flic-${PV}
 
 src_unpack() {
 	unpack ${A}
@@ -26,6 +27,6 @@ src_unpack() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	make DESTDIR="${D}" install || die "make install failed"
 	dodoc README.txt
 }
