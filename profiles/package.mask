@@ -1,10 +1,8 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9259 2008/12/07 16:32:35 lu_zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9241 2008/12/03 05:51:59 ssuominen Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
-# an explanation of why something is getting masked. Please be extremely
-# careful not to commit atoms that are not valid, as it can cause large-scale
-# breakage, especially if it ends up in the daily snapshot.
+# an explanation of why something is getting masked
 #
 ## Example:
 ##
@@ -30,54 +28,6 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
-
-# Luca Barbato <lu_zero@gentoo.org> (07 Dec 2008)
-# Live sources to be used with other live source applications
-=media-video/ffmpeg-9999
-
-# Robin H. Johnson <robbat2@gentoo.org> (06 Dec 2008)
-# The init.d scripts and default rules need updating and serious testing.
-# Do not use the old ones with the new versions of audit, you will get weird
-# crashes.
->sys-process/audit-1.7.4
-
-# Arun Raghavan <ford_prefect@gentoo.org> (6 Dec 2008)
-# Masking till the required gnome-extra/gnome-do-plugins-0.6 gets into the tree
-=gnome-extra/gnome-do-0.6*
-
-# Jeroen Roovers <jer@gentoo.org> (5 Dec 2008)
-# Snapshots, alphas and betas of Opera may delete kittens
-=www-client/opera-10*
-
-# Sébastien Fabbro <bicatali@gentoo.org> (05 Dec 2008)
-# beta version for testing, unmasked only when release.
-=sci-libs/scipy-0.7*
-
-# Tomas Chvatal <scarabeus@gentoo.org> (04 Dec 2008)
-# new version, needs policykit which is masked
->=gnome-extra/nm-applet-0.7.0
->=net-misc/networkmanager-0.7.0
->=net-misc/networkmanager-vpnc-0.7.0
->=net-misc/networkmanager-pptp-0.7.0
->=net-misc/networkmanager-openvpn-0.7.0
-
-
-# Bernard Cafarelli <voyageur@gentoo.org> (04 Dec 2008)
-# Masked for removal in 30 days (bug #249799)
-# * Upstream closed web site and source downloads
-# * No updates since first release 2 years ago
-# * Still based on old NX 1.5 code, missing features and being mostly
-# incompatible with current NX servers/clients
-# * Client does not compile with gcc4.3 or --as-needed (bug #248138).
-# * Server includes old, unpatched xorg sources, probably vulnerable to GLSA
-# 200710-09 and 200804-05.
-# * GPL alternatives exist: net-misc/qtnx, net-misc/nxserver-freenx
-net-misc/nxclient-2xterminalserver
-net-misc/nxserver-2xterminalserver
-
-# Tomas Chvatal <scarabeus@gentoo.org> (03 Dec 2008)
-# Betaversion, has cool stuff like plasmoid and so on
-=net-p2p/ktorrent-3.2*
 
 # Samuli Suominen <ssuominen@gentoo.org> (03 Dec 2008)
 # Deprecated library for Portaudio v18. Removed in 30 days.
@@ -203,6 +153,11 @@ dev-db/fastdb
 # which is still being maintained.
 games-mud/ytin
 
+# Matthias Schwarzott <zzam@gentoo.org> (28 Oct 2008)
+# This breaks kernels with older sysfs layout, Bug #246938
+# and some persistent-net setups, Bug #246927, and Bug #246849
+~sys-fs/udev-132
+
 # Peter Volkov <pva@gentoo.org> (16 Nov 2008)
 # This is developemnt version. Why it was not masked from the beginning?
 >=net-misc/socat-2.0.0_beta1
@@ -236,6 +191,12 @@ games-mud/ytin
 media-radio/tucnak1
 media-radio/tucnak1-data
 media-radio/ssbd
+
+# Christoph Mende <angelos@gentoo.org> (10 Nov 2008)
+# Masked for removal in 30 days, it's more or less unmaintained,
+# depends on unmaintained pyxfce and doesn't support most current
+# features
+xfce-extra/pynetworkmanager
 
 # Mike Doty <kingtaco@gentoo.org> (9 Nov 2008)
 # Masked for testing
@@ -285,6 +246,11 @@ app-crypt/truecrypt
 ~virtual/perl-Math-BigInt-FastCalc-0.16
 ~virtual/perl-Time-Piece-1.12
 
+# Matthias Schwarzott <zzam@gentoo.org> (28 Oct 2008)
+# Masked until design of new udev init-script for >openrc-0.3.0
+# is finished, Bug #240984.
+=sys-fs/udev-130-r2
+
 # Markus Dittrich <markusle@gentoo.org> (28 Oct 2008)
 # New upstream version is currently masked due to an interface
 # glitch with Qt-4.4.2 that needs to be looked at (bug #243362)
@@ -300,6 +266,15 @@ app-crypt/truecrypt
 # Federico Ferri <mescalinum@gentoo.org> (27 Oct 2008)
 # Until Tcl-8.5 gets unmasked
 >=dev-libs/newt-0.52.10
+
+# Doug Goldstein <cardoe@gentoo.org> (27 Oct 2008)
+# Masked for pending removal. Will be removed 27 Nov 2008.
+# bug #244411
+sys-libs/detect
+
+# Mike Frysinger <vapier@gentoo.org> (27 Oct 2008)
+# bug #244411
+sys-libs/detect
 
 # Mike Frysinger <vapier@gentoo.org> (27 Oct 2008)
 # Does not work with latest DirectFB and ffmpeg #242036
@@ -353,6 +328,10 @@ app-portage/genflags
 # Does not work with sys-apps/net-tools inside container
 # Trying to resolve issue inside openrc
 >=sys-cluster/vzctl-3.0.22-r10
+
+# Michael Sterrett <mr_bones_@gentoo.org> (13 Oct 2008)
+# Maintainer mask of known broken version.
+>=app-admin/syslog-ng-2.1
 
 # Rémi Cardona <remi@gentoo.org> (11 Oct 2008)
 # Old versions, those are no longer maintained and
@@ -469,6 +448,10 @@ app-crypt/cryptplug
 dev-tcltk/tclgpgme
 ~app-crypt/gpgme-0.3.14
 
+# Rémi Cardona <remi@gentoo.org> (30 Aug 2008)
+# major file collisions, see bug #236124
+=media-libs/gst-plugins-good-0.10.9
+
 # Ricardo Mendoza <ricmm@gentoo.org> (28 Aug 2008)
 # Beta driver, masking corresponding packages
 ~x11-drivers/nvidia-drivers-177.70
@@ -478,6 +461,11 @@ dev-tcltk/tclgpgme
 # Beta driver, masking corresponding nvidia-settings
 ~x11-drivers/nvidia-drivers-177.68
 ~media-video/nvidia-settings-177.68
+
+# Christian Hoffmann <hoffie@gentoo.org> (26 Aug 2008)
+# Masked for security, bug 235052; codebase seems to have lots of problems,
+# needs time to fix or final removing, see the referenced bug for progress
+www-apps/phpcollab
 
 # Ricardo Mendoza <ricmm@gentoo.org> (21 Aug 2008)
 # Beta driver, masking corresponding nvidia-settings
@@ -913,6 +901,8 @@ games-fps/quake4-demo
 # https://bugs.gentoo.org/show_bug.cgi?id=211166
 www-apps/joomla
 www-apps/mambo
+www-apps/moregroupware
+www-apps/net2ftp
 www-apps/wordpress
 www-apps/xoops
 
