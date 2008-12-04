@@ -1,8 +1,10 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9228 2008/11/30 13:20:07 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9248 2008/12/04 14:13:24 voyageur Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
-# an explanation of why something is getting masked
+# an explanation of why something is getting masked. Please be extremely
+# careful not to commit atoms that are not valid, as it can cause large-scale
+# breakage, especially if it ends up in the daily snapshot.
 #
 ## Example:
 ##
@@ -28,6 +30,58 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+# Bernard Cafarelli <voyageur@gentoo.org> (04 Dec 2008)
+# Masked for removal in 30 days (bug #249799)
+# * Upstream closed web site and source downloads
+# * No updates since first release 2 years ago
+# * Still based on old NX 1.5 code, missing features and being mostly
+# incompatible with current NX servers/clients
+# * Client does not compile with gcc4.3 or --as-needed (bug #248138).
+# * Server includes old, unpatched xorg sources, probably vulnerable to GLSA
+# 200710-09 and 200804-05.
+# * GPL alternatives exist: net-misc/qtnx, net-misc/nxserver-freenx
+net-misc/nxclient-2xterminalserver
+net-misc/nxserver-2xterminalserver
+
+# Tomas Chvatal <scarabeus@gentoo.org> (03 Dec 2008)
+# Betaversion, has cool stuff like plasmoid and so on
+=net-p2p/ktorrent-3.2*
+
+# Samuli Suominen <ssuominen@gentoo.org> (03 Dec 2008)
+# Deprecated library for Portaudio v18. Removed in 30 days.
+media-sound/pablio
+
+# Christian Faulhammer <fauli@gentoo.org> (02 Dec 2008)
+# Removal because it has been integrated into Claws Mail
+# Either use mail-client/claws-mail-3.6.1 (plain) or 3.6.1-r1
+# (USE=smime)
+mail-client/claws-mail-smime
+
+# Samuli Suominen <ssuominen@gentoo.org> (02 Dec 2008)
+# Masked by treecleaners for bugs 88334, 244190, 245408 and 245409.
+# Removed in ~60 days.
+x11-libs/xview
+sci-chemistry/nmrpipe
+
+# Tobias Scherbaum <dertobi123@gentoo.org> (02 Dec 2008)
+# Mask because of broken upgrade path. Need to investigate what the real
+# problem is. bug #249579
+=mail-filter/procmail-3.22-r9
+
+# Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org> (02 Dec 2008)
+# Added patch to enable compiz to build with the snapshots for KDE 4.2 /
+# live ebuilds. This revision is masked until 4.2 is added to the tree
+=x11-wm/compiz-0.7.8-r1
+
+# Jeremy Olexa <darkside@gentoo.org> (02 Dec 2008)
+# Pending removal in 60 days. Doesn't work with current stable gcc and dead
+# upstream for quite some time now. bug #246891
+app-emulation/xcopilot
+
+# Jeremy Olexa <darkside@gentoo.org> (02 Dec 2008)
+# Removed in 30 days at maintainer's request. No interest and doesn't work with
+# newer gcc versions. bug #249308
+kde-misc/kio_perldoc
 
 # Ulrich Mueller <ulm@gentoo.org> (30 Nov 2008)
 # Depends on masked Emacs live CVS version; unmask after Emacs 23 release.
@@ -59,14 +113,6 @@ net-news/straw
 # Peter Alfredsen <loki_val@gentoo.org> (26 Nov 2008)
 # Mask non-working version to force their removal.
 <dev-dotnet/gtksourceview-sharp-0.12
-
-# Samuli Suominen <ssuominen@gentoo.org> (25 Nov 2008)
-# Cantus was moved to new upstream, but last modification
-# in subversion is from 2007. Versions we have in tree,
-# all fail on different errors. See bugs 205681 and 247831
-# for example about latest version. Masked for removal
-# in 30 days. Please try maintained media-sound/easytag.
-media-sound/cantus
 
 # Doug Goldstein <cardoe@gentoo.org> (24 Nov 2008)
 # Fails to configure in all situations. Just plain broken
@@ -115,59 +161,6 @@ net-im/gnome-jabber
 # 2. lack of developers interest it's maintainer-wanted
 # 3. nothing in the tree depends on it
 dev-db/fastdb
-
-# Peter Alfredsen <loki_val@gentoo.org> (19 Nov 2008)
-# Let's see if we can make this break something.
-# Masked for now. I hope to get some gtk-sharp etc. stuff
-# Into the tree along with it. I'll probably do a simplistic
-# Conversion from split ebuilds to monolithic ebuilds.
-# dotnet won't mind, I hope. I contacted them some time ago,
-# but never got an answer, so assuming they're AWOL.
-# Diego E. Pettenò <flameeyes@gentoo.org> (19 Nov 2008)
-# gtk-sharp and glade-sharp I took care of myself, merging them in a
-# monolithic ebuild with USE flag, and having a commodity ebuild for
-# glade-sharp using EAPI=2 until we port the ebuilds using it to the
-# new format.
->=dev-lang/mono-2
->=dev-dotnet/libgdiplus-2
->=dev-util/mono-debugger-2
->=dev-util/mono-tools-2
->=dev-util/monodoc-2
->=dev-lang/mono-basic-2
->=dev-dotnet/xsp-2
->=dev-dotnet/gtk-sharp-2.12
-~dev-dotnet/glade-sharp-9999
->=media-gfx/f-spot-0.5
->=media-sound/banshee-1.4
-dev-dotnet/webkit-sharp
->=media-sound/muine-0.8.10
->=app-misc/tomboy-0.12.1
->=net-news/blam-1.8.6
-=dev-dotnet/art-sharp-2.24*
-=dev-dotnet/gconf-sharp-2.24*
-=dev-dotnet/gnome-desktop-sharp-2.24*
-=dev-dotnet/gnome-panel-sharp-2.24*
-=dev-dotnet/gnome-print-sharp-2.24*
-=dev-dotnet/gnome-sharp-2.24*
-=dev-dotnet/gnomevfs-sharp-2.24*
-=dev-dotnet/gtkhtml-sharp-2.24*
-=dev-dotnet/gtksourceview-sharp-2.24*
-=dev-dotnet/nautilusburn-sharp-2.24*
-=dev-dotnet/rsvg-sharp-2.24*
-=dev-dotnet/vte-sharp-2.24*
-=dev-dotnet/wnck-sharp-2.24*
->=dev-dotnet/ikvm-0.36.0.11
->=dev-util/monodevelop-1.9
->=dev-util/monodevelop-java-1.9
->=dev-util/monodevelop-database-1.9
->=dev-util/monodevelop-boo-1.9
->=dev-dotnet/mono-addins-0.4
-
-# Jeremy Olexa <darkside@gentoo.org> (19 Nov 2008)
-# Stops playing at random intervals when HAL is used. Unmaintained upstream.
-# Depends on deprecated xview library. Removing with maintainers request in 30
-# days.
-media-sound/workman
 
 # MATSUU Takuto <matsuu@gentoo.org> (19 Nov 2008)
 # Masked for bug #196340
@@ -354,10 +347,6 @@ app-portage/genflags
 # Trying to resolve issue inside openrc
 >=sys-cluster/vzctl-3.0.22-r10
 
-# Michael Sterrett <mr_bones_@gentoo.org> (13 Oct 2008)
-# Maintainer mask of known broken version.
->=app-admin/syslog-ng-2.1
-
 # Rémi Cardona <remi@gentoo.org> (11 Oct 2008)
 # Old versions, those are no longer maintained and
 # should not be used, use 2.x instead
@@ -486,11 +475,6 @@ dev-tcltk/tclgpgme
 # Beta driver, masking corresponding nvidia-settings
 ~x11-drivers/nvidia-drivers-177.68
 ~media-video/nvidia-settings-177.68
-
-# Christian Hoffmann <hoffie@gentoo.org> (26 Aug 2008)
-# Masked for security, bug 235052; codebase seems to have lots of problems,
-# needs time to fix or final removing, see the referenced bug for progress
-www-apps/phpcollab
 
 # Ricardo Mendoza <ricmm@gentoo.org> (21 Aug 2008)
 # Beta driver, masking corresponding nvidia-settings
@@ -790,7 +774,7 @@ media-sound/lastfmproxy
 =sys-apps/ucspi-tcp-0.88-r17
 =sys-process/daemontools-0.76-r6
 
-# Christian Faulhammer <opfer@gentoo.org> (01 Apr 2008)
+# Christian Faulhammer <fauli@gentoo.org> (01 Apr 2008)
 # Masked for security reasons: bug 215699
 <net-misc/ltsp-5
 
@@ -855,7 +839,7 @@ app-backup/mondo-rescue
 sys-apps/mindi
 sys-apps/mindi-busybox
 
-# Christian Faulhammer <opfer@gentoo.org> (11 Mar 2008)
+# Christian Faulhammer <fauli@gentoo.org> (11 Mar 2008)
 # masked for testing
 =app-portage/gatt-9999
 
@@ -926,8 +910,6 @@ games-fps/quake4-demo
 # https://bugs.gentoo.org/show_bug.cgi?id=211166
 www-apps/joomla
 www-apps/mambo
-www-apps/moregroupware
-www-apps/net2ftp
 www-apps/wordpress
 www-apps/xoops
 
@@ -1039,13 +1021,13 @@ net-misc/fsh
 dev-lang/entity
 
 # Ulrich Mueller <ulm@gentoo.org> (21 Dec 2007)
-# Christian Faulhammer <opfer@gentoo.org>
+# Christian Faulhammer <fauli@gentoo.org>
 # CVS snapshots, bug #185106
 =app-emacs/emacs-w3m-1.4.4_p*
 =app-emacs/wanderlust-2.15.5_pre*
 
 # Ulrich Mueller <ulm@gentoo.org> (21 Dec 2007)
-# Christian Faulhammer <opfer@gentoo.org>
+# Christian Faulhammer <fauli@gentoo.org>
 # Live SVN ebuilds
 ~app-emacs/gentoo-syntax-9999
 ~app-emacs/ngnus-9999
