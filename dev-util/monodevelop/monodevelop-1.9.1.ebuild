@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/monodevelop/Attic/monodevelop-1.9.1.ebuild,v 1.1 2008/11/30 10:56:38 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/monodevelop/Attic/monodevelop-1.9.1.ebuild,v 1.5 2008/12/03 11:53:21 loki_val Exp $
 
 EAPI=2
 
@@ -13,18 +13,18 @@ SRC_URI="http://www.go-mono.com/sources/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gtksourceview +subversion +gnome"
+IUSE="+subversion"
 
 RDEPEND=">=dev-lang/mono-1.9
 		 >=dev-util/monodoc-1.9
-		 >=dev-dotnet/mono-addins-0.3.1
-		 >=dev-dotnet/gtk-sharp-2.12.6[glade]
-		 gnome?	(
-				>=dev-dotnet/gnome-sharp-2.8
-				>=dev-dotnet/gnomevfs-sharp-2.8
-				>=dev-dotnet/gconf-sharp-2.8
+		 ||	(
+			~dev-dotnet/mono-addins-0.3.1
+			>=dev-dotnet/mono-addins-0.4[gtk]
 			)
-		 gtksourceview? ( dev-dotnet/gtksourceview-sharp:2 )
+		 >=dev-dotnet/gtk-sharp-2.12.6[glade]
+		 >=dev-dotnet/gnome-sharp-2.8
+		 >=dev-dotnet/gnomevfs-sharp-2.8
+		 >=dev-dotnet/gconf-sharp-2.8
 		 ||	(
 				net-libs/xulrunner
 				www-client/mozilla-firefox
@@ -48,8 +48,8 @@ src_configure() {
 		--disable-update-desktopdb			\
 		--enable-monoextensions				\
 		--enable-versioncontrol				\
-		$(use_enable gtksourceview gtksourceview2)	\
-		$(use_enable gnome gnomeplatform)		\
+		--disable-gtksourceview2			\
+		--enable-gnomeplatform				\
 		$(use_enable subversion)			\
 		|| die "configure failed"
 }
@@ -67,4 +67,12 @@ pkg_postinst() {
 	gnome2_icon_cache_update
 	fdo-mime_mime_database_update
 	fdo-mime_desktop_database_update
+	elog "These optional plugins currently exist:"
+	elog " - dev-util/monodevelop-java"
+	elog " - dev-util/monodevelop-boo"
+	elog " - dev-util/monodevelop-database"
+	elog "To enable their (self-explanatory) functionality, just emerge them."
+	elog "Read more here:"
+	elog "http://monodevelop.com/"
+
 }
