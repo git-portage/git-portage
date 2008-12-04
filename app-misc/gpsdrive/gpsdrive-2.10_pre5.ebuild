@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/gpsdrive/Attic/gpsdrive-2.10_pre5.ebuild,v 1.4 2008/12/07 20:38:20 nerdboy Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/gpsdrive/Attic/gpsdrive-2.10_pre5.ebuild,v 1.3 2008/10/23 04:46:57 nerdboy Exp $
 
 inherit cmake-utils eutils fdo-mime
 
@@ -66,13 +66,12 @@ src_compile() {
 		$(cmake-utils_use_with mapnik MAPNIK)
 		$(cmake-utils_use_with dbus DBUS)
 		$(cmake-utils_use_with gdal GDAL)"
-	cmake-utils_src_configure
-	cmake-utils_src_make -j1
+	MAKEOPTS="-j1" cmake-utils_src_compile
 }
 
 src_install() {
 	cmake-utils_src_install
-	dodoc AUTHORS ChangeLog NEWS README
+	dodoc AUTHORS Changelog NEWS README
 	newdoc data/mysql/my.cnf my.cnf.example
 	if use mapnik ; then
 	    dodoc Documentation/install-mapnik-osm.txt
