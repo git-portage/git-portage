@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/xfprint/Attic/xfprint-4.4.3.ebuild,v 1.5 2008/12/08 21:34:09 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/xfprint/Attic/xfprint-4.4.3.ebuild,v 1.1 2008/10/30 22:13:57 angelos Exp $
 
 EAPI=1
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://xfce/xfce-${PV}/src/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~mips ppc ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="cups debug doc"
 
 RDEPEND="app-text/a2ps
@@ -29,11 +29,6 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	sys-devel/gettext
 	doc? ( dev-util/gtk-doc )"
-
-src_unpack() {
-	unpack ${A}
-	sed -i -e "/24x24/d" "${S}"/icons/Makefile.in
-}
 
 src_compile() {
 	local myconf="--enable-bsdlpr"
