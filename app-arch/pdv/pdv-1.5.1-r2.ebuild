@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/pdv/pdv-1.5.1-r2.ebuild,v 1.8 2008/12/07 07:31:51 wormo Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/pdv/pdv-1.5.1-r2.ebuild,v 1.7 2008/03/18 13:26:08 flameeyes Exp $
 
 WANT_AUTOCONF=2.5
 WANT_AUTOMAKE=1.4
@@ -8,7 +8,7 @@ WANT_AUTOMAKE=1.4
 inherit eutils autotools
 
 DESCRIPTION="build a self-extracting and self-installing binary package"
-HOMEPAGE="http://sourceforge.net/projects/pdv"
+HOMEPAGE="http://pdv.sourceforge.net/"
 SRC_URI="mirror://sourceforge/pdv/${P}.tar.gz"
 
 LICENSE="MIT"
@@ -34,8 +34,6 @@ src_unpack() {
 	epatch "${FILESDIR}"/${P}-x-config.patch
 	# fix default args bug from assuming 'char' is signed
 	epatch "${FILESDIR}"/${P}-default-args.patch
-	# prevent pre-stripped binaries
-	epatch "${FILESDIR}"/${P}-no-strip.patch
 
 	# re-build configure script since patch was applied to configure.in
 	cd "${S}"/X11
