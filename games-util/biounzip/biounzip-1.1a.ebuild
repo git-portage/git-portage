@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-util/biounzip/biounzip-1.1a.ebuild,v 1.8 2008/12/06 14:41:51 nyhm Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-util/biounzip/biounzip-1.1a.ebuild,v 1.6 2008/05/15 13:16:53 nyhm Exp $
 
-inherit eutils toolchain-funcs
+inherit eutils
 
 DESCRIPTION="Unpacks BioZip archives"
 HOMEPAGE="http://biounzip.sourceforge.net/"
@@ -13,6 +13,8 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 
+RDEPEND="sys-libs/zlib"
+
 S=${WORKDIR}/${P/a/}
 
 src_unpack() {
@@ -22,10 +24,11 @@ src_unpack() {
 }
 
 src_compile() {
-	$(tc-getCC) ${CFLAGS} ${LDFLAGS} -o ${PN} *.c -lz || die "cc failed"
+	sed -i -e "s#-march=athlon-xp#${CFLAGS}#" Makefile || die
+	emake || die
 }
 
 src_install() {
-	dobin ${PN} || die "dobin failed"
+	dobin biounzip || die
 	dodoc biozip.txt
 }
