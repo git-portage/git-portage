@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/Attic/gcc-4.3.2.ebuild,v 1.7 2008/12/07 19:06:45 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/Attic/gcc-4.3.2.ebuild,v 1.6 2008/12/03 09:27:26 solar Exp $
 
 PATCH_VER="1.2"
 UCLIBC_VER="1.0"
@@ -45,12 +45,7 @@ DEPEND="${RDEPEND}
 	test? ( sys-devel/autogen dev-util/dejagnu )
 	>=sys-apps/texinfo-4.2-r4
 	>=sys-devel/bison-1.875
-	amd64? (
-		>=sys-libs/glibc-2.7-r2
-		multilib? (
-			gcj? ( app-emulation/emul-linux-x86-xlibs )
-		)
-	)
+	amd64? ( >=sys-libs/glibc-2.7-r2 )
 	ppc? ( >=${CATEGORY}/binutils-2.17 )
 	ppc64? ( >=${CATEGORY}/binutils-2.17 )
 	>=${CATEGORY}/binutils-2.15.94"
