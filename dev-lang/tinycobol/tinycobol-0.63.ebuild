@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/tinycobol/Attic/tinycobol-0.63.ebuild,v 1.2 2008/12/08 22:54:43 phosphan Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/tinycobol/Attic/tinycobol-0.63.ebuild,v 1.1 2007/02/26 12:57:20 phosphan Exp $
 
 inherit eutils
 
@@ -21,8 +21,8 @@ DEPEND="${RDEPEND}
 
 src_unpack() {
 	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}.patch
+	cd ${S}
+	epatch ${FILESDIR}/${P}.patch
 }
 
 src_compile() {
@@ -37,7 +37,7 @@ src_install() {
 	dodir /usr/share/htcobol
 	make prefix="${D}/usr" install
 	dodoc AUTHORS ChangeLog README STATUS
-	cd "${D}"/usr/lib
+	cd ${D}/usr/lib
 	rm libhtcobol.so libhtcobol.so.0
 	ln -s libhtcobol.so.0.* libhtcobol.so.0
 	ln -s libhtcobol.so.0 libhtcobol.so
