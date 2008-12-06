@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-10.00_pre4102.ebuild,v 1.3 2008/12/06 16:46:13 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-10.00_pre4102.ebuild,v 1.2 2008/12/06 07:19:06 jer Exp $
 
 GCONF_DEBUG="no"
 
@@ -94,8 +94,7 @@ RDEPEND="media-libs/libexif
 	"
 
 opera_cd() {
-echo "${WORKDIR}"/${PN}*
-	cd "${WORKDIR}"/${PN}* || die "failed to enter work directory"
+	cd "${WORKDIR}"/${P/_pre*/}* || die "failed to enter work directory"
 	S="$(pwd)"
 	einfo "Working in ${S}"
 }
