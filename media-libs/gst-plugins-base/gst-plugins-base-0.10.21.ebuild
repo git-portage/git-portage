@@ -1,9 +1,9 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gst-plugins-base/Attic/gst-plugins-base-0.10.21.ebuild,v 1.3 2008/12/09 12:02:35 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/gst-plugins-base/Attic/gst-plugins-base-0.10.21.ebuild,v 1.1 2008/12/05 19:45:14 ssuominen Exp $
 
 # order is important, gnome2 after gst-plugins
-inherit gst-plugins-base gst-plugins10 gnome2 flag-o-matic autotools eutils
+inherit gst-plugins-base gst-plugins10 gnome2 flag-o-matic autotools
 # libtool
 
 DESCRIPTION="Basepack of plugins for gstreamer"
@@ -15,7 +15,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE="debug nls"
 
 RDEPEND=">=dev-libs/glib-2.8
-	>=media-libs/gstreamer-0.10.21
+	>=media-libs/gstreamer-0.10.19.1
 	>=dev-libs/liboil-0.3.14"
 DEPEND="${RDEPEND}
 	nls? ( >=sys-devel/gettext-0.11.5 )
