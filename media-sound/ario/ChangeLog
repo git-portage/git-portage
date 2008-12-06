@@ -1,14 +1,6 @@
 # ChangeLog for media-sound/ario
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ario/ChangeLog,v 1.7 2008/12/08 22:31:44 angelos Exp $
-
-  08 Dec 2008; Christoph Mende <angelos@gentoo.org> ario-1.1.ebuild:
-  Added USE=audioscrobbler
-
-  06 Dec 2008; Christoph Mende <angelos@gentoo.org>
-  +files/ario-1.1-as-needed.patch, ario-1.1.ebuild:
-  Fixed as-needed, bug 232416 and 247814, thanks to a-v and idl0r on
-  freenode
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ario/ChangeLog,v 1.5 2008/12/06 21:13:51 angelos Exp $
 
   06 Dec 2008; Christoph Mende <angelos@gentoo.org> ario-1.1.ebuild:
   Renamed USE=avahi to USE=zeroconf and added gnome2_icon_savelist
