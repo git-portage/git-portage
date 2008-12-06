@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/stardict.eclass,v 1.15 2008/12/09 16:36:41 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/stardict.eclass,v 1.14 2008/11/23 17:58:53 pva Exp $
 
 # Author : Alastair Tse <liquidx@gentoo.org>
 #
@@ -27,30 +27,25 @@ fi
 HOMEPAGE="http://stardict.sourceforge.net/"
 SRC_URI="mirror://sourceforge/stardict/${DICT_P}.tar.bz2"
 
-IUSE="gzip"
+IUSE=""
 SLOT="0"
 LICENSE="GPL-2"
 
 DEPEND=">=app-dicts/stardict-2.4.2
-		gzip? ( app-arch/gzip
-				app-text/dictd )"
+		app-arch/gzip"
 
 S=${WORKDIR}/${DICT_P}
 
 stardict_src_compile() {
-	if use gzip; then
-		for file in *.idx; do
-			[[ -f $file ]] && gzip ${file}
-		done
-		for file in *.dict; do
-			[[ -f $file ]] && dictzip ${file}
-		done
-	fi
+	for file in *.idx; do
+		[[ -f $file ]] && gzip ${file}
+	done
 }
 
 stardict_src_install() {
+	cd "${S}"
 	insinto /usr/share/stardict/dic
-	doins *.dict.dz*
+	doins *.dict.dz
 	doins *.idx*
 	doins *.ifo
 }
