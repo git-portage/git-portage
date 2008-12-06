@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/optipng/Attic/optipng-0.6.2.ebuild,v 1.5 2008/12/07 13:41:52 nyhm Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/optipng/Attic/optipng-0.6.2.ebuild,v 1.4 2008/11/15 18:16:43 dertobi123 Exp $
 
 inherit toolchain-funcs
 
@@ -17,8 +17,8 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	sed -i \
-		-e '/^C/s: -O2.*: $(GENTOO_CFLAGS) -Wall:' \
-		-e '/^LD/s: -s$: $(GENTOO_LDFLAGS):' \
+		-e "/^C/s: -O2.*: ${CFLAGS} -Wall:" \
+		-e "/^LD/s: -s$: ${LDFLAGS}:" \
 		src/scripts/gcc.mak \
 		lib/libpng/scripts/makefile.gcc \
 		lib/pngxtern/scripts/gcc.mak \
@@ -26,13 +26,7 @@ src_unpack() {
 }
 
 src_compile() {
-	emake \
-		-C src \
-		-f scripts/gcc.mak \
-		CC="$(tc-getCC)" \
-		GENTOO_CFLAGS="${CFLAGS}" \
-		GENTOO_LDFLAGS="${LDFLAGS}" \
-		|| die "emake failed"
+	emake CC="$(tc-getCC)" -C src -f scripts/gcc.mak || die "emake failed"
 }
 
 src_install() {
