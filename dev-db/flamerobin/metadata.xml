@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
+
 	<herd>no-herd</herd>
+
 	<maintainer>
-		<email>maintainer-needed@gentoo.org</email>
+		<email>wltjr@gentoo.org</email>
+		<name>William L. Thomson Jr.</name>
 	</maintainer>
+
 	<longdescription>
 	FlameRobin is a database administration tool for Firebird DBMS.
 	FlameRobin is lightweight (small footprint, fast execution) and
 	dependent only on other Open Source software
 	</longdescription>
+
 </pkgmetadata>
