@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/mathomatic/Attic/mathomatic-14.2.1.ebuild,v 1.1 2008/10/21 14:39:37 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/mathomatic/Attic/mathomatic-14.2.5.ebuild,v 1.1 2008/12/07 10:03:58 bicatali Exp $
 
 inherit eutils
 
@@ -8,7 +8,7 @@ DESCRIPTION="Automatic algebraic manipulator"
 HOMEPAGE="http://www.mathomatic.com/"
 SRC_URI="http://www.panix.com/~gesslein/${P}.tar.bz2"
 
-LICENSE="LGPL-2"
+LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="doc"
@@ -17,10 +17,8 @@ DEPEND="sys-libs/readline
 	sys-libs/ncurses"
 
 src_compile() {
-	# respect user flags
 	sed -i \
 		-e '/^CFLAGS/ s/-O.//' \
-		-e '/^LDFLAGS/s/+= -lm/:= -lm $(LDFLAGS)/' \
 		makefile primes/makefile || die "sed failed"
 	emake READLINE=1 || die "emake failed"
 	emake -C primes || die "emake in primes failed"
