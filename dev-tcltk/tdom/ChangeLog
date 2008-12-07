@@ -1,6 +1,17 @@
 # ChangeLog for dev-tcltk/tdom
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/tdom/ChangeLog,v 1.2 2006/09/22 07:15:43 matsuu Exp $
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/tdom/ChangeLog,v 1.4 2008/12/06 19:09:52 mescalinum Exp $
+
+  06 Dec 2008; Federico Ferri <mescalinum@gentoo.org> -tdom-0.8.0.ebuild,
+  -tdom-0.8.0-r1.ebuild:
+  remove old ebuilds, affected by bug #248173
+
+*tdom-0.8.2 (04 Dec 2008)
+
+  04 Dec 2008; Federico Ferri <mescalinum@gentoo.org>
+  +files/tdom-0.8.2-expat.patch, +files/tdom-0.8.2-tnc.patch,
+  +files/tdom-0.8.2.patch, metadata.xml, +tdom-0.8.2.ebuild:
+  add patches from openSuSE:11, fix bug #248173
 
 *tdom-0.8.0-r1 (22 Sep 2006)
 
