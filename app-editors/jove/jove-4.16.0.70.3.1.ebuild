@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/jove/Attic/jove-4.16.0.70.3.1.ebuild,v 1.4 2008/12/02 20:17:37 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/jove/Attic/jove-4.16.0.70.3.1.ebuild,v 1.6 2008/12/04 22:45:39 maekke Exp $
 
-inherit eutils flag-o-matic toolchain-funcs versionator
+inherit eutils toolchain-funcs versionator
 
 MY_P=${PN}_$(get_version_component_range 1-4)
 MY_DIFFP=${MY_P}-$(get_version_component_range 5-6)
@@ -14,7 +14,7 @@ SRC_URI="mirror://debian/pool/main/j/${PN}/${MY_P}.orig.tar.gz
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE="unix98"
 
 RDEPEND="sys-libs/ncurses"
@@ -38,14 +38,14 @@ src_compile() {
 	tc-export CC
 
 	if use unix98 ; then
-		emake SYSDEFS="-DSYSVR4 -D_XOPEN_SOURCE=500" || die "emake failed."
+		emake SYSDEFS="-DSYSVR4 -D_XOPEN_SOURCE=500" || die "emake failed"
 	else
-		emake || die "emake failed."
+		emake || die "emake failed"
 	fi
 }
 
 src_install() {
 	# parallel install fails
-	emake -j1 DESTDIR="${D}" install || die "emake install failed."
+	emake -j1 DESTDIR="${D}" install || die "emake install failed"
 	keepdir /var/lib/jove/preserve
 }
