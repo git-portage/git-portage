@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/funtools/Attic/funtools-1.4.0.ebuild,v 1.4 2008/12/08 10:13:36 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/funtools/Attic/funtools-1.4.0.ebuild,v 1.3 2008/11/27 10:04:09 bicatali Exp $
 
 EAPI=2
 inherit eutils
 
 DESCRIPTION="FITS library and utlities for astronomical images"
-HOMEPAGE="http://www.cfa.harvard.edu/~john/funtools/"
+HOMEPAGE="http://hea-www.harvard.edu/RD/funtools/"
 SRC_URI="http://cfa-www.harvard.edu/~john/${PN}/${P}.tar.gz
 		mirror://gentoo/${P}-ds9-5.4.patch.bz2"
 LICENSE="LGPL-2.1"
@@ -23,9 +23,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${WORKDIR}"/${P}-ds9-5.4.patch
 	epatch "${FILESDIR}"/${P}-makefiles.patch
-	sed -i \
-		-e "s:\${LINK}:\${LINK} ${LDFLAGS}:" \
-		mklib || die "sed for ldflags failed"
 }
 
 src_configure() {
