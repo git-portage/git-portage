@@ -1,6 +1,14 @@
 # ChangeLog for media-plugins/gst-plugins-gio
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-gio/ChangeLog,v 1.7 2008/10/30 10:53:02 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-gio/ChangeLog,v 1.9 2008/12/06 01:51:13 solar Exp $
+
+  06 Dec 2008; <solar@gentoo.org> gst-plugins-gio-0.10.21.ebuild:
+  - keyword ~arm
+
+*gst-plugins-gio-0.10.21 (05 Dec 2008)
+
+  05 Dec 2008; <ssuominen@gentoo.org> +gst-plugins-gio-0.10.21.ebuild:
+  Version bump.
 
   30 Oct 2008; Raúl Porcel <armin76@gentoo.org>
   gst-plugins-gio-0.10.20.ebuild:
