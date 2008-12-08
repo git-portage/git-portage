@@ -69,10 +69,10 @@ ppc		default-linux/ppc/ppc64/2007.0/32bit-userland	dev
 ppc64		default-linux/ppc/ppc64/2007.0/64bit-userland	dev
 
 # S/390 Profiles
-s390		default-linux/s390/2006.0			dev
+s390		default/linux/s390/2008.0/server		dev
 
 # SuperH Profiles
-sh		default-linux/sh/2006.1				dev
+sh		default/linux/sh/2008.0/server			dev
 
 # SPARC Profiles
 #sparc		default-linux/sparc/sparc32/2006.1		dev
@@ -82,9 +82,6 @@ sparc		default-linux/sparc/sparc64/2007.0/desktop	stable
 #sparc		default-linux/sparc/sparc64/2007.0/server	stable
 
 # x86 Profiles
-x86		default-linux/x86/2006.1			stable
-x86		default-linux/x86/2006.1/desktop		stable
-#x86		default-linux/x86/2006.1/server			stable
 x86		default-linux/x86/2007.0			stable
 x86		default-linux/x86/2007.0/desktop		stable
 
