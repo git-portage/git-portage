@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ario/Attic/ario-1.1.ebuild,v 1.7 2008/12/08 22:31:44 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ario/Attic/ario-1.1.ebuild,v 1.6 2008/12/06 22:14:07 angelos Exp $
 
 EAPI=1
 inherit autotools eutils gnome2-utils
@@ -12,16 +12,15 @@ SRC_URI="mirror://sourceforge/${PN}-player/${P}.tar.gz"
 LICENSE="GPL-1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="audioscrobbler dbus debug zeroconf"
+IUSE="dbus debug zeroconf"
 
 RDEPEND=">=dev-libs/glib-2.14:2
 	gnome-base/libglade:2.0
 	net-misc/curl
 	net-libs/gnutls
 	>=x11-libs/gtk+-2.12:2
-	audioscrobbler? ( net-libs/libsoup:2.4 )
-	dbus? ( dev-libs/dbus-glib )
-	zeroconf? ( net-dns/avahi )"
+	zeroconf? ( net-dns/avahi )
+	dbus? ( dev-libs/dbus-glib )"
 DEPEND="sys-devel/gettext
 	dev-util/intltool
 	dev-util/pkgconfig"
@@ -40,7 +39,8 @@ src_compile() {
 		$(use_enable zeroconf avahi) \
 		$(use_enable dbus) \
 		$(use_enable debug) \
-		$(use_enable audioscrobbler)
+		--disable-audioscrobbler \
+		|| die "econf failed"
 
 	emake || die "emake failed"
 }
