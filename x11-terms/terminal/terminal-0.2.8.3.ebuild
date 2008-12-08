@@ -1,10 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/terminal/Attic/terminal-0.2.8.3.ebuild,v 1.2 2008/10/31 00:31:49 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/terminal/Attic/terminal-0.2.8.3.ebuild,v 1.6 2008/12/08 21:34:38 ranger Exp $
 
 EAPI=1
 
-inherit fdo-mime gnome2-utils
+inherit fdo-mime gnome2-utils flag-o-matic
 
 MY_P=${P/t/T}
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://xfce/xfce-4.4.3/src/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~mips ppc ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="dbus debug doc nls startup-notification"
 
 RDEPEND=">=dev-libs/glib-2.6:2
@@ -43,6 +43,7 @@ pkg_preinst() {
 }
 
 src_compile() {
+	append-flags -Wno-error
 	econf --disable-dependency-tracking \
 		$(use_enable dbus) \
 		$(use_enable debug) \
