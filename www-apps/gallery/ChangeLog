@@ -1,6 +1,23 @@
 # ChangeLog for www-apps/gallery
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/gallery/ChangeLog,v 1.166 2008/12/03 17:30:46 wrobel Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/gallery/ChangeLog,v 1.171 2008/12/07 07:01:55 wrobel Exp $
+
+  07 Dec 2008; Gunnar Wrobel <wrobel@gentoo.org> -gallery-2.2.6.ebuild:
+  Removed insecure www-apps/gallery-2.2.6 (#213322).
+
+  06 Dec 2008; Tobias Scherbaum <dertobi123@gentoo.org> gallery-2.3.ebuild:
+  ppc stable, bug #213322
+
+  06 Dec 2008; Tobias Scherbaum <dertobi123@gentoo.org>
+  gallery-1.5.10.ebuild:
+  ppc stable, bug #249277
+
+  06 Dec 2008; Jeroen Roovers <jer@gentoo.org> gallery-1.5.10.ebuild:
+  Stable for HPPA (bug #249277).
+
+  05 Dec 2008; Raúl Porcel <armin76@gentoo.org> gallery-1.5.10.ebuild,
+  gallery-2.3.ebuild:
+  alpha/sparc/x86 stable wrt #249277
 
 *gallery-1.5.10 (03 Dec 2008)
 
