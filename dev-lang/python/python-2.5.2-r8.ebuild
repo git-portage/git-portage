@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/python/Attic/python-2.5.2-r8.ebuild,v 1.3 2008/10/26 21:40:28 hawking Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/python/Attic/python-2.5.2-r8.ebuild,v 1.6 2008/12/09 18:46:31 vapier Exp $
 
 # NOTE about python-portage interactions :
 # - Do not add a pkg_setup() check for a certain version of portage
@@ -27,7 +27,7 @@ SRC_URI="http://www.python.org/ftp/python/${PV}/${MY_P}.tar.bz2
 LICENSE="PSF-2.2"
 SLOT="2.5"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="ncurses gdbm ssl readline tk berkdb ipv6 build ucs2 sqlite doc +threads examples elibc_uclibc wininst"
+IUSE="+expat ncurses gdbm ssl readline tk berkdb ipv6 build ucs2 sqlite doc +threads examples elibc_uclibc wininst"
 
 # NOTE: dev-python/{elementtree,celementtree,pysqlite,ctypes,cjkcodecs}
 #       do not conflict with the ones in python proper. - liquidx
@@ -43,7 +43,7 @@ DEPEND=">=sys-libs/zlib-1.1.3
 		gdbm? ( sys-libs/gdbm )
 		ssl? ( dev-libs/openssl )
 		doc? ( dev-python/python-docs:2.5 )
-		dev-libs/expat
+		expat? ( dev-libs/expat )
 	)"
 
 # NOTE: changed RDEPEND to PDEPEND to resolve bug 88777. - kloeri
@@ -63,6 +63,10 @@ src_unpack() {
 	else
 		rm "${WORKDIR}/${PV}"/*_all_crosscompile.patch
 	fi
+
+	#Fixes some of the tr_TR locale issues. Bug #250075. Thanks Serkan for pointing it
+	#out
+	epatch "${FILESDIR}/${P}_turkish.patch"
 
 	EPATCH_SUFFIX="patch" epatch "${WORKDIR}/${PV}"
 	sed -i -e "s:@@GENTOO_LIBDIR@@:$(get_libdir):g" \
@@ -97,6 +101,7 @@ src_configure() {
 		local disable
 		use berkdb   || use gdbm || disable="${disable} dbm"
 		use berkdb   || disable="${disable} bsddb"
+		use expat    || disable="${disable} pyexpat"
 		use gdbm     || disable="${disable} gdbm"
 		use ncurses  || disable="${disable} _curses _curses_panel"
 		use readline || disable="${disable} readline"
