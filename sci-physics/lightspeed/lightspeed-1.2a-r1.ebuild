@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/lightspeed/lightspeed-1.2a-r1.ebuild,v 1.7 2008/12/14 13:44:51 nixnut Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/lightspeed/lightspeed-1.2a-r1.ebuild,v 1.5 2008/05/21 14:15:11 drac Exp $
 
 inherit eutils
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ppc ~x86"
+KEYWORDS="~x86 ~amd64 ~ppc"
 
 IUSE="nls truetype"
 LANGS="es"
@@ -40,7 +40,8 @@ src_compile() {
 	econf \
 		--with-gtk=2 \
 		$(use_enable nls) \
-		$(use_with truetype ftgl)
+		$(use_with truetype ftgl) \
+		|| die "econf failed"
 	emake || die "emake failed"
 	for i in ${LANGS}; do
 		use linguas_${i} && emake ${i}.gmo
@@ -50,7 +51,7 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	newicon src/icon.xpm lightspeed.xpm
-	make_desktop_entry ${PN} "Light Speed! Relativistic Simulator"
+	make_desktop_entry ${PN} "Light Speed!"	${PN} "Science;Physics;Education"
 	dodoc AUTHORS ChangeLog MATH NEWS README TODO || die
 	newdoc debian/changelog ChangeLog.Debian || die
 	cd ${S2}
