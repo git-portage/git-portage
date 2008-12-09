@@ -1,16 +1,6 @@
 # ChangeLog for dev-ruby/rspec-rails
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rspec-rails/ChangeLog,v 1.7 2008/12/14 14:03:42 nixnut Exp $
-
-  14 Dec 2008; nixnut <nixnut@gentoo.org> rspec-rails-1.1.11.ebuild:
-  ~ppc wrt bug 250348
-
-  10 Dec 2008; Ferris McCormick <fmccor@gentoo.org>
-  rspec-rails-1.1.11.ebuild:
-  Add ~sparc keyword, part of Bug #250348.
-
-  09 Dec 2008; Brent Baude <ranger@gentoo.org> rspec-rails-1.1.11.ebuild:
-  Marking rspec-rails-1.1.11 ~ppc64 for bug 250348
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rspec-rails/ChangeLog,v 1.4 2008/10/25 14:02:20 graaff Exp $
 
   25 Oct 2008; Hans de Graaff <graaff@gentoo.org> rspec-rails-1.1.11.ebuild:
   Add back hoe dependency because it is still listed as a runtime dependency
