@@ -1,18 +1,21 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/link-grammar/Attic/link-grammar-4.2.4-r1.ebuild,v 1.9 2008/12/14 22:40:04 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/link-grammar/Attic/link-grammar-4.2.4-r1.ebuild,v 1.8 2007/11/14 03:38:33 beandog Exp $
 
 inherit eutils
 
 DESCRIPTION="The Link Grammar Parser is a syntactic parser of English, based on
 link grammar, an original theory of English syntax."
 HOMEPAGE="http://bobo.link.cs.cmu.edu/link/"
-SRC_URI="http://www.abisource.com/downloads/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="http://www.abisource.com/downloads/link-grammar/${PV}/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86"
 IUSE=""
+
+#broken make files :-/
+MAKEOPTS="${MAKEOPTS} -j1"
 
 src_unpack() {
 	unpack ${A}
@@ -23,14 +26,11 @@ src_unpack() {
 }
 
 src_compile() {
-	econf
-
-	# broken make files :-/
-	emake -j1 || die "emake failed"
+	econf || die "configure failed"
+	emake
 }
 
 src_install() {
-	# broken make files :-/
-	emake -j1 DESTDIR="${D}" install || die "install failed"
+	emake DESTDIR="${D}" install || die "install failed"
 	dodoc README
 }
