@@ -1,6 +1,14 @@
 # ChangeLog for dev-ruby/ruby-gtksourceview
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-gtksourceview/ChangeLog,v 1.11 2008/04/22 18:19:18 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-gtksourceview/ChangeLog,v 1.13 2008/12/09 14:32:35 fmccor Exp $
+
+  09 Dec 2008; Ferris McCormick <fmccor@gentoo.org>
+  ruby-gtksourceview-0.16.0.ebuild:
+  Sparc stable, Bug #215149.
+
+  08 Dec 2008; Jeremy Olexa <darkside@gentoo.org>
+  ruby-gtksourceview-0.16.0.ebuild:
+  amd64 stable, bug 215149
 
   22 Apr 2008; Hans de Graaff <graaff@gentoo.org>
   -ruby-gtksourceview-0.14.1.ebuild, -ruby-gtksourceview-0.15.0.ebuild:
