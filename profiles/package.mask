@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9256 2008/12/06 14:30:13 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9268 2008/12/10 22:24:57 zzam Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,42 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Matthias Schwarzott <zzam@gentoo.org> (10 Dec 2008)
+# Masked for development of init-script
+=sys-fs/udev-135-r2
+
+# Doug Goldstein <cardoe@gentoo.org> (10 Dec 2008)
+# Masked for testing
+=sys-apps/openrc-0.4.0
+
+# Torsten Veller <tove@gentoo.org> (08 Dec 2008)
+# Mask broken perl modules
+# Missing dependencies:
+~dev-perl/Net-Amazon-S3-0.48
+
+# Jeremy Olexa <darkside@gentoo.org> (07 Dec 2008)
+# Masked for removal in 60 days at maintainers request. Some don't work. Most
+# have dead upstream, etc. bug 250217 - please comment/submit patches there.
+dev-db/rekall
+net-p2p/apollon
+app-portage/kuroo
+kde-misc/komics
+
+# Jeremy Olexa <darkside@gentoo.org> (07 Dec 2008)
+# Masked for removal in 60 days. Does not build, no maintainer. Non-trivial to
+# fix. Please see bug #153258 for more info.
+net-analyzer/sysmon
+
+# Luca Barbato <lu_zero@gentoo.org> (07 Dec 2008)
+# Live sources to be used with other live source applications
+=media-video/ffmpeg-9999
+
+# Robin H. Johnson <robbat2@gentoo.org> (06 Dec 2008)
+# The init.d scripts and default rules need updating and serious testing.
+# Do not use the old ones with the new versions of audit, you will get weird
+# crashes.
+>sys-process/audit-1.7.4
 
 # Arun Raghavan <ford_prefect@gentoo.org> (6 Dec 2008)
 # Masking till the required gnome-extra/gnome-do-plugins-0.6 gets into the tree
@@ -135,11 +171,6 @@ net-news/straw
 # Peter Alfredsen <loki_val@gentoo.org> (26 Nov 2008)
 # Mask non-working version to force their removal.
 <dev-dotnet/gtksourceview-sharp-0.12
-
-# Doug Goldstein <cardoe@gentoo.org> (24 Nov 2008)
-# Fails to configure in all situations. Just plain broken
-# bug #247677
-=net-libs/wvstreams-4.4.1
 
 # Zac Medico <zmedico@gentoo.org> (24 Nov 2008)
 # In order to ensure that portage-2.1.6 gets sufficient testing,
@@ -252,11 +283,6 @@ media-libs/realcodecs
 dev-lang/prc-tools
 dev-lang/palmos-sdk
 
-# Jeremy Olexa <darkside@gentoo.org> (4 Nov 2008)
-# Broken, dead project. Removed by treecleaners in 30 days at maintainer's
-# request. bug #225301
-sys-apps/usbd
-
 # Daniel Black <dragonheart@gentoo.org> (4 Nov 2008)
 # Legal problems #241650 causing distribution problems #245322 and build problems #237493
 app-crypt/truecrypt
@@ -290,15 +316,6 @@ app-crypt/truecrypt
 # Federico Ferri <mescalinum@gentoo.org> (27 Oct 2008)
 # Until Tcl-8.5 gets unmasked
 >=dev-libs/newt-0.52.10
-
-# Doug Goldstein <cardoe@gentoo.org> (27 Oct 2008)
-# Masked for pending removal. Will be removed 27 Nov 2008.
-# bug #244411
-sys-libs/detect
-
-# Mike Frysinger <vapier@gentoo.org> (27 Oct 2008)
-# bug #244411
-sys-libs/detect
 
 # Mike Frysinger <vapier@gentoo.org> (27 Oct 2008)
 # Does not work with latest DirectFB and ffmpeg #242036
@@ -542,14 +559,6 @@ dev-python/twibber
 # Open security bugs  #208566, #215006 and #231836.
 media-video/mplayer-bin
 
-# Diego Pettenò <flameeyes@gentoo.org> (2 Aug 2008)
-# Deprecated upstream in favour of Linux-PAM's own SHA512 support.
-# If you want to enable SHA512 passwords, enable the sha512 USE flag
-# for sys-auth/pambase instead.
-# Note that it requires glibc 2.7 or later.
-# Scheduled for removal on September 2nd
-sys-auth/pam_sha512
-
 # Raúl Porcel <armin76@gentoo.org> (1 Aug 2008)
 # This is just for preview
 >=www-client/mozilla-firefox-bin-3.1_alpha1
@@ -600,8 +609,6 @@ games-board/glchess
 # bugs. The following packages are masked now because they are incompatible,
 # and have not yet been fixed. (~arch versions only, because stable versions
 # will build against current stable ffmpeg)
-# sound herd, bug 218099:
-media-sound/potamus
 # voip herd, bug 218102:
 media-libs/mediastreamer
 # no herd, bug 218105:
