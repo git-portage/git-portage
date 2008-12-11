@@ -1,8 +1,7 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/tapiir/Attic/tapiir-0.7.1.ebuild,v 1.18 2008/12/15 01:52:01 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/tapiir/Attic/tapiir-0.7.1.ebuild,v 1.17 2008/05/12 15:58:08 drac Exp $
 
-EAPI="1"
 inherit eutils
 
 DESCRIPTION="a flexible audio effects processor, inspired on the classical magnetic tape delay systems"
@@ -16,7 +15,7 @@ IUSE=""
 
 DEPEND="media-sound/jack-audio-connection-kit
 	>=media-libs/alsa-lib-0.9
-	x11-libs/fltk:1.1"
+	x11-libs/fltk"
 
 src_unpack() {
 	unpack ${A}
