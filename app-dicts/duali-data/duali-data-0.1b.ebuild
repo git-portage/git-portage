@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/duali-data/duali-data-0.1b.ebuild,v 1.12 2008/12/16 00:43:00 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/duali-data/duali-data-0.1b.ebuild,v 1.11 2005/04/24 10:49:24 hansmi Exp $
 
 IUSE=""
 
@@ -20,11 +20,8 @@ src_compile() {
 
 src_install() {
 	insinto /usr/share/duali
-	if [[ -e stems.db ]]; then
-		doins stems.db prefixes.db suffixes.db || die
-	else
-		doins stemsdb prefixesdb suffixesdb || die
-	fi
-	doins tableab tableac tablebc || die
-	dodoc README
+	doins stems.db prefixes.db suffixes.db
+	doins tableab tableac tablebc
+
+	dodoc gpl.txt README
 }
