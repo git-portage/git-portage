@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail-attachwarner/Attic/claws-mail-attachwarner-0.2.14.ebuild,v 1.2 2008/11/28 23:16:28 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail-attachwarner/Attic/claws-mail-attachwarner-0.2.14.ebuild,v 1.4 2008/12/10 23:36:07 fauli Exp $
 
 MY_P="${P#claws-mail-}"
 
