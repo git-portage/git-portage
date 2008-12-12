@@ -1,15 +1,6 @@
 # ChangeLog for x11-themes/mythtv-themes
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/mythtv-themes/Attic/ChangeLog,v 1.54 2008/12/15 20:01:35 angelos Exp $
-
-  15 Dec 2008; Christoph Mende <angelos@gentoo.org>
-  mythtv-themes-0.20.2_p14301.ebuild, mythtv-themes-0.21_p16505.ebuild,
-  mythtv-themes-0.22_alpha18947.ebuild:
-  QA: Removed ROOT usage from src_compile
-
-  12 Dec 2008; Steve Dibb <beandog@gentoo.org>
-  mythtv-themes-0.21_p16505.ebuild:
-  amd64 stable, bug 239341
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/mythtv-themes/Attic/ChangeLog,v 1.52 2008/11/11 15:53:15 cardoe Exp $
 
 *mythtv-themes-0.22_alpha18947 (11 Nov 2008)
 
