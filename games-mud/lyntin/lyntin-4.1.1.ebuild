@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-mud/lyntin/Attic/lyntin-4.1.1.ebuild,v 1.12 2008/01/17 18:20:13 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-mud/lyntin/Attic/lyntin-4.1.1.ebuild,v 1.13 2008/12/07 13:50:29 mr_bones_ Exp $
 
 inherit eutils games distutils
 
@@ -19,7 +19,7 @@ DOCS="COMMANDS PKG-INFO HACKING README"
 
 pkg_setup() {
 	games_pkg_setup
-	if ! built_with_use dev-lang/python tk ; then
+	if use tk && ! built_with_use dev-lang/python tk ; then
 		eerror "You need to emerge python with USE=tk set."
 		echo
 		die "missing tkinter support with installed python"
