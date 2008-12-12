@@ -1,10 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/encfs/Attic/encfs-1.5.ebuild,v 1.5 2008/12/13 16:50:32 vanquirius Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/encfs/Attic/encfs-1.5.ebuild,v 1.4 2008/12/01 20:35:24 bluebird Exp $
 
-WANT_AUTOMAKE="1.10"
-
-inherit eutils autotools
+inherit eutils
 
 MY_P="${P}-2"
 
@@ -25,9 +23,7 @@ DEPEND=">=dev-libs/openssl-0.9.7
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	# bug 245782 - sys-fs/encfs-1.5 fails to build with --as-needed
 	epatch "${FILESDIR}"/${P}-boost-system-and-as-needed.patch
-	eautomake
 }
 
 src_compile() {
