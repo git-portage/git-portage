@@ -20,8 +20,9 @@ compat_volume_nodes()
 start_initd()
 {
 	(
+		called_from_addon=1
 		. /etc/init.d/"$1"
-		_start
+		start
 	)
 }
 # mount tmpfs on /dev
@@ -34,9 +35,6 @@ start_initd udev-dev-tarball
 start_initd udev || exit 1
 
 compat_volume_nodes
-
-# inject into boot runlevel
-IN_HOTPLUG=1 /etc/init.d/udev-postmount start >/dev/null 2>&1
 
 # udev started successfully
 exit 0
