@@ -175,15 +175,6 @@ start()
 		return 1
 	fi
 
-	_start
-	
-	display_hotplugged_services
-
-	inject_postmount_initd
-}
-
-_start()
-{
 	root_link
 	persistent_net_switch
 	
@@ -195,6 +186,11 @@ _start()
 
 	check_udev_works || cleanup
 
+	if [ "$called_from_addon" != "1" ]; then
+		display_hotplugged_services
+	fi
+
+	inject_postmount_initd
 	return 0
 }
 
