@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/beagle/Attic/beagle-0.3.7-r1.ebuild,v 1.7 2008/12/16 22:06:00 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/beagle/Attic/beagle-0.3.7-r1.ebuild,v 1.5 2008/10/11 22:54:52 eva Exp $
 
 EAPI=1
 
@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="amd64 ppc x86"
 IUSE="chm debug doc epiphany eds firefox galago gtk pdf inotify ole thunderbird +xscreensaver"
 
-RDEPEND="!sci-libs/beagle
+RDEPEND="
 	>=dev-lang/mono-1.2.4
 	app-shells/bash
 	app-arch/zip
@@ -56,7 +56,7 @@ RDEPEND="!sci-libs/beagle
 	#avahi?	(	>=net-dns/avahi-0.6.10 )
 
 DEPEND="${RDEPEND}
-	doc? ( >=virtual/monodoc-1.2.4 )
+	doc? ( >=dev-util/monodoc-1.2.4 )
 	dev-util/pkgconfig
 	xscreensaver? ( x11-proto/scrnsaverproto )
 	>=dev-util/intltool-0.35"
