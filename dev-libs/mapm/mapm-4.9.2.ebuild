@@ -1,8 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/mapm/Attic/mapm-4.9.2.ebuild,v 1.2 2008/12/13 18:01:53 flameeyes Exp $
-
-inherit multilib
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/mapm/Attic/mapm-4.9.2.ebuild,v 1.1 2006/08/17 18:28:06 wormo Exp $
 
 DESCRIPTION="Mike's Arbitrary Precision Math Library"
 HOMEPAGE="http://www.tc.umn.edu/~ringx004/mapm-main.html"
@@ -28,11 +26,11 @@ src_compile() {
 }
 
 src_install() {
-	dolib.so libmapm.so.0 || die "dolib failed"
-	dosym libmapm.so.0 /usr/$(get_libdir)/libmapm.so || die "dosym failed"
+	dolib.so libmapm.so.0
+	dosym libmapm.so.0 /usr/lib/libmapm.so
 
 	insinto /usr/include
-	doins m_apm.h || die "doins headers failed"
+	doins m_apm.h
 
 	dodoc README article.pdf algorithms.used commentary.txt \
 		cpp_function.ref function.ref history.txt struct.ref
