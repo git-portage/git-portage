@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9301 2008/12/17 08:24:55 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9281 2008/12/12 20:54:23 cardoe Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -31,44 +31,13 @@
 
 #--- END OF EXAMPLES ---
 
-# Torsten Veller <tove@gentoo.org> (17 Dec 2008)
-# Masked for removal
-dev-perl/SOAP
-
-# Tiziano Müller <dev-zero@gentoo.org> (16 Dec 2008)
-# Mask for testing
-app-admin/eselect-boost
->=dev-util/boost-build-1.35.0-r2
->=dev-libs/boost-1.35.0-r3
-
-# Peter Volkov <pva@gentoo.org> (16 Dec 2008)
-# Fails to build, bug #247946. Somebody needs to port it to new spandsp interface
-net-dialup/ivcall
-
-# Paul Varner <fuzzyray@gentoo.org> (14 Dec 2008)
-# Dead upstream, masked for removal in ~30 to 60 days.
-app-portage/udept
-
-# Gilles Dartiguelongue <eva@gentoo.org> (14 Dec 2008)
-# Masked for testing until tree is fixed, see bug #243160.
->=gnome-extra/gucharmap-2.24
-
-# Alin Năstac <mrness@gentoo.org> (14 Dec 2008)
-# Dead upstream, masked for removal in ~60 days.
-net-proxy/squirm
-
-# Alexis Ballier <aballier@gentoo.org> (13 Dec 2008)
-# API changes on the host side
-# Mask also packages requiring it
->=media-libs/vamp-plugin-sdk-2.0
->=media-sound/sonic-visualiser-1.4
-
 # Doug Goldstein <cardoe@gentoo.org (12 Dec 2008)
 # Masked for removal. Outdated and NVIDIA will
 # tell you to be on a current release
 # Speak up if you need one of these versions to stay
 =x11-drivers/nvidia-drivers-100.14.09
 =x11-drivers/nvidia-drivers-100.14.11
+=x11-drivers/nvidia-drivers-100.14.19
 =x11-drivers/nvidia-drivers-100.14.23
 =x11-drivers/nvidia-drivers-169.07
 =x11-drivers/nvidia-drivers-169.09
@@ -89,6 +58,11 @@ net-proxy/squirm
 # Jim Ramsay <lack@gentoo.org> (11 Dec 2008)
 # Live ebuild, for advanced users only
 =x11-wm/fluxbox-9999
+
+# Samuli Suominen <ssuominen@gentoo.org> (11 Dec 2008)
+# Doesn't build against FFMPEG, bugs 189774 and 218102.
+# Masked for removal by treecleaners and media in 30 days.
+<net-voip/linphone-3.0.0
 
 # Matthias Schwarzott <zzam@gentoo.org> (10 Dec 2008)
 # Masked for development of init-script
@@ -127,10 +101,7 @@ net-analyzer/sysmon
 
 # Arun Raghavan <ford_prefect@gentoo.org> (6 Dec 2008)
 # Masking till the required gnome-extra/gnome-do-plugins-0.6 gets into the tree
-# Hans de Graaff <graaff@gentoo.org> (13 Dec 2008)
-# Add gnome-do-plugins to the mask so that both can be tested before unleashing them.
 =gnome-extra/gnome-do-0.6*
-=gnome-extra/gnome-do-plugins-0.6*
 
 # Jeroen Roovers <jer@gentoo.org> (5 Dec 2008)
 # Snapshots, alphas and betas of Opera may delete kittens
@@ -312,6 +283,13 @@ games-mud/ytin
 =media-libs/freetype-1.3.1-r5
 =media-libs/freetype-1.4_pre20080316
 
+# Jeremy Olexa <darkside@gentoo.org> (11 Nov 2008)
+# Masked for removal in 30 days. Deprecated, use media-radio/tucnak2 (bug
+# #241284)
+media-radio/tucnak1
+media-radio/tucnak1-data
+media-radio/ssbd
+
 # Mike Doty <kingtaco@gentoo.org> (9 Nov 2008)
 # Masked for testing
 =app-emulation/emul-linux-x86-baselibs-20081109
@@ -377,6 +355,20 @@ app-crypt/truecrypt
 # See bug #239978 for reference.
 dev-python/pyframer
 
+# Rémi Cardona <remi@gentoo.org> (24 Oct 2008)
+# version with _massive_ EXA patches from git master
+# could very well kill kittens, DO NOT USE
+=x11-base/xorg-server-1.5.2-r1
+
+# Ben de Groot <yngwin@gentoo.org> (22 Oct 2008)
+# Depends on hard-masked x11-libs/fltk:2
+~www-client/dillo-2.0
+
+# Ben de Groot <yngwin@gentoo.org> (21 Oct 2008)
+# Pre-release snapshot of new major version
+# Masked for testing, see bug 242774
+=x11-libs/fltk-2.0_pre*
+
 # Torsten Veller <tove@gentoo.org> (21 Oct 2008)
 # Masked for removal in 30 days
 # Old and unneeded or deprecated packages
@@ -388,6 +380,10 @@ dev-perl/tagged
 # genflags should never have been born.  Output needs to be specific per GCC
 # version, and that's a big change.
 app-portage/genflags
+
+# Rémi Cardona <remi@gentoo.org> (19 Oct 2008)
+# pre-release, masked for testing
+=x11-drivers/xf86-video-intel-2.4.98*
 
 # Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org> (15 Oct 2008)
 # Beta release
@@ -470,6 +466,20 @@ gnome-extra/gnome-lirc-properties
 # Development version, but yet nice :)
 =net-analyzer/wireshark-1.1*
 
+# Jeremy Olexa <darkside@gentoo.org> (12 Sep 2008)
+# Masked for removal in 60 days. Broken in Gentoo for 1.5 years, no maintainer,
+# automagic deps, non trivial to version bump due to now bundled packages.
+# dev-lang/stratego comes for the ride becuase it depends on these two packages.
+# See bug #159048
+dev-libs/aterm
+dev-libs/sdf2-bundle
+dev-lang/stratego
+
+# Jeremy Olexa <darkside@gentoo.org> (12 Sep 2008)
+# Masked for removal in 60 days. dead upstream, broken on current systems. No
+# maintainer, See bug #166875
+net-misc/xf4vnc
+
 # Carsten Lohrke <carlo@gentoo.org> (05 Sep 2008)
 # Masked for removal. It's broken and abandoned.
 app-portage/kuroo
@@ -529,6 +539,18 @@ dev-tcltk/tclgpgme
 # Masked for testing
 >=dev-python/sqlalchemy-0.5.0_beta3
 
+# Alin Năstac <mrness@gentoo.org> (15 Aug 2008)
+# Upstream has stopped working on this project in favor of built in
+# Not working on kernels >= 2.6.20 & dead upstream.
+# Masked for removal in ~60 days by treecleaners.
+net-dialup/bewan-adsl
+
+# Alin Năstac <mrness@gentoo.org> (15 Aug 2008)
+# Upstream has stopped working on this project in favor of built in
+# Kernels >= 2.6.16 have support for this device. Also, upstream seems dead.
+# Masked for removal in ~60 days by treecleaners.
+net-dialup/eagle-usb
+
 # Tiziano Müller <dev-zero@gentoo.org> (15 Aug 2008)
 # Masked for testing (works with >=dev-libs/xerces-c-3.0.0)
 =dev-libs/xqilla-9999
@@ -580,6 +602,10 @@ dev-util/livecd-specs
 # Tiziano Müller <dev-zero@gentoo.org> (26 Jul 2008)
 # Needs testing, no release yet
 dev-db/ctdb
+
+# Alin Năstac <mrness@gentoo.org> (24 Jul 2008)
+# This version stops responding after awhile (#229049).
+=net-proxy/privoxy-3.0.8
 
 # Alexis Ballier <aballier@gentoo.org> (9 Jul 2008)
 # Latest slv2 release has API changes
@@ -1278,6 +1304,10 @@ games-action/armagetronad
 # Mike Frysinger <vapier@gentoo.org> (28 Dec 2006)
 # Build failure on big-endian #154294 and breaks non-default journals #154974
 ~sys-fs/reiserfsprogs-3.6.20
+
+# Timothy Redaelli <drizzt@gentoo.org> (28 Nov 2006)
+# Masked for testing.
+>=media-libs/spandsp-0.0.3_pre
 
 # Marcus D. Hanwell <cryos@gentoo.org> (03 Nov 2006)
 # 5.5.6 does not work with all projects, please use 5.4 or >=5.8
