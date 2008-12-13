@@ -3,6 +3,12 @@
 # default-linux/amd64/2007.0/package.use.mask IN SYNC
 # SEE BUG #168249 FOR DETAILS
 
+# Vlastimil Babka <caster@gentoo.org> (12 Dec 2008)
+# finally a 64bit java plugin
+>=dev-java/sun-jdk-1.6.0.12_beta2 -nsplugin
+# but not on 1.7 yet
+=dev-java/sun-jdk-1.7* nsplugin
+
 # assembler-section
 
 # Oct 23th 2006; blubb@gentoo.org
@@ -69,10 +75,6 @@ media-tv/xdtv -mmx
 media-plugins/vdr-softdevice -mmx -mmxext
 dev-libs/openssl -sse2
 media-libs/libsoundtouch -sse
-
-# Jan 14th 2007; blubb@gentoo.org
-# bug 136853: We'd need aspell in emul-libs to make this flag useful
-www-client/opera spell
 
 # Feb 17th 2007; drizzt@gentoo.org
 # amd64 does not have an emul libao package
