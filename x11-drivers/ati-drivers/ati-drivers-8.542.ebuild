@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-8.542.ebuild,v 1.6 2008/12/17 12:27:13 lu_zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-8.542.ebuild,v 1.5 2008/10/28 02:13:16 mr_bones_ Exp $
 
 IUSE="acpi debug"
 
@@ -416,10 +416,6 @@ src_install-libs() {
 	fi
 	echo "LIBGL_DRIVERS_PATH=/usr/$(get_libdir)/dri" > "${envname}"
 	doenvd "${envname}"
-}
-
-pkg_prerm() {
-	/usr/bin/eselect opengl set xorg-x11
 }
 
 pkg_postinst() {
