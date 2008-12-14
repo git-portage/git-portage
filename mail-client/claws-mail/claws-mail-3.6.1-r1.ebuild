@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail/Attic/claws-mail-3.6.1-r1.ebuild,v 1.2 2008/12/07 23:50:37 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail/Attic/claws-mail-3.6.1-r1.ebuild,v 1.5 2008/12/11 00:02:50 ssuominen Exp $
 
 inherit eutils multilib
 
@@ -12,7 +12,8 @@ SRC_URI="mirror://sourceforge/sylpheed-claws/${P}.tar.bz2"
 SLOT="0"
 LICENSE="GPL-3"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="bogofilter crypt dillo doc gnome gnutls imap ipv6 kde ldap nntp pda session smime spamassassin spell ssl startup-notification xface"
+IUSE="bogofilter crypt dillo doc gnome gnutls imap ipv6 kde ldap nntp pda
+session smime spamassassin aspell ssl startup-notification xface"
 
 COMMONDEPEND=">=x11-libs/gtk+-2.6
 	pda? ( >=app-pda/jpilot-0.99 )
@@ -20,7 +21,7 @@ COMMONDEPEND=">=x11-libs/gtk+-2.6
 	ldap? ( >=net-nds/openldap-2.0.7 )
 	crypt? ( >=app-crypt/gpgme-1.1.1 )
 	dillo? ( www-client/dillo )
-	spell? ( >=app-text/enchant-1.0.0 )
+	aspell? ( >=app-text/enchant-1.4.2 )
 	kde? ( kde-base/kdelibs )
 	imap? ( >=net-libs/libetpan-0.57 )
 	nntp? ( >=net-libs/libetpan-0.57 )
@@ -43,7 +44,7 @@ RDEPEND="${COMMONDEPEND}
 PLUGIN_NAMES="acpi-notifier att-remover attachwarner cachesaver etpan-privacy fetchinfo gtkhtml maildir mailmbox newmail notification pdf-viewer perl rssyl smime synce vcalendar"
 pkg_setup() {
 	# rework with EAPI=2
-	if use spell; then
+	if use aspell; then
 		if ! built_with_use app-text/enchant aspell; then
 			eerror
 			eerror "You need to rebuild app-text/enchant with USE=aspell enabled"
@@ -65,7 +66,7 @@ src_compile() {
 		$(use_enable ipv6) \
 		$(use_enable ldap) \
 		$(use_enable pda jpilot) \
-		$(use_enable spell enchant) \
+		$(use_enable aspell enchant) \
 		$(use_enable gnutls) \
 		$(use_enable ssl gnutls) \
 		$(use_enable xface compface) \
