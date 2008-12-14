@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/gmpc/Attic/gmpc-0.16.1.ebuild,v 1.7 2008/12/17 21:37:25 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/gmpc/Attic/gmpc-0.16.1.ebuild,v 1.4 2008/12/11 16:09:30 angelos Exp $
 
 EAPI=1
 
@@ -12,7 +12,7 @@ SRC_URI="http://download.sarine.nl/download/Programs/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="session"
 
 RDEPEND=">=dev-libs/glib-2.10:2
@@ -25,7 +25,6 @@ RDEPEND=">=dev-libs/glib-2.10:2
 	x11-libs/libsexy
 	session? ( x11-libs/libSM )"
 DEPEND="${RDEPEND}
-	dev-util/intltool
 	dev-util/pkgconfig"
 
 src_unpack() {
