@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-voip/telepathy-gabble/Attic/telepathy-gabble-0.7.8.ebuild,v 1.1 2008/08/21 10:36:57 coldwind Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-voip/telepathy-gabble/Attic/telepathy-gabble-0.7.16.ebuild,v 1.1 2008/12/14 12:44:46 coldwind Exp $
 
 inherit eutils
 
@@ -10,12 +10,12 @@ SRC_URI="http://telepathy.freedesktop.org/releases/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE="debug test"
 
-RDEPEND=">=dev-libs/glib-2.10
+RDEPEND=">=dev-libs/glib-2.16
 	>=dev-libs/dbus-glib-0.73
-	>=net-libs/telepathy-glib-0.7.14
+	>=net-libs/telepathy-glib-0.7.18
 	dev-lang/python
 	>=net-libs/loudmouth-1.3.2"
 
