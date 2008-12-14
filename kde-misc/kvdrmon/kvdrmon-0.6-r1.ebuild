@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/kvdrmon/Attic/kvdrmon-0.6-r1.ebuild,v 1.4 2008/12/17 21:04:39 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/kvdrmon/Attic/kvdrmon-0.6-r1.ebuild,v 1.3 2007/07/13 05:55:28 mr_bones_ Exp $
 
 inherit kde
 
@@ -19,9 +19,8 @@ need-kde 3.4
 
 src_unpack() {
 	unpack ${A}
-	epatch "${FILESDIR}/${P}-gcc4.3.diff"
 
-	use arts || epatch "${FILESDIR}/${P}-noarts.diff"
+	use arts || epatch ${FILESDIR}/${P}-noarts.diff
 }
 
 pkg_postinst() {
