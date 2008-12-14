@@ -1,8 +1,11 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/SoQt/Attic/SoQt-1.4.1.ebuild,v 1.2 2008/12/15 19:05:07 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/SoQt/Attic/SoQt-1.4.1.ebuild,v 1.1 2007/10/21 13:19:51 carlo Exp $
 
-DESCRIPTION="the glue between Coin3D and Qt3"
+inherit eutils
+
+DESCRIPTION="SoQt provides the glue between Systems in Motion's Coin high-level 3D visualization library and Trolltech's Qt 2D user interface library."
+
 SRC_URI="ftp://ftp.coin3d.org/pub/coin/src/all/${P}.tar.gz"
 HOMEPAGE="http://www.coin3d.org/"
 
@@ -17,11 +20,11 @@ DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
 
 src_compile() {
-	econf --with-coin --disable-html-help $(use_enable doc html) htmldir=/usr/share/doc/${PF}/html
-	emake || die "emake failed"
+	econf --with-coin --disable-html-help $(use_enable doc html) htmldir=${ROOT}usr/share/doc/${PF}/html
+	emake
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS ChangeLog NEWS README*
+	make DESTDIR=${D} install || die
+	dodoc AUTHORS NEWS README*
 }
