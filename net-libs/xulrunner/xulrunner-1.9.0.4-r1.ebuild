@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/xulrunner/Attic/xulrunner-1.9.0.4-r1.ebuild,v 1.5 2008/12/17 09:25:43 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/xulrunner/Attic/xulrunner-1.9.0.4-r1.ebuild,v 1.1 2008/11/15 18:25:24 armin76 Exp $
 
 WANT_AUTOCONF="2.1"
 
@@ -79,11 +79,6 @@ src_compile() {
 
 	mozconfig_init
 	mozconfig_config
-
-	MEXTENSIONS="default"
-#	if use python; then
-#		MEXTENSIONS="${MEXTENSIONS},python/xpcom"
-#	fi
 
 	mozconfig_annotate '' --enable-extensions="${MEXTENSIONS}"
 	mozconfig_annotate '' --disable-mailnews
@@ -165,4 +160,3 @@ src_install() {
 	    rm -f "${D}"${MOZILLA_FIVE_HOME}/javaxpcom.jar
 	fi
 }
-
