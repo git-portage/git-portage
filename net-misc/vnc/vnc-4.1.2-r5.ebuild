@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/vnc/Attic/vnc-4.1.2-r5.ebuild,v 1.4 2008/12/19 17:40:11 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/vnc/Attic/vnc-4.1.2-r5.ebuild,v 1.2 2008/10/16 09:36:28 armin76 Exp $
 
 EAPI="1"
 
 inherit eutils toolchain-funcs multilib autotools
 
-XSERVER_VERSION="1.5.3"
+XSERVER_VERSION="1.5.2"
 PATCH="${P}-r5-patches-0.1"
 
 MY_P="vnc-4_1_2-unixsrc"
@@ -19,7 +19,7 @@ SRC_URI="http://ltsp.mirrors.tds.net/pub/ltsp/tarballs/${MY_P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 -arm ~hppa ~ia64 ~ppc ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 -arm ~ia64 ~ppc ~sparc ~x86 ~x86-fbsd"
 IUSE="server +xorgmodule"
 
 RDEPEND="sys-libs/zlib
@@ -63,9 +63,6 @@ DEPEND="${RDEPEND}
 		x11-proto/xf86dgaproto
 		x11-proto/xf86miscproto
 		x11-proto/xf86vidmodeproto
-		>=media-libs/mesa-7.1
-		>=x11-proto/renderproto-0.9.3
-		x11-libs/libpciaccess
 	)"
 
 S=${WORKDIR}/${MY_P}
