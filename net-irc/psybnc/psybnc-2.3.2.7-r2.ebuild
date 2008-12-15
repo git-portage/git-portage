@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/psybnc/Attic/psybnc-2.3.2.7-r2.ebuild,v 1.3 2007/05/06 12:41:07 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/psybnc/Attic/psybnc-2.3.2.7-r2.ebuild,v 1.4 2008/12/14 18:23:14 gurligebis Exp $
 
 inherit eutils versionator toolchain-funcs
 MY_PV="$(replace_version_separator 3 -)"
@@ -26,9 +26,9 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 
-	epatch ${FILESDIR}/compile.diff
+	epatch "${FILESDIR}/compile.diff"
 
 	# Useless files
 	rm -f */INFO
@@ -84,7 +84,7 @@ src_install() {
 	newinitd "${FILESDIR}"/psybnc.initd psybnc
 	newconfd "${FILESDIR}"/psybnc.confd psybnc
 
-	dodoc CHANGES COPYING FAQ README SCRIPTING TODO
+	dodoc CHANGES FAQ README SCRIPTING TODO
 	docinto example-script
 	dodoc scripts/example/DEFAULT.SCRIPT
 }
