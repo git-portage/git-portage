@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/logrotate/Attic/logrotate-3.7.2.ebuild,v 1.16 2008/12/15 17:30:51 dang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/logrotate/Attic/logrotate-3.7.2.ebuild,v 1.15 2007/12/24 10:08:24 carlo Exp $
 
-inherit eutils toolchain-funcs flag-o-matic
+inherit eutils toolchain-funcs
 
 DESCRIPTION="Rotates, compresses, and mails system logs"
 HOMEPAGE="http://www.gentoo.org"
@@ -25,8 +25,6 @@ src_unpack() {
 	unpack ${P}.tar.bz2
 
 	cd ${S}
-
-	strip-flags
 
 	sed -i \
 		-e "s:CFLAGS += -g:CFLAGS += -g ${CFLAGS}:" \
