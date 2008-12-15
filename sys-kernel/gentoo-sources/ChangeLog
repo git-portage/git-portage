@@ -1,6 +1,21 @@
 # ChangeLog for sys-kernel/gentoo-sources
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/ChangeLog,v 1.567 2008/12/06 15:49:17 dsd Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/ChangeLog,v 1.570 2008/12/14 17:58:54 dsd Exp $
+
+*gentoo-sources-2.6.27-r6 (14 Dec 2008)
+
+  14 Dec 2008; Daniel Drake <dsd@gentoo.org>
+  +gentoo-sources-2.6.27-r6.ebuild:
+  Update to Linux 2.6.27.9. Fix capacity reported by Pentax K10D camera. Fix
+  a suspend/resume regression. Fix vmware guest crash-on-boot.
+
+  10 Dec 2008; Tobias Klausmann <klausman@gentoo.org>
+  gentoo-sources-2.6.27-r5.ebuild:
+  Keyworded on alpha
+
+  10 Dec 2008; Raúl Porcel <armin76@gentoo.org>
+  gentoo-sources-2.6.26-r4.ebuild:
+  arm/ia64/sparc stable
 
   06 Dec 2008; Daniel Drake <dsd@gentoo.org>
   gentoo-sources-2.6.26-r4.ebuild:
