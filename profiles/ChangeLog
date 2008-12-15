@@ -1,41 +1,10 @@
 # ChangeLog for profile directory
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2179 2008/12/19 11:33:34 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2171 2008/12/15 02:10:45 yngwin Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
-
-  19 Dec 2008; Raúl Porcel <armin76@gentoo.org>
-  targets/desktop/make.defaults:
-  Add xulrunner USE-flag to the make.default of desktop profile
-
-  17 Dec 2008; Torsten Veller <tove@gentoo.org> package.mask:
-  Mask dev-perl/SOAP for removal (#247410)
-
-  16 Dec 2008; Doug Goldstein <cardoe@gentoo.org> package.mask:
-  unmask 100.14.19 since several users have reported this being the last
-  version that works with their hardware
-
-  16 Dec 2008; Tiziano Müller <dev-zero@gentoo.org> package.mask:
-  Added new slotted ebuilds for boost and boost-build as well as
-  eselect-boost
-
-  16 Dec 2008; Peter Volkov <pva@gentoo.org> package.mask:
-  Masking net-dialup/ivcall. Fails to build, bug #247946. Somebody needs to
-  port it to new spandsp interface
-
-  15 Dec 2008; Rémi Cardona <remi@gentoo.org> package.mask:
-  remove old intel p.mask entries
-
-  15 Dec 2008; Peter Volkov <pva@gentoo.org> package.mask:
-  Unmasking spandsp as upstream told us to use >=spandsp-0.0.6_pre2. Fix
-  packages if they fail to work with this version of spandsp. For hints how
-  to fix take a look here:
-  http://www.soft-switch.org/installing-spandsp.html
-
-  15 Dec 2008; Rémi Cardona <remi@gentoo.org> package.mask:
-  unleash xorg-server 1.5.3 and evdev 2.1.0
 
   15 Dec 2008; Ben de Groot <yngwin@gentoo.org> package.mask:
   Unmasking fltk:2 and dillo-2.0, bug 246445
