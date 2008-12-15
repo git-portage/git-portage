@@ -1,6 +1,16 @@
 # ChangeLog for virtual/perl-Archive-Tar
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/perl-Archive-Tar/ChangeLog,v 1.2 2008/11/02 10:51:00 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/virtual/perl-Archive-Tar/ChangeLog,v 1.4 2008/12/15 14:43:33 tove Exp $
+
+*perl-Archive-Tar-1.42 (15 Dec 2008)
+
+  15 Dec 2008; Torsten Veller <tove@gentoo.org>
+  +perl-Archive-Tar-1.42.ebuild:
+  Version bump
+
+  10 Dec 2008; Alexis Ballier <aballier@gentoo.org>
+  perl-Archive-Tar-1.40.ebuild:
+  keyword ~sparc-fbsd
 
 *perl-Archive-Tar-1.40 (01 Nov 2008)
 *perl-Archive-Tar-1.38 (01 Nov 2008)
