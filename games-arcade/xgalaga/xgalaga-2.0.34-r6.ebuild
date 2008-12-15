@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/xgalaga/Attic/xgalaga-2.0.34-r6.ebuild,v 1.7 2008/12/18 22:37:35 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/xgalaga/Attic/xgalaga-2.0.34-r6.ebuild,v 1.5 2008/02/04 15:16:21 nyhm Exp $
 
-inherit eutils flag-o-matic games
+inherit eutils games
 
 DEB_VER=30
 DESCRIPTION="A Galaga clone with additional features"
@@ -35,7 +35,6 @@ src_unpack() {
 	sed -i \
 		-e '/SOUNDDEFS/ s:@prefix@:@prefix@/bin:' Makefile.in \
 		|| die "sed Makefile.in failed"
-	append-ldflags -Wl,--no-as-needed #247331
 }
 
 src_compile() {
