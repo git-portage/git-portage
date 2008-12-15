@@ -1,8 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/gmpc/Attic/gmpc-0.16.1.ebuild,v 1.2 2008/10/14 23:23:51 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/gmpc/Attic/gmpc-0.16.1.ebuild,v 1.4 2008/12/11 16:09:30 angelos Exp $
 
 EAPI=1
+
+inherit autotools gnome2-utils
 
 DESCRIPTION="A GTK+2 client for the Music Player Daemon"
 HOMEPAGE="http://gmpcwiki.sarine.nl/index.php/GMPC"
@@ -20,9 +22,17 @@ RDEPEND=">=dev-libs/glib-2.10:2
 	>=media-libs/libmpd-0.16.1
 	net-misc/curl
 	>=x11-libs/gtk+-2.12:2
+	x11-libs/libsexy
 	session? ( x11-libs/libSM )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}-system-libsexy.patch
+	eautoreconf
+}
 
 src_compile() {
 	econf $(use_enable session sm) || die
@@ -32,4 +42,16 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog NEWS README TODO
+}
+
+pkg_preinst() {
+	gnome2_icon_savelist
+}
+
+pkg_postinst() {
+	gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+	gnome2_icon_cache_update
 }
