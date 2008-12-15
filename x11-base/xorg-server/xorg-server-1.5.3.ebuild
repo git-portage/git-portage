@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.5.3.ebuild,v 1.4 2008/12/16 19:45:58 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.5.3.ebuild,v 1.1 2008/12/15 00:25:13 remi Exp $
 
 # Must be before x-modular eclass is inherited
 SNAPSHOT="yes"
@@ -13,7 +13,7 @@ SRC_URI="${SRC_URI}
 	http://xorg.freedesktop.org/releases/individual/xserver/${P}.tar.bz2
 	mirror://gentoo/${P}-gentoo-patches-01.tar.bz2"
 DESCRIPTION="X.Org X servers"
-KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~ia64 ~ppc ~sparc ~x86 ~x86-fbsd"
 IUSE_INPUT_DEVICES="
 	input_devices_acecad
 	input_devices_aiptek
@@ -121,7 +121,7 @@ RDEPEND="hal? ( sys-apps/hal )
 	>=x11-libs/pixman-0.12
 	media-libs/freetype
 	>=x11-misc/xbitmaps-1.0.1
-	>=x11-misc/xkeyboard-config-1.4
+	>=x11-misc/xkeyboard-config-1.3
 	>=x11-apps/iceauth-1.0.2
 	>=x11-apps/rgb-1.0.3
 	>=x11-apps/xauth-1.0.3
