@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg/Attic/ffmpeg-0.4.9_p20081014.ebuild,v 1.10 2008/11/10 10:54:45 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg/Attic/ffmpeg-0.4.9_p20081014.ebuild,v 1.16 2008/12/16 16:32:00 jer Exp $
 
 inherit eutils flag-o-matic multilib toolchain-funcs
 
@@ -16,7 +16,7 @@ S=${WORKDIR}/ffmpeg
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="alpha ~amd64 ~arm hppa ~ia64 ~ppc ppc64 ~sparc x86 ~x86-fbsd"
 IUSE="aac altivec amr debug dirac doc ieee1394 encode gsm ipv6 mmx mmxext vorbis
 	  test theora threads x264 xvid network zlib sdl X mp3 schroedinger
 	  hardcoded-tables bindist v4l v4l2 ssse3 vhook"
@@ -30,7 +30,7 @@ RDEPEND="vhook? ( >=media-libs/imlib2-1.4.0 >=media-libs/freetype-2 )
 		theora? ( media-libs/libtheora media-libs/libogg )
 		x264? ( >=media-libs/x264-0.0.20081006 )
 		xvid? ( >=media-libs/xvid-1.1.0 ) )
-	aac? ( media-libs/faad2 )
+	aac? ( >=media-libs/faad2-2.6.1 )
 	zlib? ( sys-libs/zlib )
 	ieee1394? ( media-libs/libdc1394
 				sys-libs/libraw1394 )
@@ -50,7 +50,8 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${PN}-shared-gcc4.1.patch"
+	epatch "${FILESDIR}"/${PN}-shared-gcc4.1.patch
+	epatch "${FILESDIR}"/${P}-sparc-gcc43.patch #247653
 
 	# Set version #
 	# Any better idea? We can't do much more as we use an exported svn snapshot.
