@@ -1,17 +1,6 @@
 # ChangeLog for media-video/mkvtoolnix
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mkvtoolnix/ChangeLog,v 1.96 2008/12/20 15:13:14 nixnut Exp $
-
-  20 Dec 2008; nixnut <nixnut@gentoo.org> mkvtoolnix-2.4.0.ebuild:
-  Stable on ppc wrt bug 251481
-
-  18 Dec 2008; Steve Dibb <beandog@gentoo.org> mkvtoolnix-2.4.0.ebuild:
-  amd64 stable
-
-*mkvtoolnix-2.4.1 (18 Dec 2008)
-
-  18 Dec 2008; Steve Dibb <beandog@gentoo.org> +mkvtoolnix-2.4.1.ebuild:
-  Version bump, bug 251420
+# $Header: /var/cvsroot/gentoo-x86/media-video/mkvtoolnix/ChangeLog,v 1.93 2008/10/25 15:49:38 aballier Exp $
 
 *mkvtoolnix-2.4.0 (25 Oct 2008)
 
