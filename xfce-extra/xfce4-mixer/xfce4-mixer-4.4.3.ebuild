@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-mixer/Attic/xfce4-mixer-4.4.3.ebuild,v 1.6 2008/12/08 21:42:37 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-mixer/Attic/xfce4-mixer-4.4.3.ebuild,v 1.10 2008/12/17 17:49:37 angelos Exp $
 
 EAPI=1
 
@@ -16,7 +16,7 @@ xfce44_single_make
 
 DESCRIPTION="Volume control application (ALSA or OSS)"
 HOMEPAGE="http://www.xfce.org/projects/xfce4-mixer"
-KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~mips ppc ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
 
 IUSE="alsa debug nls"
 
@@ -29,16 +29,19 @@ RDEPEND=">=dev-libs/glib-2.6:2
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
-if use alsa; then
-	XFCE_CONFIG+=" --with-sound=alsa"
-fi
+pkg_setup() {
+	if use alsa; then
+		XFCE_CONFIG+=" --with-sound=alsa"
+	fi
 
-XFCE_CONFIG+=" $(use_enable nls)"
+	XFCE_CONFIG+=" $(use_enable nls)"
+}
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	rm panel-plugin/${PN}.desktop
+	epatch "${FILESDIR}"/${P}-i18n-typo.patch
 }
 
 src_install() {
