@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/duplicity
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.29 2008/11/03 02:16:53 vanquirius Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.30 2008/12/13 16:38:19 vanquirius Exp $
+
+*duplicity-0.5.03 (13 Dec 2008)
+
+  13 Dec 2008; Marcelo Goes <vanquirius@gentoo.org>
+  +duplicity-0.5.03.ebuild:
+  0.5.03 version bump for bug 249483. Thanks to Dror Levin <spatz at psybear
+  dot com>.
 
 *duplicity-0.5.02 (03 Nov 2008)
 
