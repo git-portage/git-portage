@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/icecast/Attic/icecast-2.3.2.ebuild,v 1.9 2008/12/19 17:02:49 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/icecast/Attic/icecast-2.3.2.ebuild,v 1.8 2008/11/14 10:22:00 armin76 Exp $
 
 EAPI=1
 
@@ -27,7 +27,7 @@ DEPEND="dev-libs/libxslt
 	ssl? ( dev-libs/openssl )"
 
 pkg_setup() {
-	enewuser icecast -1 -1 -1 nogroup
+	enewuser icecast -1 -1 -1 nogroup || die "Problem adding icecast user"
 }
 
 src_unpack() {
