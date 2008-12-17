@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/google-gadgets/Attic/google-gadgets-0.10.3.ebuild,v 1.1 2008/12/10 15:05:19 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/google-gadgets/Attic/google-gadgets-0.10.3.ebuild,v 1.3 2008/12/17 09:18:59 voyageur Exp $
 
 EAPI=2
 
@@ -19,8 +19,6 @@ IUSE="+dbus debug +gtk +qt4 +gstreamer networkmanager startup-notification"
 # Weird things happen when we start mix-n-matching, so for the time being
 # I've just locked the deps to the versions I had as of Summer 2008. With any
 # luck, they'll be stable when we get to stabling this package.
-
-#BIG DANGLING NOTE: This fails with gcc <4.2.
 
 RDEPEND="x11-libs/libX11
 	x11-libs/libXext
@@ -101,6 +99,7 @@ src_configure() {
 		--with-smjs-libdir=/usr/$(get_libdir)/xulrunner-1.9 \
 		--with-smjs-incdir=/usr/include/xulrunner-1.9/unstable \
 		--with-browser-plugins-dir=/usr/$(get_libdir)/nsbrowser/plugins \
+		--with-oem-brand=Gentoo \
 		$(use_enable debug) \
 		$(use_enable dbus libggadget-dbus) \
 		$(use_enable gstreamer gst-audio-framework) \
@@ -108,6 +107,7 @@ src_configure() {
 		$(use_enable gtk gtk-host) \
 		$(use_enable gtk libggadget-gtk ) \
 		$(use_enable gtk gtkmoz-browser-element) \
+		$(use_enable gtk gtk-flash-element) \
 		$(use_enable gtk gtk-system-framework) \
 		$(use_enable gtk curl_xml_http_request) \
 		$(use_enable qt4 qt-host) \
