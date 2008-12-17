@@ -1,10 +1,81 @@
 # ChangeLog for profile directory
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2156 2008/12/12 20:54:24 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2178 2008/12/17 08:24:55 tove Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  17 Dec 2008; Torsten Veller <tove@gentoo.org> package.mask:
+  Mask dev-perl/SOAP for removal (#247410)
+
+  16 Dec 2008; Doug Goldstein <cardoe@gentoo.org> package.mask:
+  unmask 100.14.19 since several users have reported this being the last
+  version that works with their hardware
+
+  16 Dec 2008; Tiziano Müller <dev-zero@gentoo.org> package.mask:
+  Added new slotted ebuilds for boost and boost-build as well as
+  eselect-boost
+
+  16 Dec 2008; Peter Volkov <pva@gentoo.org> package.mask:
+  Masking net-dialup/ivcall. Fails to build, bug #247946. Somebody needs to
+  port it to new spandsp interface
+
+  15 Dec 2008; Rémi Cardona <remi@gentoo.org> package.mask:
+  remove old intel p.mask entries
+
+  15 Dec 2008; Peter Volkov <pva@gentoo.org> package.mask:
+  Unmasking spandsp as upstream told us to use >=spandsp-0.0.6_pre2. Fix
+  packages if they fail to work with this version of spandsp. For hints how
+  to fix take a look here:
+  http://www.soft-switch.org/installing-spandsp.html
+
+  15 Dec 2008; Rémi Cardona <remi@gentoo.org> package.mask:
+  unleash xorg-server 1.5.3 and evdev 2.1.0
+
+  15 Dec 2008; Ben de Groot <yngwin@gentoo.org> package.mask:
+  Unmasking fltk:2 and dillo-2.0, bug 246445
+
+  15 Dec 2008; Rémi Cardona <remi@gentoo.org> package.mask:
+  mask evdev version to go with xorg-server 1.5.3
+
+  15 Dec 2008; Rémi Cardona <remi@gentoo.org> package.mask:
+  update xorg-server 1.5.3 p.mask, should be there only a day or two
+
+  14 Dec 2008; Paul Varner <fuzzyray@gentoo.org> package.mask:
+  Package mask app-portage/udept due to dead upstream
+
+  14 Dec 2008; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  more package removals cleanup
+
+  14 Dec 2008; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  Cleanup for non-existant packages - package removals
+
+  14 Dec 2008; Bjarke Istrup Pedersen <gurligebis@gentoo.org> use.local.desc:
+  Adding local use flags for psybnc.
+
+  14 Dec 2008; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Masked gucharmap for testing until tree is fixed, see bug #243160.
+
+  14 Dec 2008; Alin Năstac <mrness@gentoo.org> package.mask:
+  P.mask net-proxy/squirm.
+
+  14 Dec 2008; <ssuominen@gentoo.org> package.mask:
+  net-voip/linphone and media-libs/mediastreamer was removed for bug 189774,
+  plaase see bug 246494 for new versions.
+
+  13 Dec 2008; Hans de Graaff <graaff@gentoo.org> package.mask:
+  Add gnome-do-plugins to gnome-do mask
+
+  13 Dec 2008; Alin Năstac <mrness@gentoo.org> package.mask:
+  Remove =net-proxy/privoxy-3.0.8 and net-dialup/{bewan-adsl,eagle-usb} atoms
+  from p.mask (packages were removed from the tree).
+
+  13 Dec 2008; Alexis Ballier <aballier@gentoo.org> package.mask:
+  mask sv 1.4 along with vamp sdk 2.0
+
+  13 Dec 2008; Alexis Ballier <aballier@gentoo.org> package.mask:
+  mask vamp-plugin-sdk 2.0; api changes
 
   12 Dec 2008; Doug Goldstein <cardoe@gentoo.org> package.mask:
   masking soon to be removed nvidia-drivers versions package.mask
@@ -26,10 +97,6 @@
   Masking live x11-wm/fluxbox-9999 ebuild
 
   11 Dec 2008; <ssuominen@gentoo.org> package.mask:
-  Mask dev-php5/ffmpeg-php for removal in 30 days by treecleaners and media
-  because it doesn't build wrt #242050.
-
-  11 Dec 2008; <ssuominen@gentoo.org> package.mask:
   Mask net-voip/linphone for removal in 30 days by treecleaners and media,
   bugs 189774 and 218102.
 
@@ -38,10 +105,6 @@
 
   11 Dec 2008; Alexis Ballier <aballier@gentoo.org> package.mask:
   adjust ocaml 3.11 mask reason
-
-  11 Dec 2008; <ssuominen@gentoo.org> package.mask:
-  Unmask media-libs/mediastreamer because support for FFMPEG it has been
-  deprecated. This means it will be without video support, thanks upstream.
 
   11 Dec 2008; <ssuominen@gentoo.org> package.mask:
   Removed dev-db/rekall and two unused mpeg4ip versions that have been
