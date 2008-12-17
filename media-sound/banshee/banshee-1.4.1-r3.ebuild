@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/banshee/Attic/banshee-1.4.1-r3.ebuild,v 1.1 2008/12/11 00:37:50 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/banshee/Attic/banshee-1.4.1-r3.ebuild,v 1.4 2008/12/14 14:24:15 loki_val Exp $
 
 EAPI=2
 
@@ -50,7 +50,7 @@ RDEPEND=">=dev-lang/mono-2
 	 	>=dev-dotnet/mono-zeroconf-0.7.3
 	)
 	doc? (
-		dev-util/monodoc
+		virtual/monodoc
 	)
 	encode? (
 		>=media-plugins/gst-plugins-lame-${GVER}
@@ -60,7 +60,7 @@ RDEPEND=">=dev-lang/mono-2
 		>=media-plugins/gst-plugins-flac-${GVER}
 	)
 	ipod? (
-		>=dev-dotnet/ipod-sharp-0.8.0
+		>=dev-dotnet/ipod-sharp-0.8.1
 	)
 	mad? (
 		>=media-plugins/gst-plugins-mad-${GVER}
