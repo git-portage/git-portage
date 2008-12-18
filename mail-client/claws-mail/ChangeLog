@@ -1,17 +1,6 @@
 # ChangeLog for mail-client/claws-mail
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail/ChangeLog,v 1.103 2008/12/22 13:35:23 fauli Exp $
-
-  22 Dec 2008; Christian Faulhammer <fauli@gentoo.org>
-  claws-mail-3.6.1.ebuild, claws-mail-3.6.1-r1.ebuild:
-  The check for USE=aspell in app-text/enchant is not needed! Bug 250115 has
-  been caused by misconfiguration on the user's side
-
-  21 Dec 2008; Christian Faulhammer <fauli@gentoo.org> metadata.xml,
-  claws-mail-3.6.1.ebuild, claws-mail-3.6.1-r1.ebuild:
-  reintroduce USE=spell as we can fix the wrong built_with_use check by the
-  --missing true option; this fixes bug 250115 (again) and bug 250573,
-  reported by Michael A. Smith <michael AT smith-li DOT com>
+# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail/ChangeLog,v 1.101 2008/12/11 00:10:41 ssuominen Exp $
 
   10 Dec 2008; <ssuominen@gentoo.org> claws-mail-3.6.1-r1.ebuild:
   Rename USE spell to USE aspell because enchant needs to be built
