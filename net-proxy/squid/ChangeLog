@@ -1,6 +1,23 @@
 # ChangeLog for net-proxy/squid
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/ChangeLog,v 1.213 2008/11/30 19:20:44 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/ChangeLog,v 1.218 2008/12/17 20:32:30 maekke Exp $
+
+  17 Dec 2008; Markus Meier <maekke@gentoo.org> squid-2.7.5-r1.ebuild:
+  amd64/x86 stable, bug #250928
+
+  16 Dec 2008; Brent Baude <ranger@gentoo.org> squid-2.7.5-r1.ebuild:
+  stable ppc64, bug 250928
+
+  16 Dec 2008; Jeroen Roovers <jer@gentoo.org> squid-2.7.5-r1.ebuild:
+  Stable for HPPA (bug #250928).
+
+  15 Dec 2008; Tobias Klausmann <klausman@gentoo.org> squid-2.7.5-r1.ebuild:
+  Stable on alpha, bug #250928
+
+  14 Dec 2008; Alin Năstac <mrness@gentoo.org>
+  +files/squid-3.0.10-adapted-zph.patch, -files/squid-3.0.10-zph.patch,
+  squid-3.0.10-r1.ebuild:
+  Adapt zph patch for fixing gcc-4.3 "suggest parentheses" error (#250007).
 
 *squid-3.0.10-r1 (30 Nov 2008)
 *squid-2.7.5-r1 (30 Nov 2008)
