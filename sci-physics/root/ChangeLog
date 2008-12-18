@@ -1,18 +1,6 @@
 # ChangeLog for sci-physics/root
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/root/ChangeLog,v 1.40 2008/12/19 14:35:32 bicatali Exp $
-
-  19 Dec 2008; Sébastien Fabbro <bicatali@gentoo.org> root-5.22.00.ebuild:
-  Fixed ftgl dependency, closing bug #251634
-
-*root-5.22.00 (19 Dec 2008)
-
-  19 Dec 2008; Sébastien Fabbro <bicatali@gentoo.org> +root-5.22.00.ebuild:
-  Version bump, moved to EAPI=2
-
-  19 Dec 2008; Sébastien Fabbro <bicatali@gentoo.org>
-  root-5.20.00-r3.ebuild:
-  Forgot to apply xrootd-prop-flags patch
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/root/ChangeLog,v 1.37 2008/12/18 18:10:18 bicatali Exp $
 
 *root-5.20.00-r3 (18 Dec 2008)
 
