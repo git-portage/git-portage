@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gpsd/Attic/gpsd-2.36.ebuild,v 1.5 2008/12/21 17:56:11 nerdboy Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gpsd/Attic/gpsd-2.36.ebuild,v 1.4 2008/06/27 10:31:15 ulm Exp $
 
 WANT_AUTOMAKE="latest"
 WANT_AUTOCONF=2.5
@@ -54,9 +54,6 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	eautoreconf
-	sed -i -e \
-	    "s:gpspacket\", extension_source)]:gpspacket\", extension_source, libraries=['m'])]:g" \
-	    setup.py || die "sed failed"
 }
 
 src_compile() {
@@ -94,9 +91,6 @@ src_compile() {
 	fi
 	# Support for the TNT digital compass is currently broken
 	# $(use_enable tntc tnt)
-
-	# still needs an explicit linkage with the math lib (bug #250757)
-	append-ldflags -lm
 
 	emake || die "emake failed"
 }
