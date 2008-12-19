@@ -3,8 +3,6 @@
 
 [ -e /etc/conf.d/udev ] && . /etc/conf.d/udev
 
-. /lib/udev/shell-compat.sh
-
 compat_volume_nodes()
 {
 	# Only do this for baselayout-1*
@@ -26,7 +24,6 @@ start_initd()
 		_start
 	)
 }
-
 # mount tmpfs on /dev
 start_initd udev-mount || exit 1
 
