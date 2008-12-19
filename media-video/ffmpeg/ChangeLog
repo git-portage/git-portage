@@ -1,25 +1,6 @@
 # ChangeLog for media-video/ffmpeg
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg/ChangeLog,v 1.253 2008/12/23 12:13:03 aballier Exp $
-
-  23 Dec 2008; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
-  Sync live ebuild with latest snapshot; merely add speex useflag and remove
-  unused make targets
-
-  22 Dec 2008; Raúl Porcel <armin76@gentoo.org>
-  ffmpeg-0.4.9_p20081014.ebuild, ffmpeg-0.4.9_p20081219.ebuild:
-  arm/ia64 stable wrt #245285
-
-  21 Dec 2008; nixnut <nixnut@gentoo.org> ffmpeg-0.4.9_p20081014.ebuild:
-  Stable on ppc wrt bug 245313
-
-  20 Dec 2008; Ferris McCormick <fmccor@gentoo.org>
-  ffmpeg-0.4.9_p20081014.ebuild:
-  Sparc stable, Security Bug #245313.
-
-  20 Dec 2008; Thomas Anderson <gentoofan23@gentoo.org>
-  ffmpeg-0.4.9_p20081014.ebuild:
-  stable amd64, security bug #245313
+# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg/ChangeLog,v 1.247 2008/12/19 11:10:24 aballier Exp $
 
 *ffmpeg-0.4.9_p20081219 (19 Dec 2008)
 
@@ -50,11 +31,6 @@
   12 Dec 2008; Tobias Klausmann <klausman@gentoo.org>
   ffmpeg-0.4.9_p20081014.ebuild:
   Stable on alpha, bug #245285
-
-*ffmpeg-9999 (07 Dec 2008)
-
-  07 Dec 2008; Luca Barbato <lu_zero@gentoo.org> +ffmpeg-9999.ebuild:
-  live ebuild
 
   10 Nov 2008; Raúl Porcel <armin76@gentoo.org>
   ffmpeg-0.4.9_p20081014.ebuild:
