@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/distcc/distcc-3.0-r4.ebuild,v 1.8 2008/12/14 14:03:29 gentoofan23 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/distcc/distcc-3.0-r4.ebuild,v 1.10 2008/12/19 00:51:49 matsuu Exp $
 
 inherit eutils fdo-mime flag-o-matic multilib toolchain-funcs
 
@@ -10,7 +10,7 @@ SRC_URI="http://distcc.googlecode.com/files/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm hppa ~ia64 ~mips ppc ppc64 ~s390 ~sh sparc ~x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~s390 sh sparc x86 ~x86-fbsd"
 IUSE="avahi gnome gtk hardened ipv6 selinux xinetd"
 
 RESTRICT="test"
@@ -76,7 +76,8 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
+	# In rare cases, parallel make install failed, bug #249695
+	emake -j1 DESTDIR="${D}" install || die
 
 	dobin "${FILESDIR}/${PV}/distcc-config"
 
