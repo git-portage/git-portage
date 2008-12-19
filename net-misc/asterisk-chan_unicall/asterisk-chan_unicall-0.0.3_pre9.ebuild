@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk-chan_unicall/Attic/asterisk-chan_unicall-0.0.3_pre9.ebuild,v 1.1 2006/10/26 18:32:24 gustavoz Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk-chan_unicall/Attic/asterisk-chan_unicall-0.0.3_pre9.ebuild,v 1.2 2008/12/15 12:17:40 pva Exp $
 
 inherit eutils
 
@@ -26,7 +26,7 @@ DEPEND=">=dev-libs/libxml2-2.6.26
 	>=net-misc/zaptel-1.2"
 
 src_install() {
-	make DESTDIR=${D} install || die "Install failed"
+	make DESTDIR="${D}" install || die "Install failed"
 
 	# fix permissions
 	if [[ -n "$(egetent group asterisk)" ]]; then
