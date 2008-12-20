@@ -1,12 +1,6 @@
 # ChangeLog for media-plugins/mythgame
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/mythgame/Attic/ChangeLog,v 1.55 2008/12/23 17:23:11 maekke Exp $
-
-  23 Dec 2008; Markus Meier <maekke@gentoo.org> mythgame-0.21_p17965.ebuild:
-  x86 stable, bug #239341
-
-  21 Dec 2008; nixnut <nixnut@gentoo.org> mythgame-0.21_p17965.ebuild:
-  Stable on ppc wrt bug 239341
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/mythgame/Attic/ChangeLog,v 1.53 2008/12/12 19:41:28 beandog Exp $
 
   12 Dec 2008; Steve Dibb <beandog@gentoo.org> mythgame-0.21_p17965.ebuild:
   amd64 stable, bug 239341
