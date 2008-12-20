@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/usermode-utilities/Attic/usermode-utilities-20070815.ebuild,v 1.5 2008/12/22 15:07:10 dang Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/usermode-utilities/Attic/usermode-utilities-20070815.ebuild,v 1.4 2008/12/18 18:29:22 dang Exp $
 
 inherit eutils
 
@@ -13,9 +13,7 @@ LICENSE="GPL-2"
 KEYWORDS="-* ~amd64 ~x86"
 IUSE=""
 
-RDEPEND="sys-fs/fuse"
-DEPEND="${RDEPEND}
-	virtual/libc"
+DEPEND="virtual/libc"
 
 S="${WORKDIR}"/tools-${PV}
 
@@ -32,3 +30,8 @@ src_compile() {
 	emake CFLAGS="${CFLAGS} -DTUNTAP -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -g -Wall" all || die "Compilation failed"
 }
 
+src_install () {
+	emake DESTDIR="${D}" install || die "Install phase failed"
+
+	dodoc COPYING
+}
