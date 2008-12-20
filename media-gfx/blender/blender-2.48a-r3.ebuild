@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/Attic/blender-2.48a-r3.ebuild,v 1.1 2008/11/03 22:22:24 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/Attic/blender-2.48a-r3.ebuild,v 1.5 2008/12/20 00:43:52 gentoofan23 Exp $
 
 inherit multilib flag-o-matic eutils python
 
@@ -13,7 +13,7 @@ SRC_URI="http://download.blender.org/source/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="|| ( GPL-2 BL )"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="amd64 ~ppc ppc64 ~sparc x86"
 
 RDEPEND=">=dev-libs/openssl-0.9.6
 	ffmpeg? ( >=media-video/ffmpeg-0.4.9_p20080326 )
@@ -23,8 +23,9 @@ RDEPEND=">=dev-libs/openssl-0.9.6
 	nls? ( >=media-libs/freetype-2.0
 			virtual/libintl
 			>=media-libs/ftgl-2.1 )
-	openal? ( media-libs/openal
-			media-libs/freealut )
+	openal? ( x86? ( >=media-libs/openal-1.5.304 )
+		media-libs/openal
+		media-libs/freealut )
 	openexr? ( media-libs/openexr )
 	png? ( media-libs/libpng )
 	quicktime? ( media-libs/libquicktime )
