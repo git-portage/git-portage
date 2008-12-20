@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/rdflib/Attic/rdflib-2.4.0.ebuild,v 1.3 2008/12/23 17:30:39 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/rdflib/Attic/rdflib-2.4.0.ebuild,v 1.2 2008/03/25 21:54:23 mr_bones_ Exp $
 
 NEED_PYTHON="2.3"
 
@@ -10,7 +10,7 @@ DESCRIPTION="RDF library containing a triple store and parser/serializer"
 HOMEPAGE="http://rdflib.net/"
 SRC_URI="http://rdflib.net/${P}.tar.gz"
 LICENSE="BSD-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~x86"
 SLOT="0"
 IUSE="berkdb examples mysql redland sqlite test zodb"
 DEPEND=">=dev-python/setuptools-0.6_rc5
