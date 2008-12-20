@@ -1,79 +1,10 @@
 # ChangeLog for profile directory
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2204 2008/12/25 12:23:27 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2184 2008/12/20 19:45:51 angelos Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
-
-  25 Dec 2008; Mike Frysinger <vapier@gentoo.org> package.mask:
-  Drop rlocate mask since the package is no longer in the tree.
-
-  25 Dec 2008; Mike Frysinger <vapier@gentoo.org> package.mask:
-  Move sandbox-1.3.x into ~arch.
-
-  24 Dec 2008; <ssuominen@gentoo.org> package.mask:
-  Mask monolithic gstreamer. Drop .a and .la files.
-
-  24 Dec 2008; Gilles Dartiguelongue <eva@gentoo.org> updates/4Q-2008:
-  slotmove x11-themes/metacity-themes-1.1 to slot 0, bug #236226.
-
-  23 Dec 2008; Petteri Räty <betelgeuse@gentoo.org> package.mask:
-  Add >=obex-data-server-0.4 to net-wireless/bluez mask. Fixes
-  bug #249315.
-
-  23 Dec 2008; Hans de Graaff <graaff@gentoo.org> package.mask:
-  Provide better description for ruby 1.8.7 mask
-
-  23 Dec 2008; Diego E. Pettenò <flameeyes@gentoo.org> package.mask:
-  Mask udhcp and tinylogin.
-
-  23 Dec 2008; Raúl Porcel <armin76@gentoo.org> profiles.desc:
-  Remove ppc32 profiles that have been removed
-
-  22 Dec 2008; Hans de Graaff <graaff@gentoo.org> package.mask:
-  Revert the ruby-config package.mask. It must stay around long enough for
-  currently installed dev-lang/ruby ebuilds to run their pkg_postrm and the
-  current situation also causes problems for paludis' resolver which uses the
-  actually installed ebuilds rather than the current portage ones.
-
-  22 Dec 2008; Ulrich Mueller <ulm@gentoo.org> package.mask:
-  Unmask app-admin/eselect-{ctags,emacs}-1.8.
-
-  22 Dec 2008; Raúl Porcel <armin76@gentoo.org> profiles.desc:
-  Comment invalid profiles until they get removed
-
-  22 Dec 2008; Christian Faulhammer <fauli@gentoo.org> package.mask:
-  unmask mail-client/claws-mail-3.7.0
-
-  22 Dec 2008; Bernard Cafarelli <voyageur@gentoo.org> package.mask:
-  Mask new gnustep-base release until matching gorm is available
-
-  22 Dec 2008; Christian Faulhammer <fauli@gentoo.org> package.mask:
-  mask mail-client/claws-mail and new plugins to make version bump painless
-  for users
-
-  21 Dec 2008; Ulrich Mueller <ulm@gentoo.org> package.mask:
-  Mask app-admin/eselect-{ctags,emacs}-1.8 for testing, bug 251847.
-
-  21 Dec 2008; Hans de Graaff <graaff@gentoo.org> package.mask:
-  Masked dev-ruby/ruby-config for removal, bug #251833
-
-  21 Dec 2008; <ssuominen@gentoo.org> package.mask:
-  Because Portaudio v18 was removed from tree, we don't have any use for
-  pablio which was now removed from tree. Nmrpipe was also removed, because
-  it can't be fetched, is closed source and was using deprecated XView
-  library which was 32bit only. XView was also removed.
-
-  20 Dec 2008; Rémi Cardona <remi@gentoo.org> package.mask:
-  add net-print/omni and x11-misc/fluxbg to package.mask
-
-  20 Dec 2008; Jeremy Olexa <darkside@gentoo.org> package.mask:
-  Remove entry for net-im/gnome-jabber -> gone.
-
-  20 Dec 2008; Jeremy Olexa <darkside@gentoo.org> package.mask:
-  p.mask many packages.. see package.mask file with new entries for today with
-  my name on them.
 
   20 Dec 2008; Christoph Mende <angelos@gentoo.org> package.mask:
   Masked x11-libs/xfc for removal
