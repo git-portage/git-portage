@@ -1,6 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/positron/positron-1.1.ebuild,v 1.11 2007/03/10 20:28:45 beandog Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/positron/positron-1.1.ebuild,v 1.13 2008/12/20 02:48:29 aballier Exp $
+
+inherit distutils
 
 DESCRIPTION="Synchronization manager for the Neuros Audio Computer (www.neurosaudio.com) portable music player."
 HOMEPAGE="http://www.xiph.org/positron"
@@ -15,7 +17,8 @@ DEPEND=">=dev-lang/python-2.2"
 RDEPEND="${DEPEND}
 	 vorbis? ( dev-python/pyvorbis )"
 
-src_install() {
-	chmod +x setup.py
-	./setup.py install --root "${D}" || die "installation failed"
+src_unpack() {
+	distutils_src_unpack
+	# install docs in /usr/share/doc/${PF}, bug #241290
+	sed -i -e "s:share/doc/positron:share/doc/${PF}:" setup.py
 }
