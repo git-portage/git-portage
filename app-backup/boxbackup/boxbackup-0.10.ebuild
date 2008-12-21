@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.10 2008/06/04 16:56:43 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.11 2008/12/18 22:40:13 loki_val Exp $
 
 inherit eutils autotools
 
@@ -23,6 +23,7 @@ src_unpack() {
 
 	epatch "${FILESDIR}/${P}"-gentoo.patch
 	epatch "${FILESDIR}/${P}"-gcc41-noll.patch
+	epatch "${FILESDIR}/${P}"-gcc43.patch
 
 	cd "${S}"
 	AT_M4DIR="infrastructure/m4" eautoreconf
