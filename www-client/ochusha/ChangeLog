@@ -1,19 +1,6 @@
 # ChangeLog for www-client/ochusha
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/ochusha/Attic/ChangeLog,v 1.33 2008/12/26 16:29:30 matsuu Exp $
-
-*ochusha-0.6-r1 (26 Dec 2008)
-
-  26 Dec 2008; MATSUU Takuto <matsuu@gentoo.org> -ochusha-0.6.ebuild,
-  +ochusha-0.6-r1.ebuild:
-  Fixed IUSE. Added app-misc/ca-certificates to RDEPEND. Fixed html
-  location.
-
-*ochusha-0.6 (24 Dec 2008)
-
-  24 Dec 2008; MATSUU Takuto <matsuu@gentoo.org> -ochusha-0.5.8.2-r1.ebuild,
-  -ochusha-0.5.8.2-r2.ebuild, +ochusha-0.6.ebuild:
-  Version bumped, bug #2#48480. Removed old versions.
+# $Header: /var/cvsroot/gentoo-x86/www-client/ochusha/Attic/ChangeLog,v 1.31 2008/06/21 20:09:53 corsair Exp $
 
   21 Jun 2008; Markus Rothe <corsair@gentoo.org> ochusha-0.5.8.2-r3.ebuild:
   Stable on ppc64; bug #227905
