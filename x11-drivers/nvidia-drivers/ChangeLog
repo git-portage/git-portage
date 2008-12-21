@@ -1,6 +1,45 @@
 # ChangeLog for x11-drivers/nvidia-drivers
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/ChangeLog,v 1.118 2008/12/17 01:00:23 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/ChangeLog,v 1.124 2008/12/19 01:43:05 ricmm Exp $
+
+*nvidia-drivers-173.14.15 (19 Dec 2008)
+
+  19 Dec 2008; <ricmm@gentoo.org> +nvidia-drivers-173.14.15.ebuild:
+  Version bump. Fixes compilation issues with newer kernels.
+
+*nvidia-drivers-96.43.09 (18 Dec 2008)
+
+  18 Dec 2008; Doug Goldstein <cardoe@gentoo.org>
+  +nvidia-drivers-96.43.09.ebuild:
+  add beta version of 96.x.y legacy drivers for kernel 2.6.27 support. Fixes
+  bug #242476
+
+  18 Dec 2008; Doug Goldstein <cardoe@gentoo.org>
+  -files/NVIDIA_kernel-169.12-2286310.diff,
+  -files/NVIDIA_kernel-173.08-2404825.diff,
+  -files/NVIDIA_kernel-173.14.05-2419292.diff:
+  remove files that went along with removed versions
+
+  18 Dec 2008; Doug Goldstein <cardoe@gentoo.org>
+  nvidia-drivers-177.80.ebuild, nvidia-drivers-177.82.ebuild:
+  Fix incorrectly not replacing CFLAGS when requested. bug #241800
+
+  18 Dec 2008; Doug Goldstein <cardoe@gentoo.org>
+  -nvidia-drivers-100.14.09.ebuild, -nvidia-drivers-100.14.11.ebuild,
+  -nvidia-drivers-100.14.23.ebuild, -nvidia-drivers-169.07.ebuild,
+  -nvidia-drivers-169.09.ebuild, -nvidia-drivers-169.09-r1.ebuild,
+  -nvidia-drivers-169.12.ebuild, -nvidia-drivers-173.08.ebuild,
+  -nvidia-drivers-173.14.05.ebuild, -nvidia-drivers-177.13.ebuild,
+  -nvidia-drivers-177.67.ebuild, -nvidia-drivers-177.68.ebuild,
+  -nvidia-drivers-177.70.ebuild:
+  remove outdated releases that no longer have support
+
+  18 Dec 2008; Doug Goldstein <cardoe@gentoo.org>
+  +files/eblits/donvidia.eblit, +files/eblits/mtrr_check.eblit,
+  +files/eblits/paravirt_check.eblit, +files/eblits/src_install-libs.eblit,
+  +files/eblits/want_tls.eblit:
+  Add eblits in the same fashion as sys-libs/glibc that contain commonly
+  used code between all the different versions of nvidia-drivers
 
 *nvidia-drivers-71.86.07 (17 Dec 2008)
 
