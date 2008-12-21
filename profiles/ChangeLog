@@ -1,10 +1,48 @@
 # ChangeLog for profile directory
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2178 2008/12/17 08:24:55 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2189 2008/12/21 09:38:11 graaff Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  21 Dec 2008; Hans de Graaff <graaff@gentoo.org> package.mask:
+  Masked dev-ruby/ruby-config for removal, bug #251833
+
+  21 Dec 2008; <ssuominen@gentoo.org> package.mask:
+  Because Portaudio v18 was removed from tree, we don't have any use for
+  pablio which was now removed from tree. Nmrpipe was also removed, because
+  it can't be fetched, is closed source and was using deprecated XView
+  library which was 32bit only. XView was also removed.
+
+  20 Dec 2008; Rémi Cardona <remi@gentoo.org> package.mask:
+  add net-print/omni and x11-misc/fluxbg to package.mask
+
+  20 Dec 2008; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  Remove entry for net-im/gnome-jabber -> gone.
+
+  20 Dec 2008; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  p.mask many packages.. see package.mask file with new entries for today with
+  my name on them.
+
+  20 Dec 2008; Christoph Mende <angelos@gentoo.org> package.mask:
+  Masked x11-libs/xfc for removal
+
+  20 Dec 2008; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  Masking katoob for removal
+
+  20 Dec 2008; Hans de Graaff <graaff@gentoo.org> package.mask:
+  Mask latest version of dev-ruby/hpricot due to installation problems
+
+  20 Dec 2008; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  Freetype has been pruned, punting pkg.mask
+
+  19 Dec 2008; Matthias Schwarzott <zzam@gentoo.org> package.mask:
+  Unmask sys-fs/udev-135-r2 and sys-apps/openrc-0.4.0
+
+  19 Dec 2008; Raúl Porcel <armin76@gentoo.org>
+  targets/desktop/make.defaults:
+  Add xulrunner USE-flag to the make.default of desktop profile
 
   17 Dec 2008; Torsten Veller <tove@gentoo.org> package.mask:
   Mask dev-perl/SOAP for removal (#247410)
