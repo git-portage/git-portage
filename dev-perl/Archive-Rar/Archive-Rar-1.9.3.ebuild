@@ -1,15 +1,14 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Archive-Rar/Attic/Archive-Rar-1.9.3.ebuild,v 1.5 2008/12/23 08:48:55 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Archive-Rar/Attic/Archive-Rar-1.9.3.ebuild,v 1.4 2008/09/30 08:00:40 tove Exp $
 
-inherit versionator
-MODULE_AUTHOR=SMUELLER
+inherit perl-module versionator
+
 MY_P="${PN}-$(delete_version_separator 2)"
-inherit perl-module
-
 S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="Archive::Rar - Interface with the rar command"
+SRC_URI="mirror://cpan/authors/id/S/SM/SMUELLER/${MY_P}.tar.gz"
 
 LICENSE="Artistic"
 SLOT="0"
