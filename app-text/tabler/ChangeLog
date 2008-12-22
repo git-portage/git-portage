@@ -1,6 +1,15 @@
 # ChangeLog for app-text/tabler
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/tabler/ChangeLog,v 1.1 2008/10/15 17:07:16 hncaldwell Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/tabler/ChangeLog,v 1.4 2008/12/20 19:12:29 maekke Exp $
+
+  20 Dec 2008; Markus Meier <maekke@gentoo.org> tabler-2.ebuild:
+  x86 stable, bug #251562
+
+  20 Dec 2008; nixnut <nixnut@gentoo.org> tabler-2.ebuild:
+  Stable on ppc wrt bug 251562
+
+  19 Dec 2008; Tiago Cunha <tcunha@gentoo.org> tabler-2.ebuild:
+  stable amd64, bug 251562
 
 *tabler-2 (15 Oct 2008)
 
