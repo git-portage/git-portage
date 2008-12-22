@@ -5,7 +5,4 @@
 <maintainer>
   <email>matsuu@gentoo.org</email>
 </maintainer>
-<use>
-  <flag name='authonly'>Allows one to build only authoritative DNS server</flag>
-</use>
 </pkgmetadata>
