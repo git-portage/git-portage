@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/perl-tk/Attic/perl-tk-804.027.ebuild,v 1.26 2008/12/23 18:54:48 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/perl-tk/Attic/perl-tk-804.027.ebuild,v 1.25 2007/07/22 07:49:00 graaff Exp $
 
 inherit perl-module eutils multilib
 
@@ -21,9 +21,6 @@ DEPEND="x11-libs/libX11
 myconf="-I/usr/include/ -l/usr/$(get_libdir)"
 
 mydoc="ToDo VERSIONS"
-
-# No test running here, requires an X server, and fails lots anyway.
-SRC_TEST="skip"
 
 export X11ROOT=/usr
 
