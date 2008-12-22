@@ -1,6 +1,21 @@
 # ChangeLog for media-plugins/alsa-plugins
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/alsa-plugins/ChangeLog,v 1.85 2008/12/16 15:13:55 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/alsa-plugins/ChangeLog,v 1.89 2008/12/21 15:20:27 ssuominen Exp $
+
+  21 Dec 2008; <ssuominen@gentoo.org> alsa-plugins-1.0.15.ebuild,
+  alsa-plugins-1.0.16.ebuild:
+  Remove USE ffmpeg from old versions.
+
+  21 Dec 2008; nixnut <nixnut@gentoo.org> alsa-plugins-1.0.17-r1.ebuild:
+  Stable on ppc wrt bug 245517
+
+  20 Dec 2008; Ferris McCormick <fmccor@gentoo.org>
+  alsa-plugins-1.0.17-r1.ebuild:
+  Sparc stable, Bug #245517.
+
+  20 Dec 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  alsa-plugins-1.0.17-r1.ebuild:
+  stable amd64, bug 245517
 
   16 Dec 2008; Jeroen Roovers <jer@gentoo.org>
   alsa-plugins-1.0.17-r1.ebuild:
