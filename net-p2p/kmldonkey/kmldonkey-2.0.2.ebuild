@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/kmldonkey/Attic/kmldonkey-2.0.2.ebuild,v 1.4 2008/12/28 15:38:06 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/kmldonkey/Attic/kmldonkey-2.0.2.ebuild,v 1.3 2008/12/10 12:27:52 scarabeus Exp $
 
-EAPI="2"
+EAPI="1"
 
 KDE_PV="4.1.3"
 SLOT="4.1"
@@ -24,9 +24,9 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}"/${P}-kde${KDE_PV}
 
-src_configure() {
+src_compile() {
 	mycmakeargs="${mycmakeargs}
 		$(cmake-utils_use_with plasma Plasma)"
 
-	kde4-base_src_configure
+	kde4-base_src_compile
 }
