@@ -1,6 +1,24 @@
 # ChangeLog for media-gfx/blender
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/ChangeLog,v 1.165 2008/12/16 16:42:40 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/ChangeLog,v 1.170 2008/12/21 14:41:35 nixnut Exp $
+
+  21 Dec 2008; nixnut <nixnut@gentoo.org> blender-2.48a-r3.ebuild:
+  Stable on ppc wrt bug 245515
+
+  20 Dec 2008; Ferris McCormick <fmccor@gentoo.org> blender-2.48a-r3.ebuild:
+  Sparc stable, Bug #245515
+
+  20 Dec 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  blender-2.48a-r3.ebuild:
+  stable amd64, bug 251735
+
+  20 Dec 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  blender-2.48a-r3.ebuild:
+  Oops, amd64 shouldn't have stable keywords here
+
+  20 Dec 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  blender-2.48a-r3.ebuild:
+  stable amd64, bug 245515
 
   16 Dec 2008; Brent Baude <ranger@gentoo.org> blender-2.48a-r3.ebuild:
   Marking blender-2.48a-r3 ppc64 for bug 245515
