@@ -1,19 +1,6 @@
 # ChangeLog for media-plugins/gmpc-lastfm
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gmpc-lastfm/Attic/ChangeLog,v 1.19 2008/12/29 23:22:24 tcunha Exp $
-
-  29 Dec 2008; Tiago Cunha <tcunha@gentoo.org> gmpc-lastfm-0.16.1.ebuild:
-  stable sparc, bug 251332
-
-  26 Dec 2008; Christoph Mende <angelos@gentoo.org>
-  +gmpc-lastfm-0.17.0.ebuild:
-  Use sourceforge mirror
-
-*gmpc-lastfm-0.17.0 (26 Dec 2008)
-
-  26 Dec 2008; Christoph Mende <angelos@gentoo.org>
-  +gmpc-lastfm-0.17.0.ebuild:
-  Version bump
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gmpc-lastfm/Attic/ChangeLog,v 1.17 2008/12/20 16:58:05 nixnut Exp $
 
   20 Dec 2008; nixnut <nixnut@gentoo.org> gmpc-lastfm-0.16.1.ebuild:
   Stable on ppc wrt bug 251332
