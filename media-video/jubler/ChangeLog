@@ -1,6 +1,22 @@
 # ChangeLog for media-video/jubler
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/jubler/ChangeLog,v 1.25 2008/12/15 07:31:15 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/jubler/ChangeLog,v 1.29 2008/12/20 18:25:59 maekke Exp $
+
+  20 Dec 2008; Markus Meier <maekke@gentoo.org> jubler-4.0.ebuild:
+  add ~x86, bug #251722
+
+  20 Dec 2008; Serkan Kaba <serkan@gentoo.org> jubler-3.9.6.ebuild:
+  Improve built_with_use checks on mplayer. Fixes bug #251717 reported by
+  Martin Thierer <martin@bangaroo.net>
+
+*jubler-4.0 (20 Dec 2008)
+
+  20 Dec 2008; Serkan Kaba <serkan@gentoo.org> -files/jubler-3.9.0.patch,
+  +files/jubler-4.0.patch, -jubler-3.9.0.ebuild, +jubler-4.0.ebuild:
+  Version bump. Remove old.
+
+  20 Dec 2008; Thomas Anderson <gentoofan23@gentoo.org> jubler-3.9.6.ebuild:
+  stable amd64, bug 245532
 
   15 Dec 2008; <ssuominen@gentoo.org> jubler-3.9.6.ebuild:
   x86 stable wrt #245532
