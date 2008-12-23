@@ -1,25 +1,6 @@
 # ChangeLog for app-portage/eix
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/eix/ChangeLog,v 1.264 2008/12/29 18:32:53 dertobi123 Exp $
-
-  29 Dec 2008; Tobias Scherbaum <dertobi123@gentoo.org> eix-0.15.2.ebuild:
-  ppc stable, bug #252245
-
-  26 Dec 2008; Jeremy Olexa <darkside@gentoo.org> -eix-0.14.2.ebuild,
-  -eix-0.15.1.ebuild, eix-0.15.2.ebuild:
-  New DESCRIPTION, requested by upstream
-
-  26 Dec 2008; Jeroen Roovers <jer@gentoo.org> eix-0.15.2.ebuild:
-  Stable for HPPA (bug #252245).
-
-  25 Dec 2008; Raúl Porcel <armin76@gentoo.org> eix-0.15.2.ebuild:
-  arm/ia64/s390/sh stable wrt #252245
-
-  25 Dec 2008; Tobias Klausmann <klausman@gentoo.org> eix-0.15.2.ebuild:
-  Stable on alpha, bug #252245
-
-  23 Dec 2008; Markus Meier <maekke@gentoo.org> eix-0.15.2.ebuild:
-  amd64/x86 stable, bug #252245
+# $Header: /var/cvsroot/gentoo-x86/app-portage/eix/ChangeLog,v 1.257 2008/12/23 14:09:00 fmccor Exp $
 
   23 Dec 2008; Ferris McCormick <fmccor@gentoo.org> eix-0.15.2.ebuild:
   Sparc stable, Bug #252245.
