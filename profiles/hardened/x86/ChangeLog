@@ -1,12 +1,8 @@
 # ChangeLog for Gentoo/x86 profile directory
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/hardened/x86/Attic/ChangeLog,v 1.20 2008/12/29 20:25:40 gengor Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/hardened/x86/Attic/ChangeLog,v 1.18 2008/12/02 22:23:01 armin76 Exp $
 
-  29 Dec 2008; Gordon Malm <gengor@gentoo.org> package.mask:
-  Masked RSBAC-related ebuilds for eventual removal.
-
-  02 Dec 2008; Raúl Porcel <armin76@gentoo.org> 2.6/package.use.mask,
-  package.use.mask:
+  02 Dec 2008; Raúl Porcel <armin76@gentoo.org> package.use.mask:
   P.use.mask media-libs/realcodecs win32codecs USE-flag because repoman complains
 
   06 Jun 2008; Rémi Cardona <remi@gentoo.org> package.mask:
