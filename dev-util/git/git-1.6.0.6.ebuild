@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/git/Attic/git-1.6.0.6.ebuild,v 1.7 2008/12/29 18:31:26 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/git/Attic/git-1.6.0.6.ebuild,v 1.2 2008/12/23 14:27:45 fmccor Exp $
 
 inherit toolchain-funcs eutils elisp-common perl-module bash-completion
 
@@ -17,7 +17,7 @@ SRC_URI="mirror://kernel/software/scm/git/${MY_P}.tar.bz2
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ~ppc64 ~s390 ~sh sparc ~sparc-fbsd x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE="curl cgi doc emacs gtk iconv mozsha1 perl ppcsha1 tk threads webdav xinetd cvs subversion vim-syntax"
 
 DEPEND="
@@ -110,30 +110,36 @@ src_unpack() {
 	exportmakeopts
 }
 
-git_emake() {
+src_compile() {
 	emake ${MY_MAKEOPTS} \
 		DESTDIR="${D}" \
 		OPTCFLAGS="${CFLAGS}" \
 		OPTLDFLAGS="${LDFLAGS}" \
 		prefix=/usr \
 		htmldir=/usr/share/doc/${PF}/html \
-		"$@"
-}
-
-src_compile() {
-	git_emake || die "emake failed"
+		|| die "make failed"
 
 	if use emacs ; then
 		elisp-compile contrib/emacs/{,vc-}git.el || die "emacs modules failed"
 	fi
 	if use perl && use cgi ; then
-		git_emake \
-			gitweb/gitweb.cgi || die "emake gitweb/gitweb.cgi failed"
+		emake ${MY_MAKEOPTS} \
+		DESTDIR="${D}" \
+		OPTCFLAGS="${CFLAGS}" \
+		OPTLDFLAGS="${LDFLAGS}" \
+		prefix=/usr \
+		htmldir=/usr/share/doc/${PF}/html \
+		gitweb/gitweb.cgi || die "make gitweb/gitweb.cgi failed"
 	fi
 }
 
 src_install() {
-	git_emake \
+	emake ${MY_MAKEOPTS} \
+		DESTDIR="${D}" \
+		OPTCFLAGS="${CFLAGS}" \
+		OPTLDFLAGS="${LDFLAGS}" \
+		prefix=/usr \
+		htmldir=/usr/share/doc/${PF}/html \
 		install || \
 		die "make install failed"
 
@@ -277,8 +283,7 @@ src_test() {
 	cd "${S}"
 	# Now run the tests
 	einfo "Start test run"
-	git_emake \
-		test || die "tests failed"
+	emake ${MY_MAKEOPTS} DESTDIR="${D}" prefix=/usr test || die "tests failed"
 }
 
 showpkgdeps() {
