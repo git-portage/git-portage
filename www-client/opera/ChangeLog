@@ -1,15 +1,6 @@
 # ChangeLog for www-client/opera
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/opera/ChangeLog,v 1.315 2008/12/30 17:37:20 jer Exp $
-
-  30 Dec 2008; Jeroen Roovers <jer@gentoo.org> opera-10.00_pre4116.ebuild:
-  Depend on Qt 4 instead of 3 (bug #252630).
-
-*opera-10.00_pre4116 (24 Dec 2008)
-
-  24 Dec 2008; Jeroen Roovers <jer@gentoo.org> +opera-10.00_pre4116.ebuild:
-  Cleaned up ebuild and version bump
-  <http://my.opera.com/desktopteam/blog/2008/12/19/the-christmas-edition>.
+# $Header: /var/cvsroot/gentoo-x86/www-client/opera/ChangeLog,v 1.313 2008/12/20 17:40:26 jer Exp $
 
   20 Dec 2008; Jeroen Roovers <jer@gentoo.org> -opera-9.62.ebuild:
   Remove old.
