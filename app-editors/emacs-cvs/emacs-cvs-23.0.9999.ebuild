@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-23.0.9999.ebuild,v 1.16 2008/12/26 12:48:30 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-23.0.9999.ebuild,v 1.15 2008/11/29 12:19:25 ulm Exp $
 
 ECVS_AUTH="pserver"
 ECVS_SERVER="cvs.savannah.gnu.org:/sources/emacs"
@@ -20,6 +20,7 @@ SRC_URI=""
 LICENSE="GPL-3 FDL-1.3 BSD as-is X11 W3C"
 SLOT="23"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+
 IUSE="alsa dbus gif gpm gtk gzip-el hesiod jpeg kerberos m17n-lib motif png spell sound source svg tiff toolkit-scroll-bars X Xaw3d xft xpm"
 RESTRICT="strip"
 
