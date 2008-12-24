@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/cdctl/cdctl-0.15.ebuild,v 1.19 2008/12/30 19:30:51 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/cdctl/cdctl-0.15.ebuild,v 1.18 2006/08/08 21:26:20 spock Exp $
 
 inherit eutils
 
@@ -17,19 +17,12 @@ DEPEND="virtual/libc"
 
 src_unpack() {
 	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-Makefile.in.patch
-	epatch "${FILESDIR}"/${P}-cdc_ioctls.patch
-}
-
-src_compile() {
-	econf
-	emake CC="$(tc-getCC)" \
-		CFLAGS="${CFLAGS}" \
-		|| die "emake failed"
+	cd ${S}
+	epatch ${FILESDIR}/${P}-Makefile.in.patch
+	epatch ${FILESDIR}/${P}-cdc_ioctls.patch
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
+	make DESTDIR=${D} install || die
 	dodoc NEWS NUTSANDBOLTS PUBLICKEY README
 }
