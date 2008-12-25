@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/dbus-glib/Attic/dbus-glib-0.78.ebuild,v 1.3 2008/12/30 19:18:01 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/dbus-glib/Attic/dbus-glib-0.78.ebuild,v 1.1 2008/12/23 22:27:08 cardoe Exp $
 
 inherit eutils multilib autotools bash-completion
 
@@ -19,8 +19,7 @@ RDEPEND=">=sys-apps/dbus-1.1.0
 	>=dev-libs/expat-1.95.8"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	doc? ( app-doc/doxygen app-text/xmlto )
-	dev-util/gtk-doc-am"
+	doc? ( app-doc/doxygen app-text/xmlto )"
 
 BASH_COMPLETION_NAME="dbus"
 
@@ -30,10 +29,6 @@ src_unpack() {
 	epatch "${FILESDIR}"/${PN}-introspection.patch
 
 	epatch "${FILESDIR}"/${P}-as-needed.patch
-
-	# submitted upstream to bug #19325
-	epatch "${FILESDIR}"/${P}-fix-building-tests.patch
-
 	eautoreconf
 }
 
@@ -45,7 +40,7 @@ src_compile() {
 		$(use_enable debug checks) \
 		$(use_enable debug asserts) \
 		$(use_enable test tests) \
-		$(use_with test test-socket-dir "${T}"/dbus-test-socket) \
+		$(use_with test test-socket-dir ${T}/dbus-test-socket) \
 		--with-system-pid-file=/var/run/dbus.pid \
 		--with-system-socket=/var/run/dbus/system_bus_socket \
 		--with-session-socket-dir=/tmp \
