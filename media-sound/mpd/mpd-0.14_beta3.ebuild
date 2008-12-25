@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/Attic/mpd-0.14_beta3.ebuild,v 1.2 2008/12/20 17:49:31 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/Attic/mpd-0.14_beta3.ebuild,v 1.5 2008/12/25 10:21:44 angelos Exp $
 
 EAPI=2
 
@@ -74,12 +74,6 @@ src_configure() {
 		myconf+=" --disable-oggflac --disable-libOggFLACtest"
 	fi
 
-	if use zeroconf; then
-		myconf+=" --with-zeroconf=avahi"
-	else
-		myconf+=" --with-zeroconf=no"
-	fi
-
 	append-lfs-flags
 
 	econf \
@@ -103,6 +97,7 @@ src_configure() {
 		$(use_enable sysvipc un) \
 		$(use_enable vorbis oggvorbis) \
 		$(use_enable wavpack) \
+		$(use_with zeroconf zeroconf avahi) \
 		${myconf}
 }
 
@@ -113,7 +108,7 @@ src_install() {
 	keepdir /var/run/mpd
 
 	emake DESTDIR="${D}" install || die "emake install failed"
-#	rm -rf "${D}"/usr/share/doc/mpd/
+	rm -rf "${D}"/usr/share/doc/mpd/
 
 	dodoc AUTHORS NEWS README TODO UPGRADING
 	use doc && dodoc doc/protocol.html
@@ -123,9 +118,10 @@ src_install() {
 
 	newinitd "${FILESDIR}"/mpd.rc mpd
 
-	use unicode && \
+	if use unicode; then
 		dosed 's:^#filesystem_charset.*$:filesystem_charset "UTF-8":' \
 			/etc/mpd.conf || die "dosed failed"
+	fi
 
 	diropts -m0755 -o mpd -g audio
 	dodir /var/lib/mpd/music
@@ -135,8 +131,9 @@ src_install() {
 	dodir /var/log/mpd
 	keepdir /var/log/mpd
 
-	use alsa && \
+	if use alsa; then
 		dosed 's:need :need alsasound :' /etc/init.d/mpd || die "dosed failed"
+	fi
 }
 
 pkg_postinst() {
