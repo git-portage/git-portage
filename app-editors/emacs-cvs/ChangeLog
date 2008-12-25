@@ -1,15 +1,6 @@
 # ChangeLog for app-editors/emacs-cvs
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/ChangeLog,v 1.228 2008/12/30 18:52:14 armin76 Exp $
-
-  30 Dec 2008; Raúl Porcel <armin76@gentoo.org> emacs-cvs-23.0.9999.ebuild:
-  Add ~arm/~s390 wrt #238712
-
-*emacs-cvs-23.0.60_pre20081226 (26 Dec 2008)
-
-  26 Dec 2008; Ulrich Mueller <ulm@gentoo.org>
-  +emacs-cvs-23.0.60_pre20081226.ebuild:
-  Snapshot with precompiled elisp files, to ease testing on embedded archs.
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/ChangeLog,v 1.226 2008/12/17 09:42:19 ulm Exp $
 
   17 Dec 2008; Ulrich Mueller <ulm@gentoo.org>
   files/emacs-cvs-freebsd-sparc-1.patch:
