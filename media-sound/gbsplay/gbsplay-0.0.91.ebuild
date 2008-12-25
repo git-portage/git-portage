@@ -1,10 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/gbsplay/Attic/gbsplay-0.0.91.ebuild,v 1.1 2008/12/20 18:50:09 ssuominen Exp $
-
-inherit toolchain-funcs
+# $Header: /var/cvsroot/gentoo-x86/media-sound/gbsplay/Attic/gbsplay-0.0.91.ebuild,v 1.3 2008/12/22 20:52:10 maekke Exp $
 
 EAPI=1
+
+inherit toolchain-funcs
 
 DESCRIPTION="Nintendo Gameboy sound player for GBS format."
 HOMEPAGE="http://gbsplay.berlios.de"
@@ -12,7 +12,7 @@ SRC_URI="mirror://berlios/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="+alsa nas nls oss"
 
 RDEPEND="alsa? ( media-libs/alsa-lib )
