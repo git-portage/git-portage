@@ -1,8 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/sonypid/sonypid-1.9.ebuild,v 1.10 2008/12/30 20:27:16 angelos Exp $
-
-inherit toolchain-funcs
+# $Header: /var/cvsroot/gentoo-x86/app-misc/sonypid/sonypid-1.9.ebuild,v 1.9 2008/06/18 17:29:25 dberkholz Exp $
 
 DESCRIPTION="tool to use the Sony Vaios jog-dial as a mouse-wheel"
 HOMEPAGE="http://www.popies.net/sonypi/"
@@ -17,10 +15,10 @@ DEPEND="x11-libs/libXtst
 	x11-proto/inputproto"
 
 src_compile() {
-	emake CFLAGS="${CFLAGS}" CC="$(tc-getCC)" || die "emake failed"
+	emake CFLAGS="${CFLAGS}" || die
 }
 
 src_install() {
-	dobin sonypid || die "dobin failed"
+	dobin sonypid || die
 	dodoc AUTHORS CHANGES
 }
