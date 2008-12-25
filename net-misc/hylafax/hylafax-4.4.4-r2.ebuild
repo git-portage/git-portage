@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/hylafax/Attic/hylafax-4.4.4-r2.ebuild,v 1.2 2008/12/20 14:42:07 nixnut Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/hylafax/Attic/hylafax-4.4.4-r2.ebuild,v 1.4 2008/12/24 07:15:47 nerdboy Exp $
 
 inherit eutils multilib pam toolchain-funcs
 
@@ -24,7 +24,8 @@ DEPEND=">=sys-libs/zlib-1.1.4
 	mgetty? ( net-dialup/mgetty )"
 
 RDEPEND="${DEPEND}
-	net-mail/metamail"
+	net-mail/metamail
+	!net-dialup/sendpage"
 
 export CONFIG_PROTECT="${CONFIG_PROTECT} /var/spool/fax/etc /usr/lib/fax"
 
@@ -46,6 +47,17 @@ pkg_setup() {
 		die "Tiff not merged with jbig USE flag"
 	    fi
 	fi
+}
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	# force it not to strip binaries
+	for dir in etc util faxalter faxcover faxd faxmail faxrm faxstat \
+	    hfaxd sendfax sendpage ; do
+		sed -i -e "s:-idb:-idb \"nostrip\" -idb:g" \
+		    "${dir}"/Makefile.in || die "sed failed"
+	done
 }
 
 src_compile() {
@@ -147,7 +159,7 @@ src_install() {
 
 	use pam && pamd_mimic_system hylafax auth account session
 
-	dodoc CHANGES CONTRIBUTORS COPYRIGHT README TODO
+	dodoc CONTRIBUTORS README TODO
 }
 
 pkg_postinst() {
