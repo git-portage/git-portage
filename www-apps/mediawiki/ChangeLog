@@ -1,14 +1,6 @@
 # ChangeLog for www-apps/mediawiki
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/mediawiki/ChangeLog,v 1.115 2008/12/28 14:45:25 dertobi123 Exp $
-
-  28 Dec 2008; Tobias Scherbaum <dertobi123@gentoo.org>
-  mediawiki-1.13.3.ebuild:
-  ppc stable, bug #251044
-
-  28 Dec 2008; Friedrich Oslage <bluebird@gentoo.org>
-  mediawiki-1.13.3.ebuild:
-  Stable on sparc, security bug #251044
+# $Header: /var/cvsroot/gentoo-x86/www-apps/mediawiki/ChangeLog,v 1.113 2008/12/26 08:38:07 pva Exp $
 
 *mediawiki-1.13.3 (26 Dec 2008)
 *mediawiki-1.12.3 (26 Dec 2008)
