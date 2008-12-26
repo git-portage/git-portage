@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.6_p114.ebuild,v 1.10 2008/12/21 09:07:48 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.6_p114.ebuild,v 1.13 2008/12/23 20:20:12 graaff Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
