@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/Attic/mpd-0.14.ebuild,v 1.3 2008/12/30 21:14:47 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/Attic/mpd-0.14.ebuild,v 1.1 2008/12/26 19:20:18 angelos Exp $
 
 EAPI=2
 
@@ -53,7 +53,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	cp doc/mpdconf.example doc/mpdconf.dist
 	epatch "${FILESDIR}"/mpdconf1.patch
 }
 
@@ -110,8 +109,7 @@ src_install() {
 	rm -rf "${D}"/usr/share/doc/mpd/
 
 	dodoc AUTHORS NEWS README TODO UPGRADING
-	dodoc doc/mpdconf.dist
-	use doc && dohtml doc/protocol.html
+	use doc && dodoc doc/protocol.html
 
 	insinto /etc
 	newins doc/mpdconf.example mpd.conf
@@ -124,8 +122,6 @@ src_install() {
 	fi
 
 	diropts -m0755 -o mpd -g audio
-	dodir /var/lib/mpd
-	keepdir /var/lib/mpd
 	dodir /var/lib/mpd/music
 	keepdir /var/lib/mpd/music
 	dodir /var/lib/mpd/playlists
