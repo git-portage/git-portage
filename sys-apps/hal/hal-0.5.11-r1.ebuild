@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/hal/Attic/hal-0.5.11-r1.ebuild,v 1.11 2008/12/19 17:37:01 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/hal/Attic/hal-0.5.11-r1.ebuild,v 1.14 2008/12/24 15:39:11 cardoe Exp $
 
 inherit eutils linux-info autotools flag-o-matic
 
@@ -32,6 +32,7 @@ RDEPEND=">=dev-libs/dbus-glib-0.61
 		 ia64? ( >=sys-apps/dmidecode-2.7 )
 		 kernel_linux?	(
 							>=sys-fs/udev-111
+							!>=sys-fs/udev-125
 							>=sys-apps/util-linux-2.13
 							>=sys-kernel/linux-headers-2.6.19
 							crypt?	( >=sys-fs/cryptsetup-1.0.5 )
@@ -206,33 +207,39 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog NEWS README
+	emake DESTDIR="${D}" install || die "emake failed"
+	dodoc AUTHORS ChangeLog NEWS README || die "docs failed"
 
 	# hal umount for unclean unmounts
 	exeinto /lib/udev/
-	newexe "${FILESDIR}/hal-unmount.dev" hal_unmount
+	newexe "${FILESDIR}/hal-unmount.dev" hal_unmount || die "udev helper failed"
 
 	# initscript
-	newinitd "${FILESDIR}/0.5.10-hald.rc" hald
+	newinitd "${FILESDIR}/0.5.10-hald.rc" hald || die "init script failed"
 
 	# configuration
-	cp "${FILESDIR}/0.5.10-hald.conf" "${WORKDIR}/"
+	cp "${FILESDIR}/0.5.10-hald.conf" "${WORKDIR}/" || \
+		die "failed to copy hald.conf"
 
 	if use debug; then
 		sed -e 's:HALD_VERBOSE="no":HALD_VERBOSE="yes":' \
-			-i "${WORKDIR}/0.5.10-hald.conf"
+			-i "${WORKDIR}/0.5.10-hald.conf" || die "failed to change verbose"
 	fi
-	newconfd "${WORKDIR}/0.5.10-hald.conf" hald
+	newconfd "${WORKDIR}/0.5.10-hald.conf" hald || \
+		die "failed to install hald.conf"
 
 	if use X ; then
 		# New Configuration Snippets
-		dodoc "${WORKDIR}/${P}-extras/"*.fdi
-		dobin "${WORKDIR}/${P}-extras/migrate-xorg-to-fdi.py"
+		dodoc "${WORKDIR}/${P}-config-examples/"*.fdi || \
+			die "dodoc X examples failed"
+		dobin "${WORKDIR}/${P}-config-examples/migrate-xorg-to-fdi.py" || \
+			die "dodoc X migration script failed"
 
 		# Automagic conversion!
-		elog "Migrating xorg.conf Core Keyboard configuration to HAL FDI file..."
-		"${WORKDIR}/${P}-extras/migrate-xorg-to-fdi.py" 2> /dev/null > "${D}/etc/hal/fdi/policy/10-x11-input.fdi"
+		elog "Migrating xorg.conf Core Keyboard configuration to HAL FDI file"
+		"${WORKDIR}/${P}-config-examples/migrate-xorg-to-fdi.py" 2> /dev/null \
+			> "${D}/etc/hal/fdi/policy/10-x11-input.fdi" || \
+			ewarn "Failed to migrate your keyboard configuration."
 	fi
 
 	# We now create and keep /media here as both gnome-mount and pmount
