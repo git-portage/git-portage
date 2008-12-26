@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/xulrunner/Attic/xulrunner-1.9.0.5.ebuild,v 1.12 2008/12/31 03:40:00 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/xulrunner/Attic/xulrunner-1.9.0.5.ebuild,v 1.8 2008/12/24 17:32:44 armin76 Exp $
 
 WANT_AUTOCONF="2.1"
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2
 	mirror://gentoo/${PATCH}.tar.bz2
 	http://dev.gentoo.org/~armin76/dist/${PATCH}.tar.bz2"
 
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 -sparc x86"
+KEYWORDS="alpha amd64 arm ~hppa ia64 ~ppc ~ppc64 -sparc x86"
 SLOT="1.9"
 LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 )"
 IUSE=""
@@ -86,8 +86,8 @@ src_compile() {
 #		MEXTENSIONS="${MEXTENSIONS},python/xpcom"
 #	fi
 
-	# It doesn't compile on alpha without this LDFLAGS
-	use alpha && append-ldflags "-Wl,--no-relax"
+	# It doesn't compile on alpha without this LDFLAGS 
+	use alpha && append-ldflags "-Wl,--no-relax" 
 
 	mozconfig_annotate '' --enable-extensions="${MEXTENSIONS}"
 	mozconfig_annotate '' --disable-mailnews
@@ -121,12 +121,6 @@ src_compile() {
 
 	# Finalize and report settings
 	mozconfig_final
-
-	if use amd64 ; then
-		if [[ $(gcc-major-version) -lt 4 ]]; then
-			filter-flags -fstack-protector -fstack-protector-all
-		fi
-	fi
 
 	####################################
 	#
@@ -167,3 +161,4 @@ src_install() {
 	    rm -f "${D}"${MOZILLA_FIVE_HOME}/javaxpcom.jar
 	fi
 }
+
