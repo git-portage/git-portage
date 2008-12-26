@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/ca-certificates/Attic/ca-certificates-20080809.ebuild,v 1.10 2008/12/28 17:21:27 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/ca-certificates/Attic/ca-certificates-20080809.ebuild,v 1.5 2008/12/26 11:28:09 armin76 Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://debian/pool/main/c/${PN}/${PN}_${PV}_all.deb"
 
 LICENSE="MPL-1.1"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~m68k ~mips ppc ppc64 s390 sh sparc ~sparc-fbsd x86 ~x86-fbsd"
+KEYWORDS="alpha ~amd64 arm ~hppa ia64 ~m68k ~mips ~ppc ~ppc64 s390 sh sparc ~sparc-fbsd x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND="|| ( >=sys-apps/coreutils-6.10-r1 sys-apps/mktemp sys-freebsd/freebsd-ubin )"
@@ -53,12 +53,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	if [[ ${ROOT} == "/" ]] ; then
-		# However it's too overzealous when the user has custom certs in place.
-		# --fresh is to clean up dangling symlinks
-		update-ca-certificates
-	fi
-
 	local badcerts=0
 	for c in $(find -L "${ROOT}"etc/ssl/certs/ -type l) ; do
 		ewarn "Broken symlink for a certificate at $c"
@@ -70,4 +64,9 @@ pkg_postinst() {
 		ewarn "To batch-remove them, run:"
 		ewarn "find -L ${ROOT}etc/ssl/certs/ -type l -exec rm {} +"
 	fi
+
+	[[ ${ROOT} != "/" ]] && return 0
+	# However it's too overzealous when the user has custom certs in place.
+	# --fresh is to clean up dangling symlinks
+	update-ca-certificates
 }
