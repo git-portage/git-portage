@@ -1,6 +1,15 @@
 # ChangeLog for media-sound/mpd
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/ChangeLog,v 1.141 2008/12/20 17:49:31 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/ChangeLog,v 1.144 2008/12/25 10:21:44 angelos Exp $
+
+  25 Dec 2008; Christoph Mende <angelos@gentoo.org> mpd-0.14_beta3.ebuild:
+  Fixed alsa/unicode sed in src_install, bug 252342
+
+  22 Dec 2008; Christoph Mende <angelos@gentoo.org> mpd-0.14_beta3.ebuild:
+  Uncomment rm line, was never intended to be commented out
+
+  22 Dec 2008; Christoph Mende <angelos@gentoo.org> mpd-0.14_beta3.ebuild:
+  Use use_with instead of myconf for zeroconf
 
   20 Dec 2008; Christoph Mende <angelos@gentoo.org> mpd-0.14_beta3.ebuild:
   Enable USE=sysvipc by default
