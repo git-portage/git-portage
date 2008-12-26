@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-ftp/vsftpd/Attic/vsftpd-2.0.7.ebuild,v 1.1 2008/07/31 09:58:14 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-ftp/vsftpd/Attic/vsftpd-2.0.7-r1.ebuild,v 1.1 2008/12/26 16:50:16 armin76 Exp $
 
 inherit eutils toolchain-funcs
 
