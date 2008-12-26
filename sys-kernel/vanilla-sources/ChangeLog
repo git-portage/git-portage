@@ -1,6 +1,32 @@
 # ChangeLog for sys-kernel/vanilla-sources
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/ChangeLog,v 1.572 2008/12/19 10:41:08 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/ChangeLog,v 1.577 2008/12/25 15:50:47 maekke Exp $
+
+  25 Dec 2008; Markus Meier <maekke@gentoo.org>
+  vanilla-sources-2.6.27.10.ebuild:
+  x86 stable, bug #251670
+
+  25 Dec 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  vanilla-sources-2.6.27.10.ebuild:
+  stable amd64, bug 251670
+
+*vanilla-sources-2.6.28 (25 Dec 2008)
+
+  25 Dec 2008; Raúl Porcel <armin76@gentoo.org>
+  -vanilla-sources-2.6.28_rc1.ebuild, -vanilla-sources-2.6.28_rc2.ebuild,
+  -vanilla-sources-2.6.28_rc3.ebuild, -vanilla-sources-2.6.28_rc4.ebuild,
+  -vanilla-sources-2.6.28_rc5.ebuild, -vanilla-sources-2.6.28_rc6.ebuild,
+  -vanilla-sources-2.6.28_rc7.ebuild, -vanilla-sources-2.6.28_rc8.ebuild,
+  -vanilla-sources-2.6.28_rc9.ebuild, +vanilla-sources-2.6.28.ebuild:
+  Version bump
+
+  22 Dec 2008; Raúl Porcel <armin76@gentoo.org>
+  +vanilla-sources-2.6.26.7.ebuild, +vanilla-sources-2.6.26.8.ebuild:
+  Re-add some version i removed by mistake
+
+  22 Dec 2008; Raúl Porcel <armin76@gentoo.org>
+  vanilla-sources-2.6.25.20.ebuild:
+  arm/ia64/sparc/x86 stable
 
 *vanilla-sources-2.6.28_rc9 (19 Dec 2008)
 *vanilla-sources-2.6.27.10 (19 Dec 2008)
