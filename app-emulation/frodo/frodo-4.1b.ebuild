@@ -1,9 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/frodo/Attic/frodo-4.1b.ebuild,v 1.5 2008/12/30 19:10:50 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/frodo/Attic/frodo-4.1b.ebuild,v 1.4 2008/06/18 01:46:34 darkside Exp $
 
 WANT_AUTOCONF="2.5"
-inherit eutils flag-o-matic autotools toolchain-funcs
+WANT_AUTOMAKE="latest"
+inherit eutils flag-o-matic autotools
 
 DESCRIPTION="An excellent Commodore 64 Emulator"
 HOMEPAGE="http://frodo.cebix.net/"
@@ -32,10 +33,10 @@ src_unpack() {
 }
 
 src_compile() {
-	cd Src
+	cd "${S}"/Src
 	append-flags "-DX_USE_SHM"
-	econf
-	emake CC="$(tc-getCC)" || die "emake failed"
+	econf || die
+	emake || die "emake failed"
 }
 
 src_install() {
