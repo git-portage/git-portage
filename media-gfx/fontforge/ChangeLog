@@ -1,6 +1,18 @@
 # ChangeLog for media-gfx/fontforge
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/fontforge/ChangeLog,v 1.94 2008/12/07 11:30:04 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/fontforge/ChangeLog,v 1.96 2008/12/25 17:44:10 vapier Exp $
+
+*fontforge-20081224 (25 Dec 2008)
+
+  25 Dec 2008; Mike Frysinger <vapier@gentoo.org>
+  +fontforge-20081224.ebuild:
+  Version bump.
+
+*fontforge-20081215 (21 Dec 2008)
+
+  21 Dec 2008; Mike Frysinger <vapier@gentoo.org>
+  +fontforge-20081215.ebuild:
+  Version bump.
 
   07 Dec 2008; Mike Frysinger <vapier@gentoo.org> fontforge-20081117.ebuild:
   Add arm/s390/sh love #224541.
