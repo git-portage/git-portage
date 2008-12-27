@@ -2,5 +2,4 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <herd>ruby</herd>
-<longdescription>Nokogiri (驪ｸ) is an HTML, XML, SAX, and Reader parser.</longdescription>
 </pkgmetadata>
