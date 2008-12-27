@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/foo2zjs/Attic/foo2zjs-20081129.ebuild,v 1.2 2008/12/31 03:40:50 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/foo2zjs/Attic/foo2zjs-20081129.ebuild,v 1.1 2008/12/01 15:41:09 scarabeus Exp $
 
 inherit eutils
 
@@ -57,6 +57,7 @@ http://foo2zjs.rkkda.com/icm/km2430.tar.gz"
 "http://foo2zjs.rkkda.com/firmware/sihpP1006.tar.gz"
 "http://foo2zjs.rkkda.com/firmware/sihpP1005.tar.gz"
 )
+
 
 SRC_URI="http://dev.gentooexperimental.org/~scarabeus/${P}.tar.gz"
 IUSE="cups foomaticdb usb"
