@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/compiz/Attic/compiz-0.7.8.ebuild,v 1.5 2008/12/31 16:44:58 jmbsvicetto Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/compiz/Attic/compiz-0.7.8.ebuild,v 1.4 2008/12/02 16:46:31 jmbsvicetto Exp $
 
 EAPI="2"
 
@@ -108,9 +108,6 @@ src_install() {
 
 	# Add the full-path to lspci
 	sed -i "s#lspci#/usr/sbin/lspci#" "${D}/usr/bin/compiz-manager"
-
-	# Fix the hardcoded lib paths
-	sed -i "s#/lib/#/$(get_libdir)/#g" "${D}/usr/bin/compiz-manager"
 
 	# Create gentoo's config file
 	dodir /etc/xdg/compiz
