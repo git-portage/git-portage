@@ -1,6 +1,21 @@
 # ChangeLog for sys-fs/xfsprogs
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/xfsprogs/ChangeLog,v 1.104 2008/11/16 14:44:45 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/xfsprogs/ChangeLog,v 1.108 2008/12/25 14:35:51 klausman Exp $
+
+  25 Dec 2008; Tobias Klausmann <klausman@gentoo.org>
+  xfsprogs-2.10.1.ebuild:
+  Stable on alpha, bug #252148
+
+  22 Dec 2008; Markus Meier <maekke@gentoo.org> xfsprogs-2.10.1.ebuild:
+  amd64/x86 stable, bug #252148
+
+  22 Dec 2008; Ferris McCormick <fmccor@gentoo.org> xfsprogs-2.10.1.ebuild:
+  Sparc stable, Bug #252148.
+
+*xfsprogs-2.10.2 (22 Dec 2008)
+
+  22 Dec 2008; Mike Frysinger <vapier@gentoo.org> +xfsprogs-2.10.2.ebuild:
+  Version bump #251651 by Lars (Polynomial-C).
 
   16 Nov 2008; Diego E. Pettenò <flameeyes@gentoo.org>
   +files/xfsprogs-2.10.1-parallelmake.patch, xfsprogs-2.10.1.ebuild:
