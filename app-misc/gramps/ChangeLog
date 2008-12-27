@@ -1,6 +1,21 @@
 # ChangeLog for app-misc/gramps
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/gramps/ChangeLog,v 1.83 2008/12/13 22:47:13 bluebird Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/gramps/ChangeLog,v 1.86 2008/12/22 19:23:17 fauli Exp $
+
+  22 Dec 2008; Christian Faulhammer <fauli@gentoo.org> gramps-3.0.4.ebuild:
+  remove USE=gnome as it will work in the upcoming 3.1 series but not in
+  this here
+
+*gramps-3.0.4 (22 Dec 2008)
+
+  22 Dec 2008; Christian Faulhammer <fauli@gentoo.org> +gramps-3.0.4.ebuild:
+  version bump: Bugfix and translation update release
+
+  22 Dec 2008; Christian Faulhammer <fauli@gentoo.org>
+  +files/gramps-3.0.3_fix-installation-race-condition.patch,
+  gramps-3.0.3.ebuild:
+  fix a race condition for parallel install. Patch provided by flameeyes in
+  bug 249165
 
   13 Dec 2008; Friedrich Oslage <bluebird@gentoo.org> gramps-3.0.3.ebuild:
   Stable on sparc, bug #249165
