@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/tightvnc/Attic/tightvnc-1.3.9-r2.ebuild,v 1.7 2009/01/01 14:53:01 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/tightvnc/Attic/tightvnc-1.3.9-r2.ebuild,v 1.5 2008/12/25 12:38:03 maekke Exp $
 
 inherit eutils toolchain-funcs java-pkg-opt-2
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/vnc-tight/${P}_unixsrc.tar.bz2
 		java? ( mirror://sourceforge/vnc-tight/${P}_javasrc.tar.gz )"
 HOMEPAGE="http://www.tightvnc.com/"
 
-KEYWORDS="~alpha amd64 arm ~hppa ~mips ppc ~sh sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 arm ~hppa ~mips ~ppc sparc x86 ~x86-fbsd"
 LICENSE="GPL-2"
 SLOT="0"
 
@@ -69,7 +69,6 @@ src_unpack() {
 	epatch "${FILESDIR}"/server-CVE-2007-1351-1352.patch
 	epatch "${FILESDIR}"/${PV}-fbsd.patch
 	epatch "${FILESDIR}"/${PV}-arm.patch
-	epatch "${FILESDIR}"/${PV}-sh.patch
 
 	if use java; then
 		cd "${WORKDIR}"
