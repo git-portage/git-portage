@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/secure-delete/Attic/secure-delete-3.1.ebuild,v 1.9 2008/12/30 20:20:14 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/secure-delete/Attic/secure-delete-3.1.ebuild,v 1.8 2008/03/28 15:01:53 nixnut Exp $
 
-inherit eutils toolchain-funcs
+inherit eutils
 
 MY_P=${PN//-/_}-${PV}
 S=${WORKDIR}/${MY_P}
@@ -15,7 +15,9 @@ SLOT="0"
 KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 
-RDEPEND="!app-misc/srm"
+RDEPEND="virtual/libc"
+DEPEND="${RDEPEND}
+	!app-misc/srm"
 
 src_unpack() {
 	unpack ${A}
@@ -26,24 +28,21 @@ src_unpack() {
 		-e 's|mktemp|mkstemp|g' \
 		sfill.c
 
-	sed -i -e "/strip/d" Makefile
-
 	# the kernel module will not compile without smp support and there is no
 	# good way to ensure that a user has it
 	epatch "${FILESDIR}"/${PN}-3.1-do-not-use-the-kernel-module.patch
 }
 
 src_compile() {
-	emake -j1 OPT="${CFLAGS} -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64" \
-		CC="$(tc-getCC)" || die "emake failed"
+	make OPT="${CFLAGS} -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64" || die
 }
 
 src_install() {
-	emake \
+	make \
 		INSTALL_DIR="${D}"/usr/bin \
 		MAN_DIR="${D}"/usr/share/man \
 		DOC_DIR="${D}"/usr/share/doc/${PF} \
-		install || die "emake install failed"
+		install || die "compile problem"
 
 	dodoc secure_delete.doc usenix6-gutmann.doc
 }
