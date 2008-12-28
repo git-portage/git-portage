@@ -1,7 +1,3 @@
-# Raúl Porcel <armin76@gentoo.org>
-# Doesn't compile/work
-openexr
-
 # Mart Raudsepp <leio@gentoo.org>
 # net-misc/networkmanager not keyworded
 networkmanager
