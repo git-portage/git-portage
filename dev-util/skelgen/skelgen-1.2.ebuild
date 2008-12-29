@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/skelgen/skelgen-1.2.ebuild,v 1.5 2008/12/31 21:01:17 mpagano Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/skelgen/skelgen-1.2.ebuild,v 1.4 2005/12/13 17:23:37 taviso Exp $
 
 inherit eutils flag-o-matic toolchain-funcs
 
@@ -15,12 +15,6 @@ DEPEND="app-arch/unzip"
 RDEPEND=""
 S=${WORKDIR}/source
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-gcc43.patch
-}
-
 src_compile() {
 	# Makefile uses $STRIPPER to strip executable, so use true
 	# instead and let portage handle that.
@@ -31,7 +25,7 @@ src_compile() {
 }
 
 src_install() {
-	dobin skelgen || die "dobin failed"
+	dobin skelgen
 	dodoc readme.txt
 	dodoc macros/{common.macro,personal.macro,work.macro}
 	dodoc templates/{default.{cpp,h},fluid.{cpp,h},gpl.{c,h},skelgen.{cpp,h}}
