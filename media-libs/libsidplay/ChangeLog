@@ -1,6 +1,14 @@
 # ChangeLog for media-libs/libsidplay
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libsidplay/ChangeLog,v 1.40 2008/12/20 17:20:23 nixnut Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libsidplay/ChangeLog,v 1.42 2008/12/26 18:58:26 armin76 Exp $
+
+  26 Dec 2008; Raúl Porcel <armin76@gentoo.org> libsidplay-1.36.59.ebuild,
+  libsidplay-2.1.1.ebuild:
+  ia64/sparc stable wrt #251159
+
+  25 Dec 2008; Tobias Klausmann <klausman@gentoo.org>
+  libsidplay-1.36.59.ebuild:
+  Stable on alpha, bug #251159
 
   20 Dec 2008; nixnut <nixnut@gentoo.org> libsidplay-1.36.59.ebuild:
   Stable on ppc wrt bug 251159
