@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-prof/Attic/ruby-prof-0.7.2.ebuild,v 1.3 2009/01/03 04:42:13 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-prof/Attic/ruby-prof-0.7.2.ebuild,v 1.1 2008/12/09 14:01:37 flameeyes Exp $
 
 inherit ruby
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://rubyforge/${PN}/${P}.tgz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="doc test"
+IUSE="doc"
 
 RDEPEND="virtual/ruby"
 DEPEND="${RDEPEND}
@@ -64,6 +64,7 @@ src_install() {
 	if use doc; then
 		dohtml -r doc/* || die "dohtml failed"
 	fi
+
 
 	for dir in examples rails rails/example rails/environment; do
 		docinto "$dir"
