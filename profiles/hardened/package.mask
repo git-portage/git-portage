@@ -1,6 +1,6 @@
 # Copyright 2007 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/hardened/Attic/package.mask,v 1.47 2008/12/31 21:42:06 gengor Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/hardened/Attic/package.mask,v 1.43 2008/12/29 06:12:19 solar Exp $
 
 # supported only by gcc-4, unmask when it's stable wrt #217927
 media-libs/libopenraw
@@ -10,23 +10,14 @@ media-gfx/gnome-raw-thumbnailer
 # >=acml-3.6 depends on gcc-4*
 >=sci-libs/acml-3.6
 
+# Fails on hardened, bug 187120
+=dev-lang/php-5.2.3-r3
+
 # The following packages need =gcc-4*
 =net-im/skype-1.4.0*
 
-# Hardened versions of gcc-4.0 through gcc-4.2* are not available
-=sys-devel/gcc-4.0*
-=sys-devel/gcc-4.1*
-=sys-devel/gcc-4.2*
-
-# Hardened versions of gcc-4.3.{0,1} are not available
-=sys-devel/gcc-4.3.0*
-=sys-devel/gcc-4.3.1*
-
-# Mask non-hardened gcc-4.3.2 (>=gcc-4.3.2-r2 are ok)
-=sys-devel/gcc-4.3.2
-
-# No hardened >=sys-devel/gcc-4.4 available
->=sys-devel/gcc-4.4
+# gcc-4* still isn't ready.
+#=sys-devel/gcc-4*
 
 # Mask off glibc-2.4 until the approach for SSP compatibilty is
 # resolved in a way that doesn't break running systems, and we
