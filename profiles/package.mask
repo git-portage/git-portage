@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9356 2009/01/02 23:36:40 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9336 2008/12/29 12:14:33 tove Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -31,26 +31,6 @@
 
 #--- END OF EXAMPLES ---
 
-# Diego E. Pettenò <flameeyes@gentoo.org> (03 Jan 2009)
-# These packages are not supposed to be merged directly, instead
-# please use sys-devel/crossdev to install them.
-dev-libs/cygwin
-dev-util/mingw-runtime
-dev-util/w32api
-
-# Paul Varner <fuzzyray@gentoo.org> (31 Dec 2008)
-# Masked for testing of echangelog subversion/git support. Bug 176337
-=app-portage/gentoolkit-dev-0.2.6.9
-
-# Paul Varner <fuzzyray@gentoo.org> (31 Dec 2008)
-# Masked due to being broken with portage 2.1 and 2.2.
-# Users can use either the unstable versions or switch to app-portage/eix
-=app-portage/esearch-0.7.1
-
-# Ben de Groot <yngwin@gentoo.org> (31 Dec 2008)
-# Masked due to security issues, bug 251017, pending removal
-~media-video/mplayer-1.0_rc2_p27725
-
 # Torsten Veller <tove@gentoo.org> (29 Dec 2008)
 # Unmaintained net-mail packages
 # Masked for removal in 30 days
@@ -60,6 +40,7 @@ mail-client/xfmail
 mail-client/elm
 # 251383 - 29 Dec 2008
 net-mail/ezmlm
+net-mail/ezmlm-idx
 net-mail/ezmlm-idx-mysql
 net-mail/ezmlm-idx-pgsql
 
@@ -123,7 +104,6 @@ net-misc/ossh
 # Removed in 60 days. Does not compile with gcc-4.3 and requires kernel patches
 # from a website that doesn't exist => unmaintained. bug 250679
 app-i18n/unicon
-app-i18n/chinput
 
 # Jeremy Olexa <darkside@gentoo.org> (20 Dec 2008)
 # Removed in 60 days. Does not work anymore, dead upstream. Upstream website
@@ -136,7 +116,7 @@ media-sound/waif
 media-video/tuxzap-programs
 
 # Jeremy Olexa <darkside@gentoo.org> (20 Dec 2008)
-# Removed in 60 days. Does not compile with gcc-4.1+, nothing depends on it.
+# Removed in 60 days. Does not compile with gcc-4.1+, nothing depends on it. 
 # bug 240908
 net-libs/libopm
 
@@ -155,6 +135,16 @@ x11-libs/xfc
 # is not ready for stable ( bug 251566 ).
 # Upstream has abandoned it, alternatives such as gedit exist.
 app-editors/katoob
+
+# Hans de Graaff <graaff@gentoo.org> (20 Dec 2008)
+# Installs compiled code in the wrong directory. Masked
+# while we figure out how to fix this with the gem.
+=dev-ruby/hpricot-0.6.164
+
+# Daniel Drake <dsd@gentoo.org> (18 Dec 2008)
+# Unmaintained, unloved, and unwashed. Removing from Portage on on Dec 31st
+# (bug #193250 and others)
+net-misc/arpstar
 
 # Mike Pagano <mpagano@gentoo.org> (17 Dec 2008)
 # Masked waiting on >=portage-2.2* to be unmasked
@@ -274,7 +264,6 @@ mail-client/claws-mail-smime
 # Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org> (02 Dec 2008)
 # Added patch to enable compiz to build with the snapshots for KDE 4.2 /
 # live ebuilds. This revision is masked until 4.2 is added to the tree
-=x11-wm/compiz-0.7.8-r2
 =x11-wm/compiz-0.7.8-r1
 
 # Jeremy Olexa <darkside@gentoo.org> (02 Dec 2008)
@@ -315,6 +304,10 @@ net-news/straw
 >=sys-auth/policykit-0.6
 >=gnome-extra/policykit-gnome-0.6
 
+# Peter Alfredsen <loki_val@gentoo.org> (26 Nov 2008)
+# Mask non-working version to force their removal.
+<dev-dotnet/gtksourceview-sharp-0.12
+
 # Zac Medico <zmedico@gentoo.org> (24 Nov 2008)
 # In order to ensure that portage-2.1.6 gets sufficient testing,
 # portage-2.2 will be masked in package.mask until portage-2.1.6 has
@@ -333,6 +326,11 @@ media-sound/monopod
 # Masked for removal in 30 days, requested by maintainers. bug #173584
 # Does not compile, old, unmaintained, depends on gtk-1.
 app-admin/gps
+
+# Torsten Veller <tove@gentoo.org> (22 Nov 2008)
+# Enforce downgrade: 3.27.01 replaces 3.2701
+=perl-core/File-Spec-3.2701
+=virtual/perl-File-Spec-3.2701
 
 # Alec Warner <antarus@gentoo.org> (22 Nov 2008)
 # nis-utils is dead, use LDAP you slackers.
@@ -434,6 +432,12 @@ app-crypt/truecrypt
 # unmaintained/deprecated.
 # See bug #239978 for reference.
 dev-python/pyframer
+
+# Torsten Veller <tove@gentoo.org> (21 Oct 2008)
+# Masked for removal in 30 days
+# Old and unneeded or deprecated packages
+# Added on 31 Oct 2008:
+dev-perl/tagged
 
 # Robin H. Johnson <robbat2@gentoo.org> (20 Oct 2008)
 # Masked for removal in 30 days (see bugs #120220, #137998, #170782)
@@ -721,9 +725,19 @@ dev-dotnet/jscall-sharp
 dev-db/pgeasy
 dev-db/pgst
 
+# Zac Medico <zmedico@gentoo.org> (18 May 2008)
+# Masked to ensure that pseudo-downgrade happens correctly, following
+# version scheme change from YYYYMMDD to 3.0.YYYYMMDD.
+>net-print/foomatic-db-ppds-20000000
+>net-print/foomatic-db-20000000
+
 # Rémi Cardona <remi@gentoo.org> (16 Apr 2008)
 # Masked until somebody picks it up
 dev-cpp/bakery
+
+# Diego Pettenò <flameeyes@gentoo.org> (11 May 2008)
+# Release candidate version, masked for testing.
+=app-admin/sudo-1.7.0_rc*
 
 # Ulrich Mueller <ulm@gentoo.org> (10 May 2008)
 # LessTif is unsupported since it has open issues with several packages.
@@ -789,13 +803,25 @@ media-sound/lastfmproxy
 
 # Raúl Porcel <armin76@gentoo.org> (8 Apr 2008)
 # Masked for testing
-#>=mail-client/mozilla-thunderbird-3.0_alpha1
+>=mail-client/mozilla-thunderbird-3.0_alpha1
 >=mail-client/mozilla-thunderbird-bin-3.0_alpha1
+
+# Ben de Groot <yngwin@gentoo.org> (7 Apr 2008)
+# Versioning scheme change after pkgmove from -svn
+>=media-libs/x264-20000101
+>=media-video/x264-encoder-20000101
 
 # Benedikt Böhm <hollow@gentoo.org> (6 Apr 2008)
 # Mask ebuilds using new qmail.eclass for testing
+=mail-mta/mini-qmail-1.06
 =mail-mta/netqmail-1.06
 =mail-mta/qmail-ldap-1.03-r8
+=net-mail/checkpassword-0.90-r3
+=net-mail/cmd5checkpw-0.30-r1
+=net-mail/dot-forward-0.71-r3
+=sys-apps/ucspi-ssl-0.70-r1
+=sys-apps/ucspi-tcp-0.88-r17
+=sys-process/daemontools-0.76-r6
 
 # Christian Faulhammer <fauli@gentoo.org> (01 Apr 2008)
 # Masked for security reasons: bug 215699
@@ -924,6 +950,7 @@ games-fps/quake4-demo
 # https://bugs.gentoo.org/show_bug.cgi?id=211166
 www-apps/joomla
 www-apps/mambo
+www-apps/wordpress
 www-apps/xoops
 
 # Alon Bar-Lev <alonbl@gentoo.org> (23 Feb 2008)
@@ -1110,6 +1137,10 @@ dev-lang/ghc-bin
 >=net-misc/zaptel-1.4.0
 >=net-misc/asterisk-1.4.0
 
+# Paul Varner <fuzzyray@gentoo.org> (27 Sep 2007)
+# revdep-rebuild is broken in this release
+=app-portage/gentoolkit-0.2.4_rc1
+
 # Markus Ullmann <jokey@gentoo.org> (05 Sept 2007)
 # masked for testing
 >=net-analyzer/snort-2.7
@@ -1131,6 +1162,10 @@ net-misc/networkmanager-pptp
 # Sven Wegener <swegener@gentoo.org> (07 Aug 2007)
 # CVS snapshot, needs some more testing
 ~app-misc/screen-4.0.3_p20070403
+
+# Marijn Schouten <hkBst@gentoo.org> (26 Jul 2007)
+# problems starting drscheme (segfault)
+=dev-scheme/drscheme-370.6_p20070725
 
 # Olivier Fisette <ribosome@gentoo.org> (17 Jul 2007)
 # Software no longer available (redistribution not allowed).
@@ -1274,6 +1309,7 @@ games-strategy/ufo2000
 # use these versions by adding "**" for them in package.keywords.
 ~media-sound/alsa-driver-9999
 ~media-sound/alsa-headers-9999
+~media-sound/alsa-lib-9999
 
 # Raúl Porcel <armin76@gentoo.org> (24 Jan 2007)
 # Mask cvs version of net-p2p/linuxdcpp
@@ -1388,10 +1424,10 @@ app-benchmarks/ltp
 # zlib interaction is badly broken. See bug #124733.
 =dev-util/cvs-1.12.13*
 
-# Gordon Malm <gengor@gentoo.org> (29 Dec 2008)
-# Masked for removal after January 31st, 2009
-sys-apps/rsbac-admin
-sys-kernel/rsbac-sources
+# Guillaume Destuynder <kang@gentoo.org> (16 Feb 2006)
+# Masked SVN ebuilds
+=sys-kernel/rsbac-sources-2.6.99
+=sys-apps/rsbac-admin-1.2.99
 
 # Chris Gianelloni <wolf31o2@gentoo.org> (19 Dec 2005)
 # This is the Gentoo Linux Installer.  This is currently masked because it will
