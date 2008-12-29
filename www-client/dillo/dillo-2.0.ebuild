@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/dillo/Attic/dillo-2.0.ebuild,v 1.5 2008/12/30 02:31:15 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/dillo/Attic/dillo-2.0.ebuild,v 1.4 2008/11/24 15:19:50 fmccor Exp $
 
 EAPI="2"
 inherit eutils multilib
@@ -33,14 +33,13 @@ src_configure() {
 		$(use_enable ipv6) \
 		$(use_enable jpeg) \
 		$(use_enable png) \
-		$(use_enable ssl)
+		$(use_enable ssl) \
+		|| die "configure failed"
 }
 
 src_compile() {
 	emake || die "make failed"
-	if use doc ; then
-		doxygen Doxyfile || die "doxygen failed"
-	fi
+	use doc && doxygen Doxyfile
 }
 
 src_install() {
