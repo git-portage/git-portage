@@ -1,6 +1,15 @@
 # ChangeLog for media-sound/gmpc
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/gmpc/ChangeLog,v 1.48 2008/12/20 16:55:14 nixnut Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/gmpc/ChangeLog,v 1.50 2008/12/29 13:53:01 angelos Exp $
+
+  29 Dec 2008; Christoph Mende <angelos@gentoo.org> gmpc-0.16.1.ebuild,
+  gmpc-0.17.0.ebuild:
+  Moved dev-util/gob to DEPEND, bug 252989
+
+*gmpc-0.17.0 (26 Dec 2008)
+
+  26 Dec 2008; Christoph Mende <angelos@gentoo.org> +gmpc-0.17.0.ebuild:
+  Version bump
 
   20 Dec 2008; nixnut <nixnut@gentoo.org> gmpc-0.16.1.ebuild:
   Stable on ppc wrt bug 251332
