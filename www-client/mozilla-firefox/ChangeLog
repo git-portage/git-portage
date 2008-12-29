@@ -1,6 +1,24 @@
 # ChangeLog for www-client/mozilla-firefox
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-firefox/Attic/ChangeLog,v 1.468 2008/12/23 00:17:34 tester Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-firefox/Attic/ChangeLog,v 1.473 2008/12/27 16:31:43 ranger Exp $
+
+  27 Dec 2008; Brent Baude <ranger@gentoo.org> mozilla-firefox-3.0.5.ebuild:
+  Marking mozilla-firefox-3.0.5 ppc64 and ppc for bug 234606
+
+  26 Dec 2008; Jeroen Roovers <jer@gentoo.org> mozilla-firefox-3.0.5.ebuild:
+  Stable for HPPA (bug #234646).
+
+  24 Dec 2008; Raúl Porcel <armin76@gentoo.org>
+  mozilla-firefox-3.0.5.ebuild:
+  alpha/arm/ia64 stable wrt #234646
+
+  23 Dec 2008; Markus Meier <maekke@gentoo.org>
+  mozilla-firefox-3.0.5.ebuild:
+  amd64/x86 stable, bug #234646
+
+  23 Dec 2008; Raúl Porcel <armin76@gentoo.org>
+  mozilla-firefox-3.0.5.ebuild:
+  Bump patchset to fix the hardened patches
 
   23 Dec 2008; Olivier Crête <tester@gentoo.org>
   mozilla-firefox-3.0.5.ebuild:
