@@ -1,6 +1,29 @@
 # ChangeLog for app-editors/nano
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/nano/ChangeLog,v 1.219 2008/11/10 14:43:07 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/nano/ChangeLog,v 1.226 2008/12/30 20:15:35 angelos Exp $
+
+*nano-2.1.7-r1 (30 Dec 2008)
+
+  30 Dec 2008; Christoph Mende <angelos@gentoo.org> +nano-2.1.7-r1.ebuild:
+  Straight to stable revbump for EAPI2, needed by releng
+
+  28 Dec 2008; Guy Martin <gmsoft@gentoo.org> nano-2.1.7.ebuild:
+  hppa stable, #252601
+
+  28 Dec 2008; Tobias Scherbaum <dertobi123@gentoo.org> nano-2.1.7.ebuild:
+  ppc stable, bug #252601
+
+  27 Dec 2008; Brent Baude <ranger@gentoo.org> nano-2.1.7.ebuild:
+  stable ppc64, bug 252601
+
+  27 Dec 2008; Raúl Porcel <armin76@gentoo.org> nano-2.1.7.ebuild:
+  alpha/arm/ia64/s390/sh/x86 stable wrt #252601
+
+  27 Dec 2008; Jeremy Olexa <darkside@gentoo.org> nano-2.1.7.ebuild:
+  amd64 stable, bug 252601
+
+  26 Dec 2008; Friedrich Oslage <bluebird@gentoo.org> nano-2.1.7.ebuild:
+  Stable on sparc, bug #252601
 
 *nano-2.1.7 (10 Nov 2008)
 
