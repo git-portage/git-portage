@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.374 2009/01/02 00:09:43 solar Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.371 2008/12/29 22:46:32 vapier Exp $
 #
 # Maintainer: Toolchain Ninjas <toolchain@gentoo.org>
 
@@ -334,7 +334,7 @@ get_gcc_src_uri() {
 
 	# gcc minispec for the hardened gcc 4 compiler
         [[ -n ${SPECS_VER} ]] && \
-                GCC_SRC_URI="${GCC_SRC_URI} !nopie? ( $(gentoo_urls gcc-${SPECS_GCC_VER}-specs-${SPECS_VER}.tar.bz2) )"
+                GCC_SRC_URI="${GCC_SRC_URI} !nopie? ( $(gentoo_urls gcc-${SPECS_GCC_VER}-default-specs-${SPECS_VER}.tar.bz2) )"
 
 	# gcc bounds checking patch
 	if [[ -n ${HTB_VER} ]] ; then
@@ -709,7 +709,7 @@ setup_minispecs_gcc_build_specs() {
 		if hardened_gcc_works pie ; then
         		cat "${WORKDIR}"/specs/pie.specs >> "${WORKDIR}"/build.specs
 		fi
-		for s in nostrict znow; do
+		for s in nostrict znow zrelro; do
 			cat "${WORKDIR}"/specs/${s}.specs >> "${WORKDIR}"/build.specs
 		done
 		export GCC_SPECS="${WORKDIR}"/build.specs
@@ -2014,7 +2014,7 @@ gcc_quick_unpack() {
 			unpack gcc-${PIE_GCC_VER}-piepatches-v${PIE_VER}.tar.bz2
 		fi
 		[[ -n ${SPECS_VER} ]] && \
-			unpack gcc-${SPECS_GCC_VER}-specs-${SPECS_VER}.tar.bz2
+			unpack gcc-${SPECS_GCC_VER}-default-specs-${SPECS_VER}.tar.bz2
 	fi
 
 	want_boundschecking && \
