@@ -1,31 +1,27 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/fujiplay/fujiplay-1.33.ebuild,v 1.14 2008/12/30 19:55:14 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/fujiplay/fujiplay-1.33.ebuild,v 1.13 2007/01/28 05:12:30 genone Exp $
 
-inherit eutils toolchain-funcs
+inherit eutils
 
 DESCRIPTION="Utility for Fujifilm/Leica digital cameras (via serial port)"
 HOMEPAGE="http://topo.math.u-psud.fr/~bousch/fujiplay.html"
-SRC_URI="http://topo.math.u-psud.fr/~bousch/${PN}.tgz"
+SRC_URI="http://topo.math.u-psud.fr/~bousch/fujiplay.tgz"
 
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="x86"
 IUSE=""
 
-S="${WORKDIR}"
+DEPEND="virtual/libc"
+RDEPEND=""
+
+S=${WORKDIR}
 
 src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-unterminated-strings.patch
-}
-
-src_compile() {
-	emake CC="$(tc-getCC)" \
-		CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
-		|| die "emake failed"
+	unpack ${PN}.tgz
+	cd ${S}
+	epatch ${FILESDIR}/${P}-unterminated-strings.patch
 }
 
 src_install() {
