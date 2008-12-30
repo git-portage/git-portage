@@ -1,8 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/remem/Attic/remem-2.11.ebuild,v 1.15 2008/12/30 21:22:36 angelos Exp $
-
-inherit toolchain-funcs
+# $Header: /var/cvsroot/gentoo-x86/app-text/remem/Attic/remem-2.11.ebuild,v 1.14 2007/01/16 17:07:34 armin76 Exp $
 
 DESCRIPTION="Remembrance Agent plugin for Emacs"
 HOMEPAGE="http://www.remem.org/index.html"
@@ -16,12 +14,12 @@ IUSE=""
 DEPEND="dev-libs/libpcre"
 
 src_compile() {
-	tc-export CC RANLIB
-	lispdir=/usr/share/emacs/site-lisp econf
-	emake -j1 AR="$(tc-getAR)" || die "emake failed"
+	lispdir=/usr/share/emacs/site-lisp \
+		./configure --host=${CHOST} --prefix=/usr || die "./configure failed"
+	make || die "make failed" # emake caused weirdness
 }
 
 src_install () {
-	emake DESTDIR="${D}" install || die "make install failed"
+	make DESTDIR=${D} install || die "make install failed"
 	dodoc AUTHORS COPYING ChangeLog INSTALL NEWS README
 }
