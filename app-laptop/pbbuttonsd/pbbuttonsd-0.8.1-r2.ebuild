@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-laptop/pbbuttonsd/Attic/pbbuttonsd-0.8.1-r2.ebuild,v 1.5 2008/08/24 13:31:37 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-laptop/pbbuttonsd/Attic/pbbuttonsd-0.8.1-r2.ebuild,v 1.6 2008/12/28 02:14:12 josejx Exp $
 
 inherit autotools flag-o-matic eutils
 
@@ -23,7 +23,7 @@ RDEPEND="alsa? ( >=media-libs/alsa-lib-1.0 )
 		 >=dev-libs/glib-2.6"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	cd "${S}"
 
 	epatch "${FILESDIR}/pmcs.patch"
