@@ -1,6 +1,13 @@
 # ChangeLog for Gentoo/sparc profile
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/sparc/ChangeLog,v 1.36 2008/12/23 13:41:16 tcunha Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/sparc/ChangeLog,v 1.38 2008/12/27 10:58:46 bluebird Exp $
+
+  27 Dec 2008; Friedrich Oslage <bluebird@gentoo.org> make.defaults:
+  Fix multilib profile so it doesn't break linux-headers
+
+  26 Dec 2008; Friedrich Oslage <bluebird@gentoo.org> make.defaults,
+  packages, parent:
+  Add experimental sparc multilib profile
 
   23 Dec 2008; Tiago Cunha <tcunha@gentoo.org> package.use.mask:
   Fix package name
