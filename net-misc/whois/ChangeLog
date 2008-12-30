@@ -1,6 +1,32 @@
 # ChangeLog for net-misc/whois
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/whois/ChangeLog,v 1.111 2008/08/17 17:19:07 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/whois/ChangeLog,v 1.119 2008/12/29 13:42:26 armin76 Exp $
+
+  29 Dec 2008; Raúl Porcel <armin76@gentoo.org> whois-4.7.27.ebuild:
+  arm/s390/sh/x86 stable wrt #252525
+
+  28 Dec 2008; Tobias Scherbaum <dertobi123@gentoo.org> whois-4.7.27.ebuild:
+  ppc stable, bug #252525
+
+  27 Dec 2008; Brent Baude <ranger@gentoo.org> whois-4.7.27.ebuild:
+  stable ppc64, bug 252525
+
+  26 Dec 2008; Friedrich Oslage <bluebird@gentoo.org> whois-4.7.27.ebuild:
+  Stable on sparc, bug #252525
+
+  26 Dec 2008; Tobias Klausmann <klausman@gentoo.org> whois-4.7.27.ebuild:
+  Stable on alpha, bug #252525
+
+  26 Dec 2008; Jeremy Olexa <darkside@gentoo.org> whois-4.7.27.ebuild:
+  amd64 stable, bug #252525
+
+  25 Dec 2008; Guy Martin <gmsoft@gentoo.org> whois-4.7.27.ebuild:
+  hppa stable, #252525
+
+*whois-4.7.30 (25 Dec 2008)
+
+  25 Dec 2008; Mike Frysinger <vapier@gentoo.org> +whois-4.7.30.ebuild:
+  Version bump #252435 by Arfrever Frehtes Taifersar Arahesis.
 
 *whois-4.7.27 (17 Aug 2008)
 
