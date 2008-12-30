@@ -1,6 +1,20 @@
 # ChangeLog for x11-drivers/nvidia-drivers
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/ChangeLog,v 1.124 2008/12/19 01:43:05 ricmm Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/ChangeLog,v 1.127 2008/12/25 15:44:29 maekke Exp $
+
+  25 Dec 2008; Markus Meier <maekke@gentoo.org>
+  nvidia-drivers-71.86.07.ebuild, nvidia-drivers-96.43.09.ebuild,
+  nvidia-drivers-173.14.15.ebuild, nvidia-drivers-177.82.ebuild:
+  x86 stable, bug #252482
+
+  25 Dec 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  nvidia-drivers-71.86.07.ebuild, nvidia-drivers-96.43.09.ebuild,
+  nvidia-drivers-173.14.15.ebuild, nvidia-drivers-177.82.ebuild:
+  stable amd64, bug 252482. Stable for linux 2.6.27 stabilization
+
+  25 Dec 2008; Mike Frysinger <vapier@gentoo.org>
+  +files/nvidia-2.6.28.patch, nvidia-drivers-177.82.ebuild:
+  Add patch from upstream for linux 2.6.28 support.
 
 *nvidia-drivers-173.14.15 (19 Dec 2008)
 
