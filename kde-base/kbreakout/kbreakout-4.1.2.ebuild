@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kbreakout/Attic/kbreakout-4.1.2.ebuild,v 1.2 2008/12/31 03:27:29 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kbreakout/Attic/kbreakout-4.1.2.ebuild,v 1.1 2008/10/02 06:49:13 jmbsvicetto Exp $
 
 EAPI="2"
 
@@ -13,3 +13,4 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug htmlhandbook"
 
 KMLOADLIBS="libkdegames"
+
