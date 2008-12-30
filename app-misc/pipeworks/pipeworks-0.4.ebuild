@@ -1,8 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/pipeworks/pipeworks-0.4.ebuild,v 1.10 2009/01/03 12:51:50 angelos Exp $
-
-inherit toolchain-funcs
+# $Header: /var/cvsroot/gentoo-x86/app-misc/pipeworks/pipeworks-0.4.ebuild,v 1.9 2005/04/21 19:35:16 blubb Exp $
 
 DESCRIPTION="a small utility that measures throughput between stdin and stdout"
 HOMEPAGE="http://pipeworks.sourceforge.net/"
@@ -16,7 +14,7 @@ IUSE=""
 DEPEND="virtual/libc"
 
 src_compile() {
-	emake CC="$(tc-getCC) ${CFLAGS} ${LDFLAGS}" || die "emake failed"
+	emake || die "emake failed"
 }
 
 src_install() {
