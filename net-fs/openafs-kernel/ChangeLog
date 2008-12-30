@@ -1,6 +1,19 @@
 # ChangeLog for net-fs/openafs-kernel
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/openafs-kernel/ChangeLog,v 1.112 2008/11/28 13:06:47 stefaan Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/openafs-kernel/ChangeLog,v 1.115 2008/12/26 11:25:39 klausman Exp $
+
+  26 Dec 2008; Tobias Klausmann <klausman@gentoo.org>
+  openafs-kernel-1.4.6.ebuild, openafs-kernel-1.4.6_p20080222.ebuild,
+  openafs-kernel-1.4.7.ebuild, openafs-kernel-1.4.8_pre3.ebuild,
+  openafs-kernel-1.4.8.ebuild, openafs-kernel-1.5.34.ebuild:
+  Dropped keyword for alpha.
+
+  25 Dec 2008; Markus Meier <maekke@gentoo.org> openafs-kernel-1.4.8.ebuild:
+  x86 stable, bug #236438
+
+  25 Dec 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  openafs-kernel-1.4.8.ebuild:
+  stable amd64, bug 236438
 
 *openafs-kernel-1.4.8 (28 Nov 2008)
 
