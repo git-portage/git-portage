@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/gconf-python/Attic/gconf-python-2.22.3.ebuild,v 1.4 2008/12/31 03:21:36 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/gconf-python/Attic/gconf-python-2.22.3.ebuild,v 1.3 2008/12/01 14:31:01 eva Exp $
 
 G_PY_PN="gnome-python"
 
@@ -17,3 +17,4 @@ RDEPEND=">=gnome-base/gconf-2.11.1
 DEPEND="${RDEPEND}"
 
 EXAMPLES="examples/gconf/*"
+
