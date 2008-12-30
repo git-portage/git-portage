@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/wipe/wipe-2.2.20050509.ebuild,v 1.7 2008/12/30 20:35:57 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/wipe/wipe-2.2.20050509.ebuild,v 1.6 2007/12/07 17:00:29 dertobi123 Exp $
 
-inherit versionator toolchain-funcs
+inherit versionator
 
 MY_PV=$(get_version_component_range 3)
 MY_SRC=${PN}-wip-${MY_PV}
@@ -17,11 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 ppc sparc x86"
 IUSE=""
 
-src_compile() {
-	econf
-	sed -i -e "s:-pipe -O2:${CFLAGS}:" "${S}"/Makefile || die "sed failed"
-	emake CC="$(tc-getCC)" || die emake failed
-}
+DEPEND=""
 
 src_install() {
 	dobin wipe || die "dobin failed"
