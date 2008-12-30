@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/eog/Attic/eog-2.24.2-r1.ebuild,v 1.1 2008/12/14 21:53:20 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/eog/Attic/eog-2.24.2-r1.ebuild,v 1.3 2008/12/28 16:32:15 bluebird Exp $
 
 inherit eutils gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/projects/eog/"
 
 LICENSE="GPL-2"
 SLOT="1"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~sparc ~x86"
 IUSE="dbus doc exif lcms python xmp"
 
 RDEPEND=">=x11-libs/gtk+-2.13.1
@@ -61,7 +61,7 @@ src_unpack() {
 	sed 's:-I$(top_srcdir)/plugins \\:\\:g' \
 		-i doc/reference/Makefile.am doc/reference/Makefile.in \
 		|| die "sed	failed"
-	
+
 	# Fix sigbus on sparc, bug #250830
 	epatch "${FILESDIR}/${P}-sigbus.patch"
 }
