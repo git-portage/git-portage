@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/DBD-mysql/Attic/DBD-mysql-2.9007.ebuild,v 1.19 2009/01/03 21:35:24 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/DBD-mysql/Attic/DBD-mysql-2.9007.ebuild,v 1.17 2008/09/30 23:25:00 robbat2 Exp $
 
 MODULE_AUTHOR="CAPTTOFU"
 inherit perl-module
