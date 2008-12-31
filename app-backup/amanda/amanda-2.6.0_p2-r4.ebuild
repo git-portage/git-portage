@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.2 2008/11/26 01:51:57 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.3 2008/12/31 03:16:59 mr_bones_ Exp $
 
 inherit autotools eutils
 
@@ -143,7 +143,7 @@ src_unpack() {
 		"${FILESDIR}"/${PN}-2.6.0p2-amcrypt-ossl-asym-race-fix.patch \
 		|| die "Failed to apply race fix for encryption"
 
-	# gentoo bug 248838, check /sbin stuff before /bin	
+	# gentoo bug 248838, check /sbin stuff before /bin
 	EPATCH_OPTS="-d ${S} -p1" epatch \
 		"${FILESDIR}"/amanda-2.6.0_p2-syslocpath.patch \
 		|| die "Failed to fix sysloc path bug"
