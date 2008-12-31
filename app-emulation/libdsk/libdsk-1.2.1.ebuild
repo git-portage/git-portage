@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/libdsk/Attic/libdsk-1.2.1.ebuild,v 1.4 2009/01/03 15:20:38 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/libdsk/Attic/libdsk-1.2.1.ebuild,v 1.3 2008/06/20 14:45:23 dragonheart Exp $
 
 inherit java-pkg-opt-2 flag-o-matic autotools
 
@@ -22,9 +22,9 @@ RDEPEND="${CDEPEND}
 
 src_unpack() {
 	unpack ${A}
-	cd "${S}"
 	epatch "${FILESDIR}"/${P}-java-make-fix.patch
-	eautoreconf
+	cd "${S}"
+	eautoconf
 }
 
 src_compile() {
