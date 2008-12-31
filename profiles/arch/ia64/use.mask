@@ -38,7 +38,6 @@ jack
 lapack
 
 # Stuff we don't want
-antlr
 networkmanager
 octave
 oracle

@@ -1,6 +1,7 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/POE/Attic/POE-1.003.ebuild,v 1.2 2008/12/31 03:20:41 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/POE/Attic/POE-1.003.ebuild,v 1.1 2008/12/19 17:13:04 tove Exp $
+
 
 inherit versionator
 MODULE_AUTHOR=RCAPUTO
