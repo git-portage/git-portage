@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/midori/Attic/midori-9999.ebuild,v 1.9 2009/01/04 16:18:05 hanno Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/midori/Attic/midori-9999.ebuild,v 1.8 2008/10/27 19:17:29 jokey Exp $
 
-inherit git eutils multilib
+inherit git eutils
 
 DESCRIPTION="A lightweight web browser"
 HOMEPAGE="http://www.twotoasts.de/index.php?/pages/midori_summary.html"
@@ -25,7 +25,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	CCFLAGS="${CFLAGS}" LINKFLAGS="${LDFLAGS}" ./waf --prefix="/usr/" --libdir="/usr/$(get_libdir)/" configure || die "waf configure failed."
+	./waf --prefix="/usr/" configure || die "waf configure failed."
 	./waf build || die "waf build failed."
 }
 
