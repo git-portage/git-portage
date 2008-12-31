@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/grep/Attic/grep-2.5.3-r1.ebuild,v 1.4 2009/01/04 21:07:46 the_paya Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/grep/Attic/grep-2.5.3-r1.ebuild,v 1.2 2008/10/07 09:39:19 loki_val Exp $
 
 inherit flag-o-matic eutils
 
@@ -31,8 +31,6 @@ src_unpack() {
 	EPATCH_MULTI_MSG="Applying Debian patchset (${DEB_VER}) ..." \
 	epatch ${P}~dfsg/debian/patches/
 	epatch "${FILESDIR}"/${P}-yesno-test-fix.patch
-	epatch "${FILESDIR}"/${P}-po-builddir-fix.patch
-	epatch "${FILESDIR}"/${P}-nls.patch
 	use static && append-ldflags -static
 }
 
@@ -41,7 +39,7 @@ src_compile() {
 		--bindir=/bin \
 		$(use_enable nls) \
 		$(use_enable pcre perl-regexp) \
-		$(use elibc_FreeBSD || echo --without-included-regex) \
+		--without-included-regex \
 		|| die "econf failed"
 
 	use static || sed -i 's:-lpcre:-Wl,-Bstatic -lpcre -Wl,-Bdynamic:g' src/Makefile
