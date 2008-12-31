@@ -1,6 +1,18 @@
 # ChangeLog for sys-kernel/vanilla-sources
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/ChangeLog,v 1.577 2008/12/25 15:50:47 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/ChangeLog,v 1.580 2008/12/31 03:09:29 darkside Exp $
+
+  31 Dec 2008; Jeremy Olexa <darkside@gentoo.org>
+  vanilla-sources-2.6.28.ebuild:
+  add ~amd64 kw, bug 252544
+
+  26 Dec 2008; Tobias Klausmann <klausman@gentoo.org>
+  vanilla-sources-2.6.27.10.ebuild:
+  Stable on alpha, bug #251670
+
+  26 Dec 2008; Raúl Porcel <armin76@gentoo.org>
+  vanilla-sources-2.6.27.10.ebuild:
+  arm/ia64/sparc stable wrt #251670
 
   25 Dec 2008; Markus Meier <maekke@gentoo.org>
   vanilla-sources-2.6.27.10.ebuild:
