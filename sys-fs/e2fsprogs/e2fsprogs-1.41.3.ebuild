@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/e2fsprogs/Attic/e2fsprogs-1.41.3.ebuild,v 1.3 2008/12/26 15:22:48 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/e2fsprogs/Attic/e2fsprogs-1.41.3.ebuild,v 1.9 2008/12/30 04:19:18 vapier Exp $
 
 inherit eutils flag-o-matic toolchain-funcs multilib
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/e2fsprogs/${P}.tar.gz"
 
 LICENSE="GPL-2 BSD"
 SLOT="0"
-KEYWORDS="alpha ~amd64 ~arm ~hppa ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm ~hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
 IUSE="nls elibc_FreeBSD"
 
 RDEPEND="~sys-libs/${PN}-libs-${PV}
@@ -18,6 +18,14 @@ RDEPEND="~sys-libs/${PN}-libs-${PV}
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )
 	sys-apps/texinfo"
+
+pkg_setup() {
+	if [[ ! -e ${ROOT}/etc/mtab ]] ; then
+		# add some crap to deal with missing /etc/mtab #217719
+		ewarn "No /etc/mtab file, creating one temporarily"
+		echo "${PN} crap for src_test" > "${ROOT}"/etc/mtab
+	fi
+}
 
 src_unpack() {
 	unpack ${A}
@@ -75,6 +83,14 @@ src_compile() {
 	if use elibc_FreeBSD ; then
 		cp "${FILESDIR}"/fsck_ext2fs.c .
 		emake fsck_ext2fs || die
+	fi
+}
+
+pkg_preinst() {
+	if [[ -r ${ROOT}/etc/mtab ]] ; then
+		if [[ $(<"${ROOT}"/etc/mtab) == "${PN} crap for src_test" ]] ; then
+			rm -f "${ROOT}"/etc/mtab
+		fi
 	fi
 }
 
