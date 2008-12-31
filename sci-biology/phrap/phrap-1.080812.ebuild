@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/phrap/phrap-1.080812.ebuild,v 1.3 2008/12/31 01:09:25 weaver Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/phrap/phrap-1.080812.ebuild,v 1.1 2008/12/31 00:28:51 weaver Exp $
 
 DESCRIPTION="Phrap, swat, cross_match: Shotgun assembly and alignment utilities"
 HOMEPAGE="http://www.phrap.org/"
@@ -8,7 +8,7 @@ SRC_URI="phrap-${PV}-distrib.tar.gz"
 
 LICENSE="phrap"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=""
@@ -35,4 +35,14 @@ src_install() {
 	for i in {general,phrap,swat}.doc ; do
 		newdoc ${i} ${i}.txt
 	done
+}
+
+pkg_postinst() {
+	elog If you are operating a non-commercial \(academic or government\)
+	elog computer facility which provides access to several independent
+	elog investigators, you are required by the licensing agreement to set the
+	elog permissions on the executables and source code to allow execute but
+	elog not read access, so that the programs may not be copied.
+	elog
+	elog Phrap documentation is installed in ${ROOT}/usr/share/doc/${P}.
 }
