@@ -1,8 +1,8 @@
-# Copyright 2008-2009 Gentoo Foundation
+# Copyright 2008-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/kio_perldoc/Attic/kio_perldoc-0.9.ebuild,v 1.6 2009/01/04 15:40:42 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/kio_perldoc/Attic/kio_perldoc-0.9.ebuild,v 1.4 2008/12/10 12:31:23 scarabeus Exp $
 
-EAPI="2"
+EAPI="1"
 NEED_KDE="4.1"
 inherit kde4-base
 
@@ -18,3 +18,4 @@ IUSE=""
 DEPEND=">=dev-lang/perl-5.8.0"
 
 PATCHES=( "${FILESDIR}/${P}-kdeexport.patch" )
+
