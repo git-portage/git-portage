@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gmpc-autoplaylist/Attic/gmpc-autoplaylist-0.15.5.0.ebuild,v 1.7 2009/01/04 00:02:05 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gmpc-autoplaylist/Attic/gmpc-autoplaylist-0.15.5.0.ebuild,v 1.5 2008/03/17 14:43:29 fmccor Exp $
 
 DESCRIPTION="This plugin allows you to generate a playlist based on a set of rules"
 HOMEPAGE="http://sarine.nl/gmpc-plugins-autoplaylist"
