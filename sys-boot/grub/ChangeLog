@@ -1,6 +1,26 @@
 # ChangeLog for sys-boot/grub
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/ChangeLog,v 1.105 2008/11/10 14:34:42 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/ChangeLog,v 1.109 2008/12/31 09:09:06 vapier Exp $
+
+  31 Dec 2008; Mike Frysinger <vapier@gentoo.org> grub-1.96.ebuild,
+  grub-9999.ebuild:
+  Drop multilib stuff as the binaries that run on the host system.
+
+  30 Dec 2008; Mike Frysinger <vapier@gentoo.org> metadata.xml,
+  grub-1.96.ebuild, grub-9999.ebuild:
+  Fix install paths and add support for USE=multislot so people can toy with
+  grub2 while keeping grub1.
+
+  30 Dec 2008; Mike Frysinger <vapier@gentoo.org> grub-1.96.ebuild,
+  grub-9999.ebuild:
+  Fix by roger for SRC_URI setting with ebuild unification.
+
+*grub-9999 (30 Dec 2008)
+
+  30 Dec 2008; Mike Frysinger <vapier@gentoo.org> grub-1.96.ebuild,
+  +grub-9999.ebuild:
+  Add a live svn ebuild by roger #252769. This also fixes stripping issues
+  #231935 by Alexey Shvetsov.
 
   10 Nov 2008; Mike Frysinger <vapier@gentoo.org> grub-1.96.ebuild:
   Drop USE=netboot and fixup DEPEND #234182.
