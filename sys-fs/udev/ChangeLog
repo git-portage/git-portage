@@ -1,6 +1,23 @@
 # ChangeLog for sys-fs/udev
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/ChangeLog,v 1.430 2008/12/19 22:40:58 zzam Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/ChangeLog,v 1.433 2009/01/01 12:40:13 hollow Exp $
+
+  01 Jan 2009; Benedikt Böhm <hollow@gentoo.org> files/udev.initd:
+  fix udev init script inside vservers, bug #253105
+
+*udev-9999 (30 Dec 2008)
+
+  30 Dec 2008; Matthias Schwarzott <zzam@gentoo.org> +udev-9999.ebuild:
+  Add live udev ebuild.
+
+*udev-135-r3 (27 Dec 2008)
+
+  27 Dec 2008; Matthias Schwarzott <zzam@gentoo.org>
+  +files/udev-135-r3.confd, +files/udev-mount-135-r3.initd,
+  +files/udev-start-135-r3.sh, +udev-135-r3.ebuild:
+  Create /dev/.rcsysinit only for older baselayouts. Add some comments about
+  rc_oldplug to /etc/conf.d/udev, suggested by Polynomial-C
+  <polynomial-c@gmx.de>.
 
   19 Dec 2008; Matthias Schwarzott <zzam@gentoo.org>
   +files/udev-postmount-135-r2.initd, files/udev-start-135-r2.sh,
