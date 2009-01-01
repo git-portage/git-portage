@@ -1,6 +1,18 @@
 # ChangeLog for media-video/smplayer
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/smplayer/ChangeLog,v 1.50 2008/12/18 07:44:50 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/smplayer/ChangeLog,v 1.53 2008/12/31 16:17:50 armin76 Exp $
+
+  31 Dec 2008; Raúl Porcel <armin76@gentoo.org> smplayer-0.6.5-r1.ebuild:
+  x86 stable wrt #253077
+
+  31 Dec 2008; Friedrich Oslage <bluebird@gentoo.org>
+  smplayer-0.6.5-r1.ebuild:
+  Stable on sparc, bug #253077
+
+*smplayer-0.6.5.1 (30 Dec 2008)
+
+  30 Dec 2008; Ben de Groot <yngwin@gentoo.org> +smplayer-0.6.5.1.ebuild:
+  Version bump
 
   18 Dec 2008; Ben de Groot <yngwin@gentoo.org> smplayer-0.6.1-r1.ebuild,
   smplayer-0.6.2-r1.ebuild, -smplayer-0.6.5.ebuild:
