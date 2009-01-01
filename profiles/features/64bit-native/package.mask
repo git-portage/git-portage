@@ -1,4 +1,4 @@
-# $Header: /var/cvsroot/gentoo-x86/profiles/features/64bit-native/package.mask,v 1.10 2008/12/19 22:33:17 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/features/64bit-native/package.mask,v 1.12 2008/12/30 15:58:16 angelos Exp $
 
 # AMD64 Team <amd64@gentoo.org>
 # Mask packages that rely on amd64 multilib
@@ -21,7 +21,7 @@ app-emulation/vmware-dsp
 app-emulation/vmware-player
 app-emulation/vmware-server
 app-emulation/vmware-server-console
-app-emulation/vmware-workstation
+<app-emulation/vmware-workstation-6.5
 app-emulation/winex-transgaming
 app-i18n/kurso-de-esperanto
 app-office/mozilla-sunbird-bin
@@ -178,7 +178,6 @@ media-sound/teamspeak2-client-bin
 media-sound/teamspeak2-server-bin
 media-sound/ventrilo-server-bin
 media-video/binkplayer
-media-video/dvdrip
 media-video/mplayer-bin
 media-video/realplayer
 net-dialup/slmodem
