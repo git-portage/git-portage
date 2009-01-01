@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/snort/Attic/snort-2.8.3.1.ebuild,v 1.4 2009/01/02 22:00:16 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/snort/Attic/snort-2.8.3.1.ebuild,v 1.2 2008/12/31 10:05:32 dertobi123 Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -25,7 +25,7 @@ DEPEND="virtual/libc
 	flexresp2? ( dev-libs/libdnet )
 	flexresp? ( ~net-libs/libnet-1.0.2a )
 	react? ( ~net-libs/libnet-1.0.2a )
-	postgres? ( virtual/postgresql-base )
+	postgres? ( || ( dev-db/postgresql dev-db/libpq ) )
 	mysql? ( virtual/mysql )
 	odbc? ( dev-db/unixODBC )
 	prelude? ( >=dev-libs/libprelude-0.9.0 )
@@ -88,6 +88,7 @@ pkg_setup() {
 		epause
 	fi
 }
+
 
 src_unpack() {
 	unpack ${A}
@@ -160,8 +161,9 @@ src_compile() {
 		myconf="${myconf} --disable-inline"
 	fi
 
+
 #The --enable-<feature> options... 'static' 'dynamicplugin' 'threads' 'flexresp' 'flexresp2' 'inline'
-# are configured above due to dependancy/conflict issues.
+# are configured above due to dependancy/conflict issues. 
 #All others are handled the standard ebuild way via econf
 
 	econf \
