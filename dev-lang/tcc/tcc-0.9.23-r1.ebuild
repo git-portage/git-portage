@@ -1,13 +1,13 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/tcc/Attic/tcc-0.9.23-r1.ebuild,v 1.6 2009/01/04 21:03:25 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/tcc/Attic/tcc-0.9.23-r1.ebuild,v 1.4 2007/05/12 11:27:30 truedfx Exp $
 
 inherit eutils
 
 IUSE=""
 DESCRIPTION="A very small C compiler for ix86"
-HOMEPAGE="http://bellard.org/tcc/"
-SRC_URI="http://download.savannah.nongnu.org/releases/tinycc/${P}.tar.gz"
+HOMEPAGE="http://www.tinycc.org/"
+SRC_URI="http://fabrice.bellard.free.fr/tcc/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
