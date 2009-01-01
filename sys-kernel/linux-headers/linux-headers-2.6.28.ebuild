@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-headers/Attic/linux-headers-2.6.28.ebuild,v 1.1 2008/12/27 08:35:13 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-headers/Attic/linux-headers-2.6.28.ebuild,v 1.3 2008/12/27 11:14:16 bluebird Exp $
 
 ETYPE="headers"
 H_SUPPORTEDARCH="alpha amd64 arm cris hppa m68k mips ia64 ppc ppc64 s390 sh sparc x86"
@@ -11,7 +11,7 @@ PATCH_VER="1"
 SRC_URI="mirror://gentoo/gentoo-headers-base-${PV}.tar.lzma"
 [[ -n ${PATCH_VER} ]] && SRC_URI="${SRC_URI} mirror://gentoo/gentoo-headers-${PV}-${PATCH_VER}.tar.lzma"
 
-KEYWORDS="-* ~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+KEYWORDS="-* ~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh -sparc ~x86"
 
 DEPEND="app-arch/lzma-utils"
 RDEPEND=""
@@ -44,5 +44,5 @@ src_install() {
 }
 
 src_test() {
-	emake -j1 ARCH=$(tc-arch-kernel) headers_check || die
+	emake ARCH=$(tc-arch-kernel) headers_check || die
 }
