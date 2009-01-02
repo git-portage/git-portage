@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/pure-sfv/Attic/pure-sfv-0.3.ebuild,v 1.16 2009/01/03 17:39:34 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/pure-sfv/Attic/pure-sfv-0.3.ebuild,v 1.15 2008/10/27 18:17:08 flameeyes Exp $
 
-inherit eutils toolchain-funcs
+inherit toolchain-funcs
 
 DESCRIPTION="utility to test and create .sfv files and create .par files"
 HOMEPAGE="http://pure-sfv.sourceforge.net/"
@@ -16,13 +16,12 @@ RESTRICT="test"
 
 DEPEND=""
 
-S="${WORKDIR}"
+S=${WORKDIR}
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	sed -i -e "s:-Werror -O2 -g::" Makefile
-	epatch "${FILESDIR}"/${P}-asneeded.patch
+	sed -i 's:-O2 -g::;s:-Werror::' Makefile
 }
 
 src_compile() {
@@ -30,6 +29,6 @@ src_compile() {
 }
 
 src_install() {
-	dobin pure-sfv || die "dobin failed"
+	dobin pure-sfv || die
 	dodoc ReadMe.txt
 }
