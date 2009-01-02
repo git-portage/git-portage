@@ -1,6 +1,25 @@
 # ChangeLog for net-libs/c-client
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/c-client/ChangeLog,v 1.52 2008/05/02 11:55:44 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/c-client/ChangeLog,v 1.57 2008/12/30 20:39:22 bluebird Exp $
+
+  30 Dec 2008; Friedrich Oslage <bluebird@gentoo.org> c-client-2007e.ebuild:
+  Stable on sparc, security bug #252567
+
+  29 Dec 2008; Tobias Heinlein <keytoaster@gentoo.org>
+  c-client-2007e.ebuild:
+  amd64 stable wrt security bug #252567
+
+  29 Dec 2008; Tobias Scherbaum <dertobi123@gentoo.org>
+  c-client-2007e.ebuild:
+  ppc stable, bug #252567
+
+  29 Dec 2008; Brent Baude <ranger@gentoo.org> c-client-2007e.ebuild:
+  Marking c-client-2007e ppc64 for bug 252567
+
+*c-client-2007e (28 Dec 2008)
+
+  28 Dec 2008; Gunnar Wrobel <wrobel@gentoo.org> +c-client-2007e.ebuild:
+  Added net-libs/c-client-2007e in response to sec issue #252567.
 
   02 May 2008; Tobias Scherbaum <dertobi123@gentoo.org>
   c-client-2006k.ebuild:
