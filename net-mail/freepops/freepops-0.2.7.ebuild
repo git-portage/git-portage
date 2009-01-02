@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/freepops/Attic/freepops-0.2.7.ebuild,v 1.5 2009/01/03 07:13:39 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/freepops/Attic/freepops-0.2.7.ebuild,v 1.4 2008/11/20 19:20:07 dragonheart Exp $
 
 inherit eutils toolchain-funcs
 
@@ -19,8 +19,7 @@ DEPEND=">=net-misc/curl-7.10.8
 		!gnutls? ( dev-libs/openssl )
 		>=dev-lang/lua-5.1"
 DEPEND="${DEPEND}
-		sys-apps/debianutils
-		dev-util/dialog"
+		sys-apps/debianutils"
 #	doc? ( app-text/ghostscript-gpl app-text/tetex )"
 
 pkg_setup() {
