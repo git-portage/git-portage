@@ -1,12 +1,12 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/framerd/Attic/framerd-2.4.3-r1.ebuild,v 1.16 2009/01/03 16:23:16 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/framerd/Attic/framerd-2.4.3-r1.ebuild,v 1.15 2007/02/19 08:27:18 dirtyepic Exp $
 
-inherit eutils toolchain-funcs
+inherit eutils
 
-DESCRIPTION="a portable, distributed, object-oriented database designed to support knowledge bases"
+DESCRIPTION="FramerD is a portable distributed object-oriented database designed to support the maintenance and sharing of knowledge bases."
 HOMEPAGE="http://www.framerd.org/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/framerd/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -19,22 +19,22 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}"/${P}-gcc41.patch \
-		"${FILESDIR}"/${P}-setup.fdx.patch \
-		"${FILESDIR}"/${P}-asneeded.patch
+	epatch "${FILESDIR}"/${P}-gcc41.patch
+	epatch "${FILESDIR}"/${P}-setup.fdx.patch
 }
 
 src_compile() {
 	econf \
 		$(use_with readline) \
-		--enable-shared
+		--enable-shared \
+		|| die "econf failed"
 
-	emake CC="$(tc-getCC)" || die "emake failed"
+	emake || die "make failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	mv "${D}"/usr/share/doc/${PN} "${D}"/usr/share/doc/${PF}
-	sed -i -e "s:${D}::" "${D}"/usr/share/framerd/framerd.cfg \
-		|| die "sed failed"
+	make DESTDIR="${D}" install || die "make install failed"
+	mv ${D}/usr/share/framerd/framerd.cfg ${D}/usr/share/framerd/framerd.cfg_orig
+	perl -pe "s|${D}||" ${D}/usr/share/framerd/framerd.cfg_orig > ${D}/usr/share/framerd/framerd.cfg
+	rm ${D}/usr/share/framerd/framerd.cfg_orig
 }
