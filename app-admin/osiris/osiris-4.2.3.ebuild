@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/osiris/Attic/osiris-4.2.3.ebuild,v 1.2 2009/01/05 10:05:48 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/osiris/Attic/osiris-4.2.3.ebuild,v 1.1 2008/11/11 03:28:28 darkside Exp $
 
 inherit eutils
 
@@ -67,17 +67,17 @@ src_install() {
 	elog "---------------------------------------------------------------------"
 	elog ""
 
-	dosbin src/osirisd/osirisd || die "dosbin failed"
+	dosbin src/osirisd/osirisd
 	fowners root:0 /usr/sbin/osirisd
 	fperms 0755 /usr/sbin/osirisd
 	newinitd "${FILESDIR}"/osirisd-${PV} osirisd
 	newconfd "${FILESDIR}"/osirisd_confd-${PV} osirisd
 
-	dosbin src/cli/osiris || die "dosbin failed"
+	dosbin src/cli/osiris
 	fowners root:0 /usr/sbin/osiris
 	fperms 0755 /usr/sbin/osiris
 
-	dosbin src/osirismd/osirismd || die "dosbin failed"
+	dosbin src/osirismd/osirismd
 	fowners osiris:osiris /usr/sbin/osirismd
 	fperms 4755 /usr/sbin/osirismd
 
