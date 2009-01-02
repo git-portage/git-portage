@@ -1,18 +1,6 @@
 # ChangeLog for net-mail/cmd5checkpw
-# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/cmd5checkpw/ChangeLog,v 1.48 2009/01/05 15:25:20 hollow Exp $
-
-  05 Jan 2009; Benedikt Böhm <hollow@gentoo.org>
-  cmd5checkpw-0.30-r1.ebuild:
-  remove unused qmail.eclass; remove unused sed scripts: they are not needed
-  since make setup is never called
-
-  03 Jan 2009; Robin H. Johnson <robbat2@gentoo.org>
-  cmd5checkpw-0.30-r1.ebuild:
-  DISTDIR is read-only. You cannot use mv in it. Use a symlink in workdir
-  instead as the mv was causing breakage on portage-2.2. Also set cflags
-  from inside src_compile instead of src_unpack, and take out unneeded
-  qmail_set_cc.
+# Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-mail/cmd5checkpw/ChangeLog,v 1.46 2008/04/06 17:11:21 hollow Exp $
 
 *cmd5checkpw-0.30-r1 (06 Apr 2008)
 
