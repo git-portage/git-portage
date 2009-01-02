@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/gtk-sharp/Attic/gtk-sharp-2.8.2.ebuild,v 1.13 2009/01/06 09:07:50 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/gtk-sharp/Attic/gtk-sharp-2.8.2.ebuild,v 1.11 2008/12/14 15:27:09 loki_val Exp $
 
 WANT_AUTOMAKE="latest"
 WANT_AUTOCONF="latest"
