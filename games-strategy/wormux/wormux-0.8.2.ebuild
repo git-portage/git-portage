@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/wormux/Attic/wormux-0.8.2.ebuild,v 1.3 2009/01/04 01:52:17 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/wormux/Attic/wormux-0.8.2.ebuild,v 1.1 2008/10/22 19:45:49 mr_bones_ Exp $
 
-EAPI=2
 inherit autotools eutils games
 
 DESCRIPTION="A free Worms clone"
@@ -15,8 +14,8 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="debug nls unicode"
 
 RDEPEND="media-libs/libsdl
-	media-libs/sdl-image[png]
-	media-libs/sdl-mixer[vorbis]
+	media-libs/sdl-image
+	media-libs/sdl-mixer
 	media-libs/sdl-ttf
 	media-libs/sdl-net
 	media-libs/sdl-gfx
@@ -46,7 +45,7 @@ src_unpack() {
 	eautoreconf
 }
 
-src_configure() {
+src_compile() {
 	egamesconf \
 		--disable-dependency-tracking \
 		--with-localedir-name=/usr/share/locale \
@@ -56,6 +55,7 @@ src_configure() {
 		$(use_enable nls) \
 		$(use_enable unicode fribidi) \
 		|| die "configuration failed"
+	emake || die "emake failed"
 }
 
 src_install() {
