@@ -1,6 +1,19 @@
 # ChangeLog for x11-plugins/enigmail
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/enigmail/Attic/ChangeLog,v 1.146 2008/12/14 22:54:47 darkside Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/enigmail/Attic/ChangeLog,v 1.149 2009/01/01 20:21:57 keytoaster Exp $
+
+  01 Jan 2009; Tobias Heinlein <keytoaster@gentoo.org>
+  enigmail-0.95.7-r3.ebuild:
+  amd64 stable wrt security bug #251322
+
+  01 Jan 2009; Raúl Porcel <armin76@gentoo.org> enigmail-0.95.7-r3.ebuild:
+  alpha/ia64/sparc/x86 stable wrt #251322
+
+*enigmail-0.95.7-r3 (31 Dec 2008)
+
+  31 Dec 2008; Raúl Porcel <armin76@gentoo.org> -enigmail-0.95.6-r4.ebuild,
+  -enigmail-0.95.7-r1.ebuild, +enigmail-0.95.7-r3.ebuild:
+  Revision bump for 2.0.0.19
 
   14 Dec 2008; Jeremy Olexa <darkside@gentoo.org> enigmail-0.95.7-r2.ebuild:
   amd64 stable, bug 246628
