@@ -1,17 +1,6 @@
 # ChangeLog for app-misc/gramps
-# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/gramps/ChangeLog,v 1.89 2009/01/06 00:39:29 fauli Exp $
-
-  06 Jan 2009; Christian Faulhammer <fauli@gentoo.org> gramps-3.0.4.ebuild:
-  make use of EAPI2 features to check for USE=sqlite or USE=berkdb on
-  dev-lang/python, thus makes the built_with_use check obsolete
-
-  04 Jan 2009; Christian Faulhammer <fauli@gentoo.org>
-  -files/gramps-3.0.1-no_scrollkeeper.patch, -gramps-3.0.1-r1.ebuild:
-  clean up
-
-  03 Jan 2009; nixnut <nixnut@gentoo.org> gramps-3.0.3.ebuild:
-  ppc stable #249165
+# Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/gramps/ChangeLog,v 1.86 2008/12/22 19:23:17 fauli Exp $
 
   22 Dec 2008; Christian Faulhammer <fauli@gentoo.org> gramps-3.0.4.ebuild:
   remove USE=gnome as it will work in the upcoming 3.1 series but not in
