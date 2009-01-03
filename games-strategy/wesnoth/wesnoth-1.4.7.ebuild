@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/wesnoth/Attic/wesnoth-1.4.7.ebuild,v 1.3 2009/01/06 02:17:20 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/wesnoth/Attic/wesnoth-1.4.7.ebuild,v 1.1 2008/12/14 11:02:42 mr_bones_ Exp $
 
-EAPI=2
 inherit eutils toolchain-funcs flag-o-matic games
 
 MY_PV=${PV/_/}
@@ -15,13 +14,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="dedicated editor lite nls server smallgui static tinygui tools"
 
-RDEPEND=">=media-libs/libsdl-1.2.7[X]
+RDEPEND=">=media-libs/libsdl-1.2.7
 	media-libs/sdl-net
 	dev-libs/boost
 	!dedicated? (
 		x11-libs/libX11
-		>=media-libs/sdl-mixer-1.2[vorbis]
-		>=media-libs/sdl-image-1.2[png,jpeg]
+		>=media-libs/sdl-mixer-1.2
+		>=media-libs/sdl-image-1.2
 		dev-lang/python
 		>=media-libs/freetype-2 )
 	nls? ( virtual/libintl )"
@@ -35,14 +34,24 @@ DEPEND="${RDEPEND}
 		tinygui? ( media-gfx/imagemagick )
 	)
 	dedicated? (
-		>=media-libs/sdl-mixer-1.2[vorbis]
-		>=media-libs/sdl-image-1.2[png]
+		>=media-libs/sdl-mixer-1.2
+		>=media-libs/sdl-image-1.2
 		>=media-libs/freetype-2 )
 	nls? ( sys-devel/gettext )"
 
 S=${WORKDIR}/${PN}-${MY_PV}
 
 pkg_setup() {
+	if ! built_with_use media-libs/sdl-mixer vorbis ; then
+		die "Please emerge media-libs/sdl-mixer with USE=vorbis"
+	fi
+	if ! built_with_use media-libs/sdl-image png ; then
+		die "Please emerge media-libs/sdl-image with USE=png"
+	fi
+	# dedicated also needs USE=X for libsdl: bug #222033
+	if ! built_with_use media-libs/libsdl X ; then
+		die "Please emerge media-libs/libsdl with USE=X"
+	fi
 	if use !dedicated && use smallgui && use tinygui ; then
 		ewarn "USE=tinygui overrides USE=smallgui"
 		ebeep
