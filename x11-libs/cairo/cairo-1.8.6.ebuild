@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/cairo/Attic/cairo-1.8.6.ebuild,v 1.1 2008/12/24 17:17:57 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/cairo/Attic/cairo-1.8.6.ebuild,v 1.3 2008/12/31 21:48:56 cardoe Exp $
 
 inherit eutils flag-o-matic libtool
 
@@ -11,7 +11,7 @@ SRC_URI="http://cairographics.org/releases/${P}.tar.gz"
 LICENSE="|| ( LGPL-2.1 MPL-1.1 )"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
-IUSE="debug directfb doc glitz opengl svg X xcb"
+IUSE="cleartype debug directfb doc glitz opengl svg X xcb"
 
 # Test causes a circular depend on gtk+... since gtk+ needs cairo but test needs gtk+ so we need to block it
 RESTRICT="test"
@@ -59,6 +59,9 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
+	# ClearType-like patches applied by ArchLinux
+	use cleartype && epatch "${FILESDIR}"/cairo-1.2.4-lcd-cleartype-like.diff
+
 	# We need to run elibtoolize to ensure correct so versioning on FreeBSD
 	elibtoolize
 }
@@ -75,7 +78,7 @@ src_compile() {
 		$(use_enable directfb) $(use_enable xcb) \
 		$(use_enable svg) $(use_enable glitz) $(use_enable X xlib-xrender) \
 		$(use_enable debug test-surfaces) --enable-pdf  --enable-png \
-		--enable-freetype --enable-ps \
+		--enable-ft --enable-ps \
 		|| die "configure failed"
 
 	emake || die "compile failed"
