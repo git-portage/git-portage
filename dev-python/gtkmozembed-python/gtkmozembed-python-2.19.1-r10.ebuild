@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/gtkmozembed-python/Attic/gtkmozembed-python-2.19.1-r10.ebuild,v 1.4 2009/01/06 14:14:02 neurogeek Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/gtkmozembed-python/Attic/gtkmozembed-python-2.19.1-r10.ebuild,v 1.2 2008/11/19 23:56:02 dang Exp $
 
 EAPI="1"
 
@@ -12,10 +12,9 @@ PVP="$(get_version_component_range 1-2)"
 SRC_URI="mirror://gnome/sources/${G_PY_PN}/${PVP}/${G_PY_PN}-${PV}.tar.bz2
 	mirror://gentoo/${G_PY_PN}-${PV}-split.patch.gz"
 
-DESCRIPTION="Python bindings for the GtkMozEmbed Gecko library"
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 -sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc firefox seamonkey +xulrunner"
 
 RDEPEND="xulrunner? ( =net-libs/xulrunner-1.9* )
