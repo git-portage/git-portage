@@ -1,13 +1,13 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.6.4.ebuild,v 1.2 2008/12/28 23:00:45 darkside Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.6.4.ebuild,v 1.8 2008/12/31 15:04:17 jer Exp $
 
 inherit eutils multilib python
 
 DESCRIPTION="Portage is the package management and distribution system for Gentoo"
 HOMEPAGE="http://www.gentoo.org/proj/en/portage/index.xml"
 LICENSE="GPL-2"
-KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ~ppc64 s390 sh sparc ~sparc-fbsd x86 ~x86-fbsd"
 PROVIDE="virtual/portage"
 SLOT="0"
 IUSE="build doc epydoc selinux linguas_pl"
@@ -221,6 +221,8 @@ pkg_preinst() {
 	fi
 	has_version ">=${CATEGORY}/${PN}-2.2_pre"
 	DOWNGRADE_FROM_2_2=$?
+	has_version "<${CATEGORY}/${PN}-2.1.6_pre"
+	UPGRADE_FROM_2_1=$?
 }
 
 pkg_postinst() {
@@ -239,6 +241,15 @@ pkg_postinst() {
 		"use revdep-rebuild when appropriate, since the @preserved-rebuild" \
 		"package set is only supported with portage-2.2." | fmt -w 70 | \
 		while read ; do ewarn "$REPLY" ; done
+		ewarn
+	fi
+	if [ $UPGRADE_FROM_2_1 = 0 ] ; then
+		ewarn
+		echo "In portage-2.1.6, the default behavior has changed for" \
+		"\`emerge world\` and \`emerge system\` commands. These commands" \
+		"will reinstall all packages from the given set unless an option" \
+		"such as --noreplace, --update, or --newuse is specified." \
+		| fmt -w 70 | while read ; do ewarn "$REPLY" ; done
 		ewarn
 	fi
 }
