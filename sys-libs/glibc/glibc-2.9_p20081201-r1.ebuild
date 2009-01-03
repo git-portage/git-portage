@@ -1,6 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/glibc/Attic/glibc-2.9_p20081201-r1.ebuild,v 1.1 2008/12/27 04:20:52 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/glibc/Attic/glibc-2.9_p20081201-r1.ebuild,v 1.3 2008/12/31 07:56:10 vapier Exp $
+
+GLIBC_PATCH_EXCLUDE="${GLIBC_PATCH_EXCLUDE} 1060_all_glibc-nss-deepbind.patch" #252302
 
 inherit eutils versionator libtool toolchain-funcs flag-o-matic gnuconfig multilib
 
@@ -257,6 +259,8 @@ pkg_setup() {
 
 	use hardened && ! gcc-specs-pie && \
 		ewarn "PIE hardening not applied, as your compiler doesn't default to PIE"
+
+	export LC_ALL=C #252802
 }
 
 fix_lib64_symlinks() {
