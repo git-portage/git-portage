@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-simulation/gl117/gl117-1.3.2.ebuild,v 1.8 2009/01/06 21:21:30 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-simulation/gl117/gl117-1.3.2.ebuild,v 1.7 2007/03/12 15:59:24 nyhm Exp $
 
-EAPI=2
 inherit eutils games
 
 MY_P="gl-117-${PV}-src"
@@ -16,12 +15,19 @@ KEYWORDS="amd64 ppc x86"
 IUSE=""
 
 DEPEND="media-libs/libsdl
-	media-libs/sdl-mixer[mikmod]
+	media-libs/sdl-mixer
 	virtual/opengl
 	virtual/glu
 	virtual/glut"
 
 S=${WORKDIR}/${MY_P}
+
+pkg_setup() {
+	if ! built_with_use media-libs/sdl-mixer mikmod ; then
+		die "Please emerge sdl-mixer with USE=mikmod"
+	fi
+	games_pkg_setup
+}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"

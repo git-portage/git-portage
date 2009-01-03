@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/cyrus-imap-dev/Attic/cyrus-imap-dev-2.3.13.ebuild,v 1.6 2009/01/07 15:17:48 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/cyrus-imap-dev/Attic/cyrus-imap-dev-2.3.13.ebuild,v 1.3 2008/12/31 16:37:38 bluebird Exp $
 
 inherit eutils autotools
 
@@ -12,7 +12,7 @@ SRC_URI="ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/cyrus-imapd-${MY_PV}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 sparc x86"
+KEYWORDS="~amd64 ppc ~ppc64 sparc ~x86"
 IUSE="afs kerberos snmp ssl tcpd"
 
 RDEPEND="virtual/libc
@@ -65,7 +65,9 @@ src_compile() {
 		--enable-netscapehack \
 		--with-cyrus-group=mail \
 		--with-com_err=yes \
+		--with-auth=unix \
 		--without-perl \
+		--disable-cyradm \
 		${myconf} || die "econf failed"
 
 	emake -C "${S}/lib" all || die "compile problem"
