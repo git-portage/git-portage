@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/aesutil/aesutil-1.0.7.ebuild,v 1.4 2008/02/04 20:26:59 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/aesutil/aesutil-1.0.7.ebuild,v 1.6 2009/01/03 17:57:52 angelos Exp $
+
+inherit toolchain-funcs
 
 MY_P="${PN/util/}-${PV}"
 DESCRIPTION="Command line program ('aes') to encrypt and decrypt data using the Rijndael algorithm"
@@ -18,15 +20,16 @@ S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	sed -e "s:CFLAGS=-g -Wall:CFLAGS=-g -Wall ${CFLAGS}:" Makefile.linux > Makefile
+	cd "${S}"
+	sed -e "/^CFLAGS/s:-g -Wall:${CFLAGS}:" Makefile.linux > Makefile
+	sed -i -e "/^LDFLAGS/s:-g:${LDFLAGS}:" Makefile
 }
 
 src_compile() {
-	emake || die
+	emake CC="$(tc-getCC)" || die
 }
 
 src_install() {
-	dobin aes
+	dobin aes || die
 	dodoc CHANGES INSTALL README TODO
 }
