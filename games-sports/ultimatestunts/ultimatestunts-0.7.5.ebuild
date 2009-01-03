@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-sports/ultimatestunts/Attic/ultimatestunts-0.7.5.ebuild,v 1.4 2009/01/06 21:16:51 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-sports/ultimatestunts/Attic/ultimatestunts-0.7.5.ebuild,v 1.3 2008/12/08 05:52:43 mr_bones_ Exp $
 
-EAPI=2
 inherit autotools eutils versionator games
 
 MY_P=${PN}-srcdata-$(replace_all_version_separators)1
@@ -15,9 +14,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="nls"
 
-RDEPEND="media-libs/libsdl[opengl]
+RDEPEND="media-libs/libsdl
 	media-libs/sdl-image
-	media-libs/openal[vorbis]
+	media-libs/openal
 	media-libs/freealut
 	virtual/opengl
 	virtual/glu
@@ -28,7 +27,19 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/${MY_P}
 
-src_prepare() {
+pkg_setup() {
+	games_pkg_setup
+	if ! built_with_use media-libs/libsdl opengl ; then
+		die "Please emerge libsdl with USE=opengl"
+	fi
+	if ! built_with_use --missing true media-libs/openal vorbis ; then
+		die "Please emerge openal with USE=vorbis"
+	fi
+}
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	ecvs_clean
 	epatch "${FILESDIR}"/${P}-paths.patch
 	autopoint -f || die "autopoint failed"
@@ -39,13 +50,11 @@ src_prepare() {
 	AT_M4DIR=m4 eautoreconf
 }
 
-src_configure() {
+src_compile() {
 	egamesconf \
 		--disable-dependency-tracking \
-		$(use_enable nls)
-}
-
-src_compile() {
+		$(use_enable nls) \
+		|| die
 	emake -C trackedit libtrackedit.a || die "emake failed"
 	emake || die "emake failed"
 }
