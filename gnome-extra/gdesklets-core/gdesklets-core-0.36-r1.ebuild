@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gdesklets-core/Attic/gdesklets-core-0.36-r1.ebuild,v 1.5 2008/08/25 18:05:40 nixnut Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gdesklets-core/Attic/gdesklets-core-0.36-r1.ebuild,v 1.6 2008/12/30 03:55:44 nixphoeni Exp $
 
 # We want the latest autoconf and automake (the default)
 inherit gnome2 python eutils autotools multilib
@@ -82,14 +82,14 @@ pkg_postinst() {
 
 	echo
 	elog "gDesklets Displays are required before the library"
-	elog "will be usable.  Core displays (Calendar, Clock, Quote-of-the-Day,"
+	elog "will be usable.  Core Displays (Calendar, Clock, Quote-of-the-Day,"
 	elog "and the 15pieces game) are already installed in"
 	elog "           ${ROOT}usr/$(get_libdir)/gdesklets/Displays"
-	elog "Additional displays can be found in -"
+	elog "Additional Displays can be found in -"
 	elog "           x11-plugins/desklet-* ,"
 	elog "at http://www.gdesklets.de, or at http://gdesklets.zencomputer.ca"
 	elog
-	elog "Next you'll need to start gdesklets using"
+	elog "Next you'll need to start gDesklets using"
 	elog "           ${ROOT}usr/bin/gdesklets start"
 	elog "If you're using GNOME this can be done conveniently through"
 	elog "Applications->Accessories->gDesklets"
@@ -98,7 +98,7 @@ pkg_postinst() {
 	elog "you can migrate your desklet configurations by"
 	elog "running"
 	elog "           ${ROOT}usr/$(get_libdir)/gdesklets/gdesklets-migration-tool"
-	elog "after the first time you run gdesklets"
+	elog "after the first time you run gDesklets"
 	echo
 
 	# This stuff is important, especially the migration-tool
