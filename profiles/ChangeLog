@@ -1,10 +1,65 @@
 # ChangeLog for profile directory
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2213 2008/12/29 15:57:02 graaff Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2230 2009/01/03 08:19:36 dragonheart Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  03 Jan 2009; Daniel Black <dragonheart@gentoo.org> thirdpartymirrors:
+  remove ftp://ftp.digitaltrust.it due to lack of response
+
+  03 Jan 2009; Daniel Black <dragonheart@gentoo.org> package.mask:
+  app-crypt/tpm-module mask pending removal as per gentoo-dev-announce list
+
+  02 Jan 2009; Diego E. Pettenò <flameeyes@gentoo.org> package.mask:
+  Mask packages that should only be used by crossdev.
+
+  02 Jan 2009; MATSUU Takuto <matsuu@gentoo.org> use.local.desc:
+  Adding local use flags for app-i18n/ibus-table-{erbi,wubi,zhengma}.
+
+  01 Jan 2009; Peter Alfredsen <loki_val@gentoo.org> package.mask:
+  Removing gtksourceview-sharp mask
+
+  01 Jan 2009; Raúl Porcel <armin76@gentoo.org> package.mask:
+  Fix my mask
+
+  31 Dec 2008; Paul Varner <fuzzyray@gentoo.org> package.mask:
+  Add mask for gentoolkit-dev-0.2.6.9 for testing of echangelog
+  subversion/git support. Bug 176337
+
+  31 Dec 2008; Paul Varner <fuzzyray@gentoo.org> package.mask:
+  Masking app-portage/esearch-0.7.1 due to being broken with latest versions
+  of portage
+
+  31 Dec 2008; Ben de Groot <yngwin@gentoo.org> package.mask:
+  Masking ~mplayer-1.0_rc2_p27725 for security reasons, bug 251017
+
+  30 Dec 2008; Peter Volkov <pva@gentoo.org> package.mask, use.desc:
+  Unmasked wordpress, bug #168529.
+
+  30 Dec 2008; Diego E. Pettenò <flameeyes@gentoo.org> package.mask:
+  Remove outdated entries.
+
+  30 Dec 2008; Ben de Groot <yngwin@gentoo.org> arch/sparc/package.use.mask:
+  Add firefox3 useflag mask for gtk-engines-qtcurve on sparc
+
+  30 Dec 2008; Ben de Groot <yngwin@gentoo.org> package.mask:
+  Remove x264 entry, no longer needed. Fixes bug 105016 from my side.
+
+  29 Dec 2008; Torsten Veller <tove@gentoo.org> package.mask:
+  Masks for dev-perl/tagged and =perl-core/File-Spec-3.2701 no longer needed
+
+  29 Dec 2008; Gordon Malm <gengor@gentoo.org> package.mask:
+  Masked RSBAC-related ebuilds for eventual removal.
+
+  29 Dec 2008; Paul Varner <fuzzyray@gentoo.org> package.mask:
+  Bug #105016 - Remove mask for app-portage/gentoolkit-0.2.4_rc1 since it is
+  no longer in the tree.
+
+  29 Dec 2008; Zac Medico <zmedico@gentoo.org> package.mask:
+  Bug #105016 - Remove foomatic-db-20000000 masks. Masks for pseudo-downgrades
+  like these typically aren't needed now that bug #252167 is fixed.
 
   29 Dec 2008; Hans de Graaff <graaff@gentoo.org> package.mask:
   Remove hpricot mask since the broken version is removed from the tree.
