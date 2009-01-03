@@ -1,30 +1,6 @@
 # ChangeLog for www-client/epiphany
-# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/epiphany/ChangeLog,v 1.181 2009/01/05 23:01:13 maekke Exp $
-
-  05 Jan 2009; Markus Meier <maekke@gentoo.org> epiphany-2.22.3-r1.ebuild:
-  amd64/x86 stable, bug #253534
-
-  04 Jan 2009; Friedrich Oslage <bluebird@gentoo.org>
-  epiphany-2.22.3-r1.ebuild:
-  Stable on sparc, bug #253534
-
-  03 Jan 2009; Gilles Dartiguelongue <eva@gentoo.org>
-  -files/epiphany-2.20.3-fix-de-docs-tests.patch, -epiphany-2.20.3.ebuild,
-  epiphany-2.22.3.ebuild, epiphany-2.22.3-r1.ebuild,
-  epiphany-2.22.3-r10.ebuild, epiphany-2.22.3-r11.ebuild,
-  epiphany-2.24.0.1.ebuild, epiphany-2.24.1.ebuild,
-  epiphany-2.24.1-r10.ebuild, epiphany-2.24.2.1.ebuild,
-  epiphany-2.24.2.1-r10.ebuild:
-  Add missing addpredict for mozilla folder, bug #253043.
-
-*epiphany-2.22.3-r11 (03 Jan 2009)
-*epiphany-2.22.3-r1 (03 Jan 2009)
-
-  03 Jan 2009; Rémi Cardona <remi@gentoo.org>
-  +files/epiphany-2.22.3-notify-crash-fix.patch, +epiphany-2.22.3-r1.ebuild,
-  +epiphany-2.22.3-r11.ebuild:
-  add patch to fix libnotify crash (see bug #250031)
+# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/epiphany/ChangeLog,v 1.177 2008/12/17 17:47:47 ranger Exp $
 
   17 Dec 2008; Brent Baude <ranger@gentoo.org> epiphany-2.24.0.1.ebuild:
   Marking epiphany-2.24.0.1 ~ppc64 for bug 239847
