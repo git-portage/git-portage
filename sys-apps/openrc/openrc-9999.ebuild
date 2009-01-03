@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/openrc/openrc-9999.ebuild,v 1.41 2008/12/19 22:19:24 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/openrc/openrc-9999.ebuild,v 1.43 2008/12/31 21:31:40 cardoe Exp $
 
 inherit eutils flag-o-matic multilib toolchain-funcs
 
@@ -23,12 +23,12 @@ KEYWORDS=""
 IUSE="debug elibc_glibc ncurses pam unicode kernel_linux kernel_FreeBSD"
 
 RDEPEND="virtual/init
-	kernel_linux? ( >=sys-apps/module-init-tools-3.2.2-r2 )
 	kernel_FreeBSD? ( sys-process/fuser-bsd )
 	elibc_glibc? ( >=sys-libs/glibc-2.5 )
 	ncurses? ( sys-libs/ncurses )
 	pam? ( virtual/pam )
 	>=sys-apps/baselayout-2.0.0
+	kernel_linux? ( !<sys-apps/module-init-tools-3.2.2-r2 )
 	!<sys-fs/udev-133
 	!<sys-apps/sysvinit-2.86-r11"
 DEPEND="${RDEPEND}
@@ -140,6 +140,9 @@ pkg_preinst() {
 	use kernel_FreeBSD && clock="adjkerntz" || clock="hwclock"
 	if [[ -e ${ROOT}/etc/conf.d/clock ]] ; then
 		mv "${ROOT}"/etc/conf.d/clock "${ROOT}"/etc/conf.d/${clock}
+	fi
+	if [[ -e ${ROOT}/etc/init.d/clock ]] ; then
+		rm -f "${ROOT}"/etc/init.d/clock
 	fi
 	if [[ -L ${ROOT}/etc/runlevels/boot/clock ]] ; then
 		rm -f "${ROOT}"/etc/runlevels/boot/clock
