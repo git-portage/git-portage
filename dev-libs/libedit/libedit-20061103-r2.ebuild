@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libedit/Attic/libedit-20061103-r2.ebuild,v 1.2 2009/01/04 22:15:44 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libedit/Attic/libedit-20061103-r2.ebuild,v 1.1 2007/07/21 01:48:26 uberlord Exp $
 
 inherit eutils toolchain-funcs
 
@@ -14,7 +14,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~spar
 IUSE="elibc_glibc"
 
 DEPEND="sys-libs/ncurses
-	!<=sys-freebsd/freebsd-lib-6.2_rc1"
+	!<=sys-freebs/freebsd-lib-6.2_rc1"
 
 S=${WORKDIR}/netbsd-cvs
 
@@ -30,12 +30,10 @@ src_unpack() {
 	fi
 
 	# FreeBSD's __weak_reference macro differs from NetBSD's
-	epatch "${FILESDIR}/${P}-freebsd.patch" \
-		"${FILESDIR}"/${P}-ldflags.patch
+	epatch "${FILESDIR}/${P}-freebsd.patch"
 }
 
 src_compile() {
-	tc-export CC
 	emake -j1 .depend || die "depend"
 	emake || die "make"
 }
