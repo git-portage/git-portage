@@ -1,18 +1,17 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-table/Attic/ibus-table-0.1.1.20081014.ebuild,v 1.1 2008/10/19 14:18:23 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-table/Attic/ibus-table-0.1.2.20090104.ebuild,v 1.1 2009/01/04 13:51:53 matsuu Exp $
 
-EAPI="1"
 inherit eutils python
 
 DESCRIPTION="The Table Engine for IBus Framework"
 HOMEPAGE="http://code.google.com/p/ibus/"
 SRC_URI="http://ibus.googlecode.com/files/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+additional cangjie5 erbi-qs extra-phrases nls wubi zhengma"
+IUSE="minimal nls"
 
 RDEPEND="app-i18n/ibus
 	>=dev-lang/python-2.5
@@ -36,17 +35,9 @@ src_unpack() {
 
 src_compile() {
 	econf \
-		$(use_enable additional) \
-		$(use_enable cangjie5) \
-		$(use_enable erbi-qs) \
-		$(use_enable extra-phrases) \
-		$(use_enable wubi wubi86) \
-		$(use_enable wubi wubi98) \
-		$(use_enable zhengma) \
+		$(use_enable !minimal additional) \
 		$(use_enable nls) || die
-
-	# Parallel make uses a lot of memory to generate databases.
-	emake -j1 || die
+	emake || die
 }
 
 src_install() {
