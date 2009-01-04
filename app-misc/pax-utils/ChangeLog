@@ -1,6 +1,19 @@
 # ChangeLog for app-misc/pax-utils
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/pax-utils/ChangeLog,v 1.105 2008/12/30 15:29:45 ranger Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/pax-utils/ChangeLog,v 1.109 2009/01/03 02:06:15 jer Exp $
+
+  03 Jan 2009; Jeroen Roovers <jer@gentoo.org> pax-utils-0.1.19.ebuild:
+  Stable for HPPA (bug #253124).
+
+  02 Jan 2009; <solar@gentoo.org> pax-utils-0.1.19.ebuild:
+  arm,x86,ia64,ppc32 stable
+
+  31 Dec 2008; Friedrich Oslage <bluebird@gentoo.org>
+  pax-utils-0.1.19.ebuild:
+  Stable on sparc, bug #253124
+
+  31 Dec 2008; Jeremy Olexa <darkside@gentoo.org> pax-utils-0.1.19.ebuild:
+  amd64 stable, bug 253124
 
   30 Dec 2008; Brent Baude <ranger@gentoo.org> pax-utils-0.1.19.ebuild:
   stable ppc64, bug 253124
