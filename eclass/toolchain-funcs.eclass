@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain-funcs.eclass,v 1.83 2009/01/08 09:56:00 gengor Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain-funcs.eclass,v 1.80 2009/01/02 22:14:18 gengor Exp $
 
 # @ECLASS: toolchain-funcs.eclass
 # @MAINTAINER:

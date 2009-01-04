@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-player/Attic/vmware-player-1.0.7.91707.ebuild,v 1.4 2009/01/04 22:21:02 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-player/Attic/vmware-player-1.0.7.91707.ebuild,v 1.3 2008/07/03 13:51:35 opfer Exp $
 
 inherit eutils vmware versionator
 
@@ -34,7 +34,7 @@ RDEPEND="sys-libs/glibc
 		x11-libs/libXcursor
 		x11-libs/libXinerama
 		x11-libs/libXi
-		x11-libs/libXft )
+		virtual/xft )
 	>=dev-lang/perl-5
 	!app-emulation/vmware-workstation
 	!app-emulation/vmware-server
