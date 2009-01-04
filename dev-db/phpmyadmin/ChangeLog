@@ -1,6 +1,20 @@
 # ChangeLog for dev-db/phpmyadmin
-# Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/phpmyadmin/ChangeLog,v 1.352 2008/12/30 15:03:18 ranger Exp $
+# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-db/phpmyadmin/ChangeLog,v 1.356 2009/01/03 20:58:30 maekke Exp $
+
+  03 Jan 2009; Markus Meier <maekke@gentoo.org> phpmyadmin-2.11.9.4.ebuild:
+  x86 stable, bug #250752
+
+  02 Jan 2009; Jeroen Roovers <jer@gentoo.org> phpmyadmin-2.11.9.4.ebuild:
+  Stable for HPPA (bug #250752).
+
+  02 Jan 2009; Tobias Heinlein <keytoaster@gentoo.org>
+  phpmyadmin-2.11.9.4.ebuild:
+  amd64 stable wrt security bug #250752
+
+  30 Dec 2008; Friedrich Oslage <bluebird@gentoo.org>
+  phpmyadmin-2.11.9.4.ebuild:
+  Stable on sparc, security bug #250752
 
   30 Dec 2008; Brent Baude <ranger@gentoo.org> phpmyadmin-2.11.9.4.ebuild:
   Marking phpmyadmin-2.11.9.4 ppc64 for bug 250752
