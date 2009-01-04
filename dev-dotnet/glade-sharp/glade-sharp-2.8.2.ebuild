@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/glade-sharp/Attic/glade-sharp-2.8.2.ebuild,v 1.8 2009/01/06 09:10:51 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/glade-sharp/Attic/glade-sharp-2.8.2.ebuild,v 1.6 2008/11/27 18:39:22 ssuominen Exp $
 
 inherit gtk-sharp-component
 
