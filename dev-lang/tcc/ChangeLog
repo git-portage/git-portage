@@ -1,6 +1,15 @@
 # ChangeLog for dev-lang/tcc
-# Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/tcc/ChangeLog,v 1.26 2007/05/12 11:27:30 truedfx Exp $
+# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/tcc/ChangeLog,v 1.28 2009/01/04 21:03:25 patrick Exp $
+
+*tcc-0.9.24 (04 Jan 2009)
+
+  04 Jan 2009; Patrick Lauer <patrick@gentoo.org> tcc-0.9.23-r1.ebuild,
+  +tcc-0.9.24.ebuild:
+  Bump to 0.9.24. Homepage and SRC_URI fix. Patches no longer needed.
+
+  04 Jan 2009; Patrick Lauer <patrick@gentoo.org> tcc-0.9.23-r1.ebuild:
+  Homepage fix
 
   12 May 2007; Harald van Dĳk <truedfx@gentoo.org>
   -files/tcc-0.9.20-gcc34.patch, +files/tcc-0.9.23-nxbit.patch,
