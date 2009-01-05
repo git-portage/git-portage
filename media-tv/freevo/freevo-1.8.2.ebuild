@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/freevo/Attic/freevo-1.8.2.ebuild,v 1.3 2009/01/09 06:39:13 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/freevo/Attic/freevo-1.8.2.ebuild,v 1.1 2008/10/25 15:39:53 rbu Exp $
 
 inherit distutils eutils
 
@@ -8,7 +8,7 @@ DESCRIPTION="Digital video jukebox (PVR, DVR)."
 HOMEPAGE="http://www.freevo.org/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
-IUSE="directfb cdparanoia doc dvd encode fbcon flac gphoto2 jpeg lame lirc matrox mixer nls snes sqlite tv tvtime vorbis xine xmame X"
+IUSE="directfb cdparanoia doc dvd encode fbcon gphoto2 jpeg lame lirc matrox mixer nls snes sqlite tv tvtime vorbis xine xmame X"
 
 LICENSE="GPL-2"
 SLOT="0"
