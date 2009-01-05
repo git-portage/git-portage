@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.374 2009/01/02 00:09:43 solar Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.376 2009/01/05 22:02:12 solar Exp $
 #
 # Maintainer: Toolchain Ninjas <toolchain@gentoo.org>
 
