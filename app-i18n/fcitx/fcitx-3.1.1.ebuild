@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/fcitx/Attic/fcitx-3.1.1.ebuild,v 1.12 2009/01/06 17:16:19 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/fcitx/Attic/fcitx-3.1.1.ebuild,v 1.11 2009/01/04 22:34:30 ulm Exp $
 
 DESCRIPTION="Free Chinese Input Toy for X. Another Chinese XIM Input Method"
 HOMEPAGE="http://fcitx.net/"
@@ -9,18 +9,18 @@ SRC_URI="http://mirrors.redv.com/fcitx/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~ppc x86"
-IUSE="xft"
+IUSE="truetype"
 
 RDEPEND="x11-libs/libX11
 	x11-libs/libXpm
 	x11-libs/libXrender
 	x11-libs/libXt
-	xft? ( x11-libs/libXft )"
+	truetype? ( x11-libs/libXft )"
 
 DEPEND="${RDEPEND}"
 src_compile() {
 	myconf=
-	if use xft ; then
+	if use truetype ; then
 		myconf=" --with-xft "
 	else
 		myconf=" --disable-xft "
