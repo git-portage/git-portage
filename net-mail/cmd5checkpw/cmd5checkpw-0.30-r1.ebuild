@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/cmd5checkpw/cmd5checkpw-0.30-r1.ebuild,v 1.1 2008/04/06 17:11:21 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/cmd5checkpw/cmd5checkpw-0.30-r1.ebuild,v 1.4 2009/01/05 15:25:20 hollow Exp $
 
-inherit eutils fixheadtails qmail
+inherit eutils fixheadtails
 
 MY_VER="030"
 
@@ -30,26 +30,24 @@ pkg_setup() {
 }
 
 src_unpack() {
-	mv "${DISTDIR}"/${PN}-${MY_VER}{_tgz.bin,.tar.gz}
-	unpack ${PN}-${MY_VER}.tar.gz
+	# The old code moved the file in DISTDIR, which is forbidden.
+	# It's read-only.
+	cd "${WORKDIR}"
+	rm -f ${PN}-${MY_VER}.tar.gz
+	ln -s "${DISTDIR}"/${PN}-${MY_VER}_tgz.bin ${PN}-${MY_VER}.tar.gz
+	unpack ./${PN}-${MY_VER}.tar.gz
 	cd "${S}"
 
 	epatch "${FILESDIR}"/euid_${MY_VER}.diff
 	epatch "${FILESDIR}"/reloc.diff
 
-	sed \
-		-e "s:-c -g -Wall -O3:${CFLAGS}:" \
-		-e "s:cp cmd5checkpw /bin/:cp cmd5checkpw \${D}/bin/:" \
-		-e "s:cp cmd5checkpw.8 /usr/man/man8/:cp cmd5checkpw.8 \${D}/usr/share/man/man8/:" \
-		-i Makefile
+	sed -e 's:-c -g -Wall -O3:$(OPTCFLAGS):' -i Makefile
 
 	ht_fix_file Makefile
-
-	qmail_set_cc
 }
 
 src_compile() {
-	emake || die
+	emake OPTCFLAGS="${CFLAGS}" || die
 }
 
 src_install() {
@@ -58,7 +56,6 @@ src_install() {
 
 	exeinto /bin
 	doexe cmd5checkpw
-
 	doman cmd5checkpw.8
 
 	fowners cmd5checkpw /etc/poppasswd /bin/cmd5checkpw
