@@ -19,8 +19,6 @@ pda
 pkcs11
 scanner
 sms
-v4l
-v4l2
 wifi
 
 # Hardware not available on ia64
