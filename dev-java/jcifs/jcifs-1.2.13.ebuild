@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jcifs/Attic/jcifs-1.2.13.ebuild,v 1.7 2007/06/18 17:22:37 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jcifs/Attic/jcifs-1.2.13.ebuild,v 1.8 2009/01/03 17:24:26 serkan Exp $
 
 JAVA_PKG_IUSE="doc examples source"
 
@@ -16,6 +16,7 @@ RDEPEND=">=virtual/jre-1.4
 	=dev-java/servletapi-2.4*"
 DEPEND=">=virtual/jdk-1.4
 	${RDEPEND}"
+IUSE=""
 
 S=${WORKDIR}/${P/-/_}
 
