@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.373 2009/01/01 06:26:11 gengor Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.375 2009/01/04 17:17:54 vapier Exp $
 #
 # Maintainer: Toolchain Ninjas <toolchain@gentoo.org>
 
@@ -709,7 +709,7 @@ setup_minispecs_gcc_build_specs() {
 		if hardened_gcc_works pie ; then
         		cat "${WORKDIR}"/specs/pie.specs >> "${WORKDIR}"/build.specs
 		fi
-		for s in nostrict znow zrelro; do
+		for s in nostrict znow; do
 			cat "${WORKDIR}"/specs/${s}.specs >> "${WORKDIR}"/build.specs
 		done
 		export GCC_SPECS="${WORKDIR}"/build.specs
@@ -1056,15 +1056,6 @@ do_gcc_rename_java_bins() {
 			die "Failed to fixup file ${jfile} for rename to grmic"
 	done
 }
-unbreak_arm() {
-	[[ ${CTARGET} == *eabi* ]] || return
-	[[ ${CTARGET} == arm* ]] || return
-	[[ ${CTARGET} == armv5* ]] && return
-	[[ -e "${S}"/gcc/config/arm/linux-eabi.h ]] || return
-	#armv4tl can do ebai as well. http://www.nabble.com/Re:--crosstool-ng--ARM-EABI-problem-p17164547.html
-	#http://sourceware.org/ml/crossgcc/2008-05/msg00009.html
-	sed -i -e s/'define SUBTARGET_CPU_DEFAULT TARGET_CPU_arm10tdmi'/'define SUBTARGET_CPU_DEFAULT TARGET_CPU_arm9tdmi'/g "${S}"/gcc/config/arm/linux-eabi.h
-}
 gcc_src_unpack() {
 	export BRANDING_GCC_PKGVERSION="Gentoo ${GCC_PVR}"
 
@@ -1147,8 +1138,6 @@ gcc_src_unpack() {
 	then
 		do_gcc_rename_java_bins
 	fi
-
-	unbreak_arm
 
 	# Fixup libtool to correctly generate .la files with portage
 	cd "${S}"
