@@ -1,20 +1,6 @@
 # ChangeLog for sys-apps/hal
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/hal/Attic/ChangeLog,v 1.262 2009/01/06 13:43:59 chainsaw Exp $
-
-*hal-0.5.11-r6 (06 Jan 2009)
-
-  06 Jan 2009; <chainsaw@gentoo.org> -hal-0.5.11-r5.ebuild,
-  +hal-0.5.11-r6.ebuild:
-  Bad interactions between the ARM & PPC setup meant the PMU was
-  enabled/disabled twice. Avoid by using hardware variable instead of
-  use_enable for PMU.
-
-*hal-0.5.11-r5 (05 Jan 2009)
-
-  05 Jan 2009; <chainsaw@gentoo.org> +hal-0.5.11-r5.ebuild:
-  Enable PMU support for PowerPC hardware, as suggested by Christian Schmitt
-  <chrschmitt@gmail.com> in bug #253866.
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/hal/Attic/ChangeLog,v 1.260 2008/12/28 15:02:55 armin76 Exp $
 
   28 Dec 2008; Raúl Porcel <armin76@gentoo.org> hal-0.5.11-r1.ebuild:
   Fix bug #252587
