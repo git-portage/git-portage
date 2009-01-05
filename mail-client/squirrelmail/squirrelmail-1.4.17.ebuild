@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/squirrelmail/Attic/squirrelmail-1.4.17.ebuild,v 1.5 2009/01/07 18:34:12 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/squirrelmail/Attic/squirrelmail-1.4.17.ebuild,v 1.1 2008/12/05 20:32:56 dertobi123 Exp $
 
 IUSE="ldap spell ssl filter mysql postgres nls"
 
@@ -37,7 +37,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2
 HOMEPAGE="http://www.squirrelmail.org/"
 
 LICENSE="GPL-2"
-KEYWORDS="alpha ~amd64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 DEPEND=""
 
