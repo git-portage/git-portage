@@ -1,15 +1,6 @@
 # ChangeLog for x11-libs/qt-gui
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-gui/Attic/ChangeLog,v 1.18 2009/01/06 14:57:53 yngwin Exp $
-
-  06 Jan 2009; Ben de Groot <yngwin@gentoo.org> -qt-gui-4.4.0.ebuild,
-  -qt-gui-4.4.1.ebuild, -qt-gui-4.4.2.ebuild:
-  Clean out old ebuilds
-
-*qt-gui-4.4.2-r1 (05 Jan 2009)
-
-  05 Jan 2009; Ben de Groot <yngwin@gentoo.org> +qt-gui-4.4.2-r1.ebuild:
-  Add fix to install correct designer and linguist icons, bug 241208.
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-gui/Attic/ChangeLog,v 1.16 2009/01/01 21:54:02 yngwin Exp $
 
   01 Jan 2009; Ben de Groot <yngwin@gentoo.org>
   +files/0254-fix-qgraphicsproxywidget-deletion-crash.diff,

@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/vte/Attic/vte-0.16.13.ebuild,v 1.9 2009/01/05 13:29:29 remi Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/vte/Attic/vte-0.16.13.ebuild,v 1.8 2008/04/17 20:53:58 jer Exp $
 
 inherit eutils gnome2 autotools
 
@@ -28,7 +28,7 @@ RDEPEND=">=dev-libs/glib-2.9
 		>=dev-lang/python-2.4.4-r5
 	)
 	x11-libs/libX11
-	x11-libs/libXft"
+	virtual/xft"
 
 DEPEND="${RDEPEND}
 	doc? ( >=dev-util/gtk-doc-1.0 )
