@@ -1,22 +1,6 @@
 # ChangeLog for media-video/transcode
-# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/transcode/ChangeLog,v 1.245 2009/01/09 16:33:53 ranger Exp $
-
-  09 Jan 2009; Brent Baude <ranger@gentoo.org> transcode-1.0.7.ebuild:
-  stable ppc, bug 254061
-
-  07 Jan 2009; Brent Baude <ranger@gentoo.org> transcode-1.0.7.ebuild:
-  stable ppc64, bug 254061
-
-  07 Jan 2009; Ferris McCormick <fmccor@gentoo.org> transcode-1.0.7.ebuild:
-  Sparc stable, Bug #254061.
-
-*transcode-1.1.0_rc5 (07 Jan 2009)
-
-  07 Jan 2009; Alexis Ballier <aballier@gentoo.org>
-  -transcode-1.1.0_rc1.ebuild, -transcode-1.1.0_rc2.ebuild,
-  -transcode-1.1.0_rc4.ebuild, +transcode-1.1.0_rc5.ebuild:
-  version bump, remove old
+# Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/transcode/ChangeLog,v 1.241 2008/12/16 17:33:17 ranger Exp $
 
   16 Dec 2008; Brent Baude <ranger@gentoo.org> transcode-1.0.7_rc1.ebuild:
   Marking transcode-1.0.7_rc1 ppc64 for bug 245511
