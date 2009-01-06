@@ -1,29 +1,19 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/enlightenment/enlightenment-0.16.9999.ebuild,v 1.31 2009/01/09 15:01:11 remi Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/enlightenment/enlightenment-0.16.9999.ebuild,v 1.29 2009/01/02 07:25:51 vapier Exp $
 
-if [[ ${PV} == *9999 ]] ; then
-	ESVN_REPO_URI="http://svn.enlightenment.org/svn/e/trunk/E16/e"
-	inherit subversion
-	SRC_URI=""
-	KEYWORDS=""
-	S=${WORKDIR}/e16/e
-else
-	SRC_URI="mirror://sourceforge/enlightenment/e16-${PV/_/-}.tar.gz"
-	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
-	S=${WORKDIR}/e16-${PV/_pre?}
-fi
-inherit eutils
+ESVN_REPO_URI="http://svn.enlightenment.org/svn/e/trunk/E16/e"
+inherit eutils cvs
 
 DESCRIPTION="Enlightenment Window Manager"
 HOMEPAGE="http://www.enlightenment.org/"
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="doc dbus esd nls xcomposite xinerama xrandr"
+KEYWORDS=""
+IUSE="doc esd nls xcomposite xinerama xrandr"
 
 RDEPEND="esd? ( >=media-sound/esound-0.2.19 )
-	dbus? ( sys-apps/dbus )
 	=media-libs/freetype-2*
 	>=media-libs/imlib2-1.3.0
 	x11-libs/libSM
@@ -33,7 +23,7 @@ RDEPEND="esd? ( >=media-sound/esound-0.2.19 )
 	x11-libs/libXfixes
 	x11-libs/libXdamage
 	x11-libs/libXxf86vm
-	x11-libs/libXft
+	virtual/xft
 	xrandr? ( x11-libs/libXrandr )
 	x11-libs/libXrender
 	x11-misc/xbitmaps
@@ -51,24 +41,21 @@ DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 PDEPEND="doc? ( app-doc/edox-data )"
 
+S=${WORKDIR}/e16/e
+
 pkg_setup() {
 	built_with_use media-libs/imlib2 X || die "emerge imlib2 with USE=X"
 }
 
 src_unpack() {
-	if [[ ${PV} == *9999 ]] ; then
-		subversion_src_unpack
-		cd "${S}"
-		NOCONFIGURE=blah ./autogen.sh
-	else
-		unpack ${A}
-	fi
+	subversion_src_unpack
+	cd "${S}"
+	NOCONFIGURE=blah ./autogen.sh
 }
 
 src_compile() {
 	econf \
 		$(use_enable nls) \
-		$(use_enable dbus) \
 		$(use_enable esd sound) \
 		$(use_enable xinerama) \
 		$(use_enable xrandr) \
