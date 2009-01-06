@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/banshee/Attic/banshee-1.4.1-r3.ebuild,v 1.5 2008/12/31 03:37:19 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/banshee/Attic/banshee-1.4.1-r3.ebuild,v 1.7 2009/01/06 21:30:26 loki_val Exp $
 
 EAPI=2
 
@@ -15,12 +15,13 @@ SRC_URI="http://download.banshee-project.org/${PN}/${PN}-1-${PV}.tar.bz2"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+aac +boo daap doc +encode +flac ipod +mad mtp +podcast test +vorbis"
+IUSE="+aac boo daap doc +encode +flac ipod +mad mtp podcast test +vorbis"
 
 RDEPEND=">=dev-lang/mono-2
 	>=dev-dotnet/gtk-sharp-2.12
 	>=dev-dotnet/gconf-sharp-2.8
 	>=dev-dotnet/gnome-sharp-2.8
+	dev-dotnet/notify-sharp
 	>=media-libs/gst-plugins-bad-${GVER}
 	>=media-libs/gst-plugins-good-${GVER}
 	>=media-libs/gst-plugins-ugly-${GVER}
