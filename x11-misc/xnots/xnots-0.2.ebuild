@@ -1,8 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xnots/Attic/xnots-0.2.ebuild,v 1.3 2009/01/08 22:30:26 nelchael Exp $
-
-EAPI="2"
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xnots/Attic/xnots-0.2.ebuild,v 1.2 2008/06/19 06:22:00 nelchael Exp $
 
 DESCRIPTION="A desktop sticky note program for the unix geek"
 HOMEPAGE="http://xnots.sourceforge.net"
@@ -16,7 +14,7 @@ IUSE=""
 RDEPEND="x11-libs/libX11
 	x11-libs/libXext
 	x11-libs/libXrender
-	x11-libs/pango[X]"
+	x11-libs/pango"
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
