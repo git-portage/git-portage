@@ -1,6 +1,16 @@
 # ChangeLog for dev-libs/boost
-# Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/boost/ChangeLog,v 1.141 2008/12/16 16:37:27 dev-zero Exp $
+# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/boost/ChangeLog,v 1.143 2009/01/06 15:13:01 dev-zero Exp $
+
+*boost-1.35.0-r4 (06 Jan 2009)
+
+  06 Jan 2009; Tiziano Müller <dev-zero@gentoo.org>
+  +boost-1.35.0-r4.ebuild:
+  Added patches from bug #252287 to fix compilation with gcc-4.4 (thanks to
+  Daniel J.)
+
+  05 Jan 2009; Markus Meier <maekke@gentoo.org> metadata.xml:
+  drop local icu USE-flag description, as it's global now
 
 *boost-1.37.0 (16 Dec 2008)
 *boost-1.36.0 (16 Dec 2008)
