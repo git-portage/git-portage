@@ -1,13 +1,13 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.6.4.ebuild,v 1.11 2009/01/08 21:32:21 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.6.4.ebuild,v 1.8 2008/12/31 15:04:17 jer Exp $
 
 inherit eutils multilib python
 
 DESCRIPTION="Portage is the package management and distribution system for Gentoo"
 HOMEPAGE="http://www.gentoo.org/proj/en/portage/index.xml"
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc ~sparc-fbsd x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ~ppc64 s390 sh sparc ~sparc-fbsd x86 ~x86-fbsd"
 PROVIDE="virtual/portage"
 SLOT="0"
 IUSE="build doc epydoc selinux linguas_pl"
@@ -230,19 +230,18 @@ pkg_postinst() {
 	# will be identified and removed in postrm.
 	python_mod_optimize /usr/$(get_libdir)/portage/pym
 
-	einfo
-	einfo "For help with using portage please consult the Gentoo Handbook"
-	einfo "at http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=3"
-	einfo
+	elog
+	elog "For help with using portage please consult the Gentoo Handbook"
+	elog "at http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=3"
+	elog
 
-	local warning_shown=0
 	if [ $DOWNGRADE_FROM_2_2 = 0 ] ; then
 		ewarn
 		echo "Since you have downgraded from portage-2.2, do not forget to" \
 		"use revdep-rebuild when appropriate, since the @preserved-rebuild" \
 		"package set is only supported with portage-2.2." | fmt -w 70 | \
 		while read ; do ewarn "$REPLY" ; done
-		warning_shown=1
+		ewarn
 	fi
 	if [ $UPGRADE_FROM_2_1 = 0 ] ; then
 		ewarn
@@ -252,15 +251,6 @@ pkg_postinst() {
 		"such as --noreplace, --update, or --newuse is specified." \
 		| fmt -w 70 | while read ; do ewarn "$REPLY" ; done
 		ewarn
-		echo "File collision protection is now enabled by default via" \
-		"make.globals with FEATURES=protect-owned. If you want to" \
-		"disable collision protection completely (not recommended), then" \
-		"you need to ensure that neither protect-owned nor collision-protect" \
-		"are enabled." | fmt -w 70 | while read ; do ewarn "$REPLY" ; done
-		warning_shown=1
-	fi
-	if [ $warning_shown = 1 ] ; then
-		ewarn # for symmetry
 	fi
 }
 
