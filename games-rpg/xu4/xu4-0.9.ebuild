@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-rpg/xu4/xu4-0.9.ebuild,v 1.8 2009/01/08 21:56:40 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-rpg/xu4/xu4-0.9.ebuild,v 1.7 2007/10/30 06:59:17 mr_bones_ Exp $
 
-EAPI=2
 inherit eutils games
 
 DESCRIPTION="A remake of the computer game Ultima IV"
@@ -13,16 +12,24 @@ SRC_URI="mirror://sourceforge/xu4/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="x86 ~ppc ~amd64"
 IUSE=""
 
 RDEPEND="dev-libs/libxml2
-	media-libs/sdl-mixer[timidity]
+	media-libs/sdl-mixer
 	media-libs/libsdl"
 DEPEND="${RDEPEND}
 	app-arch/unzip"
 
 S=${WORKDIR}/u4
+
+pkg_setup() {
+	if ! built_with_use media-libs/sdl-mixer timidity ; then
+		eerror "${PN} needs sdl-mixer compiled with timidity use-flag enabled!"
+		die "sdl-mixer without timidity detected"
+	fi
+	games_pkg_setup
+}
 
 src_unpack() {
 	# xu4 will read the data files right out of the zip files
@@ -35,8 +42,7 @@ src_unpack() {
 	mkdir u4-dos
 	cd u4-dos
 	unzip -q ../ultima4.zip || die "unzip failed"
-}
-src_prepare() {
+	cd "${S}"
 	epatch "${FILESDIR}/${PV}-savegame.patch"
 	sed -i \
 		-e "s:/usr/local/lib/u4:$(games_get_libdir)/u4:" src/u4file.c \
