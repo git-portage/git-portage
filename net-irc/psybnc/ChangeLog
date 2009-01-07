@@ -1,6 +1,17 @@
 # ChangeLog for net-irc/psybnc
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/psybnc/ChangeLog,v 1.8 2008/12/14 18:23:14 gurligebis Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-irc/psybnc/ChangeLog,v 1.10 2009/01/04 16:47:05 gurligebis Exp $
+
+  04 Jan 2009; Bjarke Istrup Pedersen <gurligebis@gentoo.org>
+  psybnc-2.3.2.9-r1.ebuild:
+  Adding missing IUSE
+
+*psybnc-2.3.2.9-r1 (03 Jan 2009)
+
+  03 Jan 2009; Bjarke Istrup Pedersen <gurligebis@gentoo.org>
+  +files/psybnc-2.3.2.9-scripting.patch, metadata.xml,
+  -psybnc-2.3.2.9.ebuild, +psybnc-2.3.2.9-r1.ebuild:
+  Adding support for scripting
 
 *psybnc-2.3.2.9 (14 Dec 2008)
 
