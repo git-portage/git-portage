@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/kvm/Attic/kvm-81.ebuild,v 1.1 2008/12/16 15:30:13 dang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/kvm/Attic/kvm-81.ebuild,v 1.2 2009/01/05 01:30:01 dang Exp $
 
 inherit eutils flag-o-matic toolchain-funcs linux-mod
 
@@ -79,6 +79,10 @@ pkg_setup() {
 		eerror
 		eerror "or enable the 'modules' USE flag."
 		die "KVM support not detected!"
+	fi
+
+	if use sdl && ! built_with_use media-libs/libsdl X ; then
+		die "You need to rebuild media-libs/libsdl with the X use flag"
 	fi
 
 	enewgroup kvm
