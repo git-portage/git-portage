@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/cmd5checkpw/cmd5checkpw-0.30-r1.ebuild,v 1.3 2009/01/04 04:53:28 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/cmd5checkpw/cmd5checkpw-0.30-r1.ebuild,v 1.5 2009/01/07 19:20:27 ranger Exp $
 
-inherit eutils fixheadtails qmail
+inherit eutils fixheadtails
 
 MY_VER="030"
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.fehcom.de/qmail/smtpauth.html"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE=""
 
 DEPEND=""
@@ -41,19 +41,12 @@ src_unpack() {
 	epatch "${FILESDIR}"/euid_${MY_VER}.diff
 	epatch "${FILESDIR}"/reloc.diff
 
-	sed \
-		-e 's:-c -g -Wall -O3:$(OPTCFLAGS):' \
-		-e "s:cp cmd5checkpw /bin/:cp cmd5checkpw \${D}/bin/:" \
-		-e "s:cp cmd5checkpw.8 /usr/man/man8/:cp cmd5checkpw.8 \${D}/usr/share/man/man8/:" \
-		-i Makefile
+	sed -e 's:-c -g -Wall -O3:$(OPTCFLAGS):' -i Makefile
 
 	ht_fix_file Makefile
 }
 
 src_compile() {
-	# cmd5checkpw does not use conf-cc/conf-ld
-	# qmail_set_cc
-
 	emake OPTCFLAGS="${CFLAGS}" || die
 }
 
@@ -63,7 +56,6 @@ src_install() {
 
 	exeinto /bin
 	doexe cmd5checkpw
-
 	doman cmd5checkpw.8
 
 	fowners cmd5checkpw /etc/poppasswd /bin/cmd5checkpw
