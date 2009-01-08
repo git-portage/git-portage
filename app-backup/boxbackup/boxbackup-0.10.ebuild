@@ -1,11 +1,11 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.11 2008/12/18 22:40:13 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.12 2009/01/05 18:50:40 patrick Exp $
 
 inherit eutils autotools
 
 DESCRIPTION="A completely automatic on-line backup system"
-HOMEPAGE="http://www.fluffy.co.uk/boxbackup/"
+HOMEPAGE="http://boxbackup.org"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
 LICENSE="BSD"
 SLOT="0"
