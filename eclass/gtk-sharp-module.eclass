@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/gtk-sharp-module.eclass,v 1.8 2009/01/05 17:12:34 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/gtk-sharp-module.eclass,v 1.11 2009/01/06 19:37:18 grobian Exp $
 
 # Author : Peter Johanson <latexer@gentoo.org>, butchered by ikelos, then loki_val.
 # Based off of original work in gst-plugins.eclass by <foser@gentoo.org>
@@ -88,6 +88,7 @@ has "${GTK_SHARP_MODULE}" ${gnome_desktop_sharp_module_list} \
 case ${PF} in
 	#gtk-sharp tarball
 	gtk-sharp-gapi*)
+		add_rdepend "!<=dev-dotnet/gtk-sharp-2.12.7:2"
 		add_depend "dev-perl/XML-LibXML"
 		;;
 	gtk-sharp-*)
@@ -207,8 +208,8 @@ gtk-sharp-module_fix_files() {
 	# We also make sure to call the installed gapi-fixup and gapi-codegen and
 	# not the ones that would be built locally.
 	local gapi_dir="${ROOT}/usr/share/gapi${GTK_SHARP_SLOT_DEC}"
-	local GAPI_FIXUP="gapi${GTK_SHARP_COMPONENT_SLOT}-fixup"
-	local GAPI_CODEGEN="gapi${GTK_SHARP_COMPONENT_SLOT}-codegen"
+	local GAPI_FIXUP="gapi2-fixup"
+	local GAPI_CODEGEN="gapi2-codegen"
 
 	local makefiles=( $(find "${S}" -name Makefile.in) )
 	sed -i \
@@ -357,10 +358,10 @@ generate_pkgconfig() {
 		Version: ${pkgconfig_version}
 	EOF
 
-        for gfile in "${D}"/usr/${apifile%/*}/*-api.xml
-        do
-                CSTRING="${CSTRING} -I:"'${gapidir}'"/${gfile##*/}"
-        done
+	for gfile in "${D}"/usr/${apifile%/*}/*-api.xml
+	do
+		CSTRING="${CSTRING} -I:"'${gapidir}'"/${gfile##*/}"
+	done
 	echo "${CSTRING}" >> "${D}/usr/$(get_libdir)/pkgconfig/${pkgconfig_filename}.pc"
 
 
