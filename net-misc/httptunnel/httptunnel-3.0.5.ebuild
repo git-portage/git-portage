@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/httptunnel/Attic/httptunnel-3.0.5.ebuild,v 1.10 2005/04/24 02:52:25 hansmi Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/httptunnel/Attic/httptunnel-3.0.5.ebuild,v 1.11 2009/01/08 18:56:37 jer Exp $
 
 DESCRIPTION="httptunnel can create IP tunnels through firewalls/proxies using HTTP"
 HOMEPAGE="http://www.nocrew.org/software/httptunnel.html"
@@ -22,5 +22,5 @@ src_compile() {
 }
 
 src_install () {
-	make DESTDIR=${D} install || die
+	make DESTDIR="${D}" install || die
 }
