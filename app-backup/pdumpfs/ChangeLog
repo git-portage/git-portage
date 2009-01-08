@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/pdumpfs
 # Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/pdumpfs/ChangeLog,v 1.8 2009/01/04 00:04:05 cla Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/pdumpfs/ChangeLog,v 1.9 2009/01/05 18:00:08 patrick Exp $
+
+  05 Jan 2009; Patrick Lauer <patrick@gentoo.org> pdumpfs-1.3-r1.ebuild:
+  Homepage and src_uri fix
 
   04 Jan 2009; Dawid Węgliński <cla@gentoo.org> pdumpfs-1.3-r1.ebuild:
   Stable on amd64 (bug #253324)
