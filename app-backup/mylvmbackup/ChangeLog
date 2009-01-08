@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/mylvmbackup
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/ChangeLog,v 1.9 2008/11/01 07:09:11 robbat2 Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/ChangeLog,v 1.10 2009/01/05 18:24:18 patrick Exp $
+
+*mylvmbackup-0.11 (05 Jan 2009)
+
+  05 Jan 2009; Patrick Lauer <patrick@gentoo.org> +mylvmbackup-0.11.ebuild:
+  Bump to 0.11
 
 *mylvmbackup-0.9 (01 Nov 2008)
 
