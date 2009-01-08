@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/dvbstreamer/Attic/dvbstreamer-0.9.ebuild,v 1.3 2009/01/10 17:56:00 gentoofan23 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/dvbstreamer/Attic/dvbstreamer-0.9.ebuild,v 1.1 2008/02/01 19:42:02 zzam Exp $
 
 inherit multilib
 
@@ -13,7 +13,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-db/sqlite-3
+RDEPEND=">=media-libs/libdvbpsi-0.1.5
+	>=dev-db/sqlite-3
 	sys-libs/readline"
 
 DEPEND="${RDEPEND}
@@ -32,7 +33,7 @@ src_compile() {
 
 src_install() {
 	emake install DESTDIR="${D}" || die "make install failed"
-	rm -rf "${D}"/usr/doc
+	rm -rf "${D}"/usr/doc/DVBStreamer/
 
 	dodoc doc/*.txt ChangeLog README AUTHORS NEWS TODO || die "dodoc failed"
 }
