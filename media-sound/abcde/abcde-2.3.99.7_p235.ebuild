@@ -1,13 +1,13 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/abcde/Attic/abcde-2.3.99.7_p235.ebuild,v 1.8 2009/01/10 10:59:13 beandog Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/abcde/Attic/abcde-2.3.99.7_p235.ebuild,v 1.7 2007/11/27 14:25:16 armin76 Exp $
 
 DESCRIPTION="A Better CD Encoder"
-HOMEPAGE="http://code.google.com/p/abcde/"
+HOMEPAGE="http://www.hispalinux.es/~data/abcde.php"
 SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 MY_PV=${P/_p235/}
-S="${WORKDIR}"/${MY_PV}
+S=${WORKDIR}/${MY_PV}
 
 LICENSE="GPL-2"
 SLOT="0"
