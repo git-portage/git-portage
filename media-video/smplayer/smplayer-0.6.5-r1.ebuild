@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/smplayer/Attic/smplayer-0.6.5-r1.ebuild,v 1.6 2009/01/10 17:45:36 klausman Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/smplayer/Attic/smplayer-0.6.5-r1.ebuild,v 1.4 2009/01/08 01:20:41 yngwin Exp $
 
 EAPI=2
 inherit eutils qt4
@@ -10,12 +10,13 @@ HOMEPAGE="http://smplayer.sourceforge.net"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha ~amd64 ~hppa ~ppc ~ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 sparc x86 ~x86-fbsd"
 IUSE="debug"
 DEPEND="|| ( x11-libs/qt-gui:4
 			=x11-libs/qt-4.3* )"
 RDEPEND="${DEPEND}
 	media-video/mplayer[ass,png]"
+
 
 LANGS="bg ca cs de en_US es eu fi fr gl hu it ja ka ko ku mk nl pl pt_BR pt_PT sk sr sv tr zh_CN zh_TW"
 NOLONGLANGS="ar_SY el_GR ro_RO ru_RU sl_SI uk_UA"
