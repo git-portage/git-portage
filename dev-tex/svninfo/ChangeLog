@@ -1,23 +1,6 @@
 # ChangeLog for dev-tex/svninfo
 # Copyright 2005-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/svninfo/ChangeLog,v 1.30 2009/01/11 19:11:14 maekke Exp $
-
-  11 Jan 2009; Markus Meier <maekke@gentoo.org> svninfo-0.7.3-r1.ebuild:
-  x86 stable, bug #254083
-
-  10 Jan 2009; Raúl Porcel <armin76@gentoo.org> svninfo-0.7.3-r1.ebuild:
-  ia64/sparc stable wrt #254083
-
-  10 Jan 2009; Tobias Klausmann <klausman@gentoo.org>
-  svninfo-0.7.3-r1.ebuild:
-  Stable on alpha, bug #254083
-
-  09 Jan 2009; Thomas Anderson <gentoofan23@gentoo.org>
-  svninfo-0.7.3-r1.ebuild:
-  stable amd64, bug 254083
-
-  09 Jan 2009; Joseph Jezak <josejx@gentoo.org> svninfo-0.7.3-r1.ebuild:
-  Marked ppc stable for bug #254083.
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/svninfo/ChangeLog,v 1.25 2009/01/08 19:30:29 jer Exp $
 
   08 Jan 2009; Jeroen Roovers <jer@gentoo.org> svninfo-0.7.3-r1.ebuild:
   Stable for HPPA (bug #254083).
