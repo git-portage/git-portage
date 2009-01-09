@@ -1,12 +1,6 @@
 # ChangeLog for app-emacs/quilt-el
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/quilt-el/ChangeLog,v 1.5 2009/01/12 14:11:57 fmccor Exp $
-
-  12 Jan 2009; Ferris McCormick <fmccor@gentoo.org> quilt-el-0.45.4.ebuild:
-  Sparc stable, part of Bug #254621.
-
-  09 Jan 2009; Joseph Jezak <josejx@gentoo.org> quilt-el-0.45.4.ebuild:
-  Marked ~ppc for bug #247666.
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/quilt-el/ChangeLog,v 1.3 2008/11/24 20:47:18 ranger Exp $
 
   24 Nov 2008; Brent Baude <ranger@gentoo.org> quilt-el-0.45.4.ebuild:
   keyworded ~arch for ppc64, bug 247666
