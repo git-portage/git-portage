@@ -1,20 +1,21 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/nfbtrans/nfbtrans-7.74.ebuild,v 1.7 2009/01/10 17:44:39 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/nfbtrans/nfbtrans-7.74.ebuild,v 1.6 2008/01/06 19:00:54 williamh Exp $
 
 inherit eutils
 
 DESCRIPTION="braille translator from the National Federation of the Blind"
-HOMEPAGE="http://www.nfb.org/nfb/nfbtrans.asp"
-SRC_URI="http://www.nfb.org/Images/nfb/Products_Technology/nfbtr774.zip"
+HOMEPAGE="http://www.nfb.org/nfbtrans.htm"
+SRC_URI="http://www.nfb.org/braille/nfbtrans/nfbtr774.zip"
 
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ppc x86"
 IUSE=""
 
-DEPEND=" >=app-arch/unzip-5.50-r2"
-RDEPEND=""
+RDEPEND="virtual/libc"
+DEPEND="${RDEPEND}
+	>=app-arch/unzip-5.50-r2"
 
 S=${WORKDIR}
 
@@ -27,7 +28,7 @@ src_unpack() {
 }
 
 src_compile() {
-	make CC=$(tc-getCC) LIBS= CFLAGS="${CFLAGS} -DLINUX" all || die
+	make LIBS= CFLAGS="${CFLAGS} -DLINUX" all || die
 }
 
 src_install() {
