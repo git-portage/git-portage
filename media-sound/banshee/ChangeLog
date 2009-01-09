@@ -1,6 +1,29 @@
 # ChangeLog for media-sound/banshee
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/banshee/ChangeLog,v 1.79 2008/12/14 14:24:15 loki_val Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/banshee/ChangeLog,v 1.83 2009/01/09 13:46:01 loki_val Exp $
+
+*banshee-1.4.1-r5 (09 Jan 2009)
+
+  09 Jan 2009; Peter Alfredsen <loki_val@gentoo.org>
+  -banshee-1.4.1-r4.ebuild, +banshee-1.4.1-r5.ebuild:
+  Depend on new gstreamer, fix bug 250704. Depend on new notify-sharp, fix
+  bug 254235. Bump the plugins deps for good measure.
+
+*banshee-1.4.1-r4 (07 Jan 2009)
+
+  07 Jan 2009; Peter Alfredsen <loki_val@gentoo.org>
+  +files/banshee-1.4.1-startup-fail-g-s-d.patch, -banshee-1.4.1-r3.ebuild,
+  +banshee-1.4.1-r4.ebuild:
+  Add patch that fixes strange startup failure on non-gnome systems.
+  Upstream bug 566846.
+
+  06 Jan 2009; Peter Alfredsen <loki_val@gentoo.org>
+  banshee-1.4.1-r3.ebuild:
+  Drop defaults for some stuff that might not be *must-have*.
+
+  06 Jan 2009; Peter Alfredsen <loki_val@gentoo.org>
+  banshee-1.4.1-r3.ebuild:
+  Use external notify-sharp, now that it's in tree.
 
   14 Dec 2008; Peter Alfredsen <loki_val@gentoo.org>
   banshee-1.0.0-r1.ebuild, banshee-1.2.1.ebuild, banshee-1.2.1-r2.ebuild,
