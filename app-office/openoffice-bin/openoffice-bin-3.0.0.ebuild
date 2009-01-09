@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/openoffice-bin/Attic/openoffice-bin-3.0.0.ebuild,v 1.8 2009/01/11 20:48:10 suka Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/openoffice-bin/Attic/openoffice-bin-3.0.0.ebuild,v 1.6 2008/10/21 06:31:16 suka Exp $
 
 inherit eutils fdo-mime rpm multilib
 
@@ -30,7 +30,7 @@ DESCRIPTION="OpenOffice productivity suite"
 SRC_URI="x86? ( mirror://openoffice/stable/${PV}/OOo_${PV}_LinuxIntel_install_en-US.tar.gz )
 	amd64? ( mirror://openoffice/stable/${PV}/OOo_${PV}_LinuxX86-64_install_en-US.tar.gz )"
 
-LANGS="af ar as_IN be_BY bg br bs ca cs da de dz el en en_GB en_ZA es et fi fr ga gu he hi_IN hr hu it ja ka km ko lt mk ml_IN mr_IN nb ne nl nn nr ns or_IN pa_IN pl pt pt_BR ru rw sh sk sl sr ss st sv sw_TZ ta te_IN tg th ti_ER tr ts uk ur_IN ve vi xh zh_CN zh_TW zu"
+LANGS="af ar as_IN be_BY bg br bs ca cs da de dz el en en_GB en_ZA es et fi fr ga gu he hi_IN hr hu it ja ka km ko lt mk ml_IN mr_IN nb ne nl nn nr ns or_IN pa_IN pl pt pt_BR rw sh sk sl sr ss st sv sw_TZ ta te_IN tg th ti_ER tr ts uk ur_IN ve vi xh zh_CN zh_TW zu"
 
 for X in ${LANGS} ; do
 	[[ ${X} != "en" ]] && SRC_URI="${SRC_URI} linguas_${X}? (
@@ -153,7 +153,7 @@ src_install () {
 	dosym ${INSTDIR}/program/spadmin /usr/bin/ooffice-printeradmin
 	dosym ${INSTDIR}/program/soffice /usr/bin/soffice
 
-	rm -f "${D}${INSTDIR}/basis-link" || die
+	rm -f ${INSTDIR}/basis-link || die
 	dosym ${INSTDIR}/basis3.0 ${INSTDIR}/basis-link
 
 	# Change user install dir
