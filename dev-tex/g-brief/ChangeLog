@@ -1,6 +1,15 @@
 # ChangeLog for dev-tex/g-brief
-# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/g-brief/ChangeLog,v 1.18 2008/10/06 04:45:48 jer Exp $
+# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/g-brief/ChangeLog,v 1.21 2009/01/09 18:23:51 josejx Exp $
+
+  09 Jan 2009; Joseph Jezak <josejx@gentoo.org> g-brief-4.0.2.ebuild:
+  Marked ppc stable for bug #254088.
+
+  08 Jan 2009; Jeroen Roovers <jer@gentoo.org> g-brief-4.0.2.ebuild:
+  Stable for HPPA (bug #254088).
+
+  07 Jan 2009; Brent Baude <ranger@gentoo.org> g-brief-4.0.2.ebuild:
+  stable ppc64, bug 254088
 
   06 Oct 2008; Jeroen Roovers <jer@gentoo.org> g-brief-4.0.2.ebuild:
   Marked ~hppa (bug #237202).
