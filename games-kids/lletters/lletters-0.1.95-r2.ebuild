@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-kids/lletters/lletters-0.1.95-r2.ebuild,v 1.6 2009/01/12 17:45:17 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-kids/lletters/lletters-0.1.95-r2.ebuild,v 1.5 2008/04/21 20:09:21 maekke Exp $
 
-EAPI=2
 inherit eutils games
 
 PATCH_LEVEL=3
@@ -18,20 +17,23 @@ SLOT="0"
 KEYWORDS="amd64 ~ppc x86"
 IUSE="nls"
 
-RDEPEND="x11-libs/gtk+:2
+RDEPEND=">=x11-libs/gtk+-2
 	nls? ( virtual/libintl )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	nls? ( sys-devel/gettext )"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	epatch "${WORKDIR}"/${PN}_${PV}+gtk2-${PATCH_LEVEL}.diff \
 		"${FILESDIR}"/${P}-build-2.patch
 	cp -r "${WORKDIR}"/{images,sounds} . || die "copying images and sounds failed."
 }
 
-src_configure() {
+src_compile() {
 	egamesconf $(use_enable nls)
+	emake || die "emake failed."
 }
 
 src_install () {
