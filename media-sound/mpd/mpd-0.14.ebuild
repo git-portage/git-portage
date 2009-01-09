@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/Attic/mpd-0.14.ebuild,v 1.4 2009/01/12 21:08:22 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/Attic/mpd-0.14.ebuild,v 1.3 2008/12/30 21:14:47 angelos Exp $
 
 EAPI=2
 
@@ -62,10 +62,9 @@ src_configure() {
 
 	if use icecast; then
 		myconf+=" $(use_enable vorbis shout_ogg) $(use_enable lame shout_mp3)
-			$(use_enable lame lametest) $(use_enable lame)"
+			$(use_enable lame lametest)"
 	else
-		myconf+=" --disable-shout_ogg --disable-shout_mp3 --disable-lametest
-			--disable-lame"
+		myconf+=" --disable-shout_ogg --disable-shout_mp3"
 	fi
 
 	if use ogg && use flac; then
