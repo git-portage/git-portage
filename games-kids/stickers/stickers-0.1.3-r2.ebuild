@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-kids/stickers/Attic/stickers-0.1.3-r2.ebuild,v 1.4 2009/01/12 16:27:48 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-kids/stickers/Attic/stickers-0.1.3-r2.ebuild,v 1.3 2008/02/29 19:28:54 carlo Exp $
 
-EAPI=2
 inherit eutils
 
 DESCRIPTION="Stickers Book for small children"
@@ -14,25 +13,26 @@ SLOT="0"
 KEYWORDS="amd64 ppc x86"
 IUSE="nls"
 
-RDEPEND="media-libs/imlib[gtk]
+RDEPEND="media-libs/imlib
 	x11-libs/libXext
 	x11-libs/libX11
 	x11-libs/libXi
-	x11-libs/gtk+:1
+	=x11-libs/gtk+-1.2*
 	nls? ( virtual/libintl )"
 DEPEND="${RDEPEND}
 	x11-proto/xextproto
 	x11-proto/xproto
 	nls? ( sys-devel/gettext )"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
 	# gcc34 fix? (bug #72734)
 	sed -i \
-		-e '/ONTRACE/d' rc.c \
+		-e '/ONTRACE/d' "${S}/rc.c" \
 		|| die "sed failed"
 }
 
-src_configure() {
+src_compile() {
 	local myconf
 	use nls || myconf="${myconf} --disable-nls"
 
@@ -41,14 +41,15 @@ src_configure() {
 		--infodir=/usr/share/info \
 		--mandir=/usr/share/man \
 		${myconf} || die "configure failed"
+	emake || die "emake failed"
 }
 
 src_install () {
-	emake \
+	make \
 		prefix="${D}/usr" \
 		infodir="${D}/usr/share/info" \
 		mandir="${D}/usr/share/man" install \
-		|| die "emake install failed"
+		|| die "make install failed"
 	newicon scenes/Aquarium.scene.xpm ${PN}.xpm
-	make_desktop_entry ${PN} Stickers
+	make_desktop_entry ${PN} Stickers ${PN}
 }
