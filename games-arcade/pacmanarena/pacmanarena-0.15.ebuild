@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/pacmanarena/pacmanarena-0.15.ebuild,v 1.14 2009/01/13 02:07:19 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/pacmanarena/pacmanarena-0.15.ebuild,v 1.13 2007/02/14 10:46:34 nyhm Exp $
 
-EAPI=2
 inherit eutils games
 
 DESCRIPTION="a Pacman clone in full 3D with a few surprises. Rockets, bombs and explosions abound."
@@ -18,7 +17,7 @@ IUSE=""
 RDEPEND="virtual/opengl
 	virtual/glu
 	media-libs/libsdl
-	media-libs/sdl-mixer[vorbis]
+	media-libs/sdl-mixer
 	media-libs/sdl-net"
 DEPEND="${RDEPEND}
 	app-arch/unzip"
@@ -29,9 +28,7 @@ src_unpack() {
 	unpack pacman-arena-${PV}.tar.bz2
 	cd "${S}"
 	unpack pacman-data-0.0.zip
-}
 
-src_prepare() {
 	sed -i \
 		-e "/^CFLAGS/ s:pacman:${PN}:" \
 		-e '1i CC=@CC@' \
