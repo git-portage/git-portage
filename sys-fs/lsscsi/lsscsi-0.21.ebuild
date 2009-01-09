@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/lsscsi/Attic/lsscsi-0.21.ebuild,v 1.2 2009/01/12 19:27:33 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/lsscsi/Attic/lsscsi-0.21.ebuild,v 1.1 2008/11/18 02:12:18 robbat2 Exp $
 
 inherit toolchain-funcs
 
@@ -16,6 +16,6 @@ IUSE=""
 DEPEND=">=sys-fs/sysfsutils-1.2.0"
 
 src_install() {
-	emake install DESTDIR="${D}" || die
+	make install DESTDIR="${D}" || die
 	dodoc AUTHORS CREDITS ChangeLog NEWS README
 }
