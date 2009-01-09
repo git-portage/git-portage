@@ -1,6 +1,27 @@
 # ChangeLog for app-portage/gentoolkit
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/gentoolkit/ChangeLog,v 1.145 2008/11/30 17:15:33 betelgeuse Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-portage/gentoolkit/ChangeLog,v 1.151 2009/01/09 16:31:58 ranger Exp $
+
+  09 Jan 2009; Brent Baude <ranger@gentoo.org> gentoolkit-0.2.4.2-r1.ebuild:
+  stable ppc, bug 253897
+
+  08 Jan 2009; Raúl Porcel <armin76@gentoo.org>
+  gentoolkit-0.2.4.2-r1.ebuild:
+  alpha/ia64/x86 stable wrt #253897
+
+  08 Jan 2009; Jeremy Olexa <darkside@gentoo.org>
+  gentoolkit-0.2.4.2-r1.ebuild:
+  amd64 stable, bug 253897
+
+  07 Jan 2009; Jeroen Roovers <jer@gentoo.org> gentoolkit-0.2.4.2-r1.ebuild:
+  Stable for HPPA (bug #253897).
+
+  07 Jan 2009; Ferris McCormick <fmccor@gentoo.org>
+  gentoolkit-0.2.4.2-r1.ebuild:
+  Sparc stable, Bug #253897.
+
+  07 Jan 2009; Brent Baude <ranger@gentoo.org> gentoolkit-0.2.4.2-r1.ebuild:
+  stable ppc64, bug 253897
 
 *gentoolkit-0.2.4.2-r1 (30 Nov 2008)
 
