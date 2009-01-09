@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/ted/Attic/ted-2.17-r1.ebuild,v 1.3 2009/01/11 00:29:39 truedfx Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/ted/Attic/ted-2.17-r1.ebuild,v 1.2 2008/09/14 16:41:30 truedfx Exp $
 
 inherit autotools
 
@@ -26,17 +26,14 @@ src_unpack() {
 	cd "${S}"
 	epatch "${FILESDIR}"/${P}-motif.patch
 
-	local configure
-	for configure in $(find . -name configure.in)
-	do
-		pushd "$(dirname "${configure}")" >/dev/null || die
-		eautoreconf
-		popd >/dev/null || die
-	done
+	cd "${S}"/appFrame
+	eautoreconf
 
+	cd "${S}"/Ted
+	eautoreconf
 	sed -i \
 		-e 's@^CFLAGS=@CFLAGS= -DDOCUMENT_DIR=\\"/usr/share/doc/${PF}/\\"@' \
-		Ted/makefile.in || die "sed failed"
+		makefile.in
 }
 
 src_compile() {
