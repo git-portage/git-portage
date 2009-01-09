@@ -1,8 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/openswan/Attic/openswan-2.6.19.ebuild,v 1.2 2009/01/11 11:01:51 mrness Exp $
-
-EAPI=1
+# $Header: /var/cvsroot/gentoo-x86/net-misc/openswan/Attic/openswan-2.6.19.ebuild,v 1.1 2008/12/03 23:30:28 mrness Exp $
 
 inherit eutils linux-info
 
@@ -23,8 +21,7 @@ COMMON_DEPEND="!net-misc/strongswan
 	ldap? ( net-nds/openldap )"
 DEPEND="${COMMON_DEPEND}
 	virtual/linux-sources
-	app-text/xmlto
-	app-text/docbook-xml-dtd:4.1.2" # see bug 237132
+	app-text/xmlto"
 RDEPEND="${COMMON_DEPEND}
 	virtual/logger
 	sys-apps/iproute2"
