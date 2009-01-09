@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/swfdec/swfdec-0.8.4.ebuild,v 1.1 2008/12/24 14:25:44 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/swfdec/swfdec-0.8.4.ebuild,v 1.3 2009/01/07 15:29:33 dang Exp $
 
 EAPI=1
 
@@ -15,7 +15,7 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
-IUSE="alsa doc ffmpeg gstreamer +gtk oss pulseaudio"
+IUSE="alsa doc ffmpeg gstreamer +gtk pulseaudio"
 
 RDEPEND=">=dev-libs/glib-2.16
 	>=dev-libs/liboil-0.3.1
@@ -61,9 +61,8 @@ pkg_setup() {
 
 src_compile() {
 	# Backend logic is from configure.ac:
-	# alsa > pulseaudio > oss
+	# alsa > pulseaudio
 	local audio="none"
-	use oss && audio="oss"
 	use pulseaudio && audio="pulse"
 	use alsa && audio="alsa"
 
@@ -77,8 +76,6 @@ src_compile() {
 		$(use_enable doc gtk-doc) \
 		$(use_enable gstreamer) \
 		$(use_enable gtk) \
-		--disable-ffmpeg \
-		--disable-mad \
 		--with-audio=${audio} || die "configure failed"
 
 	# bug #216284 image tests are not ready yet
