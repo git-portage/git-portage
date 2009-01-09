@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/qt-unixODBC/Attic/qt-unixODBC-3.3.8b.ebuild,v 1.1 2008/07/26 21:00:53 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/qt-unixODBC/Attic/qt-unixODBC-3.3.8b.ebuild,v 1.4 2009/01/09 17:27:05 gmsoft Exp $
 
 inherit eutils
 
@@ -11,7 +11,7 @@ SRC_URI="ftp://ftp.trolltech.com/qt/source/qt-x11-${SRCTYPE}-${PV}.tar.gz"
 IUSE=""
 LICENSE="|| ( QPL-1.0 GPL-2 GPL-3 )"
 SLOT="3"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ~ppc ppc64 ~sparc ~x86"
 
 DEPEND="~x11-libs/qt-${PV}
 	dev-db/unixODBC"
