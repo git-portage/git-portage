@@ -1,6 +1,6 @@
-# Copyright 2006-2009 Gentoo Foundation
+# Copyright 2006-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/matchbox-common/Attic/matchbox-common-0.9.1-r1.ebuild,v 1.8 2009/01/12 21:00:59 solar Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/matchbox-common/Attic/matchbox-common-0.9.1-r1.ebuild,v 1.6 2008/07/13 07:28:35 josejx Exp $
 
 inherit eutils versionator
 
@@ -33,5 +33,5 @@ src_install() {
 	# Insert GDM/KDM xsession file
 	wm=matchbox make_session_desktop MatchBox matchbox-session
 
-	dodoc AUTHORS ChangeLog INSTALL NEWS README
+	dodoc AUTHORS Changelog INSTALL NEWS README
 }
