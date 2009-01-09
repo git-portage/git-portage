@@ -1,14 +1,6 @@
 # ChangeLog for games-kids/stickers
-# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-kids/stickers/Attic/ChangeLog,v 1.16 2009/01/12 16:54:04 mr_bones_ Exp $
-
-  12 Jan 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/stickers-0.1.3-gentoo.patch, stickers-0.1.3-r2.ebuild:
-  add some patches from Bruce Schultz (bug #226483)
-
-  12 Jan 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  stickers-0.1.3-r2.ebuild:
-  EAPI=2; add use-based dep
+# Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-kids/stickers/Attic/ChangeLog,v 1.14 2008/02/29 19:28:54 carlo Exp $
 
   29 Feb 2008; Carsten Lohrke <carlo@gentoo.org> ChangeLog:
   Remove icon extension from desktop entry to match Icon Theme Specification.
