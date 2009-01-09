@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/libdbi/libdbi-0.8.3.ebuild,v 1.12 2009/01/11 15:57:12 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/libdbi/libdbi-0.8.3.ebuild,v 1.10 2009/01/05 17:33:27 jer Exp $
 
 inherit eutils autotools multilib
 
@@ -15,7 +15,7 @@ DEPEND=">=sys-apps/sed-4
 		${RDEPEND}"
 PDEPEND=">=dev-db/libdbi-drivers-0.8.3"
 IUSE="doc"
-KEYWORDS="alpha ~amd64 hppa ia64 ~mips ppc ~ppc64 ~sparc x86"
+KEYWORDS="alpha ~amd64 hppa ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 SLOT=0
 
 src_unpack() {
