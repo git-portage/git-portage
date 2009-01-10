@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-6.5.1.126130.ebuild,v 1.5 2009/01/12 21:46:40 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-6.5.1.126130.ebuild,v 1.4 2009/01/10 12:21:11 ikelos Exp $
 
 inherit eutils versionator fdo-mime gnome2-utils
 
@@ -19,7 +19,7 @@ SRC_URI="
 
 LICENSE="vmware"
 SLOT="0"
-KEYWORDS="-* amd64 x86"
+KEYWORDS="-* ~x86 ~amd64"
 IUSE=""
 RESTRICT="strip fetch binchecks"
 PROPERTIES="interactive"
