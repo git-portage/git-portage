@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/gimp/Attic/gimp-2.6.3.ebuild,v 1.7 2009/01/10 17:10:51 hanno Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/gimp/Attic/gimp-2.6.4.ebuild,v 1.1 2009/01/10 17:10:51 hanno Exp $
 
-inherit autotools eutils gnome2 fdo-mime multilib python
+inherit eutils gnome2 fdo-mime multilib python
 
 DESCRIPTION="GNU Image Manipulation Program"
 HOMEPAGE="http://www.gimp.org/"
@@ -25,7 +25,7 @@ RDEPEND=">=dev-libs/glib-2.18.1
 	dev-libs/libxslt
 	x11-misc/xdg-utils
 	x11-themes/hicolor-icon-theme
-	media-libs/gegl
+	>=media-libs/gegl-0.0.22
 	aalib? ( media-libs/aalib )
 	alsa? ( >=media-libs/alsa-lib-1.0.14a-r1 )
 	curl? ( net-misc/curl )
@@ -51,15 +51,6 @@ DEPEND="${RDEPEND}
 	doc? ( >=dev-util/gtk-doc-1 )"
 
 DOCS="AUTHORS ChangeLog* HACKING NEWS README*"
-
-src_unpack() {
-	gnome2_src_unpack
-
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-asneeded.diff" || die
-
-	eautoreconf || die
-}
 
 pkg_setup() {
 	if use pdf && ! built_with_use app-text/poppler-bindings gtk; then
