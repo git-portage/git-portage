@@ -1,14 +1,6 @@
 # ChangeLog for app-emulation/vmware-server-console
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-server-console/Attic/ChangeLog,v 1.39 2009/01/12 21:49:52 maekke Exp $
-
-  12 Jan 2009; Markus Meier <maekke@gentoo.org>
-  vmware-server-console-1.0.8.126538.ebuild:
-  amd64/x86 stable, bug #245941
-
-  11 Jan 2009; Markus Meier <maekke@gentoo.org>
-  vmware-server-console-1.0.7.108231.ebuild:
-  amd64/x86 stable, bug #236167
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-server-console/Attic/ChangeLog,v 1.37 2008/11/09 21:08:55 ikelos Exp $
 
 *vmware-server-console-1.0.8.126538 (09 Nov 2008)
 
