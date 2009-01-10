@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/lirc/Attic/lirc-0.8.4.ebuild,v 1.2 2009/01/10 13:21:54 beandog Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/lirc/Attic/lirc-0.8.4.ebuild,v 1.1 2008/10/12 19:55:53 zzam Exp $
 
 inherit eutils linux-mod flag-o-matic autotools
 
@@ -119,8 +119,7 @@ add_device() {
 
 pkg_setup() {
 
-	ewarn "If your LIRC device requires modules, you'll need MODULE_UNLOAD"
-	ewarn "support in your kernel."
+	CONFIG_CHECK="MODULES MODULE_UNLOAD"
 
 	linux-mod_pkg_setup
 
