@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.381 2009/01/12 22:51:38 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.379 2009/01/10 12:02:56 vapier Exp $
 #
 # Maintainer: Toolchain Ninjas <toolchain@gentoo.org>
 
@@ -333,8 +333,8 @@ get_gcc_src_uri() {
 		GCC_SRC_URI="${GCC_SRC_URI} !nopie? ( $(gentoo_urls ${PIE_CORE}) )"
 
 	# gcc minispec for the hardened gcc 4 compiler
-	[[ -n ${SPECS_VER} ]] && \
-		GCC_SRC_URI="${GCC_SRC_URI} !nopie? ( $(gentoo_urls gcc-${SPECS_GCC_VER}-specs-${SPECS_VER}.tar.bz2) )"
+        [[ -n ${SPECS_VER} ]] && \
+                GCC_SRC_URI="${GCC_SRC_URI} !nopie? ( $(gentoo_urls gcc-${SPECS_GCC_VER}-specs-${SPECS_VER}.tar.bz2) )"
 
 	# gcc bounds checking patch
 	if [[ -n ${HTB_VER} ]] ; then
@@ -707,7 +707,7 @@ setup_minispecs_gcc_build_specs() {
 	# Setup the "build.specs" file for gcc to use when building.
 	if want_minispecs ; then
 		if hardened_gcc_works pie ; then
-			cat "${WORKDIR}"/specs/pie.specs >> "${WORKDIR}"/build.specs
+        		cat "${WORKDIR}"/specs/pie.specs >> "${WORKDIR}"/build.specs
 		fi
 		for s in nostrict znow; do
 			cat "${WORKDIR}"/specs/${s}.specs >> "${WORKDIR}"/build.specs
@@ -724,7 +724,7 @@ copy_minispecs_gcc_specs() {
 		cat "${WORKDIR}"/build.specs >> "${WORKDIR}"/specs/specs
 		insinto ${LIBPATH}
 		doins "${WORKDIR}"/specs/* || die "failed to install specs"
-	fi
+        fi
 }
 add_profile_eselect_conf() {
 	local compiler_config_file=$1
@@ -1082,7 +1082,6 @@ gcc_src_unpack() {
 	do_gcc_HTB_patches
 	do_gcc_SSP_patches
 	do_gcc_PIE_patches
-	do_gcc_USER_patches
 
 	${ETYPE}_src_unpack || die "failed to ${ETYPE}_src_unpack"
 
@@ -2044,22 +2043,6 @@ do_gcc_stub() {
 			EPATCH_SINGLE_MSG="Applying stub patch for $1 ..." \
 			epatch "${stub_patch}"
 			return 0
-		fi
-	done
-}
-
-do_gcc_USER_patches() {
-	local check base=${PORTAGE_CONFIGROOT}/etc/portage/patches
-	for check in {${CATEGORY}/${PF},${CATEGORY}/${P},${CATEGORY}/${PN}}; do
-		EPATCH_SOURCE=${base}/${CTARGET}/${check}
-		[[ -r ${EPATCH_SOURCE} ]] || EPATCH_SOURCE=${base}/${CHOST}/${check}
-		[[ -r ${EPATCH_SOURCE} ]] || EPATCH_SOURCE=${base}/${check}
-		if [[ -d ${EPATCH_SOURCE} ]] ; then
-			EPATCH_SUFFIX="patch"
-			EPATCH_FORCE="yes" \
-			EPATCH_MULTI_MSG="Applying user patches from ${EPATCH_SOURCE} ..." \
-			epatch
-			break
 		fi
 	done
 }
