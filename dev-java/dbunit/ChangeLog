@@ -1,16 +1,6 @@
 # ChangeLog for dev-java/dbunit
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/dbunit/ChangeLog,v 1.19 2009/01/13 15:54:02 serkan Exp $
-
-  13 Jan 2009; Serkan Kaba <serkan@gentoo.org> dbunit-2.4.1.ebuild:
-  Use mirror syntax for SourceForge.
-
-*dbunit-2.4.1 (12 Jan 2009)
-
-  12 Jan 2009; Petteri Räty <betelgeuse@gentoo.org> +files/build-2.4.xml,
-  +dbunit-2.4.1.ebuild:
-  Version bump. Fixes bug #250411. Thanks to Mike Weissman
-  <mike@weisso.com>.
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/dbunit/ChangeLog,v 1.17 2008/10/22 11:46:03 fordfrog Exp $
 
   22 Oct 2008; Miroslav Šulc <fordfrog@gentoo.org> dbunit-2.2.ebuild:
   Migrated to EAPI-1 and restricted to dev-java/poi:0 because of
