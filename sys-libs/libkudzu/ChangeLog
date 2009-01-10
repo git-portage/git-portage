@@ -1,6 +1,13 @@
 # ChangeLog for sys-libs/libkudzu
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/libkudzu/ChangeLog,v 1.33 2008/10/31 16:16:26 jer Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/libkudzu/ChangeLog,v 1.35 2009/01/09 21:17:26 klausman Exp $
+
+  09 Jan 2009; Tobias Klausmann <klausman@gentoo.org>
+  libkudzu-1.2.57.1.ebuild:
+  Stable on alpha, bug #208956
+
+  07 Jan 2009; Raúl Porcel <armin76@gentoo.org> libkudzu-1.2.57.1.ebuild:
+  ia64/x86 stable wrt #208956
 
   31 Oct 2008; Jeroen Roovers <jer@gentoo.org> libkudzu-1.2.57.1.ebuild:
   Do not abuse append-ldflags (bug #226927).
