@@ -1,6 +1,16 @@
 # ChangeLog for app-shells/localshell
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/localshell/ChangeLog,v 1.8 2008/12/13 23:58:49 flameeyes Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-shells/localshell/ChangeLog,v 1.10 2009/01/09 02:33:16 robbat2 Exp $
+
+  09 Jan 2009; Robin H. Johnson <robbat2@gentoo.org> localshell-1.1.ebuild,
+  localshell-1.2.ebuild:
+  New homepage.
+
+*localshell-1.3.1 (09 Jan 2009)
+
+  09 Jan 2009; Robin H. Johnson <robbat2@gentoo.org>
+  +localshell-1.3.1.ebuild:
+  Version bump.
 
   13 Dec 2008; Diego E. Pettenò <flameeyes@gentoo.org>
   +files/localshell-1.2+gcc-4.3.patch, localshell-1.2.ebuild:
