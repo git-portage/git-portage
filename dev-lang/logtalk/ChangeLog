@@ -1,0 +1,13 @@
+# ChangeLog for dev-lang/logtalk
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/logtalk/ChangeLog,v 1.2 2009/01/10 14:50:23 miknix Exp $
+
+  10 Jan 2009; <miknix@gentoo.org> metadata.xml:
+  Add myself as maintainer with Keri permission.
+
+*logtalk-2.34.1 (10 Jan 2009)
+
+  10 Jan 2009; <keri@gentoo.org> +metadata.xml, +logtalk-2.34.1.ebuild:
+  Initial port. Ebuild contributed by Angelo Arrifano <miknix@gentoo.org>.
+  Closes #248791
+
