@@ -5,9 +5,11 @@
 		<email>compnerd@gentoo.org</email>
 		<name>Saleem Abdulrasool</name>
 	</maintainer>
-	<herd>freedesktop</herd>
+	<herd>gentopia</herd>
 	<use>
 		<flag name="zsh-completion">Install zsh command completion.</flag>
 	</use>
+	<longdescription lang="en">
+	</longdescription>
 </pkgmetadata>
 
