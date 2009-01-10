@@ -5,7 +5,7 @@
 		<email>compnerd@gentoo.org</email>
 		<name>Saleem Abdulrasool</name>
 	</maintainer>
-	<herd>freedesktop</herd>
+	<herd>gentopia</herd>
 	<use>
 		<flag name='ntp'>install support for <pkg>net-misc/ntp</pkg></flag>
 	</use>
