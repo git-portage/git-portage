@@ -1,9 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ncmpc/Attic/ncmpc-0.12.ebuild,v 1.2 2009/01/11 13:21:32 gentoofan23 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ncmpc/Attic/ncmpc-0.12.ebuild,v 1.1 2008/12/05 21:39:11 omp Exp $
 
 EAPI="2"
-inherit multilib
 
 DESCRIPTION="A ncurses client for the Music Player Daemon (MPD)"
 HOMEPAGE="http://mpd.wikia.com/wiki/Client:Ncmpc"
@@ -23,7 +22,6 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 src_configure() {
-	##The use_with lyrics-screen is for multilib
 	econf \
 		$(use_enable artist-screen) \
 		$(use_enable colors) \
@@ -32,7 +30,6 @@ src_configure() {
 		$(use_enable key-screen) \
 		$(use_enable lirc) \
 		$(use_enable lyrics-screen) \
-		$(use_with   lyrics-screen lyrics-plugin-dir /usr/$(get_libdir)/ncmpc/lyrics) \
 		$(use_enable mouse) \
 		$(use_enable nls) \
 		$(use_enable search-screen) \
