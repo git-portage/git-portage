@@ -1,6 +1,26 @@
 # ChangeLog for www-client/epiphany
 # Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/epiphany/ChangeLog,v 1.181 2009/01/05 23:01:13 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/epiphany/ChangeLog,v 1.188 2009/01/10 00:03:48 remi Exp $
+
+  10 Jan 2009; Rémi Cardona <remi@gentoo.org> ChangeLog:
+  fix ChangeLog encoding
+
+  09 Jan 2009; Brent Baude <ranger@gentoo.org> ChangeLog:
+  marking epiphany-2.22.3-r1 ppc stable for bug 253534
+
+  08 Jan 2009; Raúl Porcel <armin76@gentoo.org> epiphany-2.22.3-r10.ebuild,
+  epiphany-2.22.3-r11.ebuild, epiphany-2.24.0.1.ebuild,
+  epiphany-2.24.1-r10.ebuild, epiphany-2.24.2.1-r10.ebuild:
+  Mark -sparc due to bug #253541
+
+  08 Jan 2009; Jeroen Roovers <jer@gentoo.org> epiphany-2.22.3-r1.ebuild:
+  Stable for HPPA (bug #253534).
+
+  07 Jan 2009; Raúl Porcel <armin76@gentoo.org> epiphany-2.22.3-r1.ebuild:
+  alpha/ia64 stable wrt #253534
+
+  07 Jan 2009; Brent Baude <ranger@gentoo.org> epiphany-2.22.3-r1.ebuild:
+  stable ppc64, bug 253534
 
   05 Jan 2009; Markus Meier <maekke@gentoo.org> epiphany-2.22.3-r1.ebuild:
   amd64/x86 stable, bug #253534
