@@ -1,12 +1,6 @@
 # ChangeLog for dev-tex/g-brief
 # Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/g-brief/ChangeLog,v 1.24 2009/01/10 19:12:05 maekke Exp $
-
-  10 Jan 2009; Markus Meier <maekke@gentoo.org> g-brief-4.0.2.ebuild:
-  amd64/x86 stable, bug #254088
-
-  10 Jan 2009; Raúl Porcel <armin76@gentoo.org> g-brief-4.0.2.ebuild:
-  ia64/sparc stable wrt #254088
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/g-brief/ChangeLog,v 1.22 2009/01/10 14:34:37 klausman Exp $
 
   10 Jan 2009; Tobias Klausmann <klausman@gentoo.org> g-brief-4.0.2.ebuild:
   Stable on alpha, bug #254088
