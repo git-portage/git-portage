@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/hdup
-# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/ChangeLog,v 1.9 2008/11/26 03:11:58 flameeyes Exp $
+# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/ChangeLog,v 1.10 2009/01/09 19:11:39 josejx Exp $
+
+  09 Jan 2009; Joseph Jezak <josejx@gentoo.org> hdup-2.0.14.ebuild:
+  Marked ~ppc for bug #211720.
 
   26 Nov 2008; Diego E. Pettenò <flameeyes@gentoo.org> hdup-2.0.14.ebuild:
   Fix building with --as-needed, respect LDFLAGS, don't strip.
