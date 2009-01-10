@@ -1,6 +1,6 @@
-# Copyright 2006-2008 Gentoo Foundation
+# Copyright 2006-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/matchbox-common/Attic/matchbox-common-0.9.1-r1.ebuild,v 1.6 2008/07/13 07:28:35 josejx Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/matchbox-common/Attic/matchbox-common-0.9.1-r1.ebuild,v 1.7 2009/01/10 02:23:34 solar Exp $
 
 inherit eutils versionator
 
