@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/icmpdn/icmpdn-0.4.ebuild,v 1.3 2009/01/14 05:35:27 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/icmpdn/icmpdn-0.4.ebuild,v 1.2 2007/07/15 02:34:06 mr_bones_ Exp $
 
-inherit eutils flag-o-matic multilib
+inherit eutils
 
 DESCRIPTION="ICMP Domain Name utilities & NSS backend"
 HOMEPAGE="http://www.dolda2000.com/~fredrik/icmp-dn/"
@@ -12,25 +12,27 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
+DEPEND="sys-libs/glibc"
+RDEPEND="${DEPEND}"
 
 src_compile() {
-	append-cppflags -D_GNU_SOURCE #241318
-	econf \
+	LDFLAGS='-Wl,-z,now' \
+		econf \
 		--sysconfdir=/etc \
-		--libdir=/$(get_libdir) \
+		--libdir=/lib \
 		|| die "econf failed"
 	emake || die "emake failed"
 }
 
 src_install() {
 	emake install DESTDIR="${D}" || die "emake install failed"
-	newinitd "${FILESDIR}"/init.d-icmpdnd icmpdnd
-	newconfd "${FILESDIR}"/conf.d-icmpdnd icmpdnd
+	newinitd ${FILESDIR}/init.d-icmpdnd icmpdnd
+	newconfd ${FILESDIR}/conf.d-icmpdnd icmpdnd
 	dodoc AUTHORS ChangeLog README
 	# must always run as root
 	fperms 4711 /usr/bin/idnlookup
 	# useless as nothing should link against this lib
-	rm "${D}"/lib*/*.{la,so}
+	rm ${D}/lib/*.la
 }
 
 pkg_postinst() {
