@@ -1,6 +1,26 @@
 # ChangeLog for dev-perl/Image-Imlib2
-# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Image-Imlib2/ChangeLog,v 1.38 2008/12/08 02:24:57 robbat2 Exp $
+# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Image-Imlib2/ChangeLog,v 1.44 2009/01/11 13:47:17 maekke Exp $
+
+  11 Jan 2009; Markus Meier <maekke@gentoo.org> Image-Imlib2-2.02.ebuild:
+  amd64/x86 stable, bug #254333
+
+  10 Jan 2009; Raúl Porcel <armin76@gentoo.org> Image-Imlib2-2.02.ebuild:
+  ia64 stable wrt #254333
+
+  09 Jan 2009; Tobias Klausmann <klausman@gentoo.org>
+  Image-Imlib2-2.02.ebuild:
+  Stable on alpha, bug #254333
+
+  09 Jan 2009; Joseph Jezak <josejx@gentoo.org> Image-Imlib2-2.02.ebuild:
+  Marked ppc stable for bug #254333.
+
+  09 Jan 2009; Ferris McCormick <fmccor@gentoo.org>
+  Image-Imlib2-2.02.ebuild:
+  Sparc stable, Bug #254333.
+
+  09 Jan 2009; Torsten Veller <tove@gentoo.org> Image-Imlib2-1.13.ebuild:
+  Remove Module-Build from RDEPEND (#246942)
 
 *Image-Imlib2-2.02 (08 Dec 2008)
 
