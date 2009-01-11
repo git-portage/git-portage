@@ -1,9 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/aget/Attic/aget-0.4.ebuild,v 1.13 2009/01/14 03:27:27 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/aget/Attic/aget-0.4.ebuild,v 1.12 2008/02/04 17:07:10 grobian Exp $
 
 inherit eutils
 
+IUSE=""
 DEB_PATCH="${PN}_${PV}-4.diff"
 DESCRIPTION="multithreaded HTTP download accelerator"
 HOMEPAGE="http://www.enderunix.org/aget/"
@@ -13,17 +14,18 @@ SRC_URI="http://www.enderunix.org/${PN}/${P}.tar.gz
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~mips ~ppc ppc64 ~sparc ~x86"
-IUSE=""
+
+DEPEND="virtual/libc"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${WORKDIR}"/${DEB_PATCH}
-	sed -i \
-		-e '/^CFLAGS/s:=.*:+= -Wall $(CPPFLAGS):' \
-		-e '/^LDFLAGS/s:=:+=:' \
-		Makefile
-	sed -i '/_XOPEN_SOURCE/d' Head.c
+	sed -i "/^CFLAGS/s:-g:${CFLAGS}:" Makefile
+}
+
+src_compile() {
+	emake || die
 }
 
 src_install() {
