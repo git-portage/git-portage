@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>freedesktop</herd>
+	<maintainer>
+		<email>compnerd@gentoo.org</email>
+		<name>Saleem Abdulrasool</name>
+	</maintainer>
+	<herd>gentopia</herd>
 	<use>
 		<flag name="zsh-completion">Install zsh command completion.</flag>
 	</use>
+	<longdescription lang="en">
+	</longdescription>
 </pkgmetadata>
 

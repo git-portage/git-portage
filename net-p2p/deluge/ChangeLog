@@ -1,25 +1,6 @@
 # ChangeLog for net-p2p/deluge
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/deluge/ChangeLog,v 1.110 2009/01/15 09:43:15 armin76 Exp $
-
-*deluge-1.1.0-r1 (15 Jan 2009)
-*deluge-1.0.7-r1 (15 Jan 2009)
-
-  15 Jan 2009; Raúl Porcel <armin76@gentoo.org> files/deluged.init,
-  -deluge-1.0.7.ebuild, +deluge-1.0.7-r1.ebuild, -deluge-1.1.0.ebuild,
-  +deluge-1.1.0-r1.ebuild:
-  Revbump so users get the fix on the init script, bug #254995, thanks to
-  Matt Farmer <matt at mattfarmer dot net> for the fix
-
-  13 Jan 2009; Raúl Porcel <armin76@gentoo.org> -deluge-1.0.5.ebuild,
-  -deluge-1.0.6.ebuild, deluge-1.0.7.ebuild:
-  x86 stable, remove old
-
-*deluge-1.1.0 (13 Jan 2009)
-
-  13 Jan 2009; Raúl Porcel <armin76@gentoo.org> -deluge-1.1.0_rc1.ebuild,
-  -deluge-1.1.0_rc2.ebuild, -deluge-1.1.0_rc3.ebuild, +deluge-1.1.0.ebuild:
-  Version bump
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/deluge/ChangeLog,v 1.107 2009/01/06 16:11:13 armin76 Exp $
 
 *deluge-1.1.0_rc3 (06 Jan 2009)
 

@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-nds/openldap/Attic/openldap-2.3.43.ebuild,v 1.10 2009/01/15 11:12:28 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-nds/openldap/Attic/openldap-2.3.43.ebuild,v 1.8 2008/12/07 12:18:39 vapier Exp $
 
-EAPI="2"
+EAPI="1"
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -30,7 +30,7 @@ RDEPEND="sys-libs/ncurses
 	!minimal? (
 		odbc? ( dev-db/unixODBC )
 		slp? ( net-libs/openslp )
-		perl? ( dev-lang/perl[-build] )
+		perl? ( dev-lang/perl )
 		samba? ( dev-libs/openssl )
 		kerberos? ( virtual/krb5 )
 		berkdb? (
@@ -187,7 +187,9 @@ pkg_setup() {
 	enewuser ldap 439 -1 /usr/$(get_libdir)/openldap ldap
 }
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+
 	# According to MDK, the link order needs to be changed so that
 	# on systems w/ MD5 passwords the system crypt library is used
 	# (the net result is that "passwd" can be used to change ldap passwords w/
@@ -230,7 +232,7 @@ src_prepare() {
 	fi
 }
 
-src_configure() {
+src_compile() {
 	local myconf
 
 	#Fix for glibc-2.8 and ucred. Bug 228457.
@@ -306,9 +308,7 @@ src_configure() {
 		--enable-shared \
 		--libexecdir=/usr/$(get_libdir)/openldap \
 		${myconf} || die "configure failed"
-}
 
-src_compile() {
 	emake depend || die "make depend failed"
 	emake || die "make failed"
 

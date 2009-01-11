@@ -1,12 +1,6 @@
 # ChangeLog for sys-apps/dbus
-# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/dbus/ChangeLog,v 1.230 2009/01/15 22:37:33 loki_val Exp $
-
-  15 Jan 2009; Peter Alfredsen <loki_val@gentoo.org> metadata.xml:
-  Compnerd retired.
-
-  13 Jan 2009; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
-  gentopia is becoming freedesktop
+# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/dbus/ChangeLog,v 1.228 2008/11/25 05:15:16 aballier Exp $
 
   25 Nov 2008; Alexis Ballier <aballier@gentoo.org> dbus-1.2.3.ebuild,
   dbus-1.2.3-r1.ebuild:

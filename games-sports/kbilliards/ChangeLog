@@ -1,10 +1,6 @@
 # ChangeLog for games-sports/kbilliards
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-sports/kbilliards/Attic/ChangeLog,v 1.7 2009/01/15 10:18:27 tove Exp $
-
-  13 Jan 2009; Alfredo Tupone <tupone@gentoo.org>
-  +files/kbilliards-0.8.7b-gcc43.patch, kbilliards-0.8.7b.ebuild:
-  Fix build with gcc-4.3 Bug #251137 from <flameeyes@gentoo.org>
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-sports/kbilliards/Attic/ChangeLog,v 1.5 2008/08/06 00:41:56 gentoofan23 Exp $
 
   06 Aug 2008; Thomas Anderson <gentoofan23@gentoo.org>
   kbilliards-0.8.7b.ebuild:
