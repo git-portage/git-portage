@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/monsterz/Attic/monsterz-0.7.1-r1.ebuild,v 1.7 2009/01/11 21:34:04 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/monsterz/Attic/monsterz-0.7.1-r1.ebuild,v 1.6 2008/06/23 14:31:54 jer Exp $
 
-EAPI=2
 inherit eutils games
 
 DESCRIPTION="a little puzzle game, similar to the famous Bejeweled or Zookeeper"
@@ -14,11 +13,18 @@ SLOT="0"
 KEYWORDS="amd64 hppa ppc sparc x86"
 IUSE=""
 
-DEPEND="dev-python/pygame
-	media-libs/sdl-image[png]
-	media-libs/sdl-mixer[mikmod]"
+DEPEND="dev-python/pygame"
 
-src_prepare() {
+pkg_setup() {
+	if ! built_with_use media-libs/sdl-mixer mikmod ; then
+		die "${PN} requires that media-libs/sdl-mixer be built with USE=mikmod"
+	fi
+	games_pkg_setup
+}
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	epatch \
 		"${FILESDIR}"/${P}-gentoo.patch \
 		"${FILESDIR}"/${P}-64bit.patch
