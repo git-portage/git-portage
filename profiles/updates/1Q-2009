@@ -1,3 +1,1 @@
 move media-gfx/icns2png media-libs/libicns
-move net-libs/icee dev-cpp/IceE
-move app-text/new app-text/fmt-ptrn
