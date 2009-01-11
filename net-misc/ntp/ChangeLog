@@ -1,6 +1,22 @@
 # ChangeLog for net-misc/ntp
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/ntp/ChangeLog,v 1.131 2008/11/17 01:58:33 gentoofan23 Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/ntp/ChangeLog,v 1.135 2009/01/11 14:22:05 gmsoft Exp $
+
+  11 Jan 2009; Guy Martin <gmsoft@gentoo.org> ntp-4.2.4_p6.ebuild:
+  hppa stable, #254098
+
+  11 Jan 2009; Markus Meier <maekke@gentoo.org> ntp-4.2.4_p6.ebuild:
+  amd64/x86 stable, bug #254098
+
+*ntp-4.2.4_p6 (10 Jan 2009)
+
+  10 Jan 2009; Mike Frysinger <vapier@gentoo.org> +ntp-4.2.4_p6.ebuild:
+  Version bump #254098.
+
+  10 Jan 2009; Mike Frysinger <vapier@gentoo.org>
+  +files/ntp-4.2.4_p5-adjtimex.patch, ntp-4.2.4_p5.ebuild:
+  Fix by me for building on uClibc systems with adjtimex() crap #254030 by
+  Tom Lloyd.
 
   17 Nov 2008; Thomas Anderson <gentoofan23@gentoo.org> ntp-4.2.4_p5.ebuild:
   stable amd64, bug 246242
