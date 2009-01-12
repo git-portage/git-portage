@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/pdumpfs/pdumpfs-1.3-r1.ebuild,v 1.4 2009/01/05 18:00:08 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/pdumpfs/pdumpfs-1.3-r1.ebuild,v 1.5 2009/01/11 15:19:36 maekke Exp $
 
 DESCRIPTION="a daily backup system similar to Plan9's dumpfs"
 HOMEPAGE="http://0xcc.net/pdumpfs/"
@@ -8,7 +8,7 @@ SRC_URI="http://0xcc.net/pdumpfs/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ~sparc ~x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE="cjk"
 
 DEPEND=">=virtual/ruby-1.8.1"
