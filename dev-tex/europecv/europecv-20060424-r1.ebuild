@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/europecv/europecv-20060424-r1.ebuild,v 1.11 2009/01/08 19:32:26 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/europecv/europecv-20060424-r1.ebuild,v 1.13 2009/01/12 20:12:01 fmccor Exp $
 
 inherit latex-package
 
@@ -12,11 +12,11 @@ SRC_URI="mirror://gentoo/${P}.zip"
 
 LICENSE="LPPL-1.2"
 SLOT="0"
-KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 
 IUSE="examples"
 
-RDEPEND="|| ( dev-texlive/texlive-latexrecommended dev-tex/latex-unicode )"
+RDEPEND="|| ( >=dev-texlive/texlive-latexextra-2008 =dev-texlive/texlive-latexrecommended-2007* dev-tex/latex-unicode )"
 DEPEND="${RDEPEND}
 	app-arch/unzip"
 S="${WORKDIR}/${PN}"
