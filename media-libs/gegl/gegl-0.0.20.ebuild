@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gegl/Attic/gegl-0.0.20.ebuild,v 1.14 2008/12/28 18:11:06 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/gegl/Attic/gegl-0.0.20.ebuild,v 1.15 2009/01/10 16:50:30 hanno Exp $
 
 WANT_AUTOCONF=latest
 
