@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/yabause/Attic/yabause-0.9.7.ebuild,v 1.1 2008/08/31 22:03:26 nyhm Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/yabause/Attic/yabause-0.9.9.ebuild,v 1.1 2009/01/13 03:43:24 mr_bones_ Exp $
 
 EAPI=1
 inherit games
