@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ssmping/Attic/ssmping-0.9-r1.ebuild,v 1.6 2009/01/14 04:15:15 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ssmping/Attic/ssmping-0.9-r1.ebuild,v 1.5 2007/09/13 19:33:19 maekke Exp $
 
 inherit toolchain-funcs eutils
 
@@ -13,15 +13,10 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-build.patch #240750
-	tc-export CC
-}
+DEPEND="virtual/libc"
 
 src_install() {
-	dobin ssmping asmping mcfirst || die
-	dosbin ssmpingd || die
+	dobin ssmping asmping mcfirst
+	dosbin ssmpingd
 	doman ssmping.1 asmping.1 mcfirst.1
 }
