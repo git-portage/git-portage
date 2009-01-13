@@ -1,6 +1,26 @@
 # ChangeLog for media-tv/dvbstreamer
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/dvbstreamer/ChangeLog,v 1.6 2008/02/01 19:42:02 zzam Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-tv/dvbstreamer/ChangeLog,v 1.11 2009/01/11 15:17:41 maekke Exp $
+
+  11 Jan 2009; Markus Meier <maekke@gentoo.org> dvbstreamer-0.9.ebuild:
+  x86 stable, bug #236103
+
+  10 Jan 2009; Thomas Anderson <gentoofan23@gentoo.org>
+  dvbstreamer-0.9.ebuild:
+  stable amd64, bug 236103
+
+  10 Jan 2009; Thomas Anderson <gentoofan23@gentoo.org>
+  dvbstreamer-0.9.ebuild, dvbstreamer-1.1.ebuild:
+  Remove /usr/doc, not just /usr/doc/DVBStreamer
+
+  10 Jan 2009; Steve Dibb <beandog@gentoo.org> dvbstreamer-0.9.ebuild,
+  dvbstreamer-1.1.ebuild:
+  remove libdvbpsi dep, bug 236103
+
+*dvbstreamer-1.1 (10 Jan 2009)
+
+  10 Jan 2009; Steve Dibb <beandog@gentoo.org> +dvbstreamer-1.1.ebuild:
+  Version bump, bug 236104
 
 *dvbstreamer-0.9 (01 Feb 2008)
 
