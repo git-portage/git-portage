@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/Attic/mpd-0.14.ebuild,v 1.3 2008/12/30 21:14:47 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/Attic/mpd-0.14.ebuild,v 1.6 2009/01/12 23:41:36 angelos Exp $
 
 EAPI=2
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/musicpd/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~hppa ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile curl debug doc ffmpeg flac icecast id3 ipv6 jack lame libsamplerate mad mikmod musepack ogg oss pulseaudio +sysvipc unicode vorbis wavpack zeroconf"
+IUSE="aac +alsa ao audiofile curl debug doc ffmpeg flac icecast id3 ipv6 jack lame libsamplerate mad mikmod musepack ogg oss pulseaudio +sysvipc unicode vorbis wavpack zeroconf"
 
 RDEPEND="!sys-cluster/mpich2
 	>=dev-libs/glib-2.4:2
@@ -60,11 +60,25 @@ src_prepare() {
 src_configure() {
 	local myconf=""
 
+	if ! use alsa && ! use ao && ! use icecast && ! use jack && ! use oss && \
+		! use pulseaudio; then
+		eerror "You did not enable any output backend."
+		einfo "Please enable one of the following USE flags:"
+		einfo "USE=alsa - output via ALSA"
+		einfo "USE=ao - output via media-libs/libao"
+		einfo "USE=icecast - output via net-misc/icecast"
+		einfo "USE=jack - output via media-sound/jack-audio-connection-kit"
+		einfo "USE=oss - output via OSS"
+		einfo "USE=pulseaudio - output via media-sound/pulseaudio"
+		die "No audio output enabled"
+	fi
+
 	if use icecast; then
 		myconf+=" $(use_enable vorbis shout_ogg) $(use_enable lame shout_mp3)
-			$(use_enable lame lametest)"
+			$(use_enable lame lametest) $(use_enable lame)"
 	else
-		myconf+=" --disable-shout_ogg --disable-shout_mp3"
+		myconf+=" --disable-shout_ogg --disable-shout_mp3 --disable-lametest
+			--disable-lame"
 	fi
 
 	if use ogg && use flac; then
