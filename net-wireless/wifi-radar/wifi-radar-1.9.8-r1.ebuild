@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/wifi-radar/Attic/wifi-radar-1.9.8-r1.ebuild,v 1.6 2009/01/14 16:33:25 s4t4n Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/wifi-radar/Attic/wifi-radar-1.9.8-r1.ebuild,v 1.5 2008/12/02 10:22:22 s4t4n Exp $
 
 inherit eutils
 
@@ -19,7 +19,7 @@ RDEPEND=">=dev-python/pygtk-2.6.1
 src_unpack()
 {
 	unpack ${A}
-	cd "${S}"
+	"cd ${S}"
 	epatch \
 		debian/patches/01atheros.dpatch \
 		debian/patches/02wpa_supp_args.dpatch
@@ -30,7 +30,8 @@ src_install ()
 	dosbin wifi-radar
 	dosed "s:/etc/conf.d:/etc:g" /usr/sbin/wifi-radar
 	dobin wifi-radar.sh
-	insinto /etc; doins wifi-radar.conf
+	dodir /etc/wifi-radar
+	insinto /etc/wifi-radar; doins wifi-radar.conf
 	if use svg; then
 		doicon pixmaps/wifi-radar.svg
 		make_desktop_entry wifi-radar.sh "WiFi Radar" wifi-radar Network
@@ -39,7 +40,7 @@ src_install ()
 		make_desktop_entry wifi-radar.sh "WiFi Radar" wifi-radar Network
 	fi
 	doman wifi-radar.1 wifi-radar.conf.5
-	dodoc CHANGE.LOG README TODO
+	dodoc AUTHORS ChangeLog README TODO
 }
 
 pkg_postinst()
