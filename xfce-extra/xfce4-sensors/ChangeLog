@@ -1,6 +1,14 @@
 # ChangeLog for xfce-extra/xfce4-sensors
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-sensors/Attic/ChangeLog,v 1.38 2008/12/01 21:19:57 angelos Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-sensors/Attic/ChangeLog,v 1.40 2009/01/13 15:39:12 ranger Exp $
+
+  13 Jan 2009; Brent Baude <ranger@gentoo.org>
+  xfce4-sensors-0.10.99.6.ebuild:
+  Marking xfce4-sensors-0.10.99.6 ppc for bug 254440
+
+  12 Jan 2009; Jeremy Olexa <darkside@gentoo.org>
+  xfce4-sensors-0.10.99.6.ebuild:
+  amd64 stable, bug 254440
 
   01 Dec 2008; Christoph Mende <angelos@gentoo.org>
   xfce4-sensors-0.10.99.6.ebuild:
