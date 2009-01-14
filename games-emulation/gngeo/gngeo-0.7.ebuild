@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/gngeo/gngeo-0.7.ebuild,v 1.6 2009/01/17 18:21:17 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/gngeo/gngeo-0.7.ebuild,v 1.5 2008/06/14 15:34:07 coldwind Exp $
 
 inherit eutils autotools games
 
@@ -13,9 +13,11 @@ SLOT="0"
 KEYWORDS="~amd64 ppc x86"
 IUSE=""
 
-DEPEND="virtual/opengl
+RDEPEND="virtual/opengl
 	media-libs/sdl-image
 	media-libs/libsdl"
+DEPEND="${RDEPEND}
+	x86? ( >=dev-lang/nasm-0.98 )"
 
 src_unpack() {
 	unpack ${A}
@@ -28,7 +30,7 @@ src_unpack() {
 }
 
 src_compile() {
-	egamesconf --disable-i386asm || die "egamesconf failed"
+	egamesconf $(use_enable x86 i386asm) || die "egamesconf failed"
 	emake || die "emake failed"
 }
 
