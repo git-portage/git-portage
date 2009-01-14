@@ -1,6 +1,24 @@
 # ChangeLog for media-sound/amarok
-# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/amarok/ChangeLog,v 1.294 2008/12/14 19:40:53 scarabeus Exp $
+# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/amarok/ChangeLog,v 1.299 2009/01/13 15:07:05 alexxy Exp $
+
+  13 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> amarok-2.0.1.1.ebuild:
+  Add big fat warning about building amarok 2.0.1.1 on amd64.
+
+  13 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> amarok-2.0.1.1.ebuild:
+  Add block to mysql builded with USE=minimal. That solves bug #254820
+
+  13 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> -amarok-1.90-r1.ebuild,
+  -amarok-2.0.ebuild:
+  Drop old amarok:2 versions
+
+  13 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> amarok-2.0.1.1.ebuild:
+  cdaudio support removed from amarok by upstream
+
+*amarok-2.0.1.1 (12 Jan 2009)
+
+  12 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> +amarok-2.0.1.1.ebuild:
+  Version bump to 2.0.1.1
 
   14 Dec 2008; Tomas Chvatal <scarabeus@gentoo.org> amarok-2.0.ebuild:
   Block mysql compiled with minimal useflag. Fixes bug #250702.
