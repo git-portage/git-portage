@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/sniffit/Attic/sniffit-0.3.7-r1.ebuild,v 1.10 2009/01/15 06:37:32 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/sniffit/Attic/sniffit-0.3.7-r1.ebuild,v 1.9 2007/07/11 23:49:24 mr_bones_ Exp $
 
-inherit eutils toolchain-funcs
+inherit eutils
 
 MY_P="${P/-/.}.beta"
 S="${WORKDIR}/${MY_P}"
@@ -27,18 +27,18 @@ src_unpack() {
 
 	# Fix issues with gcc-3.3 (bug #25328)
 	epatch ${FILESDIR}/${P}-gcc33.patch
-	epatch ${FILESDIR}/${P}-gentoo.patch
 }
 
 src_compile() {
-	tc-export CC
 	econf || die
-	emake CFLAGS="${CFLAGS}" || die
+
+	emake OBJ_FLAG="-w -c ${CFLAGS}" \
+	      EXE_FLAG="-w ${CFLAGS} -o sniffit" || die
 }
 
 src_install () {
 	dobin sniffit
 
 	doman sniffit.5 sniffit.8
-	dodoc README* PLUGIN-HOWTO BETA* HISTORY LICENSE
+	dodoc README* PLUGIN-HOWTO BETA* HISTORY LICENSE changelog
 }
