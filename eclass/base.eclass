@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/base.eclass,v 1.36 2009/01/17 16:56:55 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/base.eclass,v 1.35 2008/11/09 15:47:47 loki_val Exp $
 
 # @ECLASS: base.eclass
 # @MAINTAINER:
@@ -38,7 +38,8 @@ base_src_unpack() {
 
 	debug-print-function $FUNCNAME "$@"
 
-	if [ -z "$1" ] ; then
+	if [ -z "$1" ]
+	then
 		case "${EAPI:-0}" in
 			2)
 				base_src_util unpack
@@ -79,9 +80,7 @@ base_src_util() {
 	case $1 in
 		unpack)
 			debug-print-section unpack
-			if [ ! -z "$A" ] ; then
-				unpack ${A}
-			fi
+			unpack ${A}
 			;;
 		patch)
 			debug-print-section patch
@@ -92,7 +91,7 @@ base_src_util() {
 			debug-print-section autopatch
 			debug-print "$FUNCNAME: autopatch: PATCHES=$PATCHES, PATCHES1=$PATCHES1"
 			cd "${S}"
-			if [[ ${#PATCHES[@]} -gt 1 ]] ; then
+			if [[ ${#PATCHES[@]} -gt 1 ]]; then
 				for x in "${PATCHES[@]}"; do
 					debug-print "$FUNCNAME: autopatch: patching from ${x}"
 					epatch "${x}"
