@@ -47,12 +47,6 @@ java-external
 3dfx
 
 # havent tested yet
-chicken
-clisp
-R
-octave
-dvb
-mythtv
 qt3
 qt4
 arts
