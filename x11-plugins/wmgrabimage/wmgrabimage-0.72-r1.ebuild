@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmgrabimage/wmgrabimage-0.72-r1.ebuild,v 1.8 2009/01/14 16:04:46 s4t4n Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmgrabimage/wmgrabimage-0.72-r1.ebuild,v 1.7 2008/06/29 14:11:34 drac Exp $
 
 inherit eutils
 
@@ -22,8 +22,7 @@ RDEPEND=">=net-misc/wget-1.9-r2
 	x11-libs/libXpm"
 DEPEND="${RDEPEND}
 	x11-proto/xproto
-	x11-proto/xextproto
-	>=sys-apps/sed-4.1.5-r1"
+	x11-proto/xextproto"
 
 S=${WORKDIR}/${MY_P}-${PV}/${MY_P}
 
@@ -32,7 +31,6 @@ src_unpack() {
 	cd "${S}"
 	epatch "${FILESDIR}"/${PN}-noman.patch
 	sed -i -e 's/-geom /-geometry /' GrabImage || die "sed failed."
-	sed -i -e 's/install -s -m /install -m /' Makefile || die "sed failed."
 }
 
 src_compile() {
