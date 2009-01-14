@@ -1,10 +1,48 @@
 # ChangeLog for profile directory
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2253 2009/01/11 12:23:33 ikelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2264 2009/01/14 12:43:45 alexxy Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  14 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> package.mask:
+  Unmask kde 4.1.4
+
+  14 Jan 2009; Rémi Cardona <remi@gentoo.org> package.mask:
+  unleash xorg-server-1.5.3-r1
+
+  14 Jan 2009; Rémi Cardona <remi@gentoo.org> package.mask:
+  virtual/xft is gone from portage, updating p.mask
+
+  14 Jan 2009; Zac Medico <zmedico@gentoo.org> package.mask:
+  Remove mask for sys-apps/portage-2.1.6.5 since it's no longer
+  in the tree.
+
+  13 Jan 2009; Rémi Cardona <remi@gentoo.org> package.mask:
+  add x11-base/xorg-server-1.5.3-r1 to p.mask
+
+  13 Jan 2009; Torsten Veller <tove@gentoo.org> package.mask:
+  Mask ~dev-perl/Net-Amazon-S3-0.49 too
+
+  13 Jan 2009; Zac Medico <zmedico@gentoo.org> package.mask:
+  Mask =sys-apps/portage-2.1.6.5 due to bug 254860.
+
+  13 Jan 2009; Petteri Räty <betelgeuse@gentoo.org> thirdpartymirrors:
+  Add internap to sourceforge mirrors.
+
+  13 Jan 2009; Donnie Berkholz <dberkholz@gentoo.org>; package.mask:
+  Mask >=sci-chemistry/burrow-owl-1.4 pending unmasking of
+  guile-gnome-platform 2.16. The whole mess is blocking on the separate
+  libffi package.
+
+  11 Jan 2009; Peter Volkov <pva@gentoo.org> package.mask:
+  EC fonts are tex fonts, this package was used by lilypond at some point of
+  time, but now nothing uses them, no maintainer so it looks like time to
+  remove them from the tree has come. Objections? Report to bug 183730.
+
+  11 Jan 2009; Andreas Proschofsky <suka@gentoo.org> package.mask:
+  Remove mask on oooqs and ooqstart-gnome, both are now gone from the tree
 
   11 Jan 2009; Mike Auty <ikelos@gentoo.org> package.mask:
   Adding x.5.0 series mask for vmware, since they're also vulnerable (bug
