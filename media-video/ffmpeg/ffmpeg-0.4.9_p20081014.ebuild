@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg/Attic/ffmpeg-0.4.9_p20081014.ebuild,v 1.22 2009/01/19 09:28:23 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg/Attic/ffmpeg-0.4.9_p20081014.ebuild,v 1.20 2008/12/22 14:20:56 armin76 Exp $
 
 inherit eutils flag-o-matic multilib toolchain-funcs
 
@@ -41,7 +41,6 @@ RDEPEND="vhook? ( >=media-libs/imlib2-1.4.0 >=media-libs/freetype-2 )
 	amr? ( media-libs/amrnb media-libs/amrwb )"
 
 DEPEND="${RDEPEND}
-	>=sys-devel/make-3.81
 	mmx? ( dev-lang/yasm )
 	doc? ( app-text/texi2html )
 	test? ( net-misc/wget )
@@ -184,7 +183,6 @@ src_compile() {
 		${myconf} || die "configure failed"
 
 	emake -j1 depend || die "depend failed"
-	emake version.h || die #252269
 	emake || die "make failed"
 }
 
