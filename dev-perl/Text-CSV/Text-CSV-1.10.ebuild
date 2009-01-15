@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Text-CSV/Attic/Text-CSV-1.10.ebuild,v 1.3 2009/01/17 22:16:57 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Text-CSV/Attic/Text-CSV-1.10.ebuild,v 1.2 2008/12/09 09:28:49 tove Exp $
 
 MODULE_AUTHOR="MAKAMAKA"
 
@@ -13,6 +13,3 @@ IUSE=""
 SLOT="0"
 LICENSE="|| ( Artistic GPL-2 )"
 KEYWORDS="~amd64 ~x86"
-
-DEPEND="dev-lang/perl"
-RDEPEND="${DEPEND}"
