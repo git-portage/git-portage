@@ -48,14 +48,15 @@ if ! cmd_exist get_KV; then
 	}
 fi
 
-# only for baselayout-1, does exist in all openrc versions
 if ! cmd_exist fstabinfo; then
 	fstabinfo() {
 		[ "$1" = "--quiet" ] && shift
 		local dir="$1"
 
 		# only check RC_USE_FSTAB on baselayout-1
-		yesno "${RC_USE_FSTAB}" || return 1
+		if [ ! -e /lib/librc.so ]; then
+			yesno "${RC_USE_FSTAB}" || return 1
+		fi
 
 		# check if entry is in /etc/fstab
 		local ret=$(gawk 'BEGIN { found="false"; }
