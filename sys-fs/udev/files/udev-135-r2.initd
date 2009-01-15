@@ -18,9 +18,6 @@ depend()
 		provide dev
 		need sysfs udev-mount udev-dev-tarball
 		before checkfs fsck
-
-		# udev does not work inside vservers
-		keyword novserver
 	fi
 }
 
