@@ -1,21 +1,23 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/deluge/Attic/deluge-1.0.7.ebuild,v 1.2 2009/01/13 10:26:17 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/deluge/Attic/deluge-1.1.0-r1.ebuild,v 1.1 2009/01/15 09:43:15 armin76 Exp $
+
+EAPI="2"
 
 inherit eutils distutils flag-o-matic
 
 DESCRIPTION="BitTorrent client with a client/server model."
 HOMEPAGE="http://deluge-torrent.org/"
-SRC_URI="http://download.deluge-torrent.org/source/${PV}/${P}.tar.gz"
+SRC_URI="http://download.deluge-torrent.org/source/${PV}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="gtk"
 
 DEPEND=">=dev-lang/python-2.4
-	dev-libs/boost
-	dev-python/setuptools"
+	dev-python/setuptools
+	|| ( >=dev-libs/boost-1.34 =dev-libs/boost-1.33*[threads] )"
 RDEPEND="${DEPEND}
 	dev-python/pyxdg
 	dev-python/pygobject
@@ -27,11 +29,6 @@ RDEPEND="${DEPEND}
 	)"
 
 pkg_setup() {
-	if ! built_with_use --missing true "dev-libs/boost" threads; then
-		eerror "dev-libs/boost has to be built with threads USE-flag."
-		die "Missing threads USE-flag for dev-libs/boost"
-	fi
-
 	filter-ldflags -Wl,--as-needed
 }
 
