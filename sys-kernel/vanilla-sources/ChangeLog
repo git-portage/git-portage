@@ -1,28 +1,6 @@
 # ChangeLog for sys-kernel/vanilla-sources
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/ChangeLog,v 1.589 2009/01/18 20:39:53 armin76 Exp $
-
-*vanilla-sources-2.6.28.1 (18 Jan 2009)
-*vanilla-sources-2.6.27.12 (18 Jan 2009)
-
-  18 Jan 2009; Raúl Porcel <armin76@gentoo.org>
-  +vanilla-sources-2.6.27.12.ebuild, +vanilla-sources-2.6.28.1.ebuild:
-  Version bump
-
-  17 Jan 2009; Tobias Klausmann <klausman@gentoo.org>
-  vanilla-sources-2.6.29_rc2.ebuild:
-  Keyworded on alpha
-
-*vanilla-sources-2.6.29_rc2 (17 Jan 2009)
-
-  17 Jan 2009; Raúl Porcel <armin76@gentoo.org>
-  +vanilla-sources-2.6.29_rc2.ebuild:
-  Version bump
-
-  15 Jan 2009; Michael Pagano <mpagano@gentoo.org>
-  +vanilla-sources-2.6.27.ebuild:
-  Base vanilla version is used to test gentoo sources before a new release.
-  2.6.27 gentoo-sources is still in the queue for a new release.
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/ChangeLog,v 1.585 2009/01/15 10:32:36 armin76 Exp $
 
 *vanilla-sources-2.6.27.11 (15 Jan 2009)
 
