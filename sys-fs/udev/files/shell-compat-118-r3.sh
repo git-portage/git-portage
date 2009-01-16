@@ -6,7 +6,6 @@ cmd_exist()
 	type "$1" >/dev/null 2>&1
 }
 
-# does not exist in baselayout-1, does exist in openrc
 if ! cmd_exist yesno; then
 	yesno() {
 		[ -z "$1" ] && return 1
@@ -17,8 +16,6 @@ if ! cmd_exist yesno; then
 	}
 fi
 
-# does exist in baselayout-1
-# does not exist in openrc, but is added by openrc-ebuild since some time
 if ! cmd_exist KV_to_int; then
 	KV_to_int() {
 		[ -z $1 ] && return 1
@@ -39,7 +36,6 @@ if ! cmd_exist KV_to_int; then
 	}
 fi
 
-# same as KV_to_int
 if ! cmd_exist get_KV; then
 	_RC_GET_KV_CACHE=""
 	get_KV() {
@@ -52,14 +48,15 @@ if ! cmd_exist get_KV; then
 	}
 fi
 
-# does not exist in baselayout-1, does exist in openrc
 if ! cmd_exist fstabinfo; then
 	fstabinfo() {
 		[ "$1" = "--quiet" ] && shift
 		local dir="$1"
 
 		# only check RC_USE_FSTAB on baselayout-1
-		yesno "${RC_USE_FSTAB}" || return 1
+		if [ ! -e /lib/librc.so ]; then
+			yesno "${RC_USE_FSTAB}" || return 1
+		fi
 
 		# check if entry is in /etc/fstab
 		local ret=$(gawk 'BEGIN { found="false"; }
@@ -71,5 +68,4 @@ if ! cmd_exist fstabinfo; then
 		"${ret}"
 	}
 fi
-
 
