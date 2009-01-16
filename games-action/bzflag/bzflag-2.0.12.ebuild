@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/bzflag/Attic/bzflag-2.0.12.ebuild,v 1.7 2009/01/20 15:59:18 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-action/bzflag/Attic/bzflag-2.0.12.ebuild,v 1.5 2008/09/21 13:51:22 ranger Exp $
 
-EAPI=2
 inherit eutils flag-o-matic games
 
 DESCRIPTION="3D tank combat simulator game"
@@ -38,10 +37,15 @@ DEPEND=">=net-misc/curl-7.15.0
 pkg_setup() {
 	# Only do the libsdl checks for !dedicated - bug #107792
 	use dedicated || GAMES_USE_SDL="nojoystick"
+	if ! built_with_use net-misc/curl ares; then
+		ewarn "net-misc/curl is not built with c-ares support"
+		ewarn "To avoid undesired glitch during play consider"
+		ewarn "emerging net-misc/curl with USE=\"ares\"."
+	fi
 	games_pkg_setup
 }
 
-src_configure() {
+src_compile() {
 	local myconf
 
 	if use dedicated && ! use sdl ; then
@@ -55,15 +59,16 @@ src_configure() {
 		--without-regex \
 		${myconf} \
 		|| die "egamesconf failed"
+	emake || die "emake failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	make DESTDIR="${D}" install || die "make install failed"
 	dodoc AUTHORS TODO ChangeLog BUGS PORTING DEVINFO NEWS README* RELNOTES
 
 	if use sdl || ! use dedicated ; then
-		newicon "data/bzflag-48x48.png" ${PN}.png
-		make_desktop_entry ${PN} "BZFlag"
+		doicon "data/bzflag-48x48.png"
+		make_desktop_entry ${PN} "BZFlag" ${PN}-48x48
 	fi
 
 	prepgamesdirs
