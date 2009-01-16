@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/wxpython/Attic/wxpython-2.8.9.1-r2.ebuild,v 1.3 2009/01/18 19:29:05 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/wxpython/Attic/wxpython-2.8.9.1-r2.ebuild,v 1.1 2008/11/26 02:20:19 dirtyepic Exp $
 
 EAPI="2"
 WX_GTK_VER="2.8"
@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/wxpython/${MY_P}.tar.bz2"
 
 LICENSE="wxWinLL-3"
 SLOT="2.8"
-KEYWORDS="alpha amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="cairo opengl"
 
 RDEPEND=">=x11-libs/wxGTK-${PV}:2.8[opengl?]

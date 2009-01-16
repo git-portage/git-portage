@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/shake/Attic/shake-0.31.ebuild,v 1.4 2009/01/18 15:19:03 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/shake/Attic/shake-0.31.ebuild,v 1.2 2008/06/19 07:36:54 voyageur Exp $
 
 inherit cmake-utils
 
@@ -10,7 +10,7 @@ SRC_URI="http://download.savannah.nongnu.org/releases/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 RDEPEND="sys-apps/attr"
