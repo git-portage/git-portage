@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9386 2009/01/13 18:49:09 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9397 2009/01/16 00:56:48 ikelos Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -31,9 +31,10 @@
 
 #--- END OF EXAMPLES ---
 
-# Zac Medico <zmedico@gentoo.org> (13 Jan 2009)
-# Masked due to bug 254860.
-=sys-apps/portage-2.1.6.5
+# Sébastien Fabbro <bicatali@gentoo.org> (15 Jan 2009)
+# Masked for removal in 30 days. f2py hase been integrated in
+# dev-python/numpy.
+dev-python/f2py
 
 # Donnie Berkholz <dberkholz@gentoo.org> (12 Jan 2009)
 # Masked pending unmasking of guile-gnome-platform 2.16
@@ -68,11 +69,6 @@ net-analyzer/rtg
 # baselayout-vserver is unmaintained and obsoleted by
 # baselayout-2/openrc. please upgrade. removal in 30 days.
 sys-apps/baselayout-vserver
-
-# Rémi Cardona <remi@gentoo.org> (09 Jan 2009)
-# old virtual left from the transition from monolithic
-# to modular X. Use x11-libs/libXft directly
-virtual/xft
 
 # Michael Sterrett <mr_bones_@gentoo.org> (09 Jan 2009)
 # missing a license file
@@ -111,14 +107,27 @@ gnome-base/gnome-vfs-monikers
 # See bug 245941 for more details
 # Stable versions are not being masked, but should be really
 # 11-Jan-2009 Adding in x.5.0 series, since they're also vulnerable
+# 16-Jan-2009 Adding in 5.5.7 and 1.0.7, since later versions are now stable
+# 16-Jan-2009 Adding in all vulnerable server versions
+# 16-Jan-2009 Adding all unnnecessary vmware-modules
+=app-emulation/vmware-workstation-5.5.7.91707
 =app-emulation/vmware-workstation-5.5.8.108000
 =app-emulation/vmware-workstation-6.0.4.93057
 =app-emulation/vmware-workstation-6.0.5.109488
 =app-emulation/vmware-workstation-6.5.0.118166
+=app-emulation/vmware-player-1.0.7.91707
 =app-emulation/vmware-player-1.0.8.108000
 =app-emulation/vmware-player-2.0.4.93057
 =app-emulation/vmware-player-2.0.5.109488
 =app-emulation/vmware-player-2.5.0.118166
+=app-emulation/vmware-server-1.0.5.80187
+=app-emulation/vmware-server-1.0.6.91891
+=app-emulation/vmware-server-1.0.7.108231
+=app-emulation/vmware-server-console-1.0.5.80187-r1
+=app-emulation/vmware-server-console-1.0.6.91891
+=app-emulation/vmware-server-console-1.0.7.108231
+=app-emulation/vmware-modules-1.0.0.20
+=app-emulation/vmware-modules-1.0.0.22
 
 # Daniel Black <dragonheart@gentoo.org> (03 Jan 2009)
 # mask pending removal
@@ -277,12 +286,6 @@ app-portage/udept
 # Dead upstream, masked for removal in ~60 days.
 net-proxy/squirm
 
-# Alexis Ballier <aballier@gentoo.org> (13 Dec 2008)
-# API changes on the host side
-# Mask also packages requiring it
->=media-libs/vamp-plugin-sdk-2.0
->=media-sound/sonic-visualiser-1.4
-
 # Steve Dibb <beandog@gentoo> (11 Dec 2008)
 # Needs some testing
 >=media-libs/xvid-1.2.0
@@ -290,11 +293,6 @@ net-proxy/squirm
 # Jim Ramsay <lack@gentoo.org> (11 Dec 2008)
 # Live ebuild, for advanced users only
 =x11-wm/fluxbox-9999
-
-# Torsten Veller <tove@gentoo.org> (08 Dec 2008)
-# Mask broken perl modules
-# Missing dependencies:
-~dev-perl/Net-Amazon-S3-0.48
 
 # Jeremy Olexa <darkside@gentoo.org> (07 Dec 2008)
 # Masked for removal in 60 days at maintainers request. Some don't work. Most
