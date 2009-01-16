@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/apcupsd/Attic/apcupsd-3.14.5.ebuild,v 1.4 2009/01/19 15:52:12 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/apcupsd/Attic/apcupsd-3.14.5.ebuild,v 1.2 2009/01/15 15:37:07 flameeyes Exp $
 
 WEBAPP_MANUAL_SLOT="yes"
 WEBAPP_OPTIONAL="yes"
@@ -13,13 +13,12 @@ SRC_URI="mirror://sourceforge/apcupsd/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86 ~x86-fbsd"
-IUSE="doc snmp usb cgi nls gnome"
+IUSE="doc snmp usb cgi ncurses nls gnome"
 
-DEPEND="doc? ( virtual/latex-base
-		dev-tex/latex2html
-		app-text/dvipdfm )
+DEPEND="doc? ( virtual/latex-base dev-tex/latex2html )
 	cgi? ( >=media-libs/gd-1.8.4
 		${WEBAPP_DEPEND} )
+	ncurses? ( sys-libs/ncurses )
 	nls? ( sys-devel/gettext )
 	snmp? ( net-analyzer/net-snmp )
 	gnome? ( >=x11-libs/gtk+-2.4.0
@@ -43,7 +42,7 @@ src_compile() {
 
 	# We force the DISTNAME to gentoo so it will use gentoo's layout also
 	# when installed on non-linux systems.
-	econf \
+	APCUPSD_MAIL=/bin/mail econf \
 		--sbindir=/sbin \
 		--sysconfdir=/etc/apcupsd \
 		--with-pwrfail-dir=/etc/apcupsd \
@@ -53,17 +52,17 @@ src_compile() {
 		--with-nis-port=3551 \
 		--enable-net \
 		--with-distname=gentoo \
+		$(use_enable ncurses powerflute) \
 		$(use_enable snmp net-snmp) \
 		$(use_enable gnome gapcmon) \
 		${myconf} \
-		APCUPSD_MAIL=/bin/mail \
-		|| die "econf failed"
+		|| die
 	emake || die "emake failed"
 
 	if use doc; then
 		einfo "Building full documentation..."
 		cd "${S}"/doc/latex
-		emake -j1 texcheck tex web pdf || die "doc build failed"
+		make texcheck tex web pdf
 	fi
 }
 
@@ -77,12 +76,12 @@ src_install() {
 	newins examples/safe.apccontrol safe.apccontrol
 
 	dodoc ChangeLog* ReleaseNotes
-	newman doc/apctest.man apctest.8 || die "newman failed"
+	mv doc/apctest.man doc/apctest.8; doman doc/apctest.8
 
 	if use doc; then
 		einfo "Installing full documentation..."
-		newdoc doc/latex/apcupsd.pdf manual.pdf || die "pdf doc failed"
-		dohtml -r doc/latex/apcupsd/* || die "doc install failed"
+		newdoc doc/latex/apcupsd.pdf manual.pdf
+		dohtml -r doc/latex/apcupsd/*
 	fi
 
 	if use cgi; then
@@ -91,7 +90,7 @@ src_install() {
 	fi
 
 	rm "${D}"/etc/init.d/apcupsd
-	newinitd "${FILESDIR}/${PN}.init.2" "${PN}" || die "newinitd failed"
+	newinitd "${FILESDIR}/${PN}.init.2" "${PN}"
 }
 
 pkg_postinst() {
