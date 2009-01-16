@@ -2,7 +2,6 @@
 chicken
 clisp
 R
-octave
 
 # This file contains a list of useflags that cannot be used on s390.
 bluetooth
