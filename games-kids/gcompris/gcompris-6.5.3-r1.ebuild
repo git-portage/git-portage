@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-kids/gcompris/Attic/gcompris-6.5.3-r1.ebuild,v 1.6 2009/01/17 22:40:52 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-kids/gcompris/Attic/gcompris-6.5.3-r1.ebuild,v 1.5 2008/03/07 01:13:36 wolf31o2 Exp $
 
 inherit eutils games
 
@@ -24,7 +24,6 @@ RDEPEND="x11-libs/libXrandr
 	games-board/gnuchess"
 
 DEPEND="${RDEPEND}
-	dev-perl/XML-Parser
 	sys-apps/texinfo
 	app-text/texi2html"
 
