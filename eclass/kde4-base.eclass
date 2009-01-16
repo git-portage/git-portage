@@ -1,6 +1,6 @@
 # Copyright 2007-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/kde4-base.eclass,v 1.24 2009/01/18 15:12:01 alexxy Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/kde4-base.eclass,v 1.23 2009/01/12 19:40:34 scarabeus Exp $
 
 # @ECLASS: kde4-base.eclass
 # @MAINTAINER:
@@ -552,7 +552,7 @@ kde4-base_src_configure() {
 	QT_PLUGIN_PATH=${KDEDIR}/$(get_libdir)/kde4/plugins/
 
 	# hardcode path to *.cmake KDE files
-	export PKG_CONFIG_PATH="${PKG_CONFIG_PATH:+${PKG_CONFIG_PATH}:}${KDEDIR}/$(get_libdir)/pkgconfig"
+	PKG_CONFIG_PATH="${PKG_CONFIG_PATH:+${PKG_CONFIG_PATH}:}${KDEDIR}/$(get_libdir)/pkgconfig"
 
 	# additonal arguments for KOFFICE
 	if [[ $KMNAME = koffice ]]; then
