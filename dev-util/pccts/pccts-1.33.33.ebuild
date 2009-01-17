@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/pccts/Attic/pccts-1.33.33.ebuild,v 1.21 2009/01/20 22:21:56 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/pccts/Attic/pccts-1.33.33.ebuild,v 1.20 2008/01/27 10:49:36 grobian Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.polhode.com/pccts133mr33.zip"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sh sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sh sparc x86"
 IUSE=""
 
 DEPEND="app-arch/unzip"
