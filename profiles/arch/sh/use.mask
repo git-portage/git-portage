@@ -25,6 +25,12 @@ java-external
 ffmpeg
 
 # havent tested yet
+chicken
+clisp
+R
+octave
+mythtv
+dvb
 qt3
 dell
 qt4
