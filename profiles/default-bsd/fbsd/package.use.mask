@@ -36,6 +36,9 @@ dev-util/checkstyle test
 # PDA masked until we can do some testing on it
 mail-client/claws-mail dillo pda
 
+# Python support isn't tested (Twisted for instance)
+net-dns/avahi python
+
 # Original spell plugin uses ispell that requires
 # miscfiles.. that in turn does not work
 net-irc/rbot spell
@@ -73,7 +76,6 @@ www-client/epiphany spell
 # GNU attr isn't supported
 =app-editors/gedit-2.18* acl
 =app-editors/gedit-2.20* xattr
-dev-libs/glib xattr
 
 # Joe Peterson <lavajoe@gentoo.org> (21 Nov 2007)
 # The following new swig USE flags are not supported (yet):
