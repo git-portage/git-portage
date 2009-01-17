@@ -2,10 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <herd>sci</herd>
-<maintainer>
-  <email>scarabeus@gentoo.org</email>
-</maintainer>
-<longdescription lang="en">
+<longdescription>
   BOINC (Berkeley Open Infrastructure for Network Computing) is a software
   platform for distributed computing using volunteered computer resources.
 </longdescription>
