@@ -1,13 +1,6 @@
 # ChangeLog for dev-lang/ruby
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ChangeLog,v 1.372 2009/01/20 20:40:51 aballier Exp $
-
-  20 Jan 2009; Alexis Ballier <aballier@gentoo.org>
-  ruby-1.8.6_p287-r11.ebuild:
-  keyword ~x86-fbsd, bug #252315
-
-  17 Jan 2009; nixnut <nixnut@gentoo.org> ruby-1.8.6_p287-r4.ebuild:
-  ppc stable #254307
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ChangeLog,v 1.370 2009/01/15 22:37:55 maekke Exp $
 
   15 Jan 2009; Markus Meier <maekke@gentoo.org> ruby-1.8.6_p287-r4.ebuild:
   amd64/x86 stable, bug #254307
