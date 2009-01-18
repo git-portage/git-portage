@@ -1,12 +1,11 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-simulation/dangerdeep/dangerdeep-0.3.0.ebuild,v 1.5 2009/01/20 06:00:29 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-simulation/dangerdeep/dangerdeep-0.3.0.ebuild,v 1.4 2008/05/01 00:06:13 nyhm Exp $
 
-EAPI=2
 inherit eutils games
 
 DESCRIPTION="a World War II German submarine simulation"
-HOMEPAGE="http://dangerdeep.sourceforge.net/"
+HOMEPAGE="http://www.dangerdeep.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz
 	mirror://sourceforge/${PN}/${PN}-data-${PV}.zip"
 
@@ -17,16 +16,18 @@ IUSE="sse debug"
 
 RDEPEND="virtual/opengl
 	virtual/glu
-	sci-libs/fftw:3.0
+	=sci-libs/fftw-3*
 	media-libs/libsdl
-	media-libs/sdl-mixer[vorbis]
-	media-libs/sdl-image[jpeg,png]
+	media-libs/sdl-mixer
+	media-libs/sdl-image
 	media-libs/sdl-net"
 DEPEND="${RDEPEND}
 	app-arch/unzip
 	dev-util/scons"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	epatch \
 		"${FILESDIR}"/${P}-build.patch \
 		"${FILESDIR}"/${P}-gcc43.patch
@@ -56,8 +57,8 @@ src_install() {
 	insinto "${GAMES_DATADIR}"/${PN}
 	doins -r ../data/* || die "doins failed"
 
-	newicon dftd_icon.png ${PN}.png
-	make_desktop_entry ${PN} "Danger from the Deep"
+	newicon logo.xpm ${PN}.xpm
+	make_desktop_entry ${PN} "Danger from the Deep" ${PN}
 
 	dodoc ChangeLog CREDITS README
 	doman doc/man/${PN}.6
