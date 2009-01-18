@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-9999.ebuild,v 1.29 2009/01/21 08:52:46 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-9999.ebuild,v 1.27 2009/01/18 19:36:38 vapier Exp $
 
 EAPI="2"
 
@@ -60,7 +60,6 @@ RDEPEND=">=media-libs/freetype-2.0.0
 			>=app-emulation/emul-linux-x86-xlibs-2.1
 			>=app-emulation/emul-linux-x86-soundlibs-2.1
 		)
-		app-emulation/emul-linux-x86-baselibs
 		>=sys-kernel/linux-headers-2.6
 	)"
 DEPEND="${RDEPEND}
@@ -105,9 +104,9 @@ src_compile() {
 		$(use_with opengl) \
 		$(use_with oss) \
 		$(use_with png) \
-		$(use_with scanner sane) \
+		$(use_with sane scanner) \
 		$(use_with ssl openssl) \
-		$(use_enable win64) \
+		$(use_with win64) \
 		$(use_with X x) \
 		$(use_with xcomposite) \
 		$(use_with xinerama) \
