@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/rocksndiamonds/Attic/rocksndiamonds-3.2.6.0.ebuild,v 1.2 2009/01/21 21:34:28 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/rocksndiamonds/Attic/rocksndiamonds-3.2.6.0.ebuild,v 1.1 2008/11/26 02:12:40 mr_bones_ Exp $
 
-EAPI=2
 inherit flag-o-matic eutils games
 
 DESCRIPTION="A Boulderdash clone"
@@ -29,17 +28,15 @@ DEPEND="app-arch/unzip
 	!sdl? ( x11-libs/libX11 )
 	sdl? (
 		>=media-libs/libsdl-1.2.3
-		>=media-libs/sdl-mixer-1.2.4[mikmod,mp3,timidity]
+		>=media-libs/sdl-mixer-1.2.4
 		media-libs/sdl-net
-		>=media-libs/sdl-image-1.2.2[gif]
+		>=media-libs/sdl-image-1.2.2
 		media-libs/smpeg
 	)"
 
 src_unpack() {
 	unpack ${P}.tar.gz
-}
-
-src_prepare() {
+	cd "${S}"
 	unpack \
 		rockslevels-emc-1.0.tar.gz \
 		rockslevels-sp-1.0.tar.gz \
