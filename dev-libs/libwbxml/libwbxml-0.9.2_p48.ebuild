@@ -1,8 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libwbxml/Attic/libwbxml-0.9.2_p48.ebuild,v 1.3 2008/12/31 03:19:25 mr_bones_ Exp $
-
-inherit eutils
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libwbxml/Attic/libwbxml-0.9.2_p48.ebuild,v 1.5 2009/01/15 08:44:06 s4t4n Exp $
 
 IUSE=""
 
@@ -16,19 +14,9 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 
-RDEPEND=">=dev-libs/expat-1.95.8"
-
-DEPEND="${RDEPEND}
-	>=sys-apps/sed-4.1.4"
+DEPEND=">=dev-libs/expat-1.95.8"
 
 S="${WORKDIR}/${MY_P}"
-
-src_unpack()
-{
-	unpack ${A}
-	cd "${S}"
-	eautoreconf
-}
 
 src_install()
 {
