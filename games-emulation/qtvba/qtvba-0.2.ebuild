@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/qtvba/Attic/qtvba-0.2.ebuild,v 1.8 2009/01/19 21:18:42 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/qtvba/Attic/qtvba-0.2.ebuild,v 1.7 2008/07/27 21:15:46 carlo Exp $
 
 EAPI=1
 
@@ -22,8 +22,7 @@ RDEPEND="${DEPEND}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${PV}-Makefilefix.patch" \
-		"${FILESDIR}"/${P}-gcc43.patch
+	epatch "${FILESDIR}/${PV}-Makefilefix.patch"
 }
 
 src_install() {
