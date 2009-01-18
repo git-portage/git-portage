@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/dbus-python/Attic/dbus-python-0.80.2.ebuild,v 1.15 2009/01/18 18:59:43 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/dbus-python/Attic/dbus-python-0.80.2.ebuild,v 1.14 2008/05/29 16:09:46 hawking Exp $
 
 inherit python multilib
 
@@ -27,13 +27,14 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	# disable pyc compiling
-	mv "${S}"/py-compile "${S}"/py-compile.orig
-	ln -s $(type -P true) "${S}"/py-compile
+	# don't run py-compile
+	sed -i \
+		-e '/if test -n "$$dlist"; then/,/else :; fi/d' \
+		dbus/Makefile.in Makefile.in || die "sed in Makefile.in failed"
 }
 
 src_compile() {
-	econf --docdir=/usr/share/doc/dbus-python-${PV}
+	econf --docdir=/usr/share/doc/dbus-python-${PV} || die "econf failed"
 	emake || die "emake failed"
 }
 
@@ -43,7 +44,6 @@ src_install() {
 
 pkg_postinst() {
 	python_version
-	python_need_rebuild
 	python_mod_optimize /usr/$(get_libdir)/python${PYVER}/site-packages/dbus
 }
 
