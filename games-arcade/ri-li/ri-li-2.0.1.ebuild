@@ -1,25 +1,26 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/ri-li/ri-li-2.0.1.ebuild,v 1.6 2009/01/18 22:23:52 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/ri-li/ri-li-2.0.1.ebuild,v 1.5 2008/10/09 05:45:23 nyhm Exp $
 
-EAPI=2
 inherit autotools eutils games
 
 DESCRIPTION="Drive a toy wood engine and collect all the coaches"
 HOMEPAGE="http://ri-li.sourceforge.net/"
 SRC_URI="mirror://sourceforge/ri-li/Ri-li-${PV}.tar.bz2"
 
-LICENSE="GPL-3"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 
 DEPEND="media-libs/libsdl
-	media-libs/sdl-mixer[mikmod]"
+	media-libs/sdl-mixer"
 
 S=${WORKDIR}/Ri-li-${PV}
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	epatch "${FILESDIR}"/${P}-gcc43.patch
 	eautoreconf
 }
