@@ -1,9 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-simulation/crashtest/Attic/crashtest-1.0.ebuild,v 1.5 2009/01/22 20:21:06 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-simulation/crashtest/Attic/crashtest-1.0.ebuild,v 1.4 2008/11/14 18:43:38 coldwind Exp $
 
-EAPI=2
-inherit eutils flag-o-matic games
+EAPI=1
+
+inherit eutils games
 
 DESCRIPTION="Educational car crash simulator"
 HOMEPAGE="http://bram.creative4vision.nl/crashtest/"
@@ -14,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="x11-libs/fltk:1.1[opengl]
+RDEPEND="x11-libs/fltk:1.1
 	dev-games/ode
 	media-libs/alsa-lib
 	virtual/opengl
@@ -25,19 +26,22 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/${P}/src-${PN}
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	epatch "${FILESDIR}/${P}"-gentoo.patch
 	sed -i \
 		-e "s:@GENTOO_DATADIR@:${GAMES_DATADIR}/${PN}:" \
 		-e "s:@GENTOO_BINDIR@:${GAMES_BINDIR}:" \
+		-e "s:<FL/:<fltk-$(fltk-config --api-version)/FL/:" \
 		Makefile ${PN}.cxx \
 		|| die "sed failed"
-	append-flags -DHAVE_ISNANF
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc README
+
 	make_desktop_entry ${PN} Crashtest
 	prepgamesdirs
 }
