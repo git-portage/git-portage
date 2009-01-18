@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/xulrunner/Attic/xulrunner-1.9.0.5.ebuild,v 1.13 2009/01/21 06:34:50 gengor Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/xulrunner/Attic/xulrunner-1.9.0.5.ebuild,v 1.12 2008/12/31 03:40:00 mr_bones_ Exp $
 
 WANT_AUTOCONF="2.1"
 
@@ -122,8 +122,10 @@ src_compile() {
 	# Finalize and report settings
 	mozconfig_final
 
-	if [[ $(gcc-major-version) -lt 4 ]]; then
-		append-cxxflags -fno-stack-protector
+	if use amd64 ; then
+		if [[ $(gcc-major-version) -lt 4 ]]; then
+			filter-flags -fstack-protector -fstack-protector-all
+		fi
 	fi
 
 	####################################
