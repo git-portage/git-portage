@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/quassel-9999.ebuild,v 1.14 2009/01/09 17:53:50 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/quassel-9999.ebuild,v 1.15 2009/01/18 19:44:40 jokey Exp $
 
 EAPI="2"
 
@@ -15,7 +15,7 @@ HOMEPAGE="http://quassel-irc.org/"
 LICENSE="GPL-3"
 KEYWORDS=""
 SLOT="0"
-IUSE="dbus debug kde phonon +server +ssl webkit +X"
+IUSE="dbus debug kde monolithic phonon +server +ssl webkit +X"
 
 LANGS="cs da de fr nb_NO ru tr"
 for l in ${LANGS}; do
@@ -25,19 +25,29 @@ done
 RDEPEND="
 	x11-libs/qt-core:4
 	dbus? ( x11-libs/qt-dbus:4 )
-	server? (
+	monolithic? (
 		x11-libs/qt-sql:4[sqlite]
 		x11-libs/qt-script:4
-	)
-	ssl? (
-		dev-libs/openssl
-		x11-libs/qt-core:4[ssl]
-	)
-	X? (
 		x11-libs/qt-gui:4
 		kde? ( >=kde-base/kdelibs-4.1 )
 		phonon? ( || ( media-sound/phonon x11-libs/qt-phonon ) )
 		webkit? ( x11-libs/qt-webkit:4 )
+	)
+	!monolithic? (
+		server? (
+			x11-libs/qt-sql:4[sqlite]
+			x11-libs/qt-script:4
+		)
+		X? (
+			x11-libs/qt-gui:4
+			kde? ( >=kde-base/kdelibs-4.1 )
+			phonon? ( || ( media-sound/phonon x11-libs/qt-phonon ) )
+			webkit? ( x11-libs/qt-webkit:4 )
+		)
+	)
+	ssl? (
+		dev-libs/openssl
+		x11-libs/qt-core:4[ssl]
 	)
 	"
 DEPEND="${RDEPEND}
@@ -46,20 +56,21 @@ DEPEND="${RDEPEND}
 DOCS="AUTHORS ChangeLog README"
 
 pkg_setup() {
-	if ! use server && ! use X ; then
-		eerror "You have to build one or both of quassel client or server."
-		die "Both server and X USE flags unset."
+	if ! use monolithic && ! use server && ! use X ; then
+		eerror "You have to build at least one of the monolithic client (USE=monolithic),"
+		eerror "the quasselclient (USE=X) or the quasselcore (USE=server)."
+		die "monolithic, server and X flag unset."
 	fi
 }
 
 src_configure() {
-# Invoke _common_configure_code, cmake and cmake-utils_src_make
-# manually until cmake-utils.eclass supports space separated strings as arguments for cmake
-# options. Until now multiple languages are not passed to -DLINGUAS and only the first
+# Comment this out and invoke _common_configure_code and cmake manually until cmake-utils.eclass 
+# supports space separated strings as arguments for cmake options or quassel changes the 
+# separator. Until now multiple languages are not passed to -DLINGUAS and only the first 
 # language is considered.
 	local mycmakeargs="$(cmake-utils_use_want server CORE)
 		$(cmake-utils_use_want X QTCLIENT)
-		$(cmake-utils_use_want X MONO)
+		$(cmake-utils_use_want monolithic MONO)
 		$(cmake-utils_use_with webkit WEBKIT)
 		$(cmake-utils_use_with dbus DBUS)
 		$(cmake-utils_use_with kde KDE)
@@ -82,7 +93,6 @@ src_configure() {
 	cmake -C "${TMPDIR}/gentoo_common_config.cmake" \
 		${mycmakeargs} \
 		-DLINGUAS="${LINGUAS}" \
-		-DCMAKE_INSTALL_DO_STRIP=OFF \
 		"${S}" || die "Cmake failed"
 
 }
@@ -114,7 +124,7 @@ pkg_postinst() {
 		elog "Please make sure that the quasselcore is stopped before adding more users."
 	fi
 
-	if use server && use ssl ; then
+	if ( use server || use monolithic ) && use ssl ; then
 		elog
 		elog "To enable SSL support for client/core connections the quasselcore needs"
 		elog "a PEM certificate which needs to be stored in ~/.quassel/quasselCert.pem."
