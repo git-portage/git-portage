@@ -1,12 +1,6 @@
 # ChangeLog for sys-apps/hal
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/hal/Attic/ChangeLog,v 1.267 2009/01/21 22:18:36 aballier Exp $
-
-  21 Jan 2009; Alexis Ballier <aballier@gentoo.org> hal-0.5.11-r6.ebuild:
-  keyword ~x86-fbsd
-
-  19 Jan 2009; Raúl Porcel <armin76@gentoo.org> hal-0.5.11-r6.ebuild:
-  Add ~arm/~sh
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/hal/Attic/ChangeLog,v 1.265 2009/01/18 19:10:25 eva Exp $
 
   18 Jan 2009; Gilles Dartiguelongue <eva@gentoo.org> hal-0.5.11-r6.ebuild:
   Update PDEPEND on hal-info, follow up on bug #241912.
