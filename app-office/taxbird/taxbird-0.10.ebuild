@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/taxbird/Attic/taxbird-0.10.ebuild,v 1.6 2009/01/22 09:13:05 hanno Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/taxbird/Attic/taxbird-0.10.ebuild,v 1.5 2008/11/14 16:01:15 flameeyes Exp $
 
 inherit eutils fdo-mime flag-o-matic
 
@@ -41,7 +41,7 @@ src_install() {
 
 	# clean out the installed mime files, those get recreated in the pkg_postinst function
 	einfo "Deleting mime files in ${D}/usr/share/mime"
-	rm -f "${D}/usr/share/mime/{aliases,globs,magic,mime.cache,subclasses,XMLnamespaces}"
+	rm -f ${D}/usr/share/mime/{aliases,globs,magic,mime.cache,subclasses,XMLnamespaces}
 }
 
 pkg_postinst() {
