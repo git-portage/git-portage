@@ -2,7 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>fonts</herd>
-	<herd>graphics</herd>
 	<maintainer>
 		<email>fonts@gentoo.org</email>
 	</maintainer>
