@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/libgdiplus/Attic/libgdiplus-2.2.ebuild,v 1.2 2009/01/19 00:26:27 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/libgdiplus/Attic/libgdiplus-2.2.ebuild,v 1.1 2009/01/18 17:44:29 loki_val Exp $
 
 EAPI=2
 
@@ -42,3 +42,4 @@ src_configure() {
 				$(use pango && printf %s --with-pango)	\
 				|| die "configure failed"
 }
+
