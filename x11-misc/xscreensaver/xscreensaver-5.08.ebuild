@@ -1,8 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xscreensaver/Attic/xscreensaver-5.08.ebuild,v 1.3 2009/01/19 15:09:11 ssuominen Exp $
-
-EAPI=2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xscreensaver/Attic/xscreensaver-5.08.ebuild,v 1.1 2009/01/19 11:43:56 pva Exp $
 
 inherit autotools eutils flag-o-matic multilib pam
 
@@ -45,12 +43,21 @@ DEPEND="${RDEPEND}
 	dev-util/intltool
 	xinerama? ( x11-proto/xineramaproto )"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	EPATCH_SUFFIX="patch" epatch "${FILESDIR}"/${PV}
-	eautoreconf #113681
+	eautoreconf # bug 113681
 }
 
-src_configure() {
+src_compile() {
+	if use ppc || use ppc64; then
+		# Still fails to build "flurry" screensaver.
+		filter-flags -mabi=altivec
+		filter-flags -maltivec
+		append-flags -U__VEC__
+	fi
+
 	unset BC_ENV_ARGS #24568
 
 	econf \
@@ -78,22 +85,13 @@ src_configure() {
 		$(use_with pam) \
 		$(use_with opengl gl) \
 		$(use_with jpeg)
-}
 
-src_compile() {
-	if use ppc || use ppc64; then
-		# Still fails to build "flurry" screensaver.
-		filter-flags -mabi=altivec
-		filter-flags -maltivec
-		append-flags -U__VEC__
-	fi
-
-	emake -j1 || die "emake failed." #155049
+	emake || die "emake failed." # bug 155049
 }
 
 src_install() {
 	emake install_prefix="${D}" install || die "emake install failed."
-	dodoc README{,.hacking}
+	dodoc README{,.hacking} || die
 
 	use pam && fperms 755 /usr/bin/${PN}
 	pamd_mimic_system ${PN} auth
