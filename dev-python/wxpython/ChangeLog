@@ -1,14 +1,6 @@
 # ChangeLog for dev-python/wxpython
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/wxpython/ChangeLog,v 1.112 2009/01/22 12:51:58 armin76 Exp $
-
-  22 Jan 2009; Raúl Porcel <armin76@gentoo.org> wxpython-2.6.4.0-r2.ebuild,
-  wxpython-2.8.9.1-r3.ebuild:
-  Readd ~arm/~sh
-
-  19 Jan 2009; Alexis Ballier <aballier@gentoo.org>
-  wxpython-2.8.9.1-r3.ebuild:
-  keyword ~x86-fbsd, bug #254696
+# $Header: /var/cvsroot/gentoo-x86/dev-python/wxpython/ChangeLog,v 1.110 2009/01/18 19:29:05 maekke Exp $
 
   18 Jan 2009; Markus Meier <maekke@gentoo.org> wxpython-2.8.9.1-r2.ebuild:
   amd64/x86 stable, bug #254696
