@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-kids/gcompris/Attic/gcompris-8.4.8.ebuild,v 1.1 2009/01/05 23:36:06 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-kids/gcompris/Attic/gcompris-8.4.8.ebuild,v 1.4 2009/01/19 04:40:40 mr_bones_ Exp $
 
 EAPI=2
 inherit autotools eutils python games
@@ -9,7 +9,7 @@ DESCRIPTION="full featured educational application for children from 2 to 10"
 HOMEPAGE="http://gcompris.net/"
 SRC_URI="mirror://sourceforge/gcompris/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="debug gnet python sqlite"
@@ -19,6 +19,7 @@ RDEPEND="x11-libs/gtk+:2
 	media-libs/gst-plugins-good
 	media-plugins/gst-plugins-ogg
 	media-plugins/gst-plugins-vorbis
+	media-libs/libart_lgpl
 	>=gnome-base/libgnomecanvas-2.3.6
 	media-libs/sdl-mixer
 	media-libs/libsdl
@@ -29,13 +30,12 @@ RDEPEND="x11-libs/gtk+:2
 	gnet? ( net-libs/gnet:2 )
 	python? (
 		dev-lang/python[threads]
-		dev-python/gnome-python
 		dev-python/pygtk
-		dev-python/pyxml
-		dev-python/pysqlite:2
+		sqlite? ( dev-python/pysqlite:2 )
 	)
 	sqlite? ( dev-db/sqlite:3 )"
 DEPEND="${RDEPEND}
+	dev-perl/XML-Parser
 	sys-devel/gettext
 	sys-apps/texinfo
 	app-text/texi2html
@@ -45,8 +45,7 @@ RDEPEND="${RDEPEND}
 	sci-electronics/gnucap"
 
 src_prepare() {
-	epatch \
-		"${FILESDIR}"/${P}-build.patch
+	epatch "${FILESDIR}"/${P}-build.patch
 	cp /usr/share/gettext/config.rpath .
 	eautoreconf
 }
@@ -64,8 +63,7 @@ src_configure() {
 		$(use_with python python /usr/bin/python${PYVER}) \
 		$(use_enable debug) \
 		$(use_enable gnet) \
-		$(use_enable sqlite) \
-		|| die
+		$(use_enable sqlite)
 }
 
 src_compile() {
