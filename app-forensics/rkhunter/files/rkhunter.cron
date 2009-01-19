@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Header: /var/cvsroot/gentoo-x86/app-forensics/rkhunter/files/Attic/rkhunter.cron,v 1.3 2005/09/02 09:58:35 ka0ttic Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-forensics/rkhunter/files/Attic/rkhunter.cron,v 1.4 2009/01/18 00:20:29 patrick Exp $
 # original author: Aaron Walker <ka0ttic@gentoo.org>
 
 ########################## Begin Configuration ###############################
@@ -60,7 +60,7 @@ fi
 
 # moved this out of config section since it'll
 # probably never need to be changed
-RKHUNTER_EXEC="/usr/bin/rkhunter"
+RKHUNTER_EXEC="/usr/sbin/rkhunter"
 
 # sanity check
 if [[ ! -x "${RKHUNTER_EXEC}" ]] ; then
@@ -91,9 +91,9 @@ case "${VERBOSITY}" in
 	# warnings and errors only
 	1)	RKHUNTER_OPTS="${RKHUNTER_OPTS} --quiet" ;;
 	# default rkhunter output (no extra options)
-	2)	;;
-	# default to option 3 (report-mode)
-	*)	RKHUNTER_OPTS="${RKHUNTER_OPTS} --report-mode"	;;
+#	2)	;;
+	# default to option 3
+	*)	;;
 esac
 
 # save old log
