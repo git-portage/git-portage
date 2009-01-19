@@ -43,7 +43,6 @@ java-external
 3dfx
 cpufreq
 dell
-laptop
 
 # Stuff we don't want
 chicken
