@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/alsa-tools/Attic/alsa-tools-1.0.16.ebuild,v 1.6 2008/05/13 14:53:24 beandog Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/alsa-tools/Attic/alsa-tools-1.0.16.ebuild,v 1.7 2009/01/19 16:11:29 chainsaw Exp $
 
 WANT_AUTOMAKE="1.9"
 WANT_AUTOCONF="2.5"
@@ -89,7 +89,7 @@ src_unpack() {
 	epatch "${FILESDIR}/${PN}-1.0.14-asneeded.patch"
 
 	for dir in echomixer envy24control rmedigicontrol; do
-		pushd ${dir} &> /dev/null
+		pushd "${dir}" &> /dev/null
 		sed -i -e '/AM_PATH_GTK/d' configure.in
 		eautomake
 		popd &> /dev/null
