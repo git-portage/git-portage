@@ -11,10 +11,9 @@
 	</maintainer>
 	<use>
 		<flag name="monolithic">
-			Build Standalone client with integrated core, no external
-			quasselcore needed. Only useful if one don't want to use quassels
-			client/server model. The server and X flags are not needed in this
-			case but it is possible to enable them too.
+			Build monolitic client. Only useful if one don't want to use
+			quassels client/server model. The server and X flags are probably
+			not needed but it is possible to enable them tooy.
 		</flag>
 		<flag name="phonon">
 			Build client with phonon backend support. This enables sound
