@@ -1,7 +1,9 @@
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-libexec/files/bootpd.confd,v 1.1 2006/11/20 14:27:10 flameeyes Exp $
+
 # Configuration file for /etc/init.d/bootpd
 
 # Name of the configuration file for bootpd
-# bootptab_file="/etc/bootptab"
+# BOOTPTAB_FILE="/etc/bootptab"
 
 # Options to pass to bootpd. See bootpd(8).
-# bootpd_opts=""
+# BOOTPD_OPTS=""
