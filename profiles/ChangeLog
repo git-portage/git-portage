@@ -1,10 +1,40 @@
 # ChangeLog for profile directory
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2264 2009/01/14 12:43:45 alexxy Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2274 2009/01/19 04:37:28 darkside Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  19 Jan 2009; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  process treecleaner queue, multiple packages added, 2 removed from tree
+
+  18 Jan 2009; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  provide a bluez-4 compatible totem, bug #249257.
+
+  18 Jan 2009; Andreas Proschofsky <suka@gentoo.org> package.mask:
+  Mask release candidates for OpenOffice.org 3.0.1
+
+  18 Jan 2009; Diego E. Pettenò <flameeyes@gentoo.org> package.mask:
+  Remove dev-ruby/test-unit mask, tests now fixed.
+
+  16 Jan 2009; Diego E. Pettenò <flameeyes@gentoo.org> package.mask:
+  Add mask for dev-ruby/test-unit.
+
+  16 Jan 2009; Rémi Cardona <remi@gentoo.org> package.mask:
+  add x11-libs/libdrm-2.4.4 to p.mask
+
+  16 Jan 2009; Mike Auty <ikelos@gentoo.org> package.mask:
+  Mask out further vulnerable vmware software versions.
+
+  15 Jan 2009; Sébastien Fabbro <bicatali@gentoo.org> package.mask:
+  Masked dev-python/f2py for removal in 30 days
+
+  15 Jan 2009; Torsten Veller <tove@gentoo.org> package.mask:
+  Unmask dev-perl/Net-Amazon-S3-0.49
+
+  15 Jan 2009; Alexis Ballier <aballier@gentoo.org> package.mask:
+  unmask vamp sdk 2.0 now that audacity is fixed
 
   14 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> package.mask:
   Unmask kde 4.1.4
