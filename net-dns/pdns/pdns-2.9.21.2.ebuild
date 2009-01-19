@@ -1,8 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/pdns/Attic/pdns-2.9.21.2.ebuild,v 1.3 2009/01/22 18:11:21 swegener Exp $
-
-EAPI="2"
+# $Header: /var/cvsroot/gentoo-x86/net-dns/pdns/Attic/pdns-2.9.21.2.ebuild,v 1.2 2008/11/19 22:21:20 maekke Exp $
 
 inherit multilib eutils autotools
 
@@ -29,18 +27,17 @@ DEPEND="${DEPEND}
 	doc? ( app-doc/doxygen )"
 
 src_unpack() {
-	default
+	unpack ${A}
 	cd "${S}"
 
 	epatch "${FILESDIR}"/2.9.18-default-mysql-options.patch
 	epatch "${FILESDIR}"/2.9.20-ldap-deprecated.patch
 	epatch "${FILESDIR}"/2.9.21-gcc-4.3.patch
-	epatch "${FILESDIR}"/2.9.21.2-zone2ldap.patch
 
 	eautoreconf
 }
 
-src_configure() {
+src_compile() {
 	local modules="pipe geo" myconf=""
 
 	use mysql && modules="${modules} gmysql"
@@ -66,10 +63,7 @@ src_configure() {
 		$(use_enable static static-binaries) \
 		${myconf} \
 		|| die "econf failed"
-}
-
-src_compile() {
-	default
+	emake || die "emake failed"
 
 	if use doc
 	then
