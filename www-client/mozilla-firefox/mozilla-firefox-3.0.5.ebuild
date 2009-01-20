@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-firefox/Attic/mozilla-firefox-3.0.5.ebuild,v 1.11 2009/01/21 05:55:43 gengor Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-firefox/Attic/mozilla-firefox-3.0.5.ebuild,v 1.10 2008/12/29 21:50:29 gengor Exp $
 EAPI="1"
 WANT_AUTOCONF="2.1"
 
@@ -197,8 +197,10 @@ src_compile() {
 	# Finalize and report settings
 	mozconfig_final
 
-	if [[ $(gcc-major-version) -lt 4 ]]; then
-		append-cxxflags -fno-stack-protector
+	if use amd64 ; then
+		if [[ $(gcc-major-version) -lt 4 ]]; then
+			filter-flags -fstack-protector -fstack-protector-all
+		fi
 	fi
 
 	####################################
