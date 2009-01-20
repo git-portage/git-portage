@@ -1,10 +1,12 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/Attic/pidgin-2.5.4.ebuild,v 1.4 2009/01/21 01:12:51 tester Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/Attic/pidgin-2.5.4.ebuild,v 1.1 2009/01/20 01:26:32 tester Exp $
 
 EAPI=2
 
-inherit flag-o-matic eutils toolchain-funcs multilib perl-app gnome2
+WANT_AUTOMAKE="1.9"
+
+inherit flag-o-matic eutils toolchain-funcs multilib perl-app gnome2 autotools
 
 DESCRIPTION="GTK Instant Messenger client"
 HOMEPAGE="http://pidgin.im/"
@@ -12,10 +14,9 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~sparc ~x86 ~x86-fbsd"
-IUSE="bonjour dbus debug doc eds gadu gnutls +gstreamer meanwhile"
-IUSE="${IUSE} networkmanager nls perl silc tcl tk spell qq gadu"
-IUSE="${IUSE} +gtk sasl ncurses groupwise prediction zephyr" # mono"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~x86 ~x86-fbsd"
+IUSE="bonjour dbus debug doc eds gadu gnutls gstreamer meanwhile networkmanager nls perl silc tcl tk spell qq gadu"
+IUSE="${IUSE} gtk sasl ncurses groupwise prediction zephyr" # mono"
 
 RDEPEND="
 	bonjour? ( net-dns/avahi )
@@ -170,4 +171,7 @@ src_install() {
 	gnome2_src_install
 	use perl && fixlocalpod
 	dodoc AUTHORS HACKING INSTALL NEWS README ChangeLog
+
+	# Remove superfluous desktop file
+	use gtk || rm -rf "${D}/usr/share/applications"
 }
