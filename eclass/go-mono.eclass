@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/go-mono.eclass,v 1.3 2009/01/20 15:22:24 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/go-mono.eclass,v 1.1 2009/01/18 16:16:22 loki_val Exp $
 
 # @ECLASS: go-mono.eclass
 # @MAINTAINER:
@@ -32,8 +32,7 @@ fi
 # path on ximians's servers from which to install.
 
 DEPEND="${DEPEND}
-	>=dev-util/pkgconfig-0.23
-	userland_GNU? ( >=sys-apps/findutils-4.4.0 )"
+	>=dev-util/pkgconfig-0.23"
 
 if [[ "${GO_MONO_REL_PV}" = "2.2" ]]
 then
