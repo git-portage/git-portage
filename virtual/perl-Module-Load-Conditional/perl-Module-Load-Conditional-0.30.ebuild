@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/perl-Module-Load-Conditional/Attic/perl-Module-Load-Conditional-0.30.ebuild,v 1.2 2009/01/20 13:04:29 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/virtual/perl-Module-Load-Conditional/Attic/perl-Module-Load-Conditional-0.30.ebuild,v 1.1 2009/01/20 12:55:16 tove Exp $
 
-DESCRIPTION="Looking up module information / loading at runtime"
+DESCRIPTION="runtime require of both modules and files"
 HOMEPAGE="http://www.gentoo.org/proj/en/perl/"
 SRC_URI=""
 
