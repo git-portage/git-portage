@@ -1,9 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.5 2009/01/22 11:18:06 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.2 2009/01/06 18:42:15 mr_bones_ Exp $
 
 inherit eutils flag-o-matic multilib toolchain-funcs versionator
 
+HOMEPAGE="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html"
 if [[ ${PV} == "9999" ]]; then
 	EGIT_REPO_URI="git://git.kernel.org/pub/scm/linux/hotplug/udev.git"
 	EGIT_BRANCH="master"
@@ -12,7 +13,6 @@ else
 	SRC_URI="mirror://kernel/linux/utils/kernel/hotplug/${P}.tar.bz2"
 fi
 DESCRIPTION="Linux dynamic and persistent device naming support (aka userspace devfs)"
-HOMEPAGE="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -38,16 +38,14 @@ pkg_setup() {
 	local KV_MINOR=$(get_version_component_range 2 ${KV})
 	local KV_MICRO=$(get_version_component_range 3 ${KV})
 
-	local KV_min_micro=15 KV_min_micro_reliable=20
-	KV_min=2.6.${KV_min_micro}
-	KV_min_reliable=2.6.${KV_min_micro_reliable}
+	local min_micro=15 min_micro_reliable=20
 
 	local ok=0
 	if [[ ${KV_MAJOR} == 2 && ${KV_MINOR} == 6 ]]
 	then
-		if [[ ${KV_MICRO} -ge ${KV_min_micro_reliable} ]]; then
+		if [[ ${KV_MICRO} -ge ${min_micro_reliable} ]]; then
 			ok=2
-		elif [[ ${KV_MICRO} -ge ${KV_min_micro} ]]; then
+		elif [[ ${KV_MICRO} -ge ${min_micro} ]]; then
 			ok=1
 		fi
 	fi
@@ -55,11 +53,11 @@ pkg_setup() {
 	if [[ ${ok} -lt 1 ]]
 	then
 		ewarn
-		ewarn "${P} does not support Linux kernel before version ${KV_min}!"
+		ewarn "${P} does not support Linux kernel before version 2.6.${min_micro}!"
 	fi
 	if [[ ${ok} -lt 2 ]]; then
 		ewarn "If you want to use udev reliable you should update"
-		ewarn "to at least kernel version ${KV_min_reliable}!"
+		ewarn "to at least kernel version 2.6.${min_micro_reliable}!"
 		ewarn
 		ebeep
 	fi
@@ -80,20 +78,15 @@ src_unpack() {
 
 	# patches go here...
 
-	# change rules back to group uucp instead of dialout for now
-	sed -e 's/GROUP="dialout"/GROUP="uucp"/' \
-		-i rules/{rules.d,packages}/*.rules
-
 	if [[ ${PV} != 9999 ]]; then
 		# Make sure there is no sudden changes to upstream rules file
 		# (more for my own needs than anything else ...)
 		MD5=$(md5sum < "${S}/rules/rules.d/50-udev-default.rules")
 		MD5=${MD5/  -/}
-		if [[ ${MD5} != 7c7de0a29a2cf218dc43dd099cd3bfec ]]
+		if [[ ${MD5} != c233e7da2eaebbda659d7121957aea72 ]]
 		then
 			echo
 			eerror "50-udev-default.rules has been updated, please validate!"
-			eerror "md5sum=${MD5}"
 			die "50-udev-default.rules has been updated, please validate!"
 		fi
 	fi
@@ -125,8 +118,6 @@ src_compile() {
 }
 
 src_install() {
-	local scriptdir="${FILESDIR}/136"
-
 	into /
 	emake DESTDIR="${D}" install || die "make install failed"
 	if [[ "$(get_libdir)" != "lib" ]]; then
@@ -143,10 +134,7 @@ src_install() {
 		|| die "move_tmp_persistent_rules.sh not installed properly"
 	newexe "${FILESDIR}"/write_root_link_rule-125 write_root_link_rule \
 		|| die "write_root_link_rule not installed properly"
-
-	doexe "${scriptdir}"/shell-compat-KV.sh \
-		|| die "shell-compat.sh not installed properly"
-	doexe "${scriptdir}"/shell-compat-addon.sh \
+	newexe "${FILESDIR}"/shell-compat-118-r3.sh shell-compat.sh \
 		|| die "shell-compat.sh not installed properly"
 
 	keepdir "${udev_helper_dir}"/state
@@ -182,26 +170,19 @@ src_install() {
 
 	# our udev hooks into the rc system
 	insinto /$(get_libdir)/rcscripts/addons
-	doins "${scriptdir}"/udev-start.sh \
-		|| die "udev-start.sh not installed properly"
-	doins "${scriptdir}"/udev-stop.sh \
-		|| die "udev-stop.sh not installed properly"
+	newins "${FILESDIR}"/udev-start-135-r3.sh udev-start.sh
+	newins "${FILESDIR}"/udev-stop-135-r2.sh udev-stop.sh
 
-	local init
-	# udev-postmount and init-scripts for >=openrc-0.3.1, Bug #240984
-	for init in udev udev-mount udev-dev-tarball udev-postmount; do
-		newinitd "${scriptdir}/${init}.initd" "${init}" \
-			|| die "initscript ${init} not installed properly"
-	done
+	# The udev-post init-script
+	newinitd "${FILESDIR}"/udev-postmount-135-r2.initd udev-postmount
 
-	# insert minimum kernel versions
-	sed -e "s/%KV_MIN%/${KV_min}/" \
-		-e "s/%KV_MIN_RELIABLE%/${KV_min_reliable}/" \
-		-i "${D}"/etc/init.d/udev-mount
+	# init-scripts for >=openrc-0.3.1, Bug #240984
+	newinitd "${FILESDIR}/udev-135-r2.initd" udev
+	newinitd "${FILESDIR}/udev-mount-135-r3.initd" udev-mount
+	newinitd "${FILESDIR}/udev-dev-tarball-135-r2.initd" udev-dev-tarball
 
 	# config file for init-script and start-addon
-	newconfd "${scriptdir}/udev.confd" udev \
-		|| die "config file not installed properly"
+	newconfd "${FILESDIR}/udev-135-r3.confd" udev
 
 	insinto /etc/modprobe.d
 	newins "${FILESDIR}"/blacklist-110 blacklist
