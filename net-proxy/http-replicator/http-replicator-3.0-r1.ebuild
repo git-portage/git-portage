@@ -1,15 +1,12 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/http-replicator/Attic/http-replicator-3.0-r1.ebuild,v 1.8 2009/01/20 22:44:42 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/http-replicator/Attic/http-replicator-3.0-r1.ebuild,v 1.6 2008/08/26 18:33:44 griffon26 Exp $
 
 inherit eutils
 
-MY_P="${PN}_${PV}"
-
 DESCRIPTION="Proxy cache for Gentoo packages"
-HOMEPAGE="http://sourceforge.net/projects/http-replicator"
-SRC_URI="mirror://sourceforge/http-replicator/${MY_P}.tar.gz"
-S="${WORKDIR}/${MY_P}"
+HOMEPAGE="http://gertjan.freezope.org/replicator/"
+SRC_URI="http://gertjan.freezope.org/replicator/${PN}_${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
