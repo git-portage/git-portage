@@ -1,20 +1,6 @@
 # ChangeLog for app-emulation/wine
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/ChangeLog,v 1.244 2009/01/24 15:05:06 vapier Exp $
-
-  24 Jan 2009; Mike Frysinger <vapier@gentoo.org> wine-1.1.13.ebuild,
-  wine-9999.ebuild:
-  Split apart funcs according to EAPI-2 #256117 by Arfrever Frehtes
-  Taifersar Arahesis.
-
-  24 Jan 2009; Alexis Ballier <aballier@gentoo.org> wine-1.1.0.ebuild,
-  wine-1.1.1.ebuild, wine-1.1.2.ebuild:
-  there is no stable keyword for bsd...
-
-  21 Jan 2009; Mike Frysinger <vapier@gentoo.org> wine-1.1.13.ebuild,
-  wine-9999.ebuild:
-  Make sure we pull in app-emulation/emul-linux-x86-baselibs for amd64
-  systems.
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/ChangeLog,v 1.241 2009/01/20 14:55:54 vapier Exp $
 
   20 Jan 2009; Mike Frysinger <vapier@gentoo.org> wine-1.1.13.ebuild,
   wine-9999.ebuild:
