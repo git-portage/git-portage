@@ -1,11 +1,11 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/gnujump/Attic/gnujump-1.0.5.ebuild,v 1.3 2009/01/25 03:24:20 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/gnujump/Attic/gnujump-1.0.5.ebuild,v 1.2 2008/10/25 22:25:41 pvdabeel Exp $
 
 inherit eutils games
 
 DESCRIPTION="Xjump clone with added features"
-HOMEPAGE="http://gnujump.es.gnu.org"
+HOMEPAGE="http://www.gnu.org/software/gnujump/"
 SRC_URI="http://download.savannah.gnu.org/releases/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
