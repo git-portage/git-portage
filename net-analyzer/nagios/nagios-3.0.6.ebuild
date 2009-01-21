@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios/Attic/nagios-3.0.6.ebuild,v 1.3 2009/01/25 17:14:54 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios/Attic/nagios-3.0.6.ebuild,v 1.2 2009/01/04 18:30:06 dertobi123 Exp $
 
 DESCRIPTION="The Nagios metapackage - merge this to pull install all of the
 nagios packages"
@@ -12,7 +12,7 @@ KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND="~net-analyzer/nagios-core-${PV}
-	>=net-analyzer/nagios-plugins-1.4.13-r1
+	>=net-analyzer/nagios-plugins-1.4.12-r100
 	>=net-analyzer/nagios-imagepack-1.0-r100"
 
 pkg_setup() {
