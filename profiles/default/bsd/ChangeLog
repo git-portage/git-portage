@@ -1,41 +1,6 @@
 # ChangeLog for profile directory
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/default/bsd/ChangeLog,v 1.14 2009/01/25 17:05:03 aballier Exp $
-
-  25 Jan 2009; Alexis Ballier <aballier@gentoo.org> fbsd/package.mask:
-  Remove the now completely broken gnome 2.22 mask on fbsd because some
-  people silently dropped our keywords on the latest not masked versions of
-  some core packages (gnome-desktop, gnome-terminal, etc.)
-
-  25 Jan 2009; Alexis Ballier <aballier@gentoo.org> profile.bashrc:
-  Add a profile.bashrc test for test == construction that does not work on
-  BSD in order to get automatic warnings for things like bug #256305
-
-  24 Jan 2009; Javier Villavicencio <the_paya@gentoo.org>
-  fbsd/profile.bashrc:
-  profile.bashrc fix for the charset.alias bugs: 169678, 195148 and 256129
-
-  24 Jan 2009; Javier Villavicencio <the_paya@gentoo.org>
-  +fbsd/profile.bashrc:
-  Move the fbsd profile.bashrc from releases.
-
-  24 Jan 2009; Javier Villavicencio <the_paya@gentoo.org>
-  fbsd/make.defaults:
-  Remove -sandbox from our FEATURES.
-
-  22 Jan 2009; Javier Villavicencio <the_paya@gentoo.org>
-  fbsd/make.defaults, fbsd/package.mask, package.use.force:
-  Remove a few masks and force zlib and bzip2 on libarchive.
-
-  22 Jan 2009; Alexis Ballier <aballier@gentoo.org> package.use.mask:
-  usemask links[livecd] since it requires gpm
-
-  21 Jan 2009; Alexis Ballier <aballier@gentoo.org> fbsd/package.mask:
-  remove libgtop mask on fbsd as someone didnt like us and removed our
-  keyword on the latest unmasked version
-
-  21 Jan 2009; Alexis Ballier <aballier@gentoo.org> package.use.mask:
-  cleanup a bit redundant usemasks
+# $Header: /var/cvsroot/gentoo-x86/profiles/default/bsd/ChangeLog,v 1.5 2009/01/21 21:09:28 aballier Exp $
 
   21 Jan 2009; Alexis Ballier <aballier@gentoo.org> fbsd/package.use.mask:
   usemask acl for gnome-vfs too; it has an almost posix acl support but
