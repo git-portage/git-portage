@@ -1,22 +1,6 @@
 # ChangeLog for app-admin/syslog-ng
-# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/syslog-ng/ChangeLog,v 1.197 2009/01/25 17:20:14 klausman Exp $
-
-  25 Jan 2009; Tobias Klausmann <klausman@gentoo.org>
-  syslog-ng-2.1.3.ebuild:
-  Stable on alpha, bug #256132
-
-  25 Jan 2009; Markus Meier <maekke@gentoo.org> syslog-ng-2.1.3.ebuild:
-  amd64/x86 stable, bug #256132
-
-  25 Jan 2009; Ferris McCormick <fmccor@gentoo.org> syslog-ng-2.1.3.ebuild:
-  Sparc stable, Bug #256132.
-
-  25 Jan 2009; Brent Baude <ranger@gentoo.org> syslog-ng-2.1.3.ebuild:
-  stable ppc64, bug 256132
-
-  23 Jan 2009; Jeroen Roovers <jer@gentoo.org> syslog-ng-2.1.3.ebuild:
-  Stable for HPPA (bug #256132).
+# Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/syslog-ng/ChangeLog,v 1.192 2008/12/08 19:50:00 mr_bones_ Exp $
 
   08 Dec 2008; Michael Sterrett <mr_bones_@gentoo.org>
   +files/syslog-ng-2.1.3-nonstatic.patch, syslog-ng-2.1.3.ebuild:
