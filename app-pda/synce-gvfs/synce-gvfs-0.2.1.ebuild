@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-pda/synce-gvfs/Attic/synce-gvfs-0.2.1.ebuild,v 1.4 2009/01/25 05:22:49 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-pda/synce-gvfs/Attic/synce-gvfs-0.2.1.ebuild,v 1.2 2009/01/21 11:04:34 mescalinum Exp $
 
-inherit gnome2
+inherit fdo-mime gnome2-utils
 
 DESCRIPTION="SynCE - Gnome GVFS extensions"
 HOMEPAGE="http://sourceforge.net/projects/synce/"
@@ -32,4 +32,16 @@ RESTRICT="test"
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog NEWS README
+}
+
+pkg_postinst() {
+	fdo-mime_desktop_database_update
+	fdo-mime_mime_database_update
+	gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+	fdo-mime_desktop_database_update
+	fdo-mime_mime_database_update
+	gnome2_icon_cache_update
 }
