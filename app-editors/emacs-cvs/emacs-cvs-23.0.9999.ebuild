@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-23.0.9999.ebuild,v 1.20 2009/01/25 19:25:17 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-23.0.9999.ebuild,v 1.18 2009/01/04 19:15:44 ulm Exp $
 
 ECVS_AUTH="pserver"
 ECVS_SERVER="cvs.savannah.gnu.org:/sources/emacs"
@@ -85,6 +85,8 @@ src_unpack() {
 		|| die "Upstream version number changed to ${FULL_VERSION}"
 	echo
 
+	epatch "${FILESDIR}/${PN}-freebsd-sparc-1.patch"
+
 	sed -i -e "s:/usr/lib/crtbegin.o:$(`tc-getCC` -print-file-name=crtbegin.o):g" \
 		-e "s:/usr/lib/crtend.o:$(`tc-getCC` -print-file-name=crtend.o):g" \
 		"${S}"/src/s/freebsd.h || die "unable to sed freebsd.h settings"
@@ -149,7 +151,7 @@ src_compile() {
 			einfo "Configuring to build with GIMP Toolkit (GTK+)"
 			myconf="${myconf} --with-x-toolkit=gtk"
 		elif use Xaw3d; then
-			einfo "Configuring to build with Xaw3d (Athena/Lucid) toolkit"
+			einfo "Configuring to build with Xaw3d (Athena) toolkit"
 			myconf="${myconf} --with-x-toolkit=athena"
 		elif use motif; then
 			einfo "Configuring to build with Motif toolkit"
