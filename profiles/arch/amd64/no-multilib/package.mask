@@ -1,4 +1,4 @@
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/amd64/no-multilib/package.mask,v 1.20 2009/01/06 07:20:47 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/amd64/no-multilib/package.mask,v 1.22 2009/01/21 17:33:07 mr_bones_ Exp $
 
 # AMD64 Team <amd64@gentoo.org>
 # Mask packages that rely on amd64 multilib
@@ -63,6 +63,7 @@ dev-lang/ifc
 dev-lang/realbasic
 dev-lang/sunstudioexpress
 dev-perl/Archive-Rar
+dev-util/android-sdk
 dev-util/biew
 dev-util/dialogblocks
 dev-util/helpblocks
@@ -160,6 +161,7 @@ games-rpg/nwn-cep
 games-rpg/nwn-data
 games-rpg/rain-slick
 games-server/etqw-ded
+games-server/greenhouse
 games-server/nwn-ded
 games-server/ut2003-ded
 games-simulation/bcs-demo
@@ -176,6 +178,7 @@ games-strategy/smac
 games-strategy/x2
 games-strategy/x2-demo
 mail-client/mozilla-thunderbird-bin
+mail-filter/MailScanner
 media-fonts/acroread-asianfonts
 media-gfx/grender
 media-gfx/maya
