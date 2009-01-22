@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs/Attic/emacs-22.3-r1.ebuild,v 1.5 2009/01/26 16:14:24 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs/Attic/emacs-22.3-r1.ebuild,v 1.1 2008/11/29 20:38:52 ulm Exp $
 
 inherit autotools elisp-common eutils flag-o-matic
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://gnu/emacs/${P}.tar.gz"
 
 LICENSE="GPL-3 FDL-1.2 BSD as-is X11"
 SLOT="22"
-KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~ppc ppc64 ~s390 ~sh sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE="alsa gif gtk gzip-el hesiod jpeg kerberos motif png spell sound source tiff toolkit-scroll-bars X Xaw3d xpm"
 RESTRICT="strip"
 
@@ -119,7 +119,7 @@ src_compile() {
 			einfo "Configuring to build with GIMP Toolkit (GTK+)"
 			myconf="${myconf} --with-x-toolkit=gtk"
 		elif use Xaw3d; then
-			einfo "Configuring to build with Xaw3d (Athena/Lucid) toolkit"
+			einfo "Configuring to build with Xaw3d (Athena) toolkit"
 			myconf="${myconf} --with-x-toolkit=athena"
 			myconf="${myconf} --without-gtk"
 		elif use motif; then
