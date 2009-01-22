@@ -1,32 +1,6 @@
 # ChangeLog for sys-fs/udev
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/ChangeLog,v 1.444 2009/01/25 19:55:53 zzam Exp $
-
-  25 Jan 2009; Matthias Schwarzott <zzam@gentoo.org> udev-137.ebuild:
-  Fix kernel version with which udev runs reliable. Also apply documentation
-  udevinfo to udevadm info patch.
-
-  24 Jan 2009; Matthias Schwarzott <zzam@gentoo.org>
-  +files/udev-137-rules-update.diff, udev-137.ebuild:
-  Rules update.
-
-*udev-135-r4 (24 Jan 2009)
-
-  24 Jan 2009; Matthias Schwarzott <zzam@gentoo.org>
-  +files/udev-135-fix-dri-perms.diff, +files/udev-fix-udevinfo-in-doc.diff,
-  +udev-135-r4.ebuild:
-  Fix permissions of dri devices, Bug #255841. Fix references to no longer
-  existing udevinfo command, Bug #255955.
-
-*udev-137 (24 Jan 2009)
-
-  24 Jan 2009; Matthias Schwarzott <zzam@gentoo.org> +udev-137.ebuild:
-  Version bumped.
-
-  22 Jan 2009; Matthias Schwarzott <zzam@gentoo.org> files/136/udev.confd,
-  files/136/udev.initd:
-  Add expert options to change udevsettle timeout and to run udevmonitor at
-  boot time to catch all events.
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/ChangeLog,v 1.439 2009/01/22 11:18:06 zzam Exp $
 
   22 Jan 2009; Matthias Schwarzott <zzam@gentoo.org> udev-9999.ebuild:
   Also set HOMEPAGE after inherit, Bug #255953.
