@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/wesnoth/Attic/wesnoth-1.4.7.ebuild,v 1.6 2009/01/25 22:27:26 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/wesnoth/Attic/wesnoth-1.4.7.ebuild,v 1.4 2009/01/18 17:02:33 fmccor Exp $
 
 EAPI=2
 inherit eutils toolchain-funcs flag-o-matic games
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/wesnoth/${PN}-${MY_PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~ppc ~ppc64 sparc ~x86 ~x86-fbsd"
 IUSE="dedicated editor lite nls server smallgui static tinygui tools"
 
 RDEPEND=">=media-libs/libsdl-1.2.7[X]
@@ -51,7 +51,8 @@ pkg_setup() {
 	games_pkg_setup
 }
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
 	if use dedicated || use server ; then
 		sed \
 			-e "s:GAMES_BINDIR:${GAMES_BINDIR}:" \
@@ -70,7 +71,7 @@ src_prepare() {
 	fi
 }
 
-src_configure() {
+src_compile() {
 	local myconf
 
 	filter-flags -ftracer -fomit-frame-pointer
@@ -101,7 +102,9 @@ src_configure() {
 		$(use_enable nls) \
 		$(use_enable nls dummy-locales) \
 		$(use_enable !dedicated game) \
-		${myconf}
+		${myconf} \
+		|| die
+	emake || die "emake failed"
 }
 
 src_install() {
