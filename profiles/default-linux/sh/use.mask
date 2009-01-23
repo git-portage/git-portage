@@ -20,6 +20,7 @@ ffmpeg
 # Stuff we don't want
 chicken
 clisp
+fuse
 R
 octave
 tracker
@@ -27,12 +28,10 @@ tracker
 # Stuff that doesn't make sense on this arch
 3dfx
 dell
+laptop
 
 # havent tested yet
-chicken
-clisp
-R
-octave
+gphoto2
 mythtv
 dvb
 qt3
