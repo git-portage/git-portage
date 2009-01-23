@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/skstream/skstream-0.3.6.ebuild,v 1.6 2009/01/23 21:49:33 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/skstream/skstream-0.3.6.ebuild,v 1.4 2009/01/13 20:26:35 ranger Exp $
 
 inherit eutils
 
@@ -10,15 +10,13 @@ HOMEPAGE="http://www.worldforge.org/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ppc ~sparc x86"
+KEYWORDS="~amd64 ppc ~sparc ~x86"
 IUSE=""
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	edos2unix ping/ping.cpp
-	epatch "${FILESDIR}"/${P}-gcc43.patch \
-		"${FILESDIR}"/${P}-test.patch
+	epatch "${FILESDIR}"/${P}-gcc43.patch
 }
 
 src_install() {
