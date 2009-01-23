@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/wop/wop-0.4.3-r1.ebuild,v 1.6 2009/01/27 14:42:16 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/wop/wop-0.4.3-r1.ebuild,v 1.5 2008/06/22 15:32:17 maekke Exp $
 
 inherit eutils toolchain-funcs games
 
@@ -39,8 +39,7 @@ src_unpack() {
 		-e "s:^data =.*$:data = ${GAMES_DATADIR}/${PN}:" \
 		woprc \
 		|| die "sed failed"
-	epatch "${FILESDIR}"/${P}-Makefile.patch \
-		"${FILESDIR}"/${P}-gcc43.patch
+	epatch "${FILESDIR}"/${P}-Makefile.patch
 }
 
 src_compile() {
