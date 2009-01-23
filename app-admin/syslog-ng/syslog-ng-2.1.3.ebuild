@@ -1,9 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/syslog-ng/Attic/syslog-ng-2.1.3.ebuild,v 1.8 2009/01/26 23:27:54 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/syslog-ng/Attic/syslog-ng-2.1.3.ebuild,v 1.2 2008/12/08 19:50:00 mr_bones_ Exp $
 
-EAPI=2
-inherit autotools fixheadtails eutils
+inherit fixheadtails eutils
 
 MY_PV=${PV/_/}
 DESCRIPTION="syslog replacement with advanced filtering features"
@@ -12,7 +11,7 @@ SRC_URI="http://www.balabit.com/downloads/files/syslog-ng/sources/2.1/src/${P}.t
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm hppa ~ia64 ~mips ~ppc ppc64 ~s390 ~sh sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE="hardened ipv6 selinux spoof-source sql static tcpd"
 
 RDEPEND=">=dev-libs/eventlog-0.2
@@ -29,15 +28,12 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}/doc/reference"
 	tar xzf syslog-ng.html.tar.gz || die "tar failed"
-}
-
-src_prepare() {
+	cd "${S}"
 	ht_fix_file configure
 	epatch "${FILESDIR}/${P}-nonstatic.patch"
-	eautoreconf
 }
 
-src_configure() {
+src_compile() {
 	econf \
 		--sysconfdir=/etc/syslog-ng \
 		--disable-dependency-tracking \
@@ -45,7 +41,9 @@ src_configure() {
 		$(use_enable sql) \
 		$(use_enable static static-linking) \
 		$(use_enable spoof-source) \
-		$(use_enable tcpd tcp-wrapper)
+		$(use_enable tcpd tcp-wrapper) \
+		|| die
+	emake || die "emake failed"
 }
 
 src_install() {
