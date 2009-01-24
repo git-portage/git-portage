@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.383 2009/01/28 04:29:52 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.381 2009/01/12 22:51:38 maekke Exp $
 #
 # Maintainer: Toolchain Ninjas <toolchain@gentoo.org>
 
@@ -1702,7 +1702,7 @@ gcc-compiler_src_install() {
 	S=${WORKDIR}/build \
 	make DESTDIR="${D}" install || die
 	# Punt some tools which are really only useful while building gcc
-	find "${D}" -name install-tools -prune -type d -exec rm -rf "{}" \;
+	find "${D}" -name install-tools -type d -exec rm -rf "{}" \;
 	# This one comes with binutils
 	find "${D}" -name libiberty.a -exec rm -f "{}" \;
 
@@ -1744,8 +1744,34 @@ gcc-compiler_src_install() {
 	fi
 	# Make sure we dont have stuff lying around that
 	# can nuke multiple versions of gcc
+	cd "${D}"${LIBPATH}
 
-	gcc_slot_java
+	# Move Java headers to compiler-specific dir
+	for x in "${D}"${PREFIX}/include/gc*.h "${D}"${PREFIX}/include/j*.h ; do
+		[[ -f ${x} ]] && mv -f "${x}" "${D}"${LIBPATH}/include/
+	done
+	for x in gcj gnu java javax org ; do
+		if [[ -d ${D}${PREFIX}/include/${x} ]] ; then
+			dodir /${LIBPATH}/include/${x}
+			mv -f "${D}"${PREFIX}/include/${x}/* "${D}"${LIBPATH}/include/${x}/
+			rm -rf "${D}"${PREFIX}/include/${x}
+		fi
+	done
+
+	if [[ -d ${D}${PREFIX}/lib/security ]] ; then
+		dodir /${LIBPATH}/security
+		mv -f "${D}"${PREFIX}/lib/security/* "${D}"${LIBPATH}/security
+		rm -rf "${D}"${PREFIX}/lib/security
+	fi
+
+	# Move libgcj.spec to compiler-specific directories
+	[[ -f ${D}${PREFIX}/lib/libgcj.spec ]] && \
+		mv -f "${D}"${PREFIX}/lib/libgcj.spec "${D}"${LIBPATH}/libgcj.spec
+
+	# Rename jar because it could clash with Kaffe's jar if this gcc is
+	# primary compiler (aka don't have the -<version> extension)
+	cd "${D}"${BINPATH}
+	[[ -f jar ]] && mv -f jar gcj-jar
 
 	# Move <cxxabi.h> to compiler-specific directories
 	[[ -f ${D}${STDCXX_INCDIR}/cxxabi.h ]] && \
@@ -1846,44 +1872,6 @@ gcc-compiler_src_install() {
 
 	# Cpoy the needed minispec for hardened gcc 4
 	copy_minispecs_gcc_specs
-}
-
-gcc_slot_java() {
-	local x
-
-	# Move Java headers to compiler-specific dir
-	for x in "${D}"${PREFIX}/include/gc*.h "${D}"${PREFIX}/include/j*.h ; do
-		[[ -f ${x} ]] && mv -f "${x}" "${D}"${LIBPATH}/include/
-	done
-	for x in gcj gnu java javax org ; do
-		if [[ -d ${D}${PREFIX}/include/${x} ]] ; then
-			dodir /${LIBPATH}/include/${x}
-			mv -f "${D}"${PREFIX}/include/${x}/* "${D}"${LIBPATH}/include/${x}/
-			rm -rf "${D}"${PREFIX}/include/${x}
-		fi
-	done
-
-	if [[ -d ${D}${PREFIX}/lib/security ]] || [[ -d ${D}${PREFIX}/$(get_libdir)/security ]] ; then
-		dodir /${LIBPATH}/security
-		mv -f "${D}"${PREFIX}/lib*/security/* "${D}"${LIBPATH}/security
-		rm -rf "${D}"${PREFIX}/lib*/security
-	fi
-
-	# Move libgcj.spec to compiler-specific directories
-	[[ -f ${D}${PREFIX}/lib/libgcj.spec ]] && \
-		mv -f "${D}"${PREFIX}/lib/libgcj.spec "${D}"${LIBPATH}/libgcj.spec
-
-	# SLOT up libgcj.pc (and let gcc-config worry about links)
-	local libgcj=$(find "${D}"${PREFIX}/lib/pkgconfig/ -name 'libgcj*.pc')
-	if [[ -n ${libgcj} ]] ; then
-		sed -i "/^libdir=/s:=.*:=${LIBPATH}:" "${libgcj}"
-		mv "${libgcj}" "${D}"/usr/lib/pkgconfig/libgcj-${GCC_PV}.pc || die
-	fi
-
-	# Rename jar because it could clash with Kaffe's jar if this gcc is
-	# primary compiler (aka don't have the -<version> extension)
-	cd "${D}"${BINPATH}
-	[[ -f jar ]] && mv -f jar gcj-jar
 }
 
 # Move around the libs to the right location.  For some reason,
