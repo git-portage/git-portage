@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/bzflag/Attic/bzflag-2.0.12.ebuild,v 1.6 2009/01/19 17:27:52 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-action/bzflag/Attic/bzflag-2.0.12.ebuild,v 1.8 2009/01/22 21:10:46 mr_bones_ Exp $
 
 EAPI=2
 inherit eutils flag-o-matic games
@@ -16,7 +16,7 @@ IUSE="dedicated sdl"
 
 UIDEPEND="virtual/opengl
 	virtual/glu
-	media-libs/libsdl
+	|| ( media-libs/libsdl[joystick] <media-libs/libsdl-1.2.13-r1 )
 	media-libs/glew
 	x11-libs/libICE
 	x11-libs/libSM
@@ -29,7 +29,7 @@ UIDEPEND="virtual/opengl
 	x11-libs/libXt
 	x11-libs/libXxf86vm"
 
-DEPEND=">=net-misc/curl-7.15.0[ares]
+DEPEND=">=net-misc/curl-7.15.0
 	sys-libs/ncurses
 	net-dns/c-ares
 	sdl? ( ${UIDEPEND} )
@@ -53,8 +53,7 @@ src_configure() {
 	egamesconf \
 		--disable-dependency-tracking \
 		--without-regex \
-		${myconf} \
-		|| die "egamesconf failed"
+		${myconf}
 }
 
 src_install() {
