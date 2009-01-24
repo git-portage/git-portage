@@ -1,6 +1,9 @@
 # ChangeLog for app-i18n/ibus
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus/ChangeLog,v 1.14 2008/10/23 22:57:30 matsuu Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus/ChangeLog,v 1.16 2009/01/22 12:08:12 matsuu Exp $
+
+  22 Jan 2009; MATSUU Takuto <matsuu@gentoo.org> ibus-0.1.1.20081023.ebuild:
+  Fixed dependency, bug #255582.
 
 *ibus-0.1.1.20081023 (23 Oct 2008)
 
