@@ -1,15 +1,6 @@
 # ChangeLog for net-analyzer/nagios
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios/ChangeLog,v 1.78 2009/01/26 19:52:41 ranger Exp $
-
-  26 Jan 2009; Brent Baude <ranger@gentoo.org> nagios-3.0.6.ebuild:
-  Marking nagios-3.0.6 ppc64 stable for bug 256177
-
-*nagios-3.1.0 (25 Jan 2009)
-
-  25 Jan 2009; Tobias Scherbaum <dertobi123@gentoo.org> nagios-3.0.6.ebuild,
-  +nagios-3.1.0.ebuild:
-  Version bump (and set on nagios-plugins to 1.4.13-r1 for 3.0.6, too)
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios/ChangeLog,v 1.76 2009/01/04 18:30:06 dertobi123 Exp $
 
   04 Jan 2009; Tobias Scherbaum <dertobi123@gentoo.org> nagios-3.0.6.ebuild:
   Fix detection for incompatible upgrades
