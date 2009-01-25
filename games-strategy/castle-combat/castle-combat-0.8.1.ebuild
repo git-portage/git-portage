@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/castle-combat/Attic/castle-combat-0.8.1.ebuild,v 1.6 2009/01/25 21:47:00 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/castle-combat/Attic/castle-combat-0.8.1.ebuild,v 1.5 2009/01/03 21:50:27 mr_bones_ Exp $
 
 EAPI=2
 inherit eutils games
@@ -18,7 +18,9 @@ RDEPEND="dev-python/twisted
 	media-libs/sdl-mixer[mikmod]
 	dev-python/pygame"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	sed -i "s:src:$(games_get_libdir)/${PN}:" ${PN}.py \
 		|| die "sed ${PN}.py failed"
 	sed -i "/data_path =/s:\"data:\"${GAMES_DATADIR}/${PN}:" src/common.py \
