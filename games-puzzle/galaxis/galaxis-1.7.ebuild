@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/galaxis/Attic/galaxis-1.7.ebuild,v 1.10 2009/01/29 02:10:20 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/galaxis/Attic/galaxis-1.7.ebuild,v 1.9 2006/12/06 17:24:33 wolf31o2 Exp $
 
-EAPI=2
 inherit games
 
 DESCRIPTION="A UNIX-hosted, curses-based clone of the nifty little Macintosh freeware game Galaxis"
@@ -14,12 +13,14 @@ SLOT="0"
 KEYWORDS="amd64 ppc ppc64 x86"
 IUSE=""
 
-DEPEND=">=sys-libs/ncurses-5.3"
+RDEPEND=">=sys-libs/ncurses-5.3"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
 	# Modify CFLAGS
 	sed -i \
-		-e '/^CC/d' \
 		-e '/^CFLAGS/s:-g:$(E_CFLAGS):' \
 		Makefile || die "sed Makefile failed"
 }
