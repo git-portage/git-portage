@@ -1,12 +1,14 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-pda/synce-sync-engine/Attic/synce-sync-engine-0.13.ebuild,v 1.1 2009/01/21 00:41:24 mescalinum Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-pda/synce-sync-engine/Attic/synce-sync-engine-0.13.ebuild,v 1.4 2009/01/21 11:48:50 mescalinum Exp $
 
-inherit eutils distutils
+inherit eutils distutils versionator
 
 DESCRIPTION="SynCE - Synchronization engine"
 HOMEPAGE="http://sourceforge.net/projects/synce/"
 LICENSE="MIT"
+
+synce_PV=$(get_version_component_range 1-2)
 
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
@@ -17,13 +19,13 @@ RDEPEND="dev-python/pygobject
 	dev-libs/libxml2
 	dev-libs/libxslt
 	dev-python/pyxml
-	~app-pda/synce-librra-0.12
+	=app-pda/synce-librra-${synce_PV}*
 	~app-pda/synce-librtfcomp-1.1"
 DEPEND="${RDEPEND}
 	dev-python/setuptools"
 
 SRC_URI="mirror://sourceforge/synce/sync-engine-${PV}.tar.gz"
-S=${WORKDIR}/sync-engine-${PV}
+S="${WORKDIR}/sync-engine-${PV}"
 
 src_install() {
 	DOCS="CHANGELOG COPYING"
