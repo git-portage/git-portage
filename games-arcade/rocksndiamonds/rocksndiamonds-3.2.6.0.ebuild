@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/rocksndiamonds/Attic/rocksndiamonds-3.2.6.0.ebuild,v 1.4 2009/01/29 02:30:46 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/rocksndiamonds/Attic/rocksndiamonds-3.2.6.0.ebuild,v 1.2 2009/01/21 21:34:28 mr_bones_ Exp $
 
 EAPI=2
 inherit flag-o-matic eutils games
@@ -37,20 +37,19 @@ DEPEND="app-arch/unzip
 
 src_unpack() {
 	unpack ${P}.tar.gz
-	cd "${S}"
+}
+
+src_prepare() {
 	unpack \
 		rockslevels-emc-1.0.tar.gz \
 		rockslevels-sp-1.0.tar.gz \
 		rockslevels-dx-1.0.tar.gz
-}
 
-src_prepare() {
 	# make it parallel-friendly.
 	epatch "${FILESDIR}"/${P}-parallel-build.patch
 	sed -i \
 		-e 's:\$(MAKE_CMD):$(MAKE) -C $(SRC_DIR):' \
 		-e '/^MAKE/d' \
-		-e '/^CC/d' \
 		Makefile \
 		|| die "sed failed"
 
