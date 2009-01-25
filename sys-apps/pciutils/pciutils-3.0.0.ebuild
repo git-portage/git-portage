@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pciutils/Attic/pciutils-3.0.0.ebuild,v 1.12 2009/01/26 03:28:41 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pciutils/Attic/pciutils-3.0.0.ebuild,v 1.11 2008/10/26 03:35:36 vapier Exp $
 
 inherit eutils flag-o-matic toolchain-funcs multilib
 
@@ -22,7 +22,6 @@ src_unpack() {
 	epatch "${FILESDIR}"/${PN}-3.0.0-resolv.patch #218555
 	epatch "${FILESDIR}"/pcimodules-${PN}-3.0.0.patch
 	epatch "${FILESDIR}"/${PN}-2.2.7-update-pciids-both-forms.patch
-	cp "${FILESDIR}"/pcimodules.c . || die
 	sed -i -e "/^LIBDIR=/s:/lib:/$(get_libdir):" Makefile
 }
 
@@ -47,7 +46,7 @@ src_compile() {
 src_install() {
 	pemake DESTDIR="${D}" install install-lib || die
 	dosbin pcimodules || die
-	doman "${FILESDIR}"/pcimodules.8
+	newman pcimodules.man pcimodules.8
 
 	if use network-cron ; then
 		exeinto /etc/cron.monthly
