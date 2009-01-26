@@ -1,9 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/guichan/Attic/guichan-0.8.1.ebuild,v 1.3 2009/01/28 13:59:31 mr_bones_ Exp $
-
-EAPI=2
-inherit eutils autotools
+# $Header: /var/cvsroot/gentoo-x86/dev-games/guichan/Attic/guichan-0.8.1.ebuild,v 1.1 2008/04/27 04:52:22 mr_bones_ Exp $
 
 DESCRIPTION="a portable C++ GUI library designed for games using Allegro, SDL and/or OpenGL"
 HOMEPAGE="http://guichan.sourceforge.net/"
@@ -21,18 +18,15 @@ DEPEND="allegro? ( media-libs/allegro )
 		media-libs/sdl-image
 	)"
 
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-as-needed.patch
-	eautoreconf
-}
-
-src_configure() {
+src_compile() {
 	econf \
 		--disable-dependency-tracking \
 		$(use_enable allegro) \
 		$(use_enable opengl) \
 		$(use_enable sdl) \
-		$(use_enable sdl sdlimage)
+		$(use_enable sdl sdlimage) \
+		|| die
+	emake || die "emake failed"
 }
 
 src_install() {
