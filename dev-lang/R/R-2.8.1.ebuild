@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/Attic/R-2.8.1.ebuild,v 1.2 2009/01/29 10:45:01 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/Attic/R-2.8.1.ebuild,v 1.1 2009/01/02 21:15:40 markusle Exp $
 
 EAPI=2
 inherit eutils fortran flag-o-matic bash-completion versionator
@@ -22,8 +22,7 @@ CDEPEND="dev-lang/perl
 	app-arch/bzip2
 	virtual/blas
 	virtual/ghostscript
-	cairo? ( x11-libs/cairo[X]
-		|| ( >=x11-libs/pango-1.20[X] <x11-libs/pango-1.20 ) )
+	cairo? ( x11-libs/cairo[X] x11-libs/pango[X] )
 	readline? ( sys-libs/readline )
 	jpeg? ( media-libs/jpeg )
 	png? ( media-libs/libpng )
