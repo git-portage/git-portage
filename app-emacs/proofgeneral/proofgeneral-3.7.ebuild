@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/proofgeneral/Attic/proofgeneral-3.7.ebuild,v 1.5 2009/01/30 06:47:52 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/proofgeneral/Attic/proofgeneral-3.7.ebuild,v 1.4 2008/04/12 08:58:07 nixnut Exp $
 
 inherit elisp
 
@@ -15,7 +15,7 @@ KEYWORDS="amd64 ppc x86"
 IUSE=""
 
 S="${WORKDIR}/${MY_PN}-${PV}"
-SITEFILE="50${PN}-gentoo.el"
+SITEFILE=50${PN}-gentoo.el
 
 src_compile() {
 	emake compile EMACS=emacs
@@ -26,7 +26,7 @@ src_install() {
 
 	dohtml doc/*.html doc/*.jpg
 	doinfo doc/*.info*
-	dodoc AUTHORS BUGS CHANGES COMPATIBILITY FAQ INSTALL README REGISTER
+	dodoc AUTHORS BUGS CHANGES COMPATIBILITY FAQ INSTALL README REGISTER TODO
 
 	elisp-site-file-install "${FILESDIR}/${SITEFILE}" ${MY_PN} \
 		|| die "elisp-site-file-install failed"
