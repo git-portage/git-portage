@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/ipp/Attic/ipp-6.0.0.063.ebuild,v 1.4 2009/01/31 12:07:10 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/ipp/Attic/ipp-6.0.0.063.ebuild,v 1.1 2009/01/19 22:58:10 bicatali Exp $
 
 inherit check-reqs
 
@@ -15,7 +15,7 @@ SRC_URI="amd64? ( ${COM_URI}/l_${PB}_em64t_p_${PV}.tar.gz )
 	x86? ( ${COM_URI}/l_${PB}_ia32_p_${PV}.tar.gz )
 	ia64? ( ${COM_URI}/l_${PB}_itanium_p_${PV}.tar.gz )"
 
-SLOT="0"
+SLOT=0
 LICENSE="Intel-SDP"
 
 IUSE=""
@@ -59,29 +59,33 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack ${A}
-	cd l_${PB}_*_${PV}
 
+	ewarn
+	ewarn "Intel ${PN} requires at least 300Mb of disk space"
+	ewarn "Make sure you have enough in ${PORTAGE_TMPDIR}, /tmp and in /opt"
+	ewarn
+	unpack ${A}
+
+	cd l_${PB}_*_${PV}/install
 	# need to make a file to install non-interactively.
 	# to produce such a file, first do it interactively
 	# tar xf l_*; ./install.sh --duplicate ipp.ini;
-
-	# binary blob extractor uses stupid directory
-	addpredict /usr/local/share/macrovision
+	# the file will be instman/ipp.ini
+	# binary blob extractor installs crap in /opt/intel
 	addwrite /opt/intel
 	cp ${IPP_LICENSE} "${WORKDIR}"/
-	IPP_LICENSE_LOCAL="${WORKDIR}/$(basename ${IPP_LICENSE})"
+	IPP_TMP_LICENSE="$(basename ${IPP_LICENSE})"
 	cat > ipp.ini <<- EOF
-		ACTIVATION=license_file
-		CONTINUE_WITH_OPTIONAL_ERROR=yes
-		PSET_INSTALL_DIR=${S}
-		PSET_LICENSE_FILE=${IPP_LICENSE_LOCAL}
-		INSTALL_MODE=NONRPM
-		ACCEPT_EULA=accept
+		[IPP_${IPP_ARCH}]
+		EULA_ACCEPT_REJECT=ACCEPT
 	EOF
-
 	einfo "Extracting ..."
-	./install.sh --silent ${PWD}/ipp.ini &> log.txt
+	./install \
+		--silent ${PWD}/ipp.ini \
+		--nonrpm \
+		--licensepath "${WORKDIR}"/${IPP_TMP_LICENSE} \
+		--installpath "${S}" \
+		--log log.txt &> /dev/null
 
 	# This check is arbitrary to say the least...
 	# We used to look for a specific library (ie: libippmmx.so) but that
@@ -94,12 +98,11 @@ src_unpack() {
 		die "extracting failed"
 	fi
 
-	# clean up
-	cd "${S}"
-	find . -type d -print0 | xargs --null chmod 755
-	rm -rf tmp* uninstall.sh
 	rm -rf "${WORKDIR}"/l_*
-	rm -f /opt/intel/.*ipp*.log /opt/intel/intel_sdp_products.db
+}
+
+src_compile() {
+	einfo "Binary package, nothing to compile"
 }
 
 src_install() {
@@ -107,9 +110,9 @@ src_install() {
 	dodir ${instdir}
 
 	# install license file
-	if  [[ ! -f ${INTEL_LIC_DIR}/$(basename ${IPP_LICENSE}) ]]; then
+	if  [[ ! -f ${INTEL_LIC_DIR}/${IPP_TMP_LICENSE} ]]; then
 		insinto ${INTEL_LIC_DIR}
-		doins ${IPP_LICENSE_LOCAL}
+		doins "${WORKDIR}"/${IPP_TMP_LICENSE}
 	fi
 
 	# cp quicker than doins
