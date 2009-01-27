@@ -1,15 +1,15 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxml2/Attic/libxml2-2.7.2-r2.ebuild,v 1.3 2009/01/20 17:23:06 keytoaster Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxml2/Attic/libxml2-2.7.2-r2.ebuild,v 1.7 2009/01/26 00:34:45 eva Exp $
 
-inherit libtool flag-o-matic eutils
+inherit libtool flag-o-matic eutils python
 
 DESCRIPTION="Version 2 of the library to manipulate XML files"
 HOMEPAGE="http://www.xmlsoft.org/"
 
 LICENSE="MIT"
 SLOT="2"
-KEYWORDS="~alpha amd64 ~arm hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 ~arm hppa ~ia64 ~m68k ~mips ppc ppc64 ~s390 ~sh ~sparc ~sparc-fbsd x86 ~x86-fbsd"
 IUSE="debug doc examples ipv6 python readline test"
 
 XSTS_HOME="http://www.w3.org/XML/2004/xml-schema-test-suite"
@@ -110,6 +110,11 @@ src_install() {
 }
 
 pkg_postinst() {
+	if use python; then
+		python_version
+		python_mod_optimize /usr/$(get_libdir)/python${PYVER}/site-packages
+	fi
+
 	# We don't want to do the xmlcatalog during stage1, as xmlcatalog will not
 	# be in / and stage1 builds to ROOT=/tmp/stage1root. This fixes bug #208887.
 	if [[ "${ROOT}" != "/" ]]
@@ -128,4 +133,8 @@ pkg_postinst() {
 			einfo "Created XML catalog in ${CATALOG}"
 		fi
 	fi
+}
+
+pkg_postrm() {
+	use python && python_mod_cleanup
 }
