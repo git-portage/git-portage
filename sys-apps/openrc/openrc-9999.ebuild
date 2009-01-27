@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/openrc/openrc-9999.ebuild,v 1.45 2009/01/31 14:34:36 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/openrc/openrc-9999.ebuild,v 1.43 2008/12/31 21:31:40 cardoe Exp $
 
 inherit eutils flag-o-matic multilib toolchain-funcs
 
@@ -72,7 +72,7 @@ src_compile() {
 	fi
 
 	if [[ ${PV} == "9999" ]] ; then
-		local ver="-svn-$(cd "${ESVN_STORE_DIR}/${ESVN_PROJECT}/${ESVN_REPO_URI##*/}"; LC_ALL=C svnversion)"
+		local ver="-svn-$(cd "${ESVN_STORE_DIR}/${ESVN_PROJECT}/${ESVN_REPO_URI##*/}"; LC_ALL=C svn info|awk '/Revision/ { print $2 }')"
 		sed -i "/^SVNVER[[:space:]]*=/s:=.*:=${ver}:" src/rc/Makefile
 	fi
 
@@ -172,9 +172,6 @@ pkg_preinst() {
 			ln -snf net.lo "${f}"
 		fi
 	done
-
-	# termencoding was added in 0.2.1 and needed in boot
-	has_version ">=sys-apps/openrc-0.2.1" || add_boot_init termencoding
 
 	# openrc-0.4.0 no longer loads the udev addon
 	enable_udev=0
@@ -283,13 +280,11 @@ pkg_postinst() {
 	else
 		if [[ ! -e ${ROOT}/etc/runlevels/sysinit/devfs ]] ; then
 			mkdir -p "${ROOT}"/etc/runlevels/sysinit
-			cp -RPp "${ROOT}"/usr/share/${PN}/runlevels/sysinit/* \
-				"${ROOT}"/etc/runlevels/sysinit
+			cp -RPp "${ROOT}"/usr/share/${PN}/runlevels/sysinit/* "${ROOT}"/etc/runlevels/sysinit
 		fi
 		if [[ ! -e ${ROOT}/etc/runlevels/shutdown/mount-ro ]] ; then
 			mkdir -p "${ROOT}"/etc/runlevels/shutdown
-			cp -RPp "${ROOT}"/usr/share/${PN}/runlevels/shutdown/* \
-				"${ROOT}"/etc/runlevels/shutdown
+			cp -RPp "${ROOT}"/usr/share/${PN}/runlevels/shutdown/* "${ROOT}"/etc/runlevels/shutdown
 		fi
 	fi
 
