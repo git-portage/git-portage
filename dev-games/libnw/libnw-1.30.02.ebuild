@@ -1,9 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/libnw/libnw-1.30.02.ebuild,v 1.2 2009/01/29 01:51:48 mr_bones_ Exp $
-
-EAPI=2
-inherit toolchain-funcs
+# $Header: /var/cvsroot/gentoo-x86/dev-games/libnw/libnw-1.30.02.ebuild,v 1.1 2008/09/05 13:18:22 nyhm Exp $
 
 DESCRIPTION="Tools and libraries for NWN file manipulation"
 HOMEPAGE="http://openknights.sourceforge.net/"
@@ -17,15 +14,6 @@ IUSE=""
 DEPEND="sys-devel/bison
 	sys-devel/flex"
 RDEPEND=""
-
-src_prepare() {
-	sed -i \
-		-e '/^CC =/d' \
-		-e '/^CXX =/d' \
-		$(find . -name Makefile.in) \
-		|| die "sed failed"
-	tc-export CC CXX
-}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
