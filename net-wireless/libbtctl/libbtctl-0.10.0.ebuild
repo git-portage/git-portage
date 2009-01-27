@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/libbtctl/Attic/libbtctl-0.10.0.ebuild,v 1.4 2009/01/29 23:21:29 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/libbtctl/Attic/libbtctl-0.10.0.ebuild,v 1.2 2008/04/17 19:31:54 jer Exp $
 
-inherit autotools gnome2 multilib mono
+inherit gnome2 multilib mono autotools
 
 DESCRIPTION="A GObject wrapper for Bluetooth functionality"
 HOMEPAGE="http://live.gnome.org/GnomeBluetooth"
@@ -10,20 +10,27 @@ HOMEPAGE="http://live.gnome.org/GnomeBluetooth"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
-IUSE="doc"
+IUSE="mono doc"
 
 RDEPEND=">=dev-libs/glib-2
 	>=net-wireless/bluez-utils-2.25
 	>=net-wireless/bluez-libs-2.25
 	>=dev-libs/openobex-1.2
 	>=dev-lang/python-2.3
-	>=dev-python/pygtk-2.0"
+	>=dev-python/pygtk-2.0
+	!sparc? (
+		mono? (
+			>=dev-lang/mono-0.96
+			=dev-dotnet/gtk-sharp-1.0*
+		)
+	)"
 
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35
 	dev-util/pkgconfig
 	doc? ( dev-util/gtk-doc )"
 
+MAKEOPTS="${MAKEOPTS} -j1"
 DOCS="README NEWS ChangeLog AUTHORS COPYING"
 
 src_unpack() {
@@ -32,17 +39,17 @@ src_unpack() {
 	# Fix multilib
 	sed -e "s:\/lib\/:\/$(get_libdir)\/:" -i src/Makefile.am
 
-	# Fix parallel make, bug #235991
-	epatch "${FILESDIR}/${P}-parallel-make.patch"
-
 	# Fix tests (needed with eautoreconf)
-	intltoolize --force --copy --automake || die "intltoolize failed"
+	intltoolize --force
 	eautoreconf
 }
 
-src_compile() {
-	gnome2_src_configure --disable-mono
+pkg_setup() {
+	use sparc || G2CONF="${G2CONF} $(use_enable mono)"
+}
 
-	sed -e 's/libext="a/& la/' -i libtool || die "sed failed"
-	emake || die "compile failure"
+src_compile() {
+	sed -i -e 's/libext="a/& la/' libtool
+
+	gnome2_src_compile
 }
