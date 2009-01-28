@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-137.ebuild,v 1.1 2009/01/24 21:01:47 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-137.ebuild,v 1.4 2009/01/27 10:42:15 zzam Exp $
 
 inherit eutils flag-o-matic multilib toolchain-funcs versionator
 
@@ -19,11 +19,22 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="selinux"
 
-DEPEND="selinux? ( sys-libs/libselinux )"
-RDEPEND="!sys-apps/coldplug
-	!<sys-fs/device-mapper-1.02.19-r1"
-RDEPEND="${DEPEND} ${RDEPEND}
+COMMON_DEPEND="selinux? ( sys-libs/libselinux )"
+
+if [[ ${PV} == "9999" ]]; then
+	# for documentation processing with xsltproc
+	DEPEND="${COMMON_DEPEND}
+		app-text/docbook-xsl-stylesheets
+		app-text/docbook-xml-dtd"
+else
+	DEPEND="${COMMON_DEPEND}"
+fi
+
+RDEPEND="${COMMON_DEPEND}
+	!sys-apps/coldplug
+	!<sys-fs/device-mapper-1.02.19-r1
 	>=sys-apps/baselayout-1.12.5"
+
 # We need the lib/rcscripts/addon support
 PROVIDE="virtual/dev-manager"
 
@@ -38,7 +49,7 @@ pkg_setup() {
 	local KV_MINOR=$(get_version_component_range 2 ${KV})
 	local KV_MICRO=$(get_version_component_range 3 ${KV})
 
-	local KV_min_micro=15 KV_min_micro_reliable=20
+	local KV_min_micro=15 KV_min_micro_reliable=22
 	KV_min=2.6.${KV_min_micro}
 	KV_min_reliable=2.6.${KV_min_micro_reliable}
 
@@ -79,6 +90,8 @@ src_unpack() {
 	cd "${S}"
 
 	# patches go here...
+	epatch "${FILESDIR}/${P}-rules-update.diff"
+	epatch "${FILESDIR}/${PN}-fix-udevinfo-in-doc.diff"
 
 	# change rules back to group uucp instead of dialout for now
 	sed -e 's/GROUP="dialout"/GROUP="uucp"/' \
