@@ -1,7 +1,7 @@
 #!/sbin/runscript
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/files/2.4.3/Attic/bacula-dir-init,v 1.1 2008/11/07 01:44:18 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/files/2.4.4/Attic/bacula-dir-init,v 1.1 2009/01/28 09:19:29 wschlich Exp $
 
 depend() {
 	need net
