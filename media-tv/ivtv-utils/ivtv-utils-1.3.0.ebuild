@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/ivtv-utils/Attic/ivtv-utils-1.3.0.ebuild,v 1.2 2008/12/12 04:58:49 beandog Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/ivtv-utils/Attic/ivtv-utils-1.3.0.ebuild,v 1.3 2009/01/28 20:51:56 truedfx Exp $
 
 inherit eutils linux-mod
 
@@ -11,7 +11,8 @@ SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="perl"
-RDEPEND=">=sys-fs/udev-103"
+RDEPEND=">=sys-fs/udev-103
+	!>=sys-kernel/linux-headers-2.6.27"
 DEPEND="app-arch/unzip
 	!media-tv/ivtv"
 PDEPEND=">=media-tv/ivtv-firmware-20070217
