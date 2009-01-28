@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/xmlgraphics-commons/xmlgraphics-commons-1.3.1.ebuild,v 1.1 2008/12/20 20:20:29 betelgeuse Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/xmlgraphics-commons/xmlgraphics-commons-1.3.1.ebuild,v 1.3 2009/01/27 19:56:27 ranger Exp $
 
 EAPI=1
 JAVA_PKG_IUSE="doc examples source test"
@@ -13,7 +13,7 @@ SRC_URI="mirror://apache/xmlgraphics/commons/source/${P}-src.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="1.3"
-KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~x86"
+KEYWORDS="~amd64 ~ia64 ~ppc ppc64 ~x86"
 IUSE="jpeg"
 
 # fails connect to X even tho it sets java.awt.headless
@@ -44,18 +44,16 @@ pkg_setup() {
 }
 
 JAVA_ANT_IGNORE_SYSTEM_CLASSES="true"
+JAVA_ANT_REWRITE_CLASSPATH="true"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	cd ${S}/lib || die
-	rm -v *.jar || die
-
-	java-pkg_jarfrom commons-io-1
-	java-pkg_jarfrom commons-logging
+	rm -v "${S}"/lib/*.jar || die
 }
 
+EANT_GENTOO_CLASSPATH="commons-io-1,commons-logging"
 EANT_EXTRA_ARGS="-Djdk14.present=true"
 EANT_BUILD_TARGET="jar-main"
 EANT_DOC_TARGET="javadocs"
@@ -72,6 +70,6 @@ src_test() {
 
 src_install(){
 	java-pkg_newjar build/${P}.jar
-	use source && java-pkg_dosrc src/java/org src/java-1.4/org
+	use source && java-pkg_dosrc src/java/org
 	use doc && java-pkg_dojavadoc build/javadocs
 }
