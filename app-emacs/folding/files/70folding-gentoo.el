@@ -1,5 +1,5 @@
 
-;;; folding site-lisp configuration
+;;; folding-mode site-lisp configuration
 
 (add-to-list 'load-path "@SITELISP@")
 (autoload 'folding-mode          "folding" "Folding mode" t)
