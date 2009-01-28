@@ -1,6 +1,28 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.71 2009/01/11 21:23:25 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.72 2009/01/28 09:19:28 wschlich Exp $
+
+*bacula-2.4.4 (26 Jan 2009)
+
+  26 Jan 2009; Wolfram Schlich <wschlich@gentoo.org>
+  -files/2.4.2/bacula-default-configs.patch, -files/2.4.2/bacula-dir-conf,
+  -files/2.4.2/bacula-dir-init, -files/2.4.2/bacula-fd-conf,
+  -files/2.4.2/bacula-fd-init, -files/2.4.2/bacula-gnomesu2gksu.diff,
+  -files/2.4.2/bacula-sd-conf, -files/2.4.2/bacula-sd-init,
+  -files/2.4.3/2.4.3-cancel-after-network-outage.patch,
+  -files/2.4.3/2.4.3-orphaned-jobs.patch,
+  -files/2.4.3/2.4.3-update-slots.patch,
+  -files/2.4.3/bacula-default-configs.patch, -files/2.4.3/bacula-dir-conf,
+  -files/2.4.3/bacula-dir-init, -files/2.4.3/bacula-fd-conf,
+  -files/2.4.3/bacula-fd-init, -files/2.4.3/bacula-gnomesu2gksu.diff,
+  -files/2.4.3/bacula-sd-conf, -files/2.4.3/bacula-sd-init,
+  +files/2.4.4/bacula-default-configs.patch, +files/2.4.4/bacula-dir-conf,
+  +files/2.4.4/bacula-dir-init, +files/2.4.4/bacula-fd-conf,
+  +files/2.4.4/bacula-fd-init, +files/2.4.4/bacula-gnomesu2gksu.diff,
+  +files/2.4.4/bacula-sd-conf, +files/2.4.4/bacula-sd-init,
+  -bacula-2.4.1.ebuild, -bacula-2.4.2.ebuild, -bacula-2.4.3.ebuild,
+  +bacula-2.4.4.ebuild:
+  version bump, removed old versions
 
   11 Jan 2009; Markus Meier <maekke@gentoo.org> bacula-2.4.1-r1.ebuild:
   amd64 stable, bug #254071
