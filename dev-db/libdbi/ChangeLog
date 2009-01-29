@@ -1,6 +1,15 @@
 # ChangeLog for dev-db/libdbi
 # Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/libdbi/ChangeLog,v 1.34 2009/01/20 21:55:49 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/libdbi/ChangeLog,v 1.37 2009/01/25 15:46:44 maekke Exp $
+
+  25 Jan 2009; Markus Meier <maekke@gentoo.org> libdbi-0.8.3.ebuild:
+  amd64 stable, bug #253663
+
+  25 Jan 2009; Ferris McCormick <fmccor@gentoo.org> libdbi-0.8.3.ebuild:
+  Sparc stable, Bug #253663.
+
+  25 Jan 2009; Brent Baude <ranger@gentoo.org> libdbi-0.8.3.ebuild:
+  Marking libdbi-0.8.3 ppc64 for bug 256132
 
   20 Jan 2009; Alexis Ballier <aballier@gentoo.org> libdbi-0.8.3.ebuild:
   keyword ~x86-fbsd
