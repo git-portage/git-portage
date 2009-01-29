@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/hedgewars/Attic/hedgewars-0.9.6.ebuild,v 1.1 2008/08/01 21:39:27 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/hedgewars/Attic/hedgewars-0.9.9.ebuild,v 1.1 2009/01/29 19:58:09 mr_bones_ Exp $
 
-EAPI=1
+EAPI=2
 inherit eutils games
 
 MY_P=${PN}-src-${PV}
@@ -10,33 +10,32 @@ DESCRIPTION="Free Worms-like turn based strategy game"
 HOMEPAGE="http://hedgewars.org/"
 SRC_URI="http://hedgewars.org/download/${MY_P}.tar.bz2"
 
-LICENSE="GPL-2"
+LICENSE="GPL-2 BitstreamVera"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="|| (
 		( x11-libs/qt-gui:4 x11-libs/qt-svg:4 )
-		x11-libs/qt:4
+		>=x11-libs/qt-4.4:4
 	)
 	media-libs/libsdl
 	media-libs/sdl-ttf
-	media-libs/sdl-mixer
-	media-libs/sdl-image
+	media-libs/sdl-mixer[vorbis]
+	media-libs/sdl-image[png]
 	media-libs/sdl-net"
 DEPEND="${RDEPEND}
-	>=dev-util/cmake-2.4.4
-	dev-lang/fpc"
+	>=dev-util/cmake-2.6
+	>=dev-lang/fpc-2.2"
 
 S=${WORKDIR}/${MY_P}
 
-src_compile() {
+src_configure() {
 	cmake \
 		-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
 		-DCMAKE_INSTALL_PREFIX="${GAMES_PREFIX}" \
 		-DDATA_INSTALL_DIR="${GAMES_DATADIR}" \
 		. || die "cmake failed"
-	emake || die "emake failed"
 }
 
 src_install() {
