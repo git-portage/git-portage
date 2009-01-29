@@ -1,59 +1,10 @@
 # ChangeLog for profile directory
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2320 2009/02/01 17:42:29 remi Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2304 2009/01/29 14:29:33 alexxy Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
-
-  01 Feb 2009; Rémi Cardona <remi@gentoo.org> package.mask:
-  add newer versions of xf86-video-intel and mesa to p.mask
-
-  01 Feb 2009; Markus Ullmann <jokey@gentoo.org> updates/1Q-2009:
-  Package move from games-puzzle/ksudoku
-
-  01 Feb 2009; Tobias Klausmann <klausman@gentoo.org>
-  arch/alpha/package.use.mask:
-  ups needs nut, nagios-game needs qstat. Neither is keyworded on alpha,
-  hence mask them.
-
-  01 Feb 2009; Markus Ullmann <jokey@gentoo.org> package.mask:
-  Drop package mask for bug #257162
-
-  02 Feb 2009; Jim Ramsay <lack@gentoo.org> package.mask:
-  Masking net-misc/amazonmp3-libcompat until it is actually used
-
-  01 Feb 2009; Peter Alfredsen <loki_val@gentoo.org> package.mask:
-  Mask monopod for removal.
-
-  01 Feb 2009; Tomas Chvatal <scarabeus@gentoo.org> package.mask:
-  Mask sci-astronomy/setiathome for removal.
-
-  31 Jan 2009; <jokey@gentoo.org> package.mask:
-  Mask games-puzzle/ksudoku for removal
-
-  30 Jan 2009; Daniel Black <dragonheart@gentoo.org> package.mask:
-  app-crypt/tpm-module removed from portage. removed from package.mask also
-
-  30 Jan 2009; Thomas Anderson <gentoofan23@gentoo.org> package.mask:
-  Mask mythzoneminder as it depends on security-vulnerable zoneminder.
-
-  30 Jan 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
-  package.mask:
-  Removed the global KDE-4.2.0 mask and left the experimental printer
-  packages until the deps are added to the tree.
-
-  30 Jan 2009; Peter Alfredsen <loki_val@gentoo.org> package.mask:
-  P.mask gtkgl-sharp
-
-  30 Jan 2009; Peter Alfredsen <loki_val@gentoo.org> package.mask:
-  Mask mcatalog for removal
-
-  30 Jan 2009; Peter Alfredsen <loki_val@gentoo.org> package.mask:
-  jscall-sharp is gone from tree
-
-  29 Jan 2009; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
-  remove x11-misc/goats mask since it is now gone from the tree, #248564.
 
   29 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> package.mask:
   Add kde-base/konq-plugins-4.2.0 to mask
