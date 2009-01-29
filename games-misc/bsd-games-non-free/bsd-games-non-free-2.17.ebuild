@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-misc/bsd-games-non-free/bsd-games-non-free-2.17.ebuild,v 1.5 2009/01/29 08:46:09 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-misc/bsd-games-non-free/bsd-games-non-free-2.17.ebuild,v 1.4 2008/03/13 18:34:33 wolf31o2 Exp $
 
-EAPI=2
 inherit games
 
 DESCRIPTION="collection of games from NetBSD"
@@ -23,22 +22,17 @@ DEPEND="${RDEPEND}
 # Set GAMES_TO_BUILD variable to whatever you want
 export GAMES_TO_BUILD=${GAMES_TO_BUILD:="rogue"}
 
-src_prepare() {
-	sed -i \
-		-e '/^CC :/d' \
-		-e '/^CXX :/d' \
-		Makeconfig.in \
-		|| die "sed failed"
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
 	cp "${FILESDIR}"/config.params-gentoo config.params || die "cp failed"
 	echo bsd_games_cfg_usrlibdir=\"$(games_get_libdir)\" >> ./config.params
 	echo bsd_games_cfg_build_dirs=\"${GAMES_TO_BUILD}\" >> ./config.params
 }
 
-src_configure() {
-	./configure || die
-}
-
 src_compile() {
+	./configure || die
 	emake OPTIMIZE="${CFLAGS}" || die "emake failed"
 }
 
