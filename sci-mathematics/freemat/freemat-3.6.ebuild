@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/freemat/Attic/freemat-3.6.ebuild,v 1.6 2009/01/29 09:51:13 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/freemat/Attic/freemat-3.6.ebuild,v 1.5 2008/07/27 14:22:51 mr_bones_ Exp $
 
-EAPI="2"
+EAPI="1"
 inherit eutils autotools fdo-mime
 
 MY_PN=FreeMat
@@ -17,31 +17,35 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="|| ( ( x11-libs/qt-gui:4 x11-libs/qt-opengl:4 x11-libs/qt-svg:4 )
-		 x11-libs/qt:4[opengl] )
+RDEPEND="|| ( ( x11-libs/qt-gui:4 x11-libs/qt-opengl:4 )
+		 =x11-libs/qt-4.3*:4 )
 	dev-libs/libpcre
 	virtual/lapack
 	virtual/opengl
 	ncurses? ( >=sys-libs/ncurses-5.4 )
 	umfpack? ( sci-libs/umfpack )
 	arpack? ( sci-libs/arpack )
-	fftw? ( sci-libs/fftw:3.0 )
+	fftw? ( >=sci-libs/fftw-3:3.0 )
 	portaudio? ( media-libs/portaudio )
 	ffcall? ( dev-libs/ffcall )"
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
+QT4_BUILT_WITH_USE_CHECK="opengl"
+
 S="${WORKDIR}/${MY_P}"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	# allow enable/disable for configure
 	epatch "${FILESDIR}"/${P}-optional-deps.patch
 	epatch "${FILESDIR}"/${P}-includes.patch
 	eautoreconf
 }
 
-src_configure() {
+src_compile() {
 	econf \
 		--with-blas="$(pkg-config --libs blas)" \
 		--with-lapack="$(pkg-config --libs lapack)" \
@@ -50,7 +54,9 @@ src_configure() {
 		$(use_enable arpack) \
 		$(use_enable fftw) \
 		$(use_enable portaudio) \
-		$(use_enable ffcall)
+		$(use_enable ffcall) \
+		|| die "econf failed"
+	emake || die "emake failed"
 }
 
 src_install() {
@@ -60,7 +66,7 @@ src_install() {
 	make_desktop_entry FreeMat FreeMat
 }
 
-pkg_postinst() {
+pkg_postint() {
 	fdo-mime_desktop_database_update
 	elog "Before using ${MY_PN}, do (as a normal user)"
 	elog "FreeMat -i /usr/share/${MY_P}"
