@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.389 2009/01/29 06:06:45 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.388 2009/01/29 00:11:26 vapier Exp $
 #
 # Maintainer: Toolchain Ninjas <toolchain@gentoo.org>
 
@@ -1646,8 +1646,7 @@ gcc-library_src_install() {
 	# Do the 'make install' from the build directory
 	cd "${WORKDIR}"/build
 	S=${WORKDIR}/build \
-	emake -j1 \
-		DESTDIR="${D}" \
+	emake DESTDIR="${D}" \
 		prefix=${PREFIX} \
 		bindir=${BINPATH} \
 		includedir=${LIBPATH}/include \
@@ -1695,7 +1694,7 @@ gcc-compiler_src_install() {
 	done
 	# Do the 'make install' from the build directory
 	S=${WORKDIR}/build \
-	emake -j1 DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install || die
 	# Punt some tools which are really only useful while building gcc
 	find "${D}" -name install-tools -prune -type d -exec rm -rf "{}" \;
 	# This one comes with binutils
