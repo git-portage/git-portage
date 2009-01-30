@@ -6,7 +6,4 @@
 		<email>jokey@gentoo.org</email>
 		<name>Markus Ullmann</name>
 	</maintainer>
-	<use>
-		<flag name="system-libvncserver">Build against the system libvncserver (experimental)</flag>
-	</use>
 </pkgmetadata>
