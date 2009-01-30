@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/cowloop/Attic/cowloop-3.0-r3.ebuild,v 1.4 2009/02/02 12:24:09 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/cowloop/Attic/cowloop-3.0-r3.ebuild,v 1.1 2008/04/01 14:39:22 dragonheart Exp $
 
-EAPI=2
 inherit linux-mod toolchain-funcs
 
 DESCRIPTION="A copy-on-write loop driver (block device) to be used on top of any other block driver"
@@ -10,10 +9,10 @@ HOMEPAGE="http://www.atconsultancy.nl/cowloop/"
 SRC_URI="http://www.atconsultancy.nl/cowloop/packages/${P}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
-DEPEND=""
-RDEPEND=""
+DEPEND="virtual/libc
+	virtual/linux-sources"
 
 S=${WORKDIR}/${P}/src
 MODULE_NAMES="cowloop(fs:)"
@@ -31,14 +30,12 @@ pkg_setup() {
 	fi
 }
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
 	epatch "${FILESDIR}"/${P}-cflags.patch
 	epatch "${FILESDIR}"/${P}-config_h.patch
 	epatch "${FILESDIR}"/${P}-vfs_statfs.patch
 	epatch "${FILESDIR}"/${P}-kern-2.6.23.patch
-	epatch "${FILESDIR}"/${P}-semaphore_h.patch
-	epatch "${FILESDIR}"/${P}-request_queue_t.patch
-	epatch "${FILESDIR}"/${P}-2.6.28.patch
 }
 
 src_compile() {
