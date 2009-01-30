@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/xfburn/Attic/xfburn-0.4.0.ebuild,v 1.4 2009/01/30 17:41:59 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/xfburn/Attic/xfburn-0.4.0.ebuild,v 1.2 2009/01/25 15:49:49 maekke Exp $
 
 EAPI=1
 
@@ -21,8 +21,7 @@ RDEPEND=">=dev-libs/libburn-0.4.2
 	>=xfce-base/libxfcegui4-4.4
 	>=xfce-extra/exo-0.3
 	dbus? ( dev-libs/dbus-glib )
-	gstreamer? ( media-libs/gstreamer
-		>=media-libs/gst-plugins-base-0.10.20 )
+	gstreamer? ( media-libs/gstreamer )
 	hal? ( sys-apps/hal )
 	xfce? ( xfce-base/thunar )"
 DEPEND="${RDEPEND}
