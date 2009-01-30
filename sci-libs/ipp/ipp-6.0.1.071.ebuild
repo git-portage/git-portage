@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/ipp/Attic/ipp-6.0.1.071.ebuild,v 1.3 2009/01/31 12:07:10 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/ipp/Attic/ipp-6.0.1.071.ebuild,v 1.2 2009/01/28 23:02:15 bicatali Exp $
 
 inherit check-reqs
 
@@ -68,14 +68,13 @@ src_unpack() {
 
 	# binary blob extractor uses stupid directory
 	addpredict /usr/local/share/macrovision
-	addwrite /opt/intel
+
 	cp ${IPP_LICENSE} "${WORKDIR}"/
-	IPP_LICENSE_LOCAL="${WORKDIR}/$(basename ${IPP_LICENSE})"
 	cat > ipp.ini <<- EOF
 		ACTIVATION=license_file
 		CONTINUE_WITH_OPTIONAL_ERROR=yes
 		PSET_INSTALL_DIR=${S}
-		PSET_LICENSE_FILE=${IPP_LICENSE_LOCAL}
+		PSET_LICENSE_FILE=${IPP_LICENSE}
 		INSTALL_MODE=NONRPM
 		ACCEPT_EULA=accept
 	EOF
@@ -99,7 +98,6 @@ src_unpack() {
 	find . -type d -print0 | xargs --null chmod 755
 	rm -rf tmp* uninstall.sh
 	rm -rf "${WORKDIR}"/l_*
-	rm -f /opt/intel/.*ipp*.log /opt/intel/intel_sdp_products.db
 }
 
 src_install() {
@@ -109,7 +107,7 @@ src_install() {
 	# install license file
 	if  [[ ! -f ${INTEL_LIC_DIR}/$(basename ${IPP_LICENSE}) ]]; then
 		insinto ${INTEL_LIC_DIR}
-		doins ${IPP_LICENSE_LOCAL}
+		doins ${IPP_LICENSE}
 	fi
 
 	# cp quicker than doins
