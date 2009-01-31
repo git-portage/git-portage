@@ -64,18 +64,11 @@ start() {
 	# sys-apps/util-linux
 	CHRT="/usr/bin/chrt ${SCHED_PARAM}"
 
-	# check for baselayout version
-	if [[ -n "${RC_UNAME}" ]]; then
-		PARAMS="--background --stdout ${LOGFILE} --stderr ${LOGFILE} -- ${ARGS}"
-	else
-		PARAMS="-- ${ARGS} >> ${LOGFILE} 2>&1 &"
-	fi
-
-	eval ${CHRT} start-stop-daemon \
+	${CHRT} start-stop-daemon \
 		--quiet --start --chdir ${RUNTIMEDIR} \
 		--exec ${BOINCBIN} --chuid ${USER}:${GROUP} \
-		--nicelevel ${NICELEVEL} \
-		${PARAMS}
+		--background --stdout ${LOGFILE} --stderr ${LOGFILE} \
+		--nicelevel ${NICELEVEL} -- ${ARGS}
 
 	RESULT=$?
 
