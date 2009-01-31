@@ -1,6 +1,15 @@
 # ChangeLog for sys-cluster/openmpi
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/openmpi/ChangeLog,v 1.34 2008/10/17 18:56:47 maekke Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/openmpi/ChangeLog,v 1.36 2009/01/29 16:51:16 jsbronder Exp $
+
+  29 Jan 2009; Justin Bronder <jsbronder@gentoo.org> openmpi-1.3.ebuild:
+  Don't build Vampir Trace on sparc, #256529.
+
+*openmpi-1.3 (27 Jan 2009)
+
+  27 Jan 2009; Justin Bronder <jsbronder@gentoo.org> +openmpi-1.3.ebuild:
+  Bump sys-cluster/openmpi-1.3. Added cxx as default USE flag and blocker on
+  sys-cluster/mpiexec.
 
   17 Oct 2008; Markus Meier <maekke@gentoo.org> metadata.xml:
   smp USE-flag is global now
