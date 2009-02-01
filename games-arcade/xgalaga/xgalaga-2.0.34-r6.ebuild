@@ -1,9 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/xgalaga/Attic/xgalaga-2.0.34-r6.ebuild,v 1.8 2009/02/02 13:26:38 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/xgalaga/Attic/xgalaga-2.0.34-r6.ebuild,v 1.7 2008/12/18 22:37:35 mr_bones_ Exp $
 
-EAPI=2
-inherit eutils games
+inherit eutils flag-o-matic games
 
 DEB_VER=30
 DESCRIPTION="A Galaga clone with additional features"
@@ -24,7 +23,9 @@ RDEPEND="x11-libs/libX11
 DEPEND="${RDEPEND}
 	x11-proto/xproto"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	epatch "${FILESDIR}"/${P}-xpaths.patch #79496
 	epatch "${WORKDIR}"/${PN}_${PV}-${DEB_VER}.diff
 	sed -i \
@@ -34,10 +35,11 @@ src_prepare() {
 	sed -i \
 		-e '/SOUNDDEFS/ s:@prefix@:@prefix@/bin:' Makefile.in \
 		|| die "sed Makefile.in failed"
-	epatch "${FILESDIR}"/${P}-as-needed.patch
+	append-ldflags -Wl,--no-as-needed #247331
 }
 
 src_compile() {
+	egamesconf || die
 	emake CPPFLAGS="-D__NO_STRING_INLINES" || die "emake failed"
 }
 
