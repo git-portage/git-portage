@@ -1,6 +1,22 @@
 # ChangeLog for sys-apps/pkgcore
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/ChangeLog,v 1.73 2009/01/09 19:11:07 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/ChangeLog,v 1.76 2009/01/31 12:30:07 patrick Exp $
+
+*pkgcore-0.4.7.15-r1 (31 Jan 2009)
+
+  31 Jan 2009; Patrick Lauer <patrick@gentoo.org>
+  +files/pkgcore-sandbox.patch, +pkgcore-0.4.7.15-r1.ebuild:
+  Fixing test failure, patch by Brian Harring. Fixes #216942
+
+  30 Jan 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  -pkgcore-0.4.7.13.ebuild:
+  Removed 0.4.7.13 as requested by ferringb.
+
+*pkgcore-0.4.7.15 (30 Jan 2009)
+
+  30 Jan 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +pkgcore-0.4.7.15.ebuild:
+  Bump to 0.4.7.15 as requested by ferringb.
 
   09 Jan 2009; Patrick Lauer <patrick@gentoo.org> -pkgcore-0.4.7.4.ebuild,
   -pkgcore-0.4.7.5.ebuild, -pkgcore-0.4.7.6.ebuild, -pkgcore-0.4.7.7.ebuild,
