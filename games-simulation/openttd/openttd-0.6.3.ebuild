@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-simulation/openttd/Attic/openttd-0.6.3.ebuild,v 1.2 2008/12/06 15:08:15 nyhm Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-simulation/openttd/Attic/openttd-0.6.3.ebuild,v 1.4 2009/01/30 20:40:29 maekke Exp $
 
 EAPI="2"
 
@@ -19,8 +19,9 @@ done
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+KEYWORDS="amd64 ~ppc ~ppc64 x86"
 IUSE="alsa debug dedicated iconv +png scenarios timidity +truetype +zlib"
+RESTRICT="test"
 
 DEPEND="!dedicated? (
 			media-libs/libsdl[X]
