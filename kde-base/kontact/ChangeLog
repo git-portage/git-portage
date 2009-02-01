@@ -1,6 +1,16 @@
 # ChangeLog for kde-base/kontact
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kontact/ChangeLog,v 1.101 2009/01/27 17:37:59 alexxy Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kontact/ChangeLog,v 1.103 2009/02/01 19:16:25 scarabeus Exp $
+
+*kontact-4.2.0-r1 (01 Feb 2009)
+
+  01 Feb 2009; Tomas Chvatal <scarabeus@gentoo.org>
+  +kontact-4.2.0-r1.ebuild:
+  Update deps. Per bug #257273.
+
+  01 Feb 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  kontact-4.2.0.ebuild:
+  Restored ~ppc and ~ppc64 keywords to KDE-4.2.0
 
 *kontact-4.2.0 (27 Jan 2009)
 
