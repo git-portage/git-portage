@@ -1,6 +1,12 @@
 # ChangeLog for x11-libs/qt-dbus
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-dbus/Attic/ChangeLog,v 1.15 2009/01/18 19:50:22 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-dbus/Attic/ChangeLog,v 1.17 2009/01/31 18:09:20 klausman Exp $
+
+  31 Jan 2009; Tobias Klausmann <klausman@gentoo.org> qt-dbus-4.4.2.ebuild:
+  Stable on alpha, bug #248038
+
+  29 Jan 2009; Alexis Ballier <aballier@gentoo.org> qt-dbus-4.4.2.ebuild:
+  keyword ~x86-fbsd
 
   18 Jan 2009; Markus Meier <maekke@gentoo.org> qt-dbus-4.4.2.ebuild:
   amd64/x86 stable, bug #248038
