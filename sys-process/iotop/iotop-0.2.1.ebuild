@@ -1,8 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/iotop/Attic/iotop-0.2.1.ebuild,v 1.6 2009/02/02 04:24:08 darkside Exp $
-
-EAPI=2
+# $Header: /var/cvsroot/gentoo-x86/sys-process/iotop/Attic/iotop-0.2.1.ebuild,v 1.5 2009/01/31 14:43:30 jer Exp $
 
 inherit distutils linux-info
 
@@ -13,7 +11,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 hppa ~sparc x86"
 IUSE=""
-RDEPEND=">=dev-lang/python-2.5[ncurses]"
+RDEPEND=">=dev-lang/python-2.5"
 DEPEND="${RDEPEND}"
 CONFIG_CHECK="~TASK_IO_ACCOUNTING ~TASKSTATS"
 DOCS="THANKS"
