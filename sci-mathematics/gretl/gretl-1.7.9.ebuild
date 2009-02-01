@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/gretl/Attic/gretl-1.7.9.ebuild,v 1.2 2009/02/02 23:52:23 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/gretl/Attic/gretl-1.7.9.ebuild,v 1.1 2008/10/08 21:50:26 bicatali Exp $
 
 USE_EINSTALL=true
 EAPI=2
@@ -82,9 +82,9 @@ src_compile() {
 
 src_install() {
 	if use gnome; then
-		gnome2_src_install gnome_prefix="${D}"/usr svprefix="${D}usr"
+		gnome2_src_install gnome_prefix="${D}"/usr
 	else
-		einstall svprefix="${D}usr" || die "einstall failed"
+		einstall || die "einstall failed"
 	fi
 	if use gtk && ! use gnome; then
 		doicon gnome/gretl.png
