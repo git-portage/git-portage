@@ -65,16 +65,16 @@ start() {
 	CHRT="/usr/bin/chrt ${SCHED_PARAM}"
 
 	# check for baselayout version
-	if [[ -n "${RC_UNAME}" ]]; then
-		PARAMS="--background --stdout ${LOGFILE} --stderr ${LOGFILE} -- ${ARGS}"
+	if [[ "`start-stop-daemon --version |awk -F' ' '{print $2}'`" = "(OpenRC)" ]]; then
+		PARAMS="--stdout ${LOGFILE} --stderr ${LOGFILE} -- ${ARGS}"
 	else
-		PARAMS="-- ${ARGS} >> ${LOGFILE} 2>&1 &"
+		PARAMS="-- ${ARGS} &> ${LOGFILE}"
 	fi
 
-	eval ${CHRT} start-stop-daemon \
+	${CHRT} start-stop-daemon \
 		--quiet --start --chdir ${RUNTIMEDIR} \
 		--exec ${BOINCBIN} --chuid ${USER}:${GROUP} \
-		--nicelevel ${NICELEVEL} \
+		--background --nicelevel ${NICELEVEL} \
 		${PARAMS}
 
 	RESULT=$?
