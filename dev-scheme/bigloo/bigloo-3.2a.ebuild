@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-scheme/bigloo/Attic/bigloo-3.2a.ebuild,v 1.2 2009/02/02 17:01:13 hkbst Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-scheme/bigloo/Attic/bigloo-3.2a.ebuild,v 1.1 2009/01/07 14:23:15 hkbst Exp $
 
 inherit elisp-common multilib
 
@@ -16,8 +16,7 @@ SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~ppc ~x86"
 
-# bug 254916 for >=dev-libs/boehm-gc-7.1
-DEPEND=">=dev-libs/boehm-gc-7.1
+DEPEND="dev-libs/boehm-gc
 		emacs? ( virtual/emacs )
 		java? ( virtual/jdk app-arch/zip )"
 
@@ -59,8 +58,7 @@ src_install () {
 #	dodir /etc/env.d
 #	echo "LDPATH=/usr/$(get_libdir)/bigloo/${PV}/" > ${D}/etc/env.d/25bigloo
 
-	#bug 254916, should already be fixed upstream
-	emake -j1 DESTDIR="${D}" install || die "install failed"
+	emake DESTDIR="${D}" install || die "install failed"
 
 	if use emacs; then
 		elisp-install ${PN} etc/*.{el,elc} || die "elisp-install failed"
