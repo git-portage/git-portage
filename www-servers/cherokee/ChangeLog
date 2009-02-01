@@ -1,15 +1,6 @@
 # ChangeLog for www-servers/cherokee
-# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/cherokee/ChangeLog,v 1.47 2009/02/03 12:45:46 betelgeuse Exp $
-
-  03 Feb 2009; Petteri Räty <betelgeuse@gentoo.org> cherokee-0.98.1.ebuild:
-  Block lighttpd until spawn-fcgi collision is fixed. See bug #224781.
-
-*cherokee-0.98.1 (02 Feb 2009)
-
-  02 Feb 2009; J. Alberto Suárez López <bass@gentoo.org>
-  -cherokee-0.11.6.ebuild, +cherokee-0.98.1.ebuild:
-  Version bump. Fix: #256617 #210830 #240458
+# Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-servers/cherokee/ChangeLog,v 1.45 2008/12/26 09:05:53 bass Exp $
 
   26 Dec 2008; J. Alberto Suárez López <bass@gentoo.org> ChangeLog:
   Version bump
