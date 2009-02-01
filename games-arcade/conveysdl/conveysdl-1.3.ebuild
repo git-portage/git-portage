@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/conveysdl/conveysdl-1.3.ebuild,v 1.5 2009/02/02 09:02:35 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/conveysdl/conveysdl-1.3.ebuild,v 1.4 2007/04/09 21:55:52 welp Exp $
 
-EAPI=2
 inherit eutils toolchain-funcs games
 
 DESCRIPTION="Guide the blob along the conveyer belt collecting the red blobs"
@@ -19,7 +18,10 @@ DEPEND="media-libs/libsdl
 
 S=${WORKDIR}
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
 	# Incomplete readme
 	sed -i \
 		-e 's:I k:use -nosound to disable sound\n\nI k:' \
@@ -38,7 +40,7 @@ src_compile() {
 		CFLAGS="${CFLAGS} $(sdl-config --cflags) \
 			-DDATA_PREFIX=\\\"${GAMES_DATADIR}/${PN}/\\\" \
 			-DENABLE_SOUND" \
-		LDLIBS="-lSDL_mixer $(sdl-config --libs)" \
+		LDFLAGS="${LDFLAGS} -lSDL_mixer $(sdl-config --libs)" \
 		|| die "emake failed"
 }
 
