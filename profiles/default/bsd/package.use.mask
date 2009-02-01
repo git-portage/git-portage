@@ -26,8 +26,7 @@ sys-auth/consolekit pam
 net-im/pidgin networkmanager zephyr
 
 # nvtv is probably Linux only, someone with an nvidia card plz test
-# app-misc/tracker seems to have code tight to linux, mask it
-media-video/totem bluetooth nvtv tracker
+media-video/totem bluetooth nvtv
 
 # Gilles Dartiguelongue <eva@gentoo.org> (29 Oct 2007)
 mail-client/evolution pda
@@ -65,6 +64,7 @@ app-text/texlive xindy
 # Alexis Ballier <aballier@gentoo.org> (28 Nov 2008)
 # Requires bluez-libs which is linux only
 net-libs/libpcap bluetooth
+gnome-base/gvfs bluetooth
 
 # Alexis Ballier <aballier@gentoo.org> (15 Dec 2008)
 # Needs valgrind
@@ -74,3 +74,8 @@ media-libs/gst-plugins-base debug
 # Alexis Ballier <aballier@gentoo.org> (22 Jan 2009)
 # Requires gpm
 www-client/links livecd
+
+# Alexis Ballier <aballier@gentoo.org> (29 Jan 2009)
+# qt-webkit fails to build here, bug #256836
+# Usemask stuff requiring it for now
+x11-libs/qt-assistant webkit
