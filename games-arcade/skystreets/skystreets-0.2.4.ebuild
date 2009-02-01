@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/skystreets/skystreets-0.2.4.ebuild,v 1.6 2009/02/02 17:05:33 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/skystreets/skystreets-0.2.4.ebuild,v 1.5 2007/03/12 16:10:33 nyhm Exp $
 
-EAPI=2
 inherit eutils games
 
 DESCRIPTION="A remake of the old DOS game Skyroads"
@@ -19,9 +18,10 @@ DEPEND="virtual/opengl
 	media-libs/libsdl
 	media-libs/sdl-image"
 
-src_prepare() {
-	epatch "${FILESDIR}"/${PV}-gl.patch \
-		"${FILESDIR}"/${P}-as-needed.patch
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}"/${PV}-gl.patch
 }
 
 src_install() {
