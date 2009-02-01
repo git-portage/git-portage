@@ -1,11 +1,11 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/kdenlive/Attic/kdenlive-0.7.2.ebuild,v 1.2 2009/02/01 18:34:21 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/kdenlive/Attic/kdenlive-0.7.2.ebuild,v 1.1 2009/02/01 18:16:06 aballier Exp $
 
 EAPI="2"
 
-# No linguas since they add it weirdly.
-#KDE_LINGUAS="ca cs da de es fr he hu it nl pt_BR ru sl zh"
+NEED_KDE="4.1"
+KDE_LINGUAS="de zh"
 inherit kde4-base eutils
 
 DESCRIPTION="Kdenlive! (pronounced Kay-den-live) is a Non Linear Video Editing Suite for KDE."
@@ -20,6 +20,7 @@ IUSE=""
 DEPEND=">=media-libs/mlt-0.3.2[ffmpeg,sdl,-qt3]
 	>=media-libs/mlt++-0.3.2
 	media-video/ffmpeg[X,sdl]"
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	>=kde-base/kdebase-data-${NEED_KDE}"
 
 S="${WORKDIR}"/"${PN}-${PV/_/}"
