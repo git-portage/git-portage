@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/ejabberd/Attic/ejabberd-2.0.2.ebuild,v 1.3 2009/02/01 09:47:34 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/ejabberd/Attic/ejabberd-2.0.2.ebuild,v 1.2 2008/09/10 14:05:35 mr_bones_ Exp $
 
 inherit eutils multilib
 
@@ -96,7 +96,7 @@ src_install() {
 		chmod 4750 "${D}"/usr/lib/erlang/lib/${P}/priv/bin/epam
 	fi
 
-	cd "${WORKDIR}/${MY_P}/doc"
+	cd "${WORKDIR}/${MY_P}-beta1/doc"
 	dodoc "release_notes_${MY_PV}.txt"
 	dohtml *.{html,png}
 
