@@ -1,6 +1,15 @@
 # ChangeLog for media-video/kdenlive
 # Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/kdenlive/ChangeLog,v 1.33 2009/01/12 22:15:53 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/kdenlive/ChangeLog,v 1.35 2009/02/01 18:16:06 aballier Exp $
+
+*kdenlive-0.7.2 (01 Feb 2009)
+
+  01 Feb 2009; Alexis Ballier <aballier@gentoo.org> +kdenlive-0.7.2.ebuild:
+  version bump, bug #257258
+
+  30 Jan 2009; Alexis Ballier <aballier@gentoo.org>
+  -files/kdenlive-0.7-avcodeclink.patch, -kdenlive-0.7.ebuild:
+  remove old
 
 *kdenlive-0.7.1 (12 Jan 2009)
 
