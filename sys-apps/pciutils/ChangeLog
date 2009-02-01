@@ -1,6 +1,19 @@
 # ChangeLog for sys-apps/pciutils
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pciutils/ChangeLog,v 1.156 2009/01/26 21:54:32 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pciutils/ChangeLog,v 1.159 2009/01/31 16:49:30 vapier Exp $
+
+  31 Jan 2009; Mike Frysinger <vapier@gentoo.org> pciutils-3.0.2.ebuild:
+  Fix man page install in older ebuild too #256696 by Pacho Ramos.
+
+*pciutils-3.1.0-r1 (29 Jan 2009)
+
+  29 Jan 2009; Mike Frysinger <vapier@gentoo.org>
+  +files/pciutils-3.1.0-null-ptr.patch, +pciutils-3.1.0-r1.ebuild:
+  Add fix by Andreas Wiese for NULL ptr deref #256464.
+
+  29 Jan 2009; Mike Frysinger <vapier@gentoo.org> pciutils-3.1.0.ebuild:
+  Force LC_ALL=C with tr since upper/lower don't work #256447 by Gürkan
+  Gür.
 
   26 Jan 2009; Brent Baude <ranger@gentoo.org> pciutils-3.0.2.ebuild:
   stable ppc64, bug 256377
