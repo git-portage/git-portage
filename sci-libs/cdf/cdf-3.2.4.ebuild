@@ -1,33 +1,34 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/cdf/Attic/cdf-3.2.1.ebuild,v 1.3 2008/05/08 10:22:37 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/cdf/Attic/cdf-3.2.4.ebuild,v 1.1 2009/02/02 18:34:08 bicatali Exp $
 
-inherit eutils toolchain-funcs multilib versionator
+inherit eutils toolchain-funcs multilib versionator java-pkg-opt-2
 
-MY_P="${PN}$(get_version_component_range 1)$(get_version_component_range 2)"
-MY_HP="${MY_P}$(get_version_component_range 3)"
+MY_DP="${PN}$(get_version_component_range 1)$(get_version_component_range 2)"
+MY_P="${MY_DP}_$(get_version_component_range 3)"
 
 DESCRIPTION="Common Data Format I/O library for multi-dimensional data sets"
 HOMEPAGE="http://cdf.gsfc.nasa.gov/"
-SRC_BASE="ftp://cdaweb.gsfc.nasa.gov/pub/${PN}/dist/${MY_HP}/unix"
+SRC_BASE="ftp://cdaweb.gsfc.nasa.gov/pub/${PN}/dist/${MY_P}/unix"
 
 SRC_URI="${SRC_BASE}/${MY_P}-dist-${PN}.tar.gz
 	java? ( ${SRC_BASE}/${MY_P}-dist-java.tar.gz )
-	doc? ( ${SRC_BASE}/${MY_P}_documentation/${MY_P}crm.pdf
-		   ${SRC_BASE}/${MY_P}_documentation/${MY_P}frm.pdf
-		   ${SRC_BASE}/${MY_P}_documentation/${MY_P}ifd.pdf
-		   ${SRC_BASE}/${MY_P}_documentation/${MY_P}prm.pdf
-		   ${SRC_BASE}/${MY_P}_documentation/${MY_P}ug.pdf
-	java? ( ${SRC_BASE}/${MY_P}_documentation/${MY_P}jrm.pdf ) )"
+	doc? ( ${SRC_BASE}/${MY_P}_documentation/${MY_DP}crm.pdf
+		   ${SRC_BASE}/${MY_P}_documentation/${MY_DP}frm.pdf
+		   ${SRC_BASE}/${MY_P}_documentation/${MY_DP}ifd.pdf
+		   ${SRC_BASE}/${MY_P}_documentation/${MY_DP}prm.pdf
+		   ${SRC_BASE}/${MY_P}_documentation/${MY_DP}ug.pdf
+	java? ( ${SRC_BASE}/${MY_P}_documentation/${MY_DP}jrm.pdf ) )"
 
 LICENSE="CDF"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="doc examples java ncurses"
 
-RDEPEND="ncurses? ( sys-libs/ncurses )"
-DEPEND="${RDEPEND}
-		java? ( virtual/jdk	dev-java/java-config )"
+RDEPEND="ncurses? ( sys-libs/ncurses )
+	java? ( >=virtual/jre-1.5 )"
+DEPEND="ncurses? ( sys-libs/ncurses )
+	java? ( >=virtual/jdk-1.5 )"
 
 S="${WORKDIR}/${MY_P}-dist"
 
@@ -71,17 +72,18 @@ src_compile() {
 			-c cdfNativeLibrary.c \
 			-o cdfNativeLibrary.o \
 			|| die "compiling java lib failed"
-		$(tc-getLD) \
+		$(tc-getCC) \
+			${LDFLAGS} \
 			-L${CDF_LIB} -lcdf -lm \
 			-shared cdfNativeLibrary.o \
-			-soname=libcdfNativeLibrary.so.${PV_SO} \
+			-Wl,-soname=libcdfNativeLibrary.so.${PV_SO} \
 			-o libcdfNativeLibrary.so.${PV_SO} \
 			|| die "linking java lib failed"
 	fi
 }
 
 src_test() {
-	emake test || die "test failed"
+	emake -j1 test || die "test failed"
 }
 
 src_install() {
@@ -99,7 +101,7 @@ src_install() {
 
 	if use doc; then
 		insinto /usr/share/doc/${PF}
-		doins "${DISTDIR}"/${MY_P}*.pdf
+		doins "${DISTDIR}"/${MY_DP}*.pdf
 		use java || rm "${D}"/usr/share/doc/${PF}/${MY_P}jrm.pdf
 	fi
 
@@ -113,8 +115,7 @@ src_install() {
 		dolib.so jni/libcdfNativeLibrary.so.${PV_SO}
 		dosym libcdfNativeLibrary.so.${PV_SO} \
 			/usr/$(get_libdir)/libcdfNativeLibrary.so
-		insinto /usr/share/cdf
-		doins */*.jar
+		java-pkg_dojar */*.jar
 		if use examples; then
 			insinto /usr/share/doc/${PF}/examples/java
 			doins examples/*
