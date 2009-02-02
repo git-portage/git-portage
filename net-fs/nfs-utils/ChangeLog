@@ -1,6 +1,27 @@
 # ChangeLog for net-fs/nfs-utils
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/nfs-utils/ChangeLog,v 1.140 2008/12/30 20:15:38 bluebird Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-fs/nfs-utils/ChangeLog,v 1.145 2009/01/31 22:20:24 vapier Exp $
+
+*nfs-utils-1.1.4-r1 (31 Jan 2009)
+
+  31 Jan 2009; Mike Frysinger <vapier@gentoo.org>
+  +files/nfs-utils-1.1.4-ascii-man.patch,
+  +files/nfs-utils-1.1.4-mtab-sym.patch,
+  +files/nfs-utils-1.1.4-no-exec.patch, +nfs-utils-1.1.4-r1.ebuild:
+  Add some fixes from Debian and push out init.d fixes.
+
+  31 Jan 2009; Mike Frysinger <vapier@gentoo.org> files/nfs.initd:
+  Also use rpc.nfsd to try to shutdown nfsd #228127 by Maurice Volaski.
+
+  31 Jan 2009; Mike Frysinger <vapier@gentoo.org> files/rpc.statd.initd:
+  Make sure stop() works even if rpc.statd is dead so init.d doesnt fake
+  stop silently.
+
+  31 Jan 2009; Mike Frysinger <vapier@gentoo.org> files/nfs.initd:
+  Add /proc/fs/nfs -> /proc/fs/nfsd fix again.
+
+  31 Jan 2009; Mike Frysinger <vapier@gentoo.org> files/nfs.initd:
+  Restart rpc.idmapd if nfsd is a module #220747 by Jochen Radmacher.
 
   30 Dec 2008; Friedrich Oslage <bluebird@gentoo.org>
   nfs-utils-1.1.3.ebuild:
