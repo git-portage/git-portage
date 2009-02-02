@@ -1,9 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/nibbles/nibbles-0.0.4.ebuild,v 1.12 2009/02/02 11:41:34 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/nibbles/nibbles-0.0.4.ebuild,v 1.11 2008/03/20 00:40:14 nyhm Exp $
 
-EAPI=2
-inherit eutils games
+inherit games
 
 MY_P=${PN}-v${PV}
 DESCRIPTION="An ncurses-based Nibbles clone"
@@ -19,7 +18,10 @@ DEPEND="sys-libs/ncurses"
 
 S="${WORKDIR}/${MY_P}"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
 	sed -i \
 		-e "s#/usr/local/games/nibbles.levels#${GAMES_DATADIR}/${PN}#" \
 		nibbles.h \
@@ -29,7 +31,11 @@ src_prepare() {
 		-e "s#/var/lib/games/nibbles.score#${GAMES_STATEDIR}/nibbles.scores#" \
 		scoring.h \
 		|| die "sed failed"
-	epatch "${FILESDIR}"/${P}-as-needed.patch
+	sed -i \
+		-e '/c.o:/d' \
+		-e '/CC.*-c/d' \
+		-e '/^CC/d' Makefile \
+		|| die "sed failed"
 }
 
 src_install() {
