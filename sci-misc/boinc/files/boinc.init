@@ -65,7 +65,7 @@ start() {
 	CHRT="/usr/bin/chrt ${SCHED_PARAM}"
 
 	# check for baselayout version
-	if [[ -n "${RC_UNAME}" ]]; then
+	if [[ "`start-stop-daemon --version |awk -F' ' '{print $2}'`" = "(OpenRC)" ]]; then
 		PARAMS="--background --stdout ${LOGFILE} --stderr ${LOGFILE} -- ${ARGS}"
 	else
 		PARAMS="-- ${ARGS} >> ${LOGFILE} 2>&1 &"
