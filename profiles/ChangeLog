@@ -1,41 +1,10 @@
 # ChangeLog for profile directory
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2335 2009/02/05 16:09:24 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2325 2009/02/02 00:33:03 ulm Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
-
-  05 Feb 2009; MATSUU Takuto <matsuu@gentoo.org> package.mask:
-  p.mask >=app-i18n/ibus*-1.1
-
-  05 Feb 2009; Hanno Boeck <hanno@gentoo.org> package.mask:
-  Mask pam_mount 1.17, broken with crypto.
-
-  05 Feb 2009; Jeremy Olexa <darkside@gentoo.org> package.mask:
-  libjingle-0.3.12 is not backwards compatible, p.mask for now. bug 256953
-
-  04 Feb 2009; Ben de Groot <yngwin@gentoo.org> arch/ia64/package.use.mask,
-  arch/sparc/package.use.mask, arch/x86-fbsd/package.use.mask:
-  Add proper webkit useflag masks for affected arches
-
-  04 Feb 2009; Serkan Kaba <serkan@gentoo.org> package.mask:
-  Mask sys-apps/sandbox-1.3.3 until bug #256953 is resolved.
-
-  04 Feb 2009; Raúl Porcel <armin76@gentoo.org> package.mask:
-  Add >=seamonkey-bin-2.0_alpha1 mask
-
-  04 Feb 2009; Jeremy Olexa <darkside@gentoo.org> package.mask:
-  p.mask sdsc-syslog (bug 239863) and openpbs-common (bug 255425) for removal
-
-  03 Feb 2009; Santiago M. Mola <coldwind@gentoo.org> package.mask:
-  Pando masked for removal in 30 days.
-
-  02 Feb 2009; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
-  Add gnome-base/gvfs-1.0.3-r11 to bluez-4 mask.
-
-  02 Feb 2009; Rémi Cardona <remi@gentoo.org> package.mask:
-  unleash xf86-video-intel 2.6.1 and mesa 7.3
 
   02 Feb 2009; Ulrich Mueller <ulm@gentoo.org> package.mask:
   Package mask Emacs 23 live ebuild.
