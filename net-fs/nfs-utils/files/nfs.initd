@@ -1,7 +1,7 @@
 #!/sbin/runscript
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/nfs-utils/files/nfs.initd,v 1.14 2008/05/05 04:36:12 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/nfs-utils/files/nfs.initd,v 1.17 2009/01/31 22:19:06 vapier Exp $
 
 opts="reload"
 
@@ -42,16 +42,22 @@ waitfor_exportfs() {
 }
 
 mount_nfsd() {
-	# Make sure nfs support is loaded in the kernel #64709
-	if [ -e /proc/modules ] && ! grep -qs nfsd /proc/filesystems ; then
-		modprobe -q nfsd
+	if [ -e /proc/modules ] ; then
+		# Make sure nfs support is loaded in the kernel #64709
+		if ! grep -qs nfsd /proc/filesystems ; then
+			modprobe -q nfsd
+		fi
+		# Restart idmapd if needed #220747
+		if grep -qs nfsd /proc/modules ; then
+			killall -q -HUP rpc.idmapd
+		fi
 	fi
 
 	# This is the new "kernel 2.6 way" to handle the exports file
 	if grep -qs nfsd /proc/filesystems ; then
-		if ! grep -qs "nfsd /proc/fs/nfs" /proc/mounts ; then
+		if ! grep -qs "nfsd /proc/fs/nfsd" /proc/mounts ; then
 			ebegin "Mounting nfsd filesystem in /proc"
-			mount -t nfsd -o nodev,noexec,nosuid nfsd /proc/fs/nfs
+			mount -t nfsd -o nodev,noexec,nosuid nfsd /proc/fs/nfsd
 			eend $?
 		fi
 	fi
@@ -100,6 +106,8 @@ stop() {
 	start-stop-daemon --stop --oknodo --name nfsd --user root --signal 2
 	eend $?
 	ret=$((ret + $?))
+	# in case things don't work out ... #228127
+	rpc.nfsd 0
 
 	# When restarting the NFS server, running "exportfs -ua" probably
 	# isn't what the user wants.  Running it causes all entries listed
