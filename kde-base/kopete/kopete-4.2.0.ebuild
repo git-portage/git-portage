@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kopete/Attic/kopete-4.2.0.ebuild,v 1.1 2009/01/27 19:26:27 alexxy Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kopete/Attic/kopete-4.2.0.ebuild,v 1.3 2009/02/01 07:45:30 jmbsvicetto Exp $
 
 EAPI="2"
 
@@ -8,7 +8,7 @@ KMNAME="kdenetwork"
 inherit kde4-meta
 
 DESCRIPTION="KDE multi-protocol IM client"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="debug htmlhandbook ssl"
 
 # Available plugins
@@ -78,7 +78,7 @@ COMMONDEPEND="
 	)
 	meanwhile? ( net-libs/meanwhile )
 	msn? ( net-libs/libmsn )
-	otr? ( net-libs/libotr )
+	otr? ( >=net-libs/libotr-3.2.0 )
 	statistics? ( dev-db/sqlite:3 )
 	webpresence? ( dev-libs/libxml2 dev-libs/libxslt )
 	wlm? ( net-libs/libmsn )
