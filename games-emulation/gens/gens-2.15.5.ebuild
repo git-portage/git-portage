@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/gens/gens-2.15.5.ebuild,v 1.2 2009/02/04 15:39:31 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/gens/gens-2.15.5.ebuild,v 1.1 2008/10/14 16:22:27 mr_bones_ Exp $
 
-EAPI=2
 inherit eutils flag-o-matic games
 
 DESCRIPTION="A Sega Genesis/CD/32X emulator"
@@ -20,9 +19,10 @@ RDEPEND="virtual/opengl
 DEPEND="${RDEPEND}
 	>=dev-lang/nasm-0.98"
 
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-romsdir.patch \
-		"${FILESDIR}"/${P}-as-needed.patch
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}-romsdir.patch
 	append-ldflags -Wl,-z,noexecstack
 }
 
