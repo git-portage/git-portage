@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/mozilla-launcher.eclass,v 1.23 2009/02/04 10:54:09 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/mozilla-launcher.eclass,v 1.22 2008/03/18 18:00:52 armin76 Exp $
 
 inherit nsplugins multilib
 
@@ -16,7 +16,6 @@ fi
 #    thunderbird -> thunderbird-bin
 #    mozilla -> mozilla-bin
 #    sunbird -> sunbird-bin
-#    seamonkey -> seamonkey-bin
 #
 # The symlinks are removed if they're found to be dangling.  They are
 # created according to the following rules:
@@ -36,7 +35,7 @@ fi
 # src_install so they are included in the package inventory.
 #
 update_mozilla_launcher_symlinks() {
-	local f browsers="mozilla firefox thunderbird sunbird seamonkey"
+	local f browsers="mozilla firefox thunderbird sunbird"
 	cd ${ROOT}/usr/bin
 
 	# Remove launcher symlinks that no longer apply
