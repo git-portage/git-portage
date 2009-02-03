@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-board/gnubg/Attic/gnubg-0.14.3-r1.ebuild,v 1.12 2009/02/04 09:54:57 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-board/gnubg/Attic/gnubg-0.14.3-r1.ebuild,v 1.11 2008/02/29 18:58:00 carlo Exp $
 
 inherit flag-o-matic eutils games
 
@@ -33,8 +33,7 @@ RDEPEND=">=media-libs/freetype-2
 		media-libs/libart_lgpl
 		opengl? ( x11-libs/gtkglext >=media-libs/ftgl-2.1.2-r1 )
 	)
-	guile? ( dev-scheme/guile
-		!>=dev-scheme/guile-1.8 )
+	guile? ( dev-scheme/guile )
 	nas? ( media-libs/nas )
 	nls? ( virtual/libintl )
 	python? ( dev-lang/python )
