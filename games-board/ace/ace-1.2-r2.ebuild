@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-board/ace/Attic/ace-1.2-r2.ebuild,v 1.2 2009/02/03 08:27:18 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-board/ace/Attic/ace-1.2-r2.ebuild,v 1.1 2007/07/22 12:23:59 nyhm Exp $
 
-EAPI=2
 inherit eutils games
 
 DESCRIPTION="DJ Delorie's Ace of Penguins solitaire games"
@@ -18,9 +17,10 @@ DEPEND="x11-libs/libXpm
 	media-libs/libpng
 	!games-misc/bsd-games"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	epatch \
-		"${FILESDIR}"/${P}-as-needed.patch \
 		"${FILESDIR}"/${P}-check_for_end_of_game.patch \
 		"${FILESDIR}"/${P}-gcc41.patch \
 		"${FILESDIR}"/${P}-mastermind-keys.patch
