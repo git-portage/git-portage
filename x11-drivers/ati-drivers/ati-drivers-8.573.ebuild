@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-8.573.ebuild,v 1.3 2009/02/03 14:45:56 je_fro Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-8.573.ebuild,v 1.1 2009/02/03 05:01:31 je_fro Exp $
 
 IUSE="acpi debug"
 
@@ -27,6 +27,8 @@ RDEPEND=">=x11-base/xorg-server-1.5
 	)
 	x11-libs/libXrandr
 	>=sys-apps/portage-2.1.1-r1"
+
+#	sys-libs/libstdc++-v3
 
 DEPEND="${RDEPEND}
 	x11-proto/xf86miscproto
@@ -300,7 +302,6 @@ src_install() {
 	# Everything except for the authatieventsd.sh script.
 	doins common/etc/ati/{logo*,control,atiogl.xml,signature,amdpcsdb.default}
 	if use acpi; then
-		insopts -m0755
 		doins common/etc/ati/authatieventsd.sh
 	fi
 
