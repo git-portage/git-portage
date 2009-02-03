@@ -15,8 +15,6 @@
 			later</flag>
 		<flag name='bacula-nosd'>Disable building of storage daemon in 1.38.x
 			and later</flag>
-		<flag name='bacula-split-init'>Use separate init scripts for
-			fd/sd/dir</flag>
 		<flag name='logrotate'>Install support files for logrotate</flag>
 		<flag name='logwatch'>Install support files for logwatch</flag>
 	</use>
