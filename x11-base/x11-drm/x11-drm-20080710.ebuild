@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/x11-drm/Attic/x11-drm-20080710.ebuild,v 1.8 2009/02/05 13:36:41 remi Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/x11-drm/Attic/x11-drm-20080710.ebuild,v 1.7 2009/01/22 23:19:06 battousai Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="1.7"
@@ -24,8 +24,7 @@ IUSE="${IUSE_VIDEO_CARDS} kernel_FreeBSD kernel_linux"
 
 # Make sure Portage does _NOT_ strip symbols.  We will do it later and make sure
 # that only we only strip stuff that are safe to strip ...
-# Tests require user intervention (see bug #236845)
-RESTRICT="strip test"
+RESTRICT="strip"
 
 S="${WORKDIR}/drm"
 PATCHVER="0.5"
