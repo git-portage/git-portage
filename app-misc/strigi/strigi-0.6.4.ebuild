@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/strigi/Attic/strigi-0.6.4.ebuild,v 1.2 2009/02/07 19:19:07 alexxy Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/strigi/Attic/strigi-0.6.4.ebuild,v 1.1 2009/02/02 22:17:50 scarabeus Exp $
 
 EAPI="2"
 
@@ -40,6 +40,7 @@ COMMONDEPEND="
 		)
 	)
 "
+#	sqlite? ( dev-db/sqlite:3 )"
 DEPEND="${COMMONDEPEND}
 	test? ( dev-util/cppunit )"
 RDEPEND="${COMMONDEPEND}"
@@ -63,8 +64,9 @@ src_compile() {
 		$(cmake-utils_use_enable log LOG4CXX)
 		$(cmake-utils_use_enable qt4 DBUS)
 		$(cmake-utils_use_enable qt4 QT4)"
+#		$(cmake-utils_use_enable sqlite SQLITE)"
 
-	if ! use clucene && ! use hyperestraier; then
+	if ! use clucene && ! use hyperestraier; then # && ! use sqlite; then
 		mycmakeargs="${mycmakeargs} -DENABLE_CLUCENE=ON"
 	fi
 
@@ -81,7 +83,7 @@ src_test() {
 }
 
 pkg_postinst() {
-	if ! use clucene && ! use hyperestraier; then
+	if ! use clucene && ! use hyperestraier; then # && ! use sqlite; then
 		elog "Because you didn't enable any of the supported backends:"
 		elog "clucene, hyperestraier and sqlite"
 		elog "clucene support was silently installed."
