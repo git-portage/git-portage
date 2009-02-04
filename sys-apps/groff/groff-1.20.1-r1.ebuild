@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/groff/Attic/groff-1.20.1-r1.ebuild,v 1.5 2009/02/09 15:39:15 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/groff/Attic/groff-1.20.1-r1.ebuild,v 1.1 2009/01/20 00:10:39 matsuu Exp $
 
 inherit eutils toolchain-funcs autotools
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://gnu/groff/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha ~amd64 ~arm hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE="X linguas_ja"
 
 DEPEND=">=sys-apps/texinfo-4.7-r1
@@ -36,8 +36,7 @@ src_unpack() {
 			-e '/^GROFFBIN=/s:=.*:=/usr/bin/groff:' \
 			-e '/^TROFFBIN=/s:=.*:=/usr/bin/troff:' \
 			-e '/^GROFF_BIN_PATH=/s:=.*:=:' \
-			-e '/^GROFF_BIN_DIR=/s:=.*:=:' \
-			contrib/*/Makefile.sub \
+			contrib/mom/Makefile.sub \
 			doc/Makefile.in \
 			doc/Makefile.sub || die "cross-compile sed failed"
 	fi
@@ -51,10 +50,13 @@ src_unpack() {
 src_compile() {
 	# Fix problems with not finding g++
 #	tc-export CC CXX
+	local myconf="--with-appresdir=/usr/share/X11/app-defaults"
+
+	use linguas_ja && myconf="${myconf} --enable-japanese"
+
 	econf \
-		--with-appresdir=/usr/share/X11/app-defaults \
 		$(use_with X x) \
-		$(use linguas_ja && echo --enable-japanese)
+		${myconf} || die
 	emake || die
 }
 
