@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/sane-backends/Attic/sane-backends-1.0.19-r1.ebuild,v 1.13 2009/02/07 19:56:08 phosphan Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/sane-backends/Attic/sane-backends-1.0.19-r1.ebuild,v 1.12 2008/09/04 07:33:00 aballier Exp $
 
-inherit eutils flag-o-matic
+inherit eutils
 
 IUSE="usb gphoto2 ipv6 v4l doc"
 
@@ -103,8 +103,6 @@ src_unpack() {
 }
 
 src_compile() {
-	append-flags -fno-strict-aliasing
-
 	SANEI_JPEG="sanei_jpeg.o" SANEI_JPEG_LO="sanei_jpeg.lo" \
 	BACKENDS="${SANE_BACKENDS}" \
 	econf \

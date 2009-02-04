@@ -1,9 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-mud/mudix/mudix-4.3-r1.ebuild,v 1.5 2009/02/08 16:56:47 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-mud/mudix/mudix-4.3-r1.ebuild,v 1.4 2008/07/30 23:36:04 ken69267 Exp $
 
-EAPI=2
-inherit eutils games
+inherit games
 
 DESCRIPTION="A small, stable MUD client for the console"
 HOMEPAGE="http://dw.nl.eu.org/mudix.html"
@@ -14,13 +13,10 @@ SLOT="0"
 KEYWORDS="amd64 ppc x86"
 IUSE=""
 
-DEPEND=""
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-as-needed.patch
-}
+DEPEND="sys-libs/ncurses"
 
 src_compile() {
+	egamesconf || die
 	emake -C src O_FLAGS="${CFLAGS}" || die "emake failed"
 }
 
