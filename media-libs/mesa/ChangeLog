@@ -1,6 +1,14 @@
 # ChangeLog for media-libs/mesa
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/ChangeLog,v 1.190 2009/01/30 21:35:29 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/ChangeLog,v 1.192 2009/02/03 15:56:57 remi Exp $
+
+  03 Feb 2009; Rémi Cardona <remi@gentoo.org> mesa-7.3.ebuild:
+  only pull in the git eclass when PV==9999, fixes bug #257461
+
+*mesa-7.3 (01 Feb 2009)
+
+  01 Feb 2009; Rémi Cardona <remi@gentoo.org> +mesa-7.3.ebuild:
+  bump to 7.3, copy from the x11 overlay
 
   30 Jan 2009; Mike Frysinger <vapier@gentoo.org> metadata.xml:
   Document local USE=pic flag.
