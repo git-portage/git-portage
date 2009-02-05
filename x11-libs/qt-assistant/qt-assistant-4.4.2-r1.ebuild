@@ -1,22 +1,21 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-assistant/Attic/qt-assistant-4.4.2-r1.ebuild,v 1.5 2009/01/31 18:15:50 klausman Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-assistant/Attic/qt-assistant-4.4.2-r1.ebuild,v 1.7 2009/02/04 23:27:21 ranger Exp $
 
 EAPI="1"
 inherit qt4-build
 
-DESCRIPTION="The assistant help module for the Qt toolkit."
+DESCRIPTION="The assistant help module for the Qt toolkit"
 HOMEPAGE="http://www.trolltech.com/"
 
 LICENSE="|| ( GPL-3 GPL-2 )"
 SLOT="4"
-KEYWORDS="alpha amd64 ~hppa ~ia64 ppc ~ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 ~hppa ~ia64 ppc ppc64 ~sparc x86 ~x86-fbsd"
 IUSE="+webkit"
 
 DEPEND="~x11-libs/qt-gui-${PV}
 	~x11-libs/qt-sql-${PV}
-	!alpha? ( !ia64? ( !sparc? ( webkit? ( ~x11-libs/qt-webkit-${PV} ) ) ) )
-	!<=x11-libs/qt-4.4.0_alpha:${SLOT}"
+	webkit? ( ~x11-libs/qt-webkit-${PV} )"
 RDEPEND="${DEPEND}"
 
 # Pixeltool isn't really assistant related, but it relies on
