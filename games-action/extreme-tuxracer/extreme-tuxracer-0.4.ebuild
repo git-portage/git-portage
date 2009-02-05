@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/extreme-tuxracer/Attic/extreme-tuxracer-0.4.ebuild,v 1.6 2009/02/07 19:02:21 gentoofan23 Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-action/extreme-tuxracer/Attic/extreme-tuxracer-0.4.ebuild,v 1.4 2009/01/04 08:01:28 mr_bones_ Exp $
 
 EAPI=2
 inherit eutils games
@@ -11,13 +11,13 @@ SRC_URI="mirror://sourceforge/${PN/-}/${P/-}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="virtual/opengl
 	dev-lang/tcl
 	virtual/glu
-	media-libs/libsdl[X]
+	media-libs/libsdl
 	media-libs/sdl-mixer[mikmod]
 	>=media-libs/freetype-2
 	media-libs/libpng
