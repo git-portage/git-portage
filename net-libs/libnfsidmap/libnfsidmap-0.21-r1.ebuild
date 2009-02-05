@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libnfsidmap/libnfsidmap-0.21-r1.ebuild,v 1.3 2009/02/01 20:42:30 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libnfsidmap/libnfsidmap-0.21-r1.ebuild,v 1.5 2009/02/02 17:50:58 vapier Exp $
 
 inherit autotools
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.citi.umich.edu/projects/nfsv4/linux/libnfsidmap/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="ldap"
 
 DEPEND="ldap? ( net-nds/openldap )"
@@ -22,6 +22,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}"/${PN}-0.19-getgrouplist.patch #169909
+	epatch "${FILESDIR}"/${PN}-0.21-headers.patch
 	eautoreconf
 }
 
