@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/sun-jre-bin/Attic/sun-jre-bin-1.6.0.07.ebuild,v 1.4 2008/09/16 19:59:18 serkan Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/sun-jre-bin/Attic/sun-jre-bin-1.6.0.12.ebuild,v 1.1 2009/02/05 21:25:38 serkan Exp $
 
 inherit versionator pax-utils eutils java-vm-2
 
@@ -19,7 +19,7 @@ SRC_URI="x86? ( ${URL_BASE}/${X86_AT} )
 		amd64? ( ${URL_BASE}/${AMD64_AT} )"
 SLOT="1.6"
 LICENSE="dlj-1.1"
-KEYWORDS="-* amd64 x86"
+KEYWORDS="-* ~amd64 ~x86"
 RESTRICT="strip"
 IUSE="X alsa nsplugin odbc"
 
@@ -87,8 +87,9 @@ src_install() {
 
 		if use x86 ; then
 			install_mozilla_plugin /opt/${P}/plugin/i386/$plugin_dir/libjavaplugin_oji.so
+			install_mozilla_plugin /opt/${P}/lib/i386/libnpjp2.so plugin2
 		else
-			eerror "No plugin available for amd64 arch"
+			install_mozilla_plugin /opt/${P}/lib/amd64/libnpjp2.so
 		fi
 	fi
 
@@ -113,6 +114,25 @@ src_install() {
 pkg_postinst() {
 	# Set as default VM if none exists
 	java-vm-2_pkg_postinst
+
+	if use x86 && use nsplugin; then
+		elog
+		elog "Two variants of the nsplugin are available via eselect java-nsplugin:"
+		elog "${VMHANDLE} and ${VMHANDLE}-plugin2 (the Next-Generation Plug-In) "
+		ewarn "Note that the ${VMHANDLE}-plugin2 works only in Firefox 3!"
+		elog "For more info see https://jdk6.dev.java.net/plugin2/"
+		elog
+	fi
+
+	if use amd64 && use nsplugin; then
+		elog
+		elog "This version finally brings a browser plugin for amd64"
+		elog "It is the so-called Next-Generation Plug-In (plugin2)"
+		elog "Use eselect java-nsplugin to select it (${VMHANDLE})."
+		ewarn "Note that it works only in Firefox 3 or newer browsers!"
+		elog "For more info see https://jdk6.dev.java.net/plugin2/"
+		elog
+	fi
 
 	elog "Beginning with 1.5.0.10 the hotspot vm can use epoll"
 	elog "The epoll-based implementation of SelectorProvider is not selected by"
