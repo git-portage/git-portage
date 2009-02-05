@@ -1,18 +1,6 @@
 # ChangeLog for app-office/kspread
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/kspread/Attic/ChangeLog,v 1.87 2009/02/08 17:28:35 carlo Exp $
-
-*kspread-1.6.3_p20090204 (08 Feb 2009)
-
-  08 Feb 2009; Carsten Lohrke <carlo@gentoo.org>
-  +kspread-1.6.3_p20090204.ebuild:
-  Sync to branch plus various fixes.
-
-  08 Feb 2009; Markus Meier <maekke@gentoo.org> kspread-1.6.3.ebuild:
-  amd64/x86 stable, bug #245440
-
-  07 Feb 2009; Tobias Klausmann <klausman@gentoo.org> kspread-1.6.3.ebuild:
-  Stable on alpha, bug #245440
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-office/kspread/Attic/ChangeLog,v 1.84 2008/05/17 14:52:28 hanno Exp $
 
 *kspread-1.6.3 (17 May 2008)
 
