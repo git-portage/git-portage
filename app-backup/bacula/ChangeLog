@@ -1,6 +1,15 @@
 # ChangeLog for app-backup/bacula
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.72 2009/01/28 09:19:28 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.73 2009/02/03 15:25:17 wschlich Exp $
+
+  03 Feb 2009; Wolfram Schlich <wschlich@gentoo.org>
+  -files/2.0.3/bacula-all-init, -files/2.0.3/bacula-dir-init,
+  -files/bacula-2.0.3-default-configs.patch, -files/2.0.3/bacula-dir-conf,
+  -files/2.0.3/bacula-fd-conf, -files/bacula-2.0.3-gnomesu2gksu.diff,
+  -files/2.0.3/bacula-all-conf, -files/2.0.3/bacula-fd-init,
+  -files/2.0.3/bacula-sd-conf, -files/2.0.3/bacula-sd-init,
+  -bacula-2.0.3.ebuild:
+  removed old versions
 
 *bacula-2.4.4 (26 Jan 2009)
 
