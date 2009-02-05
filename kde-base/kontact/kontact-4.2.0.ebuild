@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kontact/Attic/kontact-4.2.0.ebuild,v 1.2 2009/02/01 07:44:53 jmbsvicetto Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kontact/Attic/kontact-4.2.0.ebuild,v 1.4 2009/02/03 03:22:55 jmbsvicetto Exp $
 
 EAPI="2"
 
