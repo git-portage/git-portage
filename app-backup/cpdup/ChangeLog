@@ -1,6 +1,14 @@
 # ChangeLog for app-backup/cpdup
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/cpdup/ChangeLog,v 1.1 2006/11/14 09:33:48 drizzt Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/cpdup/ChangeLog,v 1.2 2009/02/05 11:54:05 drizzt Exp $
+
+*cpdup-1.11 (05 Feb 2009)
+
+  05 Feb 2009; Timothy Redaelli <drizzt@gentoo.org>
+  +files/cpdup-1.11-explicit_sizes.patch, +files/cpdup-1.11-unused.patch,
+  +files/Makefile.linux, +cpdup-1.11.ebuild:
+  Version bump, add a patch to fix 64bit platforms (from Fedora bug #435508)
+  Add compatibility with Linux and add ~amd64 keyword
 
 *cpdup-1.07 (14 Nov 2006)
 
