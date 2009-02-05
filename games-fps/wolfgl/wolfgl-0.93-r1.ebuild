@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/wolfgl/wolfgl-0.93-r1.ebuild,v 1.11 2009/02/06 13:44:59 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/wolfgl/wolfgl-0.93-r1.ebuild,v 1.10 2007/03/12 15:47:55 genone Exp $
 
-EAPI=2
 #ECVS_SERVER="wolfgl.cvs.sourceforge.net:/cvsroot/wolfgl"
 #ECVS_MODULE="wolfgl"
 #inherit cvs
@@ -26,11 +25,12 @@ DEPEND="${RDEPEND}
 	x11-proto/xproto
 	app-arch/unzip"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	epatch "${FILESDIR}"/${PV}-gcc.patch \
 		"${FILESDIR}"/${PV}-sample-rate.patch \
 		"${FILESDIR}"/${PV}-sprite.patch \
-		"${FILESDIR}"/${P}-as-needed.patch \
 		"${FILESDIR}"/${PV}-gcc4.patch
 }
 
