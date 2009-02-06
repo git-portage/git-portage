@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/db/Attic/db-4.7.25_p1-r1.ebuild,v 1.7 2009/02/07 09:10:23 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/db/Attic/db-4.7.25_p1-r1.ebuild,v 1.4 2008/09/09 05:38:29 robbat2 Exp $
 
 inherit eutils db flag-o-matic java-pkg-opt-2 autotools libtool
 
@@ -27,11 +27,9 @@ done
 LICENSE="OracleDB"
 SLOT="4.7"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="doc java nocxx tcl test"
+IUSE="tcl java doc nocxx bootstrap"
 
-# the entire testsuite needs the TCL functionality
 DEPEND="tcl? ( >=dev-lang/tcl-8.4 )
-	test? ( >=dev-lang/tcl-8.4 )
 	java? ( >=virtual/jdk-1.5 )
 	>=sys-devel/binutils-2.16.1"
 RDEPEND="tcl? ( dev-lang/tcl )
@@ -44,7 +42,12 @@ src_unpack() {
 	do
 		epatch "${DISTDIR}"/patch."${MY_PV}"."${i}"
 	done
+	# This patch and sed statement only matter when USE=bootstrap is in effect
+	# because the build system is regenerated otherwise.
 	epatch "${FILESDIR}"/"${PN}"-4.6-libtool.patch
+	sed -i \
+		-e "s,\(ac_compiler\|\${MAKEFILE_CC}\|\${MAKEFILE_CXX}\|\$CC\)\( *--version\),\1 -dumpversion,g" \
+		"${S}"/../dist/configure
 
 	# use the includes from the prefix
 	epatch "${FILESDIR}"/"${PN}"-4.6-jni-check-prefix-first.patch
@@ -56,68 +59,94 @@ src_unpack() {
 		-e '/jarfile=.*\.jar$/s,(.jar$),-$(LIBVERSION)\1,g' \
 		"${S}"/../dist/Makefile.in
 
-	cd "${S}"/../dist
-	rm -f aclocal/libtool.m4
-	sed -i \
-		-e '/AC_PROG_LIBTOOL$/aLT_OUTPUT' \
-		configure.ac
-	sed -i \
-		-e '/^AC_PATH_TOOL/s/ sh, none/ bash, none/' \
-		aclocal/programs.m4
-	AT_M4DIR="aclocal aclocal_java" eautoreconf
-	# Upstream sucks - they do autoconf and THEN replace the version variables.
-	. ./RELEASE
-	sed -i \
-		-e "s/__EDIT_DB_VERSION_MAJOR__/$DB_VERSION_MAJOR/g" \
-		-e "s/__EDIT_DB_VERSION_MINOR__/$DB_VERSION_MINOR/g" \
-		-e "s/__EDIT_DB_VERSION_PATCH__/$DB_VERSION_PATCH/g" \
-		-e "s/__EDIT_DB_VERSION_STRING__/$DB_VERSION_STRING/g" \
-		-e "s/__EDIT_DB_VERSION_UNIQUE_NAME__/$DB_VERSION_UNIQUE_NAME/g" \
-		-e "s/__EDIT_DB_VERSION__/$DB_VERSION/g" configure
+	# During bootstrap, libtool etc might not yet be available
+	if use !bootstrap; then
+		cd "${S}"/../dist
+		rm -f aclocal/libtool.m4
+		sed -i \
+			-e '/AC_PROG_LIBTOOL$/aLT_OUTPUT' \
+			configure.ac
+		sed -i \
+			-e '/^AC_PATH_TOOL/s/ sh, none/ bash, none/' \
+			aclocal/programs.m4
+		AT_M4DIR="aclocal aclocal_java" eautoreconf
+		# Upstream sucks - they do autoconf and THEN replace the version variables.
+		. ./RELEASE
+		sed -i \
+			-e "s/__EDIT_DB_VERSION_MAJOR__/$DB_VERSION_MAJOR/g" \
+			-e "s/__EDIT_DB_VERSION_MINOR__/$DB_VERSION_MINOR/g" \
+			-e "s/__EDIT_DB_VERSION_PATCH__/$DB_VERSION_PATCH/g" \
+			-e "s/__EDIT_DB_VERSION_STRING__/$DB_VERSION_STRING/g" \
+			-e "s/__EDIT_DB_VERSION_UNIQUE_NAME__/$DB_VERSION_UNIQUE_NAME/g" \
+			-e "s/__EDIT_DB_VERSION__/$DB_VERSION/g" configure
+	fi
 }
 
 src_compile() {
 	# compilation with -O0 fails on amd64, see bug #171231
 	if use amd64; then
 		replace-flags -O0 -O2
-		is-flagq -O[s123] || append-flags -O2
+		is-flag -O[s123] || append-flags -O2
 	fi
 
-	# use `set` here since the java opts will contain whitespace
-	set --
-	if use java ; then
-		set -- "$@" \
-			--with-java-prefix="${JAVA_HOME}" \
-			--with-javac-flags="$(java-pkg_javac-args)"
+	local myconf=""
+
+	use amd64 && myconf="${myconf} --with-mutex=x86/gcc-assembly"
+
+	use bootstrap \
+		&& myconf="${myconf} --disable-cxx" \
+		|| myconf="${myconf} $(use_enable !nocxx cxx)"
+
+	use tcl \
+		&& myconf="${myconf} --enable-tcl --with-tcl=/usr/$(get_libdir)" \
+		|| myconf="${myconf} --disable-tcl"
+
+	myconf="${myconf} $(use_enable java)"
+	if use java; then
+		myconf="${myconf} --with-java-prefix=${JAVA_HOME}"
+		# Can't get this working any other way, since it returns spaces, and
+		# bash doesn't seem to want to pass correctly in any way i try
+		local javaconf="-with-javac-flags=$(java-pkg_javac-args)"
+	fi
+
+	[[ -n ${CBUILD} ]] && myconf="${myconf} --build=${CBUILD}"
+
+	# the entire testsuite needs the TCL functionality
+	if use tcl && has test $FEATURES ; then
+		myconf="${myconf} --enable-test"
+	else
+		myconf="${myconf} --disable-test"
 	fi
 
 	# Add linker versions to the symbols. Easier to do, and safer than header file
 	# mumbo jumbo.
-	if use userland_GNU ; then
+	if use userland_GNU; then
 		append-ldflags -Wl,--default-symver
 	fi
 
-	cd "${S}"
-	ECONF_SOURCE="${S}"/../dist \
-	STRIP="true" \
-	econf \
+	cd "${S}" && ECONF_SOURCE="${S}"/../dist econf \
+		--prefix=/usr \
+		--mandir=/usr/share/man \
+		--infodir=/usr/share/info \
+		--datadir=/usr/share \
+		--sysconfdir=/etc \
+		--localstatedir=/var/lib \
+		--libdir=/usr/"$(get_libdir)" \
 		--enable-compat185 \
 		--enable-o_direct \
 		--without-uniquename \
 		--enable-rpc \
-		$(use amd64 && echo --with-mutex=x86/gcc-assembly) \
-		$(use_enable !nocxx cxx) \
-		$(use_enable java) \
-		$(use_enable tcl) \
-		$(use tcl && echo --with-tcl=/usr/$(get_libdir)) \
-		$(use_enable test) \
-		"$@"
+		--host="${CHOST}" \
+		${myconf}  "${javaconf}" || die "configure failed"
+
+	sed -e "s,\(^STRIP *=\).*,\1\"true\"," Makefile > Makefile.cpy \
+	    && mv Makefile.cpy Makefile
 
 	emake || die "make failed"
 }
 
 src_install() {
-	emake install DESTDIR="${D}" || die
+	einstall libdir="${D}/usr/$(get_libdir)" STRIP="true" || die
 
 	db_src_install_usrbinslot
 
