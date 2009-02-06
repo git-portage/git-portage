@@ -1,8 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xdialog/xdialog-2.3.1.ebuild,v 1.3 2009/02/11 10:06:25 nelchael Exp $
-
-inherit eutils autotools
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xdialog/xdialog-2.3.1.ebuild,v 1.2 2008/01/07 04:10:11 omp Exp $
 
 DESCRIPTION="drop-in replacement for cdialog using GTK"
 HOMEPAGE="http://xdialog.dyns.net/"
@@ -19,13 +17,6 @@ DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
 S="${WORKDIR}/${P/x/X}"
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-no-strip.patch"
-	eautoreconf
-}
 
 src_compile() {
 	econf $(use_enable nls) --with-gtk2
