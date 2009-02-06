@@ -1,6 +1,19 @@
 # ChangeLog for app-i18n/ibus
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus/ChangeLog,v 1.16 2009/01/22 12:08:12 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus/ChangeLog,v 1.18 2009/02/05 16:13:05 matsuu Exp $
+
+*ibus-1.1.0.20090205 (05 Feb 2009)
+
+  05 Feb 2009; MATSUU Takuto <matsuu@gentoo.org>
+  -ibus-0.1.1.20081016.ebuild, -ibus-0.1.1.20081023.ebuild,
+  +ibus-1.1.0.20090205.ebuild:
+  Version bumped. Removed old versions.
+
+*ibus-0.1.1.20090203 (03 Feb 2009)
+
+  03 Feb 2009; MATSUU Takuto <matsuu@gentoo.org>
+  +ibus-0.1.1.20090203.ebuild:
+  Version bumped.
 
   22 Jan 2009; MATSUU Takuto <matsuu@gentoo.org> ibus-0.1.1.20081023.ebuild:
   Fixed dependency, bug #255582.
