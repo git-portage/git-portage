@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/koffice-i18n/Attic/koffice-i18n-1.6.3.ebuild,v 1.11 2009/02/09 16:09:28 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/koffice-i18n/Attic/koffice-i18n-1.6.3.ebuild,v 1.9 2008/09/13 14:44:34 jmbsvicetto Exp $
 
 inherit kde
 
@@ -11,10 +11,10 @@ HOMEPAGE="http://www.koffice.org/"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 ~hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 
-RDEPEND="|| ( =app-office/koffice-libs-${PV}* =app-office/koffice-${PV}* )
+RDEPEND="|| ( ~app-office/koffice-libs-${PV} ~app-office/koffice-${PV} )
 	=kde-base/kde-i18n-3.5*"
 need-kde 3.5
 
