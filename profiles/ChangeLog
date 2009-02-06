@@ -1,10 +1,65 @@
 # ChangeLog for profile directory
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2326 2009/02/02 10:19:43 remi Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2339 2009/02/06 11:46:48 caster Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  06 Feb 2009; Vlastimil Babka <caster@gentoo.org> updates/1Q-2009:
+  Package move net-p2p/azureus to net-p2p/vuze
+
+  06 Feb 2009; Jeroen Roovers <jer@gentoo.org> package.mask:
+  Remove hppa-sources from package.mask (bug #202391).
+
+  06 Feb 2009; Jeroen Roovers <jer@gentoo.org> profiles.desc:
+  Define new hppa default profiles (bug #253572).
+
+  06 Feb 2009; Jeroen Roovers <jer@gentoo.org>
+  -default-linux/hppa/2007.0/deprecated,
+  -default-linux/hppa/2007.0/desktop/deprecated,
+  -default-linux/hppa/2007.0/desktop/make.defaults,
+  -default-linux/hppa/2007.0/desktop/parent,
+  -default-linux/hppa/2007.0/desktop/virtuals,
+  -default-linux/hppa/2007.0/make.defaults,
+  -default-linux/hppa/2007.0/package.use.force,
+  -default-linux/hppa/2007.0/packages, -default-linux/hppa/2007.0/parent,
+  -default-linux/hppa/2007.0/server/deprecated,
+  -default-linux/hppa/2007.0/server/make.defaults,
+  -default-linux/hppa/2007.0/server/parent,
+  -default-linux/hppa/2007.0/use.mask, -default-linux/hppa/make.defaults,
+  -default-linux/hppa/package.mask, -default-linux/hppa/package.use.mask,
+  -default-linux/hppa/packages, -default-linux/hppa/parent,
+  -default-linux/hppa/use.mask, -default-linux/hppa/virtuals:
+  Remove default-linux/hppa (bug #253572).
+
+  05 Feb 2009; MATSUU Takuto <matsuu@gentoo.org> package.mask:
+  p.mask >=app-i18n/ibus*-1.1
+
+  05 Feb 2009; Hanno Boeck <hanno@gentoo.org> package.mask:
+  Mask pam_mount 1.17, broken with crypto.
+
+  05 Feb 2009; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  libjingle-0.3.12 is not backwards compatible, p.mask for now. bug 256953
+
+  04 Feb 2009; Ben de Groot <yngwin@gentoo.org> arch/ia64/package.use.mask,
+  arch/sparc/package.use.mask, arch/x86-fbsd/package.use.mask:
+  Add proper webkit useflag masks for affected arches
+
+  04 Feb 2009; Serkan Kaba <serkan@gentoo.org> package.mask:
+  Mask sys-apps/sandbox-1.3.3 until bug #256953 is resolved.
+
+  04 Feb 2009; Raúl Porcel <armin76@gentoo.org> package.mask:
+  Add >=seamonkey-bin-2.0_alpha1 mask
+
+  04 Feb 2009; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  p.mask sdsc-syslog (bug 239863) and openpbs-common (bug 255425) for removal
+
+  03 Feb 2009; Santiago M. Mola <coldwind@gentoo.org> package.mask:
+  Pando masked for removal in 30 days.
+
+  02 Feb 2009; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Add gnome-base/gvfs-1.0.3-r11 to bluez-4 mask.
 
   02 Feb 2009; Rémi Cardona <remi@gentoo.org> package.mask:
   unleash xf86-video-intel 2.6.1 and mesa 7.3
