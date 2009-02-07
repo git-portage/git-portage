@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-sports/gracer/gracer-0.1.5.ebuild,v 1.18 2009/02/11 13:31:26 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-sports/gracer/gracer-0.1.5.ebuild,v 1.17 2008/01/19 00:43:31 mr_bones_ Exp $
 
-EAPI=2
 inherit eutils games
 
 DESCRIPTION="3D motor sports simulator"
@@ -25,14 +24,15 @@ DEPEND="x11-libs/libXi
 	media-libs/libpng
 	media-libs/plib"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	epatch "${FILESDIR}"/${PV}-gldefs.patch \
 		"${FILESDIR}"/${PN}-gcc-3.4.patch \
-		"${FILESDIR}/${P}"-gcc41.patch \
-		"${FILESDIR}"/${P}-as-needed.patch
+		"${FILESDIR}/${P}"-gcc41.patch
 }
 
-src_configure() {
+src_compile() {
 	egamesconf \
 		--enable-gif \
 		--enable-jpeg \
@@ -42,6 +42,7 @@ src_configure() {
 	sed -i \
 		-e 's:-lplibsl:-lplibsl -lplibul:' $(find -name Makefile) \
 			|| die "sed Makefiles failed"
+	emake || die "emake failed"
 }
 
 src_install() {
