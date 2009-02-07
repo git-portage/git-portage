@@ -1,9 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/bastet/Attic/bastet-0.41.ebuild,v 1.9 2009/02/08 18:27:16 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/bastet/Attic/bastet-0.41.ebuild,v 1.8 2006/10/19 15:20:40 nyhm Exp $
 
-EAPI=2
-inherit toolchain-funcs eutils games
+inherit toolchain-funcs games
 
 DESCRIPTION="a simple, evil, ncurses-based Tetris(R) clone"
 HOMEPAGE="http://fph.altervista.org/prog/bastet.shtml"
@@ -16,15 +15,17 @@ IUSE=""
 
 DEPEND=">=sys-libs/ncurses-5"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	sed -i \
 		-e '/^include/s/^/-/' \
 		-e "/^CC/s/gcc/$(tc-getCC)/" \
 		-e "/^DATA_PREFIX/s:=.*:=${GAMES_STATEDIR}/:" \
 		-e '/^CFLAGS/s/=/+=/' \
+		-e '/^LDFLAGS/s/=/+=/' \
 		Makefile \
 		|| die "sed failed"
-	epatch "${FILESDIR}"/${P}-as-needed.patch
 
 	sed -i \
 		-e 's/ch;/ch = 0;/' \
