@@ -5,10 +5,6 @@
 <maintainer>
 	<email>matthewsmith@iinet.net.au</email>
 	<name>Matthew Smith</name>
-	<description>Once maintained this indirectly through seemant. He retired. CC on bugs till further notice.</description>
-</maintainer>
-<maintainer>
-	<email>maintainer-needed@gentoo.org</email>
-	<description>This package lacks a primary herd or maintainer.</description>
+	<description>Indirectly maintaining through seemant@gentoo.org</description>
 </maintainer>
 </pkgmetadata>
