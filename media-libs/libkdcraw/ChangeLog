@@ -1,18 +1,6 @@
 # ChangeLog for media-libs/libkdcraw
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libkdcraw/Attic/ChangeLog,v 1.16 2009/02/11 21:09:51 klausman Exp $
-
-  11 Feb 2009; Tobias Klausmann <klausman@gentoo.org>
-  libkdcraw-0.1.4-r1.ebuild:
-  Stable on alpha, bug #244230
-
-*libkdcraw-0.1.7 (11 Feb 2009)
-*libkdcraw-0.1.1-r1 (11 Feb 2009)
-
-  11 Feb 2009; Carsten Lohrke <carlo@gentoo.org> +libkdcraw-0.1.1-r1.ebuild,
-  +libkdcraw-0.1.7.ebuild:
-  Get rid of invalid aRts dependency. Fix other incorrect dependencies.
-  Version bump.
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libkdcraw/Attic/ChangeLog,v 1.14 2008/10/04 16:39:21 jmbsvicetto Exp $
 
 *libkdcraw-0.1.4-r1 (04 Oct 2008)
 
