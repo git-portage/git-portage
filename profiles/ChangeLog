@@ -1,43 +1,10 @@
 # ChangeLog for profile directory
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2350 2009/02/11 23:48:16 gengor Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2340 2009/02/07 03:45:59 matsuu Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
-
-  11 Feb 2009; Gordon Malm <gengor@gentoo.org> package.mask:
-  Remove sys-apps/rsbac-admin and sys-kernel/rsbac-sources. Packages are no
-  longer in the tree.
-
-  11 Feb 2009; Ben de Groot <yngwin@gentoo.org> arch/alpha/use.mask,
-  arch/ia64/use.mask, arch/sparc/use.mask:
-  Mask phonon useflag on arches where x11-libs/qt-phonon and
-  media-sound/phonon are unkeyworded
-
-  11 Feb 2009; Ben de Groot <yngwin@gentoo.org> use.desc:
-  Add custom-cxxflags global useflag, used in all qt-* libs
-
-  11 Feb 2009; Peter Volkov <pva@gentoo.org> package.mask:
-  Add dev-util/bzrtools-1.12.0 to mask as it depends on bzr-1.12
-
-  10 Feb 2009; Alexis Ballier <aballier@gentoo.org> package.mask:
-  unmask xvid 1.2 as everything seems fine
-
-  10 Feb 2009; Peter Volkov <pva@gentoo.org> package.mask:
-  Masking release candidate of dev-util/bzr
-
-  09 Feb 2009; Christoph Mende <angelos@gentoo.org> updates/1Q-2009:
-  Moved xfce-extra/verve to xfce-extra/xfce4-verve
-
-  08 Feb 2009; Andreas Proschofsky <suka@gentoo.org> package.mask:
-  Remove mask on OpenOffice.org 3.0.1, officially released now
-
-  08 Feb 2009; Mike Frysinger <vapier@gentoo.org> package.mask:
-  Remove wrong sandbox mask.
-
-  07 Feb 2009; Serkan Kaba <serkan@gentoo.org> package.mask:
-  Update sandbox mask.
 
   07 Feb 2009; MATSUU Takuto <matsuu@gentoo.org> package.mask:
   added =x11-wm/awesome-3.2* and =x11-libs/xcb-util-0.3.3* to p.mask.
