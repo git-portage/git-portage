@@ -1,6 +1,20 @@
 # ChangeLog for net-libs/libgadu
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libgadu/ChangeLog,v 1.24 2008/04/21 13:27:17 cla Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libgadu/ChangeLog,v 1.27 2009/02/07 15:17:31 klausman Exp $
+
+  07 Feb 2009; Tobias Klausmann <klausman@gentoo.org> libgadu-1.8.2.ebuild:
+  Stable on alpha, bug #244888
+
+  07 Feb 2009; Robert Buchholz <rbu@gentoo.org> libgadu-1.8.2.ebuild:
+  Add blocker to colliding kadu versions (bug #257972).
+
+*libgadu-1.8.2 (04 Feb 2009)
+
+  04 Feb 2009; Robert Buchholz <rbu@gentoo.org>
+  -libgadu-1.7.0_pre20050719.ebuild, -libgadu-1.7.0.ebuild,
+  -libgadu-1.8.0.ebuild, +libgadu-1.8.2.ebuild:
+  Version bump (bug #244424), fixing a buffer overread vulnerability (bug
+  #244888)
 
 *libgadu-1.8.0 (21 Apr 2008)
 
