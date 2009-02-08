@@ -1,6 +1,15 @@
 # ChangeLog for app-emacs/gentoo-syntax
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/gentoo-syntax/Attic/ChangeLog,v 1.30 2009/01/29 01:13:56 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/gentoo-syntax/Attic/ChangeLog,v 1.33 2009/02/06 16:49:11 armin76 Exp $
+
+  06 Feb 2009; Raúl Porcel <armin76@gentoo.org> gentoo-syntax-1.11.ebuild:
+  alpha/ia64/x86 stable wrt #257695
+
+  06 Feb 2009; Tiago Cunha <tcunha@gentoo.org> gentoo-syntax-1.11.ebuild:
+  stable amd64/sparc, bug 257695
+
+  06 Feb 2009; Jeroen Roovers <jer@gentoo.org> gentoo-syntax-1.11.ebuild:
+  Stable for HPPA (bug #257695).
 
   29 Jan 2009; Christian Faulhammer <fauli@gentoo.org>
   -gentoo-syntax-1.10.ebuild:
