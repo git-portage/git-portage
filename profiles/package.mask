@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9484 2009/02/11 23:39:06 gengor Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9477 2009/02/08 17:04:48 vapier Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,16 +30,6 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
-
-# René Nussbaumer <killerfox@gentoo.org> (10 Feb 2009)
-# I gave away maintainership a while ago nobody took it on. Prepare for remove.
-app-emulation/ganeti
-app-emulation/ganeti-instance-debian-etch
-
-# Peter Volkov <pva@gentoo.org> (10 Feb 2009)
-# Masking release candidate.
-=dev-util/bzr-1.12_rc1
-=dev-util/bzrtools-1.12.0
 
 # MATSUU Takuto <matsuu@gentoo.org> (07 Feb 2009)
 # Masked for testing
@@ -217,6 +207,10 @@ x11-wm/stumpwm-cvs
 # Removed by treecleaners in 60 says. www-apps/gallery includes a java webstart
 # for gallery remote now, use that instead. bug 111025
 app-misc/gallery-remote
+
+# Andreas Proschofsky <suka@gentoo.org> (18 Jan 2009)
+# Mask release candidates for OpenOffice.org 3.0.1
+>=app-office/openoffice-3.0.1_rc2
 
 # Sébastien Fabbro <bicatali@gentoo.org> (15 Jan 2009)
 # Masked for removal in 30 days. f2py hase been integrated in
@@ -447,6 +441,10 @@ app-portage/udept
 # Alin Năstac <mrness@gentoo.org> (14 Dec 2008)
 # Dead upstream, masked for removal in ~60 days.
 net-proxy/squirm
+
+# Steve Dibb <beandog@gentoo> (11 Dec 2008)
+# Needs some testing
+>=media-libs/xvid-1.2.0
 
 # Jim Ramsay <lack@gentoo.org> (11 Dec 2008)
 # Live ebuild, for advanced users only
@@ -1478,6 +1476,11 @@ app-benchmarks/ltp
 # Robin H. Johnson <robbat2@gentoo.org> (11 Feb 2006)
 # zlib interaction is badly broken. See bug #124733.
 =dev-util/cvs-1.12.13*
+
+# Gordon Malm <gengor@gentoo.org> (29 Dec 2008)
+# Masked for removal after January 31st, 2009
+sys-apps/rsbac-admin
+sys-kernel/rsbac-sources
 
 # Chris Gianelloni <wolf31o2@gentoo.org> (19 Dec 2005)
 # This is the Gentoo Linux Installer.  This is currently masked because it will
