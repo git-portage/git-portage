@@ -1,14 +1,15 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/aspectj/Attic/aspectj-1.2.ebuild,v 1.9 2009/02/09 14:09:17 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/aspectj/Attic/aspectj-1.2.ebuild,v 1.8 2005/10/08 10:55:35 betelgeuse Exp $
 
-inherit eutils java-pkg-2 java-ant-2
+inherit java-pkg eutils
 
 DESCRIPTION="AspectJ is a seemless extension to the Java programming language for Aspect Oriented Programming (AOP)"
 SRC_URI="mirror://gentoo/aspectj-CVS-V1_2_0.tar.bz2"
 HOMEPAGE="http://www.eclipse.org/aspectj/"
-DEPEND=">=virtual/jdk-1.4"
-RDEPEND=">=virtual/jre-1.4"
+DEPEND=">=virtual/jdk-1.3
+	dev-java/ant-core"
+RDEPEND=">=virtual/jre-1.3"
 SLOT="0"
 LICENSE="CPL-1.0 Apache-1.1"
 KEYWORDS="x86 ~ppc amd64"
