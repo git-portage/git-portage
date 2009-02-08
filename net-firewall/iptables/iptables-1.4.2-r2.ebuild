@@ -1,48 +1,23 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/iptables/Attic/iptables-1.4.2-r2.ebuild,v 1.6 2009/02/09 17:53:26 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/iptables/Attic/iptables-1.4.2-r2.ebuild,v 1.4 2009/02/08 15:59:31 klausman Exp $
 
-inherit eutils toolchain-funcs linux-info
-
-L7_PV=2.21
-L7_P=netfilter-layer7-v${L7_PV}
+inherit eutils toolchain-funcs
 
 DESCRIPTION="Linux kernel (2.4+) firewall, NAT and packet mangling tools"
 HOMEPAGE="http://www.iptables.org/"
-SRC_URI="http://iptables.org/projects/iptables/files/${P}.tar.bz2
-	l7filter? ( mirror://sourceforge/l7-filter/${L7_P}.tar.gz )"
+SRC_URI="http://iptables.org/projects/iptables/files/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ~ia64 m68k ~mips ~ppc ~ppc64 s390 sh ~sparc x86"
-IUSE="l7filter"
+KEYWORDS="alpha amd64 ~arm hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86"
+IUSE=""
 
 DEPEND="virtual/os-headers"
 RDEPEND=""
 
-pkg_setup() {
-	if use l7filter ; then
-		ewarn "WARNING: 3rd party extensions has been enabled."
-		ewarn "This means that iptables will use your currently installed"
-		ewarn "kernel in ${KERNEL_DIR} as headers for iptables."
-		linux-info_pkg_setup
-
-		if kernel_is lt 2 6 20 ; then
-			eerror "Currently there is no l7-filter patch available for iptables-1.4.x"
-			eerror "and kernel version before 2.6.20."
-			eerror "If you need to compile iptables 1.4.x against Linux 2.6.19.x"
-			eerror "or earlier, with l7-filter patch, please, report upstream."
-			die "No patch available."
-		fi
-
-		[[ ! -f ${KERNEL_DIR}/include/linux/netfilter/xt_layer7.h ]] && \
-			die "For layer 7 support emerge net-misc/l7-filter-${L7_PV} before this."
-	fi
-}
-
 src_unpack() {
 	unpack ${P}.tar.bz2
-	use l7filter && unpack ${L7_P}.tar.gz
 	cd "${S}"
 	epatch "${FILESDIR}"/${P}-glibc.patch
 	epatch "${FILESDIR}"/${P}-no-ldconfig.patch
@@ -65,22 +40,18 @@ src_unpack() {
 			break
 		fi
 	done
-
-	if use l7filter ; then
-		cp "${WORKDIR}/${L7_P}/iptables-1.4.1.1-for-kernel-2.6.20forward"/* extensions \
-			|| die "Failed to copy l7filter sources"
-	fi
 }
 
 src_compile() {
 	econf \
 		--sbindir=/sbin \
 		--libexecdir=/$(get_libdir) \
+		--without-kernel \
 		--enable-devel \
 		--enable-libipq \
 		--enable-shared \
 		--enable-static \
-		$(use_with l7filter kernel ${KERNEL_DIR})
+		|| die
 	emake V=1 || die
 }
 
