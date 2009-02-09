@@ -1,16 +1,6 @@
 # ChangeLog for dev-libs/glib
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/ChangeLog,v 1.344 2009/02/13 21:41:14 klausman Exp $
-
-  13 Feb 2009; Tobias Klausmann <klausman@gentoo.org> glib-2.16.6.ebuild,
-  glib-2.18.1.ebuild:
-  Brain fart when trying to stabilize 2.16.6 (bug 245092)
-
-  11 Feb 2009; Tobias Klausmann <klausman@gentoo.org> ChangeLog:
-  Stable on alpha, bug #245092
-
-  11 Feb 2009; Jeroen Roovers <jer@gentoo.org> glib-2.16.6.ebuild:
-  Stable for HPPA (bug #245092).
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/ChangeLog,v 1.341 2009/02/09 19:57:27 klausman Exp $
 
   09 Feb 2009; Tobias Klausmann <klausman@gentoo.org> glib-2.18.1.ebuild:
   Stable on alpha, bug #258344
