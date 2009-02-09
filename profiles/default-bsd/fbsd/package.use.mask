@@ -95,9 +95,3 @@ sys-auth/pambase consolekit cracklib ssh sha512
 # bug #216855
 # octave needs fftw which does not work of fbsd
 dev-lang/swig octave
-
-# Ben de Groot <yngwin@gentoo.org> 13 Feb 2009
-# Mask for unkeyworded deps
-x11-libs/qt-core phonon
-x11-libs/qt-core webkit
-
