@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-4.2.0.ebuild,v 1.4 2009/02/03 22:57:36 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-4.2.0-r2.ebuild,v 1.1 2009/02/09 22:22:23 scarabeus Exp $
 
 EAPI="2"
 
@@ -29,11 +29,11 @@ COMMONDEPEND="
 	!<kde-base/kdelibs-3.5.10
 	!x11-libs/qt-phonon
 	!kdeprefix? (
-		!kde-base/kitchensync:4.1[kdeprefix=]
-		!kde-base/knewsticker:4.1[kdeprefix=]
-		!kde-base/kpercentage:4.1[kdeprefix=]
-		!kde-base/ktnef:4.1[kdeprefix=]
-		!kde-base/libplasma[kdeprefix=]
+		!kde-base/kitchensync:4.1[-kdeprefix]
+		!kde-base/knewsticker:4.1[-kdeprefix]
+		!kde-base/kpercentage:4.1[-kdeprefix]
+		!kde-base/ktnef:4.1[-kdeprefix]
+		!kde-base/libplasma[-kdeprefix]
 		!<=kde-misc/kdnssd-avahi-0.1.2:0
 	)
 	>=app-misc/strigi-0.6.3[qt4,dbus]
@@ -98,6 +98,16 @@ RDEPEND="${COMMONDEPEND}
 	x11-apps/iceauth
 	x11-apps/rgb
 "
+
+# upstream patches
+PATCHES=(
+	"$FILESDIR/$PV-kded.patch"
+	"$FILESDIR/$PV-kio_copy.patch"
+	"$FILESDIR/$PV-klauncher.patch"
+	"$FILESDIR/$PV-klauncher_konsole.patch"
+	"$FILESDIR/$PV-kode_crash.patch"
+	"$FILESDIR/$PV-kio_http.patch"
+)
 
 src_configure() {
 	if use zeroconf; then
@@ -218,7 +228,10 @@ pkg_postinst() {
 		elog "	hosts: files mdns dns"
 		echo
 	fi
-	elog "your homedir is set to "'${HOME}'"/${HME}"
+	elog "Your homedir is set to "'${HOME}'"/${HME}"
+	elog
+	elog "If you experience weird application behavior (missing texts, etc.) run as root:"
+	elog "# chmod 755 -R /usr/share/config $PREFIX/share/config"
 
 	kde4-base_pkg_postinst
 }
