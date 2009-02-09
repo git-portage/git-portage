@@ -1,15 +1,6 @@
 # ChangeLog for dev-libs/elfutils
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/elfutils/ChangeLog,v 1.123 2009/02/14 05:40:18 ken69267 Exp $
-
-  14 Feb 2009; Kenneth Prugh <ken69267@gentoo.org> elfutils-0.131-r2.ebuild:
-  amd64 stable, bug #245861
-
-  12 Feb 2009; Brent Baude <ranger@gentoo.org> elfutils-0.131-r2.ebuild:
-  stable ppc64, bug 245861
-
-  12 Feb 2009; Raúl Porcel <armin76@gentoo.org> elfutils-0.131-r2.ebuild:
-  arm/ia64/s390/sh/sparc stable wrt #245861
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/elfutils/ChangeLog,v 1.120 2009/02/09 20:31:14 nixnut Exp $
 
   09 Feb 2009; nixnut <nixnut@gentoo.org> elfutils-0.131-r2.ebuild:
   ppc stable #245861
