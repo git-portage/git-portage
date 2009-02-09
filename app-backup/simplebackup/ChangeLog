@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/simplebackup
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/simplebackup/ChangeLog,v 1.2 2009/02/05 06:01:28 darkside Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/simplebackup/ChangeLog,v 1.3 2009/02/05 06:02:36 darkside Exp $
+
+  05 Feb 2009; Jeremy Olexa <darkside@gentoo.org> simplebackup-1.8.1.ebuild:
+  works on ~amd64 - add kw
 
 *simplebackup-1.8.1 (05 Feb 2009)
 
