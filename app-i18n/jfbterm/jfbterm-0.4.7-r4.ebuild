@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/jfbterm/jfbterm-0.4.7-r4.ebuild,v 1.7 2009/02/11 04:31:00 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/jfbterm/jfbterm-0.4.7-r4.ebuild,v 1.6 2007/09/29 10:56:29 philantrop Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -32,6 +32,8 @@ src_unpack() {
 }
 
 src_compile() {
+	append-ldflags $(bindnow-flags)
+
 	econf $(use_enable debug) || die "econf failed"
 	emake || die "emake failed"
 }
@@ -42,8 +44,8 @@ src_install() {
 
 	mv "${D}"/etc/jfbterm.conf{.sample,}
 
-	doman jfbterm.1 jfbterm.conf.5 || die "doman failed"
+	doman jfbterm.1 jfbterm.conf.5
 
-	dodoc AUTHORS ChangeLog NEWS README* jfbterm.conf.sample* \
-		|| die "dodoc failed"
+	dodoc AUTHORS ChangeLog NEWS README*
+	dodoc jfbterm.conf.sample*
 }
