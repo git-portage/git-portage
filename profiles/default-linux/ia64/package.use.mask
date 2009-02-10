@@ -1,4 +1,4 @@
-# $Header: /var/cvsroot/gentoo-x86/profiles/default-linux/ia64/Attic/package.use.mask,v 1.16 2009/02/14 00:27:44 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/default-linux/ia64/Attic/package.use.mask,v 1.14 2008/11/23 12:35:10 patrick Exp $
 
 # Patrick Lauer <patrick@gentoo.org> (23 Nov 2008)
 # needs webkit keyworded
