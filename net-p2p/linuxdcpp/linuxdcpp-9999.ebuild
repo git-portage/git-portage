@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/linuxdcpp/linuxdcpp-9999.ebuild,v 1.9 2008/02/29 20:29:56 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/linuxdcpp/linuxdcpp-9999.ebuild,v 1.10 2009/02/10 16:53:05 armin76 Exp $
 
-inherit cvs eutils
+inherit bzr eutils
 
 DESCRIPTION="Direct connect client, looks and works like famous DC++"
 HOMEPAGE="http://linuxdcpp.berlios.de"
@@ -12,12 +12,9 @@ SLOT="0"
 KEYWORDS=""
 IUSE="debug"
 
-ECVS_SERVER="cvs.linuxdcpp.berlios.de:/cvsroot/linuxdcpp"
-ECVS_MODULE="linuxdcpp"
-ECVS_AUTH="pserver"
-ECVS_USER="anonymous"
+EBZR_REPO_URI="lp:linuxdcpp"
 
-S="${WORKDIR}/${PN}"
+S="${WORKDIR}/${P}"
 
 RDEPEND=">=gnome-base/libglade-2.4
 	>=x11-libs/gtk+-2.6
