@@ -1,10 +1,58 @@
 # ChangeLog for profile directory
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2335 2009/02/05 16:09:24 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2346 2009/02/10 22:19:19 aballier Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  10 Feb 2009; Alexis Ballier <aballier@gentoo.org> package.mask:
+  unmask xvid 1.2 as everything seems fine
+
+  10 Feb 2009; Peter Volkov <pva@gentoo.org> package.mask:
+  Masking release candidate of dev-util/bzr
+
+  09 Feb 2009; Christoph Mende <angelos@gentoo.org> updates/1Q-2009:
+  Moved xfce-extra/verve to xfce-extra/xfce4-verve
+
+  08 Feb 2009; Andreas Proschofsky <suka@gentoo.org> package.mask:
+  Remove mask on OpenOffice.org 3.0.1, officially released now
+
+  08 Feb 2009; Mike Frysinger <vapier@gentoo.org> package.mask:
+  Remove wrong sandbox mask.
+
+  07 Feb 2009; Serkan Kaba <serkan@gentoo.org> package.mask:
+  Update sandbox mask.
+
+  07 Feb 2009; MATSUU Takuto <matsuu@gentoo.org> package.mask:
+  added =x11-wm/awesome-3.2* and =x11-libs/xcb-util-0.3.3* to p.mask.
+
+  06 Feb 2009; Vlastimil Babka <caster@gentoo.org> updates/1Q-2009:
+  Package move net-p2p/azureus to net-p2p/vuze
+
+  06 Feb 2009; Jeroen Roovers <jer@gentoo.org> package.mask:
+  Remove hppa-sources from package.mask (bug #202391).
+
+  06 Feb 2009; Jeroen Roovers <jer@gentoo.org> profiles.desc:
+  Define new hppa default profiles (bug #253572).
+
+  06 Feb 2009; Jeroen Roovers <jer@gentoo.org>
+  -default-linux/hppa/2007.0/deprecated,
+  -default-linux/hppa/2007.0/desktop/deprecated,
+  -default-linux/hppa/2007.0/desktop/make.defaults,
+  -default-linux/hppa/2007.0/desktop/parent,
+  -default-linux/hppa/2007.0/desktop/virtuals,
+  -default-linux/hppa/2007.0/make.defaults,
+  -default-linux/hppa/2007.0/package.use.force,
+  -default-linux/hppa/2007.0/packages, -default-linux/hppa/2007.0/parent,
+  -default-linux/hppa/2007.0/server/deprecated,
+  -default-linux/hppa/2007.0/server/make.defaults,
+  -default-linux/hppa/2007.0/server/parent,
+  -default-linux/hppa/2007.0/use.mask, -default-linux/hppa/make.defaults,
+  -default-linux/hppa/package.mask, -default-linux/hppa/package.use.mask,
+  -default-linux/hppa/packages, -default-linux/hppa/parent,
+  -default-linux/hppa/use.mask, -default-linux/hppa/virtuals:
+  Remove default-linux/hppa (bug #253572).
 
   05 Feb 2009; MATSUU Takuto <matsuu@gentoo.org> package.mask:
   p.mask >=app-i18n/ibus*-1.1
