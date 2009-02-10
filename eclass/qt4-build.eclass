@@ -1,22 +1,24 @@
-# Copyright 2007-2009 Gentoo Foundation
+# Copyright 2007-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/qt4-build.eclass,v 1.22 2009/02/14 22:48:26 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/qt4-build.eclass,v 1.19 2009/01/29 18:45:29 aballier Exp $
 
 # @ECLASS: qt4-build.eclass
 # @MAINTAINER:
-# Ben de Groot <yngwin@gentoo.org>
-# Markos Chandras <hwoarang@gentoo.org>
 # Caleb Tennis <caleb@gentoo.org>
 # @BLURB: Eclass for Qt4 split ebuilds.
 # @DESCRIPTION:
 # This eclass contains various functions that are used when building Qt4
 
-inherit eutils multilib toolchain-funcs flag-o-matic versionator
+inherit eutils multilib toolchain-funcs flag-o-matic
 
-IUSE="${IUSE} custom-cxxflags debug pch"
+IUSE="${IUSE} debug pch"
 
 case "${PV}" in
-	4.?.?_rc*)
+	4.4.0_beta*)
+		SRCTYPE="${SRCTYPE:-opensource-src}"
+		MY_PV="${PV/_beta/-beta}"
+		;;
+	4.4.0_rc*)
 		SRCTYPE="${SRCTYPE:-opensource-src}"
 		MY_PV="${PV/_rc/-rc}"
 		;;
@@ -28,26 +30,19 @@ esac
 MY_P=qt-x11-${SRCTYPE}-${MY_PV}
 S=${WORKDIR}/${MY_P}
 
-HOMEPAGE="http://www.qtsoftware.com/"
 SRC_URI="ftp://ftp.trolltech.com/qt/source/${MY_P}.tar.bz2"
 
 case "${PV}" in
-	4.4.?) SRC_URI="${SRC_URI} mirror://gentoo/${MY_P}-headers.tar.bz2" ;;
-	*)     ;;
+	4.4.2|4.4.1|4.4.0|4.4.0_rc*)
+		SRC_URI="${SRC_URI} mirror://gentoo/${MY_P}-headers.tar.bz2"
+		;;
+	*)
+		;;
 esac
 
 qt4-build_pkg_setup() {
-	# EAPI=2 ebuilds set use-deps, others need this:
-	if [[ $EAPI != 2 ]]; then
-		# Make sure debug setting corresponds with qt-core (bug 258512)
-		if [[ $PN != "qt-core" ]]; then
-			use debug && QT4_BUILT_WITH_USE_CHECK="${QT4_BUILT_WITH_USE_CHECK}
-				~x11-libs/qt-core-${PV} debug"
-		fi
-
-		# Check USE requirements
-		qt4-build_check_use
-	fi
+	# Check USE requirements
+	qt4-build_check_use
 
 	# Set up installation directories
 	QTBASEDIR=/usr/$(get_libdir)/qt4
@@ -68,26 +63,9 @@ qt4-build_pkg_setup() {
 
 	PATH="${S}/bin:${PATH}"
 	LD_LIBRARY_PATH="${S}/lib:${LD_LIBRARY_PATH}"
-
-	if ! version_is_at_least 4.1 $(gcc-version) ; then
-		ewarn "Using a GCC version lower than 4.1 is not supported!"
-		echo
-		ebeep 5
-	fi
-
-	if use custom-cxxflags; then
-		echo
-		ewarn "You have set USE=custom-cxxflags, which means Qt will be built with the"
-		ewarn "CXXFLAGS you have set in /etc/make.conf. This is not supported, and we"
-		ewarn "recommend to unset this useflag. But you are free to experiment with it."
-		ewarn "Just do not start crying if it breaks your system, or eats your kitten"
-		ewarn "for breakfast. ;-) "
-		echo
-	fi
-
 }
 
-qt4-build_src_unpack() {
+qt4_unpack() {
 	local target targets
 	for target in configure LICENSE.{GPL2,GPL3} projects.pro \
 		src/{qbase,qt_targets,qt_install}.pri bin config.tests mkspecs qmake \
@@ -99,36 +77,46 @@ qt4-build_src_unpack() {
 	tar xjpf "${DISTDIR}"/${MY_P}.tar.bz2 ${targets}
 
 	case "${PV}" in
-		4.4.?)
+		4.4.2|4.4.1|4.4.0|4.4.0_rc*)
 			echo tar xjpf "${DISTDIR}"/${MY_P}-headers.tar.bz2
 			tar xjpf "${DISTDIR}"/${MY_P}-headers.tar.bz2
 			;;
 	esac
-
-	# Be backwards compatible for now
-	if [[ $EAPI != 2 ]]; then
-		qt4-build_src_prepare
-	fi
 }
 
-qt4-build_src_prepare() {
-	cd "${S}"
-
+qt4-build_src_unpack() {
+	qt4_unpack
 	if [[ ${PN} != qt-core ]]; then
+		cd "${S}"
 		skip_qmake_build_patch
 		skip_project_generation_patch
 		symlink_binaries_to_buildtree
 	fi
-	
-	# Bug 172219	
-	if ! use custom-cxxflags;then
-		# Don't let the user go too overboard with flags.
-		strip-flags
-		replace-flags -O3 -O2
-	fi
 
 	# Bug 253127
-	# Unsupported old gcc versions - hardened needs this :(
+	if [[ $(gcc-major-version) -lt "4" ]] ; then
+		sed -e "/^QMAKE_CFLAGS\t/ s:$: -fno-stack-protector-all:" \
+		-i "${S}"/mkspecs/common/g++.conf || die "sed ${S}/mkspecs/common/g++.conf failed"
+	fi
+
+	sed -e "s:QMAKE_CFLAGS_RELEASE.*=.*:QMAKE_CFLAGS_RELEASE=${CFLAGS}:" \
+		-e "s:QMAKE_CXXFLAGS_RELEASE.*=.*:QMAKE_CXXFLAGS_RELEASE=${CXXFLAGS}:" \
+		-e "s:QMAKE_LFLAGS_RELEASE.*=.*:QMAKE_LFLAGS_RELEASE=${LDFLAGS}:" \
+		-e "s:X11R6/::" \
+		-i "${S}"/mkspecs/$(qt_mkspecs_dir)/qmake.conf || die "sed ${S}/mkspecs/$(qt_mkspecs_dir)/qmake.conf failed"
+
+	sed -e "s:QMAKE_CFLAGS_RELEASE.*=.*:QMAKE_CFLAGS_RELEASE=${CFLAGS}:" \
+		-e "s:QMAKE_CXXFLAGS_RELEASE.*=.*:QMAKE_CXXFLAGS_RELEASE=${CXXFLAGS}:" \
+		-e "s:QMAKE_LFLAGS_RELEASE.*=.*:QMAKE_LFLAGS_RELEASE=${LDFLAGS}:" \
+		-i "${S}"/mkspecs/common/g++.conf || die "sed ${S}/mkspecs/common/g++.conf failed"
+}
+
+qt4-build_src_compile() {
+	# Don't let the user go too overboard with flags.  If you really want to, uncomment
+	# out the line below and give 'er a whirl.
+	strip-flags
+	replace-flags -O3 -O2
+
 	if [[ $(gcc-major-version) -lt "4" ]] ; then
 		ewarn "Appending -fno-stack-protector to CXXFLAGS"
 		append-cxxflags -fno-stack-protector
@@ -140,35 +128,12 @@ qt4-build_src_prepare() {
 		append-flags -fno-gcse
 	fi
 
-	
-	sed -e "s:QMAKE_CFLAGS_RELEASE.*=.*:QMAKE_CFLAGS_RELEASE=${CFLAGS}:" \
-		-e "s:QMAKE_CXXFLAGS_RELEASE.*=.*:QMAKE_CXXFLAGS_RELEASE=${CXXFLAGS}:" \
-		-e "s:QMAKE_LFLAGS_RELEASE.*=.*:QMAKE_LFLAGS_RELEASE=${LDFLAGS}:" \
-		-e "s:X11R6/::" \
-		-i "${S}"/mkspecs/$(qt_mkspecs_dir)/qmake.conf || die "sed ${S}/mkspecs/$(qt_mkspecs_dir)/qmake.conf failed"
-
-	sed -e "s:QMAKE_CFLAGS_RELEASE.*=.*:QMAKE_CFLAGS_RELEASE=${CFLAGS}:" \
-		-e "s:QMAKE_CXXFLAGS_RELEASE.*=.*:QMAKE_CXXFLAGS_RELEASE=${CXXFLAGS}:" \
-		-e "s:QMAKE_LFLAGS_RELEASE.*=.*:QMAKE_LFLAGS_RELEASE=${LDFLAGS}:" \
-		-i "${S}"/mkspecs/common/g++.conf || die "sed ${S}/mkspecs/common/g++.conf failed"
-
-}
-
-qt4-build_src_configure() {
-
 	myconf="$(standard_configure_options) ${myconf}"
 
 	echo ./configure ${myconf}
 	./configure ${myconf} || die "./configure failed"
-}
 
-qt4-build_src_compile() {
-	# Be backwards compatible for now
-	if [[ $EAPI != 2 ]]; then
-		qt4-build_src_configure
-	fi
-
-	build_directories "${QT4_TARGET_DIRECTORIES}"
+	build_target_directories
 }
 
 qt4-build_src_install() {
@@ -200,7 +165,7 @@ standard_configure_options() {
 		myconf="${myconf} -release -no-separate-debug-info"
 	fi
 
-	# ARCH is set on Gentoo. Qt now falls back to generic on an unsupported
+	# ARCH is set on Gentoo. QT now falls back to generic on an unsupported
 	# ${ARCH}. Therefore we convert it to supported values.
 	case "${ARCH}" in
 		amd64) myconf="${myconf} -arch x86_64" ;;
@@ -216,12 +181,14 @@ standard_configure_options() {
 		-datadir ${QTDATADIR} -docdir ${QTDOCDIR} -headerdir ${QTHEADERDIR}
 		-plugindir ${QTPLUGINDIR} -sysconfdir ${QTSYSCONFDIR}
 		-translationdir ${QTTRANSDIR} -examplesdir ${QTEXAMPLESDIR}
-		-demosdir ${QTDEMOSDIR} -silent -fast
-		$([[ ${PN} == qt-xmlpatterns ]] || echo -no-exceptions)
-		$(use x86-fbsd || echo -reduce-relocations)
+		-demosdir ${QTDEMOSDIR} -silent -fast $(use x86-fbsd || echo -reduce-relocations)
 		-nomake examples -nomake demos"
 
 	echo "${myconf}"
+}
+
+build_target_directories() {
+	build_directories "${QT4_TARGET_DIRECTORIES}"
 }
 
 build_directories() {
@@ -275,6 +242,10 @@ install_qconfigs() {
 		doins "${T}"/gentoo-${PN}-qconfig.h || die "installing ${PN}-qconfig.h failed"
 	fi
 }
+
+# Stubs for functions used by the Qt 4.4.0_technical_preview_1.
+qconfig_add_option() { : ; }
+qconfig_remove_option() { : ; }
 
 generate_qconfigs() {
 	if [[ -n ${QCONFIG_ADD} || -n ${QCONFIG_REMOVE} || -n ${QCONFIG_DEFINE} || ${CATEGORY}/${PN} == x11-libs/qt-core ]]; then
@@ -510,7 +481,4 @@ qt_mkspecs_dir() {
 	echo "${spec}"
 }
 
-case ${EAPI:-0} in
-	0|1) EXPORT_FUNCTIONS pkg_setup src_unpack src_compile src_install pkg_postrm pkg_postinst ;;
-	2) EXPORT_FUNCTIONS pkg_setup src_unpack src_prepare src_configure src_compile src_install pkg_postrm pkg_postinst ;;
-esac
+EXPORT_FUNCTIONS pkg_setup src_unpack src_compile src_install pkg_postrm pkg_postinst
