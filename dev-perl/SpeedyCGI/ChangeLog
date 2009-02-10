@@ -1,13 +1,11 @@
 # ChangeLog for dev-perl/SpeedyCGI
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/SpeedyCGI/ChangeLog,v 1.6 2009/02/13 08:57:04 jer Exp $
-
-  13 Feb 2009; Jeroen Roovers <jer@gentoo.org> SpeedyCGI-2.22.ebuild:
-  Marked ~hppa (bug #258458).
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/SpeedyCGI/ChangeLog,v 1.4 2009/02/10 15:33:01 pva Exp $
 
   10 Feb 2009; Peter Volkov <pva@gentoo.org> metadata.xml,
   SpeedyCGI-2.22.ebuild:
-  ~amd64 keyworded. Small cleanups. Took maintaining.
+  ~amd64 keyworded. Small cleanups. Added to netmon since smokeping relies on
+  this package.
 
   31 Jan 2008; Michael Hanselmann <hansmi@gentoo.org> metadata.xml:
   Remove myself as maintainer.
