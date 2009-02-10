@@ -1,15 +1,6 @@
 # ChangeLog for dev-util/giggle
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/giggle/Attic/ChangeLog,v 1.11 2009/02/14 21:57:30 ikelos Exp $
-
-  14 Feb 2009; Mike Auty <ikelos@gentoo.org> giggle-0.4.90.ebuild:
-  Add in dependency on evolution-data-server, which can't be configured out,
-  and is needed for a giggle plugin.
-
-*giggle-0.4.90 (14 Feb 2009)
-
-  14 Feb 2009; Mike Auty <ikelos@gentoo.org> +giggle-0.4.90.ebuild:
-  Version bump, thanks to mraudsepp for the request.
+# $Header: /var/cvsroot/gentoo-x86/dev-util/giggle/Attic/ChangeLog,v 1.9 2009/01/26 20:24:45 ikelos Exp $
 
   26 Jan 2009; Mike Auty <ikelos@gentoo.org> giggle-0.4.ebuild:
   Fix homepage on most recent giggle ebuild.
