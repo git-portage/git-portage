@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-rpg/coe2/Attic/coe2-2007.ebuild,v 1.2 2009/02/12 22:47:26 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-rpg/coe2/Attic/coe2-2007.ebuild,v 1.1 2007/08/29 21:38:39 tupone Exp $
 
-EAPI=2
 inherit eutils games
 
 DESCRIPTION="Precursor to the Dominions series"
@@ -20,12 +19,13 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/coe
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
 	rm *.{dll,exe}
 	rm -r old
-	if use amd64 ; then
-		mv -f coe_linux64bit coe_linux || die "mv amd64 image failed"
-	fi
+	use amd64 && mv -f coe_linux64bit coe_linux || die "mv amd64 image failed"
 }
 
 src_install() {
