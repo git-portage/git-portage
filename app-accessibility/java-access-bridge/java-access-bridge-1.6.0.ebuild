@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/java-access-bridge/Attic/java-access-bridge-1.6.0.ebuild,v 1.10 2009/02/15 10:09:27 serkan Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/java-access-bridge/Attic/java-access-bridge-1.6.0.ebuild,v 1.9 2007/07/11 02:34:03 leio Exp $
 
 inherit java-pkg-2 gnome2
 
@@ -33,12 +33,12 @@ pkg_setup() {
 src_install() {
 	gnome2_src_install
 
-	java-pkg_dojar "${D}"/usr/share/jar/*.jar
+	java-pkg_dojar ${D}/usr/share/jar/*.jar
 
 	insinto /usr/share/${PN}
-	doins "${D}"/usr/share/jar/*.properties
+	doins ${D}/usr/share/jar/*.properties
 
-	rm -rf "${D}"/usr/share/jar
+	rm -rf ${D}/usr/share/jar
 }
 
 pkg_postinst() {
