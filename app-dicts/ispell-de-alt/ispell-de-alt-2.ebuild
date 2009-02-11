@@ -1,18 +1,17 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/ispell-de-alt/Attic/ispell-de-alt-2.ebuild,v 1.6 2009/02/13 16:50:08 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/ispell-de-alt/Attic/ispell-de-alt-2.ebuild,v 1.1 2009/02/11 14:50:45 ulm Exp $
 
-inherit eutils multilib
+inherit multilib
 
-DESCRIPTION="German dictionary (traditional orthography) for ispell"
+MY_P="hk${PV}-deutsch"
+DESCRIPTION="German dictionary (classic orthography) for ispell"
 HOMEPAGE="http://www.lasr.cs.ucla.edu/geoff/ispell-dictionaries.html"
-SRC_URI="ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/hk${PV}-deutsch.tar.gz
-	http://www.j3e.de/ispell/hk2/hkgerman_2-patch-bj1.diff.gz"
+SRC_URI="ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/${MY_P}.tar.gz"
 
-# GPL according to <http://bugs.debian.org/131124#25>
-LICENSE="GPL-2"
+LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="app-text/ispell"
@@ -20,15 +19,8 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}"
 
-src_unpack() {
-	unpack ${A}
-	epatch hkgerman_2-patch-bj1.diff
-}
-
-src_install() {
+src_install () {
 	insinto /usr/$(get_libdir)/ispell
 	doins deutsch.aff deutsch.hash || die "doins failed"
-	dosym deutsch.aff /usr/$(get_libdir)/ispell/de_DE_1901.aff || die
-	dosym deutsch.hash /usr/$(get_libdir)/ispell/de_DE_1901.hash || die
-	dodoc ANNOUNCE Changes Contributors README*
+	dodoc ANNOUNCE Changes Contributors README
 }
