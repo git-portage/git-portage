@@ -1,0 +1,16 @@
+# ChangeLog for net-misc/mico
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/mico/ChangeLog,v 1.16 2009/02/10 08:12:59 haubi Exp $
+
+  10 Feb 2009; Michael Haubenwallner <haubi@gentoo.org> mico-2.3.13.ebuild:
+  added keywords found in old mico-2.3.11-r1.ebuild: ~alpha ~amd64 ~ppc
+  ~sparc - did only ~x86 initially. (#257984)
+
+*mico-2.3.13 (09 Feb 2009)
+
+  09 Feb 2009; Michael Haubenwallner <haubi@gentoo.org>
+  +files/mico-2.3.13-gcc43.patch, +files/mico-2.3.13-nolibcheck.patch,
+  +files/gtk-config, +metadata.xml, +mico-2.3.13.ebuild:
+  added mico-2.3.13 (#257984), without bluetooth/wireless/sl3ac, with gcc43
+  patch from Malcolm MacLeod <mmacleod@webmail.co.za>
+
