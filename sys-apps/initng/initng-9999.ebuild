@@ -1,26 +1,29 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/initng/Attic/initng-9999.ebuild,v 1.12 2007/08/25 17:59:38 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/initng/Attic/initng-9999.ebuild,v 1.13 2009/02/08 19:35:58 vapier Exp $
 
-ESVN_REPO_URI="http://svn.initng.org/initng/trunk"
-ESVN_PROJECT="initng"
-inherit subversion multilib
+if [[ ${PV} == "9999" ]] ; then
+	ESVN_REPO_URI="http://svn.initng.org/initng/trunk"
+	ESVN_PROJECT="initng"
+	inherit subversion
+	SRC_URI=""
+else
+	SRC_URI="http://download.initng.org/initng/v${PV:0:3}/${P}.tar.bz2"
+	KEYWORDS="~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86"
+fi
+inherit eutils multilib
 
 DESCRIPTION="A next generation init replacement"
 HOMEPAGE="http://initng.org/"
-SRC_URI=""
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
 IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
 	>=dev-util/cmake-2.1"
 PDEPEND="sys-apps/initng-ifiles"
-
-S=${WORKDIR}/${PN}
 
 plugin_warning() {
 	if [[ -z ${INITNG_PLUGINS} ]] ; then
@@ -33,6 +36,16 @@ plugin_warning() {
 
 pkg_setup() {
 	plugin_warning
+}
+
+src_unpack() {
+	if [[ ${PV} == "9999" ]] ; then
+		subversion_src_unpack
+	else
+		unpack ${A}
+	fi
+	cd "${S}"
+	sed -i -e 's:-Werror::' CMakeLists.txt #136992
 }
 
 src_compile() {
