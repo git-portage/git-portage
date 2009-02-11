@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/cegui/cegui-0.6.2b.ebuild,v 1.2 2009/02/11 08:38:48 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-games/cegui/cegui-0.6.2b.ebuild,v 1.1 2008/12/11 00:49:29 nyhm Exp $
 
-EAPI=2
 inherit autotools eutils
 
 MY_P=CEGUI-${PV%b}
@@ -17,7 +16,7 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="debug devil directfb doc examples expat freeimage irrlicht lua opengl xerces-c xml"
 
 RDEPEND="dev-libs/libpcre
-	media-libs/freetype:2
+	=media-libs/freetype-2*
 	devil? ( media-libs/devil )
 	directfb? ( dev-libs/DirectFB )
 	expat? ( dev-libs/expat )
@@ -40,12 +39,10 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/${MY_P}
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	epatch "${FILESDIR}"/${P}-gcc43.patch
-	sed -i \
-		-e 's/ILvoid/void/g' \
-		ImageCodecModules/DevILImageCodec/CEGUIDevILImageCodec.cpp \
-		|| die "sed failed"
 	if use examples ; then
 		cp -r Samples Samples.clean
 		rm -f $(find Samples.clean -name 'Makefile*')
@@ -54,7 +51,7 @@ src_prepare() {
 	eautoreconf #220040
 }
 
-src_configure() {
+src_compile() {
 	econf \
 		$(use_enable debug) \
 		$(use_enable devil) \
@@ -79,7 +76,9 @@ src_configure() {
 		--disable-samples \
 		--disable-silly \
 		--without-gtk2 \
-		--without-ogre-renderer
+		--without-ogre-renderer \
+		|| die
+	emake || die "emake failed"
 }
 
 src_install() {
