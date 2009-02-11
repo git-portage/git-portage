@@ -1,13 +1,13 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt/Attic/qt-4.4.2.ebuild,v 1.6 2009/02/04 23:26:57 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt/Attic/qt-4.4.2.ebuild,v 1.8 2009/02/11 10:05:08 hwoarang Exp $
 
 DESCRIPTION="The Qt toolkit is a comprehensive C++ application development framework."
 HOMEPAGE="http://www.trolltech.com/"
 
 LICENSE="|| ( GPL-3 GPL-2 )"
 SLOT="4"
-KEYWORDS="alpha amd64 ~hppa ~ia64 ppc ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 ~hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 
 IUSE="dbus opengl qt3support"
 
@@ -17,7 +17,6 @@ RDEPEND="~x11-libs/qt-gui-${PV}
 	~x11-libs/qt-test-${PV}
 	~x11-libs/qt-sql-${PV}
 	~x11-libs/qt-script-${PV}
-	~x11-libs/qt-test-${PV}
 	~x11-libs/qt-assistant-${PV}
 	~x11-libs/qt-xmlpatterns-${PV}
 	!sparc? ( !alpha? ( !ia64? ( !x86-fbsd? ( ~x11-libs/qt-webkit-${PV} ) ) ) )
