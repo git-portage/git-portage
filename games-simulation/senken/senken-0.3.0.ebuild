@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-simulation/senken/senken-0.3.0.ebuild,v 1.8 2009/02/11 13:05:34 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-simulation/senken/senken-0.3.0.ebuild,v 1.7 2006/11/03 23:00:41 nyhm Exp $
 
-EAPI=2
 inherit games
 
 DESCRIPTION="city simulation game"
@@ -21,15 +20,18 @@ RDEPEND=">=x11-libs/gtk+-2
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	sed -i \
 		-e "s:/usr/local/share:${GAMES_DATADIR}:" \
 		lib/utils.h \
 		|| die "sed lib/utils.h failed"
-	epatch "${FILESDIR}"/${P}-as-needed.patch
+
 }
-src_configure() {
+src_compile() {
 	egamesconf $(use_enable nls) || die
+	emake || die "emake failed"
 }
 
 src_install() {
