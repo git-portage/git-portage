@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/nevow/Attic/nevow-0.9.31.ebuild,v 1.4 2008/12/07 10:29:34 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/nevow/Attic/nevow-0.9.31.ebuild,v 1.5 2009/02/10 13:36:40 lordvan Exp $
 
 NEED_PYTHON="2.4"
 
