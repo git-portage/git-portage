@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/pam_krb5/Attic/pam_krb5-3.12.ebuild,v 1.4 2009/02/14 16:33:54 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/pam_krb5/Attic/pam_krb5-3.12.ebuild,v 1.1 2009/02/12 09:28:40 mueli Exp $
 
 inherit multilib eutils pam
 
@@ -10,7 +10,7 @@ SRC_URI="http://archives.eyrie.org/software/ARCHIVE/pam-krb5/pam-krb5-${PV}.tar.
 
 LICENSE="|| ( BSD-2 GPL-2 )"
 SLOT="0"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ~ppc ~sparc x86"
 IUSE="doc"
 
 DEPEND="virtual/krb5"
@@ -20,7 +20,7 @@ S="${WORKDIR}/${P/_/-}"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${P}-CVE-2009-0361-0362.patch"
+	epatch "${FILESDIR}/${P}-CVE-20090211.patch"
 }
 
 src_compile() {
