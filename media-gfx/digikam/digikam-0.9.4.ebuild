@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/digikam/Attic/digikam-0.9.4.ebuild,v 1.3 2009/02/13 10:33:07 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/digikam/Attic/digikam-0.9.4.ebuild,v 1.2 2009/02/11 21:39:42 klausman Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -28,7 +28,7 @@ DEPEND=">=media-libs/libgphoto2-2.2
 	>=media-libs/libpng-1.2
 	>=media-libs/jasper-1.7
 	>=media-libs/libkexiv2-0.1.6
-	~media-libs/libkdcraw-0.1.4
+	>=media-libs/libkdcraw-0.1.4
 	media-libs/jasper
 	!media-plugins/digikamimageplugins"
 
