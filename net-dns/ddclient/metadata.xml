@@ -5,6 +5,10 @@
 <maintainer>
 	<email>matthewsmith@iinet.net.au</email>
 	<name>Matthew Smith</name>
-	<description>Indirectly maintaining through seemant@gentoo.org</description>
+	<description>Once maintained this indirectly through seemant. He retired. CC on bugs till further notice.</description>
+</maintainer>
+<maintainer>
+	<email>gentoofan23@gentoo.org</email>
+	<name>Thomas Anderson</name>
 </maintainer>
 </pkgmetadata>
