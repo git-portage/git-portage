@@ -1,6 +1,15 @@
 # ChangeLog for x11-wm/dwm
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/dwm/ChangeLog,v 1.54 2009/02/09 09:22:58 cedk Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/dwm/ChangeLog,v 1.57 2009/02/12 21:14:31 ranger Exp $
+
+  12 Feb 2009; Brent Baude <ranger@gentoo.org> dwm-5.3.1.ebuild:
+  stable ppc64, bug 258305
+
+  12 Feb 2009; nixnut <nixnut@gentoo.org> dwm-5.4.1.ebuild:
+  ppc stable #258305
+
+  11 Feb 2009; Cédric Krier <cedk@gentoo.org> files/dwm-session2:
+  Fix dwm-session2 to use xsetroot for bug #258564
 
   09 Feb 2009; Cédric Krier <cedk@gentoo.org> -dwm-5.0.1.ebuild,
   -dwm-5.1.ebuild:
