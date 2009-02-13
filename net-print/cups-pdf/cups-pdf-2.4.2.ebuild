@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups-pdf/Attic/cups-pdf-2.4.2.ebuild,v 1.4 2007/03/02 10:29:22 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups-pdf/Attic/cups-pdf-2.4.2.ebuild,v 1.6 2009/02/13 15:30:19 tgurr Exp $
 
 inherit toolchain-funcs multilib
 
@@ -15,6 +15,7 @@ IUSE=""
 
 DEPEND="net-print/cups
 	virtual/ghostscript"
+RDEPEND="${DEPEND}"
 
 src_compile() {
 	cd src
@@ -37,8 +38,8 @@ src_install () {
 }
 
 pkg_postinst () {
-	einfo "Please view both the README and contrib_Contents files"
-	einfo "as you may want to adjust some settings and/or use"
-	einfo "contributed software. In the latter case you may need"
-	einfo "to extract some files from the ${P} distfile."
+	elog "Please view both the README and contrib_Contents files"
+	elog "as you may want to adjust some settings and/or use"
+	elog "contributed software. In the latter case you may need"
+	elog "to extract some files from the ${P} distfile."
 }
