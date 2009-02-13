@@ -1,6 +1,20 @@
 # ChangeLog for kde-base/kdelibs
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/ChangeLog,v 1.560 2009/02/06 00:29:50 tampakrap Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/ChangeLog,v 1.563 2009/02/12 22:02:51 alexxy Exp $
+
+  12 Feb 2009; Alexey Shvetsov <alexxy@gentoo.org> -kdelibs-3.5.8-r4.ebuild:
+  Drop stalled kde 3.5.[45678] ebuilds
+
+  12 Feb 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  +files/4.2.0-kcatalog.patch, kdelibs-4.2.0-r2.ebuild:
+  Add kcatalog.patch; fix bug #258660
+
+*kdelibs-4.2.0-r2 (09 Feb 2009)
+
+  09 Feb 2009; Tomas Chvatal <scarabeus@gentoo.org>
+  +files/4.2.0-kio_http.patch, -kdelibs-4.2.0.ebuild,
+  -kdelibs-4.2.0-r1.ebuild, +kdelibs-4.2.0-r2.ebuild:
+  Add new patch for the http delays. Remove old cruft.
 
   06 Feb 2009; Theo Chatzimichos <tampakrap@gentoo.org>
   kdelibs-4.1.4.ebuild:
