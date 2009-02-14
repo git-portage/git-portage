@@ -1,4 +1,4 @@
-# $Header: /var/cvsroot/gentoo-x86/profiles/default-linux/alpha/Attic/package.use.mask,v 1.16 2008/11/23 12:35:46 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/default-linux/alpha/Attic/package.use.mask,v 1.18 2009/02/14 00:27:43 yngwin Exp $
 
 # Patrick Lauer <patrick@gentoo.org> (23 Nov 2008)
 # needs webkit keyworded
@@ -29,7 +29,8 @@ sys-apps/hal laptop
 dev-util/astyle java
 
 # Tobias Klausmann <klausman@gentoo.org> (15 Jun 2008)
-# No hardware to test net-dialup/linux-atm on alpha, so mask atm use flag 
+# No hardware to test net-dialup/linux-atm on alpha, so mask atm use flag
 # on those.
 sys-apps/iproute2 atm
 net-dialup/ppp atm
+
