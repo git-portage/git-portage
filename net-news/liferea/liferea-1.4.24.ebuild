@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-news/liferea/Attic/liferea-1.4.24.ebuild,v 1.4 2009/02/16 17:12:40 dang Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-news/liferea/Attic/liferea-1.4.24.ebuild,v 1.1 2009/02/09 14:45:31 dang Exp $
 
 WANT_AUTOMAKE=1.9
 inherit gnome2 eutils autotools
