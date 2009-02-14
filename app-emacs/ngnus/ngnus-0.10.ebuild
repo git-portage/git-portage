@@ -1,18 +1,12 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/ngnus/Attic/ngnus-9999.ebuild,v 1.3 2009/02/14 09:42:51 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/ngnus/Attic/ngnus-0.10.ebuild,v 1.1 2009/02/14 09:42:51 ulm Exp $
 
-ECVS_SERVER="cvs.gnus.org:/usr/local/cvsroot"
-ECVS_MODULE="gnus"
-ECVS_USER="gnus"
-ECVS_PASS="gnus"
-ECVS_CVS_OPTIONS="-dP"
-
-inherit elisp cvs
+inherit elisp
 
 DESCRIPTION="Current alpha branch of the Gnus news- and mail-reader"
 HOMEPAGE="http://gnus.org/"
-SRC_URI=""
+SRC_URI="http://quimby.gnus.org/gnus/dist/${P}.tar.gz"
 
 LICENSE="GPL-3 FDL-1.2"
 SLOT="0"
@@ -23,7 +17,6 @@ DEPEND=""
 RDEPEND="!app-emacs/gnus
 	!app-emacs/gnus-cvs"
 
-S="${WORKDIR}/${ECVS_MODULE}"
 SITEFILE="70${PN}-gentoo.el"
 
 src_compile() {
