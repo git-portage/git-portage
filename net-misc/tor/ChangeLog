@@ -1,6 +1,18 @@
 # ChangeLog for net-misc/tor
 # Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/tor/ChangeLog,v 1.157 2009/02/08 22:45:38 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/tor/ChangeLog,v 1.160 2009/02/13 16:11:24 ranger Exp $
+
+  13 Feb 2009; Brent Baude <ranger@gentoo.org> tor-0.2.0.34.ebuild:
+  Marking tor-0.2.0.34 ppc64 for bug 258833
+
+  13 Feb 2009; Ferris McCormick <fmccor@gentoo.org> tor-0.2.0.34.ebuild:
+  Sparc stable --- Security Bug #258833 --- tests good.
+
+*tor-0.2.0.34 (13 Feb 2009)
+
+  13 Feb 2009; Christian Faulhammer <fauli@gentoo.org> +tor-0.2.0.34.ebuild:
+  version bump for security bug 258833, reported by Jesse Adelman <jesse AT
+  boldandbusted DOT com>
 
   08 Feb 2009; Christian Faulhammer <fauli@gentoo.org> tor-0.2.0.33.ebuild:
   kill logrotate USE flag as requested by bangert on bug 258188
