@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/digikam/Attic/digikam-0.9.4.ebuild,v 1.1 2008/07/20 16:50:30 deathwing00 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/digikam/Attic/digikam-0.9.4.ebuild,v 1.3 2009/02/13 10:33:07 carlo Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -18,7 +18,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2
 	doc? ( mirror://sourceforge/${PN}/${P_DOC}.tar.bz2 )"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="alpha ~amd64 ~ppc ~sparc ~x86"
 IUSE="nfs doc kdehiddenvisibility kdeenablefinal"
 
 DEPEND=">=media-libs/libgphoto2-2.2
@@ -28,7 +28,7 @@ DEPEND=">=media-libs/libgphoto2-2.2
 	>=media-libs/libpng-1.2
 	>=media-libs/jasper-1.7
 	>=media-libs/libkexiv2-0.1.6
-	>=media-libs/libkdcraw-0.1.4
+	~media-libs/libkdcraw-0.1.4
 	media-libs/jasper
 	!media-plugins/digikamimageplugins"
 
