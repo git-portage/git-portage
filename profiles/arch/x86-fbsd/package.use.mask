@@ -11,3 +11,4 @@ x11-drivers/nvidia-drivers acpi
 # Ben de Groot <yngwin@gentoo.org> (4 Feb 2009)
 # needs qt-webkit keyworded
 x11-libs/qt-assistant webkit
+
