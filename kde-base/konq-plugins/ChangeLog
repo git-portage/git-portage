@@ -1,6 +1,14 @@
 # ChangeLog for kde-base/konq-plugins
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/konq-plugins/ChangeLog,v 1.101 2009/02/05 02:03:04 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/konq-plugins/ChangeLog,v 1.103 2009/02/14 21:23:04 scarabeus Exp $
+
+  14 Feb 2009; Tomas Chvatal <scarabeus@gentoo.org>
+  konq-plugins-4.2.0.ebuild:
+  Update deps. Per bug #257382.
+
+  13 Feb 2009; Tomas Chvatal <scarabeus@gentoo.org>
+  konq-plugins-4.2.0.ebuild:
+  Fix bad doc placement. Per bug #257142.
 
   05 Feb 2009; Tomas Chvatal <scarabeus@gentoo.org>
   konq-plugins-4.2.0.ebuild:
