@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/gnupg/Attic/gnupg-2.0.9.ebuild,v 1.11 2009/02/15 05:10:20 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/gnupg/Attic/gnupg-2.0.10.ebuild,v 1.1 2009/02/15 05:10:20 dragonheart Exp $
 
-inherit flag-o-matic eutils toolchain-funcs
+inherit flag-o-matic toolchain-funcs
 
 DESCRIPTION="The GNU Privacy Guard, a GPL pgp replacement"
 HOMEPAGE="http://www.gnupg.org/"
@@ -10,41 +10,42 @@ SRC_URI="mirror://gnupg/gnupg/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
-IUSE="bzip2 doc ldap nls openct pcsc-lite smartcard selinux"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
+IUSE="bzip2 caps doc ldap nls openct pcsc-lite static selinux smartcard"
 
-COMMON_DEPEND="
-	virtual/libc
+COMMON_DEPEND_LIBS="
 	>=dev-libs/pth-1.3.7
-	>=dev-libs/libgcrypt-1.2.2
+	>=dev-libs/libgcrypt-1.4
 	>=dev-libs/libksba-1.0.2
 	>=dev-libs/libgpg-error-1.4
 	>=net-misc/curl-7.7.2
 	bzip2? ( app-arch/bzip2 )
 	pcsc-lite? ( >=sys-apps/pcsc-lite-1.3.0 )
 	openct? ( >=dev-libs/openct-0.5.0 )
-	ldap? ( net-nds/openldap )
-	app-crypt/pinentry"
+	ldap? ( net-nds/openldap )"
+COMMON_DEPEND_BINS="app-crypt/pinentry"
 
-DEPEND="${COMMON_DEPEND}
+# existence of bins are checked during configure
+DEPEND="${COMMON_DEPEND_LIBS}
+	${COMMON_DEPEND_BINS}
 	>=dev-libs/libassuan-1.0.4
 	nls? ( sys-devel/gettext )
 	doc? ( sys-apps/texinfo )"
 
-RDEPEND="${COMMON_DEPEND}
+RDEPEND="!static? ( ${COMMON_DEPEND_LIBS} )
+	${COMMON_DEPEND_BINS}
+	virtual/mta
 	!app-crypt/gpg-agent
 	!<=app-crypt/gnupg-2.0.1
-	virtual/mta
 	selinux? ( sec-policy/selinux-gnupg )
 	nls? ( virtual/libintl )"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-gcc-4.3.patch"
-}
-
 src_compile() {
+	# 'USE=static' support was requested:
+	# gnupg1: bug #29299
+	# gnupg2: bug #159623
+	use static && append-ldflags -static
+
 	econf \
 		--docdir="/usr/share/doc/${PF}" \
 		--enable-symcryptrun \
@@ -55,21 +56,21 @@ src_compile() {
 		$(use_enable smartcard scdaemon) \
 		$(use_enable nls) \
 		$(use_enable ldap) \
-		--disable-capabilities \
-		CC_FOR_BUILD=$(tc-getBUILD_CC) \
-		|| die
-	emake || die
+		$(use_enable static) \
+		$(use_enable caps capabilities) \
+		CC_FOR_BUILD=$(tc-getBUILD_CC)
+	emake || die "emake failed"
 	if use doc; then
 		cd doc
-		emake html || die
+		emake html || die "emake html failed"
 	fi
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc ChangeLog NEWS README THANKS TODO VERSION
 
-	mv "${D}/usr/share/gnupg"/{help*,faq*,FAQ} "${D}/usr/share/doc/${PF}"
+	mv "${D}/usr/share/gnupg"/help* "${D}/usr/share/doc/${PF}"
 
 	dosym gpg2 /usr/bin/gpg
 	dosym gpgv2 /usr/bin/gpgv
