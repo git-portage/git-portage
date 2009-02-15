@@ -1,6 +1,25 @@
 # ChangeLog for media-gfx/digikam
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/digikam/ChangeLog,v 1.123 2009/02/11 21:39:42 klausman Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/digikam/ChangeLog,v 1.126 2009/02/13 15:29:46 scarabeus Exp $
+
+*digikam-0.10.0_rc1 (13 Feb 2009)
+
+  13 Feb 2009; Tomas Chvatal <scarabeus@gentoo.org> metadata.xml,
+  +digikam-0.10.0_rc1.ebuild:
+  Version bump. Adding kde4 version.
+
+*digikam-0.9.5_beta3 (13 Feb 2009)
+
+  13 Feb 2009; Carsten Lohrke <carlo@gentoo.org>
+  +digikam-0.9.5_beta3.ebuild:
+  Version bump.
+
+*digikam-0.9.4-r1 (13 Feb 2009)
+
+  13 Feb 2009; Carsten Lohrke <carlo@gentoo.org> digikam-0.9.4.ebuild,
+  +digikam-0.9.4-r1.ebuild:
+  Get rid of invalid aRts dependency. Correct libkdcraw dependency. Drop
+  outdated patch. Install documentation properly. Build with system SQLite 3.
 
   11 Feb 2009; Tobias Klausmann <klausman@gentoo.org> digikam-0.9.4.ebuild:
   Stable on alpha, bug #244230
