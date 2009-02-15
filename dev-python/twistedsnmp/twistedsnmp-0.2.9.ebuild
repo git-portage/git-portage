@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/twistedsnmp/Attic/twistedsnmp-0.2.9.ebuild,v 1.5 2009/02/15 14:22:35 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/twistedsnmp/Attic/twistedsnmp-0.2.9.ebuild,v 1.4 2007/02/03 09:16:11 mr_bones_ Exp $
 
 inherit distutils
 MY_PN="TwistedSNMP"
