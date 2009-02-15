@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-core/Attic/qt-core-4.5.0_rc1.ebuild,v 1.1 2009/02/11 23:15:42 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-core/Attic/qt-core-4.5.0_rc1.ebuild,v 1.6 2009/02/14 23:53:26 hwoarang Exp $
 
 EAPI="2"
 inherit qt4-build
@@ -20,6 +20,7 @@ DEPEND="${RDEPEND}
 PDEPEND="qt3support? ( ~x11-libs/qt-gui-${PV}[qt3support] )"
 
 QT4_TARGET_DIRECTORIES="
+src/tools/bootstrap
 src/tools/moc/
 src/tools/rcc/
 src/tools/uic/
@@ -108,6 +109,15 @@ src_unpack() {
 	for i in kr jp cn tw ; do
 		echo "CONFIG+=nostrip" >> "${S}"/src/plugins/codecs/${i}/${i}.pro
 	done
+}
+
+src_prepare(){
+	qt4-build_src_prepare
+	# bug #172219
+	sed -i -e "s:CXXFLAGS.*=:CXXFLAGS=${CXXFLAGS} :" \
+		"${S}/qmake/Makefile.unix" || die "sed qmake/Makefile.unix CXXFLAGS failed"
+	sed -i -e "s:LFLAGS.*=:LFLAGS=${LDFLAGS} :" \
+		"${S}/qmake/Makefile.unix" || die "sed qmake/Makefile.unix LDFLAGS failed"
 }
 
 src_configure() {
