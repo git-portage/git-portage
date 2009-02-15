@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-10.00_pre4126-r1.ebuild,v 1.1 2009/02/11 18:24:26 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-10.00_pre4126-r1.ebuild,v 1.3 2009/02/11 19:48:06 jer Exp $
 
 GCONF_DEBUG="no"
 
@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
 
 RESTRICT="mirror strip test"
 
-IUSE="elibc_FreeBSD gnome ia32 qt-static qt3 spell"
+IUSE="elibc_FreeBSD gnome ia32 qt-static qt3"
 MY_LINGUAS="be bg cs da de el en en-GB es-ES es-LA et fi fr fr-CA fy hi hr hu id it ja ka ko lt mk nb nl nn pl pt pt-BR ru sv ta te tr uk zh-CN zh-TW"
 
 for MY_LINGUA in ${MY_LINGUAS}; do
@@ -90,7 +90,6 @@ RDEPEND="
 		!ia32? ( =x11-libs/qt-3* )
 	)
 	ppc? ( =x11-libs/qt-3* )
-	spell? ( app-text/aspell )
 	x86-fbsd? (
 		=virtual/libstdc++-3*
 		!qt-static? ( !qt3? ( =x11-libs/qt-3* ) )
@@ -173,17 +172,6 @@ src_install() {
 	# fix plugin path
 	echo "Plugin Path=/opt/opera/lib/opera/plugins" >> "${D}"/etc/opera6rc
 
-	# enable spellcheck
-	if use spell; then
-		local spellchecklib="/opt/opera/lib/opera/${PV/_*/}/spellcheck.so"
-		if [[ -f "${D}/${spellchecklib}" ]]; then
-			echo "Spell Check Engine=${spellchecklib}" \
-				>> "${D}"/opt/opera/share/opera/ini/spellcheck.ini
-		else
-			die "Could not set ${spellchecklib}."
-		fi
-	fi
-
 	dodir /etc/revdep-rebuild
 	echo 'SEARCH_DIRS_MASK="/opt/opera/lib/opera/plugins"' > "${D}"/etc/revdep-rebuild/90opera
 
@@ -216,16 +204,13 @@ pkg_postinst() {
 	elog "file chooser at /opt/opera/share/opera/locale/, then enter the"
 	elog "directory for the language you want and [Open] the .lng file."
 
-	if has_version "<app-text/aspell-0.60.6"; then
-		elog
-		elog "To use the spellchecker (USE=spell) for non-English simply do"
-		elog "$ emerge app-dicts/aspell-[your language]."
-	else
-		elog
-		elog "To use the spellchecker (USE=spell) for languages other that English,"
-		elog "set the LINGUAS variable in your package manager configuration, and"
-		elog "then update the world target."
-	fi
+	elog
+	elog "To use the spellchecker (USE=spell) for languages other than English, do:"
+	elog " emerge app-dicts/myspell-[your language]"
+	elog " mkdir \${HOME}/.opera/dictionaries"
+	elog " cd \${HOME}/.opera/dictionaries"
+	elog " ln -s /usr/share/myspell/*.{aff,dic} ."
+	elog "A future release of Opera 10 should remedy this inconvenience."
 
 	if use elibc_FreeBSD; then
 		elog
