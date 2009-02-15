@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/gnupg/Attic/gnupg-2.0.9-r1.ebuild,v 1.2 2008/09/09 19:12:23 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/gnupg/Attic/gnupg-2.0.9-r1.ebuild,v 1.3 2009/02/15 05:10:20 dragonheart Exp $
 
 inherit flag-o-matic eutils toolchain-funcs
 
@@ -79,7 +79,6 @@ src_install() {
 	dodoc ChangeLog NEWS README THANKS TODO VERSION
 
 	mv "${D}/usr/share/gnupg"/{help*,faq*,FAQ} "${D}/usr/share/doc/${PF}"
-	prepalldocs
 
 	dosym gpg2 /usr/bin/gpg
 	dosym gpgv2 /usr/bin/gpgv
