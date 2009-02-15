@@ -1,14 +1,6 @@
 # ChangeLog for media-sound/audacity
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/audacity/ChangeLog,v 1.120 2009/02/19 07:53:06 patrick Exp $
-
-  19 Feb 2009; Patrick Lauer <patrick@gentoo.org>
-  +files/audacity-1.3.7-cflags.patch:
-  Fixing bad CFLAG filtering by upstream. Patch by Martin von Gagern. Fixes
-  #257489
-
-  18 Feb 2009; Raúl Porcel <armin76@gentoo.org> audacity-1.3.6.ebuild:
-  sparc stable wrt #253493
+# $Header: /var/cvsroot/gentoo-x86/media-sound/audacity/ChangeLog,v 1.118 2009/02/14 20:50:41 maekke Exp $
 
   14 Feb 2009; Markus Meier <maekke@gentoo.org> audacity-1.3.6.ebuild:
   amd64/x86 stable, bug #253493
