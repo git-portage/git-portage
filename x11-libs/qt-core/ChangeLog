@@ -1,6 +1,33 @@
 # ChangeLog for x11-libs/qt-core
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-core/Attic/ChangeLog,v 1.25 2009/02/11 23:15:42 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-core/Attic/ChangeLog,v 1.31 2009/02/14 23:53:26 hwoarang Exp $
+
+  14 Feb 2009; Markos Chandras <hwoarang@gentoo.org>
+  qt-core-4.5.0_rc1.ebuild:
+  fixing src_prepare. Thanks to Arfrever
+
+  14 Feb 2009; Markos Chandras <hwoarang@gentoo.org>
+  qt-core-4.5.0_rc1.ebuild:
+  Fixing bug #172219. Thanks to Arfrever Frehtes Taifersar Arahesis
+  <Arfrever.FTA@GMail.Com>
+
+*qt-core-4.4.2-r2 (14 Feb 2009)
+
+  14 Feb 2009; Markos Chandras <hwoarang@gentoo.org>
+  +files/0167-fix-group-reading.diff,
+  +files/0253-qmake_correct_path_separators.diff,
+  +files/0257-qurl-validate-speedup.diff, +qt-core-4.4.2-r2.ebuild:
+  revbump with a couple of patches from qt-copy
+
+  14 Feb 2009; Ben de Groot <yngwin@gentoo.org> qt-core-4.5.0_rc1:
+  Correct <qt-4.4.0 blocker
+
+  13 Feb 2009; Carsten Lohrke <carlo@gentoo.org> qt-core-4.5.0_rc1.ebuild:
+  Correct Qt 4.4 blocker.
+
+  12 Feb 2009; Markos Chandras <hwoarang@gentoo.org> +files/moc.pro,
+  +files/rcc.pro, +files/uic.pro, qt-core-4.5.0_rc1.ebuild:
+  Add missing files, add bootstrap build target ( see bug #258667 )
 
   11 Feb 2009; Ben de Groot <yngwin@gentoo.org> ChangeLog:
   Version bump
