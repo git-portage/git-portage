@@ -1,15 +1,6 @@
 # ChangeLog for dev-libs/glib
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/ChangeLog,v 1.348 2009/02/16 15:38:30 ranger Exp $
-
-  16 Feb 2009; Brent Baude <ranger@gentoo.org> glib-2.16.6.ebuild:
-  stable ppc, bug 245092
-
-  15 Feb 2009; Gilles Dartiguelongue <eva@gentoo.org>
-  -files/glib-2.16.3-pcre-buffer-overflow.patch, -glib-2.14.3.ebuild,
-  -glib-2.14.6.ebuild, -glib-2.16.3-r1.ebuild, glib-2.16.5.ebuild,
-  -glib-2.18.1.ebuild, -glib-2.18.2.ebuild, -glib-2.18.3.ebuild:
-  Clean up old revisions.
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/ChangeLog,v 1.346 2009/02/15 12:33:33 armin76 Exp $
 
   15 Feb 2009; Raúl Porcel <armin76@gentoo.org> glib-2.16.6.ebuild:
   arm/ia64/s390/sh/sparc stable wrt #245092
