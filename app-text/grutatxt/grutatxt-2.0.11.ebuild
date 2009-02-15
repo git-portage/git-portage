@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/grutatxt/Attic/grutatxt-2.0.11.ebuild,v 1.5 2009/02/15 17:34:13 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/grutatxt/Attic/grutatxt-2.0.11.ebuild,v 1.4 2007/07/12 04:37:47 mr_bones_ Exp $
 
 inherit perl-app
 
