@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/atanks/Attic/atanks-3.2.ebuild,v 1.3 2009/02/18 17:52:21 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-action/atanks/Attic/atanks-3.2.ebuild,v 1.1 2008/09/28 07:30:11 mr_bones_ Exp $
 
-EAPI=2
 inherit eutils toolchain-funcs games
 
 DESCRIPTION="Worms and Scorched Earth-like game"
@@ -14,11 +13,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-DEPEND="media-libs/allegro[X]"
+DEPEND="media-libs/allegro"
 
 S=${WORKDIR}/${PN}
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	sed -i \
 		-e "/^CC/s:g++:$(tc-getCXX):" \
 		-e '/^CFLAGS/s:-g::' \
