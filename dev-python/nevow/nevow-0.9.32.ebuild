@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/nevow/Attic/nevow-0.9.32.ebuild,v 1.1 2009/02/10 13:36:40 lordvan Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/nevow/Attic/nevow-0.9.32.ebuild,v 1.3 2009/02/11 15:19:08 lordvan Exp $
 
 NEED_PYTHON="2.4"
 
-inherit distutils multilib
+inherit twisted distutils multilib
 
 MY_P="Nevow-${PV}"
 
@@ -36,6 +36,7 @@ src_compile() {
 }
 
 src_install() {
+	export PORTAGE_PLUGINCACHE_NOOP=1
 	distutils_src_install
 	# mantisia expects js to be under site-packages/
 	# but setup.py doesn't install it
@@ -47,9 +48,25 @@ src_install() {
 		insinto /usr/share/doc/${PF}/
 		doins -r doc/txt doc/html examples
 	fi
+	unset PORTAGE_PLUGINCACHE_NOOP
 }
 
 src_test() {
 	PYTHONPATH="." trial nevow || die "nevow trial failed"
 	PYTHONPATH="." trial formless || die "formless trial failed"
+}
+
+update_nevow_plugin_cache() {
+	einfo "Updating nevow plugin cache..."
+	python -c 'from twisted.plugin import IPlugin, getPlugIns;from nevow import plugins; list(getPlugIns(IPlugin, plugins))'
+}
+
+pkg_postrm() {
+	twisted_pkg_postrm
+	update_nevow_plugin_cache
+}
+
+pkg_postinst() {
+	twisted_pkg_postinst
+	update_nevow_plugin_cache
 }
