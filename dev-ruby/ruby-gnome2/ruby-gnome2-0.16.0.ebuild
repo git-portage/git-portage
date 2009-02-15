@@ -1,19 +1,15 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-gnome2/Attic/ruby-gnome2-0.16.0.ebuild,v 1.9 2009/02/15 14:36:29 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-gnome2/Attic/ruby-gnome2-0.16.0.ebuild,v 1.7 2007/05/21 11:30:41 armin76 Exp $
 
 inherit ruby-gnome2
 
 DESCRIPTION="Ruby Gnome2 bindings"
 KEYWORDS="alpha amd64 ia64 ppc sparc x86"
 IUSE=""
-USE_RUBY="ruby18"
-
-RDEPEND=">=gnome-base/libgnome-2.2
+USE_RUBY="ruby18 ruby19"
+DEPEND=">=gnome-base/libgnome-2.2
 	>=gnome-base/libgnomeui-2.2"
-DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
-RDEPEND="${RDEPEND}
-	>=dev-ruby/ruby-glib2-${PV}
+RDEPEND=">=dev-ruby/ruby-glib2-${PV}
 	>=dev-ruby/ruby-gtk2-${PV}
 	>=dev-ruby/ruby-gnomecanvas2-${PV}"
