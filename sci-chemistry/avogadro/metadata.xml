@@ -11,7 +11,4 @@
 	science, and related areas. It offers flexible rendering and a powerful
 	plugin architecture.
   </longdescription>
-  <use>
-    <flag name="glsl">Enable glsl features via GLEW.</flag>
-  </use>
 </pkgmetadata>
