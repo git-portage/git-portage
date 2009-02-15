@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/flumotion/Attic/flumotion-0.5.2.ebuild,v 1.2 2008/10/28 02:08:57 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/flumotion/Attic/flumotion-0.5.2.ebuild,v 1.3 2009/02/13 11:48:58 deathwing00 Exp $
 
 inherit eutils gnome2
 
