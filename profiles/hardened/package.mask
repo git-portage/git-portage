@@ -1,6 +1,6 @@
 # Copyright 2007 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/hardened/Attic/package.mask,v 1.48 2009/01/11 07:36:55 gengor Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/hardened/Attic/package.mask,v 1.51 2009/02/13 19:01:14 gengor Exp $
 
 # supported only by gcc-4, unmask when it's stable wrt #217927
 media-libs/libopenraw
@@ -18,12 +18,11 @@ media-gfx/gnome-raw-thumbnailer
 =sys-devel/gcc-4.1*
 =sys-devel/gcc-4.2*
 
-# Hardened versions of gcc-4.3.{0,1} are not available
+# Mask non-hardened+non-testing gcc-4.3.x releases
 =sys-devel/gcc-4.3.0*
 =sys-devel/gcc-4.3.1*
-
-# Mask non-hardened gcc-4.3.2 (>=gcc-4.3.2-r2 are ok)
 =sys-devel/gcc-4.3.2
+=sys-devel/gcc-4.3.3*
 
 # No hardened >=sys-devel/gcc-4.4 available
 >=sys-devel/gcc-4.4
@@ -34,6 +33,10 @@ media-gfx/gnome-raw-thumbnailer
 # around if you try it in a live system.
 # 2006-03-13 kevquinn
 =sys-libs/glibc-2.4*
+
+# sys-libs/glibc-2.8 is about to go stable and stable hardened may not be ready for it.
+# 2009-02-11 gengor
+>=sys-libs/glibc-2.7
 
 # These packages do more harm than good w/ hardened.
 # users must now the opensource xorg nv driver with nvidia cards.
