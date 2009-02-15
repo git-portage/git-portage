@@ -1,8 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/epstool/Attic/epstool-3.08.ebuild,v 1.11 2009/02/19 18:38:39 mr_bones_ Exp $
-
-inherit eutils
+# $Header: /var/cvsroot/gentoo-x86/app-text/epstool/Attic/epstool-3.08.ebuild,v 1.9 2008/01/22 19:16:47 grobian Exp $
 
 DESCRIPTION="Creates or extracts preview images in EPS files, fixes bounding boxes,converts to bitmaps."
 HOMEPAGE="http://www.cs.wisc.edu/~ghost/gsview/epstool.htm"
@@ -13,12 +11,6 @@ KEYWORDS="amd64 hppa ppc x86"
 IUSE=""
 DEPEND="virtual/ghostscript
 	!=app-text/gsview-4.6"
-
-src_unpack() {
-	unpack ${A}
-	cd "${$}"
-	epatch "${FILESDIR}/gcc43.patch"
-}
 
 src_compile() {
 	make epstool || die
