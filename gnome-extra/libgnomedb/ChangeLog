@@ -1,6 +1,15 @@
 # ChangeLog for gnome-extra/libgnomedb
 # Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/libgnomedb/Attic/ChangeLog,v 1.60 2009/02/09 21:28:31 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/libgnomedb/Attic/ChangeLog,v 1.63 2009/02/15 13:48:37 ranger Exp $
+
+  15 Feb 2009; Brent Baude <ranger@gentoo.org> libgnomedb-3.0.0.ebuild:
+  stable ppc, bug 258194
+
+  14 Feb 2009; Raúl Porcel <armin76@gentoo.org> libgnomedb-3.0.0.ebuild:
+  ia64/sparc stable wrt #258194
+
+  13 Feb 2009; Brent Baude <ranger@gentoo.org> libgnomedb-3.0.0.ebuild:
+  stable ppc64, bug 258194
 
   09 Feb 2009; Markus Meier <maekke@gentoo.org> libgnomedb-3.0.0.ebuild:
   amd64/x86 stable, bug #258194
