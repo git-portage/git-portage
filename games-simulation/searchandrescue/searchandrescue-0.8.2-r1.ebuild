@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-simulation/searchandrescue/Attic/searchandrescue-0.8.2-r1.ebuild,v 1.2 2009/02/16 17:53:24 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-simulation/searchandrescue/Attic/searchandrescue-0.8.2-r1.ebuild,v 1.1 2007/05/31 20:55:43 tupone Exp $
 
-EAPI=2
 inherit eutils games
 
 MY_PN=SearchAndRescue
@@ -34,9 +33,7 @@ src_unpack() {
 	unpack ${MY_PN}-${PV}.tar.bz2
 	mkdir data ; cd data
 	unpack ${MY_PN}-data-${PV}.tar.bz2
-}
-
-src_prepare() {
+	cd "${S}"
 	epatch "${FILESDIR}"/${P}-gcc33.patch \
 		"${FILESDIR}"/${P}-gcc41.patch \
 		"${FILESDIR}"/${P}-gcc412.patch
@@ -50,7 +47,7 @@ src_prepare() {
 		|| die "sed failed"
 }
 
-src_configure() {
+src_compile() {
 	local myconf
 
 	use joystick \
@@ -62,9 +59,6 @@ src_configure() {
 		--prefix="${GAMES_PREFIX}" \
 		${myconf} \
 		|| die
-}
-
-src_compile() {
 	emake -j1 || die "emake failed"
 }
 
