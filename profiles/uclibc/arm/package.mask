@@ -1,2 +1,0 @@
-# Segfaults, bug #193597
->=net-proxy/squid-3
