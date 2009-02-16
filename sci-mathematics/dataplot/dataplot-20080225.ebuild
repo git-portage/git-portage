@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/dataplot/Attic/dataplot-20080225.ebuild,v 1.5 2009/02/20 17:36:44 gentoofan23 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/dataplot/Attic/dataplot-20080225.ebuild,v 1.4 2008/07/01 23:17:05 gentoofan23 Exp $
 
-EAPI="2"
 inherit eutils toolchain-funcs autotools fortran
 
 #     DAY         MONTH    YEAR
@@ -21,8 +20,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="examples gd gs opengl X"
 
 COMMON_DEPEND="opengl? ( virtual/opengl )
-	gd? ( media-libs/gd[png,jpeg] )
-	gs? ( virtual/ghostscript media-libs/gd[png,jpeg] )"
+	gd? ( media-libs/gd )
+	gs? ( virtual/ghostscript media-libs/gd )"
 DEPEND="${COMMON_DEPEND}
 	dev-util/pkgconfig"
 RDEPEND="${COMMON_DEPEND}
@@ -31,7 +30,19 @@ RDEPEND="${COMMON_DEPEND}
 S="${WORKDIR}/${MY_P}"
 S_AUX="${WORKDIR}/${MY_P_AUX}"
 
-FORTRAN="gfortran"
+pkg_setup() {
+	#Dataplot requires media-libs/gd to be built with USE="png jpeg"
+	if use gd || use gs; then
+		if ! built_with_use -a media-libs/gd png jpeg; then
+			eerror "media-libs/gd is not compiled with USE=\"png jpeg\""
+			eerror "Please recompile media-libs/gd, ensuring USE=\"png jpeg\""
+			die
+		fi
+	fi
+	##FIXME: Just gfortran for now, I'll get to testing g77 later
+	FORTRAN="gfortran"
+	fortran_pkg_setup
+}
 
 src_unpack() {
 	# unpacking and renaming because
