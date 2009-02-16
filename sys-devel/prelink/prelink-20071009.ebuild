@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/prelink/Attic/prelink-20071009.ebuild,v 1.1 2007/11/02 01:16:08 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/prelink/Attic/prelink-20071009.ebuild,v 1.3 2009/02/16 06:42:52 vapier Exp $
 
 # the tar.bz2 was ripped from this rpm:
 # http://mirrors.kernel.org/fedora/development/source/SRPMS/prelink-0.4.0-1.src.rpm
@@ -29,6 +29,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}"/${PN}-20061201-prelink-conf.patch
+	sed -i -e 's:undosyslibs.sh::' testsuite/Makefile.in #254201
 	sed -i \
 		-e '/^CC=/s: : -Wl,--disable-new-dtags :' \
 		testsuite/functions.sh #100147
@@ -50,7 +51,7 @@ src_install() {
 	touch "${D}/var/lib/misc/prelink.force"
 	touch "${D}/var/log/prelink.log"
 
-	dodoc INSTALL TODO ChangeLog THANKS COPYING README AUTHORS NEWS
+	dodoc INSTALL TODO ChangeLog THANKS README AUTHORS NEWS
 }
 
 pkg_postinst() {
