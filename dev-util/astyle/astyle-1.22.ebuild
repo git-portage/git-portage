@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/astyle/Attic/astyle-1.22.ebuild,v 1.12 2009/02/18 03:03:32 nerdboy Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/astyle/Attic/astyle-1.22.ebuild,v 1.11 2008/12/02 22:49:28 ranger Exp $
 
 inherit eutils java-pkg-opt-2 toolchain-funcs
 
@@ -14,11 +14,23 @@ KEYWORDS="alpha amd64 ppc ~ppc64 sparc x86"
 
 IUSE="debug java libs"
 
-RDEPEND="java? ( >=virtual/jdk-1.6 )"
+RDEPEND="java? ( >=virtual/jre-1.6 )"
 
-DEPEND="java? ( >=virtual/jdk-1.6 )"
+DEPEND="java? ( >=virtual/jre-1.6 )"
 
 S=${WORKDIR}/${PN}
+
+pkg_setup() {
+	if use java ; then
+	    java-pkg-opt-2_pkg_setup
+
+	    if use x86; then
+		jvmarch=i386
+	    else
+		jvmarch=${ARCH}
+	    fi
+	fi
+}
 
 src_unpack() {
 	unpack ${A}
@@ -36,8 +48,10 @@ src_unpack() {
 src_compile() {
 	cd buildgcc
 
-	emake CXX="$(tc-getCXX)" all $(use java && echo javaall) \
-	    || die "build failed"
+	local build_targets="all"
+	use java && build_targets="${build_targets} javaall"
+
+	emake CXX="$(tc-getCXX)" ${build_targets} || die "build failed"
 }
 
 src_install() {
