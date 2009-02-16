@@ -1,6 +1,16 @@
 # ChangeLog for net-news/liferea
 # Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-news/liferea/ChangeLog,v 1.166 2009/02/09 14:45:31 dang Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-news/liferea/ChangeLog,v 1.169 2009/02/16 17:12:40 dang Exp $
+
+  16 Feb 2009; Daniel Gryniewicz <dang@gentoo.org> liferea-1.4.24.ebuild:
+  Back out gnome use requirement for xulrunner. It seems to not matter. Bug
+  #257050
+
+  15 Feb 2009; Daniel Gryniewicz <dang@gentoo.org> liferea-1.4.24.ebuild:
+  Fix built_with_use atom; bug #259055
+
+  14 Feb 2009; Daniel Gryniewicz <dang@gentoo.org> liferea-1.4.24.ebuild:
+  liferea needs xulrunner with gnome. bug #257050
 
 *liferea-1.4.24 (09 Feb 2009)
 
