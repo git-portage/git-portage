@@ -1,9 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-ati/Attic/xf86-video-ati-6.7.197.ebuild,v 1.4 2009/02/20 11:13:52 remi Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-ati/Attic/xf86-video-ati-6.7.197.ebuild,v 1.2 2008/11/26 23:18:29 dberkholz Exp $
 
 # Must be before x-modular eclass is inherited
 #SNAPSHOT="yes"
+XDPVER=4
 
 inherit x-modular
 
@@ -26,10 +27,3 @@ DEPEND="${RDEPEND}
 			>=x11-libs/libdrm-2 )"
 
 CONFIGURE_OPTIONS="$(use_enable dri)"
-
-src_install() {
-	x-modular_src_install
-	insinto /usr/share/hwdata/videoaliases
-	doins "${FILESDIR}/old_hw_data/ati.xinf"
-	doins "${FILESDIR}/old_hw_data/r128.xinf"
-}
