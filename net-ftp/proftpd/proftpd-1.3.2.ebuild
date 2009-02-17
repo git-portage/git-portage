@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-ftp/proftpd/Attic/proftpd-1.3.2.ebuild,v 1.4 2009/02/20 18:22:08 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-ftp/proftpd/Attic/proftpd-1.3.2.ebuild,v 1.1 2009/02/17 13:12:04 voyageur Exp $
 
 inherit eutils flag-o-matic toolchain-funcs autotools
 
-KEYWORDS="alpha ~amd64 hppa ~ia64 ~mips ~ppc ~ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="acl authfile ban case clamav deflate hardened ifsession ipv6 ldap mysql ncurses nls noauthunix opensslcrypt pam postgres radius rewrite selinux shaper sitemisc softquota ssl tcpd vroot xinetd"
 
@@ -62,8 +62,6 @@ src_unpack() {
 
 	# Fix upstream bug 3183 (incorrect logging to wtmp)
 	epatch "${FILESDIR}/${P}-upstream-bug-3183.patch"
-	# Fix mysql include when both backends are enabled
-	epatch "${FILESDIR}"/${P}-mysql-include.patch
 
 	# Fix stripping of files
 	sed -e "s| @INSTALL_STRIP@||g" -i Make*
