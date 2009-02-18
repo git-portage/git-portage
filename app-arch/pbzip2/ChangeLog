@@ -1,21 +1,6 @@
 # ChangeLog for app-arch/pbzip2
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/pbzip2/ChangeLog,v 1.59 2009/02/22 14:42:56 klausman Exp $
-
-  22 Feb 2009; Tobias Klausmann <klausman@gentoo.org> pbzip2-1.0.5.ebuild:
-  Stable on alpha, bug #259213
-
-  22 Feb 2009; Tiago Cunha <tcunha@gentoo.org> pbzip2-1.0.5.ebuild:
-  stable amd64, bug 259213
-
-  19 Feb 2009; Jeroen Roovers <jer@gentoo.org> pbzip2-1.0.5.ebuild:
-  Stable for HPPA (bug #259213).
-
-  19 Feb 2009; nixnut <nixnut@gentoo.org> pbzip2-1.0.5.ebuild:
-  ppc stable #259213
-
-  19 Feb 2009; Ferris McCormick <fmccor@gentoo.org> pbzip2-1.0.5.ebuild:
-  Sparc stable, Bug #259213.
+# $Header: /var/cvsroot/gentoo-x86/app-arch/pbzip2/ChangeLog,v 1.54 2009/01/13 05:08:20 jer Exp $
 
 *pbzip2-1.0.5 (13 Jan 2009)
 
