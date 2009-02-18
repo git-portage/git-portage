@@ -1,38 +1,6 @@
 # ChangeLog for net-im/psi
-# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/psi/ChangeLog,v 1.155 2009/02/22 12:03:36 armin76 Exp $
-
-  22 Feb 2009; Raúl Porcel <armin76@gentoo.org> psi-0.12.1.ebuild:
-  x86 stable wrt #252830
-
-  21 Feb 2009; Peter Volkov <pva@gentoo.org> psi-0.12.1.ebuild:
-  Fixed documentation build problem, bug #259632, thank Martin von Gagern
-  for this work. Fixed LINGUAS handling to make it workable with paludis,
-  #259639, thank Non_E for report.
-
-  18 Feb 2009; Brent Baude <ranger@gentoo.org> psi-0.12.1.ebuild:
-  Marking psi-0.12.1 ppc64 for bug 252830
-
-  18 Feb 2009; Jeroen Roovers <jer@gentoo.org> psi-0.12.1.ebuild:
-  Stable for HPPA (bug #252830).
-
-  18 Feb 2009; Tobias Heinlein <keytoaster@gentoo.org> psi-0.12.1.ebuild:
-  amd64 stable wrt security bug 252830
-
-  18 Feb 2009; Ferris McCormick <fmccor@gentoo.org> psi-0.12.1.ebuild:
-  Sparc stable, security Bug #252830.
-
-*psi-0.12.1 (18 Feb 2009)
-
-  18 Feb 2009; Peter Volkov <pva@gentoo.org>
-  +files/psi-0.12.1-qt-4.5-compatibility.patch, metadata.xml,
-  psi-0.10-r4.ebuild, -psi-0.11.ebuild, +psi-0.12.1.ebuild:
-  Version bump: this release fixes security issue, bug #252830, thank Alex
-  Legler for report. Added support for localizations, #222385, thank Davide
-  Pesavento and Tomáš Chvátal for the work. Fixed compatibility issue
-  with qt-4.5, #258992, thank Azamat H. Hackimov for report and digging
-  patch. In psi-0.10-r4 updated paths as reported in bug #207169, thank
-  Boris Petersen.
+# Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-im/psi/ChangeLog,v 1.148 2008/09/20 10:05:57 armin76 Exp $
 
   20 Sep 2008; Raúl Porcel <armin76@gentoo.org> psi-0.12.ebuild:
   x86 stable wrt #236497
