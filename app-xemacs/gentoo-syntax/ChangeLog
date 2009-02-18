@@ -1,16 +1,6 @@
 # ChangeLog for app-xemacs/gentoo-syntax
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-xemacs/gentoo-syntax/Attic/ChangeLog,v 1.13 2009/02/22 15:31:13 armin76 Exp $
-
-  22 Feb 2009; Raúl Porcel <armin76@gentoo.org> gentoo-syntax-1.11.ebuild:
-  x86 stable wrt #259655
-
-  22 Feb 2009; Tiago Cunha <tcunha@gentoo.org> gentoo-syntax-1.11.ebuild:
-  stable amd64, bug 259655
-
-  20 Feb 2009; Christian Faulhammer <fauli@gentoo.org>
-  -gentoo-syntax-1.9.ebuild, -gentoo-syntax-1.10.ebuild:
-  clean up
+# $Header: /var/cvsroot/gentoo-x86/app-xemacs/gentoo-syntax/Attic/ChangeLog,v 1.10 2009/01/11 18:27:18 graaff Exp $
 
 *gentoo-syntax-1.11 (11 Jan 2009)
 

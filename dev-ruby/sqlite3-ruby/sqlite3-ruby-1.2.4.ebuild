@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/sqlite3-ruby/Attic/sqlite3-ruby-1.2.4.ebuild,v 1.8 2009/02/22 13:23:46 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/sqlite3-ruby/Attic/sqlite3-ruby-1.2.4.ebuild,v 1.6 2008/12/05 09:50:06 armin76 Exp $
 
 inherit ruby
 
@@ -20,9 +20,14 @@ DEPEND="${RDEPEND}
 	swig? ( dev-lang/swig )"
 
 pkg_setup() {
-	if ! use swig ; then
+	if use swig && ! built_with_use dev-lang/swig ruby ; then
+		eerror "You must compile swig with ruby bindings. Please add"
+		eerror "'ruby' to your USE flags and recompile swig"
+		die "swig needs ruby bindings"
+	elif ! use swig ; then
 		elog "${PN} will work a lot better with swig; it is suggested"
-		elog "that you install ${PN} with the swig USE flag."
+		elog "that you install swig with the 'ruby' USE flag, and then"
+		elog "install ${PN} with the swig USE flag"
 		ebeep
 		epause 5
 	fi
