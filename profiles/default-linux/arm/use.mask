@@ -54,7 +54,6 @@ octave
 tracker
 
 # havent tested yet
-scanner
 gphoto2
 mythtv
 dvb
