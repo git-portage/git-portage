@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-ftp/proftpd/Attic/proftpd-1.3.2-r1.ebuild,v 1.5 2009/02/20 17:15:08 klausman Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-ftp/proftpd/Attic/proftpd-1.3.2-r1.ebuild,v 1.1 2009/02/17 22:05:08 voyageur Exp $
 
 inherit eutils flag-o-matic toolchain-funcs autotools
 
-KEYWORDS="alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="acl authfile ban case clamav deflate hardened ifsession ipv6 ldap mysql ncurses nls noauthunix opensslcrypt pam postgres radius rewrite selinux shaper sitemisc softquota ssl tcpd vroot xinetd"
 
@@ -16,7 +16,7 @@ VROOT_VER="0.8.3"
 
 DESCRIPTION="An advanced and very configurable FTP server."
 
-SRC_URI="ftp://ftp.proftpd.org/distrib/source/${P/_/}.tar.bz2
+SRC_URI="ftp://ftp.proftpd.org/distrib/source/${P/_/w²}.tar.bz2
 		case? ( http://www.castaglia.org/${PN}/modules/${PN}-mod-case-${CASE_VER}.tar.gz )
 		clamav? ( http://www.thrallingpenguin.com/resources/mod_clamav-${CLAMAV_VER}.tar.gz )
 		deflate? ( http://www.castaglia.org/${PN}/modules/${PN}-mod-deflate-${DEFLATE_VER}.tar.gz )
@@ -63,8 +63,6 @@ src_unpack() {
 	epatch "${FILESDIR}"/${P}-upstream-bug-3183.patch
 	# Fix parallel build
 	epatch "${FILESDIR}"/${P}-parallel-build.patch
-	# Fix mysql include when both backends are enabled
-	epatch "${FILESDIR}"/${P}-mysql-include.patch
 
 	# Fix stripping of files
 	sed -e "s| @INSTALL_STRIP@||g" -i Make*
