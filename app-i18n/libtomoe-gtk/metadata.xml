@@ -2,8 +2,5 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <herd>cjk</herd>
-<use>
-	<flag name="gucharmap">Enable gucharmap dictionary plugin</flag>
-</use>
 </pkgmetadata>
 
