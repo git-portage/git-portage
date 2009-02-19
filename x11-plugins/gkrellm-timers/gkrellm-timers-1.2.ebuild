@@ -1,17 +1,15 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/gkrellm-timers/Attic/gkrellm-timers-1.2.ebuild,v 1.5 2009/02/22 23:33:20 lack Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/gkrellm-timers/Attic/gkrellm-timers-1.2.ebuild,v 1.4 2008/01/10 14:34:45 lack Exp $
 
 inherit gkrellm-plugin
 
 MY_P=${P/-/_}
 DESCRIPTION="A GKrellM2 plugin that allows the user to define multiple timers"
 SRC_URI="http://triq.net/gkrellm_timers/${MY_P}.tar.gz"
-HOMEPAGE="http://triq.net/gkrellm_timers.html"
-IUSE=
+HOMEPAGE="http://triq.net/gkrellm_timers"
 
 DEPEND="=app-admin/gkrellm-2*"
-RDEPEND=${DEPEND}
 
 SLOT="2"
 LICENSE="GPL-2"
