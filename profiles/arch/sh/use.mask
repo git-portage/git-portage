@@ -34,7 +34,6 @@ dell
 laptop
 
 # havent tested yet
-scanner
 gphoto2
 mythtv
 dvb
