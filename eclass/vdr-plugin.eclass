@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/Attic/vdr-plugin.eclass,v 1.66 2009/02/23 23:46:31 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/Attic/vdr-plugin.eclass,v 1.65 2008/07/03 11:18:13 zzam Exp $
 #
 # Author:
 #   Matthias Schwarzott <zzam@gentoo.org>
@@ -387,16 +387,21 @@ vdr-plugin_pkg_setup() {
 	einfo "\tvdr-${VDRVERSION} [API version ${APIVERSION}]"
 }
 
-vdr-plugin_src_util() {
+vdr-plugin_src_unpack() {
+	if [[ -z ${VDR_INCLUDE_DIR} ]]; then
+		eerror "Wrong use of vdr-plugin.eclass."
+		eerror "An ebuild for a vdr-plugin will not work without calling vdr-plugin_pkg_setup."
+		echo
+		eerror "Please report this at bugs.gentoo.org."
+		die "vdr-plugin_pkg_setup not called!"
+	fi
+	[ -z "$1" ] && vdr-plugin_src_unpack unpack add_local_patch patchmakefile i18n
 
 	while [ "$1" ]; do
 
 		case "$1" in
-		all)
-			vdr-plugin_src_util unpack add_local_patch patchmakefile i18n
-			;;
 		all_but_unpack)
-			vdr-plugin_src_util add_local_patch patchmakefile i18n
+			vdr-plugin_src_unpack add_local_patch patchmakefile i18n
 			;;
 		unpack)
 			base_src_unpack
@@ -417,33 +422,6 @@ vdr-plugin_src_util() {
 
 		shift
 	done
-}
-
-vdr-plugin_src_unpack() {
-	if [[ -z ${VDR_INCLUDE_DIR} ]]; then
-		eerror "Wrong use of vdr-plugin.eclass."
-		eerror "An ebuild for a vdr-plugin will not work without calling vdr-plugin_pkg_setup."
-		echo
-		eerror "Please report this at bugs.gentoo.org."
-		die "vdr-plugin_pkg_setup not called!"
-	fi
-	if [ -z "$1" ]; then
-		case "${EAPI:-0}" in
-			2)
-				vdr-plugin_src_util unpack
-				;;
-			*)
-				vdr-plugin_src_util all
-				;;
-		esac
-
-	else
-		vdr-plugin_src_util $@
-	fi
-}
-
-vdr-plugin_src_prepare() {
-	vdr-plugin_src_util all_but_unpack
 }
 
 vdr-plugin_src_compile() {
@@ -570,11 +548,4 @@ vdr-plugin_pkg_config() {
 	vdr-plugin_print_enable_command
 }
 
-case "${EAPI:-0}" in
-	2)
-		EXPORT_FUNCTIONS pkg_setup src_unpack src_prepare src_compile src_install pkg_postinst pkg_postrm pkg_config
-		;;
-	*)
-		EXPORT_FUNCTIONS pkg_setup src_unpack src_compile src_install pkg_postinst pkg_postrm pkg_config
-		;;
-esac
+EXPORT_FUNCTIONS pkg_setup src_unpack src_compile src_install pkg_postinst pkg_postrm pkg_config
