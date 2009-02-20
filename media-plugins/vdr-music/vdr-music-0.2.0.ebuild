@@ -1,8 +1,6 @@
 # Copyright 2003-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-music/Attic/vdr-music-0.2.0.ebuild,v 1.5 2009/02/24 00:41:04 zzam Exp $
-
-EAPI="2"
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-music/Attic/vdr-music-0.2.0.ebuild,v 1.4 2009/01/13 20:54:17 zzam Exp $
 
 inherit vdr-plugin
 
@@ -23,19 +21,35 @@ PATCHES=("${FILESDIR}/${P}-gentoo.diff"
 DEPEND=">=media-video/vdr-1.3.30
 	media-libs/libmad
 	media-libs/libid3tag
-	imagemagick? ( media-gfx/imagemagick[png] )
+	imagemagick? ( media-gfx/imagemagick )
 	vorbis? ( media-libs/libvorbis )
 	sndfile? ( media-libs/libsndfile )
 	oss? ( media-libs/alsa-oss )
-	!imagemagick? ( media-libs/imlib2[png] )"
+	!imagemagick? ( media-libs/imlib2 )"
 
-RDEPEND="${DEPEND}
-	dev-java/blackdown-jre
+RDEPEND="dev-java/blackdown-jre
 	media-tv/shoutcast2vdr
 	sys-process/at
 	graphtft? ( >=media-plugins/vdr-graphtft-0.1.5 )"
 
-src_prepare() {
+pkg_setup() {
+
+	use imagemagick && local LIB="media-gfx/imagemagick"
+	use !imagemagick && local LIB="media-libs/imlib2"
+
+		if ! built_with_use $LIB png; then
+			echo
+			eerror "Please recompile $LIB with"
+			eerror "USE=\"png\""
+			die "$LIB need png support"
+		fi
+
+	vdr-plugin_pkg_setup
+}
+
+src_unpack() {
+	vdr-plugin_src_unpack
+
 	use graphtft && epatch "${FILESDIR}/${P}-graphtftcoverfix.diff"
 
 	use !ff-card && sed -i Makefile -e "s:HAVE_FFCARD=1:#HAVE_FFCARD=1:"
@@ -45,8 +59,6 @@ src_prepare() {
 	use oss && sed -i Makefile -e "s:#WITH_OSS_OUTPUT=1:WITH_OSS_OUTPUT=1:"
 	use 4mb-mod && sed -i Makefile -e "s:#HAVE_OSDMOD=1:HAVE_OSDMOD=1:"
 	use debug && sed -i Makefile -e "s:#DBG=1:DBG=1:"
-
-	vdr-plugin_src_prepare
 }
 
 src_install() {
