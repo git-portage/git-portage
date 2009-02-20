@@ -1,8 +1,4 @@
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/alpha/package.use.mask,v 1.13 2009/02/20 23:01:12 yngwin Exp $
-
-# Ben de Groot <yngwin@gentoo.org> (20 Feb 2009)
-# needs kde4 keyworded
-x11-themes/qtcurve-qt4 kde
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/alpha/package.use.mask,v 1.12 2009/02/14 00:27:27 yngwin Exp $
 
 # Patrick Lauer <patrick@gentoo.org> (23 Nov 2008)
 # needs webkit keyworded
