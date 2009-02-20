@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/quassel-9999.ebuild,v 1.17 2009/01/21 08:39:39 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/quassel-9999.ebuild,v 1.18 2009/02/19 11:48:54 scarabeus Exp $
 
 EAPI="2"
 
@@ -15,7 +15,7 @@ HOMEPAGE="http://quassel-irc.org/"
 LICENSE="GPL-3"
 KEYWORDS=""
 SLOT="0"
-IUSE="dbus debug kde monolithic phonon +server +ssl webkit +X"
+IUSE="dbus debug kde monolithic +oxygen phonon +server +ssl webkit +X"
 
 LANGS="cs da de fr nb_NO ru tr"
 for l in ${LANGS}; do
@@ -74,15 +74,15 @@ src_configure() {
 		$(cmake-utils_use_with webkit WEBKIT)
 		$(cmake-utils_use_with dbus DBUS)
 		$(cmake-utils_use_with kde KDE)
-		$(cmake-utils_use_with phonon PHONON)
-		$(cmake-utils_use_with ssl OPENSSL)"
+		$(cmake-utils_use_with oxygen OXYGEN)
+		$(cmake-utils_use_with ssl OPENSSL)
+		-DEMBED_DATA=OFF"
 
 	if use kde ; then
 		# We don't use our own phonon backend, so don't enable it; also use system icon themes
-		mycmakeargs="${mycmakeargs} -DWITH_PHONON=0 -DOXYGEN_ICONS=External -DQUASSEL_ICONS=External"
+		mycmakeargs="${mycmakeargs} -DWITH_PHONON=0"
 	else
-		mycmakeargs="${mycmakeargs} $(cmake-utils_use_with phonon PHONON)
-			-DOXYGEN_ICONS=Builtin -DQUASSEL_ICONS=Builtin"
+		mycmakeargs="${mycmakeargs} $(cmake-utils_use_with phonon PHONON)"
 	fi
 
 	_common_configure_code
