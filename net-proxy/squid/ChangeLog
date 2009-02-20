@@ -1,6 +1,35 @@
 # ChangeLog for net-proxy/squid
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/ChangeLog,v 1.221 2009/01/10 12:43:41 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/ChangeLog,v 1.229 2009/02/20 17:52:06 armin76 Exp $
+
+  20 Feb 2009; Raúl Porcel <armin76@gentoo.org> squid-3.0.13.ebuild:
+  Change to ~arm, as it just segfaults on uclibc
+
+  20 Feb 2009; Raúl Porcel <armin76@gentoo.org> squid-2.7.6.ebuild:
+  ia64/sparc/x86 stable wrt #257585
+
+  19 Feb 2009; Tobias Scherbaum <dertobi123@gentoo.org> squid-2.7.6.ebuild:
+  ppc stable, bug #257585
+
+  18 Feb 2009; Tobias Klausmann <klausman@gentoo.org> squid-2.7.6.ebuild:
+  Stable on alpha, bug #257585
+
+  17 Feb 2009; Jeroen Roovers <jer@gentoo.org> squid-2.7.6.ebuild:
+  Stable for HPPA (bug #257585).
+
+  17 Feb 2009; Brent Baude <ranger@gentoo.org> squid-2.7.6.ebuild:
+  Marking squid-2.7.6 ppc64 for bug 257585
+
+*squid-3.0.13 (16 Feb 2009)
+*squid-2.7.6 (16 Feb 2009)
+
+  16 Feb 2009; Alin Năstac <mrness@gentoo.org>
+  +files/squid-2.7.6-gentoo.patch, +files/squid-2.7.6-heimdal.patch,
+  -files/squid-3.0.10-adapted-zph.patch, -files/squid-3.0.10-gentoo.patch,
+  -files/squid-3.0.10-heimdal.patch, +files/squid-3.0.13-adapted-zph.patch,
+  +files/squid-3.0.13-gentoo.patch, +files/squid-3.0.13-heimdal.patch,
+  +squid-2.7.6.ebuild, -squid-3.0.10-r1.ebuild, +squid-3.0.13.ebuild:
+  Version bumps wrt security bug #257585.
 
 *squid-3.0.11 (10 Jan 2009)
 
