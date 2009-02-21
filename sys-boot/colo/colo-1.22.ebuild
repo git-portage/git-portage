@@ -1,15 +1,15 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/colo/colo-1.22.ebuild,v 1.4 2009/02/25 00:32:25 kumba Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/colo/colo-1.22.ebuild,v 1.3 2007/07/15 02:25:03 mr_bones_ Exp $
 
-inherit eutils toolchain-funcs
+inherit eutils
 
 DESCRIPTION="CObalt LOader - Modern bootloader for Cobalt MIPS machines"
 HOMEPAGE="http://www.colonel-panic.org/cobalt-mips/"
 SRC_URI="http://www.colonel-panic.org/cobalt-mips/colo/colo-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-* ~mips"
+KEYWORDS="-* mips"
 IUSE=""
 DEPEND=""
 RESTRICT="strip"
@@ -33,42 +33,20 @@ src_unpack() {
 src_compile() {
 	echo -e ""
 	einfo ">>> Building the CoLo Bootloader ..."
-
-	# Remove -Werror from CFLAGS
-	# gcc-4.3.x is more strict; We'll go back and fix later
-	cd "${S}"
-	for x in $(grep -rl "Werror" "${S}"/*); do
-		sed -i -e 's/\-Werror//g' "${x}"
-	done
-
-	# Keep elf2rfx from automatically building via the Makefile
-	sed -i -e 's/tools\/elf2rfx //' "${S}"/Makefile
-
-	# Build it first with BUILD_CC in case of cross-compiles
-	cd "${S}"/tools/elf2rfx
-	make CC="$(tc-getBUILD_CC)" || die
-
-	# Build the rest
-	cd "${S}"
+	cd ${S}
 	make clean || die       # emake breaks the build
-	make CC="$(tc-getCC)" OBJCOPY="$(tc-getOBJCOPY)" \
-	     STRIP="$(tc-getSTRIP)" || die
-
-	# Now rebuild elf2rfx again with CC so it can be installed
-	cd "${S}"/tools/elf2rfx
-	make clean || die
-	make CC="$(tc-getCC)" || die
+	make || die
 }
 
 src_install() {
 	# bins
-	cd "${S}"
+	cd ${S}
 	dodir /usr/lib/colo
-	cp binaries/colo-chain.elf "${D}"/usr/lib/colo
-	cp binaries/colo-rom-image.bin "${D}"/usr/lib/colo
+	cp binaries/colo-chain.elf ${D}/usr/lib/colo
+	cp binaries/colo-rom-image.bin ${D}/usr/lib/colo
 
 	# docs
-	dodoc CHANGES INSTALL README README.{restore,shell,netcon} tools/README.tools TODO
+	dodoc CHANGES COPYING INSTALL README README.{restore,shell,netcon} tools/README.tools TODO
 
 	# all tools except lcdtools (see below)
 	local tool
@@ -93,7 +71,7 @@ src_install() {
 
 	# bootscripts
 	dodir /usr/lib/colo/scripts
-	cp "${FILESDIR}"/*.colo "${D}"/usr/lib/colo/scripts
+	cp ${FILESDIR}/*.colo ${D}/usr/lib/colo/scripts
 }
 
 pkg_postinst() {
