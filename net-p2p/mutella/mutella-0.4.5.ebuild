@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/mutella/Attic/mutella-0.4.5.ebuild,v 1.8 2009/02/24 02:21:11 dirtyepic Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/mutella/Attic/mutella-0.4.5.ebuild,v 1.7 2008/04/13 21:52:25 betelgeuse Exp $
 
 inherit eutils
 
@@ -18,7 +18,6 @@ src_unpack() {
 	cd "${S}"
 
 	epatch "${FILESDIR}/${P}-gcc41.patch"
-	epatch "${FILESDIR}"/${P}-gcc43.patch
 }
 
 src_compile() {
@@ -28,6 +27,6 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
+	make DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog COPYING INSTALL LICENSE KNOWN-BUGS README TODO
 }
