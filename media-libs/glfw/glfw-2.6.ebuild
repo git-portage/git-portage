@@ -1,9 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/glfw/glfw-2.6.ebuild,v 1.3 2009/02/22 22:10:41 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/glfw/glfw-2.6.ebuild,v 1.1 2007/11/11 07:34:19 tupone Exp $
 
-EAPI=2
-inherit eutils multilib
+inherit eutils
 
 DESCRIPTION="The Portable OpenGL FrameWork"
 HOMEPAGE="http://glfw.sourceforge.net/"
@@ -19,7 +18,9 @@ DEPEND="x11-libs/libXrandr
 
 S=${WORKDIR}/${PN}
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	sed -i \
 		-e "s:\"docs/:\"/usr/share/doc/${PF}/pdf/:" \
 		readme.html \
@@ -29,16 +30,13 @@ src_prepare() {
 
 src_compile() {
 	emake x11 || die "emake failed"
-	emake -C lib/x11 PREFIX=/usr -f Makefile.x11 libglfw.pc || die "emake libglfw.pc failed"
 }
 
 src_install() {
 	dolib.a lib/x11/libglfw.a || die "dolib.a failed"
 	dolib.so lib/x11/libglfw.so.2.6 || die "dolib.so failed"
-	dosym libglfw.so.2.6 /usr/$(get_libdir)/libglfw.so
+	dosym libglfw.so.2.6 /usr/lib/libglfw.so
 
-	insinto /usr/$(get_libdir)/pkgconfig
-	doins lib/x11/libglfw.pc || die "doins failed"
 	insinto /usr/include/GL
 	doins include/GL/glfw.h || die "doins failed"
 	dohtml -r readme.html
