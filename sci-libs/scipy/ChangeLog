@@ -1,6 +1,17 @@
 # ChangeLog for sci-libs/scipy
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/scipy/ChangeLog,v 1.39 2009/02/02 16:50:21 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/scipy/ChangeLog,v 1.41 2009/02/20 10:29:30 bicatali Exp $
+
+  20 Feb 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  scipy-0.6.0-r6.ebuild, scipy-0.7.0.ebuild:
+  Fixed swig python deps for newer swig versions (>=1.3.38), closing bug
+  #259593
+
+*scipy-0.7.0 (18 Feb 2009)
+
+  18 Feb 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  -scipy-0.7.0_rc2.ebuild, +scipy-0.7.0.ebuild:
+  Version bump
 
 *scipy-0.7.0_rc2 (02 Feb 2009)
 
