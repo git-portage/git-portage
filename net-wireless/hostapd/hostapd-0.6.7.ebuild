@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/hostapd/Attic/hostapd-0.6.7.ebuild,v 1.3 2009/02/26 22:03:01 gurligebis Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/hostapd/Attic/hostapd-0.6.7.ebuild,v 1.1 2009/01/06 19:43:22 gurligebis Exp $
 
 inherit toolchain-funcs linux-info
 
@@ -94,7 +94,6 @@ generate_config() {
 	echo "CONFIG_IAPP=y" >> ${CONFIG}
 	echo "CONFIG_IEEE80211R=y" >> ${CONFIG}
 	echo "CONFIG_IEEE80211W=y" >> ${CONFIG}
-	echo "CONFIG_IEEE80211N=y" >> ${CONFIG}
 	echo "CONFIG_PEERKEY=y" >> ${CONFIG}
 	echo "CONFIG_RSN_PREAUTH=y" >> ${CONFIG}
 
