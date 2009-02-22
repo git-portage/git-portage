@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/xfsprogs/Attic/xfsprogs-3.0.0.ebuild,v 1.4 2009/02/24 05:11:32 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/xfsprogs/Attic/xfsprogs-3.0.0.ebuild,v 1.1 2009/02/22 18:57:44 vapier Exp $
 
 inherit eutils toolchain-funcs autotools
 
@@ -14,15 +14,14 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86"
 IUSE="nls"
 
-RDEPEND="sys-fs/e2fsprogs
-	!<sys-fs/xfsdump-3"
+RDEPEND="sys-fs/e2fsprogs"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-parallel-build.patch #260005
+	epatch "${FILESDIR}"/${PN}-2.10.1-headers.patch
 	sed -i \
 		-e "/^PKG_DOC_DIR/s:@pkg_name@:${PF}:" \
 		include/builddefs.in \
