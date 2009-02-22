@@ -1,9 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-sports/vdrift/Attic/vdrift-20080805.ebuild,v 1.2 2009/02/24 00:45:11 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-sports/vdrift/Attic/vdrift-20080805.ebuild,v 1.1 2008/08/24 21:03:58 mr_bones_ Exp $
 
-EAPI=2
-inherit eutils games
+inherit eutils toolchain-funcs games
 
 MY_P=${PN}-${PV:0:4}-${PV:4:2}-${PV:6}
 DESCRIPTION="A driving simulation made with drift racing in mind"
@@ -33,7 +32,9 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/${PN}-${PV:4:2}-${PV:6:2}-${PV:2:2}
 
-src_prepare() {
+src_unpack() {
+	unpack ${MY_P}-src.tar.bz2
+	cd "${S}"
 	sed -i \
 		-e '/-O2/ s/\(\[.*\]\)/[]/' \
 		SConstruct \
@@ -45,15 +46,14 @@ src_prepare() {
 }
 
 src_compile() {
-	local sconsopts=$(echo "${MAKEOPTS}" | sed -e "s/.*\(-j[0-9]\+\).*/\1/")
+	tc-export CC CXX
 
 	cd bullet-2.66
 	./configure
-	jam bulletcollision bulletmath || die
+	jam bulletcollision bulletmath
 	cd "${S}"
 
 	scons \
-		${sconsopts} \
 		NLS=$(use nls && echo 1 || echo 0) \
 		destdir="${D}" \
 		bindir="${GAMES_BINDIR}" \
