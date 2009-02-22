@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/kdar
-# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/ChangeLog,v 1.15 2008/07/23 21:43:25 cardoe Exp $
+# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/ChangeLog,v 1.16 2009/02/22 15:01:50 carlo Exp $
+
+*kdar-2.1.0-r1 (22 Feb 2009)
+
+  22 Feb 2009; Carsten Lohrke <carlo@gentoo.org>
+  +files/kdar-2.1.0-as-needed.diff, +files/kdar-2.1.0-desktop-file.diff,
+  +kdar-2.1.0-r1.ebuild:
+  Proper use dependencies. Desktop file fix.
 
   23 Jul 2008; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
   add GLEP 56 USE flag desc from use.local.desc
