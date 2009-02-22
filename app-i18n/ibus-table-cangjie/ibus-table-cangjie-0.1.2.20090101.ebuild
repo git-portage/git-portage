@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-table-cangjie/Attic/ibus-table-cangjie-0.1.2.20090101.ebuild,v 1.3 2009/02/25 17:11:24 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-table-cangjie/Attic/ibus-table-cangjie-0.1.2.20090101.ebuild,v 1.2 2009/02/05 16:06:59 matsuu Exp $
 
 DESCRIPTION="The CangJie for IBus Tables"
 HOMEPAGE="http://code.google.com/p/ibus/"
@@ -19,7 +19,8 @@ DEPEND="${RDEPEND}
 src_compile() {
 	econf \
 		--enable-cangjie5 \
-		--enable-cangjie3 || die
+		--enable-cangjie3 \
+		$(use_enable extra-phrases) || die
 	emake || die
 }
 
