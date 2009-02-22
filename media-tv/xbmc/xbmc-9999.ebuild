@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-9999.ebuild,v 1.11 2009/02/24 21:55:48 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-9999.ebuild,v 1.5 2009/02/22 19:53:37 vapier Exp $
 
 # XXX: be nice to split out packages that come bundled and use the
 #      system libraries ...
@@ -73,7 +73,6 @@ src_unpack() {
 	else
 		unpack ${A}
 	fi
-	cd "${S}"
 
 	# Avoid help2man
 	sed -i \
@@ -81,17 +80,36 @@ src_unpack() {
 		xbmc/lib/libcdio/libcdio/src/Makefile.in
 
 	# Tweak autotool timestamps to avoid regeneration
-	find . -type f -print0 | xargs -0 touch -r configure
+	local dir
+	for dir in $(find "${S}" -name configure) ; do
+		cd "${dir%configure}"
+		find . -type f -print0 | xargs -0 touch -r configure
+	done
+	cd "${S}"
+
+	epatch "${FILESDIR}"/${PN}-readsector.patch
+	epatch "${FILESDIR}"/${PN}-fribidi.patch
 
 	# Fix XBMC's final version string showing as "exported"
 	# instead of the SVN revision number.  Also cleanup flags.
 	export SVN_REV=${ESVN_WC_REVISION:-exported}
-	sed -i -r -e '/DEBUG_FLAGS/s:-(g|O2)::' configure
-	sed -i -e 's:\<strip\>:echo:' xbmc/lib/libhdhomerun/Makefile.in
+	sed -i -r \
+		-e "s:\$(svnversion -n .):${SVN_REV}:g" \
+		-e '/DEBUG_FLAGS/s:-(g|O2)::' \
+		configure || die "Sed failed for '${S}/configure'"
+	sed -i \
+		-e 's:\<strip\>:echo:' \
+		build.sh xbmc/lib/libhdhomerun/Makefile.in
+	sed -i -r \
+		-e '/CFLAGS/s:-(s|O3)::' \
+		xbmc/cores/paplayer/MACDll/Makefile.in
 	# Avoid lsb-release dependency
 	sed -i \
 		-e 's:/usr/bin/lsb_release -d:cat /etc/gentoo-release:' \
 		xbmc/utils/SystemInfo.cpp
+
+	# Prevent Mac OSX files being installed
+	rm -rf system/python/lib-osx/ system/players/dvdplayer/*-osx*
 
 	# Fix case sensitivity
 	mv media/Fonts/{a,A}rial.ttf
