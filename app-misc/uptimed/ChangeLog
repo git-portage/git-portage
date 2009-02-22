@@ -1,6 +1,25 @@
 # ChangeLog for app-misc/uptimed
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/uptimed/ChangeLog,v 1.69 2009/01/02 12:05:01 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/uptimed/ChangeLog,v 1.72 2009/02/21 10:33:29 armin76 Exp $
+
+*uptimed-0.3.16-r3 (21 Feb 2009)
+
+  21 Feb 2009; Raúl Porcel <armin76@gentoo.org> -uptimed-0.3.16-r2.ebuild,
+  +uptimed-0.3.16-r3.ebuild:
+  Revbump for fixing the initd script name
+
+*uptimed-0.3.16-r2 (20 Feb 2009)
+
+  20 Feb 2009; Raúl Porcel <armin76@gentoo.org> files/uptimed.init,
+  -uptimed-0.3.16-r1.ebuild, +uptimed-0.3.16-r2.ebuild:
+  Revbump so users get a proper initd script, bug #259690
+
+*uptimed-0.3.16-r1 (19 Feb 2009)
+
+  19 Feb 2009; Raúl Porcel <armin76@gentoo.org> +files/uptimed.init,
+  -uptimed-0.3.13.ebuild, -uptimed-0.3.16.ebuild, +uptimed-0.3.16-r1.ebuild:
+  Various enhancements by Lars (Polynomial-C) <polynomial-C at gmx dot de>,
+  bug #251465
 
 *uptimed-0.3.16 (02 Jan 2009)
 
