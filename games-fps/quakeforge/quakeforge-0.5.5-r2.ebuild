@@ -1,9 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/quakeforge/quakeforge-0.5.5-r2.ebuild,v 1.3 2009/02/24 22:19:00 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/quakeforge/quakeforge-0.5.5-r2.ebuild,v 1.2 2007/10/14 21:08:56 vapier Exp $
 
-EAPI=2
-inherit eutils games
+inherit eutils autotools games
 
 DESCRIPTION="A new 3d engine based off of id Softwares's legendary Quake and QuakeWorld game engine"
 HOMEPAGE="http://www.quakeforge.net/"
@@ -39,15 +38,18 @@ DEPEND="${RDEPEND}
 	sys-devel/bison
 	sys-devel/flex"
 
-PATCHES=(
-	"${FILESDIR}"/${P}-no-page-size.patch
-	"${FILESDIR}"/${PV}-ipv6.patch
-	"${FILESDIR}"/${P}-gcc41.patch
-	"${FILESDIR}"/${P}-keys.patch
-	"${FILESDIR}"/${P}-amd64.patch
-)
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch \
+		"${FILESDIR}"/${P}-no-page-size.patch \
+		"${FILESDIR}"/${PV}-ipv6.patch \
+		"${FILESDIR}"/${P}-gcc41.patch \
+		"${FILESDIR}"/${P}-keys.patch \
+		"${FILESDIR}"/${P}-amd64.patch
+}
 
-src_configure() {
+src_compile() {
 	#i should do this at some point :x ... i guess if you disable all shared stuff
 	#and enable all the static options explicitly, static works ... (or so ive been told)
 	#if ! use static ; then
@@ -103,7 +105,9 @@ src_configure() {
 		--with-sharepath="${GAMES_DATADIR}"/quake1 \
 		--with-clients=${clients} \
 		--with-servers=${servers} \
-		--with-tools=${tools}
+		--with-tools=${tools} \
+		|| die
+	make || die "make failed"
 }
 
 src_install() {
