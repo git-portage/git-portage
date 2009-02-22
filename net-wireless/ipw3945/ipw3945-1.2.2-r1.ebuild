@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/ipw3945/Attic/ipw3945-1.2.2-r1.ebuild,v 1.4 2009/02/26 23:52:04 lack Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/ipw3945/Attic/ipw3945-1.2.2-r1.ebuild,v 1.3 2008/03/15 17:01:30 coldwind Exp $
 
 inherit linux-mod eutils
 
@@ -73,12 +73,7 @@ src_unpack() {
 	unpack ${P/_pre/-pre}.tgz
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-build.patch"
-	if kernel_is ge 2 6 24; then
-		epatch "${FILESDIR}/${P}-kernel-2.6.24.patch"
-	fi
-	if kernel_is ge 2 6 27; then
-		epatch "${FILESDIR}/${P}-kernel-2.6.27.patch"
-	fi
+	epatch "${FILESDIR}/${P}-kernel-2.6.24.patch"
 }
 
 src_install() {
