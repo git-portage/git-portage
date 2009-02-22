@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/readline/Attic/readline-6.0.ebuild,v 1.4 2009/02/24 08:57:47 kumba Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/readline/Attic/readline-6.0.ebuild,v 1.1 2009/02/21 21:38:02 vapier Exp $
 
 inherit autotools eutils multilib toolchain-funcs flag-o-matic
 
@@ -10,24 +10,16 @@ PLEVEL=${PV##*_p}
 MY_PV=${PV/_p*}
 MY_P=${PN}-${MY_PV}
 [[ ${PV} != *_p* ]] && PLEVEL=0
-patches() {
-	[[ ${PLEVEL} -eq 0 ]] && return 1
-	local opt=$1
-	eval set -- {1..${PLEVEL}}
-	set -- $(printf "${PN}${MY_PV/\.}-%03d " "$@")
-	if [[ ${opt} == -s ]] ; then
-		echo "${@/#/${DISTDIR}\/}"
-	else
-		local u
-		for u in ftp://ftp.cwru.edu/pub/bash mirror://gnu/${PN} ; do
-			printf "${u}/${PN}-${MY_PV}-patches/%s " "$@"
-		done
-	fi
-}
 
 DESCRIPTION="Another cute console display library"
 HOMEPAGE="http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html"
-SRC_URI="mirror://gnu/${PN}/${MY_P}.tar.gz $(patches)"
+SRC_URI="mirror://gnu/readline/${MY_P}.tar.gz
+	$(for ((i=1; i<=PLEVEL; i++)); do
+		printf 'ftp://ftp.cwru.edu/pub/bash/readline-%s-patches/readline%s-%03d\n' \
+			${MY_PV} ${MY_PV/\.} ${i}
+		printf 'mirror://gnu/bash/readline-%s-patches/readline%s-%03d\n' \
+			${MY_PV} ${MY_PV/\.} ${i}
+	done)"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -46,7 +38,11 @@ src_unpack() {
 	unpack ${MY_P}.tar.gz
 
 	cd "${S}"
-	[[ ${PLEVEL} -gt 0 ]] && epatch $(patches -s)
+	# Official patches
+	local i
+	for ((i=1; i<=PLEVEL; i++)); do
+		epatch "${DISTDIR}"/${PN}${MY_PV/\.}-$(printf '%03d' ${i})
+	done
 	epatch "${FILESDIR}"/${PN}-5.0-no_rpath.patch
 	epatch "${FILESDIR}"/${PN}-6.0-rlfe-build.patch #151174
 	epatch "${FILESDIR}"/${PN}-5.2-no-ignore-shlib-errors.patch #216952
@@ -67,21 +63,17 @@ src_compile() {
 	econf --with-curses || die
 	emake || die
 
-	if ! tc-is-cross-compiler ; then
-		cd examples/rlfe
-		append-ldflags -Lreadline
-		econf || die
-		emake || die "make rlfe failed"
-	fi
+	cd examples/rlfe
+	append-ldflags -Lreadline
+	econf || die
+	emake || die "make rlfe failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die
 	gen_usr_ldscript -a readline history #4411
 
-	if ! tc-is-cross-compiler; then
-		dobin examples/rlfe/rlfe || die
-	fi
+	dobin examples/rlfe/rlfe || die
 
 	dodoc CHANGELOG CHANGES README USAGE NEWS
 	docinto ps
