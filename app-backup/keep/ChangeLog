@@ -1,6 +1,14 @@
 # ChangeLog for app-backup/keep
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/keep/Attic/ChangeLog,v 1.2 2007/11/06 20:20:14 drac Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/keep/Attic/ChangeLog,v 1.3 2009/02/22 15:07:52 carlo Exp $
+
+*keep-0.4.0-r1 (22 Feb 2009)
+
+  22 Feb 2009; Carsten Lohrke <carlo@gentoo.org>
+  +files/keep-0.4.0-desktop-file.diff, +keep-0.4.0-r1.ebuild:
+  Missing runtime dependency. Get rid of invalid aRts dependency. Don't use
+  custom emake, use kde.eclass instead. Missing eclass function call. Revised
+  post install message. Desktop file fix.
 
   06 Nov 2007; Samuli Suominen <drac@gentoo.org> keep-0.4.0.ebuild:
   Keyword ~amd64 wrt #197456.
