@@ -1,43 +1,6 @@
 # ChangeLog for app-shells/bash
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/ChangeLog,v 1.208 2009/02/27 00:43:38 vapier Exp $
-
-  27 Feb 2009; Mike Frysinger <vapier@gentoo.org>
-  +files/bash-4.0-comsub-herestring.patch, bash-4.0.ebuild:
-  Fix from upstream for regression with subshells/herestrings found via
-  revdep-rebuild script.
-
-  26 Feb 2009; Mike Frysinger <vapier@gentoo.org>
-  +files/bash-4.0-associative-array-subscripts.patch, bash-4.0.ebuild:
-  Add upstream patch for associative array issues.
-
-  26 Feb 2009; Mike Frysinger <vapier@gentoo.org>
-  files/bash-4.0-declare-identifier.patch:
-  Newer patch from upstream.
-
-  25 Feb 2009; Mike Frysinger <vapier@gentoo.org>
-  +files/bash-4.0-pipeline-reserved-word.patch, bash-4.0.ebuild:
-  Fix from upstream for new |& construct.
-
-  25 Feb 2009; Mike Frysinger <vapier@gentoo.org>
-  +files/bash-4.0-reset-parser-current-token.patch, bash-4.0.ebuild:
-  Add a fix for quotes from upstream.
-
-  25 Feb 2009; Mike Frysinger <vapier@gentoo.org> bash-3.2_p39.ebuild,
-  bash-3.2_p48.ebuild, bash-3.2_p48-r1.ebuild, bash-4.0.ebuild:
-  Stop auto-removing bash_logout in pkg_preinst() as this confuses newer
-  versions of portage.
-
-  25 Feb 2009; Mike Frysinger <vapier@gentoo.org>
-  +files/bash-4.0-declare-identifier.patch, bash-4.0.ebuild:
-  Add fix from upstream for infinite loop with arrays.
-
-  24 Feb 2009; Mike Frysinger <vapier@gentoo.org>
-  +files/bash-4.0-pcomplete-save-parser-state.patch, bash-4.0.ebuild:
-  Add another fix from upstream.
-
-  24 Feb 2009; Mike Frysinger <vapier@gentoo.org> bash-4.0.ebuild:
-  Drop BSD patch as it causes bad behavior on Linux #259860.
+# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/ChangeLog,v 1.199 2009/02/24 05:01:02 vapier Exp $
 
   24 Feb 2009; Mike Frysinger <vapier@gentoo.org>
   +files/bash-4.0-exit-checkjobs.patch,
