@@ -1,6 +1,28 @@
 # ChangeLog for net-libs/courier-authlib
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/courier-authlib/ChangeLog,v 1.93 2008/12/16 21:41:09 hanno Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/courier-authlib/ChangeLog,v 1.98 2009/02/23 16:56:20 jer Exp $
+
+  23 Feb 2009; Jeroen Roovers <jer@gentoo.org>
+  courier-authlib-0.62.2.ebuild:
+  Stable for HPPA (bug #252576).
+
+  23 Feb 2009; Brent Baude <ranger@gentoo.org>
+  courier-authlib-0.62.2.ebuild:
+  Marking courier-authlib-0.62.2 ppc64 for bug 252576
+
+  23 Feb 2009; Ferris McCormick <fmccor@gentoo.org>
+  courier-authlib-0.62.2.ebuild:
+  Sparc stable, security Bug #252576.
+
+  23 Feb 2009; Tobias Klausmann <klausman@gentoo.org>
+  courier-authlib-0.62.2.ebuild:
+  Stable on alpha, bug #252576
+
+*courier-authlib-0.62.2 (22 Feb 2009)
+
+  22 Feb 2009; Hanno Boeck <hanno@gentoo.org>
+  +courier-authlib-0.62.2.ebuild:
+  Version bump and removed obsolete sed line.
 
 *courier-authlib-0.61.1 (16 Dec 2008)
 
