@@ -1,6 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/wklej/Attic/wklej-0.1.6.ebuild,v 1.3 2009/02/24 21:03:16 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/wklej/Attic/wklej-0.1.6.ebuild,v 1.1 2009/02/24 19:19:06 cla Exp $
 
 EAPI=2
 
@@ -33,3 +31,4 @@ src_install() {
 	elog "an authorized user."
 	elog "Go to http://wklej.org/salt to get your SALT_KEY."
 }
+
