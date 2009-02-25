@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/kbackup
-# Copyright 2006-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/ChangeLog,v 1.7 2008/03/26 20:58:17 deathwing00 Exp $
+# Copyright 2006-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/ChangeLog,v 1.8 2009/02/22 16:46:39 carlo Exp $
+
+*kbackup-0.5.4-r1 (22 Feb 2009)
+
+  22 Feb 2009; Carsten Lohrke <carlo@gentoo.org> +kbackup-0.5.4-r1.ebuild:
+  Get rid of invalid aRts dependency.
 
   26 Mar 2008; Ioannis Aslanidis <deathwing00@gentoo.org>
   -kbackup-0.5.1.ebuild:
