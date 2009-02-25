@@ -1,17 +1,23 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-embedded/openocd/openocd-9999.ebuild,v 1.4 2008/11/29 21:02:33 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-embedded/openocd/openocd-9999.ebuild,v 1.5 2009/02/23 22:47:08 maekke Exp $
 
 ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/openocd/trunk"
-inherit eutils subversion autotools multilib
+inherit eutils multilib
+if [[ ${PV} == "9999" ]] ; then
+	inherit subversion autotools
+	KEYWORDS=""
+	SRC_URI=""
+else
+	KEYWORDS=""
+	SRC_URI="mirror://berlios/${PN}/${P}.tar.gz"
+fi
 
 DESCRIPTION="OpenOCD - Open On-Chip Debugger"
 HOMEPAGE="http://openocd.berlios.de/web/"
-SRC_URI=""
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
 IUSE="ft2232 ftdi parport presto usb"
 RESTRICT="strip" # includes non-native binaries
 
@@ -19,6 +25,7 @@ RESTRICT="strip" # includes non-native binaries
 DEPEND="usb? ( dev-libs/libusb )
 	presto? ( dev-embedded/libftd2xx )
 	ft2232? ( || ( ftdi? ( dev-embedded/libftdi ) dev-embedded/libftd2xx ) )"
+RDEPEND="${DEPEND}"
 
 pkg_setup() {
 	if use ftdi && ! use ft2232 ; then
@@ -37,9 +44,13 @@ pkg_setup() {
 }
 
 src_unpack() {
-	subversion_src_unpack
-	cd "${S}"
-	eautoreconf
+	if [[ ${PV} == "9999" ]] ; then
+		subversion_src_unpack
+		cd "${S}"
+		eautoreconf
+	else
+		unpack ${A}
+	fi
 }
 
 src_compile() {
@@ -55,8 +66,7 @@ src_compile() {
 		$(use_enable parport parport_giveio) \
 		$(use_enable presto presto_ftd2xx) \
 		$(use ft2232 && use_enable ftdi ft2232_libftdi) \
-		$(use ft2232 && use_enable !ftdi ft2232_ftd2xx) \
-		|| die "Error in econf!"
+		$(use ft2232 && use_enable !ftdi ft2232_ftd2xx)
 	emake || die "Error in emake!"
 }
 
