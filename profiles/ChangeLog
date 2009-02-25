@@ -1,10 +1,36 @@
 # ChangeLog for profile directory
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2371 2009/02/21 04:37:10 darkside Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2381 2009/02/25 12:53:53 flameeyes Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  25 Feb 2009; Diego E. Pettenò <flameeyes@gentoo.org> package.mask:
+  Remove mikachan-font mask now that it's gone.
+
+  25 Feb 2009; Markus Meier <maekke@gentoo.org> package.mask:
+  mask beta releases of media-gfx/hugin-0.8.0
+
+  25 Feb 2009; Ben de Groot <yngwin@gentoo.org> package.mask:
+  Remove mask for qtcurve-qt4-0.61.2, now that compilation issue has been
+  solved
+
+  24 Feb 2009; Ben de Groot <yngwin@gentoo.org> package.mask:
+  Mask x11-themes/qtcurve-qt4-0.61.2 for compilation failure
+
+  23 Feb 2009; Tomas Chvatal <scarabeus@gentoo.org> package.mask:
+  Remove krusader from mask (their release cycle is pretty slow and the app
+  is stable).
+
+  22 Feb 2009; Mike Auty <ikelos@gentoo.org> package.mask:
+  Remove masks for cleaned out insecure vmware products.
+
+  22 Feb 2009; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Remove gucharmap-2.24 mask since bug #243160 is solved.
+
+  22 Feb 2009; Petteri Räty <betelgeuse@gentoo.org> package.mask:
+  Remove mask for kdbus as it was removed from tree.
 
   21 Feb 2009; Jeremy Olexa <darkside@gentoo.org> package.mask:
   remove mask entries for non-existant packages after they were removed
