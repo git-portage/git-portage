@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/eutils.eclass,v 1.317 2009/03/01 08:06:00 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/eutils.eclass,v 1.315 2009/02/21 23:28:21 vapier Exp $
 
 # @ECLASS: eutils.eclass
 # @MAINTAINER:
@@ -185,10 +185,6 @@ epatch() {
 	fi
 
 	case ${EPATCH_SUFFIX##*\.} in
-		xz)
-			PIPE_CMD="xz -dc"
-			PATCH_SUFFIX="xz"
-			;;
 		lzma)
 			PIPE_CMD="lzma -dc"
 			PATCH_SUFFIX="lzma"
@@ -1620,7 +1616,7 @@ strip-linguas() {
 		fi
 	done
 	[[ -n ${nols} ]] \
-		&& ewarn "Sorry, but ${PN} does not support the LINGUAS:" ${nols}
+		&& ewarn "Sorry, but ${PN} does not support the LINGUAs:" ${nols}
 	export LINGUAS=${newls:1}
 }
 
