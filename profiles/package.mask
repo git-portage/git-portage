@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9535 2009/02/28 23:54:18 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9517 2009/02/25 15:22:17 zzam Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -31,29 +31,6 @@
 
 #--- END OF EXAMPLES ---
 
-# Michael Sterrett <mr_bones_@gentoo.org> (28 Feb 2009)
-# mask for removal in 30 days.  Old and unmaintained.  Upstream seems dead.
-# Segfaults after the opening menu.
-games-action/parsec
-
-# Jeffrey Gardner <je_fro@gentoo.org> (27 Feb 2009)
-# Masked while we switch to sci-chemistry/gchemutils
-# which now provides this package.
-sci-chemistry/gchempaint
-
-# Alexis Ballier <aballier@gentoo.org> (27 Feb 2009)
-# release candidate
->=media-video/vlc-0.9.9_rc
-
-# Timothy Redaelli <drizzt@gentoo.org> (26 Feb 2009)
-# Masked for testing
-~dev-libs/libedit-20090111.3.0
-
-# Rémi Cardona <remi@gentoo.org> (26 Feb 2009)
-# Upstream says it's a bugfix release but the ChangeLog indicates otherwise.
-# p.masked until it has been sufficiently tested (by us or others)
-=x11-drivers/xf86-video-intel-2.6.2
-
 # Matthias Schwarzott <zzam@gentoo.org> (25 Feb 2009)
 # masked for removal in 30days
 # Got replaced by media-plugins/vdr-streamdev
@@ -62,8 +39,7 @@ media-plugins/vdr-streamdev-server
 
 # Markus Meier <maekke@gentoo.org> (25 Feb 2009)
 # mask beta releases of media-gfx/hugin-0.8.0
->=media-gfx/hugin-0.8.0_beta1
->=media-libs/libpano13-2.9.14_beta1
+>=media-gfx/hugin-0.8.0
 
 # Joe Sapp <nixphoeni@gentoo.org> (22 Feb 2009)
 # These packages don't live on gdesklets.de any more,
@@ -128,6 +104,14 @@ app-emulation/ganeti-instance-debian-etch
 =x11-wm/awesome-3.2*
 =x11-libs/xcb-util-0.3.3*
 
+# MATSUU Takuto <matsuu@gentoo.org> (05 Feb 2009)
+# Masked for testing
+>=app-i18n/ibus-1.1
+>=app-i18n/ibus-anthy-1.1
+>=app-i18n/ibus-hangul-1.1
+>=app-i18n/ibus-m17n-1.1
+>=app-i18n/ibus-pinyin-1.1
+
 # Hanno Böck <hanno@gentoo.org> (05 Feb 2009)
 # Seems something is broken with crypt mount in 1.17 (bug 257302)
 =sys-auth/pam_mount-1.17
@@ -177,6 +161,13 @@ app-emulation/vmware-esx-console
 # Until then, mask it.
 net-misc/amazonmp3-libcompat
 
+# Peter Alfredsen <loki_val@gentoo.org> (1 Feb 2009)
+# Masked for removal in 30 days.  Old and unmaintained.  Upstream is gone.
+# Does not work with current ipod-sharp versions, see 195746. This
+# removes half of its functionality.
+# Is faily, see bug 256473.
+media-sound/monopod
+
 # Michael Sterrett <mr_bones_@gentoo.org> (01 Feb 2009)
 # mask for removal in 30 days.  Old and unmaintained.  Upstream is gone.
 games-fps/anaglyph-stereo-quake
@@ -195,6 +186,16 @@ media-plugins/mythzoneminder
 # Masked until the deps are put in the tree
 >=kde-base/printer-applet-4.1.96
 >=kde-base/system-config-printer-kde-4.1.96
+
+# Peter Alfredsen <loki_val@gentoo.org> (30 Jan 2009)
+# Nothing uses this anymore, depends on gtk-sharp:1
+# Masked for removal in 30 days.
+dev-dotnet/gtkgl-sharp
+
+# Peter Alfredsen <loki_val@gentoo.org> (30 Jan 2009)
+# No longer maintained upstream, depends on gtk-sharp:1
+# Masked for removal in 30 days.
+dev-dotnet/mcatalog
 
 # Michael Sterrett <mr_bones_@gentoo.org> (29 Jan 2009)
 # Old and unmaintained.  Used games-action/extreme-tuxracer instead.
@@ -220,6 +221,10 @@ x11-misc/hotkeys
 # xprint is dead, for real (see bug #254874)
 x11-apps/xphelloworld
 
+# Rémi Cardona <remi@gentoo.org> (25 Jan 2009)
+# masked for removal, use x11-base/xorg-server with USE=kdrive instead
+x11-base/kdrive
+
 # Hanno Boeck <hanno@gentoo.org (22 Jan 2009)
 # This has been included in kernel 2.6.27 and shouldn't be used
 # any more. Will remove within a month, please contact me if you
@@ -232,7 +237,6 @@ app-misc/sdricoh_cs
 ~sys-fs/udev-136
 ~sys-fs/udev-137
 ~sys-fs/udev-138
-~sys-fs/udev-139
 
 # Ben de Groot <yngwin@gentoo.org> (19 Jan 2009)
 # Masked because of bug 248038 which requires mask of qt-4.3*
@@ -366,6 +370,17 @@ net-mail/ezmlm-idx-pgsql
 net-misc/udhcp
 sys-apps/tinylogin
 
+# Rémi Cardona <remi@gentoo.org> (21 Dec 2008)
+# Masked for treecleaning, see bug #228471
+# uses old gtkmm stack
+net-print/omni
+
+# Rémi Cardona <remi@gentoo.org> (21 Dec 2008)
+# Masked for treecleaning, see bug #228471 and bug #244543
+# uses broken and unmaintained gtkmm 2.2
+# other tools can change the X background
+x11-misc/fluxbg
+
 # Jeremy Olexa <darkside@gentoo.org> (20 Dec 2008)
 # Removed in 60 days, multiple bugs - does not compile with recent kernels.
 # bug 251795
@@ -435,7 +450,6 @@ net-wireless/bluez
 =gnome-base/gvfs-1.0.3-r10
 =gnome-base/gvfs-1.0.3-r11
 >=net-wireless/libbtctl-0.11.0
->=app-mobilephone/obexftp-0.23
 
 # Saleem Abdulrasool <compnerd@gentoo.org> (23 Nov 2007)
 # These might break automounting, so keep them masked for now.
@@ -444,6 +458,11 @@ net-wireless/bluez
 =gnome-base/gnome-mount-0.7
 >=sys-auth/policykit-0.6
 >=gnome-extra/policykit-gnome-0.6
+
+# Peter Alfredsen <loki_val@gentoo.org> (25 Jan 2008)
+# Fails to compile, bug 212097.
+# Masked for removal in 30 days.
+app-pda/dopi
 
 # Alec Warner <antarus@gentoo.org> (22 Nov 2008)
 # nis-utils is dead, use LDAP you slackers.
@@ -1298,6 +1317,10 @@ net-dns/bind-dns-keygen
 =app-pda/synce-0.9.2
 =app-pda/synce-librapi2-0.9.2
 =app-pda/synce-libsynce-0.9.2
+
+# Tuấn Văn <langthang@gentoo.org> (15 Jul 2006)
+# Initial import. Masked for testing
+mail-filter/sid-milter
 
 # Colin Kingsley <tercel@gentoo.org> (24 Jun 2006)
 # Masked for testing
