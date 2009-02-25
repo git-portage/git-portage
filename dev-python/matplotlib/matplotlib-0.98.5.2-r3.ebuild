@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/matplotlib/Attic/matplotlib-0.98.5.2-r3.ebuild,v 1.3 2009/02/28 21:18:57 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/matplotlib/Attic/matplotlib-0.98.5.2-r3.ebuild,v 1.1 2009/02/25 20:33:41 bicatali Exp $
 
 WX_GTK_VER=2.8
 EAPI=2
@@ -29,15 +29,9 @@ CDEPEND=">=dev-python/numpy-1.1
 DEPEND="${CDEPEND}
 	dev-python/pycxx
 	dev-util/pkgconfig
-	doc? (
-		>=dev-python/sphinx-0.5.1
-		media-gfx/graphviz[cairo,png]
-		|| ( ( dev-texlive/texlive-latexextra
-			   dev-texlive/texlive-latexrecommended )
-			 app-text/tetex
-			 app-text/ptex )
-		app-text/dvipng
-		dev-python/ipython )"
+	doc? ( >=dev-python/sphinx-0.5.1
+			app-text/dvipng
+			dev-python/ipython )"
 
 RDEPEND="${CDEPEND}
 	|| ( media-fonts/dejavu media-fonts/ttf-bitstream-vera )
@@ -74,8 +68,6 @@ use_setup() {
 src_prepare() {
 	# patch from mandriva
 	epatch "${FILESDIR}"/${P}-literal.patch
-	# avoid to launch xv while building examples docs
-	epatch "${FILESDIR}"/${P}-no-xv.patch
 
 	# create setup.cfg (see setup.cfg.template for any changes)
 	cat > setup.cfg <<-EOF
@@ -134,7 +126,6 @@ src_compile() {
 	distutils_src_compile
 	if use doc; then
 		cd "${S}/doc"
-		export VARTEXFONTS="${T}"/fonts
 		# no die function here: broken compilation at the end, do it twice,
 		# result ok.
 		MATPLOTLIBDATA="${S}/lib/matplotlib/mpl-data" \
