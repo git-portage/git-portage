@@ -1,19 +1,6 @@
 # ChangeLog for dev-libs/opensc
-# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/opensc/ChangeLog,v 1.58 2009/03/01 03:02:29 fmccor Exp $
-
-  01 Mar 2009; Ferris McCormick <fmccor@gentoo.org> opensc-0.11.7.ebuild:
-  Sparc stable, security Bug #260514.
-
-  28 Feb 2009; Daniel Black <dragonheart@gentoo.org> opensc-0.11.6.ebuild,
-  opensc-0.11.7.ebuild:
-  econf typos thanks to Alon in bug #260668
-
-*opensc-0.11.7 (27 Feb 2009)
-
-  27 Feb 2009; Daniel Black <dragonheart@gentoo.org> -opensc-0.11.3.ebuild,
-  -opensc-0.11.4.ebuild, +opensc-0.11.7.ebuild:
-  version bump ref security bug #260514. remove some older versions
+# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/opensc/ChangeLog,v 1.55 2008/10/31 20:34:26 gmsoft Exp $
 
   31 Oct 2008; Guy Martin <gmsoft@gentoo.org> opensc-0.11.6.ebuild:
   hppa stable
