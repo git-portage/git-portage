@@ -1,6 +1,17 @@
 # ChangeLog for dev-python/gnuplot-py
-# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/gnuplot-py/ChangeLog,v 1.30 2008/10/06 16:10:39 hawking Exp $
+# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/gnuplot-py/ChangeLog,v 1.33 2009/02/26 15:06:16 armin76 Exp $
+
+  26 Feb 2009; Raúl Porcel <armin76@gentoo.org> gnuplot-py-1.8.ebuild:
+  s390/x86 stable wrt #259444
+
+  26 Feb 2009; Ferris McCormick <fmccor@gentoo.org> gnuplot-py-1.8.ebuild:
+  Sparc stable, Bug #259444.
+
+  26 Feb 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  gnuplot-py-1.7-r2.ebuild, gnuplot-py-1.8.ebuild:
+  Cleanup, getting ready for stabilization, ppc64 went for ~ppc64 because of
+  gnuplot
 
   06 Oct 2008; Ali Polatel <hawking@gentoo.org> gnuplot-py-1.7-r2.ebuild,
   gnuplot-py-1.8.ebuild:
