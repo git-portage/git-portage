@@ -1,10 +1,53 @@
 # ChangeLog for profile directory
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2374 2009/02/22 14:15:43 betelgeuse Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2387 2009/02/26 19:56:26 beandog Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  26 Feb 2009; Steve Dibb <beandog@gentoo.org> package.mask:
+  Mask >=media-video/mplayer-20090226.28734 for dvdnav, real cleanup, use
+  flag cleanup, vdpau support
+
+  26 Feb 2009; Konstantin V. Arkhipov <voxus@gentoo.org> use.local.desc:
+  random-index flag added for www-servers/nginx.
+
+  26 Feb 2009; Rémi Cardona <remi@gentoo.org> package.mask:
+  add xf86-video-intel-2.6.2 to p.mask
+
+  25 Feb 2009; Markus Meier <maekke@gentoo.org> package.mask:
+  fix hugin-0.8.0 beta mask
+
+  25 Feb 2009; MATSUU Takuto <matsuu@gentoo.org> package.mask:
+  remove ibus* from package.mask
+
+  25 Feb 2009; Matthias Schwarzott <zzam@gentoo.org> package.mask:
+  Mask media-plugins/vdr-streamdev-{client,server} for removal. They are
+  replaced by media-plugins/vdr-streamdev.
+
+  25 Feb 2009; Diego E. Pettenò <flameeyes@gentoo.org> package.mask:
+  Remove mikachan-font mask now that it's gone.
+
+  25 Feb 2009; Markus Meier <maekke@gentoo.org> package.mask:
+  mask beta releases of media-gfx/hugin-0.8.0
+
+  25 Feb 2009; Ben de Groot <yngwin@gentoo.org> package.mask:
+  Remove mask for qtcurve-qt4-0.61.2, now that compilation issue has been
+  solved
+
+  24 Feb 2009; Ben de Groot <yngwin@gentoo.org> package.mask:
+  Mask x11-themes/qtcurve-qt4-0.61.2 for compilation failure
+
+  23 Feb 2009; Tomas Chvatal <scarabeus@gentoo.org> package.mask:
+  Remove krusader from mask (their release cycle is pretty slow and the app
+  is stable).
+
+  22 Feb 2009; Mike Auty <ikelos@gentoo.org> package.mask:
+  Remove masks for cleaned out insecure vmware products.
+
+  22 Feb 2009; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Remove gucharmap-2.24 mask since bug #243160 is solved.
 
   22 Feb 2009; Petteri Räty <betelgeuse@gentoo.org> package.mask:
   Remove mask for kdbus as it was removed from tree.
