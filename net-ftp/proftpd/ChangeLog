@@ -1,6 +1,24 @@
 # ChangeLog for net-ftp/proftpd
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-ftp/proftpd/ChangeLog,v 1.194 2009/02/20 18:22:08 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-ftp/proftpd/ChangeLog,v 1.198 2009/02/25 20:45:05 maekke Exp $
+
+  25 Feb 2009; Markus Meier <maekke@gentoo.org> proftpd-1.3.2.ebuild:
+  amd64 stable, bug #258450
+
+  25 Feb 2009; Tobias Scherbaum <dertobi123@gentoo.org>
+  proftpd-1.3.2-r1.ebuild:
+  ppc stable, bug #258450
+
+  24 Feb 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  +files/proftpd-1.3.2-system-libltdl.patch, proftpd-1.3.2-r2.ebuild:
+  Add kerberos support, thanks to Martin Mokrejš in bug #134922. Add patch
+  to use system libltdl for the dynamic loader (needed for this new module)
+
+*proftpd-1.3.2-r2 (23 Feb 2009)
+
+  23 Feb 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  +proftpd-1.3.2-r2.ebuild:
+  Enable mod_ctrls_admin module, bug #226047
 
   20 Feb 2009; Raúl Porcel <armin76@gentoo.org> proftpd-1.3.2.ebuild:
   sparc/x86 stable wrt #258450
