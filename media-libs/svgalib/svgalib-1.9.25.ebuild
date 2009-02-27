@@ -1,8 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/svgalib/Attic/svgalib-1.9.25.ebuild,v 1.8 2009/02/28 00:12:14 fauli Exp $
-
-EAPI=1
+# $Header: /var/cvsroot/gentoo-x86/media-libs/svgalib/Attic/svgalib-1.9.25.ebuild,v 1.7 2008/04/10 04:43:56 vapier Exp $
 
 inherit eutils flag-o-matic toolchain-funcs linux-mod
 
@@ -13,10 +11,9 @@ SRC_URI="http://www.arava.co.il/matan/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="-* x86"
-IUSE="build +kernel-helper"
+IUSE="build no-helper"
 
 DEPEND=""
-RDEPEND=""
 
 MODULE_NAMES="svgalib_helper(misc:${S}/kernel/svgalib_helper)"
 BUILD_TARGETS="default"
@@ -32,11 +29,10 @@ src_unpack() {
 	epatch "${FILESDIR}"/${PN}-1.9.25-linux2.6.patch
 	epatch "${FILESDIR}"/${PN}-1.9.19-pic.patch #51698
 	epatch "${FILESDIR}"/${PN}-1.9.25-build.patch
-	epatch "${FILESDIR}"/${PN}-1.9.25-linux2.6.28.patch
 }
 
 src_compile() {
-	use kernel-helper || export NO_HELPER=y
+	use no-helper && export NO_HELPER=y
 
 	export CC=$(tc-getCC)
 
@@ -69,7 +65,7 @@ src_compile() {
 	make OPTIMIZE="${CFLAGS} -I../gl" LDFLAGS='-L../sharedlib' \
 		demoprogs || die "Failed to build demoprogs!"
 
-	! use build && use kernel-helper && linux-mod_src_compile
+	! use build && ! use no-helper && linux-mod_src_compile
 }
 
 src_install() {
@@ -80,7 +76,7 @@ src_install() {
 	emake \
 		TOPDIR="${D}" OPTIMIZE="${CFLAGS}" INSTALLMODULE="" \
 		install || die "Failed to install svgalib!"
-	! use build && use kernel-helper && linux-mod_src_install
+	! use build && ! use no-helper && linux-mod_src_install
 
 	insinto /usr/include
 	doins gl/vgagl.h
@@ -120,5 +116,5 @@ src_install() {
 }
 
 pkg_postinst() {
-	! use build && use kernel-helper && linux-mod_pkg_postinst
+	! use build && ! use no-helper && linux-mod_pkg_postinst
 }
