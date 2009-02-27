@@ -1,14 +1,12 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/opensc/Attic/opensc-0.11.7.ebuild,v 1.5 2009/03/02 15:58:41 ranger Exp $
-
-inherit multilib
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/opensc/Attic/opensc-0.11.7.ebuild,v 1.1 2009/02/27 21:57:16 dragonheart Exp $
 
 DESCRIPTION="SmartCard library and applications"
 HOMEPAGE="http://www.opensc-project.org/opensc/"
 
 SRC_URI="http://www.opensc-project.org/files/${PN}/${P}.tar.gz"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~ppc ppc64 ~s390 ~sh sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
@@ -34,7 +32,9 @@ src_compile() {
 		$(use_enable pcsc-lite pcsc) \
 		$(use_enable nsplugin) \
 		$(use_enable doc) \
-		--with-pinentry="/usr/bin/pinentry"
+		--with-plugin-dir=/usr/lib/mozilla/plugins \
+		--with-pin-entry="/usr/bin/pinentry" \
+		|| die
 	emake || die
 }
 
@@ -44,7 +44,7 @@ src_install() {
 
 pkg_postinst() {
 	elog "This package is a security fix to CVE-2009-0368. If you have private keys on your"
-	elog "smart card intialised by this package they may stored with improper access restrictions."
+	elog "smart card by using this package they are stored with improper access restrictions."
 	elog "See advisory http://thread.gmane.org/gmane.comp.encryption.opensc.announce/22 for"
 	elog "full details and mitigation advice"
 }
