@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ventrilo-server-bin/ventrilo-server-bin-2.3.1.ebuild,v 1.3 2009/03/02 00:22:40 gurligebis Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ventrilo-server-bin/ventrilo-server-bin-2.3.1.ebuild,v 1.2 2007/04/28 15:00:36 tove Exp $
 
 IUSE=""
 DESCRIPTION="The Ventrilo Voice Communication Server"
@@ -15,7 +15,6 @@ RESTRICT="fetch"
 S=${WORKDIR}
 
 DEPEND="amd64? ( app-emulation/emul-linux-x86-baselibs )"
-RDEPEND="${DEPEND}"
 
 pkg_nofetch() {
 	einfo "Please visit http://www.ventrilo.com/download.php"
