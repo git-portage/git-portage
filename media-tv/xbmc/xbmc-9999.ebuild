@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-9999.ebuild,v 1.9 2009/02/23 20:49:37 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-9999.ebuild,v 1.11 2009/02/24 21:55:48 vapier Exp $
 
 # XXX: be nice to split out packages that come bundled and use the
 #      system libraries ...
@@ -73,6 +73,7 @@ src_unpack() {
 	else
 		unpack ${A}
 	fi
+	cd "${S}"
 
 	# Avoid help2man
 	sed -i \
@@ -80,15 +81,7 @@ src_unpack() {
 		xbmc/lib/libcdio/libcdio/src/Makefile.in
 
 	# Tweak autotool timestamps to avoid regeneration
-	local dir
-	for dir in $(find "${S}" -name configure) ; do
-		cd "${dir%configure}"
-		find . -type f -print0 | xargs -0 touch -r configure
-	done
-	cd "${S}"
-
-	epatch "${FILESDIR}"/${PN}-readsector.patch
-	epatch "${FILESDIR}"/${PN}-fribidi.patch
+	find . -type f -print0 | xargs -0 touch -r configure
 
 	# Fix XBMC's final version string showing as "exported"
 	# instead of the SVN revision number.  Also cleanup flags.
