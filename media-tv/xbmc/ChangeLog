@@ -1,6 +1,13 @@
 # ChangeLog for media-tv/xbmc
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/ChangeLog,v 1.5 2009/02/22 22:28:45 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/ChangeLog,v 1.7 2009/02/24 07:18:36 vapier Exp $
+
+  24 Feb 2009; Mike Frysinger <vapier@gentoo.org> -files/xbmc-fribidi.patch,
+  -files/xbmc-readsector.patch, xbmc-9999.ebuild:
+  And now the fribidi/readsector patches have been merged upstream.
+
+  23 Feb 2009; Mike Frysinger <vapier@gentoo.org> xbmc-9999.ebuild:
+  Upstream now allows SVN_REV to override svnversion.
 
   22 Feb 2009; Mike Frysinger <vapier@gentoo.org> xbmc-9999.ebuild:
   MACDll build flags have been merged upstream.
