@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.6_p287-r5.ebuild,v 1.4 2009/02/23 17:50:34 keytoaster Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.6_p287-r5.ebuild,v 1.8 2009/02/25 16:31:29 dertobi123 Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -20,7 +20,7 @@ HOMEPAGE="http://www.ruby-lang.org/"
 SRC_URI="mirror://ruby/${SLOT}/${MY_P}.tar.bz2"
 
 LICENSE="Ruby"
-KEYWORDS="alpha amd64 ~arm hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc ~sparc-fbsd x86 ~x86-fbsd"
 IUSE="berkdb debug doc emacs examples gdbm ipv6 rubytests socks5 ssl threads tk xemacs"
 
 RDEPEND="
@@ -40,7 +40,10 @@ PDEPEND="emacs? ( app-emacs/ruby-mode )
 PROVIDE="virtual/ruby"
 
 pkg_setup() {
-	if use tk && ! (use threads == built_with_use dev-lang/tk threads) ; then
+	use tk || return
+
+	if (use threads && ! built_with_use dev-lang/tk threads) \
+		|| (! use threads && built_with_use dev-lang/tk threads) ; then
 		eerror
 		eerror "You have Tk support enabled."
 		eerror
