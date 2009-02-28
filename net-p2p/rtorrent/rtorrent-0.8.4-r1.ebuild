@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/rtorrent/Attic/rtorrent-0.8.4-r1.ebuild,v 1.6 2009/03/04 14:39:44 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/rtorrent/Attic/rtorrent-0.8.4-r1.ebuild,v 1.4 2009/02/15 15:08:02 ranger Exp $
 
 inherit base eutils toolchain-funcs flag-o-matic
 
@@ -23,8 +23,7 @@ RDEPEND="${COMMON_DEPEND}
 DEPEND="${COMMON_DEPEND}
 	dev-util/pkgconfig"
 
-PATCHES=( "${FILESDIR}/${PN}-0.8.2-gcc34.patch"
-	"${FILESDIR}/${PN}-0.8.4-gcc44.patch" )
+PATCHES=( "${FILESDIR}/${PN}-0.8.2-gcc34.patch" )
 
 src_compile() {
 	replace-flags -Os -O2
@@ -56,7 +55,7 @@ src_install() {
 pkg_postinst() {
 	elog "rtorrent now supports a configuration file."
 	elog "A sample configuration file for rtorrent can be found"
-	elog "in rtorrent.rc in ${ROOT}usr/share/doc/${PF}/"
+	elog "in ${ROOT}usr/share/doc/${PF}/rtorrent.rc.gz."
 	elog ""
 	ewarn "If you're upgrading from rtorrent <0.8.0, you will have to delete your"
 	ewarn "session directory or run the fixSession080-c.py script from this address:"
