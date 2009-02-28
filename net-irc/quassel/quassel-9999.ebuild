@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/quassel-9999.ebuild,v 1.20 2009/02/28 23:20:33 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/quassel-9999.ebuild,v 1.19 2009/02/20 20:02:08 scarabeus Exp $
 
 EAPI="2"
 
@@ -26,7 +26,6 @@ RDEPEND="
 	x11-libs/qt-core:4
 	dbus? ( x11-libs/qt-dbus:4 )
 	monolithic? (
-		dev-db/sqlite[threadsafe]
 		x11-libs/qt-sql:4[sqlite]
 		x11-libs/qt-script:4
 		x11-libs/qt-gui:4
@@ -36,7 +35,6 @@ RDEPEND="
 	)
 	!monolithic? (
 		server? (
-			dev-db/sqlite[threadsafe]
 			x11-libs/qt-sql:4[sqlite]
 			x11-libs/qt-script:4
 		)
