@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/Attic/bash-4.0.ebuild,v 1.5 2009/02/24 17:18:28 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/Attic/bash-4.0.ebuild,v 1.12 2009/02/27 00:43:38 vapier Exp $
 
 EAPI="1"
 
@@ -67,9 +67,15 @@ src_unpack() {
 	if ! use vanilla ; then
 		epatch "${FILESDIR}"/${PN}-3.2-parallel-build.patch #189671
 		epatch "${FILESDIR}"/${PN}-4.0-ldflags-for-build.patch #211947
-		epatch "${FILESDIR}"/${PN}-4.0-comsub-backslash-metacharacters.patch
-		epatch "${FILESDIR}"/${PN}-4.0-save-current-token.patch
-		epatch "${FILESDIR}"/${PN}-4.0-exit-checkjobs.patch
+		epatch "${FILESDIR}"/${P}-pcomplete-save-parser-state.patch
+		epatch "${FILESDIR}"/${P}-comsub-backslash-metacharacters.patch
+		epatch "${FILESDIR}"/${P}-save-current-token.patch
+		epatch "${FILESDIR}"/${P}-exit-checkjobs.patch
+		epatch "${FILESDIR}"/${P}-declare-identifier.patch
+		epatch "${FILESDIR}"/${P}-reset-parser-current-token.patch
+		epatch "${FILESDIR}"/${P}-pipeline-reserved-word.patch
+		epatch "${FILESDIR}"/${P}-associative-array-subscripts.patch
+		epatch "${FILESDIR}"/${P}-comsub-herestring.patch
 		epatch "${FILESDIR}"/${PN}-4.0-negative-return.patch
 		# Log bash commands to syslog #91327
 		if use bashlogger ; then
@@ -170,12 +176,6 @@ pkg_preinst() {
 	if [[ -e ${ROOT}/etc/bashrc ]] && [[ ! -d ${ROOT}/etc/bash ]] ; then
 		mkdir -p "${ROOT}"/etc/bash
 		mv -f "${ROOT}"/etc/bashrc "${ROOT}"/etc/bash/
-	fi
-
-	# our bash_logout is just a place holder so dont
-	# force users to go through etc-update all the time
-	if [[ -e ${ROOT}/etc/bash/bash_logout ]] ; then
-		rm -f "${D}"/etc/bash/bash_logout
 	fi
 
 	if [[ -L ${ROOT}/bin/sh ]]; then
