@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9546 2009/03/03 17:23:18 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9530 2009/02/28 08:03:17 remi Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,26 +30,6 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
-
-# Doug Goldstein <cardoe@gentoo.org> (3 Mar 2009)
-# After discussing it with NVIDIA, issues with
-# signal handling for many users require this
-# to be masked. However, some users my experience
-# better functionality with this driver
-=x11-drivers/nvidia-drivers-180.35
-
-# Thomas Sachau <tommy@gentoo.org> (2 Mar 2009)
-# Mask for removal, was merged into dev-java/fec
-net-libs/fec
-
-# Matti Bickel <mabi@gentoo.org> (1 Mar 2009)
-# Mask testing branch
-=x11-libs/fox-1.7*
-
-# Theo Chatzimichos <tampakrap@gentoo.org> (1 Mar 2009)
-# Mask Beta versions of KDevelop 4 and KDevplatform
->=dev-util/kdevelop-3.9.91
->=dev-util/kdevplatform-0.9.91
 
 # Michael Sterrett <mr_bones_@gentoo.org> (28 Feb 2009)
 # mask for removal in 30 days.  Old and unmaintained.  Upstream seems dead.
@@ -197,6 +177,17 @@ app-emulation/vmware-esx-console
 # Until then, mask it.
 net-misc/amazonmp3-libcompat
 
+# Peter Alfredsen <loki_val@gentoo.org> (1 Feb 2009)
+# Masked for removal in 30 days.  Old and unmaintained.  Upstream is gone.
+# Does not work with current ipod-sharp versions, see 195746. This
+# removes half of its functionality.
+# Is faily, see bug 256473.
+media-sound/monopod
+
+# Michael Sterrett <mr_bones_@gentoo.org> (01 Feb 2009)
+# mask for removal in 30 days.  Old and unmaintained.  Upstream is gone.
+games-fps/anaglyph-stereo-quake
+
 # Tomas Chvatal <scarabeus@gentoo.org> (1 Feb 2009)
 # mask for removal in 30 days. Not needed anymore integrated in boinc
 sci-astronomy/setiathome
@@ -211,6 +202,16 @@ media-plugins/mythzoneminder
 # Masked until the deps are put in the tree
 >=kde-base/printer-applet-4.1.96
 >=kde-base/system-config-printer-kde-4.1.96
+
+# Peter Alfredsen <loki_val@gentoo.org> (30 Jan 2009)
+# Nothing uses this anymore, depends on gtk-sharp:1
+# Masked for removal in 30 days.
+dev-dotnet/gtkgl-sharp
+
+# Peter Alfredsen <loki_val@gentoo.org> (30 Jan 2009)
+# No longer maintained upstream, depends on gtk-sharp:1
+# Masked for removal in 30 days.
+dev-dotnet/mcatalog
 
 # Michael Sterrett <mr_bones_@gentoo.org> (29 Jan 2009)
 # Old and unmaintained.  Used games-action/extreme-tuxracer instead.
@@ -443,7 +444,6 @@ net-proxy/squirm
 
 # Tiziano Müller <dev-zero@gentoo.org> (28 Nov 2008)
 # mask for testing/transition
-# blueman needs policykit-gnome
 net-wireless/bluez
 >=net-wireless/bluez-gnome-1.8
 >=app-mobilephone/obex-data-server-0.4
@@ -453,7 +453,6 @@ net-wireless/bluez
 =gnome-base/gvfs-1.0.3-r11
 >=net-wireless/libbtctl-0.11.0
 >=app-mobilephone/obexftp-0.23
-net-wireless/blueman
 
 # Saleem Abdulrasool <compnerd@gentoo.org> (23 Nov 2007)
 # These might break automounting, so keep them masked for now.
@@ -462,6 +461,11 @@ net-wireless/blueman
 =gnome-base/gnome-mount-0.7
 >=sys-auth/policykit-0.6
 >=gnome-extra/policykit-gnome-0.6
+
+# Peter Alfredsen <loki_val@gentoo.org> (25 Jan 2008)
+# Fails to compile, bug 212097.
+# Masked for removal in 30 days.
+app-pda/dopi
 
 # Alec Warner <antarus@gentoo.org> (22 Nov 2008)
 # nis-utils is dead, use LDAP you slackers.
@@ -563,6 +567,10 @@ app-portage/genflags
 # should not be used, use 2.x instead
 <x11-drivers/xf86-video-intel-2.0.0
 
+# Olivier Crete <tester@gentoo.org> (06 Oct 2008)
+# Masked for removal, upstream dead (bug #240045)
+net-im/tmsnc
+
 # Alexis Ballier <aballier@gentoo.org> (06 Oct 2008)
 # API changes, the only reverse dep fails to build against it.
 >=media-libs/libspiff-1.0.0
@@ -635,6 +643,24 @@ app-crypt/cryptplug
 dev-tcltk/tclgpgme
 ~app-crypt/gpgme-0.3.14
 
+# Ricardo Mendoza <ricmm@gentoo.org> (28 Aug 2008)
+# Beta driver, masking corresponding packages
+~x11-drivers/nvidia-drivers-177.70
+~media-video/nvidia-settings-177.70
+
+# Ricardo Mendoza <ricmm@gentoo.org> (27 Aug 2008)
+# Beta driver, masking corresponding nvidia-settings
+~x11-drivers/nvidia-drivers-177.68
+~media-video/nvidia-settings-177.68
+
+# Ricardo Mendoza <ricmm@gentoo.org> (21 Aug 2008)
+# Beta driver, masking corresponding nvidia-settings
+~media-video/nvidia-settings-177.67
+
+# Ricardo Mendoza <ricmm@gentoo.org> (20 Aug 2008)
+# Beta driver, unsupported by nVidia
+~x11-drivers/nvidia-drivers-177.67
+
 # Tiziano Müller <dev-zero@gentoo.org> (15 Aug 2008)
 # Masked for testing (works with >=dev-libs/xerces-c-3.0.0)
 =dev-libs/xqilla-9999
@@ -697,6 +723,11 @@ net-irc/bitchx
 # >0.13 breaks a lot of stuff, only qbittorrent works fine
 >=net-libs/rb_libtorrent-0.13_p2335
 >=net-p2p/qbittorrent-1.1.0_beta1
+
+# Tony Vroon <chainsaw@gentoo.org> (08 May 2008)
+# Beta driver, unsupported by nVidia
+~x11-drivers/nvidia-drivers-177.13
+~media-video/nvidia-settings-177.13
 
 # Ryan Hill <dirtyepic@gentoo.org> (18 Jun 2008)
 # Consolidated linuxfromscratch ebuilds into one.
@@ -766,6 +797,11 @@ dev-cpp/bakery
 # LessTif is unsupported since it has open issues with several packages.
 # See bug 193505 and bug 204249. You are on your own here.
 x11-libs/lesstif
+
+# Tony Vroon <chainsaw@gentoo.org> (08 May 2008)
+# Beta driver, unsupported by nVidia
+~x11-drivers/nvidia-drivers-173.08
+~media-video/nvidia-settings-173.08
 
 # Lennart Kolmodin <kolmodin@gentoo.org> (04 May 2008)
 # Some of the older 0.9x regex packages are experimental versions and does
@@ -899,7 +935,7 @@ sys-apps/mindi-busybox
 
 # Jeroen Roovers <jer@gentoo.org> (10 Mar 2008)
 # development version:
-=app-admin/sysstat-8.1*
+>=app-admin/sysstat-8.1.1
 
 # MATSUU Takuto <matsuu@gentoo.org> (8 Mar 2008)
 # Masked for Bug 173467
@@ -1075,6 +1111,10 @@ dev-lang/entity
 # dev-lang/ghc-bin is going away, use dev-lang/ghc instead.
 # You can USE=binary with dev-lang/ghc to get the effect of ghc-bin.
 dev-lang/ghc-bin
+
+# Doug Goldstein <cardoe@gentoo.org> (01 Nov 2007)
+# beta NVIDIA drivers, not supported. bug #196679
+~x11-drivers/nvidia-drivers-100.14.23
 
 # Stefan Schweizer <genstef@gentoo.org> (14 Oct 2007)
 # Development release
@@ -1281,6 +1321,10 @@ net-dns/bind-dns-keygen
 =app-pda/synce-librapi2-0.9.2
 =app-pda/synce-libsynce-0.9.2
 
+# Tuấn Văn <langthang@gentoo.org> (15 Jul 2006)
+# Initial import. Masked for testing
+mail-filter/sid-milter
+
 # Colin Kingsley <tercel@gentoo.org> (24 Jun 2006)
 # Masked for testing
 =dev-python/visual-4*
@@ -1288,6 +1332,10 @@ net-dns/bind-dns-keygen
 # Luca Longinotti <chtekk@gentoo.org> (24 May 2006)
 # Masked for more testing, breaks with stealth mode.
 =app-forensics/samhain-2.2.0
+
+# Diego Pettenò <flameeyes@gentoo.org> (24 Apr 2006)
+# Pre-release snapshots
+=app-mobilephone/kmobiletools-0.5*
 
 # Brent Baude <ranger@gentoo.org> (18 Apr 2006)
 # Masked pending removal. This package had been deprecated
