@@ -1,6 +1,24 @@
 # ChangeLog for net-misc/ssh-askpass-fullscreen
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/ssh-askpass-fullscreen/ChangeLog,v 1.11 2009/01/23 12:00:02 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/ssh-askpass-fullscreen/ChangeLog,v 1.14 2009/02/27 05:28:57 darkside Exp $
+
+*ssh-askpass-fullscreen-0.4-r3 (26 Feb 2009)
+
+  26 Feb 2009; Jeremy Olexa <darkside@gentoo.org>
+  files/ssh-askpass-fullscreen-0.4-fix-grab.patch,
+  +files/ssh-askpass-fullscreen.1, -ssh-askpass-fullscreen-0.4.ebuild,
+  -ssh-askpass-fullscreen-0.4-r2.ebuild,
+  +ssh-askpass-fullscreen-0.4-r3.ebuild:
+  Fix compiler warning (thanks to ulm) and QA cleanup of the ebuild: added die
+  message, EAPI-2, style changes. Added a man page from debian's patch tracking
+  site.
+
+*ssh-askpass-fullscreen-0.4-r2 (25 Feb 2009)
+
+  25 Feb 2009; Ulrich Mueller <ulm@gentoo.org>
+  +files/ssh-askpass-fullscreen-0.4-fix-grab.patch,
+  +ssh-askpass-fullscreen-0.4-r2.ebuild:
+  Fix "grab keyboard" problem, bug 260308.
 
   23 Jan 2009; Raúl Porcel <armin76@gentoo.org>
   ssh-askpass-fullscreen-0.4-r1.ebuild:
