@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/mythtv/Attic/mythtv-0.21_p18314-r1.ebuild,v 1.6 2009/03/02 21:18:03 beandog Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/mythtv/Attic/mythtv-0.21_p18314-r1.ebuild,v 1.5 2008/12/23 17:16:50 maekke Exp $
 
 EAPI=1
 inherit flag-o-matic multilib eutils qt3 mythtv toolchain-funcs python confutils
@@ -8,8 +8,6 @@ inherit flag-o-matic multilib eutils qt3 mythtv toolchain-funcs python confutils
 DESCRIPTION="Homebrew PVR project"
 SLOT="0"
 KEYWORDS="amd64 ppc x86"
-
-SRC_URI="mirrors://gentoo/${P}.tar.bz2"
 
 IUSE_VIDEO_CARDS="video_cards_nvidia"
 IUSE="aac alsa altivec autostart debug directv dvb dvd fftw ieee1394 jack lcd \
@@ -54,6 +52,8 @@ DEPEND="${RDEPEND}
 
 PDEPEND="=x11-themes/mythtv-themes-${MY_PV}*"
 
+S="${WORKDIR}/${PN}-${MY_PV}"
+
 MYTHTV_GROUPS="video,audio,tty,uucp"
 
 pkg_setup() {
@@ -73,9 +73,7 @@ pkg_setup() {
 }
 
 src_unpack() {
-
-	unpack ${A}
-	cd "${S}"
+	subversion_src_unpack
 
 	# upstream wants the revision number in their version.cpp
 	# since the subversion.eclass strips out the .svn directory
