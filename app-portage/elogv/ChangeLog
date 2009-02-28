@@ -1,6 +1,18 @@
 # ChangeLog for app-portage/elogv
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/elogv/ChangeLog,v 1.49 2008/12/07 19:27:23 zmedico Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-portage/elogv/ChangeLog,v 1.53 2009/02/27 23:59:18 fauli Exp $
+
+  27 Feb 2009; Christian Faulhammer <fauli@gentoo.org> -elogv-0.7.2.ebuild:
+  clean up
+
+  26 Feb 2009; Raúl Porcel <armin76@gentoo.org> elogv-0.7.3.ebuild:
+  x86 stable wrt #260036
+
+  25 Feb 2009; Joseph Jezak <josejx@gentoo.org> elogv-0.7.3.ebuild:
+  Marked ppc stable for bug #260036.
+
+  24 Feb 2009; Thomas Anderson <gentoofan23@gentoo.org> elogv-0.7.3.ebuild:
+  stable amd64, bug 260036
 
 *elogv-0.7.3 (07 Dec 2008)
 
