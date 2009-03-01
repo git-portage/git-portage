@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/hostapd/Attic/hostapd-0.6.7.ebuild,v 1.2 2009/02/25 21:50:01 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/hostapd/Attic/hostapd-0.6.7.ebuild,v 1.4 2009/02/26 22:11:56 gurligebis Exp $
 
 inherit toolchain-funcs linux-info
 
@@ -10,7 +10,7 @@ SRC_URI="http://hostap.epitest.fi/releases/${P}.tar.gz"
 
 LICENSE="|| ( GPL-2 BSD )"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="ipv6 logwatch madwifi ssl wps"
 
 DEPEND="ssl? ( dev-libs/openssl )
@@ -94,6 +94,7 @@ generate_config() {
 	echo "CONFIG_IAPP=y" >> ${CONFIG}
 	echo "CONFIG_IEEE80211R=y" >> ${CONFIG}
 	echo "CONFIG_IEEE80211W=y" >> ${CONFIG}
+	echo "CONFIG_IEEE80211N=y" >> ${CONFIG}
 	echo "CONFIG_PEERKEY=y" >> ${CONFIG}
 	echo "CONFIG_RSN_PREAUTH=y" >> ${CONFIG}
 
@@ -176,6 +177,9 @@ pkg_postinst() {
 		einfo "madwifi-old, madwifi-ng or madwifi-ng-tools."
 		einfo "You should remerge ${PN} after upgrading these packages."
 		einfo
+		einfo "Since you are using the madwifi-ng driver, you should disable or"
+		einfo "comment out wme_enabled from hostapd.conf, since it will"
+		einfo "cause problems otherwise (see bug #260377"
 	fi
 	#if [ -e "${KV_DIR}"/net/mac80211 ]; then
 	#	einfo "This package now compiles against the headers installed by"
