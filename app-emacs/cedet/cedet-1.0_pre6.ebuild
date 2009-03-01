@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/cedet/Attic/cedet-1.0_pre6.ebuild,v 1.3 2009/03/03 07:45:42 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/cedet/Attic/cedet-1.0_pre6.ebuild,v 1.1 2009/03/01 15:38:25 ulm Exp $
 
 NEED_EMACS=22
 
@@ -33,44 +33,32 @@ src_test() {
 }
 
 src_install() {
-	local target file dir
 	find . -type d -name tests -prune -o -type f -print | while read target
 	do
-		file=${target##*/}
-		dir=${target%/*}; dir=${dir#./}
-		case "${file}" in
+		local directory=$(dirname ${target}) file=$(basename ${target})
+		local sub_directory=$(echo ${directory} | sed "s%^${S}/*%%;s/^$/./")
+		case $file in
 			*~ | Makefile | *.texi | *-script | PRERELEASE_CHECKLIST \
 				| Project.ede | USING_CEDET_FROM_CVS | grammar-fw-ov.txt)
 				;;
 			ChangeLog | README | AUTHORS | *NEWS | INSTALL \
 				| renamelist.txt | semanticdb.sh)
-				docinto "${dir}"
-				dodoc "${target}" || die ;;
-			*.el | *.by | *.wy)
+				docinto ${sub_directory}
+				dodoc ${target} || die ;;
+			*.el | *.elc | *.by | *.wy)
 				# install grammar sources along with the elisp files, since
 				# the location where semantic expects them is not configurable
-				insinto "${SITELISP}/${PN}/${dir}"
-				doins "${target}" || die ;;
-			*.elc)
-				# we are in a subshell, so collecting in a variable won't work
-				echo "${target}" >>"${T}/elc-list.txt" ;;
+				insinto ${SITELISP}/${PN}/${sub_directory}
+				doins ${target} || die ;;
 			*.srt | *.xpm)
-				insinto "${SITEETC}/${PN}/${dir}"
-				doins "${target}" || die ;;
+				insinto ${SITEETC}/${PN}/${sub_directory}
+				doins ${target} || die ;;
 			*.info* | grammar-fw-ov.png)
-				doinfo "${target}" || die ;;
+				doinfo ${target} || die ;;
 			*)
-				die "Unrecognised file ${target}" ;;
+				die "Unrecognised file ${sub_directory}/${file}" ;;
 		esac
 	done
-
-	# make sure that the compiled elisp files have a later time stamp than
-	# the corresponding sources, in order to suppress warnings at run time
-	while read target; do
-		dir=${target%/*}; dir=${dir#./}
-		insinto "${SITELISP}/${PN}/${dir}"
-		doins "${target}" || die
-	done <"${T}/elc-list.txt"
 
 	elisp-site-file-install "${FILESDIR}/${SITEFILE}" || die
 }
