@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/sid-milter/Attic/sid-milter-0.2.14.ebuild,v 1.4 2008/01/29 18:35:06 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/sid-milter/Attic/sid-milter-0.2.14.ebuild,v 1.5 2009/02/28 15:13:52 mrness Exp $
 
 inherit eutils toolchain-funcs
 
@@ -24,7 +24,7 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 
 	cd "${S}" || die "source dir not found"
 
