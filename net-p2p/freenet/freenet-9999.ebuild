@@ -1,9 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/freenet/Attic/freenet-9999.ebuild,v 1.1 2009/02/03 20:23:06 tommy Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/freenet/Attic/freenet-9999.ebuild,v 1.2 2009/02/27 18:26:21 tommy Exp $
 
 EAPI=1
-DATE=20090113
+DATE=20090226
 ESVN_REPO_URI="http://freenet.googlecode.com/svn/trunk/freenet"
 ESVN_OPTIONS="--ignore-externals"
 inherit eutils java-pkg-2 java-ant-2 multilib subversion
