@@ -1,15 +1,15 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/ivtv-utils/Attic/ivtv-utils-1.3.0-r1.ebuild,v 1.3 2009/03/03 16:48:58 beandog Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/ivtv-utils/Attic/ivtv-utils-1.3.0-r1.ebuild,v 1.1 2009/01/28 20:51:56 truedfx Exp $
 
 inherit eutils linux-mod
 
-DESCRIPTION="IVTV utilities for Hauppauge PVR PCI cards"
+DESCRIPTION="ivtv driver for Hauppauge PVR PCI cards"
 HOMEPAGE="http://www.ivtvdriver.org"
 SRC_URI="http://dl.ivtvdriver.org/ivtv/archive/1.3.x/${P}.tar.gz"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="perl"
 RDEPEND=">=sys-fs/udev-103"
 DEPEND="app-arch/unzip
@@ -28,15 +28,16 @@ pkg_setup() {
 	MODULE_NAMES="saa717x(extra:${S}/i2c-drivers)"
 	BUILD_TARGETS="all"
 	CONFIG_CHECK="EXPERIMENTAL KMOD HAS_IOMEM FW_LOADER I2C I2C_ALGOBIT
-		VIDEO_DEV VIDEO_CAPTURE_DRIVERS VIDEO_V4L1 VIDEO_V4L2 VIDEO_IVTV"
+		VIDEO_DEV VIDEO_CAPTURE_DRIVERS VIDEO_V4L1 VIDEO_V4L2
+		!VIDEO_HELPER_CHIPS_AUTO VIDEO_IVTV"
 
 	if ! ( kernel_is ge 2 6 26 ); then
 		eerror "This package is only for the fully in-kernel"
 		eerror "IVTV driver shipping with kernel 2.6.26 and higher"
 		eerror ""
 		eerror "You will need to either:"
-		eerror "a) emerge a 2.6.26.x or higher kernel"
-		eerror "b) emerge media-tv/ivtv"
+		eerror "a) emerge a different kernel"
+		eerror "b) emerge ivtv"
 		eerror ""
 		eerror "See http://ivtvdriver.org/ for more information"
 		die "This only works on 2.6.26 and newer kernels"
