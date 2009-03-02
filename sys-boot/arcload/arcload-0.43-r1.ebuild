@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/arcload/Attic/arcload-0.43-r1.ebuild,v 1.4 2007/07/15 02:25:03 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/arcload/Attic/arcload-0.43-r1.ebuild,v 1.5 2009/03/02 02:21:30 kumba Exp $
 
 inherit eutils toolchain-funcs
 
@@ -9,9 +9,10 @@ HOMEPAGE="http://www.linux-mips.org/wiki/index.php/ARCLoad"
 SRC_URI="ftp://ftp.linux-mips.org/pub/linux/mips/people/skylark/${P}.tar.bz2"
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="-* mips"
+KEYWORDS="-* ~mips"
 IUSE=""
 DEPEND="sys-boot/dvhtool"
+RDEPEND=""
 RESTRICT="strip"
 
 pkg_setup() {
@@ -31,31 +32,30 @@ src_unpack() {
 	# Adds in detection support for the R14000, and
 	# tweaks detectbaud() in loader/detect.c to return
 	# a default of 9600bps when the function fails
-	epatch ${FILESDIR}/${P}-tweaks1.patch
+	epatch "${FILESDIR}"/${P}-tweaks1.patch
 }
 
 src_compile() {
 	echo -e ""
 	einfo ">>> Building 32-bit version (sashARCS) for IP22/IP32 ..."
-	cd ${S}
+	cd "${S}"
 	make MODE=M32 clean || die
 	make CC=$(tc-getCC) LD=$(tc-getLD) MODE=M32 || die
-	cp ${S}/arcload.ecoff ${WORKDIR}/sashARCS
+	cp "${S}"/arcload.ecoff "${WORKDIR}"/sashARCS
 
 	echo -e ""
 	einfo ">>> Building 64-bit version (sash64) for IP27/IP28/IP30 ..."
 	make MODE=M64 clean || die
 	make CC=$(tc-getCC) LD=$(tc-getLD) MODE=M64 || die
-	cp ${S}/arcload ${WORKDIR}/sash64
+	cp $"{S}"/arcload "${WORKDIR}"/sash64
 }
 
 src_install() {
-	cd ${S}
 	dodir /usr/lib/arcload
-	cp ${WORKDIR}/sashARCS ${D}/usr/lib/arcload
-	cp ${WORKDIR}/sash64 ${D}/usr/lib/arcload
-	cp ${S}/arc.cf-bootcd ${D}/usr/lib/arcload/arc-bootcd.cf
-	cp ${S}/arc.cf-octane ${D}/usr/lib/arcload/arc-octane.cf
+	cp "${WORKDIR}"/sashARCS "${D}"/usr/lib/arcload
+	cp "${WORKDIR}"/sash64 "${D}"/usr/lib/arcload
+	cp "${S}"/arc.cf-bootcd "${D}"/usr/lib/arcload/arc-bootcd.cf
+	cp "${S}"/arc.cf-octane "${D}"/usr/lib/arcload/arc-octane.cf
 }
 
 pkg_postinst() {
