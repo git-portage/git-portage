@@ -1,10 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mplayerthumbs/Attic/mplayerthumbs-1.1.ebuild,v 1.3 2009/02/10 22:12:28 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mplayerthumbs/Attic/mplayerthumbs-1.1.ebuild,v 1.4 2009/03/03 16:14:28 scarabeus Exp $
 
 EAPI="2"
 
-KDE_MINIMAL="4.2"
 inherit kde4-base
 
 DESCRIPTION="A Thumbnail Generator for Video Files on Konqueror."
@@ -16,7 +15,8 @@ SLOT="1"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="|| (
+DEPEND="!kdeprefix? ( !media-video/mplayerthumbs:0 )
+	|| (
 		>=kde-base/dolphin-${KDE_MINIMAL}[kdeprefix=]
 		>=kde-base/konqueror-${KDE_MINIMAL}[kdeprefix=]
 	)
