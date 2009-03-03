@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/slmodem/Attic/slmodem-2.9.11_pre20080126-r1.ebuild,v 1.2 2008/04/13 13:30:48 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/slmodem/Attic/slmodem-2.9.11_pre20080817.ebuild,v 1.1 2009/03/03 20:08:41 mrness Exp $
 
 inherit eutils linux-mod multilib
 
@@ -13,7 +13,7 @@ SRC_URI="http://linmodems.technion.ac.il/packages/smartlink/${P/_pre/-}.tar.gz
 
 LICENSE="Smart-Link"
 SLOT="0"
-KEYWORDS="-* ~amd64 x86"
+KEYWORDS="-* ~amd64 ~x86"
 IUSE="alsa usb"
 
 DEPEND="alsa? ( media-libs/alsa-lib )
@@ -30,16 +30,24 @@ pkg_setup() {
 	use amd64 && multilib_toolchain_setup x86
 
 	MODULE_NAMES="ungrab-winmodem(:${WORKDIR}/ungrab-winmodem-${UNGRAB_PV})"
+	CONFIG_CHECK=""
+	MY_SLMODULES=""
 	if ! use amd64; then
 		MODULE_NAMES="${MODULE_NAMES} slamr(net:${S}/drivers)"
-		if use usb; then
-			MODULE_NAMES="${MODULE_NAMES} slusb(net:${S}/drivers)"
-			CONFIG_CHECK="USB"
-		fi
+		MY_SLMODULES="${MY_SLMODULES} slamr.o"
+	fi
+	if kernel_is ge 2 6 25; then
+	    if use usb; then
+		ewarn "slusb module will not be installed because is not compatible with kernels >=2.6.25"
+	    fi
+	elif use usb; then
+		MODULE_NAMES="${MODULE_NAMES} slusb(net:${S}/drivers)"
+		CONFIG_CHECK="${CONFIG_CHECK} USB"
+		MY_SLMODULES="${MY_SLMODULES} slusb.o"
 	fi
 	BUILD_TARGETS="all"
 	if kernel_is ge 2 6 24; then
-		CONFIG_CHECK="PCI_LEGACY"
+		CONFIG_CHECK="${CONFIG_CHECK} PCI_LEGACY"
 	fi
 	linux-mod_pkg_setup
 	BUILD_PARAMS="KERNEL_DIR=${KV_OUT_DIR}"
@@ -56,12 +64,13 @@ src_unpack() {
 	epatch "${FILESDIR}"/${PN}-ungrab-winmodem-hp500.patch
 
 	cd "${S}"
-	epatch "${FILESDIR}/${P%%_*}-makefile.patch"
-	epatch "${FILESDIR}/${P%%_*}-kernel-2.6.24.patch"
-	epatch "${FILESDIR}/${P%%_*}-alsa-period-size.patch"
+	epatch "${FILESDIR}/${P%%_*}-makefile-r1.patch"
+	epatch "${FILESDIR}/${P%%_*}-create-mode.patch"
 
 	cd "${S}"/drivers
-	sed -i "s:SUBDIRS=\$(shell pwd):SUBDIRS=${S}/drivers:" Makefile
+	sed -i -e "s:SUBDIRS=\$(shell pwd):SUBDIRS=${S}/drivers:" \
+	    -e "s|^obj-m:=.*$|obj-m:=${MY_SLMODULES}|" \
+	    Makefile
 	convert_to_m Makefile
 	sed -i "s:.*=[ \t]*THIS_MODULE.*::" st7554.c amrmo_init.c old_st7554.c
 	sed -i 's:MODULE_PARM(\([^,]*\),"i");:module_param(\1, int, 0);:' st7554.c \
@@ -70,7 +79,7 @@ src_unpack() {
 
 src_compile() {
 	local MAKE_PARAMS=""
-	if use alsa || use amd64; then
+	if use alsa; then
 		MAKE_PARAMS="SUPPORT_ALSA=1"
 	fi
 	emake ${MAKE_PARAMS} modem || die "failed to build modem"
@@ -96,26 +105,23 @@ src_install() {
 	if use alsa; then
 		sed -i -e "s/# MODULE=alsa/MODULE=alsa/" \
 			-e "s/# HW_SLOT=modem:1/HW_SLOT=modem:1/" "${D}/etc/conf.d/slmodem"
+	elif use usb; then
+		sed -i "s/# MODULE=slusb/MODULE=slusb/" "${D}/etc/conf.d/slmodem"
 	else
 		sed -i "s/# MODULE=slamr/MODULE=slamr/" "${D}/etc/conf.d/slmodem"
 	fi
 
-	# Add module aliases and install udev script
-	insinto /etc/modules.d/
-	newins "${FILESDIR}/slmodem-modules" ${PN}
-	if use usb; then
-		exeinto /$(get_libdir)/udev
-		newexe "${FILESDIR}/slusb-udev.script" slmodem_usb.sh
-	fi
-
-	dodir /etc/modprobe.d
-	echo -e "blacklist slusb\nblacklist slamr\nblacklist snd-intel8x0m" >> "${D}/etc/modprobe.d/${PN}"
+	# Add module aliases
+	insinto /etc/modprobe.d/
+	newins "${FILESDIR}/slmodem-modprobe" ${PN}
 
 	# Add configuration for udev
 	dodir /etc/udev/rules.d/
 	echo 'KERNEL=="slamr", NAME="slamr0" GROUP="dialout"' > \
 		 "${D}/etc/udev/rules.d/55-${PN}.rules"
 	if use usb; then
+		exeinto /$(get_libdir)/udev
+		newexe "${FILESDIR}/slusb-udev.script" slmodem_usb.sh
 		echo 'KERNEL=="slusb", NAME="slusb0" GROUP="dialout" RUN+="slmodem_usb.sh"' >> \
 			 "${D}/etc/udev/rules.d/55-${PN}.rules"
 	fi
@@ -157,5 +163,4 @@ pkg_postinst() {
 	elog "If you see the following in dmesg:"
 	elog "    slamr: device 10b9:5457 is grabbed by driver serial"
 	elog "you need to modprobe ungrab-winmodem before slamr"
-	elog "See /etc/modules.d/slmodem for details."
 }
