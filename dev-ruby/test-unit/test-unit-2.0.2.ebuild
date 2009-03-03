@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/test-unit/Attic/test-unit-2.0.2.ebuild,v 1.2 2009/01/18 10:12:24 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/test-unit/Attic/test-unit-2.0.2.ebuild,v 1.3 2009/03/01 12:43:57 a3li Exp $
 
 inherit ruby
 
-DESCRIPTION="Test::Unit for Ruby 1.9"
+DESCRIPTION="An improved version of the Test::Unit framework from Ruby 1.8"
 HOMEPAGE="http://test-unit.rubyforge.org/"
 SRC_URI="mirror://rubyforge/${PN}/${P}.tgz"
 
