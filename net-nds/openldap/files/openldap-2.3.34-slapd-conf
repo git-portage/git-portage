@@ -49,8 +49,7 @@ argsfile	/var/run/openldap/slapd.args
 
 database	hdb
 suffix		"dc=my-domain,dc=com"
-#         <kbyte> <min>
-checkpoint	32	30 
+checkpoint	32	30 # <kbyte> <min>
 rootdn		"cn=Manager,dc=my-domain,dc=com"
 # Cleartext passwords, especially for the rootdn, should
 # be avoid.  See slappasswd(8) and slapd.conf(5) for details.
