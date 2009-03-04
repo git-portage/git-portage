@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libyaml/Attic/libyaml-0.0.1.ebuild,v 1.3 2007/12/31 05:34:05 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libyaml/Attic/libyaml-0.0.1.ebuild,v 1.4 2009/03/01 16:35:13 patrick Exp $
 
 inherit eutils
 
@@ -21,7 +21,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	# conditionally remove tests
-	if ! hasq test ${FEATURES} ; then
+	if use test ; then
 		sed -i -e 's: tests::g' Makefile*
 	fi
 }
