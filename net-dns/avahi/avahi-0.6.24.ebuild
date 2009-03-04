@@ -1,6 +1,6 @@
-# Copyright 2000-2009 Gentoo Foundation
+# Copyright 2000-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/avahi/Attic/avahi-0.6.24.ebuild,v 1.8 2009/03/05 21:13:27 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/avahi/Attic/avahi-0.6.24.ebuild,v 1.7 2008/12/22 18:51:28 armin76 Exp $
 
 EAPI="1"
 
