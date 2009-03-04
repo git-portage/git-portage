@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-9.63.ebuild,v 1.4 2008/12/20 17:32:57 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-9.63.ebuild,v 1.5 2009/03/03 13:20:25 jer Exp $
 
 GCONF_DEBUG="no"
 
@@ -24,7 +24,6 @@ for MY_LINGUA in ${MY_LINGUAS}; do
 done
 
 O_URI="mirror://opera/"
-O_URI="http://ftp.opera.com/pub/opera/"
 O_FTP="/963/final/en/"
 O_SUFF="2474"
 
