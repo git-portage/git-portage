@@ -1,6 +1,24 @@
 # ChangeLog for app-dicts/gwaei
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/gwaei/ChangeLog,v 1.9 2009/02/13 15:45:48 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/gwaei/ChangeLog,v 1.12 2009/03/03 17:14:39 matsuu Exp $
+
+*gwaei-0.15.1-r2 (03 Mar 2009)
+
+  03 Mar 2009; MATSUU Takuto <matsuu@gentoo.org> +gwaei-0.15.1-r2.ebuild:
+  Removed --disable-gconf.
+
+*gwaei-0.15.1-r1 (02 Mar 2009)
+
+  02 Mar 2009; MATSUU Takuto <matsuu@gentoo.org>
+  +files/gwaei-0.15.1-glib.patch, +gwaei-0.15.1-r1.ebuild:
+  Fixed to compile without gnome USE flag.
+
+*gwaei-0.15.1 (02 Mar 2009)
+
+  02 Mar 2009; MATSUU Takuto <matsuu@gentoo.org>
+  +files/gwaei-0.15.1-parallel-install.patch, -gwaei-0.13.2.ebuild,
+  -gwaei-0.14.0.ebuild, +gwaei-0.15.1.ebuild:
+  Version bumped. Added gnome USE flag. Removed old versions.
 
 *gwaei-0.14.0-r1 (13 Feb 2009)
 
