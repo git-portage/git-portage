@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9556 2009/03/07 13:33:40 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.9549 2009/03/05 10:34:01 flameeyes Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -31,16 +31,6 @@
 
 #--- END OF EXAMPLES ---
 
-# Rémi Cardona <remi@gentoo.org> (7 Mar 2009)
-# snapshot of the unreleased 7.4 branch, just needs to be tested
-=media-libs/mesa-7.3-r1
-
-# Tomas Chvatal <scarabeus@gentoo.org> (6 Mar 2009)
-# Mask for removal per bug #261285
-# Unmaintained, broken, no new releases, don't work
-# due to 6.4.09
-net-misc/kickpim
-
 # Diego E. Pettenò <flameeyes@gmail.com> (5 Mar 2009)
 # Masked pending removal for bug #261288, multiple issues.
 # Removal scheduled for April 5th, 2009.
@@ -52,8 +42,6 @@ dev-ruby/ruby-gdchart
 # to be masked. However, some users my experience
 # better functionality with this driver
 =x11-drivers/nvidia-drivers-180.35
-
-# Tomas Chvatal <scarabeus@gentoo.org> (6 Mar 2009)
 
 # Thomas Sachau <tommy@gentoo.org> (2 Mar 2009)
 # Mask for removal, was merged into dev-java/fec
@@ -85,6 +73,11 @@ sci-chemistry/gchempaint
 # Timothy Redaelli <drizzt@gentoo.org> (26 Feb 2009)
 # Masked for testing
 ~dev-libs/libedit-20090111.3.0
+
+# Rémi Cardona <remi@gentoo.org> (26 Feb 2009)
+# Upstream says it's a bugfix release but the ChangeLog indicates otherwise.
+# p.masked until it has been sufficiently tested (by us or others)
+=x11-drivers/xf86-video-intel-2.6.2
 
 # Matthias Schwarzott <zzam@gentoo.org> (25 Feb 2009)
 # masked for removal in 30days
@@ -223,6 +216,11 @@ media-plugins/mythzoneminder
 # Masked until the deps are put in the tree
 >=kde-base/printer-applet-4.1.96
 >=kde-base/system-config-printer-kde-4.1.96
+
+# Michael Sterrett <mr_bones_@gentoo.org> (29 Jan 2009)
+# Old and unmaintained.  Used games-action/extreme-tuxracer instead.
+# mask for removal in 30 days.
+games-arcade/ppracer
 
 # Torsten Veller <tove@gentoo.org> (28 Jan 2009)
 # Masked for testing (#249629)
@@ -1189,6 +1187,10 @@ app-pda/libopensync-plugin-synce
 # Sorting out media-video/{spca5xx,gspca{,v1}} bug 159176
 media-video/spca5xx
 media-video/gspca
+
+# Steve Dibb <beandog@gentoo.org> (12 Mar 2007)
+# needs testing
+>=media-video/transcode-1.1.0_alpha4
 
 # Stefan Cornelius <dercorny@gentoo.org> (7 Mar 2007)
 # Masking net-misc/xsupplicant due to security bug 154995
