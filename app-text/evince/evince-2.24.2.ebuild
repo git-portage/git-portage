@@ -1,8 +1,7 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/evince/Attic/evince-2.24.2.ebuild,v 1.4 2009/03/07 14:47:36 gentoofan23 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/evince/Attic/evince-2.24.2.ebuild,v 1.2 2009/03/05 21:40:01 ranger Exp $
 
-EAPI="2"
 inherit eutils gnome2
 
 DESCRIPTION="Simple document viewer for GNOME"
@@ -10,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/projects/evince/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ppc ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="dbus debug djvu doc dvi gnome-keyring nautilus t1lib tiff"
 
 RDEPEND="
@@ -23,7 +22,7 @@ RDEPEND="
 	>=gnome-base/libglade-2
 	>=gnome-base/gconf-2
 	nautilus? ( >=gnome-base/nautilus-2.10 )
-	>=app-text/poppler-bindings-0.8[gtk]
+	>=app-text/poppler-bindings-0.8
 	dvi? (
 		virtual/tex-base
 		t1lib? ( >=media-libs/t1lib-5.0.0 )
@@ -56,6 +55,11 @@ pkg_setup() {
 		$(use_enable t1lib)
 		$(use_enable tiff)
 		$(use_enable nautilus)"
+
+	if ! built_with_use app-text/poppler-bindings gtk cairo; then
+		eerror "Please re-emerge app-text/poppler-bindings with the gtk and cairo USE flag set"
+		die "poppler-bindings needs gtk and cairo flags set"
+	fi
 }
 
 src_unpack() {
