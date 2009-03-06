@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/rtorrent/Attic/rtorrent-0.8.4-r1.ebuild,v 1.5 2009/03/01 19:52:19 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/rtorrent/Attic/rtorrent-0.8.4-r1.ebuild,v 1.7 2009/03/06 00:13:27 jer Exp $
 
 inherit base eutils toolchain-funcs flag-o-matic
 
@@ -10,7 +10,7 @@ SRC_URI="http://libtorrent.rakshasa.no/downloads/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~hppa ~ia64 ppc ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="amd64 hppa ~ia64 ppc ppc64 ~sparc x86 ~x86-fbsd"
 IUSE="daemon debug ipv6 xmlrpc"
 
 COMMON_DEPEND=">=net-libs/libtorrent-0.12.${PV##*.}
@@ -23,7 +23,8 @@ RDEPEND="${COMMON_DEPEND}
 DEPEND="${COMMON_DEPEND}
 	dev-util/pkgconfig"
 
-PATCHES=( "${FILESDIR}/${PN}-0.8.2-gcc34.patch" )
+PATCHES=( "${FILESDIR}/${PN}-0.8.2-gcc34.patch"
+	"${FILESDIR}/${PN}-0.8.4-gcc44.patch" )
 
 src_compile() {
 	replace-flags -Os -O2
