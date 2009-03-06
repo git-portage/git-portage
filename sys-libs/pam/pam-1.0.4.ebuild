@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/pam/Attic/pam-1.0.4.ebuild,v 1.2 2009/03/04 14:19:45 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/pam/Attic/pam-1.0.4.ebuild,v 1.6 2009/03/05 22:09:54 jer Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -17,7 +17,7 @@ SRC_URI="mirror://kernel/linux/libs/pam/library/${MY_P}.tar.bz2"
 
 LICENSE="PAM"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm hppa ~ia64 ~m68k ~mips ~ppc ppc64 ~s390 ~sh sparc ~x86"
 IUSE="cracklib nls elibc_FreeBSD selinux vim-syntax audit test elibc_glibc"
 
 RDEPEND="nls? ( virtual/libintl )
@@ -110,7 +110,10 @@ src_unpack() {
 	# Remove NIS dependencies, see bug #235431
 	epatch "${FILESDIR}/${MY_PN}-1.0.2-noyp.patch"
 
-	#Remove libtool-2 libtool macros, see bug 261167
+	# Fix tests on systems where sizeof(void*) != 8
+	epatch "${FILESDIR}/${MY_PN}-1.0.4-fix-tests.patch"
+
+	# Remove libtool-2 libtool macros, see bug 261167
 	rm m4/libtool.m4 m4/lt*.m4 || die "rm libtool macros failed."
 
 	AT_M4DIR="m4" eautoreconf
