@@ -1,8 +1,7 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/centerim/Attic/centerim-4.22.6.ebuild,v 1.3 2009/03/07 19:32:23 gentoofan23 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/centerim/Attic/centerim-4.22.6.ebuild,v 1.2 2009/01/10 16:21:30 maekke Exp $
 
-EAPI="2"
 inherit eutils
 
 PROTOCOL_IUSE="aim gadu icq irc jabber lj msn rss yahoo"
@@ -29,7 +28,7 @@ DEPEND=">=sys-libs/ncurses-5.2
 		crypt? ( >=app-crypt/gpgme-1.0.2 )
 	)
 	msn? (
-		net-misc/curl[ssl]
+		net-misc/curl
 		dev-libs/openssl
 	)"
 
@@ -57,6 +56,16 @@ pkg_setup() {
 		eerror "${PROTOCOL_IUSE}"
 		eerror
 		die "Please activate at least one protocol USE flag!"
+	fi
+
+	if use msn && ! built_with_use net-misc/curl ssl
+	then
+		eerror
+		eerror "As of right now, the msn use flags requires curl to be built"
+		eerror "with SSL support. Make sure ssl is in your USE flags and"
+		eerror "re-emerge net-misc/curl."
+		eerror
+		die "net-misc/curl dependencie issue"
 	fi
 
 	if use otr && ! use jabber
