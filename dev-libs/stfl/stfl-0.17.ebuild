@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/stfl/Attic/stfl-0.17.ebuild,v 1.5 2009/03/07 19:23:13 gentoofan23 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/stfl/Attic/stfl-0.17.ebuild,v 1.4 2008/06/22 17:30:49 gentoofan23 Exp $
 
-inherit eutils perl-module python toolchain-funcs
+inherit perl-module toolchain-funcs eutils
 
 DESCRIPTION="A library which implements a curses-based widget set for text terminals"
 HOMEPAGE="http://www.clifford.at/stfl/"
@@ -14,15 +14,13 @@ KEYWORDS="x86"
 
 IUSE="examples perl ruby"
 
-COMMON_DEPEND="sys-libs/ncurses[unicode]
-	perl? ( dev-lang/perl )
-	ruby? ( dev-lang/ruby )"
+DEPEND="sys-libs/ncurses
+		perl? ( dev-lang/swig dev-lang/perl )
+		ruby? ( dev-lang/swig dev-lang/ruby )"
 
-DEPEND="${COMMMON_DEPEND}
-		perl? ( dev-lang/swig )
-		ruby? ( dev-lang/swig )"
-
-RDEPEND="${COMMON_DEPEND}"
+RDEPEND="sys-libs/ncurses
+		perl? ( dev-lang/perl )
+		ruby? ( dev-lang/ruby )"
 
 src_unpack() {
 	unpack ${A}
@@ -31,9 +29,8 @@ src_unpack() {
 		-e "s!-Os -ggdb!!" \
 		-e "s!^all:.*!all: libstfl.a!" \
 		Makefile
-	
-	python_version
-	sed -i -e "s:/usr/lib/python2.4:${D}/usr/lib/python${PYVER}:" \
+
+	sed -i -e "s:/usr/lib/python2.4:${D}/usr/lib/python2.4:" \
 		python/Makefile.snippet
 
 	if ! use perl; then
@@ -45,13 +42,20 @@ src_unpack() {
 }
 
 src_compile() {
+	if ! built_with_use sys-libs/ncurses unicode ; then
+		eerror "For this package to compile you must"
+		eerror "enable unicode use flag for ncurses."
+		eerror "Please re-emerge ncurses with unicode"
+		eerror "use flag."
+		die
+	fi
 	emake -j1 CC="$(tc-getCC)" || die "make failed"
 }
 
 src_install() {
 	local exdir="/usr/share/doc/${PF}/examples"
 
-	dodir /usr/lib/python${PYVER}/lib-dynload
+	dodir /usr/lib/python2.4/lib-dynload
 	emake -j1 prefix="/usr" DESTDIR="${D}" install || die "make install failed"
 
 	dodoc README
