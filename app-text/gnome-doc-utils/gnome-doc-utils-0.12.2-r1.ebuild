@@ -1,8 +1,7 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/gnome-doc-utils/Attic/gnome-doc-utils-0.12.2-r1.ebuild,v 1.12 2009/03/07 14:40:24 gentoofan23 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/gnome-doc-utils/Attic/gnome-doc-utils-0.12.2-r1.ebuild,v 1.11 2009/01/26 23:00:17 eva Exp $
 
-EAPI="2"
 inherit autotools eutils python gnome2
 
 DESCRIPTION="A collection of documentation utilities for the Gnome project"
@@ -13,7 +12,7 @@ SLOT="0"
 KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd"
 IUSE=""
 
-RDEPEND=">=dev-libs/libxml2-2.6.12[python]
+RDEPEND=">=dev-libs/libxml2-2.6.12
 	 >=dev-libs/libxslt-1.1.8
 	 >=dev-lang/python-2"
 DEPEND="${RDEPEND}
@@ -24,7 +23,6 @@ DEPEND="${RDEPEND}
 	~app-text/docbook-xml-dtd-4.4"
 
 DOCS="AUTHORS ChangeLog NEWS README"
-G2CONF="--disable-scrollkeeper"
 
 src_unpack() {
 	gnome2_src_unpack
@@ -39,6 +37,14 @@ src_unpack() {
 	AT_M4DIR="tools" eautomake
 }
 
+pkg_setup() {
+	G2CONF="--disable-scrollkeeper"
+
+	if ! built_with_use dev-libs/libxml2 python; then
+		eerror "Please re-emerge dev-libs/libxml2 with the python use flag set"
+		die "dev-libs/libxml2 needs python use flag"
+	fi
+}
 
 pkg_postinst() {
 	python_version
