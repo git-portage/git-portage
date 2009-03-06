@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/gutenprint/Attic/gutenprint-5.1.7.ebuild,v 1.2 2008/04/05 16:21:37 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/gutenprint/Attic/gutenprint-5.1.7.ebuild,v 1.4 2009/03/05 16:26:28 mr_bones_ Exp $
 
 inherit flag-o-matic eutils multilib
 
@@ -26,6 +26,16 @@ LICENSE="GPL-2"
 SLOT="0"
 
 append-flags -fno-inline-functions
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
+	epatch "${FILESDIR}"/${P}-parallel-build.patch
+
+	# IJS Patch
+	sed -i -e "s:<ijs\([^/]\):<ijs/ijs\1:g" src/ghost/ijsgutenprint.c || die "sed failed"
+}
 
 src_compile() {
 	if use cups && use ppds; then
@@ -59,17 +69,11 @@ src_compile() {
 		$(use_with cups) \
 		$myconf || die "econf failed"
 
-	# IJS Patch
-	sed -i -e "s:<ijs\([^/]\):<ijs/ijs\1:g" src/ghost/ijsgutenprint.c || die "sed failed"
-
 	emake || die "emake failed"
 }
 
 src_install () {
-	emake -j1 DESTDIR="${D}" install || die "emake install failed"
-
-	exeinto /usr/share/gutenprint
-	doexe test/{unprint,pcl-unprint,bjc-unprint,parse-escp2,escp2-weavetest,run-testdither,run-weavetest,testdither}
+	emake DESTDIR="${D}" install || die "emake install failed"
 
 	dodoc AUTHORS ChangeLog NEWS README doc/gutenprint-users-manual.{pdf,odt}
 	dohtml doc/FAQ.html
