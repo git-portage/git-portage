@@ -1,12 +1,12 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/mg/Attic/mg-20080610.ebuild,v 1.4 2009/03/06 07:01:11 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/mg/Attic/mg-20080610.ebuild,v 1.3 2008/10/24 06:31:04 ulm Exp $
 
 inherit toolchain-funcs
 
 DESCRIPTION="Micro GNU/emacs, a port from the BSDs"
-HOMEPAGE="http://www.han.dds.nl/software/mg/"
-SRC_URI="http://www.han.dds.nl/software/mg/${P}.tar.gz"
+HOMEPAGE="http://www.xs4all.nl/~hanb/software/mg/"
+SRC_URI="http://www.xs4all.nl/~hanb/software/mg/${P}.tar.gz"
 
 LICENSE="public-domain BSD"
 SLOT="0"
