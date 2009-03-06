@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-bin/Attic/virtualbox-bin-2.1.4.ebuild,v 1.2 2009/03/03 21:56:39 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-bin/Attic/virtualbox-bin-2.1.4.ebuild,v 1.4 2009/03/05 08:34:45 vapier Exp $
 
 EAPI=2
 
@@ -8,17 +8,19 @@ inherit eutils fdo-mime pax-utils
 
 MY_PV=${PV}-43001
 MY_P=VirtualBox-${MY_PV}-Linux
+SDK_PV=${PV}-42893
 
 DESCRIPTION="Family of powerful x86 virtualization products for enterprise as well as home use"
 HOMEPAGE="http://www.virtualbox.org/"
 SRC_URI="amd64? ( http://download.virtualbox.org/virtualbox/${PV}/${MY_P}_amd64.run )
 	x86? ( http://download.virtualbox.org/virtualbox/${PV}/${MY_P}_x86.run )
-	sdk? ( http://download.virtualbox.org/virtualbox/${PV}/VirtualBoxSDK-${PV}-42893.zip )"
+	sdk? ( http://download.virtualbox.org/virtualbox/${PV}/VirtualBoxSDK-${SDK_PV}.zip )"
 
 LICENSE="PUEL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+additions +chm headless sdk vboxwebsrv"
+RESTRICT="strip"
 
 RDEPEND="!!app-emulation/virtualbox-ose
 	!app-emulation/virtualbox-ose-additions
@@ -54,12 +56,14 @@ RDEPEND="!!app-emulation/virtualbox-ose
 
 S=${WORKDIR}
 
+QA_TEXTRELS_amd64="opt/VirtualBox/VBoxVMM.so"
+
 src_unpack() {
 	unpack_makeself ${MY_P}_${ARCH}.run
 	unpack ./VirtualBox.tar.bz2
 
 	if use sdk; then
-		unpack VirtualBoxSDK-${MY_PV}.zip
+		unpack VirtualBoxSDK-${SDK_PV}.zip
 	fi
 }
 
@@ -74,6 +78,7 @@ src_install() {
 	fi
 
 	insinto /opt/VirtualBox
+	dodir /opt/bin
 
 	doins UserManual.pdf
 
@@ -89,7 +94,7 @@ src_install() {
 		doins vboxwebsrv || die
 		fowners root:vboxusers /opt/VirtualBox/vboxwebsrv
 		fperms 0750 /opt/VirtualBox/vboxwebsrv
-		dosym /opt/VirtualBox/VBox.sh /usr/bin/vboxwebsrv
+		dosym /opt/VirtualBox/VBox.sh /opt/bin/vboxwebsrv
 		newinitd "${FILESDIR}"/vboxwebsrv-initd vboxwebsrv
 		newconfd "${FILESDIR}"/vboxwebsrv-confd vboxwebsrv
 	fi
@@ -134,8 +139,8 @@ src_install() {
 			pax-mark -m "${D}"/opt/VirtualBox/${each}
 		done
 
-		dosym /opt/VirtualBox/VBox.sh /usr/bin/VirtualBox
-		dosym /opt/VirtualBox/VBox.sh /usr/bin/VBoxSDL
+		dosym /opt/VirtualBox/VBox.sh /opt/bin/VirtualBox
+		dosym /opt/VirtualBox/VBox.sh /opt/bin/VBoxSDL
 	else
 		# Hardened build: Mark selected binaries set-user-ID-on-execution
 		fowners root:vboxusers /opt/VirtualBox/VBoxHeadless
@@ -148,10 +153,10 @@ src_install() {
 	fowners root:vboxusers /opt/VirtualBox/VBox.sh
 	fperms 0750 /opt/VirtualBox/VBox.sh
 
-	dosym /opt/VirtualBox/VBox.sh /usr/bin/VBoxManage
-	dosym /opt/VirtualBox/VBox.sh /usr/bin/VBoxVRDP
-	dosym /opt/VirtualBox/VBox.sh /usr/bin/VBoxHeadless
-	dosym /opt/VirtualBox/VBoxTunctl /usr/bin/VBoxTunctl
+	dosym /opt/VirtualBox/VBox.sh /opt/bin/VBoxManage
+	dosym /opt/VirtualBox/VBox.sh /opt/bin/VBoxVRDP
+	dosym /opt/VirtualBox/VBox.sh /opt/bin/VBoxHeadless
+	dosym /opt/VirtualBox/VBoxTunctl /opt/bin/VBoxTunctl
 }
 
 pkg_postinst() {
