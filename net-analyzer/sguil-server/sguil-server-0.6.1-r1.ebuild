@@ -1,8 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/sguil-server/Attic/sguil-server-0.6.1-r1.ebuild,v 1.3 2009/03/08 02:33:01 cla Exp $
-
-EAPI="2"
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/sguil-server/Attic/sguil-server-0.6.1-r1.ebuild,v 1.1 2007/12/30 20:08:38 ulm Exp $
 
 inherit eutils ssl-cert
 
@@ -12,10 +10,10 @@ HOMEPAGE="http://sguil.sourceforge.net"
 SRC_URI="mirror://sourceforge/sguil/sguil-server-${MY_PV}.tar.gz"
 LICENSE="QPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~x86"
 IUSE="ssl"
 
-DEPEND=">=dev-lang/tcl-8.3[-threads]
+DEPEND=">=dev-lang/tcl-8.3
 	>=dev-tcltk/tclx-8.3
 	dev-tcltk/tcllib
 	dev-tcltk/mysqltcl
@@ -28,6 +26,13 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}/sguil-${MY_PV}"
 
 pkg_setup() {
+	if built_with_use dev-lang/tcl threads ; then
+		eerror
+		eerror "Sguil does not run when tcl was built with threading enabled."
+		eerror "Please rebuild tcl without threads and reemerge this ebuild."
+		eerror
+		die
+	fi
 	enewgroup sguil
 	enewuser sguil -1 -1 /var/lib/sguil sguil
 }
@@ -39,7 +44,6 @@ src_unpack(){
 		-e 's:SGUILD_LIB_PATH ./lib:SGUILD_LIB_PATH /usr/lib/sguild:g' \
 		-e 's:/sguild_data/rules:/var/lib/sguil/rules:g' \
 		-e 's:/sguild_data/archive:/var/lib/sguil/archive:g' \
-		-e s:/usr/lib/sguild:/usr/$(get_libdir)/sguild:g \
 		sguild.conf || die "sed failed"
 	sed -i -e 's:set VERSION "SGUIL-0.6.0":set VERSION "SGUIL-0.6.0p1":' \
 		sguild || die "sed failed"
@@ -54,7 +58,7 @@ src_install(){
 	insinto /etc/sguil
 	doins server/{sguild.email,sguild.users,sguild.conf,sguild.queries,sguild.access,autocat.conf}
 
-	insinto /usr/$(get_libdir)/sguild
+	insinto /usr/lib/sguild
 	doins server/lib/*
 	dobin server/sguild
 	newinitd "${FILESDIR}/sguild.initd" sguild
