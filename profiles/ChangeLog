@@ -1,10 +1,28 @@
 # ChangeLog for profile directory
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2414 2009/03/06 00:57:48 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2419 2009/03/07 18:29:23 pva Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  07 Mar 2009; Peter Volkov <pva@gentoo.org> package.mask:
+  Masked app-text/ghostscript-esp for removal, bug #261434
+
+  07 Mar 2009; Dawid Węgliński <cla@gentoo.org>
+  default-linux/ppc/package.use.mask, +default/linux/amd64/package.use.mask,
+  +default/linux/powerpc/package.use.mask, hardened/amd64/package.use.mask,
+  hardened/linux/amd64/package.use.mask:
+  Mask amarok2 for net-im/kadu. See bug #238487 for references
+
+  07 Mar 2009; Rémi Cardona <remi@gentoo.org> package.mask:
+  add mesa 7.3-r1 to p.mask
+
+  07 Mar 2009; Rémi Cardona <remi@gentoo.org> package.mask:
+  remove xf86-video-intel-2.6.2 from p.mask as it's gone from portage
+
+  07 Mar 2009; Torsten Veller <tove@gentoo.org> updates/1Q-2009:
+  Move dev-perl/Text-Tabs+Wrap to perl-core/Text-Tabs+Wrap
 
   06 Mar 2009; Tomas Chvatal <scarabeus@gentoo.org> package.mask:
   Mask net-misc/kickpim for removal
