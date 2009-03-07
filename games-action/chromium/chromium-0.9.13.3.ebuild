@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/chromium/Attic/chromium-0.9.13.3.ebuild,v 1.3 2009/01/29 04:52:10 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-action/chromium/Attic/chromium-0.9.13.3.ebuild,v 1.5 2009/03/07 05:27:19 darkside Exp $
 
 EAPI=2
 inherit eutils games
