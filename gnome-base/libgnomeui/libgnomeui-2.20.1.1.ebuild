@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/libgnomeui/Attic/libgnomeui-2.20.1.1.ebuild,v 1.9 2009/03/08 01:36:03 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/libgnomeui/Attic/libgnomeui-2.20.1.1.ebuild,v 1.8 2008/04/20 01:36:06 vapier Exp $
 
 inherit eutils gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="arm sh"
+KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sh sparc x86 ~x86-fbsd"
 IUSE="doc jpeg"
 
 RDEPEND=">=dev-libs/libxml2-2.4.20
