@@ -1,8 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/sarg/Attic/sarg-2.2.5.ebuild,v 1.5 2009/03/08 11:03:33 cla Exp $
-
-EAPI="2"
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/sarg/Attic/sarg-2.2.5.ebuild,v 1.4 2008/03/10 07:58:45 welp Exp $
 
 inherit eutils
 
@@ -16,7 +14,12 @@ KEYWORDS="amd64 ppc x86"
 SLOT="0"
 IUSE=""
 
-DEPEND="media-libs/gd[png]"
+DEPEND="media-libs/gd"
+
+pkg_setup() {
+	built_with_use -a media-libs/gd png || die \
+	"Please recompile media-libs/gd with USE=\"png\""
+}
 
 src_unpack() {
 	unpack ${A}
@@ -45,11 +48,13 @@ src_unpack() {
 	sarg.1 || die "Failed to fix man page."
 }
 
-src_configure() {
+src_compile() {
 	econf \
 		--enable-bindir=/usr/bin \
 		--enable-mandir=/usr/share/man/man1 \
 		--enable-sysconfdir=/etc/sarg/ || die "econf failed"
+
+	emake || die "emake failed"
 }
 
 src_install() {
