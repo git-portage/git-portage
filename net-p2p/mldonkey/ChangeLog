@@ -1,6 +1,15 @@
 # ChangeLog for net-p2p/mldonkey
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/mldonkey/ChangeLog,v 1.226 2009/02/27 09:43:15 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/mldonkey/ChangeLog,v 1.229 2009/03/07 15:35:14 betelgeuse Exp $
+
+  07 Mar 2009; Petteri Räty <betelgeuse@gentoo.org> mldonkey-3.0.0.ebuild:
+  Migrate to EAPI 2.
+
+  07 Mar 2009; Petteri Räty <betelgeuse@gentoo.org> -mldonkey-2.9.7.ebuild:
+  Remove old ebuild.
+
+  07 Mar 2009; Markus Meier <maekke@gentoo.org> mldonkey-3.0.0.ebuild:
+  amd64 stable, bug #260072
 
   27 Feb 2009; Jeroen Roovers <jer@gentoo.org> mldonkey-3.0.0.ebuild:
   Stable for HPPA (bug #260072).
