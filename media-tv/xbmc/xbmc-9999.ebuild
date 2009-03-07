@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-9999.ebuild,v 1.12 2009/03/05 17:21:34 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-9999.ebuild,v 1.15 2009/03/07 20:44:42 vapier Exp $
 
 # XXX: be nice to split out packages that come bundled and use the
 #      system libraries ...
@@ -38,7 +38,6 @@ RDEPEND="opengl? ( virtual/opengl )
 	dev-libs/fribidi
 	dev-libs/libpcre
 	dev-libs/lzo
-	dev-libs/tre
 	>=dev-python/pysqlite-2
 	media-libs/alsa-lib
 	media-libs/faac
@@ -59,7 +58,8 @@ RDEPEND="opengl? ( virtual/opengl )
 	sys-apps/hal
 	sys-apps/pmount
 	virtual/mysql
-	x11-libs/mesa-progs
+	x11-apps/xdpyinfo
+	x11-apps/mesa-progs
 	x11-libs/libXinerama
 	x11-libs/libXrandr
 	x11-libs/libXrender"
