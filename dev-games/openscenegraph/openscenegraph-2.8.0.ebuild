@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/openscenegraph/Attic/openscenegraph-2.8.0.ebuild,v 1.6 2009/03/08 20:08:59 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-games/openscenegraph/Attic/openscenegraph-2.8.0.ebuild,v 1.5 2009/03/03 07:56:36 tupone Exp $
 
 EAPI=2
 inherit eutils versionator cmake-utils
@@ -16,7 +16,7 @@ SRC_URI="http://www.openscenegraph.org/downloads/stable_releases/${MY_P_MAJOR}/s
 LICENSE="wxWinLL-3 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
-IUSE="osgapps pdf xulrunner"
+IUSE="osgapps xulrunner"
 
 RDEPEND="virtual/opengl
 	virtual/glu
@@ -26,14 +26,8 @@ RDEPEND="virtual/opengl
 	media-libs/jpeg
 	media-libs/giflib
 	media-libs/tiff
-	media-libs/jasper
-	media-libs/xine-lib
-	pdf? (
-		|| (
-			app-text/poppler-bindings[gtk]
-			app-text/poppler-bindings[cairo]
-		)
-	)"
+	app-text/poppler-bindings"
+
 DEPEND="${RDEPEND}
 	app-arch/unzip"
 
@@ -51,6 +45,5 @@ src_configure() {
 		mycmakeargs="${mycmakeargs} -DBUILD_OSG_APPLICATIONS=OFF"
 	fi
 	mycmakeargs="${mycmakeargs} $(cmake-utils_use_enable xulrunner XUL)"
-	mycmakeargs="${mycmakeargs} $(cmake-utils_use_enable pdf PDF)"
 	cmake-utils_src_configure
 }
