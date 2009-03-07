@@ -1,7 +1,4 @@
 #!/sbin/runscript
-# Copyright 1999-2009 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/espeakup/files/espeakup.rc,v 1.2 2009/03/09 06:25:47 williamh Exp $
 
 depend() {
 	after modules
@@ -10,8 +7,7 @@ depend() {
 
 start() {
 	ebegin "Starting espeakup"
-	start-stop-daemon --start --exec /usr/bin/espeakup \
-		-- ${ESPEAKUP_OPTS}
+	start-stop-daemon --start --exec /usr/bin/espeakup
 	eend $?
 }
 
