@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/plasma-apps/Attic/plasma-apps-4.2.1.ebuild,v 1.3 2009/03/08 22:54:15 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/plasma-apps/Attic/plasma-apps-4.2.1.ebuild,v 1.1 2009/03/04 22:51:51 alexxy Exp $
 
 EAPI="2"
 
@@ -12,9 +12,5 @@ DESCRIPTION="Additional Applets for Plasma"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="debug"
 
-DEPEND="
-	>=kde-base/libkonq-${PV}:${SLOT}[kdeprefix=]
-"
-RDEPEND="${DEPEND}
-	!kdeprefix? ( !kde-base/plasma )
-"
+DEPEND="!kde-base/plasma:${SLOT}
+	kde-base/libkonq:${SLOT}"
