@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios-nsca/Attic/nagios-nsca-2.7.2-r100.ebuild,v 1.4 2009/03/04 21:11:48 fmccor Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios-nsca/Attic/nagios-nsca-2.7.2-r100.ebuild,v 1.6 2009/03/07 14:39:39 maekke Exp $
 
 inherit multilib
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/nagios/nsca-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha ~amd64 ~ppc ppc64 sparc ~x86"
+KEYWORDS="alpha amd64 ~ppc ppc64 sparc x86"
 IUSE=""
 
 DEPEND=">=net-analyzer/nagios-plugins-1.3.1
@@ -38,7 +38,7 @@ src_install() {
 
 	exeinto /usr/bin
 	doexe src/nsca
-	fowners nagios:nagios /usr/nagios/bin/nsca
+	fowners nagios:nagios /usr/bin/nsca
 
 	exeinto /usr/$(get_libdir)/nagios/plugins
 	doexe src/send_nsca
