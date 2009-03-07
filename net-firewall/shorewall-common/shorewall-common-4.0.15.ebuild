@@ -1,8 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall-common/Attic/shorewall-common-4.0.15.ebuild,v 1.4 2009/03/08 14:57:25 maekke Exp $
-
-EAPI="2"
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall-common/Attic/shorewall-common-4.0.15.ebuild,v 1.2 2009/02/28 18:46:12 pva Exp $
 
 inherit eutils versionator
 
@@ -22,13 +20,19 @@ SRC_URI="http://www1.shorewall.net/pub/${MY_PN}/${MY_PV_TREE}/${MY_P}/${P}${MY_P
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 
 DEPEND=">=net-firewall/iptables-1.2.4
-	sys-apps/iproute2[-minimal]
+	sys-apps/iproute2
 	!<net-firewall/shorewall-4.0"
 RDEPEND="${DEPEND}"
+
+pkg_setup() {
+	if built_with_use sys-apps/iproute2 minimal; then
+		die "Shorewall requires sys-apps/iproute2 to be built without the \"minimal\" USE flag."
+	fi
+}
 
 src_compile() {
 	einfo "Nothing to compile."
@@ -41,8 +45,7 @@ src_install() {
 	PREFIX="${D}" ./install.sh || die "install.sh failed"
 	newinitd "${FILESDIR}"/shorewall.initd shorewall || die "doinitd failed"
 
-	dodoc changelog.txt releasenotes.txt || die
-
+	dodoc changelog.txt releasenotes.txt
 	if use doc; then
 		cd "${WORKDIR}/${MY_P_DOCS}"
 		# install documentation
