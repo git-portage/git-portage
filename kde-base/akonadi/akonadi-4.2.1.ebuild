@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/akonadi/Attic/akonadi-4.2.1.ebuild,v 1.2 2009/03/08 13:07:10 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/akonadi/Attic/akonadi-4.2.1.ebuild,v 1.1 2009/03/04 20:18:04 alexxy Exp $
 
 EAPI="2"
 
@@ -16,15 +16,14 @@ IUSE="debug +semantic-desktop"
 # add when libmapi becomes available with an ebuild
 #exchange? ( net-libs/libmapi )
 # not sure about libxml2... - reavertm
-
 DEPEND="
 	dev-libs/boost
 	dev-libs/libxml2
 	dev-libs/libxslt
-	>=kde-base/kdelibs-${PV}:${SLOT}[kdeprefix=,semantic-desktop?]
-	>=kde-base/kdemaildir-${PV}:${SLOT}[kdeprefix=]
-	>=kde-base/libkdepim-${PV}:${SLOT}[kdeprefix=]
+	>=kde-base/kdemaildir-${PV}:${SLOT}
+	>=kde-base/libkdepim-${PV}:${SLOT}
 	x11-misc/shared-mime-info
+	>=kde-base/kdelibs-${PV}:${SLOT}[semantic-desktop?]
 "
 
 RDEPEND="${DEPEND}
@@ -32,6 +31,7 @@ RDEPEND="${DEPEND}
 "
 
 KMEXTRACTONLY="
+	libkdepim/
 	maildir/
 "
 
