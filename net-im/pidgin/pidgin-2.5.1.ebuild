@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/Attic/pidgin-2.5.1.ebuild,v 1.7 2009/03/07 20:36:17 gentoofan23 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/Attic/pidgin-2.5.1.ebuild,v 1.6 2008/09/08 03:12:04 jer Exp $
 
-EAPI="2"
 inherit flag-o-matic eutils toolchain-funcs multilib perl-app gnome2
 
 DESCRIPTION="GTK Instant Messenger client"
@@ -31,18 +30,17 @@ RDEPEND="
 	gstreamer? ( =media-libs/gstreamer-0.10*
 		=media-libs/gst-plugins-good-0.10* )
 	perl? ( >=dev-lang/perl-5.8.2-r1 )
-	gadu?  ( net-libs/libgadu[-ssl] )
+	gadu?  ( net-libs/libgadu )
 	gnutls? ( net-libs/gnutls )
 	!gnutls? ( >=dev-libs/nss-3.11 )
 	meanwhile? ( net-libs/meanwhile )
 	silc? ( >=net-im/silc-toolkit-0.9.12-r3 )
-	zephyr? ( >=app-crypt/mit-krb5-1.3.6-r1[krb4] )
+	zephyr? ( >=app-crypt/mit-krb5-1.3.6-r1 )
 	tcl? ( dev-lang/tcl )
 	tk? ( dev-lang/tk )
 	sasl? ( >=dev-libs/cyrus-sasl-2 )
 	dev-libs/libxml2
 	networkmanager? ( net-misc/networkmanager )
-	ncurses? ( sys-libs/ncurses[unicode] )
 	prediction? ( =dev-db/sqlite-3* )"
 	# Mono support crashes pidgin
 	#mono? ( dev-lang/mono )"
@@ -73,15 +71,40 @@ DYNAMIC_PRPLS="irc,jabber,oscar,yahoo,simple,msn,myspace"
 #   x11-themes/pidgin-smileys
 
 pkg_setup() {
+	if use gadu && built_with_use net-libs/libgadu ssl ; then
+	eerror
+	eerror "You need to rebuild net-libs/libgadu with USE=-ssl in order"
+	eerror "enable gadu gadu support in pidgin."
+	eerror
+	die "Configure failed"
+	fi
+
+	if use ncurses &&  ! built_with_use sys-libs/ncurses unicode; then
+		eerror
+		eerror "You need to rebuild sys-libs/ncurses with USE=unicode in order"
+		eerror "to build finch the console client of pidgin."
+		eerror
+		die "Configure failed"
+	fi
+
 	if ! use gtk && ! use ncurses ; then
 		einfo
 		elog "You did not pick the ncurses or gtk use flags, only libpurple"
 		elog "will be built."
 		einfo
 	fi
+
+	if use zephyr && ! built_with_use app-crypt/mit-krb5 krb4 ; then
+		eerror
+		eerror "You need to rebuild app-crypt/mit-krb5 with USE=krb4 in order to"
+		eerror "enable krb4 support for the zephyr protocol in pidgin"
+		eerror
+		die "Configure failed"
+	fi
+
 }
 
-src_configure() {
+src_compile() {
 	# Stabilize things, for your own good
 	strip-flags
 	replace-flags -O? -O2
@@ -156,8 +179,10 @@ src_configure() {
 		"--with-dynamic-prpls=${DYNAMIC_PRPLS}" \
 		--disable-mono \
 		--x-includes=/usr/include/X11 \
-		${myconf}
+		${myconf} || die "Configuration failed"
 		#$(use_enable mono) \
+
+		emake || die "make failed"
 }
 
 src_install() {
