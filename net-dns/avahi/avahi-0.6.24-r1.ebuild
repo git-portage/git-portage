@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/avahi/Attic/avahi-0.6.24-r1.ebuild,v 1.1 2009/03/05 21:13:27 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/avahi/Attic/avahi-0.6.24-r1.ebuild,v 1.2 2009/03/06 23:04:33 swegener Exp $
 
 EAPI="1"
 
-inherit autotools eutils mono python multilib
+inherit eutils mono python multilib
 
 DESCRIPTION="System which facilitates service discovery on a local network"
 HOMEPAGE="http://avahi.org/"
@@ -112,8 +112,7 @@ src_unpack() {
 
 	sed -i -e "s:\\.\\./\\.\\./\\.\\./doc/avahi-docs/html/:../../../doc/${PF}/html/:" doxygen_to_devhelp.xsl
 
-	epatch "${FILESDIR}"/${P}-*.patch
-	eautoreconf
+	epatch "${FILESDIR}"/avahi-0.6.24-CVE-2009-0758.patch
 }
 
 src_compile() {
