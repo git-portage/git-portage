@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kappfinder/Attic/kappfinder-4.2.1.ebuild,v 1.3 2009/03/08 22:45:05 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kappfinder/Attic/kappfinder-4.2.1.ebuild,v 1.1 2009/03/04 20:30:26 alexxy Exp $
 
 EAPI="2"
 
@@ -12,6 +12,7 @@ DESCRIPTION="KDE tool that looks for well-known apps in your path and creates en
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="debug"
 
-KMEXTRA="
-	doc/${PN}
-"
+DEPEND=""
+RDEPEND="${DEPEND}"
+
+KMEXTRA="apps/doc/${PN}"
