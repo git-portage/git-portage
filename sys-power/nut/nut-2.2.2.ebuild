@@ -1,8 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/nut/Attic/nut-2.2.2.ebuild,v 1.6 2009/03/07 20:30:14 betelgeuse Exp $
-
-EAPI="2"
+# $Header: /var/cvsroot/gentoo-x86/sys-power/nut/Attic/nut-2.2.2.ebuild,v 1.5 2008/07/05 15:39:35 mr_bones_ Exp $
 
 inherit eutils fixheadtails autotools
 
@@ -20,7 +18,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86 ~x86-fbsd"
 IUSE="cgi snmp usb ssl hal xml"
 
-RDEPEND="cgi? ( >=media-libs/gd-2[png] )
+RDEPEND="cgi? ( >=media-libs/gd-2 )
 		snmp? ( net-analyzer/net-snmp )
 		usb? ( >=dev-libs/libusb-0.1.12 )
 		hal? ( >=sys-apps/hal-0.5.9.1 )
@@ -39,6 +37,11 @@ NUT_PRIVATE_FILES="/etc/nut/{upsd.conf,upsd.users,upsmon.conf}"
 NUT_CGI_FILES="/etc/nut/{{hosts,upsset}.conf,upsstats{,-single}.html}"
 
 pkg_setup() {
+	if use cgi && ! built_with_use media-libs/gd png ; then
+		eerror "CGI support requested, bug GD not built with PNG support"
+		eerror "Please rebuild gd with 'USE=png'"
+		die
+	fi
 	enewgroup nut 84
 	enewuser nut 84 -1 /var/lib/nut nut,uucp
 	# As of udev-104, NUT must be in uucp and NOT in tty.
@@ -50,7 +53,11 @@ pkg_setup() {
 	warningmsg ewarn
 }
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+
+	cd "${S}"
+
 	ht_fix_file configure.in
 
 	epatch "${FILESDIR}"/${P}-no-libdummy.patch
@@ -64,7 +71,7 @@ src_prepare() {
 	WANT_AUTOCONF=2.5 eautoreconf || die "autoconf failed"
 }
 
-src_configure() {
+src_compile() {
 	local myconf
 
 	if [ -n "${NUT_DRIVERS}" ]; then
@@ -91,11 +98,13 @@ src_configure() {
 		$(use_with cgi cgipath /usr/share/nut/cgi) \
 		${myconf} || die "econf failed"
 
+	emake || die "compile problem"
+
 }
 
 src_install() {
 
-	emake DESTDIR="${D}" install || die "make install failed"
+	make DESTDIR="${D}" install || die "make install failed"
 
 	dodir /sbin
 	dosym /lib/nut/upsdrvctl /sbin/upsdrvctl
@@ -115,14 +124,14 @@ src_install() {
 	done
 
 	dodoc ChangeLog INSTALL MAINTAINERS NEWS README UPGRADING \
-			docs/{FAQ,*.txt} || die
+			docs/{FAQ,*.txt}
 
-	newdoc lib/README README.lib || die
+	newdoc lib/README README.lib
 
-	newdoc "${FILESDIR}"/lighttpd_nut.conf-2.2.0 lighttpd_nut.conf || die
+	newdoc "${FILESDIR}"/lighttpd_nut.conf-2.2.0 lighttpd_nut.conf
 
 	docinto cables
-	dodoc docs/cables/* || die
+	dodoc docs/cables/*
 
 	newinitd "${FILESDIR}"/nut-2.2.2-init.d-upsd upsd
 	newinitd "${FILESDIR}"/nut-2.2.2-init.d-upsdrv upsdrv
