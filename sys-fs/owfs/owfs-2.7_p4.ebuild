@@ -1,8 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/owfs/Attic/owfs-2.7_p4.ebuild,v 1.3 2009/03/08 14:46:20 betelgeuse Exp $
-
-EAPI="2"
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/owfs/Attic/owfs-2.7_p4.ebuild,v 1.2 2008/05/30 20:07:55 wschlich Exp $
 
 inherit eutils depend.php
 
@@ -18,7 +16,7 @@ RDEPEND="fuse? ( sys-fs/fuse )
 	python? ( dev-lang/python )
 	tcl? ( dev-lang/tcl )
 	usb? ( dev-libs/libusb )
-	zeroconf? ( || ( net-dns/avahi[mdnsresponder-compat] net-misc/mDNSResponder ) )"
+	zeroconf? ( || ( net-dns/avahi net-misc/mDNSResponder ) )"
 DEPEND="${RDEPEND}
 	perl? ( dev-lang/swig )
 	php? ( dev-lang/swig )
@@ -36,11 +34,15 @@ pkg_setup() {
 	if use php; then
 		require_php_cli
 	fi
+	if use zeroconf && has_version net-dns/avahi && ! built_with_use net-dns/avahi mdnsresponder-compat; then
+		eerror "You need to recompile net-dns/avahi with mdnsresponder-compat USE flag"
+		die "net-dns/avahi is missing required mdnsresponder-compat support for USE=zeroconf"
+	fi
 	enewgroup ${OWGID} 150
 	enewuser  ${OWUID} 150 -1 -1 ${OWGID}
 }
 
-src_configure() {
+src_compile() {
 	econf \
 		$(use_enable debug) \
 		$(use_enable fuse owfs) \
@@ -55,11 +57,12 @@ src_configure() {
 		$(use_enable zeroconf zero) \
 		$(use_enable usb) \
 		|| die "econf failed"
+	emake || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc README NEWS ChangeLog AUTHORS || die
+	dodoc README NEWS ChangeLog AUTHORS
 	if use server || use httpd || use ftpd || use fuse; then
 		diropts -m 0750 -o ${OWUID} -g ${OWGID}
 		dodir /var/run/owfs
