@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/kbd/Attic/kbd-1.15.ebuild,v 1.7 2009/02/26 19:42:29 gentoofan23 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/kbd/Attic/kbd-1.15.ebuild,v 1.9 2009/03/06 01:25:54 jer Exp $
 
 inherit eutils
 
