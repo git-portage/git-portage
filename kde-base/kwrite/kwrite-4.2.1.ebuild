@@ -1,16 +1,15 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kwrite/Attic/kwrite-4.2.1.ebuild,v 1.2 2009/03/08 14:11:13 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kwrite/Attic/kwrite-4.2.1.ebuild,v 1.1 2009/03/04 22:35:40 alexxy Exp $
 
 EAPI="2"
 
-KMNAME="kdebase-apps"
+KMNAME="kdebase"
+KMMODULE="apps/${PN}"
 inherit kde4-meta
 
-DESCRIPTION="KDE MDI editor/IDE"
+DESCRIPTION="KDE MDI editor/ide"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="debug"
 
-KMEXTRA="
-	doc/${PN}/
-"
+KMEXTRA="apps/doc/${PN}"
