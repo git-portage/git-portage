@@ -1,54 +1,10 @@
 # ChangeLog for profile directory
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2433 2009/03/11 21:50:08 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.2420 2009/03/08 16:12:34 alexxy Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
-
-  11 Mar 2009; Robin H. Johnson <robbat2@gentoo.org> package.mask:
-  Some breakage with the latest OpenSSH HPN patch. p.mask while discussing
-  with upstream.
-
-  11 Mar 2009; Nirbheek Chauhan <nirbheek@gentoo.org> package.mask:
-  Mask gnome-base/gnome-power-manager-2.24* due to CPUFreq regression (bug
-  #247614)
-
-  11 Mar 2009; Nirbheek Chauhan <nirbheek@gentoo.org> package.mask:
-  Mask nautilus-sendto-1.1.2 (needs bluez-4)
-
-  11 Mar 2009; Diego E. Pettenò <flameeyes@gentoo.org> package.mask:
-  Add a mask for sudo new betas.
-
-  11 Mar 2009; Markus Ullmann <jokey@gentoo.org> arch/amd64/use.mask,
-  arch/x86/use.mask, base/use.mask:
-  Adjust mask/unmask of virtualbox use_expand
-
-  11 Mar 2009; Markus Ullmann <jokey@gentoo.org> desc/input_devices.desc:
-  Add description for input_devices virtualbox
-
-  11 Mar 2009; Markus Ullmann <jokey@gentoo.org> desc/video_cards.desc:
-  Add description for video_cards virtualbox
-
-  10 Mar 2009; <chainsaw@gentoo.org> package.mask:
-  Mask Asterisk 1.6 as the migration from 1.2 is long, tedious and not yet
-  documented fully.
-
-  09 Mar 2009; Fabian Groffen <grobian@gentoo.org> package.mask:
-  Unmask mutt-1.5.19, since the sidebar patch was updated
-
-  09 Mar 2009; Rémi Cardona <remi@gentoo.org> package.mask:
-  remove mesa-7.3-r1 from p.mask
-
-  09 Mar 2009; Tiziano Müller <dev-zero@gentoo.org> package.mask:
-  Changed mask for ctdb to match only vcs version
-
-  08 Mar 2009; Alexey Shvetsov <alexxy@gentoo.org> package.mask:
-  Drop mask for kde 4.2.0
-
-  08 Mar 2009; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
-  Remove gnome-base/gnome-vfs-monikers mask, removed from the tree per bug
-  #253826. Adjust media-video/totem mask for bluez-4 compatibility.
 
   08 Mar 2009; Alexey Shvetsov <alexxy@gentoo.org> package.mask:
   Mask KDE 4.2.0
