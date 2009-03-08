@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu-user/Attic/qemu-user-0.10.0.ebuild,v 1.3 2009/03/10 16:39:27 lu_zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu-user/Attic/qemu-user-0.10.0.ebuild,v 1.1 2009/03/07 14:31:12 lu_zero Exp $
 
 inherit eutils flag-o-matic
 
@@ -57,7 +57,7 @@ src_compile() {
 
 	./configure ${conf_opts} || die "econf failed"
 
-	mycc=$(cat config-host.mak | egrep "^CC=" | cut -d "=" -f 2)
+	mycc=$(cat qemu/config-host.mak | egrep "^CC=" | cut -d "=" -f 2)
 
 	filter-flags -fpie -fstack-protector
 
@@ -87,3 +87,4 @@ src_install() {
 	dohtml qemu-doc.html
 	dohtml qemu-tech.html
 }
+
