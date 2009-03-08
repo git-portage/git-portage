@@ -1,8 +1,10 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/orbit/Attic/orbit-2.14.14.ebuild,v 1.1 2008/08/25 21:05:14 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/orbit/Attic/orbit-2.14.17.ebuild,v 1.1 2009/03/08 00:59:36 eva Exp $
 
-inherit gnome2 eutils
+GCONF_DEBUG="no"
+
+inherit gnome2
 
 MY_P="ORBit2-${PV}"
 PVP=(${PV//[-\._]/ })
@@ -24,20 +26,7 @@ DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.18
 	doc? ( >=dev-util/gtk-doc-1 )"
 
-MAKEOPTS="${MAKEOPTS} -j1"
-
 DOCS="AUTHORS ChangeLog HACKING MAINTAINERS NEWS README* TODO"
-
-src_unpack() {
-	gnome2_src_unpack
-
-	# Filter out G_DISABLE_DEPRECATED to be future-proof, related to bug 213434
-	sed -i -e '/DISABLE_DEPRECATED/d' \
-		"${S}/linc2/src/Makefile.am" "${S}/linc2/src/Makefile.in"
-
-	sed -i -e 's:-DG_DISABLE_DEPRECATED::g' \
-		"${S}/configure.in" "${S}/configure"
-}
 
 src_compile() {
 	# We need to unset IDL_DIR, which is set by RSI's IDL.  This causes certain
@@ -46,4 +35,9 @@ src_compile() {
 	unset IDL_DIR
 
 	gnome2_src_compile
+}
+
+src_test() {
+	# can fail in parallel, see bug #235994
+	emake -j1 check || die "tests failed"
 }
