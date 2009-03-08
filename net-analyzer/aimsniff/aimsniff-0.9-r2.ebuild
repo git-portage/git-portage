@@ -1,8 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/aimsniff/aimsniff-0.9-r2.ebuild,v 1.11 2009/03/08 11:33:51 cla Exp $
-
-EAPI="2"
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/aimsniff/aimsniff-0.9-r2.ebuild,v 1.10 2008/10/21 06:53:13 tove Exp $
 
 inherit eutils webapp eutils depend.apache
 
@@ -19,7 +17,7 @@ KEYWORDS="~amd64 ~ppc x86"
 #SLOT empty due to webapp
 IUSE="samba mysql http"
 
-DEPEND="dev-lang/perl[gdbm]
+DEPEND="dev-lang/perl
 	dev-perl/Net-Pcap
 	dev-perl/NetPacket
 	dev-perl/Unicode-String
@@ -41,6 +39,9 @@ pkg_setup() {
 	then
 		webapp_pkg_setup
 	fi
+
+	built_with_use dev-lang/perl gdbm || \
+		die "${PN} requires that dev-lang/perl be built with USE=gdbm."
 }
 
 src_install() {
