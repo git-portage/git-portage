@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/mummer/mummer-3.20.ebuild,v 1.4 2009/03/09 15:29:37 weaver Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/mummer/mummer-3.20.ebuild,v 1.3 2008/06/17 18:40:09 weaver Exp $
 
 inherit eutils
 
@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 DEPEND=""
 RDEPEND=""
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
@@ -41,13 +41,13 @@ src_compile() {
 src_install() {
 	dobin nucmer2xfig show-coords mapview show-snps run-mummer{1,3} \
 		exact-tandems promer repeat-match show-aligns gaps mummer \
-		show-tiling mgaps nucmer mummerplot delta-filter combineMUMs aux_bin/* || die
-	newbin annotate mummer-annotate || die
+		show-tiling mgaps nucmer mummerplot delta-filter combineMUMs aux_bin/*
+	newbin annotate mummer-annotate
 
 	insinto /usr/share/${PN}/scripts
 	doins scripts/{*.awk,*.csh,*.pl}
 	insinto /usr/share/${PN}/lib
-	doins scripts/Foundation.pm || die
+	doins scripts/Foundation.pm
 
 	dodoc ACKNOWLEDGEMENTS ChangeLog README
 	insinto /usr/share/doc/${PF}
