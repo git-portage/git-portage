@@ -1,8 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/htop/Attic/htop-0.8.1-r1.ebuild,v 1.9 2009/03/08 14:16:47 betelgeuse Exp $
-
-EAPI="2"
+# $Header: /var/cvsroot/gentoo-x86/sys-process/htop/Attic/htop-0.8.1-r1.ebuild,v 1.8 2009/03/04 21:51:08 drizzt Exp $
 
 inherit autotools eutils flag-o-matic
 
@@ -13,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd"
-DEPEND="sys-libs/ncurses[unicode?]"
+DEPEND="sys-libs/ncurses"
 
 pkg_setup() {
 	if use elibc_FreeBSD && ! [[ -f "${ROOT}"/proc/stat && -f "${ROOT}"/proc/meminfo ]] ; then
@@ -26,7 +24,9 @@ pkg_setup() {
 	fi
 }
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	epatch "${FILESDIR}"/${P}-desktop-entry.patch
 	epatch "${FILESDIR}"/${P}-non-printable-char-filter.patch
 	epatch "${FILESDIR}"/${P}-no-plpa.patch
@@ -34,15 +34,19 @@ src_prepare() {
 	eautoreconf
 }
 
-src_configure() {
+src_compile() {
+	if use unicode && ! built_with_use sys-libs/ncurses unicode; then
+		die "for unicode support of htop, sys-libs/ncurses must be emerged with USE=unicode"
+	fi
 	useq debug && append-flags -O -ggdb -DDEBUG
 	econf \
 		--enable-taskstats \
 		$(use_enable unicode) \
 		|| die "configure failed"
+	emake || die "make failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "make install failed"
-	dodoc README ChangeLog TODO || die
+	dodoc README ChangeLog TODO
 }
