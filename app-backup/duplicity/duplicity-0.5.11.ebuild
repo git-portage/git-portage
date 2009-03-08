@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.5.02.ebuild,v 1.1 2008/11/03 02:16:53 vanquirius Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.5.11.ebuild,v 1.1 2009/03/08 22:51:54 vanquirius Exp $
 
 inherit distutils
 
