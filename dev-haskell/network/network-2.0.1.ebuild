@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/network/Attic/network-2.0.1.ebuild,v 1.10 2009/03/08 19:13:14 kolmodin Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/network/Attic/network-2.0.1.ebuild,v 1.9 2008/07/15 16:24:07 jer Exp $
 
 CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
@@ -16,8 +16,7 @@ SLOT="0"
 KEYWORDS="~alpha amd64 ~ia64 ppc sparc x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6
-		dev-haskell/parsec"
+DEPEND=">=dev-lang/ghc-6.6"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${PN}"
 
