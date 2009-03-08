@@ -1,21 +1,16 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gnuconfig/gnuconfig-99999999.ebuild,v 1.2 2009/03/09 21:32:02 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gnuconfig/gnuconfig-99999999.ebuild,v 1.1 2008/01/30 01:38:23 vapier Exp $
 
-inherit eutils
-if [[ ${PV} == "99999999" ]] ; then
-	EGIT_REPO_URI="git://git.savannah.gnu.org/config.git"
-	inherit git
-else
-	SRC_URI="mirror://gentoo/${P}.tar.bz2"
-	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-fi
+EGIT_REPO_URI="git://git.savannah.gnu.org/config.git"
+inherit eutils git
 
 DESCRIPTION="Updated config.sub and config.guess file from GNU"
 HOMEPAGE="http://savannah.gnu.org/projects/config"
 
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS=""
 IUSE=""
 
 S=${WORKDIR}
@@ -32,17 +27,13 @@ maint_pkg_create() {
 	tar -jcf ${tar} . || die "creating tar failed"
 	einfo "Packaged tar now available:"
 	einfo "$(du -b ${tar})"
+
+	epatch *.patch
 }
 
 src_unpack() {
-	if [[ ${PV} == "99999999" ]] ; then
-		git_src_unpack
-		maint_pkg_create
-	else
-		unpack ${A}
-	fi
-	epatch "${WORKDIR}"/*.patch
-	use elibc_uclibc && sed -i 's:linux-gnu:linux-uclibc:' testsuite/config-guess.data #180637
+	git_src_unpack
+	maint_pkg_create
 }
 
 src_compile() { :;}

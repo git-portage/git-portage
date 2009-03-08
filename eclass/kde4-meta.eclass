@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/kde4-meta.eclass,v 1.12 2009/03/09 19:41:26 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/kde4-meta.eclass,v 1.11 2009/03/01 11:44:09 scarabeus Exp $
 #
 # @ECLASS: kde4-meta.eclass
 # @MAINTAINER:
@@ -33,95 +33,59 @@ esac
 
 # Add dependencies that all packages in a certain module share.
 case ${KMNAME} in
-	kdebase|kdebase-{apps,workspace,runtime})
-		DEPEND="${DEPEND}
-			>=kde-base/qimageblitz-0.0.4
-		"
-		RDEPEND="${RDEPEND}
-			>=kde-base/qimageblitz-0.0.4
-		"
-		;;
-	kdenetwork)
-		DEPEND="${DEPEND}
-			>=kde-base/kdepimlibs-${PV}:${SLOT}[kdeprefix=]
-		"
-		RDEPEND="${RDEPEND}
-			>=kde-base/kdepimlibs-${PV}:${SLOT}[kdeprefix=]
-		"
+	kdebase|kdebase-workspace|kdebase-runtime)
+		DEPEND="${DEPEND} >=kde-base/qimageblitz-0.0.4"
+		RDEPEND="${RDEPEND} >=kde-base/qimageblitz-0.0.4"
 		;;
 	kdepim)
-		DEPEND="${DEPEND}
-			dev-libs/boost
-			>=kde-base/kdepimlibs-${PV}:${SLOT}[kdeprefix=]
-		"
-		RDEPEND="${RDEPEND}
-			dev-libs/boost
-			>=kde-base/kdepimlibs-${PV}:${SLOT}[kdeprefix=]
-		"
+		DEPEND="${DEPEND} dev-libs/boost app-office/akonadi-server"
+		RDEPEND="${RDEPEND} dev-libs/boost"
+		if [[ ${PN} != kode ]]; then
+			DEPEND="${DEPEND} >=kde-base/kode-${PV}:${SLOT}[kdeprefix=]"
+			RDEPEND="${RDEPEND} >=kde-base/kode-${PV}:${SLOT}[kdeprefix=]"
+		fi
 		case ${PN} in
 			akregator|kaddressbook|kjots|kmail|kmobiletools|knode|knotes|korganizer|ktimetracker)
 				IUSE="+kontact"
-				RDEPEND="${RDEPEND}
-					kontact? ( >=kde-base/kontactinterfaces-${PV}:${SLOT}[kdeprefix=] )
-				"
+				DEPEND="${DEPEND} kontact? ( >=kde-base/kontactinterfaces-${PV}:${SLOT}[kdeprefix=] )"
+				RDEPEND="${RDEPEND} kontact? ( >=kde-base/kontactinterfaces-${PV}:${SLOT}[kdeprefix=] )"
 				;;
 		esac
 		;;
 	kdegames)
 		if [[ ${PN} != libkdegames ]]; then
-			DEPEND="${DEPEND}
-				>=kde-base/libkdegames-${PV}:${SLOT}[kdeprefix=]
-			"
-			RDEPEND="${RDEPEND}
-				>=kde-base/libkdegames-${PV}:${SLOT}[kdeprefix=]
-			"
+			DEPEND="${DEPEND} >=kde-base/libkdegames-${PV}:${SLOT}[kdeprefix=]"
+			RDEPEND="${RDEPEND} >=kde-base/libkdegames-${PV}:${SLOT}[kdeprefix=]"
 		fi
 		;;
 	koffice)
 		[[ ${PN} != koffice-data ]] && IUSE="debug"
 		case ${PV} in
-			9999*)
-				DEPEND="${DEPEND}
-					!app-office/${PN}:2
-				"
-				;;
-			1.9*|2*)
-				DEPEND="${DEPEND}
-					!app-office/${PN}:live
-				"
-				;;
+			9999*) DEPEND="${DEPEND} !app-office/${PN}:2" ;;
+			1.9*|2*) DEPEND="${DEPEND} !app-office/${PN}:live" ;;
 		esac
 		DEPEND="${DEPEND}
 			!app-office/${PN}:0
 			!app-office/koffice:0
-			!app-office/koffice-meta:0
-		"
+			!app-office/koffice-meta:0"
 		case ${PN} in
 			koffice-data)
-				DEPEND="${DEPEND}
-					media-libs/lcms
-				"
-				RDEPEND="${RDEPEND}
-					media-libs/lcms
-				"
+				DEPEND="${DEPEND} media-libs/lcms"
+				RDEPEND="${RDEPEND} media-libs/lcms"
 				;;
 			*)
-				COMMON_DEPEND="
+				DEPEND="${DEPEND}
 					dev-cpp/eigen:2
 					media-gfx/imagemagick[openexr?]
 					media-libs/fontconfig
 					media-libs/freetype:2
 				"
-				DEPEND="${DEPEND} ${COMMON_DEPEND}"
-				RDEPEND="${RDEPEND} ${COMMON_DEPEND}"
-				unset COMMON_DEPEND
+				RDEPEND="${DEPEND}"
 				if [[ ${PN} != koffice-libs && ${PN} != koffice-data ]]; then
 					DEPEND="${DEPEND}
-						>=app-office/koffice-libs-${PV}:${SLOT}[kdeprefix=]
-					"
+					>=app-office/koffice-libs-${PV}:${SLOT}[kdeprefix=]"
 					RDEPEND="${RDEPEND}
-						>=app-office/koffice-libs-${PV}:${SLOT}[kdeprefix=]
-					"
+					>=app-office/koffice-libs-${PV}:${SLOT}[kdeprefix=]"
 				fi
 				;;
 		esac
@@ -249,14 +213,14 @@ kde4-meta_src_extract() {
 		fi
 		# Copy all subdirectories
 		for subdir in $(__list_needed_subdirectories); do
-			targetdir=""
-			if [[ $subdir = doc/* && ! -e "$ESVN_WC_PATH/$kmnamedir$subdir" ]]; then
-				continue
-			fi
+				targetdir=""
+				if [[ $subdir = doc/* && ! -e "$ESVN_WC_PATH/$kmnamedir$subdir" ]]; then
+					continue
+				fi
 
-			[[ ${subdir%/} = */* ]] && targetdir=${subdir%/} && targetdir=${targetdir%/*} && mkdir -p "${S}/${targetdir}"
-			rsync --recursive ${rsync_options} "${ESVN_WC_PATH}/${kmnamedir}${subdir%/}" "${S}/${targetdir}" \
-				|| die "${ESVN}: can't export subdirectory '${subdir}' to '${S}/${targetdir}'."
+				[[ ${subdir%/} = */* ]] && targetdir=${subdir%/} && targetdir=${targetdir%/*} && mkdir -p "${S}/${targetdir}"
+				rsync --recursive ${rsync_options} "${ESVN_WC_PATH}/${kmnamedir}${subdir%/}" "${S}/${targetdir}" \
+					|| die "${ESVN}: can't export subdirectory '${subdir}' to '${S}/${targetdir}'."
 		done
 
 		if [[ ${KMNAME} = kdebase-runtime && ${PN} != kdebase-data ]]; then
@@ -264,37 +228,17 @@ kde4-meta_src_extract() {
 				"${S}"/CMakeLists.txt || die "Sed to exclude bin/kde4 failed"
 		fi
 	else
-		local abort tarball tarfile f extractlist moduleprefix postfix
-		case ${PV} in
-			4.2.9* | 4.2.8* | 4.2.7* | 4.2.6*)
-				KMTARPARAMS="${KMTARPARAMS} --lzma" # lzma
-				postfix="lzma"
-				;;
-			*)
-				KMTARPARAMS="${KMTARPARAMS} --bzip2" # bz2
-				postfix="bz2"
-				;;
-		esac
-		case ${KMNAME} in
+		local abort tarball tarfile f extractlist moduleprefix
+
+		case $KMNAME in
 			kdebase-apps)
-				# kdebase/apps -> kdebasa-apps
-				tarball="kdebase-${PV}.tar.${postfix}"
-				# Go one level deeper for kdebase-apps in tarballs
-				moduleprefix=apps/
-				KMTARPARAMS="${KMTARPARAMS} --transform=s|apps/||"
+				tarball="${KMNAME#-apps}-${PV}.tar.bz2"
 				;;
 			*)
-				# Create tarball name from module name (this is the default)
-				tarball="${KMNAME}-${PV}.tar.${postfix}"
+				tarball="${KMNAME}-${PV}.tar.bz2"
 				;;
 		esac
-
-		# Full patch to source tarball
 		tarfile="${DISTDIR}/${tarball}"
-
-		# Detect real toplevel dir from tarball name - it will be used upon extraction
-		# and in __list_needed_subdirectories
-		topdir="${tarball%.tar.*}/"
 
 		ebegin "Unpacking parts of ${tarball} to ${WORKDIR}"
 
@@ -303,16 +247,17 @@ kde4-meta_src_extract() {
 		for f in cmake/ CMakeLists.txt ConfigureChecks.cmake config.h.cmake \
 			AUTHORS COPYING INSTALL README NEWS ChangeLog
 		do
-			extractlist="${extractlist} ${topdir}${moduleprefix}${f}"
+			extractlist="${extractlist} ${KMNAME}-${PV}/${f}"
 		done
 		extractlist="${extractlist} $(__list_needed_subdirectories)"
+		KMTARPARAMS="${KMTARPARAMS} -j"
 
 		pushd "${WORKDIR}" > /dev/null
 		[[ -n ${KDE4_STRICTER} ]] && echo tar -xpf "${tarfile}" ${KMTARPARAMS} ${extractlist} >&2
 		tar -xpf "${tarfile}" ${KMTARPARAMS} ${extractlist} 2> /dev/null
 
 		# Default $S is based on $P; rename the extracted directory to match $S if necessary
-		mv ${topdir} ${P} || die "Died while moving \"${topdir}\" to \"${P}\""
+		mv ${KMNAME}-${PV} ${P} || die "Died while moving \"${KMNAME}-${PV}\" to \"${P}\""
 
 		popd > /dev/null
 
@@ -330,9 +275,6 @@ kde4-meta_src_extract() {
 			done
 			[[ -n ${abort} ]] && die "There were missing files."
 		fi
-
-		# We don't need it anymore
-		unset topdir
 	fi
 }
 
@@ -384,12 +326,9 @@ kde4-meta_create_extractlists() {
 			fi
 			;;
 		kdepim)
-			if [[ ${PN} != libkdepim ]]; then
-				KMEXTRACTONLY="${KMEXTRACTONLY}
-					libkdepim"
-			fi
 			KMEXTRACTONLY="${KMEXTRACTONLY}
-				kleopatra/ConfigureChecks.cmake"
+				kleopatra/ConfigureChecks.cmake
+				libkdepim/kdepim_export.h"
 			if has kontact ${IUSE//+} && use kontact; then
 				KMEXTRA="${KMEXTRA} kontact/plugins/${PLUGINNAME:-${PN}}"
 				KMEXTRACTONLY="${KMEXTRACTONLY} kontactinterfaces/"
@@ -425,7 +364,7 @@ kde4-meta_create_extractlists() {
 }
 
 __list_needed_subdirectories() {
-	local i j kmextra kmextra_expanded kmmodule_expanded kmcompileonly_expanded extractlist
+	local i j kmextra kmextra_expanded kmmodule_expanded kmcompileonly_expanded extractlist topdir
 
 	# We expand KMEXTRA by adding CMakeLists.txt files
 	kmextra="${KMEXTRA}"
@@ -463,8 +402,12 @@ __list_needed_subdirectories() {
 	debug-print "line ${LINENO} ${ECLASS} ${FUNCNAME} - kmmodule_expanded:  ${kmmodule_expanded}"
 	debug-print "line ${LINENO} ${ECLASS} ${FUNCNAME} - kmcompileonly_expanded: ${kmcompileonly_expanded}"
 
+	case ${PV} in
+		scm|9999*) : ;;
+		*) topdir="${KMNAME}-${PV}/" ;;
+	esac
 	# Create final list of stuff to extract
-	# We append topdir only when specified (usually for tarballs)
+	# We append topleveldir only when specified (usually for tarballs)
 	for i in ${kmmodule_expanded} ${kmextra_expanded} ${kmcompileonly_expanded} \
 		${KMEXTRACTONLY}
 	do
@@ -483,6 +426,7 @@ kde4-meta_src_prepare() {
 	kde4-meta_change_cmakelists
 	kde4-base_src_prepare
 }
+
 
 # FIXME: no comment here?
 _change_cmakelists_parent_dirs() {
@@ -526,17 +470,8 @@ kde4-meta_change_cmakelists() {
 		_change_cmakelists_parent_dirs ${KMMODULE}
 	fi
 
-	local i
-
-	# KMEXTRACTONLY section - Some ebuilds need to comment out some subdirs in KMMODULE and they use KMEXTRACTONLY
-	for i in ${KMEXTRACTONLY}; do
-		if [[ -d "${S}"/${i} && -f "${S}"/${i}/../CMakeLists.txt ]]; then
-			sed -i -e "/([[:space:]]*$(basename $i)[[:space:]]*)/s/^/#DONOTCOMPILE /" "${S}"/${i}/../CMakeLists.txt || \
-				die "${LINENO}: sed died while working in the KMEXTRACTONLY section while processing ${i}"
-		fi
-	done
-
 	# KMCOMPILEONLY
+	local i
 	for i in ${KMCOMPILEONLY}; do
 		debug-print "${LINENO}: KMCOMPILEONLY, processing ${i}"
 		# Uncomment "add_subdirectory" instructions inside $KMCOMPILEONLY, then comment "install" instructions.
@@ -565,6 +500,14 @@ kde4-meta_change_cmakelists() {
 				xargs -0 sed -i -e 's/^#DONOTCOMPILE //g' || \
 				die "${LINENO}: sed died uncommenting add_subdirectory instructions in KMEXTRA section while processing ${i}"
 			_change_cmakelists_parent_dirs ${i}
+		fi
+	done
+
+	# KMEXTRACTONLY section - Some ebuilds need to comment out some subdirs in KMMODULE and they use KMEXTRACTONLY
+	for i in ${KMEXTRACTONLY}; do
+		if [[ -d "${S}"/${i} && -f "${S}"/${i}/../CMakeLists.txt ]]; then
+			sed -i -e "/([[:space:]]*$(basename $i)[[:space:]]*)/s/^/#DONOTCOMPILE /" "${S}"/${i}/../CMakeLists.txt || \
+				die "${LINENO}: sed died while working in the KMEXTRACTONLY section while processing ${i}"
 		fi
 	done
 
