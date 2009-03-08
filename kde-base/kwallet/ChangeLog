@@ -1,12 +1,6 @@
 # ChangeLog for kde-base/kwallet
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kwallet/Attic/ChangeLog,v 1.22 2009/03/08 20:38:48 alexxy Exp $
-
-  08 Mar 2009; Alexey Shvetsov <alexxy@gentoo.org> -kwallet-4.2.0.ebuild:
-  Drop KDE 4.2.0
-
-  08 Mar 2009; Tomas Chvatal <scarabeus@gentoo.org> kwallet-4.2.1.ebuild:
-  Semi-automatic merge, Update deps.
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kwallet/Attic/ChangeLog,v 1.20 2009/03/04 22:32:57 alexxy Exp $
 
 *kwallet-4.2.1 (04 Mar 2009)
 
