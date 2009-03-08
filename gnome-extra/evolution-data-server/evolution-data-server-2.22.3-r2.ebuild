@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/evolution-data-server/Attic/evolution-data-server-2.22.3-r2.ebuild,v 1.3 2009/03/09 21:15:02 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/evolution-data-server/Attic/evolution-data-server-2.22.3-r2.ebuild,v 1.1 2009/03/07 20:54:16 dang Exp $
 
 inherit db-use eutils flag-o-matic gnome2 autotools
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/projects/evolution/"
 
 LICENSE="LGPL-2 Sleepycat"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc ipv6 kerberos gnome-keyring krb4 ldap ssl"
 
 RDEPEND=">=dev-libs/glib-2.15.3
@@ -94,6 +94,7 @@ src_unpack() {
 
 	# Fix S/MIME verification.  Bug #258867
 	epatch "${FILESDIR}"/${P}-CVE-2009-0547.patch
+
 
 	# gtk-doc-am and gnome-common needed for this
 	eautoreconf
