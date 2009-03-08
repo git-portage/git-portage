@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/totem/Attic/totem-2.24.3-r1.ebuild,v 1.1 2009/01/18 22:51:46 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/totem/Attic/totem-2.24.4-r1.ebuild,v 1.1 2009/03/08 21:12:53 eva Exp $
 
 inherit eutils gnome2 multilib python
 
