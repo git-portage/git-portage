@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/fec/Attic/fec-1.0.3-r1.ebuild,v 1.4 2009/03/09 22:34:52 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/fec/Attic/fec-1.0.3-r1.ebuild,v 1.2 2009/01/28 00:05:29 tommy Exp $
 
 JAVA_PKG_IUSE="doc source"
 
@@ -12,7 +12,7 @@ SRC_URI="http://www.onionnetworks.com/downloads/${P}.zip"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 COMMON_DEPEND="dev-java/log4j
@@ -47,7 +47,7 @@ src_compile() {
 	java-pkg-2_src_compile
 	if use x86; then
 		cd "${S}"/src/csrc
-		use hardened && append-flags -fPIC
+		append-flags -fPIC
 		emake CC=$(tc-getCC) CFLAGS="${CFLAGS}" || die
 	fi
 }
