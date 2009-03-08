@@ -1,16 +1,6 @@
 # ChangeLog for app-i18n/unicode-data
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/unicode-data/ChangeLog,v 1.14 2009/03/11 16:14:25 ranger Exp $
-
-  11 Mar 2009; Brent Baude <ranger@gentoo.org> unicode-data-5.1.0.ebuild:
-  Marking unicode-data-5.1.0 ppc64 for bug 261824
-
-  10 Mar 2009; Dawid Węgliński <cla@gentoo.org> unicode-data-5.1.0.ebuild:
-  Stable on amd64 (bug #261824)
-
-  09 Mar 2009; Ferris McCormick <fmccor@gentoo.org>
-  unicode-data-5.1.0.ebuild:
-  Sparc stable, part of Bug #261824, nothing but data files.
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/unicode-data/ChangeLog,v 1.11 2008/12/07 11:21:28 vapier Exp $
 
   07 Dec 2008; Mike Frysinger <vapier@gentoo.org> unicode-data-5.1.0.ebuild:
   Add arm/s390/sh love #224541.
