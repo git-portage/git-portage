@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/transcode/Attic/transcode-1.1.1-r3.ebuild,v 1.3 2009/03/10 19:54:58 beandog Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/transcode/Attic/transcode-1.1.1-r3.ebuild,v 1.1 2009/03/08 12:34:39 patrick Exp $
 
 EAPI="2"
 
@@ -10,19 +10,19 @@ WANT_AUTOMAKE="1.10"
 inherit libtool flag-o-matic eutils multilib autotools
 
 MY_P=${P/_}
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 DESCRIPTION="video stream processing tool"
 HOMEPAGE="http://www.transcoding.org/cgi-bin/transcode"
 SRC_URI="mirror://berlios/tcforge/${MY_P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE="X 3dnow a52 aac alsa altivec dv dvd iconv imagemagick jpeg lzo mjpeg mp3 mmx nuv ogg oss postproc quicktime sdl sse sse2 theora truetype v4l2 vorbis x264 xml xvid"
+IUSE="X 3dnow a52 aac alsa altivec dv dvdread iconv imagemagick jpeg lzo mjpeg mp3 mmx nuv ogg oss postproc quicktime sdl sse sse2 theora truetype v4l2 vorbis x264 xml xvid"
 
 RDEPEND="a52? ( media-libs/a52dec )
 	alsa? ( media-libs/alsa-lib )
 	dv? ( media-libs/libdv )
-	dvd? ( media-libs/libdvdread )
+	dvdread? ( media-libs/libdvdread )
 	mjpeg? ( media-video/mjpegtools )
 	lzo? ( >=dev-libs/lzo-2 )
 	imagemagick? ( media-gfx/imagemagick )
@@ -47,6 +47,9 @@ RDEPEND="a52? ( media-libs/a52dec )
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	v4l2? ( >=sys-kernel/linux-headers-2.6.11 )"
+# Make sure the assembler USE flags are unmasked on amd64
+# Remove this once default-linux/amd64/2006.1 is deprecated
+DEPEND="${DEPEND} amd64? ( >=sys-apps/portage-2.1.2 )"
 
 src_unpack() {
 	unpack ${A}
@@ -80,7 +83,7 @@ src_configure() {
 		$(use_enable ogg) \
 		$(use_enable vorbis) \
 		$(use_enable theora) \
-		$(use_enable dvd libdvdread) \
+		$(use_enable dvdread libdvdread) \
 		$(use_enable dv libdv) \
 		$(use_enable quicktime libquicktime) \
 		$(use_enable imagemagick) \
