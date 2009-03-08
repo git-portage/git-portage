@@ -1,14 +1,6 @@
 # ChangeLog for app-emulation/kqemu
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/kqemu/Attic/ChangeLog,v 1.26 2009/03/09 10:36:27 lu_zero Exp $
-
-  09 Mar 2009; Luca Barbato <lu_zero@gentoo.org> kqemu-1.4.0_pre1.ebuild:
-  Additional fixes
-
-  09 Mar 2009; Luca Barbato <lu_zero@gentoo.org>
-  +files/kqemu-1.4.0_pre1-missing-sched-header.patch,
-  kqemu-1.4.0_pre1.ebuild:
-  Fix bug #261664, thanks to pva for doing all the work
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/kqemu/Attic/ChangeLog,v 1.24 2009/03/06 22:18:01 lu_zero Exp $
 
 *kqemu-1.4.0_pre1 (06 Mar 2009)
 
