@@ -1,15 +1,17 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/hal/Attic/hal-0.5.11-r7.ebuild,v 1.2 2009/02/04 14:27:53 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/hal/Attic/hal-0.5.12_rc1.ebuild,v 1.1 2009/03/08 22:03:59 chainsaw Exp $
 
 inherit eutils linux-info autotools flag-o-matic
 
-PATCH_VERSION="4"
+PATCH_VERSION="1"
 
+MY_P=${P/_/}
+S=${WORKDIR}/${MY_P}
 DESCRIPTION="Hardware Abstraction Layer"
-HOMEPAGE="http://www.freedesktop.org/Software/hal"
-SRC_URI="http://hal.freedesktop.org/releases/${P/_/}.tar.bz2
-		 http://dev.gentoo.org/~chainsaw/files/${P}-gentoo-patches-${PATCH_VERSION}.tar.bz2"
+HOMEPAGE="http://www.freedesktop.org/wiki/Software/hal"
+SRC_URI="http://hal.freedesktop.org/releases/${MY_P}.tar.bz2
+	 http://dev.gentoo.org/~chainsaw/files/${MY_P}-gentoo-patches-${PATCH_VERSION}.tar.bz2"
 
 LICENSE="|| ( GPL-2 AFL-2.0 )"
 SLOT="0"
@@ -117,8 +119,6 @@ pkg_setup() {
 	fi
 }
 
-S="${WORKDIR}/${PF/-r*/}"
-
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
@@ -166,6 +166,9 @@ src_compile() {
 		hardware="--with-cpufreq --with-usb-csr --with-keymaps"
 		use arm && hardware="$hardware --with-omap --enable-pmu"
 		use ppc && hardware="$hardware --enable-pmu"
+		if use x86 || use amd64; then
+			hardware="$hardware --with-macbook --with-macbookpro"
+		fi
 
 		if use dell ; then
 			hardware="$hardware --with-dell-backlight"
