@@ -1,6 +1,18 @@
 # ChangeLog for dev-cpp/commoncpp2
-# Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/commoncpp2/ChangeLog,v 1.42 2008/05/07 05:32:39 dev-zero Exp $
+# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/commoncpp2/ChangeLog,v 1.44 2009/03/07 15:13:55 armin76 Exp $
+
+*commoncpp2-1.6.3 (07 Mar 2009)
+
+  07 Mar 2009; Raúl Porcel <armin76@gentoo.org>
+  +files/1.6.3-autoconf.patch, +commoncpp2-1.6.3.ebuild:
+  Version bump
+
+  07 Mar 2009; Raúl Porcel <armin76@gentoo.org>
+  +files/1.6.2-configure_detect_netfilter.patch, commoncpp2-1.6.1.ebuild,
+  commoncpp2-1.6.2.ebuild:
+  Add patch from Aurélien Francillon <aurelien dot francillon at inrialpes
+  dot fr> to fix build failure with newer headers, bug #236177, x86 stable
 
 *commoncpp2-1.6.2 (07 May 2008)
 
