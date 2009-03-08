@@ -1,12 +1,6 @@
 # ChangeLog for kde-base/libkdepim
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/libkdepim/ChangeLog,v 1.112 2009/03/09 20:33:34 scarabeus Exp $
-
-  09 Mar 2009; Tomas Chvatal <scarabeus@gentoo.org> libkdepim-4.2.1.ebuild:
-  update deps for new eclass.
-
-  08 Mar 2009; Alexey Shvetsov <alexxy@gentoo.org> -libkdepim-4.2.0.ebuild:
-  Drop KDE 4.2.0
+# $Header: /var/cvsroot/gentoo-x86/kde-base/libkdepim/ChangeLog,v 1.110 2009/03/04 22:39:20 alexxy Exp $
 
 *libkdepim-4.2.1 (04 Mar 2009)
 
