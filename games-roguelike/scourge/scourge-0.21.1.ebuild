@@ -1,9 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-roguelike/scourge/scourge-0.21.1.ebuild,v 1.2 2009/03/08 06:44:58 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-roguelike/scourge/scourge-0.21.1.ebuild,v 1.1 2008/12/30 15:25:56 mr_bones_ Exp $
 
-EAPI=2
-inherit autotools eutils wxwidgets games
+inherit eutils wxwidgets games
 
 DESCRIPTION="A graphical rogue-like adventure game"
 HOMEPAGE="http://scourgeweb.org/"
@@ -17,10 +16,10 @@ IUSE=""
 
 RDEPEND="virtual/glu
 	virtual/opengl
-	media-libs/freetype:2
-	media-libs/libsdl[joystick]
+	>=media-libs/freetype-2
+	media-libs/libsdl
 	media-libs/sdl-net
-	media-libs/sdl-mixer[vorbis]
+	media-libs/sdl-mixer
 	media-libs/sdl-ttf
 	virtual/libintl"
 DEPEND="${RDEPEND}
@@ -28,20 +27,13 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/${PN}
 
-src_prepare() {
-	# bug #257601
-	sed -i \
-		-e '/AC_CHECK_HEADERS.*glext/ s:):, [#include <GL/gl.h>] ):' \
-		configure.in \
-		|| die "sed failed"
-	eautoreconf
-}
-
-src_configure() {
+src_compile() {
 	egamesconf \
 		--disable-dependency-tracking \
 		--with-data-dir="${GAMES_DATADIR}"/${PN} \
-		--localedir=/usr/share/locale
+		--localedir=/usr/share/locale \
+		|| die
+	emake || die "emake failed"
 }
 
 src_install() {
