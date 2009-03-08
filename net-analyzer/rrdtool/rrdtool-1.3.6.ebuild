@@ -1,8 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/rrdtool/Attic/rrdtool-1.3.6.ebuild,v 1.3 2009/03/08 10:39:21 cla Exp $
-
-EAPI="2"
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/rrdtool/Attic/rrdtool-1.3.6.ebuild,v 1.1 2009/01/22 11:38:14 pva Exp $
 
 inherit eutils flag-o-matic multilib perl-module
 
@@ -19,7 +17,7 @@ IUSE="doc perl python ruby rrdcgi tcl"
 RDEPEND="
 	>=media-libs/libpng-1.2.10
 	>=dev-libs/libxml2-2.6.31
-	>=x11-libs/cairo-1.4.6[svg]
+	>=x11-libs/cairo-1.4.6
 	>=dev-libs/glib-2.12.12
 	>=x11-libs/pango-1.17
 	tcl? ( dev-lang/tcl )
@@ -32,10 +30,14 @@ DEPEND="${RDEPEND}
 	sys-apps/gawk"
 
 pkg_setup() {
+	if ! built_with_use x11-libs/cairo svg; then
+		eerror "${PN} requires x11-libs/cairo to be built with svg USE flag."
+		die "Rebuild x11-libs/cairo with svg USE flag enabled."
+	fi
 	use perl && perl-module_pkg_setup
 }
 
-src_configure() {
+src_compile() {
 	filter-flags -ffast-math
 
 	export RRDDOCDIR=/usr/share/doc/${PF}
@@ -48,6 +50,8 @@ src_configure() {
 		$(use_enable tcl) \
 		$(use_with tcl tcllib /usr/$(get_libdir)) \
 		$(use_enable python)
+
+	emake || die "make failed"
 }
 
 src_install() {
