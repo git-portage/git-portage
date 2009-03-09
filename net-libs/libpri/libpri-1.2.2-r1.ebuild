@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libpri/Attic/libpri-1.2.2-r1.ebuild,v 1.3 2009/03/10 18:51:15 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libpri/Attic/libpri-1.2.2-r1.ebuild,v 1.2 2007/06/26 02:26:51 mr_bones_ Exp $
 
 inherit eutils
 
@@ -27,11 +27,13 @@ SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 
+DEPEND="virtual/libc"
+
 src_unpack() {
 	unpack ${A}
 
-	cd "${S}"
-	epatch "${FILESDIR}/${PN}-1.2.2-gentoo.diff"
+	cd ${S}
+	epatch ${FILESDIR}/${PN}-1.2.2-gentoo.diff
 
 	if use bri; then
 		einfo "Patching libpri w/ BRI stuff (${BRI_VERSION})"
@@ -51,7 +53,7 @@ src_compile() {
 }
 
 src_install() {
-	make INSTALL_PREFIX="${D}" install || die
+	make INSTALL_PREFIX=${D} install || die
 
-	dodoc ChangeLog README TODO
+	dodoc ChangeLog README TODO LICENSE
 }
