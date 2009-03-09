@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/knode/Attic/knode-4.2.1.ebuild,v 1.1 2009/03/04 21:54:58 alexxy Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/knode/Attic/knode-4.2.1.ebuild,v 1.3 2009/03/09 17:28:58 scarabeus Exp $
 
 EAPI="2"
 
@@ -11,13 +11,15 @@ DESCRIPTION="A newsreader for KDE"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="debug"
 
-DEPEND=">=kde-base/libkdepim-${PV}:${SLOT}
-	>=kde-base/libkpgp-${PV}:${SLOT}"
+DEPEND="
+	>=kde-base/libkdepim-${PV}:${SLOT}[kdeprefix=]
+	>=kde-base/libkpgp-${PV}:${SLOT}[kdeprefix=]
+"
 RDEPEND="${DEPEND}"
 
-KMEXTRACTONLY="libkdepim/
-	libkpgp/"
-	#kaddressbook/org.kde.KAddressbook.Core.xml
-	#korganizer/korgac/org.kde.korganizer.KOrgac.xml"
+KMEXTRACTONLY="
+	libkpgp/
+	libkdepim/
+"
 
 KMLOADLIBS="libkdepim"
