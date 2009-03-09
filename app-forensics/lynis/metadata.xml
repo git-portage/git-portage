@@ -3,7 +3,11 @@
 <pkgmetadata>
 <herd>forensics</herd>
 <maintainer>
-	<email>idl0r@gentoo.org</email>
+  <email>bluebird@gentoo.org</email>
+  <description>Proxy Maintainer</description>
+</maintainer>
+<maintainer>
+	<email>spooky85@gmail.com</email>
 	<name>Christian Ruppert</name>
 </maintainer>
 </pkgmetadata>
