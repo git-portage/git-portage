@@ -1,21 +1,6 @@
 # ChangeLog for app-office/gnumeric
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/gnumeric/ChangeLog,v 1.182 2009/03/11 19:28:12 klausman Exp $
-
-  11 Mar 2009; Tobias Klausmann <klausman@gentoo.org>
-  gnumeric-1.8.4-r1.ebuild:
-  Stable on alpha, bug #257012
-
-  11 Mar 2009; Brent Baude <ranger@gentoo.org> gnumeric-1.8.4-r1.ebuild:
-  Marking gnumeric-1.8.4-r1 ppc64 for bug 257012
-
-  10 Mar 2009; Ferris McCormick <fmccor@gentoo.org>
-  gnumeric-1.8.4-r1.ebuild:
-  Sparc stable, security Bug #257012.
-
-  10 Mar 2009; Gilles Dartiguelongue <eva@gentoo.org>
-  gnumeric-1.8.4-r1.ebuild:
-  Fix incorrect USE dependency on libgsf, bug #261971.
+# $Header: /var/cvsroot/gentoo-x86/app-office/gnumeric/ChangeLog,v 1.178 2009/03/09 22:45:32 eva Exp $
 
 *gnumeric-1.8.4-r1 (09 Mar 2009)
 
