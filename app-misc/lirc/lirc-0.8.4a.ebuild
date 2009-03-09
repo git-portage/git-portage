@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/lirc/Attic/lirc-0.8.4a.ebuild,v 1.3 2009/03/10 21:02:47 beandog Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/lirc/Attic/lirc-0.8.4a.ebuild,v 1.1 2009/02/28 14:14:36 fauli Exp $
 
 inherit eutils linux-mod flag-o-matic autotools
 
