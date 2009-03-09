@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/evince/Attic/evince-2.24.2.ebuild,v 1.6 2009/03/12 00:44:31 dang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/evince/Attic/evince-2.24.2.ebuild,v 1.4 2009/03/07 14:47:36 gentoofan23 Exp $
 
 EAPI="2"
 inherit eutils gnome2
@@ -10,7 +10,7 @@ HOMEPAGE="http://www.gnome.org/projects/evince/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ppc ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ppc ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="dbus debug djvu doc dvi gnome-keyring nautilus t1lib tiff"
 
 RDEPEND="
@@ -23,7 +23,7 @@ RDEPEND="
 	>=gnome-base/libglade-2
 	>=gnome-base/gconf-2
 	nautilus? ( >=gnome-base/nautilus-2.10 )
-	>=app-text/poppler-bindings-0.8[gtk,cairo]
+	>=app-text/poppler-bindings-0.8[gtk]
 	dvi? (
 		virtual/tex-base
 		t1lib? ( >=media-libs/t1lib-5.0.0 )
