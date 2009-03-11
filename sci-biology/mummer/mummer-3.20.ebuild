@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/mummer/mummer-3.20.ebuild,v 1.3 2008/06/17 18:40:09 weaver Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/mummer/mummer-3.20.ebuild,v 1.6 2009/03/09 15:55:37 weaver Exp $
 
 inherit eutils
 
@@ -15,14 +15,17 @@ IUSE="doc"
 KEYWORDS="~amd64 ~x86"
 
 DEPEND=""
-RDEPEND=""
+RDEPEND="app-shells/tcsh"
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}"/${P}-gcc43.patch
+	# Warning: package uses CPPFLAGS on c in addition to cpp, despite the name
+	sed -i -e 's/CPPFLAGS =/CPPFLAGS = ${CFLAGS} /' \
+		-e 's/LDFLAGS  =$//' "${S}/Makefile"
 }
 
 src_compile() {
@@ -41,13 +44,13 @@ src_compile() {
 src_install() {
 	dobin nucmer2xfig show-coords mapview show-snps run-mummer{1,3} \
 		exact-tandems promer repeat-match show-aligns gaps mummer \
-		show-tiling mgaps nucmer mummerplot delta-filter combineMUMs aux_bin/*
-	newbin annotate mummer-annotate
+		show-tiling mgaps nucmer mummerplot delta-filter combineMUMs aux_bin/* || die
+	newbin annotate mummer-annotate || die
 
 	insinto /usr/share/${PN}/scripts
 	doins scripts/{*.awk,*.csh,*.pl}
 	insinto /usr/share/${PN}/lib
-	doins scripts/Foundation.pm
+	doins scripts/Foundation.pm || die
 
 	dodoc ACKNOWLEDGEMENTS ChangeLog README
 	insinto /usr/share/doc/${PF}
