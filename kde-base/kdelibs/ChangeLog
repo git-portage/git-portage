@@ -1,6 +1,25 @@
 # ChangeLog for kde-base/kdelibs
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/ChangeLog,v 1.569 2009/03/08 23:22:16 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/ChangeLog,v 1.572 2009/03/11 17:15:02 scarabeus Exp $
+
+  11 Mar 2009; Tomas Chvatal <scarabeus@gentoo.org>
+  files/kdelibs-4.2.1-kcatalog.patch:
+  Update the patch so it actualy apply.
+
+*kdelibs-4.2.1-r2 (11 Mar 2009)
+
+  11 Mar 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +files/kdelibs-4.2.1-kcatalog.patch, +kdelibs-4.2.1-r2.ebuild:
+  Added ${FILESDIR}/${P}-kcatalog.patch and bumped to kdelibs-4.2.1-r2 to
+  fix remaining issues on upstream bug 186038 and Gentoo bug 261367 related
+  to gwenview.
+
+*kdelibs-4.2.1-r1 (10 Mar 2009)
+
+  10 Mar 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +files/kdelibs-4.2.1-qt4.5.patch, +kdelibs-4.2.1-r1.ebuild:
+  Applied upstream revision 934640 that fixes upstream bug 186038 and Gentoo
+  bug 261367.
 
   08 Mar 2009; Tomas Chvatal <scarabeus@gentoo.org> kdelibs-4.2.1.ebuild:
   Kdelibs:4.* needs allways webkit.
