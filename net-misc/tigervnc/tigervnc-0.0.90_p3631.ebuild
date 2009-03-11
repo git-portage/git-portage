@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/tigervnc/Attic/tigervnc-0.0.90_p3631.ebuild,v 1.1 2009/03/08 15:34:44 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/tigervnc/Attic/tigervnc-0.0.90_p3631.ebuild,v 1.3 2009/03/09 04:23:18 mr_bones_ Exp $
 
 EAPI="1"
 
@@ -11,11 +11,10 @@ PATCH="${P/_p*/}-patches-0.1"
 OPENGL_DIR="xorg-x11"
 
 DESCRIPTION="Remote desktop viewer display system"
-HOMEPAGE="http://www.realvnc.com/"
+HOMEPAGE="http://www.tigervnc.org"
 SRC_URI="mirror://gentoo/${P}.tar.bz2
 	mirror://gentoo/${PATCH}.tar.bz2
 	server? ( ftp://ftp.freedesktop.org/pub/xorg/individual/xserver/xorg-server-${XSERVER_VERSION}.tar.bz2	)"
-
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -181,4 +180,3 @@ src_install() {
 pkg_postinst() {
 	use server && switch_opengl_implem
 }
-
