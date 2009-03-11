@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-simulation/secondlife-bin/Attic/secondlife-bin-1.22_rc9.ebuild,v 1.1 2009/02/15 17:25:51 lavajoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-simulation/secondlife-bin/Attic/secondlife-bin-1.22_rc11.ebuild,v 1.1 2009/03/11 23:41:21 lavajoe Exp $
 
 inherit eutils multilib games versionator
 
-SECONDLIFE_REVISION=110075
+SECONDLIFE_REVISION=113976
 SECONDLIFE_MAJOR_VER=$(get_version_component_range 1-2)
 SECONDLIFE_MINOR_VER=$(get_version_component_range 3)
 SECONDLIFE_MINOR_VER=${SECONDLIFE_MINOR_VER/rc/}
