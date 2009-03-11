@@ -1,6 +1,34 @@
 # ChangeLog for media-video/dvdrip
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/dvdrip/ChangeLog,v 1.114 2009/03/07 13:51:51 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/dvdrip/ChangeLog,v 1.119 2009/03/11 08:22:20 dev-zero Exp $
+
+  11 Mar 2009; Tiziano Müller <dev-zero@gentoo.org>
+  dvdrip-0.98.10-r2.ebuild:
+  Reverting my change. Transcode got it's USE flags changed without a
+  revision bump, thus confusing certain PM's.
+
+  11 Mar 2009; Tiziano Müller <dev-zero@gentoo.org>
+  dvdrip-0.98.10-r2.ebuild:
+  replaced dvd USE flag with dvdread for transcode-1.1
+
+  10 Mar 2009; Steve Dibb <beandog@gentoo.org> dvdrip-0.98.8.ebuild,
+  dvdrip-0.98.9-r1.ebuild, dvdrip-0.98.10-r2.ebuild:
+  Change transcode check for dvdread flag to dvd flag
+
+*dvdrip-0.98.10-r2 (10 Mar 2009)
+
+  10 Mar 2009; Steve Dibb <beandog@gentoo.org> -dvdrip-0.98.10-r1.ebuild,
+  +dvdrip-0.98.10-r2.ebuild:
+  Fix transcode-1.1.0 use flag deps, bug 261889
+
+*dvdrip-0.98.10-r1 (09 Mar 2009)
+*dvdrip-0.98.9-r1 (09 Mar 2009)
+
+  09 Mar 2009; Steve Dibb <beandog@gentoo.org> -dvdrip-0.98.9.ebuild,
+  +dvdrip-0.98.9-r1.ebuild, -dvdrip-0.98.10.ebuild,
+  +dvdrip-0.98.10-r1.ebuild:
+  Add jpeg,mp3,mpeg,ogg,vorbis to transcode use flag dep since dvd::rip
+  assumes they are supported, bug 261889
 
 *dvdrip-0.98.10 (07 Mar 2009)
 
