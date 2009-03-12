@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/gnumeric/Attic/gnumeric-1.8.4-r1.ebuild,v 1.1 2009/03/09 22:45:32 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/gnumeric/Attic/gnumeric-1.8.4-r1.ebuild,v 1.5 2009/03/11 19:28:12 klausman Exp $
 
 EAPI="2"
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://www.gnome.org/projects/gnumeric/"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="alpha ~amd64 ~hppa ~ia64 ~ppc ppc64 sparc ~x86 ~x86-fbsd"
 
 IUSE="gnome perl python"
 # bonobo guile libgda mono (experimental)
@@ -22,7 +22,7 @@ RESTRICT="test"
 RDEPEND="sys-libs/zlib
 	app-arch/bzip2
 	>=dev-libs/glib-2.6
-	>=gnome-extra/libgsf-1.14.6[gnome]
+	>=gnome-extra/libgsf-1.14.6[gnome=]
 	>=x11-libs/goffice-0.6.3
 	>=dev-libs/libxml2-2.4.12
 	>=x11-libs/pango-1.8.1
