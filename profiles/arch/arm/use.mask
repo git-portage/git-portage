@@ -55,6 +55,8 @@ fuse
 R
 octave
 tracker
+xindy
+lyx
 
 # havent tested yet
 gphoto2
