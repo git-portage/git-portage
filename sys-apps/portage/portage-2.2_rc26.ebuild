@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.2_rc24.ebuild,v 1.1 2009/03/10 09:14:21 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.2_rc26.ebuild,v 1.1 2009/03/17 20:33:52 zmedico Exp $
 
 inherit eutils multilib python
 
@@ -142,14 +142,32 @@ src_install() {
 
 	# BSD and OSX need a sed wrapper so that find/xargs work properly
 	if use userland_GNU; then
-		rm "${S}"/bin/sed || die "Failed to remove sed wrapper"
+		rm "${S}"/bin/ebuild-helpers/sed || die "Failed to remove sed wrapper"
 	fi
 
-	cd "${S}"/bin
-	doexe *
-	dosym newins ${portage_base}/bin/donewins
+	cd "${S}"/bin || die "cd failed"
+	doexe $(find . -maxdepth 1 -type f) || die "doexe failed"
 
 	local symlinks
+	dodir ${portage_base}/bin/ebuild-helpers || die "dodir failed"
+	exeinto ${portage_base}/bin/ebuild-helpers || die "exeinto failed"
+	cd "${S}"/bin/ebuild-helpers || die "cd failed"
+	doexe $(find . -type f ! -type l) || die "doexe failed"
+	symlinks=$(find . -type l)
+	if [ -n "$symlinks" ] ; then
+		cp -P $symlinks "${D}${portage_base}/bin/ebuild-helpers/" || \
+			die "cp failed"
+	fi
+
+	# These symlinks will be included in the next tarball.
+	# Until then, create them manually.
+	dosym ../portageq ${portage_base}/bin/ebuild-helpers/portageq || \
+		die "dosym failed"
+	local x
+	for x in eerror einfo ewarn eqawarn ; do
+		dosym elog ${portage_base}/bin/ebuild-helpers/$x || die "dosym failed"
+	done
+
 	for mydir in $(find "${S}"/pym -type d | sed -e "s:^${S}/::") ; do
 		dodir ${portage_base}/${mydir}
 		insinto ${portage_base}/${mydir}
