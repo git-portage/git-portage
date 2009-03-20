@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/Attic/backup-manager-0.7.8.ebuild,v 1.1 2009/03/20 15:26:16 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/Attic/backup-manager-0.7.8.ebuild,v 1.2 2009/03/20 18:36:14 mr_bones_ Exp $
 
 inherit eutils
 
@@ -35,4 +35,3 @@ pkg_postinst() {
 	ebeep 3
 	ewarn "New configuration keys have been defined. Please check the docs for info"
 }
-
