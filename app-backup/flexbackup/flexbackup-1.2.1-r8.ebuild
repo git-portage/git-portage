@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/Attic/flexbackup-1.2.1-r8.ebuild,v 1.2 2009/03/18 18:14:44 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/Attic/flexbackup-1.2.1-r8.ebuild,v 1.3 2009/03/20 16:00:06 armin76 Exp $
 
 inherit eutils versionator
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ppc ~x86"
+KEYWORDS="~amd64 ~hppa ppc x86"
 IUSE=""
 
 RDEPEND="app-arch/mt-st"
