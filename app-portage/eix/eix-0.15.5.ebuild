@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/eix/Attic/eix-0.15.3.ebuild,v 1.1 2009/01/18 14:40:59 darkside Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/eix/Attic/eix-0.15.5.ebuild,v 1.1 2009/03/21 22:09:01 darkside Exp $
 
 inherit multilib
 
