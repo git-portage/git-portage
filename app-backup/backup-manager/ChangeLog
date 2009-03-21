@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/backup-manager
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/ChangeLog,v 1.10 2009/03/21 17:01:04 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/ChangeLog,v 1.11 2009/03/21 17:09:03 darkside Exp $
+
+  21 Mar 2009; Jeremy Olexa <darkside@gentoo.org>
+  backup-manager-0.7.5.ebuild:
+  amd64 stable, bug 207390
 
   21 Mar 2009; Raúl Porcel <armin76@gentoo.org>
   backup-manager-0.7.5.ebuild:
