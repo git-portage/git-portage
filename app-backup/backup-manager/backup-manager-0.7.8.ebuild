@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/Attic/backup-manager-0.7.8.ebuild,v 1.2 2009/03/20 18:36:14 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/Attic/backup-manager-0.7.8.ebuild,v 1.3 2009/03/21 17:57:31 voyageur Exp $
 
 inherit eutils
 
@@ -14,13 +14,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc s3"
 
 DEPEND="dev-lang/perl
-	sys-devel/gettext
+	sys-devel/gettext"
+
+RDEPEND="${DEPEND}
+	>=sys-apps/findutils-4.3.0
 	dbus? ( sys-apps/dbus )
 	s3? ( dev-perl/Net-Amazon-S3
 		dev-perl/File-Slurp )"
-
-RDEPEND="${DEPEND}
-	>=sys-apps/findutils-4.3.0"
 
 src_install() {
 	make DESTDIR="${D}" install || die "install failed"
