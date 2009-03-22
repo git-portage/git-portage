@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/flexbackup
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.27 2009/03/20 16:00:06 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.28 2009/03/22 17:55:09 maekke Exp $
+
+  22 Mar 2009; Markus Meier <maekke@gentoo.org> flexbackup-1.2.1-r8.ebuild:
+  amd64 stable, bug #262374
 
   20 Mar 2009; Raúl Porcel <armin76@gentoo.org> flexbackup-1.2.1-r8.ebuild:
   x86 stable wrt #262374
