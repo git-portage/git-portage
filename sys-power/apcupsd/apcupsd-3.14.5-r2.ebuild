@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/apcupsd/Attic/apcupsd-3.14.5.ebuild,v 1.4 2009/01/19 15:52:12 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/apcupsd/Attic/apcupsd-3.14.5-r2.ebuild,v 1.1 2009/03/22 13:58:12 flameeyes Exp $
 
 WEBAPP_MANUAL_SLOT="yes"
 WEBAPP_OPTIONAL="yes"
@@ -51,7 +51,7 @@ src_compile() {
 		--with-pid-dir=/var/run \
 		--with-log-dir=/var/log \
 		--with-nis-port=3551 \
-		--enable-net \
+		--enable-net --enable-pcnet \
 		--with-distname=gentoo \
 		$(use_enable snmp net-snmp) \
 		$(use_enable gnome gapcmon) \
@@ -85,13 +85,11 @@ src_install() {
 		dohtml -r doc/latex/apcupsd/* || die "doc install failed"
 	fi
 
-	if use cgi; then
-		mv "${D}"/etc/apcupsd/apcupsd.css "${D}""${MY_CGIBINDIR}"
-		webapp_src_install
-	fi
+	use cgi && webapp_src_install
 
 	rm "${D}"/etc/init.d/apcupsd
 	newinitd "${FILESDIR}/${PN}.init.2" "${PN}" || die "newinitd failed"
+	newinitd "${FILESDIR}/${PN}.powerfail.init" "${PN}".powerfail || die "newinitd failed"
 }
 
 pkg_postinst() {
@@ -109,6 +107,16 @@ pkg_postinst() {
 	elog "/etc/init.d/apcupsd.something, and it will then load the"
 	elog "configuration file at /etc/apcupsd/something.conf."
 	elog ""
+
+	if [ -d "${ROOT}"/etc/runlevels/shutdown -a \
+			! -e "${ROOT}"/etc/runlevels/shutdown/"${PN}".powerfail ] ; then
+		elog 'If you want apcupsd to power off your UPS when it'
+		elog 'shuts down your system in a power failure, you must'
+		elog 'add apcupsd.powerfail to your shutdown runlevel:'
+		elog ''
+		elog ' \e[01m rc-update add apcupsd.powerfail shutdown \e[0m'
+		elog ''
+	fi
 }
 
 pkg_prerm() {
