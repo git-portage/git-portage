@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/vzdump/Attic/vzdump-1.1.ebuild,v 1.1 2009/03/23 20:59:56 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/vzdump/Attic/vzdump-1.1.ebuild,v 1.2 2009/03/23 22:07:44 mr_bones_ Exp $
 
 EAPI="2"
 
@@ -29,4 +29,3 @@ src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
 	dodoc ChangeLog TODO
 }
-
