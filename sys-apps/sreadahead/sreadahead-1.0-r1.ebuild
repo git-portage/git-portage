@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/sreadahead/Attic/sreadahead-1.0.ebuild,v 1.1 2009/03/27 12:59:24 darkside Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/sreadahead/Attic/sreadahead-1.0-r1.ebuild,v 1.1 2009/03/28 03:13:02 darkside Exp $
 
 inherit eutils
 
-DESCRIPTION="A readahead implementation optimized for solid state discs"
+DESCRIPTION="A readahead implementation optimized for solid state disks"
 HOMEPAGE="http://code.google.com/p/sreadahead/"
 SRC_URI="http://sreadahead.googlecode.com/files/${P}.tar.gz"
 
@@ -26,6 +26,7 @@ src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc README "${FILESDIR}/0001-kernel-trace-open.patch" || die
 	newinitd "${FILESDIR}"/sreadahead.rc sreadahead || die
+	keepdir "/var/lib/sreadahead/debugfs" || die "dodir failed"
 }
 
 pkg_postinst() {
