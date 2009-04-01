@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.2_p1-r5.ebuild,v 1.1 2008/09/23 02:32:25 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.2_p1-r5.ebuild,v 1.2 2009/04/01 21:34:56 robbat2 Exp $
 
 inherit autotools eutils
 
@@ -142,7 +142,9 @@ src_unpack() {
 		"${FILESDIR}"/${PN}-2.5.2p1-amcrypt-ossl-asym-race-fix.patch \
 		|| die "Failed to apply race fix for encryption"
 
-	eautomake
+	pushd "${S}" >/dev/null
+	WANT_AUTOMAKE=1.9 eautomake
+	popd >/dev/null
 
 	# now the real fun
 	amanda_variable_setup
