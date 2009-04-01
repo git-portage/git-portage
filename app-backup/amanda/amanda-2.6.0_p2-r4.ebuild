@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.3 2008/12/31 03:16:59 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.4 2009/04/01 21:44:29 robbat2 Exp $
 
 inherit autotools eutils
 
@@ -379,6 +379,7 @@ src_install() {
 	local i
 	for i in ${AMANDA_USER_HOMEDIR} ${AMANDA_TAR_LISTDIR} \
 		${AMANDA_TMPDIR} ${AMANDA_TMPDIR}/dumps \
+		${AMANDA_USER_HOMEDIR}/amanda \
 		${AMANDA_USER_HOMEDIR}/${AMANDA_CONFIG_NAME} \
 		/etc/amanda /etc/amanda/${AMANDA_CONFIG_NAME}; do
 		einfo "Securing directory (${i})"
