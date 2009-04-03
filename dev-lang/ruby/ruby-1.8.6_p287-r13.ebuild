@@ -1,9 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.6_p287-r12.ebuild,v 1.4 2009/03/20 05:00:41 josejx Exp $
-
-WANT_AUTOCONF="latest"
-WANT_AUTOMAKE="latest"
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.6_p287-r13.ebuild,v 1.1 2009/04/03 12:26:26 a3li Exp $
 
 ONIGURUMA="onigd2_5_9"
 
@@ -42,6 +39,8 @@ PROVIDE="virtual/ruby"
 pkg_setup() {
 	use tk || return
 
+	# Note for EAPI-2 lovers: We'd like to show that custom message.
+	# *If* you can make USE dependencies show that, too, feel free to migrate.
 	if (use threads && ! built_with_use dev-lang/tk threads) \
 		|| (! use threads && built_with_use dev-lang/tk threads) ; then
 		eerror
@@ -67,6 +66,8 @@ src_unpack() {
 	epatch "${FILESDIR}/${PN}-1.8.6-openssl.patch"
 	epatch "${FILESDIR}/${PN}-mkconfig.patch"
 	epatch "${FILESDIR}/${PN}-ossl_ocsp-verification.patch"
+	epatch "${FILESDIR}/${PN}${MY_SUFFIX}-mkmf-parallel-install.patch"
+	epatch "${FILESDIR}/${PN}-1.8.6-uclibc-udp.patch"
 
 	# Fix a hardcoded lib path in configure script
 	sed -i -e "s:\(RUBY_LIB_PREFIX=\"\${prefix}/\)lib:\1$(get_libdir):" \
