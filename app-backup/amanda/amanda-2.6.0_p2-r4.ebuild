@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.6 2009/04/05 19:06:46 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.7 2009/04/05 19:26:08 robbat2 Exp $
 
 inherit autotools eutils
 
@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}
 	sys-devel/autoconf
 	sys-devel/automake"
 
-IUSE="berkdb debug gdbm minimal s3 samba xfs kerberos devpay"
+IUSE="berkdb debug gdbm minimal s3 samba xfs kerberos devpay ipv6"
 
 S="${WORKDIR}/${P/_/}"
 MYFILESDIR="${WORKDIR}/files"
@@ -252,6 +252,9 @@ src_compile() {
 	# Raise maximum configurable blocksize
 	myconf="${myconf} --with-maxtapeblocksize=${AMANDA_MAX_TAPE_BLOCK_KB}"
 
+	# IPv6 fun.
+	myconf="${myconf} `use_with ipv6`"
+
 	econf ${myconf} || die "econf failed!"
 	emake -j1 || die "emake failed!"
 
@@ -317,8 +320,8 @@ src_install() {
 	# Clean up some bits
 	dodoc "${D}"/usr/share/amanda/*
 	rm -rf "${D}"/usr/share/amanda
-	mkdir -p "${D}"/${MYINSTTMPDIR} || die
-	cp "${TMPENVFILE}" "${D}"/${TMPINSTENVFILE} || die
+	#mkdir -p "${D}"/${MYINSTTMPDIR} || die
+	#cp "${TMPENVFILE}" "${D}"/${TMPINSTENVFILE} || die
 	# our inetd sample
 	einfo "Installing standard inetd sample"
 	newdoc "${MYFILESDIR}"/amanda-inetd.amanda.sample-2.6.0_p2-r2 amanda-inetd.amanda.sample

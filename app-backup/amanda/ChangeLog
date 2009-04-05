@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/amanda
 # Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.52 2009/04/05 19:06:46 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.53 2009/04/05 19:26:08 robbat2 Exp $
+
+  05 Apr 2009; Robin H. Johnson <robbat2@gentoo.org>
+  amanda-2.6.0_p2-r4.ebuild:
+  Cleanup env tempfile that was installed, and make ipv6 non-automagic.
 
   05 Apr 2009; Robin H. Johnson <robbat2@gentoo.org>
   amanda-2.6.0_p2-r4.ebuild:
