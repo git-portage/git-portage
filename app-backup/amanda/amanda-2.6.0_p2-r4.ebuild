@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.4 2009/04/01 21:44:29 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.5 2009/04/05 19:03:25 robbat2 Exp $
 
 inherit autotools eutils
 
@@ -313,18 +313,15 @@ src_install() {
 
 	# docs
 	einfo "Installing documentation"
-	dodoc AUTHORS C* INSTALL NEWS README
+	dodoc AUTHORS C* INSTALL NEWS README DEVELOPING ReleaseNotes UPGRADING
 	# Clean up some bits
-	dodoc /usr/share/amanda/*
+	dodoc "${D}"/usr/share/amanda/*
 	rm -rf "${D}"/usr/share/amanda
 	mkdir -p "${D}"/${MYINSTTMPDIR} || die
 	cp "${TMPENVFILE}" "${D}"/${TMPINSTENVFILE} || die
 	# our inetd sample
 	einfo "Installing standard inetd sample"
 	newdoc "${MYFILESDIR}"/amanda-inetd.amanda.sample-2.6.0_p2-r2 amanda-inetd.amanda.sample
-	# Stock extra docs
-	docinto docs
-	dodoc "${S}"/docs/*
 	# Labels
 	einfo "Installing labels"
 	docinto labels
