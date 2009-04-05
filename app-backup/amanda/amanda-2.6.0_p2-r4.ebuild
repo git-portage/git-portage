@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.5 2009/04/05 19:03:25 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.6 2009/04/05 19:06:46 robbat2 Exp $
 
 inherit autotools eutils
 
@@ -176,8 +176,8 @@ src_compile() {
 	local myconf
 	cd "${S}"
 
-	einfo "Using '${AMANDA_DBMODE}' style database"
-	myconf="${myconf} --with-db=${AMANDA_DBMODE}"
+	#einfo "Using '${AMANDA_DBMODE}' style database"
+	#myconf="${myconf} --with-db=${AMANDA_DBMODE}"
 	einfo "Using ${AMANDA_SERVER_TAPE} for tape server."
 	myconf="${myconf} --with-tape-server=${AMANDA_SERVER_TAPE}"
 	einfo "Using ${AMANDA_SERVER_INDEX} for index server."
