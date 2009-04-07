@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/duplicity
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.32 2009/04/05 15:33:41 vanquirius Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.33 2009/04/07 12:01:20 hollow Exp $
+
+  07 Apr 2009; Benedikt Böhm <hollow@gentoo.org> duplicity-0.5.14.ebuild:
+  add s3 USE flag wrt #254160
 
 *duplicity-0.5.14 (05 Apr 2009)
 
