@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/ejabberd/Attic/ejabberd-2.0.4-r1.ebuild,v 1.2 2009/04/09 05:40:39 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/ejabberd/Attic/ejabberd-2.0.5.ebuild,v 1.1 2009/04/09 05:40:39 pva Exp $
 
 inherit eutils multilib
 
@@ -36,10 +36,6 @@ S=${WORKDIR}/${MY_P}/src
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-
-	# Bug #171427
-	epatch "${FILESDIR}/2.0.0-missing-declaration.patch"
-	epatch "${FILESDIR}/${PN}-2.0.4-fix-EJAB-890.patch" #263950
 
 	# get rid of the prefix
 	sed -i -e "s/\\@prefix\\@//" "${S}/Makefile.in" \
