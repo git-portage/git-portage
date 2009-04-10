@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.8 2009/04/05 19:59:06 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.9 2009/04/10 07:40:57 robbat2 Exp $
 
 inherit autotools eutils
 
@@ -320,8 +320,15 @@ src_install() {
 	# Clean up some bits
 	dodoc "${D}"/usr/share/amanda/*
 	rm -rf "${D}"/usr/share/amanda
-	#mkdir -p "${D}"/${MYINSTTMPDIR} || die
-	#cp "${TMPENVFILE}" "${D}"/${TMPINSTENVFILE} || die
+	
+	# Do not remove these next two lines
+	# This file is created, and installed, but then removed at the start of
+	# pkg_postinst. It simply insures that the settings that Amanda is built
+	# with are used very early in the postinst, and override any prior existing
+	# settings in the /etc/env.d/97amanda
+	mkdir -p "${D}"/${MYINSTTMPDIR} || die
+	cp "${TMPENVFILE}" "${D}"/${TMPINSTENVFILE} || die
+
 	# our inetd sample
 	einfo "Installing standard inetd sample"
 	newdoc "${MYFILESDIR}"/amanda-inetd.amanda.sample-2.6.0_p2-r2 amanda-inetd.amanda.sample
