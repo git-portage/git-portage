@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.29-r1.ebuild,v 1.2 2009/04/10 15:53:05 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.27.21-r1.ebuild,v 1.1 2009/04/11 08:17:15 kumba Exp $
 
 # INCLUDED:
 # 1) linux sources from kernel.org
@@ -15,8 +15,8 @@
 
 # Version Data
 OKV=${PV/_/-}
-GITDATE="20090324"			# Date of diff between kernel.org and lmo GIT
-GENPATCHREV="1"				# Tarball revision for patches
+GITDATE="20090315"			# Date of diff between kernel.org and lmo GIT
+GENPATCHREV="3"				# Tarball revision for patches
 
 # Directories
 S="${WORKDIR}/linux-${OKV}-${GITDATE}"
@@ -42,7 +42,7 @@ HOMEPAGE="http://www.linux-mips.org/ http://www.gentoo.org/"
 SLOT="${OKV}"
 PROVIDE="virtual/linux-sources virtual/alsa"
 KEYWORDS="-* ~mips"
-IUSE="cobalt ip27 ip28 ip30 ip32r10k impactdebug"
+IUSE="cobalt ip27 ip28 ip30 ip32r10k"
 DEPEND=">=sys-devel/gcc-4.1.1"
 RDEPEND=""
 
@@ -62,10 +62,12 @@ SV_IP30=""				# 	    DO_IP30 == "no", 			   IP30
 SV_IP32=""				# 	    DO_IP32 == "no", 			   IP32
 SV_CBLT=""				# 	    DO_CBLT == "no", 			   Cobalt
 
+
 DESCRIPTION="Linux-Mips GIT sources for MIPS-based machines, dated ${GITDATE}"
 SRC_URI="${KERNEL_URI}
 	 mirror://gentoo/mipsgit-${F_KV}${KVE}-${GITDATE}.diff.bz2
 	 mirror://gentoo/${PN}-${F_KV}-patches-v${GENPATCHREV}.tar.bz2"
+
 
 UNIPATCH_STRICTORDER="1"
 UNIPATCH_LIST="${DISTDIR}/mipsgit-${F_KV}${KVE}-${GITDATE}.diff.bz2"
@@ -155,6 +157,6 @@ eblit-include show_cobalt_info v1
 eblit-pkg setup v1
 eblit-pkg postinst v1
 
-src_unpack() { eblit-run src_unpack v2 ; }
+src_unpack() { eblit-run src_unpack v1 ; }
 
 #//------------------------------------------------------------------------------
