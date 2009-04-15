@@ -115,11 +115,7 @@ diff -Nru openswan-2.6.21.orig/programs/setup/Makefile openswan-2.6.21/programs/
 -	@rm -f setup
  
  #
- # $Log: openswan-2.6.21-gentoo.patch,v $
- # Revision 1.2  2009/04/10 21:36:21  mrness
- # Add -kb flag to gentoo patch (#265612). Remove secure-tunneling herd (#265655).
- # (Portage version: 2.1.6.7/cvs/Linux x86_64)
- #
+ # $Log: Makefile,v $
 diff -Nru openswan-2.6.21.orig/testing/utils/make-uml.sh openswan-2.6.21/testing/utils/make-uml.sh
 --- openswan-2.6.21.orig/testing/utils/make-uml.sh	2009-03-30 13:11:28.000000000 +0000
 +++ openswan-2.6.21/testing/utils/make-uml.sh	2009-04-10 21:20:47.000000000 +0000
