@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/PortageXS/Attic/PortageXS-0.02.08.ebuild,v 1.4 2008/11/18 15:27:16 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/PortageXS/Attic/PortageXS-0.02.10.ebuild,v 1.1 2009/04/15 19:07:08 ian Exp $
 
 inherit perl-module
 DESCRIPTION="Portage abstraction layer for perl"
@@ -15,25 +15,26 @@ SRC_TEST="do"
 
 DEPEND="dev-lang/perl
 	virtual/perl-Term-ANSIColor
+	dev-perl/Shell-EnvImporter
 	!minimal? ( dev-perl/IO-Socket-SSL
 				virtual/perl-Sys-Syslog )"
 
 src_unpack() {
 	unpack ${A}
 	if use minimal ; then
-		rm -r ${S}/usr
-		rm -r ${S}/etc/init.d
-		rm -r ${S}/etc/pxs/certs
-		rm ${S}/etc/pxs/portagexsd.conf
-		rm -r ${S}/lib/PortageXS/examples
+		rm -r "${S}"/usr
+		rm -r "${S}"/etc/init.d
+		rm -r "${S}"/etc/pxs/certs
+		rm "${S}"/etc/pxs/portagexsd.conf
+		rm -r "${S}"/lib/PortageXS/examples
 	fi
 }
 
 pkg_preinst() {
 	if use !minimal ; then
-		cp -r ${S}/usr ${D}
+		cp -r "${S}"/usr "${D}"
 	fi
-	cp -r ${S}/etc ${D}
+	cp -r "${S}"/etc "${D}"
 }
 
 pkg_postinst() {
