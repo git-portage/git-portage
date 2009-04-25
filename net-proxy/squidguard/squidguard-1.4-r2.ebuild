@@ -1,19 +1,19 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/squidguard/Attic/squidguard-1.3-r4.ebuild,v 1.1 2008/12/16 07:38:24 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/squidguard/Attic/squidguard-1.4-r2.ebuild,v 1.1 2009/04/25 09:58:43 mrness Exp $
 
 WANT_AUTOMAKE=none
+EAPI="2"
 
 inherit eutils autotools
 
 DESCRIPTION="Combined filter, redirector and access controller plugin for Squid."
 HOMEPAGE="http://www.squidguard.org"
-SRC_URI="http://www.squidguard.org/Downloads/squidGuard-${PV}.tar.gz
-	http://www.squidguard.org/Downloads/Patches/${PV}/squidGuard-${PV}-patch-20080714.tar.gz"
+SRC_URI="http://www.squidguard.org/Downloads/squidGuard-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="ldap"
 
 RDEPEND=">=sys-libs/db-2
@@ -24,28 +24,20 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/squidGuard-${PV}"
 
-RESTRICT="test" # tests are currently broken
-
-src_unpack() {
-	unpack ${A}
-
-	cd "${S}"
-	cp ../squidGuard-${PV}-patch-20080714/src/sgDb.c src/ || die "failed to replace sgDiv.c"
-	cp ../squidGuard-${PV}-patch-20080714/src/sgDiv.c.in src/ || die "failed to replace sgDiv.c.in"
+src_prepare() {
 	epatch "${FILESDIR}/${P}-gentoo.patch"
 	epatch "${FILESDIR}/${P}-autoheader.patch"
-	epatch "${FILESDIR}/${P}-nolog.patch"
+	epatch "${FILESDIR}/${P}-vsnprintf.patch"
+	epatch "${FILESDIR}/${P}-cross-compile.patch"
 	eautoreconf
 }
 
-src_compile() {
+src_configure() {
 	econf \
 		$(use_with ldap) \
 		--with-sg-config=/etc/squidGuard/squidGuard.conf \
 		--with-sg-logdir=/var/log/squidGuard \
 		|| die "configure has failed"
-
-	emake || die "make has failed"
 }
 
 src_install() {
