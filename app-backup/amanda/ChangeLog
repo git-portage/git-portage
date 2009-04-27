@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/amanda
 # Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.56 2009/04/13 21:09:55 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.57 2009/04/27 00:29:42 ranger Exp $
+
+  27 Apr 2009; Brent Baude <ranger@gentoo.org> amanda-2.6.0_p2-r4.ebuild:
+  Marking amanda-2.6.0_p2-r4 ppc for bug 264456
 
   13 Apr 2009; Brent Baude <ranger@gentoo.org> amanda-2.6.0_p2-r4.ebuild:
   Marking amanda-2.6.0_p2-r4 ppc64 for bug 264456
