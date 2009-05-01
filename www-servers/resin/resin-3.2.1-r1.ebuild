@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/resin/Attic/resin-3.1.6-r2.ebuild,v 1.1 2008/06/20 23:16:20 nelchael Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/resin/Attic/resin-3.2.1-r1.ebuild,v 1.1 2009/05/01 22:40:16 nelchael Exp $
 
-EAPI="1"
+EAPI="2"
 
 JAVA_PKG_IUSE="doc source"
 
@@ -11,21 +11,17 @@ inherit java-pkg-2 java-ant-2 eutils flag-o-matic multilib autotools
 DESCRIPTION="A fast Servlet 2.5 and JSP 2.0 engine."
 HOMEPAGE="http://www.caucho.com"
 SRC_URI="http://www.caucho.com/download/${P}-src.zip
-	mirror://gentoo/resin-gentoo-patches-${PV}-1.tar.bz2"
+	mirror://gentoo/resin-gentoo-patches-${PV}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="admin"
 
 KEYWORDS="~amd64 ~ppc ~x86"
 
+	## java-virtuals/jaf"
 COMMON_DEP="~dev-java/resin-servlet-api-${PV}
-	dev-java/iso-relax
-	dev-java/aopalliance
 	=dev-java/sun-j2ee-deployment-bin-1.1*
-	dev-java/jax-ws-api:2
-	dev-java/jaxb:2
-	java-virtuals/javamail
-	java-virtuals/jaf"
+	java-virtuals/javamail"
 
 RDEPEND=">=virtual/jdk-1.5
 	${COMMON_DEP}"
@@ -40,22 +36,6 @@ RESIN_HOME="/usr/$(get_libdir)/resin"
 # Rewrites build.xml in documentation
 JAVA_PKG_BSFIX="off"
 
-src_unpack() {
-
-	unpack ${A}
-	for i in "${WORKDIR}"/${PV}/resin-${PV}-*; do
-		epatch "${i}"
-	done;
-
-	java-ant_bsfix_one "${S}/build.xml"
-
-	sed -i -e 's/256m/384m/' "${S}/build.xml"
-
-	cd "${S}"
-	eautoreconf
-
-}
-
 pkg_setup() {
 
 	java-pkg-2_pkg_setup
@@ -64,12 +44,33 @@ pkg_setup() {
 
 }
 
-src_compile() {
+src_unpack() {
+
+	unpack ${A}
+	for i in "${WORKDIR}"/${PV}/resin-${PV}-*; do
+		epatch "${i}"
+	done;
+
+	java-ant_bsfix_one "${S}/build.xml"
+	java-ant_bsfix_one "${S}/build-common.xml"
+
+	sed -i -e 's/256m/384m/' "${S}/build.xml"
+
+	cd "${S}"
+	eautoreconf
+
+}
+
+src_configure() {
 
 	append-flags -fPIC -DPIC
 
 	chmod 755 "${S}/configure"
 	econf --prefix=${RESIN_HOME} || die "econf failed"
+
+}
+
+src_compile() {
 
 	einfo "Building libraries..."
 	# Broken with -jn where n > 1
@@ -77,14 +78,12 @@ src_compile() {
 
 	mkdir "${S}/lib"
 	cd "${S}/lib"
-	java-pkg_jar-from --virtual jaf
+	# java-pkg_jar-from --virtual jaf
 	java-pkg_jar-from --virtual javamail
-	java-pkg_jar-from iso-relax
-	java-pkg_jar-from aopalliance-1
+	# java-pkg_jar-from iso-relax
+	# java-pkg_jar-from aopalliance-1
 	java-pkg_jar-from sun-j2ee-deployment-bin-1.1
-	java-pkg_jar-from jax-ws-api-2
-	java-pkg_jar-from jaxb-2
-	java-pkg_jar-from resin-servlet-api-2.5 resin-servlet-api.jar jsdk-15.jar
+	java-pkg_jar-from resin-servlet-api-2.5
 	ln -s $(java-config --jdk-home)/lib/tools.jar
 	cd "${S}"
 
@@ -113,7 +112,7 @@ src_install() {
 	dosym /var/log/resin ${RESIN_HOME}/logs
 	dosym /var/log/resin ${RESIN_HOME}/log
 
-	dodoc README "${S}"/conf/*.conf
+	dodoc README "${S}"/conf/*.xml
 
 	newinitd "${FILESDIR}/${PV}/resin.init" resin
 	newconfd "${FILESDIR}/${PV}/resin.conf" resin
@@ -132,10 +131,8 @@ src_install() {
 	rm -rf "${D}/${RESIN_HOME}/webapps"
 	dosym /var/lib/resin/webapps ${RESIN_HOME}/webapps
 
-	dosym /etc/resin/resin.conf /etc/resin/resin.xml
-
 	use admin && {
-		cp -a "${S}/php" "${D}/${RESIN_HOME}/" || die "cp failed"
+		cp -a "${S}/doc/admin" "${D}/var/lib/resin/webapps/" || die "cp failed"
 	}
 
 	use source && {
@@ -145,6 +142,7 @@ src_install() {
 
 	einfo "Removing unneeded files..."
 	rm -fr "${D}/${RESIN_HOME}/bin"
+	rm -fr "${D}/${RESIN_HOME}/doc"
 	rm -f "${D}"/etc/resin/*.orig
 
 	einfo "Fixing permissions..."
@@ -167,13 +165,13 @@ pkg_postinst() {
 	elog
 	elog " User and group 'resin' have been added."
 	elog
-	elog " By default, Resin runs on port 8080.  You can change this"
-	elog " value by editing /etc/resin/resin.conf."
+	elog " By default, Resin runs on port 8080. You can change this"
+	elog " value by editing /etc/resin/resin.xml."
 	elog
 	elog " webapps directory was moved to /var/lib/resin/webapps"
 	elog
 	elog " Most options has been moved from /etc/conf.d/resin to"
-	elog " /etc/resin/resin.conf."
+	elog " /etc/resin/resin.xml."
 	elog
 
 }
