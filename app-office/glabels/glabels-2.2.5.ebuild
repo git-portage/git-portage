@@ -1,8 +1,10 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/glabels/Attic/glabels-2.2.2.ebuild,v 1.2 2008/03/20 20:12:24 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/glabels/Attic/glabels-2.2.5.ebuild,v 1.1 2009/05/02 14:09:38 eva Exp $
 
-inherit eutils gnome2 autotools
+GCONF_DEBUG="no"
+
+inherit gnome2
 
 DESCRIPTION="Program for creating labels and business cards"
 HOMEPAGE="http://glabels.sourceforge.net/"
@@ -35,23 +37,10 @@ pkg_setup() {
 		--disable-update-desktopdb"
 }
 
-src_unpack() {
-	gnome2_src_unpack
-
-	# Fix missing pkg-config macro (bug 204276)
-	epatch "${FILESDIR}/${PN}-2.2.1-pkg-config-macro.patch"
-
-	# drop gtk-doc for eautoreconf
-	use doc || epatch "${FILESDIR}/${PN}-2.2.1-drop-gtk-doc.patch"
-
-	eautoreconf
-	intltoolize --force || die "intltoolize failed"
-}
-
 pkg_postinst() {
 	gnome2_pkg_postinst
 
-	ewarn "This version of ${PN} has a file format change. Files will be"
+	ewarn "As of 2.2.0, glabels had a file format change. Files will be"
 	ewarn "automatically converted to the new format but it is a one way"
 	ewarn "process only. Make backups."
 }
