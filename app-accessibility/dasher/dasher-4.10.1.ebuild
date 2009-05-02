@@ -1,33 +1,29 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/dasher/Attic/dasher-4.6.1.ebuild,v 1.9 2007/11/29 05:01:46 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/dasher/Attic/dasher-4.10.1.ebuild,v 1.1 2009/05/02 12:26:08 eva Exp $
 
-WANT_AUTOCONF="2.5"
-WANT_AUTOMAKE="1.8"
-
-inherit autotools eutils gnome2
+inherit gnome2
 
 DESCRIPTION="A text entry interface, driven by continuous pointing gestures"
 HOMEPAGE="http://www.inference.phy.cam.ac.uk/dasher/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="accessibility cairo gnome"
 
 # The package claims to support 'qte', but it hasn't been tested.
 # Any patches from someone who can test it are welcome.
 # <leonardop@gentoo.org>
-RDEPEND=">=dev-libs/glib-2.6
+RDEPEND=">=dev-libs/glib-2.16
 	dev-libs/expat
 	>=x11-libs/gtk+-2.6
 	>=gnome-base/gconf-2
 	>=gnome-base/libglade-2
 	gnome? (
 		>=gnome-base/libgnome-2
-		>=gnome-base/libgnomeui-2
-		>=gnome-base/gnome-vfs-2 )
+		>=gnome-base/libgnomeui-2 )
 	accessibility? (
 		app-accessibility/gnome-speech
 		>=gnome-base/libbonobo-2
@@ -37,8 +33,7 @@ RDEPEND=">=dev-libs/glib-2.6
 		dev-libs/atk )
 	cairo? ( >=x11-libs/gtk+-2.8 )
 	x11-libs/libX11
-	x11-libs/libXtst
-	x11-libs/libXt"
+	x11-libs/libXtst"
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35
 	>=dev-util/pkgconfig-0.9
@@ -54,32 +49,13 @@ pkg_setup() {
 	# we might want to support japanese and chinese input at some point
 	# --enable-japanese
 	# --enable-chinese
+	# --enable-tilt (tilt sensor support)
 
-	G2CONF="--disable-scrollkeeper \
-		$(use_enable accessibility a11y)   \
-		$(use_enable accessibility speech) \
-		$(use_with cairo) \
+	G2CONF="${G2CONF}
+		--disable-scrollkeeper
+		--with-gvfs
+		$(use_enable accessibility a11y)
+		$(use_enable accessibility speech)
+		$(use_with cairo)
 		$(use_with gnome)"
-}
-
-src_unpack() {
-	gnome2_src_unpack
-
-	sed -i -e 's:gtk-update-icon-cache:true:' ./Data/Makefile.am
-
-	epatch "${FILESDIR}/${PN}-4.5.2-as-needed.patch"
-
-	# Patches to fix compilation when USE=-gnome is used
-	# (bug #165154 and bug #189307)
-	epatch "${FILESDIR}/${PN}-4.4.0-gnome_help.patch"
-	epatch "${FILESDIR}/${PN}-4.6.1-gnome.patch"
-
-	# Fix compilation with gcc-4
-	epatch "${FILESDIR}/${PN}-4.5.2-gcc4-speech-fix.patch"
-
-	# Fix compilation with glibc-2.5
-	epatch "${FILESDIR}/${P}-lldiv.patch"
-
-	cp aclocal.m4 old-macros.m4
-	AT_M4DIR="." eautoreconf
 }
