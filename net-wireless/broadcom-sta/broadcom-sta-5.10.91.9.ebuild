@@ -1,16 +1,15 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/broadcom-sta/Attic/broadcom-sta-5.10.79.10.ebuild,v 1.1 2009/03/10 17:27:12 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/broadcom-sta/Attic/broadcom-sta-5.10.91.9.ebuild,v 1.1 2009/05/03 01:25:18 matsuu Exp $
 
 inherit eutils linux-mod versionator
 
 MY_PV="$(replace_all_version_separators _)"
 DESCRIPTION="Broadcom's IEEE 802.11a/b/g/n hybrid Linux device driver."
 HOMEPAGE="http://www.broadcom.com/support/802.11/linux_sta.php"
-SRC_BASE="http://www.broadcom.com/docs/linux_sta/hybrid-portsrc-x86"
-SRC_URI="
-	x86?	( ${SRC_BASE}_32-v${MY_PV}.tar.gz )
-	amd64?	( ${SRC_BASE}_64-v${MY_PV}.tar.gz )"
+SRC_BASE="http://www.broadcom.com/docs/linux_sta/hybrid-portsrc-x86_"
+SRC_URI="x86? ( ${SRC_BASE}32-v${MY_PV}.tar.gz )
+	amd64? ( ${SRC_BASE}64-v${MY_PV}.tar.gz )"
 
 LICENSE="Broadcom"
 KEYWORDS="~amd64 ~x86"
@@ -41,6 +40,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch \
-		"${FILESDIR}/${P}-hidden-essid.patch" \
-		"${FILESDIR}/${P}-linux-2.6.29.patch"
+		"${FILESDIR}/${PN}-5.10.79.10-hidden-essid.patch" \
+		"${FILESDIR}/${P}-linux-2.6.29.patch" \
+		"${FILESDIR}/${PN}-5.10.79.10-linux-2.6.30.patch"
 }
