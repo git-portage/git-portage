@@ -1,14 +1,14 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/oracle-instantclient-sqlplus/Attic/oracle-instantclient-sqlplus-11.1.0.7.0.ebuild,v 1.2 2008/12/31 09:10:02 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/oracle-instantclient-sqlplus/Attic/oracle-instantclient-sqlplus-10.2.0.3-r1.ebuild,v 1.1 2009/05/04 17:00:05 dertobi123 Exp $
 
 inherit eutils
 
-MY_P_x86="${PN/oracle-/}-linux32-${PV/7.0/7}"
-MY_P_amd64="${PN/oracle-instantclient-/}-${PV}-linux-x86_64"
+MY_P_x86="${PN/oracle-/}-linux32-${PV}-20061115"
+MY_P_amd64="${PN/oracle-/}-linux-x86-64-${PV}-20070103"
 
-S="${WORKDIR}"
-DESCRIPTION="Oracle 11g client installation for Linux: SQL*Plus"
+S=${WORKDIR}
+DESCRIPTION="Oracle 10g client installation for Linux: SQL*Plus"
 HOMEPAGE="http://www.oracle.com/technology/tech/oci/instantclient/index.html"
 SRC_URI="amd64? ( ${MY_P_amd64}.zip )
 		 x86? ( ${MY_P_x86}.zip )"
@@ -43,12 +43,15 @@ src_unpack() {
 
 src_install() {
 	dodir /usr/$(get_libdir)/oracle/${PV}/client/lib
-	cd "${S}"/instantclient_11_1
+	cd "${S}"/instantclient_10_2
 	insinto /usr/$(get_libdir)/oracle/${PV}/client/lib
-	doins glogin.sql libsqlplus.so libsqlplusic.so
+	doins libsqlplus.so libsqlplusic.so
+	insinto /usr/$(get_libdir)/oracle/${PV}/client/sqlplus/admin/
+	doins glogin.sql
+
 
 	dodir /usr/$(get_libdir)/oracle/${PV}/client/bin
-	cd "${S}"/instantclient_11_1
+	cd "${S}"/instantclient_10_2
 	exeinto /usr/$(get_libdir)/oracle/${PV}/client/bin
 	doexe sqlplus
 
@@ -57,10 +60,13 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "The SQL*Plus package for Oracle 11g has been installed."
+	elog "The SQL*Plus package for Oracle 10g has been installed."
 	elog "You may wish to install the oracle-instantclient-jdbc (for"
 	elog "the supplemental JDBC functionality) package as well."
 	elog
 	elog "If you have any questions, be sure to read the README:"
 	elog "http://otn.oracle.com/docs/tech/sql_plus/10102/readme_ic.htm"
+	elog
+	elog "oracle-instantclient-* packages aren't installed in different"
+	elog "SLOTs any longer. You may want to uninstall older versions."
 }
