@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/flim/Attic/flim-1.14.8.ebuild,v 1.12 2009/05/05 07:57:25 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/flim/Attic/flim-1.14.8.ebuild,v 1.14 2009/05/05 17:02:21 ulm Exp $
 
 inherit elisp
 
@@ -13,9 +13,9 @@ SLOT="0"
 KEYWORDS="alpha amd64 ppc sparc x86"
 IUSE=""
 
-DEPEND="!app-emacs/limit
-	>=app-emacs/apel-10.3"
-DEPEND="${RDEPEND}"
+DEPEND=">=app-emacs/apel-10.3"
+RDEPEND="!app-emacs/limit
+	${DEPEND}"
 
 SITEFILE=60${PN}-gentoo.el
 
