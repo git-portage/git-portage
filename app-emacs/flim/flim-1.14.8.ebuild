@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/flim/Attic/flim-1.14.8.ebuild,v 1.11 2007/10/15 22:02:27 opfer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/flim/Attic/flim-1.14.8.ebuild,v 1.13 2009/05/05 07:59:27 fauli Exp $
 
 inherit elisp
 
@@ -15,6 +15,7 @@ IUSE=""
 
 DEPEND="!app-emacs/limit
 	>=app-emacs/apel-10.3"
+RDEPEND="${DEPEND}"
 
 SITEFILE=60${PN}-gentoo.el
 
