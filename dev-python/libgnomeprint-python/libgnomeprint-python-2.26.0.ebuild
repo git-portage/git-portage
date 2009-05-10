@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/libgnomeprint-python/Attic/libgnomeprint-python-2.24.0.ebuild,v 1.2 2008/10/27 22:49:58 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/libgnomeprint-python/Attic/libgnomeprint-python-2.26.0.ebuild,v 1.1 2009/05/10 21:42:35 eva Exp $
 
 G_PY_PN="gnome-python-desktop"
 G_PY_BINDINGS="gnomeprint gnomeprintui"
@@ -15,7 +15,7 @@ IUSE="doc examples"
 
 RDEPEND=">=gnome-base/libgnomeprint-2.2.0
 	>=gnome-base/libgnomeprintui-2.2.0
-	>=dev-python/libgnomecanvas-python-2.22.1
+	>=dev-python/libgnomecanvas-python-2.25.90
 	!<dev-python/gnome-python-desktop-2.22.0-r10"
 DEPEND="${RDEPEND}"
 
