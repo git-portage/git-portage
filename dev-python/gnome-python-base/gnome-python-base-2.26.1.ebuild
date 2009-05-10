@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/gnome-python-base/Attic/gnome-python-base-2.22.1.ebuild,v 1.1 2008/08/24 07:15:24 ford_prefect Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/gnome-python-base/Attic/gnome-python-base-2.26.1.ebuild,v 1.1 2009/05/10 21:55:16 eva Exp $
 
 inherit versionator eutils gnome2
 
@@ -20,7 +20,7 @@ RESTRICT="${RESTRICT} test"
 # From the gnome-python eclass
 RDEPEND=">=x11-libs/gtk+-2.6
 	>=dev-libs/glib-2.6
-	>=dev-python/pygtk-2.10.3
+	>=dev-python/pygtk-2.14.0
 	!<dev-python/gnome-python-2.22.1"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
