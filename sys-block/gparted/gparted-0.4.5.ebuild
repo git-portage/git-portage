@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-block/gparted/Attic/gparted-0.3.9.ebuild,v 1.1 2008/10/30 21:19:42 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-block/gparted/Attic/gparted-0.4.5.ebuild,v 1.1 2009/05/16 12:51:02 eva Exp $
 
 inherit eutils gnome2
 
@@ -11,31 +11,38 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE="fat gnome hfs jfs kde ntfs reiserfs reiser4 xfs xfce"
+KEYWORDS="~amd64 ~ppc ~x86"
+IUSE="dmraid fat gnome hfs jfs kde ntfs reiserfs reiser4 xfs xfce"
 
 common_depends=">=sys-apps/parted-1.7.1
-		>=dev-cpp/gtkmm-2.8.0"
+	>=dev-cpp/gtkmm-2.8.0"
 
 RDEPEND="${common_depends}
-		gnome? ( x11-libs/gksu )
-		xfce? ( x11-libs/gksu )
-		kde? ( || ( kde-base/kdesu kde-base/kdebase ) )
-		fat? ( sys-fs/dosfstools )
-		ntfs? ( sys-fs/ntfsprogs )
-		hfs? (
-			sys-fs/udev
-			sys-fs/hfsutils )
-		jfs? ( sys-fs/jfsutils )
-		reiserfs? ( sys-fs/reiserfsprogs )
-		reiser4? ( sys-fs/reiser4progs )
-		xfs? ( sys-fs/xfsprogs sys-fs/xfsdump )"
+	gnome? ( x11-libs/gksu )
+	xfce? ( x11-libs/gksu )
+	kde? ( || ( kde-base/kdesu kde-base/kdebase ) )
+
+	>=sys-fs/e2fsprogs-1.41.0
+	dmraid? ( || (
+			>=sys-fs/lvm2-2.02.45
+			sys-fs/device-mapper )
+		sys-fs/dmraid
+		sys-fs/multipath-tools )
+	fat? ( sys-fs/dosfstools )
+	ntfs? ( sys-fs/ntfsprogs )
+	hfs? (
+		sys-fs/udev
+		sys-fs/hfsutils )
+	jfs? ( sys-fs/jfsutils )
+	reiserfs? ( sys-fs/reiserfsprogs )
+	reiser4? ( sys-fs/reiser4progs )
+	xfs? ( sys-fs/xfsprogs sys-fs/xfsdump )"
 
 DEPEND="${common_depends}
-		>=dev-util/pkgconfig-0.12
-		>=dev-util/intltool-0.35.5
-		app-text/scrollkeeper
-		app-text/gnome-doc-utils"
+	>=dev-util/pkgconfig-0.12
+	>=dev-util/intltool-0.35.5
+	app-text/scrollkeeper
+	app-text/gnome-doc-utils"
 
 DOCS="AUTHORS NEWS ChangeLog README"
 
@@ -48,7 +55,7 @@ src_unpack() {
 }
 
 pkg_setup() {
-	G2CONF="${G2CONF} --disable-scrollkeeper GKSUPROG=/bin/true"
+	G2CONF="${G2CONF} --enable-doc --disable-scrollkeeper GKSUPROG=/bin/true"
 }
 
 src_install() {
