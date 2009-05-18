@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/protobuf/Attic/protobuf-2.0.0_beta.ebuild,v 1.2 2009/05/18 19:01:49 spock Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/protobuf/Attic/protobuf-2.1.0.ebuild,v 1.1 2009/05/18 19:01:49 spock Exp $
 
-inherit distutils python java-pkg-opt-2
+inherit eutils distutils python java-pkg-opt-2
 
 MY_P=${PN}-${PV//_/}
 
@@ -20,6 +20,12 @@ DEPEND="${DEPEND} java? ( >=virtual/jdk-1.5 )
 RDEPEND="${RDEPEND} java? ( >=virtual/jre-1.5 )"
 
 S="${WORKDIR}/${MY_P}"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}/protobuf-2.0.3-decoder_test_64bit_fix.patch"
+}
 
 src_compile() {
 	econf || die
@@ -48,7 +54,7 @@ src_install() {
 	fi
 
 	if use vim-syntax; then
-		insinto /usr/share/vim/vimfiles
+		insinto /usr/share/vim/vimfiles/syntax
 		doins editors/proto.vim
 	fi
 
@@ -63,7 +69,7 @@ src_install() {
 }
 
 src_test() {
-	make check
+	emake check
 
 	if use python; then
 		 cd python; ${python} setup.py test || die "python test failed"
