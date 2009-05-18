@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gdesklets-core/Attic/gdesklets-core-0.36-r1.ebuild,v 1.10 2009/04/20 19:41:55 nixphoeni Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gdesklets-core/Attic/gdesklets-core-0.36.1-r1.ebuild,v 1.1 2009/05/18 21:57:15 nixphoeni Exp $
 
 # desklets don't run with USE=debug
 GCONF_DEBUG="no"
@@ -8,21 +8,21 @@ GCONF_DEBUG="no"
 # We want the latest autoconf and automake (the default)
 inherit gnome2 python eutils autotools multilib
 
-MY_PN="gdesklets"
-MY_P="${MY_PN}-${PV/_/}"
-S="${WORKDIR}/${MY_P}"
+MY_PN="gDesklets"
+MY_P="${PN/-core/}-${PV/_/}"
+S="${WORKDIR}/${MY_PN}-${PV/_/}"
 
 DESCRIPTION="GNOME Desktop Applets: Core library for desktop applets"
-SRC_URI="http://gdesklets.de/files/${MY_P}.tar.bz2"
+SRC_URI="http://gdesklets.de/files/${MY_P}.tar.gz"
 HOMEPAGE="http://www.gdesklets.de"
 LICENSE="GPL-2"
 
 SLOT="0"
 IUSE=""
-KEYWORDS="alpha amd64 ia64 ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 
 # is libgsf needed for runtime or just compiling?
-RDEPEND="<dev-lang/python-2.6
+RDEPEND=">=dev-lang/python-2.3
 	>=dev-libs/glib-2.4
 	gnome-extra/libgsf
 	>=gnome-base/librsvg-2.8
@@ -55,6 +55,10 @@ src_unpack() {
 
 	# Use po/LINGUAS - see gnome bug #506828
 	epatch "${FILESDIR}/${PN}-0.36_beta-linguas.patch"
+	# Install test-control.py - see https://bugs.launchpad.net/gdesklets/+bug/310339
+	epatch "${FILESDIR}/${PN}-${PV}-test-control.py-install-fix.patch"
+	# Fix for Python 2.6 - see bug #266151
+	epatch "${FILESDIR}/${PN}-0.36-python-2.6-fix.patch"
 
 	eautoreconf
 	intltoolize --force || die
