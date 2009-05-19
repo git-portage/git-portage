@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ocaml/Attic/ocaml-3.11.0.ebuild,v 1.3 2009/01/20 08:43:57 aballier Exp $
-
-inherit flag-o-matic eutils multilib versionator toolchain-funcs
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ocaml/Attic/ocaml-3.11.0.ebuild,v 1.4 2009/05/19 23:12:46 aballier Exp $
 
 EAPI="1"
+
+inherit flag-o-matic eutils multilib versionator toolchain-funcs
 
 MY_P="${P/_/+}"
 DESCRIPTION="Fast modern type-inferring functional programming language descended from the ML family"

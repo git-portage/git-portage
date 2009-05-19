@@ -1,19 +1,19 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ocaml/Attic/ocaml-3.10.2.ebuild,v 1.14 2009/05/19 23:12:46 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ocaml/Attic/ocaml-3.11.1_rc0.ebuild,v 1.1 2009/05/19 23:12:46 aballier Exp $
 
 EAPI="1"
 
 inherit flag-o-matic eutils multilib versionator toolchain-funcs
 
-MY_P="${P/_rc/+rc}"
+MY_P="${P/_/+}"
 DESCRIPTION="Fast modern type-inferring functional programming language descended from the ML family"
 HOMEPAGE="http://www.ocaml.org/"
-SRC_URI="http://caml.inria.fr/distrib/ocaml-$( get_version_component_range 1-2)/${MY_P}.tar.bz2"
+SRC_URI="http://caml.inria.fr/pub/distrib/ocaml-$( get_version_component_range 1-2)/${MY_P}.tar.gz"
 
 LICENSE="QPL-1.0 LGPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="emacs gdbm latex ncurses +ocamlopt tk X xemacs"
 
 DEPEND="tk? ( >=dev-lang/tk-3.3.3 )
@@ -25,7 +25,7 @@ RDEPEND="${DEPEND}"
 PDEPEND="emacs? ( app-emacs/ocaml-mode )
 	xemacs? ( app-xemacs/ocaml )"
 
-S="${WORKDIR}/${MY_P}"
+S="${WORKDIR}/${P/_/}"
 pkg_setup() {
 	# dev-lang/ocaml creates its own objects but calls gcc for linking, which will
 	# results in relocations if gcc wants to create a PIE executable
@@ -42,33 +42,24 @@ src_unpack() {
 	cd "${S}"
 
 	# Fix the EXEC_STACK in ocaml compiled binaries (#153382)
-	epatch "${FILESDIR}"/${PN}-3.10.0-exec-stack-fixes.patch
+	epatch "${FILESDIR}"/${PN}-3.11.0_beta1-exec-stack-fixes.patch
 
 	# The configure script doesn't inherit previous defined variables,
 	# overwriting previous declarations of bytecccompopts, bytecclinkopts,
 	# nativecccompopts and nativecclinkopts. Reported upstream as issue 0004267.
-	epatch "${FILESDIR}"/${PN}-3.10.0-configure.patch
+	epatch "${FILESDIR}"/${PN}-3.11.0_beta1-configure.patch
 
 	# ocaml has automagics on libX11 and gdbm
 	# http://caml.inria.fr/mantis/view.php?id=4278
 	epatch "${FILESDIR}/${PN}-3.10.0-automagic.patch"
 
-	# Call ld with proper flags, different from gcc ones
-	# This happens when calling ocamlc -pack
-	# See comment in the patch
-	epatch "${FILESDIR}/${PN}-3.10.0-call-ld-with-proper-ldflags.patch"
-
-	# Adapted from mandriva to get labltk built with tk8.5
-	epatch "${FILESDIR}/${P}-tk85.patch"
+	# Respect LDFLAGS for ocamlyacc
+	epatch "${FILESDIR}"/${PN}-3.11.0_beta1-yaccldflags.patch
 }
 
 src_compile() {
 	export LC_ALL=C
 	local myconf="--host ${CHOST}"
-
-	# dev-lang/ocaml tends to break/give unexpected results with "unsafe" CFLAGS.
-	strip-flags
-	replace-flags "-O?" -O2
 
 	# It doesn't compile on alpha without this LDFLAGS
 	use alpha && append-ldflags "-Wl,--no-relax"
@@ -79,7 +70,7 @@ src_compile() {
 	use gdbm || myconf="${myconf} -no-dbm"
 
 	# ocaml uses a home-brewn configure script, preventing it to use econf.
-	./configure -prefix /usr \
+	RAW_LDFLAGS="$(raw-ldflags)" ./configure -prefix /usr \
 		--bindir /usr/bin \
 		--libdir /usr/$(get_libdir)/ocaml \
 		--mandir /usr/share/man \
@@ -103,7 +94,8 @@ src_install() {
 	# Install the compiler libs
 	dodir /usr/$(get_libdir)/ocaml/compiler-libs
 	insinto /usr/$(get_libdir)/ocaml/compiler-libs
-	doins {utils,typing,parsing}/*.{mli,cmi,cmo,cmx,o}
+	doins {utils,typing,parsing}/*.{mli,cmi,cmo}
+	use ocamlopt && doins {utils,typing,parsing}/*.{cmx,o}
 
 	# Symlink the headers to the right place
 	dodir /usr/include
