@@ -1,9 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/gnutls/Attic/gnutls-2.6.5.ebuild,v 1.1 2009/04/12 18:07:52 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/gnutls/Attic/gnutls-2.7.11.ebuild,v 1.1 2009/05/19 13:54:09 arfrever Exp $
 
 EAPI="2"
-inherit autotools eutils libtool
+
+inherit autotools libtool
 
 DESCRIPTION="A TLS 1.0 and SSL 3.0 implementation for the GNU project"
 HOMEPAGE="http://www.gnutls.org/"
@@ -47,16 +48,14 @@ pkg_setup() {
 src_prepare() {
 	local dir
 	for dir in m4 lib/m4 libextra/m4 ; do
-		rm -f ${dir}/lt* ${dir}/libtool.m4
+		rm -f "${dir}/lt"* "${dir}/libtool.m4"
 	done
 	find . -name ltmain.sh -exec rm {} \;
-
-	# the below patch is in 2.7.* as per
-	# https://savannah.gnu.org/support/?106542
-	epatch "${FILESDIR}"/gnutls-2.6.0-cxx-configure.in.patch
-	epatch "${FILESDIR}"/gnutls-2.6.0-openpgp-selftest.patch
-
-	eautoreconf
+	for dir in . lib libextra ; do
+		pushd "${dir}" > /dev/null
+		eautoreconf
+		popd > /dev/null
+	done
 
 	elibtoolize # for sane .so versioning on FreeBSD
 }
