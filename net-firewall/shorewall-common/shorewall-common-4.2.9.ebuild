@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall-common/Attic/shorewall-common-4.2.4.ebuild,v 1.2 2009/03/08 14:26:49 betelgeuse Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall-common/Attic/shorewall-common-4.2.9.ebuild,v 1.1 2009/05/24 22:06:18 pva Exp $
 
 EAPI="2"
 
@@ -41,7 +41,8 @@ src_install() {
 	PREFIX="${D}" ./install.sh || die "install.sh failed"
 	newinitd "${FILESDIR}"/shorewall.initd shorewall || die "doinitd failed"
 
-	dodoc changelog.txt releasenotes.txt
+	dodoc changelog.txt releasenotes.txt || die
+
 	if use doc; then
 		cd "${WORKDIR}/${MY_P_DOCS}"
 		# install documentation
