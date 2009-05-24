@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall-lite/Attic/shorewall-lite-4.2.6.ebuild,v 1.1 2009/02/22 13:53:13 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall-lite/Attic/shorewall-lite-4.2.9.ebuild,v 1.1 2009/05/24 22:22:41 pva Exp $
 
 inherit versionator
 
