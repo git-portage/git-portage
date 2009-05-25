@@ -1,6 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/hydra/Attic/hydra-5.4.ebuild,v 1.4 2009/05/25 21:04:29 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/hydra/Attic/hydra-5.4-r2.ebuild,v 1.1 2009/05/25 21:04:29 pva Exp $
+
+inherit eutils
 
 DESCRIPTION="Advanced parallized login hacker"
 HOMEPAGE="http://www.thc.org/thc-hydra/"
@@ -8,21 +10,24 @@ SRC_URI="http://www.thc.org/releases/${P}-src.tar.gz"
 
 LICENSE="HYDRA GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="gtk ssl"
 
 DEPEND="gtk? ( >=x11-libs/gtk+-1.2 )
 	ssl? (
 		dev-libs/openssl
-		<net-libs/libssh-0.2
+		>=net-libs/libssh-0.2
 	)"
 
-S="${WORKDIR}/${P}-src"
+S=${WORKDIR}/${P}-src
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	sed -i "s:-O2:${CFLAGS}:" Makefile.am || die "sed failed"
+	epatch "${FILESDIR}/${P}-_FORTIFY_SOURCE.patch"
+	epatch "${FILESDIR}/${P}-free-without-malloc.patch"
+	epatch "${FILESDIR}/${P}-libssh-0.2.patch"
 }
 
 src_compile() {
@@ -49,7 +54,7 @@ src_compile() {
 
 	if use gtk ; then
 		cd hydra-gtk
-		econf || die "econf hydra-gtk failed"
+		econf
 		emake || die "emake hydra-gtk failed"
 	fi
 }

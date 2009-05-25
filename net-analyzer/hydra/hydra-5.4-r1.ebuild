@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/hydra/Attic/hydra-5.4-r1.ebuild,v 1.1 2009/05/24 23:18:32 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/hydra/Attic/hydra-5.4-r1.ebuild,v 1.2 2009/05/25 21:04:29 pva Exp $
 
 inherit eutils
 
@@ -16,7 +16,7 @@ IUSE="gtk ssl"
 DEPEND="gtk? ( >=x11-libs/gtk+-1.2 )
 	ssl? (
 		dev-libs/openssl
-		=net-libs/libssh-0.11
+		<net-libs/libssh-0.2
 	)"
 
 S=${WORKDIR}/${P}-src
