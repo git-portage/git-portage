@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libpano13/Attic/libpano13-2.9.14_beta1.ebuild,v 1.2 2009/04/20 20:59:25 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libpano13/Attic/libpano13-2.9.14.ebuild,v 1.1 2009/05/29 05:31:50 maekke Exp $
 
-inherit eutils versionator
+inherit eutils versionator java-pkg-opt-2
 
 DESCRIPTION="Helmut Dersch's panorama toolbox library"
 HOMEPAGE="http://panotools.sf.net"
@@ -16,7 +16,7 @@ DEPEND="
 	media-libs/libpng
 	media-libs/tiff
 	sys-libs/zlib
-	java? ( virtual/jdk )"
+	java? ( >=virtual/jdk-1.3 )"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}-$(get_version_component_range 1-3)"
