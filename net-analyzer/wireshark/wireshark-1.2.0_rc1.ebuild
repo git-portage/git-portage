@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.1.3.ebuild,v 1.2 2009/05/04 16:24:10 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.2.0_rc1.ebuild,v 1.1 2009/05/29 11:53:15 pva Exp $
 
 EAPI=2
 inherit autotools libtool flag-o-matic eutils toolchain-funcs
@@ -60,7 +60,6 @@ src_prepare() {
 
 	cd "${S}"
 	epatch "${FILESDIR}/${PN}-1.1.2--as-needed.patch"
-	epatch "${FILESDIR}/${PN}-1.1.3-misc-warnings.patch"
 	eautoreconf
 }
 
@@ -146,10 +145,6 @@ src_install() {
 
 pkg_postinst() {
 	echo
-	ewarn "With version 0.99.7, all function calls that require elevated privileges"
-	ewarn "have been moved out of the GUI to dumpcap. WIRESHARK CONTAINS OVER ONE"
-	ewarn "POINT FIVE MILLION LINES OF SOURCE CODE. DO NOT RUN THEM AS ROOT."
-	ewarn
 	ewarn "NOTE: To run wireshark as normal user you have to add yourself into"
 	ewarn "wireshark group. This security measure ensures that only trusted"
 	ewarn "users allowed to sniff your traffic."
