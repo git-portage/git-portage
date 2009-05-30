@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-ftp/vsftpd/Attic/vsftpd-2.1.0.ebuild,v 1.5 2009/04/25 17:34:16 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-ftp/vsftpd/Attic/vsftpd-2.1.0-r1.ebuild,v 1.1 2009/05/30 11:28:41 armin76 Exp $
 
 inherit eutils toolchain-funcs
 
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="alpha amd64 arm ia64 ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
 IUSE="caps pam tcpd ssl selinux xinetd"
 
-DEPEND="caps? ( sys-libs/libcap )
+DEPEND="caps? ( >=sys-libs/libcap-2 )
 	pam? ( virtual/pam )
 	tcpd? ( >=sys-apps/tcp-wrappers-7.6 )
 	ssl? ( >=dev-libs/openssl-0.9.7d )"
@@ -31,7 +31,6 @@ src_unpack() {
 
 	# Fix building without the libcap
 	epatch "${FILESDIR}/${PN}-2.1.0-caps.patch"
-	has_version "<sys-libs/libcap-2" && epatch "${FILESDIR}"/${PN}-2.0.6-libcap1.patch
 
 	# Configure vsftpd build defaults
 	use tcpd && echo "#define VSF_BUILD_TCPWRAPPERS" >> builddefs.h
@@ -85,10 +84,10 @@ src_install() {
 }
 
 pkg_preinst() {
-	# If we use xinetd, then we comment out listen=YES
+	# If we use xinetd, then we set listen=NO
 	# so that our default config works under xinetd - fixes #78347
 	if use xinetd ; then
-		sed -i '/\listen=YES/s/^/#/g' "${D}"/etc/vsftpd/vsftpd.conf.example
+		sed -i 's/listen=YES/listen=NO/g' "${D}"/etc/vsftpd/vsftpd.conf.example
 	fi
 }
 
