@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-chewing/Attic/ibus-chewing-1.0.4.20090323.ebuild,v 1.1 2009/03/23 16:32:49 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-chewing/Attic/ibus-chewing-1.0.10.20090523.ebuild,v 1.1 2009/05/31 13:24:22 matsuu Exp $
 
 EAPI="1"
 inherit cmake-utils
@@ -20,7 +20,6 @@ RDEPEND="x11-libs/libX11
 	>=app-i18n/ibus-1
 	>=dev-libs/libchewing-0.3.2
 	x11-libs/gtk+:2
-	gnome-base/gconf:2
 	dev-util/gob:2"
 DEPEND="${RDEPEND}
 	dev-util/cmake
