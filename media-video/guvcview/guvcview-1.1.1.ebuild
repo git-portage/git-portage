@@ -1,10 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/guvcview/Attic/guvcview-1.1.0.ebuild,v 1.4 2009/05/30 11:54:53 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/guvcview/Attic/guvcview-1.1.1.ebuild,v 1.1 2009/06/02 11:38:13 ssuominen Exp $
 
 EAPI=2
-inherit autotools eutils
-
 MY_P=${PN}-src-${PV}
 
 DESCRIPTION="GTK+ UVC Viewer"
@@ -18,7 +16,7 @@ IUSE="pulseaudio"
 
 RDEPEND=">=x11-libs/gtk+-2.10:2
 	>=dev-libs/glib-2:2
-	>=media-video/ffmpeg-0.4.9_p20090201
+	>=media-video/ffmpeg-0.5
 	>=media-libs/libsdl-1.2.10
 	>=media-libs/portaudio-19_pre
 	media-libs/libpng
@@ -29,12 +27,6 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext"
 
 S=${WORKDIR}/${MY_P}
-
-src_prepare() {
-	epatch "${FILESDIR}"/${PN}-1.0.5-implicit_declaration_setlocale.patch \
-		"${FILESDIR}"/${P}-automagic_pulseaudio.patch
-	eautoreconf
-}
 
 src_configure() {
 	econf \
