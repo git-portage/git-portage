@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/kbackup
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/ChangeLog,v 1.9 2009/06/09 14:45:47 tampakrap Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/ChangeLog,v 1.10 2009/06/11 14:05:20 fauli Exp $
+
+  11 Jun 2009; Christian Faulhammer <fauli@gentoo.org>
+  kbackup-0.5.4-r1.ebuild:
+  stable x86, bug 273364
 
   09 Jun 2009; Theo Chatzimichos <tampakrap@gentoo.org>
   kbackup-0.5.3.ebuild, kbackup-0.5.4.ebuild, kbackup-0.5.4-r1.ebuild:
