@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/libkdcraw/Attic/libkdcraw-4.2.4.ebuild,v 1.1 2009/06/04 13:36:31 alexxy Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/libkipi/Attic/libkipi-4.2.4-r1.ebuild,v 1.1 2009/06/11 09:25:31 scarabeus Exp $
 
 EAPI="2"
 
@@ -9,17 +9,9 @@ KMMODULE="libs/${PN}"
 
 inherit kde4-meta
 
-DESCRIPTION="KDE Image Plugin Interface: a dcraw library wrapper"
+DESCRIPTION="A library for image plugins accross KDE applications."
 HOMEPAGE="http://www.kipi-plugins.org"
 
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~x86"
 IUSE="debug"
-
-DEPEND="
-	media-libs/jpeg
-	media-libs/lcms
-"
-RDEPEND="${DEPEND}
-	!kdeprefix? ( !media-libs/libkdcraw )
-"
