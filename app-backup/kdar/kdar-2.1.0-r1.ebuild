@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/kdar-2.1.0-r1.ebuild,v 1.1 2009/02/22 15:01:50 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/kdar-2.1.0-r1.ebuild,v 1.2 2009/06/12 12:49:03 tampakrap Exp $
 
 EAPI="2"
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2
 	mirror://gentoo/kde-admindir-3.5.5.tar.bz2"
 LICENSE="GPL-2"
 
-SLOT="0"
+SLOT="3.5"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="dar32 dar64"
 
@@ -30,12 +30,7 @@ PATCHES=(
 	"${FILESDIR}/kdar-2.1.0-as-needed.diff"
 	)
 
-src_prepare() {
-	# empty, EAPI 2 eclass incompatibility.
-	:
-}
-
-src_compile() {
+src_configure() {
 	local myconf
 
 	# Bug 116112
@@ -44,5 +39,5 @@ src_compile() {
 	use dar32 && myconf="${myconf} --enable-mode=32"
 	use dar64 && myconf="${myconf} --enable-mode=64"
 
-	kde_src_compile
+	kde_src_configure
 }

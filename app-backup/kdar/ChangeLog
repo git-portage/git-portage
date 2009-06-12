@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/kdar
-# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/ChangeLog,v 1.16 2009/02/22 15:01:50 carlo Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/ChangeLog,v 1.17 2009/06/12 12:49:03 tampakrap Exp $
+
+  12 Jun 2009; Theo Chatzimichos <tampakrap@gentoo.org> -kdar-2.1.0.ebuild,
+  kdar-2.1.0-r1.ebuild:
+  Slot move to 3.5, remove old
 
 *kdar-2.1.0-r1 (22 Feb 2009)
 
