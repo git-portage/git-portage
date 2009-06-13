@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/keep/Attic/keep-0.4.0-r1.ebuild,v 1.1 2009/02/22 15:07:52 carlo Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/keep/Attic/keep-0.4.0-r1.ebuild,v 1.2 2009/06/13 11:35:47 tampakrap Exp $
 
-EAPI="1"
+EAPI="2"
 
 ARTS_REQUIRED="never"
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://jr.falleri.free.fr/keep/wiki/Home"
 SRC_URI="http://jr.falleri.free.fr/files/devel/keep/${P}.tar.gz"
 
 LICENSE="GPL-2"
-SLOT="0"
+SLOT="3.5"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
