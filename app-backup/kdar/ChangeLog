@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/kdar
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/ChangeLog,v 1.17 2009/06/12 12:49:03 tampakrap Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kdar/Attic/ChangeLog,v 1.18 2009/06/16 19:26:09 fauli Exp $
+
+  16 Jun 2009; Christian Faulhammer <fauli@gentoo.org> kdar-2.1.0-r1.ebuild:
+  stable x86, bug 273891
 
   12 Jun 2009; Theo Chatzimichos <tampakrap@gentoo.org> -kdar-2.1.0.ebuild,
   kdar-2.1.0-r1.ebuild:
