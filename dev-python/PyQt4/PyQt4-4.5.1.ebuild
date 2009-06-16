@@ -1,24 +1,24 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/PyQt4/Attic/PyQt4-4.4.4-r5.ebuild,v 1.6 2009/06/16 15:15:35 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/PyQt4/Attic/PyQt4-4.5.1.ebuild,v 1.1 2009/06/16 15:15:35 hwoarang Exp $
 
 EAPI="2"
 
 inherit distutils qt4
 
 MY_P=PyQt-x11-gpl-${PV}
-QTVER="4.4.2"
+QTVER="4.5.1"
 
 DESCRIPTION="A set of Python bindings for the Qt toolkit"
 HOMEPAGE="http://www.riverbankcomputing.co.uk/software/pyqt/intro/"
 SRC_URI="http://www.riverbankcomputing.com/static/Downloads/${PN}/${MY_P}.tar.gz"
 
 SLOT="0"
-LICENSE="GPL-2"
+LICENSE="|| ( GPL-2 GPL-3 )"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="X assistant +dbus debug doc examples kde opengl phonon sql svg webkit xmlpatterns"
 
-DEPEND="~dev-python/sip-4.7.9
+DEPEND=">=dev-python/sip-4.8
 	>=x11-libs/qt-core-${QTVER}:4
 	>=x11-libs/qt-script-${QTVER}:4
 	>=x11-libs/qt-test-${QTVER}:4
@@ -43,7 +43,6 @@ S="${WORKDIR}/${MY_P}"
 
 PATCHES=(
 	"${FILESDIR}/configure.py.patch"
-	"${FILESDIR}/${P}-qgraphicsproxywidget-avoid-event-callback-loop.patch"
 	"${FILESDIR}/fix_license_check.patch"
 )
 
@@ -65,7 +64,7 @@ src_configure() {
 	local myconf="${python} configure.py
 			--confirm-license
 			--bindir=/usr/bin
-			--destdir=/usr/$(get_libdir)/python${PYVER}/site-packages
+			--destdir=$(python_get_sitedir)
 			--sipdir=/usr/share/sip
 			$(use debug && echo '--debug')
 			--enable=QtCore
@@ -88,12 +87,15 @@ src_configure() {
 
 	# Fix insecure runpath
 	if use X ; then
-		sed -i -e "/^LFLAGS/s:-Wl,-rpath,${S}/qpy/QtDesigner::" \
-			"${S}"/QtDesigner/Makefile || die
+		for pkg in QtDesigner QtGui QtCore; do
+			sed -i -e "/^LFLAGS/s:-Wl,-rpath,${S}/qpy/${pkg}::" \
+				"${S}"/${pkg}/Makefile || die "failed to fix rpath issues"
+		done
 	fi
 }
 
 src_install() {
+	python_need_rebuild
 	# INSTALL_ROOT is needed for the QtDesigner module,
 	# the other Makefiles use DESTDIR.
 	emake DESTDIR="${D}" INSTALL_ROOT="${D}" install || die "installation failed"
