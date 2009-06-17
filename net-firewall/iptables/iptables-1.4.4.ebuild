@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/iptables/Attic/iptables-1.4.2-r1.ebuild,v 1.3 2008/11/27 18:13:59 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/iptables/Attic/iptables-1.4.4.ebuild,v 1.1 2009/06/17 06:46:45 pva Exp $
 
 inherit eutils toolchain-funcs
 
@@ -19,9 +19,6 @@ RDEPEND=""
 src_unpack() {
 	unpack ${P}.tar.bz2
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-glibc.patch
-	epatch "${FILESDIR}"/${P}-no-ldconfig.patch
-	epatch "${FILESDIR}"/${P}-as-needed.patch #244431
 
 	local check base=${PORTAGE_CONFIGROOT}/etc/portage/patches
 	for check in {${CATEGORY}/${PF},${CATEGORY}/${P},${CATEGORY}/${PN}}; do
@@ -42,12 +39,10 @@ src_compile() {
 	econf \
 		--sbindir=/sbin \
 		--libexecdir=/$(get_libdir) \
-		--without-kernel \
 		--enable-devel \
 		--enable-libipq \
 		--enable-shared \
-		--enable-static \
-		|| die
+		--enable-static
 	emake V=1 || die
 }
 
@@ -56,14 +51,13 @@ src_install() {
 
 	insinto /usr/include
 	doins include/iptables.h include/ip6tables.h || die
-	dolib.a libiptc/libiptc.a || die
-	insinto /usr/include/libiptc
-	doins include/libiptc/*.h || die
+	insinto /usr/include/iptables
+	doins include/iptables/internal.h || die
 
 	keepdir /var/lib/iptables
-	newinitd "${FILESDIR}"/${PN}-1.3.2.init iptables
-	newconfd "${FILESDIR}"/${PN}-1.3.2.confd iptables
+	newinitd "${FILESDIR}"/${PN}-1.3.2.init iptables || die
+	newconfd "${FILESDIR}"/${PN}-1.3.2.confd iptables || die
 	keepdir /var/lib/ip6tables
-	newinitd "${FILESDIR}"/iptables-1.3.2.init ip6tables
-	newconfd "${FILESDIR}"/ip6tables-1.3.2.confd ip6tables
+	newinitd "${FILESDIR}"/iptables-1.3.2.init ip6tables || die
+	newconfd "${FILESDIR}"/ip6tables-1.3.2.confd ip6tables || die
 }
