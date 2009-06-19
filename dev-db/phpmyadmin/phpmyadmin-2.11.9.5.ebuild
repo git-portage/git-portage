@@ -1,11 +1,11 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/phpmyadmin/Attic/phpmyadmin-3.1.2.ebuild,v 1.2 2009/02/28 11:07:22 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/phpmyadmin/Attic/phpmyadmin-2.11.9.5.ebuild,v 1.1 2009/06/19 14:38:56 a3li Exp $
 
 inherit eutils webapp depend.php
 
 MY_PV=${PV/_/-}
-MY_P="phpMyAdmin-${MY_PV}-all-languages"
+MY_P="phpMyAdmin-${MY_PV}-all-languages-utf-8-only"
 
 DESCRIPTION="Web-based administration for MySQL database in PHP"
 HOMEPAGE="http://www.phpmyadmin.net/"
@@ -15,8 +15,6 @@ LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
-RDEPEND=">=virtual/mysql-5.0"
-
 need_httpd_cgi
 need_php_httpd
 
@@ -25,13 +23,13 @@ S="${WORKDIR}"/${MY_P}
 pkg_setup() {
 	webapp_pkg_setup
 
-	if ! PHPCHECKNODIE="yes" require_php_with_use crypt ctype filter pcre session spl unicode \
+	if ! PHPCHECKNODIE="yes" require_php_with_use crypt ctype pcre session unicode \
 		|| ! PHPCHECKNODIE="yes" require_php_with_any_use mysql mysqli ; then
 		eerror
 		eerror "${PHP_PKG} needs to be re-installed with all of the following"
 		eerror "USE flags enabled:"
 		eerror
-		eerror "crypt ctype filter pcre session spl unicode"
+		eerror "crypt ctype pcre session unicode"
 		eerror
 		eerror "as well as any of the following USE flags enabled:"
 		eerror
@@ -39,6 +37,12 @@ pkg_setup() {
 		eerror
 		die "Re-install ${PHP_PKG}"
 	fi
+}
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}"/${PN}-2.11.5-custom-cert.patch
 }
 
 src_install() {
@@ -53,7 +57,7 @@ src_install() {
 	webapp_configfile "${MY_HTDOCSDIR}"/libraries/config.default.php
 	webapp_serverowned "${MY_HTDOCSDIR}"/libraries/config.default.php
 
-	webapp_postinst_txt en "${FILESDIR}"/postinstall-en-3.1.txt
+	webapp_postinst_txt en "${FILESDIR}"/postinstall-en-2.8.0.txt
 	webapp_hook_script "${FILESDIR}"/reconfig-2.8
 	webapp_src_install
 }
