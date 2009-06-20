@@ -1,7 +1,7 @@
 #!/sbin/runscript
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/transmission/files/Attic/transmission-daemon.initd.1,v 1.1 2009/06/06 10:21:54 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/transmission/files/Attic/transmission-daemon.initd.2,v 1.1 2009/06/20 12:55:37 ssuominen Exp $
 
 # Read options from conf.d file, or set sensible defaults
 allowed=${allowed:-127.0.0.1}
@@ -86,7 +86,7 @@ fi
 
 rpc_bind_address_opt=""
 if [ -n "${rpc_bind_address}" ]; then
-	rpc_bind_address_opt="--rpc_bind-address ${rpc_bind_address}"
+	rpc_bind_address_opt="--rpc-bind-address ${rpc_bind_address}"
 fi
 
 # Note: works only on systems with sys-apps/openrc
