@@ -1,6 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/moto4lin/Attic/moto4lin-0.3.ebuild,v 1.7 2007/03/10 14:51:14 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/moto4lin/Attic/moto4lin-0.3-r1.ebuild,v 1.1 2009/06/20 21:48:07 mrness Exp $
+
+EAPI="2"
 
 inherit toolchain-funcs
 
@@ -13,7 +15,7 @@ SLOT="0"
 KEYWORDS="~ppc ~x86"
 IUSE=""
 
-DEPEND="dev-libs/libusb
+DEPEND="dev-libs/libusb:0
 	=x11-libs/qt-3*"
 
 src_compile() {
