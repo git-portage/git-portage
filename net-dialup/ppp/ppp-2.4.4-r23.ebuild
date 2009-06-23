@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/ppp/Attic/ppp-2.4.4-r21.ebuild,v 1.8 2008/12/02 22:38:43 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/ppp/Attic/ppp-2.4.4-r23.ebuild,v 1.1 2009/06/23 06:25:07 mrness Exp $
+
+EAPI="2"
 
 inherit eutils toolchain-funcs linux-info pam
 
@@ -20,6 +22,7 @@ DEPEND="activefilter? ( >=virtual/libpcap-0.9.4 )
 	pam? ( virtual/pam )
 	gtk? ( >=x11-libs/gtk+-2.8 )
 	eap-tls? ( net-misc/curl >=dev-libs/openssl-0.9.7 )"
+RDEPEND="${DEPEND}"
 
 pkg_setup() {
 	if use mppe-mppc; then
@@ -35,10 +38,7 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	epatch "${WORKDIR}/patch/make-vars.patch"
 	epatch "${WORKDIR}/patch/mpls.patch"
 	epatch "${WORKDIR}/patch/killaddr-smarter.patch"
@@ -118,10 +118,13 @@ src_unpack() {
 	}
 }
 
-src_compile() {
+src_configure() {
 	export CC="$(tc-getCC)"
 	export AR="$(tc-getAR)"
-	econf || die "configuration failed"
+	econf || die "econf failed"
+}
+
+src_compile() {
 	emake COPTS="${CFLAGS} -D_GNU_SOURCE" || die "compile failed"
 
 	#build pppgetpass
@@ -135,19 +138,18 @@ src_compile() {
 
 src_install() {
 	local i
-	for i in chat pppd pppdump pppstats
-	do
+	for i in chat pppd pppdump pppstats ; do
 		doman ${i}/${i}.8
-		dosbin ${i}/${i}
+		dosbin ${i}/${i} || die
 	done
 	fperms u+s-w /usr/sbin/pppd
 
 	# Install pppd header files
-	pushd pppd && \
-		make INSTROOT="${D}" install-devel && \
-		popd || die "make install-devel failed"
+	pushd pppd >/dev/null
+	emake INSTROOT="${D}" install-devel || die
+	popd >/dev/null
 
-	dosbin pppd/plugins/rp-pppoe/pppoe-discovery
+	dosbin pppd/plugins/rp-pppoe/pppoe-discovery || die
 
 	dodir /etc/ppp/peers
 	insinto /etc/ppp
@@ -199,9 +201,9 @@ src_install() {
 
 	insinto /etc/modprobe.d
 	insopts -m0644
-	newins "${FILESDIR}/modules.ppp" ppp
+	newins "${FILESDIR}/modules.ppp" ppp.conf
 	if use mppe-mppc; then
-		sed -i -e 's/ppp_mppe/ppp_mppe_mppc/' "${D}/etc/modprobe.d/ppp"
+		sed -i -e 's/ppp_mppe/ppp_mppe_mppc/' "${D}/etc/modprobe.d/ppp.conf"
 	fi
 
 	dodoc PLUGINS README* SETUP Changes-2.3 FAQ
@@ -263,7 +265,11 @@ pkg_postinst() {
 		mknod "${ROOT}/dev/ppp" c 108 0
 	fi
 	if [ "$ROOT" = "/" ]; then
-		[ -x /sbin/update-modules ] && /sbin/update-modules || /sbin/modules-update
+		if [ -x /sbin/update-modules ]; then
+			/sbin/update-modules
+		else
+			/sbin/modules-update
+		fi
 	fi
 
 	# create *-secrets files if not exists
