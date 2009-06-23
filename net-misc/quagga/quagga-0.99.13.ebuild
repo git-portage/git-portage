@@ -1,35 +1,36 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/quagga/Attic/quagga-0.99.11-r1.ebuild,v 1.1 2009/05/02 09:37:52 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/quagga/Attic/quagga-0.99.13.ebuild,v 1.1 2009/06/23 21:12:04 mrness Exp $
 
 EAPI="2"
-WANT_AUTOMAKE="latest"
-WANT_AUTOCONF="latest"
 
 inherit eutils multilib autotools
 
 DESCRIPTION="A free routing daemon replacing Zebra supporting RIP, OSPF and BGP."
 HOMEPAGE="http://quagga.net/"
 SRC_URI="http://www.quagga.net/download/${P}.tar.gz
-	mirror://gentoo/${P}-patches-20090502.tar.gz"
+	mirror://gentoo/${P}-patches-20090623.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ppc ~s390 ~sparc ~x86"
-IUSE="caps ipv6 snmp pam bgpclassless ospfapi realms multipath tcp-zebra"
+IUSE="caps ipv6 snmp pam pcre bgpclassless ospfapi realms multipath tcp-zebra"
 RESTRICT="userpriv"
 
-DEPEND="sys-libs/readline
+COMMON_DEPEND="sys-libs/readline
 	caps? ( sys-libs/libcap )
 	snmp? ( net-analyzer/net-snmp )
-	pam? ( sys-libs/pam )"
-RDEPEND="${DEPEND}
+	pam? ( sys-libs/pam )
+	pcre? ( dev-libs/libpcre )"
+DEPEND="${COMMON_DEPEND}
+	>=sys-devel/libtool-2.2.4"
+RDEPEND="${COMMON_DEPEND}
 	sys-apps/iproute2"
 
 src_prepare() {
+	epatch "${WORKDIR}/patch/${P}-ipaddr-bug486.diff"
 	epatch "${WORKDIR}/patch/${P}-link-libcap.patch"
-	epatch "${WORKDIR}/patch/${P}-ipv6.patch"
-	epatch "${WORKDIR}/patch/${P}-ASN-fixes.patch"
+	epatch "${WORKDIR}/patch/${P}-libpcre.patch"
 
 	# Classless prefixes for BGP - http://hasso.linux.ee/doku.php/english:network:quagga
 	use bgpclassless && epatch "${WORKDIR}/patch/ht-20040304-classless-bgp_adapted.patch"
@@ -45,6 +46,7 @@ src_configure() {
 		$(use_enable caps capabilities) \
 		$(use_enable snmp) \
 		$(use_with pam libpam) \
+		$(use_enable pcre pcreposix) \
 		$(use_enable tcp-zebra)"
 	use ipv6 \
 			&& myconf="${myconf} --enable-ipv6 --enable-ripngd --enable-ospf6d --enable-rtadv" \
