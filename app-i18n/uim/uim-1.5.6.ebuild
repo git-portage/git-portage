@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim/Attic/uim-1.5.5.ebuild,v 1.2 2009/06/24 05:35:38 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim/Attic/uim-1.5.6.ebuild,v 1.1 2009/06/25 14:54:39 matsuu Exp $
 
 EAPI="2"
 inherit eutils qt3 multilib elisp-common flag-o-matic
