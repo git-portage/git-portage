@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/adodb/Attic/adodb-5.06.ebuild,v 1.1 2008/10/29 11:41:57 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php/adodb/Attic/adodb-5.09.ebuild,v 1.1 2009/06/26 09:04:22 pva Exp $
+
+EAPI="2"
 
 inherit php-lib-r1 versionator
 
@@ -25,9 +27,15 @@ pkg_setup() {
 	ewarn "ADODB requires some form of SQL or ODBC support in your PHP."
 }
 
+src_prepare() {
+	# Check http://phplens.com/lens/lensforum/msgs.php?id=18043
+	# probably this mv is a problem...
+	mv "${S}"/drivers/adodb-ads{\ ,.}inc.php
+}
+
 src_install() {
 	# install php files
-	php-lib-r1_src_install . `find . -name '*.php' -print`
+	php-lib-r1_src_install . $(find . -name '*.php' -print)
 
 	# install xsl files
 	php-lib-r1_src_install . xsl/*.xsl
