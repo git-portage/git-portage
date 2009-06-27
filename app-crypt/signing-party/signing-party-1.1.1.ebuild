@@ -1,6 +1,10 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/signing-party/Attic/signing-party-0.4.9.ebuild,v 1.5 2008/02/21 23:51:35 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/signing-party/Attic/signing-party-1.1.1.ebuild,v 1.1 2009/06/27 17:41:44 arfrever Exp $
+
+EAPI="2"
+
+inherit toolchain-funcs
 
 DESCRIPTION="A collection of several tools related to OpenPGP"
 HOMEPAGE="http://pgp-tools.alioth.debian.org/"
@@ -8,7 +12,7 @@ SRC_URI="mirror://debian/pool/main/s/signing-party/signing-party_${PV}.orig.tar.
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86 ~ppc"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="iconv recode"
 
 DEPEND=""
@@ -24,30 +28,34 @@ RDEPEND=">=app-crypt/gnupg-1.3.92
 	iconv? ( dev-perl/Text-Iconv )
 	recode? ( app-text/recode )"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
+	# app-crypt/keylookup
+	rm -fr keylookup
+
+	# media-gfx/springgraph
+	rm -fr springgraph
+
 	sed -i -e "s:/usr/share/doc/signing-party/caff/caffrc.sample:/usr/share/doc/${P}/caff/caffrc.sample.gz:g" caff/caff
 }
 
+src_compile() {
+	emake CC="$(tc-getCC)" CFLAGS="${CFLAGS}" || die "emake failed"
+}
+
 src_install() {
-	# This is taken from debian/install
-	# Check debian/install for instructions when a new tool is introduced to
-	# this package
+	# Check Makefile when a new tool is introduced to this package.
 	dobin caff/caff caff/pgp-clean caff/pgp-fixkey
 	dobin gpglist/gpglist
 	dobin gpgsigs/gpgsigs
 	dobin gpg-key2ps/gpg-key2ps
 	dobin gpg-mailkeys/gpg-mailkeys
-	dobin keylookup/keylookup
 	doman */*.1
-	dodoc README TODO
+	dodoc README
 	docinto caff
 	dodoc caff/README* caff/THANKS caff/TODO caff/caffrc.sample
 	docinto gpg-key2ps
 	dodoc gpg-key2ps/README
 	docinto gpg-mailkeys
 	dodoc gpg-mailkeys/README gpg-mailkeys/example.gpg-mailkeysrc
-	docinto keylookup
-	dodoc keylookup/NEWS
+	dobin sig2dot/sig2dot
 }
