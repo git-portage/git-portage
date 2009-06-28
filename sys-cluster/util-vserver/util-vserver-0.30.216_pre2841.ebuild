@@ -1,12 +1,15 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/util-vserver/Attic/util-vserver-0.30.215-r2.ebuild,v 1.1 2009/03/04 21:20:24 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/util-vserver/Attic/util-vserver-0.30.216_pre2841.ebuild,v 1.1 2009/06/28 16:24:46 hollow Exp $
 
 inherit eutils bash-completion
 
+MY_P=${P/_/-}
+S="${WORKDIR}"/${MY_P}
+
 DESCRIPTION="Linux-VServer admin utilities"
 HOMEPAGE="http://www.nongnu.org/util-vserver/"
-SRC_URI="http://ftp.linux-vserver.org/pub/utils/${PN}/${P}.tar.bz2"
+SRC_URI="http://people.linux-vserver.org/~dhozac/t/uv-testing/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -37,14 +40,6 @@ pkg_setup() {
 	einfo
 	einfo "Using \"${VDIRBASE}\" as vserver base directory"
 	einfo
-}
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-openrc.patch
-	epatch "${FILESDIR}"/${P}-capget.patch
-	epatch "${FILESDIR}"/${P}-typo.patch
 }
 
 src_compile() {
