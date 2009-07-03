@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/Attic/vanilla-sources-2.6.30_rc1.ebuild,v 1.5 2009/04/20 16:07:42 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/Attic/vanilla-sources-2.6.30.1.ebuild,v 1.1 2009/07/03 15:22:07 armin76 Exp $
 
 K_NOUSENAME="yes"
 K_NOSETEXTRAVERSION="yes"
@@ -13,5 +13,5 @@ DESCRIPTION="Full sources for the Linux kernel"
 HOMEPAGE="http://www.kernel.org"
 SRC_URI="${KERNEL_URI}"
 
-KEYWORDS="-alpha ~arm ~sh ~sparc"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc64 ~sh ~sparc ~x86"
 IUSE=""
