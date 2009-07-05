@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/dansguardian/Attic/dansguardian-2.10-r2.ebuild,v 1.2 2008/12/01 21:08:54 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/dansguardian/Attic/dansguardian-2.10.1.1.ebuild,v 1.1 2009/07/05 00:04:17 mrness Exp $
+
+EAPI="2"
 
 inherit eutils
 
@@ -38,23 +40,23 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
-	unpack ${A}
-
-	epatch "${FILESDIR}"/${P}-uclibc++.patch
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-gcc44.patch
 }
 
-src_compile() {
+src_configure() {
 	local myconf="--with-logdir=/var/log/dansguardian
 		--with-piddir=/var/run
 		--docdir=/usr/share/doc/${PF}
 		--htmldir=/usr/share/doc/${PF}/html
 		$(use_enable pcre)
 		$(use_enable ntlm)
+		--enable-orig-ip
 		--enable-fancydm
 		--enable-email"
 	if use clamav; then
-		myconf="${myconf} --enable-clamd --enable-clamav
+		# readd --enable-clamav in the next version if it works with >=clamav-0.95 (#264820)
+		myconf="${myconf} --enable-clamd
 			--with-proxyuser=clamav
 			--with-proxygroup=clamav"
 	fi
@@ -66,12 +68,14 @@ src_compile() {
 	fi
 
 	econf ${myconf} || die "configure failed"
+}
 
+src_compile() {
 	emake OPTIMISE="${CFLAGS}" || die "emake failed"
 }
 
 src_install() {
-	make "DESTDIR=${D}" install || die "make install failed"
+	emake "DESTDIR=${D}" install || die "emake install failed"
 
 	# Move html documents to html dir
 	mkdir "${D}"/usr/share/doc/${PF}/html \
