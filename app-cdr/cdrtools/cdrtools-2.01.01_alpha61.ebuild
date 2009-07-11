@@ -1,6 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/cdrtools/Attic/cdrtools-2.01.01_alpha53.ebuild,v 1.2 2009/05/28 15:28:35 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/cdrtools/Attic/cdrtools-2.01.01_alpha61.ebuild,v 1.1 2009/07/11 10:41:59 billie Exp $
+
+EAPI=2
 
 inherit multilib eutils toolchain-funcs flag-o-matic
 
@@ -11,20 +13,17 @@ SRC_URI="ftp://ftp.berlios.de/pub/cdrecord/alpha/${P/_alpha/a}.tar.bz2"
 LICENSE="GPL-2 LGPL-2.1 CDDL-Schily"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
-IUSE="unicode"
+IUSE="unicode acl"
 
-DEPEND="sys-apps/acl
+DEPEND="acl? ( sys-apps/acl )
 	!app-cdr/dvdrtools
 	!app-cdr/cdrkit"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}-2.01.01
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	#Adjust paths
-
+src_prepare() {
+	#"Adjust paths. Upstream is clearly on drugs, hardcoding paths into .c files.
 	sed -i -e 's:opt/schily:usr:' \
 		$(grep -l --include='*.1' --include='*.8' -r 'opt/schily' .) \
 		$(grep -l --include='*.c' --include='*.h' -r 'opt/schily' .) \
@@ -34,16 +33,18 @@ src_unpack() {
 		$(grep -l -r 'INSDIR.\+doc' .) \
 		|| die "404 on doc sed"
 
+	# Upstream should be hanged from the yardarm, possibly keelhauled for
+	# not respecting libdir.
 	sed -i -e "s:\(^INSDIR=\t\t\)lib:\1$(get_libdir):" \
 		$(grep -l -r '^INSDIR.\+lib\(/siconv\)\?$' .) \
 		|| die "404 on multilib-sed"
 
-	sed -i -e "s:\(^INSDIR=\t\t\)\(etc/default\):\1../\2:" \
-		$(grep -l -r '^INSDIR.\+default' .) \
-		|| die "404 on etc sed"
-
-	#Remove profiled make files
-	rm -f $(find . -name '*_p.mk')
+	# See previous comment s/libdir/--disable-static/
+	sed -i -e 's:include\t\t.*rules.lib::' \
+		$(grep -l -r '^include.\+rules\.lib' .) \
+		|| die "404 on rules sed"
+	#Remove profiled make files (wtf?)
+	rm -f $(find . -name '*_p.mk') || die "rm failed"
 
 	epatch "${FILESDIR}"/${PN}-2.01.01a03-warnings.patch
 	epatch "${FILESDIR}"/${PN}-2.01.01_alpha50-asneeded.patch
@@ -52,11 +53,12 @@ src_unpack() {
 	cd "${S}"/DEFAULTS
 	local MYARCH="linux"
 
-	sed -i "s:/opt/schily:/usr:g" Defaults.${MYARCH}
-	sed -i "s:/usr/src/linux/include::g" Defaults.${MYARCH}
+	sed -i "s:/opt/schily:/usr:g" Defaults.${MYARCH} || die "sed schily-opt failed"
+	sed -i "s:/usr/src/linux/include::g" Defaults.${MYARCH} || die "sed linux-include failed"
+	sed -i "/RUNPATH/ c\RUNPATH= " Defaults.${MYARCH} || die "sed RUNPATH failed"
 
 	# For dynamic linking:
-	sed -i "s:static:dynamic:" Defaults.${MYARCH}
+	sed -i "s:static:dynamic:" Defaults.${MYARCH} || die "sed static-remove failed"
 
 	# lame symlinks that all point to the same thing
 	cd "${S}"/RULES
@@ -65,10 +67,12 @@ src_unpack() {
 		ln -s i586-linux-cc.rul ${t}-linux-cc.rul || die
 		ln -s i586-linux-gcc.rul ${t}-linux-gcc.rul || die
 	done
-
 }
 
+src_configure() { : ; }
+
 src_compile() {
+	local ACL="-lacl"
 	if use unicode; then
 		local flags="$(test-flags -finput-charset=ISO-8859-1 -fexec-charset=UTF-8)"
 		if [[ -n ${flags} ]]; then
@@ -79,12 +83,17 @@ src_compile() {
 		fi
 	fi
 
+	if ! use acl
+	then
+		CFLAGS="${CFLAGS} -DNO_ACL"
+		ACL=""
+	fi
 	#If not built with -j1, "sometimes" cdda2wav will not be built. Nasty bug.
-	emake -j1 CC="$(tc-getCC) -D__attribute_const__=const" COPTX="${CFLAGS}" CPPOPTX="${CPPFLAGS}" LDOPTX="${LDFLAGS}" || die
+	emake -j1 CC="$(tc-getCC) -D__attribute_const__=const" COPTX="${CFLAGS}" LIB_ACL_TEST="${ACL}" CPPOPTX="${CPPFLAGS}" LDOPTX="${LDFLAGS}" || die "emake failed"
 }
 
 src_install() {
-	make MANDIR="share/man" INS_BASE="${D}/usr/" install
+	emake -j1 MANDIR="share/man" INS_BASE="${D}/usr/" INS_RBASE="${D}" install
 
 	#These symlinks are for compat with cdrkit.
 	dosym schily /usr/include/scsilib
