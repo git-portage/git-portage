@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/fetchyahoo/Attic/fetchyahoo-2.13.3.ebuild,v 1.1 2009/04/10 21:49:23 kanaka Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/fetchyahoo/Attic/fetchyahoo-2.13.6.ebuild,v 1.1 2009/07/11 14:23:57 dertobi123 Exp $
 
 IUSE=""
 DESCRIPTION="Download mail from a Yahoo! webmail account to a local mail spool, an mbox file, or to procmail."
