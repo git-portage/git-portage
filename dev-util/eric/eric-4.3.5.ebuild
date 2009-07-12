@@ -1,11 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/eric/Attic/eric-4.3.3.ebuild,v 1.3 2009/07/12 10:08:16 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/eric/Attic/eric-4.3.5.ebuild,v 1.1 2009/07/12 10:08:16 hwoarang Exp $
 
 EAPI="2"
-
 NEED_PYTHON=2.4
-
 inherit python eutils
 
 MY_PN=${PN}4
@@ -26,7 +24,7 @@ LICENSE="GPL-2"
 KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~x86"
 IUSE="linguas_cs linguas_de linguas_es linguas_fr linguas_ru linguas_tr"
 
-DEPEND="dev-python/PyQt4[X,svg,webkit]
+DEPEND="dev-python/PyQt4[svg,webkit,X]
 	>=dev-python/qscintilla-python-2.2[qt4]"
 RDEPEND="${DEPEND}"
 
@@ -37,7 +35,6 @@ LANGS="cs de es fr ru tr"
 python_version
 
 src_prepare() {
-	#epatch "${FILESDIR}"/4.3.0-paths.patch
 	epatch "${FILESDIR}"/4.2.3-no-interactive.patch
 }
 
@@ -68,8 +65,8 @@ pkg_postinst() {
 	elog "dev-python/pylint"
 	elog "dev-python/pysvn            (in sunrise overlay atm)"
 	elog
-	elog "This version has a new plugin interface with plugin-autofetch from"
-	elog "the App itself. You may want to check those as well"
+	elog "This version has a plugin interface with plugin-autofetch from"
+	elog "the App itself. You may want to check those as well."
 }
 
 pkg_postrm() {
