@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/bobs-0.6.2-r1.ebuild,v 1.4 2007/01/24 04:13:36 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bobs/Attic/bobs-0.6.2-r1.ebuild,v 1.5 2009/07/13 00:39:32 flameeyes Exp $
 
 inherit webapp eutils autotools
 
@@ -40,7 +40,7 @@ src_unpack() {
 	sed -e "s:myWEBDIR=\$with_webdir/bobs:myWEBDIR=\$with_webdir:" \
 		-i 'configure' || die "configure bodge failed"
 
-	eautomake
+	eautoreconf
 }
 
 src_compile() {
