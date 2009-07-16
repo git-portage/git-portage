@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/hamster-applet/Attic/hamster-applet-2.26.0.ebuild,v 1.1 2009/05/10 22:50:40 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/hamster-applet/Attic/hamster-applet-2.26.3.ebuild,v 1.1 2009/07/16 23:20:19 eva Exp $
 
 EAPI="2"
 GCONF_DEBUG="no"
@@ -17,10 +17,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="eds libnotify"
 
-RDEPEND="
-	|| ( >=dev-lang/python-2.5[sqlite]
-		 ( dev-lang/python:2.4
-		   dev-python/pysqlite:2 ) )
+RDEPEND=">=dev-lang/python-2.4
+	|| (
+		>=dev-lang/python-2.5[sqlite]
+		dev-python/pysqlite:2 )
 	dev-python/gconf-python
 	dev-python/libgnome-python
 	dev-python/gnome-applets-python
@@ -46,6 +46,9 @@ src_prepare() {
 	# disable pyc compiling
 	mv py-compile py-compile.orig
 	ln -s $(type -P true) py-compile
+
+	# Fix intltoolize broken file, see upstream #577133
+	sed "s:'\^\$\$lang\$\$':\^\$\$lang\$\$:g" -i po/Makefile.in.in || die "sed failed"
 }
 
 pkg_postinst() {
@@ -57,6 +60,5 @@ pkg_postinst() {
 
 pkg_postrm() {
 	gnome2_pkg_postrm
-
-	python_mod_cleanup $(python_get_sitedir)/hamster
+	python_mod_cleanup /usr/$(get_libdir)/python*/site-packages/hamster
 }
