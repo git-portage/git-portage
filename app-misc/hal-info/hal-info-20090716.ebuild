@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/hal-info/Attic/hal-info-20090202.ebuild,v 1.1 2009/02/04 14:19:00 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/hal-info/Attic/hal-info-20090716.ebuild,v 1.1 2009/07/19 21:28:37 eva Exp $
 
 inherit eutils
 
