@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-firefox-bin/Attic/mozilla-firefox-bin-2.0.0.19.ebuild,v 1.2 2008/12/20 21:13:30 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/mozilla-firefox-bin/Attic/mozilla-firefox-bin-2.0.0.19.ebuild,v 1.3 2009/07/22 09:37:11 nirbheek Exp $
 
 inherit eutils mozilla-launcher multilib mozextension
 
@@ -51,7 +51,7 @@ RDEPEND="x11-libs/libXrender
 	)
 	>=www-client/mozilla-launcher-1.41"
 
-PDEPEND="restrict-javascript? ( x11-plugins/noscript )"
+PDEPEND="restrict-javascript? ( www-plugins/noscript )"
 
 S="${WORKDIR}/firefox"
 
