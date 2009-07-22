@@ -1,8 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/fpc/Attic/fpc-2.2.4.ebuild,v 1.1 2009/04/23 21:05:03 truedfx Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/fpc/Attic/fpc-2.2.4-r2.ebuild,v 1.1 2009/07/22 20:24:39 truedfx Exp $
 
 inherit eutils
+
+RESTRICT="strip" #269221
 
 S="${WORKDIR}/fpcbuild-${PV}/fpcsrc"
 
@@ -13,7 +15,8 @@ SRC_URI="mirror://sourceforge/freepascal/fpcbuild-${PV}.tar.gz
 	sparc? ( mirror://sourceforge/freepascal/fpc-2.2.4.sparc-linux.tar )
 	ppc? ( mirror://sourceforge/freepascal/fpc-2.2.4.powerpc-linux.tar )
 	amd64? ( mirror://sourceforge/freepascal/fpc-2.2.4.x86_64-linux.tar )
-	doc? ( mirror://sourceforge/freepascal/fpc-${PV}-doc-pdf.zip )"
+	doc? ( mirror://sourceforge/freepascal/fpc-${PV}-doc-html.tar.gz
+		mirror://gentoo/fpc-${PV}-fpctoc.htx.bz2 )"
 
 SLOT="0"
 LICENSE="GPL-2 LGPL-2.1 LGPL-2.1-FPC"
@@ -23,8 +26,8 @@ IUSE="doc source"
 DEPEND="!dev-lang/fpc-bin
 	!dev-lang/fpc-source"
 RDEPEND="${DEPEND}"
-DEPEND="${DEPEND}
-	>=sys-devel/binutils-2.19.1-r1"
+#DEPEND="${DEPEND}
+#	>=sys-devel/binutils-2.19.1-r1"
 
 src_unpack() {
 	case ${ARCH} in
@@ -42,7 +45,7 @@ src_unpack() {
 
 	cd "${S}"
 	epatch "${FILESDIR}"/${P}-execstack.patch
-	sed -i -e 's/ -Xs / /g' $(find . -name Makefile) || die "sed failed"
+	#sed -i -e 's/ -Xs / /g' $(find . -name Makefile) || die "sed failed"
 }
 
 set_pp() {
@@ -84,12 +87,6 @@ src_compile() {
 	emake -j1 PP="${pp}" rtl_clean || die "make rtl_clean failed"
 
 	emake -j1 PP="${pp}" rtl packages_all utils || die "make failed"
-
-	# Use pregenerated docs to avoid sandbox violations (#146804)
-	#if use doc ; then
-	#	cd "${S}"/../fpcdocs
-	#	emake -j1 pdf || die "make pdf failed!"
-	#fi
 }
 
 src_install() {
@@ -107,21 +104,17 @@ src_install() {
 
 	dosym ../lib/fpc/${PV}/ppc${FPC_ARCH} /usr/bin/ppc${FPC_ARCH}
 
-	if ! has nodoc ${FEATURES} ; then
-		cd "${S}"/../install/doc
-		emake -j1 "$@" installdoc || die "make installdoc failed!"
-	fi
+	cd "${S}"/../install/doc
+	emake -j1 "$@" installdoc || die "make installdoc failed!"
 
-	if ! has noman ${FEATURES} ; then
-		cd "${S}"/../install/man
-		emake -j1 "$@" installman || die "make installman failed!"
-	fi
+	cd "${S}"/../install/man
+	emake -j1 "$@" installman || die "make installman failed!"
 
-	if ! has nodoc ${FEATURES} && use doc ; then
-		insinto /usr/share/doc/${PF}
-		doins "${WORKDIR}"/doc/*.pdf
-		#cd "${S}"/../fpcdocs
-		#emake -j1 "$@" pdfinstall || die "make pdfinstall failed"
+	if use doc ; then
+		cd "${S}"/../../share/doc/fpdocs-${PV}
+		insinto /usr/share/doc/${P}
+		doins -r * || die "doins fpdocs failed"
+		newins "${WORKDIR}"/fpc-${PV}-fpctoc.htx fpctoc.htx || die "newins fpctoc.htx failed"
 	fi
 
 	if use source ; then
@@ -135,19 +128,4 @@ src_install() {
 	sed -i -e "s:${D}:/:g" "${D}"etc/fpc.cfg || die "sed fpc.cfg failed"
 
 	rm -rf "${D}"usr/lib/fpc/lexyacc
-}
-
-pkg_postinst() {
-	# Using ewarn - it is really important for other ebuilds (e.g. Lazarus)
-	if [ -e /etc/._cfg0000_fpc.cfg ]; then
-		echo
-		ewarn "Make sure you etc-update /etc/fpc.cfg"
-		ewarn "Otherwise FPC will not work correctly."
-		echo
-		ebeep
-	fi
-
-	ewarn "The default configuration for fpc strips executables. This"
-	ewarn "will cause QA notices in ebuilds for software using fpc."
-	ewarn "You can remove -Xs from /etc/fpc.cfg to avoid this."
 }
