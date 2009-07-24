@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/qtcurve/Attic/qtcurve-0.62.0.ebuild,v 1.1 2009/03/11 18:26:41 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/qtcurve/Attic/qtcurve-0.67.0.ebuild,v 1.1 2009/07/24 08:47:09 yngwin Exp $
 
 EAPI=1
 
@@ -19,8 +19,7 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND="x11-libs/qt:3"
-DEPEND="${RDEPEND}
-	>=dev-util/cmake-2.4"
+DEPEND="${RDEPEND}"
 
 need-kde 3.5
 
