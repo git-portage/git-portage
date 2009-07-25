@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/java-gnome/Attic/java-gnome-4.0.9-r1.ebuild,v 1.4 2009/03/20 19:42:54 josejx Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/java-gnome/Attic/java-gnome-4.0.12.ebuild,v 1.1 2009/07/25 15:51:07 serkan Exp $
 
 EAPI=2
 JAVA_PKG_IUSE="doc examples source"
@@ -16,30 +16,30 @@ SRC_URI="mirror://gnome/sources/${PN}/$(get_version_component_range 1-2)/${MY_P}
 
 LICENSE="GPL-2-with-linking-exception"
 SLOT="4.0"
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-libs/glib-2.16.1
-	>=x11-libs/gtk+-2.12.11
+	>=x11-libs/gtk+-2.14
 	>=gnome-base/libglade-2.6.3
 	>=gnome-base/libgnome-2.22.0
 	>=gnome-base/gnome-desktop-2.22.0
-	>=virtual/jre-1.5
-	>=x11-libs/cairo-1.6.4[svg]"
+	>=x11-libs/cairo-1.6.4[svg]
+	>=x11-libs/gtksourceview-2.6.2
+	>=app-text/gtkspell-2.0.15-r1
+	>=x11-libs/libnotify-0.4.5
+	>=dev-libs/libunique-1.0.8
+	>=virtual/jre-1.5"
 DEPEND="${RDEPEND}
 	dev-java/junit:0
 	dev-lang/perl
-	>=virtual/jdk-1.5
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	>=virtual/jdk-1.5"
 
 # Needs X11
 RESTRICT="test"
 
 S="${WORKDIR}/${MY_P}"
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-crashfix.patch
-}
 
 src_configure() {
 	# Handwritten in perl so not using econf
