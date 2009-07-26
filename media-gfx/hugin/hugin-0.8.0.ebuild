@@ -1,11 +1,11 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/Attic/hugin-0.8.0_rc1.ebuild,v 1.1 2009/05/07 20:56:18 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/Attic/hugin-0.8.0.ebuild,v 1.1 2009/07/26 13:41:31 maekke Exp $
 
 EAPI="2"
 WX_GTK_VER="2.8"
 
-inherit cmake-utils wxwidgets versionator
+inherit base cmake-utils wxwidgets versionator
 
 DESCRIPTION="GUI for the creation & processing of panoramic images"
 HOMEPAGE="http://hugin.sf.net"
@@ -14,27 +14,42 @@ LICENSE="GPL-2 SIFT"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 
-LANGS=" bg ca cs de en_GB es fr hu it ja ko nl pl pt_BR ru sk sl sv uk zh_CN"
-IUSE="+sift $(echo ${LANGS//\ /\ linguas_})"
+LANGS=" bg ca cs de en_GB es fr hu it ja ko nl pl pt_BR ru sk sl sv uk zh_CN zh_TW"
+IUSE="lapack +sift $(echo ${LANGS//\ /\ linguas_})"
 
-DEPEND="
-	app-arch/zip
-	|| ( >=dev-libs/boost-1.34 =dev-libs/boost-1.33*[threads] )
+DEPEND="app-arch/zip
+	>=dev-libs/boost-1.35.0-r5
 	>=media-gfx/enblend-3.0_p20080807
 	media-gfx/exiv2
 	media-libs/jpeg
-	>=media-libs/libpano13-2.9.14_beta1
+	>=media-libs/libpano13-2.9.14
 	media-libs/libpng
 	media-libs/openexr
 	media-libs/tiff
 	sys-libs/zlib
 	x11-libs/wxGTK:2.8
+	lapack? ( virtual/lapack )
 	sift? ( media-gfx/autopano-sift-C )"
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	media-libs/exiftool"
 
 S="${WORKDIR}/${PN}-$(get_version_component_range 1-3)"
-PATCHES=( "${FILESDIR}"/${PN}-0.8.0_beta1-as-needed.patch )
-DOCS="AUTHORS README TODO"
+PATCHES=(
+	"${FILESDIR}"/${PN}-0.8.0_rc3-as-needed.patch
+	"${FILESDIR}"/${PN}-0.8.0_rc4-use_system_cmake_findboost.patch
+)
+
+src_prepare() {
+	base_src_prepare
+
+	# Remove faulty module and force usage of system cmake FindBoost
+	rm CMakeModules/FindBoost.cmake
+}
+
+pkg_setup() {
+	DOCS="AUTHORS README TODO"
+	mycmakeargs="$(cmake-utils_use_enable lapack)"
+}
 
 src_install() {
 	cmake-utils_src_install
