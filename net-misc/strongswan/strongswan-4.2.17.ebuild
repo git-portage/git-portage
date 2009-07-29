@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/strongswan/Attic/strongswan-4.2.15.ebuild,v 1.2 2009/06/23 12:33:40 keytoaster Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/strongswan/Attic/strongswan-4.2.17.ebuild,v 1.1 2009/07/29 08:33:36 wschlich Exp $
 
 EAPI=2
 inherit eutils linux-info autotools
