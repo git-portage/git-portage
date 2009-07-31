@@ -21,11 +21,6 @@ dev-java/eclipse-ecj gcj
 # https://bugs.gentoo.org/show_bug.cgi?id=213882
 dev-java/jamvm libffi
 
-# Doug Goldstein <cardoe@gentoo.org> (9 Sep 2008)
-# mask vdr USE flag for media-tv/zapping since it depends on media-libs/rte
-# which is only available on x86
-media-tv/zapping vdr
-
 # Dawid Węgliński <cla@gentoo.org>
 # Mask amarok2 useflag for net-im/kadu
 # See bug #238487 for references
@@ -36,8 +31,6 @@ net-im/kadu amarok2
 # Vlastimil Babka <caster@gentoo.org> (12 Dec 2008)
 # finally a 64bit java plugin
 >=dev-java/sun-jdk-1.6.0.12_beta2 -nsplugin
-# but not on 1.7 yet
-=dev-java/sun-jdk-1.7*
 
 # Serkan Kaba <serkan@gentoo.org> (5 Feb 2009)
 # finally a 64bit java plugin
@@ -98,4 +91,3 @@ net-irc/xchat-gnome mmx
 net-misc/asterisk mmx
 x11-terms/eterm mmx
 media-tv/xawtv mmx
-
