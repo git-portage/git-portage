@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/broadcom-sta/Attic/broadcom-sta-5.10.91.9-r4.ebuild,v 1.1 2009/07/16 20:27:39 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/broadcom-sta/Attic/broadcom-sta-5.10.91.9-r5.ebuild,v 1.1 2009/08/01 13:17:56 matsuu Exp $
 
 inherit eutils linux-mod versionator
 
@@ -49,6 +49,6 @@ src_unpack() {
 		"${FILESDIR}/${PN}-5.10.79.10-hidden-essid.patch" \
 		"${WORKDIR}/patch_2.6.29_kernels" \
 		"${FILESDIR}/${P}-license.patch" \
-		"${FILESDIR}/${P}-linux-2.6.30.patch"
+		"${FILESDIR}/${P}-linux-2.6.30.patch" \
 		"${FILESDIR}/${P}-linux-2.6.31.patch"
 }
