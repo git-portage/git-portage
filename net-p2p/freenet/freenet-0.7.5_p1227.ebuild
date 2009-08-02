@@ -1,13 +1,13 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/freenet/Attic/freenet-0.7_p1222.ebuild,v 1.1 2009/06/12 19:24:38 tommy Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/freenet/Attic/freenet-0.7.5_p1227.ebuild,v 1.1 2009/08/02 21:22:52 tommy Exp $
 
 EAPI="1"
-DATE=20090612
+DATE=20090708
 
-EGIT_REPO_URI="git://github.com/freenet/fred-official.git"
-EGIT_PROJECT="freenet/fred-official"
-EGIT_TREE="139df10e20d9ae4a8afc0ff23f16ba56ec69e011"
+EGIT_REPO_URI="git://github.com/freenet/fred-staging.git"
+EGIT_PROJECT="freenet/fred-staging"
+EGIT_TREE="c5009c153b0745ad19f16e478fc619a8864d241c"
 
 inherit eutils git java-pkg-2 java-ant-2 multilib
 
