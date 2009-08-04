@@ -1,10 +1,11 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/alsa-utils/Attic/alsa-utils-1.0.20-r2.ebuild,v 1.1 2009/07/31 21:49:39 beandog Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/alsa-utils/Attic/alsa-utils-1.0.20-r4.ebuild,v 1.1 2009/08/04 09:40:23 ssuominen Exp $
 
+EAPI=2
 inherit eutils
 
-MY_P="${P/_rc/rc}"
+MY_P=${P/_rc/rc}
 
 DESCRIPTION="Advanced Linux Sound Architecture Utils (alsactl, alsamixer, etc.)"
 HOMEPAGE="http://www.alsa-project.org/"
@@ -25,26 +26,30 @@ RDEPEND=">=sys-libs/ncurses-5.1
 	virtual/modutils
 	!minimal? ( sys-apps/pciutils )"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
-src_compile() {
+pkg_setup() {
+	if [[ -e "${ROOT}etc/modules.d/alsa" ]]; then
+		eerror "Obsolete config /etc/modules.d/alsa found."
+		die "Move /etc/modules.d/alsa to /etc/modprobe.d/alsa.conf."
+	fi
 
+	if [[ -e "${ROOT}etc/modprobe.d/alsa" ]]; then
+		eerror "Obsolete config /etc/modprobe.d/alsa found."
+		die "Move /etc/modprobe.d/alsa to /etc/modprobe.d/alsa.conf."
+	fi
+}
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-modprobe.d.patch
+}
+
+src_configure() {
 	local myconf=""
 	use doc || myconf="--disable-xmlto"
 
 	econf ${myconf} \
-		$(use_enable nls) \
-		|| die "configure failed"
-
-	emake || die "make failed"
-}
-
-pkg_preinst() {
-	if [[ -a /etc/modules.d/alsa ]] && [[ ! -a /etc/modprobe.d/alsa ]]; then
-		elog "Moving old alsa configuration in modules.d to new"
-		elog "location in modprobe.d in /etc/"
-		mv "${ROOT}/etc/modules.d/alsa" "${ROOT}/etc/modprobe.d/alsa"
-	fi
+		$(use_enable nls)
 }
 
 src_install() {
@@ -52,12 +57,12 @@ src_install() {
 		seq/aconnect/README.aconnect
 		seq/aseqnet/README.aseqnet"
 
-	emake DESTDIR="${D}" install || die "Installation Failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 
 	dodoc ${ALSA_UTILS_DOCS} || die
 	newdoc alsamixer/README README.alsamixer || die
 
-	newinitd "${FILESDIR}/alsasound.initd-r3" alsasound
+	newinitd "${FILESDIR}/alsasound.initd-r4" alsasound
 	newconfd "${FILESDIR}/alsasound.confd-r3" alsasound
 	insinto /etc/modprobe.d
 	newins "${FILESDIR}/alsa-modules.conf-rc" alsa.conf
