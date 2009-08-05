@@ -1,18 +1,22 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.16_rc3-r51.ebuild,v 1.1 2009/07/30 13:27:22 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.16_rc4.ebuild,v 1.1 2009/08/05 13:52:21 flameeyes Exp $
 
 EAPI=2
 
-inherit eutils libtool flag-o-matic
+WANT_AUTOMAKE=1.11
 
-MY_P=${P/_rc/-test}
+inherit eutils libtool flag-o-matic autotools
 
 DESCRIPTION="A networked sound server with an advanced plugin system"
 HOMEPAGE="http://www.pulseaudio.org/"
-SRC_URI="http://0pointer.de/public/${MY_P}.tar.gz"
+if [[ ${PV/_rc/} == ${PV} ]]; then
+	SRC_URI="http://0pointer.de/lennart/projects/${PN}/${P}.tar.gz"
+else
+	SRC_URI="http://0pointer.de/public/${P/_rc/-test}.tar.gz"
+fi
 
-S="${WORKDIR}/${MY_P}"
+S="${WORKDIR}/${P/_rc/-test}"
 
 LICENSE="LGPL-2 GPL-2"
 SLOT="0"
@@ -56,21 +60,14 @@ DEPEND="${RDEPEND}
 	X? ( x11-proto/xproto )
 	dev-libs/libatomic_ops
 	dev-util/pkgconfig
-	|| ( dev-util/unifdef sys-freebsd/freebsd-ubin )
 	dev-util/intltool"
 
-# alsa-utils dep is for the alsasound init.d script (see bug #155707)
-# bluez-utils dep is for the bluetooth init.d script
 RDEPEND="${RDEPEND}
-	sys-apps/openrc
-	gnome-extra/gnome-audio
-	alsa? ( media-sound/alsa-utils )
-	bluetooth? (
-	|| ( >=net-wireless/bluez-4
-		 >=net-wireless/bluez-utils-3 ) )"
+	gnome-extra/gnome-audio"
 
 pkg_setup() {
 	enewgroup audio 18 # Just make sure it exists
+	enewgroup realtime
 	enewgroup pulse-access
 	enewgroup pulse
 	enewuser pulse -1 -1 /var/run/pulse pulse,audio
@@ -84,6 +81,13 @@ pkg_setup() {
 }
 
 src_prepare() {
+	# Not extremely nice but allows to avoid a bit of work in the case
+	# users don't request tests.
+	if use test; then
+		sed -i -e 's:\<mix-test::' src/Makefile.am || die
+
+		eautomake
+	fi
 	elibtoolize
 }
 
@@ -95,9 +99,6 @@ src_configure() {
 	# proper dependency and fix this up. — flameeyes
 	append-ldflags -Wl,--no-as-needed
 
-	# udev is disabled because we don't have the right version just
-	# yet, and thus we need to avoid it for now. Once we have the
-	# version I'll revbump PA. — flameeyes
 	econf \
 		--enable-largefile \
 		$(use_enable glib glib2) \
@@ -115,13 +116,14 @@ src_configure() {
 		$(use_enable gnome gconf) \
 		$(use_enable libsamplerate samplerate) \
 		$(use_enable bluetooth bluez) \
+		$(use_enable policykit polkit) \
 		$(use_enable X x11) \
 		$(use_enable test default-build-tests) \
-		$(use_with caps) \
 		$(use_enable udev) \
+		$(use_with caps) \
 		--localstatedir=/var \
+		--with-realtime-group=realtime \
 		--disable-per-user-esound-socket \
-		--with-database=gdbm \
 		|| die "econf failed"
 
 	if use doc; then
@@ -131,26 +133,15 @@ src_configure() {
 	fi
 }
 
+src_test() {
+	# We avoid running the toplevel check target because that will run
+	# po/'s tests too, and they are broken. Officially, it should work
+	# with intltool 0.40.6, but that doesn't seem to be the case.
+	emake -C src check || die
+}
+
 src_install() {
-	emake -j1 DESTDIR="${D}" install || die "make install failed"
-
-	newconfd "${FILESDIR}/pulseaudio.conf.d" pulseaudio
-
-	use_define() {
-		local define=${2:-$(echo $1 | tr '[:lower:]' '[:upper:]')}
-
-		use "$1" && echo "-D$define" || echo "-U$define"
-	}
-
-	unifdef $(use_define hal) \
-		$(use_define avahi) \
-		$(use_define alsa) \
-		$(use_define bluetooth) \
-		$(use_define udev) \
-		"${FILESDIR}/pulseaudio.init.d-4" \
-		> "${T}/pulseaudio"
-
-	doinitd "${T}/pulseaudio"
+	emake DESTDIR="${D}" install || die "make install failed"
 
 	use avahi && sed -i -e '/module-zeroconf-publish/s:^#::' "${D}/etc/pulse/default.pa"
 
@@ -174,26 +165,11 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "PulseAudio in Gentoo can use a system-wide pulseaudio daemon."
-	elog "This support is enabled by starting the pulseaudio init.d ."
-	elog "To be able to access that you need to be in the group pulse-access."
-	elog "If you choose to use this feature, please make sure that you"
-	elog "really want to run PulseAudio this way:"
-	elog "   http://pulseaudio.org/wiki/WhatIsWrongWithSystemMode"
-	elog "For more information about system-wide support, please refer to:"
-	elog "	 http://pulseaudio.org/wiki/SystemWideInstance"
-	if use gnome; then
-		elog
-		elog "By enabling gnome USE flag, you enabled gconf support. Please note"
-		elog "that you might need to remove the gnome USE flag or disable the"
-		elog "gconf module on /etc/pulse/system.pa to be able to use PulseAudio"
-		elog "with a system-wide instance."
-	fi
-	elog
-	elog "To use the ESounD wrapper while using a system-wide daemon, you also"
-	elog "need to enable auth-anonymous for the esound-unix module, or to copy"
-	elog "/var/run/pulse/.esd_auth into each home directory."
-	elog
+	elog "If you want to make use of realtime capabilities of PulseAudio"
+	elog "you should follow the realtime guide to create and set up a realtime"
+	elog "user group: http://www.gentoo.org/proj/en/desktop/sound/realtime.xml"
+	elog "Make sure you also have baselayout installed with pam USE flag"
+	elog "enabled, if you're using the rlimit method."
 	if use bluetooth; then
 		elog
 		elog "The BlueTooth proximity module is not enabled in the default"
