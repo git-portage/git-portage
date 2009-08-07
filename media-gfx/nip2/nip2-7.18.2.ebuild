@@ -1,6 +1,6 @@
-# Copyright 2003-2009 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/nip2/Attic/nip2-7.16.4.ebuild,v 1.1 2009/01/13 13:20:17 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/nip2/Attic/nip2-7.18.2.ebuild,v 1.1 2009/08/07 14:20:44 pva Exp $
 
 EAPI="2"
 inherit eutils autotools fdo-mime versionator
@@ -21,15 +21,14 @@ RDEPEND="
 	>=media-libs/vips-${PV}
 	>=x11-libs/gtk+-2.4.9
 	gsl? ( sci-libs/gsl )
-	fftw? ( >=sci-libs/fftw-3 )"
+	fftw? ( sci-libs/fftw:3.0 )"
 
-# Flex and bison are build dependencies, but are not needed at runtime
 DEPEND="${RDEPEND}
 	=sys-devel/bison-2.3*
 	sys-devel/flex"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-fftw3-build.patch"
+	epatch "${FILESDIR}/${PN}-7.16.4-fftw3-build.patch"
 	eautoreconf
 }
 
