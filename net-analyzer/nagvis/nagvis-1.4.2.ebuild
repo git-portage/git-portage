@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagvis/Attic/nagvis-1.4.1.ebuild,v 1.1 2009/06/19 20:13:16 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagvis/Attic/nagvis-1.4.2.ebuild,v 1.1 2009/08/15 22:11:52 dertobi123 Exp $
 
 inherit eutils confutils depend.php
 
