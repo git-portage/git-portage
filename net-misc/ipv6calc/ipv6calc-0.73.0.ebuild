@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/ipv6calc/Attic/ipv6calc-0.72.1.ebuild,v 1.1 2009/01/12 16:41:06 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/ipv6calc/Attic/ipv6calc-0.73.0.ebuild,v 1.1 2009/08/16 19:21:44 pva Exp $
 
 inherit fixheadtails
 
