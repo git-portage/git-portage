@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-9.6.ebuild,v 1.13 2009/07/21 10:43:20 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-9.8.ebuild,v 1.1 2009/08/18 09:32:40 scarabeus Exp $
 
 EAPI="2"
 
@@ -59,10 +59,10 @@ _check_kernel_config() {
 		die "CONFIG_PREEMT_RCU enabled"
 	fi
 
-	if kernel_is ge 2 6 29; then
-		ewarn "Kernels newer then 2.6.28 are heavily patched and might result in runtime failitures."
-		ewarn "Consider them as unsupported by us."
-		ewarn "All bug reports are needed to be tested with 2.6.28 kernel"
+	# kernel hook checking up latest allowed version
+	if kernel_is ge 2 6 31; then
+		eerror "Kernels newer then 2.6.30 are not supported by this driver"
+		die "Downgrade your kernel"
 	fi
 
 	if ! linux_chkconfig_present MTRR; then
@@ -79,18 +79,6 @@ _check_kernel_config() {
 		! linux_chkconfig_present PCIEPORTBUS; then
 		ewarn "You don't have AGP and/or PCIe support enabled in the kernel"
 		ewarn "Direct rendering will not work."
-	fi
-
-	if linux_chkconfig_present PARAVIRT; then
-		eerror "Currently, ati-drivers don't compile with paravirtualization"
-		eerror "active in the kernel due to GPL symbol export restrictions."
-		eerror "Please disable it:"
-		eerror "    CONFIG_PARAVIRT=n"
-		eerror "in /usr/src/linux/.config or"
-		eerror "	Processor type and features -->"
-		eerror "		[ ] Paravirtualization support (EXPERIMENTAL)"
-		eerror "in the 'menuconfig'"
-		die "CONFIG_PARAVIRT enabled"
 	fi
 
 	if ! linux_chkconfig_present MAGIC_SYSRQ; then
@@ -165,6 +153,8 @@ src_prepare() {
 
 	# All kernel options for prepare are ment to be in here
 	if use modules; then
+		# version patches
+		epatch "${FILESDIR}"/kernel/${PV}-*.patch
 		if kernel_is ge 2 6 29; then
 			epatch "${FILESDIR}"/kernel/2.6.29*.patch
 		fi
