@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.4.4.ebuild,v 1.1 2009/01/28 09:19:28 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.4.4.ebuild,v 1.2 2009/08/19 13:47:56 betelgeuse Exp $
 
 #
 # TODO:
@@ -20,7 +20,7 @@
 # - bacula >=2.4.0 supports --without-qwt -- reflect with USE=qwt?
 #
 
-EAPI="1"
+EAPI="2"
 inherit eutils
 
 IUSE="bacula-clientonly bacula-console bacula-nodir bacula-nosd doc gnome ipv6 logrotate logwatch mysql postgres python qt4 readline sqlite sqlite3 ssl static tcpd wxwindows X"
@@ -72,7 +72,7 @@ DEPEND="
 	readline? ( >=sys-libs/readline-4.1 )
 	doc? (
 		virtual/ghostscript
-		dev-tex/latex2html
+		dev-tex/latex2html[png]
 	)"
 RDEPEND="${DEPEND}
 	!bacula-clientonly? (
@@ -136,10 +136,7 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	# adjusts default configuration files for several binaries
 	# to /etc/bacula/<config> instead of ./<config>
 	pushd src && epatch "${FILESDIR}/${PV}/${PN}"-default-configs.patch && popd
@@ -152,13 +149,7 @@ src_unpack() {
 		&& epatch "${FILESDIR}"/${PV}/${PV}-*.patch
 }
 
-src_compile() {
-	if useq doc && has_version dev-tex/latex2html && ! built_with_use dev-tex/latex2html png; then
-		eerror "${PN} needs the PNG support of latex2html"
-		eerror "Please re-emerge dev-tex/latex2html with USE=png"
-		die "need dev-tex/latex2html built with png USE flag"
-	fi
-
+src_configure() {
 	local myconf=''
 
 	if useq bacula-clientonly; then
@@ -226,7 +217,9 @@ src_compile() {
 		--host=${CHOST} \
 		${myconf} \
 		|| die "configure failed"
+}
 
+src_compile() {
 	emake || die "emake failed"
 
 	# build various GUIs from bacula-gui tarball
