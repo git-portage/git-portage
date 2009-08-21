@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-jpeg/Attic/gst-plugins-jpeg-0.10.14.ebuild,v 1.8 2009/08/02 14:45:46 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-jpeg/Attic/gst-plugins-jpeg-0.10.14.ebuild,v 1.9 2009/08/21 13:02:06 leio Exp $
 
 inherit gst-plugins-good
 
-DESCRIPTION="plug-in to encode and decode jpeg images"
+DESCRIPTION="GStreamer encoder/decoder for JPEG format"
 KEYWORDS="alpha amd64 ~hppa ppc ppc64 sparc x86"
 IUSE=""
 
