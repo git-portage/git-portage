@@ -1,32 +1,30 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/Attic/squid-3.0.15.ebuild,v 1.8 2009/07/05 19:49:49 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/Attic/squid-2.7.6-r2.ebuild,v 1.1 2009/08/22 12:57:20 mrness Exp $
 
 EAPI="2"
 
-inherit eutils pam toolchain-funcs autotools linux-info
+inherit eutils pam toolchain-funcs autotools
 
-# lame archive versioning scheme..
+#lame archive versioning scheme..
 S_PMV="${PV%%.*}"
 S_PV="${PV%.*}"
 S_PL="${PV##*.}"
+S_PL="${S_PL/_rc/-RC}"
 S_PP="${PN}-${S_PV}.STABLE${S_PL}"
-
-RESTRICT="test" # check if test works in next bump
 
 DESCRIPTION="A full-featured web proxy cache"
 HOMEPAGE="http://www.squid-cache.org/"
-SRC_URI="http://www.squid-cache.org/Versions/v${S_PMV}/${S_PV}/${S_PP}.tar.gz
-	mirror://gentoo/${PN}-3.0.14-chunk-encoding.patch.gz"
+SRC_URI="http://www.squid-cache.org/Versions/v${S_PMV}/${S_PV}/${S_PP}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ~ppc ppc64 sparc x86 ~x86-fbsd"
-IUSE="caps pam ldap samba sasl kerberos nis radius ssl snmp selinux icap-client logrotate \
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+IUSE="caps pam ldap samba sasl kerberos nis ssl snmp selinux logrotate \
 	mysql postgres sqlite \
 	zero-penalty-hit \
 	pf-transparent ipf-transparent kqueue \
-	elibc_uclibc kernel_linux epoll"
+	elibc_uclibc kernel_linux +epoll"
 
 DEPEND="caps? ( >=sys-libs/libcap-2.16 )
 	pam? ( virtual/pam )
@@ -47,27 +45,20 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}/${S_PP}"
 
 pkg_setup() {
-	if grep -qs '^[[:space:]]*cache_dir[[:space:]]\+coss' "${ROOT}"etc/squid/squid.conf; then
-		eerror "coss store IO has been disabled by upstream due to stability issues!"
-		eerror "If you want to install this version, switch the store type to something else"
-		eerror "before attempting to install this version again."
-
-		die "/etc/squid/squid.conf: cache_dir use a disabled store type"
+	if use zero-penalty-hit; then
+		ewarn "This version supports natively IP TOS/Priority mangling,"
+		ewarn "but it does not support zph_preserve_miss_tos."
+		ewarn "If you need that, please use >=${CATEGORY}/${PN}-3 ."
 	fi
-
 	enewgroup squid 31
 	enewuser squid 31 -1 /var/cache/squid squid
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-3-capability.patch
+	epatch "${FILESDIR}"/${PN}-2-capability.patch
+	epatch "${FILESDIR}"/${P}-cve-2009-2855.patch
 	epatch "${FILESDIR}"/${P}-gentoo.patch
-	epatch "${FILESDIR}"/${P}-gcc43.patch
-	epatch "${FILESDIR}"/${P}-cross-compile.patch
-	epatch "${WORKDIR}"/${PN}-3.0.14-chunk-encoding.patch
-	use zero-penalty-hit && epatch "${FILESDIR}"/${P}-adapted-zph.patch
 	has_version app-crypt/mit-krb5 || epatch "${FILESDIR}"/${P}-heimdal.patch
-
 	eautoreconf
 }
 
@@ -78,7 +69,6 @@ src_configure() {
 	use pam && basic_modules="PAM,${basic_modules}"
 	use sasl && basic_modules="SASL,${basic_modules}"
 	use nis && ! use elibc_uclibc && basic_modules="YP,${basic_modules}"
-	use radius && basic_modules="squid_radius_auth,${basic_modules}"
 	if use mysql || use postgres || use sqlite ; then
 		basic_modules="DB,${basic_modules}"
 	fi
@@ -95,9 +85,14 @@ src_configure() {
 
 	local myconf=""
 
-	# coss support has been disabled
-	# If it is re-enabled again, make sure you don't enable it for elibc_uclibc (#61175)
-	myconf="${myconf} --enable-storeio=ufs,diskd,aufs,null"
+	# Support for uclibc #61175
+	if use elibc_uclibc; then
+		myconf="${myconf} --enable-storeio=ufs,diskd,aufs,null"
+		myconf="${myconf} --disable-async-io"
+	else
+		myconf="${myconf} --enable-storeio=ufs,diskd,coss,aufs,null"
+		myconf="${myconf} --enable-async-io"
+	fi
 
 	if use kernel_linux; then
 		myconf="${myconf} --enable-linux-netfilter
@@ -118,30 +113,33 @@ src_configure() {
 		--libexecdir=/usr/libexec/squid \
 		--localstatedir=/var \
 		--datadir=/usr/share/squid \
-		--with-default-user=squid \
-		--enable-auth="basic,digest,negotiate,ntlm" \
+		--enable-auth="basic,digest,ntlm,negotiate" \
 		--enable-removal-policies="lru,heap" \
 		--enable-digest-auth-helpers="password" \
 		--enable-basic-auth-helpers="${basic_modules}" \
 		--enable-external-acl-helpers="${ext_helpers}" \
 		--enable-ntlm-auth-helpers="${ntlm_helpers}" \
 		--enable-negotiate-auth-helpers="${negotiate_helpers}" \
+		--enable-ident-lookups \
 		--enable-useragent-log \
 		--enable-cache-digests \
 		--enable-delay-pools \
 		--enable-referer-log \
 		--enable-arp-acl \
+		--with-pthreads \
 		--with-large-files \
-		--with-filedescriptors=8192 \
+		--enable-htcp \
+		--enable-carp \
+		--enable-follow-x-forwarded-for \
+		--with-maxfd=8192 \
 		$(use_enable caps) \
 		$(use_enable snmp) \
 		$(use_enable ssl) \
-		$(use_enable icap-client) \
 		${myconf} || die "econf failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	make DESTDIR="${D}" install || die "make install failed"
 
 	# need suid root for looking into /etc/shadow
 	fowners root:squid /usr/libexec/squid/ncsa_auth
@@ -189,9 +187,4 @@ pkg_postinst() {
 	echo
 	ewarn "Squid can be configured to run in transparent mode like this:"
 	ewarn "   ${HILITE}http_port internal-addr:3128 transparent${NORMAL}"
-	if use zero-penalty-hit; then
-		echo
-		ewarn "In order for zph_preserve_miss_tos to work, you will have to alter your kernel"
-		ewarn "with the patch that can be found on http://zph.bratcheda.org site."
-	fi
 }
