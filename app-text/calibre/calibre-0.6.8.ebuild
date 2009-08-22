@@ -1,18 +1,15 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/calibre/Attic/calibre-0.5.14.ebuild,v 1.2 2009/06/03 02:49:21 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/calibre/Attic/calibre-0.6.8.ebuild,v 1.1 2009/08/22 03:42:08 zmedico Exp $
 
 EAPI=2
 NEED_PYTHON=2.6
 
 inherit python distutils eutils fdo-mime bash-completion
 
-MY_P="${P/_p/-p}"
-S="${WORKDIR}/${MY_P}"
-
 DESCRIPTION="Ebook management application."
 HOMEPAGE="http://calibre.kovidgoyal.net"
-SRC_URI="http://calibre.kovidgoyal.net/downloads/${MY_P}.tar.gz"
+SRC_URI="http://calibre.kovidgoyal.net/downloads/$P.tar.gz"
 
 LICENSE="GPL-2"
 
@@ -27,7 +24,7 @@ SHARED_DEPEND=">=dev-lang/python-2.6[sqlite]
 	>=dev-python/setuptools-0.6_rc5
 	>=dev-python/imaging-1.1.6
 	dev-libs/libusb:0
-	>=dev-python/PyQt4-4.4.2[X,svg,webkit]
+	>=dev-python/PyQt4-4.5[X,svg,webkit]
 	>=dev-python/mechanize-0.1.11
 	>=media-gfx/imagemagick-6.3.5
 	>=x11-misc/xdg-utils-1.0.2
@@ -38,14 +35,13 @@ SHARED_DEPEND=">=dev-lang/python-2.6[sqlite]
 	>=dev-python/dnspython-1.6.0
 	>=sys-apps/help2man-1.36.4
 	>=dev-python/pyPdf-1.12
-	>=app-text/pdftk-1.12"
+	|| ( app-text/podofo >=app-text/pdftk-1.12 )
+	>=dev-python/cherrypy-3.0.2-r1
+	>=dev-python/cssutils-0.9.6_alpha4
+	>=dev-python/odfpy-0.7"
 
 RDEPEND="$SHARED_DEPEND
-	>=dev-python/reportlab-2.1
-	!dev-python/cherrypy
-	!dev-python/cssutils
-	!dev-python/django-tagging
-	!dev-python/odfpy"
+	>=dev-python/reportlab-2.1"
 
 DEPEND="$SHARED_DEPEND
 	dev-python/setuptools
@@ -108,16 +104,17 @@ EOF
 	domenu "$HOME"/.local/share/applications/*.desktop || \
 		die "failed to install .desktop menu files"
 
-	# Move the bash-completion file and properly install it.
-	mv "${D}"/etc/bash_completion.d/calibre "${S}/" \
-		|| die "cannot move the bash-completion file"
-	dobashcompletion "${S}"/calibre
+	dobashcompletion "$D"usr/share/bash-completion/calibre
 	find "${D}"/etc -type d -empty -delete
 
 	# Removing junk.
+	# Bundled python modules:     Module       | Package
+	#                             ----------------------------
+	#                             encutils     | cssutils
+	#                             odf          | odfpy
 	rm -r "${D}"/usr/share/mime/{subclasses,XMLnamespaces,globs{,2},mime.cache,magic,aliases,types,treemagic,{generic-,}icons} \
 		"${D}"/usr/share/{applnk,desktop-directories} \
-		"${D}$(python_get_sitedir)"/pyPdf
+		"${D}$(python_get_sitedir)"/{cherrypy,cssutils,encutils,odf,pyPdf}
 }
 
 pkg_postinst() {
