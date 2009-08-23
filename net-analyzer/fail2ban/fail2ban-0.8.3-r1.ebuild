@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/fail2ban/Attic/fail2ban-0.8.3.ebuild,v 1.1 2008/07/30 14:40:56 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/fail2ban/Attic/fail2ban-0.8.3-r1.ebuild,v 1.1 2009/08/23 21:04:47 a3li Exp $
 
 inherit distutils
 
@@ -16,6 +16,13 @@ IUSE=""
 DEPEND=">=dev-lang/python-2.4"
 RDEPEND="${DEPEND}
 	virtual/mta"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
+	epatch "${FILESDIR}/${PN}-CVE-2009-0362.patch"
+}
 
 src_install() {
 	distutils_src_install
