@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/horde-groupware/Attic/horde-groupware-1.1.3.ebuild,v 1.1 2008/09/15 12:25:20 wrobel Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/horde-groupware/Attic/horde-groupware-1.2.3.ebuild,v 1.1 2009/08/24 13:56:56 a3li Exp $
 
 HORDE_PN="${PN}"
 
