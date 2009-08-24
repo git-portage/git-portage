@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/cacti-spine/Attic/cacti-spine-0.8.7c.ebuild,v 1.2 2009/08/24 16:14:01 ramereth Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/cacti-spine/Attic/cacti-spine-0.8.7e.ebuild,v 1.1 2009/08/24 16:14:01 ramereth Exp $
 
 inherit autotools
 
@@ -18,7 +18,7 @@ HOMEPAGE="http://cacti.net/spine_info.php"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND="net-analyzer/net-snmp
@@ -43,7 +43,7 @@ src_install() {
 	dosbin spine || die
 	insinto /etc/
 	insopts -m0640 -o root
-	newins spine.conf.dist spine.conf || die
+	newins spine.conf spine.conf || die
 	dodoc ChangeLog README || die
 }
 
