@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.16_rc5-r51.ebuild,v 1.2 2009/08/21 23:16:13 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.16_rc6-r51.ebuild,v 1.1 2009/08/25 00:46:43 flameeyes Exp $
 
 EAPI=2
 
