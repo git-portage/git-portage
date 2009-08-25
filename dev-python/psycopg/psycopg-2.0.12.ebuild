@@ -1,10 +1,13 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/psycopg/Attic/psycopg-2.0.10.ebuild,v 1.1 2009/04/23 08:50:13 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/psycopg/Attic/psycopg-2.0.12.ebuild,v 1.1 2009/08/25 13:07:52 arfrever Exp $
 
-NEED_PYTHON=2.4
+EAPI="2"
 
-inherit eutils distutils
+NEED_PYTHON="2.4"
+SUPPORT_PYTHON_ABIS="1"
+
+inherit distutils
 
 MY_P=${PN}2-${PV}
 
@@ -20,14 +23,13 @@ DEPEND=">=virtual/postgresql-base-8.1
 	mxdatetime? ( dev-python/egenix-mx-base )"
 RDEPEND="${DEPEND}"
 
+RESTRICT_PYTHON_ABIS="3*"
+
 S=${WORKDIR}/${MY_P}
 
-PYTHON_MODNAME=${PN}2
+PYTHON_MODNAME="${PN}2"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	if use debug; then
 		sed -i 's/^\(define=\)/\1PSYCOPG_DEBUG,/' setup.cfg || die "sed failed"
 	fi
