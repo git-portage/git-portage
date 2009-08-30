@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/Attic/postfix-2.4.11.ebuild,v 1.2 2009/07/05 20:57:15 gengor Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/Attic/postfix-2.6.5.ebuild,v 1.1 2009/08/30 06:13:53 dertobi123 Exp $
 
 # NOTE: this ebuild is a regular ebuild without mailer-config support!
 # Comment lines below "regular ebuild" and uncomment lines below "mailer-config support"
@@ -11,23 +11,24 @@ inherit eutils multilib ssl-cert toolchain-funcs flag-o-matic pam
 # mailer-config support
 #inherit eutils multilib ssl-cert toolchain-funcs flag-o-matic mailer pam
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
 
 # regular ebuild
-IUSE="cdb dovecot-sasl hardened ipv6 ldap mailwrapper mbox mysql nis pam postgres sasl selinux ssl vda"
+IUSE="cdb dovecot-sasl hardened ipv6 ldap mbox mysql nis pam postgres sasl selinux ssl vda"
 # mailer-config support
 #IUSE="cdb dovecot-sasl hardened ipv6 ldap mbox mysql nis pam postgres sasl selinux ssl vda"
 
 MY_PV="${PV/_rc/-RC}"
 MY_SRC="${PN}-${MY_PV}"
 MY_URI="ftp://ftp.porcupine.org/mirrors/postfix-release/official"
-VDA_P="${PN}-2.4.6-vda-ng-r2"
+VDA_PV="2.6.2"
+VDA_P="${PN}-${VDA_PV}-vda-ng"
 RC_VER="2.5"
 
 DESCRIPTION="A fast and secure drop-in replacement for sendmail."
 HOMEPAGE="http://www.postfix.org/"
 SRC_URI="${MY_URI}/${MY_SRC}.tar.gz
-	vda? ( http://gentoo.longitekk.com/${VDA_P}.patch.gz ) "
+	vda? ( http://vda.sourceforge.net/VDA/${VDA_P}.patch.gz ) "
 
 LICENSE="IPL-1"
 SLOT="0"
@@ -50,8 +51,8 @@ DEPEND=">=sys-libs/db-3.2
 # regular ebuild
 RDEPEND="${DEPEND}
 		>=net-mail/mailbase-0.00
-		!mailwrapper? ( !virtual/mta )
-		mailwrapper? ( >=net-mail/mailwrapper-0.2 )
+		!virtual/mta
+		!net-mail/mailwrapper
 		selinux? ( sec-policy/selinux-postfix )"
 
 # mailer-config support
@@ -71,9 +72,9 @@ group_user_check() {
 }
 
 pkg_setup() {
-	# Do not upgrade live from Postfix <2.4
+	# Do not upgrade live from Postfix <2.5
 	if [[ -f /var/lib/init.d/started/postfix ]] ; then
-		if has_version '<mail-mta/postfix-2.4.0' ; then
+		if has_version '<mail-mta/postfix-2.5.0' ; then
 			if [[ "${FORCE_UPGRADE}" ]] ; then
 				echo
 				ewarn "You are upgrading from an incompatible version and you have"
@@ -153,8 +154,8 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
-	cd "${S}"
 
+	cd "${S}"
 	if use vda ; then
 		epatch "${WORKDIR}/${VDA_P}.patch"
 	fi
@@ -183,17 +184,13 @@ src_compile() {
 	fi
 
 	if use mysql ; then
-		mycc="${mycc} -DHAS_MYSQL -I/usr/include/mysql"
+		mycc="${mycc} -DHAS_MYSQL $(mysql_config --include)"
 		mylibs="${mylibs} -lmysqlclient -lm -lz"
 	fi
 
 	if use postgres ; then
-		if best_version '=virtual/postgresql-base-7.3*' ; then
-			mycc="${mycc} -DHAS_PGSQL -I/usr/include/postgresql"
-		else
-			mycc="${mycc} -DHAS_PGSQL -I/usr/include/postgresql/pgsql"
-		fi
-		mylibs="${mylibs} -lpq"
+		mycc="${mycc} -DHAS_PGSQL -I$(pg_config --includedir)"
+		mylibs="${mylibs} -lpq -L$(pg_config --libdir)"
 	fi
 
 	if use ssl ; then
@@ -275,45 +272,28 @@ src_install () {
 	# Install rmail for UUCP, closes bug #19127
 	dobin auxiliary/rmail/rmail
 
-	# mailwrapper stuff
-	if use mailwrapper ; then
-		mv "${D}/usr/sbin/sendmail" "${D}/usr/sbin/sendmail.postfix"
-		mv "${D}/usr/bin/rmail" "${D}/usr/bin/rmail.postfix"
-		# mailer-config support
-		#rm "${D}/usr/bin/mailq" "${D}/usr/bin/newaliases"
-
-		mv "${D}/usr/share/man/man1/sendmail.1" \
-			"${D}/usr/share/man/man1/sendmail-postfix.1"
-		mv "${D}/usr/share/man/man1/newaliases.1" \
-			"${D}/usr/share/man/man1/newaliases-postfix.1"
-		mv "${D}/usr/share/man/man1/mailq.1" \
-			"${D}/usr/share/man/man1/mailq-postfix.1"
-		mv "${D}/usr/share/man/man5/aliases.5" \
-			"${D}/usr/share/man/man5/aliases-postfix.5"
-
-		# regular ebuild
-		insinto /etc/mail
-		doins "${FILESDIR}/mailer.conf"
-		# mailer-config support
-		#mailer_install_conf
-	else
-		# Provide another link for legacy FSH
-		dosym /usr/sbin/sendmail /usr/$(get_libdir)/sendmail
-	fi
+	# Provide another link for legacy FSH
+	dosym /usr/sbin/sendmail /usr/$(get_libdir)/sendmail
 
 	# Install qshape tool
 	dobin auxiliary/qshape/qshape.pl
+	doman man/man1/qshape.1
 
 	# Performance tuning tools and their manuals
 	dosbin bin/smtp-{source,sink} bin/qmqp-{source,sink}
 	doman man/man1/smtp-{source,sink}.1 man/man1/qmqp-{source,sink}.1
 
 	# Set proper permissions on required files/directories
+	dodir /var/lib/postfix
+	keepdir /var/lib/postfix
+	fowners postfix:postfix /var/lib/postfix
+	fowners postfix:postfix /var/lib/postfix/.keep_${CATEGORY}_${PN}-${SLOT}
+	fperms 0750 /var/lib/postfix
 	fowners root:postdrop /usr/sbin/post{drop,queue}
 	fperms 02711 /usr/sbin/post{drop,queue}
 
 	keepdir /etc/postfix
-	mv "${D}"/usr/share/doc/${PF}/defaults/{*.cf,post*-*} "${D}"/etc/postfix
+	mv "${D}"/usr/share/doc/${PF}/defaults/*.cf "${D}"/etc/postfix
 	if use mbox ; then
 		mypostconf="mail_spool_directory=/var/spool/mail"
 	else
@@ -353,7 +333,8 @@ pkg_postinst() {
 	fi
 
 	ebegin "Fixing queue directories and permissions"
-	"${ROOT}/etc/postfix/post-install" upgrade-permissions
+	"${ROOT}/usr/$(get_libdir)/postfix/post-install" upgrade-permissions \
+		daemon_directory=${ROOT}/usr/$(get_libdir)/postfix
 	echo
 	ewarn "If you upgraded from Postfix-1.x, you must revisit"
 	ewarn "your configuration files. See"
@@ -367,13 +348,10 @@ pkg_postinst() {
 		ewarn "work correctly without it."
 	fi
 
-	# regular ebuild
-	if ! use mailwrapper && [[ -e /etc/mailer.conf ]] ; then
+	if [[ -e /etc/mailer.conf ]] ; then
 		einfo
-		einfo "Since you emerged Postfix without mailwrapper in USE,"
-		einfo "you may want to 'emerge -C mailwrapper' now."
+		einfo "mailwrapper support is discontinued."
+		einfo "You may want to 'emerge -C mailwrapper' now."
 		einfo
 	fi
-	# mailer-config support
-	#mailer_pkg_postinst
 }
