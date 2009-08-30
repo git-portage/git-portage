@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/hdup
-# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/ChangeLog,v 1.10 2009/01/09 19:11:39 josejx Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/hdup/ChangeLog,v 1.11 2009/08/30 12:54:11 vostorga Exp $
+
+  30 Aug 2009; <vostorga@gentoo.org> hdup-2.0.14.ebuild:
+  Adding DEPEND on >=dev-libs/glib-2.0 , bug 226903
 
   09 Jan 2009; Joseph Jezak <josejx@gentoo.org> hdup-2.0.14.ebuild:
   Marked ~ppc for bug #211720.
