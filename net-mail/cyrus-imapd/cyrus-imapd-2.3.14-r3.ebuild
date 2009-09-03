@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/cyrus-imapd/Attic/cyrus-imapd-2.3.14-r2.ebuild,v 1.1 2009/07/09 19:05:02 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/cyrus-imapd/Attic/cyrus-imapd-2.3.14-r3.ebuild,v 1.1 2009/09/03 17:53:46 dertobi123 Exp $
 
 EAPI=1
 
@@ -106,6 +106,8 @@ src_unpack() {
 
 	# Fix prestripped binaries
 	epatch "${FILESDIR}/${PN}-strip.patch"
+
+	epatch "${FILESDIR}/${P}-bug283596.patch"
 
 	if use kolab ; then
 		EPATCH_SOURCE="${FILESDIR}/kolab/${PV}" EPATCH_SUFFIX="patch" \
