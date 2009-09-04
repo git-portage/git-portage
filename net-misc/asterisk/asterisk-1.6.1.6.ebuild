@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.6.1.5.ebuild,v 1.1 2009/08/29 22:53:20 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.6.1.6.ebuild,v 1.1 2009/09/04 11:51:31 chainsaw Exp $
 
 EAPI=1
 inherit eutils autotools
@@ -172,6 +172,11 @@ src_unpack() {
 	# link UW-IMAP with Kerberos5 if necessary
 	#
 	epatch "${FILESDIR}"/1.6.1/asterisk-1.6.1-imap-kerberos.patch || die "patch failed"
+
+	#
+	# compensate for non-standard LUA header paths in Gentoo
+	#
+	epatch "${FILESDIR}"/1.6.1/asterisk-1.6.1.6-lua-includes.patch || die "patch failed"
 
 	AT_M4DIR=autoconf eautoreconf
 
