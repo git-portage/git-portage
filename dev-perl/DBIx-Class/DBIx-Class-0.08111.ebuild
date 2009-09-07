@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/DBIx-Class/Attic/DBIx-Class-0.08110.ebuild,v 1.1 2009/09/06 19:13:11 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/DBIx-Class/Attic/DBIx-Class-0.08111.ebuild,v 1.1 2009/09/07 10:40:09 tove Exp $
 
 EAPI=2
 
@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 RDEPEND="
-	dev-perl/Carp-Clan
+	>=dev-perl/Carp-Clan-6.00
 	>=dev-perl/Class-Accessor-Grouped-0.09000
 	>=dev-perl/Class-C3-Componentised-1.0005
 	>=dev-perl/Class-Inspector-1.24
