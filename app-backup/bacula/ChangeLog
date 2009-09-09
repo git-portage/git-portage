@@ -1,6 +1,17 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.74 2009/08/19 13:47:56 betelgeuse Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.75 2009/09/09 07:45:18 wschlich Exp $
+
+*bacula-3.0.2 (09 Sep 2009)
+
+  09 Sep 2009; Wolfram Schlich <wschlich@gentoo.org>
+  +files/3.0.2/bacula-default-configs.patch, +files/3.0.2/bacula-dir-conf,
+  +files/3.0.2/bacula-dir-init, +files/3.0.2/bacula-fd-conf,
+  +files/3.0.2/bacula-fd-init, +files/3.0.2/bacula-gnomesu2gksu.diff,
+  +files/3.0.2/bacula-sd-conf, +files/3.0.2/bacula-sd-init,
+  +bacula-3.0.2.ebuild:
+  version bump, (also) fixes bugs #280048, #272282, #265647, #258187, #257016,
+  #254743, #235515
 
   19 Aug 2009; Petteri Räty <betelgeuse@gentoo.org> bacula-2.4.4.ebuild:
   Migrate to EAPI 2 in order to get rid of built_with_use.
