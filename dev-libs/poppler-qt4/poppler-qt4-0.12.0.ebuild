@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/poppler-qt4/Attic/poppler-qt4-0.11.0.ebuild,v 1.1 2009/05/12 12:04:39 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/poppler-qt4/Attic/poppler-qt4-0.12.0.ebuild,v 1.1 2009/09/09 20:55:07 loki_val Exp $
 
 EAPI=2
 
@@ -22,7 +22,6 @@ RDEPEND="
 	~dev-libs/poppler-${PV}
 	>=x11-libs/qt-core-4.4.2:4
 	>=x11-libs/qt-gui-4.4.2:4
-	>=x11-libs/qt-test-4.4.2:4
 	"
 DEPEND="
 	${RDEPEND}
