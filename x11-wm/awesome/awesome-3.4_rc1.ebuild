@@ -1,13 +1,14 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/awesome/Attic/awesome-3.3.2.ebuild,v 1.2 2009/09/07 17:14:58 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/awesome/Attic/awesome-3.4_rc1.ebuild,v 1.1 2009/09/14 15:35:23 matsuu Exp $
 
 EAPI="2"
 inherit cmake-utils eutils
 
+MY_P="${P/_/-}"
 DESCRIPTION="A dynamic floating and tiling window manager"
 HOMEPAGE="http://awesome.naquadah.org/"
-SRC_URI="http://awesome.naquadah.org/download/${P}.tar.bz2"
+SRC_URI="http://awesome.naquadah.org/download/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -22,10 +23,10 @@ RDEPEND=">=dev-lang/lua-5.1[deprecated]
 	media-libs/imlib2[png]
 	x11-libs/cairo[xcb]
 	x11-libs/libX11[xcb]
-	>=x11-libs/libxcb-1.1
+	>=x11-libs/libxcb-1.4
 	>=x11-libs/pango-1.19.3
 	>=x11-libs/startup-notification-0.10
-	>=x11-libs/xcb-util-0.3.4
+	>=x11-libs/xcb-util-0.3.6
 	dbus? ( >=sys-apps/dbus-1 )"
 
 DEPEND="${RDEPEND}
@@ -34,7 +35,7 @@ DEPEND="${RDEPEND}
 	>=dev-util/cmake-2.6
 	dev-util/pkgconfig
 	media-gfx/imagemagick
-	x11-proto/xcb-proto
+	>=x11-proto/xcb-proto-1.5
 	>=x11-proto/xproto-7.0.15
 	doc? (
 		app-doc/doxygen
@@ -62,6 +63,8 @@ RDEPEND="${RDEPEND}
 #		media-gfx/qiv (media-gfx/pqiv doesn't work)
 #		x11-misc/chbg #68116
 #	bash-completion? ( app-shells/bash-completion )
+
+S="${WORKDIR}/${MY_P}"
 
 DOCS="AUTHORS BUGS PATCHES README STYLE"
 
