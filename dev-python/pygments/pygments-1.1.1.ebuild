@@ -1,10 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pygments/Attic/pygments-1.0-r1.ebuild,v 1.1 2009/08/10 22:36:00 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pygments/Attic/pygments-1.1.1.ebuild,v 1.1 2009/09/15 20:21:58 arfrever Exp $
 
 EAPI="2"
-
-NEED_PYTHON="2.3"
 SUPPORT_PYTHON_ABIS="1"
 
 inherit distutils
@@ -14,7 +12,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Pygments is a syntax highlighting package written in Python."
 HOMEPAGE="http://pygments.org/"
-SRC_URI="http://cheeseshop.python.org/packages/source/P/${MY_PN}/${MY_P}.tar.gz"
+SRC_URI="http://pypi.python.org/packages/source/P/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
@@ -23,9 +21,7 @@ IUSE="doc test"
 
 DEPEND="test? ( media-fonts/ttf-bitstream-vera
 		dev-python/nose	)"
-RDEPEND="dev-python/setuptools"
-
-RESTRICT_PYTHON_ABIS="3*"
+RDEPEND=""
 
 S="${WORKDIR}/${MY_P}"
 DOCS="CHANGES"
@@ -51,7 +47,7 @@ src_test() {
 	testing() {
 		"$(PYTHON)" tests/run.py
 	}
-	python_execute_function testing
+	python_execute_function --nonfatal testing
 }
 
 src_install(){
