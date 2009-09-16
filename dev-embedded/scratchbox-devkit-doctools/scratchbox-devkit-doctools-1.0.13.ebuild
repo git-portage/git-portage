@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-embedded/scratchbox-devkit-apt-https/Attic/scratchbox-devkit-apt-https-1.0.5.ebuild,v 1.1 2009/05/06 19:33:49 tester Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-embedded/scratchbox-devkit-doctools/scratchbox-devkit-doctools-1.0.13.ebuild,v 1.1 2009/09/16 00:10:41 tester Exp $
 
 SBOX_GROUP="sbox"
 RESTRICT="strip binchecks"
