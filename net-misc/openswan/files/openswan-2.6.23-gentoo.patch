@@ -80,7 +80,8 @@ diff -Nru openswan-2.6.23.orig/programs/setup/Makefile openswan-2.6.23/programs/
  # this dance is because setup has to get installed as /etc/rc.d/init.d/ipsec
  # not as /etc/rc.d/init.d/setup.
 -PROGRAMDIR=$(RCDIR)
- PROGRAM=
+-PROGRAM=
++PROGRAM=setup
  EXTRA8MAN=setup.8
  
 @@ -29,32 +28,6 @@
@@ -116,6 +117,10 @@ diff -Nru openswan-2.6.23.orig/programs/setup/Makefile openswan-2.6.23/programs/
  
  #
  # $Log: openswan-2.6.23-gentoo.patch,v $
+ # Revision 1.2  2009/09/17 16:07:11  mrness
+ # Re-add setup script (#284955).
+ # (Portage version: 2.1.6.13/cvs/Linux x86_64)
+ #
  # Revision 1.1  2009/09/11 18:46:35  mrness
  # Version bump.
  # Correct ipsec.conf and ipsec.secrets paths in openswan-2.4 documentation (#284235).
