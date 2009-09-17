@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-3.0.2.ebuild,v 1.1 2009/09/09 07:45:18 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-3.0.2.ebuild,v 1.2 2009/09/17 19:18:58 patrick Exp $
 
 EAPI="2"
 inherit eutils
@@ -312,6 +312,7 @@ src_install() {
 		if useq logwatch; then
 			diropts -m0750
 			dodir /etc/log.d/scripts/services
+			dodir /etc/log.d/scripts/shared
 			dodir /etc/log.d/conf/logfiles
 			dodir /etc/log.d/conf/services
 			cd "${S}"/scripts/logwatch

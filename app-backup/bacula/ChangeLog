@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.75 2009/09/09 07:45:18 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.76 2009/09/17 19:18:58 patrick Exp $
+
+  17 Sep 2009; Patrick Lauer <patrick@gentoo.org> bacula-3.0.2.ebuild:
+  Adding dodir call for logwatch, fixes #284256
 
 *bacula-3.0.2 (09 Sep 2009)
 
