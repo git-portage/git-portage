@@ -1,33 +1,33 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/tora/Attic/tora-1.3.23.ebuild,v 1.1 2008/06/16 18:21:35 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/tora/Attic/tora-2.1.0.ebuild,v 1.1 2009/09/17 16:10:12 dertobi123 Exp $
+
+EAPI=2
 
 inherit eutils kde-functions
 
-IUSE="kde oracle debug oci8-instant-client xinerama"
+IUSE="debug mysql oracle oci8-instant-client postgres"
 DESCRIPTION="TOra - Toolkit For Oracle"
 HOMEPAGE="http://tora.sourceforge.net"
-SRC_URI="mirror://sourceforge/${PN}/${PN}-1-3-end-of-life.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~sparc ~x86"
 
-RDEPEND="${DEPEND}
-	xinerama? ( x11-libs/libXinerama )"
-
-DEPEND="=x11-libs/qt-3*
-	dev-lang/perl
-	<x11-libs/qscintilla-2.1
-	kde? ( >=kde-base/kdelibs-3.1
-		   kde-base/arts )
-	xinerama? ( x11-proto/xineramaproto )
-	oci8-instant-client? ( dev-db/oracle-instantclient-basic )"
-
-S="${WORKDIR}/${PN}-1-3-end-of-life"
+RDEPEND="${DEPEND}"
+DEPEND="dev-lang/perl
+	x11-libs/qt-sql
+	mysql? ( x11-libs/qt-sql[mysql] )
+	postgres? ( x11-libs/qt-sql[postgres] )
+	>=x11-libs/qscintilla-2.1[qt4]
+	oci8-instant-client? (
+		dev-db/oracle-instantclient-basic
+		dev-db/oracle-instantclient-sqlplus
+	)"
 
 pkg_setup() {
-	if use oracle && [ -z "$ORACLE_HOME" ] ; then
+	if ( use oracle || use oci8-instant-client ) && [ -z "$ORACLE_HOME" ] ; then
 		eerror "ORACLE_HOME variable is not set."
 		eerror
 		eerror "You must install Oracle >= 8i client for Linux in"
@@ -41,17 +41,7 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}/${PN}-gcc43.patch"
-}
-
-src_compile() {
-	set-qtdir 3
-	set-kdedir 3
-
+src_configure() {
 	# Need to fake out Qt or we'll get sandbox problems
 	REALHOME="$HOME"
 	mkdir -p "$T"/fakehome/.kde
@@ -60,19 +50,27 @@ src_compile() {
 	addwrite "${QTDIR}/etc/settings"
 
 	local myconf
-	myconf="${myconf} $(use_with kde)"
-	myconf="${myconf} $(use_with oracle)"
-	myconf="${myconf} $(use_with xinerama)"
 
-	if use oci8-instant-client; then
-		myconf="$myconf --with-instant-client"
+	if use oracle; then
+		myconf="$myconf --with-oracle=${ORACLE_HOME}"
 	fi
 
-	myconf="$myconf --with-qt-dir=/usr/qt/3"
+	if use oci8-instant-client; then
+		myconf="$myconf --with-instant-client=${ORACLE_HOME}"
+	fi
 
-	#./configure $myconf || die "configure failed"
+	if use oci8-instant-client || use oracle ; then
+		myconf="$myconf --with-oracle-libraries=${ORACLE_HOME}/lib \
+			--with-oracle-includes=${ORACLE_HOME}/include "
+	fi
+
+	myconf="$myconf --with-qt-includes=/usr/include/qt4/ --with-qt-libraries=/usr/lib/qt4/ --with-qt-dir=/usr/lib/qt4"
+
 	econf $myconf || die "configure failed"
-	emake -j1 || die "emake failed"
+}
+
+src_compile() {
+	emake -j1 || die "make failed"
 }
 
 src_install() {
