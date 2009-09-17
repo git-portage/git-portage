@@ -1,9 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim/Attic/uim-1.5.6.ebuild,v 1.1 2009/06/25 14:54:39 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim/Attic/uim-1.5.6-r3.ebuild,v 1.1 2009/09/17 16:57:45 matsuu Exp $
 
 EAPI="2"
-inherit eutils qt3 multilib elisp-common flag-o-matic
+inherit autotools eutils qt3 multilib elisp-common flag-o-matic
 
 DESCRIPTION="Simple, secure and flexible input method library"
 HOMEPAGE="http://code.google.com/p/uim/"
@@ -85,6 +85,11 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.5.4-gentoo.patch"
 	epatch "${FILESDIR}/${PN}-1.5.4-gcc43.patch"
 	epatch "${FILESDIR}/${PN}-1.5.4-zhTW.patch"
+	epatch "${FILESDIR}/${PN}-disable-notify.diff"
+
+	# bug 275420
+	sed -i -e "s:\$libedit_path/lib:/$(get_libdir):g" configure.ac || die
+	eautoconf
 }
 
 src_configure() {
@@ -116,7 +121,7 @@ src_configure() {
 		myconf="${myconf} --without-anthy"
 	fi
 
-	if use qt3 && use kde ; then
+	if use qt3 && use kde && ! use qt4 ; then
 		myconf="${myconf} --enable-notify=knotify3"
 	elif use libnotify ; then
 		myconf="${myconf} --enable-notify=libnotify"
