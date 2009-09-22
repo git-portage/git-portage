@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/fvwm/Attic/fvwm-2.5.27.ebuild,v 1.9 2009/09/05 22:13:12 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/fvwm/Attic/fvwm-2.5.28.ebuild,v 1.1 2009/09/22 03:38:37 darkside Exp $
 
 EAPI=2
 
@@ -12,7 +12,7 @@ SRC_URI="ftp://ftp.fvwm.org/pub/fvwm/version-2/${P}.tar.bz2"
 
 LICENSE="GPL-2 FVWM"
 SLOT="0"
-KEYWORDS="alpha amd64 ~ia64 ppc ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="bidi debug doc gtk gtk2-perl imlib netpbm nls perl png readline rplay stroke svg tk truetype vanilla xinerama lock"
 
 COMMON_DEPEND="
@@ -73,10 +73,7 @@ DEPEND="${COMMON_DEPEND}
 src_prepare() {
 	if ! use vanilla; then
 		# Enables fast translucent menus; patch from fvwm-user mailing list.
-		epatch "${FILESDIR}/${P}-translucent-menus.diff"
-
-		# A Gentoo-specific compatibility patch.
-		epatch "${FILESDIR}/fvwm-menu-xlock-xlockmore-compat.diff"
+		epatch "${FILESDIR}/${PN}-2.5.27-translucent-menus.diff"
 	fi
 }
 
@@ -164,8 +161,9 @@ src_install() {
 	rm -f "${D}/usr/bin/fvwm-convert-2.6" \
 		"${D}/usr/share/man/man1/fvwm-convert-2.6.1"
 
-	echo "/usr/bin/fvwm" > "${D}/etc/X11/Sessions/${PN}"
-	fperms a+x /etc/X11/Sessions/${PN}
+	dodir /etc/X11/Sessions
+	echo "/usr/bin/fvwm" > "${D}/etc/X11/Sessions/${PN}" || die
+	fperms a+x /etc/X11/Sessions/${PN} || die
 
 	dodoc AUTHORS ChangeLog NEWS README \
 		docs/{ANNOUNCE,BUGS,COMMANDS,CONVENTIONS} \
