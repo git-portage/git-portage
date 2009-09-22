@@ -1,9 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/ziproxy/Attic/ziproxy-2.5.2.ebuild,v 1.1 2008/07/08 19:07:08 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/ziproxy/Attic/ziproxy-2.7.1.ebuild,v 1.1 2009/09/22 15:51:58 mrness Exp $
 
-WANT_AUTOCONF="latest"
-WANT_AUTOMAKE="latest"
+EAPI="2"
 
 inherit eutils
 
@@ -13,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~amd64 ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="jpeg2k xinetd"
 
 DEPEND="media-libs/giflib
@@ -29,12 +28,10 @@ pkg_setup() {
 	enewuser ziproxy -1 -1 -1 ziproxy
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	# fix sample config file
 	sed -i -e "s:/var/ziproxy/:/var/lib/ziproxy/:g" \
+		-e "s:%j-%Y.log:/var/log/ziproxy/%j-%Y.log:g" \
 		etc/ziproxy/ziproxy.conf
 
 	# fix sample xinetd config
@@ -43,11 +40,10 @@ src_unpack() {
 		-e "s:root:ziproxy:g" etc/xinetd.d/ziproxy
 }
 
-src_compile() {
-	local myconf="--with-cfgfile=/etc/ziproxy/ziproxy.conf"  # --enable-testprogs
+src_configure() {
+	local myconf="--with-cfgfile=/etc/ziproxy/ziproxy.conf"
 	use jpeg2k && myconf="${myconf} --with-jasper"  # use_with doesn't work
 	econf ${myconf} || die "econf failed"
-	emake || die "emake failed"
 }
 
 src_install() {
@@ -56,7 +52,6 @@ src_install() {
 	dodir /usr/sbin
 	mv -f "${D}usr/bin/ziproxy" "${D}usr/sbin/ziproxy"
 
-	newbin stats.awk ${PN}_stats.awk
 	dobin src/tools/ziproxy_genhtml_stats.sh
 
 	newinitd "${FILESDIR}/${PN}.initd" ${PN}
