@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/telepathy-glib/Attic/telepathy-glib-0.7.37.ebuild,v 1.1 2009/09/14 20:42:32 tester Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/telepathy-glib/Attic/telepathy-glib-0.8.0.ebuild,v 1.1 2009/09/24 16:46:55 tester Exp $
 
 EAPI="2"
 
