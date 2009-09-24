@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/nss/Attic/nss-3.12.4-r1.ebuild,v 1.1 2009/09/20 20:46:06 anarchy Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/nss/Attic/nss-3.12.4-r2.ebuild,v 1.1 2009/09/24 23:35:09 anarchy Exp $
 
 inherit eutils flag-o-matic multilib toolchain-funcs
 
@@ -55,6 +55,8 @@ src_compile() {
 	export NSS_USE_SYSTEM_SQLITE=1
 	export NSPR_INCLUDE_DIR=`pkg-config --cflags-only-I nspr | sed 's/-I//'`
 	export NSPR_LIB_DIR=`pkg-config --libs-only-L nspr | sed 's/-L//'`
+	export USE_SYSTEM_ZLIB=1
+	export ZLIB_LIBS=-lz
 	export NSDISTMODE=copy
 	export NSS_ENABLE_ECC=1
 	export XCFLAGS="${CFLAGS}"
