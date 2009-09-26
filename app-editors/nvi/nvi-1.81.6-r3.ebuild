@@ -1,6 +1,10 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/nvi/Attic/nvi-1.81.6.ebuild,v 1.8 2008/06/22 09:56:23 bluebird Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/nvi/nvi-1.81.6-r3.ebuild,v 1.1 2009/09/26 08:47:51 truedfx Exp $
+
+inherit db-use eutils flag-o-matic
+
+DBVERS="4.7 4.6 4.5 4.4 4.3 4.2"
 
 DESCRIPTION="Vi clone"
 HOMEPAGE="http://www.bostic.com/vi/"
@@ -8,10 +12,10 @@ SRC_URI="http://www.kotnet.org/~skimo/nvi/devel/${P}.tar.bz2"
 
 LICENSE="Sleepycat"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE="perl tcl unicode"
 
-DEPEND="=sys-libs/db-4*
+DEPEND="|| ( $(printf "=sys-libs/db-%s*\n" ${DBVERS}) )
 	perl? ( dev-lang/perl )
 	tcl? ( !unicode? ( >=dev-lang/tcl-8.5 ) )"
 RDEPEND="${DEPEND}
@@ -30,7 +34,12 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+	epatch "${FILESDIR}"/${P}-db44.patch
+	epatch "${FILESDIR}"/${P}-db.patch
 	chmod +x ../dist/findconfig
+
+	append-flags -I"$(db_includedir ${DBVERS})"
+	sed -i -e "s@-ldb@-l$(db_libname ${DBVERS})@" ../dist/configure
 }
 
 src_compile() {
@@ -40,11 +49,13 @@ src_compile() {
 	use tcl && ! use unicode && myconf="${myconf} --enable-tclinterp"
 	use unicode && myconf="${myconf} --enable-widechar"
 
+	append-flags '-D_PATH_MSGCAT="\"/usr/share/vi/catalog/\""'
+
 	ECONF_SOURCE=../dist econf \
 		--program-prefix=n \
 		${myconf} \
 		|| die "configure failed"
-	emake || die "make failed"
+	emake OPTFLAG="${CFLAGS}" || die "make failed"
 }
 
 src_install() {
