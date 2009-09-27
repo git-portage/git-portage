@@ -1,8 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-voip/telepathy-haze/Attic/telepathy-haze-0.2.1.ebuild,v 1.3 2009/01/07 17:10:46 armin76 Exp $
-
-inherit eutils
+# $Header: /var/cvsroot/gentoo-x86/net-voip/telepathy-haze/Attic/telepathy-haze-0.3.2.ebuild,v 1.1 2009/09/27 18:23:22 tester Exp $
 
 DESCRIPTION="Telepathy connection manager providing libpurple supported
 protocols."
@@ -12,14 +10,17 @@ SRC_URI="http://telepathy.freedesktop.org/releases/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~sparc ~x86"
-IUSE=""
+IUSE="test"
 
-RDEPEND="net-im/pidgin
-	>=net-libs/telepathy-glib-0.7.0
+RDEPEND=">=net-im/pidgin-2.1.1
+	>=net-libs/telepathy-glib-0.7.21
 	>=dev-libs/glib-2
-	dev-libs/dbus-glib"
+	>=dev-libs/dbus-glib-0.73"
+
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	test? ( dev-python/twisted-words
+		>=dev-lang/python-2.5 )"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
