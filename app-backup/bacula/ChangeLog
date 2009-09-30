@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.76 2009/09/17 19:18:58 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.77 2009/09/30 16:20:33 ayoy Exp $
+
+  30 Sep 2009; Dominik Kapusta <ayoy@gentoo.org> bacula-2.4.1-r1.ebuild,
+  bacula-2.4.4.ebuild, bacula-3.0.2.ebuild:
+  Removed dependency on Qt metapackage
 
   17 Sep 2009; Patrick Lauer <patrick@gentoo.org> bacula-3.0.2.ebuild:
   Adding dodir call for logwatch, fixes #284256

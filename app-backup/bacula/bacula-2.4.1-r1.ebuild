@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.4.1-r1.ebuild,v 1.7 2009/01/11 21:23:25 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.4.1-r1.ebuild,v 1.8 2009/09/30 16:20:33 ayoy Exp $
 
 #
 # TODO:
@@ -59,7 +59,7 @@ DEPEND="
 	bacula-console? (
 		wxwindows? ( =x11-libs/wxGTK-2.6* )
 		qt4? (
-			|| ( x11-libs/qt-svg:4 =x11-libs/qt-4.3* )
+			x11-libs/qt-svg:4
 			>=x11-libs/qwt-5
 		)
 		gnome? (
