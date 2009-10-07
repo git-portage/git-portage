@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/konversation/Attic/konversation-1.2_rc1.ebuild,v 1.1 2009/10/04 09:41:26 wired Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/konversation/Attic/konversation-1.2_rc1-r1.ebuild,v 1.1 2009/10/07 21:40:21 scarabeus Exp $
 
 EAPI="2"
 
@@ -27,6 +27,10 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=(
+	"${FILESDIR}"/${PV}-debug.patch
+)
 
 src_configure() {
 	mycmakeargs="$(cmake-utils_use_with crypt QCA2)"
