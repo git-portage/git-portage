@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/afbackup-client/Attic/afbackup-client-3.3.8.1.ebuild,v 1.3 2009/10/12 17:11:29 halcy0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/afbackup-client/Attic/afbackup-client-3.3.8.1.ebuild,v 1.4 2009/10/12 17:12:37 halcy0n Exp $
 
 inherit eutils
 
@@ -87,7 +87,7 @@ src_install() {
 		${myconf} || die "./configure failed"
 
 	einfo "Installing: afbackup-${MY_MODE}"
-	make DESTDIR=${D} install.${MY_MODE} || die
+	make DESTDIR="${D}" install.${MY_MODE} || die
 
 	# fix path in config files
 	einfo "Fixing paths in ${MY_MODE}.conf"
