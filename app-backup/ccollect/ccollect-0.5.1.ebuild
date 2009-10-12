@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/ccollect-0.5.1.ebuild,v 1.6 2007/02/03 12:44:14 killerfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/ccollect-0.5.1.ebuild,v 1.7 2009/10/12 17:19:30 halcy0n Exp $
 
 DESCRIPTION="(pseudo) incremental backup with different exclude lists using
 hardlinks and rsync"
@@ -34,7 +34,7 @@ src_install() {
 
 		# dodoc is not recursive. So do a workaround.
 		insinto /usr/share/doc/${PF}/examples/
-		doins -r ${S}/conf
+		doins -r "${S}"/conf
 	fi
 }
 

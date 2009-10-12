@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/afbackup-client/Attic/afbackup-client-3.3.8.1.ebuild,v 1.2 2007/01/24 04:03:06 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/afbackup-client/Attic/afbackup-client-3.3.8.1.ebuild,v 1.3 2009/10/12 17:11:29 halcy0n Exp $
 
 inherit eutils
 
@@ -25,11 +25,11 @@ IUSE="zlib"
 DEPEND="zlib? ( sys-libs/zlib )"
 RDEPEND="zlib? ( sys-libs/zlib )"
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}"/${MY_P}
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 
 	sed -i -e 's:subdir="/backup":subdir="/afbackup":' configure
 
@@ -76,14 +76,14 @@ src_install() {
 	einfo "Reconfiguring ${MY_MODE} installation path..."
 	./configure \
 		--host=${CHOST} \
-		--prefix=${D}/opt \
-		--with-serverconfdir=${D}/etc/afbackup \
+		--prefix="${D}"/opt \
+		--with-serverconfdir="${D}"/etc/afbackup \
 		--with-serverconf=server.conf \
-		--with-servermandir=${D}/usr/share/man \
-		--with-clientconfdir=${D}/etc/afbackup \
+		--with-servermandir="${D}"/usr/share/man \
+		--with-clientconfdir="${D}"/etc/afbackup \
 		--with-clientconf=client.conf \
-		--with-clientmandir=${D}/usr/share/man \
-		--mandir=${D}/usr/share/man \
+		--with-clientmandir="${D}"/usr/share/man \
+		--mandir="${D}"/usr/share/man \
 		${myconf} || die "./configure failed"
 
 	einfo "Installing: afbackup-${MY_MODE}"
@@ -92,10 +92,10 @@ src_install() {
 	# fix path in config files
 	einfo "Fixing paths in ${MY_MODE}.conf"
 	if [ "x${MY_MODE}" = "xserver" ]; then
-	sed -i -e "s:${D}::g" ${D}/etc/afbackup/server.conf
+	sed -i -e "s:${D}::g" "${D}"/etc/afbackup/server.conf
 	fi
 	if [ "x${MY_MODE}" = "xclient" ]; then
-	sed -i -e "s:${D}::g" ${D}/etc/afbackup/client.conf
+	sed -i -e "s:${D}::g" "${D}"/etc/afbackup/client.conf
 	fi
 
 	# if new, install key and set permissions

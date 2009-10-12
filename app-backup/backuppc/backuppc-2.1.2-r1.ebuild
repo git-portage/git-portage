@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/backuppc-2.1.2-r1.ebuild,v 1.3 2008/07/24 21:12:04 rich0 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/backuppc-2.1.2-r1.ebuild,v 1.4 2009/10/12 17:17:02 halcy0n Exp $
 
 inherit eutils webapp
 
@@ -8,7 +8,7 @@ IUSE="samba doc"
 
 MY_P=BackupPC-${PV}
 PATCH_VER=0.1
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}"/${MY_P}
 DESCRIPTION="A high performance, enterprise grade backup system for backing up
 Linux, Windows, Mac OS X desktops and laptops to a server's disk.  No client
 side software needed."
@@ -29,7 +29,7 @@ RDEPEND="dev-perl/File-RsyncP
 	virtual/mta
 	samba? ( net-fs/samba )"
 
-PATCHDIR=${WORKDIR}/gentoo/prepatch
+PATCHDIR="${WORKDIR}"/gentoo/prepatch
 
 pkg_setup() {
 	enewgroup backuppc
@@ -39,10 +39,10 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack ${A}; cd ${S}
-	epatch ${FILESDIR}/${MY_P}pl2.diff
+	unpack ${A}; cd "${S}"
+	epatch "${FILESDIR}"/${MY_P}pl2.diff
 
-	EPATCH_SUFFIX="diff" epatch ${PATCHDIR}
+	EPATCH_SUFFIX="diff" epatch "${PATCHDIR}"
 }
 
 src_compile() {
@@ -80,7 +80,7 @@ src_install() {
 		--hostname XXXXXX \
 		--uid-ignore \
 		--install-dir=/usr \
-		--dest-dir ${D} \
+		--dest-dir "${D}" \
 		--html-dir ${MY_HTDOCSDIR}/image \
 		--html-dir-url /backuppc/image \
 		--cgi-dir ${MY_CGIBINDIR}/ \
@@ -90,7 +90,7 @@ src_install() {
 	pod2man \
 		--section=8 \
 		--center="BackupPC manual" \
-		${S}/doc/BackupPC.pod backuppc.8 || die "failed to generate man page"
+		"${S}"/doc/BackupPC.pod backuppc.8 || die "failed to generate man page"
 
 	doman backuppc.8
 
@@ -99,23 +99,23 @@ src_install() {
 
 	diropts -m 755
 	dodir /etc/backuppc
-	mv ${D}/var/lib/backuppc/conf/* ${D}/etc/backuppc
-	rmdir ${D}/var/lib/backuppc/conf
+	mv "${D}"/var/lib/backuppc/conf/* "${D}"/etc/backuppc
+	rmdir "${D}"/var/lib/backuppc/conf
 
 	fperms 644 /etc/backuppc/config.pl
 	fperms 644 /etc/backuppc/hosts
 
-	newinitd ${S}/init.d/gentoo-backuppc backuppc
-	newconfd ${S}/init.d/gentoo-backuppc.conf backuppc
+	newinitd "${S}"/init.d/gentoo-backuppc backuppc
+	newconfd "${S}"/init.d/gentoo-backuppc.conf backuppc
 
 	webapp_postinst_txt \
-		en ${FILESDIR}/postinstall-en.txt || die "webapp_postinst_txt"
+		en "${FILESDIR}"/postinstall-en.txt || die "webapp_postinst_txt"
 
 	webapp_src_install || die "webapp_src_install"
 
-	cd ${D}/etc/backuppc
+	cd "${D}"/etc/backuppc
 	ebegin "Patching config.pl for sane defaults"
-		patch -p0 < ${WORKDIR}/gentoo/postpatch/config.pl.diff
+		patch -p0 < "${WORKDIR}"/gentoo/postpatch/config.pl.diff
 	eend $?
 
 	chown -R backuppc:backuppc "${D}/var/lib/backuppc"
