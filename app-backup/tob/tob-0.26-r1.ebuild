@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tob/Attic/tob-0.26-r1.ebuild,v 1.4 2007/07/15 04:23:35 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tob/Attic/tob-0.26-r1.ebuild,v 1.5 2009/10/12 18:53:51 halcy0n Exp $
 
 inherit eutils
 
@@ -17,10 +17,10 @@ RDEPEND="app-arch/afio"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${P}-no-maketemp-warn.diff || die
-	epatch ${FILESDIR}/${P}-nice.patch || die
-	epatch ${FILESDIR}/${P}-scsi-tape.diff || die
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}-no-maketemp-warn.diff || die
+	epatch "${FILESDIR}"/${P}-nice.patch || die
+	epatch "${FILESDIR}"/${P}-scsi-tape.diff || die
 }
 
 src_compile() {
@@ -32,8 +32,8 @@ src_install() {
 	# simply install all the parts into the correct places
 	dosbin tob || die
 	dodir /etc/tob/volumes
-	cp tob.rc ${D}/etc/tob/tob.rc
-	cp example.* ${D}/etc/tob/volumes
+	cp tob.rc "${D}"/etc/tob/tob.rc
+	cp example.* "${D}"/etc/tob/volumes
 	doman tob.8
 	dodoc README
 	docinto doc

@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/rsnapshot/Attic/rsnapshot-1.2.9.ebuild,v 1.5 2007/01/24 04:25:37 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/rsnapshot/Attic/rsnapshot-1.2.9.ebuild,v 1.6 2009/10/12 18:52:46 halcy0n Exp $
 
 inherit eutils
 
@@ -21,7 +21,7 @@ RDEPEND=">=dev-lang/perl-5.8.2
 
 src_unpack() {
 	unpack ${A}
-	epatch ${FILESDIR}/rsnapshot-${PV}-cp_al.patch
+	epatch "${FILESDIR}"/rsnapshot-${PV}-cp_al.patch
 }
 
 src_compile() {
@@ -33,7 +33,7 @@ src_compile() {
 }
 
 src_install() {
-	make install DESTDIR=${D} || die "make install failed"
+	make install DESTDIR="${D}" || die "make install failed"
 
 	dodoc INSTALL README AUTHORS TODO
 	docinto utils

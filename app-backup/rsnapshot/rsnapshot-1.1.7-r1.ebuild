@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/rsnapshot/Attic/rsnapshot-1.1.7-r1.ebuild,v 1.2 2007/01/24 04:25:37 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/rsnapshot/Attic/rsnapshot-1.1.7-r1.ebuild,v 1.3 2009/10/12 18:52:46 halcy0n Exp $
 
 inherit eutils
 
@@ -28,7 +28,7 @@ src_compile() {
 }
 
 src_install() {
-	make install DESTDIR=${D} || die "make install failed"
+	make install DESTDIR="${D}" || die "make install failed"
 
 	dodoc INSTALL README AUTHORS TODO
 	docinto utils
