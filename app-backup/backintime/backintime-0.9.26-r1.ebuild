@@ -1,11 +1,12 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-0.9.26.ebuild,v 1.1 2009/10/14 13:28:10 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-0.9.26-r1.ebuild,v 1.1 2009/10/14 18:20:30 bangert Exp $
 
 EAPI="2"
 
-DESCRIPTION="A simple backup system inspired by TimeVault and FlyBack, with a
-GUI for GNOME and KDE4"
+inherit eutils
+
+DESCRIPTION="A simple backup system inspired by TimeVault and FlyBack, with a GUI for GNOME and KDE4"
 HOMEPAGE="http://backintime.le-web.org/"
 SRC_URI="http://backintime.le-web.org/download/backintime/${P}_src.tar.gz"
 
@@ -27,6 +28,10 @@ DEPEND="dev-lang/python
 	"
 
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	epatch "${FILESDIR}"/backintime-0.9.26-information-disclosure.diff
+}
 
 src_configure() {
 	cd "${S}"/common
