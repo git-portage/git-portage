@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-0.9.26-r1.ebuild,v 1.1 2009/10/14 18:20:30 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-0.9.26-r1.ebuild,v 1.2 2009/10/18 20:08:25 bangert Exp $
 
 EAPI="2"
 
@@ -23,7 +23,12 @@ DEPEND="dev-lang/python
 		kde-base/kompare
 		kde-base/kdesu
 		)
-	gnome? ( gnome-base/libglade )
+	gnome? (
+		gnome-base/libglade
+		gnome-base/gnome-session
+		dev-python/gnome-vfs-python
+		dev-python/gnome-python
+		)
 	dev-python/notify-python
 	"
 
