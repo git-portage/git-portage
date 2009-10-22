@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/totem/Attic/totem-2.26.2.ebuild,v 1.3 2009/07/18 19:17:31 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/totem/Attic/totem-2.26.4.ebuild,v 1.1 2009/10/22 22:25:26 eva Exp $
 
 EAPI="2"
 
@@ -83,6 +83,7 @@ pkg_setup() {
 	G2CONF="${G2CONF}
 		--disable-scrollkeeper
 		--disable-schemas-install
+		--disable-static
 		--disable-vala
 		--with-dbus
 		--with-smclient
