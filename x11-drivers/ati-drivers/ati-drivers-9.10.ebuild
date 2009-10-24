@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-8.660.ebuild,v 1.4 2009/10/22 10:49:06 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-9.10.ebuild,v 1.1 2009/10/24 15:09:42 scarabeus Exp $
 
 EAPI="2"
 
