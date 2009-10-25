@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-0.9.26-r1.ebuild,v 1.2 2009/10/18 20:08:25 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-0.9.26-r1.ebuild,v 1.3 2009/10/25 11:04:05 bangert Exp $
 
 EAPI="2"
 
@@ -70,11 +70,11 @@ src_compile() {
 
 src_install() {
 	cd "${S}"/common
-	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" install || die
 
 	if use kde ; then
 		cd "${S}"/kde4
-		emake DESTDIR="${D}" install
+		emake DESTDIR="${D}" install || die
 		#use kdesu instead of kdesudo
 		sed -i 's/kdesudo/kdesu/' \
 			"${D}"//usr/share/applications/kde4/backintime-kde4-root.desktop
@@ -82,6 +82,6 @@ src_install() {
 
 	if use gnome ; then
 		cd "${S}"/gnome
-		emake DESTDIR="${D}" install
+		emake DESTDIR="${D}" install || die
 	fi
 }

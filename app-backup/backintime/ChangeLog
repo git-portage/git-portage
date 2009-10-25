@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/backintime
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/ChangeLog,v 1.3 2009/10/18 20:08:25 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/ChangeLog,v 1.4 2009/10/25 11:04:05 bangert Exp $
+
+  25 Oct 2009; Thilo Bangert <bangert@gentoo.org>
+  backintime-0.9.26-r1.ebuild:
+  die on install
 
   18 Oct 2009; Thilo Bangert <bangert@gentoo.org>
   backintime-0.9.26-r1.ebuild:
