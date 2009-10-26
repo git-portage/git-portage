@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey/Attic/seamonkey-2.0_rc2.ebuild,v 1.1 2009/10/23 02:40:35 anarchy Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey/Attic/seamonkey-2.0_rc2-r1.ebuild,v 1.1 2009/10/26 00:35:30 anarchy Exp $
 
 EAPI="2"
 WANT_AUTOCONF="2.1"
@@ -263,6 +263,11 @@ src_install() {
 	# Install icon and .desktop for menu entry
 	newicon "${S}"/suite/branding/content/icon64.png seamonkey.png
 	domenu "${FILESDIR}"/icon/seamonkey.desktop
+
+	# Add StartupNotify=true bug 290401
+	if use startup-notification ; then
+		echo "StartupNotify=true" >> "${D}"/usr/share/applications/seamonkey.desktop
+	fi
 
 	# Add vendor
 	echo "pref(\"general.useragent.vendor\",\"Gentoo\");" \
