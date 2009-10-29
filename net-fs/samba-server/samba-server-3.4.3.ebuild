@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/samba-server/Attic/samba-server-3.4.2.ebuild,v 1.3 2009/10/11 20:25:56 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/samba-server/Attic/samba-server-3.4.3.ebuild,v 1.1 2009/10/29 20:39:03 patrick Exp $
 
 EAPI="2"
 
-inherit pam confutils versionator multilib
+inherit pam confutils versionator multilib autotools
 
 MY_P="samba-${PV}"
 
@@ -25,10 +25,11 @@ DEPEND="!<net-fs/samba-3.3
 	caps? ( sys-libs/libcap )
 	cups? ( net-print/cups )
 	debug? ( dev-libs/dmalloc )
+	fam? ( dev-libs/libgamin )
 	ldap? ( net-nds/openldap )
 	syslog? ( virtual/logger )
-	virtual/tdb
-	virtual/talloc
+	sys-libs/tdb
+	sys-libs/talloc
 	~net-fs/samba-libs-${PV}[caps?,cluster?,cups?,ldap?,syslog?,winbind?,ads?,samba4?]"
 RDEPEND="${DEPEND}"
 
@@ -52,7 +53,6 @@ src_prepare() {
 	cd ".."
 
 	epatch \
-		"${FILESDIR}/samba-3.4.2-add-zlib-linking.patch" \
 		"${FILESDIR}/samba-3.4.2-missing_includes.patch" \
 		"${FILESDIR}/samba-3.4.2-fix-samba4-automake.patch" \
 		"${FILESDIR}/samba-3.4.2-insert-AC_LD_VERSIONSCRIPT.patch"
@@ -61,27 +61,7 @@ src_prepare() {
 	cp "${FILESDIR}/samba-3.4.2-lib.tevent.python.mk" "lib/tevent/python.mk"
 
 	cd "source3"
-
-#	sed -i \
-#		-e 's|@LIBTALLOC_SHARED@||g' \
-#		-e 's|@LIBTDB_SHARED@||g' \
-#		-e 's|@LIBWBCLIENT_SHARED@||g' \
-#		-e 's|@LIBNETAPI_SHARED@||g' \
-#		-e 's|$(REG_SMBCONF_OBJ) @LIBNETAPI_STATIC@ $(LIBNET_OBJ)|$(REG_SMBCONF_OBJ) @LIBNETAPI_LIBS@ $(LIBNET_OBJ)|' \
-#		Makefile.in || die "sed failed"
-
-	./autogen.sh || die "autogen.sh failed"
-
-#	sed -i \
-#		-e 's|"lib32" ||' \
-#		-e 's|if test -d "$i/$l" ;|if test -d "$i/$l" -o -L "$i/$l";|' \
-#		configure || die "sed failed"
-
-	# Upstream doesn't want us to link certain things dynamically, but those binaries here seem to work
-#	sed -i \
-#		-e '/^LINK_LIBNETAPI/d' \
-#		configure || die "sed failed"
-
+	eautoconf -Ilibreplace -Im4 -I../m4 -I../lib/replace -I../source4
 }
 
 src_configure() {

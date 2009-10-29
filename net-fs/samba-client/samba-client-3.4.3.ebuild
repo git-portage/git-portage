@@ -1,20 +1,20 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/samba-client/Attic/samba-client-3.3.8.ebuild,v 1.3 2009/10/24 11:20:25 klausman Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/samba-client/Attic/samba-client-3.4.3.ebuild,v 1.1 2009/10/29 20:38:16 patrick Exp $
 
 EAPI="2"
 
-inherit pam confutils versionator multilib eutils toolchain-funcs
+inherit pam confutils versionator multilib eutils toolchain-funcs autotools
 
 MY_P="samba-${PV}"
 
-DESCRIPTION="Libraries from Samba"
+DESCRIPTION="Client bits of the samba network filesystem"
 HOMEPAGE="http://www.samba.org/"
 SRC_URI="mirror://samba/${MY_P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ppc64 ~x86"
-IUSE="ads aio avahi caps cluster cups debug ldap minimal syslog winbind zeroconf"
+KEYWORDS="~amd64 ~hppa ~ppc64 ~x86"
+IUSE="samba4 ads aio avahi caps cluster cups debug ldap minimal syslog winbind zeroconf"
 
 DEPEND="!<net-fs/samba-3.3
 	!net-fs/mount-cifs
@@ -30,11 +30,12 @@ DEPEND="!<net-fs/samba-3.3
 		debug? ( dev-libs/dmalloc )
 		ldap? ( net-nds/openldap )
 		syslog? ( virtual/logger )
-		net-fs/samba-libs[caps?,cups?,ldap?,syslog?,winbind?]
-	)"
+		sys-libs/tdb
+		sys-libs/talloc
+		~net-fs/samba-libs-${PV}[caps?,cups?,ldap?,syslog?,winbind?,ads?,samba4?,netapi] )"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${MY_P}/source"
+S="${WORKDIR}/${MY_P}/source3"
 
 # TODO:
 # - enable iPrint on Prefix/OSX and Darwin?
@@ -46,35 +47,41 @@ CONFDIR="${FILESDIR}/$(get_version_component_range 1-2)"
 BINPROGS="bin/smbclient bin/net bin/smbget bin/smbtree bin/nmblookup bin/smbpasswd bin/rpcclient bin/smbcacls bin/smbcquotas bin/ntlm_auth"
 
 pkg_setup() {
+	confutils_use_depend_all samba4 ads
 	confutils_use_depend_all ads ldap
 }
 
 src_prepare() {
+
+	cd ".."
+
 	epatch \
-		"${FILESDIR}/3.3.4-missing_includes.patch" \
-		"${FILESDIR}/3.3.3-fix-as-needed.patch"
+		"${FILESDIR}/samba-3.4.2-missing_includes.patch" \
+		"${FILESDIR}/samba-3.4.2-fix-samba4-automake.patch" \
+		"${FILESDIR}/samba-3.4.2-insert-AC_LD_VERSIONSCRIPT.patch"
+#		"${FILESDIR}/samba-3.4.2-upgrade-tevent-version.patch" \
 
-	sed -i \
-		-e 's|"lib32" ||' \
-		-e 's|if test -d "$i/$l" ;|if test -d "$i/$l" -o -L "$i/$l";|' \
-		configure || die "sed failed"
+	cp "${FILESDIR}/samba-3.4.2-lib.tevent.python.mk" "lib/tevent/python.mk"
 
-	sed -i \
-		-e 's|@LIBTALLOC_SHARED@||g' \
-		-e 's|@LIBTDB_SHARED@||g' \
-		-e 's|@LIBWBCLIENT_SHARED@||g' \
-		-e 's|@LIBNETAPI_SHARED@||g' \
-		-e 's|$(REG_SMBCONF_OBJ) @LIBNETAPI_STATIC@ $(LIBNET_OBJ)|$(REG_SMBCONF_OBJ) @LIBNETAPI_LIBS@ $(LIBNET_OBJ)|' \
-		Makefile.in || die "sed failed"
-
-	# Upstream doesn't want us to link certain things dynamically, but those binaries here seem to work
-	sed -i \
-		-e '/^LINK_LIBNETAPI/d' \
-		configure || die "sed failed"
+	cd "source3"
+	eautoconf -Ilibreplace -Im4 -I../m4 -I../lib/replace -I../source4
 }
 
 src_configure() {
 	local myconf
+
+	# compile franky samba4 hybrid
+	# http://wiki.samba.org/index.php/Franky
+	if use samba4 ; then
+		myconf="${myconf} --enable-merged-build --enable-developer"
+		if has_version app-crypt/heimdal ; then
+			myconf="${myconf} --with-krb5=/usr/"
+		elif has_version app-crypt/mit-krb5 ; then
+			die "MIT Kerberos not supported by samba 4, use heimdal"
+		else
+			die "No supported kerberos provider detected"
+		fi
+	fi
 
 	# Filter out -fPIE
 	[[ ${CHOST} == *-*bsd* ]] && myconf="${myconf} --disable-pie"
@@ -93,7 +100,7 @@ src_configure() {
 		# - AFS is a pw-auth-method and only used in client/server code
 		# - AFSACL is a server module
 		# - automount is only needed in conjunction with NIS and we don't have that
-		#   anymore
+		# anymore
 		# - quota-support is only needed in server-code
 		# - acl-support is only used in server-code
 		# - --without-dce-dfs and --without-nisplus-home can't be passed to configure but are disabled by default
@@ -137,7 +144,7 @@ src_configure() {
 			--without-quotas \
 			--without-sys-quotas \
 			--without-utmp \
-			--with-lib{talloc,tdb,netapi,smbclient,smbsharemodes} \
+			--without-lib{talloc,tdb,netapi,smbclient,smbsharemodes} \
 			--without-libaddns \
 			$(use minimal && echo "--without-ctdb" || echo "$(use_with cluster ctdb /usr)") \
 			$(use minimal && echo "--without-cluster" || echo "$(use_with cluster cluster-support)") \
@@ -170,7 +177,7 @@ src_compile() {
 src_install() {
 	into /
 	dosbin bin/mount.cifs bin/umount.cifs || die "u/mount.cifs not around"
-	doman ../docs/manpages/{u,}mount.cifs.8  || die "can't create man pages"
+	doman ../docs/manpages/{u,}mount.cifs.8 || die "can't create man pages"
 	dohtml ../docs/htmldocs/manpages/{u,}mount.cifs.8.html || die "dohtml failed"
 
 	into /usr
