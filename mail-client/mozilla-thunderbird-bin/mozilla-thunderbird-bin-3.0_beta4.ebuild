@@ -1,17 +1,19 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/mozilla-thunderbird-bin/Attic/mozilla-thunderbird-bin-3.0_beta3.ebuild,v 1.1 2009/08/26 13:43:04 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/mozilla-thunderbird-bin/Attic/mozilla-thunderbird-bin-3.0_beta4.ebuild,v 1.1 2009/10/31 14:53:46 armin76 Exp $
+EAPI="2"
 
 inherit eutils mozilla-launcher multilib mozextension
 
-LANGS="af ar be ca cs de el en-US es-AR es-ES et eu fi fr fy-NL ga-IE gl hu id is it ja ko lt nb-NO nl nn-NO pa-IN pl pt-BR ro ru si sk sv-SE uk vi zh-CN"
+LANGS="af ar be ca cs de el en-US es-AR es-ES et eu fi fr fy-NL ga-IE hu id is it ja ko lt nb-NO nl nn-NO pa-IN pl pt-BR ro ru si sk sv-SE uk"
 NOSHORTLANGS="es-AR"
 
 MY_PV="${PV/_beta/b}"
 MY_P="${PN}-${MY_PV}"
 
 DESCRIPTION="Thunderbird Mail Client"
-SRC_URI="http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${MY_PV}/linux-i686/en-US/thunderbird-${MY_PV}.tar.bz2"
+REL_URI="http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/"
+SRC_URI="${REL_URI}/${MY_PV}/linux-i686/en-US/thunderbird-${MY_PV}.tar.bz2"
 HOMEPAGE="http://www.mozilla.com/thunderbird"
 RESTRICT="strip"
 
@@ -23,18 +25,19 @@ IUSE=""
 for X in ${LANGS} ; do
 	if [ "${X}" != "en" ] && [ "${X}" != "en-US" ]; then
 		SRC_URI="${SRC_URI}
-			linguas_${X/-/_}? ( http://dev.gentooexperimental.org/~armin76/dist/${MY_P/-bin}-xpi/${MY_P/-bin/}-${X}.xpi )"
+			linguas_${X/-/_}? ( ${REL_URI}/${MY_PV}/linux-i686/xpi/${X}.xpi -> ${P/-bin/}-${X}.xpi )"
 	fi
 	IUSE="${IUSE} linguas_${X/-/_}"
 	# english is handled internally
 	if [ "${#X}" == 5 ] && ! has ${X} ${NOSHORTLANGS}; then
 		if [ "${X}" != "en-US" ]; then
 			SRC_URI="${SRC_URI}
-				linguas_${X%%-*}? ( http://dev.gentooexperimental.org/~armin76/dist/${MY_P/-bin}-xpi/${MY_P/-bin/}-${X}.xpi )"
+				linguas_${X%%-*}? ( ${REL_URI}/${MY_PV}/linux-i686/xpi/${X}.xpi -> ${P/-bin/}-${X}.xpi )"
 		fi
 		IUSE="${IUSE} linguas_${X%%-*}"
 	fi
 done
+
 
 DEPEND="app-arch/unzip"
 RDEPEND="x11-libs/libXrender
