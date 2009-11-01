@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/iw/Attic/iw-0.9.13.ebuild,v 1.1 2009/04/20 23:26:50 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/iw/Attic/iw-0.9.17.ebuild,v 1.1 2009/11/01 17:14:06 rbu Exp $
 
 inherit toolchain-funcs
 
