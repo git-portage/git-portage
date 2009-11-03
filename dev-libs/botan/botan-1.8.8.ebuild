@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/botan/Attic/botan-1.8.6.ebuild,v 1.2 2009/09/27 19:21:03 nixnut Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/botan/Attic/botan-1.8.8.ebuild,v 1.1 2009/11/03 21:39:26 arfrever Exp $
 
 EAPI="2"
 
@@ -12,7 +12,7 @@ DESCRIPTION="A C++ crypto library"
 HOMEPAGE="http://botan.randombit.net/"
 SRC_URI="http://files.randombit.net/botan/${MY_P}.tgz"
 
-KEYWORDS="~amd64 ~ia64 ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ia64 ~ppc ~sparc ~x86"
 SLOT="0"
 LICENSE="BSD"
 IUSE="bzip2 gmp ssl threads zlib"
@@ -69,13 +69,11 @@ src_compile() {
 src_test() {
 	chmod -R ugo+rX "${S}"
 	emake CXX="$(tc-getCXX)" CHECK_OPT="${CXXFLAGS}" check || die "emake check failed"
-	LD_LIBRARY_PATH="${S}" ./check --validate || die "validation tests failed"
+	LD_LIBRARY_PATH="${S}" ./check --validate || die "Validation tests failed"
 }
 
 src_install() {
 	emake install || die "emake install failed"
-	sed -i -e "s:${D}::g" \
-		"${D}/usr/bin/botan-config" \
-		"${D}/usr/$(get_libdir)/pkgconfig/botan-1.8.pc" || die "sed failed"
-	mv "${D}/usr/share/doc/Botan-${PV}" "${D}/usr/share/doc/${PF}" || die "could not rename directory"
+	sed -i -e "s:${D}::g" "${D}usr/bin/botan-config" "${D}usr/$(get_libdir)/pkgconfig/botan-1.8.pc" || die "sed failed"
+	mv "${D}usr/share/doc/Botan-${PV}" "${D}usr/share/doc/${PF}" || die "Renaming of directory failed"
 }
