@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs/Attic/emacs-23.1.ebuild,v 1.13 2009/11/08 23:53:27 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs/Attic/emacs-23.1-r2.ebuild,v 1.1 2009/11/08 23:53:27 ulm Exp $
 
 EAPI=2
 
@@ -17,7 +17,7 @@ if [ "${PV##*.}" = "9999" ]; then
 	S="${WORKDIR}/${ECVS_LOCALNAME}"
 else
 	SRC_URI="mirror://gnu/emacs/${P}.tar.bz2
-		mirror://gentoo/${P}-patches-1.tar.bz2"
+		mirror://gentoo/${P}-patches-2.tar.bz2"
 	# FULL_VERSION keeps the full version number, which is needed in
 	# order to determine some path information correctly for copy/move
 	# operations later on
@@ -30,7 +30,7 @@ HOMEPAGE="http://www.gnu.org/software/emacs/"
 
 LICENSE="GPL-3 FDL-1.3 BSD as-is X11 W3C unicode"
 SLOT="23"
-KEYWORDS="alpha amd64 ~arm hppa ia64 ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
 IUSE="alsa dbus gif gpm gtk gzip-el hesiod jpeg kerberos m17n-lib motif png sound source svg tiff toolkit-scroll-bars X Xaw3d xft +xpm"
 RESTRICT="strip"
 
