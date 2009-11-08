@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-forensics/samhain/Attic/samhain-2.1.3.ebuild,v 1.8 2008/05/21 15:50:55 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-forensics/samhain/Attic/samhain-2.6.0.ebuild,v 1.1 2009/11/08 12:11:22 patrick Exp $
 
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 DESCRIPTION="Advanced file integrity and intrusion detection tool."
 HOMEPAGE="http://la-samhna.de/samhain/"
 SRC_URI="http://la-samhna.de/archive/samhain_signed-${PV}.tar.gz"
@@ -26,7 +26,7 @@ DEPEND="crypt? ( >=app-crypt/gnupg-1.2 )
 # following options or pass them as enviroment variables when emerging
 # the package (like INSTALL_NAME="asd" emerge samhain).
 # If you set the variables here, don't forget to redigest the ebuild by
-# issuing 'ebuild samhain-2.1.1a.ebuild digest', also remember that with
+# issuing 'ebuild samhain-<thisversion>.ebuild digest', also remember that with
 # your next emerge sync, the changes to the ebuild will be lost!
 #
 # Read the Samhain manual for additional information.
@@ -139,7 +139,7 @@ src_install() {
 	if [[ -n "${STEALTH}" ]] ; then
 		rm -Rf "${D}/usr/share"
 	else
-		dodoc COPYING LICENSE docs/BUGS docs/MANUAL* docs/README* docs/TODO docs/*.txt
+		dodoc docs/BUGS docs/MANUAL* docs/README* docs/TODO docs/*.txt
 		dohtml docs/*.html
 		docinto scripts
 		dodoc scripts/*
