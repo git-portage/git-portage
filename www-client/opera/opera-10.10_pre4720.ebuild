@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-10.10_pre4685.ebuild,v 1.4 2009/11/09 20:55:26 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-10.10_pre4720.ebuild,v 1.1 2009/11/13 16:10:24 jer Exp $
 
 EAPI="2"
 
@@ -29,7 +29,7 @@ O_U="http://snapshot.opera.com/unix/snapshot-${PV/*_pre}/"
 
 # 1) Please check for missing (qt3/qt-static) builds
 # 2) and only then update the build number manually
-OPERABUILD="4685"
+OPERABUILD="4720"
 
 if [ "${PV/*_pre}" = "${OPERABUILD}" ]; then
 	O_P="${P/_pre*/}-${OPERABUILD}"
