@@ -1,9 +1,0 @@
---- keep/app/keep.desktop.o	2009-02-17 00:34:35.000000000 +0100
-+++ keep/app/keep.desktop	2009-02-17 00:35:14.000000000 +0100
-@@ -35,5 +35,4 @@
- Name[lt]=Nekeisti
- Name[xx]=xxKeepxx
- X-DCOP-ServiceType=Unique
--Categories=Qt;KDE;Application;System;
--Encoding=UTF-8
-+Categories=Qt;KDE;System;
