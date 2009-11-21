@@ -1,32 +1,27 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/csparse/Attic/csparse-2.2.2.ebuild,v 1.1 2009/03/09 16:45:31 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/cxsparse/Attic/cxsparse-2.2.3.ebuild,v 1.1 2009/11/21 07:19:59 bicatali Exp $
 
 EAPI=2
 inherit autotools eutils
 
-MY_PN=CSparse
-DESCRIPTION="Concise sparse matrix package."
-HOMEPAGE="http://www.cise.ufl.edu/research/sparse/CSparse"
+MY_PN=CXSparse
+DESCRIPTION="Extended sparse matrix package."
+HOMEPAGE="http://www.cise.ufl.edu/research/sparse/CXSparse/"
 SRC_URI="http://www.cise.ufl.edu/research/sparse/${MY_PN}/versions/${MY_PN}-${PV}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
-DEPEND=""
+DEPEND="sci-libs/ufconfig"
 RDEPEND=""
 
 S="${WORKDIR}/${MY_PN}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-autotools.patch
+	epatch "${FILESDIR}"/${PN}-2.2.2-autotools.patch
 	eautoreconf
-}
-
-src_configure() {
-	# avoid collision with cxsparse
-	econf --includedir="/usr/include/csparse"
 }
 
 src_install() {
