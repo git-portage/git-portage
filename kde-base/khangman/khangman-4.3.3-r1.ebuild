@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/khangman/Attic/khangman-4.3.3.ebuild,v 1.1 2009/11/02 21:15:06 wired Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/khangman/Attic/khangman-4.3.3-r1.ebuild,v 1.1 2009/11/22 12:27:57 scarabeus Exp $
 
 EAPI="2"
 
@@ -14,7 +14,9 @@ IUSE="debug +handbook"
 DEPEND="
 	$(add_kdebase_dep libkdeedu)
 "
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	$(add_kdebase_dep kvtml-data)
+"
 
 KMEXTRACTONLY="
 	libkdeedu/keduvocdocument
