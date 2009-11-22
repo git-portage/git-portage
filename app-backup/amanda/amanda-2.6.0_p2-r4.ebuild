@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.13 2009/05/09 16:28:55 fmccor Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.14 2009/11/22 09:52:52 robbat2 Exp $
 
-inherit autotools eutils
+inherit perl-module autotools eutils
 
 DESCRIPTION="The Advanced Maryland Automatic Network Disk Archiver"
 HOMEPAGE="http://www.amanda.org/"
@@ -251,6 +251,10 @@ src_compile() {
 
 	# Raise maximum configurable blocksize
 	myconf="${myconf} --with-maxtapeblocksize=${AMANDA_MAX_TAPE_BLOCK_KB}"
+
+	# Install perl modules to vendor_perl
+	perlinfo
+	myconf="${myconf} --with-amperldir=${VENDOR_ARCH}"
 
 	# IPv6 fun.
 	myconf="${myconf} `use_with ipv6`"
