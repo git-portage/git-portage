@@ -1,6 +1,22 @@
 # ChangeLog for app-backup/amanda
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.61 2009/11/22 09:54:01 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.62 2009/11/22 10:05:40 robbat2 Exp $
+
+  22 Nov 2009; Robin H. Johnson <robbat2@gentoo.org> -amanda-2.4.5.ebuild,
+  -amanda-2.4.5_p1.ebuild, -files/amanda-2.4.5-4tb-holding-disk.patch,
+  -files/amanda-2.4.5-amverify-loop-detect.patch,
+  -files/amanda-2.4.5-samba-printf.patch, -amanda-2.5.1_p3-r1.ebuild,
+  -amanda-2.5.1_p3-r2.ebuild, -amanda-2.5.1_p3-r4.ebuild,
+  -files/amanda-2.5.1_p2-tar-1.16.patch,
+  -files/amanda-2.5.1_p3-displayunit.patch, -amanda-2.5.2_p1.ebuild,
+  -amanda-2.5.2_p1-r1.ebuild, -amanda-2.5.2_p1-r2.ebuild,
+  -amanda-2.5.2_p1-r3.ebuild, -amanda-2.5.2_p1-r4.ebuild,
+  -amanda-2.5.2_p1-r5.ebuild, -files/amanda-2.5.2_p1-chg-multi.patch,
+  -files/amanda-2.5.2_p1-fix-asneeded.patch,
+  -files/amanda-2.5.2p1-amcrypt-ossl-asym-race-fix.patch:
+  The 2.4 and 2.5 series no longer compile with modern autoconf. If you have
+  a really old server that you need to talk to, you can get them from the
+  CVS Attic.
 
   22 Nov 2009; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
   Add Dustin from upstream to metadata.
