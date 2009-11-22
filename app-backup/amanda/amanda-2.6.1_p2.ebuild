@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.1_p2.ebuild,v 1.1 2009/11/22 09:39:21 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.1_p2.ebuild,v 1.2 2009/11/22 09:54:31 robbat2 Exp $
 
 inherit autotools eutils
 
@@ -372,7 +372,7 @@ pkg_postinst() {
 		elog "AMANDA_SERVER=\"myserver\" emerge amanda"
 		elog
 	fi
-	
+
 	einfo "Checking setuid permissions"
 	amanda_permissions_fix "${ROOT}"
 
