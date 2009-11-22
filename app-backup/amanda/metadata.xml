@@ -12,6 +12,11 @@
 		<description>Proxied developer. Please CC on bugs.</description>
 		<name>Stefan G. Weichinger</name>
 	</maintainer>
+	<maintainer>
+		<email>dustin@v.igoro.us</email>
+		<description>Upstream. Please CC on bugs.</description>
+		<name>Dustin J. Mitchell</name>
+	</maintainer>
 	<use>
 		<flag name='xfs'>Support for backing up raw XFS filesystems using xfsdump</flag>
 		<flag name='s3'>Support for backing up to the Amazon S3 system</flag>
