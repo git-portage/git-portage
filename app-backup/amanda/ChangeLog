@@ -1,6 +1,14 @@
 # ChangeLog for app-backup/amanda
-# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.58 2009/05/09 16:28:55 fmccor Exp $
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.59 2009/11/22 09:39:21 robbat2 Exp $
+
+*amanda-2.6.1_p2 (22 Nov 2009)
+
+  22 Nov 2009; Robin H. Johnson <robbat2@gentoo.org>
+  +amanda-2.6.1_p2.ebuild, +files/amanda-xinetd-2.6.1_p1-client,
+  +files/amanda-xinetd-2.6.1_p1-server:
+  Bug #266024: version bump. Thanks to MATSUU Takuto <matsuu@gentoo.org> for
+  the submission. Was delayed by bugs in _p1, fixed by upstream in _p2 now.
 
   09 May 2009; Ferris McCormick <fmccor@gentoo.org>
   amanda-2.6.0_p2-r4.ebuild:
