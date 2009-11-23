@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.19-r51.ebuild,v 1.1 2009/10/20 13:34:12 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.21-r50.ebuild,v 1.1 2009/11/23 12:27:28 flameeyes Exp $
 
 EAPI=2
 
@@ -88,8 +88,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-fweb.patch
-
 	elibtoolize
 }
 
@@ -142,13 +140,8 @@ src_test() {
 src_install() {
 	emake -j1 DESTDIR="${D}" install || die "make install failed"
 
-	if use X; then
-		dodir /etc/X11/xinit/xinitrc.d
-		ln -s ../../../usr/bin/start-pulseaudio-x11 "${D}"/etc/X11/xinit/xinitrc.d/95-pulseaudio
-	else
-		# Drop the script entirely
-		rm "${D}"/usr/bin/start-pulseaudio-x11
-	fi
+	# Drop the script entirely if X is disabled
+	use X || rm "${D}"/usr/bin/start-pulseaudio-x11
 
 	newconfd "${FILESDIR}/pulseaudio.conf.d" pulseaudio
 
