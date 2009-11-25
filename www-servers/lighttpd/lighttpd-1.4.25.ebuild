@@ -1,24 +1,21 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.4.20.ebuild,v 1.8 2009/02/03 12:46:51 betelgeuse Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.4.25.ebuild,v 1.1 2009/11/25 09:59:17 bangert Exp $
 
-WANT_AUTOCONF=latest
-WANT_AUTOMAKE=latest
+EAPI="2"
+
 inherit eutils autotools depend.php
 
 DESCRIPTION="Lightweight high-performance web server"
 HOMEPAGE="http://www.lighttpd.net/"
-SRC_URI="http://www.lighttpd.net/download/${P}.tar.bz2"
+SRC_URI="http://download.lighttpd.net/lighttpd/releases-1.4.x/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm hppa ia64 ~mips ppc ppc64 ~sh sparc ~sparc-fbsd x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
 IUSE="bzip2 doc fam fastcgi gdbm ipv6 ldap lua minimal memcache mysql pcre php rrdtool ssl test webdav xattr"
 
-# cherokee block should be resolved properly
-# http://bugs.gentoo.org/show_bug.cgi?id=224781
 RDEPEND="
-	!www-servers/cherokee
 	>=sys-libs/zlib-1.1
 	bzip2?    ( app-arch/bzip2 )
 	fam?      ( virtual/fam )
@@ -29,7 +26,7 @@ RDEPEND="
 	mysql?    ( >=virtual/mysql-4.0 )
 	pcre?     ( >=dev-libs/libpcre-3.1 )
 	php?      ( virtual/httpd-php )
-	rrdtool? ( net-analyzer/rrdtool )
+	rrdtool?  ( net-analyzer/rrdtool )
 	ssl?    ( >=dev-libs/openssl-0.9.7 )
 	webdav? (
 		dev-libs/libxml2
@@ -39,6 +36,7 @@ RDEPEND="
 	xattr? ( kernel_linux? ( sys-apps/attr ) )"
 
 DEPEND="${RDEPEND}
+	dev-util/pkgconfig
 	doc?  ( dev-python/docutils )
 	test? (
 		virtual/perl-Test-Harness
@@ -77,8 +75,7 @@ remove_non_essential() {
 	use rrdtool || rm -f ${libdir}/mod_rrdtool.*
 
 	if ! use fastcgi ; then
-		rm -f ${libdir}/mod_fastcgi.* "${D}"/usr/bin/spawn-fcgi \
-			"${D}"/usr/share/man/man1/spawn-fcgi.*
+		rm -f ${libdir}/mod_fastcgi.*
 	fi
 }
 
@@ -98,24 +95,16 @@ pkg_setup() {
 	enewuser lighttpd -1 -1 /var/www/localhost/htdocs lighttpd
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	EPATCH_SUFFIX="diff" EPATCH_OPTS="-l" epatch "${FILESDIR}"/"${PVR}" || die "Patching failed!"
-
-	eautoreconf || die
-
+src_prepare() {
+	epatch "${FILESDIR}"/1.4.25-fix-unknown-AM_SILENT_RULES.patch
 	# dev-python/docutils installs rst2html.py not rst2html
-	sed -i -e 's|\(rst2html\)|\1.py|g' doc/Makefile.in || \
-		die "sed doc/Makefile.in failed"
+	sed -i -e 's|\(rst2html\)|\1.py|g' doc/Makefile.am || \
+		die "sed doc/Makefile.am failed"
 
-	# fix typo
-	sed -i -e 's|\(output_content\)_\(type\)|\1\2|' doc/cml.txt || \
-		die "sed doc/cml.txt failed"
+	eautoreconf
 }
 
-src_compile() {
+src_configure() {
 	econf --libdir=/usr/$(get_libdir)/${PN} \
 		--enable-lfs \
 		$(use_enable ipv6) \
@@ -130,9 +119,10 @@ src_compile() {
 		$(use_with ssl openssl) \
 		$(use_with webdav webdav-props) \
 		$(use_with webdav webdav-locks) \
-		$(use_with xattr attr) \
-		|| die "econf failed"
+		$(use_with xattr attr)
+}
 
+src_compile() {
 	emake || die "emake failed"
 
 	if use doc ; then
@@ -142,26 +132,29 @@ src_compile() {
 	fi
 }
 
+src_test() {
+	if [[ ${EUID} -eq 0 ]]; then
+		default_src_test
+	else
+		ewarn "test skipped, please re-run as root if you wish to test ${PN}"
+	fi
+}
+
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
 
 	# init script stuff
-	newinitd "${FILESDIR}"/lighttpd.initd-1.4.13-r3 lighttpd || die
+	newinitd "${FILESDIR}"/lighttpd.initd lighttpd || die
 	newconfd "${FILESDIR}"/lighttpd.confd lighttpd || die
 	use fam && has_version app-admin/fam && \
 		sed -i 's/after famd/need famd/g' "${D}"/etc/init.d/lighttpd
-
-	if use php || use fastcgi ; then
-		newinitd "${FILESDIR}"/spawn-fcgi.initd spawn-fcgi || die
-		newconfd "${FILESDIR}"/spawn-fcgi.confd spawn-fcgi || die
-	fi
 
 	# configs
 	insinto /etc/lighttpd
 	doins "${FILESDIR}"/conf/lighttpd.conf
 	doins "${FILESDIR}"/conf/mime-types.conf
 	doins "${FILESDIR}"/conf/mod_cgi.conf
-	newins "${FILESDIR}"/conf/mod_fastcgi.conf-1.4.13-r2 mod_fastcgi.conf
+	doins "${FILESDIR}"/conf/mod_fastcgi.conf
 	# Secure directory for fastcgi sockets
 	keepdir /var/run/lighttpd/
 	fperms 0750 /var/run/lighttpd/
@@ -171,7 +164,7 @@ src_install() {
 	update_config
 
 	# docs
-	dodoc AUTHORS README NEWS ChangeLog doc/*.sh
+	dodoc AUTHORS README NEWS doc/*.sh
 	newdoc doc/lighttpd.conf lighttpd.conf.distrib
 
 	use doc && dohtml -r doc/*
@@ -187,28 +180,33 @@ src_install() {
 	fowners lighttpd:lighttpd /var/l{ib,og}/lighttpd
 	fperms 0750 /var/l{ib,og}/lighttpd
 
+	#spawn-fcgi may optionally be installed via www-servers/spawn-fcgi
+	rm -f "${D}"/usr/bin/spawn-fcgi "${D}"/usr/share/man/man1/spawn-fcgi.*
+
 	use minimal && remove_non_essential
 }
 
 pkg_postinst () {
 	echo
 	if [[ -f ${ROOT}etc/conf.d/spawn-fcgi.conf ]] ; then
-		einfo "spawn-fcgi is now included with lighttpd"
+		einfo "spawn-fcgi is now provided by www-servers/spawn-fcgi."
 		einfo "spawn-fcgi's init script configuration is now located"
 		einfo "at /etc/conf.d/spawn-fcgi."
 		echo
 	fi
 
 	if [[ -f ${ROOT}etc/lighttpd.conf ]] ; then
-		ewarn "As of lighttpd-1.4.1, Gentoo has a customized configuration,"
+		ewarn "Gentoo has a customized configuration,"
 		ewarn "which is now located in /etc/lighttpd.  Please migrate your"
 		ewarn "existing configuration."
 		ebeep 5
 	fi
 
-	if use fam ; then
-		einfo "Remember to re-emerge lighttpd should you switch from"
-		einfo "app-admin/famd to app-admin/gamin or vice versa."
+	if use fastcgi; then
+		ewarn "As of lighttpd-1.4.22, spawn-fcgi is provided by the separate"
+		ewarn "www-servers/spawn-fcgi package. Please install it manually, if"
+		ewarn "you use spawn-fcgi."
+		ewarn "It features a new, more featurefull init script - please migrate"
+		ewarn "your configuration!"
 	fi
-	echo
 }
