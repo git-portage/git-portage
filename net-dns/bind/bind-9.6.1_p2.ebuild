@@ -1,18 +1,18 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/Attic/bind-9.6.1_p1.ebuild,v 1.3 2009/11/12 07:56:57 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/Attic/bind-9.6.1_p2.ebuild,v 1.1 2009/11/25 09:36:05 idl0r Exp $
 
 EAPI="2"
 
 inherit eutils autotools toolchain-funcs flag-o-matic
 
-MY_PV="${PV/_p1/-P1}"
+MY_PV="${PV/_p/-P}"
 MY_P="${PN}-${MY_PV}"
 
 SDB_LDAP_VER="1.1.0"
 
 DESCRIPTION="BIND - Berkeley Internet Name Domain - Name Server"
-HOMEPAGE="https://www.isc.org/software/bind"
+HOMEPAGE="http://www.isc.org/software/bind"
 SRC_URI="ftp://ftp.isc.org/isc/bind9/${MY_PV}/${MY_P}.tar.gz
 	sdb-ldap? ( mirror://gentoo/bind-sdb-ldap-${SDB_LDAP_VER}.tar.bz2 )
 	doc? ( mirror://gentoo/dyndns-samples.tbz2 )"
@@ -195,8 +195,8 @@ src_install() {
 	newins "${FILESDIR}"/127.zone-r1 127.zone || die
 	newins "${FILESDIR}"/localhost.zone-r3 localhost.zone || die
 
-	newinitd "${FILESDIR}"/named.init-r6 named || die
-	newconfd "${FILESDIR}"/named.confd-r2 named || die
+	newinitd "${FILESDIR}"/named.init-r7 named || die
+	newconfd "${FILESDIR}"/named.confd-r3 named || die
 
 	dosym /var/bind/named.ca /var/bind/root.cache
 	dosym /var/bind/pri /etc/bind/pri
@@ -226,37 +226,31 @@ pkg_postinst() {
 		"${ROOT}"/var/bind/{pri,sec} "${ROOT}"/var/log/named
 	chown -R named:named "${ROOT}"/var/bind
 
-	elog "The default zone files are now installed as *.zone,"
-	elog "be careful merging config files if you have modified"
-	elog "/var/bind/pri/127 or /var/bind/pri/localhost"
-	elog
-	elog "You can edit /etc/conf.d/named to customize named settings"
-	elog
-	elog "The BIND ebuild now includes chroot support."
-	elog "If you like to run bind in chroot AND this is a new install OR"
-	elog "your bind doesn't already run in chroot, simply run:"
-	elog "\`emerge --config '=${CATEGORY}/${PF}'\`"
-	elog "Before running the above command you might want to change the chroot"
-	elog "dir in /etc/conf.d/named. Otherwise /chroot/dns will be used."
-	elog
-	elog "Recently verisign added a wildcard A record to the .COM and .NET TLD"
-	elog "zones making all .com and .net domains appear to be registered"
-	elog "This causes many problems such as breaking important anti-spam checks"
-	elog "which verify source domains exist. ISC released a patch for BIND which"
-	elog "adds 'delegation-only' zones to allow admins to return the .com and .net"
-	elog "domain resolution to their normal function."
-	elog
-	elog "There is no need to create a com or net data file. Just the"
-	elog "entries to the named.conf file is enough."
-	elog
-	elog "	zone "com" IN { type delegation-only; };"
-	elog "	zone "net" IN { type delegation-only; };"
-
-	ewarn
-	ewarn "BIND >=9.2.5 makes the priority argument to MX records mandatory"
-	ewarn "when it was previously optional.  If the priority is missing, BIND"
-	ewarn "won't load the zone file at all."
-	ewarn
+	einfo "The default zone files are now installed as *.zone,"
+	einfo "be careful merging config files if you have modified"
+	einfo "/var/bind/pri/127 or /var/bind/pri/localhost"
+	einfo
+	einfo "You can edit /etc/conf.d/named to customize named settings"
+	einfo
+	einfo "The BIND ebuild now includes chroot support."
+	einfo "If you like to run bind in chroot AND this is a new install OR"
+	einfo "your bind doesn't already run in chroot, simply run:"
+	einfo "\`emerge --config '=${CATEGORY}/${PF}'\`"
+	einfo "Before running the above command you might want to change the chroot"
+	einfo "dir in /etc/conf.d/named. Otherwise /chroot/dns will be used."
+	einfo
+	einfo "Recently verisign added a wildcard A record to the .COM and .NET TLD"
+	einfo "zones making all .com and .net domains appear to be registered"
+	einfo "This causes many problems such as breaking important anti-spam checks"
+	einfo "which verify source domains exist. ISC released a patch for BIND which"
+	einfo "adds 'delegation-only' zones to allow admins to return the .com and .net"
+	einfo "domain resolution to their normal function."
+	einfo
+	einfo "There is no need to create a com or net data file. Just the"
+	einfo "entries to the named.conf file is enough."
+	einfo
+	einfo "	zone "com" IN { type delegation-only; };"
+	einfo "	zone "net" IN { type delegation-only; };"
 
 	ewarn "NOTE: as of 'bind-9.6.1' the chroot part of the init-script got some major changes."
 }
