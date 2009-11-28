@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/Attic/squid-3.1.0.13_beta-r2.ebuild,v 1.1 2009/09/19 11:58:15 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/Attic/squid-3.1.0.15_beta.ebuild,v 1.1 2009/11/28 12:32:59 mrness Exp $
 
 EAPI="2"
 
@@ -13,11 +13,13 @@ SRC_URI="http://www.squid-cache.org/Versions/v3/3.1/${P/_beta}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="caps ipv6 pam ldap samba sasl kerberos nis radius ssl snmp selinux icap-client logrotate test \
+IUSE="caps ipv6 pam ldap samba sasl kerberos nis radius ssl snmp selinux logrotate test \
+	ecap icap-client \
 	mysql postgres sqlite \
 	zero-penalty-hit \
 	pf-transparent ipf-transparent kqueue \
 	elibc_uclibc kernel_linux +epoll"
+RESTRICT=test
 
 COMMON_DEPEND="caps? ( >=sys-libs/libcap-2.16 )
 	pam? ( virtual/pam )
@@ -25,6 +27,7 @@ COMMON_DEPEND="caps? ( >=sys-libs/libcap-2.16 )
 	kerberos? ( || ( app-crypt/mit-krb5 app-crypt/heimdal ) )
 	ssl? ( dev-libs/openssl )
 	sasl? ( dev-libs/cyrus-sasl )
+	ecap? ( net-libs/libecap )
 	selinux? ( sec-policy/selinux-squid )
 	!x86-fbsd? ( logrotate? ( app-admin/logrotate ) )
 	>=sys-libs/db-4
@@ -56,8 +59,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-3-capability.patch
-	epatch "${FILESDIR}"/${P}-cve-2009-2855.patch
 	epatch "${FILESDIR}"/${P}-gentoo.patch
 	epatch "${FILESDIR}"/${P}-qafixes.patch
 
@@ -78,6 +79,9 @@ src_configure() {
 	if use mysql || use postgres || use sqlite ; then
 		basic_modules="DB,${basic_modules}"
 	fi
+
+	local digest_modules="password"
+	use ldap && digest_modules="ldap,${digest_modules}"
 
 	local ext_helpers="ip_user,session,unix_group"
 	use samba && ext_helpers="wbinfo_group,${ext_helpers}"
@@ -116,12 +120,13 @@ src_configure() {
 		--sysconfdir=/etc/squid \
 		--libexecdir=/usr/libexec/squid \
 		--localstatedir=/var \
+		--with-pidfile=/var/run/squid.pid \
 		--datadir=/usr/share/squid \
 		--with-logdir=/var/log/squid \
 		--with-default-user=squid \
 		--enable-auth="basic,digest,negotiate,ntlm" \
 		--enable-removal-policies="lru,heap" \
-		--enable-digest-auth-helpers="password" \
+		--enable-digest-auth-helpers="${digest_modules}" \
 		--enable-basic-auth-helpers="${basic_modules}" \
 		--enable-external-acl-helpers="${ext_helpers}" \
 		--enable-ntlm-auth-helpers="${ntlm_helpers}" \
@@ -133,11 +138,13 @@ src_configure() {
 		--enable-arp-acl \
 		--with-large-files \
 		--with-filedescriptors=8192 \
+		--disable-strict-error-checking \
 		$(use_enable caps) \
 		$(use_enable ipv6) \
 		$(use_enable snmp) \
 		$(use_enable ssl) \
 		$(use_enable icap-client) \
+		$(use_enable ecap) \
 		$(use_enable zero-penalty-hit zph-qos) \
 		${myconf} || die "econf failed"
 }
