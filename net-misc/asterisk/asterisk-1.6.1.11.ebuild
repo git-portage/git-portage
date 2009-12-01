@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.6.1.9.ebuild,v 1.1 2009/11/05 11:21:10 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.6.1.11.ebuild,v 1.1 2009/12/01 10:39:11 chainsaw Exp $
 
 EAPI=1
 inherit eutils autotools
@@ -139,21 +139,10 @@ src_unpack() {
 	epatch "${FILESDIR}"/1.6.1/${PN}-1.6.1-uclibc.patch  || die "patch failed"
 
 	#
-	# compensate for non-standard LUA header paths in Gentoo
-	#
-	epatch "${FILESDIR}"/1.6.1/${PN}-1.6.1.6-lua-includes.patch || die "patch failed"
-
-	#
 	# make sure FXO ports are usable immediately, without requiring an inbound call first
 	# https://issues.asterisk.org/view.php?id=14577
 	#
 	epatch "${FILESDIR}"/1.6.1/${PN}-1.6.1.6-fxsks-hookstate.patch || die "patch failed"
-
-	#
-	# avoid segmentation fault when transferring a queue call
-	# https://issues.asterisk.org/view.php?id=15848
-	#
-	epatch "${FILESDIR}"/1.6.1/${PN}-1.6.1.6-transfer-segfault.patch || die "patch failed"
 
 	#
 	# do not ignore alarm-cleared event while V23 caller ID detection is in progress
@@ -161,13 +150,6 @@ src_unpack() {
 	# https://issues.asterisk.org/view.php?id=14163
 	#
 	epatch "${FILESDIR}"/1.6.1/${PN}-1.6.1.6-bt-line-test.patch || die "patch failed"
-
-	#
-	# SIP invites without a session-expires header end up with an expiry time of -1 seconds
-	# causing immediate hangup.
-	# https://issues.asterisk.org/view.php?id=15621
-	#
-	epatch "${FILESDIR}"/1.6.1/${PN}-1.6.1.8-session_expiry.patch || die "patch failed"
 
 	AT_M4DIR=autoconf eautoreconf
 
