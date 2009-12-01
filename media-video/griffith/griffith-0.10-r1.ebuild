@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/griffith/Attic/griffith-0.9.10.ebuild,v 1.1 2009/06/08 13:46:02 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/griffith/Attic/griffith-0.10-r1.ebuild,v 1.1 2009/12/01 17:31:27 hwoarang Exp $
 
 EAPI="2"
 
-inherit eutils python multilib
+inherit eutils versionator python multilib
 
 ARTWORK_PV="0.9.4"
 
@@ -18,27 +18,27 @@ KEYWORDS="~amd64 ~x86 ~x86-fbsd"
 IUSE="csv doc spell"
 
 RDEPEND="dev-python/imaging
+	gnome-base/libglade
 	dev-python/pyxml
 	>=dev-python/pygtk-2.6.1
 	dev-python/pysqlite:2
+	>=dev-python/sqlalchemy-0.5.2
 	>=dev-python/reportlab-1.19
 	csv? ( dev-python/chardet )
 	spell? ( >=dev-python/gnome-python-extras-2.0 )"
 DEPEND="${RDEPEND}
 	doc? ( app-text/docbook2X )"
 
+S="${WORKDIR}"/"${P/_/-}"
 src_prepare() {
 	sed -i \
 		-e 's#/pl/#/pl.UTF-8/#' \
-		docs/pl/Makefile || die "sed failed"
+		"${S}"/docs/pl/Makefile || die "sed failed"
 
 	sed -i \
 		-e 's/ISO-8859-1/UTF-8/' \
-		lib/gconsole.py || die "sed failed"
-
-	epatch \
-		"${FILESDIR}/0.9.6-moving_share_dir.patch" \
-		"${FILESDIR}/0.9.7.1-fix_spellcheck.patch"
+		"${S}"/lib/gconsole.py || die "sed failed"
+	epatch "${FILESDIR}/$(get_version_component_range 1-2)-fix_lib_path.patch"
 }
 
 src_compile() {
