@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.7.5.ebuild,v 1.1 2009/11/16 01:13:47 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.7.10.ebuild,v 1.1 2009/12/03 06:13:11 zmedico Exp $
 
 # Require EAPI 2 since we now require at least python-2.6 (for python 3
 # syntax support) which also requires EAPI 2.
