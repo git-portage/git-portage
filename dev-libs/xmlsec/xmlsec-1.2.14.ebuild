@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/xmlsec/Attic/xmlsec-1.2.13.ebuild,v 1.1 2009/09/17 13:36:42 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/xmlsec/Attic/xmlsec-1.2.14.ebuild,v 1.1 2009/12/05 22:16:50 arfrever Exp $
 
 EAPI="2"
 
@@ -42,6 +42,10 @@ src_configure() {
 }
 
 src_test() {
+	if has_version ${CATEGORY}/${PN} && ! has_version "=${CATEGORY}/${PF}"; then
+		ewarn "Tests will be probably skipped. First install ${CATEGORY}/${PF} and next reinstall it again with testing enabled."
+	fi
+
 	TMPFOLDER="${T}" emake check || die "emake check failed"
 }
 
