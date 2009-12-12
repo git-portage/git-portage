@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mp3diags/Attic/mp3diags-0.99.06.041.ebuild,v 1.1 2009/10/17 14:10:52 ayoy Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mp3diags/Attic/mp3diags-1.0.01.046.ebuild,v 1.1 2009/12/12 13:34:03 ayoy Exp $
 
 EAPI="2"
 
