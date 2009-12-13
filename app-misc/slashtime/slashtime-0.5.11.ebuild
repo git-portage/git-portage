@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/slashtime/Attic/slashtime-0.5.9a.ebuild,v 1.1 2008/11/26 04:28:52 ken69267 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/slashtime/slashtime-0.5.11.ebuild,v 1.1 2009/12/13 23:42:12 ken69267 Exp $
 
 EAPI=2
 JAVA_PKG_IUSE="source"
@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-COMMON_DEP=">=dev-java/java-gnome-4.0.9:4.0"
+COMMON_DEP=">=dev-java/java-gnome-4.0.14_rc2:4.0"
 
 DEPEND=">=virtual/jdk-1.5
 	${COMMON_DEP}"
