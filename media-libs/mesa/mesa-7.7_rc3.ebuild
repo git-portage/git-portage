@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/Attic/mesa-7.6.1_rc3.ebuild,v 1.2 2009/12/14 02:25:40 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/Attic/mesa-7.7_rc3.ebuild,v 1.1 2009/12/16 17:58:44 scarabeus Exp $
 
 EAPI="2"
 
@@ -17,7 +17,7 @@ inherit autotools multilib flag-o-matic ${GIT_ECLASS} portability
 OPENGL_DIR="xorg-x11"
 
 MY_PN="${PN/m/M}"
-MY_P="${MY_PN}-${PV/_*/}"
+MY_P="${MY_PN}-${PV/_/-}"
 MY_SRC_P="${MY_PN}Lib-${PV/_/-}"
 DESCRIPTION="OpenGL-like graphic library for Linux"
 HOMEPAGE="http://mesa3d.sourceforge.net/"
@@ -42,12 +42,10 @@ IUSE_VIDEO_CARDS="${IUSE_VIDEO_CARDS_UNSTABLE}
 	video_cards_r128
 	video_cards_radeon
 	video_cards_radeonhd
-	video_cards_s3virge
 	video_cards_savage
 	video_cards_sis
 	video_cards_sunffb
 	video_cards_tdfx
-	video_cards_trident
 	video_cards_via"
 IUSE="${IUSE_VIDEO_CARDS}
 	debug gallium motif +nptl pic +xcb kernel_FreeBSD"
@@ -58,7 +56,7 @@ RDEPEND="!<x11-base/xorg-server-1.7
 	!<=x11-proto/xf86driproto-2.0.3
 	>=app-admin/eselect-opengl-1.1.1-r2
 	dev-libs/expat
-	>=x11-libs/libdrm-2.4.15
+	>=x11-libs/libdrm-2.4.16
 	x11-libs/libICE
 	x11-libs/libX11[xcb?]
 	x11-libs/libXdamage
@@ -124,12 +122,10 @@ src_configure() {
 	# ATI has two implementations as video_cards
 	driver_enable video_cards_radeon radeon r200 r300 r600
 	driver_enable video_cards_radeonhd r300 r600
-	driver_enable video_cards_s3virge s3v
 	driver_enable video_cards_savage savage
 	driver_enable video_cards_sis sis
 	driver_enable video_cards_sunffb ffb
 	driver_enable video_cards_tdfx tdfx
-	driver_enable video_cards_trident trident
 	driver_enable video_cards_via unichrome
 
 	# all live (experimental) stuff is wrapped around with experimental variable
