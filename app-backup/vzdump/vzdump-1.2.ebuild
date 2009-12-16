@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/vzdump/vzdump-1.2.ebuild,v 1.1 2009/11/20 09:07:11 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/vzdump/vzdump-1.2.ebuild,v 1.2 2009/12/16 20:09:18 bangert Exp $
 
 EAPI="2"
 
@@ -14,6 +14,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 RDEPEND="dev-lang/perl
+	dev-perl/LockFile-Simple
 	virtual/perl-Getopt-Long
 	sys-cluster/vzctl
 	net-misc/rsync
@@ -26,6 +27,8 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	local installvendorlib
+	eval "$(perl -V:installvendorlib )"
+	make PERLLIBDIR="${installvendorlib}/PVE" DESTDIR="${D}" install || die "make install failed"
 	dodoc ChangeLog TODO
 }

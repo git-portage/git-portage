@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/vzdump
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/vzdump/ChangeLog,v 1.2 2009/11/20 09:07:11 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/vzdump/ChangeLog,v 1.3 2009/12/16 20:09:18 bangert Exp $
+
+  16 Dec 2009; Thilo Bangert <bangert@gentoo.org> vzdump-1.2.ebuild:
+  add missing dep - fix install location - bug #296927
 
 *vzdump-1.2 (20 Nov 2009)
 
