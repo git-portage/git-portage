@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/luckybackup
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/luckybackup/ChangeLog,v 1.3 2009/08/03 20:28:47 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/luckybackup/ChangeLog,v 1.4 2009/12/16 22:13:54 ssuominen Exp $
+
+*luckybackup-0.3.4 (16 Dec 2009)
+
+  16 Dec 2009; Samuli Suominen <ssuominen@gentoo.org>
+  +luckybackup-0.3.4.ebuild:
+  Version bump and change documentation directory to PF wrt #297135, thanks
+  to Diego E. 'Flameeyes' Pettenò.
 
 *luckybackup-0.3.3 (03 Aug 2009)
 
