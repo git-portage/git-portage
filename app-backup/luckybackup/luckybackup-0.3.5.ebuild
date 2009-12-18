@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/luckybackup/Attic/luckybackup-0.3.5.ebuild,v 1.1 2009/12/17 15:58:24 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/luckybackup/Attic/luckybackup-0.3.5.ebuild,v 1.2 2009/12/18 17:20:47 ssuominen Exp $
 
 EAPI=2
 inherit qt4
@@ -20,6 +20,7 @@ DEPEND="x11-libs/qt-gui:4[debug?]
 src_prepare() {
 	sed -i \
 		-e 's:/usr/share/doc/luckybackup:/usr/share/doc/${PF}:g' \
+		-e 's:/usr/share/doc/packages/luckybackup:/usr/share/doc/${PF}:g' \
 		luckybackup.pro src/global.h || die
 }
 
