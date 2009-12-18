@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/enblend/Attic/enblend-4.0_rc3.ebuild,v 1.1 2009/12/05 17:45:51 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/enblend/Attic/enblend-4.0.ebuild,v 1.1 2009/12/18 11:35:10 maekke Exp $
 
 EAPI=2
 
@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}
 		virtual/latex-base
 	)"
 
-S="${WORKDIR}/${PN}-enfuse-4.0RC3-3649376226b5"
+S="${WORKDIR}/${PN}-enfuse-4.0-753b534c819d"
 
 pkg_setup() {
 	if use image-cache && use openmp; then
