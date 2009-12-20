@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey/Attic/seamonkey-2.0.ebuild,v 1.1 2009/10/28 18:19:41 volkmar Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey/Attic/seamonkey-2.0.1.ebuild,v 1.1 2009/12/20 17:31:29 anarchy Exp $
 
 EAPI="2"
 WANT_AUTOCONF="2.1"
@@ -8,9 +8,9 @@ WANT_AUTOCONF="2.1"
 inherit flag-o-matic toolchain-funcs eutils mozconfig-3 makeedit multilib fdo-mime autotools mozextension java-pkg-opt-2
 
 PATCH="${PN}-2.0-patches-0.1"
-EMVER="0.97a0"
+EMVER="1.0.0"
 
-LANGS="be ca cs de en-US es-AR es-ES fr gl hu ka lt nb-NO nl pl pt-PT ru sk sv-SE tr"
+LANGS="be ca cs de en-US es-AR es-ES fr gl hu it ka lt nb-NO nl pl pt-PT ru sk sv-SE tr"
 NOSHORTLANGS="es-AR es-ES nb-NO pt-PT sv-SE"
 
 MY_PV="${PV/_rc/rc}"
@@ -22,12 +22,12 @@ HOMEPAGE="http://www.seamonkey-project.org"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 SLOT="0"
 LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 )"
-IUSE="+alsa +crypt java ldap mozdevelop moznocompose moznoirc moznomail moznoroaming sqlite restrict-javascript"
+IUSE="+alsa +crypt java ldap mozdevelop moznocompose moznoirc moznomail moznoroaming sqlite"
 
 REL_URI="http://releases.mozilla.org/pub/mozilla.org/${PN}/releases"
 SRC_URI="${REL_URI}/${MY_PV}/source/${MY_P}.source.tar.bz2
 	http://dev.gentoo.org/~anarchy/dist/${PATCH}.tar.bz2
-	crypt? ( !moznomail? ( http://dev.gentoo.org/~anarchy/dist/enigmail-${EMVER}-20091011.tar.gz ) )"
+	crypt? ( !moznomail? ( http://www.mozilla-enigmail.org/download/source/enigmail-${EMVER}.tar.gz ) )"
 
 for X in ${LANGS} ; do
 	if [ "${X}" != "en" ] && [ "${X}" != "en-US" ]; then
@@ -50,7 +50,7 @@ RDEPEND="java? ( virtual/jre )
 	>=dev-libs/nss-3.12.2
 	>=dev-libs/nspr-4.8
 	alsa? ( media-libs/alsa-lib )
-	sqlite? ( >=dev-db/sqlite-3.6.10 )
+	sqlite? ( >=dev-db/sqlite-3.6.20-r1[fts3] )
 	>=app-text/hunspell-1.2
 	x11-libs/cairo[X]
 	x11-libs/pango[X]
@@ -59,8 +59,6 @@ RDEPEND="java? ( virtual/jre )
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	java? ( >=virtual/jdk-1.4 )"
-
-PDEPEND="restrict-javascript? ( www-plugins/noscript )"
 
 S="${WORKDIR}/comm-1.9.1"
 
@@ -123,6 +121,7 @@ src_prepare() {
 	java-pkg-opt-2_src_prepare
 
 	# Apply our patches
+	EPATCH_EXCLUDE="108-fix_ftbfs_with_cairo_fb.patch" \
 	EPATCH_SUFFIX="patch" \
 	EPATCH_FORCE="yes" \
 	epatch "${WORKDIR}"
@@ -131,7 +130,6 @@ src_prepare() {
 		mv "${WORKDIR}"/enigmail "${S}"/mailnews/extensions/enigmail
 		cd "${S}"/mailnews/extensions/enigmail || die
 		epatch "${FILESDIR}"/enigmail/70_enigmail-fix.patch
-		epatch "${FILESDIR}"/enigmail/0.95.0-replytolist.patch
 		makemake2
 		cd "${S}"
 	fi
@@ -187,6 +185,7 @@ src_configure() {
 	mozconfig_annotate '' --with-system-nspr
 	mozconfig_annotate '' --with-system-nss
 	mozconfig_annotate '' --enable-system-lcms
+	mozconfig_annotate '' --with-system-bz2
 	mozconfig_annotate '' --enable-oji --enable-mathml
 	mozconfig_annotate 'places' --enable-storage --enable-places --enable-places_bookmarks
 	mozconfig_annotate '' --disable-installer
@@ -252,13 +251,9 @@ src_install() {
 		[[ ${X} != "en" ]] && xpi_install "${WORKDIR}"/"${MY_P}-${X}"
 	done
 
-	local LANG=${linguas%% *}
-	if [[ -n ${LANG} && ${LANG} != "en" ]]; then
-		elog "Setting default locale to ${LANG}"
-		dosed -e "s:general.useragent.locale\", \"en-US\":general.useragent.locale\", \"${LANG}\":" \
-			${MOZILLA_FIVE_HOME}/defaults/pref/suite-l10n.js || \
-			die "sed failed to change locale"
-	fi
+	echo 'pref("intl.locale.matchOS", true);' >> \
+		"${D}/usr/$(get_libdir)/${PN}/defaults/pref/browser-prefs.js" \
+			|| die "setting usage of default OS locale"
 
 	# Install icon and .desktop for menu entry
 	newicon "${S}"/suite/branding/content/icon64.png seamonkey.png
