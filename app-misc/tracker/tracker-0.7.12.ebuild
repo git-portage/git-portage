@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/Attic/tracker-0.7.11.ebuild,v 1.2 2009/12/21 22:28:02 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/Attic/tracker-0.7.12.ebuild,v 1.1 2009/12/21 22:28:02 eva Exp $
 
 EAPI="2"
 G2CONF_DEBUG="no"
@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 # USE="doc" is managed by eclass.
-IUSE="applet deskbar doc eds exif gsf gstreamer gtk hal iptc +jpeg kmail laptop mp3 pdf playlist test +tiff +vorbis wv2 xine +xml xmp"
+IUSE="applet deskbar doc eds exif gsf gstreamer gtk hal iptc +jpeg kmail laptop mp3 nautilus pdf playlist test +tiff +vorbis wv2 xine +xml xmp"
 
 # Automagic, gconf, uuid, enca and probably more
 # TODO: quill and streamanalyzer support
@@ -48,6 +48,7 @@ RDEPEND="
 		hal? ( >=sys-apps/hal-0.5 )
 		!hal? ( >=sys-apps/devicekit-power-007 ) )
 	mp3? ( >=media-libs/id3lib-3.8.3 )
+	nautilus? ( gnome-base/nautilus )
 	pdf? (
 		>=x11-libs/cairo-1
 		>=virtual/poppler-glib-0.5[cairo]
@@ -70,7 +71,9 @@ DEPEND="${RDEPEND}
 	gtk? (
 		dev-lang/vala
 		>=dev-libs/libgee-0.3 )
-	doc? ( >=dev-util/gtk-doc-1.8 )"
+	doc? (
+		>=dev-util/gtk-doc-1.8
+		media-gfx/graphviz )"
 #	test? ( gcov )
 
 DOCS="AUTHORS ChangeLog NEWS README"
@@ -130,6 +133,7 @@ pkg_setup() {
 		$(use_enable jpeg libjpeg)
 		$(use_enable kmail kmail-miner)
 		$(use_enable mp3 id3lib)
+		$(use_enable nautilus nautilus-extensions)
 		$(use_enable pdf poppler-glib)
 		$(use_enable playlist)
 		$(use_enable test unit-tests)
@@ -145,6 +149,7 @@ pkg_setup() {
 }
 
 src_test() {
+	# checks might not be parallel safe but not evidence of flaw yet.
 	export XDG_CONFIG_HOME="${T}"
 	emake check || die "tests failed"
 }
