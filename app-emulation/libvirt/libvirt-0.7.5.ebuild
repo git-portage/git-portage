@@ -1,6 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/Attic/libvirt-0.7.4-r1.ebuild,v 1.2 2009/12/23 06:01:52 ramereth Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/Attic/libvirt-0.7.5.ebuild,v 1.1 2009/12/23 16:58:55 flameeyes Exp $
+
+BACKPORTS=
 
 EAPI="2"
 
@@ -8,18 +10,23 @@ inherit eutils python
 
 DESCRIPTION="C toolkit to manipulate virtual machines"
 HOMEPAGE="http://www.libvirt.org/"
-SRC_URI="http://libvirt.org/sources/${P}.tar.gz"
+SRC_URI="http://libvirt.org/sources/${P}.tar.gz
+	${BACKPORTS:+mirror://gentoo/${P}-backports-${BACKPORTS}.tar.bz2}"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="avahi caps iscsi kvm +libvirtd lvm +lxc +network nfs one nls numa openvz \
+IUSE="avahi caps iscsi +libvirtd lvm +lxc +network nfs one nls numa openvz \
 	parted phyp policykit python qemu sasl selinux uml virtualbox xen udev"
 # devicekit isn't in portage
 
+# Some tests are simply broken in the released tarball, ignore them
+# for now.
+RESTRICT=test
+
 RDEPEND="sys-libs/readline
 	sys-libs/ncurses
-	net-misc/curl
-	>=dev-libs/libxml2-2.5
+	>=net-misc/curl-7.18.0
+	>=dev-libs/libxml2-2.7.6
 	>=net-libs/gnutls-1.0.25
 	dev-lang/python
 	sys-fs/sysfsutils
@@ -28,7 +35,6 @@ RDEPEND="sys-libs/readline
 	avahi? ( >=net-dns/avahi-0.6 )
 	caps? ( sys-libs/libcap-ng )
 	iscsi? ( sys-block/open-iscsi )
-	kvm? ( app-emulation/qemu-kvm )
 	libvirtd? ( net-misc/bridge-utils )
 	lvm? ( >=sys-fs/lvm2-2.02.48-r2 )
 	nfs? ( net-fs/nfs-utils )
@@ -48,6 +54,11 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	nls? ( sys-devel/gettext )"
 
+src_prepare() {
+	[[ -n ${BACKPORTS} ]] && \
+		EPATCH_SUFFIX="patch" EPATCH_SOURCE="${S}/patches" epatch
+}
+
 src_configure() {
 	local myconf=""
 
@@ -66,11 +77,7 @@ src_configure() {
 	myconf="${myconf} $(use_with lxc)"
 	myconf="${myconf} $(use_with virtualbox vbox)"
 	myconf="${myconf} $(use_with uml)"
-	if use qemu || use kvm ; then
-		myconf="${myconf} --with-qemu"
-	else
-		myconf="${myconf} --without-qemu"
-	fi
+	myconf="${myconf} $(use_with qemu)"
 	# doesn't belong with hypervisors but links to libvirtd for some reason
 	myconf="${myconf} $(use_with one)"
 
@@ -103,7 +110,6 @@ src_configure() {
 	myconf="${myconf} $(use_with python)"
 
 	## stuff we don't yet support
-	myconf="${myconf} --without-devkit"
 	myconf="${myconf} --without-netcf"
 
 	# we use udev over hal
@@ -111,18 +117,27 @@ src_configure() {
 
 	econf \
 		${myconf} \
+		--docdir=/usr/share/doc/${PF} \
 		--with-remote \
-		--disable-iptables-lokkit \
 		--localstatedir=/var \
 		--with-remote-pid-file=/var/run/libvirtd.pid
 }
 
-src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	mv "${D}"/usr/share/doc/{${PN}-python*,${P}/python}
+src_test() {
+	# Explicitly allow parallel build of tests
+	emake check || die "tests failed"
+}
 
-	newinitd "${FILESDIR}/libvirtd.init" libvirtd
-	newconfd "${FILESDIR}/libvirtd.confd" libvirtd
+src_install() {
+	emake install \
+		DESTDIR="${D}" \
+		HTML_DIR=/usr/share/doc/${PF}/html \
+		DOCS_DIR=/usr/share/doc/${PF}/python \
+		EXAMPLE_DIR=/usr/share/doc/${PF}/python/examples \
+		|| die "emake install failed"
+
+	newinitd "${FILESDIR}/libvirtd.init" libvirtd || die
+	newconfd "${FILESDIR}/libvirtd.confd" libvirtd || die
 
 	keepdir /var/lib/libvirt/images
 }
