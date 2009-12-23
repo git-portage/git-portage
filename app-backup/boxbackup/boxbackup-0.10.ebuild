@@ -1,15 +1,15 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.13 2009/10/12 17:17:57 halcy0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.14 2009/12/23 15:08:20 grobian Exp $
 
 inherit eutils autotools
 
 DESCRIPTION="A completely automatic on-line backup system"
-HOMEPAGE="http://boxbackup.org"
+HOMEPAGE="http://boxbackup.org/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64 x86 ~ppc-macos ~x86-macos"
 IUSE="client-only"
 DEPEND="sys-libs/zlib
 	sys-libs/db
@@ -21,9 +21,10 @@ RDEPEND="${DEPEND}
 src_unpack() {
 	unpack ${A}
 
-	epatch "${FILESDIR}/${P}"-gentoo.patch
-	epatch "${FILESDIR}/${P}"-gcc41-noll.patch
-	epatch "${FILESDIR}/${P}"-gcc43.patch
+	epatch "${FILESDIR}"/${P}-gentoo.patch
+	epatch "${FILESDIR}"/${P}-gcc41-noll.patch
+	epatch "${FILESDIR}"/${P}-gcc43.patch
+	epatch "${FILESDIR}"/${P}-malloc.patch
 
 	cd "${S}"
 	AT_M4DIR="infrastructure/m4" eautoreconf
@@ -49,7 +50,7 @@ src_install() {
 
 	# move executables from /usr/bin to /usr/sbin, as configuration of
 	# this is unfortunately not optimal
-	mv "${D}/usr/bin" "${D}/usr/sbin" || die "could not move files from bin to sbin"
+	mv "${D%/}${EPREFIX}/usr/bin" "${D%/}${EPREFIX}/usr/sbin" || die "could not move files from bin to sbin"
 }
 
 pkg_preinst() {

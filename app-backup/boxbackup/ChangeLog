@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/boxbackup
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.18 2009/10/12 17:17:57 halcy0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.19 2009/12/23 15:08:20 grobian Exp $
+
+  23 Dec 2009; Fabian Groffen <grobian@gentoo.org> boxbackup-0.10.ebuild,
+  +files/boxbackup-0.10-malloc.patch:
+  Added patch to fix compilation on Darwin (and FreeBSD) and marked
+  ~x86-macos and ~ppc-macos, bug #292187
 
   12 Oct 2009; Mark Loeser <halcy0n@gentoo.org> boxbackup-0.10.ebuild:
   QA fixes; unquoted variables
