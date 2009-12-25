@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libffi/Attic/libffi-3.0.9_rc3.ebuild,v 1.1 2009/10/30 12:57:10 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libffi/Attic/libffi-3.0.9_rc6.ebuild,v 1.1 2009/12/25 14:30:40 ssuominen Exp $
 
 inherit libtool
 
