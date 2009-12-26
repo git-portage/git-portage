@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.4.1-r1.ebuild,v 1.8 2009/09/30 16:20:33 ayoy Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-2.4.1-r1.ebuild,v 1.9 2009/12/26 17:22:56 pva Exp $
 
 #
 # TODO:
@@ -73,7 +73,7 @@ DEPEND="
 	tcpd? ( >=sys-apps/tcp-wrappers-7.6 )
 	readline? ( >=sys-libs/readline-4.1 )
 	doc? (
-		virtual/ghostscript
+		app-text/ghostscript-gpl
 		dev-tex/latex2html
 	)"
 RDEPEND="${DEPEND}

@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-3.0.2.ebuild,v 1.3 2009/09/30 16:20:33 ayoy Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-3.0.2.ebuild,v 1.4 2009/12/26 17:22:56 pva Exp $
 
 EAPI="2"
 inherit eutils
@@ -57,7 +57,7 @@ DEPEND="
 	readline? ( >=sys-libs/readline-4.1 )
 	python? ( dev-lang/python[threads] )"
 #	doc? (
-#		virtual/ghostscript
+#		app-text/ghostscript-gpl
 #		dev-tex/latex2html[png]
 #		app-text/dvipdfm
 #	)
