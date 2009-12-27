@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/openbox/Attic/openbox-3.4.8_rc1-r1.ebuild,v 1.1 2009/11/06 01:09:42 vostorga Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/openbox/Attic/openbox-3.4.9.ebuild,v 1.1 2009/12/27 02:03:19 yngwin Exp $
 
 EAPI="2"
 inherit eutils
@@ -34,7 +34,7 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-gnomesession.patch"
+	epatch "${FILESDIR}"/${PN}-gnome-session-${PV}.patch
 }
 
 src_configure() {
