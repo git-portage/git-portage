@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/snakeoil/Attic/snakeoil-0.3.3.ebuild,v 1.3 2009/12/11 01:34:12 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/snakeoil/Attic/snakeoil-0.3.5.ebuild,v 1.1 2009/12/27 14:31:57 patrick Exp $
 
 EAPI="2"
 SUPPORT_PYTHON_ABIS="1"
@@ -18,7 +18,6 @@ IUSE=""
 
 DEPEND="!<sys-apps/pkgcore-0.4.7.8"
 RDEPEND=${DEPEND}
-RESTRICT_PYTHON_ABIS="3.*"
 
 DOCS="AUTHORS NEWS"
 
