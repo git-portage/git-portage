@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-hangul/Attic/ibus-hangul-1.2.0.20090617.ebuild,v 1.1 2009/06/18 15:40:05 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-hangul/Attic/ibus-hangul-1.2.0.20100102.ebuild,v 1.1 2010/01/02 15:59:01 matsuu Exp $
 
 DESCRIPTION="The Hangul engine for IBus input platform"
 HOMEPAGE="http://code.google.com/p/ibus/"
@@ -13,11 +13,11 @@ IUSE="nls"
 
 RDEPEND=">=dev-lang/python-2.5
 	>=app-i18n/ibus-1.2
-	>=app-i18n/libhangul-0.0.9
+	>=app-i18n/libhangul-0.0.10
 	nls? ( virtual/libintl )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	nls? ( >=sys-devel/gettext-0.16.1 )"
+	nls? ( >=sys-devel/gettext-0.17 )"
 
 src_unpack() {
 	unpack ${A}
