@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.14 2009/12/23 15:08:20 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.15 2010/01/03 00:06:09 flameeyes Exp $
 
 inherit eutils autotools
 
@@ -32,7 +32,8 @@ src_unpack() {
 
 src_compile() {
 	econf || die "configure failed"
-	make || die
+	# bug #299411
+	emake -j1 || die
 }
 
 src_install() {
