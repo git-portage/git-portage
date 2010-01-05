@@ -1,18 +1,18 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/parole/Attic/parole-0.1.91.ebuild,v 1.2 2009/11/07 19:59:52 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/parole/Attic/parole-0.2.0.ebuild,v 1.1 2010/01/05 15:52:40 darkside Exp $
 
 EAPI=2
 inherit xfconf
 
 DESCRIPTION="a simple media player based on the GStreamer framework for the Xfce4 desktop"
 HOMEPAGE="http://goodies.xfce.org/projects/applications/parole/"
-SRC_URI="mirror://xfce/src/apps/${PN}/0.1/${P}.tar.bz2"
+SRC_URI="mirror://xfce/src/apps/${PN}/0.2/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug libnotify taglib"
+IUSE="debug libnotify nsplugin taglib"
 
 RDEPEND=">=x11-libs/gtk+-2.16:2
 	>=dev-libs/glib-2.16:2
@@ -23,6 +23,7 @@ RDEPEND=">=x11-libs/gtk+-2.16:2
 	>=media-libs/gst-plugins-base-0.10.11
 	media-plugins/gst-plugins-meta
 	libnotify? ( >=x11-libs/libnotify-0.4.1 )
+	nsplugin? ( net-libs/xulrunner:1.9 )
 	taglib? ( >=media-libs/taglib-1.4 )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
@@ -33,6 +34,7 @@ pkg_setup() {
 	XFCONF="--disable-dependency-tracking
 		$(use_enable libnotify)
 		$(use_enable taglib)
+		$(use_enable nsplugin browser-plugin)
 		$(use_enable debug)"
 	DOCS="AUTHORS ChangeLog README THANKS TODO"
 }
