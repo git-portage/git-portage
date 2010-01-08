@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/hepmc/Attic/hepmc-2.04.00.ebuild,v 1.6 2009/05/05 19:37:24 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/hepmc/Attic/hepmc-2.05.01.ebuild,v 1.1 2010/01/08 03:38:33 bicatali Exp $
+
+EAPI=2
 
 MYP=HepMC-${PV}
 
@@ -10,24 +12,31 @@ SRC_URI="http://lcgapp.cern.ch/project/simu/HepMC/download/${MYP}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~hppa sparc x86"
+KEYWORDS="~amd64 ~hppa ~sparc ~x86"
 IUSE="doc examples gev cm"
 
-DEPEND=""
+RDEPEND=""
+DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MYP}"
 
-src_compile() {
-	# random default choice: use MeV over GeV and mm over cm
+src_configure() {
+	# use MeV over GeV and mm over cm
 	local length_conf="MM"
 	use cm && length_conf="CM"
 	local momentum_conf="MEV"
 	use gev && momentum_conf="GEV"
 	econf \
 		--with-length=${length_conf} \
-		--with-momentum=${momentum_conf} \
-		|| die "econf failed"
-	emake || die "emake failed"
+		--with-momentum=${momentum_conf}
+}
+
+src_test() {
+	# hack to skip buggy tests with MeV:
+	# https://savannah.cern.ch/support/index.php?108390
+	if use gev && ! use cm; then
+		emake check || die "emake check failed"
+	fi
 }
 
 src_install() {
