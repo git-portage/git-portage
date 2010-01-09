@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-nntp/tin/Attic/tin-1.8.3.ebuild,v 1.7 2009/03/08 10:30:25 cla Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-nntp/tin/Attic/tin-1.8.3.ebuild,v 1.8 2010/01/09 19:11:02 jer Exp $
 
 EAPI="2"
 
@@ -25,10 +25,7 @@ DEPEND="dev-libs/libpcre
 RDEPEND="${DEPEND}
 	net-misc/urlview"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	epatch "${FILESDIR}"/1.8.2-various.patch
 }
 
