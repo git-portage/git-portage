@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/nautilus-open-terminal/Attic/nautilus-open-terminal-0.16.ebuild,v 1.4 2009/11/28 18:18:22 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/nautilus-open-terminal/Attic/nautilus-open-terminal-0.18.ebuild,v 1.1 2010/01/11 21:58:57 eva Exp $
 
 EAPI="2"
 GCONF_DEBUG="no"
@@ -12,7 +12,7 @@ HOMEPAGE="http://manny.cluecoder.org/packages/nautilus-open-terminal/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
 RDEPEND="
@@ -28,7 +28,9 @@ DEPEND="${RDEPEND}
 
 DOCS="AUTHORS ChangeLog INSTALL NEWS README TODO"
 
-G2CONF="${G2CONF} --disable-static"
+pkg_setup() {
+	G2CONF="${G2CONF} --disable-static"
+}
 
 src_prepare() {
 	gnome2_src_prepare
@@ -38,4 +40,11 @@ src_prepare() {
 
 	# Fix intltoolize broken file, see upstream #577133
 	sed "s:'\^\$\$lang\$\$':\^\$\$lang\$\$:g" -i po/Makefile.in.in || die "sed failed"
+}
+
+src_install() {
+	gnome2_src_install
+
+	# Nautilus does not need *.la files to load extensions
+	find "${D}" -name "*.la" -delete || die "remove of *.la files failed"
 }
