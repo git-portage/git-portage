@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/amanda
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.62 2009/11/22 10:05:40 robbat2 Exp $
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.63 2010/01/17 04:28:13 robbat2 Exp $
+
+  17 Jan 2010; Robin H. Johnson <robbat2@gentoo.org> amanda-2.6.1_p2.ebuild:
+  If installing from a binpkg, then ${T} does not exist, so look at the
+  just-installed copy of the env.d file.
 
   22 Nov 2009; Robin H. Johnson <robbat2@gentoo.org> -amanda-2.4.5.ebuild,
   -amanda-2.4.5_p1.ebuild, -files/amanda-2.4.5-4tb-holding-disk.patch,
