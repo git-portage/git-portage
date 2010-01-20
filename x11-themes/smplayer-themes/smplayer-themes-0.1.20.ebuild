@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/smplayer-themes/Attic/smplayer-themes-0.1.17.ebuild,v 1.1 2008/10/20 21:17:07 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/smplayer-themes/Attic/smplayer-themes-0.1.20.ebuild,v 1.1 2010/01/20 18:43:12 yngwin Exp $
 
 DESCRIPTION="Icon themes for smplayer"
 HOMEPAGE="http://smplayer.sourceforge.net/"
@@ -21,5 +21,5 @@ src_compile() {
 src_install() {
 	insinto /usr/share/smplayer
 	doins -r themes || die "Failed to install themes"
-	dodoc Changelog README.txt
+	dodoc Changelog README.txt || die
 }
