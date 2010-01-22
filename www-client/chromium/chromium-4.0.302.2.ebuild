@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-4.0.260.0.ebuild,v 1.5 2010/01/13 12:15:45 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-4.0.302.2.ebuild,v 1.1 2010/01/22 21:38:44 phajdan.jr Exp $
 
 EAPI="2"
 inherit eutils multilib toolchain-funcs
@@ -12,7 +12,7 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="+ffmpeg"
 
 RDEPEND="app-arch/bzip2
@@ -39,8 +39,6 @@ DEPEND="${RDEPEND}
 	>=dev-util/gperf-3.0.3
 	>=dev-util/pkgconfig-0.23"
 
-export CHROMIUM_HOME=/usr/$(get_libdir)/chromium-browser
-
 src_prepare() {
 	# Gentoo uses .kde4, not .kde
 	sed -e 's/\.kde/.kde4/' -i net/proxy/proxy_config_service_linux.cc \
@@ -49,8 +47,6 @@ src_prepare() {
 	sed -i "s/'-Werror'/''/" build/common.gypi || die "Werror sed failed"
 	# Prevent automatic -march=pentium4 -msse2 enabling on x86, http://crbug.com/9007
 	epatch "${FILESDIR}"/${PN}-drop_sse2.patch
-	# Add configuration flag to use system libevent
-	epatch "${FILESDIR}"/${PN}-use_system_libevent-1.4.13.patch
 
 	# Disable prefixing to allow linking against system zlib
 	sed -e '/^#include "mozzconf.h"$/d' \
@@ -59,6 +55,8 @@ src_prepare() {
 }
 
 src_configure() {
+	export CHROMIUM_HOME=/usr/$(get_libdir)/chromium-browser
+
 	# CFLAGS/LDFLAGS
 	mkdir -p "${S}"/.gyp
 	cat << EOF > "${S}"/.gyp/include.gypi
@@ -79,9 +77,18 @@ EOF
 	# Sandbox paths
 	myconf="${myconf} -Dlinux_sandbox_path=${CHROMIUM_HOME}/chrome_sandbox -Dlinux_sandbox_chrome_path=${CHROMIUM_HOME}/chrome"
 
-	if use amd64; then
+	if [[ "$ABI" == "amd64" ]] ; then
 		myconf="${myconf} -Dtarget_arch=x64"
 	fi
+
+	if [[ "$ABI" == "x86" ]] ; then
+		myconf="${myconf} -Dtarget_arch=ia32"
+	fi
+
+	if use arm; then
+		myconf="${myconf} -Dtarget_arch=arm -Ddisable_nacl=1 -Dv8_use_snapshot=false -Dlinux_use_tcmalloc=0"
+	fi
+
 	if [[ "$(gcc-major-version)$(gcc-minor-version)" == "44" ]]; then
 		myconf="${myconf} -Dno_strict_aliasing=1 -Dgcc_version=44"
 	fi
@@ -101,6 +108,7 @@ src_compile() {
 
 src_install() {
 	# Chromium does not have "install" target in the build system.
+	export CHROMIUM_HOME=/usr/$(get_libdir)/chromium-browser
 
 	dodir ${CHROMIUM_HOME}
 
