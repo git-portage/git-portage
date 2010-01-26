@@ -1,19 +1,20 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/oracle-instantclient-basic/Attic/oracle-instantclient-basic-11.2.0.1.ebuild,v 1.2 2009/12/31 10:48:40 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/oracle-instantclient-basic/Attic/oracle-instantclient-basic-11.2.0.0.2-r1.ebuild,v 1.1 2010/01/26 19:08:58 dertobi123 Exp $
 
 inherit eutils
 
-MY_P_x86="${PN/oracle-/}-linux32-${PV}"
-MY_PSDK_x86="${MY_P_x86/basic/sdk}"
+MY_PBASE_amd64="${PN/oracle-instantclient-/oracle-instantclient11.2-}-${PV}-1.x86_64"
+MY_P_amd64="${PN/oracle-instantclient-/oracle-instantclient11.2-}-${PV}-1.x86_64"
+MY_PSDK_amd64="${MY_PBASE_amd64/basic/devel}"
 
 DESCRIPTION="Oracle 11g client installation for Linux with SDK"
 HOMEPAGE="http://www.oracle.com/technology/tech/oci/instantclient/index.html"
-SRC_URI="x86? ( ${MY_P_x86}.zip ${MY_PSDK_x86}.zip )"
+SRC_URI="amd64? ( ${MY_P_amd64}.zip ${MY_PSDK_amd64}.zip )"
 
 LICENSE="OTN"
 SLOT="0"
-KEYWORDS="-* ~x86"
+KEYWORDS="-* ~amd64"
 RESTRICT="fetch"
 IUSE=""
 
@@ -62,17 +63,19 @@ src_install() {
 	dodir /usr/$(get_libdir)/oracle/${PV}/client/lib
 	cd "${S}"/instantclient_11_2
 	insinto /usr/$(get_libdir)/oracle/${PV}/client/lib
-	doins *.jar *.so *.so.11.2
+	doins *.jar *.so *.so.11.1
 
 	# fixes symlinks
-	dosym /usr/$(get_libdir)/oracle/${PV}/client/lib/libocci.so.11.2 /usr/$(get_libdir)/oracle/${PV}/client/lib/libocci.so
-	dosym /usr/$(get_libdir)/oracle/${PV}/client/lib/libclntsh.so.11.2 /usr/$(get_libdir)/oracle/${PV}/client/lib/libclntsh.so
+	dosym /usr/$(get_libdir)/oracle/${PV}/client/lib/libocci.so.11.1 /usr/$(get_libdir)/oracle/${PV}/client/lib/libocci.so
+	dosym /usr/$(get_libdir)/oracle/${PV}/client/lib/libclntsh.so.11.1 /usr/$(get_libdir)/oracle/${PV}/client/lib/libclntsh.so
 	dosym /usr/$(get_libdir)/oracle/${PV}/client/include /usr/$(get_libdir)/oracle/${PV}/client/rdbms/public
 
 	# includes
 	dodir /usr/$(get_libdir)/oracle/${PV}/client/include
 	insinto /usr/$(get_libdir)/oracle/${PV}/client/include
 	cd "${S}"/instantclient_11_2/sdk/include
+	# Remove ldap.h, #299562
+	rm ldap.h || die "rm failed"
 	doins *.h
 	# link to original location
 	dodir /usr/include/oracle/${PV}/
