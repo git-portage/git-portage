@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-5.5.2.7.ebuild,v 1.1 2010/01/26 19:40:31 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-5.5.2.7.ebuild,v 1.2 2010/01/27 16:47:05 dertobi123 Exp $
 
 inherit versionator multilib eutils
 
@@ -100,8 +100,9 @@ src_install() {
 	echo 'PATH="/opt/tivoli/tsm/client/admin/bin:/opt/tivoli/tsm/client/ba/bin"' >> ${ENV_FILE}
 	echo 'ROOTPATH="/opt/tivoli/tsm/client/admin/bin:/opt/tivoli/tsm/client/ba/bin"' >> ${ENV_FILE}
 
-	insinto /etc/conf.d && newins "${FILESDIR}/dsmc.conf.d" dsmc
-	exeinto /etc/init.d && newexe "${FILESDIR}/dsmc.init.d" dsmc
+	newconfd "${FILESDIR}/dsmc.conf.d" dsmc
+	newinitd "${FILESDIR}/dsmc.init.d" dsmc
+	newinitd "${FILESDIR}/dsmcad.init.d" dsmcad
 
 	elog
 	elog "Note that you have to be either root or member of the group tsm to be able to use the"
