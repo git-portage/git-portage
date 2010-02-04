@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus/Attic/ibus-1.2.0.20091204.ebuild,v 1.1 2009/12/05 02:07:56 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus/Attic/ibus-1.2.99.20100202.ebuild,v 1.1 2010/02/04 11:15:24 matsuu Exp $
 
 EAPI="1"
 inherit eutils gnome2-utils multilib python
@@ -23,6 +23,7 @@ RDEPEND=">=dev-libs/glib-2.18
 	x11-libs/libX11
 	>=dev-lang/python-2.5
 	>=dev-python/pygobject-2.14
+	dev-python/notify-python
 	nls? ( virtual/libintl )"
 DEPEND="${RDEPEND}
 	>=dev-lang/perl-5.8.1
@@ -34,6 +35,8 @@ RDEPEND="${RDEPEND}
 	dev-python/pygtk
 	>=dev-python/dbus-python-0.83
 	dev-python/pyxdg"
+
+RESTRICT="test"
 
 pkg_setup() {
 	# An arch specific config directory is used on multilib systems
@@ -60,9 +63,9 @@ src_install() {
 	emake DESTDIR="${D}" install || die
 
 	# bug 289547
-	keepdir /usr/share/ibus/{engine,icons}
+	keepdir /usr/share/ibus/{engine,icons} || die
 
-	dodoc AUTHORS ChangeLog NEWS README
+	dodoc AUTHORS ChangeLog NEWS README || die
 }
 
 pkg_postinst() {
