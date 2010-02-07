@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/cbflib/Attic/cbflib-0.8.1-r4.ebuild,v 1.3 2010/02/06 13:45:11 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/cbflib/Attic/cbflib-0.8.1-r6.ebuild,v 1.1 2010/02/07 21:01:56 jlec Exp $
 
 EAPI="3"
 
@@ -29,9 +29,8 @@ IUSE=""
 S="${WORKDIR}/${MY_P1}"
 
 src_prepare(){
-	cp Makefile_LINUX_gcc42 Makefile
-
 	epatch "${FILESDIR}"/${PV}-Makefile.patch
+	cp Makefile_LINUX_gcc42 Makefile
 
 	append-fflags -fno-range-check
 	append-cflags -D_USE_XOPEN_EXTENDED
@@ -44,13 +43,11 @@ src_prepare(){
 		-e "s:^F90C.*$:F90C = $(tc-getFC):" \
 		-e "s:^F90FLAGS.*$:F90FLAGS = ${FFLAGS}:" \
 		-e "s:^SOLDFLAGS.*$:SOLDFLAGS = -shared ${LDFLAGS}:g" \
-		-e "s: /bin: ${EPREFIX}/bin:g" \
-		-e "s:/usr:${EPREFIX}/usr:g" \
 		-i Makefile || die
 }
 
 src_compile() {
-	emake shared || die
+	emake -j1 shared || die
 }
 
 # test app is borked in this version
