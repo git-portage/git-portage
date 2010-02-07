@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-0.9.26-r1.ebuild,v 1.4 2010/01/13 08:41:22 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-0.9.26-r2.ebuild,v 1.1 2010/02/07 20:37:41 bangert Exp $
 
 EAPI="2"
 
@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="kde gnome"
 
 DEPEND="dev-lang/python
-	net-misc/rsync[xattr]
+	net-misc/rsync[xattr,acl]
 	kde? (
 		>=kde-base/kdelibs-4
 		kde-base/pykde4

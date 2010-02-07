@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/backintime
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/ChangeLog,v 1.5 2010/01/13 08:41:22 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/ChangeLog,v 1.6 2010/02/07 20:37:41 bangert Exp $
+
+*backintime-0.9.26-r2 (07 Feb 2010)
+
+  07 Feb 2010; Thilo Bangert <bangert@gentoo.org>
+  -backintime-0.9.26-r1.ebuild, +backintime-0.9.26-r2.ebuild:
+  add acl use dep to rsync (bug #303639)
 
   13 Jan 2010; Thilo Bangert <bangert@gentoo.org>
   backintime-0.9.26-r1.ebuild,
