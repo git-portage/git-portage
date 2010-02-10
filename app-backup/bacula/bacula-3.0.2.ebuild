@@ -1,11 +1,12 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-3.0.2.ebuild,v 1.4 2009/12/26 17:22:56 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-3.0.2.ebuild,v 1.5 2010/02/10 01:24:19 dirtyepic Exp $
 
 EAPI="2"
-inherit eutils
+WX_GTK_VER=2.6
+inherit eutils wxwidgets
 
-IUSE="bacula-clientonly bacula-console bacula-nodir bacula-nosd gnome ipv6 logwatch mysql postgres python qt4 readline sqlite +sqlite3 ssl static tcpd wxwindows X"
+IUSE="bacula-clientonly bacula-console bacula-nodir bacula-nosd gnome ipv6 logwatch mysql postgres python qt4 readline sqlite +sqlite3 ssl static tcpd wxwidgets X"
 # bacula-web bimagemgr brestore bweb
 KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
 
@@ -40,7 +41,7 @@ DEPEND="
 		virtual/mta
 	)
 	bacula-console? (
-		wxwindows? ( =x11-libs/wxGTK-2.6* )
+		wxwidgets? ( x11-libs/wxGTK:2.6[X] )
 		qt4? (
 			x11-libs/qt-svg:4
 			>=x11-libs/qwt-5
@@ -174,7 +175,7 @@ src_configure() {
 			$(use_with X x) \
 			$(use_enable gnome) \
 			$(use_enable gnome tray-monitor) \
-			$(use_enable wxwindows bwx-console) \
+			$(use_enable wxwidgets bwx-console) \
 			$(use_enable qt4 bat) \
 			$(use_enable static static-cons)"
 	fi
@@ -331,7 +332,7 @@ src_install() {
 		rm -vf "${D}"/usr/share/man/man1/bacula-bgnome-console.1*
 		rm -vf "${D}"/usr/libexec/bacula/gconsole
 	fi
-	if ! ( use bacula-console && use wxwindows ); then
+	if ! ( use bacula-console && use wxwidgets ); then
 		rm -vf "${D}"/usr/share/man/man1/bacula-bwxconsole.1*
 	fi
 	if use bacula-clientonly; then
