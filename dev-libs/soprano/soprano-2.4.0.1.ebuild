@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/soprano/Attic/soprano-2.4.0-r1.ebuild,v 1.1 2010/02/11 12:47:53 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/soprano/Attic/soprano-2.4.0.1.ebuild,v 1.1 2010/02/11 13:10:23 ssuominen Exp $
 
 EAPI="2"
 
@@ -36,8 +36,6 @@ RDEPEND="${COMMON_DEPEND}
 "
 
 CMAKE_IN_SOURCE_BUILD="1"
-
-PATCHES=( "${FILESDIR}/${P}-socketMutex.unlock.patch" )
 
 pkg_setup() {
 	java-pkg-opt-2_pkg_setup
