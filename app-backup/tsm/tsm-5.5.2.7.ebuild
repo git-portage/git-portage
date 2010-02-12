@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-5.5.2.7.ebuild,v 1.2 2010/01/27 16:47:05 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-5.5.2.7.ebuild,v 1.3 2010/02/12 22:27:57 flameeyes Exp $
 
 inherit versionator multilib eutils
 
@@ -18,7 +18,7 @@ BASE_URI="ftp://ftp.software.ibm.com/storage/tivoli-storage-management/patches/c
 SRC_TAR="${MY_PVR_ALLDOTS}-TIV-TSMBAC-LinuxX86.tar"
 SRC_URI="${BASE_URI}${SRC_TAR}"
 
-RESTRICT="strip binchecks" # Breaks libPiIMG.ss and libPiSNAP.so
+RESTRICT="strip" # Breaks libPiIMG.ss and libPiSNAP.so
 LICENSE="as-is Apache-1.1 JDOM gSOAP"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
