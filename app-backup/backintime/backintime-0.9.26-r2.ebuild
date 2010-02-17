@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-0.9.26-r2.ebuild,v 1.1 2010/02/07 20:37:41 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-0.9.26-r2.ebuild,v 1.2 2010/02/17 19:35:48 bangert Exp $
 
 EAPI="2"
 
@@ -39,7 +39,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/backintime-0.9.26-dont-install-license.diff
 	#fix doc install location
 	sed -i "s:/doc/kde4/HTML/:/doc/HTML/:g" kde4/Makefile.template
-	sed -i "s:/doc/backintime:/doc/${P}:g" common/Makefile.template
+	sed -i "s:/doc/backintime:/doc/${PF}:g" common/Makefile.template
 }
 
 src_configure() {
