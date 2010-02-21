@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.6.2.2.ebuild,v 1.1 2010/02/02 22:48:08 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.6.2.4.ebuild,v 1.1 2010/02/21 20:39:54 chainsaw Exp $
 
 EAPI=1
 inherit eutils autotools linux-info
@@ -104,7 +104,22 @@ src_unpack() {
 	# sprinkle some plus signs in strategic locations for maximum parallel make happiness
 	# https://issues.asterisk.org/view.php?id=16489
 	#
-	epatch "${FILESDIR}"/1.6.2/${PN}-1.6.2.1-parallel-make.patch || die "patch failed"
+	epatch "${FILESDIR}"/1.6.2/${PN}-1.6.2.2-parallel-make.patch || die "patch failed"
+
+	#
+	# do not segfault when asked to restart gracefully
+	# https://issues.asterisk.org/view.php?id=16062
+	# https://issues.asterisk.org/view.php?id=16470
+	#
+	epatch "${FILESDIR}"/1.6.2/${PN}-1.6.2.2-graceful-restart-segfault.patch
+
+	#
+	# add special playback with fax detection
+	# Code by NewMan telecom, patch scavenged
+	# by Cory Coager
+	# http://bugs.gentoo.org/show_bug.cgi?id=298328
+	#
+	epatch "${FILESDIR}"/1.6.2/${PN}-1.6.2.2-nv-faxdetect.patch
 
 	AT_M4DIR=autoconf eautoreconf
 
