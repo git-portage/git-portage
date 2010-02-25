@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/maildrop/Attic/maildrop-2.1.0.ebuild,v 1.2 2009/06/14 21:02:09 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/maildrop/Attic/maildrop-2.4.2.ebuild,v 1.1 2010/02/25 08:28:21 tove Exp $
 
 EAPI=2
 
@@ -20,6 +20,7 @@ IUSE="berkdb debug fam gdbm ldap mysql postgres authlib"
 DEPEND="!mail-mta/courier
 	net-mail/mailbase
 	dev-libs/libpcre
+	net-dns/libidn
 	gdbm?     ( >=sys-libs/gdbm-1.8.0 )
 	mysql?    ( net-libs/courier-authlib )
 	postgres? ( net-libs/courier-authlib )
@@ -38,13 +39,13 @@ PROVIDE="virtual/mda"
 S=${WORKDIR}/${P%%_pre}
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-2.0.4-makedat.patch
+#	epatch "${FILESDIR}"/${PN}-2.0.4-makedat.patch
 
 	# Prefer gdbm over berkdb
 	if use gdbm ; then
 		use berkdb && elog "Both gdbm and berkdb selected. Using gdbm."
 	elif use berkdb ; then
-			epatch "${FILESDIR}"/${P}-db4.patch
+		epatch "${FILESDIR}"/${PN}-2.2.0-db4.patch
 	fi
 
 	if ! use fam ; then
@@ -82,7 +83,6 @@ src_configure() {
 		--disable-tempdir \
 		--enable-syslog=1 \
 		--enable-use-flock=1 \
-		--enable-maildirquota \
 		--enable-use-dotlock=1 \
 		--enable-restrict-trusted=1 \
 		--enable-trusted-users="${mytrustedusers}" \
