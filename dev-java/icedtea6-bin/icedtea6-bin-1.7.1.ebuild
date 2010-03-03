@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea6-bin/Attic/icedtea6-bin-1.7.ebuild,v 1.1 2010/02/01 09:13:41 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea6-bin/Attic/icedtea6-bin-1.7.1.ebuild,v 1.1 2010/03/03 09:44:45 caster Exp $
 
 EAPI="1"
 
@@ -8,11 +8,9 @@ inherit java-vm-2
 
 dist="mirror://gentoo/"
 DESCRIPTION="A Gentoo-made binary build of the icedtea6 JDK"
-TARBALL_VERSION="${PVR}"
-SRC_URI="amd64? ( ${dist}/${PN}-core-${TARBALL_VERSION}-amd64.tar.bz2
-		${dist}/${PN}-jpeg8-${TARBALL_VERSION}-amd64.tar.bz2 )
-	x86? ( ${dist}/${PN}-core-${TARBALL_VERSION}-x86.tar.bz2
-		${dist}/${PN}-jpeg8-${TARBALL_VERSION}-x86.tar.bz2 )
+TARBALL_VERSION="${PV}"
+SRC_URI="amd64? ( ${dist}/${PN}-core-${TARBALL_VERSION}-amd64.tar.bz2 )
+	x86? ( ${dist}/${PN}-core-${TARBALL_VERSION}-x86.tar.bz2 )
 	doc? ( ${dist}/${PN}-doc-${TARBALL_VERSION}.tar.bz2 )
 	examples? (
 		amd64? ( ${dist}/${PN}-examples-${TARBALL_VERSION}-amd64.tar.bz2 )
@@ -37,7 +35,7 @@ S="${WORKDIR}/${PN}-${TARBALL_VERSION}"
 RDEPEND=">=sys-devel/gcc-4.3
 	>=sys-libs/glibc-2.9
 	>=media-libs/giflib-4.1.6-r1
-	>=media-libs/jpeg-7
+	>=media-libs/jpeg-8
 	>=media-libs/libpng-1.2.38
 	>=sys-libs/zlib-1.2.3-r1
 	alsa? ( >=media-libs/alsa-lib-1.0.20 )
@@ -63,21 +61,6 @@ DEPEND=""
 QA_EXECSTACK_amd64="opt/${P}/jre/lib/amd64/server/libjvm.so"
 QA_EXECSTACK_x86="opt/${P}/jre/lib/i386/server/libjvm.so
 	opt/${P}/jre/lib/i386/client/libjvm.so"
-
-src_unpack() {
-	unpack ${A}
-
-	if has_version '>=media-libs/jpeg-8'; then
-		einfo "Installing jpeg-8 ABI version"
-		local arch=${ARCH}
-		use x86 && arch=i386
-		mv -v ${PN}-jpeg8/jre/lib/${arch}/*.so ${P}/jre/lib/${arch} || die
-	else
-		elog "Installing jpeg-7 ABI version"
-		elog "You will have to remerge icedtea6-bin after upgrading to jpeg-8"
-		elog "Note that revdep-rebuild will not do it automatically due to the mask file."
-	fi
-}
 
 src_install() {
 	local dest="/opt/${P}"
