@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/drupal/Attic/drupal-5.21.ebuild,v 1.1 2009/12/18 20:16:07 alexxy Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/drupal/Attic/drupal-5.22.ebuild,v 1.1 2010/03/05 13:03:22 a3li Exp $
 
 inherit webapp eutils depend.php
 
@@ -48,4 +48,12 @@ src_install() {
 	webapp_postinst_txt en "${FILESDIR}"/postinstall-en.txt
 
 	webapp_src_install
+}
+
+pkg_postinst() {
+	ewarn
+	ewarn "SECURITY NOTICE"
+	ewarn "If you plan on using SSL on your Drupal site, please consult the postinstall information:"
+	ewarn "\t# webapp-config --show-postinst ${PN} ${PV}"
+	ewarn
 }
