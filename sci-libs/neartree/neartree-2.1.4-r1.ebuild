@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/neartree/Attic/neartree-2.1.4-r1.ebuild,v 1.2 2010/03/07 18:52:01 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/neartree/Attic/neartree-2.1.4-r1.ebuild,v 1.1 2010/03/07 18:48:36 jlec Exp $
 
 EAPI="3"
 
@@ -50,7 +50,7 @@ src_install() {
 	dosym libCNearTree.so.${PV} /usr/$(get_libdir)/libCNearTree.so || die
 
 	insinto /usr/include
-	doins CNearTree.h rhrand.h || die
+	doins CNearTree.h || die
 
 	dodoc README_NearTree.txt || die
 	dohtml *.html || die
