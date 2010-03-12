@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/unbound/Attic/unbound-1.4.0.ebuild,v 1.1 2009/11/26 15:55:56 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/unbound/Attic/unbound-1.4.3.ebuild,v 1.1 2010/03/12 12:46:45 matsuu Exp $
 
 EAPI="2"
 
@@ -16,8 +16,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug libevent python static test threads"
 
 RDEPEND=">=dev-libs/openssl-0.9.8
-	>=net-libs/ldns-1.4
+	>=net-libs/ldns-1.4[ssl]
 	libevent? ( dev-libs/libevent )"
+#	gost? ( >=dev-libs/openssl-1 )
+
 DEPEND="${RDEPEND}
 	python? ( dev-lang/swig )
 	test? (
@@ -42,6 +44,8 @@ src_configure() {
 		$(use_enable debug) \
 		$(use_enable debug lock-checks) \
 		$(use_enable debug alloc-checks) \
+		$(use_enable debug alloc-lite) \
+		$(use_enable debug alloc-nonregional) \
 		$(use_enable static static-exe) \
 		$(use_with libevent) \
 		$(use_with threads pthreads) \
@@ -51,6 +55,12 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
+
+	# bug #299016
+	if use python ; then
+		rm "${D}/usr/$(get_libdir)"/python*/site-packages/_unbound.*a || die
+	fi
+
 	newinitd "${FILESDIR}/unbound.initd" unbound || die "newinitd failed"
 	newconfd "${FILESDIR}/unbound.confd" unbound || die "newconfd failed"
 
