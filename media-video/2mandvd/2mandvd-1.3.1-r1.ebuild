@@ -1,10 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/2mandvd/Attic/2mandvd-1.2.ebuild,v 1.3 2010/02/21 10:31:04 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/2mandvd/Attic/2mandvd-1.3.1-r1.ebuild,v 1.1 2010/03/13 14:43:04 hwoarang Exp $
 
 EAPI="2"
+LANGS="de en he it pl pt ru"
 
-inherit qt4
+inherit qt4-r2
 
 MY_PN="2ManDVD"
 
@@ -14,10 +15,11 @@ SRC_URI="http://download.tuxfamily.org/${PN}/${MY_PN}-${PV}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-DEPEND="media-video/dvdauthor
+DEPEND="dev-lang/perl
+	media-video/dvdauthor
 	media-video/ffmpegthumbnailer
 	media-fonts/dejavu
 	media-sound/sox
@@ -32,12 +34,6 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_PN}"
 
-LANGS="de en he it pl pt ru"
-
-for x in ${LANGS}; do
-	IUSE="${IUSE} linguas_${x}"
-done
-
 src_prepare() {
 	# fix installation path
 	for file in mainfrm.cpp media_browser.cpp rendering.cpp; do
@@ -48,7 +44,7 @@ src_prepare() {
 	sed -i "s:qApp->applicationDirPath():\"/usr/share/${PN}/\":" \
 		mainfrm.cpp || die "sed failed"
 
-	qt4_src_prepare
+	qt4-r2_src_prepare
 }
 
 src_configure() {
@@ -61,6 +57,8 @@ src_install() {
 	insinto /usr/share/${PN}/
 	doins -r Bibliotheque || die "failed to install Bibliotheque"
 	doins -r Interface || die "failed to install Interface"
+	#bug 305625
+	doins fake.pl || "failed to install fake.pl"
 	doicon Interface/mandvdico.png || die "doicon failed"
 	# Desktop icon
 	make_desktop_entry 2ManDVD 2ManDVD mandvdico "Qt;AudioVideo;Video" \
@@ -71,4 +69,5 @@ src_install() {
 			[[ ${lang} == ${x} ]] && doins ${PN}_${x}.qm
 		done
 	done
+	[[ -z ${LINGUAS} ]] && doins ${PN}_en.qm
 }

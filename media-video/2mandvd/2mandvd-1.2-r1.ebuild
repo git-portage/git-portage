@@ -1,11 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/2mandvd/Attic/2mandvd-1.3.1.ebuild,v 1.1 2010/02/26 18:02:39 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/2mandvd/Attic/2mandvd-1.2-r1.ebuild,v 1.1 2010/03/13 14:43:04 hwoarang Exp $
 
 EAPI="2"
-LANGS="de en he it pl pt ru"
 
-inherit qt4-r2
+inherit qt4
 
 MY_PN="2ManDVD"
 
@@ -18,7 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-DEPEND="media-video/dvdauthor
+DEPEND="dev-lang/perl
+	media-video/dvdauthor
 	media-video/ffmpegthumbnailer
 	media-fonts/dejavu
 	media-sound/sox
@@ -32,6 +32,12 @@ DEPEND="media-video/dvdauthor
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_PN}"
+
+LANGS="de en he it pl pt ru"
+
+for x in ${LANGS}; do
+	IUSE="${IUSE} linguas_${x}"
+done
 
 src_prepare() {
 	# fix installation path
@@ -56,6 +62,8 @@ src_install() {
 	insinto /usr/share/${PN}/
 	doins -r Bibliotheque || die "failed to install Bibliotheque"
 	doins -r Interface || die "failed to install Interface"
+	#bug 305625
+	doins fake.pl || die "failed to install fake.pl"
 	doicon Interface/mandvdico.png || die "doicon failed"
 	# Desktop icon
 	make_desktop_entry 2ManDVD 2ManDVD mandvdico "Qt;AudioVideo;Video" \
@@ -66,4 +74,5 @@ src_install() {
 			[[ ${lang} == ${x} ]] && doins ${PN}_${x}.qm
 		done
 	done
+	[[ -z ${LINGUAS} ]] && doins ${PN}_en.qm
 }
