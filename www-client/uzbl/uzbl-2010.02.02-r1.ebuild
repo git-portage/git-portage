@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/uzbl/Attic/uzbl-2010.02.02.ebuild,v 1.1 2010/02/03 09:35:13 wired Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/uzbl/Attic/uzbl-2010.02.02-r1.ebuild,v 1.1 2010/03/14 14:37:35 wired Exp $
 
 EAPI="2"
 
@@ -82,7 +82,11 @@ src_prepare() {
 	S=$(pwd)
 
 	# patch Makefile to make it more sane
-	epatch "${FILESDIR}"/"${P}"-makefile-cleanup.patch
+	epatch "${FILESDIR}"/"${PN}"-makefile-docdir.patch
+
+	# remove -ggdb
+	sed -i "s/-ggdb //g" Makefile ||
+		die "-ggdb removal sed failed"
 
 	# adjust path in default config file to /usr/share
 	sed -i "s:/usr/local/share/uzbl:/usr/share/uzbl:g" \
@@ -99,8 +103,6 @@ src_install() {
 	use browser && targets="${targets} install-uzbl-browser"
 	use browser && use tabbed && targets="${targets} install-uzbl-tabbed"
 
-	emake DESTDIR="${D}" PREFIX="/usr" ${targets} || die "Installation failed"
-
-	# Install the docs in /usr/share/doc.
-	dodoc AUTHORS README docs/* || die "docs install failed"
+	emake DESTDIR="${D}" PREFIX="/usr" DOCDIR="${D}/usr/share/doc/${PF}" ${targets} ||
+		die "Installation failed"
 }
