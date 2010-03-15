@@ -1,7 +1,11 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/DateTime-Format-Builder/Attic/DateTime-Format-Builder-0.7901.ebuild,v 1.4 2009/05/30 09:07:52 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/DateTime-Format-Builder/Attic/DateTime-Format-Builder-0.79.01.ebuild,v 1.1 2010/03/15 17:53:48 tove Exp $
 
+inherit versionator
+
+MY_P=${PN}-$(delete_version_separator 2)
+S=${WORKDIR}/${MY_P}
 MODULE_AUTHOR="DROLSKY"
 
 inherit perl-module
