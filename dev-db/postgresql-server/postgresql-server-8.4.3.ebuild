@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql-server/Attic/postgresql-server-8.5_alpha3.ebuild,v 1.3 2010/02/21 15:59:55 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql-server/Attic/postgresql-server-8.4.3.ebuild,v 1.1 2010/03/16 22:50:49 patrick Exp $
 
 EAPI="2"
 PYTHON_DEPEND="python? 2"
@@ -8,7 +8,6 @@ PYTHON_DEPEND="python? 2"
 # weird test failures.
 RESTRICT="test"
 
-WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="none"
 inherit autotools eutils multilib python toolchain-funcs versionator
 
@@ -16,11 +15,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-
 
 DESCRIPTION="PostgreSQL server"
 HOMEPAGE="http://www.postgresql.org/"
-
-MY_PV=${PV/_/}
-SRC_URI="mirror://postgresql/source/${MY_PV}/postgresql-${MY_PV}.tar.bz2"
-S=${WORKDIR}/postgresql-${MY_PV}
-
+SRC_URI="mirror://postgresql/source/v${PV}/postgresql-${PV}.tar.bz2"
 LICENSE="POSTGRESQL"
 SLOT="$(get_version_component_range 1-2)"
 IUSE_LINGUAS="
@@ -36,7 +31,7 @@ wanted_languages() {
 	done
 }
 
-RDEPEND="~dev-db/postgresql-base-${PV}:${SLOT}[pg_legacytimestamp=]
+RDEPEND="~dev-db/postgresql-base-${PV}:${SLOT}[pg_legacytimestamp=,nls=]
 	perl? ( >=dev-lang/perl-5.6.1-r2 )
 	python? ( dev-python/egenix-mx-base )
 	selinux? ( sec-policy/selinux-postgresql )
@@ -46,7 +41,9 @@ RDEPEND="~dev-db/postgresql-base-${PV}:${SLOT}[pg_legacytimestamp=]
 DEPEND="${RDEPEND}
 	sys-devel/flex
 	xml? ( dev-util/pkgconfig )"
-PDEPEND="doc? ( dev-db/postgresql-docs:${SLOT} )"
+PDEPEND="doc? ( ~dev-db/postgresql-docs-${PV} )"
+
+S="${WORKDIR}/postgresql-${PV}"
 
 pkg_setup() {
 	enewgroup postgres 70
@@ -59,10 +56,9 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}/postgresql-${SLOT}-common.patch" \
-		"${FILESDIR}/postgresql-${SLOT}-server.patch" \
-		"${FILESDIR}/postgresql-${SLOT}-makefile.patch"
+		"${FILESDIR}/postgresql-${SLOT}-server.patch"
 
-	if hasq test ${FEATURES}; then
+	if use test; then
 		sed -e "s|/no/such/location|${S}/src/test/regress/tmp_check/no/such/location|g" -i src/test/regress/{input,output}/tablespace.source
 	else
 		echo "all install:" > "${S}/src/test/regress/GNUmakefile"
@@ -77,7 +73,6 @@ src_configure() {
 
 	# eval is needed to get along with pg_config quotation of space-rich entities.
 	eval econf "$(/usr/$(get_libdir)/postgresql-${SLOT}/bin/pg_config --configure)" \
-		--disable-thread-safety \
 		$(use_with perl) \
 		$(use_with python) \
 		$(use_with tcl) \
@@ -87,7 +82,7 @@ src_configure() {
 		--with-system-tzdata="/usr/share/zoneinfo" \
 		--with-includes="/usr/include/postgresql-${SLOT}/" \
 		--with-libraries="/usr/$(get_libdir)/postgresql-${SLOT}/$(get_libdir)" \
-		"$(built_with_use ~dev-db/postgresql-base-${PV} nls && use_enable nls nls "$(wanted_languages)")"
+		"$(has_version ~dev-db/postgresql-base-${PV}[nls] && use_enable nls nls "$(wanted_languages)")"
 }
 
 src_compile() {
@@ -162,7 +157,61 @@ pkg_postrm() {
 }
 
 pkg_config() {
+	[[ -f /etc/conf.d/postgresql-${SLOT} ]] && source /etc/conf.d/postgresql-${SLOT}
 	[[ -z "${PGDATA}" ]] && PGDATA="/var/lib/postgresql/${SLOT}/data"
+
+	if [ -z "${PG_INITDB_OPTS}" ]; then
+		if [ -f /etc/env.d/02locale ]; then
+			source /etc/env.d/02locale
+			[ -n "${LC_ALL}" ] &&
+				PG_INITDB_OPTS="--locale=$LC_ALL"
+			[ -n "${LC_COLLATE}" -a "${LC_COLLATE}" != "${LC_ALL}" ] &&
+				PG_INITDB_OPTS="${PG_INITDB_OPTS} --lc-collate=${LC_COLLATE}"
+			[ -n "${LC_CTYPE}" -a "${LC_CTYPE}" != "${LC_ALL}" ] &&
+				PG_INITDB_OPTS="${PG_INITDB_OPTS} --lc-ctype=${LC_CTYPE}"
+			[ -n "${LC_MESSAGES}" -a "${LC_MESSAGES}" != "${LC_ALL}" ] &&
+				PG_INITDB_OPTS="${PG_INITDB_OPTS} --lc-messages=${LC_MESSAGES}"
+			[ -n "${LC_MONETARY}" -a "${LC_MONETARY}" != "${LC_ALL}" ] &&
+				PG_INITDB_OPTS="${PG_INITDB_OPTS} --lc-monetary=${LC_MONETARY}"
+			[ -n "${LC_NUMERIC}" -a "${LC_MONETARY}" != "${LC_ALL}" ] &&
+				PG_INITDB_OPTS="${PG_INITDB_OPTS} --lc-numeric=${LC_NUMERIC}"
+			[ -n "${LC_TIME}" -a "${LC_TIME}" != "${LC_ALL}" ] &&
+				PG_INITDB_OPTS="${PG_INITDB_OPTS} --lc-time=${LC_TIME}"
+		fi
+		if [ -n "$PG_INITDB_OPTS" ]; then
+			einfo "Locale info set from /etc/env.d/02locale"
+		else
+			eerror "You must set PG_INITDB_OPTS in /etc/conf.d/postgresql-${SLOT}"
+			eerror "    More knfo: http://www.postgresql.org/docs/${SLOT}/static/locale.html"
+			eerror "Or, you must localize this system."
+			eerror "    More info: http://www.gentoo.org/doc/en/guide-localization.xml"
+			die "No locale variables found."
+		fi
+	else
+		einfo "PG_INITDB_OPTS set in /etc/conf.d/postgresql-${SLOT}"
+	fi
+
+	# Matches C, POSIX, or locale codes as described in "locale -a"
+	# This could probably use a little work, but is sufficient.
+	MATCHSTRING="([cC]|[pP][oO][sS][iI][xX]|[a-z][a-z]_[A-Z][A-Z]\.[[:alnum:]_-]+)"
+	# Test that at the very least --locale is present as it sets the default
+	# locale and encoding to be used for the server. If not, check to make sure
+	# the other six variables are set.
+	if [[ $PG_INITDB_OPTS =~ .*--locale=$MATCHSTRING ]] || (
+			[[ "${PG_INITDB_OPTS}" =~ .*--lc-collate=$MATCHSTRING ]] &&
+			[[ "${PG_INITDB_OPTS}" =~ .*--lc-ctype=$MATCHSTRING ]] &&
+			[[ "${PG_INITDB_OPTS}" =~ .*--lc-messages=$MATCHSTRING ]] &&
+			[[ "${PG_INITDB_OPTS}" =~ .*--lc-monetary=$MATCHSTRING ]] &&
+			[[ "${PG_INITDB_OPTS}" =~ .*--lc-numeric=$MATCHSTRING ]] &&
+			[[ "${PG_INITDB_OPTS}" =~ .*--lc-time=$MATCHSTRING ]]
+		); then
+		einfo "Locale settings look okay."
+	else
+		eerror "PG_INITDB_OPTS was set in /etc/conf.d/postgresql-${SLOT}"
+		eerror "Or, locales were found in /etc/env.d/02locale"
+		eerror "But, a satisfying match was not found."
+		die "No locale information found or character set not specified."
+	fi
 
 	einfo "You can pass options to initdb by setting the PG_INITDB_OPTS variable."
 	einfo "More information can be found here:"
@@ -217,7 +266,7 @@ pkg_config() {
 				eerror "  - Set SKIP_SYSTEM_TESTS in case you want to ignore this test completely"
 				eerror "More information can be found here:"
 				eerror "  http://www.postgresql.org/docs/${SLOT}/static/kernel-resources.html"
-				die "system test failed"
+				die "System test failed."
 			fi
 		done
 		einfo "Passed."
