@@ -1,8 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/open-vm-tools-kmod/Attic/open-vm-tools-kmod-0.0.20091015.201664.ebuild,v 1.1 2009/10/29 14:02:43 vadimk Exp $
-
-#EAPI="2"
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/open-vm-tools-kmod/Attic/open-vm-tools-kmod-0.0.20100223.236320.ebuild,v 1.1 2010/03/16 16:15:37 vadimk Exp $
 
 inherit linux-mod versionator
 
@@ -33,14 +31,14 @@ pkg_setup() {
 	linux-mod_pkg_setup
 
 	VMWARE_MOD_DIR="modules/linux"
-	VMWARE_MODULE_LIST="pvscsi vmblock vmci vmhgfs vmsync vmmemctl vmxnet vmxnet3 vsock"
+	VMWARE_MODULE_LIST="pvscsi vmblock vmci vmhgfs vmsync vmmemctl vmxnet vsock"
 
 	MODULE_NAMES=""
 	BUILD_TARGETS="auto-build HEADER_DIR=${KERNEL_DIR}/include BUILD_DIR=${KV_OUT_DIR} OVT_SOURCE_DIR=${S}"
 
 	for mod in ${VMWARE_MODULE_LIST};
 	do
-		if [ "${mod}" == "vmxnet" -o "${mod}" == "vmxnet3" ];
+		if [ "${mod}" == "vmxnet" ];
 		then
 			MODTARGET="net"
 		else
@@ -48,4 +46,8 @@ pkg_setup() {
 		fi
 		MODULE_NAMES="${MODULE_NAMES} ${mod}(${MODTARGET}:${S}/${VMWARE_MOD_DIR}/${mod})"
 	done
+}
+pkg_postinst() {
+	linux-mod_pkg_postinst
+	elog "vmxnet3 for Linux is now upstream (as of Linux 2.6.32)"
 }
