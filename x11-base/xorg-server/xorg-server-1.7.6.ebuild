@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.7.5.902-r1.ebuild,v 1.1 2010/03/16 22:32:26 remi Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.7.6.ebuild,v 1.1 2010/03/17 15:35:54 scarabeus Exp $
 
 EAPI="2"
 
