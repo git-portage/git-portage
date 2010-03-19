@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-input-wacom/Attic/xf86-input-wacom-0.10.3.ebuild,v 1.1 2009/12/23 23:48:41 ikelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-input-wacom/Attic/xf86-input-wacom-0.10.5.ebuild,v 1.1 2010/03/19 13:22:49 ikelos Exp $
 
 EAPI="2"
 
@@ -8,9 +8,9 @@ inherit linux-info x-modular
 
 DESCRIPTION="Driver for Wacom tablets and drawing devices"
 LICENSE="GPL-2"
-EGIT_REPO_URI="git://anongit.freedesktop.org/~whot/xf86-input-wacom"
+EGIT_REPO_URI="git://linuxwacom.git.sourceforge.net/gitroot/linuxwacom/${PN}"
 [[ ${PV} != 9999* ]] && \
-	SRC_URI="http://people.freedesktop.org/~whot/${PN}/${P}.tar.bz2"
+	SRC_URI="mirror://sourceforge/linuxwacom/files/${PN}/${P}.tar.bz2"
 
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="hal debug"
@@ -31,6 +31,7 @@ pkg_setup() {
 
 src_install() {
 	x-modular_src_install
+	rm -r "${D}/usr/share/hal"
 
 	if use hal; then
 		insinto /usr/share/hal/fdi/policy/10osvendor
@@ -41,7 +42,8 @@ src_install() {
 pkg_postinst() {
 	x-modular_pkg_postinst
 
-	if ! linux_chkconfig_present TABLET_USB_WACOM \
+	if ! linux_config_exists \
+	|| ! linux_chkconfig_present TABLET_USB_WACOM \
 	|| ! linux_chkconfig_present INPUT_EVDEV; then
 		echo
 		ewarn "If you use a USB Wacom tablet, you need to enable support in your kernel"
