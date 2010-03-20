@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/java-gnome/Attic/java-gnome-4.0.13.ebuild,v 1.1 2009/08/27 19:19:12 ken69267 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/java-gnome/Attic/java-gnome-4.0.15.ebuild,v 1.1 2010/03/20 15:44:20 serkan Exp $
 
 EAPI=2
 JAVA_PKG_IUSE="doc examples source"
@@ -40,6 +40,10 @@ DEPEND="${RDEPEND}
 RESTRICT="test"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-docfix.patch
+}
 
 src_configure() {
 	# Handwritten in perl so not using econf
