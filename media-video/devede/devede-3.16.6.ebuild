@@ -1,8 +1,9 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/devede/Attic/devede-3.11b.ebuild,v 1.1 2008/09/08 04:47:43 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/devede/Attic/devede-3.16.6.ebuild,v 1.1 2010/03/20 20:27:25 spatz Exp $
 
-NEED_PYTHON=2.4
+EAPI=2
+PYTHON_DEPEND=2
 
 inherit multilib python
 
@@ -15,8 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="psyco"
 
-RDEPEND=">=x11-libs/gtk+-2.6
-	dev-python/pygtk
+RDEPEND=">=x11-libs/gtk+-2.16
+	>=dev-python/pygtk-2.16
 	>=media-video/mplayer-1.0_rc1
 	media-video/dvdauthor
 	media-video/vcdimager
@@ -25,6 +26,14 @@ RDEPEND=">=x11-libs/gtk+-2.6
 DEPEND=""
 
 S=${WORKDIR}/${P%*b}
+
+pkg_setup() {
+	python_set_active_version 2
+}
+
+src_prepare() {
+	python_convert_shebangs -r 2 .
+}
 
 src_install() {
 	./install.sh prefix="/usr" libdir="/usr/$(get_libdir)" \
