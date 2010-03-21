@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/ibm-powerpc-utils-papr/Attic/ibm-powerpc-utils-papr-1.0.4.ebuild,v 1.4 2010/01/18 14:53:01 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/ibm-powerpc-utils-papr/ibm-powerpc-utils-papr-1.1.6.ebuild,v 1.1 2010/03/21 19:19:40 josejx Exp $
 
 inherit eutils
 
@@ -14,31 +14,22 @@ S="${WORKDIR}/${MY_P}"
 
 SLOT="0"
 LICENSE="IBM"
-KEYWORDS="ppc ppc64"
+KEYWORDS="~ppc ~ppc64"
 IUSE=""
-RDEPEND=">=sys-apps/ibm-powerpc-utils-1.0.4
+RDEPEND=">=sys-apps/ibm-powerpc-utils-1.1.2
 	sys-libs/librtas
 	virtual/logger"
 
 src_unpack() {
 	unpack ${A}
-	epatch "${FILESDIR}"/ibm-powerpc-utils-papr-1.0.4-remove-doc.patch
-	epatch "${FILESDIR}"/ibm-powerpc-utils-papr-1.0.4-removeinitandvscsis.patch
+	epatch "${FILESDIR}"/ibm-powerpc-utils-papr-${PV}-removeinitandvscsis.patch
 }
 
 src_install() {
 	make DESTDIR="${D}" install || die "Compilation failed"
-	dodoc README COPYRIGHT
-	#dodir /etc/init.d
-	#exeinto /etc/init.d
-	#newexe ${FILESDIR}/ibmvscsis ibmvscsis
 }
 
 pkg_postinst() {
-	#einfo "An initscript for managing virtual scsi servers has "
-	#einfo "been install into /etc/init.d/ called ibmviscsis. "
-	#einfo "Before you can use this daemon, you must create a proper "
-	#einfo "/etc/ibmvscsis.conf file."
 	einfo "Support for the IBM Virtual SCSI server (virtual disk) "
 	einfo "is not included in this version of powerpc-utils-papr. "
 	einfo "When the ibmvscsis function is generally available in  "
