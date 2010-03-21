@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-10.50_pre6240.ebuild,v 1.1 2010/03/02 15:11:25 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-10.51_pre6252.ebuild,v 1.1 2010/03/21 23:22:37 jer Exp $
 
 EAPI="2"
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://www.opera.com/"
 
 SLOT="0"
 LICENSE="OPERA-10.10 LGPL-2"
-KEYWORDS="~amd64 ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
 
 RESTRICT="mirror test"
 
@@ -36,6 +36,7 @@ O_P="${P/_pre/-}"
 
 SRC_URI="
 	amd64? ( ${O_U}${O_P}.x86_64.linux.tar.bz2 )
+	ppc? ( ${O_U}${O_P}.ppc.linux.tar.bz2 )
 	x86? ( ${O_U}${O_P}.i386.linux.tar.bz2 )
 	x86-fbsd? ( ${O_U}${O_P}.i386.freebsd.tar.bz2 )
 "
@@ -109,22 +110,15 @@ src_unpack() {
 	fi
 }
 
-src_prepare() {
-	sed -i opera \
-		-e 's|=usr/lib/opera|=/usr/lib/opera|g' \
-		-e '6a\OPERA_DIR=/usr/share/opera' \
-		|| die "sed opera script failed"
-	epatch "${FILESDIR}"/${PN}-10.50-paths.patch
-}
-
 src_install() {
 	# This alpha build hardcodes /usr as prefix
-	mv etc/ usr/ "${D}"/ || die "mv etc/ usr/ failed"
+	dodir /usr
+	mv lib/ share/ "${D}"/usr/ || die "mv etc/ usr/ failed"
 
 	make_desktop_entry ${PN} Opera ${PN} # TODO
 
 	# Install startup script
-	dobin ${PN} || die "dobin failed"
+	dobin ${PN}-widget-manager "${FILESDIR}"/opera || die "dobin failed"
 
 	# Stop revdep-rebuild from checking opera binaries
 	dodir /etc/revdep-rebuild
@@ -150,7 +144,7 @@ src_install() {
 pkg_postinst() {
 	elog "To change the UI language, choose [Tools] -> [Preferences], open the"
 	elog "[General] tab, click on [Details...] then [Choose...] and point the"
-	elog "file chooser at ${OPREFIX}/opera/share/opera/locale/, then enter the"
+	elog "file chooser at /usr/share/opera/locale/, then enter the"
 	elog "directory for the language you want and [Open] the .lng file."
 
 	if use elibc_FreeBSD; then
