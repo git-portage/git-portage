@@ -1,6 +1,17 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.81 2010/02/10 06:12:03 dirtyepic Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.82 2010/03/23 10:12:39 wschlich Exp $
+
+*bacula-5.0.1-r2 (23 Mar 2010)
+
+  23 Mar 2010; Wolfram Schlich <wschlich@gentoo.org>
+  +files/5.0.1/bacula-dir.initd, +files/5.0.1/bacula-fd.initd,
+  +files/5.0.1/bacula-5.0.1-as-needed.patch, +files/5.0.1/bacula-fd.confd,
+  +files/5.0.1/bacula-sd.confd, +files/5.0.1/bacula-5.0.1-ncurses.patch,
+  +files/5.0.1/bacula-dir.confd, +files/5.0.1/bacula-sd.initd,
+  +bacula-5.0.1-r2.ebuild:
+  version bump, fix bugs #310087 and #309975, drop USE=gnome, USE=wxwindows
+  and USE=bacula-console (now only using USE=qt4 and USE=X)
 
   10 Feb 2010; Ryan Hill <dirtyepic@gentoo.org> bacula-2.4.1-r1.ebuild,
   bacula-2.4.4.ebuild, bacula-3.0.2.ebuild, bacula-3.0.3.ebuild:
