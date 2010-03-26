@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/clockywock/Attic/clockywock-0.2.3.ebuild,v 1.4 2008/03/26 17:09:00 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/clockywock/Attic/clockywock-0.2.3.ebuild,v 1.5 2010/03/26 20:36:34 ssuominen Exp $
 
 inherit toolchain-funcs
 
@@ -13,14 +13,13 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 
-RDEPEND="sys-libs/ncurses"
-DEPEND="${RDEPEND}"
+DEPEND="sys-libs/ncurses"
 
 src_compile() {
-	$(tc-getCXX) ${CXXFLAGS} -Wall -o ${PN} ${PN}.cpp -lncurses -lpthread || die "build failed."
+	$(tc-getCXX) ${LDFLAGS} ${CXXFLAGS} -Wall -o ${PN} ${PN}.cpp -lncurses -lpthread || die
 }
 
 src_install() {
-	dobin ${PN}
+	dobin ${PN} || die
 	dodoc README
 }
