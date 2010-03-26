@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/openvz-sources/Attic/openvz-sources-2.6.18.028.068.3.ebuild,v 1.1 2010/02/19 09:27:09 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/openvz-sources/Attic/openvz-sources-2.6.18.028.068.5.ebuild,v 1.1 2010/03/26 07:29:22 pva Exp $
 
 inherit versionator
 
@@ -31,6 +31,7 @@ SRC_URI="${KERNEL_URI} ${ARCH_URI}
 
 UNIPATCH_STRICTORDER=1
 UNIPATCH_LIST="${DISTDIR}/patch-${PATCHV}.${OVZ_KERNEL}.${OVZ_REV}-combined.gz
+${FILESDIR}/${PN}-2.6.18.028.068.3-build-fix.patch
 ${FILESDIR}/${PN}-2.6.18.028.064.7-bridgemac.patch"
 
 K_EXTRAEINFO="This openvz kernel uses RHEL5 patchset instead of vanilla kernel.
