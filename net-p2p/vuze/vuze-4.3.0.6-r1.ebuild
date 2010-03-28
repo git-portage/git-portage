@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/vuze/Attic/vuze-4.2.0.8.ebuild,v 1.3 2009/11/04 14:03:44 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/vuze/Attic/vuze-4.3.0.6-r1.ebuild,v 1.1 2010/03/28 21:44:24 caster Exp $
 
 EAPI=2
 
@@ -24,7 +24,7 @@ IUSE=""
 # bundles parts of http://www.programmers-friend.org/
 RDEPEND="
 	dev-java/json-simple:0
-	>=dev-java/bcprov-1.35:0
+	dev-java/bcprov:1.3
 	>=dev-java/commons-cli-1.0:1
 	>=dev-java/log4j-1.2.8:0
 	dev-java/swt:3.5[cairo,xulrunner]
@@ -67,7 +67,7 @@ java_prepare() {
 }
 
 JAVA_ANT_REWRITE_CLASSPATH="true"
-EANT_GENTOO_CLASSPATH="swt-3.5,bcprov,json-simple,log4j,commons-cli-1"
+EANT_GENTOO_CLASSPATH="swt-3.5,bcprov-1.3,json-simple,log4j,commons-cli-1"
 
 src_compile() {
 	local mem
