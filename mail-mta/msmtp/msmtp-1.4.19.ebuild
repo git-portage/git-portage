@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/msmtp/Attic/msmtp-1.4.17.ebuild,v 1.2 2010/01/01 18:22:08 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/msmtp/Attic/msmtp-1.4.19.ebuild,v 1.1 2010/04/02 16:17:12 a3li Exp $
 
 EAPI=2
 
