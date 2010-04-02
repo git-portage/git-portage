@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/Attic/postfix-2.6.5-r1.ebuild,v 1.1 2010/02/25 22:18:02 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/Attic/postfix-2.6.6.ebuild,v 1.1 2010/04/02 17:20:39 dertobi123 Exp $
 
 # NOTE: this ebuild is a regular ebuild without mailer-config support!
 # Comment lines below "regular ebuild" and uncomment lines below "mailer-config support"
