@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/audacious/Attic/audacious-2.3_beta2.ebuild,v 1.1 2010/03/19 14:35:31 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/audacious/Attic/audacious-2.3_rc1.ebuild,v 1.1 2010/04/05 20:42:51 chainsaw Exp $
 
 MY_P="${P/_/-}"
 S="${WORKDIR}/${MY_P}"
@@ -28,7 +28,7 @@ DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.9.0
 	nls? ( dev-util/intltool )"
 
-PDEPEND=">=media-plugins/audacious-plugins-2.3_beta2"
+PDEPEND=">=media-plugins/audacious-plugins-2.3_rc1"
 
 src_compile() {
 	# D-Bus is a mandatory dependency, remote control,
@@ -61,5 +61,5 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Your bug reports for this beta version should go upstream: http://jira.atheme.org/"
+	einfo "Your bug reports for this release candidate should go upstream: http://jira.atheme.org/"
 }
