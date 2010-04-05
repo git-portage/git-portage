@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/backupninja
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backupninja/ChangeLog,v 1.1 2010/02/22 16:41:06 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backupninja/ChangeLog,v 1.2 2010/04/05 18:47:11 hwoarang Exp $
+
+  05 Apr 2010; Markos Chandras <hwoarang@gentoo.org>
+  backupninja-0.9.7.ebuild:
+  Stable on amd64 wrt bug #313281
 
 *backupninja-0.9.7 (22 Feb 2010)
 

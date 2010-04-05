@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backupninja/Attic/backupninja-0.9.7.ebuild,v 1.1 2010/02/22 16:41:06 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backupninja/Attic/backupninja-0.9.7.ebuild,v 1.2 2010/04/05 18:47:11 hwoarang Exp $
 
 EAPI=3
 
@@ -15,7 +15,7 @@ SRC_URI="https://labs.riseup.net/code/attachments/download/${NODE_NUMBER}/${P}.t
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-util/dialog"
