@@ -1,9 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libpcap/Attic/libpcap-1.1.0-r1.ebuild,v 1.1 2010/04/04 07:30:38 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libpcap/Attic/libpcap-1.1.1.ebuild,v 1.1 2010/04/08 05:53:18 pva Exp $
 
 EAPI=2
-inherit autotools versionator eutils multilib toolchain-funcs
+inherit autotools eutils multilib toolchain-funcs
 
 DESCRIPTION="A system-independent library for user-level network packet capture"
 HOMEPAGE="http://www.tcpdump.org/"
@@ -22,8 +22,6 @@ DEPEND="${RDEPEND}
 	sys-devel/flex"
 
 PROVIDE="virtual/libpcap"
-
-S=${WORKDIR}/${PN}-$(get_version_component_range 1-2)
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.1-cross-linux.patch"
