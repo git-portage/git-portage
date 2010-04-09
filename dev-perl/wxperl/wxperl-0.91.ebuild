@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/wxperl/Attic/wxperl-0.94.ebuild,v 1.1 2009/11/10 11:05:49 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/wxperl/Attic/wxperl-0.91.ebuild,v 1.6 2010/04/09 07:08:14 tove Exp $
 
 EAPI=2
 
@@ -15,13 +15,12 @@ DESCRIPTION="Perl bindings for wxGTK"
 HOMEPAGE="http://wxperl.sourceforge.net/"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 RDEPEND="x11-libs/wxGTK:2.8
 	>=dev-perl/Alien-wxWidgets-0.25
 	>=virtual/perl-File-Spec-0.82"
-DEPEND="${RDEPEND}
-	>=dev-perl/ExtUtils-XSpp-0.05"
+DEPEND="${RDEPEND}"
 
 MAKEOPTS="${MAKEOPTS} -j1"
