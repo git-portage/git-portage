@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/poppler/Attic/poppler-0.12.4-r1.ebuild,v 1.1 2010/03/16 12:18:00 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/poppler/Attic/poppler-0.12.4-r2.ebuild,v 1.1 2010/04/10 02:13:17 reavertm Exp $
 
 EAPI="2"
 
@@ -47,6 +47,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-0.12.3-darwin-gtk-link.patch
 	epatch "${FILESDIR}"/${P}-config.patch  #304407
 	epatch "${FILESDIR}"/${PN}-0.12.3-cairo-downscale.patch  #303817
+	epatch "${FILESDIR}"/${PN}-0.12.3-preserve-cflags.patch  #309297
 	epatch "${FILESDIR}"/${PN}-0.12.4-nanosleep-rt.patch
 }
 
