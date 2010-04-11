@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/nxserver-freenx/Attic/nxserver-freenx-0.7.3_p104-r2.ebuild,v 1.4 2010/04/11 18:51:54 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/nxserver-freenx/Attic/nxserver-freenx-0.7.3_p104-r4.ebuild,v 1.1 2010/04/11 18:51:54 voyageur Exp $
 
-EAPI=1
+EAPI=2
 
 inherit multilib eutils toolchain-funcs versionator
 
@@ -15,7 +15,7 @@ HOMEPAGE="http://freenx.berlios.de/ https://launchpad.net/~freenx-team"
 SRC_URI="http://ppa.launchpad.net/freenx-team/ppa/ubuntu/pool/main/f/${MY_PN}/freenx-server_${MAJOR_PV}+teambzr${PATCH_VER/p}.orig.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="+nxclient rdesktop vnc"
 
 DEPEND="x11-misc/gccmakedep
@@ -24,7 +24,7 @@ RDEPEND="dev-tcltk/expect
 	media-fonts/font-cursor-misc
 	media-fonts/font-misc-misc
 	net-analyzer/gnu-netcat
-	<net-misc/nx-3.4.0
+	>=net-misc/nx-2.1.0
 	sys-apps/gawk
 	virtual/ssh
 	x11-apps/xauth
@@ -46,18 +46,17 @@ pkg_setup () {
 	enewuser nx -1 -1 ${NX_HOME_DIR}
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	epatch "${FILESDIR}"/${P}-pam_ssh.patch
 	epatch "${FILESDIR}"/${P}-nxnode_setup_samba.patch
-	epatch "${FILESDIR}"/${PN}-0.7.3_p102-nxloadconfig.patch
+	epatch "${FILESDIR}"/${P}-nxloadconfig.patch
 	epatch "${FILESDIR}"/${PN}-0.7.3_p102-cflags.patch
 	epatch "${FILESDIR}"/${PN}-0.7.2-cups.patch
 
+	# Path to net-misc/nx files, support for nx 3.4.0
 	sed	-e "/PATH_LIB=/s/lib/$(get_libdir)/g" \
 		-e "s#REAL_PATH_LIB#/usr/$(get_libdir)/NX/bin#" \
+		-e "s#3.\[0123\].0#3.\[01234\].0#g" \
 		-i nxloadconfig || die "nxloadconfig sed failed"
 }
 
@@ -113,7 +112,7 @@ pkg_postinst () {
 	elog "This will use the default Nomachine SSH key"
 	elog "If you had older NX servers installed, you may need to add \"--clean --purge\" to the nxsetup command"
 
-	if ! built_with_use net-misc/openssh pam; then
+	if has_version net-misc/openssh[-pam]; then
 		elog ""
 		elog "net-misc/openssh was not built with PAM support"
 		elog "You will need to unlock the nx account by setting a password for it"
