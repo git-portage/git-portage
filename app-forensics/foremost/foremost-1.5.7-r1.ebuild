@@ -1,12 +1,14 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-forensics/foremost/Attic/foremost-1.5.5.ebuild,v 1.2 2009/09/13 22:33:55 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-forensics/foremost/foremost-1.5.7-r1.ebuild,v 1.1 2010/04/12 20:20:14 idl0r Exp $
 
 inherit eutils toolchain-funcs
 
 DESCRIPTION="A console program to recover files based on their headers and footers"
 HOMEPAGE="http://foremost.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+#SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+# starting to hate sf.net ...
+SRC_URI="http://foremost.sourceforge.net/pkg/${P}.tar.gz"
 
 KEYWORDS="~ppc ~x86 ~amd64"
 IUSE=""
@@ -25,8 +27,8 @@ src_compile() {
 }
 
 src_install() {
-	dobin foremost
-	#doman foremost.1
+	dobin foremost || die
+	doman foremost.8.gz
 	insinto /etc
 	doins foremost.conf
 	dodoc README CHANGES
