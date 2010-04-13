@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/ccollect
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/ChangeLog,v 1.29 2009/10/12 17:19:30 halcy0n Exp $
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/ChangeLog,v 1.30 2010/04/13 10:36:28 dev-zero Exp $
+
+*ccollect-0.8 (13 Apr 2010)
+
+  13 Apr 2010; Tiziano Müller <dev-zero@gentoo.org> -ccollect-0.6.ebuild,
+  -ccollect-0.7.0-r1.ebuild, +ccollect-0.8.ebuild, metadata.xml:
+  Version bump, fixed bug #295300, taking over maintenance, dropped old,
+  updated URL/SRC_URI, keyworded for ~sparc.
 
   12 Oct 2009; Mark Loeser <halcy0n@gentoo.org> ccollect-0.5.1.ebuild,
   ccollect-0.6.ebuild:

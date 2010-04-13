@@ -1,17 +1,17 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/Attic/ccollect-0.7.0-r1.ebuild,v 1.1 2008/06/03 20:07:55 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/ccollect/ccollect-0.8.ebuild,v 1.1 2010/04/13 10:36:28 dev-zero Exp $
 
-EAPI="1"
+EAPI="2"
 
 DESCRIPTION="(pseudo) incremental backup with different exclude lists using hardlinks and rsync"
-HOMEPAGE="http://unix.schottelius.org/ccollect/"
-SRC_URI="http://unix.schottelius.org/ccollect/${P}.tar.bz2"
+HOMEPAGE="http://www.nico.schottelius.org/software/ccollect/"
+SRC_URI="http://www.nico.schottelius.org/software/${PN}/download/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~x86"
-IUSE="doc"
+KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
+IUSE="doc examples"
 
 DEPEND="doc? ( >=app-text/asciidoc-8.1.0
 		app-text/docbook-xsl-stylesheets
@@ -19,11 +19,12 @@ DEPEND="doc? ( >=app-text/asciidoc-8.1.0
 		dev-libs/libxslt )"
 RDEPEND="net-misc/rsync"
 
+# tests need ssh-access
+RESTRICT="test"
+
 src_compile() {
 	if use doc; then
-		make XSL=/usr/share/sgml/docbook/xsl-stylesheets/html/docbook.xsl documentation
-	else
-		einfo 'Nothing to compile'
+		emake XSL=/usr/share/sgml/docbook/xsl-stylesheets/html/docbook.xsl documentation || die "building docs failed"
 	fi
 }
 
@@ -31,7 +32,7 @@ src_install() {
 	dobin ccollect.sh
 	dosym ccollect.sh /usr/bin/ccollect
 
-	local tools="add_source analyse_logs delete_source list_intervals logwrapper stats"
+	local tools="add_source analyse_logs archive_config check_config delete_source list_intervals logwrapper stats"
 	for t in ${tools} ; do
 		newbin tools/ccollect_${t}.sh ccollect_${t}
 	done
@@ -39,16 +40,23 @@ src_install() {
 	insinto /usr/share/${PN}/tools
 	doins tools/config-pre* tools/{gnu-du-backup-size-compare,report_success}.sh
 
-	dodoc CREDITS README doc/CHANGES
+	dodoc CREDITS README
+	pushd doc/changes
+	for n in * ; do
+		newdoc ${n} NEWS-${n}
+	done
+	popd
 
 	if use doc; then
 		dohtml doc/*.htm doc/*.html
 		dohtml -r doc/man
 		doman doc/man/*.1
+	fi
 
+	if use examples ; then
 		# dodoc is not recursive. So do a workaround.
 		insinto /usr/share/doc/${PF}/examples/
-		cp -Rdp "${S}/conf" "${D}/usr/share/doc/${PF}/examples/"
+		doins -r conf/*
 	fi
 }
 
