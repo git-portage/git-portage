@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdm/Attic/kdm-4.4.2-r1.ebuild,v 1.1 2010/04/09 14:56:48 reavertm Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdm/Attic/kdm-4.3.5-r1.ebuild,v 1.1 2010/04/14 18:30:46 reavertm Exp $
 
-EAPI="3"
+EAPI="2"
 
 KMNAME="kdebase-workspace"
 inherit kde4-meta flag-o-matic
@@ -41,6 +41,8 @@ KMEXTRA="
 PATCHES=(
 	"${FILESDIR}/kdebase-4.0.2-pam-optional.patch"
 	"${FILESDIR}/${PN}-4-gentoo-xinitrc.d.patch"
+	"${FILESDIR}/${PN}-4.3.1-set-grub-default.patch"
+	"${FILESDIR}/${PN}-4.3.5-CVE-2010-0436.patch"
 )
 
 src_configure() {
@@ -63,10 +65,9 @@ src_install() {
 	kde4-meta_src_install
 
 	# Customize the kdmrc configuration
-	sed -e "s:^.*SessionsDirs=.*$:#&\nSessionsDirs=${EPREFIX}/usr/share/xsessions:" \
-		-e "s:#ServerTimeout=15:ServerTimeout=30:" \
-		-i "${ED}"/${KDEDIR}/share/config/kdm/kdmrc \
-		|| die "Failed to set ServerTimeout and SessionsDirs correctly in kdmrc."
+	sed -i -e "s:^.*SessionsDirs=.*$:#&\nSessionsDirs=${EPREFIX}/usr/share/xsessions:" \
+		"${ED}"/${PREFIX}/share/config/kdm/kdmrc \
+		|| die "Failed to set SessionsDirs correctly."
 
 	# Don't install empty dir
 	rmdir "${ED}${KDEDIR}"/share/config/kdm/sessions
