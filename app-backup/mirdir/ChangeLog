@@ -1,6 +1,14 @@
 # ChangeLog for app-backup/mirdir
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mirdir/ChangeLog,v 1.5 2007/04/09 14:46:10 welp Exp $
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mirdir/ChangeLog,v 1.6 2010/04/15 19:52:24 idl0r Exp $
+
+*mirdir-2.1-r1 (15 Apr 2010)
+
+  15 Apr 2010; Christian Ruppert <idl0r@gentoo.org> +mirdir-2.1-r1.ebuild:
+  Rev bump. Fix pre-stripping, bug 239939, thanks to Diego E. 'Flameeyes'
+  Pettenò <flameeyes@gentoo.org> and Kevin Pyle
+  <gentoo.8eaf7cd8e5128d8191fe@spamgourmet.com>. Add 'die' statement. Style
+  clean up.
 
   09 Apr 2007; Peter Weller <welp@gentoo.org> mirdir-2.1.ebuild:
   Stable on amd64 wrt bug 173842
