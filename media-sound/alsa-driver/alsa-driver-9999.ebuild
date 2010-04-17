@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/alsa-driver/Attic/alsa-driver-9999.ebuild,v 1.12 2009/08/13 15:10:27 beandog Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/alsa-driver/Attic/alsa-driver-9999.ebuild,v 1.14 2010/04/17 16:46:01 polynomial-c Exp $
 
 inherit linux-mod flag-o-matic eutils multilib autotools git
 
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE="oss debug"
 
-IUSE_CARDS="seq-dummy dummy virmidi mtpav mts64 serial-u16550 mpu401
+IUSE_CARDS="hrtimer rtctimer hpet pcsp seq-dummy dummy virmidi mtpav mts64 serial-u16550 mpu401
 loopback portman2x4 ad1848-lib adlib ad1816a ad1848
 als100 azt2320 cmi8330 cs4231 cs4232 cs4236 dt019x es968 es1688 es18xx
 gusclassic gusextreme gusmax interwave interwave-stb opl3sa2
@@ -89,6 +89,11 @@ pkg_setup() {
 	local SND_ERROR="ALSA is already compiled into the kernel."
 	local SOUND_ERROR="Your kernel doesn't have sound support enabled."
 	local SOUND_PRIME_ERROR="Your kernel is configured to use the deprecated OSS drivers.	 Please disable them and re-emerge alsa-driver."
+
+	if use oss && kernel_is -ge 2 6 28 ; then
+		local CONFIG_CHECK+="SOUND_PRIME"
+		local SOUND_PRIME_ERROR="You enabled oss USE flag but your kernel's soundcore module lacks support of the proper functions. Please enable CONFIG_SOUND_PRIME and re-emerge alsa-driver."
+	fi
 
 	linux-mod_pkg_setup
 
