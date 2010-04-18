@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/kdevelop/Attic/kdevelop-3.9.98.ebuild,v 1.1 2010/02/11 18:40:27 reavertm Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/kdevelop/Attic/kdevelop-3.10.2.ebuild,v 1.1 2010/04/18 23:23:04 spatz Exp $
 
 EAPI="2"
 
@@ -54,11 +54,4 @@ src_configure() {
 	)
 
 	kde4-base_src_configure
-}
-
-src_install() {
-	kde4-base_src_install
-
-	rm "${D}/${PREFIX}"/share/apps/kdevappwizard/templates/qmake_qt4guiapp.tar.bz2
-	rm "${D}/${PREFIX}"/share/icons/hicolor/22x22/actions/output_win.png
 }
