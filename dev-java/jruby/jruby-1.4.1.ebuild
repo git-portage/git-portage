@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jruby/Attic/jruby-1.4.0-r5.ebuild,v 1.2 2010/02/09 17:10:23 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jruby/Attic/jruby-1.4.1.ebuild,v 1.1 2010/04/27 09:23:58 caster Exp $
 
 EAPI="2"
 JAVA_PKG_IUSE="doc source test"
@@ -10,11 +10,12 @@ MY_PV="${PV/_rc1/RC1}"
 
 DESCRIPTION="Java-based Ruby interpreter implementation"
 HOMEPAGE="http://jruby.codehaus.org/"
-SRC_URI="http://jruby.kenai.com/downloads/${PV}/${PN}-src-${MY_PV}.tar.gz"
+#SRC_URI="http://jruby.kenai.com/downloads/${PV}/${PN}-src-${MY_PV}.tar.gz"
+SRC_URI="http://jruby.org.s3.amazonaws.com/downloads/${PV}/${PN}-src-${MY_PV}.tar.gz"
 LICENSE="|| ( CPL-1.0 GPL-2 LGPL-2.1 )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="bsf java6 ssl"
+IUSE="bsf ssl"
 
 CDEPEND=">=dev-java/bytelist-1.0.2:0
 	>=dev-java/constantine-0.6:0
@@ -23,7 +24,7 @@ CDEPEND=">=dev-java/bytelist-1.0.2:0
 	>=dev-java/jna-posix-1.0.1:0
 	>=dev-java/jvyamlb-0.2.5:0
 	>=dev-java/asm-3.2:3
-	dev-java/jcodings:0
+	>=dev-java/jcodings-1.0.4:0
 	>=dev-java/jffi-0.7_pre:0.4
 	dev-java/jna:0
 	dev-java/joda-time:0
@@ -33,13 +34,10 @@ CDEPEND=">=dev-java/bytelist-1.0.2:0
 	dev-java/jgrapht:0"
 
 RDEPEND="${CDEPEND}
-	!java6? ( =virtual/jre-1.5* )
-	java6? ( >=virtual/jre-1.6 )"
+	>=virtual/jre-1.6"
 
-# using 1.6 produces 1.6 bytecode, not sure why
 DEPEND="${CDEPEND}
-	!java6? ( =virtual/jdk-1.5* )
-	java6? ( >=virtual/jdk-1.6 )
+	>=virtual/jdk-1.6
 	bsf? ( dev-java/bsf:2.3 )
 	test? (
 		dev-java/ant-junit
@@ -74,7 +72,15 @@ pkg_setup() {
 
 	for directory in "${GEMS}" "${SITE_RUBY}"; do
 		if [[ -L ${directory} ]]; then
-			eerror "${directory} is a symlink. Please remove this symlink."
+			eerror "${directory} is a symlink. Please do the following to resolve the situation:"
+			echo 'emerge -an app-portage/gentoolkit'
+			echo 'equery -qC b '"${directory}"' | sort | uniq | sed s/^/=/ > ~/jruby.fix'
+			echo 'emerge -1C $(< ~/jruby.fix)'
+			echo "rm ${directory}"
+			echo 'emerge -1 $(< ~/jruby.fix)'
+			echo 'rm ~/jruby.fix'
+
+			eerror "For more information, please see http://bugs.gentoo.org/show_bug.cgi?id=302187"
 			fail="true"
 		fi
 	done
@@ -87,8 +93,8 @@ pkg_setup() {
 java_prepare() {
 	epatch "${FILESDIR}/ftype-test-fixes.patch"
 	epatch "${FILESDIR}/user-test-fixes.patch"
-	epatch "${FILESDIR}"/${P}-system-jars-r2.patch
-	epatch "${FILESDIR}"/${P}-bindir.patch
+	epatch "${FILESDIR}"/${PN}-1.4.0-system-jars-r2.patch
+	epatch "${FILESDIR}"/${PN}-1.4.0-bindir.patch
 
 	# We don't need to use Retroweaver. There is a jarjar and a regular jar
 	# target but even with jarjarclean, both are a pain. The latter target
