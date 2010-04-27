@@ -1,6 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/bootchart/Attic/bootchart-0.9-r2.ebuild,v 1.6 2010/04/27 13:10:55 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/bootchart/Attic/bootchart-0.9-r4.ebuild,v 1.1 2010/04/27 13:10:55 caster Exp $
+
+EAPI="2"
+JAVA_PKG_IUSE="source"
 
 inherit multilib eutils java-pkg-opt-2 java-ant-2
 
@@ -10,31 +13,29 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 hppa x86"
-IUSE="acct debug doc java source"
+KEYWORDS="~amd64 ~hppa ~x86"
+IUSE="acct debug doc java"
 
 DEPEND="
 	java? (
 		>=virtual/jdk-1.4
-		>=dev-java/ant-core-1.4
 		dev-java/commons-cli
-		source? ( app-arch/zip )
 	)
 "
 RDEPEND="
 	java? (
-		>=virtual/jdk-1.4
+		>=virtual/jre-1.4
 		dev-java/commons-cli
 	)
 	acct? ( sys-process/acct )
 "
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	epatch "${FILESDIR}/${P}"-gentoo.patch
 	epatch "${FILESDIR}/${P}"-sh.patch
+	epatch "${FILESDIR}/${P}"-dev-null.patch
+	# bug #317451
+	epatch "${FILESDIR}/accton.patch"
 
 	# delete the included commons-cli and use gentoo's instead
 	# The rest of lib is also bundled but a bit problematic to
@@ -44,13 +45,15 @@ src_unpack() {
 	if use java ; then
 		java-ant_rewrite-classpath
 		sed -i -e 's,AUTO_RENDER="no",AUTO_RENDER="yes",g' \
-			script/bootchartd.conf
+			script/bootchartd.conf || die
 	fi
 
 	if use acct ; then
 		sed -i -e 's,PROCESS_ACCOUNTING="no",PROCESS_ACCOUNTING="yes",g' \
-			script/bootchartd.conf
+			script/bootchartd.conf || die
 	fi
+
+	java-pkg-opt-2_src_prepare
 }
 
 src_compile() {
@@ -63,16 +66,16 @@ src_compile() {
 }
 
 src_install() {
-	dodoc README README.logger ChangeLog TODO
+	dodoc README README.logger ChangeLog TODO || die
 
 	# No need for this with baselayout-2
 	if has_version "<sys-apps/baselayout-2"; then
 		insinto /$(get_libdir)/rcscripts/addons
-		doins "${FILESDIR}"/profiling-functions.sh
+		doins "${FILESDIR}"/profiling-functions.sh || die
 	fi
 
 	into /
-	newsbin script/bootchartd bootchartd
+	newsbin script/bootchartd bootchartd || die
 	into /usr
 
 	# This dir is normally empty, but is used to bind to the
@@ -81,7 +84,7 @@ src_install() {
 	keepdir /lib/bootchart
 
 	insinto /etc
-	doins script/bootchartd.conf
+	doins script/bootchartd.conf || die
 
 	if use java ; then
 		java-pkg_dojar "${PN}.jar"
@@ -100,7 +103,7 @@ pkg_postinst() {
 	else
 		elog "To generate the chart, append this to your kernel commandline"
 		elog "   init=/sbin/bootchartd"
-		elog "and reboot."
+		elog "and reboot"
 		elog "Note: genkernel users should replace init= with real_init= in the above"
 		elog "see https://bugs.gentoo.org/show_bug.cgi?id=275251 for more info"
 	fi

@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/bootchart/Attic/bootchart-0.9-r3.ebuild,v 1.1 2009/03/10 11:55:40 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/bootchart/Attic/bootchart-0.9-r3.ebuild,v 1.2 2010/04/27 13:10:55 caster Exp $
 
 inherit multilib eutils java-pkg-opt-2 java-ant-2
 
@@ -102,6 +102,8 @@ pkg_postinst() {
 		elog "To generate the chart, append this to your kernel commandline"
 		elog "   init=/sbin/bootchartd"
 		elog "and reboot"
+		elog "Note: genkernel users should replace init= with real_init= in the above"
+		elog "see https://bugs.gentoo.org/show_bug.cgi?id=275251 for more info"
 	fi
 	elog
 
