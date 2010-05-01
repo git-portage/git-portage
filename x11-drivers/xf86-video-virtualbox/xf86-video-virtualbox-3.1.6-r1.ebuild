@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-virtualbox/Attic/xf86-video-virtualbox-3.1.6.ebuild,v 1.2 2010/04/30 19:44:13 lxnay Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-virtualbox/Attic/xf86-video-virtualbox-3.1.6-r1.ebuild,v 1.1 2010/05/01 00:01:34 lxnay Exp $
 
 EAPI=2
 
