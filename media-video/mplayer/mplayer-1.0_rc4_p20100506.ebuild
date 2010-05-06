@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_rc4_p20100213-r1.ebuild,v 1.9 2010/04/23 13:04:43 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_rc4_p20100506.ebuild,v 1.1 2010/05/06 13:38:12 scarabeus Exp $
 
 EAPI="2"
 
@@ -11,7 +11,7 @@ inherit eutils flag-o-matic multilib base ${SVN_ECLASS}
 
 [[ ${PV} != *9999* ]] && MPLAYER_REVISION=SVN-r30554
 
-IUSE="3dnow 3dnowext +a52 +aac aalib +alsa altivec +ass bidi bindist bl bs2b
+IUSE="3dnow 3dnowext +a52 aalib +alsa altivec +ass bidi bindist bl bs2b
 +cddb +cdio cdparanoia cpudetection custom-cpuopts debug dga +dirac directfb
 doc +dts +dv dvb +dvd +dvdnav dxr3 +enca +encode esd +faac +faad fbcon ftp
 gif ggi -gmplayer +iconv ipv6 jack joystick jpeg jpeg2k kernel_linux ladspa
@@ -38,13 +38,12 @@ FONT_URI="
 if [[ ${PV} == *9999* ]]; then
 	RELEASE_URI=""
 else
-	RELEASE_URI="mirror://gentoo/${P}.tbz2"
+	RELEASE_URI="mirror://gentoo/${P}.tar.bz2"
 fi
 SRC_URI="${RELEASE_URI}
 	!truetype? ( ${FONT_URI} )
 	gmplayer? ( mirror://mplayer/skins/Blue-${BLUV}.tar.bz2 )
-	svga? (	mirror://gentoo/svgalib_helper-${SVGV}-mplayer.tar.gz )"
-#	svga? ( http://mplayerhq.hu/~alex/svgalib_helper-${SVGV}-mplayer.tar.bz2 )
+	svga? ( mirror://gentoo/svgalib_helper-${SVGV}-mplayer.tar.gz )"
 
 DESCRIPTION="Media Player for Linux"
 HOMEPAGE="http://www.mplayerhq.hu/"
@@ -52,7 +51,7 @@ HOMEPAGE="http://www.mplayerhq.hu/"
 FONT_RDEPS="
 	virtual/ttf-fonts
 	media-libs/fontconfig
-	media-libs/freetype:2
+	>=media-libs/freetype-2.2.1:2
 "
 X_RDEPS="
 	x11-libs/libXext
@@ -70,7 +69,6 @@ RDEPEND+="
 	)
 	X? (
 		${X_RDEPS}
-		ass? ( ${FONT_RDEPS} )
 		dga? ( x11-libs/libXxf86dga )
 		ggi? (
 			media-libs/libggi
@@ -82,7 +80,6 @@ RDEPEND+="
 			x11-libs/libXi
 		)
 		opengl? ( virtual/opengl )
-		truetype? ( ${FONT_RDEPS} )
 		vdpau? ( || ( x11-libs/libvdpau >=x11-drivers/nvidia-drivers-180.51 ) )
 		xinerama? ( x11-libs/libXinerama )
 		xscreensaver? ( x11-libs/libXScrnSaver )
@@ -93,10 +90,12 @@ RDEPEND+="
 	)
 	aalib? ( media-libs/aalib )
 	alsa? ( media-libs/alsa-lib )
+	amr? ( !bindist? ( media-libs/opencore-amr ) )
+	ass? ( ${FONT_RDEPS} media-libs/libass )
 	bidi? ( dev-libs/fribidi )
 	bs2b? ( media-libs/libbs2b )
 	cdio? ( dev-libs/libcdio )
-	cdparanoia? ( media-sound/cdparanoia )
+	cdparanoia? ( !cdio? ( media-sound/cdparanoia ) )
 	dirac? ( media-video/dirac )
 	directfb? ( dev-libs/DirectFB )
 	dts? ( media-libs/libdca )
@@ -107,15 +106,16 @@ RDEPEND+="
 		twolame? ( media-sound/twolame )
 		faac? ( media-libs/faac )
 		mp3? ( media-sound/lame )
-		x264? ( >=media-libs/x264-0.0.20091124 )
+		x264? ( >=media-libs/x264-0.0.20100423 )
 		xvid? ( media-libs/xvid )
 	)
 	esd? ( media-sound/esound )
 	enca? ( app-i18n/enca )
-	faad? ( !aac? ( media-libs/faad2 ) )
+	faad? ( media-libs/faad2 )
 	gif? ( media-libs/giflib )
 	jack? ( media-sound/jack-audio-connection-kit )
 	jpeg? ( media-libs/jpeg )
+	jpeg2k? ( media-libs/openjpeg )
 	ladspa? ( media-libs/ladspa-sdk )
 	libcaca? ( media-libs/libcaca )
 	lirc? ( app-misc/lirc )
@@ -126,8 +126,6 @@ RDEPEND+="
 	nas? ( media-libs/nas )
 	nut? ( >=media-libs/libnut-661 )
 	openal? ( media-libs/openal )
-	amr? ( media-libs/opencore-amr )
-	jpeg2k? ( media-libs/openjpeg )
 	png? ( media-libs/libpng )
 	pnm? ( media-libs/netpbm )
 	pulseaudio? ( media-sound/pulseaudio )
@@ -143,6 +141,7 @@ RDEPEND+="
 	speex? ( media-libs/speex )
 	svga? ( media-libs/svgalib )
 	theora? ( media-libs/libtheora )
+	truetype? ( ${FONT_RDEPS} )
 	vorbis? ( media-libs/libvorbis )
 	xanim? ( media-video/xanim )
 "
@@ -172,7 +171,7 @@ DEPEND="${RDEPEND}
 SLOT="0"
 LICENSE="GPL-2"
 if [[ ${PV} != *9999* ]]; then
-	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+	KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 else
 	KEYWORDS=""
 fi
@@ -283,12 +282,12 @@ src_configure() {
 		$(use_enable network)
 		$(use_enable joystick)
 	"
-	uses="bl enca ftp rtc" # nemesi <- not working with in-tree ebuild
+	uses="ass bl enca ftp rtc" # nemesi <- not working with in-tree ebuild
 	myconf+=" --disable-nemesi" # nemesi automagic disable
+	myconf+=" --disable-ass-internal" # always use system libass
 	for i in ${uses}; do
 		use ${i} || myconf+=" --disable-${i}"
 	done
-	use ass || myconf+=" --disable-ass --disable-ass-internal"
 	use bidi || myconf+=" --disable-fribidi"
 	use encode || myconf+=" --disable-mencoder"
 	use ipv6 || myconf+=" --disable-inet6"
@@ -322,10 +321,6 @@ src_configure() {
 	#
 	# internal dvdread and dvdnav use flags enable internal
 	# versions of the libraries, which are snapshots of the fork.
-	#
-	# Only check for disabled a52 use flag inside the DVD check,
-	# since many users were getting confused why there was no
-	# audio stream.
 
 	if use dvd; then
 		use dvdnav || myconf+=" --disable-dvdnav"
@@ -336,7 +331,6 @@ src_configure() {
 			--disable-dvdread-internal
 			--disable-libdvdcss-internal
 		"
-		use a52 || myconf+=" --disable-liba52-internal"
 	fi
 
 	#############
@@ -367,7 +361,7 @@ src_configure() {
 	# broken upstream, won't work with recent kernels
 	myconf+=" --disable-ivtv"
 	if { use dvb || use v4l || use v4l2 || use pvr || use radio; }; then
-		use dvb || myconf+=" --disable-dvb --disable-dvbhead"
+		use dvb || myconf+=" --disable-dvb"
 		use pvr || myconf+=" --disable-pvr"
 		use v4l	|| myconf+=" --disable-tv-v4l1"
 		use v4l2 || myconf+=" --disable-tv-v4l2"
@@ -391,7 +385,6 @@ src_configure() {
 			--disable-radio-v4l2
 			--disable-radio-bsdbt848
 			--disable-dvb
-			--disable-dvbhead
 			--disable-v4l2
 			--disable-pvr"
 	fi
@@ -401,14 +394,14 @@ src_configure() {
 	##########
 	# Won't work with external liba52
 	myconf+=" --disable-liba52"
+	use a52 && myconf+=" --enable-liba52-internal"
 	# Use internal musepack codecs for SV7 and SV8 support
 	myconf+=" --disable-musepack"
 
-	use aac || myconf+=" --disable-faad-internal"
+	myconf+=" --disable-faad-internal" # always use system media-libs/faad2
 	use dirac || myconf+=" --disable-libdirac-lavc"
 	use dts || myconf+=" --disable-libdca"
 	use dv || myconf+=" --disable-libdv"
-	use faad || myconf+=" --disable-faad"
 	use lzo || myconf+=" --disable-liblzo"
 	if ! use mp3; then
 		myconf+="
@@ -419,12 +412,14 @@ src_configure() {
 	fi
 	use bs2b || myconf+=" --disable-libbs2b"
 	use schroedinger || myconf+=" --disable-libschroedinger-lavc"
-	use xanim && myconf+=" --xanimcodecsdir=/usr/lib/xanim/mods"
+	# Disable opencore-amr with bindist
+	# https://bugs.gentoo.org/show_bug.cgi?id=299405#c6
+	{ use amr && use !bindist ; } || myconf+=" --disable-libopencore_amrnb --disable-libopencore_amrwb"
 	if ! use png && ! use gmplayer; then
 		myconf+=" --disable-png"
 	fi
 
-	uses="gif jpeg live mad mng pnm speex tga theora xanim"
+	uses="faad gif jpeg live mad mng pnm speex tga theora xanim"
 	for i in ${uses}; do
 		use ${i} || myconf+=" --disable-${i}"
 	done
@@ -445,7 +440,7 @@ src_configure() {
 		for i in ${uses}; do
 			use ${i} || myconf+=" --disable-${i}"
 		done
-		use aac || myconf+=" --disable-faac-lavc"
+		use faac || myconf+=" --disable-faac-lavc"
 	else
 		myconf+="
 			--disable-faac-lavc
@@ -457,7 +452,7 @@ src_configure() {
 			--disable-twolame
 			--disable-toolame
 		"
-		uses="aac faac x264 xvid toolame twolame"
+		uses="faac x264 xvid toolame twolame"
 		for i in ${uses}; do
 			use ${i} && elog "Useflag \"${i}\" require \"encode\" useflag enabled to work."
 		done
@@ -485,8 +480,8 @@ src_configure() {
 
 	# Real binary codec support only available on x86, amd64
 	if use real; then
-		use x86 && myconf+=" --realcodecsdir=/opt/RealPlayer/codecs"
-		use amd64 && myconf+=" --realcodecsdir=/usr/$(get_libdir)/codecs"
+		use x86 && myconf+=" --codecsdir=/opt/RealPlayer/codecs"
+		use amd64 && myconf+=" --codecsdir=/usr/$(get_libdir)/codecs"
 	elif ! use bindist; then
 			myconf+=" $(use_enable win32codecs win32dll)"
 	fi
@@ -559,7 +554,6 @@ src_configure() {
 		append-ldflags -nopie
 	fi
 
-	append-flags -D__STDC_LIMIT_MACROS
 	is-flag -O? || append-flags -O2
 	if use x86 || use x86-fbsd; then
 		use debug || append-flags -fomit-frame-pointer
@@ -639,8 +633,24 @@ src_configure() {
 
 src_compile() {
 	base_src_compile
-	emake || die "Failed to build MPlayer!"
-	use doc && make -C DOCS/xml html-chunked
+	# Build only user-requested docs if they're available.
+	if use doc ; then
+		# select available languages from $LINGUAS
+		LINGUAS=${LINGUAS/zh/zh_CN}
+		local ALLOWED_LINGUAS="cs de en es fr hu it pl ru zh_CN"
+		local BUILT_DOCS=""
+		for i in ${LINGUAS} ; do
+			hasq $i ${ALLOWED_LINGUAS} && BUILT_DOCS+=" $i"
+		done
+		if [[ -z $BUILT_DOCS ]]
+		then
+			emake -j1 -C DOCS/xml html-chunked || die "Failed to generate html docs"
+		else
+			for i in ${BUILT_DOCS} ; do
+				emake -j1 -C DOCS/xml html-chunked-$i || die "Failed to generate html docs for $i"
+			done
+		fi
+	fi
 }
 
 src_install() {
@@ -671,6 +681,7 @@ src_install() {
 	dodoc DOCS/tech/mirrors/* || die
 
 	if use doc; then
+		docinto html/
 		dohtml -r "${S}"/DOCS/HTML/* || die
 	fi
 
