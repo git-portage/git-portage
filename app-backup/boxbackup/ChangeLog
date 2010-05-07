@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/boxbackup
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.20 2010/01/03 00:06:09 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.21 2010/05/07 06:23:37 jer Exp $
+
+*boxbackup-0.11_rc8 (07 May 2010)
+
+  07 May 2010; Jeroen Roovers <jer@gentoo.org> +boxbackup-0.11_rc8.ebuild,
+  +files/boxbackup-0.11_rc8-testbbackupd.patch:
+  Version bump (bug #205558).
 
   03 Jan 2010; Diego E. Pettenò <flameeyes@gentoo.org>
   boxbackup-0.10.ebuild:
