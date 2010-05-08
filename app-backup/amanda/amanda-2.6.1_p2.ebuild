@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.1_p2.ebuild,v 1.3 2010/01/17 04:28:13 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.1_p2.ebuild,v 1.4 2010/05/08 19:48:53 robbat2 Exp $
 
 inherit autotools eutils
 
@@ -346,7 +346,7 @@ src_install() {
 
 pkg_postinst() {
 	[ ! -f "${TMPENVFILE}" -a "$EMERGE_FROM" == "binary" ] && \
-		TMPENVFILE="${ROOT}${ENVDIR}${ENVDFILE}"
+		TMPENVFILE="${ROOT}${ENVDIR}/${ENVDFILE}"
 	[ ! -f "${TMPENVFILE}" ] && die "Variable setting file (${TMPENVFILE}) should exist!"
 	source "${TMPENVFILE}"
 
