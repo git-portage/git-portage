@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus/Attic/ibus-1.3.2.ebuild,v 1.1 2010/04/23 17:45:54 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus/Attic/ibus-1.3.3-r1.ebuild,v 1.1 2010/05/11 23:07:47 matsuu Exp $
 
 EAPI="2"
 PYTHON_DEPEND="python? 2:2.5"
@@ -50,6 +50,10 @@ update_gtk_immodules() {
 		mkdir -p "${ROOT}${GTK2_CONFDIR}"
 		gtk-query-immodules-2.0 > "${ROOT}${GTK2_CONFDIR}/gtk.immodules"
 	fi
+}
+
+pkg_setup() {
+	python_set_active_version 2
 }
 
 src_prepare() {
