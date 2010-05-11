@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.1-r2.ebuild,v 1.2 2010/05/11 06:50:19 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.2.ebuild,v 1.1 2010/05/11 06:50:19 wschlich Exp $
 
 EAPI="2"
 inherit eutils multilib
@@ -133,16 +133,6 @@ src_prepare() {
 
 	# bug #311161
 	epatch "${FILESDIR}"/${PV}/${P}-lib-search-path.patch
-
-	# switch from -ltermcap to -lncurses.
-	# we have to regenerate the configure script
-	# and eautoreconf does not work due to the
-	# sick bacula autoconf/autotools file location
-	# in ./autoconf/ instead of ./
-	epatch "${FILESDIR}"/${PV}/${P}-ncurses.patch \
-		&& econf --enable-client-only \
-		&& make configure \
-		|| die "making configure failed"
 }
 
 src_configure() {
