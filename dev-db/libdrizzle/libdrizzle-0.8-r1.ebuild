@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/libdrizzle/Attic/libdrizzle-0.7.ebuild,v 1.1 2010/01/13 09:59:57 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/libdrizzle/Attic/libdrizzle-0.8-r1.ebuild,v 1.1 2010/05/12 10:04:51 flameeyes Exp $
 
 EAPI=2
 
@@ -10,7 +10,7 @@ SRC_URI="http://launchpad.net/libdrizzle/trunk/${PV}/+download/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="debug tcmalloc +sqlite static-libs"
 
 RDEPEND="tcmalloc? ( dev-util/google-perftools )
@@ -37,7 +37,7 @@ src_configure() {
 		--disable-dependency-tracking \
 		--disable-mtmalloc \
 		$(use_enable tcmalloc) \
-		$(use_enable libsqlite3)
+		$(use_enable sqlite libsqlite3)
 }
 
 src_install() {
