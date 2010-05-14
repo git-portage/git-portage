@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.2.ebuild,v 1.1 2010/05/11 06:50:19 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.2.ebuild,v 1.2 2010/05/14 08:07:52 wschlich Exp $
 
 EAPI="2"
 inherit eutils multilib
@@ -33,12 +33,10 @@ DEPEND="
 	>=sys-libs/zlib-1.1.4
 	dev-libs/gmp
 	!bacula-clientonly? (
-		!bacula-nodir? (
-			postgres? ( >=virtual/postgresql-server-7.4 )
-			mysql? ( virtual/mysql )
-			sqlite3? ( dev-db/sqlite:3 )
-			virtual/mta
-		)
+		postgres? ( >=virtual/postgresql-server-7.4 )
+		mysql? ( virtual/mysql )
+		sqlite3? ( dev-db/sqlite:3 )
+		!bacula-nodir? ( virtual/mta )
 	)
 	qt4? (
 		x11-libs/qt-svg:4
@@ -64,8 +62,7 @@ RDEPEND="${DEPEND}
 	)"
 
 pkg_setup() {
-	local dbnum
-	declare -i dbnum=0
+	local -i dbnum=0
 	if ! use bacula-clientonly; then
 		if use mysql; then
 			export mydbtype=mysql
@@ -148,11 +145,14 @@ src_configure() {
 			$(use_enable static static-fd) \
 			$(use_enable !bacula-nodir build-dird) \
 			$(use_enable !bacula-nosd build-stored)"
+		# bug #311099
+		# database support needed by dir-only *and* sd-only
+		# build as well (for building bscan, btape, etc.)
+		myconf="${myconf} \
+			--with-${mydbtype} \
+			--enable-batch-insert"
 		if ! use bacula-nodir; then
-			myconf="${myconf} \
-				--with-${mydbtype} \
-				--enable-batch-insert \
-				$(use_enable static static-dir)"
+			myconf="${myconf} $(use_enable static static-dir)"
 		fi
 		if ! use bacula-nosd; then
 			myconf="${myconf} $(use_enable static static-sd)"
