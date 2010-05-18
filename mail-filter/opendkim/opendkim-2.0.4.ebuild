@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/opendkim/Attic/opendkim-2.0.0.ebuild,v 1.3 2010/03/22 05:39:28 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/opendkim/Attic/opendkim-2.0.4.ebuild,v 1.1 2010/05/18 08:08:47 dragonheart Exp $
 
 EAPI="2"
 
-inherit eutils autotools
+inherit eutils
 
 # for betas
 #MY_P=${P/_b/.B}
@@ -15,7 +15,7 @@ DESCRIPTION="A milter-based application to provide DKIM signing and verification
 HOMEPAGE="http://opendkim.org"
 SRC_URI="mirror://sourceforge/opendkim/${P}.tar.gz"
 
-LICENSE="Sendmail-Open-Source BSD-4"
+LICENSE="Sendmail-Open-Source BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="asyncdns +db opendbx ldap lua sasl unbound"
@@ -46,8 +46,6 @@ src_prepare() {
 	sed -i -e 's:/var/db/dkim:/etc/opendkim:g' \
 	       -e 's:/etc/mail:/etc/opendkim:g' \
 		   opendkim/opendkim.conf.sample
-	epatch "${FILESDIR}"/${P}-lua-ldap.patch
-	eautoreconf
 }
 
 src_configure() {
