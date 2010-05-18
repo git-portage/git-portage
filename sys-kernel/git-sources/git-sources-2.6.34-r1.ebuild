@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/git-sources/Attic/git-sources-2.6.34_rc6-r4.ebuild,v 1.1 2010/05/05 12:37:51 mpagano Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/git-sources/Attic/git-sources-2.6.34-r1.ebuild,v 1.1 2010/05/18 12:45:16 mpagano Exp $
 
 UNIPATCH_STRICTORDER="yes"
 K_NOUSENAME="yes"
