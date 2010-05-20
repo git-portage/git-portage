@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-ose/Attic/virtualbox-ose-3.1.4.ebuild,v 1.1 2010/02/14 00:02:15 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-ose/Attic/virtualbox-ose-3.2.0.ebuild,v 1.1 2010/05/20 13:03:16 polynomial-c Exp $
 
 EAPI=2
 
@@ -110,7 +110,10 @@ src_prepare() {
 		"${FILESDIR}"/${PN}-3-localconfig > LocalConfig.kmk || die
 
 	# unset useless/problematic mesa checks in configure
-	epatch "${FILESDIR}/${PN}-3.0.0-mesa-check.patch"
+	epatch "${FILESDIR}/${PN}-3.2.0-mesa-check.patch"
+
+	# fix with newer iasl (bug #319127)
+	epatch "${FILESDIR}/${PN}-3.1.8-iasl-length-calculation-fix.patch"
 }
 
 src_configure() {
@@ -207,7 +210,7 @@ src_install() {
 			pax-mark -m "${D}"/usr/$(get_libdir)/${PN}/${each}
 		done
 
-		if use opengl ; then
+		if use opengl && use qt4 ; then
 			doins VBoxTestOGL || die
 			fowners root:vboxusers /usr/$(get_libdir)/${PN}/VBoxTestOGL
 			fperms 0750 /usr/$(get_libdir)/${PN}/VBoxTestOGL
