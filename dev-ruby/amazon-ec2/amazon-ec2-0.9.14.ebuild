@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/amazon-ec2/Attic/amazon-ec2-0.9.4.ebuild,v 1.2 2010/02/13 19:15:52 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/amazon-ec2/Attic/amazon-ec2-0.9.14.ebuild,v 1.1 2010/05/23 22:50:59 flameeyes Exp $
 
 EAPI=2
 
-USE_RUBY="ruby18 jruby"
+USE_RUBY="ruby18 ruby19 jruby"
 
 RUBY_FAKEGEM_TASK_DOC="yard"
 RUBY_FAKEGEM_DOCDIR="doc"
@@ -25,9 +25,14 @@ IUSE=""
 # We only need yard for Ruby 1.8, as we use it for documentation
 # generation.
 USE_RUBY=ruby18 \
-	ruby_add_bdepend doc "dev-ruby/yard"
+	ruby_add_bdepend "doc? ( dev-ruby/yard )"
 
-ruby_add_bdepend test "virtual/ruby-test-unit dev-ruby/test-spec dev-ruby/mocha"
+ruby_add_bdepend "
+	test? (
+		virtual/ruby-test-unit
+		>=dev-ruby/test-spec-0.10.0
+		>=dev-ruby/mocha-0.9.8
+	)"
 ruby_add_rdepend '>=dev-ruby/xml-simple-1.0.12'
 
 each_ruby_prepare() {
