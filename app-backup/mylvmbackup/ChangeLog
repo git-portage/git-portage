@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/mylvmbackup
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/ChangeLog,v 1.13 2010/04/29 07:33:16 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/ChangeLog,v 1.14 2010/05/23 18:25:52 idl0r Exp $
+
+  23 May 2010; Christian Ruppert <idl0r@gentoo.org> mylvmbackup-0.11.ebuild,
+  mylvmbackup-0.13.ebuild:
+  Fix HOMEPAGE/DESCRIPTION and SRC_URI. Add missing die statements.
 
   29 Apr 2010; Robin H. Johnson <robbat2@gentoo.org>
   mylvmbackup-0.13.ebuild:

@@ -1,12 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/mylvmbackup-0.11.ebuild,v 1.1 2009/01/05 18:24:18 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mylvmbackup/mylvmbackup-0.11.ebuild,v 1.2 2010/05/23 18:25:52 idl0r Exp $
 
-inherit eutils
-
-DESCRIPTION="mylvmbackup is a Perl script for quickly creating backups of MySQL server's data files utilizing LVM snapshots."
-HOMEPAGE="http://lenz.homelinux.org/mylvmbackup/"
-SRC_URI="http://lenz.homelinux.org/${PN}/${P}.tar.gz"
+DESCRIPTION="mylvmbackup is a tool for quickly creating backups of MySQL server's data files using LVM snapshots"
+HOMEPAGE="http://lenzg.net/mylvmbackup/"
+SRC_URI="http://lenzg.net/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~amd64"
@@ -26,7 +24,7 @@ src_unpack() {
 }
 
 src_install() {
-	emake -j1 install DESTDIR="${D}" mandir="/usr/share/man"
+	emake -j1 install DESTDIR="${D}" mandir="/usr/share/man" || die
 	dodoc ChangeLog README TODO
 	keepdir /var/tmp/${PN}/{backup,mnt}
 	fperms 0700 /var/tmp/${PN}/
