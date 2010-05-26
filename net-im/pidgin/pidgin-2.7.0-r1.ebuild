@@ -1,29 +1,30 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/Attic/pidgin-2.6.5.ebuild,v 1.11 2010/04/12 13:55:43 tester Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/Attic/pidgin-2.7.0-r1.ebuild,v 1.1 2010/05/26 20:50:38 pva Exp $
 
 EAPI=2
 
 GENTOO_DEPEND_ON_PERL=no
-inherit flag-o-matic eutils toolchain-funcs multilib perl-app gnome2
+inherit flag-o-matic eutils toolchain-funcs multilib perl-app gnome2 autotools
 
 DESCRIPTION="GTK Instant Messenger client"
 HOMEPAGE="http://pidgin.im/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2
+	mirror://gentoo/pidgin-2.7.0-mtn20100526.patch.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 ppc ~ppc64 sparc x86"
-IUSE="dbus debug doc eds gadu gnutls +gstreamer idn meanwhile networkmanager"
-IUSE+=" nls perl silc tcl tk spell qq gadu +gtk sasl +startup-notification"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+IUSE="dbus debug doc eds gadu gnutls +gstreamer +gtk idn krb4 meanwhile"
+IUSE+=" networkmanager nls perl silc tcl tk spell qq sasl +startup-notification"
 IUSE+=" ncurses groupwise prediction +xscreensaver zephyr zeroconf" # mono"
 
 RDEPEND="
-	>=dev-libs/glib-2.4
+	>=dev-libs/glib-2.12
 	>=dev-libs/libxml2-2.6.18
 	ncurses? ( sys-libs/ncurses[unicode] )
 	gtk? (
-		>=x11-libs/gtk+-2.4:2
+		>=x11-libs/gtk+-2.10:2
 		x11-libs/libSM
 		xscreensaver? ( x11-libs/libXScrnSaver )
 		startup-notification? ( >=x11-libs/startup-notification-0.5 )
@@ -41,12 +42,12 @@ RDEPEND="
 		>=sys-apps/dbus-0.90
 		>=dev-lang/python-2.4 )
 	perl? ( >=dev-lang/perl-5.8.2-r1[-build] )
-	gadu?  ( net-libs/libgadu[-ssl] )
+	gadu?  ( >=net-libs/libgadu-1.9.0[-ssl] )
 	gnutls? ( net-libs/gnutls )
 	!gnutls? ( >=dev-libs/nss-3.11 )
 	meanwhile? ( net-libs/meanwhile )
 	silc? ( >=net-im/silc-toolkit-1.0.1 )
-	zephyr? ( >=app-crypt/mit-krb5-1.3.6-r1[krb4] )
+	zephyr? ( >=app-crypt/mit-krb5-1.3.6-r1[krb4?] )
 	tcl? ( dev-lang/tcl )
 	tk? ( dev-lang/tk )
 	sasl? ( dev-libs/cyrus-sasl:2 )
@@ -59,10 +60,10 @@ DEPEND="$RDEPEND
 	dev-lang/perl
 	dev-perl/XML-Parser
 	dev-util/pkgconfig
-	dev-util/intltool
 	gtk? ( x11-proto/scrnsaverproto )
 	doc? ( app-doc/doxygen )
-	nls? ( sys-devel/gettext )"
+	nls? ( >=dev-util/intltool-0.41.1
+		sys-devel/gettext )"
 
 # Enable Default protocols
 DYNAMIC_PRPLS="irc,jabber,oscar,yahoo,simple,msn,myspace"
@@ -82,6 +83,7 @@ DYNAMIC_PRPLS="irc,jabber,oscar,yahoo,simple,msn,myspace"
 #   x11-plugins/pidgin-rhythmbox
 #   x11-plugins/purple-plugin_pack
 #   x11-themes/pidgin-smileys
+#	x11-plugins/pidgin-knotify
 # Plugins in Sunrise:
 #	x11-plugins/pidgimpd
 #	x11-plugins/pidgin-birthday
@@ -105,7 +107,9 @@ pkg_setup() {
 }
 
 src_prepare() {
-	intltoolize --automake --copy --force
+	# Fixes from upstream as of 20100526
+	epatch "${WORKDIR}/pidgin-2.7.0-mtn20100526.patch"
+	eautoreconf
 }
 
 src_configure() {
@@ -160,7 +164,7 @@ src_configure() {
 		$(use_enable sasl cyrus-sasl ) \
 		$(use_enable doc doxygen) \
 		$(use_enable networkmanager nm) \
-		$(use_with zephyr krb4) \
+		$(use_with krb4) \
 		$(use_enable zeroconf avahi) \
 		$(use_enable idn) \
 		"--with-dynamic-prpls=${DYNAMIC_PRPLS}" \
