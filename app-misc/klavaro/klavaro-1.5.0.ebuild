@@ -1,8 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/klavaro/Attic/klavaro-1.4.1.ebuild,v 1.1 2010/01/08 15:15:34 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/klavaro/Attic/klavaro-1.5.0.ebuild,v 1.1 2010/05/26 10:16:23 scarabeus Exp $
 
-inherit eutils
+EAPI=3
+
+inherit base
 
 DESCRIPTION="Another free touch typing tutor program"
 HOMEPAGE="http://klavaro.sourceforge.net/"
@@ -21,7 +23,7 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext"
 
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
+	base_src_install
 	make_desktop_entry klavaro Klavaro "" Education
 	dodoc AUTHORS ChangeLog NEWS README TODO || die "dodoc failed"
 }
