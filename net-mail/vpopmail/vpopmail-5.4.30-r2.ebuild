@@ -1,8 +1,10 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/vpopmail/Attic/vpopmail-5.4.20.ebuild,v 1.1 2007/09/16 08:16:28 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/vpopmail/vpopmail-5.4.30-r2.ebuild,v 1.1 2010/05/30 06:49:46 hollow Exp $
 
-inherit eutils fixheadtails autotools
+EAPI="2"
+
+inherit autotools eutils fixheadtails qmail
 
 HOMEPAGE="http://www.inter7.com/index.php?page=vpopmail"
 DESCRIPTION="A collection of programs to manage virtual email domains and accounts on your Qmail mail servers."
@@ -10,19 +12,17 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~hppa ~ppc ~s390 ~sh ~sparc ~x86"
-IUSE="clearpasswd ipalias maildrop mysql"
+KEYWORDS="~amd64 ~hppa ~ppc ~s390 ~sh ~sparc ~x86"
+IUSE="clearpasswd ipalias maildrop mysql spamassassin"
 
 DEPEND="virtual/qmail
 	maildrop? ( mail-filter/maildrop )
 	mysql? ( virtual/mysql )
-"
+	spamassassin? ( mail-filter/spamassassin )"
+RDEPEND="${DEPEND}"
 
 # This makes sure the variable is set, and that it isn't null.
 VPOP_DEFAULT_HOME="/var/vpopmail"
-
-# qmail home directory
-QMAIL_HOME="/var/qmail"
 
 vpopmail_set_homedir() {
 	VPOP_HOME=$(getent passwd vpopmail | cut -d: -f6)
@@ -43,12 +43,10 @@ pkg_setup() {
 	upgradewarning
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	epatch "${FILESDIR}"/${PN}-5.4.9-access.violation.patch
 	epatch "${FILESDIR}"/${PN}-lazy.patch
+	epatch "${FILESDIR}"/${PN}-double-free.patch
 
 	# fix maildir paths
 	sed -i -e 's|Maildir|.maildir|g' \
@@ -61,16 +59,15 @@ src_unpack() {
 		vdelivermail.c vpopbull.c vqmaillocal.c || die
 
 	eautoreconf
-	ht_fix_file "${S}"/cdb/Makefile || die "failed to fix file"
+	ht_fix_file cdb/Makefile
 }
 
-src_compile() {
+src_configure() {
 	vpopmail_set_homedir
 
 	if use mysql; then
 		authopts=" \
 			--enable-auth-module=mysql \
-			--enable-libs=/usr/include/mysql \
 			--enable-libdir=/usr/lib/mysql \
 			--enable-sql-logging \
 			--enable-valias \
@@ -97,50 +94,57 @@ src_compile() {
 		--enable-auth-logging \
 		--enable-log-name=vpopmail \
 		--enable-qmail-ext \
-		--disable-tcp-rules-prog \
 		--disable-tcpserver-file \
 		--disable-roaming-users \
 		$(use_enable ipalias ip-alias-domains) \
 		$(use_enable clearpasswd clear-passwd) \
 		$(use_enable maildrop) \
-		|| die "configure failed"
+		$(use_enable maildrop maildrop-prog /usr/bin/maildrop) \
+		$(use_enable spamassassin)
+}
 
+src_compile() {
 	emake || die "make failed"
 }
 
 src_install() {
 	vpopmail_set_homedir
 
-	make DESTDIR="${D}" install || die "make install failed"
+	# bug #277764
+	emake -j1 DESTDIR="${D}" install || die "make install failed"
 	keepdir "${VPOP_HOME}"/domains
 
 	# install helper script for maildir conversion
-	into /var/vpopmail
+	into "${VPOP_HOME}"
 	dobin "${FILESDIR}"/vpopmail-Maildir-dotmaildir-fix.sh
 	into /usr
 
-	# install documentation
-	dodoc AUTHORS ChangeLog FAQ INSTALL README*
+	dodoc doc/AUTHORS ChangeLog doc/FAQ doc/INSTALL doc/README*
 	dohtml doc/doc_html/* doc/man_html/*
-	rm -rf "${D}"/"${VPOP_HOME}"/doc
+	rm -rf "${D}/${VPOP_HOME}"/doc
 	dosym /usr/share/doc/${PF}/ "${VPOP_HOME}"/doc
 
 	# create /etc/vpopmail.conf
 	if use mysql; then
-		einfo "Installing vpopmail mysql configuration file"
 		dodir /etc
-		# config file position
-		mv "${D}"/var/vpopmail/etc/vpopmail.mysql "${D}"/etc/vpopmail.conf
-		dosym /etc/vpopmail.conf /var/vpopmail/etc/vpopmail.mysql
+		mv "${D}${VPOP_HOME}"/etc/vpopmail.mysql "${D}"/etc/vpopmail.conf
+		dosym /etc/vpopmail.conf "${VPOP_HOME}"/etc/vpopmail.mysql
+
 		sed -e '12d' -i "${D}"/etc/vpopmail.conf
 		echo '# Read-only DB' >> "${D}"/etc/vpopmail.conf
 		echo 'localhost|0|vpopmail|secret|vpopmail' >> "${D}"/etc/vpopmail.conf
-		echo '# Write DB' >>${D}/etc/vpopmail.conf
+		echo '# Write DB' >> "${D}"/etc/vpopmail.conf
 		echo 'localhost|0|vpopmail|secret|vpopmail' >> "${D}"/etc/vpopmail.conf
+
 		# lock down perms
 		fperms 640 /etc/vpopmail.conf
 		fowners root:vpopmail /etc/vpopmail.conf
 	fi
+
+	insinto "${VPOP_HOME}"/etc
+	doins vusagec.conf
+	dosym "${VPOP_HOME}"/etc/vusagec.conf /etc/vusagec.conf
+	sed -i 's/Disable = False;/Disable = True;/g' "${D}${VPOP_HOME}"/etc/vusagec.conf
 
 	einfo "Installing env.d entry"
 	dodir /etc/env.d
@@ -153,8 +157,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Performing post-installation routines for ${P}"
-
 	if use mysql ; then
 		elog
 		elog "You have 'mysql' turned on in your USE"
@@ -165,16 +167,17 @@ pkg_postinst() {
 		elog "> create database vpopmail;"
 		elog "> use mysql;"
 		elog "> grant select, insert, update, delete, create, drop on vpopmail.* to"
-		elog "	 vpopmail@localhost identified by 'your password';"
+		elog "  vpopmail@localhost identified by 'your password';"
 		elog "> flush privileges;"
 		elog
 		elog "If you have problems with vpopmail not accepting mail properly,"
 		elog "please ensure that /etc/vpopmail.conf is chmod 640 and"
 		elog "owned by root:vpopmail"
+		elog
 	fi
 
 	# do this for good measure
-	if [ -e /etc/vpopmail.conf ] ; then
+	if [[ -e /etc/vpopmail.conf ]]; then
 		chmod 640 /etc/vpopmail.conf
 		chown root:vpopmail /etc/vpopmail.conf
 	fi
@@ -190,15 +193,19 @@ pkg_postrm() {
 }
 
 upgradewarning() {
+	ewarn
 	ewarn "Massive important warning if you are upgrading to 5.2.1-r8 or older"
 	ewarn "The internal structure of the mail storage has changed for"
 	ewarn "consistancy with the rest of Gentoo! Please review and utilize the "
-	ewarn "script at /var/vpopmail/bin/vpopmail-Maildir-dotmaildir-fix.sh"
+	ewarn "script at ${VPOP_HOME}/bin/vpopmail-Maildir-dotmaildir-fix.sh"
 	ewarn "to upgrade your system! (It can do conversions both ways)."
 	ewarn "You should be able to run it right away without any changes."
+	ewarn
+
 	elog
 	elog "Use of vpopmail's tcp.smtp[.cdb] is also deprecated now, consider"
 	elog "using net-mail/relay-ctrl instead."
+	elog
 
 	if use mysql; then
 		elog
@@ -214,5 +221,13 @@ upgradewarning() {
 		elog 'ALTER TABLE `limits` CHANGE domain domain CHAR(96) NOT NULL,'
 		elog '    ADD `disable_spamassassin` TINYINT(1) DEFAULT '0' NOT NULL AFTER `disable_smtp`,'
 		elog '    ADD `delete_spam` TINYINT(1) DEFAULT '0' NOT NULL AFTER `disable_spamassassin`;'
+		elog
 	fi
+
+	ewarn
+	ewarn "Newer versions of vpopmail contain a quota daemon called vusaged."
+	ewarn "This ebuild DOES NOT INSTALL vusaged and has therefore disabled"
+	ewarn "its usage in ${VPOP_HOME}/etc/vusagec.conf. DO NOT ENABLE!"
+	ewarn "Otherwise mail delivery WILL BREAK"
+	ewarn
 }
