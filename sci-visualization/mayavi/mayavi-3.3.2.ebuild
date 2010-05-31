@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/mayavi/Attic/mayavi-3.3.1.ebuild,v 1.2 2010/05/31 07:23:16 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/mayavi/Attic/mayavi-3.3.2.ebuild,v 1.1 2010/05/31 07:23:16 jlec Exp $
 
 EAPI="2"
 
@@ -24,15 +24,15 @@ HOMEPAGE="http://code.enthought.com/projects/${PN}/"
 SRC_URI="http://www.enthought.com/repo/ETS/${MY_P}.tar.gz"
 #	doc? ( mirror://gentoo/${PN}-docs-${PV}.tar.bz2 )"
 
-RDEPEND=">=dev-python/apptools-3.3.1
-	>=dev-python/enthoughtbase-3.0.4
+RDEPEND=">=dev-python/apptools-3.3.2
+	>=dev-python/enthoughtbase-3.0.5
 	>=dev-python/envisagecore-3.1.2
 	>=dev-python/envisageplugins-3.1.2
-	>=dev-python/traitsgui-3.3.0[qt4?,wxwidgets]
+	>=dev-python/traitsgui-3.4.0[qt4?,wxwidgets]
 	dev-python/configobj
 	dev-python/ipython
 	dev-python/numpy
-	=sci-libs/vtk-5.4*[python]
+	>=sci-libs/vtk-5[python]
 	dev-python/wxpython:2.8[opengl]
 	qt4? ( dev-python/PyQt4[X,opengl] )"
 
@@ -48,6 +48,7 @@ S="${WORKDIR}"/${MY_P}
 pkg_setup() {
 	python_set_active_version 2
 }
+
 src_prepare() {
 	# documentation generation requires X
 	#epatch "${FILESDIR}"/${P}-nodocs.patch
