@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/Attic/tracker-0.8.4.ebuild,v 1.2 2010/05/19 19:31:11 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/Attic/tracker-0.8.9.ebuild,v 1.1 2010/06/02 21:56:54 eva Exp $
 
 EAPI="2"
 G2CONF_DEBUG="no"
@@ -129,7 +129,7 @@ pkg_setup() {
 		--with-enca
 		$(use_enable applet tracker-status-icon)
 		$(use_enable applet tracker-search-bar)
-		$(use_enable eds evolution-miner)
+		$(use_enable eds miner-evolution)
 		$(use_enable exif libexif)
 		$(use_enable flac libflac)
 		$(use_enable gnome-keyring)
@@ -139,7 +139,7 @@ pkg_setup() {
 		$(use_enable gtk tracker-search-tool)
 		$(use_enable iptc libiptcdata)
 		$(use_enable jpeg libjpeg)
-		$(use_enable kmail kmail-miner)
+		$(use_enable kmail miner-kmail)
 		$(use_enable mp3 id3lib)
 		$(use_enable pdf poppler-glib)
 		$(use_enable playlist)
