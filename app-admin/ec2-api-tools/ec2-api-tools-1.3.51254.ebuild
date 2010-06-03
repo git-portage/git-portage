@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/ec2-api-tools/Attic/ec2-api-tools-1.3.46266.ebuild,v 1.1 2010/01/28 13:34:26 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/ec2-api-tools/Attic/ec2-api-tools-1.3.51254.ebuild,v 1.1 2010/06/03 12:45:44 flameeyes Exp $
 
 inherit versionator
 
