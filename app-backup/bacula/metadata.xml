@@ -2,6 +2,10 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>app-backup</herd>
+	<maintainer>
+		<email>tomjbe@gentoo.org</email>
+		<name>Thomas Beierlein</name>
+	</maintainer>
 	<use>
 		<flag name='bacula-clientonly'>Disable DB support, and just build a
 			client</flag>

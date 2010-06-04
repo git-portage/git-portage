@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.86 2010/05/19 15:01:39 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.87 2010/06/04 13:06:34 tomjbe Exp $
+
+  04 Jun 2010; Thomas Beierlein <tomjbe@gentoo.org> metadata.xml:
+  Taking over maintainership.
 
 *bacula-5.0.2-r1 (19 May 2010)
 
