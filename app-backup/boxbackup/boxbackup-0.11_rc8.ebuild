@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/Attic/boxbackup-0.11_rc8.ebuild,v 1.1 2010/05/07 06:23:37 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/Attic/boxbackup-0.11_rc8.ebuild,v 1.2 2010/06/07 12:53:19 flameeyes Exp $
 
 EAPI="2"
 
@@ -33,8 +33,8 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "install failed"
-	make DESTDIR="${D}" install-backup-client || die "client install failed"
+	emake -j1 DESTDIR="${D}" install || die "install failed"
+	emake -j1 DESTDIR="${D}" install-backup-client || die "client install failed"
 	use client-only || \
 		make DESTDIR="${D}" install-backup-server || die "server install failed"
 
