@@ -1,24 +1,24 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-voip/linphone/Attic/linphone-3.1.2.ebuild,v 1.2 2009/08/24 09:13:15 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-voip/linphone/Attic/linphone-3.3.1.ebuild,v 1.1 2010/06/07 14:49:11 pva Exp $
 
-EAPI="2"
+EAPI="3"
 
-inherit eutils autotools multilib
+inherit eutils autotools multilib versionator
 
 DESCRIPTION="Video softphone based on the SIP protocol"
 HOMEPAGE="http://www.linphone.org/"
-SRC_URI="http://download.savannah.nongnu.org/releases/${PN}/stable/sources/${P}.tar.gz"
+SRC_URI="http://download.savannah.nongnu.org/releases-noredirect/${PN}/$(get_version_component_range 1-2).x/sources/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~ppc-macos ~x86-macos"
 IUSE="doc gtk ipv6 ncurses nls video"
 
-RDEPEND=">=media-libs/mediastreamer-2.2.4[video?]
+RDEPEND=">=media-libs/mediastreamer-2.4.0[video?]
 	>=net-libs/libeXosip-3.0.2
 	>=net-libs/libosip-3.0.0
-	>=net-libs/ortp-0.16.0
+	>=net-libs/ortp-0.16.2
 	gtk? ( dev-libs/glib:2
 		>=gnome-base/libglade-2.4.0:2.0
 		>=x11-libs/gtk+-2.4.0:2 )
@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 	nls? ( dev-util/intltool
 		sys-devel/gettext )"
 
-IUSE_LINGUAS=" fr it de ja es pl cs nl sv pt_BR hu ru"
+IUSE_LINGUAS=" fr it de ja es pl cs nl sv pt_BR hu ru zh_CN"
 IUSE="${IUSE} ${IUSE_LINGUAS// / linguas_}"
 
 # TODO:
@@ -51,8 +51,8 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-3.1.1-external-mstreamer.patch
-	epatch "${FILESDIR}"/${PN}-3.1.0-nls.patch
+	epatch "${FILESDIR}"/${PN}-3.2.99.1-external-mediastreamer.patch
+	epatch "${FILESDIR}"/${PN}-3.2.1-nls.patch
 
 	# remove speex check, avoid bug when mediastreamer[-speex]
 	sed -i -e '/SPEEX/d' configure.in || die "patching configure.in failed"
@@ -64,7 +64,7 @@ src_prepare() {
 	# removing bundled libs dir prevent them to be reconf
 	rm -rf mediastreamer2 oRTP || die "should not die"
 	# and references in Makefile.am
-	sed -i -e "s:oRTP::" -e "s:mediastreamer2::" Makefile.am \
+	sed -i -e "s:oRTP::;s:mediastreamer2::" Makefile.am \
 		|| die "patching Makefile.am failed"
 
 	# make sure to use host libtool version
@@ -79,7 +79,7 @@ src_configure() {
 	# rsvp: breaking the build (not maintained anymore) --disable = --enable
 	# alsa, artsc and portaudio are used for bundled mediastreamer
 	econf \
-		--libdir=/usr/$(get_libdir) \
+		--libdir="${EPREFIX}"/usr/$(get_libdir) \
 		--disable-strict \
 		--enable-external-ortp \
 		--enable-external-mediastreamer \
@@ -96,5 +96,6 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dosym linphone-3 /usr/bin/linphone || die
-	dodoc AUTHORS BUGS ChangeLog NEWS README README.arm TODO
+	dodoc AUTHORS BUGS ChangeLog NEWS README README.arm TODO || die
+	#cp "${ED}/usr/share/pixmaps/"{linphone/linphone2.png,linphone2.png} || die
 }
