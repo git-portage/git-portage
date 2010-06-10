@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-5.0.375.55.ebuild,v 1.4 2010/06/02 18:52:09 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-6.0.427.0.ebuild,v 1.1 2010/06/10 15:54:22 phajdan.jr Exp $
 
 EAPI="2"
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="+plugins-symlink"
+IUSE=""
 
 RDEPEND="app-arch/bzip2
 	>=dev-libs/libevent-1.4.13
@@ -28,7 +28,6 @@ RDEPEND="app-arch/bzip2
 	sys-libs/zlib
 	>=x11-libs/gtk+-2.14.7
 	x11-libs/libXScrnSaver"
-#	dev-db/sqlite:3
 DEPEND="${RDEPEND}
 	dev-lang/perl
 	>=dev-util/gperf-3.0.3
@@ -45,49 +44,63 @@ RDEPEND+="
 	x11-misc/xdg-utils
 	virtual/ttf-fonts"
 
-# Incompatible system plugins:
-# www-plugins/gecko-mediaplayer, bug #309231.
-RDEPEND+="
-	plugins-symlink? (
-		!www-plugins/gecko-mediaplayer[gnome]
-	)"
+remove_bundled_lib() {
+	einfo "Removing bundled library $1 ..."
+	local out
+	out="$(find $1 -mindepth 1 \! -iname '*.gyp' -print -delete)" \
+		|| die "failed to remove bundled library $1"
+	if [[ -z $out ]]; then
+		die "no files matched when removing bundled library $1"
+	fi
+}
 
 src_prepare() {
-	# Prevent automatic -march=pentium4 -msse2 enabling on x86, http://crbug.com/9007
-	epatch "${FILESDIR}"/${PN}-drop_sse2-r0.patch
+	# Disable VP8 until we have a recent enough system-provided ffmpeg.
+	epatch "${FILESDIR}"/${PN}-disable-vp8-r1.patch
 
-	# Allow supporting more media types.
-	epatch "${FILESDIR}"/${PN}-20100122-ubuntu-html5-video-mimetypes.patch
+	# Fix gyp files to correctly support system-provided libraries.
+	epatch "${FILESDIR}"/${PN}-gyp-fixes-r1.patch
 
-	# Fix build failure with libpng-1.4, bug 310959.
-	epatch "${FILESDIR}"/${PN}-libpng-1.4.patch
+	remove_bundled_lib "third_party/bzip2"
+	remove_bundled_lib "third_party/libevent"
+	remove_bundled_lib "third_party/libjpeg"
+	remove_bundled_lib "third_party/libpng"
+	remove_bundled_lib "third_party/libxml"
+	remove_bundled_lib "third_party/libxslt"
+	# TODO: also remove third_party/zlib. For now the compilation fails if we
+	# remove it (minizip-related).
 }
 
 src_configure() {
 	export CHROMIUM_HOME=/usr/$(get_libdir)/chromium-browser
 
-	# Fails to build on arm if we don't do this
-	use arm && append-flags -fno-tree-sink
+	# Workaround for bug #318969.
+	# TODO: remove when http://crbug.com/43778 is fixed.
+	append-flags -D__STDC_CONSTANT_MACROS
 
-	# CFLAGS/LDFLAGS
-	mkdir -p "${S}"/.gyp || die "cflags mkdir failed"
-	cat << EOF > "${S}"/.gyp/include.gypi || die "cflags cat failed"
-{
-	'target_defaults': {
-		'cflags': [ '${CFLAGS// /','}' ],
-		'ldflags': [ '${LDFLAGS// /','}' ],
-	},
-}
-EOF
-	export HOME="${S}"
+	# Make it possible to build chromium on non-sse2 systems.
+	local myconf="-Ddisable_sse2=1"
 
-	# Configuration options (system libraries)
-	local myconf="-Duse_system_zlib=1 -Duse_system_bzip2=1 -Duse_system_ffmpeg=1 -Duse_system_libevent=1 -Duse_system_libjpeg=1 -Duse_system_libpng=1 -Duse_system_libxml=1 -Duse_system_libxslt=1"
-	# -Duse_system_sqlite=1 : http://crbug.com/22208
-	# Others still bundled: icu (not possible?), hunspell (changes required for sandbox support)
+	# Use system-provided libraries.
+	# TODO: use_system_sqlite (http://crbug.com/22208).
+	# TODO: use_system_icu, use_system_hunspell (upstream changes needed).
+	# TODO: use_system_ssl when we have a recent enough system NSS.
+	myconf="${myconf}
+		-Duse_system_bzip2=1
+		-Duse_system_ffmpeg=1
+		-Duse_system_libevent=1
+		-Duse_system_libjpeg=1
+		-Duse_system_libpng=1
+		-Duse_system_libxml=1
+		-Duse_system_zlib=1"
 
-	# Sandbox paths
-	myconf="${myconf} -Dlinux_sandbox_path=${CHROMIUM_HOME}/chrome_sandbox -Dlinux_sandbox_chrome_path=${CHROMIUM_HOME}/chrome"
+	# The system-provided ffmpeg supports more codecs. Enable them in chromium.
+	myconf="${myconf} -Dproprietary_codecs=1"
+
+	# Enable sandbox.
+	myconf="${myconf}
+		-Dlinux_sandbox_path=${CHROMIUM_HOME}/chrome_sandbox
+		-Dlinux_sandbox_chrome_path=${CHROMIUM_HOME}/chrome"
 
 	# Disable the V8 snapshot. It breaks the build on hardened (bug #301880),
 	# and the performance gain isn't worth it.
@@ -106,6 +119,7 @@ EOF
 	elif [[ $myarch = x86 ]] ; then
 		myconf="${myconf} -Dtarget_arch=ia32"
 	elif [[ $myarch = arm ]] ; then
+		append-flags -fno-tree-sink
 		myconf="${myconf} -Dtarget_arch=arm -Ddisable_nacl=1 -Dlinux_use_tcmalloc=0"
 	else
 		die "Failed to determine target arch, got '$myarch'."
@@ -134,7 +148,6 @@ src_compile() {
 }
 
 src_install() {
-	# Chromium does not have "install" target in the build system.
 	export CHROMIUM_HOME=/usr/$(get_libdir)/chromium-browser
 
 	dodir ${CHROMIUM_HOME}
@@ -163,18 +176,17 @@ src_install() {
 	dosym /usr/$(get_libdir)/libavformat.so.52 ${CHROMIUM_HOME}
 	dosym /usr/$(get_libdir)/libavutil.so.50 ${CHROMIUM_HOME}
 
-	# Plugins symlink, optional wrt bug #301911
-	if use plugins-symlink; then
-		dosym /usr/$(get_libdir)/nsbrowser/plugins ${CHROMIUM_HOME}/plugins
-	fi
+	# Use system plugins by default.
+	dosym /usr/$(get_libdir)/nsbrowser/plugins ${CHROMIUM_HOME}/plugins
 
-	# Icon and desktop entry
+	# Install icon and desktop entry.
 	newicon out/Release/product_logo_48.png ${PN}-browser.png
 	dosym ${CHROMIUM_HOME}/chromium-launcher.sh /usr/bin/chromium
 	make_desktop_entry chromium "Chromium" ${PN}-browser "Network;WebBrowser"
 	sed -e "/^Exec/s/$/ %U/" -i "${D}"/usr/share/applications/*.desktop \
 		|| die "desktop file sed failed"
-	# Gnome default application entry
+
+	# Install GNOME default application entry (bug #303100).
 	dodir /usr/share/gnome-control-center/default-apps
 	insinto /usr/share/gnome-control-center/default-apps
 	doins "${FILESDIR}"/chromium.xml
