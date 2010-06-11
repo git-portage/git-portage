@@ -3,14 +3,8 @@
 <pkgmetadata>
   <herd>no-herd</herd>
   <maintainer>
-    <email>ng.ehahn@gmx.de</email>
+    <email>erik_hahn@gmx.de</email>
     <name>Erik Hahn</name>
-    <description>
-      proxy maintainer, proxied by yngwin@gentoo.org
-    </description>
-  </maintainer>
-  <maintainer>
-	  <email>yngwin@gentoo.org</email>
-	  <description>Proxy maintainer</description>
+    <description>proxy maintainer</description>
   </maintainer>
 </pkgmetadata>
