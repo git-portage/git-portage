@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/mythtv/Attic/mythtv-0.23_alpha22834.ebuild,v 1.2 2009/11/18 05:37:23 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/mythtv/Attic/mythtv-0.23_p25073.ebuild,v 1.1 2010/06/13 07:09:23 cardoe Exp $
 
 EAPI=2
 inherit flag-o-matic multilib eutils qt4 mythtv toolchain-funcs python
@@ -10,11 +10,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 
 IUSE_VIDEO_CARDS="video_cards_nvidia video_cards_via"
-IUSE="alsa altivec autostart +css debug directv dvb \
+IUSE="alsa altivec autostart +css dbus debug directv dvb faad \
 fftw ieee1394 jack lcd lirc mmx perl pulseaudio python \
 tiff vdpau xvmc ${IUSE_VIDEO_CARDS}"
 
-RDEPEND=">=media-libs/freetype-2.0
+# fonts from bug #296222
+RDEPEND="media-fonts/corefonts
+	media-fonts/dejavu
+	>=media-libs/freetype-2.0
 	>=media-sound/lame-3.93.1
 	x11-libs/libX11
 	x11-libs/libXext
@@ -23,10 +26,10 @@ RDEPEND=">=media-libs/freetype-2.0
 	x11-libs/libXrandr
 	x11-libs/libXxf86vm
 	>=x11-libs/qt-core-4.4:4[qt3support]
-	>=x11-libs/qt-gui-4.4:4[qt3support,tiff?]
+	>=x11-libs/qt-gui-4.4:4[dbus?,qt3support,tiff?]
 	>=x11-libs/qt-sql-4.4:4[qt3support,mysql]
 	>=x11-libs/qt-opengl-4.4:4[qt3support]
-	>=x11-libs/qt-webkit-4.4:4
+	>=x11-libs/qt-webkit-4.4:4[dbus?]
 	virtual/mysql
 	virtual/opengl
 	virtual/glu
@@ -36,8 +39,10 @@ RDEPEND=">=media-libs/freetype-2.0
 				x11-wm/evilwm
 				x11-apps/xset )
 	css? ( media-libs/libdvdcss )
+	dbus? ( >=x11-libs/qt-dbus-4.4:4 )
 	directv? ( virtual/perl-Time-HiRes )
 	dvb? ( media-libs/libdvb media-tv/linuxtv-dvb-headers )
+	faad? ( media-libs/faad2 )
 	fftw? ( sci-libs/fftw:3.0 )
 	ieee1394? (	>=sys-libs/libraw1394-1.2.0
 			>=sys-libs/libavc1394-0.5.3
@@ -52,12 +57,14 @@ RDEPEND=">=media-libs/freetype-2.0
 	xvmc? ( x11-libs/libXvMC )"
 
 DEPEND="${RDEPEND}
+	app-arch/unzip
 	x11-proto/xineramaproto
 	x11-proto/xf86vidmodeproto
 	x11-apps/xinit
 	!<media-plugins/mythcontrols-0.22
 	!<x11-themes/mythtv-themes-0.22
-	!<x11-themes/mythtv-themes-extra-0.22"
+	!<x11-themes/mythtv-themes-extra-0.23
+	!<media-plugins/mythflix-0.23"
 
 MYTHTV_GROUPS="video,audio,tty,uucp"
 
@@ -96,14 +103,15 @@ src_configure() {
 		--libdir-name=$(get_libdir)"
 	use alsa || myconf="${myconf} --disable-audio-alsa"
 	use altivec || myconf="${myconf} --disable-altivec"
+	use faad && myconf="${myconf} --enable-libfaad"
 	use fftw && myconf="${myconf} --enable-libfftw3"
 	use jack || myconf="${myconf} --disable-audio-jack"
 	use vdpau && myconf="${myconf} --enable-vdpau"
 
-	#from bug #220857 and fixed for bug #292481
+	#from bug #220857 and fixed for bug #292481, and bug #299063
 	use xvmc && myconf="${myconf} --enable-xvmc --enable-xvmcw"
 	if use video_cards_via && use xvmc; then
-		myconf="${myconf} --enable-xvmc-vld";
+		myconf="${myconf} --enable-xvmc-vld --enable-xvmc-pro";
 	else
 		myconf="${myconf} --disable-xvmc-vld";
 	fi
@@ -115,7 +123,6 @@ src_configure() {
 		$(use_enable dvb)
 		$(use_enable ieee1394 firewire)
 		$(use_enable lirc)
-		--disable-audio-arts
 		--disable-directfb
 		--dvb-path=/usr/include
 		--enable-opengl-vsync
@@ -201,7 +208,7 @@ src_compile() {
 src_install() {
 
 	einstall INSTALL_ROOT="${D}" || die "install failed"
-	dodoc AUTHORS FAQ UPGRADING  README
+	dodoc AUTHORS FAQ UPGRADING README
 
 	insinto /usr/share/mythtv/database
 	doins database/*
@@ -216,17 +223,28 @@ src_install() {
 	dohtml docs/*.html
 
 	keepdir /etc/mythtv
-	chown -R mythtv "${D}"/etc/mythtv
+	fowners -R mythtv "${D}"/etc/mythtv
 	keepdir /var/log/mythtv
-	chown -R mythtv "${D}"/var/log/mythtv
+	fowners -R mythtv "${D}"/var/log/mythtv
 
 	insinto /etc/logrotate.d
-	newins "${FILESDIR}"/mythtv.logrotate.d mythtv
+	newins "${FILESDIR}"/mythtv.logrotate.d-r1 mythtv
 
 	insinto /usr/share/mythtv/contrib
 	doins -r contrib/*
 
 	dobin "${FILESDIR}"/runmythfe
+
+	# add icon from MythTV's website (scaled to 32x32)
+	# for desktop entry
+	insinto /usr/share/pixmaps
+	doins "${FILESDIR}"/mythtv.png
+
+	# create desktop entry for mythfrontend
+	make_desktop_entry /usr/bin/mythfrontend "MythFrontend" mythtv \
+		"AudioVideo;TV;" "Path=/etc/mythtv/"
+	make_desktop_entry /usr/bin/mythtv-setup "MythTV Setup" mythtv \
+		"AudioVideo;TV;" "Path=/etc/mythtv/"
 
 	if use autostart; then
 		dodir /etc/env.d/
@@ -255,6 +273,12 @@ src_install() {
 		dobin contrib/channel_changers/d10control/d10control.pl || die "failed to install d10control"
 		newdoc contrib/channel_changers/d10control/README README.d10control
 	fi
+
+	# correct permissions so the scripts are actually usable
+	fperms 755 /usr/share/mythtv/contrib/*/*.pl
+	fperms 755 /usr/share/mythtv/mythconverg_backup.pl
+	fperms 755 /usr/share/mythtv/mythconverg_restore.pl
+
 }
 
 pkg_preinst() {
