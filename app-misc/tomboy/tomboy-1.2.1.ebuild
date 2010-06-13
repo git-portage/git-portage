@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/tomboy/Attic/tomboy-0.14.3.ebuild,v 1.1 2009/08/04 17:49:47 ford_prefect Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/tomboy/Attic/tomboy-1.2.1.ebuild,v 1.1 2010/06/13 21:34:41 pacho Exp $
 
 EAPI=2
 
@@ -28,7 +28,7 @@ RDEPEND=">=dev-lang/mono-2
 	>=gnome-base/gconf-2
 	>=app-text/gtkspell-2.0.9
 	>=gnome-base/gnome-panel-2.24.0
-	eds? ( dev-libs/gmime:0[mono] )
+	eds? ( dev-libs/gmime:2.4[mono] )
 	galago? ( =dev-dotnet/galago-sharp-0.5* )"
 DEPEND="${RDEPEND}
 	app-text/gnome-doc-utils
@@ -39,8 +39,17 @@ DEPEND="${RDEPEND}
 
 DOCS="AUTHORS ChangeLog INSTALL NEWS README"
 
+pkg_setup() {
+	G2CONF="${G2CONF}
+		--disable-update-mimedb"
+}
+
 src_prepare() {
 	sed -i -e '/DISABLE_DEPRECATED/d' $(find . -name 'Makefile.in') || die
+
+	# Fix intltoolize broken file, see upstream #577133
+	sed "s:'\^\$\$lang\$\$':\^\$\$lang\$\$:g" -i po/Makefile.in.in \
+		|| die "sed failed"
 }
 
 src_configure() {
