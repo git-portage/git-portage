@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-screensaver/Attic/gnome-screensaver-2.28.1.ebuild,v 1.1 2010/02/02 13:22:59 mrpouet Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-screensaver/Attic/gnome-screensaver-2.30.0.ebuild,v 1.1 2010/06/13 19:51:37 pacho Exp $
 
 EAPI="2"
 
@@ -19,7 +19,7 @@ IUSE="branding debug doc libnotify opengl pam $KERNEL_IUSE"
 
 RDEPEND=">=gnome-base/gconf-2.6.1
 	>=x11-libs/gtk+-2.14.0
-	>=gnome-base/gnome-desktop-2.23.2
+	>=gnome-base/gnome-desktop-2.29.0
 	>=gnome-base/gnome-menus-2.12
 	>=dev-libs/glib-2.15
 	>=gnome-base/libgnomekbd-0.1
