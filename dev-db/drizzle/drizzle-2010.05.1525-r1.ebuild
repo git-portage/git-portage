@@ -1,74 +1,49 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/drizzle/Attic/drizzle-2010.03.1347.ebuild,v 1.1 2010/03/19 13:49:46 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/drizzle/Attic/drizzle-2010.05.1525-r1.ebuild,v 1.1 2010/06/14 23:45:57 flameeyes Exp $
 
 EAPI=2
 
-inherit flag-o-matic libtool autotools eutils
+inherit flag-o-matic libtool autotools eutils pam
 
 DESCRIPTION="Database optimized for Cloud and Net applications"
 HOMEPAGE="http://drizzle.org"
-SRC_URI="http://launchpad.net/drizzle/cherry/2010-03-15/+download/${P}.tar.gz"
+SRC_URI="http://launchpad.net/drizzle/dexter/2010-05-10/+download/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 
-# don't add an ssl USE flag here, since it's not ssl support that
-# we're to use, but rather MD5 support
-IUSE="debug tcmalloc doc memcache curl pam gearman gnutls openssl"
+IUSE="debug tcmalloc doc memcache curl pam gearman +md5"
 
 # upstream bug #499911
 RESTRICT="memcache? ( test ) !curl? ( test )"
 
+# for libdrizzle version, check m4/pandora*, PANDORA_LIBDRIZZLE_RECENT
 RDEPEND="tcmalloc? ( dev-util/google-perftools )
-		dev-db/libdrizzle
+		>=dev-db/libdrizzle-0.8
 		sys-libs/readline
 		sys-apps/util-linux
 		dev-libs/libpcre
-		dev-libs/libevent
-		dev-libs/protobuf
-		gearman? ( sys-cluster/gearmand )
+		>=dev-libs/libevent-1.4
+		>=dev-libs/protobuf-2.1.0
+		gearman? ( >=sys-cluster/gearmand-0.12 )
 		pam? ( sys-libs/pam )
 		curl? ( net-misc/curl )
-		gnutls? ( net-libs/gnutls )
-		memcache? ( dev-libs/libmemcached )"
+		memcache? ( >=dev-libs/libmemcached-0.39 )
+		md5? ( >=dev-libs/libgcrypt-1.4.2 )
+		>=dev-libs/boost-1.32"
 DEPEND="${RDEPEND}
 		dev-util/gperf
-		doc? ( app-doc/doxygen )"
-RDEPEND="${RDEPEND}
-		curl? (
-			gnutls? ( || ( net-misc/curl[-ssl] net-misc/curl[gnutls] ) )
-			openssl? ( net-misc/curl[-gnutls,-nss] )
-		)"
-
-# The dependencies related to the curl, gnutls and openssl USE flag
-# are overly complicated, but are needed this way. The gnutls and
-# openssl USE flag here are to choose the implementation of the MD5
-# interface to use, rather than the provider of SSL-layer
-# functions. Unfortunately since curl is a dependency and that can use
-# either for its SSL support, we have to be wary of the possibility of
-# the two libraries to be loaded together (which would create a very
-# bad situation!), so we force the choice to be the same across the two.
-# See upstream bg for the whole shebang:
-# https://bugs.launchpad.net/drizzle/+bug/499958
+		doc? ( app-doc/doxygen )
+		>=dev-util/boost-build-1.32"
 
 pkg_setup() {
-	elog "This is a work-in-progress ebuild, some features will require"
-	elog "manual configuration and others aren't fleshed out just yet."
-	elog "Use it at your risk."
-
-	if use gnutls && use openssl; then
-		eerror "You cannot use both GnuTLS and OpenSSL at the same time"
-		eerror "to provide the MD5 plugin. Please choose only one USE flag"
-		eerror "between gnutls and openssl."
-		die "Both gnutls and openssl USE flags enabled."
-	fi
-
 	enewuser drizzle -1 -1 /dev/null nogroup
 }
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-2009.12.1240-nolint.patch"
+
 	AT_M4DIR="m4" eautoreconf
 	elibtoolize
 }
@@ -80,17 +55,13 @@ src_configure() {
 		append-flags -DDEBUG
 	fi
 
-	if use gnutls; then
-		myconf="${myconf} --with-md5-plugin"
-		export ac_cv_libcrypto=no
-	elif use openssl; then
-		myconf="${myconf} --with-md5-plugin"
-		export ac_cv_libgnutls_openssl=no
-	else
-		myconf="${myconf} --without-md5-plugin"
-	fi
+	# while I applaud upstreams goal of 0 compiler warnings
+	# the 1412 release didn't achieve it.
+	append-flags -Wno-error
 
+	# disable-all gets rid of automagic dep
 	econf \
+		--disable-all \
 		--disable-static \
 		--disable-dependency-tracking \
 		--disable-mtmalloc \
@@ -99,8 +70,22 @@ src_configure() {
 		$(use_enable gearman libgearman) \
 		$(use_with curl auth-http-plugin) \
 		$(use_with pam auth-pam-plugin) \
+		$(use_with md5 md5-plugin) \
+		$(use_with gearman gearman_udf-plugin) \
+		$(use_with gearman logging_gearman-plugin) \
+		$(use_with memcache memcache_functions-plugins) \
+		--with-logging_stats \
 		--without-hello-world-plugin \
+		--disable-pbxt-plugin --without-pbxt-plugin \
+		--disable-rabbitmq-plugin --without-rabbitmq-plugin \
+		--disable-embedded-innodb-plugin --without-embedded-innodb-plugin \
+		--disable-auth-ldap-plugin --disable-libldap --without-auth-ldap-plugin \
 		${myconf}
+
+	# upstream TODO:
+	# --without-all \
+	# broken atm
+	#$(use_with memcache memcache_stats-plugins) \
 }
 
 src_compile() {
@@ -111,7 +96,9 @@ src_compile() {
 	fi
 }
 
+# 5-10 min eta
 src_test() {
+	# If you want to turn off a test, rename to suffix of .DISABLED
 	# Explicitly allow parallel make check
 	emake check || die "tests failed"
 }
@@ -154,11 +141,6 @@ src_install() {
 	fowners drizzle:nogroup /var/run/drizzle || die
 	fowners drizzle:nogroup /var/log/drizzle || die
 	fowners -R drizzle:nogroup /var/lib/drizzle || die
-}
 
-pkg_postinst() {
-	if use pam; then
-		ewarn "Be warned that we're still lacking a pam configuration"
-		ewarn "file so the PAM authentication will not work by default"
-	fi
+	pamd_mimic system-auth drizzle auth account session
 }
