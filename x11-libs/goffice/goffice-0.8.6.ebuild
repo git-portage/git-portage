@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/goffice/Attic/goffice-0.8.1.ebuild,v 1.1 2010/03/10 23:23:56 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/goffice/Attic/goffice-0.8.6.ebuild,v 1.1 2010/06/17 19:18:01 pacho Exp $
 
 EAPI="2"
 GCONF_DEBUG="no"
@@ -40,6 +40,14 @@ pkg_setup() {
 		--with-gtk
 		$(use_with gnome gconf)"
 	filter-flags -ffast-math
+}
+
+src_prepare() {
+	gnome2_src_prepare
+
+	# Fix intltoolize broken file, see upstream #577133
+	sed "s:'\^\$\$lang\$\$':\^\$\$lang\$\$:g" -i po/Makefile.in.in \
+		|| die "sed failed"
 }
 
 src_install() {
