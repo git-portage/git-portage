@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.1-r2.ebuild,v 1.2 2010/05/11 06:50:19 wschlich Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.1-r2.ebuild,v 1.3 2010/06/17 21:21:43 patrick Exp $
 
 EAPI="2"
 inherit eutils multilib
@@ -34,7 +34,7 @@ DEPEND="
 	dev-libs/gmp
 	!bacula-clientonly? (
 		!bacula-nodir? (
-			postgres? ( >=virtual/postgresql-server-7.4 )
+			postgres? ( dev-db/postgresql-server )
 			mysql? ( virtual/mysql )
 			sqlite3? ( dev-db/sqlite:3 )
 			virtual/mta
