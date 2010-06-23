@@ -1,8 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/cherokee/Attic/cherokee-0.99.48.ebuild,v 1.1 2010/04/30 09:41:45 bass Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/cherokee/Attic/cherokee-1.0.4.ebuild,v 1.1 2010/06/23 09:56:09 bass Exp $
 
-inherit eutils pam versionator libtool
+EAPI=2
+PYTHON_DEPEND="admin? 2"
+
+inherit python eutils pam versionator libtool
 
 DESCRIPTION="An extremely fast and tiny web server."
 SRC_URI="http://www.cherokee-project.com/download/$(get_version_component_range 1-2)/${PV}/${P}.tar.gz"
@@ -15,16 +18,20 @@ IUSE="ipv6 nls ssl static pam coverpage threads kernel_linux admin debug geoip l
 
 RDEPEND="
 	>=sys-libs/zlib-1.1.4-r1
+	net-analyzer/rrdtool
 	nls? ( sys-devel/gettext )
 	ssl? ( dev-libs/openssl )
 	pam? ( virtual/pam )
-	admin? ( dev-lang/python )
 	geoip? ( dev-libs/geoip )
 	ldap? ( net-nds/openldap )
 	mysql? ( virtual/mysql )
 	fastcgi? ( www-servers/spawn-fcgi )
 	ffmpeg? ( media-video/ffmpeg )"
 DEPEND="${RDEPEND}"
+
+src_prepare() {
+	python_convert_shebangs -r 2 .
+}
 
 src_compile() {
 	local myconf
@@ -71,11 +78,12 @@ src_compile() {
 		--localstatedir=/var \
 		|| die "configure failed"
 
-	emake || die "emake failed"
+	emake -j1 || die "emake failed"
 }
 
 src_install () {
 	emake DESTDIR="${D}" docdir="/usr/share/doc/${PF}/html" install || die "make install failed"
+
 	dodoc AUTHORS ChangeLog
 
 	use pam && pamd_mimic system-auth cherokee auth account session
@@ -94,11 +102,20 @@ src_install () {
 	keepdir /etc/cherokee/mods-enabled /etc/cherokee/sites-enabled /var/www/localhost/htdocs
 
 	use coverpage || rm -rf "${D}"/var/www/localhost/htdocs/{index.html,images}
-	use admin || rm -rf "${D}"/usr/sbin/admin "${D}"/usr/share/cherokee/admin
+	if use admin ; then
+		exeinto /usr/share/cherokee/admin
+		doexe admin/server.py
+	else
+		rm -rf "${D}"/usr/sbin/admin "${D}"/usr/share/cherokee/admin
+	fi
 
 	# Puts logs in /var/log/cherokee/
 	dosed "s:/var/log/cherokee\.:/var/log/cherokee/cherokee\.:g" /etc/cherokee/cherokee.conf
 
+}
+
+pkg_setup() {
+	python_set_active_version 2
 }
 
 pkg_postinst() {
