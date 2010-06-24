@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.88 2010/06/17 21:21:43 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.89 2010/06/24 00:58:56 angelos Exp $
+
+  24 Jun 2010; Christoph Mende <angelos@gentoo.org> bacula-5.0.2-r1.ebuild:
+  Stable on amd64 wrt bug #282020
 
   17 Jun 2010; Patrick Lauer <patrick@gentoo.org> bacula-2.4.1-r1.ebuild,
   bacula-2.4.4.ebuild, bacula-3.0.2.ebuild, bacula-3.0.3.ebuild,
