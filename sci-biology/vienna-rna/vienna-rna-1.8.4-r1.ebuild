@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/vienna-rna/Attic/vienna-rna-1.8.3.ebuild,v 1.4 2009/11/02 20:23:39 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/vienna-rna/Attic/vienna-rna-1.8.4-r1.ebuild,v 1.1 2010/06/25 09:22:36 jlec Exp $
 
 EAPI="2"
 
@@ -13,7 +13,7 @@ SRC_URI="http://www.tbi.univie.ac.at/~ivo/RNA/ViennaRNA-${PV}.tar.gz"
 
 SLOT="0"
 IUSE=""
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 DEPEND="dev-lang/perl
 	media-libs/gd"
@@ -24,8 +24,10 @@ S="${WORKDIR}/ViennaRNA-${PV}"
 PATCHES=(
 	"${FILESDIR}"/${PN}-1.6.5-c-fixes.patch
 	"${FILESDIR}"/${PN}-1.7.2-LDFLAGS.patch
-	"${FILESDIR}"/${P}-gcc4.3.patch
-	"${FILESDIR}"/${P}-disable-gd.patch
+	"${FILESDIR}"/${PN}-1.8.3-gcc4.3.patch
+	"${FILESDIR}"/${PN}-1.8.3-disable-gd.patch
+	"${FILESDIR}"/${P}-jobserver-fix.patch
+	"${FILESDIR}"/${P}-bindir.patch
 )
 
 src_prepare() {
