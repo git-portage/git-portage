@@ -1,8 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/Attic/curl-7.20.0-r1.ebuild,v 1.1 2010/03/16 21:43:01 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/Attic/curl-7.21.0.ebuild,v 1.1 2010/07/01 20:14:54 spatz Exp $
 
 # NOTE: If you bump this ebuild, make sure you bump dev-python/pycurl!
+
+EAPI=2
 
 inherit multilib eutils
 
@@ -16,7 +18,7 @@ SRC_URI="http://curl.haxx.se/download/${P}.tar.bz2"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
-IUSE="ares gnutls idn ipv6 kerberos ldap libssh2 nss ssl test"
+IUSE="ares gnutls idn ipv6 kerberos ldap libssh2 nss ssl test threads"
 
 RDEPEND="ldap? ( net-nds/openldap )
 	ssl? (
@@ -44,17 +46,20 @@ pkg_setup() {
 		ewarn "USE='gnutls nss' are ignored without USE='ssl'."
 		ewarn "Please review the local USE flags for this package."
 	fi
+	if use ares && use threads; then
+		eerror "USE flags 'ares' and 'threads' are mutually exclusive,"
+		eerror "please disable one of them."
+		eerror
+		die "USE flags 'ares' and 'threads' both enabled"
+	fi
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-strip-ldflags.patch
-	epatch "${FILESDIR}"/${PN}-7.19.7-test241.patch
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-7.20.0-strip-ldflags.patch \
+		"${FILESDIR}"/${PN}-7.19.7-test241.patch
 }
 
-src_compile() {
-
+src_configure() {
 	myconf="$(use_enable ldap)
 		$(use_enable ldap ldaps)
 		$(use_with idn libidn)
@@ -62,6 +67,7 @@ src_compile() {
 		$(use_with libssh2)
 		$(use_enable ipv6)
 		$(use_enable ares)
+		$(use_enable threads threaded-resolver)
 		--enable-http
 		--enable-ftp
 		--enable-gopher
@@ -96,8 +102,6 @@ src_compile() {
 	fi
 
 	econf ${myconf} || die 'configure failed'
-
-	emake || die "install failed for current version"
 }
 
 src_install() {
@@ -106,9 +110,9 @@ src_install() {
 
 	# https://sourceforge.net/tracker/index.php?func=detail&aid=1705197&group_id=976&atid=350976
 	insinto /usr/share/aclocal
-	doins docs/libcurl/libcurl.m4
+	doins docs/libcurl/libcurl.m4 || die
 
-	dodoc CHANGES README
-	dodoc docs/FEATURES docs/INTERNALS
-	dodoc docs/MANUAL docs/FAQ docs/BUGS docs/CONTRIBUTE
+	dodoc CHANGES README || die
+	dodoc docs/FEATURES docs/INTERNALS || die
+	dodoc docs/MANUAL docs/FAQ docs/BUGS docs/CONTRIBUTE || die
 }
