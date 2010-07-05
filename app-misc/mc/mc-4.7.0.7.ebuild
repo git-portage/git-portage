@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/mc/Attic/mc-4.7.0.4.ebuild,v 1.1 2010/04/02 15:13:33 wired Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/mc/Attic/mc-4.7.0.7.ebuild,v 1.1 2010/07/05 21:21:27 wired Exp $
 
 EAPI=3
 

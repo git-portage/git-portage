@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/mc/Attic/mc-4.7.0.2-r1.ebuild,v 1.2 2010/02/20 17:28:22 abcd Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/mc/Attic/mc-4.7.3.ebuild,v 1.1 2010/07/05 21:21:27 wired Exp $
 
 EAPI=3
 
@@ -33,12 +33,6 @@ DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
 S=${WORKDIR}/${MY_P}
-
-# bugs (in patch order): #298997 #300913
-PATCHES=(
-	"${FILESDIR}/${P}_hotlist_fix.patch"
-	"${FILESDIR}/${P}_syntax_fix.patch"
-)
 
 src_configure() {
 	local myscreen=ncurses
