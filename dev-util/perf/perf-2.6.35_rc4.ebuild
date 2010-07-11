@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/perf/Attic/perf-2.6.33.1.ebuild,v 1.1 2010/03/16 11:02:43 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/perf/Attic/perf-2.6.35_rc4.ebuild,v 1.1 2010/07/11 20:57:52 flameeyes Exp $
 
 EAPI=2
 
@@ -35,10 +35,11 @@ SRC_URI="${SRC_URI} mirror://kernel/linux/kernel/v${LINUX_V}/${LINUX_SOURCES}"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+demangle +doc perl"
+IUSE="+demangle +doc perl python"
 
 RDEPEND="demangle? ( sys-devel/binutils )
 	perl? ( || ( >=dev-lang/perl-5.10 sys-devel/libperl ) )
+	python? ( dev-lang/python )
 	dev-libs/elfutils"
 DEPEND="${RDEPEND}
 	${LINUX_PATCH+dev-util/patchutils}
@@ -90,7 +91,7 @@ src_prepare() {
 		-e 's:-ggdb3::' \
 		-e 's:-fstack-protector-all::' \
 		-e 's:^LDFLAGS =:EXTLIBS +=:' \
-		-e '/PERL_EMBED_LDOPTS/s:ALL_LDFLAGS +=:EXTLIBS +=:' \
+		-e '/\(PERL\|PYTHON\)_EMBED_LDOPTS/s:ALL_LDFLAGS +=:EXTLIBS +=:' \
 		-e '/-x c - /s:\$(ALL_LDFLAGS):\0 $(EXTLIBS):' \
 		-e '/^ALL_CFLAGS =/s:$: $(CFLAGS_OPTIMIZE):' \
 		-e '/^ALL_LDFLAGS =/s:$: $(LDFLAGS_OPTIMIZE):' \
@@ -101,6 +102,7 @@ src_compile() {
 	local makeargs=
 
 	use demangle || makeargs="${makeargs} NO_DEMANGLE= "
+	use perl || makeargs="${makeargs} NO_LIBPERL= "
 	use perl || makeargs="${makeargs} NO_LIBPERL= "
 
 	emake ${makeargs} \
