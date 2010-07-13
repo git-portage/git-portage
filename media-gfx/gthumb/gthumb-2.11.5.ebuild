@@ -1,8 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/gthumb/Attic/gthumb-2.11.2.1.ebuild,v 1.4 2010/07/07 11:58:06 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/gthumb/Attic/gthumb-2.11.5.ebuild,v 1.1 2010/07/13 12:12:19 pacho Exp $
 
-EAPI=2
+EAPI="3"
+
 inherit autotools eutils gnome2
 
 DESCRIPTION="Image viewer and browser for Gnome"
@@ -11,14 +12,15 @@ HOMEPAGE="http://gthumb.sourceforge.net"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
-IUSE="exif gnome-keyring gstreamer http raw tiff test"
+IUSE="cdr exif gnome-keyring gstreamer http raw slideshow tiff test"
 
 # clutter
 RDEPEND=">=dev-libs/glib-2.16:2
-	>=x11-libs/gtk+-2.16:2
+	>=x11-libs/gtk+-2.18:2
 	>=gnome-base/gconf-2.6
 	>=dev-libs/libunique-1
-	media-libs/jpeg
+	>=media-libs/jpeg-8:0
+	cdr? ( >=app-cdr/brasero-2.28 )
 	exif? ( >=media-gfx/exiv2-0.18 )
 	gnome-keyring? ( >=gnome-base/gnome-keyring-2.28 )
 	gstreamer? (
@@ -27,6 +29,9 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	http? (
 		>=net-libs/libsoup-2.26:2.4
 		>=net-libs/libsoup-gnome-2.26:2.4 )
+	slideshow? (
+		>=media-libs/clutter-1:1.0
+		>=media-libs/clutter-gtk-0.10:1.0 )
 	tiff? ( media-libs/tiff )
 	raw? ( >=media-libs/libopenraw-0.0.8 )
 	!raw? ( media-gfx/dcraw )"
@@ -44,11 +49,13 @@ pkg_setup() {
 	G2CONF="${G2CONF}
 		--disable-static
 		--disable-clutter
+		$(use_enable cdr brasero)
 		$(use_enable exif exiv2)
 		$(use_enable gstreamer)
 		$(use_enable gnome-keyring)
 		$(use_enable http libsoup)
 		$(use_enable raw libopenraw)
+		$(use_enable slideshow clutter)
 		$(use_enable test test-suite)
 		$(use_enable tiff)"
 }
@@ -57,7 +64,7 @@ src_prepare() {
 	gnome2_src_prepare
 
 	# Do not require unstable libunique
-	epatch "${FILESDIR}/${P}-configure.patch"
+	epatch "${FILESDIR}/${PN}-2.11.2.1-configure.patch"
 
 	intltoolize --force --copy --automake || die "intltoolize failed"
 	eautoreconf
@@ -65,6 +72,7 @@ src_prepare() {
 
 src_install() {
 	gnome2_src_install
+
 	# gthumb does not need *.la files
 	find "${D}" -name "*.la" -delete || die "*.la files removal failed"
 }
