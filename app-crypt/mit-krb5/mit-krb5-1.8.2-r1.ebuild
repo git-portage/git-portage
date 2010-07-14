@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/mit-krb5/Attic/mit-krb5-1.8.1-r1.ebuild,v 1.2 2010/05/24 12:35:37 darkside Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/mit-krb5/Attic/mit-krb5-1.8.2-r1.ebuild,v 1.1 2010/07/14 15:28:13 darkside Exp $
 
 EAPI="2"
 
-inherit eutils flag-o-matic versionator autotools
+inherit eutils flag-o-matic versionator
 
 MY_P=${P/mit-}
 P_DIR=$(get_version_component_range 1-2)
@@ -15,11 +15,13 @@ SRC_URI="http://web.mit.edu/kerberos/dist/krb5/${P_DIR}/${MY_P}-signed.tar"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
-IUSE="ldap doc"
+IUSE="ldap doc xinetd"
 
 RDEPEND="!virtual/krb5
 	>=sys-libs/e2fsprogs-libs-1.41.0
-	ldap? ( net-nds/openldap )"
+	sys-apps/keyutils
+	ldap? ( net-nds/openldap )
+	xinetd? ( sys-apps/xinetd )"
 DEPEND="${RDEPEND}
 	doc? ( virtual/latex-base )"
 
@@ -30,12 +32,6 @@ PROVIDE="virtual/krb5"
 src_unpack() {
 	unpack ${A}
 	unpack ./"${MY_P}".tar.gz
-}
-
-src_prepare() {
-	epatch "${FILESDIR}/CVE-2010-1320.patch"
-	epatch "${FILESDIR}/CVE-2010-1321.patch"
-
 }
 
 src_configure() {
@@ -53,7 +49,7 @@ src_configure() {
 }
 
 src_compile() {
-	emake || die "emake failed"
+	emake -j1 || die "emake failed"
 
 	if use doc ; then
 		cd ../doc
@@ -73,6 +69,7 @@ src_install() {
 		EXAMPLEDIR=/usr/share/doc/${PF}/examples \
 		install || die "install failed"
 
+	# default database dir
 	keepdir /var/lib/krb5kdc
 
 	cd ..
@@ -81,7 +78,7 @@ src_install() {
 	doinfo doc/*.info*
 	dohtml -r doc/*
 
-#   die if we cannot respect a USE flag
+	# die if we cannot respect a USE flag
 	if use doc ; then
 	    dodoc doc/{api,implement}/*.ps || die "dodoc failed"
 	fi
@@ -96,8 +93,12 @@ src_install() {
 
 	if use ldap ; then
 		insinto /etc/openldap/schema
-		newins "${S}/plugins/kdb/ldap/libkdb_ldap/kerberos.schema" \
-		kerberos.schema
+		doins "${S}/plugins/kdb/ldap/libkdb_ldap/kerberos.schema"
+	fi
+
+	if use xinetd ; then
+		insinto /etc/xinetd.d
+		newins "${FILESDIR}/kpropd.xinetd" kpropd
 	fi
 }
 
