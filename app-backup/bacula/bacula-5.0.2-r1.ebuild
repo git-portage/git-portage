@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.2-r1.ebuild,v 1.6 2010/07/14 02:50:27 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.2-r1.ebuild,v 1.7 2010/07/17 09:34:59 ssuominen Exp $
 
 EAPI="2"
 inherit eutils multilib
@@ -130,6 +130,8 @@ src_prepare() {
 
 	# bug #311161
 	epatch "${FILESDIR}"/${PV}/${P}-lib-search-path.patch
+
+	epatch "${FILESDIR}"/${PV}/${P}-openssl-1.patch
 }
 
 src_configure() {
