@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-3.0.3.ebuild,v 1.5 2010/06/17 21:21:43 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-3.0.3.ebuild,v 1.6 2010/07/17 09:41:18 ssuominen Exp $
 
 EAPI="2"
 inherit eutils wxwidgets
@@ -133,6 +133,8 @@ src_prepare() {
 
 	# apply upstream patches
 	#epatch "${FILESDIR}"/${PV}/${PV}-foo.patch
+
+	epatch "${FILESDIR}"/${PV}/${P}-openssl-1.patch
 }
 
 src_configure() {
