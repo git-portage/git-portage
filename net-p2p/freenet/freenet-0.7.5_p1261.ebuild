@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/freenet/Attic/freenet-0.7.5_p1257.ebuild,v 1.1 2010/07/04 12:04:09 tommy Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/freenet/Attic/freenet-0.7.5_p1261.ebuild,v 1.1 2010/07/17 01:16:40 tommy Exp $
 
 EAPI="2"
 DATE=20100701
@@ -58,7 +58,7 @@ src_prepare() {
 	cp "${FILESDIR}"/wrapper1.conf freenet-wrapper.conf || die
 	cp "${FILESDIR}"/run.sh-20090501 run.sh || die
 	epatch "${FILESDIR}"/ext.patch
-	epatch "${FILESDIR}"/0.7.5_p1245-strip-openjdk-check.patch
+	epatch "${FILESDIR}"/strip-openjdk-check.patch
 	sed -i -e "s:=/usr/lib:=/usr/$(get_libdir):g" freenet-wrapper.conf || die "sed failed"
 	use freemail && echo "wrapper.java.classpath.12=/usr/share/bcprov/lib/bcprov.jar" >> freenet-wrapper.conf
 	java-ant_rewrite-classpath
