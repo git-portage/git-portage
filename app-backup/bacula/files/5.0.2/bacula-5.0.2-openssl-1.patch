@@ -8,7 +8,7 @@ http://cvs.fedoraproject.org/viewvc/rpms/bacula/devel/bacula-5.0.2-openssl.patch
   *  exists.  It was not an official API.
   */
 -#ifdef HAVE_OPENSSLv1
-+#ifdef OPENSSL_VERSION_NUMBER >= 0x10000000L
++#if (OPENSSL_VERSION_NUMBER >= 0x10000000L)
  #define EVP_PKEY_encrypt EVP_PKEY_encrypt_old
  #define EVP_PKEY_decrypt EVP_PKEY_decrypt_old
  #endif
@@ -19,7 +19,7 @@ http://cvs.fedoraproject.org/viewvc/rpms/bacula/devel/bacula-5.0.2-openssl.patch
  
           if (strcmp(extname, "subjectAltName") == 0) {
 -#ifdef HAVE_OPENSSLv1
-+#ifdef OPENSSL_VERSION_NUMBER >= 0x10000000L
++#if (OPENSSL_VERSION_NUMBER >= 0x10000000L)
              const X509V3_EXT_METHOD *method;
  #else
              X509V3_EXT_METHOD *method;
