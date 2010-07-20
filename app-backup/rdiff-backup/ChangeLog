@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/rdiff-backup
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/rdiff-backup/ChangeLog,v 1.43 2010/01/01 19:50:50 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/rdiff-backup/ChangeLog,v 1.44 2010/07/20 16:25:08 robbat2 Exp $
+
+*rdiff-backup-1.2.8-r1 (20 Jul 2010)
+
+  20 Jul 2010; Robin H. Johnson <robbat2@gentoo.org>
+  +rdiff-backup-1.2.8-r1.ebuild, +files/rdiff-backup-1.2.8-popen2.patch:
+  Bug #291650: update to EAPI=3 and add patch for os.popen2 warning.
 
   01 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
   rdiff-backup-1.2.8.ebuild:
