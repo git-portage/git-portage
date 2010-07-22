@@ -1,6 +1,16 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.95 2010/07/19 09:10:09 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.96 2010/07/22 15:48:51 tomjbe Exp $
+
+*bacula-5.0.2-r2 (22 Jul 2010)
+
+  22 Jul 2010; Thomas Beierlein <tomjbe@gentoo.org> +bacula-5.0.2-r2.ebuild,
+  +files/5.0.2/bacula-5.0.2-Makefile.patch,
+  +files/5.0.2/bacula-5.0.2-ldflags.patch:
+  - fix for bug #291160, #322181 and #326333
+  - add vimfiles
+  - make 'bat' respect LDFLAGS
+  - let 'make' fail if some error emerges in a subdir build
 
   19 Jul 2010; Thomas Beierlein <tomjbe@gentoo.org>
   files/5.0.2/bacula-5.0.2-openssl-1.patch:
