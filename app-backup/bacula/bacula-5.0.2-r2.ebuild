@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.2-r2.ebuild,v 1.2 2010/07/22 15:58:16 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.2-r2.ebuild,v 1.3 2010/07/22 17:22:59 tomjbe Exp $
 
 EAPI="2"
 inherit eutils multilib
@@ -75,19 +75,17 @@ pkg_setup() {
 			let dbnum++
 		fi
 		if [[ "${dbnum}" -lt 1 ]]; then
-			eerror
-			eerror "To use ${P} it is required to set a database in the USE flags."
-			eerror "Supported databases are mysql, postgresql, sqlite3"
-			eerror
-			die "No database type selected."
+			ewarn
+			ewarn "No database backend selected, defaulting to sqlite3."
+			ewarn "Supported databases are mysql, postgresql, sqlite3"
+			ewarn
+			export mydbtype=sqlite3
 		elif [[ "${dbnum}" -gt 1 ]]; then
-			eerror
-			eerror "You have set ${P} to use multiple database types."
-			eerror "I don't know which to set as the default!"
-			eerror "You can use /etc/portage/package.use to set per-package USE flags"
-			eerror "Set it so only one database type, mysql, postgres, sqlite3"
-			eerror
-			die "Multiple database types selected."
+			ewarn
+			ewarn "Too many database backends selected, defaulting to sqlite3."
+			ewarn "Supported databases are mysql, postgresql, sqlite3"
+			ewarn
+			export mydbtype=sqlite3
 		fi
 	fi
 

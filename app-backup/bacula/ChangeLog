@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.97 2010/07/22 15:58:16 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.98 2010/07/22 17:22:59 tomjbe Exp $
+
+  22 Jul 2010; Thomas Beierlein <tomjbe@gentoo.org> bacula-5.0.2-r2.ebuild:
+  Make sqlite3 the default database if none or to many database backends are
+  selected. Thanks darkside for pointing it out
 
   22 Jul 2010; Thomas Beierlein <tomjbe@gentoo.org> bacula-5.0.2-r2.ebuild:
   revert batch-insert to always enabled
