@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.96 2010/07/22 15:48:51 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.97 2010/07/22 15:58:16 tomjbe Exp $
+
+  22 Jul 2010; Thomas Beierlein <tomjbe@gentoo.org> bacula-5.0.2-r2.ebuild:
+  revert batch-insert to always enabled
 
 *bacula-5.0.2-r2 (22 Jul 2010)
 
