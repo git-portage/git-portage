@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.2-r2.ebuild,v 1.3 2010/07/22 17:22:59 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.2-r2.ebuild,v 1.4 2010/07/23 07:10:09 tomjbe Exp $
 
 EAPI="2"
 inherit eutils multilib
@@ -164,8 +164,6 @@ src_configure() {
 		fi
 	fi
 
-	# maintainer comment:
-	# see bug 326333 for the batch-insert problem
 	myconf="${myconf} \
 		--disable-tray-monitor \
 		$(use_with X x) \
