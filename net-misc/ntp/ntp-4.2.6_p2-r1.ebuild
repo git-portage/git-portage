@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/ntp/Attic/ntp-4.2.6_p2.ebuild,v 1.1 2010/07/18 21:54:28 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/ntp/ntp-4.2.6_p2-r1.ebuild,v 1.1 2010/07/27 13:06:37 flameeyes Exp $
 
 EAPI="2"
 
@@ -55,7 +55,7 @@ src_configure() {
 		$(use_enable parse-clocks) \
 		$(use_enable ipv6) \
 		$(use_enable debug debugging) \
-		$(use_with snmp netsnmpd) \
+		$(use_with snmp ntpsnmpd) \
 		$(use_with ssl crypto)
 }
 
