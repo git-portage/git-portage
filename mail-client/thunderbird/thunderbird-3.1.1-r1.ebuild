@@ -1,13 +1,16 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/thunderbird/Attic/thunderbird-3.0.4-r1.ebuild,v 1.3 2010/06/18 07:58:34 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/thunderbird/Attic/thunderbird-3.1.1-r1.ebuild,v 1.1 2010/07/31 21:42:20 anarchy Exp $
+
 EAPI="3"
 WANT_AUTOCONF="2.1"
 
 inherit flag-o-matic toolchain-funcs eutils mozconfig-3 makeedit multilib mozextension autotools
 
-LANGS="af be bg ca cs da de el en-GB en-US es-AR es-ES eu fi fr ga-IE he hu it ja ko lt nb-NO nl nn-NO pa-IN pl pt-BR pt-PT ru sk sv-SE tr uk zh-CN zh-TW"
-# Languages not rebuilt for "sl mk"
+# This list can be updated using get_langs.sh from the mozilla overlay
+LANGS="af ar be bg bn-BD ca cs da de el en en-GB en-US es-AR es-ES et eu fi fr \
+fy-NL ga-IE he hu id is it ja ko lt nb-NO nl nn-NO pa-IN pl pt-BR pt-PT ro ru si \
+sk sl sq sv-SE tr uk zh-CN zh-TW"
 NOSHORTLANGS="en-GB es-AR pt-BR zh-TW"
 
 MY_PV="${PV/_rc/rc}"
@@ -16,15 +19,15 @@ MY_P="${P/_rc/rc}"
 DESCRIPTION="Thunderbird Mail Client"
 HOMEPAGE="http://www.mozilla.com/en-US/thunderbird/"
 
-KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 SLOT="0"
 LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 )"
-IUSE="alsa ldap crypt bindist lightning mozdom system-sqlite"
-PATCH="mozilla-${PN}-3.0-patches-0.3"
+IUSE="alsa ldap crypt bindist libnotify lightning mozdom system-sqlite wifi"
+PATCH="${PN}-3.1-patches-0.2"
 
 REL_URI="http://releases.mozilla.org/pub/mozilla.org/${PN}/releases"
 SRC_URI="${REL_URI}/${MY_PV}/source/${MY_P}.source.tar.bz2
-	http://dev.gentoo.org/~anarchy/dist/${PATCH}.tar.bz2"
+	http://dev.gentoo.org/~anarchy/mozilla/patchsets/${PATCH}.tar.bz2"
 
 for X in ${LANGS} ; do
 	if [ "${X}" != "en" ] && [ "${X}" != "en-US" ]; then
@@ -45,17 +48,20 @@ done
 RDEPEND=">=sys-devel/binutils-2.16.1
 	>=dev-libs/nss-3.12.3
 	>=dev-libs/nspr-4.8
-	alsa? ( media-libs/alsa-lib )
-	system-sqlite? ( >=dev-db/sqlite-3.6.22-r2[fts3,secure-delete] )
-	>=media-libs/lcms-1.17
 	>=app-text/hunspell-1.2
 	x11-libs/cairo[X]
 	x11-libs/pango[X]
+
+	alsa? ( media-libs/alsa-lib )
+	libnotify? ( >=x11-libs/libnotify-0.4 )
+	system-sqlite? ( >=dev-db/sqlite-3.6.22-r2[fts3,secure-delete] )
+	wifi? ( net-wireless/wireless-tools )
+
 	!x11-plugins/lightning"
 
-PDEPEND="crypt? ( >=x11-plugins/enigmail-1.0 )"
+PDEPEND="crypt? ( >=x11-plugins/enigmail-1.1 )"
 
-S="${WORKDIR}"/comm-1.9.1
+S="${WORKDIR}"/comm-1.9.2
 
 linguas() {
 	local LANG SLANG
@@ -106,12 +112,9 @@ src_unpack() {
 
 src_prepare() {
 	# Apply our patches
-	EPATCH_EXCLUDE="106-bz466250_att349521_fix_ftbfs_with_cairo_fb.patch"
 	EPATCH_SUFFIX="patch" \
 	EPATCH_FORCE="yes" \
 	epatch "${WORKDIR}"
-
-	epatch "${FILESDIR}/1002_fix-system-hunspell-dict-detections.patch"
 
 	eautoreconf
 
@@ -122,7 +125,7 @@ src_prepare() {
 }
 
 src_configure() {
-	declare MOZILLA_FIVE_HOME="/usr/$(get_libdir)/mozilla-${PN}"
+	declare MOZILLA_FIVE_HOME="/usr/$(get_libdir)/${PN}"
 	MEXTENSIONS="default"
 
 	####################################
@@ -140,8 +143,6 @@ src_configure() {
 
 	mozconfig_annotate '' --enable-extensions="${MEXTENSIONS}"
 	mozconfig_annotate '' --enable-application=mail
-	mozconfig_use_enable ldap
-	mozconfig_use_enable ldap ldap-experimental
 	mozconfig_annotate '' --with-default-mozilla-five-home="${EPREFIX}${MOZILLA_FIVE_HOME}"
 	mozconfig_annotate '' --with-user-appdir=.thunderbird
 	mozconfig_annotate '' --with-system-nspr --with-nspr-prefix="${EPREFIX}"/usr
@@ -149,21 +150,22 @@ src_configure() {
 	mozconfig_annotate '' --with-sqlite-prefix="${EPREFIX}"/usr
 	mozconfig_annotate '' --x-includes="${EPREFIX}"/usr/include --x-libraries="${EPREFIX}"/usr/$(get_libdir)
 	mozconfig_annotate 'broken' --disable-crashreporter
-	mozconfig_annotate '' --enable-system-hunspell
+	mozconfig_annotate '' --with-system-hunspell
 
 	# Use enable features
+	mozconfig_use_enable ldap
+	mozconfig_use_enable ldap ldap-experimental
+	mozconfig_use_enable libnotify
 	mozconfig_use_enable lightning calendar
+	mozconfig_use_enable wifi necko-wifi
 	mozconfig_use_enable system-sqlite
+	mozconfig_use_enable !bindist official-branding
 	mozconfig_use_enable alsa ogg
 	mozconfig_use_enable alsa wave
 
 	# Bug #72667
 	if use mozdom; then
 		MEXTENSIONS="${MEXTENSIONS},inspector"
-	fi
-
-	if ! use bindist; then
-		mozconfig_annotate '' --enable-official-branding
 	fi
 
 	# Finalize and report settings
@@ -194,20 +196,27 @@ src_compile() {
 }
 
 src_install() {
-	declare MOZILLA_FIVE_HOME="/usr/$(get_libdir)/mozilla-${PN}"
+	declare MOZILLA_FIVE_HOME="/usr/$(get_libdir)/${PN}"
 
 	emake DESTDIR="${D}" install || die "emake install failed"
 
 	if use lightning ; then
-		declare emid
+		declare emid emd1 emid2
 
-		cd "${T}"
-		unzip "${S}"/mozilla/dist/xpi-stage/gdata-provider.xpi install.rdf
-		emid=$(sed -n '/<em:id>/!d; s/.*\({.*}\).*/\1/; p; q' install.rdf)
-
+		emid="{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}"
 		dodir ${MOZILLA_FIVE_HOME}/extensions/${emid}
 		cd "${ED}"${MOZILLA_FIVE_HOME}/extensions/${emid}
 		unzip "${S}"/mozilla/dist/xpi-stage/gdata-provider.xpi
+
+		emid1="calendar-timezones@mozilla.org"
+		dodir ${MOZILLA_FIVE_HOME}/extensions/${emid1}
+		cd "${ED}"${MOZILLA_FIVE_HOME}/extensions/${emid1}
+		unzip "${S}"/mozilla/dist/xpi-stage/calendar-timezones.xpi
+
+		emid2="{e2fda1a4-762b-4020-b5ad-a41df1933103}"
+		dodir ${MOZILLA_FIVE_HOME}/extensions/${emid2}
+		cd "${ED}"${MOZILLA_FIVE_HOME}/extensions/${emid2}
+		unzip "${S}"/mozilla/dist/xpi-stage/lightning.xpi
 	fi
 
 	linguas
@@ -219,7 +228,7 @@ src_install() {
 		newicon "${S}"/other-licenses/branding/thunderbird/content/icon48.png thunderbird-icon.png
 		domenu "${FILESDIR}"/icon/${PN}.desktop
 	else
-		newicon "${S}"/mail/branding/nightly/content/icon48.png thunderbird-icon-unbranded.png
+		newicon "${S}"/mail/branding/unofficial/content/icon48.png thunderbird-icon-unbranded.png
 		newmenu "${FILESDIR}"/icon/${PN}-unbranded.desktop \
 			${PN}.desktop
 	fi
@@ -228,7 +237,7 @@ src_install() {
 	use crypt && ewarn "Please remerge x11-plugins/enigmail after updating ${PN}."
 
 	# Enable very specific settings for thunderbird-3
-	cp "${FILESDIR}"/thunderbird-gentoo-default-prefs.js \
+	cp "${FILESDIR}"/thunderbird-gentoo-default-prefs-1.js \
 		"${ED}/${MOZILLA_FIVE_HOME}/defaults/pref/all-gentoo.js" || \
 		die "failed to cp thunderbird-gentoo-default-prefs.js"
 }
