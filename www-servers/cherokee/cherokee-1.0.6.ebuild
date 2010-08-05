@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/cherokee/Attic/cherokee-1.0.2-r1.ebuild,v 1.2 2010/06/21 21:10:05 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/cherokee/Attic/cherokee-1.0.6.ebuild,v 1.1 2010/08/05 07:24:13 bass Exp $
 
 EAPI=2
 PYTHON_DEPEND="admin? 2"
@@ -14,11 +14,12 @@ HOMEPAGE="http://www.cherokee-project.com/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="ipv6 nls ssl static pam coverpage threads kernel_linux admin debug geoip ldap mysql ffmpeg fastcgi"
+IUSE="ipv6 nls ssl static pam coverpage threads kernel_linux admin debug geoip
+ldap mysql ffmpeg fastcgi rrdtool"
 
 RDEPEND="
 	>=sys-libs/zlib-1.1.4-r1
-	net-analyzer/rrdtool
+	rrdtool? ( net-analyzer/rrdtool )
 	nls? ( sys-devel/gettext )
 	ssl? ( dev-libs/openssl )
 	pam? ( virtual/pam )
@@ -33,7 +34,7 @@ src_prepare() {
 	python_convert_shebangs -r 2 .
 }
 
-src_compile() {
+src_configure() {
 	local myconf
 
 	if use static ; then
@@ -77,7 +78,9 @@ src_compile() {
 		--sysconfdir=/etc \
 		--localstatedir=/var \
 		|| die "configure failed"
+}
 
+src_compile() {
 	emake -j1 || die "emake failed"
 }
 
