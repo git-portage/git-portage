@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-10.70_pre6416.ebuild,v 1.1 2010/08/03 16:51:18 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-10.70_pre6425.ebuild,v 1.1 2010/08/05 12:02:56 jer Exp $
 
 EAPI="2"
 
@@ -33,7 +33,7 @@ done
 
 O_V="${PV/_pre/-}"
 O_P="${PN}-${O_V}"
-O_U="http://snapshot.opera.com/unix/9176_${O_V}/"
+O_U="http://snapshot.opera.com/unix/poland_${O_V}/"
 
 SRC_URI="
 	amd64? ( ${O_U}${O_P}.x86_64.linux.tar.bz2 )
@@ -164,7 +164,7 @@ src_prepare() {
 src_install() {
 	# Remove unwanted linguas
 	LNGDIR="share/${PN}/locale"
-	einfo "Keeping these locales (linguas): ${LINGUAS}."
+	einfo "Installing these locales (linguas): ${LINGUAS}."
 	for LINGUA in ${O_LINGUAS}; do
 		if ! use linguas_${LINGUA/-/_}; then
 			LINGUA=$(find "${LNGDIR}" -maxdepth 1 -type d -iname ${LINGUA/_/-})
