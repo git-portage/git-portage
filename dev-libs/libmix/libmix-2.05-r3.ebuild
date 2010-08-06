@@ -1,10 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libmix/Attic/libmix-2.05-r2.ebuild,v 1.1 2010/07/14 03:46:16 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libmix/Attic/libmix-2.05-r3.ebuild,v 1.1 2010/08/06 14:25:47 hwoarang Exp $
 
 EAPI="2"
-
-inherit eutils multilib toolchain-funcs
+inherit autotools eutils
 
 DESCRIPTION="Programs Crypto/Network/Multipurpose Library"
 HOMEPAGE="http://mixter.void.ru/"
@@ -20,22 +19,16 @@ DEPEND="!no-net2? ( virtual/libpcap net-libs/libnet )"
 S=${WORKDIR}/${PN}-v${PV}
 
 src_prepare() {
-	sed -i configure \
-		-e "s:-O3 -funroll-loops:${CFLAGS} ${LDFLAGS} -fPIC:" \
-		|| die "sed CFLAGS LDFLAGS failed"
 	epatch "${FILESDIR}"/${P}-fix-pattern.patch
+	epatch "${FILESDIR}"/${P}-autotools.patch
+	eautoreconf
 }
 
 src_configure() {
-	tc-export CC CXX
-	econf $(use_with no-net2) || die
+	econf $(use_with no-net2) || die "econf failed"
 }
 
 src_install() {
-	make \
-		INSTALL_INCLUDES_IN="${D}"/usr/include \
-		INSTALL_LIBRARY_IN="${D}"/usr/$(get_libdir) \
-		INSTALL_MANPAGE_IN="${D}"/usr/share/man \
-		install || die
+	emake DESTDIR="${D}" install || die "install failed"
 	dodoc CHANGES
 }
