@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.4.11.ebuild,v 1.4 2009/09/23 15:12:44 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.6.09.ebuild,v 1.1 2010/08/07 16:05:50 vanquirius Exp $
+
+EAPI="3"
 
 inherit distutils
 
@@ -10,8 +12,8 @@ SRC_URI="http://savannah.nongnu.org/download/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
-IUSE=""
+KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux ~x86-macos"
+IUSE="s3"
 
 DEPEND=">=dev-lang/python-2.3
 	>=net-libs/librsync-0.9.6
@@ -19,9 +21,10 @@ DEPEND=">=dev-lang/python-2.3
 	app-crypt/gnupg"
 RDEPEND="${DEPEND}
 	>=dev-python/py-gnupg-0.3.2
-	>=dev-python/pexpect-2.1"
+	>=dev-python/pexpect-2.1
+	s3? ( dev-python/boto )"
 
 src_install() {
 	distutils_src_install
-	rm "${D}"/usr/share/doc/${P}/COPYING
+	rm "${ED}"/usr/share/doc/${P}/COPYING
 }
