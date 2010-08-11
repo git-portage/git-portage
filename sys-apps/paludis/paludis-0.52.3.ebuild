@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/Attic/paludis-0.52.1.ebuild,v 1.1 2010/08/08 10:58:19 peper Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/Attic/paludis-0.52.3.ebuild,v 1.1 2010/08/11 15:47:20 dagger Exp $
 
 inherit bash-completion eutils
 
