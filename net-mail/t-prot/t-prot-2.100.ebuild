@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/t-prot/Attic/t-prot-2.98.ebuild,v 1.1 2010/04/09 10:53:26 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/t-prot/Attic/t-prot-2.100.ebuild,v 1.1 2010/08/12 08:03:09 tove Exp $
 
 EAPI=2
 
