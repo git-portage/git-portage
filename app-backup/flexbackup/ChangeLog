@@ -1,6 +1,14 @@
 # ChangeLog for app-backup/flexbackup
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.30 2009/08/08 14:16:51 graaff Exp $
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.31 2010/08/14 08:44:41 graaff Exp $
+
+*flexbackup-1.2.1-r9 (14 Aug 2010)
+
+  14 Aug 2010; Hans de Graaff <graaff@gentoo.org>
+  +flexbackup-1.2.1-r9.ebuild,
+  +files/flexbackup-1.2.1-perl-5.12-deprecation-warning.patch:
+  Fix perl 5.12 deprecation warnings, thanks to John R. Graham for providing
+  a patch in bug 331673.
 
   08 Aug 2009; Hans de Graaff <graaff@gentoo.org>
   -flexbackup-1.2.1-r7.ebuild:

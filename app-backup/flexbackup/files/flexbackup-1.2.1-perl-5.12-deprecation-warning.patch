@@ -1,0 +1,22 @@
+diff -ubB old/flexbackup new/flexbackup
+--- old/flexbackup	2010-07-30 11:44:34.000000000 -0400
++++ new/flexbackup	2010-07-30 11:46:03.000000000 -0400
+@@ -1050,7 +1050,7 @@
+     } else {
+ 	$prunekey = $dir;
+     }
+-    if (defined(%{$::prune{$prunekey}})) {
++    if (%{$::prune{$prunekey}}) {
+ 	&log("| NOTE: \$prune is ignored for type=dump");
+     }
+ 
+@@ -4882,7 +4882,7 @@
+ 	$prunekey = $dir;
+     }
+ 
+-    if (defined(%{$::prune{$prunekey}})) {
++    if (%{$::prune{$prunekey}}) {
+ 		my $rex;
+ 	# FreeBSD needs -E (above) and no backslashes around the (|) chars
+ 	if ($::uname =~ /FreeBSD/) {
+Only in new/: flexbackup~
