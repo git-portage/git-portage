@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/xl2tpd/Attic/xl2tpd-1.2.4.ebuild,v 1.2 2010/08/15 20:33:23 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/xl2tpd/Attic/xl2tpd-1.2.6.ebuild,v 1.1 2010/08/15 20:33:23 mrness Exp $
 
 EAPI="2"
 
@@ -12,8 +12,8 @@ SRC_URI="ftp://ftp.xelerance.com/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86"
-IUSE=""
+KEYWORDS="~amd64 ~ppc ~x86"
+IUSE="dnsretry"
 
 DEPEND="net-libs/libpcap"
 RDEPEND="${DEPEND}
@@ -21,6 +21,8 @@ RDEPEND="${DEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-as-needed.patch
+	epatch "${FILESDIR}"/${P}-qa-fixes.patch
+	use dnsretry && epatch "${FILESDIR}"/${PN}-dnsretry.patch
 }
 
 src_compile() {
