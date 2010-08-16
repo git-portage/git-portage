@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/gdisk/Attic/gdisk-0.6.8.ebuild,v 1.1 2010/06/07 12:59:09 alexxy Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/gdisk/Attic/gdisk-0.6.9.ebuild,v 1.1 2010/08/16 17:35:41 alexxy Exp $
 
 EAPI="3"
 
@@ -12,17 +12,18 @@ SRC_URI="mirror://sourceforge/gptfdisk/${P/_p/-}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 RDEPEND=""
 
 S="${WORKDIR}/${P/_p2/}"
 
-src_install()
-{
+src_install() {
 	for x in gdisk sgdisk; do
 		dosbin "${x}" || die
 		doman "${x}.8" || die
+		dohtml "${x}.html" || die
 	done
+	dodoc README NEWS
 }
