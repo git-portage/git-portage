@@ -1,16 +1,19 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/util-vserver/Attic/util-vserver-0.30.215.ebuild,v 1.5 2008/08/08 08:40:14 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/util-vserver/Attic/util-vserver-0.30.216_pre2910.ebuild,v 1.1 2010/08/19 18:22:51 hollow Exp $
 
 inherit eutils bash-completion
 
+MY_P=${P/_/-}
+S="${WORKDIR}"/${MY_P}
+
 DESCRIPTION="Linux-VServer admin utilities"
 HOMEPAGE="http://www.nongnu.org/util-vserver/"
-SRC_URI="http://ftp.linux-vserver.org/pub/utils/${PN}/${P}.tar.bz2"
+SRC_URI="http://people.linux-vserver.org/~dhozac/t/uv-testing/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ~ppc ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~sparc ~x86"
 
 IUSE=""
 
@@ -37,12 +40,6 @@ pkg_setup() {
 	einfo
 	einfo "Using \"${VDIRBASE}\" as vserver base directory"
 	einfo
-}
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-openrc.patch
 }
 
 src_compile() {
@@ -125,10 +122,4 @@ pkg_postinst() {
 		ewarn "  ln -s /etc/init.d/vservers.default /etc/init.d/vservers.<mark>"
 		ewarn
 	fi
-
-	ewarn "You should definitly fix up the barrier of your vserver"
-	ewarn "base directory by using the following command in a root shell:"
-	ewarn
-	ewarn " setattr --barrier ${VDIRBASE}"
-	ewarn
 }
