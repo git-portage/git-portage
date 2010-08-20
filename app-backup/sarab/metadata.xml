@@ -3,7 +3,7 @@
 <pkgmetadata>
 <herd>no-herd</herd>
 <maintainer>
-  <email>maintainer-needed@gentoo.org</email>
+  <email>rich0@gentoo.org</email>
 </maintainer>
 <longdescription>
 SaraB works with DAR (Disk ARchive) to schedule backups.  SaraB provides a
