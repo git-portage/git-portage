@@ -1,6 +1,27 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.99 2010/07/23 07:10:09 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.100 2010/08/21 07:09:25 tomjbe Exp $
+
+*bacula-5.0.3 (21 Aug 2010)
+
+  21 Aug 2010; Thomas Beierlein <tomjbe@gentoo.org>
+  -files/2.4.4/bacula-default-configs.patch, -files/2.4.4/bacula-dir-conf,
+  -files/2.4.4/bacula-dir-init, -files/2.4.4/bacula-fd-conf,
+  -files/2.4.4/bacula-fd-init, -files/2.4.4/bacula-gnomesu2gksu.diff,
+  -files/2.4.4/bacula-sd-conf, -files/2.4.4/bacula-sd-init,
+  -files/3.0.2/bacula-default-configs.patch, -files/3.0.2/bacula-dir-conf,
+  -files/3.0.2/bacula-dir-init, -files/3.0.2/bacula-fd-conf,
+  -files/3.0.2/bacula-fd-init, -files/3.0.2/bacula-gnomesu2gksu.diff,
+  -files/3.0.2/bacula-sd-conf, -files/3.0.2/bacula-sd-init,
+  +files/5.0.3/bacula-5.0.3-Makefile.patch,
+  +files/5.0.3/bacula-5.0.3-ldflags.patch,
+  +files/5.0.3/bacula-5.0.3-lib-search-path.patch,
+  +files/5.0.3/bacula-5.0.3-openssl-1.patch, +files/5.0.3/bacula-dir.confd,
+  +files/5.0.3/bacula-dir.initd, +files/5.0.3/bacula-fd.confd,
+  +files/5.0.3/bacula-fd.initd, +files/5.0.3/bacula-sd.confd,
+  +files/5.0.3/bacula-sd.initd, -bacula-2.4.4.ebuild, -bacula-3.0.2.ebuild,
+  -bacula-5.0.2.ebuild, +bacula-5.0.3.ebuild:
+  Version bump to 5.0.3. Cleanup of old versions.
 
   23 Jul 2010; Thomas Beierlein <tomjbe@gentoo.org> bacula-5.0.2-r2.ebuild:
   drop leftover comment

@@ -1,39 +1,34 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.2.ebuild,v 1.3 2010/06/17 21:21:43 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.3.ebuild,v 1.1 2010/08/21 07:09:25 tomjbe Exp $
 
 EAPI="2"
 inherit eutils multilib
 
-IUSE="bacula-clientonly bacula-nodir bacula-nosd ipv6 logwatch mysql postgres python qt4 readline +sqlite3 ssl static tcpd X"
-# bacula-web bimagemgr brestore bweb
-KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
+MY_PV=${PV/_beta/-b}
+MY_P=${PN}-${MY_PV}
+#DOC_VER="${MY_PV}"
 
 DESCRIPTION="Featureful client/server network backup suite"
 HOMEPAGE="http://www.bacula.org/"
 
-MY_PV=${PV/_beta/-b}
-MY_P=${PN}-${MY_PV}
-S=${WORKDIR}/${MY_P}
-#DOC_VER="${MY_PV}"
 #DOC_SRC_URI="mirror://sourceforge/bacula/${PN}-docs-${DOC_VER}.tar.bz2"
-#GUI_VER="${PV}"
-#GUI_SRC_URI="mirror://sourceforge/bacula/${PN}-gui-${GUI_VER}.tar.gz"
 SRC_URI="mirror://sourceforge/bacula/${MY_P}.tar.gz"
 #		doc? ( ${DOC_SRC_URI} )
-#		bacula-web? ( ${GUI_SRC_URI} )
-#		bimagemgr? ( ${GUI_SRC_URI} )
-#		brestore? ( ${GUI_SRC_URI} )
-#		bweb? ( ${GUI_SRC_URI} )
 
-LICENSE="GPL-2"
+LICENSE="AGPL-3"
 SLOT="0"
+KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
+IUSE="bacula-clientonly bacula-nodir bacula-nosd ipv6 logwatch mysql postgres python qt4 readline +sqlite3 ssl static tcpd vim-syntax X"
 
+# maintainer comment:
+# postgresql-base should have USE=threads (see bug 326333) but fails to build
+# atm with it (see bug #300964)
 DEPEND="
 	>=sys-libs/zlib-1.1.4
 	dev-libs/gmp
 	!bacula-clientonly? (
-		postgres? ( dev-db/postgresql-server )
+		postgres? ( dev-db/postgresql-base[threads] )
 		mysql? ( virtual/mysql )
 		sqlite3? ( dev-db/sqlite:3 )
 		!bacula-nodir? ( virtual/mta )
@@ -59,7 +54,10 @@ RDEPEND="${DEPEND}
 			sys-block/mtx
 			app-arch/mt-st
 		)
-	)"
+	)
+	vim-syntax? ( || ( app-editors/vim app-editors/gvim ) )"
+
+S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
 	local -i dbnum=0
@@ -77,19 +75,17 @@ pkg_setup() {
 			let dbnum++
 		fi
 		if [[ "${dbnum}" -lt 1 ]]; then
-			eerror
-			eerror "To use ${P} it is required to set a database in the USE flags."
-			eerror "Supported databases are mysql, postgresql, sqlite3"
-			eerror
-			die "No database type selected."
+			ewarn
+			ewarn "No database backend selected, defaulting to sqlite3."
+			ewarn "Supported databases are mysql, postgresql, sqlite3"
+			ewarn
+			export mydbtype=sqlite3
 		elif [[ "${dbnum}" -gt 1 ]]; then
-			eerror
-			eerror "You have set ${P} to use multiple database types."
-			eerror "I don't know which to set as the default!"
-			eerror "You can use /etc/portage/package.use to set per-package USE flags"
-			eerror "Set it so only one database type, mysql, postgres, sqlite3"
-			eerror
-			die "Multiple database types selected."
+			ewarn
+			ewarn "Too many database backends selected, defaulting to sqlite3."
+			ewarn "Supported databases are mysql, postgresql, sqlite3"
+			ewarn
+			export mydbtype=sqlite3
 		fi
 	fi
 
@@ -125,11 +121,17 @@ src_prepare() {
 	done
 	popd >&/dev/null || die
 
-	# bug #310087
-	epatch "${FILESDIR}"/${PV}/${P}-as-needed.patch
-
 	# bug #311161
 	epatch "${FILESDIR}"/${PV}/${P}-lib-search-path.patch
+
+	# stop build for errors in subdirs
+	epatch "${FILESDIR}"/${PV}/${P}-Makefile.patch
+
+	# bat needs to respect LDFLAGS
+	epatch "${FILESDIR}"/${PV}/${P}-ldflags.patch
+
+	# bug #328701
+	epatch "${FILESDIR}"/${PV}/${P}-openssl-1.patch
 }
 
 src_configure() {
@@ -159,15 +161,6 @@ src_configure() {
 		fi
 	fi
 
-	if use qt4 && has_version '<x11-libs/qwt-5'; then
-		eerror "x11-libs/qwt found in a version < 5, thus the"
-		eerror "compilation of 'bat' would fail (see"
-		eerror "http://bugs.gentoo.org/188477#c11 for details)."
-		eerror "please either unmerge <x11-libs/qwt-5 or disable"
-		eerror "the qt4 USE flag to disable building 'bat'."
-		die "incompatible slotted qwt version found"
-	fi
-
 	myconf="${myconf} \
 		--disable-tray-monitor \
 		$(use_with X x) \
@@ -184,6 +177,7 @@ src_configure() {
 	econf \
 		--libdir=/usr/$(get_libdir) \
 		--docdir=/usr/share/doc/${PF} \
+		--htmldir=/usr/share/doc/${PF}/html \
 		--with-pid-dir=/var/run \
 		--sysconfdir=/etc/bacula \
 		--with-subsys-dir=/var/lock/subsys \
@@ -204,41 +198,6 @@ src_configure() {
 src_compile() {
 	emake || die "emake failed"
 
-	# build various GUIs from bacula-gui tarball
-#	if use bacula-web || use bimagemgr || use brestore || use bweb; then
-#		pushd "${WORKDIR}/${PN}-gui-${GUI_VER}"
-#		local myconf_gui=''
-#		if use bimagemgr; then
-#			## TODO FIXME: webapp-config? !apache?
-#			myconf_gui="${myconf_gui} \
-#				--with-bimagemgr-cgidir=/var/www/localhost/cgi-bin \
-#				--with-bimagemgr-docdir=/var/www/localhost/htdocs \
-#				--with-bimagemgr-binowner=root \
-#				--with-bimagemgr-bingroup=root \
-#				--with-bimagemgr-dataowner=apache \
-#				--with-bimagemgr-datagroup=apache \
-#				"
-#		fi
-#		./configure \
-#			--with-bacula="${S}" \
-#			${myconf} \
-#			|| die "configure for bacula-gui failed"
-#		## TODO FIXME: install files (see bacula-gui.spec)
-#		if use bacula-web; then
-#			: install
-#		fi
-#		if use bimagemgr; then
-#			: install
-#		fi
-#		if use brestore; then
-#			: install
-#		fi
-#		if use bweb; then
-#			: install
-#		fi
-#		popd
-#	fi
-
 	# build docs from bacula-docs tarball
 #	if use doc; then
 #		pushd "${WORKDIR}/${PN}-docs-${DOC_VER}"
@@ -252,10 +211,16 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
+	insinto /usr/share/pixmaps
+	doins scripts/bacula.png || die
 
 	# install bat when enabled (for some reason ./configure doesn't pick this up)
 	if use qt4; then
 		dosbin "${S}"/src/qt-console/.libs/bat || die
+		insinto /usr/share/pixmaps
+		doins src/qt-console/images/bat_icon.png || die
+		insinto /usr/share/applications
+		doins scripts/bat.desktop || die
 	fi
 
 	# remove some scripts we don't need at all
@@ -305,14 +270,8 @@ src_install() {
 		fi
 	fi
 
-	# remove unwanted files
-	if use bacula-clientonly; then
-		rm -vf "${D}"/etc/bacula/bconsole.conf
-		rm -vf "${D}"/usr/sbin/bconsole
-		rm -vf "${D}"/usr/libexec/bacula/bconsole
-	fi
 	rm -vf "${D}"/usr/share/man/man1/bacula-bwxconsole.1*
-	if use bacula-clientonly || ! use qt4; then
+	if ! use qt4; then
 		rm -vf "${D}"/usr/share/man/man1/bat.1*
 	fi
 	rm -vf "${D}"/usr/share/man/man1/bacula-tray-monitor.1*
@@ -347,6 +306,14 @@ src_install() {
 #			dodoc "${WORKDIR}/${PN}-docs-${DOC_VER}"/manuals/en/${i}/${i}.pdf || die
 #		done
 #	fi
+
+	# vim-files
+	if use vim-syntax; then
+		insinto /usr/share/vim/vimfiles/syntax
+		doins scripts/bacula.vim || die
+		insinto /usr/share/vim/vimfiles/ftdetect
+		newins scripts/filetype.vim bacula_ft.vim || die
+	fi
 
 	# setup init scripts
 	myscripts="bacula-fd"
@@ -407,7 +374,6 @@ pkg_postinst() {
 		einfo "  /usr/libexec/bacula/make_${mydbtype}_tables"
 		einfo "  /usr/libexec/bacula/grant_${mydbtype}_privileges"
 		einfo
-		echo
 
 		ewarn
 		ewarn "*** ATTENTION! IMPORTANT! ATTENTION! IMPORTANT! ATTENTION! IMPORTANT! ***"
@@ -428,23 +394,7 @@ pkg_postinst() {
 		ewarn "The bundled catalog backup script (/usr/libexec/bacula/make_catalog_backup)"
 		ewarn "is INSECURE. The script needs to be called with the database access password"
 		ewarn "as a command line parameter, thus, the password can be seen from any other"
-		ewarn "user on the system (if not using some non-default hardened/patched kernel"
-		ewarn "with /proc restrictions)!"
-		ewarn
-		ewarn "Our advice is to NOT USE the bundled script at all, but instead use something"
-		ewarn "like this in your catalog backup job definition (example using MySQL as the"
-		ewarn "catalog database):"
-		ewarn
-		ewarn "RunBeforeJob = \"mysqldump --defaults-file=/etc/bacula/my.cnf --opt -f -r /var/lib/bacula/bacula.sql bacula\""
-		ewarn "RunAfterJob  = \"rm -f /var/lib/bacula/bacula.sql\""
-		ewarn
-		ewarn "This requires you to put all database access parameters (like user, host and"
-		ewarn "password) into a dedicated file (/etc/bacula/my.cnf in this example) which"
-		ewarn "can (and should!) be secured by simple filesystem access permissions."
-		ewarn
-		ewarn "See also:"
-		ewarn "http://www.bacula.org/5.0.x-manuals/en/main/main/Bacula_Security_Issues.html"
-		ewarn "http://www.bacula.org/5.0.x-manuals/en/main/main/Catalog_Maintenance.html#SECTION0043140000000000000000"
+		ewarn "user on the system"
 		ewarn
 		ewarn "NOTICE:"
 		ewarn "Since version 5.0.0 Bacula bundles an alternative catalog backup script"
@@ -452,34 +402,23 @@ pkg_postinst() {
 		ewarn "subject to this issue as it parses the director daemon config to extract"
 		ewarn "the configured database connection parameters (including the password)."
 		ewarn
+		ewarn "See also:"
+		ewarn "http://www.bacula.org/5.0.x-manuals/en/main/main/Bacula_Security_Issues.html"
+		ewarn "http://www.bacula.org/5.0.x-manuals/en/main/main/Catalog_Maintenance.html#SECTION0043140000000000000000"
+		ewarn
 		ewarn "*** ATTENTION! IMPORTANT! ATTENTION! IMPORTANT! ATTENTION! IMPORTANT! ***"
 		ewarn
-		ebeep 10
-		epause 20
+		ebeep 5
+		epause 10
 		echo
 
-		ewarn
-		ewarn "Please note that SQLite v2 support as well as wxwindows (bwx-console)"
-		ewarn "and gnome (gnome-console) support have been dropped from this release."
-		ewarn
-		ebeep 3
-		epause 5
-		echo
+		einfo
+		einfo "Please note that SQLite v2 support as well as wxwindows (bwx-console)"
+		einfo "and gnome (gnome-console) support have been dropped."
+		einfo
 	fi
 
-	ewarn
-	ewarn "*** NOTICE! NOTICE! NOTICE! NOTICE! NOTICE! NOTICE! NOTICE! NOTICE! ***"
-	ewarn
-	ewarn "Support for the bacula all-in-one init script has been removed from"
-	ewarn "a prior release -- if you were previously using the all-in-one init"
-	ewarn "script, please switch to using the individual init scripts now:"
-	ewarn
-	ewarn "- bacula-dir: bacula director       (for the central bacula server)"
-	ewarn "- bacula-fd:  bacula file daemon    (for hosts to be backed up)"
-	ewarn "- bacula-sd:  bacula storage daemon (for hosts storing the backup data)"
-	ewarn
-	ewarn "*** NOTICE! NOTICE! NOTICE! NOTICE! NOTICE! NOTICE! NOTICE! NOTICE! ***"
-	ewarn
-	ebeep 5
-	epause 10
+	einfo "Please note that 'bconsole' will always be installed. To compile 'bat'"
+	einfo "you have to enable 'USE=qt4'."
+	einfo
 }
