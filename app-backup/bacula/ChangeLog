@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.100 2010/08/21 07:09:25 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.101 2010/08/23 17:52:44 tomjbe Exp $
+
+*bacula-5.0.3-r1 (23 Aug 2010)
+
+  23 Aug 2010; Thomas Beierlein <tomjbe@gentoo.org> +bacula-5.0.3-r1.ebuild,
+  +files/5.0.3/bacula-5.0.3-as-needed.patch:
+  Fix as-needed problem, bug #334029
 
 *bacula-5.0.3 (21 Aug 2010)
 
