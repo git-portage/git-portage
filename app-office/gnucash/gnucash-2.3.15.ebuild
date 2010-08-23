@@ -1,9 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/gnucash/Attic/gnucash-2.3.8.ebuild,v 1.2 2010/01/17 19:39:42 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/gnucash/Attic/gnucash-2.3.15.ebuild,v 1.1 2010/08/23 13:23:44 tove Exp $
 
-EAPI=2
+EAPI=3
 
+#PYTHON_DEPEND="python? 2:2.4"
+
+#inherit eutils python gnome2
 inherit eutils gnome2
 
 DOC_VER="2.2.0"
@@ -16,7 +19,8 @@ SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
 
-IUSE="+doc ofx hbci chipcard debug quotes sqlite postgres mysql webkit"
+#IUSE="+doc ofx hbci chipcard debug mysql python quotes sqlite postgres webkit"
+IUSE="+doc ofx hbci chipcard debug mysql quotes sqlite postgres webkit"
 
 # FIXME: rdepend on dev-libs/qof when upstream fix their mess (see configure.in)
 
@@ -58,7 +62,7 @@ ELTCONF="--patch-only"
 DOCS="doc/README.OFX doc/README.HBCI"
 
 # FIXME: no the best thing to do but it'd be even better to fix autofoo
-#MAKEOPTS="${MAKEOPTS} -j1"
+MAKEOPTS="${MAKEOPTS} -j1"
 
 pkg_setup() {
 	ewarn "This is one of several unstable 2.3.x releases of the GnuCash Free"
@@ -72,22 +76,39 @@ pkg_setup() {
 	ewarn "GnuCash in the 2.3.x series."
 
 	if use webkit ; then
-		G2CONF="${G2CONF} --with-html-engine=webkit"
+		G2CONF+=" --with-html-engine=webkit"
 	else
-		G2CONF="${G2CONF} --with-html-engine=gtkhtml"
+		G2CONF+=" --with-html-engine=gtkhtml"
 	fi
 
 	if use sqlite || use mysql || use postgres ; then
-		G2CONF="${G2CONF}
-			--enable-dbi"
+		G2CONF+=" --enable-dbi"
+	else
+		G2CONF+=" --disable-dbi"
 	fi
-	G2CONF="${G2CONF}
+	G2CONF+="
 		$(use_enable debug)
 		$(use_enable ofx)
 		$(use_enable hbci aqbanking)
 		--disable-doxygen
 		--enable-locale-specific-tax
 		--disable-error-on-warning"
+#		$(use_enable python python-bindings)
+
+#	if use python ; then
+#		python_set_active_version 2
+#		python_pkg_setup
+#	fi
+}
+
+src_unpack() {
+	default
+	cp "${FILESDIR}"/test-dbi-business-stuff.h "${S}"/src/backend/dbi/test || die
+}
+
+src_prepare() {
+	gnome2_src_prepare
+	: > "${S}"/py-compile
 }
 
 src_test() {
@@ -104,4 +125,5 @@ src_install() {
 #	prepalldocs
 	mv "${D}"/usr/share/doc/${PF} "${T}"/cantuseprepalldocs || die
 	dodoc "${T}"/cantuseprepalldocs/* || die
+	find "${D}" -name '*.la' -delete || die
 }
