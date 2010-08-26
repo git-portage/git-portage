@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/vym/Attic/vym-1.12.6.ebuild,v 1.2 2010/02/07 15:03:23 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/vym/Attic/vym-1.12.7.ebuild,v 1.1 2010/08/26 09:17:29 xarthisius Exp $
 
 EAPI=2
 inherit eutils qt4-r2
