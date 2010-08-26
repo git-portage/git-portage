@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/cclive/Attic/cclive-0.6.3.ebuild,v 1.2 2010/06/25 11:39:59 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/cclive/Attic/cclive-0.6.5.ebuild,v 1.1 2010/08/26 20:35:17 scarabeus Exp $
 
 EAPI=2
 
@@ -29,10 +29,5 @@ src_install() {
 }
 
 src_test() {
-	local value
-
-	ewarn "Tests require internet connection in order to work."
-
-	use offensive && value="true" || value="false"
-	ADULT_OK="${value}" emake check || die "emake test failed"
+	emake check || die "emake test failed"
 }
