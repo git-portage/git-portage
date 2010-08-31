@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/ktorrent/Attic/ktorrent-4.0.2.ebuild,v 1.2 2010/08/09 15:48:01 reavertm Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/ktorrent/Attic/ktorrent-4.0.3.ebuild,v 1.1 2010/08/31 22:01:36 scarabeus Exp $
 
 EAPI="2"
 
@@ -32,7 +32,7 @@ IUSE="+bwscheduler debug +downloadorder +infowidget +ipfilter +kross +logviewer
 +upnp webinterface +zeroconf"
 
 COMMONDEPEND="
-	>=net-libs/libktorrent-1.0.2
+	>=net-libs/libktorrent-1.0.3
 	mediaplayer? ( >=media-libs/taglib-1.5 )
 	plasma? ( >=kde-base/libtaskmanager-${KDE_MINIMAL} )
 	rss? (
