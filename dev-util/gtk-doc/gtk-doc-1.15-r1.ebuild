@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/gtk-doc/Attic/gtk-doc-1.13-r2.ebuild,v 1.9 2010/09/02 12:36:59 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/gtk-doc/Attic/gtk-doc-1.15-r1.ebuild,v 1.1 2010/09/02 12:36:59 pacho Exp $
 
 EAPI="2"
 
@@ -11,10 +11,10 @@ HOMEPAGE="http://www.gtk.org/gtk-doc/"
 
 LICENSE="GPL-2 FDL-1.1"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
 IUSE="debug doc emacs test"
 
-# app-editors/vim blocker needed due bug #333313
+# dev-tex/tex4ht blocker needed due bug #315287
 RDEPEND=">=dev-libs/glib-2.6
 	>=dev-lang/perl-5.6
 	>=app-text/openjade-1.3.1
@@ -25,7 +25,7 @@ RDEPEND=">=dev-libs/glib-2.6
 	~app-text/docbook-sgml-dtd-3.0
 	>=app-text/docbook-dsssl-stylesheets-1.40
 	emacs? ( virtual/emacs )
-	!!>=app-editors/vim-7.3"
+	!!<dev-tex/tex4ht-20090611_p1038-r1"
 
 DEPEND="${RDEPEND}
 	~dev-util/gtk-doc-am-${PV}
@@ -44,17 +44,10 @@ src_prepare() {
 	# Remove global Emacs keybindings.
 	epatch "${FILESDIR}/${PN}-1.8-emacs-keybindings.patch"
 
-	# gtk-doc.make puts $(DOC_MODULE)-overrides.txt in EXTRA_DIST,
-	# so this file must exist to be able to "make dist".
-	# fix bug #305191, upstream ##590625.
-	epatch "${FILESDIR}/${P}-scan-touch-module-overrides.patch"
-	# This restores a compatible behavior with previous versions of gtk-doc,
-	# which is required by many tarballs, fix bug #305191, upstream #605211
-	epatch "${FILESDIR}/${P}-fixxref-compat.patch"
-
 	# Fix bug 306569 by not loading vim plugins while calling vim in
 	# gtkdoc-fixxref for fixing vim syntax highlighting
-	epatch "${FILESDIR}/${P}-fixxref-vim-u-NONE.patch"
+	# Also fix incompatibility with vim-7.3 (bug #333313)
+	epatch "${FILESDIR}/${P}-fixxref-vim-fixes.patch"
 }
 
 src_compile() {
