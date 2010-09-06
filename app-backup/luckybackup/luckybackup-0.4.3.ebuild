@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/luckybackup/Attic/luckybackup-0.3.5.ebuild,v 1.3 2010/01/06 10:14:53 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/luckybackup/Attic/luckybackup-0.4.3.ebuild,v 1.1 2010/09/06 10:56:33 tampakrap Exp $
 
 EAPI=2
 inherit qt4-r2
