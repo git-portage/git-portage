@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/Attic/backup-manager-0.7.8-r1.ebuild,v 1.1 2009/09/07 10:50:52 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/Attic/backup-manager-0.7.8-r1.ebuild,v 1.2 2010/09/08 10:48:06 flameeyes Exp $
 
 EAPI=2
 
@@ -28,7 +28,8 @@ src_prepare() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "install failed"
+	# bug #336428
+	emake -j1 DESTDIR="${D}" install || die "install failed"
 	use doc && dodoc doc/user-guide.txt
 }
 
