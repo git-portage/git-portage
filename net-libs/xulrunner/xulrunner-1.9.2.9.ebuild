@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/xulrunner/Attic/xulrunner-1.9.2.8-r1.ebuild,v 1.6 2010/08/23 14:53:27 darkside Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/xulrunner/Attic/xulrunner-1.9.2.9.ebuild,v 1.1 2010/09/08 01:12:19 anarchy Exp $
 
 EAPI="3"
 WANT_AUTOCONF="2.1"
@@ -10,7 +10,7 @@ inherit flag-o-matic toolchain-funcs eutils mozconfig-3 makeedit multilib java-p
 MY_PV="${PV/_rc/rc}" # Handle beta
 MY_PV="${MY_PV/1.9.2/3.6}"
 MAJ_PV="1.9.2" # from mozilla-* branch name
-PATCH="${PN}-1.9.2-patches-0.6"
+PATCH="${PN}-1.9.2-patches-0.7"
 
 DESCRIPTION="Mozilla runtime package that can be used to bootstrap XUL+XPCOM applications"
 HOMEPAGE="http://developer.mozilla.org/en/docs/XULRunner"
@@ -62,12 +62,9 @@ pkg_setup() {
 
 src_prepare() {
 	# Apply our patches
-	EPATCH_EXCLUDE="1009-armv4t-nanojit.patch" \
 	EPATCH_SUFFIX="patch" \
 	EPATCH_FORCE="yes" \
 	epatch "${WORKDIR}"
-
-	epatch "${FILESDIR}"/1009-armv4t-nanojit-v2.patch
 
 	eprefixify \
 		extensions/java/xpcom/interfaces/org/mozilla/xpcom/Mozilla.java \
