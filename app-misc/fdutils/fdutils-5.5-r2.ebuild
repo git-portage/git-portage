@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/fdutils/Attic/fdutils-5.5-r1.ebuild,v 1.2 2010/04/16 11:03:17 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/fdutils/fdutils-5.5-r2.ebuild,v 1.1 2010/09/09 18:24:17 flameeyes Exp $
 
 inherit eutils flag-o-matic
 
@@ -12,7 +12,9 @@ SLOT="0"
 KEYWORDS="~ppc ~x86"
 IUSE="doc"
 
-DEPEND=">=sys-fs/mtools-3
+RDEPEND=">=sys-fs/mtools-3"
+
+DEPEND="${RDEPEND}
 	doc? ( virtual/texi2dvi )"
 
 src_unpack() {
@@ -29,16 +31,12 @@ src_compile() {
 	econf --enable-fdmount-floppy-only || die
 
 	# parallel make unsafe (bug#315577)
-	if use doc;
-	then
-		emake -j1 || die
-	else
-		emake -j1 compile || die
-	fi
+	emake -j1 $(use doc || echo compile) || die "emake failed"
 }
 
 src_install() {
 	dodoc Changelog
 	use doc && dodir /usr/share/info/
+	dodir /etc
 	emake -j1 DESTDIR="${D}" install || die
 }
