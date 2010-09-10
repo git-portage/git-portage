@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.1.2-r1.ebuild,v 1.1 2010/09/10 21:41:01 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.1.2-r1.ebuild,v 1.2 2010/09/10 21:45:04 robbat2 Exp $
 
 EAPI=3
 inherit autotools eutils perl-module
@@ -264,7 +264,6 @@ src_compile() {
 }
 
 src_install() {
-	die "Foo"
 	[ ! -f "${TMPENVFILE}" ] && die "Variable setting file (${TMPENVFILE}) should exist!"
 	source ${TMPENVFILE}
 
