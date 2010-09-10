@@ -1,8 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.1_p2.ebuild,v 1.5 2010/09/10 21:41:01 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.1.2-r1.ebuild,v 1.1 2010/09/10 21:41:01 robbat2 Exp $
 
-inherit autotools eutils
+EAPI=3
+inherit autotools eutils perl-module
 
 MY_P="${P/_}"
 DESCRIPTION="The Advanced Maryland Automatic Network Disk Archiver"
@@ -18,7 +19,7 @@ RDEPEND="sys-libs/readline
 	>=dev-lang/perl-5.6
 	app-arch/dump
 	net-misc/openssh
-	>=dev-libs/glib-2.2
+	>=dev-libs/glib-2.24.0
 	nls? ( virtual/libintl )
 	s3? ( >=net-misc/curl-7.10.0 )
 	samba? ( net-fs/samba )
@@ -38,6 +39,9 @@ DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
 IUSE="gnuplot ipv6 kerberos minimal nls s3 samba xfs"
+
+# pending bug #331111, tests are disabled
+RESTRICT="test"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -113,15 +117,17 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack ${A}
-	cd "${S}"
+	# we do not want the perl src_unpack
+	base_src_unpack
+}
 
+src_prepare() {
 	# Fix a fun race condition if you use encryption.
 	# This is one of the reasons you should test your recovery procedures often.
-	epatch "${FILESDIR}"/${PN}-2.6.0p2-amcrypt-ossl-asym-race-fix.patch
+	#epatch "${FILESDIR}"/${PN}-2.6.0p2-amcrypt-ossl-asym-race-fix.patch
 
 	# gentoo bug 248838, check /sbin stuff before /bin
-	epatch "${FILESDIR}"/${PN}-2.6.0_p2-syslocpath.patch
+	#epatch "${FILESDIR}"/${PN}-2.6.0_p2-syslocpath.patch
 
 	eautoreconf
 
@@ -152,7 +158,7 @@ src_unpack() {
 	) > "${T}"/amandahosts
 }
 
-src_compile() {
+src_configure() {
 	# fix bug #36316
 	addpredict /var/cache/samba/gencache.tdb
 
@@ -241,11 +247,24 @@ src_compile() {
 	# I18N
 	myconf="${myconf} `use_enable nls`"
 
+	# Bug #296634: Perl location
+	perlinfo
+	myconf="${myconf} --with-amperldir=${VENDOR_LIB}"
+
+	# Bug 296633: --disable-syntax-checks
+	# Some tests are not safe for production systems
+	myconf="${myconf} --disable-syntax-checks"
+
 	econf ${myconf} || die "econf failed!"
-	emake || die "emake failed!"
+}
+
+src_compile() {
+	# Again, do not want the perl-module src_compile
+	base_src_compile
 }
 
 src_install() {
+	die "Foo"
 	[ ! -f "${TMPENVFILE}" ] && die "Variable setting file (${TMPENVFILE}) should exist!"
 	source ${TMPENVFILE}
 
@@ -342,6 +361,10 @@ src_install() {
 	newdoc "${FILESDIR}/example_amanda.conf" amanda.conf
 	newdoc "${FILESDIR}/example_disklist-2.5.1_p3-r1" disklist
 	newdoc "${FILESDIR}/example_global.conf" global.conf
+
+	einfo "Cleaning up dud .la files"
+	perlinfo
+	find "${D}"/"${VENDOR_LIB}" -name '*.la' -print0 |xargs -0 rm -f
 }
 
 pkg_postinst() {
