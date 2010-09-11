@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/pear/Attic/pear-1.8.1.ebuild,v 1.1 2009/09/23 02:53:37 beandog Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php/pear/Attic/pear-1.9.1.ebuild,v 1.1 2010/09/11 13:25:26 mabi Exp $
 
 inherit depend.php
 
@@ -29,9 +29,9 @@ pkg_postinst() {
 
 	# Update PEAR/PECL channels as needed, add new ones to the list if needed
 	elog "Updating PEAR/PECL channels"
-	local pearchans="pear.php.net pecl.php.net components.ez.no pear.phpdb.org
-		pear.phing.info	pear.symfony-project.com pear.phpunit.de
-		pear.php-baustelle.de pear.phpontrax.com pear.agavi.org"
+	local pearchans="pear.php.net pecl.php.net components.ez.no
+	pear.propelorm.org pear.phing.info	pear.symfony-project.com pear.phpunit.de
+	pear.php-baustelle.de pear.phpontrax.com pear.agavi.org"
 
 	for chan in ${pearchans} ; do
 		pear channel-discover ${chan}
