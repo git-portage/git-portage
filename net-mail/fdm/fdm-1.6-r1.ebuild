@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/fdm/Attic/fdm-1.6.ebuild,v 1.1 2010/09/05 22:50:26 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/fdm/fdm-1.6-r1.ebuild,v 1.1 2010/09/12 19:12:24 xmw Exp $
 
 EAPI=2
 
@@ -27,7 +27,7 @@ pkg_setup() {
 
 src_prepare() {
 	rm Makefile || die
-	epatch "${FILESDIR}"/${P}-GNUmakefile.patch
+	epatch "${FILESDIR}"/${PF}-GNUmakefile.patch
 }
 
 src_compile() {
