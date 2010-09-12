@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/amanda
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.66 2010/09/10 21:41:01 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.67 2010/09/12 08:34:05 robbat2 Exp $
+
+  12 Sep 2010; Robin H. Johnson <robbat2@gentoo.org> amanda-3.1.2-r1.ebuild:
+  Bug #331111: Some of the testsuite fails if you have an old version of
+  amanda and run the testsuite of the new version after building it but
+  before installing it.
 
 *amanda-3.1.2-r1 (10 Sep 2010)
 

@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.1.2-r1.ebuild,v 1.2 2010/09/10 21:45:04 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.1.2-r1.ebuild,v 1.3 2010/09/12 08:34:05 robbat2 Exp $
 
 EAPI=3
 inherit autotools eutils perl-module
@@ -39,9 +39,6 @@ DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
 IUSE="gnuplot ipv6 kerberos minimal nls s3 samba xfs"
-
-# pending bug #331111, tests are disabled
-RESTRICT="test"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -128,6 +125,10 @@ src_prepare() {
 
 	# gentoo bug 248838, check /sbin stuff before /bin
 	#epatch "${FILESDIR}"/${PN}-2.6.0_p2-syslocpath.patch
+
+	# gentoo bug #331111
+	sed -i '/^check-local: check-perl$/d' "${S}"/config/automake/scripts.am
+	sed -i '/^check-local:/s,syntax-check,,g' "${S}"/perl/Makefile.am
 
 	eautoreconf
 
