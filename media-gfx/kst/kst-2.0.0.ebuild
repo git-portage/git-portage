@@ -1,18 +1,16 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/kst/Attic/kst-2.0.0_beta5-r1.ebuild,v 1.1 2010/06/05 23:32:50 ayoy Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/kst/Attic/kst-2.0.0.ebuild,v 1.1 2010/09/13 16:27:48 ayoy Exp $
 
 EAPI=2
 
 inherit qt4-r2 multilib
 
-MY_PV="${PV/_/-}"
 MY_PN="${PN/k/K}"
-MY_P="${MY_PN}-${MY_PV}-sources"
 
 DESCRIPTION="Fast real-time large-dataset viewing and plotting tool for KDE4"
 HOMEPAGE="http://kst.kde.org/"
-SRC_URI="mirror://sourceforge/project/${PN}/Kst%202.0.0%20Beta%205/${MY_P}.tar.bz2"
+SRC_URI="mirror://sourceforge/project/${PN}/${MY_PN}%20${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2 LGPL-2 FDL-1.2"
 SLOT="0"
@@ -25,12 +23,11 @@ DEPEND="x11-libs/qt-gui:4[debug?]
 	x11-libs/qt-svg:4[debug?]
 	x11-libs/qt-xmlpatterns:4[debug?]
 	sci-libs/gsl
-	sci-libs/cfitsio"
+	sci-libs/cfitsio
+	sci-libs/getdata"
 RDEPEND="${DEPEND}"
 
 PATCHES=( "${FILESDIR}/${PN}-cfitsio-includes.patch" )
-
-S="${WORKDIR}/${MY_PN}-2.0-beta5"
 
 src_prepare() {
 	qt4-r2_src_prepare
