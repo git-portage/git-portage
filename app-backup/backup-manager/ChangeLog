@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/backup-manager
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/ChangeLog,v 1.15 2010/09/08 10:48:06 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/ChangeLog,v 1.16 2010/09/14 15:32:40 voyageur Exp $
+
+*backup-manager-0.7.9 (14 Sep 2010)
+
+  14 Sep 2010; Bernard Cafarelli <voyageur@gentoo.org>
+  +backup-manager-0.7.9.ebuild,
+  +files/backup-manager-0.7.9-parallel_install.patch:
+  Version bump and fix parallel install, bug #336428
 
   08 Sep 2010; Diego E. Pettenò <flameeyes@gentoo.org>
   backup-manager-0.7.8-r1.ebuild:
