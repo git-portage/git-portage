@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-skk/Attic/ibus-skk-0.0.9.ebuild,v 1.1 2010/07/02 16:32:51 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-skk/Attic/ibus-skk-1.3.0.ebuild,v 1.1 2010/09/17 00:19:29 matsuu Exp $
 
 EAPI="2"
 PYTHON_DEPEND="2:2.5"
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="nls"
 
-RDEPEND="app-i18n/ibus
+RDEPEND=">=app-i18n/ibus-1.3
 	nls? ( virtual/libintl )"
 DEPEND="${RDEPEND}
 	nls? ( >=sys-devel/gettext-0.16.1 )"
