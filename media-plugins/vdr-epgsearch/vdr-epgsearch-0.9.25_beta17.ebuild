@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-epgsearch/Attic/vdr-epgsearch-0.9.24.ebuild,v 1.4 2009/03/21 17:43:18 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-epgsearch/Attic/vdr-epgsearch-0.9.25_beta17.ebuild,v 1.1 2010/09/18 21:47:20 hd_brummy Exp $
+
+EAPI="2"
 
 inherit vdr-plugin
 
@@ -21,29 +23,48 @@ esac
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="pcre"
+IUSE="pcre tre"
 
 DEPEND=">=media-video/vdr-1.3.45
-	pcre? ( dev-libs/libpcre )"
+	pcre? ( dev-libs/libpcre )
+	tre? ( dev-libs/tre )"
 RDEPEND="${DEPEND}"
 
-PATCHES=("${FILESDIR}/${P}-langinfo.diff")
-
-src_unpack() {
-	vdr-plugin_src_unpack
+src_prepare() {
+	vdr-plugin_src_prepare
 
 	cd "${S}"
 	fix_vdr_libsi_include conflictcheck.c
 
-	use pcre && sed -i Makefile -e 's/^#HAVE_PCREPOSIX/HAVE_PCREPOSIX/'
+	# disable automagic deps
+	sed -i Makefile -e '/^AUTOCONFIG=/s/^/#/'
+
+	if use pcre; then
+		einfo "Using pcre for regexp searches"
+		sed -i Makefile -e 's/^#HAVE_PCREPOSIX/HAVE_PCREPOSIX/'
+	fi
+
+	if use tre; then
+		einfo "Using tre for unlimited fuzzy searches"
+		sed -i Makefile -e 's/^#HAVE_LIBTRE/HAVE_LIBTRE/'
+	fi
+
+	# install conf-file disabled
+	sed -e '/^Menu/s:^:#:' -i conf/epgsearchmenu.conf
 }
 
 src_install() {
 	vdr-plugin_src_install
+	cd "${S}"
 	diropts "-m755 -o vdr -g vdr"
 	keepdir /etc/vdr/plugins/epgsearch
+	insinto /etc/vdr/plugins/epgsearch
 
-	cd "${S}"
+	doins conf/epgsearchmenu.conf
+	doins conf/epgsearchconflmail.templ conf/epgsearchupdmail.templ
+
+	dodoc conf/*.templ
+
 	emake install-doc MANDIR="${D}/usr/share/man"
 	dodoc MANUAL
 }
