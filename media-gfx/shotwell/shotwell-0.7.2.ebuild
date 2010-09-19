@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/shotwell/Attic/shotwell-0.6.1.ebuild,v 1.1 2010/08/22 07:30:17 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/shotwell/Attic/shotwell-0.7.2.ebuild,v 1.1 2010/09/19 08:24:01 hollow Exp $
 
 EAPI="2"
 GCONF_DEBUG="no"
@@ -30,16 +30,12 @@ RDEPEND=">=dev-db/sqlite-3.5.9:3
 	>=sys-fs/udev-145[extras]
 	>=x11-libs/gtk+-2.14.4:2
 	>=media-libs/libraw-0.9.0
-	>=media-libs/gexiv2-0.1.0"
+	>=media-libs/gexiv2-0.2.0
+	media-libs/lcms:2"
 DEPEND="${RDEPEND}
-	=dev-lang/vala-0.8*"
+	>=dev-lang/vala-0.9.5"
 
 DOCS="AUTHORS MAINTAINERS NEWS README THANKS"
-
-src_prepare() {
-	epatch "${FILESDIR}/${P}-libraw.patch" || die "libraw patch failed."
-	mv vapi/libraw{,_r}.vapi || die "renaming libraw.vapi failed"
-}
 
 pkg_setup() {
 	G2CONF="--disable-schemas-install
