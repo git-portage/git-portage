@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-embedded/scratchbox/Attic/scratchbox-1.0.16.ebuild,v 1.5 2010/01/18 08:56:50 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-embedded/scratchbox/scratchbox-1.0.20.ebuild,v 1.1 2010/09/19 10:16:33 ayoy Exp $
 
 inherit eutils
 
@@ -8,8 +8,8 @@ SBOX_GROUP="sbox"
 
 DESCRIPTION="A cross-compilation toolkit designed to make embedded Linux application development easier."
 HOMEPAGE="http://www.scratchbox.org/"
-SRC_URI="http://scratchbox.org/download/files/sbox-releases/stable/tarball/scratchbox-core-${PV}-i386.tar.gz
-	http://scratchbox.org/download/files/sbox-releases/stable/tarball/scratchbox-libs-${PV}-i386.tar.gz"
+SRC_URI="http://scratchbox.org/download/files/sbox-releases/hathor/tarball/scratchbox-core-${PV}-i386.tar.gz
+	http://scratchbox.org/download/files/sbox-releases/hathor/tarball/scratchbox-libs-${PV}-i386.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
