@@ -1,50 +1,56 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/elfutils/Attic/elfutils-0.131-r2.ebuild,v 1.10 2010/03/31 18:16:11 solar Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/elfutils/elfutils-0.149.ebuild,v 1.1 2010/09/19 09:02:53 dirtyepic Exp $
 
 inherit eutils
 
 DESCRIPTION="Libraries/utilities to handle ELF objects (drop in replacement for libelf)"
-HOMEPAGE="http://people.redhat.com/drepper/"
-#SRC_URI="ftp://sources.redhat.com/pub/systemtap/${PN}/${P}.tar.gz"
-SRC_URI="mirror://debian/pool/main/e/elfutils/elfutils_${PV}.orig.tar.gz"
+HOMEPAGE="https://fedorahosted.org/elfutils"
+SRC_URI="https://fedorahosted.org/releases/e/l/elfutils/${PV}/${P}.tar.bz2"
 
-LICENSE="OpenSoftware"
+LICENSE="GPL-2-with-exceptions"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86"
-IUSE="elibc_glibc"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-linux ~x86-linux"
+IUSE="bzip2 lzma nls zlib elibc_glibc"
 
 # This pkg does not actually seem to compile currently in a uClibc
 # environment (xrealloc errs), but we need to ensure that glibc never
 # gets pulled in as a dep since this package does not respect virtual/libc
-DEPEND="elibc_glibc? ( >=sys-libs/glibc-2.3.2 )
-	sys-devel/gettext
-	sys-devel/autoconf
+RDEPEND="zlib? ( >=sys-libs/zlib-1.2.2.3 )
+	bzip2? ( app-arch/bzip2 )
+	lzma? ( app-arch/xz-utils )"
+DEPEND="${RDEPEND}
+	elibc_glibc? ( !prefix? ( >=sys-libs/glibc-2.7 ) )
+	nls? ( sys-devel/gettext )
+	>=sys-devel/flex-2.5.4a
+	sys-devel/m4
 	>=sys-devel/binutils-2.15.90.0.1
-	>=sys-devel/gcc-3.3.3
+	>=sys-devel/gcc-4.1.2
 	!dev-libs/libelf"
-RDEPEND=""
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-gnu-inline.patch #204610
 	epatch "${FILESDIR}"/${PN}-0.118-PaX-support.patch
+	epatch "${FILESDIR}"/${PN}-0.148-bashifications.patch #287130
 	find . -name Makefile.in -print0 | xargs -0 sed -i -e 's:-W\(error\|extra\)::g'
-	sed -i 's:\<off64_t\>:__off64_t:g' libelf/libelf.h || die #204502
+	use test || sed -i -e 's: tests::' Makefile.in #226349
 }
 
 src_compile() {
 	econf \
+		$(use_enable nls) \
 		--program-prefix="eu-" \
-		--enable-shared \
-		|| die "./configure failed"
+		$(use_with zlib) \
+		$(use_with bzip2 bzlib) \
+		$(use_with lzma)
+
 	emake || die
 }
 
 src_test() {
 	env LD_LIBRARY_PATH="${S}/libelf:${S}/libebl:${S}/libdw:${S}/libasm" \
-		make check || die "test failed"
+		emake -j1 check || die "test failed"
 }
 
 src_install() {
