@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/kanyremote/Attic/kanyremote-5.11.8.ebuild,v 1.1 2010/08/14 14:22:29 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/kanyremote/Attic/kanyremote-5.11.9.ebuild,v 1.1 2010/09/19 10:02:58 hwoarang Exp $
 
 EAPI="2"
 
