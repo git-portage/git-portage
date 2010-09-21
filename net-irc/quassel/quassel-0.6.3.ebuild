@@ -1,50 +1,47 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/Attic/quassel-0.5.1.ebuild,v 1.6 2010/06/17 20:48:46 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/Attic/quassel-0.6.3.ebuild,v 1.1 2010/09/21 10:30:32 scarabeus Exp $
 
 EAPI="2"
-
-MY_P="${P/_/-}"
 
 inherit cmake-utils eutils
 
 DESCRIPTION="Qt4/KDE4 IRC client suppporting a remote daemon for 24/7 connectivity."
 HOMEPAGE="http://quassel-irc.org/"
-SRC_URI="http://quassel-irc.org/pub/${MY_P}.tar.bz2"
+SRC_URI="http://quassel-irc.org/pub/${P/_/-}.tar.bz2"
 
 LICENSE="GPL-3"
-KEYWORDS="amd64 ~ia64 ~ppc x86"
+KEYWORDS="amd64 x86 ~amd64-linux"
 SLOT="0"
-IUSE="dbus debug kde monolithic +oxygen phonon postgres +server +ssl webkit X"
+IUSE="ayatana dbus debug kde monolithic phonon postgres +server +ssl webkit X"
 
-LANGS="cs da de fi fr hu it nb_NO ru sl tr"
-for l in ${LANGS}; do
-	IUSE="${IUSE} linguas_${l}"
-done
+SERVER_RDEPEND="
+	!postgres? ( x11-libs/qt-sql:4[sqlite] dev-db/sqlite[threadsafe] )
+	postgres? ( x11-libs/qt-sql:4[postgres] )
+	x11-libs/qt-script:4
+"
+
+GUI_RDEPEND="
+	x11-libs/qt-gui:4
+	ayatana? ( dev-libs/libindicate-qt )
+	kde? (
+		>=kde-base/kdelibs-4.3
+		>=kde-base/oxygen-icons-4.3
+		ayatana? ( kde-misc/plasma-widget-message-indicator )
+	)
+	phonon? ( || ( media-sound/phonon x11-libs/qt-phonon ) )
+	webkit? ( x11-libs/qt-webkit:4 )
+"
 
 RDEPEND="
 	dbus? ( x11-libs/qt-dbus:4 )
 	monolithic? (
-		!postgres? ( x11-libs/qt-sql:4[sqlite] dev-db/sqlite[threadsafe] )
-		postgres? ( x11-libs/qt-sql:4[postgres] >=dev-db/postgresql-base-8.3 )
-		x11-libs/qt-script:4
-		x11-libs/qt-gui:4
-		kde? ( >=kde-base/kdelibs-4.1 )
-		phonon? ( || ( media-sound/phonon x11-libs/qt-phonon ) )
-		webkit? ( x11-libs/qt-webkit:4 )
+		${SERVER_RDEPEND}
+		${GUI_RDEPEND}
 	)
 	!monolithic? (
-		server? (
-			!postgres? ( x11-libs/qt-sql:4[sqlite] dev-db/sqlite[threadsafe] )
-			postgres? ( x11-libs/qt-sql:4[postgres] )
-			x11-libs/qt-script:4
-		)
-		X? (
-			x11-libs/qt-gui:4
-			kde? ( >=kde-base/kdelibs-4.1 )
-			phonon? ( || ( media-sound/phonon x11-libs/qt-phonon ) )
-			webkit? ( x11-libs/qt-webkit:4 )
-		)
+		server? ( ${SERVER_RDEPEND} )
+		X? ( ${GUI_RDEPEND} )
 	)
 	ssl? ( x11-libs/qt-core:4[ssl] )
 	"
@@ -52,7 +49,7 @@ DEPEND="${RDEPEND}"
 
 DOCS="AUTHORS ChangeLog README"
 
-S="${WORKDIR}/${MY_P}"
+S="${WORKDIR}/${P/_/-}"
 
 pkg_setup() {
 	if ! use monolithic && ! use server && ! use X ; then
@@ -63,25 +60,19 @@ pkg_setup() {
 }
 
 src_configure() {
-	local my_langs
-	for i in ${LINGUAS}; do
-		my_langs="${i},${my_langs}"
-	done
-
 	local mycmakeargs="
+		$(cmake-utils_use_with ayatana LIBINDICATE)
 		$(cmake-utils_use_want X QTCLIENT)
 		$(cmake-utils_use_want server CORE)
 		$(cmake-utils_use_want monolithic MONO)
-		$(cmake-utils_use_with webkit WEBKIT)
-		$(cmake-utils_use_with phonon PHONON)
-		$(cmake-utils_use_with kde KDE)
-		$(cmake-utils_use_with dbus DBUS)
+		$(cmake-utils_use_with webkit)
+		$(cmake-utils_use_with phonon)
+		$(cmake-utils_use_with kde)
+		$(cmake-utils_use_with dbus)
 		$(cmake-utils_use_with ssl OPENSSL)
-		$(cmake-utils_use_with oxygen OXYGEN)
-		-DWITH_LIBINDICATE=OFF
+		$(cmake-utils_use_with !kde OXYGEN)
 		-DEMBED_DATA=OFF
-		-DLINGUAS=${my_langs}
-		"
+	"
 
 	cmake-utils_src_configure
 }
