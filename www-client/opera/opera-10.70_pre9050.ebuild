@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-10.70_pre9046.ebuild,v 1.1 2010/09/13 23:00:46 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-10.70_pre9050.ebuild,v 1.1 2010/09/22 17:24:47 jer Exp $
 
 EAPI="2"
 
@@ -16,9 +16,11 @@ IUSE="elibc_FreeBSD gtk kde +gstreamer"
 
 RESTRICT="mirror test"
 
+O_PWD="buckyballs"
 O_V="${PV/_pre/-}"
 O_P="${PN}-${O_V}"
-O_U="http://snapshot.opera.com/unix/19447_${O_V}/"
+O_HTTP="http://snapshot.opera.com/"
+O_U="${O_HTTP}unix/${O_PWD}_${O_V}/"
 
 SRC_URI="
 	amd64? ( ${O_U}${O_P}.x86_64.linux.tar.bz2 )
