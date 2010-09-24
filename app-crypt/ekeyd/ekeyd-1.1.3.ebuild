@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/ekeyd/Attic/ekeyd-1.1.1-r1.ebuild,v 1.1 2010/08/07 19:11:05 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/ekeyd/Attic/ekeyd-1.1.3.ebuild,v 1.1 2010/09/24 11:43:26 flameeyes Exp $
 
 EAPI=2
 
@@ -43,7 +43,7 @@ src_prepare() {
 		-e '/gzip/d' \
 		daemon/Makefile || die
 
-	epatch "${FILESDIR}"/${P}-earlyboot.patch
+	epatch "${FILESDIR}"/${PN}-1.1.1-earlyboot.patch
 
 	# We moved the binaries around
 	sed -i -e 's:$BINPATH/ekey-ulusbd:/usr/libexec/ekey-ulusbd:' \
@@ -104,7 +104,7 @@ src_install() {
 		doman daemon/ekey-ulusbd.8 || die
 	fi
 
-	dodoc daemon/README* AUTHORS WARNING || die
+	dodoc daemon/README* AUTHORS WARNING ChangeLog || die
 
 	if use kernel_linux; then
 		insinto /etc/udev/rules.d
