@@ -1,29 +1,29 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/enigmail/Attic/enigmail-1.1.2-r1.ebuild,v 1.7 2010/08/10 15:56:22 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/enigmail/Attic/enigmail-1.1.2-r3.ebuild,v 1.1 2010/09/26 17:27:47 anarchy Exp $
 
 WANT_AUTOCONF="2.1"
-EAPI="2"
+EAPI="3"
 
 inherit flag-o-matic toolchain-funcs eutils mozconfig-3 makeedit multilib mozextension autotools
 MY_P="${P/_beta/b}"
 EMVER="${PV}"
-TBVER="3.1"
-PATCH="mozilla-thunderbird-3.1-patches-0.1"
+TBVER="3.1.4"
+PATCH="thunderbird-3.1-patches-1.1"
 
 DESCRIPTION="GnuPG encryption plugin for thunderbird."
 HOMEPAGE="http://enigmail.mozdev.org"
 REL_URI="ftp://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/"
 SRC_URI="http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${TBVER}/source/thunderbird-${TBVER}.source.tar.bz2
 	http://www.mozilla-enigmail.org/download/source/${PN}-${EMVER}.tar.gz
-	http://dev.gentoo.org/~anarchy/dist/${PATCH}.tar.bz2"
+	http://dev.gentoo.org/~anarchy/mozilla/patchsets/${PATCH}.tar.bz2"
 
-KEYWORDS="~alpha amd64 ~arm ~ia64 ppc ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 SLOT="0"
 LICENSE="MPL-1.1 GPL-2"
 IUSE="system-sqlite"
 
-DEPEND=">=mail-client/thunderbird-3.1_beta1[system-sqlite=]"
+DEPEND=">=mail-client/thunderbird-3.1.1-r1[system-sqlite=]"
 RDEPEND="${DEPEND}
 	system-sqlite? ( >=dev-db/sqlite-3.6.22-r2[fts3,secure-delete] )
 	|| (
@@ -56,9 +56,6 @@ src_prepare(){
 	EPATCH_FORCE="yes" \
 	epatch "${WORKDIR}"
 
-	# ARM fixes, bug 327783
-	epatch "${FILESDIR}/thunderbird-xul-1.9.2-arm-fixes.patch"
-
 	cd mozilla
 	eautoreconf
 	cd js/src
@@ -80,7 +77,7 @@ src_prepare(){
 }
 
 src_configure() {
-	declare MOZILLA_FIVE_HOME="/usr/$(get_libdir)/mozilla-thunderbird"
+	declare MOZILLA_FIVE_HOME="/usr/$(get_libdir)/thunderbird"
 
 	####################################
 	#
@@ -98,7 +95,7 @@ src_configure() {
 		--with-system-nss \
 		--disable-wave \
 		--disable-ogg \
-		--with-default-mozilla-five-home=${MOZILLA_FIVE_HOME} \
+		--with-default-mozilla-five-home="${EPREFIX}"${MOZILLA_FIVE_HOME} \
 		--with-user-appdir=.thunderbird \
 		--enable-application=mail \
 		--disable-necko-wifi \
@@ -147,7 +144,7 @@ src_compile() {
 }
 
 src_install() {
-	declare MOZILLA_FIVE_HOME="/usr/$(get_libdir)/mozilla-thunderbird"
+	declare MOZILLA_FIVE_HOME="/usr/$(get_libdir)/thunderbird"
 	declare emid
 
 	cd "${T}"
@@ -155,6 +152,6 @@ src_install() {
 	emid=$(sed -n '/<em:id>/!d; s/.*\({.*}\).*/\1/; p; q' install.rdf)
 
 	dodir ${MOZILLA_FIVE_HOME}/extensions/${emid}
-	cd "${D}"${MOZILLA_FIVE_HOME}/extensions/${emid}
+	cd "${ED}"${MOZILLA_FIVE_HOME}/extensions/${emid}
 	unzip "${S}"/mozilla/dist/bin/*.xpi
 }
