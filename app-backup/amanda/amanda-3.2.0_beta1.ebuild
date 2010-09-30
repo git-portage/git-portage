@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.0_beta1.ebuild,v 1.1 2010/09/30 04:51:01 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.0_beta1.ebuild,v 1.2 2010/09/30 04:53:11 robbat2 Exp $
 
 EAPI=3
 inherit autotools eutils perl-module
@@ -258,7 +258,7 @@ src_configure() {
 	# Bug 296633: --disable-syntax-checks
 	# Some tests are not safe for production systems
 	myconf="${myconf} --disable-syntax-checks"
-	
+
 	# build manpages
 	myconf="${myconf} --enable-manpage-build"
 
