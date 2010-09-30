@@ -1,12 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/pmacct/Attic/pmacct-0.12.0-r1.ebuild,v 1.3 2010/09/30 16:43:04 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/pmacct/Attic/pmacct-0.12.3.ebuild,v 1.1 2010/09/30 16:43:04 jer Exp $
 
 EAPI="2"
 
 inherit eutils toolchain-funcs
 
-DESCRIPTION="A network tool to gather ip traffic informations"
+DESCRIPTION="A network tool to gather IP traffic information"
 HOMEPAGE="http://www.pmacct.net/"
 SRC_URI="http://www.pmacct.net/${P}.tar.gz"
 
@@ -22,7 +22,7 @@ RDEPEND="net-libs/libpcap
 DEPEND="${RDEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-gentoo.patch
+	epatch "${FILESDIR}"/${PN}-0.12.0-gentoo.patch
 }
 
 src_configure() {
