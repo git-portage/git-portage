@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/goffice/Attic/goffice-0.8.9.ebuild,v 1.1 2010/08/29 18:11:35 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/goffice/Attic/goffice-0.8.11.ebuild,v 1.1 2010/10/03 22:36:22 eva Exp $
 
-EAPI="2"
+EAPI="3"
 GCONF_DEBUG="no"
 
 inherit eutils gnome2 flag-o-matic
@@ -44,5 +44,5 @@ pkg_setup() {
 
 src_install() {
 	gnome2_src_install
-	find "${D}" -name "*.la" -delete || die
+	find "${ED}" -name "*.la" -delete || die
 }
