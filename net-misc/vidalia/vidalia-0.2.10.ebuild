@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/vidalia/Attic/vidalia-0.2.6.ebuild,v 1.2 2010/10/06 02:34:58 chiiph Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/vidalia/Attic/vidalia-0.2.10.ebuild,v 1.1 2010/10/06 02:34:58 chiiph Exp $
 
 EAPI="2"
 
