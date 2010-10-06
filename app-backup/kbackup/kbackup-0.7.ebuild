@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/Attic/kbackup-0.7.ebuild,v 1.1 2010/09/11 21:58:32 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/Attic/kbackup-0.7.ebuild,v 1.2 2010/10/06 16:58:34 tampakrap Exp $
 
-EAPI="2"
+EAPI=3
 
 KDE_LINGUAS="cs de es fr it pt pt_BR ru sk sv"
 inherit kde4-base
