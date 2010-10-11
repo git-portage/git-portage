@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/backup-manager
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/ChangeLog,v 1.16 2010/09/14 15:32:40 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/ChangeLog,v 1.17 2010/10/11 21:47:02 voyageur Exp $
+
+  11 Oct 2010; Bernard Cafarelli <voyageur@gentoo.org>
+  -files/backup-manager-upload-execution-fix-0.7.4.diff,
+  -files/backup-manager-upload-execution-fix.diff,
+  -files/bzip2-path-fix.diff:
+  Remove unused files, spotted by jalan <jalanpalmer@gmail.com> in bug
+  #340177
 
 *backup-manager-0.7.9 (14 Sep 2010)
 
