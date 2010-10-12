@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/flexbackup
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.32 2010/10/09 11:25:30 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.33 2010/10/12 05:41:53 graaff Exp $
+
+  12 Oct 2010; Hans de Graaff <graaff@gentoo.org>
+  -files/flexbackup-1.2.1-CAN-2005-2965.patch:
+  Remove unused file. Fixes #340178.
 
 *flexbackup-1.2.1-r10 (09 Oct 2010)
 
