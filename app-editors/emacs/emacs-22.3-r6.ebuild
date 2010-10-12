@@ -1,34 +1,20 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs/Attic/emacs-23.2-r1.ebuild,v 1.3 2010/10/11 21:59:11 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs/Attic/emacs-22.3-r6.ebuild,v 1.1 2010/10/12 20:02:58 ulm Exp $
 
 EAPI=2
 
-inherit autotools elisp-common eutils flag-o-matic multilib
-
-if [ "${PV##*.}" = "9999" ]; then
-	inherit bzr
-	EMACS_BRANCH="emacs-23"
-	EBZR_REPO_URI="bzr://bzr.savannah.gnu.org/emacs/${EMACS_BRANCH}/"
-	EBZR_CACHE_DIR="emacs-${EMACS_BRANCH#emacs-}"
-	SRC_URI=""
-else
-	SRC_URI="mirror://gnu/emacs/${P}.tar.bz2
-		mirror://gentoo/${P}-patches-1.tar.bz2"
-	# FULL_VERSION keeps the full version number, which is needed in
-	# order to determine some path information correctly for copy/move
-	# operations later on
-	FULL_VERSION="${PV%%_*}"
-	S="${WORKDIR}/emacs-${FULL_VERSION}"
-fi
+inherit autotools elisp-common eutils flag-o-matic
 
 DESCRIPTION="The extensible, customizable, self-documenting real-time display editor"
 HOMEPAGE="http://www.gnu.org/software/emacs/"
+SRC_URI="mirror://gnu/emacs/${P}.tar.gz
+	mirror://gentoo/${P}-patches-5.tar.bz2"
 
-LICENSE="GPL-3 FDL-1.3 BSD as-is MIT W3C unicode"
-SLOT="23"
+LICENSE="GPL-3 FDL-1.2 BSD as-is MIT"
+SLOT="22"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
-IUSE="alsa dbus gconf gif gpm gtk gzip-el hesiod jpeg kerberos m17n-lib motif png sound source svg tiff toolkit-scroll-bars X Xaw3d xft +xpm"
+IUSE="alsa gif gtk gzip-el hesiod jpeg kerberos motif png sound source tiff toolkit-scroll-bars X Xaw3d +xpm"
 RESTRICT="strip"
 
 RDEPEND="sys-libs/ncurses
@@ -37,28 +23,15 @@ RDEPEND="sys-libs/ncurses
 	hesiod? ( net-dns/hesiod )
 	kerberos? ( virtual/krb5 )
 	alsa? ( media-libs/alsa-lib )
-	gpm? ( sys-libs/gpm )
-	dbus? ( sys-apps/dbus )
 	X? (
 		x11-libs/libXmu
 		x11-libs/libXt
 		x11-misc/xbitmaps
-		gconf? ( >=gnome-base/gconf-2.26.2 )
 		gif? ( media-libs/giflib )
 		jpeg? ( media-libs/jpeg:0 )
 		png? ( media-libs/libpng )
-		svg? ( >=gnome-base/librsvg-2.0 )
 		tiff? ( media-libs/tiff )
 		xpm? ( x11-libs/libXpm )
-		xft? (
-			media-libs/fontconfig
-			media-libs/freetype
-			x11-libs/libXft
-			m17n-lib? (
-				>=dev-libs/libotf-0.9.4
-				>=dev-libs/m17n-lib-1.5.1
-			)
-		)
 		gtk? ( x11-libs/gtk+:2 )
 		!gtk? (
 			Xaw3d? ( x11-libs/Xaw3d )
@@ -67,30 +40,22 @@ RDEPEND="sys-libs/ncurses
 	)"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	alsa? ( dev-util/pkgconfig )
+	X? ( gtk? ( dev-util/pkgconfig ) )
 	gzip-el? ( app-arch/gzip )"
 
 RDEPEND="${RDEPEND}
-	!<app-editors/emacs-vcs-${PV}
+	!<app-editors/emacs-vcs-22.1
 	>=app-emacs/emacs-common-gentoo-1[X?]"
 
+# FULL_VERSION keeps the full version number, which is needed in order to
+# determine some path information correctly for copy/move operations later on
+FULL_VERSION="${PV}"
 EMACS_SUFFIX="emacs-${SLOT}"
 SITEFILE="20${PN}-${SLOT}-gentoo.el"
 
 src_prepare() {
-	if [ "${PV##*.}" = "9999" ]; then
-		FULL_VERSION=$(grep 'defconst[	 ]*emacs-version' lisp/version.el \
-			| sed -e 's/^[^"]*"\([^"]*\)".*$/\1/')
-		[ "${FULL_VERSION}" ] || die "Cannot determine current Emacs version"
-		echo
-		einfo "Emacs branch: ${EMACS_BRANCH}"
-		einfo "Emacs version number: ${FULL_VERSION}"
-		[ "${FULL_VERSION%.*}" = ${PV%.*} ] \
-			|| die "Upstream version number changed to ${FULL_VERSION}"
-		echo
-	else
-		EPATCH_SUFFIX=patch epatch
-	fi
+	EPATCH_SUFFIX=patch epatch
 
 	sed -i \
 		-e "s:/usr/lib/crtbegin.o:$(`tc-getCC` -print-file-name=crtbegin.o):g" \
@@ -118,13 +83,8 @@ src_configure() {
 	ALLOWED_FLAGS=""
 	strip-flags
 	#unset LDFLAGS
-	if use sh; then
-		replace-flags -O[1-9] -O0		#262359
-	elif use ia64; then
-		replace-flags -O[2-9] -O1		#325373
-	else
-		replace-flags -O[3-9] -O2
-	fi
+	replace-flags -O[3-9] -O2
+	sed -i -e "s/-lungif/-lgif/g" configure* src/Makefile* || die
 
 	local myconf
 
@@ -140,21 +100,10 @@ src_configure() {
 
 	if use X; then
 		myconf="${myconf} --with-x"
-		myconf="${myconf} $(use_with gconf)"
 		myconf="${myconf} $(use_with toolkit-scroll-bars)"
 		myconf="${myconf} $(use_with gif) $(use_with jpeg)"
-		myconf="${myconf} $(use_with png) $(use_with svg rsvg)"
-		myconf="${myconf} $(use_with tiff) $(use_with xpm)"
-		myconf="${myconf} $(use_with xft)"
-
-		if use xft; then
-			myconf="${myconf} $(use_with m17n-lib libotf)"
-			myconf="${myconf} $(use_with m17n-lib m17n-flt)"
-		else
-			myconf="${myconf} --without-libotf --without-m17n-flt"
-			use m17n-lib && ewarn \
-				"USE flag \"m17n-lib\" has no effect because xft is not set."
-		fi
+		myconf="${myconf} $(use_with png) $(use_with tiff)"
+		myconf="${myconf} $(use_with xpm)"
 
 		# GTK+ is the default toolkit if USE=gtk is chosen with other
 		# possibilities. Emacs upstream thinks this should be standard
@@ -165,12 +114,15 @@ src_configure() {
 		elif use Xaw3d; then
 			einfo "Configuring to build with Xaw3d (Athena/Lucid) toolkit"
 			myconf="${myconf} --with-x-toolkit=athena"
+			myconf="${myconf} --without-gtk"
 		elif use motif; then
 			einfo "Configuring to build with Motif toolkit"
 			myconf="${myconf} --with-x-toolkit=motif"
+			myconf="${myconf} --without-gtk"
 		else
 			einfo "Configuring to build with no toolkit"
 			myconf="${myconf} --with-x-toolkit=no"
+			myconf="${myconf} --without-gtk"
 		fi
 
 		local f tk=
@@ -186,22 +138,16 @@ src_configure() {
 
 	myconf="${myconf} $(use_with hesiod)"
 	myconf="${myconf} $(use_with kerberos) $(use_with kerberos kerberos5)"
-	myconf="${myconf} $(use_with gpm) $(use_with dbus)"
 
 	econf \
 		--program-suffix=-${EMACS_SUFFIX} \
 		--infodir=/usr/share/info/${EMACS_SUFFIX} \
-		--with-crt-dir=/usr/$(get_libdir) \
+		--without-carbon \
 		${myconf} || die "econf emacs failed"
 }
 
 src_compile() {
 	export SANDBOX_ON=0			# for the unbelievers, see Bug #131505
-	if [ "${PV##*.}" = "9999" ]; then
-		emake CC="$(tc-getCC)" bootstrap || die "make bootstrap failed"
-		# cleanup, otherwise emacs will be dumped again in src_install
-		(cd src; emake versionclean)
-	fi
 	emake CC="$(tc-getCC)" || die "emake failed"
 }
 
@@ -215,19 +161,17 @@ src_install () {
 	mv "${D}"/usr/bin/emacs-${EMACS_SUFFIX} "${D}"/usr/bin/${EMACS_SUFFIX} \
 		|| die "moving Emacs executable failed"
 
-	# move info documentation to the correct place
-	for i in "${D}"/usr/share/info/${EMACS_SUFFIX}/*; do
-		mv "${i}" "${i}.info" || die "mv info failed"
-	done
-
 	# move man pages to the correct place
 	for m in "${D}"/usr/share/man/man1/* ; do
 		mv "${m}" "${m%.1}-${EMACS_SUFFIX}.1" || die "mv man failed"
 	done
 
+	# move info dir to avoid collisions with the dir file generated by portage
+	mv "${D}"/usr/share/info/${EMACS_SUFFIX}/dir{,.orig} \
+		|| die "moving info dir failed"
+
 	# avoid collision between slots, see bug #169033 e.g.
 	rm "${D}"/usr/share/emacs/site-lisp/subdirs.el
-	rm -rf "${D}"/usr/share/{applications,icons}
 	rm "${D}"/var/lib/games/emacs/{snake,tetris}-scores
 	keepdir /var/lib/games/emacs
 
@@ -260,22 +204,24 @@ src_install () {
 	EOF
 	elisp-site-file-install "${T}/${SITEFILE}" || die
 
-	dodoc README BUGS || die "dodoc failed"
+	dodoc AUTHORS BUGS CONTRIBUTE README || die "dodoc failed"
 }
 
 pkg_preinst() {
 	# Depending on Portage version and user's settings, the Info dir file
 	# may have been compressed or removed. We rebuild it in both cases.
 	local infodir=/usr/share/info/${EMACS_SUFFIX} f
-	if [ -f "${D}"${infodir}/dir.info ]; then
+	if [ -f "${D}"${infodir}/dir.orig ]; then
 		# prefer existing file if it has survived to here
-		mv "${D}"${infodir}/dir{.info,} || die "mv dir.info failed"
+		mv "${D}"${infodir}/dir{.orig,} || die "moving info dir failed"
 	else
 		einfo "Regenerating Info directory index in ${infodir} ..."
 		rm -f "${D}"${infodir}/dir{,.*}
-		for f in "${D}"${infodir}/*.info*; do
-			[[ ${f##*/} != *[0-9].info* && -e ${f} ]] \
-				&& install-info --info-dir="${D}"${infodir} "${f}" &>/dev/null
+		for f in "${D}"${infodir}/*; do
+			if [[ ${f##*/} != *-[0-9]* && -e ${f} ]]; then
+				install-info --info-dir="${D}"${infodir} "${f}" \
+					|| die "install-info failed"
+			fi
 		done
 	fi
 }
@@ -295,8 +241,6 @@ pkg_postinst() {
 		elog "You need to install some fonts for Emacs."
 		elog "Installing media-fonts/font-adobe-{75,100}dpi on the X server's"
 		elog "machine would satisfy basic Emacs requirements under X11."
-		elog "See also http://www.gentoo.org/proj/en/lisp/emacs/xft.xml"
-		elog "for how to enable anti-aliased fonts."
 	fi
 
 	echo
@@ -304,10 +248,6 @@ pkg_postinst() {
 	elog "the Emacs eselect module, which also redirects man and info pages."
 	elog "Therefore, several Emacs versions can be installed at the same time."
 	elog "\"man emacs.eselect\" for details."
-	echo
-	elog "If you upgrade from a previous major version of Emacs, then it is"
-	elog "strongly recommended that you use app-admin/emacs-updater to rebuild"
-	elog "all byte-compiled elisp files of the installed Emacs packages."
 }
 
 pkg_postrm() {
