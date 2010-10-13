@@ -7,10 +7,6 @@
     <name>Diego Elio Pettenò</name>
   </maintainer>
   <maintainer>
-    <email>hwoarang@gentoo.org</email>
-    <name>Markos Chandras</name>
-  </maintainer>
-  <maintainer>
     <email>erik_hahn@gmx.de</email>
     <name>Erik Hahn</name>
     <description>proxied maintainer</description>
