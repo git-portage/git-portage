@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/upower/Attic/upower-0.9.5.ebuild,v 1.12 2010/10/17 08:16:04 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/upower/Attic/upower-0.9.6.ebuild,v 1.1 2010/10/17 08:16:04 ssuominen Exp $
 
 EAPI=3
 inherit linux-info
@@ -11,14 +11,13 @@ SRC_URI="http://upower.freedesktop.org/releases/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 arm ~ppc ppc64 x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~x86-fbsd"
 IUSE="debug doc introspection ipod kernel_FreeBSD kernel_linux"
 
 COMMON_DEPEND=">=dev-libs/dbus-glib-0.76
 	>=dev-libs/glib-2.21.5:2
 	>=sys-apps/dbus-1
-	>=sys-auth/polkit-0.91
-	<sys-auth/polkit-0.97
+	>=sys-auth/polkit-0.97
 	introspection? ( dev-libs/gobject-introspection )
 	kernel_linux? ( >=sys-fs/udev-151[extras]
 		virtual/libusb:1
@@ -46,10 +45,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	if ! use ipod; then
-		sed -i -e 's:libimobiledevice:dIsAbLe&:' configure || die
-	fi
-
 	sed -i -e '/DISABLE_DEPRECATED/d' configure || die
 }
 
@@ -74,12 +69,13 @@ src_configure() {
 		$(use_enable doc gtk-doc) \
 		--disable-tests \
 		--with-html-dir="${EPREFIX}/usr/share/doc/${PF}/html" \
-		--with-backend=${backend}
+		--with-backend=${backend} \
+		$(use_with ipod idevice)
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS HACKING NEWS README
 
-	find "${ED}" -name '*.la' -delete
+	find "${ED}" -name '*.la' -exec rm -f '{}' +
 }
