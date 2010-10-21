@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/clang/Attic/clang-2.7-r2.ebuild,v 1.5 2010/09/08 17:34:54 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/clang/Attic/clang-2.8-r2.ebuild,v 1.1 2010/10/21 08:14:07 voyageur Exp $
 
 EAPI=3
 
@@ -12,33 +12,26 @@ inherit eutils multilib python
 DESCRIPTION="C language family frontend for LLVM"
 HOMEPAGE="http://clang.llvm.org/"
 # Fetching LLVM as well: see http://llvm.org/bugs/show_bug.cgi?id=4840
-SRC_URI="http://llvm.org/releases/${PV}/llvm-${PV}.tgz
+# Drop the -> on 2.9
+SRC_URI="http://llvm.org/releases/${PV}/llvm-${PV}.tgz -> llvm-${PV}-r1.tgz
 	http://llvm.org/releases/${PV}/${P}.tgz"
 
 LICENSE="UoI-NCSA"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~ppc-macos"
-IUSE="debug +static-analyzer system-cxx-headers test"
+IUSE="alltargets debug +static-analyzer system-cxx-headers test"
 
 # Note: for LTO support, clang will depend on binutils with gold plugins, and LLVM built after that - http://llvm.org/docs/GoldPlugin.html
-DEPEND="static-analyzer? ( dev-lang/perl )
-	test? ( dev-util/dejagnu )"
-RDEPEND="~sys-devel/llvm-${PV}"
+DEPEND="static-analyzer? ( dev-lang/perl )"
+RDEPEND="~sys-devel/llvm-${PV}[alltargets=]"
 
-S="${WORKDIR}/llvm-2.7"
+S="${WORKDIR}/llvm-${PV}"
 
 src_prepare() {
-	mv "${WORKDIR}"/clang-2.7 "${S}"/tools/clang || die "clang source directory not found"
+	mv "${WORKDIR}"/clang-${PV} "${S}"/tools/clang || die "clang source directory not found"
 
 	# Same as llvm doc patches
 	epatch "${FILESDIR}"/${PN}-2.7-fixdoc.patch
-
-	# Fix toolchain lookup for Darwin/Prefix.
-	epatch "${FILESDIR}"/${PN}-2.7-darwin-prefix.patch
-	sed -e "s|@GENTOO_PORTAGE_CHOST@|${CHOST%%-darwin*}-darwin|g" \
-		-e "s|@GENTOO_PORTAGE_EPREFIX@|${EPREFIX}|g" \
-		-i tools/clang/lib/Driver/ToolChains.cpp \
-		|| die "fixing toolchain lookup"
 
 	# multilib-strict
 	sed -e "/PROJ_headers/s#lib/clang#$(get_libdir)/clang#" \
@@ -58,16 +51,16 @@ src_prepare() {
 	einfo "Fixing install dirs"
 	sed -e 's,^PROJ_docsdir.*,PROJ_docsdir := $(PROJ_prefix)/share/doc/'${PF}, \
 		-e 's,^PROJ_etcdir.*,PROJ_etcdir := '"${EPREFIX}"'/etc/llvm,' \
-		-e 's,^PROJ_libdir.*,PROJ_libdir := $(PROJ_prefix)/'$(get_libdir), \
+		-e 's,^PROJ_libdir.*,PROJ_libdir := $(PROJ_prefix)/'$(get_libdir)/llvm, \
 		-i Makefile.config.in || die "Makefile.config sed failed"
 
 	einfo "Fixing rpath"
-	sed -e 's/\$(RPATH) -Wl,\$(\(ToolDir\|LibDir\))//g' -i Makefile.rules \
-		|| die "rpath sed failed"
+	sed -e 's,\$(RPATH) -Wl\,\$(\(ToolDir\|LibDir\)),$(RPATH) -Wl\,'"${EPREFIX}"/usr/$(get_libdir)/llvm, \
+		-i Makefile.rules || die "rpath sed failed"
 }
 
 src_configure() {
-	local CONF_FLAGS=""
+	local CONF_FLAGS="--enable-shared"
 
 	if use debug; then
 		CONF_FLAGS="${CONF_FLAGS} --disable-optimized"
@@ -86,6 +79,12 @@ src_configure() {
 			--with-c-include-dirs=${EPREFIX}/usr/include:/usr/include"
 	fi
 
+	if use alltargets; then
+		CONF_FLAGS="${CONF_FLAGS} --enable-targets=all"
+	else
+		CONF_FLAGS="${CONF_FLAGS} --enable-targets=host-only"
+	fi
+
 	if use amd64; then
 		CONF_FLAGS="${CONF_FLAGS} --enable-pic"
 	fi
@@ -94,8 +93,10 @@ src_configure() {
 	CONF_FLAGS="${CONF_FLAGS} --with-llvmgccdir=/dev/null"
 
 	if use system-cxx-headers; then
-		# Try to get current C++ headers path
-		CONF_FLAGS="${CONF_FLAGS} --with-cxx-include-root=$(gcc-config -X| cut -d: -f1 | sed '/-v4$/! s,$,/include/g++-v4,')"
+		# Try to get current gcc headers path
+		local CXX_PATH=$(gcc-config -X| cut -d: -f1 | sed 's,/include/g++-v4$,,')
+		CONF_FLAGS="${CONF_FLAGS} --with-c-include-dirs=/usr/include:${CXX_PATH}/include"
+		CONF_FLAGS="${CONF_FLAGS} --with-cxx-include-root=${CXX_PATH}/include/g++-v4"
 		CONF_FLAGS="${CONF_FLAGS} --with-cxx-include-arch=$CHOST"
 		if has_multilib_profile; then
 			CONF_FLAGS="${CONF_FLAGS} --with-cxx-include-32bit-dir=32"
@@ -149,8 +150,8 @@ src_install() {
 	# to just fix this, so we correct it post-install
 	if [[ ${CHOST} == *-darwin* ]] ; then
 		for lib in libCIndex.dylib ; do
-			install_name_tool -id "${EPREFIX}"/usr/lib/${lib} \
-				"${ED}"/usr/lib/${lib}
+			install_name_tool -id "${EPREFIX}"/usr/lib/llvm/${lib} \
+				"${ED}"/usr/lib/llvm/${lib}
 		done
 	fi
 }
