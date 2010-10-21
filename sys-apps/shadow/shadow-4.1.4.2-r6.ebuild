@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/shadow/Attic/shadow-4.1.4.2-r3.ebuild,v 1.2 2010/07/03 07:58:30 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/shadow/Attic/shadow-4.1.4.2-r6.ebuild,v 1.1 2010/10/21 13:21:52 flameeyes Exp $
 
 inherit eutils libtool toolchain-funcs pam multilib
 
@@ -10,7 +10,7 @@ SRC_URI="ftp://pkg-shadow.alioth.debian.org/pub/pkg-shadow/shadow-${PV}.tar.bz2"
 
 LICENSE="BSD GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="audit cracklib nls pam selinux skey"
 
 RDEPEND="audit? ( sys-process/audit )
@@ -33,6 +33,7 @@ src_unpack() {
 	epatch "${FILESDIR}"/${PN}-4.1.3-dots-in-usernames.patch #22920
 	epatch "${FILESDIR}"/${PN}-4.1.4.2-groupmod-pam-check.patch #300790
 	epatch "${FILESDIR}"/${PN}-4.1.4.2-su_no_sanitize_env.patch #301957
+	epatch "${FILESDIR}"/${PN}-4.1.4.2-fix-etc-gshadow-reading.patch #327605
 	elibtoolize
 	epunt_cxx
 }
@@ -112,13 +113,17 @@ src_install() {
 		set_login_opt LOGIN_RETRIES 3
 		set_login_opt ENCRYPT_METHOD SHA512
 	else
-		dopamd "${FILESDIR}/pam.d-include/"{su,passwd,shadow}
+		dopamd "${FILESDIR}/pam.d-include/"{su,shadow}
 
-		newpamd "${FILESDIR}/login.pamd.2" login
+		newpamd "${FILESDIR}/login.pamd.3" login
 
-		for x in chage chsh chfn chpasswd newusers \
+		for x in passwd chpasswd chgpasswd; do
+			newpamd "${FILESDIR}"/pam.d-include/passwd ${x} || die
+		done
+
+		for x in chage chsh chfn newusers \
 				 user{add,del,mod} group{add,del,mod} ; do
-			newpamd "${FILESDIR}"/pam.d-include/shadow ${x}
+			newpamd "${FILESDIR}"/pam.d-include/shadow ${x} || die
 		done
 
 		# comment out login.defs options that pam hates
