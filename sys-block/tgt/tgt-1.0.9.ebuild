@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-block/tgt/Attic/tgt-1.0.7-r1.ebuild,v 1.1 2010/10/20 13:30:07 cla Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-block/tgt/Attic/tgt-1.0.9.ebuild,v 1.1 2010/10/21 09:59:51 alexxy Exp $
 
 EAPI="3"
 
@@ -30,7 +30,6 @@ pkg_setup() {
 }
 
 src_configure() {
-	local myconf
 	use ibmvio && myconf="${myconf} IBMVIO=1"
 	use infiniband && myconf="${myconf} ISCSI_RDMA=1"
 	use fcp && 	myconf="${myconf} FCP=1"
