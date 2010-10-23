@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/flexbackup
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.35 2010/10/22 17:48:05 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.36 2010/10/23 19:07:26 ranger Exp $
+
+  23 Oct 2010; Brent Baude <ranger@gentoo.org> flexbackup-1.2.1-r10.ebuild:
+  Marking flexbackup-1.2.1-r10 ppc for bug 340031
 
   22 Oct 2010; Markos Chandras <hwoarang@gentoo.org>
   flexbackup-1.2.1-r10.ebuild:
