@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/Attic/bind-9.7.2_p2.ebuild,v 1.1 2010/10/05 10:43:52 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/Attic/bind-9.4.3_p5-r2.ebuild,v 1.1 2010/10/24 20:47:16 idl0r Exp $
 
 EAPI="3"
 
@@ -11,34 +11,24 @@ MY_P="${PN}-${MY_PV}"
 
 SDB_LDAP_VER="1.1.0"
 
-GEOIP_PV=1.3
-GEOIP_SRC_URI_BASE="http://bind-geoip.googlecode.com/"
-GEOIP_P="bind-geoip-${GEOIP_PV}"
-
 DESCRIPTION="BIND - Berkeley Internet Name Domain - Name Server"
 HOMEPAGE="http://www.isc.org/software/bind"
-SRC_URI="ftp://ftp.isc.org/isc/bind9/${MY_PV}/${MY_P}.tar.gz
-	doc? ( mirror://gentoo/dyndns-samples.tbz2 )
-	geoip? ( ${GEOIP_SRC_URI_BASE}/files/${GEOIP_P}-readme.txt
-			 ${GEOIP_SRC_URI_BASE}/files/${GEOIP_P}.patch )"
+SRC_URI="ftp://ftp.isc.org/isc/bind9/${MY_PV}/${PN}-${MY_PV}.tar.gz
+	doc? ( mirror://gentoo/dyndns-samples.tbz2 )"
 #	sdb-ldap? ( mirror://gentoo/bind-sdb-ldap-${SDB_LDAP_VER}.tar.bz2 )
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="ssl ipv6 doc dlz postgres berkdb mysql odbc ldap selinux idn threads
-	resolvconf urandom xml geoip gssapi" # sdb-ldap
+	resolvconf urandom" # sdb-ldap
 
 DEPEND="ssl? ( >=dev-libs/openssl-0.9.6g )
 	mysql? ( >=virtual/mysql-4.0 )
 	odbc? ( >=dev-db/unixODBC-2.2.6 )
 	ldap? ( net-nds/openldap )
 	idn? ( net-dns/idnkit )
-	postgres? ( dev-db/postgresql-base )
-	threads? ( >=sys-libs/libcap-2.1.0 )
-	xml? ( dev-libs/libxml2 )
-	geoip? ( >=dev-libs/geoip-1.4.6 )
-	gssapi? ( virtual/krb5 )"
+	postgres? ( dev-db/postgresql-base )"
 #	sdb-ldap? ( net-nds/openldap )
 
 RDEPEND="${DEPEND}
@@ -73,10 +63,18 @@ src_prepare() {
 	done
 
 	if use dlz; then
+		epatch "${FILESDIR}"/${PN}-9.4.0-dlzbdb-close_cursor.patch
+
 		# bind fails to reconnect to MySQL5 databases, bug #180720, patch by Nicolas Brousse
 		# (http://www.shell-tips.com/2007/09/04/bind-950-patch-dlz-mysql-5-for-auto-reconnect/)
 		if use mysql && has_version ">=dev-db/mysql-5"; then
 			epatch "${FILESDIR}"/bind-dlzmysql5-reconnect.patch
+		fi
+
+		if use ldap; then
+			# bug 238681
+			epatch "${FILESDIR}/bind-9.6.1-dlz-patch-ldap-url.patch" \
+				"${FILESDIR}/bind-9.6.1-dlz-patch-dollar2.patch"
 		fi
 	fi
 
@@ -87,14 +85,6 @@ src_prepare() {
 	# Upstream URL: http://bind9-ldap.bayour.com/
 	# FIXME: bug 302735
 #	use sdb-ldap && epatch "${WORKDIR}"/sdb-ldap/${PN}-sdb-ldap-${SDB_LDAP_VER}.patch
-
-	if use geoip; then
-		cp "${DISTDIR}"/${GEOIP_P}.patch "${S}" || die
-		sed -i -e 's/-RELEASEVER=3/-RELEASEVER=2/' \
-			-e 's/+RELEASEVER=3-geoip-1.3/+RELEASEVER=2-geoip-1.3/' \
-			${GEOIP_P}.patch || die
-		epatch ${GEOIP_P}.patch
-	fi
 
 	# bug #220361
 	rm {aclocal,libtool}.m4
@@ -144,8 +134,6 @@ src_configure() {
 		myconf="${myconf} --with-randomdev=/dev/random"
 	fi
 
-	use geoip && myconf="${myconf} --with-geoip"
-
 	# bug #158664
 	gcc-specs-ssp && replace-flags -O[23s] -O
 
@@ -157,10 +145,9 @@ src_configure() {
 		$(use_with ssl openssl) \
 		$(use_with idn) \
 		$(use_enable ipv6) \
-		$(use_with xml libxml2) \
-		$(use_with gssapi) \
 		${myconf}
 
+	emake -j1 || die
 	# bug #151839
 	echo '#undef SO_BSDCOMPAT' >> config.h
 }
@@ -171,7 +158,7 @@ src_install() {
 	dodoc CHANGES FAQ README
 
 	if use idn; then
-		dodoc contrib/idn/README.idnkit || die
+		dodoc README.idnkit || die
 	fi
 
 	if use doc; then
@@ -199,8 +186,6 @@ src_install() {
 		tar xf "${DISTDIR}"/dyndns-samples.tbz2 || die
 	fi
 
-	use geoip && dodoc "${DISTDIR}"/${GEOIP_P}-readme.txt
-
 	insinto /etc/bind
 	newins "${FILESDIR}"/named.conf-r4 named.conf || die
 
@@ -218,8 +203,8 @@ src_install() {
 	newenvd "${FILESDIR}"/10bind.env 10bind || die
 
 	# Let's get rid of those tools and their manpages since they're provided by bind-tools
-	rm -f "${D}"/usr/share/man/man1/{dig,host,nslookup}.1*
-	rm -f "${D}"/usr/share/man/man8/{dnssec-keygen,nsupdate}.8*
+	rm -f "${D}"/usr/share/man/man1/{dig,host,nslookup,nsupdate}.1
+	rm -f "${D}"/usr/share/man/man8/dnssec-keygen.8
 	rm -f "${D}"/usr/bin/{dig,host,nslookup,dnssec-keygen,nsupdate}
 	rm -f "${D}"/usr/sbin/{dig,host,nslookup,dnssec-keygen,nsupdate}
 
@@ -231,8 +216,8 @@ src_install() {
 	dodir /var/{run,log}/named || die
 
 	fowners root:named /{etc,var}/bind /var/{run,log}/named /var/bind/{sec,pri}
-	fowners root:named /var/bind/named.cache /var/bind/pri/{127,localhost}.zone /etc/bind/{bind.keys,named.conf}
-	fperms 0640 /var/bind/named.cache /var/bind/pri/{127,localhost}.zone /etc/bind/{bind.keys,named.conf}
+	fowners root:named /var/bind/named.cache /var/bind/pri/{127,localhost}.zone /etc/bind/named.conf
+	fperms 0640 /var/bind/named.cache /var/bind/pri/{127,localhost}.zone /etc/bind/named.conf
 	fperms 0750 /etc/bind /var/bind/pri
 	fperms 0770 /var/{run,log}/named /var/bind/{,sec}
 }
