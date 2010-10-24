@@ -1,13 +1,13 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/gummi/Attic/gummi-0.5.1.ebuild,v 1.3 2010/10/12 16:34:26 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/gummi/Attic/gummi-0.5.3.ebuild,v 1.1 2010/10/24 11:04:42 hwoarang Exp $
 
 EAPI=2
 inherit base eutils
 
 DESCRIPTION="Simple LaTeX editor for GTK+ users"
 HOMEPAGE="http://gummi.midnightcoding.org"
-SRC_URI="http://dev.midnightcoding.org/redmine/attachments/download/75/${P}.tar.gz"
+SRC_URI="http://dev.midnightcoding.org/redmine/attachments/download/90/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
