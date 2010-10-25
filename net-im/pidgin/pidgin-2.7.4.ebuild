@@ -1,11 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/Attic/pidgin-2.7.2.ebuild,v 1.8 2010/08/10 16:08:17 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/Attic/pidgin-2.7.4.ebuild,v 1.1 2010/10/25 10:59:05 pva Exp $
 
 EAPI=2
 
 GENTOO_DEPEND_ON_PERL=no
-inherit flag-o-matic eutils toolchain-funcs multilib perl-app gnome2 python
+inherit flag-o-matic eutils toolchain-funcs multilib perl-app gnome2 python autotools
 
 DESCRIPTION="GTK Instant Messenger client"
 HOMEPAGE="http://pidgin.im/"
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="dbus debug doc eds gadu gnutls +gstreamer +gtk idn meanwhile"
 IUSE+=" networkmanager nls perl silc tcl tk spell qq sasl +startup-notification"
 IUSE+=" ncurses groupwise prediction python +xscreensaver zephyr zeroconf" # mono"
@@ -58,15 +58,18 @@ RDEPEND="
 	# Mono support crashes pidgin
 	#mono? ( dev-lang/mono )"
 
+# We want nls in case gtk is enabled, bug #
+NLS_DEPEND=">=dev-util/intltool-0.41.1 sys-devel/gettext"
+
 DEPEND="$RDEPEND
 	dev-lang/perl
 	dev-perl/XML-Parser
 	dev-util/pkgconfig
-	gtk? ( x11-proto/scrnsaverproto )
+	gtk? ( x11-proto/scrnsaverproto 
+		${NLS_DEPEND} )
 	dbus? ( <dev-lang/python-3 )
 	doc? ( app-doc/doxygen )
-	nls? ( >=dev-util/intltool-0.41.1
-		sys-devel/gettext )"
+	!gtk? ( nls? ( ${NLS_DEPEND} ) )"
 
 DOCS="AUTHORS HACKING NEWS README ChangeLog"
 
@@ -100,18 +103,25 @@ DYNAMIC_PRPLS="irc,jabber,oscar,yahoo,simple,msn,myspace"
 
 pkg_setup() {
 	if ! use gtk && ! use ncurses ; then
-		einfo
 		elog "You did not pick the ncurses or gtk use flags, only libpurple"
 		elog "will be built."
-		einfo
+	fi
+	if use gtk && ! use nls; then
+		ewarn "gtk build => nls is enalbed!"
 	fi
 	if use dbus && ! use python; then
-		elog "It's impossible to disable linkage with python in case dbus is enabled."
+		elog "dbus is enabled, no way to disable linkage with python => python is enabled"
 	fi
 	if use dbus || { use ncurses && use python; }; then
 		python_set_active_version 2
 		python_pkg_setup
 	fi
+}
+
+src_prepare() {
+	gnome2_src_prepare
+	epatch "${FILESDIR}"/${PN}-2.7.3-ldflags.patch
+	eautoreconf
 }
 
 src_configure() {
@@ -151,10 +161,12 @@ src_configure() {
 	fi
 
 	econf \
+		--disable-silent-rules \
 		$(use_enable ncurses consoleui) \
-		$(use_enable nls) \
 		$(use_enable gtk gtkui) \
 		$(use_enable gtk sm) \
+		$(use gtk || use_enable nls) \
+		$(use gtk && echo "--enable-nls") \
 		$(use gtk && use_enable startup-notification) \
 		$(use gtk && use_enable xscreensaver screensaver) \
 		$(use gtk && use_enable prediction cap) \
@@ -174,7 +186,8 @@ src_configure() {
 		$(use_enable networkmanager nm) \
 		$(use_enable zeroconf avahi) \
 		$(use_enable idn) \
-		"--with-dynamic-prpls=${DYNAMIC_PRPLS}" \
+		--with-system-ssl-certs="/etc/ssl/certs/" \
+		--with-dynamic-prpls="${DYNAMIC_PRPLS}" \
 		--disable-mono \
 		--x-includes=/usr/include/X11 \
 		${myconf}
@@ -198,4 +211,6 @@ src_install() {
 		done
 	fi
 	use perl && fixlocalpod
+
+	find "${D}" -type f -name '*.la' -exec rm -rf '{}' '+' || die "la removal failed"
 }
