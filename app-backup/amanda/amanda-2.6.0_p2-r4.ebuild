@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.14 2009/11/22 09:52:52 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.15 2010/10/27 14:03:09 ssuominen Exp $
 
 inherit perl-module autotools eutils
 
@@ -154,6 +154,8 @@ src_unpack() {
 	epatch "${FILESDIR}"/s3.c.part2.diff
 
 	cd "${S}"
+	epatch "${FILESDIR}"/${P}-coreutils.patch
+
 	#sed -i 's,amanda_working_ipv6,amanda_cv_working_ipv6,g' \
 	#	"${S}"/configure.in || die "failed to sed"
 	# rm -f "${S}"/acinclude.m4

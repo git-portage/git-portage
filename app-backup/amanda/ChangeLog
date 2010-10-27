@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/amanda
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.70 2010/10/11 22:53:51 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.71 2010/10/27 14:03:09 ssuominen Exp $
+
+  27 Oct 2010; Samuli Suominen <ssuominen@gentoo.org>
+  amanda-2.6.0_p2-r4.ebuild, +files/amanda-2.6.0_p2-coreutils.patch:
+  Fix install with recent automake and coreutils wrt #328755 by "Chris".
 
   11 Oct 2010; Robin H. Johnson <robbat2@gentoo.org>
   -files/patch-tar-1.14.90, -files/amanda-amandahosts,
