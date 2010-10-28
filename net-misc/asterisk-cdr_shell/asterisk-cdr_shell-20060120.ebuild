@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk-cdr_shell/Attic/asterisk-cdr_shell-20060120.ebuild,v 1.1 2006/05/06 15:16:25 stkn Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk-cdr_shell/Attic/asterisk-cdr_shell-20060120.ebuild,v 1.3 2010/10/28 09:45:57 ssuominen Exp $
 
 inherit eutils toolchain-funcs
 
@@ -14,6 +14,7 @@ SRC_URI="http://www.netdomination.org/pub/asterisk/${P}.tar.bz2
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~ppc ~x86"
+IUSE=""
 
 DEPEND=">=net-misc/asterisk-1.2.0
 	!=net-misc/asterisk-1.0*"
@@ -22,10 +23,10 @@ S=${WORKDIR}/${MY_PN}
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 
 	# use asterisk-config
-	epatch ${FILESDIR}/${MY_PN}-20050626-astcfg.diff
+	epatch "${FILESDIR}"/${MY_PN}-20050626-astcfg.diff
 
 	# <asterisk.h> -> <asterisk/asterisk.h>
 	sed -i -e "s:<asterisk\.h>:<asterisk/asterisk.h>:" \
@@ -41,9 +42,9 @@ src_install() {
 	doins cdr_shell.so
 
 	insinto /etc/asterisk
-	doins   ${FILESDIR}/cdr.conf
+	doins "${FILESDIR}"/cdr.conf
 
 	# fix permissions
-	chown -R root:asterisk ${D}etc/asterisk
-	chmod -R u=rwX,g=rX,o= ${D}etc/asterisk
+	chown -R root:asterisk "${D}"etc/asterisk
+	chmod -R u=rwX,g=rX,o= "${D}"etc/asterisk
 }
