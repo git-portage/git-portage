@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-7.0.544.0-r2.ebuild,v 1.1 2010/10/11 09:40:37 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-8.0.552.23.ebuild,v 1.1 2010/10/30 08:03:51 phajdan.jr Exp $
 
 EAPI="2"
 
@@ -13,12 +13,13 @@ SRC_URI="http://build.chromium.org/buildbot/official/${P}.tar.bz2"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="cups +gecko-mediaplayer gnome gnome-keyring system-sqlite"
+IUSE="cups +gecko-mediaplayer gnome gnome-keyring system-sqlite system-v8"
 
 RDEPEND="app-arch/bzip2
 	system-sqlite? (
 		>=dev-db/sqlite-3.6.23.1[fts3,icu,secure-delete,threadsafe]
 	)
+	system-v8? ( ~dev-lang/v8-2.4.9.6 )
 	>=dev-libs/icu-4.4.1
 	>=dev-libs/libevent-1.4.13
 	dev-libs/libxml2
@@ -54,7 +55,7 @@ RDEPEND+="
 remove_bundled_lib() {
 	einfo "Removing bundled library $1 ..."
 	local out
-	out="$(find $1 -mindepth 1 \! -iname '*.gyp' -print -delete)" \
+	out="$(find $1 -type f \! -iname '*.gyp' -print -delete)" \
 		|| die "failed to remove bundled library $1"
 	if [[ -z $out ]]; then
 		die "no files matched when removing bundled library $1"
@@ -63,23 +64,21 @@ remove_bundled_lib() {
 
 pkg_setup() {
 	CHROMIUM_HOME="/usr/$(get_libdir)/chromium-browser"
+
+	# Make sure the build system will use the right tools, bug #340795.
+	tc-export AR CC CXX RANLIB
 }
 
 src_prepare() {
-	# Small fixes to the system-provided sqlite support,
-	# to be upstreamed.
-	epatch "${FILESDIR}"/${PN}-system-sqlite-r0.patch
-
 	# Small fix to the system-provided icu support,
 	# to be upstreamed.
-	epatch "${FILESDIR}"/${PN}-system-icu-r0.patch
+	epatch "${FILESDIR}"/${PN}-system-icu-r1.patch
 
 	# Enable optional support for gecko-mediaplayer.
 	epatch "${FILESDIR}"/${PN}-gecko-mediaplayer-r0.patch
 
 	remove_bundled_lib "third_party/bzip2"
 	remove_bundled_lib "third_party/codesighs"
-	remove_bundled_lib "third_party/cros"
 	remove_bundled_lib "third_party/icu"
 	remove_bundled_lib "third_party/jemalloc"
 	remove_bundled_lib "third_party/lcov"
@@ -101,6 +100,21 @@ src_prepare() {
 	if use system-sqlite; then
 		remove_bundled_lib "third_party/sqlite/src"
 		remove_bundled_lib "third_party/sqlite/preprocessed"
+	fi
+
+	if use system-v8; then
+		# Provide our own gyp file that links with the system v8.
+		# TODO: move this upstream.
+		cp "${FILESDIR}"/v8.gyp v8/tools/gyp || die
+
+		remove_bundled_lib "v8"
+
+		# The implementation files include v8 headers with full path,
+		# like #include "v8/include/v8.h". Make sure the system headers
+		# will be used.
+		# TODO: find a solution that can be upstreamed.
+		rmdir v8/include || die
+		ln -s /usr/include v8/include || die
 	fi
 }
 
