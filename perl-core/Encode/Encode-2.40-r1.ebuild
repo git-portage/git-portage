@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/perl-core/Encode/Attic/Encode-2.39.ebuild,v 1.1 2009/12/02 15:25:45 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/perl-core/Encode/Attic/Encode-2.40-r1.ebuild,v 1.1 2010/10/31 08:08:05 tove Exp $
 
-EAPI=2
+EAPI=3
 
 MODULE_AUTHOR=DANKOGAI
 inherit perl-module
@@ -16,3 +16,4 @@ IUSE=""
 RDEPEND="!!<dev-lang/perl-5.8.8-r8"
 
 SRC_TEST=do
+PATCHES=( "${FILESDIR}"/gentoo_enc2xs.diff )
