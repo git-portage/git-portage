@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/texmacs/Attic/texmacs-1.0.7.6.ebuild,v 1.2 2010/10/31 05:15:44 grozin Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/texmacs/Attic/texmacs-1.0.7.7.ebuild,v 1.1 2010/10/31 05:15:44 grozin Exp $
 EAPI=2
 inherit autotools
 MY_P=${P/tex/TeX}-src
@@ -43,6 +43,9 @@ pkg_setup() {
 src_prepare() {
 	# don't strip
 	epatch "${FILESDIR}"/${PN}-strip.patch
+
+	# respect LDFLAGS, bug #338459
+	epatch "${FILESDIR}"/${PN}-ldflags.patch
 
 	eautoreconf
 }
