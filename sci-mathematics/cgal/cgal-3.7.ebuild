@@ -1,19 +1,19 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/cgal/Attic/cgal-3.6.ebuild,v 1.1 2010/03/24 19:00:41 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/cgal/Attic/cgal-3.7.ebuild,v 1.1 2010/11/01 21:43:15 bicatali Exp $
 
-EAPI=2
+EAPI=3
 CMAKE_BUILD_TYPE=Release
 inherit base multilib cmake-utils
 
 MY_P=CGAL-${PV}
-PID=26688
-DPID=26689
+PID=27640
+DPID=27644
 
 DESCRIPTION="C++ library for geometric algorithms and data structures"
 HOMEPAGE="http://www.cgal.org/"
-SRC_URI="http://gforge.inria.fr/frs/download.php/${PID}/${MY_P}.tar.gz
-	doc? ( http://gforge.inria.fr/frs/download.php/${DPID}/${MY_P}-doc_html.tar.gz )"
+SRC_URI="http://gforge.inria.fr/frs/download.php/${PID}/${MY_P}.tar.xz
+	doc? ( http://gforge.inria.fr/frs/download.php/${DPID}/${MY_P}-doc_html.tar.xz )"
 
 LICENSE="LGPL-2.1 MIT QPL"
 SLOT="0"
@@ -31,6 +31,7 @@ RDEPEND="dev-libs/boost
 	qt4? ( x11-libs/qt-gui:4
 		x11-libs/qt-opengl:4 )"
 DEPEND="${RDEPEND}
+	app-arch/xz-utils
 	dev-util/pkgconfig"
 
 S="${WORKDIR}/${MY_P}"
