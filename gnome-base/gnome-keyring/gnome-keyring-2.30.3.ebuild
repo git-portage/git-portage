@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-keyring/Attic/gnome-keyring-2.30.3.ebuild,v 1.13 2010/10/17 14:56:14 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-keyring/Attic/gnome-keyring-2.30.3.ebuild,v 1.14 2010/11/01 16:18:00 eva Exp $
 
 EAPI="2"
 
-inherit autotools eutils gnome2 pam virtualx
+inherit autotools eutils gnome2 multilib pam virtualx
 
 DESCRIPTION="Password and keyring managing daemon"
 HOMEPAGE="http://www.gnome.org/"
@@ -54,6 +54,12 @@ src_prepare() {
 
 	intltoolize --force --copy --automake || die "intltoolize failed"
 	eautoreconf
+}
+
+src_install() {
+	gnome2_src_install
+	find "${ED}"/$(get_libdir)/security -name "*.la" -delete \
+		|| die "la file removal failed"
 }
 
 src_test() {
