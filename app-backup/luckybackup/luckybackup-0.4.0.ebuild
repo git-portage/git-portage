@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/luckybackup/Attic/luckybackup-0.4.0.ebuild,v 1.3 2010/07/16 09:54:52 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/luckybackup/Attic/luckybackup-0.4.0.ebuild,v 1.4 2010/11/02 01:34:59 tampakrap Exp $
 
 EAPI=2
 inherit qt4-r2
@@ -16,6 +16,7 @@ IUSE="debug"
 
 DEPEND="x11-libs/qt-gui:4
 	net-misc/rsync"
+RDEPEND="${DEPEND}"
 
 DOCSDIR="${S}/readme"
 DOCS="AUTHORS changelog README TODO TRANSLATIONS"
