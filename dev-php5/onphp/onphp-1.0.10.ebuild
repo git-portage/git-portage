@@ -1,27 +1,25 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php5/onphp/Attic/onphp-0.10.12.ebuild,v 1.2 2008/12/31 17:39:09 voxus Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php5/onphp/Attic/onphp-1.0.10.ebuild,v 1.1 2010/11/03 23:47:28 mabi Exp $
+
+EAPI="3"
 
 inherit php-lib-r1
 
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="onPHP is the LGPL'ed multi-purpose object-oriented PHP framework."
 HOMEPAGE="http://onphp.org/"
 SRC_URI="http://onphp.org/download/${P}.tar.bz2
 		doc? ( http://onphp.org/download/${PN}-api-${PV}.tar.bz2 )"
-LICENSE="LGPL-3"
+LICENSE="LGPL-2"
 SLOT="0"
 IUSE="doc"
 
 DEPEND=""
-RDEPEND=""
-
-need_php_by_category
+RDEPEND="dev-lang/php"
 
 src_install() {
-	has_php
-
 	dodoc `find doc -maxdepth 1 -type f -print`
 
 	if use doc ; then
