@@ -9,10 +9,8 @@
 	<use>
 		<flag name='bacula-clientonly'>Disable DB support, and just build a
 			client</flag>
-		<flag name='bacula-console'>Build (GUI) console program(s)</flag>
 		<flag name='bacula-nodir'>Disable building of director</flag>
 		<flag name='bacula-nosd'>Disable building of storage daemon</flag>
-		<flag name='logrotate'>Install support files for logrotate</flag>
 		<flag name='logwatch'>Install support files for logwatch</flag>
 	</use>
 </pkgmetadata>

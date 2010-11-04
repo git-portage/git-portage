@@ -1,6 +1,21 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.104 2010/11/02 19:30:33 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.105 2010/11/04 20:07:24 tomjbe Exp $
+
+  04 Nov 2010; Thomas Beierlein <tomjbe@gentoo.org>
+  -files/2.4.1/2.4.1-mount.patch, -files/2.4.1/2.4.1-mysql-timeout.patch,
+  -files/2.4.1/2.4.1-sd-crash.patch,
+  -files/2.4.1/bacula-default-configs.patch, -files/2.4.1/bacula-dir-conf,
+  -files/2.4.1/bacula-dir-init, -files/2.4.1/bacula-fd-conf,
+  -files/2.4.1/bacula-fd-init, -files/2.4.1/bacula-gnomesu2gksu.diff,
+  -files/2.4.1/bacula-sd-conf, -files/2.4.1/bacula-sd-init,
+  -files/3.0.3/bacula-3.0.3-openssl-1.patch,
+  -files/3.0.3/bacula-default-configs.patch, -files/3.0.3/bacula-dir-conf,
+  -files/3.0.3/bacula-dir-init, -files/3.0.3/bacula-fd-conf,
+  -files/3.0.3/bacula-fd-init, -files/3.0.3/bacula-gnomesu2gksu.diff,
+  -files/3.0.3/bacula-sd-conf, -files/3.0.3/bacula-sd-init,
+  -bacula-2.4.1-r1.ebuild, -bacula-3.0.3.ebuild, metadata.xml:
+  Cleanup old versions.
 
   02 Nov 2010; Jeroen Roovers <jer@gentoo.org> bacula-5.0.3-r1.ebuild:
   Stable for PPC (bug #341471).
