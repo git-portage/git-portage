@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/dokuwiki/Attic/dokuwiki-20091225b.ebuild,v 1.1 2010/01/15 20:14:48 ramereth Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/dokuwiki/Attic/dokuwiki-20101107.ebuild,v 1.1 2010/11/09 22:17:08 ramereth Exp $
 
 inherit webapp depend.php
 
