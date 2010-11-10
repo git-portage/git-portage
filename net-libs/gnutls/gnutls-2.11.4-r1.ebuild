@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/gnutls/Attic/gnutls-2.10.1-r1.ebuild,v 1.2 2010/10/10 16:07:40 klausman Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/gnutls/Attic/gnutls-2.11.4-r1.ebuild,v 1.1 2010/11/10 20:23:59 c1pher Exp $
 
 EAPI="3"
 
@@ -26,28 +26,33 @@ fi
 # GPL-3 for the gnutls-extras library and LGPL for the gnutls library.
 LICENSE="LGPL-2.1 GPL-3"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~x86 ~sparc-fbsd ~x86-fbsd"
-IUSE="bindist +cxx doc examples guile lzo nls test zlib"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
+IUSE="bindist +cxx doc examples guile lzo +nettle nls test valgrind zlib"
 
-RDEPEND="dev-libs/libgpg-error
-	>=dev-libs/libgcrypt-1.4.0
-	>=dev-libs/libtasn1-0.3.4
+# lib/m4/hooks.m4 says that GnuTLS uses a fork of PaKChoiS.
+RDEPEND=">=dev-libs/libtasn1-0.3.4
 	nls? ( virtual/libintl )
 	guile? ( dev-scheme/guile[networking] )
+	nettle? ( >=dev-libs/nettle-2.1[gmp] )
+	!nettle? ( >=dev-libs/libgcrypt-1.4.0 )
 	zlib? ( >=sys-libs/zlib-1.1 )
 	!bindist? ( lzo? ( >=dev-libs/lzo-2 ) )"
 DEPEND="${RDEPEND}
 	sys-devel/libtool
 	doc? ( dev-util/gtk-doc )
 	nls? ( sys-devel/gettext )
-	test? ( app-misc/datefudge )"
+	test? ( valgrind? ( dev-util/valgrind ) app-misc/datefudge )"
 
 S="${WORKDIR}/${P%_pre*}"
 
 pkg_setup() {
 	if use lzo && use bindist; then
-		ewarn "lzo support was disabled for binary distribution of GnuTLS"
-		ewarn "due to licensing issues. See Bug #202381 for details."
+		ewarn "lzo support is disabled for binary distribution of GnuTLS due to licensing issues."
+	fi
+
+	if use valgrind && ! use test; then
+		ewarn "Valgrind is part of the test suite and which is not currently \
+		being used. Disabling valgrind."
 	fi
 }
 
@@ -65,16 +70,21 @@ src_prepare() {
 		popd > /dev/null
 	done
 
-	elibtoolize # for sane .so versioning on FreeBSD
+	# Use sane .so versioning on FreeBSD.
+	elibtoolize
 }
 
 src_configure() {
 	local myconf
 	use bindist && myconf="--without-lzo" || myconf="$(use_with lzo)"
+	use test && myconf="${myconf} $(use_enable valgrind valgrind-tests)" || \
+	myconf="${myconf} --disable-valgrind-tests"
+
 	econf --htmldir=/usr/share/doc/${P}/html \
 		$(use_enable cxx) \
 		$(use_enable doc gtk-doc) \
 		$(use_enable guile) \
+		$(use_with !nettle libgcrypt) \
 		$(use_enable nls) \
 		$(use_with zlib) \
 		${myconf}
@@ -83,15 +93,15 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 
-	dodoc AUTHORS ChangeLog NEWS README THANKS doc/TODO
+	dodoc AUTHORS ChangeLog NEWS README THANKS doc/TODO || die
 
 	if use doc; then
-		dodoc doc/gnutls.{pdf,ps}
-		dohtml doc/gnutls.html
+		dodoc doc/gnutls.{pdf,ps} || die
+		dohtml doc/gnutls.html || die
 	fi
 
 	if use examples; then
 		docinto examples
-		dodoc doc/examples/*.c
+		dodoc doc/examples/*.c || die
 	fi
 }
