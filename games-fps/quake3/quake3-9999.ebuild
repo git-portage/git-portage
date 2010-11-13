@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/quake3/quake3-9999.ebuild,v 1.16 2009/08/10 02:43:18 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/quake3/quake3-9999.ebuild,v 1.17 2010/11/13 07:33:45 mr_bones_ Exp $
 
 # quake3-9999          -> latest svn
 # quake3-9999.REV      -> use svn REV
@@ -15,21 +15,10 @@ if [[ ${PV} == 9999* ]] ; then
 
 	SRC_URI=""
 	S=${WORKDIR}/trunk
-elif [[ ${PV} == *_alpha* ]] ; then
-	inherit flag-o-matic toolchain-funcs eutils games
-
-	MY_PV=${PV/_alpha*/}
-	SNAP=${PV/*_alpha/}
-	MY_P=${PN}-${MY_PV}_SVN${SNAP}M
-	SRC_URI="mirror://gentoo/${MY_P}.tar.bz2"
-	S=${WORKDIR}/${MY_P}
 else
 	inherit flag-o-matic toolchain-funcs eutils games
-	MY_PV=${PV/_/-}
-	MY_P=io${PN}_${MY_PV}
-	SRC_URI="http://icculus.org/quake3/files/${MY_P}.tar.bz2
-		http://ioquake3.org/files/${MY_P}.tar.bz2"
-	S=${WORKDIR}/${MY_P}
+	SRC_URI="http://ioquake3.org/files/${PV}/ioquake3-${PV}.tar.bz2"
+	S=${WORKDIR}/io${P}
 fi
 
 DESCRIPTION="Quake III Arena - 3rd installment of the classic id 3D first-person shooter"
@@ -37,14 +26,14 @@ HOMEPAGE="http://ioquake3.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
-IUSE="dedicated opengl teamarena"
+KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
+IUSE="dedicated teamarena"
 
-UIDEPEND="virtual/opengl
+DEPEND="!dedicated? (
+	virtual/opengl
 	media-libs/openal
-	media-libs/libsdl[joystick]"
-DEPEND="opengl? ( ${UIDEPEND} )
-	!dedicated? ( ${UIDEPEND} )"
+	media-libs/libsdl[joystick,opengl]
+	)"
 RDEPEND="${DEPEND}
 	games-fps/quake3-data
 	teamarena? ( games-fps/quake3-teamarena )"
@@ -58,30 +47,30 @@ src_unpack() {
 }
 
 src_prepare() {
-	sed -i \
-		-e '/INSTALL/s: -s : :' \
-		Makefile code/tools/lcc/Makefile code/tools/asm/Makefile
+	sed -i -e '/INSTALL/s: -s : :' Makefile || die
 }
 
 src_compile() {
 	filter-flags -mfpmath=sse
 	buildit() { use $1 && echo 1 || echo 0 ; }
 	emake \
-		BUILD_SERVER=$(buildit dedicated) \
-		BUILD_CLIENT=$(( $(buildit opengl) | $(buildit !dedicated) )) \
+		V=1 \
+		BUILD_SERVER=1 \
+		BUILD_CLIENT=$(( $(buildit !dedicated) )) \
 		TEMPDIR="${T}" \
 		CC="$(tc-getCC)" \
 		ARCH=$(tc-arch-kernel) \
 		OPTIMIZE="${CFLAGS}" \
 		DEFAULT_BASEDIR="${GAMES_DATADIR}/quake3" \
 		DEFAULT_LIBDIR="$(games_get_libdir)/quake3" \
+		Q3ASM_CFLAGS="${CFLAGS}" \
 		|| die
 }
 
 src_install() {
 	dodoc id-readme.txt TODO README BUGS ChangeLog
 
-	if use opengl ; then
+	if ! use dedicated ; then
 		doicon misc/quake3.png
 		make_desktop_entry quake3 "Quake III Arena"
 	fi
