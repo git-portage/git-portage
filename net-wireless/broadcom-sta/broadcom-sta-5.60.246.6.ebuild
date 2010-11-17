@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/broadcom-sta/Attic/broadcom-sta-5.60.246.2.ebuild,v 1.1 2010/10/27 15:56:35 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/broadcom-sta/Attic/broadcom-sta-5.60.246.6.ebuild,v 1.1 2010/11/17 15:31:38 matsuu Exp $
 
 EAPI="2"
 inherit eutils linux-mod
@@ -53,5 +53,5 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-5.10.91.9-license.patch" \
-		"${FILESDIR}/${P}-gcc.patch"
+		"${FILESDIR}/${PN}-5.60.246.2-gcc.patch"
 }
