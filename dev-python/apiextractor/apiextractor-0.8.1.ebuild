@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/apiextractor/Attic/apiextractor-0.6.0.ebuild,v 1.1 2010/06/16 18:53:16 ayoy Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/apiextractor/Attic/apiextractor-0.8.1.ebuild,v 1.1 2010/11/25 01:16:25 chiiph Exp $
 
 EAPI="2"
 
@@ -13,7 +13,7 @@ SRC_URI="http://www.pyside.org/files/${P}.tar.bz2"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug"
+IUSE="debug test"
 
 RDEPEND=">=dev-libs/boost-1.41.0[python]
 	dev-libs/libxml2
@@ -22,17 +22,13 @@ RDEPEND=">=dev-libs/boost-1.41.0[python]
 	>=x11-libs/qt-xmlpatterns-4.5.0"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	test? ( >=x11-libs/qt-test-4.5.0 )"
+TEST_VERBOSE="1"
 
-src_prepare() {
-	sed -e 's:cmake-${CMAKE_MAJOR_VERSION}\.${CMAKE_MINOR_VERSION}:cmake:' \
-		-e '/^install/s/lib/lib${LIB_SUFFIX}/' \
-		-i CMakeLists.txt || die "sed failed"
-}
-
-src_test() {
-	# bug 299766
-	Xemake test -C "${CMAKE_BUILD_DIR}/tests" || die "running tests failed"
+src_configure() {
+	mycmakeargs="$(cmake-utils_use_build test TESTS)"
+	cmake-utils_src_configure
 }
 
 src_install() {
