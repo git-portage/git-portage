@@ -1,11 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce-utils/Attic/xfce-utils-4.7.1.ebuild,v 1.2 2010/11/11 09:22:14 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce-utils/Attic/xfce-utils-4.7.3.ebuild,v 1.1 2010/12/05 16:24:45 ssuominen Exp $
 
 EAPI=3
 inherit xfconf
 
-DESCRIPTION="Collection of utils for Xfce4"
+DESCRIPTION="Xfce's utilities"
 HOMEPAGE="http://www.xfce.org/projects/xfce-utils/"
 SRC_URI="mirror://xfce/src/xfce/${PN}/4.7/${P}.tar.bz2"
 
