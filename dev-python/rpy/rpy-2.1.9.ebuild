@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/rpy/Attic/rpy-2.1.7.ebuild,v 1.1 2010/10/19 16:08:22 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/rpy/Attic/rpy-2.1.9.ebuild,v 1.1 2010/12/05 21:40:37 bicatali Exp $
 
 EAPI="2"
 SUPPORT_PYTHON_ABIS="1"
