@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/qbittorrent/Attic/qbittorrent-2.5.0_rc3.ebuild,v 1.1 2010/11/29 17:06:06 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/qbittorrent/Attic/qbittorrent-2.5.1.ebuild,v 1.1 2010/12/06 19:48:34 hwoarang Exp $
 
 EAPI="2"
 PYTHON_DEPEND="2"
