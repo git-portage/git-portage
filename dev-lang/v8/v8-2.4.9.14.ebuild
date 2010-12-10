@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/v8/Attic/v8-2.5.6.ebuild,v 1.2 2010/11/19 13:46:37 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/v8/Attic/v8-2.4.9.14.ebuild,v 1.1 2010/12/10 17:08:38 phajdan.jr Exp $
 
 EAPI="2"
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://gentoo/${P}.tar.gz"
 LICENSE="BSD"
 
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="readline"
 
 RDEPEND="readline? ( >=sys-libs/readline-6.1 )"
@@ -55,8 +55,6 @@ src_compile() {
 		myconf+=" arch=x64"
 	elif [[ $myarch = x86 ]] ; then
 		myconf+=" arch=ia32"
-	elif [[ $myarch = arm ]] ; then
-		myconf+=" arch=arm"
 	else
 		die "Failed to determine target arch, got '$myarch'."
 	fi
