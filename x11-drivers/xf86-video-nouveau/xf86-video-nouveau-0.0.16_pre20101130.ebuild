@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-nouveau/Attic/xf86-video-nouveau-0.0.16_pre20101010.ebuild,v 1.2 2010/12/11 10:22:22 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-nouveau/Attic/xf86-video-nouveau-0.0.16_pre20101130.ebuild,v 1.1 2010/12/11 10:22:22 chithanh Exp $
 
 EAPI=3
 XORG_EAUTORECONF="yes"
@@ -13,8 +13,8 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=x11-base/xorg-server-1.7[-minimal]
-	<x11-libs/libdrm-2.4.23[video_cards_nouveau]"
+RDEPEND=">=x11-base/xorg-server-1.8[-minimal]
+	>=x11-libs/libdrm-2.4.23[video_cards_nouveau]"
 
 DEPEND="${RDEPEND}
 	x11-proto/dri2proto
