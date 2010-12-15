@@ -1,8 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/basenji/Attic/basenji-0.7.1.ebuild,v 1.3 2010/12/15 14:57:58 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/basenji/Attic/basenji-0.7.1-r2.ebuild,v 1.1 2010/12/15 20:27:24 elvanor Exp $
 
 EAPI="3"
+
+inherit multilib
 
 DESCRIPTION="Basenji is a volume indexing tool designed for easy and fast indexing of volume collections."
 HOMEPAGE="http://launchpad.net/basenji"
@@ -16,7 +18,8 @@ IUSE=""
 CDEPEND="dev-dotnet/gtk-sharp
 	dev-dotnet/glib-sharp
 	dev-dotnet/dbus-glib-sharp
-	dev-dotnet/gnome-sharp"
+	dev-dotnet/gnome-sharp
+	media-libs/libextractor"
 
 DEPEND="${CDEPEND}"
 
@@ -33,4 +36,5 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
+	rm "${D}/usr/$(get_libdir)/pkgconfig/libextractor.pc"
 }
