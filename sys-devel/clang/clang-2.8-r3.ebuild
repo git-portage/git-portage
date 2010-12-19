@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/clang/Attic/clang-2.8-r2.ebuild,v 1.3 2010/10/24 17:42:05 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/clang/clang-2.8-r3.ebuild,v 1.1 2010/12/19 22:45:55 voyageur Exp $
 
 EAPI=3
 
@@ -32,6 +32,11 @@ src_prepare() {
 
 	# Same as llvm doc patches
 	epatch "${FILESDIR}"/${PN}-2.7-fixdoc.patch
+
+	# Upstream backport, r117774 and r117775
+	epatch "${FILESDIR}"/${P}-alignof.patch
+	# Upstream backport, r119348
+	epatch "${FILESDIR}"/${P}-gcc-4.4.4.patch
 
 	# Fix toolchain lookup for Darwin/Prefix.
 	epatch "${FILESDIR}"/${PN}-2.8-darwin-prefix.patch
