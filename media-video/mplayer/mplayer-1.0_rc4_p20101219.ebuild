@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_rc4_p20101107.ebuild,v 1.2 2010/11/07 19:37:38 anarchy Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_rc4_p20101219.ebuild,v 1.1 2010/12/19 10:54:52 scarabeus Exp $
 
 EAPI=3
 
@@ -10,7 +10,7 @@ ESVN_REPO_URI="svn://svn.mplayerhq.hu/mplayer/trunk"
 inherit toolchain-funcs eutils flag-o-matic multilib base ${SVN_ECLASS}
 
 # BUMP ME PLZ, NO COOKIES OTHERWISE
-[[ ${PV} != *9999* ]] && MPLAYER_REVISION=SVN-r32598
+[[ ${PV} != *9999* ]] && MPLAYER_REVISION=SVN-r32719
 
 IUSE="3dnow 3dnowext +a52 aalib +alsa altivec aqua +ass bidi bindist bl bluray
 bs2b +cddb +cdio cdparanoia cpudetection custom-cpuopts debug dga +dirac
@@ -177,7 +177,7 @@ DEPEND="${RDEPEND}
 SLOT="0"
 LICENSE="GPL-2"
 if [[ ${PV} != *9999* ]]; then
-	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris ~x64-macos"
+	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 else
 	KEYWORDS=""
 fi
