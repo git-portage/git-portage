@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.2.2.0.ebuild,v 1.1 2010/12/20 17:23:06 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.2.2.0.ebuild,v 1.2 2010/12/20 17:25:25 dertobi123 Exp $
 
 EAPI=3
 
@@ -35,7 +35,7 @@ for lang in ${MY_LANGS}; do
 done
 unset lang
 
-DEPEND="app-arch/rpm2targz"
+DEPEND=""
 RDEPEND="sys-libs/libstdc++-v3"
 
 S="${WORKDIR}"
