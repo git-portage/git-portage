@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/gobject-introspection/Attic/gobject-introspection-0.9.10.ebuild,v 1.1 2010/10/02 14:06:37 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/gobject-introspection/Attic/gobject-introspection-0.10.0.ebuild,v 1.1 2010/12/22 23:11:17 eva Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
@@ -24,9 +24,8 @@ DEPEND="${RDEPEND}
 	doc? ( >=dev-util/gtk-doc-1.12 )
 	test? ( x11-libs/cairo )"
 
-DOCS="AUTHORS CONTRIBUTORS ChangeLog NEWS README TODO"
-
 pkg_setup() {
+	DOCS="AUTHORS CONTRIBUTORS ChangeLog NEWS README TODO"
 	G2CONF="${G2CONF}
 		--disable-static
 		$(use_enable test tests)"
@@ -44,7 +43,9 @@ src_prepare() {
 
 src_install() {
 	gnome2_src_install
-	find "${ED}" -name "*.la" -delete || die
+	python_convert_shebangs 2 "${ED}"usr/bin/g-ir-scanner
+	python_convert_shebangs 2 "${ED}"usr/bin/g-ir-annotation-tool
+	find "${ED}" -name "*.la" -delete || die "la files removal failed"
 }
 
 pkg_postinst() {
