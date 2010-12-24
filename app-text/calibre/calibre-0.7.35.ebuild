@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/calibre/Attic/calibre-0.7.29.ebuild,v 1.1 2010/11/22 01:12:37 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/calibre/Attic/calibre-0.7.35.ebuild,v 1.1 2010/12/24 05:19:50 zmedico Exp $
 
 EAPI=3
 PYTHON_DEPEND=2:2.6
@@ -24,6 +24,7 @@ SHARED_DEPEND="
 	>=app-text/podofo-0.8.2
 	>=app-text/poppler-0.12.3-r3[qt4,xpdf-headers]
 	>=dev-libs/chmlib-0.40
+	>=dev-libs/icu-4.4
 	>=dev-python/beautifulsoup-3.0.5
 	>=dev-python/dnspython-1.6.0
 	>=dev-python/cssutils-0.9.7_alpha3
@@ -35,7 +36,6 @@ SHARED_DEPEND="
 	>=dev-python/PyQt4-4.7[X,svg,webkit]
 	|| ( >=media-gfx/imagemagick-6.5.9 media-gfx/graphicsmagick[imagemagick] )
 	>=media-libs/libwmf-0.2.8
-	>=sys-apps/help2man-1.36.4
 	virtual/libusb:0
 	>=x11-misc/xdg-utils-1.0.2"
 
@@ -117,6 +117,20 @@ src_install() {
 	grep -rlZ "/usr/lib/calibre" "${D}" | \
 		xargs -0 sed -e "s:/usr/lib/calibre:/usr/$libdir/calibre:g" -i ||
 		die "failed to fix harcoded libdir paths"
+
+	find "${D}"share/calibre/man -type f -print0 | \
+		while read -r -d $'\0' ; do
+			if [[ $REPLY = *.[0-9]calibre.bz2 ]] ; then
+				newname=${REPLY%calibre.bz2}.bz2
+				mv "$REPLY" "$newname"
+				doman "$newname" || die "doman failed"
+				rm -f "$newname" || die "rm failed"
+			fi
+		done
+	rmdir "${D}"share/calibre/man/* || \
+		die "could not remove redundant man subdir(s)"
+	rmdir "${D}"share/calibre/man || \
+		die "could not remove redundant man dir"
 
 	dodir /usr/bin
 	mv "${D}bin/"* "${D}usr/bin/" ||
