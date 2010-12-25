@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-skk/Attic/ibus-skk-1.3.2.ebuild,v 1.1 2010/10/26 17:24:46 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-skk/Attic/ibus-skk-1.3.5.ebuild,v 1.1 2010/12/25 03:45:59 matsuu Exp $
 
 EAPI="2"
 PYTHON_DEPEND="2:2.5"
