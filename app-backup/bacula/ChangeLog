@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.105 2010/11/04 20:07:24 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.106 2010/12/27 20:45:53 arfrever Exp $
+
+  27 Dec 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  bacula-5.0.3-r1.ebuild:
+  Use Python 2 (bug #308309).
 
   04 Nov 2010; Thomas Beierlein <tomjbe@gentoo.org>
   -files/2.4.1/2.4.1-mount.patch, -files/2.4.1/2.4.1-mysql-timeout.patch,

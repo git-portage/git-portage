@@ -1,9 +1,13 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.3-r1.ebuild,v 1.4 2010/11/02 19:30:33 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.3-r1.ebuild,v 1.5 2010/12/27 20:45:53 arfrever Exp $
 
 EAPI="2"
-inherit eutils multilib
+PYTHON_DEPEND="python? 2"
+PYTHON_USE_WITH="threads"
+PYTHON_USE_WITH_OPT="python"
+
+inherit eutils multilib python
 
 MY_PV=${PV/_beta/-b}
 MY_P=${PN}-${MY_PV}
@@ -41,8 +45,7 @@ DEPEND="
 	logwatch? ( sys-apps/logwatch )
 	tcpd? ( >=sys-apps/tcp-wrappers-7.6 )
 	readline? ( >=sys-libs/readline-4.1 )
-	sys-libs/ncurses
-	python? ( dev-lang/python[threads] )"
+	sys-libs/ncurses"
 #	doc? (
 #		app-text/ghostscript-gpl
 #		dev-tex/latex2html[png]
@@ -105,6 +108,11 @@ pkg_setup() {
 			einfo "for information about running bacula as a non-root user."
 			einfo
 		fi
+	fi
+
+	if use python; then
+		python_set_active_version 2
+		python_pkg_setup
 	fi
 }
 
