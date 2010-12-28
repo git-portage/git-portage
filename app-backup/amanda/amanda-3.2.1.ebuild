@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.1.ebuild,v 1.3 2010/12/28 22:06:33 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.1.ebuild,v 1.4 2010/12/28 22:11:45 idl0r Exp $
 
 EAPI=3
 inherit autotools eutils perl-module
@@ -21,7 +21,8 @@ RDEPEND="sys-libs/readline
 	net-misc/openssh
 	>=dev-libs/glib-2.26.0
 	nls? ( virtual/libintl )
-	curl? ( >=net-misc/curl-7.10.0 )
+	s3? ( >=net-misc/curl-7.10.0 )
+	!s3? ( curl? ( >=net-misc/curl-7.10.0 ) )
 	samba? ( net-fs/samba )
 	kerberos? ( app-crypt/mit-krb5 )
 	xfs? ( sys-fs/xfsdump )
@@ -243,6 +244,11 @@ src_configure() {
 	# Amazon S3 support
 	myconf="${myconf} `use_enable s3 s3-device`"
 
+	# libcurl is required for S3 but otherwise optional
+	if ! use s3; then
+		myconf="${myconf} $(use_with curl libcurl)"
+	fi
+
 	# Client only, as requested in bug #127725
 	if use minimal ; then
 		myconf="${myconf} --without-server"
@@ -270,7 +276,6 @@ src_configure() {
 
 	econf \
 		$(use_with readline) \
-		$(use_with curl libcurl) \
 		${myconf}
 }
 
