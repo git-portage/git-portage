@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.1.ebuild,v 1.1 2010/12/19 00:27:37 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.1.ebuild,v 1.2 2010/12/28 00:16:10 idl0r Exp $
 
 EAPI=3
 inherit autotools eutils perl-module
@@ -160,6 +160,11 @@ src_prepare() {
 		cat "${MYFILESDIR}"/amanda-amandahosts-client-2.5.1_p3-r1
 		use minimal || cat "${MYFILESDIR}"/amanda-amandahosts-server-2.5.1_p3-r1
 	) > "${T}"/amandahosts
+
+	if ! use minimal; then
+		sed -i -e 's:^\(my $amandahomedir\)=.*:\1 = $localstatedir;:' \
+			server-src/am{addclient,serverconfig}.pl || die
+	fi
 }
 
 src_configure() {
