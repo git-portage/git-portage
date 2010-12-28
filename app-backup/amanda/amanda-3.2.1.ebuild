@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.1.ebuild,v 1.2 2010/12/28 00:16:10 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.1.ebuild,v 1.3 2010/12/28 22:06:33 idl0r Exp $
 
 EAPI=3
 inherit autotools eutils perl-module
@@ -21,10 +21,11 @@ RDEPEND="sys-libs/readline
 	net-misc/openssh
 	>=dev-libs/glib-2.26.0
 	nls? ( virtual/libintl )
-	s3? ( >=net-misc/curl-7.10.0 )
+	curl? ( >=net-misc/curl-7.10.0 )
 	samba? ( net-fs/samba )
 	kerberos? ( app-crypt/mit-krb5 )
 	xfs? ( sys-fs/xfsdump )
+	readline? ( sys-libs/readline )
 	!minimal? (
 		virtual/mailx
 		app-arch/mt-st
@@ -41,7 +42,7 @@ DEPEND="${RDEPEND}
 	app-text/docbook-xml-dtd
 	"
 
-IUSE="gnuplot ipv6 kerberos minimal nls s3 samba xfs"
+IUSE="curl gnuplot ipv6 kerberos minimal nls readline s3 samba xfs"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -267,7 +268,10 @@ src_configure() {
 	# build manpages
 	myconf="${myconf} --enable-manpage-build"
 
-	econf ${myconf} || die "econf failed!"
+	econf \
+		$(use_with readline) \
+		$(use_with curl libcurl) \
+		${myconf}
 }
 
 src_compile() {
