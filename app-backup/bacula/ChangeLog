@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.106 2010/12/27 20:45:53 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.107 2010/12/29 10:35:07 tomjbe Exp $
+
+*bacula-5.0.3-r2 (29 Dec 2010)
+
+  29 Dec 2010; Thomas Beierlein <tomjbe@gentoo.org> +bacula-5.0.3-r2.ebuild,
+  +files/5.0.3/bacula-5.0.3-fix-static.patch:
+  Fix USE=static - only supported for bacula-clientonly now. bug #341983.
+  Thanks dabbott@gentoo.org for reporting
 
   27 Dec 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   bacula-5.0.3-r1.ebuild:
