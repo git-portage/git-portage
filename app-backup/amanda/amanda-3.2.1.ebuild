@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.1.ebuild,v 1.4 2010/12/28 22:11:45 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.1.ebuild,v 1.5 2010/12/29 16:09:02 idl0r Exp $
 
 EAPI=3
 inherit autotools eutils perl-module
@@ -114,6 +114,19 @@ amanda_variable_setup() {
 
 pkg_setup() {
 	amanda_variable_setup
+
+	# If USE=minimal, give out a warning, if AMANDA_SERVER is not set to
+	# another host than HOSTNAME.
+	if use minimal && [ "${AMANDA_SERVER}" = "${HOSTNAME}" ] ; then
+		elog "You are installing a client-only version of Amanda."
+		elog "You should set the variable \$AMANDA_SERVER to point at your"
+		elog "Amanda-tape-server, otherwise you will have to specify its name"
+		elog "when using amrecover on the client."
+		elog "For example: Use something like"
+		elog "AMANDA_SERVER=\"myserver\" emerge amanda"
+		elog
+	fi
+
 	enewgroup "${AMANDA_GROUP_NAME}" "${AMANDA_GROUP_GID}"
 	enewuser "${AMANDA_USER_NAME}" "${AMANDA_USER_UID}" "${AMANDA_USER_SH}" "${AMANDA_USER_HOMEDIR}" "${AMANDA_USER_GROUPS}"
 }
@@ -318,9 +331,11 @@ src_install() {
 		newins "${MYFILESDIR}"/amanda-xinetd-2.6.1_p1-server amanda
 	fi
 
-	einfo "Installing Sample Daily Cron Job for Amanda"
-	insinto /etc/cron.daily
-	newins "${MYFILESDIR}/amanda-cron" amanda
+	if ! use minimal; then
+		einfo "Installing Sample Daily Cron Job for Amanda"
+		insinto /etc/cron.daily
+		newins "${MYFILESDIR}/amanda-cron" amanda
+	fi
 
 	insinto /etc/amanda
 	einfo "Installing .amandahosts File for ${AMANDA_USER_NAME} user"
@@ -404,18 +419,6 @@ pkg_postinst() {
 	fi
 	if [ -f "${ROOT}/etc/amandates" ]; then
 		einfo "If you have migrated safely, please delete /etc/amandates"
-	fi
-
-	# If USE=minimal, give out a warning, if AMANDA_SERVER is not set to
-	# another host than HOSTNAME.
-	if use minimal && [ "${AMANDA_SERVER}" = "${HOSTNAME}" ] ; then
-		elog "You are installing a client-only version of Amanda."
-		elog "You should set the variable \$AMANDA_SERVER to point at your"
-		elog "Amanda-tape-server, otherwise you will have to specify its name"
-		elog "when using amrecover on the client."
-		elog "For example: Use something like"
-		elog "AMANDA_SERVER=\"myserver\" emerge amanda"
-		elog
 	fi
 
 	einfo "Checking setuid permissions"

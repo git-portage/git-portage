@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/amanda
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.76 2010/12/28 22:11:45 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.77 2010/12/29 16:09:02 idl0r Exp $
+
+  29 Dec 2010; Christian Ruppert <idl0r@gentoo.org> amanda-3.2.1.ebuild:
+  Move elog block regarding the AMANDA_SERVER environment variable into
+  pkg_setup. Install the sample cronjob only on non-minimal setups.
 
   28 Dec 2010; Christian Ruppert <idl0r@gentoo.org> amanda-3.2.1.ebuild:
   Fix libcurl dependency again.
