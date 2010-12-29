@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.1.ebuild,v 1.5 2010/12/29 16:09:02 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.1.ebuild,v 1.6 2010/12/29 16:29:58 idl0r Exp $
 
 EAPI=3
 inherit autotools eutils perl-module
@@ -246,10 +246,6 @@ src_configure() {
 	myconf="${myconf} --with-ssh-security"
 	myconf="${myconf} --with-bsdudp-security"
 	myconf="${myconf} --with-bsdtcp-security"
-
-	# kerberos-security mechanism version 4
-	# always disable, per bug #173354
-	myconf="${myconf} --without-krb4-security"
 
 	# kerberos-security mechanism version 5
 	myconf="${myconf} `use_with kerberos krb5-security`"
