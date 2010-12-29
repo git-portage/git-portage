@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/java-gnome/Attic/java-gnome-4.0.14.ebuild,v 1.3 2010/04/16 16:40:02 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/java-gnome/Attic/java-gnome-4.0.18.ebuild,v 1.1 2010/12/29 23:06:59 ken69267 Exp $
 
 EAPI=2
 JAVA_PKG_IUSE="doc examples source"
@@ -16,19 +16,20 @@ SRC_URI="mirror://gnome/sources/${PN}/$(get_version_component_range 1-2)/${MY_P}
 
 LICENSE="GPL-2-with-linking-exception"
 SLOT="4.0"
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-RDEPEND=">=dev-libs/glib-2.16.1
-	>=x11-libs/gtk+-2.16
-	>=gnome-base/libglade-2.6.3
+RDEPEND=">=dev-libs/glib-2.22
+	>=x11-libs/gtk+-2.22.0
+	>=gnome-base/libglade-2.6.4
 	>=gnome-base/libgnome-2.22.0
-	>=gnome-base/gnome-desktop-2.22.0
-	>=x11-libs/cairo-1.6.4[svg]
+	>=gnome-base/gnome-desktop-2.22.0:2
+	>=x11-libs/cairo-1.10.0[svg]
 	>=x11-libs/gtksourceview-2.6.2
 	>=app-text/gtkspell-2.0.15-r1
 	>=x11-libs/libnotify-0.4.5
 	>=dev-libs/libunique-1.0.8
+	>=gnome-base/librsvg-2.32.1
 	>=virtual/jre-1.5"
 DEPEND="${RDEPEND}
 	dev-java/junit:0
@@ -40,6 +41,11 @@ DEPEND="${RDEPEND}
 RESTRICT="test"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	#fix dependency typo in configure
+	sed -i -e "s/librsvg-2.0atk/librsvg-2.0 atk/" configure || die "sed failed"
+}
 
 src_configure() {
 	# Handwritten in perl so not using econf
