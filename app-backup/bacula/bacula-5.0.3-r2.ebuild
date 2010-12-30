@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.3-r2.ebuild,v 1.1 2010/12/29 10:35:07 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.3-r2.ebuild,v 1.2 2010/12/30 19:41:27 tomjbe Exp $
 
 EAPI="2"
 PYTHON_DEPEND="python? 2"
@@ -22,7 +22,7 @@ SRC_URI="mirror://sourceforge/bacula/${MY_P}.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
+KEYWORDS="amd64 hppa ppc ~sparc ~x86"
 IUSE="bacula-clientonly bacula-nodir bacula-nosd ipv6 logwatch mysql postgres python qt4 readline +sqlite3 ssl static tcpd vim-syntax X"
 
 # maintainer comment:
@@ -103,7 +103,7 @@ pkg_setup() {
 
 	if use bacula-clientonly && use static && use qt4; then
 		ewarn
-		ewarn "Building statical linked 'bat' is not supported. Ignorig it."
+		ewarn "Building statically linked 'bat' is not supported. Ignorig 'qt4' useflag."
 		ewarn
 	fi
 
@@ -112,7 +112,7 @@ pkg_setup() {
 		if use static; then
 			ewarn
 			ewarn "USE=static only supported together with USE=bacula-clientonly."
-			ewarn "Ignoring it."
+			ewarn "Ignoring 'static' useflag."
 			ewarn
 		fi
 		if [ -z "$(egetent passwd bacula 2>/dev/null)" ]; then
@@ -173,14 +173,19 @@ src_configure() {
 	else
 		myconf="${myconf} \
 			$(use_enable !bacula-nodir build-dird) \
-			$(use_enable !bacula-nosd build-stored) \
-			$(use_enable qt4 bat)"
+			$(use_enable !bacula-nosd build-stored)"
 		# bug #311099
 		# database support needed by dir-only *and* sd-only
 		# build as well (for building bscan, btape, etc.)
 		myconf="${myconf} \
 			--with-${mydbtype} \
 			--enable-batch-insert"
+	fi
+
+	# do not build bat if 'static' is requested
+	if ! use static; then
+		myconf="${myconf} \
+			$(use_enable qt4 bat)"
 	fi
 
 	myconf="${myconf} \
