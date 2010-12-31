@@ -1,12 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/Attic/puppet-2.6.0-r1.ebuild,v 1.2 2010/08/15 13:21:30 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/Attic/puppet-2.6.4.ebuild,v 1.1 2010/12/31 04:02:12 matsuu Exp $
 
 EAPI="2"
 USE_RUBY="ruby18"
 
 RUBY_FAKEGEM_TASK_DOC=""
-RUBY_FAKEGEM_TASK_TEST="unit"
+RUBY_FAKEGEM_TASK_TEST="spec"
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG* README*"
 
 inherit elisp-common eutils ruby-fakegem
@@ -18,8 +18,6 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE="augeas emacs ldap rrdtool shadow vim-syntax"
 KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
-
-RESTRICT="test"
 
 ruby_add_rdepend "
 	>=dev-ruby/facter-1.5.1
@@ -66,7 +64,10 @@ all_ruby_install() {
 	# Initial configuration files
 	keepdir /etc/puppet/manifests || die
 	insinto /etc/puppet
-	doins conf/gentoo/puppet/* || die
+
+	# Bug #338439
+	#doins conf/gentoo/puppet/* || die
+	doins conf/redhat/*.conf || die
 	doins conf/auth.conf || die
 
 	# Location of log and data files
