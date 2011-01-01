@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/augeas/Attic/augeas-0.5.0.ebuild,v 1.4 2009/09/05 22:17:02 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/augeas/Attic/augeas-0.7.4.ebuild,v 1.1 2011/01/01 15:47:49 matsuu Exp $
 
 DESCRIPTION="A library for changing configuration files"
 HOMEPAGE="http://augeas.net/"
@@ -8,12 +8,12 @@ SRC_URI="http://augeas.net/download/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="amd64 ~ppc sparc ~x86"
-IUSE="doc test"
+KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
+IUSE="test"
 
 RDEPEND="sys-libs/readline"
 DEPEND="${RDEPEND}
-	doc? ( >=app-doc/NaturalDocs-1.40 )
+	>=app-doc/NaturalDocs-1.40
 	test? ( dev-lang/ruby )"
 
 src_compile() {
