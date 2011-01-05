@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php5/pecl-mongo/Attic/pecl-mongo-1.1.0.ebuild,v 1.1 2010/12/09 09:26:12 olemarkus Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php5/pecl-mongo/Attic/pecl-mongo-1.1.1.ebuild,v 1.1 2011/01/05 15:41:00 olemarkus Exp $
 
 EAPI=3
 
