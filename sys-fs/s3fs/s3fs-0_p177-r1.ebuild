@@ -1,10 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/s3fs/Attic/s3fs-177-r1.ebuild,v 1.2 2009/12/21 14:18:39 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/s3fs/Attic/s3fs-0_p177-r1.ebuild,v 1.1 2011/01/05 01:01:41 xmw Exp $
 
 inherit eutils toolchain-funcs
 
-MY_PV="r${PV}-source"
+MY_PV="r177-source"
 
 DESCRIPTION="Amazon mounting S3 via fuse"
 HOMEPAGE="http://s3fs.googlecode.com/"

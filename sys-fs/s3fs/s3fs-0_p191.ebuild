@@ -1,15 +1,20 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/s3fs/Attic/s3fs-177.ebuild,v 1.2 2009/03/31 22:43:57 caleb Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/s3fs/Attic/s3fs-0_p191.ebuild,v 1.1 2011/01/05 01:01:41 xmw Exp $
 
-MY_PV="r${PV}-source"
+EAPI="2"
+
+inherit eutils toolchain-funcs
+
+MY_PV="r191-source"
 
 DESCRIPTION="Amazon mounting S3 via fuse"
 HOMEPAGE="http://s3fs.googlecode.com/"
 SRC_URI="http://s3fs.googlecode.com/files/${PN}-${MY_PV}.tar.gz"
+
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 S=${WORKDIR}/${PN}
@@ -19,12 +24,18 @@ DEPEND=">=net-misc/curl-7.17.1
 	dev-libs/libxml2
 	dev-libs/openssl"
 
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	app-misc/mime-types"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-177-asneeded.patch
+}
 
 src_compile() {
-	emake || die "emake failed"
+	emake CXX="$(tc-getCXX)" || die
+
 }
 
 src_install() {
-	dobin s3fs
+	dobin s3fs || die
 }
