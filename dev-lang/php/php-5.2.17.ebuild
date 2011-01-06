@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/php/Attic/php-5.2.16-r1.ebuild,v 1.2 2011/01/05 12:35:18 mabi Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/php/Attic/php-5.2.17.ebuild,v 1.1 2011/01/06 23:35:43 mabi Exp $
 
 EAPI=2
 
@@ -10,7 +10,7 @@ interbase msql oci8 sapdb solid"
 inherit eutils autotools flag-o-matic versionator depend.apache apache-module db-use phpconfutils php-common-r1 libtool
 
 #SUHOSIN_VERSION="$PV-0.9.7"
-SUHOSIN_VERSION=""
+SUHOSIN_VERSION="5.2.16-0.9.7"
 EXPECTED_TEST_FAILURES=""
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ppc64 ~x86"
