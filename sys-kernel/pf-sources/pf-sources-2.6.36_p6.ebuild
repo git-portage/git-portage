@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/pf-sources/Attic/pf-sources-2.6.36_p3.ebuild,v 1.1 2010/12/15 17:01:50 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/pf-sources/pf-sources-2.6.36_p6.ebuild,v 1.1 2011/01/09 12:39:06 wired Exp $
 
 EAPI="2"
 
@@ -22,7 +22,7 @@ PF_PATCHSET="${PV/*_p}"
 PF_KERNEL="${PV/_p[0-9]*}"
 PF_KERNEL="${PF_KERNEL/_/-}"
 PF_FILE="patch-${PF_KERNEL}-pf${PF_PATCHSET}${COMPRESSTYPE}"
-PF_URI="http://pf-kernel.org.ua/sources/$(get_version_component_range 1-3)/${PF_FILE}"
+PF_URI="http://pf.natalenko.name/sources/$(get_version_component_range 1-3)/${PF_FILE}"
 EXPERIMENTAL_PATCHES=(
 	# http://ck-hack.blogspot.com/2010/11/create-task-groups-by-tty-comment.html
 	http://ck.kolivas.org/patches/bfs/bfs357-penalise_fork_depth_account_threads.patch
