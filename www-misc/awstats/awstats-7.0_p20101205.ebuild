@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-misc/awstats/Attic/awstats-7.0_p20100929.ebuild,v 1.1 2010/10/15 13:09:17 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-misc/awstats/Attic/awstats-7.0_p20101205.ebuild,v 1.1 2011/01/09 18:09:22 flameeyes Exp $
 
 EAPI=2
 
@@ -10,8 +10,13 @@ MY_P=${PN}-${PV%_p*}
 
 DESCRIPTION="AWStats is short for Advanced Web Statistics."
 HOMEPAGE="http://awstats.sourceforge.net/"
-#SRC_URI="http://awstats.sourceforge.net/files/${P}.tar.gz"
-SRC_URI="http://awstats.sourceforge.net/files/${MY_P}.tar.gz -> ${P}.tar.gz"
+
+SRC_URI="http://dev.gentoo.org/~flameeyes/awstats/${P}.tar.gz"
+
+# The following SRC_URI is useful only when fetching for the first time
+# after bump; upstream does not bump the version when they change it, so
+# we rename it to include the date and upload to our mirrors instead.
+#SRC_URI="http://awstats.sourceforge.net/files/${MY_P}.tar.gz -> ${P}.tar.gz"
 
 S=${WORKDIR}/${MY_P}
 
