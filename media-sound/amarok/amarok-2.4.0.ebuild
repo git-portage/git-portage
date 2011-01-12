@@ -1,17 +1,19 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/amarok/Attic/amarok-2.3.1-r2.ebuild,v 1.5 2010/08/24 01:44:26 jmbsvicetto Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/amarok/Attic/amarok-2.4.0.ebuild,v 1.1 2011/01/12 20:18:36 tampakrap Exp $
 
 EAPI="2"
 
 # Translations are only in the tarballs, not the git repo
 if [[ ${PV} != *9999* ]]; then
-	KDE_LINGUAS="af bg ca ca@valencia cs da de el en_GB es et fr it ja lt lv nb nds pa pl
-	pt pt_BR ru sk sl sr sr@ijekavian sr@ijekavianlatin sr@latin sv th tr uk zh_CN zh_TW"
-	SRC_URI="mirror://kde/stable/${PN}/${PV}/src/${P}.tar.bz2"
+	KDE_LINGUAS="bg ca cs da de en_GB es et eu fi fr it ja km nb nds nl
+	pa pl pt pt_BR ru sl sr sr@latin sv th tr uk wa zh_TW"
+	SRC_URI="mirror://kde/unstable/${PN}/${PV}/src/${P}.tar.bz2"
+	KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 else
-	EGIT_REPO_URI="git://git.kde.org/${PN}/${PN}.git"
+	EGIT_REPO_URI="git://anongit.kde.org/${PN}"
 	GIT_ECLASS="git"
+	KEYWORDS=""
 fi
 
 KDE_REQUIRED="never"
@@ -21,9 +23,8 @@ DESCRIPTION="Advanced audio player based on KDE framework."
 HOMEPAGE="http://amarok.kde.org/"
 
 LICENSE="GPL-2"
-KEYWORDS="amd64 ~ppc ~ppc64 x86"
 SLOT="4"
-IUSE="cdda daap debug embedded ipod lastfm mp3tunes mtp opengl +player semantic-desktop +utils"
+IUSE="cdda daap debug +embedded ipod lastfm mp3tunes mtp opengl +player semantic-desktop +utils"
 
 # Tests require gmock - http://code.google.com/p/gmock/
 # It's not in the tree yet
@@ -36,9 +37,9 @@ COMMONDEPEND="
 	player? (
 		app-crypt/qca:2
 		>=app-misc/strigi-0.5.7[dbus,qt4]
-		|| ( >=dev-db/mysql-5.0.76 =virtual/mysql-5.1 )
 		>=kde-base/kdelibs-${KDE_MINIMAL}[opengl?,semantic-desktop?]
 		sys-libs/zlib
+		>=virtual/mysql-5.1
 		x11-libs/qt-script
 		>=x11-libs/qtscriptgenerator-0.1.0
 		cdda? (
@@ -46,7 +47,12 @@ COMMONDEPEND="
 			>=kde-base/libkcompactdisc-${KDE_MINIMAL}
 			>=kde-base/kdemultimedia-kioslaves-${KDE_MINIMAL}
 		)
-		embedded? ( <dev-db/mysql-5.1[embedded,-minimal] )
+		embedded? (
+			|| (
+				>=dev-db/mysql-5.1.50-r3[embedded]
+				>=dev-db/mariadb-5.1.50[embedded]
+			)
+		)
 		ipod? ( >=media-libs/libgpod-0.7.0[gtk] )
 		lastfm? ( >=media-libs/liblastfm-0.3.0 )
 		mp3tunes? (
@@ -57,7 +63,7 @@ COMMONDEPEND="
 			net-misc/curl
 			x11-libs/qt-core[glib]
 		)
-		mtp? ( >=media-libs/libmtp-0.3.0 )
+		mtp? ( >=media-libs/libmtp-1.0.0 )
 		opengl? ( virtual/opengl )
 	)
 	utils? (
@@ -74,16 +80,6 @@ RDEPEND="${COMMONDEPEND}
 	!media-sound/amarok-utils
 	player? ( >=kde-base/phonon-kde-${KDE_MINIMAL} )
 "
-
-# The fix trayicon patch was assembled from the 4 patches committed by Kevin Funk to fix
-# upstream bug at https://bugs.kde.org/show_bug.cgi?id=232578#c13 and available from
-# http://krf.kollide.net/files/work/amarok/
-# They correspond to the following 4 git commits:
-# http://gitweb.kde.org/amarok/amarok.git/commit/e959e75a8f028eb36406d65118885c32e3eff3c8
-# http://gitweb.kde.org/amarok/amarok.git/commit/26104cd35fd50222c354f3afc9fce6bba093c05f
-# http://gitweb.kde.org/amarok/amarok.git/commit/4995f14cefbbe78e9dd3c42af00188e6c82e6f94
-# http://gitweb.kde.org/amarok/amarok.git/commit/74ea4c1f9e69952ac274be44ab37ed073e61c1e6
-PATCHES=( "${FILESDIR}/${PN}-fix-accessibility-dep.patch" "${FILESDIR}/${P}-fix-trayicon.patch")
 
 src_prepare() {
 	if ! use player; then
