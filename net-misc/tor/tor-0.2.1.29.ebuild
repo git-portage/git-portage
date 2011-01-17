@@ -1,27 +1,24 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/tor/Attic/tor-0.2.2.20_alpha.ebuild,v 1.1 2011/01/10 17:47:00 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/tor/Attic/tor-0.2.1.29.ebuild,v 1.1 2011/01/17 13:46:16 chiiph Exp $
 
-EAPI=3
+EAPI=2
 
-inherit eutils versionator
+inherit eutils
 
-MY_PV="$(replace_version_separator 4 -)"
-MY_PF="${PN}-${MY_PV}"
 DESCRIPTION="Anonymizing overlay network for TCP"
 HOMEPAGE="http://www.torproject.org/"
-SRC_URI="http://www.torproject.org/dist/${MY_PF}.tar.gz"
-S="${WORKDIR}/${MY_PF}"
+MY_PV=${PV/_/-}
+SRC_URI="http://www.torproject.org/dist/${PN}-${MY_PV}.tar.gz"
+S="${WORKDIR}/${PN}-${MY_PV}"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="debug"
 
-# libevent-2.0 is masked but we still depend on it
-# See: bug #206969 and https://trac.torproject.org/projects/tor/ticket/920
 DEPEND="dev-libs/openssl
-	>=dev-libs/libevent-2.0"
+	>=dev-libs/libevent-1.2"
 # The tordns patch for tsocks avoids some leakage of information thus raising anonymity
 RDEPEND="${DEPEND}
 	net-proxy/tsocks[tordns]"
@@ -34,6 +31,18 @@ pkg_setup() {
 src_prepare() {
 	epatch "${FILESDIR}"/torrc.sample-0.1.2.6.patch
 	epatch "${FILESDIR}"/${PN}-0.2.1.19-logrotate.patch
+	# Normally tor uses a bundled libevent fragment to provide
+	# asynchronous DNS requests.  This is generally a bad idea, but at
+	# the moment the official libevent does not have the 0x20 hack, so
+	# anonymity is higher with the bundled variant.  Remove patch as
+	# soon as upstream has installed the autoconf option to use
+	# system's libevent.  This hasn't happened, so we
+	# have to live with the bundled libevent for this release, as the
+	# current version in tree won't suffice for tor to build
+	# See http://bugs.noreply.org/flyspray/index.php?do=details&id=920
+	# for upstream's report
+	# Let's revisit this when libevent-2* is unmasked
+	# use bundledlibevent || epatch "${FILESDIR}"/${PN}-0.2.1.5-no-internal-libevent.patch
 }
 
 src_configure() {
@@ -45,7 +54,7 @@ src_install() {
 	emake DESTDIR="${D}" install || die
 	keepdir /var/{lib,log,run}/tor
 
-	dodoc README ChangeLog ReleaseNotes \
+	dodoc README ChangeLog AUTHORS ReleaseNotes \
 		doc/{HACKING,TODO} \
 		doc/spec/*.txt
 
