@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/tomcat/Attic/tomcat-7.0.5.ebuild,v 1.1 2010/12/21 09:13:39 ali_bush Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/tomcat/Attic/tomcat-6.0.26-r2.ebuild,v 1.1 2011/01/18 18:02:20 fordfrog Exp $
 
 EAPI=2
 JAVA_PKG_IUSE="doc examples source test"
@@ -8,39 +8,31 @@ WANT_ANT_TASKS="ant-trax"
 
 inherit eutils java-pkg-2 java-ant-2
 
-DESCRIPTION="Tomcat Servlet-3.0/JSP-2.2 Container"
+DESCRIPTION="Tomcat Servlet-2.5/JSP-2.1 Container"
 
-MY_P="apache-${P/_beta/}-src"
-SLOT="7"
-SRC_URI="mirror://apache/${PN}/${PN}-${SLOT}/v${PV/_/-}-beta/src/${MY_P}.tar.gz"
+MY_P="apache-${P}-src"
+SLOT="6"
+SRC_URI="mirror://apache/${PN}/${PN}-6/v${PV/_/-}/src/${MY_P}.tar.gz"
 HOMEPAGE="http://tomcat.apache.org/"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd"
 LICENSE="Apache-2.0"
 
 IUSE=""
 
-# eclipse ecj version/slot
-ECJV="3.6"
-
-# servlet-api slot
-SAPIS="3.0"
-
-COMMON_DEPEND="dev-java/eclipse-ecj:${ECJV}
-	dev-java/ant-eclipse-ecj:${ECJV}
-	>=dev-java/commons-dbcp-1.4
+COMMON_DEPEND="dev-java/eclipse-ecj:3.3
+	dev-java/ant-eclipse-ecj:3.3
+	>=dev-java/commons-dbcp-1.2.1
 	>=dev-java/commons-logging-1.1
-	>=dev-java/commons-pool-1.5.5
+	>=dev-java/commons-pool-1.2
 	~dev-java/tomcat-servlet-api-${PV}
 	examples? ( dev-java/jakarta-jstl )"
 
-RDEPEND="
-	!<dev-java/tomcat-native-1.1.20
-	>=virtual/jre-1.6
-	>=dev-java/commons-daemon-1.0.3
+RDEPEND=">=virtual/jre-1.5
+	>=dev-java/commons-daemon-1.0.1
 	dev-java/ant-core
 	${COMMON_DEPEND}"
 
-DEPEND=">=virtual/jdk-1.6
+DEPEND=">=virtual/jdk-1.5
 	${COMMON_DEPEND}
 	test? ( =dev-java/junit-3.8* )"
 
@@ -56,13 +48,13 @@ JAVA_ANT_CELEMENT_REWRITER="true"
 JAVA_ANT_REWRITE_CLASSPATH="true"
 
 EANT_NEEDS_TOOLS="true"
-EANT_GENTOO_CLASSPATH="tomcat-servlet-api-${SAPIS},eclipse-ecj-${ECJV}"
+EANT_GENTOO_CLASSPATH="tomcat-servlet-api-2.5,eclipse-ecj-3.3"
 
-EANT_BUILD_TARGET="package"
+EANT_BUILD_TARGET="build-only build-jasper-jdt"
 EANT_DOC_TARGET="build-docs"
 
-EANT_EXTRA_ARGS="-Dbase.path=${T} -Dversion=${PV}-gentoo -Dversion.number=${PV}
--Dcompile.debug=false -Del-api.jar=el-api.jar -Djsp-api.jar=jsp-api.jar -Dservlet-api.jar=servlet-api.jar
+EANT_EXTRA_ARGS="-Dbase.path=${T} -Dversion=${PV} -Dversion.number=${PV}
+-Dcompile.debug=false -Djsp-api.jar=jsp-api.jar -Dservlet-api.jar=servlet-api.jar
 -Dant.jar=ant.jar"
 
 pkg_setup() {
@@ -72,19 +64,18 @@ pkg_setup() {
 }
 
 java_prepare() {
-	epatch "${FILESDIR}/${SLOT}/build-xml.patch"
-
-	rm -v webapps/examples/WEB-INF/lib/*.jar \
-		test/webapp-3.0-fragments/WEB-INF/lib/*.jar || die
+	rm -v webapps/examples/WEB-INF/lib/*.jar || die
 
 	# bug # 178980 and #312293
-	use amd64 && java-pkg_force-compiler eclipse-ecj-${ECJV}
+	if use amd64; then
+		java-pkg_force-compiler ecj-3.3
+	fi
 
 	if ! use doc; then
 		EANT_EXTRA_ARGS+=" -Dnobuild.docs=true"
 	fi
 
-	EANT_EXTRA_ARGS+=" -Djdt.jar=$(java-pkg_getjar eclipse-ecj-${ECJV} ecj.jar)"
+	EANT_EXTRA_ARGS+=" -Djdt.jar=$(java-pkg_getjar eclipse-ecj-3.3 ecj.jar)"
 	java-pkg_jarfrom --build-only ant-core ant.jar
 }
 
@@ -102,7 +93,7 @@ src_install() {
 	local CATALINA_BASE=/var/lib/${TOMCAT_NAME}/
 
 	# init.d, conf.d
-	newinitd "${FILESDIR}"/${SLOT}/tomcat.init ${TOMCAT_NAME}
+	newinitd "${FILESDIR}"/${SLOT}/tomcat.init.2 ${TOMCAT_NAME}
 	newconfd "${FILESDIR}"/${SLOT}/tomcat.conf ${TOMCAT_NAME}
 
 	# create dir structure
@@ -139,6 +130,7 @@ src_install() {
 	cd "${S}"/webapps || die
 	ebegin "Installing webapps to /usr/share/${TOMCAT_NAME}"
 
+	dodir /usr/share/${TOMCAT_NAME}/webapps
 	cp -pR ROOT "${D}"/usr/share/${TOMCAT_NAME}/webapps || die
 	cp -pR host-manager "${D}"/usr/share/${TOMCAT_NAME}/webapps || die
 	cp -pR manager "${D}"/usr/share/${TOMCAT_NAME}/webapps || die
@@ -157,9 +149,11 @@ src_install() {
 #	cp ${FILESDIR}/${SLOT}/catalina.policy "${D}"/etc/${TOMCAT_NAME} \
 #		|| die "failed to replace catalina.policy"
 
+	cp "${T}"/tomcat6-deps/jdt/jasper-jdt.jar "${D}"/usr/share/${TOMCAT_NAME}/lib \
+		|| die "failed to copy"
+
 	cd "${D}/usr/share/${TOMCAT_NAME}/lib" || die
-	java-pkg_jar-from eclipse-ecj-${ECJV}
-	java-pkg_jar-from tomcat-servlet-api-${SAPIS}
+	java-pkg_jar-from tomcat-servlet-api-2.5
 
 	# symlink the directories to make CATALINA_BASE possible
 	dosym /etc/${TOMCAT_NAME} ${CATALINA_BASE}/conf
