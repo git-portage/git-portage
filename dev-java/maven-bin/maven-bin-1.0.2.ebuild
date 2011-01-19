@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/maven-bin/Attic/maven-bin-1.1.ebuild,v 1.5 2008/03/08 20:41:07 wltjr Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/maven-bin/Attic/maven-bin-1.0.2.ebuild,v 1.7 2011/01/19 01:58:27 fordfrog Exp $
 
 MY_PN=${PN/-bin}
 MY_PV=${PV/_/-}
@@ -10,9 +10,9 @@ SRC_URI="mirror://apache/maven/binaries/${MY_P}.tar.gz"
 HOMEPAGE="http://maven.apache.org/"
 LICENSE="Apache-2.0"
 SLOT="1.0"
-KEYWORDS="amd64 ppc x86"
-DEPEND=">=virtual/jdk-1.4"
-RDEPEND=">=virtual/jdk-1.4"
+KEYWORDS="~amd64 ~ppc ~x86"
+DEPEND=">=virtual/jdk-1.5"
+RDEPEND=">=virtual/jdk-1.5"
 IUSE=""
 
 S="${WORKDIR}/${MY_P}"
@@ -32,5 +32,12 @@ src_install() {
 	doexe "${FILESDIR}/${MY_PN}"
 
 	dodir /usr/bin
-	dosym ${MAVEN_BIN}/${MY_PN} /usr/bin/${MY_PN} || die sym failed
+	dosym ${MAVEN_BIN}/${MY_PN} /usr/bin/${MY_PN} || die "dosym failed"
+}
+
+pkg_postinst() {
+	elog "If you had maven-bin-1.1 installed and it was downgraded to this"
+	elog "version, it is because maven-bin-1.1 has been reslotted to slot 1.1."
+	elog "If you want to install maven-bin-1.1 back, just issue:"
+	elog "  emerge =maven-bin-1.1*"
 }
