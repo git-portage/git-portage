@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/v8/Attic/v8-2.4.9.14.ebuild,v 1.3 2011/01/02 15:51:34 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/v8/Attic/v8-2.5.9.7.ebuild,v 1.1 2011/01/19 10:17:02 phajdan.jr Exp $
 
 EAPI="2"
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://gentoo/${P}.tar.gz"
 LICENSE="BSD"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="readline"
 
 RDEPEND="readline? ( >=sys-libs/readline-6.1 )"
@@ -36,6 +36,10 @@ src_prepare() {
 
 	# Fix a compile error (bug #349794), to be upstreamed.
 	epatch "${FILESDIR}"/${PN}-gentoo-bug-349794-r0.patch
+
+	# Backport an upstream bugfix for symbol visibility,
+	# see bug #348609.
+	epatch "${FILESDIR}"/${PN}-upstream-bug-1016-r0.patch
 
 	# Remove a test that is known to fail:
 	# http://groups.google.com/group/v8-users/browse_thread/thread/b8a3f42b5aa18d06
@@ -62,6 +66,8 @@ src_compile() {
 		myconf+=" arch=x64"
 	elif [[ $myarch = x86 ]] ; then
 		myconf+=" arch=ia32"
+	elif [[ $myarch = arm ]] ; then
+		myconf+=" arch=arm"
 	else
 		die "Failed to determine target arch, got '$myarch'."
 	fi
