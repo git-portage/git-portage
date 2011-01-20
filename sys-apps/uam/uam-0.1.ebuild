@@ -1,8 +1,9 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/uam/Attic/uam-0.0.7.ebuild,v 1.4 2011/01/14 13:41:59 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/uam/Attic/uam-0.1.ebuild,v 1.1 2011/01/20 21:19:26 mgorny Exp $
 
-inherit eutils multilib
+EAPI=3
+inherit autotools-utils eutils multilib
 
 DESCRIPTION="Simple udev-based automounter for removable USB media"
 HOMEPAGE="https://github.com/mgorny/uam/"
@@ -14,15 +15,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="sys-fs/udev"
+DEPEND="${RDEPEND}"
 
-src_compile() {
-	emake LIBDIR=/$(get_libdir) || die
-}
+DOCS=( NEWS README )
 
-src_install() {
-	emake LIBDIR=/$(get_libdir) DESTDIR="${D}" install || die
-
-	dodoc NEWS README || die
+src_configure() {
+	myeconfargs=(
+		--libdir=/$(get_libdir)
+	)
+	autotools-utils_src_configure
 }
 
 pkg_postinst() {
@@ -47,7 +48,7 @@ pkg_postinst() {
 	elog "If you'd like to receive libnotify-based notifications, you need"
 	elog "to install the [x11-misc/sw-notify-send] tool."
 
-	if [[ -e "${ROOT}"/dev/.udev ]]; then
+	if [[ -e "${EROOT}"/dev/.udev ]]; then
 		ebegin "Calling udev to reload its rules"
 		udevadm control --reload-rules
 		eend $?
