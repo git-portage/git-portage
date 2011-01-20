@@ -1,39 +1,44 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/karbon/Attic/karbon-2.3.0.ebuild,v 1.1 2011/01/14 20:38:15 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/kword/Attic/kword-2.3.1.ebuild,v 1.1 2011/01/20 00:09:09 dilfridge Exp $
 
 EAPI=3
+
 KMNAME="koffice"
 KMMODULE="${PN}"
-
 inherit kde4-meta
 
-DESCRIPTION="KOffice vector drawing application."
+DESCRIPTION="KOffice word processor"
 
 KEYWORDS="~amd64 ~x86"
-IUSE="+pstoedit wpg"
+IUSE="wpd"
 
 DEPEND="
-	media-libs/libart_lgpl
-	pstoedit? ( media-gfx/pstoedit )
-	wpg? ( media-libs/libwpg )
+	wpd? ( app-text/libwpd )
 "
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	!app-text/wv2
+"
 
-KMEXTRA="filters/${KMMODULE}"
+KMEXTRA="filters/${KMMODULE}/
+	filters/libmso/
+"
+
 KMEXTRACTONLY="
 	KoConfig.h.cmake
+	filters/
+	kspread/
 	libs/
 	plugins/
-	filters/
 "
+
 KMLOADLIBS="koffice-libs"
 
 src_configure() {
 	mycmakeargs=(
-		$(cmake-utils_use_with wpg)
-		$(cmake-utils_use_with pstoedit)
+		$(cmake-utils_use_with wpd)
 	)
+
 	kde4-meta_src_configure
 }
 

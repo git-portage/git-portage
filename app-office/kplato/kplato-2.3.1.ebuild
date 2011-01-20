@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/kspread/Attic/kspread-2.3.0.ebuild,v 1.1 2011/01/14 20:38:14 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/kplato/Attic/kplato-2.3.1.ebuild,v 1.1 2011/01/20 00:09:10 dilfridge Exp $
 
 EAPI=3
 
@@ -8,34 +8,29 @@ KMNAME="koffice"
 KMMODULE="${PN}"
 inherit kde4-meta
 
-DESCRIPTION="KOffice spreadsheet application"
+DESCRIPTION="KOffice project management application"
 
 KEYWORDS="~amd64 ~x86"
-IUSE="+solver"
+IUSE=""
 
-DEPEND="
-	dev-cpp/eigen:2
-	solver? ( sci-libs/gsl )
-"
+DEPEND="~app-office/koffice-libs-${PV}:${SLOT}[reports]"
 RDEPEND="${DEPEND}"
 
 KMEXTRACTONLY="
 	KoConfig.h.cmake
-	kchart/
-	interfaces/
 	libs/
-	filters/
-	plugins/
+	plugins/chartshape/kdchart
 "
-KMEXTRA="filters/${KMMODULE}/
-	filters/libmso"
-
+KMEXTRA="
+	filters/${KMMODULE}/
+	kdgantt/
+"
 KMLOADLIBS="koffice-libs"
 
 src_configure() {
 	mycmakeargs=(
-		-DWITH_Eigen2=ON
-		$(cmake-utils_use_with solver GSL)
+		$(cmake-utils_use_with python PythonLibs)
+		-DBUILD_kplato=ON
 	)
 
 	kde4-meta_src_configure
