@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea/Attic/icedtea-6.1.9.2.ebuild,v 1.2 2010/11/26 22:07:44 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea/Attic/icedtea-6.1.9.4.ebuild,v 1.1 2011/01/21 00:20:39 caster Exp $
 # Build written by Andrew John Hughes (gnu_andrew@member.fsf.org)
 
 # *********************************************************
@@ -9,11 +9,11 @@
 
 EAPI="2"
 
-inherit pax-utils java-pkg-2 java-vm-2 versionator
+inherit autotools pax-utils java-pkg-2 java-vm-2 versionator
 
 LICENSE="Apache-1.1 Apache-2.0 GPL-1 GPL-2 GPL-2-with-linking-exception LGPL-2 MPL-1.0 MPL-1.1 public-domain W3C"
 SLOT="6"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 
 DESCRIPTION="A harness to build the OpenJDK using Free Software build tools and dependencies"
 ICEDTEA_VER="$(get_version_component_range 2-4)"
@@ -122,6 +122,11 @@ pkg_setup() {
 #	  fi
 #	fi
 
+	if use nsplugin && ! use webstart ; then
+		eerror "WebStart is required if building the plugin."
+		die 'Re-try with USE="webstart"'
+	fi
+
 	# quite a hack since java-config does not provide a way for a package
 	# to limit supported VM's for building and their preferred order
 	if [[ -n "${JAVA_PKG_FORCE_VM}" ]]; then
@@ -162,6 +167,11 @@ src_unpack() {
 
 unset_vars() {
 	unset JAVA_HOME JDK_HOME CLASSPATH JAVAC JAVACFLAGS
+}
+
+src_prepare() {
+	epatch "${FILESDIR}/${PV}-sparc.patch"
+	eautoreconf
 }
 
 src_configure() {
