@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/ikiwiki/Attic/ikiwiki-3.20110122.ebuild,v 1.1 2011/01/22 16:26:20 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/ikiwiki/Attic/ikiwiki-3.20110123.ebuild,v 1.1 2011/01/23 15:20:35 tove Exp $
 
 EAPI=3
 
