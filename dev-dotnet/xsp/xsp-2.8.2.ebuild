@@ -1,19 +1,19 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/xsp/Attic/xsp-9999.ebuild,v 1.2 2009/06/09 21:17:16 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/xsp/Attic/xsp-2.8.2.ebuild,v 1.1 2011/01/25 17:54:56 pacho Exp $
 
 EAPI=2
 
-inherit go-mono mono autotools
+inherit go-mono mono
 
 PATCHDIR="${FILESDIR}/2.2/"
 
 DESCRIPTION="XSP is a small web server that can host ASP.NET pages"
-HOMEPAGE="http://www.go-mono.com/"
+HOMEPAGE="http://www.mono-project.com/ASP.NET"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~ppc ~x86"
 
 IUSE=""
 
