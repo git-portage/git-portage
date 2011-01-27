@@ -1,10 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-10.0.634.0-r1.ebuild,v 1.2 2011/01/16 09:49:50 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-10.0.648.6.ebuild,v 1.1 2011/01/27 10:46:25 phajdan.jr Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
-V8_DEPEND="3.0.6.1"
+V8_DEPEND="3.0.9"
 
 inherit eutils flag-o-matic multilib pax-utils portability python \
 	toolchain-funcs versionator virtualx
@@ -16,13 +16,13 @@ SRC_URI="http://build.chromium.org/buildbot/official/${P}.tar.bz2"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="cups +gecko-mediaplayer gnome gnome-keyring system-sqlite system-v8"
+IUSE="cups +gecko-mediaplayer gnome gnome-keyring system-sqlite"
 
 RDEPEND="app-arch/bzip2
 	system-sqlite? (
 		>=dev-db/sqlite-3.7.2[fts3,icu,secure-delete,threadsafe]
 	)
-	system-v8? ( >=dev-lang/v8-${V8_DEPEND} )
+	>=dev-lang/v8-${V8_DEPEND}
 	dev-libs/dbus-glib
 	>=dev-libs/icu-4.4.1
 	>=dev-libs/libevent-1.4.13
@@ -32,6 +32,7 @@ RDEPEND="app-arch/bzip2
 	gnome? ( >=gnome-base/gconf-2.24.0 )
 	gnome-keyring? ( >=gnome-base/gnome-keyring-2.28.2 )
 	>=media-libs/alsa-lib-1.0.19
+	media-libs/flac
 	virtual/jpeg
 	media-libs/libpng
 	media-libs/libvpx
@@ -106,8 +107,11 @@ src_prepare() {
 	# Make sure we don't use bundled libvpx headers.
 	epatch "${FILESDIR}"/${PN}-system-vpx-r2.patch
 
-	# Make sure we don't use bundled xdg-utils.
-	epatch "${FILESDIR}"/${PN}-system-xdg-utils-r0.patch
+	# Make sure we don't use bundled FLAC.
+	epatch "${FILESDIR}"/${PN}-system-flac-r0.patch
+
+	# Fix build, http://crbug.com/70606.
+	epatch "${FILESDIR}"/${PN}-webkit-version.patch
 
 	# Remove most bundled libraries. Some are still needed.
 	find third_party -type f \! -iname '*.gyp*' \
@@ -117,6 +121,7 @@ src_prepare() {
 		\! -path 'third_party/cld/*' \
 		\! -path 'third_party/expat/*' \
 		\! -path 'third_party/ffmpeg/*' \
+		\! -path 'third_party/flac/flac.h' \
 		\! -path 'third_party/gpsd/*' \
 		\! -path 'third_party/harfbuzz/*' \
 		\! -path 'third_party/hunspell/*' \
@@ -138,6 +143,10 @@ src_prepare() {
 		\! -path 'third_party/zlib/contrib/minizip/*' \
 		-delete || die
 
+	# Provide our own gyp file to use system flac.
+	# TODO: move this upstream.
+	cp "${FILESDIR}/flac.gyp" "third_party/flac" || die
+
 	# Check for the maintainer to ensure that the dependencies
 	# are up-to-date.
 	local v8_bundled="$(v8-extract-version v8/src/version.cc)"
@@ -145,27 +154,21 @@ src_prepare() {
 		die "update v8 dependency to ${v8_bundled}"
 	fi
 
+	# Remove bundled v8.
+	find v8 -type f \! -iname '*.gyp*' -delete || die
+
+	# The implementation files include v8 headers with full path,
+	# like #include "v8/include/v8.h". Make sure the system headers
+	# will be used.
+	# TODO: find a solution that can be upstreamed.
+	rmdir v8/include || die
+	ln -s /usr/include v8/include || die
+
 	if use system-sqlite; then
 		# Remove bundled sqlite, preserving the shim header.
 		find third_party/sqlite -type f \! -iname '*.gyp*' \
 			\! -path 'third_party/sqlite/sqlite3.h' \
 			-delete || die
-	fi
-
-	if use system-v8; then
-		# Provide our own gyp file that links with the system v8.
-		# TODO: move this upstream.
-		cp "${FILESDIR}"/v8.gyp v8/tools/gyp || die
-
-		# Remove bundled v8.
-		find v8 -type f \! -iname '*.gyp*' -delete || die
-
-		# The implementation files include v8 headers with full path,
-		# like #include "v8/include/v8.h". Make sure the system headers
-		# will be used.
-		# TODO: find a solution that can be upstreamed.
-		rmdir v8/include || die
-		ln -s /usr/include v8/include || die
 	fi
 
 	# Make sure the build system will use the right python, bug #344367.
@@ -192,6 +195,7 @@ src_configure() {
 		-Duse_system_libpng=1
 		-Duse_system_libxml=1
 		-Duse_system_speex=1
+		-Duse_system_v8=1
 		-Duse_system_vpx=1
 		-Duse_system_xdg_utils=1
 		-Duse_system_zlib=1"
@@ -226,12 +230,6 @@ src_configure() {
 	myconf+="
 		-Dlinux_sandbox_path=${CHROMIUM_HOME}/chrome_sandbox
 		-Dlinux_sandbox_chrome_path=${CHROMIUM_HOME}/chrome"
-
-	if host-is-pax; then
-		# Prevent the build from failing (bug #301880). The performance
-		# difference is very small.
-		myconf+=" -Dv8_use_snapshot=0"
-	fi
 
 	if use gecko-mediaplayer; then
 		# Disable hardcoded blacklist for gecko-mediaplayer.
