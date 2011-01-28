@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/kbackup
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/ChangeLog,v 1.17 2010/10/06 16:58:34 tampakrap Exp $
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/ChangeLog,v 1.18 2011/01/28 15:26:39 scarabeus Exp $
+
+  28 Jan 2011; Tomáš Chvátal <scarabeus@gentoo.org> -kbackup-0.6.4.ebuild,
+  kbackup-0.7.ebuild:
+  Stable latest on x86 and amd64. Drop older.
 
   06 Oct 2010; Theo Chatzimichos <tampakrap@gentoo.org> kbackup-0.7.ebuild:
   EAPI3
