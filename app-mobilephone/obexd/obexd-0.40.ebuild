@@ -1,10 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/obexd/Attic/obexd-0.35.ebuild,v 1.1 2010/10/31 11:31:50 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/obexd/Attic/obexd-0.40.ebuild,v 1.1 2011/01/28 10:40:05 pacho Exp $
 
 EAPI="3"
-
-inherit eutils
 
 DESCRIPTION="OBEX Server and Client"
 HOMEPAGE="http://www.bluez.org/"
@@ -35,6 +33,6 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${ED}" install || die "emake install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog README doc/*.txt || die
 }
