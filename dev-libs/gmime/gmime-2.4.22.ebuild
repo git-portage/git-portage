@@ -1,8 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/gmime/Attic/gmime-2.4.20.ebuild,v 1.1 2010/10/28 21:15:38 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/gmime/Attic/gmime-2.4.22.ebuild,v 1.1 2011/01/30 13:59:37 pacho Exp $
 
-EAPI="2"
+EAPI="3"
+GCONF_DEBUG="no"
 
 inherit gnome2 eutils mono libtool
 
@@ -11,7 +12,7 @@ HOMEPAGE="http://spruce.sourceforge.net/gmime/"
 
 SLOT="2.4"
 LICENSE="LGPL-2.1"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 IUSE="doc mono"
 
 RDEPEND=">=dev-libs/glib-2.12
@@ -64,7 +65,7 @@ src_compile() {
 }
 
 src_install() {
-	emake GACUTIL_FLAGS="/root '${D}/usr/$(get_libdir)' /gacdir /usr/$(get_libdir) /package ${PN}" \
+	emake GACUTIL_FLAGS="/root '${ED}/usr/$(get_libdir)' /gacdir ${EPREFIX}/usr/$(get_libdir) /package ${PN}" \
 		DESTDIR="${D}" install || die "installation failed"
 
 	if use doc ; then
@@ -77,6 +78,6 @@ src_install() {
 
 	# rename these two, so they don't conflict with app-arch/sharutils
 	# (bug #70392)	Ticho, 2004-11-10
-	mv "${D}/usr/bin/uuencode" "${D}/usr/bin/gmime-uuencode-${SLOT}"
-	mv "${D}/usr/bin/uudecode" "${D}/usr/bin/gmime-uudecode-${SLOT}"
+	mv "${ED}/usr/bin/uuencode" "${ED}/usr/bin/gmime-uuencode-${SLOT}"
+	mv "${ED}/usr/bin/uudecode" "${ED}/usr/bin/gmime-uudecode-${SLOT}"
 }
