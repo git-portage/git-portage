@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/mlocate/Attic/mlocate-0.23.1.ebuild,v 1.13 2010/11/21 14:57:13 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/mlocate/Attic/mlocate-0.23.1-r1.ebuild,v 1.1 2011/01/30 13:16:50 scarabeus Exp $
 
 EAPI="3"
 
