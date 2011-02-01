@@ -1,14 +1,14 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-0.9.26-r2.ebuild,v 1.2 2010/02/17 19:35:48 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-1.0.6.ebuild,v 1.1 2011/02/01 11:03:35 bangert Exp $
 
-EAPI="2"
+EAPI="3"
 
 inherit eutils
 
 DESCRIPTION="A simple backup system inspired by TimeVault and FlyBack, with a GUI for GNOME and KDE4"
 HOMEPAGE="http://backintime.le-web.org/"
-SRC_URI="http://backintime.le-web.org/download/backintime/${P}_src.tar.gz"
+SRC_URI="http://backintime.le-web.org/download/${PN}/${P}_src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -25,9 +25,12 @@ DEPEND="dev-lang/python
 		)
 	gnome? (
 		gnome-base/libglade
+		dev-util/meld
 		gnome-base/gnome-session
 		dev-python/gnome-vfs-python
-		dev-python/gnome-python
+		dev-python/libgnome-python
+		dev-python/pygobject
+		dev-python/pygtk
 		)
 	dev-python/notify-python
 	"
@@ -35,11 +38,14 @@ DEPEND="dev-lang/python
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/backintime-0.9.26-information-disclosure.diff
-	epatch "${FILESDIR}"/backintime-0.9.26-dont-install-license.diff
+	epatch "${FILESDIR}"/${PN}-1.0.4-dont-install-license.diff
+	epatch "${FILESDIR}"/${PN}-1.0.4-fix-configure-warning.diff
 	#fix doc install location
 	sed -i "s:/doc/kde4/HTML/:/doc/HTML/:g" kde4/Makefile.template
 	sed -i "s:/doc/backintime:/doc/${PF}:g" common/Makefile.template
+
+	cp "${FILESDIR}"/backintime-1.0.4-kde4-root.desktop \
+		"${S}"/kde4/backintime-kde4-root.desktop
 }
 
 src_configure() {
@@ -79,9 +85,6 @@ src_install() {
 	if use kde ; then
 		cd "${S}"/kde4
 		emake DESTDIR="${D}" install || die
-		#use kdesu instead of kdesudo
-		sed -i 's/kdesudo/kdesu/' \
-			"${D}"//usr/share/applications/kde4/backintime-kde4-root.desktop
 	fi
 
 	if use gnome ; then
