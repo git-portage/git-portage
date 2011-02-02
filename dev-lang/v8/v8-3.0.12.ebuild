@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/v8/Attic/v8-3.0.6.1.ebuild,v 1.2 2011/01/14 12:44:43 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/v8/Attic/v8-3.0.12.ebuild,v 1.1 2011/02/02 12:51:57 phajdan.jr Exp $
 
 EAPI="2"
 
@@ -35,9 +35,6 @@ src_prepare() {
 
 	# Respect the user's CFLAGS, including the optimization level.
 	epatch "${FILESDIR}"/${PN}-no-O3-r0.patch
-
-	# Fix a compile error (bug #349794), to be upstreamed.
-	epatch "${FILESDIR}"/${PN}-gentoo-bug-349794-r0.patch
 
 	# Remove a test that is known to fail:
 	# http://groups.google.com/group/v8-users/browse_thread/thread/b8a3f42b5aa18d06
@@ -86,5 +83,8 @@ src_install() {
 }
 
 src_test() {
-	tools/test.py --no-build -p dots || die
+	# Make sure we use the libv8.so from our build directory,
+	# and not the /usr/lib one (it may be missing if we are
+	# installing for the first time or upgrading), see bug #352374.
+	LD_LIBRARY_PATH="${S}" tools/test.py --no-build -p dots || die
 }
