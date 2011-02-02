@@ -1,24 +1,35 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtinst/Attic/virtinst-0.500.4.ebuild,v 1.3 2011/02/02 21:58:31 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtinst/Attic/virtinst-0.500.5.ebuild,v 1.1 2011/02/02 21:58:31 cardoe Exp $
 
-BACKPORTS=1
+#BACKPORTS=1
 
-EAPI=2
+EAPI=3
+
+if [[ ${PV} = *9999* ]]; then
+	EHG_REPO_URI="http://hg.fedorahosted.org/hg/python-virtinst"
+	HG_ECLASS="mercurial autotools"
+fi
 
 PYTHON_DEPEND="2"
 RESTRICT_PYTHON_ABIS="3.*"
 SUPPORT_PYTHON_ABIS="1"
 
-inherit distutils eutils
+inherit distutils eutils ${HG_ECLASS}
+
+if [[ ${PV} = *9999* ]]; then
+	SRC_URI=""
+	KEYWORDS=""
+else
+	SRC_URI="http://virt-manager.et.redhat.com/download/sources/${PN}/${P}.tar.gz
+		${BACKPORTS:+mirror://gentoo/${P}-backports-${BACKPORTS}.tar.bz2}"
+	KEYWORDS="~amd64 ~x86"
+fi
 
 DESCRIPTION="Python modules for starting virtualized guest installations"
 HOMEPAGE="http://virt-manager.et.redhat.com/"
-SRC_URI="http://virt-manager.et.redhat.com/download/sources/${PN}/${P}.tar.gz
-	${BACKPORTS:+mirror://gentoo/${P}-backports-${BACKPORTS}.tar.bz2}"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE=""
 RDEPEND=">=app-emulation/libvirt-0.7.0[python]
 	dev-python/urlgrabber

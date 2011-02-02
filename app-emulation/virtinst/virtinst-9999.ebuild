@@ -1,10 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtinst/Attic/virtinst-9999.ebuild,v 1.3 2011/01/13 22:31:58 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtinst/Attic/virtinst-9999.ebuild,v 1.4 2011/02/02 21:58:31 cardoe Exp $
 
 #BACKPORTS=1
 
-EAPI=2
+EAPI=3
 
 if [[ ${PV} = *9999* ]]; then
 	EHG_REPO_URI="http://hg.fedorahosted.org/hg/python-virtinst"
@@ -32,7 +32,8 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 RDEPEND=">=app-emulation/libvirt-0.7.0[python]
-	dev-python/urlgrabber"
+	dev-python/urlgrabber
+	dev-libs/libxml2[python]"
 DEPEND="${RDEPEND}"
 
 PYTHON_MODNAME="virtconv virtinst"
