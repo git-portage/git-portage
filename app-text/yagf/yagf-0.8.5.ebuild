@@ -1,14 +1,16 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/yagf/Attic/yagf-0.8.1.ebuild,v 1.2 2009/10/28 09:09:49 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/yagf/Attic/yagf-0.8.5.ebuild,v 1.1 2011/02/07 19:23:32 pva Exp $
 
-EAPI="2"
+EAPI="4"
 
 inherit cmake-utils
 
+MY_P="${P}-Source"
+
 DESCRIPTION="Graphical front-end for cuneiform OCR tool"
 HOMEPAGE="http://symmetrica.net/cuneiform-linux/yagf-en.html"
-SRC_URI="http://symmetrica.net/cuneiform-linux/${P}.tar.gz"
+SRC_URI="http://symmetrica.net/cuneiform-linux/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -22,5 +24,7 @@ RDEPEND="${DEPEND}
 	scanner? ( media-gfx/xsane )"
 
 DOCS="AUTHORS ChangeLog DESCRIPTION README"
+
+S="${WORKDIR}/${MY_P}"
 
 CMAKE_IN_SOURCE_BUILD=1
