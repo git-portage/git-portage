@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/kyotocabinet/Attic/kyotocabinet-1.2.29.ebuild,v 1.1 2010/12/10 23:47:50 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/kyotocabinet/Attic/kyotocabinet-1.2.41.ebuild,v 1.1 2011/02/09 11:21:08 patrick Exp $
 
 EAPI="2"
 
@@ -21,12 +21,12 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	epatch "${FILESDIR}/fix_rpath-1.2.4.patch"
-	epatch "${FILESDIR}/remove_ldconfig-1.2.4.patch"
-	epatch "${FILESDIR}/remove_docinst-${PV}.patch"
+	sed -ie "/ldconfig/d" Makefile.in
+	sed -ie "/DOCDIR/d" Makefile.in
 }
 
 src_configure() {
-	econf $(use_enable debug) --enable-lzma
+	econf $(use_enable debug) --enable-lzma --docdir=/usr/share/doc/${PF}
 }
 
 src_install() {
