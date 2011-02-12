@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/bacula
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.110 2010/12/30 20:36:20 tomjbe Exp $
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.111 2011/02/12 18:13:11 armin76 Exp $
+
+  12 Feb 2011; Raúl Porcel <armin76@gentoo.org> bacula-5.0.3-r1.ebuild:
+  sparc stable wrt #341471
 
   30 Dec 2010; Thomas Beierlein <tomjbe@gentoo.org> bacula-5.0.3-r2.ebuild:
   Fix installation of 'bat' console (bug #350168). Finally correct.
