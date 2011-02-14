@@ -1,10 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/Attic/tracker-0.9.30.ebuild,v 1.4 2011/01/15 07:07:18 ford_prefect Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/Attic/tracker-0.9.38.ebuild,v 1.1 2011/02/14 22:49:17 eva Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
-PYTHON_DEPEND="2"
+PYTHON_DEPEND="2:2.6"
 
 inherit eutils gnome2 linux-info python virtualx
 
@@ -17,7 +17,8 @@ KEYWORDS="~alpha ~amd64 ~x86"
 # USE="doc" is managed by eclass.
 IUSE="applet doc eds exif flac gif gnome-keyring gsf gstreamer gtk hal iptc +jpeg laptop mp3 nautilus networkmanager pdf playlist rss strigi test +tiff upnp +vorbis xine +xml xmp"
 
-# Test suite highly disfunctional, putting aside for now
+# Test suite highly disfunctional, loops forever
+# putting aside for now
 RESTRICT="test"
 
 # TODO: rest -> flickr, qt vs. gdk
@@ -34,7 +35,7 @@ RDEPEND="
 	sys-apps/util-linux
 
 	applet? (
-		|| ( gnome-base/gnome-panel[bonobo] <gnome-base/gnome-panel-2.32 )
+		>=gnome-base/gnome-panel-2.32
 		>=x11-libs/gtk+-2.18:2 )
 	eds? (
 		>=mail-client/evolution-2.29.1
@@ -46,7 +47,7 @@ RDEPEND="
 	gsf? (
 		app-text/odt2txt
 		>=gnome-extra/libgsf-1.13 )
-	upnp? ( >=media-libs/gupnp-dlna-0.3 <media-libs/gupnp-dlna-0.5 )
+	upnp? ( >=media-libs/gupnp-dlna-0.5 )
 	!upnp? (
 		gstreamer? ( >=media-libs/gstreamer-0.10.12 )
 		!gstreamer? ( !xine? ( || ( media-video/totem media-video/mplayer ) ) )
@@ -77,12 +78,13 @@ RDEPEND="
 	xml? ( >=dev-libs/libxml2-2.6 )
 	xmp? ( >=media-libs/exempi-2.1 )"
 DEPEND="${RDEPEND}
-	>=dev-util/intltool-0.35
-	>=sys-devel/gettext-0.14
+	>=dev-util/intltool-0.40
+	>=sys-devel/gettext-0.17
 	>=dev-util/pkgconfig-0.20
-	applet? ( >=dev-lang/vala-0.11.2:0.12 )
+	applet? ( >=dev-lang/vala-0.11.4:0.12 )
 	gtk? (
-		>=dev-lang/vala-0.11.2:0.12
+		app-office/dia
+		>=dev-lang/vala-0.11.4:0.12
 		>=dev-libs/libgee-0.3 )
 	doc? (
 		>=dev-util/gtk-doc-1.8
@@ -136,10 +138,10 @@ pkg_setup() {
 
 	# unicode-support: libunistring, libicu or glib ?
 	G2CONF="${G2CONF}
-		--disable-functional-tests
 		--enable-tracker-fts
 		--with-enca
 		--with-unicode-support=glib
+		--enable-guarantee-metadata
 		$(use_enable applet tracker-status-icon)
 		$(use_enable applet tracker-search-bar)
 		$(use_enable eds miner-evolution)
@@ -149,7 +151,7 @@ pkg_setup() {
 		$(use_enable gsf libgsf)
 		$(use_enable gtk tracker-explorer)
 		$(use_enable gtk tracker-preferences)
-		$(use_enable gtk tracker-search-tool)
+		$(use_enable gtk tracker-needle)
 		$(use_enable iptc libiptcdata)
 		$(use_enable jpeg libjpeg)
 		$(use_enable mp3 taglib)
@@ -159,6 +161,7 @@ pkg_setup() {
 		$(use_enable playlist)
 		$(use_enable rss miner-rss)
 		$(use_enable strigi libstreamanalyzer)
+		$(use_enable test functional-tests)
 		$(use_enable test unit-tests)
 		$(use_enable tiff libtiff)
 		$(use_enable vorbis libvorbis)
@@ -166,8 +169,6 @@ pkg_setup() {
 		$(use_enable xmp exempi)"
 		# FIXME: handle gdk vs qt for mp3 thumbnail extract
 		# $(use_enable gtk gdkpixbuf)
-		# FIXME: missing some files ?
-		# $(use_enable test functional-tests)
 
 	DOCS="AUTHORS ChangeLog NEWS README"
 
@@ -186,17 +187,10 @@ src_prepare() {
 	python_convert_shebangs 2 "${S}"/utils/gtk-sparql/*.py
 	python_convert_shebangs 2 "${S}"/examples/rss-reader/*.py
 
-	# FIXME: report broken/disabled tests
+	# FIXME: report broken tests
 	sed -e '/\/libtracker-miner\/tracker-password-provider\/setting/,+1 s:^\(.*\)$:/*\1*/:' \
 		-e '/\/libtracker-miner\/tracker-password-provider\/getting/,+1 s:^\(.*\)$:/*\1*/:' \
 		-i tests/libtracker-miner/tracker-password-provider-test.c || die
-	# Needs to setup a fake system dbus
-	sed -e 's/tracker-test//' \
-		-i tests/libtracker-sparql/Makefile.{am,in} || die
-	sed -e 's/tracker-test-xmp//' \
-		-i tests/libtracker-extract/Makefile.{am,in} || die
-	sed -e 's/tracker-test//' \
-		-i tests/tracker-steroids/Makefile.{am,in} || die
 }
 
 src_test() {
