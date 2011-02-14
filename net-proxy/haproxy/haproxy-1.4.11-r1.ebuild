@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/haproxy/Attic/haproxy-1.4.11.ebuild,v 1.1 2011/02/11 01:22:47 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/haproxy/Attic/haproxy-1.4.11-r1.ebuild,v 1.1 2011/02/14 16:10:26 idl0r Exp $
 
 inherit eutils versionator
 
@@ -19,6 +19,10 @@ RDEPEND="${DEPEND}"
 pkg_setup() {
 	enewgroup haproxy
 	enewuser haproxy -1 -1 -1 haproxy
+}
+
+src_prepare() {
+	epatch "${FILESDIR}/${P}-fix-header-removal.diff"
 }
 
 src_compile() {
