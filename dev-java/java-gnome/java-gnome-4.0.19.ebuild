@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/java-gnome/Attic/java-gnome-4.0.18-r1.ebuild,v 1.2 2011/02/05 14:04:34 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/java-gnome/java-gnome-4.0.19.ebuild,v 1.1 2011/02/14 22:47:14 serkan Exp $
 
 EAPI=2
 JAVA_PKG_IUSE="doc examples source"
@@ -30,6 +30,7 @@ RDEPEND=">=dev-libs/glib-2.22
 	>=x11-libs/libnotify-0.4.5
 	>=dev-libs/libunique-1.0.8
 	>=gnome-base/librsvg-2.32.1
+	dev-libs/atk
 	>=virtual/jre-1.5"
 DEPEND="${RDEPEND}
 	dev-java/junit:0
@@ -42,9 +43,7 @@ RESTRICT="test"
 
 S="${WORKDIR}/${MY_P}"
 
-src_prepare() {
-	#fix dependency typo in configure
-	sed -i -e "s/librsvg-2.0atk/librsvg-2.0 atk/" configure || die
+java_prepare() {
 	if has_version ">=x11-libs/libnotify-0.7"; then
 		epatch "${FILESDIR}"/${P}-libnotify-0.7.patch
 	fi
