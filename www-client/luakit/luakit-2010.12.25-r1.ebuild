@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/luakit/Attic/luakit-2010.12.25.ebuild,v 1.1 2011/01/06 20:43:41 wired Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/luakit/Attic/luakit-2010.12.25-r1.ebuild,v 1.1 2011/02/14 07:49:34 wired Exp $
 
 EAPI=3
 
@@ -47,12 +47,18 @@ RDEPEND="
 	vim-syntax? ( || ( app-editors/vim app-editors/gvim ) )
 "
 
+PATCHES=(
+	# bug 354355
+	"${FILESDIR}/${P}-fix-deprecated.patch"
+)
+
 src_prepare() {
 	if [[ ${PV} == *9999* ]]; then
 		git_src_prepare
 	else
 		cd "${WORKDIR}"/mason-larobina-luakit-*
 		S=$(pwd)
+		base_src_prepare
 	fi
 }
 
