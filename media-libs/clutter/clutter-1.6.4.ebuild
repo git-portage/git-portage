@@ -1,9 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/clutter/Attic/clutter-1.6.0.ebuild,v 1.1 2011/02/02 05:01:49 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/clutter/Attic/clutter-1.6.4.ebuild,v 1.1 2011/02/15 20:20:11 nirbheek Exp $
 
 EAPI="2"
 WANT_AUTOMAKE="1.11"
+CLUTTER_LA_PUNT="yes"
 
 inherit clutter
 
