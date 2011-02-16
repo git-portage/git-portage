@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitolite/Attic/gitolite-1.5.7.ebuild,v 1.2 2010/11/26 16:25:14 tampakrap Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitolite/Attic/gitolite-1.5.9.1.ebuild,v 1.1 2011/02/16 17:15:27 idl0r Exp $
 
 EAPI=3
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://gentoo/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="vim-syntax"
+IUSE="contrib vim-syntax"
 
 DEPEND="dev-lang/perl
 	>=dev-vcs/git-1.6.2"
@@ -26,13 +26,13 @@ pkg_setup() {
 	enewuser git -1 /bin/bash /var/lib/gitolite git
 }
 
-src_prepare() {
-	rm Makefile doc/COPYING
-}
-
 src_unpack() {
 	unpack ${A}
 	mv "${WORKDIR}"/sitaramc-"${PN}"-* "${S}" || die
+}
+
+src_prepare() {
+	rm Makefile doc/COPYING contrib/{autotoc,gitweb,vim}
 }
 
 src_install() {
@@ -42,18 +42,29 @@ src_install() {
 	# install using upstream method
 	./src/gl-system-install "${D}"/usr/bin \
 		"${D}"/usr/share/gitolite/conf "${D}"/usr/share/gitolite/hooks || die
-	dosed "s:${D}::g" usr/bin/gl-setup \
-		usr/share/gitolite/conf/example.gitolite.rc || die
+	sed -i -e "s:${D}::g" "${D}/usr/bin/gl-setup" \
+		"${D}/usr/share/gitolite/conf/example.gitolite.rc" || die
 
 	rm "${D}"/usr/bin/gitolite.pm
 	insinto "${VENDOR_LIB}"
 	doins src/gitolite.pm || die
 
 	dodoc README.mkd doc/*
-	insinto /usr/share/doc/${P}
-	doins -r contrib
+
+	if use contrib; then
+		insinto /usr/share/doc/${PF}
+		doins -r contrib || die
+	fi
 
 	keepdir /var/lib/gitolite
 	fowners git:git /var/lib/gitolite
 	fperms 750 /var/lib/gitolite
+}
+
+pkg_postinst() {
+	# bug 352291
+	ewarn
+	elog "Please make sure that your 'git' user has the correct homedir (/var/lib/gitolite)."
+	elog "Especially if you're migrating from gitosis."
+	ewarn
 }
