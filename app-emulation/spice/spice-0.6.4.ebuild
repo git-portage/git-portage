@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/spice/Attic/spice-0.6.3.ebuild,v 1.3 2010/11/18 12:52:29 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/spice/Attic/spice-0.6.4.ebuild,v 1.1 2011/02/17 10:28:44 dev-zero Exp $
 
-EAPI=3
+EAPI=4
 
 DESCRIPTION="SPICE server and client."
 HOMEPAGE="http://spice-space.org/"
@@ -25,7 +25,7 @@ RDEPEND="~app-emulation/spice-protocol-${PV}
 	x11-libs/libXfixes
 	virtual/jpeg
 	sys-libs/zlib
-	gui? ( dev-games/cegui )"
+	gui? ( =dev-games/cegui-0.6* )"
 DEPEND="dev-util/pkgconfig
 	${RDEPEND}"
 
@@ -40,7 +40,6 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc NEWS TODO
+	default
 	use static-libs || rm "${D}"/usr/lib*/*.la
 }

@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/spice-protocol/Attic/spice-protocol-0.6.3.ebuild,v 1.1 2010/10/21 09:25:09 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/spice-protocol/Attic/spice-protocol-0.7.1.ebuild,v 1.1 2011/02/17 10:28:08 dev-zero Exp $
 
 EAPI=3
 
