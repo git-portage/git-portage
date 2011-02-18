@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/tarsnap
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tarsnap/ChangeLog,v 1.4 2011/01/19 16:35:57 gregkh Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tarsnap/ChangeLog,v 1.5 2011/02/18 16:01:47 a3li Exp $
+
+  18 Feb 2011; Alex Legler <a3li@gentoo.org> -tarsnap-1.0.26.ebuild,
+  -tarsnap-1.0.26-r1.ebuild, -tarsnap-1.0.27.ebuild:
+  Non-maintainer commit: Removing vulnerable versions for security bug 352071
 
 *tarsnap-1.0.28 (19 Jan 2011)
 
