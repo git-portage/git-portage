@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-xvideo/Attic/gst-plugins-xvideo-0.10.30.ebuild,v 1.1 2010/11/19 05:59:40 ford_prefect Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-xvideo/Attic/gst-plugins-xvideo-0.10.32.ebuild,v 1.1 2011/02/24 07:56:38 leio Exp $
 
 inherit gst-plugins-base
 
