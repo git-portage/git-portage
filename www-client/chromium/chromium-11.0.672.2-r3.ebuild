@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-11.0.672.2-r2.ebuild,v 1.2 2011/03/01 07:23:50 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-11.0.672.2-r3.ebuild,v 1.1 2011/03/01 13:52:49 wired Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
@@ -306,8 +306,7 @@ src_install() {
 	doins -r out/Release/locales || die
 	doins -r out/Release/resources || die
 
-	# chrome.1 is for chromium --help
-	newman out/Release/chrome.1 chrome.1 || die
+	newman out/Release/chrome.1 chromium.1 || die
 	newman out/Release/chrome.1 chromium-browser.1 || die
 
 	# Chromium looks for these in its folder
@@ -327,7 +326,7 @@ src_install() {
 	if use gnome; then
 		dodir /usr/share/gnome-control-center/default-apps || die
 		insinto /usr/share/gnome-control-center/default-apps
-		doins "${FILESDIR}"/chromium.xml || die
+		doins "${FILESDIR}"/chromium-browser.xml || die
 	fi
 }
 
