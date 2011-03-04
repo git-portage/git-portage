@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/boehm-gc/Attic/boehm-gc-7.2_alpha4.ebuild,v 1.2 2010/09/26 22:13:45 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/boehm-gc/Attic/boehm-gc-7.2_alpha4-r1.ebuild,v 1.1 2011/03/04 14:59:14 jlec Exp $
 
 inherit eutils
 
@@ -20,6 +20,7 @@ DEPEND="dev-libs/libatomic_ops"
 RDEPEND="${DEPEND}"
 
 src_compile() {
+	sed '/Cflags/s:$:/gc:g' -i bdw-gc.pc.in || die
 	local myconf="--with-libatomic-ops=yes"
 
 	if use nocxx ; then
@@ -30,7 +31,7 @@ src_compile() {
 
 	use threads || myconf="${myconf} --disable-threads"
 
-	econf ${myconf} || die "Configure failed..."
+	econf ${myconf}
 	emake || die
 }
 
