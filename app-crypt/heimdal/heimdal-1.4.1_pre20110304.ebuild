@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/heimdal/Attic/heimdal-1.4.1_pre20110216-r1.ebuild,v 1.2 2011/02/20 18:16:10 eras Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/heimdal/Attic/heimdal-1.4.1_pre20110304.ebuild,v 1.1 2011/03/04 11:55:11 eras Exp $
 
 EAPI=2
 # PYTHON_BDEPEND="2"
@@ -137,13 +137,5 @@ pkg_preinst() {
 			ewarn "Please check your slapd conf file to make sure"
 			ewarn "that the correct schema file is included."
 		fi
-	fi
-
-	if has_version "<=${CATEGORY}/${PN}-1.4.1_pre20110216"; then
-		ewarn "Unfortunately, libgssapi has functional changes but keeps the"
-		ewarn "same version number. Please run"
-		ewarn "\n		revdep-rebuild --library libgssapi.so.2\n"
-		ewarn "to avoid breaking your packages that depend on libgssapi.so"
-		ewarn "revdep-rebuild is part of app-portage/gentoolkit package."
 	fi
 }
