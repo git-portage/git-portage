@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/rdiff-backup
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/rdiff-backup/ChangeLog,v 1.48 2011/03/05 23:08:24 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/rdiff-backup/ChangeLog,v 1.49 2011/03/05 23:11:47 arfrever Exp $
+
+  05 Mar 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  -rdiff-backup-1.0.5.ebuild, -rdiff-backup-1.1.14.ebuild:
+  Delete.
 
   05 Mar 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   rdiff-backup-1.2.8.ebuild, rdiff-backup-1.2.8-r1.ebuild,
