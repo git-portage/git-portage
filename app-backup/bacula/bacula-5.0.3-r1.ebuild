@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.3-r1.ebuild,v 1.7 2011/02/12 18:13:11 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.3-r1.ebuild,v 1.8 2011/03/06 09:15:29 jlec Exp $
 
 EAPI="2"
 PYTHON_DEPEND="python? 2"
@@ -39,7 +39,7 @@ DEPEND="
 	)
 	qt4? (
 		x11-libs/qt-svg:4
-		>=x11-libs/qwt-5
+		x11-libs/qwt:5
 	)
 	ssl? ( dev-libs/openssl )
 	logwatch? ( sys-apps/logwatch )

@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.2-r1.ebuild,v 1.7 2010/07/17 09:34:59 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.2-r1.ebuild,v 1.8 2011/03/06 09:15:29 jlec Exp $
 
 EAPI="2"
 inherit eutils multilib
@@ -40,7 +40,7 @@ DEPEND="
 	)
 	qt4? (
 		x11-libs/qt-svg:4
-		>=x11-libs/qwt-5
+		x11-libs/qwt:5
 	)
 	ssl? ( dev-libs/openssl )
 	logwatch? ( sys-apps/logwatch )
