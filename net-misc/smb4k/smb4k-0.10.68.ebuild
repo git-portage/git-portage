@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/smb4k/Attic/smb4k-0.10.67.ebuild,v 1.1 2011/02/24 17:12:59 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/smb4k/Attic/smb4k-0.10.68.ebuild,v 1.1 2011/03/12 10:27:15 scarabeus Exp $
 
-EAPI=3
+EAPI=4
 KDE_LINGUAS="bg cs da de en_GB eo es fr ga gl hu is it ja lt mai nb nds nl pl
 pt_BR ru sk sv tr uk zh_CN zh_TW"
 KDE_HANDBOOK="optional"
