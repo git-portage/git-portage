@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/vala/Attic/vala-0.10.2.ebuild,v 1.2 2011/02/02 19:45:43 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/vala/Attic/vala-0.10.4.ebuild,v 1.1 2011/03/12 16:00:19 pacho Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
@@ -22,7 +22,7 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	dev-libs/libxslt
 	test? (
-		>=dev-libs/glib-2.26
+		>=dev-libs/glib-2.26:2
 		dev-libs/dbus-glib )"
 
 pkg_setup() {
