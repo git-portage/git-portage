@@ -1,31 +1,39 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/Attic/libvirt-0.8.6-r1.ebuild,v 1.3 2011/02/02 19:25:07 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/Attic/libvirt-0.8.8-r1.ebuild,v 1.1 2011/03/14 14:30:54 flameeyes Exp $
 
 BACKPORTS=1
+#AUTOTOOLIZE=yes
 
 EAPI="2"
+
+MY_P="${P/_rc/-rc}"
 
 PYTHON_DEPEND="python? 2:2.4"
 #RESTRICT_PYTHON_ABIS="3.*"
 #SUPPORT_PYTHON_ABIS="1"
 
-inherit eutils python autotools
+inherit eutils python ${AUTOTOOLIZE+autotools}
 
 DESCRIPTION="C toolkit to manipulate virtual machines"
 HOMEPAGE="http://www.libvirt.org/"
-SRC_URI="http://libvirt.org/sources/${P}.tar.gz
+SRC_URI="http://libvirt.org/sources/${MY_P}.tar.gz
+	ftp://libvirt.org/libvirt/${MY_P}.tar.gz
 	${BACKPORTS:+
-		http://dev.gentoo.org/~flameeyes/${PN}/${P}-backports-${BACKPORTS}.tar.bz2
-		http://dev.gentoo.org/~cardoe/${PN}/${P}-backports-${BACKPORTS}.tar.bz2}"
+		http://dev.gentoo.org/~flameeyes/${PN}/${MY_P}-backports-${BACKPORTS}.tar.bz2
+		http://dev.gentoo.org/~cardoe/${PN}/${MY_P}-backports-${BACKPORTS}.tar.bz2}"
+S="${WORKDIR}/${P%_rc*}"
+
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="avahi caps debug iscsi +libvirtd lvm +lxc macvtap +network nfs nls \
-	numa openvz parted pcap phyp policykit python qemu sasl selinux
-	uml virtualbox xen udev +json"
+IUSE="avahi caps debug iscsi +json +libvirtd lvm +lxc macvtap +network nfs \
+	nls numa openvz parted pcap phyp policykit python qemu sasl selinux udev \
+	uml virtualbox virt-network xen"
 # IUSE=one : bug #293416 & bug #299011
 
+# gettext.sh command is used by the libvirt command wrappers, and it's
+# non-optional, so put it into RDEPEND.
 RDEPEND="sys-libs/readline
 	sys-libs/ncurses
 	>=net-misc/curl-7.18.0
@@ -34,10 +42,12 @@ RDEPEND="sys-libs/readline
 	>=net-libs/gnutls-1.0.25
 	sys-fs/sysfsutils
 	sys-apps/util-linux
+	sys-devel/gettext
 	>=net-analyzer/netcat6-1.0-r2
 	avahi? ( >=net-dns/avahi-0.6[dbus] )
 	caps? ( sys-libs/libcap-ng )
 	iscsi? ( sys-block/open-iscsi )
+	json? ( dev-libs/yajl )
 	libvirtd? ( net-misc/bridge-utils )
 	lvm? ( >=sys-fs/lvm2-2.02.48-r2 )
 	macvtap? ( >=dev-libs/libnl-1.1 )
@@ -54,11 +64,13 @@ RDEPEND="sys-libs/readline
 	virtualbox? ( || ( app-emulation/virtualbox >=app-emulation/virtualbox-bin-2.2.0 ) )
 	xen? ( app-emulation/xen-tools app-emulation/xen )
 	udev? ( >=sys-fs/udev-145 >=x11-libs/libpciaccess-0.10.9 )
-	json? ( dev-libs/yajl )"
+	virt-network? ( net-dns/dnsmasq
+		>=net-firewall/iptables-1.4.10
+		net-firewall/ebtables
+		sys-apps/iproute2 )"
 # one? ( dev-libs/xmlrpc-c )
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
-	nls? ( sys-devel/gettext )"
+	dev-util/pkgconfig"
 
 pkg_setup() {
 	python_set_active_version 2
@@ -69,7 +81,7 @@ src_prepare() {
 		EPATCH_FORCE=yes EPATCH_SUFFIX="patch" EPATCH_SOURCE="${S}/patches" \
 			epatch
 
-	eautoreconf
+	[[ -n ${AUTOTOOLIZE} ]] && eautoreconf
 }
 
 src_configure() {
@@ -123,8 +135,7 @@ src_configure() {
 
 	# network biits
 	myconf="${myconf} $(use_with macvtap)"
-	# --with-pcap will cause problems, should be fixed after 0.8.7
-	use pcap || myconf="${myconf} --without-libpcap"
+	myconf="${myconf} $(use_with pcap libpcap)"
 
 	## other
 	myconf="${myconf} $(use_enable nls)"
@@ -178,8 +189,8 @@ src_install() {
 	use libvirtd || return 0
 	# From here, only libvirtd-related instructions, be warned!
 
-	newinitd "${FILESDIR}/libvirtd.init-r1" libvirtd || die
-	newconfd "${FILESDIR}/libvirtd.confd-r1" libvirtd || die
+	newinitd "${FILESDIR}/libvirtd.init-r2" libvirtd || die
+	newconfd "${FILESDIR}/libvirtd.confd-r2" libvirtd || die
 
 	keepdir /var/lib/libvirt/images
 }
@@ -218,12 +229,8 @@ pkg_postinst() {
 	elog
 	elog "For the basic networking support (bridged and routed networks)"
 	elog "you don't need any extra software. For more complex network modes"
-	elog "including but not limited to NATed network, you'll need the"
-	elog "following packages":
-	elog
-	elog "	net-dns/dnsmasq"
-	elog "	>=net-firewall/iptables-1.4.10"
-	elog "	net-firewall/ebtables"
+	elog "including but not limited to NATed network, you can enable the"
+	elog "'virt-network' USE flag."
 	elog
 	if has_version net-dns/dnsmasq; then
 		ewarn "If you have a DNS server setup on your machine, you will have"
