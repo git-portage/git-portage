@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/sysstat/Attic/sysstat-9.1.5.ebuild,v 1.1 2010/09/14 05:24:17 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/sysstat/Attic/sysstat-10.0.0.ebuild,v 1.1 2011/03/15 16:55:56 jer Exp $
 
 EAPI="2"
 
@@ -8,14 +8,15 @@ inherit eutils multilib
 
 DESCRIPTION="System performance tools for Linux"
 HOMEPAGE="http://pagesperso-orange.fr/sebastien.godard/"
-SRC_URI="${HOMEPAGE}/${P}.tar.bz2"
+SRC_URI="${HOMEPAGE}${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
-IUSE="cron +doc isag nls lm_sensors"
+IUSE="cron debug +doc isag nls lm_sensors"
 
-SYSSTAT_LINGUAS="af da de es eu fi fr id it ja ky lv mt nb nl nn pl pt_BR pt ro ru sk sv vi zh_CN zh_TW"
+SYSSTAT_LINGUAS="af cs da de es eu fi fr id it ja ky lv mt nb nl nn pl pt pt_BR
+	ro ru sk sv uk vi zh_CN zh_TW"
 
 for SYSSTAT_LINGUA in ${SYSSTAT_LINGUAS}; do
 	IUSE="${IUSE} linguas_${SYSSTAT_LINGUA}"
@@ -36,7 +37,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}/${P}-nls.patch"
-
 	local lingua NLSDIR="${S}/nls"
 	einfo "Keeping these locales: ${LINGUAS}."
 	for lingua in ${SYSSTAT_LINGUAS}; do
@@ -44,6 +44,8 @@ src_prepare() {
 			rm -f "${NLSDIR}/${lingua}.po"
 		fi
 	done
+
+	epatch "${FILESDIR}"/${P}-flags.patch
 }
 
 src_configure() {
@@ -53,6 +55,7 @@ src_configure() {
 		econf ${myconf} \
 			rcdir="Gentoo-does-not-use-rc.d" \
 			$(use_enable cron install-cron) \
+			$(use_enable debug debuginfo) \
 			$(use_enable isag install-isag) \
 			$(use_enable nls) \
 			$(use_enable lm_sensors sensors) \
@@ -78,4 +81,9 @@ src_install() {
 	newinitd "${FILESDIR}"/sysstat.init.d sysstat
 
 	use doc && rm -f "${D}"usr/share/doc/${PF}/COPYING
+}
+
+pkg_postinst() {
+	ewarn "This version breaks the format of sar daily data files"
+	ewarn "to enable the recording of average CPU clock frequency."
 }
