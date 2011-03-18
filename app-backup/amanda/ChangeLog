@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/amanda
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.79 2011/03/17 20:52:36 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.80 2011/03/18 17:51:38 idl0r Exp $
+
+  18 Mar 2011; Christian Ruppert <idl0r@gentoo.org>
+  -files/amanda-inetd.amanda.sample-2.5.1_p3-r1,
+  -files/amanda-xinetd-2.5.1_p3-r1:
+  Remove unused files.
 
 *amanda-3.2.2 (17 Mar 2011)
 
