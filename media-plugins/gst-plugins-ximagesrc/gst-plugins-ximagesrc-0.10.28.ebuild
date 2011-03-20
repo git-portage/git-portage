@@ -1,13 +1,13 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-ximagesrc/Attic/gst-plugins-ximagesrc-0.10.22.ebuild,v 1.5 2010/09/11 10:08:18 nixnut Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-ximagesrc/Attic/gst-plugins-ximagesrc-0.10.28.ebuild,v 1.1 2011/03/20 09:36:03 leio Exp $
 
 inherit gst-plugins-good
 
-KEYWORDS="amd64 ppc ppc64 x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 
 IUSE=""
-RDEPEND=">=media-libs/gst-plugins-base-0.10.29
+RDEPEND=">=media-libs/gst-plugins-base-0.10.32
 	x11-libs/libX11
 	x11-libs/libXdamage
 	x11-libs/libXfixes"
