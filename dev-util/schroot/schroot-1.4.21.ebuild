@@ -1,17 +1,17 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/schroot/Attic/schroot-1.4.7.ebuild,v 1.1 2010/08/13 09:04:04 abcd Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/schroot/Attic/schroot-1.4.21.ebuild,v 1.1 2011/03/22 06:56:01 abcd Exp $
 
-EAPI="3"
+EAPI="4"
 WANT_AUTOMAKE="1.11"
 
-inherit autotools base pam
+inherit autotools base pam versionator
 
 MY_P=${PN}_${PV}
 
 DESCRIPTION="Utility to execute commands in a chroot environment"
 HOMEPAGE="http://packages.debian.org/source/sid/schroot"
-SRC_URI="mirror://debian/pool/main/${PN::1}/${PN}/${MY_P}.orig.tar.gz"
+SRC_URI="mirror://debian/pool/main/${PN::1}/${PN}/${MY_P}.orig.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -42,7 +42,7 @@ RDEPEND="${COMMON_DEPEND}
 "
 
 PATCHES=(
-	"${FILESDIR}/${P}-tests.patch"
+	"${FILESDIR}/${PN}-1.4.7-tests.patch"
 )
 
 src_prepare() {
@@ -76,6 +76,10 @@ src_configure() {
 		--with-bash-completion-dir="${EPREFIX}"/usr/share/bash-completion
 }
 
+src_compile() {
+	emake all $(usev doc)
+}
+
 src_test() {
 	if [[ $root_tests == yes && $EUID -ne 0 ]]; then
 		ewarn "Disabling tests because you are no longer root"
@@ -85,21 +89,19 @@ src_test() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	default
 
 	insinto /usr/share/doc/${PF}/contrib/setup.d
-	doins contrib/setup.d/09fsck contrib/setup.d/10mount-ssh || die "installation of contrib scripts failed"
+	doins contrib/setup.d/09fsck contrib/setup.d/10mount-ssh
 
-	newinitd "${FILESDIR}"/schroot.initd schroot || die "installation of init.d script failed"
-	newconfd "${FILESDIR}"/schroot.confd schroot || die "installation of conf.d file failed"
-
-	dodoc AUTHORS ChangeLog NEWS README THANKS TODO || die "installation of docs failed"
+	newinitd "${FILESDIR}"/schroot.initd schroot
+	newconfd "${FILESDIR}"/schroot.confd schroot
 
 	if use doc; then
 		docinto html/sbuild
-		dohtml doc/sbuild/html/* || die "installation of html docs failed"
+		dohtml doc/sbuild/html/*
 		docinto html/schroot
-		dohtml doc/schroot/html/* || die "installation of html docs failed"
+		dohtml doc/schroot/html/*
 	fi
 
 	if use pam; then
@@ -112,9 +114,7 @@ src_install() {
 }
 
 pkg_preinst() {
-	export had_older_1_4_1=false
-	has_version "<dev-util/schroot-1.4.1" && had_older_1_4_1=true
-	if ${had_older_1_4_1}; then
+	if [[ ${REPLACING_VERSIONS} == 1.2* || ${REPLACING_VERSIONS} == 1.4.0* ]]; then
 		einfo "Moving config files to new location..."
 		mkdir "${EROOT}etc/schroot/default"
 		mv_conffile etc/schroot/script-defaults etc/schroot/default/config
@@ -157,7 +157,7 @@ mv_conffile() {
 
 pkg_postinst() {
 	local x
-	if ${had_older_1_4_1}; then
+	if [[ ${REPLACING_VERSIONS} == 1.2* || ${REPLACING_VERSIONS} == 1.4.0* ]]; then
 		for x in script:config mount:fstab copyfiles nssdatabases; do
 			if [[ ! -e ${EROOT}etc/schroot/${x%:*}-defaults && -f ${EROOT}etc/schroot/default/${x#*:} ]]; then
 				einfo "Creating compatibility symlink for ${x%:*}-defaults"
