@@ -1,12 +1,16 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libffi/Attic/libffi-3.0.9-r1.ebuild,v 1.2 2011/01/06 19:52:33 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libffi/Attic/libffi-3.0.10_rc8.ebuild,v 1.1 2011/03/25 18:42:20 ssuominen Exp $
 
-inherit eutils libtool
+EAPI=2
+
+MY_P=${P/_}
+
+inherit libtool toolchain-funcs
 
 DESCRIPTION="a portable, high level programming interface to various calling conventions."
 HOMEPAGE="http://sourceware.org/libffi/"
-SRC_URI="ftp://sourceware.org/pub/${PN}/${P}.tar.gz"
+SRC_URI="ftp://sourceware.org/pub/${PN}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -16,29 +20,31 @@ IUSE="debug static-libs test"
 RDEPEND=""
 DEPEND="test? ( dev-util/dejagnu )"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+S=${WORKDIR}/${MY_P}
 
-	epatch "${FILESDIR}"/${P}-interix.patch \
-		"${FILESDIR}"/${P}-powerpc64-darwin.patch \
-		"${FILESDIR}"/${P}-irix.patch \
-		"${FILESDIR}"/${P}-arm-oabi.patch \
-		"${FILESDIR}"/${P}-define-generic-symbols-carefully.patch
+pkg_setup() {
+	# Detect and document broken installation of sys-devel/gcc in the build.log wrt #354903
+	if ! has_version dev-libs/libffi; then
+		local base="${T}/conftest"
+		echo 'int main() { }' > "${base}.c"
+		$(tc-getCC) -o "${base}" "${base}.c" -lffi >&/dev/null && \
+			ewarn "Found a copy of second libffi in your system. Uninstall it before continuing."
+	fi
+}
 
+src_prepare() {
 	elibtoolize
 }
 
-src_compile() {
+src_configure() {
 	econf \
 		--disable-dependency-tracking \
 		$(use_enable static-libs static) \
 		$(use_enable debug)
-	emake || die
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die
 	dodoc ChangeLog* README
-	find "${D}" -type f -name '*.la' -exec rm -f '{}' +
+	find "${D}" -name '*.la' -exec rm -f {} +
 }
