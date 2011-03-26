@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen/Attic/xen-4.0.0.ebuild,v 1.1 2010/05/03 19:47:29 alexxy Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen/Attic/xen-4.1.0.ebuild,v 1.1 2011/03/26 00:34:06 alexxy Exp $
+
+EAPI="3"
 
 inherit mount-boot flag-o-matic toolchain-funcs
 
@@ -47,9 +49,7 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	# if the user *really* wants to use their own custom-cflags, let them
 	if use custom-cflags; then
 		einfo "User wants their own CFLAGS - removing defaults"
@@ -64,8 +64,7 @@ src_unpack() {
 	fi
 }
 
-src_compile() {
-	local myopt
+src_configure() {
 	use debug && myopt="${myopt} debug=y"
 	use pae && myopt="${myopt} pae=y"
 
@@ -75,7 +74,9 @@ src_compile() {
 	else
 		unset CFLAGS
 	fi
+}
 
+src_compile() {
 	# Send raw LDFLAGS so that --as-needed works
 	emake CC="$(tc-getCC)" LDFLAGS="$(raw-ldflags)" -C xen ${myopt} || die "compile failed"
 }
