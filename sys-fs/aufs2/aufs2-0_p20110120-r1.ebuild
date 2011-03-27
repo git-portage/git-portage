@@ -1,13 +1,13 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/aufs2/Attic/aufs2-0_p20110120-r1.ebuild,v 1.1 2011/03/06 08:33:14 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/aufs2/Attic/aufs2-0_p20110120-r1.ebuild,v 1.2 2011/03/27 13:09:40 jlec Exp $
 
 EAPI="4"
 
 inherit linux-mod multilib toolchain-funcs
 
 DESCRIPTION="An entirely re-designed and re-implemented Unionfs"
-HOMEPAGE="http://aufs.sourceforge.net"
+HOMEPAGE="http://aufs.sourceforge.net/"
 SRC_URI="http://dev.gentoo.org/~jlec/distfiles/${P}.tar.bz2"
 
 LICENSE="GPL-2"
@@ -98,19 +98,19 @@ src_prepare() {
 src_compile() {
 	local ARCH=x86
 
-	emake CC=$(tc-getCC) CONFIG_AUFS_FS=m KDIR=${KV_DIR} || die
+	emake CC=$(tc-getCC) CONFIG_AUFS_FS=m KDIR=${KV_DIR}
 
 	cd "${WORKDIR}"/${PN}-util
-	emake CC=$(tc-getCC) AR=$(tc-getAR) KDIR=${KV_DIR} C_INCLUDE_PATH="${S}"/include || die
+	emake CC=$(tc-getCC) AR=$(tc-getAR) KDIR=${KV_DIR} C_INCLUDE_PATH="${S}"/include
 }
 
 src_install() {
 	linux-mod_src_install
-	dodoc README || die
+	dodoc README
 	docinto design
-	dodoc design/*.txt || die
+	dodoc design/*.txt
 	cd "${WORKDIR}"/${PN}-util
-	emake DESTDIR="${D}" KDIR=${KV_DIR} install || die
+	emake DESTDIR="${D}" KDIR=${KV_DIR} install
 	docinto
-	newdoc README README-utils || die
+	newdoc README README-utils
 }
