@@ -1,13 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/libav/Attic/libav-0.6.9999.ebuild,v 1.3 2011/03/27 14:11:07 lu_zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/libav/Attic/libav-0.6_p20110327.ebuild,v 1.1 2011/03/27 14:11:07 lu_zero Exp $
 
 EAPI=4
 
 if [[ ${PV} == *9999 ]] ; then
 	SCM="git"
 	EGIT_REPO_URI="git://git.libav.org/libav.git"
-	EGIT_BRANCH="release/0.6"
 fi
 
 inherit eutils flag-o-matic multilib toolchain-funcs ${SCM}
