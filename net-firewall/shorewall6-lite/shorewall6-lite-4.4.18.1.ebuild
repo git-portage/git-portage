@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall6-lite/Attic/shorewall6-lite-4.4.15.3.ebuild,v 1.1 2011/01/11 20:08:12 constanze Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall6-lite/Attic/shorewall6-lite-4.4.18.1.ebuild,v 1.1 2011/03/27 11:02:12 constanze Exp $
 
 inherit versionator linux-info
 

@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall6/Attic/shorewall6-4.2.11-r1.ebuild,v 1.8 2011/01/04 14:26:53 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall6/Attic/shorewall6-4.4.18.1.ebuild,v 1.1 2011/03/27 11:01:48 constanze Exp $
 
 inherit versionator linux-info
 
@@ -18,15 +18,14 @@ SRC_URI="http://www1.shorewall.net/pub/${MY_PN}/${MY_PV_TREE}/${MY_P}/${P}${MY_P
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 hppa ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="doc"
 
 DEPEND=">=net-firewall/iptables-1.4.0
 	sys-apps/iproute2
-	>=net-firewall/shorewall-perl-${MY_PV_BASE}
-	dev-perl/Socket6
-	!<net-firewall/shorewall-4.0"
+	>=net-firewall/shorewall-${MY_PV_BASE}
+	dev-perl/Socket6"
 RDEPEND="${DEPEND}"
 
 pkg_setup() {
@@ -36,7 +35,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	einfo "Nothing to compile."
+	:;
 }
 
 src_install() {
@@ -45,7 +44,7 @@ src_install() {
 	cd "${WORKDIR}/${P}${MY_P_BETA}"
 	PREFIX="${D}" ./install.sh || die "install.sh failed"
 
-	newinitd "${FILESDIR}"/${PN}.initd2 ${PN} || die "doinitd failed"
+	newinitd "${FILESDIR}"/${PN}.initd ${PN} || die "doinitd failed"
 
 	dodoc releasenotes.txt
 	if use doc; then
@@ -54,21 +53,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	ewarn "You should *not* use the detect option on interfaces"
-	ewarn "as shorewall will now start *before* net."
-	einfo
-	einfo "Documentation is available at http://www.shorewall.net"
-	einfo "There are man pages for ${PN}(8)."
-	einfo "For additional information, see"
-	einfo "http://www.shorewall.net/IPV6Support.html"
-	use doc && einfo "Sample configuration files are in /usr/share/doc/${PF}."
-	einfo
 	elog "If you wish to include DNS names in your IPv6 configuration files,"
-	elog "you must have Perl 5.10 and must emerge dev-perl/Socket6."
-	einfo
-	einfo "Please read the included release notes for more information."
-	einfo
-	einfo "Known problems:"
-	einfo "http://www.shorewall.net/pub/${MY_PN}/${MY_PV_TREE}/${MY_P}/known_problems.txt"
-	einfo
+	elog "you must have Perl 5.10+ and must emerge dev-perl/Socket6."
 }
