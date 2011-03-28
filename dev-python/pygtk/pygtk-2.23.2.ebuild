@@ -1,10 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pygtk/Attic/pygtk-2.17.0.ebuild,v 1.12 2011/03/16 10:14:30 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pygtk/Attic/pygtk-2.23.2.ebuild,v 1.1 2011/03/28 22:16:32 eva Exp $
 
-EAPI="2"
+EAPI="3"
+GCONF_DEBUG="no"
 PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
+# dev-python/pycairo does not support Python 2.4 / 2.5.
 RESTRICT_PYTHON_ABIS="2.4 2.5 3.* *-jython"
 PYTHON_EXPORT_PHASE_FUNCTIONS="1"
 
@@ -15,18 +17,18 @@ HOMEPAGE="http://www.pygtk.org/"
 
 LICENSE="LGPL-2.1"
 SLOT="2"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
 IUSE="doc examples"
 
 RDEPEND=">=dev-libs/glib-2.8:2
 	>=x11-libs/pango-1.16
 	>=dev-libs/atk-1.12
-	>=x11-libs/gtk+-2.18:2
+	>=x11-libs/gtk+-2.24:2
 	>=gnome-base/libglade-2.5:2.0
 	>=dev-python/pycairo-1.0.2
-	>=dev-python/pygobject-2.16.1:2
-	dev-python/numpy"
-
+	>=dev-python/pygobject-2.21.3:2
+	dev-python/numpy
+"
 DEPEND="${RDEPEND}
 	doc? (
 		dev-libs/libxslt
@@ -65,12 +67,12 @@ src_test() {
 src_install() {
 	python_src_install
 	python_clean_installation_image
-	dodoc AUTHORS ChangeLog INSTALL MAPPING NEWS README THREADS TODO
+	dodoc AUTHORS ChangeLog INSTALL MAPPING NEWS README THREADS TODO || die
 
 	if use examples; then
 		rm examples/Makefile*
 		insinto /usr/share/doc/${PF}
-		doins -r examples
+		doins -r examples || die
 	fi
 }
 
