@@ -1,21 +1,22 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtinst/Attic/virtinst-9999.ebuild,v 1.4 2011/02/02 21:58:31 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtinst/Attic/virtinst-9999.ebuild,v 1.5 2011/03/28 08:39:41 flameeyes Exp $
 
 #BACKPORTS=1
 
 EAPI=3
 
+
 if [[ ${PV} = *9999* ]]; then
-	EHG_REPO_URI="http://hg.fedorahosted.org/hg/python-virtinst"
-	HG_ECLASS="mercurial autotools"
+	EGIT_REPO_URI="http://git.fedorahosted.org/git/python-virtinst.git"
+	GIT_ECLASS="git"
 fi
 
 PYTHON_DEPEND="2"
 RESTRICT_PYTHON_ABIS="3.*"
 SUPPORT_PYTHON_ABIS="1"
 
-inherit distutils eutils ${HG_ECLASS}
+inherit distutils eutils ${GIT_ECLASS}
 
 if [[ ${PV} = *9999* ]]; then
 	SRC_URI=""
