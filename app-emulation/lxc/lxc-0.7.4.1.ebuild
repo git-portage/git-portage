@@ -1,14 +1,17 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/lxc/Attic/lxc-0.7.2-r1.ebuild,v 1.1 2010/08/01 21:13:45 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/lxc/Attic/lxc-0.7.4.1.ebuild,v 1.1 2011/03/30 12:09:06 flameeyes Exp $
 
 EAPI="2"
+
+MY_P="${P/_/-}"
 
 inherit eutils linux-info versionator base
 
 DESCRIPTION="LinuX Containers userspace utilities"
 HOMEPAGE="http://lxc.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+SRC_URI="http://lxc.sourceforge.net/download/lxc/${MY_P}.tar.gz"
+S="${WORKDIR}/${MY_P}"
 
 KEYWORDS="~amd64 ~x86"
 
@@ -50,7 +53,7 @@ ERROR_CGROUP_FREEZER="CONFIG_CGROUP_FREEZER:	needed to freeze containers"
 ERROR_UTS_NS="CONFIG_UTS_NS:	needed to unshare hostnames and uname info"
 ERROR_NET_NS="CONFIG_NET_NS:	needed for unshared network"
 
-ERROR_VETH="CONFIG_VETH:	needed for internal (inter-container) networking"
+ERROR_VETH="CONFIG_VETH:	needed for internal (host-to-container) networking"
 ERROR_MACVLAN="CONFIG_MACVLAN:	needed for internal (inter-container) networking"
 
 src_configure() {
@@ -59,6 +62,8 @@ src_configure() {
 		--bindir=/usr/sbin \
 		--docdir=/usr/share/doc/${PF} \
 		--with-config-path=/etc/lxc	\
+		--with-rootfs-path=/usr/lib/lxc/rootfs \
+		--with-linuxdir="${KERNEL_DIR}" \
 		$(use_enable doc) \
 		$(use_enable examples) \
 		|| die "configure failed"
@@ -82,7 +87,7 @@ src_install() {
 		"${D}"/usr/share/man/man1/lxc-ls.1 \
 		|| die "unable to remove extraenous content"
 
-	keepdir /etc/lxc
+	keepdir /etc/lxc /usr/lib/lxc/rootfs
 
 	find "${D}" -name '*.la' -delete
 
@@ -103,6 +108,12 @@ pkg_postinst() {
 		elog "http://blog.flameeyes.eu/tag/lxc" # remove once proper doc is available
 		elog ""
 	fi
-	ewarn "To use the lxc-debian and lxc-fedora commands, you need respectively"
-	ewarn "dev-util/debootstrap and sys-apps/yum."
+	ewarn "With version 0.7.4, the mountpoint syntax came back to the one used by 0.7.2"
+	ewarn "and previous versions. This means you'll have to use syntax like the following"
+	ewarn ""
+	ewarn "    lxc.rootfs = /container"
+	ewarn "    lxc.mount.entry = /usr/portage /container/usr/portage none bind 0 0"
+	ewarn ""
+	ewarn "To use the Fedora, Debian and (various) Ubuntu auto-configuration scripts, you"
+	ewarn "will need sys-apps/yum or dev-util/debootstrap."
 }
