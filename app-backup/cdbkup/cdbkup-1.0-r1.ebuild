@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbkup/cdbkup-1.0-r1.ebuild,v 1.3 2008/10/04 15:44:18 gentoofan23 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbkup/cdbkup-1.0-r1.ebuild,v 1.4 2011/03/31 15:23:09 ssuominen Exp $
 
 inherit eutils
 
@@ -19,18 +19,16 @@ RDEPEND="${DEPEND}
 	!app-misc/cdcat"
 
 src_unpack() {
-	unpack ${A} ; cd "${S}"
-
-	sed -i \
-		-e "s:doc/cdbkup:doc/${P}:" Makefile.in \
-			|| die "sed Makefile.in failed"
+	unpack ${A}
+	cd "${S}"
+	sed -i -e "s:doc/cdbkup:doc/${P}:" Makefile.in || die
 }
 
 src_compile() {
-	econf --with-snardir=/etc/cdbkup --with-dumpgrp=users || die "econf failed"
+	econf --with-snardir=/etc/cdbkup --with-dumpgrp=users
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die
 	dodoc COMPLIANCE ChangeLog README TODO
 }

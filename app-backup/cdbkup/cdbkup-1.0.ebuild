@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbkup/cdbkup-1.0.ebuild,v 1.4 2009/09/23 15:12:21 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbkup/cdbkup-1.0.ebuild,v 1.5 2011/03/31 15:23:09 ssuominen Exp $
 
 inherit eutils
 
@@ -14,27 +14,23 @@ KEYWORDS="x86 ppc"
 IUSE=""
 
 RDEPEND="virtual/cdrtools
-	>=sys-apps/eject-2.0.10
+	virtual/eject
 	!app-misc/cdcat"
 DEPEND="${RDEPEND}
 	>=sys-apps/sed-4"
 
 src_unpack() {
-	unpack ${A} ; cd "${S}"
-
-	sed -i \
-		-e "s:doc/cdbkup:doc/${P}:" Makefile.in \
-			|| die "sed Makefile.in failed"
-
-	#apply the patch
+	unpack ${A}
+	cd "${S}"
+	sed -i -e "s:doc/cdbkup:doc/${P}:" Makefile.in || die
 	epatch "${S}"/linuxtar_13.patch
 }
 
 src_compile() {
-	econf --with-snardir=/etc/cdbkup --with-dumpgrp=users || die "econf failed"
+	econf --with-snardir=/etc/cdbkup --with-dumpgrp=users
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die
 	dodoc COMPLIANCE ChangeLog README TODO
 }
