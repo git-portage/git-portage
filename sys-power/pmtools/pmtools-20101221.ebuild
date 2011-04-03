@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/pmtools/Attic/pmtools-20101124.ebuild,v 1.1 2010/12/07 04:19:02 nerdboy Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/pmtools/Attic/pmtools-20101221.ebuild,v 1.1 2011/04/03 03:58:56 nerdboy Exp $
 
 EAPI=2
 
