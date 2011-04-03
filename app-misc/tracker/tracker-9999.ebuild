@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/Attic/tracker-9999.ebuild,v 1.38 2011/03/27 08:11:39 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/Attic/tracker-9999.ebuild,v 1.39 2011/04/03 21:13:37 eva Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
@@ -48,7 +48,7 @@ RDEPEND="
 		>=gnome-extra/libgsf-1.13 )
 	upnp? ( >=media-libs/gupnp-dlna-0.5 )
 	!upnp? (
-		gstreamer? ( >=media-libs/gstreamer-0.10.12 )
+		gstreamer? ( >=media-libs/gstreamer-0.10.31:0.10 )
 		!gstreamer? ( !xine? ( || ( media-video/totem media-video/mplayer ) ) )
 	)
 	gtk? (
@@ -137,8 +137,8 @@ pkg_setup() {
 		G2CONF="${G2CONF} VALAC=$(type -P valac-0.12)"
 	fi
 
-	if use mp3; then
-		G2CONF="${G2CONF} $(use_enable gtk gdkpixbuf) $(use_enable qt4 qt)"
+	if use mp3 && (use gtk || use qt4); then
+		G2CONF="${G2CONF} $(use_enable !qt4 gdkpixbuf) $(use_enable qt4 qt)"
 	fi
 
 	# unicode-support: libunistring, libicu or glib ?

@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/Attic/tracker-0.10.5.ebuild,v 1.3 2011/04/03 21:13:37 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/Attic/tracker-0.10.6.ebuild,v 1.1 2011/04/03 21:13:37 eva Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
@@ -50,7 +50,7 @@ RDEPEND="
 		>=gnome-extra/libgsf-1.13 )
 	upnp? ( >=media-libs/gupnp-dlna-0.5 )
 	!upnp? (
-		gstreamer? ( >=media-libs/gstreamer-0.10.12 )
+		gstreamer? ( >=media-libs/gstreamer-0.10.31:0.10 )
 		!gstreamer? ( !xine? ( || ( media-video/totem media-video/mplayer ) ) )
 	)
 	gtk? (
