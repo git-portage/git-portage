@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgcrypt/Attic/libgcrypt-1.5.0_beta1.ebuild,v 1.1 2011/02/23 16:09:48 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgcrypt/Attic/libgcrypt-1.5.0_beta1-r1.ebuild,v 1.1 2011/04/06 18:37:54 c1pher Exp $
 
 EAPI="3"
 
@@ -27,6 +27,7 @@ src_configure() {
 		--disable-dependency-tracking \
 		--with-pic \
 		--enable-noexecstack \
+		--disable-O-flag-munging \
 		$(use_enable static-libs static)
 }
 
