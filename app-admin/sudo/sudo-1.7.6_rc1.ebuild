@@ -1,6 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/sudo/Attic/sudo-1.7.4_p6.ebuild,v 1.1 2011/01/19 14:56:41 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/sudo/Attic/sudo-1.7.6_rc1.ebuild,v 1.1 2011/04/06 04:14:40 flameeyes Exp $
+
+EAPI=4
 
 inherit eutils pam
 
@@ -47,12 +49,7 @@ DEPEND="${DEPEND}
 
 S=${WORKDIR}/${MY_P}
 
-pkg_setup() {
-	if use pam && use skey; then
-		ewarn "You cannot enable both S/KEY and PAM at the same time, PAM will"
-		ewarn "be used then."
-	fi
-}
+REQUIRED_USE="^^ ( pam skey )"
 
 src_unpack() {
 	unpack ${A}; cd "${S}"
@@ -60,53 +57,11 @@ src_unpack() {
 	# compatability fix.
 	epatch "${FILESDIR}"/${PN}-skeychallengeargs.diff
 
-	# additional variables to disallow, should user disable env_reset.
-
-	# NOTE: this is not a supported mode of operation, these variables
-	#       are added to the blacklist as a convenience to administrators
-	#       who fail to heed the warnings of allowing untrusted users
-	#       to access sudo.
-	#
-	#       there is *no possible way* to foresee all attack vectors in
-	#       all possible applications that could potentially be used via
-	#       sudo, these settings will just delay the inevitable.
-	#
-	#       that said, I will accept suggestions for variables that can
-	#       be misused in _common_ interpreters or libraries, such as
-	#       perl, bash, python, ruby, etc., in the hope of dissuading
-	#       a casual attacker.
-
-	# XXX: perl should be using suid_perl.
-	# XXX: users can remove/add more via env_delete and env_check.
-	# XXX: <?> = probably safe enough for most circumstances.
-
-	einfo "Blacklisting common variables (env_delete)..."
-		sudo_bad_var() {
-			local target='env.c' marker='\*initial_badenv_table\[\]'
-
-			ebegin "	$1"
-			sed -i 's#\(^.*'${marker}'.*$\)#\1\n\t"'${1}'",#' "${S}"/${target}
-			eend $?
-		}
-
-		sudo_bad_var 'PERLIO_DEBUG'   # perl, write debug to file.
-		sudo_bad_var 'FPATH'          # ksh, search path for functions.
-		sudo_bad_var 'NULLCMD'        # zsh, command on null-redir. <?>
-		sudo_bad_var 'READNULLCMD'    # zsh, command on null-redir. <?>
-		sudo_bad_var 'GLOBIGNORE'     # bash, glob paterns to ignore. <?>
-		sudo_bad_var 'PYTHONHOME'     # python, module search path.
-		sudo_bad_var 'PYTHONPATH'     # python, search path.
-		sudo_bad_var 'PYTHONINSPECT'  # python, allow inspection.
-		sudo_bad_var 'RUBYLIB'        # ruby, lib load path.
-		sudo_bad_var 'RUBYOPT'        # ruby, cl options.
-		sudo_bad_var 'ZDOTDIR'        # zsh, path to search for dotfiles.
-	einfo "...done."
-
 	# prevent binaries from being stripped.
 	sed -i 's/\($(INSTALL).*\) -s \(.*[(sudo|visudo)]\)/\1 \2/g' Makefile.in
 }
 
-src_compile() {
+src_configure() {
 	local line ROOTPATH
 
 	# FIXME: secure_path is a compile time setting. using ROOTPATH
@@ -178,8 +133,6 @@ src_compile() {
 		--with-timedir=/var/db/sudo \
 		--docdir=/usr/share/doc/${PF} \
 		${myconf}
-
-	emake || die
 }
 
 src_install() {
