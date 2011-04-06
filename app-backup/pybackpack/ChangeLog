@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/pybackpack
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/pybackpack/ChangeLog,v 1.1 2006/06/02 08:04:16 robbat2 Exp $
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/pybackpack/ChangeLog,v 1.2 2011/04/06 18:07:04 arfrever Exp $
+
+  06 Apr 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  pybackpack-0.4.2.ebuild:
+  Use Python 2 (bug #308313).
 
 *pybackpack-0.4.2 (02 Jun 2006)
 
