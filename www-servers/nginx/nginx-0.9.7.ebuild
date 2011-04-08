@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/nginx/Attic/nginx-0.8.52.ebuild,v 1.1 2010/09/30 12:43:03 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/nginx/Attic/nginx-0.9.7.ebuild,v 1.1 2011/04/08 08:32:19 hollow Exp $
 
 EAPI="2"
 
@@ -21,30 +21,30 @@ HTTP_HEADERS_MORE_MODULE_PV="0.13"
 HTTP_HEADERS_MORE_MODULE_P="ngx-http-headers-more-${HTTP_HEADERS_MORE_MODULE_PV}"
 HTTP_HEADERS_MORE_MODULE_SHA1="9508330"
 
-# http_passenger (http://www.modrails.com/, MIT license)
-# TODO: currently builds some stuff in src_configure
-PASSENGER_PV="2.2.15"
-USE_RUBY="ruby18"
-RUBY_OPTIONAL="yes"
-
 # http_push (http://pushmodule.slact.net/, MIT license)
-HTTP_PUSH_MODULE_P="nginx_http_push_module-0.692"
+HTTP_PUSH_MODULE_PV="0.692"
+HTTP_PUSH_MODULE_P="nginx_http_push_module-${HTTP_PUSH_MODULE_PV}"
 
 # http_cache_purge (http://labs.frickle.com/nginx_ngx_cache_purge/, BSD-2 license)
-HTTP_CACHE_PURGE_MODULE_P="ngx_cache_purge-1.2"
+HTTP_CACHE_PURGE_MODULE_PV="1.2"
+HTTP_CACHE_PURGE_MODULE_P="ngx_cache_purge-${HTTP_CACHE_PURGE_MODULE_PV}"
 
-inherit eutils ssl-cert toolchain-funcs perl-module ruby-ng flag-o-matic
+# HTTP Upload module from Valery Kholodkov
+# (http://www.grid.net.ru/nginx/upload.en.html, BSD license)
+HTTP_UPLOAD_MODULE_PV="2.2.0"
+HTTP_UPLOAD_MODULE_P="nginx_upload_module-${HTTP_UPLOAD_MODULE_PV}"
+
+inherit eutils ssl-cert toolchain-funcs perl-module flag-o-matic
 
 DESCRIPTION="Robust, small and high performance http and reverse proxy server"
 HOMEPAGE="http://nginx.net/
-	http://www.modrails.com/
 	http://pushmodule.slact.net/
 	http://labs.frickle.com/nginx_ngx_cache_purge/"
 SRC_URI="http://sysoev.ru/nginx/${P}.tar.gz
 	nginx_modules_http_headers_more? ( http://github.com/agentzh/headers-more-nginx-module/tarball/v${HTTP_HEADERS_MORE_MODULE_PV} -> ${HTTP_HEADERS_MORE_MODULE_P}.tar.gz )
-	nginx_modules_http_passenger? ( mirror://rubyforge/passenger/passenger-${PASSENGER_PV}.tar.gz )
 	nginx_modules_http_push? ( http://pushmodule.slact.net/downloads/${HTTP_PUSH_MODULE_P}.tar.gz )
-	nginx_modules_http_cache_purge? ( http://labs.frickle.com/files/${HTTP_CACHE_PURGE_MODULE_P}.tar.gz )"
+	nginx_modules_http_cache_purge? ( http://labs.frickle.com/files/${HTTP_CACHE_PURGE_MODULE_P}.tar.gz )
+	nginx_modules_http_upload? ( http://www.grid.net.ru/nginx/download/${HTTP_UPLOAD_MODULE_P}.tar.gz )"
 
 LICENSE="BSD BSD-2 GPL-2 MIT"
 SLOT="0"
@@ -56,7 +56,8 @@ split_clients upstream_ip_hash userid uwsgi"
 NGINX_MODULES_OPT="addition dav degradation flv geoip gzip_static image_filter
 perl random_index realip secure_link stub_status sub xslt"
 NGINX_MODULES_MAIL="imap pop3 smtp"
-NGINX_MODULES_3RD="http_cache_purge http_headers_more http_passenger http_push"
+NGINX_MODULES_3RD="http_cache_purge http_headers_more http_passenger http_push
+http_upload"
 
 IUSE="aio debug +http +http-cache ipv6 libatomic +pcre ssl vim-syntax"
 
@@ -87,14 +88,7 @@ CDEPEND="
 	nginx_modules_http_perl? ( >=dev-lang/perl-5.8 )
 	nginx_modules_http_rewrite? ( >=dev-libs/libpcre-4.2 )
 	nginx_modules_http_secure_link? ( userland_GNU? ( dev-libs/openssl ) )
-	nginx_modules_http_xslt? ( dev-libs/libxml2 dev-libs/libxslt )
-	nginx_modules_http_passenger? (
-		$(ruby_implementation_depend ruby18)
-		>=dev-ruby/rubygems-0.9.0
-		>=dev-ruby/rake-0.8.1
-		>=dev-ruby/fastthread-1.0.1
-		>=dev-ruby/rack-1.0.0
-	)"
+	nginx_modules_http_xslt? ( dev-libs/libxml2 dev-libs/libxslt )"
 RDEPEND="${CDEPEND}"
 DEPEND="${CDEPEND}
 	arm? ( dev-libs/libatomic_ops )
@@ -102,6 +96,24 @@ DEPEND="${CDEPEND}
 PDEPEND="vim-syntax? ( app-vim/nginx-syntax )"
 
 pkg_setup() {
+	if use nginx_modules_http_passenger; then
+		einfo
+		einfo "Passenger support has been removed from the nginx ebuild to"
+		einfo "get rid of file collisions, its broken build system and"
+		einfo "incompatibilities between passenger 2 and 3."
+		einfo
+		einfo "Please switch to passenger-3 standalone or use the"
+		einfo "unicorn gem which provides a sane nginx-like architecture"
+		einfo "out of the box."
+		einfo
+		einfo "For more information on sane ruby deployments with"
+		einfo "passenger-3/unicorn go to:"
+		einfo
+		einfo "https://rvm.beginrescueend.com"
+		einfo
+		die "nginx_modules_http_passenger still in IUSE"
+	fi
+
 	ebegin "Creating nginx user and group"
 	enewgroup ${PN}
 	enewuser ${PN} -1 -1 -1 ${PN}
@@ -126,29 +138,14 @@ pkg_setup() {
 		ewarn "_before_ reporting bugs."
 	fi
 
-	if use nginx_modules_http_passenger; then
-		ruby-ng_pkg_setup
-		use debug && append-flags -DPASSENGER_DEBUG
-	fi
-
 	if use !http; then
 		ewarn "To actually disable all http-functionality you also have to disable"
 		ewarn "all nginx http modules."
 	fi
 }
 
-src_unpack() {
-	# prevent ruby-ng.eclass from messing with src_unpack
-	default
-}
-
 src_prepare() {
 	sed -i 's/ make/ \\$(MAKE)/' "${S}"/auto/lib/perl/make
-
-	if use nginx_modules_http_passenger; then
-		cd "${WORKDIR}"/passenger-${PASSENGER_PV}
-		epatch "${FILESDIR}"/passenger-CFLAGS.patch
-	fi
 }
 
 src_configure() {
@@ -186,11 +183,6 @@ src_configure() {
 		myconf="${myconf} --add-module=${WORKDIR}/agentzh-headers-more-nginx-module-${HTTP_HEADERS_MORE_MODULE_SHA1}"
 	fi
 
-	if use nginx_modules_http_passenger; then
-		http_enabled=1
-		myconf="${myconf} --add-module=${WORKDIR}/passenger-${PASSENGER_PV}/ext/nginx"
-	fi
-
 	if use nginx_modules_http_push; then
 		http_enabled=1
 		myconf="${myconf} --add-module=${WORKDIR}/${HTTP_PUSH_MODULE_P}"
@@ -199,6 +191,11 @@ src_configure() {
 	if use nginx_modules_http_cache_purge; then
 		http_enabled=1
 		myconf="${myconf} --add-module=${WORKDIR}/${HTTP_CACHE_PURGE_MODULE_P}"
+	fi
+
+	if use nginx_modules_http_upload; then
+		http_enabled=1
+		myconf="${myconf} --add-module=${WORKDIR}/${HTTP_UPLOAD_MODULE_P}"
 	fi
 
 	if use http || use http-cache; then
@@ -231,7 +228,7 @@ src_configure() {
 		myconf="${myconf} --add-module=${mod}"
 	done
 
-	# http://bugs.gentoo.org/show_bug.cgi?id=286772
+	# https://bugs.gentoo.org/286772
 	export LANG=C LC_ALL=C
 	tc-export CC
 
@@ -255,7 +252,7 @@ src_configure() {
 }
 
 src_compile() {
-	# http://bugs.gentoo.org/show_bug.cgi?id=286772
+	# https://bugs.gentoo.org/286772
 	export LANG=C LC_ALL=C
 	emake LINK="${CC} ${LDFLAGS}" OTHERLDFLAGS="${LDFLAGS}" || die "emake failed"
 }
@@ -273,6 +270,7 @@ src_install() {
 	insinto /etc/${PN}
 	doins conf/*
 
+	doman man/nginx.8
 	dodoc CHANGES* README
 
 	# logrotate
@@ -295,26 +293,9 @@ src_install() {
 		dodoc "${WORKDIR}"/${HTTP_CACHE_PURGE_MODULE_P}/{CHANGES,README}
 	fi
 
-	if use nginx_modules_http_passenger; then
-		# passengers Rakefile is so horribly broken that we have to do it
-		# manually
-		cd "${WORKDIR}"/passenger-${PASSENGER_PV}
-
-		export RUBY="ruby18"
-
-		insinto $(${RUBY} -rrbconfig -e 'print Config::CONFIG["archdir"]')/phusion_passenger
-		insopts -m 0755
-		doins ext/phusion_passenger/*.so
-		doruby -r lib/phusion_passenger
-
-		exeinto /usr/bin
-		doexe bin/passenger-memory-stats bin/passenger-status
-
-		exeinto /usr/libexec/passenger/bin
-		doexe bin/passenger-spawn-server
-
-		exeinto /usr/libexec/passenger/ext/nginx
-		doexe ext/nginx/HelperServer
+	if use nginx_modules_http_upload; then
+		docinto ${HTTP_UPLOAD_MODULE_P}
+		dodoc "${WORKDIR}"/${HTTP_UPLOAD_MODULE_P}/{Changelog,README}
 	fi
 }
 
