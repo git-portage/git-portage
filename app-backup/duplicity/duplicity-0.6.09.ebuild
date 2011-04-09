@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.6.09.ebuild,v 1.1 2010/08/07 16:05:50 vanquirius Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.6.09.ebuild,v 1.2 2011/04/09 16:22:09 jer Exp $
 
 EAPI="3"
 
@@ -17,11 +17,11 @@ IUSE="s3"
 
 DEPEND=">=dev-lang/python-2.3
 	>=net-libs/librsync-0.9.6
-	>=net-ftp/ncftp-3.1.9
 	app-crypt/gnupg"
 RDEPEND="${DEPEND}
 	>=dev-python/py-gnupg-0.3.2
 	>=dev-python/pexpect-2.1
+	>=net-ftp/ncftp-3.1.9
 	s3? ( dev-python/boto )"
 
 src_install() {

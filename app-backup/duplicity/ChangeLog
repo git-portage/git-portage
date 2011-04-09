@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/duplicity
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.49 2011/01/04 22:01:07 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.50 2011/04/09 16:22:09 jer Exp $
+
+  09 Apr 2011; Jeroen Roovers <jer@gentoo.org> duplicity-0.6.09.ebuild,
+  duplicity-0.6.11.ebuild:
+  Move ncftp to RDEPEND.
 
   04 Jan 2011; Michael Weber <xmw@gentoo.org> duplicity-0.6.11.ebuild:
   added ~sparc keyword (bug 279975)
