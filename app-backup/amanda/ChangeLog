@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/amanda
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.80 2011/03/18 17:51:38 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.81 2011/04/11 13:31:36 phajdan.jr Exp $
+
+  11 Apr 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> amanda-3.2.1.ebuild:
+  x86 stable wrt bug #359333
 
   18 Mar 2011; Christian Ruppert <idl0r@gentoo.org>
   -files/amanda-inetd.amanda.sample-2.5.1_p3-r1,
