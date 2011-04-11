@@ -1,10 +1,9 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/rb_libtorrent/Attic/rb_libtorrent-0.15.1.ebuild,v 1.7 2011/01/13 20:51:41 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/rb_libtorrent/Attic/rb_libtorrent-0.15.6.ebuild,v 1.1 2011/04/11 09:08:39 hwoarang Exp $
 
 EAPI="2"
-WANT_AUTOMAKE="1.11.1"
-inherit autotools eutils versionator
+inherit eutils versionator
 
 MY_P=${P/rb_/}
 MY_P=${MY_P/torrent/torrent-rasterbar}
@@ -16,21 +15,20 @@ SRC_URI="http://libtorrent.googlecode.com/files/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 ~arm ppc ppc64 ~sparc x86 ~x86-fbsd"
-IUSE="debug doc examples python"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+IUSE="debug doc examples python ssl"
 RESTRICT="test"
 
 DEPEND=">=dev-libs/boost-1.36
-	python? ( >=dev-libs/boost-1.36[python] dev-lang/python:2.6[threads] )
+	python? ( >=dev-libs/boost-1.36[python]
+		|| ( dev-lang/python:2.6[threads]
+		dev-lang/python:2.7[threads] ) )
 	>=sys-devel/libtool-2.2
 	sys-libs/zlib
-	examples? ( !net-p2p/mldonkey )"  #292998
-RDEPEND="${DEPEND}"
+	examples? ( !net-p2p/mldonkey )
+	ssl? ( dev-libs/openssl )"
 
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-ax_pthread_asneeded.patch
-	eautoreconf
-}
+RDEPEND="${DEPEND}"
 
 src_configure() {
 	# use multi-threading versions of boost libs
@@ -38,7 +36,6 @@ src_configure() {
 		--with-boost-filesystem=boost_filesystem-mt \
 		--with-boost-thread=boost_thread-mt \
 		--with-boost-python=boost_python-mt"
-
 	# detect boost version and location, bug 295474
 	BOOST_PKG="$(best_version ">=dev-libs/boost-1.34.1")"
 	BOOST_VER="$(get_version_component_range 1-2 "${BOOST_PKG/*boost-/}")"
@@ -47,12 +44,13 @@ src_configure() {
 	BOOST_LIB="/usr/$(get_libdir)/boost-${BOOST_VER}"
 
 	local LOGGING
-	use debug && LOGGING="--with-logging=verbose"
+	use debug && LOGGING="--enable-logging=verbose"
 
 	econf $(use_enable debug) \
 		$(use_enable test tests) \
 		$(use_enable examples) \
 		$(use_enable python python-binding) \
+		$(use_enable ssl encryption) \
 		--with-zlib=system \
 		${LOGGING} \
 		--with-boost=${BOOST_INC} \
