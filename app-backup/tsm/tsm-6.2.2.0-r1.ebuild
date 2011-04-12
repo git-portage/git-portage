@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.2.2.0.ebuild,v 1.2 2010/12/20 17:25:25 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.2.2.0-r1.ebuild,v 1.1 2011/04/12 18:38:52 dertobi123 Exp $
 
 EAPI=3
 
@@ -107,9 +107,10 @@ src_install() {
 	done
 
 	# Mimic TIVsm-API and -API64 postinstall script
-	for i in libgpfs.so libdmapi.so libha_gs_r.so libct_cu.so; do
+	for i in libgpfs.so libdmapi.so; do
 		dosym ../..$CLIENTDIR/api/bin/${i} /usr/lib
 	done
+	dosym ../..$CLIENTDIR/ba/bin/libzephyr.so /usr/lib/libTSMNetAppzephyr.so
 
 	# Mimic TIVsm-BA postinstall script
 	for i in /etc/adsm{,/SpaceMan,/config,/status}; do

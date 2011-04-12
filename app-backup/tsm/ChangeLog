@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/tsm
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/ChangeLog,v 1.6 2010/12/20 17:25:25 dertobi123 Exp $
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/ChangeLog,v 1.7 2011/04/12 18:38:52 dertobi123 Exp $
+
+*tsm-6.2.2.0-r1 (12 Apr 2011)
+
+  12 Apr 2011; Tobias Scherbaum <dertobi123@gentoo.org> -tsm-6.2.2.0.ebuild,
+  +tsm-6.2.2.0-r1.ebuild:
+  link libzephyir.so, remove creation of dead links. Thanks to Horst Prote
+  (#323175)
 
   20 Dec 2010; Tobias Scherbaum <dertobi123@gentoo.org> tsm-6.2.2.0.ebuild:
   Remove now useless depend on rpm2targz, fully uses rpm eclass (#345223)
