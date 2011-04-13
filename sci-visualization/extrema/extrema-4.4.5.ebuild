@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/extrema/Attic/extrema-4.4.3.ebuild,v 1.1 2010/02/10 16:50:34 grozin Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/extrema/extrema-4.4.5.ebuild,v 1.1 2011/04/13 12:24:06 xarthisius Exp $
 
 EAPI=2
 WX_GTK_VER="2.8"
@@ -24,6 +24,7 @@ src_prepare() {
 	sed -i \
 		-e 's/$(pkgdatadir)/$(DESTDIR)$(pkgdatadir)/g' \
 		src/Makefile.in || die
+	epatch "${FILESDIR}"/${P}-gcc46.patch
 }
 
 src_configure() {
