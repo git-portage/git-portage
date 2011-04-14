@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/poppler/Attic/poppler-0.16.3.ebuild,v 1.1 2011/02/28 18:54:52 reavertm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/poppler/Attic/poppler-0.14.5-r1.ebuild,v 1.1 2011/04/14 19:13:01 dilfridge Exp $
 
 EAPI="2"
 
@@ -13,8 +13,7 @@ SRC_URI="http://poppler.freedesktop.org/${P}.tar.gz"
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 SLOT="0"
-IUSE="+abiword cairo cjk curl cxx debug doc exceptions +introspection jpeg
-jpeg2k +lcms png qt4 +utils +xpdf-headers"
+IUSE="cairo cjk curl cxx debug doc exceptions jpeg jpeg2k +lcms png qt4 +utils +xpdf-headers"
 
 # No test data provided
 RESTRICT="test"
@@ -23,12 +22,10 @@ COMMON_DEPEND="
 	>=media-libs/fontconfig-2.6.0
 	>=media-libs/freetype-2.3.9
 	sys-libs/zlib
-	abiword? ( dev-libs/libxml2:2 )
 	cairo? (
 		dev-libs/glib:2
-		>=x11-libs/cairo-1.10.0
-		>=x11-libs/gtk+-2.20.1:2[introspection?]
-		introspection? ( >=dev-libs/gobject-introspection-0.9.12 )
+		>=x11-libs/cairo-1.8.4
+		>=x11-libs/gtk+-2.14.0:2
 	)
 	curl? ( net-misc/curl )
 	jpeg? ( virtual/jpeg )
@@ -46,7 +43,6 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}
 	!dev-libs/poppler
 	!dev-libs/poppler-glib
-	!dev-libs/poppler-qt3
 	!dev-libs/poppler-qt4
 	!app-text/poppler-utils
 	cjk? ( >=app-text/poppler-data-0.2.1 )
@@ -62,7 +58,7 @@ src_configure() {
 		-DWITH_Qt3=OFF
 		-DENABLE_SPLASH=ON
 		-DENABLE_ZLIB=ON
-		$(cmake-utils_use_enable abiword)
+		-DENABLE_ABIWORD=OFF
 		$(cmake-utils_use_enable curl LIBCURL)
 		$(cmake-utils_use_enable cxx CPP)
 		$(cmake-utils_use_enable jpeg2k LIBOPENJPEG)
@@ -71,7 +67,6 @@ src_configure() {
 		$(cmake-utils_use_enable xpdf-headers XPDF_HEADERS)
 		$(cmake-utils_use_with cairo)
 		$(cmake-utils_use_with cairo GTK)
-		$(cmake-utils_use_with introspection GObjectIntrospection)
 		$(cmake-utils_use_with jpeg)
 		$(cmake-utils_use_with png)
 		$(cmake-utils_use_with qt4)
