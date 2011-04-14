@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-vim/conque/Attic/conque-1.1.ebuild,v 1.1 2010/06/02 23:38:30 spatz Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-vim/conque/Attic/conque-2.1.ebuild,v 1.1 2011/04/14 18:57:21 radhermit Exp $
 
 EAPI=3
 
@@ -15,6 +15,9 @@ SRC_URI="http://${PN}.googlecode.com/files/${MY_P}.tar.gz"
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+RDEPEND="|| ( app-editors/vim[python] app-editors/gvim[python] )
+	>=dev-lang/python-2.3"
 
 VIM_PLUGIN_HELPFILES="ConqueTerm"
 
