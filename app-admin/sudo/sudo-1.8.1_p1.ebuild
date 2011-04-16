@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/sudo/Attic/sudo-1.8.1.ebuild,v 1.2 2011/04/10 22:48:59 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/sudo/Attic/sudo-1.8.1_p1.ebuild,v 1.1 2011/04/16 12:00:38 flameeyes Exp $
 
 EAPI=4
 
@@ -53,8 +53,6 @@ REQUIRED_USE="pam? ( !skey ) skey? ( !pam )"
 MAKEOPTS="${MAKEOPTS} SAMPLES="
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-parallelinstall.patch
-
 	elibtoolize
 }
 
