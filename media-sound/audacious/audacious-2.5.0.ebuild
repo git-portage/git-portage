@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/audacious/Attic/audacious-2.4.2.ebuild,v 1.2 2011/03/24 07:20:31 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/audacious/Attic/audacious-2.5.0.ebuild,v 1.1 2011/04/16 20:37:02 chainsaw Exp $
 
-EAPI=1
+EAPI=3
 
 MY_P="${P/_/-}"
 S="${WORKDIR}/${MY_P}"
@@ -19,7 +19,7 @@ IUSE="altivec chardet nls session sse2"
 RDEPEND=">=dev-libs/dbus-glib-0.60
 	>=dev-libs/glib-2.16
 	>=dev-libs/libmcs-0.7.1-r2
-	>=dev-libs/libmowgli-0.7.0
+	>=dev-libs/libmowgli-0.9.50
 	dev-libs/libxml2
 	>=x11-libs/cairo-1.2.6
 	>=x11-libs/gtk+-2.14:2
@@ -28,11 +28,12 @@ RDEPEND=">=dev-libs/dbus-glib-0.60
 
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.9.0
+	chardet? ( app-i18n/libguess )
 	nls? ( dev-util/intltool )"
 
-PDEPEND=">=media-plugins/audacious-plugins-2.4.2"
+PDEPEND=">=media-plugins/audacious-plugins-2.5.0"
 
-src_compile() {
+src_configure() {
 	# D-Bus is a mandatory dependency, remote control,
 	# session management and some plugins depend on this.
 	# Building without D-Bus is *unsupported* and a USE-flag
@@ -44,14 +45,11 @@ src_compile() {
 		$(use_enable chardet) \
 		$(use_enable nls) \
 		$(use_enable session sm) \
-		$(use_enable sse2) \
-		|| die
-
-	emake || die "make failed"
+		$(use_enable sse2)
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS NEWS README
 
 	# Gentoo_ice skin installation; bug #109772
