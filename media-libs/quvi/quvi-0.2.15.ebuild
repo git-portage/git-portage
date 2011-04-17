@@ -1,10 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/quvi/Attic/quvi-0.2.14-r1.ebuild,v 1.2 2011/03/30 20:48:31 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/quvi/Attic/quvi-0.2.15.ebuild,v 1.1 2011/04/17 22:56:33 radhermit Exp $
 
 EAPI=4
-
-inherit eutils autotools
 
 DESCRIPTION="library for parsing video download links"
 HOMEPAGE="http://quvi.sourceforge.net/"
@@ -18,18 +16,11 @@ IUSE="doc examples test offensive static-libs"
 RDEPEND=">=net-misc/curl-7.18.0
 	dev-lang/lua[deprecated]"
 DEPEND="${RDEPEND}
-	>=sys-devel/autoconf-2.68
 	dev-util/pkgconfig"
 
 # tests fetch data from live websites, so it's rather normal that they
 # will fail
 RESTRICT="test"
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-youtube-video-ids.patch \
-		"${FILESDIR}"/${P}-docs.patch
-	eautoreconf
-}
 
 src_configure() {
 	econf \
