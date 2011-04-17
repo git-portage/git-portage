@@ -1,11 +1,13 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/logrotate/Attic/logrotate-3.7.7.ebuild,v 1.4 2009/10/11 23:33:10 halcy0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/logrotate/Attic/logrotate-3.7.9-r2.ebuild,v 1.1 2011/04/17 15:01:06 dang Exp $
+
+EAPI="2"
 
 inherit eutils toolchain-funcs flag-o-matic
 
 DESCRIPTION="Rotates, compresses, and mails system logs"
-HOMEPAGE="http://www.gentoo.org"
+HOMEPAGE="https://fedorahosted.org/logrotate/"
 SRC_URI="https://fedorahosted.org/releases/l/o/logrotate/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -15,27 +17,29 @@ IUSE="selinux"
 
 RDEPEND="
 	>=dev-libs/popt-1.5
-	selinux? ( sys-libs/libselinux )"
+	selinux? (
+		sys-libs/libselinux
+		sec-policy/selinux-logrotate
+	)"
 
 DEPEND="${RDEPEND}
-	>=sys-apps/sed-4
-	selinux? ( sec-policy/selinux-logrotate )"
+	>=sys-apps/sed-4"
 
-src_unpack() {
-	unpack ${P}.tar.gz
-
-	cd "${S}"
-
+src_prepare() {
 	strip-flags
 
-	sed -i \
-		-e "/CVSROOT =/d" \
-		Makefile || die "sed failed"
+	epatch \
+		"${FILESDIR}"/${PN}-3.7.7-datehack.patch \
+		"${FILESDIR}"/${PN}-3.7.7-ignore-hidden.patch \
+		"${FILESDIR}"/${PN}-3.7.7-fbsd.patch \
+		"${FILESDIR}"/${PN}-3.7.9-atomic-create.patch \
+		"${FILESDIR}"/${PN}-3.7.9-shred.patch \
+		"${FILESDIR}"/${PN}-3.7.9-statefile.patch \
+		"${FILESDIR}"/${PN}-3.7.9-skip-empty-files.patch
+}
 
-	epatch "${FILESDIR}"/${P}-datehack.patch
-	epatch "${FILESDIR}"/${P}-ignore-hidden.patch
-	epatch "${FILESDIR}"/${P}-weekly.patch
-	epatch "${FILESDIR}"/${P}-fbsd.patch
+src_configure() {
+	return
 }
 
 src_compile() {
