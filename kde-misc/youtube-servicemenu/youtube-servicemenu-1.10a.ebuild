@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/youtube-servicemenu/Attic/youtube-servicemenu-1.9.ebuild,v 1.1 2010/11/14 14:04:29 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/youtube-servicemenu/Attic/youtube-servicemenu-1.10a.ebuild,v 1.1 2011/04/20 20:53:19 scarabeus Exp $
 
-EAPI="2"
+EAPI=3
 
 PYTHON_DEPEND="2"
 inherit python
@@ -16,14 +16,16 @@ KEYWORDS="~amd64 ~x86"
 SLOT="4"
 IUSE=""
 
-MY_LINGUAS="de es ru sk uk"
+MY_LINGUAS="de el es ru sk uk"
 for x in ${MY_LINGUAS}; do
 	IUSE="${IUSE} linguas_${x}"
 done
 
 RDEPEND="
+	dev-python/lxml
 	>=kde-base/konqueror-4.3.1
 "
+DEPEND="${RDEPEND}"
 
 pkg_setup() {
 	python_set_active_version 2
