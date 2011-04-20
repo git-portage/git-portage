@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.2.2.0-r1.ebuild,v 1.1 2011/04/12 18:38:52 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.2.2.0-r1.ebuild,v 1.2 2011/04/20 13:19:05 jlec Exp $
 
 EAPI=3
 
@@ -187,8 +187,7 @@ src_install() {
 	echo 'DSM_CONFIG="/etc/tivoli/dsm.opt"' >> ${ENV_FILE}
 	echo 'DSM_DIR="/opt/tivoli/tsm/client/ba/bin"' >> ${ENV_FILE}
 	echo 'DSM_LOG="/var/log/tsm"' >> ${ENV_FILE}
-	echo 'PATH="/opt/tivoli/tsm/client/admin/bin:/opt/tivoli/tsm/client/ba/bin"' >> ${ENV_FILE}
-	echo 'ROOTPATH="/opt/tivoli/tsm/client/admin/bin:/opt/tivoli/tsm/client/ba/bin"' >> ${ENV_FILE}
+	echo 'ROOTPATH="/opt/tivoli/tsm/client/ba/bin"' >> ${ENV_FILE}
 
 	newconfd "${FILESDIR}/dsmc.conf.d" dsmc
 	newinitd "${FILESDIR}/dsmc.init.d" dsmc

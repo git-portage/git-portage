@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/tsm
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/ChangeLog,v 1.7 2011/04/12 18:38:52 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/ChangeLog,v 1.8 2011/04/20 13:19:05 jlec Exp $
+
+  20 Apr 2011; Justin Lecher <jlec@gentoo.org> tsm-6.2.2.0-r1.ebuild:
+  Remove unaccessable directories from env file
 
 *tsm-6.2.2.0-r1 (12 Apr 2011)
 
