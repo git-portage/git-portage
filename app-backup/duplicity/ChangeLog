@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/duplicity
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.52 2011/04/09 17:00:40 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.53 2011/04/23 13:32:07 grobian Exp $
+
+  23 Apr 2011; Fabian Groffen <grobian@gentoo.org> duplicity-0.6.13.ebuild:
+  Marked ~x64-macos, bug #364363
 
   09 Apr 2011; Jeroen Roovers <jer@gentoo.org> duplicity-0.6.06.ebuild,
   duplicity-0.6.09.ebuild, duplicity-0.6.11.ebuild, duplicity-0.6.13.ebuild:
