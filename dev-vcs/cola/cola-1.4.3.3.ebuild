@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/cola/Attic/cola-1.4.3.2-r1.ebuild,v 1.2 2011/04/23 07:05:25 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/cola/Attic/cola-1.4.3.3.ebuild,v 1.1 2011/04/23 07:05:25 jlec Exp $
 
 EAPI="3"
 
@@ -51,9 +51,7 @@ src_prepare() {
 	# don't prefix install path with homedir
 	rm setup.cfg
 
-	epatch \
-		"${FILESDIR}/1.3.8-disable-tests.patch" \
-		"${FILESDIR}"/${PV}-backport.patch
+	epatch "${FILESDIR}"/1.3.8-disable-tests.patch
 
 	python_convert_shebangs 2 bin/git-cola share/git-cola/bin/ssh-askpass
 }
