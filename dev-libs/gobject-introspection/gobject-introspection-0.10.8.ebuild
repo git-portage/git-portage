@@ -1,12 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/gobject-introspection/Attic/gobject-introspection-0.10.7-r1.ebuild,v 1.1 2011/04/19 08:52:22 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/gobject-introspection/Attic/gobject-introspection-0.10.8.ebuild,v 1.1 2011/04/24 12:48:51 nirbheek Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
 PYTHON_DEPEND="2:2.5"
 
-inherit eutils gnome2 python
+inherit gnome2 python
 
 DESCRIPTION="Introspection infrastructure for gobject library bindings"
 HOMEPAGE="http://live.gnome.org/GObjectIntrospection/"
@@ -36,10 +36,6 @@ pkg_setup() {
 src_prepare() {
 	# FIXME: Parallel compilation failure with USE=doc
 	use doc && MAKEOPTS="-j1"
-
-	# https://bugzilla.gnome.org/show_bug.cgi?id=647796
-	# Taken from upstream master, remove next release
-	epatch "${FILESDIR}/${P}-fix-g-variant-new.patch"
 
 	# Don't pre-compile .py
 	ln -sf $(type -P true) py-compile
