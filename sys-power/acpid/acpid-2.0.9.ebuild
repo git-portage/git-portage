@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/acpid/Attic/acpid-2.0.8.ebuild,v 1.1 2011/03/28 07:54:00 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/acpid/Attic/acpid-2.0.9.ebuild,v 1.1 2011/04/25 07:47:22 ssuominen Exp $
 
 EAPI=4
 inherit eutils toolchain-funcs
