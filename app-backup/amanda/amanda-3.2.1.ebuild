@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.1.ebuild,v 1.7 2011/04/11 13:31:36 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.1.ebuild,v 1.8 2011/04/25 14:41:09 armin76 Exp $
 
 EAPI=3
 inherit autotools eutils perl-module
@@ -11,7 +11,7 @@ HOMEPAGE="http://www.amanda.org/"
 SRC_URI="mirror://sourceforge/amanda/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 sparc x86"
 RDEPEND="sys-libs/readline
 	virtual/inetd
 	sys-apps/gawk
