@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ardour/Attic/ardour-2.8.11.ebuild,v 1.1 2011/04/30 10:06:58 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ardour/Attic/ardour-2.8.11-r1.ebuild,v 1.1 2011/04/30 19:53:52 radhermit Exp $
 
 EAPI=4
 
@@ -53,6 +53,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-flags.patch \
 		"${FILESDIR}"/${P}-syslibs.patch \
 		"${FILESDIR}"/${P}-type.patch \
+		"${FILESDIR}"/${P}-ldpath.patch \
 		"${FILESDIR}"/${P}-gcc46.patch
 }
 
