@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk-cdr_shell/Attic/asterisk-cdr_shell-20050626.ebuild,v 1.5 2010/10/28 09:44:17 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk-cdr_shell/Attic/asterisk-cdr_shell-20050626.ebuild,v 1.7 2011/05/01 00:40:04 halcy0n Exp $
 
 inherit eutils
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ppc ~x86"
+KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=">=net-misc/asterisk-1.0.7-r1
@@ -23,18 +23,18 @@ S=${WORKDIR}/${MY_PN}
 src_unpack() {
 	unpack ${A}
 
-	cd ${S}
+	cd "${S}"
 	# use asterisk-config...
-	epatch ${FILESDIR}/${MY_PN}-${PV}-astcfg.diff
+	epatch "${FILESDIR}"/${MY_PN}-${PV}-astcfg.diff
 
 	if has_version "<net-misc/asterisk-1.1.0"; then
 		einfo "Building for Asterisk-1.0.x"
 		# patch for asterisk stable
-		epatch ${FILESDIR}/${MY_PN}-${PV}-stable.diff
+		epatch "${FILESDIR}"/${MY_PN}-${PV}-stable.diff
 	else
 		einfo "Building for Asterisk-1.2.x"
 		# patch for asterisk 1.2
-		epatch ${FILESDIR}/${MY_PN}-${PV}-ast1.2.diff
+		epatch "${FILESDIR}"/${MY_PN}-${PV}-ast1.2.diff
 	fi
 }
 
@@ -43,12 +43,12 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR=${D} install || die
+	make DESTDIR="${D}" install || die
 
 	insinto /etc/asterisk
-	doins   ${FILESDIR}/cdr.conf
+	doins "${FILESDIR}"/cdr.conf
 
 	# fix permissions
-	chown -R root:asterisk ${D}etc/asterisk
-	chmod -R u=rwX,g=rX,o= ${D}etc/asterisk
+	chown -R root:asterisk "${D}"etc/asterisk
+	chmod -R u=rwX,g=rX,o= "${D}"etc/asterisk
 }
