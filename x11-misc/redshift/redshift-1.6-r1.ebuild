@@ -1,12 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/redshift/Attic/redshift-1.6.ebuild,v 1.1 2011/02/21 17:26:29 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/redshift/redshift-1.6-r1.ebuild,v 1.1 2011/05/04 06:33:06 xarthisius Exp $
 
 EAPI=3
 
 PYTHON_DEPEND="gtk? 2:2.6"
 
-inherit gnome2-utils python
+inherit eutils gnome2-utils python
 
 DESCRIPTION="A screen color temperature adjusting software"
 HOMEPAGE="http://jonls.dk/redshift/"
@@ -38,6 +38,7 @@ src_prepare() {
 		ln -s $(type -P true) py-compile || die
 		python_convert_shebangs 2 src/gtk-redshift/gtk-redshift
 	fi
+	epatch "${FILESDIR}"/${PV}-bonoboiidfix.patch
 }
 
 src_configure() {
