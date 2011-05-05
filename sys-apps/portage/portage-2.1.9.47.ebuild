@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.8.3.ebuild,v 1.13 2011/04/09 22:34:01 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.9.47.ebuild,v 1.1 2011/05/05 19:42:06 zmedico Exp $
 
 # Require EAPI 2 since we now require at least python-2.6 (for python 3
 # syntax support) which also requires EAPI 2.
@@ -10,23 +10,24 @@ inherit eutils multilib python
 DESCRIPTION="Portage is the package management and distribution system for Gentoo"
 HOMEPAGE="http://www.gentoo.org/proj/en/portage/index.xml"
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
 SLOT="0"
-IUSE="build doc epydoc linguas_pl python3 selinux"
+IUSE="build doc epydoc +ipc linguas_pl python2 python3 selinux"
 
-python_dep="python3? ( dev-lang/python:3.1 )
-	!python3? (
-		build? ( <dev-lang/python-2.6.6:2.6 )
-		!build? ( || ( <dev-lang/python-2.6.6:2.6 dev-lang/python:3.1 ) )
-	)"
+python_dep="python3? ( =dev-lang/python-3* )
+	!python2? ( !python3? (
+		build? ( || ( dev-lang/python:2.7 dev-lang/python:2.6 ) )
+		!build? ( || ( dev-lang/python:2.7 dev-lang/python:2.6 >=dev-lang/python-3 ) )
+	) )
+	python2? ( !python3? ( || ( dev-lang/python:2.7 dev-lang/python:2.6 ) ) )"
 
 # The pysqlite blocker is for bug #282760.
 DEPEND="${python_dep}
 	!build? ( >=sys-apps/sed-4.0.5 )
 	doc? ( app-text/xmlto ~app-text/docbook-xml-dtd-4.4 )
 	epydoc? ( >=dev-python/epydoc-2.0 !<=dev-python/pysqlite-2.4.1 )"
+
 RDEPEND="${python_dep}
-	!python3? ( !!>=dev-lang/python-2.6.6:2.6 !!dev-lang/python:2.7 )
 	!build? ( >=sys-apps/sed-4.0.5
 		>=app-shells/bash-3.2_p17
 		>=app-admin/eselect-1.2 )
@@ -34,7 +35,8 @@ RDEPEND="${python_dep}
 	elibc_glibc? ( >=sys-apps/sandbox-1.6 )
 	elibc_uclibc? ( >=sys-apps/sandbox-1.6 )
 	>=app-misc/pax-utils-0.1.17
-	selinux? ( || ( >=sys-libs/libselinux-2.0.94[python] <sys-libs/libselinux-2.0.94 ) )"
+	selinux? ( || ( >=sys-libs/libselinux-2.0.94[python] <sys-libs/libselinux-2.0.94 ) )
+	!<app-shells/bash-3.2_p17"
 PDEPEND="
 	!build? (
 		>=net-misc/rsync-2.6.4
@@ -56,13 +58,14 @@ prefix_src_archives() {
 
 PV_PL="2.1.2"
 PATCHVER_PL=""
-TARBALL_PV=2.1.8
+TARBALL_PV=$PV
 SRC_URI="mirror://gentoo/${PN}-${TARBALL_PV}.tar.bz2
 	$(prefix_src_archives ${PN}-${TARBALL_PV}.tar.bz2)
 	linguas_pl? ( mirror://gentoo/${PN}-man-pl-${PV_PL}.tar.bz2
 		$(prefix_src_archives ${PN}-man-pl-${PV_PL}.tar.bz2) )"
 
-PATCHVER=$PV
+PATCHVER=
+[[ $TARBALL_PV = $PV ]] || PATCHVER=$PV
 if [ -n "${PATCHVER}" ]; then
 	SRC_URI="${SRC_URI} mirror://gentoo/${PN}-${PATCHVER}.patch.bz2
 	$(prefix_src_archives ${PN}-${PATCHVER}.patch.bz2)"
@@ -80,7 +83,11 @@ pkg_setup() {
 	[[ -z $(get_libdir) ]] && \
 		die "get_libdir returned an empty string"
 
-	if ! use python3 && ! compatible_python_is_selected ; then
+	if use python2 && use python3 ; then
+		ewarn "Both python2 and python3 USE flags are enabled, but only one"
+		ewarn "can be in the shebangs. Using python3."
+	fi
+	if ! use python2 && ! use python3 && ! compatible_python_is_selected ; then
 		ewarn "Attempting to select a compatible default python interpreter"
 		local x success=0
 		for x in /usr/bin/python2.* ; do
@@ -102,6 +109,8 @@ pkg_setup() {
 
 	if use python3; then
 		python_set_active_version 3
+	elif use python2; then
+		python_set_active_version 2
 	fi
 }
 
@@ -114,11 +123,26 @@ src_prepare() {
 		epatch "${WORKDIR}/${PN}-${PATCHVER}.patch"
 	fi
 	einfo "Setting portage.VERSION to ${PVR} ..."
-	sed -i "s/^VERSION=.*/VERSION=\"${PVR}\"/" pym/portage/__init__.py || \
+	sed -e "s/^VERSION=.*/VERSION=\"${PVR}\"/" -i pym/portage/__init__.py || \
 		die "Failed to patch portage.VERSION"
+	sed -e "1s/VERSION/${PVR}/" -i doc/fragment/version || \
+		die "Failed to patch VERSION in doc/fragment/version"
+	sed -e "1s/VERSION/${PVR}/" -i man/* || \
+		die "Failed to patch VERSION in man page headers"
+
+	if ! use ipc ; then
+		einfo "Disabling ipc..."
+		sed -e "s:_enable_ipc_daemon = True:_enable_ipc_daemon = False:" \
+			-i pym/_emerge/AbstractEbuildProcess.py || \
+			die "failed to patch AbstractEbuildProcess.py"
+	fi
 
 	if use python3; then
+		einfo "Converting shebangs for python3..."
 		python_convert_shebangs -r 3 .
+	elif use python2; then
+		einfo "Converting shebangs for python2..."
+		python_convert_shebangs -r 2 .
 	fi
 }
 
@@ -133,11 +157,6 @@ src_compile() {
 		einfo "Generating api docs"
 		mkdir "${WORKDIR}"/api
 		local my_modules epydoc_opts=""
-		# A name collision between the portage.dbapi class and the
-		# module with the same name triggers an epydoc crash unless
-		# portage.dbapi is excluded from introspection.
-		ROOT=/ has_version '>=dev-python/epydoc-3_pre0' && \
-			epydoc_opts='--exclude-introspect portage\.dbapi'
 		my_modules="$(find "${S}/pym" -name "*.py" \
 			| sed -e 's:/__init__.py$::' -e 's:\.py$::' -e "s:^${S}/pym/::" \
 			 -e 's:/:.:g' | sort)" || die "error listing modules"
@@ -153,6 +172,8 @@ src_compile() {
 }
 
 src_test() {
+	# make files executable, in case they were created by patch
+	find bin -type f | xargs chmod +x
 	PYTHONPATH=${S}/pym:${PYTHONPATH:+:}${PYTHONPATH} \
 		./pym/portage/tests/runTests || die "test(s) failed"
 }
@@ -166,9 +187,8 @@ src_install() {
 	insinto /etc
 	doins etc-update.conf dispatch-conf.conf || die
 
-	dodir "${portage_share_config}"
-	insinto "${portage_share_config}"
-	doins "${S}/cnf/make.globals" || die
+	insinto "$portage_share_config"
+	doins "$S/cnf/make.globals" || die
 	if [ -f "make.conf.${ARCH}".diff ]; then
 		patch make.conf "make.conf.${ARCH}".diff || \
 			die "Failed to patch make.conf.example"
@@ -191,24 +211,28 @@ src_install() {
 		rm "${S}"/bin/ebuild-helpers/sed || die "Failed to remove sed wrapper"
 	fi
 
-	local x symlinks
+	local x symlinks files
 
-	for x in $(find "$S"/bin -type d) ; do
-		x=${x#$S/}
+	cd "$S" || die "cd failed"
+	for x in $(find bin -type d) ; do
 		exeinto $portage_base/$x || die "exeinto failed"
 		cd "$S"/$x || die "cd failed"
-		doexe $(find . -mindepth 1 -maxdepth 1 -type f ! -type l) || \
-			die "doexe failed"
+		files=$(find . -mindepth 1 -maxdepth 1 -type f ! -type l)
+		if [ -n "$files" ] ; then
+			doexe $files || die "doexe failed"
+		fi
 		symlinks=$(find . -mindepth 1 -maxdepth 1 -type l)
 		if [ -n "$symlinks" ] ; then
 			cp -P $symlinks "$D$portage_base/$x" || die "cp failed"
 		fi
 	done
 
-	for x in $(find "$S"/pym -type d) ; do
-		x=${x#$S/}
+	cd "$S" || die "cd failed"
+	for x in $(find pym/* -type d) ; do
 		insinto $portage_base/$x || die "insinto failed"
 		cd "$S"/$x || die "cd failed"
+		# __pycache__ directories contain no py files
+		[[ "*.py" != $(echo *.py) ]] || continue
 		doins *.py || die "doins failed"
 		symlinks=$(find . -mindepth 1 -maxdepth 1 -type l)
 		if [ -n "$symlinks" ] ; then
@@ -237,7 +261,7 @@ src_install() {
 	use epydoc && dohtml -r "${WORKDIR}"/api
 
 	dodir /usr/bin
-	for x in ebuild egencache emerge portageq repoman ; do
+	for x in ebuild egencache emerge portageq quickpkg repoman ; do
 		dosym ../${libdir}/portage/bin/${x} /usr/bin/${x}
 	done
 
@@ -249,7 +273,6 @@ src_install() {
 		env-update
 		etc-update
 		fixpackages
-		quickpkg
 		regenworld"
 	local x
 	for x in ${my_syms}; do
@@ -284,7 +307,6 @@ pkg_postinst() {
 	# will be identified and removed in postrm.
 	python_mod_optimize /usr/$(get_libdir)/portage/pym
 
-	local warning_shown=0
 	if [ $REPO_LAYOUT_CONF_WARN = 0 ] ; then
 		ewarn
 		echo "If you want overlay eclasses to override eclasses from" \
@@ -292,9 +314,7 @@ pkg_postinst() {
 			"for information about the new layout.conf and repos.conf" \
 			"configuration files." \
 			| fmt -w 75 | while read -r ; do ewarn "$REPLY" ; done
-	fi
-	if [ $warning_shown = 1 ] ; then
-		ewarn # for symmetry
+		ewarn
 	fi
 
 	einfo
