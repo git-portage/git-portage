@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/foomatic-db-engine/Attic/foomatic-db-engine-4.0.3.ebuild,v 1.2 2010/02/10 08:25:49 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/foomatic-db-engine/Attic/foomatic-db-engine-4.0.7.ebuild,v 1.1 2011/05/06 16:03:31 jlec Exp $
 
 EAPI="2"
 
@@ -22,8 +22,8 @@ PDEPEND="net-print/foomatic-db"
 
 src_prepare() {
 	epatch \
-		"${FILESDIR}/${PV}-perl-module.patch" \
-		"${FILESDIR}/${PV}-respect-ldflag.patch"
+		"${FILESDIR}"/${PV}-perl-module.patch \
+		"${FILESDIR}"/${PV}-respect-ldflag.patch
 	sed -i -e "s:@LIB_CUPS@:$(cups-config --serverbin):" "${S}"/Makefile.in
 }
 
