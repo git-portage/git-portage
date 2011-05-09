@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/gabedit/Attic/gabedit-2.3.4.ebuild,v 1.2 2011/03/02 10:10:04 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/gabedit/Attic/gabedit-2.3.7.ebuild,v 1.1 2011/05/09 20:03:40 jlec Exp $
 
 EAPI=2
 
