@@ -1,13 +1,14 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/xmonad/Attic/xmonad-0.6.ebuild,v 1.3 2009/08/03 10:35:43 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/xmonad/Attic/xmonad-0.9.2.ebuild,v 1.1 2011/05/11 21:26:16 slyfox Exp $
 
-CABAL_FEATURES="bin lib profile haddock"
+EAPI="3"
 
-inherit haskell-cabal
+CABAL_FEATURES="bin lib profile haddock hscolour"
+inherit base haskell-cabal
 
-DESCRIPTION="A lightweight X11 window manager"
-HOMEPAGE="http://www.xmonad.org/"
+DESCRIPTION="A tiling window manager"
+HOMEPAGE="http://xmonad.org"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -15,21 +16,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
-DEPEND="dev-haskell/mtl
-	>=dev-haskell/x11-1.4.1
-	>=dev-lang/ghc-6.6
-	>=dev-haskell/cabal-1.2"
-RDEPEND="${DEPEND}"
+RDEPEND=">=dev-lang/ghc-6.6.1
+		dev-haskell/mtl[profile?]
+		>=dev-haskell/x11-1.5[profile?]"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.2"
 
 SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
 
-src_unpack() {
-	unpack ${A}
-
-	# portage strips, packages should not do it themselves.
-	sed -i -e 's/-optl-Wl,-s//' "${S}/xmonad.cabal"
-}
+PATCHES=("${FILESDIR}/xmonad-0.9.2-unbreak-haddock.patch")
 
 src_install() {
 	cabal_src_install
@@ -43,14 +39,14 @@ src_install() {
 
 	doman man/xmonad.1
 
-	dodoc CONFIG README "${SAMPLE_CONFIG_LOC}/${SAMPLE_CONFIG}"
+	dodoc CONFIG README
 }
 
 pkg_postinst() {
 	ghc-package_pkg_postinst
 
 	elog "A sample ${SAMPLE_CONFIG} configuration file can be found here:"
-	elog "    /usr/share/doc/${PF}/${SAMPLE_CONFIG}"
+	elog "    /usr/share/${PF}/ghc-$(ghc-version)/${SAMPLE_CONFIG_LOC}/${SAMPLE_CONFIG}"
 	elog "The parameters in this file are the defaults used by xmonad."
 	elog "To customize xmonad, copy this file to:"
 	elog "    ~/.xmonad/${SAMPLE_CONFIG}"
