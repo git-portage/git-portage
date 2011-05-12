@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/zeromq/Attic/zeromq-2.1.6.ebuild,v 1.1 2011/04/26 20:24:04 djc Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/zeromq/Attic/zeromq-2.1.7.ebuild,v 1.1 2011/05/12 11:08:12 djc Exp $
 
 # NOTES:
 # 1- use flag 'pgm' (OpenPGM support) must be masked by profiles for ARM archs;
