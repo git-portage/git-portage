@@ -1,19 +1,21 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/mobile-broadband-provider-info/Attic/mobile-broadband-provider-info-20090602.ebuild,v 1.1 2009/08/24 13:21:52 dagger Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/mobile-broadband-provider-info/Attic/mobile-broadband-provider-info-20110511.ebuild,v 1.1 2011/05/12 03:46:46 nirbheek Exp $
+
+inherit gnome.org
 
 DESCRIPTION="Database of mobile broadband service providers"
 HOMEPAGE="http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders"
-SRC_URI="http://dev.gentoo.org/~dagger/files/${P}.tar.bz2"
 
 LICENSE="CC-PD"
 SLOT="0"
-KEYWORDS="~arm ~amd64 ~x86"
+KEYWORDS="~amd64 ~arm ~ppc ~x86"
 IUSE=""
-RDEPEND=""
 
+RDEPEND=""
 DEPEND=""
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
+	dodoc NEWS README || die "dodoc failed"
 }
