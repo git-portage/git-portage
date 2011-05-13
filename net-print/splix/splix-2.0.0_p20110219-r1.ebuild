@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/splix/Attic/splix-2.0.0_p20110219.ebuild,v 1.2 2011/05/13 22:17:48 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/splix/Attic/splix-2.0.0_p20110219-r1.ebuild,v 1.1 2011/05/13 22:17:48 voyageur Exp $
 
 EAPI=2
 inherit eutils toolchain-funcs
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+jbig"
 
-DEPEND="<app-text/ghostscript-gpl-9.02
+DEPEND=">=app-text/ghostscript-gpl-9.02
 	|| ( >=net-print/cups-1.4.0 net-print/cupsddk )
 	jbig? ( media-libs/jbigkit )"
 RDEPEND="${DEPEND}"
@@ -34,7 +34,7 @@ src_prepare() {
 src_compile() {
 	local options="MODE=optimized"
 	use jbig || options="${options} DISABLE_JBIG=1"
-	emake ${options} CXX="$(tc-getCXX)" \
+	emake ${options} PSTORASTER=gstoraster CXX="$(tc-getCXX)" \
 		OPTIM_CFLAGS="${CFLAGS}" OPTIM_CXXFLAGS="${CXXFLAGS}" \
 		|| die "emake failed"
 }
