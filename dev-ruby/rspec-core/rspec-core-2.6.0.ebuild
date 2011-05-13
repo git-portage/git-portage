@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rspec-core/Attic/rspec-core-2.4.0.ebuild,v 1.2 2011/02/02 14:12:44 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rspec-core/Attic/rspec-core-2.6.0.ebuild,v 1.1 2011/05/13 10:26:40 graaff Exp $
 
 EAPI=2
 USE_RUBY="ruby18 ree18 ruby19"
@@ -8,7 +8,7 @@ USE_RUBY="ruby18 ree18 ruby19"
 RUBY_FAKEGEM_TASK_TEST="none"
 RUBY_FAKEGEM_TASK_DOC="none"
 
-RUBY_FAKEGEM_EXTRADOC="History.markdown README.md Upgrade.markdown"
+RUBY_FAKEGEM_EXTRADOC="README.md"
 
 inherit ruby-fakegem
 
@@ -41,8 +41,6 @@ all_ruby_prepare() {
 
 	# Also clean the /usr/lib/rubyee path (which is our own invention).
 	sed -i -e 's#lib\\d\*\\/ruby\\/#lib\\d*\\/ruby(ee|)\\/#' lib/rspec/core/configuration.rb || die
-
-	epatch "${FILESDIR}"/${P}-tests.patch
 }
 
 all_ruby_compile() {
@@ -54,5 +52,6 @@ all_ruby_compile() {
 each_ruby_test() {
 	PATH="${S}/bin:${PATH}" RUBYLIB="${S}/lib" ${RUBY} -S rake spec || die "Tests failed."
 
-	# There are features but they require aruba which we don't have yet.
+	# There are features but it seems as if these only work against a
+	# fully installed version.
 }
