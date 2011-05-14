@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.3-r2.ebuild,v 1.5 2011/03/06 09:15:29 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.3-r2.ebuild,v 1.6 2011/05/14 09:28:46 tomjbe Exp $
 
 EAPI="2"
 PYTHON_DEPEND="python? 2"
@@ -346,8 +346,8 @@ src_install() {
 	for script in ${myscripts}; do
 		# copy over init script and config to a temporary location
 		# so we can modify them as needed
-		cp "${FILESDIR}/${PV}/${script}".confd "${T}/${script}".confd || die "failed to copy ${script}.confd"
-		cp "${FILESDIR}/${PV}/${script}".initd "${T}/${script}".initd || die "failed to copy ${script}.initd"
+		cp "${FILESDIR}/${script}".confd "${T}/${script}".confd || die "failed to copy ${script}.confd"
+		cp "${FILESDIR}/${script}".initd "${T}/${script}".initd || die "failed to copy ${script}.initd"
 		# set database dependancy for the director init script
 		case "${script}" in
 			bacula-dir)
