@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/wbar/Attic/wbar-2.1.3.ebuild,v 1.1 2011/05/06 13:56:14 signals Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/wbar/Attic/wbar-2.2.1.ebuild,v 1.1 2011/05/17 10:54:41 xarthisius Exp $
 
 EAPI=4
 inherit autotools eutils
@@ -30,16 +30,14 @@ DEPEND="${RDEPEND}
 	dev-util/intltool"
 
 src_prepare() {
-	epatch	"${FILESDIR}"/${P}-as-needed.patch
 	if ! use gtk; then
 		# Remove wbar-config from default cfg.
 		sed -i -e '5,8d' \
 			etc/wbar.cfg.in || die "Removing wbar-config from cfg"
 	fi
-	sed -i configure.ac -e "/^CPPFLAGS/d" || die #respect flags
+	sed -i -e '/Werror/d' src/Makefile.am || die
+	sed -i configure.ac -e "s/imlib2/& x11/" || die #367549
 	eautoreconf
-	# Fix build issue reported by xarthisius (See as-needed.patch)
-	mv "${S}"/src/config/Main.cc "${S}"/src/config/Main-config.cc || die
 }
 
 src_configure() {
