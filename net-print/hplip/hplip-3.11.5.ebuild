@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/hplip/Attic/hplip-3.11.1-r2.ebuild,v 1.2 2011/02/14 19:53:23 billie Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/hplip/Attic/hplip-3.11.5.ebuild,v 1.1 2011/05/18 20:21:50 billie Exp $
 
-EAPI=2
+EAPI=3
 
 PYTHON_DEPEND="!minimal? 2"
 PYTHON_USE_WITH="threads xml"
@@ -108,7 +108,7 @@ src_prepare() {
 
 	# Do not install desktop files if there is no gui
 	# Upstream bug: https://bugs.launchpad.net/hplip/+bug/452113
-	epatch "${FILESDIR}"/${P}-desktop.patch
+	epatch "${FILESDIR}"/${PN}-3.11.1-desktop.patch
 
 	# Browser detection through xdg-open
 	# Upstream bug: https://bugs.launchpad.net/hplip/+bug/482674
@@ -121,7 +121,7 @@ src_prepare() {
 	# Htmldocs are not installed under docdir/html so enable htmldir configure
 	# switch
 	# Upstream bug: https://bugs.launchpad.net/hplip/+bug/483217
-	epatch "${FILESDIR}"/${P}-htmldir.patch
+	epatch "${FILESDIR}"/${PN}-3.11.1-htmldir.patch
 
 	# Increase systray check timeout for slower machines
 	# Upstream bug: https://bugs.launchpad.net/hplip/+bug/335662
@@ -129,7 +129,7 @@ src_prepare() {
 
 	# SYSFS deprecated but kept upstream for compatibility reasons
 	# Upstream bug: https://bugs.launchpad.net/hplip/+bug/346390
-	epatch "${FILESDIR}"/${P}-udev-attrs.patch
+	epatch "${FILESDIR}"/${PN}-3.11.1-udev-attrs.patch
 
 	# CVE-2010-4267 SNMP Response Processing Buffer Overflow Vulnerability
 	# http://secunia.com/advisories/42956/
