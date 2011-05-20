@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/transmission/Attic/transmission-2.30_beta3.ebuild,v 1.1 2011/04/29 06:30:12 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/transmission/Attic/transmission-2.31.ebuild,v 1.1 2011/05/20 12:13:48 pva Exp $
 
 EAPI=4
 inherit eutils fdo-mime gnome2-utils qt4-r2
