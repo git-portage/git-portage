@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/perl-Module-Load/Attic/perl-Module-Load-0.18.ebuild,v 1.6 2011/05/02 19:52:23 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/virtual/perl-Module-Load/Attic/perl-Module-Load-0.180.0.ebuild,v 1.1 2011/05/20 14:28:27 tove Exp $
 
 DESCRIPTION="runtime require of both modules and files"
 HOMEPAGE=""
@@ -12,4 +12,4 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86
 IUSE=""
 
 DEPEND=""
-RDEPEND="~perl-core/Module-Load-${PV}"
+RDEPEND="|| ( ~dev-lang/perl-5.14.0 ~perl-core/Module-Load-${PV} )"
