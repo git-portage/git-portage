@@ -1,11 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/w3af/Attic/w3af-1.0_rc5.ebuild,v 1.1 2011/01/29 20:53:55 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/w3af/w3af-1.0_rc5-r1.ebuild,v 1.1 2011/05/27 09:48:55 hwoarang Exp $
 
 EAPI=2
 
 PYTHON_USE_WITH="sqlite"
 PYTHON_DEPEND="2"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit multilib python versionator
 
