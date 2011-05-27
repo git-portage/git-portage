@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/qcomicbook/Attic/qcomicbook-0.7.1.ebuild,v 1.1 2010/11/27 09:45:55 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/qcomicbook/Attic/qcomicbook-0.7.2.ebuild,v 1.1 2011/05/27 06:50:24 xarthisius Exp $
 
 EAPI=2
 CMAKE_IN_SOURCE_BUILD=1
