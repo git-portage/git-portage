@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/rsnapshot/rsnapshot-1.3.1-r1.ebuild,v 1.1 2010/10/10 17:23:49 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/rsnapshot/rsnapshot-1.3.1-r1.ebuild,v 1.2 2011/05/27 20:56:49 flameeyes Exp $
 
-EAPI=2
+EAPI=4
 
 inherit eutils
 
@@ -22,9 +22,10 @@ RDEPEND=">=dev-lang/perl-5.8.2
 		>=net-misc/rsync-2.6.0"
 DEPEND="${RDEPEND}"
 
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-cp_al.patch
-}
+
+PATCHES=(
+	"${FILESDIR}"/${P}-cp_al.patch
+)
 
 src_install() {
 	# Change sysconfdir to install the template file as documentation
@@ -33,13 +34,15 @@ src_install() {
 		sysconfdir="/usr/share/doc/${PF}" \
 		|| die
 
-	dodoc README AUTHORS TODO ChangeLog docs/* || die
-	insinto /usr/share/doc/${PF}/HOWTOs
-	doins docs/HOWTOs/* || die
+	dodoc README AUTHORS TODO ChangeLog \
+		docs/Upgrading_from_1.1 \
+		docs/HOWTOs/rsnapshot-{Mac,windows}-howto
+
 	docinto utils
-	dodoc utils/{README,rsnaptar,*.sh,*.pl} || die
+	dodoc utils/{README,rsnaptar,*.sh,*.pl}
+
 	docinto utils/rsnapshotdb
-	dodoc utils/rsnapshotdb/* || die
+	dodoc utils/rsnapshotdb/*
 }
 
 pkg_postinst() {
