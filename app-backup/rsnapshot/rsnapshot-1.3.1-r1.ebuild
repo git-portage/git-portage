@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/rsnapshot/rsnapshot-1.3.1-r1.ebuild,v 1.2 2011/05/27 20:56:49 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/rsnapshot/rsnapshot-1.3.1-r1.ebuild,v 1.3 2011/05/28 15:30:40 mr_bones_ Exp $
 
 EAPI=4
 
@@ -21,7 +21,6 @@ RDEPEND=">=dev-lang/perl-5.8.2
 		>=net-misc/openssh-3.7.1_p2-r1
 		>=net-misc/rsync-2.6.0"
 DEPEND="${RDEPEND}"
-
 
 PATCHES=(
 	"${FILESDIR}"/${P}-cp_al.patch
