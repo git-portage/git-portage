@@ -1,9 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/libgda/Attic/libgda-4.2.6.ebuild,v 1.1 2011/04/20 16:54:11 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/libgda/Attic/libgda-4.2.8.ebuild,v 1.1 2011/06/03 17:42:16 pacho Exp $
 
-EAPI="3"
+EAPI="4"
 GCONF_DEBUG="yes"
+GNOME2_LA_PUNT="yes"
 
 inherit autotools db-use eutils flag-o-matic gnome2 java-pkg-opt-2
 
@@ -121,10 +122,4 @@ src_prepare() {
 
 src_test() {
 	emake check XDG_DATA_HOME="${T}/.local" || die "tests failed"
-}
-
-src_install() {
-	gnome2_src_install
-	# Nothing uses these in the tree
-	find "${ED}" -name '*.la' -exec rm -f '{}' + || die
 }
