@@ -1,10 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/lessfs/Attic/lessfs-1.3.3.11.ebuild,v 1.1 2011/04/23 18:12:35 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/lessfs/Attic/lessfs-1.4.7.ebuild,v 1.1 2011/06/03 11:33:00 hwoarang Exp $
 
-EAPI="2"
-
-inherit autotools
+EAPI="4"
 
 MY_PV="${PV/_/-}"
 MY_P="${PN}-${MY_PV}"
@@ -15,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}/${P/_beta*/-beta}/${MY_P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="lzo crypt debug"
+IUSE="crypt debug memtrace lzo"
 
 DEPEND=">=dev-db/tokyocabinet-1.4.42
 		app-crypt/mhash
@@ -27,22 +25,19 @@ RDEPEND=""
 
 S="${WORKDIR}/${MY_P}"
 
-src_prepare() {
-	eautoreconf
-}
-
 src_configure() {
 	econf \
 		$(use_enable debug) $(use_enable debug lckdebug) \
-		$(use_with crypt crypto) $(use_with lzo)
+		$(use_with crypt crypto) $(use_with lzo) \
+		$(use_enable memtrace)
 }
 
 src_install () {
-	emake DESTDIR="${D}" install || die "make install failed"
-	dodoc ChangeLog FAQ README.* || die "dodpc failed"
+	emake DESTDIR="${D}" install
+	dodoc ChangeLog FAQ README.*
 	insinto /etc
-	newins examples/lessfs.cfg-master ${PN}.cfg || die "newins failed"
-	dodoc examples/lessfs.* etc/lessfs.* || die "dodoc failed"
+	newins examples/lessfs.cfg-master ${PN}.cfg
+	dodoc examples/lessfs.* etc/lessfs.*
 
 }
 
