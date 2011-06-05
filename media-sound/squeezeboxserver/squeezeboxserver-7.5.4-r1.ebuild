@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/squeezeboxserver/Attic/squeezeboxserver-7.5.3.ebuild,v 1.2 2011/04/24 16:19:43 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/squeezeboxserver/Attic/squeezeboxserver-7.5.4-r1.ebuild,v 1.1 2011/06/05 16:06:47 lavajoe Exp $
 
 EAPI="3"
 
@@ -8,7 +8,7 @@ inherit eutils
 
 MAJOR_VER="${PV:0:3}"
 MINOR_VER="${PV:4:1}"
-BUILD_NUM="31792"
+BUILD_NUM="32171"
 SRC_DIR="SqueezeboxServer_v${MAJOR_VER}.${MINOR_VER}"
 MY_P="squeezeboxserver-${MAJOR_VER}.${MINOR_VER}-noCPAN"
 MY_P_BUILD_NUM="squeezeboxserver-${MAJOR_VER}.${MINOR_VER}-${BUILD_NUM}-noCPAN"
@@ -34,11 +34,12 @@ DEPEND="
 # Note: dev-perl/GD necessary because of SC bug#6143
 # (http://bugs.slimdevices.com/show_bug.cgi?id=6143).
 RDEPEND="
+	!prefix? ( >=sys-apps/baselayout-2.0.0 )
 	dev-perl/File-Which
 	!prefix? ( virtual/logger )
 	virtual/mysql
 	>=dev-lang/perl-5.8.8
-	~dev-perl/Audio-Scan-0.840
+	~dev-perl/Audio-Scan-0.870.0
 	>=dev-perl/GD-2.41
 	>=virtual/perl-IO-Compress-2.015
 	>=dev-perl/YAML-Syck-1.05
@@ -156,7 +157,7 @@ src_prepare() {
 
 	# Copy in the module builder - can't run it from the files directory in case
 	# Portage is mounted 'noexec'.
-	cp "${FILESDIR}/build-modules-${PVR}.sh" "${S}/build-modules.sh"	|| die
+	cp "${FILESDIR}/build-modules-${PV}.sh" "${S}/build-modules.sh"	|| die
 	chmod 555 "${S}/build-modules.sh"			|| die
 }
 
@@ -185,11 +186,11 @@ src_install() {
 
 	# Various directories of architecture-independent static files
 	dodir "${SHAREDIR}"
-	cp -r Firmware "${ED}/${SHAREDIR}"	|| die "Unable to install firmware"
-	cp -r Graphics "${ED}/${SHAREDIR}"	|| die "Unable to install Graphics"
-	cp -r HTML "${ED}/${SHAREDIR}"		|| die "Unable to install HTML"
+	cp -r Firmware "${ED}/${SHAREDIR}"		|| die "Unable to install firmware"
+	cp -r Graphics "${ED}/${SHAREDIR}"		|| die "Unable to install Graphics"
+	cp -r HTML "${ED}/${SHAREDIR}"			|| die "Unable to install HTML"
 	cp -r IR "${ED}/${SHAREDIR}"			|| die "Unable to install IR"
-	cp -r SQL "${ED}/${SHAREDIR}"		|| die "Unable to install SQL"
+	cp -r SQL "${ED}/${SHAREDIR}"			|| die "Unable to install SQL"
 
 	# Remove bundled modified AnyEvent - we depend on a newer version now
 	rm -r lib/AnyEvent.pm lib/AnyEvent || die "Unable to remove bundled AnyEvent"
