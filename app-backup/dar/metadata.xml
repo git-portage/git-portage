@@ -17,5 +17,6 @@ operations, including with ssh.
 		by 32 bit integers</flag>
 	<flag name='dar64'>Enables --enable-mode=64 option, which replace infinite
 		by 64 bit integers</flag>
+	<flag name='gcrypt'>Enables strong encryption support</flag>
 </use>
 </pkgmetadata>
