@@ -1,8 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/josm/Attic/josm-3695.ebuild,v 1.1 2010/12/06 01:38:08 hanno Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/josm/Attic/josm-4064.ebuild,v 1.1 2011/06/08 11:40:49 scarabeus Exp $
 
-EAPI="3"
+EAPI=4
+
+JAVA_ANT_ENCODING=UTF-8
 
 inherit eutils java-pkg-2 java-ant-2
 
@@ -22,14 +24,13 @@ S="${WORKDIR}/${PN}"
 IUSE=""
 
 src_compile() {
-	JAVA_ANT_ENCODING=UTF-8
 	eant dist
 }
 
 src_install() {
-	java-pkg_newjar "dist/${PN}-custom.jar" || die "java-pkg_newjar failed"
+	java-pkg_newjar "dist/${PN}.jar" || die "java-pkg_newjar failed"
 	java-pkg_dolauncher "${PN}" --jar "${PN}.jar" || die "java-pkg_dolauncher failed"
 
 	newicon images/logo.png josm.png || die "newicon failed"
-	make_desktop_entry "${PN}" "Java OpenStreetMap Editor" josm "Application"
+	make_desktop_entry "${PN}" "Java OpenStreetMap Editor" josm "Science;Geoscience"
 }
