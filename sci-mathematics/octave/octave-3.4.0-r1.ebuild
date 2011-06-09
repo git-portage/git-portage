@@ -1,9 +1,9 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/octave/Attic/octave-3.2.4-r2.ebuild,v 1.2 2011/03/20 20:01:35 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/octave/Attic/octave-3.4.0-r1.ebuild,v 1.1 2011/06/09 21:58:24 bicatali Exp $
 
-EAPI="2"
-inherit flag-o-matic xemacs-elisp-common autotools
+EAPI=4
+inherit eutils base
 
 DESCRIPTION="High-level interactive language for numerical computations"
 LICENSE="GPL-3"
@@ -11,30 +11,30 @@ HOMEPAGE="http://www.octave.org/"
 SRC_URI="ftp://ftp.gnu.org/pub/gnu/${PN}/${P}.tar.bz2"
 
 SLOT="0"
-IUSE="curl doc emacs fltk fftw opengl readline sparse test xemacs zlib"
+IUSE="curl doc fftw readline sparse test zlib"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 
 RDEPEND="dev-libs/libpcre
 	media-gfx/graphicsmagick[cxx]
+	media-libs/ftgl
 	media-libs/qhull
 	sci-libs/qrupdate
 	sci-mathematics/glpk
 	sci-visualization/gnuplot
 	sys-libs/ncurses
 	virtual/lapack
+	virtual/opengl
 	x11-libs/libX11
+	>=x11-libs/fltk-1.3:1[opengl]
 	curl? ( net-misc/curl )
-	fltk? ( x11-libs/fltk:1[opengl?] )
 	fftw? ( sci-libs/fftw:3.0 )
-	opengl? ( virtual/opengl media-libs/ftgl )
-	sparse? ( sci-libs/arpack
+	sparse? (
 		sci-libs/camd
 		sci-libs/ccolamd
 		sci-libs/cholmod
 		sci-libs/colamd
 		sci-libs/cxsparse
 		sci-libs/umfpack )
-	xemacs? ( app-editors/xemacs )
 	zlib? ( sys-libs/zlib )
 	!sci-mathematics/octave-forge"
 
@@ -47,12 +47,7 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-3.2.0_parallel_make.patch
-	epatch "${FILESDIR}"/${PN}-3.2.0_as_needed.patch
-	epatch "${FILESDIR}"/${PN}-3.2.4-imread.patch
-	epatch "${FILESDIR}"/${PN}-3.2.4-ldflags.patch
-	epatch "${FILESDIR}"/${PN}-3.2.4-fltk-magic.patch
-	epatch "${FILESDIR}"/${PN}-3.2.4-dlmread-speedup.patch
+	epatch "${FILESDIR}"/${P}-{gcc46,pkgbuilddir,fltk,help}.patch
 	eautoreconf
 }
 
@@ -62,49 +57,29 @@ src_configure() {
 		--localstatedir=/var/state/octave \
 		--enable-shared \
 		--without-hdf5 \
+		--with-glpk \
+		--with-opengl \
 		--with-qrupdate \
 		--with-blas="$(pkg-config --libs blas)" \
 		--with-lapack="$(pkg-config --libs lapack)" \
 		$(use_enable readline) \
 		$(use_with curl) \
-		$(use_with fftw) \
-		$(use_with fltk) \
-		$(use_with opengl framework-opengl) \
-		$(use_with sparse arpack) \
+		$(use_with fftw fftw3) \
+		$(use_with fftw fftw3f) \
 		$(use_with sparse umfpack) \
 		$(use_with sparse colamd) \
 		$(use_with sparse ccolamd) \
 		$(use_with sparse cholmod) \
 		$(use_with sparse cxsparse) \
-		$(use_with zlib)
-}
-
-src_compile() {
-	emake || die "emake failed"
-	if use xemacs; then
-		cd "${S}/emacs"
-		xemacs-elisp-comp *.el
-	fi
+		$(use_with zlib z)
 }
 
 src_install() {
-	emake install DESTDIR="${D}" || die "emake install failed"
-
+	default
 	if use doc; then
 		einfo "Installing documentation..."
 		insinto /usr/share/doc/${PF}
 		doins $(find doc -name \*.pdf)
-	fi
-
-	if use emacs || use xemacs; then
-		cd emacs
-		exeinto /usr/bin
-		doexe octave-tags || die "Failed to install octave-tags"
-		doman octave-tags.1 || die "Failed to install octave-tags.1"
-		if use xemacs; then
-			xemacs-elisp-install ${PN} *.el *.elc
-		fi
-		cd ..
 	fi
 	use test && dodoc test/fntests.log
 	echo "LDPATH=/usr/$(get_libdir)/octave-${PV}" > 99octave
