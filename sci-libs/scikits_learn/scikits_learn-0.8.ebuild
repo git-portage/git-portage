@@ -1,12 +1,13 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/scikits_learn/Attic/scikits_learn-0.6.ebuild,v 1.2 2011/02/01 17:01:57 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/scikits_learn/Attic/scikits_learn-0.8.ebuild,v 1.1 2011/06/09 14:17:02 bicatali Exp $
 
 EAPI="3"
 
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
+DISTUTILS_SRC_TEST="setup.py"
 
 inherit distutils
 
@@ -19,7 +20,7 @@ SRC_URI="mirror://sourceforge/scikit-learn/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc examples test"
+IUSE="doc examples"
 
 CDEPEND="sci-libs/scipy
 	>=sci-libs/libsvm-2.91"
@@ -39,7 +40,7 @@ src_prepare() {
 		[libsvm]
 		libraries=svm
 		library_dirs=${EPREFIX}/usr/$(get_libdir)
-		include_dirs=${EPREFIX}/usr/include/libsvm-2.0/libsvm
+		include_dirs=${EPREFIX}/usr/include/
 	EOF
 }
 
