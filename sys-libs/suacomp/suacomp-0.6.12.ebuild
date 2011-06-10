@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/suacomp/Attic/suacomp-0.6.7.ebuild,v 1.1 2011/05/09 08:30:52 mduft Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/suacomp/Attic/suacomp-0.6.12.ebuild,v 1.1 2011/06/10 13:59:03 mduft Exp $
 
 EAPI=3
 
-inherit toolchain-funcs
+inherit toolchain-funcs flag-o-matic
 
 DESCRIPTION="library wrapping the interix lib-c to make it less buggy."
 HOMEPAGE="http://suacomp.sf.net"
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="BEER-WARE"
 SLOT="0"
 KEYWORDS="-* ~x86-interix"
-IUSE=""
+IUSE="debug"
 
 DEPEND=""
 RDEPEND=""
@@ -35,17 +35,26 @@ get_opts() {
 	echo "SHARED_LIBC=${shlibc} STATIC_LIBC=${stlibc}"
 }
 
-src_compile() {
-	local mycflags=
-	[[ ${CHOST} == *-interix3* ]] && mycflags="-DINTERIX3"
+pkg_setup() {
+	if use debug; then
+		append-flags -D_DEBUG -D_DEBUG_TRACE
+	fi
+}
 
-	emake all CC=$(tc-getCC) CFLAGS="${CFLAGS} ${mycflags}" $(get_opts) || die "emake failed"
+src_compile() {
+	emake all CC=$(tc-getCC) $(get_opts) CFLAGS="${CFLAGS}" || die "emake failed"
 }
 
 src_install() {
-	emake install PREFIX="${EPREFIX}/usr" DESTDIR="${D}" $(get_opts) || die "emake install failed"
+	emake install PREFIX="${EPREFIX}/usr" DESTDIR="${D}" $(get_opts) \
+		CFLAGS="${CFLAGS}" || die "emake install failed"
 }
 
 src_test() {
-	emake check $(get_opts) || die "emake check failed"
+	local v=
+
+	use debug && v="TEST_VERBOSE=1"
+	use debug && export SUACOMP_DEBUG_OUT=stderr
+
+	emake check $(get_opts) ${v} || die "emake check failed"
 }
