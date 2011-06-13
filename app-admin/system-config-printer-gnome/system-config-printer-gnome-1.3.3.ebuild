@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/system-config-printer-gnome/Attic/system-config-printer-gnome-1.2.6.ebuild,v 1.3 2011/02/16 19:00:09 reavertm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/system-config-printer-gnome/Attic/system-config-printer-gnome-1.3.3.ebuild,v 1.1 2011/06/13 20:25:45 reavertm Exp $
 
 EAPI="3"
 
@@ -13,7 +13,7 @@ MY_P="${PN%-gnome}-${PV}"
 
 DESCRIPTION="GNOME frontend for a Red Hat's printer administration tool"
 HOMEPAGE="http://cyberelk.net/tim/software/system-config-printer/"
-SRC_URI="http://cyberelk.net/tim/data/system-config-printer/1.2/${MY_P}.tar.xz"
+SRC_URI="http://cyberelk.net/tim/data/system-config-printer/1.3/${MY_P}.tar.xz"
 
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86"
@@ -50,7 +50,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-1.2.6-split.patch"
+	epatch "${FILESDIR}/${PN}-1.3.3-split.patch"
 
 	eautoreconf
 }
