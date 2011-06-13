@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/pybackpack/pybackpack-0.4.2.ebuild,v 1.2 2011/04/06 18:07:04 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/pybackpack/pybackpack-0.4.2.ebuild,v 1.3 2011/06/13 14:58:35 pacho Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -17,7 +17,10 @@ KEYWORDS="~x86 ~ppc"
 IUSE=""
 
 DEPEND=">=app-backup/rdiff-backup-0.12.7
-	>=dev-python/gnome-python-desktop-2.14.0"
+	dev-python/libgnome-python
+	dev-python/gnome-vfs-python
+	dev-python/pygobject:2
+	dev-python/pygtk:2"
 RDEPEND="${DEPEND}"
 
 pkg_setup() {
