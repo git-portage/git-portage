@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-nds/389-admin/Attic/389-admin-1.1.13.ebuild,v 1.1 2011/01/11 22:30:13 lxnay Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-nds/389-admin/Attic/389-admin-1.1.16.ebuild,v 1.1 2011/06/14 19:14:10 lxnay Exp $
 
 EAPI="2"
 
@@ -59,9 +59,6 @@ src_prepare() {
 	epatch "${FILESDIR}/1.1.11_rc1/0004-rpath-fix.configure.ac.patch"
 	# Configuration fixes
 	epatch "${FILESDIR}/${PN}-cfgstuff-1.patch"
-
-	# 1.1.14 backports
-	epatch "${FILESDIR}/1.1.14_backports"/*.patch
 
 	sed -e "s!SUBDIRS!# SUBDIRS!g" -i Makefile.am || die "sed failed"
 	# Setup default user/group, in this case it's dirsrv
