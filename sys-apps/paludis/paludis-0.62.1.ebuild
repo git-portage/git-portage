@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/Attic/paludis-0.60.1.ebuild,v 1.2 2011/04/13 12:39:30 dagger Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/Attic/paludis-0.62.1.ebuild,v 1.1 2011/06/16 12:01:30 dagger Exp $
 
 inherit bash-completion eutils
 
@@ -8,7 +8,7 @@ DESCRIPTION="paludis, the other package mangler"
 HOMEPAGE="http://paludis.pioto.org/"
 SRC_URI="http://paludis.pioto.org/download/${P}.tar.bz2"
 
-IUSE="doc pbins portage pink python-bindings ruby-bindings search-index vim-syntax visibility xml zsh-completion"
+IUSE="doc pbins portage pink prebuilt-documentation python-bindings ruby-bindings search-index vim-syntax visibility xml zsh-completion"
 LICENSE="GPL-2 vim-syntax? ( vim )"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
@@ -26,15 +26,18 @@ COMMON_DEPEND="
 	search-index? ( >=dev-db/sqlite-3 )"
 
 DEPEND="${COMMON_DEPEND}
-	>=app-text/asciidoc-8.6.3
-	app-text/xmlto
+	!prebuilt-documentation? (
+		>=app-text/asciidoc-8.6.3
+		app-text/xmlto
+	)
 	doc? (
 		|| ( >=app-doc/doxygen-1.5.3 <=app-doc/doxygen-1.5.1 )
 		media-gfx/imagemagick
 		python-bindings? ( dev-python/epydoc dev-python/pygments )
 		ruby-bindings? ( dev-ruby/syntax dev-ruby/allison )
 	)
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	dev-util/gtest"
 
 RDEPEND="${COMMON_DEPEND}
 	sys-apps/sandbox"
@@ -55,6 +58,12 @@ pkg_setup() {
 		eerror "Paludis needs dev-libs/libpcre built with C++ support"
 		eerror "Please build dev-libs/libpcre with USE=cxx support"
 		die "Rebuild dev-libs/libpcre with USE=cxx"
+	fi
+
+	if ! built_with_use dev-util/gtest threads ; then
+		eerror "Paludis needs dev-util/gtest built with threads support"
+		eerror "Please build dev-util/gtest with USE=threads support"
+		die "Rebuild dev-util/gtest with USE threads"
 	fi
 
 	if use python-bindings && \
@@ -100,6 +109,7 @@ src_compile() {
 		$(use_enable pink ) \
 		$(use_enable ruby-bindings ruby ) \
 		$(useq ruby-bindings && useq doc && echo --enable-ruby-doc ) \
+		$(use_enable prebuilt-documentation ) \
 		$(use_enable python-bindings python ) \
 		$(useq python-bindings && useq doc && echo --enable-python-doc ) \
 		$(use_enable vim-syntax vim ) \
