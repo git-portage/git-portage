@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-nds/tac_plus/Attic/tac_plus-4.0.4.19-r1.ebuild,v 1.1 2011/06/14 12:07:35 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-nds/tac_plus/Attic/tac_plus-4.0.4.19-r2.ebuild,v 1.1 2011/06/16 16:00:43 chainsaw Exp $
 
 EAPI=4
 
