@@ -4,6 +4,9 @@
   ******************************************************************************
   *
   * $Log: ogdi-3.2.0_beta2-64b.patch,v $
+  * Revision 1.2  2011/06/17 11:03:37  scarabeus
+  * Try to work around lovely cvs replacement.
+  *
   * Revision 1.1  2011/06/17 11:00:15  scarabeus
   * Fix one issue with 64b patched post release in upstream repo.
   *
@@ -19,8 +22,8 @@
  #include "vrf.h"
  #include <assert.h>
  
--ECS_CVSID("$Id: ogdi-3.2.0_beta2-64b.patch,v 1.1 2011/06/17 11:00:15 scarabeus Exp $");
-+ECS_CVSID("$Id: ogdi-3.2.0_beta2-64b.patch,v 1.1 2011/06/17 11:00:15 scarabeus Exp $");
+-ECS_CVSID("$Id: ogdi-3.2.0_beta2-64b.patch,v 1.2 2011/06/17 11:03:37 scarabeus Exp $");
++ECS_CVSID("$Id: ogdi-3.2.0_beta2-64b.patch,v 1.2 2011/06/17 11:03:37 scarabeus Exp $");
  
  vpf_projection_type NOPROJ = {DDS, 0.0, 0.0, 0.0, 0.0, 0, 0.0, 0.0,
                                NULL, NULL, "Decimal Degrees     "};
