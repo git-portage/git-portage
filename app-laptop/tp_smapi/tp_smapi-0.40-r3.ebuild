@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-laptop/tp_smapi/Attic/tp_smapi-0.40-r2.ebuild,v 1.1 2011/06/14 15:31:20 sping Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-laptop/tp_smapi/Attic/tp_smapi-0.40-r3.ebuild,v 1.1 2011/06/17 13:27:42 scarabeus Exp $
 
-EAPI="3"
+EAPI=4
 
 inherit eutils linux-mod
 
@@ -23,7 +23,7 @@ RESTRICT="userpriv"
 DEPEND="sys-apps/dmidecode"
 RDEPEND="${DEPEND}"
 
-pkg_setup() {
+pkg_pretend() {
 	linux-mod_pkg_setup
 
 	if kernel_is lt 2 6 19; then
@@ -38,7 +38,6 @@ pkg_setup() {
 	BUILD_TARGETS="default"
 
 	if use hdaps; then
-
 		CONFIG_CHECK="~INPUT_UINPUT"
 		WARNING_INPUT_UINPUT="Your kernel needs uinput for the hdaps module to perform better"
 		linux-info_pkg_setup
@@ -52,14 +51,20 @@ pkg_setup() {
 	fi
 }
 
+pkg_setup() {
+	# run again as pkg_pretend is not var safe
+	pkg_pretend
+}
+
 src_prepare() {
-	epatch "${FILESDIR}/${P}-2.6.37.patch"
-	epatch "${FILESDIR}"/fix_header_check.patch
+	epatch \
+		"${FILESDIR}/${P}-2.6.37.patch" \
+		"${FILESDIR}/fix_header_check.patch"
 }
 
 src_install() {
 	linux-mod_src_install
-	dodoc CHANGES README || die
-	newinitd "${FILESDIR}"/${P}-initd smapi || die
-	newconfd "${FILESDIR}"/${P}-confd smapi || die
+	dodoc CHANGES README
+	newinitd "${FILESDIR}"/${P}-initd smapi
+	newconfd "${FILESDIR}"/${P}-confd smapi
 }
