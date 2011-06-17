@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/bugzilla/Attic/bugzilla-3.4.10.ebuild,v 1.2 2011/02/13 17:26:40 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/bugzilla/Attic/bugzilla-3.4.11.ebuild,v 1.1 2011/06/17 10:38:41 idl0r Exp $
 
-EAPI="2"
+EAPI="3"
 
 inherit webapp depend.apache versionator eutils
 
@@ -12,7 +12,7 @@ DESCRIPTION="Bugzilla is the Bug-Tracking System from the Mozilla project"
 SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/webtools/${P}.tar.gz"
 HOMEPAGE="http://www.bugzilla.org"
 
-LICENSE="MPL-1.1 NPL-1.1"
+LICENSE="MPL-1.1"
 # KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 KEYWORDS="~amd64 ~ppc ~x86"
 
@@ -63,7 +63,7 @@ RDEPEND="
 		dev-perl/SOAP-Lite
 		dev-perl/Template-GD
 		dev-perl/XML-Twig
-		media-gfx/imagemagick[perl]
+		|| ( media-gfx/imagemagick[perl] media-gfx/graphicsmagick[imagemagick,perl] )
 		dev-perl/TheSchwartz
 		dev-perl/Daemon-Generic
 	)
@@ -86,7 +86,7 @@ src_install () {
 	webapp_src_preinst
 
 	insinto "${MY_HTDOCSDIR}"
-	doins -r .
+	doins -r . || die
 	for f in bugzilla.cron.daily bugzilla.cron.tab; do
 		doins "${FILESDIR}"/${MY_PB}/${f} || die
 	done
