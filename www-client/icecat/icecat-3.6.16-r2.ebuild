@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/icecat/Attic/icecat-3.6.16.ebuild,v 1.6 2011/06/21 12:34:27 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/icecat/Attic/icecat-3.6.16-r2.ebuild,v 1.1 2011/06/23 11:08:56 polynomial-c Exp $
 EAPI="3"
 WANT_AUTOCONF="2.1"
 
@@ -18,7 +18,8 @@ MAJ_XUL_PV="1.9.2"
 MAJ_PV="${PV/_*/}" # Without the _rc and _beta stuff
 DESKTOP_PV="3.6"
 MY_PV="${PV/_rc/rc}" # Handle beta for SRC_URI
-XUL_PV="${MAJ_XUL_PV}${MAJ_PV/${DESKTOP_PV}/}" # Major + Minor version no.s
+#XUL_PV="${MAJ_XUL_PV}${MAJ_PV/${DESKTOP_PV}/}" # Major + Minor version no.s
+XUL_PV="${MAJ_XUL_PV}.17"
 FIREFOX_PN="firefox"
 FIREFOX_P="${FIREFOX_PN}-${PV}"
 PATCH="${FIREFOX_PN}-3.6-patches-0.4"
@@ -26,13 +27,15 @@ PATCH="${FIREFOX_PN}-3.6-patches-0.4"
 DESCRIPTION="GNU project's edition of Mozilla Firefox"
 HOMEPAGE="http://www.gnu.org/software/gnuzilla/"
 
-KEYWORDS="amd64 ppc ppc64 x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 SLOT="0"
 LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 )"
 IUSE="+alsa +ipc gnome java libnotify system-sqlite wifi"
 
 SRC_URI="mirror://gnu/gnuzilla/${MY_PV}/${PN}-${MY_PV}.tar.bz2
-	http://dev.gentoo.org/~anarchy/mozilla/patchsets/${PATCH}.tar.bz2"
+	http://dev.gentoo.org/~anarchy/mozilla/patchsets/${PATCH}.tar.bz2
+	http://dev.gentoo.org/~polynomial-c/mozilla/ff3617.diff.xz
+	http://dev.gentoo.org/~polynomial-c/mozilla/ff3618.diff.xz"
 LANGPACK_URI="http://gnuzilla.gnu.org/download/langpacks/${MY_PV}"
 
 for X in ${LANGS} ; do
@@ -124,6 +127,9 @@ src_unpack() {
 }
 
 src_prepare() {
+	# Make this a 3.6.17 version
+	epatch "${DISTDIR}"/ff3617.diff.xz "${DISTDIR}"/ff3618.diff.xz
+
 	# Integrate rebranding
 	sed -i "s|/firefox|/icecat|" \
 		"${WORKDIR}"/001-firefox_gentoo_install_dirs.patch
