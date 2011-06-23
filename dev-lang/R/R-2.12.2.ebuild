@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/Attic/R-2.12.2.ebuild,v 1.2 2011/06/22 18:46:09 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/Attic/R-2.12.2.ebuild,v 1.3 2011/06/23 13:03:38 jlec Exp $
 
 EAPI=3
 
@@ -8,14 +8,15 @@ inherit bash-completion eutils flag-o-matic fortran-2 versionator
 
 DESCRIPTION="Language and environment for statistical computing and graphics"
 HOMEPAGE="http://www.r-project.org/"
-SRC_URI="mirror://cran/src/base/R-2/${P}.tar.gz
+SRC_URI="
+	mirror://cran/src/base/R-2/${P}.tar.gz
 	bash-completion? ( mirror://gentoo/R.bash_completion.bz2 )"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
-IUSE="doc java jpeg lapack minimal nls perl png profile readline static-libs tk X cairo"
+IUSE="cairo doc java jpeg lapack minimal nls perl png profile readline static-libs tk X"
 
 # common depends
 CDEPEND="
@@ -53,6 +54,7 @@ RESTRICT="minimal? ( test )"
 R_DIR="${EPREFIX}"/usr/$(get_libdir)/${PN}
 
 pkg_setup() {
+	fortran-2_pkg_setup
 	filter-ldflags -Wl,-Bdirect -Bdirect
 	# avoid using existing R installation
 	unset R_HOME

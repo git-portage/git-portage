@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/Attic/R-2.12.1.ebuild,v 1.4 2011/06/23 13:03:38 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/Attic/R-2.13.0.ebuild,v 1.1 2011/06/23 13:03:38 jlec Exp $
 
-EAPI=2
+EAPI=4
 
 inherit bash-completion eutils flag-o-matic fortran-2 versionator
 
@@ -16,7 +16,7 @@ LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
-IUSE="cairo doc java jpeg lapack minimal nls perl png profile readline static-libs threads tk X"
+IUSE="cairo doc java jpeg lapack minimal nls openmp perl png profile readline static-libs tk X"
 
 # common depends
 CDEPEND="
@@ -24,7 +24,7 @@ CDEPEND="
 	app-text/ghostscript-gpl
 	dev-libs/libpcre
 	virtual/blas
-	virtual/fortran
+	virtual/fortran[openmp?]
 	cairo? (
 		x11-libs/cairo[X]
 		|| ( >=x11-libs/pango-1.20[X] <x11-libs/pango-1.20 ) )
@@ -46,14 +46,19 @@ DEPEND="${CDEPEND}
 
 RDEPEND="${CDEPEND}
 	app-arch/unzip
+	app-arch/xz-utils
 	app-arch/zip
 	java? ( >=virtual/jre-1.5 )"
 
 RESTRICT="minimal? ( test )"
 
-R_DIR=/usr/$(get_libdir)/${PN}
+R_DIR="${EPREFIX}"/usr/$(get_libdir)/${PN}
 
 pkg_setup() {
+	if use openmp; then
+		FORTRAN_NEED_OPENMP=1
+		tc-has-openmp || die "Please enable openmp support in your compiler"
+	fi
 	fortran-2_pkg_setup
 	filter-ldflags -Wl,-Bdirect -Bdirect
 	# avoid using existing R installation
@@ -62,24 +67,23 @@ pkg_setup() {
 
 src_prepare() {
 	# fix ocasional failure with parallel install (bug #322965)
+	# upstream in R-12.3?
+	# https://bugs.r-project.org/bugzilla3/show_bug.cgi?id=14505
 	epatch "${FILESDIR}"/${PN}-2.11.1-parallel.patch
 	# respect ldflags on rscript
+	# upstream does not want it, no reasons given
+	# https://bugs.r-project.org/bugzilla3/show_bug.cgi?id=14506
 	epatch "${FILESDIR}"/${PN}-2.12.1-ldflags.patch
 
-	# fix packages.html for doc (bug #205103)
-	# check in later versions if fixed
-	sed -i \
-		-e "s:../../library:../../../../$(get_libdir)/R/library:g" \
-		src/library/tools/R/packageshtml.R \
-		|| die "sed failed"
-
 	# fix Rscript
-	sed -i \
+	sed \
 		-e "s:-DR_HOME='\"\$(rhome)\"':-DR_HOME='\"${R_DIR}\"':" \
-		src/unix/Makefile.in || die "sed unix Makefile failed"
+		-i src/unix/Makefile.in || die "sed unix Makefile failed"
 
 	# fix HTML links to manual (bug #273957)
-	sed -i -e 's:\.\./manual/:manual/:g' $(grep -Flr ../manual/ doc) \
+	sed \
+		-e 's:\.\./manual/:manual/:g' \
+		-i $(grep -Flr ../manual/ doc) \
 		|| die "sed for HTML links to manual failed"
 
 	use lapack && \
@@ -99,15 +103,16 @@ src_configure() {
 		--with-system-zlib \
 		--with-system-bzlib \
 		--with-system-pcre \
+		--enable-byte-compiled-packages \
 		--with-blas="$(pkg-config --libs blas)" \
-		--docdir=/usr/share/doc/${PF} \
-		rdocdir=/usr/share/doc/${PF} \
+		--docdir="${EPREFIX}"/usr/share/doc/${PF} \
+		rdocdir="${EPREFIX}"/usr/share/doc/${PF} \
+		$(use_enable openmp) \
 		$(use_enable nls) \
 		$(use_enable profile R-profiling) \
 		$(use_enable profile memory-profiling) \
 		$(use_enable static-libs static) \
 		$(use_enable static-libs R-static-lib) \
-		$(use_enable threads) \
 		$(use_with lapack) \
 		$(use_with tk tcltk) \
 		$(use_with jpeg jpeglib) \
@@ -146,8 +151,8 @@ src_install() {
 		|| die "emake install math library failed"
 
 	local mv=$(get_major_version ${RMATH_V})
-	mv  "${D}"/usr/$(get_libdir)/libRmath.so \
-		"${D}"/usr/$(get_libdir)/libRmath.so.${RMATH_V}
+	mv  "${ED}"/usr/$(get_libdir)/libRmath.so \
+		"${ED}"/usr/$(get_libdir)/libRmath.so.${RMATH_V}
 	dosym libRmath.so.${RMATH_V} /usr/$(get_libdir)/libRmath.so.${mv}
 	dosym libRmath.so.${mv} /usr/$(get_libdir)/libRmath.so
 
