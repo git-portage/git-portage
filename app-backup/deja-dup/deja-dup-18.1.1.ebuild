@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-18.1.1.ebuild,v 1.2 2011/05/02 09:09:58 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-18.1.1.ebuild,v 1.3 2011/06/29 20:16:29 jlec Exp $
 
-EAPI="3"
+EAPI=3
 
 inherit eutils gnome2
 
@@ -30,6 +30,7 @@ COMMON_DEPEND="
 RDEPEND="${COMMON_DEPEND}
 	gnome-base/gvfs[fuse]"
 DEPEND="${COMMON_DEPEND}
+	dev-perl/Locale-gettext
 	dev-util/pkgconfig
 	>=dev-util/intltool-0.40
 	>=sys-devel/gettext-0.17"
