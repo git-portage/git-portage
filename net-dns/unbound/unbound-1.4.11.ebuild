@@ -1,10 +1,13 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/unbound/Attic/unbound-1.4.9.ebuild,v 1.1 2011/04/11 15:01:36 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/unbound/Attic/unbound-1.4.11.ebuild,v 1.1 2011/07/03 01:28:00 matsuu Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2"
-inherit eutils python
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
+
+inherit eutils flag-o-matic python
 
 DESCRIPTION="A validating, recursive and caching DNS resolver"
 HOMEPAGE="http://unbound.net/"
@@ -33,12 +36,12 @@ RDEPEND="${RDEPEND}
 	net-dns/dnssec-root"
 
 pkg_setup() {
-	python_set_active_version 2
 	enewgroup unbound
 	enewuser unbound -1 -1 /etc/unbound unbound
 }
 
 src_configure() {
+	append-ldflags -Wl,-z,noexecstack || die
 	econf \
 		--with-pidfile="${EPREFIX}"/var/run/unbound.pid \
 		--with-ldns="${EPREFIX}"/usr \
@@ -64,7 +67,10 @@ src_install() {
 
 	# bug #299016
 	if use python ; then
-		find "${ED}$(python_get_sitedir)" "(" -name "*.a" -o -name "*.la" ")" -type f -delete || die
+		find "${ED}" -name '_unbound.{la,a}' -delete || die
+	fi
+	if ! use static-libs ; then
+		find "${ED}" -name "*.la" -type f -delete || die
 	fi
 
 	newinitd "${FILESDIR}/unbound.initd" unbound || die "newinitd failed"
