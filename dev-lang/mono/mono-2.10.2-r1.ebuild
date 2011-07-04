@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/mono/Attic/mono-2.10.1-r1.ebuild,v 1.4 2011/03/20 19:01:41 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/mono/Attic/mono-2.10.2-r1.ebuild,v 1.1 2011/07/04 11:27:20 pacho Exp $
 
 EAPI="2"
 
@@ -32,12 +32,6 @@ MAKEOPTS="${MAKEOPTS} -j1"
 
 RESTRICT="test"
 
-PATCHES=(
-	"${WORKDIR}/${PN}-2.10.1-libdir.patch"
-	"${FILESDIR}/${PN}-2.2-ppc-threading.patch"
-	"${FILESDIR}/${PN}-2.2-uselibdir.patch"
-)
-
 pkg_setup() {
 	if use kernel_linux
 	then
@@ -58,13 +52,10 @@ pkg_setup() {
 			ewarn "See http://bugs.gentoo.org/261869 for more info."
 		fi
 	fi
+	PATCHES=( "${FILESDIR}/${PN}-2.10.2-threads-access.patch" )
 }
 
 src_prepare() {
-	sed -e "s:@MONOLIBDIR@:$(get_libdir):" \
-		< "${FILESDIR}"/${PN}-2.10.1-libdir.patch \
-		> "${WORKDIR}"/${PN}-2.10.1-libdir.patch ||
-		die "Sedding patch file failed"
 	go-mono_src_prepare
 
 	# we need to sed in the paxctl -mr in the runtime/mono-wrapper.in so it don't
