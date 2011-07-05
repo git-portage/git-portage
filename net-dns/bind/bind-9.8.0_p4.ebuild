@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/Attic/bind-9.8.0_p2-r1.ebuild,v 1.1 2011/06/16 18:54:12 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/Attic/bind-9.8.0_p4.ebuild,v 1.1 2011/07/05 17:00:12 idl0r Exp $
 
 EAPI="3"
 
@@ -12,12 +12,13 @@ MY_P="${PN}-${MY_PV}"
 
 SDB_LDAP_VER="1.1.0-fc14"
 
+# bind-9.8.0-P1-geoip-1.3.patch
 GEOIP_PV=1.3
 #GEOIP_PV_AGAINST="${MY_PV}"
-GEOIP_PV_AGAINST="9.7.2-P2"
-GEOIP_P="bind-geoip-${GEOIP_PV}"
-GEOIP_PATCH_A="${GEOIP_P}-${GEOIP_PV_AGAINST}.patch"
-GEOIP_DOC_A="${GEOIP_P}-readme.txt"
+GEOIP_PV_AGAINST="9.8.0-P1"
+GEOIP_P="bind-${GEOIP_PV_AGAINST}-geoip-${GEOIP_PV}"
+GEOIP_PATCH_A="${GEOIP_P}.patch"
+GEOIP_DOC_A="bind-geoip-1.3-readme.txt"
 GEOIP_SRC_URI_BASE="http://bind-geoip.googlecode.com/"
 
 DESCRIPTION="BIND - Berkeley Internet Name Domain - Name Server"
@@ -104,8 +105,7 @@ src_prepare() {
 
 	if use geoip; then
 		cp "${DISTDIR}"/${GEOIP_PATCH_A} "${S}" || die
-		sed -i -e 's:MINORVER=7:MINORVER=8:' \
-			-e 's:PATCHVER=2:PATCHVER=0:' ${GEOIP_PATCH_A} || die
+		sed -i -e 's:RELEASEVER=1:RELEASEVER=4:' ${GEOIP_PATCH_A} || die
 		epatch ${GEOIP_PATCH_A}
 	fi
 
@@ -212,7 +212,7 @@ src_install() {
 		tar xf "${DISTDIR}"/dyndns-samples.tbz2 || die
 	fi
 
-	use geoip && dodoc "${DISTDIR}"/${GEOIP_P}-readme.txt
+	use geoip && dodoc "${DISTDIR}"/${GEOIP_DOC_A}
 
 	insinto /etc/bind
 	newins "${FILESDIR}"/named.conf-r5 named.conf || die
