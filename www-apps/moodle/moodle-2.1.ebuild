@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/moodle/Attic/moodle-2.0.2.ebuild,v 1.1 2011/02/22 16:22:08 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/moodle/Attic/moodle-2.1.ebuild,v 1.1 2011/07/09 20:25:29 blueness Exp $
 
 EAPI="2"
 
