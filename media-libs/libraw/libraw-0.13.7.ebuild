@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libraw/Attic/libraw-0.13.5.ebuild,v 1.1 2011/05/23 21:55:55 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libraw/Attic/libraw-0.13.7.ebuild,v 1.1 2011/07/16 19:20:55 radhermit Exp $
 
 EAPI="4"
 
@@ -19,7 +19,7 @@ SRC_URI="http://www.libraw.org/data/${MY_P}.tar.gz
 LICENSE="LGPL-2.1 CDDL GPL-2 GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="demosaic examples +lcms +openmp"
+IUSE="demosaic examples +lcms +openmp static-libs"
 
 DEPEND="lcms? ( media-libs/lcms:2 )"
 RDEPEND="${DEPEND}"
@@ -38,7 +38,6 @@ src_unpack() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-0.13.4-docs.patch
-	epatch "${FILESDIR}"/${PN}-0.13.4-examples.patch
 	eautomake
 }
 
@@ -48,5 +47,13 @@ src_configure() {
 		$(use_enable demosaic demosaic-pack-gpl3) \
 		$(use_enable examples) \
 		$(use_enable lcms) \
-		$(use_enable openmp)
+		$(use_enable openmp) \
+		$(use_enable static-libs static)
+}
+
+src_install() {
+	default
+
+	# Remove useless .la files
+	find "${ED}" -name '*.la' -exec rm -f {} +
 }
