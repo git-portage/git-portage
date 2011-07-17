@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/backintime
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/ChangeLog,v 1.9 2011/02/01 11:03:35 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/ChangeLog,v 1.10 2011/07/17 15:52:49 pacho Exp $
+
+  17 Jul 2011; Pacho Ramos <pacho@gentoo.org> -backintime-1.0.4.ebuild:
+  Remove old, also solves bug #372161
 
   01 Feb 2011; Thilo Bangert <bangert@gentoo.org> -backintime-0.9.26-r2.ebuild,
   -files/backintime-0.9.26-dont-install-license.diff,
