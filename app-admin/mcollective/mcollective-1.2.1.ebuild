@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/mcollective/Attic/mcollective-1.1.3.ebuild,v 1.1 2011/03/09 18:37:09 ramereth Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/mcollective/Attic/mcollective-1.2.1.ebuild,v 1.1 2011/07/18 08:07:40 ramereth Exp $
 
-EAPI="2"
+EAPI="4"
 
 USE_RUBY="ruby18 ree18"
 
@@ -41,9 +41,10 @@ each_ruby_install() {
 	cd etc
 	for cfg in *.dist ; do
 		newins "${cfg}" "${cfg%%.dist}"
-		dosed "s:^libdir.*:libdir = /usr/share/mcollective/plugins:" \
-			/etc/mcollective/${cfg%%.dist}
+		sed -i -e "s:^libdir.*:libdir = /usr/share/mcollective/plugins:" \
+			"${D}"/etc/mcollective/${cfg%%.dist}
 	done
+	insinto /etc/mcollective/plugin.d
 }
 
 pkg_postinst() {
