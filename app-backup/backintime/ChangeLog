@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/backintime
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/ChangeLog,v 1.10 2011/07/17 15:52:49 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/ChangeLog,v 1.11 2011/07/20 17:11:53 pacho Exp $
+
+  20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #118937
 
   17 Jul 2011; Pacho Ramos <pacho@gentoo.org> -backintime-1.0.4.ebuild:
   Remove old, also solves bug #372161

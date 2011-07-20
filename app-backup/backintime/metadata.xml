@@ -3,7 +3,7 @@
 <pkgmetadata>
 <herd>no-herd</herd>
 <maintainer>
-	<email>bangert@gentoo.org</email>
+	<email>maintainer-needed@gentoo.org</email>
 </maintainer>
 <longdescription lang="en">
 Back In Time is a simple backup tool for Linux inspired from “flyback project” and “TimeVault”. The backup is done by taking snapshots of a specified set of directories.
