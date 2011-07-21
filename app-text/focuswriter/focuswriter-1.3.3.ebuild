@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/focuswriter/Attic/focuswriter-1.2.1.ebuild,v 1.1 2010/05/30 10:23:15 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/focuswriter/Attic/focuswriter-1.3.3.ebuild,v 1.1 2011/07/21 00:32:23 chiiph Exp $
 
 EAPI=3
 inherit qt4-r2
@@ -14,8 +14,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-DEPEND="x11-libs/qt-gui:4
-	app-text/hunspell"
+DEPEND="
+	app-text/hunspell
+	dev-libs/libzip
+	x11-libs/qt-gui:4
+	media-libs/libao
+	"
 RDEPEND="${DEPEND}"
 
 DOCS="ChangeLog README"
