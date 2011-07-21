@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libcanberra/Attic/libcanberra-0.28-r2.ebuild,v 1.3 2011/07/10 18:44:50 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libcanberra/Attic/libcanberra-0.28-r4.ebuild,v 1.1 2011/07/21 17:26:29 pacho Exp $
 
 EAPI="4"
 
