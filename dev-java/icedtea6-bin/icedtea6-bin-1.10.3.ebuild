@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea6-bin/Attic/icedtea6-bin-1.10.1.ebuild,v 1.1 2011/04/22 14:47:32 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea6-bin/Attic/icedtea6-bin-1.10.3.ebuild,v 1.1 2011/07/24 10:13:00 caster Exp $
 
 EAPI="1"
 
@@ -84,8 +84,11 @@ src_install() {
 	fi
 
 	if use nsplugin ; then
-		use x86 && arch=i386
-		install_mozilla_plugin "${dest}/jre/lib/${arch}/IcedTeaPlugin.so"
+		cd ..
+		cp -pPR icedtea6-web-bin "${D}/opt/"
+		install_mozilla_plugin "/opt/icedtea6-web-bin/$(get_libdir)/IcedTeaPlugin.so"
+		docinto icedtea-web
+		dodoc doc/icedtea-web/*
 	fi
 
 	set_java_env
