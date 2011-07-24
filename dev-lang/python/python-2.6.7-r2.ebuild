@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/python/Attic/python-2.6.7-r1.ebuild,v 1.1 2011/07/23 00:53:21 neurogeek Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/python/Attic/python-2.6.7-r2.ebuild,v 1.1 2011/07/24 15:06:30 neurogeek Exp $
 
 EAPI="2"
 WANT_AUTOMAKE="none"
@@ -143,6 +143,9 @@ src_prepare() {
 		Modules/Setup.dist \
 		Modules/getpath.c \
 		setup.py || die "sed failed to replace @@GENTOO_LIBDIR@@"
+
+	#Linux-3 compat. Bug #374579 (upstream issue12571)
+	cp -r "${S}/Lib/plat-linux2" "${S}/Lib/plat-linux3" || die "copy plat-linux failed"
 
 	eautoreconf
 }
@@ -308,9 +311,13 @@ src_install() {
 	newconfd "${FILESDIR}/pydoc.conf" pydoc-${SLOT} || die "newconfd failed"
 	newinitd "${FILESDIR}/pydoc.init" pydoc-${SLOT} || die "newinitd failed"
 
-	#Linux-3 compat. Bug #374579 (upstream issue12571)
-	cp -r "${ED}$(python_get_libdir)/plat-linux2" \
+	if [ -d "${ED}$(python_get_libdir)/plat-linux2" ];then
+		cp -r "${ED}$(python_get_libdir)/plat-linux2" \
 			"${ED}$(python_get_libdir)/plat-linux3" || die "copy plat-linux failed"
+	else
+		cp -r "${ED}$(python_get_libdir)/plat-linux3" \
+			"${ED}$(python_get_libdir)/plat-linux2" || die "copy plat-linux failed"
+	fi
 
 	sed \
 		-e "s:@PYDOC_PORT_VARIABLE@:PYDOC${SLOT/./_}_PORT:" \
