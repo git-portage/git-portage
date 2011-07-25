@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/chef-server/Attic/chef-server-0.9.8.ebuild,v 1.1 2010/09/19 14:28:16 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/chef-server/Attic/chef-server-0.10.2.ebuild,v 1.1 2011/07/25 09:18:19 hollow Exp $
 
 EAPI="2"
 USE_RUBY="ruby18"
@@ -19,4 +19,5 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 ruby_add_rdepend "~app-admin/chef-server-api-${PV}
-	~app-admin/chef-solr-${PV}"
+	~app-admin/chef-solr-${PV}
+	~app-admin/chef-expander-${PV}"

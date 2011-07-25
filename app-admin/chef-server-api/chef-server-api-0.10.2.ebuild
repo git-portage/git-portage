@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/chef-server-api/Attic/chef-server-api-0.9.8.ebuild,v 1.2 2010/09/20 09:30:31 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/chef-server-api/Attic/chef-server-api-0.10.2.ebuild,v 1.1 2011/07/25 09:16:54 hollow Exp $
 
 EAPI="2"
 USE_RUBY="ruby18"
@@ -18,8 +18,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RDEPEND=">=dev-db/couchdb-0.10.0
+	>=net-misc/rabbitmq-server-1.7.0"
+
 ruby_add_rdepend "~app-admin/chef-${PV}
+	>=dev-ruby/dep_selector-0.0.3
 	>=dev-ruby/json-1.4.4
+	<=dev-ruby/json-1.4.6
 	>=dev-ruby/mixlib-authentication-1.1.3
 	>=dev-ruby/merb-assets-1.1.0
 	>=dev-ruby/merb-core-1.1.0
@@ -28,26 +33,17 @@ ruby_add_rdepend "~app-admin/chef-${PV}
 	>=dev-ruby/uuidtools-2.1.1
 	www-servers/thin"
 
-pkg_setup() {
-	enewgroup chef
-	enewuser chef -1 -1 /var/lib/chef chef
-}
-
 each_ruby_install() {
 	each_fakegem_install
 	ruby_fakegem_doins -r app
 	ruby_fakegem_doins -r config
 	ruby_fakegem_doins -r public
-
-	# create unversioned path for passenger/rack integration
-	dodir /var/lib/chef/rack
-	dosym $(ruby_fakegem_gemsdir)/gems/${P} /var/lib/chef/rack/api
 }
 
 all_ruby_install() {
 	all_fakegem_install
 
-	doinitd "${FILESDIR}/initd/chef-server-api"
+	newinitd "${FILESDIR}/initd/chef-server-api-r1" ${PN}
 	doconfd "${FILESDIR}/confd/chef-server-api"
 
 	keepdir /etc/chef /var/lib/chef /var/log/chef /var/run/chef \

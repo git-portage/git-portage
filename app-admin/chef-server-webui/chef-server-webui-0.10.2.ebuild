@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/chef-server-webui/Attic/chef-server-webui-0.9.6.ebuild,v 1.2 2010/08/30 17:43:17 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/chef-server-webui/Attic/chef-server-webui-0.10.2.ebuild,v 1.1 2011/07/25 09:13:38 hollow Exp $
 
 EAPI="2"
 USE_RUBY="ruby18"
@@ -24,12 +24,12 @@ RDEPEND=">=dev-db/couchdb-0.10.0
 ruby_add_rdepend "dev-ruby/coderay
 	dev-ruby/haml
 	>=dev-ruby/json-1.4.4
+	<=dev-ruby/json-1.4.6
 	>=dev-ruby/merb-assets-1.1.0
 	>=dev-ruby/merb-core-1.1.0
 	>=dev-ruby/merb-haml-1.1.0
 	>=dev-ruby/merb-helpers-1.1.0
 	>=dev-ruby/merb-param-protection-1.1.0
-	>=dev-ruby/merb-slices-1.1.0
 	dev-ruby/ruby-openid
 	www-servers/thin"
 
@@ -44,6 +44,10 @@ each_ruby_install() {
 	ruby_fakegem_doins -r config
 	ruby_fakegem_doins config.ru
 	ruby_fakegem_doins -r public
+
+	# create unversioned path for passenger/rack integration
+	dodir /var/lib/chef/rack
+	dosym $(ruby_fakegem_gemsdir)/gems/${P} /var/lib/chef/rack/webui
 }
 
 all_ruby_install() {
