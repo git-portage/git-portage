@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/cppcheck/Attic/cppcheck-1.47.ebuild,v 1.2 2011/04/12 22:51:39 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/cppcheck/Attic/cppcheck-1.49.ebuild,v 1.1 2011/07/27 23:38:38 xmw Exp $
 
 EAPI="3"
 PYTHON_DEPEND="htmlreport? 2"
@@ -17,8 +17,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="htmlreport qt4"
 
 DEPEND="htmlreport? ( dev-python/pygments )
-		qt4? ( x11-libs/qt-gui:4
-			x11-libs/qt-assistant:4 )"
+	qt4? ( x11-libs/qt-gui:4
+		x11-libs/qt-assistant:4 )"
 RDEPEND="${DEPEND}"
 
 DISTUTILS_SETUP_FILES=("htmlreport|setup.py")
