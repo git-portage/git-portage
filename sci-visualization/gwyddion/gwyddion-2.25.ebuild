@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/gwyddion/Attic/gwyddion-2.18.ebuild,v 1.3 2011/03/02 13:42:52 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/gwyddion/Attic/gwyddion-2.25.ebuild,v 1.1 2011/07/27 23:24:33 bicatali Exp $
 
 EAPI=2
 
@@ -17,8 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc fftw gnome kde nls opengl perl python ruby sourceview xml X"
 
-RDEPEND="
-	x11-libs/gtk+:2
+RDEPEND="x11-libs/gtk+:2
 	x11-libs/cairo
 	x11-libs/pango
 	x11-libs/libXmu
