@@ -1,22 +1,21 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall/Attic/shorewall-4.4.19.3.ebuild,v 1.1 2011/05/14 12:37:52 constanze Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall/Attic/shorewall-4.4.22.1.ebuild,v 1.1 2011/08/06 15:46:03 constanze Exp $
 
-EAPI="2"
+EAPI="4"
 
 inherit eutils versionator
 
 # Select version (stable, RC, Beta):
 MY_PV_TREE=$(get_version_component_range 1-2)   # for devel versions use "development/$(get_version_component_range 1-2)"
-MY_P_BETA=""                                    # stable or experimental (eg. "-RC1" or "-Beta4")
 MY_PV_BASE=$(get_version_component_range 1-3)
 
-MY_P="${PN}-${MY_PV_BASE}${MY_P_BETA}"
+MY_P="${PN}-${MY_PV_BASE}"
 MY_P_DOCS="${P/${PN}/${PN}-docs-html}"
 
 DESCRIPTION="Shoreline Firewall is an iptables-based firewall for Linux."
 HOMEPAGE="http://www.shorewall.net/"
-SRC_URI="http://www1.shorewall.net/pub/${PN}/${MY_PV_TREE}/${MY_P}/${P}${MY_P_BETA}.tar.bz2
+SRC_URI="http://www1.shorewall.net/pub/${PN}/${MY_PV_TREE}/${MY_P}/${P}.tar.bz2
 	doc? ( http://www1.shorewall.net/pub/${PN}/${MY_PV_TREE}/${MY_P}/${MY_P_DOCS}.tar.bz2 )"
 
 LICENSE="GPL-2"
@@ -39,19 +38,17 @@ src_compile() {
 src_install() {
 	keepdir /var/lib/shorewall
 
-	cd "${WORKDIR}/${P}${MY_P_BETA}"
+	cd "${WORKDIR}/${P}"
 	PREFIX="${D}" ./install.sh || die "install.sh failed"
-	newinitd "${FILESDIR}"/shorewall.initd shorewall || die "doinitd failed"
+	newinitd "${FILESDIR}"/shorewall.initd shorewall
 
-	dodoc changelog.txt releasenotes.txt || die
-
+	dodoc changelog.txt releasenotes.txt
 	if use doc; then
+		dodoc -r Samples
 		cd "${WORKDIR}/${MY_P_DOCS}"
-		# install documentation
 		dohtml -r *
-		# install samples
-		cp -pR "${S}${MY_P_BETA}/Samples" "${D}/usr/share/doc/${PF}"
 	fi
+	dodir /var/lock/subsys
 }
 
 pkg_postinst() {
