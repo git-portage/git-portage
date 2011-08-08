@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/nxnode/Attic/nxnode-3.4.0.16-r1.ebuild,v 1.1 2011/03/13 23:20:03 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/nxnode/Attic/nxnode-3.4.0.16-r1.ebuild,v 1.2 2011/08/08 14:41:53 voyageur Exp $
 
 EAPI="2"
 
@@ -31,7 +31,7 @@ RDEPEND="=net-misc/nxclient-${MAJOR_PV}*[cups]
 	x11-apps/xrdb
 	rdesktop? ( net-misc/rdesktop )
 	vnc? ( x11-misc/x11vnc
-		   || ( net-misc/tightvnc net-misc/vnc ) )"
+		   net-misc/tightvnc )"
 
 S=${WORKDIR}/NX
 
