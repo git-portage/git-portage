@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/samba/Attic/samba-3.6.0_rc3.ebuild,v 1.1 2011/07/27 11:51:12 dagger Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/samba/Attic/samba-3.6.0.ebuild,v 1.1 2011/08/09 13:22:46 dagger Exp $
 
 EAPI=4
 
@@ -11,10 +11,10 @@ MY_P="${PN}-${MY_PV}"
 
 DESCRIPTION="Library bits of the samba network filesystem"
 HOMEPAGE="http://www.samba.org/"
-SRC_URI="mirror://samba/rc/${MY_P}.tar.gz"
+SRC_URI="mirror://samba/${MY_P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="acl addns ads +aio avahi caps +client cluster cups debug doc examples fam
 	ldap ldb +netapi pam quota +readline +server +smbclient smbsharemodes
 	swat syslog winbind"
@@ -39,6 +39,7 @@ DEPEND="dev-libs/popt
 	debug? ( dev-libs/dmalloc )
 	fam? ( virtual/fam )
 	ldap? ( net-nds/openldap )
+	ldb? ( sys-libs/ldb )
 	pam? ( virtual/pam
 		winbind? ( dev-libs/iniparser )
 	)
@@ -89,7 +90,7 @@ pkg_setup() {
 	fi
 
 	use cups && BINPROGS="${BINPROGS} bin/smbspool"
-	use ldb && BINPROGS="${BINPROGS} bin/ldbedit bin/ldbsearch bin/ldbadd bin/ldbdel bin/ldbmodify bin/ldbrename";
+#	use ldb && BINPROGS="${BINPROGS} bin/ldbedit bin/ldbsearch bin/ldbadd bin/ldbdel bin/ldbmodify bin/ldbrename";
 
 	if use winbind ; then
 		BINPROGS="${BINPROGS} bin/wbinfo"
@@ -266,6 +267,9 @@ src_install() {
 		if use winbind ; then
 			newpamd "${CONFDIR}/system-auth-winbind.pam" system-auth-winbind
 			doman ../docs/manpages/pam_winbind.8
+			# bug #376853
+			insinto /etc/security
+			doins ../examples/pam_winbind/pam_winbind.conf || die
 		fi
 
 		newpamd "${CONFDIR}/samba.pam" samba
