@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/vo/Attic/vo-0.7.ebuild,v 1.3 2011/08/08 18:35:34 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/vo/Attic/vo-0.7.2.ebuild,v 1.1 2011/08/15 20:58:03 xarthisius Exp $
 
 EAPI=3
 
