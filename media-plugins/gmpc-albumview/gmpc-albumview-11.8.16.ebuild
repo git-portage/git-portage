@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gmpc-albumview/gmpc-albumview-11.8.16.ebuild,v 1.2 2011/08/20 11:31:24 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gmpc-albumview/gmpc-albumview-11.8.16.ebuild,v 1.1 2011/08/20 11:30:32 angelos Exp $
 
 EAPI=4
 
