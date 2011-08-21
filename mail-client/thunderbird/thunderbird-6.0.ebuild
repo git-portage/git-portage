@@ -1,21 +1,15 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/thunderbird/Attic/thunderbird-3.3_alpha3-r2.ebuild,v 1.1 2011/05/16 02:23:33 anarchy Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/thunderbird/Attic/thunderbird-6.0.ebuild,v 1.1 2011/08/21 17:55:30 anarchy Exp $
 
 EAPI="3"
 WANT_AUTOCONF="2.1"
 
 inherit flag-o-matic toolchain-funcs eutils mozconfig-3 makeedit multilib mozextension autotools pax-utils python
 
-# This list can be updated using get_langs.sh from the mozilla overlay
-#LANGS="af ar be bg bn-BD ca cs da de el en en-GB en-US es-AR es-ES et eu fi fr \
-#fy-NL ga-IE he hu id is it ja ko lt nb-NO nl nn-NO pa-IN pl pt-BR pt-PT ro ru si \
-#sk sl sq sv-SE tr uk zh-CN zh-TW"
-#NOSHORTLANGS="en-GB es-AR pt-BR zh-TW"
-
-MY_PV="${PV/_alpha/a}"
-MY_P="${P/_alpha/a}"
-EMVER="1.2a1"
+TB_PV="${PV/_beta/b}"
+TB_P="${PN}-${TB_PV}"
+EMVER="1.3"
 
 DESCRIPTION="Thunderbird Mail Client"
 HOMEPAGE="http://www.mozilla.com/en-US/thunderbird/"
@@ -24,36 +18,46 @@ KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linu
 SLOT="0"
 LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 )"
 IUSE="bindist gconf +crashreporter +crypt +ipc +lightning mozdom"
-PATCH="${PN}-3.3-patches-0.2"
+PATCH="${PN}-5.0-patches-0.1"
 
-REL_URI="http://releases.mozilla.org/pub/mozilla.org/${PN}/releases"
-SRC_URI="${REL_URI}/${MY_PV}/source/${MY_P}.source.tar.bz2
-	crypt? ( http://dev.gentoo.org/~anarchy/mozilla/firefox/enigmail-${EMVER}-20110316.tar.bz2 )
+FTP_URI="ftp://ftp.mozilla.org/pub/${PN}/releases/"
+SRC_URI="${FTP_URI}/${TB_PV}/source/${TB_P}.source.tar.bz2
+	crypt? ( http://www.mozilla-enigmail.org/download/source/enigmail-${EMVER}.tar.gz )
 	http://dev.gentoo.org/~anarchy/mozilla/patchsets/${PATCH}.tar.bz2"
 
-#for X in ${LANGS} ; do
-#	if [ "${X}" != "en" ] && [ "${X}" != "en-US" ]; then
-#		SRC_URI="${SRC_URI}
-#			linguas_${X/-/_}? ( ${REL_URI}/${MY_PV}/linux-i686/xpi/${X}.xpi -> ${P}-${X}.xpi )"
-#	fi
-#	IUSE="${IUSE} linguas_${X/-/_}"
-#	# english is handled internally
-#	if [ "${#X}" == 5 ] && ! has ${X} ${NOSHORTLANGS}; then
-#		if [ "${X}" != "en-US" ]; then
-#			SRC_URI="${SRC_URI}
-#				linguas_${X%%-*}? ( ${REL_URI}/${MY_PV}/linux-i686/xpi/${X}.xpi -> ${P}-${X}.xpi )"
-#		fi
-#		IUSE="${IUSE} linguas_${X%%-*}"
-#	fi
-#done
+if ! [[ ${PV} =~ alpha|beta ]]; then
+	# This list can be updated using get_langs.sh from the mozilla overlay
+	# Not supported yet bn-BD ro id zh-CN be af el pa-IN bg
+	LANGS="ar ca cs da de en en-GB en-US es-AR es-ES et eu fi fr \
+	fy-NL ga-IE he hu is it ja ko lt nb-NO nl nn-NO pl pt-BR pt-PT ru si \
+	sk sl sq sv-SE tr uk zh-TW"
+	NOSHORTLANGS="en-GB es-AR pt-BR zh-TW"
+
+	for X in ${LANGS} ; do
+		if [ "${X}" != "en" ] && [ "${X}" != "en-US" ]; then
+			SRC_URI="${SRC_URI}
+				linguas_${X/-/_}? ( ${FTP_URI}/${TB_PV}/linux-i686/xpi/${X}.xpi -> ${P}-${X}.xpi )"
+		fi
+		IUSE="${IUSE} linguas_${X/-/_}"
+		# english is handled internally
+		if [ "${#X}" == 5 ] && ! has ${X} ${NOSHORTLANGS}; then
+			if [ "${X}" != "en-US" ]; then
+				SRC_URI="${SRC_URI}
+					linguas_${X%%-*}? ( ${FTP_URI}/${TB_PV}/linux-i686/xpi/${X}.xpi -> ${P}-${X}.xpi )"
+			fi
+			IUSE="${IUSE} linguas_${X%%-*}"
+		fi
+	done
+fi
 
 RDEPEND=">=sys-devel/binutils-2.16.1
-	>=dev-libs/nss-3.12.9
-	>=dev-libs/nspr-4.8.7
+	>=dev-libs/nss-3.12.10
+	>=dev-libs/nspr-4.8.8
 	gconf? ( >=gnome-base/gconf-1.2.1:2 )
 	media-libs/libpng[apng]
 	!x11-plugins/lightning
 	!x11-plugins/enigmail
+	system-sqlite? ( >=dev-db/sqlite-3.7.5[fts3,secure-delete,unlock-notify,debug=] )
 	crypt?  ( || (
 		( >=app-crypt/gnupg-2.0
 			|| (
@@ -66,29 +70,29 @@ RDEPEND=">=sys-devel/binutils-2.16.1
 
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}"/comm-central
+S="${WORKDIR}"/comm-release
 
-#linguas() {
-#	local LANG SLANG
-#	for LANG in ${LINGUAS}; do
-#		if has ${LANG} en en_US; then
-#			has en ${linguas} || linguas="${linguas:+"${linguas} "}en"
-#			continue
-#		elif has ${LANG} ${LANGS//-/_}; then
-#			has ${LANG//_/-} ${linguas} || linguas="${linguas:+"${linguas} "}${LANG//_/-}"
-#			continue
-#		elif [[ " ${LANGS} " == *" ${LANG}-"* ]]; then
-#			for X in ${LANGS}; do
-#				if [[ "${X}" == "${LANG}-"* ]] && \
-#					[[ " ${NOSHORTLANGS} " != *" ${X} "* ]]; then
-#					has ${X} ${linguas} || linguas="${linguas:+"${linguas} "}${X}"
-#					continue 2
-#				fi
-#			done
-#		fi
-#		ewarn "Sorry, but ${PN} does not support the ${LANG} LINGUA"
-#	done
-#}
+linguas() {
+	local LANG SLANG
+	for LANG in ${LINGUAS}; do
+		if has ${LANG} en en_US; then
+			has en ${linguas} || linguas="${linguas:+"${linguas} "}en"
+			continue
+		elif has ${LANG} ${LANGS//-/_}; then
+			has ${LANG//_/-} ${linguas} || linguas="${linguas:+"${linguas} "}${LANG//_/-}"
+			continue
+		elif [[ " ${LANGS} " == *" ${LANG}-"* ]]; then
+			for X in ${LANGS}; do
+				if [[ "${X}" == "${LANG}-"* ]] && \
+					[[ " ${NOSHORTLANGS} " != *" ${X} "* ]]; then
+					has ${X} ${linguas} || linguas="${linguas:+"${linguas} "}${X}"
+					continue 2
+				fi
+			done
+		fi
+		ewarn "Sorry, but ${PN} does not support the ${LANG} LINGUA"
+	done
+}
 
 pkg_setup() {
 	moz_pkgsetup
@@ -104,14 +108,16 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 
-#	linguas
-#	for X in ${linguas}; do
-#		# FIXME: Add support for unpacking xpis to portage
-#		[[ ${X} != "en" ]] && xpi_unpack "${P}-${X}.xpi"
-#	done
-#	if [[ ${linguas} != "" && ${linguas} != "en" ]]; then
-#		einfo "Selected language packs (first will be default): ${linguas}"
-#	fi
+	if ! [[ ${PV} =~ alpha|beta ]]; then
+		linguas
+		for X in ${linguas}; do
+			# FIXME: Add support for unpacking xpis to portage
+			[[ ${X} != "en" ]] && xpi_unpack "${P}-${X}.xpi"
+		done
+		if [[ ${linguas} != "" && ${linguas} != "en" ]]; then
+			einfo "Selected language packs (first will be default): ${linguas}"
+		fi
+	fi
 }
 
 src_prepare() {
@@ -120,14 +126,22 @@ src_prepare() {
 	EPATCH_FORCE="yes" \
 	epatch "${WORKDIR}"
 
+	epatch "${FILESDIR}"/fix-thunderbird-calender-support.patch
+
 	if use crypt ; then
 		mv "${WORKDIR}"/enigmail "${S}"/mailnews/extensions/enigmail
 		cd "${S}"/mailnews/extensions/enigmail || die
-		epatch "${FILESDIR}"/enigmail-1.1.2-20110124-locale-fixup.diff
 		./makemake -r 2&> /dev/null
 		sed -i -e 's:@srcdir@:${S}/mailnews/extensions/enigmail:' Makefile.in
 		cd "${S}"
 	fi
+
+	#Fix compilation with curl-7.21.7 bug 376027
+	sed -e '/#include <curl\/types.h>/d'  \
+		-i "${S}"/mozilla/toolkit/crashreporter/google-breakpad/src/common/linux/http_upload.cc \
+		-i "${S}"/mozilla/toolkit/crashreporter/google-breakpad/src/common/linux/libcurl_wrapper.cc \
+		-i "${S}"/mozilla/config/system-headers \
+		-i "${S}"/mozilla/js/src/config/system-headers || die "Sed failed"
 
 	# Allow user to apply any additional patches without modifing ebuild
 	epatch_user
@@ -188,10 +202,11 @@ src_configure() {
 
 	if [[ $(gcc-major-version) -lt 4 ]]; then
 		append-cxxflags -fno-stack-protector
+	elif [[ $(gcc-major-version) -gt 4 || $(gcc-minor-version) -gt 3 ]]; then
+		if use amd64 || use x86; then
+			append-flags -mno-avx
+		fi
 	fi
-
-	# Ensure we do not fail on i{3,5,7} processors that support -mavx
-	append-flags -mno-avx
 
 	CPPFLAGS="${CPPFLAGS}" \
 	CC="$(tc-getCC)" CXX="$(tc-getCXX)" LD="$(tc-getLD)" \
@@ -242,10 +257,12 @@ src_install() {
 		unzip "${S}"/mozilla/dist/xpi-stage/lightning.xpi
 	fi
 
-#	linguas
-#	for X in ${linguas}; do
-#		[[ ${X} != "en" ]] && xpi_install "${WORKDIR}"/"${P}-${X}"
-#	done
+	if ! [[ ${PV} =~ alpha|beta ]]; then
+		linguas
+		for X in ${linguas}; do
+			[[ ${X} != "en" ]] && xpi_install "${WORKDIR}"/"${P}-${X}"
+		done
+	fi
 
 	if ! use bindist; then
 		newicon "${S}"/other-licenses/branding/thunderbird/content/icon48.png thunderbird-icon.png
