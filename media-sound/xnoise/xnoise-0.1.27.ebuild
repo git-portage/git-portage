@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/xnoise/Attic/xnoise-0.1.25.ebuild,v 1.2 2011/06/26 09:31:25 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/xnoise/Attic/xnoise-0.1.27.ebuild,v 1.1 2011/08/21 11:07:53 angelos Exp $
 
 EAPI=4
 inherit fdo-mime gnome2-utils
@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	sys-devel/gettext"
 
-DOCS=( AUTHORS NEWS README )
+DOCS=( AUTHORS README )
 
 src_configure() {
 	econf \
