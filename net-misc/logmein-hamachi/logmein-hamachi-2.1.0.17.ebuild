@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/logmein-hamachi/Attic/logmein-hamachi-2.0.1.13.ebuild,v 1.1 2011/01/15 21:13:25 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/logmein-hamachi/Attic/logmein-hamachi-2.1.0.17.ebuild,v 1.1 2011/08/24 11:07:13 hwoarang Exp $
 
 inherit eutils linux-info
 
@@ -58,5 +58,4 @@ pkg_postinst() {
 	elog "/etc/init.d/${PN} restart"
 	elog "To enable auto-login when the service starts set a nickname in"
 	elog "/etc/conf.d/${PN}"
-	elog "Running 'hamachi' without arguments may crash the daemon."
 }
