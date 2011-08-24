@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-14.0.835.35.ebuild,v 1.1 2011/08/11 18:50:22 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-14.0.835.109.ebuild,v 1.1 2011/08/24 19:09:13 phajdan.jr Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
