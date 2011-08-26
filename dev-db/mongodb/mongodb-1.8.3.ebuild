@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mongodb/Attic/mongodb-1.8.2.ebuild,v 1.1 2011/06/22 17:26:09 ultrabug Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mongodb/Attic/mongodb-1.8.3.ebuild,v 1.1 2011/08/26 12:38:49 ultrabug Exp $
 
 EAPI=4
 SCONS_MIN_VERSION="1.2.0"
@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="static-libs v8"
 
-RDEPEND="!v8? ( >=dev-lang/spidermonkey-1.8 )
+RDEPEND="!v8? ( =dev-lang/spidermonkey-1.8.2* )
 	v8? ( dev-lang/v8 )
 	dev-libs/boost
 	dev-libs/libpcre[cxx]
@@ -43,6 +43,7 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.8-fix-scons.patch"
+	epatch "${FILESDIR}/${PN}-linux3.patch"
 }
 
 src_compile() {
