@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/Attic/backuppc-3.2.1.ebuild,v 1.1 2011/08/29 10:41:07 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/Attic/backuppc-3.2.1.ebuild,v 1.2 2011/08/29 10:47:00 patrick Exp $
 
 EAPI="2"
 
@@ -10,7 +10,8 @@ MY_P="BackupPC-${PV}"
 
 DESCRIPTION="A high-performance system for backing up computers to a server's disk."
 HOMEPAGE="http://backuppc.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz
+	http://dev.gentooexperimental.org/~dreeevil/02-fix-config.pl-formatting.patch"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
@@ -58,7 +59,7 @@ src_unpack() {
 
 src_prepare() {
 	epatch "${FILESDIR}/3.2.0/01-fix-configure.pl.patch"
-	epatch "${FILESDIR}/3.2.0/02-fix-config.pl-formatting.patch"
+	epatch "${DISTDIR}/02-fix-config.pl-formatting.patch"
 	epatch "${FILESDIR}/3.2.0/03-reasonable-config.pl-defaults.patch"
 
 	# Fix the documentation location in the CGI interface
