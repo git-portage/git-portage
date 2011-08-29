@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-usbin/Attic/freebsd-usbin-7.2.ebuild,v 1.7 2011/04/07 07:52:12 ultrabug Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-usbin/Attic/freebsd-usbin-8.2-r1.ebuild,v 1.1 2011/08/29 12:04:41 naota Exp $
 
 EAPI=2
 
@@ -27,6 +27,7 @@ RDEPEND="=sys-freebsd/freebsd-lib-${RV}*[usb?,bluetooth?,netware?]
 	build? ( sys-apps/baselayout )
 	ssl? ( dev-libs/openssl )
 	tcpd? ( sys-apps/tcp-wrappers )
+	dev-libs/libelf
 	dev-libs/libedit
 	net-libs/libpcap"
 DEPEND="${RDEPEND}
@@ -38,7 +39,7 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/usr.sbin"
 
-IUSE="acpi atm audit bluetooth ipv6 isdn minimal netware nis pam ssl tcpd usb build"
+IUSE="acpi atm audit bluetooth floppy ipv6 isdn minimal netware nis pam ssl tcpd usb build"
 
 pkg_setup() {
 	# Release crunch is something like minimal. It seems to remove everything
@@ -56,13 +57,15 @@ pkg_setup() {
 	use pam || mymakeopts="${mymakeopts} WITHOUT_PAM_SUPPORT= "
 	use ssl || mymakeopts="${mymakeopts} WITHOUT_OPENSSL= "
 	use usb || mymakeopts="${mymakeopts} WITHOUT_USB= "
-	use tcpd || mymakeopts="${mymakeopts} NO_WRAP= "
+	use floppy || mymakeopts="${mymakeopts} WITHOUT_FLOPPY= "
+	use tcpd || mymakeopts="${mymakeopts} NO_WRAP="
 
 	mymakeopts="${mymakeopts} WITHOUT_BIND_NAMED= WITHOUT_BIND_DNSSEC= WITHOUT_PF= WITHOUT_LPR= WITHOUT_SENDMAIL= WITHOUT_AUTHPF= WITHOUT_MAILWRAPPER= "
 }
 
 PATCHES=( "${FILESDIR}/${PN}-7.0-nowrap.patch"
-	"${FILESDIR}/${PN}-adduser.patch" )
+	"${FILESDIR}/${PN}-adduser.patch"
+	"${FILESDIR}/mountd.patch" )
 
 REMOVE_SUBDIRS="
 	named named-checkzone named-checkconf rndc rndc-confgen
@@ -82,13 +85,9 @@ src_prepare() {
 	else
 		dummy_mk mount_smbfs
 	fi
-}
-
-src_compile() {
-	strip-flags
-	append-flags -I "${WORKDIR}/sys"
-
-	NOFLAGSTRIP="yes" freebsd_src_compile
+	# Don't install mtree format manpage
+	# it's installed by libarchive.
+	sed -e "s: mtree.5::g" -i "${S}"/mtree/Makefile
 }
 
 src_install() {
@@ -126,7 +125,6 @@ EOS
 
 	cd "${WORKDIR}/etc"
 	doins apmd.conf syslog.conf newsyslog.conf nscd.conf || die
-	use usb && doins usbd.conf
 
 	insinto /etc/ppp
 	doins ppp/ppp.conf || die
