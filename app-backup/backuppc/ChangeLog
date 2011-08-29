@@ -1,6 +1,18 @@
 # ChangeLog for app-backup/backuppc
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/ChangeLog,v 1.8 2009/10/12 17:17:02 halcy0n Exp $
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/ChangeLog,v 1.9 2011/08/29 10:41:07 patrick Exp $
+
+*backuppc-3.2.1 (29 Aug 2011)
+
+  29 Aug 2011; Patrick Lauer <patrick@gentoo.org>
+  +files/3.2.0/01-fix-configure.pl.patch,
+  +files/3.2.0/02-fix-config.pl-formatting.patch,
+  +files/3.2.0/03-reasonable-config.pl-defaults.patch,
+  +files/3.2.0/04-add-docdir-marker.patch, +files/3.2.0/05-nicelevel.patch,
+  +files/apache2-backuppc.conf, +files/apache2-backuppc.init,
+  +backuppc-3.2.1.ebuild, +files/httpd.conf:
+  Bump for #287133, ebuild from the portage-backup overlay. Thanks to Lenno
+  Nagel.
 
   12 Oct 2009; Mark Loeser <halcy0n@gentoo.org> backuppc-2.1.2-r1.ebuild:
   QA fixes; unquoted variables
