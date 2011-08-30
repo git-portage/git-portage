@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/flaggie/Attic/flaggie-0.1.2.ebuild,v 1.1 2011/08/14 08:57:23 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/flaggie/Attic/flaggie-0.1.3.ebuild,v 1.1 2011/08/30 21:28:23 mgorny Exp $
 
 EAPI=3
 PYTHON_DEPEND="*:2.6"
