@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/Attic/boxbackup-0.11_rc8.ebuild,v 1.3 2010/10/30 10:29:54 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.11.1.ebuild,v 1.1 2011/08/30 08:51:08 patrick Exp $
 
 EAPI="2"
 
-inherit eutils autotools
+inherit eutils
 
 DESCRIPTION="A completely automatic on-line backup system"
 HOMEPAGE="http://boxbackup.org/"
@@ -24,7 +24,7 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}/${P/_/}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-testbbackupd.patch
+	epatch "${FILESDIR}"/${PN}-0.11_rc8-testbbackupd.patch
 }
 
 src_compile() {
@@ -45,9 +45,10 @@ src_install() {
 
 	keepdir /etc/boxbackup
 
+	# apparently new versions have the files in the right location, so this is redundant
 	# move executables from /usr/bin to /usr/sbin, as configuration of
 	# this is unfortunately not optimal
-	mv "${D%/}${EPREFIX}/usr/bin" "${D%/}${EPREFIX}/usr/sbin" || die "could not move files from bin to sbin"
+	#mv "${D%/}${EPREFIX}/usr/bin" "${D%/}${EPREFIX}/usr/sbin" || die "could not move files from bin to sbin"
 }
 
 pkg_preinst() {
