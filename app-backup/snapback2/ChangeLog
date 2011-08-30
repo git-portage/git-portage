@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/snapback2
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/snapback2/ChangeLog,v 1.2 2010/09/10 19:09:17 robbat2 Exp $
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/snapback2/ChangeLog,v 1.3 2011/08/30 08:57:41 patrick Exp $
+
+*snapback2-0.917 (30 Aug 2011)
+
+  30 Aug 2011; Patrick Lauer <patrick@gentoo.org> +snapback2-0.917.ebuild:
+  Bump for #380059, adding amd64 keywords
 
   10 Sep 2010; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
   Duplicate <maintainer> block of the herd is pointless.
