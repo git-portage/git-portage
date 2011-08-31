@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/Attic/backuppc-3.2.1.ebuild,v 1.2 2011/08/29 10:47:00 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/Attic/backuppc-3.2.1.ebuild,v 1.3 2011/08/31 06:40:35 mr_bones_ Exp $
 
 EAPI="2"
 
@@ -188,7 +188,7 @@ src_install() {
 
 pkg_postinst() {
 	# This is disabled since BackupPC doesn't need it
-	# webapp_pkg_postinst 
+	# webapp_pkg_postinst
 
 	elog "Installation finished, now may now start using BackupPC."
 	elog ""
