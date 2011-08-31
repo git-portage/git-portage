@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/pybackpack
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/pybackpack/ChangeLog,v 1.3 2011/06/13 14:58:35 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/pybackpack/ChangeLog,v 1.4 2011/08/31 06:54:35 patrick Exp $
+
+*pybackpack-0.5.8 (31 Aug 2011)
+
+  31 Aug 2011; Patrick Lauer <patrick@gentoo.org> +pybackpack-0.5.8.ebuild:
+  Bump for #183077
 
   13 Jun 2011; Pacho Ramos <pacho@gentoo.org> pybackpack-0.4.2.ebuild:
   DEPEND in splitted python, bug #352911.
