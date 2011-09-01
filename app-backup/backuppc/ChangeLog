@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/backuppc
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/ChangeLog,v 1.13 2011/09/01 10:46:38 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/ChangeLog,v 1.14 2011/09/01 16:18:01 chainsaw Exp $
+
+  01 Sep 2011; Tony Vroon <chainsaw@gentoo.org> backuppc-3.2.1-r2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo, Ian
+  "idella4" Delaney & Tomáš "Mepho" Pružina in security bug #308013 filed by
+  Stefan "craig" Behte.
 
   01 Sep 2011; Patrick Lauer <patrick@gentoo.org> backuppc-3.2.1-r2.ebuild:
   More better fix for init script
