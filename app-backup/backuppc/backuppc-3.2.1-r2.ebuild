@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/backuppc-3.2.1-r2.ebuild,v 1.1 2011/09/01 10:43:45 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/backuppc-3.2.1-r2.ebuild,v 1.2 2011/09/01 10:46:38 patrick Exp $
 
 EAPI="2"
 
@@ -67,7 +67,7 @@ src_prepare() {
 	sed -i "s+__DOCDIR__+/usr/share/doc/${PF}+" "lib/BackupPC/CGI/View.pm"
 
 	epatch "${FILESDIR}/3.2.0/05-nicelevel.patch"
-	sed -i -e 's/--chuid/--user/' "${S}"/init.d/src/gentoo-backuppc || die "Failed to fix the init script"
+	sed -i -e 's/--chuid ${USER}//' "${S}"/init.d/src/gentoo-backuppc || die "Failed to fix the init script"
 }
 
 src_test() {
