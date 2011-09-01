@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/ecryptfs-utils/Attic/ecryptfs-utils-90.ebuild,v 1.3 2011/08/31 01:33:13 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/ecryptfs-utils/Attic/ecryptfs-utils-91.ebuild,v 1.1 2011/09/01 11:19:06 flameeyes Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2:2.5"
@@ -49,9 +49,8 @@ src_prepare() {
 	echo "#!/bin/sh" > py-compile
 
 	# Python bindings are built/installed manually.
-	sed -e "/SUBDIRS =/s/ libecryptfs-swig//" -i src/Makefile.{am,in} || die "sed failed"
+	sed -e "/SUBDIRS =/s/ libecryptfs-swig//" -i src/Makefile.am || die "sed failed"
 
-	epatch "${FILESDIR}"/${P}-nss-pkgconfig.patch
 	eautoreconf
 }
 
