@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/Attic/backuppc-3.2.1.ebuild,v 1.3 2011/08/31 06:40:35 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/Attic/backuppc-3.2.1-r1.ebuild,v 1.1 2011/09/01 10:28:46 patrick Exp $
 
 EAPI="2"
 
@@ -223,4 +223,7 @@ pkg_postinst() {
 		ewarn "Detected old config directory in /etc/backuppc"
 		ewarn "Please migrate relevant config files to ${CONFDIR} before starting backuppc"
 	fi
+	elog "Warning: The default path changed from /var/lib/backuppc to /var/lib/BackupPC"
+	elog "To continue using the old path the config files need to contain something like this:"
+	elog "\$Conf{TopDir} = '/var/lib/backuppc/';"
 }

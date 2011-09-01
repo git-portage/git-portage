@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/backuppc
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/ChangeLog,v 1.10 2011/08/29 10:47:00 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/ChangeLog,v 1.11 2011/09/01 10:28:46 patrick Exp $
+
+*backuppc-3.2.1-r1 (01 Sep 2011)
+
+  01 Sep 2011; Patrick Lauer <patrick@gentoo.org> -backuppc-3.2.1.ebuild,
+  +backuppc-3.2.1-r1.ebuild:
+  Adding upgrade warning, changed default path
 
   29 Aug 2011; Patrick Lauer <patrick@gentoo.org>
   -files/3.2.0/02-fix-config.pl-formatting.patch, backuppc-3.2.1.ebuild:
