@@ -1,13 +1,14 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/opera-next/Attic/opera-next-12.00.1033-r1.ebuild,v 1.1 2011/08/02 17:02:34 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/opera-next/Attic/opera-next-12.00.1054.ebuild,v 1.1 2011/09/02 15:50:23 jer Exp $
 
 EAPI="4"
 
 inherit eutils fdo-mime gnome2-utils multilib pax-utils versionator
 
 DESCRIPTION="A fast and secure web browser and Internet suite"
-HOMEPAGE="http://my.opera.com/ruario/blog/2011/06/29/i-need-feedback-from-gentoo-and-sabayon-users"
+HOMEPAGE="http://www.opera.com/"
+
 SLOT="0"
 LICENSE="OPERA-11 LGPL-2 LGPL-3"
 KEYWORDS="~amd64 ~x86 ~x86-fbsd"
@@ -16,7 +17,7 @@ IUSE="elibc_FreeBSD gtk kde +gstreamer"
 O_V="$(get_version_component_range 1-2)" # Major version, i.e. 11.00
 O_B="$(get_version_component_range 3)"   # Build version, i.e. 1156
 
-O_D="QRESYNC_${O_V}-${O_B}"
+O_D="twelvereturns_${O_V}-${O_B}"
 O_P="${PN}-${O_V}-${O_B}"
 O_U="http://snapshot.opera.com/unix/"
 
@@ -146,8 +147,14 @@ src_prepare() {
 		-e "s:@@{USUFFIX}::g" \
 		-e "s:opera:${PN}:g" \
 		share/man/man1/* \
-		share/applications/${PN}-browser.desktop \
+		share/applications/${PN}-*.desktop \
 		|| die "sed failed"
+
+	# Replace "Opera" with "Opera Next"
+	if [[ ${PN} = opera-next ]]; then
+		sed -i share/applications/${PN}-*.desktop \
+			-e "/^Name=Opera\|^ Next/s:Opera:& Next:" || die
+	fi
 
 	# Create /usr/bin/opera wrapper
 	echo '#!/bin/sh' > ${PN}
@@ -155,6 +162,13 @@ src_prepare() {
 	echo 'export OPERA_PERSONALDIR=${OPERA_PERSONALDIR:-"${HOME}/.'${PN}'"}' \
 		>> ${PN}
 	echo 'exec '"${OPREFIX}/${PN}/${PN}"' "$@"' >> ${PN}
+
+	# Fix libdir in defaults/pluginpath.ini
+	sed -i \
+		share/${PN}/defaults/pluginpath.ini \
+		-e "s|/usr/lib32|${OPREFIX}|g" \
+		-e '/netscape/{s|[0-1]|2|g}' \
+		|| die "sed pluginpath.ini failed"
 
 	# Change libz.so.3 to libz.so.1 for gentoo/freebsd
 	if use elibc_FreeBSD; then
@@ -200,21 +214,6 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	elog "Contrary to all previous ebuilds, this experimental ebuild does not"
-	elog "change the default plugin paths as found in"
-	elog "</usr/share/${PN}/defaults/pluginpath.ini>."
-	elog
-	elog "To help test the assumption that changing the default pluginpath.ini"
-	elog "causes the problems with www-plugins/adobe-flash, please move your"
-	elog "\$HOME/.${PN} directory aside, launch ${PN} and try out"
-	elog "some websites that offer Adobe Flash content."
-	elog
-	elog "If you find this ebuild, and moving away your \$HOME/.${PN} directory"
-	elog "fixes the issue, then please file a new bug report with all the usual"
-	elog "information, or visit"
-	elog "${HOMEPAGE}"
-	elog "and report your findings there, but always mention this special ebuild."
-
 	if use elibc_FreeBSD; then
 		elog
 		elog "To improve shared memory usage please set:"
