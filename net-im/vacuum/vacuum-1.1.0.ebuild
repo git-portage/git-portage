@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/vacuum/Attic/vacuum-1.1.0.ebuild,v 1.1 2011/04/29 16:08:39 maksbotan Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/vacuum/Attic/vacuum-1.1.0.ebuild,v 1.2 2011/09/03 14:49:58 maksbotan Exp $
 
 EAPI="4"
 LANGS="de pl ru uk"
@@ -32,14 +32,16 @@ REQUIRED_USE="
 	pepmanager? ( servicediscovery )
 	registration? ( dataforms )
 	remotecontrol? ( commands dataforms )
-	sessionnegotiation? ( dataforms )"
+	sessionnegotiation? ( dataforms )
+"
 
 RDEPEND="
 	>=x11-libs/qt-core-4.5:4[ssl]
 	>=x11-libs/qt-gui-4.5:4
 	>=dev-libs/openssl-0.9.8k
 	adiummessagestyle? ( >=x11-libs/qt-webkit-4.5:4 )
-	x11-libs/libXScrnSaver"
+	x11-libs/libXScrnSaver
+"
 DEPEND="${RDEPEND}"
 
 DOCS="AUTHORS CHANGELOG README TRANSLATORS"
