@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/spideroak-bin
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/ChangeLog,v 1.1 2011/08/14 02:45:50 naota Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/ChangeLog,v 1.2 2011/09/04 14:51:33 naota Exp $
+
+*spideroak-bin-4.1.9848 (04 Sep 2011)
+
+  04 Sep 2011; Naohiro Aota <naota@gentoo.org> +spideroak-bin-4.1.9848.ebuild:
+  Version bump. #381569
 
 *spideroak-bin-4.1.9842 (14 Aug 2011)
 
