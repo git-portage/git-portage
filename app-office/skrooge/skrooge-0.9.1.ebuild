@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/skrooge/Attic/skrooge-0.9.0.ebuild,v 1.2 2011/08/08 21:25:32 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/skrooge/Attic/skrooge-0.9.1.ebuild,v 1.1 2011/09/06 19:45:52 scarabeus Exp $
 
 EAPI=4
 KDE_LINGUAS="bg bs ca ca@valencia cs da de el en_GB eo es et fr ga gl hu it ja ko lt ms nb
