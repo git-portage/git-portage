@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-mozc/Attic/ibus-mozc-1.1.758.102.ebuild,v 1.1 2011/07/20 14:52:13 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-mozc/Attic/ibus-mozc-1.2.831.102.ebuild,v 1.1 2011/09/06 22:57:14 matsuu Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -46,7 +46,7 @@ pkg_setup() {
 
 src_prepare() {
 	sed -i -e "s:/usr/lib/mozc:${EPREFIX}/usr/$(get_libdir)/mozc:" base/util.cc || die
-	epatch "${FILESDIR}/${P}-gentoo.patch"
+	epatch "${FILESDIR}/${PN}-1.2.809.102-gentoo.patch"
 }
 
 src_configure() {
