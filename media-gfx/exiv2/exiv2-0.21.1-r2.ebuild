@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/exiv2/Attic/exiv2-0.21-r1.ebuild,v 1.1 2010/12/21 12:31:54 sbriesen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/exiv2/Attic/exiv2-0.21.1-r2.ebuild,v 1.1 2011/09/09 15:25:21 scarabeus Exp $
 
-EAPI="2"
+EAPI=3
 PYTHON_DEPEND="2"
 
 inherit eutils multilib toolchain-funcs python
@@ -36,7 +36,18 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-xmp-fix.patch"
+	# exiv2 fails to build with boost-1.46 due to boost filesystem
+	# API v3 becoming the default. This is easily fixed by adding a
+	#  #define BOOST_FILESYSTEM_VERSION 2
+	# to source files that include boost/filesystem.hpp
+	#
+	# Implemented via sed to avoid patch-file (bug #357605)
+	sed -i -e \
+		's|^\(#include <boost/filesystem.hpp>.*\)|#define BOOST_FILESYSTEM_VERSION 2\n\1|g' \
+		contrib/organize/helpers.hpp
+
+	# fix for off by 1 hour date error for -T option (bug #368419)
+	epatch "${FILESDIR}/${P}-time-fix.patch"
 
 	# convert docs to UTF-8
 	for i in doc/cmd.txt; do
@@ -70,7 +81,9 @@ src_configure() {
 		use amd64 && myconf="${myconf} --disable-visibility"
 	fi
 
-	econf ${myconf}
+	econf \
+		--disable-static \
+		${myconf}
 }
 
 src_compile() {
@@ -90,6 +103,8 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
+
+	find "${ED}" -name '*.la' -exec rm -f {} +
 
 	if use contrib; then
 		emake DESTDIR="${D}" -C contrib/organize install || die "emake install organize failed"
