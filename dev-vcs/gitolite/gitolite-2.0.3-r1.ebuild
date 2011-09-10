@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitolite/Attic/gitolite-2.0.3.ebuild,v 1.1 2011/08/30 17:13:44 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitolite/Attic/gitolite-2.0.3-r1.ebuild,v 1.1 2011/09/10 17:50:33 idl0r Exp $
 
 EAPI=3
 
@@ -29,6 +29,8 @@ pkg_setup() {
 src_prepare() {
 	rm Makefile doc/COPYING || die
 	rm -rf contrib/{gitweb,vim} || die
+
+	epatch "${FILESDIR}/0001-fix-a-rather-large-typo-thinko-in-1006eba.patch"
 
 	echo "${PF}" > conf/VERSION
 }
