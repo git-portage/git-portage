@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/mono/Attic/mono-2.10.2.ebuild,v 1.3 2011/06/30 14:16:12 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/mono/Attic/mono-2.10.5.ebuild,v 1.1 2011/09/10 11:42:02 pacho Exp $
 
-EAPI="2"
+EAPI="4"
 
 inherit linux-info mono eutils flag-o-matic multilib go-mono pax-utils
 
@@ -11,9 +11,9 @@ HOMEPAGE="http://www.mono-project.com/Main_Page"
 
 LICENSE="MIT LGPL-2.1 GPL-2 BSD-4 NPL-1.1 Ms-PL GPL-2-with-linking-exception IDPL"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 
-IUSE="hardened minimal xen"
+IUSE="minimal xen"
 
 #Bash requirement is for += operator
 COMMONDEPEND="!<dev-dotnet/pnet-0.6.12
@@ -26,7 +26,7 @@ RDEPEND="${COMMONDEPEND}
 DEPEND="${COMMONDEPEND}
 	sys-devel/bc
 	>=app-shells/bash-3.2
-	hardened? ( sys-apps/paxctl )"
+	sys-apps/paxctl"
 
 MAKEOPTS="${MAKEOPTS} -j1"
 
@@ -52,18 +52,7 @@ pkg_setup() {
 			ewarn "See http://bugs.gentoo.org/261869 for more info."
 		fi
 	fi
-}
-
-src_prepare() {
-	go-mono_src_prepare
-
-	# we need to sed in the paxctl -mr in the runtime/mono-wrapper.in so it don't
-	# get killed in the build proces when MPROTEC is enable. #286280
-	# RANDMMAP kill the build proces to #347365
-	if use hardened ; then
-		ewarn "We are disabling MPROTECT on the mono binary."
-		sed '/exec/ i\paxctl -mr "$r/@mono_runtime@"' -i "${S}"/runtime/mono-wrapper.in
-	fi
+	PATCHES=( "${FILESDIR}/${PN}-2.10.2-threads-access.patch" )
 }
 
 src_configure() {
