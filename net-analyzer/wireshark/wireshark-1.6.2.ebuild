@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.6.0_rc1.ebuild,v 1.1 2011/05/24 10:44:24 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.6.2.ebuild,v 1.1 2011/09/12 18:55:52 pva Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2"
@@ -46,7 +46,8 @@ DEPEND="${RDEPEND}
 	dev-lang/perl
 	sys-devel/bison
 	sys-apps/sed
-	sys-devel/flex"
+	sys-devel/flex
+	!!<net-analyzer/wireshark-1.6.0_rc1"
 
 S=${WORKDIR}/${MY_P}
 
