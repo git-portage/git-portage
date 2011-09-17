@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql-base/Attic/postgresql-base-9.1_beta3.ebuild,v 1.1 2011/07/15 12:12:59 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql-base/Attic/postgresql-base-9.1.0.ebuild,v 1.1 2011/09/17 17:47:28 titanofold Exp $
 
 EAPI="4"
 
@@ -10,17 +10,14 @@ inherit autotools eutils flag-o-matic multilib prefix versionator
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd ~ppc-macos ~x86-solaris"
 
-# Upstream doesn't have an underscore in the file name
-MY_PV=${PV/_/}
+SLOT="$(get_version_component_range 1-2)"
+S="${WORKDIR}/postgresql-${PV}"
 
 DESCRIPTION="PostgreSQL libraries and clients"
 HOMEPAGE="http://www.postgresql.org/"
-SRC_URI="mirror://postgresql/source/v${MY_PV}/postgresql-${MY_PV}.tar.bz2
-		 http://dev.gentoo.org/~titanofold/postgresql-patches-${MY_PV}.tbz2"
+SRC_URI="mirror://postgresql/source/v${PV}/postgresql-${PV}.tar.bz2
+		 http://dev.gentoo.org/~titanofold/postgresql-patches-${SLOT}.tbz2"
 LICENSE="POSTGRESQL"
-
-S="${WORKDIR}/postgresql-${MY_PV}"
-SLOT="$(get_version_component_range 1-2)"
 
 # No tests to be done for clients and libraries
 RESTRICT="test"
@@ -46,7 +43,7 @@ RDEPEND="!!dev-db/libpq
 		 !!dev-db/postgresql
 		 !!dev-db/postgresql-client
 		 !!dev-db/postgresql-libs
-		 >=app-admin/eselect-postgresql-1.0.9
+		 >=app-admin/eselect-postgresql-1.0.10
 		 virtual/libintl
 		 kerberos? ( virtual/krb5 )
 		 ldap? ( net-nds/openldap )
@@ -66,9 +63,8 @@ DEPEND="${RDEPEND}
 PDEPEND="doc? ( ~dev-db/postgresql-docs-${PV} )"
 
 src_prepare() {
-	epatch "${WORKDIR}/autoconf.patch" \
-		"${WORKDIR}/base.patch"
-	epatch "${FILESDIR}"/${PN}-9.0.4-stdbool.patch
+	epatch "${WORKDIR}/autoconf.patch" "${WORKDIR}/base.patch" \
+		"${WORKDIR}/bool.patch"
 
 	eprefixify src/include/pg_config_manual.h
 
@@ -91,16 +87,15 @@ src_configure() {
 	export LDFLAGS_SL="${LDFLAGS}"
 	export LDFLAGS_EX="${LDFLAGS}"
 
-	local prfx="${EPREFIX%/}"
+	local PO="${EPREFIX%/}"
 
 	econf \
-		--prefix="${prfx}/usr/$(get_libdir)/postgresql-${SLOT}" \
-		--datadir="${prfx}/usr/share/postgresql-${SLOT}" \
-		--docdir="${prfx}/usr/share/doc/postgresql-${SLOT}" \
-		--sysconfdir="${prfx}/etc/postgresql-${SLOT}" \
-		--includedir="${prfx}/usr/include/postgresql-${SLOT}" \
-		--mandir="${prfx}/usr/share/postgresql-${SLOT}/man" \
-		--enable-depend \
+		--prefix="${PO}/usr/$(get_libdir)/postgresql-${SLOT}" \
+		--datadir="${PO}/usr/share/postgresql-${SLOT}" \
+		--docdir="${PO}/usr/share/doc/postgresql-${SLOT}" \
+		--sysconfdir="${PO}/etc/postgresql-${SLOT}" \
+		--includedir="${PO}/usr/include/postgresql-${SLOT}" \
+		--mandir="${PO}/usr/share/postgresql-${SLOT}/man" \
 		--without-tcl \
 		--without-perl \
 		--without-python \
@@ -132,7 +127,7 @@ src_install() {
 	cp -r "${S}"/doc/src/sgml/man{1,7} "${ED}"/usr/share/postgresql-${SLOT}/man/ || die
 	rm "${ED}/usr/share/postgresql-${SLOT}/man/man1"/{initdb,pg_{controldata,ctl,resetxlog},post{gres,master}}.1
 	docompress /usr/share/postgresql-${SLOT}/man/man{1,7}
-	dodoc README HISTORY doc/{README.*,TODO,bug.template}
+	dodoc README HISTORY doc/{TODO,bug.template}
 
 	cd "${S}/contrib"
 	emake DESTDIR="${D}" install
