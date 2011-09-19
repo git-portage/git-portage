@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/xtables-addons/Attic/xtables-addons-1.36.ebuild,v 1.2 2011/06/20 08:26:05 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/xtables-addons/Attic/xtables-addons-1.38.ebuild,v 1.1 2011/09/19 13:06:30 pva Exp $
 
 EAPI="4"
 inherit eutils linux-info linux-mod multilib autotools
@@ -37,6 +37,26 @@ RDEPEND="${DEPEND}
 DEPEND="${DEPEND}
 	virtual/linux-sources"
 
+SKIP_MODULES=""
+
+# XA_kernel_check tee "2 6 26"
+XA_check4internal_module() {
+	local mod=${1}
+	local version=${2}
+	local kconfigname=${3}
+
+	if use xtables_addons_${mod} && kernel_is -gt ${version}; then
+		ewarn "${kconfigname} should be provided by the kernel. Skipping its build..."
+		if ! linux_chkconfig_present ${kconfigname}; then
+			ewarn "Please enable ${kconfigname} target in your kernel
+			configuration or disable checksum module in ${PN}."
+		fi
+		# SKIP_MODULES in case we need to disable building of everything
+		# like having this USE disabled
+		SKIP_MODULES+=" ${mod}"
+	fi
+}
+
 pkg_setup()	{
 	if use modules; then
 		get_version
@@ -54,6 +74,8 @@ pkg_setup()	{
 			die "${PN} with ipset requires kernel version >= 2.6.29"
 		fi
 		kernel_is -lt 2 6 29 && die "${PN} requires kernel version >= 2.6.29"
+		XA_check4internal_module tee "2 6 35" NETFILTER_XT_TARGET_TEE
+		XA_check4internal_module checksum "2 6 36" NETFILTER_XT_TARGET_CHECKSUM
 	fi
 }
 
@@ -107,10 +129,6 @@ XA_get_module_name() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-kernel-detection.patch"
-	epatch "${FILESDIR}/${P}-absolute-M.patch"
-	eautoreconf
-
 	XA_qa_check
 	XA_has_something_to_build
 
@@ -119,7 +137,7 @@ src_prepare() {
 		MODULE_NAMES="compat_xtables(xtables_addons:${S}/extensions:)"
 	fi
 	for mod in ${MODULES}; do
-		if use xtables_addons_${mod}; then
+		if ! has ${mod} ${SKIP_MODULES} && use xtables_addons_${mod}; then
 			sed "s/\(build_${mod}=\).*/\1m/I" -i mconfig || die
 			if use modules; then
 				for module_name in $(XA_get_module_name ${mod}); do
