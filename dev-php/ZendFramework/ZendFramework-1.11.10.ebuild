@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/ZendFramework/Attic/ZendFramework-1.11.5.ebuild,v 1.1 2011/04/08 11:53:05 olemarkus Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php/ZendFramework/Attic/ZendFramework-1.11.10.ebuild,v 1.1 2011/09/25 14:21:32 gurligebis Exp $
 
 EAPI="2"
 
