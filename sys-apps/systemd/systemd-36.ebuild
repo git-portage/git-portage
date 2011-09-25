@@ -1,10 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/Attic/systemd-35.ebuild,v 1.1 2011/09/05 21:34:24 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/Attic/systemd-36.ebuild,v 1.1 2011/09/25 17:16:00 mgorny Exp $
 
 EAPI=4
 
-inherit autotools-utils bash-completion linux-info pam systemd
+inherit autotools-utils bash-completion-r1 linux-info pam systemd
 
 DESCRIPTION="System and service manager for Linux"
 HOMEPAGE="http://www.freedesktop.org/wiki/Software/systemd"
@@ -64,7 +64,7 @@ src_configure() {
 	local myeconfargs=(
 		--with-distro=gentoo
 		--with-rootdir=
-		--with-rootlibdir=$(get_libdir)
+		--with-rootlibdir=/$(get_libdir)
 		--localstatedir=/var
 		--docdir=/tmp/docs
 		$(use_enable acl)
@@ -89,7 +89,7 @@ src_install() {
 		bashcompletiondir=/tmp
 
 	# move files as necessary
-	dobashcompletion "${D}"/tmp/systemctl-bash-completion.sh
+	newbashcomp "${D}"/tmp/systemctl-bash-completion.sh ${PN}
 	dodoc "${D}"/tmp/docs/*
 	rm -rf "${D}"/tmp || die
 
