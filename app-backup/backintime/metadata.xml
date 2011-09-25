@@ -2,7 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <maintainer>
-	<email>maintainer-needed@gentoo.org</email>
+	<email>xmw@gentoo.org</email>
+	<name>Michael Weber</name>
 </maintainer>
 <longdescription lang="en">
 Back In Time is a simple backup tool for Linux inspired from “flyback project” and “TimeVault”. The backup is done by taking snapshots of a specified set of directories.

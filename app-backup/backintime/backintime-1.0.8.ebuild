@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-1.0.6.ebuild,v 1.2 2011/09/25 01:38:09 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-1.0.8.ebuild,v 1.1 2011/09/25 01:38:09 xmw Exp $
 
 EAPI="3"
 
@@ -48,7 +48,7 @@ src_prepare() {
 	cp "${FILESDIR}"/backintime-1.0.4-kde4-root.desktop \
 		kde4/backintime-kde4-root.desktop || die
 
-	epatch "${FILESDIR}"/${P}-wrapper.patch
+	epatch "${FILESDIR}"/${PN}-1.0.6-wrapper.patch
 	sed -e "/^python /s:^python:$(PYTHON -a):" \
 		-e "/^APP_PATH=/s:/usr:${EPREFIX}/usr:" \
 		-i common/backintime \
