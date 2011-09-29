@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/redmine/Attic/redmine-1.1.2.ebuild,v 1.2 2011/04/24 01:45:22 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/redmine/Attic/redmine-1.2.1-r1.ebuild,v 1.1 2011/09/29 00:40:09 matsuu Exp $
 
-EAPI="2"
+EAPI="3"
 USE_RUBY="ruby18"
 inherit eutils confutils depend.apache ruby-ng
 
@@ -13,28 +13,31 @@ SRC_URI="mirror://rubyforge/${PN}/${P}.tar.gz"
 KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="cvs darcs fastcgi git imagemagick mercurial mysql openid passenger postgres sqlite3 subversion"
+#IUSE="bazaar cvs darcs fastcgi git imagemagick mercurial mysql openid passenger postgres sqlite3 subversion"
+IUSE="fastcgi imagemagick mysql openid passenger postgres sqlite3"
+
+RDEPEND="$(ruby_implementation_depend ruby18 '>=' -1.8.6)[ssl]"
 
 ruby_add_rdepend "~dev-ruby/coderay-0.9.7
-	>=dev-ruby/rubygems-1.3.5
+	>=dev-ruby/rubygems-1.3.7
 	>=dev-ruby/ruby-net-ldap-0.0.4
 	~dev-ruby/i18n-0.4.2
+	~dev-ruby/rack-1.1.0
 	dev-ruby/rake"
-#ruby_add_rdepend ~dev-ruby/rails-2.3.5:2.3
-#ruby_add_rdepend "dev-ruby/activerecord:2.3[mysql?,postgres?,sqlite3?]"
+#ruby_add_rdepend ~dev-ruby/rails-2.3.11:2.3
+#ruby_add_rdepend "~dev-ruby/activerecord-2.3.11:2.3[mysql?,postgres?,sqlite3?]"
 ruby_add_rdepend fastcgi dev-ruby/ruby-fcgi
 ruby_add_rdepend imagemagick dev-ruby/rmagick
 ruby_add_rdepend openid dev-ruby/ruby-openid
 ruby_add_rdepend passenger www-apache/passenger
 
-RDEPEND="${RDEPEND}
-	~dev-ruby/rack-1.0.1
-	dev-ruby/activerecord:2.3[mysql?,postgres?,sqlite3?]
-	cvs? ( >=dev-vcs/cvs-1.12 )
-	darcs? ( dev-vcs/darcs )
-	git? ( dev-vcs/git )
-	mercurial? ( dev-vcs/mercurial )
-	subversion? ( >=dev-vcs/subversion-1.3 )"
+#RDEPEND="${RDEPEND}
+#	bazaar ( dev-vcs/bazaar )
+#	cvs? ( >=dev-vcs/cvs-1.12 )
+#	darcs? ( dev-vcs/darcs )
+#	git? ( dev-vcs/git )
+#	mercurial? ( dev-vcs/mercurial )
+#	subversion? ( >=dev-vcs/subversion-1.3 )"
 
 REDMINE_DIR="/var/lib/${PN}"
 
@@ -50,8 +53,8 @@ all_ruby_prepare() {
 	rm -r vendor/gems/coderay-0.9.7 || die
 	rm -r vendor/plugins/ruby-net-ldap-0.0.4 || die
 	#rm -fr vendor/rails || die
-	echo "CONFIG_PROTECT=\"${REDMINE_DIR}/config\"" > "${T}/50${PN}"
-	echo "CONFIG_PROTECT_MASK=\"${REDMINE_DIR}/config/locales ${REDMINE_DIR}/config/settings.yml\"" >> "${T}/50${PN}"
+	echo "CONFIG_PROTECT=\"${EPREFIX}${REDMINE_DIR}/config\"" > "${T}/50${PN}"
+	echo "CONFIG_PROTECT_MASK=\"${EPREFIX}${REDMINE_DIR}/config/locales ${EPREFIX}${REDMINE_DIR}/config/settings.yml\"" >> "${T}/50${PN}"
 }
 
 all_ruby_install() {
@@ -91,7 +94,7 @@ all_ruby_install() {
 
 pkg_postinst() {
 	einfo
-	if [ -e "${ROOT}${REDMINE_DIR}/config/initializers/session_store.rb" ] ; then
+	if [ -e "${EPREFIX}${REDMINE_DIR}/config/initializers/session_store.rb" ] ; then
 		elog "Execute the following command to upgrade environment:"
 		elog
 		elog "# emerge --config \"=${CATEGORY}/${PF}\""
@@ -101,7 +104,7 @@ pkg_postinst() {
 	else
 		elog "Execute the following command to initlize environment:"
 		elog
-		elog "# cd ${REDMINE_DIR}"
+		elog "# cd ${EPREFIX}${REDMINE_DIR}"
 		elog "# cp config/database.yml.example config/database.yml"
 		elog "# \${EDITOR} config/database.yml"
 		elog "# emerge --config \"=${CATEGORY}/${PF}\""
@@ -113,16 +116,16 @@ pkg_postinst() {
 }
 
 pkg_config() {
-	if [ ! -e "${REDMINE_DIR}/config/database.yml" ] ; then
-		eerror "Copy ${REDMINE_DIR}/config/database.yml.example to ${REDMINE_DIR}/config/database.yml and edit this file in order to configure your database settings for \"production\" environment."
+	if [ ! -e "${EPREFIX}${REDMINE_DIR}/config/database.yml" ] ; then
+		eerror "Copy ${EPREFIX}${REDMINE_DIR}/config/database.yml.example to ${EPREFIX}${REDMINE_DIR}/config/database.yml and edit this file in order to configure your database settings for \"production\" environment."
 		die
 	fi
 
 	local RAILS_ENV=${RAILS_ENV:-production}
 	local RUBY=${RUBY:-ruby18}
 
-	cd "${REDMINE_DIR}"
-	if [ -e "${REDMINE_DIR}/config/initializers/session_store.rb" ] ; then
+	cd "${EPREFIX}${REDMINE_DIR}"
+	if [ -e "${EPREFIX}${REDMINE_DIR}/config/initializers/session_store.rb" ] ; then
 		einfo
 		einfo "Upgrade database."
 		einfo
@@ -141,16 +144,16 @@ pkg_config() {
 		einfo
 
 		einfo "Generate a session store secret."
-		${RUBY} -S rake config/initializers/session_store.rb || die
+		${RUBY} -S rake generate_session_store || die
 		einfo "Create the database structure."
 		RAILS_ENV="${RAILS_ENV}" ${RUBY} -S rake db:migrate || die
 		einfo "Insert default configuration data in database."
 		RAILS_ENV="${RAILS_ENV}" ${RUBY} -S rake redmine:load_default_data || die
 	fi
 
-	if [ ! -e "${REDMINE_DIR}/config/email.yml" ] ; then
+	if [ ! -e "${EPREFIX}${REDMINE_DIR}/config/email.yml" ] ; then
 		ewarn
-		ewarn "Copy ${REDMINE_DIR}/config/email.yml.example to ${REDMINE_DIR}/config/email.yml and edit this file to adjust your SMTP settings."
+		ewarn "Copy ${EPREFIX}${REDMINE_DIR}/config/email.yml.example to ${EPREFIX}${REDMINE_DIR}/config/email.yml and edit this file to adjust your SMTP settings."
 		ewarn
 	fi
 }
