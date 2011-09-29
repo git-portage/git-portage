@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.10.18.ebuild,v 1.1 2011/09/15 06:17:57 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/Attic/portage-2.1.10.20.ebuild,v 1.1 2011/09/29 18:41:41 zmedico Exp $
 
 # Require EAPI 2 since we now require at least python-2.6 (for python 3
 # syntax support) which also requires EAPI 2.
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.gentoo.org/proj/en/portage/index.xml"
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
 SLOT="0"
-IUSE="build doc epydoc +ipc +less linguas_pl python2 python3 selinux"
+IUSE="build doc epydoc +ipc linguas_pl python2 python3 selinux"
 
 # Import of the io module in python-2.6 raises ImportError for the
 # thread module if threading is disabled.
@@ -42,7 +42,6 @@ RDEPEND="${python_dep}
 	!<app-admin/logrotate-3.8.0"
 PDEPEND="
 	!build? (
-		less? ( sys-apps/less )
 		>=net-misc/rsync-2.6.4
 		userland_GNU? ( >=sys-apps/coreutils-6.4 )
 	)"
