@@ -1,13 +1,13 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/wicd/Attic/wicd-1.7.1_beta2-r3.ebuild,v 1.5 2011/10/01 16:18:28 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/wicd/Attic/wicd-1.7.1_beta2-r7.ebuild,v 1.1 2011/10/01 16:18:28 tomka Exp $
 
 EAPI=3
 
 PYTHON_DEPEND="2"
 PYTHON_USE_WITH="ncurses? xml"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="3.* *-jython"
 DISTUTILS_USE_SEPARATE_SOURCE_DIRECTORIES="1"
 
 inherit eutils distutils
@@ -21,7 +21,7 @@ SRC_URI="http://downloads.wicd.net/src/testing/1.7.x/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="X +gtk ioctl libnotify ncurses nls +pm-utils"
 
 DEPEND=""
@@ -53,8 +53,7 @@ RDEPEND="
 	ioctl? ( dev-python/python-iwscan dev-python/python-wpactrl )
 	libnotify? ( dev-python/notify-python )
 	ncurses? (
-		>=dev-python/urwid-0.9.9.1
-		<dev-python/urwid-1.0.0
+		>=dev-python/urwid-1.0.0
 		dev-python/pygobject
 	)
 	pm-utils? ( >=sys-power/pm-utils-1.1.1 )
@@ -63,6 +62,18 @@ DOCS="CHANGES NEWS AUTHORS README"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-init.patch
+	# Fix urwid calls
+	epatch "${FILESDIR}/${P}"-urwid-1.0.patch
+	epatch "${FILESDIR}"/${PN}-init-sve-start.patch
+	# Fix ad-hoc networking (bug 351337)
+	epatch "${FILESDIR}"/fix-ad-hoc-networking.patch
+	# Add a template for hex psk's and wpa (Bug 306423)
+	epatch "${FILESDIR}"/add-wpa-psk-hex-template.patch
+	# get rid of opts variable to fix bug 381885
+	sed -i "/opts/d" "in/init=gentoo=wicd.in"
+	# Need to ensure that generated scripts use Python 2 at run time.
+	sed -e "s:self.python = '/usr/bin/python':self.python = '/usr/bin/python2':" \
+	  -i setup.py || die "sed failed"
 	python_copy_sources
 }
 
@@ -96,8 +107,8 @@ pkg_postinst() {
 	echo
 	elog "To start wicd at boot, add /etc/init.d/wicd to a runlevel and:"
 	elog "- Remove all net.* initscripts (except for net.lo) from all runlevels"
-	elog "- Add these scripts to the RC_PLUG_SERVICES line in /etc/conf.d/rc"
-	elog "(For example, RC_PLUG_SERVICES=\"!net.eth0 !net.wlan0\")"
+	elog "- Add these scripts to the RC_PLUG_SERVICES line in /etc/rc.conf"
+	elog "(For example, rc_hotplug=\"!net.eth* !net.wlan*\")"
 	# Maintainer's note: the consolekit use flag short circuits a dbus rule and
 	# allows the connection. Else, you need to be in the group.
 	if ! has_version sys-auth/pambase[consolekit]; then
