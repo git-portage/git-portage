@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/gnome-disk-utility/Attic/gnome-disk-utility-3.0.2.ebuild,v 1.2 2011/10/01 20:44:18 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/gnome-disk-utility/Attic/gnome-disk-utility-3.0.2-r200.ebuild,v 1.1 2011/10/04 20:59:55 pacho Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
@@ -27,7 +27,7 @@ CDEPEND="
 
 	avahi? ( >=net-dns/avahi-0.6.25[gtk3] )
 	gnome-keyring? ( gnome-base/libgnome-keyring )
-	nautilus? ( >=gnome-base/nautilus-2.91.0 )
+	nautilus? ( >=gnome-base/nautilus-2.24.0 )
 "
 RDEPEND="${CDEPEND}
 	x11-misc/xdg-utils
@@ -61,6 +61,10 @@ src_prepare() {
 
 	# Keep avahi optional, upstream bug #631986
 	epatch "${FILESDIR}/${PN}-2.91.6-optional-avahi.patch"
+
+	# Keep nautilus extension working on Gnome2 setups
+	EPATCH_OPTS="-R" epatch "${FILESDIR}/${PN}-3.0.2-nautilus2-compat.patch"
+
 	intltoolize --force --copy --automake || die
 	eautoreconf
 
