@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/tvtime/Attic/tvtime-1.0.2_p20110131-r1.ebuild,v 1.1 2011/08/14 10:42:15 a3li Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/tvtime/Attic/tvtime-1.0.2_p20110131-r2.ebuild,v 1.1 2011/10/13 08:13:56 a3li Exp $
 
 EAPI=4
 inherit eutils autotools
@@ -16,7 +16,7 @@ http://dev.gentoo.org/~a3li/distfiles/${PN}-1.0.2-alsamixer.patch"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="nls xinerama"
+IUSE="alsa nls xinerama"
 
 RDEPEND="x11-libs/libSM
 	x11-libs/libICE
@@ -32,7 +32,7 @@ RDEPEND="x11-libs/libSM
 	>=sys-libs/zlib-1.1.4
 	>=media-libs/libpng-1.2
 	>=dev-libs/libxml2-2.5.11
-	media-libs/alsa-lib
+	alsa? ( media-libs/alsa-lib )
 	nls? ( virtual/libintl )"
 
 DEPEND="${RDEPEND}
@@ -63,8 +63,10 @@ src_prepare() {
 	epatch "${FILESDIR}/${P}-gettext.patch"
 	epatch "${FILESDIR}/${PN}-libpng-1.5.patch"
 
-	epatch "${DISTDIR}/${PN}-1.0.2-alsa.patch"
-	epatch "${DISTDIR}/${PN}-1.0.2-alsamixer.patch"
+	if use alsa; then
+		epatch "${DISTDIR}/${PN}-1.0.2-alsa.patch"
+		epatch "${DISTDIR}/${PN}-1.0.2-alsamixer.patch"
+	fi
 
 	AT_M4DIR="m4" eautoreconf
 }
