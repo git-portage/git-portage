@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.1.2-r1.ebuild,v 1.3 2010/09/12 08:34:05 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.3.0.ebuild,v 1.1 2011/10/13 15:02:29 idl0r Exp $
 
 EAPI=3
 inherit autotools eutils perl-module
@@ -8,7 +8,7 @@ inherit autotools eutils perl-module
 MY_P="${P/_}"
 DESCRIPTION="The Advanced Maryland Automatic Network Disk Archiver"
 HOMEPAGE="http://www.amanda.org/"
-SRC_URI="mirror://sourceforge/amanda/${MY_P}.tar.gz"
+SRC_URI="mirror://sourceforge/amanda/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
@@ -19,12 +19,14 @@ RDEPEND="sys-libs/readline
 	>=dev-lang/perl-5.6
 	app-arch/dump
 	net-misc/openssh
-	>=dev-libs/glib-2.24.0
+	>=dev-libs/glib-2.26.0
 	nls? ( virtual/libintl )
 	s3? ( >=net-misc/curl-7.10.0 )
+	!s3? ( curl? ( >=net-misc/curl-7.10.0 ) )
 	samba? ( net-fs/samba )
 	kerberos? ( app-crypt/mit-krb5 )
 	xfs? ( sys-fs/xfsdump )
+	readline? ( sys-libs/readline )
 	!minimal? (
 		virtual/mailx
 		app-arch/mt-st
@@ -36,9 +38,13 @@ RDEPEND="sys-libs/readline
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	nls? ( sys-devel/gettext )"
+	nls? ( sys-devel/gettext )
+	>=app-text/docbook-xsl-stylesheets-1.72.0
+	app-text/docbook-xml-dtd
+	dev-libs/libxslt
+	"
 
-IUSE="gnuplot ipv6 kerberos minimal nls s3 samba xfs"
+IUSE="curl gnuplot ipv6 kerberos minimal nls readline s3 samba xfs"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -109,6 +115,19 @@ amanda_variable_setup() {
 
 pkg_setup() {
 	amanda_variable_setup
+
+	# If USE=minimal, give out a warning, if AMANDA_SERVER is not set to
+	# another host than HOSTNAME.
+	if use minimal && [ "${AMANDA_SERVER}" = "${HOSTNAME}" ] ; then
+		elog "You are installing a client-only version of Amanda."
+		elog "You should set the variable \$AMANDA_SERVER to point at your"
+		elog "Amanda-tape-server, otherwise you will have to specify its name"
+		elog "when using amrecover on the client."
+		elog "For example: Use something like"
+		elog "AMANDA_SERVER=\"myserver\" emerge amanda"
+		elog
+	fi
+
 	enewgroup "${AMANDA_GROUP_NAME}" "${AMANDA_GROUP_GID}"
 	enewuser "${AMANDA_USER_NAME}" "${AMANDA_USER_UID}" "${AMANDA_USER_SH}" "${AMANDA_USER_HOMEDIR}" "${AMANDA_USER_GROUPS}"
 }
@@ -157,6 +176,11 @@ src_prepare() {
 		cat "${MYFILESDIR}"/amanda-amandahosts-client-2.5.1_p3-r1
 		use minimal || cat "${MYFILESDIR}"/amanda-amandahosts-server-2.5.1_p3-r1
 	) > "${T}"/amandahosts
+
+	if ! use minimal; then
+		sed -i -e 's:^\(my $amandahomedir\)=.*:\1 = $localstatedir;:' \
+			server-src/am{addclient,serverconfig}.pl || die
+	fi
 }
 
 src_configure() {
@@ -224,15 +248,16 @@ src_configure() {
 	myconf="${myconf} --with-bsdudp-security"
 	myconf="${myconf} --with-bsdtcp-security"
 
-	# kerberos-security mechanism version 4
-	# always disable, per bug #173354
-	myconf="${myconf} --without-krb4-security"
-
 	# kerberos-security mechanism version 5
 	myconf="${myconf} `use_with kerberos krb5-security`"
 
 	# Amazon S3 support
 	myconf="${myconf} `use_enable s3 s3-device`"
+
+	# libcurl is required for S3 but otherwise optional
+	if ! use s3; then
+		myconf="${myconf} $(use_with curl libcurl)"
+	fi
 
 	# Client only, as requested in bug #127725
 	if use minimal ; then
@@ -256,7 +281,12 @@ src_configure() {
 	# Some tests are not safe for production systems
 	myconf="${myconf} --disable-syntax-checks"
 
-	econf ${myconf} || die "econf failed!"
+	# build manpages
+	myconf="${myconf} --enable-manpage-build"
+
+	econf \
+		$(use_with readline) \
+		${myconf}
 }
 
 src_compile() {
@@ -298,9 +328,11 @@ src_install() {
 		newins "${MYFILESDIR}"/amanda-xinetd-2.6.1_p1-server amanda
 	fi
 
-	einfo "Installing Sample Daily Cron Job for Amanda"
-	insinto /etc/cron.daily
-	newins "${MYFILESDIR}/amanda-cron" amanda
+	if ! use minimal; then
+		einfo "Installing Sample Daily Cron Job for Amanda"
+		insinto /etc/cron.daily
+		newins "${MYFILESDIR}/amanda-cron" amanda
+	fi
 
 	insinto /etc/amanda
 	einfo "Installing .amandahosts File for ${AMANDA_USER_NAME} user"
@@ -384,18 +416,6 @@ pkg_postinst() {
 	fi
 	if [ -f "${ROOT}/etc/amandates" ]; then
 		einfo "If you have migrated safely, please delete /etc/amandates"
-	fi
-
-	# If USE=minimal, give out a warning, if AMANDA_SERVER is not set to
-	# another host than HOSTNAME.
-	if use minimal && [ "${AMANDA_SERVER}" = "${HOSTNAME}" ] ; then
-		elog "You are installing a client-only version of Amanda."
-		elog "You should set the variable \$AMANDA_SERVER to point at your"
-		elog "Amanda-tape-server, otherwise you will have to specify its name"
-		elog "when using amrecover on the client."
-		elog "For example: Use something like"
-		elog "AMANDA_SERVER=\"myserver\" emerge amanda"
-		elog
 	fi
 
 	einfo "Checking setuid permissions"
