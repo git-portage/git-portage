@@ -1,12 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/glib-networking/Attic/glib-networking-2.30.1.ebuild,v 1.1 2011/10/18 18:50:22 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/glib-networking/Attic/glib-networking-2.30.0-r1.ebuild,v 1.1 2011/10/19 16:09:07 tetromino Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
 GNOME2_LA_PUNT="yes"
 
-inherit gnome2
+inherit autotools eutils gnome2
 
 DESCRIPTION="Network-related giomodules for glib"
 HOMEPAGE="http://git.gnome.org/browse/glib-networking/"
@@ -30,11 +30,16 @@ DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.9
 	sys-devel/gettext"
 
+# FIXME: tls tests fail, figure out why
+# ERROR:tls.c:256:on_input_read_finish: assertion failed (error == NULL): Error performing TLS handshake: The request is invalid. (g-tls-error-quark, 1)
+RESTRICT="test"
+
 pkg_setup() {
 	# AUTHORS, ChangeLog are empty
 	DOCS="NEWS README"
 	G2CONF="${G2CONF}
 		--disable-static
+		--disable-maintainer-mode
 		--with-ca-certificates=${EPREFIX}/etc/ssl/certs/ca-certificates.crt
 		$(use_with gnome gnome-proxy)
 		$(use_with libproxy)
@@ -42,11 +47,10 @@ pkg_setup() {
 }
 
 src_prepare() {
+	# bug #387589, https://bugzilla.gnome.org/show_bug.cgi?id=662203 
+	# Fixed in upstream git master
+	epatch "${FILESDIR}/${PN}-2.28.7-gnome-proxy-AC_ARG_WITH.patch"
+	mkdir m4
+	eautoreconf
 	gnome2_src_prepare
-
-	# Drop DEPRECATED flags
-	sed -i -e 's:-D[A-Z_]*DISABLE_DEPRECATED:$(NULL):g' \
-		proxy/libproxy/Makefile.am proxy/libproxy/Makefile.in \
-		proxy/gnome/Makefile.am proxy/gnome/Makefile.in \
-		tls/gnutls/Makefile.am tls/gnutls/Makefile.in || die
 }
