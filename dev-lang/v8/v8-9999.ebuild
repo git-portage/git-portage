@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/v8/Attic/v8-9999.ebuild,v 1.15 2011/10/15 17:48:13 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/v8/Attic/v8-9999.ebuild,v 1.16 2011/10/19 22:08:14 floppym Exp $
 
 EAPI="3"
 
@@ -15,10 +15,7 @@ LICENSE="BSD"
 
 SLOT="0"
 KEYWORDS=""
-IUSE="readline"
-
-RDEPEND="readline? ( >=sys-libs/readline-6.1 )"
-DEPEND="${RDEPEND}"
+IUSE=""
 
 pkg_setup() {
 	python_set_active_version 2
@@ -48,10 +45,6 @@ src_compile() {
 	esac
 	mytarget=${myarch}.release
 
-	console=""
-	if use readline; then
-		console="readline";
-	fi
 	if [[ ${PV} == "9999" ]]; then
 		soname_version="${PV}-${ESVN_WC_REVISION}"
 	else
@@ -61,10 +54,12 @@ src_compile() {
 	local snapshot=on
 	host-is-pax && snapshot=off
 
+	# TODO: Add console=readline option once implemented upstream
+	# http://code.google.com/p/v8/issues/detail?id=1781
+
 	emake V=1 \
 		library=shared \
 		werror=no \
-		console=${console} \
 		soname_version=${soname_version} \
 		snapshot=${snapshot} \
 		${mytarget} || die
