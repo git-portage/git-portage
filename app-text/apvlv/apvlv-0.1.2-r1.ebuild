@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/apvlv/Attic/apvlv-0.1.2.ebuild,v 1.2 2011/10/19 13:52:55 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/apvlv/Attic/apvlv-0.1.2-r1.ebuild,v 1.1 2011/10/19 13:52:55 ssuominen Exp $
 
 EAPI=4
 
@@ -17,18 +17,18 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug djvu"
 
 RDEPEND=">=x11-libs/gtk+-2.10.4:2
-	>=app-text/poppler-0.12.3-r3[cairo]
-	<app-text/poppler-0.18
+	>=app-text/poppler-0.18[cairo]
 	djvu? ( app-text/djvu )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 src_prepare() {
 	# bug #349979
-	EPATCH_OPTS="-l"
-	has_version ">=app-text/poppler-0.15.0" && epatch "${FILESDIR}"/${PN}-0.1.0-poppler-0.16.patch
+	EPATCH_OPTS="-l" epatch \
+		"${FILESDIR}"/${PN}-0.1.0-poppler-0.16.patch \
+		"${FILESDIR}"/${PN}-0.1.2-poppler-0.18.patch
 
 	# Remove prefixes so it works with the cmake-utils eclass
 	sed -i -e "s:APVLV_::" CMakeLists.txt src/CMakeLists.txt || die
