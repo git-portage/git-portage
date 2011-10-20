@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/ekeyd/Attic/ekeyd-1.1.3-r4.ebuild,v 1.2 2011/04/08 11:14:49 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/ekeyd/Attic/ekeyd-1.1.4-r1.ebuild,v 1.1 2011/10/20 11:40:28 flameeyes Exp $
 
 EAPI=4
 
@@ -23,12 +23,13 @@ EKEYD_RDEPEND="dev-lang/lua
 EKEYD_DEPEND="${EKEYD_RDEPEND}"
 EKEYD_RDEPEND="${EKEYD_RDEPEND}
 	dev-lua/luasocket
-	kernel_linux? ( sys-fs/udev )
+	kernel_linux? ( >=sys-fs/udev-147 )
 	usb? ( !kernel_linux? ( sys-apps/usbutils ) )
 	munin? ( net-analyzer/munin )"
 
 RDEPEND="!minimal? ( ${EKEYD_RDEPEND} )
-	!app-crypt/ekey-egd-linux"
+	!app-crypt/ekey-egd-linux
+	sys-apps/openrc"
 DEPEND="!minimal? ( ${EKEYD_DEPEND} )"
 
 CONFIG_CHECK="~USB_ACM"
@@ -42,26 +43,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	# - avoid using -Werror;
-	sed -i \
-		-e 's:-Werror::' \
-		daemon/Makefile || die
-
-	epatch "${FILESDIR}"/${PN}-1.1.1-earlyboot.patch
-	epatch "${FILESDIR}"/${P}-libusb_compat.patch
-	epatch "${FILESDIR}"/${P}-slashes.patch
-	epatch "${FILESDIR}"/${P}-format.patch
-
-	# Stupid multilib hack; remove it once Gentoo has sane paths for
-	# udev directories.
-	if [[ $(get_libdir) != lib ]]; then
-		sed -i -e "s:/lib/udev/:/$(get_libdir)/udev/:" \
-			doc/*.rules || die
-	fi
-
-	# We moved the binaries around
-	sed -i -e 's:$BINPATH/ekey-ulusbd:/usr/libexec/ekey-ulusbd:' \
-		doc/ekeyd-udev || die
+	epatch "${FILESDIR}"/${P}-gentoo.patch
 }
 
 src_compile() {
@@ -85,60 +67,55 @@ src_compile() {
 
 	# We don't slot LUA so we don't really need to have the variables
 	# set at all.
-	emake -C daemon \
+	emake -C host \
 		CC="$(tc-getCC)" \
 		LUA_V= LUA_INC= \
 		OSNAME=${osname} \
 		OPT="${CFLAGS}" \
 		BUILD_ULUSBD=$(use usb && echo yes || echo no) \
-		$(use minimal && echo egd-linux) \
-		|| die "emake failed"
+		$(use minimal && echo egd-linux)
 }
 
 src_install() {
 	exeinto /usr/libexec
-	newexe "${S}"/daemon/egd-linux ekey-egd-linux || die
-	doman daemon/ekey-egd-linux.8 || die
+	newexe host/egd-linux   ekey-egd-linux
+	newman host/egd-linux.8 ekey-egd-linux.8
 
-	newconfd "${FILESDIR}"/ekey-egd-linux.conf ekey-egd-linux || die
-	newinitd "${FILESDIR}"/ekey-egd-linux.init ekey-egd-linux || die
+	newconfd "${FILESDIR}"/ekey-egd-linux.conf.2 ekey-egd-linux
+	newinitd "${FILESDIR}"/ekey-egd-linux.init.2 ekey-egd-linux
+
+	dodoc doc/* AUTHORS ChangeLog THANKS
 
 	use minimal && return
 	# from here on, install everything that is not part of the minimal
 	# support.
 
-	emake -C daemon \
+	emake -C host \
 		DESTDIR="${D}" \
-		BUILD_ULUSBD=$(use usb && echo yes || echo no) \
 		MANZCMD=cat MANZEXT= \
-		install || die "emake install failed"
+		install-ekeyd $(use usb && echo install-ekey-ulusbd)
 
 	# We move the daemons around to avoid polluting the available
 	# commands.
 	dodir /usr/libexec
 	mv "${D}"/usr/sbin/ekey*d "${D}"/usr/libexec
 
-	newinitd "${FILESDIR}"/${PN}.init ${PN} || die
+	newinitd "${FILESDIR}"/${PN}.init.2 ${PN}
 
-	if use usb; then
-		if ! use kernel_linux; then
-			newinitd "${FILESDIR}"/ekey-ulusbd.init ekey-ulusbd || die
-			newconfd "${FILESDIR}"/ekey-ulusbd.conf ekey-ulusbd || die
-		fi
-		doman daemon/ekey-ulusbd.8 || die
+	if use usb && ! use kernel_linux; then
+		newinitd "${FILESDIR}"/ekey-ulusbd.init.2 ekey-ulusbd
+		newconfd "${FILESDIR}"/ekey-ulusbd.conf.2 ekey-ulusbd
 	fi
 
-	dodoc daemon/README* AUTHORS WARNING ChangeLog || die
-
 	if use kernel_linux; then
-		local rules=doc/60-UDEKEY01.rules
-		use usb && rules=doc/60-UDEKEY01-UDS.rules
+		local rules=udev/fedora15/60-entropykey.rules
+		use usb && rules=udev/fedora15/60-entropykey-uds.rules
 
-		insinto /$(get_libdir)/udev/rules.d
-		newins ${rules} 70-${PN}.rules || die
+		insinto /lib/udev/rules.d
+		newins ${rules} 70-${PN}.rules
 
-		exeinto /$(get_libdir)/udev
-		doexe doc/ekeyd-udev || die
+		exeinto /lib/udev
+		doexe udev/entropykey.sh
 	fi
 
 	if use munin; then
@@ -159,8 +136,8 @@ pkg_postinst() {
 	elog "falls below the value set in the kernel.random.write_wakeup_threshold"
 	elog "sysctl entry."
 	elog ""
-	elog "You can change the watermark in /etc/conf.d/ekey-egd-linux; if you do"
-	elog "it will require write access to the kernel's sysctl."
+	ewarn "Since version 1.1.4-r1, ekey-egd-linux will *not* set the watermark for"
+	ewarn "you, instead you'll have to configure the sysctl in /etc/sysctl.conf"
 
 	use minimal && return
 	# from here on, document everything that is not part of the minimal
