@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-16.0.904.0-r3.ebuild,v 1.1 2011/10/19 16:33:01 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-16.0.912.4.ebuild,v 1.1 2011/10/21 21:26:43 floppym Exp $
 
 EAPI="4"
 PYTHON_DEPEND="2:2.6"
@@ -10,7 +10,7 @@ inherit eutils fdo-mime flag-o-matic gnome2-utils linux-info multilib \
 
 DESCRIPTION="Open-source version of Google Chrome web browser"
 HOMEPAGE="http://chromium.org/"
-SRC_URI="http://build.chromium.org/official/${P}.tar.bz2"
+SRC_URI="http://commondatastorage.googleapis.com/chromium-browser-official/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
