@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/apcupsd/Attic/apcupsd-3.14.9-r1.ebuild,v 1.1 2011/08/26 10:53:51 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/apcupsd/Attic/apcupsd-3.14.10-r1.ebuild,v 1.1 2011/10/21 22:06:43 flameeyes Exp $
 
 EAPI=4
 
@@ -37,7 +37,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-aliasing.patch"
+	epatch "${FILESDIR}/${PN}-3.14.9-aliasing.patch"
 }
 
 src_configure() {
@@ -88,7 +88,7 @@ src_install() {
 	dohtml -r doc/manual/*
 
 	rm "${D}"/etc/init.d/apcupsd
-	newinitd "${FILESDIR}/${PN}.init.2" "${PN}"
+	newinitd "${FILESDIR}/${PN}.init.3" "${PN}"
 	newinitd "${FILESDIR}/${PN}.powerfail.init" "${PN}".powerfail
 
 	# remove hal settings, we don't really want to have it around still.
