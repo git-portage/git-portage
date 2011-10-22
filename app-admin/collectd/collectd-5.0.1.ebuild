@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/collectd/Attic/collectd-5.0.0-r1.ebuild,v 1.6 2011/08/26 20:36:03 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/collectd/Attic/collectd-5.0.1.ebuild,v 1.1 2011/10/22 17:35:40 dilfridge Exp $
 
 EAPI=4
 
@@ -21,7 +21,7 @@ IUSE="contrib debug kernel_linux kernel_FreeBSD kernel_Darwin perl static-libs"
 COLLECTD_IMPOSSIBLE_PLUGINS="netapp pinba xmms"
 
 # Plugins that still need some work
-COLLECTD_UNTESTED_PLUGINS="ipvs apple_sensors routeros tape zfs_arc modbus amqp genericjmx lpar redis threshold varnish write_redis v5upgrade"
+COLLECTD_UNTESTED_PLUGINS="ipvs apple_sensors routeros tape zfs_arc modbus amqp genericjmx lpar redis threshold write_redis v5upgrade"
 
 # Plugins that have been (compile) tested and can be enabled via COLLECTD_PLUGINS
 COLLECTD_TESTED_PLUGINS="apache apcups ascent battery bind conntrack contextswitch
@@ -30,7 +30,7 @@ COLLECTD_TESTED_PLUGINS="apache apcups ascent battery bind conntrack contextswit
 	memcached memory multimeter mysql netlink network nfs nginx ntpd nut olsrd
 	onewire openvpn perl ping postgresql powerdns processes protocols python
 	rrdcached sensors serial snmp swap table tail tcpconns teamspeak2 ted thermal
-	tokyotyrant uptime users vmem vserver wireless csv exec logfile network
+	tokyotyrant uptime users varnish vmem vserver wireless csv exec logfile network
 	notify_desktop notify_email oracle perl python rrdcached rrdtool syslog unixsock write_http
 	match_empty_counter match_hashed match_regex match_timediff match_value
 	target_notification target_replace target_scale target_set uuid"
@@ -81,6 +81,7 @@ COMMON_DEPEND="
 	collectd_plugins_sensors?		( sys-apps/lm_sensors )
 	collectd_plugins_snmp?			( net-analyzer/net-snmp )
 	collectd_plugins_tokyotyrant?		( net-misc/tokyotyrant )
+	collectd_plugins_varnish?		( www-servers/varnish )
 	collectd_plugins_write_http?		( net-misc/curl )
 
 	kernel_FreeBSD?	(
@@ -103,10 +104,9 @@ RDEPEND="${COMMON_DEPEND}
 
 PATCHES=(
 	"${FILESDIR}/${PN}-4.10.1"-{libperl,libiptc,noowniptc}.patch
-	"${FILESDIR}/${PN}-4.10.2"-{libocci,libnotify-0.7,nohal}.patch
+	"${FILESDIR}/${PN}-4.10.2"-{libocci,nohal}.patch
 	"${FILESDIR}/${PN}-4.10.3"-{lt,werror}.patch
-	"${FILESDIR}/${PN}-5.0.0"-yajl2.patch
-	"${FILESDIR}/${PN}-5.0.0"-yajl2-2.patch
+	"${FILESDIR}/${P}"-varnish.patch
 	)
 
 # @FUNCTION: collectd_plugin_kernel_linux
