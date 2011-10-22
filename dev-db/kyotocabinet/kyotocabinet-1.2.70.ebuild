@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/kyotocabinet/Attic/kyotocabinet-1.2.62.ebuild,v 1.2 2011/06/19 02:30:35 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/kyotocabinet/Attic/kyotocabinet-1.2.70.ebuild,v 1.1 2011/10/22 18:04:30 patrick Exp $
 
 EAPI="2"
 
@@ -20,7 +20,7 @@ DEPEND="sys-libs/zlib
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}/fix_configure-${PV}.patch"
+	epatch "${FILESDIR}/fix_configure-1.2.62.patch"
 	sed -ie "/ldconfig/d" Makefile.in
 	sed -ie "/DOCDIR/d" Makefile.in
 }
