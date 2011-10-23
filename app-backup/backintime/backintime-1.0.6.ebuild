@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-1.0.6.ebuild,v 1.2 2011/09/25 01:38:09 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-1.0.6.ebuild,v 1.3 2011/10/23 21:39:16 tetromino Exp $
 
 EAPI="3"
 
@@ -31,7 +31,7 @@ DEPEND="
 		gnome-base/gnome-session
 		dev-python/gnome-vfs-python
 		dev-python/libgnome-python
-		dev-python/pygobject
+		dev-python/pygobject:2
 		dev-python/pygtk
 		)
 	dev-python/notify-python"
