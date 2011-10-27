@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/spideroak-bin
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/ChangeLog,v 1.4 2011/09/29 19:20:57 naota Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/ChangeLog,v 1.5 2011/10/27 10:01:14 scarabeus Exp $
+
+  27 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org> Manifest:
+  Remanifest as the current one fails checksums.
 
 *spideroak-bin-4.1.9850 (29 Sep 2011)
 
