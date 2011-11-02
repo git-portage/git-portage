@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.114 2011/05/14 09:28:46 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.115 2011/11/02 21:46:00 vapier Exp $
+
+  02 Nov 2011; Mike Frysinger <vapier@gentoo.org> bacula-5.0.2-r1.ebuild,
+  bacula-5.0.3-r1.ebuild, bacula-5.0.3-r2.ebuild, bacula-5.0.3-r3.ebuild:
+  Drop "die" from enew{user,group} since these have always taken care of
+  calling it when necessary.
 
   14 May 2011; Thomas Beierlein <tomjbe@gentoo.org>
   -files/5.0.1/bacula-5.0.1-as-needed.patch,

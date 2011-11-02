@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.0.3-r3.ebuild,v 1.3 2011/05/14 09:28:46 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.0.3-r3.ebuild,v 1.4 2011/11/02 21:46:00 vapier Exp $
 
 EAPI="2"
 PYTHON_DEPEND="python? 2"
@@ -94,7 +94,7 @@ pkg_setup() {
 
 	# create the daemon group and user
 	if [ -z "$(egetent group bacula 2>/dev/null)" ]; then
-		enewgroup bacula || die
+		enewgroup bacula
 		einfo
 		einfo "The group 'bacula' has been created. Any users you add to this"
 		einfo "group have access to files created by the daemons."
@@ -116,7 +116,7 @@ pkg_setup() {
 			ewarn
 		fi
 		if [ -z "$(egetent passwd bacula 2>/dev/null)" ]; then
-			enewuser bacula -1 -1 /var/lib/bacula bacula,disk,tape,cdrom,cdrw || die
+			enewuser bacula -1 -1 /var/lib/bacula bacula,disk,tape,cdrom,cdrw
 			einfo
 			einfo "The user 'bacula' has been created.  Please see the bacula manual"
 			einfo "for information about running bacula as a non-root user."
