@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-board/xboard/Attic/xboard-4.4.4.ebuild,v 1.6 2011/09/20 14:36:55 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-board/xboard/Attic/xboard-4.5.3a.ebuild,v 1.1 2011/11/02 01:10:36 mr_bones_ Exp $
 
 EAPI=2
 inherit autotools eutils games
@@ -12,7 +12,7 @@ SRC_URI="mirror://gnu/xboard/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="ppc ~ppc64 x86"
+KEYWORDS="~ppc ~ppc64 ~x86"
 IUSE="Xaw3d +default-font zippy"
 RESTRICT="test" #124112
 
@@ -35,16 +35,13 @@ src_unpack() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}*
-	sed -i \
-		-e '/icons/s:\$(datadir):/usr/share:' \
-		Makefile.am \
-		|| die 'sed failed'
 	eautoreconf
 }
 
 src_configure() {
 	egamesconf \
 		--disable-dependency-tracking \
+		--datadir="${GAMES_DATADIR}"/${PN} \
 		$(use_with Xaw3d) \
 		$(use_enable zippy)
 }
