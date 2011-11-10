@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-1.0.6.ebuild,v 1.3 2011/10/23 21:39:16 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/Attic/backintime-1.0.8-r1.ebuild,v 1.1 2011/11/10 23:53:47 xmw Exp $
 
 EAPI="3"
 
@@ -38,6 +38,10 @@ DEPEND="
 
 RDEPEND="${DEPEND}"
 
+pkg_setup() {
+	python_set_active_version 2
+	python_pkg_setup
+}
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.0.4-dont-install-license.diff
 	epatch "${FILESDIR}"/${PN}-1.0.4-fix-configure-warning.diff
@@ -48,7 +52,7 @@ src_prepare() {
 	cp "${FILESDIR}"/backintime-1.0.4-kde4-root.desktop \
 		kde4/backintime-kde4-root.desktop || die
 
-	epatch "${FILESDIR}"/${P}-wrapper.patch
+	epatch "${FILESDIR}"/${PN}-1.0.6-wrapper.patch
 	sed -e "/^python /s:^python:$(PYTHON -a):" \
 		-e "/^APP_PATH=/s:/usr:${EPREFIX}/usr:" \
 		-i common/backintime \
@@ -75,7 +79,7 @@ src_compile() {
 	emake -C common || die
 
 	if use kde ; then
-		emake -C kd4 || die
+		emake -C kde4 || die
 	fi
 
 	if use gnome ; then

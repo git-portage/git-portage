@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/backintime
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/ChangeLog,v 1.14 2011/10/23 21:39:16 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backintime/ChangeLog,v 1.15 2011/11/10 23:53:47 xmw Exp $
+
+*backintime-1.0.8-r1 (10 Nov 2011)
+
+  10 Nov 2011; Michael Weber <xmw@gentoo.org> -backintime-1.0.6.ebuild,
+  -backintime-1.0.6-r1.ebuild, +backintime-1.0.8-r1.ebuild:
+  Improve python code (bug 308307)
 
   23 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
   backintime-1.0.6.ebuild, backintime-1.0.6-r1.ebuild, backintime-1.0.8.ebuild:
