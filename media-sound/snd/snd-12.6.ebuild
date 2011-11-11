@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/snd/Attic/snd-12.4.ebuild,v 1.1 2011/08/30 08:23:15 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/snd/Attic/snd-12.6.ebuild,v 1.1 2011/11/11 07:00:38 radhermit Exp $
 
 EAPI=4
 
@@ -44,7 +44,7 @@ REQUIRED_USE="^^ (
 	)"
 
 pkg_setup() {
-	if ! use gtk && ! use motif; then
+	if ! use gtk && ! use motif ; then
 		ewarn "Warning: no graphic toolkit selected (gtk or motif)."
 		ewarn "Upstream suggests to enable one of the toolkits (or both)"
 		ewarn "or only the command line utilities will be helpful."
@@ -52,6 +52,7 @@ pkg_setup() {
 }
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-as-needed.patch
 	sed -i -e "s:-O2 ::" configure.ac || die
 	eautoreconf
 }
@@ -61,7 +62,7 @@ src_configure() {
 	append-ldflags -Wl,-z,noexecstack
 
 	local myconf
-	if use opengl; then
+	if use opengl ; then
 		myconf+=" --with-just-gl"
 	else
 		myconf+=" --without-gl"
@@ -99,7 +100,7 @@ src_compile() {
 	# Do not compile ruby extensions for command line programs since they fail
 	sed -i -e "s:HAVE_RUBY 1:HAVE_RUBY 0:" mus-config.h
 
-	for i in sndinfo audinfo sndplay; do
+	for i in sndinfo audinfo sndplay ; do
 	   emake ${i}
 	done
 }
