@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-vim/csv/Attic/csv-0.18.ebuild,v 1.1 2011/09/09 08:07:44 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-vim/csv/Attic/csv-0.22.ebuild,v 1.1 2011/11/13 20:07:28 radhermit Exp $
 
 EAPI="4"
 VIM_PLUGIN_VIM_VERSION="7.3"
