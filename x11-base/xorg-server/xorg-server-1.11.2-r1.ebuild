@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.11.2.ebuild,v 1.3 2011/11/16 02:29:48 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.11.2-r1.ebuild,v 1.1 2011/11/16 21:49:59 chithanh Exp $
 
 EAPI=4
 
@@ -39,6 +39,7 @@ RDEPEND=">=app-admin/eselect-opengl-1.0.8
 		>=x11-libs/libXfixes-5.0
 		>=x11-libs/libXi-1.2.99.1
 		>=x11-libs/libXmu-1.0.3
+		x11-libs/libXrender
 		>=x11-libs/libXres-1.0.3
 		>=x11-libs/libXtst-1.0.99.2
 	)
@@ -184,7 +185,7 @@ src_install() {
 	fi
 
 	newinitd "${FILESDIR}"/xdm-setup.initd-1 xdm-setup
-	newinitd "${FILESDIR}"/xdm.initd-3 xdm
+	newinitd "${FILESDIR}"/xdm.initd-4 xdm
 	newconfd "${FILESDIR}"/xdm.confd-4 xdm
 
 	# install the @x11-module-rebuild set for Portage
