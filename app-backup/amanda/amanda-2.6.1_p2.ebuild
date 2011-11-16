@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.1_p2.ebuild,v 1.5 2010/09/10 21:41:01 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.1_p2.ebuild,v 1.6 2011/11/16 07:54:09 robbat2 Exp $
 
 inherit autotools eutils
 
@@ -237,6 +237,9 @@ src_compile() {
 
 	# IPv6 fun.
 	myconf="${myconf} `use_with ipv6`"
+	# This is to prevent the IPv6-is-working test
+	# As the test fails on binpkg build hosts with no IPv6.
+	use ipv6 && export amanda_cv_working_ipv6=yes
 
 	# I18N
 	myconf="${myconf} `use_enable nls`"
