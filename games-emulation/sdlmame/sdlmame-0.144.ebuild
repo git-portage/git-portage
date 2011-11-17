@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/sdlmame/Attic/sdlmame-0.143_p5.ebuild,v 1.2 2011/09/30 16:50:10 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/sdlmame/Attic/sdlmame-0.144.ebuild,v 1.1 2011/11/17 06:47:50 mr_bones_ Exp $
 
 EAPI=2
 inherit eutils flag-o-matic games
