@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mongodb/Attic/mongodb-2.0.2_pre20111116.ebuild,v 1.1 2011/11/16 09:44:09 ultrabug Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mongodb/Attic/mongodb-2.0.2_rc0.ebuild,v 1.1 2011/11/18 08:32:46 ultrabug Exp $
 
 EAPI=4
 SCONS_MIN_VERSION="1.2.0"
@@ -11,7 +11,7 @@ MY_P=${PN}-src-r${PV/_rc/-rc}
 
 DESCRIPTION="A high-performance, open source, schema-free document-oriented database"
 HOMEPAGE="http://www.mongodb.org"
-SRC_URI="https://github.com/mongodb/mongo/tarball/0655ba4ec87e4dd91c5639707d6f6f208d719d61 -> ${MY_P}.tar.gz
+SRC_URI="https://github.com/mongodb/mongo/tarball/ada33ce4be46e634e8ac9b727167b2173f90f5c8 -> ${MY_P}.tar.gz
 	mms-agent? ( http://dev.gentoo.org/~ultrabug/20111027-10gen-mms-agent.zip )"
 
 LICENSE="AGPL-3 Apache-2.0"
@@ -31,7 +31,7 @@ DEPEND="${RDEPEND}
 	sys-libs/readline
 	sys-libs/ncurses"
 
-S="${WORKDIR}/mongodb-mongo-0655ba4"
+S="${WORKDIR}/mongodb-mongo-ada33ce"
 
 pkg_setup() {
 	enewgroup mongodb
