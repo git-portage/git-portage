@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/vte/Attic/vte-0.28.2-r201.ebuild,v 1.2 2011/11/16 20:54:48 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/vte/Attic/vte-0.28.2-r202.ebuild,v 1.1 2011/11/18 08:48:37 tetromino Exp $
 
 EAPI="4"
 GCONF_DEBUG="yes"
