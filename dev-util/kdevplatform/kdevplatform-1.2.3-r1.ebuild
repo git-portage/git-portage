@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/kdevplatform/Attic/kdevplatform-1.2.3.ebuild,v 1.2 2011/11/20 22:32:27 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/kdevplatform/Attic/kdevplatform-1.2.3-r1.ebuild,v 1.1 2011/11/20 22:32:27 dilfridge Exp $
 
 EAPI=4
 
@@ -28,7 +28,7 @@ IUSE="cvs debug git reviewboard subversion"
 DEPEND="
 	dev-libs/boost
 	reviewboard? ( dev-libs/qjson )
-	subversion? ( <dev-vcs/subversion-1.7 )
+	subversion? ( dev-vcs/subversion )
 "
 RDEPEND="${DEPEND}
 	!<dev-util/kdevelop-${KDEVELOP_VERSION}:4
@@ -40,6 +40,10 @@ RDEPEND="${DEPEND}
 
 # Quite few fails and upstream is aware
 RESTRICT="test"
+
+PATCHES=(
+	"${FILESDIR}/${P}"-svn17-[12].patch
+)
 
 src_prepare() {
 	kde4-base_src_prepare

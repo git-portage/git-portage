@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/kdevplatform/Attic/kdevplatform-1.2.2.ebuild,v 1.6 2011/06/07 02:58:47 abcd Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/kdevplatform/Attic/kdevplatform-1.2.2.ebuild,v 1.7 2011/11/20 22:32:26 dilfridge Exp $
 
 EAPI=4
 
@@ -28,7 +28,7 @@ IUSE="cvs debug git reviewboard subversion"
 DEPEND="
 	dev-libs/boost
 	reviewboard? ( dev-libs/qjson )
-	subversion? ( >=dev-vcs/subversion-1.3 )
+	subversion? ( <dev-vcs/subversion-1.7 )
 "
 RDEPEND="${DEPEND}
 	!<dev-util/kdevelop-${KDEVELOP_VERSION}:4
