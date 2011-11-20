@@ -1,11 +1,11 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-voip/telepathy-gabble/Attic/telepathy-gabble-0.10.5.ebuild,v 1.7 2011/03/22 20:10:03 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-voip/telepathy-gabble/Attic/telepathy-gabble-0.14.0.ebuild,v 1.1 2011/11/20 13:09:24 pacho Exp $
 
-EAPI="3"
+EAPI="4"
 PYTHON_DEPEND="2:2.5"
 
-inherit eutils python
+inherit python
 
 DESCRIPTION="A Jabber/XMPP connection manager, this handles single and multi user chats and voice calls."
 HOMEPAGE="http://telepathy.freedesktop.org"
@@ -13,21 +13,21 @@ SRC_URI="http://telepathy.freedesktop.org/releases/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ppc ~ppc64 sparc x86"
-IUSE="debug test"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-linux"
+IUSE="debug +jingle test"
 
-RDEPEND=">=dev-libs/glib-2.24
+RDEPEND=">=dev-libs/glib-2.24:2
 	>=sys-apps/dbus-1.1.0
 	>=dev-libs/dbus-glib-0.82
-	>=net-libs/telepathy-glib-0.11.16
+	>=net-libs/telepathy-glib-0.15.9
 	>=net-libs/libnice-0.0.11
 	>=net-libs/gnutls-2.10.2
 
 	dev-db/sqlite:3
 	dev-libs/libxml2
 
-	|| ( net-libs/libsoup:2.4[ssl]
-		 >=net-libs/libsoup-2.33.1 )
+	jingle? ( || ( net-libs/libsoup:2.4[ssl]
+		 >=net-libs/libsoup-2.33.1 ) )
 
 	!<net-im/telepathy-mission-control-5.5.0"
 DEPEND="${RDEPEND}
@@ -47,16 +47,18 @@ src_prepare() {
 
 src_configure() {
 	econf \
-		--docdir=/usr/share/doc/${PF} \
+		--docdir="${EPREFIX}/usr/share/doc/${PF}" \
+		$(use_enable jingle google-relay) \
 		$(use_enable debug handle-leak-debug)
 }
 
 src_test() {
 	# Twisted tests fail, upstream bug #30565
-	emake -C tests check-TESTS || die "tests failed"
+	emake -C tests check-TESTS
 }
 
 src_install() {
-	emake install DESTDIR="${D}" || die "emake install failed"
-	dodoc AUTHORS NEWS ChangeLog README || die "dodoc failed"
+	emake install DESTDIR="${D}"
+	dodoc AUTHORS NEWS ChangeLog README
+	find "${D}" -name '*.la' -exec rm -f {} +
 }
