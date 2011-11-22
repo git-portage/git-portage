@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/at-spi2-core/Attic/at-spi2-core-2.2.2.ebuild,v 1.1 2011/11/20 15:23:04 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/at-spi2-core/Attic/at-spi2-core-2.2.3.ebuild,v 1.1 2011/11/22 13:09:15 pacho Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
