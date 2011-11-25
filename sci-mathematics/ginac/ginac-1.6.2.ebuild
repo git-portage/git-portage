@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/ginac/Attic/ginac-1.6.0.ebuild,v 1.2 2011/10/05 18:46:53 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/ginac/ginac-1.6.2.ebuild,v 1.1 2011/11/25 18:10:37 bicatali Exp $
 
 EAPI=4
 inherit eutils
