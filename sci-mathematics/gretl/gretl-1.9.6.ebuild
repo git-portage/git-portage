@@ -1,9 +1,9 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/gretl/Attic/gretl-1.9.4.ebuild,v 1.3 2011/03/14 21:19:15 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/gretl/Attic/gretl-1.9.6.ebuild,v 1.1 2011/11/25 18:15:57 bicatali Exp $
 
 USE_EINSTALL=true
-EAPI=2
+EAPI=4
 inherit eutils gnome2 elisp-common
 
 DESCRIPTION="Regression, econometrics and time-series library"
@@ -81,7 +81,7 @@ src_configure() {
 }
 
 src_compile() {
-	emake || die "emake failed"
+	emake
 	if use emacs; then
 		elisp-compile utils/emacs/gretl.el || die "elisp-compile failed"
 	fi
@@ -89,9 +89,9 @@ src_compile() {
 
 src_install() {
 	if use gnome; then
-		gnome2_src_install gnome_prefix="${D}"/usr svprefix="${D}usr"
+		gnome2_src_install gnome_prefix="${ED}"/usr svprefix="${ED}usr"
 	else
-		einstall svprefix="${D}usr"
+		einstall svprefix="${ED}usr"
 	fi
 	if use gtk && ! use gnome; then
 		doicon gnome/gretl.png
