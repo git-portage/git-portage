@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/abcm2ps/Attic/abcm2ps-5.9.23.ebuild,v 1.1 2011/06/25 23:36:55 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/abcm2ps/Attic/abcm2ps-5.9.25.ebuild,v 1.1 2011/11/26 02:09:55 radhermit Exp $
 
 EAPI=4
 
@@ -12,12 +12,10 @@ SRC_URI="http://moinejf.free.fr/${P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE=""
+IUSE="examples"
 
 src_prepare() {
-	sed -i \
-		-e '/LDFLAGS/s:=.*:= @LDFLAGS@:' \
-		Makefile.in || die
+	sed -i -e '/LDFLAGS/s:=.*:= @LDFLAGS@:' Makefile.in || die
 }
 
 src_configure() {
@@ -34,9 +32,12 @@ src_install() {
 
 	dodoc Changes README *.txt
 
-	insinto /usr/share/doc/${PF}/examples
-	doins *.{abc,eps}
+	if use examples ; then
+		docinto examples
+		dodoc *.{abc,eps}
+		docompress -x /usr/share/doc/${PF}/examples
+	fi
 
-	insinto /usr/share/doc/${PF}/contrib
-	doins "${DISTDIR}"/transpose_abc.pl
+	docinto contrib
+	dodoc "${DISTDIR}"/transpose_abc.pl
 }
