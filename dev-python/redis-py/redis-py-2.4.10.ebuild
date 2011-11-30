@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/redis-py/Attic/redis-py-2.4.1.ebuild,v 1.1 2011/06/06 09:03:42 djc Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/redis-py/Attic/redis-py-2.4.10.ebuild,v 1.1 2011/11/30 16:34:57 djc Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -13,7 +13,7 @@ inherit distutils
 
 DESCRIPTION="Python client for Redis key-value store"
 HOMEPAGE="http://github.com/andymccurdy/redis-py http://pypi.python.org/pypi/redis"
-SRC_URI="http://cloud.github.com/downloads/andymccurdy/${PN}/redis-${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/andymccurdy/${PN}/redis-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
