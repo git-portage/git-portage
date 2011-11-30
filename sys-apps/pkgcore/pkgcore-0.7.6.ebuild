@@ -1,11 +1,11 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.7.4.ebuild,v 1.1 2011/10/27 22:11:41 ferringb Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.7.6.ebuild,v 1.1 2011/11/30 23:03:31 ferringb Exp $
 
 EAPI="3"
 DISTUTILS_SRC_TEST="setup.py"
 
-inherit distutils
+inherit distutils eutils
 
 DESCRIPTION="pkgcore package manager"
 HOMEPAGE="http://pkgcore.googlecode.com/"
@@ -20,7 +20,7 @@ RDEPEND=">=dev-lang/python-2.4
 	>=dev-python/snakeoil-0.4.4
 	|| ( >=dev-lang/python-2.5 dev-python/pycrypto )"
 DEPEND="${RDEPEND}
-	doc? ( dev-python/sphinx )"
+	doc? ( dev-python/sphinx dev-python/pyparsing )"
 
 DOCS="AUTHORS NEWS"
 
