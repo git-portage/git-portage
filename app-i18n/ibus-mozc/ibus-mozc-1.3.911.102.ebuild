@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-mozc/Attic/ibus-mozc-1.2.831.102.ebuild,v 1.3 2011/11/12 04:42:09 naota Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-mozc/Attic/ibus-mozc-1.3.911.102.ebuild,v 1.1 2011/12/04 00:43:05 matsuu Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
