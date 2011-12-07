@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/opera-next/Attic/opera-next-12.00.1105.ebuild,v 1.3 2011/11/12 15:44:11 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/opera-next/Attic/opera-next-12.00.1191.ebuild,v 1.1 2011/12/07 16:20:37 jer Exp $
 
 EAPI="4"
 
@@ -12,12 +12,12 @@ HOMEPAGE="http://www.opera.com/"
 SLOT="0"
 LICENSE="OPERA-11 LGPL-2 LGPL-3"
 KEYWORDS="~amd64 ~x86 ~x86-fbsd"
-IUSE="elibc_FreeBSD gtk kde +gstreamer"
+IUSE="elibc_FreeBSD gtk gtk3 kde +gstreamer"
 
 O_V="$(get_version_component_range 1-2)" # Major version, i.e. 11.00
 O_B="$(get_version_component_range 3)"   # Build version, i.e. 1156
 
-O_D="alpha_${O_V}-${O_B}"
+O_D="kisskiss_${O_V}-${O_B}"
 O_P="${PN}-${O_V}-${O_B}"
 O_U="http://snapshot.opera.com/unix/"
 
@@ -49,7 +49,8 @@ GTKRDEPEND="
 	dev-libs/glib:2
 	x11-libs/cairo
 	x11-libs/gdk-pixbuf
-	x11-libs/gtk+:2
+	gtk? ( x11-libs/gtk+:2 )
+	gtk3? ( x11-libs/gtk+:3 )
 	x11-libs/pango
 	x11-libs/pixman
 "
@@ -61,8 +62,9 @@ KDERDEPEND="
 GSTRDEPEND="
 	dev-libs/glib:2
 	dev-libs/libxml2
-	media-plugins/gst-plugins-meta
+	media-libs/gst-plugins-base
 	media-libs/gstreamer
+	media-plugins/gst-plugins-meta
 "
 RDEPEND="
 	media-libs/fontconfig
@@ -76,7 +78,9 @@ RDEPEND="
 	x11-libs/libXext
 	x11-libs/libXft
 	x11-libs/libXrender
+	x11-libs/libXt
 	gtk? ( ${GTKRDEPEND} )
+	gtk3? ( ${GTKRDEPEND} )
 	kde? ( ${KDERDEPEND} )
 	gstreamer? ( ${GSTRDEPEND} )
 "
@@ -132,6 +136,9 @@ src_prepare() {
 	if ! use gtk; then
 		rm lib/${PN}/liboperagtk2.so || die
 	fi
+	if ! use gtk3; then
+		rm lib/${PN}/liboperagtk3.so || die
+	fi
 	if ! use kde; then
 		rm lib/${PN}/liboperakde4.so || die
 	fi
@@ -161,9 +168,10 @@ src_prepare() {
 
 	# Create /usr/bin/opera wrapper
 	echo '#!/bin/sh' > ${PN}
-	echo 'export OPERA_DIR=/usr/share/'"${PN}" >> ${PN}
+	echo 'export OPERA_DIR="/usr/share/'"${PN}"'"' >> ${PN}
 	echo 'export OPERA_PERSONALDIR=${OPERA_PERSONALDIR:-"${HOME}/.'${PN}'"}' \
 		>> ${PN}
+	echo 'export LD_PRELOAD="/usr/'$(get_libdir)'/libgtk-x11-2.0.so"' >> ${PN}
 	echo 'exec '"${OPREFIX}/${PN}/${PN}"' "$@"' >> ${PN}
 
 	# Change libz.so.3 to libz.so.1 for gentoo/freebsd
