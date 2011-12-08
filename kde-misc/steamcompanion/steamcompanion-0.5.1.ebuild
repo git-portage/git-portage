@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/steamcompanion/Attic/steamcompanion-0.3.1.ebuild,v 1.1 2011/08/07 18:23:51 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/steamcompanion/Attic/steamcompanion-0.5.1.ebuild,v 1.1 2011/12/08 10:56:49 johu Exp $
 
 EAPI=4
 
