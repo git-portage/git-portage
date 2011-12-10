@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/conkeror/Attic/conkeror-0.9.3_p20110401.ebuild,v 1.1 2011/04/03 17:18:53 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/conkeror/Attic/conkeror-0.9.3_p20110401.ebuild,v 1.2 2011/12/10 11:01:06 ulm Exp $
 
 EAPI=3
 
@@ -14,7 +14,8 @@ SRC_URI="mirror://gentoo/${P%_*}.tar.gz
 	mirror://gentoo/${P}.patch.gz
 	mirror://gentoo/conkeror.png"
 
-LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 )"
+# CC-BY-SA-3.0 for conkeror.png
+LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 ) CCPL-Attribution-ShareAlike-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
