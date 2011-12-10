@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/spideroak-bin
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/ChangeLog,v 1.7 2011/12/06 14:49:44 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/ChangeLog,v 1.8 2011/12/10 00:34:07 naota Exp $
+
+*spideroak-bin-4.2.9907 (10 Dec 2011)
+
+  10 Dec 2011; Naohiro Aota <naota@gentoo.org> +spideroak-bin-4.2.9907.ebuild,
+  metadata.xml:
+  Vesrion bump; New USE flag to unbundle pycurl. Bug #393367
 
   06 Dec 2011; Jeroen Roovers <jer@gentoo.org> metadata.xml:
   Fix maintainer tag order. Remove bug assignment order instructions since they
