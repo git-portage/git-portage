@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/tortoisehg/Attic/tortoisehg-2.1.4-r1.ebuild,v 1.1 2011/11/04 17:44:04 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/tortoisehg/Attic/tortoisehg-2.2.1.ebuild,v 1.1 2011/12/10 04:41:55 floppym Exp $
 
 EAPI=4
 
@@ -10,13 +10,21 @@ RESTRICT_PYTHON_ABIS="2.4 3.*"
 
 inherit distutils eutils multilib
 
+if [[ ${PV} != *9999* ]]; then
+	KEYWORDS="~amd64 ~x86"
+	SRC_URI="https://bitbucket.org/${PN}/targz/downloads/${P}.tar.gz"
+else
+	inherit mercurial
+	EHG_REPO_URI="https://bitbucket.org/tortoisehg/thg"
+	KEYWORDS=""
+	SRC_URI=""
+fi
+
 DESCRIPTION="Set of graphical tools for Mercurial"
 HOMEPAGE="http://tortoisehg.bitbucket.org"
-SRC_URI="http://bitbucket.org/${PN}/targz/downloads/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE="doc nautilus"
 
 RDEPEND="dev-python/iniparse
@@ -29,9 +37,6 @@ DEPEND="${RDEPEND}
 	doc? ( >=dev-python/sphinx-1.0.3 )"
 
 src_prepare() {
-	# Bug 389513: Mercurial 2 compatibility.
-	epatch "${FILESDIR}/${P}-mercurial-2.patch"
-
 	# make the install respect multilib.
 	sed -i -e "s:lib/nautilus:$(get_libdir)/nautilus:" setup.py || die
 
