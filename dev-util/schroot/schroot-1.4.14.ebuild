@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/schroot/Attic/schroot-1.4.14.ebuild,v 1.6 2011/08/05 14:28:42 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/schroot/Attic/schroot-1.4.14.ebuild,v 1.7 2011/12/13 22:24:32 abcd Exp $
 
 EAPI="3"
 WANT_AUTOMAKE="1.11"
@@ -16,16 +16,17 @@ SRC_URI="mirror://debian/pool/main/${PN::1}/${PN}/${MY_P}.orig.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 x86"
-IUSE="btrfs +dchroot debug doc lvm nls pam test"
+#IUSE="btrfs +dchroot debug doc lvm nls pam test"
+IUSE="+dchroot debug doc lvm nls pam test"
 
 COMMON_DEPEND="
 	>=dev-libs/boost-1.42.0
 	dev-libs/lockdev
 	>=sys-apps/util-linux-2.16
-	btrfs? ( sys-fs/btrfs-progs )
 	lvm? ( sys-fs/lvm2 )
 	pam? ( sys-libs/pam )
 "
+#	btrfs? ( >=sys-fs/btrfs-progs-0.19-r2 )
 
 DEPEND="${COMMON_DEPEND}
 	doc? (
@@ -61,7 +62,7 @@ src_configure() {
 	root_tests=no
 	use test && (( EUID == 0 )) && root_tests=yes
 	econf \
-		$(use_enable btrfs btrfs-snapshot) \
+		--disable-btrfs-snapshot \
 		$(use_enable doc doxygen) \
 		$(use_enable dchroot) \
 		$(use_enable dchroot dchroot-dsa) \
@@ -77,6 +78,7 @@ src_configure() {
 		--disable-static \
 		--localstatedir="${EPREFIX}"/var \
 		--with-bash-completion-dir="${EPREFIX}"/usr/share/bash-completion
+#		$(use_enable btrfs btrfs-snapshot) \
 }
 
 src_compile() {
