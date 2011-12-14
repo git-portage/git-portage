@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/ccp4-libs/Attic/ccp4-libs-6.1.3-r10.ebuild,v 1.7 2011/08/26 14:26:09 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/ccp4-libs/Attic/ccp4-libs-6.1.3-r10.ebuild,v 1.8 2011/12/14 12:20:17 jlec Exp $
 
 EAPI=3
 
@@ -41,7 +41,7 @@ RDEPEND="
 	!<sci-chemistry/ccp4-apps-${PVR}
 	app-shells/tcsh
 	dev-lang/tcl
-	sci-libs/cbflib
+	<sci-libs/cbflib-0.9.2.2
 	sci-libs/fftw:2.1
 	sci-libs/mmdb
 	sci-libs/monomer-db

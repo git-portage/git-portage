@@ -1,10 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/ccp4-libs/Attic/ccp4-libs-6.1.3-r8.ebuild,v 1.6 2011/12/14 12:20:17 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/ccp4-libs/ccp4-libs-6.1.3-r11.ebuild,v 1.1 2011/12/14 12:20:17 jlec Exp $
 
 EAPI=3
 
-inherit eutils fortran-2 gnuconfig multilib toolchain-funcs
+PYTHON_DEPEND="2"
+
+inherit autotools eutils fortran-2 gnuconfig multilib python toolchain-funcs
 
 SRC="ftp://ftp.ccp4.ac.uk/ccp4"
 
@@ -31,19 +33,19 @@ done
 
 LICENSE="ccp4"
 SLOT="0"
-KEYWORDS="amd64 ppc x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
 RDEPEND="
 	!<sci-chemistry/ccp4-6.1.3
 	!<sci-chemistry/ccp4-apps-${PVR}
-	!sci-libs/ssm
 	app-shells/tcsh
 	dev-lang/tcl
-	<sci-libs/cbflib-0.9.2.2
+	>=sci-libs/cbflib-0.9.2.2
 	sci-libs/fftw:2.1
 	sci-libs/mmdb
 	sci-libs/monomer-db
+	sci-libs/ssm
 	virtual/fortran
 	virtual/jpeg
 	virtual/lapack
@@ -51,6 +53,11 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
+
+pkg_setup() {
+	fortran-2_pkg_setup
+	python_set_active_version 2
+}
 
 src_prepare() {
 	einfo "Applying upstream patches ..."
@@ -84,7 +91,7 @@ src_prepare() {
 	ccp_patch "${FILESDIR}"/${PV}-dont-build-mmdb.patch
 
 	# unbundle libjpeg and cbflib
-	ccp_patch "${FILESDIR}"/${PV}-unbundle-libs.patch
+	ccp_patch "${FILESDIR}"/${PV}-unbundle-libs-ng2.patch
 
 	# Fix missing DESTIDR
 	# not installing during build
@@ -96,8 +103,17 @@ src_prepare() {
 	# Fix upstreams code
 	ccp_patch "${FILESDIR}"/${PV}-impl-dec.patch
 
+	# use pkg-config to detect BLAS/LAPACK
+	ccp_patch "${FILESDIR}"/${PV}-lapack.patch
+
+	# proto type changing in version 0.9.2.2
+	ccp_patch "${FILESDIR}"/${PV}-cbf.patch
+
 	einfo "Done." # done applying Gentoo patches
 	echo
+
+	# not needed, we have it extra
+	rm -rf src/rapper/{libxml2,gc7.0} || die
 
 	sed \
 		-e "s:/usr:${EPREFIX}/usr:g" \
@@ -108,6 +124,17 @@ src_prepare() {
 		-i configure || die
 
 	gnuconfig_update
+
+	for i in lib/DiffractionImage src/rapper src/pisa; do
+		pushd ${i} > /dev/null
+			sed 's:-g::g' -i configure* || die
+			eautoreconf
+		popd > /dev/null
+	done
+
+	## unbundle libssm
+	sed '/libdir/s:ssm::g' -i Makefile.in
+	find ./lib/src/mmdb ./lib/ssm ./lib/clipper ./lib/fftw lib/lapack -delete
 }
 
 src_configure() {
@@ -166,7 +193,7 @@ src_configure() {
 
 	export SHARE_LIB="\
 		$(tc-getCC) ${userldflags} -shared -Wl,-soname,libccp4c.so -o libccp4c.so \${CORELIBOBJS} \${CGENERALOBJS} \${CUCOBJS} \${CMTZOBJS} \${CMAPOBJS} \${CSYMOBJS} -L../ccif/ -lccif $(gcc-config -L | awk -F: '{for(i=1; i<=NF; i++) printf " -L%s", $i}') -lm && \
-		$(tc-getFC) ${userldflags} -shared -Wl,-soname,libccp4f.so -o libccp4f.so \${FORTRANLOBJS} \${FINTERFACEOBJS} -L../ccif/ -lccif -L. -lccp4c -lmmdb $(gcc-config -L | awk -F: '{for(i=1; i<=NF; i++) printf " -L%s", $i}') -lstdc++ -lgfortran -lm"
+		$(tc-getFC) ${userldflags} -shared -Wl,-soname,libccp4f.so -o libccp4f.so \${FORTRANLOBJS} \${FINTERFACEOBJS} -L../ccif/ -lccif -L. -lccp4c $(pkg-config --libs mmdb) $(gcc-config -L | awk -F: '{for(i=1; i<=NF; i++) printf " -L%s", $i}') -lstdc++ -lgfortran -lm"
 
 	# Can't use econf, configure rejects unknown options like --prefix
 	./configure \
@@ -176,6 +203,7 @@ src_configure() {
 		--with-warnings \
 		--disable-cctbx \
 		--disable-clipper \
+		--disable-ssm \
 		--tmpdir="${TMPDIR}" \
 		--bindir="${EPREFIX}/usr/libexec/ccp4/bin/" \
 		--libdir="${EPREFIX}/usr/$(get_libdir)" \
