@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/Attic/spideroak-bin-4.1.9860.ebuild,v 1.2 2011/12/10 01:30:10 naota Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/Attic/spideroak-bin-4.1.9860.ebuild,v 1.3 2011/12/14 09:03:29 phajdan.jr Exp $
 
 EAPI=4
 
@@ -17,7 +17,7 @@ RESTRICT="mirror strip"
 
 LICENSE="spideroak"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 x86"
 IUSE="dbus headless qt-bundled"
 
 RDEPEND=">=dev-libs/glib-2.12.0

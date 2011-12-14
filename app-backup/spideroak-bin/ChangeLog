@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/spideroak-bin
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/ChangeLog,v 1.9 2011/12/10 01:30:10 naota Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/ChangeLog,v 1.10 2011/12/14 09:03:29 phajdan.jr Exp $
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  spideroak-bin-4.1.9860.ebuild:
+  x86 stable wrt bug #393407
 
   10 Dec 2011; Naohiro Aota <naota@gentoo.org> spideroak-bin-4.0.9830.ebuild,
   spideroak-bin-4.1.9860.ebuild:
