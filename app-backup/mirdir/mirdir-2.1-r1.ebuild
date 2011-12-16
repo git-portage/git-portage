@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/mirdir/mirdir-2.1-r1.ebuild,v 1.1 2010/04/15 19:52:24 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/mirdir/mirdir-2.1-r1.ebuild,v 1.2 2011/12/16 16:54:16 ago Exp $
 
 EAPI=3
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}-Unix.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 IUSE=""
 
 DEPEND=""
