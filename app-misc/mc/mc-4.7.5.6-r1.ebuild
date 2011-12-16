@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/mc/Attic/mc-4.8.1.ebuild,v 1.1 2011/12/15 17:17:01 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/mc/Attic/mc-4.7.5.6-r1.ebuild,v 1.1 2011/12/16 10:16:30 wired Exp $
 
 EAPI=4
 
@@ -12,10 +12,10 @@ DESCRIPTION="GNU Midnight Commander is a text based file manager"
 HOMEPAGE="http://www.midnight-commander.org"
 SRC_URI="http://www.midnight-commander.org/downloads/${MY_P}.tar.xz"
 
-LICENSE="GPL-3"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~x86-interix ~amd64-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x86-solaris"
-IUSE="+edit gpm +ncurses nls samba slang test X"
+IUSE="+edit gpm +ncurses nls samba slang X"
 
 REQUIRED_USE="^^ ( ncurses slang )"
 
@@ -33,9 +33,7 @@ RDEPEND=">=dev-libs/glib-2.8:2
 DEPEND="${RDEPEND}
 	app-arch/xz-utils
 	dev-util/pkgconfig
-	nls? ( sys-devel/gettext )
-	test? ( dev-libs/check )
-	"
+	nls? ( sys-devel/gettext )"
 
 S=${WORKDIR}/${MY_P}
 
@@ -54,13 +52,12 @@ src_configure() {
 		$(use_enable samba vfs-smb) \
 		$(use_with gpm gpm-mouse) \
 		--with-screen=${myscreen} \
-		$(use_with edit) \
-		$(use_enable test tests)
+		$(use_with edit)
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS README
+	dodoc AUTHORS README NEWS
 
 	# fix bug #334383
 	if use kernel_linux && [[ ${EUID} == 0 ]] ; then
