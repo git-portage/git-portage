@@ -1,10 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/libkworkspace/Attic/libkworkspace-4.7.3.ebuild,v 1.3 2011/12/07 22:14:01 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/libkworkspace/Attic/libkworkspace-4.6.5-r1.ebuild,v 1.1 2011/12/18 00:03:00 dilfridge Exp $
 
 EAPI=4
 
-KMNAME="kde-workspace"
+KMNAME="kdebase-workspace"
 KMMODULE="libs/kworkspace"
 inherit kde4-meta
 
