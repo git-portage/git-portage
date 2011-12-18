@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/geant/Attic/geant-4.9.4_p01.ebuild,v 1.6 2011/06/28 13:34:44 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/geant/geant-4.9.4_p03.ebuild,v 1.1 2011/12/18 07:13:04 bicatali Exp $
 
 EAPI=4
 
@@ -33,8 +33,7 @@ SLOT="4"
 KEYWORDS="~amd64 ~x86"
 IUSE="+data dawn examples gdml geant3 granular qt4 static-libs vrml zlib"
 
-RDEPEND="
-	virtual/fortran
+RDEPEND="virtual/fortran
 	>=sci-physics/clhep-2.1
 	qt4? ( x11-libs/qt-gui:4 x11-libs/qt-opengl:4 )
 	gdml? ( dev-libs/xerces-c )
@@ -45,7 +44,7 @@ DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MYP}"
 
-PATCHES=( "${FILESDIR}"/${PN}-4.9.4-{no-benchmarks,zlib,libdir,datadir,no-examples}.patch )
+PATCHES=( "${FILESDIR}"/${PN}-4.9.4-{zlib,libdir,datadir,trajectory}.patch )
 
 src_configure() {
 	mycmakeargs=(
