@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/amarok/Attic/amarok-2.4.3.ebuild,v 1.5 2011/12/20 09:22:10 jmbsvicetto Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/amarok/Attic/amarok-2.5.0.ebuild,v 1.1 2011/12/20 09:22:10 jmbsvicetto Exp $
 
 EAPI=4
 
@@ -135,7 +135,7 @@ pkg_postinst() {
 			elog "You've disabled the amarok support for embedded mysql DBs."
 			elog "You'll have to configure amarok to use an external db server."
 			echo
-			elog "Please read http://amaroklive.com/wiki/MySQL_Server for details on how"
+			elog "Please read http://amarok.kde.org/wiki/MySQL_Server for details on how"
 			elog "to configure the external db and migrate your data from the embedded database."
 			echo
 
