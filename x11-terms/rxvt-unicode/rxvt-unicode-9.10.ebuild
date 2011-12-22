@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/rxvt-unicode/Attic/rxvt-unicode-9.10.ebuild,v 1.11 2011/10/11 20:54:09 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/rxvt-unicode/Attic/rxvt-unicode-9.10.ebuild,v 1.12 2011/12/22 18:51:22 jer Exp $
 
 EAPI="3"
 
@@ -8,7 +8,7 @@ inherit autotools flag-o-matic
 
 DESCRIPTION="rxvt clone with xft and unicode support"
 HOMEPAGE="http://software.schmorp.de/pkg/rxvt-unicode.html"
-SRC_URI="http://dist.schmorp.de/rxvt-unicode/${P}.tar.bz2"
+SRC_URI="http://dist.schmorp.de/rxvt-unicode/Attic/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
