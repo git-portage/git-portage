@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pygobject/Attic/pygobject-3.0.2.ebuild,v 1.5 2011/12/26 06:29:55 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pygobject/Attic/pygobject-3.0.3.ebuild,v 1.1 2011/12/26 06:29:55 tetromino Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
@@ -17,7 +17,7 @@ HOMEPAGE="http://www.pygtk.org/"
 
 LICENSE="LGPL-2.1"
 SLOT="3"
-KEYWORDS="~alpha ~amd64 ~arm hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
 IUSE="+cairo examples test +threads" # doc
 
 COMMON_DEPEND=">=dev-libs/glib-2.24.0:2
@@ -67,8 +67,14 @@ src_prepare() {
 	# Disable tests that fail
 	#epatch "${FILESDIR}/${PN}-2.28.3-disable-failing-tests.patch"
 
-	# FIXME: disable tests that require git master of gobject-introspection
+	# FIXME: disable tests that require >=gobject-introspection-1.31
 	epatch "${FILESDIR}/${P}-disable-new-gi-tests.patch"
+
+	# Upstream patch to fix GObject.property min/max values; in next release
+	epatch "${FILESDIR}/${P}-gobject-property-min-max.patch"
+
+	# https://bugzilla.gnome.org/show_bug.cgi?id=666852 
+	epatch "${FILESDIR}/${PN}-3.0.3-tests-python3.patch"
 
 	# disable pyc compiling
 	ln -sfn $(type -P true) py-compile
@@ -84,18 +90,21 @@ src_configure() {
 }
 
 src_compile() {
-	python_execute_function -d -s
+	python_src_compile
 }
 
 # FIXME: With python multiple ABI support, tests return 1 even when they pass
 src_test() {
 	unset DBUS_SESSION_BUS_ADDRESS
+	export GIO_USE_VFS="local" # prevents odd issues with deleting ${T}/.gvfs
 
 	testing() {
-		XDG_CACHE_HOME="${T}/$(PYTHON --ABI)"
+		export XDG_CACHE_HOME="${T}/$(PYTHON --ABI)"
 		Xemake check PYTHON=$(PYTHON -a)
+		unset XDG_CACHE_HOME
 	}
 	python_execute_function -s testing
+	unset GIO_USE_VFS
 }
 
 src_install() {
@@ -103,8 +112,8 @@ src_install() {
 	python_clean_installation_image
 
 	if use examples; then
-		insinto /usr/share/doc/${P}
-		doins -r examples || die "doins failed"
+		insinto /usr/share/doc/${PF}
+		doins -r examples
 	fi
 }
 
