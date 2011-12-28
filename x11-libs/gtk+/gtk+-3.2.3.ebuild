@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtk+/Attic/gtk+-3.2.1.ebuild,v 1.6 2011/12/14 19:58:13 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtk+/Attic/gtk+-3.2.3.ebuild,v 1.1 2011/12/28 04:54:15 tetromino Exp $
 
 EAPI="4"
 
@@ -67,8 +67,10 @@ DEPEND="${COMMON_DEPEND}
 	test? (
 		media-fonts/font-misc-misc
 		media-fonts/font-cursor-misc )"
+# gtk+-3.2.2 breaks Alt key handling in <=x11-libs/vte-0.30.1:2.90
 RDEPEND="${COMMON_DEPEND}
 	!<gnome-base/gail-1000
+	!<x11-libs/vte-0.30.1-r1:2.90
 	packagekit? ( app-admin/packagekit-base )"
 PDEPEND="vim-syntax? ( app-vim/gtk-syntax )"
 
