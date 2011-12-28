@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-17.0.942.0.ebuild,v 1.3 2011/11/23 22:36:25 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-17.0.963.12-r1.ebuild,v 1.1 2011/12/28 19:01:34 phajdan.jr Exp $
 
 EAPI="4"
 PYTHON_DEPEND="2:2.6"
@@ -54,7 +54,7 @@ RDEPEND="app-arch/bzip2
 	x11-libs/libXtst
 	kerberos? ( virtual/krb5 )"
 DEPEND="${RDEPEND}
-	dev-lang/nacl-toolchain-newlib
+	>=dev-lang/nacl-toolchain-newlib-0_p7311
 	dev-lang/perl
 	dev-lang/yasm
 	dev-python/simplejson
@@ -177,6 +177,9 @@ src_prepare() {
 		third_party/zlib/contrib/minizip/{ioapi,{,un}zip}.c \
 		chrome/common/zip*.cc || die
 
+	# Revert WebKit changeset responsible for Gentoo bug #393471.
+	epatch "${FILESDIR}/${PN}-revert-jpeg-swizzle-r0.patch"
+
 	epatch_user
 
 	# Remove most bundled libraries. Some are still needed.
@@ -193,6 +196,7 @@ src_prepare() {
 		\! -path 'third_party/hunspell/*' \
 		\! -path 'third_party/iccjpeg/*' \
 		\! -path 'third_party/jsoncpp/*' \
+		\! -path 'third_party/khronos/*' \
 		\! -path 'third_party/launchpad_translations/*' \
 		\! -path 'third_party/leveldb/*' \
 		\! -path 'third_party/leveldatabase/*' \
