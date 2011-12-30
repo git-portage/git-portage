@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/firebird/Attic/firebird-2.5.0.26074.0-r2.ebuild,v 1.1 2011/10/06 09:03:08 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/firebird/Attic/firebird-2.5.1.26351.0.ebuild,v 1.1 2011/12/30 06:25:04 patrick Exp $
 
 EAPI=4
 
@@ -67,12 +67,6 @@ src_unpack() {
 }
 
 src_prepare() {
-	# Fixes bug #347133
-	epatch "${FILESDIR}/${P}-build.patch"
-	cp "${FILESDIR}/${P}-Makefile.in.static.createdb" \
-		"${S}/builds/posix/Makefile.in.static.createdb" \
-		|| die "createdb makefile not found"
-
 	# This patch might be portable, and not need to be duplicated per version
 	# also might no longer be necessary to patch deps or libs, just flags
 	epatch "${FILESDIR}/${P}-deps-flags.patch"
