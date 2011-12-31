@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/cfs/Attic/cfs-1.4.1.17-r1.ebuild,v 1.1 2010/08/10 22:30:13 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/cfs/cfs-1.4.1.17-r3.ebuild,v 1.1 2011/12/31 19:54:19 idl0r Exp $
 
 inherit eutils versionator
 
