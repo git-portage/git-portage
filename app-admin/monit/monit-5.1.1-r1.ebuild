@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/monit/Attic/monit-5.1.1.ebuild,v 1.6 2010/12/22 01:43:14 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/monit/Attic/monit-5.1.1-r1.ebuild,v 1.1 2011/12/31 16:28:50 idl0r Exp $
 
 EAPI="2"
 
