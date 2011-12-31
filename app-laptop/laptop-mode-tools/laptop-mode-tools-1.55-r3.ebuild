@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-laptop/laptop-mode-tools/Attic/laptop-mode-tools-1.55-r2.ebuild,v 1.1 2011/07/12 20:41:51 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-laptop/laptop-mode-tools/Attic/laptop-mode-tools-1.55-r3.ebuild,v 1.1 2011/12/31 21:25:29 idl0r Exp $
 
 EAPI=2
 inherit eutils
@@ -13,7 +13,7 @@ SRC_URI="http://www.samwel.tk/laptop_mode/tools/downloads/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="acpi apm bluetooth scsi"
 
 RDEPEND="sys-apps/ethtool
@@ -29,8 +29,6 @@ S=${WORKDIR}/${MY_P}
 src_prepare() {
 	# Patching to avoid !sys-power/pm-utils depend wrt #327443
 	epatch "${FILESDIR}"/${P}-pm-utils-1.4.0.patch
-	# Add support for Linux3
-	epatch "${FILESDIR}"/${P}-linux3-support.patch
 }
 
 src_compile() { :; }
