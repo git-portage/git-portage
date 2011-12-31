@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/memcached/Attic/memcached-1.4.0-r1.ebuild,v 1.1 2009/07/28 01:07:27 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/memcached/memcached-1.3.3-r5.ebuild,v 1.1 2011/12/31 20:36:19 idl0r Exp $
 
-EAPI=2
 inherit eutils autotools flag-o-matic
 
 MY_PV="${PV/_rc/-rc}"
@@ -14,8 +13,8 @@ SRC_URI="http://memcached.googlecode.com/files/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
-IUSE="test slabs-reassign debug"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc ~sparc-fbsd x86 ~x86-fbsd"
+IUSE="test slabs-reassign"
 
 RDEPEND=">=dev-libs/libevent-1.4
 		 dev-lang/perl"
@@ -24,29 +23,25 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
 	epatch "${FILESDIR}/${PN}-1.2.2-fbsd.patch"
 	epatch "${FILESDIR}/${PN}-1.3.3-gcc4-slab-fixup.patch"
-	epatch "${FILESDIR}/${PN}-1.4.0-fix-as-needed-linking.patch"
 	sed -i -e 's,-Werror,,g' configure.ac || die "sed failed"
 	eautoreconf
 	use slabs-reassign && append-flags -DALLOW_SLABS_REASSIGN
 }
 
 src_compile() {
-	# There is a heavy degree of per-object compile flags
-	# Users do NOT know better than upstream. Trying to compile the testapp and
-	# the -debug version with -DNDEBUG _WILL_ fail.
-	append-flags -UNDEBUG
-	emake testapp memcached-debug CFLAGS="${CFLAGS}" || die "emake of testapp and memcached-debug failed."
-	filter-flags -UNDEBUG
+	econf
 	emake || die "emake failed."
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed."
 	dobin scripts/memcached-tool
-	use debug && dobin memcached-debug
 
 	dodoc AUTHORS ChangeLog NEWS README TODO doc/{CONTRIBUTORS,*.txt}
 

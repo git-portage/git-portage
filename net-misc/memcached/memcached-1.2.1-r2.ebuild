@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/memcached/Attic/memcached-1.2.1-r1.ebuild,v 1.10 2007/12/18 21:56:53 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/memcached/Attic/memcached-1.2.1-r2.ebuild,v 1.1 2011/12/31 20:36:19 idl0r Exp $
 
 inherit eutils
 
