@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/mit-krb5/Attic/mit-krb5-1.8.4-r1.ebuild,v 1.6 2011/10/23 08:55:53 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/mit-krb5/Attic/mit-krb5-1.8.4-r2.ebuild,v 1.1 2011/12/31 20:01:30 idl0r Exp $
 
 EAPI=2
 
