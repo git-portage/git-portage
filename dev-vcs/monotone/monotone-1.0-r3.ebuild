@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/monotone/Attic/monotone-1.0.ebuild,v 1.2 2011/09/11 11:26:01 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/monotone/monotone-1.0-r3.ebuild,v 1.1 2012/01/01 01:13:34 idl0r Exp $
 
 # QA failiures reported in https://code.monotone.ca/p/monotone/issues/181/
 EAPI="4"
-inherit bash-completion elisp-common eutils toolchain-funcs
+inherit bash-completion-r1 elisp-common eutils toolchain-funcs
 
 DESCRIPTION="Monotone Distributed Version Control System"
 HOMEPAGE="http://monotone.ca"
@@ -13,10 +13,9 @@ SRC_URI="http://monotone.ca/downloads/${PV}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="1"
 KEYWORDS="~amd64 ~ia64 ~x86"
-IUSE="doc emacs ipv6 nls test"
+IUSE="doc ipv6 nls test"
 
 RDEPEND="sys-libs/zlib
-	emacs? ( virtual/emacs )
 	>=dev-libs/libpcre-7.6
 	>=dev-libs/botan-1.8.0
 	>=dev-db/sqlite-3.3.8
@@ -51,13 +50,7 @@ src_configure() {
 
 src_compile() {
 	emake
-
 	use doc && emake html
-
-	if use emacs; then
-		cd contrib || die
-		elisp-compile *.el || die
-	fi
 }
 
 src_test() {
@@ -76,17 +69,12 @@ src_install() {
 
 	mv "${ED}"/usr/share/doc/${PN} "${ED}"/usr/share/doc/${PF} || die
 
-	dobashcompletion contrib/monotone.bash_completion
+	rm "${ED}"/etc/bash_completion.d/monotone.bash_completion || die
+	newbashcomp extra/shell/monotone.bash_completion ${PN}
 
 	if use doc; then
-		dohtml -r html/*
-		dohtml -r figures
-	fi
-
-	if use emacs; then
-		elisp-install ${PN} contrib/*.{el,elc} || die "elisp-install failed"
-		elisp-site-file-install "${FILESDIR}"/50${PN}-gentoo.el \
-			|| die
+		dohtml -r doc/html/*
+		dohtml -r doc/figures
 	fi
 
 	dodoc AUTHORS NEWS README* UPGRADE
@@ -106,9 +94,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	use emacs && elisp-site-regen
-	bash-completion_pkg_postinst
-
 	elog
 	elog "For details and instructions to upgrade from previous versions,"
 	elog "please read /usr/share/doc/${PF}/UPGRADE.bz2"
@@ -124,8 +109,4 @@ pkg_postinst() {
 	elog "  4. start the daemon: /etc/init.d/monotone start"
 	elog "  5. make persistent: rc-update add monotone default"
 	elog
-}
-
-pkg_postrm() {
-	use emacs && elisp-site-regen
 }
