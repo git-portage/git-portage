@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.3.ebuild,v 1.1 2012/01/02 13:17:47 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.3.ebuild,v 1.2 2012/01/02 16:50:03 mr_bones_ Exp $
 
 EAPI="4"
 PYTHON_DEPEND="python? 2"
@@ -191,7 +191,7 @@ src_install() {
 	insinto /usr/share/pixmaps
 	doins scripts/bacula.png
 
-	# install bat icon and desktop file when enabled 
+	# install bat icon and desktop file when enabled
 	# (for some reason ./configure doesn't pick this up)
 	if use qt4 && ! use static ; then
 		insinto /usr/share/pixmaps
