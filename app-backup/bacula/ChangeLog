@@ -1,6 +1,18 @@
 # ChangeLog for app-backup/bacula
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.115 2011/11/02 21:46:00 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.116 2012/01/02 13:17:47 tomjbe Exp $
+
+*bacula-5.2.3 (02 Jan 2012)
+
+  02 Jan 2012; Thomas Beierlein <tomjbe@gentoo.org> +bacula-5.2.3.ebuild,
+  +files/5.2.3/bacula-5.2.3-Makefile.patch,
+  +files/5.2.3/bacula-5.2.3-as-needed.patch,
+  +files/5.2.3/bacula-5.2.3-doc.patch,
+  +files/5.2.3/bacula-5.2.3-fix-static.patch,
+  +files/5.2.3/bacula-5.2.3-ldflags.patch,
+  +files/5.2.3/bacula-5.2.3-lib-search-path.patch,
+  +files/5.2.3/bacula-5.2.3-openssl-1.patch:
+  Version bump
 
   02 Nov 2011; Mike Frysinger <vapier@gentoo.org> bacula-5.0.2-r1.ebuild,
   bacula-5.0.3-r1.ebuild, bacula-5.0.3-r2.ebuild, bacula-5.0.3-r3.ebuild:
