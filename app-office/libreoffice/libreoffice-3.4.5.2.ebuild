@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/Attic/libreoffice-3.4.9999-r2.ebuild,v 1.4 2011/11/30 10:21:52 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/Attic/libreoffice-3.4.5.2.ebuild,v 1.1 2012/01/03 21:04:24 scarabeus Exp $
 
 EAPI=4
 
