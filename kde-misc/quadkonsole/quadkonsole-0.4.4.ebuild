@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/quadkonsole/Attic/quadkonsole-0.4.2.ebuild,v 1.1 2011/09/24 15:56:55 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/quadkonsole/quadkonsole-0.4.4.ebuild,v 1.1 2012/01/03 19:41:30 johu Exp $
 
 EAPI=4
 
