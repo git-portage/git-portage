@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/atheme-services/Attic/atheme-services-6.0.9.ebuild,v 1.4 2012/01/03 05:43:07 binki Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/atheme-services/Attic/atheme-services-6.0.9-r1.ebuild,v 1.1 2012/01/03 05:43:07 binki Exp $
 
 EAPI=4
 
-inherit eutils flag-o-matic perl-module prefix
+inherit autotools eutils flag-o-matic perl-module prefix
 
 DESCRIPTION="A portable and secure set of open-source and modular IRC services"
 HOMEPAGE="http://atheme.net/"
@@ -12,11 +12,11 @@ SRC_URI="http://atheme.net/downloads/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 ~sparc x86 ~x86-fbsd ~amd64-linux"
-IUSE="largenet ldap nls +pcre perl profile ssl"
+KEYWORDS="~amd64 ~sparc ~x86 ~x86-fbsd ~amd64-linux"
+IUSE="cracklib largenet ldap nls +pcre perl profile ssl"
 
 RDEPEND="dev-libs/libmowgli
-	sys-libs/cracklib
+	cracklib? ( sys-libs/cracklib )
 	ldap? ( net-nds/openldap )
 	nls? ( sys-devel/gettext )
 	pcre? ( dev-libs/libpcre )
@@ -42,6 +42,8 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-6.0.8-configure-disable.patch
+	epatch "${FILESDIR}"/${P}-cracklib-automagic.patch
+	eautoconf
 
 	# fix docdir
 	sed -i -e 's/\(^DOCDIR.*=.\)@DOCDIR@/\1@docdir@/' extra.mk.in || die
@@ -64,6 +66,7 @@ src_configure() {
 		--enable-fhs-paths \
 		--enable-contrib \
 		$(use_enable largenet large-net) \
+		$(use_with cracklib) \
 		$(use_with ldap) \
 		$(use_with nls) \
 		$(use_enable profile) \

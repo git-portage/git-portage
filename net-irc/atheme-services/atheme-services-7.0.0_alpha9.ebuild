@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/atheme-services/Attic/atheme-services-7.0.0_alpha9.ebuild,v 1.2 2011/12/30 22:42:37 binki Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/atheme-services/Attic/atheme-services-7.0.0_alpha9.ebuild,v 1.3 2012/01/03 05:43:07 binki Exp $
 
 EAPI=4
 
@@ -15,9 +15,10 @@ SRC_URI="http://atheme.net/downloads/${MY_P}.tar.bz2"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86 ~x86-fbsd ~amd64-linux"
-IUSE="largenet ldap nls +pcre perl profile ssl"
+IUSE="cracklib largenet ldap nls +pcre perl profile ssl"
 
 RDEPEND=">=dev-libs/libmowgli-0.9.95
+	cracklib? ( sys-libs/cracklib )
 	ldap? ( net-nds/openldap )
 	nls? ( sys-devel/gettext )
 	perl? ( dev-lang/perl )
@@ -48,6 +49,7 @@ src_prepare() {
 	# The first PKG_CHECK_MODULES call is conditional, causing
 	# PKG_PROG_PKG_CONFIG expansion to fail.
 	epatch "${FILESDIR}"/${P}-pkg-config.patch
+	epatch "${FILESDIR}"/${PN}-7.0.0_alpha11-cracklib-automagic.patch
 	eautoconf
 
 	# fix docdir
@@ -73,6 +75,7 @@ src_configure() {
 		--disable-warnings \
 		--enable-contrib \
 		$(use_enable largenet large-net) \
+		$(use_with cracklib) \
 		$(use_with ldap) \
 		$(use_with nls) \
 		$(use_enable profile) \
