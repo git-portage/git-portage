@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-21.2.ebuild,v 1.1 2011/12/20 22:44:39 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-21.2.ebuild,v 1.2 2012/01/04 17:39:43 jlec Exp $
 
 EAPI=4
 
@@ -29,6 +29,7 @@ COMMON_DEPEND="
 RDEPEND="${COMMON_DEPEND}
 	gnome-base/gvfs[fuse]"
 DEPEND="${COMMON_DEPEND}
+	app-text/yelp-tools
 	dev-lang/vala:0.14
 	dev-perl/Locale-gettext
 	dev-util/pkgconfig
