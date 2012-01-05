@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/v8/Attic/v8-3.7.6.ebuild,v 1.3 2011/11/23 22:23:20 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/v8/Attic/v8-3.7.12.12.ebuild,v 1.1 2012/01/05 17:00:47 floppym Exp $
 
 EAPI="4"
 
@@ -49,12 +49,7 @@ src_compile() {
 	esac
 	mytarget=${myarch}.release
 
-	if [[ ${PV} == "9999" ]]; then
-		subversion_wc_info
-		soname_version="${PV}-${ESVN_WC_REVISION}"
-	else
-		soname_version="${PV}"
-	fi
+	soname_version="${PV}"
 
 	local snapshot=on
 	host-is-pax && snapshot=off
@@ -73,7 +68,16 @@ src_compile() {
 }
 
 src_test() {
+	local arg testjobs
+	for arg in ${MAKEOPTS}; do
+		case ${arg} in
+			-j*) testjobs=${arg#-j} ;;
+			--jobs=*) testjobs=${arg#--jobs=} ;;
+		esac
+	done
+
 	tools/test-wrapper-gypbuild.py \
+		-j${testjobs:-1} \
 		--arch-and-mode=${mytarget} \
 		--no-presubmit \
 		--progress=dots || die
@@ -103,13 +107,8 @@ pkg_preinst() {
 
 	eshopts_push -s nullglob
 
-	for candidate in "${EROOT}usr/$(get_libdir)"/libv8-*$(get_libname); do
-		baselib=${candidate##*/}
-		if [[ ! -e "${ED}usr/$(get_libdir)/${baselib}" ]]; then
-			preserved_libs+=( "${EPREFIX}/usr/$(get_libdir)/${baselib}" )
-		fi
-	done
-	for candidate in "${EROOT}usr/$(get_libdir)"/libv8$(get_libname).*; do
+	for candidate in "${EROOT}usr/$(get_libdir)"/libv8-*$(get_libname) \
+		"${EROOT}usr/$(get_libdir)"/libv8$(get_libname).*; do
 		baselib=${candidate##*/}
 		if [[ ! -e "${ED}usr/$(get_libdir)/${baselib}" ]]; then
 			preserved_libs+=( "${EPREFIX}/usr/$(get_libdir)/${baselib}" )
