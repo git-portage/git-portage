@@ -1,31 +1,30 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/scipy/Attic/scipy-0.9.0-r2.ebuild,v 1.1 2011/10/07 15:38:28 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/scipy/Attic/scipy-0.10.0.ebuild,v 1.1 2012/01/08 16:59:11 bicatali Exp $
 
-EAPI="3"
+EAPI=4
 
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="*-jython"
 
 inherit eutils fortran-2 distutils flag-o-matic toolchain-funcs versionator
 
-SP="${PN}-$(get_version_component_range 1-2)"
+DISTUTILS_SRC_TEST=nosetests
 
 DESCRIPTION="Scientific algorithms library for Python"
 HOMEPAGE="http://www.scipy.org/ http://pypi.python.org/pypi/scipy"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz
 	doc? (
-		http://docs.scipy.org/doc/${P}/${PN}-html.zip -> ${SP}-html.zip
-		http://docs.scipy.org/doc/${P}/${PN}-ref.pdf -> ${SP}-ref.pdf
+		http://docs.scipy.org/doc/${P}/${PN}-html.zip -> ${P}-html.zip
+		http://docs.scipy.org/doc/${P}/${PN}-ref.pdf -> ${P}-ref.pdf
 	)"
 
-LICENSE="BSD"
+LICENSE="BSD LGPL-2"
 SLOT="0"
 IUSE="doc umfpack"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
 
-CDEPEND="
-	>=dev-python/numpy-1.5
+CDEPEND="dev-python/numpy
 	media-libs/qhull
 	sci-libs/arpack
 	sci-libs/superlu
@@ -38,13 +37,9 @@ DEPEND="${CDEPEND}
 	doc? ( app-arch/unzip )
 	umfpack? ( dev-lang/swig )"
 
-RDEPEND="
-	virtual/fortran
+RDEPEND="virtual/fortran
 	${CDEPEND}
 	dev-python/imaging"
-
-# buggy test suite - still true for 0.9.0
-#RESTRICT="test"
 
 DOCS="THANKS.txt LATEST.txt TOCHANGE.txt"
 
@@ -64,19 +59,22 @@ pkg_setup() {
 	export F90="${FC}"
 	export SCIPY_FCONFIG="config_fc --noopt --noarch"
 	append-fflags -fPIC
+	python_pkg_setup
 }
 
 src_unpack() {
 	unpack ${P}.tar.gz
 	if use doc; then
-		unzip -qo "${DISTDIR}"/${SP}-html.zip -d html || die
+		unzip -qo "${DISTDIR}"/${P}-html.zip -d html || die
 	fi
 }
 
 src_prepare() {
+	# remove bundled libs
 	epatch \
-		"${FILESDIR}"/${P}-superlu.patch \
-		"${FILESDIR}"/${P}-qhull.patch
+		"${FILESDIR}"/${PN}-0.9.0-superlu.patch \
+		"${FILESDIR}"/${PN}-0.9.0-superlu-4.3.patch \
+		"${FILESDIR}"/${PN}-0.9.0-qhull.patch
 	rm -rf ./scipy/sparse/linalg/dsolve/SuperLU ./scipy/spatial/qhull
 	local libdir="${EPREFIX}"/usr/$(get_libdir)
 	cat >> site.cfg <<-EOF
@@ -102,9 +100,11 @@ src_compile() {
 src_test() {
 	testing() {
 		"$(PYTHON)" setup.py build -b "build-${PYTHON_ABI}" install \
-			--home="${S}/test-${PYTHON_ABI}" --no-compile ${SCIPY_FCONFIG} || die "install test failed"
+			--home="${S}/test-${PYTHON_ABI}" --no-compile ${SCIPY_FCONFIG} \
+			|| die "install test failed"
 		pushd "${S}/test-${PYTHON_ABI}/"lib*/python > /dev/null
-		PYTHONPATH=. "$(PYTHON)" -c "import scipy; scipy.test('full')" 2>&1 | tee test.log
+		PYTHONPATH=. "$(PYTHON)" -c "import scipy; scipy.test('full')" \
+			2>&1 | tee test.log
 		grep -q ^ERROR test.log && die "test failed"
 		popd > /dev/null
 		rm -fr test-${PYTHON_ABI}
@@ -114,16 +114,11 @@ src_test() {
 
 src_install() {
 	distutils_src_install ${SCIPY_FCONFIG}
-	if use doc; then
-		insinto /usr/share/doc/${PF}
-		doins -r "${WORKDIR}"/html || die
-		doins  "${DISTDIR}"/${SP}*pdf || die
-	fi
+	use doc && dohtml -r "${WORKDIR}"/html/* && dodoc "${DISTDIR}"/${P}*pdf
 }
 
 pkg_postinst() {
 	distutils_pkg_postinst
-
 	elog "You might want to set the variable SCIPY_PIL_IMAGE_VIEWER"
 	elog "to your prefered image viewer if you don't like the default one. Ex:"
 	elog "\t echo \"export SCIPY_PIL_IMAGE_VIEWER=display\" >> ~/.bashrc"
