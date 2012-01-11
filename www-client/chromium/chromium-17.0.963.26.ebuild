@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-17.0.963.26.ebuild,v 1.1 2012/01/05 17:02:02 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-17.0.963.26.ebuild,v 1.2 2012/01/11 17:38:00 phajdan.jr Exp $
 
 EAPI="4"
 PYTHON_DEPEND="2:2.6"
@@ -366,9 +366,10 @@ src_test() {
 		die "Tests must be run as non-root. Please use FEATURES=userpriv."
 	fi
 
-	# For more info see bug #350347.
+	# ICUStringConversionsTest: bug #350347.
+	# MessagePumpLibeventTest: bug #398501.
 	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/base_unittests virtualmake \
-		'--gtest_filter=-ICUStringConversionsTest.*'
+		'--gtest_filter=-ICUStringConversionsTest.*:MessagePumpLibeventTest.*'
 
 	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/cacheinvalidation_unittests virtualmake
 	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/crypto_unittests virtualmake
