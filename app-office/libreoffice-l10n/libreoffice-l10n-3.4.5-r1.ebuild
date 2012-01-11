@@ -1,13 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice-l10n/Attic/libreoffice-l10n-3.5.0-r1.ebuild,v 1.1 2011/12/09 18:39:34 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice-l10n/Attic/libreoffice-l10n-3.4.5-r1.ebuild,v 1.1 2012/01/11 12:06:26 scarabeus Exp $
 
 EAPI=4
 
-MY_PV="3.5.0beta0"
+MY_PV="3.4.5rc2"
 
-RC_VERSION="" # CHECK ME WITH EVERY BUMP!
-BASE_SRC_URI="http://download.documentfoundation.org/${PN/-l10n/}/testing/3.5.0-beta0/rpm"
+RC_VERSION="rc2" # CHECK ME WITH EVERY BUMP!
+BASE_SRC_URI="http://download.documentfoundation.org/${PN/-l10n/}/testing/3.4.5-rc2/rpm/"
 
 OO_EXTENSIONS=(
 	"472ffb92d82cf502be039203c606643d-Sun-ODF-Template-Pack-en-US_1.0.0.oxt"
@@ -140,11 +140,16 @@ src_configure() { :; }
 src_compile() { :; }
 
 src_install() {
-	local dir="${S}"/opt/${PN/-l10n/}$(get_version_component_range 1-2 ${MY_PV})/
+	local dir="${S}"/opt/${PN/-l10n/}$(get_version_component_range 1-2 ${MY_PV})/basis$(get_version_component_range 1-2 ${MY_PV})/
 	# Condition required for people that do not install anything eg no linguas
 	# or just english with no offlinehelp.
 	if [[ -d "${dir}" ]] ; then
-		insinto /usr/$(get_libdir)/${PN/-l10n/}/
+		if [[ ${PV} == 9999 ]]; then
+			# starting with 3.5 this is in common dir
+			insinto /usr/$(get_libdir)/${PN/-l10n/}/
+		else
+			insinto /usr/$(get_libdir)/${PN/-l10n/}/basis$(get_version_component_range 1-2)/
+		fi
 		doins -r "${dir}"/*
 	fi
 
