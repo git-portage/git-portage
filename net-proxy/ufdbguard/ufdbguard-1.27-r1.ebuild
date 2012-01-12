@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/ufdbguard/Attic/ufdbguard-1.26.ebuild,v 1.2 2011/09/06 10:03:37 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/ufdbguard/Attic/ufdbguard-1.27-r1.ebuild,v 1.1 2012/01/12 13:22:22 flameeyes Exp $
 
 EAPI="4"
 
@@ -88,7 +88,7 @@ src_install() {
 	doins src/images/*
 
 	newconfd "${FILESDIR}"/ufdb.confd ufdb
-	newinitd "${FILESDIR}"/ufdb.initd ufdb
+	newinitd "${FILESDIR}"/ufdb.initd.2 ufdb
 
 	exeinto /etc/cron.daily
 	newexe "${FILESDIR}"/ufdbUpdate.cron ufdbUpdate
