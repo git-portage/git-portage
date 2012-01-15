@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-HTML_QuickForm2/Attic/PEAR-HTML_QuickForm2-0.2.0.ebuild,v 1.2 2007/12/06 00:08:50 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-HTML_QuickForm2/PEAR-HTML_QuickForm2-0.6.1.ebuild,v 1.1 2012/01/15 11:07:58 mabi Exp $
 
 inherit php-pear-r1
 
