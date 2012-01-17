@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/abcm2ps/Attic/abcm2ps-6.5.16.ebuild,v 1.1 2011/12/23 03:16:08 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/abcm2ps/Attic/abcm2ps-6.6.3.ebuild,v 1.1 2012/01/17 23:40:22 radhermit Exp $
 
 EAPI=4
 
