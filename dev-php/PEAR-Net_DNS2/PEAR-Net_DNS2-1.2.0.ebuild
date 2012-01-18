@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Net_DNS2/Attic/PEAR-Net_DNS2-1.1.2-r1.ebuild,v 1.1 2011/10/15 10:18:47 olemarkus Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Net_DNS2/Attic/PEAR-Net_DNS2-1.2.0.ebuild,v 1.1 2012/01/18 20:17:17 mabi Exp $
 
 EAPI="4"
 
