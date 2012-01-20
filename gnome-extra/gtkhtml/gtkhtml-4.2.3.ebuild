@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gtkhtml/Attic/gtkhtml-4.2.1.ebuild,v 1.1 2011/10/31 07:11:53 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gtkhtml/Attic/gtkhtml-4.2.3.ebuild,v 1.1 2012/01/20 22:39:15 tetromino Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
@@ -34,8 +34,7 @@ DEPEND="${RDEPEND}
 pkg_setup() {
 	ELTCONF="--reverse-deps"
 	G2CONF="${G2CONF}
-		--disable-static
-		--disable-deprecated-warning-flags"
+		--disable-static"
 	DOCS="AUTHORS BUGS ChangeLog NEWS README TODO"
 }
 
