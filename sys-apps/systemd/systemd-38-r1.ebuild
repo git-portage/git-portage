@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/Attic/systemd-37-r3.ebuild,v 1.2 2012/01/14 21:17:23 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/Attic/systemd-38-r1.ebuild,v 1.1 2012/01/21 15:55:11 mgorny Exp $
 
 EAPI=4
 
@@ -8,14 +8,18 @@ inherit autotools-utils bash-completion-r1 linux-info pam systemd
 
 DESCRIPTION="System and service manager for Linux"
 HOMEPAGE="http://www.freedesktop.org/wiki/Software/systemd"
-SRC_URI="http://www.freedesktop.org/software/systemd/${P}.tar.bz2"
+SRC_URI="http://www.freedesktop.org/software/systemd/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="acl audit cryptsetup gtk pam plymouth selinux tcpd"
+IUSE="acl audit cryptsetup gtk lzma pam plymouth selinux tcpd"
+
+# We need to depend on sysvinit for sulogin which is used in the rescue
+# mode. Bug #399615.
 
 COMMON_DEPEND=">=sys-apps/dbus-1.4.10
+	sys-apps/sysvinit
 	>=sys-apps/util-linux-2.19
 	>=sys-fs/udev-172
 	sys-libs/libcap
@@ -25,15 +29,17 @@ COMMON_DEPEND=">=sys-apps/dbus-1.4.10
 	gtk? (
 		dev-libs/dbus-glib
 		>=dev-libs/glib-2.26
+		dev-libs/libgee:0
 		x11-libs/gtk+:2
 		>=x11-libs/libnotify-0.7 )
+	lzma? ( app-arch/xz-utils )
 	pam? ( virtual/pam )
 	plymouth? ( sys-boot/plymouth )
 	selinux? ( sys-libs/libselinux )
 	tcpd? ( sys-apps/tcp-wrappers )"
 
 # Vala-0.10 doesn't work with libnotify 0.7.1
-VALASLOT="0.12"
+VALASLOT="0.14"
 # A little higher than upstream requires
 # but I had real trouble with 2.6.37 and systemd.
 MINKV="2.6.38"
@@ -44,6 +50,7 @@ MINKV="2.6.38"
 RDEPEND="${COMMON_DEPEND}
 	!<sys-apps/openrc-0.8.3"
 DEPEND="${COMMON_DEPEND}
+	app-arch/xz-utils
 	dev-util/gperf
 	dev-util/intltool
 	gtk? ( dev-lang/vala:${VALASLOT} )
@@ -70,14 +77,18 @@ src_prepare() {
 src_configure() {
 	local myeconfargs=(
 		--with-distro=gentoo
-		--with-rootdir=/usr
+		# install everything to /usr
+		--with-rootprefix=/usr
 		--with-rootlibdir=/usr/$(get_libdir)
+		# but pam modules have to lie in /lib*
+		--with-pamlibdir=/$(get_libdir)/security
 		--localstatedir=/var
 		--docdir=/tmp/docs
 		$(use_enable acl)
 		$(use_enable audit)
 		$(use_enable cryptsetup libcryptsetup)
 		$(use_enable gtk)
+		$(use_enable lzma xz)
 		$(use_enable pam)
 		$(use_enable plymouth)
 		$(use_enable selinux)
@@ -101,13 +112,14 @@ src_install() {
 	dosym ../usr/bin/systemctl /bin/systemctl
 
 	# move files as necessary
-	newbashcomp "${D}"/tmp/systemctl-bash-completion.sh ${PN}
+	newbashcomp "${D}"/tmp/systemd-bash-completion.sh ${PN}
 	dodoc "${D}"/tmp/docs/*
 	rm -r "${D}"/tmp || die
 
 	# we just keep sysvinit tools, so no need for the mans
 	rm "${D}"/usr/share/man/man8/{halt,poweroff,reboot,runlevel,shutdown,telinit}.8 \
 		|| die
+	rm "${D}"/usr/share/man/man1/init.1 || die
 
 	# Create /run/lock as required by new baselay/OpenRC compat.
 	insinto /usr/lib/tmpfiles.d
@@ -131,7 +143,7 @@ optfeature() {
 }
 
 pkg_postinst() {
-	mkdir -p "${ROOT}"/run
+	mkdir -p "${ROOT}"/run || ewarn "Unable to mkdir /run, this could mean trouble."
 	if [[ ! -L "${ROOT}"/etc/mtab ]]; then
 		ewarn "Upstream suggests that the /etc/mtab file should be a symlink to /proc/mounts."
 		ewarn "It is known to cause users being unable to unmount user mounts. If you don't"
