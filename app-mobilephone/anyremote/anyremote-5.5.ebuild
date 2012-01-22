@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/anyremote/Attic/anyremote-5.4.ebuild,v 1.3 2011/04/13 20:16:58 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/anyremote/Attic/anyremote-5.5.ebuild,v 1.1 2012/01/22 21:01:11 hwoarang Exp $
 
 EAPI="2"
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="bluetooth dbus"
 
 RDEPEND="bluetooth? ( net-wireless/bluez )
