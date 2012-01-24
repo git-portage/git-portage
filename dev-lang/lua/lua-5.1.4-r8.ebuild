@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/lua/Attic/lua-5.1.4-r7.ebuild,v 1.3 2011/09/17 12:09:45 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/lua/lua-5.1.4-r8.ebuild,v 1.1 2012/01/24 21:44:53 mabi Exp $
 
-EAPI=3
+EAPI=4
 
 inherit eutils multilib portability toolchain-funcs versionator
 
@@ -22,8 +22,6 @@ PDEPEND="emacs? ( app-emacs/lua-mode )"
 
 src_prepare() {
 	local PATCH_PV=$(get_version_component_range 1-2)
-	unpack ${A}
-	cd "${S}"
 
 	epatch "${FILESDIR}"/${PN}-${PATCH_PV}-make-r1.patch
 	epatch "${FILESDIR}"/${PN}-${PATCH_PV}-module_paths.patch
