@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.7.7.5.ebuild,v 1.1 2011/12/26 20:32:06 ferringb Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.7.7.7.ebuild,v 1.1 2012/01/24 11:53:49 ferringb Exp $
 
 EAPI="3"
 DISTUTILS_SRC_TEST="setup.py"
