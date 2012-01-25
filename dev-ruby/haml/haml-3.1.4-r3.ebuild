@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/haml/Attic/haml-3.1.4-r2.ebuild,v 1.1 2012/01/22 18:14:04 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/haml/Attic/haml-3.1.4-r3.ebuild,v 1.1 2012/01/25 00:46:57 flameeyes Exp $
 
 EAPI=4
 
@@ -12,7 +12,7 @@ RUBY_FAKEGEM_TASK_DOC="doc"
 RUBY_FAKEGEM_EXTRADOC="CONTRIBUTING README.md"
 RUBY_FAKEGEM_DOCDIR="doc"
 
-RUBY_FAKEGEM_EXTRAINSTALL="init.rb VERSION VERSION_NAME"
+RUBY_FAKEGEM_EXTRAINSTALL="init.rb rails VERSION VERSION_NAME"
 
 inherit ruby-fakegem
 
