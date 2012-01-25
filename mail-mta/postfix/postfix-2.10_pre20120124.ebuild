@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/Attic/postfix-2.10_pre20120118.ebuild,v 1.1 2012/01/19 16:36:24 eras Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/Attic/postfix-2.10_pre20120124.ebuild,v 1.1 2012/01/25 06:20:10 eras Exp $
 
 EAPI=4
 
@@ -317,8 +317,8 @@ pkg_postinst() {
 		elog "http://www.postfix.org/MULTI_INSTANCE_README.html"
 		if ! use berkdb; then
 			ewarn "\nPostfix is installed without BerkeleyDB support."
-			ewarn "Please turn on berkdb USE flag if hash or btree table"
-			ewarn "lookup support is needed.\n"
+			ewarn "Please turn on berkdb USE flag for hash or btree table"
+			ewarn "lookup support.\n"
 		fi
 	fi
 }
