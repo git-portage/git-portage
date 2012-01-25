@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/scala/Attic/scala-2.8.1.ebuild,v 1.3 2011/05/06 16:13:38 ali_bush Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/scala/scala-2.9.1.ebuild,v 1.1 2012/01/25 19:06:57 ali_bush Exp $
 
 EAPI="3"
 JAVA_PKG_IUSE="doc examples source"
@@ -9,10 +9,16 @@ inherit eutils check-reqs java-pkg-2 java-ant-2 versionator
 
 MY_P="${P}.final-sources"
 
+# creating the binary:
+# JAVA_PKG_FORCE_VM="$available-1.5" USE="doc examples source" ebuild scala-*.ebuild compile
+# cd $WORDKIR
+# fix dist/latest link.
+# tar -cjf $DISTDIR/scala-$PN-gentoo-binary.tar.bz2 ${MY_P}/dists ${MY_P}/docs/TODO
+
 DESCRIPTION="The Scala Programming Language"
 HOMEPAGE="http://www.scala-lang.org/"
-SRC_URI="!binary? ( http://www.scala-lang.org/downloads/distrib/files/${MY_P}.tgz )
-		binary? ( http://dev.gentoo.org/~ali_bush/distfiles/${P}-gentoo-binary.tar.bz2 )"
+SRC_URI="!binary? ( ${HOMEPAGE}downloads/distrib/files/${MY_P}.txz -> ${P}.tar.xz )
+	binary? ( http://dev.gentoo.org/~ali_bush/distfiles/${P}-gentoo-binary.tar.bz2 )"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -24,10 +30,9 @@ DEPEND=">=virtual/jdk-1.6
 	java-virtuals/jdk-with-com-sun
 	!binary? (
 		dev-java/ant-contrib:0
-		dev-java/jline:0
-	)"
+	)
+	app-arch/xz-utils"
 RDEPEND=">=virtual/jre-1.6
-	dev-java/jline:0
 	!dev-java/scala-bin"
 
 PDEPEND="emacs? ( app-emacs/scala-mode )"
@@ -44,11 +49,7 @@ pkg_setup() {
 		ewarn "If you are unable to build from sources, please try USE=binary"
 		ewarn "for this package. See bug #181390 for more information."
 
-		if use amd64; then
-			CHECKREQS_MEMORY="1024"
-		else
-			CHECKREQS_MEMORY="512"
-		fi
+		CHECKREQS_MEMORY="1532"
 
 		check_reqs
 	fi
@@ -62,22 +63,21 @@ java_prepare() {
 		rm -v ant/ant-contrib.jar || die
 		java-pkg_jar-from --into ant --build-only ant-contrib
 		popd &> /dev/null
-		java-pkg_jar-from jline
 	fi
 }
 
 src_compile() {
 	if ! use binary; then
+		#unset ANT_OPTS as this is set in the build.xml
+		#sets -X type variables which might come back to bite me
+		unset ANT_OPTS
+
 		# reported in bugzilla that multiple launches use less resources
 		# https://bugs.gentoo.org/show_bug.cgi?id=282023
 		eant all.clean
 		eant -Djavac.args="-encoding UTF-8" -Djava6.home=${JAVA_HOME} \
 			newlibs newforkjoin build-opt
 		eant dist.done
-
-		#TODO figure out why build doesn't work with jline.
-		cp jline.jar dists/latest/lib/ || die
-		cp jline.jar lib/ || die
 	else
 		einfo "Skipping compilation, USE=binary is set."
 	fi
@@ -87,17 +87,20 @@ src_test() {
 	eant test.suite || die "Some tests aren't passed"
 }
 
-scala_launcher() {
-	local SCALADIR="/usr/share/${PN}"
-	local bcp="${SCALADIR}/lib/scala-library.jar"
-	java-pkg_dolauncher "${1}" --main "${2}" \
-		--java_args "-Xmx256M -Xms32M -Dscala.home=${SCALADIR} -Denv.emacs=${EMACS}"
-}
+#scala_launcher() {
+#	local SCALADIR="/usr/share/${PN}"
+#	local bcp="${SCALADIR}/lib/scala-library.jar"
+#	java-pkg_dolauncher "${1}" --main "${2}" \
+#		--java_args "-Xmx256M -Xms32M -Dscala.home=${SCALADIR} -Denv.emacs=${EMACS}"
+#}
 
 src_install() {
 	cd dists/latest || die
 
 	local SCALADIR="/usr/share/${PN}/"
+
+	exeinto "${SCALADIR}/bin"
+	doexe $(find bin/ -type f ! -iname '*.bat')
 
 	#sources are .scala so no use for java-pkg_dosrc
 	if use source; then
@@ -122,9 +125,16 @@ src_install() {
 		use examples && java-pkg_doexamples "${docdir}/examples"
 	fi
 
-	scala_launcher fsc scala.tools.nsc.CompileClient
-	scala_launcher scala scala.tools.nsc.MainGenericRunner
-	scala_launcher scalac scala.tools.nsc.Main
-	scala_launcher scaladoc scala.tools.nsc.ScalaDoc
-	scala_launcher scalap scala.tools.scalap.Main
+	dodir /usr/bin
+	for b in $(find bin/ -type f ! -iname '*.bat'); do
+		#pushd "${D}/usr/bin" &>/dev/null
+		local _name=$(basename "${b}")
+		dosym "/usr/share/${JAVA_PKG_NAME}/bin/${_name}" "/usr/bin/${_name}"
+		#popd &>/dev/null
+	done
+	#scala_launcher fsc scala.tools.nsc.CompileClient
+	#scala_launcher scala scala.tools.nsc.MainGenericRunner
+	#scala_launcher scalac scala.tools.nsc.Main
+	#scala_launcher scaladoc scala.tools.nsc.ScalaDoc
+	#scala_launcher scalap scala.tools.scalap.Main
 }
