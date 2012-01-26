@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-util/xboxdrv/Attic/xboxdrv-0.7.3.ebuild,v 1.1 2011/05/07 22:06:04 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-util/xboxdrv/Attic/xboxdrv-0.8.4.ebuild,v 1.1 2012/01/26 18:26:59 mr_bones_ Exp $
 
 EAPI=2
 inherit scons-utils toolchain-funcs linux-info
@@ -17,6 +17,8 @@ IUSE=""
 
 RDEPEND="dev-libs/boost
 	sys-fs/udev
+	sys-apps/dbus
+	dev-libs/glib:2
 	virtual/libusb:1
 	x11-libs/libX11"
 DEPEND="${RDEPEND}
@@ -32,17 +34,11 @@ src_compile() {
 		CXX="$(tc-getCXX)" \
 		CXXFLAGS="-Wall ${CXXFLAGS}" \
 		LINKFLAGS="${LDFLAGS}" \
-		|| die "scons failed"
+		|| die
 }
 
 src_install() {
-	dobin xboxdrv || die "dobin failed"
-
-	insinto /etc/hal/fdi/policy
-	newins hal/xboxdrv_policy.fdi 99-xboxdrv.fdi || die "newins failed"
-	insinto /etc/hal/fdi/preprobe
-	newins hal/xboxdrv_preprobe.fdi 99-xboxdrv.fdi || die "newins failed"
-
+	dobin xboxdrv || die
 	doman doc/xboxdrv.1
 	dodoc AUTHORS NEWS PROTOCOL README TODO
 }
