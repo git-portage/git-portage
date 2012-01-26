@@ -16,8 +16,9 @@
 	<name>Anthony G. Basile</name>
 </maintainer>
 <use>
-  <flag name='headless'>Build without graphic frontend</flag>
-  <flag name='pycurl-bundled'>Use bundled pycurl</flag>
-  <flag name='qt-bundled'>Use bundled Qt4 libraries</flag>
+	<flag name='headless'>Build without graphic frontend</flag>
+	<flag name='pycurl-bundled'>Use bundled pycurl</flag>
+	<flag name='qt-bundled'>Use bundled Qt4 libraries</flag>
+	<flag name='system-libs'>Use the system libraries rather than bundled</flag>
 </use>
 </pkgmetadata>
