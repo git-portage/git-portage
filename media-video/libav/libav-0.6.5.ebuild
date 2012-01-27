@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/libav/Attic/libav-0.7.2.ebuild,v 1.4 2011/12/02 18:19:50 beandog Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/libav/Attic/libav-0.6.5.ebuild,v 1.1 2012/01/27 10:06:53 scarabeus Exp $
 
 EAPI=4
 
@@ -17,19 +17,19 @@ HOMEPAGE="http://libav.org/"
 if [[ ${PV} == *9999 ]] ; then
 	SRC_URI=""
 elif [[ ${PV%_p*} != ${PV} ]] ; then # Gentoo snapshot
-	SRC_URI="http://dev.gentoo.org/~lu_zero/libav/${P}.tar.xz"
+	SRC_URI="mirror://gentoo/${P}.tar.xz"
 else # Official release
 	SRC_URI="http://${PN}.org/releases/${P}.tar.xz"
 fi
 
-LICENSE="LGPL-2 gpl? ( GPL-3 )"
+LICENSE="GPL-3"
 SLOT="0"
-[[ ${PV} == *9999 ]] || KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64
+[[ ${PV} == *9999 ]] || KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64
 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos
 ~x64-solaris ~x86-solaris"
-IUSE="+3dnow +3dnowext aac alsa altivec amr bindist +bzip2 cpudetection
-custom-cflags debug dirac doc +encode faac frei0r +gpl gsm +hardcoded-tables
-ieee1394 jack jpeg2k +mmx +mmxext mp3 network oss pic +qt-faststart rtmp schroedinger sdl speex +ssse3 static-libs test theora threads v4l vaapi vdpau vorbis vpx X x264 xvid +zlib"
+IUSE="+3dnow +3dnowext alsa altivec amr bindist +bzip2 cpudetection
+custom-cflags debug dirac doc +encode faac gsm +hardcoded-tables ieee1394 jack
+jpeg2k +mmx +mmxext mp3 network oss pic +qt-faststart rtmp schroedinger sdl speex +ssse3 static-libs test theora threads v4l vaapi vdpau vorbis vpx X x264 xvid +zlib"
 
 VIDEO_CARDS="nvidia"
 for x in ${VIDEO_CARDS}; do
@@ -43,16 +43,13 @@ RDEPEND="
 	bzip2? ( app-arch/bzip2 )
 	dirac? ( media-video/dirac )
 	encode? (
-		aac? ( media-libs/vo-aacenc )
-		amr? ( media-libs/vo-amrwbenc )
 		faac? ( media-libs/faac )
 		mp3? ( >=media-sound/lame-3.98.3 )
 		theora? ( >=media-libs/libtheora-1.1.1[encode] media-libs/libogg )
 		vorbis? ( media-libs/libvorbis media-libs/libogg )
-		x264? ( >=media-libs/x264-0.0.20110426 )
+		x264? ( >=media-libs/x264-0.0.20101029 )
 		xvid? ( >=media-libs/xvid-1.1.0 )
 	)
-	frei0r? ( media-plugins/frei0r-plugins )
 	gsm? ( >=media-sound/gsm-1.0.12-r1 )
 	ieee1394? ( media-libs/libdc1394 sys-libs/libraw1394 )
 	jack? ( media-sound/jack-audio-connection-kit )
@@ -63,7 +60,7 @@ RDEPEND="
 	speex? ( >=media-libs/speex-1.2_beta3 )
 	vaapi? ( x11-libs/libva )
 	video_cards_nvidia? ( vdpau? ( x11-libs/libvdpau ) )
-	vpx? ( >=media-libs/libvpx-0.9.6 )
+	vpx? ( media-libs/libvpx )
 	X? ( x11-libs/libX11 x11-libs/libXext )
 	zlib? ( sys-libs/zlib )
 "
@@ -80,12 +77,7 @@ DEPEND="${RDEPEND}
 "
 
 # faac can't be binary distributed
-# faac and aac are concurent implementations
-# amr and aac require at least lgpl3
-REQUIRED_USE="bindist? ( !faac )
-	amr? ( gpl ) aac? ( gpl )"
-
-RESTRICT="test"
+REQUIRED_USE="bindist? ( !faac )"
 
 src_prepare() {
 	# if we have snapshot then we need to hardcode the version
@@ -98,15 +90,8 @@ src_configure() {
 	local myconf="${EXTRA_FFMPEG_CONF}"
 	local uses i
 
-	myconf="
-		$(use_enable gpl)
-		$(use_enable gpl version3)
-		--enable-postproc
-		--enable-avfilter
-	"
-
 	# enabled by default
-	uses="debug doc network zlib"
+	uses="debug doc network vaapi zlib"
 	for i in ${uses}; do
 		use ${i} || myconf+=" --disable-${i}"
 	done
@@ -122,14 +107,10 @@ src_configure() {
 	#done
 	use video_cards_nvidia && use vdpau || myconf+=" --disable-vdpau"
 
-	use vaapi && myconf+=" --enable-vaapi"
-
 	# Encoders
 	if use encode; then
 		use mp3 && myconf+=" --enable-libmp3lame"
-		use amr && myconf+=" --enable-libvo-amrwbenc"
 		use faac && myconf+=" --enable-libfaac --enable-nonfree"
-		use aac && myconf+=" --enable-libvo-aacenc"
 		uses="theora vorbis x264 xvid"
 		for i in ${uses}; do
 			use ${i} && myconf+=" --enable-lib${i}"
@@ -152,8 +133,6 @@ src_configure() {
 	for i in alsa oss ; do
 		use ${i} || myconf+=" --disable-outdev=${i}"
 	done
-	# libavfilter options
-	use frei0r && myconf+=" --enable-frei0r"
 
 	# Threads; we only support pthread for now but ffmpeg supports more
 	use threads && myconf+=" --enable-pthreads"
@@ -194,6 +173,15 @@ src_configure() {
 		myconf+=" --cpu=${i}"
 		break
 	done
+
+	# Mandatory configuration
+	myconf="
+		--enable-gpl
+		--enable-version3
+		--enable-postproc
+		--enable-avfilter
+		--disable-stripping
+		${myconf}"
 
 	# cross compile support
 	if tc-is-cross-compiler ; then
