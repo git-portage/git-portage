@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/luckybackup
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/luckybackup/ChangeLog,v 1.15 2012/01/28 15:09:15 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/luckybackup/ChangeLog,v 1.16 2012/01/28 23:33:30 johu Exp $
+
+  28 Jan 2012; Johannes Huber <johu@gentoo.org> -luckybackup-0.4.0.ebuild:
+  Remove old.
 
   28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
   luckybackup-0.4.6.ebuild:
