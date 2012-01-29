@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/deja-dup
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/ChangeLog,v 1.5 2012/01/04 17:39:43 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/ChangeLog,v 1.6 2012/01/29 11:44:28 jlec Exp $
+
+  29 Jan 2012; Justin Lecher <jlec@gentoo.org> deja-dup-21.2.ebuild:
+  Correct gtk dependency, #401045
 
   04 Jan 2012; Justin Lecher <jlec@gentoo.org> deja-dup-21.2.ebuild:
   Adding missing DEPEND on app-text/yelp-tools, #
