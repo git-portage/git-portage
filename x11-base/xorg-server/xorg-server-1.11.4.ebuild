@@ -1,10 +1,11 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.11.99.901.ebuild,v 1.1 2012/01/01 14:28:32 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.11.4.ebuild,v 1.1 2012/01/30 12:38:52 chithanh Exp $
 
 EAPI=4
 
 XORG_DOC=doc
+XORG_EAUTORECONF=yes
 inherit xorg-2 multilib versionator
 EGIT_REPO_URI="git://anongit.freedesktop.org/git/xorg/xserver"
 
@@ -21,7 +22,7 @@ RDEPEND=">=app-admin/eselect-opengl-1.0.8
 	>=x11-apps/rgb-1.0.3
 	>=x11-apps/xauth-1.0.3
 	x11-apps/xkbcomp
-	>=x11-libs/libpciaccess-0.12.901
+	>=x11-libs/libpciaccess-0.10.3
 	>=x11-libs/libXau-1.0.4
 	>=x11-libs/libXdmcp-1.0.2
 	>=x11-libs/libXfont-1.4.2
@@ -29,7 +30,7 @@ RDEPEND=">=app-admin/eselect-opengl-1.0.8
 	>=x11-libs/pixman-0.21.8
 	>=x11-libs/xtrans-1.2.2
 	>=x11-misc/xbitmaps-1.0.1
-	>=x11-misc/xkeyboard-config-1.4
+	>=x11-misc/xkeyboard-config-2.4.1-r3
 	dmx? (
 		x11-libs/libXt
 		>=x11-libs/libdmx-1.0.99.1
@@ -64,7 +65,7 @@ DEPEND="${RDEPEND}
 	>=x11-proto/fixesproto-5.0
 	>=x11-proto/fontsproto-2.0.2
 	>=x11-proto/glproto-1.4.14
-	>=x11-proto/inputproto-2.1.99.3
+	>=x11-proto/inputproto-1.9.99.902
 	>=x11-proto/kbproto-1.0.3
 	>=x11-proto/randrproto-1.2.99.3
 	>=x11-proto/recordproto-1.13.99.1
@@ -109,7 +110,11 @@ REQUIRED_USE="!minimal? (
 
 PATCHES=(
 	"${UPSTREAMED_PATCHES[@]}"
-	"${FILESDIR}"/${PN}-1.12-disable-acpi.patch
+	"${FILESDIR}"/${PN}-disable-acpi.patch
+	"${FILESDIR}"/${PN}-1.9-nouveau-default.patch
+	"${FILESDIR}"/${PN}-1.11-disable-tests-without-ddx.patch
+	"${FILESDIR}"/${PN}-1.11-dix-pointerrootwin-send-focusin.patch
+	"${FILESDIR}"/${PN}-1.11-dix-send-focus-events.patch
 )
 
 pkg_pretend() {

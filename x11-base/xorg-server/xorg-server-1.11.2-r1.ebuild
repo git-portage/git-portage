@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.11.2-r1.ebuild,v 1.1 2011/11/16 21:49:59 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.11.2-r1.ebuild,v 1.2 2012/01/30 12:38:52 chithanh Exp $
 
 EAPI=4
 
@@ -29,7 +29,7 @@ RDEPEND=">=app-admin/eselect-opengl-1.0.8
 	>=x11-libs/pixman-0.21.8
 	>=x11-libs/xtrans-1.2.2
 	>=x11-misc/xbitmaps-1.0.1
-	>=x11-misc/xkeyboard-config-1.4
+	>=x11-misc/xkeyboard-config-2.4.1-r3
 	dmx? (
 		x11-libs/libXt
 		>=x11-libs/libdmx-1.0.99.1
