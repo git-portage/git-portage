@@ -1,18 +1,20 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-power-manager/Attic/gnome-power-manager-2.32.0-r1.ebuild,v 1.5 2011/10/05 17:44:46 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-power-manager/gnome-power-manager-2.32.0-r3.ebuild,v 1.1 2012/01/31 08:36:14 pacho Exp $
 
-EAPI="3"
+EAPI="4"
+GNOME_TARBALL_SUFFIX="bz2"
 GCONF_DEBUG="no"
 
 inherit autotools eutils gnome2 virtualx
 
-DESCRIPTION="Gnome Power Manager"
-HOMEPAGE="http://www.gnome.org/projects/gnome-power-manager/"
+DESCRIPTION="A session daemon for GNOME that makes it easy to manage your laptop or desktop system"
+HOMEPAGE="http://projects.gnome.org/gnome-power-manager/"
+SRC_URI="${SRC_URI} http://dev.gentoo.org/~pacho/gnome/${PN}-2.32.0-keyboard-backlight.patch.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="+applet doc policykit test"
 
 # FIXME: Interactive testsuite (upstream ? I'm so...pessimistic)
@@ -73,8 +75,6 @@ pkg_setup() {
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-libnotify-0.7.patch
 
-	gnome2_src_prepare
-
 	# Fix intltoolize broken file, see upstream #577133
 	sed "s:'\^\$\$lang\$\$':\^\$\$lang\$\$:g" -i po/Makefile.in.in \
 		|| die "sed libtoolize failed"
@@ -89,9 +89,29 @@ src_prepare() {
 			-i configure.ac configure || die "resolv sed failed"
 	fi
 
+	# Fixed bgo#644143, how to convert from percentage to discrete and vice-versa.
+	epatch "${FILESDIR}/${P}-convert-percentage.patch"
+
+	# Don't try to close a non-opened fd
+	epatch "${FILESDIR}/${P}-close-fd.patch"
+
+	# Do not use g-p-m in XFCE
+	epatch "${FILESDIR}/${PN}-2.32.0-no-xfce.patch"
+
+	# Don't crash on systems which don't have XBACKLIGHT
+	epatch "${FILESDIR}/${PN}-2.32.0-xbacklight-crash.patch"
+
+	# Add keyboard backlight support including dimming on idle and keyboard control
+	epatch "${WORKDIR}/${PN}-2.32.0-keyboard-backlight.patch"
+
+	# Fix duplicated battery, upstream bug #636915
+	epatch "${FILESDIR}/${PN}-2.32.0-duplicated-battery.patch"
+
 	# FIXME: This is required to prevent maintainer mode after "debugger sed"
 	intltoolize --force --copy --automake || die "intltoolize failed"
 	eautoreconf
+
+	gnome2_src_prepare
 
 	# This needs to be after eautoreconf to prevent problems like bug #356277
 	if ! use doc; then
