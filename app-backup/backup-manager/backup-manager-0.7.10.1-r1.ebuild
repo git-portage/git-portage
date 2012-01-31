@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/Attic/backup-manager-0.7.10.1.ebuild,v 1.1 2011/01/04 15:32:09 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/backup-manager-0.7.10.1-r1.ebuild,v 1.1 2012/01/31 14:06:05 voyageur Exp $
 
-EAPI=2
+EAPI=4
 
 inherit eutils
 
@@ -27,12 +27,15 @@ RDEPEND="${DEPEND}
 S=${WORKDIR}/${MY_P}
 
 src_prepare() {
-	sed -i "/^PERL5DIR/s/sitelib/vendorlib/" "${S}"/Makefile || die
+	sed -i "/^PERL5DIR/s/sitelib/vendorlib/" Makefile \
+		|| die "Makefile sed failed"
+	sed -i '/^prefix=/s/$(PREFIX)/usr/' po/Makefile \
+		|| die "po Makefile sed failed"
 	epatch "${FILESDIR}"/${PN}-0.7.9-parallel_install.patch
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "install failed"
+	emake DESTDIR="${D}" install
 	use doc && dodoc doc/user-guide.txt
 }
 
