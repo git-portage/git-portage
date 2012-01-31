@@ -1,6 +1,16 @@
 # ChangeLog for app-arch/dump
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/dump/ChangeLog,v 1.68 2012/01/15 18:56:09 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/dump/ChangeLog,v 1.70 2012/01/31 19:46:36 ssuominen Exp $
+
+  31 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/dump-0.4b43-pkg_config4blkid.patch,
+  -files/dump-0.4b43-pkg_config4crypto.patch,
+  -files/dump-0.4b43-pkg_config4ext2fs.patch, -dump-0.4.41.ebuild,
+  -dump-0.4.42.ebuild, -dump-0.4.43.ebuild, -dump-0.4.44.ebuild:
+  old
+
+  31 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> dump-0.4.44-r1.ebuild:
+  ppc64 stable wrt #395883
 
   15 Jan 2012; Raúl Porcel <armin76@gentoo.org> dump-0.4.44-r1.ebuild:
   alpha/ia64/sparc stable wrt #395883
