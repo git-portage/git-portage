@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-17.0.963.44-r1.ebuild,v 1.1 2012/01/30 07:58:08 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-17.0.963.46-r1.ebuild,v 1.1 2012/02/02 14:44:43 phajdan.jr Exp $
 
 EAPI="4"
 PYTHON_DEPEND="2:2.6"
@@ -190,6 +190,9 @@ src_prepare() {
 
 	# Backport upstream fix for Gentoo bug #389479.
 	epatch "${FILESDIR}/${PN}-dev-shm-r0.patch"
+
+	# Fix crashes on illegal instructions, bug #401537.
+	epatch "${FILESDIR}/${PN}-media-no-sse-r0.patch"
 
 	epatch_user
 
