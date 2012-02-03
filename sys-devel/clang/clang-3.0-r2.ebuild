@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/clang/Attic/clang-3.0.ebuild,v 1.1 2011/12/02 13:20:51 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/clang/Attic/clang-3.0-r2.ebuild,v 1.1 2012/02/03 14:29:44 voyageur Exp $
 
 EAPI=3
 
@@ -44,6 +44,10 @@ src_prepare() {
 	sed -e "/scanview.css\|sorttable.js/s#\$RealBin#${EPREFIX}/usr/share/${PN}#" \
 		-i tools/clang/tools/scan-build/scan-build \
 		|| die "scan-build sed failed"
+	# Set correct path for gold plugin
+	sed -e "/LLVMgold.so/s#lib/#$(get_libdir)/llvm/#" \
+		-i  tools/clang/lib/Driver/Tools.cpp \
+		|| die "gold plugin path sed failed"
 	# Specify python version
 	python_convert_shebangs 2 tools/clang/tools/scan-view/scan-view
 
@@ -58,6 +62,13 @@ src_prepare() {
 	sed -e 's,\$(RPATH) -Wl\,\$(\(ToolDir\|LibDir\)),$(RPATH) -Wl\,'"${EPREFIX}"/usr/$(get_libdir)/llvm, \
 		-e '/OmitFramePointer/s/-fomit-frame-pointer//' \
 		-i Makefile.rules || die "rpath sed failed"
+
+	# Use system llc (from llvm ebuild) for tests
+	sed -e "/^registered_targets =/s/os.path.join(llvm_tools_dir, 'llc')/'llc'/" \
+		-i tools/clang/test/lit.cfg  || die "test path sed failed"
+
+	# AMD K10 CPUs + SSE4a suppport, bug #398357
+	epatch "${FILESDIR}"/${P}-recognize-amd-k10-enable-sse4a.patch
 }
 
 src_configure() {
@@ -98,14 +109,7 @@ src_configure() {
 }
 
 src_compile() {
-	local COMPILE_TARGET
-	if use test; then
-		COMPILE_TARGET="all"
-	else
-		COMPILE_TARGET="clang-only"
-	fi
-	emake VERBOSE=1 KEEP_SYMBOLS=1 REQUIRES_RTTI=1 \
-		${COMPILE_TARGET} || die "emake failed"
+	emake VERBOSE=1 KEEP_SYMBOLS=1 REQUIRES_RTTI=1 clang-only || die "emake failed"
 }
 
 src_test() {
