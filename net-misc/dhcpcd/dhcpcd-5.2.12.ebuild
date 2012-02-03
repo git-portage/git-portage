@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcpcd/Attic/dhcpcd-5.2.12.ebuild,v 1.9 2011/04/15 21:39:14 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcpcd/Attic/dhcpcd-5.2.12.ebuild,v 1.10 2012/02/03 16:21:34 williamh Exp $
 
 EAPI=1
 
@@ -22,7 +22,7 @@ SLOT="0"
 IUSE="+zeroconf elibc_glibc"
 
 DEPEND=""
-RDEPEND="!<sys-apps/openrc-0.6.0"
+RDEPEND=""
 
 src_unpack() {
 	unpack ${A}
