@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.3.ebuild,v 1.2 2012/01/02 16:50:03 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.5.ebuild,v 1.1 2012/02/06 13:25:33 tomjbe Exp $
 
 EAPI="4"
 PYTHON_DEPEND="python? 2"
@@ -49,7 +49,7 @@ RDEPEND="${DEPEND}
 	)
 	vim-syntax? ( || ( app-editors/vim app-editors/gvim ) )"
 
-REQUIRED_USE="^^ ( mysql postgres sqlite3 )"
+REQUIRED_USE="|| ( ^^ ( mysql postgres sqlite3 ) bacula-clientonly )"
 
 S=${WORKDIR}/${MY_P}
 
@@ -106,24 +106,24 @@ src_prepare() {
 	popd >&/dev/null || die
 
 	# drop automatic install of unneeded documentation (for bug 356499)
-	epatch "${FILESDIR}"/${PV}/${P}-doc.patch
+	epatch "${FILESDIR}"/5.2.3/${PN}-5.2.3-doc.patch
 
 	# bug #310087
-	epatch "${FILESDIR}"/${PV}/${P}-as-needed.patch
+	epatch "${FILESDIR}"/5.2.3/${PN}-5.2.3-as-needed.patch
 
 	# bug #311161
-	epatch "${FILESDIR}"/${PV}/${P}-lib-search-path.patch
+	epatch "${FILESDIR}"/5.2.3/${PN}-5.2.3-lib-search-path.patch
 
 	# stop build for errors in subdirs
-	epatch "${FILESDIR}"/${PV}/${P}-Makefile.patch
+	epatch "${FILESDIR}"/5.2.3/${PN}-5.2.3-Makefile.patch
 
 	# bat needs to respect LDFLAGS
-	epatch "${FILESDIR}"/${PV}/${P}-ldflags.patch
+	epatch "${FILESDIR}"/5.2.3/${PN}-5.2.3-ldflags.patch
 
 	# bug #328701
-	epatch "${FILESDIR}"/${PV}/${P}-openssl-1.patch
+	epatch "${FILESDIR}"/5.2.3/${PN}-5.2.3-openssl-1.patch
 
-	epatch "${FILESDIR}"/${PV}/${P}-fix-static.patch
+	epatch "${FILESDIR}"/5.2.3/${PN}-5.2.3-fix-static.patch
 }
 
 src_configure() {
