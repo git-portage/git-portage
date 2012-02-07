@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/argus-clients/Attic/argus-clients-3.0.5.24.ebuild,v 1.1 2011/11/15 20:25:10 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/argus-clients/Attic/argus-clients-3.0.5.31.ebuild,v 1.1 2012/02/07 20:49:29 jer Exp $
 
 EAPI="4"
 
