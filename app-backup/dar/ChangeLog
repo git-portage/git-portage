@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/dar
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/ChangeLog,v 1.43 2011/12/04 01:11:22 matsuu Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/dar/ChangeLog,v 1.44 2012/02/08 21:01:53 grobian Exp $
+
+  08 Feb 2012; Fabian Groffen <grobian@gentoo.org> dar-2.4.2.ebuild:
+  Fixed for Prefix, marked ~amd64-linux, thanks Massimo Burcheri in bug #399809
 
 *dar-2.4.2 (04 Dec 2011)
 
