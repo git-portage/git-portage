@@ -1,13 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnustep-apps/simpleagenda/Attic/simpleagenda-0.42.ebuild,v 1.1 2011/05/02 13:57:10 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnustep-apps/simpleagenda/Attic/simpleagenda-0.42.ebuild,v 1.2 2012/02/09 10:44:43 voyageur Exp $
 
 EAPI=2
 inherit gnustep-2
 
 MY_PN=SimpleAgenda
 DESCRIPTION="a simple calendar and agenda application"
-HOMEPAGE="http://coyote.octets.fr/pub/gnustep/"
+HOMEPAGE="http://coyote.octets.fr/simpleagenda"
 SRC_URI="http://coyote.octets.fr/pub/gnustep/${MY_PN}-${PV}.tar.gz"
 
 LICENSE="GPL-2"

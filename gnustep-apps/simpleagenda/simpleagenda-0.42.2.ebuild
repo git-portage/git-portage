@@ -1,8 +1,9 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnustep-apps/simpleagenda/Attic/simpleagenda-0.36.ebuild,v 1.5 2012/02/09 10:44:43 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnustep-apps/simpleagenda/simpleagenda-0.42.2.ebuild,v 1.1 2012/02/09 10:44:43 voyageur Exp $
 
-inherit eutils gnustep-2
+EAPI=4
+inherit gnustep-2
 
 MY_PN=SimpleAgenda
 DESCRIPTION="a simple calendar and agenda application"
@@ -11,11 +12,17 @@ SRC_URI="http://coyote.octets.fr/pub/gnustep/${MY_PN}-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
-IUSE=""
+KEYWORDS="~amd64 ~ppc ~x86"
+IUSE="dbus"
 
-DEPEND="dev-libs/libical
-	>=virtual/gnustep-back-0.13.0"
+DEPEND=">=dev-libs/libical-0.27
+	>=virtual/gnustep-back-0.20.0
+	dbus? ( gnustep-libs/dbuskit )"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_PN}-${PV}
+
+src_configure() {
+	egnustep_env
+	econf $(use_enable dbus dbuskit)
+}
