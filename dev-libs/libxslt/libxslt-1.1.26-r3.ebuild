@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxslt/Attic/libxslt-1.1.26.ebuild,v 1.17 2011/02/26 17:32:39 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxslt/Attic/libxslt-1.1.26-r3.ebuild,v 1.1 2012/02/09 19:33:49 tetromino Exp $
 
-EAPI="2"
+EAPI="4"
 PYTHON_DEPEND="python? 2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.* *-jython"
+RESTRICT_PYTHON_ABIS="3.* *-jython *-pypy-*"
 
 inherit autotools eutils python toolchain-funcs
 
@@ -15,10 +15,10 @@ SRC_URI="ftp://xmlsoft.org/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd"
-IUSE="crypt debug python"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
+IUSE="crypt debug python static-libs"
 
-DEPEND=">=dev-libs/libxml2-2.6.27
+DEPEND=">=dev-libs/libxml2-2.6.27:2
 	crypt?  ( >=dev-libs/libgcrypt-1.1.42 )"
 RDEPEND="${DEPEND}"
 
@@ -26,6 +26,7 @@ pkg_setup() {
 	if use python; then
 		python_pkg_setup
 	fi
+	DOCS="AUTHORS ChangeLog FEATURES NEWS README TODO"
 }
 
 src_prepare() {
@@ -36,6 +37,12 @@ src_prepare() {
 
 	# Python bindings are built/tested/installed manually.
 	sed -e "s/@PYTHON_SUBDIR@//" -i Makefile.am || die "sed failed"
+
+	# Fix generate-id() to not expose object addresses, bug #358615
+	epatch "${FILESDIR}/${P}-id-generation.patch"
+
+	# Fix off-by-one in xsltCompilePatternInternal, bug #402861
+	epatch "${FILESDIR}/${P}-pattern-out-of-bounds-read.patch"
 
 	eautoreconf
 	epunt_cxx
@@ -55,7 +62,8 @@ src_configure() {
 		$(use_with crypt crypto) \
 		$(use_with python) \
 		$(use_with debug) \
-		$(use_with debug mem-debug)
+		$(use_with debug mem-debug) \
+		$(use_enable static-libs static)
 }
 
 src_compile() {
@@ -84,7 +92,7 @@ src_test() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
+	default
 
 	if use python; then
 		installation() {
@@ -97,9 +105,13 @@ src_install() {
 		python_clean_installation_image
 	fi
 
-	mv -vf "${D}"/usr/share/doc/${PN}-python-${PV} \
-		"${D}"/usr/share/doc/${PF}/python
-	dodoc AUTHORS ChangeLog FEATURES NEWS README TODO || die
+	mv -vf "${ED}"/usr/share/doc/${PN}-python-${PV} \
+		"${ED}"/usr/share/doc/${PF}/python
+
+	if ! use static-libs; then
+		# Remove useless .la files
+		find "${D}" -name '*.la' -exec rm -f {} + || die "la file removal failed"
+	fi
 }
 
 pkg_postinst() {
