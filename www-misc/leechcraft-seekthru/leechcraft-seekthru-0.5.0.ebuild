@@ -1,12 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/leechcraft-deadlyrics/Attic/leechcraft-deadlyrics-0.4.96-r1.ebuild,v 1.1 2011/12/16 18:50:44 maksbotan Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-misc/leechcraft-seekthru/Attic/leechcraft-seekthru-0.5.0.ebuild,v 1.1 2012/02/09 11:52:44 maksbotan Exp $
 
 EAPI="4"
 
 inherit leechcraft
 
-DESCRIPTION="Searches for song lyrics and displays them in LeechCraft"
+DESCRIPTION="OpenSearch support for LeechCraft"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
