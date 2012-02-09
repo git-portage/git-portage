@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/spacefm/Attic/spacefm-0.6.2.ebuild,v 1.1 2012/02/07 03:26:04 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/spacefm/Attic/spacefm-0.6.3.ebuild,v 1.1 2012/02/09 20:12:16 xmw Exp $
 
 EAPI=4
 inherit fdo-mime
@@ -9,8 +9,7 @@ DESCRIPTION="a multi-panel tabbed file manager"
 HOMEPAGE="http://spacefm.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.xz"
 
-# Internal copy of xfce-base/exo is LGPL-2 at src/exo/
-LICENSE="GPL-2 IgnorantGuru LGPL-2"
+LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="fam gtk kde kernel_linux su udev"
@@ -31,7 +30,7 @@ RDEPEND="${COMMON_DEPEND}
 	su? (
 		gtk? ( x11-libs/gksu )
 		kde? ( kde-base/kdesu )
-		|| ( x11-libs/gksu kde-base/kdesu x11-misc/ktsuss ) )"
+		|| ( x11-misc/ktsuss x11-libs/gksu kde-base/kdesu ) )"
 DEPEND="${COMMON_DEPEND}
 	dev-util/intltool
 	dev-util/pkgconfig
