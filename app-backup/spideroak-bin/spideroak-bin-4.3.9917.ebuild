@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/Attic/spideroak-bin-4.2.9917_beta.ebuild,v 1.1 2012/02/09 19:35:25 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/Attic/spideroak-bin-4.3.9917.ebuild,v 1.1 2012/02/11 20:32:07 blueness Exp $
 
 EAPI="4"
 
