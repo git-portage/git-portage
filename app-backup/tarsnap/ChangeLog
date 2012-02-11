@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/tarsnap
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tarsnap/ChangeLog,v 1.7 2011/09/26 17:10:27 gregkh Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tarsnap/ChangeLog,v 1.8 2012/02/11 19:31:11 rafaelmartins Exp $
+
+*tarsnap-1.0.31 (11 Feb 2012)
+
+  11 Feb 2012; Rafael G. Martins <rafaelmartins@gentoo.org>
+  +tarsnap-1.0.31.ebuild:
+  Version bump.
 
 *tarsnap-1.0.30 (26 Sep 2011)
 
