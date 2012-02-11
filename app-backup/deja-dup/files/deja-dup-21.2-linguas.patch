@@ -1,0 +1,65 @@
+From 45e4b91bc7a987dc784c18564c9f8d2585befb0d Mon Sep 17 00:00:00 2001
+From: Alexandre Rostovtsev <tetromino@gentoo.org>
+Date: Sat, 11 Feb 2012 02:43:18 -0500
+Subject: [PATCH] Use intltool's LINGUAS handling code for man pages
+
+LINGUAS needs to be handled the same way in man/ and po/.
+
+Otherwise, if building with LINGUAS set, the build system tries to
+generate man pages for languages for which localization messages
+had not been generated, resulting in build failure:
+
+ make[2]: Entering directory
+ `/var/tmp/portage/app-backup/deja-dup-21.2-r1/work/deja-dup-21.2/man'
+ make[2]: Nothing to be done for `install-exec-am'.
+ make[2]: *** No rule to make target `ar/stamp', needed by `man'.  Stop.
+---
+ man/Makefile.am |   17 +++++++++++++----
+ 1 files changed, 13 insertions(+), 4 deletions(-)
+
+diff --git a/man/Makefile.am b/man/Makefile.am
+index 4aab2b1..cd837ed 100644
+--- a/man/Makefile.am
++++ b/man/Makefile.am
+@@ -17,9 +17,18 @@
+ # along with Déjà Dup.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ # Here's a bunch of translation support.  Some stolen from dpkg
++# and intltool.
++
++ALL_LINGUAS = @ALL_LINGUAS@
++
++PO_LINGUAS=$(shell if test -r $(top_srcdir)/po/LINGUAS; then grep -v "^\#" $(top_srcdir)/po/LINGUAS; else echo "$(ALL_LINGUAS)"; fi)
++
++USER_LINGUAS=$(shell if test -n "$(LINGUAS)"; then LLINGUAS="$(LINGUAS)"; ALINGUAS="$(ALL_LINGUAS)"; for lang in $$LLINGUAS; do if test -n "`grep \^$$lang$$ $(top_srcdir)/po/LINGUAS 2>/dev/null`" -o -n "`echo $$ALINGUAS|tr ' ' '\n'|grep \^$$lang$$`"; then printf "$$lang "; fi; done; fi)
++
++USE_LINGUAS=$(shell if test -n "$(USER_LINGUAS)" -o -n "$(LINGUAS)"; then LLINGUAS="$(USER_LINGUAS)"; else if test -n "$(PO_LINGUAS)"; then LLINGUAS="$(PO_LINGUAS)"; else LLINGUAS="$(ALL_LINGUAS)"; fi; fi; for lang in $$LLINGUAS; do printf "$$lang "; done)
++
++MAN_LINGUAS = C $(USE_LINGUAS)
+ 
+-POLINGUAS = $(shell grep -v "^\#" $(top_srcdir)/po/LINGUAS)
+-MAN_LINGUAS = C $(POLINGUAS)
+ 
+ PAGES = deja-dup.1 deja-dup-preferences.1
+ 
+@@ -52,7 +61,7 @@ clean-local-yes:
+ install-data-local: install-data-local-@USE_NLS@
+ install-data-local-no:
+ install-data-local-yes: man
+-	for lang in $(POLINGUAS); do \
++	for lang in $(USE_LINGUAS); do \
+ 		$(mkinstalldirs) "$(DESTDIR)$(mandir)/$$lang/man1"; \
+ 		$(INSTALL_DATA) $$lang/*.1 "$(DESTDIR)$(mandir)/$$lang/man1"; \
+ 	done
+@@ -62,7 +71,7 @@ install-data-local-yes: man
+ uninstall-local: uninstall-local-@USE_NLS@
+ uninstall-local-no:
+ uninstall-local-yes: man
+-	for lang in $(POLINGUAS); do \
++	for lang in $(USE_LINGUAS); do \
+ 		for file in $(PAGES); do \
+ 			rm -f "$(DESTDIR)$(mandir)/$$lang/man1/$$file"; \
+ 		done \
+-- 
+1.7.8.4
+
