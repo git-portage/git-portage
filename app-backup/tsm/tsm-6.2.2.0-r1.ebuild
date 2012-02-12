@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.2.2.0-r1.ebuild,v 1.2 2011/04/20 13:19:05 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.2.2.0-r1.ebuild,v 1.3 2012/02/12 11:56:50 dilfridge Exp $
 
 EAPI=3
 
-inherit versionator multilib eutils rpm
+inherit versionator multilib eutils rpm pax-utils
 
 DESCRIPTION="Tivoli Storage Manager (TSM) Backup/Archive (B/A) Client and API"
 HOMEPAGE="http://www.tivoli.com/"
@@ -209,4 +209,11 @@ pkg_postinst() {
 			chmod 0660 $i
 		fi
 	done
+}
+
+pkg_postinst()
+{
+	pax-mark psme /opt/tivoli/tsm/client/ba/bin/dsmc
+	# most likely some of the other executables (e.g. dsm) need this as well, but I 
+	# cannot test it at the moment. - dilfridge
 }

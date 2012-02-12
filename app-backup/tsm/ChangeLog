@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/tsm
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/ChangeLog,v 1.9 2012/02/09 10:19:48 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/ChangeLog,v 1.10 2012/02/12 11:56:50 dilfridge Exp $
+
+  12 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org> tsm-6.2.2.0-r1.ebuild,
+  files/dsmc.init.d:
+  Add locale patches, bug 302633
 
   09 Feb 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #85926
