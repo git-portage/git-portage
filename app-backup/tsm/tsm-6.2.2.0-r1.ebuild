@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.2.2.0-r1.ebuild,v 1.3 2012/02/12 11:56:50 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.2.2.0-r1.ebuild,v 1.4 2012/02/13 04:49:08 mr_bones_ Exp $
 
 EAPI=3
 
@@ -214,6 +214,6 @@ pkg_postinst() {
 pkg_postinst()
 {
 	pax-mark psme /opt/tivoli/tsm/client/ba/bin/dsmc
-	# most likely some of the other executables (e.g. dsm) need this as well, but I 
+	# most likely some of the other executables (e.g. dsm) need this as well, but I
 	# cannot test it at the moment. - dilfridge
 }
