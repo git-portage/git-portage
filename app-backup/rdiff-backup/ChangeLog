@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/rdiff-backup
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/rdiff-backup/ChangeLog,v 1.57 2012/02/10 16:50:35 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/rdiff-backup/ChangeLog,v 1.58 2012/02/14 22:47:36 ranger Exp $
+
+  14 Feb 2012; Brent Baude <ranger@gentoo.org> rdiff-backup-1.3.3.ebuild:
+  Marking rdiff-backup-1.3.3 ppc for bug 396771
 
   10 Feb 2012; Markus Meier <maekke@gentoo.org> rdiff-backup-1.3.3.ebuild:
   arm stable, bug #396771
