@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/idlastro/Attic/idlastro-20120120.ebuild,v 1.1 2012/02/01 17:45:40 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/idlastro/Attic/idlastro-20120206.ebuild,v 1.1 2012/02/15 16:58:40 bicatali Exp $
 
 EAPI=4
 
