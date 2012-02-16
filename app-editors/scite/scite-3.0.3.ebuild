@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/scite/Attic/scite-2.27.ebuild,v 1.3 2011/08/07 03:16:29 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/scite/Attic/scite-3.0.3.ebuild,v 1.1 2012/02/16 18:46:31 nelchael Exp $
 
-EAPI="1"
+EAPI="4"
 
 inherit toolchain-funcs eutils
 
@@ -13,10 +13,14 @@ SRC_URI="mirror://sourceforge/scintilla/${PN}${MY_PV}.tgz"
 
 LICENSE="Scintilla"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
 IUSE="lua"
 
-RDEPEND="x11-libs/gtk+:2
+RDEPEND="dev-libs/glib
+	x11-libs/cairo
+	x11-libs/gtk+:2
+	x11-libs/gdk-pixbuf
+	x11-libs/pango
 	lua? ( >=dev-lang/lua-5 )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
@@ -24,13 +28,13 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${PN}/gtk"
 
-src_unpack() {
-	unpack ${A}
+src_prepare() {
 	cd "${WORKDIR}/scintilla/gtk"
 	sed -i makefile \
 		-e "s#^CXXFLAGS=#CXXFLAGS=${CXXFLAGS} #" \
 		-e "s#^\(CXXFLAGS=.*\)-Os#\1#" \
 		-e "s#^CC =\(.*\)#CC = $(tc-getCXX)#" \
+		-e "s#^CCOMP =\(.*\)#CCOMP = $(tc-getCC)#" \
 		-e "s#-Os##" \
 		|| die "error patching makefile"
 
@@ -46,39 +50,39 @@ src_unpack() {
 		-e "s#^CXXFLAGS=#CXXFLAGS=${CXXFLAGS} #" \
 		-e "s#^\(CXXFLAGS=.*\)-Os#\1#" \
 		-e "s#^CC =\(.*\)#CC = $(tc-getCXX)#" \
+		-e "s#^CCOMP =\(.*\)#CCOMP = $(tc-getCC)#" \
 		-e 's#${D}##' \
 		-e 's#-g root#-g 0#' \
 		-e "s#-Os##" \
 		|| die "error patching makefile"
 	cd "${WORKDIR}"
-	epatch "${FILESDIR}/${PN}-2.12-install.patch"
-	epatch "${FILESDIR}/${PN}-2.12-no-lua.patch"
+	epatch "${FILESDIR}/${PN}-3.0.1-no-lua.patch"
 }
 
 src_compile() {
-	make -C ../../scintilla/gtk || die "prep make failed"
+	emake -C ../../scintilla/gtk
 	if use lua; then
-		emake || die "make failed"
+		emake
 	else
-		emake NO_LUA=1 || die "make failed"
+		emake NO_LUA=1
 	fi
 }
 
 src_install() {
-	dodir /usr/bin || die
-	dodir /usr/share/{pixmaps,applications} || die
+	dodir /usr/bin
+	dodir /usr/share/{pixmaps,applications}
 
-	make prefix="${D}/usr" install || die
+	emake prefix="${ED}/usr" install
 
 	# we have to keep this because otherwise it'll break upgrading
-	mv "${D}/usr/bin/SciTE" "${D}/usr/bin/scite" || die
-	dosym /usr/bin/scite /usr/bin/SciTE || die
+	mv "${ED}/usr/bin/SciTE" "${ED}/usr/bin/scite" || die
+	dosym /usr/bin/scite /usr/bin/SciTE
 
 	# replace .desktop file with our own working version
-	rm -f "${D}/usr/share/applications/SciTE.desktop"
+	rm -f "${ED}/usr/share/applications/SciTE.desktop"
 	insinto /usr/share/applications
-	doins "${FILESDIR}/scite.desktop" || die
+	doins "${FILESDIR}/scite.desktop"
 
-	doman ../doc/scite.1 || die
-	dodoc ../README || die
+	doman ../doc/scite.1
+	dodoc ../README
 }
