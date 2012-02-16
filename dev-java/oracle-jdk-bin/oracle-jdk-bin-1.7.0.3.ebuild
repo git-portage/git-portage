@@ -1,17 +1,16 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/oracle-jdk-bin/Attic/oracle-jdk-bin-1.7.0.2.ebuild,v 1.3 2012/01/27 13:01:30 sera Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/oracle-jdk-bin/Attic/oracle-jdk-bin-1.7.0.3.ebuild,v 1.1 2012/02/16 09:34:55 sera Exp $
 
 EAPI="4"
 
 inherit java-vm-2 eutils prefix versionator
 
 # This URIs need to be updated when bumping!
-JDK_URI="http://www.oracle.com/technetwork/java/javase/downloads/jdk-7u2-download-1377129.html"
+JDK_URI="http://www.oracle.com/technetwork/java/javase/downloads/jdk-7u3-download-1501626.html"
 JCE_URI="http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html"
 
 UPDATE="$(get_version_component_range 4)"
-UPDATE="${UPDATE#0}"
 MY_PV="$(get_version_component_range 2)u${UPDATE}"
 S_PV="$(get_version_component_range 1-3)_0${UPDATE}"
 
@@ -76,11 +75,11 @@ SRC_URI="
 LICENSE="Oracle-BCLA-JavaSE"
 SLOT="1.7"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
-RESTRICT="fetch strip"
-IUSE="X alsa derby doc examples jce nsplugin"
 
-DEPEND="jce? ( app-arch/unzip )"
-RDEPEND="${DEPEND}
+IUSE="X alsa derby doc examples jce nsplugin +source"
+RESTRICT="fetch strip"
+
+RDEPEND="
 	X? (
 		x11-libs/libXext
 		x11-libs/libXi
@@ -91,6 +90,8 @@ RDEPEND="${DEPEND}
 	alsa? ( media-libs/alsa-lib )
 	doc? ( dev-java/java-sdk-docs:1.7 )
 	!prefix? ( sys-libs/glibc )"
+DEPEND="
+	jce? ( app-arch/unzip )"
 
 S="${WORKDIR}/jdk${S_PV}"
 
@@ -133,13 +134,13 @@ pkg_nofetch() {
 
 	if use examples; then
 		einfo "Also download ${DEMOS} from:"
-		einfo ${JDK_URI}
+		einfo "${JDK_URI}"
 		einfo "and move it to ${DISTDIR}"
 	fi
 
 	if use jce; then
 		einfo "Also download ${JCE_FILE} from:"
-		einfo ${JCE_URI}
+		einfo "${JCE_URI}"
 		einfo "and move it to ${DISTDIR}"
 	fi
 }
@@ -157,9 +158,9 @@ src_compile() {
 	# see bug #207282
 	einfo "Creating the Class Data Sharing archives"
 	if use x86; then
-		"${S}"/bin/java -client -Xshare:dump || die
+		bin/java -client -Xshare:dump || die
 	fi
-	"${S}"/bin/java -server -Xshare:dump || die
+	bin/java -server -Xshare:dump || die
 
 	# Create files used as storage for system preferences.
 	mkdir jre/.systemPrefs || die
@@ -184,7 +185,7 @@ src_install() {
 	fi
 
 	dodir /opt/${P}
-	cp -pPR bin include jre lib man src.zip "${ED}"/opt/${P} || die
+	cp -pPR bin include jre lib man "${ED}"/opt/${P} || die
 
 	if use derby; then
 		cp -pPR db "${ED}"/opt/${P} || die
@@ -216,16 +217,21 @@ src_install() {
 		install_mozilla_plugin /opt/${P}/jre/lib/${arch}/libnpjp2.so
 	fi
 
-	# Install desktop file for the Java Control Panel. Using VMHANDLE as file
-	# name to prevent file collision with jre and or other slots.
-	[[ -f "${ED}"/opt/${P}/jre/lib/desktop/applications/sun_java.desktop ]] || die
-	sed -e "s/\(Name=\)Java/\1 Java Control Panel for Oracle JDK ${SLOT}/" \
-		-e "s#Exec=.*#Exec=/opt/${P}/jre/bin/jcontrol#" \
-		-e "s#Icon=.*#Icon=/opt/${P}/jre/lib/desktop/icons/hicolor/48x48/apps/sun-jcontrol.png#" \
-		"${ED}"/opt/${P}/jre/lib/desktop/applications/sun_java.desktop > \
-		"${T}"/${VMHANDLE}.desktop
+	if use source; then
+		cp src.zip "${ED}"/opt/${P} || die
+	fi
 
-	domenu "${T}"/${VMHANDLE}.desktop
+	# Install desktop file for the Java Control Panel.
+	# Using ${PN}-${SLOT} to prevent file collision with jre and or other slots.
+	# make_desktop_entry can't be used as ${P} would end up in filename.
+	newicon jre/lib/desktop/icons/hicolor/48x48/apps/sun-jcontrol.png \
+		sun-jcontrol-${PN}-${SLOT}.png || die
+	sed -e "s#Name=.*#Name=Java Control Panel for Oracle JDK ${SLOT}#" \
+		-e "s#Exec=.*#Exec=/opt/${P}/jre/bin/jcontrol#" \
+		-e "s#Icon=.*#Icon=sun-jcontrol-${PN}-${SLOT}.png#" \
+		jre/lib/desktop/applications/sun_java.desktop > \
+		"${T}"/jcontrol-${PN}-${SLOT}.desktop || die
+	domenu "${T}"/jcontrol-${PN}-${SLOT}.desktop
 
 	# bug #56444
 	cp "${FILESDIR}"/fontconfig.Gentoo.properties "${T}"/fontconfig.properties || die
