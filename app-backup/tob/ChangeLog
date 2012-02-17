@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/tob
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tob/ChangeLog,v 1.9 2011/05/18 07:26:57 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tob/ChangeLog,v 1.10 2012/02/17 10:58:01 phajdan.jr Exp $
+
+  17 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> tob-0.26-r2.ebuild:
+  x86 stable wrt bug #396773
 
 *tob-0.26-r2 (18 May 2011)
 
