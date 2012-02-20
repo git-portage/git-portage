@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/transifex-client/Attic/transifex-client-0.6.ebuild,v 1.1 2011/12/24 09:35:32 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/transifex-client/Attic/transifex-client-0.7.2.ebuild,v 1.1 2012/02/20 08:33:30 hwoarang Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
