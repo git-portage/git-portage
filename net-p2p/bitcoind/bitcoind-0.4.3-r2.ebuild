@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoind/Attic/bitcoind-0.4.3-r1.ebuild,v 1.1 2012/02/08 00:07:39 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoind/Attic/bitcoind-0.4.3-r2.ebuild,v 1.1 2012/02/21 17:54:21 blueness Exp $
 
 EAPI=4
 
@@ -11,7 +11,7 @@ inherit db-use eutils versionator
 DESCRIPTION="Original Bitcoin crypto-currency wallet for automated services"
 HOMEPAGE="http://bitcoin.org/"
 SRC_URI="http://gitorious.org/bitcoin/${PN}-stable/archive-tarball/v${PV/_/} -> bitcoin-v${PV}.tgz
-	bip17? ( http://luke.dashjr.org/programs/bitcoin/files/bip17/bip17_v0.4.0.patch )
+	bip17? ( http://luke.dashjr.org/programs/bitcoin/files/bip17/bip17_v0.4.0.patch -> bip17_v0.4.0_r2.patch )
 	eligius? ( http://luke.dashjr.org/programs/bitcoin/files/0.5.2-eligius_sendfee.patch.xz )
 "
 
@@ -44,7 +44,7 @@ pkg_setup() {
 src_prepare() {
 	cd src || die
 	cp "${FILESDIR}/0.4.2-Makefile.gentoo" "Makefile" || die
-	use bip17 && epatch "${DISTDIR}/bip17_v0.4.0.patch"
+	use bip17 && epatch "${DISTDIR}/bip17_v0.4.0_r2.patch"
 	use eligius && epatch "${WORKDIR}/0.5.2-eligius_sendfee.patch"
 }
 
