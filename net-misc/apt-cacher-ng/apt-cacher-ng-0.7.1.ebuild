@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/apt-cacher-ng/Attic/apt-cacher-ng-0.6.10.ebuild,v 1.1 2011/12/06 07:08:08 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/apt-cacher-ng/Attic/apt-cacher-ng-0.7.1.ebuild,v 1.1 2012/02/23 05:02:00 jer Exp $
 
 EAPI="4"
 
@@ -95,17 +95,7 @@ src_install() {
 	# default configuration
 	insinto /etc/${PN}
 	newins conf/acng.conf ${PN}.conf
-	newins conf/report.html report.html
-	newins conf/deb_mirrors.gz deb_mirrors.gz
-	newins conf/debvol_mirrors.gz debvol_mirrors.gz
-	newins conf/ubuntu_mirrors ubuntu_mirrors
-	newins conf/archlx_mirrors archlx_mirrors
-	newins conf/sfnet_mirrors sfnet_mirrors
-	newins conf/cygwin_mirrors cygwin_mirrors
-	newins conf/security.conf security.conf
-	newins conf/maint.html maint.html
-	newins conf/userinfo.html userinfo.html
-	newins conf/style.css style.css
+	doins $( echo conf/* | sed 's|conf/acng.conf||g' )
 
 	dodir /var/cache/${PN}
 	dodir /var/log/${PN}
