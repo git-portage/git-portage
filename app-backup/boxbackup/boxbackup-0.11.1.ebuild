@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.11.1.ebuild,v 1.1 2011/08/30 08:51:08 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.11.1.ebuild,v 1.2 2012/02/24 09:30:55 ago Exp $
 
 EAPI="2"
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
 SRC_URI="http://boxbackup.org/svn/box/packages/${P/_/}.tgz"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~ppc-macos ~x86-macos"
+KEYWORDS="amd64 ~x86 ~ppc-macos ~x86-macos"
 IUSE="client-only"
 DEPEND="sys-libs/zlib
 	sys-libs/db
