@@ -1,10 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/nspr/Attic/nspr-4.8.7.ebuild,v 1.7 2011/05/14 16:18:14 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/nspr/Attic/nspr-4.9.ebuild,v 1.1 2012/02/26 15:56:17 anarchy Exp $
 
 EAPI=3
+WANT_AUTOCONF="2.1"
 
-inherit eutils multilib toolchain-funcs versionator
+inherit autotools eutils multilib toolchain-funcs versionator
 
 MIN_PV="$(get_version_component_range 2)"
 
@@ -14,7 +15,7 @@ SRC_URI="ftp://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${PV}/src/${P}.tar
 
 LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 )"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sparc x86 ~ppc-aix ~x86-fbsd ~amd64-linux ~x86-linux ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~ppc-aix ~x86-fbsd ~amd64-linux ~x86-linux ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
 IUSE="debug"
 
 src_prepare() {
@@ -23,19 +24,25 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-4.6.1-config-1.patch
 	epatch "${FILESDIR}"/${PN}-4.6.1-lang.patch
 	epatch "${FILESDIR}"/${PN}-4.7.0-prtime.patch
-	epatch "${FILESDIR}"/${PN}-4.8-pkgconfig-gentoo-3.patch
+	epatch "${FILESDIR}"/${PN}-4.9-pkgconfig-gentoo.patch
 	epatch "${FILESDIR}"/${PN}-4.7.1-solaris.patch
 	epatch "${FILESDIR}"/${PN}-4.7.4-solaris.patch
 	epatch "${FILESDIR}"/${PN}-4.8.3-aix-gcc.patch
 	# Patch needs updating
 	#epatch "${FILESDIR}"/${PN}-4.8.3-aix-soname.patch
 	epatch "${FILESDIR}"/${PN}-4.8.4-darwin-install_name.patch
+	epatch "${FILESDIR}"/${PN}-4.8.9-link-flags.patch
+
+	# We must run eautoconf to regenerate configure
+	cd "${S}"/mozilla/nsprpub
+	eautoconf
+
 	# make sure it won't find Perl out of Prefix
-	sed -i -e "s/perl5//g" mozilla/nsprpub/configure || die
+	sed -i -e "s/perl5//g" "${S}"/mozilla/nsprpub/configure || die
 
 	# Respect LDFLAGS
 	sed -i -e 's/\$(MKSHLIB) \$(OBJS)/\$(MKSHLIB) \$(LDFLAGS) \$(OBJS)/g' \
-		mozilla/nsprpub/config/rules.mk
+		"${S}"/mozilla/nsprpub/config/rules.mk || die
 }
 
 src_configure() {
@@ -89,17 +96,6 @@ src_install () {
 	# install nspr-config
 	dobin "${S}"/build/config/nspr-config || die "failed to install nspr-config"
 
-	# create pkg-config file
-	insinto /usr/$(get_libdir)/pkgconfig/
-	doins "${S}"/build/config/nspr.pc || die "failed to insall nspr pkg-config file"
-
 	# Remove stupid files in /usr/bin
 	rm -f "${ED}"/usr/bin/prerr.properties || die "failed to cleanup unneeded files"
-}
-
-pkg_postinst() {
-	ewarn
-	ewarn "Please make sure you run revdep-rebuild after upgrade."
-	ewarn "This is *extremely* important to ensure your system nspr works properly."
-	ewarn
 }
