@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/Attic/puppet-2.7.6-r1.ebuild,v 1.1 2011/12/04 17:11:02 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/Attic/puppet-2.7.11.ebuild,v 1.1 2012/02/27 13:23:13 matsuu Exp $
 
 EAPI="4"
 # ruby19: dev-ruby/ruby-ldap has no ruby19
@@ -21,7 +21,7 @@ IUSE="augeas diff doc emacs ldap minimal rrdtool selinux shadow sqlite3 vim-synt
 KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
 
 ruby_add_rdepend "
-	>=dev-ruby/facter-1.5.1
+	>=dev-ruby/facter-1.5.6
 	augeas? ( dev-ruby/ruby-augeas )
 	diff? ( dev-ruby/diff-lcs )
 	doc? ( dev-ruby/rdoc )
