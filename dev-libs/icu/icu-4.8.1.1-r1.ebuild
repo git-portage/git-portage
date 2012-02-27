@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/icu/Attic/icu-4.8.1.1.ebuild,v 1.1 2011/10/30 12:02:54 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/icu/Attic/icu-4.8.1.1-r1.ebuild,v 1.1 2012/02/27 16:19:35 scarabeus Exp $
 
 EAPI="4"
 
@@ -54,8 +54,10 @@ src_prepare() {
 		sed -i -e "/^${variable} =.*/s:@${variable}@::" config/Makefile.inc.in || die "sed failed"
 	done
 
-	epatch "${FILESDIR}/${PN}-4.8.1-fix_binformat_fonts.patch"
-	epatch "${FILESDIR}/${PN}-4.8.1-fix_nan.patch"
+	epatch \
+		"${FILESDIR}/icu-4.8.1-fix_binformat_fonts.patch" \
+		"${FILESDIR}/icu-4.8.1-fix_nan.patch" \
+		"${FILESDIR}/icu-4.8.1-fix_ltr.patch"
 }
 
 src_configure() {
