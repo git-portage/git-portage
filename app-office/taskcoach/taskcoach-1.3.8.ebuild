@@ -1,12 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/taskcoach/Attic/taskcoach-1.2.28.ebuild,v 1.1 2011/09/27 12:47:18 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/taskcoach/Attic/taskcoach-1.3.8.ebuild,v 1.1 2012/03/01 16:04:39 caster Exp $
 
 EAPI=3
 
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="2.4 3.*"
+RESTRICT_PYTHON_ABIS="2.4 2.5 3.*"
 PYTHON_MODNAME="buildlib taskcoachlib"
 
 inherit distutils eutils
