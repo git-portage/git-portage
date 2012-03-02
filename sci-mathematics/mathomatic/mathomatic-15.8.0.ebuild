@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/mathomatic/Attic/mathomatic-15.6.2.ebuild,v 1.2 2011/06/14 16:13:48 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/mathomatic/Attic/mathomatic-15.8.0.ebuild,v 1.1 2012/03/02 05:57:44 bicatali Exp $
 
 EAPI=4
 inherit toolchain-funcs flag-o-matic
