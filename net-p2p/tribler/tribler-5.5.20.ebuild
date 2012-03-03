@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/tribler/Attic/tribler-5.5.18.ebuild,v 1.1 2012/02/28 16:14:57 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/tribler/Attic/tribler-5.5.20.ebuild,v 1.1 2012/03/03 22:04:55 blueness Exp $
 
 EAPI="4"
 PYTHON_DEPEND="2:2.5"
