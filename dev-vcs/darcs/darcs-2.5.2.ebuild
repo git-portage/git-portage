@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/darcs/Attic/darcs-2.5.2.ebuild,v 1.2 2011/12/08 20:42:47 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/darcs/Attic/darcs-2.5.2.ebuild,v 1.3 2012/03/04 07:20:25 gienah Exp $
 
 EAPI="3"
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal bash-completion
+inherit haskell-cabal bash-completion-r1
 
 DESCRIPTION="a distributed, interactive, smart revision control system"
 HOMEPAGE="http://darcs.net/"
@@ -15,19 +15,19 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 IUSE="doc test"
 
-RDEPEND="=dev-haskell/hashed-storage-0.5*
-		=dev-haskell/haskeline-0.6*
-		=dev-haskell/html-1.0*
-		<dev-haskell/http-4000.2
-		=dev-haskell/mmap-0.5*
-		<dev-haskell/mtl-2.1
-		>=dev-haskell/network-2.2
-		<dev-haskell/parsec-3.2
-		<dev-haskell/regex-compat-0.96
-		=dev-haskell/tar-0.3*
-		=dev-haskell/terminfo-0.3*
-		=dev-haskell/text-0.11*
-		<dev-haskell/zlib-0.6.0.0
+RDEPEND="=dev-haskell/hashed-storage-0.5*[profile?]
+		=dev-haskell/haskeline-0.6*[profile?]
+		=dev-haskell/html-1.0*[profile?]
+		<dev-haskell/http-4000.2[profile?]
+		=dev-haskell/mmap-0.5*[profile?]
+		<dev-haskell/mtl-2.1[profile?]
+		>=dev-haskell/network-2.2[profile?]
+		<dev-haskell/parsec-3.2[profile?]
+		<dev-haskell/regex-compat-0.96[profile?]
+		=dev-haskell/tar-0.3*[profile?]
+		=dev-haskell/terminfo-0.3*[profile?]
+		=dev-haskell/text-0.11*[profile?]
+		<dev-haskell/zlib-0.6.0.0[profile?]
 		>=dev-lang/ghc-6.10.1
 		net-misc/curl
 		virtual/mta"
@@ -40,9 +40,9 @@ DEPEND="${RDEPEND}
 				dev-tex/latex2html[gif]
 			)
 		)
-		test? ( dev-haskell/test-framework
-				dev-haskell/test-framework-hunit
-				dev-haskell/test-framework-quickcheck2
+		test? ( dev-haskell/test-framework[profile?]
+				dev-haskell/test-framework-hunit[profile?]
+				dev-haskell/test-framework-quickcheck2[profile?]
 		)
 		"
 
