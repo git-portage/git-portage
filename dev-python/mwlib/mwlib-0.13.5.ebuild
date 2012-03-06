@@ -1,11 +1,11 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/mwlib/Attic/mwlib-0.12.17.ebuild,v 1.2 2012/02/23 10:10:34 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/mwlib/Attic/mwlib-0.13.5.ebuild,v 1.1 2012/03/06 10:31:05 patrick Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="2.4 3.* 2.7-pypy-* *-jython"
+RESTRICT_PYTHON_ABIS="2.4 2.5 3.* 2.7-pypy-* *-jython"
 
 inherit distutils
 
