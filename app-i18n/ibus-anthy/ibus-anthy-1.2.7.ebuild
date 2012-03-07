@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-anthy/Attic/ibus-anthy-1.2.5.ebuild,v 1.2 2011/04/16 22:12:10 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-anthy/ibus-anthy-1.2.7.ebuild,v 1.1 2012/03/07 15:02:50 matsuu Exp $
 
 EAPI=3
 PYTHON_DEPEND="2:2.5"
@@ -30,8 +30,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	mv py-compile py-compile.orig || die
-	ln -s "$(type -P true)" py-compile || die
+	>py-compile #397497
 	sed -i -e "s/python/python2/" \
 		engine/ibus-engine-anthy.in setup/ibus-setup-anthy.in || die
 }
@@ -44,6 +43,8 @@ src_install() {
 	emake DESTDIR="${D}" install || die
 
 	dodoc AUTHORS ChangeLog NEWS README || die
+
+	find "${ED}" -name '*.la' -type f -delete || die
 }
 
 pkg_postinst() {
