@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea-bin/Attic/icedtea-bin-7.2.0-r2.ebuild,v 1.2 2012/02/13 21:33:33 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea-bin/Attic/icedtea-bin-7.2.1-r1.ebuild,v 1.1 2012/03/08 09:31:04 caster Exp $
 
 EAPI="4"
 
@@ -8,6 +8,7 @@ inherit java-vm-2 prefix
 
 dist="http://dev.gentoo.org/~caster/distfiles/"
 TARBALL_VERSION="${PV}"
+PLUGIN_VERSION="${PVR}"
 
 DESCRIPTION="A Gentoo-made binary build of the IcedTea JDK"
 HOMEPAGE="http://icedtea.classpath.org"
@@ -20,8 +21,8 @@ SRC_URI="
 		x86? ( ${dist}/${PN}-examples-${TARBALL_VERSION}-x86.tar.bz2 )
 	)
 	nsplugin? (
-		amd64? ( ${dist}/${PN}-nsplugin-${TARBALL_VERSION}-amd64.tar.bz2 )
-		x86? ( ${dist}/${PN}-nsplugin-${TARBALL_VERSION}-x86.tar.bz2 )
+		amd64? ( ${dist}/${PN}-nsplugin-${PLUGIN_VERSION}-amd64.tar.bz2 )
+		x86? ( ${dist}/${PN}-nsplugin-${PLUGIN_VERSION}-x86.tar.bz2 )
 	)
 	source? ( ${dist}/${PN}-src-${TARBALL_VERSION}.tar.bz2 )"
 
@@ -130,7 +131,7 @@ pkg_postinst() {
 	# Set as default VM if none exists
 	java-vm-2_pkg_postinst
 
-	if use nsplugin; then
+	if use nsplugin && [[ -z ${REPLACING_VERSIONS} ]]; then
 		elog "The icedtea-bin-${SLOT} browser plugin can be enabled using eselect java-nsplugin"
 		elog "Note that the plugin works only in browsers based on xulrunner-1.9.1+"
 		elog "such as Firefox 3.5+ and recent Chromium versions."
