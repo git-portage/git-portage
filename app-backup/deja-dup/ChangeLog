@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/deja-dup
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/ChangeLog,v 1.8 2012/02/11 08:31:03 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/ChangeLog,v 1.9 2012/03/10 09:31:32 jlec Exp $
+
+  10 Mar 2012; Justin Lecher <jlec@gentoo.org> deja-dup-21.2.ebuild,
+  deja-dup-21.2-r1.ebuild:
+  Drop DEP in linunique, thanks Andreas Proschofsky spotting this, #407645
 
   11 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
   deja-dup-21.2-r1.ebuild:

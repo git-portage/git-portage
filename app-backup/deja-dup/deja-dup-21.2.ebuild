@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-21.2.ebuild,v 1.3 2012/01/29 11:44:28 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-21.2.ebuild,v 1.4 2012/03/10 09:31:32 jlec Exp $
 
 EAPI=4
 
@@ -12,7 +12,7 @@ SRC_URI="http://launchpad.net/${PN}/22/${PV}/+download/${P}.tar.xz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="nautilus nls"
 
 COMMON_DEPEND="
@@ -22,7 +22,6 @@ COMMON_DEPEND="
 
 	app-backup/duplicity
 	dev-libs/dbus-glib
-	dev-libs/libunique:1
 	gnome-base/gnome-keyring
 
 	nautilus? ( gnome-base/nautilus )"
