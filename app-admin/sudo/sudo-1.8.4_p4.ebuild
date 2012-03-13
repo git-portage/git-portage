@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/sudo/Attic/sudo-1.8.4_p1.ebuild,v 1.1 2012/02/21 20:23:33 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/sudo/Attic/sudo-1.8.4_p4.ebuild,v 1.1 2012/03/13 16:22:55 flameeyes Exp $
 
 EAPI="4"
 
