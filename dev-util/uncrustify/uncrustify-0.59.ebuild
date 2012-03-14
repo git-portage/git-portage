@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/uncrustify/Attic/uncrustify-0.56.ebuild,v 1.2 2010/07/03 07:36:58 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/uncrustify/uncrustify-0.59.ebuild,v 1.1 2012/03/14 14:23:53 grobian Exp $
 
 DESCRIPTION="C/C++/C#/D/Java/Pawn code indenter and beautifier"
 HOMEPAGE="http://uncrustify.sourceforge.net/"
