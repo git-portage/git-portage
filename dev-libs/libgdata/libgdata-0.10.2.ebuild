@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgdata/Attic/libgdata-0.10.0.ebuild,v 1.1 2011/10/30 06:15:19 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgdata/Attic/libgdata-0.10.2.ebuild,v 1.1 2012/03/15 01:24:29 tetromino Exp $
 
 EAPI="4"
 GCONF_DEBUG="yes"
@@ -22,6 +22,7 @@ RDEPEND=">=dev-libs/glib-2.19:2
 	|| (
 		>=x11-libs/gdk-pixbuf-2.14:2
 		>=x11-libs/gtk+-2.14:2 )
+	app-misc/ca-certificates
 	>=dev-libs/libxml2-2:2
 	>=net-libs/libsoup-2.26.1:2.4[introspection?]
 	>=net-libs/liboauth-0.9.4
@@ -34,6 +35,7 @@ DEPEND="${RDEPEND}
 pkg_setup() {
 	DOCS="AUTHORS ChangeLog HACKING NEWS README"
 	G2CONF="${G2CONF}
+		--with-ca-certs=${EPREFIX}/etc/ssl/certs/ca-certificates.crt
 		$(use_enable static-libs static)
 		$(use_enable gnome)
 		$(use_enable introspection)"
