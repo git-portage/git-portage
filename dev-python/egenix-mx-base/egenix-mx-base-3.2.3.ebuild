@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/egenix-mx-base/Attic/egenix-mx-base-3.2.1.ebuild,v 1.2 2012/02/20 09:59:15 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/egenix-mx-base/egenix-mx-base-3.2.3.ebuild,v 1.1 2012/03/16 07:44:33 patrick Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -41,7 +41,8 @@ src_prepare() {
 
 src_compile() {
 	replace-flags "-O[3s]" "-O2"
-	distutils_src_compile
+	#Build system wants to have BASECFLAGS in environ, not CFLAGS.
+	BASECFLAGS="${CFLAGS}" distutils_src_compile
 }
 
 src_install() {
