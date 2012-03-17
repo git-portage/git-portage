@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/spideroak-bin
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/ChangeLog,v 1.16 2012/02/11 20:32:07 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/ChangeLog,v 1.17 2012/03/17 11:29:33 blueness Exp $
+
+*spideroak-bin-4.3.9928 (17 Mar 2012)
+
+  17 Mar 2012; Anthony G. Basile <blueness@gentoo.org>
+  +spideroak-bin-4.3.9928.ebuild:
+  Version bump
 
 *spideroak-bin-4.3.9917 (11 Feb 2012)
 
