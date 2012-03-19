@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-181.ebuild,v 1.12 2012/03/19 17:04:17 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/Attic/udev-181.ebuild,v 1.13 2012/03/19 21:57:00 williamh Exp $
 
 EAPI=4
 
@@ -64,7 +64,7 @@ RDEPEND="${COMMON_DEPEND}
 		|| ( >=sys-apps/pciutils-3.1.9-r1[-compress-db] <sys-apps/pciutils-3.1.9-r1[-zlib] )
 		)
 	acl? ( sys-apps/coreutils[acl] )
-	sys-fs/udev-init-scripts
+	=sys-fs/udev-init-scripts-9
 	!sys-apps/coldplug
 	!<sys-fs/lvm2-2.02.45
 	!sys-fs/device-mapper
