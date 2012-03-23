@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-22.0.ebuild,v 1.1 2012/03/22 16:45:20 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-22.0.ebuild,v 1.2 2012/03/23 10:15:35 jlec Exp $
 
 EAPI=4
 
@@ -24,7 +24,6 @@ COMMON_DEPEND="
 
 	app-backup/duplicity
 	dev-libs/dbus-glib
-	dev-libs/libunique:1
 	gnome-base/gnome-keyring
 
 	nautilus? ( gnome-base/nautilus )"
