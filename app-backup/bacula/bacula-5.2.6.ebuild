@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.6.ebuild,v 1.2 2012/03/23 05:31:01 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.6.ebuild,v 1.3 2012/03/23 15:05:35 tomjbe Exp $
 
 EAPI="4"
 PYTHON_DEPEND="python? 2"
@@ -186,7 +186,9 @@ src_configure() {
 		${myconf}
 	# correct configuration for QT based bat
 	if use qt4 ; then
-		eqmake4 "${S}"/src/qt-console/bat.pro
+		pushd src/qt-console
+		eqmake4
+		popd
 	fi
 }
 
