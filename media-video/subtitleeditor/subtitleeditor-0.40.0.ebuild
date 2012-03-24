@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/subtitleeditor/Attic/subtitleeditor-0.39.0.ebuild,v 1.2 2011/11/22 08:39:57 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/subtitleeditor/Attic/subtitleeditor-0.40.0.ebuild,v 1.1 2012/03/24 14:32:07 pacho Exp $
 
 EAPI="4"
 
