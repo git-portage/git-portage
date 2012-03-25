@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/xpra/Attic/xpra-0.0.7.35.ebuild,v 1.1 2012/02/05 15:38:59 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/xpra/Attic/xpra-0.1.0.1.ebuild,v 1.1 2012/03/25 23:56:12 xmw Exp $
 
 EAPI=3
 
