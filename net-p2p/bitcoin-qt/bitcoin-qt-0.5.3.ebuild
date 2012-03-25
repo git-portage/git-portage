@@ -1,8 +1,8 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoin-qt/Attic/bitcoin-qt-0.5.3.ebuild,v 1.2 2012/03/16 14:10:25 johu Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoin-qt/Attic/bitcoin-qt-0.5.3.ebuild,v 1.3 2012/03/25 01:46:02 blueness Exp $
 
-EAPI=4
+EAPI="4"
 
 DB_VER="4.8"
 
