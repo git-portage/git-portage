@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-modules/Attic/vmware-modules-238.5.ebuild,v 1.2 2012/01/10 14:53:41 vadimk Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-modules/Attic/vmware-modules-264.2-r1.ebuild,v 1.1 2012/03/26 16:14:40 vadimk Exp $
 
 EAPI="2"
 
@@ -17,12 +17,12 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="hardened"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-	|| ( =app-emulation/vmware-player-3.1.${PV_MINOR}*
-		 =app-emulation/vmware-workstation-7.1.${PV_MINOR}* )"
+	|| ( =app-emulation/vmware-player-4.0.${PV_MINOR}*
+	=app-emulation/vmware-workstation-8.0.${PV_MINOR}* )"
 
 S=${WORKDIR}
 
@@ -62,10 +62,9 @@ src_prepare() {
 	epatch "${FILESDIR}/${PV_MAJOR}-makefile-kernel-dir.patch"
 	epatch "${FILESDIR}/${PV_MAJOR}-makefile-include.patch"
 	epatch "${FILESDIR}/${PV_MAJOR}-jobserver.patch"
-	kernel_is ge 2 6 37 && epatch "${FILESDIR}/${PV_MAJOR}-sema.patch"
-	kernel_is ge 2 6 39 && epatch "${FILESDIR}/${PV_MAJOR}-2.6.39.patch"
 	epatch "${FILESDIR}/${PV_MAJOR}-netdevice.patch"
-	epatch "${FILESDIR}/${PV_MAJOR}-3.2.0.patch"
+	epatch "${FILESDIR}/${PV}-3.2.0.patch"
+	use hardened && epatch "${FILESDIR}/hardened.patch"
 }
 
 src_install() {
@@ -76,6 +75,6 @@ src_install() {
 		KERNEL=="vmmon", GROUP="vmware", MODE=660
 		KERNEL=="vsock", GROUP="vmware", MODE=660
 	EOF
-	insinto /etc/udev/rules.d/
+	insinto /lib/udev/rules.d/
 	doins "${udevrules}"
 }
