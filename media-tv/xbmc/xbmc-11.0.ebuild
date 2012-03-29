@@ -1,12 +1,13 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/Attic/xbmc-11.0_rc2.ebuild,v 1.4 2012/03/27 18:37:13 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-11.0.ebuild,v 1.1 2012/03/29 16:22:51 vapier Exp $
 
 EAPI="4"
 
 # Does not work with py3 here
 # It might work with py:2.5 but I didn't test that
 PYTHON_DEPEND="2:2.6"
+
 inherit eutils python
 
 EGIT_REPO_URI="git://github.com/xbmc/xbmc.git"
@@ -14,7 +15,7 @@ if [[ ${PV} == "9999" ]] ; then
 	inherit git-2 autotools
 else
 	inherit autotools
-	MY_P=${P/_/-Eden_}
+	MY_P=${P/_/-*_}
 	SRC_URI="http://mirrors.xbmc.org/releases/source/${MY_P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
 	S=${WORKDIR}/${MY_P}
@@ -120,7 +121,6 @@ src_unpack() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-11.0-libpng-1.5.patch #380127
 	epatch "${FILESDIR}"/${PN}-9999-nomythtv.patch
 	epatch "${FILESDIR}"/${PN}-9999-no-arm-flags.patch #400617
 	epatch "${FILESDIR}"/${PN}-9999-no-exec-stack.patch
@@ -149,6 +149,10 @@ src_prepare() {
 		-e '/^CXXFLAGS/{s:-D[^=]*=.::;s:-m[[:alnum:]]*::}' \
 		-e "1iCXXFLAGS += ${squish}" \
 		lib/libsquish/Makefile.in || die
+
+	# Disable internal func checks as our USE/DEPEND
+	# stuff handles this just fine already #408395
+	export ac_cv_lib_avcodec_ff_vdpau_vc1_decode_picture=yes
 
 	# Fix XBMC's final version string showing as "exported"
 	# instead of the SVN revision number.
