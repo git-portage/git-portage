@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/trojita/Attic/trojita-0.2.9.4.ebuild,v 1.1 2011/06/20 20:11:22 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/trojita/Attic/trojita-0.2.9.4.ebuild,v 1.2 2012/03/30 10:34:00 johu Exp $
 
 EAPI=4
 
