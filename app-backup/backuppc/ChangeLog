@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/backuppc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/ChangeLog,v 1.14 2011/09/01 16:18:01 chainsaw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/ChangeLog,v 1.15 2012/03/30 06:05:16 patrick Exp $
+
+  30 Mar 2012; Patrick Lauer <patrick@gentoo.org> files/apache2-backuppc.conf:
+  Fixing init script for #382947
 
   01 Sep 2011; Tony Vroon <chainsaw@gentoo.org> backuppc-3.2.1-r2.ebuild:
   Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo, Ian
