@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/Attic/pidgin-2.10.0-r2.ebuild,v 1.1 2011/10/27 08:28:21 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/Attic/pidgin-2.10.3.ebuild,v 1.1 2012/03/30 17:11:29 polynomial-c Exp $
 
-EAPI=3
+EAPI=4
 
 GENTOO_DEPEND_ON_PERL=no
 inherit flag-o-matic eutils toolchain-funcs multilib perl-app gnome2 python
@@ -132,9 +132,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch \
-		"${FILESDIR}/${P}-utf8-validation.patch" \
-		"${FILESDIR}/${P}-gold.patch"
+	epatch "${FILESDIR}/${PN}-2.10.0-gold.patch"
 }
 
 src_configure() {
@@ -222,6 +220,9 @@ src_install() {
 		done
 	fi
 	use perl && fixlocalpod
+
+	dodoc finch/plugins/pietray.py
+	docompress -x /usr/share/doc/${PF}/pietray.py
 
 	find "${ED}" -type f -name '*.la' -exec rm -rf '{}' '+' || die "la removal failed"
 }
