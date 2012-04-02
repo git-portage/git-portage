@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-ftp/lftp/Attic/lftp-4.3.4-r1.ebuild,v 1.2 2012/01/23 10:53:37 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-ftp/lftp/Attic/lftp-4.3.6.ebuild,v 1.1 2012/04/02 03:25:18 jer Exp $
 
 EAPI="4"
 
@@ -51,8 +51,7 @@ DOCS=(
 src_prepare() {
 	epatch \
 		"${FILESDIR}/${PN}-4.0.2.91-lafile.patch" \
-		"${FILESDIR}/${PN}-4.0.3-autoconf-2.64.patch" \
-		"${FILESDIR}/${PN}-4.3.4-empty-local.patch"
+		"${FILESDIR}/${PN}-4.0.3-autoconf-2.64.patch"
 	eautoreconf
 }
 
