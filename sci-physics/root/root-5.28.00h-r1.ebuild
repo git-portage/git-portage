@@ -1,20 +1,23 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/root/Attic/root-5.32.01-r2.ebuild,v 1.2 2012/03/29 18:21:49 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/root/Attic/root-5.28.00h-r1.ebuild,v 1.1 2012/04/03 16:02:52 bicatali Exp $
 
-EAPI=4
+EAPI=3
+
 PYTHON_DEPEND="python? 2"
+
 inherit elisp-common eutils fdo-mime fortran-2 python toolchain-funcs
 
 DOC_PV=5_26
 ROOFIT_DOC_PV=2.91-33
 TMVA_DOC_PV=4.03
 PATCH_PV=5.28.00b
-PATCH_PV2=5.32.00
 
 DESCRIPTION="C++ data analysis framework and interpreter from CERN"
 HOMEPAGE="http://root.cern.ch/"
-SRC_URI="ftp://root.cern.ch/${PN}/${PN}_v${PV}.source.tar.gz
+SRC_URI="
+	ftp://root.cern.ch/${PN}/${PN}_v${PV}.source.tar.gz
+	http://dev.gentoo.org/~bicatali/${PN}-${PATCH_PV}-xrootd-prop-flags.patch.bz2
 	doc? ( ftp://root.cern.ch/${PN}/doc/Users_Guide_${DOC_PV}.pdf
 	math? (
 		ftp://root.cern.ch/${PN}/doc/RooFit_Users_Manual_${ROOFIT_DOC_PV}.pdf
@@ -22,42 +25,32 @@ SRC_URI="ftp://root.cern.ch/${PN}/${PN}_v${PV}.source.tar.gz
 
 SLOT="0"
 LICENSE="LGPL-2.1"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
-IUSE="+X afs avahi clarens doc emacs examples fits fftw graphviz kerberos ldap
-	+math mpi mysql odbc +opengl openmp oracle postgres prefix
-	pythia6	pythia8	python qt4 +reflex ruby ssl xft xinetd xml xrootd"
+KEYWORDS="~amd64 ~x86"
+IUSE="afs avahi clarens doc emacs examples fits fftw graphviz kerberos ldap
+	+math mpi mysql ncurses odbc +opengl openmp oracle postgres pythia6
+	pythia8	python qt4 +reflex ruby ssl xft xinetd xml xrootd"
 
 CDEPEND="
-	app-arch/xz-utils
 	>=dev-lang/cfortran-4.4-r2
 	dev-libs/libpcre
-	media-libs/freetype
+	media-libs/ftgl
 	media-libs/giflib
+	media-libs/glew
 	media-libs/libpng:0
 	media-libs/tiff:0
-	sys-libs/zlib
-	virtual/jpeg
 	virtual/shadow
-	X? (
-		media-libs/ftgl
-		media-libs/glew
-		x11-libs/libX11
-		x11-libs/libXext
-		x11-libs/libXpm
-		|| ( >=media-libs/libafterimage-1.20 >=x11-wm/afterstep-2.2.11 )
-		opengl? ( virtual/opengl virtual/glu x11-libs/gl2ps )
-		qt4? (
-			x11-libs/qt-gui:4
-			x11-libs/qt-opengl:4
-			x11-libs/qt-qt3support:4
-			x11-libs/qt-svg:4
-			x11-libs/qt-webkit:4
-			x11-libs/qt-xmlpatterns:4 )
-		xft? ( x11-libs/libXft )
-		)
+	virtual/jpeg
+	x11-libs/libX11
+	x11-libs/libXext
+	x11-libs/libXft
+	x11-libs/libXpm
+	|| (
+		>=media-libs/libafterimage-1.20[gif,jpeg,png,tiff] 
+		>=x11-wm/afterstep-2.2.11[gif,jpeg,png,tiff]
+	)
 	afs? ( net-fs/openafs )
 	avahi? ( net-dns/avahi )
-	clarens? ( dev-libs/xmlrpc-c[curl] )
+	clarens? ( dev-libs/xmlrpc-c )
 	emacs? ( virtual/emacs )
 	fits? ( sci-libs/cfitsio )
 	fftw? ( sci-libs/fftw:3.0 )
@@ -66,34 +59,39 @@ CDEPEND="
 	ldap? ( net-nds/openldap )
 	math? ( sci-libs/gsl sci-mathematics/unuran mpi? ( virtual/mpi ) )
 	mysql? ( virtual/mysql )
+	ncurses? ( sys-libs/ncurses )
 	odbc? ( || ( dev-db/libiodbc dev-db/unixODBC ) )
+	opengl? ( virtual/opengl virtual/glu x11-libs/gl2ps )
 	oracle? ( dev-db/oracle-instantclient-basic )
 	postgres? ( dev-db/postgresql-base )
 	pythia6? ( sci-physics/pythia:6 )
 	pythia8? ( sci-physics/pythia:8 )
+	qt4? (
+		x11-libs/qt-gui:4
+		x11-libs/qt-opengl:4
+		x11-libs/qt-qt3support:4
+		x11-libs/qt-svg:4
+		x11-libs/qt-webkit:4
+		x11-libs/qt-xmlpatterns:4 )
 	ruby? (
 			dev-lang/ruby
 			dev-ruby/rubygems )
 	ssl? ( dev-libs/openssl )
-	xml? ( dev-libs/libxml2 )
-	xrootd? ( net-libs/xrootd )"
+	xml? ( dev-libs/libxml2:2 )"
 
 DEPEND="${CDEPEND}
 	dev-util/pkgconfig"
 
 RDEPEND="
 	virtual/fortran
-	${CDEPEND}
+${CDEPEND}
 	reflex? ( dev-cpp/gccxml )
 	xinetd? ( sys-apps/xinetd )"
-
-REQUIRED_USE="!X? ( !opengl !qt4 !xft )"
 
 S="${WORKDIR}/${PN}"
 
 pkg_setup() {
 	fortran-2_pkg_setup
-	python_pkg_setup
 	echo
 	elog "There are extra options on packages not yet in Gentoo:"
 	elog "AliEn, castor, Chirp, dCache, gfal, gLite, Globus,"
@@ -120,15 +118,13 @@ pkg_setup() {
 
 src_prepare() {
 	epatch \
+		"${WORKDIR}"/${PN}-${PATCH_PV}-xrootd-prop-flags.patch \
 		"${FILESDIR}"/${PN}-${PATCH_PV}-prop-ldflags.patch \
 		"${FILESDIR}"/${PN}-${PATCH_PV}-asneeded.patch \
-		"${FILESDIR}"/${PN}-${PATCH_PV2}-nobyte-compile.patch \
+		"${FILESDIR}"/${PN}-${PATCH_PV}-nobyte-compile.patch \
 		"${FILESDIR}"/${PN}-${PATCH_PV}-glibc212.patch \
 		"${FILESDIR}"/${PN}-${PATCH_PV}-unuran.patch \
-		"${FILESDIR}"/${PN}-${PATCH_PV2}-afs.patch \
-		"${FILESDIR}"/${PN}-${PATCH_PV2}-cfitsio.patch \
-		"${FILESDIR}"/${PN}-${PATCH_PV2}-chklib64.patch \
-		"${FILESDIR}"/${PN}-${PATCH_PV2}-explicit-functions.patch
+		"${FILESDIR}"/${P}-explicit-functions.patch
 
 	# make sure we use system libs and headers
 	rm montecarlo/eg/inc/cfortran.h README/cfortran.doc
@@ -138,10 +134,16 @@ src_prepare() {
 	rm -rf graf3d/glew/{inc,src}
 	rm -rf core/pcre/src
 	rm -rf math/unuran/src/unuran-*.tar.gz
-	LANG=C LC_ALL=C find core/zip -type f -name "[a-z]*" | xargs rm
-	rm -rf core/lzma/src/*.tar.gz
+	find core/zip -type f -name "[a-z]*" | xargs rm
 	rm graf3d/gl/{inc,src}/gl2ps.*
 	sed -i -e 's/^GLLIBS *:= .* $(OPENGLLIB)/& -lgl2ps/' graf3d/gl/Module.mk
+
+	# TODO: unbundle xrootd as a new package
+	#rm -rf net/xrootd/src
+	#sed -i \
+	#	-e 's:-lXrdOuc:-lXrd &:' \
+	#	-e 's:$(XROOTDDIRL)/lib\(Xrd\w*\).a:-l\1:g' \
+	#	proof/proofd/Module.mk || die
 
 	# In Gentoo, libPythia6 is called libpythia6
 	# libungif is called libgif,
@@ -150,7 +152,7 @@ src_prepare() {
 	sed -i \
 		-e 's:libPythia6:libpythia6:g' \
 		-e 's:ungif:gif:g' \
-		-e 's:$ODBCINCDIR:$ODBCINCDIR /usr/include/iodbc:' \
+		-e 's:$ODBCINC:$ODBCINC /usr/include/iodbc:' \
 		-e 's:libpq-fe.h:pg_config.h:' \
 		configure || die "adjusting configure for Gentoo failed"
 
@@ -175,7 +177,6 @@ src_configure() {
 		--with-cc=$(tc-getCC) \
 		--with-cxx=$(tc-getCXX) \
 		--with-f77=$(tc-getFC) \
-		--with-afs-shared=yes \
 		--with-sys-iconpath="${EPREFIX}"/usr/share/pixmaps \
 		--disable-builtin-afterimage \
 		--disable-builtin-freetype \
@@ -183,8 +184,8 @@ src_configure() {
 		--disable-builtin-glew \
 		--disable-builtin-pcre \
 		--disable-builtin-zlib \
-		--disable-builtin-lzma \
-		--disable-cling \
+		--disable-rpath \
+		--enable-asimage \
 		--enable-astiff \
 		--enable-exceptions	\
 		--enable-explicitlink \
@@ -195,12 +196,12 @@ src_configure() {
 		--enable-soversion \
 		--enable-table \
 		--fail-on-missing \
-		$(use_enable X x11) \
-		$(use_enable X asimage) \
+		--with-afs-shared=yes \
 		$(use_enable afs) \
 		$(use_enable avahi bonjour) \
 		$(use_enable clarens) \
 		$(use_enable clarens peac) \
+		$(use_enable ncurses editline) \
 		$(use_enable fits fitsio) \
 		$(use_enable fftw fftw3) \
 		$(use_enable graphviz gviz) \
@@ -217,7 +218,6 @@ src_configure() {
 		$(use_enable odbc) \
 		$(use_enable opengl) \
 		$(use_enable postgres pgsql) \
-		$(use_enable prefix rpath) \
 		$(use_enable pythia6) \
 		$(use_enable pythia8) \
 		$(use_enable python) \
@@ -268,6 +268,7 @@ daemon_install() {
 	dodir /var/spool/rootd/{pub,tmp}
 	fperms 1777 /var/spool/rootd/{pub,tmp}
 
+	use xrootd && daemons="${daemons} xrootd olbd"
 	for i in ${daemons}; do
 		newinitd "${FILESDIR}"/${i}.initd ${i}
 		newconfd "${FILESDIR}"/${i}.confd ${i}
