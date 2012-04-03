@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/deja-dup
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/ChangeLog,v 1.11 2012/03/23 10:15:35 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/ChangeLog,v 1.12 2012/04/03 10:05:05 jlec Exp $
+
+  03 Apr 2012; Justin Lecher <jlec@gentoo.org> deja-dup-22.0.ebuild:
+  Restrict broken test suite, doesn't handle duplicity return codes correct,
+  upstream informed
 
   23 Mar 2012; Justin Lecher <jlec@gentoo.org> deja-dup-22.0.ebuild:
   Drop libunique dep again, #407645

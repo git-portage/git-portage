@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-22.0.ebuild,v 1.2 2012/03/23 10:15:35 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-22.0.ebuild,v 1.3 2012/04/03 10:05:05 jlec Exp $
 
 EAPI=4
 
@@ -16,6 +16,8 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="nautilus"
+
+RESTRICT="test"
 
 COMMON_DEPEND="
 	dev-libs/glib:2
