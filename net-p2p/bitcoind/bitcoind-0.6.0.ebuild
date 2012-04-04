@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoind/Attic/bitcoind-0.6.0_rc5.ebuild,v 1.1 2012/03/26 22:42:16 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoind/Attic/bitcoind-0.6.0.ebuild,v 1.1 2012/04/04 13:31:12 blueness Exp $
 
 EAPI="4"
 
@@ -11,6 +11,7 @@ inherit db-use eutils versionator toolchain-funcs
 DESCRIPTION="Original Bitcoin crypto-currency wallet for automated services"
 HOMEPAGE="http://bitcoin.org/"
 SRC_URI="https://nodeload.github.com/bitcoin/bitcoin/tarball/v${PV/_/} -> bitcoin-v${PV}.tgz
+	http://luke.dashjr.org/programs/bitcoin/files/eligius_sendfee/${PV}-eligius_sendfee.patch.xz
 "
 
 LICENSE="MIT ISC"
@@ -30,7 +31,7 @@ DEPEND="${RDEPEND}
 	>=app-shells/bash-4.1
 "
 
-S="${WORKDIR}/bitcoin-bitcoin-5b22438"
+S="${WORKDIR}/bitcoin-bitcoin-b3b5ab1"
 
 pkg_setup() {
 	local UG='bitcoin'
@@ -40,7 +41,7 @@ pkg_setup() {
 
 src_prepare() {
 	cd src || die
-	use eligius && epatch "${FILESDIR}/9999-eligius_sendfee.patch"
+	use eligius && epatch "${WORKDIR}/${PV}-eligius_sendfee.patch"
 }
 
 src_compile() {
