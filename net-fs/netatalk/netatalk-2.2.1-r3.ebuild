@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/netatalk/Attic/netatalk-2.2.1-r2.ebuild,v 1.1 2011/10/18 07:37:57 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/netatalk/netatalk-2.2.1-r3.ebuild,v 1.1 2012/04/08 21:04:02 flameeyes Exp $
 
 EAPI="4"
 
@@ -90,7 +90,7 @@ src_configure() {
 src_install() {
 	default
 
-	newinitd "${FILESDIR}"/afpd.init.2 afpd
+	newinitd "${FILESDIR}"/afpd.init.3 afpd
 	newinitd "${FILESDIR}"/cnid_metad.init.2 cnid_metad
 
 	if use appletalk; then
