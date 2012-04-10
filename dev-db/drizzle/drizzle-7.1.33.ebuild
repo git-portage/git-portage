@@ -1,17 +1,18 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/drizzle/Attic/drizzle-7.2011.03.11.ebuild,v 1.2 2011/08/04 11:33:32 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/drizzle/drizzle-7.1.33.ebuild,v 1.1 2012/04/10 00:30:50 robbat2 Exp $
 
 EAPI=2
 
 inherit flag-o-matic libtool autotools eutils pam versionator
 
-MY_P="${PN}$(replace_version_separator 1 -)"
+MY_P="${P}-stable"
 S="${WORKDIR}/${MY_P}"
+DIR_PV="$(get_version_component_range 1-2)/${PV}"
 
 DESCRIPTION="Database optimized for Cloud and Net applications"
 HOMEPAGE="http://drizzle.org"
-SRC_URI="http://launchpad.net/drizzle/elliott/$(get_version_component_range 2-2)-02-28/+download/${MY_P}.tar.gz"
+SRC_URI="http://launchpad.net/drizzle/${DIR_PV}/+download/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
