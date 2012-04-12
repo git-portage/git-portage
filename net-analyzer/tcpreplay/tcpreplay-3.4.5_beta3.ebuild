@@ -1,8 +1,9 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/tcpreplay/Attic/tcpreplay-3.4.5_beta3.ebuild,v 1.1 2012/01/22 17:53:01 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/tcpreplay/Attic/tcpreplay-3.4.5_beta3.ebuild,v 1.2 2012/04/12 04:04:47 jer Exp $
 
 EAPI=4
+inherit eutils
 
 MY_P="${P/_/}"
 DESCRIPTION="replay saved tcpdump or snoop files at arbitrary speeds"
@@ -26,6 +27,7 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${PN}-3.4.4-cross-compile.patch
 	echo "We don't use bundled libopts" > libopts/options.h
 	./autogen.sh
 }
