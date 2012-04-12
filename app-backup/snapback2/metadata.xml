@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<herd>app-backup</herd>
 	<upstream>
-		<remote-id type="cpan">snapback2</remote-id>
+		<remote-id type="cpan">Snapback2</remote-id>
 	</upstream>
 </pkgmetadata>
