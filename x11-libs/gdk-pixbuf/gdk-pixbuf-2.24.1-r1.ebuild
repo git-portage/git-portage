@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gdk-pixbuf/Attic/gdk-pixbuf-2.26.0.ebuild,v 1.3 2012/04/12 17:04:23 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gdk-pixbuf/Attic/gdk-pixbuf-2.24.1-r1.ebuild,v 1.1 2012/04/14 20:52:57 tetromino Exp $
 
 EAPI="4"
 
-inherit gnome.org multilib libtool
+inherit eutils gnome.org multilib libtool autotools
 
 DESCRIPTION="Image loading library for GTK+"
 HOMEPAGE="http://www.gtk.org/"
@@ -15,7 +15,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-
 IUSE="+X debug doc +introspection jpeg jpeg2k tiff test"
 
 COMMON_DEPEND="
-	>=dev-libs/glib-2.31.0:2
+	>=dev-libs/glib-2.27.2:2
 	>=media-libs/libpng-1.4:0
 	introspection? ( >=dev-libs/gobject-introspection-0.9.3 )
 	jpeg? ( virtual/jpeg )
@@ -41,9 +41,10 @@ src_prepare() {
 	# This will avoid polluting the pkg-config file with versioned libpng,
 	# which is causing problems with libpng14 -> libpng15 upgrade
 	# See upstream bug #667068
-	sed -e 's:libpng15:libpng libpng15:' \
-		-i configure || die
-	default
+	sed -i -e 's:libpng15:libpng libpng15:' configure.ac || die
+	# Backport from 2.26.1, fixes xbm loader overflow
+	epatch "${FILESDIR}/${P}-xbm-overflow.patch"
+	eautoreconf
 }
 
 src_configure() {
@@ -64,7 +65,7 @@ src_configure() {
 }
 
 src_install() {
-	default
+	emake DESTDIR="${D}" install
 	dodoc AUTHORS NEWS* README*
 
 	# New library, remove .la files
