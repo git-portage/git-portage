@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/batctl/Attic/batctl-2011.1.0.ebuild,v 1.3 2011/05/22 23:22:09 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/batctl/Attic/batctl-2012.1.0.ebuild,v 1.1 2012/04/17 02:34:26 xmw Exp $
 
-EAPI=3
+EAPI=4
 
 inherit linux-info toolchain-funcs
 
@@ -26,19 +26,11 @@ pkg_setup() {
 	fi
 }
 
-src_prepare() {
-	sed -e "/^CFLAGS/s: -O[^[:space:]]* : :" \
-		-e "/^CFLAGS/s: -g[^[:space:]]* : :" \
-		-e "s: -j \$(NUM_CPUS) : :" \
-		-i Makefile || die
-}
-
 src_compile() {
-	emake CC="$(tc-getCC)" V=1 || die
+	emake CC="$(tc-getCC)" V=1 REVISION=gentoo-"${PVR}"
 }
 
 src_install() {
-	emake INSTALL_PREFIX="${D}" install || die
-	dodoc README || die
-	doman man/* || die
+	emake DESTDIR="${D}" PREFIX="${EPREFIX}"/usr install
+	dodoc README
 }
