@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/batman-adv/Attic/batman-adv-2011.1.0.ebuild,v 1.3 2011/06/05 08:31:28 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/batman-adv/Attic/batman-adv-2012.1.0.ebuild,v 1.1 2012/04/17 03:28:53 xmw Exp $
 
-EAPI=3
+EAPI=4
 
 CONFIG_CHECK="~!CONFIG_BATMAN_ADV"
 MODULE_NAMES="${PN}(net:${S}:${S})"
@@ -17,17 +17,20 @@ SRC_URI="http://downloads.open-mesh.org/batman/stable/sources/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug"
 
 DEPEND=""
 RDEPEND=""
 
 src_compile() {
+	if use debug; then
+		export BUILD_PARAMS="CONFIG_BATMAN_ADV_DEBUG=y"
+	fi
 	export KERNELPATH="${KERNEL_DIR}"
 	linux-mod_src_compile
 }
 
 src_install() {
 	linux-mod_src_install
-	dodoc README CHANGELOG || die
+	dodoc README CHANGELOG
 }
