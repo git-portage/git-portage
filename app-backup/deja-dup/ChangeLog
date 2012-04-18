@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/deja-dup
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/ChangeLog,v 1.12 2012/04/03 10:05:05 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/ChangeLog,v 1.13 2012/04/18 20:08:56 ago Exp $
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> deja-dup-22.0.ebuild:
+  Stable for amd64, wrt bug #410611
 
   03 Apr 2012; Justin Lecher <jlec@gentoo.org> deja-dup-22.0.ebuild:
   Restrict broken test suite, doesn't handle duplicity return codes correct,
