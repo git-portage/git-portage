@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-news/liferea/Attic/liferea-1.8.3.ebuild,v 1.1 2012/03/26 20:50:31 vostorga Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-news/liferea/liferea-1.8.5.ebuild,v 1.1 2012/04/20 14:52:22 vostorga Exp $
 
 EAPI=4
 
