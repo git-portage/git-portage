@@ -1,12 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/Attic/paludis-0.64.0.ebuild,v 1.3 2011/11/11 20:12:44 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/Attic/paludis-0.74.0.ebuild,v 1.1 2012/04/21 20:08:36 dagger Exp $
 
 inherit bash-completion eutils
 
 DESCRIPTION="paludis, the other package mangler"
-HOMEPAGE="http://paludis.pioto.org/"
-SRC_URI="http://paludis.pioto.org/download/${P}.tar.bz2"
+HOMEPAGE="http://paludis.exherbo.org/"
+SRC_URI="http://paludis.exherbo.org/download/${P}.tar.bz2"
 
 IUSE="doc pbins portage pink prebuilt-documentation python-bindings ruby-bindings search-index vim-syntax visibility xml zsh-completion"
 LICENSE="GPL-2 vim-syntax? ( vim )"
