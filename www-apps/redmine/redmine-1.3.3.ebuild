@@ -1,8 +1,12 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/redmine/Attic/redmine-1.3.0.ebuild,v 1.2 2012/01/11 15:56:00 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/redmine/Attic/redmine-1.3.3.ebuild,v 1.1 2012/04/25 15:02:00 matsuu Exp $
 
 EAPI="3"
+# ruby19: dev-ruby/rack has no ruby19
+# jruby: dev-ruby/rails has no jruby
+# rbx: dev-ruby/rails has no rbx
+#USE_RUBY="ruby18 ree18"
 USE_RUBY="ruby18"
 inherit eutils depend.apache ruby-ng
 
@@ -53,6 +57,14 @@ all_ruby_prepare() {
 	rm -r vendor/gems/coderay-1.0.0 || die
 	rm -r vendor/plugins/ruby-net-ldap-0.0.4 || die
 	rm -fr vendor/rails || die
+
+	# bug #406605
+	rm .gitignore .hgignore || die
+
+	# bug #399503
+	rm -r vendor/gems/rubytree-0.5.2 || die
+	epatch "${FILESDIR}/${PN}-rubytree-r8214.patch"
+
 	echo "CONFIG_PROTECT=\"${EPREFIX}${REDMINE_DIR}/config\"" > "${T}/50${PN}"
 	echo "CONFIG_PROTECT_MASK=\"${EPREFIX}${REDMINE_DIR}/config/locales ${EPREFIX}${REDMINE_DIR}/config/settings.yml\"" >> "${T}/50${PN}"
 	sed -i -e "/RAILS_GEM_VERSION/s/'.*'/'$(best_version dev-ruby/rails:2.3|cut -d- -f3)'/" config/environment.rb || die
@@ -61,6 +73,8 @@ all_ruby_prepare() {
 all_ruby_install() {
 	dodoc doc/{CHANGELOG,INSTALL,README_FOR_APP,RUNNING_TESTS,UPGRADING} || die
 	rm -fr doc || die
+	dodoc README.rdoc || die
+	rm README.rdoc || die
 
 	keepdir /var/log/${PN} || die
 	dosym /var/log/${PN}/ "${REDMINE_DIR}/log" || die
@@ -71,13 +85,19 @@ all_ruby_install() {
 	keepdir "${REDMINE_DIR}/public/plugin_assets" || die
 
 	fowners -R redmine:redmine \
-		"${REDMINE_DIR}/config/environment.rb" \
+		"${REDMINE_DIR}/config" \
 		"${REDMINE_DIR}/files" \
 		"${REDMINE_DIR}/public/plugin_assets" \
 		"${REDMINE_DIR}/tmp" \
 		/var/log/${PN} || die
 	# for SCM
 	fowners redmine:redmine "${REDMINE_DIR}" || die
+	# bug #406605
+	fperms -R go-rwx \
+		"${REDMINE_DIR}/config" \
+		"${REDMINE_DIR}/files" \
+		"${REDMINE_DIR}/tmp" \
+		/var/log/${PN} || die
 
 	if use passenger ; then
 		has_apache
@@ -150,5 +170,11 @@ pkg_config() {
 		RAILS_ENV="${RAILS_ENV}" ${RUBY} -S rake db:migrate || die
 		einfo "Insert default configuration data in database."
 		RAILS_ENV="${RAILS_ENV}" ${RUBY} -S rake redmine:load_default_data || die
+		einfo
+		einfo "If you use sqlite3. please do not forget to change the ownership of the sqlite files."
+		einfo
+		einfo "# cd \"${EPREFIX}${REDMINE_DIR}\""
+		einfo "# chown redmine db/ db/*.sqlite3"
+		einfo
 	fi
 }
