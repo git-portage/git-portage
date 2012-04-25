@@ -1,36 +1,52 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/blohg/Attic/blohg-0.8.ebuild,v 1.1 2011/11/17 00:38:16 rafaelmartins Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/blohg/Attic/blohg-0.10.ebuild,v 1.1 2012/04/25 03:02:38 rafaelmartins Exp $
 
 EAPI="3"
 
 PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="2.4 2.5 3.*"
+DISTUTILS_SRC_TEST="setup.py"
 
-inherit distutils
+HG_ECLASS=""
+if [[ ${PV} = *9999* ]]; then
+	HG_ECLASS="mercurial"
+	EHG_REPO_URI="https://hg.rafaelmartins.eng.br/blohg/"
+	EHG_REVISION="default"
+fi
+
+inherit distutils ${HG_ECLASS}
 
 DESCRIPTION="A Mercurial-based blogging engine."
 HOMEPAGE="http://blohg.org/ http://pypi.python.org/pypi/blohg"
+
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 KEYWORDS="~amd64 ~x86"
+if [[ ${PV} = *9999* ]]; then
+	SRC_URI=""
+	KEYWORDS=""
+fi
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="doc"
+IUSE="doc test"
 
-DEPEND=">=dev-python/docutils-0.7
+CDEPEND=">=dev-python/docutils-0.7
 	>=dev-python/flask-0.7
 	>=dev-python/flask-babel-0.6
 	>=dev-python/flask-script-0.3
+	>=dev-python/frozen-flask-0.7
 	>=dev-python/jinja-2.5.2
 	>=dev-vcs/mercurial-1.6
 	dev-python/pyyaml
 	dev-python/setuptools
-	dev-python/pygments
+	dev-python/pygments"
+
+DEPEND="${CDEPEND}
 	doc? ( dev-python/sphinx )"
 
-RDEPEND="${DEPEND}"
+RDEPEND="${CDEPEND}"
 
 src_compile() {
 	distutils_src_compile
@@ -51,8 +67,9 @@ src_install() {
 }
 
 pkg_postinst() {
-	distutils_pkg_postinst
+	local ver="${PV}"
+	[[ ${PV} = *9999* ]] && ver="latest"
 
-	einfo "If you're upgrading from <=blohg-0.5.1, please read the upgrade notes:"
-	einfo "http://docs.blohg.org/upgrade/#from-0-5-1-to-0-6"
+	elog "You may want to check the upgrade notes:"
+	elog "http://docs.blohg.org/en/${ver}/upgrade/"
 }
