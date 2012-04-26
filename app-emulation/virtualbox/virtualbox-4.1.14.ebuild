@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox/Attic/virtualbox-4.1.8.ebuild,v 1.5 2012/04/09 12:07:27 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox/Attic/virtualbox-4.1.14.ebuild,v 1.1 2012/04/26 18:20:25 polynomial-c Exp $
 
 EAPI=4
 
@@ -13,7 +13,7 @@ if [[ ${PV} == "9999" ]] ; then
 else
 	MY_P=VirtualBox-${PV}
 	SRC_URI="http://download.virtualbox.org/virtualbox/${PV}/${MY_P}.tar.bz2"
-	S="${WORKDIR}/${MY_P}_OSE"
+	S="${WORKDIR}/${MY_P}"
 fi
 
 DESCRIPTION="Family of powerful x86 virtualization products for enterprise as well as home use"
@@ -21,7 +21,7 @@ HOMEPAGE="http://www.virtualbox.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="+additions alsa doc extensions headless java pam pulseaudio +opengl python +qt4 +sdk vboxwebsrv vnc"
 
 RDEPEND="!app-emulation/virtualbox-bin
@@ -116,15 +116,6 @@ REQUIRED_USE="
 "
 
 pkg_setup() {
-	if built_with_use sys-devel/gcc hardened && gcc-config -c | grep -qv -E "hardenednopie|vanilla"; then
-		eerror "The PIE feature provided by the \"hardened\" compiler is incompatible with ${PF}."
-		eerror "You must use gcc-config to select a profile without this feature.  You may"
-		eerror "choose either \"hardenednopie\", \"hardenednopiessp\" or \"vanilla\" profile;"
-		eerror "however, \"hardenednopie\" is preferred because it gives the most hardening."
-		eerror "Remember to run \"source /etc/profile\" before continuing.  See bug #339914."
-		die
-	fi
-
 	if ! use headless && ! use qt4 ; then
 		einfo "No USE=\"qt4\" selected, this build will not include"
 		einfo "any Qt frontend."
@@ -182,6 +173,11 @@ src_prepare() {
 			-i "${S}"/Config.kmk || die
 		java-pkg-opt-2_src_prepare
 	fi
+
+	# Fix compile error on hardened bug 339914 (disable PIE)
+	if gcc-specs-pie ; then
+		epatch "${FILESDIR}"/virtualbox_nopie.patch
+	fi
 }
 
 src_configure() {
@@ -217,7 +213,7 @@ src_compile() {
 	# strip-flags
 
 	MAKE="kmk" emake \
-		VBOX_VERSION_STRING='$(VBOX_VERSION_MAJOR).$(VBOX_VERSION_MINOR).$(VBOX_VERSION_BUILD)'-Gentoo_ \
+		VBOX_VERSION_STRING='$(VBOX_VERSION_MAJOR).$(VBOX_VERSION_MINOR).$(VBOX_VERSION_BUILD)'_Gentoo_ \
 		TOOL_GCC3_CC="$(tc-getCC)" TOOL_GCC3_CXX="$(tc-getCXX)" \
 		TOOL_GCC3_AS="$(tc-getCC)" TOOL_GCC3_AR="$(tc-getAR)" \
 		TOOL_GCC3_LD="$(tc-getCXX)" TOOL_GCC3_LD_SYSMOD="$(tc-getLD)" \
