@@ -1,10 +1,11 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/firefox/Attic/firefox-10.0.1.ebuild,v 1.4 2012/03/01 00:13:44 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/firefox/Attic/firefox-10.0.4.ebuild,v 1.1 2012/04/26 19:53:46 polynomial-c Exp $
 
 EAPI="3"
 VIRTUALX_REQUIRED="pgo"
 WANT_AUTOCONF="2.1"
+MOZ_ESR="1"
 
 # This list can be updated with scripts/get_langs.sh from the mozilla overlay
 MOZ_LANGS=(af ak ar as ast be bg bn-BD bn-IN br bs ca cs csb cy da de el en
@@ -18,10 +19,15 @@ MOZ_PV="${PV/_alpha/a}" # Handle alpha for SRC_URI
 MOZ_PV="${MOZ_PV/_beta/b}" # Handle beta for SRC_URI
 MOZ_PV="${MOZ_PV/_rc/rc}" # Handle rc for SRC_URI
 
+if [[ ${MOZ_ESR} == 1 ]]; then
+	# ESR releases have slightly version numbers
+	MOZ_PV="${MOZ_PV}esr"
+fi
+
 # Changeset for alpha snapshot
 CHANGESET="e56ecd8b3a68"
 # Patch version
-PATCH="${PN}-10.0-patches-0.5"
+PATCH="${PN}-10.0-patches-0.7"
 # Upstream ftp release URI that's used by mozlinguas.eclass
 # We don't use the http mirror because it deletes old tarballs.
 MOZ_FTP_URI="ftp://ftp.mozilla.org/pub/${PN}/releases/"
@@ -31,7 +37,7 @@ inherit check-reqs flag-o-matic toolchain-funcs eutils gnome2-utils mozconfig-3 
 DESCRIPTION="Firefox Web Browser"
 HOMEPAGE="http://www.mozilla.com/firefox"
 
-KEYWORDS="~alpha amd64 ~arm ~ia64 ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 SLOT="0"
 LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 )"
 IUSE="bindist +crashreporter +ipc +minimal pgo selinux system-sqlite +webm"
@@ -52,7 +58,7 @@ RDEPEND="
 	media-libs/libpng[apng]
 	virtual/libffi
 	system-sqlite? ( >=dev-db/sqlite-3.7.7.1[fts3,secure-delete,threadsafe,unlock-notify,debug=] )
-	webm? ( ~media-libs/libvpx-0.9.7
+	webm? ( >=media-libs/libvpx-1.0.0
 		media-libs/alsa-lib )
 	crashreporter? ( net-misc/curl )
 	selinux? ( sec-policy/selinux-mozilla )"
@@ -77,7 +83,11 @@ elif [[ ${PV} =~ beta ]]; then
 else
 	SRC_URI="${SRC_URI}
 		${MOZ_FTP_URI}/${MOZ_PV}/source/firefox-${MOZ_PV}.source.tar.bz2"
-	S="${WORKDIR}/mozilla-release"
+	if [[ ${MOZ_ESR} == 1 ]]; then
+		S="${WORKDIR}/mozilla-esr${PV%%.*}"
+	else
+		S="${WORKDIR}/mozilla-release"
+	fi
 fi
 
 QA_PRESTRIPPED="usr/$(get_libdir)/${PN}/firefox"
@@ -126,6 +136,7 @@ src_unpack() {
 
 src_prepare() {
 	# Apply our patches
+	EPATCH_EXCLUDE="6012_fix_shlibsign.patch" \
 	EPATCH_SUFFIX="patch" \
 	EPATCH_FORCE="yes" \
 	epatch "${WORKDIR}/firefox"
@@ -194,8 +205,6 @@ src_configure() {
 	# Other ff-specific settings
 	mozconfig_annotate '' --with-default-mozilla-five-home=${MOZILLA_FIVE_HOME}
 	mozconfig_annotate '' --target="${CTARGET:-${CHOST}}"
-
-	mozconfig_use_enable system-sqlite
 
 	# Allow for a proper pgo build
 	if use pgo; then
@@ -273,11 +282,11 @@ src_install() {
 	local size sizes icon_path icon name
 	if use bindist; then
 		sizes="16 32 48"
-		icon_path="${S}/browser/branding/unofficial"
+		icon_path="${S}/browser/branding/aurora"
 		# Firefox's new rapid release cycle means no more codenames
 		# Let's just stick with this one...
-		icon="tumucumaque"
-		name="Tumucumaque"
+		icon="aurora"
+		name="Aurora"
 	else
 		sizes="16 22 24 32 256"
 		icon_path="${S}/browser/branding/official"
