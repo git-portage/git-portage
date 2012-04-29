@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/deja-dup
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/ChangeLog,v 1.14 2012/04/23 11:17:09 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/ChangeLog,v 1.15 2012/04/29 14:59:17 maekke Exp $
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> deja-dup-22.0.ebuild:
+  x86 stable, bug #410611
 
 *deja-dup-22.1 (23 Apr 2012)
 
