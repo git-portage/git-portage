@@ -1,13 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ekopath/Attic/ekopath-4.0.11_pre20110804-r1.ebuild,v 1.1 2011/08/04 16:54:41 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ekopath/Attic/ekopath-4.0.12.1_pre20120430.ebuild,v 1.1 2012/04/30 19:55:05 xarthisius Exp $
 
 EAPI=4
 
 inherit versionator
 
-MY_PV=$(get_version_component_range 1-3)
-DATE=$(get_version_component_range 4)
+MY_PV=$(get_version_component_range 1-4)
+DATE=$(get_version_component_range 5)
 DATE=${DATE/pre}
 DATE=${DATE:0:4}-${DATE:4:2}-${DATE:6}
 
@@ -31,6 +31,7 @@ QA_PREBUILT="
 	opt/${PN}/bin/funclookup
 	opt/${PN}/bin/doctool
 	opt/${PN}/bin/subclient
+	opt/${PN}/bin/subserver
 	opt/${PN}/bin/assign"
 
 pkg_pretend() {
@@ -42,6 +43,7 @@ pkg_pretend() {
 		ewarn "  emerge -C rpm && emerge -1 ${PN} && emerge -1 rpm"
 		die
 	fi
+	echo opt/${PN}/lib/${MY_PV}/x8664/64/libeh.so
 }
 
 src_unpack() {
@@ -64,6 +66,7 @@ src_install() {
 
 	./${P}.run \
 		--prefix "${D}/opt/${PN}" \
+		--disable-components subscriptionmanager \
 		--mode unattended || die
 
 	# This is a temporary/partial fix to remove a RWX GNU STACK header
@@ -74,5 +77,7 @@ src_install() {
 	/usr/bin/scanelf -Xe "${D}/opt/ekopath/lib/4.0.11/x8664/64/libstl.so"
 
 	rm -rf "${D}"/opt/${PN}/uninstall || die
+	rm -rf "${D}"/opt/${PN}/bin/{pathdb,funclookup} || die #libtinfo
+	rm -rf "${D}"/opt/${PN}/lib/${MY_PV}/x8664/coco || die #DT_PATH
 	doenvd "99${PN}"
 }
