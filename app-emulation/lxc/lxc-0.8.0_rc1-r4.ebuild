@@ -1,16 +1,19 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/lxc/Attic/lxc-0.7.5-r3.ebuild,v 1.2 2012/03/27 19:01:25 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/lxc/Attic/lxc-0.8.0_rc1-r4.ebuild,v 1.1 2012/05/01 18:09:26 flameeyes Exp $
 
 EAPI="4"
 
 MY_P="${P/_/-}"
 
-inherit eutils linux-info versionator flag-o-matic
+BACKPORTS=1
+
+inherit eutils linux-info versionator flag-o-matic ${BACKPORTS:+autotools}
 
 DESCRIPTION="LinuX Containers userspace utilities"
 HOMEPAGE="http://lxc.sourceforge.net/"
-SRC_URI="http://lxc.sourceforge.net/download/lxc/${MY_P}.tar.gz"
+SRC_URI="http://lxc.sourceforge.net/download/lxc/${MY_P}.tar.gz
+	${BACKPORTS:+http://dev.gentoo.org/~flameeyes/${PN}/${MY_P}-backports-${BACKPORTS}.tar.xz}"
 S="${WORKDIR}/${MY_P}"
 
 KEYWORDS="~amd64 ~ppc64 ~x86"
@@ -23,7 +26,7 @@ RDEPEND="sys-libs/libcap"
 
 DEPEND="${RDEPEND}
 	app-text/docbook-sgml-utils
-	>=sys-kernel/linux-headers-2.6.29"
+	>=sys-kernel/linux-headers-3.2"
 
 # For init script, so protect with vanilla, they are not strictly
 # needed.
@@ -31,6 +34,7 @@ RDEPEND="${RDEPEND}
 	!vanilla? (
 		sys-apps/util-linux
 		app-misc/pax-utils
+		>=sys-apps/openrc-0.9.9.1
 	)"
 
 CONFIG_CHECK="~CGROUPS
@@ -44,7 +48,17 @@ CONFIG_CHECK="~CGROUPS
 	~DEVPTS_MULTIPLE_INSTANCES
 	~CGROUP_FREEZER
 	~UTS_NS ~NET_NS
-	~VETH ~MACVLAN"
+	~VETH ~MACVLAN
+
+	~POSIX_MQUEUE
+	~!NETPRIO_CGROUP
+
+	~!GRKERNSEC_CHROOT_MOUNT
+	~!GRKERNSEC_CHROOT_DOUBLE
+	~!GRKERNSEC_CHROOT_PIVOT
+	~!GRKERNSEC_CHROOT_CHMOD
+	~!GRKERNSEC_CHROOT_CAPS
+"
 
 ERROR_DEVPTS_MULTIPLE_INSTANCES="CONFIG_DEVPTS_MULTIPLE_INSTANCES:	needed for pts inside container"
 
@@ -56,7 +70,24 @@ ERROR_NET_NS="CONFIG_NET_NS:	needed for unshared network"
 ERROR_VETH="CONFIG_VETH:	needed for internal (host-to-container) networking"
 ERROR_MACVLAN="CONFIG_MACVLAN:	needed for internal (inter-container) networking"
 
-DOCS=(AUTHORS CONTRIBUTING MAINTAINERS NEWS TODO README doc/FAQ.txt)
+ERROR_POSIX_MQUEUE="CONFIG_POSIX_MQUEUE:	needed for lxc-execute command"
+
+ERROR_NETPRIO_CGROUP="CONFIG_NETPRIO_CGROUP:	as of kernel 3.3 and lxc 0.8.0_rc1 this causes LXCs to fail booting."
+
+ERROR_GRKERNSEC_CHROOT_MOUNT=":CONFIG_GRKERNSEC_CHROOT_MOUNT	some GRSEC features make LXC unusable see postinst notes"
+ERROR_GRKERNSEC_CHROOT_DOUBLE=":CONFIG_GRKERNSEC_CHROOT_DOUBLE	some GRSEC features make LXC unusable see postinst notes"
+ERROR_GRKERNSEC_CHROOT_PIVOT=":CONFIG_GRKERNSEC_CHROOT_PIVOT	some GRSEC features make LXC unusable see postinst notes"
+ERROR_GRKERNSEC_CHROOT_CHMOD=":CONFIG_GRKERNSEC_CHROOT_CHMOD	some GRSEC features make LXC unusable see postinst notes"
+ERROR_GRKERNSEC_CHROOT_CAPS=":CONFIG_GRKERNSEC_CHROOT_CAPS	some GRSEC features make LXC unusable see postinst notes"
+
+DOCS=(AUTHORS CONTRIBUTING MAINTAINERS TODO README doc/FAQ.txt)
+
+src_prepare() {
+	if [[ -n ${BACKPORTS} ]]; then
+		epatch "${S}"/patches/*
+		eautoreconf
+	fi
+}
 
 src_configure() {
 	append-flags -fno-strict-aliasing
@@ -67,7 +98,6 @@ src_configure() {
 		--docdir=/usr/share/doc/${PF} \
 		--with-config-path=/etc/lxc	\
 		--with-rootfs-path=/usr/lib/lxc/rootfs \
-		--with-linuxdir="${KERNEL_DIR}" \
 		--enable-doc \
 		$(use_enable examples)
 }
@@ -86,7 +116,7 @@ src_install() {
 	use vanilla && return 0
 
 	# Gentoo-specific additions!
-	newinitd "${FILESDIR}/${PN}.initd" ${PN}
+	newinitd "${FILESDIR}/${PN}.initd.2" ${PN}
 	keepdir /var/log/lxc
 }
 
@@ -108,4 +138,9 @@ pkg_postinst() {
 	ewarn ""
 	ewarn "To use the Fedora, Debian and (various) Ubuntu auto-configuration scripts, you"
 	ewarn "will need sys-apps/yum or dev-util/debootstrap."
+	ewarn ""
+	ewarn "Some GrSecurity settings in relation to chroot security will cause LXC not to"
+	ewarn "work, while others will actually make it much more secure. Please refer to"
+	ewarn "Diego Elio Pettenò's weblog at http://blog.flameeyes.eu/tag/lxc for further"
+	ewarn "details."
 }
