@@ -1,11 +1,12 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/hivex/Attic/hivex-1.3.3.ebuild,v 1.1 2012/02/26 19:56:32 maksbotan Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/hivex/hivex-1.3.2-r2.ebuild,v 1.1 2012/05/02 12:24:25 maksbotan Exp $
 
 EAPI=4
 
 WANT_AUTOMAKE="1.11"
 AUTOTOOLS_IN_SOURCE_BUILD=1
+AUTOTOOLS_AUTORECONF=1
 
 PYTHON_DEPEND="python? 2:2.6"
 inherit base autotools-utils perl-app python
@@ -36,7 +37,9 @@ DEPEND="${RDEPEND}
 				dev-perl/Test-Pod-Coverage ) )
 	ruby? ( dev-ruby/rake )
 	"
-PATCHES=("${FILESDIR}"/"${PV}")
+PATCHES=("${FILESDIR}"/autoconf_fix-${PV}.patch
+"${FILESDIR}"/python-test-fix-${PV}.patch
+"${FILESDIR}"/ruby_runpath_fix-${PV}.patch)
 DOCS=(README)
 
 pkg_setup() {
@@ -48,8 +51,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	EPATCH_SUFFIX=patch  EPATCH_FORCE=yes base_src_prepare
-	eautoreconf
+	autotools-utils_src_prepare
 }
 
 src_configure() {
