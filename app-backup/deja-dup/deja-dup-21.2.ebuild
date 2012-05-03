@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-21.2.ebuild,v 1.4 2012/03/10 09:31:32 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-21.2.ebuild,v 1.5 2012/05/03 02:06:09 jdhore Exp $
 
 EAPI=4
 
@@ -31,7 +31,7 @@ DEPEND="${COMMON_DEPEND}
 	app-text/yelp-tools
 	dev-lang/vala:0.14
 	dev-perl/Locale-gettext
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	>=dev-util/intltool-0.40
 	>=sys-devel/gettext-0.17"
 
