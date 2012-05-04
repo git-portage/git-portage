@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/fetchyahoo/Attic/fetchyahoo-2.14.1.ebuild,v 1.1 2011/06/07 14:08:58 eras Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/fetchyahoo/Attic/fetchyahoo-2.14.7.ebuild,v 1.1 2012/05/04 12:26:22 eras Exp $
 
 EAPI=4
 
@@ -36,6 +36,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "Edit /etc/fetchyahoorc or ~/.fetchyahoorc to configure fetchyahoo"
-	elog "The executable name has changed from fetchyahoo.pl to fetchyahoo"
+	elog "Edit /etc/fetchyahoorc or ~/.fetchyahoorc to configure fetchyahoo."
+	elog "The executable name has changed from fetchyahoo.pl to fetchyahoo."
 }
