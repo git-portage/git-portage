@@ -1,12 +1,12 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-22.0.ebuild,v 1.7 2012/05/05 15:22:18 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-22.0.ebuild,v 1.8 2012/05/05 15:24:07 jlec Exp $
 
 EAPI=4
 
 GNOME2_LA_PUNT="yes"
 
-inherit autotools eutils gnome2
+inherit eutils gnome2
 
 DESCRIPTION="Simple backup tool using duplicity back-end"
 HOMEPAGE="https://launchpad.net/deja-dup/"
