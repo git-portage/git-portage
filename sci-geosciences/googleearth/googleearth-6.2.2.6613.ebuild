@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/googleearth/Attic/googleearth-6.2.1.6014.ebuild,v 1.1 2012/03/01 23:07:28 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/googleearth/Attic/googleearth-6.2.2.6613.ebuild,v 1.1 2012/05/05 11:03:09 xmw Exp $
 
 EAPI="4"
 
@@ -17,7 +17,7 @@ SRC_URI="x86? ( http://dl.google.com/dl/earth/client/current/google-earth-stable
 LICENSE="googleearth GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-RESTRICT="mirror strip"
+RESTRICT="binchecks mirror strip"
 IUSE="mdns-bundled +qt-bundled"
 
 GCC_NEEDED="4.2"
@@ -66,37 +66,6 @@ pkg_nofetch() {
 	einfo "Please file a version bump bug on http://bugs.gentoo.org (search existing bugs for googleearth first!)."
 	einfo "By redigesting the file yourself, you will install a different version than the ebuild says, untested!"
 }
-
-QA_TEXTRELS="opt/googleearth/plugins/imageformats/libqjpeg.so
-opt/googleearth/libQtGui.so.4
-opt/googleearth/libwebbrowser.so
-opt/googleearth/libviewsync.so
-opt/googleearth/libspatial.so
-opt/googleearth/libsgutil.so
-opt/googleearth/libsearch.so
-opt/googleearth/libsearchmodule.so
-opt/googleearth/librender.so
-opt/googleearth/libnavigate.so
-opt/googleearth/libmoduleframework.so
-opt/googleearth/libmeasure.so
-opt/googleearth/liblayer.so
-opt/googleearth/libinput_plugin.so
-opt/googleearth/libIGGfx.so
-opt/googleearth/libgps.so
-opt/googleearth/libgooglesearch.so
-opt/googleearth/libgoogleearth_free.so
-opt/googleearth/libgoogleapi.so
-opt/googleearth/libgeobaseutils.so
-opt/googleearth/libgdata.so
-opt/googleearth/libflightsim.so
-opt/googleearth/libevll.so
-opt/googleearth/libcommon_webbrowser.so
-opt/googleearth/libcommon.so
-opt/googleearth/libcommon_platform.so
-opt/googleearth/libcollada.so
-opt/googleearth/libbasicingest.so
-opt/googleearth/libbase.so
-opt/googleearth/libauth.so"
 
 pkg_setup() {
 	GCC_VER="$(gcc-version)"
@@ -149,7 +118,7 @@ src_install() {
 
 	insinto /usr/share/mime/packages
 	doins "${FILESDIR}/${PN}-mimetypes.xml" || die
-	sed "s#/opt/google/earth/free/google-earth/#/opt/${PN}/${PN}#" -i google-earth.desktop || die
+	sed "s#/opt/google/earth/free/google-earth#/opt/${PN}/${PN}#" -i google-earth.desktop || die
 	domenu google-earth.desktop
 	for size in 16 22 24 32 48 64 128 256 ; do
 		insinto /usr/share/icons/hicolor/${size}x${size}/apps
