@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-22.0.ebuild,v 1.6 2012/05/03 02:06:09 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/Attic/deja-dup-22.0.ebuild,v 1.7 2012/05/05 15:22:18 jlec Exp $
 
 EAPI=4
 
@@ -49,13 +49,6 @@ pkg_setup() {
 		--disable-static"
 	export VALAC=$(type -p valac-0.14)
 }
-
-#src_prepare() {
-#	epatch \
-#		"${FILESDIR}"/${PN}-21.2-linguas.patch
-#	eautoreconf
-#	gnome2_src_prepare
-#}
 
 src_install() {
 	gnome2_src_install
