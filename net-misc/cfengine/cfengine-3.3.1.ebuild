@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/cfengine/Attic/cfengine-3.2.3.ebuild,v 1.1 2011/11/01 22:27:01 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/cfengine/Attic/cfengine-3.3.1.ebuild,v 1.1 2012/05/07 14:57:08 idl0r Exp $
 
-EAPI="3"
+EAPI="4"
 
 MY_PV="${PV//_beta/b}"
 MY_PV="${MY_PV/_p/p}"
@@ -17,49 +17,39 @@ LICENSE="GPL-3"
 SLOT="3"
 KEYWORDS="~amd64 ~arm ~ppc ~s390 ~sparc ~x86"
 
-# libvirt disabled for now because it blocks stabilization etc.
-IUSE="examples html mysql postgres qdbm selinux tests tokyocabinet vim-syntax"
+IUSE="examples html libvirt mysql postgres +qdbm selinux tests tokyocabinet vim-syntax"
 
-# libvirt? ( app-emulation/libvirt )
 DEPEND=">=sys-libs/db-4
 	mysql? ( virtual/mysql )
 	postgres? ( dev-db/postgresql-base )
 	selinux? ( sys-libs/libselinux )
 	tokyocabinet? ( dev-db/tokyocabinet )
-	!tokyocabinet? ( qdbm? ( dev-db/qdbm ) )
-	!tokyocabinet? ( !qdbm? ( >=sys-libs/db-4 ) )
+	qdbm? ( dev-db/qdbm )
+	libvirt? ( app-emulation/libvirt )
 	>=dev-libs/openssl-0.9.7
 	dev-libs/libpcre"
 RDEPEND="${DEPEND}"
 PDEPEND="vim-syntax? ( app-vim/cfengine-syntax )"
 
+REQUIRED_USE="qdbm? ( !tokyocabinet )
+	tokyocabinet? ( !qdbm )
+	!tokyocabinet? ( qdbm )
+	!qdbm? ( tokyocabinet )"
+
 S="${WORKDIR}/${MY_P}"
 
 src_configure() {
-	local myconf
-
-	# BDB by default, prefer tokyocabinet above qdbm...
-	# sqlite3 has been added but stated as experimental/broken...
-	if ! use qdbm && ! use tokyocabinet; then
-		myconf="${myconf} --with-berkeleydb=/usr"
-	elif use qdbm && use tokyocabinet; then
-		elog "QDBM and Tokyo Cabinet can't be used together, using Tokyo Cabinet by default"
-		myconf="${myconf} --with-tokyocabinet"
-	elif use qdbm && ! use tokyocabinet; then
-		myconf="${myconf} --with-qdbm"
-	elif ! use qdbm && use tokyocabinet; then
-		myconf="${myconf} --with-tokyocabinet"
-	fi
-
 	# Enforce /var/cfengine for historical compatibility
-	# $(use_with libvirt) \
 	econf \
-		--docdir=/usr/share/doc/"${PF}" \
+		--enable-fhs \
+		--docdir=/usr/share/doc/${PF} \
 		--with-workdir=/var/cfengine \
 		--with-pcre \
-		${myconf} \
+		$(use_with qdbm) \
+		$(use_with tokyocabinet) \
 		$(use_with postgres postgresql) \
 		$(use_with mysql) \
+		$(use_with libvirt) \
 		$(use_enable selinux)
 
 	# Fix Makefile to skip inputs, see below "examples"
@@ -75,7 +65,11 @@ src_install() {
 	newinitd "${FILESDIR}"/cf-execd.rc6 cf-execd || die
 
 	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog README INSTALL
+
+	# Evil workaround for now..
+	mv "${D}"/usr/share/doc/${PN}/ "${D}"/usr/share/doc/${PF}
+
+	dodoc AUTHORS
 
 	if ! use examples; then
 		rm -rf "${D}"/usr/share/doc/${PF}/example*
@@ -100,6 +94,8 @@ src_install() {
 }
 
 pkg_postinst() {
+	echo
+	elog "NOTE: BDB (BerkelyDB) support has been removed as of ${PN}-3.3.0"
 	echo
 	einfo "Init scripts for cf-serverd, cf-monitord, and cf-execd are provided."
 	einfo
