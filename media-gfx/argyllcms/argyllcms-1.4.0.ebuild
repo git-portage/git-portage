@@ -1,8 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/argyllcms/Attic/argyllcms-1.3.5-r1.ebuild,v 1.1 2012/03/10 00:08:36 gregkh Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/argyllcms/Attic/argyllcms-1.4.0.ebuild,v 1.1 2012/05/07 00:22:56 dilfridge Exp $
 
-inherit eutils
+EAPI=4
+
+inherit base
 
 MY_P="Argyll_V${PV}"
 DESCRIPTION="Open source, ICC compatible color management system"
@@ -31,11 +33,7 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}/0001-Add-an-experimental-ColorHug-sensor-driver.patch"
-}
+PATCHES=( "${FILESDIR}/${P}-jpeg.patch" )
 
 src_compile() {
 	# Make it respect LDFLAGS
@@ -43,7 +41,7 @@ src_compile() {
 
 	# Evil hack to get --as-needed working. The build system unfortunately lists all
 	# the shared libraries by default on the command line _before_ the object to be built...
-	echo "STDLIBS += -ldl -lrt -lX11 -lXext -lXxf86vm -lXinerama -lXrandr -lXau -lXdmcp -lXss -ltiff ;" >> Jamtop
+	echo "STDLIBS += -ldl -lrt -lX11 -lXext -lXxf86vm -lXinerama -lXrandr -lXau -lXdmcp -lXss -ltiff -ljpeg ;" >> Jamtop
 
 	local jobnumber=$(echo "${MAKEOPTS}" | sed -ne "/-j/ { s/.*\(-j[[:space:]]*[0-9]\+\).*/\1/; p }")
 	[ ${jobnumber} ] || jobnumber=-j1
@@ -59,21 +57,21 @@ src_install() {
 	cd bin || die
 	local binname
 	for binname in * ; do
-		newbin ${binname} argyll-${binname} || die
+		newbin ${binname} argyll-${binname}
 	done
 	cd .. || die
 
 	if use doc; then
-		dohtml doc/* || die
+		dohtml doc/*
 	fi
 
-	dodoc log.txt Readme.txt ttbd.txt notes.txt || die
+	dodoc log.txt Readme.txt ttbd.txt notes.txt
 
 	insinto /usr/share/${PN}/ref
-	doins   ref/*  || die
+	doins   ref/*
 
 	insinto /etc/udev/rules.d
-	doins libusb/55-Argyll.rules || die
+	doins libusb/55-Argyll.rules
 }
 
 pkg_postinst() {
