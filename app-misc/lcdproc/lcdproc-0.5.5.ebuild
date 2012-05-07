@@ -1,30 +1,34 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/lcdproc/Attic/lcdproc-0.5.2-r2.ebuild,v 1.3 2009/06/13 10:38:47 rbu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/lcdproc/lcdproc-0.5.5.ebuild,v 1.1 2012/05/07 09:51:33 pacho Exp $
 
-WANT_AUTOMAKE="1.9"
-inherit eutils autotools multilib
+EAPI=4
+inherit multilib versionator
+
+MY_PV=$(replace_version_separator 3 '-')
+MY_P=${PN}-${MY_PV}
+S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="Client/Server suite to drive all kinds of LCD (-like) devices"
 HOMEPAGE="http://lcdproc.org/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz
-	mirror://gentoo/${PF}-patches.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
-IUSE="doc debug nfs samba seamless-hbars usb lirc irman joystick"
+IUSE="doc debug hid nfs samba seamless-hbars usb lirc irman joystick ftdi"
 
 # The following array holds the USE_EXPANDed keywords
 IUSE_LCD_DEVICES=(ncurses bayrad cfontz cfontz633 cfontzpacket
 	cwlinux eyeboxone g15 graphlcd glk
 	hd44780 icpa106 imon imonlcd iowarrior
 	lb216 lcdm001 lcterm
-	md8800 ms6931 mtcs16209x mtxorb noritakevfd
+	md8800 mdm166a ms6931 mtcs16209x mtxorb noritakevfd
 	pyramid sed1330 sed1520 serialvfd sli
-	stv5730 svga t6963 text tyan
-	ula200 xosd ea65 picolcd serialpos )
+	stv5730 SureElec svga t6963 text tyan
+	ula200 xosd ea65 picolcd serialpos
+	i2500vfd irtrans lis shuttlevfd )
 
 # Iterate through the array and add the lcd_devices_* that we support
 NUM_DEVICES=${#IUSE_LCD_DEVICES[@]}
@@ -34,23 +38,31 @@ while [ "${index}" -lt "${NUM_DEVICES}" ] ; do
 	let "index = ${index} + 1"
 done
 
+REQUIRED_USE="lcd_devices_mdm166a? ( hid )"
+
 RDEPEND="
-	usb?      ( =virtual/libusb-0* )
+	usb?      ( virtual/libusb:0 )
+	ftdi?     ( dev-embedded/libftdi )
 	lirc?     ( app-misc/lirc )
 	irman?    ( media-libs/libirman )
+	hid?	  ( >=dev-libs/libhid-0.2.16 )
 
 	lcd_devices_graphlcd?  ( app-misc/graphlcd-base  app-misc/glcdprocdriver )
-	lcd_devices_g15?      ( dev-libs/libg15  >=dev-libs/libg15render-1.1.1 )
+	lcd_devices_g15?       ( dev-libs/libg15  dev-libs/libg15render )
 	lcd_devices_ncurses?   ( sys-libs/ncurses )
-	lcd_devices_svga?     ( media-libs/svgalib )
-	lcd_devices_ula200?   ( >=dev-embedded/libftdi-0.7  =virtual/libusb-0* )
-	lcd_devices_xosd?     ( x11-libs/xosd  x11-libs/libX11  x11-libs/libXext )
-	lcd_devices_cfontzpacket? ( =virtual/libusb-0* )
-	lcd_devices_cwlinux?    ( =virtual/libusb-0* )
-	lcd_devices_pyramid?  ( =virtual/libusb-0* )
-	lcd_devices_picolcd?  ( =virtual/libusb-0* )"
+	lcd_devices_svga?      ( media-libs/svgalib )
+	lcd_devices_ula200?    ( dev-embedded/libftdi )
+	lcd_devices_xosd?      ( x11-libs/xosd  x11-libs/libX11  x11-libs/libXext )
+	lcd_devices_cfontzpacket? ( virtual/libusb:0 )
+	lcd_devices_cwlinux?    ( virtual/libusb:0 )
+	lcd_devices_pyramid?    ( virtual/libusb:0 )
+	lcd_devices_picolcd?    ( virtual/libusb:0 )
+	lcd_devices_i2500vfd?   ( dev-embedded/libftdi )
+	lcd_devices_lis?        ( dev-embedded/libftdi virtual/libusb:0 )
+	lcd_devices_shuttlevfd? ( virtual/libusb:0 )"
 DEPEND="${RDEPEND}
-	doc?      ( app-text/xmlto )"
+	doc? ( app-text/xmlto
+	       app-text/docbook-xml-dtd:4.5 )"
 RDEPEND="${RDEPEND}
 	lcd_devices_g15?      ( app-misc/g15daemon )"
 
@@ -61,31 +73,23 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${WORKDIR}"/${PF}-patches/${PV}-imonlcd-0.3.patch
-
-	epatch "${WORKDIR}"/${PF}-patches/${PV}-picolcd.patch
-
-	sed -i "79s:server/drivers:/usr/$(get_libdir)/lcdproc:" LCDd.conf
+src_prepare() {
+	sed -i "37s:server/drivers:/usr/$(get_libdir)/lcdproc:" LCDd.conf || die
 	einfo "Patching LCDd.conf to use DriverPath=/usr/$(get_libdir)/lcdproc/"
-
-	eautoreconf
 }
 
-src_compile() {
+src_configure() {
 	# This array contains the driver names required by configure --with-drivers=
 	# The positions must be the same as the corresponding use_expand flags
 	local DEVICE_DRIVERS=(curses bayrad CFontz CFontz633 CFontzPacket
 		CwLnx EyeboxOne g15 glcdlib glk
 		hd44780 icp_a106 imon imonlcd IOWarrior
 		lb216 lcdm001 lcterm
-		MD8800 ms6931 mtc_s16209x MtxOrb NoritakeVFD
+		MD8800 mdm166a ms6931 mtc_s16209x MtxOrb NoritakeVFD
 		pyramid sed1330 sed1520 serialVFD sli
-		stv5730 svga t6963 text tyan
-		ula200 xosd ea65 picolcd serialPOS)
+		stv5730 SureElec svga t6963 text tyan
+		ula200 xosd ea65 picolcd serialPOS
+		i2500vfd irtrans lis shuttleVFD )
 
 	# Generate comma separated list of drivers
 	COMMA_DRIVERS=""
@@ -110,26 +114,34 @@ src_compile() {
 		# Patch the config to contain a driver that is actually installed instead of the default
 		elog "Compiling the following drivers for LCDd: ${COMMA_DRIVERS}"
 		elog "Setting Driver=${FIRST_DRIVER} in LCDd.conf"
-		sed -i "44s:curses:${FIRST_DRIVER}:" LCDd.conf
+		sed -i "53s:curses:${FIRST_DRIVER}:" LCDd.conf || die
 	fi
 
-	local ENABLEUSB
-	if use lcd_devices_cfontzpacket || use lcd_devices_cwlinux || use lcd_devices_pyramid; then
-		ENABLEUSB="--enable-libusb"
+	local EXTRA_CONF
+	if use lcd_devices_cfontzpacket || use lcd_devices_cwlinux || use lcd_devices_pyramid || \
+		use lcd_devices_picolcd || use lcd_devices_lis || use lcd_devices_shuttlevfd ; then
+		EXTRA_CONF="--enable-libusb"
 	else
-		ENABLEUSB="$(use_enable usb libusb)"
+		EXTRA_CONF="$(use_enable usb libusb)"
 	fi
 
-	econf \
+	if use lcd_devices_ula200 || use lcd_devices_i2500vfd || use lcd_devices_lis ; then
+		EXTRA_CONF="${EXTRA_CONF} --enable-libftdi"
+	else
+		EXTRA_CONF="${EXTRA_CONF} $(use_enable ftdi libftdi)"
+	fi
+
+	econf --enable-extra-charmaps \
 		$(use_enable debug) \
 		$(use_enable nfs stat-nfs) \
 		$(use_enable samba stat-smbfs ) \
 		$(use_enable seamless-hbars) \
-		${ENABLEUSB} \
-		"--enable-drivers=${COMMA_DRIVERS}"  \
-		|| die "configure failed"
+		${EXTRA_CONF} \
+		"--enable-drivers=${COMMA_DRIVERS}"
+}
 
-	emake || die "make failed"
+src_compile() {
+	default
 
 	if use doc; then
 		ebegin "Creating user documentation"
@@ -158,19 +170,18 @@ append-driver() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install
 
 	# move example clients installed to /usr/bin
 	rm -f "${D}"/usr/bin/{tail,lcdmetar,iosock,fortune,x11amp}.pl
 	insinto /usr/share/lcdproc/clients
 	doins clients/examples/*.pl
-	doins clients/metar/
+	doins clients/metar/*.pl
 
 	newinitd "${FILESDIR}/0.5.1-LCDd.initd" LCDd
 	newinitd "${FILESDIR}/0.5.2-r2-lcdproc.initd" lcdproc
 
 	dodoc README CREDITS ChangeLog INSTALL TODO
-	dodoc docs/README.* docs/*.txt
 
 	if use doc; then
 		insinto /usr/share/doc/${PF}/lcdproc-user
@@ -178,9 +189,4 @@ src_install() {
 		insinto /usr/share/doc/${PF}/lcdproc-dev
 		doins docs/lcdproc-dev/*.html
 	fi
-}
-
-pkg_postinst() {
-	ewarn "IMPORTANT: Please update your /etc/LCDd.conf"
-	ewarn "As of lcdproc-0.5.1-r2, the DriverPath changed from /usr/share/lcdproc to /usr/$(get_libdir)/lcdproc ."
 }
