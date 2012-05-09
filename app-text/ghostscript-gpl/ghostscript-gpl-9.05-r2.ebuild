@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/ghostscript-gpl/Attic/ghostscript-gpl-9.05.ebuild,v 1.5 2012/05/04 03:33:15 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/ghostscript-gpl/Attic/ghostscript-gpl-9.05-r2.ebuild,v 1.1 2012/05/09 19:48:38 tgurr Exp $
 
 EAPI=3
 
@@ -14,7 +14,7 @@ GSDJVU_PV=1.5
 PVM=$(get_version_component_range 1-2)
 SRC_URI="
 	mirror://sourceforge/ghostscript/${MY_P}.tar.bz2
-	mirror://gentoo/${P}-patchset-1.tar.bz2
+	mirror://gentoo/${P}-patchset-2.tar.bz2
 	!bindist? ( djvu? ( mirror://sourceforge/djvu/gsdjvu-${GSDJVU_PV}.tar.gz ) )"
 
 LICENSE="GPL-3 CPL-1.0"
@@ -44,7 +44,7 @@ DEPEND="${COMMON_DEPEND}
 	virtual/pkgconfig"
 
 RDEPEND="${COMMON_DEPEND}
-	>=app-text/poppler-data-0.4.4
+	>=app-text/poppler-data-0.4.5-r1
 	>=media-fonts/urw-fonts-2.4.9
 	linguas_ja? ( media-fonts/kochi-substitute )
 	linguas_ko? ( media-fonts/baekmuk-fonts )
@@ -215,6 +215,9 @@ src_install() {
 			doins "${WORKDIR}/fontmaps/cidfmap.${X}" || die "doins cidfmap.${X} failed"
 		fi
 	done
+
+	# install the CMaps from poppler-data properly, bug 409361
+	dosym /usr/share/poppler/cMaps /usr/share/ghostscript/${PVM}/Resource/CMap
 
 	use static-libs || find "${D}" -name '*.la' -delete
 }
