@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/hostapd/Attic/hostapd-0.6.9.ebuild,v 1.7 2011/10/27 17:12:33 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/hostapd/Attic/hostapd-1.0.ebuild,v 1.1 2012/05/10 20:02:41 gurligebis Exp $
 
 EAPI="2"
 
-inherit toolchain-funcs
+inherit toolchain-funcs eutils
 
 DESCRIPTION="IEEE 802.11 wireless LAN Host AP daemon"
 HOMEPAGE="http://hostap.epitest.fi"
@@ -12,8 +12,8 @@ SRC_URI="http://hostap.epitest.fi/releases/${P}.tar.gz"
 
 LICENSE="|| ( GPL-2 BSD )"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
-IUSE="ipv6 logwatch madwifi +ssl +wps"
+KEYWORDS="~amd64 ~mips ~ppc ~x86"
+IUSE="debug ipv6 logwatch madwifi +ssl +wps"
 
 DEPEND="ssl? ( dev-libs/openssl )
 	dev-libs/libnl:1.1
@@ -50,6 +50,7 @@ src_configure() {
 	if use wps; then
 		# Enable Wi-Fi Protected Setup
 		echo "CONFIG_WPS=y" >> ${CONFIG}
+		echo "CONFIG_WPS2=y" >> ${CONFIG}
 		echo "CONFIG_WPS_UPNP=y" >> ${CONFIG}
 		einfo "Enabling Wi-Fi Protected Setup support"
 	fi
@@ -72,6 +73,8 @@ src_configure() {
 	einfo "  Wired driver enabled"
 	echo "CONFIG_DRIVER_PRISM54=y" >> ${CONFIG}
 	einfo "  Prism54 driver enabled"
+	echo "CONFIG_DRIVER_NONE=y" >> ${CONFIG}
+	einfo "  None driver enabled"
 
 	if use madwifi; then
 		# Add include path for madwifi-driver headers
@@ -84,7 +87,6 @@ src_configure() {
 
 	einfo "  nl80211 driver enabled"
 	echo "CONFIG_DRIVER_NL80211=y" >> ${CONFIG}
-	echo "CFLAGS += -I/usr/include/netlink" >> ${CONFIG}
 	echo "LIBS += -L/usr/lib" >> ${CONFIG}
 
 	# misc
@@ -101,6 +103,17 @@ src_configure() {
 		# IPv6 support
 		echo "CONFIG_IPV6=y" >> ${CONFIG}
 	fi
+
+	if ! use debug; then
+		echo "CONFIG_NO_STDOUT_DEBUG=y" >> ${CONFIG}
+	fi
+
+	# If we are using libnl 2.0 and above, enable support for it
+	# Removed for now, since the 3.2 version is broken, and we don't
+	# support it.
+	#if has_version ">=dev-libs/libnl-2.0"; then
+	#	echo "CONFIG_LIBNL20=y" >> .config
+	#fi
 
 	# TODO: Add support for BSD drivers
 
