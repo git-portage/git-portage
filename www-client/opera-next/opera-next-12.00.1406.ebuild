@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/opera-next/Attic/opera-next-12.00.1385.ebuild,v 1.1 2012/04/24 09:46:08 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/opera-next/Attic/opera-next-12.00.1406.ebuild,v 1.1 2012/05/10 14:29:47 jer Exp $
 
 EAPI="4"
 
@@ -17,7 +17,7 @@ IUSE="elibc_FreeBSD gtk gtk3 kde +gstreamer"
 O_V="$(get_version_component_range 1-2)" # Major version, i.e. 11.00
 O_B="$(get_version_component_range 3)"   # Build version, i.e. 1156
 
-O_D="sasha_${O_V}-${O_B}"
+O_D="328_${O_V}-${O_B}"
 O_P="${PN}-${O_V}-${O_B}"
 O_U="http://snapshot.opera.com/unix/"
 
@@ -140,22 +140,23 @@ src_prepare() {
 	# Unzip the man pages before sedding
 	gunzip share/man/man1/* || die
 
+	local OPERA_SUFFIX= OPERA__SUFFIX= OPERAU_SUFFIX=
+	if [[ ${PN} = opera-next ]]; then
+		OPERA_SUFFIX="-next"
+		OPERA__SUFFIX=" Next"
+		OPERA_USUFFIX="-NEXT"
+	fi
+
 	# Replace PREFIX, SUFFIX and PN in various files
 	sed -i \
 		-e "s:@@{PREFIX}:/usr:g" \
-		-e "s:@@{SUFFIX}::g" \
-		-e "s:@@{_SUFFIX}::g" \
-		-e "s:@@{USUFFIX}::g" \
-		-e "s:opera:${PN}:g" \
+		-e "s:@@{SUFFIX}:${OPERA_SUFFIX}:g" \
+		-e "s:@@{_SUFFIX}:${OPERA__SUFFIX}:g" \
+		-e "s:@@{USUFFIX}:${OPERA_USUFFIX}:g" \
 		share/man/man1/* \
+		share/mime/packages/* \
 		share/applications/${PN}-*.desktop \
 		|| die
-
-	# Replace "Opera" with "Opera Next"
-	if [[ ${PN} = opera-next ]]; then
-		sed -i share/applications/${PN}-*.desktop \
-			-e "/^Name=Opera\|^ Next/s:Opera:& Next:" || die
-	fi
 
 	# Create /usr/bin/opera wrapper
 	echo '#!/bin/sh' > ${PN}
