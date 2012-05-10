@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/hwids/Attic/hwids-20120408.ebuild,v 1.3 2012/04/21 06:32:52 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/hwids/Attic/hwids-20120507.ebuild,v 1.1 2012/05/10 05:00:34 flameeyes Exp $
 
 EAPI="4"
 
