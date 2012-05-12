@@ -1,9 +1,9 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vserver-sources/Attic/vserver-sources-2.3.2.7-r1.ebuild,v 1.1 2012/03/05 15:25:09 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vserver-sources/Attic/vserver-sources-2.3.3.3.ebuild,v 1.1 2012/05/12 19:37:54 hollow Exp $
 
 ETYPE="sources"
-CKV="3.2.9"
+CKV="3.3.5"
 
 K_USEPV=1
 K_NOSETEXTRAVERSION=1
