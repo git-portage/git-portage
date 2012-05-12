@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/ganeti/Attic/ganeti-2.5.0_rc5.ebuild,v 1.1 2012/03/09 04:48:43 ramereth Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/ganeti/Attic/ganeti-2.5.1.ebuild,v 1.1 2012/05/12 08:10:23 ramereth Exp $
 
 EAPI="4"
 
@@ -61,6 +61,7 @@ DEPEND="xen? ( >=app-emulation/xen-3.0 )
 	sys-apps/iproute2
 	sys-fs/lvm2
 	>=sys-apps/baselayout-2.0
+	>=dev-lang/python-2.6
 	${GIT_DEPEND}"
 RDEPEND="${DEPEND}
 	!app-emulation/ganeti-htools"
@@ -87,6 +88,9 @@ src_configure () {
 		myconf="--with-shared-file-storage-dir=/var/lib/ganeti-storage/shared"
 	else
 		myconf="--with-shared-file-storage-dir=no"
+	fi
+	if use kvm && [ -f /usr/bin/qemu-kvm ] ; then
+		myconf="--with-kvm-path=/usr/bin/qemu-kvm"
 	fi
 	econf --localstatedir=/var \
 		--docdir=/usr/share/doc/${P} \
@@ -117,8 +121,4 @@ src_install () {
 	keepdir /var/{lib,log,run}/ganeti/
 	keepdir /usr/share/ganeti/os/
 	keepdir /var/lib/ganeti-storage/{export,file,shared}/
-}
-
-pkg_postinst () {
-	bash-completion_pkg_postinst
 }
