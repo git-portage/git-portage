@@ -1,9 +1,9 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/mongoid/Attic/mongoid-2.4.5.ebuild,v 1.1 2012/02/22 23:56:43 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/mongoid/mongoid-2.4.10.ebuild,v 1.1 2012/05/12 20:43:50 flameeyes Exp $
 
 EAPI=4
-USE_RUBY="ruby18"
+USE_RUBY="ruby18 ruby19"
 
 #RUBY_FAKEGEM_TASK_DOC=""
 # functional testing crashes Ruby from within Portage, but works
@@ -11,7 +11,7 @@ USE_RUBY="ruby18"
 # unit testing works.
 RUBY_FAKEGEM_TASK_TEST="spec:unit spec:functional"
 
-RUBY_FAKEGEM_EXTRADOC="README.md"
+RUBY_FAKEGEM_EXTRADOC="README.md CHANGELOG.md"
 
 RUBY_FAKEGEM_GEMSPEC="${PN}.gemspec"
 
@@ -54,7 +54,7 @@ all_ruby_prepare() {
 	# remove the Gemfile as well or it'll try to load it during testing
 	rm Gemfile || die
 
-	epatch "${FILESDIR}"/${P}-gentoo.patch
+	#epatch "${FILESDIR}"/${PN}-2.4.5-gentoo.patch
 }
 
 each_ruby_test() {
