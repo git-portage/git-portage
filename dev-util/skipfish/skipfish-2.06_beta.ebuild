@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/skipfish/Attic/skipfish-1.52_beta.ebuild,v 1.1 2010/07/29 11:16:07 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/skipfish/Attic/skipfish-2.06_beta.ebuild,v 1.1 2012/05/14 16:21:54 pacho Exp $
 
-EAPI=2
+EAPI=4
 inherit toolchain-funcs
 
 MY_P=${P/_beta/b}
@@ -16,9 +16,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-DEPEND="dev-libs/openssl
+RDEPEND="dev-libs/openssl:0
 	net-dns/libidn
 	sys-libs/zlib"
+DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
@@ -39,17 +40,17 @@ src_compile() {
 	local _debug
 	use debug && _debug=debug
 
-	emake ${_debug} || die
+	emake ${_debug}
 }
 
 src_install() {
-	dobin ${PN} || die
-	doman ${PN}.1 || die
+	dobin ${PN}
+	doman ${PN}.1
 
 	insinto /usr/share/${PN}/dictionaries
-	doins dictionaries/*.wl || die
+	doins dictionaries/*.wl
 
-	dohtml assets/* || die
+	dohtml assets/*
 
 	dodoc ChangeLog dictionaries/README-FIRST README
 }
