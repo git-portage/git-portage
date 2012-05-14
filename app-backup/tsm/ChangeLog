@@ -1,6 +1,15 @@
 # ChangeLog for app-backup/tsm
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/ChangeLog,v 1.10 2012/02/12 11:56:50 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/ChangeLog,v 1.11 2012/05/14 16:12:10 pacho Exp $
+
+*tsm-6.3.0.5 (14 May 2012)
+*tsm-6.3.0.0 (14 May 2012)
+
+  14 May 2012; Pacho Ramos <pacho@gentoo.org> +tsm-6.3.0.0.ebuild,
+  +tsm-6.3.0.5.ebuild, files/dsmc.conf.d, files/dsmc.init.d,
+  files/dsmcad.init.d, files/tsm.logrotate, metadata.xml, tsm-6.2.2.0-r1.ebuild:
+  Version bump (#390581) that also fixes logrotate config file (#375041), thanks
+  a lot to Martin von Gagern that also becomes maintainer with me as proxy.
 
   12 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org> tsm-6.2.2.0-r1.ebuild,
   files/dsmc.init.d:
