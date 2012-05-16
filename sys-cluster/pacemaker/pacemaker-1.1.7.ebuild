@@ -1,29 +1,32 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/pacemaker/Attic/pacemaker-1.1.5.ebuild,v 1.4 2011/10/18 18:40:04 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/pacemaker/pacemaker-1.1.7.ebuild,v 1.1 2012/05/16 15:08:26 ultrabug Exp $
 
-EAPI=3
+EAPI=4
 
 inherit autotools base python
 
 MY_PN=Pacemaker
 MY_P=${MY_PN}-${PV}
+MY_TREE="b5b0a7b"
 PYTHON_DEPEND="2"
 
 DESCRIPTION="Pacemaker CRM"
 HOMEPAGE="http://www.linux-ha.org/wiki/Pacemaker"
-SRC_URI="http://hg.clusterlabs.org/${PN}/1.1/archive/${MY_P}.tar.bz2"
+SRC_URI="https://github.com/ClusterLabs/${PN}/tarball/${MY_P} -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~hppa ~x86"
-IUSE="acl heartbeat smtp snmp static-libs"
+REQUIRED_USE="cman? ( !heartbeat )"
+IUSE="acl cman heartbeat smtp snmp static-libs"
 
 DEPEND="
 	app-text/docbook-xsl-stylesheets
 	dev-libs/libxslt
 	sys-cluster/cluster-glue
 	sys-cluster/resource-agents
+	cman? ( sys-cluster/cman )
 	heartbeat? ( >=sys-cluster/heartbeat-3.0.0 )
 	!heartbeat? ( sys-cluster/corosync )
 	smtp? ( net-libs/libesmtp )
@@ -31,11 +34,7 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
-PATCHES=(
-	"${FILESDIR}/${P}-autotools.patch"
-)
-
-S=${WORKDIR}/${MY_PN}-1-1-${MY_P}
+S="${WORKDIR}/ClusterLabs-${PN}-${MY_TREE}"
 
 pkg_setup() {
 	python_set_active_version 2
@@ -45,6 +44,8 @@ pkg_setup() {
 src_prepare() {
 	base_src_prepare
 	sed -i -e "/ggdb3/d" configure.ac || die
+	sed -e "s:<glib/ghash.h>:<glib.h>:" \
+		-i lib/ais/plugin.c || die
 	eautoreconf
 }
 
@@ -56,9 +57,9 @@ src_configure() {
 		--localstatedir=/var \
 		--disable-dependency-tracking \
 		--disable-fatal-warnings \
-		--with-cs-quorum \
-		--without-cman \
 		$(use_with acl) \
+		$(use_with cman cs-quorum) \
+		$(use_with cman cman) \
 		$(use_with heartbeat) \
 		$(use_with smtp esmtp) \
 		$(use_with snmp) \
