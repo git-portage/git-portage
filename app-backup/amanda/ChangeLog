@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/amanda
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.87 2012/05/17 04:59:51 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.88 2012/05/17 05:58:29 robbat2 Exp $
+
+*amanda-3.3.1 (17 May 2012)
+
+  17 May 2012; Robin H. Johnson <robbat2@gentoo.org> +amanda-3.3.1.ebuild,
+  +files/amanda-r4593.patch, +files/amanda-r4595.patch,
+  +files/amanda-r4698.patch:
+  Bump with patches for bug #415587 glib breakage.
 
   17 May 2012; Jeroen Roovers <jer@gentoo.org> amanda-3.2.1.ebuild,
   amanda-3.2.2.ebuild:
