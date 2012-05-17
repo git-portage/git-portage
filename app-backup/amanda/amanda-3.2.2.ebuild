@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.2.ebuild,v 1.3 2012/05/03 02:06:09 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.2.ebuild,v 1.4 2012/05/17 04:59:51 jer Exp $
 
 EAPI=3
 inherit autotools eutils perl-module
@@ -41,6 +41,7 @@ DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )
 	>=app-text/docbook-xsl-stylesheets-1.72.0
 	app-text/docbook-xml-dtd
+	dev-libs/libxslt
 	"
 
 IUSE="curl gnuplot ipv6 kerberos minimal nls readline s3 samba xfs"
