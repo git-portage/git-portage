@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-board/aisleriot/Attic/aisleriot-3.2.2.ebuild,v 1.2 2012/05/04 04:30:09 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-board/aisleriot/Attic/aisleriot-3.4.1.ebuild,v 1.1 2012/05/20 07:37:15 tetromino Exp $
 
 EAPI="3"
 GNOME_TARBALL_SUFFIX="xz"
@@ -19,9 +19,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE="gnome"
 
 # FIXME: quartz support?
-COMMON_DEPEND=">=dev-libs/glib-2.26.0:2
-	>=dev-scheme/guile-1.8.0:12[deprecated,regex]
-	>=gnome-base/librsvg-2.32.0
+# Does not build with guile-2.0.0 or 2.0.1
+COMMON_DEPEND=">=dev-libs/glib-2.31.13:2
+	>=dev-scheme/guile-2.0.5:2[deprecated,regex]
+	>=gnome-base/librsvg-2.32.0:2
 	>=x11-libs/cairo-1.10.0
 	x11-libs/gdk-pixbuf:2
 	>=x11-libs/gtk+-3.0.0:3
@@ -34,10 +35,12 @@ RDEPEND="${COMMON_DEPEND}
 	!<gnome-extra/gnome-games-3.1.1[aisleriot]
 	!<gnome-extra/gnome-games-3"
 DEPEND="${COMMON_DEPEND}
+	app-arch/gzip
+	dev-libs/libxml2
 	>=dev-util/intltool-0.40.4
-	virtual/pkgconfig
 	sys-apps/lsb-release
 	>=sys-devel/gettext-0.12
+	virtual/pkgconfig
 	gnome? (
 		app-text/docbook-xml-dtd:4.3
 		>=app-text/yelp-tools-3.1.1 )"
@@ -54,8 +57,7 @@ pkg_setup() {
 
 	G2CONF="${G2CONF}
 		--with-gtk=3.0
-		--with-smclient
-		--with-guile=1.8
+		--with-guile=2.0
 		--enable-sound
 		--disable-schemas-compile
 		--with-card-theme-formats=all

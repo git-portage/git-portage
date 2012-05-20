@@ -1,9 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-board/aisleriot/Attic/aisleriot-3.2.1.ebuild,v 1.2 2012/05/04 04:30:09 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-board/aisleriot/Attic/aisleriot-3.2.3.2.ebuild,v 1.1 2012/05/20 07:37:15 tetromino Exp $
 
 EAPI="3"
 GNOME_TARBALL_SUFFIX="xz"
+GCONF_DEBUG="yes"
 
 # make sure games is inherited first so that the gnome2
 # functions will be called if they are not overridden
@@ -15,7 +16,7 @@ HOMEPAGE="http://live.gnome.org/Aisleriot"
 LICENSE="GPL-3 LGPL-3 FDL-1.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gnome sound"
+IUSE="gnome"
 
 # FIXME: quartz support?
 COMMON_DEPEND=">=dev-libs/glib-2.26.0:2
@@ -26,8 +27,8 @@ COMMON_DEPEND=">=dev-libs/glib-2.26.0:2
 	>=x11-libs/gtk+-3.0.0:3
 	x11-libs/libICE
 	x11-libs/libSM
-	gnome? ( >=gnome-base/gconf-2.0:2 )
-	sound? ( >=media-libs/libcanberra-0.26[gtk3] )"
+	>=media-libs/libcanberra-0.26[gtk3]
+	gnome? ( >=gnome-base/gconf-2.0:2 )"
 # aisleriot was split off from gnome-games
 RDEPEND="${COMMON_DEPEND}
 	!<gnome-extra/gnome-games-3.1.1[aisleriot]
@@ -55,11 +56,11 @@ pkg_setup() {
 		--with-gtk=3.0
 		--with-smclient
 		--with-guile=1.8
-		$(use_enable sound)
+		--enable-sound
 		--disable-schemas-compile
 		--with-card-theme-formats=all
-		--with-kde-card-theme-path=${EPREFIX}/usr/share/apps/carddecks
-		--with-pysol-card-theme-path=${EPREFIX}${GAMES_DATADIR}/pysolfc"
+		--with-kde-card-theme-path="${EPREFIX}"/usr/share/apps/carddecks
+		--with-pysol-card-theme-path="${EPREFIX}${GAMES_DATADIR}"/pysolfc"
 }
 
 pkg_postinst() {
