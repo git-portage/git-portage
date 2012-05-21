@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/Attic/nvidia-drivers-295.40.ebuild,v 1.5 2012/05/21 22:04:23 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/Attic/nvidia-drivers-295.53.ebuild,v 1.1 2012/05/21 22:04:23 cardoe Exp $
 
 EAPI="2"
 
@@ -9,17 +9,19 @@ inherit eutils unpacker multilib portability versionator linux-mod flag-o-matic 
 X86_NV_PACKAGE="NVIDIA-Linux-x86-${PV}"
 AMD64_NV_PACKAGE="NVIDIA-Linux-x86_64-${PV}"
 X86_FBSD_NV_PACKAGE="NVIDIA-FreeBSD-x86-${PV}"
+AMD64_FBSD_NV_PACKAGE="NVIDIA-FreeBSD-x86_64-${PV}"
 
 DESCRIPTION="NVIDIA X11 driver and GLX libraries"
 HOMEPAGE="http://www.nvidia.com/"
 SRC_URI="x86? ( http://us.download.nvidia.com/XFree86/Linux-x86/${PV}/${X86_NV_PACKAGE}.run )
 	 amd64? ( http://us.download.nvidia.com/XFree86/Linux-x86_64/${PV}/${AMD64_NV_PACKAGE}.run )
+	 amd64-fbsd? ( http://us.download.nvidia.com/XFree86/FreeBSD-x86_64/${PV}/${AMD64_FBSD_NV_PACKAGE}.tar.gz )
 	 x86-fbsd? ( http://us.download.nvidia.com/XFree86/FreeBSD-x86/${PV}/${X86_FBSD_NV_PACKAGE}.tar.gz )"
 
 LICENSE="NVIDIA"
 SLOT="0"
-KEYWORDS="-* amd64 x86 ~x86-fbsd"
-IUSE="acpi custom-cflags gtk multilib kernel_linux"
+KEYWORDS="-* ~amd64 ~x86 ~amd64-fbsd ~x86-fbsd"
+IUSE="acpi custom-cflags multilib kernel_FreeBSD kernel_linux +tools"
 RESTRICT="strip"
 EMULTILIB_PKG="true"
 
@@ -33,9 +35,8 @@ DEPEND="${COMMON}
 RDEPEND="${COMMON}
 	x11-libs/libXvMC
 	acpi? ( sys-power/acpid )
-	gtk? ( x11-libs/gtk+ )"
-PDEPEND=">=x11-libs/libvdpau-0.3-r1
-	gtk? ( media-video/nvidia-settings )"
+	tools? ( x11-libs/gtk+ )"
+PDEPEND=">=x11-libs/libvdpau-0.3-r1"
 
 QA_TEXTRELS_x86="
 	usr/lib/OpenCL/vendors/nvidia/libOpenCL.so.1.0.0
@@ -236,7 +237,8 @@ pkg_setup() {
 
 	# set variables to where files are in the package structure
 	if use kernel_FreeBSD; then
-		S="${WORKDIR}/${X86_FBSD_NV_PACKAGE}"
+		use x86-fbsd   && S="${WORKDIR}/${X86_FBSD_NV_PACKAGE}"
+		use amd64-fbsd && S="${WORKDIR}/${AMD64_FBSD_NV_PACKAGE}"
 		NV_DOC="${S}/doc"
 		NV_EXEC="${S}/obj"
 		NV_LIB="${S}/obj"
@@ -272,7 +274,7 @@ src_unpack() {
 		ewarn "DO NOT file bug reports for kernel versions less than 2.6.7 as they will be ignored."
 	fi
 
-	if ! use x86-fbsd; then
+	if ! use kernel_FreeBSD; then
 		cd "${S}"
 		unpack_makeself
 	else
@@ -282,7 +284,7 @@ src_unpack() {
 
 src_prepare() {
 	# Please add a brief description for every added patch
-	use x86-fbsd && cd doc
+	use kernel_FreeBSD && cd doc
 
 	if use kernel_linux; then
 		# Quiet down warnings the user does not need to see
@@ -312,7 +314,7 @@ src_compile() {
 	# it by itself, pass this.
 
 	cd "${NV_SRC}"
-	if use x86-fbsd; then
+	if use kernel_FreeBSD; then
 		MAKE="$(get_bmake)" CFLAGS="-Wno-sign-compare" emake CC="$(tc-getCC)" \
 			LD="$(tc-getLD)" LDFLAGS="$(raw-ldflags)" || die
 	elif use kernel_linux; then
@@ -344,9 +346,11 @@ src_install() {
 
 		insinto /lib/udev/rules.d
 		newins "${FILESDIR}"/nvidia.udev-rule 99-nvidia.rules
-	elif use x86-fbsd; then
-		insinto /boot/modules
-		doins "${S}/src/nvidia.kld" || die
+	elif use kernel_FreeBSD; then
+		if use x86-fbsd; then
+			insinto /boot/modules
+			doins "${S}/src/nvidia.kld" || die
+		fi
 
 		exeinto /boot/modules
 		doexe "${S}/src/nvidia.ko" || die
@@ -418,24 +422,24 @@ src_install() {
 
 	# Documentation
 	dohtml ${NV_DOC}/html/*
-	if use x86-fbsd; then
+	if use kernel_FreeBSD; then
 		dodoc "${NV_DOC}/README"
 		doman "${NV_MAN}/nvidia-xconfig.1"
-		use gtk && doman "${NV_MAN}/nvidia-settings.1"
+		doman "${NV_MAN}/nvidia-settings.1"
 	else
 		# Docs
 		newdoc "${NV_DOC}/README.txt" README
 		dodoc "${NV_DOC}/NVIDIA_Changelog"
 		doman "${NV_MAN}/nvidia-smi.1.gz"
 		doman "${NV_MAN}/nvidia-xconfig.1.gz"
-		use gtk && doman "${NV_MAN}/nvidia-settings.1.gz"
+		doman "${NV_MAN}/nvidia-settings.1.gz"
 	fi
 
 	# Helper Apps
 	exeinto /opt/bin/
 	doexe ${NV_EXEC}/nvidia-xconfig || die
 	use kernel_linux && { doexe ${NV_EXEC}/nvidia-debugdump || die ; }
-	if use gtk; then
+	if use tools; then
 		doexe ${NV_EXEC}/nvidia-settings || die
 	fi
 	doexe ${NV_EXEC}/nvidia-bug-report.sh || die
@@ -444,16 +448,16 @@ src_install() {
 	fi
 
 	# Desktop entries for nvidia-settings
-	if use gtk && use kernel_linux ; then
+	if use tools && use kernel_linux ; then
 		sed -e 's:__UTILS_PATH__:/opt/bin:' \
 			-e 's:__PIXMAP_PATH__:/usr/share/pixmaps:' \
 			-i "${NV_EXEC}/nvidia-settings.desktop"
 		newmenu ${NV_EXEC}/nvidia-settings.desktop nvidia-settings-opt.desktop
-
-		doicon ${NV_EXEC}/nvidia-settings.png
 	fi
 
-	if has_multilib_profile ; then
+	doicon ${NV_EXEC}/nvidia-settings.png
+
+	if has_multilib_profile && use multilib ; then
 		local OABI=${ABI}
 		for ABI in $(get_install_abis) ; do
 			src_install-libs
@@ -504,7 +508,7 @@ src_install-libs() {
 	# The GLX libraries
 	donvidia ${NV_ROOT}/lib ${libdir}/libGL.so ${sover}
 	donvidia /usr/${inslibdir} ${libdir}/libnvidia-glcore.so ${sover}
-	if use x86-fbsd; then
+	if use kernel_FreeBSD; then
 		donvidia ${NV_ROOT}/lib ${libdir}/libnvidia-tls.so ${sover}
 	else
 		donvidia ${NV_ROOT}/lib ${libdir}/tls/libnvidia-tls.so ${sover}
@@ -566,12 +570,11 @@ pkg_postinst() {
 	elog "If you are having resolution problems, try disabling DynamicTwinView."
 	elog
 
-	if ! use gtk; then
-		elog "USE=gtk controls whether the nvidia-settings application"
+	if ! use tools; then
+		elog "USE=tools controls whether the nvidia-settings application"
 		elog "is installed. If you would like to use it, enable that"
-		elog "flag and re-emerge this ebuild. media-video/nvidia-settings"
-		elog "no longer installs nvidia-settings but only installs the"
-		elog "associated user space libraries."
+		elog "flag and re-emerge this ebuild. Optionally you can install"
+		elog "media-video/nvidia-settings"
 	fi
 }
 
