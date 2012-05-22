@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/zabbix/Attic/zabbix-2.0.0_rc6.ebuild,v 1.1 2012/05/19 03:45:29 mattm Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/zabbix/Attic/zabbix-2.0.0.ebuild,v 1.1 2012/05/22 11:34:02 mattm Exp $
 
 EAPI="2"
 
@@ -24,10 +24,10 @@ COMMON_DEPEND="snmp? ( net-analyzer/net-snmp )
 		=dev-libs/cyrus-sasl-2*
 		net-libs/gnutls
 	)
-	mysql? ( virtual/mysql )
-	sqlite? ( =dev-db/sqlite-3* )
-	postgres? ( dev-db/postgresql-base )
-	oracle? ( dev-db/oracle-instantclient-basic )
+	mysql? ( >=virtual/mysql-5.0 )
+	sqlite? ( >=dev-db/sqlite-3.3.5 )
+	postgres? ( >=dev-db/postgresql-base-8.3.0 )
+	oracle? ( >=dev-db/oracle-instantclient-basic-10.0.0.0 )
 	jabber? ( dev-libs/iksemel )
 	curl? ( net-misc/curl )
 	openipmi? ( sys-libs/openipmi )
@@ -47,7 +47,8 @@ RDEPEND="${COMMON_DEPEND}
 		dev-java/slf4j-api
 		dev-java/json-simple
 	)
-	frontend? ( dev-lang/php[bcmath,ctype,sockets,gd,truetype,xml,session]
+	frontend? (
+		dev-lang/php[bcmath,ctype,sockets,gd,truetype,xml,session,xmlreader,xmlwriter]
 		media-libs/gd[png]
 		app-admin/webapp-config )"
 DEPEND="${COMMON_DEPEND}
@@ -127,8 +128,12 @@ pkg_postinst() {
 		elog "Have a look at /usr/share/zabbix for"
 		elog "database creation and upgrades."
 		elog
+		elog "Execute schema, images, and data sql files in order."
+		elog
 		elog "For more info read the Zabbix manual at"
 		elog "http://www.zabbix.com/documentation.php"
+		elog
+		elog "New use flags: java, odbc, iodbc"
 		elog
 
 		zabbix_homedir=$(egethome zabbix)
@@ -173,21 +178,17 @@ pkg_postinst() {
 	elog
 	elog "Zabbix will be officially supporting database upgrades from"
 	elog "2.0.0rc3 to the final 2.0.0 release when it is available."
-	elog
-	elog "Upgrading from rc3/rc4 to rc5 also requires db update."
-	elog
 	elog "At some point, there should be some support for upgrading from 1.8.x"
 	elog "to a 2.0.x release."
-	elog
-	elog "Upgrading from all previous 1.9.x or 2.0rc releases is not unsupported."
 	elog
 	elog "Note that this is the first gentoo ebuild for 2.0.x and likely"
 	elog "will need further tuning with bumps/revisions as bugs are closed."
 	elog
-	elog "The java use flag is new to 2.0."
-	elog
 	elog "Zabbix is incompatible with fping 3.0 - (Zabbix bug #ZBX-4894)."
 	elog
+	elog "Feel free to download or contribute gentoo specific zabbix templates"
+	elog "via https://github.com/deploylinux/gentooZabbixTemplates (WIP).  We may"
+	elog "eventually create a seperate package in portage for them."
 
 	# repeat fowners/fperms functionality from src_install()
 	# here to catch wrong permissions on existing files in
@@ -290,7 +291,7 @@ src_install() {
 			"${FILESDIR}/1.6.6"/zabbix_server.conf \
 			"${FILESDIR}/1.6.6"/zabbix_trapper.conf
 		doinitd \
-			"${FILESDIR}/1.6.6"/init.d/zabbix-server
+			"${FILESDIR}/2.0"/init.d/zabbix-server
 		dosbin \
 			src/zabbix_server/zabbix_server
 		dodir \
