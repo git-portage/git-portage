@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/kelbt/Attic/kelbt-0.13.ebuild,v 1.2 2009/05/29 22:52:52 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/kelbt/kelbt-0.15.ebuild,v 1.1 2012/05/22 23:46:46 flameeyes Exp $
 
-EAPI=2
+EAPI=4
 
 inherit eutils
 
@@ -16,9 +16,6 @@ KEYWORDS="~amd64 ~x86-fbsd"
 IUSE="vim-syntax"
 
 RDEPEND=""
-
-# Tests are currently broken
-RESTRICT=test
 
 src_prepare() {
 	find "${S}" -iname "Makefile*" -exec sed -i \
