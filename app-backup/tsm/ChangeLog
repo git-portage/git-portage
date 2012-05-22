@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/tsm
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/ChangeLog,v 1.12 2012/05/22 11:18:23 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/ChangeLog,v 1.13 2012/05/22 11:19:59 pacho Exp $
+
+*tsm-6.3.0.5-r1 (22 May 2012)
+*tsm-6.3.0.0-r1 (22 May 2012)
+
+  22 May 2012; Pacho Ramos <pacho@gentoo.org> +tsm-6.3.0.0-r1.ebuild,
+  +tsm-6.3.0.5-r1.ebuild, -tsm-6.3.0.0.ebuild, -tsm-6.3.0.5.ebuild:
+  Previous changes need a revbump, obviously.
 
   22 May 2012; Pacho Ramos <pacho@gentoo.org> tsm-6.3.0.0.ebuild,
   tsm-6.3.0.5.ebuild:
