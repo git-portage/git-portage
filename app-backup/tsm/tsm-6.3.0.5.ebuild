@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.3.0.5.ebuild,v 1.1 2012/05/14 16:12:10 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.3.0.5.ebuild,v 1.2 2012/05/22 11:18:23 pacho Exp $
 
 EAPI=4
 
@@ -175,6 +175,11 @@ src_install() {
 		rm -v "${i}" || die
 		dosym "../..${target}" "${i#${D}}"
 	done
+
+	# Install symlinks for sonames of libraries, bug #416503
+	dosym libvixMntapi.so.1.1.0 $CLIENTDIR/ba/bin/libvixMntapi.so.1
+	dosym libvixDiskLibVim.so.5.0.0 $CLIENTDIR/ba/bin/libvixDiskLibVim.so.5
+	dosym libvixDiskLib.so.5.0.0 $CLIENTDIR/ba/bin/libvixDiskLib.so.5
 
 	fowners -R :tsm /opt/tivoli
 	fperms -R g+rX,o-rx /opt/tivoli # Allow only tsm group users to access TSM tools
