@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/amanda
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.88 2012/05/17 05:58:29 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.89 2012/05/24 04:36:51 vapier Exp $
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> amanda-2.6.0_p2-r4.ebuild,
+  amanda-2.6.1_p2.ebuild, amanda-3.2.1.ebuild, amanda-3.2.2.ebuild,
+  amanda-3.3.0.ebuild, amanda-3.3.1.ebuild:
+  Inherit user for enewuser/etc...
 
 *amanda-3.3.1 (17 May 2012)
 

@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/backuppc-2.1.2-r1.ebuild,v 1.4 2009/10/12 17:17:02 halcy0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backuppc/backuppc-2.1.2-r1.ebuild,v 1.5 2012/05/24 04:37:05 vapier Exp $
 
-inherit eutils webapp
+inherit eutils webapp user
 
 IUSE="samba doc"
 

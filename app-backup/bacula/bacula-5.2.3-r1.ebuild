@@ -1,13 +1,13 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.3-r1.ebuild,v 1.1 2012/01/04 09:02:20 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.3-r1.ebuild,v 1.2 2012/05/24 04:36:18 vapier Exp $
 
 EAPI="4"
 PYTHON_DEPEND="python? 2"
 PYTHON_USE_WITH="threads"
 PYTHON_USE_WITH_OPT="python"
 
-inherit eutils multilib python
+inherit eutils multilib python user
 
 MY_PV=${PV/_beta/-b}
 MY_P=${PN}-${MY_PV}

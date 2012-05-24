@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.11.1.ebuild,v 1.3 2012/03/08 08:54:07 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.11.1.ebuild,v 1.4 2012/05/24 04:36:57 vapier Exp $
 
 EAPI="2"
 
-inherit eutils
+inherit eutils user
 
 DESCRIPTION="A completely automatic on-line backup system"
 HOMEPAGE="http://boxbackup.org/"

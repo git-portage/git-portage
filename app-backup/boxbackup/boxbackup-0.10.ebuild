@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.15 2010/01/03 00:06:09 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/boxbackup-0.10.ebuild,v 1.16 2012/05/24 04:36:57 vapier Exp $
 
-inherit eutils autotools
+inherit eutils autotools user
 
 DESCRIPTION="A completely automatic on-line backup system"
 HOMEPAGE="http://boxbackup.org/"

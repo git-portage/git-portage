@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.2.2.0-r1.ebuild,v 1.4 2012/02/13 04:49:08 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.2.2.0-r1.ebuild,v 1.5 2012/05/24 04:35:57 vapier Exp $
 
 EAPI=3
 
-inherit versionator multilib eutils rpm pax-utils
+inherit versionator multilib eutils rpm pax-utils user
 
 DESCRIPTION="Tivoli Storage Manager (TSM) Backup/Archive (B/A) Client and API"
 HOMEPAGE="http://www.tivoli.com/"

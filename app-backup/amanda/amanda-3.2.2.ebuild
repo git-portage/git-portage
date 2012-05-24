@@ -1,9 +1,9 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.2.ebuild,v 1.4 2012/05/17 04:59:51 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-3.2.2.ebuild,v 1.5 2012/05/24 04:36:51 vapier Exp $
 
 EAPI=3
-inherit autotools eutils perl-module
+inherit autotools eutils perl-module user
 
 MY_P="${P/_}"
 DESCRIPTION="The Advanced Maryland Automatic Network Disk Archiver"

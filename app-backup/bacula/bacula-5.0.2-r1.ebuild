@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.2-r1.ebuild,v 1.10 2011/11/02 21:46:00 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.2-r1.ebuild,v 1.11 2012/05/24 04:36:18 vapier Exp $
 
 EAPI="2"
-inherit eutils multilib
+inherit eutils multilib user
 
 IUSE="bacula-clientonly bacula-nodir bacula-nosd ipv6 logwatch mysql postgres python qt4 readline +sqlite3 ssl static tcpd X"
 # bacula-web bimagemgr brestore bweb

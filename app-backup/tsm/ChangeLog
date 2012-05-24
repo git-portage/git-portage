@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/tsm
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/ChangeLog,v 1.13 2012/05/22 11:19:59 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/ChangeLog,v 1.14 2012/05/24 04:35:57 vapier Exp $
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> tsm-6.2.2.0-r1.ebuild,
+  tsm-6.3.0.0-r1.ebuild, tsm-6.3.0.5-r1.ebuild:
+  Inherit user for enewuser/etc...
 
 *tsm-6.3.0.5-r1 (22 May 2012)
 *tsm-6.3.0.0-r1 (22 May 2012)
