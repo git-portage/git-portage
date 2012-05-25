@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-lib/Attic/freebsd-lib-9.0-r2.ebuild,v 1.35 2012/05/25 15:51:04 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-lib/Attic/freebsd-lib-9.0-r3.ebuild,v 1.1 2012/05/25 15:53:40 aballier Exp $
 
 EAPI=2
 
