@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/spacefm/Attic/spacefm-0.7.5.ebuild,v 1.3 2012/05/05 04:53:44 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/spacefm/Attic/spacefm-0.7.7.ebuild,v 1.1 2012/05/28 02:58:10 hasufell Exp $
 
 EAPI=4
 
-inherit fdo-mime
+inherit fdo-mime linux-info
 
 DESCRIPTION="A multi-panel tabbed file manager"
 HOMEPAGE="http://ignorantguru.github.com/spacefm/"
@@ -53,7 +53,15 @@ pkg_postinst() {
 	elog "Other optional dependencies:"
 	elog "  sys-process/lsof (device processes)"
 	elog "  virtual/eject (eject media)"
-	einfo""
+	einfo
+	if ! has_version 'sys-fs/udisks' ; then
+		elog "When using SpaceFM without udisks, and without the udisks-daemon running,"
+		elog "you may need to enable kernel polling for device media changes to be detected."
+		elog "See /usr/share/doc/${PF}/html/spacefm-manual-en.html#devices-kernpoll"
+		has_version '<sys-fs/udev-173' && ewarn "You need at least udev-173"
+		kernel_is lt 2 6 38 && ewarn "You need at least kernel 2.6.38"
+		einfo
+	fi
 }
 
 pkg_postrm() {
