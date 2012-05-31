@@ -1,12 +1,13 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice-l10n/Attic/libreoffice-l10n-3.4.5-r1.ebuild,v 1.3 2012/01/16 11:53:47 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice-l10n/Attic/libreoffice-l10n-3.5.4.ebuild,v 1.1 2012/05/31 09:41:33 scarabeus Exp $
 
 EAPI=4
 
-MY_PV="3.4.5rc2"
+MY_PV="3.5.4"
 
-BASE_SRC_URI="http://download.documentfoundation.org/${PN/-l10n/}/testing/3.4.5-rc2/rpm/"
+RC_VERSION="rc2" # CHECK ME WITH EVERY BUMP!
+BASE_SRC_URI="http://download.documentfoundation.org/${PN/-l10n/}/stable/${MY_PV}/rpm"
 
 OO_EXTENSIONS=(
 	"472ffb92d82cf502be039203c606643d-Sun-ODF-Template-Pack-en-US_1.0.0.oxt"
@@ -23,15 +24,15 @@ HOMEPAGE="http://www.libreoffice.org"
 
 LICENSE="LGPL-3"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
 IUSE="offlinehelp templates"
 
 LANGUAGES_HELP="bg bn bo bs ca_XV ca cs da de dz el en_GB en en_ZA eo es et eu
-fi fr gl gu he hi hr hu id is it ja ka km ko mk nb ne nl nn om pl pt_BR pt ru si
-sk sl sq sv tg tr ug uk vi zh_CN zh_TW"
+fi fr gl gu he hi hr hu id is it ja ka km ko lb mk nb ne nl nn om pl pt_BR pt ru
+si sk sl sq sv tg tr ug uk vi zh_CN zh_TW"
 LANGUAGES="${LANGUAGES_HELP} af ar as ast be br brx cy dgo fa ga gd kk kn kok ks
 ku lo lt lv mai ml mn mni mr my nr nso oc or pa_IN ro rw sa_IN sat sd sh sr ss
-st sw_TZ ta te th tn ts uz ve xh zu"
+st sw_TZ ta te th tn ts tt uz ve xh zu"
 
 for lang in ${LANGUAGES}; do
 	helppack=""
@@ -103,7 +104,7 @@ src_unpack() {
 
 		# for english we provide just helppack, as translation is always there
 		if [[ ${lang} != en ]]; then
-			rpmdir="LibO_${MY_PV}_Linux_x86_langpack-rpm_${dir}/RPMS/"
+			rpmdir="LibO_${MY_PV}${RC_VERSION}_Linux_x86_langpack-rpm_${dir}/RPMS/"
 			[[ -d ${rpmdir} ]] || die "Missing directory: \"${rpmdir}\""
 			# First remove dictionaries, we want to use system ones.
 			rm -rf "${S}/${rpmdir}/"*dict*.rpm
@@ -111,7 +112,7 @@ src_unpack() {
 		fi
 		if [[ "${LANGUAGES_HELP}" =~ "${lang}" ]] && use offlinehelp; then
 			[[ ${lang} == en ]] && dir="en-US"
-			rpmdir="LibO_${MY_PV}_Linux_x86_helppack-rpm_${dir}/RPMS/"
+			rpmdir="LibO_${MY_PV}${RC_VERSION}_Linux_x86_helppack-rpm_${dir}/RPMS/"
 			[[ -d ${rpmdir} ]] || die "Missing directory: \"${rpmdir}\""
 			rpm_unpack ./"${rpmdir}/"*.rpm
 		fi
@@ -139,18 +140,15 @@ src_configure() { :; }
 src_compile() { :; }
 
 src_install() {
-	local dir="${S}"/opt/${PN/-l10n/}$(get_version_component_range 1-2 ${MY_PV})/basis$(get_version_component_range 1-2 ${MY_PV})/
+	local dir="${S}"/opt/${PN/-l10n/}$(get_version_component_range 1-2 ${MY_PV})/
 	# Condition required for people that do not install anything eg no linguas
 	# or just english with no offlinehelp.
 	if [[ -d "${dir}" ]] ; then
-		if [[ ${PV} == 9999 ]]; then
-			# starting with 3.5 this is in common dir
-			insinto /usr/$(get_libdir)/${PN/-l10n/}/
-		else
-			insinto /usr/$(get_libdir)/${PN/-l10n/}/basis$(get_version_component_range 1-2)/
-		fi
+		insinto /usr/$(get_libdir)/${PN/-l10n/}/
 		doins -r "${dir}"/*
 	fi
+	# remove extensions that are in the l10n for some weird reason
+	rm -rf "${ED}"/usr/$(get_libdir)/${PN/-l10n/}/share/extensions/
 
 	echo "${OO_EXTENSIONS[@]}"
 	office-ext_src_install
