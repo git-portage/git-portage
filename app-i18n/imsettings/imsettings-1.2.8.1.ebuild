@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/imsettings/Attic/imsettings-1.2.2.ebuild,v 1.4 2012/05/23 13:12:48 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/imsettings/imsettings-1.2.8.1.ebuild,v 1.1 2012/05/31 13:20:54 naota Exp $
 
 EAPI=3
 
@@ -28,7 +28,8 @@ RDEPEND=">=dev-libs/check-0.9.4
 	qt4? ( x11-libs/qt-core:4 )
 	xfconf? ( xfce-base/xfconf )"
 DEPEND="${RDEPEND}
-	virtual/pkgconfig
+	dev-util/pkgconfig
+	dev-util/intltool
 	doc? ( dev-util/gtk-doc )"
 
 MY_XINPUTSH="90-xinput"
@@ -41,8 +42,7 @@ src_prepare() {
 	if ! use qt4; then
 		sed -i -e 's:QtCore:dIsAbLe&:' configure || die
 	fi
-
-	epatch "${FILESDIR}/${P}-gtk.patch"
+	epatch "${FILESDIR}"/${PN}-1.2.8.1-glib32.patch
 }
 
 src_configure() {
