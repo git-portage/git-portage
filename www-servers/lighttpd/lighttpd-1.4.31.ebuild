@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.4.28-r4.ebuild,v 1.2 2012/05/02 21:49:38 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.4.31.ebuild,v 1.1 2012/06/01 21:12:21 hwoarang Exp $
 
-EAPI="2"
+EAPI="4"
 
-inherit base eutils autotools depend.php
+inherit base autotools eutils depend.php
 
 DESCRIPTION="Lightweight high-performance web server"
 HOMEPAGE="http://www.lighttpd.net/"
@@ -13,10 +13,11 @@ SRC_URI="http://download.lighttpd.net/lighttpd/releases-1.4.x/${P}.tar.bz2"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
-IUSE="bzip2 doc fam gdbm ipv6 ldap libev lua minimal memcache mysql pcre php rrdtool ssl test webdav xattr"
+IUSE="bzip2 doc fam gdbm ipv6 kerberos ldap libev lua minimal mmap memcache mysql pcre php rrdtool selinux ssl test uploadprogress webdav xattr zlib"
+
+REQUIRED_USE="kerberos? ( ssl )"
 
 RDEPEND="
-	>=sys-libs/zlib-1.1
 	bzip2?    ( app-arch/bzip2 )
 	fam?      ( virtual/fam )
 	gdbm?     ( sys-libs/gdbm )
@@ -28,13 +29,15 @@ RDEPEND="
 	pcre?     ( >=dev-libs/libpcre-3.1 )
 	php?      ( dev-lang/php[cgi] )
 	rrdtool?  ( net-analyzer/rrdtool )
-	ssl?    ( >=dev-libs/openssl-0.9.7 )
+	selinux? ( sec-policy/selinux-apache )
+	ssl?    ( >=dev-libs/openssl-0.9.7[kerberos?] )
 	webdav? (
 		dev-libs/libxml2
 		>=dev-db/sqlite-3
 		sys-fs/e2fsprogs
 	)
-	xattr? ( kernel_linux? ( sys-apps/attr ) )"
+	xattr? ( kernel_linux? ( sys-apps/attr ) )
+	zlib? (	>=sys-libs/zlib-1.1 )"
 
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
@@ -46,19 +49,16 @@ DEPEND="${RDEPEND}
 
 # update certain parts of lighttpd.conf based on conditionals
 update_config() {
-	local config="/etc/lighttpd/lighttpd.conf"
+	local config="${D}/etc/lighttpd/lighttpd.conf"
 
 	# enable php/mod_fastcgi settings
-	use php && \
-		dosed 's|#.*\(include.*fastcgi.*$\)|\1|' ${config}
+	use php && { sed -i -e 's|#.*\(include.*fastcgi.*$\)|\1|' ${config} || die; }
 
 	# enable stat() caching
-	use fam && \
-		dosed 's|#\(.*stat-cache.*$\)|\1|' ${config}
+	use fam && { sed -i -e 's|#\(.*stat-cache.*$\)|\1|' ${config} || die; }
 
 	# automatically listen on IPv6 if built with USE=ipv6. Bug #234987
-	use ipv6 && \
-		dosed 's|# server.use-ipv6|server.use-ipv6|' ${config}
+	use ipv6 && { sed -i -e 's|# server.use-ipv6|server.use-ipv6|' ${config} || die; }
 }
 
 # remove non-essential stuff (for USE=minimal)
@@ -78,6 +78,7 @@ remove_non_essential() {
 	use mysql   || rm -f ${libdir}/mod_mysql_vhost.*
 	use lua     || rm -f ${libdir}/mod_{cml,magnet}.*
 	use rrdtool || rm -f ${libdir}/mod_rrdtool.*
+	use zlib    || rm -f ${libdir}/mod_compress.*
 }
 
 pkg_setup() {
@@ -88,7 +89,11 @@ pkg_setup() {
 		ewarn "as conditionals and modules such as mod_re{write,direct}"
 		ewarn "and mod_ssi."
 	fi
-
+	if use mmap; then
+		ewarn "You have enabled the mmap option. This option may allow"
+		ewarn "local users to trigger SIGBUG crashes. Use this option"
+		ewarn "with EXTRA care."
+	fi
 	enewgroup lighttpd
 	enewuser lighttpd -1 -1 /var/www/localhost/htdocs lighttpd
 }
@@ -96,12 +101,14 @@ pkg_setup() {
 src_prepare() {
 	base_src_prepare
 	#dev-python/docutils installs rst2html.py not rst2html
-	sed -i -e 's|\(rst2html\)|\1.py|g' doc/Makefile.am || \
+	sed -i -e 's|\(rst2html\)|\1.py|g' doc/outdated/Makefile.am || \
 		die "sed doc/Makefile.am failed"
-	epatch "${FILESDIR}"/${P}-detect-libev.patch
+	# Experimental patch for progress bar. Bug #380093
+	if use uploadprogress; then
+	    epatch "${FILESDIR}"/${PN}-1.4.29-mod_uploadprogress.patch
+	fi
 	eautoreconf
 }
-
 src_configure() {
 	econf --libdir=/usr/$(get_libdir)/${PN} \
 		--enable-lfs \
@@ -109,25 +116,28 @@ src_configure() {
 		$(use_with bzip2) \
 		$(use_with fam) \
 		$(use_with gdbm) \
+		$(use_with kerberos kerberos5) \
 		$(use_with ldap) \
 		$(use_with libev) \
 		$(use_with lua) \
 		$(use_with memcache) \
+		$(use_with mmap) \
 		$(use_with mysql) \
 		$(use_with pcre) \
 		$(use_with ssl openssl) \
 		$(use_with webdav webdav-props) \
 		$(use_with webdav webdav-locks) \
-		$(use_with xattr attr)
+		$(use_with xattr attr) \
+		$(use_with zlib)
 }
 
 src_compile() {
-	emake || die "emake failed"
+	emake
 
 	if use doc ; then
 		einfo "Building HTML documentation"
-		cd doc
-		emake html || die "failed to build HTML documentation"
+		cd doc || die
+		emake html
 	fi
 }
 
@@ -140,13 +150,13 @@ src_test() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install
 
 	# init script stuff
-	newinitd "${FILESDIR}"/lighttpd.initd lighttpd || die
-	newconfd "${FILESDIR}"/lighttpd.confd lighttpd || die
+	newinitd "${FILESDIR}"/lighttpd.initd lighttpd
+	newconfd "${FILESDIR}"/lighttpd.confd lighttpd
 	use fam && has_version app-admin/fam && \
-		sed -i 's/after famd/need famd/g' "${D}"/etc/init.d/lighttpd
+		{ sed -i 's/after famd/need famd/g' "${D}"/etc/init.d/lighttpd || die; }
 
 	# configs
 	insinto /etc/lighttpd
@@ -169,11 +179,11 @@ src_install() {
 	use doc && dohtml -r doc/*
 
 	docinto txt
-	dodoc doc/*.txt
+	dodoc doc/outdated/*.txt
 
 	# logrotate
 	insinto /etc/logrotate.d
-	newins "${FILESDIR}"/lighttpd.logrotate lighttpd || die
+	newins "${FILESDIR}"/lighttpd.logrotate lighttpd
 
 	keepdir /var/l{ib,og}/lighttpd /var/www/localhost/htdocs
 	fowners lighttpd:lighttpd /var/l{ib,og}/lighttpd
@@ -200,5 +210,14 @@ pkg_postinst () {
 		elog "Gentoo has a customized configuration,"
 		elog "which is now located in /etc/lighttpd.  Please migrate your"
 		elog "existing configuration."
+	fi
+
+	if use uploadprogress; then
+		elog "WARNING! mod_uploadprogress is a backported module from the"
+		elog "1.5x-branch, which is not considered stable yet. Please go to"
+		elog "http://redmine.lighttpd.net/wiki/1/Docs:ModUploadProgress"
+		elog "for more information. This configuration also is NOT supported"
+		elog "by upstream, so please refrain from reporting bugs. You have"
+		elog "been warned!"
 	fi
 }
