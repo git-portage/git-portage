@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/kipi-plugins/Attic/kipi-plugins-2.6.0_beta3.ebuild,v 1.1 2012/04/08 19:48:38 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/kipi-plugins/Attic/kipi-plugins-2.6.0.ebuild,v 1.1 2012/06/07 19:28:44 dilfridge Exp $
 
 EAPI=4
 
@@ -17,7 +17,8 @@ KDE_HANDBOOK="optional"
 
 inherit flag-o-matic kde4-base
 
-MY_P="digikam-${PV/_/-}"
+MY_PV=${PV/_/-}
+MY_P="digikam-${MY_PV}"
 
 DESCRIPTION="Plugins for the KDE Image Plugin Interface"
 HOMEPAGE="http://www.digikam.org/"
@@ -25,7 +26,7 @@ SRC_URI="mirror://sourceforge/digikam/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2
 	handbook? ( FDL-1.2 )"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 SLOT="4"
 IUSE="cdr calendar crypt debug expoblending gpssync +imagemagick ipod mediawiki mjpeg panorama redeyes scanner vkontakte"
 
@@ -46,10 +47,10 @@ DEPEND="
 	ipod?		(
 			  media-libs/libgpod
 			  x11-libs/gtk+:2
-	mediawiki?	( >=media-libs/libmediawiki-2.6.0_beta3 )
+	mediawiki?	( >=media-libs/libmediawiki-2.6.0 )
 			)
 	panorama?	( dev-libs/boost )
-	redeyes?	( >=media-libs/opencv-2.2.0-r10 )
+	redeyes?	( media-libs/opencv )
 	scanner? 	(
 			  $(add_kdebase_dep libksane)
 			  media-gfx/sane-backends
