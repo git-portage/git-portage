@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/duplicity
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.70 2012/05/21 09:30:41 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.71 2012/06/09 15:38:15 jlec Exp $
+
+*duplicity-0.6.19 (09 Jun 2012)
+
+  09 Jun 2012; Justin Lecher <jlec@gentoo.org> duplicity-0.6.17.ebuild,
+  duplicity-0.6.18.ebuild, duplicity-0.6.18-r1.ebuild,
+  +duplicity-0.6.19.ebuild:
+  Version Bump, removed unessecary version from DEPs, shorten DESCRIPTION
 
   21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
   duplicity-0.6.18-r1.ebuild:
