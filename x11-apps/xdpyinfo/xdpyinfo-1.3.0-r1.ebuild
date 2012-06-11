@@ -1,13 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-apps/xdpyinfo/Attic/xdpyinfo-1.2.0.ebuild,v 1.7 2011/04/16 17:54:58 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-apps/xdpyinfo/xdpyinfo-1.3.0-r1.ebuild,v 1.1 2012/06/11 12:58:14 scarabeus Exp $
 
-EAPI=3
-
+EAPI=4
 inherit xorg-2
 
 DESCRIPTION="Display information utility for X"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~sparc-solaris ~x86-solaris ~x86-winnt"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~sparc-solaris ~x86-solaris ~x86-winnt"
 IUSE="dga dmx xinerama"
 
 RDEPEND="
@@ -18,6 +17,7 @@ RDEPEND="
 	x11-libs/libXrender
 	x11-libs/libXtst
 	x11-libs/libXxf86vm
+	x11-libs/libxcb
 	dga? ( x11-libs/libXxf86dga )
 	dmx? ( x11-libs/libdmx )
 	xinerama? ( x11-libs/libXinerama )
@@ -36,9 +36,11 @@ DEPEND="${RDEPEND}
 "
 
 pkg_setup() {
-	CONFIGURE_OPTIONS="--without-xf86misc
+	XORG_CONFIGURE_OPTIONS=(
+		"--without-xf86misc"
 		$(use_with dga)
 		$(use_with dmx)
 		$(use_with xinerama)
-	"
+	)
+
 }
