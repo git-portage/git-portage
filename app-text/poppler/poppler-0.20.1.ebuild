@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/poppler/Attic/poppler-0.18.4.ebuild,v 1.2 2012/05/04 03:33:12 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/poppler/Attic/poppler-0.20.1.ebuild,v 1.1 2012/06/14 11:46:29 scarabeus Exp $
 
 EAPI="4"
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://poppler.freedesktop.org/"
 SRC_URI="http://poppler.freedesktop.org/${P}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 SLOT="0"
 IUSE="cairo cjk curl cxx debug doc +introspection jpeg jpeg2k +lcms png qt4 tiff +utils +xpdf-headers"
 
@@ -30,7 +30,7 @@ COMMON_DEPEND="
 	curl? ( net-misc/curl )
 	jpeg? ( virtual/jpeg )
 	jpeg2k? ( media-libs/openjpeg )
-	lcms? ( =media-libs/lcms-1* )
+	lcms? ( media-libs/lcms:2 )
 	png? ( >=media-libs/libpng-1.4:0 )
 	qt4? (
 		x11-libs/qt-core:4
@@ -52,17 +52,22 @@ RDEPEND="${COMMON_DEPEND}
 
 DOCS=(AUTHORS ChangeLog NEWS README README-XPDF TODO)
 
+PATCHES=(
+	"${FILESDIR}/${PN}-0.20.1-lcms-automagic.patch"
+)
+
 src_configure() {
 	mycmakeargs=(
 		-DBUILD_GTK_TESTS=OFF
 		-DBUILD_QT4_TESTS=OFF
 		-DBUILD_CPP_TESTS=OFF
+		-DENABLE_LCMS=OFF
 		-DENABLE_SPLASH=ON
 		-DENABLE_ZLIB=ON
 		$(cmake-utils_use_enable curl LIBCURL)
 		$(cmake-utils_use_enable cxx CPP)
 		$(cmake-utils_use_enable jpeg2k LIBOPENJPEG)
-		$(cmake-utils_use_enable lcms)
+		$(cmake-utils_use_enable lcms LCMS2)
 		$(cmake-utils_use_enable utils)
 		$(cmake-utils_use_enable xpdf-headers XPDF_HEADERS)
 		$(cmake-utils_use_with cairo)
