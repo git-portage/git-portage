@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/autopep8/Attic/autopep8-0.6.ebuild,v 1.2 2012/05/29 15:16:54 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/autopep8/Attic/autopep8-0.6.ebuild,v 1.3 2012/06/16 13:39:00 sping Exp $
 
 EAPI=4
 
@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
-RDEPEND="dev-python/pep8
+RDEPEND="<dev-python/pep8-1.3
 	dev-python/setuptools"
 DEPEND="${RDEPEND}"
 
