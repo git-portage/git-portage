@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-7.1.5.491717.ebuild,v 1.3 2012/03/24 13:50:09 vadimk Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-7.1.6.744570.ebuild,v 1.1 2012/06/17 13:11:13 vadimk Exp $
 
 EAPI="2"
 
@@ -9,6 +9,7 @@ inherit eutils versionator fdo-mime gnome2-utils vmware-bundle
 MY_PN="VMware-Workstation"
 MY_PV="$(replace_version_separator 3 - $PV)"
 MY_P="${MY_PN}-${MY_PV}"
+PV_MINOR=$(get_version_component_range 3)
 
 DESCRIPTION="Emulate a complete PC on your PC without the usual performance overhead of most emulators"
 HOMEPAGE="http://www.vmware.com/products/workstation/"
@@ -76,8 +77,9 @@ RDEPEND="dev-cpp/cairomm
 	x11-libs/pango
 	x11-libs/startup-notification
 	x11-themes/hicolor-icon-theme
+	!app-emulation/vmware-server
 	!app-emulation/vmware-player"
-PDEPEND="~app-emulation/vmware-modules-238.5
+PDEPEND="~app-emulation/vmware-modules-238.${PV_MINOR}
 	vmware-tools? ( app-emulation/vmware-tools )"
 
 S=${WORKDIR}
