@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-21.0.1163.0.ebuild,v 1.2 2012/06/09 10:26:17 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-21.0.1180.0.ebuild,v 1.1 2012/06/20 13:41:20 phajdan.jr Exp $
 
 EAPI="4"
 PYTHON_DEPEND="2:2.6"
@@ -26,7 +26,7 @@ RDEPEND="app-arch/bzip2
 		dev-libs/libgcrypt
 		>=net-print/cups-1.3.11
 	)
-	>=dev-lang/v8-3.10.2.1
+	>=dev-lang/v8-3.11.10.6
 	dev-libs/dbus-glib
 	dev-libs/elfutils
 	dev-libs/expat
@@ -41,7 +41,6 @@ RDEPEND="app-arch/bzip2
 	media-libs/flac
 	>=media-libs/libjpeg-turbo-1.2.0-r1
 	media-libs/libpng
-	>=media-libs/libwebp-0.1.3
 	media-libs/speex
 	pulseaudio? ( media-sound/pulseaudio )
 	sys-fs/udev
@@ -110,8 +109,8 @@ src_prepare() {
 	sed -i '1i#define OF(x) x' \
 		third_party/zlib/contrib/minizip/{ioapi,{,un}zip}.h || die
 
-	# Unbundle expat, bug #384773.
-	epatch "${FILESDIR}/${PN}-expat-r0.patch"
+	# Fix build without NaCl glibc toolchain.
+	epatch "${FILESDIR}/${PN}-ppapi-r0.patch"
 
 	epatch_user
 
@@ -136,6 +135,7 @@ src_prepare() {
 		\! -path 'third_party/libsrtp/*' \
 		\! -path 'third_party/libusb/libusb.h' \
 		\! -path 'third_party/libvpx/*' \
+		\! -path 'third_party/libwebp/*' \
 		\! -path 'third_party/libxml/chromium/*' \
 		\! -path 'third_party/libyuv/*' \
 		\! -path 'third_party/lss/*' \
@@ -153,6 +153,7 @@ src_prepare() {
 		\! -path 'third_party/speex/speex.h' \
 		\! -path 'third_party/sqlite/*' \
 		\! -path 'third_party/tlslite/*' \
+		\! -path 'third_party/trace-viewer/*' \
 		\! -path 'third_party/undoview/*' \
 		\! -path 'third_party/v8-i18n/*' \
 		\! -path 'third_party/webdriver/*' \
@@ -204,6 +205,8 @@ src_configure() {
 	# TODO: use_system_ssl (http://crbug.com/58087).
 	# TODO: use_system_sqlite (http://crbug.com/22208).
 	# TODO: use_system_vpx
+	# TODO: use_system_webp (https://chromiumcodereview.appspot.com/10496016
+	#       needs to become part of webp release)
 	myconf+="
 		-Duse_system_bzip2=1
 		-Duse_system_flac=1
@@ -212,7 +215,6 @@ src_configure() {
 		-Duse_system_libjpeg=1
 		-Duse_system_libpng=1
 		-Duse_system_libusb=1
-		-Duse_system_libwebp=1
 		-Duse_system_libxml=1
 		-Duse_system_speex=1
 		-Duse_system_v8=1
