@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/exiv2/Attic/exiv2-0.21.1-r2.ebuild,v 1.4 2012/05/17 16:31:08 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/exiv2/Attic/exiv2-0.21.1-r2.ebuild,v 1.5 2012/06/24 21:36:09 sbriesen Exp $
 
 EAPI=3
 PYTHON_DEPEND="2"
@@ -29,7 +29,7 @@ DEPEND="${RDEPEND}
 	doc? (
 		app-doc/doxygen
 		dev-libs/libxslt
-		virtual/pkgconfig
+		dev-util/pkgconfig
 		media-gfx/graphviz
 	)
 	nls? ( sys-devel/gettext )
