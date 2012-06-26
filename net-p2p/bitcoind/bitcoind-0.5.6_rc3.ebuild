@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoind/Attic/bitcoind-0.5.5.ebuild,v 1.3 2012/05/21 22:52:30 johu Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoind/Attic/bitcoind-0.5.6_rc3.ebuild,v 1.1 2012/06/26 02:34:02 blueness Exp $
 
 EAPI="4"
 
@@ -11,7 +11,7 @@ inherit db-use eutils versionator toolchain-funcs
 DESCRIPTION="Original Bitcoin crypto-currency wallet for automated services"
 HOMEPAGE="http://bitcoin.org/"
 SRC_URI="http://gitorious.org/bitcoin/bitcoind-stable/archive-tarball/v${PV/_/} -> bitcoin-v${PV}.tgz
-	bip16? ( http://luke.dashjr.org/programs/bitcoin/files/bip16/0.5.0.5-Minimal-support-for-mining-BIP16-pay-to-script-hash-.patch.xz )
+	bip16? ( http://luke.dashjr.org/programs/bitcoin/files/bip16/0.5.6-Minimal-support-for-mining-BIP16-pay-to-script-hash-.patch.xz )
 	eligius? (
 		!bip16? ( http://luke.dashjr.org/programs/bitcoin/files/eligius_sendfee/0.5.0.6rc1-eligius_sendfee.patch.xz )
 	)
@@ -19,7 +19,7 @@ SRC_URI="http://gitorious.org/bitcoin/bitcoind-stable/archive-tarball/v${PV/_/} 
 
 LICENSE="MIT ISC"
 SLOT="0"
-KEYWORDS="amd64 ~arm x86"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="+bip16 +eligius examples logrotate ssl upnp"
 
 RDEPEND="
@@ -48,12 +48,12 @@ pkg_setup() {
 src_prepare() {
 	cd src || die
 	if use bip16; then
-		epatch "${WORKDIR}/0.5.0.5-Minimal-support-for-mining-BIP16-pay-to-script-hash-.patch"
+		epatch "${WORKDIR}/0.5.6-Minimal-support-for-mining-BIP16-pay-to-script-hash-.patch"
 		use eligius && epatch "${FILESDIR}/0.5.0.5+bip16-eligius_sendfee.patch"
 	else
 		use eligius && epatch "${WORKDIR}/0.5.0.6rc1-eligius_sendfee.patch"
 	fi
-	use logrotate && epatch "${FILESDIR}/0.4.5-reopen_log_file.patch"
+	use logrotate && epatch "${FILESDIR}/0.4.7-reopen_log_file.patch"
 }
 
 src_compile() {
