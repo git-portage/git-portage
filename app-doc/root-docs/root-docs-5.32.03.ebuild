@@ -1,11 +1,11 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/root-docs/Attic/root-docs-5.34.00.ebuild,v 1.2 2012/06/27 17:31:12 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-doc/root-docs/root-docs-5.32.03.ebuild,v 1.1 2012/06/27 17:30:22 bicatali Exp $
 
 EAPI=4
 
 ROOT_PN="root"
-PATCH_PV="5.34"
+PATCH_PV="5.32"
 
 if [[ ${PV} == "9999" ]] ; then
 	_SVN_DEP="dev-vcs/subversion"
@@ -30,6 +30,7 @@ VIRTUALX_REQUIRED="always"
 
 DEPEND="
 	~sci-physics/root-${PV}[X,doc,graphviz,htmldoc,opengl]
+	>=sci-physics/root-5.32.03-r3[X,doc,graphviz,htmldoc,opengl]
 	virtual/pkgconfig
 	${_SVN_DEP}"
 RDEPEND=""
