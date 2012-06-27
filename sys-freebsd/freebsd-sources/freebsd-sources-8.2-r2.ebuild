@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-sources/Attic/freebsd-sources-8.2-r1.ebuild,v 1.1 2012/04/02 10:13:19 naota Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-sources/freebsd-sources-8.2-r2.ebuild,v 1.1 2012/06/27 10:29:23 naota Exp $
 
 inherit bsdmk freebsd flag-o-matic
 
@@ -67,6 +67,9 @@ src_unpack() {
 	# as undefined references to ld's commandline to get them.
 	# Without this kernel modules will not load.
 	epatch "${FILESDIR}/${PN}-7.1-binutils_link.patch"
+
+	epatch "${FILESDIR}/${PN}-cve-2012-0217.patch"
+	epatch "${FILESDIR}/${PN}-9.0-ipv6refcount.patch"
 }
 
 src_compile() {
