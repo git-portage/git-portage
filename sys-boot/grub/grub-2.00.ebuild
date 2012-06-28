@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/Attic/grub-2.00_beta2-r1.ebuild,v 1.2 2012/03/24 04:22:46 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/Attic/grub-2.00.ebuild,v 1.1 2012/06/28 10:10:04 scarabeus Exp $
 
 EAPI=4
 
@@ -11,7 +11,7 @@ if [[ ${PV} == "9999" ]] ; then
 	DO_AUTORECONF="true"
 else
 	MY_P=${P/_/\~}
-	if [[ ${PV} == *_alpha* || ${PV} == *_beta* ]]; then
+	if [[ ${PV} == *_alpha* || ${PV} == *_beta* || ${PV} == *_rc* ]]; then
 		SRC_URI="mirror://gnu-alpha/${PN}/${MY_P}.tar.xz"
 	else
 		SRC_URI="mirror://gnu/${PN}/${MY_P}.tar.xz
@@ -50,9 +50,7 @@ IUSE+=" ${GRUB_PLATFORMS[@]/#/grub_platforms_}"
 # os-prober: Used on runtime to detect other OSes
 # xorriso (dev-libs/libisoburn): Used on runtime for mkrescue
 RDEPEND="
-	dev-libs/libisoburn
 	dev-libs/lzo
-	sys-boot/os-prober
 	>=sys-libs/ncurses-5.2-r5
 	debug? (
 		sdl? ( media-libs/libsdl )
@@ -60,12 +58,26 @@ RDEPEND="
 	device-mapper? ( >=sys-fs/lvm2-2.02.45 )
 	libzfs? ( sys-fs/zfs )
 	mount? ( sys-fs/fuse )
-	truetype? ( media-libs/freetype >=media-fonts/unifont-5 )"
+	truetype? (
+		media-libs/freetype
+		media-fonts/dejavu
+		>=media-fonts/unifont-5
+	)
+	ppc? ( sys-apps/ibm-powerpc-utils sys-apps/powerpc-utils )
+	ppc64? ( sys-apps/ibm-powerpc-utils sys-apps/powerpc-utils )
+"
 DEPEND="${RDEPEND}
 	>=dev-lang/python-2.5.2
 	sys-devel/flex
 	virtual/yacc
 	sys-apps/texinfo
+	static? (
+		truetype? (
+			app-arch/bzip2[static-libs(+)]
+			media-libs/freetype[static-libs(+)]
+			sys-libs/zlib[static-libs(+)]
+		)
+	)
 "
 RDEPEND+="
 	grub_platforms_efi-32? ( sys-boot/efibootmgr )
@@ -118,6 +130,7 @@ grub_run_phase() {
 grub_src_configure() {
 	local platform=$1
 	local with_platform=
+	local enable_efiemu="--disable-efiemu"
 
 	[[ -z ${platform} ]] && die "${FUNCNAME} [platform]"
 
@@ -149,7 +162,14 @@ grub_src_configure() {
 			with_platform="--with-platform=efi"
 			;;
 		guessed) ;;
-		*) with_platform="--with-platform=${platform}" ;;
+		*)
+			with_platform="--with-platform=${platform}"
+			case ${CTARGET:-${CHOST}} in
+				i?86*|x86_64*)
+					enable_efiemu=$(use_enable efiemu)
+					;;
+			esac
+			;;
 	esac
 
 	ECONF_SOURCE="${S}" \
@@ -162,7 +182,7 @@ grub_src_configure() {
 		$(use_enable debug mm-debug) \
 		$(use_enable debug grub-emu-usb) \
 		$(use_enable device-mapper) \
-		$(use_enable efiemu) \
+		${enable_efiemu} \
 		$(use_enable mount grub-mount) \
 		$(use_enable nls) \
 		$(use_enable truetype grub-mkfont) \
@@ -187,12 +207,21 @@ grub_src_install() {
 src_prepare() {
 	local i j
 
+	# fix texinfo file name, bug 416035
+	sed -i \
+		-e 's/^\* GRUB:/* GRUB2:/' \
+		-e 's/(grub)/(grub2)/' -- \
+		"${S}"/docs/grub.texi
+
 	epatch_user
 
 	# autogen.sh does more than just run autotools
 	if [[ -n ${DO_AUTORECONF} ]] ; then
 		sed -i -e '/^autoreconf/s:^:set +e; e:' autogen.sh || die
-		(. ./autogen.sh) || die
+		(
+			autopoint() { :; }
+			. ./autogen.sh
+		) || die
 	fi
 
 	# install into the right dir for eselect #372735
@@ -200,16 +229,13 @@ src_prepare() {
 		-e '/^bashcompletiondir =/s:=.*:= $(datarootdir)/bash-completion:' \
 		util/bash-completion.d/Makefile.in || die
 
-	# Bug 408195.
-	sed -i -e "s/sort -v/sort -V/" util/grub-mkconfig_lib.in || die
-
 	# get enabled platforms
 	GRUB_ENABLED_PLATFORMS=""
 	for i in ${GRUB_PLATFORMS[@]}; do
 		use grub_platforms_${i} && GRUB_ENABLED_PLATFORMS+=" ${i}"
 	done
 	[[ -z ${GRUB_ENABLED_PLATFORMS} ]] && GRUB_ENABLED_PLATFORMS="guessed"
-	elog "Going to build following platforms: ${GRUB_ENABLED_PLATFORMS}"
+	einfo "Going to build following platforms: ${GRUB_ENABLED_PLATFORMS}"
 }
 
 src_configure() {
@@ -262,11 +288,17 @@ src_install() {
 	# can't be in docs array as we use default_src_install in different builddir
 	dodoc AUTHORS ChangeLog NEWS README THANKS TODO
 	insinto /etc/default
-	newins "${FILESDIR}"/grub.default grub
+	newins "${FILESDIR}"/grub.default-2 grub
 }
 
 pkg_postinst() {
 	# display the link to guide
 	elog "For information on how to configure grub-2 please refer to the guide:"
 	elog "    http://wiki.gentoo.org/wiki/GRUB2_Quick_Start"
+	if ! has_version sys-boot/os-prober; then
+		elog "Install sys-boot/os-prober to enable detection of other operating systems using grub2-mkconfig."
+	fi
+	if ! has_version dev-libs/libisoburn; then
+		elog "Install dev-libs/libisoburn to enable creation of rescue media using grub2-mkrescue."
+	fi
 }
