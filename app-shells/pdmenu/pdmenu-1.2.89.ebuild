@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/pdmenu/Attic/pdmenu-1.2.89.ebuild,v 1.12 2011/02/06 22:02:01 leio Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/pdmenu/Attic/pdmenu-1.2.89.ebuild,v 1.13 2012/07/01 11:14:56 jlec Exp $
 
 DESCRIPTION="A simple console menu program"
 HOMEPAGE="http://www.kitenet.net/programs/pdmenu/"
@@ -11,9 +11,11 @@ SLOT="0"
 KEYWORDS="alpha ~amd64 ia64 ~mips x86"
 IUSE="nls gpm examples"
 
-DEPEND="sys-libs/slang
+DEPEND="
+	sys-libs/slang
 	gpm? ( sys-libs/gpm )
 	nls? ( sys-devel/gettext )"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
 
