@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/mosflm/Attic/mosflm-7.0.7-r1.ebuild,v 1.1 2012/04/28 07:58:26 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/mosflm/Attic/mosflm-7.0.8.ebuild,v 1.1 2012/07/05 13:50:48 jlec Exp $
 
 EAPI=4
 
@@ -40,9 +40,13 @@ src_prepare() {
 		-e '/jinclude.h/d' \
 		-i mosflm/mosflm_jpeg.c || die
 
+	cp DATETIME.C mosflm/datetime.c
+
 	epatch \
 		"${FILESDIR}"/${PV}-parallel.patch \
-		"${FILESDIR}"/7.0.6-impl-dec.patch
+		"${FILESDIR}"/7.0.6-impl-dec.patch \
+		"${FILESDIR}"/${PN}-7.0.7-buffer-overflow.patch \
+		"${FILESDIR}"/${PN}-7.0.7-impl-dec.patch
 
 	rm -rf test.f {cbf,jpg}/*.{h,c} || die
 }
@@ -58,7 +62,7 @@ src_compile() {
 		MOSLIBS='-lccp4f -lccp4c -lxdl_view -lcurses -lXt -lmmdb -lccif -lstdc++' \
 		MCFLAGS="-O0 -fno-second-underscore" \
 		MOSFLAGS="${FFLAGS} -fno-second-underscore" \
-		FFLAGS="${FFLAGS:- -O2} -fno-second-underscore" \
+		FFLAGS="${FFLAGS} -fno-second-underscore" \
 		CFLAGS="${CFLAGS}" \
 		MOSCFLAGS="${CFLAGS}" \
 		LFLAGS="${LDFLAGS}"
