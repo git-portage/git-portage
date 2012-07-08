@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-inline/Attic/ruby-inline-3.11.2.ebuild,v 1.1 2012/04/21 06:42:46 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-inline/Attic/ruby-inline-3.11.3.ebuild,v 1.1 2012/07/08 11:23:20 flameeyes Exp $
 
 EAPI=4
 
