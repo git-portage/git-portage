@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/thc-ipv6/Attic/thc-ipv6-1.4.ebuild,v 1.2 2011/03/29 04:14:07 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/thc-ipv6/Attic/thc-ipv6-1.9.ebuild,v 1.1 2012/07/09 12:17:14 xmw Exp $
 
-EAPI=2
+EAPI=4
 
-inherit eutils toolchain-funcs
+inherit eutils
 
 DESCRIPTION="complete tool set to attack the inherent protocol weaknesses of IPV6 and ICMP6"
 HOMEPAGE="http://freeworld.thc.org/thc-ipv6/"
@@ -20,15 +20,10 @@ DEPEND="net-libs/libpcap
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-Makefile.patch
-}
-
-src_compile() {
-	emake CC="$(tc-getCC)" || die
+	epatch "${FILESDIR}"/${PN}-1.9-Makefile.patch
 }
 
 src_install() {
-	emake DESTDIR="${D}" PREFIX="/usr" install || die
-
-	dodoc CHANGES README || die
+	emake DESTDIR="${D}" PREFIX="/usr" install
+	dodoc CHANGES README
 }
