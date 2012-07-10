@@ -1,19 +1,19 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/automake/Attic/automake-1.11.2-r1.ebuild,v 1.2 2012/01/19 20:55:45 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/automake/automake-1.11.6.ebuild,v 1.1 2012/07/10 06:10:56 vapier Exp $
 
-inherit eutils versionator
+inherit eutils versionator unpacker
 
 if [[ ${PV/_beta} == ${PV} ]]; then
 	MY_P=${P}
-	SRC_URI="mirror://gnu/${PN}/${P}.tar.bz2
-		ftp://alpha.gnu.org/pub/gnu/${PN}/${MY_P}.tar.bz2"
+	SRC_URI="mirror://gnu/${PN}/${P}.tar.xz
+		ftp://alpha.gnu.org/pub/gnu/${PN}/${MY_P}.tar.xz"
 else
 	MY_PV="$(get_major_version).$(($(get_version_component_range 2)-1))b"
 	MY_P="${PN}-${MY_PV}"
 
 	# Alpha/beta releases are not distributed on the usual mirrors.
-	SRC_URI="ftp://alpha.gnu.org/pub/gnu/${PN}/${MY_P}.tar.bz2"
+	SRC_URI="ftp://alpha.gnu.org/pub/gnu/${PN}/${MY_P}.tar.xz"
 fi
 
 S="${WORKDIR}/${MY_P}"
@@ -25,7 +25,7 @@ DESCRIPTION="Used to generate Makefile.in from Makefile.am"
 HOMEPAGE="http://www.gnu.org/software/automake/"
 
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
 IUSE=""
 
 RDEPEND="dev-lang/perl
@@ -37,9 +37,8 @@ DEPEND="${RDEPEND}
 	sys-apps/help2man"
 
 src_unpack() {
-	unpack ${A}
+	unpacker_src_unpack
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-fix-pkglibexec_SCRIPTS.patch
 	chmod a+rx tests/*.test
 	sed -i \
 		-e "s|: (automake)| v${SLOT}: (automake${SLOT})|" \
