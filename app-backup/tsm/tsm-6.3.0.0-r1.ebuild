@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.3.0.0-r1.ebuild,v 1.2 2012/05/24 04:35:57 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.3.0.0-r1.ebuild,v 1.3 2012/07/12 14:16:32 axs Exp $
 
 EAPI=4
 
@@ -29,7 +29,7 @@ SRC_TAR="${MY_PVR_ALLDOTS}-TIV-TSMBAC-LinuxX86.tar"
 SRC_URI="${BASE_URI}${SRC_TAR}"
 
 RESTRICT="strip" # Breaks libPiIMG.so and libPiSNAP.so
-LICENSE="as-is Apache-1.1 JDOM gSOAP"
+LICENSE="as-is Apache-1.1 JDOM gSOAP GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="acl java +tsm_cit +tsm_hw"
