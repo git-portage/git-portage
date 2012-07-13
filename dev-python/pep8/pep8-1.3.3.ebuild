@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pep8/Attic/pep8-1.1.ebuild,v 1.2 2012/06/02 15:24:35 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pep8/pep8-1.3.3.ebuild,v 1.1 2012/07/13 03:30:31 patrick Exp $
 
 EAPI=4
 
