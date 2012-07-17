@@ -1,13 +1,13 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/qpdfview/Attic/qpdfview-0.3.1_p427.ebuild,v 1.2 2012/07/14 13:31:17 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/qpdfview/Attic/qpdfview-0.3.2_beta1.ebuild,v 1.1 2012/07/17 05:50:27 yngwin Exp $
 
 EAPI=4
 inherit qt4-r2
 
 DESCRIPTION="A tabbed PDF viewer using the poppler library"
 HOMEPAGE="http://launchpad.net/qpdfview"
-SRC_URI="http://dev.gentoo.org/~yngwin/distfiles/${P}.tar.xz"
+SRC_URI="https://launchpad.net/${PN}/trunk/${PV/_}/+download/${P/_}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -25,8 +25,11 @@ DEPEND="${RDEPEND}
 
 DOCS="CONTRIBUTORS README TODO"
 
+S=${WORKDIR}/${P/_}
+
 src_configure() {
 	local config i
+
 	for i in cups dbus svg ; do
 		if ! use ${i} ; then
 			config+=" without_${i}"
