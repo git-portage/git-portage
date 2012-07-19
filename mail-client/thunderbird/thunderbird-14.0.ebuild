@@ -1,15 +1,15 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/thunderbird/Attic/thunderbird-13.0.ebuild,v 1.6 2012/07/04 19:14:42 anarchy Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/thunderbird/Attic/thunderbird-14.0.ebuild,v 1.1 2012/07/19 22:33:25 anarchy Exp $
 
 EAPI="3"
 WANT_AUTOCONF="2.1"
 MOZ_ESR=""
 
 # This list can be updated using scripts/get_langs.sh from the mozilla overlay
-MOZ_LANGS=(ar ast be bg bn-BD br ca cs da de el en en-GB en-US es-AR es-ES et eu fi
-fr fy-NL ga-IE gd gl he hu id is it ja ko lt nb-NO nl nn-NO pa-IN pl pt-BR pt-PT
-rm ro ru si sk sl sq sr sv-SE ta-LK tr uk vi zh-CN zh-TW)
+MOZ_LANGS=(ar ast be bg bn-BD br ca cs da de el en en-GB en-US es-AR es-ES et
+eu fi fr fy-NL ga-IE gd gl he hr hu hy-AM id is it ja ko lt nb-NO nl nn-NO pa-IN
+pl pt-BR pt-PT rm ro ru si sk sl sq sr sv-SE ta-LK tr uk vi zh-CN zh-TW )
 
 # Convert the ebuild version to the upstream mozilla version, used by mozlinguas
 MOZ_PV="${PV/_beta/b}"
@@ -20,7 +20,7 @@ fi
 MOZ_P="${PN}-${MOZ_PV}"
 
 # Enigmail version
-EMVER="1.4.1"
+EMVER="1.4.3"
 # Upstream ftp release URI that's used by mozlinguas.eclass
 # We don't use the http mirror because it deletes old tarballs.
 MOZ_FTP_URI="ftp://ftp.mozilla.org/pub/${PN}/releases/"
@@ -33,10 +33,10 @@ HOMEPAGE="http://www.mozilla.com/en-US/thunderbird/"
 KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
-IUSE="bindist gconf +crashreporter +crypt +ipc +jit +lightning +minimal mozdom +webm"
+IUSE="bindist gconf +crypt +ipc +jit +lightning +minimal mozdom +webm selinux"
 
 PATCH="thunderbird-13.0-patches-0.1"
-PATCHFF="firefox-13.0-patches-0.2"
+PATCHFF="firefox-14.0-patches-0.3"
 
 SRC_URI="${SRC_URI}
 	${MOZ_FTP_URI}${MOZ_PV}/source/${MOZ_P}.source.tar.bz2
@@ -50,17 +50,17 @@ RDEPEND=">=sys-devel/binutils-2.16.1
 	>=dev-libs/nss-3.13.5
 	>=dev-libs/nspr-4.9.1
 	>=dev-libs/glib-2.26
-	crashreporter? ( net-misc/curl )
 	gconf? ( >=gnome-base/gconf-1.2.1:2 )
 	>=media-libs/libpng-1.5.9[apng]
 	>=x11-libs/cairo-1.10
 	>=x11-libs/pango-1.14.0
 	>=x11-libs/gtk+-2.14
 	webm? ( >=media-libs/libvpx-1.0.0
-		media-libs/alsa-lib )
+		kernel_linux? ( media-libs/alsa-lib ) )
 	virtual/libffi
 	!x11-plugins/enigmail
 	system-sqlite? ( >=dev-db/sqlite-3.7.10[fts3,secure-delete,threadsafe,unlock-notify,debug=] )
+	selinux? ( sec-policy/selinux-thunderbird )
 	crypt?  ( || (
 		( >=app-crypt/gnupg-2.0
 			|| (
@@ -72,6 +72,7 @@ RDEPEND=">=sys-devel/binutils-2.16.1
 	) )"
 
 DEPEND="${RDEPEND}
+	!elibc_glibc? ( dev-libs/libexecinfo )
 	virtual/pkgconfig
 	webm? ( x86? ( ${ASM_DEPEND} )
 		amd64? ( ${ASM_DEPEND} )
@@ -127,6 +128,11 @@ src_prepare() {
 		mv "${WORKDIR}"/enigmail "${S}"/mailnews/extensions/enigmail
 		cd "${S}"
 	fi
+
+	# Disable gnomevfs extension
+	sed -i -e "s:gnomevfs::" "${S}/"mozilla/browser/confvars.sh \
+		-e "s:gnomevfs::" "${S}/"mozilla/xulrunner/confvars.sh \
+		|| die "Failed to remove gnomevfs extension"
 
 	#Fix compilation with curl-7.21.7 bug 376027
 	sed -e '/#include <curl\/types.h>/d'  \

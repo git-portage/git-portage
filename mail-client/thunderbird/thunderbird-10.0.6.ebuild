@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/thunderbird/Attic/thunderbird-10.0.4.ebuild,v 1.6 2012/07/04 19:14:42 anarchy Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/thunderbird/Attic/thunderbird-10.0.6.ebuild,v 1.1 2012/07/19 22:33:25 anarchy Exp $
 
 EAPI="3"
 WANT_AUTOCONF="2.1"
@@ -30,13 +30,13 @@ inherit flag-o-matic toolchain-funcs mozconfig-3 makeedit multilib autotools pax
 DESCRIPTION="Thunderbird Mail Client"
 HOMEPAGE="http://www.mozilla.com/en-US/thunderbird/"
 
-KEYWORDS="~alpha amd64 ~arm ~ppc ~ppc64 x86 ~x86-fbsd ~amd64-linux ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 SLOT="0"
 LICENSE="MPL-1.1 GPL-2 LGPL-2.1"
-IUSE="bindist gconf +crashreporter +crypt +ipc +lightning +minimal mozdom +webm"
+IUSE="bindist gconf +crypt +ipc +lightning +minimal mozdom +webm selinux"
 
 PATCH="thunderbird-10.0-patches-0.1"
-PATCHFF="firefox-10.0-patches-0.7"
+PATCHFF="firefox-10.0-patches-0.9"
 
 SRC_URI="${SRC_URI}
 	${MOZ_FTP_URI}${MOZ_PV}/source/${MOZ_P}.source.tar.bz2
@@ -50,9 +50,8 @@ RDEPEND=">=sys-devel/binutils-2.16.1
 	>=dev-libs/nss-3.13.1
 	>=dev-libs/nspr-4.8.8
 	>=dev-libs/glib-2.26
-	crashreporter? ( net-misc/curl )
 	gconf? ( >=gnome-base/gconf-1.2.1:2 )
-	media-libs/libpng[apng]
+	>=media-libs/libpng-1.5.9[apng]
 	>=x11-libs/cairo-1.10
 	>=x11-libs/pango-1.14.0
 	>=x11-libs/gtk+-2.14
@@ -61,6 +60,7 @@ RDEPEND=">=sys-devel/binutils-2.16.1
 	virtual/libffi
 	!x11-plugins/enigmail
 	system-sqlite? ( >=dev-db/sqlite-3.7.7.1[fts3,secure-delete,unlock-notify,debug=] )
+	selinux? ( sec-policy/selinux-thunderbird )
 	crypt?  ( || (
 		( >=app-crypt/gnupg-2.0
 			|| (
@@ -115,7 +115,7 @@ src_prepare() {
 
 	# Apply our patchset from firefox to thunderbird as well
 	pushd "${S}"/mozilla &>/dev/null || die
-	EPATCH_EXCLUDE="6012_fix_shlibsign.patch" \
+	EPATCH_EXCLUDE="6012_fix_shlibsign.patch 6013_fix_abort_declaration.patch" \
 	EPATCH_SUFFIX="patch" \
 	EPATCH_FORCE="yes" \
 	epatch "${WORKDIR}/firefox"
