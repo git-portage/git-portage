@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-electronics/klayout/Attic/klayout-0.21.12.ebuild,v 1.1 2012/06/11 19:29:04 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-electronics/klayout/Attic/klayout-0.21.19.ebuild,v 1.1 2012/07/22 17:11:19 dilfridge Exp $
 
 EAPI=3
 
