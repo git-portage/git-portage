@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/oracle-jre-bin/Attic/oracle-jre-bin-1.7.0.3.ebuild,v 1.3 2012/05/05 15:23:54 sera Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/oracle-jre-bin/Attic/oracle-jre-bin-1.7.0.5-r2.ebuild,v 1.1 2012/07/23 17:28:56 sera Exp $
 
 EAPI="4"
 
@@ -14,7 +14,7 @@ X86_AT="jre-${MY_PV}-linux-i586.tar.gz"
 AMD64_AT="jre-${MY_PV}-linux-x64.tar.gz"
 
 # This URIs need updating when bumping!
-JRE_URI="http://www.oracle.com/technetwork/java/javase/downloads/jre-7u3-download-1501631.html"
+JRE_URI="http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1637588.html"
 JCE_URI="http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html"
 
 JCE_DIR="UnlimitedJCEPolicy"
@@ -29,9 +29,9 @@ SRC_URI="
 
 LICENSE="Oracle-BCLA-JavaSE"
 SLOT="1.7"
-KEYWORDS="~amd64 x86"
+KEYWORDS="~amd64 ~x86"
 
-IUSE="X alsa jce nsplugin"
+IUSE="X alsa fontconfig jce nsplugin pax_kernel"
 RESTRICT="fetch strip"
 
 RDEPEND="
@@ -43,9 +43,13 @@ RDEPEND="
 		x11-libs/libX11
 	)
 	alsa? ( media-libs/alsa-lib )
+	fontconfig? ( media-libs/fontconfig )
 	!prefix? ( sys-libs/glibc )"
+# scanelf won't create a PaX header, so depend on paxctl to avoid fallback
+# marking. #427642
 DEPEND="
-	jce? ( app-arch/unzip )"
+	jce? ( app-arch/unzip )
+	pax_kernel? ( sys-apps/paxctl )"
 
 S="${WORKDIR}/jre${S_PV}"
 
@@ -69,7 +73,7 @@ pkg_nofetch() {
 
 src_prepare() {
 	if use jce; then
-		mv "${WORKDIR}"/${JCE_DIR} "${S}"/lib/security/ || die
+		mv "${WORKDIR}"/${JCE_DIR} lib/security/ || die
 	fi
 }
 
@@ -91,6 +95,9 @@ src_compile() {
 }
 
 src_install() {
+	local dest="/opt/${P}"
+	local ddest="${ED}${dest}"
+
 	# We should not need the ancient plugin for Firefox 2 anymore, plus it has
 	# writable executable segments
 	if use x86; then
@@ -106,28 +113,28 @@ src_install() {
 			lib/${arch}/libjavaplugin_jni.so
 	fi
 
-	dodir /opt/${P}
-	cp -pPR bin lib man "${ED}"/opt/${P} || die
+	dodir "${dest}"
+	cp -pPR bin lib man "${ddest}" || die
 
 	# Remove empty dirs we might have copied
-	rmdir -v $(find "${D}" -type d -empty) || die
+	find "${D}" -type d -empty -exec rmdir -v {} + || die
 
 	dodoc COPYRIGHT README
 
 	if use jce; then
-		dodir /opt/${P}/lib/security/strong-jce
-		mv "${ED}"/opt/${P}/lib/security/US_export_policy.jar \
-			"${ED}"/opt/${P}/lib/security/strong-jce || die
-		mv "${ED}"/opt/${P}/lib/security/local_policy.jar \
-			"${ED}"/opt/${P}/lib/security/strong-jce || die
-		dosym /opt/${P}/lib/security/${JCE_DIR}/US_export_policy.jar \
-			/opt/${P}/lib/security/US_export_policy.jar
-		dosym /opt/${P}/lib/security/${JCE_DIR}/local_policy.jar \
-			/opt/${P}/lib/security/local_policy.jar
+		dodir ${dest}/lib/security/strong-jce
+		mv "${ddest}"/lib/security/US_export_policy.jar \
+			"${ddest}"/lib/security/strong-jce || die
+		mv "${ddest}"/lib/security/local_policy.jar \
+			"${ddest}"/lib/security/strong-jce || die
+		dosym "${dest}"/lib/security/${JCE_DIR}/US_export_policy.jar \
+			"${dest}"/lib/security/US_export_policy.jar
+		dosym "${dest}"/lib/security/${JCE_DIR}/local_policy.jar \
+			"${dest}"/lib/security/local_policy.jar
 	fi
 
 	if use nsplugin; then
-		install_mozilla_plugin /opt/${P}/lib/${arch}/libnpjp2.so
+		install_mozilla_plugin "${dest}"/lib/${arch}/libnpjp2.so
 	fi
 
 	# Install desktop file for the Java Control Panel.
@@ -142,18 +149,20 @@ src_install() {
 		"${T}"/jcontrol-${PN}-${SLOT}.desktop || die
 	domenu "${T}"/jcontrol-${PN}-${SLOT}.desktop
 
-	# bug #56444
-	cp "${FILESDIR}"/fontconfig.Gentoo.properties "${T}"/fontconfig.properties || die
-	eprefixify "${T}"/fontconfig.properties
-	insinto /opt/${P}/lib/
-	doins "${T}"/fontconfig.properties
-
-	# bug #388127
-	dodir /etc/sandbox.d
-	echo 'SANDBOX_PREDICT="/dev/random:/proc/self/coredump_filter"' > "${D}/etc/sandbox.d/20${VMHANDLE}"
+	# Prune all fontconfig files so libfontconfig will be used and only install
+	# a Gentoo specific one if fontconfig is disabled.
+	# http://docs.oracle.com/javase/7/docs/technotes/guides/intl/fontconfig.html
+	rm "${ddest}"/lib/fontconfig.* || die
+	if ! use fontconfig; then
+		cp "${FILESDIR}"/fontconfig.Gentoo.properties "${T}"/fontconfig.properties || die
+		eprefixify "${T}"/fontconfig.properties
+		insinto "${dest}"/lib/
+		doins "${T}"/fontconfig.properties
+	fi
 
 	set_java_env
 	java-vm_revdep-mask
+	java-vm_sandbox-predict /dev/random /proc/self/coredump_filter
 }
 
 QA_TEXTRELS_x86="
@@ -189,10 +198,12 @@ for java_system_arch in amd64 i386; do
 		/opt/${P}/lib/${java_system_arch}/libj2pkcs11.so
 		/opt/${P}/lib/${java_system_arch}/libjaas_unix.so
 		/opt/${P}/lib/${java_system_arch}/libjava_crw_demo.so
+		/opt/${P}/lib/${java_system_arch}/libjavaplugin_jni.so
 		/opt/${P}/lib/${java_system_arch}/libjava.so
 		/opt/${P}/lib/${java_system_arch}/libjawt.so
 		/opt/${P}/lib/${java_system_arch}/libJdbcOdbc.so
 		/opt/${P}/lib/${java_system_arch}/libjdwp.so
+		/opt/${P}/lib/${java_system_arch}/libjfr.so
 		/opt/${P}/lib/${java_system_arch}/libjpeg.so
 		/opt/${P}/lib/${java_system_arch}/libjsdt.so
 		/opt/${P}/lib/${java_system_arch}/libjsig.so
@@ -203,6 +214,7 @@ for java_system_arch in amd64 i386; do
 		/opt/${P}/lib/${java_system_arch}/libmlib_image.so
 		/opt/${P}/lib/${java_system_arch}/libnet.so
 		/opt/${P}/lib/${java_system_arch}/libnio.so
+		/opt/${P}/lib/${java_system_arch}/libnpjp2.so
 		/opt/${P}/lib/${java_system_arch}/libnpt.so
 		/opt/${P}/lib/${java_system_arch}/librmi.so
 		/opt/${P}/lib/${java_system_arch}/libsctp.so
