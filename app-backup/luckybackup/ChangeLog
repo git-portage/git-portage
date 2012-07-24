@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/luckybackup
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/luckybackup/ChangeLog,v 1.20 2012/04/18 21:34:53 johu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/luckybackup/ChangeLog,v 1.21 2012/07/24 21:44:18 pesa Exp $
+
+  24 Jul 2012; Davide Pesavento <pesa@gentoo.org> luckybackup-0.4.7.ebuild:
+  Remove usage of DOCSDIR.
 
   18 Apr 2012; Johannes Huber <johu@gentoo.org> -luckybackup-0.4.6.ebuild:
   Remove old.
@@ -95,4 +98,3 @@
   +luckybackup-0.3.2.ebuild, +metadata.xml:
   Initial commit of luckybackup, taken from sunrise, thanks to topper_harley
   for ebuild and maintainance in sunrise
-
