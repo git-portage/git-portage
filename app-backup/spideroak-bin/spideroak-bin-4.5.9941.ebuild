@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/Attic/spideroak-bin-4.5.9941.ebuild,v 1.1 2012/05/29 01:35:36 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/Attic/spideroak-bin-4.5.9941.ebuild,v 1.2 2012/07/26 17:19:26 kensington Exp $
 
 EAPI="4"
 
@@ -44,8 +44,8 @@ RDEPEND="
 		dev-libs/glib:2
 		dev-libs/libpcre
 		media-libs/libpng:1.2
-		x11-libs/qt-core
-		x11-libs/qt-gui
+		x11-libs/qt-core:4
+		x11-libs/qt-gui:4
 		dev-db/sqlite:3
 		net-libs/libssh2
 		sys-libs/zlib
