@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-22.0.1201.0.ebuild,v 1.2 2012/07/22 16:52:26 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-21.0.1180.55.ebuild,v 1.1 2012/07/26 16:44:50 floppym Exp $
 
 EAPI="4"
 PYTHON_DEPEND="2:2.6"
@@ -135,11 +135,9 @@ src_prepare() {
 		\! -path 'third_party/libphonenumber/*' \
 		\! -path 'third_party/libsrtp/*' \
 		\! -path 'third_party/libusb/libusb.h' \
-		\! -path 'third_party/libva/*' \
 		\! -path 'third_party/libvpx/*' \
 		\! -path 'third_party/libwebp/*' \
 		\! -path 'third_party/libxml/chromium/*' \
-		\! -path 'third_party/libXNVCtrl/*' \
 		\! -path 'third_party/libyuv/*' \
 		\! -path 'third_party/lss/*' \
 		\! -path 'third_party/mesa/*' \
@@ -149,7 +147,6 @@ src_prepare() {
 		\! -path 'third_party/openmax/*' \
 		\! -path 'third_party/ots/*' \
 		\! -path 'third_party/protobuf/*' \
-		\! -path 'third_party/qcms/*' \
 		\! -path 'third_party/scons-2.0.1/*' \
 		\! -path 'third_party/sfntly/*' \
 		\! -path 'third_party/skia/*' \
@@ -210,7 +207,7 @@ src_configure() {
 	# TODO: use_system_sqlite (http://crbug.com/22208).
 	# TODO: use_system_vpx
 	# TODO: use_system_webp (https://chromiumcodereview.appspot.com/10496016
-	#       needs to become part of webp release)
+	#	   needs to become part of webp release)
 	myconf+="
 		-Duse_system_bzip2=1
 		-Duse_system_flac=1
@@ -323,32 +320,25 @@ src_test() {
 		die "Tests must be run as non-root. Please use FEATURES=userpriv."
 	fi
 
-	runtest() {
-		local cmd=$1
-		shift
-		einfo "${cmd}" "$@"
-		LC_ALL="${mylocale}" VIRTUALX_COMMAND="${cmd}" virtualmake "$@"
-	}
-
 	# ICUStringConversionsTest: bug #350347.
 	# MessagePumpLibeventTest: bug #398501.
-	runtest out/Release/base_unittests \
+	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/base_unittests virtualmake \
 		'--gtest_filter=-ICUStringConversionsTest.*:MessagePumpLibeventTest.*'
 
-	runtest out/Release/cacheinvalidation_unittests
-	runtest out/Release/crypto_unittests
-	runtest out/Release/googleurl_unittests
-	runtest out/Release/gpu_unittests
-	runtest out/Release/media_unittests
+	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/cacheinvalidation_unittests virtualmake
+	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/crypto_unittests virtualmake
+	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/googleurl_unittests virtualmake
+	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/gpu_unittests virtualmake
+	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/media_unittests virtualmake
 
 	# NetUtilTest: bug #361885.
 	# DnsConfigServiceTest.GetSystemConfig: bug #394883.
 	# CertDatabaseNSSTest.ImportServerCert_SelfSigned: bug #399269.
-	runtest out/Release/net_unittests \
+	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/net_unittests virtualmake \
 		'--gtest_filter=-NetUtilTest.IDNToUnicode*:NetUtilTest.FormatUrl*:DnsConfigServiceTest.GetSystemConfig:CertDatabaseNSSTest.ImportServerCert_SelfSigned:URLFetcher*'
 
-	runtest out/Release/printing_unittests
-	runtest out/Release/sql_unittests
+	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/printing_unittests virtualmake
+	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/sql_unittests virtualmake
 }
 
 src_install() {
