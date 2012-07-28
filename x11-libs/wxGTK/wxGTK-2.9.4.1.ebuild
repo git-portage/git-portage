@@ -1,8 +1,8 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/wxGTK/Attic/wxGTK-2.9.1.1.ebuild,v 1.8 2012/05/05 03:52:23 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/wxGTK/Attic/wxGTK-2.9.4.1.ebuild,v 1.1 2012/07/28 22:45:58 dirtyepic Exp $
 
-EAPI="3"
+EAPI="4"
 
 inherit eutils flag-o-matic
 
@@ -11,8 +11,9 @@ HOMEPAGE="http://wxwidgets.org/"
 
 # we use the wxPython tarballs because they include the full wxGTK sources and
 # docs, and are released more frequently than wxGTK.
-SRC_URI="mirror://sourceforge/wxpython/wxPython-src-${PV}.tar.bz2"
-#	doc? ( mirror://sourceforge/wxpython/wxPython-docs-${PV}.tar.bz2 )"
+SRC_URI="mirror://sourceforge/wxpython/wxPython-src-2.9.4.0.tar.bz2
+	doc? ( mirror://sourceforge/wxpython/wxPython-docs-2.9.4.0.tar.bz2 )
+	mirror://sourceforge/wxpython/wxPython-src-${PV}.patch"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
 IUSE="X aqua doc debug gnome gstreamer opengl pch sdl tiff"
@@ -45,13 +46,13 @@ RDEPEND="
 		)"
 
 DEPEND="${RDEPEND}
+	dev-util/cppunit
 	virtual/pkgconfig
 	X?  (
 		x11-proto/xproto
 		x11-proto/xineramaproto
 		x11-proto/xf86vidmodeproto
 		)"
-#		test? ( dev-util/cppunit )
 
 PDEPEND=">=app-admin/eselect-wxwidgets-1.4"
 
@@ -60,11 +61,11 @@ LICENSE="wxWinLL-3
 		GPL-2
 		doc?	( wxWinFDL-3 )"
 
-S="${WORKDIR}/wxPython-src-${PV}"
+S="${WORKDIR}/wxPython-src-2.9.4.0"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-collision.patch
-	epatch "${FILESDIR}"/${PN}-2.8.11-libpng15.patch
+	epatch "${DISTDIR}"/wxPython-src-${PV}.patch
 }
 
 src_configure() {
@@ -134,7 +135,7 @@ src_configure() {
 
 src_compile() {
 	cd "${S}"/wxgtk_build
-	emake || die "make failed."
+	emake
 }
 
 # Currently fails - need to investigate
@@ -147,7 +148,7 @@ src_compile() {
 src_install() {
 	cd "${S}"/wxgtk_build
 
-	emake DESTDIR="${D}" install || die "install failed."
+	emake DESTDIR="${D}" install
 
 	cd "${S}"/docs
 	dodoc changes.txt readme.txt
