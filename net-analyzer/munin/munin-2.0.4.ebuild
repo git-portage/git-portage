@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/munin/Attic/munin-2.0.3-r1.ebuild,v 1.1 2012/07/29 03:53:20 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/munin/Attic/munin-2.0.4.ebuild,v 1.1 2012/07/30 15:16:43 flameeyes Exp $
 
 EAPI=4
 
-PATCHSET=6
+PATCHSET=3
 
 inherit eutils user java-pkg-opt-2
 
@@ -91,7 +91,6 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${WORKDIR}"/patches/*.patch
-	mv b/plugins/node.d/freeipmi_.in plugins/node.d/
 
 	java-pkg-opt-2_src_prepare
 }
@@ -154,8 +153,7 @@ src_install() {
 	insinto /etc/logrotate.d/
 	newins "${FILESDIR}"/logrotate.d-munin munin
 
-	dosym freeipmi_ /usr/libexec/munin/plugins/ipmi_
-	dosym freeipmi_ /usr/libexec/munin/plugins/ipmi_sensor_
+	dosym ipmi_ /usr/libexec/munin/plugins/ipmi_sensor_
 
 	if use syslog; then
 		sed -i -e '/log_file/s| .*| Sys::Syslog|' \
