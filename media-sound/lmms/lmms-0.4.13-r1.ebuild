@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/lmms/Attic/lmms-0.4.13.ebuild,v 1.1 2012/02/14 12:28:11 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/lmms/Attic/lmms-0.4.13-r1.ebuild,v 1.1 2012/07/30 12:24:25 polynomial-c Exp $
 
 EAPI="2"
 
@@ -53,6 +53,7 @@ src_configure() {
 		-DWANT_SWH=FALSE
 		-DWANT_CMT=FALSE
 		-DWANT_CALF=TRUE
+		-DCMAKE_INSTALL_LIBDIR=$(get_libdir)
 		$(cmake-utils_use_want alsa ALSA)
 		$(cmake-utils_use_want fftw FFTW3F)
 		$(cmake-utils_use_want jack JACK)
