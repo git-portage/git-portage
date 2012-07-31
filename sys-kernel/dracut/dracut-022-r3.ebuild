@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/dracut/Attic/dracut-022-r2.ebuild,v 1.1 2012/07/31 09:24:38 aidecoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/dracut/Attic/dracut-022-r3.ebuild,v 1.1 2012/07/31 16:52:23 aidecoe Exp $
 
 EAPI=4
 
@@ -157,6 +157,8 @@ src_prepare() {
 	epatch "${FILESDIR}/${PV}-0015-gentoo.conf-enable-ro_mnt.patch"
 	epatch "${FILESDIR}/${PV}-0016-dracut.sh-test-if-we-can-lazy-resolve-.patch"
 	epatch "${FILESDIR}/${PV}-0017-99shutdown-remove-no-wall-argument-for.patch"
+	epatch "${FILESDIR}/${PV}-0018-dracut.sh-do-not-copy-var-run-and-var-.patch"
+	epatch "${FILESDIR}/${PV}-0019-dracut.sh-create-relative-symlinks-for.patch"
 	einfo "Removing ${S}/install/hashmap.o ..."
 	rm "${S}/install/hashmap.o" || die
 }
