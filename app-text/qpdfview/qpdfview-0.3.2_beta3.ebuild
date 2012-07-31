@@ -1,9 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/qpdfview/Attic/qpdfview-0.3.2_beta1.ebuild,v 1.1 2012/07/17 05:50:27 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/qpdfview/Attic/qpdfview-0.3.2_beta3.ebuild,v 1.1 2012/07/31 11:23:08 yngwin Exp $
 
 EAPI=4
-inherit qt4-r2
+PLOCALES="cs de el ru sk"
+inherit l10n qt4-r2
 
 DESCRIPTION="A tabbed PDF viewer using the poppler library"
 HOMEPAGE="http://launchpad.net/qpdfview"
@@ -27,6 +28,10 @@ DOCS="CONTRIBUTORS README TODO"
 
 S=${WORKDIR}/${P/_}
 
+src_prepare() {
+	l10n_for_each_disabled_locale_do rm_loc
+}
+
 src_configure() {
 	local config i
 
@@ -37,4 +42,11 @@ src_configure() {
 	done
 
 	eqmake4 CONFIG+="${config}"
+}
+
+rm_loc() {
+	einfo "Removing ${1} localization..."
+	sed -e "s;translations/${PN}_${1}.ts;;" \
+		-i ${PN}.pro
+	rm translations/${PN}_${1}.{qm,ts}
 }
