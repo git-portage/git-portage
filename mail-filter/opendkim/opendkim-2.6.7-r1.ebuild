@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/opendkim/Attic/opendkim-2.6.1.ebuild,v 1.1 2012/06/27 19:54:30 eras Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/opendkim/Attic/opendkim-2.6.7-r1.ebuild,v 1.1 2012/07/31 14:59:15 eras Exp $
 
 EAPI=4
 inherit eutils db-use autotools user
@@ -67,6 +67,7 @@ src_configure() {
 		myconf="--with-db-incdir=${myconf#-I}"
 		myconf+=" --enable-popauth"
 		myconf+=" --enable-query_cache"
+		myconf+=" --enable-stats"
 	fi
 	if use asyncdns ; then
 		if use unbound; then
