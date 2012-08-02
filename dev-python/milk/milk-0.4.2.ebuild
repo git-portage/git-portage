@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/milk/Attic/milk-0.4.2.ebuild,v 1.3 2012/07/21 07:19:46 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/milk/Attic/milk-0.4.2.ebuild,v 1.5 2012/08/02 18:01:52 bicatali Exp $
 
 EAPI=4
 
@@ -19,10 +19,9 @@ SRC_URI="http://dev.gentoo.org/~jlec/distfiles/${P}.tar.xz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="test"
 
 RDEPEND="dev-python/numpy"
-DEPEND="
-	dev-python/setuptools
+DEPEND="dev-python/setuptools
 	test? ( dev-python/milksets sci-libs/scipy )"
