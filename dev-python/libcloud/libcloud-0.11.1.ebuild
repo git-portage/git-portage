@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/libcloud/Attic/libcloud-0.10.1.ebuild,v 1.1 2012/06/28 06:36:52 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/libcloud/Attic/libcloud-0.11.1.ebuild,v 1.1 2012/08/04 16:02:47 floppym Exp $
 
 EAPI="3"
 
@@ -28,7 +28,7 @@ DEPEND="test? ( dev-python/mock )"
 S="${WORKDIR}/apache-${P}"
 
 src_test() {
-	cp test/secrets.py-dist test/secrets.py || die
+	cp libcloud/test/secrets.py-dist libcloud/test/secrets.py || die
 	distutils_src_test
 }
 
