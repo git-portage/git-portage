@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/system-config-printer-common/Attic/system-config-printer-common-1.3.9-r3.ebuild,v 1.2 2012/07/18 21:11:29 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/system-config-printer-common/Attic/system-config-printer-common-1.3.11.ebuild,v 1.1 2012/08/06 00:10:17 reavertm Exp $
 
 EAPI=4
 
@@ -31,7 +31,7 @@ COMMON_DEPEND="
 	>=dev-python/pycups-1.9.60
 	dev-python/pycurl
 	>=dev-python/pygobject-2.21.5:2
-	<net-print/cups-1.6.0[dbus]
+	net-print/cups[dbus]
 	>=sys-fs/udev-164-r2
 	virtual/libusb:0
 "
@@ -54,9 +54,7 @@ pkg_setup() {
 
 src_prepare() {
 	epatch \
-		"${FILESDIR}"/${PN}-1.3.9-split.patch \
-		"${FILESDIR}"/${PN}-1.3.9-cups_filters_path.patch \
-		"${FILESDIR}"/${PN}-1.3.9-udev185.patch
+		"${FILESDIR}"/${PN}-1.3.9-split.patch
 	eautoreconf
 }
 
