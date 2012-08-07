@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.5.ebuild,v 1.7 2012/05/24 04:36:18 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.5.ebuild,v 1.8 2012/08/07 18:09:06 tomjbe Exp $
 
 EAPI="4"
 PYTHON_DEPEND="python? 2"
@@ -287,6 +287,17 @@ src_install() {
 		newins scripts/filetype.vim bacula_ft.vim
 	fi
 
+	# set the value of $mydbtype depending on which database we
+	# specified in the use flags.
+	if use sqlite3; then
+		mydbtype="sqlite3"
+	fi
+	if use postgres; then
+		mydbtype="postgres"
+	fi
+	if use mysql; then
+		mydbtype="mysql"
+	fi
 	# setup init scripts
 	myscripts="bacula-fd"
 	if ! use bacula-clientonly; then
@@ -302,7 +313,8 @@ src_install() {
 		# so we can modify them as needed
 		cp "${FILESDIR}/${script}".confd "${T}/${script}".confd || die "failed to copy ${script}.confd"
 		cp "${FILESDIR}/${script}".initd "${T}/${script}".initd || die "failed to copy ${script}.initd"
-		# set database dependancy for the director init script
+
+		# now set the database dependancy for the director init script
 		case "${script}" in
 			bacula-dir)
 				case "${mydbtype}" in
@@ -319,6 +331,7 @@ src_install() {
 			*)
 				;;
 		esac
+
 		# install init script and config
 		newinitd "${T}/${script}".initd "${script}"
 		newconfd "${T}/${script}".confd "${script}"
