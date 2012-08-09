@@ -1,12 +1,12 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/milk/Attic/milk-0.4.2.ebuild,v 1.4 2012/08/02 18:00:03 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/milk/Attic/milk-0.4.2.ebuild,v 1.6 2012/08/09 04:42:54 patrick Exp $
 
 EAPI=4
 
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.* *-pypy-*"
+RESTRICT_PYTHON_ABIS="3.* *-pypy-* *-jython"
 DISTUTILS_SRC_TEST="setup.py"
 
 inherit distutils
@@ -23,6 +23,5 @@ KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="test"
 
 RDEPEND="dev-python/numpy"
-DEPEND="
-	dev-python/setuptools
+DEPEND="dev-python/setuptools
 	test? ( dev-python/milksets sci-libs/scipy )"
