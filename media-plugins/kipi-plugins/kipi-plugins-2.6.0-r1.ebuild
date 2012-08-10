@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/kipi-plugins/Attic/kipi-plugins-2.7.0.ebuild,v 1.1 2012/07/09 20:45:31 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/kipi-plugins/Attic/kipi-plugins-2.6.0-r1.ebuild,v 1.1 2012/08/10 04:06:20 creffett Exp $
 
 EAPI=4
 
@@ -72,6 +72,7 @@ S=${WORKDIR}/${MY_P}/extra/${PN}
 
 PATCHES=(
 	"${FILESDIR}/${PN}-2.6.0_beta3-options.patch"
+	"${FILESDIR}/${PN}-2.6.0-gcc4.7.patch"
 )
 
 src_prepare() {
@@ -109,7 +110,7 @@ src_configure() {
 		$(cmake-utils_use_with redeyes OpenCV)
 		$(cmake-utils_use_with opengl OpenGL)
 		$(cmake-utils_use_with crypt QCA2)
-		$(cmake-utils_use_with scanner Sane)
+		$(cmake-utils_use_with scanner KSane)
 		$(cmake-utils_use_enable expoblending)
 		$(cmake-utils_use_enable panorama)
 	)
