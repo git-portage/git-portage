@@ -1,12 +1,14 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/chef-server/Attic/chef-server-0.10.2.ebuild,v 1.1 2011/07/25 09:18:19 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/chef-server/Attic/chef-server-10.12.0.ebuild,v 1.1 2012/08/11 12:49:45 hollow Exp $
 
-EAPI="2"
-USE_RUBY="ruby18"
+EAPI=4
+USE_RUBY="ruby18 ruby19"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_TASK_TEST=""
+
+RUBY_FAKEGEM_EXTRADOC="README.rdoc"
 
 inherit ruby-fakegem
 

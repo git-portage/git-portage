@@ -1,12 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/chef-solr/Attic/chef-solr-0.10.2-r1.ebuild,v 1.1 2011/12/31 20:07:50 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/chef-solr/Attic/chef-solr-10.12.0.ebuild,v 1.1 2012/08/11 12:45:49 hollow Exp $
 
-EAPI="2"
-USE_RUBY="ruby18"
+EAPI=4
+USE_RUBY="ruby18 ruby19"
 
 RUBY_FAKEGEM_TASK_DOC=""
-RUBY_FAKEGEM_TASK_TEST=""
+RUBY_FAKEGEM_TASK_TEST="spec"
 
 inherit ruby-fakegem
 
@@ -21,9 +21,11 @@ IUSE=""
 RDEPEND=">=net-misc/rabbitmq-server-1.7.2
 	virtual/jre:1.6"
 
-ruby_add_rdepend "~app-admin/chef-${PV}
-	>=dev-ruby/libxml-1.1.3
-	>=dev-ruby/uuidtools-2.0.0"
+ruby_add_rdepend "~app-admin/chef-${PV}"
+
+each_ruby_test() {
+	${RUBY} -S rspec spec || die
+}
 
 each_ruby_install() {
 	each_fakegem_install
@@ -43,4 +45,12 @@ all_ruby_install() {
 
 	fowners chef:chef /etc/chef/{,solr.rb}
 	fowners chef:chef /var/{lib,log,run}/chef
+}
+
+pkg_postinst() {
+	elog
+	elog "You need to run the chef-solr-installer script to setup the SOLR instance:"
+	elog
+	elog "    chef-solr-installer -c /etc/chef/solr.rb -u chef -g chef -f"
+	elog
 }
