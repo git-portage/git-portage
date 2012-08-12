@@ -1,12 +1,12 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tarsnap/Attic/tarsnap-1.0.33.ebuild,v 1.1 2012/08/12 09:05:38 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tarsnap/Attic/tarsnap-1.0.33.ebuild,v 1.2 2012/08/12 09:07:47 ssuominen Exp $
 
 EAPI=4
 
 DESCRIPTION="Online backups for the truly paranoid"
 HOMEPAGE="http://www.tarsnap.com/"
-SRC_URI="https://www.tarsnap.com/download/tarsnap-autoconf-${PV}.tgz"
+SRC_URI="https://www.tarsnap.com/download/${PN}-autoconf-${PV}.tgz"
 
 LICENSE="tarsnap"
 SLOT="0"
