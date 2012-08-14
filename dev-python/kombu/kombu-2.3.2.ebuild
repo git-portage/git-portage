@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/kombu/Attic/kombu-2.2.0.ebuild,v 1.1 2012/06/29 15:45:50 iksaif Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/kombu/Attic/kombu-2.3.2.ebuild,v 1.1 2012/08/14 07:22:17 iksaif Exp $
 
 EAPI="4"
 
@@ -12,7 +12,7 @@ DISTUTILS_SRC_TEST="nosetests"
 inherit distutils eutils
 
 DESCRIPTION="AMQP Messaging Framework for Python"
-HOMEPAGE="https://github.com/ask/kombu"
+HOMEPAGE="http://pypi.python.org/pypi/kombu https://github.com/ask/kombu"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -20,7 +20,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc examples test"
 
-RDEPEND=">=dev-python/anyjson-0.3.1
+RDEPEND=">=dev-python/anyjson-0.3.3
 	>=dev-python/amqplib-1.0"
 DEPEND="${RDEPEND}
 	test? ( dev-python/nose-cover3
@@ -28,7 +28,8 @@ DEPEND="${RDEPEND}
 	dev-python/simplejson
 	dev-python/anyjson
 	dev-python/redis-py
-	dev-python/pymongo )
+	dev-python/pymongo
+	dev-python/msgpack )
 	doc? ( dev-python/sphinx
 	dev-python/beanstalkc
 	dev-python/couchdb-python )
@@ -47,7 +48,7 @@ src_compile() {
 
 src_test() {
 	testing() {
-		nosetests --py3where build-${PYTHON_ABI}/lib/kombu/tests
+		nosetests --py3where build-${PYTHON_ABI}/lib/${PN}/tests
 	}
 	python_execute_function testing
 }
