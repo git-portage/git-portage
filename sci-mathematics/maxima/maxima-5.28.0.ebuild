@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/maxima/Attic/maxima-5.24.0-r1.ebuild,v 1.3 2012/05/21 19:24:08 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/maxima/maxima-5.28.0.ebuild,v 1.1 2012/08/15 16:40:41 grozin Exp $
 
 EAPI=3
 
-inherit autotools eutils elisp-common
+inherit autotools elisp-common eutils
 
 DESCRIPTION="Free computer algebra environment based on Macsyma"
 HOMEPAGE="http://maxima.sourceforge.net/"
@@ -114,9 +114,17 @@ src_prepare() {
 	# remove rmaxima if not needed
 	epatch "${FILESDIR}"/${PN}-rmaxima.patch
 
+	# fix LDFLAGS handling in ecl (#378195)
+	epatch "${FILESDIR}"/${PN}-ecl-ldflags.patch
+
+	# workaround for the broken sbcl
+	epatch "${FILESDIR}"/${P}-sbcl.patch
+
 	# bug #343331
 	rm share/Makefile.in || die
 	rm src/Makefile.in || die
+	touch src/*.mk
+	touch src/Makefile.am
 	eautoreconf
 }
 
