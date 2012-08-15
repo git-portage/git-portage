@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/duplicity
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.72 2012/08/03 13:25:27 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/duplicity/ChangeLog,v 1.73 2012/08/15 16:26:41 blueness Exp $
+
+  15 Aug 2012; Anthony G. Basile <blueness@gentoo.org> duplicity-0.6.19.ebuild:
+  Stable ppc, bug #428844
 
   03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> duplicity-0.6.19.ebuild:
   Stable for amd64, wrt bug #428844
