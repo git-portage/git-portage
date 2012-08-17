@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.130 2012/08/16 11:07:14 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.131 2012/08/17 18:14:02 tomjbe Exp $
+
+  17 Aug 2012; Thomas Beierlein <tomjbe@gentoo.org> bacula-5.2.5.ebuild,
+  bacula-5.2.9.ebuild, bacula-5.2.10.ebuild:
+  Fix wrong service dependency (Bug 431704). Thanks Andrea
 
 *bacula-5.2.10 (16 Aug 2012)
 

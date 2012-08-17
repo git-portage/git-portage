@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.10.ebuild,v 1.1 2012/08/16 11:07:14 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.10.ebuild,v 1.2 2012/08/17 18:14:02 tomjbe Exp $
 
 EAPI="4"
 PYTHON_DEPEND="python? 2"
@@ -293,7 +293,7 @@ src_install() {
 		mydbtype="sqlite3"
 	fi
 	if use postgres; then
-		mydbtype="postgres"
+		mydbtype="postgresql"
 	fi
 	if use mysql; then
 		mydbtype="mysql"
