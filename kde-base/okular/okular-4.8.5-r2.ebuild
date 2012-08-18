@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/okular/Attic/okular-4.9.0-r1.ebuild,v 1.1 2012/08/18 11:23:54 johu Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/okular/Attic/okular-4.8.5-r2.ebuild,v 1.1 2012/08/18 18:33:48 johu Exp $
 
 EAPI=4
 
@@ -9,7 +9,7 @@ KDE_SCM="git"
 inherit kde4-base
 
 DESCRIPTION="Okular is an universal document viewer based on KPDF for KDE 4."
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="chm crypt debug djvu ebook +jpeg +postscript +pdf +tiff"
 
 DEPEND="
@@ -21,13 +21,16 @@ DEPEND="
 	djvu? ( app-text/djvu )
 	ebook? ( app-text/ebook-tools )
 	jpeg? ( virtual/jpeg:0 )
-	pdf? ( >=app-text/poppler-0.20[qt4,-exceptions(-)] )
+	pdf? ( >=app-text/poppler-0.12.3-r3[qt4,-exceptions(-)] )
 	postscript? ( app-text/libspectre )
 	tiff? ( media-libs/tiff )
 "
 RDEPEND="${DEPEND}"
 
-PATCHES=( "${FILESDIR}/${P}-memory-corruption-warning.patch" )
+PATCHES=(
+	"${FILESDIR}/${PN}-4.9.0-memory-corruption-warning.patch"
+	"${FILESDIR}/${PN}-4.9.0-close-url.patch"
+)
 
 src_configure() {
 	mycmakeargs=(
