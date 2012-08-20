@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mongodb/Attic/mongodb-2.0.5.ebuild,v 1.3 2012/06/04 06:34:29 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mongodb/Attic/mongodb-2.0.7.ebuild,v 1.1 2012/08/20 08:46:47 ultrabug Exp $
 
 EAPI=4
 SCONS_MIN_VERSION="1.2.0"
@@ -25,8 +25,7 @@ RDEPEND="!v8? ( <dev-lang/spidermonkey-1.8[unicode] )
 	dev-libs/boost
 	dev-libs/libpcre[cxx]
 	net-libs/libpcap
-	app-arch/snappy
-	"
+	app-arch/snappy"
 DEPEND="${RDEPEND}
 	sys-libs/readline
 	sys-libs/ncurses"
@@ -80,6 +79,9 @@ src_install() {
 	newconfd "${FILESDIR}/${PN}.confd" ${PN}
 	newinitd "${FILESDIR}/${PN/db/s}.initd" ${PN/db/s}
 	newconfd "${FILESDIR}/${PN/db/s}.confd" ${PN/db/s}
+
+	insinto /etc/logrotate.d/
+	newins "${FILESDIR}/${PN}.logrotate" ${PN}
 
 	if use mms-agent; then
 		local MY_PN="mms-agent"
