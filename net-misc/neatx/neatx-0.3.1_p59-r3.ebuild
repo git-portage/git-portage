@@ -1,8 +1,8 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/neatx/neatx-0.3.1_p59-r1.ebuild,v 1.8 2012/08/21 13:34:00 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/neatx/Attic/neatx-0.3.1_p59-r3.ebuild,v 1.1 2012/08/21 13:34:00 voyageur Exp $
 
-EAPI="3"
+EAPI=4
 
 PYTHON_DEPEND="2"
 inherit eutils autotools python multilib user
@@ -13,7 +13,7 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 DEPEND="dev-python/docutils"
@@ -45,6 +45,8 @@ pkg_setup () {
 }
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-use_libexecdir.patch
+
 	sed -i -e "s/rst2html]/rst2html.py]/" configure.ac \
 		|| die "configure.ac sed failed"
 	sed -e "s#/lib/neatx#/neatx#" \
@@ -66,7 +68,7 @@ src_compile() {
 }
 
 src_install() {
-	emake install DESTDIR="${D}" || die "Failed to install"
+	emake install DESTDIR="${D}"
 	fperms 777 /var/lib/neatx/sessions
 	dodir ${NX_HOME_DIR}/.ssh
 	fowners nx:nx ${NX_HOME_DIR}
@@ -90,9 +92,29 @@ use-xsession = false
 start-gnome-command = /etc/X11/Sessions/Gnome
 EOF
 
+	insinto /usr/share/neatx
+	insopts -m 600 -o nx
+	newins extras/authorized_keys.nomachine authorized_keys.nomachine
+
 	insinto ${NX_HOME_DIR}/.ssh
 	insopts -m 600 -o nx
 	newins extras/authorized_keys.nomachine authorized_keys
+
+	# protect ssh key from getting clobbered by future upgrade (bug #339366)
+	echo "CONFIG_PROTECT=\"${NX_HOME_DIR}\"" > "${T}/60${PN}"
+	doenvd "${T}/60${PN}"
+}
+
+pkg_preinst () {
+	# preserve custom ssh key if present (bug #339366)
+	# CONFIG_PROTECT entry created above will only work for future emerges,
+	# not the current one (until bug #276345 gets fixed)
+	if [ -e "${ROOT}/${NX_HOME_DIR}/.ssh/authorized_keys" ] ; then
+		einfo "Preserving existing ssh key: ${NX_HOME_DIR}/.ssh/authorized_keys"
+		insinto ${NX_HOME_DIR}/.ssh
+		insopts -m 600 -o nx
+		newins "${ROOT}/${NX_HOME_DIR}/.ssh/authorized_keys" authorized_keys
+	fi
 }
 
 pkg_postinst () {
