@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/phonon-vlc/Attic/phonon-vlc-0.5.0.ebuild,v 1.3 2012/05/29 16:07:02 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/phonon-vlc/Attic/phonon-vlc-0.6.0-r1.ebuild,v 1.1 2012/08/23 12:26:47 johu Exp $
 
 EAPI=4
 
@@ -22,7 +22,7 @@ IUSE="debug"
 
 RDEPEND="
 	>=media-libs/phonon-4.6.0
-	media-video/vlc[dbus,ogg,vorbis]
+	>=media-video/vlc-2.0.1[dbus,ogg,vorbis]
 	>=x11-libs/qt-dbus-4.6.0:4
 	>=x11-libs/qt-gui-4.6.0:4
 "
@@ -34,6 +34,8 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/${MY_P}
 
 DOCS=( AUTHORS )
+
+PATCHES=( "${FILESDIR}/${P}-desktop.patch" )
 
 pkg_postinst() {
 	elog "For more verbose debug information, export the following variables:"
