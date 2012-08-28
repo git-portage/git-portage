@@ -1,8 +1,9 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/geeqie/Attic/geeqie-1.0-r1.ebuild,v 1.9 2012/05/05 07:00:19 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/geeqie/geeqie-1.1.ebuild,v 1.1 2012/08/28 13:45:36 voyageur Exp $
 
-EAPI=2
+EAPI=4
+inherit autotools base eutils
 
 DESCRIPTION="A lightweight GTK image viewer forked from GQview"
 HOMEPAGE="http://geeqie.sourceforge.net/"
@@ -10,7 +11,7 @@ SRC_URI="mirror://sourceforge/geeqie/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="doc exif lcms lirc xmp"
 
 RDEPEND="x11-libs/gtk+:2
@@ -25,6 +26,17 @@ DEPEND="${RDEPEND}
 	dev-util/intltool
 	sys-devel/gettext"
 
+PATCHES=(
+	"${FILESDIR}"/${PN}-1.0-automake-1.11.patch
+	"${FILESDIR}"/${PN}-1.0-fix_fullscreen.patch
+	"${FILESDIR}"/${P}-fix_comment_update.patch
+)
+
+src_prepare() {
+	base_src_prepare
+	eautoreconf
+}
+
 src_configure() {
 	local myconf="--disable-dependency-tracking
 		--with-readmedir=/usr/share/doc/${PF}
@@ -37,11 +49,11 @@ src_configure() {
 		myconf="${myconf} --disable-exiv2"
 	fi
 
-	econf ${myconf} || die "econf failed"
+	econf ${myconf}
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake DESTDIR="${D}" install
 	rm -f "${D}/usr/share/doc/${MY_P}/COPYING"
 }
 
