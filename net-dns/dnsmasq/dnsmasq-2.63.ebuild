@@ -1,16 +1,16 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/dnsmasq/Attic/dnsmasq-2.60.ebuild,v 1.3 2012/06/14 02:08:14 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/dnsmasq/Attic/dnsmasq-2.63.ebuild,v 1.1 2012/08/28 17:11:42 chutzpah Exp $
 
 EAPI=4
 
-inherit eutils toolchain-funcs flag-o-matic user
+inherit eutils toolchain-funcs flag-o-matic user systemd
 
 MY_P="${P/_/}"
 MY_PV="${PV/_/}"
 DESCRIPTION="Small forwarding DNS server"
 HOMEPAGE="http://www.thekelleys.org.uk/dnsmasq/"
-SRC_URI="http://www.thekelleys.org.uk/dnsmasq/${MY_P}.tar.lzma"
+SRC_URI="http://www.thekelleys.org.uk/dnsmasq/${MY_P}.tar.xz"
 
 LICENSE="|| ( GPL-2 GPL-3 )"
 SLOT="0"
@@ -28,7 +28,7 @@ RDEPEND="dbus? ( sys-apps/dbus )
 
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
-	|| ( app-arch/xz-utils app-arch/lzma )"
+	app-arch/xz-utils"
 
 S="${WORKDIR}/${PN}-${MY_PV}"
 
@@ -79,6 +79,7 @@ src_compile() {
 		PREFIX=/usr \
 		CC="$(tc-getCC)" \
 		CFLAGS="${CFLAGS}" \
+		LDFLAGS="${LDFLAGS}" \
 		COPTS="${COPTS}" \
 		all$(use nls && echo "-i18n")
 }
@@ -106,4 +107,6 @@ src_install() {
 		insinto /etc/dbus-1/system.d
 		doins dbus/dnsmasq.conf
 	fi
+
+	systemd_dounit "${FILESDIR}"/dnsmasq.service
 }
