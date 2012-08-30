@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pymongo/Attic/pymongo-2.2.ebuild,v 1.1 2012/05/11 08:31:30 ultrabug Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pymongo/Attic/pymongo-2.3.ebuild,v 1.1 2012/08/30 09:00:27 ultrabug Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
