@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea-bin/Attic/icedtea-bin-6.1.11.3.ebuild,v 1.3 2012/06/17 15:01:47 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea-bin/Attic/icedtea-bin-6.1.11.4.ebuild,v 1.1 2012/09/02 19:13:45 caster Exp $
 
 EAPI="4"
 
@@ -28,7 +28,7 @@ SRC_URI="
 
 LICENSE="GPL-2-with-linking-exception"
 SLOT="6"
-KEYWORDS="-* amd64 x86"
+KEYWORDS="-* ~amd64 ~x86"
 
 IUSE="+X +alsa cjk +cups doc examples nsplugin source"
 REQUIRED_USE="nsplugin? ( X )"

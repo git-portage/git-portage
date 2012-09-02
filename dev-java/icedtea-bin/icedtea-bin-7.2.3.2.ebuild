@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea-bin/Attic/icedtea-bin-7.2.2.1.ebuild,v 1.1 2012/06/16 17:11:04 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea-bin/Attic/icedtea-bin-7.2.3.2.ebuild,v 1.1 2012/09/02 19:13:45 caster Exp $
 
 EAPI="4"
 
