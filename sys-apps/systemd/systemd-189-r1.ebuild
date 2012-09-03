@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/Attic/systemd-189.ebuild,v 1.3 2012/08/28 16:53:42 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/Attic/systemd-189-r1.ebuild,v 1.1 2012/09/03 21:50:59 mgorny Exp $
 
 EAPI=4
 
@@ -127,8 +127,10 @@ src_install() {
 	rm "${D}"/usr/share/man/man1/init.1 || die
 
 	# Create /run/lock as required by new baselay/OpenRC compat.
-	insinto /usr/lib/tmpfiles.d
-	doins "${FILESDIR}"/gentoo-run.conf
+	systemd_dotmpfilesd "${FILESDIR}"/gentoo-run.conf
+
+	# Add mount-rules for /var/lock and /var/run, bug #433607
+	systemd_dounit "${FILESDIR}"/var-{lock,run}.mount
 
 	# Check whether we won't break user's system.
 	[[ -x "${D}"/bin/systemd ]] || die '/bin/systemd symlink broken, aborting.'
