@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.5.ebuild,v 1.11 2012/09/05 08:28:17 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.5.ebuild,v 1.12 2012/09/05 08:29:58 jlec Exp $
 
 EAPI="4"
 PYTHON_DEPEND="python? 2"
@@ -274,7 +274,7 @@ src_install() {
 	fi
 
 	# documentation
-	dodoc ChangeLog LICENSE ReleaseNotes SUPPORT technotes
+	dodoc ChangeLog ReleaseNotes SUPPORT technotes
 
 	# vim-files
 	if use vim-syntax; then
