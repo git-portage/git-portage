@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.3-r2.ebuild,v 1.9 2012/09/05 07:07:58 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.0.3-r2.ebuild,v 1.10 2012/09/05 08:28:17 jlec Exp $
 
 EAPI="2"
 PYTHON_DEPEND="python? 2"
@@ -236,14 +236,12 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	insinto /usr/share/pixmaps
-	doins scripts/bacula.png || die
+	doicon scripts/bacula.png || die
 
 	# install bat when enabled (for some reason ./configure doesn't pick this up)
 	if use qt4 && ! use static ; then
 		dosbin "${S}"/src/qt-console/.libs/bat || die
-		insinto /usr/share/pixmaps
-		doins src/qt-console/images/bat_icon.png || die
+		doicon src/qt-console/images/bat_icon.png || die
 		domenu scripts/bat.desktop || die
 	fi
 
