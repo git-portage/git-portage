@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.0.3-r3.ebuild,v 1.5 2012/05/24 04:36:18 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.0.3-r3.ebuild,v 1.6 2012/09/05 07:07:58 jlec Exp $
 
 EAPI="2"
 PYTHON_DEPEND="python? 2"
@@ -246,8 +246,7 @@ src_install() {
 		dosbin "${S}"/src/qt-console/.libs/bat || die
 		insinto /usr/share/pixmaps
 		doins src/qt-console/images/bat_icon.png || die
-		insinto /usr/share/applications
-		doins scripts/bat.desktop || die
+		domenu scripts/bat.desktop || die
 	fi
 
 	# remove some scripts we don't need at all

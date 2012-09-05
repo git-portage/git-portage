@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.5.ebuild,v 1.9 2012/08/17 18:14:02 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/Attic/bacula-5.2.5.ebuild,v 1.10 2012/09/05 07:07:58 jlec Exp $
 
 EAPI="4"
 PYTHON_DEPEND="python? 2"
@@ -203,8 +203,7 @@ src_install() {
 	if use qt4 && ! use static ; then
 		insinto /usr/share/pixmaps
 		doins src/qt-console/images/bat_icon.png
-		insinto /usr/share/applications
-		doins scripts/bat.desktop
+		domenu scripts/bat.desktop
 	fi
 
 	# remove some scripts we don't need at all

@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.131 2012/08/17 18:14:02 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.132 2012/09/05 07:07:58 jlec Exp $
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> bacula-5.0.3-r1.ebuild,
+  bacula-5.0.3-r2.ebuild, bacula-5.0.3-r3.ebuild, bacula-5.2.10.ebuild,
+  bacula-5.2.5.ebuild, bacula-5.2.9.ebuild:
+  Use domenu instead insinto + doins to install .desktop files
 
   17 Aug 2012; Thomas Beierlein <tomjbe@gentoo.org> bacula-5.2.5.ebuild,
   bacula-5.2.9.ebuild, bacula-5.2.10.ebuild:
