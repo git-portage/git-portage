@@ -1,9 +1,9 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/freenet/Attic/freenet-0.7.5_p1407.ebuild,v 1.4 2012/06/22 18:37:41 tommy Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/freenet/Attic/freenet-0.7.5_p1411.ebuild,v 1.1 2012/09/11 18:38:45 tommy Exp $
 
 EAPI="2"
-DATE=20120415
+DATE=20120730
 JAVA_PKG_IUSE="doc source"
 
 inherit eutils java-pkg-2 java-ant-2 multilib user
