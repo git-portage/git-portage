@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.134 2012/09/05 08:29:58 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.135 2012/09/12 06:47:40 tomjbe Exp $
+
+*bacula-5.2.11 (12 Sep 2012)
+
+  12 Sep 2012; Thomas Beierlein <tomjbe@gentoo.org> +bacula-5.2.11.ebuild:
+  Version bump
 
   05 Sep 2012; Justin Lecher <jlec@gentoo.org> bacula-5.0.3-r3.ebuild,
   bacula-5.2.10.ebuild, bacula-5.2.5.ebuild, bacula-5.2.9.ebuild:
