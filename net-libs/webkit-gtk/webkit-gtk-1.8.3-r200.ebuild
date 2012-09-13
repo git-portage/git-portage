@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/webkit-gtk/Attic/webkit-gtk-1.8.1-r200.ebuild,v 1.2 2012/05/05 02:54:26 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/webkit-gtk/Attic/webkit-gtk-1.8.3-r200.ebuild,v 1.1 2012/09/13 05:27:02 tetromino Exp $
 
 EAPI="4"
 
@@ -11,15 +11,13 @@ MY_P="webkit-${PV}"
 DESCRIPTION="Open source web browser engine"
 HOMEPAGE="http://www.webkitgtk.org/"
 SRC_URI="http://www.webkitgtk.org/releases/${MY_P}.tar.xz"
-#SRC_URI="mirror://gentoo/${P}.tar.xz"
 
 LICENSE="LGPL-2 LGPL-2.1 BSD"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~x86-macos"
-# geoclue
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~x86-macos"
 IUSE="aqua coverage debug +geoloc +gstreamer +introspection +jit spell +webgl"
-# bug 372493
-REQUIRED_USE="introspection? ( gstreamer )"
+# bugs 372493, 416331
+REQUIRED_USE="introspection? ( geoloc gstreamer )"
 
 # use sqlite, svg by default
 # dependency on >=x11-libs/gtk+-2.13:2 for gail
@@ -29,7 +27,7 @@ RDEPEND="
 	virtual/jpeg
 	>=media-libs/libpng-1.4:0
 	>=x11-libs/cairo-1.10
-	>=dev-libs/glib-2.31.8:2
+	>=dev-libs/glib-2.32:2
 	>=x11-libs/gtk+-2.13:2[aqua=,introspection?]
 	>=dev-libs/icu-3.8.1-r1
 	>=net-libs/libsoup-2.37.92:2.4[introspection?]
@@ -81,8 +79,17 @@ src_prepare() {
 	# TODO: FAILS TO APPLY!
 	#use sparc && epatch "${FILESDIR}"/${PN}-1.2.3-fix-pool-sparc.patch
 
-	# CVE-2011-3064, https://bugzilla.redhat.com/show_bug.cgi?id=807596
-	epatch "${FILESDIR}/${PN}-1.8.0-svgimagebuffer-clip.patch"
+	# USE=-gstreamer build failure, bug #412221, https://bugs.webkit.org/show_bug.cgi?id=84526
+	epatch "${FILESDIR}/${PN}-1.8.1-CodeGeneratorGObject-properties.patch"
+
+	# bug #416057; in 1.9.x
+	epatch "${FILESDIR}/${PN}-1.8.1-gst-required-version.patch"
+
+	# bug #428012; in 1.9.x
+	epatch "${FILESDIR}/${PN}-1.8.2-bison-2.6.patch"
+
+	# bug #417523, https://bugs.webkit.org/show_bug.cgi?id=96602
+	epatch "${FILESDIR}/${PN}-1.8.3-libdl.patch"
 
 	# intermediate MacPorts hack while upstream bug is not fixed properly
 	# https://bugs.webkit.org/show_bug.cgi?id=28727
@@ -114,15 +121,22 @@ src_prepare() {
 	# https://bugs.webkit.org/show_bug.cgi?id=50744
 	# testkeyevents is interactive
 	# mimehandling test sometimes fails under Xvfb (works fine manually)
-	# datasource test needs a network connection and intermittently fails with
-	#  icedtea-web
+	# datasource test needs a network connection and intermittently fails with icedtea-web
+	# webplugindatabase intermittently fails with icedtea-web
 	sed -e '/Programs\/unittests\/testwebinspector/ d' \
 		-e '/Programs\/unittests\/testkeyevents/ d' \
 		-e '/Programs\/unittests\/testmimehandling/ d' \
 		-e '/Programs\/unittests\/testwebdatasource/ d' \
+		-e '/Programs\/unittests\/testwebplugindatabase/ d' \
 		-i Source/WebKit/gtk/GNUmakefile.am || die
 	# garbage collection test fails intermittently if icedtea-web is installed
 	epatch "${FILESDIR}/${PN}-1.7.90-test_garbage_collection.patch"
+
+	# occasional test failure due to additional Xvfb process spawned
+	epatch "${FILESDIR}/${PN}-1.8.1-tests-xvfb.patch"
+
+	# For >=sys-devel/automake-1.12 compability wrt #420591
+	sed -i -e 's:mkdir_p:MKDIR_P:' {.,Source/WebKit/gtk/po}/GNUmakefile.am || die
 
 	# Respect CC, otherwise fails on prefix #395875
 	tc-export CC
