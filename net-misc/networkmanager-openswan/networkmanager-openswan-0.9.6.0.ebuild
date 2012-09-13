@@ -1,26 +1,25 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager-vpnc/Attic/networkmanager-vpnc-0.9.0.ebuild,v 1.3 2012/08/14 04:28:50 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager-openswan/Attic/networkmanager-openswan-0.9.6.0.ebuild,v 1.1 2012/09/13 09:55:05 tetromino Exp $
 
 EAPI="4"
 GNOME_ORG_MODULE="NetworkManager-${PN##*-}"
 
 inherit gnome.org
 
-DESCRIPTION="NetworkManager VPNC plugin"
+DESCRIPTION="NetworkManager Openswan plugin"
 HOMEPAGE="http://www.gnome.org/projects/NetworkManager/"
-
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gtk test"
+IUSE="gtk"
 
 RDEPEND="
 	>=net-misc/networkmanager-${PV}
 	>=dev-libs/dbus-glib-0.74
-	>=net-misc/vpnc-0.5
+	net-misc/openswan
 	gtk? (
-		>=x11-libs/gtk+-2.91.4:3
+		>=x11-libs/gtk+-3.0.0:3
 		gnome-base/gnome-keyring
 	)"
 
@@ -29,16 +28,12 @@ DEPEND="${RDEPEND}
 	dev-util/intltool
 	virtual/pkgconfig"
 
-# XXX: https://bugzilla.gnome.org/show_bug.cgi?id=608348
-RESTRICT="test"
-
 src_configure() {
 	ECONF="--disable-more-warnings
 		--disable-static
 		--with-dist-version=Gentoo
 		--with-gtkver=3
-		$(use_with gtk gnome)
-		$(use_with test tests)"
+		$(use_with gtk gnome)"
 
 	econf ${ECONF}
 }
