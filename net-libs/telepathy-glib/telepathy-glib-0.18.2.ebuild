@@ -1,11 +1,13 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/telepathy-glib/Attic/telepathy-glib-0.17.7.ebuild,v 1.3 2012/05/05 02:54:30 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/telepathy-glib/Attic/telepathy-glib-0.18.2.ebuild,v 1.1 2012/09/15 08:53:51 pacho Exp $
 
 EAPI="4"
 PYTHON_DEPEND="2:2.5"
+VALA_MIN_API_VERSION="0.14"
+VALA_USE_DEPEND="vapigen"
 
-inherit python virtualx
+inherit python virtualx vala
 
 DESCRIPTION="GLib bindings for the Telepathy D-Bus protocol."
 HOMEPAGE="http://telepathy.freedesktop.org"
@@ -18,13 +20,12 @@ IUSE="debug +introspection +vala"
 
 RDEPEND=">=dev-libs/glib-2.30.0:2
 	>=dev-libs/dbus-glib-0.90
-	introspection? ( >=dev-libs/gobject-introspection-1.30 )
-	vala? (
-		>=dev-lang/vala-0.14.0:0.14[vapigen]
-		>=dev-libs/gobject-introspection-1.30 )"
+	introspection? ( >=dev-libs/gobject-introspection-1.30 )"
 DEPEND="${RDEPEND}
 	dev-libs/libxslt
-	virtual/pkgconfig"
+	virtual/pkgconfig
+	vala? ( $(vala_depend)
+		>=dev-libs/gobject-introspection-1.30 )"
 
 src_prepare() {
 	python_convert_shebangs -r 2 examples tests tools
@@ -36,8 +37,8 @@ src_configure() {
 
 	if use vala; then
 		myconf="--enable-introspection
-			VALAC=$(type -p valac-0.14)
-			VAPIGEN=$(type -p vapigen-0.14)"
+			VALAC=$(type -p valac-0.16)
+			VAPIGEN=$(type -p vapigen-0.16)"
 	fi
 
 	econf --disable-static \
