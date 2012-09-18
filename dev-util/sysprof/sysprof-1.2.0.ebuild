@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/sysprof/Attic/sysprof-1.1.8-r1.ebuild,v 1.3 2012/09/18 09:59:26 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/sysprof/sysprof-1.2.0.ebuild,v 1.1 2012/09/18 09:59:26 tetromino Exp $
 
 EAPI="4"
 
-inherit gnome2-utils eutils linux-info
+inherit gnome2-utils eutils linux-info toolchain-funcs
 
 DESCRIPTION="System-wide Linux Profiler"
 HOMEPAGE="http://sysprof.com/"
@@ -20,6 +20,7 @@ RDEPEND=">=dev-libs/glib-2.6:2
 	x11-libs/pango
 	>=gnome-base/libglade-2:2.0"
 DEPEND="${RDEPEND}
+	>=sys-kernel/linux-headers-2.6.32
 	virtual/pkgconfig"
 
 DOCS="AUTHORS NEWS README TODO" # ChangeLog is empty
@@ -30,12 +31,11 @@ pkg_pretend() {
 }
 
 src_install() {
-	default
-
 	# Install udev rules in the proper place
-	mkdir -p "${D}/lib/udev/rules.d" || die
-	mv "${D}/etc/udev/rules.d/"* "${D}/lib/udev/rules.d/" || die
-	rm -rf "${D}/etc/udev/rules.d/"
+	local udevdir=/lib/udev
+	has_version sys-fs/udev && udevdir="$($(tc-getPKG_CONFIG) --variable=udevdir udev)"
+	export MAKEOPTS="${MAKEOPTS} udevdir=${udevdir}/rules.d"
+	default
 
 	# Symlink icons for use in application launchers
 	for i in 16 24 32 48; do
