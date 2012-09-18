@@ -1,8 +1,8 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.6.10-r1.ebuild,v 1.6 2012/08/31 16:50:26 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.8.2-r2.ebuild,v 1.1 2012/09/18 16:48:15 jer Exp $
 
-EAPI=4
+EAPI="4"
 PYTHON_DEPEND="python? 2"
 inherit autotools eutils flag-o-matic python toolchain-funcs user
 
@@ -13,10 +13,10 @@ SRC_URI="http://www.wireshark.org/download/src/all-versions/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="
 	adns doc doc-pdf gtk ipv6 libadns lua gcrypt geoip kerberos profile
-	+pcap portaudio python +caps selinux smi ssl threads zlib
+	+pcap portaudio python +caps selinux smi ssl zlib
 "
 RDEPEND=">=dev-libs/glib-2.14:2
 	zlib? ( sys-libs/zlib
@@ -106,9 +106,8 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch \
-		"${FILESDIR}"/${PN}-1.6.6-gtk-pcap.patch \
-		"${FILESDIR}"/${PN}-1.8.1-ldflags.patch
+	epatch "${FILESDIR}"/${PN}-1.8.1-ldflags.patch
+	epatch "${FILESDIR}"/${PN}-1.8.2-CVE-2012-3548.patch
 	sed -i -e 's|.png||g' ${PN}.desktop || die
 	eautoreconf
 }
@@ -140,7 +139,6 @@ src_configure() {
 			myconf+=" --with-adns --without-c-ares"
 		fi
 	fi
-
 	# Workaround bug #213705. If krb5-config --libs has -lcrypto then pass
 	# --with-ssl to ./configure. (Mimics code from acinclude.m4).
 	if use kerberos; then
@@ -165,7 +163,6 @@ src_configure() {
 		$(use_enable gtk wireshark) \
 		$(use_enable ipv6) \
 		$(use_enable profile profile-build) \
-		$(use_enable threads) \
 		$(use_with caps libcap) \
 		$(use_with gcrypt) \
 		$(use_with geoip) \
@@ -178,14 +175,15 @@ src_configure() {
 		$(use_with smi libsmi) \
 		$(use_with ssl gnutls) \
 		$(use_with zlib) \
-		--sysconfdir="${EPREFIX}"/etc/wireshark \
 		--disable-extra-gcc-checks \
+		--disable-usr-local \
+		--sysconfdir="${EPREFIX}"/etc/wireshark \
 		${myconf}
 }
 
 src_compile() {
 	default
-	use doc && cd docbook && { emake; }
+	use doc && emake -C docbook
 }
 
 src_install() {
