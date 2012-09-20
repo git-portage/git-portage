@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.2.12.ebuild,v 1.1 2012/09/16 07:59:22 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.2.12.ebuild,v 1.2 2012/09/20 18:58:26 tomjbe Exp $
 
 EAPI="4"
 PYTHON_DEPEND="python? 2"
@@ -124,6 +124,9 @@ src_prepare() {
 	epatch "${FILESDIR}"/5.2.3/${PN}-5.2.3-openssl-1.patch
 
 	epatch "${FILESDIR}"/5.2.10/${PN}-5.2.10-fix-static.patch
+
+	# fix file not found error during make depend
+	epatch "${FILESDIR}"/5.2.12/${P}-depend.patch
 }
 
 src_configure() {
