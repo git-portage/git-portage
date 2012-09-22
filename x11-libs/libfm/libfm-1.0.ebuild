@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libfm/Attic/libfm-1.0.ebuild,v 1.1 2012/08/12 19:58:01 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libfm/Attic/libfm-1.0.ebuild,v 1.2 2012/09/22 16:32:37 hwoarang Exp $
 
 EAPI=4
 
@@ -45,7 +45,7 @@ src_configure() {
 		--sysconfdir="${EPREFIX}/etc" \
 		--disable-dependency-tracking \
 		--disable-static \
-		$(use_enable udev udisks) \
+		--disable-udisks \
 		$(use_enable examples demo) \
 		$(use_enable debug) \
 		# Documentation fails to build at the moment

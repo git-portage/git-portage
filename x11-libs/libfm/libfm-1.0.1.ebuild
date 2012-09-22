@@ -1,20 +1,21 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libfm/libfm-9999.ebuild,v 1.26 2012/09/22 16:32:37 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libfm/Attic/libfm-1.0.1.ebuild,v 1.1 2012/09/22 16:32:37 hwoarang Exp $
 
 EAPI=4
 
-EGIT_REPO_URI="git://pcmanfm.git.sourceforge.net/gitroot/pcmanfm/${PN}"
+inherit autotools fdo-mime vala
 
-inherit autotools git-2 fdo-mime vala
-
+MY_PV=${PV/_/}
+MY_P="${PN}-${MY_PV}"
 DESCRIPTION="A library for file management"
 HOMEPAGE="http://pcmanfm.sourceforge.net/"
+SRC_URI="http://dev.gentoo.org/~hwoarang/distfiles/${MY_P}.tar.gz"
 
+KEYWORDS="~alpha ~amd64 ~arm ~ppc ~x86 ~amd64-linux ~x86-linux"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="debug doc examples vala"
-KEYWORDS=""
 
 COMMON_DEPEND=">=dev-libs/glib-2.18:2
 	>=x11-libs/gtk+-2.16:2
@@ -23,31 +24,18 @@ RDEPEND="${COMMON_DEPEND}
 	x11-misc/shared-mime-info
 	|| ( gnome-base/gvfs[udev,udisks] gnome-base/gvfs[udev,gdu] )"
 DEPEND="${COMMON_DEPEND}
-	>=dev-lang/vala-0.14.0
+	vala? ( $(vala_depend) )
 	dev-util/gtk-doc-am
-	doc? (
-		dev-util/gtk-doc
-	)
 	>=dev-util/intltool-0.40
 	virtual/pkgconfig
 	sys-devel/gettext"
 
-DOCS=( AUTHORS TODO )
+S="${WORKDIR}"/${MY_P}
 
 src_prepare() {
-	if ! use doc; then
-		sed -ie '/SUBDIRS=/s#docs##' "${S}"/Makefile.am || die "sed failed"
-		sed -ie '/^[[:space:]]*docs/d' configure.ac || die "sed failed"
-	else
-		gtkdocize --copy || die
-	fi
-	intltoolize --force --copy --automake || die
-	#disable unused translations. Bug #356029
-	for trans in app-chooser ask-rename exec-file file-prop preferred-apps \
-		progress;do
-		echo "data/ui/"${trans}.ui >> po/POTFILES.in
-	done
-	sed -i -e "s:-O0::" -e "/-DG_ENABLE_DEBUG/s: -g::" "${S}"/configure.ac || die
+	sed -ie '/SUBDIRS=/s#docs##' "${S}"/Makefile.am || die "sed failed"
+	sed -i -e '/^[[:space:]]*docs/d' -e "s:-O0::" -e "/-DG_ENABLE_DEBUG/s: -g::" \
+		configure.ac || die "sed failed"
 	#Remove -Werror for automake-1.12. Bug #421101
 	sed -i "s:-Werror::" configure.ac || die
 	eautoreconf
@@ -63,7 +51,7 @@ src_configure() {
 		$(use_enable examples demo) \
 		$(use_enable debug) \
 		$(use_enable vala actions) \
-		$(use_enable doc gtk-doc) \
+		$(use_enable doc gtk-doc)
 		--with-html-dir=/usr/share/doc/${PF}/html
 }
 
