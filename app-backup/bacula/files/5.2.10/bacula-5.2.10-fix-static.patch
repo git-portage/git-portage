@@ -28,7 +28,7 @@
 -	      $(DLIB) $(CONS_LIBS) -lbaccfg -lbac -lm $(LIBS) $(GETTEXT_LIBS) \
 -	      $(OPENSSL_LIBS)
 +	      $(DLIB) $(CONS_LIBS) -lbaccfg -lbac -lm $(ZLIBS) $(GETTEXT_LIBS) \
-+	      $(OPENSSL_LIBS) $(LIBS)
++	      $(OPENSSL_LIBS) $(LIBS) $(ZLIBS)
  	strip $@
  
  

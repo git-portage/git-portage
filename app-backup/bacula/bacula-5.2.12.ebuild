@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.2.12.ebuild,v 1.3 2012/09/22 14:55:16 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.2.12.ebuild,v 1.4 2012/09/22 19:30:46 tomjbe Exp $
 
 EAPI="4"
 PYTHON_DEPEND="python? 2"
@@ -19,10 +19,9 @@ SRC_URI="mirror://sourceforge/bacula/${MY_P}.tar.gz"
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~hppa ppc ~sparc ~x86"
-IUSE="bacula-clientonly bacula-nodir bacula-nosd ipv6 logwatch mysql postgres python qt4 readline +sqlite3 ssl static tcpd vim-syntax X"
+IUSE="acl bacula-clientonly bacula-nodir bacula-nosd ipv6 logwatch mysql postgres python qt4 readline +sqlite3 ssl static tcpd vim-syntax X"
 
 DEPEND="
-	>=sys-libs/zlib-1.1.4
 	dev-libs/gmp
 	!bacula-clientonly? (
 		postgres? ( dev-db/postgresql-base[threads] )
@@ -34,12 +33,23 @@ DEPEND="
 		x11-libs/qt-svg:4
 		x11-libs/qwt:5
 	)
-	ssl? ( dev-libs/openssl )
 	logwatch? ( sys-apps/logwatch )
 	tcpd? ( >=sys-apps/tcp-wrappers-7.6 )
 	readline? ( >=sys-libs/readline-4.1 )
-	dev-libs/lzo
-	sys-libs/ncurses"
+	static? (
+		acl? ( virtual/acl[static-libs] )
+		sys-libs/zlib[static-libs]
+		dev-libs/lzo[static-libs]
+		sys-libs/ncurses[static-libs]
+		ssl? ( dev-libs/openssl[static-libs] )
+	)
+	!static? (
+		acl? ( virtual/acl )
+		sys-libs/zlib
+		dev-libs/lzo
+		sys-libs/ncurses
+		ssl? ( dev-libs/openssl )
+	)"
 RDEPEND="${DEPEND}
 	!bacula-clientonly? (
 		!bacula-nosd? (
@@ -125,6 +135,10 @@ src_prepare() {
 
 	epatch "${FILESDIR}"/5.2.10/${PN}-5.2.10-fix-static.patch
 
+	# do not strip binaries
+	sed -i -e "s/strip /# strip /" src/filed/Makefile.in || die
+	sed -i -e "s/strip /# strip /" src/console/Makefile.in || die
+
 	# fix file not found error during make depend
 	epatch "${FILESDIR}"/5.2.12/${P}-depend.patch
 }
@@ -167,6 +181,7 @@ src_configure() {
 		$(use_with readline readline /usr) \
 		$(use_with ssl openssl) \
 		$(use_enable ipv6) \
+		$(use_enable acl) \
 		$(use_with tcpd tcp-wrappers)"
 
 	econf \

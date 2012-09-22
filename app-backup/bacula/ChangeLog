@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.138 2012/09/22 14:55:16 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.139 2012/09/22 19:30:46 tomjbe Exp $
+
+  22 Sep 2012; Thomas Beierlein <tomjbe@gentoo.org>
+  files/5.2.10/bacula-5.2.10-fix-static.patch, bacula-5.2.12.ebuild:
+  Fix build with USE=static (bug #435798). Thanks peratu
 
   22 Sep 2012; Anthony G. Basile <blueness@gentoo.org> bacula-5.2.12.ebuild:
   stable ppc, bug #434878
