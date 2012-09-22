@@ -1,46 +1,43 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/totem-pl-parser/Attic/totem-pl-parser-3.4.2.ebuild,v 1.3 2012/09/18 10:14:04 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/totem-pl-parser/Attic/totem-pl-parser-2.32.6-r2.ebuild,v 1.1 2012/09/22 17:45:37 pacho Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
 GNOME2_LA_PUNT="yes"
 
-inherit gnome2
+inherit eutils gnome2
 
 DESCRIPTION="Playlist parsing library"
 HOMEPAGE="http://projects.gnome.org/totem/ http://developer.gnome.org/totem-pl-parser/stable/"
 
+# eautoreconf needs:
+#SRC_URI="${SRC_URI} mirror://gentoo/introspection-20110205.m4.tar.bz2"
+
 LICENSE="LGPL-2+"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~sparc ~x86 ~x86-fbsd"
-IUSE="archive crypt doc +introspection +quvi test"
+IUSE="archive doc +introspection +quvi"
 
-RDEPEND=">=dev-libs/glib-2.31:2
-	dev-libs/gmime:2.4
+RDEPEND=">=dev-libs/glib-2.24:2
+	dev-libs/gmime:2.6
 	>=net-libs/libsoup-gnome-2.30:2.4
 	archive? ( >=app-arch/libarchive-2.8.4 )
-	crypt? ( dev-libs/libgcrypt )
 	introspection? ( >=dev-libs/gobject-introspection-0.9.5 )
 	quvi? ( >=media-libs/libquvi-0.2.15 )"
 DEPEND="${RDEPEND}
 	!<media-video/totem-2.21
-	>=dev-util/intltool-0.35
 	>=sys-devel/gettext-0.17
-	virtual/pkgconfig
-	doc? ( >=dev-util/gtk-doc-1.14 )
-	test? (
-		gnome-base/gvfs[http]
-		sys-apps/dbus )"
+	>=dev-util/intltool-0.35
+	doc? ( >=dev-util/gtk-doc-1.11 )"
 # eautoreconf needs:
-#	>=dev-util/gtk-doc-am-1.14
+#	>=dev-util/gtk-doc-am-1.11
 
 pkg_setup() {
 	G2CONF="${G2CONF}
 		--disable-static
 		--disable-maintainer-mode
 		$(use_enable archive libarchive)
-		$(use_enable crypt libgcrypt)
 		$(use_enable quvi)
 		$(use_enable introspection)"
 	DOCS="AUTHORS ChangeLog NEWS"
@@ -57,6 +54,9 @@ pkg_setup() {
 #}
 
 src_prepare() {
+	# bug #386651, https://bugzilla.gnome.org/show_bug.cgi?id=661451
+	epatch "${FILESDIR}/${PN}-2.32.6-quvi-0.4.patch"
+
 	gnome2_src_prepare
 
 	# Disable tests requiring network access, bug #346127
@@ -67,5 +67,5 @@ src_prepare() {
 
 src_test() {
 	# This is required as told by upstream in bgo#629542
-	GVFS_DISABLE_FUSE=1 dbus-launch emake check || die "emake check failed"
+	dbus-launch emake check || die "emake check failed"
 }
