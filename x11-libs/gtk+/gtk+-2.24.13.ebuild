@@ -1,19 +1,18 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.24.8-r1.ebuild,v 1.12 2012/06/03 12:48:54 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.24.13.ebuild,v 1.1 2012/09/25 15:19:35 tetromino Exp $
 
 EAPI="4"
-PYTHON_DEPEND="2:2.5"
 
-inherit eutils flag-o-matic gnome.org python virtualx autotools
+inherit eutils flag-o-matic gnome.org virtualx autotools
 
 DESCRIPTION="Gimp ToolKit +"
 HOMEPAGE="http://www.gtk.org/"
 SRC_URI="${SRC_URI} mirror://gentoo/introspection.m4.bz2"
 
-LICENSE="LGPL-2"
+LICENSE="LGPL-2+"
 SLOT="2"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 IUSE="aqua cups debug doc examples +introspection test vim-syntax xinerama"
 
 # NOTE: cairo[svg] dep is due to bug 291283 (not patched to avoid eautoreconf)
@@ -36,14 +35,13 @@ COMMON_DEPEND="!aqua? (
 		x11-libs/gdk-pixbuf:2[introspection?]
 	)
 	xinerama? ( x11-libs/libXinerama )
-	>=dev-libs/glib-2.27.3:2
+	>=dev-libs/glib-2.30:2
 	>=x11-libs/pango-1.20[introspection?]
 	>=dev-libs/atk-1.29.2[introspection?]
 	media-libs/fontconfig
 	x11-misc/shared-mime-info
 	cups? ( net-print/cups )
 	introspection? ( >=dev-libs/gobject-introspection-0.9.3 )
-	!dev-util/gtk-builder-convert
 	!<gnome-base/gail-1000"
 DEPEND="${COMMON_DEPEND}
 	virtual/pkgconfig
@@ -82,6 +80,9 @@ set_gtk2_confdir() {
 }
 
 src_prepare() {
+	# 
+	epatch "${FILESDIR}/${PN}-2.24.13-gold.patch"
+
 	# use an arch-specific config directory so that 32bit and 64bit versions
 	# dont clash on multilib systems
 	epatch "${FILESDIR}/${PN}-2.21.3-multilib.patch"
@@ -89,14 +90,12 @@ src_prepare() {
 	# Don't break inclusion of gtkclist.h, upstream bug 536767
 	epatch "${FILESDIR}/${PN}-2.14.3-limit-gtksignal-includes.patch"
 
-	# Create symlinks to old icons until apps are ported, bug #339319
-	epatch "${FILESDIR}/${PN}-2.24.4-old-icons.patch"
-
 	# fix building with gir #372953, upstream bug #642085
 	epatch "${FILESDIR}"/${PN}-2.24.7-darwin-quartz-introspection.patch
 
-	# Upstream patch to fix iconview crash, will be in next release
-	epatch "${FILESDIR}/${P}-iconview-layout.patch"
+	# marshalers code was pre-generated with glib-2.31, upstream bug #671763
+	rm -v gdk/gdkmarshalers.c gtk/gtkmarshal.c gtk/gtkmarshalers.c \
+		perf/marshalers.c || die
 
 	# Stop trying to build unmaintained docs, bug #349754
 	strip_builddir SUBDIRS tutorial docs/Makefile.am docs/Makefile.in
@@ -110,7 +109,8 @@ src_prepare() {
 
 	if ! use test; then
 		# don't waste time building tests
-		strip_builddir SRC_SUBDIRS tests Makefile.am Makefile.in
+		strip_builddir SRC_SUBDIRS tests Makefile.{am,in}
+		strip_builddir SUBDIRS tests gdk/Makefile.{am,in} gtk/Makefile.{am,in}
 	else
 		# Non-working test in gentoo's env
 		sed 's:\(g_test_add_func ("/ui-tests/keys-events.*\):/*\1*/:g' \
@@ -198,7 +198,8 @@ src_install() {
 		sed -i -e "s:Libs\: :Libs\: -framework Carbon :" "${ED%/}"/usr/lib/pkgconfig/$i || die "sed failed"
 	done
 
-	python_convert_shebangs 2 "${ED}"usr/bin/gtk-builder-convert
+	# dev-util/gtk-builder-convert split off into a separate package, #402905
+	rm "${ED}"usr/bin/gtk-builder-convert
 
 	find "${D}" -name '*.la' -exec rm -f {} +
 }
