@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/Attic/glib-2.32.3.ebuild,v 1.3 2012/09/11 18:03:21 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/Attic/glib-2.34.0.ebuild,v 1.1 2012/09/25 11:40:57 tetromino Exp $
 
 EAPI="4"
 PYTHON_DEPEND="utils? 2"
@@ -13,7 +13,7 @@ HOMEPAGE="http://www.gtk.org/"
 SRC_URI="${SRC_URI}
 	http://pkgconfig.freedesktop.org/releases/pkg-config-0.26.tar.gz" # pkg.m4 for eautoreconf
 
-LICENSE="LGPL-2"
+LICENSE="LGPL-2+"
 SLOT="2"
 IUSE="debug doc fam kernel_linux selinux static-libs systemtap test utils xattr"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~amd64-linux ~x86-linux"
@@ -23,18 +23,18 @@ RDEPEND="virtual/libiconv
 	sys-libs/zlib
 	|| (
 		>=dev-libs/elfutils-0.142
-		>=dev-libs/libelf-0.8.11 )
+		>=dev-libs/libelf-0.8.12 )
 	xattr? ( sys-apps/attr )
 	fam? ( virtual/fam )
 	utils? ( >=dev-util/gdbus-codegen-${PV} )"
 DEPEND="${RDEPEND}
+	app-text/docbook-xml-dtd:4.1.2
+	>=dev-libs/libxslt-1.0
 	>=sys-devel/gettext-0.11
 	>=dev-util/gtk-doc-am-1.15
 	doc? (
-		>=dev-libs/libxslt-1.0
 		>=dev-util/gdbus-codegen-${PV}
-		>=dev-util/gtk-doc-1.15
-		~app-text/docbook-xml-dtd-4.1.2 )
+		>=dev-util/gtk-doc-1.15 )
 	systemtap? ( >=dev-util/systemtap-1.3 )
 	test? (
 		sys-devel/gdb
@@ -49,7 +49,7 @@ PDEPEND="x11-misc/shared-mime-info
 
 pkg_setup() {
 	# Needed for gio/tests/gdbus-testserver.py
-	if use test ; then
+	if use test; then
 		python_set_active_version 2
 		python_pkg_setup
 	fi
@@ -63,23 +63,10 @@ pkg_setup() {
 src_prepare() {
 	mv -f "${WORKDIR}"/pkg-config-*/pkg.m4 "${WORKDIR}"/ || die
 
-	if use ia64 ; then
-		# Only apply for < 4.1
-		local major=$(gcc-major-version)
-		local minor=$(gcc-minor-version)
-		if (( major < 4 || ( major == 4 && minor == 0 ) )); then
-			epatch "${FILESDIR}/glib-2.10.3-ia64-atomic-ops.patch"
-		fi
-	fi
-
 	# Fix gmodule issues on fbsd; bug #184301
 	epatch "${FILESDIR}"/${PN}-2.12.12-fbsd.patch
 
-	# need to build tests if USE=doc for bug #387385
-	if ! use test && ! use doc; then
-		# don't waste time building tests
-		sed 's/^\(.*\SUBDIRS .*\=.*\)tests\(.*\)$/\1\2/' -i $(find . -name Makefile.am -o -name Makefile.in) || die
-	else
+	if use test; then
 		# Do not try to remove files on live filesystem, upstream bug #619274
 		sed 's:^\(.*"/desktop-app-info/delete".*\):/*\1*/:' \
 			-i "${S}"/gio/tests/desktop-app-info.c || die "sed failed"
@@ -112,6 +99,14 @@ src_prepare() {
 
 	# gdbus-codegen is a separate package
 	epatch "${FILESDIR}/${PN}-2.31.x-external-gdbus-codegen.patch"
+
+	# bashcomp goes in /usr/share/bash-completion
+	epatch "${FILESDIR}/${PN}-2.32.4-bashcomp.patch"
+
+	# https://bugzilla.gnome.org/show_bug.cgi?id=679306
+	epatch "${FILESDIR}/${PN}-2.34.0-testsuite-skip-thread4.patch"
+	# https://bugzilla.gnome.org/show_bug.cgi?id=679308
+	epatch "${FILESDIR}/${PN}-2.34.0-testsuite-skip-gdbus-auth-tests.patch"
 
 	# disable pyc compiling
 	use test && python_clean_py-compile_files
@@ -147,16 +142,21 @@ src_configure() {
 	# -- compnerd (3/27/06)
 	use debug && myconf="--enable-debug"
 
+	# need to build tests if USE=doc for bug #387385
+	if use doc || use test; then
+		myconf="${myconf} --enable-modular-tests"
+	fi
+
 	# Always use internal libpcre, bug #254659
 	econf ${myconf} \
 		$(use_enable xattr) \
-		$(use_enable doc man) \
 		$(use_enable doc gtk-doc) \
 		$(use_enable fam) \
 		$(use_enable selinux) \
 		$(use_enable static-libs static) \
 		$(use_enable systemtap dtrace) \
 		$(use_enable systemtap systemtap) \
+		--enable-man \
 		--with-pcre=internal \
 		--with-threads=posix
 }
@@ -178,12 +178,6 @@ src_install() {
 	rm -rf "${ED}/usr/share/gdb/" "${ED}/usr/share/glib-2.0/gdb/"
 
 	dodoc AUTHORS ChangeLog* NEWS* README
-
-	insinto /usr/share/bash-completion
-	for f in gdbus gsettings; do
-		newins "${ED}/etc/bash_completion.d/${f}-bash-completion.sh" ${f}
-	done
-	rm -rf "${ED}/etc"
 
 	# Completely useless with or without USE static-libs, people need to use
 	# pkg-config
