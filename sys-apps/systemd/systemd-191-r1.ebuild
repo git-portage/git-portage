@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/Attic/systemd-191.ebuild,v 1.2 2012/09/24 12:51:44 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/Attic/systemd-191-r1.ebuild,v 1.1 2012/09/26 05:22:05 mgorny Exp $
 
 EAPI=4
 
@@ -68,6 +68,7 @@ src_prepare() {
 	local PATCHES=(
 		"${FILESDIR}"/${PV}-0001-Disable-udev-targets-for-udev-190.patch
 		"${FILESDIR}"/${PV}-0002-journal-bring-mmap-cache-prototype-in-sync.patch
+		"${FILESDIR}"/${PV}-0003-log-fix-repeated-invocation-of-vsnprintf-vaprintf-in.patch
 	)
 
 	autotools-utils_src_prepare
