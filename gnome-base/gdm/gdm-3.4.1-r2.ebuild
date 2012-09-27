@@ -1,20 +1,24 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/Attic/gdm-3.4.1.ebuild,v 1.4 2012/09/27 08:54:42 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/Attic/gdm-3.4.1-r2.ebuild,v 1.1 2012/09/27 08:54:42 tetromino Exp $
 
 EAPI="4"
 GNOME2_LA_PUNT="yes"
 
 inherit autotools eutils gnome2 pam systemd user
 
+G_PV="2012.09.25"
+G_P="gdm-gentoo-${G_PV}"
 DESCRIPTION="GNOME Display Manager"
 HOMEPAGE="https://live.gnome.org/GDM"
+SRC_URI="${SRC_URI}
+	http://dev.gentoo.org/~tetromino/distfiles/${PN}/${G_P}.tar.xz"
 
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64 ~sh ~x86"
 
-IUSE="accessibility +consolekit +fallback fprint +gnome-shell ipv6 gnome-keyring +introspection plymouth selinux smartcard systemd tcpd test xinerama +xklavier"
+IUSE="accessibility audit +consolekit +fallback fprint +gnome-shell +introspection ipv6 ldap plymouth selinux smartcard systemd tcpd test xinerama +xklavier"
 
 # NOTE: x11-base/xorg-server dep is for X_SERVER_PATH etc, bug #295686
 # nspr used by smartcard extension
@@ -32,7 +36,7 @@ COMMON_DEPEND="
 	>=sys-power/upower-0.9
 	>=sys-apps/accountsservice-0.6.12
 
-	gnome-base/dconf
+	>=gnome-base/dconf-0.11.6
 	>=gnome-base/gnome-settings-daemon-3.1.4
 	gnome-base/gsettings-desktop-schemas
 	sys-apps/dbus
@@ -50,14 +54,15 @@ COMMON_DEPEND="
 	x11-apps/sessreg
 
 	virtual/pam
-	consolekit? ( sys-auth/consolekit )
+	sys-auth/pambase[consolekit?,systemd?]
 
 	accessibility? ( x11-libs/libXevie )
-	gnome-keyring? ( >=gnome-base/gnome-keyring-2.22[pam] )
+	audit? ( sys-process/audit )
+	consolekit? ( sys-auth/consolekit[pam] )
 	introspection? ( >=dev-libs/gobject-introspection-0.9.12 )
 	plymouth? ( sys-boot/plymouth )
 	selinux? ( sys-libs/libselinux )
-	systemd? ( >=sys-apps/systemd-39 )
+	systemd? ( >=sys-apps/systemd-39[pam] )
 	tcpd? ( >=sys-apps/tcp-wrappers-7.6 )
 	xinerama? ( x11-libs/libXinerama )
 	xklavier? ( >=x11-libs/libxklavier-4 )"
@@ -107,7 +112,6 @@ pkg_setup() {
 	# --with-at-spi-registryd-directory= needs to be passed explicitly because
 	# of https://bugzilla.gnome.org/show_bug.cgi?id=607643#c4
 	G2CONF="${G2CONF}
-		--disable-schemas-install
 		--disable-static
 		--localstatedir=${EPREFIX}/var
 		--with-xdmcp=yes
@@ -115,6 +119,7 @@ pkg_setup() {
 		--with-pam-prefix=${EPREFIX}/etc
 		--with-at-spi-registryd-directory=${EPREFIX}/usr/libexec
 		$(use_with accessibility xevie)
+		$(use_with audit libaudit)
 		$(use_enable ipv6)
 		$(use_enable xklavier libxklavier)
 		$(use_with consolekit console-kit)
@@ -163,6 +168,9 @@ src_prepare() {
 	epatch "${FILESDIR}/${P}-save-root-window.patch"
 	epatch "${FILESDIR}/${P}-plymouth.patch"
 
+	# dconf-0.13.x compatibility (next release)
+	epatch "${FILESDIR}/${P}-dconf-0.13.patch"
+
 	# don't load accessibility support at runtime when USE=-accessibility
 	use accessibility || epatch "${FILESDIR}/${PN}-3.3.92.1-disable-accessibility.patch"
 
@@ -173,7 +181,6 @@ src_prepare() {
 	fi
 
 	mkdir -p "${S}"/m4
-	intltoolize --force --copy --automake || die "intltoolize failed"
 	eautoreconf
 
 	gnome2_src_prepare
@@ -181,9 +188,6 @@ src_prepare() {
 
 src_install() {
 	gnome2_src_install
-
-	# Install the systemd unit file
-	systemd_dounit "${FILESDIR}/3.2.1.1/gdm.service"
 
 	# gdm-binary should be gdm to work with our init (#5598)
 	rm -f "${ED}/usr/sbin/gdm"
@@ -194,21 +198,15 @@ src_install() {
 	# log, etc.
 	keepdir /var/log/gdm
 
-	# add xinitrc.d scripts
-	exeinto /etc/X11/xinit/xinitrc.d
-	doexe "${FILESDIR}/49-keychain"
-	doexe "${FILESDIR}/50-ssh-agent"
-
 	# install XDG_DATA_DIRS gdm changes
 	echo 'XDG_DATA_DIRS="/usr/share/gdm"' > 99xdg-gdm
 	doenvd 99xdg-gdm
 
-	# install PAM files
-	mkdir "${T}/pam.d" || die "mkdir failed"
-	cp "${FILESDIR}/3.2.1.1"/gdm{,-autologin,-password,-fingerprint,-smartcard,-welcome} \
-		"${T}/pam.d" || die "cp failed"
-	use gnome-keyring && sed -i "s:#Keyring=::g" "${T}/pam.d"/*
-	dopamd "${T}/pam.d"/*
+	cd "${WORKDIR}/${G_P}"
+	local LDAP
+	use ldap && LDAP=yes
+	emake LDAP=${LDAP} EPREFIX="${EPREFIX}" \
+		SYSTEMD_UNITDIR="$(systemd_get_unitdir)" DESTDIR="${D}" install
 }
 
 pkg_postinst() {
@@ -232,12 +230,15 @@ pkg_postinst() {
 	elog "the pam_env man page for more information."
 	elog
 
-	if use gnome-keyring; then
-		elog "For autologin to unlock your keyring, you need to set an empty"
-		elog "password on your keyring. Use app-crypt/seahorse for that."
+	if has_version sys-auth/pambase[gnome-keyring]; then
+		elog "For passwordless login to unlock your keyring, you need to set an"
+		elog "empty password on your keyring. Use app-crypt/seahorse for that."
+	else
+		elog "To unlock your keyring on login, install sys-auth/pambase"
+		elog "with USE=gnome-keyring"
 	fi
 
-	if [ -f "/etc/X11/gdm/gdm.conf" ]; then
+	if [[ -f "/etc/X11/gdm/gdm.conf" ]]; then
 		elog "You had /etc/X11/gdm/gdm.conf which is the old configuration"
 		elog "file.  It has been moved to /etc/X11/gdm/gdm-pre-gnome-2.16"
 		mv /etc/X11/gdm/gdm.conf /etc/X11/gdm/gdm-pre-gnome-2.16
