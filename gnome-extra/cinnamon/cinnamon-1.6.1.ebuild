@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/cinnamon/Attic/cinnamon-1.4.ebuild,v 1.5 2012/09/28 08:13:29 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/cinnamon/Attic/cinnamon-1.6.1.ebuild,v 1.1 2012/09/28 08:13:29 tetromino Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
@@ -13,7 +13,10 @@ inherit autotools eutils gnome2 multilib pax-utils python
 DESCRIPTION="A fork of GNOME Shell with layout similar to GNOME 2"
 HOMEPAGE="http://cinnamon.linuxmint.com/"
 
-SRC_URI="https://github.com/linuxmint/Cinnamon/tarball/${PV} -> ${P}.tar.gz"
+MY_PV="${PV/_p/-UP}"
+MY_P="${PN}-${MY_PV}"
+
+SRC_URI="https://github.com/linuxmint/Cinnamon/tarball/${MY_PV} -> ${MY_P}.tar.gz"
 
 LICENSE="GPL-2+"
 SLOT="0"
@@ -32,18 +35,14 @@ COMMON_DEPEND=">=dev-libs/glib-2.29.10:2
 	>=x11-libs/gtk+-3.0.0:3[introspection]
 	>=media-libs/clutter-1.7.5:1.0[introspection]
 	app-misc/ca-certificates
-	>=dev-libs/folks-0.5.2
 	>=dev-libs/json-glib-0.13.2
 	>=gnome-base/gnome-desktop-2.91.2:3[introspection]
 	>=gnome-base/gsettings-desktop-schemas-2.91.91
-	>=gnome-extra/evolution-data-server-2.91.6
 	>=media-libs/gstreamer-0.10.16:0.10
 	>=media-libs/gst-plugins-base-0.10.16:0.10
-	>=net-im/telepathy-logger-0.2.4[introspection]
 	net-libs/libsoup:2.4[introspection]
-	>=net-libs/telepathy-glib-0.15.5[introspection]
 	>=sys-auth/polkit-0.100[introspection]
-	>=x11-wm/muffin-1.0.2[introspection]
+	>=x11-wm/muffin-1.0.5[introspection]
 
 	dev-libs/dbus-glib
 	dev-libs/libxml2:2
@@ -61,7 +60,7 @@ COMMON_DEPEND=">=dev-libs/glib-2.29.10:2
 	>=x11-libs/libXfixes-5.0
 	x11-apps/mesa-progs
 
-	bluetooth? ( >=net-wireless/gnome-bluetooth-3.1.0[introspection] )
+	bluetooth? ( >=net-wireless/gnome-bluetooth-3.4[introspection] )
 	networkmanager? (
 		gnome-base/libgnome-keyring
 		>=net-misc/networkmanager-0.8.999[introspection] )"
@@ -76,7 +75,9 @@ COMMON_DEPEND=">=dev-libs/glib-2.29.10:2
 # 7. xdg-utils needed for xdg-open, used by extension tool
 # 8. gconf-python needed for cinnamon-settings
 # 9. gnome-icon-theme-symbolic needed for various icons
-# 10. pygtk and gnome-menus:0 needed for menu editor
+# 10. pygobject needed for menu editor
+# 11. nemo - default file manager, tightly integrated with cinnamon
+# 12. timedated or DateTimeMechanism implementation for cinnamon-settings
 RDEPEND="${COMMON_DEPEND}
 	>=gnome-base/dconf-0.4.1
 	>=gnome-base/libgnomekbd-2.91.4[introspection]
@@ -95,11 +96,18 @@ RDEPEND="${COMMON_DEPEND}
 
 	dev-python/dbus-python
 	dev-python/gconf-python:2
+	dev-python/imaging
 
 	x11-themes/gnome-icon-theme-symbolic
 
-	dev-python/pygtk
-	gnome-base/gnome-menus:0[python]
+	dev-python/pygobject:3
+
+	gnome-extra/nemo
+
+	|| (
+		app-admin/openrc-settingsd
+		>=sys-apps/systemd-30
+		<gnome-base/gnome-settings-daemon-3.3.5 )
 
 	networkmanager? (
 		net-misc/mobile-broadband-provider-info
@@ -113,7 +121,7 @@ DEPEND="${COMMON_DEPEND}
 # libmozjs.so is picked up from /usr/lib while compiling, so block at build-time
 # https://bugs.gentoo.org/show_bug.cgi?id=360413
 
-S="${WORKDIR}/linuxmint-Cinnamon-a8b1a03"
+S="${WORKDIR}/linuxmint-Cinnamon-1359845"
 
 pkg_setup() {
 	DOCS="AUTHORS NEWS README"
@@ -132,10 +140,10 @@ pkg_setup() {
 
 src_prepare() {
 	# Fix automagic gnome-bluetooth dep, bug #398145
-	epatch "${FILESDIR}/${PN}-1.1.3-automagic-gnome-bluetooth.patch"
+	epatch "${FILESDIR}/${PN}-1.6.1-automagic-gnome-bluetooth.patch"
 
 	# Make networkmanager optional, bug #398593
-	epatch "${FILESDIR}/${PN}-1.3.1-optional-networkmanager.patch"
+	epatch "${FILESDIR}/${PN}-1.6.1-optional-networkmanager.patch"
 
 	# Gentoo uses /usr/libexec
 	sed -e "s:/usr/lib/gnome-session/gnome-session-check-accelerated:${EPREFIX}/usr/libexec/gnome-session-check-accelerated:" \
@@ -147,8 +155,8 @@ src_prepare() {
 		-i files/usr/bin/cinnamon-menu-editor \
 		-i files/usr/bin/cinnamon-settings \
 		-i files/usr/lib/cinnamon-menu-editor/Alacarte/config.py \
-		-i files/usr/lib/cinnamon-settings/cinnamon-settings.py \
-		-i files/generate_desktop_files || die "sed 2 failed"
+		-i files/usr/lib/cinnamon-menu-editor/Alacarte/MainWindow.py \
+		-i files/usr/lib/cinnamon-settings/cinnamon-settings.py || die "sed 2 failed"
 	if [[ "$(get_libdir)" != lib ]]; then
 		mv files/usr/lib "files/usr/$(get_libdir)" || die "mv failed"
 	fi
@@ -173,6 +181,7 @@ src_prepare() {
 src_install() {
 	gnome2_src_install
 	python_convert_shebangs 2 "${ED}usr/bin/cinnamon-extension-tool" \
+		"${ED}usr/bin/cinnamon-launcher" \
 		"${ED}usr/bin/cinnamon-menu-editor" \
 		"${ED}usr/bin/cinnamon-settings" \
 		"${ED}usr/$(get_libdir)/cinnamon-settings/cinnamon-settings.py"
