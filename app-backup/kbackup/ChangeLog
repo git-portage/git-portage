@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/kbackup
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/ChangeLog,v 1.25 2012/10/01 12:28:15 johu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/kbackup/ChangeLog,v 1.26 2012/10/01 12:30:32 johu Exp $
+
+  01 Oct 2012; Johannes Huber <johu@gentoo.org> -kbackup-0.7.1.ebuild:
+  Remove old.
 
   01 Oct 2012; Johannes Huber <johu@gentoo.org> kbackup-0.8.ebuild:
   Stable for x86, wrt bug #436328
