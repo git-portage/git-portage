@@ -33,5 +33,10 @@
 		przyrostowych kopii zapasowych danych oraz do zapisywania
 		ich na inne nośniki danych (jak płyty CD-R, taśmy etc.).
 	</longdescription>
+	<longdescription lang="es">
+		La categoría app-backup contiene herramientas para realizar copias
+		de respaldo de datos, incluyendo copias completas e incrementales,
+		así como respaldos realizados a otros medios (CD-R, cinta, etc.).
+	</longdescription>
 </catmetadata>
 
