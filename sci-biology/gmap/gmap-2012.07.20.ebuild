@@ -1,13 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/gmap/Attic/gmap-2011.09.14.ebuild,v 1.1 2011/09/25 21:57:32 weaver Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/gmap/gmap-2012.07.20.ebuild,v 1.1 2012/10/05 16:50:34 weaver Exp $
 
-EAPI="2"
+EAPI=4
 
 MY_PV=${PV//./-}
 
 DESCRIPTION="A Genomic Mapping and Alignment Program for mRNA and EST Sequences"
-HOMEPAGE="http://www.gene.com/share/gmap/"
+HOMEPAGE="http://research-pub.gene.com/gmap/"
 SRC_URI="http://research-pub.gene.com/gmap/src/gmap-gsnap-${MY_PV}.tar.gz"
 
 LICENSE="gmap"
