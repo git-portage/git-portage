@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/aws-sdk/Attic/aws-sdk-1.6.8.ebuild,v 1.1 2012/10/02 20:52:19 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/aws-sdk/Attic/aws-sdk-1.6.9.ebuild,v 1.1 2012/10/05 06:09:40 flameeyes Exp $
 
 EAPI=4
 
@@ -17,7 +17,7 @@ GITHUB_USER="amazonwebservices"
 GITHUB_PROJECT="${PN}-for-ruby"
 RUBY_S="${GITHUB_USER}-${GITHUB_PROJECT}-*"
 
-RUBY_FAKEGEM_GEMSPEC="${T}/${P}.gemspec"
+RUBY_FAKEGEM_GEMSPEC="${PN}.gemspec"
 
 inherit ruby-fakegem
 
@@ -40,9 +40,8 @@ RUBY_PATCHES=(
 	${PN}-1.5.3-disabletest.patch
 )
 
-each_ruby_install() {
-	sed -e "s:VERSION:${PV}:" "${FILESDIR}"/${PN}.gemspec > "${RUBY_FAKEGEM_GEMSPEC}"
-	each_fakegem_install
+all_ruby_prepare() {
+	sed -i -e 's:~>:>=:' "${RUBY_FAKEGEM_GEMSPEC}" || die
 }
 
 all_ruby_install() {
