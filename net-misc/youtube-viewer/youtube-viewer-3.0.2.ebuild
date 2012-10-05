@@ -1,14 +1,14 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/youtube-viewer/Attic/youtube-viewer-3.0.1_p20120924.ebuild,v 1.1 2012/09/24 23:39:29 hasufell Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/youtube-viewer/Attic/youtube-viewer-3.0.2.ebuild,v 1.1 2012/10/05 11:24:57 hasufell Exp $
 
 EAPI=4
 
-inherit eutils perl-module
+inherit perl-module vcs-snapshot
 
 DESCRIPTION="A command line utility for viewing youtube-videos in Mplayer"
 HOMEPAGE="http://trizen.googlecode.com"
-SRC_URI="http://dev.gentoo.org/~hasufell/distfiles/${P}.tar.xz"
+SRC_URI="https://github.com/trizen/youtube-viewer/tarball/${PV} -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -35,10 +35,7 @@ DEPEND="virtual/perl-Module-Build"
 
 SRC_TEST="do"
 
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-desktopfile.patch
-	perl-module_src_prepare
-}
+S=${WORKDIR}/${P}/WWW-YoutubeViewer
 
 # build system installs files on "perl Build.PL" too
 # do all the work in src_install
