@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/err/Attic/err-1.2.1-r1.ebuild,v 1.1 2012/07/03 15:45:35 maksbotan Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/err/Attic/err-1.3.1.ebuild,v 1.1 2012/10/06 09:15:59 pinkbyte Exp $
 
 EAPI=4
 
@@ -12,19 +12,20 @@ RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils eutils user
 
-DESCRIPTION="err is a plugin based XMPP chatbot designed to be easily deployable, extensible and maintainable."
+DESCRIPTION="Plugin based XMPP chatbot designed to be easily deployable, extensible and maintainable"
 HOMEPAGE="http://gbin.github.com/err/"
 
 SRC_URI="mirror://pypi/e/${PN}/${P}.tar.gz"
 KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-3"
 SLOT="0"
-IUSE=""
+IUSE="+plugins"
 
 DEPEND="dev-python/setuptools"
 RDEPEND="dev-python/xmpppy
 	dev-python/python-daemon
-	dev-python/yapsy"
+	dev-python/yapsy
+	plugins? ( dev-vcs/git )"
 
 pkg_setup() {
 	python_pkg_setup
@@ -34,16 +35,15 @@ pkg_setup() {
 	eend ${?}
 }
 
-src_prepare() {
-	epatch "${FILESDIR}"/err-tests.patch
-}
-
 src_install() {
 	distutils_src_install
 	newinitd "${FILESDIR}"/errd.initd errd
 	newconfd "${FILESDIR}"/errd.confd errd
 	dodir /etc/${PN}
 	dodir /var/lib/${PN}
+	# Create plugins directory here because of err creates it itself with 0777 rights
+	dodir /var/lib/${PN}/plugins
+
 	keepdir /var/log/${PN}
 	keepdir /var/run/${PN}
 	fowners -R err:err /var/lib/${PN}
