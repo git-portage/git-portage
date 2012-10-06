@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/coot/Attic/coot-0.7_pre4266.ebuild,v 1.1 2012/07/11 20:38:49 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/coot/coot-0.7.ebuild,v 1.1 2012/10/06 16:19:58 jlec Exp $
 
 EAPI=4
 
@@ -19,7 +19,7 @@ MY_P=${PN}-${MY_PV}
 DESCRIPTION="Crystallographic Object-Oriented Toolkit for model building, completion and validation"
 HOMEPAGE="http://www.biop.ox.ac.uk/coot/"
 SRC_URI="
-	http://dev.gentoo.org/~jlec/distfiles/${P}.tar.xz
+	http://www.biop.ox.ac.uk/coot/software/source/releases/${MY_P}.tar.gz
 	test? ( http://dev.gentoo.org/~jlec/distfiles/greg-data-${PV}.tar.gz  )"
 
 SLOT="0"
@@ -71,6 +71,8 @@ DEPEND="${RDEPEND}
 	sys-devel/bc
 	test? ( dev-scheme/greg )"
 
+S="${WORKDIR}/${MY_P}"
+
 pkg_setup() {
 	if use openmp; then
 		tc-has-openmp || die "Please use an OPENMP capable compiler"
@@ -92,14 +94,6 @@ src_prepare() {
 		-i configure.in || die
 
 	autotools-utils_src_prepare
-
-	cat >> src/svn-revision.cc <<- EOF
-	extern "C" {
-	int svn_revision() {
-		return  ${ESVN_WC_REVISION:-0};
-	}
-	}
-	EOF
 }
 
 src_configure() {
