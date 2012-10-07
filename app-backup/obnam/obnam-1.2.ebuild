@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/obnam/Attic/obnam-1.2.ebuild,v 1.1 2012/10/06 23:48:23 mschiff Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/obnam/Attic/obnam-1.2.ebuild,v 1.2 2012/10/07 10:29:07 mschiff Exp $
 
 EAPI=4
 
@@ -35,4 +35,12 @@ src_install() {
 	rm "${D}"/usr/share/man/man1/obnam-benchmark*
 	insinto /etc
 	doins "${FILESDIR}"/obnam.conf
+}
+
+pkg_postinst() {
+	if [[ $REPLACING_VERSIONS < "1.2" ]]; then
+		elog "You will need to setup a config file before running obnam for the first time."
+		elog "For details, please see the obnam(1) manual page."
+		elog "An example file has been installed as /etc/obnam.conf for your convenience."
+	fi
 }
