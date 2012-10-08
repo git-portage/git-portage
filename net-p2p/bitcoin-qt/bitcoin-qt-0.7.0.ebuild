@@ -1,31 +1,31 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoin-qt/Attic/bitcoin-qt-0.5.7_rc1.ebuild,v 1.1 2012/08/30 21:59:54 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoin-qt/Attic/bitcoin-qt-0.7.0.ebuild,v 1.1 2012/10/08 18:26:45 blueness Exp $
 
 EAPI=4
 
 DB_VER="4.8"
 
-LANGS="da de en es es_CL hu it nb nl pt_BR ru uk zh_CN zh_TW"
+LANGS="bg ca_ES cs da de el_GR en es es_CL et eu_ES fa fa_IR fi fr fr_CA he hr hu it lt nb nl pl pt_BR pt_PT ro_RO ru sk sr sv tr uk zh_CN zh_TW"
 inherit db-use eutils qt4-r2 versionator
 
 DESCRIPTION="An end-user Qt4 GUI for the Bitcoin crypto-currency"
 HOMEPAGE="http://bitcoin.org/"
-SRC_URI="http://gitorious.org/bitcoin/bitcoind-stable/archive-tarball/v${PV/_/} -> bitcoin-v${PV}.tgz
-	bip16? ( http://luke.dashjr.org/programs/bitcoin/files/bip16/0.5.6-Minimal-support-for-mining-BIP16-pay-to-script-hash-.patch.xz )
-	eligius? (
-		!bip16? ( http://luke.dashjr.org/programs/bitcoin/files/eligius_sendfee/0.5.0.6rc1-eligius_sendfee.patch.xz )
-	)
+SRC_URI="https://nodeload.github.com/bitcoin/bitcoin/tarball/v${PV/_/} -> bitcoin-v${PV}.tgz
+	eligius? ( http://luke.dashjr.org/programs/bitcoin/files/bitcoind/eligius/sendfee/0.7.0-eligius_sendfee.patch.xz )
 "
 
-LICENSE="MIT ISC GPL-3 md2k7-asyouwish LGPL-2.1 public-domain"
+LICENSE="MIT ISC GPL-3 LGPL-2.1 public-domain || ( CCPL-Attribution-ShareAlike-3.0 LGPL-2.1 )"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="$IUSE +bip16 dbus +eligius ssl upnp"
+IUSE="$IUSE 1stclassmsg dbus +eligius ipv6 +qrcode upnp"
 
 RDEPEND="
 	>=dev-libs/boost-1.41.0
 	dev-libs/openssl[-bindist]
+	qrcode? (
+		media-gfx/qrencode
+	)
 	upnp? (
 		net-libs/miniupnpc
 	)
@@ -41,16 +41,11 @@ DEPEND="${RDEPEND}
 
 DOCS="doc/README"
 
-S="${WORKDIR}/bitcoin-bitcoind-stable"
+S="${WORKDIR}/bitcoin-bitcoin-a76c22e"
 
 src_prepare() {
 	cd src || die
-	if use bip16; then
-		epatch "${WORKDIR}/0.5.6-Minimal-support-for-mining-BIP16-pay-to-script-hash-.patch"
-		use eligius && epatch "${FILESDIR}/0.5.0.5+bip16-eligius_sendfee.patch"
-	else
-		use eligius && epatch "${WORKDIR}/0.5.0.6rc1-eligius_sendfee.patch"
-	fi
+	use eligius && epatch "${WORKDIR}/0.7.0-eligius_sendfee.patch"
 
 	local filt= yeslang= nolang=
 
@@ -82,12 +77,14 @@ src_configure() {
 	local BOOST_PKG BOOST_VER
 
 	use dbus && OPTS+=("USE_DBUS=1")
-	use ssl  && OPTS+=("DEFINES+=USE_SSL")
 	if use upnp; then
 		OPTS+=("USE_UPNP=1")
 	else
 		OPTS+=("USE_UPNP=-")
 	fi
+	use qrcode && OPTS+=("USE_QRCODE=1")
+	use 1stclassmsg && OPTS+=("FIRST_CLASS_MESSAGING=1")
+	use ipv6 || OPTS+=("USE_IPV6=-")
 
 	OPTS+=("BDB_INCLUDE_PATH=$(db_includedir "${DB_VER}")")
 	OPTS+=("BDB_LIB_SUFFIX=-${DB_VER}")
