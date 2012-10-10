@@ -7,11 +7,6 @@
 	<description>Maintainer.</description>
 </maintainer>
 <maintainer>
-	<email>naota@gentoo.org</email> 
-	<name>Naohiro Aota</name>
-	<description>Proxy maintainer.</description>
-</maintainer>
-<maintainer>
 	<email>blueness@gentoo.org</email>
 	<name>Anthony G. Basile</name>
 </maintainer>
