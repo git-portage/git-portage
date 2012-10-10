@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.144 2012/09/23 18:28:42 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.145 2012/10/10 19:32:50 tomjbe Exp $
+
+  10 Oct 2012; Thomas Beierlein <tomjbe@gentoo.org> +bacula-5.0.3-r3.ebuild,
+  +files/5.0.3/bacula-5.0.3-cve.patch:
+  Readd bacula-5.0.3 including fix for CVE-2012-4430 to enable use with older
+  bacula directors.
 
   23 Sep 2012; Agostino Sarubbo <ago@gentoo.org> -bacula-5.0.3-r2.ebuild,
   -bacula-5.2.5.ebuild:
