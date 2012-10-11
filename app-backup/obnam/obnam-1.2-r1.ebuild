@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/obnam/Attic/obnam-1.2-r1.ebuild,v 1.1 2012/10/11 08:11:12 mschiff Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/obnam/Attic/obnam-1.2-r1.ebuild,v 1.2 2012/10/11 08:25:40 mschiff Exp $
 
 EAPI=4
 
@@ -32,6 +32,7 @@ RDEPEND="${DEPEND}"
 src_prepare() {
 	distutils_src_prepare
 	epatch "${FILESDIR}/${P}_diff_fix.patch"
+	epatch "${FILESDIR}/${P}_man_diff_fix.patch"
 }
 
 src_install() {
