@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/obnam/Attic/obnam-1.2.ebuild,v 1.2 2012/10/07 10:29:07 mschiff Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/obnam/Attic/obnam-1.2.ebuild,v 1.3 2012/10/11 07:47:12 mschiff Exp $
 
 EAPI=4
 
@@ -35,6 +35,7 @@ src_install() {
 	rm "${D}"/usr/share/man/man1/obnam-benchmark*
 	insinto /etc
 	doins "${FILESDIR}"/obnam.conf
+	keepdir /var/log/obnam
 }
 
 pkg_postinst() {

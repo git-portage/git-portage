@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/obnam
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/obnam/ChangeLog,v 1.4 2012/10/07 10:29:07 mschiff Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/obnam/ChangeLog,v 1.5 2012/10/11 07:47:12 mschiff Exp $
+
+  11 Oct 2012; Marc Schiffbauer <mschiff@gentoo.org> obnam-1.2.ebuild:
+  Create obnam log directory automatically. Thanks to Martin Dummer for
+  reporting.
 
   07 Oct 2012; Marc Schiffbauer <mschiff@gentoo.org> files/obnam.conf,
   obnam-1.2.ebuild:
