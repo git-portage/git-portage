@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.0.3-r3.ebuild,v 1.10 2012/10/10 19:32:50 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.0.3-r3.ebuild,v 1.11 2012/10/11 15:41:37 mr_bones_ Exp $
 
 EAPI="2"
 PYTHON_DEPEND="python? 2"
@@ -163,7 +163,7 @@ src_prepare() {
 
 	epatch "${FILESDIR}"/${PV}/${P}-fix-static.patch
 
-	# fix CVE-2012-4430 
+	# fix CVE-2012-4430
 	epatch "${FILESDIR}"/${PV}/${P}-cve.patch
 }
 
