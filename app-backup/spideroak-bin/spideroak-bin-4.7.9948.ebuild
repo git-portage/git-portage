@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/Attic/spideroak-bin-4.7.9948.ebuild,v 1.2 2012/08/27 01:46:36 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/Attic/spideroak-bin-4.7.9948.ebuild,v 1.3 2012/10/11 14:27:27 zmedico Exp $
 
 EAPI="4"
 
@@ -22,7 +22,7 @@ IUSE="dbus headless system-libs"
 
 SSL_SLOT="0.9.8"
 
-DEPEND=""
+DEPEND="dev-util/patchelf"
 RDEPEND="
 	dbus? ( sys-apps/dbus )
 	!headless? (
@@ -113,6 +113,16 @@ src_prepare() {
 		# Remove bundled python interpreter => dev-lang/python:2.7
 		rm usr/lib/SpiderOak/py || die "rm py failed"
 	fi
+
+	# Set RPATH for preserve-libs handling (bug #400979).
+	cd "${S}/usr/lib/SpiderOak" || die
+	local x
+	for x in * ; do
+		# Use \x7fELF header to separate ELF executables and libraries
+		[[ -f ${x} && $(od -t x1 -N 4 "${x}") == *"7f 45 4c 46"* ]] || continue
+		patchelf --set-rpath '$ORIGIN' "${x}" || \
+			die "patchelf failed on ${x}"
+	done
 }
 
 src_install() {

@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/spideroak-bin
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/ChangeLog,v 1.27 2012/10/10 00:14:57 naota Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/ChangeLog,v 1.28 2012/10/11 14:27:27 zmedico Exp $
+
+  11 Oct 2012; Zac Medico <zmedico@gentoo.org> spideroak-bin-4.7.9948.ebuild:
+  Use patchelf --set-rpath  so that library dependencies can be properly tracked
+  for preserve-libs as discussed in bug #400979. We can backport this to older
+  ebuilds after it gets some testing.
 
   10 Oct 2012;  <naota@gentoo.org> metadata.xml:
   Drop myself from maintainer. I nolonger use it and blueness is handling bugs.
