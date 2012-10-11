@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/poppler/Attic/poppler-0.20.2-r2.ebuild,v 1.1 2012/08/08 16:51:59 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/poppler/Attic/poppler-0.20.5.ebuild,v 1.1 2012/10/11 18:38:29 reavertm Exp $
 
 EAPI=4
 
@@ -52,7 +52,6 @@ RDEPEND="${COMMON_DEPEND}
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.20.1-lcms-automagic.patch"
-	"${FILESDIR}/${PN}-0.20.2-xyscale.patch"
 )
 
 DOCS=(AUTHORS ChangeLog NEWS README README-XPDF TODO)
