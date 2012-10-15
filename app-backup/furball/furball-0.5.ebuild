@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/furball/furball-0.5.ebuild,v 1.1 2005/07/04 06:39:24 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/furball/furball-0.5.ebuild,v 1.2 2012/10/15 08:44:41 pinkbyte Exp $
 
 DESCRIPTION="A handy backup script utilizing tar"
 SRC_URI="http://www.claws-and-paws.com/software/furball/${P}.tgz"
@@ -14,7 +14,7 @@ RDEPEND="dev-lang/perl
 	app-arch/tar"
 
 src_install() {
-	dobin furball
-	doman furball.1
-	dodoc README NEWS THANKS
+	dobin furball || die
+	doman furball.1 || die
+	dodoc README NEWS THANKS || die
 }
