@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbackup/cdbackup-0.7.0.ebuild,v 1.3 2008/10/15 11:45:23 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbackup/cdbackup-0.7.0.ebuild,v 1.4 2012/10/20 16:41:22 ago Exp $
 
 inherit toolchain-funcs
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.muempf.de/down/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=app-cdr/cdrtools-1.11.28"

@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/cdbackup
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbackup/ChangeLog,v 1.4 2010/09/10 19:06:39 robbat2 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/cdbackup/ChangeLog,v 1.5 2012/10/20 16:41:22 ago Exp $
+
+  20 Oct 2012; Agostino Sarubbo <ago@gentoo.org> cdbackup-0.7.0.ebuild:
+  Add ~amd64, wrt bug #439068
 
   10 Sep 2010; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
   Duplicate <maintainer> block of the herd is pointless.
@@ -19,4 +22,3 @@
   +cdbackup-0.7.0.ebuild:
   New package submitted by Juan J. Garcia de Soria, skandalfo at gmail dot
   com. Bug 75291
-
