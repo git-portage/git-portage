@@ -1,6 +1,8 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/hddtemp/Attic/hddtemp-0.3_beta15-r4.ebuild,v 1.9 2012/07/31 10:49:36 aidecoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/hddtemp/Attic/hddtemp-0.3_beta15-r22.ebuild,v 1.1 2012/10/24 18:45:04 aidecoe Exp $
+
+EAPI=4
 
 inherit eutils autotools
 
@@ -14,16 +16,16 @@ SRC_URI="http://download.savannah.gnu.org/releases/hddtemp/${MY_P}.tar.bz2 mirro
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~sparc ~x86"
-IUSE="nls"
+IUSE="network-cron nls"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+DOCS=(README TODO ChangeLog)
+
+src_prepare() {
 	epatch "${FILESDIR}"/${P}-satacmds.patch
 	epatch "${FILESDIR}"/${P}-byteswap.patch
 	epatch "${FILESDIR}"/${P}-execinfo.patch
@@ -33,19 +35,17 @@ src_unpack() {
 	AT_M4DIR="m4" eautoreconf
 }
 
-src_compile() {
+src_configure() {
 	local myconf
 
 	myconf="--with-db-path=/usr/share/hddtemp/hddtemp.db"
 	# disabling nls breaks compiling
 	use nls || myconf="--disable-nls ${myconf}"
-	econf ${myconf} || die
-	emake || die
+	econf ${myconf}
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die
-	dodoc README TODO ChangeLog
+	default
 
 	insinto /usr/share/hddtemp
 	newins "${WORKDIR}/hddtemp-${DBV}.db" hddtemp.db
@@ -54,11 +54,19 @@ src_install() {
 	update_db "${D}/usr/share/hddtemp/hddgentoo.db" "${D}/usr/share/hddtemp/hddtemp.db"
 	newconfd "${FILESDIR}"/hddtemp-conf.d hddtemp
 	newinitd "${FILESDIR}"/hddtemp-init hddtemp
+
+	dosbin "${FILESDIR}"/update-hddtemp.db
+
+	if use network-cron ; then
+		exeinto /etc/cron.monthly
+		echo -e "#!/bin/sh\n/usr/sbin/update-hddtemp.db" > "${T}"/hddtemp.cron
+		newexe "${T}"/hddtemp.cron update-hddtemp.db
+	fi
 }
 
 pkg_postinst() {
 	elog "In order to update your hddtemp database, run:"
-	elog "  emerge --config =${CATEGORY}/${PF}"
+	elog "  update-hddtemp.db"
 	elog ""
 	elog "If your hard drive is not recognized by hddtemp, please consider"
 	elog "submitting your HDD info for inclusion into the Gentoo hddtemp"
@@ -85,14 +93,4 @@ update_db() {
 
 		grep "${id}" "${dst}" 2>&1 >/dev/null || echo "${line}" >> "${dst}"
 	done < "${src}"
-}
-
-pkg_config() {
-	cd "${ROOT}"/usr/share/hddtemp
-
-	einfo "Trying to download the latest hddtemp.db file"
-	wget http://www.guzu.net/linux/hddtemp.db -O hddtemp.db \
-		|| die "failed to download hddtemp.db"
-
-	update_db "hddgentoo.db" "hddtemp.db"
 }
