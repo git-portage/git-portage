@@ -1,69 +1,57 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-keyring/Attic/gnome-keyring-3.2.2.ebuild,v 1.10 2012/10/24 07:11:50 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-keyring/Attic/gnome-keyring-3.4.1-r1.ebuild,v 1.1 2012/10/24 07:11:50 tetromino Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
 GNOME2_LA_PUNT="yes"
 
-inherit autotools eutils gnome2 multilib pam versionator virtualx
+inherit gnome2 pam versionator virtualx
 
 DESCRIPTION="Password and keyring managing daemon"
 HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2+ LGPL-2+"
 SLOT="0"
-IUSE="+caps debug pam test"
+IUSE="+caps debug pam selinux"
 KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~sparc-solaris ~x86-solaris"
 
-# USE=valgrind is probably not a good idea for the tree
-RDEPEND=">=dev-libs/glib-2.25:2
-	>=x11-libs/gtk+-2.90.0:3
-	>=app-crypt/p11-kit-0.6
+RDEPEND=">=app-crypt/gcr-3.3.4
+	>=dev-libs/glib-2.28:2
+	>=x11-libs/gtk+-3.0:3
 	app-misc/ca-certificates
 	>=dev-libs/libgcrypt-1.2.2
-	>=dev-libs/libtasn1-1
 	>=sys-apps/dbus-1.0
 	caps? ( sys-libs/libcap-ng )
 	pam? ( virtual/pam )
 "
-#	valgrind? ( dev-util/valgrind )
 DEPEND="${RDEPEND}
-	>=dev-util/gtk-doc-am-1.9
 	>=dev-util/intltool-0.35
 	sys-devel/gettext
 	virtual/pkgconfig"
 PDEPEND=">=gnome-base/libgnome-keyring-3.1.92"
+# eautoreconf needs:
+#	>=dev-util/gtk-doc-am-1.9
+# gtk-doc-am is not needed otherwise (no gtk-docs are installed)
 
-# FIXME: tests are flaky and write to /tmp (instead of TMPDIR)
+# FIXME: tests are very flaky and write to /tmp (instead of TMPDIR)
 RESTRICT="test"
 
-pkg_setup() {
+src_prepare() {
 	DOCS="AUTHORS ChangeLog NEWS README"
 	G2CONF="${G2CONF}
 		$(use_enable debug)
-		$(use_enable test tests)
 		$(use_with caps libcap-ng)
 		$(use_enable pam)
 		$(use_with pam pam-dir $(getpam_mod_dir))
+		$(use_enable selinux)
 		--with-root-certs=${EPREFIX}/etc/ssl/certs/
+		--with-ca-certificates=${EPREFIX}/etc/ssl/certs/ca-certificates.crt
 		--enable-ssh-agent
-		--enable-gpg-agent
-		--disable-update-mime"
-#		$(use_enable valgrind)
-}
-
-src_prepare() {
-	# Disable gcr tests due to weirdness with opensc
-	# ** WARNING **: couldn't load PKCS#11 module: /usr/lib64/pkcs11/gnome-keyring-pkcs11.so: Couldn't initialize module: The device was removed or unplugged
-	sed -e 's/^\(SUBDIRS = \.\)\(.*\)/\1/' \
-		-i gcr/Makefile.* || die "sed failed"
-
-	# gold plus glib-2.32 underlinking fix
-	epatch "${FILESDIR}"/${P}-gold-glib-2.32.patch
-
+		--enable-gpg-agent"
+	# Bug #436392, CVE-2012-3466; fixed in 3.6
+	epatch "${FILESDIR}/${P}-gpg-cache-method-"{1,2}.patch
 	gnome2_src_prepare
-	AT_NOELIBTOOLIZE=yes eautoreconf
 }
 
 src_test() {
@@ -100,7 +88,7 @@ fcaps() {
 
 	#set the capability
 	setcap "$capset=ep" "$path" &> /dev/null
-	#check if the capabilitiy got set correctly
+	#check if the capability got set correctly
 	setcap -v "$capset=ep" "$path" &> /dev/null
 	res=$?
 

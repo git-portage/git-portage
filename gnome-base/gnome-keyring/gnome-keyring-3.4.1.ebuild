@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-keyring/Attic/gnome-keyring-3.4.1.ebuild,v 1.1 2012/05/13 18:15:00 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-keyring/Attic/gnome-keyring-3.4.1.ebuild,v 1.2 2012/10/24 07:11:50 tetromino Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
@@ -13,7 +13,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
-IUSE="+caps debug doc pam selinux"
+IUSE="+caps debug pam selinux"
 KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~sparc-solaris ~x86-solaris"
 
 RDEPEND=">=app-crypt/gcr-3.3.4
@@ -27,13 +27,12 @@ RDEPEND=">=app-crypt/gcr-3.3.4
 "
 DEPEND="${RDEPEND}
 	sys-devel/gettext
-	>=dev-util/gtk-doc-am-1.9
 	>=dev-util/intltool-0.35
-	virtual/pkgconfig
-	doc? ( >=dev-util/gtk-doc-1.9 )"
+	virtual/pkgconfig"
 PDEPEND=">=gnome-base/libgnome-keyring-3.1.92"
 # eautoreconf needs:
 #	>=dev-util/gtk-doc-am-1.9
+# gtk-doc-am is not needed otherwise (no gtk-docs are installed)
 
 # FIXME: tests are very flaky and write to /tmp (instead of TMPDIR)
 RESTRICT="test"
