@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/nm-applet/Attic/nm-applet-0.9.6.2.ebuild,v 1.2 2012/10/26 22:58:18 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/nm-applet/Attic/nm-applet-0.9.6.4.ebuild,v 1.1 2012/10/26 22:58:18 tetromino Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
@@ -22,7 +22,7 @@ RDEPEND=">=dev-libs/glib-2.26:2
 	>=gnome-base/gnome-keyring-2.20
 	>=sys-apps/dbus-1.4.1
 	>=sys-auth/polkit-0.96-r1
-	>=x11-libs/gtk+-2.91.4:3
+	>=x11-libs/gtk+-3:3
 	>=x11-libs/libnotify-0.7.0
 
 	app-text/iso-codes
@@ -37,7 +37,7 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	>=dev-util/intltool-0.40"
 
-pkg_setup() {
+src_prepare() {
 	DOCS="AUTHORS ChangeLog NEWS README"
 	G2CONF="${G2CONF}
 		--with-gtkver=3
@@ -46,4 +46,6 @@ pkg_setup() {
 		--localstatedir=/var
 		$(use_with bluetooth)
 		$(use_enable gconf migration)"
+
+	gnome2_src_prepare
 }
