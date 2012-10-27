@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/spacefm/Attic/spacefm-0.7.11.ebuild,v 1.2 2012/10/18 14:39:04 hasufell Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/spacefm/Attic/spacefm-0.8.2.ebuild,v 1.1 2012/10/27 17:41:47 hasufell Exp $
 
 EAPI=4
 
-inherit eutils fdo-mime gnome2-utils linux-info
+inherit fdo-mime gnome2-utils linux-info
 
 DESCRIPTION="A multi-panel tabbed file manager"
 HOMEPAGE="http://ignorantguru.github.com/spacefm/"
@@ -14,7 +14,7 @@ SRC_URI="http://dev.gentoo.org/~hasufell/distfiles/${P}.tar.xz
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+startup-notification"
 
 RDEPEND="dev-libs/glib:2
 	dev-util/desktop-file-utils
@@ -25,21 +25,18 @@ RDEPEND="dev-libs/glib:2
 	x11-libs/gdk-pixbuf
 	x11-libs/gtk+:2
 	x11-libs/pango
-	x11-libs/startup-notification
 	x11-libs/libX11
-	x11-misc/shared-mime-info"
+	x11-misc/shared-mime-info
+	startup-notification? ( x11-libs/startup-notification )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
 	virtual/pkgconfig
 	sys-devel/gettext"
 
-src_prepare() {
-	epatch "${FILESDIR}"/${PN}-0.7.10-desktopfiles.patch
-}
-
 src_configure() {
 	econf \
 		--htmldir=/usr/share/doc/${PF}/html \
+		$(use_enable startup-notification) \
 		--disable-hal \
 		--enable-inotify \
 		--disable-pixmaps
