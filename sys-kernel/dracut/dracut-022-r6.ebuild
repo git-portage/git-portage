@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/dracut/Attic/dracut-023.ebuild,v 1.2 2012/09/09 16:48:14 aidecoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/dracut/Attic/dracut-022-r6.ebuild,v 1.1 2012/10/27 17:43:02 aidecoe Exp $
 
 EAPI=4
 
@@ -24,7 +24,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 REQUIRED_USE="dracut_modules_crypt-gpg? ( dracut_modules_crypt )
-	dracut_modules_crypt-loop? ( dracut_modules_crypt )
 	dracut_modules_livenet? ( dracut_modules_dmsquash-live )
 	"
 COMMON_MODULES="
@@ -33,13 +32,11 @@ COMMON_MODULES="
 	dracut_modules_btrfs
 	dracut_modules_caps
 	dracut_modules_crypt-gpg
-	dracut_modules_crypt-loop
 	dracut_modules_gensplash
 	dracut_modules_mdraid
 	dracut_modules_multipath
 	dracut_modules_plymouth
 	dracut_modules_syslog
-	dracut_modules_systemd
 	"
 DM_MODULES="
 	dracut_modules_crypt
@@ -49,7 +46,6 @@ DM_MODULES="
 	dracut_modules_lvm
 	"
 NETWORK_MODULES="
-	dracut_modules_cifs
 	dracut_modules_iscsi
 	dracut_modules_livenet
 	dracut_modules_nbd
@@ -63,9 +59,7 @@ IUSE="debug device-mapper optimization net selinux ${IUSE_DRACUT_MODULES}"
 
 RESTRICT="test"
 
-CDEPEND=">sys-fs/udev-166
-	dracut_modules_systemd? ( sys-apps/systemd )
-	"
+CDEPEND=">=sys-fs/udev-166"
 RDEPEND="${CDEPEND}
 	app-arch/cpio
 	>=app-shells/bash-4.0
@@ -73,17 +67,17 @@ RDEPEND="${CDEPEND}
 	>=sys-apps/baselayout-1.12.14-r1
 	|| ( >=sys-apps/module-init-tools-3.8 >sys-apps/kmod-5[tools] )
 	>=sys-apps/sysvinit-2.87-r3
-	>=sys-apps/util-linux-2.21
+	>=sys-apps/util-linux-2.20
 
 	debug? ( dev-util/strace )
 	device-mapper? ( || ( sys-fs/device-mapper >=sys-fs/lvm2-2.02.33 ) )
 	net? ( net-misc/curl >=net-misc/dhcp-4.2.1-r1[client] sys-apps/iproute2 )
 	selinux? ( sys-libs/libselinux sys-libs/libsepol )
 	dracut_modules_biosdevname? ( sys-apps/biosdevname )
-	dracut_modules_bootchart? ( app-benchmarks/bootchart2 )
+	dracut_modules_bootchart? ( app-benchmarks/bootchart2 sys-apps/usleep
+		sys-process/acct )
 	dracut_modules_btrfs? ( sys-fs/btrfs-progs )
 	dracut_modules_caps? ( sys-libs/libcap )
-	dracut_modules_cifs? ( net-fs/cifs-utils )
 	dracut_modules_crypt? ( sys-fs/cryptsetup )
 	dracut_modules_crypt-gpg? ( app-crypt/gnupg )
 	dracut_modules_dmraid? ( sys-fs/dmraid sys-fs/multipath-tools )
@@ -148,27 +142,32 @@ rm_module() {
 #
 
 src_prepare() {
+	epatch "${FILESDIR}/${PV}-0001-qemu-module-setup.sh-provide-alternati.patch"
+	epatch "${FILESDIR}/${PV}-0002-Makefile-use-implicit-rules-for-instal.patch"
+	epatch "${FILESDIR}/${PV}-0003-kernel-modules-module-setup.sh-just-op.patch"
+	epatch "${FILESDIR}/${PV}-0004-90multipath-added-kpartx.rules-multipa.patch"
+	epatch "${FILESDIR}/${PV}-0005-gentoo.conf-set-udevdir.patch"
+	epatch "${FILESDIR}/${PV}-0006-Config-file-for-systemd-on-Gentoo.patch"
+	epatch "${FILESDIR}/${PV}-0007-Remove-obsolete-gentoo-conf-file.patch"
+	epatch "${FILESDIR}/${PV}-0008-95rootfs-block-fix-left-fsck-rel.-chec.patch"
+	epatch "${FILESDIR}/${PV}-0009-98usrmount-use-rw-and-ro-options-inste.patch"
+	epatch "${FILESDIR}/${PV}-0010-98usrmount-print-mount-options.patch"
+	epatch "${FILESDIR}/${PV}-0011-dracut-lib-new-functions-listlist-and-.patch"
+	epatch "${FILESDIR}/${PV}-0012-apply-ro-and-rw-options-from-cmdline-t.patch"
+	epatch "${FILESDIR}/${PV}-0013-ro_mnt-option-at-build-time-to-force-r.patch"
+	epatch "${FILESDIR}/${PV}-0014-parse-root-opts-first-check-for-ro-lat.patch"
+	epatch "${FILESDIR}/${PV}-0015-gentoo.conf-enable-ro_mnt.patch"
+	epatch "${FILESDIR}/${PV}-0016-dracut.sh-test-if-we-can-lazy-resolve-.patch"
+	epatch "${FILESDIR}/${PV}-0017-99shutdown-remove-no-wall-argument-for.patch"
+	epatch "${FILESDIR}/${PV}-0018-dracut.sh-do-not-copy-var-run-and-var-.patch"
+	epatch "${FILESDIR}/${PV}-0019-dracut.sh-create-relative-symlinks-for.patch"
+	einfo "Removing ${S}/install/hashmap.o ..."
+	rm "${S}/install/hashmap.o" || die
 	local udevdir="$($(tc-getPKG_CONFIG) udev --variable=udevdir)"
 	[[ ${udevdir} ]] || die "Couldn't detect udevdir"
 	einfo "Setting udevdir to ${udevdir}..."
-	sed -e "s@udevdir=.*@udevdir=\"${udevdir}\"@" \
+	sed -e "s@udevdir=.*@udevdir=${udevdir}@" \
 		-i "${S}/dracut.conf.d/gentoo.conf.example" || die
-
-	if use dracut_modules_systemd; then
-		local systemdutildir="$($(tc-getPKG_CONFIG) systemd \
-			--variable=systemdutildir)"
-		local systemdsystemunitdir="$($(tc-getPKG_CONFIG) systemd \
-			--variable=systemdsystemunitdir)"
-		[[ ${systemdutildir} ]] || die "Couldn't detect systemdutildir"
-		[[ ${systemdsystemunitdir} ]] \
-			|| die "Couldn't detect systemdsystemunitdir"
-		einfo "Setting systemdutildir to ${systemdutildir} and ..."
-		sed -e "4asystemdutildir=\"${systemdutildir}\"" \
-			-i "${S}/dracut.conf.d/gentoo.conf.example" || die
-		einfo "Setting systemdsystemunitdir to ${systemdsystemunitdir}..."
-		sed -e "5asystemdsystemunitdir=\"${systemdsystemunitdir}\"" \
-			-i "${S}/dracut.conf.d/gentoo.conf.example" || die
-	fi
 }
 
 src_compile() {
@@ -225,7 +224,7 @@ src_install() {
 	rm_module 01fips 02fips-aesni
 
 	# Remove extra modules which go to future dracut-extras
-	rm_module 05busybox 97masterkey 98ecryptfs 98integrity
+	rm_module 05busybox 97masterkey 98ecryptfs 98integrity 98systemd
 }
 
 pkg_postinst() {
