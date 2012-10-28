@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/deja-dup
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/ChangeLog,v 1.25 2012/10/07 16:37:38 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/ChangeLog,v 1.26 2012/10/28 17:36:59 jlec Exp $
+
+*deja-dup-24.0 (28 Oct 2012)
+
+  28 Oct 2012; Justin Lecher <jlec@gentoo.org> +deja-dup-24.0.ebuild:
+  Version Bump, #439850
 
   07 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> deja-dup-23.2.ebuild:
   Revert to ~x86 because dev-libs/libpeas is still ~x86, see
