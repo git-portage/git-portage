@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/aws-sdk/Attic/aws-sdk-1.6.9.ebuild,v 1.1 2012/10/05 06:09:40 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/aws-sdk/Attic/aws-sdk-1.7.1.ebuild,v 1.1 2012/11/07 22:28:49 flameeyes Exp $
 
 EAPI=4
 
@@ -35,10 +35,6 @@ ruby_add_rdepend "virtual/ruby-ssl
 	>=dev-ruby/json-1.4
 	>=dev-ruby/nokogiri-1.4.4
 	>=dev-ruby/uuidtools-2.1"
-
-RUBY_PATCHES=(
-	${PN}-1.5.3-disabletest.patch
-)
 
 all_ruby_prepare() {
 	sed -i -e 's:~>:>=:' "${RUBY_FAKEGEM_GEMSPEC}" || die
