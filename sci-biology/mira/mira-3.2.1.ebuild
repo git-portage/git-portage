@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/mira/Attic/mira-3.2.1.ebuild,v 1.6 2012/11/07 22:10:54 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/mira/Attic/mira-3.2.1.ebuild,v 1.7 2012/11/07 22:29:55 jlec Exp $
 
 EAPI="3"
 
@@ -16,8 +16,8 @@ SRC_URI="
 
 SLOT="0"
 LICENSE="GPL-2"
-IUSE=""
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux ~x86-macos"
+IUSE=""
 
 CDEPEND="
 	dev-libs/boost

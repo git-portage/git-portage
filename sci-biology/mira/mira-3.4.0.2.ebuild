@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/mira/Attic/mira-3.2.1-r1.ebuild,v 1.2 2012/11/07 22:29:55 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/mira/Attic/mira-3.4.0.2.ebuild,v 1.1 2012/11/07 22:29:56 jlec Exp $
 
 EAPI=4
 
-MIRA_3RDPARTY_PV="17-04-2010"
+MIRA_3RDPARTY_PV="06-07-2012"
 
 inherit autotools base multilib
 
@@ -23,6 +23,7 @@ CDEPEND="
 	dev-libs/boost
 	dev-util/google-perftools"
 DEPEND="${CDEPEND}
+	app-editors/vim-core
 	dev-libs/expat"
 RDEPEND="${CDEPEND}"
 
@@ -32,7 +33,6 @@ DOCS=( AUTHORS GETTING_STARTED NEWS README HELP_WANTED
 src_prepare() {
 	find -name 'configure*' -or -name 'Makefile*' | xargs sed -i 's/flex++/flex -+/' || die
 	epatch \
-		"${FILESDIR}"/${PN}-3.0.0-asneeded.patch \
 		"${FILESDIR}"/${P}-boost-1.50.patch
 	AT_M4DIR="config/m4" eautoreconf
 }
