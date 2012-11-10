@@ -1,21 +1,21 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gdk-pixbuf/Attic/gdk-pixbuf-2.24.1.ebuild,v 1.10 2012/09/18 09:44:29 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gdk-pixbuf/Attic/gdk-pixbuf-2.26.5.ebuild,v 1.1 2012/11/10 05:54:13 tetromino Exp $
 
 EAPI="4"
 
-inherit gnome.org multilib libtool autotools
+inherit eutils gnome.org multilib libtool
 
 DESCRIPTION="Image loading library for GTK+"
 HOMEPAGE="http://www.gtk.org/"
 
-LICENSE="LGPL-2"
+LICENSE="LGPL-2+"
 SLOT="2"
-KEYWORDS="alpha amd64 arm ~hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
-IUSE="+X debug doc +introspection jpeg jpeg2k tiff test"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+IUSE="+X debug +introspection jpeg jpeg2k tiff test"
 
 COMMON_DEPEND="
-	>=dev-libs/glib-2.27.2:2
+	>=dev-libs/glib-2.34.0:2
 	>=media-libs/libpng-1.4:0
 	introspection? ( >=dev-libs/gobject-introspection-0.9.3 )
 	jpeg? ( virtual/jpeg )
@@ -23,12 +23,9 @@ COMMON_DEPEND="
 	tiff? ( >=media-libs/tiff-3.9.2:0 )
 	X? ( x11-libs/libX11 )"
 DEPEND="${COMMON_DEPEND}
-	virtual/pkgconfig
-	>=sys-devel/gettext-0.17
 	>=dev-util/gtk-doc-am-1.11
-	doc? (
-		>=dev-util/gtk-doc-1.11
-		~app-text/docbook-xml-dtd-4.1.2 )"
+	>=sys-devel/gettext-0.17
+	virtual/pkgconfig"
 # librsvg blocker is for the new pixbuf loader API, you lose icons otherwise
 RDEPEND="${COMMON_DEPEND}
 	!<gnome-base/gail-1000
@@ -40,14 +37,15 @@ src_prepare() {
 	# This will avoid polluting the pkg-config file with versioned libpng,
 	# which is causing problems with libpng14 -> libpng15 upgrade
 	# See upstream bug #667068
-	sed -i -e 's:libpng15:libpng libpng15:' configure.ac || die
-	eautoreconf
+	sed -e 's:libpng15:libpng libpng15:' \
+		-i configure || die
+	default
+	elibtoolize # for Darwin modules
 }
 
 src_configure() {
 	# png always on to display icons (foser)
 	local myconf="
-		$(use_enable doc gtk-doc)
 		$(use_with jpeg libjpeg)
 		$(use_with jpeg2k libjasper)
 		$(use_with tiff libtiff)
@@ -62,11 +60,11 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
+	default
 	dodoc AUTHORS NEWS* README*
 
 	# New library, remove .la files
-	find "${D}" -name '*.la' -exec rm -f '{}' + || die
+	prune_libtool_files --modules
 }
 
 pkg_postinst() {
