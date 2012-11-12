@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox/Attic/virtualbox-4.2.2.ebuild,v 1.2 2012/11/10 21:10:14 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox/Attic/virtualbox-4.2.4-r1.ebuild,v 1.1 2012/11/12 18:19:52 polynomial-c Exp $
 
 EAPI=4
 
@@ -21,9 +21,7 @@ fi
 DESCRIPTION="Family of powerful x86 virtualization products for enterprise as well as home use"
 HOMEPAGE="http://www.virtualbox.org/"
 SRC_URI="${SRC_URI}
-	http://dev.gentoo.org/~polynomial-c/virtualbox/patchsets/virtualbox-4.2.2-patches-01.tar.xz
-	http://dev.gentoo.org/~patrick/qt_fa_IR.ts
-	http://dev.gentoo.org/~patrick/VirtualBox_fa_IR.ts"
+	http://dev.gentoo.org/~polynomial-c/virtualbox/patchsets/virtualbox-4.2.2-patches-01.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -174,9 +172,6 @@ src_prepare() {
 	EPATCH_SUFFIX="patch" \
 	EPATCH_FORCE="yes" \
 	epatch "${WORKDIR}/patches"
-
-	# missing files in 4.2.2 tarball
-	cp ${DISTDIR}/{qt_fa_IR.ts,VirtualBox_fa_IR.ts} ${S}/src/VBox/Frontends/VirtualBox/nls/ || die "Failed to add missing files"
 }
 
 src_configure() {
@@ -331,6 +326,8 @@ src_install() {
 	fperms 0750 ${udevdir}/VBoxCreateUSBNode.sh
 	insinto ${udevdir}/rules.d
 	doins "${FILESDIR}"/10-virtualbox.rules
+	sed "s@%UDEVDIR%@${udevdir}@" \
+		-i "${D}"${udevdir}/rules.d/10-virtualbox.rules || die
 
 	insinto /usr/share/${PN}
 	if ! use headless && use qt4 ; then
