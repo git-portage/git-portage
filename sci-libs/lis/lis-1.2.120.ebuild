@@ -1,12 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/lis/Attic/lis-1.2.62.ebuild,v 1.4 2012/10/18 20:08:33 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/lis/Attic/lis-1.2.120.ebuild,v 1.1 2012/11/12 02:44:13 bicatali Exp $
 
 EAPI=4
 
 AUTOTOOLS_AUTORECONF=yes
-FORTRAN_NEEDED=fortran
-
 inherit autotools-utils fortran-2
 
 DESCRIPTION="Library of Iterative Solvers for Linear Systems"
@@ -15,13 +13,13 @@ SRC_URI="http://www.ssisc.org/lis/dl/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="doc fma fortran mpi openmp quad saamg sse2 static-libs"
 
 RDEPEND="mpi? ( virtual/mpi )"
 DEPEND="${RDEPEND}"
 
-PATCHES=( ${FILESDIR}/${P}-autotools.patch )
+PATCHES=( "${FILESDIR}"/${P}-autotools.patch )
 
 pkg_setup() {
 	if use openmp; then
@@ -29,11 +27,11 @@ pkg_setup() {
 			die "You have openmp enabled but your current gcc does not support it"
 		export FORTRAN_NEED_OPENMP=1
 	fi
-	fortran-2_pkg_setup
+	use fortran && fortran-2_pkg_setup
 }
 
 src_configure() {
-	myeconfargs+=(
+	local myeconfargs=(
 		$(use_enable fortran)
 		$(use_enable openmp omp)
 		$(use_enable quad)
