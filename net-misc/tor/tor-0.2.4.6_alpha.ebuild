@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/tor/Attic/tor-0.2.4.4_alpha.ebuild,v 1.1 2012/10/23 00:08:57 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/tor/Attic/tor-0.2.4.6_alpha.ebuild,v 1.1 2012/11/13 12:47:58 blueness Exp $
 
 EAPI="4"
 
