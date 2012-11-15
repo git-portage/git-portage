@@ -1,21 +1,21 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/cgit/Attic/cgit-0.8.3.5.ebuild,v 1.2 2012/06/01 04:30:38 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/cgit/Attic/cgit-0.9.1.ebuild,v 1.1 2012/11/15 01:14:11 zx2c4 Exp $
 
-EAPI="2"
+EAPI="4"
 
 WEBAPP_MANUAL_SLOT="yes"
 
-inherit webapp multilib user
+inherit webapp eutils multilib user
 
 [[ -z "${CGIT_CACHEDIR}" ]] && CGIT_CACHEDIR="/var/cache/${PN}/"
 
-GIT_V="1.7.3"
+GIT_V="1.7.4"
 
 DESCRIPTION="a fast web-interface for git repositories"
-HOMEPAGE="http://hjemli.net/git/cgit/about/"
+HOMEPAGE="http://git.zx2c4.com/cgit/about"
 SRC_URI="mirror://kernel/software/scm/git/git-${GIT_V}.tar.bz2
-	http://hjemli.net/git/cgit/snapshot/${P}.tar.bz2"
+	http://git.zx2c4.com/cgit/snapshot/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -51,22 +51,19 @@ src_prepare() {
 }
 
 src_compile() {
-	emake || die
-	if use doc ; then
-		emake man-doc || die
-	fi
+	emake
+	use doc && emake doc-man
 }
 
 src_install() {
 	webapp_src_preinst
 
 	emake \
+		prefix="${EPREFIX}"/usr \
+		libdir="${EPREFIX}"/usr/$(get_libdir) \
 		CGIT_SCRIPT_PATH="${MY_CGIBINDIR}" \
 		CGIT_DATA_PATH="${MY_HTDOCSDIR}" \
-		DESTDIR="${D}" install || die
-
-	exeinto /usr/$(get_libdir)/${PN}/filters
-	doexe filters/*.sh
+		DESTDIR="${D}" install
 
 	insinto /etc
 	doins "${FILESDIR}"/cgitrc
@@ -83,6 +80,7 @@ src_install() {
 }
 
 pkg_postinst() {
+	webapp_pkg_postinst
 	ewarn "If you intend to run cgit using web server's user"
-	ewarn "you should change /var/cache/cgit/ permissions."
+	ewarn "you should change ${CGIT_CACHEDIR} permissions."
 }
