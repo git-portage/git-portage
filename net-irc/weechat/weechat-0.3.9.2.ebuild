@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/weechat/Attic/weechat-0.3.9.ebuild,v 1.3 2012/10/05 19:41:29 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/weechat/Attic/weechat-0.3.9.2.ebuild,v 1.1 2012/11/19 17:33:54 scarabeus Exp $
 
 EAPI=4
 
