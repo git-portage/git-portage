@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/Attic/mesa-9_pre20120831-r1.ebuild,v 1.3 2012/10/05 06:08:59 naota Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/Attic/mesa-9.0.1.ebuild,v 1.1 2012/11/19 03:52:34 chithanh Exp $
 
 EAPI=4
 
@@ -28,7 +28,7 @@ HOMEPAGE="http://mesa3d.sourceforge.net/"
 if [[ $PV = 9999* ]]; then
 	SRC_URI="${SRC_PATCHES}"
 else
-	SRC_URI="mirror://gentoo/${P}.tar.xz
+	SRC_URI="ftp://ftp.freedesktop.org/pub/mesa/${FOLDER}/${MY_SRC_P}.tar.bz2
 		${SRC_PATCHES}"
 fi
 
@@ -75,17 +75,10 @@ REQUIRED_USE="
 "
 
 LIBDRM_DEPSTRING=">=x11-libs/libdrm-2.4.39"
-# not a runtime dependency of this package, but dependency of packages which
-# depend on this package, bug #342393
-EXTERNAL_DEPEND="
-	>=x11-proto/dri2proto-2.6
-	>=x11-proto/glproto-1.4.15-r1
-"
 # keep correct libdrm and dri2proto dep
 # keep blocks in rdepend for binpkg
 # gtest file collision bug #411825
-RDEPEND="${EXTERNAL_DEPEND}
-	!<x11-base/xorg-server-1.7
+RDEPEND="!<x11-base/xorg-server-1.7
 	!<=x11-proto/xf86driproto-2.0.3
 	classic? ( app-admin/eselect-mesa )
 	gallium? ( app-admin/eselect-mesa )
@@ -133,6 +126,8 @@ DEPEND="${RDEPEND}
 	sys-devel/flex
 	virtual/pkgconfig
 	x11-misc/makedepend
+	>=x11-proto/dri2proto-2.6
+	>=x11-proto/glproto-1.4.15-r1
 	>=x11-proto/xextproto-7.0.99.1
 	x11-proto/xf86driproto
 	x11-proto/xf86vidmodeproto
@@ -157,7 +152,6 @@ src_unpack() {
 	if [[ ${PV} = 9999* ]]; then
 		git-2_src_unpack
 	fi
-	mv "${WORKDIR}"/${PN}-*/ "${WORKDIR}"/${MY_P} || die
 }
 
 src_prepare() {
@@ -182,9 +176,6 @@ src_prepare() {
 
 	# Tests fail against python-3, bug #407887
 	sed -i 's|/usr/bin/env python|/usr/bin/env python2|' src/glsl/tests/compare_ir || die
-
-	# avoid 965 driver crash, upstream #54183
-	sed -i 's|brw->fragment_program->|fp->|' src/mesa/drivers/dri/i965/brw_fs.cpp || die
 
 	base_src_prepare
 
