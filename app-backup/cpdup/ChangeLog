@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/cpdup
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/cpdup/ChangeLog,v 1.4 2011/05/17 08:10:54 naota Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/cpdup/ChangeLog,v 1.5 2012/11/24 11:36:15 aballier Exp $
+
+  24 Nov 2012; Alexis Ballier <aballier@gentoo.org> -cpdup-1.07.ebuild,
+  -cpdup-1.11.ebuild, -files/cpdup-1.11-explicit_sizes.patch:
+  remove old
 
 *cpdup-1.17 (17 May 2011)
 
