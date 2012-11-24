@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/cpdup/cpdup-1.17.ebuild,v 1.1 2011/05/17 08:10:54 naota Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/cpdup/cpdup-1.17.ebuild,v 1.2 2012/11/24 11:38:23 aballier Exp $
 
 inherit eutils toolchain-funcs
 
@@ -8,7 +8,7 @@ DESCRIPTION="A comprehensive filesystem mirroring program"
 HOMEPAGE="http://apollo.backplane.com/FreeSrc/"
 SRC_URI="http://apollo.backplane.com/FreeSrc/${P}.tgz"
 
-LICENSE="as-is"
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~x86-fbsd ~amd64"
 IUSE="userland_GNU threads"
