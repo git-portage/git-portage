@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/jemalloc/Attic/jemalloc-3.0.0.ebuild,v 1.4 2012/10/21 19:44:32 anarchy Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/jemalloc/Attic/jemalloc-3.2.0.ebuild,v 1.1 2012/11/25 12:46:43 anarchy Exp $
 
 EAPI=4
 
-inherit autotools eutils flag-o-matic
+inherit autotools eutils
 
 DESCRIPTION="Jemalloc is a general-purpose scalable concurrent allocator"
 HOMEPAGE="http://www.canonware.com/jemalloc/"
@@ -21,17 +21,15 @@ RDEPEND=""
 
 src_prepare() {
 	epatch \
-		"${FILESDIR}/${P}-strip-optimization.patch" \
-		"${FILESDIR}/${P}-no-pprof.patch" \
-		"${FILESDIR}/${P}_fix_html_install.patch"
+		"${FILESDIR}/${PN}-3.0.0-strip-optimization.patch" \
+		"${FILESDIR}/${PN}-3.0.0-no-pprof.patch" \
+		"${FILESDIR}/${PN}-3.0.0_fix_html_install.patch"
 
 	eautoreconf
 }
 
 src_configure() {
-	use hppa && append-cppflags -DLG_QUANTUM=4
 	econf \
-		--with-jemalloc-prefix=j \
 		$(use_enable debug) \
 		$(use_enable stats)
 }
