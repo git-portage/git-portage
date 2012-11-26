@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/x2goserver/Attic/x2goserver-3.1.1.6.ebuild,v 1.1 2012/11/15 09:40:22 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/x2goserver/Attic/x2goserver-3.1.1.9.ebuild,v 1.1 2012/11/26 10:09:09 voyageur Exp $
 
 EAPI=4
 inherit eutils multilib toolchain-funcs user
