@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/enlightenment/Attic/enlightenment-0.17.0_alpha3.ebuild,v 1.3 2012/11/17 18:49:04 tommy Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/enlightenment/Attic/enlightenment-0.17.0_alpha6.ebuild,v 1.1 2012/11/27 20:15:36 tommy Exp $
 
 EAPI="2"
 
@@ -38,7 +38,7 @@ RDEPEND="
 	>=dev-libs/eio-1.7.1
 	>=dev-libs/eina-1.7.1[mempool-chained]
 	|| ( >=dev-libs/ecore-1.7.1[X,evas,inotify] >=dev-libs/ecore-1.7.1[xcb,evas,inotify] )
-	>=media-libs/edje-1.7.1
+	>=media-libs/edje-1.7.2
 	>=dev-libs/e_dbus-1.7.1[libnotify,udev?]
 	ukit? ( >=dev-libs/e_dbus-1.7.1[udev] )
 	enlightenment_modules_connman? ( >=dev-libs/e_dbus-1.7.1[connman] )
