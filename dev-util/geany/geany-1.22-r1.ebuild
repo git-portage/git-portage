@@ -1,11 +1,11 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/geany/Attic/geany-0.21-r1.ebuild,v 1.2 2012/06/14 17:54:41 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/geany/Attic/geany-1.22-r1.ebuild,v 1.1 2012/12/01 12:15:00 polynomial-c Exp $
 
-EAPI=4
-inherit eutils gnome2-utils
+EAPI=5
+inherit eutils fdo-mime gnome2-utils
 
-LANGS="ast be bg ca cs de el en_GB es fi fr gl hu it ja kk ko lb nl pl pt pt_BR ro ru sl sv tr uk vi zh_CN ZH_TW"
+LANGS="ar ast be bg ca cs de el en_GB es fi fr gl hu id it ja kk ko lb lt mn nl nn pl pt pt_BR ro ru sk sl sv tr uk vi zh_CN ZH_TW"
 NOSHORTLANGS="en_GB zh_CN zh_TW"
 
 DESCRIPTION="GTK+ based fast and lightweight IDE"
@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="amd64 ppc x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE="+vte"
 
-RDEPEND=">=x11-libs/gtk+-2.12:2
-	>=dev-libs/glib-2.16:2
+RDEPEND=">=x11-libs/gtk+-2.16:2
+	>=dev-libs/glib-2.20:2
 	vte? ( x11-libs/vte:0 )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
@@ -45,9 +45,17 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" DOCDIR="${ED}/usr/share/doc/${PF}" install || die
 	rm -f "${ED}"/usr/share/doc/${PF}/{COPYING,GPL-2,ScintillaLicense.txt}
-	find "${ED}" -type f -name '*.la' -delete
+	prune_libtool_files --all
 }
 
 pkg_preinst() { gnome2_icon_savelist; }
-pkg_postinst() { gnome2_icon_cache_update; }
-pkg_postrm() { gnome2_icon_cache_update; }
+
+pkg_postinst() {
+	fdo-mime_desktop_database_update
+	gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+	fdo-mime_desktop_database_update
+	gnome2_icon_cache_update
+}
