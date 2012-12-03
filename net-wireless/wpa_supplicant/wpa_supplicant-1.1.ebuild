@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/wpa_supplicant/Attic/wpa_supplicant-1.0.ebuild,v 1.4 2012/10/03 19:22:03 gurligebis Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/wpa_supplicant/Attic/wpa_supplicant-1.1.ebuild,v 1.1 2012/12/03 09:24:51 gurligebis Exp $
 
 EAPI=4
 
@@ -13,14 +13,14 @@ LICENSE="|| ( GPL-2 BSD )"
 
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~mips ~ppc ~ppc64 ~x86 ~x86-fbsd"
-IUSE="dbus debug gnutls eap-sim fasteap madwifi ps3 qt4 readline selinux ssl wimax wps kernel_linux kernel_FreeBSD"
+IUSE="ap dbus gnutls eap-sim fasteap madwifi p2p ps3 qt4 readline selinux ssl wimax wps kernel_linux kernel_FreeBSD"
 REQUIRED_USE="fasteap? ( !gnutls !ssl )"
 
 RDEPEND="dbus? ( sys-apps/dbus )
 	kernel_linux? (
 		eap-sim? ( sys-apps/pcsc-lite )
 		madwifi? ( >net-wireless/madwifi-ng-tools-0.9.3 )
-		dev-libs/libnl:1.1
+		dev-libs/libnl:3
 		net-wireless/crda
 	)
 	!kernel_linux? ( net-libs/libpcap )
@@ -74,8 +74,9 @@ src_prepare() {
 	echo 'SystemdService=wpa_supplicant.service' \
 		| tee -a dbus/*.service >/dev/null || die
 
+	cd "${WORKDIR}/${P}"
+
 	if use wimax; then
-		cd "${WORKDIR}/${P}"
 		epatch "${FILESDIR}/${P}-generate-libeap-peer.patch"
 
 		# multilib-strict fix (bug #373685)
@@ -85,13 +86,16 @@ src_prepare() {
 	# bug (320097)
 	epatch "${FILESDIR}/${P}-do-not-call-dbus-functions-with-NULL-path.patch"
 
-	# bug (409285)
-	epatch "${FILESDIR}/wpa_supplicant-gcc470.patch"
+	# bug (409285) - not needed for 1.1
+	#epatch "${FILESDIR}/wpa_supplicant-gcc470.patch"
 
 	# TODO - NEED TESTING TO SEE IF STILL NEEDED, NOT COMPATIBLE WITH 1.0 OUT OF THE BOX,
 	# SO WOULD BE NICE TO JUST DROP IT, IF IT IS NOT NEEDED.
 	# bug (374089)
 	#epatch "${FILESDIR}/${P}-dbus-WPAIE-fix.patch"
+
+	# libnl path fix
+	epatch "${FILESDIR}/${P}-libnl_path_fix.patch"
 }
 
 src_configure() {
@@ -126,9 +130,8 @@ src_configure() {
 		echo "CONFIG_CTRL_IFACE_DBUS_INTRO=y" >> .config
 	fi
 
-	if use debug ; then
-		echo "CONFIG_DEBUG_FILE=y" >> .config
-	fi
+	# Enable support for writing debug info to a log file.
+	echo "CONFIG_DEBUG_FILE=y" >> .config
 
 	if use eap-sim ; then
 		# Smart card authentication
@@ -190,6 +193,25 @@ src_configure() {
 	# Wi-Fi Protected Setup (WPS)
 	if use wps ; then
 		echo "CONFIG_WPS=y" >> .config
+		echo "CONFIG_WPS2=y" >> .config
+		# USB Flash Drive
+		echo "CONFIG_WPS_UFD=y" >> .config
+		# External Registrar
+		echo "CONFIG_WPS_ER=y" >> .config
+		# Universal Plug'n'Play
+		echo "CONFIG_WPS_UPNP=y" >> .config
+		# Near Field Communication
+		echo "CONFIG_WPS_NFC=y" >> .config
+	fi
+
+	# Wi-Fi Direct (WiDi)
+	if use p2p ; then
+		echo "CONFIG_P2P=y" >> .config
+	fi
+
+	# Access Point Mode
+	if use ap ; then
+		echo "CONFIG_AP=y" >> .config
 	fi
 
 	# Enable mitigation against certain attacks against TKIP
@@ -199,9 +221,9 @@ src_configure() {
 	# Bug 382159
 	# Removed for now, since the 3.2 version is broken, and we don't
 	# support it.
-	#if has_version ">=dev-libs/libnl-2.0"; then
-	#	echo "CONFIG_LIBNL20=y" >> .config
-	#fi
+	if has_version ">=dev-libs/libnl-3.2"; then
+		echo "CONFIG_LIBNL32=y" >> .config
+	fi
 
 	if use qt4 ; then
 		pushd "${S}"/wpa_gui-qt4 > /dev/null
@@ -212,7 +234,7 @@ src_configure() {
 
 src_compile() {
 	einfo "Building wpa_supplicant"
-	emake
+	emake V=1
 
 	if use wimax; then
 		emake -C ../src/eap_peer clean
