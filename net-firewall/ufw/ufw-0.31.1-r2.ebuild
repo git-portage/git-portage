@@ -1,11 +1,11 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/ufw/Attic/ufw-0.33-r1.ebuild,v 1.1 2012/10/14 19:06:35 thev00d00 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/ufw/Attic/ufw-0.31.1-r2.ebuild,v 1.1 2012/12/06 09:00:53 thev00d00 Exp $
 
 EAPI=4
-PYTHON_DEPEND="2:2.6 3:3.1"
+PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="2.5 *-jython"
+RESTRICT_PYTHON_ABIS="3.* *-jython"
 
 inherit versionator bash-completion-r1 eutils linux-info distutils
 
@@ -88,12 +88,12 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-conntrack.patch
 	# Allow to remove unnecessary build time dependency
 	# on net-firewall/iptables.
-	epatch "${FILESDIR}"/${P}-dont-check-iptables.patch
+	epatch "${FILESDIR}"/${PN}-dont-check-iptables.patch
 	# Move files away from /lib/ufw.
-	epatch "${FILESDIR}"/${PN}-0.31.1-move-path.patch
+	epatch "${FILESDIR}"/${P}-move-path.patch
 	# Contains fixes related to SUPPORT_PYTHON_ABIS="1" (see comment in the
 	# file).
-	epatch "${FILESDIR}"/${PN}-0.31.1-python-abis.patch
+	epatch "${FILESDIR}"/${P}-python-abis.patch
 
 	# Set as enabled by default. User can enable or disable
 	# the service by adding or removing it to/from a runlevel.
@@ -126,6 +126,9 @@ src_install() {
 	newconfd "${FILESDIR}"/ufw.confd ufw
 	newinitd "${FILESDIR}"/ufw-2.initd ufw
 
+	exeinto /usr/share/${PN}
+	doexe tests/check-requirements
+
 	# users normally would want it
 	insinto /usr/share/doc/${PF}/logging/syslog-ng
 	doins "${FILESDIR}"/syslog-ng/*
@@ -145,13 +148,30 @@ src_install() {
 
 pkg_postinst() {
 	distutils_pkg_postinst
-	echo
-	elog "Remember to enable ufw add it to your boot sequence:"
-	elog "-- # ufw enable"
-	elog "-- # rc-update add ufw boot"
-	echo
-	elog "If you want to keep ufw logs in a separate file, take a look at"
-	elog "/usr/share/doc/${PF}/logging."
+	if [[ -z ${REPLACING_VERSIONS} ]]; then
+		echo
+		elog "To enable ufw, add it to boot sequence and activate it:"
+		elog "-- # rc-update add ufw boot"
+		elog "-- # /etc/init.d/ufw start"
+		echo
+		elog "If you want to keep ufw logs in a separate file, take a look at"
+		elog "/usr/share/doc/${PF}/logging."
+	fi
+	# Make sure it gets displayed also when one downgrades from >= 0.33*,
+	# because this message isn't displayed for 0.33* (and possibly newer
+	# ones in the future) as it's not relevant there.
+	if [[ -z ${REPLACING_VERSIONS} ]] \
+		|| [[ ${REPLACING_VERSIONS} = 0.33 ]] \
+		|| [[ ${REPLACING_VERSIONS} > 0.33 ]] \
+		|| [[ ${REPLACING_VERSIONS} < 0.31.1-r2 ]]
+	then
+		echo
+		elog "Starting from ufw-0.31.1-r2, /usr/share/ufw/check-requirements"
+		elog "script is installed. It is useful for debugging problems with"
+		elog "ufw. However one should keep in mind that the script assumes"
+		elog "IPv6 is enabled on kernel and net-firewall/iptables,"
+		elog "and fails when it's not."
+	fi
 	echo
 	ewarn "Note: once enabled, ufw blocks also incoming SSH connections by"
 	ewarn "default. See README, Remote Management section for more information."
