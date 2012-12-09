@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/open-vm-tools/Attic/open-vm-tools-2012.03.13.651368.ebuild,v 1.3 2012/05/31 23:06:14 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/open-vm-tools/Attic/open-vm-tools-2012.10.14.874563.ebuild,v 1.1 2012/12/09 14:12:28 vadimk Exp $
 
 EAPI="4"
 
