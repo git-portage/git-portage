@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/spl/Attic/spl-0.6.0_rc11-r1.ebuild,v 1.1 2012/10/17 04:57:33 ryao Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/spl/Attic/spl-0.6.0_rc12-r1.ebuild,v 1.1 2012/12/11 19:42:28 ryao Exp $
 
 EAPI="4"
 AUTOTOOLS_AUTORECONF="1"
@@ -45,7 +45,7 @@ pkg_setup() {
 	kernel_is ge 2 6 26 || die "Linux 2.6.26 or newer required"
 
 	[ ${PV} != "9999" ] && \
-		{ kernel_is le 3 6 || die "Linux 3.6 is the latest supported version."; }
+		{ kernel_is le 3 7 || die "Linux 3.7 is the latest supported version."; }
 
 	check_extra_config
 }
@@ -54,8 +54,14 @@ src_prepare() {
 	# Workaround for hard coded path
 	sed -i "s|/sbin/lsmod|/bin/lsmod|" scripts/check.sh || die
 
+	# Stability Fix
+	epatch "${FILESDIR}/${P}-fix-race-in-slabs.patch"
+
 	# Linux 3.6 Support
-	epatch "${FILESDIR}/${P}-linux-3.6-compat.patch"
+	epatch "${FILESDIR}/${P}-fix-3.6-compat-regression.patch"
+
+	# Linux 3.7 Support
+	epatch "${FILESDIR}/${P}-linux-3.7-compat.patch"
 
 	autotools-utils_src_prepare
 }
