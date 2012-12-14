@@ -1,13 +1,13 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.17 2012/09/30 17:39:09 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.0_p2-r4.ebuild,v 1.18 2012/12/14 11:05:41 ulm Exp $
 
 inherit perl-module autotools eutils user
 
 DESCRIPTION="The Advanced Maryland Automatic Network Disk Archiver"
 HOMEPAGE="http://www.amanda.org/"
 SRC_URI="mirror://sourceforge/amanda/${P/_/}.tar.gz"
-LICENSE="as-is"
+LICENSE="HPND BSD GPL-2 GPL-2+"
 SLOT="0"
 KEYWORDS="amd64 ppc ppc64 ~sparc x86"
 RDEPEND="sys-libs/readline
