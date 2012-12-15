@@ -1,8 +1,8 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/klavaro/Attic/klavaro-1.9.5.ebuild,v 1.1 2012/08/08 11:02:10 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/klavaro/Attic/klavaro-1.9.6.ebuild,v 1.1 2012/12/15 16:10:12 pacho Exp $
 
-EAPI=4
+EAPI=5
 
 AUTOTOOLS_AUTORECONF=yes
 
@@ -17,8 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="
-	net-misc/curl
+RDEPEND="net-misc/curl
 	x11-libs/gtk+:2
 	x11-libs/gtkdatabox"
 
@@ -26,6 +25,4 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext
 	|| ( dev-util/gtk-builder-convert <=x11-libs/gtk+-2.24.10:2 )"
 
-DOCS=( AUTHORS ChangeLog NEWS README TODO )
-
-PATCHES=( "${FILESDIR}"/${P}-gold.patch )
+PATCHES=( "${FILESDIR}"/${PN}-1.9.5-gold.patch )
