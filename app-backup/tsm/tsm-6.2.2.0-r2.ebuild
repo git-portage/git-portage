@@ -1,8 +1,8 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.2.2.0-r1.ebuild,v 1.6 2012/07/12 14:16:32 axs Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/tsm-6.2.2.0-r2.ebuild,v 1.1 2012/12/16 11:41:02 pacho Exp $
 
-EAPI=3
+EAPI=5
 
 inherit versionator multilib eutils rpm pax-utils user
 
@@ -21,10 +21,15 @@ SRC_TAR="${MY_PVR_ALLDOTS}-TIV-TSMBAC-LinuxX86.tar"
 SRC_URI="${BASE_URI}${SRC_TAR}"
 
 RESTRICT="strip" # Breaks libPiIMG.ss and libPiSNAP.so
-LICENSE="as-is Apache-1.1 JDOM gSOAP GPL-2"
+LICENSE="Apache-1.1 Apache-2.0 JDOM BSD-2 CC-PD Boost-1.0 MIT CPL-1.0 HPND Exolab
+	dom4j EPL-1.0 FTL icu unicode IBM Info-ZIP jaxen LGPL-2 LGPL-2.1 openafs-krb5-a
+	ZLIB MPL-1.0 MPL-1.1 NPL-1.1 openssl OPENLDAP RSA public-domain W3C
+	|| ( BSD GPL-2+ ) gSOAP libpng tsm"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="hsm"
+
+QA_PREBUILT="*"
 
 MY_LANGS="cs:CS_CZ de:DE_DE es:ES_ES fr:FR_FR hu:HU_HU it:IT_IT
 	ja:JA_JP ko:KO_KR pl:PL_PL pt:PT_BR ru:RU_RU zh:ZH_CN zh_TW:ZH_TW"
@@ -78,7 +83,7 @@ src_unpack() {
 src_prepare() {
 	# Avoid unnecessary dependency on ksh
 	sed -i 's:^#!/usr/bin/ksh:#!/bin/bash:' \
-		opt/tivoli/tsm/client/ba/bin/dsmj
+		opt/tivoli/tsm/client/ba/bin/dsmj || die
 }
 
 src_install() {
@@ -191,7 +196,7 @@ src_install() {
 
 	newconfd "${FILESDIR}/dsmc.conf.d" dsmc
 	newinitd "${FILESDIR}/dsmc.init.d" dsmc
-	newinitd "${FILESDIR}/dsmcad.init.d" dsmcad
+	newinitd "${FILESDIR}/dsmcad.init.d-r1" dsmcad
 
 	elog
 	elog "Note that you have to be either root or member of the group tsm to be able to use the"
@@ -211,8 +216,7 @@ pkg_postinst() {
 	done
 }
 
-pkg_postinst()
-{
+pkg_postinst() {
 	pax-mark psme /opt/tivoli/tsm/client/ba/bin/dsmc
 	# most likely some of the other executables (e.g. dsm) need this as well, but I
 	# cannot test it at the moment. - dilfridge

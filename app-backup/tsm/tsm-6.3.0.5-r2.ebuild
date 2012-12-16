@@ -1,8 +1,8 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/Attic/tsm-6.3.0.0-r1.ebuild,v 1.3 2012/07/12 14:16:32 axs Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/tsm-6.3.0.5-r2.ebuild,v 1.1 2012/12/16 11:41:02 pacho Exp $
 
-EAPI=4
+EAPI=5
 
 inherit versionator multilib eutils rpm user
 
@@ -29,17 +29,15 @@ SRC_TAR="${MY_PVR_ALLDOTS}-TIV-TSMBAC-LinuxX86.tar"
 SRC_URI="${BASE_URI}${SRC_TAR}"
 
 RESTRICT="strip" # Breaks libPiIMG.so and libPiSNAP.so
-LICENSE="as-is Apache-1.1 JDOM gSOAP GPL-2"
+LICENSE="Apache-1.1 Apache-2.0 JDOM BSD-2 CC-PD Boost-1.0 MIT CPL-1.0 HPND Exolab
+	dom4j EPL-1.0 FTL icu unicode IBM Info-ZIP jaxen LGPL-2 LGPL-2.1 openafs-krb5-a
+	ZLIB MPL-1.0 MPL-1.1 NPL-1.1 openssl OPENLDAP RSA public-domain W3C
+	|| ( BSD GPL-2+ ) gSOAP libpng tsm"
+
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="acl java +tsm_cit +tsm_hw"
-QA_PREBUILT="opt/tivoli/tsm/client/api/bin64/cit/bin/* \
-	opt/tivoli/tsm/client/ba/bin/cit/bin/*
-	opt/tivoli/tsm/client/api/bin64/cit/VMware/esx-4/dispatcher
-	opt/tivoli/tsm/client/ba/bin/cit/VMware/esx-4/dispatcher
-	opt/tivoli/tsm/client/ba/bin/libzephyr.so
-	usr/local/ibm/gsk8_64/lib64/N/icc/osslib/libcryptoIBM081.so.0.9.8
-	usr/local/ibm/gsk8_64/lib64/C/icc/osslib/*"
+QA_PREBUILT="*"
 
 MY_LANGS="cs:CS_CZ de:DE_DE es:ES_ES fr:FR_FR hu:HU_HU it:IT_IT
 	ja:JA_JP ko:KO_KR pl:PL_PL pt:PT_BR ru:RU_RU zh:ZH_CN zh_TW:ZH_TW"
@@ -201,7 +199,7 @@ src_install() {
 	echo '	 SchedLogName "/var/log/tsm/dsmsched.log"' >> ${D}/etc/tivoli/dsm.sys
 	dosym ../../../../../../etc/tivoli/dsm.sys /opt/tivoli/tsm/client/ba/bin/dsm.sys
 
-	cp -a "${S}/opt/tivoli/tsm/client/ba/bin/dsm.opt.smp" "${D}/etc/tivoli/dsm.opt" || die
+	cp -a "${S}/opt/tivoli/tsm/client/ba/bin/dsm.opt.smp" "${D}/etc/tivoli/dsm.opt"
 	dosym ../../../../../../etc/tivoli/dsm.opt /opt/tivoli/tsm/client/ba/bin/dsm.opt
 
 	# Setup the env
@@ -214,7 +212,7 @@ src_install() {
 
 	newconfd "${FILESDIR}/dsmc.conf.d" dsmc
 	newinitd "${FILESDIR}/dsmc.init.d" dsmc
-	newinitd "${FILESDIR}/dsmcad.init.d" dsmcad
+	newinitd "${FILESDIR}/dsmcad.init.d-r1" dsmcad
 
 	elog
 	elog "Note that you have to be either root or member of the group tsm to"
