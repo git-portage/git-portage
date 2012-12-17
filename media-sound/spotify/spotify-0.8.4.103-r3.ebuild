@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/spotify/Attic/spotify-0.8.4.103.ebuild,v 1.1 2012/11/07 18:28:39 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/spotify/Attic/spotify-0.8.4.103-r3.ebuild,v 1.1 2012/12/17 15:18:25 prometheanfire Exp $
 
 EAPI=4
 inherit pax-utils
@@ -18,7 +18,7 @@ SRC_URI="
 LICENSE="Spotify"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="pax_kernel pulseaudio gnome"
+IUSE="gnome pax_kernel pulseaudio"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -54,7 +54,9 @@ RDEPEND="${DEPEND}
 		x11-libs/gtk+:2
 		dev-libs/nss
 		dev-libs/glib:2
-		pulseaudio? ( >=media-sound/pulseaudio-0.9.21 )"
+		net-print/cups
+		pulseaudio? ( >=media-sound/pulseaudio-0.9.21 )
+		gnome? ( gnome-extra/gnome-integration-spotify )"
 
 RESTRICT="mirror strip"
 
