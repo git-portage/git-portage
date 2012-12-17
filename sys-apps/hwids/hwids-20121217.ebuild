@@ -1,13 +1,12 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/hwids/Attic/hwids-20121203.ebuild,v 1.1 2012/12/04 03:15:37 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/hwids/Attic/hwids-20121217.ebuild,v 1.1 2012/12/17 10:22:10 flameeyes Exp $
 
 EAPI=5
 inherit udev
 
 DESCRIPTION="Hardware (PCI, USB, OUI, IAB) IDs databases"
 HOMEPAGE="https://github.com/gentoo/hwids"
-HWDB_URI="http://cgit.freedesktop.org/systemd/systemd/plain/hwdb"
 SRC_URI="https://github.com/gentoo/hwids/archive/${P}.tar.gz"
 
 LICENSE="|| ( GPL-2 BSD ) public-domain"
@@ -21,28 +20,12 @@ RDEPEND="!<sys-apps/pciutils-3.1.9-r2
 
 S=${WORKDIR}/hwids-${P}
 
-src_unpack() { unpack ${P}.tar.gz; }
-
-src_compile() {
-	for file in {usb,pci}.ids; do
-		gzip -c ${file} > ${file}.gz || die
-	done
-
-	if use udev; then
-		emake udev-hwdb
-	fi
-}
-
-src_install() {
-	insinto /usr/share/misc
-	doins {usb,pci}.ids{,.gz} oui.txt iab.txt
-
-	dodoc README.md
-
-	if use udev; then
-		insinto "$(udev_get_udevdir)"/hwdb.d
-		doins udev/*.hwdb
-	fi
+src_configure() {
+	MAKEOPTS+=" UDEV=$(usex udev)"
+	MAKEOPTS+=" DOCDIR=${EPREFIX}/usr/share/doc/${PF}"
+	MAKEOPTS+=" MISCDIR=${EPREFIX}/usr/share/misc"
+	MAKEOPTS+=" HWDBDIR=${EPREFIX}$(udev_get_udevdir)/hwdb.d"
+	MAKEOPTS+=" DESTDIR=${D}"
 }
 
 pkg_postinst() {
