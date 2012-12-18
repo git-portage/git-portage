@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/obnam/Attic/obnam-1.2.ebuild,v 1.3 2012/10/11 07:47:12 mschiff Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/obnam/Attic/obnam-1.3.ebuild,v 1.1 2012/12/18 15:55:03 mschiff Exp $
 
 EAPI=4
 
@@ -8,7 +8,7 @@ PYTHON_DEPEND="2:2.6:2.7"
 PYTHON_MODNAME="${PN}lib"
 MY_P="${PN}_${PV}.orig"
 
-inherit distutils python
+inherit eutils distutils python
 
 DESCRIPTION="A backup program that supports encryption and deduplication"
 HOMEPAGE="http://liw.fi/obnam/"
@@ -19,20 +19,29 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-python/cliapp-1.20120630
+DEPEND="dev-python/cliapp
 	dev-python/larch
 	dev-python/paramiko
 	dev-python/tracing
-	>=dev-python/ttystatus-0.19
+	dev-python/ttystatus
 	"
 RDEPEND="${DEPEND}"
 
 # S="${WORKDIR}/${MY_P}"
 
+pkg_setup() {
+	python_set_active_version 2
+	python_pkg_setup
+}
+
+src_prepare() {
+	distutils_src_prepare
+}
+
 src_install() {
 	distutils_src_install
 	rm "${D}"/usr/bin/obnam-{benchmark,viewprof}
-	rm "${D}"/usr/share/man/man1/obnam-benchmark*
+	rm "${D}"/usr/share/man/man1/obnam-{benchmark,viewprof}*
 	insinto /etc
 	doins "${FILESDIR}"/obnam.conf
 	keepdir /var/log/obnam
