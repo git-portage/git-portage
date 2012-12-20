@@ -1,13 +1,13 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.0.3-r3.ebuild,v 1.12 2012/12/18 15:41:08 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.0.3-r3.ebuild,v 1.13 2012/12/20 11:57:01 tomjbe Exp $
 
-EAPI="2"
+EAPI="5"
 PYTHON_DEPEND="python? 2"
 PYTHON_USE_WITH="threads"
 PYTHON_USE_WITH_OPT="python"
 
-inherit eutils multilib python user
+inherit eutils multilib python qt4-r2 user
 
 MY_PV=${PV/_beta/-b}
 MY_P=${PN}-${MY_PV}
@@ -41,16 +41,21 @@ DEPEND="
 		x11-libs/qt-svg:4
 		x11-libs/qwt:5
 	)
-	ssl? ( dev-libs/openssl )
 	logwatch? ( sys-apps/logwatch )
 	tcpd? ( >=sys-apps/tcp-wrappers-7.6 )
 	readline? ( >=sys-libs/readline-4.1 )
-	sys-libs/ncurses"
-#	doc? (
-#		app-text/ghostscript-gpl
-#		dev-tex/latex2html[png]
-#		app-text/dvipdfm
-#	)
+	static? (
+		acl? ( virtual/acl[static-libs] )
+		sys-libs/zlib[static-libs]
+		sys-libs/ncurses[static-libs]
+		ssl? ( dev-libs/openssl[static-libs] )
+	)
+	!static? (
+		acl? ( virtual/acl )
+		sys-libs/zlib
+		sys-libs/ncurses
+		ssl? ( dev-libs/openssl )
+	)"
 RDEPEND="${DEPEND}
 	!bacula-clientonly? (
 		!bacula-nosd? (
@@ -60,37 +65,16 @@ RDEPEND="${DEPEND}
 	)
 	vim-syntax? ( || ( app-editors/vim app-editors/gvim ) )"
 
+REQUIRED_USE="|| ( ^^ ( mysql postgres sqlite3 ) bacula-clientonly )
+				static? ( bacula-clientonly )"
+
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
-	local -i dbnum=0
-	if ! use bacula-clientonly; then
-		if use mysql; then
-			export mydbtype=mysql
-			let dbnum++
-		fi
-		if use postgres; then
-			export mydbtype=postgresql
-			let dbnum++
-		fi
-		if use sqlite3; then
-			export mydbtype=sqlite3
-			let dbnum++
-		fi
-		if [[ "${dbnum}" -lt 1 ]]; then
-			ewarn
-			ewarn "No database backend selected, defaulting to sqlite3."
-			ewarn "Supported databases are mysql, postgresql, sqlite3"
-			ewarn
-			export mydbtype=sqlite3
-		elif [[ "${dbnum}" -gt 1 ]]; then
-			ewarn
-			ewarn "Too many database backends selected, defaulting to sqlite3."
-			ewarn "Supported databases are mysql, postgresql, sqlite3"
-			ewarn
-			export mydbtype=sqlite3
-		fi
-	fi
+	#XOR and !bacula-clientonly controlled by REQUIRED_USE
+	use mysql && export mydbtype="mysql"
+	use postgres && export mydbtype="postgresql"
+	use sqlite3 && export mydbtype="sqlite3"
 
 	# create the daemon group and user
 	if [ -z "$(egetent group bacula 2>/dev/null)" ]; then
@@ -108,13 +92,6 @@ pkg_setup() {
 	fi
 
 	if ! use bacula-clientonly; then
-		# USE=static only supported for bacula-clientonly
-		if use static; then
-			ewarn
-			ewarn "USE=static only supported together with USE=bacula-clientonly."
-			ewarn "Ignoring 'static' useflag."
-			ewarn
-		fi
 		if [ -z "$(egetent passwd bacula 2>/dev/null)" ]; then
 			enewuser bacula -1 -1 /var/lib/bacula bacula,disk,tape,cdrom,cdrw
 			einfo
@@ -165,6 +142,9 @@ src_prepare() {
 
 	# fix CVE-2012-4430
 	epatch "${FILESDIR}"/${PV}/${P}-cve.patch
+
+	# Make build log verbose (bug #447806)
+	find . -type f -name 'Makefile.in' | xargs sed -e 's:$(NO_ECHO)::g' -i || die
 }
 
 src_configure() {
@@ -225,31 +205,23 @@ src_configure() {
 		--disable-afs \
 		--host=${CHOST} \
 		${myconf}
-}
-
-src_compile() {
-	emake || die "emake failed"
-
-	# build docs from bacula-docs tarball
-#	if use doc; then
-#		pushd "${WORKDIR}/${PN}-docs-${DOC_VER}"
-#		./configure \
-#			--with-bacula="${S}" \
-#			|| die "configure for bacula-docs failed"
-#		emake -j1 || die "emake for bacula-docs failed"
-#		popd
-#	fi
+	# correct configuration for QT based bat
+	if use qt4 ; then
+		pushd src/qt-console
+		eqmake4
+		popd
+	fi
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	doicon scripts/bacula.png || die
+	emake DESTDIR="${D}" install
+	doicon scripts/bacula.png
 
 	# install bat when enabled (for some reason ./configure doesn't pick this up)
 	if use qt4 && ! use static ; then
-		dosbin "${S}"/src/qt-console/.libs/bat || die
-		doicon src/qt-console/images/bat_icon.png || die
-		domenu scripts/bat.desktop || die
+		dosbin "${S}"/src/qt-console/.libs/bat
+		doicon src/qt-console/images/bat_icon.png
+		domenu scripts/bat.desktop
 	fi
 
 	# remove some scripts we don't need at all
@@ -269,15 +241,15 @@ src_install() {
 		diropts -m0750
 		insinto /usr/libexec/bacula/updatedb
 		insopts -m0754
-		doins "${S}"/updatedb/* || die
-		fperms 0640 /usr/libexec/bacula/updatedb/README || die
+		doins "${S}"/updatedb/*
+		fperms 0640 /usr/libexec/bacula/updatedb/README
 
 		# the logrotate configuration
 		# (now unconditional wrt bug #258187)
 		diropts -m0755
 		insinto /etc/logrotate.d
 		insopts -m0644
-		newins "${S}"/scripts/logrotate bacula || die
+		newins "${S}"/scripts/logrotate bacula
 
 		# the logwatch scripts
 		if use logwatch; then
@@ -287,7 +259,7 @@ src_install() {
 			dodir /etc/log.d/conf/logfiles
 			dodir /etc/log.d/conf/services
 			pushd "${S}"/scripts/logwatch >&/dev/null || die
-			emake DESTDIR="${D}" install || die "Failed to install logwatch scripts"
+			emake DESTDIR="${D}" install
 			popd >&/dev/null || die
 		fi
 	fi
@@ -327,9 +299,9 @@ src_install() {
 	# vim-files
 	if use vim-syntax; then
 		insinto /usr/share/vim/vimfiles/syntax
-		doins scripts/bacula.vim || die
+		doins scripts/bacula.vim
 		insinto /usr/share/vim/vimfiles/ftdetect
-		newins scripts/filetype.vim bacula_ft.vim || die
+		newins scripts/filetype.vim bacula_ft.vim
 	fi
 
 	# setup init scripts
@@ -347,7 +319,8 @@ src_install() {
 		# so we can modify them as needed
 		cp "${FILESDIR}/${script}".confd "${T}/${script}".confd || die "failed to copy ${script}.confd"
 		cp "${FILESDIR}/${script}".initd "${T}/${script}".initd || die "failed to copy ${script}.initd"
-		# set database dependancy for the director init script
+
+		# now set the database dependancy for the director init script
 		case "${script}" in
 			bacula-dir)
 				case "${mydbtype}" in
@@ -364,9 +337,10 @@ src_install() {
 			*)
 				;;
 		esac
+
 		# install init script and config
-		newinitd "${T}/${script}".initd "${script}" || die
-		newconfd "${T}/${script}".confd "${script}" || die
+		newinitd "${T}/${script}".initd "${script}"
+		newconfd "${T}/${script}".confd "${script}"
 	done
 
 	# make sure the working directory exists
@@ -390,48 +364,6 @@ pkg_postinst() {
 		einfo "  /usr/libexec/bacula/create_${mydbtype}_database"
 		einfo "  /usr/libexec/bacula/make_${mydbtype}_tables"
 		einfo "  /usr/libexec/bacula/grant_${mydbtype}_privileges"
-		einfo
-
-		ewarn
-		ewarn "*** ATTENTION! IMPORTANT! ATTENTION! IMPORTANT! ATTENTION! IMPORTANT! ***"
-		ewarn
-		ewarn "If you're upgrading from a major release, you must upgrade your bacula catalog database."
-		ewarn "Please read the manual chapter for how to upgrade your database."
-		ewarn "You can find database upgrade scripts in /usr/libexec/bacula/updatedb/."
-		ewarn
-		ewarn "*** ATTENTION! IMPORTANT! ATTENTION! IMPORTANT! ATTENTION! IMPORTANT! ***"
-		ewarn
-		ebeep 5
-		epause 10
-		echo
-
-		ewarn
-		ewarn "*** ATTENTION! IMPORTANT! ATTENTION! IMPORTANT! ATTENTION! IMPORTANT! ***"
-		ewarn
-		ewarn "The bundled catalog backup script (/usr/libexec/bacula/make_catalog_backup)"
-		ewarn "is INSECURE. The script needs to be called with the database access password"
-		ewarn "as a command line parameter, thus, the password can be seen from any other"
-		ewarn "user on the system"
-		ewarn
-		ewarn "NOTICE:"
-		ewarn "Since version 5.0.0 Bacula bundles an alternative catalog backup script"
-		ewarn "installed as /usr/libexec/bacula/make_catalog_backup.pl that is not"
-		ewarn "subject to this issue as it parses the director daemon config to extract"
-		ewarn "the configured database connection parameters (including the password)."
-		ewarn
-		ewarn "See also:"
-		ewarn "http://www.bacula.org/5.0.x-manuals/en/main/main/Bacula_Security_Issues.html"
-		ewarn "http://www.bacula.org/5.0.x-manuals/en/main/main/Catalog_Maintenance.html#SECTION0043140000000000000000"
-		ewarn
-		ewarn "*** ATTENTION! IMPORTANT! ATTENTION! IMPORTANT! ATTENTION! IMPORTANT! ***"
-		ewarn
-		ebeep 5
-		epause 10
-		echo
-
-		einfo
-		einfo "Please note that SQLite v2 support as well as wxwindows (bwx-console)"
-		einfo "and gnome (gnome-console) support have been dropped."
 		einfo
 	fi
 
