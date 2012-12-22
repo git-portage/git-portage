@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/fox/Attic/fox-1.7.33.ebuild,v 1.4 2012/09/29 14:03:04 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/fox/Attic/fox-1.7.33.ebuild,v 1.5 2012/12/22 21:27:58 mabi Exp $
 
 EAPI=4
 
@@ -16,10 +16,9 @@ RDEPEND="x11-libs/libXrandr
 	x11-libs/libXcursor
 	x11-libs/fox-wrapper
 	>=sys-devel/autoconf-2.67
-	media-libs/mesa
 	bzip2? ( app-arch/bzip2 )
 	jpeg? ( virtual/jpeg )
-	opengl? ( virtual/opengl )
+	opengl? ( virtual/glu virtual/opengl )
 	png? ( media-libs/libpng )
 	tiff? ( media-libs/tiff )
 	truetype? ( media-libs/freetype:2

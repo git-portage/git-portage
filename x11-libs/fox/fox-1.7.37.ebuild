@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/fox/Attic/fox-1.7.32.ebuild,v 1.2 2012/12/22 21:27:58 mabi Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/fox/Attic/fox-1.7.37.ebuild,v 1.1 2012/12/22 21:27:58 mabi Exp $
 
 EAPI=4
 
@@ -9,7 +9,7 @@ inherit fox
 LICENSE="LGPL-2.1"
 SLOT="1.7"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE="bzip2 jpeg opengl png tiff truetype zlib"
+IUSE="+bzip2 +jpeg +opengl +png tiff +truetype +zlib"
 
 # newish autoconf needed for working mmap check
 RDEPEND="x11-libs/libXrandr
@@ -40,9 +40,9 @@ src_configure() {
 
 src_install() {
 	fox_src_install
-	CP="${D}/usr/bin/ControlPanel"
-	if [[ -f $CP ]] ; then
-		mv $CP "${D}/usr/bin/fox-ControlPanel-${SLOT}" || \
+	CP="${ED}/usr/bin/ControlPanel"
+	if [[ -f ${CP} ]] ; then
+		mv "${CP}" "${ED}/usr/bin/fox-ControlPanel-${SLOT}" || \
 			die "Failed to install ControlPanel"
 	fi
 }
