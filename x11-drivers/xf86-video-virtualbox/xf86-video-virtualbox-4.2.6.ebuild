@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-virtualbox/Attic/xf86-video-virtualbox-4.2.2.ebuild,v 1.3 2012/12/01 11:50:07 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-virtualbox/Attic/xf86-video-virtualbox-4.2.6.ebuild,v 1.1 2012/12/22 12:27:27 polynomial-c Exp $
 
 EAPI=2
 
