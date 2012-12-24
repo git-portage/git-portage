@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/uptimed/Attic/uptimed-0.3.17.ebuild,v 1.1 2012/12/19 00:31:18 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/uptimed/Attic/uptimed-0.3.16-r6.ebuild,v 1.1 2012/12/24 09:27:05 polynomial-c Exp $
 
 inherit autotools user
 
@@ -10,7 +10,7 @@ SRC_URI="http://podgorny.cz/uptimed/releases/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 ~arm hppa ~mips ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 
 pkg_setup() {
