@@ -1,14 +1,8 @@
---- epm
-+++ epm
-@@ -1,4 +1,4 @@
--#!/usr/bin/perl -wI.
-+#!@GENTOO_PORTAGE_EPREFIX@/usr/bin/perl -wI.
- # $Id: epm-1.33-prefix.patch,v 1.1 2012/12/27 19:22:18 ottxor Exp $
- 
- use Getopt::Long;
+--- epm.orig	2012-12-27 21:21:51.288350173 -0700
++++ epm	2012-12-27 21:26:51.429905384 -0700
 @@ -7,13 +7,13 @@
  # Global vars
- (my $version = '$Revision: 1.1 $') =~ s/.*?(\d.*\d).*/EPM version $1/;
+ (my $version = '$Revision: 1.2 $') =~ s/.*?(\d.*\d).*/EPM version $1/;
  my $verbose = 0;
 -my $dbpath = '/var/db/pkg';
 +my $dbpath = '@GENTOO_PORTAGE_EPREFIX@/var/db/pkg';
@@ -18,11 +12,11 @@
      '-(\d+(?:\.\d+)*\w*)'.			# version, eg 1.23.4a
      '((?:(?:_alpha|_beta|_pre|_rc)\d*)?)'.	# special suffix
 -    '((?:-r\d+)?)$';				# revision, eg r12
-+    '((?:-r\d+)?(?:\.\d+)?)$';				# revision, eg r12 or r01.1
++    '((?:-r\d+)?(?:\.\d+)?)$';			# revision, eg r12 or r01.1
  my $root = '/';
  my %opt = (
      'dbpath' => \$dbpath,
-@@ -266,11 +266,11 @@
+@@ -267,11 +267,11 @@
      if ($opt{'c'}) {
  	# Read in CONFIG_PROTECT from /etc/make.{global,conf}
  	my (@CONFIG_PROTECT) = split ' ',
