@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/giggle/Attic/giggle-0.6.1.ebuild,v 1.8 2012/08/03 22:22:12 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/giggle/Attic/giggle-0.6.1.ebuild,v 1.9 2012/12/29 17:21:42 ikelos Exp $
 
 EAPI="3"
 
@@ -19,7 +19,7 @@ RDEPEND=">=dev-vcs/git-1.5
 		 >=x11-libs/gtk+-3.0:3
 		 >=x11-libs/gtksourceview-3.0:3.0
 		 gnome-base/gnome-common
-		 eds? ( gnome-extra/evolution-data-server )
+		 eds? ( <gnome-extra/evolution-data-server-3.6 )
 		 >=x11-libs/vte-0.26:2.90"
 DEPEND="${RDEPEND}
 		  sys-devel/gettext
