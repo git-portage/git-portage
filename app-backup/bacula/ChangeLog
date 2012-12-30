@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/bacula
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.150 2012/12/22 14:07:05 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/ChangeLog,v 1.151 2012/12/30 14:29:10 ago Exp $
+
+  30 Dec 2012; Agostino Sarubbo <ago@gentoo.org> bacula-5.0.3-r3.ebuild:
+  Stable for sparc, wrt bug #447608
 
   22 Dec 2012; Agostino Sarubbo <ago@gentoo.org> bacula-5.0.3-r3.ebuild:
   Stable for ppc, wrt bug #447608
