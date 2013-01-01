@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/tsm-6.3.0.5-r2.ebuild,v 1.1 2012/12/16 11:41:02 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/tsm-6.3.0.5-r2.ebuild,v 1.2 2013/01/01 19:10:12 ulm Exp $
 
 EAPI=5
 
@@ -30,7 +30,7 @@ SRC_URI="${BASE_URI}${SRC_TAR}"
 
 RESTRICT="strip" # Breaks libPiIMG.so and libPiSNAP.so
 LICENSE="Apache-1.1 Apache-2.0 JDOM BSD-2 CC-PD Boost-1.0 MIT CPL-1.0 HPND Exolab
-	dom4j EPL-1.0 FTL icu unicode IBM Info-ZIP jaxen LGPL-2 LGPL-2.1 openafs-krb5-a
+	dom4j EPL-1.0 FTL icu unicode IBM Info-ZIP LGPL-2 LGPL-2.1 openafs-krb5-a
 	ZLIB MPL-1.0 MPL-1.1 NPL-1.1 openssl OPENLDAP RSA public-domain W3C
 	|| ( BSD GPL-2+ ) gSOAP libpng tsm"
 
