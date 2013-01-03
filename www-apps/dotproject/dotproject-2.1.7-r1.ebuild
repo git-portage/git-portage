@@ -1,21 +1,21 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/dotproject/Attic/dotproject-2.1.2-r1.ebuild,v 1.3 2010/02/10 22:35:23 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/dotproject/dotproject-2.1.7-r1.ebuild,v 1.1 2013/01/03 12:41:25 elvanor Exp $
 
-EAPI=2
+EAPI="5"
 inherit eutils webapp depend.php
 
 DESCRIPTION="dotProject is a PHP web-based project management framework"
 HOMEPAGE="http://www.dotproject.net/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz
-	mirror://gentoo/dotproject-2.1.2-r5791_5840.patch.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 LICENSE="GPL-2"
 IUSE=""
 
 DEPEND=""
-RDEPEND=">=app-text/poppler-0.12.3-r3[utils]"
+RDEPEND="app-text/poppler[utils]
+	dev-php/PEAR-Date"
 
 need_httpd_cgi
 need_php_httpd
@@ -23,14 +23,14 @@ need_php_httpd
 S=${WORKDIR}/${PN}
 
 src_prepare() {
-	epatch "${WORKDIR}/${P}-r5791_5840.patch"
+	epatch "${FILESDIR}/${P}-pear-date.patch"
 }
 
 src_install () {
 	webapp_src_preinst
 
 	dodoc ChangeLog README
-	rm -f ChangeLog README
+	rm -rf ChangeLog README lib/PEAR/Date.php lib/PEAR/Date
 
 	mv includes/config{-dist,}.php
 
