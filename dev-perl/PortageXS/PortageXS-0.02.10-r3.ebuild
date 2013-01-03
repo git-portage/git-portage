@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/PortageXS/Attic/PortageXS-0.02.10-r2.ebuild,v 1.11 2012/12/30 15:32:08 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/PortageXS/Attic/PortageXS-0.02.10-r3.ebuild,v 1.1 2013/01/03 08:46:32 armin76 Exp $
 
 inherit perl-module eutils prefix
 DESCRIPTION="Portage abstraction layer for perl"
