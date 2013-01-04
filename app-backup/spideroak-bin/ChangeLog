@@ -1,6 +1,12 @@
 # ChangeLog for app-backup/spideroak-bin
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/ChangeLog,v 1.28 2012/10/11 14:27:27 zmedico Exp $
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/spideroak-bin/ChangeLog,v 1.29 2013/01/04 03:31:48 blueness Exp $
+
+*spideroak-bin-4.8.3 (04 Jan 2013)
+
+  04 Jan 2013; Anthony G. Basile <blueness@gentoo.org>
+  +files/spideroak-bin-4.8.3-headless.patch, +spideroak-bin-4.8.3.ebuild:
+  Version bump, bug #449356
 
   11 Oct 2012; Zac Medico <zmedico@gentoo.org> spideroak-bin-4.7.9948.ebuild:
   Use patchelf --set-rpath  so that library dependencies can be properly tracked
