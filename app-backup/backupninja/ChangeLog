@@ -1,6 +1,13 @@
 # ChangeLog for app-backup/backupninja
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backupninja/ChangeLog,v 1.10 2012/04/01 12:02:37 hwoarang Exp $
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backupninja/ChangeLog,v 1.11 2013/01/04 14:49:17 scarabeus Exp $
+
+*backupninja-1.0.1 (04 Jan 2013)
+
+  04 Jan 2013; Tomáš Chvátal <scarabeus@gentoo.org> +backupninja-1.0.1.ebuild,
+  -backupninja-0.9.10.ebuild, -backupninja-0.9.9.ebuild:
+  Version bump to latest release. Remove older failing to build with stable
+  autotools. Stabilise 1.0.1 on amd64 and x86 to have buildable version.
 
   01 Apr 2012; Markos Chandras <hwoarang@gentoo.org> backupninja-0.9.10.ebuild:
   Add WANT_AUTOMAKE to workaround eautoreconf problems with 1.11.X. Bug #403005
@@ -43,4 +50,3 @@
   22 Feb 2010; Tomáš Chvátal <scarabeus@gentoo.org>
   +backupninja-0.9.7.ebuild, +metadata.xml:
   Initial commit. Thanks to Premysl Vohnout for the ebuild.
-
