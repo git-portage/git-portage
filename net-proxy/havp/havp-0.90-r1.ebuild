@@ -1,10 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/havp/Attic/havp-0.90-r1.ebuild,v 1.1 2009/07/05 00:29:41 mrness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/havp/Attic/havp-0.90-r1.ebuild,v 1.2 2013/01/08 16:45:37 jer Exp $
 
 EAPI="2"
 
-inherit eutils
+inherit eutils user
 
 DESCRIPTION="HTTP AntiVirus Proxy"
 HOMEPAGE="http://www.server-side.de/"
