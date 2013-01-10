@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/pavuk/Attic/pavuk-0.9.36_pre20120215.ebuild,v 1.3 2012/02/19 13:20:37 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/pavuk/pavuk-0.9.36_pre20120215-r2.ebuild,v 1.1 2013/01/10 20:43:52 pacho Exp $
 
-EAPI=4
+EAPI=5
 
 S="${WORKDIR}/${PN}"
 
@@ -29,9 +29,22 @@ DEPEND="${RDEPEND}
 AUTOTOOLS_AUTORECONF=1
 AUTOTOOLS_IN_SOURCE_BUILD=1
 
+PATCHES=(
+	# Fixes a bug in re.c for PCRE support
+	"${FILESDIR}/${P}-pcre-fix.patch"
+
+	# Fixes underlinking, bug #405337
+	"${FILESDIR}/${P}-fix-underlinking.patch"
+
+	# Fixes a segfault in the GTK+2 interface on amd64, bug #262504#c40
+	"${FILESDIR}/${P}-fix-gtkmulticol-segfault.patch"
+
+	# Fixed overflow, bug #450990
+	"${FILESDIR}/${P}-tl_selectr-overflow-fix.patch"
+)
+
 DOCS=( README CREDITS NEWS AUTHORS BUGS TODO MAILINGLIST wget-pavuk.HOWTO
-		ChangeLog wget-pavuk.HOWTO pavuk_authinfo.sample pavukrc.sample
-		)
+		ChangeLog wget-pavuk.HOWTO pavuk_authinfo.sample pavukrc.sample	)
 
 src_prepare() {
 	# Fixes a bug in Makefile.am that causes aclocal to fail
@@ -39,9 +52,6 @@ src_prepare() {
 
 	# Fixes a bug in configure.in that breaks non-debug builds
 	sed -i 's/\([[:space:]]C\(PP\)*FLAGS=`\)/true; # \1/' "${S}/configure.in" || die
-
-	# Fixes a bug in re.c for PCRE support
-	epatch "${FILESDIR}/${P}-pcre-fix.patch"
 
 	# Fix for building with ~dev-lang/spidermonkey-1.8.5
 	# sed -i 's/mozjs/mozjs185/g' "${S}/configure.in" || die
