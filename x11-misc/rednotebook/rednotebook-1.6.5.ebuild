@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/rednotebook/Attic/rednotebook-1.6.1.ebuild,v 1.1 2012/11/17 19:38:57 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/rednotebook/Attic/rednotebook-1.6.5.ebuild,v 1.1 2013/01/14 21:34:32 hwoarang Exp $
 
 EAPI="4"
 
@@ -29,6 +29,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	! use spell && epatch "${FILESDIR}/${PN}-1.2.0-disable-spell.patch"
+	! use spell && epatch "${FILESDIR}/${P}-disable-spell.patch"
 	distutils_src_prepare
 }
