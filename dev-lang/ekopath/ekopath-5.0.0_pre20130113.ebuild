@@ -1,13 +1,13 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ekopath/Attic/ekopath-4.0.12.1_pre20120530.ebuild,v 1.2 2012/06/25 14:16:20 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ekopath/Attic/ekopath-5.0.0_pre20130113.ebuild,v 1.1 2013/01/14 17:41:37 xarthisius Exp $
 
 EAPI=4
 
 inherit versionator
 
-MY_PV=$(get_version_component_range 1-4)
-DATE=$(get_version_component_range 5)
+MY_PV=$(get_version_component_range 1-3)
+DATE=$(get_version_component_range 4)
 DATE=${DATE/pre}
 DATE=${DATE:0:4}-${DATE:4:2}-${DATE:6}
 
@@ -19,7 +19,7 @@ SRC_URI="http://c591116.r16.cf2.rackcdn.com/${PN}/nightly/Linux/${PN}-${DATE}-in
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="doc"
 
 DEPEND="!!app-arch/rpm"
 RDEPEND=""
@@ -51,14 +51,16 @@ src_prepare() {
 }
 
 src_install() {
+	local opts
+	use doc || opts="${opts} --disable-components documentation"
 	# You must paxmark -m EI_PAX (not PT_PAX) to run the installer
 	# on a pax enabled kernel.  Adding PT_PAX breaks the binary.
 	/usr/bin/scanelf -Xxz m ${P}.run >> /dev/null
 
 	./${P}.run \
 		--prefix "${D}/opt/${PN}" \
-		--disable-components subscriptionmanager \
-		--mode unattended || die
+		--mode unattended \
+		${opts} || die
 
 	# This is a temporary/partial fix to remove a RWX GNU STACK header
 	# from libstl.so.  It still leaves libstl.a in bad shape.
