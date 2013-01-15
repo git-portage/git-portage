@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/dnsmasq/Attic/dnsmasq-2.63.ebuild,v 1.7 2012/10/07 14:20:05 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/dnsmasq/Attic/dnsmasq-2.63.ebuild,v 1.8 2013/01/15 01:05:50 chutzpah Exp $
 
 EAPI=4
 
@@ -22,7 +22,7 @@ done
 RDEPEND="dbus? ( sys-apps/dbus )
 	idn? ( net-dns/libidn )
 	lua? ( dev-lang/lua )
-	conntrack? ( net-libs/libnetfilter_conntrack )
+	conntrack? ( !s390? ( net-libs/libnetfilter_conntrack ) )
 	nls? (
 		sys-devel/gettext
 		net-dns/libidn
@@ -32,7 +32,8 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	app-arch/xz-utils"
 
-REQUIRED_USE="lua? ( script )"
+REQUIRED_USE="lua? ( script )
+			  s390? ( !conntrack )"
 
 use_have() {
 	local NO_ONLY=""

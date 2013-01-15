@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/dnsmasq/Attic/dnsmasq-2.63-r1.ebuild,v 1.2 2013/01/15 01:05:50 chutzpah Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/dnsmasq/Attic/dnsmasq-2.65.ebuild,v 1.1 2013/01/15 01:05:50 chutzpah Exp $
 
-EAPI=4
+EAPI=5
 
 inherit eutils toolchain-funcs flag-o-matic user systemd
 
@@ -20,17 +20,17 @@ for dm_lingua in ${DM_LINGUAS}; do
 done
 
 RDEPEND="dbus? ( sys-apps/dbus )
-	idn? ( net-dns/libidn )
-	lua? ( dev-lang/lua )
-	conntrack? ( !s390? ( net-libs/libnetfilter_conntrack ) )
-	nls? (
-		sys-devel/gettext
-		net-dns/libidn
-	)"
+		idn? ( net-dns/libidn )
+		lua? ( dev-lang/lua )
+		conntrack? ( !s390? ( net-libs/libnetfilter_conntrack ) )
+		nls? (
+			sys-devel/gettext
+			net-dns/libidn
+		)"
 
 DEPEND="${RDEPEND}
-	virtual/pkgconfig
-	app-arch/xz-utils"
+		virtual/pkgconfig
+		app-arch/xz-utils"
 
 REQUIRED_USE="lua? ( script )
 			  dhcp-tools? ( dhcp )
