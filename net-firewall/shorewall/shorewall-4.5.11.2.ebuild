@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall/Attic/shorewall-4.4.27.ebuild,v 1.1 2012/01/03 08:51:20 constanze Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall/Attic/shorewall-4.5.11.2.ebuild,v 1.1 2013/01/18 12:18:13 constanze Exp $
 
 EAPI="4"
 
@@ -25,8 +25,13 @@ IUSE="doc"
 
 DEPEND=">=net-firewall/iptables-1.2.4
 	sys-apps/iproute2[-minimal]
-	dev-lang/perl"
+	dev-lang/perl
+	=net-firewall/shorewall-core-${PV}"
 RDEPEND="${DEPEND}"
+
+src_configure() {
+	:;
+}
 
 src_compile() {
 	:;
@@ -36,7 +41,7 @@ src_install() {
 	keepdir /var/lib/shorewall
 
 	cd "${WORKDIR}/${P}"
-	PREFIX="${D}" ./install.sh || die "install.sh failed"
+	DESTDIR="${D}" ./install.sh "${FILESDIR}"/shorewallrc_new || die "install.sh failed"
 	newinitd "${FILESDIR}"/shorewall.initd shorewall
 
 	dodoc changelog.txt releasenotes.txt
