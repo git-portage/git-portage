@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/hwloc/Attic/hwloc-1.3.1.ebuild,v 1.3 2012/05/04 09:17:27 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/hwloc/hwloc-1.6.1.ebuild,v 1.1 2013/01/18 06:52:18 xarthisius Exp $
 
 EAPI=4
 
@@ -14,16 +14,17 @@ SRC_URI="http://www.open-mpi.org/software/${PN}/${MY_PV}/downloads/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux"
-IUSE="cairo debug +numa +pci svg static-libs xml X"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux"
+IUSE="cairo debug +numa +pci plugins svg static-libs xml X"
 
 RDEPEND="sys-libs/ncurses
 	cairo? ( x11-libs/cairo[X?,svg?] )
 	pci? ( sys-apps/pciutils )
+	plugins? ( sys-devel/libtool )
+	numa? ( sys-process/numactl )
 	xml? ( dev-libs/libxml2 )"
 DEPEND="${RDEPEND}
-	virtual/pkgconfig
-	numa? ( sys-process/numactl )"
+	virtual/pkgconfig"
 
 DOCS=( AUTHORS NEWS README VERSION )
 
@@ -34,6 +35,8 @@ src_configure() {
 		$(use_enable cairo) \
 		$(use_enable debug) \
 		$(use_enable pci) \
+		$(use_enable plugins) \
+		$(use_enable numa libnuma) \
 		$(use_enable static-libs static) \
 		$(use_enable xml libxml2) \
 		$(use_with X x) \
@@ -42,5 +45,8 @@ src_configure() {
 
 src_install() {
 	default
-	use static-libs || rm "${D}"/usr/$(get_libdir)/lib${PN}.la
+	if ! use static-libs; then
+		rm "${D}"/usr/$(get_libdir)/lib${PN}.la
+		use plugins && rm -f "${D}"/usr/$(get_libdir)/${PN}/*.la
+	fi
 }
