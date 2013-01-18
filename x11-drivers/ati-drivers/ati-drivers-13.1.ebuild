@@ -1,33 +1,29 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-12.6.ebuild,v 1.7 2012/11/28 00:39:21 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-13.1.ebuild,v 1.1 2013/01/18 23:13:47 chithanh Exp $
 
-EAPI=4
+EAPI=5
 
 inherit eutils multilib linux-info linux-mod toolchain-funcs versionator
 
 DESCRIPTION="Ati precompiled drivers for Radeon Evergreen (HD5000 Series) and newer chipsets"
 HOMEPAGE="http://www.amd.com"
 MY_V=( $(get_version_components) )
-if [[ ${MY_V[2]} != beta ]]; then
-	ATI_URL="http://www2.ati.com/drivers/linux/"
-	SRC_URI="${ATI_URL}/amd-driver-installer-${PV/./-}-x86.x86_64.run"
-	FOLDER_PREFIX="common/"
-else
-	#SRC_URI="https://launchpad.net/ubuntu/natty/+source/fglrx-installer/2:${PV}-0ubuntu1/+files/fglrx-installer_${PV}.orig.tar.gz"
-	SRC_URI="http://www2.ati.com/drivers/hotfix/catalyst_12.6_hotfixes/amd-driver-installer-8.98-x86.x86_64.zip"
-	FOLDER_PREFIX="common/"
-fi
-IUSE="debug +modules multilib qt4 static-libs"
+#RUN="${WORKDIR}/amd-driver-installer-9.00-x86.x86_64.run"
+DRIVERS_URI="http://www2.ati.com/drivers/linux/amd-driver-installer-catalyst-${PV}-linux-x86.x86_64.zip"
+XVBA_SDK_URI="http://developer.amd.com.php53-23.ord1-1.websitetestlink.com/wordpress/media/2012/10/xvba-sdk-0.74-404001.tar.gz"
+SRC_URI="${DRIVERS_URI} ${XVBA_SDK_URI}"
+FOLDER_PREFIX="common/"
+IUSE="debug +modules multilib qt4 static-libs disable-watermark"
 
-LICENSE="AMD GPL-2 QPL-1.0 as-is"
-KEYWORDS="amd64 x86"
+LICENSE="AMD GPL-2 QPL-1.0"
+KEYWORDS="-* ~amd64 ~x86"
 SLOT="1"
 
 RESTRICT="bindist"
 
 RDEPEND="
-	<=x11-base/xorg-server-1.12.49[-minimal]
+	<=x11-base/xorg-server-1.13.49[-minimal]
 	>=app-admin/eselect-opengl-1.0.7
 	app-admin/eselect-opencl
 	sys-power/acpid
@@ -37,6 +33,7 @@ RDEPEND="
 	x11-libs/libXinerama
 	x11-libs/libXrandr
 	x11-libs/libXrender
+	virtual/glu
 	multilib? (
 			app-emulation/emul-linux-x86-opengl
 			app-emulation/emul-linux-x86-xlibs
@@ -48,7 +45,7 @@ RDEPEND="
 			x11-libs/libXfixes
 			x11-libs/libXxf86vm
 			x11-libs/qt-core:4
-			x11-libs/qt-gui:4
+			x11-libs/qt-gui:4[accessibility]
 	)
 "
 
@@ -60,6 +57,7 @@ DEPEND="${RDEPEND}
 	x11-libs/libXtst
 	sys-apps/findutils
 	app-misc/pax-utils
+	app-arch/unzip
 "
 
 EMULTILIB_PKG="true"
@@ -105,7 +103,7 @@ QA_SONAME="
 	usr/lib\(32\|64\)\?/libamdocl\(32\|64\)\?.so
 "
 
-QA_FLAGS_IGNORED="
+QA_DT_HASH="
 	opt/bin/amdcccle
 	opt/bin/aticonfig
 	opt/bin/atiodcli
@@ -224,14 +222,6 @@ _check_kernel_config() {
 		failed=1
 	fi
 
-	if linux_chkconfig_present X86_X32; then
-		eerror "You've enabled x32 in the kernel."
-		eerror "Unfortunately, this option is not supported yet and prevents the fglrx"
-		eerror "kernel module from loading."
-		error+=" X86_32 enabled;"
-		failed=1
-	fi
-
 	[[ ${failed} -ne 0 ]] && die "${error}"
 }
 
@@ -239,9 +229,8 @@ pkg_pretend() {
 	# workaround until bug 365543 is solved
 	if use modules; then
 		linux-info_pkg_setup
-		if linux_config_exists; then
-			_check_kernel_config
-		fi
+		require_configured_kernel
+		_check_kernel_config
 	fi
 }
 
@@ -286,13 +275,26 @@ pkg_setup() {
 }
 
 src_unpack() {
-	if [[ ${MY_V[2]} == beta ]]; then
-		unpack ${A}
-		RUN="${S}/${A/%.zip/.run}"
+	local DRIVERS_DISTFILE XVBA_SDK_DISTFILE
+	DRIVERS_DISTFILE=${DRIVERS_URI/*\//}
+	XVBA_SDK_DISTFILE=${XVBA_SDK_URI/*\//}
+
+	if [[ ${DRIVERS_DISTFILE} =~ .*\.tar\.gz ]]; then
+		unpack ${DRIVERS_DISTFILE}
 	else
-		RUN="${DISTDIR}/${A}"
+		#please note, RUN may be insanely assigned at top near SRC_URI
+		if [[ ${DRIVERS_DISTFILE} =~ .*\.zip ]]; then
+			unpack ${DRIVERS_DISTFILE}
+			[[ -z "$RUN" ]] && RUN="${S}/${DRIVERS_DISTFILE/%.zip/.run}"
+		else
+			RUN="${DISTDIR}/${DRIVERS_DISTFILE}"
+		fi
+		sh ${RUN} --extract "${S}" 2>&1 > /dev/null || die
 	fi
-	sh ${RUN} --extract "${S}" # 2>&1 > /dev/null || die
+
+	mkdir xvba_sdk
+	cd xvba_sdk
+	unpack ${XVBA_SDK_DISTFILE}
 }
 
 src_prepare() {
@@ -329,13 +331,23 @@ src_prepare() {
 		|| die "Replacing 'finger' with 'who' failed."
 	# Adjust paths in the script from /usr/X11R6/bin/ to /opt/bin/ and
 	# add function to detect default state.
-	epatch "${FILESDIR}"/ati-powermode-opt-path-2.patch
-
-	#fixes bug #420751
-	epatch "${FILESDIR}"/ati-drivers-do_mmap.patch
+	epatch "${FILESDIR}"/ati-powermode-opt-path-3.patch
 
 	# see http://ati.cchtml.com/show_bug.cgi?id=495
-	epatch "${FILESDIR}"/ati-drivers-old_rsp.patch
+	#epatch "${FILESDIR}"/ati-drivers-old_rsp.patch
+	# first hunk applied upstream second (x32 related) was not
+	epatch "${FILESDIR}"/ati-drivers-x32_something_something.patch
+
+	# compile fix for linux-3.7
+	# https://bugs.gentoo.org/show_bug.cgi?id=438516
+	epatch "${FILESDIR}/ati-drivers-vm-reserverd.patch"
+
+	# compile fix for AGP-less kernel, bug #435322
+	epatch "${FILESDIR}"/ati-drivers-12.9-KCL_AGP_FindCapsRegisters-stub.patch
+
+	# Use ACPI_DEVICE_HANDLE wrapper to make driver build on linux-3.8
+	# see https://bugs.gentoo.org/show_bug.cgi?id=448216
+	epatch "${FILESDIR}/ati-drivers-kernel-3.8-acpihandle.patch"
 
 	cd "${MODULE_DIR}"
 
@@ -360,12 +372,14 @@ src_prepare() {
 
 	# Get rid of watermark. Oldest known reference:
 	# http://phoronix.com/forums/showthread.php?19875-Unsupported-Hardware-watermark
-	ebegin "Disabling watermark"
-	driver="${MY_BASE_DIR}"/usr/X11R6/${PKG_LIBDIR}/modules/drivers/fglrx_drv.so
-	for x in $(objdump -d ${driver}|awk '/call/&&/EnableLogo/{print "\\x"$2"\\x"$3"\\x"$4"\\x"$5"\\x"$6}'); do
-		sed -i "s/${x}/\x90\x90\x90\x90\x90/g" ${driver} || break 1
-	done
-	eend $? || die "Disabling watermark failed"
+	if use disable-watermark; then
+		ebegin "Disabling watermark"
+		driver="${MY_BASE_DIR}"/usr/X11R6/${PKG_LIBDIR}/modules/drivers/fglrx_drv.so
+		for x in $(objdump -d ${driver}|awk '/call/&&/EnableLogo/{print "\\x"$2"\\x"$3"\\x"$4"\\x"$5"\\x"$6}'); do
+		sed -i "s/${x/x5b/\x5b}/\x90\x90\x90\x90\x90/g" ${driver} || break 1
+		done
+		eend $? || die "Disabling watermark failed"
+	fi
 }
 
 src_compile() {
@@ -582,9 +596,10 @@ src_install-libs() {
 	for so in $(find "${D}"/usr/$(get_libdir) -maxdepth 1 -name *.so.[0-9].[0-9])
 	do
 		local soname=${so##*/}
-		## let's keep also this alternative way ;)
-		#dosym ${soname} /usr/$(get_libdir)/${soname%.[0-9]}
-		dosym ${soname} /usr/$(get_libdir)/$(scanelf -qF "#f%S" ${so})
+		local soname_one=${soname%.[0-9]}
+		local soname_zero=${soname_one%.[0-9]}
+		dosym ${soname} /usr/$(get_libdir)/${soname_one}
+		dosym ${soname_one} /usr/$(get_libdir)/${soname_zero}
 	done
 
 	# See https://bugs.gentoo.org/show_bug.cgi?id=443466
@@ -593,6 +608,9 @@ src_install-libs() {
 
 	#remove static libs if not wanted
 	use static-libs || rm -rf "${D}"/usr/$(get_libdir)/libfglrx_dm.a
+
+	#install xvba sdk headers
+	doheader xvba_sdk/include/amdxvba.h
 }
 
 pkg_postinst() {
@@ -614,6 +632,13 @@ pkg_postinst() {
 	use modules && linux-mod_pkg_postinst
 	"${ROOT}"/usr/bin/eselect opengl set --use-old ati
 	"${ROOT}"/usr/bin/eselect opencl set --use-old amd
+
+	if has_version ">=x11-drivers/xf86-video-intel-2.20.3"; then
+		ewarn "It is reported that xf86-video-intel-2.20.3 and later cause the X server"
+		ewarn "to crash on systems that use hybrid AMD/Intel graphics. If you experience"
+		ewarn "this crash, downgrade to xf86-video-intel-2.20.2 or earlier."
+		ewarn "For details, see https://bugs.gentoo.org/show_bug.cgi?id=430000"
+	fi
 }
 
 pkg_preinst() {
