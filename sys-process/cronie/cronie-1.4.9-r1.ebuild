@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/cronie/Attic/cronie-1.4.8-r1.ebuild,v 1.5 2012/12/18 22:36:34 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-process/cronie/Attic/cronie-1.4.9-r1.ebuild,v 1.1 2013/01/19 17:43:32 polynomial-c Exp $
 
-EAPI="3"
+EAPI="5"
 
 inherit cron eutils pam user
 
@@ -27,17 +27,17 @@ pkg_setup() {
 
 src_configure() {
 	SPOOL_DIR="/var/spool/cron/crontabs" econf \
-		$(use_with inotify ) \
-		$(use_with pam ) \
-		$(use_with selinux ) \
-		$(use_enable anacron ) \
+		$(use_with inotify) \
+		$(use_with pam) \
+		$(use_with selinux) \
+		$(use_enable anacron) \
+		--with-syscrontab \
 		--with-daemon_username=cron \
-		--with-daemon_groupname=cron \
-		|| die "econf failed"
+		--with-daemon_groupname=cron
 }
 
 src_install() {
-	emake install DESTDIR="${D}" || die "install failed"
+	emake install DESTDIR="${D}"
 
 	docrondir -m 1730 -o root -g crontab
 	fowners root:crontab /usr/bin/crontab
@@ -55,10 +55,6 @@ src_install() {
 	newpamd "${FILESDIR}/${PN}-1.4.3-pamd" crond
 
 	if use anacron ; then
-		#insinto /etc/cron.daily
-		#doins "${S}"/contrib/0anacron
-		#fperms 0755 /etc/cron.daily/0anacron
-
 		keepdir /var/spool/anacron
 		fowners root:cron /var/spool/anacron
 		fperms 0750 /var/spool/anacron
