@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-input-vmmouse/Attic/xf86-input-vmmouse-12.8.0.ebuild,v 1.2 2012/05/16 00:41:44 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-input-vmmouse/xf86-input-vmmouse-13.0.0.ebuild,v 1.1 2013/01/20 18:51:58 chithanh Exp $
 
-EAPI=4
+EAPI=5
 
 inherit xorg-2
 
