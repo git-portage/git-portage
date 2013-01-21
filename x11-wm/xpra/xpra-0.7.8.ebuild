@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/xpra/Attic/xpra-0.7.4.ebuild,v 1.2 2012/11/30 16:10:50 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/xpra/Attic/xpra-0.7.8.ebuild,v 1.1 2013/01/21 07:31:49 xmw Exp $
 
 EAPI=3
 
@@ -82,5 +82,6 @@ src_install() {
 	elog "please make your Xorg binary readable for users of xpra"
 	elog "  chmod a+r /usr/bin/Xorg"
 	elog "and think about the security impact"
+	elog "A copy at ~/.xpra/Xorg matching the current modules is sufficient."
 	einfo
 }
