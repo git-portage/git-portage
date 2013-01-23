@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/munin/Attic/munin-2.0.10-r1.ebuild,v 1.1 2013/01/19 15:26:35 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/munin/Attic/munin-2.0.10-r2.ebuild,v 1.1 2013/01/23 19:22:41 flameeyes Exp $
 
 EAPI=5
 
