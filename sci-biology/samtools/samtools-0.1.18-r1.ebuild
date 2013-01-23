@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/samtools/Attic/samtools-0.1.17.ebuild,v 1.1 2011/07/18 01:50:51 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/samtools/Attic/samtools-0.1.18-r1.ebuild,v 1.1 2013/01/23 10:51:13 jlec Exp $
 
-EAPI=4
+EAPI=5
 
 inherit multilib toolchain-funcs
 
@@ -17,16 +17,20 @@ KEYWORDS="~amd64 ~x86 ~x64-macos"
 
 src_prepare() {
 	sed \
+		-e '/CC/s:=:?=:g' \
+		-e "/LIBCURSES/s:=.*$:= $(pkg-config --libs ncurses):g" \
 		-e '/^CFLAGS=/d' \
 		-e "s/\$(CC) \$(CFLAGS)/& \$(LDFLAGS)/g" \
 		-e "s/-shared/& \$(LDFLAGS)/" \
 		-i "${S}"/{Makefile,misc/Makefile} || die #358563
 	sed -i 's~/software/bin/python~/usr/bin/env python~' "${S}"/misc/varfilter.py || die
+
+	tc-export CC
 }
 
 src_compile() {
-	emake CC="$(tc-getCC)" dylib || die
-	emake CC="$(tc-getCC)" || die
+	emake dylib
+	emake
 }
 
 src_install() {
