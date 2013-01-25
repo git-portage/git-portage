@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/anki/Attic/anki-2.0.3-r1.ebuild,v 1.1 2012/12/22 05:09:55 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/anki/Attic/anki-2.0.6.ebuild,v 1.1 2013/01/25 13:18:04 tomka Exp $
 
 EAPI=4
 
@@ -34,8 +34,7 @@ pkg_setup(){
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-httplib2-0.7.7.patch
-	rm -r libanki/thirdparty || die
+	rm -r thirdparty || die
 	python_convert_shebangs -r 2 .
 }
 
@@ -50,16 +49,15 @@ src_compile() {
 
 src_install() {
 	exeinto /usr/bin/
-	doexe anki
+	doexe anki/anki
 
 	doicon ${PN}.png
-	domenu anki.desktop
+	domenu ${PN}.desktop
+	doman ${PN}.1
 
-	doman anki.1
-
-	dodoc README README.development README.translating
+	dodoc README README.development
 	insinto "$(python_get_sitedir)"
-	doins -r aqt libanki/anki
+	doins -r aqt anki
 }
 
 pkg_preinst() {
