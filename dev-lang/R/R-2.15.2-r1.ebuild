@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/Attic/R-2.15.1.ebuild,v 1.3 2012/10/07 13:35:21 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/Attic/R-2.15.2-r1.ebuild,v 1.1 2013/01/28 22:49:47 bicatali Exp $
 
-EAPI=4
+EAPI=5
 
 inherit bash-completion-r1 autotools eutils flag-o-matic fortran-2 multilib versionator toolchain-funcs
 
@@ -15,10 +15,11 @@ SRC_URI="mirror://cran/src/base/R-2/${P}.tar.gz
 LICENSE="|| ( GPL-2 GPL-3 ) LGPL-2.1"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-fbsd ~x86-linux ~x64-macos"
-IUSE="bash-completion cairo doc icu java jpeg lapack minimal nls openmp perl png profile readline static-libs tiff tk X"
+IUSE="bash-completion cairo doc icu java jpeg lapack minimal nls openmp perl png prefix profile readline static-libs tiff tk X"
 REQUIRED_USE="png? ( || ( cairo X ) ) jpeg? ( || ( cairo X ) ) tiff? ( || ( cairo X ) )"
 
-CDEPEND="app-arch/bzip2
+CDEPEND="
+	app-arch/bzip2
 	app-text/ghostscript-gpl
 	dev-libs/libpcre
 	virtual/blas
@@ -46,7 +47,7 @@ RDEPEND="${CDEPEND}
 
 RESTRICT="minimal? ( test )"
 
-R_DIR="${EPREFIX}/usr/$(get_libdir)/${PN}"
+R_DIR="${EROOT}/usr/$(get_libdir)/${PN}"
 
 pkg_setup() {
 	if use openmp; then
@@ -76,12 +77,11 @@ src_prepare() {
 	# https://bugs.r-project.org/bugzilla3/show_bug.cgi?id=14951
 	epatch "${FILESDIR}"/${PN}-2.13.1-zlib_header_fix.patch
 
-	# tiff automagic
-	# https://bugs.r-project.org/bugzilla3/show_bug.cgi?id=14952
-	epatch "${FILESDIR}"/${PN}-2.14.1-tiff.patch
-
 	# https://bugs.r-project.org/bugzilla3/show_bug.cgi?id=14953
 	epatch "${FILESDIR}"/${PN}-2.14.1-rmath-shared.patch
+
+	# fix cairo plots (gentoo bug #453048)
+	epatch "${FILESDIR}"/${PN}-2.15.2-cairo.patch
 
 	# fix packages.html for doc (gentoo bug #205103)
 	sed -i \
@@ -99,7 +99,7 @@ src_prepare() {
 		$(grep -Flr ../manual/ doc) || die "sed for HTML links failed"
 
 	use lapack && \
-		export LAPACK_LIBS="$(pkg-config --libs lapack)"
+		export LAPACK_LIBS="$($(tc-getPKG_CONFIG) --libs lapack)"
 
 	if use X; then
 		export R_BROWSER="$(type -p xdg-open)"
@@ -111,18 +111,22 @@ src_prepare() {
 	# don't search /usr/local
 	sed -i -e '/FLAGS=.*\/local\//c\: # removed by ebuild' configure.ac || die
 	# Fix for Darwin (OS X)
-	if [[ ${CHOST} == *-darwin* ]] ; then
-		sed -e 's:-install_name libR.dylib:-install_name ${libdir}/R/lib/libR.dylib:' \
-			-e 's:-install_name libRlapack.dylib:-install_name ${libdir}/R/lib/libRlapack.dylib:' \
-			-e 's:-install_name libRblas.dylib:-install_name ${libdir}/R/lib/libRblas.dylib:' \
-			-e "/SHLIB_EXT/s/\.so/.dylib/" \
-			-i configure.ac || die
-
-		# sort of "undo" 2.14.1-rmath-shared.patch
-		sed "s:-Wl,-soname=libRmath.so:-install_name ${EPREFIX}/usr/$(get_libdir)/libRmath.dylib:" \
-			-i src/nmath/standalone/Makefile.in || die
+	if use prefix; then
+		if [[ ${CHOST} == *-darwin* ]] ; then
+			sed -i \
+				-e 's:-install_name libR.dylib:-install_name ${libdir}/R/lib/libR.dylib:' \
+				-e 's:-install_name libRlapack.dylib:-install_name ${libdir}/R/lib/libRlapack.dylib:' \
+				-e 's:-install_name libRblas.dylib:-install_name ${libdir}/R/lib/libRblas.dylib:' \
+				-e "/SHLIB_EXT/s/\.so/.dylib/" \
+				configure.ac || die
+			# sort of "undo" 2.14.1-rmath-shared.patch
+			sed -i \
+				-e "s:-Wl,-soname=libRmath.so:-install_name ${EROOT}/usr/$(get_libdir)/libRmath.dylib:" \
+				src/nmath/standalone/Makefile.in || die
+		else
+			append-ldflags -Wl,-rpath="${EROOT}/usr/$(get_libdir)/R/lib"
+		fi
 	fi
-
 	AT_M4DIR=m4 eaclocal
 	eautoconf
 }
@@ -136,7 +140,7 @@ src_configure() {
 		--with-system-bzlib \
 		--with-system-pcre \
 		--with-system-xz \
-		--with-blas="$(pkg-config --libs blas)" \
+		--with-blas="$($(tc-getPKG_CONFIG) --libs blas)" \
 		--docdir="${EPREFIX}/usr/share/doc/${PF}" \
 		rdocdir="${EPREFIX}/usr/share/doc/${PF}" \
 		$(use_enable nls) \
