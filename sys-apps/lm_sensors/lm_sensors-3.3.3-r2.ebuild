@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/lm_sensors/Attic/lm_sensors-3.3.3.ebuild,v 1.1 2012/11/29 14:35:48 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/lm_sensors/Attic/lm_sensors-3.3.3-r2.ebuild,v 1.1 2013/01/31 15:37:50 flameeyes Exp $
 
 EAPI=5
 
@@ -59,11 +59,11 @@ src_install() {
 		install
 
 	newinitd "${FILESDIR}"/${PN}-3-init.d ${PN}
-	newinitd "${FILESDIR}"/fancontrol-init.d fancontrol
+	newinitd "${FILESDIR}"/fancontrol-init.d-2 fancontrol
 
 	if use sensord; then
 		newconfd "${FILESDIR}"/sensord-conf.d sensord
-		newinitd "${FILESDIR}"/sensord-3-init.d sensord
+		newinitd "${FILESDIR}"/sensord-4-init.d sensord
 	fi
 
 	dodoc CHANGES CONTRIBUTORS INSTALL README \
