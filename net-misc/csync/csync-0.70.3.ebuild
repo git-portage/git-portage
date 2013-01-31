@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/csync/Attic/csync-0.60.4.ebuild,v 1.1 2012/12/21 13:23:42 creffett Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/csync/Attic/csync-0.70.3.ebuild,v 1.1 2013/01/31 15:25:18 scarabeus Exp $
 
-EAPI=4
+EAPI=5
 
 inherit base cmake-utils
 
@@ -28,11 +28,11 @@ RDEPEND="
 DEPEND="${DEPEND}
 	app-text/asciidoc
 	doc? ( app-doc/doxygen )
-	test? ( dev-util/cmocka )
+	test? ( dev-libs/check dev-util/cmocka )
 "
 
 PATCHES=(
-	"${FILESDIR}/${PN}-0.60.4-automagicness.patch"
+	"${FILESDIR}/${PN}-0.70.1-automagicness.patch"
 	"${FILESDIR}/${PN}-0.60.2-removebadtest.patch"
 )
 
