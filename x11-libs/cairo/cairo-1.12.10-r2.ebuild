@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/cairo/Attic/cairo-1.12.2-r2.ebuild,v 1.3 2012/11/28 10:27:31 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/cairo/Attic/cairo-1.12.10-r2.ebuild,v 1.1 2013/01/31 13:35:51 chithanh Exp $
 
-EAPI=4
+EAPI=5
 
 inherit eutils flag-o-matic autotools
 
@@ -20,7 +20,7 @@ DESCRIPTION="A vector graphics library with cross-device output support"
 HOMEPAGE="http://cairographics.org/"
 LICENSE="|| ( LGPL-2.1 MPL-1.1 )"
 SLOT="0"
-IUSE="X aqua debug directfb doc drm gallium +glib opengl openvg qt4 static-libs +svg xcb"
+IUSE="X aqua debug directfb doc drm gallium +glib legacy-drivers opengl openvg qt4 static-libs +svg xcb"
 
 # Test causes a circular depend on gtk+... since gtk+ needs cairo but test needs gtk+ so we need to block it
 RESTRICT="test"
@@ -37,6 +37,7 @@ RDEPEND="media-libs/fontconfig
 	qt4? ( >=x11-libs/qt-gui-4.8:4 )
 	X? (
 		>=x11-libs/libXrender-0.6
+		x11-libs/libXext
 		x11-libs/libX11
 		drm? (
 			>=virtual/udev-136
@@ -71,8 +72,11 @@ REQUIRED_USE="
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.8.8-interix.patch
+	use legacy-drivers && epatch "${FILESDIR}"/${PN}-1.10.0-buggy_gradients.patch
 	epatch "${FILESDIR}"/${PN}-1.10.2-qt-surface.patch
 	epatch "${FILESDIR}"/${PN}-respect-fontconfig.patch
+	epatch "${FILESDIR}"/${P}-xlib-corruption.patch
+	epatch "${FILESDIR}"/${P}-xshm-corruption.patch
 	epatch_user
 
 	# Slightly messed build system YAY
