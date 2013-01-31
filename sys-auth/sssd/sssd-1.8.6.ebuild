@@ -1,13 +1,10 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/sssd/Attic/sssd-1.9.3.ebuild,v 1.2 2013/01/06 19:15:46 maksbotan Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/sssd/sssd-1.8.6.ebuild,v 1.1 2013/01/31 17:56:01 maksbotan Exp $
 
 EAPI=4
 
 PYTHON_DEPEND="python? 2:2.6"
-
-AUTOTOOLS_IN_SOURCE_BUILD=1
-AUTOTOOLS_AUTORECONF=1
 
 inherit python multilib pam linux-info autotools-utils
 
@@ -18,50 +15,45 @@ SRC_URI="http://fedorahosted.org/released/${PN}/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="autofs doc +locator netlink nls +manpages python selinux sudo ssh test"
+IUSE="doc +locator netlink nls python selinux test"
 
 COMMON_DEP="
 	virtual/pam
-	>=dev-libs/popt-1.16
+	dev-libs/popt
 	dev-libs/glib:2
-	>=dev-libs/ding-libs-0.2
-	>=sys-libs/talloc-2.0.7
-	>=sys-libs/tdb-1.2.9
-	>=sys-libs/tevent-0.9.16
-	>=sys-libs/ldb-1.1.13
-	>=net-nds/openldap-2.4.30
-	>=dev-libs/libpcre-8.30
-	>=app-crypt/mit-krb5-1.10.3
-	>=sys-apps/keyutils-1.5
+	>=dev-libs/ding-libs-0.1.2
+	>=sys-libs/talloc-2.0
+	sys-libs/tdb
+	sys-libs/tevent
+	sys-libs/ldb
+	>=net-nds/openldap-2.4.19
+	!!~net-nds/openldap-2.4.28
+	dev-libs/libpcre
+	>=app-crypt/mit-krb5-1.9.1
+	sys-apps/keyutils
 	>=net-dns/c-ares-1.7.4
 	>=dev-libs/nss-3.12.9
-	>=net-fs/samba-4
 	selinux? (
-		>=sys-libs/libselinux-2.1.9
-		>=sys-libs/libsemanage-2.1
-		>=sec-policy/selinux-sssd-2.20120725-r9
+		>=sys-libs/libselinux-2.0.94
+		>=sys-libs/libsemanage-2.0.45
+		sec-policy/selinux-sssd
 	)
-	>=net-dns/bind-tools-9.9[gssapi]
-	>=dev-libs/cyrus-sasl-2.1.25-r3[kerberos]
-	>=sys-apps/dbus-1.6
-	nls? ( >=sys-devel/gettext-0.18 )
+	net-dns/bind-tools
+	dev-libs/cyrus-sasl
+	sys-apps/dbus
+	nls? ( >=sys-devel/gettext-0.17 )
 	virtual/libintl
-	netlink? ( dev-libs/libnl:3 )
+	netlink? ( dev-libs/libnl )
 	"
 
 RDEPEND="${COMMON_DEP}"
-
 DEPEND="${COMMON_DEP}
 	test? ( dev-libs/check )
-	manpages? (
-		>=dev-libs/libxslt-1.1.26
-		app-text/docbook-xml-dtd:4.4
-		)
+	>=dev-libs/libxslt-1.1.26
+	app-text/docbook-xml-dtd:4.4
 	doc? ( app-doc/doxygen )"
 
 CONFIG_CHECK="~KEYS"
-
-PATCHES=( "${FILESDIR}"/0*.patch )
 
 pkg_setup(){
 	if use python; then
@@ -73,7 +65,7 @@ pkg_setup(){
 }
 
 src_prepare() {
-	autotools-utils_src_prepare
+	cp -f  "${FILESDIR}"/sssd "${S}/"src/sysv/gentoo/sssd
 }
 
 src_configure(){
@@ -85,28 +77,19 @@ src_configure(){
 		--with-ldb-lib-dir="${EPREFIX}"/usr/$(get_libdir)/ldb/modules/ldb
 		--without-nscd
 		--with-unicode-lib="glib2"
-		--disable-rpath
-		--enable-silent-rules
 		$(use_with selinux)
 		$(use_with selinux semanage)
 		$(use_with python python-bindings)
 		$(use_enable locator krb5-locator-plugin)
 		$(use_enable nls )
-		$(use_with netlink libnl)
-		$(use_with manpages)
-		$(use_with sudo)
-		$(use_with autofs)
-		$(use_with ssh)
-		--with-crypto="libcrypto"
-		--with-initscript="sysv"
-		)
+		$(use_with netlink libnl) )
 
 	autotools-utils_src_configure
 }
 
 src_install(){
 	autotools-utils_src_install
-	prune_libtool_files --all
+	remove_libtool_files all
 
 	insinto /etc/sssd
 	insopts -m600
@@ -118,7 +101,7 @@ src_install(){
 
 	if use python; then
 		python_clean_installation_image
-		python_convert_shebangs -r 2 "${ED}$(python_get_sitedir)"/*.py
+		python_convert_shebangs 2 "${ED}$(python_get_sitedir)/"*.py
 	fi
 	newconfd "${FILESDIR}"/sssd.conf sssd
 }
