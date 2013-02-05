@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/google-chrome/Attic/google-chrome-26.0.1397.2_alpha179372.ebuild,v 1.1 2013/01/31 00:25:35 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/google-chrome/Attic/google-chrome-24.0.1312.68_p180326.ebuild,v 1.1 2013/02/05 02:33:19 floppym Exp $
 
 EAPI="4"
 
@@ -70,7 +70,6 @@ RDEPEND="
 	x11-libs/gdk-pixbuf
 	x11-libs/gtk+:2
 	x11-libs/libX11
-	x11-libs/libXcomposite
 	x11-libs/libXext
 	x11-libs/libXfixes
 	x11-libs/libXrandr
