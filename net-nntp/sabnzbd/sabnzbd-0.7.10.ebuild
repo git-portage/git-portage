@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-nntp/sabnzbd/Attic/sabnzbd-0.7.9.ebuild,v 1.1 2013/01/06 22:01:20 jsbronder Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-nntp/sabnzbd/Attic/sabnzbd-0.7.10.ebuild,v 1.1 2013/02/06 04:59:55 jsbronder Exp $
 
 EAPI="4"
 
@@ -20,7 +20,7 @@ SRC_URI="mirror://sourceforge/sabnzbdplus/${MY_P}-src.tar.gz"
 LICENSE="GPL-2 BSD LGPL-2 MIT BSD-1"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+rar +ssl unzip yenc"
+IUSE="+rar +ssl unzip +yenc"
 
 # Sabnzbd is installed to /usr/share/ as upstream makes it clear they should not
 # be in python's sitedir.  See:  http://wiki.sabnzbd.org/unix-packaging
@@ -38,7 +38,7 @@ RDEPEND="
 	dev-python/gntp
 	dev-python/pythonutils
 	net-misc/wget
-	rar? ( app-arch/rar )
+	rar? ( || ( app-arch/unrar app-arch/rar ) )
 	ssl? ( dev-python/pyopenssl )
 	unzip? ( >=app-arch/unzip-5.5.2 )
 	yenc? ( dev-python/yenc )
@@ -61,7 +61,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/use-system-configobj-and-feedparser.patch
 
 	# remove bundled modules
-	rm sabnzbd/utils/{feedparser,configobj,gntp}.py cherryp
+	rm -r sabnzbd/utils/{feedparser,configobj,gntp}.py cherrypy
 	rm licenses/License-{feedparser,configobj,gntp,CherryPy}.txt
 }
 
@@ -74,7 +74,7 @@ src_install() {
 	fperms +x /usr/share/${PN}/SABnzbd.py
 	dobin "${FILESDIR}"/sabnzbd
 
-	for d in cherrypy email icons interfaces locale po sabnzbd tools util; do
+	for d in email icons interfaces locale po sabnzbd tools util; do
 		insinto /usr/share/${PN}/${d}
 		doins -r ${d}/*
 	done
@@ -82,9 +82,16 @@ src_install() {
 	newinitd "${FILESDIR}/${PN}.initd" "${PN}"
 	newconfd "${FILESDIR}/${PN}.confd" "${PN}"
 
+	insinto /etc/logrotate.d
+	newins "${FILESDIR}/"${PN}.logrotate ${PN}
+
 	diropts -o ${PN} -g ${PN}
 	dodir /etc/${PN}
 	dodir /var/log/${PN}
+
+	insinto "/etc/${PN}"
+	insopts -m 0600 -o ${PN} -g ${PN}
+	doins "${FILESDIR}/${PN}.ini"
 
 	dodoc {ABOUT,CHANGELOG,ISSUES,README}.txt Sample-PostProc.sh licenses/*
 }
