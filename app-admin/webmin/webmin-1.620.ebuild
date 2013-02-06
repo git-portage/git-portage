@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/webmin/Attic/webmin-1.600-r1.ebuild,v 1.2 2012/11/07 18:51:57 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/webmin/Attic/webmin-1.620.ebuild,v 1.1 2013/02/06 20:13:50 hwoarang Exp $
 
 EAPI="3"
 
@@ -54,9 +54,6 @@ src_prepare() {
 		rm -rf {format,{bsd,hpux,sgi}exports,zones,rbac}
 		rm -f mount/{free,net,open}bsd-mounts*
 		rm -f mount/macos-mounts*
-
-		# Fix security bug - https://bugs.gentoo.org/show_bug.cgi?id=441840
-		epatch "${FILESDIR}/${P}-SA51201.patch"
 	fi
 
 	# For security reasons remove the SSL certificate that comes with Webmin
@@ -66,6 +63,9 @@ src_prepare() {
 	# Remove the Webmin setup scripts to avoid Webmin in runtime to mess up config
 	# We will use our own later
 	rm -f setup.{sh,pl}
+
+	# Set the installation type/mode to Gentoo
+	echo "gentoo" > install-type
 
 	# Fix the permissions of the install files
 	chmod -R og-w "${S}"
@@ -253,9 +253,10 @@ pkg_config(){
 	export os_version='*'
 	export real_os_type='Gentoo Linux'
 	export real_os_version='Any version'
-	# Forcing 'ssl' and 'ssl_redirect' for tightening security
+	# Forcing 'ssl', 'ssl_redirect' and 'no_sslcompression' for tightening security
 	export ssl=1
 	export ssl_redirect=1
+	export no_sslcompression=1
 	export keyfile="${EROOT}etc/ssl/webmin/server.pem"
 	export port=10000
 
