@@ -1,9 +1,11 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/Attic/puppet-2.7.19.ebuild,v 1.3 2012/11/06 22:00:44 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/Attic/puppet-2.7.18-r1.ebuild,v 1.4 2013/02/08 16:49:13 prometheanfire Exp $
 
 EAPI="4"
-USE_RUBY="ruby18 ruby19"
+# ruby19: dev-ruby/ruby-ldap has no ruby19
+#USE_RUBY="ruby18 ruby19 ree18"
+USE_RUBY="ruby18"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_TASK_TEST="test"
@@ -38,12 +40,10 @@ ruby_add_rdepend "
 #	stomp? ( dev-ruby/stomp )
 
 DEPEND="${DEPEND}
-	ruby_targets_ruby19? ( dev-lang/ruby:1.9[yaml] )
 	emacs? ( virtual/emacs )
 	xemacs? ( app-editors/xemacs )
 	selinux? ( sec-policy/selinux-puppet )"
 RDEPEND="${RDEPEND}
-	ruby_targets_ruby19? ( dev-lang/ruby:1.9[yaml] )
 	emacs? ( virtual/emacs )
 	xemacs? ( app-editors/xemacs )
 	rrdtool? ( >=net-analyzer/rrdtool-1.2.23[ruby] )
@@ -54,10 +54,6 @@ RDEPEND="${RDEPEND}
 	>=app-portage/eix-0.18.0"
 
 SITEFILE="50${PN}-mode-gentoo.el"
-
-RUBY_PATCHES=(
-	"${PN}-2.7.18-eix_fix.patch"
-)
 
 pkg_setup() {
 	enewgroup puppet
@@ -87,7 +83,7 @@ each_fakegem_install() {
 all_ruby_install() {
 	all_fakegem_install
 
-	newinitd "${FILESDIR}"/puppet.init-r1 puppet
+	newinitd "${FILESDIR}"/puppet.init-CVE-2012-6120 puppet
 	doconfd conf/gentoo/conf.d/puppet
 
 	# Initial configuration files
@@ -104,8 +100,8 @@ all_ruby_install() {
 		rm "${ED}/usr/bin/puppetmasterd"
 		rm "${ED}/etc/puppet/auth.conf"
 	else
-		newinitd "${FILESDIR}"/puppetmaster.init puppetmaster
-		newconfd "${FILESDIR}"/puppetmaster.confd puppetmaster
+		newinitd "${FILESDIR}"/puppetmaster-2.7.6.init-CVE-2012-6120 puppetmaster
+		newconfd "${FILESDIR}"/puppetmaster-2.7.6.confd puppetmaster
 
 		insinto /etc/puppet
 		doins conf/redhat/fileserver.conf
