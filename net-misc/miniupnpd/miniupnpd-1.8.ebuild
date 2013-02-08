@@ -1,11 +1,11 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/miniupnpd/Attic/miniupnpd-1.7.ebuild,v 1.1 2012/06/03 16:26:12 gurligebis Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/miniupnpd/Attic/miniupnpd-1.8.ebuild,v 1.1 2013/02/08 19:00:04 gurligebis Exp $
 
 EAPI=2
 inherit eutils toolchain-funcs
 
-MY_PV=1.7
+MY_PV=1.8
 S="${WORKDIR}/${PN}-${MY_PV}"
 
 DESCRIPTION="MiniUPnP IGD Daemon"
@@ -17,7 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=net-firewall/iptables-1.4.6"
+RDEPEND=">=net-firewall/iptables-1.4.6
+	net-libs/libnfnetlink"
 DEPEND="${RDEPEND}
 	sys-apps/util-linux
 	sys-apps/lsb-release"
@@ -47,6 +48,8 @@ src_compile() {
 }
 
 src_install () {
+	dodir /usr/share/man/man8
+
 	einstall PREFIX="${D}" STRIP="true" || die "einstall failed"
 
 	newinitd "${FILESDIR}"/${PN}-init.d ${PN}
