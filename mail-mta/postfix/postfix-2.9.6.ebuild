@@ -1,13 +1,14 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/Attic/postfix-2.10_pre20130113.ebuild,v 1.1 2013/01/16 18:38:39 eras Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/Attic/postfix-2.9.6.ebuild,v 1.1 2013/02/09 10:12:40 eras Exp $
 
-EAPI=4
+EAPI=5
+
 inherit eutils multilib ssl-cert toolchain-funcs flag-o-matic pam user versionator
 
-MY_PV="${PV/_pre/-}"
+MY_PV="${PV/_rc/-RC}"
 MY_SRC="${PN}-${MY_PV}"
-MY_URI="ftp://ftp.porcupine.org/mirrors/postfix-release/experimental"
+MY_URI="ftp://ftp.porcupine.org/mirrors/postfix-release/official"
 VDA_PV="2.9.1"
 VDA_P="${PN}-vda-v11-${VDA_PV}"
 RC_VER="2.7"
@@ -261,13 +262,12 @@ src_install () {
 }
 
 pkg_preinst() {
-	# Postfix 2.9.
 	# default for inet_protocols changed from ipv4 to all in postfix-2.9.
 	# check inet_protocols setting in main.cf and modify if necessary to prevent
 	# performance loss with useless DNS lookups and useless connection attempts.
 	[[ -d ${ROOT}/etc/postfix ]] && {
 	if [[ "$(${D}/usr/sbin/postconf -dh inet_protocols)" != "ipv4" ]]; then
-		if [[ ! -n "$(${D}/usr/sbin/postconf -c ${ROOT}/etc/postfix -n inet_protocols)" ]];
+		if [[ ! -n "$(${D}/usr/sbin/postconf -c ${ROOT}/etc/postfix -nh inet_protocols)" ]];
 		then
 			ewarn "\nCOMPATIBILITY: adding inet_protocols=ipv4 to main.cf."
 			ewarn "That will keep the same behaviour as previous postfix versions."
@@ -276,22 +276,6 @@ pkg_preinst() {
 			# delete inet_protocols setting. there is already one in /etc/postfix
 			sed -i -e /inet_protocols/d "${D}"/etc/postfix/main.cf || die
 		fi
-	fi
-	}
-
-	# Postfix 2.10.
-	# Safety net for incompatible changes due to the introduction
-	# of the smtpd_relay_restrictions feature to separate the
-	# mail relay policy from the spam blocking policy.
-	[[ -d ${ROOT}/etc/postfix ]] && has_version '<=mail-mta/postfix-2.9.99' && {
-	if [[ -z "$(${D}/usr/sbin/postconf -c ${ROOT}/etc/postfix -n smtpd_relay_restrictions)" ]];
-	then
-		local myconf="smtpd_relay_restrictions=permit_mynetworks,permit_sasl_authenticated,defer_unauth_destination"
-		ewarn "\nCOMPATIBILITY: adding smtpd_relay_restrictions to main.cf"
-		ewarn "to prevent inbound mail from unexpectedly bouncing."
-		ewarn "Specify an empty smtpd_relay_restrictions value to keep using"
-		ewarn "smtpd_recipient_restrictions as before.\n"
-		"${D}"/usr/sbin/postconf -c "${D}"/etc/postfix -e ${myconf} || die
 	fi
 	}
 }
@@ -320,8 +304,8 @@ pkg_postinst() {
 		elog "http://www.postfix.org/MULTI_INSTANCE_README.html"
 		if ! use berkdb; then
 			ewarn "\nPostfix is installed without BerkeleyDB support."
-			ewarn "Please turn on berkdb USE flag if you need hash or"
-			ewarn "btree table lookups.\n"
+			ewarn "Please turn on berkdb USE flag for hash or btree table"
+			ewarn "lookup support.\n"
 		fi
 		ewarn "Postfix daemons now live under /usr/libexec/postfix"
 		ewarn "Please adjust your main.cf accordingly by running"
