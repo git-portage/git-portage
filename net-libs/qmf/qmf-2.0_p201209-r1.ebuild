@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/qmf/Attic/qmf-2.0_p201209.ebuild,v 1.2 2012/05/03 13:19:57 pesa Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/qmf/Attic/qmf-2.0_p201209-r1.ebuild,v 1.1 2013/02/09 09:00:11 pesa Exp $
 
-EAPI=4
+EAPI=5
 
 inherit qt4-r2
 
@@ -24,7 +24,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug doc examples test"
 
 RDEPEND="
-	dev-libs/icu
+	dev-libs/icu:=
 	sys-libs/zlib
 	>=x11-libs/qt-core-4.6.0:4
 	>=x11-libs/qt-gui-4.6.0:4
