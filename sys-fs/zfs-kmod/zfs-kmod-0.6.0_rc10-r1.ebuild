@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/zfs-kmod/Attic/zfs-kmod-0.6.0_rc10.ebuild,v 1.7 2013/02/06 01:46:26 ryao Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/zfs-kmod/Attic/zfs-kmod-0.6.0_rc10-r1.ebuild,v 1.1 2013/02/11 23:36:17 ryao Exp $
 
 EAPI="4"
 
@@ -57,7 +57,7 @@ pkg_setup() {
 	kernel_is ge 2 6 26 || die "Linux 2.6.26 or newer required"
 
 	[ ${PV} != "9999" ] && \
-		{ kernel_is le 3 5 || die "Linux 3.5 is the latest supported version."; }
+		{ kernel_is le 3 6 || die "Linux 3.6 is the latest supported version."; }
 
 	check_extra_config
 }
@@ -69,6 +69,20 @@ src_prepare() {
 		epatch "${FILESDIR}/${PN}-0.6.0_rc9-remove-pfmalloc-1-of-3.patch"
 		epatch "${FILESDIR}/${PN}-0.6.0_rc9-remove-pfmalloc-2-of-3.patch"
 		epatch "${FILESDIR}/${PN}-0.6.0_rc9-remove-pfmalloc-3-of-3.patch"
+
+		# Handle missing name length check in Linux VFS
+		epatch "${FILESDIR}/${PN}-0.6.0_rc14-vfs-name-length-compatibility.patch"
+
+		# Linux 3.6 Support
+		epatch "${FILESDIR}/${PN}-0.6.0_rc11-linux-3.6-compat-0-elevator-change.patch"
+		epatch "${FILESDIR}/${PN}-0.6.0_rc11-linux-3.6-compat-1.patch"
+		epatch "${FILESDIR}/${PN}-0.6.0_rc11-linux-3.6-compat-2.patch"
+		epatch "${FILESDIR}/${PN}-0.6.0_rc11-linux-3.6-compat-3.patch"
+		epatch "${FILESDIR}/${PN}-0.6.0_rc11-linux-3.6-compat-4.patch"
+		epatch "${FILESDIR}/${PN}-0.6.0_rc11-linux-3.6-compat-5.patch"
+
+		# Cast constant for 32-bit compatibility
+		epatch "${FILESDIR}/${PN}-0.6.0_rc14-cast-const-for-32bit-compatibility.patch"
 	fi
 
 	autotools-utils_src_prepare

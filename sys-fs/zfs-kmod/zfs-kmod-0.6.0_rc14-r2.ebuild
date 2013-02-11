@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/zfs-kmod/Attic/zfs-kmod-0.6.0_rc13-r2.ebuild,v 1.2 2013/02/06 01:46:26 ryao Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/zfs-kmod/Attic/zfs-kmod-0.6.0_rc14-r2.ebuild,v 1.1 2013/02/11 23:36:17 ryao Exp $
 
 EAPI="4"
 
@@ -64,14 +64,8 @@ pkg_setup() {
 src_prepare() {
 	if [ ${PV} != "9999" ]
 	then
-		# Fix regression where snapshots are not visible
-		epatch "${FILESDIR}/${P}-fix-invisible-snapshots.patch"
-
-		# Fix deadlock involving concurrent `zfs destroy` and `zfs list` commands
-		epatch "${FILESDIR}/${P}-fix-recursive-reader.patch"
-
-		# Fix USE=debug build failure involving GCC 4.7
-		epatch "${FILESDIR}/${P}-gcc-4.7-compat.patch"
+		# Cast constant for 32-bit compatibility
+		epatch "${FILESDIR}/${P}-cast-const-for-32bit-compatibility.patch"
 	fi
 	autotools-utils_src_prepare
 }
@@ -105,4 +99,10 @@ pkg_postinst() {
 		ewarn "at least 256M and decreasing zfs_arc_max to some value less than that."
 	fi
 
+	ewarn "This version of ZFSOnLinux introduces support for features flags."
+	ewarn "If you upgrade your pools to make use of feature flags, you will lose"
+	ewarn "the ability to import them using older versions of ZFSOnLinux."
+	ewarn "Any new pools will be created with feature flag support and will"
+	ewarn "not be compatible with older versions of ZFSOnLinux. To create a new"
+	ewarn "pool that is backward compatible, use zpool create -o version=28 ..."
 }

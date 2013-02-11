@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/zfs-kmod/Attic/zfs-kmod-0.6.0_rc11-r1.ebuild,v 1.3 2013/02/06 01:46:26 ryao Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/zfs-kmod/Attic/zfs-kmod-0.6.0_rc11-r2.ebuild,v 1.1 2013/02/11 23:36:17 ryao Exp $
 
 EAPI="4"
 
@@ -78,6 +78,12 @@ src_prepare() {
 		epatch "${FILESDIR}/${P}-linux-3.6-compat-3.patch"
 		epatch "${FILESDIR}/${P}-linux-3.6-compat-4.patch"
 		epatch "${FILESDIR}/${P}-linux-3.6-compat-5.patch"
+
+		# Cast constant for 32-bit compatibility
+		epatch "${FILESDIR}/${PN}-0.6.0_rc14-cast-const-for-32bit-compatibility.patch"
+
+		# Handle missing name length check in Linux VFS
+		epatch "${FILESDIR}/${PN}-0.6.0_rc14-vfs-name-length-compatibility.patch"
 	fi
 
 	autotools-utils_src_prepare
