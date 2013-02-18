@@ -1,13 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/swaks/Attic/swaks-20100211.0.ebuild,v 1.3 2011/06/14 19:05:23 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/swaks/swaks-20130209.0.ebuild,v 1.1 2013/02/18 15:38:39 eras Exp $
 
 DESCRIPTION="Swiss Army Knife SMTP; Command line SMTP testing, including TLS and AUTH"
 HOMEPAGE="http://www.jetmore.org/john/code/swaks"
 SRC_URI="http://www.jetmore.org/john/code/swaks/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 IUSE="ssl"
 
@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}
 		>=virtual/perl-Time-Local-1.19
 		>=dev-perl/Authen-NTLM-1.02
 		>=dev-perl/Authen-DigestMD5-0.04
-		>=dev-perl/Digest-SHA1-2.11"
+		perl-core/Digest-SHA"
 
 src_compile() {
 	/usr/bin/pod2man -s 1 doc/ref.pod swaks.1 || die "man page compulation failed"
@@ -30,5 +30,6 @@ src_compile() {
 
 src_install() {
 	newbin swaks swaks || die "newbin failed"
-	doman swaks.1
+	doman swaks.1 || die
+	dodoc README doc/*.txt || die
 }
