@@ -1,15 +1,15 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups-filters/cups-filters-9999.ebuild,v 1.33 2013/02/02 20:26:03 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups-filters/Attic/cups-filters-9999-r1.ebuild,v 1.1 2013/02/21 11:41:20 scarabeus Exp $
 
-EAPI=4
+EAPI=5
 
 GENTOO_DEPEND_ON_PERL=no
 
-inherit base perl-module autotools
+inherit base eutils perl-module autotools
 
 if [[ "${PV}" == "9999" ]] ; then
-	inherit autotools bzr
+	inherit bzr
 	EBZR_REPO_URI="http://bzr.linuxfoundation.org/openprinting/cups-filters"
 	KEYWORDS=""
 else
@@ -46,11 +46,7 @@ PATCHES=( "${FILESDIR}/${PN}-1.0.29-openrc.patch" )
 
 src_prepare() {
 	base_src_prepare
-	if [[ "${PV}" == "9999" ]]; then
-		eautoreconf
-	else
-		eautoreconf
-	fi
+	eautoreconf
 }
 
 src_configure() {
@@ -88,11 +84,9 @@ src_install() {
 		popd > /dev/null
 	fi
 
-	find "${ED}" -name '*.la' -exec rm -f {} +
+	prune_libtool_files --all
 
-	if use avahi; then
-		newinitd "${FILESDIR}"/cups-browsed.init.d cups-browsed
-	fi;
+	use avahi && newinitd "${FILESDIR}"/cups-browsed.init.d cups-browsed
 }
 
 pkg_postinst() {

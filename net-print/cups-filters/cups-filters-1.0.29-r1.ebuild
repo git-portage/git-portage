@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups-filters/Attic/cups-filters-1.0.29.ebuild,v 1.2 2013/02/06 12:57:25 gienah Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups-filters/Attic/cups-filters-1.0.29-r1.ebuild,v 1.1 2013/02/21 11:41:20 scarabeus Exp $
 
 EAPI=4
 
