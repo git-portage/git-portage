@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.1_p2.ebuild,v 1.9 2012/12/14 11:05:41 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/Attic/amanda-2.6.1_p2.ebuild,v 1.10 2013/02/26 22:38:33 robbat2 Exp $
 
 inherit autotools eutils user
 
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 RDEPEND="sys-libs/readline
 	virtual/inetd
-	sys-apps/gawk
+	virtual/awk
 	app-arch/tar
 	>=dev-lang/perl-5.6
 	app-arch/dump
