@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/amanda-3.3.3.ebuild,v 1.1 2013/02/26 22:38:33 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/amanda-3.3.3.ebuild,v 1.2 2013/02/26 23:00:38 robbat2 Exp $
 
 EAPI=3
 inherit autotools eutils perl-module user systemd
@@ -183,6 +183,9 @@ src_prepare() {
 src_configure() {
 	# fix bug #36316
 	addpredict /var/cache/samba/gencache.tdb
+	# fix bug #376169
+	addpredict /run/blkid
+	addpredict /etc/blkid.tab
 
 	[ ! -f "${TMPENVFILE}" ] && die "Variable setting file (${TMPENVFILE}) should exist!"
 	source "${TMPENVFILE}"
