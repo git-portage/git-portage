@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libparserutils/libparserutils-0.1.1.ebuild,v 1.8 2013/02/27 09:41:06 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libparserutils/libparserutils-0.1.1.ebuild,v 1.7 2013/02/27 09:39:48 xmw Exp $
 
 EAPI=5
 
@@ -41,8 +41,12 @@ pkg_setup(){
 		use static-libs && \
 			emake COMPONENT_TYPE=lib-static BUILD=$(usex debug debug release) "$@"
 	}
-
-	append-cflags "-D$(usex iconv WITH WITHOUT)_ICONV_FILTER"
+	
+	if use iconv ; then
+		append-cflags "-DWITH_ICONV_FILTER"
+	else
+		append-cflags "-DWITHOUT_ICONV_FILTER"
+	fi
 }
 
 src_prepare() {
