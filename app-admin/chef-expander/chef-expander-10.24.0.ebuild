@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/chef-expander/Attic/chef-expander-10.20.0.ebuild,v 1.1 2013/02/10 20:02:16 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/chef-expander/chef-expander-10.24.0.ebuild,v 1.1 2013/03/01 19:18:43 hollow Exp $
 
 EAPI=4
 USE_RUBY="ruby19"
@@ -44,7 +44,4 @@ all_ruby_install() {
 
 	doinitd "${FILESDIR}/initd/chef-expander"
 	doconfd "${FILESDIR}/confd/chef-expander"
-
-	keepdir /etc/chef /var/{lib,log,run}/chef
-	fowners chef:chef /var/{lib,log,run}/chef
 }
