@@ -1,10 +1,10 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/gearmand/Attic/gearmand-0.33.ebuild,v 1.2 2012/06/21 14:43:30 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/gearmand/gearmand-0.34-r1.ebuild,v 1.1 2013/03/04 08:33:18 flameeyes Exp $
 
-EAPI=4
+EAPI=5
 
-inherit flag-o-matic libtool
+inherit flag-o-matic libtool autotools-utils
 
 DESCRIPTION="Generic framework to farm out work to other machines"
 HOMEPAGE="http://www.gearman.org/"
@@ -16,6 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug tcmalloc +memcache drizzle sqlite tokyocabinet postgres"
 
 RDEPEND="dev-libs/libevent
+	>=dev-libs/boost-1.39:=[threads(+)]
 	|| ( >=sys-apps/util-linux-2.16 <sys-libs/e2fsprogs-libs-1.41.8 )
 	tcmalloc? ( dev-util/google-perftools )
 	memcache? ( >=dev-libs/libmemcached-0.47 )
@@ -23,39 +24,35 @@ RDEPEND="dev-libs/libevent
 	sqlite? ( dev-db/sqlite:3 )
 	tokyocabinet? ( dev-db/tokyocabinet )
 	postgres? ( >=dev-db/postgresql-base-9.0 )"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	virtual/pkgconfig"
 
 pkg_setup() {
 	enewuser gearmand -1 -1 /dev/null nogroup
 }
 
-src_prepare() {
-	epatch "${FILESDIR}"/${P}+gcc-4.7.patch
-	elibtoolize
-}
-
 src_configure() {
+	local myeconfargs=(
+		$(use_enable drizzle libdrizzle)
+		$(use_enable memcache libmemcached)
+		$(use_enable postgres libpq)
+		$(use_enable tcmalloc)
+		$(use_enable tokyocabinet libtokyocabinet)
+		$(use_with sqlite sqlite3)
+		--disable-mtmalloc
+		--disable-static
+	)
+
 	# Don't ever use --enable-assert since configure.ac is broken, and
 	# only does --disable-assert correctly.
-	 if use debug; then
+	if use debug; then
 		# Since --with-debug would turn off optimisations as well as
 		# enabling debug, we just enable debug through the
 		# preprocessor then.
-		append-flags -DDEBUG
-	else
-		myconf="${myconf} --disable-assert"
+		append-cppflags -DDEBUG
 	fi
 
-	econf \
-		--disable-static \
-		--disable-dependency-tracking \
-		--disable-mtmalloc \
-		$(use_enable tcmalloc) \
-		$(use_enable memcache libmemcached) \
-		$(use_enable drizzle libdrizzle) \
-		$(use_enable sqlite libsqlite3) \
-		$(use_enable tokyocabinet libtokyocabinet) \
-		$(use_enable postgres libpq)
+	autotools-utils_src_configure
 }
 
 src_test() {
@@ -64,21 +61,19 @@ src_test() {
 	# gearmand (bad).
 	#
 	# We thus cheat and "fix" the scripts by hand.
-	sed -i -e '/LD_LIBRARY_PATH=/s|/usr/lib64:||' "${S}"/tests/*_test \
+	sed -i -e '/LD_LIBRARY_PATH=/s|/usr/lib64:||' "${BUILD_DIR}"/tests/*_test \
 		|| die "test fixing failed"
 
-	emake check
+	autotools-utils_src_test
 }
 
-src_install() {
-	emake DESTDIR="${D}" install
+DOCS=( README AUTHORS ChangeLog )
 
-	dodoc README AUTHORS ChangeLog
+src_install() {
+	autotools-utils_src_install
 
 	newinitd "${FILESDIR}"/gearmand.init.d.2 gearmand
 	newconfd "${FILESDIR}"/gearmand.conf.d gearmand
-
-	find "${D}" -name '*.la' -delete || die
 }
 
 pkg_postinst() {
