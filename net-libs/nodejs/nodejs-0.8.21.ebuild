@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/nodejs/Attic/nodejs-0.8.17.ebuild,v 1.2 2013/01/15 06:31:57 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/nodejs/Attic/nodejs-0.8.21.ebuild,v 1.1 2013/03/06 03:43:23 patrick Exp $
 
 EAPI=5
 
@@ -20,8 +20,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86 ~x64-macos"
 IUSE=""
 
-DEPEND=">=dev-lang/v8-3.11.10:=
-	dev-libs/openssl"
+DEPEND="dev-libs/openssl"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/node-v${PV}
@@ -35,14 +34,12 @@ src_prepare() {
 	# fix compilation on Darwin
 	# http://code.google.com/p/gyp/issues/detail?id=260
 	sed -i -e "/append('-arch/d" tools/gyp/pylib/gyp/xcode_emulation.py || die
-	# Hardcoded braindamage extraction helper
-	#sed -i -e 's:wafdir = join(prefix, "lib", "node"):wafdir = "/lib/node/":' tools/node-waf || die
 	python_convert_shebangs 2 tools/node-waf || die
 }
 
 src_configure() {
 	# this is an autotools lookalike confuserator
-	./configure --shared-v8 --prefix="${EPREFIX}"/usr --shared-v8-includes="${EPREFIX}"/usr/include --openssl-use-sys --shared-zlib || die
+	./configure --prefix="${EPREFIX}"/usr --openssl-use-sys --shared-zlib || die
 }
 
 src_compile() {
@@ -57,6 +54,7 @@ src_install() {
 	mkdir -p "${ED}"/usr/"${MYLIB}"/node
 	cp 'src/eio-emul.h' 'src/ev-emul.h' 'src/node.h' 'src/node_buffer.h' 'src/node_object_wrap.h' 'src/node_version.h' "${ED}"/usr/include/node || die "Failed to copy stuff"
 	cp -R deps/uv/include/* "${ED}"/usr/include/node || die "Failed to copy stuff"
+	cp -R deps/v8/include/* "${ED}"/usr/include/node || die "Failed to copy stuff"
 	cp 'out/Release/node' "${ED}"/usr/bin/node || die "Failed to copy stuff"
 	cp -R deps/npm/* "${ED}"/usr/"${MYLIB}"/node_modules/npm || die "Failed to copy stuff"
 	cp -R tools/wafadmin "${ED}"/usr/"${MYLIB}"/node/ || die "Failed to copy stuff"
