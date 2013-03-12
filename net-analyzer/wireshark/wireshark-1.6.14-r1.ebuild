@@ -1,10 +1,10 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.9.0.ebuild,v 1.7 2013/02/25 19:02:38 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.6.14-r1.ebuild,v 1.1 2013/03/12 17:54:01 jer Exp $
 
 EAPI=5
-PYTHON_DEPEND="python? 2"
-inherit autotools eutils fcaps flag-o-matic python toolchain-funcs user
+PYTHON_COMPAT=( python2_5 python2_6 python2_7 )
+inherit autotools eutils fcaps flag-o-matic python-single-r1 toolchain-funcs user
 
 [[ -n ${PV#*_rc} && ${PV#*_rc} != ${PV} ]] && MY_P=${PN}-${PV/_} || MY_P=${P}
 DESCRIPTION="A network protocol analyzer formerly known as ethereal"
@@ -13,14 +13,13 @@ SRC_URI="http://www.wireshark.org/download/src/all-versions/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="
 	adns crypt doc doc-pdf +filecaps geoip gtk ipv6 kerberos libadns lua +pcap
-	portaudio profile python selinux smi ssl zlib
+	portaudio profile python selinux smi ssl threads zlib
 "
 RDEPEND="
 	>=dev-libs/glib-2.14:2
-	dev-libs/libnl
 	adns? ( !libadns? ( >=net-dns/c-ares-1.5 ) )
 	crypt? ( dev-libs/libgcrypt )
 	geoip? ( dev-libs/geoip )
@@ -35,9 +34,10 @@ RDEPEND="
 	lua? ( >=dev-lang/lua-5.1 )
 	pcap? ( net-libs/libpcap )
 	portaudio? ( media-libs/portaudio )
+	python? ( ${PYTHON_DEPS} )
 	selinux? ( sec-policy/selinux-wireshark )
 	smi? ( net-libs/libsmi )
-	ssl? ( net-libs/gnutls dev-libs/libgcrypt )
+	ssl? ( <net-libs/gnutls-3 )
 	zlib? ( sys-libs/zlib !=sys-libs/zlib-1.2.4 )
 "
 
@@ -71,16 +71,21 @@ pkg_setup() {
 		ewarn "USE=-gtk disables gtk-based gui called wireshark."
 		ewarn "Only command line utils will be built available"
 	fi
+
 	if use python; then
-		python_set_active_version 2
-		python_pkg_setup
+		python-single-r1_pkg_setup
 	fi
 }
 
 src_prepare() {
 	epatch \
+		"${FILESDIR}"/${PN}-1.6.6-gtk-pcap.patch \
 		"${FILESDIR}"/${PN}-1.6.13-ldflags.patch
-	sed -i -e 's|.png||g' ${PN}.desktop || die
+
+	sed -i \
+		-e '/^Icon/s|.png||g' \
+		${PN}.desktop || die
+
 	eautoreconf
 }
 
@@ -132,6 +137,7 @@ src_configure() {
 		$(use_enable gtk wireshark) \
 		$(use_enable ipv6) \
 		$(use_enable profile profile-build) \
+		$(use_enable threads) \
 		$(use_with crypt gcrypt) \
 		$(use_with filecaps libcap) \
 		$(use_with geoip) \
@@ -144,9 +150,8 @@ src_configure() {
 		$(use_with smi libsmi) \
 		$(use_with ssl gnutls) \
 		$(use_with zlib) \
-		--disable-extra-gcc-checks \
-		--disable-usr-local \
 		--sysconfdir="${EPREFIX}"/etc/wireshark \
+		--disable-extra-gcc-checks \
 		${myconf[@]}
 }
 
@@ -169,14 +174,6 @@ src_install() {
 	dodoc AUTHORS ChangeLog NEWS README{,.bsd,.linux,.macos,.vmware} \
 		doc/{randpkt.txt,README*}
 
-	# install headers
-	local wsheader
-	for wsheader in $( echo $(< debian/wireshark-dev.header-files ) ); do
-		insinto /usr/include/wireshark/$( dirname ${wsheader} )
-		doins ${wsheader}
-	done
-
-	#with the above this really shouldn't be needed, but things may be looking in wiretap/ instead of wireshark/wiretap/
 	insinto /usr/include/wiretap
 	doins wiretap/wtap.h
 
@@ -189,7 +186,12 @@ src_install() {
 		done
 		domenu wireshark.desktop
 	fi
+
 	use pcap && chmod o-x "${ED}"/usr/bin/dumpcap #357237
+
+	if use python; then
+		python_optimize "${ED}"/usr/lib*/wireshark/python
+	fi
 }
 
 pkg_postinst() {
@@ -197,7 +199,7 @@ pkg_postinst() {
 	enewgroup wireshark
 
 	if use pcap; then
-		fcaps -o 0 -g wireshark -m 4550 -M 0750 \
+		fcaps -o 0 -g wireshark -m 4550 -M 550 \
 			cap_dac_read_search,cap_net_raw,cap_net_admin \
 			"${EROOT}"/usr/bin/dumpcap
 	fi
