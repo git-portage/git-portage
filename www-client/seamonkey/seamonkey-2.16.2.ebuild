@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey/Attic/seamonkey-2.15.2.ebuild,v 1.2 2013/02/18 16:06:02 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey/Attic/seamonkey-2.16.2.ebuild,v 1.1 2013/03/13 10:32:13 polynomial-c Exp $
 
 EAPI="3"
 WANT_AUTOCONF="2.1"
@@ -28,9 +28,9 @@ fi
 
 inherit check-reqs flag-o-matic toolchain-funcs eutils mozconfig-3 multilib pax-utils fdo-mime autotools mozextension nsplugins mozlinguas
 
-PATCHFF="firefox-18.0-patches-0.7"
+PATCHFF="firefox-19.0-patches-0.3"
 PATCH="${PN}-2.14-patches-01"
-EMVER="1.5.0"
+EMVER="1.5.1"
 
 DESCRIPTION="Seamonkey Web Browser"
 HOMEPAGE="http://www.seamonkey-project.org"
@@ -63,7 +63,7 @@ RDEPEND=">=sys-devel/binutils-2.16.1
 	>=dev-libs/nspr-4.9.4
 	>=dev-libs/glib-2.26:2
 	>=media-libs/mesa-7.10
-	>=media-libs/libpng-1.5.11[apng]
+	>=media-libs/libpng-1.5.13[apng]
 	>=media-libs/libvpx-1.0.0
 	>=x11-libs/cairo-1.10
 	>=x11-libs/pango-1.14.0
@@ -126,8 +126,7 @@ src_prepare() {
 
 	# browser patches go here
 	pushd "${S}"/mozilla &>/dev/null || die
-	EPATCH_EXCLUDE="2000-firefox_gentoo_install_dirs.patch
-			8007_revert_bug_677092.patch" \
+	EPATCH_EXCLUDE="2000-firefox_gentoo_install_dirs.patch" \
 	EPATCH_SUFFIX="patch" \
 	EPATCH_FORCE="yes" \
 	epatch "${WORKDIR}/firefox"
@@ -220,6 +219,8 @@ src_configure() {
 	mozconfig_annotate '' --target="${CTARGET:-${CHOST}}"
 	mozconfig_annotate '' --enable-safe-browsing
 	mozconfig_annotate '' --build="${CTARGET:-${CHOST}}"
+	mozconfig_annotate '' --enable-jemalloc
+	mozconfig_annotate '' --enable-replace-malloc
 
 	mozconfig_use_enable gstreamer
 	mozconfig_use_enable system-sqlite
@@ -279,7 +280,7 @@ src_install() {
 	# Without methodjit and tracejit there's no conflict with PaX
 	if use jit ; then
 		# Pax mark xpcshell for hardened support, only used for startupcache creation.
-		pax-mark m "${S}"/dist/bin/xpcshell
+		pax-mark m "${S}"/mozilla/dist/bin/xpcshell
 	fi
 
 	MOZ_MAKE_FLAGS="${MAKEOPTS}" \
