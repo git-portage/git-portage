@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/zfs-kmod/Attic/zfs-kmod-0.6.0_rc10-r1.ebuild,v 1.1 2013/02/11 23:36:17 ryao Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/zfs-kmod/Attic/zfs-kmod-0.6.0_rc11-r3.ebuild,v 1.1 2013/03/15 13:20:45 ryao Exp $
 
 EAPI="4"
 
@@ -16,7 +16,7 @@ if [ ${PV} == "9999" ] ; then
 else
 	inherit eutils versionator
 	MY_PV=$(replace_version_separator 3 '-')
-	SRC_URI="https://github.com/downloads/zfsonlinux/zfs/zfs-${MY_PV}.tar.gz"
+	SRC_URI="mirror://github/zfsonlinux/zfs/zfs-${MY_PV}.tar.gz"
 	S="${WORKDIR}/zfs-${MY_PV}"
 	KEYWORDS="~amd64"
 fi
@@ -24,7 +24,7 @@ fi
 DESCRIPTION="Linux ZFS kernel module for sys-fs/zfs"
 HOMEPAGE="http://zfsonlinux.org/"
 
-LICENSE="CDDL"
+LICENSE="CDDL debug? ( GPL-2+ )"
 SLOT="0"
 IUSE="custom-cflags debug +rootfs"
 RESTRICT="test"
@@ -40,7 +40,6 @@ RDEPEND="${DEPEND}
 
 pkg_setup() {
 	CONFIG_CHECK="!DEBUG_LOCK_ALLOC
-		!PREEMPT
 		BLK_DEV_LOOP
 		EFI_PARTITION
 		IOSCHED_NOOP
@@ -66,24 +65,33 @@ src_prepare() {
 	if [ ${PV} != "9999" ]
 	then
 		# Fix various deadlocks
-		epatch "${FILESDIR}/${PN}-0.6.0_rc9-remove-pfmalloc-1-of-3.patch"
-		epatch "${FILESDIR}/${PN}-0.6.0_rc9-remove-pfmalloc-2-of-3.patch"
-		epatch "${FILESDIR}/${PN}-0.6.0_rc9-remove-pfmalloc-3-of-3.patch"
+		epatch "${FILESDIR}/${P}-fix-32-bit-integer-size-mismatch.patch"
+		epatch "${FILESDIR}/${P}-fix-i386-infinite-loop.patch"
+		epatch "${FILESDIR}/${P}-fix-rename-failure.patch"
+		epatch "${FILESDIR}/${P}-fix-zvol_probe-null.patch"
+		epatch "${FILESDIR}/${P}-return-positive-error.patch"
+
+		# Linux 3.6 Support
+		epatch "${FILESDIR}/${P}-linux-3.6-compat-0-elevator-change.patch"
+
+		epatch "${FILESDIR}/${P}-linux-3.6-compat-1.patch"
+		epatch "${FILESDIR}/${P}-linux-3.6-compat-2.patch"
+		epatch "${FILESDIR}/${P}-linux-3.6-compat-3.patch"
+		epatch "${FILESDIR}/${P}-linux-3.6-compat-4.patch"
+		epatch "${FILESDIR}/${P}-linux-3.6-compat-5.patch"
+
+		# Cast constant for 32-bit compatibility
+		epatch "${FILESDIR}/${PN}-0.6.0_rc14-cast-const-for-32bit-compatibility.patch"
 
 		# Handle missing name length check in Linux VFS
 		epatch "${FILESDIR}/${PN}-0.6.0_rc14-vfs-name-length-compatibility.patch"
 
-		# Linux 3.6 Support
-		epatch "${FILESDIR}/${PN}-0.6.0_rc11-linux-3.6-compat-0-elevator-change.patch"
-		epatch "${FILESDIR}/${PN}-0.6.0_rc11-linux-3.6-compat-1.patch"
-		epatch "${FILESDIR}/${PN}-0.6.0_rc11-linux-3.6-compat-2.patch"
-		epatch "${FILESDIR}/${PN}-0.6.0_rc11-linux-3.6-compat-3.patch"
-		epatch "${FILESDIR}/${PN}-0.6.0_rc11-linux-3.6-compat-4.patch"
-		epatch "${FILESDIR}/${PN}-0.6.0_rc11-linux-3.6-compat-5.patch"
-
-		# Cast constant for 32-bit compatibility
-		epatch "${FILESDIR}/${PN}-0.6.0_rc14-cast-const-for-32bit-compatibility.patch"
+		# Fix barrier regression on Linux 2.6.37 and later
+		epatch "${FILESDIR}/${PN}-0.6.0_rc14-flush-properly.patch"
 	fi
+
+	# Remove GPLv2-licensed ZPIOS unless we are debugging
+	use debug || sed -e 's/^subdir-m += zpios$//' -i "${S}/module/Makefile.in"
 
 	autotools-utils_src_prepare
 }
@@ -93,6 +101,7 @@ src_configure() {
 	set_arch_to_kernel
 	local myeconfargs=(
 		--bindir="${EPREFIX}/bin"
+	dodoc AUTHORS COPYRIGHT DISCLAIMER README.markdown
 		--sbindir="${EPREFIX}/sbin"
 		--with-config=kernel
 		--with-linux="${KV_DIR}"
@@ -109,6 +118,10 @@ src_install() {
 pkg_postinst() {
 	linux-mod_pkg_postinst
 
-	use x86 && ewarn "32-bit kernels are unsupported by ZFSOnLinux upstream. Do not file bug reports."
+	if use x86 || use arm
+	then
+		ewarn "32-bit kernels will likely require increasing vmalloc to"
+		ewarn "at least 256M and decreasing zfs_arc_max to some value less than that."
+	fi
 
 }
