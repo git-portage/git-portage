@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/Attic/paludis-0.82.0.ebuild,v 1.1 2012/11/17 08:29:45 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/paludis-1.2.0.ebuild,v 1.1 2013/03/27 00:48:20 jdhore Exp $
 
-inherit bash-completion eutils
+inherit bash-completion-r1 eutils user
 
 DESCRIPTION="paludis, the other package mangler"
 HOMEPAGE="http://paludis.exherbo.org/"
@@ -37,7 +37,7 @@ DEPEND="${COMMON_DEPEND}
 		ruby-bindings? ( dev-ruby/syntax )
 	)
 	virtual/pkgconfig
-	test? ( dev-cpp/gtest )"
+	test? ( >=dev-cpp/gtest-1.6.0-r1 )"
 
 RDEPEND="${COMMON_DEPEND}
 	sys-apps/sandbox"
@@ -58,13 +58,6 @@ pkg_setup() {
 		eerror "Paludis needs dev-libs/libpcre built with C++ support"
 		eerror "Please build dev-libs/libpcre with USE=cxx support"
 		die "Rebuild dev-libs/libpcre with USE=cxx"
-	fi
-
-	if use test &&
-		! built_with_use dev-cpp/gtest threads ; then
-		eerror "Paludis needs dev-cpp/gtest built with threads support"
-		eerror "Please build dev-cpp/gtest with USE=threads support"
-		die "Rebuild dev-cpp/gtest with USE threads"
 	fi
 
 	if use python-bindings && \
@@ -129,7 +122,7 @@ src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 	dodoc AUTHORS README NEWS
 
-	BASHCOMPLETION_NAME="cave" dobashcompletion bash-completion/cave
+	BASHCOMPLETION_NAME="cave" dobashcomp bash-completion/cave
 
 	if use zsh-completion ; then
 		insinto /usr/share/zsh/site-functions
