@@ -1,10 +1,9 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/sysstat/Attic/sysstat-10.1.1.ebuild,v 1.2 2012/08/06 00:04:13 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/sysstat/Attic/sysstat-10.1.5.ebuild,v 1.1 2013/04/02 19:34:55 jer Exp $
 
-EAPI="4"
-
-inherit eutils multilib
+EAPI=5
+inherit eutils multilib toolchain-funcs
 
 DESCRIPTION="System performance tools for Linux"
 HOMEPAGE="http://pagesperso-orange.fr/sebastien.godard/"
@@ -49,7 +48,6 @@ src_prepare() {
 		|| die "Number of LINGUAS does not match number of .po files"
 	unset count
 
-	einfo "Keeping these locales: ${LINGUAS}."
 	for lingua in ${SYSSTAT_LINGUAS}; do
 		if ! use linguas_${lingua}; then
 			rm -f "${NLSDIR}/${lingua}.po" || die
@@ -59,6 +57,7 @@ src_prepare() {
 }
 
 src_configure() {
+	tc-export AR
 	sa_lib_dir=/usr/$(get_libdir)/sa \
 		conf_dir=/etc \
 		rcdir=Gentoo-does-not-use-rc.d \
