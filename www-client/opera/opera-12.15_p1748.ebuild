@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-12.15_pre1745.ebuild,v 1.1 2013/03/22 19:28:38 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/opera/Attic/opera-12.15_p1748.ebuild,v 1.1 2013/04/05 09:36:01 jer Exp $
 
 EAPI=4
 inherit eutils fdo-mime gnome2-utils multilib pax-utils versionator
