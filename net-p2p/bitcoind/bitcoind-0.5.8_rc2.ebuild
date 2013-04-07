@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 2010-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoind/Attic/bitcoind-0.6.4_rc4-r1.ebuild,v 1.2 2013/01/13 22:34:40 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoind/Attic/bitcoind-0.5.8_rc2.ebuild,v 1.1 2013/04/07 23:18:41 blueness Exp $
 
 EAPI="4"
 
@@ -10,15 +10,14 @@ inherit db-use eutils versionator toolchain-funcs
 
 DESCRIPTION="Original Bitcoin crypto-currency wallet for automated services"
 HOMEPAGE="http://bitcoin.org/"
-SRC_URI="http://gitorious.org/bitcoin/bitcoind-stable/archive-tarball/v${PV/_/} -> bitcoin-v${PV}-r1.tgz
-	eligius? ( http://luke.dashjr.org/programs/bitcoin/files/bitcoind/eligius/sendfee/0.6.1-eligius_sendfee.patch.xz )
-	logrotate? ( https://github.com/bitcoin/bitcoin/commit/9af080c351c40a4f56d37174253d33a9f4ffdb69.diff -> 0.6.3-reopen_log_file.patch )
+SRC_URI="http://gitorious.org/bitcoin/bitcoind-stable/archive-tarball/v${PV/_/} -> bitcoin-v${PV}.tgz
+	bip16? ( http://luke.dashjr.org/programs/bitcoin/files/bip16/0.5.6-Minimal-support-for-mining-BIP16-pay-to-script-hash-.patch.xz )
 "
 
 LICENSE="MIT ISC GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="+eligius examples logrotate upnp"
+IUSE="+bip16 examples logrotate ssl upnp"
 
 RDEPEND="
 	>=dev-libs/boost-1.41.0[threads(+)]
@@ -45,8 +44,10 @@ pkg_setup() {
 
 src_prepare() {
 	cd src || die
-	use eligius && epatch "${WORKDIR}/0.6.1-eligius_sendfee.patch"
-	use logrotate && epatch "${DISTDIR}/0.6.3-reopen_log_file.patch"
+	if use bip16; then
+		epatch "${WORKDIR}/0.5.6-Minimal-support-for-mining-BIP16-pay-to-script-hash-.patch"
+	fi
+	use logrotate && epatch "${FILESDIR}/0.4.7-reopen_log_file.patch"
 }
 
 src_compile() {
@@ -59,14 +60,12 @@ src_compile() {
 	OPTS+=("BDB_INCLUDE_PATH=$(db_includedir "${DB_VER}")")
 	OPTS+=("BDB_LIB_SUFFIX=-${DB_VER}")
 
+	use ssl  && OPTS+=(USE_SSL=1)
 	if use upnp; then
 		OPTS+=(USE_UPNP=1)
 	else
 		OPTS+=(USE_UPNP=)
 	fi
-
-	# Workaround for bug #440034
-	share/genbuild.sh src/obj/build.h
 
 	cd src || die
 	emake CC="$(tc-getCC)" CXX="$(tc-getCXX)" -f makefile.unix "${OPTS[@]}" ${PN}
