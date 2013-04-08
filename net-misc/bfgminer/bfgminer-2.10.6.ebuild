@@ -1,13 +1,13 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/bfgminer/Attic/bfgminer-2.10.2.ebuild,v 1.1 2013/01/04 02:12:04 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/bfgminer/Attic/bfgminer-2.10.6.ebuild,v 1.1 2013/04/08 00:24:47 blueness Exp $
 
 EAPI="4"
 
 inherit eutils
 
 DESCRIPTION="Modular Bitcoin CPU/GPU/FPGA miner in C"
-HOMEPAGE="https://bitcointalk.org/index.php?topic=78192.0"
+HOMEPAGE="https://bitcointalk.org/?topic=168174"
 SRC_URI="http://luke.dashjr.org/programs/bitcoin/files/${PN}/${PV}/${P}.tbz2"
 
 LICENSE="GPL-3"
@@ -99,6 +99,7 @@ src_configure() {
 
 src_install() {
 	dobin bfgminer
+	dobin bfgminer-rpc
 	dodoc AUTHORS NEWS README API-README
 	if use scrypt; then
 		dodoc SCRYPT-README
