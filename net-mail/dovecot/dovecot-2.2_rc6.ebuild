@@ -1,13 +1,13 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/dovecot/Attic/dovecot-2.2_rc3.ebuild,v 1.1 2013/03/22 09:57:06 eras Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/dovecot/Attic/dovecot-2.2_rc6.ebuild,v 1.1 2013/04/08 10:05:52 eras Exp $
 
 EAPI=5
 inherit eutils versionator ssl-cert systemd user multilib
 
 MY_P="${P/_/.}"
 major_minor="$(get_version_component_range 1-2)"
-sieve_version="b75b00760b86"
+sieve_version="aafcff20c8a7"
 SRC_URI="http://dovecot.org/releases/${major_minor}/rc/${MY_P}.tar.gz
 	sieve? (
 	http://hg.rename-it.nl/dovecot-${major_minor}-pigeonhole/archive/${sieve_version}.tar.bz2 \
@@ -26,7 +26,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86
 
 IUSE_DOVECOT_AUTH="kerberos ldap mysql pam postgres sqlite vpopmail"
 IUSE_DOVECOT_STORAGE="cydir imapc +maildir mbox mdbox pop3c sdbox"
-IUSE_DOVECOT_OTHER="bzip2 caps doc ipv6 lucene managesieve selinux sieve +ssl static-libs suid zlib"
+IUSE_DOVECOT_OTHER="bzip2 caps doc ipv6 lucene managesieve selinux sieve +ssl static-libs suid tcpd zlib"
 
 IUSE="${IUSE_DOVECOT_AUTH} ${IUSE_DOVECOT_STORAGE} ${IUSE_DOVECOT_OTHER}"
 
@@ -40,6 +40,7 @@ DEPEND="caps? ( sys-libs/libcap )
 	selinux? ( sec-policy/selinux-dovecot )
 	sqlite? ( dev-db/sqlite )
 	ssl? ( dev-libs/openssl )
+	tcpd? ( sys-apps/tcp-wrappers )
 	vpopmail? ( net-mail/vpopmail )
 	virtual/libiconv"
 
@@ -95,6 +96,7 @@ src_configure() {
 		$( use_with postgres pgsql ) \
 		$( use_with sqlite ) \
 		$( use_with ssl ) \
+		$( use_with tcpd libwrap ) \
 		$( use_with vpopmail ) \
 		$( use_with zlib ) \
 		$( use_enable static-libs static ) \
