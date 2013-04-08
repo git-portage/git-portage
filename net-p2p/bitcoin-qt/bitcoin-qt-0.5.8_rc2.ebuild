@@ -1,32 +1,28 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 2010-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoin-qt/Attic/bitcoin-qt-0.7.2.ebuild,v 1.4 2013/03/02 23:08:41 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoin-qt/Attic/bitcoin-qt-0.5.8_rc2.ebuild,v 1.1 2013/04/08 00:08:53 blueness Exp $
 
 EAPI=4
 
 DB_VER="4.8"
 
-LANGS="bg ca_ES cs da de el_GR en es es_CL et eu_ES fa fa_IR fi fr fr_CA he hr hu it lt nb nl pl pt_BR pt_PT ro_RO ru sk sr sv tr uk zh_CN zh_TW"
+LANGS="da de en es es_CL hu it nb nl pt_BR ru uk zh_CN zh_TW"
 inherit db-use eutils qt4-r2 versionator
 
 DESCRIPTION="An end-user Qt4 GUI for the Bitcoin crypto-currency"
 HOMEPAGE="http://bitcoin.org/"
 SRC_URI="http://gitorious.org/bitcoin/bitcoind-stable/archive-tarball/v${PV/_/} -> bitcoin-v${PV}.tgz
-	1stclassmsg? ( http://luke.dashjr.org/programs/bitcoin/files/bitcoind/luke-jr/1stclassmsg/0.7.1-1stclassmsg.patch.xz )
-	eligius? ( http://luke.dashjr.org/programs/bitcoin/files/bitcoind/eligius/sendfee/0.7.1-eligius_sendfee.patch.xz )
+	bip16? ( http://luke.dashjr.org/programs/bitcoin/files/bip16/0.5.6-Minimal-support-for-mining-BIP16-pay-to-script-hash-.patch.xz )
 "
 
-LICENSE="MIT ISC GPL-3 LGPL-2.1 public-domain || ( CC-BY-SA-3.0 LGPL-2.1 )"
+LICENSE="MIT ISC GPL-3 LGPL-2.1 public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="$IUSE 1stclassmsg dbus +eligius ipv6 +qrcode upnp"
+IUSE="$IUSE +bip16 dbus ssl upnp"
 
 RDEPEND="
 	>=dev-libs/boost-1.41.0[threads(+)]
 	dev-libs/openssl[-bindist]
-	qrcode? (
-		media-gfx/qrencode
-	)
 	upnp? (
 		net-libs/miniupnpc
 	)
@@ -45,9 +41,10 @@ DOCS="doc/README"
 S="${WORKDIR}/bitcoin-bitcoind-stable"
 
 src_prepare() {
-	use 1stclassmsg && epatch "${WORKDIR}/0.7.1-1stclassmsg.patch"
 	cd src || die
-	use eligius && epatch "${WORKDIR}/0.7.1-eligius_sendfee.patch"
+	if use bip16; then
+		epatch "${WORKDIR}/0.5.6-Minimal-support-for-mining-BIP16-pay-to-script-hash-.patch"
+	fi
 
 	local filt= yeslang= nolang=
 
@@ -78,14 +75,12 @@ src_configure() {
 	OPTS=()
 
 	use dbus && OPTS+=("USE_DBUS=1")
+	use ssl  && OPTS+=("DEFINES+=USE_SSL")
 	if use upnp; then
 		OPTS+=("USE_UPNP=1")
 	else
 		OPTS+=("USE_UPNP=-")
 	fi
-	use qrcode && OPTS+=("USE_QRCODE=1")
-	use 1stclassmsg && OPTS+=("FIRST_CLASS_MESSAGING=1")
-	use ipv6 || OPTS+=("USE_IPV6=-")
 
 	OPTS+=("BDB_INCLUDE_PATH=$(db_includedir "${DB_VER}")")
 	OPTS+=("BDB_LIB_SUFFIX=-${DB_VER}")
@@ -94,9 +89,6 @@ src_configure() {
 }
 
 src_compile() {
-	# Workaround for bug #440034
-	share/genbuild.sh build/build.h
-
 	emake
 }
 
