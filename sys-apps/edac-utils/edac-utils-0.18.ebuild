@@ -1,12 +1,14 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/edac-utils/Attic/edac-utils-0.16.ebuild,v 1.1 2009/08/03 17:34:47 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/edac-utils/edac-utils-0.18.ebuild,v 1.1 2013/04/09 12:16:33 dev-zero Exp $
 
-EAPI="2"
+EAPI=5
+
+inherit eutils
 
 DESCRIPTION="Userspace helper for Linux kernel EDAC drivers"
-HOMEPAGE="http://sourceforge.net/projects/edac-utils/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+HOMEPAGE="https://github.com/grondo/edac-utils"
+SRC_URI="https://github.com/grondo/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
@@ -17,17 +19,20 @@ RDEPEND="${DEPEND}
 	sys-apps/dmidecode"
 
 src_configure() {
-	econf $(use_enable debug)
+	econf \
+		--disable-static \
+		$(use_enable debug)
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS ChangeLog DISCLAIMER META NEWS README TODO
+	default
 
 	# We don't need this init.d file
 	# Modules should be loaded by adding them to /etc/conf.d/modules
 	# The rest is done via the udev-rule
 	rm -rf "${D}/etc/init.d"
+
+	prune_libtool_files
 }
 
 pkg_postinst() {
