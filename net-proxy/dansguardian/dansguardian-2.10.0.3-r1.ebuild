@@ -1,8 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/dansguardian/Attic/dansguardian-2.10.1.1.ebuild,v 1.2 2012/05/03 04:35:53 jdhore Exp $
-
-EAPI="2"
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/dansguardian/dansguardian-2.10.0.3-r1.ebuild,v 1.1 2013/04/09 18:36:01 tomwij Exp $
 
 inherit eutils
 
@@ -16,7 +14,7 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="clamav kaspersky debug ntlm pcre"
 
 RDEPEND="sys-libs/zlib
-	pcre? ( dev-libs/libpcre )
+	pcre? ( >=dev-libs/libpcre-8.32 )
 	clamav? ( >=app-antivirus/clamav-0.93 )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
@@ -40,18 +38,19 @@ pkg_setup() {
 	fi
 }
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+
 	epatch "${FILESDIR}"/${P}-gcc44.patch
 }
 
-src_configure() {
+src_compile() {
 	local myconf="--with-logdir=/var/log/dansguardian
 		--with-piddir=/var/run
 		--docdir=/usr/share/doc/${PF}
 		--htmldir=/usr/share/doc/${PF}/html
 		$(use_enable pcre)
 		$(use_enable ntlm)
-		--enable-orig-ip
 		--enable-fancydm
 		--enable-email"
 	if use clamav; then
@@ -68,14 +67,12 @@ src_configure() {
 	fi
 
 	econf ${myconf} || die "configure failed"
-}
 
-src_compile() {
 	emake OPTIMISE="${CFLAGS}" || die "emake failed"
 }
 
 src_install() {
-	emake "DESTDIR=${D}" install || die "emake install failed"
+	make "DESTDIR=${D}" install || die "make install failed"
 
 	# Move html documents to html dir
 	mkdir "${D}"/usr/share/doc/${PF}/html \
