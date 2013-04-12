@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/ktp-contact-runner/Attic/ktp-contact-runner-0.5.2.ebuild,v 1.1 2013/01/21 14:25:15 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/ktp-contact-runner/Attic/ktp-contact-runner-0.5.3.ebuild,v 1.1 2013/04/12 07:39:38 scarabeus Exp $
 
 EAPI=4
 
