@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-bin/Attic/virtualbox-bin-4.2.8.ebuild,v 1.1 2013/02/28 16:02:49 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-bin/Attic/virtualbox-bin-4.2.12.ebuild,v 1.1 2013/04/13 20:12:51 polynomial-c Exp $
 
 EAPI=2
 
@@ -8,7 +8,7 @@ inherit eutils unpacker fdo-mime gnome2 pax-utils udev
 
 MY_PV=${PV/beta/BETA}
 MY_PV=${MY_PV/rc/RC}
-VBOX_PV=${MY_PV}-83876
+VBOX_PV=${MY_PV}-84980
 SDK_PV=${VBOX_PV}
 EXTP_PV=${SDK_PV}
 MY_P=VirtualBox-${VBOX_PV}-Linux
