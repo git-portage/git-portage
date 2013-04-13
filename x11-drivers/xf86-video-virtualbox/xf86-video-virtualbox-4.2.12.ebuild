@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-virtualbox/Attic/xf86-video-virtualbox-4.2.8.ebuild,v 1.1 2013/02/28 16:04:47 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-virtualbox/Attic/xf86-video-virtualbox-4.2.12.ebuild,v 1.1 2013/04/13 20:34:42 polynomial-c Exp $
 
 EAPI=2
 
@@ -127,8 +127,11 @@ src_install() {
 	cd "${S}/out/linux.${ARCH}/release/bin/additions"
 	insinto /usr/$(get_libdir)/xorg/modules/drivers
 
+#	# xorg-server-1.14.x
+	if has_version ">=x11-base/xorg-server-1.13.99" ; then
+		newins vboxvideo_drv_114.so vboxvideo_drv.so || die
 	# xorg-server-1.13.x
-	if has_version ">=x11-base/xorg-server-1.12.99" ; then
+	elif has_version ">=x11-base/xorg-server-1.12.99" ; then
 		newins vboxvideo_drv_113.so vboxvideo_drv.so || die
 	# xorg-server-1.12.x
 	elif has_version ">=x11-base/xorg-server-1.12" ; then
