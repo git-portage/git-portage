@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-27.0.1453.12.ebuild,v 1.5 2013/04/11 22:30:22 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-27.0.1453.56.ebuild,v 1.1 2013/04/18 00:21:00 floppym Exp $
 
 EAPI="5"
 PYTHON_COMPAT=( python{2_6,2_7} )
@@ -424,6 +424,7 @@ src_test() {
 		"ICUStringConversionsTest.*" # bug #350347
 		"MessagePumpLibeventTest.*" # bug #398591
 		"TimeTest.JsTime" # bug #459614
+		"SecurityTest.NewOverflow" # bug #465724
 	)
 	runtest out/Release/base_unittests "${excluded_base_unittests[@]}"
 
