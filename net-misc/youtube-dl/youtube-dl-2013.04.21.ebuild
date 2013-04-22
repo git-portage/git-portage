@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/youtube-dl/Attic/youtube-dl-2013.03.29.ebuild,v 1.1 2013/04/02 19:51:24 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/youtube-dl/Attic/youtube-dl-2013.04.21.ebuild,v 1.1 2013/04/22 10:58:34 jer Exp $
 
 EAPI=5
 PYTHON_COMPAT=(python{2_5,2_6,2_7})
