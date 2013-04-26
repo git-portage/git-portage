@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-13.2_beta7.ebuild,v 1.3 2013/04/21 19:03:48 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/ati-drivers-13.4.ebuild,v 1.1 2013/04/26 08:51:56 scarabeus Exp $
 
 EAPI=5
 
@@ -11,9 +11,9 @@ HOMEPAGE="http://www.amd.com"
 MY_V=( $(get_version_components) )
 #RUN="${WORKDIR}/amd-driver-installer-9.00-x86.x86_64.run"
 SLOT="1"
-[[ "${MY_V[2]}" =~  beta.* ]] && BETADIR="beta/"
+[[ "${MY_V[2]}" =~  beta.* ]] && BETADIR="beta/" || BETADIR="linux/"
 if [[ legacy != ${SLOT} ]]; then
-	DRIVERS_URI="http://www2.ati.com/drivers/${BETADIR}amd-driver-installer-catalyst-${PV/_beta/-beta}-linux-x86.x86_64.zip"
+	DRIVERS_URI="http://www2.ati.com/drivers/${BETADIR}amd-catalyst-${PV/_beta/-beta}-linux-x86.x86_64.zip"
 else
 	DRIVERS_URI="http://www2.ati.com/drivers/legacy/amd-driver-installer-catalyst-$(get_version_component_range 1-2)-$(get_version_component_range 3)-legacy-linux-x86.x86_64.zip"
 fi
@@ -185,6 +185,13 @@ pkg_pretend() {
 		linux-info_pkg_setup
 		require_configured_kernel
 		_check_kernel_config
+
+		if [[ "${KV_EXTRA}" != -hardened ]] && use pax_kernel; then
+			eerror "USE pax_kernel enabled for a non-hardened kernel."
+			eerror "If you know this kernel supports pax_kernel, open a bug at"
+			eerror "https://bugs.gentoo.org"
+			die "USE pax_kernel enabled for a non-hardened kernel"
+		fi
 	fi
 }
 
@@ -289,16 +296,8 @@ src_prepare() {
 	# first hunk applied upstream second (x32 related) was not
 	epatch "${FILESDIR}"/ati-drivers-x32_something_something.patch
 
-	# compile fix for linux-3.7
-	# https://bugs.gentoo.org/show_bug.cgi?id=438516
-	epatch "${FILESDIR}/ati-drivers-vm-reserverd.patch"
-
 	# compile fix for AGP-less kernel, bug #435322
 	epatch "${FILESDIR}"/ati-drivers-12.9-KCL_AGP_FindCapsRegisters-stub.patch
-
-	# Use ACPI_DEVICE_HANDLE wrapper to make driver build on linux-3.8
-	# see https://bugs.gentoo.org/show_bug.cgi?id=448216
-	epatch "${FILESDIR}/ati-drivers-kernel-3.8-acpihandle.patch"
 
 	# Compile fix, https://bugs.gentoo.org/show_bug.cgi?id=454870
 	use pax_kernel && epatch "${FILESDIR}/const-notifier-block.patch"
@@ -565,12 +564,7 @@ src_install-libs() {
 	doheader xvba_sdk/include/amdxvba.h
 
 	if use pax_kernel; then
-		pax-mark Cm "${D}"/usr/lib*/opengl/ati/lib/libGL.so.1.2 || die "pax-mark failed"
-		eqawarn "You have set USE=pax_kernel meaning that you intend to run"
-		eqawarn "${PN} under a PaX enabled kernel.  To do so, we must modify"
-		eqawarn "the ${PN} binary itself and this *may* lead to breakage!  If"
-		eqawarn "you suspect that ${PN} is being broken by this modification,"
-		eqawarn "please open a bug."
+		pax-mark m "${D}"/usr/lib*/opengl/ati/lib/libGL.so.1.2 || die "pax-mark failed"
 	fi
 }
 
@@ -594,8 +588,8 @@ pkg_postinst() {
 	"${ROOT}"/usr/bin/eselect opengl set --use-old ati
 	"${ROOT}"/usr/bin/eselect opencl set --use-old amd
 
-	if has_version ">=x11-drivers/xf86-video-intel-2.20.3"; then
-		ewarn "It is reported that xf86-video-intel-2.20.3 and later cause the X server"
+	if has_version "x11-drivers/xf86-video-intel[sna]"; then
+		ewarn "It is reported that xf86-video-intel built with USE=\"sna\" causes the X server"
 		ewarn "to crash on systems that use hybrid AMD/Intel graphics. If you experience"
 		ewarn "this crash, downgrade to xf86-video-intel-2.20.2 or earlier or"
 		ewarn "try disabling sna for xf86-video-intel."
