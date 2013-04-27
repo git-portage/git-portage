@@ -1,11 +1,11 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/cacti-spine/Attic/cacti-spine-0.8.7g.ebuild,v 1.9 2012/05/21 19:10:55 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/cacti-spine/cacti-spine-0.8.8a.ebuild,v 1.1 2013/04/27 15:09:23 pva Exp $
 
-EAPI="2"
+EAPI="4"
 inherit autotools eutils
 
-UPSTREAM_PATCHES="unified_issues"
+UPSTREAM_PATCHES=""
 
 MY_P=${PN}-${PV/_p/-}
 
@@ -15,14 +15,14 @@ SRC_URI="http://www.cacti.net/downloads/spine/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~ppc64 x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE=""
 
 DEPEND="net-analyzer/net-snmp
 	dev-libs/openssl
 	virtual/mysql"
 RDEPEND="${DEPEND}
-	>net-analyzer/cacti-0.8.7"
+	>net-analyzer/cacti-0.8.8"
 
 if [[ -n ${UPSTREAM_PATCHES} ]]; then
 	for i in ${UPSTREAM_PATCHES}; do
@@ -50,9 +50,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	ewarn "NOTE: If you upgraded from cactid, do not forgive to setup spine"
-	ewarn "instead of cactid through web interface."
-	ewarn
 	elog "Please see the cacti's site for installation instructions:"
 	elog
 	elog "http://cacti.net/spine_install.php"
@@ -60,6 +57,6 @@ pkg_postinst() {
 	ewarn "/etc/spine.conf should be readable by webserver, thus after you"
 	ewarn "decide on webserver do not forget to run the following command:"
 	ewarn
-	ewarn " # chown root:wwwgroup /etc/spine.conf"
+	ewarn " # chown root:<wwwgroup> /etc/spine.conf"
 	echo
 }
