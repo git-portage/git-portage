@@ -1,14 +1,14 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/cacti/Attic/cacti-0.8.7h.ebuild,v 1.4 2011/11/13 14:50:52 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/cacti/Attic/cacti-0.8.8a.ebuild,v 1.1 2013/04/27 15:08:31 pva Exp $
 
-EAPI="2"
+EAPI="4"
 
 inherit eutils webapp depend.php
 
 # Support for _p* in version.
 MY_P=${P/_p*/}
-UPSTREAM_PATCHES=""
+UPSTREAM_PATCHES="snmpv3_priv_proto_none"
 
 DESCRIPTION="Cacti is a complete frontend to rrdtool"
 HOMEPAGE="http://www.cacti.net/"
@@ -22,20 +22,22 @@ if [[ -n ${UPSTREAM_PATCHES} ]]; then
 fi
 
 LICENSE="GPL-2"
-KEYWORDS="~alpha amd64 hppa ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE="snmp doc"
 
 DEPEND=""
 
 need_httpd
 
-RDEPEND="snmp? ( >=net-analyzer/net-snmp-5.1.2 )
+RDEPEND="
 	net-analyzer/rrdtool
 	dev-php/adodb
 	virtual/mysql
 	virtual/cron
 	dev-lang/php[cli,mysql,xml,session,sockets]
-	|| ( <dev-lang/php-5.3[pcre] >=dev-lang/php-5.3 )"
+	|| ( <dev-lang/php-5.3[pcre] >=dev-lang/php-5.3 )
+	snmp? ( >=net-analyzer/net-snmp-5.1.2 )
+"
 
 src_unpack() {
 	unpack ${MY_P}.tar.gz
