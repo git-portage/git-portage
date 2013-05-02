@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/Attic/vanilla-sources-3.0.75.ebuild,v 1.1 2013/04/26 08:53:10 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/Attic/vanilla-sources-3.0.76.ebuild,v 1.1 2013/05/02 10:06:45 ago Exp $
 
 EAPI="5"
 K_NOUSENAME="yes"
