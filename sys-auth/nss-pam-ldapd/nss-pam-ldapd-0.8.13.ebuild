@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/nss-pam-ldapd/Attic/nss-pam-ldapd-0.8.11-r1.ebuild,v 1.1 2012/11/07 18:02:07 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/nss-pam-ldapd/nss-pam-ldapd-0.8.13.ebuild,v 1.1 2013/05/06 15:04:35 prometheanfire Exp $
 
 EAPI=4
 
@@ -56,8 +56,8 @@ src_install() {
 
 	dodoc NEWS ChangeLog AUTHORS README
 
-	# for socket and pid file
-	keepdir /var/run/nslcd
+	# for socket and pid file (not needed bug 452992)
+	#keepdir /var/run/nslcd
 
 	# init script
 	newinitd "${FILESDIR}"/nslcd-init nslcd
