@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/irker/Attic/irker-1.12-r1.ebuild,v 1.5 2012/10/13 21:22:45 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/irker/irker-1.19.ebuild,v 1.1 2013/05/06 07:17:43 patrick Exp $
 
 EAPI=4
 
