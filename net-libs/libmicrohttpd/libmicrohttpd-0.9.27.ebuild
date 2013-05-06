@@ -1,10 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libmicrohttpd/Attic/libmicrohttpd-0.9.26.ebuild,v 1.1 2013/03/30 21:11:24 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libmicrohttpd/Attic/libmicrohttpd-0.9.27.ebuild,v 1.1 2013/05/06 11:55:02 blueness Exp $
 
 EAPI="5"
-
-inherit eutils autotools
 
 MY_P="${P/_/}"
 
@@ -30,11 +28,6 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/${MY_P}
 
 DOCS="AUTHORS NEWS README ChangeLog"
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-fix-doc-build.patch
-	eautoreconf
-}
 
 src_configure() {
 	econf \
