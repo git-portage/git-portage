@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/rex/Attic/rex-0.41.1.ebuild,v 1.1 2013/04/15 05:25:15 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/rex/Attic/rex-0.41.3.ebuild,v 1.1 2013/05/07 03:14:19 patrick Exp $
 
 EAPI=4
 
