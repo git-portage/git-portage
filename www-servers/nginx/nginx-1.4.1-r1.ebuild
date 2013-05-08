@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/nginx/Attic/nginx-1.4.0-r1.ebuild,v 1.1 2013/05/02 20:14:31 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/nginx/Attic/nginx-1.4.1-r1.ebuild,v 1.1 2013/05/08 13:52:19 dev-zero Exp $
 
 EAPI="5"
 
@@ -25,7 +25,7 @@ SYSLOG_MODULE_URI="https://github.com/yaoweibin/nginx_syslog_patch/archive/v${SY
 SYSLOG_MODULE_WD="${WORKDIR}/nginx_syslog_patch-${SYSLOG_MODULE_PV}"
 
 # devel_kit (https://github.com/simpl/ngx_devel_kit, BSD license)
-DEVEL_KIT_MODULE_PV="0.2.17"
+DEVEL_KIT_MODULE_PV="0.2.18"
 DEVEL_KIT_MODULE_P="ngx_devel_kit-${DEVEL_KIT_MODULE_PV}-r1"
 DEVEL_KIT_MODULE_URI="https://github.com/simpl/ngx_devel_kit/archive/v${DEVEL_KIT_MODULE_PV}.tar.gz"
 DEVEL_KIT_MODULE_WD="${WORKDIR}/ngx_devel_kit-${DEVEL_KIT_MODULE_PV}"
@@ -37,7 +37,7 @@ HTTP_UPLOAD_PROGRESS_MODULE_URI="https://github.com/masterzen/nginx-upload-progr
 HTTP_UPLOAD_PROGRESS_MODULE_WD="${WORKDIR}/nginx-upload-progress-module-${HTTP_UPLOAD_PROGRESS_MODULE_PV}"
 
 # http_headers_more (http://github.com/agentzh/headers-more-nginx-module, BSD license)
-HTTP_HEADERS_MORE_MODULE_PV="0.19"
+HTTP_HEADERS_MORE_MODULE_PV="0.20"
 HTTP_HEADERS_MORE_MODULE_P="ngx_http_headers_more-${HTTP_HEADERS_MORE_MODULE_PV}-r1"
 HTTP_HEADERS_MORE_MODULE_URI="https://github.com/agentzh/headers-more-nginx-module/archive/v${HTTP_HEADERS_MORE_MODULE_PV}.tar.gz"
 HTTP_HEADERS_MORE_MODULE_WD="${WORKDIR}/headers-more-nginx-module-${HTTP_HEADERS_MORE_MODULE_PV}"
@@ -55,7 +55,7 @@ HTTP_CACHE_PURGE_MODULE_URI="http://labs.frickle.com/files/ngx_cache_purge-${HTT
 HTTP_CACHE_PURGE_MODULE_WD="${WORKDIR}/ngx_cache_purge-${HTTP_CACHE_PURGE_MODULE_PV}"
 
 # http_slowfs_cache (http://labs.frickle.com/nginx_ngx_slowfs_cache/, BSD-2 license)
-HTTP_SLOWFS_CACHE_MODULE_PV="1.9"
+HTTP_SLOWFS_CACHE_MODULE_PV="1.10"
 HTTP_SLOWFS_CACHE_MODULE_P="ngx_http_slowfs_cache-${HTTP_SLOWFS_CACHE_MODULE_PV}"
 HTTP_SLOWFS_CACHE_MODULE_URI="http://labs.frickle.com/files/ngx_slowfs_cache-${HTTP_SLOWFS_CACHE_MODULE_PV}.tar.gz"
 HTTP_SLOWFS_CACHE_MODULE_WD="${WORKDIR}/ngx_slowfs_cache-${HTTP_SLOWFS_CACHE_MODULE_PV}"
@@ -115,7 +115,7 @@ KEYWORDS="~amd64 ~ppc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux"
 NGINX_MODULES_STD="access auth_basic autoindex browser charset empty_gif fastcgi
 geo gzip limit_req limit_conn map memcached proxy referer rewrite scgi ssi
 split_clients upstream_ip_hash userid uwsgi"
-NGINX_MODULES_OPT="addition dav degradation flv geoip gzip_static image_filter
+NGINX_MODULES_OPT="addition dav degradation flv geoip gunzip gzip_static image_filter
 mp4 perl random_index realip secure_link spdy stub_status sub xslt"
 NGINX_MODULES_MAIL="imap pop3 smtp"
 NGINX_MODULES_3RD="
@@ -156,6 +156,7 @@ CDEPEND="
 	ssl? ( dev-libs/openssl )
 	http-cache? ( userland_GNU? ( dev-libs/openssl ) )
 	nginx_modules_http_geo? ( dev-libs/geoip )
+	nginx_modules_http_gunzip? ( sys-libs/zlib )
 	nginx_modules_http_gzip? ( sys-libs/zlib )
 	nginx_modules_http_gzip_static? ( sys-libs/zlib )
 	nginx_modules_http_image_filter? ( media-libs/gd[jpeg,png] )
@@ -370,9 +371,9 @@ src_install() {
 
 	cp "${FILESDIR}"/nginx.conf "${ED}"/etc/nginx/nginx.conf || die
 
-	newinitd "${FILESDIR}"/nginx.initd nginx
+	newinitd "${FILESDIR}"/nginx.initd-r1 nginx
 
-	systemd_newtmpfilesd "${FILESDIR}"/nginx.tmpfiles nginx.conf
+	systemd_newtmpfilesd "${FILESDIR}"/nginx.tmpfiles-r1 nginx.conf
 	systemd_dounit "${FILESDIR}"/nginx.service
 
 	doman man/nginx.8
