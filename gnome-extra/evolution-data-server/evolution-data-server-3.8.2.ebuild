@@ -1,34 +1,33 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/evolution-data-server/Attic/evolution-data-server-3.6.3.ebuild,v 1.2 2013/02/20 14:44:58 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/evolution-data-server/Attic/evolution-data-server-3.8.2.ebuild,v 1.1 2013/05/12 16:06:39 pacho Exp $
 
 EAPI="5"
+PYTHON_COMPAT=( python{2_7,3,3} )
 GCONF_DEBUG="no"
-GNOME2_LA_PUNT="yes"
 VALA_MIN_API_VERSION="0.18"
 VALA_USE_DEPEND="vapigen"
-# No PYTHON_DEPEND, python is only needed at build time
 
-inherit db-use eutils flag-o-matic gnome2 python vala versionator virtualx
+inherit db-use eutils flag-o-matic gnome2 python-any-r1 vala versionator virtualx
 
 DESCRIPTION="Evolution groupware backend"
-HOMEPAGE="http://projects.gnome.org/evolution/"
+HOMEPAGE="http://projects.gnome.org/evolution/arch.shtml"
 
 # Note: explicitly "|| ( LGPL-2 LGPL-3 )", not "LGPL-2+".
 LICENSE="|| ( LGPL-2 LGPL-3 ) BSD Sleepycat"
 SLOT="0/40" # subslot = libcamel-1.2 soname version
-IUSE="api-doc-extras +gnome-online-accounts +introspection ipv6 ldap kerberos vala +weather"
+IUSE="api-doc-extras google +gnome-online-accounts +gtk +introspection ipv6 ldap kerberos vala +weather"
 REQUIRED_USE="vala? ( introspection )"
 
 KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~x86-solaris"
 
-RDEPEND=">=dev-libs/glib-2.32:2
-	>=x11-libs/gtk+-3.2:3
+RDEPEND="
+	>=dev-libs/glib-2.34:2
 	>=dev-db/sqlite-3.5:=
 	>=dev-libs/libgdata-0.10:=
-	>=gnome-base/gnome-keyring-2.20.1
+	>=app-crypt/libsecret-0.5
 	>=dev-libs/libical-0.43:=
-	>=net-libs/libsoup-2.38.1:2.4
+	>=net-libs/libsoup-2.40.3:2.4
 	>=dev-libs/libxml2-2
 	>=sys-libs/db-4:=
 	>=dev-libs/nspr-4.4:=
@@ -38,16 +37,16 @@ RDEPEND=">=dev-libs/glib-2.32:2
 	sys-libs/zlib:=
 	virtual/libiconv
 
+	gtk? ( >=x11-libs/gtk+-3.2:3 )
 	gnome-online-accounts? (
-		>=net-libs/gnome-online-accounts-3.2
-		>=net-libs/liboauth-0.9.4 )
+		>=net-libs/gnome-online-accounts-3.7.90
+		)
 	introspection? ( >=dev-libs/gobject-introspection-0.9.12 )
 	kerberos? ( virtual/krb5:= )
 	ldap? ( >=net-nds/openldap-2:= )
 	weather? ( >=dev-libs/libgweather-3.5:2= )
 "
 DEPEND="${RDEPEND}
-	=dev-lang/python-2*
 	dev-util/fix-la-relink-command
 	dev-util/gperf
 	>=dev-util/gtk-doc-am-1.9
@@ -60,16 +59,13 @@ DEPEND="${RDEPEND}
 #	>=gnome-base/gnome-common-2
 
 # FIXME
-RESTRICT="test"
+#RESTRICT="test"
 
 pkg_setup() {
-	python_set_active_version 2
-	python_pkg_setup
+	python-any-r1_pkg_setup
 }
 
 src_prepare() {
-	DOCS="ChangeLog MAINTAINERS NEWS TODO"
-
 	gnome2_src_prepare
 	use vala && vala_src_prepare
 
@@ -84,9 +80,7 @@ src_prepare() {
 }
 
 src_configure() {
-	# Uh, what to do about dbus-call-timeout ?
 	gnome2_src_configure \
-		--disable-schemas-compile \
 		$(use_enable api-doc-extras gtk-doc) \
 		$(use_with api-doc-extras private-docs) \
 		$(use_enable gnome-online-accounts goa) \
@@ -96,10 +90,13 @@ src_configure() {
 		$(use_with ldap openldap) \
 		$(use_enable vala vala-bindings) \
 		$(use_enable weather) \
+		$(use_enable gtk) \
+		$(use_enable google) \
 		--enable-nntp \
 		--enable-largefile \
 		--enable-smime \
-		--with-libdb="${EPREFIX}"/usr
+		--with-libdb="${EPREFIX}"/usr \
+		--disable-uoa
 }
 
 src_install() {
@@ -112,10 +109,9 @@ src_install() {
 	gnome2_src_install
 
 	if use ldap; then
-		MY_MAJORV=$(get_version_component_range 1-2)
 		insinto /etc/openldap/schema
-		doins "${FILESDIR}"/calentry.schema || die "doins failed"
-		dosym /usr/share/${PN}-${MY_MAJORV}/evolutionperson.schema /etc/openldap/schema/evolutionperson.schema
+		doins "${FILESDIR}"/calentry.schema
+		dosym /usr/share/${PN}/evolutionperson.schema /etc/openldap/schema/evolutionperson.schema
 	fi
 }
 
@@ -123,16 +119,6 @@ src_test() {
 	unset DBUS_SESSION_BUS_ADDRESS
 	unset ORBIT_SOCKETDIR
 	unset SESSION_MANAGER
-	export XDG_DATA_HOME="${T}"
 	unset DISPLAY
-	Xemake check || die "Tests failed."
-}
-
-pkg_postinst() {
-	gnome2_pkg_postinst
-
-	if use ldap; then
-		elog ""
-		elog "LDAP schemas needed by evolution are installed in /etc/openldap/schema"
-	fi
+	Xemake check
 }
