@@ -1,11 +1,10 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-rpg/manaplus/Attic/manaplus-1.3.2.3.ebuild,v 1.1 2013/02/04 18:23:28 hasufell Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-rpg/manaplus/Attic/manaplus-1.3.5.12.ebuild,v 1.1 2013/05/13 21:17:18 hasufell Exp $
 
 EAPI=5
 
-PLOCALES="cs de es fi fr id it ja nl_BE pl pt pt_BR ru zh_CN"
-inherit autotools l10n games
+inherit games
 
 DESCRIPTION="OpenSource 2D MMORPG client for Evol Online and The Mana World"
 HOMEPAGE="http://manaplus.evolonline.org"
@@ -43,14 +42,9 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	sed -i \
 		-e '/^SUBDIRS/s/fonts//' \
-		data/Makefile.am || die
-
-	rm_locale() { sed -i "s:^${1}:#${1}:" po/LINGUAS || die ;}
-	l10n_for_each_disabled_locale_do rm_locale
+		data/Makefile.in || die
 
 	rm -r src/guichan || die
-
-	eautoreconf
 }
 
 src_configure() {
