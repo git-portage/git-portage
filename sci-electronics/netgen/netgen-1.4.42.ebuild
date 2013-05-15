@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-electronics/netgen/Attic/netgen-1.4.40.ebuild,v 1.2 2013/04/26 11:00:38 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-electronics/netgen/Attic/netgen-1.4.42.ebuild,v 1.1 2013/05/15 08:24:16 xmw Exp $
 
 EAPI=4
 
@@ -22,10 +22,7 @@ DEPEND="X? (
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-LDFLAGS.patch
-	epatch "${FILESDIR}"/${P}-includes.patch
-	epatch "${FILESDIR}"/${P}-netcmp.patch
-	epatch "${FILESDIR}"/${P}-tcl-bin-name.patch
+	epatch "${FILESDIR}"/${PN}-1.4.40-tcl-bin-name.patch
 
 	if $(use X) ; then
 		cp -r "${S}" "${WORKDIR}"/with-x || die
