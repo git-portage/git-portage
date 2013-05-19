@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/nodejs/Attic/nodejs-0.10.4.ebuild,v 1.1 2013/04/15 05:16:28 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/nodejs/Attic/nodejs-0.10.7.ebuild,v 1.1 2013/05/19 05:52:51 patrick Exp $
 
 EAPI=5
 
@@ -39,7 +39,8 @@ src_prepare() {
 }
 
 src_configure() {
-	"${PYTHON}" configure --prefix="${EPREFIX}"/usr --openssl-use-sys --shared-zlib || die
+	"${PYTHON}" configure --prefix="${EPREFIX}"/usr \
+		--openssl-use-sys --shared-zlib --without-dtrace || die
 }
 
 src_compile() {
@@ -50,7 +51,7 @@ src_compile() {
 }
 
 src_install() {
-	"${PYTHON}" tools/install.py install "${ED}"
+	"${PYTHON}" tools/install.py install "${D}"
 
 	dohtml -r "${ED}"/usr/lib/node_modules/npm/html/*
 	rm -rf "${ED}"/usr/lib/node_modules/npm/doc "${ED}"/usr/lib/node_modules/npm/html
