@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/edje/Attic/edje-1.7.6.ebuild,v 1.2 2013/04/14 22:18:49 tommy Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/edje/Attic/edje-1.7.7.ebuild,v 1.1 2013/05/20 10:25:26 tommy Exp $
 
 EAPI=2
 
@@ -18,12 +18,12 @@ DEPEND="dev-lang/lua
 	>=dev-libs/eet-1.7.6
 	>=dev-libs/eina-1.7.6
 	>=dev-libs/embryo-1.7.4
-	>=media-libs/evas-1.7.6
-	>=dev-libs/ecore-1.7.6"
+	>=media-libs/evas-1.7.7
+	>=dev-libs/ecore-1.7.7"
 RDEPEND=${DEPEND}
 
 src_prepare() {
-	sed -i "s:1.7.6:1.7.4:g" configure.ac
+	sed -i "s:1.7.7:1.7.4:g" configure.ac
 	eautoreconf
 }
 
