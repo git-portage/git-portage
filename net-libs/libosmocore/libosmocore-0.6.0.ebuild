@@ -1,18 +1,18 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libosmocore/libosmocore-9999.ebuild,v 1.4 2013/05/24 07:57:52 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libosmocore/Attic/libosmocore-0.6.0.ebuild,v 1.1 2013/05/24 07:57:52 xmw Exp $
 
 EAPI="4"
 
-inherit autotools eutils git-2
+inherit autotools eutils
 
 DESCRIPTION="Utility functions for OsmocomBB, OpenBSC and related projects"
 HOMEPAGE="http://bb.osmocom.org/trac/wiki/libosmocore"
-EGIT_REPO_URI="git://git.osmocom.org/${PN}.git"
+SRC_URI="http://cgit.osmocom.org/cgit/libosmocore/snapshot/${P}.tar.bz2"
 
 LICENSE="GPL-2 LGPL-3"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="embedded"
 
 RDEPEND=""
@@ -23,7 +23,7 @@ src_prepare() {
 	# set correct version in pkgconfig files
 	sed -i "s/UNKNOWN/${PV}/" git-version-gen || die
 
-	epatch "${FILESDIR}"/${PN}-0.6.0-automake-1.13.patch
+	epatch "${FILESDIR}"/${P}-automake-1.13.patch
 	eautoreconf
 }
 
