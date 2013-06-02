@@ -1,10 +1,10 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pymongo/Attic/pymongo-2.5.ebuild,v 1.1 2013/03/25 09:20:07 ultrabug Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pymongo/pymongo-2.5.2.ebuild,v 1.1 2013/06/02 16:21:35 ultrabug Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_5,2_6,2_7} pypy{1_9,2_0} )
+PYTHON_COMPAT=( python{2_5,2_6,2_7,3_1,3_2,3_3} pypy{1_9,2_0} )
 
 inherit check-reqs distutils-r1
 
@@ -23,6 +23,7 @@ DEPEND="${RDEPEND}
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	test? ( dev-python/nose[${PYTHON_USEDEP}] )
 	kerberos? ( dev-python/pykerberos )"
+DISTUTILS_IN_SOURCE_BUILD=1
 
 reqcheck() {
 	if use test; then
@@ -41,6 +42,8 @@ pkg_setup() {
 	reqcheck pkg_setup
 }
 
+PATCHES=( "${FILESDIR}"/${PN}-2.5.1-greenlet.patch )
+
 python_compile_all() {
 	if use doc; then
 		mkdir html || die
@@ -51,7 +54,7 @@ python_compile_all() {
 src_test() {
 	# Yes, we need TCP/IP for that...
 	local DB_IP=127.0.0.1
-	local DB_PORT=27017
+	local DB_PORT=27000
 
 	export DB_IP DB_PORT
 
@@ -100,7 +103,12 @@ python_test() {
 	done
 
 	local failed
-	nosetests || failed=1
+	#https://jira.mongodb.org/browse/PYTHON-521, py2.[6-7] has intermittent failure with gevent
+	pushd "${BUILD_DIR}"/../ > /dev/null
+	if [[ "${EPYTHON}" == python3* ]]; then
+		2to3 --no-diffs -w test
+	fi
+	DB_PORT2=$(( DB_PORT + 1 )) DB_PORT3=$(( DB_PORT + 2 )) esetup.py test || failed=1
 
 	mongod --dbpath "${dbpath}" --shutdown
 
@@ -121,9 +129,4 @@ python_install_all() {
 	use doc && local HTML_DOCS=( html/. )
 
 	distutils-r1_python_install_all
-}
-
-pkg_postinst() {
-	ewarn "Important changes on this release, make sure to read the changelog:"
-	ewarn "http://api.mongodb.org/python/${PV}/changelog.html"
 }
