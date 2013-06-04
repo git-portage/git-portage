@@ -1,13 +1,15 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-roguelike/stone-soup/Attic/stone-soup-0.11.0.ebuild,v 1.5 2013/02/07 22:11:48 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-roguelike/stone-soup/Attic/stone-soup-0.12.2.ebuild,v 1.1 2013/06/04 20:45:30 hasufell Exp $
 
 ## TODO
 # add sound support (no build switch, no sound files)
 
-EAPI=4
+# cross compiling is severly broken
+
+EAPI=5
 VIRTUALX_REQUIRED="manual"
-inherit eutils gnome2-utils virtualx games
+inherit eutils gnome2-utils virtualx toolchain-funcs games
 
 MY_P="stone_soup-${PV}"
 DESCRIPTION="Role-playing roguelike game of exploration and treasure-hunting in dungeons"
@@ -22,8 +24,9 @@ SRC_URI="mirror://sourceforge/crawl-ref/Stone%20Soup/${PV}/${MY_P}-nodeps.tar.xz
 # MIT: json.cc/json.h, some .js files in webserver/static/scripts/contrib/
 LICENSE="GPL-2 BSD BSD-2 public-domain CC0-1.0 MIT"
 SLOT="0"
-KEYWORDS="amd64 x86"
-IUSE="debug +tiles"
+KEYWORDS="~amd64 ~x86"
+IUSE="debug ncurses test +tiles"
+REQUIRED_USE="|| ( ncurses tiles )"
 # test is broken
 # see https://crawl.develz.org/mantis/view.php?id=6121
 #RESTRICT="!debug? ( test )"
@@ -31,26 +34,29 @@ RESTRICT="test"
 
 RDEPEND="
 	dev-db/sqlite:3
+	>=dev-lang/lua-5.1.0[deprecated]
 	sys-libs/zlib
+	ncurses? ( sys-libs/ncurses )
 	tiles? (
 		media-libs/freetype:2
 		media-libs/libpng:0
 		media-libs/libsdl[X,opengl,video]
 		media-libs/sdl-image[png]
-		)
-	!tiles? ( sys-libs/ncurses )
-	>=dev-lang/lua-5.1.0[deprecated]"
+		virtual/glu
+		virtual/opengl
+	)"
 DEPEND="${RDEPEND}
 	dev-lang/perl
 	sys-devel/flex
+	virtual/pkgconfig
 	virtual/yacc
 	tiles? (
 		sys-libs/ncurses
-		virtual/pkgconfig
 		test? ( ${VIRTUALX_DEPEND} )
-		)"
+	)"
 
 S=${WORKDIR}/${MY_P}/source
+S_TEST=${WORKDIR}/${MY_P}_test/source
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-build.patch
@@ -62,7 +68,7 @@ src_prepare() {
 }
 
 src_compile() {
-	S_TEST=${WORKDIR}/${MY_P}_test/source
+	export HOSTCXX=$(tc-getBUILD_CXX)
 
 	# leave DATADIR at the top
 	myemakeargs=(
@@ -71,10 +77,27 @@ src_compile() {
 		prefix="${GAMES_PREFIX}"
 		SAVEDIR="~/.crawl"
 		$(usex debug "FULLDEBUG=y DEBUG=y" "")
-		$(usex tiles "TILES=y" "")
+		CFOPTIMIZE="${CXXFLAGS}"
+		LDFLAGS="${LDFLAGS}"
+		MAKEOPTS="${MAKEOPTS}"
+		AR="$(tc-getAR)"
+		RANLIB="$(tc-getRANLIB)"
+		CC="$(tc-getCC)"
+		CXX="$(tc-getCXX)"
+		PKGCONFIG="$(tc-getPKG_CONFIG)"
+		STRIP=touch
 	)
 
-	emake ${myemakeargs[@]}
+	if use ncurses ; then
+		emake "${myemakeargs[@]}"
+		# move it in case we build both variants
+		use tiles && { mv crawl "${WORKDIR}"/crawl-ncurses || die ;}
+	fi
+
+	if use tiles ; then
+		emake clean
+		emake "${myemakeargs[@]}" "TILES=y"
+	fi
 
 	# for test to work we need to compile with unset DATADIR
 #	if use test ; then
@@ -83,7 +106,8 @@ src_compile() {
 }
 
 src_install() {
-	emake ${myemakeargs[@]} DESTDIR="${D}" install
+	emake "${myemakeargs[@]}" $(usex tiles "TILES=y" "") DESTDIR="${D}" install
+	[[ -e "${WORKDIR}"/crawl-ncurses ]] && dogamesbin "${WORKDIR}"/crawl-ncurses
 
 	# don't relocate docs, needed at runtime
 	rm -rf "${D}${GAMES_DATADIR}"/${PN}/docs/license
@@ -100,7 +124,7 @@ src_install() {
 }
 
 src_test() {
-	$(usex tiles "X" "")emake ${myemakeargs[@]:1} -C "${S_TEST}" test
+	$(usex tiles "X" "")emake "${myemakeargs[@]:1}" -C "${S_TEST}" test
 }
 
 pkg_preinst() {
