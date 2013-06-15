@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/ncdc/Attic/ncdc-1.16.1.ebuild,v 1.3 2013/05/20 08:21:37 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/ncdc/Attic/ncdc-1.16.1.ebuild,v 1.4 2013/06/15 10:26:25 xmw Exp $
 
 EAPI=4
 
@@ -16,11 +16,11 @@ IUSE=""
 RDEPEND="app-arch/bzip2
 	dev-db/sqlite:3
 	dev-libs/glib:2
-	dev-util/makeheaders
 	net-libs/gnutls
 	sys-libs/ncurses:5[unicode]
 	sys-libs/zlib"
 DEPEND="${RDEPEND}
+	dev-util/makeheaders
 	virtual/pkgconfig"
 
 src_configure() {
