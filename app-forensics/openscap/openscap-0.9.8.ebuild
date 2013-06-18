@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-forensics/openscap/Attic/openscap-0.9.3.ebuild,v 1.1 2013/01/04 22:48:07 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-forensics/openscap/Attic/openscap-0.9.8.ebuild,v 1.1 2013/06/18 10:38:18 xmw Exp $
 
 EAPI=3
 
@@ -15,11 +15,12 @@ SRC_URI="https://fedorahosted.org/releases/o/p/${PN}/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="bash-completion doc nss perl python rpm selinux sql test"
+IUSE="bash-completion doc ldap nss perl python rpm selinux sql test"
 #RESTRICT="test"
 
 RDEPEND="!nss? ( dev-libs/libgcrypt )
 	nss? ( dev-libs/nss )
+	ldap? ( net-nds/openldap )
 	rpm? ( >=app-arch/rpm-4.9 )
 	sql? ( dev-db/opendbx )
 	dev-libs/libpcre
@@ -41,6 +42,8 @@ pkg_setup() {
 }
 
 src_prepare() {
+	sed -i 's,^    bash,    LC_ALL=C bash,' tests/probes/process/test_probes_process.sh || die
+
 	sed -i 's/uname -p/uname -m/' tests/probes/uname/test_probes_uname.xml.sh || die
 
 	#probe runlevel for non-centos/redhat/fedora is not implemented
@@ -67,14 +70,21 @@ src_prepare() {
 		sed -i 's,probe_rpminfo_opt_deps_ok=yes,probe_rpminfo_opt_deps_ok=no,' configure || die
 		sed -i 's,probe_rpmverify_req_deps_ok=yes,probe_rpmverify_req_deps_ok=no,' configure || die
 		sed -i 's,probe_rpmverify_opt_deps_ok=yes,probe_rpmverify_opt_deps_ok=no,' configure || die
-		sed -i 's,^probe_rpm.*_deps_missing=,&disabled by USE flag,' configure || die
+		sed -i 's,^probe_rpm.*_deps_missing=,&disabled_by_USE_flag,' configure || die
 		sed -i 's,.*rpm.*,#&,' tests/mitre/test_mitre.sh || die
 	fi
 	if ! use selinux ; then
+		einfo "Disabling SELinux probes"
 		sed -i 's,.*selinux.*,	echo "SELinux test bypassed",' tests/mitre/test_mitre.sh || die
 		#process58 need selinux
 		sed -i 's,.*process58,#&,' tests/mitre/test_mitre.sh || die
 	fi
+	if ! use ldap; then
+		einfo "Disabling LDAP probes"
+		sed -i 's,ldap.h,ldapp.h,g' configure || die
+	fi
+
+	epatch_user
 }
 
 src_configure() {
