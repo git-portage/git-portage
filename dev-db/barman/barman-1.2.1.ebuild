@@ -1,9 +1,11 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/barman/Attic/barman-1.1.2.ebuild,v 1.1 2012/12/18 12:27:08 patrick Exp $
-EAPI=4
+# $Header: /var/cvsroot/gentoo-x86/dev-db/barman/Attic/barman-1.2.1.ebuild,v 1.1 2013/06/20 03:35:23 patrick Exp $
+EAPI=5
 
-inherit distutils
+PYTHON_COMPAT=( python{2_6,2_7})
+
+inherit distutils-r1
 
 DESCRIPTION="Administration tool for disaster recovery of PostgreSQL servers"
 
@@ -15,9 +17,9 @@ KEYWORDS="~amd64 ~x86"
 
 IUSE=""
 
-RDEPEND="dev-python/argh
-	>=dev-python/psycopg-2
-	dev-python/python-dateutil
+RDEPEND="dev-python/argh[${PYTHON_USEDEP}]
+	>=dev-python/psycopg-2[${PYTHON_USEDEP}]
+	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	net-misc/rsync
 	dev-db/postgresql-server"
 DEPEND=""
