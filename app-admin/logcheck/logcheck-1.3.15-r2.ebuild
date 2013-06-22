@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/logcheck/Attic/logcheck-1.3.15.ebuild,v 1.1 2012/07/31 15:53:27 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/logcheck/logcheck-1.3.15-r2.ebuild,v 1.1 2013/06/22 15:24:19 phajdan.jr Exp $
 
 EAPI="4"
 
@@ -30,7 +30,13 @@ pkg_setup() {
 
 src_install() {
 	emake DESTDIR="${D}" install
-	keepdir /var/{lib,lock}/logcheck
+
+	# Do not install /var/lock, bug #449968 . Use rmdir to make sure
+	# the directories removed are empty.
+	rmdir "${D}/var/lock/logcheck" || die
+	rmdir "${D}/var/lock" || die
+
+	keepdir /var/lib/logcheck
 	dodoc AUTHORS CHANGES CREDITS TODO docs/README.*
 	doman docs/logtail.8 docs/logtail2.8
 
@@ -39,7 +45,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	chown -R logcheck:logcheck /etc/logcheck /var/{lib,lock}/logcheck || die
+	chown -R logcheck:logcheck /etc/logcheck /var/lib/logcheck || die
 
 	elog "Please read the guide ad http://www.gentoo.org/doc/en/logcheck.xml"
 	elog "for installation instructions."
