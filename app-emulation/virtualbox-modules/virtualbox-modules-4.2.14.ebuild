@@ -1,11 +1,11 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-modules/Attic/virtualbox-modules-4.1.24.ebuild,v 1.3 2013/02/14 13:27:56 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-modules/Attic/virtualbox-modules-4.2.14.ebuild,v 1.1 2013/06/24 10:51:17 polynomial-c Exp $
 
 # XXX: the tarball here is just the kernel modules split out of the binary
 #      package that comes from virtualbox-bin
 
-EAPI=4
+EAPI=5
 
 inherit eutils linux-mod user
 
@@ -16,7 +16,7 @@ SRC_URI="http://dev.gentoo.org/~polynomial-c/virtualbox/${MY_P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="pax_kernel"
 
 RDEPEND="!=app-emulation/virtualbox-9999"

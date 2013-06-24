@@ -1,10 +1,11 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox/Attic/virtualbox-4.2.10.ebuild,v 1.1 2013/03/15 15:40:42 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox/Attic/virtualbox-4.2.14.ebuild,v 1.1 2013/06/24 10:56:11 polynomial-c Exp $
 
-EAPI=4
+EAPI=5
 
-inherit eutils fdo-mime flag-o-matic linux-info multilib pax-utils python qt4-r2 toolchain-funcs java-pkg-opt-2 udev
+PYTHON_COMPAT=( python2_7 )
+inherit eutils fdo-mime flag-o-matic linux-info multilib pax-utils python-single-r1 qt4-r2 toolchain-funcs java-pkg-opt-2 udev
 
 MY_PV="${PV/beta/BETA}"
 MY_PV="${MY_PV/rc/RC}"
@@ -68,7 +69,8 @@ DEPEND="${RDEPEND}
 	alsa? ( >=media-libs/alsa-lib-1.0.13 )
 	!headless? ( x11-libs/libXinerama )
 	pulseaudio? ( media-sound/pulseaudio )
-	vboxwebsrv? ( >=net-libs/gsoap-2.7.13 )"
+	vboxwebsrv? ( >=net-libs/gsoap-2.7.13 )
+	python? ( ${PYTHON_DEPS} )"
 PDEPEND="additions? ( ~app-emulation/virtualbox-additions-${PV} )
 	extensions? ( ~app-emulation/virtualbox-extpack-oracle-${PV} )"
 
@@ -108,7 +110,10 @@ QA_TEXTRELS_x86="usr/lib/virtualbox-ose/VBoxGuestPropSvc.so
 
 REQUIRED_USE="
 	java? ( sdk )
-	python? ( sdk )
+	python? (
+		( sdk )
+		( ${PYTHON_REQUIRED_USE} )
+	)
 	vboxwebsrv? ( java )
 "
 
@@ -126,8 +131,7 @@ pkg_setup() {
 		einfo "the OpenGL feature."
 	fi
 	java-pkg-opt-2_pkg_setup
-	python_set_active_version 2
-	python_pkg_setup
+	python-single-r1_pkg_setup
 }
 
 src_prepare() {
@@ -215,7 +219,7 @@ src_compile() {
 		TOOL_GCC3_CFLAGS="${CFLAGS}" TOOL_GCC3_CXXFLAGS="${CXXFLAGS}" \
 		VBOX_GCC_OPT="${CXXFLAGS}" \
 		TOOL_YASM_AS=yasm KBUILD_PATH="${S}/kBuild" \
-		all || die "kmk failed"
+		all
 }
 
 src_install() {
@@ -232,7 +236,7 @@ src_install() {
 
 	# Symlink binaries to the shipped wrapper
 	exeinto /usr/$(get_libdir)/${PN}
-	newexe "${FILESDIR}/${PN}-ose-3-wrapper" "VBox" || die
+	newexe "${FILESDIR}/${PN}-ose-3-wrapper" "VBox"
 	fowners root:vboxusers /usr/$(get_libdir)/${PN}/VBox
 	fperms 0750 /usr/$(get_libdir)/${PN}/VBox
 
@@ -243,14 +247,14 @@ src_install() {
 
 	# Install binaries and libraries
 	insinto /usr/$(get_libdir)/${PN}
-	doins -r components || die
+	doins -r components
 
 	if use sdk ; then
-		doins -r sdk || die
+		doins -r sdk
 	fi
 
 	if use vboxwebsrv ; then
-		doins vboxwebsrv || die
+		doins vboxwebsrv
 		fowners root:vboxusers /usr/$(get_libdir)/${PN}/vboxwebsrv
 		fperms 0750 /usr/$(get_libdir)/${PN}/vboxwebsrv
 		dosym /usr/$(get_libdir)/${PN}/VBox /usr/bin/vboxwebsrv
@@ -259,7 +263,7 @@ src_install() {
 	fi
 
 	for each in VBox{Manage,SVC,XPCOMIPCD,Tunctl,NetAdpCtl,NetDHCP,ExtPackHelperApp} *so *r0 *gc ; do
-		doins $each || die
+		doins $each
 		fowners root:vboxusers /usr/$(get_libdir)/${PN}/${each}
 		fperms 0750 /usr/$(get_libdir)/${PN}/${each}
 	done
@@ -272,14 +276,14 @@ src_install() {
 
 	if ! use headless ; then
 		for each in VBox{SDL,Headless} ; do
-			doins $each || die
+			doins $each
 			fowners root:vboxusers /usr/$(get_libdir)/${PN}/${each}
 			fperms 4750 /usr/$(get_libdir)/${PN}/${each}
 			pax-mark -m "${D}"/usr/$(get_libdir)/${PN}/${each}
 		done
 
 		if use opengl && use qt4 ; then
-			doins VBoxTestOGL || die
+			doins VBoxTestOGL
 			fowners root:vboxusers /usr/$(get_libdir)/${PN}/VBoxTestOGL
 			fperms 0750 /usr/$(get_libdir)/${PN}/VBoxTestOGL
 		fi
@@ -287,7 +291,7 @@ src_install() {
 		dosym /usr/$(get_libdir)/${PN}/VBox /usr/bin/VBoxSDL
 
 		if use qt4 ; then
-			doins VirtualBox || die
+			doins VirtualBox
 			fowners root:vboxusers /usr/$(get_libdir)/${PN}/VirtualBox
 			fperms 4750 /usr/$(get_libdir)/${PN}/VirtualBox
 			pax-mark -m "${D}"/usr/$(get_libdir)/${PN}/VirtualBox
@@ -304,7 +308,7 @@ src_install() {
 		newicon ${PN}-48px.png ${PN}.png
 		popd &>/dev/null || die
 	else
-		doins VBoxHeadless || die
+		doins VBoxHeadless
 		fowners root:vboxusers /usr/$(get_libdir)/${PN}/VBoxHeadless
 		fperms 4750 /usr/$(get_libdir)/${PN}/VBoxHeadless
 		pax-mark -m "${D}"/usr/$(get_libdir)/${PN}/VBoxHeadless
@@ -314,8 +318,8 @@ src_install() {
 	# Install EFI Firmware files (bug #320757)
 	pushd "${S}"/src/VBox/Devices/EFI/FirmwareBin &>/dev/null || die
 	for fwfile in VBoxEFI{32,64}.fd ; do
-		doins ${fwfile} || die
-		fowners root:vboxusers /usr/$(get_libdir)/${PN}/${fwfile} || die
+		doins ${fwfile}
+		fowners root:vboxusers /usr/$(get_libdir)/${PN}/${fwfile}
 	done
 	popd &>/dev/null || die
 
