@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-nntp/sabnzbd/Attic/sabnzbd-0.7.13.ebuild,v 1.1 2013/06/21 23:20:31 jsbronder Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-nntp/sabnzbd/Attic/sabnzbd-0.7.13-r2.ebuild,v 1.1 2013/06/25 03:48:26 jsbronder Exp $
 
 EAPI="4"
 
@@ -64,6 +64,7 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/use-system-configobj-and-feedparser.patch
+	epatch "${FILESDIR}"/growler-support-gntp-1.0.patch
 
 	# remove bundled modules
 	rm -r sabnzbd/utils/{feedparser,configobj}.py || die
