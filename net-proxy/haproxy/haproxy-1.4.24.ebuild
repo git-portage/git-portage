@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/haproxy/Attic/haproxy-1.4.22.ebuild,v 1.5 2012/12/29 03:03:45 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/haproxy/haproxy-1.4.24.ebuild,v 1.1 2013/06/29 16:33:26 idl0r Exp $
 
-EAPI="4"
+EAPI="5"
 
 inherit user versionator toolchain-funcs flag-o-matic
 
@@ -12,7 +12,7 @@ SRC_URI="http://haproxy.1wt.eu/download/$(get_version_component_range 1-2)/src/$
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="+crypt examples +pcre vim-syntax"
 
 DEPEND="pcre? ( dev-libs/libpcre )"
