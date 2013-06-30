@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/Attic/wine-1.6_rc2.ebuild,v 1.2 2013/06/15 12:35:57 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/Attic/wine-1.6_rc4.ebuild,v 1.1 2013/06/30 02:27:50 tetromino Exp $
 
 EAPI="5"
 
@@ -25,7 +25,7 @@ fi
 GV="2.21"
 MV="0.0.8"
 PULSE_PATCHES="winepulse-patches-1.6-rc1"
-WINE_GENTOO="wine-gentoo-2012.11.24"
+WINE_GENTOO="wine-gentoo-2013.06.24"
 DESCRIPTION="Free implementation of Windows(tm) on Unix"
 HOMEPAGE="http://www.winehq.org/"
 SRC_URI="${SRC_URI}
@@ -185,6 +185,9 @@ src_prepare() {
 	if ! use run-exes; then
 		sed -i '/^MimeType/d' tools/wine.desktop || die #117785
 	fi
+
+	# hi-res default icon, #472990, http://bugs.winehq.org/show_bug.cgi?id=24652
+	cp "${WORKDIR}"/${WINE_GENTOO}/icons/oic_winlogo.ico dlls/user32/resources/ || die
 
 	l10n_get_locales > po/LINGUAS # otherwise wine doesn't respect LINGUAS
 }
