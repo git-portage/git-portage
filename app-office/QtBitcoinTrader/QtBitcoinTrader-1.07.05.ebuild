@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/QtBitcoinTrader/Attic/QtBitcoinTrader-1.07.02.ebuild,v 1.1 2013/07/04 07:17:34 alexxy Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/QtBitcoinTrader/Attic/QtBitcoinTrader-1.07.05.ebuild,v 1.1 2013/07/05 12:59:10 alexxy Exp $
 
 EAPI=5
 
