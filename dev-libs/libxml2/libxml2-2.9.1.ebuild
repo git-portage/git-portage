@@ -1,19 +1,19 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxml2/Attic/libxml2-2.8.0-r4.ebuild,v 1.1 2012/12/18 07:48:21 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxml2/Attic/libxml2-2.9.1.ebuild,v 1.1 2013/07/11 03:23:35 tetromino Exp $
 
 EAPI="5"
-PYTHON_COMPAT=( python{2_5,2_6,2_7} )
+PYTHON_COMPAT=( python{2_5,2_6,2_7,3_1,3_2,3_3} )
 PYTHON_REQ_USE="xml"
 
-inherit libtool flag-o-matic eutils python-r1 autotools prefix
+inherit libtool flag-o-matic eutils python-r1 autotools prefix versionator
 
 DESCRIPTION="Version 2 of the library to manipulate XML files"
 HOMEPAGE="http://www.xmlsoft.org/"
 
 LICENSE="MIT"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris ~x86-winnt"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~arm-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris ~x86-winnt"
 IUSE="debug examples icu ipv6 lzma python readline static-libs test"
 
 XSTS_HOME="http://www.w3.org/XML/2004/xml-schema-test-suite"
@@ -27,8 +27,7 @@ SRC_URI="ftp://xmlsoft.org/${PN}/${PN}-${PV/_rc/-rc}.tar.gz
 	test? (
 		${XSTS_HOME}/${XSTS_NAME_1}/${XSTS_TARBALL_1}
 		${XSTS_HOME}/${XSTS_NAME_2}/${XSTS_TARBALL_2}
-		http://www.w3.org/XML/Test/${XMLCONF_TARBALL} )
-	http://dev.gentoo.org/~tetromino/distfiles/${PN}/${P}-namespace-node-patches.tar.bz2"
+		http://www.w3.org/XML/Test/${XMLCONF_TARBALL} )"
 
 RDEPEND="sys-libs/zlib:=
 	icu? ( dev-libs/icu:= )
@@ -46,7 +45,6 @@ src_unpack() {
 	# ${A} isn't used to avoid unpacking of test tarballs into $WORKDIR,
 	# as they are needed as tarballs in ${S}/xstc instead and not unpacked
 	unpack ${P/_rc/-rc}.tar.gz
-	unpack "${P}-namespace-node-patches.tar.bz2"
 	cd "${S}"
 
 	if use test; then
@@ -65,18 +63,16 @@ src_prepare() {
 
 	eprefixify catalog.c xmlcatalog.c runtest.c xmllint.c
 
-	epunt_cxx
+#	epunt_cxx # if we don't eautoreconf
 
-	epatch "${FILESDIR}/${PN}-2.7.8-disable_static_modules.patch"
+	# Important patches from 2.9.2
+	epatch "${FILESDIR}/${P}-missing-break.patch" \
+		"${FILESDIR}/${P}-python-2.6.patch" \
+		"${FILESDIR}/${P}-compression-detection.patch" \
+		"${FILESDIR}/${P}-non-ascii-cr-lf.patch"
 
-	# Prevent linking to out-of-build-tree libxml2, bug #417539
-	epatch "${FILESDIR}/${PN}-2.8.0-icu-linking.patch"
-
-	# Namespace nodes require special treatment, bug #434344
-	epatch ../patch/*.patch
-
-	# Buffer underflow in xmlParseAttValueComplex, bug #444836; fixed in 2.9.1
-	epatch "${FILESDIR}/${PN}-2.8.0-xmlParseAttValueComplex-underflow.patch"
+	# https://bugzilla.gnome.org/show_bug.cgi?id=703979
+	epatch "${FILESDIR}/${PN}-2.9.1-python3.patch"
 
 	# Please do not remove, as else we get references to PORTAGE_TMPDIR
 	# in /usr/lib/python?.?/site-packages/libxml2mod.la among things.
@@ -191,7 +187,6 @@ libxml2_py_emake() {
 		PYTHON_INCLUDES="${EPREFIX}/usr/include/${EPYTHON}" \
 		PYTHON_LIBS="$(python-config --ldflags)" \
 		PYTHON_SITE_PACKAGES="$(python_get_sitedir)" \
-		pythondir="$(python_get_sitedir)" \
-		PYTHON_VERSION=${EPYTHON/python} "$@"
+		pythondir="$(python_get_sitedir)" "$@"
 	popd > /dev/null
 }
