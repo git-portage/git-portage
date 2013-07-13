@@ -1,10 +1,10 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall6/Attic/shorewall6-4.5.8.2.ebuild,v 1.1 2012/10/12 18:17:00 constanze Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall6/Attic/shorewall6-4.5.18.ebuild,v 1.1 2013/07/13 14:12:23 constanze Exp $
 
 EAPI="4"
 
-inherit versionator linux-info
+inherit linux-info systemd versionator
 
 # Select version (stable, RC, Beta, upstream patched):
 MY_PV_TREE=$(get_version_component_range 1-2)	# for devel versions use "development/$(get_version_component_range 1-2)"
@@ -50,6 +50,7 @@ src_install() {
 	cd "${WORKDIR}/${P}"
 	DESTDIR="${D}" ./install.sh "${FILESDIR}"/shorewallrc_new || die "install.sh failed"
 	newinitd "${FILESDIR}"/${PN}.initd ${PN}
+	systemd_newunit "${FILESDIR}"/shorewall6.systemd 'shorewall6.service' || die
 
 	dodoc changelog.txt releasenotes.txt
 	if use doc; then
@@ -57,5 +58,4 @@ src_install() {
 		cd "${WORKDIR}/${MY_P_DOCS}"
 		dohtml -r *
 	fi
-	keepdir /var/lock/subsys
 }
