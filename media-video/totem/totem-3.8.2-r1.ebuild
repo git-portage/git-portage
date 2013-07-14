@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/totem/Attic/totem-3.8.2.ebuild,v 1.3 2013/06/30 21:36:24 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/totem/Attic/totem-3.8.2-r1.ebuild,v 1.1 2013/07/14 19:09:54 pacho Exp $
 
 EAPI="5"
 GCONF_DEBUG="yes"
@@ -8,7 +8,7 @@ GNOME2_LA_PUNT="yes" # plugins are dlopened
 PYTHON_COMPAT=( python2_{6,7} )
 PYTHON_REQ_USE="threads"
 
-inherit gnome2 multilib python-single-r1
+inherit autotools eutils gnome2 multilib python-single-r1
 
 DESCRIPTION="Media player for GNOME"
 HOMEPAGE="http://projects.gnome.org/totem/"
@@ -61,7 +61,9 @@ RDEPEND="
 	x11-themes/gnome-icon-theme-symbolic
 
 	flash? ( dev-libs/totem-pl-parser[quvi] )
-	grilo? ( media-libs/grilo:0.2 )
+	grilo? (
+		media-libs/grilo:0.2
+		media-plugins/grilo-plugins:0.2 )
 	introspection? ( >=dev-libs/gobject-introspection-0.6.7 )
 	lirc? ( app-misc/lirc )
 	nautilus? ( >=gnome-base/nautilus-2.91.3 )
@@ -95,6 +97,10 @@ pkg_setup() {
 }
 
 src_prepare() {
+	# Add hack to allow streaming of Vimeo videos (from 3.8 branch)
+	epatch "${FILESDIR}/${P}-vimeo-compat.patch"
+
+	eautoreconf
 	gnome2_src_prepare
 
 	# FIXME: upstream should provide a way to set GST_INSPECT, bug #358755 & co.
@@ -111,7 +117,7 @@ src_configure() {
 	local plugins="apple-trailers,autoload-subtitles,brasero-disc-recorder"
 	plugins+=",chapters,im-status,gromit,media-player-keys,ontop"
 	plugins+=",properties,recent,rotation,screensaver,screenshot"
-	plugins+=",sidebar-test,skipto"
+	plugins+=",sidebar-test,skipto,vimeo"
 	use grilo && plugins+=",grilo"
 	use lirc && plugins+=",lirc"
 	use nautilus && plugins+=",save-file"
@@ -123,7 +129,7 @@ src_configure() {
 	# respecting EPYTHON (wait for python-r1)
 	# pylint is checked unconditionally, but is only used for make check
 	gnome2_src_configure \
-		PYLINT=$(type -P true)
+		PYLINT=$(type -P true) \
 		--disable-run-in-source-tree \
 		--disable-static \
 		--with-smclient=auto \
