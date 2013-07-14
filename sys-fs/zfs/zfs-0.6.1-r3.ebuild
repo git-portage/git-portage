@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/zfs/Attic/zfs-0.6.1.ebuild,v 1.1 2013/03/28 22:19:57 ryao Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/zfs/Attic/zfs-0.6.1-r3.ebuild,v 1.1 2013/07/14 12:16:09 ryao Exp $
 
 EAPI="4"
 
@@ -26,10 +26,11 @@ HOMEPAGE="http://zfsonlinux.org/"
 
 LICENSE="BSD-2 CDDL MIT"
 SLOT="0"
-IUSE="custom-cflags kernel-builtin +rootfs test-suite static-libs"
+IUSE="bash-completion custom-cflags kernel-builtin +rootfs selinux test-suite static-libs"
 RESTRICT="test"
 
 COMMON_DEPEND="
+	selinux? ( sys-libs/libselinux )
 	sys-apps/util-linux[static-libs?]
 	sys-libs/zlib[static-libs(+)?]
 	virtual/awk
@@ -64,6 +65,21 @@ pkg_setup() {
 }
 
 src_prepare() {
+	if [ ${PV} != "9999" ]
+	then
+		# Fix OpenRC dependencies
+		epatch "${FILESDIR}/${P}-gentoo-openrc-dependencies.patch"
+
+		# Make zvol initialization asynchronous
+		epatch "${FILESDIR}/${P}-fix-zvol-initialization-r1.patch"
+
+		# Use MAXPATHLEN to silence GCC 4.8 warning
+		epatch "${FILESDIR}/${P}-fix-gcc-4.8-warning.patch"
+
+		# Avoid zdb abort
+		epatch "${FILESDIR}/${P}-avoid-zdb-abort.patch"
+	fi
+
 	# Update paths
 	sed -e "s|/sbin/lsmod|/bin/lsmod|" \
 		-e "s|/usr/bin/scsi-rescan|/usr/sbin/rescan-scsi-bus|" \
@@ -82,18 +98,32 @@ src_configure() {
 		--with-linux="${KV_DIR}"
 		--with-linux-obj="${KV_OUT_DIR}"
 		--with-udevdir="$(udev_get_udevdir)"
+		$(use_with selinux)
 	)
 	autotools-utils_src_configure
+
+	# prepare systemd unit and helper script
+	cat "${FILESDIR}/zfs.service.in" | \
+		sed -e "s:@sbindir@:${EPREFIX}/sbin:g" \
+			-e "s:@sysconfdir@:${EPREFIX}/etc:g" \
+		> "${T}/zfs.service" || die
+	cat "${FILESDIR}/zfs-init.sh.in" | \
+		sed -e "s:@sbindir@:${EPREFIX}/sbin:g" \
+			-e "s:@sysconfdir@:${EPREFIX}/etc:g" \
+		> "${T}/zfs-init.sh" || die
 }
 
 src_install() {
 	autotools-utils_src_install
 	gen_usr_ldscript -a uutil nvpair zpool zfs
-	rm -rf "${ED}usr/share/dracut"
-	use test-suite || rm -rf "${ED}usr/libexec"
+	rm -rf "${ED}usr/lib/dracut"
+	use test-suite || rm -rf "${ED}usr/share/zfs"
 
-	newbashcomp "${FILESDIR}/bash-completion" zfs
+	use bash-completion && newbashcomp "${FILESDIR}/bash-completion" zfs
 
+	exeinto /usr/libexec
+	doexe "${T}/zfs-init.sh"
+	systemd_dounit "${T}/zfs.service"
 }
 
 pkg_postinst() {
