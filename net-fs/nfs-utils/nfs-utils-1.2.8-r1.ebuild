@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/nfs-utils/Attic/nfs-utils-1.2.7.ebuild,v 1.4 2013/07/13 12:05:51 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/nfs-utils/nfs-utils-1.2.8-r1.ebuild,v 1.1 2013/07/26 04:23:39 radhermit Exp $
 
 EAPI="4"
 
@@ -54,9 +54,9 @@ DEPEND="${DEPEND_COMMON}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.1.4-mtab-sym.patch
-	epatch "${FILESDIR}"/${PN}-1.2.6-cross-build.patch
-	epatch "${FILESDIR}"/${PN}-1.2.7-nfsiostat-python3.patch #458934
-	epatch "${FILESDIR}"/${PN}-1.2.7-libio.patch #459200
+	epatch "${FILESDIR}"/${PN}-1.2.8-cross-build.patch
+	epatch "${FILESDIR}"/0001-statd-exit-if-a-statd-is-already-running.patch
+	epatch "${FILESDIR}"/0001-mountd-Fix-is_subdirectory-again.patch
 	eautoreconf
 }
 
@@ -76,10 +76,16 @@ src_configure() {
 		$(usex nfsv4 "$(use_enable kerberos gss)" "--disable-gss")
 }
 
+src_compile(){
+	# remove compiled files bundled in the tarball
+	emake clean
+	default
+}
+
 src_install() {
 	default
 	rm linux-nfs/Makefile* || die
-	dodoc -r linux-nfs ChangeLog README
+	dodoc -r linux-nfs README
 
 	# Don't overwrite existing xtab/etab, install the original
 	# versions somewhere safe...  more info in pkg_postinst
