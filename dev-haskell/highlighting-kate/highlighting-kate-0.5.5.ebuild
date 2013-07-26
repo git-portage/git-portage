@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/highlighting-kate/Attic/highlighting-kate-0.5.3.8.ebuild,v 1.1 2013/04/02 11:50:37 gienah Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/highlighting-kate/highlighting-kate-0.5.5.ebuild,v 1.1 2013/07/26 07:23:41 slyfox Exp $
 
 EAPI=5
 
