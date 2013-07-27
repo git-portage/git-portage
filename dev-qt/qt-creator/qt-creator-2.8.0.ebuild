@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-qt/qt-creator/Attic/qt-creator-2.8.0_rc.ebuild,v 1.2 2013/07/10 09:33:23 pesa Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-qt/qt-creator/Attic/qt-creator-2.8.0.ebuild,v 1.1 2013/07/27 07:49:01 pesa Exp $
 
 EAPI=5
 
@@ -39,7 +39,10 @@ CDEPEND="
 	=dev-libs/botan-1.10*
 	>=dev-qt/qtcore-${QT_PV}[ssl]
 	>=dev-qt/qtdeclarative-${QT_PV}
-	>=dev-qt/qtgui-${QT_PV}
+	|| (
+		( >=dev-qt/qtgui-4.8.5:4 dev-qt/designer:4 )
+		( >=dev-qt/qtgui-${QT_PV} <dev-qt/qtgui-4.8.5:4 )
+	)
 	>=dev-qt/qthelp-${QT_PV}[doc?]
 	>=dev-qt/qtscript-${QT_PV}
 	>=dev-qt/qtsql-${QT_PV}
