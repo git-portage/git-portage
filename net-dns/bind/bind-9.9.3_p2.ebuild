@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/Attic/bind-9.9.3_p1.ebuild,v 1.2 2013/07/13 11:43:25 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/Attic/bind-9.9.3_p2.ebuild,v 1.1 2013/07/29 19:31:14 idl0r Exp $
 
 # Re dlz/mysql and threads, needs to be verified..
 # MySQL uses thread local storage in its C api. Thus MySQL
@@ -135,7 +135,7 @@ src_prepare() {
 	if use geoip; then
 		cp "${DISTDIR}"/${GEOIP_PATCH_A} "${S}" || die
 		sed -i -e 's:^ RELEASETYPE=: RELEASETYPE=-P:' \
-			-e 's:RELEASEVER=:RELEASEVER=1:' \
+			-e 's:RELEASEVER=:RELEASEVER=2:' \
 			${GEOIP_PATCH_A} || die
 #		sed -i -e 's:RELEASEVER=2:RELEASEVER=3:' ${GEOIP_PATCH_A} || die
 		epatch ${GEOIP_PATCH_A}

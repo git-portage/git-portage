@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/Attic/bind-9.8.5_p1.ebuild,v 1.1 2013/06/30 13:31:19 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/Attic/bind-9.8.5_p2.ebuild,v 1.1 2013/07/29 19:31:14 idl0r Exp $
 
 # Re dlz/mysql and threads, needs to be verified..
 # MySQL uses thread local storage in its C api. Thus MySQL
@@ -129,8 +129,8 @@ src_prepare() {
 #		sed -i -e 's:^ RELEASETYPE=: RELEASETYPE=-P:' \
 #			-e 's:RELEASEVER=:RELEASEVER=1:' \
 #			${GEOIP_PATCH_A} || die
-#		sed -i -e 's:RELEASEVER=1:RELEASEVER=2:' \
-#			${GEOIP_PATCH_A} || die
+		sed -i -e 's:RELEASEVER=1:RELEASEVER=2:' \
+			${GEOIP_PATCH_A} || die
 		epatch ${GEOIP_PATCH_A}
 	fi
 
