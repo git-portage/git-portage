@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/rsyslog/Attic/rsyslog-7.2.5.ebuild,v 1.2 2013/02/12 12:06:16 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/rsyslog/Attic/rsyslog-7.4.3.ebuild,v 1.1 2013/07/29 22:00:38 ultrabug Exp $
 
 EAPI=4
 AUTOTOOLS_AUTORECONF=yes
@@ -19,7 +19,7 @@ IUSE="dbi debug doc extras kerberos mysql oracle postgres relp snmp ssl static-l
 RDEPEND="
 	dev-libs/json-c
 	dev-libs/libee
-	dev-libs/libestr
+	>=dev-libs/libestr-0.1.5
 	dev-libs/liblognorm
 	net-misc/curl
 	dbi? ( dev-db/libdbi )
@@ -48,17 +48,9 @@ AUTOTOOLS_IN_SOURCE_BUILD=1
 DOCS=(AUTHORS ChangeLog doc/rsyslog-example.conf)
 
 PATCHES=(
-	"${FILESDIR}"/${P}-json-c-pkgconfig.patch
-
-	# Fix runtime UUID/JSON libs linking
-	"${FILESDIR}"/6-stable/${PN}-6.6.0-fix-runtime.patch	)
-
-src_prepare() {
-	# Don't force '-g' CFLAG
-	sed -e 's/CFLAGS="\(.*\) -g"/CFLAGS="\1"/g' -i configure.ac || die
-
-	autotools-utils_src_prepare
-}
+	"${FILESDIR}"/${BRANCH}/${PN}-7.4.3-json-c-pkgconfig.patch
+	"${FILESDIR}"/${BRANCH}/${PN}-7.4.3-fix-runtime.patch
+)
 
 src_configure() {
 	# Maintainer notes:
@@ -69,6 +61,7 @@ src_configure() {
 	#   for the java GUI, so we disable it for now.
 	# * mongodb : doesnt work with mongo-c-driver ?
 	local myeconfargs=(
+		--enable-cached-man-pages
 		--disable-gui
 		--disable-rfc3195
 		--enable-imdiag
@@ -80,6 +73,7 @@ src_configure() {
 		--enable-mmnormalize
 		--enable-mmjsonparse
 		--enable-mmaudit
+		--enable-mmanon
 		--enable-omprog
 		--enable-omstdout
 		--enable-omuxsock
