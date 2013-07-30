@@ -1,14 +1,14 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/lightdm/Attic/lightdm-1.4.0-r1.ebuild,v 1.4 2013/05/09 15:50:58 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/lightdm/Attic/lightdm-1.7.7.ebuild,v 1.1 2013/07/30 13:51:58 hwoarang Exp $
 
 EAPI=5
-inherit autotools eutils pam readme.gentoo
+inherit autotools eutils pam readme.gentoo systemd
 
-TRUNK_VERSION="1.4"
+TRUNK_VERSION="1.8"
 DESCRIPTION="A lightweight display manager"
 HOMEPAGE="http://www.freedesktop.org/wiki/Software/LightDM"
-SRC_URI="http://launchpad.net/${PN}/${TRUNK_VERSION}/${PV}/+download/${P}.tar.gz
+SRC_URI="http://launchpad.net/${PN}/${TRUNK_VERSION}/${PV}/+download/${P}.tar.xz
 	mirror://gentoo/introspection-20110205.m4.tar.bz2"
 
 LICENSE="GPL-3 LGPL-3"
@@ -47,8 +47,7 @@ src_prepare() {
 	sed -i -e 's:getgroups:lightdm_&:' tests/src/libsystem.c || die #412369
 	sed -i -e '/minimum-uid/s:500:1000:' data/users.conf || die
 
-	epatch "${FILESDIR}"/session-wrapper-${PN}.patch
-	epatch "${FILESDIR}"/${PN}-1.2.0-fix-configure.patch
+	epatch "${FILESDIR}"/${P}-session-wrapper.patch
 	epatch_user
 
 	# Remove bogus Makefile statement. This needs to go upstream
@@ -98,4 +97,6 @@ src_install() {
 	dopamd "${FILESDIR}"/${PN}-autologin #390863, #423163
 
 	readme.gentoo_create_doc
+
+	systemd_dounit "${FILESDIR}/${PN}.service"
 }
