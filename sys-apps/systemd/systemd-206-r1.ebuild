@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/Attic/systemd-206.ebuild,v 1.3 2013/07/30 08:48:24 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/Attic/systemd-206-r1.ebuild,v 1.1 2013/07/31 22:23:50 mgorny Exp $
 
 EAPI=5
 
@@ -50,6 +50,7 @@ RDEPEND="${COMMON_DEPEND}
 		>=sys-apps/util-linux-2.22
 		<sys-apps/sysvinit-2.88-r4
 	)
+	!sys-apps/gentoo-systemd-integration
 	!sys-auth/nss-myhostname
 	!<sys-libs/glibc-2.10
 	!sys-fs/udev"
@@ -63,6 +64,7 @@ DEPEND="${COMMON_DEPEND}
 	dev-libs/libxslt
 	dev-util/gperf
 	>=dev-util/intltool-0.50
+	>=sys-devel/binutils-2.23.1
 	>=sys-devel/gcc-4.6
 	>=sys-kernel/linux-headers-${MINKV}
 	virtual/pkgconfig
@@ -73,6 +75,8 @@ pkg_pretend() {
 		~FANOTIFY ~HOTPLUG ~INOTIFY_USER ~IPV6 ~NET ~PROC_FS ~SIGNALFD
 		~SYSFS ~!IDE ~!SYSFS_DEPRECATED ~!SYSFS_DEPRECATED_V2"
 #		~!FW_LOADER_USER_HELPER"
+
+	use pam && CONFIG_CHECK+=" ~AUDITSYSCALL"
 
 	# read null-terminated argv[0] from PID 1
 	# and see which path to systemd was used (if any)
@@ -117,6 +121,21 @@ pkg_pretend() {
 
 pkg_setup() {
 	use python && python-single-r1_pkg_setup
+}
+
+src_prepare() {
+	local PATCHES=(
+		#477954 - gnome-shell-3.8* session unlock broken
+		"${FILESDIR}"/206-0001-logind-update-state-file-after-generating-the-sessio.patch
+		#474946 - localectl does not find keymaps
+		"${FILESDIR}"/206-0002-Add-usr-share-keymaps-to-localectl-supported-locatio.patch
+		#478198 - wrong permission for static-nodes
+		"${FILESDIR}"/206-0003-tmpfiles-support-passing-prefix-multiple-times.patch
+		"${FILESDIR}"/206-0004-tmpfiles-introduce-exclude-prefix.patch
+		"${FILESDIR}"/206-0005-tmpfiles-setup-exclude-dev-prefixes-files.patch
+	)
+
+	autotools-utils_src_prepare
 }
 
 src_configure() {
