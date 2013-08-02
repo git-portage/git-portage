@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/Attic/mesa-9.2_pre20130528.ebuild,v 1.1 2013/05/28 13:27:33 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/Attic/mesa-9.2_pre20130725.ebuild,v 1.1 2013/08/02 13:16:03 chithanh Exp $
 
 EAPI=5
 
@@ -48,14 +48,14 @@ for card in ${VIDEO_CARDS}; do
 done
 
 IUSE="${IUSE_VIDEO_CARDS}
-	bindist +classic debug +egl +gallium gbm gles1 gles2 +llvm +nptl
-	openvg osmesa pax_kernel pic r600-llvm-compiler selinux +shared-glapi vdpau
+	bindist +classic debug +egl +gallium gbm gles1 gles2 +llvm +nptl opencl
+	openvg osmesa pax_kernel pic r600-llvm-compiler selinux vdpau
 	wayland xvmc xa xorg kernel_FreeBSD"
 
 REQUIRED_USE="
 	llvm?   ( gallium )
 	openvg? ( egl gallium )
-	gbm?    ( shared-glapi )
+	opencl? ( gallium r600-llvm-compiler )
 	gles1?  ( egl )
 	gles2?  ( egl )
 	r600-llvm-compiler? ( gallium llvm || ( video_cards_r600 video_cards_radeon ) )
@@ -77,7 +77,7 @@ REQUIRED_USE="
 	video_cards_vmware? ( gallium )
 "
 
-LIBDRM_DEPSTRING=">=x11-libs/libdrm-2.4.45"
+LIBDRM_DEPSTRING=">=x11-libs/libdrm-2.4.46"
 # keep correct libdrm and dri2proto dep
 # keep blocks in rdepend for binpkg
 RDEPEND="
@@ -93,6 +93,10 @@ RDEPEND="
 	x11-libs/libXext
 	x11-libs/libXxf86vm
 	>=x11-libs/libxcb-1.8.1
+	opencl? (
+				app-admin/eselect-opencl
+				dev-libs/libclc
+			)
 	vdpau? ( >=x11-libs/libvdpau-0.4.1 )
 	wayland? ( >=dev-libs/wayland-1.0.3 )
 	xorg? (
@@ -119,6 +123,11 @@ DEPEND="${RDEPEND}
 		>=sys-devel/llvm-2.9
 		r600-llvm-compiler? ( sys-devel/llvm[video_cards_radeon] )
 		video_cards_radeonsi? ( sys-devel/llvm[video_cards_radeon] )
+	)
+	opencl? (
+				>=sys-devel/llvm-3.3-r1[video_cards_radeon]
+				>=sys-devel/clang-3.3
+				>=sys-devel/gcc-4.6
 	)
 	${PYTHON_DEPS}
 	dev-libs/libxml2[python,${PYTHON_USEDEP}]
@@ -164,7 +173,7 @@ src_prepare() {
 	fi
 
 	# relax the requirement that r300 must have llvm, bug 380303
-	epatch "${FILESDIR}"/${PN}-8.1-dont-require-llvm-for-r300.patch
+	epatch "${FILESDIR}"/${PN}-9.2-dont-require-llvm-for-r300.patch
 
 	# fix for hardened pax_kernel, bug 240956
 	[[ ${PV} != 9999* ]] && epatch "${FILESDIR}"/glx_ro_text_segm.patch
@@ -243,6 +252,14 @@ src_configure() {
 		fi
 
 		gallium_enable video_cards_freedreno freedreno
+		# opencl stuff
+		if use opencl; then
+			myconf+="
+				$(use_enable opencl)
+				--with-opencl-libdir="${EPREFIX}/usr/$(get_libdir)/OpenCL/vendors/mesa"
+				--with-clang-libdir="${EPREFIX}/usr/$(get_libdir)"
+				"
+		fi
 	fi
 
 	# x86 hardened pax_kernel needs glx-rts, bug 240956
@@ -258,6 +275,7 @@ src_configure() {
 	econf \
 		--enable-dri \
 		--enable-glx \
+		--enable-shared-glapi \
 		$(use_enable !bindist texture-float) \
 		$(use_enable debug) \
 		$(use_enable egl) \
@@ -267,7 +285,6 @@ src_configure() {
 		$(use_enable nptl glx-tls) \
 		$(use_enable osmesa) \
 		$(use_enable !pic asm) \
-		$(use_enable shared-glapi) \
 		$(use_enable xa) \
 		$(use_enable xorg) \
 		--with-dri-drivers=${DRI_DRIVERS} \
@@ -348,6 +365,20 @@ src_install() {
 			popd
 		eend $?
 	fi
+	if use opencl; then
+		ebegin "Moving Gallium/Clover OpenCL implementation for dynamic switching"
+		local cl_dir="/usr/$(get_libdir)/OpenCL/vendors/mesa"
+		dodir ${cl_dir}/{lib,include}
+		if [ -f "${ED}/usr/$(get_libdir)/libOpenCL.so" ]; then
+			mv -f "${ED}"/usr/$(get_libdir)/libOpenCL.so* \
+			"${ED}"${cl_dir}
+		fi
+		if [ -f "${ED}/usr/include/CL/opencl.h" ]; then
+			mv -f "${ED}"/usr/include/CL \
+			"${ED}"${cl_dir}/include
+		fi
+		eend $?
+	fi
 }
 
 pkg_postinst() {
@@ -365,6 +396,11 @@ pkg_postinst() {
 	# Select classic/gallium drivers
 	if use classic || use gallium; then
 		eselect mesa set --auto
+	fi
+
+	# Switch to mesa opencl
+	if use opencl; then
+		eselect opencl set --use-old ${PN}
 	fi
 
 	# warn about patent encumbered texture-float
