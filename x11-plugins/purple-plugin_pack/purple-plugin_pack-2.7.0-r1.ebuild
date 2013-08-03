@@ -1,30 +1,31 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/purple-plugin_pack/Attic/purple-plugin_pack-2.6.3.ebuild,v 1.8 2012/06/14 02:02:57 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/purple-plugin_pack/purple-plugin_pack-2.7.0-r1.ebuild,v 1.1 2013/08/03 23:02:35 mrueg Exp $
 
-EAPI="2"
+EAPI=5
 
-inherit eutils python
+PYTHON_COMPAT=( python{2_6,2_7} )
+inherit eutils python-any-r1
 
+MY_PN=${PN/_/-}
+MY_P=${MY_PN}-${PV}
 DESCRIPTION="A package with many different plugins for pidgin and libpurple"
-HOMEPAGE="http://plugins.guifications.org"
-SRC_URI="mirror://gentoo/${P}.tar.bz2"
+HOMEPAGE="https://bitbucket.org/rekkanoryo/purple-plugin-pack/"
+SRC_URI="https://bitbucket.org/rekkanoryo/${MY_PN}/downloads/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 hppa ppc x86"
+KEYWORDS="~amd64 ~hppa ~ppc ~x86"
 IUSE="debug gtk ncurses spell talkfilters"
 
-RDEPEND="net-im/pidgin[gtk?,ncurses?]
+RDEPEND="dev-libs/json-glib
+	net-im/pidgin[gtk?,ncurses?]
 	talkfilters? ( app-text/talkfilters )
 	spell? ( app-text/gtkspell:2 )"
 DEPEND="${RDEPEND}
-	=dev-lang/python-2*"
+	${PYTHON_DEPS}"
 
-pkg_setup() {
-	python_set_active_version 2
-	python_pkg_setup
-}
+S=${WORKDIR}/${MY_P}
 
 src_prepare() {
 	sed -e '/CFLAGS=/{s| -g3||}' -i configure || die
@@ -39,7 +40,7 @@ src_configure() {
 	local plugins=""
 
 	# list all plugins, then pull DISABLED_PLUGINS with the ones we don't need
-	plugins="$($(PYTHON) plugin_pack.py -d dist_dirs)"
+	plugins="$(${EPYTHON} plugin_pack.py -d dist_dirs)"
 	einfo "List of all possible plugins:"
 	einfo "${plugins}"
 
@@ -63,8 +64,8 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS ChangeLog NEWS README VERSION || die
+	emake DESTDIR="${D}" install
+	dodoc AUTHORS ChangeLog NEWS README VERSION
 }
 
 pkg_preinst() {
