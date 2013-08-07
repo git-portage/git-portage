@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/firefox/Attic/firefox-21.0.ebuild,v 1.4 2013/06/10 04:04:55 anarchy Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/firefox/Attic/firefox-23.0.ebuild,v 1.1 2013/08/07 02:49:31 anarchy Exp $
 
 EAPI="3"
 VIRTUALX_REQUIRED="pgo"
@@ -25,7 +25,7 @@ if [[ ${MOZ_ESR} == 1 ]]; then
 fi
 
 # Patch version
-PATCH="${PN}-21.0-patches-0.1"
+PATCH="${PN}-23.0-patches-0.1"
 # Upstream ftp release URI that's used by mozlinguas.eclass
 # We don't use the http mirror because it deletes old tarballs.
 MOZ_FTP_URI="ftp://ftp.mozilla.org/pub/${PN}/releases/"
@@ -36,7 +36,7 @@ inherit check-reqs flag-o-matic toolchain-funcs eutils gnome2-utils mozconfig-3 
 DESCRIPTION="Firefox Web Browser"
 HOMEPAGE="http://www.mozilla.com/firefox"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
 IUSE="bindist gstreamer +jit +minimal pgo pulseaudio selinux system-cairo system-jpeg system-sqlite"
@@ -51,8 +51,8 @@ ASM_DEPEND=">=dev-lang/yasm-1.1"
 # Mesa 7.10 needed for WebGL + bugfixes
 RDEPEND="
 	>=sys-devel/binutils-2.16.1
-	>=dev-libs/nss-3.14.3
-	>=dev-libs/nspr-4.9.6
+	>=dev-libs/nss-3.15
+	>=dev-libs/nspr-4.10
 	>=dev-libs/glib-2.26:2
 	>=media-libs/mesa-7.10
 	>=media-libs/libpng-1.5.13[apng]
@@ -144,21 +144,11 @@ src_unpack() {
 }
 
 src_prepare() {
-	# Discard system cairo patch if support is not requested
-	if ! use system-cairo ; then
-		export EPATCH_EXCLUDE="6009_fix_system_cairo_support.patch"
-	fi
 	# Apply our patches
+	EPATCH_EXCLUDE="$(use system-cairo || echo "6009_fix_system_cairo_support.patch")" \
 	EPATCH_SUFFIX="patch" \
 	EPATCH_FORCE="yes" \
 	epatch "${WORKDIR}/firefox"
-
-	# Undefined reference fix
-	epatch "${FILESDIR}"/bug-846986.patch
-
-	# HPPA patches (bug #414297)
-	epatch "${FILESDIR}"/${PN}-20-hppa.patch
-	epatch "${FILESDIR}"/${PN}-21-hppa.patch
 
 	# Allow user to apply any additional patches without modifing ebuild
 	epatch_user
@@ -236,7 +226,7 @@ src_configure() {
 	mozconfig_use_enable jit methodjit
 	mozconfig_use_enable jit tracejit
 	mozconfig_use_enable jit ion
-	mozconfig_use_enable system-cairo
+	mozconfig_use_enable system-cairo 
 
 	# Allow for a proper pgo build
 	if use pgo; then
@@ -265,10 +255,7 @@ src_compile() {
 		# Firefox tries to use dri stuff when it's run, see bug 380283
 		shopt -s nullglob
 		cards=$(echo -n /dev/dri/card* | sed 's/ /:/g')
-		if test -n "${cards}"; then
-			# FOSS drivers are fine
-			addpredict "${cards}"
-		else
+		if test -z "${cards}"; then
 			cards=$(echo -n /dev/ati/card* /dev/nvidiactl* | sed 's/ /:/g')
 			if test -n "${cards}"; then
 				# Binary drivers seem to cause access violations anyway, so
@@ -278,6 +265,7 @@ src_compile() {
 			fi
 		fi
 		shopt -u nullglob
+		addpredict "${cards}"
 
 		CC="$(tc-getCC)" CXX="$(tc-getCXX)" LD="$(tc-getLD)" \
 		MOZ_MAKE_FLAGS="${MAKEOPTS}" SHELL="${SHELL}" \
