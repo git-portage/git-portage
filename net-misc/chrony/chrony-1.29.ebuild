@@ -1,13 +1,13 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/chrony/Attic/chrony-1.27-r2.ebuild,v 1.1 2013/06/11 14:12:35 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/chrony/Attic/chrony-1.29.ebuild,v 1.1 2013/08/09 15:09:58 jer Exp $
 
 EAPI=5
 inherit eutils systemd toolchain-funcs
 
 DESCRIPTION="NTP client and server programs"
 HOMEPAGE="http://chrony.tuxfamily.org/"
-SRC_URI="http://download.tuxfamily.org/${PN}/${P}.tar.gz"
+SRC_URI="http://download.tuxfamily.org/${PN}/${P/_/-}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -20,16 +20,14 @@ DEPEND="
 "
 RDEPEND="${REPEND}"
 
+S="${WORKDIR}/${P/_/-}"
 DOCS=( examples/chrony.{conf,keys}.example )
 
 src_prepare() {
 	sed -i \
 		-e 's:/etc/chrony\.:/etc/chrony/chrony.:g' \
-		examples/* chronyd.8 faq.txt chrony.texi || die
-	sed -i \
 		-e 's:/var/run:/run:g' \
-		conf.c chrony.texi chrony.txt \
-		examples/chrony.conf.example || die
+		conf.c chrony.texi.in chrony.txt examples/* faq.txt || die
 }
 
 src_configure() {
@@ -41,7 +39,6 @@ src_configure() {
 		$(usex ipv6 '' --disable-ipv6) \
 		$(usex readline '' --disable-readline) \
 		$(usex rtc '' --disable-rtc) \
-		${EXTRA_ECONF} \
 		--docdir=/usr/share/doc/${PF} \
 		--infodir=/usr/share/info \
 		--mandir=/usr/share/man \
@@ -49,6 +46,7 @@ src_configure() {
 		--sysconfdir=/etc/chrony \
 		--without-nss \
 		--without-tomcrypt \
+		${EXTRA_ECONF} \
 		|| die
 }
 
