@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/glance/Attic/glance-2013.1.2-r2.ebuild,v 1.3 2013/08/02 18:17:27 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/glance/Attic/glance-2013.1.3.ebuild,v 1.1 2013/08/11 01:00:33 prometheanfire Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -54,8 +54,8 @@ RDEPEND="${DEPEND}
 	ldap? ( dev-python/python-ldap )"
 
 PATCHES=(
-		"${FILESDIR}/glance-gbug-474064-grizzly.patch"
 )
+#		"${FILESDIR}/glance-gbug-474064-grizzly.patch"
 
 python_install() {
 	distutils-r1_python_install
@@ -67,8 +67,11 @@ python_install() {
 	done
 
 	diropts -m 0750
-	dodir /var/run/glance /var/log/nova /var/lock/nova
+	dodir /var/run/glance /var/log/glance /var/lib/glance/images /var/lib/glance/scrubber
 	keepdir /etc/glance
+	keepdir /var/log/glance
+	keepdir /var/lib/glance/images
+	keepdir /var/lib/glance/scrubber
 	insinto /etc/glance
 
 	doins "etc/glance-api-paste.ini"
