@@ -1,25 +1,24 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/nvidia-cuda-toolkit/Attic/nvidia-cuda-toolkit-5.0.35-r2.ebuild,v 1.5 2013/08/11 12:16:42 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/nvidia-cuda-toolkit/nvidia-cuda-toolkit-5.5.22.ebuild,v 1.1 2013/08/11 12:16:42 jlec Exp $
 
 EAPI=5
 
 inherit cuda unpacker versionator
 
 MYD=$(get_version_component_range 1)_$(get_version_component_range 2)
-DISTRO=fedora16-1
 
 DESCRIPTION="NVIDIA CUDA Toolkit (compiler and friends)"
 HOMEPAGE="http://developer.nvidia.com/cuda"
-CURI="http://developer.download.nvidia.com/compute/cuda/${MYD}/rel-update-1/installers/"
+CURI="http://developer.download.nvidia.com/compute/cuda/${MYD}/rel/installers"
 SRC_URI="
-	amd64? ( ${CURI}/cuda_${PV}_linux_64_${DISTRO}.run )
-	x86? ( ${CURI}/cuda_${PV}_linux_32_${DISTRO}.run )"
+	amd64? ( ${CURI}/cuda_${PV}_linux_64.run )
+	x86? ( ${CURI}/cuda_${PV}_linux_32.run )"
 
-SLOT="0"
+SLOT="0/${PV}"
 LICENSE="NVIDIA-CUDA"
 KEYWORDS="-* ~amd64 ~x86 ~amd64-linux ~x86-linux"
-IUSE="debugger doc eclipse profiler"
+IUSE="debugger doc examples eclipse profiler"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -29,6 +28,7 @@ RDEPEND="${DEPEND}
 		sys-libs/libtermcap-compat
 		sys-libs/ncurses[tinfo]
 		)
+	eclipse? ( >=virtual/jre-1.6 )
 	profiler? ( >=virtual/jre-1.6 )"
 
 S="${WORKDIR}"
@@ -42,18 +42,17 @@ pkg_setup() {
 
 src_unpack() {
 	unpacker
-	unpacker run_files/cudatoolkit*run
+	unpacker run_files/cuda*run
 }
 
 src_prepare() {
 	local cuda_supported_gcc
 
-	cuda_supported_gcc="4.6"
+	cuda_supported_gcc="4.7"
 
 	sed \
 		-e "s:CUDA_SUPPORTED_GCC:${cuda_supported_gcc}:g" \
 		"${FILESDIR}"/cuda-config.in > "${T}"/cuda-config || die
-
 }
 
 src_install() {
@@ -62,25 +61,32 @@ src_install() {
 	local cudadir=/opt/cuda
 	local ecudadir="${EPREFIX}"${cudadir}
 
-	dodoc doc/*txt
+	# dodoc doc/*txt
 	if use doc; then
 		dodoc doc/pdf/*
 		dohtml -r doc/html/*
 	fi
 
 	use debugger || remove+=" bin/cuda-gdb extras/Debugger"
-	use eclipse || remove+=" libnsight"
+	( use profiler || use eclipse ) || remove+=" libnsight"
 	use amd64 || remove+=" cuda-installer.pl"
+
+	if use examples; then
+		insinto /usr/share/doc/${PN}
+		doins -r cuda-samples
+	fi
+	find cuda-samples -delete || die
 
 	if use profiler; then
 		# hack found in install-linux.pl
-		for j in nvpp nsight; do
-			cat > bin/${i} <<- EOF
-				#!${EPREFIX}bin/sh
+		for j in nvvp nsight; do
+			cat > bin/${j} <<- EOF
+				#!${EPREFIX}/bin/sh
 				LD_LIBRARY_PATH=\${LD_LIBRARY_PATH}:${ecudadir}/lib:${ecudadir}/lib64 \
-					UBUNTU_MENUPROXY=0 LIBOVERLAY_SCROLLBAR=0 ${ecudadir}/libnvvp/${i}
+					UBUNTU_MENUPROXY=0 LIBOVERLAY_SCROLLBAR=0 \
+					${ecudadir}/lib${j}/${j} -vm ${EPREFIX}/usr/bin/java
 			EOF
-			chmod a+x bin/${i}
+			chmod a+x bin/${j}
 		done
 	else
 		use eclipse || remove+=" libnvvp"
@@ -106,6 +112,8 @@ src_install() {
 		LDPATH=${ecudadir}/lib$(use amd64 && echo "64:${ecudadir}/lib")
 	EOF
 	doenvd "${T}"/99cuda
+
+	make_wrapper nvprof "${EPREFIX}"${cudadir}/bin/nvprof "." ${ecudadir}/lib$(use amd64 && echo "64:${ecudadir}/lib")
 
 	dobin "${T}"/cuda-config
 }
