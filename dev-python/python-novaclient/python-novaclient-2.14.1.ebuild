@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/python-novaclient/Attic/python-novaclient-2.13.0.ebuild,v 1.2 2013/05/03 19:03:54 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/python-novaclient/Attic/python-novaclient-2.14.1.ebuild,v 1.1 2013/08/11 02:45:59 prometheanfire Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_6 python2_7 )
@@ -31,13 +31,14 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 				dev-python/simplejson
 				virtual/python-unittest2[${PYTHON_USEDEP}] )"
 RDEPEND="virtual/python-argparse[${PYTHON_USEDEP}]
-		dev-python/httplib2
-		>=dev-python/iso8601-0.1.4
-		>=dev-python/prettytable-0.6
-		<dev-python/prettytable-0.7
-		dev-python/prettytable
-		>=dev-python/requests-1.1.0
-		dev-python/simplejson[${PYTHON_USEDEP}]"
+		>=dev-python/pbr-0.5.16[${PYTHON_USEDEP}]
+		<dev-python/pbr-0.6[${PYTHON_USEDEP}]
+		>=dev-python/iso8601-0.1.4[${PYTHON_USEDEP}]
+		>=dev-python/prettytable-0.6[${PYTHON_USEDEP}]
+		<dev-python/prettytable-0.8[${PYTHON_USEDEP}]
+		>=dev-python/requests-1.1[${PYTHON_USEDEP}]
+		>=dev-python/simplejson-2.0.9[${PYTHON_USEDEP}]
+		dev-python/six[${PYTHON_USEDEP}]"
 
 python_test() {
 	"${PYTHON}" setup.py nosetests || die
