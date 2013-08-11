@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/python-keystoneclient/Attic/python-keystoneclient-0.2.4-r2.ebuild,v 1.1 2013/06/20 14:39:43 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/python-keystoneclient/Attic/python-keystoneclient-0.2.5.ebuild,v 1.1 2013/08/11 01:54:05 prometheanfire Exp $
 
 EAPI=5
 #restricted due to packages missing and bad depends in the test ==webob-1.0.8
@@ -48,7 +48,6 @@ RDEPEND=">=dev-python/d2to1-0.2.10[${PYTHON_USEDEP}]
 		virtual/python-argparse[${PYTHON_USEDEP}]"
 
 PATCHES=(
-	"${FILESDIR}/0.2.4-CVE-2013-2166-7.patch"
 )
 #	"${FILESDIR}/0.2.3-CVE-2013-2104.patch"
 
