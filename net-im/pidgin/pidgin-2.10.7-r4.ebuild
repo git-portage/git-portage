@@ -1,20 +1,22 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/Attic/pidgin-2.10.7-r1.ebuild,v 1.1 2013/03/18 09:05:20 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/Attic/pidgin-2.10.7-r4.ebuild,v 1.1 2013/08/14 05:45:02 polynomial-c Exp $
 
-EAPI=4
+EAPI=5
 
 GENTOO_DEPEND_ON_PERL=no
-inherit autotools flag-o-matic eutils toolchain-funcs multilib perl-app gnome2 python
+PYTHON_COMPAT=( python2_7 )
+inherit autotools flag-o-matic eutils toolchain-funcs multilib perl-app gnome2 python-single-r1
 
 DESCRIPTION="GTK Instant Messenger client"
 HOMEPAGE="http://pidgin.im/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2
+	http://dev.gentoo.org/~polynomial-c/${PN}-eds-3.6.patch.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sparc x86 ~x86-freebsd ~amd64-linux ~x86-linux ~x86-macos"
-IUSE="dbus debug doc eds gadu gnutls +gstreamer +gtk idn meanwhile"
+IUSE="dbus debug doc eds gadu gnutls +gstreamer +gtk idn meanwhile mxit"
 IUSE+=" networkmanager nls perl silc tcl tk spell sasl ncurses"
 IUSE+=" groupwise prediction python +xscreensaver zephyr zeroconf" # mono"
 IUSE+=" aqua"
@@ -29,14 +31,14 @@ RDEPEND="
 	>=dev-libs/glib-2.16
 	>=dev-libs/libxml2-2.6.18
 	ncurses? ( sys-libs/ncurses[unicode]
-		dbus? ( <dev-lang/python-3 )
-		python? ( <dev-lang/python-3 ) )
+		dbus? ( ${PYTHON_DEPS} )
+		python? ( ${PYTHON_DEPS} ) )
 	gtk? (
 		>=x11-libs/gtk+-2.10:2[aqua=]
 		x11-libs/libSM
 		xscreensaver? ( x11-libs/libXScrnSaver )
 		spell? ( >=app-text/gtkspell-2.0.2:2 )
-		eds? ( gnome-extra/evolution-data-server )
+		eds? ( <gnome-extra/evolution-data-server-3.6 )
 		prediction? ( >=dev-db/sqlite-3.3:3 ) )
 	gstreamer? ( =media-libs/gstreamer-0.10*
 		=media-libs/gst-plugins-good-0.10*
@@ -47,7 +49,7 @@ RDEPEND="
 	dbus? ( >=dev-libs/dbus-glib-0.71
 		>=sys-apps/dbus-0.90
 		dev-python/dbus-python )
-	perl? ( >=dev-lang/perl-5.8.2-r1[-build] )
+	perl? ( || ( >=dev-lang/perl-5.16 <dev-lang/perl-5.16[-build] ) )
 	gadu? ( || ( >=net-libs/libgadu-1.11.0[ssl,gnutls]
 		>=net-libs/libgadu-1.11.0[-ssl] ) )
 	gnutls? ( net-libs/gnutls )
@@ -72,11 +74,14 @@ DEPEND="$RDEPEND
 	virtual/pkgconfig
 	gtk? ( x11-proto/scrnsaverproto
 		${NLS_DEPEND} )
-	dbus? ( <dev-lang/python-3 )
+	dbus? ( ${PYTHON_DEPS} )
 	doc? ( app-doc/doxygen )
 	!gtk? ( nls? ( ${NLS_DEPEND} ) )"
 
 DOCS="AUTHORS HACKING NEWS README ChangeLog"
+
+REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )
+		dbus? ( ${PYTHON_REQUIRED_USE} )"
 
 # Enable Default protocols
 DYNAMIC_PRPLS="irc,jabber,oscar,yahoo,simple,msn,myspace"
@@ -118,8 +123,7 @@ pkg_setup() {
 		elog "will be built."
 	fi
 	if use dbus || { use ncurses && use python; }; then
-		python_set_active_version 2
-		python_pkg_setup
+		python-single-r1_pkg_setup
 	fi
 
 	# dbus is enabled, no way to disable linkage with python => python is enabled
@@ -155,11 +159,12 @@ src_configure() {
 			myconf="${myconf} --with-gadu-libs=."
 	fi
 
+	use groupwise && DYNAMIC_PRPLS+=",novell"
 	use silc && DYNAMIC_PRPLS+=",silc"
 	use meanwhile && DYNAMIC_PRPLS+=",sametime"
-	use zeroconf && DYNAMIC_PRPLS+=",bonjour"
-	use groupwise && DYNAMIC_PRPLS+=",novell"
+	use mxit && DYNAMIC_PRPLS+=",mxit"
 	use zephyr && DYNAMIC_PRPLS+=",zephyr"
+	use zeroconf && DYNAMIC_PRPLS+=",bonjour"
 
 	if use gnutls; then
 		einfo "Disabling NSS, using GnuTLS"
@@ -172,13 +177,12 @@ src_configure() {
 	fi
 
 	if use dbus || { use ncurses && use python; }; then
-		myconf+=" --with-python=$(PYTHON)"
+		myconf+=" --with-python=${PYTHON}"
 	else
 		myconf+=" --without-python"
 	fi
 
 	econf \
-		--disable-silent-rules \
 		$(use_enable ncurses consoleui) \
 		$(use_enable gtk gtkui) \
 		$(use_enable gtk sm) \
@@ -231,5 +235,5 @@ src_install() {
 	dodoc finch/plugins/pietray.py
 	docompress -x /usr/share/doc/${PF}/pietray.py
 
-	find "${ED}" -type f -name '*.la' -exec rm -rf '{}' '+' || die "la removal failed"
+	prune_libtool_files --all
 }
