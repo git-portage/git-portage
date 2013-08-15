@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/Attic/puppet-3.2.2.ebuild,v 1.1 2013/06/18 17:32:57 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/Attic/puppet-3.2.4.ebuild,v 1.1 2013/08/15 15:43:32 prometheanfire Exp $
 
 EAPI="4"
 

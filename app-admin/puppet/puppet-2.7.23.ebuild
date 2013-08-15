@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/Attic/puppet-2.7.21.ebuild,v 1.6 2013/03/17 16:02:16 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/Attic/puppet-2.7.23.ebuild,v 1.1 2013/08/15 15:43:32 prometheanfire Exp $
 
 EAPI="4"
 USE_RUBY="ruby18 ruby19"
@@ -13,11 +13,12 @@ inherit elisp-common xemacs-elisp-common eutils ruby-fakegem user
 
 DESCRIPTION="A system automation and configuration management software"
 HOMEPAGE="http://puppetlabs.com/"
+SRC_URI="http://www.puppetlabs.com/downloads/puppet/${P}.tar.gz"
 
 LICENSE="Apache-2.0 GPL-2"
 SLOT="0"
 IUSE="augeas diff doc emacs ldap minimal rrdtool selinux shadow sqlite3 vim-syntax xemacs"
-KEYWORDS="amd64 hppa ppc sparc x86"
+KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
 
 ruby_add_rdepend "
 	>=dev-ruby/facter-1.5.6
@@ -54,6 +55,8 @@ RDEPEND="${RDEPEND}
 	>=app-portage/eix-0.18.0"
 
 SITEFILE="50${PN}-mode-gentoo.el"
+
+RUBY_PATCHES=(  )
 
 pkg_setup() {
 	enewgroup puppet
