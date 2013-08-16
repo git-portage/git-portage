@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/byobu/Attic/byobu-5.43.ebuild,v 1.1 2013/06/05 09:02:24 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/byobu/Attic/byobu-5.55.ebuild,v 1.1 2013/08/16 04:14:02 radhermit Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python{2_6,2_7} )
