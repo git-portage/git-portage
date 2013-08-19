@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/rt-sources/Attic/rt-sources-3.8.13_p14.ebuild,v 1.1 2013/07/31 12:57:30 psomas Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/rt-sources/Attic/rt-sources-3.8.13_p15.ebuild,v 1.1 2013/08/19 12:09:31 psomas Exp $
 
 EAPI="5"
 ETYPE="sources"
