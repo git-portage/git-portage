@@ -1,10 +1,10 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mongodb/Attic/mongodb-2.2.0-r1.ebuild,v 1.3 2013/03/11 10:12:04 ultrabug Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mongodb/Attic/mongodb-2.2.6.ebuild,v 1.1 2013/08/21 12:41:54 ultrabug Exp $
 
 EAPI=4
 SCONS_MIN_VERSION="1.2.0"
-BOOST_MAX_SLOT="1.49"
+
 inherit eutils flag-o-matic multilib pax-utils scons-utils user versionator
 
 MY_P=${PN}-src-r${PV/_rc/-rc}
@@ -12,17 +12,17 @@ MY_P=${PN}-src-r${PV/_rc/-rc}
 DESCRIPTION="A high-performance, open source, schema-free document-oriented database"
 HOMEPAGE="http://www.mongodb.org"
 SRC_URI="http://downloads.mongodb.org/src/${MY_P}.tar.gz
-	mms-agent? ( http://dev.gentoo.org/~ultrabug/20120830-10gen-mms-agent.zip )"
+	mms-agent? ( http://dev.gentoo.org/~ultrabug/20130821-10gen-mms-agent.zip )"
 
 LICENSE="AGPL-3 Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="mms-agent static-libs v8"
 
-PDEPEND="mms-agent? ( dev-python/pymongo )"
+PDEPEND="mms-agent? ( dev-python/pymongo app-arch/unzip )"
 RDEPEND="
 	v8? ( dev-lang/v8 )
-	<dev-libs/boost-1.50
+	>=dev-libs/boost-1.50[threads(+)]
 	dev-libs/libpcre[cxx]
 	dev-util/google-perftools
 	net-libs/libpcap
@@ -53,6 +53,7 @@ pkg_setup() {
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-2.2-r1-fix-scons.patch"
 	epatch "${FILESDIR}/${PN}-2.2-r1-fix-boost.patch"
+	epatch "${FILESDIR}/${PN}-2.2-r2-boost-1.50.patch"
 	epatch "${FILESDIR}/${PN}-2.2-fix-sharedclient.patch"
 
 	# FIXME: apply only this fix [1] on x86 boxes as it breaks /usr/lib symlink
@@ -75,7 +76,7 @@ src_install() {
 
 	use v8 && pax-mark m "${ED}"/usr/bin/{mongo,mongod}
 
-	for x in /var/{lib,log,run}/${PN}; do
+	for x in /var/{lib,log}/${PN}; do
 		keepdir "${x}"
 		fowners mongodb:mongodb "${x}"
 	done
@@ -83,9 +84,9 @@ src_install() {
 	doman debian/mongo*.1
 	dodoc README docs/building.md
 
-	newinitd "${FILESDIR}/${PN}.initd" ${PN}
+	newinitd "${FILESDIR}/${PN}.initd-r1" ${PN}
 	newconfd "${FILESDIR}/${PN}.confd" ${PN}
-	newinitd "${FILESDIR}/${PN/db/s}.initd" ${PN/db/s}
+	newinitd "${FILESDIR}/${PN/db/s}.initd-r1" ${PN/db/s}
 	newconfd "${FILESDIR}/${PN/db/s}.confd" ${PN/db/s}
 
 	insinto /etc/logrotate.d/
