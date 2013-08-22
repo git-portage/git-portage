@@ -1,12 +1,14 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/netatalk/Attic/netatalk-3.0.2-r3.ebuild,v 1.2 2013/08/22 16:01:55 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/netatalk/Attic/netatalk-3.0.5.ebuild,v 1.1 2013/08/22 16:01:56 jlec Exp $
 
-EAPI=4
+EAPI=5
+
+PYTHON_COMPAT=( python2_{6,7} )
 
 AUTOTOOLS_AUTORECONF=yes
 
-inherit autotools-utils flag-o-matic multilib pam systemd
+inherit autotools-utils flag-o-matic multilib pam python-r1 systemd
 
 DESCRIPTION="Open Source AFP server"
 HOMEPAGE="http://netatalk.sourceforge.net/"
@@ -15,9 +17,9 @@ SRC_URI="mirror://sourceforge/project/${PN}/${PN}/${PV}/${P}.tar.bz2"
 LICENSE="GPL-2 BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
-IUSE="acl avahi cracklib debug pgp kerberos ldap pam quota samba +shadow ssl static-libs tcpd"
+IUSE="acl avahi cracklib debug pgp kerberos ldap pam quota samba +shadow ssl static-libs tcpd +utils"
 
-RDEPEND="
+DEPEND="
 	!app-editors/yudit
 	dev-libs/libevent
 	dev-libs/libgcrypt
@@ -34,16 +36,30 @@ RDEPEND="
 	pam? ( virtual/pam )
 	ssl? ( dev-libs/openssl )
 	tcpd? ( sys-apps/tcp-wrappers )
+	utils? ( ${PYTHON_DEPS} )
 	"
-DEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}
+	utils? (
+		dev-lang/perl
+		dev-python/dbus-python[${PYTHON_USEDEP}]
+	)"
 
 RESTRICT="test"
 
-REQUIRED_USE="ldap? ( acl )"
-
-DOCS=( CONTRIBUTORS NEWS VERSION AUTHORS doc/DEVELOPER )
+REQUIRED_USE="
+	ldap? ( acl )
+	utils? ( ${PYTHON_REQUIRED_USE} )"
 
 PATCHES=( "${FILESDIR}"/${PN}-3.0.1-gentoo.patch )
+
+src_prepare() {
+	if ! use utils; then
+		sed \
+			-e "s:shell_utils::g" \
+			-i contrib/Makefile.am || die
+	fi
+	autotools-utils_src_prepare
+}
 
 src_configure() {
 	local myeconfargs=()
@@ -106,6 +122,8 @@ src_install() {
 		distrib/initscripts/service.systemd.tmpl \
 		> "${T}"/service.systemd || die
 	systemd_newunit "${T}"/service.systemd ${PN}.service
+
+	use utils && python_foreach_impl python_doscript contrib/shell_utils/afpstats
 }
 
 pkg_postinst() {
