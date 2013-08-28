@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/openvz-sources/Attic/openvz-sources-2.6.32.79.4.ebuild,v 1.1 2013/08/02 06:50:35 qnikst Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/openvz-sources/Attic/openvz-sources-2.6.32.79.6.ebuild,v 1.1 2013/08/28 14:29:10 pva Exp $
 
 EAPI="5"
 
