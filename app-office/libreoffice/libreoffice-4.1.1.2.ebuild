@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/Attic/libreoffice-4.1.9999.ebuild,v 1.11 2013/08/30 08:34:47 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/Attic/libreoffice-4.1.1.2.ebuild,v 1.1 2013/08/30 08:34:47 scarabeus Exp $
 
 EAPI=5
 
@@ -230,6 +230,7 @@ DEPEND="${COMMON_DEPEND}
 PATCHES=(
 	# not upstreamable stuff
 	"${FILESDIR}/${PN}-3.7-system-pyuno.patch"
+	"${FILESDIR}/${PN}-4.1.0.4-neon-build.patch"
 )
 
 REQUIRED_USE="
