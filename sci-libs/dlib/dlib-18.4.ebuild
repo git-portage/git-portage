@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/dlib/Attic/dlib-18.0.ebuild,v 1.1 2013/02/07 05:46:33 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/dlib/dlib-18.4.ebuild,v 1.1 2013/09/09 16:56:44 bicatali Exp $
 
 EAPI=5
 
