@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql-base/Attic/postgresql-base-9.3_beta1.ebuild,v 1.1 2013/06/12 01:20:28 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql-base/Attic/postgresql-base-9.3.0.ebuild,v 1.1 2013/09/10 05:50:50 patrick Exp $
 
 EAPI="4"
 
@@ -13,16 +13,16 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86
 SLOT="$(get_version_component_range 1-2)"
 
 # Comment the following five lines when not a beta or rc.
-MY_PV="${PV//_}"
-MY_FILE_PV="${SLOT}$(get_version_component_range 4)"
-S="${WORKDIR}/postgresql-${MY_PV}"
-SRC_URI="mirror://postgresql/source/v${MY_PV}/postgresql-${MY_PV}.tar.bz2
-		 http://dev.gentoo.org/~titanofold/postgresql-patches-${SLOT}.tbz2"
+#MY_PV="${PV//_}"
+#MY_FILE_PV="${SLOT}$(get_version_component_range 4)"
+#S="${WORKDIR}/postgresql-${MY_PV}"
+#SRC_URI="mirror://postgresql/source/v${MY_PV}/postgresql-${MY_PV}.tar.bz2
+#		 http://dev.gentoo.org/~titanofold/postgresql-patches-${SLOT}-r1.tbz2"
 
 # Comment the following three lines when a beta or rc.
-#S="${WORKDIR}/postgresql-${PV}"
-#SRC_URI="mirror://postgresql/source/v${PV}/postgresql-${PV}.tar.bz2
-#		 http://dev.gentoo.org/~titanofold/postgresql-patches-${SLOT}.tbz2"
+S="${WORKDIR}/postgresql-${PV}"
+SRC_URI="mirror://postgresql/source/v${PV}/postgresql-${PV}.tar.bz2
+		 http://dev.gentoo.org/~titanofold/postgresql-patches-${SLOT}-r1.tbz2"
 
 LICENSE="POSTGRESQL"
 DESCRIPTION="PostgreSQL libraries and clients"
@@ -72,7 +72,8 @@ nls? ( sys-devel/gettext )
 src_prepare() {
 	epatch "${WORKDIR}/autoconf.patch" \
 		"${WORKDIR}/base.patch" \
-		"${WORKDIR}/bool.patch"
+		"${WORKDIR}/bool.patch" \
+		"${WORKDIR}/run-dir.patch"
 
 	eprefixify src/include/pg_config_manual.h
 
