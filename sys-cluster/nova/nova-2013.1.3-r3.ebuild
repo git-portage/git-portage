@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/nova/Attic/nova-2013.1.3-r2.ebuild,v 1.2 2013/09/10 05:04:22 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/nova/Attic/nova-2013.1.3-r3.ebuild,v 1.1 2013/09/11 16:14:30 prometheanfire Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -54,8 +54,8 @@ RDEPEND=">=dev-python/amqplib-0.6.1[${PYTHON_USEDEP}]
 		virtual/python-argparse[${PYTHON_USEDEP}]"
 
 PATCHES=(
+	"${FILESDIR}/2013.1.3-CVE-2013-4261.patch"
 )
-#	"${FILESDIR}/nova-grizzly-1-CVE-2013-2096.patch"
 
 pkg_setup() {
 	enewgroup nova
