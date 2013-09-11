@@ -1,11 +1,11 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/lightdm/Attic/lightdm-1.6.0.ebuild,v 1.1 2013/08/22 21:48:55 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/lightdm/Attic/lightdm-1.7.15.ebuild,v 1.1 2013/09/11 19:48:10 hwoarang Exp $
 
 EAPI=5
 inherit autotools eutils pam readme.gentoo systemd
 
-TRUNK_VERSION="1.6"
+TRUNK_VERSION="1.7"
 DESCRIPTION="A lightweight display manager"
 HOMEPAGE="http://www.freedesktop.org/wiki/Software/LightDM"
 SRC_URI="http://launchpad.net/${PN}/${TRUNK_VERSION}/${PV}/+download/${P}.tar.xz
@@ -47,7 +47,7 @@ src_prepare() {
 	sed -i -e 's:getgroups:lightdm_&:' tests/src/libsystem.c || die #412369
 	sed -i -e '/minimum-uid/s:500:1000:' data/users.conf || die
 
-	epatch "${FILESDIR}"/session-wrapper-lightdm.patch
+	epatch "${FILESDIR}"/${PN}-1.7.7-session-wrapper.patch
 	epatch_user
 
 	# Remove bogus Makefile statement. This needs to go upstream
