@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/neutron/Attic/neutron-2012.2.4-r4.ebuild,v 1.1 2013/09/12 18:50:13 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/neutron/Attic/neutron-2012.2.4-r5.ebuild,v 1.1 2013/09/12 22:11:38 prometheanfire Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -23,8 +23,8 @@ REQUIRED_USE="|| ( mysql postgres sqlite )"
 #the cliff dep is as below because it depends on pyparsing, which only has 2.7 OR 3.2, not both
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 		app-admin/sudo
-		test? ( dev-python/cliff[python_targets_python2_7]
-				dev-python/configobj[${PYTHON_USEDEP}] )
+		test? ( dev-python/cliff[${PYTHON_USEDEP}]
+				dev-python/configobj[${PYTHON_USEDEP}]
 				dev-python/coverage[${PYTHON_USEDEP}]
 				>=dev-python/mock-1.0[${PYTHON_USEDEP}]
 				~dev-python/mox-0.5.3[${PYTHON_USEDEP}]
@@ -35,7 +35,7 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 				~dev-python/pep8-1.4.5[${PYTHON_USEDEP}]
 				>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
 				~dev-python/webtest-1.3.3[${PYTHON_USEDEP}]
-				virtual/python-unittest2[${PYTHON_USEDEP}]"
+				virtual/python-unittest2[${PYTHON_USEDEP}] )"
 RDEPEND="=dev-python/pastedeploy-1.5.0-r1[${PYTHON_USEDEP}]
 		>=dev-python/routes-1.12.3[${PYTHON_USEDEP}]
 		~dev-python/amqplib-0.6.1[${PYTHON_USEDEP}]
