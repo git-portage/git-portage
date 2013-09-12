@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/icinga-web/Attic/icinga-web-1.9.0.ebuild,v 1.2 2013/05/15 17:06:48 jmbsvicetto Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/icinga-web/icinga-web-1.9.1-r1.ebuild,v 1.1 2013/09/12 07:49:57 prometheanfire Exp $
 
-EAPI="2"
+EAPI="5"
 
 inherit depend.apache eutils user multilib
 
@@ -32,6 +32,7 @@ pkg_setup() {
 src_prepare() {
 	#removed checks for some php stuff since we have these things called use flags
 	sed -i 's/ACICINGA_CHECK_PHP_MODULE/\#ACICINGA_CHECK_PHP_MODULE/g' configure.ac
+	sed -i 's/make\ /make\ \-j1\ /g' lib/Makefile.in
 	autoreconf
 }
 
@@ -77,20 +78,20 @@ src_install() {
 	dodoc README
 	rm -f README
 
-	emake DESTDIR="${D}" install || die "make failed"
+	emake DESTDIR="${D}" install
 
-	emake DESTDIR="${D}" install-javascript || die "make failed"
+	emake DESTDIR="${D}" install-javascript
 
 	if use apache2 ; then
 		dodir ${APACHE_MODULES_CONFDIR}
-		emake DESTDIR="${D}" install-apache-config || die "make failed"
+		emake DESTDIR="${D}" install-apache-config
 		echo '<IfDefine ICINGA_WEB>' > "${D}/${APACHE_MODULES_CONFDIR}/99_icinga-web.conf"
 		cat "${D}/${APACHE_MODULES_CONFDIR}/icinga-web.conf" >> "${D}/${APACHE_MODULES_CONFDIR}/99_icinga-web.conf"
 		echo '</IfDefine>' >> "${D}/${APACHE_MODULES_CONFDIR}/99_icinga-web.conf"
 	fi
 
 	insinto /usr/share/icinga/icinga-web/contrib
-	doins -r etc/schema/* || die
+	doins -r etc/schema/*
 
 	if use apache2 ; then
 		sed -i 's/%%USER%%/apache/g'  etc/scheduler/icingaCron
