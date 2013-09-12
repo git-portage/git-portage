@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/keystone/Attic/keystone-2012.2.4-r7.ebuild,v 1.1 2013/09/11 16:01:38 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/keystone/Attic/keystone-2012.2.4-r8.ebuild,v 1.1 2013/09/12 04:41:02 prometheanfire Exp $
 
 EAPI=5
 #test restricted becaues of bad requirements given (old webob for instance)
@@ -24,23 +24,26 @@ REQUIRED_USE="|| ( ldap mysql postgres sqlite )"
 #todo, seperate out rdepend via use flags
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
-	dev-python/eventlet
-	dev-python/greenlet
+	dev-python/eventlet[${PYTHON_USEDEP}]
+	dev-python/greenlet[${PYTHON_USEDEP}]
 	dev-python/iso8601[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
-	dev-python/passlib
-	dev-python/paste
-	dev-python/pastedeploy
-	dev-python/python-daemon
+	dev-python/passlib[${PYTHON_USEDEP}]
+	dev-python/paste[${PYTHON_USEDEP}]
+	dev-python/pastedeploy[${PYTHON_USEDEP}]
+	dev-python/python-daemon[${PYTHON_USEDEP}]
 	dev-python/python-pam[${PYTHON_USEDEP}]
-	dev-python/routes
-	>=dev-python/sqlalchemy-migrate-0.7
-	>=dev-python/webob-1.0.8
+	dev-python/routes[${PYTHON_USEDEP}]
+	>=dev-python/sqlalchemy-migrate-0.7.2[${PYTHON_USEDEP}]
+	>=dev-python/webob-1.0.8[${PYTHON_USEDEP}]
 	virtual/python-argparse[${PYTHON_USEDEP}]
-	sqlite? ( dev-python/sqlalchemy[sqlite] )
-	mysql? ( dev-python/sqlalchemy[mysql] )
-	postgres? ( dev-python/sqlalchemy[postgres] )
-	ldap? ( dev-python/python-ldap )"
+	sqlite? ( >=dev-python/sqlalchemy-0.7.8[sqlite,${PYTHON_USEDEP}]
+	          <dev-python/sqlalchemy-0.7.10[sqlite,${PYTHON_USEDEP}] )
+	mysql? ( >=dev-python/sqlalchemy-0.7.8[mysql,${PYTHON_USEDEP}]
+	         <dev-python/sqlalchemy-0.7.10[mysql,${PYTHON_USEDEP}] )
+	postgres? ( >=dev-python/sqlalchemy-0.7.8[postgres,${PYTHON_USEDEP}]
+	            <dev-python/sqlalchemy-0.7.10[postgres,${PYTHON_USEDEP}] )
+	ldap? ( dev-python/python-ldap[${PYTHON_USEDEP}] )"
 #	test? ( dev-python/Babel
 #			dev-python/decorator
 #			dev-python/eventlet
