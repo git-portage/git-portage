@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/vino/Attic/vino-3.8.0.ebuild,v 1.1 2013/03/28 17:59:05 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/vino/Attic/vino-3.8.1-r1.ebuild,v 1.1 2013/09/13 22:41:08 eva Exp $
 
 EAPI="5"
 GCONF_DEBUG="yes"
@@ -17,9 +17,10 @@ IUSE="avahi crypt gnome-keyring ipv6 jpeg networkmanager ssl +telepathy +zlib"
 
 # cairo used in vino-fb
 # libSM and libICE used in eggsmclient-xsmp
-RDEPEND=">=dev-libs/glib-2.26:2
+RDEPEND="
+	>=dev-libs/glib-2.26:2
 	>=x11-libs/gtk+-3.0.0:3
-	>=dev-libs/libgcrypt-1.1.90:=
+	>=dev-libs/libgcrypt-1.1.90:0=
 	>=net-libs/libsoup-2.24:2.4
 
 	dev-libs/dbus-glib
@@ -36,13 +37,14 @@ RDEPEND=">=dev-libs/glib-2.26:2
 	>=x11-libs/libnotify-0.7.0:=
 
 	avahi? ( >=net-dns/avahi-0.6:=[dbus] )
-	crypt? ( >=dev-libs/libgcrypt-1.1.90:= )
+	crypt? ( >=dev-libs/libgcrypt-1.1.90:0= )
 	gnome-keyring? ( app-crypt/libsecret )
 	jpeg? ( virtual/jpeg:0= )
 	networkmanager? ( >=net-misc/networkmanager-0.7 )
 	ssl? ( >=net-libs/gnutls-2.2.0:= )
 	telepathy? ( >=net-libs/telepathy-glib-0.18.0 )
-	zlib? ( sys-libs/zlib:= )"
+	zlib? ( sys-libs/zlib:= )
+"
 DEPEND="${RDEPEND}
 	>=dev-lang/perl-5
 	>=dev-util/intltool-0.50
@@ -54,7 +56,17 @@ DEPEND="${RDEPEND}
 REQUIRED_USE="jpeg? ( zlib )"
 
 src_prepare() {
-	gnome2_src_prepare \
+	# Apply upstream patch as announced on distributor list
+	# will be in 3.8.2/3.10
+	epatch "${FILESDIR}"/${P}-new-client.patch
+
+	# <glib-2.31 compatibility
+	rm -v server/vino-marshal.{c,h} || die
+	gnome2_src_prepare
+}
+
+src_configure() {
+	gnome2_src_configure \
 		--enable-http-server \
 		--with-gcrypt \
 		$(use_with avahi) \
@@ -66,8 +78,4 @@ src_prepare() {
 		$(use_with ssl gnutls) \
 		$(use_with telepathy) \
 		$(use_with zlib)
-
-	# <glib-2.31 compatibility
-	rm -v server/vino-marshal.{c,h} || die
-	gnome2_src_prepare
 }
