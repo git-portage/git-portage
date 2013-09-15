@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-control-center/Attic/gnome-control-center-3.8.4.1.ebuild,v 1.3 2013/07/26 20:20:41 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-control-center/Attic/gnome-control-center-3.8.5.ebuild,v 1.1 2013/09/15 02:42:26 tetromino Exp $
 
 EAPI="5"
 GCONF_DEBUG="yes"
@@ -14,8 +14,7 @@ HOMEPAGE="https://git.gnome.org/browse/gnome-control-center/"
 LICENSE="GPL-2+"
 SLOT="2"
 
-# kerberos optional patch is broken, bug #475526
-IUSE="+bluetooth +colord +cups +gnome-online-accounts +i18n input_devices_wacom modemmanager +socialweb v4l" #kerberos
+IUSE="+bluetooth +colord +cups +gnome-online-accounts +i18n input_devices_wacom kerberos modemmanager +socialweb v4l"
 KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~x86-solaris"
 
 # False positives caused by nested configure scripts
@@ -26,6 +25,8 @@ QA_CONFIGURE_OPTIONS=".*"
 #
 # gnome-shell/gnome-control-center/mutter/gnome-settings-daemon better to be in sync for 3.8.3
 # https://mail.gnome.org/archives/gnome-announce-list/2013-June/msg00005.html
+#
+# kerberos unfortunately means mit-krb5; build fails with heimdal
 COMMON_DEPEND="
 	>=dev-libs/glib-2.35.1:2
 	>=x11-libs/gdk-pixbuf-2.23.0:2
@@ -56,8 +57,6 @@ COMMON_DEPEND="
 	x11-libs/libXxf86misc
 	>=x11-libs/libXi-1.2
 
-	virtual/krb5
-
 	bluetooth? ( >=net-wireless/gnome-bluetooth-3.5.5:= )
 	colord? ( >=x11-misc/colord-0.1.29 )
 	cups? (
@@ -65,6 +64,7 @@ COMMON_DEPEND="
 		>=net-fs/samba-3.6.14-r1[smbclient] )
 	gnome-online-accounts? ( >=net-libs/gnome-online-accounts-3.8.1 )
 	i18n? ( >=app-i18n/ibus-1.4.99 )
+	kerberos? ( app-crypt/mit-krb5 )
 	modemmanager? ( >=net-misc/modemmanager-0.7.990 )
 	socialweb? ( net-libs/libsocialweb )
 	v4l? (
@@ -75,7 +75,6 @@ COMMON_DEPEND="
 		>=dev-libs/libwacom-0.7
 		>=x11-libs/libXi-1.2 )
 "
-# kerberos? ( virtual/krb5 )
 # <gnome-color-manager-3.1.2 has file collisions with g-c-c-3.1.x
 RDEPEND="${COMMON_DEPEND}
 	|| ( ( app-admin/openrc-settingsd sys-auth/consolekit ) >=sys-apps/systemd-31 )
@@ -127,8 +126,7 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-3.8.0-optional-r1.patch"
 
 	# https://bugzilla.gnome.org/686840
-	# Broken: https://bugs.gentoo.org/show_bug.cgi?id=475526
-#	epatch "${FILESDIR}/${PN}-3.7.4-optional-kerberos.patch"
+	epatch "${FILESDIR}/${PN}-3.8.4-optional-kerberos.patch"
 
 	# Fix some absolute paths to be appropriate for Gentoo
 	epatch "${FILESDIR}/${PN}-3.8.0-paths-makefiles.patch"
@@ -151,9 +149,6 @@ src_prepare() {
 }
 
 src_configure() {
-	# FIXME: add $(use_with kerberos) support?
-#	! use kerberos && G2CONF+=" KRB5_CONFIG=$(type -P true)"
-
 	gnome2_src_configure \
 		--disable-update-mimedb \
 		--disable-static \
@@ -163,6 +158,7 @@ src_configure() {
 		$(use_enable cups) \
 		$(use_enable gnome-online-accounts goa) \
 		$(use_enable i18n ibus) \
+		$(use_enable kerberos) \
 		$(use_enable modemmanager) \
 		$(use_with socialweb libsocialweb) \
 		$(use_with v4l cheese) \
