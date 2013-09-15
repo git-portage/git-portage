@@ -1,22 +1,20 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager/Attic/networkmanager-0.9.8.2-r2.ebuild,v 1.2 2013/07/19 19:07:13 abcd Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager/Attic/networkmanager-0.9.8.4.ebuild,v 1.1 2013/09/15 04:31:07 tetromino Exp $
 
 EAPI="5"
 GNOME_ORG_MODULE="NetworkManager"
 VALA_MIN_API_VERSION="0.18"
 VALA_USE_DEPEND="vapigen"
 
-inherit gnome.org linux-info systemd user readme.gentoo toolchain-funcs vala virtualx udev eutils
+inherit bash-completion-r1 gnome.org linux-info systemd user readme.gentoo toolchain-funcs vala virtualx udev eutils
 
 DESCRIPTION="Universal network configuration daemon for laptops, desktops, servers and virtualization hosts"
 HOMEPAGE="http://projects.gnome.org/NetworkManager/"
 
 LICENSE="GPL-2+"
 SLOT="0" # add subslot if libnm-util.so.2 or libnm-glib.so.4 bumps soname version
-IUSE="avahi bluetooth connection-sharing consolekit dhclient +dhcpcd gnutls
-+introspection kernel_linux +nss modemmanager +ppp resolvconf systemd test vala
-+wext" # wimax
+IUSE="avahi bluetooth connection-sharing consolekit dhclient +dhcpcd gnutls +introspection kernel_linux +nss modemmanager +ppp resolvconf systemd test vala +wext" # wimax
 
 KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 
@@ -49,9 +47,7 @@ COMMON_DEPEND="
 	modemmanager? ( >=net-misc/modemmanager-0.7.991 )
 	nss? ( >=dev-libs/nss-3.11:= )
 	dhclient? ( =net-misc/dhcp-4*[client] )
-	dhcpcd? (
-		>=net-misc/dhcpcd-4.0.0_rc3
-		<net-misc/dhcpcd-6 )
+	dhcpcd? ( >=net-misc/dhcpcd-4.0.0_rc3 )
 	introspection? ( >=dev-libs/gobject-introspection-0.10.3 )
 	ppp? ( >=net-dialup/ppp-2.4.5[ipv6] )
 	resolvconf? ( net-dns/openresolv )
@@ -108,21 +104,30 @@ src_prepare() {
 	DOC_CONTENTS="To modify system network connections without needing to enter the
 		root password, add your user account to the 'plugdev' group."
 
+	if use systemd; then
+		DOC_CONTENTS="${DOC_CONTENTS}\n\n
+		Starting with version 0.9.8.4, running\n
+		# systemctl enable NetworkManager\n
+		will both enable NetworkManager and allow nm-dispatcher to be activated via dbus."
+	fi
+
 	# Bug #402085, https://bugzilla.gnome.org/show_bug.cgi?id=387832
-	epatch "${FILESDIR}/${PN}-0.9.7.995-pre-sleep.patch"
+	epatch "${FILESDIR}/${PN}-0.9.8.4-pre-sleep.patch"
 
 	# Use python2.7 shebangs for test scripts
 	sed -e 's@\(^#!.*python\)@\12.7@' \
 		-i */tests/*.py || die
 
 	# Fix completiondir, avoid eautoreconf, bug #465100
-	sed -i 's|^completiondir =.*|completiondir = $(datadir)/bash-completion|' \
+	sed -i "s|^completiondir =.*|completiondir = $(get_bashcompdir)|" \
 		cli/completion/Makefile.in || die "sed completiondir failed"
 
-	# Force use of /run, avoid eautoreconf
+	## Force use of /run, avoid eautoreconf
 	sed -e 's:$localstatedir/run/:/run/:' -i configure || die
 
 	use vala && vala_src_prepare
+
+	epatch_user # don't remove, users often want custom patches for NM
 }
 
 src_configure() {
@@ -191,6 +196,9 @@ src_install() {
 	# Allow users in plugdev group to modify system connections
 	insinto /usr/share/polkit-1/rules.d/
 	doins "${FILESDIR}/01-org.freedesktop.NetworkManager.settings.modify.system.rules"
+
+	# https://bugzilla.redhat.com/show_bug.cgi?id=974811 + bug #477086
+	# systemd can't find "
 
 	# Remove useless .la files
 	prune_libtool_files --modules
