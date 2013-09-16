@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/gr-osmosdr/Attic/gr-osmosdr-0.1.0-r1.ebuild,v 1.1 2013/07/08 23:39:29 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/gr-osmosdr/Attic/gr-osmosdr-0.1.0-r2.ebuild,v 1.1 2013/09/16 16:03:12 zerochaos Exp $
 
 EAPI=5
 PYTHON_DEPEND="python? 2"
@@ -51,6 +51,7 @@ src_configure() {
 		$(cmake-utils_use_enable iqbalance)
 		$(cmake-utils_use_enable python)
 		$(cmake-utils_use_enable rtlsdr RTL)
+		$(cmake-utils_use_enable rtlsdr RTL_TCP)
 		$(cmake-utils_use_enable uhd)
 	)
 #		$(cmake-utils_use_enable osmosdr)
