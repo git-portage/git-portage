@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/dracut/Attic/dracut-031.ebuild,v 1.2 2013/09/17 09:42:09 aidecoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/dracut/Attic/dracut-033.ebuild,v 1.1 2013/09/17 09:42:09 aidecoe Exp $
 
 EAPI=4
 
@@ -36,6 +36,7 @@ COMMON_MODULES="
 	dracut_modules_caps
 	dracut_modules_crypt-gpg
 	dracut_modules_crypt-loop
+	dracut_modules_dash
 	dracut_modules_gensplash
 	dracut_modules_mdraid
 	dracut_modules_multipath
@@ -89,6 +90,7 @@ RDEPEND="${CDEPEND}
 	dracut_modules_cifs? ( net-fs/cifs-utils )
 	dracut_modules_crypt? ( sys-fs/cryptsetup )
 	dracut_modules_crypt-gpg? ( app-crypt/gnupg )
+	dracut_modules_dash? ( >=app-shells/dash-0.5.4.11 )
 	dracut_modules_dmraid? ( sys-fs/dmraid sys-fs/multipath-tools )
 	dracut_modules_gensplash? ( media-gfx/splashutils )
 	dracut_modules_iscsi? ( >=sys-block/open-iscsi-2.0.871.3 )
@@ -244,9 +246,6 @@ src_install() {
 
 	# Remove extra modules which go to future dracut-extras
 	rm_module 05busybox 97masterkey 98ecryptfs 98integrity
-
-	# dash module is no longer supported
-	rm_module 00dash
 }
 
 pkg_postinst() {
