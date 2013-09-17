@@ -1,10 +1,10 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/lm_sensors/Attic/lm_sensors-3.3.4.ebuild,v 1.1 2013/07/25 17:51:52 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/lm_sensors/lm_sensors-3.3.3-r3.ebuild,v 1.1 2013/09/17 20:05:51 pacho Exp $
 
 EAPI=5
 
-inherit eutils linux-info multilib systemd toolchain-funcs
+inherit eutils linux-info toolchain-funcs multilib systemd
 
 DESCRIPTION="Hardware Monitoring user-space utilities"
 HOMEPAGE="http://www.lm-sensors.org/"
@@ -15,8 +15,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~mips ~ppc ~sparc ~x86 ~amd64-linux ~arm-linux ~x86-linux"
 IUSE="sensord static-libs"
 
-RDEPEND="
-	dev-lang/perl
+RDEPEND="dev-lang/perl
 	sensord? (
 		net-analyzer/rrdtool
 		virtual/logger
@@ -31,7 +30,7 @@ WARNING_I2C_CHARDEV="sensors-detect requires CONFIG_I2C_CHARDEV to be enabled."
 WARNING_I2C="${PN} requires CONFIG_I2C to be enabled for most sensors."
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-sensors-detect-gentoo.patch
+	epatch "${FILESDIR}"/${PN}-3.3.1-sensors-detect-gentoo.patch
 
 	use sensord && { sed -i -e 's:^#\(PROG_EXTRA.*\):\1:' Makefile || die; }
 
@@ -78,32 +77,35 @@ src_install() {
 	dodoc CHANGES CONTRIBUTORS INSTALL README \
 		doc/{donations,fancontrol.txt,fan-divisors,libsensors-API.txt,progs,temperature-sensors,vid}
 
+	docinto chips
+	dodoc doc/chips/*
+
 	docinto developers
 	dodoc doc/developers/applications
 }
 
 pkg_postinst() {
-	echo
+	elog
 	elog "Please run \`/usr/sbin/sensors-detect' in order to setup"
 	elog "/etc/conf.d/${PN}."
-	echo
+	elog
 	elog "/etc/conf.d/${PN} is vital to the init-script."
 	elog "Please make sure you also add ${PN} to the desired"
 	elog "runlevel. Otherwise your I2C modules won't get loaded"
 	elog "on the next startup."
-	echo
+	elog
 	elog "You will also need to run the above command if you're upgrading from"
 	elog "<=${PN}-2, as the needed entries in /etc/conf.d/${PN} has"
 	elog "changed."
-	echo
+	elog
 	elog "Be warned, the probing of hardware in your system performed by"
 	elog "sensors-detect could freeze your system. Also make sure you read"
 	elog "the documentation before running ${PN} on IBM ThinkPads."
-	echo
+	elog
 	elog "Also make sure you have read:"
 	elog "http://www.lm-sensors.org/wiki/FAQ/Chapter3#Mysensorshavestoppedworkinginkernel2.6.31"
-	echo
+	elog
 	elog "Please refer to the ${PN} documentation for more information."
 	elog "(http://www.lm-sensors.org/wiki/Documentation)"
-	echo
+	elog
 }
