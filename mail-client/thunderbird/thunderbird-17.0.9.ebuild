@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/thunderbird/Attic/thunderbird-17.0.7.ebuild,v 1.6 2013/06/29 15:29:43 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/thunderbird/thunderbird-17.0.9.ebuild,v 1.1 2013/09/18 14:11:09 polynomial-c Exp $
 
 EAPI="3"
 WANT_AUTOCONF="2.1"
@@ -21,7 +21,7 @@ fi
 MOZ_P="${PN}-${MOZ_PV}"
 
 # Enigmail version
-EMVER="1.5.1"
+EMVER="1.5.2"
 # Upstream ftp release URI that's used by mozlinguas.eclass
 # We don't use the http mirror because it deletes old tarballs.
 MOZ_FTP_URI="ftp://ftp.mozilla.org/pub/${PN}/releases/"
@@ -32,7 +32,7 @@ inherit flag-o-matic toolchain-funcs mozconfig-3 makeedit multilib autotools pax
 DESCRIPTION="Thunderbird Mail Client"
 HOMEPAGE="http://www.mozilla.com/en-US/thunderbird/"
 
-KEYWORDS="~alpha amd64 arm ppc ppc64 x86 ~x86-fbsd ~amd64-linux ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
 IUSE="bindist gconf +crypt +jit +ipc ldap +lightning +minimal mozdom selinux"
@@ -248,8 +248,8 @@ src_compile() {
 		cd "${S}"/mailnews/extensions/enigmail || die
 		./makemake -r 2&> /dev/null
 		cd "${S}"/tbird/mailnews/extensions/enigmail
-		emake || die "make enigmail failed"
-		emake xpi || die "make enigmail xpi failed"
+		emake -j1 || die "make enigmail failed"
+		emake -j1 xpi || die "make enigmail xpi failed"
 	fi
 }
 
