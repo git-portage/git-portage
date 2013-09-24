@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/Attic/R-2.15.2-r2.ebuild,v 1.3 2013/08/27 15:03:04 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/Attic/R-3.0.1-r1.ebuild,v 1.1 2013/09/24 16:13:24 bicatali Exp $
 
 EAPI=5
 
@@ -9,8 +9,8 @@ inherit bash-completion-r1 autotools eutils flag-o-matic fortran-2 multilib vers
 BCP=${PN}-20130129.bash_completion
 DESCRIPTION="Language and environment for statistical computing and graphics"
 HOMEPAGE="http://www.r-project.org/"
-#SRC_URI="mirror://cran/src/base/R-2/${P}.tar.gz
-SRC_URI="http://dev.gentoo.org/~bicatali/distfiles/${P}.tar.bz2
+SRC_URI="
+	mirror://cran/src/base/R-3/${P}.tar.gz
 	bash-completion? ( http://dev.gentoo.org/~bicatali/distfiles/${BCP}.bz2 )"
 
 LICENSE="|| ( GPL-2 GPL-3 ) LGPL-2.1"
@@ -79,10 +79,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-2.13.1-zlib_header_fix.patch
 
 	# https://bugs.r-project.org/bugzilla3/show_bug.cgi?id=14953
-	epatch "${FILESDIR}"/${PN}-2.14.1-rmath-shared.patch
-
-	# fix cairo plots (gentoo bug #453048)
-	epatch "${FILESDIR}"/${PN}-2.15.2-cairo.patch
+	epatch "${FILESDIR}"/${PN}-3.0.0-rmath-shared.patch
 
 	# fix packages.html for doc (gentoo bug #205103)
 	sed -i \
@@ -171,7 +168,7 @@ src_compile() {
 
 src_install() {
 	default
-	emake -C src/nmath/standalone DESTDIR="${D}" install
+	emake -j1 -C src/nmath/standalone DESTDIR="${D}" install
 
 	if use doc; then
 		emake DESTDIR="${D}" install-info install-pdf
