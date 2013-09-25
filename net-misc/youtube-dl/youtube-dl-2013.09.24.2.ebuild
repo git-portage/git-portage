@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/youtube-dl/Attic/youtube-dl-2013.08.30.ebuild,v 1.1 2013/08/31 12:40:49 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/youtube-dl/Attic/youtube-dl-2013.09.24.2.ebuild,v 1.1 2013/09/25 14:51:43 jer Exp $
 
 EAPI=5
 
