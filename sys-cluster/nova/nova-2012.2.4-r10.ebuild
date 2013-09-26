@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/nova/Attic/nova-2012.2.4-r9.ebuild,v 1.1 2013/09/13 20:47:34 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/nova/Attic/nova-2012.2.4-r10.ebuild,v 1.1 2013/09/26 00:15:33 prometheanfire Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -30,6 +30,8 @@ RDEPEND="~dev-python/amqplib-0.6.1[${PYTHON_USEDEP}]
 		postgres? ( >=dev-python/sqlalchemy-0.7.8[postgres,${PYTHON_USEDEP}]
 	            <dev-python/sqlalchemy-0.7.10[postgres,${PYTHON_USEDEP}] )
 		~dev-python/boto-2.1.1[${PYTHON_USEDEP}]
+		>=dev-python/lxml-2.3[${PYTHON_USEDEP}]
+		<dev-python/lxml-2.3.6
 		>=dev-python/eventlet-0.9.17[${PYTHON_USEDEP}]
 		~dev-python/kombu-1.0.4[${PYTHON_USEDEP}]
 		~dev-python/routes-1.12.3[${PYTHON_USEDEP}]
@@ -78,8 +80,13 @@ python_install() {
 	use spicehtml5proxy && dosym /etc/init.d/nova /etc/init.d/nova-spicehtml5proxy
 	use xvpvncproxy && dosym /etc/init.d/nova /etc/init.d/nova-xvpncproxy
 
-	dodir /var/log/nova
-	fowners nova:nova /var/log/nova
+	diropts -m 0750
+	dodir /var/run/nova /var/log/nova /var/lock/nova
+	fowners nova:nova /var/log/nova /var/lock/nova /var/run/nova
+
+	diropts -m 0755
+	dodir /var/lib/nova/instances
+	fowners nova:nova /var/lib/nova/instances
 
 	keepdir /etc/nova
 	insinto /etc/nova
