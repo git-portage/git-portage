@@ -1,9 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/librep/Attic/librep-0.92.2.ebuild,v 1.5 2012/07/15 16:51:51 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/librep/librep-0.92.3.ebuild,v 1.1 2013/09/29 06:46:36 pacho Exp $
 
-EAPI="4"
-
+EAPI=5
 inherit eutils multilib elisp-common
 
 DESCRIPTION="Shared library implementing a Lisp dialect"
@@ -12,17 +11,21 @@ SRC_URI="http://download.tuxfamily.org/librep/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="emacs readline"
 
-RDEPEND=">=sys-libs/gdbm-1.8.0
+RDEPEND="
+	>=sys-libs/gdbm-1.8.0
 	emacs? ( virtual/emacs )
-	readline? ( sys-libs/readline )"
+	readline? ( sys-libs/readline )
+"
 DEPEND="${RDEPEND}
 	sys-apps/texinfo
-	app-arch/xz-utils"
+	app-arch/xz-utils
+"
 
 src_prepare() {
+	DOCS="ChangeLog MAINTAINERS NEWS README TODO"
 	epatch "${FILESDIR}"/${PN}-0.92.0-disable-elisp.patch
 }
 
@@ -36,7 +39,7 @@ src_configure() {
 }
 
 src_compile() {
-	emake
+	default
 
 	if use emacs; then
 		elisp-compile rep-debugger.el || die "elisp-compile failed"
@@ -44,10 +47,9 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
-	find "${D}" -name '*.la' -exec rm -f {} + || die "la file removal failed"
+	default
+	prune_libtool_files --modules
 
-	dodoc ChangeLog MAINTAINERS NEWS README TODO
 	docinto doc
 	dodoc doc/*
 
