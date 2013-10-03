@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/libsecret/Attic/libsecret-0.14.ebuild,v 1.2 2013/03/30 23:16:06 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/libsecret/Attic/libsecret-0.15-r1.ebuild,v 1.1 2013/10/03 02:25:29 tetromino Exp $
 
 EAPI="5"
 PYTHON_COMPAT=( python2_{6,7} )
