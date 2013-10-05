@@ -1,73 +1,73 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager/Attic/networkmanager-0.9.6.4-r1.ebuild,v 1.3 2013/10/01 22:19:42 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager/Attic/networkmanager-0.9.8.6.ebuild,v 1.1 2013/10/05 13:39:26 pacho Exp $
 
 EAPI="5"
 GNOME_ORG_MODULE="NetworkManager"
 VALA_MIN_API_VERSION="0.18"
 VALA_USE_DEPEND="vapigen"
 
-inherit autotools eutils gnome.org linux-info systemd user toolchain-funcs vala udev
+inherit bash-completion-r1 gnome.org linux-info systemd user readme.gentoo toolchain-funcs vala virtualx udev eutils
 
 DESCRIPTION="Universal network configuration daemon for laptops, desktops, servers and virtualization hosts"
-HOMEPAGE="http://www.gnome.org/projects/NetworkManager/"
+HOMEPAGE="http://projects.gnome.org/NetworkManager/"
 
 LICENSE="GPL-2+"
-SLOT="0" # TODO: add subslot on 0.9.8 bump
-IUSE="avahi bluetooth connection-sharing +consolekit dhclient +dhcpcd doc gnutls +introspection kernel_linux +nss modemmanager +ppp resolvconf systemd vala +wext wimax"
+SLOT="0" # add subslot if libnm-util.so.2 or libnm-glib.so.4 bumps soname version
+IUSE="avahi bluetooth connection-sharing consolekit dhclient +dhcpcd gnutls +introspection kernel_linux +nss modemmanager +ppp resolvconf systemd test vala +wext" # wimax
+
 KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 
 REQUIRED_USE="
 	modemmanager? ( ppp )
 	^^ ( nss gnutls )
 	^^ ( dhclient dhcpcd )
-	?? ( consolekit systemd )
 "
 
 # gobject-introspection-0.10.3 is needed due to gnome bug 642300
 # wpa_supplicant-0.7.3-r3 is needed due to bug 359271
-# libnl:1.1 is needed for linking to net-wireless/wimax libraries
-# XXX: on bump, check that net-wireless/wimax is still using libnl:1.1 !
 # TODO: Qt support?
-COMMON_DEPEND=">=sys-apps/dbus-1.2
+COMMON_DEPEND="
+	>=sys-apps/dbus-1.2
 	>=dev-libs/dbus-glib-0.94
-	virtual/udev[gudev]
-	>=dev-libs/glib-2.26
-	>=sys-auth/polkit-0.97
+	>=dev-libs/glib-2.30
+	>=dev-libs/libnl-3.2.7:3=
+	>=sys-auth/polkit-0.106
 	>=net-libs/libsoup-2.26:2.4=
 	>=net-wireless/wpa_supplicant-0.7.3-r3[dbus]
+	>=virtual/udev-165[gudev]
 	bluetooth? ( >=net-wireless/bluez-4.82 )
 	avahi? ( net-dns/avahi:=[autoipd] )
+	connection-sharing? (
+		net-dns/dnsmasq[dhcp]
+		net-firewall/iptables )
 	gnutls? (
 		dev-libs/libgcrypt:=
 		net-libs/gnutls:= )
+	modemmanager? ( >=net-misc/modemmanager-0.7.991 )
 	nss? ( >=dev-libs/nss-3.11:= )
-	dhclient? ( net-misc/dhcp[client] )
+	dhclient? ( =net-misc/dhcp-4*[client] )
 	dhcpcd? ( >=net-misc/dhcpcd-4.0.0_rc3 )
 	introspection? ( >=dev-libs/gobject-introspection-0.10.3 )
 	ppp? ( >=net-dialup/ppp-2.4.5[ipv6] )
 	resolvconf? ( net-dns/openresolv )
-	connection-sharing? (
-		net-dns/dnsmasq[dhcp]
-		net-firewall/iptables )
-	wimax? (
-		dev-libs/libnl:1.1=
-		>=net-wireless/wimax-1.5.1 )
-	!wimax? ( dev-libs/libnl:3= )
+	systemd? ( >=sys-apps/systemd-183 )
+	|| ( sys-power/upower >=sys-apps/systemd-183 )
 "
 RDEPEND="${COMMON_DEPEND}
-	modemmanager? ( >=net-misc/modemmanager-0.4 )
 	consolekit? ( sys-auth/consolekit )
-	systemd? ( >=sys-apps/systemd-31 )
 "
 DEPEND="${COMMON_DEPEND}
-	virtual/pkgconfig
+	dev-util/gtk-doc-am
 	>=dev-util/intltool-0.40
 	>=sys-devel/gettext-0.17
 	>=sys-kernel/linux-headers-2.6.29
-	doc? ( >=dev-util/gtk-doc-1.8 )
+	virtual/pkgconfig
 	vala? ( $(vala_depend) )
-	!wimax? ( !=dev-libs/libnl-3.2.20 )
+	test? (
+		dev-lang/python:2.7
+		dev-python/dbus-python[python_targets_python2_7]
+		dev-python/pygobject:2[python_targets_python2_7] )
 "
 
 sysfs_deprecated_check() {
@@ -101,99 +101,105 @@ pkg_setup() {
 }
 
 src_prepare() {
-	# Build against libnl:1.1 for net-wireless/wimax-1.5.2 compatibility
-	epatch "${FILESDIR}/${PN}-0.9.4.0-force-libnl1.1-r1.patch"
-	# Update init.d script to provide net and use inactive status if not connected
-	epatch "${FILESDIR}/${PN}-0.9.2.0-init-provide-net-r1.patch"
-	# Bug #402085, https://bugzilla.gnome.org/show_bug.cgi?id=387832
-	epatch "${FILESDIR}/${PN}-0.9.2.0-pre-sleep.patch"
-	# Bug #335147, https://bugzilla.gnome.org/show_bug.cgi?id=679428
-	epatch "${FILESDIR}/${PN}-0.9.4.0-dhclient-ipv6.patch"
-	# https://bugzilla.gnome.org/show_bug.cgi?id=683932
-	epatch "${FILESDIR}/${PN}-0.9.6.0-daemon-signals.patch"
+	DOC_CONTENTS="To modify system network connections without needing to enter the
+		root password, add your user account to the 'plugdev' group."
 
-	epatch_user
+	# Bug #402085, https://bugzilla.gnome.org/show_bug.cgi?id=387832
+	epatch "${FILESDIR}/${PN}-0.9.8.4-pre-sleep.patch"
+
+	# Use python2.7 shebangs for test scripts
+	sed -e 's@\(^#!.*python\)@\12.7@' \
+		-i */tests/*.py || die
+
+	# Fix completiondir, avoid eautoreconf, bug #465100
+	sed -i "s|^completiondir =.*|completiondir = $(get_bashcompdir)|" \
+		cli/completion/Makefile.in || die "sed completiondir failed"
+
+	## Force use of /run, avoid eautoreconf
+	sed -e 's:$localstatedir/run/:/run/:' -i configure || die
 
 	use vala && vala_src_prepare
-	eautoreconf
-	default
+
+	epatch_user # don't remove, users often want custom patches for NM
 }
 
 src_configure() {
+	# TODO: enable wimax when we have a libnl:3 compatible revision of it
+	# We are not ready for bluez5 yet
 	econf \
+		--enable-bluez4 \
 		--disable-more-warnings \
 		--disable-static \
 		--localstatedir=/var \
-		--with-distro=gentoo \
+		$(usex systemd '--disable-ifnet' '--enable-ifnet') \
+		--without-netconfig \
 		--with-dbus-sys-dir=/etc/dbus-1/system.d \
 		--with-udev-dir="$(udev_get_udevdir)" \
 		--with-iptables=/sbin/iptables \
 		--enable-concheck \
 		--with-crypto=$(usex nss nss gnutls) \
-		--with-session-tracking=$(usex consolekit ck $(usex systemd systemd none)) \
-		$(use_enable doc gtk-doc) \
+		--with-session-tracking=$(usex systemd systemd $(usex consolekit consolekit no)) \
+		--with-suspend-resume=$(usex systemd systemd upower) \
 		$(use_enable introspection) \
 		$(use_enable ppp) \
-		$(use_enable wimax) \
+		--disable-wimax \
 		$(use_with dhclient) \
 		$(use_with dhcpcd) \
-		$(use_with doc docs) \
+		$(use_with modemmanager modem-manager-1) \
 		$(use_with resolvconf) \
+		$(use_enable test tests) \
 		$(use_enable vala) \
 		$(use_with wext) \
-		$(use_with wimax libnl-1) \
 		"$(systemd_with_unitdir)"
 }
 
 src_test() {
+	# bug #????
 	cp libnm-util/tests/certs/test_ca_cert.pem src/settings/plugins/ifnet/tests/ || die
-	default
+	Xemake check
 }
 
 src_install() {
 	default
+
+	readme.gentoo_create_doc
+
+	# Gentoo init script
+	newinitd "${FILESDIR}/init.d.NetworkManager" NetworkManager
+
 	# /var/run/NetworkManager is used by some distros, but not by Gentoo
 	rmdir -v "${ED}/var/run/NetworkManager" || die "rmdir failed"
 
 	# Need to keep the /etc/NetworkManager/dispatched.d for dispatcher scripts
 	keepdir /etc/NetworkManager/dispatcher.d
 
-	if use systemd; then
-		# Our init.d script requires running a dispatcher script that annoys
-		# systemd users; bug #434692
-		rm -rv "${ED}/etc/init.d" || die "rm failed"
-	else
-		# Provide openrc net dependency only when nm is connected
-		exeinto /etc/NetworkManager/dispatcher.d
-		newexe "${FILESDIR}/10-openrc-status-r3" 10-openrc-status
-		sed -e "s:@EPREFIX@:${EPREFIX}:g" \
-			-i "${ED}/etc/NetworkManager/dispatcher.d/10-openrc-status" || die
+	# Provide openrc net dependency only when nm is connected
+	exeinto /etc/NetworkManager/dispatcher.d
+	newexe "${FILESDIR}/10-openrc-status-r4" 10-openrc-status
+	sed -e "s:@EPREFIX@:${EPREFIX}:g" \
+		-i "${ED}/etc/NetworkManager/dispatcher.d/10-openrc-status" || die
 
-		# Default conf.d file
-		newconfd "${FILESDIR}/conf.d.NetworkManager" NetworkManager
-	fi
+	# Default conf.d file
+	newconfd "${FILESDIR}/conf.d.NetworkManager" NetworkManager
 
 	# Add keyfile plugin support
 	keepdir /etc/NetworkManager/system-connections
 	chmod 0600 "${ED}"/etc/NetworkManager/system-connections/.keep* # bug #383765
-	insinto /etc/NetworkManager
-	newins "${FILESDIR}/nm-system-settings.conf-ifnet" NetworkManager.conf
+
+	if ! use systemd; then
+		insinto /etc/NetworkManager
+		newins "${FILESDIR}/nm-system-settings.conf-ifnet" NetworkManager.conf
+	fi
 
 	# Allow users in plugdev group to modify system connections
 	insinto /usr/share/polkit-1/rules.d/
 	doins "${FILESDIR}/01-org.freedesktop.NetworkManager.settings.modify.system.rules"
-	if has_version '<sys-auth/polkit-0.106'; then
-		insinto /etc/polkit-1/localauthority/10-vendor.d
-		doins "${FILESDIR}/01-org.freedesktop.NetworkManager.settings.modify.system.pkla"
-	fi
 
-	# Remove useless .la files
 	prune_libtool_files --modules
 }
 
 pkg_postinst() {
-	elog "To modify system network connections without needing to enter the"
-	elog "root password, add your user account to the 'plugdev' group."
+	readme.gentoo_print_elog
 
 	if [[ -e "${EROOT}etc/NetworkManager/nm-system-settings.conf" ]]; then
 		ewarn "The ${PN} system configuration file has moved to a new location."
@@ -220,5 +226,15 @@ pkg_postinst() {
 			elog "without changing its behavior, you may want to remove it."
 			;;
 		esac
+	fi
+
+	if use systemd; then
+		if [[ ${REPLACING_VERSIONS} < 0.9.8.6 ]]; then
+			ewarn "Ifnet plugin won't be used with systemd support enabled"
+			ewarn "as it is meant to be used with openRC and can cause collisions"
+			ewarn "(like bug #485658)."
+			ewarn "Because of this, you will likely need to reintroduce passwords"
+			ewarn "for your used routers."
+		fi
 	fi
 }
