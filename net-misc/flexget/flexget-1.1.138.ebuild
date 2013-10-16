@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/flexget/Attic/flexget-1.1.66.ebuild,v 1.1 2013/07/06 20:45:19 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/flexget/flexget-1.1.138.ebuild,v 1.1 2013/10/16 02:36:59 floppym Exp $
 
 EAPI=5
 
@@ -24,36 +24,38 @@ HOMEPAGE="http://flexget.com/"
 
 LICENSE="MIT"
 SLOT="0"
-IUSE="test"
+IUSE="test transmission"
 
 DEPEND="
 	>=dev-python/feedparser-5.1.3[${PYTHON_USEDEP}]
-	>=dev-python/sqlalchemy-0.7
+	>=dev-python/sqlalchemy-0.7[${PYTHON_USEDEP}]
 	<dev-python/sqlalchemy-0.7.99
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/beautifulsoup:python-2[${PYTHON_USEDEP}]
 	>=dev-python/beautifulsoup-4.1:4[${PYTHON_USEDEP}]
-	<dev-python/beautifulsoup-4.3:4[${PYTHON_USEDEP}]
+	<dev-python/beautifulsoup-4.4:4[${PYTHON_USEDEP}]
 	dev-python/html5lib[${PYTHON_USEDEP}]
 	dev-python/jinja[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-2.0[${PYTHON_USEDEP}]
 	dev-python/PyRSS2Gen[${PYTHON_USEDEP}]
 	dev-python/pynzb[${PYTHON_USEDEP}]
 	dev-python/progressbar[${PYTHON_USEDEP}]
-	dev-python/flask
+	dev-python/flask[${PYTHON_USEDEP}]
 	dev-python/cherrypy[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/python-tvrage[${PYTHON_USEDEP}]
 	>=dev-python/requests-1.0[${PYTHON_USEDEP}]
-	<dev-python/requests-1.99
+	<dev-python/requests-2.99[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	virtual/python-argparse[${PYTHON_USEDEP}]
 "
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	transmission? ( dev-python/transmissionrpc[${PYTHON_USEDEP}] )
+"
 DEPEND+=" test? ( dev-python/nose[${PYTHON_USEDEP}] )"
 
 if [[ ${PV} == 9999 ]]; then
-	DEPEND+=" dev-python/paver"
+	DEPEND+=" dev-python/paver[${PYTHON_USEDEP}]"
 else
 	S="${WORKDIR}/${MY_P}"
 fi
