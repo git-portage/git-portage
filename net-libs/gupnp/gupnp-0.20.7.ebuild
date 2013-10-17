@@ -1,13 +1,16 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/gupnp/Attic/gupnp-0.20.4.ebuild,v 1.1 2013/08/01 18:49:36 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/gupnp/Attic/gupnp-0.20.7.ebuild,v 1.1 2013/10/17 20:45:12 pacho Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
 VALA_MIN_API_VERSION="0.14"
 VALA_USE_DEPEND="vapigen"
+# FIXME: Claims to works with python3 but appears to be wishful thinking
+PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_REQ_USE="xml"
 
-inherit gnome2 vala
+inherit gnome2 python-r1 vala
 
 DESCRIPTION="An object-oriented framework for creating UPnP devs and control points"
 HOMEPAGE="http://gupnp.org/"
@@ -17,7 +20,10 @@ SLOT="0/4"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="connman +introspection kernel_linux networkmanager"
 
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+
 RDEPEND="
+	${PYTHON_DEPS}
 	>=net-libs/gssdp-0.13.0:0=[introspection?]
 	>=net-libs/libsoup-2.28.2:2.4[introspection?]
 	>=dev-libs/glib-2.24:2
@@ -39,6 +45,7 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext
 	virtual/pkgconfig
 "
+
 src_prepare() {
 	use introspection && vala_src_prepare
 	gnome2_src_prepare
@@ -54,4 +61,9 @@ src_configure() {
 		$(use_enable introspection) \
 		--disable-static \
 		--with-context-manager=${backend}
+}
+
+src_install() {
+	gnome2_src_install
+	python_parallel_foreach_impl python_doscript tools/gupnp-binding-tool
 }
