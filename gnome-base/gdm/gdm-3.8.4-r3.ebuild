@@ -1,18 +1,26 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/Attic/gdm-3.8.4-r1.ebuild,v 1.1 2013/09/28 08:36:50 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/Attic/gdm-3.8.4-r3.ebuild,v 1.1 2013/10/18 20:05:17 pacho Exp $
 
 EAPI="5"
 GNOME2_LA_PUNT="yes"
 
 inherit autotools eutils gnome2 pam readme.gentoo systemd user
 
-DESCRIPTION="GNOME Display Manager"
-HOMEPAGE="https://live.gnome.org/GDM"
+DESCRIPTION="GNOME Display Manager for managing graphical display servers and user logins"
+HOMEPAGE="https://wiki.gnome.org/GDM"
 
-LICENSE="GPL-2+"
+SRC_URI="${SRC_URI}
+	branding? ( http://www.mail-archive.com/tango-artists@lists.freedesktop.org/msg00043/tango-gentoo-v1.1.tar.gz )
+"
+
+LICENSE="
+	GPL-2+
+	branding? ( CC-Sampling-Plus-1.0 )
+"
+
 SLOT="0"
-IUSE="accessibility audit fallback fprint +gnome-shell +introspection ipv6 plymouth selinux smartcard +systemd tcpd test xinerama"
+IUSE="accessibility audit branding fallback fprint +gnome-shell +introspection ipv6 plymouth selinux smartcard +systemd tcpd test xinerama"
 KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86"
 
 # NOTE: x11-base/xorg-server dep is for X_SERVER_PATH etc, bug #295686
@@ -50,7 +58,9 @@ COMMON_DEPEND="
 	systemd? ( >=sys-apps/systemd-186[pam] )
 	!systemd? (
 		>=x11-base/xorg-server-1.14.3-r1
-		!<sys-apps/openrc-0.12 )
+		sys-auth/consolekit
+		!<sys-apps/openrc-0.12
+	)
 	sys-auth/pambase[systemd?]
 
 	audit? ( sys-process/audit )
@@ -134,11 +144,17 @@ src_prepare() {
 	# Gentoo does not have a fingerprint-auth pam stack
 	epatch "${FILESDIR}/${PN}-3.8.4-fingerprint-auth.patch"
 
+	# Make pam config compatible with non-systemd setups, bug #486822
+	epatch "${FILESDIR}/${PN}-3.8.4-pam-systemd.patch"
+
 	# make gdm-fallback session the default if USE=-gnome-shell
 	if ! use gnome-shell; then
 		sed -e "s:'gdm-shell':'gdm-fallback':" \
 			-i data/00-upstream-settings || die "sed failed"
 	fi
+
+	# Show logo when branding is enabled
+	use branding && epatch "${FILESDIR}/${PN}-3.8.4-logo.patch"
 
 	mkdir -p "${S}"/m4
 	sed -i 's/AM_CONFIG_HEADER/AC_CONFIG_HEADERS/g' configure.ac || die
@@ -163,7 +179,6 @@ src_configure() {
 		--with-default-pam-config=exherbo \
 		--with-at-spi-registryd-directory="${EPREFIX}"/usr/libexec \
 		--with-initial-vt=7 \
-		--without-console-kit \
 		--without-xevie \
 		$(use_with audit libaudit) \
 		$(use_enable fallback fallback-greeter) \
@@ -171,6 +186,7 @@ src_configure() {
 		$(use_with plymouth) \
 		$(use_with selinux) \
 		$(use_with systemd) \
+		$(use_with !systemd console-kit) \
 		$(use_enable systemd systemd-journal) \
 		$(systemd_with_unitdir) \
 		$(use_with tcpd tcp-wrappers) \
@@ -195,6 +211,8 @@ src_install() {
 	# install XDG_DATA_DIRS gdm changes
 	echo 'XDG_DATA_DIRS="/usr/share/gdm"' > 99xdg-gdm
 	doenvd 99xdg-gdm
+
+	use branding && newicon "${WORKDIR}/tango-gentoo-v1.1/scalable/gentoo.svg" gentoo-gdm.svg
 
 	readme.gentoo_create_doc
 }
