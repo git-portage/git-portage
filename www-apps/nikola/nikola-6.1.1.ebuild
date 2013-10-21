@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/nikola/Attic/nikola-6.1.0.ebuild,v 1.1 2013/10/06 06:36:28 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/nikola/Attic/nikola-6.1.1.ebuild,v 1.1 2013/10/21 04:45:08 yngwin Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python{2_7,3_3} )
