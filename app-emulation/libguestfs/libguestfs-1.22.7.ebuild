@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/libguestfs/Attic/libguestfs-1.22.6.ebuild,v 1.1 2013/10/01 17:51:40 maksbotan Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/libguestfs/Attic/libguestfs-1.22.7.ebuild,v 1.1 2013/10/21 07:04:59 qnikst Exp $
 
 EAPI="5"
 
@@ -23,7 +23,7 @@ LICENSE="GPL-2 LGPL-2"
 SLOT="0/${MY_PV_1}"
 
 KEYWORDS="~amd64"
-IUSE="erlang +fuse debug ocaml doc +perl ruby static-libs
+IUSE="erlang +fuse debug +ocaml doc +perl ruby static-libs
 selinux systemtap introspection inspect-icons test lua"
 
 # Failires - doc
@@ -153,10 +153,10 @@ src_install() {
 
 pkg_postinst() {
 
-	if !use perl ; then
+	if ! use perl ; then
 		einfo "Perl based tools NOT build"
 	fi
-	if !use ocaml ; then
+	if ! use ocaml ; then
 		einfo "Ocaml based tools ( sysprep , ... ) NOT installed"
 	fi
 }
