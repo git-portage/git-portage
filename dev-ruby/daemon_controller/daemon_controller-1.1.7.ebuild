@@ -1,11 +1,11 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/daemon_controller/Attic/daemon_controller-1.1.5.ebuild,v 1.1 2013/07/31 14:12:03 mrueg Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/daemon_controller/Attic/daemon_controller-1.1.7.ebuild,v 1.1 2013/10/21 07:35:45 mrueg Exp $
 
 EAPI=5
 
 # jruby → fails tests, looks like Unix sockets are bad on JRuby
-USE_RUBY="ruby18 ruby19"
+USE_RUBY="ruby18 ruby19 ruby20"
 
 RUBY_FAKEGEM_RECIPE_TEST="rspec"
 
