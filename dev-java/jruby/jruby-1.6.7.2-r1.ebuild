@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jruby/Attic/jruby-1.6.8.ebuild,v 1.2 2013/07/16 09:01:23 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jruby/Attic/jruby-1.6.7.2-r1.ebuild,v 1.1 2013/10/24 19:32:40 tomwij Exp $
 
 EAPI="4"
 JAVA_PKG_IUSE="doc source test"
@@ -19,24 +19,24 @@ IUSE="bsf ssl"
 # jffi still needed? Or do we call that jnr-ffi?
 #  jnr-ffi depends on jffi which depends on libffi
 CDEPEND=">=dev-java/bytelist-1.0.8:0
-	>=dev-java/jline-1.0:0
+	>=dev-java/jline-0.9.94:0
 	>=dev-java/joni-1.1.3:0
 	>=dev-java/jnr-netdb-1.0:0
 	>=dev-java/jvyamlb-0.2.5:0
-	>=dev-java/asm-3.3.1:3
+	>=dev-java/asm-3.2:3
 	>=dev-java/jcodings-1.0.5:0
 	dev-java/jffi:1.0
 	dev-java/jnr-constants:0
 	dev-java/jnr-ffi:0.5
 	dev-java/jnr-posix:1.1
-	>=dev-java/joda-time-1.6:0
+	dev-java/joda-time:0
 	dev-util/jay:0[java]
 	dev-java/nailgun:0
 	dev-java/jgrapht:0
 	dev-java/ant-core:0
 	dev-java/bsf:2.3
 	dev-java/osgi-core-api:0
-	>=dev-java/snakeyaml-1.9:0
+	dev-java/snakeyaml:1.9
 	dev-java/jzlib:1.1"
 
 RDEPEND="${CDEPEND}
@@ -75,7 +75,7 @@ JAVA_ANT_IGNORE_SYSTEM_CLASSES="true"
 EANT_GENTOO_CLASSPATH="ant-core asm-3 bsf-2.3 bytelist jnr-constants jay \
 jcodings jffi-1.0 jline \
 joda-time joni jnr-ffi-0.5 jnr-posix-1.1 jnr-netdb jvyamlb nailgun jgrapht osgi-core-api \
-snakeyaml jzlib-1.1"
+snakeyaml-1.9 jzlib-1.1"
 EANT_NEEDS_TOOLS="true"
 
 pkg_setup() {
@@ -105,7 +105,7 @@ pkg_setup() {
 }
 
 java_prepare() {
-	epatch "${FILESDIR}"/${P}-bash-launcher.patch
+	epatch "${FILESDIR}"/${PN}-bash-launcher.patch
 	epatch "${FILESDIR}/1.5.1/build.xml.patch"
 
 	# We don't need to use Retroweaver. There is a jarjar and a regular jar
@@ -132,8 +132,7 @@ src_compile() {
 
 	export RUBYOPT=""
 	einfo $RUBYOPT
-	#eant jar $(use_doc apidocs) -Djdk1.5+=true ${flags}
-	eant -Djdk1.5+=true ${flags}
+	eant jar $(use_doc apidocs) -Djdk1.5+=true ${flags}
 }
 
 src_test() {
