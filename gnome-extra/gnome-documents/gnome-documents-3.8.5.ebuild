@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-documents/Attic/gnome-documents-3.8.3.1.ebuild,v 1.2 2013/07/24 22:15:19 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-documents/Attic/gnome-documents-3.8.5.ebuild,v 1.1 2013/10/26 19:28:27 pacho Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
@@ -8,7 +8,7 @@ GCONF_DEBUG="no"
 inherit eutils gnome2
 
 DESCRIPTION="A document manager application for GNOME"
-HOMEPAGE="https://live.gnome.org/Design/Apps/Documents"
+HOMEPAGE="https://wiki.gnome.org/Design/Apps/Documents"
 
 LICENSE="GPL-2+"
 SLOT="0"
@@ -31,7 +31,7 @@ COMMON_DEPEND="
 	>=net-libs/libzapojit-0.0.2
 	>=net-libs/webkit-gtk-1.10.0:3
 	>=x11-libs/gdk-pixbuf-2.25:2[introspection]
-	>=x11-libs/gtk+-3.7.10:3[introspection]
+	>=x11-libs/gtk+-3.7.7:3[introspection]
 	x11-libs/pango[introspection]
 "
 RDEPEND="${COMMON_DEPEND}
