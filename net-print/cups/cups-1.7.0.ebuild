@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.7_rc1.ebuild,v 1.5 2013/10/21 15:21:03 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.7.0.ebuild,v 1.1 2013/10/30 21:48:47 dilfridge Exp $
 
 EAPI=5
 
@@ -23,7 +23,7 @@ if [[ ${PV} == *9999 ]]; then
 	KEYWORDS=""
 else
 	SRC_URI="http://www.cups.org/software/${MY_PV}/${MY_P}-source.tar.bz2"
-	KEYWORDS=""
+	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd"
 fi
 
 DESCRIPTION="The Common Unix Printing System"
@@ -34,7 +34,7 @@ SLOT="0"
 IUSE="acl dbus debug +filters gnutls java kerberos lprng-compat pam
 	python selinux +ssl static-libs +threads usb X xinetd zeroconf"
 
-LANGS="ca es fr ja ru"
+LANGS="ca es fr it ja ru"
 for X in ${LANGS} ; do
 	IUSE="${IUSE} +linguas_${X}"
 done
@@ -91,7 +91,6 @@ PATCHES=(
 	"${FILESDIR}/${PN}-1.6.0-fix-install-perms.patch"
 	"${FILESDIR}/${PN}-1.4.4-nostrip.patch"
 	"${FILESDIR}/${PN}-1.5.0-systemd-socket-2.patch"	# systemd support
-	"${FILESDIR}/${PN}-1.6.3-colord-profile.patch"
 )
 
 pkg_setup() {
