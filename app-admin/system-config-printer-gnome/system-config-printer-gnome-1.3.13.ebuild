@@ -1,12 +1,13 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/system-config-printer-gnome/Attic/system-config-printer-gnome-1.4.1.ebuild,v 1.1 2013/08/11 20:05:15 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/system-config-printer-gnome/system-config-printer-gnome-1.3.13.ebuild,v 1.1 2013/10/30 18:05:19 pacho Exp $
 
 EAPI="5"
+GCONF_DEBUG="no"
 PYTHON_COMPAT=( python2_{6,7} )
 PYTHON_REQ_USE="xml"
 
-inherit autotools eutils fdo-mime python-single-r1 versionator
+inherit autotools gnome2 eutils python-single-r1 versionator
 
 MY_P="${PN%-gnome}-${PV}"
 MY_V="$(get_version_component_range 1-2)"
@@ -31,13 +32,10 @@ RESTRICT="test"
 RDEPEND="
 	${PYTHON_DEPS}
 	~app-admin/system-config-printer-common-${PV}
-	dev-python/pycairo[${PYTHON_USEDEP}]
+	dev-python/notify-python
 	>=dev-python/pycups-1.9.60[${PYTHON_USEDEP}]
-	dev-python/pygobject:3[${PYTHON_USEDEP}]
-	x11-libs/gtk+:3[introspection]
-	x11-libs/libnotify[introspection]
-	x11-libs/pango[introspection]
-	gnome-keyring? ( gnome-base/libgnome-keyring[introspection] )
+	>=dev-python/pygtk-2.4
+	gnome-keyring? ( gnome-base/libgnome-keyring )
 "
 DEPEND="${RDEPEND}
 	app-text/docbook-xml-dtd:4.1.2
@@ -65,8 +63,9 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-1.4.1-split.patch
+	epatch "${FILESDIR}"/${PN}-1.3.13-split.patch
 	eautoreconf
+	gnome2_src_prepare
 }
 
 src_configure() {
@@ -79,24 +78,13 @@ src_configure() {
 		myconf="${myconf} --enable-nls"
 	fi
 
-	econf \
+	gnome2_src_configure \
 		--with-desktop-vendor=Gentoo \
 		--without-udev-rules \
 		${myconf}
 }
 
 src_install() {
-	dodoc AUTHORS ChangeLog README || die "dodoc failed"
-
-	emake DESTDIR="${ED}" install || die "emake install failed"
-
+	gnome2_src_install
 	python_fix_shebang "${ED}"
-}
-
-pkg_postinst() {
-	fdo-mime_desktop_database_update
-}
-
-pkg_postrm() {
-	fdo-mime_desktop_database_update
 }
