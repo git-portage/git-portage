@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-docs/Attic/linux-docs-2.6.16.ebuild,v 1.15 2008/11/26 23:06:25 mpagano Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-docs/Attic/linux-docs-3.0.101.ebuild,v 1.1 2013/10/31 12:23:09 mpagano Exp $
 
 inherit toolchain-funcs
 
@@ -9,16 +9,17 @@ S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="Developer documentation generated from the Linux kernel"
 HOMEPAGE="http://www.kernel.org/"
-SRC_URI="mirror://kernel/pub/linux/kernel/v2.6/${MY_P}.tar.bz2"
+SRC_URI="mirror://kernel/linux/kernel/v3.x/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm ~hppa ia64 m68k ppc ppc64 s390 sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 
 IUSE="html"
 DEPEND="app-text/docbook-sgml-utils
 		app-text/xmlto
-		sys-apps/sed"
+		sys-apps/sed
+		~app-text/docbook-xml-dtd-4.1.2"
 RDEPEND=""
 
 src_unpack() {
@@ -29,12 +30,10 @@ src_unpack() {
 		-e "s:/usr/local/man:${D}/usr/share/man:g" \
 		"${S}"/Documentation/DocBook/Makefile
 
+	# fix for parallel build as per bug #248337
 	sed -i \
 		-e "s:\$(Q)\$(MAKE) \$(build)=Documentation\/DocBook \$@:+\$(Q)\$(MAKE) \$(build)=Documentation\/DocBook \$@:" \
 		"${S}"/Makefile
-
-	# fix for arch change i386->x86
-	ln -s "${S}"/arch/i386 "${S}"/arch/x86
 }
 
 src_compile() {
