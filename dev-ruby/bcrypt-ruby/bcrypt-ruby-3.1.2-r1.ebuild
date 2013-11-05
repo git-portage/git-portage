@@ -1,10 +1,10 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/bcrypt-ruby/Attic/bcrypt-ruby-3.1.1.ebuild,v 1.1 2013/07/18 01:20:26 mrueg Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/bcrypt-ruby/Attic/bcrypt-ruby-3.1.2-r1.ebuild,v 1.1 2013/11/05 00:43:13 mrueg Exp $
 
 EAPI=5
 
-USE_RUBY="ruby18 ruby19"
+USE_RUBY="ruby18 ruby19 ruby20"
 
 RUBY_FAKEGEM_RECIPE_TEST="rspec"
 
@@ -31,6 +31,6 @@ each_ruby_configure() {
 }
 
 each_ruby_compile() {
-	emake -Cext/mri
+	emake -Cext/mri V=1
 	cp ext/mri/*$(get_modname) lib/ || die
 }
