@@ -1,9 +1,9 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/radius/Attic/radius-0.7.4.ebuild,v 1.1 2013/09/20 02:43:31 mrueg Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/radius/radius-0.7.4-r1.ebuild,v 1.1 2013/11/05 00:59:03 mrueg Exp $
 
 EAPI=5
-USE_RUBY="ruby18 ruby19 jruby"
+USE_RUBY="ruby18 ruby19 ruby20 jruby"
 
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG QUICKSTART.rdoc README.rdoc"
 
