@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libpng/Attic/libpng-1.5.17.ebuild,v 1.1 2013/07/22 11:51:02 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libpng/Attic/libpng-1.5.17-r15.ebuild,v 1.1 2013/11/06 08:12:36 polynomial-c Exp $
 
 # this ebuild is only for the libpng15.so.15 SONAME for ABI compat
 
