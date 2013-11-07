@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/Attic/xen-tools-4.2.2-r4.ebuild,v 1.8 2013/11/04 12:58:47 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/Attic/xen-tools-4.2.2-r5.ebuild,v 1.1 2013/11/07 00:46:42 idella4 Exp $
 
 EAPI=5
 
@@ -224,7 +224,11 @@ src_prepare() {
 		"${FILESDIR}"/xen-4.2-CVE-2013-18to19-XSA-55.patch \
 		"${FILESDIR}"/xen-4.2-CVE-2013-20to23-XSA-55.patch \
 		"${FILESDIR}"/xen-4-CVE-2013-2072-XSA-56.patch \
-		"${FILESDIR}"/xen-4.2-CVE-XSA-57.patch
+		"${FILESDIR}"/xen-4.2-CVE-XSA-57.patch \
+		"${FILESDIR}"/${PN}-4-CVE-2013-4369-XSA-68.patch \
+		"${FILESDIR}"/${PN}-4-CVE-2013-4370-XSA-69.patch \
+                "${FILESDIR}"/${PN}-4-CVE-2013-4371-XSA-70.patch \
+                "${FILESDIR}"/${PN}-4-CVE-2013-4416-XSA-72.patch
 
 	# Bug 472438
 	sed -e 's:^BASH_COMPLETION_DIR ?= $(CONFIG_DIR)/bash_completion.d:BASH_COMPLETION_DIR ?= $(SHARE_DIR)/bash-completion:' \
