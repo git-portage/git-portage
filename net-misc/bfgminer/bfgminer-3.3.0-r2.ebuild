@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/bfgminer/Attic/bfgminer-3.4.0.ebuild,v 1.1 2013/10/27 16:30:15 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/bfgminer/Attic/bfgminer-3.3.0-r2.ebuild,v 1.1 2013/11/07 17:49:02 blueness Exp $
 
 EAPI="4"
 
@@ -12,13 +12,9 @@ SRC_URI="http://luke.dashjr.org/programs/bitcoin/files/${PN}/${PV}/${P}.tbz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm ~mips ~ppc ~ppc64 ~x86"
 
-# Waiting for dev-libs/hidapi to be keyworded
-#KEYWORDS="~amd64 ~arm ~mips ~ppc ~ppc64 ~x86"
-
-# TODO: knc (needs i2c-tools header)
-IUSE="+adl avalon bitforce bfsb bigpic bitfury cpumining examples hardened icarus littlefury lm_sensors metabank modminer nanofury ncurses +opencl proxy proxy_getwork proxy_stratum scrypt +udev unicode x6500 ztex"
+IUSE="+adl avalon bitforce bfsb bigpic bitfury cpumining examples hardened icarus littlefury lm_sensors metabank modminer ncurses +opencl proxy proxy_getwork proxy_stratum scrypt +udev unicode x6500 ztex"
 REQUIRED_USE="
 	|| ( avalon bitforce cpumining icarus modminer opencl proxy x6500 ztex )
 	adl? ( opencl )
@@ -27,7 +23,6 @@ REQUIRED_USE="
 	littlefury? ( bitfury )
 	lm_sensors? ( opencl )
 	metabank? ( bitfury )
-	nanofury? ( bitfury )
 	scrypt? ( || ( cpumining opencl ) )
 	unicode? ( ncurses )
 	proxy? ( || ( proxy_getwork proxy_stratum ) )
@@ -47,9 +42,6 @@ DEPEND="
 	)
 	lm_sensors? (
 		sys-apps/lm_sensors
-	)
-	nanofury? (
-		dev-libs/hidapi
 	)
 	proxy_getwork? (
 		net-libs/libmicrohttpd
@@ -94,6 +86,8 @@ src_configure() {
 		else
 			with_curses='--with-curses=ncurses'
 		fi
+	else
+		with_curses='--without-curses'
 	fi
 
 	CFLAGS="${CFLAGS}" \
@@ -110,12 +104,10 @@ src_configure() {
 		$(use_enable littlefury) \
 		$(use_enable metabank) \
 		$(use_enable modminer) \
-		$(use_enable nanofury) \
-		$(use_with ncurses curses) \
 		$(use_enable opencl) \
 		$(use_enable scrypt) \
 		--with-system-libblkmaker \
-		$with_curses
+		$with_curses \
 		$(use_with udev libudev) \
 		$(use_with lm_sensors sensors) \
 		$(use_with proxy_getwork libmicrohttpd) \
