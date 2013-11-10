@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-nouveau/Attic/xf86-video-nouveau-1.0.8.ebuild,v 1.1 2013/06/18 13:36:36 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-nouveau/xf86-video-nouveau-1.0.10.ebuild,v 1.1 2013/11/10 17:31:20 chithanh Exp $
 
 EAPI=5
 XORG_DRI="always"
