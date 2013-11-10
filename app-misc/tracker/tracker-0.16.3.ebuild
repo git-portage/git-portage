@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/Attic/tracker-0.16.1.ebuild,v 1.4 2013/05/14 21:37:42 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/Attic/tracker-0.16.3.ebuild,v 1.1 2013/11/10 11:06:26 pacho Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
@@ -54,7 +54,7 @@ RDEPEND="
 		>=www-client/firefox-bin-4.0 ) )
 	flac? ( >=media-libs/flac-1.2.1 )
 	gif? ( media-libs/giflib )
-	gsf? ( >=gnome-extra/libgsf-1.13 )
+	gsf? ( >=gnome-extra/libgsf-1.14.24 )
 	gstreamer? (
 		media-libs/gstreamer:1.0
 		media-libs/gst-plugins-base:1.0 )
@@ -104,6 +104,10 @@ DEPEND="${RDEPEND}
 "
 PDEPEND="nautilus? ( ~gnome-extra/nautilus-tracker-tags-${PV} )"
 
+# configure mixes enable-compile-warnings and with-compile-warnings
+# See upstream bug #705315
+QA_CONFIGURE_OPTIONS="--enable-compile-warnings"
+
 function inotify_enabled() {
 	if linux_config_exists; then
 		if ! linux_chkconfig_present INOTIFY_USER; then
@@ -147,7 +151,7 @@ src_prepare() {
 		-i tests/libtracker-fts/tracker-parser-test.c || die
 	# Fails inside portage, not outside
 	# https://bugzilla.gnome.org/show_bug.cgi?id=699413
-	sed -e '\%/steroids/tracker/tracker_sparql_update_async%,+1 d' \
+	sed -e '\%/steroids/tracker/tracker_sparql_update_async%,+3 d' \
 		-i tests/tracker-steroids/tracker-test.c || die
 
 	eautoreconf # See bug #367975
@@ -188,8 +192,15 @@ src_configure() {
 		--disable-libstreamanalyzer \
 		--disable-nautilus-extension \
 		--disable-qt \
+		--enable-abiword \
+		--enable-artwork \
+		--enable-dvi \
+		--enable-icon \
+		--enable-ps \
+		--enable-text \
 		--enable-guarantee-metadata \
 		--enable-introspection \
+		--enable-libpng \
 		--enable-tracker-fts \
 		--with-enca \
 		--with-unicode-support=libicu \
@@ -211,6 +222,7 @@ src_configure() {
 		$(use_enable libsecret) \
 		$(use_enable miner-fs) \
 		$(use_enable mp3 taglib) \
+		$(use_enable mp3) \
 		$(use_enable networkmanager network-manager) \
 		$(use_enable pdf poppler) \
 		$(use_enable playlist) \
