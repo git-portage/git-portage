@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/Attic/systemd-204-r2.ebuild,v 1.2 2013/10/18 19:07:26 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/Attic/systemd-204-r2.ebuild,v 1.3 2013/11/11 13:56:48 mgorny Exp $
 
 EAPI=5
 
@@ -8,7 +8,7 @@ AUTOTOOLS_PRUNE_LIBTOOL_FILES=all
 AUTOTOOLS_AUTORECONF=yes
 PYTHON_COMPAT=( python2_7 )
 
-inherit autotools-utils bash-completion-r1 linux-info multilib pam python-single-r1 systemd toolchain-funcs udev user
+inherit autotools-utils bash-completion-r1 fcaps linux-info multilib pam python-single-r1 systemd toolchain-funcs udev user
 
 DESCRIPTION="System and service manager for Linux"
 HOMEPAGE="http://www.freedesktop.org/wiki/Software/systemd"

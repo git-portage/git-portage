@@ -1,44 +1,50 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/Attic/systemd-204-r1.ebuild,v 1.10 2013/11/11 13:56:48 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/Attic/systemd-204-r3.ebuild,v 1.1 2013/11/11 13:56:48 mgorny Exp $
 
 EAPI=5
 
 AUTOTOOLS_PRUNE_LIBTOOL_FILES=all
+AUTOTOOLS_AUTORECONF=yes
 PYTHON_COMPAT=( python2_7 )
-inherit autotools-utils bash-completion-r1 fcaps linux-info multilib pam python-single-r1 systemd toolchain-funcs udev user
+
+inherit autotools-utils bash-completion-r1 fcaps linux-info multilib multilib-minimal pam python-single-r1 systemd toolchain-funcs udev user
 
 DESCRIPTION="System and service manager for Linux"
 HOMEPAGE="http://www.freedesktop.org/wiki/Software/systemd"
-SRC_URI="http://www.freedesktop.org/software/systemd/${P}.tar.xz"
+SRC_URI="http://www.freedesktop.org/software/systemd/${P}.tar.xz
+	http://dev.gentoo.org/~pacho/${PN}/${P}-patches.tar.xz"
 
 LICENSE="GPL-2 LGPL-2.1 MIT"
 SLOT="0"
-KEYWORDS="amd64 arm ppc ppc64 x86"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
 IUSE="acl audit cryptsetup doc +firmware-loader gcrypt gudev http introspection
 	keymap +kmod lzma openrc pam policykit python qrcode selinux static-libs
 	tcpd test vanilla xattr"
 
 MINKV="2.6.39"
 
-COMMON_DEPEND=">=sys-apps/dbus-1.6.8-r1
+COMMON_DEPEND="
+	>=sys-apps/dbus-1.6.8-r1
 	>=sys-apps/util-linux-2.20
 	sys-libs/libcap
 	acl? ( sys-apps/acl )
 	audit? ( >=sys-process/audit-2 )
 	cryptsetup? ( >=sys-fs/cryptsetup-1.4.2 )
 	gcrypt? ( >=dev-libs/libgcrypt-1.4.5 )
-	gudev? ( >=dev-libs/glib-2 )
+	gudev? ( >=dev-libs/glib-2[${MULTILIB_USEDEP}] )
 	http? ( net-libs/libmicrohttpd )
 	introspection? ( >=dev-libs/gobject-introspection-1.31.1 )
 	kmod? ( >=sys-apps/kmod-12 )
-	lzma? ( app-arch/xz-utils )
+	lzma? ( app-arch/xz-utils[${MULTILIB_USEDEP}] )
 	pam? ( virtual/pam )
 	python? ( ${PYTHON_DEPS} )
 	qrcode? ( media-gfx/qrencode )
 	selinux? ( sys-libs/libselinux )
 	tcpd? ( sys-apps/tcp-wrappers )
-	xattr? ( sys-apps/attr )"
+	xattr? ( sys-apps/attr )
+	abi_x86_32? ( !<=app-emulation/emul-linux-x86-baselibs-20130224-r9
+		!app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)] )"
 
 # baselayout-2.2 has /run
 RDEPEND="${COMMON_DEPEND}
@@ -51,10 +57,12 @@ RDEPEND="${COMMON_DEPEND}
 	)
 	!sys-auth/nss-myhostname
 	!<sys-libs/glibc-2.10
-	!sys-fs/udev"
-
-PDEPEND=">=sys-apps/hwids-20130326.1[udev]
-	!vanilla? ( ~sys-apps/gentoo-systemd-integration-1 )"
+	!sys-fs/udev
+"
+PDEPEND="
+	>=sys-apps/hwids-20130326.1[udev]
+	!vanilla? ( ~sys-apps/gentoo-systemd-integration-1 )
+"
 
 DEPEND="${COMMON_DEPEND}
 	app-arch/xz-utils
@@ -71,8 +79,7 @@ DEPEND="${COMMON_DEPEND}
 pkg_pretend() {
 	local CONFIG_CHECK="~AUTOFS4_FS ~BLK_DEV_BSG ~CGROUPS ~DEVTMPFS
 		~FANOTIFY ~HOTPLUG ~INOTIFY_USER ~IPV6 ~NET ~PROC_FS ~SIGNALFD
-		~SYSFS ~!IDE ~!SYSFS_DEPRECATED ~!SYSFS_DEPRECATED_V2
-		~!GRKERNSEC_PROC"
+		~SYSFS ~!IDE ~!SYSFS_DEPRECATED ~!SYSFS_DEPRECATED_V2"
 #		~!FW_LOADER_USER_HELPER"
 
 	use acl && CONFIG_CHECK+=" ~TMPFS_POSIX_ACL"
@@ -124,19 +131,16 @@ pkg_setup() {
 
 src_prepare() {
 	local PATCHES=(
-		# race condition in polkit use, bug #485546
-		"${FILESDIR}"/204-0001-polkit-Avoid-race-condition-in-scraping-proc.patch
 		# localectl does not find keymaps, bug #474946
 		"${FILESDIR}"/204-0002-Add-usr-share-keymaps-to-localectl-supported-locatio.patch
-		# tabs do not work in EnvironmentFile=, bug #481554
-		"${FILESDIR}"/204-0003-Allow-tabs-in-environment-files.patch
-		"${FILESDIR}"/204-0004-Actually-allow-tabs-in-environment-files.patch
+		# Backports from newer versions pulled by Fedora maintainers
+		"${WORKDIR}/${P}-patches"/*.patch
 	)
 
 	autotools-utils_src_prepare
 }
 
-src_configure() {
+multilib_src_configure() {
 	local myeconfargs=(
 		--localstatedir=/var
 		--with-pamlibdir=$(getpam_mod_dir)
@@ -189,21 +193,87 @@ src_configure() {
 		)
 	fi
 
+	if ! multilib_is_native_abi; then
+		myeconfargs+=(
+			ac_cv_search_cap_init=
+			ac_cv_header_sys_capability_h=yes
+			DBUS_CFLAGS=' '
+			DBUS_LIBS=' '
+
+			--disable-acl
+			--disable-audit
+			--disable-gcrypt
+			--disable-gtk-doc
+			--disable-introspection
+			--disable-kmod
+			--disable-libcryptsetup
+			--disable-microhttpd
+			--disable-pam
+			--disable-polkit
+			--disable-qrencode
+			--disable-selinux
+			--disable-tcpwrap
+			--disable-tests
+			--disable-xattr
+			--disable-xz
+			--disable-python-devel
+		)
+	fi
+
 	# Work around bug 463846.
 	tc-export CC
 
 	autotools-utils_src_configure
 }
 
-src_compile() {
-	autotools-utils_src_compile \
+multilib_src_compile() {
+	local mymakeopts=(
 		udevlibexecdir="${MY_UDEVDIR}"
+	)
+
+	if multilib_is_native_abi; then
+		emake "${mymakeopts[@]}"
+	else
+		# prerequisites for gudev
+		use gudev && emake src/gudev/gudev{enumtypes,marshal}.{c,h}
+
+		echo 'gentoo: $(lib_LTLIBRARIES) $(pkgconfiglib_DATA)' | \
+		emake "${mymakeopts[@]}" -f Makefile -f - gentoo
+	fi
 }
 
-src_install() {
-	autotools-utils_src_install -j1 \
-		udevlibexecdir="${MY_UDEVDIR}" \
+multilib_src_test() {
+	multilib_is_native_abi || continue
+
+	default
+}
+
+multilib_src_install() {
+	local mymakeopts=(
+		udevlibexecdir="${MY_UDEVDIR}"
 		dist_udevhwdb_DATA=
+		DESTDIR="${D}"
+	)
+
+	if multilib_is_native_abi; then
+		emake "${mymakeopts[@]}" install
+	else
+		mymakeopts+=(
+			install-libLTLIBRARIES
+			install-pkgconfiglibDATA
+			install-includeHEADERS
+			# safe to call unconditionally, 'installs' empty list
+			install-libgudev_includeHEADERS
+			install-pkgincludeHEADERS
+		)
+
+		emake "${mymakeopts[@]}"
+	fi
+}
+
+multilib_src_install_all() {
+	prune_libtool_files --modules
+	einstalldocs
 
 	# keep udev working without initramfs, for openrc compat
 	dodir /bin /sbin
