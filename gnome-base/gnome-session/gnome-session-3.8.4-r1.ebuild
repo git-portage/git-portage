@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-session/Attic/gnome-session-3.8.2.1-r1.ebuild,v 1.2 2013/07/28 17:37:17 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-session/Attic/gnome-session-3.8.4-r1.ebuild,v 1.1 2013/11/13 19:43:26 pacho Exp $
 
 EAPI="5"
 GCONF_DEBUG="yes"
@@ -70,14 +70,17 @@ DEPEND="${COMMON_DEPEND}
 # gnome-base/gdm does not provide gnome.desktop anymore
 
 src_prepare() {
-	# Don't show desktop files with NoDisplay=true (from 'master')
-	epatch "${FILESDIR}/${PN}-3.8.2.1-filter-nodisplay.patch"
-
 	# Silence errors due to weird checks for libX11
 	sed -e 's/\(PANGO_PACKAGES="\)pangox/\1/' -i configure.ac configure || die
 
 	# Allow people to configure startup apps, bug #464968, upstream bug #663767
 	sed -i -e '/NoDisplay/d' data/session-properties.desktop.in.in || die
+
+	# Fix a possible crash in the presence interface (from 3.8 branch)
+	epatch "${FILESDIR}/${P}-presence-crash.patch"
+
+	# Blacklist nv25 (from 'master')
+	epatch "${FILESDIR}"/${PN}-3.8.4-blacklist-nv25.patch
 
 	gnome2_src_prepare
 }
