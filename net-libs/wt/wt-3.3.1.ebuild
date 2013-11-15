@@ -1,26 +1,30 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/wt/Attic/wt-3.2.3.ebuild,v 1.2 2013/07/18 22:14:09 creffett Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/wt/wt-3.3.1.ebuild,v 1.1 2013/11/15 20:28:02 mattm Exp $
 
-EAPI="2"
+EAPI="3"
 
 inherit cmake-utils versionator eutils user
 
 DESCRIPTION="C++ library for developing interactive web applications."
 MY_P=${P/_/-}
 HOMEPAGE="http://webtoolkit.eu/"
-SRC_URI="mirror://sourceforge/witty/wt/3.2.2/${MY_P}.tar.gz"
+SRC_URI="mirror://sourceforge/witty/wt/3.3.0/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="doc +extjs fcgi graphicsmagick pdf postgres resources +server ssl +sqlite test zlib"
+IUSE="doc +extjs fcgi graphicsmagick mysql pdf postgres resources +server ssl +sqlite test zlib"
 
 RDEPEND="
-	>=dev-libs/boost-1.36
+	>=dev-libs/boost-1.41
 	graphicsmagick? ( media-gfx/graphicsmagick )
-	pdf? ( media-libs/libharu )
+	pdf? (
+		media-libs/libharu
+		x11-libs/pango
+	)
 	postgres? ( dev-db/postgresql-base )
+	mysql? ( virtual/mysql )
 	sqlite? ( dev-db/sqlite:3 )
 	fcgi? (
 		dev-libs/fcgi
@@ -31,7 +35,10 @@ RDEPEND="
 		zlib? ( sys-libs/zlib )
 	)
 "
-DEPEND="${RDEPEND}"
+DEPEND="
+		${RDEPEND}
+		>=dev-util/cmake-2.6
+"
 
 DOCS="Changelog INSTALL"
 S=${WORKDIR}/${MY_P}
@@ -66,7 +73,7 @@ src_prepare() {
 }
 
 src_configure() {
-	BOOST_PKG="$(best_version ">=dev-libs/boost-1.36.0")"
+	BOOST_PKG="$(best_version ">=dev-libs/boost-1.41.0")"
 	BOOST_VER="$(get_version_component_range 1-2 "${BOOST_PKG/*boost-/}")"
 	BOOST_VER="$(replace_all_version_separators _ "${BOOST_VER}")"
 	BOOST_INC="/usr/include/boost-${BOOST_VER}"
@@ -85,6 +92,7 @@ src_configure() {
 		$(cmake-utils_use pdf ENABLE_HARU)
 		$(cmake-utils_use postgres ENABLE_POSTGRES)
 		$(cmake-utils_use sqlite ENABLE_SQLITE)
+		$(cmake-utils_use mysql ENABLE_MYSQL)
 		$(cmake-utils_use fcgi CONNECTOR_FCGI)
 		$(cmake-utils_use server CONNECTOR_HTTP)
 		$(cmake-utils_use ssl WT_WITH_SSL)
