@@ -1,18 +1,18 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/emacs-common-gentoo/Attic/emacs-common-gentoo-1.3-r3.ebuild,v 1.13 2013/11/16 12:50:51 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/emacs-common-gentoo/Attic/emacs-common-gentoo-1.4.ebuild,v 1.1 2013/11/16 12:50:52 ulm Exp $
 
-EAPI=4
+EAPI=5
 
 inherit elisp-common eutils fdo-mime gnome2-utils readme.gentoo user
 
 DESCRIPTION="Common files needed by all GNU Emacs versions"
 HOMEPAGE="http://wiki.gentoo.org/wiki/Project:Emacs"
-SRC_URI="http://dev.gentoo.org/~ulm/emacs/${P}.tar.gz"
+SRC_URI="http://dev.gentoo.org/~ulm/emacs/${P}.tar.xz"
 
 LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 IUSE="games X"
 
 PDEPEND="virtual/emacs"
@@ -29,6 +29,7 @@ pkg_setup() {
 src_install() {
 	insinto "${SITELISP}"
 	doins subdirs.el
+	newins site-gentoo.el{,.orig}
 
 	keepdir /etc/emacs
 	insinto /etc/emacs
@@ -87,6 +88,15 @@ site-start-modified-p() {
 }
 
 pkg_preinst() {
+	# make sure that site-gentoo.el exists since site-start.el requires it
+	if [[ ! -d ${EROOT}${SITELISP} ]]; then
+		mv "${ED}${SITELISP}"/site-gentoo.el{.orig,} || die
+	else
+		elisp-site-regen
+		rm "${ED}${SITELISP}/site-gentoo.el.orig" || die
+		cp "${EROOT}${SITELISP}/site-gentoo.el" "${ED}${SITELISP}/" || die
+	fi
+
 	if use games; then
 		local f
 		for f in /var/lib/games/emacs/{snake,tetris}-scores; do
@@ -97,6 +107,21 @@ pkg_preinst() {
 			chown "${GAMES_USER_DED:-games}" "${ED}${f}" || die
 		done
 	fi
+
+	if [[ -e ${EROOT}${SITELISP}/site-start.el ]]; then
+		ewarn "The location of the site startup file for Emacs has changed to"
+		ewarn "/etc/emacs/site-start.el."
+		if site-start-modified-p; then
+			eerror "Locally modified ${SITELISP}/site-start.el file found."
+			eerror "If this file contains your own customisation, you should"
+			eerror "move it to /etc/emacs/. In any case, you must remove the"
+			eerror "file from the old location."
+			die "Cannot continue unless ${SITELISP}/site-start.el is removed."
+		else
+			ewarn "Removing the old ${SITELISP}/site-start.el file."
+			rm -f "${EROOT}${SITELISP}/site-start.el"
+		fi
+	fi
 }
 
 pkg_postinst() {
@@ -105,23 +130,7 @@ pkg_postinst() {
 		gnome2_icon_cache_update
 	fi
 
-	# make sure that site-gentoo.el exists since site-start.el requires it
-	elisp-site-regen
-
 	readme.gentoo_print_elog
-
-	if [[ -e ${EROOT}${SITELISP}/site-start.el ]]; then
-		ewarn "The location of the site startup file for Emacs has changed to"
-		ewarn "/etc/emacs/site-start.el."
-		if site-start-modified-p; then
-			ewarn "If your site-start.el file contains your own customisation,"
-			ewarn "you should move it to the new file. In any case, you should"
-			ewarn "remove the old ${SITELISP}/site-start.el file."
-		else
-			ewarn "Removing the old ${SITELISP}/site-start.el file."
-			rm -f "${EROOT}${SITELISP}/site-start.el"
-		fi
-	fi
 }
 
 pkg_postrm() {
