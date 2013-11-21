@@ -1,9 +1,9 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-mp3info/Attic/ruby-mp3info-0.8.ebuild,v 1.1 2013/07/30 05:49:34 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-mp3info/Attic/ruby-mp3info-0.8.2.ebuild,v 1.1 2013/11/21 00:13:26 mrueg Exp $
 
 EAPI=5
-USE_RUBY="ruby19"
+USE_RUBY="ruby19 ruby20"
 
 RUBY_FAKEGEM_TASK_DOC="docs"
 RUBY_FAKEGEM_DOCDIR="doc"
@@ -21,7 +21,7 @@ KEYWORDS="~amd64 ~x86"
 
 IUSE=""
 
-DEPEND="${DEPEND} test? ( media-sound/id3v2 )"
+DEPEND+=" test? ( media-sound/id3v2 )"
 
 ruby_add_bdepend "doc? ( dev-ruby/hoe )"
 ruby_add_bdepend "test? ( dev-ruby/hoe )"
