@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-utils/Attic/gnome-utils-3.4.0.ebuild,v 1.2 2012/10/12 07:58:22 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-utils/gnome-utils-3.8.0.ebuild,v 1.1 2013/11/22 19:46:52 pacho Exp $
 
-EAPI="4"
+EAPI="5"
 
 DESCRIPTION="Meta package for utilities for the GNOME desktop"
 HOMEPAGE="https://live.gnome.org/GnomeUtils"
@@ -16,7 +16,7 @@ DEPEND=""
 RDEPEND="
 	>=app-admin/gnome-system-log-${PV}
 	>=app-dicts/gnome-dictionary-${PV}
-	>=gnome-extra/gnome-search-tool-${PV}
+	>=gnome-extra/gnome-search-tool-3.6.0
 	>=media-gfx/gnome-font-viewer-${PV}
 	>=media-gfx/gnome-screenshot-${PV}
 	>=sys-apps/baobab-${PV}
