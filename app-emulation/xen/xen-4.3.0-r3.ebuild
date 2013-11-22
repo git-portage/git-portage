@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen/Attic/xen-4.3.0-r1.ebuild,v 1.1 2013/10/02 17:22:28 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen/Attic/xen-4.3.0-r3.ebuild,v 1.1 2013/11/22 12:32:12 idella4 Exp $
 
 EAPI=5
 
@@ -90,7 +90,12 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-CVE-2013-1442-XSA-62.patch \
 		"${FILESDIR}"/${PN}-CVE-2013-4355-XSA-63.patch \
 		"${FILESDIR}"/${PN}-CVE-2013-4356-XSA-64.patch \
-		"${FILESDIR}"/${PN}-CVE-2013-4361-XSA-66.patch
+		"${FILESDIR}"/${PN}-CVE-2013-4361-XSA-66.patch \
+		"${FILESDIR}"/${PN}-CVE-2013-4368-XSA-67.patch \
+		"${FILESDIR}"/${PN}-CVE-2013-4375-XSA-71.patch \
+		"${FILESDIR}"/${PN}-CVE-2013-4494-XSA-73.patch \
+		"${FILESDIR}"/${PN}-4.3-CVE-2013-6375-XSA-75.patch \
+		"${FILESDIR}"/${PN}-CVE-2013-6375-XSA-78.patch
 
 	epatch_user
 }
