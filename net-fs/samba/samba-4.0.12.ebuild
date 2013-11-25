@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/samba/Attic/samba-4.0.10-r1.ebuild,v 1.3 2013/11/15 23:25:46 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/samba/Attic/samba-4.0.12.ebuild,v 1.1 2013/11/25 13:58:56 polynomial-c Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_{6,7} )
@@ -25,10 +25,9 @@ LICENSE="GPL-3"
 
 SLOT="0"
 
-IUSE="acl addns ads aio avahi client cluster cups fam gnutls iprint
+IUSE="acl addns ads aio avahi client cluster cups dmapi fam gnutls iprint
 ldap quota selinux swat syslog test winbind"
 
-# sys-apps/dmapi is an automagic dependency (see bug #474492)
 # sys-apps/attr is an automagic dependency (see bug #489748)
 # dev-libs/libaio is an automagic dependency (see bug #489764)
 # sys-libs/pam is an automagic dependency (see bug #489770)
@@ -41,7 +40,6 @@ CDEPEND="${PYTHON_DEPS}
 	virtual/libiconv
 	dev-python/subunit
 	sys-apps/attr
-	sys-apps/dmapi
 	sys-libs/libcap
 	>=sys-libs/ldb-1.1.16
 	>=sys-libs/tdb-1.2.11[python]
@@ -52,6 +50,7 @@ CDEPEND="${PYTHON_DEPS}
 	acl? ( virtual/acl )
 	addns? ( net-dns/bind-tools[gssapi] )
 	cluster? ( >=dev-db/ctdb-1.0.114_p1 )
+	dmapi? ( sys-apps/dmapi )
 	fam? ( virtual/fam )
 	gnutls? ( dev-libs/libgcrypt
 		>=net-libs/gnutls-1.4.0 )
@@ -69,6 +68,9 @@ RESTRICT="mirror"
 S="${WORKDIR}/${MY_P}"
 
 CONFDIR="${FILESDIR}/$(get_version_component_range 1-2)"
+
+# sys-apps/dmapi is an automagic dependency (see bug #474492)
+PATCHES=( "${FILESDIR}/${PN}-4.1.0-remove-dmapi-automagic.patch" )
 
 WAF_BINARY="${S}/buildtools/bin/waf"
 
@@ -113,6 +115,7 @@ src_configure() {
 		$(use_enable avahi) \
 		$(use_with cluster cluster-support) \
 		$(use_enable cups) \
+		$(use_with dmapi) \
 		$(use_with fam) \
 		$(use_enable gnutls) \
 		$(use_enable iprint) \
