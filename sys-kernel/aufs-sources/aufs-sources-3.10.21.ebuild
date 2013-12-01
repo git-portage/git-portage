@@ -1,18 +1,18 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/aufs-sources/Attic/aufs-sources-3.4.68.ebuild,v 1.1 2013/11/09 09:15:48 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/aufs-sources/Attic/aufs-sources-3.10.21.ebuild,v 1.1 2013/12/01 15:06:14 jlec Exp $
 
 EAPI=5
 
 ETYPE="sources"
-K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="49"
+K_WANT_GENPATCHES="base extras experimental"
+K_GENPATCHES_VER="29"
 K_DEBLOB_AVAILABLE="1"
 inherit kernel-2 eutils
 detect_version
 detect_arch
 
-AUFS_VERSION=3.4_p20131104
+AUFS_VERSION=3.10_p20131111
 AUFS_TARBALL="aufs-sources-${AUFS_VERSION}.tar.xz"
 # git archive -v --remote=git://git.code.sf.net/p/aufs/aufs3-standalone aufs${AUFS_VERSION/_p*} > aufs-sources-${AUFS_VERSION}.tar
 AUFS_URI="http://dev.gentoo.org/~jlec/distfiles/${AUFS_TARBALL}"
@@ -29,7 +29,7 @@ SRC_URI="
 	!vanilla? ( ${GENPATCHES_URI} )
 	"
 
-PDEPEND=">=sys-fs/aufs-util-3.2"
+PDEPEND=">=sys-fs/aufs-util-3.9"
 
 src_unpack() {
 	if use vanilla; then
@@ -42,8 +42,11 @@ src_unpack() {
 		"${WORKDIR}"/aufs3-kbuild.patch
 		"${WORKDIR}"/aufs3-base.patch
 		"${WORKDIR}"/aufs3-mmap.patch"
+
 	use module && UNIPATCH_LIST+=" "${WORKDIR}"/aufs3-standalone.patch"
+
 	unpack ${AUFS_TARBALL}
+
 	kernel-2_src_unpack
 }
 
