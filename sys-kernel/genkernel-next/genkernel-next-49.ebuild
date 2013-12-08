@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel-next/Attic/genkernel-next-40.ebuild,v 1.1 2013/10/23 05:42:27 lxnay Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel-next/Attic/genkernel-next-49.ebuild,v 1.1 2013/12/08 17:03:01 lxnay Exp $
 
 EAPI=5
 
