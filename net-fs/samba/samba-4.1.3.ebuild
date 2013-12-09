@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/samba/Attic/samba-4.1.1.ebuild,v 1.2 2013/11/15 23:25:46 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/samba/Attic/samba-4.1.3.ebuild,v 1.1 2013/12/09 08:44:49 polynomial-c Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_{6,7} )
@@ -128,14 +128,11 @@ src_configure() {
 src_install() {
 	waf-utils_src_install
 
-	# Seems like the build script gets the shebangs correct by itself
-	# (4.0.6)
-	#python_replicate_script \
-	#	"${D}/usr/sbin/samba_dnsupdate" \
-	#	"${D}/usr/sbin/samba_spnupdate" \
-	#	"${D}/usr/sbin/samba_upgradedns" \
-	#	"${D}/usr/sbin/samba_kcc" \
-	#	"${D}/usr/bin/samba-tool"
+	# install ldap schema for server (bug #491002)
+	if use ldap ; then
+		insinto /etc/openldap/schema
+		doins examples/LDAP/samba.schema
+	fi
 
 	# Make all .so files executable
 	find "${D}" -type f -name "*.so" -exec chmod +x {} +
@@ -149,6 +146,7 @@ src_install() {
 	systemd_dounit "${FILESDIR}"/smbd.{service,socket}
 	systemd_newunit "${FILESDIR}"/smbd_at.service 'smbd@.service'
 	systemd_dounit "${FILESDIR}"/winbindd.service
+	systemd_dounit "${FILESDIR}"/samba.service
 }
 
 src_test() {
