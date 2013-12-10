@@ -1,21 +1,22 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/gimp/Attic/gimp-2.8.4.ebuild,v 1.3 2013/06/05 21:46:23 sping Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/gimp/gimp-2.8.10-r1.ebuild,v 1.1 2013/12/10 09:12:09 polynomial-c Exp $
 
-EAPI="3"
-PYTHON_DEPEND="python? 2:2.5"
+EAPI=5
+PYTHON_COMPAT=( python2_{6,7} )
 
-inherit versionator autotools eutils gnome2 fdo-mime multilib python
+inherit versionator autotools eutils gnome2 fdo-mime multilib python-single-r1
 
 DESCRIPTION="GNU Image Manipulation Program"
 HOMEPAGE="http://www.gimp.org/"
-SRC_URI="mirror://gimp/v$(get_version_component_range 1-2)/${P}.tar.bz2"
+SRC_URI="mirror://gimp/v$(get_version_component_range 1-2)/${P}.tar.bz2
+	https://git.gnome.org/browse/gimp/patch/?id=6c73f28b6d87a2afd11974552a075bffec52347f -> ${P}-freetype251.patch"
 LICENSE="GPL-3 LGPL-3"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~arm-linux ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-interix ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris"
 
 LANGS="am ar ast az be bg br ca ca@valencia cs csb da de dz el en_CA en_GB eo es et eu fa fi fr ga gl gu he hi hr hu id is it ja ka kk km kn ko lt lv mk ml ms my nb nds ne nl nn oc pa pl pt pt_BR ro ru rw si sk sl sr sr@latin sv ta te th tr tt uk vi xh yi zh_CN zh_HK zh_TW"
-IUSE="alsa aalib altivec bzip2 curl dbus debug doc exif gnome postscript jpeg jpeg2k lcms mmx mng pdf png python smp sse svg tiff udev webkit wmf xpm"
+IUSE="alsa aalib altivec aqua bzip2 curl dbus debug doc exif gnome postscript jpeg jpeg2k lcms mmx mng pdf png python smp sse svg tiff udev webkit wmf xpm"
 
 for lang in ${LANGS}; do
 	IUSE+=" linguas_${lang}"
@@ -45,11 +46,14 @@ RDEPEND=">=dev-libs/glib-2.30.2:2
 	jpeg? ( virtual/jpeg:0 )
 	jpeg2k? ( media-libs/jasper )
 	exif? ( >=media-libs/libexif-0.6.15 )
-	lcms? ( >=media-libs/lcms-1.16:0 )
+	lcms? ( >=media-libs/lcms-2.2:2 )
 	mng? ( media-libs/libmng )
 	pdf? ( >=app-text/poppler-0.12.4[cairo] )
 	png? ( >=media-libs/libpng-1.2.37:0 )
-	python?	( >=dev-python/pygtk-2.10.4:2 )
+	python?	(
+		${PYTHON_DEPS}
+		>=dev-python/pygtk-2.10.4:2[${PYTHON_USEDEP}]
+	)
 	tiff? ( >=media-libs/tiff-3.5.7:0 )
 	svg? ( >=gnome-base/librsvg-2.36.0:2 )
 	wmf? ( >=media-libs/libwmf-0.2.8 )
@@ -72,10 +76,12 @@ DOCS="AUTHORS ChangeLog* HACKING NEWS README*"
 
 S="${WORKDIR}"/${P}
 
+REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
+
 pkg_setup() {
 	G2CONF="--enable-default-binary \
-		--with-x \
 		--disable-silent-rules \
+		$(use_with !aqua x) \
 		$(use_with aalib aa) \
 		$(use_with alsa) \
 		$(use_enable altivec) \
@@ -87,7 +93,7 @@ pkg_setup() {
 		$(use_with jpeg libjpeg) \
 		$(use_with jpeg2k libjasper) \
 		$(use_with exif libexif) \
-		$(use_with lcms) \
+		$(use_with lcms lcms lcms2) \
 		$(use_with postscript gs) \
 		$(use_enable mmx) \
 		$(use_with mng libmng) \
@@ -105,17 +111,15 @@ pkg_setup() {
 		--without-xvfb-run"
 
 	if use python; then
-		python_set_active_version 2
-		python_pkg_setup
+		python-single-r1_pkg_setup
 	fi
 }
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-2.7.4-no-deprecation.patch  # bug 395695, comment 9 and 16
-	epatch "${FILESDIR}"/${PN}-2.8.4-valid-desktop-file.patch  # bug 433028
+	epatch "${DISTDIR}"/${P}-freetype251.patch # bug #493466
 	eautoreconf  # If you remove this: remove dev-util/gtk-doc-am from DEPEND, too
 
-	echo '#!/bin/sh' > py-compile
 	gnome2_src_prepare
 }
 
@@ -134,15 +138,14 @@ src_install() {
 	gnome2_src_install
 
 	if use python; then
-		python_convert_shebangs -r $(python_get_version) "${ED}"
-		python_need_rebuild
+		python_optimize
 	fi
 
 	# Workaround for bug #321111 to give GIMP the least
 	# precedence on PDF documents by default
 	mv "${ED}"/usr/share/applications/{,zzz-}gimp.desktop || die
 
-	find "${ED}" -name '*.la' -delete || die
+	prune_libtool_files --all
 
 	# Prevent dead symlink gimp-console.1 from downstream man page compression (bug #433527)
 	local gimp_app_version=$(get_version_component_range 1-2)
@@ -153,14 +156,8 @@ src_install() {
 
 pkg_postinst() {
 	gnome2_pkg_postinst
-
-	use python && python_mod_optimize /usr/$(get_libdir)/gimp/2.0/python \
-		/usr/$(get_libdir)/gimp/2.0/plug-ins
 }
 
 pkg_postrm() {
 	gnome2_pkg_postrm
-
-	use python && python_mod_cleanup /usr/$(get_libdir)/gimp/2.0/python \
-		/usr/$(get_libdir)/gimp/2.0/plug-ins
 }
