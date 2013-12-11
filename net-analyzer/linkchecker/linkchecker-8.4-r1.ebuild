@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/linkchecker/Attic/linkchecker-8.4.ebuild,v 1.1 2013/11/06 13:36:14 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/linkchecker/Attic/linkchecker-8.4-r1.ebuild,v 1.1 2013/12/11 08:50:11 jlec Exp $
 
 EAPI=5
 
@@ -17,28 +17,28 @@ SRC_URI="mirror://github/wummel/${PN}/${MY_P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~ppc-macos ~x64-solaris"
-IUSE="bash-completion clamav doc geoip gnome login nagios sqlite syntax-check X"
+KEYWORDS="~amd64 ~x86 ~ppc-macos ~x64-solaris"
+IUSE="bash-completion clamav geoip gnome login nagios sqlite syntax-check X"
 
 RDEPEND="
-	dev-python/dnspython
-	bash-completion? ( dev-python/optcomplete )
+	dev-python/dnspython[${PYTHON_USEDEP}]
+	bash-completion? ( dev-python/optcomplete[${PYTHON_USEDEP}] )
 	clamav? ( app-antivirus/clamav )
-	geoip? ( dev-python/geoip-python )
-	gnome? ( dev-python/pygtk:2 )
-	login? ( dev-python/twill )
+	geoip? ( dev-python/geoip-python[${PYTHON_USEDEP}] )
+	gnome? ( dev-python/pygtk:2[${PYTHON_USEDEP}] )
+	login? ( dev-python/twill[${PYTHON_USEDEP}] )
 	syntax-check? (
-		dev-python/cssutils
-		dev-python/utidylib
+		dev-python/cssutils[${PYTHON_USEDEP}]
+		dev-python/utidylib[${PYTHON_USEDEP}]
 		)
 	X? (
-		|| (
-			>=dev-python/PyQt4-4.9.6-r1[X,help]
-			<dev-python/PyQt4-4.9.6-r1[X,assistant] )
-		dev-python/qscintilla-python
+		dev-python/PyQt4[X,help,${PYTHON_USEDEP}]
+		dev-python/qscintilla-python[${PYTHON_USEDEP}]
 		)"
 DEPEND="
-	doc? ( dev-qt/qthelp:4 )"
+	dev-qt/qthelp:4
+	dev-python/markdown2[${PYTHON_USEDEP}]
+"
 
 RESTRICT="test"
 
@@ -46,15 +46,14 @@ S="${WORKDIR}/${MY_P}"
 
 python_prepare_all() {
 	local PATCHES=(
-		"${FILESDIR}"/8.0-missing-files.patch
 		"${FILESDIR}"/${PN}-8.3-unbundle.patch
 		"${FILESDIR}"/${PN}-8.0-desktop.patch
+		"${FILESDIR}"/${P}-help.patch
 		)
-	distutils-r1_python_prepare_all
-}
 
-python_compile_all() {
-	use doc && emake -C doc/html
+	emake -C doc/html
+
+	distutils-r1_python_prepare_all
 }
 
 python_install_all() {
@@ -67,7 +66,7 @@ python_install_all() {
 		}
 		python_foreach_impl delete_gui
 	fi
-	use doc && dohtml doc/html/*
+	dohtml doc/html/*
 	use bash-completion && dobashcomp config/linkchecker-completion
 	if use nagios; then
 		insinto /usr/$(get_libdir)/nagios/plugins
