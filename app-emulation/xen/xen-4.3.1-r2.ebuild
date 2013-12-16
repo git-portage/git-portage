@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen/Attic/xen-4.3.0-r4.ebuild,v 1.1 2013/12/06 14:13:04 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen/Attic/xen-4.3.1-r2.ebuild,v 1.1 2013/12/16 16:34:04 idella4 Exp $
 
 EAPI=5
 
@@ -13,7 +13,7 @@ if [[ $PV == *9999 ]]; then
 	S="${WORKDIR}/${REPO}"
 	live_eclass="mercurial"
 else
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="~amd64"
 	SRC_URI="http://bits.xensource.com/oss-xen/release/${PV}/xen-${PV}.tar.gz"
 fi
 
@@ -23,7 +23,7 @@ DESCRIPTION="The Xen virtual machine monitor"
 HOMEPAGE="http://xen.org/"
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="custom-cflags debug efi flask pae xsm"
+IUSE="custom-cflags debug efi flask xsm"
 
 DEPEND="${PYTHON_DEPS}
 	efi? ( >=sys-devel/binutils-2.22[multitarget] )
@@ -86,13 +86,8 @@ src_prepare() {
 	# not strictly necessary to fix this
 	sed -i 's/, "-Werror"//' "${S}/tools/python/setup.py" || die "failed to re-set setup.py"
 
-	#Security patches
-	epatch "${FILESDIR}"/${PN}-CVE-2013-1442-XSA-62.patch \
-		"${FILESDIR}"/${PN}-CVE-2013-4355-XSA-63.patch \
-		"${FILESDIR}"/${PN}-CVE-2013-4356-XSA-64.patch \
-		"${FILESDIR}"/${PN}-CVE-2013-4361-XSA-66.patch \
-		"${FILESDIR}"/${PN}-CVE-2013-4368-XSA-67.patch \
-		"${FILESDIR}"/${PN}-CVE-2013-4375-XSA-71.patch \
+	# Security patches
+	epatch "${FILESDIR}"/${PN}-CVE-2013-4375-XSA-71.patch \
 		"${FILESDIR}"/${PN}-CVE-2013-4494-XSA-73.patch \
 		"${FILESDIR}"/${PN}-4.3-CVE-2013-6375-XSA-75.patch \
 		"${FILESDIR}"/${PN}-CVE-2013-6375-XSA-78.patch \
@@ -103,7 +98,6 @@ src_prepare() {
 
 src_configure() {
 	use debug && myopt="${myopt} debug=y"
-	use pae && myopt="${myopt} pae=y"
 
 	if use custom-cflags; then
 		filter-flags -fPIE -fstack-protector
@@ -121,7 +115,6 @@ src_compile() {
 src_install() {
 	local myopt
 	use debug && myopt="${myopt} debug=y"
-	use pae && myopt="${myopt} pae=y"
 
 	# The 'make install' doesn't 'mkdir -p' the subdirs
 	if use efi; then
@@ -136,6 +129,5 @@ pkg_postinst() {
 	elog " http://www.gentoo.org/doc/en/xen-guide.xml"
 	elog " http://en.gentoo-wiki.com/wiki/Xen/"
 
-	use pae && ewarn "This is a PAE build of Xen. It will *only* boot PAE kernels!"
 	use efi && einfo "The efi executable is installed in boot/efi/gentoo"
 }
