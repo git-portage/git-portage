@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-additions/Attic/virtualbox-additions-4.3.2.ebuild,v 1.1 2013/11/02 15:12:38 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-additions/Attic/virtualbox-additions-4.3.6.ebuild,v 1.1 2013/12/18 20:52:57 polynomial-c Exp $
 
 EAPI=5
 
