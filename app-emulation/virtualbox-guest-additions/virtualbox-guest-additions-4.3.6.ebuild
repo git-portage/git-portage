@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-guest-additions/Attic/virtualbox-guest-additions-4.3.2.ebuild,v 1.2 2013/11/14 11:27:23 lxnay Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-guest-additions/Attic/virtualbox-guest-additions-4.3.6.ebuild,v 1.1 2013/12/18 20:55:37 polynomial-c Exp $
 
 EAPI=5
 
@@ -28,11 +28,12 @@ RDEPEND="X? ( ~x11-drivers/xf86-video-virtualbox-${PV}
 			 x11-libs/libXau
 			 x11-libs/libXdmcp
 			 x11-libs/libSM
-			 x11-libs/libICE )
+			 x11-libs/libICE
+			 x11-proto/glproto )
 	sys-apps/dbus
 	!!x11-drivers/xf86-input-virtualbox"
 DEPEND="${RDEPEND}
-		>=dev-util/kbuild-0.1.9998_pre20120806
+		>=dev-util/kbuild-0.1.9998_pre20131130
 		>=dev-lang/yasm-0.6.2
 		sys-devel/bin86
 		sys-libs/pam
