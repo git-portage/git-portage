@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/icinga/Attic/icinga-1.9.3.ebuild,v 1.1 2013/07/08 04:27:17 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/icinga/Attic/icinga-1.9.4.ebuild,v 1.1 2013/12/18 01:57:44 prometheanfire Exp $
 
 EAPI=5
 
