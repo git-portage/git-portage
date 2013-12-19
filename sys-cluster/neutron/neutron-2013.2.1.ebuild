@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/neutron/Attic/neutron-2013.2-r2.ebuild,v 1.1 2013/12/13 20:47:39 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/neutron/Attic/neutron-2013.2.1.ebuild,v 1.1 2013/12/19 05:57:35 prometheanfire Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -23,20 +23,20 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 		<dev-python/pbr-1.0[${PYTHON_USEDEP}]
 		app-admin/sudo
 		test? ( >=dev-python/cliff-1.4.3[${PYTHON_USEDEP}]
-			>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
-			>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
-			>=dev-python/mock-1.0[${PYTHON_USEDEP}]
-			>=dev-python/mox-0.5.3[${PYTHON_USEDEP}]
-			dev-python/subunit[${PYTHON_USEDEP}]
-			>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
-			>=dev-python/testrepository-0.0.17[${PYTHON_USEDEP}]
-			>=dev-python/testtools-0.9.32[${PYTHON_USEDEP}]
-			>=dev-python/webtest-2.0[${PYTHON_USEDEP}]
-			dev-python/configobj[${PYTHON_USEDEP}]
-			<dev-python/hacking-0.8[${PYTHON_USEDEP}]
-			>=dev-python/hacking-0.5.6[${PYTHON_USEDEP}]
-			dev-python/mimeparse[${PYTHON_USEDEP}]
-		)"
+				>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
+				>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
+				>=dev-python/mock-1.0[${PYTHON_USEDEP}]
+				>=dev-python/mox-0.5.3[${PYTHON_USEDEP}]
+				dev-python/subunit[${PYTHON_USEDEP}]
+				>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
+				<dev-python/sphinx-1.2[${PYTHON_USEDEP}]
+				>=dev-python/testrepository-0.0.17[${PYTHON_USEDEP}]
+				>=dev-python/testtools-0.9.32[${PYTHON_USEDEP}]
+				>=dev-python/webtest-2.0[${PYTHON_USEDEP}]
+				dev-python/configobj[${PYTHON_USEDEP}]
+				<dev-python/hacking-0.8[${PYTHON_USEDEP}]
+				>=dev-python/hacking-0.5.6[${PYTHON_USEDEP}]
+				dev-python/mimeparse[${PYTHON_USEDEP}] )"
 
 RDEPEND="dev-python/paste[${PYTHON_USEDEP}]
 		>=dev-python/pastedeploy-1.5.0-r1[${PYTHON_USEDEP}]
@@ -44,12 +44,12 @@ RDEPEND="dev-python/paste[${PYTHON_USEDEP}]
 		>=dev-python/amqplib-0.6.1-r1[${PYTHON_USEDEP}]
 		>=dev-python/anyjson-0.3.3[${PYTHON_USEDEP}]
 		virtual/python-argparse[${PYTHON_USEDEP}]
-		>=dev-python/Babel-0.9.6[${PYTHON_USEDEP}]
+		>=dev-python/Babel-1.3[${PYTHON_USEDEP}]
 		>=dev-python/eventlet-0.13.0[${PYTHON_USEDEP}]
 		>=dev-python/greenlet-0.3.2[${PYTHON_USEDEP}]
 		dev-python/httplib2[${PYTHON_USEDEP}]
 		>=dev-python/requests-1.1[${PYTHON_USEDEP}]
-		>=dev-python/iso8601-0.1.4[${PYTHON_USEDEP}]
+		>=dev-python/iso8601-0.1.8[${PYTHON_USEDEP}]
 		dev-python/jsonrpclib[${PYTHON_USEDEP}]
 		dev-python/jinja[${PYTHON_USEDEP}]
 		>=dev-python/kombu-2.4.8[${PYTHON_USEDEP}]
@@ -66,19 +66,17 @@ RDEPEND="dev-python/paste[${PYTHON_USEDEP}]
 		<dev-python/webob-1.3[${PYTHON_USEDEP}]
 		>=dev-python/python-keystoneclient-0.3.2[${PYTHON_USEDEP}]
 		>=dev-python/alembic-0.4.1[${PYTHON_USEDEP}]
-		dev-python/six[${PYTHON_USEDEP}]
+		>=dev-python/six-1.4.1[${PYTHON_USEDEP}]
 		>=dev-python/stevedore-0.10[${PYTHON_USEDEP}]
 		>=dev-python/oslo-config-1.2.0[${PYTHON_USEDEP}]
 		>=dev-python/python-novaclient-2.15.0[${PYTHON_USEDEP}]
 		dev-python/pyudev[${PYTHON_USEDEP}]
-		net-misc/bridge-utils
-		net-misc/openvswitch
+		sys-apps/iproute2
+		openvswitch? ( net-misc/openvswitch )
 		dhcp? ( net-dns/dnsmasq[dhcp-tools] )"
 
-PATCHES=( "${FILESDIR}/${P}-sphinx_mapping.patch"
-		"${FILESDIR}/${P}-json-tests.patch"
-		"${FILESDIR}/${P}-nicira.patch"
-		"${FILESDIR}/CVE-2013-6419_2013.2.patch" )
+PATCHES=( "${FILESDIR}/sphinx_mapping.patch"
+		"${FILESDIR}/nicira.patch" )
 
 pkg_setup() {
 	enewgroup neutron
