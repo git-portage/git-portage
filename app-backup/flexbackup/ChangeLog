@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/flexbackup
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.45 2011/10/08 06:08:42 graaff Exp $
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/flexbackup/ChangeLog,v 1.46 2013/12/24 01:57:02 tomwij Exp $
+
+  24 Dec 2013; Tom Wijsman <TomWij@gentoo.org>
+  -files/flexbackup-1.2.1-perl-5.12-deprecation-warning2.patch:
+  [QA] Remove unused files.
 
   08 Oct 2011; Hans de Graaff <graaff@gentoo.org> -flexbackup-1.2.1-r10.ebuild:
   Remove old version.
@@ -263,4 +267,3 @@
   flexbackup-1.1.6.ebuild, files/Makefile-gentoo.diff:
   Initial ebuild by myself. Thx to Raphael Deimel for the devfs hint with the
   tape.
-
