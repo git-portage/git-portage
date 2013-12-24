@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/rsyslog/Attic/rsyslog-7.4.3.ebuild,v 1.6 2013/12/24 12:21:31 ultrabug Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/rsyslog/Attic/rsyslog-7.4.7.ebuild,v 1.1 2013/12/24 12:21:31 ultrabug Exp $
 
-EAPI=4
+EAPI=5
 AUTOTOOLS_AUTORECONF=yes
 
 inherit autotools-utils eutils systemd
@@ -12,25 +12,27 @@ HOMEPAGE="http://www.rsyslog.com/"
 SRC_URI="http://www.rsyslog.com/files/download/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3 LGPL-3 Apache-2.0"
-KEYWORDS="~amd64 ~arm ~hppa ~x86"
+KEYWORDS="~amd64 ~x86"
 SLOT="0"
-IUSE="dbi debug doc extras kerberos mysql oracle postgres relp snmp ssl static-libs zeromq zlib"
+IUSE="dbi debug doc extras kerberos mongodb mysql oracle postgres relp snmp ssl static-libs systemd zeromq zlib"
 
 RDEPEND="
-	dev-libs/json-c
+	dev-libs/json-c:=
 	dev-libs/libee
-	>=dev-libs/libestr-0.1.5
-	dev-libs/libgcrypt
+	>=dev-libs/libestr-0.1.9
+	dev-libs/libgcrypt:=
 	dev-libs/liblognorm
 	dbi? ( dev-db/libdbi )
 	extras? ( net-libs/libnet )
 	kerberos? ( virtual/krb5 )
+	mongodb? ( dev-libs/libmongo-client )
 	mysql? ( virtual/mysql )
 	postgres? ( dev-db/postgresql-base )
 	oracle? ( dev-db/oracle-instantclient-basic )
 	relp? ( >=dev-libs/librelp-1.0.3 )
 	snmp? ( net-analyzer/net-snmp )
 	ssl? ( net-libs/gnutls )
+	systemd? ( sys-apps/systemd )
 	zeromq? ( >=net-libs/zeromq-3 <net-libs/czmq-2 )
 	zlib? ( sys-libs/zlib )"
 DEPEND="${RDEPEND}
@@ -46,11 +48,6 @@ RESTRICT="test"
 AUTOTOOLS_IN_SOURCE_BUILD=1
 
 DOCS=(AUTHORS ChangeLog doc/rsyslog-example.conf)
-
-PATCHES=(
-	"${FILESDIR}"/${BRANCH}/${PN}-7.4.3-json-c-pkgconfig.patch
-	"${FILESDIR}"/${BRANCH}/${PN}-7.4.3-fix-runtime.patch
-)
 
 src_configure() {
 	# Maintainer notes:
@@ -93,6 +90,7 @@ src_configure() {
 		$(use_enable debug valgrind)
 		$(use_enable extras omudpspoof)
 		$(use_enable kerberos gssapi-krb5)
+		$(use_enable mongodb ommongodb)
 		$(use_enable mysql)
 		$(use_enable oracle)
 		$(use_enable postgres pgsql)
@@ -100,6 +98,7 @@ src_configure() {
 		$(use_enable snmp)
 		$(use_enable snmp mmsnmptrapd)
 		$(use_enable ssl gnutls)
+		$(use_enable systemd omjournal)
 		$(use_enable zlib)
 		$(use_enable zeromq imzmq3)
 		$(use_enable zeromq omzmq3)
