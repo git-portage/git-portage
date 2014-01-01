@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/bfgminer/Attic/bfgminer-3.5.0.ebuild,v 1.1 2013/11/07 17:49:02 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/bfgminer/Attic/bfgminer-3.5.6.ebuild,v 1.1 2014/01/01 23:46:40 blueness Exp $
 
 EAPI="4"
 
