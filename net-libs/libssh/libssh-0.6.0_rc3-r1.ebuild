@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libssh/Attic/libssh-0.6.0_rc3.ebuild,v 1.3 2014/01/06 06:14:50 naota Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libssh/Attic/libssh-0.6.0_rc3-r1.ebuild,v 1.1 2014/01/06 13:35:00 polynomial-c Exp $
 
 EAPI=5
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.libssh.org/"
 SRC_URI="https://red.libssh.org/attachments/download/68/${MY_P}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
-KEYWORDS="~amd64 ~arm ~hppa ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~arm ~hppa ~x86 ~amd64-linux ~x86-linux"
 SLOT="0/4" # subslot = soname major version
 IUSE="debug doc examples pcap +sftp ssh1 server static-libs test zlib"
 # Maintainer: check IUSE-defaults at DefineOptions.cmake
@@ -30,7 +30,12 @@ DOCS=( AUTHORS README ChangeLog )
 
 S=${WORKDIR}/${MY_P}
 
-PATCHES=( "${FILESDIR}/${PN}-0.5.0-tests.patch" )
+PATCHES=(
+	"${FILESDIR}/${PN}-0.5.0-tests.patch"
+	"${FILESDIR}/${P}-x2goclient_crash_fix-1.patch"
+	"${FILESDIR}/${P}-x2goclient_crash_fix-2.patch"
+	"${FILESDIR}/${P}-memleak_fix.patch"
+)
 
 src_prepare() {
 	# just install the examples do not compile them
