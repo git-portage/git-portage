@@ -1,9 +1,9 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/nx/Attic/nx-3.5.0.15.ebuild,v 1.3 2012/12/16 16:29:05 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/nx/Attic/nx-3.5.0.22.ebuild,v 1.1 2014/01/06 12:36:47 voyageur Exp $
 
-EAPI=4
-inherit autotools eutils multilib
+EAPI=5
+inherit autotools eutils multilib readme.gentoo
 
 DESCRIPTION="NX compression technology core libraries"
 HOMEPAGE="http://www.nomachine.com/developers.php
@@ -13,10 +13,11 @@ SRC_URI="http://code.x2go.org/releases/source/nx-libs/nx-libs-${PV}-full.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="elibc_glibc"
 
 RDEPEND="elibc_glibc? ( || ( net-libs/libtirpc <sys-libs/glibc-2.14 ) )
+	media-libs/freetype:2
 	>=media-libs/libpng-1.2.8
 	>=sys-libs/zlib-1.2.3
 	virtual/jpeg"
@@ -28,6 +29,9 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/nx-libs-${PV}
 
+DOC_CONTENTS="If you get problems with rendering gtk+ apps, enable the xlib-xcb
+useflag on x11-libs/cairo."
+
 src_prepare() {
 	# For nxcl/qtnx
 	cd "${S}"/nxproxy
@@ -38,9 +42,9 @@ src_prepare() {
 	epatch "${FILESDIR}"/1.5.0/nx-x11-1.5.0-tmp-exec.patch
 	# -fPIC
 	epatch "${FILESDIR}"/1.5.0/nxcomp-1.5.0-pic.patch
-	# Respect CFLAGS/CXXFLAGS
-	epatch "${FILESDIR}"/${PN}-3.3.0-cflags.patch
-	# Run autoreconf in all neeed folders
+	# Drop force -O3, set AR/RANLIB and
+	# run autoreconf in all neeed folders
+	epatch "${FILESDIR}"/${PN}-3.5.0.17-cflags_ar_ranlib.patch
 	for i in nxcomp nxcompext nxcompshad nxproxy; do
 		cd "${S}"/${i}
 		eautoreconf ${i}
@@ -65,7 +69,9 @@ src_configure() {
 
 src_compile() {
 	cd "${S}/nx-X11"
-	FAST=1 emake World WORLDOPTS="" MAKE="make"
+	FAST=1 emake World WORLDOPTS="" MAKE="make" \
+		AR="$(tc-getAR) clq" RANLIB="$(tc-getRANLIB)" \
+		CC="$(tc-getCC)" CXX="$(tc-getCXX)"
 
 	cd "${S}"/nxproxy
 	emake
@@ -88,9 +94,14 @@ src_install() {
 	do
 		dolib.so "${S}"/nx-X11/lib/${lib}/libNX_${lib}.so*
 	done
-	dolib.so "${S}"/nx-X11/lib/freetype2/libNX_freetype.so*
 
 	dolib.so "${S}"/nxcomp/libXcomp.so*
 	dolib.so "${S}"/nxcompext/libXcompext.so*
 	dolib.so "${S}"/nxcompshad/libXcompshad.so*
+
+	insinto /etc/nxagent
+	newins etc/keystrokes.cfg keystroke.cfg
+	doicon nx-X11/programs/Xserver/hw/nxagent/x2go.xpm
+
+	readme.gentoo_create_doc
 }
