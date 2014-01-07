@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/isabelle/Attic/isabelle-2011.1-r1.ebuild,v 1.4 2012/12/09 09:24:29 gienah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/isabelle/isabelle-2011.1-r2.ebuild,v 1.1 2014/01/07 13:36:33 tomwij Exp $
 
 EAPI="5"
 
@@ -90,7 +90,7 @@ src_prepare() {
 		SCALA_HOME="${ROOT}usr/share/scala"
 		SHA1_HOME="/usr/$(get_libdir)/sha1-polyml"
 	EOF
-	if use ledit && !use readline; then
+	if use ledit && ! use readline; then
 		epatch "${FILESDIR}/${PN}-2011.1-reverse-line-editor-order.patch"
 	fi
 }
