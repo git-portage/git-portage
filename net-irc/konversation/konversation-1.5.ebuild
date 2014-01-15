@@ -1,11 +1,11 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/konversation/Attic/konversation-1.5_rc1-r1.ebuild,v 1.1 2013/06/17 21:51:43 johu Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/konversation/konversation-1.5.ebuild,v 1.1 2014/01/15 04:55:38 mrueg Exp $
 
 EAPI=5
 
-KDE_LINGUAS="bg bs ca ca@valencia cs da de el en_GB es et fi fr gl he hu it ja
-kk km lt nb nds nl pl pt pt_BR ru si sk sl sr sr@ijekavian sr@ijekavianlatin
+KDE_LINGUAS="bg bs ca ca@valencia cs da de el en_GB es et fi fr gl he hu it kk
+km lt nb nds nl pl pt pt_BR ru si sk sl sr sr@ijekavian sr@ijekavianlatin
 sr@latin sv tr uk zh_CN zh_TW"
 KDE_DOC_DIRS="doc doc-translations/%lingua_${PN}"
 KDE_HANDBOOK="optional"
@@ -15,7 +15,7 @@ MY_PV="${PV/_/-}"
 MY_P="${PN}-${MY_PV}"
 DESCRIPTION="A user friendly IRC Client for KDE4"
 HOMEPAGE="http://konversation.kde.org"
-SRC_URI="mirror://kde/unstable/${PN}/${MY_PV}/src/${MY_P}.tar.xz"
+SRC_URI="mirror://kde/stable/${PN}/${MY_PV}/src/${MY_P}.tar.xz"
 
 LICENSE="GPL-2 FDL-1.2"
 KEYWORDS="~amd64 ~x86"
@@ -31,8 +31,6 @@ RDEPEND="${DEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
-
-PATCHES=( "${FILESDIR}/${P}-setting-admin-mode.patch" )
 
 src_configure() {
 	mycmakeargs+=(
