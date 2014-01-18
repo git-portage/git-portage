@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-firmware/Attic/linux-firmware-20130711.ebuild,v 1.1 2013/07/17 02:25:53 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-firmware/linux-firmware-20131230.ebuild,v 1.1 2014/01/18 16:33:56 chithanh Exp $
 
 EAPI=5
 inherit savedconfig
@@ -11,8 +11,8 @@ if [[ ${PV} == 99999999* ]]; then
 	EGIT_REPO_URI="git://git.kernel.org/pub/scm/linux/kernel/git/firmware/${PN}.git"
 	KEYWORDS=""
 else
-	SRC_URI="https://dev.gentoo.org/~zerochaos/distfiles/${P}.tar.xz"
-	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~x86"
+	SRC_URI="mirror://gentoo/${P}.tar.xz"
+	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 fi
 
 DESCRIPTION="Linux firmware files"
@@ -66,7 +66,7 @@ src_unpack() {
 	else
 		default
 		# rename directory from git snapshot tarball
-		#mv ${PN}-*/ ${P} || die #am I the only one that makes these manually?
+		mv ${PN}-*/ ${P} || die
 	fi
 }
 
