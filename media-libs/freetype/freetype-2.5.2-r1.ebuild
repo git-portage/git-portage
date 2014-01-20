@@ -1,17 +1,17 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/freetype/Attic/freetype-2.5.1.ebuild,v 1.3 2013/12/06 22:04:42 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/freetype/Attic/freetype-2.5.2-r1.ebuild,v 1.1 2014/01/20 12:41:59 yngwin Exp $
 
 EAPI=5
 
-inherit autotools-multilib flag-o-matic multilib
+inherit autotools-multilib flag-o-matic multilib toolchain-funcs
 
 DESCRIPTION="A high-quality and portable font engine"
 HOMEPAGE="http://www.freetype.org/"
 SRC_URI="mirror://sourceforge/freetype/${P/_/}.tar.bz2
 	utils?	( mirror://sourceforge/freetype/ft2demos-${PV}.tar.bz2 )
 	doc?	( mirror://sourceforge/freetype/${PN}-doc-${PV}.tar.bz2 )
-	infinality? ( https://raw.github.com/bohoomil/fontconfig-ultimate/ddda669247330d1a1b8c9473cfe5052d42e1b313/01_lib32-freetype2-iu-2.5.1-2/infinality-2.5.1.patch -> ${P}-infinality.patch )"
+	infinality? ( https://raw.github.com/bohoomil/fontconfig-ultimate/ddda669247330d1a1b8c9473cfe5052d42e1b313/01_lib32-freetype2-iu-2.5.1-2/infinality-2.5.1.patch -> ${PN}-2.5.1-infinality.patch )"
 
 LICENSE="|| ( FTL GPL-2+ )"
 SLOT="2"
@@ -43,7 +43,7 @@ src_prepare() {
 	}
 
 	if use infinality; then
-		epatch "${DISTDIR}/${P}-infinality.patch"
+		epatch "${DISTDIR}/${PN}-2.5.1-infinality.patch"
 
 		# FT_CONFIG_OPTION_SUBPIXEL_RENDERING is already enabled in
 		# freetype-2.4.11
@@ -74,11 +74,8 @@ src_prepare() {
 
 	epatch "${FILESDIR}"/${PN}-2.4.11-sizeof-types.patch # 459966
 
-	epatch "${FILESDIR}"/${P}-TT_Load_Simple_Glyph_fix.patch
-
 	if use utils; then
 		cd "${WORKDIR}/ft2demos-${PV}" || die
-		epatch "${FILESDIR}"/ft2demos-${PV}-compilefix.patch
 		# Disable tests needing X11 when USE="-X". (bug #177597)
 		if ! use X; then
 			sed -i -e "/EXES\ +=\ ftdiff/ s:^:#:" Makefile || die
@@ -94,47 +91,50 @@ src_prepare() {
 	autotools-utils_src_prepare
 }
 
-src_configure() {
+multilib_src_configure() {
 	append-flags -fno-strict-aliasing
 	type -P gmake &> /dev/null && export GNUMAKE=gmake
 
 	local myeconfargs=(
 		--enable-biarch-config
-		$(use_with bzip2) \
+		$(use_with bzip2)
 		$(use_with png)
+
+		# avoid using libpng-config
+		LIBPNG_CFLAGS="$($(tc-getPKG_CONFIG) --cflags libpng)"
+		LIBPNG_LDFLAGS="$($(tc-getPKG_CONFIG) --libs libpng)"
 	)
 
-	autotools-multilib_src_configure
+	autotools-utils_src_configure
 }
 
-src_compile() {
-	autotools-multilib_src_compile
+multilib_src_compile() {
+	default
 
-	if use utils; then
+	if multilib_build_binaries && use utils; then
 		einfo "Building utils"
 		# fix for Prefix, bug #339334
-		multilib_for_best_abi autotools-utils_src_compile \
+		emake \
 			X11_PATH="${EPREFIX}/usr/$(get_libdir)" \
 			FT2DEMOS=1 TOP_DIR_2="${WORKDIR}/ft2demos-${PV}"
 	fi
 }
 
-src_install() {
-	autotools-multilib_src_install
+multilib_src_install() {
+	default
 
-	if use utils; then
-		install_utils() {
-			einfo "Installing utils"
-			rm "${WORKDIR}"/ft2demos-${PV}/bin/README || die
-			local ft2demo
-			for ft2demo in ../ft2demos-${PV}/bin/*; do
-				"${BUILD_DIR}"/libtool --mode=install $(type -P install) -m 755 "$ft2demo" \
-					"${ED}"/usr/bin || die
-			done
-		}
-		multilib_for_best_abi install_utils
+	if multilib_build_binaries && use utils; then
+		einfo "Installing utils"
+		rm "${WORKDIR}"/ft2demos-${PV}/bin/README || die
+		local ft2demo
+		for ft2demo in ../ft2demos-${PV}/bin/*; do
+			./libtool --mode=install $(type -P install) -m 755 "$ft2demo" \
+				"${ED}"/usr/bin || die
+		done
 	fi
+}
 
+multilib_src_install_all() {
 	if use fontforge; then
 		# Probably fontforge needs less but this way makes things simplier...
 		einfo "Installing internal headers required for fontforge"
@@ -148,4 +148,6 @@ src_install() {
 
 	dodoc docs/{CHANGES,CUSTOMIZE,DEBUG,*.txt,PROBLEMS,TODO}
 	use doc && dohtml -r docs/*
+
+	prune_libtool_files --all
 }
