@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/syslog-ng/Attic/syslog-ng-3.4.2.ebuild,v 1.12 2013/11/13 17:29:42 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/syslog-ng/Attic/syslog-ng-3.4.2.ebuild,v 1.13 2014/01/22 04:25:36 mr_bones_ Exp $
 
 EAPI=5
 inherit autotools eutils multilib systemd
@@ -44,6 +44,7 @@ src_prepare() {
 
 src_configure() {
 	econf \
+		--disable-docs \
 		--with-ivykis=internal \
 		--with-libmongo-client=internal \
 		--sysconfdir=/etc/syslog-ng \
