@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-live/Attic/vdr-live-0.3.0_p20130504.ebuild,v 1.2 2013/10/23 02:11:45 hd_brummy Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-live/vdr-live-0.3.0_p20130504-r1.ebuild,v 1.1 2014/01/24 05:04:56 hd_brummy Exp $
 
-EAPI="5"
+EAPI=5
 
 inherit vdr-plugin-2 ssl-cert
 
@@ -17,8 +17,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="pcre ssl"
 
 DEPEND="media-video/vdr
-	>=dev-libs/tntnet-2.0[ssl=,sdk]
-	>=dev-libs/cxxtools-2.0
+	>=dev-libs/tntnet-2.2.1[ssl=]
+	>=dev-libs/cxxtools-2.2.1
 	pcre? ( >=dev-libs/libpcre-8.12[cxx] )"
 RDEPEND="${DEPEND}"
 
