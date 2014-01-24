@@ -1,8 +1,9 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jdbc-postgresql/Attic/jdbc-postgresql-8.3_p605.ebuild,v 1.7 2013/09/19 20:20:44 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jdbc-postgresql/jdbc-postgresql-9.2_p1004.ebuild,v 1.1 2014/01/24 18:04:34 sera Exp $
 
-EAPI="2"
+EAPI="5"
+
 JAVA_PKG_IUSE="doc source"
 
 inherit java-pkg-2 java-ant-2
@@ -17,12 +18,11 @@ HOMEPAGE="http://jdbc.postgresql.org/"
 
 LICENSE="POSTGRESQL"
 SLOT="0"
-KEYWORDS="ppc"
-IUSE="java6 test"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+IUSE="test"
 
-DEPEND=">=dev-java/java-config-2.0.31
-	java6? ( =virtual/jdk-1.6* )
-	!java6? ( =virtual/jdk-1.5* )
+DEPEND="
+	>=virtual/jdk-1.6
 	doc? (
 		dev-libs/libxslt
 		app-text/docbook-xsl-stylesheets
@@ -31,17 +31,16 @@ DEPEND=">=dev-java/java-config-2.0.31
 		dev-java/ant-junit
 		dev-db/postgresql-server
 	)"
-RDEPEND="java6? ( >=virtual/jre-1.6 )
-	!java6? ( >=virtual/jre-1.5 )"
+RDEPEND=">=virtual/jre-1.6"
 
-S="${WORKDIR}/${MY_P}"
-
-EANT_DOC_TARGET="publicapi"
+S="${WORKDIR}/postgresql-jdbc-${MY_PV}.src"
 
 java_prepare() {
-	# needed for src_test
-	java-ant_rewrite-classpath
+	find -name "*.class" -type f -exec rm -v {} + || die
 }
+
+JAVA_ANT_REWRITE_CLASSPATH="yes"
+EANT_DOC_TARGET="publicapi"
 
 src_compile() {
 	java-pkg-2_src_compile
@@ -73,7 +72,7 @@ src_install() {
 
 	if use doc ; then
 		java-pkg_dojavadoc build/publicapi
-		dohtml build/doc/pgjdbc.html || die
+		dohtml build/doc/pgjdbc.html
 	fi
 
 	use source && java-pkg_dosrc org
