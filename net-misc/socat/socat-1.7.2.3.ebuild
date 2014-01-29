@@ -1,10 +1,10 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/socat/Attic/socat-2.0.0_beta6.ebuild,v 1.2 2013/05/27 12:07:09 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/socat/Attic/socat-1.7.2.3.ebuild,v 1.1 2014/01/29 10:25:32 jer Exp $
 
 EAPI=5
 
-inherit eutils flag-o-matic toolchain-funcs
+inherit eutils flag-o-matic autotools toolchain-funcs
 
 DESCRIPTION="Multipurpose relay (SOcket CAT)"
 HOMEPAGE="http://www.dest-unreach.org/socat/"
@@ -14,7 +14,7 @@ SRC_URI="http://www.dest-unreach.org/socat/download/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~sparc ~x86 ~ppc-macos ~x64-macos ~x86-macos"
 IUSE="ssl readline ipv6 tcpd"
 
 DEPEND="
@@ -26,12 +26,13 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.7.2.1-long-long.patch #436164
-	touch doc/${PN}.1 || die
+	sed -i test.sh -e "s|/sbin/ifconfig|$(type -P ifconfig)|g" || die
+	eautoreconf
 }
 
 src_configure() {
+	filter-flags '-Wno-error*' #293324
 	tc-export AR
-	filter-flags -Wall '-Wno-error*' #293324
 	econf \
 		$(use_enable ssl openssl) \
 		$(use_enable readline) \
