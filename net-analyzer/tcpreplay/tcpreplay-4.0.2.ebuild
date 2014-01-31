@@ -1,14 +1,13 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/tcpreplay/Attic/tcpreplay-3.5.0_beta1.ebuild,v 1.2 2013/05/29 18:37:10 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/tcpreplay/Attic/tcpreplay-4.0.2.ebuild,v 1.1 2014/01/31 13:09:08 jer Exp $
 
 EAPI=5
 inherit autotools eutils flag-o-matic
 
-MY_P="${P/_/}"
 DESCRIPTION="replay saved tcpdump or snoop files at arbitrary speeds"
 HOMEPAGE="http://tcpreplay.synfin.net/"
-SRC_URI="http://synfin.net/${MY_P}.tar.bz2"
+SRC_URI="mirror://sourceforge/project/${PN}/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -20,11 +19,12 @@ DEPEND="
 	dev-libs/libdnet
 	>=net-libs/libpcap-0.9
 	tcpdump? ( net-analyzer/tcpdump )
-	pcapnav? ( net-libs/libpcapnav )"
+	pcapnav? ( net-libs/libpcapnav )
+"
 
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${MY_P}"
+DOCS=( README docs/{CHANGELOG,CREDIT,HACKING,TODO} )
 
 src_prepare() {
 	sed -i \
@@ -40,11 +40,6 @@ src_prepare() {
 		-e '/tcpliveplay_CFLAGS/s|$| $(LDNETINC)|g' \
 		-e '/tcpliveplay_LDADD/s|$| $(LDNETLIB)|g' \
 		src/Makefile.am || die
-	sed -i -e 's|replay_speed325|replay_sleep325|g' test/Makefile.am || die
-
-	# Work around defines unexpectedly implemented in bundled libopts
-	echo "#define tSCC static char const" >> src/tcprewrite_opts.h || die
-	echo "#define tSCC static char const" >> src/tcpprep_opts.h || die
 
 	eautoreconf
 }
@@ -72,9 +67,4 @@ src_test() {
 			ewarn "Note, that some tests require eth0 iface to be UP." ;
 			die "self test failed - see ${S}/test/test.log" ; }
 	fi
-}
-
-src_install() {
-	make DESTDIR="${D}" install || die
-	dodoc README docs/{CHANGELOG,CREDIT,HACKING,TODO} || die
 }
