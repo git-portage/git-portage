@@ -1,20 +1,21 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/fltk/Attic/fltk-1.3.0-r1.ebuild,v 1.17 2013/12/26 18:49:18 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/fltk/fltk-1.3.2_p10088.ebuild,v 1.1 2014/02/02 11:15:30 jer Exp $
 
-EAPI=3
+EAPI=5
 
 inherit autotools eutils fdo-mime flag-o-matic versionator
 
-MY_P=${P/_}
+MY_PV_MAJOR=$( get_version_component_range 1-2 )
+MY_PV_REV=$( get_version_component_range 4 )
 
 DESCRIPTION="C++ user interface toolkit for X and OpenGL"
 HOMEPAGE="http://www.fltk.org/"
-SRC_URI="http://fltk.org/pub/${PN}/${PV/_}/${P/_}-source.tar.gz"
+SRC_URI="http://${PN}.org/pub/${PN}/snapshots/${PN}-${MY_PV_MAJOR}.x-${MY_PV_REV/p/r}.tar.bz2 -> ${P}.tar.bz2"
 
 SLOT="1"
 LICENSE="FLTK LGPL-2"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~x86-macos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 IUSE="cairo debug doc examples games opengl pdf static-libs threads xft xinerama"
 
 RDEPEND="
@@ -40,14 +41,15 @@ DEPEND="${RDEPEND}
 INCDIR=${EPREFIX}/usr/include/fltk-${SLOT}
 LIBDIR=${EPREFIX}/usr/$(get_libdir)/fltk-${SLOT}
 
-S=${WORKDIR}/${MY_P}
+S=${WORKDIR}/${PN}-${MY_PV_MAJOR}.x-${MY_PV_REV/p/r}
 
 src_prepare() {
 	rm -rf zlib jpeg png || die
 	epatch \
-		"${FILESDIR}"/${P}-as-needed.patch \
-		"${FILESDIR}"/${P}-share.patch \
-		"${FILESDIR}"/${P}-conf-tests.patch
+		"${FILESDIR}"/${PN}-1.3.1-as-needed.patch \
+		"${FILESDIR}"/${PN}-1.3.2-desktop.patch \
+		"${FILESDIR}"/${PN}-1.3.0-share.patch \
+		"${FILESDIR}"/${PN}-1.3.2-conf-tests.patch
 	sed \
 		-e 's:@HLINKS@::g' -i FL/Makefile.in || die
 	sed -i \
@@ -66,7 +68,11 @@ src_prepare() {
 	sed -e "s/7/$(get_version_component_range 3)/" \
 		"${FILESDIR}"/FLTKConfig.cmake > CMake/FLTKConfig.cmake
 	sed -e 's:-Os::g' -i configure.in || die
-	use prefix && append-ldflags -Wl,-rpath "${LIBDIR}"
+	use prefix && append-ldflags -Wl,-rpath -Wl,"${LIBDIR}"
+
+	# also in Makefile:config.guess config.sub:
+	cp misc/config.{guess,sub} . || die
+
 	eautoconf
 }
 
@@ -90,41 +96,45 @@ src_configure() {
 }
 
 src_compile() {
-	emake || die "emake failed"
+	default
 	if use doc; then
 		cd "${S}"/documentation
-		emake html || die "emake doc failed"
+		emake html
 		if use pdf; then
-			emake pdf || die "emake doc failed"
+			emake pdf
 		fi
 	fi
 	if use games; then
 		cd "${S}"/test
-		emake blocks checkers sudoku || die "emake games failed"
+		emake blocks checkers sudoku
 	fi
 }
 
+src_test() {
+	emake -C test
+}
+
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	default
 	emake -C fluid \
-			DESTDIR="${D}" install-linux || die "emake install fluid failed"
+			DESTDIR="${D}" install-linux
 	if use doc; then
 		emake -C documentation \
-			DESTDIR="${D}" install || die "emake install doc failed"
+			DESTDIR="${D}" install
 	fi
 	local apps="fluid"
 	if use games; then
 		emake -C test \
-			DESTDIR="${D}" install-linux || die "emake install games failed"
+			DESTDIR="${D}" install-linux
 		emake -C documentation \
-			DESTDIR="${D}" install-linux || die "emake install doc games failed"
-		apps="${apps} sudoku blocks checkers"
+			DESTDIR="${D}" install-linux
+		apps+=" sudoku blocks checkers"
 	fi
 	for app in ${apps}; do
 		dosym /usr/share/icons/hicolor/32x32/apps/${app}.png \
 			/usr/share/pixmaps/${app}.png
 	done
-	dodoc CHANGES README CREDITS ANNOUNCEMENT || die
+	dodoc CHANGES README CREDITS ANNOUNCEMENT
 
 	if use examples; then
 		insinto /usr/share/doc/${PF}/examples
@@ -138,18 +148,11 @@ src_install() {
 	echo "FLTK_DOCDIR=${EPREFIX}/usr/share/doc/${PF}/html" >> 99fltk-${SLOT}
 	doenvd 99fltk-${SLOT}
 
-	if ! use static-libs; then
-		rm "${ED}"/usr/lib*/fltk-1/*.a || die
-	fi
+	prune_libtool_files
 }
 
 pkg_postinst() {
 	fdo-mime_desktop_database_update
-	echo
-	ewarn "PLEASE PLEASE take note of this"
-	ewarn "Please make *sure* to run revdep-rebuild now"
-	ewarn "You must recompile everything that depends on fltk!"
-	echo
 }
 
 pkg_postrm() {
