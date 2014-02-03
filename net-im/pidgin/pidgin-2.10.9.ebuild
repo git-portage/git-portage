@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/Attic/pidgin-2.10.8-r1.ebuild,v 1.5 2014/01/31 16:59:04 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/pidgin-2.10.9.ebuild,v 1.1 2014/02/03 13:37:08 polynomial-c Exp $
 
 EAPI=5
 
@@ -10,12 +10,11 @@ inherit autotools flag-o-matic eutils toolchain-funcs multilib perl-app gnome2 p
 
 DESCRIPTION="GTK Instant Messenger client"
 HOMEPAGE="http://pidgin.im/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2
-	http://dev.gentoo.org/~polynomial-c/${PN}-eds-3.6.patch.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-freebsd ~amd64-linux ~x86-linux ~x86-macos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-freebsd ~amd64-linux ~x86-linux ~x86-macos"
 IUSE="dbus debug doc eds gadu gnutls +gstreamer +gtk idn meanwhile mxit"
 IUSE+=" networkmanager nls perl silc tcl tk spell sasl ncurses"
 IUSE+=" groupwise prediction python +xscreensaver zephyr zeroconf" # mono"
@@ -38,7 +37,7 @@ RDEPEND="
 		x11-libs/libSM
 		xscreensaver? ( x11-libs/libXScrnSaver )
 		spell? ( >=app-text/gtkspell-2.0.2:2 )
-		eds? ( >=gnome-extra/evolution-data-server-3.6 )
+		eds? ( <gnome-extra/evolution-data-server-3.6 )
 		prediction? ( >=dev-db/sqlite-3.3:3 ) )
 	gstreamer? ( =media-libs/gstreamer-0.10*
 		=media-libs/gst-plugins-good-0.10*
@@ -137,8 +136,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-2.10.0-gold.patch" \
-		"${WORKDIR}/${PN}-eds-3.6.patch"
+	epatch "${FILESDIR}/${PN}-2.10.0-gold.patch"
 
 	epatch_user
 
