@@ -1,13 +1,13 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libchamplain/Attic/libchamplain-0.12.4.ebuild,v 1.2 2013/08/30 22:45:47 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libchamplain/libchamplain-0.12.7.ebuild,v 1.1 2014/02/06 22:19:33 eva Exp $
 
 EAPI="5"
 GCONF_DEBUG=no
 VALA_MIN_API_VERSION=0.14
 VALA_USE_DEPEND=vapigen
 
-inherit eutils gnome2 vala
+inherit gnome2 vala
 
 DESCRIPTION="Clutter based world map renderer"
 HOMEPAGE="http://projects.gnome.org/libchamplain/"
