@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/scite/Attic/scite-3.3.4.ebuild,v 1.1 2013/07/22 13:11:25 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/scite/scite-3.3.9.ebuild,v 1.1 2014/02/06 05:56:29 ago Exp $
 
 EAPI="4"
 
