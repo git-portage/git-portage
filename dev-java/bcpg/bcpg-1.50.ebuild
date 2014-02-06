@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/bcpkix/Attic/bcpkix-1.49-r1.ebuild,v 1.3 2014/01/23 20:26:47 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/bcpg/bcpg-1.50.ebuild,v 1.1 2014/02/06 13:59:13 tomwij Exp $
 
 EAPI="5"
 
@@ -18,12 +18,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~x64-macos"
 
-# Tests are currently broken. Needs further investigation.
-# java.lang.RuntimeException: java.security.NoSuchProviderException: JCE cannot authenticate the provider BC
+# Tests are currently broken. Appears to need older version of bcprov; but since bcprov is not slotted, this can cause conflicts.
+# Needs further investigation; though, only a small part has tests and there are no tests for bcpg itself.
 RESTRICT="test"
 
 COMMON_DEPEND="
-	~dev-java/bcprov-${PV}:0[test?]"
+	>=dev-java/bcprov-${PV}:0[test?]"
 
 DEPEND=">=virtual/jdk-1.5
 	app-arch/unzip
@@ -72,17 +72,7 @@ src_test() {
 	local cp="${PN}.jar:bcprov.jar:junit.jar"
 	local pkg="org.bouncycastle"
 
-	java -cp ${cp} ${pkg}.tsp.test.AllTests | tee tsp.tests
-	java -cp ${cp} ${pkg}.pkcs.test.AllTests | tee pkcs.tests
-	java -cp ${cp} ${pkg}.openssl.test.AllTests | tee openssl.tests
-	java -cp ${cp} ${pkg}.mozilla.test.AllTests | tee mozilla.tests
-	java -cp ${cp} ${pkg}.eac.test.AllTests | tee eac.tests
-	java -cp ${cp} ${pkg}.dvcs.test.AllTests | tee dvcs.tests
-	java -cp ${cp} ${pkg}.cms.test.AllTests | tee cms.tests
-	java -cp ${cp} ${pkg}.cert.test.AllTests | tee cert.tests
-	java -cp ${cp} ${pkg}.cert.ocsp.test.AllTests | tee cert.ocsp.tests
-	java -cp ${cp} ${pkg}.cert.crmf.test.AllTests | tee cert.crmf.tests
-	java -cp ${cp} ${pkg}.cert.cmp.test.AllTests | tee cert.cmp.tests
+	java -cp ${cp} ${pkg}.openpgp.test.AllTests | tee openpgp.tests
 
 	grep -q FAILURES *.tests && die "Tests failed."
 }
