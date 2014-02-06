@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.11.3_pre54663.ebuild,v 1.1 2014/01/08 17:10:36 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.11.2-r1.ebuild,v 1.1 2014/02/06 12:29:23 jer Exp $
 
 EAPI=5
 inherit autotools eutils fcaps user
@@ -8,7 +8,7 @@ inherit autotools eutils fcaps user
 [[ -n ${PV#*_rc} && ${PV#*_rc} != ${PV} ]] && MY_P=${PN}-${PV/_} || MY_P=${P}
 DESCRIPTION="A network protocol analyzer formerly known as ethereal"
 HOMEPAGE="http://www.wireshark.org/"
-SRC_URI="http://www.wireshark.org/download/automated/src/${P/_pre*}-SVN-${PV/*_pre}.tar.bz2"
+SRC_URI="http://www.wireshark.org/download/src/all-versions/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
@@ -76,13 +76,13 @@ DEPEND="
 	virtual/pkgconfig
 "
 
-S=${WORKDIR}/${P/_pre*}-SVN-${PV/*_pre}
+S=${WORKDIR}/${MY_P}
 
 src_prepare() {
 	epatch \
 		"${FILESDIR}"/${PN}-1.6.13-ldflags.patch \
 		"${FILESDIR}"/${PN}-1.11.0-oldlibs.patch \
-		"${FILESDIR}"/${PN}-1.11.3-gtk-deprecated-warnings.patch
+		"${FILESDIR}"/${PN}-1.11.2-gtk-deprecated-warnings.patch
 
 	epatch_user
 
@@ -142,6 +142,7 @@ src_configure() {
 		$(use_with kerberos krb5) \
 		$(use_with lua) \
 		$(use_with netlink libnl) \
+		$(use_with pcap dumpcap-group wireshark) \
 		$(use_with pcap) \
 		$(use_with portaudio) \
 		$(use_with qt4 qt) \
