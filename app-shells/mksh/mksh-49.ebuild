@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/mksh/Attic/mksh-48.ebuild,v 1.1 2013/08/15 02:47:30 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/mksh/mksh-49.ebuild,v 1.1 2014/02/06 09:37:57 polynomial-c Exp $
 
-EAPI=4
+EAPI=5
 
 inherit eutils toolchain-funcs
 
@@ -20,7 +20,11 @@ S="${WORKDIR}/${PN}"
 src_compile() {
 	tc-export CC
 	# we want to build static with klibc
-	if use static; then unset CC; export CC="/usr/bin/klcc"; export LDSTATIC="-static"; fi
+	if use static ; then
+		unset CC
+		export CC="/usr/bin/klcc"
+		export LDSTATIC="-static"
+	fi
 	export CPPFLAGS="${CPPFLAGS} -DMKSH_DEFAULT_PROFILEDIR=\\\"${EPREFIX}/etc\\\""
 	# we can't assume lto existing/enabled, so we add a fallback
 	sh Build.sh -r -c lto || sh Rebuild.sh || die
