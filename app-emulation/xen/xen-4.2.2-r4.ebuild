@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen/Attic/xen-4.3.1-r4.ebuild,v 1.1 2014/01/24 15:25:38 dlan Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen/Attic/xen-4.2.2-r4.ebuild,v 1.1 2014/02/07 08:21:21 idella4 Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python{2_6,2_7} )
 
 if [[ $PV == *9999 ]]; then
 	KEYWORDS=""
@@ -13,8 +13,7 @@ if [[ $PV == *9999 ]]; then
 	S="${WORKDIR}/${REPO}"
 	live_eclass="mercurial"
 else
-	# Set to match entry in stable 4.3.1-r1, Bug 493944
-	KEYWORDS="~amd64 -x86"
+	KEYWORDS="~amd64 ~x86"
 	SRC_URI="http://bits.xensource.com/oss-xen/release/${PV}/xen-${PV}.tar.gz"
 fi
 
@@ -24,7 +23,7 @@ DESCRIPTION="The Xen virtual machine monitor"
 HOMEPAGE="http://xen.org/"
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="custom-cflags debug efi flask xsm"
+IUSE="custom-cflags debug efi flask pae xsm"
 
 DEPEND="${PYTHON_DEPS}
 	efi? ( >=sys-devel/binutils-2.22[multitarget] )
@@ -37,20 +36,21 @@ RESTRICT="test"
 # Approved by QA team in bug #144032
 QA_WX_LOAD="boot/xen-syms-${PV}"
 
-REQUIRED_USE="flask? ( xsm )"
+REQUIRED_USE="
+	flask? ( xsm )
+	"
 
-# Security patches
+#Security patches
 XSA_PATCHES=(
-	"${FILESDIR}"/${PN}-CVE-2013-4375-XSA-71.patch
-	"${FILESDIR}"/${PN}-CVE-2013-4494-XSA-73.patch
-	"${FILESDIR}"/${PN}-4.3-CVE-2013-6375-XSA-75.patch
-	"${FILESDIR}"/${PN}-CVE-2013-6375-XSA-78.patch
-	"${FILESDIR}"/${PN}-CVE-2013-6885-XSA-82.patch
-	"${FILESDIR}"/${PN}-4.3-CVE-2013-4553-XSA-74.patch
+	"${FILESDIR}"/${PN}-4-CVE-2013-1918-XSA-45_[1-7].patch
+	"${FILESDIR}"/${PN}-4.2-2013-2076-XSA-52to54.patch
+	"${FILESDIR}"/${PN}-4.2-CVE-2013-1432-XSA-58.patch
+	"${FILESDIR}"/${PN}-4.2-CVE-2013-4553-XSA-74.patch
 	"${FILESDIR}"/${PN}-CVE-2013-4554-XSA-76.patch
 	"${FILESDIR}"/${PN}-CVE-2013-6400-XSA-80.patch
-	"${FILESDIR}"/${PN}-4-XSA-83.patch					#bug #499054
-	"${FILESDIR}"/${PN}-4.3-XSA-87.patch				#bug #499124
+	"${FILESDIR}"/${PN}-4-XSA-83.patch					# bug #499054
+	"${FILESDIR}"/${PN}-4.2-CVE-2014-263-XSA-84-85.patch			# bug #500528 500536
+	"${FILESDIR}"/${PN}-4.2-XSA-87.patch					# bug #499124
 )
 
 pkg_setup() {
@@ -77,7 +77,7 @@ pkg_setup() {
 
 src_prepare() {
 	# Drop .config and fix gcc-4.6
-	epatch  "${FILESDIR}"/${PN/-pvgrub/}-4.3-fix_dotconfig-gcc.patch
+	epatch  "${FILESDIR}"/${PN/-pvgrub/}-4-fix_dotconfig-gcc.patch
 
 	if use efi; then
 		epatch "${FILESDIR}"/${PN}-4.2-efi.patch
@@ -102,12 +102,12 @@ src_prepare() {
 	sed -i 's/, "-Werror"//' "${S}/tools/python/setup.py" || die "failed to re-set setup.py"
 
 	[[ ${XSA_PATCHES[@]} ]] && epatch "${XSA_PATCHES[@]}"
-
 	epatch_user
 }
 
 src_configure() {
 	use debug && myopt="${myopt} debug=y"
+	use pae && myopt="${myopt} pae=y"
 
 	if use custom-cflags; then
 		filter-flags -fPIE -fstack-protector
@@ -125,6 +125,7 @@ src_compile() {
 src_install() {
 	local myopt
 	use debug && myopt="${myopt} debug=y"
+	use pae && myopt="${myopt} pae=y"
 
 	# The 'make install' doesn't 'mkdir -p' the subdirs
 	if use efi; then
@@ -139,5 +140,6 @@ pkg_postinst() {
 	elog " http://www.gentoo.org/doc/en/xen-guide.xml"
 	elog " http://en.gentoo-wiki.com/wiki/Xen/"
 
+	use pae && ewarn "This is a PAE build of Xen. It will *only* boot PAE kernels!"
 	use efi && einfo "The efi executable is installed in boot/efi/gentoo"
 }
