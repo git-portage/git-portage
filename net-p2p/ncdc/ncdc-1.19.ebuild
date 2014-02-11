@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/ncdc/Attic/ncdc-1.16.1.ebuild,v 1.7 2013/06/23 21:32:33 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/ncdc/ncdc-1.19.ebuild,v 1.1 2014/02/11 20:39:49 xmw Exp $
 
-EAPI=4
+EAPI=5
 
 inherit toolchain-funcs
 
@@ -12,21 +12,22 @@ SRC_URI="http://dev.yorhel.nl/download/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~sparc x86"
-IUSE=""
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+IUSE="geoip"
 
 RDEPEND="app-arch/bzip2
 	dev-db/sqlite:3
 	dev-libs/glib:2
 	net-libs/gnutls
 	sys-libs/ncurses:5[unicode]
-	sys-libs/zlib"
+	sys-libs/zlib
+	geoip? ( dev-libs/geoip )"
 DEPEND="${RDEPEND}
 	dev-util/makeheaders
 	virtual/pkgconfig"
 
 src_configure() {
-	econf --disable-silent-rules
+	econf $(use_with geoip)
 }
 
 src_compile() {
