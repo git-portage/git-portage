@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gst-plugins-base/Attic/gst-plugins-base-1.0.7.ebuild,v 1.1 2013/06/08 10:46:13 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/gst-plugins-base/gst-plugins-base-1.2.3.ebuild,v 1.1 2014/02/16 04:30:09 leio Exp $
 
 EAPI="5"
 
@@ -21,14 +21,13 @@ REQUIRED_USE="
 RDEPEND="
 	app-text/iso-codes
 	>=dev-libs/glib-2.32:2
-	dev-libs/libxml2:2
 	>=media-libs/gstreamer-${PV}:1.0[introspection?]
 	sys-libs/zlib
 	alsa? ( >=media-libs/alsa-lib-0.9.1 )
 	introspection? ( >=dev-libs/gobject-introspection-1.31.1 )
 	ivorbis? ( media-libs/tremor )
 	ogg? ( >=media-libs/libogg-1 )
-	orc? ( >=dev-lang/orc-0.4.16 )
+	orc? ( >=dev-lang/orc-0.4.18 )
 	pango? ( >=x11-libs/pango-1.22 )
 	theora? ( >=media-libs/libtheora-1.1[encode] )
 	vorbis? ( >=media-libs/libvorbis-1 )
