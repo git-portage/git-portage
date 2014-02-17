@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/lyx/Attic/lyx-2.0.7.1-r1.ebuild,v 1.1 2014/02/16 22:45:11 dlan Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/lyx/lyx-2.0.7.1-r2.ebuild,v 1.1 2014/02/17 15:46:47 dlan Exp $
 
 EAPI=5
 
@@ -14,8 +14,7 @@ FONT_S="${S}/lib/fonts"
 FONT_SUFFIX="ttf"
 DESCRIPTION="WYSIWYM frontend for LaTeX, DocBook, etc."
 HOMEPAGE="http://www.lyx.org/"
-SRC_URI="ftp://ftp.lyx.org/pub/lyx/stable/2.0.x/${P}.tar.xz"
-#SRC_URI="ftp://ftp.lyx.org/pub/lyx/devel/lyx-2.0/rc3/${MY_P}.tar.xz"
+SRC_URI="ftp://ftp.lyx.org/pub/lyx/stable/2.0.x/${MY_P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -29,6 +28,8 @@ for X in ${LANGS}; do
 done
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+
+DOCS=( ANNOUNCE NEWS README RELEASE-NOTES UPGRADING )
 
 COMMONDEPEND="dev-qt/qtgui:4
 	dev-qt/qtcore:4
@@ -56,7 +57,7 @@ RDEPEND="${COMMONDEPEND}
 			dev-tex/latex2html
 			dev-tex/tth
 			dev-tex/hevea
-			dev-tex/tex4ht
+			dev-tex/tex4ht[java]
 		)
 	)
 	html? ( dev-tex/html2latex )
@@ -90,7 +91,6 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/2.0-python.patch
-	echo "#!/bin/sh" > config/py-compile
 	sed "s:python -tt:${EPYTHON} -tt:g" -i lib/configure.py || die
 }
 
@@ -112,9 +112,7 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-
-	dodoc ANNOUNCE NEWS README RELEASE-NOTES UPGRADING "${FONT_S}"/*.txt || die
+	default
 
 	if use linguas_he ; then
 		echo "\bind_file cua" > "${T}"/hebrew.bind
