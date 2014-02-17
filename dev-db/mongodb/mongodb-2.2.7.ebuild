@@ -1,13 +1,13 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mongodb/Attic/mongodb-2.4.8.ebuild,v 1.4 2014/02/17 09:43:11 ultrabug Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mongodb/Attic/mongodb-2.2.7.ebuild,v 1.1 2014/02/17 09:43:11 ultrabug Exp $
 
 EAPI=4
 SCONS_MIN_VERSION="1.2.0"
 CHECKREQS_DISK_BUILD="2400M"
 CHECKREQS_DISK_USR="512M"
 
-inherit eutils flag-o-matic multilib pax-utils scons-utils systemd user versionator check-reqs
+inherit eutils flag-o-matic multilib pax-utils scons-utils user versionator check-reqs
 
 MY_P=${PN}-src-r${PV/_rc/-rc}
 
@@ -19,20 +19,18 @@ SRC_URI="http://downloads.mongodb.org/src/${MY_P}.tar.gz
 LICENSE="AGPL-3 Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="kerberos mms-agent sharedclient spidermonkey ssl static-libs"
+IUSE="mms-agent static-libs"
 
 PDEPEND="mms-agent? ( dev-python/pymongo app-arch/unzip )"
 RDEPEND="
 	>=dev-libs/boost-1.50[threads(+)]
 	dev-libs/libpcre[cxx]
-	dev-util/google-perftools[-minimal]
+	dev-util/google-perftools
 	net-libs/libpcap
-	app-arch/snappy
-	ssl? ( >=dev-libs/openssl-1.0.1c )"
+	app-arch/snappy"
 DEPEND="${RDEPEND}
 	sys-libs/readline
-	sys-libs/ncurses
-	kerberos? ( dev-libs/cyrus-sasl[kerberos] )"
+	sys-libs/ncurses"
 
 S=${WORKDIR}/${MY_P}
 
@@ -40,45 +38,26 @@ pkg_setup() {
 	enewgroup mongodb
 	enewuser mongodb -1 -1 /var/lib/${PN} mongodb
 
-	scons_opts="  --cc=$(tc-getCC) --cxx=$(tc-getCXX)"
+	scons_opts="  --cc=$(tc-getCC) --cxx=$(tc-getCXX) --sharedclient --usesm"
 	scons_opts+=" --use-system-tcmalloc"
 	scons_opts+=" --use-system-pcre"
 	scons_opts+=" --use-system-snappy"
 	scons_opts+=" --use-system-boost"
-
-	if use prefix; then
-		scons_opts+=" --cpppath=${EPREFIX}/usr/include"
-		scons_opts+=" --libpath=${EPREFIX}/usr/$(get_libdir)"
-	fi
-
-	if use kerberos; then
-		scons_opts+=" --use-sasl-client"
-	fi
-
-	if use sharedclient; then
-		scons_opts+=" --sharedclient"
-	fi
-
-	if use spidermonkey; then
-		scons_opts+=" --usesm"
-	else
-		scons_opts+=" --usev8"
-	fi
-
-	if use ssl; then
-		scons_opts+=" --ssl"
-	fi
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-2.4.5-fix-scons.patch"
+	epatch "${FILESDIR}/${PN}-2.2-r1-fix-scons.patch"
 	epatch "${FILESDIR}/${PN}-2.2-r1-fix-boost.patch"
+	epatch "${FILESDIR}/${PN}-2.2-r2-boost-1.50.patch"
+	epatch "${FILESDIR}/${PN}-2.2-fix-sharedclient.patch"
 
-	# bug #462606
-	sed -i -e "s@\$INSTALL_DIR/lib@\$INSTALL_DIR/$(get_libdir)@g" src/SConscript.client || die
-
-	# bug #482576
-	sed -i -e "/-Werror/d" src/third_party/v8/SConscript || die
+	# FIXME: apply only this fix [1] on x86 boxes as it breaks /usr/lib symlink
+	# on amd64 machines [2].
+	# [1] https://jira.mongodb.org/browse/SERVER-5575
+	# [2] https://bugs.gentoo.org/show_bug.cgi?id=434664
+	if use !prefix && [[ "$(get_libdir)" == "lib" ]]; then
+		epatch "${FILESDIR}/${PN}-2.2-fix-x86client.patch"
+	fi
 }
 
 src_compile() {
@@ -88,11 +67,7 @@ src_compile() {
 src_install() {
 	escons ${scons_opts} --full --nostrip install --prefix="${ED}"/usr
 
-	use static-libs || find "${ED}"/usr/ -type f -name "*.a" -delete
-
-	if ! use spidermonkey; then
-		pax-mark m "${ED}"/usr/bin/{mongo,mongod}
-	fi
+	use static-libs || rm "${ED}/usr/$(get_libdir)/libmongoclient.a"
 
 	for x in /var/{lib,log}/${PN}; do
 		keepdir "${x}"
@@ -106,9 +81,6 @@ src_install() {
 	newconfd "${FILESDIR}/${PN}.confd" ${PN}
 	newinitd "${FILESDIR}/${PN/db/s}.initd-r1" ${PN/db/s}
 	newconfd "${FILESDIR}/${PN/db/s}.confd" ${PN/db/s}
-	systemd_dounit "${FILESDIR}"/${PN}.service
-	insinto /etc
-	doins "${FILESDIR}"/${PN}.conf
 
 	insinto /etc/logrotate.d/
 	newins "${FILESDIR}/${PN}.logrotate" ${PN}
@@ -124,20 +96,13 @@ src_install() {
 	fi
 }
 
-pkg_preinst() {
-	# wrt bug #461466
-	if [[ "$(get_libdir)" == "lib64" ]]; then
-		rmdir "${ED}"/usr/lib/ &>/dev/null
-	fi
-}
-
 src_test() {
 	escons ${scons_opts} test
 	"${S}"/test --dbpath=unittest || die
 }
 
 pkg_postinst() {
-	if [[ ${REPLACING_VERSIONS} < 2.4 ]]; then
+	if [[ ${REPLACING_VERSIONS} < 1.8 ]]; then
 		ewarn "You just upgraded from a previous version of mongodb !"
 		ewarn "Make sure you run 'mongod --upgrade' before using this version."
 	fi
