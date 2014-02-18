@@ -1,14 +1,11 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/Attic/xen-tools-4.3.1-r5.ebuild,v 1.4 2014/02/18 10:37:12 dlan Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/Attic/xen-tools-4.3.1-r6.ebuild,v 1.1 2014/02/18 10:37:12 dlan Exp $
 
 EAPI=5
 
 PYTHON_COMPAT=( python{2_6,2_7} )
 PYTHON_REQ_USE='xml,threads'
-
-IPXE_TARBALL_URL="http://dev.gentoo.org/~idella4/tarballs/ipxe.tar.gz"
-XEN_SEABIOS_URL="http://dev.gentoo.org/~idella4/tarballs/seabios-dir-remote-20130720.tar.gz"
 
 if [[ $PV == *9999 ]]; then
 	KEYWORDS=""
@@ -17,10 +14,8 @@ if [[ $PV == *9999 ]]; then
 	S="${WORKDIR}/${REPO}"
 	live_eclass="mercurial"
 else
-	KEYWORDS="amd64 -x86"
-	SRC_URI="http://bits.xensource.com/oss-xen/release/${PV}/xen-${PV}.tar.gz
-	$IPXE_TARBALL_URL
-	$XEN_SEABIOS_URL"
+	KEYWORDS="~amd64 -x86"
+	SRC_URI="http://bits.xensource.com/oss-xen/release/${PV}/xen-${PV}.tar.gz"
 	S="${WORKDIR}/xen-${PV}"
 fi
 
@@ -49,6 +44,8 @@ DEPEND="dev-libs/lzo:2
 	pam? ( dev-python/pypam[${PYTHON_USEDEP}] )
 	sys-libs/zlib
 	sys-power/iasl
+	sys-firmware/seabios
+	sys-firmware/ipxe
 	hvm? ( media-libs/libsdl )
 	${PYTHON_DEPS}
 	api? ( dev-libs/libxml2
@@ -186,13 +183,9 @@ src_prepare() {
 	# Fix network broadcast on bridged networks
 	epatch "${FILESDIR}/${PN}-3.4.0-network-bridge-broadcast.patch"
 
-	# Prevent the downloading of ipxe, seabios
-	epatch "${FILESDIR}"/${PN/-tools/}-4.3-anti-download.patch
-	cp "${DISTDIR}"/ipxe.tar.gz tools/firmware/etherboot/ || die
-	mv ../seabios-dir-remote tools/firmware/ || die
-	pushd tools/firmware/ > /dev/null
-	ln -s seabios-dir-remote seabios-dir || die
-	popd > /dev/null
+	# Bug 496708
+	epatch "${FILESDIR}"/${PN}-4-unbundle-ipxe.patch
+	epatch "${FILESDIR}"/${PN}-4-unbundle-seabios.patch
 
 	# Fix bridge by idella4, bug #362575
 	epatch "${FILESDIR}/${PN}-4.1.1-bridge.patch"
