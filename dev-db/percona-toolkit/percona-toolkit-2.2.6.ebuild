@@ -1,10 +1,10 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/percona-toolkit/Attic/percona-toolkit-2.1.7-r1.ebuild,v 1.1 2013/09/10 09:47:36 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/percona-toolkit/percona-toolkit-2.2.6.ebuild,v 1.1 2014/02/21 20:38:07 idl0r Exp $
 
 EAPI=5
 
-inherit perl-app perl-module toolchain-funcs
+inherit eutils perl-app perl-module toolchain-funcs
 
 DESCRIPTION="essential command-line utilities for MySQL"
 HOMEPAGE="http://www.percona.com/software/percona-toolkit/"
@@ -12,7 +12,7 @@ SRC_URI="http://www.percona.com/downloads/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="|| ( GPL-2 Artistic )"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 # Package warrants IUSE doc
 IUSE=""
 
@@ -20,17 +20,26 @@ COMMON_DEPEND="dev-perl/DBI
 	dev-perl/DBD-mysql
 	virtual/perl-Time-HiRes"
 RDEPEND="${COMMON_DEPEND}
+	dev-perl/JSON
+	dev-perl/libwww-perl
+	dev-perl/Role-Tiny
+	virtual/perl-File-Path
 	virtual/perl-Getopt-Long
 	virtual/perl-Time-Local
 	virtual/perl-Digest-MD5
 	virtual/perl-IO-Compress
 	virtual/perl-File-Temp
 	virtual/perl-File-Spec
-	virtual/perl-Time-HiRes
 	virtual/perl-Scalar-List-Utils
 	dev-perl/TermReadKey"
 DEPEND="${COMMON_DEPEND}
 	virtual/perl-ExtUtils-MakeMaker"
+
+src_prepare() {
+	# bug 501904 - CVE-2014-2029
+	# sed -i -e '/^=item --\[no\]version-check/,/^default: yes/{/^default: yes/d}' bin/*
+	epatch "${FILESDIR}/${P}-no-versioncheck.patch"
+}
 
 # Percona Toolkit does NOT contain the UDF code for Murmur/FNV any more.
 src_install() {
