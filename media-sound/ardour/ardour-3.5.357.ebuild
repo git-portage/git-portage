@@ -1,22 +1,25 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ardour/Attic/ardour-3.3.ebuild,v 1.1 2013/07/22 09:23:36 nativemad Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ardour/ardour-3.5.357.ebuild,v 1.1 2014/02/25 16:17:24 nativemad Exp $
 
-EAPI=5
-inherit eutils flag-o-matic toolchain-funcs waf-utils
-
-MY_PN="Ardour3"
-MY_P="${MY_PN}-${PV}"
-S="${WORKDIR}/${MY_P}"
+EAPI=4
+inherit eutils toolchain-funcs flag-o-matic waf-utils
 
 DESCRIPTION="Digital Audio Workstation"
 HOMEPAGE="http://ardour.org/"
-SRC_URI="mirror://gentoo/${MY_P}.tar.bz2"
+
+if [ ${PV} = 9999 ]; then
+	KEYWORDS=""
+	EGIT_REPO_URI="http://git.ardour.org/ardour/ardour.git"
+	inherit git-2
+else
+	KEYWORDS="~amd64 ~x86"
+	SRC_URI="https://github.com/Ardour/ardour/archive/${PV}.tar.gz -> ${P}.tar.gz"
+fi
 
 LICENSE="GPL-2"
 SLOT="3"
-KEYWORDS="~amd64 ~x86"
-IUSE="altivec curl debug doc nls lv2 sse"
+IUSE="altivec debug doc nls lv2 sse"
 
 RDEPEND="media-libs/aubio
 	media-libs/liblo
@@ -47,24 +50,43 @@ RDEPEND="media-libs/aubio
 	virtual/libusb:0
 	dev-libs/boost
 	>=media-libs/taglib-1.7
-	curl? ( net-misc/curl )
+	net-misc/curl
 	lv2? (
 		>=media-libs/slv2-0.6.1
 		media-libs/lilv
 		media-libs/sratom
 		dev-libs/sord
 		>=media-libs/suil-0.6.10
-
+		>=media-libs/lv2-1.4.0
 	)"
 
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	nls? ( sys-devel/gettext )
 	doc? ( app-doc/doxygen[dot] )"
+	if ! [ ${PV} = 9999 ]; then
+		DEPEND="${DEPEND}"
+	fi
 
-src_prepare() {
-	epatch "${FILESDIR}"/${PN}-3.2-syslibs.patch
+src_unpack() {
+	if [ ${PV} = 9999 ]; then
+		git-2_src_unpack
+	else
+		unpack ${A}
+	fi
+}
+
+src_prepare(){
+	if ! [ ${PV} = 9999 ]; then
+		PVTEMP=`echo "${PV}" | sed "s/\./-/2"`
+		sed -e '/cmd = "git describe HEAD/,/utf-8/{s:cmd = \"git describe HEAD\":rev = \"'${PVTEMP}-gentoo'\":p;d}' -i "${S}"/wscript
+		sed -e 's/'os.getcwd\(\),\ \'.git'/'os.getcwd\(\),\ \'libs/'' -i "${S}"/wscript
+		sed -e 's/'os.path.exists\(\'.git'/'os.path.exists\(\'wscript/'' -i "${S}"/wscript
+
+	fi
+	epatch "${FILESDIR}"/${PN}-3.5.7-syslibs.patch
 	sed 's/python/python2/' -i waf
+	sed 's/'FLAGS\'\,\ optimization_flags'/'FLAGS\'\,\ \'\''/g' -i "${S}"/wscript
 }
 
 src_configure() {
@@ -73,11 +95,11 @@ src_configure() {
 	waf-utils_src_configure \
 		--destdir="${D}" \
 		--prefix=/usr \
+		--configdir=/etc \
 		$(use lv2 && echo "--lv2" || echo "--no-lv2") \
 		$(use nls && echo "--nls" || echo "--no-nls") \
-		$(use debug && echo "--stl-debug") \
+		$(use debug && echo "--stl-debug" || echo "--optimize") \
 		$((use altivec || use sse) && echo "--fpu-optimization" || echo "--no-fpu-optimization") \
-		$(use curl || echo "--no-freesound") \
 		$(use doc && echo "--docs")
 }
 
@@ -87,4 +109,9 @@ src_install() {
 	doman ${PN}${SLOT}.1
 	newicon icons/icon/ardour_icon_mac.png ${PN}${SLOT}.png
 	make_desktop_entry ardour3 ardour3 ardour3 AudioVideo
+}
+
+pkg_postinst() {
+	elog "If you are using Ardour and want to keep its development alive"
+	elog "then please consider to do a donation upstream at ardour.org. Thanks!"
 }
