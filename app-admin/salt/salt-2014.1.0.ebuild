@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/salt/Attic/salt-0.17.4-r1.ebuild,v 1.1 2013/12/26 10:56:49 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/salt/Attic/salt-2014.1.0.ebuild,v 1.1 2014/02/27 00:02:32 chutzpah Exp $
 
 EAPI=5
 
@@ -24,9 +24,9 @@ fi
 
 LICENSE="Apache-2.0"
 SLOT="0"
-IUSE="ldap libvirt mako mongodb mysql openssl redis test"
+IUSE="ldap libvirt mako mongodb mysql openssl redis timelib test"
 
-RDEPEND=">=dev-python/pyzmq-2.1.9[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/pyzmq-2.2.0[${PYTHON_USEDEP}]
 		dev-python/msgpack[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 		dev-python/m2crypto[${PYTHON_USEDEP}]
@@ -34,6 +34,7 @@ RDEPEND=">=dev-python/pyzmq-2.1.9[${PYTHON_USEDEP}]
 		dev-python/pycryptopp[${PYTHON_USEDEP}]
 		dev-python/jinja[${PYTHON_USEDEP}]
 		dev-python/setuptools[${PYTHON_USEDEP}]
+		>=dev-python/libcloud-0.14.0[${PYTHON_USEDEP}]
 		sys-apps/pciutils
 		mako? ( dev-python/mako[${PYTHON_USEDEP}] )
 		ldap? ( dev-python/python-ldap[${PYTHON_USEDEP}] )
@@ -45,7 +46,8 @@ RDEPEND=">=dev-python/pyzmq-2.1.9[${PYTHON_USEDEP}]
 		)
 		mongodb? ( dev-python/pymongo[${PYTHON_USEDEP}] )
 		mysql? ( dev-python/mysql-python[${PYTHON_USEDEP}] )
-		redis? ( dev-python/redis-py[${PYTHON_USEDEP}] )"
+		redis? ( dev-python/redis-py[${PYTHON_USEDEP}] )
+		timelib? ( dev-python/timelib[${PYTHON_USEDEP}] )"
 DEPEND="test? (
 			dev-python/pip
 			dev-python/virtualenv
@@ -58,13 +60,16 @@ DOCS=(README.rst AUTHORS)
 
 python_prepare() {
 	sed -i '/install_requires=/ d' setup.py || die "sed failed"
+
+	# this test fails because it trys to "pip install distribute"
+	rm tests/unit/{modules,states}/zcbuildout_test.py
 }
 
 python_install_all() {
-	distutils-r1_python_install_all
+	USE_SETUPTOOLS=1 distutils-r1_python_install_all
 
 	for s in minion master syndic; do
-		newinitd "${FILESDIR}"/${s}-initd-1 salt-${s}
+		newinitd "${FILESDIR}"/${s}-initd-3 salt-${s}
 		newconfd "${FILESDIR}"/${s}-confd-1 salt-${s}
 		systemd_dounit "${FILESDIR}"/salt-${s}.service
 	done
@@ -76,5 +81,5 @@ python_install_all() {
 python_test() {
 	# testsuite likes lots of files
 	ulimit -n 3072
-	SHELL="/bin/bash" TMPDIR=/tmp ./tests/runtests.py --unit-tests --no-report || die
+	USE_SETUPTOOLS=1 SHELL="/bin/bash" TMPDIR=/tmp ./tests/runtests.py --unit-tests --no-report --verbose || die
 }
