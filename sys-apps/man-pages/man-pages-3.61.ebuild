@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/man-pages/Attic/man-pages-3.58.ebuild,v 1.1 2014/02/16 01:27:55 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/man-pages/Attic/man-pages-3.61.ebuild,v 1.1 2014/02/27 05:38:10 polynomial-c Exp $
 
 EAPI=3
 
