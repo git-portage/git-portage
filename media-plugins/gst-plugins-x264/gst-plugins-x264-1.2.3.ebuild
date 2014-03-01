@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-x264/Attic/gst-plugins-x264-1.0.6.ebuild,v 1.2 2013/07/07 20:28:40 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-x264/gst-plugins-x264-1.2.3.ebuild,v 1.1 2014/03/01 09:10:29 pacho Exp $
 
 EAPI="5"
 
