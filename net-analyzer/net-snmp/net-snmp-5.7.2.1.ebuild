@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/net-snmp/Attic/net-snmp-5.7.2.ebuild,v 1.5 2013/09/20 16:59:48 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/net-snmp/Attic/net-snmp-5.7.2.1.ebuild,v 1.1 2014/03/01 19:51:59 jer Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_{6,7} )
@@ -9,14 +9,12 @@ DISTUTILS_OPTIONAL=yesplz
 WANT_AUTOMAKE=none
 PATCHSET=1
 
-inherit autotools distutils-r1 eutils perl-module
-
-MY_P="${P/_rc/.rc}"
+inherit autotools distutils-r1 eutils perl-module systemd
 
 DESCRIPTION="Software for generating and retrieving SNMP data"
 HOMEPAGE="http://net-snmp.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz
-	http://dev.gentoo.org/~flameeyes/${PN}/${MY_P}-patches-${PATCHSET}.tar.xz"
+SRC_URI="http://dev.gentoo.org/~jer/${P}.tar.gz
+	http://dev.gentoo.org/~flameeyes/${PN}/${PN}-5.7.2-patches-${PATCHSET}.tar.xz"
 
 # GPL-2 for the init scripts
 LICENSE="HPND BSD GPL-2"
@@ -55,8 +53,6 @@ DEPEND="${COMMON}
 REQUIRED_USE="rpm? ( bzip2 zlib )"
 
 RESTRICT=test
-
-S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	# snmpconf generates config files with proper selinux context
@@ -100,12 +96,11 @@ src_configure() {
 }
 
 src_compile() {
-	emake OTHERLDFLAGS="${LDFLAGS}" sedscript all
+	emake \
+		OTHERLDFLAGS="${LDFLAGS}" \
+		sedscript all
 
-	if use doc ; then
-		einfo "Building HTML Documentation"
-		emake docsdox
-	fi
+	use doc && emake docsdox
 }
 
 src_install () {
@@ -131,6 +126,9 @@ src_install () {
 
 	newinitd "${FILESDIR}"/snmptrapd.init.2 snmptrapd
 	newconfd "${FILESDIR}"/snmptrapd.conf snmptrapd
+
+	systemd_dounit "${FILESDIR}"/snmpd.service
+	systemd_dounit "${FILESDIR}"/snmptrapd.service
 
 	insinto /etc/snmp
 	newins "${S}"/EXAMPLE.conf snmpd.conf.example
