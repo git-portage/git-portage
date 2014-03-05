@@ -1,36 +1,34 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/geary/Attic/geary-0.3.1.ebuild,v 1.2 2013/05/30 13:45:08 hasufell Exp $
-
-# REMINDER: next release probably swaps gnome-keyring for libsecret-1
+# $Header: /var/cvsroot/gentoo-x86/mail-client/geary/Attic/geary-0.5.3.ebuild,v 1.1 2014/03/05 23:48:05 hasufell Exp $
 
 EAPI=5
 
-VALA_MIN_API_VERSION=0.17
+VALA_MIN_API_VERSION=0.22
 
 inherit eutils fdo-mime gnome2-utils vala cmake-utils
 
+MY_P=${P/_pre/pr}
 DESCRIPTION="A lightweight, easy-to-use, feature-rich email client"
 HOMEPAGE="http://www.yorba.org/projects/geary/"
-SRC_URI="http://yorba.org/download/geary/${PV:0:3}/${P}.tar.xz"
+SRC_URI="ftp://ftp.gnome.org/pub/GNOME/sources/geary/${PV:0:3}/${MY_P}.tar.xz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="ayatana nls"
+IUSE="nls"
 
 DEPEND="
+	app-crypt/libsecret
 	dev-db/sqlite:3
 	dev-libs/glib:2
-	dev-libs/libgee:0
-	dev-libs/libunique:3
+	>=dev-libs/libgee-0.8.5:0.8
+	dev-libs/libxml2:2
 	dev-libs/gmime:2.6
-	>=gnome-base/libgnome-keyring-3.2.2
 	media-libs/libcanberra
-	net-libs/webkit-gtk:3[introspection]
-	>=x11-libs/gtk+-3.4.0:3[introspection]
-	x11-libs/libnotify
-	ayatana? ( dev-libs/libindicate:3 )"
+	>=net-libs/webkit-gtk-1.10.0:3[introspection]
+	>=x11-libs/gtk+-3.6.0:3[introspection]
+	x11-libs/libnotify"
 RDEPEND="${DEPEND}
 	gnome-base/gsettings-desktop-schemas
 	nls? ( virtual/libintl )"
@@ -41,16 +39,17 @@ DEPEND="${DEPEND}
 
 DOCS=( AUTHORS MAINTAINERS README NEWS THANKS )
 
+S=${WORKDIR}/${MY_P}
+
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-{ayatana,cflags}.patch
+	epatch "${FILESDIR}"/${P}-{unity,cflags,vapigen}.patch
 
 	local i
 	if use nls ; then
 		if [[ -n "${LINGUAS+x}" ]] ; then
 			for i in $(cd po ; echo *.po) ; do
 				if ! has ${i%.po} ${LINGUAS} ; then
-					sed -i -e "s/\s${i%.po}$//" po/CMakeLists.txt || die
-					rm po/${i} || die
+					sed -i -e "/^${i%.po}$/d" po/LINGUAS || die
 				fi
 			done
 		fi
@@ -69,7 +68,7 @@ src_configure() {
 		-DICON_UPDATE=OFF
 		-DVALA_EXECUTABLE="${VALAC}"
 		-DWITH_UNITY=OFF
-		$(cmake-utils_use_with ayatana LIBINDICATE)
+		-DDESKTOP_VALIDATE=OFF
 	)
 
 	cmake-utils_src_configure
