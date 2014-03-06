@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/samba/Attic/samba-4.0.15.ebuild,v 1.2 2014/03/01 22:33:48 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/samba/Attic/samba-4.1.5-r1.ebuild,v 1.1 2014/03/06 09:35:19 polynomial-c Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_{6,7} )
@@ -10,14 +10,8 @@ inherit python-r1 waf-utils multilib linux-info systemd
 MY_PV="${PV/_rc/rc}"
 MY_P="${PN}-${MY_PV}"
 
-if [ "${PV}" = "4.9999" ]; then
-	EGIT_REPO_URI="git://git.samba.org/samba.git"
-	KEYWORDS=""
-	inherit git-2
-else
-	SRC_URI="mirror://samba/stable/${MY_P}.tar.gz"
-	KEYWORDS="~amd64 ~hppa ~x86"
-fi
+SRC_URI="mirror://samba/stable/${MY_P}.tar.gz"
+KEYWORDS="~amd64 ~hppa ~x86"
 
 DESCRIPTION="Samba Suite Version 4"
 HOMEPAGE="http://www.samba.org/"
@@ -26,7 +20,7 @@ LICENSE="GPL-3"
 SLOT="0"
 
 IUSE="acl addns ads aio avahi client cluster cups dmapi fam gnutls iprint
-ldap quota selinux swat syslog test winbind"
+ldap quota selinux syslog test winbind"
 
 # sys-apps/attr is an automagic dependency (see bug #489748)
 # dev-libs/libaio is an automagic dependency (see bug #489764)
@@ -71,7 +65,11 @@ S="${WORKDIR}/${MY_P}"
 CONFDIR="${FILESDIR}/$(get_version_component_range 1-2)"
 
 # sys-apps/dmapi is an automagic dependency (see bug #474492)
-PATCHES=( "${FILESDIR}/${PN}-4.1.0-remove-dmapi-automagic.patch" )
+PATCHES=(
+	"${FILESDIR}/${PN}-4.1.0-remove-dmapi-automagic.patch"
+	"${FILESDIR}/named.conf.dlz.patch"
+	"${FILESDIR}/${PN}-4.x-readline63_typedef_fix.patch"
+)
 
 WAF_BINARY="${S}/buildtools/bin/waf"
 
@@ -106,9 +104,8 @@ src_configure() {
 		--disable-rpath-install \
 		--nopyc \
 		--nopyo \
-		--disable-ntdb \
-		--bundled-libraries=NONE \
-		--builtin-libraries=NONE \
+		--bundled-libraries=ntdb \
+		--builtin-libraries=ntdb \
 		$(use_with addns dnsupdate) \
 		$(use_with acl acl-support) \
 		$(use_with ads) \
@@ -125,7 +122,6 @@ src_configure() {
 		--with-pam_smbpass \
 		$(use_with quota quotas) \
 		$(use_with syslog) \
-		$(use_with swat) \
 		$(use_with winbind)
 		"
 	use "ads" && myconf+=" --with-shared-modules=idmap_ad"
@@ -155,6 +151,7 @@ src_install() {
 	systemd_dounit "${FILESDIR}"/smbd.{service,socket}
 	systemd_newunit "${FILESDIR}"/smbd_at.service 'smbd@.service'
 	systemd_dounit "${FILESDIR}"/winbindd.service
+	systemd_dounit "${FILESDIR}"/samba.service
 }
 
 src_test() {
