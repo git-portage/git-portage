@@ -1,12 +1,12 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/plowshare/Attic/plowshare-20130520.ebuild,v 1.3 2013/08/09 13:44:07 axs Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/plowshare/Attic/plowshare-0_p20131130.ebuild,v 1.1 2014/03/10 20:39:41 voyageur Exp $
 
 EAPI=5
 
 inherit bash-completion-r1
 
-MY_P="${PN}4-snapshot-git${PV}.2b2d736"
+MY_P="${PN}4-snapshot-git${PV/0_p}.3c63b19"
 
 DESCRIPTION="Command-line downloader and uploader for file-sharing websites"
 HOMEPAGE="http://code.google.com/p/plowshare/"
@@ -32,14 +32,15 @@ S=${WORKDIR}/${MY_P}
 # NOTES:
 # javascript dep should be any javascript interpreter using /usr/bin/js
 
+# Modules using detect_javascript
+JS_MODULES="letitbit rapidgator zalaa zippyshare"
+
 src_prepare() {
-	# Modules using detect_javascript
 	if ! use javascript; then
-		sed -i -e 's:^rapidgator.*::' \
-			-e 's:^zalaa*::' \
-			-e 's:^zippyshare*::' \
-			src/modules/config || die "sed failed"
-		rm src/modules/{rapidgator,zalaa,zippyshare}.sh || die "rm failed"
+		for module in ${JS_MODULES}; do
+			sed -i -e "s:^${module}.*::" src/modules/config || die "${module} sed failed"
+			rm src/modules/${module}.sh || die "${module} rm failed"
+		done
 	fi
 
 	# Don't let 'make install' install docs.
@@ -80,6 +81,6 @@ src_install() {
 pkg_postinst() {
 	if ! use javascript; then
 		ewarn "Without javascript you will not be able to use:"
-		ewarn " rapidgator, zalaa, zippyshare"
+		ewarn " ${JS_MODULES}"
 	fi
 }
