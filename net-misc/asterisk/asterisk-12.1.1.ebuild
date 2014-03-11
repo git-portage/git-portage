@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/Attic/asterisk-12.0.0.ebuild,v 1.1 2014/01/13 10:22:34 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/Attic/asterisk-12.1.1.ebuild,v 1.1 2014/03/11 09:05:12 chainsaw Exp $
 
 EAPI=5
 inherit autotools base eutils linux-info multilib user
@@ -28,6 +28,7 @@ REQUIRED_USE="gtalk? ( jabber )
 "
 
 EPATCH_SUFFIX="patch"
+EPATCH_EXCLUDE="08-tls-certificate-chaining-support.patch"
 PATCHES=( "${WORKDIR}/asterisk-patchset" )
 
 RDEPEND="dev-db/sqlite:3
