@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/samba/Attic/samba-3.6.21.ebuild,v 1.1 2013/11/30 20:03:47 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/samba/samba-3.6.23.ebuild,v 1.1 2014/03/14 09:30:41 polynomial-c Exp $
 
 EAPI=4
 
