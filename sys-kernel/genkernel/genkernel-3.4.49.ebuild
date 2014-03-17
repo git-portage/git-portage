@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/Attic/genkernel-3.4.42.ebuild,v 1.2 2013/04/01 19:31:47 ryao Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/genkernel-3.4.49.ebuild,v 1.1 2014/03/17 16:33:56 ryao Exp $
 
 # genkernel-9999        -> latest Git branch "master"
 # genkernel-VERSION     -> normal genkernel release
@@ -60,7 +60,6 @@ RDEPEND="${DEPEND}
 		cryptsetup? ( sys-fs/cryptsetup )
 		app-arch/cpio
 		>=app-misc/pax-utils-0.2.1
-		!=app-misc/pax-utils-0.5
 		!<sys-apps/openrc-0.9.9"
 # pax-utils is used for lddtree
 
@@ -77,6 +76,12 @@ src_unpack() {
 }
 
 src_prepare() {
+	if [[ ${PV} == 9999* ]] ; then
+		einfo "Producing ChangeLog from Git history..."
+		pushd "${S}/.git" >/dev/null || die
+		git log > "${S}"/ChangeLog || die
+		popd >/dev/null || die
+	fi
 	use selinux && sed -i 's/###//g' "${S}"/gen_compile.sh
 
 	# Update software.sh
