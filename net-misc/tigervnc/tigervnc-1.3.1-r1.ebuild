@@ -1,23 +1,23 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/tigervnc/Attic/tigervnc-1.3.0.ebuild,v 1.2 2014/02/01 19:15:18 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/tigervnc/tigervnc-1.3.1-r1.ebuild,v 1.1 2014/03/20 19:10:55 armin76 Exp $
 
 EAPI="4"
 
 inherit eutils cmake-utils autotools java-pkg-opt-2 flag-o-matic
 
-PATCHVER="0.1"
-XSERVER_VERSION="1.14.3"
+PATCHVER="0.2"
+XSERVER_VERSION="1.15.0"
 OPENGL_DIR="xorg-x11"
 #MY_P="${PN}-1.2.80-20130314svn5065"
 #S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="Remote desktop viewer display system"
 HOMEPAGE="http://www.tigervnc.org"
-SRC_URI="mirror://sourceforge/tigervnc/${P}.tar.bz2
+SRC_URI="mirror://sourceforge/tigervnc/${P}.tar.gz
 	mirror://gentoo/${PN}.png
-	mirror://gentoo/${P}-patches-${PATCHVER}.tar.bz2
-	http://dev.gentoo.org/~armin76/dist/${P}-patches-${PATCHVER}.tar.bz2
+	mirror://gentoo/${PN}-1.3.0-patches-${PATCHVER}.tar.bz2
+	http://dev.gentoo.org/~armin76/dist/${PN}-1.3.0-patches-${PATCHVER}.tar.bz2
 	server? ( ftp://ftp.freedesktop.org/pub/xorg/individual/xserver/xorg-server-${XSERVER_VERSION}.tar.bz2	)"
 
 LICENSE="GPL-2"
@@ -141,6 +141,7 @@ src_configure() {
 			--disable-devel-docs \
 			--disable-dmx \
 			--disable-dri \
+			--disable-dri3 \
 			--disable-kdrive \
 			--disable-selective-werror \
 			--disable-silent-rules \
@@ -154,7 +155,9 @@ src_configure() {
 			--disable-xwin \
 			--enable-dri2 \
 			--with-pic \
-			--without-dtrace
+			--without-dtrace \
+			--disable-present \
+			--disable-unit-tests
 	fi
 }
 
