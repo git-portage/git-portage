@@ -1,6 +1,16 @@
 # ChangeLog for www-plugins/kpartsplugin
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-plugins/kpartsplugin/ChangeLog,v 1.15 2012/11/14 20:40:24 johu Exp $
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-plugins/kpartsplugin/ChangeLog,v 1.17 2014/03/21 21:44:57 johu Exp $
+
+*kpartsplugin-20120723-r1 (21 Mar 2014)
+
+  21 Mar 2014; Johannes Huber <johu@gentoo.org>
+  +kpartsplugin-20120723-r1.ebuild:
+  Revision bump to EAPI 5.
+
+  14 Nov 2012; Johannes Huber <johu@gentoo.org>
+  -files/kpartsplugin-20110823-xpi.patch, -kpartsplugin-20110823.ebuild:
+  Remove old.
 
   14 Nov 2012; Johannes Huber <johu@gentoo.org> kpartsplugin-20120723.ebuild:
   Stable for x86, wrt bug #441546
@@ -72,4 +82,3 @@
   +kpartsplugin-20100723.ebuild, +metadata.xml:
   New application, fixes bug 323565; thanks to Francesco Riosa for the
   original ebuild
-
