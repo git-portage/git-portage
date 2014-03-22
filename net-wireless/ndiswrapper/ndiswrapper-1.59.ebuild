@@ -1,14 +1,13 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/ndiswrapper/Attic/ndiswrapper-1.58_rc1.ebuild,v 1.3 2013/01/19 21:21:08 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/ndiswrapper/ndiswrapper-1.59.ebuild,v 1.1 2014/03/22 11:49:03 angelos Exp $
 
 EAPI=4
 inherit base linux-mod toolchain-funcs
 
-MY_PV=${PV/_}
 DESCRIPTION="Wrapper for using Windows drivers for some wireless cards"
 HOMEPAGE="http://ndiswrapper.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/testing/${PN}-${MY_PV}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/stable/${P}.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
@@ -18,9 +17,7 @@ DEPEND="sys-apps/pciutils"
 RDEPEND="${DEPEND}
 	net-wireless/wireless-tools"
 
-S=${WORKDIR}/${PN}-${MY_PV}
-
-PATCHES=( "${FILESDIR}"/${PN}-1.56-cflags.patch )
+PATCHES=( "${FILESDIR}"/${P}-cflags.patch )
 MODULE_NAMES="ndiswrapper(misc:${S}/driver)"
 BUILD_TARGETS="all"
 MODULESD_NDISWRAPPER_ALIASES=("wlan0 ndiswrapper")
@@ -33,19 +30,12 @@ pkg_pretend() {
 	linux-mod_pkg_setup
 }
 
-src_prepare() {
-	base_src_prepare
-
-	# Linux 3.7 fix by Philip Müller <philm@manjaro.org>
-	sed -i "s|/include/linux/version.h|/include/generated/uapi/linux/version.h|g" driver/Makefile
-}
-
 src_compile() {
-	local params="WRAP_WQ=1"
+	local params
 
 	# Enable verbose debugging information
 	if use debug; then
-		params="${params} DEBUG=3"
+		params="DEBUG=3"
 		use usb && params="${params} USB_DEBUG=1"
 	fi
 
