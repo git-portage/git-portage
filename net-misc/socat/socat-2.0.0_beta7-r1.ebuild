@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/socat/Attic/socat-2.0.0_beta7.ebuild,v 1.1 2014/01/29 10:25:32 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/socat/socat-2.0.0_beta7-r1.ebuild,v 1.1 2014/03/22 15:32:07 jer Exp $
 
 EAPI=5
 
@@ -24,9 +24,14 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
+RESTRICT="test"
+
+DOCS=(
+	BUGREPORTS CHANGES DEVELOPMENT EXAMPLES FAQ FILES PORTING README SECURITY
+)
+
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.7.2.1-long-long.patch #436164
-	sed -i -e "s|/sbin/ifconfig|$(type -P ifconfig)|g" test.sh || die
 	touch doc/${PN}.1 || die
 }
 
@@ -40,16 +45,8 @@ src_configure() {
 		$(use_enable tcpd libwrap)
 }
 
-src_test() {
-	TMPDIR="${T}" emake test
-}
-
 src_install() {
 	default
 
-	dodoc BUGREPORTS CHANGES DEVELOPMENT \
-		FAQ FILES PORTING README SECURITY VERSION
-	docinto examples
-	dodoc EXAMPLES *.sh
 	dohtml doc/*.html doc/*.css
 }
