@@ -1,19 +1,19 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/eudev/Attic/eudev-1.2.ebuild,v 1.8 2014/01/06 20:12:32 axs Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/eudev/Attic/eudev-1.5.3.ebuild,v 1.1 2014/03/22 23:29:39 blueness Exp $
 
 EAPI="5"
 
 KV_min=2.6.31
 
-inherit autotools eutils linux-info
+inherit autotools eutils multilib linux-info multilib-minimal
 
 if [[ ${PV} = 9999* ]]
 then
 	EGIT_REPO_URI="git://github.com/gentoo/eudev.git"
 	inherit git-2
 else
-	SRC_URI="http://dev.gentoo.org/~blueness/eudev/${P}.tar.gz"
+	SRC_URI="http://dev.gentoo.org/~blueness/${PN}/${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~x86"
 fi
 
@@ -22,14 +22,18 @@ HOMEPAGE="https://github.com/gentoo/eudev"
 
 LICENSE="LGPL-2.1 MIT GPL-2"
 SLOT="0"
-IUSE="doc gudev hwdb kmod introspection keymap +modutils +openrc +rule-generator selinux static-libs test"
+IUSE="doc gudev +hwdb kmod introspection +keymap +modutils +openrc +rule-generator selinux static-libs test"
 
 COMMON_DEPEND="gudev? ( dev-libs/glib:2 )
 	kmod? ( sys-apps/kmod )
 	introspection? ( >=dev-libs/gobject-introspection-1.31.1 )
 	selinux? ( sys-libs/libselinux )
 	>=sys-apps/util-linux-2.20
-	!<sys-libs/glibc-2.11"
+	!<sys-libs/glibc-2.11
+	abi_x86_32? (
+		!<=app-emulation/emul-linux-x86-baselibs-20130224-r7
+		!app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)]
+	)"
 
 DEPEND="${COMMON_DEPEND}
 	keymap? ( dev-util/gperf )
@@ -50,9 +54,9 @@ RDEPEND="${COMMON_DEPEND}
 	!sys-fs/device-mapper
 	!<sys-fs/udev-init-scripts-18"
 
-PDEPEND=">=virtual/udev-180
-	hwdb? ( >=sys-apps/hwids-20121202.2[udev] )
+PDEPEND="hwdb? ( >=sys-apps/hwids-20130717-r1[udev] )
 	keymap? ( >=sys-apps/hwids-20130717-r1[udev] )
+	>=virtual/udev-206-r2
 	openrc? ( >=sys-fs/udev-init-scripts-18 )"
 
 REQUIRED_USE="keymap? ( hwdb )"
@@ -99,8 +103,6 @@ src_prepare()
 	sed -e 's/GROUP="dialout"/GROUP="uucp"/' -i rules/*.rules \
 	|| die "failed to change group dialout to uucp"
 
-	epatch "${FILESDIR}"/${PN}-selinux-timespan.patch
-
 	epatch_user
 
 	if [[ ! -e configure ]]
@@ -117,47 +119,84 @@ src_prepare()
 	fi
 }
 
-src_configure()
+multilib_src_configure()
 {
 	local econf_args
 
 	econf_args=(
+		ac_cv_search_cap_init=
+		ac_cv_header_sys_capability_h=yes
+		DBUS_CFLAGS=' '
+		DBUS_LIBS=' '
 		--with-rootprefix=
 		--docdir=/usr/share/doc/${PF}
 		--libdir=/usr/$(get_libdir)
 		--with-firmware-path="${EPREFIX}usr/lib/firmware/updates:${EPREFIX}usr/lib/firmware:${EPREFIX}lib/firmware/updates:${EPREFIX}lib/firmware"
 		--with-html-dir="/usr/share/doc/${PF}/html"
-		--with-rootlibdir=/$(get_libdir)
 		--enable-split-usr
 		--exec-prefix=/
+	)
+
+	# Only build libudev for non-native_abi, and only install it to libdir,
+	# that means all options only apply to native_abi
+	if multilib_build_binaries; then econf_args+=(
+		--with-rootlibdir=/$(get_libdir)
 		$(use_enable doc gtk-doc)
 		$(use_enable gudev)
 		$(use_enable introspection)
 		$(use_enable keymap)
 		$(use_enable kmod libkmod)
 		$(usex kmod --enable-modules $(use_enable modutils modules))
-		$(use_enable selinux)
 		$(use_enable static-libs static)
+		$(use_enable selinux)
 		$(use_enable rule-generator)
-	)
-	econf "${econf_args[@]}"
+		)
+	else econf_args+=(
+		$(echo --disable-{gtk-doc,gudev,introspection,keymap,libkmod,modules,static,selinux,rule-generator})
+		)
+	fi
+	ECONF_SOURCE="${S}" econf "${econf_args[@]}"
 }
 
-src_test() {
+multilib_src_compile()
+{
+	if ! multilib_build_binaries; then
+		cd src/libudev || die "Could not change directory"
+	fi
+	emake
+}
+
+multilib_src_install()
+{
+	if ! multilib_build_binaries; then
+		cd src/libudev || die "Could not change directory"
+	fi
+	emake DESTDIR="${D}" install
+}
+
+multilib_src_test()
+{
 	# make sandbox get out of the way
 	# these are safe because there is a fake root filesystem put in place,
 	# but sandbox seems to evaluate the paths of the test i/o instead of the
 	# paths of the actual i/o that results.
-	addread /sys
-	addwrite /dev
-	addwrite /run
-	default_src_test
+	# also only test for native abi
+	if multilib_build_binaries; then
+		addread /sys
+		addwrite /dev
+		addwrite /run
+		default_src_test
+	fi
 }
 
-src_install()
+# disable header checks because we only install libudev headers for non-native abi
+multilib_check_headers()
 {
-	emake DESTDIR="${D}" install
+	:
+}
 
+multilib_src_install_all()
+{
 	prune_libtool_files --all
 	rm -rf "${ED}"/usr/share/doc/${PF}/LICENSE.*
 
@@ -165,6 +204,9 @@ src_install()
 
 	# drop distributed hwdb files, they override sys-apps/hwids
 	rm -f "${ED}"/etc/udev/hwdb.d/*.hwdb
+
+	insinto /lib/udev/rules.d
+	doins "${FILESDIR}"/40-gentoo.rules
 }
 
 pkg_preinst()
