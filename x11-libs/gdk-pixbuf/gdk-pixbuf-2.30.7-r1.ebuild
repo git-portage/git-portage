@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gdk-pixbuf/Attic/gdk-pixbuf-2.30.6-r1.ebuild,v 1.1 2014/03/03 21:21:39 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gdk-pixbuf/gdk-pixbuf-2.30.7-r1.ebuild,v 1.1 2014/03/29 21:36:13 pacho Exp $
 
 EAPI="5"
 
