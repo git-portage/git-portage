@@ -1,11 +1,12 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/rakudo/Attic/rakudo-2013.12.ebuild,v 1.1 2014/01/09 07:52:50 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/rakudo/Attic/rakudo-2014.03.01.ebuild,v 1.1 2014/03/31 06:17:20 patrick Exp $
 
 EAPI=5
 
 PARROT_VERSION="5.9.0"
-NQP_VERSION="${PV}.1" # bugfix release needed
+# hack for this specific version, don't copy to future releases
+NQP_VERSION="${PV/01/}"
 
 inherit eutils multilib
 
@@ -18,7 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc +parrot java"
 
-RDEPEND=">=dev-lang/parrot-${PARROT_VERSION}[unicode]
+RDEPEND=">=dev-lang/parrot-${PARROT_VERSION}:=[unicode]
 	>=dev-lang/nqp-${NQP_VERSION}[parrot?,java?]"
 DEPEND="${RDEPEND}
 	dev-lang/perl"
@@ -40,7 +41,7 @@ src_test() {
 src_install() {
 	emake -j1 DESTDIR="${ED}" install || die
 
-	dodoc CREDITS README docs/ChangeLog docs/ROADMAP || die
+	dodoc CREDITS README.md docs/ChangeLog docs/ROADMAP || die
 
 	if use doc; then
 		dohtml -A svg docs/architecture.html docs/architecture.svg || die
