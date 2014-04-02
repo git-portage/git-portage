@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-radio/xlog/Attic/xlog-2.0.8.ebuild,v 1.4 2013/06/30 19:33:51 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-radio/xlog/xlog-2.0.12.ebuild,v 1.1 2014/04/02 18:43:27 tomjbe Exp $
 
 EAPI=4
 
@@ -13,7 +13,7 @@ SRC_URI="http://download.savannah.gnu.org/releases/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="media-libs/hamlib
@@ -30,6 +30,8 @@ src_prepare() {
 
 	# Let portage handle updating mime/desktop databases,
 	epatch "${FILESDIR}/${PN}-1.9-desktop-update.patch"
+	# Drop -Werror
+	sed -i -e "s:-Werror::" configure.in || die
 	eautoreconf
 }
 
