@@ -1,9 +1,9 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/converseen/Attic/converseen-0.5.1.ebuild,v 1.2 2013/03/02 21:34:12 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/converseen/converseen-0.6.8.ebuild,v 1.1 2014/04/08 17:32:26 maksbotan Exp $
 
-EAPI="4"
-LANGSLONG="cs_CZ de_DE fr_FR hu_HU it_IT pl_PL pt_BR tr_TR"
+EAPI="5"
+LANGSLONG="cs_CZ de_DE fr_FR hu_HU it_IT ja_JP pl_PL pt_BR ru_RU tr_TR"
 LANGS="es_CL"
 
 inherit cmake-utils
@@ -23,13 +23,16 @@ for x in ${LANGSLONG}; do
 	IUSE="${IUSE} linguas_${x%_*}"
 done
 
+# FIXME: graphicsmagick dependency does not work properly, failures when compiling
+#	|| ( media-gfx/imagemagick[cxx] media-gfx/graphicsmagick[cxx,imagemagick] )
 RDEPEND="
+	dev-qt/qtcore:4
 	dev-qt/qtgui:4
-	|| ( media-gfx/imagemagick media-gfx/graphicsmagick[imagemagick] )
+	media-gfx/imagemagick[cxx]
 "
 DEPEND="${RDEPEND}"
 
-DOCS="README"
+DOCS=( README.md )
 
 src_prepare() {
 	for x in ${LANGSLONG}; do
