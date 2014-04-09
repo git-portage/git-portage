@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/Attic/nvidia-drivers-331.49-r3.ebuild,v 1.3 2014/04/09 16:05:24 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/Attic/nvidia-drivers-337.12.ebuild,v 1.1 2014/04/09 16:05:24 jer Exp $
 
 EAPI=5
 
@@ -24,7 +24,7 @@ SRC_URI="
 
 LICENSE="GPL-2 NVIDIA-r2"
 SLOT="0"
-KEYWORDS="-* amd64 x86 ~amd64-fbsd ~x86-fbsd"
+KEYWORDS="-* ~amd64 ~x86 ~amd64-fbsd ~x86-fbsd"
 IUSE="acpi multilib kernel_FreeBSD kernel_linux pax_kernel +tools +X uvm"
 RESTRICT="bindist mirror strip"
 EMULTILIB_PKG="true"
@@ -48,7 +48,7 @@ RDEPEND="
 		dev-libs/atk
 		dev-libs/glib
 		x11-libs/gdk-pixbuf
-		x11-libs/gtk+:2
+		>=x11-libs/gtk+-2.4:2
 		x11-libs/libX11
 		x11-libs/libXext
 		x11-libs/pango[X]
@@ -82,11 +82,11 @@ pkg_pretend() {
 		die "Unexpected \${DEFAULT_ABI} = ${DEFAULT_ABI}"
 	fi
 
-	if use kernel_linux && kernel_is ge 3 14 ; then
+	if use kernel_linux && kernel_is ge 3 15 ; then
 		ewarn "Gentoo supports kernels which are supported by NVIDIA"
 		ewarn "which are limited to the following kernels:"
-		ewarn "<sys-kernel/gentoo-sources-3.14"
-		ewarn "<sys-kernel/vanilla-sources-3.14"
+		ewarn "<sys-kernel/gentoo-sources-3.15"
+		ewarn "<sys-kernel/vanilla-sources-3.15"
 		ewarn ""
 		ewarn "You are free to utilize epatch_user to provide whatever"
 		ewarn "support you feel is appropriate, but will not receive"
@@ -115,11 +115,8 @@ pkg_setup() {
 	export CCACHE_DISABLE=1
 
 	if use kernel_linux; then
-		# Because of awkward limitations of linux-mod.eclass, the order in
-		# which the modules are listed somehow affects module dependencies,
-		# so we list nvidia-uvm first and then nvidia.
-		use uvm && MODULE_NAMES="nvidia-uvm(video:${S}/kernel/uvm)"
-		MODULE_NAMES+=" nvidia(video:${S}/kernel)"
+		MODULE_NAMES="nvidia(video:${S}/kernel)"
+		use uvm && MODULE_NAMES+=" nvidia-uvm(video:${S}/kernel/uvm)"
 
 		# This needs to run after MODULE_NAMES (so that the eclass checks
 		# whether the kernel supports loadable modules) but before BUILD_PARAMS
@@ -155,15 +152,6 @@ pkg_setup() {
 		NV_SOVER=${PV}
 	else
 		die "Could not determine proper NVIDIA package"
-	fi
-}
-
-src_unpack() {
-	if use kernel_FreeBSD; then
-		unpack ${A}
-	elif use kernel_linux; then
-		cd "${S}"
-		unpack_makeself
 	fi
 }
 
@@ -388,8 +376,12 @@ src_install-libs() {
 
 	if use X; then
 		# The GLX libraries
+		donvidia ${libdir}/libEGL.so ${NV_SOVER} ${GL_ROOT}
 		donvidia ${libdir}/libGL.so ${NV_SOVER} ${GL_ROOT}
+		donvidia ${libdir}/libGLESv1_CM.so ${NV_SOVER} ${GL_ROOT}
+		donvidia ${libdir}/libnvidia-eglcore.so ${NV_SOVER}
 		donvidia ${libdir}/libnvidia-glcore.so ${NV_SOVER}
+		donvidia ${libdir}/libnvidia-glsi.so ${NV_SOVER}
 		donvidia ${libdir}/libnvidia-ifr.so ${NV_SOVER}
 		if use kernel_FreeBSD; then
 			donvidia ${libdir}/libnvidia-tls.so ${NV_SOVER}
@@ -399,6 +391,12 @@ src_install-libs() {
 
 		# VDPAU
 		donvidia ${libdir}/libvdpau_nvidia.so ${NV_SOVER}
+
+		# GLES v2 libraries
+		insinto ${GL_ROOT}
+		doexe ${libdir}/libGLESv2.so.${PV}
+		dosym libGLESv2.so.${PV} ${GL_ROOT}/libGLESv2.so.2
+		dosym libGLESv2.so.2 ${GL_ROOT}/libGLESv2.so
 	fi
 
 	# NVIDIA monitoring library
