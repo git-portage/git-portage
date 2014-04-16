@@ -1,29 +1,23 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/oracle-jre-bin/Attic/oracle-jre-bin-1.8.0.0.ebuild,v 1.1 2014/03/28 14:56:47 tomwij Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/oracle-jre-bin/Attic/oracle-jre-bin-1.7.0.55.ebuild,v 1.1 2014/04/16 16:28:47 tomwij Exp $
 
 EAPI="5"
 
 inherit java-vm-2 eutils prefix versionator
 
-if [[ "$(get_version_component_range 4)" == 0 ]] ; then
-	S_PV="$(get_version_component_range 1-3)"
-else
-	MY_PV_EXT="u$(get_version_component_range 4)"
-	S_PV="$(get_version_component_range 1-4)"
-fi
-
-MY_PV="$(get_version_component_range 2)${MY_PV_EXT}"
+MY_PV="$(get_version_component_range 2)u$(get_version_component_range 4)"
+S_PV="$(replace_version_separator 3 '_')"
 
 X86_AT="jre-${MY_PV}-linux-i586.tar.gz"
 AMD64_AT="jre-${MY_PV}-linux-x64.tar.gz"
 
 # This URIs need updating when bumping!
-JRE_URI="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html"
-JCE_URI="http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html"
+JRE_URI="http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html"
+JCE_URI="http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html"
 
-JCE_DIR="UnlimitedJCEPolicyJDK8"
-JCE_FILE="jce_policy-8.zip"
+JCE_DIR="UnlimitedJCEPolicy"
+JCE_FILE="${JCE_DIR}JDK7.zip"
 
 DESCRIPTION="Oracle's Java SE Runtime Environment"
 HOMEPAGE="http://www.oracle.com/technetwork/java/javase/"
@@ -33,7 +27,7 @@ SRC_URI="
 	jce? ( ${JCE_FILE} )"
 
 LICENSE="Oracle-BCLA-JavaSE"
-SLOT="1.8"
+SLOT="1.7"
 KEYWORDS="~amd64 ~x86"
 IUSE="X alsa fontconfig jce nsplugin pax_kernel"
 
