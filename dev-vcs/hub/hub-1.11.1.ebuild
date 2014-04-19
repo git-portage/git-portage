@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/hub/Attic/hub-1.11.1.ebuild,v 1.3 2014/01/23 18:31:20 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/hub/Attic/hub-1.11.1.ebuild,v 1.4 2014/04/19 19:05:57 vikraman Exp $
 
 EAPI="5"
 
@@ -10,7 +10,12 @@ RUBY_FAKEGEM_EXTRADOC="README.md"
 
 inherit readme.gentoo ruby-fakegem
 
-ruby_add_bdepend "test? ( dev-ruby/webmock dev-util/cucumber )"
+ruby_add_bdepend "
+	test? (
+		dev-ruby/webmock
+		dev-util/cucumber
+		virtual/ruby-minitest
+	)"
 
 DESCRIPTION="command-line wrapper for git that makes you better at GitHub"
 HOMEPAGE="https://github.com/github/hub"
@@ -22,6 +27,10 @@ KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 RDEPEND="dev-vcs/git"
 
 DOC_CONTENTS="You may want to add 'alias git=hub' to your .{csh,bash}rc"
+
+all_ruby_prepare() {
+	sed -i -e 's/Minitest/MiniTest/g' test/*.rb
+}
 
 src_install() {
 	ruby-ng_src_install
