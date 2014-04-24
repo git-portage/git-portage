@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/Attic/blender-2.70a.ebuild,v 1.2 2014/04/14 17:40:03 hasufell Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/Attic/blender-2.70a-r2.ebuild,v 1.1 2014/04/24 11:34:21 hasufell Exp $
 
 # TODO:
 #   bundled-deps: bullet is modified
@@ -111,11 +111,11 @@ pkg_setup() {
 src_prepare() {
 	epatch "${FILESDIR}"/01-${PN}-2.68-doxyfile.patch \
 		"${FILESDIR}"/02-${PN}-2.68-unbundle-colamd.patch \
-		"${FILESDIR}"/03-${PN}-2.68-remove-binreloc.patch \
 		"${FILESDIR}"/04-${PN}-2.70-unbundle-glog.patch \
 		"${FILESDIR}"/05-${PN}-2.68-unbundle-eigen3.patch \
 		"${FILESDIR}"/06-${PN}-2.68-fix-install-rules.patch \
-		"${FILESDIR}"/07-${PN}-2.70-sse2.patch
+		"${FILESDIR}"/07-${PN}-2.70-sse2.patch \
+		"${FILESDIR}"/${PN}-2.70a-openmp.patch
 
 	# remove some bundled deps
 	rm -r \
@@ -123,14 +123,8 @@ src_prepare() {
 		extern/libopenjpeg \
 		extern/glew \
 		extern/colamd \
-		extern/binreloc \
 		extern/libmv/third_party/{glog,gflags} \
 		|| die
-
-	# turn off binreloc (not cached)
-	sed -i \
-		-e 's#set(WITH_BINRELOC ON)#set(WITH_BINRELOC OFF)#' \
-		CMakeLists.txt || die
 
 	# we don't want static glew, but it's scattered across
 	# thousand files
@@ -148,7 +142,7 @@ src_prepare() {
 		rm -r "${S}"/release/datafiles/locale || die
 	else
 		if [[ -n "${LINGUAS+x}" ]] ; then
-			for i in "${S}"/release/datafiles/locale/* ; do
+			for i in "${S}"/release/datafiles/locale/po/* ; do
 				mylang=${i##*/}
 				has ${mylang} ${LINGUAS} || { rm -r ${i} || die ; }
 			done
