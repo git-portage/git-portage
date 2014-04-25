@@ -1,16 +1,16 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/ccpn-data/Attic/ccpn-data-2.2.2_p120511.ebuild,v 1.1 2012/05/11 09:36:26 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/ccpn-data/ccpn-data-2.3.1_p140425.ebuild,v 1.1 2014/04/25 13:49:22 jlec Exp $
 
-EAPI=4
+EAPI=5
 
-PYTHON_DEPEND="2"
+PYTHON_COMPAT=( python{2_6,2_7} )
 
-inherit portability python versionator
+inherit eutils portability python-r1 versionator
 
 PATCHSET="${PV##*_p}"
 MY_PN="${PN/-data}mr"
-MY_PV="$(replace_version_separator 3 _ ${PV%%_p*})"
+MY_PV="$(replace_version_separator 3 _ ${PV%%_p*})r2"
 MY_MAJOR="$(get_version_component_range 1-3)"
 
 DESCRIPTION="The Collaborative Computing Project for NMR - Data"
@@ -23,25 +23,25 @@ LICENSE="|| ( CCPN LGPL-2.1 )"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
-RDEPEND="!<sci-chemistry/ccpn-${PVR}"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+
+RDEPEND="
+	${PYTHON_DEPS}
+	!<sci-chemistry/ccpn-${PVR}"
 DEPEND=""
 
 RESTRICT="binchecks strip"
 
-S="${WORKDIR}"/ccpnmr/ccpnmr2.2
-
-pkg_setup() {
-	python_set_active_version 2
-	python_pkg_setup
-}
+S="${WORKDIR}"/ccpnmr/ccpnmr2.3
 
 src_prepare() {
 	[[ -n ${PATCHSET} ]] && \
 		epatch "${WORKDIR}"/ccpn-update-${MY_MAJOR}-${PATCHSET}.patch
+	cp "${FILESDIR}"/312+ccpn_rhf22_2013-10-02-16-17-30-923_00001.xml data/ccp/nmr/NmrExpPrototype/ || die
 }
 
 src_install() {
-	local i pydocs in_path
+	local i pydocs in_path ein_path
 
 	dodir /usr/share/doc/${PF}/html
 	sed \
@@ -50,15 +50,18 @@ src_install() {
 	treecopy $(find python/ -name doc -type d) "${ED}"/usr/share/doc/${PF}/html/
 
 	pydocs="$(find python -name doc -type d)"
-	in_path=$(python_get_sitedir)/ccpn
 
-	dosym ../../../../share/doc/${PF}/html ${in_path}/doc
-	for i in ${pydocs}; do
-		dosym /usr/share/doc/${PF}/html/${i} ${in_path}/${i}
-	done
-
-	dosym /usr/share/ccpn/data ${in_path}/data
-	dosym /usr/share/ccpn/model ${in_path}/model
+	symlinking() {
+		in_path=$(python_get_sitedir)/ccpn
+		ein_path="${in_path#${EPREFIX}}"
+		dosym ../../../../share/doc/${PF}/html ${ein_path}/doc
+		for i in ${pydocs}; do
+			dosym /usr/share/doc/${PF}/html/${i} ${ein_path}/${i}
+		done
+		dosym /usr/share/ccpn/data ${ein_path}/data
+		dosym /usr/share/ccpn/model ${ein_path}/model
+	}
+	python_foreach_impl symlinking
 
 	dohtml -r doc/*
 	insinto /usr/share/ccpn
