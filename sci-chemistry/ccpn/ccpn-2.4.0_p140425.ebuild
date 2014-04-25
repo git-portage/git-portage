@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ccpn/Attic/ccpn-2.3.1_p131127.ebuild,v 1.1 2013/11/27 07:19:33 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ccpn/ccpn-2.4.0_p140425.ebuild,v 1.1 2014/04/25 14:31:14 jlec Exp $
 
 EAPI=5
 
@@ -16,7 +16,7 @@ MY_MAJOR="$(get_version_component_range 1-3)"
 
 DESCRIPTION="The Collaborative Computing Project for NMR"
 HOMEPAGE="http://www.ccpn.ac.uk/ccpn"
-SRC_URI="http://www-old.ccpn.ac.uk/download/${MY_PN}/analysis${MY_PV}r2.tar.gz"
+SRC_URI="http://www-old.ccpn.ac.uk/download/${MY_PN}/analysis${MY_PV}.tar.gz"
 [[ -n ${PATCHSET} ]] \
 	&& SRC_URI+=" http://dev.gentoo.org/~jlec/distfiles/ccpn-update-${MY_MAJOR}-${PATCHSET}.patch.xz"
 
@@ -47,9 +47,9 @@ S="${WORKDIR}"/${MY_PN}/${MY_PN}$(get_version_component_range 1-2)
 
 src_prepare() {
 	[[ -n ${PATCHSET} ]] && \
-		epatch "${WORKDIR}"/ccpn-update-${MY_MAJOR}-${PATCHSET}.patch
+		EPATCH_OPTS="-p2" epatch "${WORKDIR}"/ccpn-update-${MY_MAJOR}-${PATCHSET}.patch
 
-	epatch "${FILESDIR}"/${MY_PV}-parallel.patch "${FILESDIR}"/talosn.patch
+	epatch "${FILESDIR}"/2.3.1-parallel.patch
 
 	append-lfs-flags
 
