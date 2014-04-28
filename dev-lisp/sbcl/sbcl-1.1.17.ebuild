@@ -1,13 +1,13 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lisp/sbcl/Attic/sbcl-1.1.10.ebuild,v 1.1 2013/08/09 12:28:09 grozin Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lisp/sbcl/sbcl-1.1.17.ebuild,v 1.1 2014/04/28 03:15:51 grozin Exp $
 
 EAPI=5
 inherit multilib eutils flag-o-matic pax-utils
 
 #same order as http://www.sbcl.org/platform-table.html
 BV_X86=1.0.58
-BV_AMD64=1.1.10
+BV_AMD64=1.1.17
 BV_PPC=1.0.28
 BV_SPARC=1.0.28
 BV_ALPHA=1.0.28
@@ -21,7 +21,6 @@ SRC_URI="mirror://sourceforge/sbcl/${P}-source.tar.bz2
 	sparc? ( mirror://sourceforge/sbcl/${PN}-${BV_SPARC}-sparc-linux-binary.tar.bz2 )
 	alpha? ( mirror://sourceforge/sbcl/${PN}-${BV_ALPHA}-alpha-linux-binary.tar.bz2 )"
 
-RESTRICT="mirror"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
@@ -29,7 +28,7 @@ IUSE="debug doc source +threads +unicode zlib"
 
 CDEPEND=">=dev-lisp/asdf-2.33-r3:="
 DEPEND="${CDEPEND}
-		doc? ( <sys-apps/texinfo-5.0 >=media-gfx/graphviz-2.26.0 )"
+		doc? ( sys-apps/texinfo >=media-gfx/graphviz-2.26.0 )"
 RDEPEND="${CDEPEND}
 		 elibc_glibc? ( >=sys-libs/glibc-2.3 || ( <sys-libs/glibc-2.6[nptl] >=sys-libs/glibc-2.6 ) )"
 
@@ -81,6 +80,10 @@ src_unpack() {
 src_prepare() {
 	epatch "${FILESDIR}"/gentoo-fix_install_man.patch
 	epatch "${FILESDIR}"/gentoo-fix_linux-os-c.patch
+	# bug #468482
+	epatch "${FILESDIR}"/concurrency-test.patch
+	# bug #486552
+	epatch "${FILESDIR}"/bsd-sockets-test.patch
 
 	# To make the hardened compiler NOT compile with -fPIE -pie
 	if gcc-specs-pie ; then
