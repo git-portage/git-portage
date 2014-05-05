@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/hashcat-bin/Attic/hashcat-bin-0.42.ebuild,v 1.1 2013/01/07 04:12:18 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/hashcat-bin/hashcat-bin-0.47.ebuild,v 1.1 2014/05/05 15:42:54 alonbl Exp $
 
-EAPI=4
+EAPI=5
 
 MY_P="hashcat-${PV}"
 
@@ -29,12 +29,22 @@ RESTRICT="strip"
 QA_PREBUILT="opt/${PN}/hashcat-cli*.bin
 		opt/${PN}/hashcat-cli64.app"
 
+has_xop() {
+	echo | $(tc-getCC) ${CFLAGS} -E -dM - | grep -q "#define __XOP__ 1"
+}
+
+has_avx() {
+	echo | $(tc-getCC) ${CFLAGS} -E -dM - | grep -q "#define __AVX__ 1"
+}
+
 src_install() {
 	dodoc docs/*
 	rm -r *.exe docs || die
 	use x86 || { rm hashcat-cli32.bin || die; }
 	use amd64 || { rm hashcat-cli64.bin || die; }
 	use x64-macos || { rm hashcat-cli64.app || die; }
+	has_avx || { rm hashcat-cliAVX.bin || die; }
+	has_xop || { rm hashcat-cliXOP.bin || die; }
 
 	#I assume this is needed but I didn't check
 	pax-mark m hashcat-cli*.bin
@@ -64,6 +74,28 @@ src_install() {
 			exec ./hashcat-cli64.bin \$@
 		EOF
 		fperms +x /opt/bin/hashcat-cli64.bin
+	fi
+	if [ -f "${ED}"/opt/${PN}/hashcat-cliAVX.bin ]
+	then
+		fperms +x /opt/${PN}/hashcat-cliAVX.bin
+		cat <<-EOF > "${ED}"/opt/bin/hashcat-cliAVX.bin
+			#! /bin/sh
+			cd "${EPREFIX}"/opt/${PN}
+			echo "Warning: hashcat-cliAVX.bin is running from ${EPREFIX}/opt/${PN} so be careful of relative paths."
+			exec ./hashcat-cliAVX.bin \$@
+		EOF
+		fperms +x /opt/bin/hashcat-cliAVX.bin
+	fi
+	if [ -f "${ED}"/opt/${PN}/hashcat-cliXOP.bin ]
+	then
+		fperms +x /opt/${PN}/hashcat-cliXOP.bin
+		cat <<-EOF > "${ED}"/opt/bin/hashcat-cliXOP.bin
+			#! /bin/sh
+			cd "${EPREFIX}"/opt/${PN}
+			echo "Warning: hashcat-cliXOP.bin is running from ${EPREFIX}/opt/${PN} so be careful of relative paths."
+			exec ./hashcat-cliXOP.bin \$@
+		EOF
+		fperms +x /opt/bin/hashcat-cliXOP.bin
 	fi
 	if [ -f "${ED}"/opt/${PN}/hashcat-cli64.app ]
 	then
