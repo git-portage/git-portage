@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/Attic/nvidia-drivers-331.67.ebuild,v 1.2 2014/05/02 12:38:09 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/Attic/nvidia-drivers-331.67.ebuild,v 1.3 2014/05/05 18:16:01 jer Exp $
 
 EAPI=5
 
@@ -197,6 +197,7 @@ src_compile() {
 		MAKE="$(get_bmake)" CFLAGS="-Wno-sign-compare" emake CC="$(tc-getCC)" \
 			LD="$(tc-getLD)" LDFLAGS="$(raw-ldflags)" || die
 	elif use kernel_linux; then
+		use uvm && MAKEOPTS=-j1
 		linux-mod_src_compile
 	fi
 }
