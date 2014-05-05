@@ -1,19 +1,20 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/scipy/Attic/scipy-0.13.0.ebuild,v 1.1 2013/10/28 22:42:53 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/scipy/scipy-0.14.0.ebuild,v 1.1 2014/05/05 20:21:53 bicatali Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3} )
+PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3,3_4} )
 
+DOC_PV=0.13.0
 inherit eutils fortran-2 distutils-r1 flag-o-matic multilib toolchain-funcs
 
 DESCRIPTION="Scientific algorithms library for Python"
 HOMEPAGE="http://www.scipy.org/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz
 	doc? (
-		http://docs.scipy.org/doc/${P}/${PN}-html.zip -> ${P}-html.zip
-		http://docs.scipy.org/doc/${P}/${PN}-ref.pdf -> ${P}-ref.pdf
+		http://docs.scipy.org/doc/${PN}-${DOC_PV}/${PN}-html.zip -> ${PN}-${DOC_PV}-html.zip
+		http://docs.scipy.org/doc/${PN}-${DOC_PV}/${PN}-ref.pdf -> ${PN}-${DOC_PV}-ref.pdf
 	)"
 
 LICENSE="BSD LGPL-2"
@@ -23,16 +24,18 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
 
 CDEPEND="
 	dev-python/numpy[lapack,${PYTHON_USEDEP}]
-	sci-libs/arpack
+	sci-libs/arpack:0=
 	virtual/cblas
 	virtual/lapack
-	sparse? ( sci-libs/umfpack )"
+	sparse? ( sci-libs/umfpack:0= )"
 DEPEND="${CDEPEND}
 	dev-lang/swig
-	dev-python/cython[${PYTHON_USEDEP}]
+	>=dev-python/cython-0.19.1[${PYTHON_USEDEP}]
 	virtual/pkgconfig
 	doc? ( app-arch/unzip )
-	test? ( dev-python/nose[${PYTHON_USEDEP}] )"
+	test? (
+		dev-python/nose[${PYTHON_USEDEP}]
+	)"
 
 RDEPEND="${CDEPEND}
 	virtual/python-imaging[${PYTHON_USEDEP}]"
@@ -44,24 +47,25 @@ DISTUTILS_IN_SOURCE_BUILD=1
 src_unpack() {
 	unpack ${P}.tar.gz
 	if use doc; then
-		unzip -qo "${DISTDIR}"/${P}-html.zip -d html || die
+		unzip -qo "${DISTDIR}"/${PN}-${DOC_PV}-html.zip -d html || die
 	fi
 }
 
 pc_incdir() {
 	$(tc-getPKG_CONFIG) --cflags-only-I $@ | \
-		sed -e 's/^-I//' -e 's/[ ]*-I/:/g' -e 's/[ ]*$//'
+		sed -e 's/^-I//' -e 's/[ ]*-I/:/g' -e 's/[ ]*$//' -e 's|^:||'
 }
 
 pc_libdir() {
 	$(tc-getPKG_CONFIG) --libs-only-L $@ | \
-		sed -e 's/^-L//' -e 's/[ ]*-L/:/g' -e 's/[ ]*$//'
+		sed -e 's/^-L//' -e 's/[ ]*-L/:/g' -e 's/[ ]*$//' -e 's|^:||'
 }
 
 pc_libs() {
 	$(tc-getPKG_CONFIG) --libs-only-l $@ | \
-		sed -e 's/[ ]-l*\(pthread\|m\)[ ]*//g' \
-		-e 's/^-l//' -e 's/[ ]*-l/,/g' -e 's/[ ]*$//'
+		sed -e 's/[ ]-l*\(pthread\|m\)\([ ]\|$\)//g' \
+		-e 's/^-l//' -e 's/[ ]*-l/,/g' -e 's/[ ]*$//' \
+		| tr ',' '\n' | sort -u | tr '\n' ',' | sed -e 's|,$||'
 }
 
 python_prepare_all() {
@@ -91,6 +95,9 @@ python_prepare_all() {
 		lapack_libs = $(pc_libs lapack)
 	EOF
 
+	# Drop hashes to force rebuild of cython based .c code
+	rm cythonize.dat || die
+
 	local PATCHES=(
 		"${FILESDIR}"/${PN}-0.12.0-blitz.patch
 		"${FILESDIR}"/${PN}-0.12.0-restore-sys-argv.patch
@@ -100,6 +107,7 @@ python_prepare_all() {
 }
 
 python_compile() {
+	${EPYTHON} tools/cythonize.py || die
 	distutils-r1_python_compile ${SCIPY_FCONFIG}
 }
 
@@ -116,7 +124,7 @@ sys.exit(0 if r.wasSuccessful() else 1)" || die "Tests fail with ${EPYTHON}"
 python_install_all() {
 	if use doc; then
 		dohtml -r "${WORKDIR}"/html/.
-		dodoc "${DISTDIR}"/${P}*pdf
+		dodoc "${DISTDIR}"/${PN}*pdf
 	fi
 	distutils-r1_python_install_all
 }
