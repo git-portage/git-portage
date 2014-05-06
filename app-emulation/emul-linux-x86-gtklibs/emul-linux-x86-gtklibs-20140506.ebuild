@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/emul-linux-x86-gtklibs/Attic/emul-linux-x86-gtklibs-20131008-r1.ebuild,v 1.1 2013/10/26 08:58:24 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/emul-linux-x86-gtklibs/Attic/emul-linux-x86-gtklibs-20140506.ebuild,v 1.1 2014/05/06 20:52:20 pacho Exp $
 
 EAPI=5
 inherit emul-linux-x86
@@ -13,8 +13,19 @@ DEPEND=""
 RDEPEND="~app-emulation/emul-linux-x86-baselibs-${PV}
 	~app-emulation/emul-linux-x86-xlibs-${PV}
 	~app-emulation/emul-linux-x86-opengl-${PV}
+	!abi_x86_32? (
+		!>=media-gfx/graphite2-1.2.4-r1[abi_x86_32(-)]
+		!>=media-libs/harfbuzz-0.9.26-r1[abi_x86_32(-)]
+	)
 	abi_x86_32? (
 		>=x11-libs/pixman-0.30.2-r1[abi_x86_32(-)]
+		>=x11-libs/cairo-1.12.16-r1[abi_x86_32(-)]
+		>=x11-libs/gdk-pixbuf-2.30.5-r1[abi_x86_32(-)]
+		>=media-gfx/graphite2-1.2.4-r1[abi_x86_32(-)]
+		>=media-libs/harfbuzz-0.9.26-r1[abi_x86_32(-)]
+		>=x11-libs/pango-1.36.2-r1[abi_x86_32(-)]
+		>=x11-libs/pangox-compat-0.0.2-r1[abi_x86_32(-)]
+		>=media-libs/imlib-1.9.15-r4[abi_x86_32(-)]
 	)"
 # RDEPEND on opengl stuff needed due cairo, bug #410213
 
@@ -87,7 +98,7 @@ src_prepare() {
 	mv -f "${S}/usr/bin/gdk-pixbuf-query-loaders"{,32} || die
 
 	# Remove migrated stuff.
-	use abi_x86_32 && rm -f $(cat "${FILESDIR}/remove-native")
+	use abi_x86_32 && rm -f $(cat "${FILESDIR}/remove-native-${PVR}")
 }
 
 pkg_preinst() {
@@ -98,9 +109,11 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	my_pango_querymodules
 	my_gtk_query_immodules
-	my_gdk_pixbuf_query_loaders
+	if ! use abi_x86_32; then
+		my_pango_querymodules
+		my_gdk_pixbuf_query_loaders
+	fi
 
 	# gdk-pixbuf.loaders should be in their CHOST directories respectively.
 	if [[ -e "${ROOT}/etc/gtk-2.0/gdk-pixbuf.loaders" ]] ; then
