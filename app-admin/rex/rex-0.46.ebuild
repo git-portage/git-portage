@@ -1,13 +1,12 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/rex/Attic/rex-0.44.6.ebuild,v 1.1 2014/03/10 03:52:34 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/rex/rex-0.46.ebuild,v 1.1 2014/05/07 03:05:16 patrick Exp $
 
-EAPI=4
+EAPI=5
 
-MODULE_AUTHOR=JFRIED
-MODULE_VERSION=${PV}
-MY_P="Rex-${MODULE_VERSION}"
 inherit perl-module
+
+SRC_URI="https://github.com/RexOps/Rex/archive/${PV}.tar.gz"
 
 DESCRIPTION="(R)?ex is a small script to ease the execution of remote commands."
 
@@ -29,3 +28,5 @@ DEPEND="${RDEPEND}
 	dev-perl/List-MoreUtils"
 
 SRC_TEST="do"
+
+S="${WORKDIR}/Rex-${PV}"
