@@ -1,9 +1,9 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/cryptography/Attic/cryptography-0.2.1.ebuild,v 1.7 2014/03/31 20:59:29 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/cryptography/cryptography-0.4-r1.ebuild,v 1.1 2014/05/08 22:02:34 mgorny Exp $
 
-EAPI="5"
-PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3} pypy pypy2_0 )
+EAPI=5
+PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3,3_4} pypy )
 
 inherit distutils-r1
 
@@ -13,15 +13,16 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~hppa ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~arm ~hppa ~mips ~x86 ~x86-fbsd"
 IUSE="test"
 
 RDEPEND="dev-libs/openssl:0
 	>=dev-python/six-1.4.1[${PYTHON_USEDEP}]
-	>=dev-python/cffi-0.8[${PYTHON_USEDEP}]"
+	$(python_gen_cond_dep '>=dev-python/cffi-0.8:=[${PYTHON_USEDEP}]' python*)"
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	test? (
+		=dev-python/cryptography-vectors-${PV}[${PYTHON_USEDEP}]
 		dev-python/iso8601[${PYTHON_USEDEP}]
 		dev-python/pretend[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -30,5 +31,5 @@ DEPEND="${RDEPEND}
 DOCS=( AUTHORS.rst CONTRIBUTING.rst README.rst )
 
 python_test() {
-	"${PYTHON}" -m pytest --verbose tests || die "Tests fail with ${EPYTHON}"
+	py.test -v || die "Tests fail with ${EPYTHON}"
 }
