@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen/Attic/xen-4.4.0-r1.ebuild,v 1.1 2014/04/09 21:35:41 dlan Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen/Attic/xen-4.4.0-r2.ebuild,v 1.1 2014/05/10 00:06:23 dlan Exp $
 
 EAPI=5
 
@@ -15,7 +15,7 @@ if [[ $PV == *9999 ]]; then
 	live_eclass="git-2"
 else
 	KEYWORDS="~amd64 ~arm -x86"
-	UPSTREAM_VER=0
+	UPSTREAM_VER=1
 	GENTOO_VER=
 
 	[[ -n ${UPSTREAM_VER} ]] && \
