@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/freeipmi/Attic/freeipmi-1.3.4.ebuild,v 1.2 2014/03/01 22:12:26 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/freeipmi/freeipmi-1.4.3.ebuild,v 1.1 2014/05/10 16:15:05 flameeyes Exp $
 
 EAPI=5
 
