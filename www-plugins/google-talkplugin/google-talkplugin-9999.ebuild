@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-plugins/google-talkplugin/google-talkplugin-9999.ebuild,v 1.18 2014/04/03 15:12:37 ottxor Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-plugins/google-talkplugin/google-talkplugin-9999.ebuild,v 1.19 2014/05/12 01:44:55 ottxor Exp $
 
 EAPI=5
 
@@ -91,6 +91,10 @@ src_unpack() {
 }
 
 src_install() {
+	local plugindir i l
+	local ppapi_plugindirs=( /opt/google/chrome{,-beta,-unstable}/pepper
+		/usr/lib/chromium-browser/pepper )
+
 	unpacker usr/share/doc/google-talkplugin/changelog.Debian.gz
 	dodoc changelog.Debian
 
@@ -99,6 +103,11 @@ src_install() {
 	for i in "${INSTALL_BASE}"/lib*.so; do
 		doexe "${i}"
 		[[ ${i##*/} = libnp* ]] && inst_plugin "/${i}"
+		if [[ ${i##*/} = libpp* ]] ; then
+			for plugindir in "${ppapi_plugindirs[@]}"; do
+				dosym "/${i}" "${plugindir}/${i##*/}"
+			done
+		fi
 	done
 
 	#install screen-sharing stuff - bug #397463
