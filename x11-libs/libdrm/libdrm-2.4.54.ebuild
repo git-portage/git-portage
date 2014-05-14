@@ -1,8 +1,10 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libdrm/Attic/libdrm-2.4.40.ebuild,v 1.12 2013/01/04 17:47:06 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libdrm/libdrm-2.4.54.ebuild,v 1.1 2014/05/14 16:17:13 chithanh Exp $
 
-EAPI=4
+EAPI=5
+
+XORG_MULTILIB=yes
 inherit xorg-2
 
 EGIT_REPO_URI="git://anongit.freedesktop.org/git/mesa/drm"
@@ -15,22 +17,23 @@ else
 	SRC_URI="http://dri.freedesktop.org/${PN}/${P}.tar.bz2"
 fi
 
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~amd64-linux ~x86-linux ~sparc-solaris ~x64-solaris ~x86-solaris"
-VIDEO_CARDS="exynos intel nouveau omap radeon vmware"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~amd64-linux ~arm-linux ~x86-linux ~sparc-solaris ~x64-solaris ~x86-solaris"
+VIDEO_CARDS="exynos freedreno intel nouveau omap radeon vmware"
 for card in ${VIDEO_CARDS}; do
 	IUSE_VIDEO_CARDS+=" video_cards_${card}"
 done
 
 IUSE="${IUSE_VIDEO_CARDS} libkms"
+REQUIRED_USE="video_cards_exynos? ( libkms )"
 RESTRICT="test" # see bug #236845
 
-RDEPEND="dev-libs/libpthread-stubs
-	video_cards_intel? ( >=x11-libs/libpciaccess-0.10 )"
+RDEPEND="dev-libs/libpthread-stubs[${MULTILIB_USEDEP}]
+	video_cards_intel? ( >=x11-libs/libpciaccess-0.10[${MULTILIB_USEDEP}] )
+	abi_x86_32? ( !app-emulation/emul-linux-x86-opengl[-abi_x86_32(-)] )"
 DEPEND="${RDEPEND}"
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-2.4.28-solaris.patch
-	"${FILESDIR}"/${PN}-2.4.40-bsd-etime.patch
 )
 
 src_prepare() {
@@ -45,6 +48,7 @@ src_configure() {
 	XORG_CONFIGURE_OPTIONS=(
 		--enable-udev
 		$(use_enable video_cards_exynos exynos-experimental-api)
+		$(use_enable video_cards_freedreno freedreno-experimental-api)
 		$(use_enable video_cards_intel intel)
 		$(use_enable video_cards_nouveau nouveau)
 		$(use_enable video_cards_omap omap-experimental-api)
