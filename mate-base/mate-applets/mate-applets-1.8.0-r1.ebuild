@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mate-base/mate-applets/Attic/mate-applets-1.6.2.ebuild,v 1.3 2014/05/04 14:53:35 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/mate-base/mate-applets/mate-applets-1.8.0-r1.ebuild,v 1.1 2014/05/16 15:14:24 tomwij Exp $
 
 EAPI="5"
 
@@ -17,7 +17,7 @@ HOMEPAGE="http://mate-desktop.org"
 
 LICENSE="GPL-2 FDL-1.1 LGPL-2"
 SLOT="0"
-KEYWORDS="amd64"
+KEYWORDS="~amd64"
 
 IUSE="X ipv6 networkmanager policykit"
 
@@ -31,18 +31,17 @@ RDEPEND="${PYTHON_DEPS}
 	dev-python/pygobject:3
 	>=gnome-base/libgtop-2.11.92:2
 	>=mate-base/mate-desktop-1.6:0
-	>=mate-base/mate-panel-1.6:0
+	>=mate-base/mate-panel-1.8:0
 	>=mate-base/mate-settings-daemon-1.6:0
-	>=mate-extra/mate-character-map-1.6:0
 	>=sys-apps/dbus-1.1.2:0
-	sys-power/cpufrequtils:0
+	sys-power/cpupower:0
 	>=sys-power/upower-0.9.4:0
 	x11-libs/gdk-pixbuf:2
-	>=x11-libs/gtk+-2.20:2
-	>=x11-libs/libmatewnck-1.6:0
+	>=x11-libs/gtk+-2.24:2
 	>=x11-libs/libnotify-0.7:0
 	x11-libs/libX11:0
 	>=x11-libs/libxklavier-4:0
+	>=x11-libs/libwnck-2.30:1
 	x11-libs/pango:0
 	>=x11-themes/mate-icon-theme-1.6:0
 	virtual/libintl:0
@@ -51,13 +50,17 @@ RDEPEND="${PYTHON_DEPS}
 
 DEPEND="${RDEPEND}
 	app-text/docbook-xml-dtd:4.3
-	>=app-text/mate-doc-utils-1.6:0
 	>=app-text/scrollkeeper-dtd-1:1.0
+	app-text/yelp-tools:0
 	>=dev-util/intltool-0.35:*
 	dev-libs/libxslt:0
 	>=mate-base/mate-common-1.6:0
 	sys-devel/gettext:*
 	virtual/pkgconfig:*"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-1.6.2-r1-replace-cpufreq-by-cpupower.patch
+}
 
 src_configure() {
 	gnome2_src_configure \
@@ -80,9 +83,9 @@ src_install() {
 	python_fix_shebang invest-applet timer-applet/src
 	gnome2_src_install
 
-	local APPLETS="accessx-status battstat charpick cpufreq drivemount geyes
-			invest-applet mateweather mini-commander mixer modemlights
-			multiload null_applet stickynotes timer-applet trashapplet"
+	local APPLETS="accessx-status battstat charpick command cpufreq drivemount
+			geyes invest-applet mateweather mini-commander mixer multiload
+			null_applet stickynotes timerapplet trashapplet"
 
 	for applet in ${APPLETS}; do
 		docinto ${applet}
