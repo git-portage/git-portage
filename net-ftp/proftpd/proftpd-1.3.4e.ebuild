@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-ftp/proftpd/Attic/proftpd-1.3.4c-r2.ebuild,v 1.1 2013/07/16 08:12:52 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-ftp/proftpd/proftpd-1.3.4e.ebuild,v 1.1 2014/05/16 21:08:45 slyfox Exp $
 
 EAPI=5
 inherit eutils multilib systemd
@@ -71,7 +71,8 @@ __prepare_module() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-fix-build-noipv6.patch #465134
+	epatch "${FILESDIR}"/${P}-link-tests.patch
+	epatch "${FILESDIR}"/${PN}-1.3.4d-memset-fix.patch
 
 	# Skip 'install-conf' / Support LINGUAS
 	sed -i -e "/install-all/s/ install-conf//" Makefile.in
@@ -206,6 +207,8 @@ src_test() {
 src_install() {
 	default
 	[ -z ${LINGUAS} ] && rm -r "${ED}"/usr/share/locale
+	rm -rf "${ED}"/var/run
+
 	newinitd "${FILESDIR}"/proftpd.initd proftpd
 	insinto /etc/proftpd
 	doins "${FILESDIR}"/proftpd.conf.sample
