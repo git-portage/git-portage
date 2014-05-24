@@ -1,16 +1,16 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kajongg/Attic/kajongg-4.13.0.ebuild,v 1.2 2014/04/17 00:43:24 johu Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kajongg/Attic/kajongg-4.13.1-r1.ebuild,v 1.1 2014/05/24 11:24:17 johu Exp $
 
 EAPI=5
 
 KDE_HANDBOOK="optional"
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 inherit python-single-r1 kde4-base
 
 DESCRIPTION="The classical Mah Jongg for four players"
 HOMEPAGE="http://www.kde.org/applications/games/kajongg/"
-KEYWORDS=" ~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="debug"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
@@ -25,6 +25,8 @@ RDEPEND="${DEPEND}
 	$(add_kdebase_dep libkmahjongg)
 	>=dev-python/twisted-core-8.2.0
 "
+
+PATCHES=( "${FILESDIR}/${PN}-4.13.0-cmake.patch" )
 
 pkg_setup() {
 	python-single-r1_pkg_setup
