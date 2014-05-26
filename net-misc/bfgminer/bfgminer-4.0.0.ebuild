@@ -1,29 +1,30 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/bfgminer/Attic/bfgminer-3.8.0.ebuild,v 1.1 2014/01/01 23:46:40 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/bfgminer/Attic/bfgminer-4.0.0.ebuild,v 1.1 2014/05/26 23:07:36 blueness Exp $
 
-EAPI="4"
+EAPI=5
 
 inherit eutils
 
 DESCRIPTION="Modular Bitcoin ASIC/FPGA/GPU/CPU miner in C"
 HOMEPAGE="https://bitcointalk.org/?topic=168174"
-SRC_URI="http://luke.dashjr.org/programs/bitcoin/files/${PN}/${PV}/${P}.tbz2"
+SRC_URI="http://luke.dashjr.org/programs/bitcoin/files/${PN}/${PV}/${P}.txz -> ${P}.tar.xz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
-
-# Waiting for dev-libs/hidapi to be keyworded
-#KEYWORDS="~amd64 ~arm ~mips ~ppc ~ppc64 ~x86"
+KEYWORDS="~amd64 ~mips ~ppc ~ppc64 ~x86"
 
 # TODO: knc (needs i2c-tools header)
-IUSE="+adl avalon bifury bitforce bfsb bigpic bitfury cpumining examples hardened hashbuster hashbuster2 icarus klondike +libusb littlefury lm_sensors metabank modminer nanofury ncurses +opencl proxy proxy_getwork proxy_stratum scrypt twinfury +udev unicode x6500 ztex"
-REQUIRED_USE="
-	|| ( avalon bitforce cpumining icarus modminer opencl proxy x6500 ztex )
+IUSE="+adl antminer avalon bfx bifury bitforce bfsb bigpic bitfury cpumining drillbit dualminer examples gridseed hardened hashbuster hashbuster2 hashfast icarus klondike +libusb littlefury lm_sensors metabank modminer nanofury ncurses +opencl proxy proxy_getwork proxy_stratum scrypt twinfury +udev unicode x6500 ztex"
+REQUIRED_USE='
+	|| ( antminer avalon bfsb bfx bifury bigpic bitforce bitfury cpumining drillbit dualminer gridseed hashbuster hashbuster2 hashfast icarus klondike littlefury metabank modminer nanofury opencl proxy twinfury x6500 ztex )
 	adl? ( opencl )
 	bfsb? ( bitfury )
+	bfx? ( bitfury libusb )
 	bigpic? ( bitfury )
+	drillbit? ( bitfury )
+	dualminer? ( icarus )
+	gridseed? ( scrypt )
 	hashbuster? ( bitfury )
 	hashbuster2? ( bitfury libusb )
 	klondike? ( libusb )
@@ -39,9 +40,9 @@ REQUIRED_USE="
 	proxy_stratum? ( proxy )
 	x6500? ( libusb )
 	ztex? ( libusb )
-"
+'
 
-DEPEND="
+DEPEND='
 	net-misc/curl
 	ncurses? (
 		sys-libs/ncurses[unicode?]
@@ -69,10 +70,20 @@ DEPEND="
 	proxy_stratum? (
 		dev-libs/libevent
 	)
-"
+'
 RDEPEND="${DEPEND}
 	opencl? (
-		virtual/opencl
+		|| (
+			virtual/opencl
+			virtual/opencl-sdk
+			dev-util/ati-stream-sdk
+			dev-util/ati-stream-sdk-bin
+			dev-util/amdstream
+			dev-util/amd-app-sdk
+			dev-util/amd-app-sdk-bin
+			dev-util/nvidia-cuda-sdk[opencl]
+			dev-util/intel-opencl-sdk
+		)
 	)
 "
 DEPEND="${DEPEND}
@@ -108,15 +119,21 @@ src_configure() {
 	econf \
 		--docdir="/usr/share/doc/${PF}" \
 		$(use_enable adl) \
+		$(use_enable antminer) \
 		$(use_enable avalon) \
 		$(use_enable bifury) \
 		$(use_enable bitforce) \
 		$(use_enable bfsb) \
+		$(use_enable bfx) \
 		$(use_enable bigpic) \
 		$(use_enable bitfury) \
 		$(use_enable cpumining) \
+		$(use_enable drillbit) \
+		$(use_enable dualminer) \
+		$(use_enable gridseed) \
 		$(use_enable hashbuster) \
-		$(use_enable hashbuster2) \
+		$(use_enable hashbuster2 hashbusterusb) \
+		$(use_enable hashfast) \
 		$(use_enable icarus) \
 		$(use_enable klondike) \
 		$(use_enable littlefury) \
