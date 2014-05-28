@@ -1,14 +1,14 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Email-Address-List/Attic/Email-Address-List-0.05.ebuild,v 1.1 2014/05/28 10:17:08 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Role-Basic/Role-Basic-0.130.0.ebuild,v 1.1 2014/05/28 12:18:51 zlogene Exp $
 
 EAPI=5
 
-MODULE_AUTHOR=ALEXMV
-MODULE_VERSION=0.05
+MODULE_AUTHOR=OVID
+MODULE_VERSION=0.13
 inherit perl-module
 
-DESCRIPTION="RFC close address list parsing"
+DESCRIPTION="Just roles. Nothing else."
 
 LICENSE="Artistic-2"
 SLOT="0"
@@ -17,7 +17,6 @@ IUSE="test"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-	dev-perl/Email-Address
 	test? ( virtual/perl-Test-Simple )
 "
 
