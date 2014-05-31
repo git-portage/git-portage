@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gst-plugins-good/Attic/gst-plugins-good-1.0.5.ebuild,v 1.11 2013/03/03 12:49:34 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/gst-plugins-good/gst-plugins-good-1.2.4.ebuild,v 1.1 2014/05/31 14:08:55 pacho Exp $
 
 EAPI="5"
 
@@ -11,16 +11,19 @@ DESCRIPTION="Basepack of plugins for gstreamer"
 HOMEPAGE="http://gstreamer.freedesktop.org/"
 
 LICENSE="LGPL-2.1+"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~amd64-fbsd ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd"
 IUSE="+orc"
 
+# dtmf plugin moved from bad to good in 1.2
 RDEPEND="
 	>=dev-libs/glib-2.32:2
-	>=media-libs/gst-plugins-base-1:${SLOT}
-	>=media-libs/gstreamer-1:${SLOT}
+	>=media-libs/gst-plugins-base-1.2.3:${SLOT}
+	>=media-libs/gstreamer-1.2.4:${SLOT}
 	app-arch/bzip2
 	sys-libs/zlib
-	orc? ( >=dev-lang/orc-0.4.16 )
+	orc? ( >=dev-lang/orc-0.4.17 )
+
+	!<media-libs/gst-plugins-bad-1.1:${SLOT}
 "
 DEPEND="${RDEPEND}
 	>=dev-util/gtk-doc-am-1.12
