@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/keystone/Attic/keystone-2014.1.ebuild,v 1.2 2014/04/29 17:33:21 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/keystone/Attic/keystone-2014.1-r2.ebuild,v 1.1 2014/06/01 02:19:16 prometheanfire Exp $
 
 EAPI=5
 
@@ -56,12 +56,11 @@ RDEPEND=">=dev-python/webob-1.2.3-r1[${PYTHON_USEDEP}]
 	dev-python/paste[${PYTHON_USEDEP}]
 	>=dev-python/routes-1.12.3[${PYTHON_USEDEP}]
 	>=dev-python/six-1.5.2[${PYTHON_USEDEP}]
-	sqlite? ( >=dev-python/sqlalchemy-0.7.8[sqlite,${PYTHON_USEDEP}]
-	          <=dev-python/sqlalchemy-0.9.99[sqlite,${PYTHON_USEDEP}] )
-	mysql? ( >=dev-python/sqlalchemy-0.7.8[mysql,${PYTHON_USEDEP}]
-	         <=dev-python/sqlalchemy-0.9.99[mysql,${PYTHON_USEDEP}] )
-	postgres? ( >=dev-python/sqlalchemy-0.7.8[postgres,${PYTHON_USEDEP}]
-	            <=dev-python/sqlalchemy-0.9.99[postgres,${PYTHON_USEDEP}] )
+	>=dev-python/sqlalchemy-0.7.8[${PYTHON_USEDEP}]
+	<dev-python/sqlalchemy-0.9.99[${PYTHON_USEDEP}]
+	mysql? ( dev-python/mysql-python[${PYTHON_USEDEP}] )
+	postgres? ( >=dev-python/psycopg-2[${PYTHON_USEDEP}] )
+	sqlite? ( dev-db/sqlite )
 	>=dev-python/sqlalchemy-migrate-0.9[${PYTHON_USEDEP}]
 	dev-python/passlib[${PYTHON_USEDEP}]
 	>=dev-python/lxml-2.3[${PYTHON_USEDEP}]
@@ -78,6 +77,7 @@ RDEPEND=">=dev-python/webob-1.2.3-r1[${PYTHON_USEDEP}]
 	ldap? ( dev-python/python-ldap[${PYTHON_USEDEP}] )"
 
 PATCHES=(
+	"${FILESDIR}/2014.1-CVE-2014-0204.patch"
 )
 
 pkg_setup() {
