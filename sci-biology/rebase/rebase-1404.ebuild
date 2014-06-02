@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/rebase/Attic/rebase-1310.ebuild,v 1.1 2013/10/08 14:15:03 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/rebase/Attic/rebase-1404.ebuild,v 1.1 2014/06/02 08:46:52 jlec Exp $
 
 EAPI=5
 
@@ -23,7 +23,7 @@ RESTRICT="binchecks strip"
 src_compile() {
 	if use emboss; then
 		echo; einfo "Indexing Rebase for usage with EMBOSS."
-		mkdir REBASE
+		mkdir REBASE || die
 		EMBOSS_DATA="." rebaseextract -auto -infile withrefm.${MY_PV} \
 				-protofile proto.${MY_PV} -equivalences \
 				|| die "Indexing Rebase failed."
