@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/ganeti/Attic/ganeti-2.10.5.ebuild,v 1.1 2014/06/02 18:57:28 chutzpah Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/ganeti/Attic/ganeti-2.10.5-r1.ebuild,v 1.1 2014/06/05 00:32:21 chutzpah Exp $
 
 EAPI=5
 PYTHON_COMPAT=(python2_{6,7})
@@ -135,7 +135,7 @@ src_configure () {
 src_install () {
 	emake V=1 DESTDIR="${D}" install || die "emake install failed"
 
-	newinitd "${FILESDIR}"/ganeti.initd-r2 ${PN}
+	newinitd "${FILESDIR}"/ganeti.initd-r3 ${PN}
 	newconfd "${FILESDIR}"/ganeti.confd-r2 ${PN}
 
 	use kvm && newinitd "${FILESDIR}"/ganeti-kvm-poweroff.initd ganeti-kvm-poweroff
