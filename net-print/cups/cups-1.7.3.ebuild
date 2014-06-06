@@ -1,14 +1,14 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/Attic/cups-1.7.2.ebuild,v 1.3 2014/04/15 21:26:13 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/cups-1.7.3.ebuild,v 1.1 2014/06/06 22:29:48 dilfridge Exp $
 
 EAPI=5
 
 PYTHON_COMPAT=( python{2_6,2_7} )
 
 inherit autotools base fdo-mime gnome2-utils flag-o-matic linux-info \
-	multilib pam python-single-r1 user versionator java-pkg-opt-2 systemd \
-	toolchain-funcs
+	multilib multilib-minimal pam python-single-r1 user versionator \
+	java-pkg-opt-2 systemd toolchain-funcs
 
 MY_P=${P/_rc/rc}
 MY_P=${MY_P/_beta/b}
@@ -24,8 +24,7 @@ if [[ ${PV} == *9999 ]]; then
 	KEYWORDS=""
 else
 	SRC_URI="http://www.cups.org/software/${MY_PV}/${MY_P}-source.tar.bz2"
-#	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~m68k-mint"
-	KEYWORDS=""
+	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~m68k-mint"
 fi
 
 DESCRIPTION="The Common Unix Printing System"
@@ -36,7 +35,7 @@ SLOT="0"
 IUSE="acl dbus debug gnutls java kerberos lprng-compat pam
 	python selinux +ssl static-libs systemd +threads usb X xinetd zeroconf"
 
-LANGS="ca es fr it ja ru"
+LANGS="ca es fr it ja pt_BR ru"
 for X in ${LANGS} ; do
 	IUSE="${IUSE} +linguas_${X}"
 done
@@ -49,28 +48,32 @@ RDEPEND="
 			sys-apps/attr
 		)
 	)
-	dbus? ( sys-apps/dbus )
+	dbus? ( sys-apps/dbus[${MULTILIB_USEDEP}] )
 	java? ( >=virtual/jre-1.6 )
-	kerberos? ( virtual/krb5 )
+	kerberos? ( virtual/krb5[${MULTILIB_USEDEP}] )
 	!lprng-compat? ( !net-print/lprng )
 	pam? ( virtual/pam )
 	python? ( ${PYTHON_DEPS} )
 	selinux? ( sec-policy/selinux-cups )
 	ssl? (
 		gnutls? (
-			dev-libs/libgcrypt:0
-			net-libs/gnutls
+			dev-libs/libgcrypt:0[${MULTILIB_USEDEP}]
+			net-libs/gnutls[${MULTILIB_USEDEP}]
 		)
-		!gnutls? ( >=dev-libs/openssl-0.9.8g )
+		!gnutls? ( >=dev-libs/openssl-0.9.8g[${MULTILIB_USEDEP}] )
 	)
 	usb? ( virtual/libusb:1 )
 	X? ( x11-misc/xdg-utils )
 	xinetd? ( sys-apps/xinetd )
-	zeroconf? ( net-dns/avahi )
+	zeroconf? ( net-dns/avahi[${MULTILIB_USEDEP}] )
+	abi_x86_32? (
+		!<=app-emulation/emul-linux-x86-baselibs-20140508
+		!app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)]
+	)
 "
 
 DEPEND="${RDEPEND}
-	virtual/pkgconfig
+	virtual/pkgconfig[${MULTILIB_USEDEP}]
 "
 
 PDEPEND="
@@ -94,6 +97,11 @@ PATCHES=(
 	"${FILESDIR}/${PN}-1.6.0-dont-compress-manpages.patch"
 	"${FILESDIR}/${PN}-1.6.0-fix-install-perms.patch"
 	"${FILESDIR}/${PN}-1.4.4-nostrip.patch"
+	"${FILESDIR}/${PN}-1.7.3-noavahi.patch"
+)
+
+MULTILIB_CHOST_TOOLS=(
+	/usr/bin/cups-config
 )
 
 pkg_setup() {
@@ -144,42 +152,51 @@ src_prepare() {
 	base_src_prepare
 	use systemd && epatch "${FILESDIR}/${PN}-1.7.2-systemd-socket-2.patch"
 
+	# Fix install-sh, posix sh does not have 'function'.
+	sed 's#function gzipcp#gzipcp()#g' -i "${S}/install-sh"
+
 	AT_M4DIR=config-scripts eaclocal
 	eautoconf
+
+	# custom Makefiles
+	multilib_copy_sources
 }
 
-src_configure() {
+multilib_src_configure() {
 	export DSOFLAGS="${LDFLAGS}"
 
 	einfo LANGS=\"${LANGS}\"
 	einfo LINGUAS=\"${LINGUAS}\"
 
-	local myconf
+	local myconf=()
 	if use ssl ; then
-		myconf+="
+		myconf+=(
 			$(use_enable gnutls)
 			$(use_enable !gnutls openssl)
-		"
+		)
 	else
-		myconf+="
+		myconf+=(
 			--disable-gnutls
 			--disable-openssl
-		"
+		)
 	fi
 
 	if tc-is-static-only; then
-		myconf+="
+		myconf+=(
 			--disable-shared
-		"
+		)
 	fi
 
 	if use systemd; then
-		myconf+="
+		myconf+=(
 			--with-systemdsystemunitdir="$(systemd_get_unitdir)"
-		"
+		)
 	fi
 
+	# need to override KRB5CONFIG for proper flags
+	# https://www.cups.org/str.php?L4423
 	econf \
+		KRB5CONFIG="${EPREFIX}"/usr/bin/${CHOST}-krb5-config \
 		--libdir="${EPREFIX}"/usr/$(get_libdir) \
 		--localstatedir="${EPREFIX}"/var \
 		--with-rundir="${EPREFIX}"/run/cups \
@@ -188,24 +205,24 @@ src_configure() {
 		--with-docdir="${EPREFIX}"/usr/share/cups/html \
 		--with-languages="${LINGUAS}" \
 		--with-system-groups=lpadmin \
-		$(use_enable acl) \
+		$(multilib_native_use_enable acl) \
 		$(use_enable zeroconf avahi) \
 		$(use_enable dbus) \
 		$(use_enable debug) \
 		$(use_enable debug debug-guards) \
 		$(use_enable kerberos gssapi) \
-		$(use_enable pam) \
+		$(multilib_native_use_enable pam) \
 		$(use_enable static-libs static) \
 		$(use_enable threads) \
-		$(use_enable usb libusb) \
+		$(multilib_native_use_enable usb libusb) \
 		--disable-dnssd \
-		$(use_with java) \
+		$(multilib_native_use_with java) \
 		--without-perl \
 		--without-php \
-		$(use_with python python "${PYTHON}") \
-		$(use_with xinetd xinetd /etc/xinetd.d) \
-		--enable-libpaper \
-		${myconf}
+		$(multilib_native_use_with python python "${PYTHON}") \
+		$(multilib_native_use_with xinetd xinetd /etc/xinetd.d) \
+		$(multilib_is_native_abi && echo --enable-libpaper || echo --disable-libpaper) \
+		"${myconf[@]}"
 
 	# install in /usr/libexec always, instead of using /usr/lib/cups, as that
 	# makes more sense when facing multilib support.
@@ -214,11 +231,28 @@ src_configure() {
 	sed -i -e "s:cups_serverbin=.*:cups_serverbin=\"${EPREFIX}/usr/libexec/cups\":" cups-config || die
 }
 
-src_install() {
-	# Fix install-sh, posix sh does not have 'function'.
-	sed 's#function gzipcp#gzipcp()#g' -i "${S}/install-sh"
+multilib_src_compile() {
+	if multilib_is_native_abi; then
+		default
+	else
+		emake libs
+	fi
+}
 
-	emake BUILDROOT="${D}" install
+multilib_src_test() {
+	multilib_is_native_abi && default
+}
+
+multilib_src_install() {
+	if multilib_is_native_abi; then
+		emake BUILDROOT="${D}" install
+	else
+		emake BUILDROOT="${D}" install-libs install-headers
+		dobin cups-config
+	fi
+}
+
+multilib_src_install_all() {
 	dodoc {CHANGES,CREDITS,README}.txt
 
 	# move the default config file to docs
