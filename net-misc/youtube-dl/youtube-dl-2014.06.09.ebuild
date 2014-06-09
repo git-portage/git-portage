@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/youtube-dl/Attic/youtube-dl-2014.05.19.ebuild,v 1.1 2014/05/19 19:58:05 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/youtube-dl/Attic/youtube-dl-2014.06.09.ebuild,v 1.1 2014/06/09 22:24:42 jer Exp $
 
 EAPI=5
 
@@ -50,7 +50,7 @@ src_test() {
 src_install() {
 	python_domodule youtube_dl
 	dobin bin/${PN}
-	dodoc CHANGELOG README.txt
+	dodoc README.txt
 	doman ${PN}.1
 	newbashcomp ${PN}.bash-completion ${PN}
 	python_fix_shebang "${ED}"
