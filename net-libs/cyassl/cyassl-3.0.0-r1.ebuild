@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/cyassl/Attic/cyassl-3.0.0.ebuild,v 1.3 2014/06/08 14:18:58 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/cyassl/Attic/cyassl-3.0.0-r1.ebuild,v 1.1 2014/06/09 20:45:54 blueness Exp $
 
 EAPI="5"
 
-inherit eutils
+inherit autotools eutils
 
 DESCRIPTION="Lightweight SSL/TLS library targeted at embedded and RTOS environments"
 HOMEPAGE="http://www.yassl.com/yaSSL/Home.html"
@@ -41,9 +41,10 @@ DEPEND="app-arch/unzip
 	zlib? ( sys-libs/zlib )"
 RDEPEND="${DEPEND}"
 
-#src_prepare() {
-#	epatch "${FILESDIR}"/${PN}-2.0.8-disable-testsuit-ifnothreads.patch
-#}
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-2.9.4-remove-hardened-flags.patch
+	eautoreconf
+}
 
 src_configure() {
 	local myconf=()
