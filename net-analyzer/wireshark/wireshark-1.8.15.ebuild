@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.8.14.ebuild,v 1.2 2014/04/29 22:11:22 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.8.15.ebuild,v 1.1 2014/06/13 12:38:52 jer Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_6 python2_7 )
