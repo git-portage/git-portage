@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.14.3-r2.ebuild,v 1.10 2013/10/22 07:36:05 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/xorg-server-1.14.7.ebuild,v 1.1 2014/06/13 13:23:56 chithanh Exp $
 
 EAPI=5
 
@@ -12,7 +12,7 @@ EGIT_REPO_URI="git://anongit.freedesktop.org/git/xorg/xserver"
 
 DESCRIPTION="X.Org X servers"
 SLOT="0/${PV}"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~arm-linux ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~arm-linux ~x86-linux"
 
 IUSE_SERVERS="dmx kdrive xnest xorg xvfb"
 IUSE="${IUSE_SERVERS} ipv6 minimal nptl selinux +suid tslib +udev"
@@ -116,7 +116,6 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-1.12-disable-acpi.patch
 	"${FILESDIR}"/${PN}-1.12-ia64-fix_inx_outx.patch
 	"${FILESDIR}"/${PN}-1.12-unloadsubmodule.patch
-	"${FILESDIR}"/${PN}-1.12-cve-2013-4396.patch
 )
 
 pkg_pretend() {
@@ -162,6 +161,7 @@ src_configure() {
 		--without-dtrace
 		--without-fop
 		--with-os-vendor=Gentoo
+		--with-sha1=libcrypto
 	)
 
 	# Xorg-server requires includes from OS mesa which are not visible for
@@ -191,7 +191,7 @@ src_install() {
 	fi
 
 	newinitd "${FILESDIR}"/xdm-setup.initd-1 xdm-setup
-	newinitd "${FILESDIR}"/xdm.initd-10 xdm
+	newinitd "${FILESDIR}"/xdm.initd-11 xdm
 	newconfd "${FILESDIR}"/xdm.confd-4 xdm
 
 	# install the @x11-module-rebuild set for Portage
