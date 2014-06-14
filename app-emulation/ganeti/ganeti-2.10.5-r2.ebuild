@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/ganeti/Attic/ganeti-2.11.1-r1.ebuild,v 1.1 2014/06/05 00:32:21 chutzpah Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/ganeti/Attic/ganeti-2.10.5-r2.ebuild,v 1.1 2014/06/14 23:25:41 chutzpah Exp $
 
 EAPI=5
 PYTHON_COMPAT=(python2_{6,7})
@@ -48,12 +48,7 @@ HASKELL_DEPS=">=dev-lang/ghc-6.12:0=
 		dev-haskell/utf8-string:0=
 		dev-haskell/deepseq:0=
 		dev-haskell/attoparsec:0=
-		dev-haskell/crypto:0=
-		dev-haskell/vector:0=
-		dev-haskell/hinotify:0=
-		dev-haskell/regex-pcre-builtin:0=
-		dev-haskell/zlib:0=
-		dev-haskell/base64-bytestring:0="
+		dev-haskell/crypto:0="
 
 DEPEND="xen? ( >=app-emulation/xen-3.0 )
 	kvm? ( app-emulation/qemu )
@@ -64,6 +59,9 @@ DEPEND="xen? ( >=app-emulation/xen-3.0 )
 	haskell-daemons? (
 		${HASKELL_DEPS}
 		dev-haskell/text:0=
+		dev-haskell/hinotify:0=
+		dev-haskell/regex-pcre-builtin:0=
+		dev-haskell/vector:0=
 	)
 	dev-libs/openssl
 	dev-python/paramiko[${PYTHON_USEDEP}]
@@ -104,9 +102,10 @@ PATCHES=(
 	"${FILESDIR}/${PN}-2.6-add-pgrep.patch"
 	"${FILESDIR}/${PN}-2.7-fix-tests.patch"
 	"${FILESDIR}/${PN}-2.9-disable-root-tests.patch"
-	"${FILESDIR}/${PN}-2.11-regex-builtin.patch"
+	"${FILESDIR}/${PN}-2.9-regex-builtin.patch"
 	"${FILESDIR}/${PN}-2.9-skip-cli-test.patch"
 	"${FILESDIR}/${PN}-2.10-rundir.patch"
+	"${FILESDIR}/${PN}-lockdir.patch"
 )
 
 pkg_setup () {

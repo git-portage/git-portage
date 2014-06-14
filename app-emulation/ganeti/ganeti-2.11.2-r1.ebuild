@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/ganeti/Attic/ganeti-2.11.2.ebuild,v 1.1 2014/06/14 00:11:44 chutzpah Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/ganeti/Attic/ganeti-2.11.2-r1.ebuild,v 1.1 2014/06/14 23:25:41 chutzpah Exp $
 
 EAPI=5
 PYTHON_COMPAT=(python2_{6,7})
@@ -109,6 +109,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-2.10-rundir.patch"
 	"${FILESDIR}/${PN}-2.11-qemu-enable-kvm.patch"
 	"${FILESDIR}/${PN}-2.11-tests.patch"
+	"${FILESDIR}/${PN}-lockdir.patch"
 )
 
 REQUIRED_USE="kvm? ( || ( amd64 x86 ) )"
