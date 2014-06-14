@@ -1,10 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-radio/flrig/Attic/flrig-1.3.13.ebuild,v 1.1 2013/09/03 08:45:57 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-radio/flrig/flrig-1.3.16.ebuild,v 1.1 2014/06/14 10:51:51 tomjbe Exp $
 
 EAPI=5
-
-inherit eutils
 
 DESCRIPTION="Transceiver control program for Amateur Radio use"
 HOMEPAGE="http://www.w1hkj.com/flrig-help/index.html"
@@ -21,10 +19,6 @@ RDEPEND="x11-libs/libX11
 
 DEPEND="${RDEPEND}
 	sys-devel/gettext"
-
-src_prepare() {
-	epatch "${FILESDIR}"/vfprintf_bug.diff
-}
 
 src_install() {
 	emake DESTDIR="${D}" install
