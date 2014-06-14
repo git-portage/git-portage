@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/Attic/llvm-3.4.1-r1.ebuild,v 1.2 2014/06/11 07:49:45 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-3.4.1-r2.ebuild,v 1.1 2014/06/14 18:49:46 mgorny Exp $
 
 EAPI=5
 
