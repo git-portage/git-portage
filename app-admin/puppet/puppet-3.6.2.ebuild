@@ -1,13 +1,14 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/Attic/puppet-3.4.2.ebuild,v 1.1 2014/01/08 16:07:57 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/puppet-3.6.2.ebuild,v 1.1 2014/06/15 03:10:35 prometheanfire Exp $
 
 EAPI="5"
 
-#supports ruby20, but needs deps first
-USE_RUBY="ruby19"
+USE_RUBY="ruby19 ruby20"
 
-inherit elisp-common xemacs-elisp-common eutils user ruby-ng versionator
+RUBY_FAKEGEM_RECIPE_TEST="rspec"
+
+inherit elisp-common xemacs-elisp-common eutils user ruby-fakegem versionator
 
 DESCRIPTION="A system automation and configuration management software"
 HOMEPAGE="http://puppetlabs.com/"
@@ -20,7 +21,9 @@ IUSE="augeas diff doc emacs ldap minimal rrdtool selinux shadow sqlite3 vim-synt
 
 ruby_add_rdepend "
 	dev-ruby/hiera
-	>=dev-ruby/facter-1.6.2
+	>=dev-ruby/rgen-0.6.5 =dev-ruby/rgen-0.6*
+	>=dev-ruby/facter-1.6.2 <dev-ruby/facter-3
+	dev-ruby/json
 	augeas? ( dev-ruby/ruby-augeas )
 	diff? ( dev-ruby/diff-lcs )
 	doc? ( dev-ruby/rdoc )
@@ -50,6 +53,24 @@ pkg_setup() {
 	enewuser puppet -1 -1 /var/lib/puppet puppet
 }
 
+all_ruby_prepare() {
+	# Avoid spec that require unpackaged json-schema.
+	rm spec/lib/matchers/json.rb $( grep -Rl matchers/json spec) || die
+
+	# Avoid Rails specs to avoid this dependency and because they
+	# currently fail against Rails 4.1.
+	find spec -type f -name '*rails*' -o -name '*active_record*' | xargs rm || die
+	rm -r spec/unit/rails || die
+	rm spec/unit/parser/collector_spec.rb || die
+
+	# Avoid specs that can only run in the puppet.git repository. This
+	# should be narrowed down to the specific specs.
+	rm spec/integration/parser/compiler_spec.rb spec/integration/parser/future_compiler_spec.rb || die
+
+	# Avoid failing spec that need further investigation.
+	rm spec/unit/module_tool/metadata_spec.rb || die
+}
+
 all_ruby_compile() {
 	if use emacs ; then
 		elisp-compile ext/emacs/puppet-mode.el
@@ -65,10 +86,13 @@ all_ruby_compile() {
 }
 
 each_ruby_install() {
-	${RUBY} install.rb --destdir="${D}" install || die
+	each_fakegem_install
+	#${RUBY} install.rb --destdir="${D}" install || die
 }
 
 all_ruby_install() {
+	all_fakegem_install
+
 	#systemd stuffs
 	insinto /usr/lib/systemd/system
 	doins "${WORKDIR}/all/${P}/ext/systemd/puppet.service"
@@ -101,7 +125,10 @@ all_ruby_install() {
 		keepdir /var/lib/puppet/facts
 		keepdir /var/lib/puppet/files
 		fowners -R puppet:puppet /var/lib/puppet
+		fperms 0750 /var/lib/puppet
 	fi
+	fperms 0750 /etc/puppet
+	fowners :puppet /etc/puppet
 
 	if use emacs ; then
 		elisp-install ${PN} ext/emacs/puppet-mode.el*
