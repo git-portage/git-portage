@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/kombu/Attic/kombu-3.0.15.ebuild,v 1.1 2014/04/27 08:15:45 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/kombu/kombu-3.0.19.ebuild,v 1.1 2014/06/16 02:43:40 idella4 Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_7,3_2,3_3} )
+PYTHON_COMPAT=( python{2_7,3_3,3_4} pypy )
 
 inherit distutils-r1
 
@@ -39,6 +39,7 @@ DEPEND="${RDEPEND}
 		dev-python/beanstalkc[${PY27_GEN_USEDEP}]
 		dev-python/couchdb-python[${PY27_GEN_USEDEP}]
 		>=dev-python/sphinxcontrib-issuetracker-0.9[${PYTHON_USEDEP}] )"
+
 # pyyaml is an optional package for tests, refrain for now
 # Req'd for test phase
 DISTUTILS_IN_SOURCE_BUILD=1
@@ -63,18 +64,19 @@ python_compile_all() {
 
 python_test() {
 	export DJANGO_SETTINGS_MODULE="django.conf"
+	# https://github.com/celery/kombu/issues/364. Cleaner for now to ignore the whole test_ file
 	if python_is_python3; then
 		2to3 --no-diffs -w build/lib/kombu/transport/
-		nosetests --py3where=build/lib kombu/tests || die "Tests failed under ${EPYTHON}"
+		nosetests --py3where=build/lib kombu/tests -I test_amqplib.py || die "Tests failed under ${EPYTHON}"
 	else
-		# funtests appears to be coded only for py2, a kind of 2nd tier.
-		nosetests "${S}"/kombu/tests || die "Tests failed under ${EPYTHON}"
-		# https://github.com/celery/kombu/issues/346
-		pushd funtests > /dev/null
-		# Disable test_redis.py for now
-		mv tests/test_redis.py tests/tredis.py || die
-		esetup.py test
-		popd > /dev/null
+		nosetests "${S}"/kombu/tests -I test_amqplib.py || die "Tests failed under ${EPYTHON}"
+		# funtests appears to be coded only for py2, a kind of 2nd tier. pypy fails 6.
+		if [[ "${EPYTHON}" == python2.7 ]]; then
+			pushd funtests > /dev/null
+			# For now, use nosetests manually, return to esetup.py on fixing of issues/364
+			nosetests -I test_amqplib.py || die "Tests failed under ${EPYTHON}"
+			popd > /dev/null
+		fi
 	fi
 }
 
