@@ -1,12 +1,12 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/ppp/Attic/ppp-2.4.6-r1.ebuild,v 1.1 2014/06/16 14:18:56 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/ppp/Attic/ppp-2.4.6-r2.ebuild,v 1.1 2014/06/17 13:57:31 pinkbyte Exp $
 
 EAPI=5
 
 inherit eutils linux-info multilib pam toolchain-funcs
 
-PATCH_VER="2"
+PATCH_VER="3"
 DESCRIPTION="Point-to-Point Protocol (PPP)"
 HOMEPAGE="http://www.samba.org/ppp"
 SRC_URI="ftp://ftp.samba.org/pub/ppp/${P}.tar.gz
