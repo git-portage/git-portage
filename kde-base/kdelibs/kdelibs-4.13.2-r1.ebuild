@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-4.13.2.ebuild,v 1.1 2014/06/15 16:57:06 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-4.13.2-r1.ebuild,v 1.1 2014/06/18 22:18:22 reavertm Exp $
 
 EAPI=5
 
@@ -134,6 +134,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-4.8.1-norpath.patch"
 	"${FILESDIR}/${PN}-4.9.3-werror.patch"
 	"${FILESDIR}/${PN}-4.10.0-udisks.patch"
+	"${FILESDIR}/${PN}-4.13.2-CVE-2014-3494.patch" # Bug 513726
 )
 
 pkg_pretend() {
@@ -178,7 +179,7 @@ src_prepare() {
 		append-flags -DHAVE_ARPA_NAMESER8_COMPAT_H=1
 
 		# Try to fix kkeyserver_mac
-		epatch "${FILESDIR}"/${PN}-4.3.80-kdeui_util_kkeyserver_mac.patch
+		epatch "${FILESDIR}/${PN}-4.3.80-kdeui_util_kkeyserver_mac.patch"
 	fi
 }
 
