@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/symon/Attic/symon-2.85.ebuild,v 1.1 2012/04/17 16:39:50 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/symon/symon-2.86-r1.ebuild,v 1.1 2014/06/24 01:31:06 jer Exp $
 
-EAPI=4
+EAPI=5
 
 inherit perl-module toolchain-funcs
 
@@ -40,9 +40,9 @@ pkg_setup() {
 }
 
 src_prepare() {
-	# Respect LDFLAGS.
-	sed -i "/^[ \t]*\${CC}.*\${LIBS}/s/\${CC}/& \${LDFLAGS}/" sym*/Makefile \
-		|| die "sed ldflags failed"
+	sed -i \
+		-e '/^[ \t]*${CC}.*\${LIBS}/s:\${CC}:$(CC) $(LDFLAGS):' \
+		sym*/Makefile || die
 
 	# Do some sed magic in accordance with the USE flags.
 	use perl && [[ -z ${USE_SYMON} ]] && ! use symux && zap_subdir lib
