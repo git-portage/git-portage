@@ -1,11 +1,13 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/kdeconnect/Attic/kdeconnect-0.5.1.ebuild,v 1.2 2014/06/16 10:52:52 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/kdeconnect/kdeconnect-0.7.1.ebuild,v 1.1 2014/06/30 23:02:43 mrueg Exp $
 
 EAPI=5
 
 MY_PN=${PN}-kde
 DECLARATIVE_REQUIRED="always"
+KDE_LINGUAS="bg bs ca cs da de es fi fr gl hu it ja ko lt nl pl pt pt_BR ro ru sk sv tr uk"
+
 inherit kde4-base
 
 if [[ ${KDE_BUILD_TYPE} != live ]]; then
@@ -37,7 +39,7 @@ RDEPEND="${DEPEND}
 [[ ${KDE_BUILD_TYPE} != live ]] && S=${WORKDIR}/${MY_P}
 
 src_prepare(){
-	sed -i -e "s:QtCrypto/QtCrypto:QtCrypto:" kded/networkpackage.cpp || die
+	sed -i -e "s:QtCrypto/QtCrypto:QtCrypto:" core/networkpackage.cpp || die
 	kde4-base_src_prepare
 }
 
