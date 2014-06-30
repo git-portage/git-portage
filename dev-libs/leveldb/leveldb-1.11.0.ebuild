@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/leveldb/Attic/leveldb-1.11.0.ebuild,v 1.1 2013/06/19 03:28:03 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/leveldb/Attic/leveldb-1.11.0.ebuild,v 1.2 2014/06/30 01:08:11 blueness Exp $
 
 EAPI=4
 
