@@ -1,12 +1,12 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/ganeti/Attic/ganeti-2.11.2-r2.ebuild,v 1.1 2014/06/18 18:50:58 chutzpah Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/ganeti/ganeti-2.10.5-r3.ebuild,v 1.1 2014/07/02 23:57:25 chutzpah Exp $
 
 EAPI=5
 PYTHON_COMPAT=(python2_{6,7})
 use test && PYTHON_REQ_USE="ipv6"
 
-inherit eutils confutils autotools bash-completion-r1 python-single-r1 versionator pax-utils
+inherit eutils confutils autotools bash-completion-r1 python-single-r1 versionator
 
 MY_PV="${PV/_rc/~rc}"
 #MY_PV="${PV/_beta/~beta}"
@@ -48,12 +48,7 @@ HASKELL_DEPS=">=dev-lang/ghc-6.12:0=
 		dev-haskell/utf8-string:0=
 		dev-haskell/deepseq:0=
 		dev-haskell/attoparsec:0=
-		dev-haskell/crypto:0=
-		dev-haskell/vector:0=
-		dev-haskell/hinotify:0=
-		dev-haskell/regex-pcre-builtin:0=
-		dev-haskell/zlib:0=
-		dev-haskell/base64-bytestring:0="
+		dev-haskell/crypto:0="
 
 DEPEND="xen? ( >=app-emulation/xen-3.0 )
 	kvm? ( app-emulation/qemu )
@@ -64,6 +59,9 @@ DEPEND="xen? ( >=app-emulation/xen-3.0 )
 	haskell-daemons? (
 		${HASKELL_DEPS}
 		dev-haskell/text:0=
+		dev-haskell/hinotify:0=
+		dev-haskell/regex-pcre-builtin:0=
+		dev-haskell/vector:0=
 	)
 	dev-libs/openssl
 	dev-python/paramiko[${PYTHON_USEDEP}]
@@ -100,20 +98,15 @@ DEPEND+="${HASKELL_DEPS}
 	)"
 
 PATCHES=(
-	"${FILESDIR}/${PN}-2.11-start-stop-daemon-args.patch"
-	"${FILESDIR}/${PN}-2.11-add-pgrep.patch"
-	"${FILESDIR}/${PN}-2.11-daemon-util.patch"
+	"${FILESDIR}/${PN}-2.6-fix-args.patch"
+	"${FILESDIR}/${PN}-2.6-add-pgrep.patch"
 	"${FILESDIR}/${PN}-2.7-fix-tests.patch"
 	"${FILESDIR}/${PN}-2.9-disable-root-tests.patch"
-	"${FILESDIR}/${PN}-2.11-regex-builtin.patch"
+	"${FILESDIR}/${PN}-2.9-regex-builtin.patch"
 	"${FILESDIR}/${PN}-2.9-skip-cli-test.patch"
 	"${FILESDIR}/${PN}-2.10-rundir.patch"
-	"${FILESDIR}/${PN}-2.11-qemu-enable-kvm.patch"
-	"${FILESDIR}/${PN}-2.11-tests.patch"
 	"${FILESDIR}/${PN}-lockdir.patch"
 )
-
-REQUIRED_USE="kvm? ( || ( amd64 x86 ) )"
 
 pkg_setup () {
 	confutils_use_depend_all haskell-daemons htools
@@ -122,24 +115,12 @@ pkg_setup () {
 
 src_prepare() {
 	epatch "${PATCHES[@]}"
-
 	[[ ${PV} == "9999" ]] && ./autogen.sh
 	rm autotools/missing
 	eautoreconf
 }
 
 src_configure () {
-	# this is kind of a hack to work around the removal of the qemu-kvm wrapper
-	local kvm_arch
-
-	if use amd64; then
-		kvm_arch=x86_64
-	elif use x86; then
-		kvm_arch=i386
-	elif use kvm; then
-		die "Could not determine qemu system to use for kvm"
-	fi
-
 	econf --localstatedir=/var \
 		--sharedstatedir=/var \
 		--disable-symlinks \
@@ -148,7 +129,7 @@ src_configure () {
 		--with-export-dir=/var/lib/ganeti-storage/export \
 		--with-os-search-path=/usr/share/${PN}/os \
 		$(use_enable syslog) \
-		$(usex kvm '--with-kvm-path=' '' "/usr/bin/qemu-system-${kvm_arch}" '') \
+		$(usex kvm '--with-kvm-path=' '' '/usr/bin/qemu-kvm' '') \
 		$(usex haskell-daemons "--enable-confd=haskell" '' '' '')
 }
 
@@ -158,18 +139,12 @@ src_install () {
 	newinitd "${FILESDIR}"/ganeti.initd-r3 ${PN}
 	newconfd "${FILESDIR}"/ganeti.confd-r2 ${PN}
 
-	if use kvm; then
-		newinitd "${FILESDIR}"/ganeti-kvm-poweroff.initd ganeti-kvm-poweroff
-		newconfd "${FILESDIR}"/ganeti-kvm-poweroff.confd ganeti-kvm-poweroff
-	fi
-
-	# ganeti installs it's own docs in a generic location
-	rm -rf "${D}"/{usr/share/doc/${PN},run}
-
+	use kvm && newinitd "${FILESDIR}"/ganeti-kvm-poweroff.initd ganeti-kvm-poweroff
+	use kvm && newconfd "${FILESDIR}"/ganeti-kvm-poweroff.confd ganeti-kvm-poweroff
 	newbashcomp doc/examples/bash_completion ganeti
-
 	dodoc INSTALL UPGRADE NEWS README doc/*.rst
-	dohtml -r doc/html/* doc/css/*.css
+	dohtml -r doc/html/*
+	rm -rf "${D}"/{usr/share/doc/${PN},run}
 
 	docinto examples
 	dodoc doc/examples/{ganeti.cron,gnt-config-backup} doc/examples/*.ocf
@@ -183,6 +158,8 @@ src_install () {
 	insinto /etc/logrotate.d
 	newins doc/examples/ganeti.logrotate ${PN}
 
+	python_fix_shebang "${D}"/usr/"$(get_libdir)"/${PN}/${SERIES}
+
 	keepdir /var/{lib,log}/${PN}/
 	keepdir /usr/share/${PN}/${SERIES}/os/
 	keepdir /var/lib/ganeti-storage/{export,file,shared}/
@@ -190,7 +167,7 @@ src_install () {
 	dosym ${SERIES} "/usr/share/${PN}/default"
 	dosym ${SERIES} "/usr/$(get_libdir)/${PN}/default"
 
-	python_fix_shebang "${ED}" "${D}"/usr/"$(get_libdir)"/${PN}/${SERIES}
+	python_fix_shebang "${ED}"
 }
 
 src_test () {
