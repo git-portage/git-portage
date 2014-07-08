@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/lldpd/Attic/lldpd-0.7.9.ebuild,v 1.1 2014/07/01 18:01:53 chutzpah Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/lldpd/Attic/lldpd-0.7.9-r2.ebuild,v 1.1 2014/07/08 18:34:25 chutzpah Exp $
 
 EAPI=5
 
@@ -37,17 +37,18 @@ pkg_setup() {
 }
 
 src_prepare() {
-	# remove the bundled libevent
-	rm -rf libevent
-
+	epatch "${FILESDIR}"/${P}-seccomp-add-syscalls.patch
 	epatch_user
 }
 
 src_configure() {
 	econf \
+		--without-embedded-libevent \
 		--with-privsep-user=${PN} \
 		--with-privsep-group=${PN} \
-		--with-privsep-chroot=/var/lib/${PN} \
+		--with-privsep-chroot=/run/${PN} \
+		--with-lldpd-ctl-socket=/run/${PN}.socket \
+		--with-lldpd-pid-file=/run/${PN}.pid \
 		--docdir=/usr/share/doc/${PF} \
 		$(use_enable graph doxygen-dot) \
 		$(use_enable doc doxygen-man) \
@@ -77,12 +78,12 @@ src_install() {
 	emake DESTDIR="${D}" install
 	prune_libtool_files
 
-	newinitd "${FILESDIR}"/${PN}-initd-1 ${PN}
+	newinitd "${FILESDIR}"/${PN}-initd-2 ${PN}
 	newconfd "${FILESDIR}"/${PN}-confd-1 ${PN}
 
 	use doc && dohtml -r doxygen/html/*
 
-	keepdir /var/lib/${PN}
+	keepdir /etc/${PN}.d
 
 	systemd_dounit "${FILESDIR}"/${PN}.service
 }
