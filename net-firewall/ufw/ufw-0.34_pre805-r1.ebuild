@@ -1,18 +1,16 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/ufw/Attic/ufw-0.31.1-r2.ebuild,v 1.2 2013/05/20 09:05:50 lxnay Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/ufw/ufw-0.34_pre805-r1.ebuild,v 1.1 2014/07/17 06:57:21 dlan Exp $
 
-EAPI=4
-PYTHON_DEPEND="2:2.5"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.* *-jython"
+EAPI=5
+PYTHON_COMPAT=( python{2_7,3_2,3_3,3_4} )
+DISTUTILS_IN_SOURCE_BUILD=1
 
-inherit versionator bash-completion-r1 eutils linux-info distutils systemd
+inherit bash-completion-r1 eutils linux-info distutils-r1 systemd
 
-MY_PV_12=$(get_version_component_range 1-2)
 DESCRIPTION="A program used to manage a netfilter firewall"
 HOMEPAGE="http://launchpad.net/ufw"
-SRC_URI="http://launchpad.net/ufw/${MY_PV_12}/${PV}/+download/${P}.tar.gz"
+SRC_URI="mirror://sabayon/${CATEGORY}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -28,6 +26,15 @@ RDEPEND=">=net-firewall/iptables-1.4[ipv6?]
 # tests fail; upstream bug: https://bugs.launchpad.net/ufw/+bug/815982
 RESTRICT="test"
 
+PATCHES=(
+	# Remove unnecessary build time dependency on net-firewall/iptables.
+	"${FILESDIR}"/${PN}-0.33-dont-check-iptables.patch
+	# Move files away from /lib/ufw.
+	"${FILESDIR}"/${PN}-0.31.1-move-path.patch
+	# Remove shebang modification.
+	"${FILESDIR}"/${P}-shebang.patch
+)
+
 pkg_pretend() {
 	local CONFIG_CHECK="~PROC_FS
 		~NETFILTER_XT_MATCH_COMMENT ~NETFILTER_XT_MATCH_HL
@@ -39,6 +46,17 @@ pkg_pretend() {
 	else
 		CONFIG_CHECK+=" ~IP_NF_MATCH_ADDRTYPE"
 	fi
+
+	# https://bugs.launchpad.net/ufw/+bug/1076050
+	if kernel_is -ge 3 4; then
+		CONFIG_CHECK+=" ~NETFILTER_XT_TARGET_LOG"
+	else
+		CONFIG_CHECK+=" ~IP_NF_TARGET_LOG"
+		use ipv6 && CONFIG_CHECK+=" ~IP6_NF_TARGET_LOG"
+	fi
+
+	CONFIG_CHECK+=" ~IP_NF_TARGET_REJECT"
+	use ipv6 && CONFIG_CHECK+=" ~IP6_NF_TARGET_REJECT"
 
 	check_extra_config
 
@@ -83,18 +101,7 @@ pkg_pretend() {
 	fi
 }
 
-src_prepare() {
-	# Remove warning about 'state' being obsolete in iptables 1.4.16.2.
-	epatch "${FILESDIR}"/${P}-conntrack.patch
-	# Allow to remove unnecessary build time dependency
-	# on net-firewall/iptables.
-	epatch "${FILESDIR}"/${PN}-dont-check-iptables.patch
-	# Move files away from /lib/ufw.
-	epatch "${FILESDIR}"/${P}-move-path.patch
-	# Contains fixes related to SUPPORT_PYTHON_ABIS="1" (see comment in the
-	# file).
-	epatch "${FILESDIR}"/${P}-python-abis.patch
-
+python_prepare_all() {
 	# Set as enabled by default. User can enable or disable
 	# the service by adding or removing it to/from a runlevel.
 	sed -i 's/^ENABLED=no/ENABLED=yes/' conf/ufw.conf \
@@ -120,9 +127,11 @@ src_prepare() {
 	else
 		_EMPTY_LOCALE_LIST="no"
 	fi
+
+	distutils-r1_python_prepare_all
 }
 
-src_install() {
+python_install_all() {
 	newconfd "${FILESDIR}"/ufw.confd ufw
 	newinitd "${FILESDIR}"/ufw-2.initd ufw
 	systemd_dounit "${FILESDIR}/ufw.service"
@@ -142,13 +151,15 @@ src_install() {
 		insinto /usr/share/doc/${PF}/examples
 		doins examples/*
 	fi
-	distutils_src_install
-	[[ $_EMPTY_LOCALE_LIST != yes ]] && domo locales/mo/*.mo
 	newbashcomp shell-completion/bash ${PN}
+
+	[[ $_EMPTY_LOCALE_LIST != yes ]] && domo locales/mo/*.mo
+
+	distutils-r1_python_install_all
+	python_replicate_script "${D}usr/sbin/ufw"
 }
 
 pkg_postinst() {
-	distutils_pkg_postinst
 	if [[ -z ${REPLACING_VERSIONS} ]]; then
 		echo
 		elog "To enable ufw, add it to boot sequence and activate it:"
@@ -158,20 +169,14 @@ pkg_postinst() {
 		elog "If you want to keep ufw logs in a separate file, take a look at"
 		elog "/usr/share/doc/${PF}/logging."
 	fi
-	# Make sure it gets displayed also when one downgrades from >= 0.33*,
-	# because this message isn't displayed for 0.33* (and possibly newer
-	# ones in the future) as it's not relevant there.
 	if [[ -z ${REPLACING_VERSIONS} ]] \
-		|| [[ ${REPLACING_VERSIONS} = 0.33 ]] \
-		|| [[ ${REPLACING_VERSIONS} > 0.33 ]] \
-		|| [[ ${REPLACING_VERSIONS} < 0.31.1-r2 ]]
+		|| [[ ${REPLACING_VERSIONS} < 0.34 ]];
 	then
 		echo
-		elog "Starting from ufw-0.31.1-r2, /usr/share/ufw/check-requirements"
-		elog "script is installed. It is useful for debugging problems with"
-		elog "ufw. However one should keep in mind that the script assumes"
-		elog "IPv6 is enabled on kernel and net-firewall/iptables,"
-		elog "and fails when it's not."
+		elog "/usr/share/ufw/check-requirements script is installed."
+		elog "It is useful for debugging problems with ufw. However one"
+		elog "should keep in mind that the script assumes IPv6 is enabled"
+		elog "on kernel and net-firewall/iptables, and fails when it's not."
 	fi
 	echo
 	ewarn "Note: once enabled, ufw blocks also incoming SSH connections by"
