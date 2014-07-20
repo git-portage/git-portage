@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/minitube/Attic/minitube-2.1.3.ebuild,v 1.5 2014/01/02 20:46:36 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/minitube/minitube-2.2.ebuild,v 1.1 2014/07/20 10:52:54 hwoarang Exp $
 
 EAPI=5
 PLOCALES="ar ca ca_ES da de_DE el en es es_AR es_ES fi fi_FI fr he_IL hr hu
@@ -39,7 +39,7 @@ S=${WORKDIR}/${PN}
 DOCS="AUTHORS CHANGES TODO"
 
 #455976
-PATCHES=( "${FILESDIR}"/${P}-disable-updates.patch )
+PATCHES=( "${FILESDIR}"/${PN}-2.1.3-disable-updates.patch )
 
 src_prepare() {
 	qt4-r2_src_prepare
