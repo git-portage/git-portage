@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/rakudo/Attic/rakudo-2014.04.ebuild,v 1.1 2014/04/18 03:39:17 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/rakudo/rakudo-2014.07.ebuild,v 1.1 2014/07/21 06:35:47 patrick Exp $
 
 EAPI=5
 
@@ -17,10 +17,10 @@ SRC_URI="http://rakudo.org/downloads/${PN}/${P}.tar.gz"
 LICENSE="Artistic-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc +parrot java"
+IUSE="doc +parrot java moar"
 
 RDEPEND=">=dev-lang/parrot-${PARROT_VERSION}:=[unicode]
-	>=dev-lang/nqp-${NQP_VERSION}[parrot?,java?]"
+	>=dev-lang/nqp-${NQP_VERSION}[parrot?,java?,moar?]"
 DEPEND="${RDEPEND}
 	dev-lang/perl"
 
@@ -31,6 +31,7 @@ src_prepare() {
 src_configure() {
 	use parrot && myconf+="parrot,"
 	use java && myconf+="jvm,"
+	use moar && myconf+="moar,"
 	perl Configure.pl --backends=${myconf} --prefix=/usr || die
 }
 
