@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/phc-intel/Attic/phc-intel-0.3.2.12.14.ebuild,v 1.1 2014/04/14 00:27:54 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/phc-intel/phc-intel-0.3.2.12.15.1.ebuild,v 1.1 2014/07/22 00:13:05 xmw Exp $
 
 EAPI=5
 
@@ -10,7 +10,7 @@ DESCRIPTION="Processor Hardware Control for Intel CPUs"
 HOMEPAGE="http://www.linux-phc.org/
 	http://www.linux-phc.org/forum/viewtopic.php?f=7&t=267"
 #no automatic filenames here, sorry
-SRC_URI="http://www.linux-phc.org/forum/download/file.php?id=159 -> phc-intel-pack-rev14.tar.bz2"
+SRC_URI="http://www.linux-phc.org/forum/download/file.php?id=161 -> phc-intel-pack-rev15.1.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -32,7 +32,7 @@ pkg_setup() {
 		eerror "Please use a previous version of ${PN} or a newer kernel."
 		die
 	fi
-	if kernel_is gt 3 14 ; then
+	if kernel_is gt 3 15 ; then
 		eerror "Your kernel version is not yet supported by this version of ${PN}."
 		eerror "Please use a newer version of ${PN} or an older kernel."
 		die
@@ -41,9 +41,12 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/phc-intel-pack-rev12-trailing-space-r1.patch
-	epatch "${FILESDIR}"/phc-intel-pack-rev14-trailing-space-3.13.patch
-	epatch "${FILESDIR}"/phc-intel-pack-rev14-trailing-space-3.14.patch
+	epatch \
+		"${FILESDIR}"/phc-intel-0.3.2-rev12-trailing-space-misc.patch \
+		"${FILESDIR}"/phc-intel-0.3.2-rev15-trailing-space-3.5.patch \
+		"${FILESDIR}"/phc-intel-0.3.2-rev14-trailing-space-3.13.patch \
+		"${FILESDIR}"/phc-intel-0.3.2-rev14-trailing-space-3.14.patch \
+		"${FILESDIR}"/phc-intel-0.3.2-rev15-trailing-space-3.15.patch
 
 	sed -e '/^all:/s:prepare::' \
 		-i Makefile || die
