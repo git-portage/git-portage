@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/openssl/Attic/openssl-1.0.2_beta1-r3.ebuild,v 1.5 2014/06/18 19:18:41 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/openssl/openssl-1.0.2_beta2.ebuild,v 1.1 2014/07/23 05:26:08 polynomial-c Exp $
 
 EAPI="4"
 
@@ -11,7 +11,6 @@ MY_P=${P/_/-}
 DESCRIPTION="full-strength general purpose cryptography library (including SSL and TLS)"
 HOMEPAGE="http://www.openssl.org/"
 SRC_URI="mirror://openssl/source/${MY_P}.tar.gz
-	http://dev.gentoo.org/~polynomial-c/${P}-patches-02.tar.xz
 	http://cvs.pld-linux.org/cgi-bin/cvsweb.cgi/packages/${PN}/${PN}-c_rehash.sh?rev=${REV} -> ${PN}-c_rehash.sh.${REV}"
 
 LICENSE="openssl"
@@ -58,17 +57,10 @@ src_prepare() {
 	if ! use vanilla ; then
 		epatch "${FILESDIR}"/${PN}-1.0.0a-ldflags.patch #327421
 		epatch "${FILESDIR}"/${PN}-1.0.0d-windres.patch #373743
-		epatch "${FILESDIR}"/${PN}-1.0.0h-pkg-config.patch
 		epatch "${FILESDIR}"/${PN}-1.0.2-parallel-build.patch
-		epatch "${FILESDIR}"/${PN}-1.0.2-ipv6.patch
-		epatch "${FILESDIR}"/${PN}-1.0.2_beta1-perl-5.18.patch #497286
+		epatch "${FILESDIR}"/${PN}-1.0.2_beta2-ipv6.patch
 		epatch "${FILESDIR}"/${PN}-1.0.1e-s_client-verify.patch #472584
-		epatch "${FILESDIR}"/${PN}-1.0.1f-revert-alpha-perl-generation.patch #499086
-
-		# upstream fixes taken from 1.0.2_stable branch at openssl.git
-		# repository.
-		EPATCH_SUFFIX="patch" EPATCH_FORCE="yes" \
-		epatch "${WORKDIR}/patches"
+		epatch "${FILESDIR}"/${PN}-1.0.2_beta2-revert-alpha-perl-generation.patch #499086
 
 		epatch_user #332661
 	fi
