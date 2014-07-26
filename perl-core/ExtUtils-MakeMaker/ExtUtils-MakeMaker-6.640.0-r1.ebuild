@@ -1,8 +1,8 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/perl-core/ExtUtils-MakeMaker/Attic/ExtUtils-MakeMaker-6.640.0.ebuild,v 1.16 2014/02/02 00:08:37 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/perl-core/ExtUtils-MakeMaker/ExtUtils-MakeMaker-6.640.0-r1.ebuild,v 1.1 2014/07/26 13:30:56 dilfridge Exp $
 
-EAPI=4
+EAPI=5
 MODULE_AUTHOR=MSCHWERN
 MODULE_VERSION=6.64
 inherit eutils perl-module
