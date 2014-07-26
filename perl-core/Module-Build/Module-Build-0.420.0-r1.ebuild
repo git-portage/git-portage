@@ -1,8 +1,8 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/perl-core/Module-Build/Attic/Module-Build-0.420.0.ebuild,v 1.1 2014/03/10 12:55:04 civil Exp $
+# $Header: /var/cvsroot/gentoo-x86/perl-core/Module-Build/Module-Build-0.420.0-r1.ebuild,v 1.1 2014/07/26 14:07:02 dilfridge Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=LEONT
 MODULE_VERSION=0.4200
