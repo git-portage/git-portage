@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/python/Attic/python-3.2.5-r4.ebuild,v 1.1 2014/05/10 01:44:50 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/python/Attic/python-3.2.5-r5.ebuild,v 1.1 2014/07/29 07:19:13 pinkbyte Exp $
 
 EAPI="4"
 WANT_AUTOMAKE="none"
@@ -95,6 +95,9 @@ src_prepare() {
 
 	# Disable ABI flags.
 	sed -e "s/ABIFLAGS=\"\${ABIFLAGS}.*\"/:/" -i configure.ac || die "sed failed"
+
+	# bug #514686
+	epatch "${FILESDIR}/${PN}-3.2-CVE-2014-4616.patch"
 
 	epatch_user
 
