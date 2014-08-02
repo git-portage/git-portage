@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/Attic/mysql-5.5.38-r1.ebuild,v 1.1 2014/07/29 03:24:47 grknight Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/mysql-5.5.39.ebuild,v 1.1 2014/08/02 00:23:41 grknight Exp $
 
 EAPI="5"
 
-MY_EXTRAS_VER="20140729-0112Z"
+MY_EXTRAS_VER="20140801-1950Z"
 MY_PV="${PV//_alpha_pre/-m}"
 MY_PV="${MY_PV//_/-}"
 

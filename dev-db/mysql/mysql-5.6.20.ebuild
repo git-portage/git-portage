@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/Attic/mysql-5.6.19.ebuild,v 1.1 2014/07/29 23:06:42 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/mysql-5.6.20.ebuild,v 1.1 2014/08/02 00:23:41 grknight Exp $
 
 EAPI="5"
 
-MY_EXTRAS_VER="20140729-2200Z"
+MY_EXTRAS_VER="20140801-1950Z"
 MY_PV="${PV//_alpha_pre/-m}"
 MY_PV="${MY_PV//_/-}"
 
@@ -83,15 +83,15 @@ src_test() {
 		# main.mysql_client_test:
 		# segfaults at random under Portage only, suspect resource limits.
 		#
-		# main.mysql_tzinfo_to_sql_symlink
-		# fails due to missing mysql_test/std_data/zoneinfo/GMT file from archive
-		#
+		# rpl.rpl_plugin_load
+		# fails due to included file not listed in expected result
+		# appears to be poor planning
 		for t in main.mysql_client_test \
 			binlog.binlog_statement_insert_delayed main.information_schema \
 			main.mysqld--help-notwinfuncs_1.is_triggers funcs_1.is_tables_mysql \
 			funcs_1.is_columns_mysql binlog.binlog_mysqlbinlog_filter \
 			perfschema.binlog_edge_mix perfschema.binlog_edge_stmt \
-			mysqld--help-notwin main.mysql_tzinfo_to_sql_symlink \
+			mysqld--help-notwin rpl.rpl_plugin_load \
 			funcs_1.is_triggers ; do
 				mysql-v2_disable_test  "$t" "False positives in Gentoo"
 		done
