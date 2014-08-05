@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/nx/Attic/nx-3.5.0.21.ebuild,v 1.1 2013/09/04 11:18:34 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/nx/nx-3.5.0.27.ebuild,v 1.1 2014/08/05 09:11:37 voyageur Exp $
 
 EAPI=5
 inherit autotools eutils multilib readme.gentoo
@@ -38,8 +38,6 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-3.2.0-nxproxy_read_from_stdin.patch
 
 	cd "${S}"
-	# Fix sandbox violation
-	epatch "${FILESDIR}"/1.5.0/nx-x11-1.5.0-tmp-exec.patch
 	# -fPIC
 	epatch "${FILESDIR}"/1.5.0/nxcomp-1.5.0-pic.patch
 	# Drop force -O3, set AR/RANLIB and
