@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/chrony/Attic/chrony-1.29.1.ebuild,v 1.6 2014/02/09 08:29:16 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/chrony/chrony-1.30-r1.ebuild,v 1.1 2014/08/06 09:44:31 jer Exp $
 
 EAPI=5
 inherit eutils systemd toolchain-funcs
@@ -8,9 +8,9 @@ inherit eutils systemd toolchain-funcs
 DESCRIPTION="NTP client and server programs"
 HOMEPAGE="http://chrony.tuxfamily.org/"
 SRC_URI="http://download.tuxfamily.org/${PN}/${P/_/-}.tar.gz"
-
 LICENSE="GPL-2"
 SLOT="0"
+
 KEYWORDS="amd64 ~arm hppa ~mips ppc sparc x86"
 IUSE="caps ipv6 +readline +rtc selinux"
 
@@ -24,13 +24,15 @@ DEPEND="
 	sys-apps/texinfo
 "
 
+RESTRICT=test
+
 S="${WORKDIR}/${P/_/-}"
 
 src_prepare() {
 	sed -i \
 		-e 's:/etc/chrony\.:/etc/chrony/chrony.:g' \
 		-e 's:/var/run:/run:g' \
-		conf.c chrony.texi.in chrony.txt examples/* faq.txt || die
+		conf.c chrony.texi.in chrony.txt examples/* FAQ || die
 }
 
 src_configure() {
