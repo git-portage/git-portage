@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/jmol/Attic/jmol-12.2.27.ebuild,v 1.4 2013/08/09 11:56:40 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/jmol/jmol-12.0.45-r1.ebuild,v 1.1 2014/08/06 19:01:49 creffett Exp $
 
-EAPI=1
+EAPI=5
 WEBAPP_OPTIONAL="yes"
 
 inherit eutils webapp java-pkg-2 java-ant-2
@@ -15,23 +15,21 @@ SRC_URI="
 	mirror://sourceforge/${PN}/${MY_P}-${PV}-full.tar.gz
 	http://dev.gentoo.org/~jlec/distfiles/${PN}-selfSignedCertificate.store.tar"
 
-LICENSE="LGPL-2.1"
-KEYWORDS="~x86 ~amd64"
-IUSE="+client-only vhosts"
-
 WEBAPP_MANUAL_SLOT="yes"
 SLOT="0"
+KEYWORDS="~amd64 ~x86"
+LICENSE="LGPL-2.1"
+IUSE="client-only vhosts"
 
 COMMON_DEP="
 	dev-java/commons-cli:1
 	dev-java/itext:0
 	sci-libs/jmol-acme:0
-	sci-libs/vecmath-objectclub:0
-	sci-libs/naga"
-RDEPEND=">=virtual/jre-1.5
+	sci-libs/vecmath-objectclub:0"
+
+RDEPEND=">=virtual/jre-1.4
 	${COMMON_DEP}"
-DEPEND=">=virtual/jdk-1.5
-	dev-java/saxon:6.5
+DEPEND=">=virtual/jdk-1.4
 	!client-only? ( ${WEBAPP_DEPEND} )
 	${COMMON_DEP}"
 
@@ -40,11 +38,14 @@ pkg_setup() {
 	java-pkg-2_pkg_setup
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
+	epatch \
+		"${FILESDIR}"/${PV}/${PN}-nointl.patch \
+		"${FILESDIR}"/${PV}/${PN}-manifest.patch
 
-	epatch "${FILESDIR}"/${P}-nointl.patch
+	mkdir "${S}"/selfSignedCertificate || die "Failed to create Cert directory."
+	cp "${WORKDIR}"/selfSignedCertificate.store "${S}"/selfSignedCertificate/ \
+		|| die "Failed to install Cert file."
 
 	rm -v "${S}"/*.jar "${S}"/plugin-jars/*.jar || die
 	cd "${S}/jars"
@@ -60,8 +61,6 @@ src_unpack() {
 	java-pkg_jar-from itext iText.jar itext-1.4.5.jar
 	java-pkg_jar-from jmol-acme jmol-acme.jar Acme.jar
 	java-pkg_jar-from commons-cli-1 commons-cli.jar commons-cli-1.0.jar
-	java-pkg_jar-from naga
-	java-pkg_jar-from --build-only saxon-6.5 saxon.jar
 
 	mkdir -p "${S}/build/appjars" || die
 }
