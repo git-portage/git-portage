@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-38.0.2101.0.ebuild,v 1.1 2014/07/23 17:39:17 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/Attic/chromium-38.0.2114.2.ebuild,v 1.1 2014/08/06 16:09:06 phajdan.jr Exp $
 
 EAPI="5"
 PYTHON_COMPAT=( python{2_6,2_7} )
@@ -169,8 +169,6 @@ src_prepare() {
 	#		out/Release/gen/sdk/toolchain/linux_x86_newlib || die
 	#	touch out/Release/gen/sdk/toolchain/linux_x86_newlib/stamp.untar || die
 	# fi
-
-	epatch "${FILESDIR}/${PN}-libaddressinput-r0.patch"
 
 	epatch_user
 
@@ -360,10 +358,12 @@ src_configure() {
 		-Dpython_ver=${EPYTHON#python}
 		-Dsystem_libdir=$(get_libdir)"
 
+	ffmpeg_branding="Chromium"
 	if ! use bindist; then
 		# Enable H.264 support in bundled ffmpeg.
-		myconf+=" -Dffmpeg_branding=Chrome"
+		ffmpeg_branding="Chrome"
 	fi
+	myconf+=" -Dffmpeg_branding=${ffmpeg_branding}"
 
 	# Set up Google API keys, see http://www.chromium.org/developers/how-tos/api-keys .
 	# Note: these are for Gentoo use ONLY. For your own distribution,
@@ -446,7 +446,8 @@ src_configure() {
 	# Re-configure bundled ffmpeg. See bug #491378 for example reasons.
 	einfo "Configuring bundled ffmpeg..."
 	pushd third_party/ffmpeg > /dev/null || die
-	chromium/scripts/build_ffmpeg.py linux ${ffmpeg_target_arch} -- ${build_ffmpeg_args} || die
+	chromium/scripts/build_ffmpeg.py linux ${ffmpeg_target_arch} \
+		--branding ${ffmpeg_branding} -- ${build_ffmpeg_args} || die
 	chromium/scripts/copy_config.sh || die
 	chromium/scripts/generate_gyp.py || die
 	popd > /dev/null || die
