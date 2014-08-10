@@ -1,13 +1,13 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/git-cola/Attic/git-cola-2.0.3.ebuild,v 1.1 2014/05/26 06:51:03 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/git-cola/git-cola-2.0.5-r1.ebuild,v 1.1 2014/08/10 07:13:51 dev-zero Exp $
 
 EAPI=5
 
 PYTHON_COMPAT=( python{2_7,3_3} )
 DISTUTILS_SINGLE_IMPL=true
 
-inherit distutils-r1
+inherit distutils-r1 readme.gentoo virtualx
 
 DESCRIPTION="The highly caffeinated git GUI"
 HOMEPAGE="http://git-cola.github.com/"
@@ -74,6 +74,10 @@ python_compile_all() {
 	fi
 }
 
+src_install() {
+	distutils-r1_src_install
+}
+
 python_install_all() {
 	cd share/doc/${PN}/ || die
 	emake \
@@ -82,22 +86,21 @@ python_install_all() {
 		prefix="${EPREFIX}/usr" \
 		install
 
+	python_fix_shebang "${D}/usr/share/git-cola/bin/git-xbase"
+	python_optimize "${D}/usr/share/git-cola/lib/cola"
+
 	if ! use doc ; then
 		HTML_DOCS=( "${FILESDIR}"/index.html )
 	fi
 
 	distutils-r1_python_install_all
+	readme.gentoo_create_doc
 	docompress /usr/share/doc/${PF}/git-cola.txt
 }
 
 python_test() {
-	PYTHONPATH="${S}:${S}/build/lib:${PYTHONPATH}" LC_ALL="C" nosetests \
-		--verbose --with-doctest --with-id --exclude=jsonpickle --exclude=json \
-		|| die "running nosetests failed"
-}
-
-pkg_postinst() {
-	elog "Please make sure you have either a SSH key management installed and activated or"
-	elog "installed a SSH askpass app like net-misc/x11-ssh-askpass."
-	elog "Otherwise ${PN} may hang when pushing/pulling from remote git repositories via SSH. "
+	PYTHONPATH="${S}:${S}/build/lib:${PYTHONPATH}" LC_ALL="C" \
+		VIRTUALX_COMMAND="nosetests --verbose --with-doctest \
+		--with-id --exclude=jsonpickle --exclude=json" \
+		virtualmake
 }
