@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-electronics/irsim/Attic/irsim-9.7.72.ebuild,v 1.1 2011/04/26 18:07:29 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-electronics/irsim/irsim-9.7.87.ebuild,v 1.1 2014/08/12 04:30:10 tomjbe Exp $
 
-EAPI="2"
+EAPI=4
 
-inherit eutils
+inherit eutils multilib
 
 DESCRIPTION="IRSIM is a \"switch-level\" simulator"
 HOMEPAGE="http://opencircuitdesign.com/irsim/"
@@ -15,26 +15,26 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=" dev-lang/tcl
+RDEPEND="dev-lang/tcl
 	dev-lang/tk"
 DEPEND="${RDEPEND}
 	app-shells/tcsh"
 
 src_prepare() {
-	sed -i -e "s: -pg : :" tcltk/Makefile || die
-	epatch "${FILESDIR}"/${P}-ldflags.patch
+	epatch "${FILESDIR}"/${PN}-9.7.72-ldflags.patch
+	epatch "${FILESDIR}"/${PN}-9.7.79-datadir.patch
 }
 
 src_configure() {
 	# Short-circuit top-level configure script to retain CFLAGS
 	cd scripts
-	CPP="cpp" econf --libdir=/usr/share
-	cd ..
+	#tc-export CPP
+	econf
 }
 
 src_install() {
-	emake DESTDIR="${D}" DOCDIR=/usr/share/doc/${PF} install || die
-	dodoc README || die
+	emake DESTDIR="${D}" DOCDIR=/usr/share/doc/${PF} install
+	dodoc README
 }
 
 pkg_postinst() {
