@@ -1,13 +1,18 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-util/atlas/Attic/atlas-0.3.1_p20101101-r1.ebuild,v 1.2 2011/10/16 03:32:27 reavertm Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-util/atlas/atlas-0.4.9_p20140320.ebuild,v 1.1 2014/08/12 23:52:12 reavertm Exp $
 
-EAPI=3
+EAPI=5
+
 inherit autotools eutils games
+
+MY_PN=Atlas
+MY_PV=${PV/p/cvs}
+MY_P="${MY_PN}-${MY_PV}"
 
 DESCRIPTION="Chart Program to use with Flightgear Flight Simulator"
 HOMEPAGE="http://atlas.sourceforge.net/"
-SRC_URI="mirror://gentoo/${P}.tar.bz2"
+SRC_URI="mirror://gentoo/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -16,7 +21,7 @@ IUSE=""
 
 COMMON_DEPEND="
 	media-libs/freeglut
-	>=media-libs/libpng-1.4
+	>=media-libs/libpng-1.5
 	net-misc/curl
 	sys-libs/zlib
 	virtual/glu
@@ -24,22 +29,23 @@ COMMON_DEPEND="
 	virtual/opengl
 "
 DEPEND="${COMMON_DEPEND}
-	>=dev-games/simgear-2.4.0
+	>=dev-games/simgear-3.0.0
 	media-libs/plib
 "
 RDEPEND="${COMMON_DEPEND}
-	>=games-simulation/flightgear-2.4.0
+	>=games-simulation/flightgear-3.0.0
 "
 
+S=${WORKDIR}/${MY_PN}
+
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-libpng15.patch
-	epatch "${FILESDIR}"/${P}-simgear-2.4.0.patch
 	eautoreconf
 }
 
 src_configure() {
 	egamesconf \
 		--disable-dependency-tracking \
+		--enable-simgear-shared \
 		--with-fgbase="${GAMES_DATADIR}"/flightgear
 }
 
