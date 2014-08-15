@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/wgetpaste/Attic/wgetpaste-2.23.ebuild,v 1.1 2013/12/10 09:45:38 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/wgetpaste/Attic/wgetpaste-2.25.ebuild,v 1.1 2014/08/15 11:49:51 maksbotan Exp $
 
 EAPI="5"
 
