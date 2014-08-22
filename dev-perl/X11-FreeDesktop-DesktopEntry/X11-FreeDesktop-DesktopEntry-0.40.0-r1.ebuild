@@ -1,8 +1,8 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/X11-FreeDesktop-DesktopEntry/Attic/X11-FreeDesktop-DesktopEntry-0.40.0.ebuild,v 1.3 2014/08/04 20:06:57 zlogene Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/X11-FreeDesktop-DesktopEntry/X11-FreeDesktop-DesktopEntry-0.40.0-r1.ebuild,v 1.1 2014/08/22 20:36:49 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=GBROWN
 MODULE_VERSION=0.04

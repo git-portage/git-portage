@@ -1,8 +1,8 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/File-Remove/Attic/File-Remove-1.520.0.ebuild,v 1.9 2014/02/01 23:37:58 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/File-Remove/File-Remove-1.520.0-r1.ebuild,v 1.1 2014/08/22 20:43:26 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=ADAMK
 MODULE_VERSION=${PV%0.0}

@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-Trigger/Attic/Class-Trigger-0.140.0.ebuild,v 1.9 2013/11/04 18:09:25 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-Trigger/Class-Trigger-0.140.0-r1.ebuild,v 1.1 2014/08/22 20:41:29 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=MIYAGAWA
 MODULE_VERSION=0.14
