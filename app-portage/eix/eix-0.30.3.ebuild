@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/eix/Attic/eix-0.30.2.ebuild,v 1.2 2014/08/04 04:58:18 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/eix/eix-0.30.3.ebuild,v 1.1 2014/08/23 18:58:21 axs Exp $
 
 EAPI=5
 
@@ -8,8 +8,8 @@ PLOCALES="de ru"
 inherit bash-completion-r1 eutils l10n
 
 DESCRIPTION="Search and query ebuilds, portage incl. local settings, ext. overlays, version changes, and more"
-HOMEPAGE="http://eix.berlios.de"
-SRC_URI="mirror://berlios/${PN}/${P}.tar.xz"
+HOMEPAGE="http://github.com/vaeth/eix/"
+SRC_URI="http://dev.gentoo.org/~axs/distfiles/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -47,7 +47,6 @@ src_configure() {
 		$(use_with prefix always-accept-keywords) \
 		$(use_with dep dep-default) \
 		--with-zsh-completion \
-		--with-ebuild-sh-default="/usr/lib/portage/bin/ebuild.sh" \
 		--with-portage-rootpath="${ROOTPATH}" \
 		--with-eprefix-default="${EPREFIX}" \
 		--docdir="${EPREFIX}/usr/share/doc/${PF}" \
