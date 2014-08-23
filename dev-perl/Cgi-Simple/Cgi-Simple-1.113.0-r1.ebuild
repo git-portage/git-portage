@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Cgi-Simple/Attic/Cgi-Simple-1.113.0.ebuild,v 1.2 2011/09/03 21:04:27 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Cgi-Simple/Cgi-Simple-1.113.0-r1.ebuild,v 1.1 2014/08/23 21:49:23 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MY_PN=CGI-Simple
 MODULE_AUTHOR=ANDYA

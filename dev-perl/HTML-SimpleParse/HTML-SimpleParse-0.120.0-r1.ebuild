@@ -1,8 +1,8 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-SimpleParse/Attic/HTML-SimpleParse-0.120.0.ebuild,v 1.3 2014/08/05 17:43:13 zlogene Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-SimpleParse/HTML-SimpleParse-0.120.0-r1.ebuild,v 1.1 2014/08/23 21:55:02 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=KWILLIAMS
 MODULE_VERSION=0.12

@@ -1,8 +1,8 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Calendar-Simple/Attic/Calendar-Simple-1.210.0.ebuild,v 1.7 2014/05/26 12:06:08 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Calendar-Simple/Calendar-Simple-1.210.0-r1.ebuild,v 1.1 2014/08/23 21:47:26 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=DAVECROSS
 MODULE_VERSION=1.21
