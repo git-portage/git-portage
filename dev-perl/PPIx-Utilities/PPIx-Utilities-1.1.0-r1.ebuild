@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/PPIx-Utilities/Attic/PPIx-Utilities-1.1.0.ebuild,v 1.3 2012/03/25 15:37:40 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/PPIx-Utilities/PPIx-Utilities-1.1.0-r1.ebuild,v 1.1 2014/08/23 21:41:42 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=ELLIOTJS
 MODULE_VERSION=1.001000

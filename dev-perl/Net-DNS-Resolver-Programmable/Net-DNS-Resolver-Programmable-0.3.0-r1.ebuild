@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-DNS-Resolver-Programmable/Attic/Net-DNS-Resolver-Programmable-0.3.0.ebuild,v 1.5 2013/06/11 18:47:54 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-DNS-Resolver-Programmable/Net-DNS-Resolver-Programmable-0.3.0-r1.ebuild,v 1.1 2014/08/23 21:39:29 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=JMEHNLE
 MODULE_VERSION=v0.003

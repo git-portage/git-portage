@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Hook-LexWrap/Attic/Hook-LexWrap-0.240.0.ebuild,v 1.5 2013/01/13 13:49:49 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Hook-LexWrap/Hook-LexWrap-0.240.0-r1.ebuild,v 1.1 2014/08/23 21:33:54 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=CHORNY
 MODULE_VERSION=0.24
