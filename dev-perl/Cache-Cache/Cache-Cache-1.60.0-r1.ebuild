@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Cache-Cache/Attic/Cache-Cache-1.60.0.ebuild,v 1.9 2012/11/23 13:18:30 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Cache-Cache/Cache-Cache-1.60.0-r1.ebuild,v 1.1 2014/08/23 22:16:32 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=JSWARTZ
 MODULE_VERSION=1.06
