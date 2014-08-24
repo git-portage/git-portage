@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-Atom/Attic/XML-Atom-0.410.0.ebuild,v 1.3 2012/04/13 09:18:35 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-Atom/XML-Atom-0.410.0-r1.ebuild,v 1.1 2014/08/24 02:44:29 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=MIYAGAWA
 MODULE_VERSION=0.41
