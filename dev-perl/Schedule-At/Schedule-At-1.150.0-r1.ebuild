@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Schedule-At/Attic/Schedule-At-1.150.0.ebuild,v 1.3 2012/08/03 10:55:11 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Schedule-At/Schedule-At-1.150.0-r1.ebuild,v 1.1 2014/08/24 02:33:49 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=JOSERODR
 MODULE_VERSION=1.15

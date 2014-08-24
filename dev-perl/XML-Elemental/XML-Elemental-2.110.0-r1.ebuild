@@ -1,8 +1,8 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-Elemental/Attic/XML-Elemental-2.110.0.ebuild,v 1.3 2014/08/05 11:22:35 zlogene Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-Elemental/XML-Elemental-2.110.0-r1.ebuild,v 1.1 2014/08/24 02:35:41 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=TIMA
 MODULE_VERSION=2.11

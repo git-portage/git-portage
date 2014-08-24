@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Curses-UI/Attic/Curses-UI-0.960.900.ebuild,v 1.8 2012/03/19 19:35:21 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Curses-UI/Curses-UI-0.960.900-r1.ebuild,v 1.1 2014/08/24 02:30:27 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=MDXI
 MODULE_VERSION=0.9609
