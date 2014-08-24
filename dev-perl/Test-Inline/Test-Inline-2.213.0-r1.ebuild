@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-Inline/Attic/Test-Inline-2.213.0.ebuild,v 1.1 2013/08/15 07:10:23 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-Inline/Test-Inline-2.213.0-r1.ebuild,v 1.1 2014/08/24 01:37:39 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=ADAMK
 MODULE_VERSION=2.213
