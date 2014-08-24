@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/emul-linux-x86-sdl/Attic/emul-linux-x86-sdl-20140508.ebuild,v 1.4 2014/06/26 09:24:51 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/emul-linux-x86-sdl/emul-linux-x86-sdl-20140508-r1.ebuild,v 1.1 2014/08/24 23:21:05 hasufell Exp $
 
 EAPI=5
 inherit emul-linux-x86
@@ -21,7 +21,7 @@ RDEPEND="
 		>=media-libs/openal-1.15.1-r1[abi_x86_32(-)]
 		>=media-libs/freealut-1.1.0-r3[abi_x86_32(-)]
 		>=media-libs/libsdl-1.2.15-r5[abi_x86_32(-)]
-		>=media-libs/sdl-gfx-2.0.24-r1[abi_x86_32(-)]
+		>=media-libs/sdl-gfx-2.0.24-r3[abi_x86_32(-)]
 		>=media-libs/sdl-image-1.2.12-r1[abi_x86_32(-)]
 		>=media-libs/sdl-mixer-1.2.12-r4[abi_x86_32(-)]
 		>=media-libs/sdl-net-1.2.8-r1[abi_x86_32(-)]
