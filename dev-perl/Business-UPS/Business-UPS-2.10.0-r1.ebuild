@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Business-UPS/Attic/Business-UPS-2.10.0.ebuild,v 1.4 2012/03/19 19:26:22 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Business-UPS/Business-UPS-2.10.0-r1.ebuild,v 1.1 2014/08/24 01:59:00 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=TODDR
 MODULE_VERSION=2.01

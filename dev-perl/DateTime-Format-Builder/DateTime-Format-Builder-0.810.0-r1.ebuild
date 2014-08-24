@@ -1,8 +1,8 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/DateTime-Format-Builder/Attic/DateTime-Format-Builder-0.810.0.ebuild,v 1.8 2014/08/19 11:15:12 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/DateTime-Format-Builder/DateTime-Format-Builder-0.810.0-r1.ebuild,v 1.1 2014/08/24 01:53:19 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=DROLSKY
 MODULE_VERSION=0.81

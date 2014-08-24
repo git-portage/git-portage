@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/frontier-rpc/Attic/frontier-rpc-0.07_beta4.ebuild,v 1.28 2012/06/24 17:22:16 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/frontier-rpc/frontier-rpc-0.07_beta4-r1.ebuild,v 1.1 2014/08/24 02:01:52 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MY_PN=Frontier-RPC
 MY_PV=0.07b4

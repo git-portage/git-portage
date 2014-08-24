@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/namespace-clean/Attic/namespace-clean-0.210.0.ebuild,v 1.6 2012/04/16 21:19:05 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/namespace-clean/namespace-clean-0.210.0-r1.ebuild,v 1.1 2014/08/24 01:39:43 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=RIBASUSHI
 MODULE_VERSION=0.21
