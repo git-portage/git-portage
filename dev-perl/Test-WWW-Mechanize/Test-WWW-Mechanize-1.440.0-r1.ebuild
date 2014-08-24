@@ -1,8 +1,8 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-WWW-Mechanize/Attic/Test-WWW-Mechanize-1.440.0.ebuild,v 1.3 2014/03/13 17:43:34 zlogene Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-WWW-Mechanize/Test-WWW-Mechanize-1.440.0-r1.ebuild,v 1.1 2014/08/24 02:14:02 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=PETDANCE
 MODULE_VERSION=1.44
