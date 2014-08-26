@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-Quoted/Attic/HTML-Quoted-0.30.0.ebuild,v 1.1 2012/02/03 17:10:38 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-Quoted/HTML-Quoted-0.30.0-r1.ebuild,v 1.1 2014/08/26 17:26:58 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=RUZ
 MODULE_VERSION=0.03

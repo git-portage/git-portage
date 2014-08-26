@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/TeX-Encode/Attic/TeX-Encode-1.3.ebuild,v 1.1 2012/02/19 14:33:19 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/TeX-Encode/TeX-Encode-1.3-r1.ebuild,v 1.1 2014/08/26 17:33:39 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR="TIMBRODY"
 

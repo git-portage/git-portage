@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Term-ScreenColor/Attic/Term-ScreenColor-1.200.0.ebuild,v 1.1 2011/11/18 09:10:48 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Term-ScreenColor/Term-ScreenColor-1.200.0-r1.ebuild,v 1.1 2014/08/26 17:10:18 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=RUITTENB
 MODULE_VERSION=1.20
