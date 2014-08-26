@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Devel-REPL/Attic/Devel-REPL-1.3.14.ebuild,v 1.3 2013/09/09 11:55:51 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Devel-REPL/Devel-REPL-1.3.14-r1.ebuild,v 1.1 2014/08/26 19:13:48 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=ETHER
 MODULE_VERSION=1.003014

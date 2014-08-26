@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-Twitter/Attic/Net-Twitter-4.000.60.ebuild,v 1.2 2013/10/19 12:15:31 zlogene Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-Twitter/Net-Twitter-4.000.60-r1.ebuild,v 1.1 2014/08/26 19:09:36 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=MMIMS
 MODULE_VERSION=4.00006
