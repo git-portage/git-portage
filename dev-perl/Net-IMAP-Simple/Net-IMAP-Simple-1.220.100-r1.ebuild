@@ -1,8 +1,8 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-IMAP-Simple/Attic/Net-IMAP-Simple-1.220.100.ebuild,v 1.2 2014/08/05 11:13:51 zlogene Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-IMAP-Simple/Net-IMAP-Simple-1.220.100-r1.ebuild,v 1.1 2014/08/26 18:40:45 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=JETTERO
 MODULE_VERSION=1.2201
