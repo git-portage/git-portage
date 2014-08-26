@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/ORLite/Attic/ORLite-1.980.0.ebuild,v 1.1 2012/10/03 18:00:33 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/ORLite/ORLite-1.980.0-r1.ebuild,v 1.1 2014/08/26 19:23:30 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=ADAMK
 MODULE_VERSION=1.98
