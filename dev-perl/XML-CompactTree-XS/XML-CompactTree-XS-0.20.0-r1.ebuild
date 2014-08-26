@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-CompactTree-XS/Attic/XML-CompactTree-XS-0.20.0.ebuild,v 1.1 2011/08/28 06:59:01 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-CompactTree-XS/XML-CompactTree-XS-0.20.0-r1.ebuild,v 1.1 2014/08/26 19:30:54 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=PAJAS
 MODULE_VERSION=0.02
