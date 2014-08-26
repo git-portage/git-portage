@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Business-ISBN-Data/Attic/Business-ISBN-Data-20120719.1.0.ebuild,v 1.1 2012/09/11 16:32:13 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Business-ISBN-Data/Business-ISBN-Data-20120719.1.0-r1.ebuild,v 1.1 2014/08/26 14:46:26 axs Exp $
 
-EAPI=4
+EAPI=5
 
 MODULE_AUTHOR=BDFOY
 MODULE_VERSION=20120719.001
