@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/gr-osmosdr/Attic/gr-osmosdr-0.1.1.ebuild,v 1.2 2014/07/25 05:00:25 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/gr-osmosdr/Attic/gr-osmosdr-0.1.1.ebuild,v 1.3 2014/08/27 01:32:39 zerochaos Exp $
 
 EAPI=5
 PYTHON_DEPEND="python? 2"
@@ -54,6 +54,7 @@ pkg_setup() {
 }
 
 src_prepare() {
+	epatch_user
 	python_convert_shebangs -q -r 2 "${S}"
 }
 
