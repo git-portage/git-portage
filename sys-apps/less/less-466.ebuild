@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/less/Attic/less-459.ebuild,v 1.2 2014/01/18 04:37:20 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/less/less-466.ebuild,v 1.1 2014/09/02 10:15:30 polynomial-c Exp $
 
 EAPI="4"
 
