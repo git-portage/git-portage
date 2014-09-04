@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtksourceview/Attic/gtksourceview-3.10.2.ebuild,v 1.5 2014/03/09 12:04:44 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtksourceview/gtksourceview-3.12.3.ebuild,v 1.1 2014/09/04 09:49:58 pacho Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
@@ -8,18 +8,18 @@ GCONF_DEBUG="no"
 inherit gnome2 virtualx
 
 DESCRIPTION="A text widget implementing syntax highlighting and other features"
-HOMEPAGE="http://projects.gnome.org/gtksourceview/"
+HOMEPAGE="https://wiki.gnome.org/Projects/GtkSourceView"
 
 LICENSE="GPL-2+ LGPL-2.1+"
 SLOT="3.0/2"
 IUSE="glade +introspection"
-KEYWORDS="~alpha amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-solaris"
 
 # Note: has native OSX support, prefix teams, attack!
 RDEPEND="
 	>=dev-libs/glib-2.37.3:2
 	>=dev-libs/libxml2-2.6:2
-	>=x11-libs/gtk+-3.9.9:3[introspection?]
+	>=x11-libs/gtk+-3.11:3[introspection?]
 	glade? ( >=dev-util/glade-3.9:3.10 )
 	introspection? ( >=dev-libs/gobject-introspection-0.9.0 )
 "
@@ -43,7 +43,7 @@ src_test() {
 }
 
 src_install() {
-	DOCS="AUTHORS ChangeLog HACKING MAINTAINERS NEWS README"
+	DOCS="AUTHORS HACKING MAINTAINERS NEWS README"
 	gnome2_src_install
 
 	insinto /usr/share/${PN}-3.0/language-specs
