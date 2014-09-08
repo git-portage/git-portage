@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey/Attic/seamonkey-2.25.ebuild,v 1.5 2014/04/11 06:44:03 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey/Attic/seamonkey-2.29.ebuild,v 1.1 2014/09/08 14:30:48 polynomial-c Exp $
 
 EAPI=5
 WANT_AUTOCONF="2.1"
@@ -26,11 +26,13 @@ else
 	MOZ_LANGPACK_SUFFIX=".langpack.xpi"
 fi
 
-inherit check-reqs flag-o-matic toolchain-funcs eutils mozconfig-3 multilib pax-utils fdo-mime autotools mozextension nsplugins mozlinguas
+MOZCONFIG_OPTIONAL_WIFI=1
+MOZCONFIG_OPTIONAL_JIT="enabled"
+inherit check-reqs flag-o-matic toolchain-funcs eutils mozconfig-v4.1 multilib pax-utils fdo-mime autotools mozextension nsplugins mozlinguas
 
-PATCHFF="firefox-28.0-patches-0.1"
+PATCHFF="firefox-31.0-patches-0.2"
 PATCH="${PN}-2.23-patches-01"
-EMVER="1.6.1_pre20140112"
+EMVER="1.7"
 
 DESCRIPTION="Seamonkey Web Browser"
 HOMEPAGE="http://www.seamonkey-project.org"
@@ -42,44 +44,50 @@ if [[ ${PV} == *_pre* ]] ; then
 else
 	# This is where arch teams should change the KEYWORDS.
 
-	KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86"
+	KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
 fi
 
 SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
-IUSE="+chatzilla +crypt gstreamer +ipc +jit minimal pulseaudio +roaming selinux system-cairo system-icu system-jpeg system-sqlite test"
+IUSE="+chatzilla +crypt gstreamer +ipc minimal pulseaudio +roaming selinux system-cairo system-icu system-jpeg system-sqlite test"
 
 SRC_URI="${SRC_URI}
 	${MOZ_FTP_URI}/source/${MY_MOZ_P}.source.tar.bz2 -> ${P}.source.tar.bz2
-	http://dev.gentoo.org/~anarchy/mozilla/patchsets/${PATCHFF}.tar.xz
+	http://dev.gentoo.org/~axs/distfiles/${PATCHFF}.tar.xz
 	http://dev.gentoo.org/~polynomial-c/mozilla/patchsets/${PATCH}.tar.xz
-	crypt? ( http://dev.gentoo.org/~polynomial-c/mozilla/enigmail-${EMVER}.tar.xz )"
-	#crypt? ( http://www.enigmail.net/download/source/enigmail-${EMVER}.tar.gz )
+	crypt? ( http://www.enigmail.net/download/source/enigmail-${EMVER}.tar.gz )"
 
 ASM_DEPEND=">=dev-lang/yasm-1.1"
 
 # Mesa 7.10 needed for WebGL + bugfixes
-RDEPEND=">=dev-libs/nss-3.16
-	>=dev-libs/nspr-4.10.4
+RDEPEND=">=dev-libs/nss-3.16.2
+	>=dev-libs/nspr-4.10.6
 	>=dev-libs/glib-2.26:2
 	>=media-libs/mesa-7.10
 	>=media-libs/libpng-1.6.7[apng]
 	>=x11-libs/pango-1.14.0
 	>=x11-libs/gtk+-2.14:2
 	virtual/libffi
-	gstreamer? ( media-plugins/gst-plugins-meta:0.10[ffmpeg] )
-	system-cairo? ( >=x11-libs/cairo-1.12[X] )
+	gstreamer? ( media-plugins/gst-plugins-meta:1.0[ffmpeg] )
+	system-cairo? ( >=x11-libs/cairo-1.12[X] x11-libs/pixman )
 	system-icu? ( >=dev-libs/icu-51.1 )
 	system-jpeg? ( >=media-libs/libjpeg-turbo-1.2.1 )
-	system-sqlite? ( >=dev-db/sqlite-3.8.1:3[secure-delete,debug=] )
+	system-sqlite? ( >=dev-db/sqlite-3.8.4.2:3[secure-delete,debug=] )
 	>=media-libs/libvpx-1.3.0
-	crypt? ( >=app-crypt/gnupg-1.4 )
+	crypt? ( || (
+		( >=app-crypt/gnupg-2.0
+			|| (
+				app-crypt/pinentry[gtk]
+				app-crypt/pinentry[qt4]
+			)
+		)
+		=app-crypt/gnupg-1.4* ) )
 	kernel_linux? ( media-libs/alsa-lib )
 	pulseaudio? ( media-sound/pulseaudio )
 	selinux? ( sec-policy/selinux-mozilla )"
 
 DEPEND="${RDEPEND}
-	!elibc_glibc? ( dev-libs/libexecinfo )
+	!elibc_glibc? ( !elibc_uclibc? ( dev-libs/libexecinfo ) )
 	>=sys-devel/binutils-2.16.1
 	virtual/pkgconfig
 	amd64? ( ${ASM_DEPEND}
@@ -92,6 +100,8 @@ if [[ ${PV} == *beta* ]] ; then
 else
 	S="${WORKDIR}/comm-release"
 fi
+
+BUILD_OBJ_DIR="${WORKDIR}/seamonk"
 
 pkg_setup() {
 	if [[ ${PV} == *_pre* ]] ; then
@@ -128,7 +138,8 @@ src_prepare() {
 
 	# browser patches go here
 	pushd "${S}"/mozilla &>/dev/null || die
-	EPATCH_EXCLUDE="2000-firefox_gentoo_install_dirs.patch" \
+	EPATCH_EXCLUDE="2000-firefox_gentoo_install_dirs.patch
+			8000_gcc49_mozbug999496_ff31.patch" \
 	EPATCH_SUFFIX="patch" \
 	EPATCH_FORCE="yes" \
 	epatch "${WORKDIR}/firefox"
@@ -177,13 +188,17 @@ src_prepare() {
 	eautoreconf
 	cd "${S}"/mozilla || die
 	eautoconf
-	cd js/src || die
+	cd "${S}"/mozilla/js/src || die
 	eautoconf
 }
 
 src_configure() {
 	MOZILLA_FIVE_HOME="/usr/$(get_libdir)/${PN}"
 	MEXTENSIONS="default"
+	# Google API keys (see http://www.chromium.org/developers/how-tos/api-keys)
+	# Note: These are for Gentoo Linux use ONLY. For your own distribution, please
+	# get your own set of keys.
+	_google_api_key=AIzaSyDEAOvatFo0eTgsV_ZlEzx0ObmepsMzfAc
 
 	####################################
 	#
@@ -207,7 +222,11 @@ src_configure() {
 	fi
 
 	# We must force enable jemalloc 3 threw .mozconfig
-	echo "export MOZ_JEMALLOC=1" >> ${S}/.mozconfig
+	echo "export MOZ_JEMALLOC=1" >> "${S}"/.mozconfig || die
+
+	# Setup api key for location services
+	echo -n "${_google_api_key}" > "${S}"/google-api-key
+	mozconfig_annotate '' --with-google-api-keyfile="${S}/google-api-key"
 
 	mozconfig_annotate '' --enable-jemalloc
 	mozconfig_annotate '' --enable-replace-malloc
@@ -228,18 +247,21 @@ src_configure() {
 	mozconfig_annotate '' --build="${CTARGET:-${CHOST}}"
 	mozconfig_annotate '' --enable-safe-browsing
 
-	mozconfig_use_enable gstreamer
+	# gstreamer now needs the version specified
+	if use gstreamer ; then
+		mozconfig_annotate '' --enable-gstreamer=1.0
+	else
+		mozconfig_annotate '' --disable-gstreamer
+	fi
 	mozconfig_use_enable pulseaudio
 	mozconfig_use_enable system-cairo
 	mozconfig_use_enable system-sqlite
 	mozconfig_use_with system-jpeg
 	mozconfig_use_with system-icu
 	mozconfig_use_enable system-icu intl-api
-	# Feature is know to cause problems on hardened
-	mozconfig_use_enable jit ion
 
 	# Use an objdir to keep things organized.
-	echo "mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/seamonk" \
+	echo "mk_add_options MOZ_OBJDIR=${BUILD_OBJ_DIR}" \
 		>> "${S}"/.mozconfig
 
 	# Finalize and report settings
@@ -247,8 +269,7 @@ src_configure() {
 
 	if use crypt ; then
 		pushd "${S}"/mailnews/extensions/enigmail &>/dev/null || die
-		# econf fails here and would produce useless Makefiles anyway
-		./configure || die
+		econf
 		popd &>/dev/null || die
 	fi
 
@@ -265,14 +286,17 @@ src_configure() {
 }
 
 src_compile() {
+	mkdir -p ${BUILD_OBJ_DIR} && cd ${BUILD_OBJ_DIR} || die
+
 	CC="$(tc-getCC)" CXX="$(tc-getCXX)" LD="$(tc-getLD)" \
 	MOZ_MAKE_FLAGS="${MAKEOPTS}" SHELL="${SHELL}" \
-	emake -f client.mk
+	emake V=1 -f "${S}/client.mk"
 
 	# Only build enigmail extension if conditions are met.
 	if use crypt ; then
+		einfo "Building enigmail"
 		cd "${S}"/mailnews/extensions/enigmail || die
-		emake
+		emake -j1
 		emake xpi
 	fi
 }
@@ -281,30 +305,30 @@ src_install() {
 	MOZILLA_FIVE_HOME="/usr/$(get_libdir)/${PN}"
 	DICTPATH="\"${EPREFIX}/usr/share/myspell\""
 
-	local emid obj_dir="seamonk"
-	cd "${S}/${obj_dir}" || die
+	local emid
+	cd "${BUILD_OBJ_DIR}" || die
 
 	# Pax mark xpcshell for hardened support, only used for startupcache creation.
-	pax-mark m "${S}/${obj_dir}/mozilla/dist/bin/xpcshell"
+	pax-mark m "${BUILD_OBJ_DIR}/mozilla/dist/bin/xpcshell"
 
 	# Copy our preference before omnijar is created.
 	sed "s|SEAMONKEY_PVR|${PVR}|" "${FILESDIR}"/all-gentoo-1.js > \
-		"${S}/${obj_dir}/mozilla/dist/bin/defaults/pref/all-gentoo.js" \
+		"${BUILD_OBJ_DIR}/mozilla/dist/bin/defaults/pref/all-gentoo.js" \
 		|| die
 
 	# Set default path to search for dictionaries.
 	echo "pref(\"spellchecker.dictionary_path\", ${DICTPATH});" \
-		>> "${S}/${obj_dir}/mozilla/dist/bin/defaults/pref/all-gentoo.js" \
+		>> "${BUILD_OBJ_DIR}/mozilla/dist/bin/defaults/pref/all-gentoo.js" \
 		|| die
 
-	if ! use libnotify ; then
-		echo 'pref("browser.download.manager.showAlertOnComplete", false);' \
-			>> "${S}/${obj_dir}/mozilla/dist/bin/defaults/pref/all-gentoo.js" \
-			|| die
-	fi
+	#if ! use libnotify ; then
+	#	echo 'pref("browser.download.manager.showAlertOnComplete", false);' \
+	#		>> "${BUILD_OBJ_DIR}/mozilla/dist/bin/defaults/pref/all-gentoo.js" \
+	#		|| die
+	#fi
 
 	echo 'pref("extensions.autoDisableScopes", 3);' >> \
-		"${S}/${obj_dir}/mozilla/dist/bin/defaults/pref/all-gentoo.js" \
+		"${BUILD_OBJ_DIR}/mozilla/dist/bin/defaults/pref/all-gentoo.js" \
 		|| die
 
 	MOZ_MAKE_FLAGS="${MAKEOPTS}" \
@@ -351,7 +375,12 @@ src_install() {
 	# Handle plugins dir through nsplugins.eclass
 	share_plugins_dir
 
-	doman "${S}"/${obj_dir}/suite/app/${PN}.1
+	doman "${BUILD_OBJ_DIR}/suite/app/${PN}.1"
+
+	# revdep-rebuild entry
+	insinto /etc/revdep-rebuild
+	echo "SEARCH_DIRS_MASK=${MOZILLA_FIVE_HOME}" >> ${T}/11${PN}
+	doins "${T}"/11${PN}
 }
 
 pkg_preinst() {
