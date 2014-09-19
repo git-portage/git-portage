@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/Attic/asterisk-12.5.0.ebuild,v 1.2 2014/09/18 10:29:46 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/asterisk-11.12.1.ebuild,v 1.1 2014/09/19 10:14:30 chainsaw Exp $
 
 EAPI=5
 inherit autotools base eutils linux-info multilib user
@@ -28,12 +28,10 @@ REQUIRED_USE="gtalk? ( jabber )
 "
 
 EPATCH_SUFFIX="patch"
-EPATCH_EXCLUDE="08-tls-certificate-chaining-support.patch"
 PATCHES=( "${WORKDIR}/asterisk-patchset" )
 
 RDEPEND="dev-db/sqlite:3
 	dev-libs/popt
-	dev-libs/jansson
 	dev-libs/libxml2
 	dev-libs/openssl
 	sys-libs/ncurses
@@ -291,8 +289,8 @@ pkg_postinst() {
 	elog "#gentoo-voip @ irc.freenode.net"
 	echo
 	echo
-	elog "Please read the Asterisk 12 upgrade document:"
-	elog "https://wiki.asterisk.org/wiki/display/AST/Upgrading+to+Asterisk+12"
+	elog "Please read the Asterisk 11 upgrade document:"
+	elog "https://wiki.asterisk.org/wiki/display/AST/Upgrading+to+Asterisk+11"
 }
 
 pkg_config() {
