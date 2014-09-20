@@ -1,19 +1,19 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/deja-dup-29.5.ebuild,v 1.4 2014/03/06 10:42:26 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/deja-dup-32.0.ebuild,v 1.1 2014/09/20 16:31:27 jlec Exp $
 
 EAPI=5
 
 GNOME2_LA_PUNT="yes"
 
 VALA_MIN_API_VERSION="0.20"
-VALA_MAX_API_VERSION="0.22"
+VALA_MAX_API_VERSION="0.24"
 
 inherit cmake-utils eutils gnome2 vala
 
 DESCRIPTION="Simple backup tool using duplicity back-end"
 HOMEPAGE="https://launchpad.net/deja-dup/"
-SRC_URI="http://launchpad.net/${PN}/30/${PV}/+download/${P}.tar.xz"
+SRC_URI="http://launchpad.net/${PN}/32/${PV}/+download/${P}.tar.xz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -43,8 +43,6 @@ DEPEND="${COMMON_DEPEND}
 	virtual/pkgconfig
 	dev-util/intltool
 	sys-devel/gettext"
-
-PATCHES=( "${FILESDIR}"/${P}-cmake.patch )
 
 src_prepare() {
 	sed \
