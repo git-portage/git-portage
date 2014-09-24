@@ -1,13 +1,13 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/Attic/bash-3.2_p51-r1.ebuild,v 1.2 2014/09/24 15:29:03 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/Attic/bash-3.1_p18.ebuild,v 1.1 2014/09/24 17:23:53 polynomial-c Exp $
 
 EAPI="4"
 
 inherit eutils flag-o-matic toolchain-funcs
 
 # Official patchlevel
-# See ftp://ftp.cwru.edu/pub/bash/bash-3.2-patches/
+# See ftp://ftp.cwru.edu/pub/bash/bash-3.1-patches/
 PLEVEL=${PV##*_p}
 MY_PV=${PV/_p*}
 MY_PV=${MY_PV/_/-}
@@ -65,18 +65,13 @@ src_prepare() {
 	touch lib/{readline,termcap}/Makefile.in # for config.status
 	sed -ri -e 's:\$[(](RL|HIST)_LIBSRC[)]/[[:alpha:]]*.h::g' Makefile.in || die
 
-	epatch "${FILESDIR}"/autoconf-mktime-2.59.patch #220040
 	epatch "${FILESDIR}"/${PN}-3.1-gentoo.patch
-	epatch "${FILESDIR}"/${PN}-3.2-loadables.patch
-	epatch "${FILESDIR}"/${PN}-3.2-protos.patch
-	epatch "${FILESDIR}"/${PN}-3.2-session-leader.patch #231775
-	epatch "${FILESDIR}"/${PN}-3.2-parallel-build.patch #189671
-	epatch "${FILESDIR}"/${PN}-3.2-ldflags-for-build.patch #211947
-	epatch "${FILESDIR}"/${PN}-3.2-process-subst.patch
-	epatch "${FILESDIR}"/${PN}-3.2-ulimit.patch
+	epatch "${FILESDIR}"/autoconf-mktime-2.53.patch #220040
+	epatch "${FILESDIR}"/${PN}-3.1-ulimit.patch
+	epatch "${FILESDIR}"/${PN}-3.0-read-memleak.patch
 	epatch "${FILESDIR}"/${PN}-3.0-trap-fg-signals.patch
-	epatch "${FILESDIR}"/${PN}-3.2-dev-fd-test-as-user.patch #131875
-	epatch "${FILESDIR}"/${PN}-3.1-funcdef-import.patch
+	epatch "${FILESDIR}"/bash-3.1-fix-dash-login-shell.patch #118257
+	epatch "${FILESDIR}"/bash-3.1-dev-fd-test-as-user.patch #131875
 
 	epatch_user
 }
@@ -130,6 +125,10 @@ src_configure() {
 		$(use_enable readline history) \
 		$(use_enable readline bang-history) \
 		"${myconf[@]}"
+}
+
+src_compile() {
+	emake -j1 #102426
 }
 
 src_install() {
