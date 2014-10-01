@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/bash-4.3_p27-r1.ebuild,v 1.1 2014/09/30 20:34:29 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/bash-4.3_p28.ebuild,v 1.1 2014/10/01 20:47:24 polynomial-c Exp $
 
 EAPI="4"
 
@@ -87,7 +87,6 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-4.3-parse-time-keyword.patch
 	epatch "${FILESDIR}"/${PN}-4.3-append-process-segfault.patch
 	epatch "${FILESDIR}"/${PN}-4.3-term-cleanup.patch
-	epatch "${FILESDIR}"/${PN}-redir-stack-overflow.patch #523742
 
 	epatch_user
 }

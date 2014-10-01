@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/Attic/bash-4.2_p50-r1.ebuild,v 1.4 2014/10/01 16:41:27 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/bash-4.2_p51.ebuild,v 1.1 2014/10/01 20:47:24 polynomial-c Exp $
 
 EAPI="4"
 
@@ -84,7 +84,6 @@ src_prepare() {
 	if ! use vanilla ; then
 		epatch "${FILESDIR}"/${PN}-4.2-speed-up-read-N.patch
 	fi
-	epatch "${FILESDIR}"/${PN}-redir-stack-overflow.patch #523742
 
 	epatch_user
 }

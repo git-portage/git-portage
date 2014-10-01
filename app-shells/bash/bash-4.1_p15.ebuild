@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/Attic/bash-4.1_p14-r1.ebuild,v 1.3 2014/10/01 16:06:56 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/bash-4.1_p15.ebuild,v 1.1 2014/10/01 20:47:24 polynomial-c Exp $
 
 EAPI="4"
 
@@ -68,7 +68,6 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-4.1-fbsd-eaccess.patch #303411
 	sed -i '1i#define NEED_FPURGE_DECL' execute_cmd.c # needs fpurge() decl
 	epatch "${FILESDIR}"/${PN}-4.1-parallel-build.patch
-	epatch "${FILESDIR}"/${PN}-redir-stack-overflow.patch #523742
 
 	epatch_user
 }
