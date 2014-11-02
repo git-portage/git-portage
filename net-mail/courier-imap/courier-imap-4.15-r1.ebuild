@@ -1,13 +1,13 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/courier-imap/courier-imap-4.15-r1.ebuild,v 1.11 2014/08/10 17:43:12 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/courier-imap/courier-imap-4.15-r1.ebuild,v 1.13 2014/11/02 08:59:20 swift Exp $
 
 EAPI=5
 inherit autotools eutils multilib libtool systemd
 
 KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86 ~amd64-fbsd ~x86-fbsd"
 
-DESCRIPTION="An IMAP daemon designed specifically for maildirs."
+DESCRIPTION="An IMAP daemon designed specifically for maildirs"
 HOMEPAGE="http://www.courier-mta.org/"
 SRC_URI="mirror://sourceforge/courier/${P}.tar.bz2"
 LICENSE="GPL-3"
@@ -15,18 +15,19 @@ SLOT="0"
 IUSE="berkdb debug fam +gdbm ipv6 selinux gnutls trashquota"
 REQUIRED_USE="|| ( berkdb gdbm )"
 
-RDEPEND="gnutls? ( net-libs/gnutls )
+CDEPEND="gnutls? ( net-libs/gnutls )
 		!gnutls? ( >=dev-libs/openssl-0.9.6 )
 		>=net-libs/courier-authlib-0.61
 		>=net-mail/mailbase-0.00-r8
 		berkdb? ( sys-libs/db )
 		fam? ( virtual/fam )
-		gdbm? ( >=sys-libs/gdbm-1.8.0 )
-		selinux? ( sec-policy/selinux-courier )"
-DEPEND="${RDEPEND}
+		gdbm? ( >=sys-libs/gdbm-1.8.0 )"
+DEPEND="${CDEPEND}
 		dev-lang/perl
 		!mail-mta/courier
 		userland_GNU? ( sys-process/procps )"
+RDEPEND="${CDEPEND}
+	selinux? ( sec-policy/selinux-courier )"
 
 # get rid of old style virtual - bug 350792
 # all blockers really needed?
