@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/rackspace-monitoring-cli/rackspace-monitoring-cli-0.5.2.ebuild,v 1.3 2014/08/10 21:20:41 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/rackspace-monitoring-cli/rackspace-monitoring-cli-0.6.9.ebuild,v 1.1 2015/01/14 02:07:57 prometheanfire Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -20,9 +20,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 TEST_DEPENDS="dev-python/pep8[${PYTHON_USEDEP}]"
-RDEPEND=">=dev-python/rackspace-monitoring-0.5.4[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/rackspace-monitoring-0.6.5[${PYTHON_USEDEP}]"
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
-		dev-python/pip[${PYTHON_USEDEP}]
 		test? ( ${TEST_DEPENDS} )"
 
 python_test() {
