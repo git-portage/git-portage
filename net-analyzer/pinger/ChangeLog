@@ -1,6 +1,12 @@
 # ChangeLog for net-analyzer/pinger
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/pinger/ChangeLog,v 1.28 2014/10/16 09:14:52 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/pinger/ChangeLog,v 1.30 2015/01/26 10:15:14 ago Exp $
+
+  26 Jan 2015; Agostino Sarubbo <ago@gentoo.org> pinger-0.33.ebuild:
+  Stable for x86, wrt bug #535538
+
+  09 Jan 2015; Agostino Sarubbo <ago@gentoo.org> pinger-0.33.ebuild:
+  Stable for amd64, wrt bug #535538
 
 *pinger-0.33 (16 Oct 2014)
 
