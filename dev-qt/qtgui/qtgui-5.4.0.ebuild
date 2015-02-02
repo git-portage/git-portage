@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-qt/qtgui/qtgui-5.4.0.ebuild,v 1.1 2014/12/12 14:30:05 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-qt/qtgui/qtgui-5.4.0.ebuild,v 1.3 2015/02/02 19:11:43 zlogene Exp $
 
 EAPI=5
 
@@ -13,7 +13,7 @@ DESCRIPTION="The GUI module and platform plugins for the Qt5 framework"
 if [[ ${QT5_BUILD_TYPE} == live ]]; then
 	KEYWORDS=""
 else
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="~amd64 ~arm ~x86"
 fi
 
 # TODO: directfb, linuxfb, offscreen (auto-depends on X11)
@@ -68,6 +68,10 @@ DEPEND="${RDEPEND}
 PDEPEND="
 	ibus? ( app-i18n/ibus )
 "
+
+PATCHES=(
+	"${FILESDIR}/${P}-bigendian.patch" # bug 538570
+)
 
 QT5_TARGET_SUBDIRS=(
 	src/gui
