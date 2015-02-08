@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/dolphin/dolphin-3.5.ebuild,v 1.11 2014/02/17 01:49:47 twitch153 Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/dolphin/dolphin-3.5-r1.ebuild,v 1.1 2015/02/08 23:22:18 twitch153 Exp $
 
 EAPI=5
 
@@ -22,7 +22,7 @@ RESTRICT="mirror"
 RDEPEND=">=media-libs/glew-1.6
 	>=media-libs/libsdl-1.2[joystick]
 	<media-libs/libsfml-2.0
-	sys-libs/readline
+	sys-libs/readline:=
 	x11-libs/libXext
 	x11-libs/libXrandr
 	alsa? ( media-libs/alsa-lib )

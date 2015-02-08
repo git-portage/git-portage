@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/dolphin/dolphin-4.0.2-r2.ebuild,v 1.1 2015/01/16 18:54:41 twitch153 Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/dolphin/Attic/dolphin-4.0.2-r3.ebuild,v 1.1 2015/02/08 23:22:18 twitch153 Exp $
 
 EAPI=5
 
@@ -24,7 +24,7 @@ RDEPEND=">=media-libs/glew-1.6
 	<media-libs/libsfml-2.0
 	>=net-libs/miniupnpc-1.8
 	media-libs/libsdl2[haptic,joystick]
-	sys-libs/readline
+	sys-libs/readline:=
 	x11-libs/libXext
 	x11-libs/libXrandr
 	alsa? ( media-libs/alsa-lib )
