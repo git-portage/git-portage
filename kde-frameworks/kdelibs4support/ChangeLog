@@ -1,6 +1,17 @@
 # ChangeLog for kde-frameworks/kdelibs4support
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-frameworks/kdelibs4support/ChangeLog,v 1.7 2014/12/20 14:26:22 mrueg Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-frameworks/kdelibs4support/ChangeLog,v 1.9 2015/02/14 22:09:56 johu Exp $
+
+*kdelibs4support-5.7.0 (14 Feb 2015)
+
+  14 Feb 2015; Johannes Huber <johu@gentoo.org> +kdelibs4support-5.7.0.ebuild:
+  Version bump KDE Frameworks 5.7.0
+
+*kdelibs4support-5.6.0 (09 Jan 2015)
+
+  09 Jan 2015; Manuel Rüger <mrueg@gentoo.org> +kdelibs4support-5.6.0.ebuild,
+  -kdelibs4support-5.5.0.ebuild:
+  Version bump.
 
   20 Dec 2014; Manuel Rüger <mrueg@gentoo.org> -kdelibs4support-5.4.0.ebuild:
   Remove old.
