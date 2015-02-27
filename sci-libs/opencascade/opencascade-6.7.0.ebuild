@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/opencascade/opencascade-6.7.0.ebuild,v 1.2 2015/01/01 21:45:08 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/opencascade/opencascade-6.7.0.ebuild,v 1.4 2015/02/27 14:37:33 xmw Exp $
 
 EAPI=5
 
@@ -27,7 +27,7 @@ DEPEND="app-admin/eselect-opencascade
 	x11-libs/libXmu
 	freeimage? ( media-libs/freeimage )
 	gl2ps? ( x11-libs/gl2ps )
-	java? ( >=virtual/jdk-0 )
+	java? ( virtual/jdk:= )
 	tbb? ( dev-cpp/tbb )"
 RDEPEND="${DEPEND}"
 
@@ -47,6 +47,7 @@ src_prepare() {
 	java-pkg-opt-2_src_prepare
 
 	epatch \
+		"${FILESDIR}"/${PN}-6.7.1-deprecated-glx-api.patch \
 		"${FILESDIR}"/${PN}-6.7.0-fixed-DESTDIR.patch \
 		"${FILESDIR}"/${PN}-6.5.4-fixed-tbb-VERSION.patch
 
