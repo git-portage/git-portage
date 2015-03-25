@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/zygrib/zygrib-7.0.0.ebuild,v 1.1 2015/03/25 15:03:42 mschiff Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/zygrib/zygrib-7.0.0.ebuild,v 1.3 2015/03/25 18:51:22 mschiff Exp $
 
 EAPI=5
 
@@ -37,6 +37,7 @@ S="${WORKDIR}/${MY_PN}-${PV}"
 
 src_prepare() {
 	sed -i 's,INSTALLDIR=$(HOME)/zyGrib,INSTALLDIR=$(DESTDIR)/opt/zyGrib,' Makefile
+	sed -i 's,QMAKE=/usr/bin/qmake-qt4,QMAKE=/usr/bin/qmake,' Makefile
 }
 
 src_install() {
