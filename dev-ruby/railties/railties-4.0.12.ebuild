@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/railties/railties-4.0.12.ebuild,v 1.1 2014/11/17 20:20:24 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/railties/railties-4.0.12.ebuild,v 1.3 2015/03/31 19:22:42 ulm Exp $
 
 EAPI=5
 USE_RUBY="ruby19 ruby20 ruby21"
@@ -16,8 +16,8 @@ RUBY_FAKEGEM_BINWRAP=""
 inherit ruby-fakegem versionator
 
 DESCRIPTION="Tools for creating, working with, and running Rails applications"
-HOMEPAGE="http://github.com/rails/rails"
-SRC_URI="http://github.com/rails/rails/archive/v${PV}.tar.gz -> rails-${PV}.tgz"
+HOMEPAGE="https://github.com/rails/rails"
+SRC_URI="https://github.com/rails/rails/archive/v${PV}.tar.gz -> rails-${PV}.tgz"
 
 LICENSE="MIT"
 SLOT="$(get_version_component_range 1-2)"
@@ -31,7 +31,7 @@ RUBY_S="rails-${PV}/${PN}"
 # investigation.
 RESTRICT="test"
 
-RDEPEND+=">=app-admin/eselect-rails-0.19"
+RDEPEND+=">=app-eselect/eselect-rails-0.19"
 
 ruby_add_rdepend "
 	~dev-ruby/activesupport-${PV}
