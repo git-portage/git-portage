@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/visit/visit-2.7.3.ebuild,v 1.2 2015/04/02 18:33:35 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/visit/visit-2.8.2.ebuild,v 1.2 2015/04/02 18:33:35 mr_bones_ Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -14,7 +14,7 @@ SRC_URI="http://portal.nersc.gov/svn/visit/trunk/releases/${PV}/${PN}${PV}.tar.g
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="cgns debug hdf5 netcdf silo tcmalloc threads"
+IUSE="cgns debug hdf5 mpi netcdf silo tcmalloc threads"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
@@ -24,7 +24,7 @@ RDEPEND="
 	hdf5? ( sci-libs/hdf5 )
 	netcdf? ( sci-libs/netcdf )
 	silo? ( sci-libs/silo )
-	>=sci-libs/vtk-6.0.0[imaging,python,rendering,${PYTHON_USEDEP}]
+	>=sci-libs/vtk-6.0.0[imaging,mpi?,python,rendering,${PYTHON_USEDEP}]
 	sys-libs/zlib"
 DEPEND="${RDEPEND}"
 
@@ -70,15 +70,15 @@ src_configure() {
 src_install() {
 	cmake-utils_src_install
 
-	PACKAGES_DIR="${ROOT}opt/visit/${PV}/linux-$(arch)/lib/site-packages"
+	PACKAGES_DIR="${ROOT}opt/${PN}/${PV}/linux-$(arch)/lib/site-packages"
 	cd "${ED}${PACKAGES_DIR}"
 	for i in *; do
 		dosym "${PACKAGES_DIR}/${i}" "$(python_get_sitedir)/$i"
 	done
 
 	cat > "${T}"/99visit <<- EOF
-		PATH=${EPREFIX}/opt/visit/bin
-		LDPATH=${EPREFIX}/opt/visit/${PV}/linux-$(arch)/lib/
+		PATH=${EPREFIX}/opt/${PN}/bin
+		LDPATH=${EPREFIX}/opt/${PN}/${PV}/linux-$(arch)/lib/
 	EOF
 	doenvd "${T}"/99visit
 }
