@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pytest/Attic/pytest-2.7.0.ebuild,v 1.1 2015/04/05 04:36:42 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pytest/pytest-2.7.0-r1.ebuild,v 1.1 2015/04/05 13:07:43 idella4 Exp $
 
 EAPI="5"
 PYTHON_COMPAT=( python{2_7,3_3,3_4} pypy pypy3 )
@@ -22,9 +22,7 @@ RDEPEND=">=dev-python/py-${PY_VER}[${PYTHON_USEDEP}]"
 #pexpect dep based on https://bitbucket.org/hpk42/pytest/issue/386/tests-fail-with-pexpect-30
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	test? (
-		dev-python/pexpect[${PYTHON_USEDEP}]
-		dev-python/pyyaml[${PYTHON_USEDEP}] )
+	test? (	dev-python/pexpect[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )"
 
 python_prepare_all() {
@@ -46,9 +44,15 @@ python_compile_all() {
 }
 
 python_test() {
-	"${PYTHON}" "${BUILD_DIR}"/lib/pytest.py \
-		--ignore=doc/en/example/nonpython/test_simple.yml \
-		|| die "tests failed with ${EPYTHON}"
+	# test_nose.py not written to suit py3.2 in pypy3
+	if [[ "${EPYTHON}" == pypy3 ]]; then
+		"${PYTHON}" "${BUILD_DIR}"/lib/pytest.py \
+			--ignore=testing/test_nose.py \
+			|| die "tests failed with ${EPYTHON}"
+	else
+		"${PYTHON}" "${BUILD_DIR}"/lib/pytest.py \
+			|| die "tests failed with ${EPYTHON}"
+	fi
 }
 
 python_install_all() {
