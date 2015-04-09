@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/burp
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/burp/ChangeLog,v 1.10 2015/04/09 16:17:21 aidecoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/burp/ChangeLog,v 1.11 2015/04/09 16:19:20 aidecoe Exp $
+
+  09 Apr 2015; Amadeusz Żołnowski <aidecoe@gentoo.org> burp-1.3.48.ebuild:
+  burp is working on x86 for me. Add ~x86 to KEYWORDS.
 
   09 Apr 2015; Amadeusz Żołnowski <aidecoe@gentoo.org> burp-1.4.34.ebuild:
   Restore ~amd64 keyword.
