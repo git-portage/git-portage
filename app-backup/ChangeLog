@@ -1,0 +1,9 @@
+# ChangeLog for app-backup/Attic
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/Attic/ChangeLog,v 1.1 2015/05/10 18:06:01 hanno Exp $
+
+*Attic-0.15 (10 May 2015)
+
+  10 May 2015; <hanno@gentoo.org> +Attic-0.15.ebuild, +metadata.xml:
+  Initial commit based on ebuild from funroll-loops overlay.
+
