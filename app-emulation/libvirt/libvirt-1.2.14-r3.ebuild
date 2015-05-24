@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/Attic/libvirt-1.2.15.ebuild,v 1.2 2015/05/24 19:32:06 tamiko Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/libvirt-1.2.14-r3.ebuild,v 1.1 2015/05/24 21:05:42 tamiko Exp $
 
 EAPI=5
 
@@ -10,7 +10,7 @@ MY_P="${P/_rc/-rc}"
 
 inherit eutils user autotools linux-info systemd readme.gentoo
 
-BACKPORTS=""
+BACKPORTS="20150524"
 
 if [[ ${PV} = *9999* ]]; then
 	inherit git-r3
@@ -57,7 +57,7 @@ REQUIRED_USE="libvirtd? ( || ( lxc openvz qemu uml virtualbox xen ) )
 # We can use both libnl:1.1 and libnl:3, but if you have both installed, the
 # package will use 3 by default. Since we don't have slot pinning in an API,
 # we must go with the most recent
-RDEPEND="sys-libs/readline:=
+RDEPEND="sys-libs/readline:0
 	sys-libs/ncurses
 	>=net-misc/curl-7.18.0
 	dev-libs/libgcrypt:0
@@ -408,7 +408,7 @@ src_install() {
 
 	newinitd "${S}/libvirtd.init" libvirtd || die
 	newconfd "${FILESDIR}/libvirtd.confd-r4" libvirtd || die
-	newinitd "${FILESDIR}/virtlockd.init" virtlockd || die
+	newinitd "${FILESDIR}/virtlockd.init-r1" virtlockd || die
 
 	readme.gentoo_create_doc
 }
