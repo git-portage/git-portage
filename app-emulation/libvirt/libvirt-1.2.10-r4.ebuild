@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/libvirt-1.2.10-r4.ebuild,v 1.2 2015/01/28 13:33:43 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/libvirt-1.2.10-r4.ebuild,v 1.4 2015/05/24 19:32:06 tamiko Exp $
 
 EAPI=5
 
@@ -28,7 +28,7 @@ else
 	SRC_URI+=" ${BACKPORTS:+
 		http://dev.gentoo.org/~cardoe/distfiles/${P}-${BACKPORTS}.tar.xz
 		http://dev.gentoo.org/~tamiko/distfiles/${P}-${BACKPORTS}.tar.xz}"
-	KEYWORDS="amd64 ~x86"
+	KEYWORDS="amd64 x86"
 	SLOT="0/${PV}"
 fi
 S="${WORKDIR}/${P%_rc*}"
@@ -56,7 +56,7 @@ REQUIRED_USE="libvirtd? ( || ( lxc openvz qemu uml virtualbox xen ) )
 # We can use both libnl:1.1 and libnl:3, but if you have both installed, the
 # package will use 3 by default. Since we don't have slot pinning in an API,
 # we must go with the most recent
-RDEPEND="sys-libs/readline
+RDEPEND="sys-libs/readline:=
 	sys-libs/ncurses
 	>=net-misc/curl-7.18.0
 	dev-libs/libgcrypt:0
@@ -81,7 +81,7 @@ RDEPEND="sys-libs/readline
 		>sys-process/numactl-2.0.2
 		sys-process/numad
 	)
-	openvz? ( sys-kernel/openvz-sources )
+	openvz? ( sys-kernel/openvz-sources:* )
 	parted? (
 		>=sys-block/parted-1.8[device-mapper]
 		sys-fs/lvm2
@@ -102,7 +102,7 @@ RDEPEND="sys-libs/readline
 	xen? ( app-emulation/xen-tools app-emulation/xen )
 	udev? ( virtual/udev >=x11-libs/libpciaccess-0.10.9 )
 	virt-network? ( net-dns/dnsmasq[script]
-		>=net-firewall/iptables-1.4.10
+		>=net-firewall/iptables-1.4.10[ipv6]
 		net-misc/radvd
 		net-firewall/ebtables
 		sys-apps/iproute2[-minimal]
