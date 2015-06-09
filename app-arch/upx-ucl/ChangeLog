@@ -1,6 +1,12 @@
 # ChangeLog for app-arch/upx-ucl
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/upx-ucl/ChangeLog,v 1.28 2014/06/09 07:35:44 patrick Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/upx-ucl/ChangeLog,v 1.30 2015/06/09 08:58:49 jlec Exp $
+
+  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Updating remote-id in metadata.xml
+
+  14 May 2015; Michael Sterrett <mr_bones_@gentoo.org> -upx-ucl-3.09.ebuild:
+  old
 
 *upx-ucl-3.91 (09 Jun 2014)
 
