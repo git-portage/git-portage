@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/ipython/Attic/ipython-3.1.0.ebuild,v 1.5 2015/06/21 10:42:13 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/ipython/ipython-3.2.0.ebuild,v 1.1 2015/06/22 09:45:52 jlec Exp $
 
 EAPI=5
 
@@ -124,8 +124,7 @@ python_test() {
 
 python_install() {
 	distutils-r1_python_install
-	ln -snf "${EPREFIX}"/usr/share/mathjax \
-		"${D}$(python_get_sitedir)"/IPython/html/static/mathjax || die
+	use notebook && dosym /usr/share/mathjax $(python_get_sitedir)/IPython/html/static/mathjax
 
 	# Create ipythonX.Y symlinks.
 	# TODO:
