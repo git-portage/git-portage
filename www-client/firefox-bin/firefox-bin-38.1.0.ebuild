@@ -1,8 +1,9 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/firefox-bin/firefox-bin-38.0.1-r1.ebuild,v 1.2 2015/05/31 15:04:50 axs Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/firefox-bin/Attic/firefox-bin-38.1.0.ebuild,v 1.1 2015/07/03 21:24:15 axs Exp $
 
 EAPI="5"
+MOZ_ESR=1
 
 # Can be updated using scripts/get_langs.sh from mozilla overlay
 # Not officially supported as of yet
@@ -17,6 +18,10 @@ te tr uk vi zh-CN zh-TW)
 MOZ_PV="${PV/_beta/b}" # Handle beta for SRC_URI
 MOZ_PV="${MOZ_PV/_rc/rc}" # Handle rc for SRC_URI
 MOZ_PN="${PN/-bin}"
+if [[ ${MOZ_ESR} == 1 ]]; then
+	# ESR releases have slightly version numbers
+	MOZ_PV="${MOZ_PV}esr"
+fi
 MOZ_P="${MOZ_PN}-${MOZ_PV}"
 
 # Upstream ftp release URI that's used by mozlinguas.eclass
@@ -48,7 +53,7 @@ RDEPEND="dev-libs/atk
 	>=media-libs/freetype-2.4.10
 	>=x11-libs/cairo-1.10[X]
 	x11-libs/gdk-pixbuf
-	>=x11-libs/gtk+-2.14:2
+	>=x11-libs/gtk+-2.18:2
 	x11-libs/libX11
 	x11-libs/libXcomposite
 	x11-libs/libXdamage
@@ -96,29 +101,29 @@ src_install() {
 		newins "${icon_path}/default${size}.png" "${icon}.png" || die
 	done
 	# The 128x128 icon has a different name
-	insinto "/usr/share/icons/hicolor/128x128/apps"
+	insinto /usr/share/icons/hicolor/128x128/apps
 	newins "${icon_path}/../../../icons/mozicon128.png" "${icon}.png" || die
 	# Install a 48x48 icon into /usr/share/pixmaps for legacy DEs
 	newicon "${S}"/browser/chrome/icons/default/default48.png ${PN}.png
 	domenu "${FILESDIR}"/${PN}.desktop
 	sed -i -e "s:@NAME@:${name}:" -e "s:@ICON@:${icon}:" \
-		"${ED}/usr/share/applications/${PN}.desktop" || die
+		"${ED}usr/share/applications/${PN}.desktop" || die
 
 	# Add StartupNotify=true bug 237317
 	if use startup-notification; then
-		echo "StartupNotify=true" >> "${D}"/usr/share/applications/${PN}.desktop
+		echo "StartupNotify=true" >> "${ED}"usr/share/applications/${PN}.desktop
 	fi
 
 	# Install firefox in /opt
 	dodir ${MOZILLA_FIVE_HOME%/*}
-	mv "${S}" "${D}"${MOZILLA_FIVE_HOME} || die
+	mv "${S}" "${ED}"${MOZILLA_FIVE_HOME} || die
 
 	# Fix prefs that make no sense for a system-wide install
 	insinto ${MOZILLA_FIVE_HOME}/defaults/pref/
 	doins "${FILESDIR}"/local-settings.js
 	# Copy preferences file so we can do a simple rename.
-	cp "${FILESDIR}"/all-gentoo-1-cve-2015-4000.js \
-		"${D}"${MOZILLA_FIVE_HOME}/all-gentoo.js || die
+	cp "${FILESDIR}"/all-gentoo-1.js \
+		"${ED}"${MOZILLA_FIVE_HOME}/all-gentoo.js || die
 
 	# Install language packs
 	mozlinguas_src_install
@@ -127,13 +132,13 @@ src_install() {
 	if [[ -n ${LANG} && ${LANG} != "en" ]]; then
 		elog "Setting default locale to ${LANG}"
 		echo "pref(\"general.useragent.locale\", \"${LANG}\");" \
-			>> "${D}${MOZILLA_FIVE_HOME}"/defaults/pref/${PN}-prefs.js || \
+			>> "${ED}${MOZILLA_FIVE_HOME}"/defaults/pref/${PN}-prefs.js || \
 			die "sed failed to change locale"
 	fi
 
 	# Create /usr/bin/firefox-bin
 	dodir /usr/bin/
-	cat <<-EOF >"${D}"/usr/bin/${PN}
+	cat <<-EOF >"${ED}"usr/bin/${PN}
 	#!/bin/sh
 	unset LD_PRELOAD
 	LD_LIBRARY_PATH="/opt/firefox/"
@@ -151,7 +156,7 @@ src_install() {
 	share_plugins_dir
 
 	# Required in order to use plugins and even run firefox on hardened.
-	pax-mark mr "${ED}"/${MOZILLA_FIVE_HOME}/{firefox,firefox-bin,plugin-container}
+	pax-mark mr "${ED}"${MOZILLA_FIVE_HOME}/{firefox,firefox-bin,plugin-container}
 }
 
 pkg_preinst() {
