@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/gnutls/gnutls-3.3.15-r1.ebuild,v 1.1 2015/06/17 18:42:05 alonbl Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/gnutls/Attic/gnutls-3.3.16.ebuild,v 1.1 2015/07/12 14:33:50 alonbl Exp $
 
 EAPI=5
 
@@ -23,7 +23,6 @@ IUSE="+cxx +crywrap dane doc examples guile nls +openssl pkcs11 static-libs test
 # use system libopts
 RDEPEND=">=dev-libs/libtasn1-3.9[${MULTILIB_USEDEP}]
 	>=dev-libs/nettle-2.7[gmp,${MULTILIB_USEDEP}]
-	<dev-libs/nettle-3[gmp,${MULTILIB_USEDEP}]
 	>=dev-libs/gmp-5.1.3-r1[${MULTILIB_USEDEP}]
 	sys-devel/autogen
 	crywrap? ( net-dns/libidn )

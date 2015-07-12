@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/gnutls/gnutls-3.4.2-r1.ebuild,v 1.1 2015/06/17 18:42:05 alonbl Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/gnutls/Attic/gnutls-3.4.3.ebuild,v 1.1 2015/07/12 14:33:50 alonbl Exp $
 
 EAPI=5
 
@@ -68,8 +68,6 @@ src_prepare() {
 	for file in $(grep -l "produced by makeinfo" doc/*.info) ; do
 		rm "${file}" || die
 	done
-
-	epatch "${FILESDIR}/${P}-build.patch"
 
 	# support user patches
 	epatch_user
