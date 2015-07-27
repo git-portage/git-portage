@@ -1,12 +1,12 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/purple-facebook/Attic/purple-facebook-20150715.ebuild,v 1.1 2015/07/20 15:59:44 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/purple-facebook/purple-facebook-20150727.ebuild,v 1.1 2015/07/27 10:28:10 chainsaw Exp $
 
 EAPI=5
 
 inherit eutils autotools
 
-MY_PV="305f27dd23c0"
+MY_PV="f80258f7ce6f"
 S="${WORKDIR}/${PN}-${MY_PV}"
 DESCRIPTION="Facebook protocol plugin for libpurple"
 HOMEPAGE="https://github.com/jgeboski/purple-facebook"
@@ -17,7 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND="net-im/pidgin"
+RDEPEND="dev-libs/json-glib
+	 net-im/pidgin"
 DEPEND="${RDEPEND}"
 DOCS=( AUTHORS ChangeLog NEWS README VERSION )
 
