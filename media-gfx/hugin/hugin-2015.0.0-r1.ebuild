@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/Attic/hugin-2015.0.0_rc3-r1.ebuild,v 1.1 2015/07/28 16:31:52 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/hugin-2015.0.0-r1.ebuild,v 1.1 2015/08/08 14:12:42 maekke Exp $
 
 EAPI=5
 
@@ -11,7 +11,7 @@ inherit base python-single-r1 wxwidgets versionator cmake-utils
 
 DESCRIPTION="GUI for the creation & processing of panoramic images"
 HOMEPAGE="http://hugin.sf.net"
-SRC_URI="https://launchpad.net/${PN}/2015.0/2015.0rc3/+download/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2 SIFT"
 SLOT="0"
